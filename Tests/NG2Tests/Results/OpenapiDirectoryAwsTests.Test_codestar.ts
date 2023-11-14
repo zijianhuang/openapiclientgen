@@ -3,15 +3,15 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface AssociateTeamMemberResult {
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 	}
 
 	export interface AssociateTeamMemberRequest {
 		projectId: string;
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 		userArn: string;
 		projectRole: string;
-		remoteAccessAllowed?: boolean;
+		remoteAccessAllowed?: boolean | null;
 	}
 
 	export interface LimitExceededException {
@@ -38,20 +38,20 @@ export namespace MyNS {
 	export interface CreateProjectResult {
 		id: string;
 		arn: string;
-		clientRequestToken?: string;
-		projectTemplateId?: string;
+		clientRequestToken?: string | null;
+		projectTemplateId?: string | null;
 	}
 
 	export interface CreateProjectRequest {
 		name: string;
 		id: string;
-		description?: string;
-		clientRequestToken?: string;
-		sourceCode?: Array<Code>;
+		description?: string | null;
+		clientRequestToken?: string | null;
+		sourceCode?: Array<Code> | null;
 
 		/** The toolchain template file provided with the project request. AWS CodeStar uses the template to provision the toolchain stack in AWS CloudFormation. */
-		toolchain?: Toolchain;
-		tags?: Tags;
+		toolchain?: Toolchain | null;
+		tags?: Tags | null;
 	}
 
 
@@ -85,8 +85,8 @@ export namespace MyNS {
 
 	/** The Amazon S3 location where the source code files provided with the project request are stored. */
 	export interface S3Location {
-		bucketName?: string;
-		bucketKey?: string;
+		bucketName?: string | null;
+		bucketKey?: string | null;
 	}
 
 
@@ -94,10 +94,10 @@ export namespace MyNS {
 	export interface CodeDestination {
 
 		/** Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation. */
-		codeCommit?: CodeCommitCodeDestination;
+		codeCommit?: CodeCommitCodeDestination | null;
 
 		/** Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation. */
-		gitHub?: GitHubCodeDestination;
+		gitHub?: GitHubCodeDestination | null;
 	}
 
 
@@ -110,7 +110,7 @@ export namespace MyNS {
 	/** Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation. */
 	export interface GitHubCodeDestination {
 		name: string;
-		description?: string;
+		description?: string | null;
 		type: string;
 		owner: string;
 		privateRepository: boolean;
@@ -127,8 +127,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		source: ToolchainSource;
-		roleArn?: string;
-		stackParameters?: TemplateParameterMap;
+		roleArn?: string | null;
+		stackParameters?: TemplateParameterMap | null;
 	}
 
 
@@ -156,32 +156,32 @@ export namespace MyNS {
 
 	export interface CreateUserProfileResult {
 		userArn: string;
-		displayName?: string;
-		emailAddress?: string;
-		sshPublicKey?: string;
-		createdTimestamp?: Date;
-		lastModifiedTimestamp?: Date;
+		displayName?: string | null;
+		emailAddress?: string | null;
+		sshPublicKey?: string | null;
+		createdTimestamp?: Date | null;
+		lastModifiedTimestamp?: Date | null;
 	}
 
 	export interface CreateUserProfileRequest {
 		userArn: string;
 		displayName: string;
 		emailAddress: string;
-		sshPublicKey?: string;
+		sshPublicKey?: string | null;
 	}
 
 	export interface UserProfileAlreadyExistsException {
 	}
 
 	export interface DeleteProjectResult {
-		stackId?: string;
-		projectArn?: string;
+		stackId?: string | null;
+		projectArn?: string | null;
 	}
 
 	export interface DeleteProjectRequest {
 		id: string;
-		clientRequestToken?: string;
-		deleteStack?: boolean;
+		clientRequestToken?: string | null;
+		deleteStack?: boolean | null;
 	}
 
 	export interface DeleteUserProfileResult {
@@ -193,24 +193,24 @@ export namespace MyNS {
 	}
 
 	export interface DescribeProjectResult {
-		name?: string;
-		id?: string;
-		arn?: string;
-		description?: string;
-		clientRequestToken?: string;
-		createdTimeStamp?: Date;
-		stackId?: string;
-		projectTemplateId?: string;
+		name?: string | null;
+		id?: string | null;
+		arn?: string | null;
+		description?: string | null;
+		clientRequestToken?: string | null;
+		createdTimeStamp?: Date | null;
+		stackId?: string | null;
+		projectTemplateId?: string | null;
 
 		/** An indication of whether a project creation or deletion is failed or successful. */
-		status?: ProjectStatus;
+		status?: ProjectStatus | null;
 	}
 
 
 	/** An indication of whether a project creation or deletion is failed or successful. */
 	export interface ProjectStatus {
 		state: string;
-		reason?: string;
+		reason?: string | null;
 	}
 
 	export interface DescribeProjectRequest {
@@ -219,9 +219,9 @@ export namespace MyNS {
 
 	export interface DescribeUserProfileResult {
 		userArn: string;
-		displayName?: string;
-		emailAddress?: string;
-		sshPublicKey?: string;
+		displayName?: string | null;
+		emailAddress?: string | null;
+		sshPublicKey?: string | null;
 		createdTimestamp: Date;
 		lastModifiedTimestamp: Date;
 	}
@@ -243,27 +243,27 @@ export namespace MyNS {
 
 	export interface ListProjectsResult {
 		projects: Array<ProjectSummary>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about the metadata for a project. */
 	export interface ProjectSummary {
-		projectId?: string;
-		projectArn?: string;
+		projectId?: string | null;
+		projectArn?: string | null;
 	}
 
 	export interface ListProjectsRequest {
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface InvalidNextTokenException {
 	}
 
 	export interface ListResourcesResult {
-		resources?: Array<Resource>;
-		nextToken?: string;
+		resources?: Array<Resource> | null;
+		nextToken?: string | null;
 	}
 
 
@@ -274,24 +274,24 @@ export namespace MyNS {
 
 	export interface ListResourcesRequest {
 		projectId: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListTagsForProjectResult {
-		tags?: Tags;
-		nextToken?: string;
+		tags?: Tags | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListTagsForProjectRequest {
 		id: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListTeamMembersResult {
 		teamMembers: Array<TeamMember>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -299,36 +299,36 @@ export namespace MyNS {
 	export interface TeamMember {
 		userArn: string;
 		projectRole: string;
-		remoteAccessAllowed?: boolean;
+		remoteAccessAllowed?: boolean | null;
 	}
 
 	export interface ListTeamMembersRequest {
 		projectId: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListUserProfilesResult {
 		userProfiles: Array<UserProfileSummary>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about a user's profile in AWS CodeStar. */
 	export interface UserProfileSummary {
-		userArn?: string;
-		displayName?: string;
-		emailAddress?: string;
-		sshPublicKey?: string;
+		userArn?: string | null;
+		displayName?: string | null;
+		emailAddress?: string | null;
+		sshPublicKey?: string | null;
 	}
 
 	export interface ListUserProfilesRequest {
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface TagProjectResult {
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface TagProjectRequest {
@@ -349,21 +349,21 @@ export namespace MyNS {
 
 	export interface UpdateProjectRequest {
 		id: string;
-		name?: string;
-		description?: string;
+		name?: string | null;
+		description?: string | null;
 	}
 
 	export interface UpdateTeamMemberResult {
-		userArn?: string;
-		projectRole?: string;
-		remoteAccessAllowed?: boolean;
+		userArn?: string | null;
+		projectRole?: string | null;
+		remoteAccessAllowed?: boolean | null;
 	}
 
 	export interface UpdateTeamMemberRequest {
 		projectId: string;
 		userArn: string;
-		projectRole?: string;
-		remoteAccessAllowed?: boolean;
+		projectRole?: string | null;
+		remoteAccessAllowed?: boolean | null;
 	}
 
 	export interface TeamMemberNotFoundException {
@@ -371,18 +371,18 @@ export namespace MyNS {
 
 	export interface UpdateUserProfileResult {
 		userArn: string;
-		displayName?: string;
-		emailAddress?: string;
-		sshPublicKey?: string;
-		createdTimestamp?: Date;
-		lastModifiedTimestamp?: Date;
+		displayName?: string | null;
+		emailAddress?: string | null;
+		sshPublicKey?: string | null;
+		createdTimestamp?: Date | null;
+		lastModifiedTimestamp?: Date | null;
 	}
 
 	export interface UpdateUserProfileRequest {
 		userArn: string;
-		displayName?: string;
-		emailAddress?: string;
-		sshPublicKey?: string;
+		displayName?: string | null;
+		emailAddress?: string | null;
+		sshPublicKey?: string | null;
 	}
 
 	@Injectable()

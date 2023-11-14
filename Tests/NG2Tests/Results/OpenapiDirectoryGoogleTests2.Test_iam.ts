@@ -14,7 +14,7 @@ export namespace MyNS {
 		 * A PermissionDelta message to record the added_permissions and
 		 * removed_permissions inside a role.
 		 */
-		permissionDelta?: PermissionDelta;
+		permissionDelta?: PermissionDelta | null;
 	}
 
 
@@ -25,10 +25,10 @@ export namespace MyNS {
 	export interface PermissionDelta {
 
 		/** Added permissions. */
-		addedPermissions?: Array<string>;
+		addedPermissions?: Array<string> | null;
 
 		/** Removed permissions. */
-		removedPermissions?: Array<string>;
+		removedPermissions?: Array<string> | null;
 	}
 
 
@@ -84,14 +84,14 @@ export namespace MyNS {
 	export interface AuditConfig {
 
 		/** The configuration for logging of each type of permission. */
-		auditLogConfigs?: Array<AuditLogConfig>;
+		auditLogConfigs?: Array<AuditLogConfig> | null;
 
 		/**
 		 * Specifies a service that will be enabled for audit logging.
 		 * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
 		 * `allServices` is a special value that covers all services.
 		 */
-		service?: string;
+		service?: string | null;
 	}
 
 
@@ -121,10 +121,10 @@ export namespace MyNS {
 		 * permission.
 		 * Follows the same format of Binding.members.
 		 */
-		exemptedMembers?: Array<string>;
+		exemptedMembers?: Array<string> | null;
 
 		/** The log type that this config enables. */
-		logType?: AuditLogConfigLogType;
+		logType?: AuditLogConfigLogType | null;
 	}
 
 	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
@@ -138,7 +138,7 @@ export namespace MyNS {
 	export interface AuditData {
 
 		/** The difference delta between two policies. */
-		policyDelta?: PolicyDelta;
+		policyDelta?: PolicyDelta | null;
 	}
 
 
@@ -146,7 +146,7 @@ export namespace MyNS {
 	export interface PolicyDelta {
 
 		/** The delta for Bindings between two policies. */
-		bindingDeltas?: Array<BindingDelta>;
+		bindingDeltas?: Array<BindingDelta> | null;
 	}
 
 
@@ -160,7 +160,7 @@ export namespace MyNS {
 		 * The action that was performed on a Binding.
 		 * Required
 		 */
-		action?: BindingDeltaAction;
+		action?: BindingDeltaAction | null;
 
 		/**
 		 * Represents a textual expression in the Common Expression Language (CEL)
@@ -186,21 +186,21 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * A single identity requesting access for a Cloud Platform resource.
 		 * Follows the same format of Binding.members.
 		 * Required
 		 */
-		member?: string;
+		member?: string | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 * Required
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 	export enum BindingDeltaAction { ACTION_UNSPECIFIED = 0, ADD = 1, REMOVE = 2 }
@@ -236,26 +236,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -266,7 +266,7 @@ export namespace MyNS {
 		 * Public name of the service.
 		 * For example, the service name for Cloud IAM is 'iam.googleapis.com'.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -297,7 +297,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -332,13 +332,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -346,10 +346,10 @@ export namespace MyNS {
 	export interface CreateRoleRequest {
 
 		/** A role in the Identity and Access Management API. */
-		role?: Role;
+		role?: Role | null;
 
 		/** The role ID to use for this role. */
-		roleId?: string;
+		roleId?: string | null;
 	}
 
 
@@ -360,16 +360,16 @@ export namespace MyNS {
 		 * The current deleted state of the role. This field is read only.
 		 * It will be ignored in calls to CreateRole and UpdateRole.
 		 */
-		deleted?: boolean;
+		deleted?: boolean | null;
 
 		/** Optional. A human-readable description for the role. */
-		description?: string;
+		description?: string | null;
 
 		/** Used to perform a consistent read-modify-write. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The names of the permissions this role grants when bound in an IAM policy. */
-		includedPermissions?: Array<string>;
+		includedPermissions?: Array<string> | null;
 
 		/**
 		 * The name of the role.
@@ -378,20 +378,20 @@ export namespace MyNS {
 		 * name is the complete path, e.g., roles/logging.viewer for predefined roles
 		 * and organizations/{ORGANIZATION_ID}/roles/logging.viewer for custom roles.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The current launch stage of the role. If the `ALPHA` launch stage has been
 		 * selected for a role, the `stage` field will not be included in the
 		 * returned definition for the role.
 		 */
-		stage?: RoleStage;
+		stage?: RoleStage | null;
 
 		/**
 		 * Optional. A human-readable title for the role.  Typically this
 		 * is limited to 100 UTF-8 bytes.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 	export enum RoleStage { ALPHA = 0, BETA = 1, GA = 2, DEPRECATED = 3, DISABLED = 4, EAP = 5 }
@@ -405,14 +405,14 @@ export namespace MyNS {
 		 * The default is currently a 2K RSA key.  However this may change in the
 		 * future.
 		 */
-		keyAlgorithm?: CreateServiceAccountKeyRequestKeyAlgorithm;
+		keyAlgorithm?: CreateServiceAccountKeyRequestKeyAlgorithm | null;
 
 		/**
 		 * The output format of the private key. The default value is
 		 * `TYPE_GOOGLE_CREDENTIALS_FILE`, which is the Google Credentials File
 		 * format.
 		 */
-		privateKeyType?: CreateServiceAccountKeyRequestPrivateKeyType;
+		privateKeyType?: CreateServiceAccountKeyRequestPrivateKeyType | null;
 	}
 
 	export enum CreateServiceAccountKeyRequestKeyAlgorithm { KEY_ALG_UNSPECIFIED = 0, KEY_ALG_RSA_1024 = 1, KEY_ALG_RSA_2048 = 2 }
@@ -429,7 +429,7 @@ export namespace MyNS {
 		 * must be 6-30 characters long, and match the regular expression
 		 * `[a-z]([-a-z0-9]*[a-z0-9])` to comply with RFC1035.
 		 */
-		accountId?: string;
+		accountId?: string | null;
 
 		/**
 		 * A service account in the Identity and Access Management API.
@@ -446,7 +446,7 @@ export namespace MyNS {
 		 * the account. The `ACCOUNT` value can be the `email` address or the
 		 * `unique_id` of the service account.
 		 */
-		serviceAccount?: ServiceAccount;
+		serviceAccount?: ServiceAccount | null;
 	}
 
 
@@ -471,28 +471,28 @@ export namespace MyNS {
 		 * Optional. A user-specified opaque description of the service account.
 		 * Must be less than or equal to 256 UTF-8 bytes.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * @OutputOnly A bool indicate if the service account is disabled.
 		 * The field is currently in alpha phase.
 		 */
-		disabled?: boolean;
+		disabled?: boolean | null;
 
 		/**
 		 * Optional. A user-specified name for the service account.
 		 * Must be less than or equal to 100 UTF-8 bytes.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** @OutputOnly The email address of the service account. */
-		email?: string;
+		email?: string | null;
 
 		/**
 		 * Optional. Note: `etag` is an inoperable legacy field that is only returned
 		 * for backwards compatibility.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * The resource name of the service account in the following format:
@@ -503,20 +503,20 @@ export namespace MyNS {
 		 * In responses the resource name will always be in the format
 		 * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * @OutputOnly The OAuth2 client id for the service account.
 		 * This is used in conjunction with the OAuth2 clientconfig API to make
 		 * three legged OAuth2 (3LO) flows to access the data of Google users.
 		 */
-		oauth2ClientId?: string;
+		oauth2ClientId?: string | null;
 
 		/** @OutputOnly The id of the project that owns the service account. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** @OutputOnly The unique and stable id of the service account. */
-		uniqueId?: string;
+		uniqueId?: string | null;
 	}
 
 
@@ -570,7 +570,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * The full resource name of the policy this lint request is about.
@@ -581,7 +581,7 @@ export namespace MyNS {
 		 * IAM database. The candidate policy for lint has to be provided in the same
 		 * request object.
 		 */
-		fullResourceName?: string;
+		fullResourceName?: string | null;
 	}
 
 
@@ -592,7 +592,7 @@ export namespace MyNS {
 	export interface LintPolicyResponse {
 
 		/** List of lint results sorted by `severity` in descending order. */
-		lintResults?: Array<LintResult>;
+		lintResults?: Array<LintResult> | null;
 	}
 
 
@@ -600,7 +600,7 @@ export namespace MyNS {
 	export interface LintResult {
 
 		/** Human readable debug message associated with the issue. */
-		debugMessage?: string;
+		debugMessage?: string | null;
 
 		/**
 		 * The name of the field for which this lint result is about.
@@ -610,26 +610,26 @@ export namespace MyNS {
 		 * `condition.expression` identifies a lint result for the `expression` field
 		 * of the provided condition.
 		 */
-		fieldName?: string;
+		fieldName?: string | null;
 
 		/** The validation unit level. */
-		level?: LintResultLevel;
+		level?: LintResultLevel | null;
 
 		/**
 		 * 0-based character position of problematic construct within the object
 		 * identified by `field_name`. Currently, this is populated only for condition
 		 * expression.
 		 */
-		locationOffset?: number;
+		locationOffset?: number | null;
 
 		/** The validation unit severity. */
-		severity?: LintResultSeverity;
+		severity?: LintResultSeverity | null;
 
 		/**
 		 * The validation unit name, for instance
 		 * "lintValidationUnits/ConditionComplexityCheck".
 		 */
-		validationUnitName?: string;
+		validationUnitName?: string | null;
 	}
 
 	export enum LintResultLevel { LEVEL_UNSPECIFIED = 0, CONDITION = 1 }
@@ -644,10 +644,10 @@ export namespace MyNS {
 		 * To retrieve the next page of results, set
 		 * `ListRolesRequest.page_token` to this value.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The Roles defined on this resource. */
-		roles?: Array<Role>;
+		roles?: Array<Role> | null;
 	}
 
 
@@ -655,7 +655,7 @@ export namespace MyNS {
 	export interface ListServiceAccountKeysResponse {
 
 		/** The public keys for the service account. */
-		keys?: Array<ServiceAccountKey>;
+		keys?: Array<ServiceAccountKey> | null;
 	}
 
 
@@ -678,19 +678,19 @@ export namespace MyNS {
 	export interface ServiceAccountKey {
 
 		/** Specifies the algorithm (and possibly key size) for the key. */
-		keyAlgorithm?: CreateServiceAccountKeyRequestKeyAlgorithm;
+		keyAlgorithm?: CreateServiceAccountKeyRequestKeyAlgorithm | null;
 
 		/** The key origin. */
-		keyOrigin?: ServiceAccountKeyKeyOrigin;
+		keyOrigin?: ServiceAccountKeyKeyOrigin | null;
 
 		/** The key type. */
-		keyType?: ServiceAccountKeyKeyType;
+		keyType?: ServiceAccountKeyKeyType | null;
 
 		/**
 		 * The resource name of the service account key in the following format
 		 * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The private key data. Only provided in `CreateServiceAccountKey`
@@ -701,7 +701,7 @@ export namespace MyNS {
 		 * <a href="/sdk/gcloud/reference/auth/activate-service-account">gcloud
 		 * auth activate-service-account</a>.
 		 */
-		privateKeyData?: string;
+		privateKeyData?: string | null;
 
 		/**
 		 * The output format for the private key.
@@ -710,13 +710,13 @@ export namespace MyNS {
 		 * Google never exposes system-managed private keys, and never retains
 		 * user-managed private keys.
 		 */
-		privateKeyType?: CreateServiceAccountKeyRequestPrivateKeyType;
+		privateKeyType?: CreateServiceAccountKeyRequestPrivateKeyType | null;
 
 		/** The public key data. Only provided in `GetServiceAccountKey` responses. */
-		publicKeyData?: string;
+		publicKeyData?: string | null;
 
 		/** The key can be used after this timestamp. */
-		validAfterTime?: string;
+		validAfterTime?: string | null;
 
 		/**
 		 * The key can be used before this timestamp.
@@ -724,7 +724,7 @@ export namespace MyNS {
 		 * private key signing operation. The public key could still be used
 		 * for verification for a few hours after this time.
 		 */
-		validBeforeTime?: string;
+		validBeforeTime?: string | null;
 	}
 
 	export enum ServiceAccountKeyKeyOrigin { ORIGIN_UNSPECIFIED = 0, USER_PROVIDED = 1, GOOGLE_PROVIDED = 2 }
@@ -736,14 +736,14 @@ export namespace MyNS {
 	export interface ListServiceAccountsResponse {
 
 		/** The list of matching service accounts. */
-		accounts?: Array<ServiceAccount>;
+		accounts?: Array<ServiceAccount> | null;
 
 		/**
 		 * To retrieve the next page of results, set
 		 * ListServiceAccountsRequest.page_token
 		 * to this value.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -765,8 +765,8 @@ export namespace MyNS {
 		 * the account. The `ACCOUNT` value can be the `email` address or the
 		 * `unique_id` of the service account.
 		 */
-		serviceAccount?: ServiceAccount;
-		updateMask?: string;
+		serviceAccount?: ServiceAccount | null;
+		updateMask?: string | null;
 	}
 
 
@@ -774,32 +774,32 @@ export namespace MyNS {
 	export interface Permission {
 
 		/** The service API associated with the permission is not enabled. */
-		apiDisabled?: boolean;
+		apiDisabled?: boolean | null;
 
 		/** The current custom role support level. */
-		customRolesSupportLevel?: PermissionCustomRolesSupportLevel;
+		customRolesSupportLevel?: PermissionCustomRolesSupportLevel | null;
 
 		/**
 		 * A brief description of what this Permission is used for.
 		 * This permission can ONLY be used in predefined roles.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/** The name of this Permission. */
-		name?: string;
-		onlyInPredefinedRoles?: boolean;
+		name?: string | null;
+		onlyInPredefinedRoles?: boolean | null;
 
 		/**
 		 * The preferred name for this permission. If present, then this permission is
 		 * an alias of, and equivalent to, the listed primary_permission.
 		 */
-		primaryPermission?: string;
+		primaryPermission?: string | null;
 
 		/** The current launch stage of the permission. */
-		stage?: PermissionStage;
+		stage?: PermissionStage | null;
 
 		/** The title of this Permission. */
-		title?: string;
+		title?: string | null;
 	}
 
 	export enum PermissionCustomRolesSupportLevel { SUPPORTED = 0, TESTING = 1, NOT_SUPPORTED = 2 }
@@ -867,14 +867,14 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Specifies cloud audit logging configuration for this policy. */
-		auditConfigs?: Array<AuditConfig>;
+		auditConfigs?: Array<AuditConfig> | null;
 
 		/**
 		 * Associates a list of `members` to a `role`. Optionally, may specify a
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -889,7 +889,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -909,7 +909,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -923,7 +923,7 @@ export namespace MyNS {
 		 * For example, a Cloud Platform project with id `my-project` will be named
 		 * `//cloudresourcemanager.googleapis.com/projects/my-project`.
 		 */
-		fullResourceName?: string;
+		fullResourceName?: string | null;
 	}
 
 
@@ -931,7 +931,7 @@ export namespace MyNS {
 	export interface QueryAuditableServicesResponse {
 
 		/** The auditable services for a resource. */
-		services?: Array<AuditableService>;
+		services?: Array<AuditableService> | null;
 	}
 
 
@@ -944,17 +944,17 @@ export namespace MyNS {
 		 * For example, a Cloud Platform project with id `my-project` will be named
 		 * `//cloudresourcemanager.googleapis.com/projects/my-project`.
 		 */
-		fullResourceName?: string;
+		fullResourceName?: string | null;
 
 		/** Optional limit on the number of roles to include in the response. */
-		pageSize?: number;
+		pageSize?: number | null;
 
 		/**
 		 * Optional pagination token returned in an earlier
 		 * QueryGrantableRolesResponse.
 		 */
-		pageToken?: string;
-		view?: QueryGrantableRolesRequestView;
+		pageToken?: string | null;
+		view?: QueryGrantableRolesRequestView | null;
 	}
 
 	export enum QueryGrantableRolesRequestView { BASIC = 0, FULL = 1 }
@@ -967,10 +967,10 @@ export namespace MyNS {
 		 * To retrieve the next page of results, set
 		 * `QueryGrantableRolesRequest.page_token` to this value.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The list of matching roles. */
-		roles?: Array<Role>;
+		roles?: Array<Role> | null;
 	}
 
 
@@ -984,16 +984,16 @@ export namespace MyNS {
 		 * For example, a Cloud Platform project with id `my-project` will be named
 		 * `//cloudresourcemanager.googleapis.com/projects/my-project`.
 		 */
-		fullResourceName?: string;
+		fullResourceName?: string | null;
 
 		/** Optional limit on the number of permissions to include in the response. */
-		pageSize?: number;
+		pageSize?: number | null;
 
 		/**
 		 * Optional pagination token returned in an earlier
 		 * QueryTestablePermissionsRequest.
 		 */
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 
@@ -1004,10 +1004,10 @@ export namespace MyNS {
 		 * To retrieve the next page of results, set
 		 * `QueryTestableRolesRequest.page_token` to this value.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The Permissions testable on the requested resource. */
-		permissions?: Array<Permission>;
+		permissions?: Array<Permission> | null;
 	}
 
 
@@ -1071,7 +1071,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 
 		/**
 		 * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
@@ -1080,7 +1080,7 @@ export namespace MyNS {
 		 * paths: "bindings, etag"
 		 * This field is only used by Cloud IAM.
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -1088,7 +1088,7 @@ export namespace MyNS {
 	export interface SignBlobRequest {
 
 		/** Required. The bytes to sign. */
-		bytesToSign?: string;
+		bytesToSign?: string | null;
 	}
 
 
@@ -1096,10 +1096,10 @@ export namespace MyNS {
 	export interface SignBlobResponse {
 
 		/** The id of the key used to sign the blob. */
-		keyId?: string;
+		keyId?: string | null;
 
 		/** The signed blob. */
-		signature?: string;
+		signature?: string | null;
 	}
 
 
@@ -1107,7 +1107,7 @@ export namespace MyNS {
 	export interface SignJwtRequest {
 
 		/** Required. The JWT payload to sign, a JSON JWT Claim set. */
-		payload?: string;
+		payload?: string | null;
 	}
 
 
@@ -1115,10 +1115,10 @@ export namespace MyNS {
 	export interface SignJwtResponse {
 
 		/** The id of the key used to sign the JWT. */
-		keyId?: string;
+		keyId?: string | null;
 
 		/** The signed JWT. */
-		signedJwt?: string;
+		signedJwt?: string | null;
 	}
 
 
@@ -1131,7 +1131,7 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -1142,7 +1142,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -1150,7 +1150,7 @@ export namespace MyNS {
 	export interface UndeleteRoleRequest {
 
 		/** Used to perform a consistent read-modify-write. */
-		etag?: string;
+		etag?: string | null;
 	}
 
 
@@ -1175,7 +1175,7 @@ export namespace MyNS {
 		 * the account. The `ACCOUNT` value can be the `email` address or the
 		 * `unique_id` of the service account.
 		 */
-		restoredAccount?: ServiceAccount;
+		restoredAccount?: ServiceAccount | null;
 	}
 
 
@@ -1188,7 +1188,7 @@ export namespace MyNS {
 		 * service account.
 		 * Please note, the expected format for this field is X509_PEM.
 		 */
-		publicKeyData?: string;
+		publicKeyData?: string | null;
 	}
 
 	@Injectable()
@@ -1269,7 +1269,7 @@ export namespace MyNS {
 		 * return the `includedPermissions` field.
 		 * @return {void} Successful response
 		 */
-		Iam_roles_list(pageSize: number, pageToken: string, parent: string, showDeleted: boolean, view: QueryGrantableRolesRequestView): Observable<HttpResponse<string>> {
+		Iam_roles_list(pageSize: number | null | undefined, pageToken: string | null | undefined, parent: string | null | undefined, showDeleted: boolean | null | undefined, view: QueryGrantableRolesRequestView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/roles?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&parent=' + (parent == null ? '' : encodeURIComponent(parent)) + '&showDeleted=' + showDeleted + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1313,7 +1313,7 @@ export namespace MyNS {
 		 * @param {string} etag Used to perform a consistent read-modify-write.
 		 * @return {void} Successful response
 		 */
-		Iam_organizations_roles_delete(name: string, etag: string): Observable<HttpResponse<string>> {
+		Iam_organizations_roles_delete(name: string, etag: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&etag=' + (etag == null ? '' : encodeURIComponent(etag)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1347,7 +1347,7 @@ export namespace MyNS {
 		 * X509_PEM is the default output format.
 		 * @return {void} Successful response
 		 */
-		Iam_organizations_roles_get(name: string, publicKeyType: Iam_organizations_roles_getPublicKeyType): Observable<HttpResponse<string>> {
+		Iam_organizations_roles_get(name: string, publicKeyType: Iam_organizations_roles_getPublicKeyType | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&publicKeyType=' + publicKeyType, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1374,7 +1374,7 @@ export namespace MyNS {
 		 * @param {string} updateMask A mask describing which fields in the Role have changed.
 		 * @return {void} Successful response
 		 */
-		Iam_organizations_roles_patch(name: string, updateMask: string, requestBody: Role): Observable<HttpResponse<string>> {
+		Iam_organizations_roles_patch(name: string, updateMask: string | null | undefined, requestBody: Role): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1411,7 +1411,7 @@ export namespace MyNS {
 		 * is provided, all keys are returned.
 		 * @return {void} Successful response
 		 */
-		Iam_projects_serviceAccounts_keys_list(name: string, keyTypes: Array<ServiceAccountKeyKeyType>): Observable<HttpResponse<string>> {
+		Iam_projects_serviceAccounts_keys_list(name: string, keyTypes: Array<ServiceAccountKeyKeyType> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/keys&' + keyTypes.map(z => `keyTypes=${z}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1460,7 +1460,7 @@ export namespace MyNS {
 		 * ListServiceAccountsResponse.next_page_token.
 		 * @return {void} Successful response
 		 */
-		Iam_projects_serviceAccounts_list(name: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Iam_projects_serviceAccounts_list(name: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/serviceAccounts&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1622,7 +1622,7 @@ export namespace MyNS {
 		 * return the `includedPermissions` field.
 		 * @return {void} Successful response
 		 */
-		Iam_organizations_roles_list(parent: string, pageSize: number, pageToken: string, showDeleted: boolean, view: QueryGrantableRolesRequestView): Observable<HttpResponse<string>> {
+		Iam_organizations_roles_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined, showDeleted: boolean | null | undefined, view: QueryGrantableRolesRequestView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/roles&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&showDeleted=' + showDeleted + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1677,7 +1677,7 @@ export namespace MyNS {
 		 * leave the field unset.
 		 * @return {void} Successful response
 		 */
-		Iam_projects_serviceAccounts_getIamPolicy(resource: string, options_requestedPolicyVersion: number): Observable<HttpResponse<string>> {
+		Iam_projects_serviceAccounts_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (resource == null ? '' : encodeURIComponent(resource)) + ':getIamPolicy&options_requestedPolicyVersion=' + options_requestedPolicyVersion, null, { observe: 'response', responseType: 'text' });
 		}
 

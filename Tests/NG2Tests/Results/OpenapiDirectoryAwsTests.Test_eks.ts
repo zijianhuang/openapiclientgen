@@ -5,60 +5,60 @@ export namespace MyNS {
 	export interface CreateClusterResponse {
 
 		/** An object representing an Amazon EKS cluster. */
-		cluster?: Cluster;
+		cluster?: Cluster | null;
 	}
 
 
 	/** An object representing an Amazon EKS cluster. */
 	export interface Cluster {
-		name?: string;
-		arn?: string;
-		createdAt?: Date;
-		version?: string;
-		endpoint?: string;
-		roleArn?: string;
+		name?: string | null;
+		arn?: string | null;
+		createdAt?: Date | null;
+		version?: string | null;
+		endpoint?: string | null;
+		roleArn?: string | null;
 
 		/** An object representing an Amazon EKS cluster VPC configuration response. */
-		resourcesVpcConfig?: VpcConfigResponse;
+		resourcesVpcConfig?: VpcConfigResponse | null;
 
 		/** An object representing the logging configuration for resources in your cluster. */
-		logging?: Logging;
+		logging?: Logging | null;
 
 		/** An object representing an identity provider for authentication credentials. */
-		identity?: Identity;
-		status?: ClusterStatus;
+		identity?: Identity | null;
+		status?: ClusterStatus | null;
 
 		/** An object representing the <code>certificate-authority-data</code> for your cluster. */
-		certificateAuthority?: Certificate;
-		clientRequestToken?: string;
-		platformVersion?: string;
-		tags?: TagMap;
-		encryptionConfig?: Array<EncryptionConfig>;
+		certificateAuthority?: Certificate | null;
+		clientRequestToken?: string | null;
+		platformVersion?: string | null;
+		tags?: TagMap | null;
+		encryptionConfig?: Array<EncryptionConfig> | null;
 	}
 
 
 	/** An object representing an Amazon EKS cluster VPC configuration response. */
 	export interface VpcConfigResponse {
-		subnetIds?: Array<string>;
-		securityGroupIds?: Array<string>;
-		clusterSecurityGroupId?: string;
-		vpcId?: string;
-		endpointPublicAccess?: boolean;
-		endpointPrivateAccess?: boolean;
-		publicAccessCidrs?: Array<string>;
+		subnetIds?: Array<string> | null;
+		securityGroupIds?: Array<string> | null;
+		clusterSecurityGroupId?: string | null;
+		vpcId?: string | null;
+		endpointPublicAccess?: boolean | null;
+		endpointPrivateAccess?: boolean | null;
+		publicAccessCidrs?: Array<string> | null;
 	}
 
 
 	/** An object representing the logging configuration for resources in your cluster. */
 	export interface Logging {
-		clusterLogging?: Array<LogSetup>;
+		clusterLogging?: Array<LogSetup> | null;
 	}
 
 
 	/** An object representing the enabled or disabled Kubernetes control plane logs for your cluster. */
 	export interface LogSetup {
-		types?: Array<LogType>;
-		enabled?: boolean;
+		types?: Array<LogType> | null;
+		enabled?: boolean | null;
 	}
 
 	export enum LogType { api = 0, audit = 1, authenticator = 2, controllerManager = 3, scheduler = 4 }
@@ -68,13 +68,13 @@ export namespace MyNS {
 	export interface Identity {
 
 		/** An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information for the cluster. */
-		oidc?: OIDC;
+		oidc?: OIDC | null;
 	}
 
 
 	/** An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information for the cluster. */
 	export interface OIDC {
-		issuer?: string;
+		issuer?: string | null;
 	}
 
 	export enum ClusterStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, FAILED = 3, UPDATING = 4 }
@@ -82,7 +82,7 @@ export namespace MyNS {
 
 	/** An object representing the <code>certificate-authority-data</code> for your cluster. */
 	export interface Certificate {
-		data?: string;
+		data?: string | null;
 	}
 
 	export interface TagMap {
@@ -91,16 +91,16 @@ export namespace MyNS {
 
 	/** The encryption configuration for the cluster. */
 	export interface EncryptionConfig {
-		resources?: Array<string>;
+		resources?: Array<string> | null;
 
 		/** Identifies the AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt the secrets. */
-		provider?: Provider;
+		provider?: Provider | null;
 	}
 
 
 	/** Identifies the AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt the secrets. */
 	export interface Provider {
-		keyArn?: string;
+		keyArn?: string | null;
 	}
 
 	export interface ResourceInUseException {
@@ -127,28 +127,28 @@ export namespace MyNS {
 	export interface CreateFargateProfileResponse {
 
 		/** An object representing an AWS Fargate profile. */
-		fargateProfile?: FargateProfile;
+		fargateProfile?: FargateProfile | null;
 	}
 
 
 	/** An object representing an AWS Fargate profile. */
 	export interface FargateProfile {
-		fargateProfileName?: string;
-		fargateProfileArn?: string;
-		clusterName?: string;
-		createdAt?: Date;
-		podExecutionRoleArn?: string;
-		subnets?: Array<string>;
-		selectors?: Array<FargateProfileSelector>;
-		status?: FargateProfileStatus;
-		tags?: TagMap;
+		fargateProfileName?: string | null;
+		fargateProfileArn?: string | null;
+		clusterName?: string | null;
+		createdAt?: Date | null;
+		podExecutionRoleArn?: string | null;
+		subnets?: Array<string> | null;
+		selectors?: Array<FargateProfileSelector> | null;
+		status?: FargateProfileStatus | null;
+		tags?: TagMap | null;
 	}
 
 
 	/** An object representing an AWS Fargate profile selector. */
 	export interface FargateProfileSelector {
-		namespace?: string;
-		labels?: FargateProfileLabel;
+		namespace?: string | null;
+		labels?: FargateProfileLabel | null;
 	}
 
 	export interface FargateProfileLabel {
@@ -162,39 +162,39 @@ export namespace MyNS {
 	export interface CreateNodegroupResponse {
 
 		/** An object representing an Amazon EKS managed node group. */
-		nodegroup?: Nodegroup;
+		nodegroup?: Nodegroup | null;
 	}
 
 
 	/** An object representing an Amazon EKS managed node group. */
 	export interface Nodegroup {
-		nodegroupName?: string;
-		nodegroupArn?: string;
-		clusterName?: string;
-		version?: string;
-		releaseVersion?: string;
-		createdAt?: Date;
-		modifiedAt?: Date;
-		status?: NodegroupStatus;
+		nodegroupName?: string | null;
+		nodegroupArn?: string | null;
+		clusterName?: string | null;
+		version?: string | null;
+		releaseVersion?: string | null;
+		createdAt?: Date | null;
+		modifiedAt?: Date | null;
+		status?: NodegroupStatus | null;
 
 		/** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. */
-		scalingConfig?: NodegroupScalingConfig;
-		instanceTypes?: Array<string>;
-		subnets?: Array<string>;
+		scalingConfig?: NodegroupScalingConfig | null;
+		instanceTypes?: Array<string> | null;
+		subnets?: Array<string> | null;
 
 		/** An object representing the remote access configuration for the managed node group. */
-		remoteAccess?: RemoteAccessConfig;
-		amiType?: NodegroupAmiType;
-		nodeRole?: string;
-		labels?: LabelsMap;
+		remoteAccess?: RemoteAccessConfig | null;
+		amiType?: NodegroupAmiType | null;
+		nodeRole?: string | null;
+		labels?: LabelsMap | null;
 
 		/** An object representing the resources associated with the node group, such as Auto Scaling groups and security groups for remote access. */
-		resources?: NodegroupResources;
-		diskSize?: number;
+		resources?: NodegroupResources | null;
+		diskSize?: number | null;
 
 		/** An object representing the health status of the node group. */
-		health?: NodegroupHealth;
-		tags?: TagMap;
+		health?: NodegroupHealth | null;
+		tags?: TagMap | null;
 	}
 
 	export enum NodegroupStatus { CREATING = 0, ACTIVE = 1, UPDATING = 2, DELETING = 3, CREATE_FAILED = 4, DELETE_FAILED = 5, DEGRADED = 6 }
@@ -202,16 +202,16 @@ export namespace MyNS {
 
 	/** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. */
 	export interface NodegroupScalingConfig {
-		minSize?: number;
-		maxSize?: number;
-		desiredSize?: number;
+		minSize?: number | null;
+		maxSize?: number | null;
+		desiredSize?: number | null;
 	}
 
 
 	/** An object representing the remote access configuration for the managed node group. */
 	export interface RemoteAccessConfig {
-		ec2SshKey?: string;
-		sourceSecurityGroups?: Array<string>;
+		ec2SshKey?: string | null;
+		sourceSecurityGroups?: Array<string> | null;
 	}
 
 	export enum NodegroupAmiType { AL2_x86_64 = 0, AL2_x86_64_GPU = 1 }
@@ -222,28 +222,28 @@ export namespace MyNS {
 
 	/** An object representing the resources associated with the node group, such as Auto Scaling groups and security groups for remote access. */
 	export interface NodegroupResources {
-		autoScalingGroups?: Array<AutoScalingGroup>;
-		remoteAccessSecurityGroup?: string;
+		autoScalingGroups?: Array<AutoScalingGroup> | null;
+		remoteAccessSecurityGroup?: string | null;
 	}
 
 
 	/** An Auto Scaling group that is associated with an Amazon EKS managed node group. */
 	export interface AutoScalingGroup {
-		name?: string;
+		name?: string | null;
 	}
 
 
 	/** An object representing the health status of the node group. */
 	export interface NodegroupHealth {
-		issues?: Array<Issue>;
+		issues?: Array<Issue> | null;
 	}
 
 
 	/** An object representing an issue with an Amazon EKS resource. */
 	export interface Issue {
-		code?: IssueCode;
-		message?: string;
-		resourceIds?: Array<string>;
+		code?: IssueCode | null;
+		message?: string | null;
+		resourceIds?: Array<string> | null;
 	}
 
 	export enum IssueCode { AutoScalingGroupNotFound = 0, AutoScalingGroupInvalidConfiguration = 1, Ec2SecurityGroupNotFound = 2, Ec2SecurityGroupDeletionFailure = 3, Ec2LaunchTemplateNotFound = 4, Ec2LaunchTemplateVersionMismatch = 5, Ec2SubnetNotFound = 6, Ec2SubnetInvalidConfiguration = 7, IamInstanceProfileNotFound = 8, IamLimitExceeded = 9, IamNodeRoleNotFound = 10, NodeCreationFailure = 11, AsgInstanceLaunchFailures = 12, InstanceLimitExceeded = 13, InsufficientFreeAddresses = 14, AccessDenied = 15, InternalFailure = 16 }
@@ -251,7 +251,7 @@ export namespace MyNS {
 	export interface DeleteClusterResponse {
 
 		/** An object representing an Amazon EKS cluster. */
-		cluster?: Cluster;
+		cluster?: Cluster | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -260,48 +260,48 @@ export namespace MyNS {
 	export interface DeleteFargateProfileResponse {
 
 		/** An object representing an AWS Fargate profile. */
-		fargateProfile?: FargateProfile;
+		fargateProfile?: FargateProfile | null;
 	}
 
 	export interface DeleteNodegroupResponse {
 
 		/** An object representing an Amazon EKS managed node group. */
-		nodegroup?: Nodegroup;
+		nodegroup?: Nodegroup | null;
 	}
 
 	export interface DescribeClusterResponse {
 
 		/** An object representing an Amazon EKS cluster. */
-		cluster?: Cluster;
+		cluster?: Cluster | null;
 	}
 
 	export interface DescribeFargateProfileResponse {
 
 		/** An object representing an AWS Fargate profile. */
-		fargateProfile?: FargateProfile;
+		fargateProfile?: FargateProfile | null;
 	}
 
 	export interface DescribeNodegroupResponse {
 
 		/** An object representing an Amazon EKS managed node group. */
-		nodegroup?: Nodegroup;
+		nodegroup?: Nodegroup | null;
 	}
 
 	export interface DescribeUpdateResponse {
 
 		/** An object representing an asynchronous update. */
-		update?: Update;
+		update?: Update | null;
 	}
 
 
 	/** An object representing an asynchronous update. */
 	export interface Update {
-		id?: string;
-		status?: UpdateStatus;
-		type?: UpdateType;
-		params?: Array<UpdateParam>;
-		createdAt?: Date;
-		errors?: Array<ErrorDetail>;
+		id?: string | null;
+		status?: UpdateStatus | null;
+		type?: UpdateType | null;
+		params?: Array<UpdateParam> | null;
+		createdAt?: Date | null;
+		errors?: Array<ErrorDetail> | null;
 	}
 
 	export enum UpdateStatus { InProgress = 0, Failed = 1, Cancelled = 2, Successful = 3 }
@@ -311,8 +311,8 @@ export namespace MyNS {
 
 	/** An object representing the details of an update request. */
 	export interface UpdateParam {
-		type?: UpdateParamType;
-		value?: string;
+		type?: UpdateParamType | null;
+		value?: string | null;
 	}
 
 	export enum UpdateParamType { Version = 0, PlatformVersion = 1, EndpointPrivateAccess = 2, EndpointPublicAccess = 3, ClusterLogging = 4, DesiredSize = 5, LabelsToAdd = 6, LabelsToRemove = 7, MaxSize = 8, MinSize = 9, ReleaseVersion = 10, PublicAccessCidrs = 11 }
@@ -320,30 +320,30 @@ export namespace MyNS {
 
 	/** An object representing an error when an asynchronous operation fails. */
 	export interface ErrorDetail {
-		errorCode?: ErrorDetailErrorCode;
-		errorMessage?: string;
-		resourceIds?: Array<string>;
+		errorCode?: ErrorDetailErrorCode | null;
+		errorMessage?: string | null;
+		resourceIds?: Array<string> | null;
 	}
 
 	export enum ErrorDetailErrorCode { SubnetNotFound = 0, SecurityGroupNotFound = 1, EniLimitReached = 2, IpNotAvailable = 3, AccessDenied = 4, OperationNotPermitted = 5, VpcIdNotFound = 6, Unknown = 7, NodeCreationFailure = 8, PodEvictionFailure = 9, InsufficientFreeAddresses = 10 }
 
 	export interface ListClustersResponse {
-		clusters?: Array<string>;
-		nextToken?: string;
+		clusters?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListFargateProfilesResponse {
-		fargateProfileNames?: Array<string>;
-		nextToken?: string;
+		fargateProfileNames?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListNodegroupsResponse {
-		nodegroups?: Array<string>;
-		nextToken?: string;
+		nodegroups?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export interface BadRequestException {
@@ -353,8 +353,8 @@ export namespace MyNS {
 	}
 
 	export interface ListUpdatesResponse {
-		updateIds?: Array<string>;
-		nextToken?: string;
+		updateIds?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface TagResourceResponse {
@@ -366,25 +366,25 @@ export namespace MyNS {
 	export interface UpdateClusterConfigResponse {
 
 		/** An object representing an asynchronous update. */
-		update?: Update;
+		update?: Update | null;
 	}
 
 	export interface UpdateClusterVersionResponse {
 
 		/** An object representing an asynchronous update. */
-		update?: Update;
+		update?: Update | null;
 	}
 
 	export interface UpdateNodegroupConfigResponse {
 
 		/** An object representing an asynchronous update. */
-		update?: Update;
+		update?: Update | null;
 	}
 
 	export interface UpdateNodegroupVersionResponse {
 
 		/** An object representing an asynchronous update. */
-		update?: Update;
+		update?: Update | null;
 	}
 
 	export enum AMITypes { AL2_x86_64 = 0, AL2_x86_64_GPU = 1 }
@@ -392,16 +392,16 @@ export namespace MyNS {
 
 	/** An object representing the VPC configuration to use for an Amazon EKS cluster. */
 	export interface VpcConfigRequest {
-		subnetIds?: Array<string>;
-		securityGroupIds?: Array<string>;
-		endpointPublicAccess?: boolean;
-		endpointPrivateAccess?: boolean;
-		publicAccessCidrs?: Array<string>;
+		subnetIds?: Array<string> | null;
+		securityGroupIds?: Array<string> | null;
+		endpointPublicAccess?: boolean | null;
+		endpointPrivateAccess?: boolean | null;
+		publicAccessCidrs?: Array<string> | null;
 	}
 
 	export interface CreateClusterRequest {
 		name: string;
-		version?: string;
+		version?: string | null;
 		roleArn: string;
 
 		/**
@@ -411,39 +411,39 @@ export namespace MyNS {
 		resourcesVpcConfig: VpcConfigRequest;
 
 		/** An object representing the logging configuration for resources in your cluster. */
-		logging?: Logging;
-		clientRequestToken?: string;
-		tags?: TagMap;
-		encryptionConfig?: Array<EncryptionConfig>;
+		logging?: Logging | null;
+		clientRequestToken?: string | null;
+		tags?: TagMap | null;
+		encryptionConfig?: Array<EncryptionConfig> | null;
 	}
 
 	export interface CreateFargateProfileRequest {
 		fargateProfileName: string;
 		podExecutionRoleArn: string;
-		subnets?: Array<string>;
-		selectors?: Array<FargateProfileSelector>;
-		clientRequestToken?: string;
-		tags?: TagMap;
+		subnets?: Array<string> | null;
+		selectors?: Array<FargateProfileSelector> | null;
+		clientRequestToken?: string | null;
+		tags?: TagMap | null;
 	}
 
 	export interface CreateNodegroupRequest {
 		nodegroupName: string;
 
 		/** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. */
-		scalingConfig?: NodegroupScalingConfig;
-		diskSize?: number;
+		scalingConfig?: NodegroupScalingConfig | null;
+		diskSize?: number | null;
 		subnets: Array<string>;
-		instanceTypes?: Array<string>;
-		amiType?: NodegroupAmiType;
+		instanceTypes?: Array<string> | null;
+		amiType?: NodegroupAmiType | null;
 
 		/** An object representing the remote access configuration for the managed node group. */
-		remoteAccess?: RemoteAccessConfig;
+		remoteAccess?: RemoteAccessConfig | null;
 		nodeRole: string;
-		labels?: LabelsMap;
-		tags?: TagMap;
-		clientRequestToken?: string;
-		version?: string;
-		releaseVersion?: string;
+		labels?: LabelsMap | null;
+		tags?: TagMap | null;
+		clientRequestToken?: string | null;
+		version?: string | null;
+		releaseVersion?: string | null;
 	}
 
 	export interface DeleteClusterRequest {
@@ -496,40 +496,40 @@ export namespace MyNS {
 	export interface UpdateClusterConfigRequest {
 
 		/** An object representing the VPC configuration to use for an Amazon EKS cluster. */
-		resourcesVpcConfig?: VpcConfigRequest;
+		resourcesVpcConfig?: VpcConfigRequest | null;
 
 		/** An object representing the logging configuration for resources in your cluster. */
-		logging?: Logging;
-		clientRequestToken?: string;
+		logging?: Logging | null;
+		clientRequestToken?: string | null;
 	}
 
 	export interface UpdateClusterVersionRequest {
 		version: string;
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 	}
 
 
 	/** An object representing a Kubernetes label change for a managed node group. */
 	export interface UpdateLabelsPayload {
-		addOrUpdateLabels?: LabelsMap;
-		removeLabels?: Array<string>;
+		addOrUpdateLabels?: LabelsMap | null;
+		removeLabels?: Array<string> | null;
 	}
 
 	export interface UpdateNodegroupConfigRequest {
 
 		/** An object representing a Kubernetes label change for a managed node group. */
-		labels?: UpdateLabelsPayload;
+		labels?: UpdateLabelsPayload | null;
 
 		/** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. */
-		scalingConfig?: NodegroupScalingConfig;
-		clientRequestToken?: string;
+		scalingConfig?: NodegroupScalingConfig | null;
+		clientRequestToken?: string | null;
 	}
 
 	export interface UpdateNodegroupVersionRequest {
-		version?: string;
-		releaseVersion?: string;
-		force?: boolean;
-		clientRequestToken?: string;
+		version?: string | null;
+		releaseVersion?: string | null;
+		force?: boolean | null;
+		clientRequestToken?: string | null;
 	}
 
 	@Injectable()
@@ -553,7 +553,7 @@ export namespace MyNS {
 		 * @param {string} nextToken <p>The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
 		 * @return {ListClustersResponse} Success
 		 */
-		ListClusters(maxResults: number, nextToken: string): Observable<ListClustersResponse> {
+		ListClusters(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListClustersResponse> {
 			return this.http.get<ListClustersResponse>(this.baseUri + 'clusters?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -575,7 +575,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListFargateProfiles</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
 		 * @return {ListFargateProfilesResponse} Success
 		 */
-		ListFargateProfiles(name: string, maxResults: number, nextToken: string): Observable<ListFargateProfilesResponse> {
+		ListFargateProfiles(name: string, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListFargateProfilesResponse> {
 			return this.http.get<ListFargateProfilesResponse>(this.baseUri + 'clusters/' + (name == null ? '' : encodeURIComponent(name)) + '/fargate-profiles&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -597,7 +597,7 @@ export namespace MyNS {
 		 * @param {string} nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListNodegroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
 		 * @return {ListNodegroupsResponse} Success
 		 */
-		ListNodegroups(name: string, maxResults: number, nextToken: string): Observable<ListNodegroupsResponse> {
+		ListNodegroups(name: string, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListNodegroupsResponse> {
 			return this.http.get<ListNodegroupsResponse>(this.baseUri + 'clusters/' + (name == null ? '' : encodeURIComponent(name)) + '/node-groups&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -673,7 +673,7 @@ export namespace MyNS {
 		 * @param {string} nodegroupName The name of the Amazon EKS node group associated with the update.
 		 * @return {DescribeUpdateResponse} Success
 		 */
-		DescribeUpdate(name: string, updateId: string, nodegroupName: string): Observable<DescribeUpdateResponse> {
+		DescribeUpdate(name: string, updateId: string, nodegroupName: string | null | undefined): Observable<DescribeUpdateResponse> {
 			return this.http.get<DescribeUpdateResponse>(this.baseUri + 'clusters/' + (name == null ? '' : encodeURIComponent(name)) + '/updates/' + (updateId == null ? '' : encodeURIComponent(updateId)) + '&nodegroupName=' + (nodegroupName == null ? '' : encodeURIComponent(nodegroupName)), {});
 		}
 
@@ -706,7 +706,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When you use this parameter, <code>ListUpdates</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListUpdates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListUpdates</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
 		 * @return {ListUpdatesResponse} Success
 		 */
-		ListUpdates(name: string, nodegroupName: string, nextToken: string, maxResults: number): Observable<ListUpdatesResponse> {
+		ListUpdates(name: string, nodegroupName: string | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListUpdatesResponse> {
 			return this.http.get<ListUpdatesResponse>(this.baseUri + 'clusters/' + (name == null ? '' : encodeURIComponent(name)) + '/updates&nodegroupName=' + (nodegroupName == null ? '' : encodeURIComponent(nodegroupName)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -776,7 +776,7 @@ export namespace MyNS {
 		name: string;
 
 		/** The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used. */
-		version?: string;
+		version?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
@@ -791,31 +791,31 @@ export namespace MyNS {
 		resourcesVpcConfig: CreateClusterPostBodyResourcesVpcConfig;
 
 		/** An object representing the logging configuration for resources in your cluster. */
-		logging?: CreateClusterPostBodyLogging;
+		logging?: CreateClusterPostBodyLogging | null;
 
 		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 
 		/** The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/**
 		 * The encryption configuration for the cluster.
 		 * Maximum items: 1
 		 */
-		encryptionConfig?: Array<EncryptionConfig>;
+		encryptionConfig?: Array<EncryptionConfig> | null;
 	}
 
 	export interface CreateClusterPostBodyResourcesVpcConfig {
-		subnetIds?: Array<string>;
-		securityGroupIds?: Array<string>;
-		endpointPublicAccess?: boolean;
-		endpointPrivateAccess?: boolean;
-		publicAccessCidrs?: Array<string>;
+		subnetIds?: Array<string> | null;
+		securityGroupIds?: Array<string> | null;
+		endpointPublicAccess?: boolean | null;
+		endpointPrivateAccess?: boolean | null;
+		publicAccessCidrs?: Array<string> | null;
 	}
 
 	export interface CreateClusterPostBodyLogging {
-		clusterLogging?: Array<LogSetup>;
+		clusterLogging?: Array<LogSetup> | null;
 	}
 
 	export interface CreateFargateProfilePostBody {
@@ -833,16 +833,16 @@ export namespace MyNS {
 		podExecutionRoleArn: string;
 
 		/** The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter. */
-		subnets?: Array<string>;
+		subnets?: Array<string> | null;
 
 		/** The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate profile. */
-		selectors?: Array<FargateProfileSelector>;
+		selectors?: Array<FargateProfileSelector> | null;
 
 		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 
 		/** The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateNodegroupPostBody {
@@ -854,10 +854,10 @@ export namespace MyNS {
 		nodegroupName: string;
 
 		/** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. */
-		scalingConfig?: CreateNodegroupPostBodyScalingConfig;
+		scalingConfig?: CreateNodegroupPostBodyScalingConfig | null;
 
 		/** The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB. */
-		diskSize?: number;
+		diskSize?: number | null;
 
 		/**
 		 * The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have the tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name of your cluster.
@@ -866,13 +866,13 @@ export namespace MyNS {
 		subnets: Array<string>;
 
 		/** The instance type to use for your node group. Currently, you can specify a single instance type for a node group. The default value for this parameter is <code>t3.medium</code>. If you choose a GPU instance type, be sure to specify the <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. */
-		instanceTypes?: Array<string>;
+		instanceTypes?: Array<string> | null;
 
 		/** The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI. */
-		amiType?: NodegroupAmiType;
+		amiType?: NodegroupAmiType | null;
 
 		/** An object representing the remote access configuration for the managed node group. */
-		remoteAccess?: CreateNodegroupPostBodyRemoteAccess;
+		remoteAccess?: CreateNodegroupPostBodyRemoteAccess | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile and associated policies. Before you can launch worker nodes and register them into a cluster, you must create an IAM role for those worker nodes to use when they are launched. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
@@ -881,30 +881,30 @@ export namespace MyNS {
 		nodeRole: string;
 
 		/** The Kubernetes labels to be applied to the nodes in the node group when they are created. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The metadata to apply to the node group to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 
 		/** The Kubernetes version to use for your managed nodes. By default, the Kubernetes version of the cluster is used, and this is the only accepted specified value. */
-		version?: string;
+		version?: string | null;
 
 		/** The AMI version of the Amazon EKS-optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>. */
-		releaseVersion?: string;
+		releaseVersion?: string | null;
 	}
 
 	export interface CreateNodegroupPostBodyScalingConfig {
-		minSize?: number;
-		maxSize?: number;
-		desiredSize?: number;
+		minSize?: number | null;
+		maxSize?: number | null;
+		desiredSize?: number | null;
 	}
 
 	export interface CreateNodegroupPostBodyRemoteAccess {
-		ec2SshKey?: string;
-		sourceSecurityGroups?: Array<string>;
+		ec2SshKey?: string | null;
+		sourceSecurityGroups?: Array<string> | null;
 	}
 
 	export interface TagResourcePostBody {
@@ -925,69 +925,69 @@ export namespace MyNS {
 		version: string;
 
 		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 	}
 
 	export interface UpdateClusterConfigPostBody {
 
 		/** An object representing the VPC configuration to use for an Amazon EKS cluster. */
-		resourcesVpcConfig?: UpdateClusterConfigPostBodyResourcesVpcConfig;
+		resourcesVpcConfig?: UpdateClusterConfigPostBodyResourcesVpcConfig | null;
 
 		/** An object representing the logging configuration for resources in your cluster. */
-		logging?: UpdateClusterConfigPostBodyLogging;
+		logging?: UpdateClusterConfigPostBodyLogging | null;
 
 		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 	}
 
 	export interface UpdateClusterConfigPostBodyResourcesVpcConfig {
-		subnetIds?: Array<string>;
-		securityGroupIds?: Array<string>;
-		endpointPublicAccess?: boolean;
-		endpointPrivateAccess?: boolean;
-		publicAccessCidrs?: Array<string>;
+		subnetIds?: Array<string> | null;
+		securityGroupIds?: Array<string> | null;
+		endpointPublicAccess?: boolean | null;
+		endpointPrivateAccess?: boolean | null;
+		publicAccessCidrs?: Array<string> | null;
 	}
 
 	export interface UpdateClusterConfigPostBodyLogging {
-		clusterLogging?: Array<LogSetup>;
+		clusterLogging?: Array<LogSetup> | null;
 	}
 
 	export interface UpdateNodegroupConfigPostBody {
 
 		/** An object representing a Kubernetes label change for a managed node group. */
-		labels?: UpdateNodegroupConfigPostBodyLabels;
+		labels?: UpdateNodegroupConfigPostBodyLabels | null;
 
 		/** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. */
-		scalingConfig?: UpdateNodegroupConfigPostBodyScalingConfig;
+		scalingConfig?: UpdateNodegroupConfigPostBodyScalingConfig | null;
 
 		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 	}
 
 	export interface UpdateNodegroupConfigPostBodyLabels {
-		addOrUpdateLabels?: LabelsMap;
-		removeLabels?: Array<string>;
+		addOrUpdateLabels?: LabelsMap | null;
+		removeLabels?: Array<string> | null;
 	}
 
 	export interface UpdateNodegroupConfigPostBodyScalingConfig {
-		minSize?: number;
-		maxSize?: number;
-		desiredSize?: number;
+		minSize?: number | null;
+		maxSize?: number | null;
+		desiredSize?: number | null;
 	}
 
 	export interface UpdateNodegroupVersionPostBody {
 
 		/** The Kubernetes version to update to. If no version is specified, then the Kubernetes version of the node group does not change. You can specify the Kubernetes version of the cluster to update the node group to the latest AMI version of the cluster's Kubernetes version. */
-		version?: string;
+		version?: string | null;
 
 		/** The AMI version of the Amazon EKS-optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>. */
-		releaseVersion?: string;
+		releaseVersion?: string | null;
 
 		/** Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue. If an update fails because pods could not be drained, you can force the update after it fails to terminate the old node whether or not any pods are running on the node. */
-		force?: boolean;
+		force?: boolean | null;
 
 		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 	}
 
 }

@@ -3,14 +3,14 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateHttpNamespaceResponse {
-		OperationId?: string;
+		OperationId?: string | null;
 	}
 
 	export interface CreateHttpNamespaceRequest {
 		Name: string;
-		CreatorRequestId?: string;
-		Description?: string;
-		Tags?: Array<Tag>;
+		CreatorRequestId?: string | null;
+		Description?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -36,61 +36,61 @@ export namespace MyNS {
 	}
 
 	export interface CreatePrivateDnsNamespaceResponse {
-		OperationId?: string;
+		OperationId?: string | null;
 	}
 
 	export interface CreatePrivateDnsNamespaceRequest {
 		Name: string;
-		CreatorRequestId?: string;
-		Description?: string;
+		CreatorRequestId?: string | null;
+		Description?: string | null;
 		Vpc: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreatePublicDnsNamespaceResponse {
-		OperationId?: string;
+		OperationId?: string | null;
 	}
 
 	export interface CreatePublicDnsNamespaceRequest {
 		Name: string;
-		CreatorRequestId?: string;
-		Description?: string;
-		Tags?: Array<Tag>;
+		CreatorRequestId?: string | null;
+		Description?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateServiceResponse {
 
 		/** A complex type that contains information about the specified service. */
-		Service?: Service;
+		Service?: Service | null;
 	}
 
 
 	/** A complex type that contains information about the specified service. */
 	export interface Service {
-		Id?: string;
-		Arn?: string;
-		Name?: string;
-		NamespaceId?: string;
-		Description?: string;
-		InstanceCount?: number;
+		Id?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
+		NamespaceId?: string | null;
+		Description?: string | null;
+		InstanceCount?: number | null;
 
 		/** A complex type that contains information about the Amazon Route 53 DNS records that you want AWS Cloud Map to create when you register an instance. */
-		DnsConfig?: DnsConfig;
+		DnsConfig?: DnsConfig | null;
 
 		/** <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p> <important> <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p> </important> <p>Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p> <p>Note the following about configuring health checks.</p> <p> <b>A and AAAA records</b> </p> <p>If <code>DnsConfig</code> includes configurations for both A and AAAA records, AWS Cloud Map creates a health check that uses the IPv4 address to check the health of the resource. If the endpoint that is specified by the IPv4 address is unhealthy, Route 53 considers both the A and AAAA records to be unhealthy. </p> <p> <b>CNAME records</b> </p> <p>You can't specify settings for <code>HealthCheckConfig</code> when the <code>DNSConfig</code> includes <code>CNAME</code> for the value of <code>Type</code>. If you do, the <code>CreateService</code> request will fail with an <code>InvalidInput</code> error.</p> <p> <b>Request interval</b> </p> <p>A Route 53 health checker in each health-checking region sends a health check request to an endpoint every 30 seconds. On average, your endpoint receives a health check request about every two seconds. However, health checkers don't coordinate with one another, so you'll sometimes see several requests per second followed by a few seconds with no health checks at all.</p> <p> <b>Health checking regions</b> </p> <p>Health checkers perform checks from all Route 53 health-checking regions. For a list of the current regions, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>.</p> <p> <b>Alias records</b> </p> <p>When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, AWS Cloud Map creates a Route 53 alias record. Note the following:</p> <ul> <li> <p>Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced AWS resource. such as an ELB load balancer. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth">EvaluateTargetHealth</a>.</p> </li> <li> <p>If you include <code>HealthCheckConfig</code> and then use the service to register an instance that creates an alias record, Route 53 doesn't create the health check.</p> </li> </ul> <p> <b>Charges for health checks</b> </p> <p>Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p> */
-		HealthCheckConfig?: HealthCheckConfig;
+		HealthCheckConfig?: HealthCheckConfig | null;
 
 		/** <p>A complex type that contains information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances:</p> <ul> <li> <p>You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health checker regardless of where your resources are.</p> </li> </ul> <important> <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p> </important> <p>To change the status of a custom health check, submit an <code>UpdateInstanceCustomHealthStatus</code> request. AWS Cloud Map doesn't monitor the status of the resource, it just keeps a record of the status specified in the most recent <code>UpdateInstanceCustomHealthStatus</code> request.</p> <p>Here's how custom health checks work:</p> <ol> <li> <p>You create a service and specify a value for <code>FailureThreshold</code>. </p> <p>The failure threshold indicates the number of 30-second intervals you want AWS Cloud Map to wait between the time that your application sends an <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateInstanceCustomHealthStatus.html">UpdateInstanceCustomHealthStatus</a> request and the time that AWS Cloud Map stops routing internet traffic to the corresponding resource.</p> </li> <li> <p>You register an instance.</p> </li> <li> <p>You configure a third-party health checker to monitor the resource that is associated with the new instance. </p> <note> <p>AWS Cloud Map doesn't check the health of the resource directly. </p> </note> </li> <li> <p>The third-party health-checker determines that the resource is unhealthy and notifies your application.</p> </li> <li> <p>Your application submits an <code>UpdateInstanceCustomHealthStatus</code> request.</p> </li> <li> <p>AWS Cloud Map waits for (<code>FailureThreshold</code> x 30) seconds.</p> </li> <li> <p>If another <code>UpdateInstanceCustomHealthStatus</code> request doesn't arrive during that time to change the status back to healthy, AWS Cloud Map stops routing traffic to the resource.</p> </li> </ol> */
-		HealthCheckCustomConfig?: HealthCheckCustomConfig;
-		CreateDate?: Date;
-		CreatorRequestId?: string;
+		HealthCheckCustomConfig?: HealthCheckCustomConfig | null;
+		CreateDate?: Date | null;
+		CreatorRequestId?: string | null;
 	}
 
 
 	/** A complex type that contains information about the Amazon Route 53 DNS records that you want AWS Cloud Map to create when you register an instance. */
 	export interface DnsConfig {
-		NamespaceId?: string;
-		RoutingPolicy?: DnsConfigRoutingPolicy;
+		NamespaceId?: string | null;
+		RoutingPolicy?: DnsConfigRoutingPolicy | null;
 		DnsRecords: Array<DnsRecord>;
 	}
 
@@ -109,8 +109,8 @@ export namespace MyNS {
 	/** <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p> <important> <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p> </important> <p>Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p> <p>Note the following about configuring health checks.</p> <p> <b>A and AAAA records</b> </p> <p>If <code>DnsConfig</code> includes configurations for both A and AAAA records, AWS Cloud Map creates a health check that uses the IPv4 address to check the health of the resource. If the endpoint that is specified by the IPv4 address is unhealthy, Route 53 considers both the A and AAAA records to be unhealthy. </p> <p> <b>CNAME records</b> </p> <p>You can't specify settings for <code>HealthCheckConfig</code> when the <code>DNSConfig</code> includes <code>CNAME</code> for the value of <code>Type</code>. If you do, the <code>CreateService</code> request will fail with an <code>InvalidInput</code> error.</p> <p> <b>Request interval</b> </p> <p>A Route 53 health checker in each health-checking region sends a health check request to an endpoint every 30 seconds. On average, your endpoint receives a health check request about every two seconds. However, health checkers don't coordinate with one another, so you'll sometimes see several requests per second followed by a few seconds with no health checks at all.</p> <p> <b>Health checking regions</b> </p> <p>Health checkers perform checks from all Route 53 health-checking regions. For a list of the current regions, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>.</p> <p> <b>Alias records</b> </p> <p>When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, AWS Cloud Map creates a Route 53 alias record. Note the following:</p> <ul> <li> <p>Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced AWS resource. such as an ELB load balancer. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth">EvaluateTargetHealth</a>.</p> </li> <li> <p>If you include <code>HealthCheckConfig</code> and then use the service to register an instance that creates an alias record, Route 53 doesn't create the health check.</p> </li> </ul> <p> <b>Charges for health checks</b> </p> <p>Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p> */
 	export interface HealthCheckConfig {
 		Type: HealthCheckConfigType;
-		ResourcePath?: string;
-		FailureThreshold?: number;
+		ResourcePath?: string | null;
+		FailureThreshold?: number | null;
 	}
 
 	export enum HealthCheckConfigType { HTTP = 0, HTTPS = 1, TCP = 2 }
@@ -118,24 +118,24 @@ export namespace MyNS {
 
 	/** <p>A complex type that contains information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances:</p> <ul> <li> <p>You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health checker regardless of where your resources are.</p> </li> </ul> <important> <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p> </important> <p>To change the status of a custom health check, submit an <code>UpdateInstanceCustomHealthStatus</code> request. AWS Cloud Map doesn't monitor the status of the resource, it just keeps a record of the status specified in the most recent <code>UpdateInstanceCustomHealthStatus</code> request.</p> <p>Here's how custom health checks work:</p> <ol> <li> <p>You create a service and specify a value for <code>FailureThreshold</code>. </p> <p>The failure threshold indicates the number of 30-second intervals you want AWS Cloud Map to wait between the time that your application sends an <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateInstanceCustomHealthStatus.html">UpdateInstanceCustomHealthStatus</a> request and the time that AWS Cloud Map stops routing internet traffic to the corresponding resource.</p> </li> <li> <p>You register an instance.</p> </li> <li> <p>You configure a third-party health checker to monitor the resource that is associated with the new instance. </p> <note> <p>AWS Cloud Map doesn't check the health of the resource directly. </p> </note> </li> <li> <p>The third-party health-checker determines that the resource is unhealthy and notifies your application.</p> </li> <li> <p>Your application submits an <code>UpdateInstanceCustomHealthStatus</code> request.</p> </li> <li> <p>AWS Cloud Map waits for (<code>FailureThreshold</code> x 30) seconds.</p> </li> <li> <p>If another <code>UpdateInstanceCustomHealthStatus</code> request doesn't arrive during that time to change the status back to healthy, AWS Cloud Map stops routing traffic to the resource.</p> </li> </ol> */
 	export interface HealthCheckCustomConfig {
-		FailureThreshold?: number;
+		FailureThreshold?: number | null;
 	}
 
 	export interface CreateServiceRequest {
 		Name: string;
-		NamespaceId?: string;
-		CreatorRequestId?: string;
-		Description?: string;
+		NamespaceId?: string | null;
+		CreatorRequestId?: string | null;
+		Description?: string | null;
 
 		/** A complex type that contains information about the Amazon Route 53 DNS records that you want AWS Cloud Map to create when you register an instance. */
-		DnsConfig?: DnsConfig;
+		DnsConfig?: DnsConfig | null;
 
 		/** <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p> <important> <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p> </important> <p>Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p> <p>Note the following about configuring health checks.</p> <p> <b>A and AAAA records</b> </p> <p>If <code>DnsConfig</code> includes configurations for both A and AAAA records, AWS Cloud Map creates a health check that uses the IPv4 address to check the health of the resource. If the endpoint that is specified by the IPv4 address is unhealthy, Route 53 considers both the A and AAAA records to be unhealthy. </p> <p> <b>CNAME records</b> </p> <p>You can't specify settings for <code>HealthCheckConfig</code> when the <code>DNSConfig</code> includes <code>CNAME</code> for the value of <code>Type</code>. If you do, the <code>CreateService</code> request will fail with an <code>InvalidInput</code> error.</p> <p> <b>Request interval</b> </p> <p>A Route 53 health checker in each health-checking region sends a health check request to an endpoint every 30 seconds. On average, your endpoint receives a health check request about every two seconds. However, health checkers don't coordinate with one another, so you'll sometimes see several requests per second followed by a few seconds with no health checks at all.</p> <p> <b>Health checking regions</b> </p> <p>Health checkers perform checks from all Route 53 health-checking regions. For a list of the current regions, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>.</p> <p> <b>Alias records</b> </p> <p>When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, AWS Cloud Map creates a Route 53 alias record. Note the following:</p> <ul> <li> <p>Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced AWS resource. such as an ELB load balancer. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth">EvaluateTargetHealth</a>.</p> </li> <li> <p>If you include <code>HealthCheckConfig</code> and then use the service to register an instance that creates an alias record, Route 53 doesn't create the health check.</p> </li> </ul> <p> <b>Charges for health checks</b> </p> <p>Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p> */
-		HealthCheckConfig?: HealthCheckConfig;
+		HealthCheckConfig?: HealthCheckConfig | null;
 
 		/** <p>A complex type that contains information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances:</p> <ul> <li> <p>You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health checker regardless of where your resources are.</p> </li> </ul> <important> <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p> </important> <p>To change the status of a custom health check, submit an <code>UpdateInstanceCustomHealthStatus</code> request. AWS Cloud Map doesn't monitor the status of the resource, it just keeps a record of the status specified in the most recent <code>UpdateInstanceCustomHealthStatus</code> request.</p> <p>Here's how custom health checks work:</p> <ol> <li> <p>You create a service and specify a value for <code>FailureThreshold</code>. </p> <p>The failure threshold indicates the number of 30-second intervals you want AWS Cloud Map to wait between the time that your application sends an <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateInstanceCustomHealthStatus.html">UpdateInstanceCustomHealthStatus</a> request and the time that AWS Cloud Map stops routing internet traffic to the corresponding resource.</p> </li> <li> <p>You register an instance.</p> </li> <li> <p>You configure a third-party health checker to monitor the resource that is associated with the new instance. </p> <note> <p>AWS Cloud Map doesn't check the health of the resource directly. </p> </note> </li> <li> <p>The third-party health-checker determines that the resource is unhealthy and notifies your application.</p> </li> <li> <p>Your application submits an <code>UpdateInstanceCustomHealthStatus</code> request.</p> </li> <li> <p>AWS Cloud Map waits for (<code>FailureThreshold</code> x 30) seconds.</p> </li> <li> <p>If another <code>UpdateInstanceCustomHealthStatus</code> request doesn't arrive during that time to change the status back to healthy, AWS Cloud Map stops routing traffic to the resource.</p> </li> </ol> */
-		HealthCheckCustomConfig?: HealthCheckCustomConfig;
-		Tags?: Array<Tag>;
+		HealthCheckCustomConfig?: HealthCheckCustomConfig | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface NamespaceNotFound {
@@ -145,7 +145,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteNamespaceResponse {
-		OperationId?: string;
+		OperationId?: string | null;
 	}
 
 	export interface DeleteNamespaceRequest {
@@ -166,7 +166,7 @@ export namespace MyNS {
 	}
 
 	export interface DeregisterInstanceResponse {
-		OperationId?: string;
+		OperationId?: string | null;
 	}
 
 	export interface DeregisterInstanceRequest {
@@ -178,17 +178,17 @@ export namespace MyNS {
 	}
 
 	export interface DiscoverInstancesResponse {
-		Instances?: Array<HttpInstanceSummary>;
+		Instances?: Array<HttpInstanceSummary> | null;
 	}
 
 
 	/** In a response to a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a> request, <code>HttpInstanceSummary</code> contains information about one instance that matches the values that you specified in the request. */
 	export interface HttpInstanceSummary {
-		InstanceId?: string;
-		NamespaceName?: string;
-		ServiceName?: string;
-		HealthStatus?: HttpInstanceSummaryHealthStatus;
-		Attributes?: Attributes;
+		InstanceId?: string | null;
+		NamespaceName?: string | null;
+		ServiceName?: string | null;
+		HealthStatus?: HttpInstanceSummaryHealthStatus | null;
+		Attributes?: Attributes | null;
 	}
 
 	export enum HttpInstanceSummaryHealthStatus { HEALTHY = 0, UNHEALTHY = 1, UNKNOWN = 2 }
@@ -199,9 +199,9 @@ export namespace MyNS {
 	export interface DiscoverInstancesRequest {
 		NamespaceName: string;
 		ServiceName: string;
-		MaxResults?: number;
-		QueryParameters?: Attributes;
-		HealthStatus?: DiscoverInstancesRequestHealthStatus;
+		MaxResults?: number | null;
+		QueryParameters?: Attributes | null;
+		HealthStatus?: DiscoverInstancesRequestHealthStatus | null;
 	}
 
 	export enum DiscoverInstancesRequestHealthStatus { HEALTHY = 0, UNHEALTHY = 1, ALL = 2 }
@@ -212,15 +212,15 @@ export namespace MyNS {
 	export interface GetInstanceResponse {
 
 		/** A complex type that contains information about an instance that AWS Cloud Map creates when you submit a <code>RegisterInstance</code> request. */
-		Instance?: Instance;
+		Instance?: Instance | null;
 	}
 
 
 	/** A complex type that contains information about an instance that AWS Cloud Map creates when you submit a <code>RegisterInstance</code> request. */
 	export interface Instance {
 		Id: string;
-		CreatorRequestId?: string;
-		Attributes?: Attributes;
+		CreatorRequestId?: string | null;
+		Attributes?: Attributes | null;
 	}
 
 	export interface GetInstanceRequest {
@@ -229,8 +229,8 @@ export namespace MyNS {
 	}
 
 	export interface GetInstancesHealthStatusResponse {
-		Status?: InstanceHealthStatusMap;
-		NextToken?: string;
+		Status?: InstanceHealthStatusMap | null;
+		NextToken?: string | null;
 	}
 
 	export interface InstanceHealthStatusMap {
@@ -238,31 +238,31 @@ export namespace MyNS {
 
 	export interface GetInstancesHealthStatusRequest {
 		ServiceId: string;
-		Instances?: Array<string>;
-		MaxResults?: number;
-		NextToken?: string;
+		Instances?: Array<string> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetNamespaceResponse {
 
 		/** A complex type that contains information about a specified namespace. */
-		Namespace?: Namespace;
+		Namespace?: Namespace | null;
 	}
 
 
 	/** A complex type that contains information about a specified namespace. */
 	export interface Namespace {
-		Id?: string;
-		Arn?: string;
-		Name?: string;
-		Type?: NamespaceType;
-		Description?: string;
-		ServiceCount?: number;
+		Id?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
+		Type?: NamespaceType | null;
+		Description?: string | null;
+		ServiceCount?: number | null;
 
 		/** A complex type that contains information that is specific to the namespace type. */
-		Properties?: NamespaceProperties;
-		CreateDate?: Date;
-		CreatorRequestId?: string;
+		Properties?: NamespaceProperties | null;
+		CreateDate?: Date | null;
+		CreatorRequestId?: string | null;
 	}
 
 	export enum NamespaceType { DNS_PUBLIC = 0, DNS_PRIVATE = 1, HTTP = 2 }
@@ -272,22 +272,22 @@ export namespace MyNS {
 	export interface NamespaceProperties {
 
 		/** A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace. */
-		DnsProperties?: DnsProperties;
+		DnsProperties?: DnsProperties | null;
 
 		/** A complex type that contains the name of an HTTP namespace. */
-		HttpProperties?: HttpProperties;
+		HttpProperties?: HttpProperties | null;
 	}
 
 
 	/** A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace. */
 	export interface DnsProperties {
-		HostedZoneId?: string;
+		HostedZoneId?: string | null;
 	}
 
 
 	/** A complex type that contains the name of an HTTP namespace. */
 	export interface HttpProperties {
-		HttpName?: string;
+		HttpName?: string | null;
 	}
 
 	export interface GetNamespaceRequest {
@@ -297,20 +297,20 @@ export namespace MyNS {
 	export interface GetOperationResponse {
 
 		/** A complex type that contains information about a specified operation. */
-		Operation?: Operation;
+		Operation?: Operation | null;
 	}
 
 
 	/** A complex type that contains information about a specified operation. */
 	export interface Operation {
-		Id?: string;
-		Type?: OperationType;
-		Status?: OperationStatus;
-		ErrorMessage?: string;
-		ErrorCode?: string;
-		CreateDate?: Date;
-		UpdateDate?: Date;
-		Targets?: OperationTargetsMap;
+		Id?: string | null;
+		Type?: OperationType | null;
+		Status?: OperationStatus | null;
+		ErrorMessage?: string | null;
+		ErrorCode?: string | null;
+		CreateDate?: Date | null;
+		UpdateDate?: Date | null;
+		Targets?: OperationTargetsMap | null;
 	}
 
 	export enum OperationType { CREATE_NAMESPACE = 0, DELETE_NAMESPACE = 1, UPDATE_SERVICE = 2, REGISTER_INSTANCE = 3, DEREGISTER_INSTANCE = 4 }
@@ -330,7 +330,7 @@ export namespace MyNS {
 	export interface GetServiceResponse {
 
 		/** A complex type that contains information about the specified service. */
-		Service?: Service;
+		Service?: Service | null;
 	}
 
 	export interface GetServiceRequest {
@@ -338,47 +338,47 @@ export namespace MyNS {
 	}
 
 	export interface ListInstancesResponse {
-		Instances?: Array<InstanceSummary>;
-		NextToken?: string;
+		Instances?: Array<InstanceSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A complex type that contains information about the instances that you registered by using a specified service. */
 	export interface InstanceSummary {
-		Id?: string;
-		Attributes?: Attributes;
+		Id?: string | null;
+		Attributes?: Attributes | null;
 	}
 
 	export interface ListInstancesRequest {
 		ServiceId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListNamespacesResponse {
-		Namespaces?: Array<NamespaceSummary>;
-		NextToken?: string;
+		Namespaces?: Array<NamespaceSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A complex type that contains information about a namespace. */
 	export interface NamespaceSummary {
-		Id?: string;
-		Arn?: string;
-		Name?: string;
-		Type?: NamespaceType;
-		Description?: string;
-		ServiceCount?: number;
+		Id?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
+		Type?: NamespaceType | null;
+		Description?: string | null;
+		ServiceCount?: number | null;
 
 		/** A complex type that contains information that is specific to the namespace type. */
-		Properties?: NamespaceProperties;
-		CreateDate?: Date;
+		Properties?: NamespaceProperties | null;
+		CreateDate?: Date | null;
 	}
 
 	export interface ListNamespacesRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		Filters?: Array<NamespaceFilter>;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		Filters?: Array<NamespaceFilter> | null;
 	}
 
 
@@ -386,7 +386,7 @@ export namespace MyNS {
 	export interface NamespaceFilter {
 		Name: NamespaceFilterName;
 		Values: Array<string>;
-		Condition?: NamespaceFilterCondition;
+		Condition?: NamespaceFilterCondition | null;
 	}
 
 	export enum NamespaceFilterName { TYPE = 0 }
@@ -394,21 +394,21 @@ export namespace MyNS {
 	export enum NamespaceFilterCondition { EQ = 0, IN = 1, BETWEEN = 2 }
 
 	export interface ListOperationsResponse {
-		Operations?: Array<OperationSummary>;
-		NextToken?: string;
+		Operations?: Array<OperationSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A complex type that contains information about an operation that matches the criteria that you specified in a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html">ListOperations</a> request. */
 	export interface OperationSummary {
-		Id?: string;
-		Status?: OperationStatus;
+		Id?: string | null;
+		Status?: OperationStatus | null;
 	}
 
 	export interface ListOperationsRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		Filters?: Array<OperationFilter>;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		Filters?: Array<OperationFilter> | null;
 	}
 
 
@@ -416,40 +416,40 @@ export namespace MyNS {
 	export interface OperationFilter {
 		Name: OperationFilterName;
 		Values: Array<string>;
-		Condition?: NamespaceFilterCondition;
+		Condition?: NamespaceFilterCondition | null;
 	}
 
 	export enum OperationFilterName { NAMESPACE_ID = 0, SERVICE_ID = 1, STATUS = 2, TYPE = 3, UPDATE_DATE = 4 }
 
 	export interface ListServicesResponse {
-		Services?: Array<ServiceSummary>;
-		NextToken?: string;
+		Services?: Array<ServiceSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A complex type that contains information about a specified service. */
 	export interface ServiceSummary {
-		Id?: string;
-		Arn?: string;
-		Name?: string;
-		Description?: string;
-		InstanceCount?: number;
+		Id?: string | null;
+		Arn?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		InstanceCount?: number | null;
 
 		/** A complex type that contains information about the Amazon Route 53 DNS records that you want AWS Cloud Map to create when you register an instance. */
-		DnsConfig?: DnsConfig;
+		DnsConfig?: DnsConfig | null;
 
 		/** <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p> <important> <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p> </important> <p>Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p> <p>Note the following about configuring health checks.</p> <p> <b>A and AAAA records</b> </p> <p>If <code>DnsConfig</code> includes configurations for both A and AAAA records, AWS Cloud Map creates a health check that uses the IPv4 address to check the health of the resource. If the endpoint that is specified by the IPv4 address is unhealthy, Route 53 considers both the A and AAAA records to be unhealthy. </p> <p> <b>CNAME records</b> </p> <p>You can't specify settings for <code>HealthCheckConfig</code> when the <code>DNSConfig</code> includes <code>CNAME</code> for the value of <code>Type</code>. If you do, the <code>CreateService</code> request will fail with an <code>InvalidInput</code> error.</p> <p> <b>Request interval</b> </p> <p>A Route 53 health checker in each health-checking region sends a health check request to an endpoint every 30 seconds. On average, your endpoint receives a health check request about every two seconds. However, health checkers don't coordinate with one another, so you'll sometimes see several requests per second followed by a few seconds with no health checks at all.</p> <p> <b>Health checking regions</b> </p> <p>Health checkers perform checks from all Route 53 health-checking regions. For a list of the current regions, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>.</p> <p> <b>Alias records</b> </p> <p>When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, AWS Cloud Map creates a Route 53 alias record. Note the following:</p> <ul> <li> <p>Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced AWS resource. such as an ELB load balancer. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth">EvaluateTargetHealth</a>.</p> </li> <li> <p>If you include <code>HealthCheckConfig</code> and then use the service to register an instance that creates an alias record, Route 53 doesn't create the health check.</p> </li> </ul> <p> <b>Charges for health checks</b> </p> <p>Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p> */
-		HealthCheckConfig?: HealthCheckConfig;
+		HealthCheckConfig?: HealthCheckConfig | null;
 
 		/** <p>A complex type that contains information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances:</p> <ul> <li> <p>You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health checker regardless of where your resources are.</p> </li> </ul> <important> <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p> </important> <p>To change the status of a custom health check, submit an <code>UpdateInstanceCustomHealthStatus</code> request. AWS Cloud Map doesn't monitor the status of the resource, it just keeps a record of the status specified in the most recent <code>UpdateInstanceCustomHealthStatus</code> request.</p> <p>Here's how custom health checks work:</p> <ol> <li> <p>You create a service and specify a value for <code>FailureThreshold</code>. </p> <p>The failure threshold indicates the number of 30-second intervals you want AWS Cloud Map to wait between the time that your application sends an <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateInstanceCustomHealthStatus.html">UpdateInstanceCustomHealthStatus</a> request and the time that AWS Cloud Map stops routing internet traffic to the corresponding resource.</p> </li> <li> <p>You register an instance.</p> </li> <li> <p>You configure a third-party health checker to monitor the resource that is associated with the new instance. </p> <note> <p>AWS Cloud Map doesn't check the health of the resource directly. </p> </note> </li> <li> <p>The third-party health-checker determines that the resource is unhealthy and notifies your application.</p> </li> <li> <p>Your application submits an <code>UpdateInstanceCustomHealthStatus</code> request.</p> </li> <li> <p>AWS Cloud Map waits for (<code>FailureThreshold</code> x 30) seconds.</p> </li> <li> <p>If another <code>UpdateInstanceCustomHealthStatus</code> request doesn't arrive during that time to change the status back to healthy, AWS Cloud Map stops routing traffic to the resource.</p> </li> </ol> */
-		HealthCheckCustomConfig?: HealthCheckCustomConfig;
-		CreateDate?: Date;
+		HealthCheckCustomConfig?: HealthCheckCustomConfig | null;
+		CreateDate?: Date | null;
 	}
 
 	export interface ListServicesRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		Filters?: Array<ServiceFilter>;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		Filters?: Array<ServiceFilter> | null;
 	}
 
 
@@ -457,13 +457,13 @@ export namespace MyNS {
 	export interface ServiceFilter {
 		Name: ServiceFilterName;
 		Values: Array<string>;
-		Condition?: NamespaceFilterCondition;
+		Condition?: NamespaceFilterCondition | null;
 	}
 
 	export enum ServiceFilterName { NAMESPACE_ID = 0 }
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -474,13 +474,13 @@ export namespace MyNS {
 	}
 
 	export interface RegisterInstanceResponse {
-		OperationId?: string;
+		OperationId?: string | null;
 	}
 
 	export interface RegisterInstanceRequest {
 		ServiceId: string;
 		InstanceId: string;
-		CreatorRequestId?: string;
+		CreatorRequestId?: string | null;
 		Attributes: Attributes;
 	}
 
@@ -512,7 +512,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateServiceResponse {
-		OperationId?: string;
+		OperationId?: string | null;
 	}
 
 	export interface UpdateServiceRequest {
@@ -528,13 +528,13 @@ export namespace MyNS {
 
 	/** A complex type that contains changes to an existing service. */
 	export interface ServiceChange {
-		Description?: string;
+		Description?: string | null;
 
 		/** A complex type that contains information about changes to the Route 53 DNS records that AWS Cloud Map creates when you register an instance. */
-		DnsConfig?: DnsConfigChange;
+		DnsConfig?: DnsConfigChange | null;
 
 		/** <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p> <important> <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p> </important> <p>Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p> <p>Note the following about configuring health checks.</p> <p> <b>A and AAAA records</b> </p> <p>If <code>DnsConfig</code> includes configurations for both A and AAAA records, AWS Cloud Map creates a health check that uses the IPv4 address to check the health of the resource. If the endpoint that is specified by the IPv4 address is unhealthy, Route 53 considers both the A and AAAA records to be unhealthy. </p> <p> <b>CNAME records</b> </p> <p>You can't specify settings for <code>HealthCheckConfig</code> when the <code>DNSConfig</code> includes <code>CNAME</code> for the value of <code>Type</code>. If you do, the <code>CreateService</code> request will fail with an <code>InvalidInput</code> error.</p> <p> <b>Request interval</b> </p> <p>A Route 53 health checker in each health-checking region sends a health check request to an endpoint every 30 seconds. On average, your endpoint receives a health check request about every two seconds. However, health checkers don't coordinate with one another, so you'll sometimes see several requests per second followed by a few seconds with no health checks at all.</p> <p> <b>Health checking regions</b> </p> <p>Health checkers perform checks from all Route 53 health-checking regions. For a list of the current regions, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>.</p> <p> <b>Alias records</b> </p> <p>When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, AWS Cloud Map creates a Route 53 alias record. Note the following:</p> <ul> <li> <p>Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced AWS resource. such as an ELB load balancer. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth">EvaluateTargetHealth</a>.</p> </li> <li> <p>If you include <code>HealthCheckConfig</code> and then use the service to register an instance that creates an alias record, Route 53 doesn't create the health check.</p> </li> </ul> <p> <b>Charges for health checks</b> </p> <p>Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p> */
-		HealthCheckConfig?: HealthCheckConfig;
+		HealthCheckConfig?: HealthCheckConfig | null;
 	}
 
 
@@ -652,7 +652,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetInstancesHealthStatusResponse} Success
 		 */
-		GetInstancesHealthStatus(MaxResults: string, NextToken: string, requestBody: GetInstancesHealthStatusRequest): Observable<GetInstancesHealthStatusResponse> {
+		GetInstancesHealthStatus(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetInstancesHealthStatusRequest): Observable<GetInstancesHealthStatusResponse> {
 			return this.http.post<GetInstancesHealthStatusResponse>(this.baseUri + '#X-Amz-Target=Route53AutoNaming_v20170314.GetInstancesHealthStatus?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -690,7 +690,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInstancesResponse} Success
 		 */
-		ListInstances(MaxResults: string, NextToken: string, requestBody: ListInstancesRequest): Observable<ListInstancesResponse> {
+		ListInstances(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListInstancesRequest): Observable<ListInstancesResponse> {
 			return this.http.post<ListInstancesResponse>(this.baseUri + '#X-Amz-Target=Route53AutoNaming_v20170314.ListInstances?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -701,7 +701,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListNamespacesResponse} Success
 		 */
-		ListNamespaces(MaxResults: string, NextToken: string, requestBody: ListNamespacesRequest): Observable<ListNamespacesResponse> {
+		ListNamespaces(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListNamespacesRequest): Observable<ListNamespacesResponse> {
 			return this.http.post<ListNamespacesResponse>(this.baseUri + '#X-Amz-Target=Route53AutoNaming_v20170314.ListNamespaces?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -712,7 +712,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListOperationsResponse} Success
 		 */
-		ListOperations(MaxResults: string, NextToken: string, requestBody: ListOperationsRequest): Observable<ListOperationsResponse> {
+		ListOperations(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListOperationsRequest): Observable<ListOperationsResponse> {
 			return this.http.post<ListOperationsResponse>(this.baseUri + '#X-Amz-Target=Route53AutoNaming_v20170314.ListOperations?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -723,7 +723,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListServicesResponse} Success
 		 */
-		ListServices(MaxResults: string, NextToken: string, requestBody: ListServicesRequest): Observable<ListServicesResponse> {
+		ListServices(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListServicesRequest): Observable<ListServicesResponse> {
 			return this.http.post<ListServicesResponse>(this.baseUri + '#X-Amz-Target=Route53AutoNaming_v20170314.ListServices?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

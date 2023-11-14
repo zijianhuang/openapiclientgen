@@ -3,9 +3,9 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface DescribeReportCreationOutput {
-		Status?: string;
-		S3Location?: string;
-		ErrorMessage?: string;
+		Status?: string | null;
+		S3Location?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export interface DescribeReportCreationInput {
@@ -24,48 +24,48 @@ export namespace MyNS {
 	}
 
 	export interface GetComplianceSummaryOutput {
-		SummaryList?: Array<Summary>;
-		PaginationToken?: string;
+		SummaryList?: Array<Summary> | null;
+		PaginationToken?: string | null;
 	}
 
 
 	/** A count of noncompliant resources. */
 	export interface Summary {
-		LastUpdated?: string;
-		TargetId?: string;
-		TargetIdType?: SummaryTargetIdType;
-		Region?: string;
-		ResourceType?: string;
-		NonCompliantResources?: number;
+		LastUpdated?: string | null;
+		TargetId?: string | null;
+		TargetIdType?: SummaryTargetIdType | null;
+		Region?: string | null;
+		ResourceType?: string | null;
+		NonCompliantResources?: number | null;
 	}
 
 	export enum SummaryTargetIdType { ACCOUNT = 0, OU = 1, ROOT = 2 }
 
 	export interface GetComplianceSummaryInput {
-		TargetIdFilters?: Array<string>;
-		RegionFilters?: Array<string>;
-		ResourceTypeFilters?: Array<string>;
-		TagKeyFilters?: Array<string>;
-		GroupBy?: Array<GroupByAttribute>;
-		MaxResults?: number;
-		PaginationToken?: string;
+		TargetIdFilters?: Array<string> | null;
+		RegionFilters?: Array<string> | null;
+		ResourceTypeFilters?: Array<string> | null;
+		TagKeyFilters?: Array<string> | null;
+		GroupBy?: Array<GroupByAttribute> | null;
+		MaxResults?: number | null;
+		PaginationToken?: string | null;
 	}
 
 	export enum GroupByAttribute { TARGET_ID = 0, REGION = 1, RESOURCE_TYPE = 2 }
 
 	export interface GetResourcesOutput {
-		PaginationToken?: string;
-		ResourceTagMappingList?: Array<ResourceTagMapping>;
+		PaginationToken?: string | null;
+		ResourceTagMappingList?: Array<ResourceTagMapping> | null;
 	}
 
 
 	/** A list of resource ARNs and the tags (keys and values) that are associated with each. */
 	export interface ResourceTagMapping {
-		ResourceARN?: string;
-		Tags?: Array<Tag>;
+		ResourceARN?: string | null;
+		Tags?: Array<Tag> | null;
 
 		/** Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys. */
-		ComplianceDetails?: ComplianceDetails;
+		ComplianceDetails?: ComplianceDetails | null;
 	}
 
 
@@ -78,47 +78,47 @@ export namespace MyNS {
 
 	/** Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys. */
 	export interface ComplianceDetails {
-		NoncompliantKeys?: Array<string>;
-		KeysWithNoncompliantValues?: Array<string>;
-		ComplianceStatus?: boolean;
+		NoncompliantKeys?: Array<string> | null;
+		KeysWithNoncompliantValues?: Array<string> | null;
+		ComplianceStatus?: boolean | null;
 	}
 
 	export interface GetResourcesInput {
-		PaginationToken?: string;
-		TagFilters?: Array<TagFilter>;
-		ResourcesPerPage?: number;
-		TagsPerPage?: number;
-		ResourceTypeFilters?: Array<string>;
-		IncludeComplianceDetails?: boolean;
-		ExcludeCompliantResources?: boolean;
+		PaginationToken?: string | null;
+		TagFilters?: Array<TagFilter> | null;
+		ResourcesPerPage?: number | null;
+		TagsPerPage?: number | null;
+		ResourceTypeFilters?: Array<string> | null;
+		IncludeComplianceDetails?: boolean | null;
+		ExcludeCompliantResources?: boolean | null;
 	}
 
 
 	/** A list of tags (keys and values) that are used to specify the associated resources. */
 	export interface TagFilter {
-		Key?: string;
-		Values?: Array<string>;
+		Key?: string | null;
+		Values?: Array<string> | null;
 	}
 
 	export interface PaginationTokenExpiredException {
 	}
 
 	export interface GetTagKeysOutput {
-		PaginationToken?: string;
-		TagKeys?: Array<string>;
+		PaginationToken?: string | null;
+		TagKeys?: Array<string> | null;
 	}
 
 	export interface GetTagKeysInput {
-		PaginationToken?: string;
+		PaginationToken?: string | null;
 	}
 
 	export interface GetTagValuesOutput {
-		PaginationToken?: string;
-		TagValues?: Array<string>;
+		PaginationToken?: string | null;
+		TagValues?: Array<string> | null;
 	}
 
 	export interface GetTagValuesInput {
-		PaginationToken?: string;
+		PaginationToken?: string | null;
 		Key: string;
 	}
 
@@ -133,7 +133,7 @@ export namespace MyNS {
 	}
 
 	export interface TagResourcesOutput {
-		FailedResourcesMap?: FailedResourcesMap;
+		FailedResourcesMap?: FailedResourcesMap | null;
 	}
 
 	export interface FailedResourcesMap {
@@ -148,7 +148,7 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourcesOutput {
-		FailedResourcesMap?: FailedResourcesMap;
+		FailedResourcesMap?: FailedResourcesMap | null;
 	}
 
 	export interface UntagResourcesInput {
@@ -161,9 +161,9 @@ export namespace MyNS {
 
 	/** <p>Information about the errors that are returned for each failed resource. This information can include <code>InternalServiceException</code> and <code>InvalidParameterException</code> errors. It can also include any valid error code returned by the AWS service that hosts the resource that the ARN key represents.</p> <p>The following are common error codes that you might receive from other AWS services:</p> <ul> <li> <p> <b>InternalServiceException</b> – This can mean that the Resource Groups Tagging API didn't receive a response from another AWS service. It can also mean the the resource type in the request is not supported by the Resource Groups Tagging API. In these cases, it's safe to retry the request and then call <a href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a> to verify the changes.</p> </li> <li> <p> <b>AccessDeniedException</b> – This can mean that you need permission to calling tagging operations in the AWS service that contains the resource. For example, to use the Resource Groups Tagging API to tag a CloudWatch alarm resource, you need permission to call <a href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html"> <code>TagResources</code> </a> <i>and</i> <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html"> <code>TagResource</code> </a> in the CloudWatch API. </p> </li> </ul> <p>For more information on errors that are generated from other AWS services, see the documentation for that service. </p> */
 	export interface FailureInfo {
-		StatusCode?: number;
-		ErrorCode?: ErrorCode;
-		ErrorMessage?: string;
+		StatusCode?: number | null;
+		ErrorCode?: ErrorCode | null;
+		ErrorMessage?: string | null;
 	}
 
 	export enum TargetIdType { ACCOUNT = 0, OU = 1, ROOT = 2 }
@@ -189,7 +189,7 @@ export namespace MyNS {
 		 * @param {string} PaginationToken Pagination token
 		 * @return {GetComplianceSummaryOutput} Success
 		 */
-		GetComplianceSummary(MaxResults: string, PaginationToken: string, requestBody: GetComplianceSummaryInput): Observable<GetComplianceSummaryOutput> {
+		GetComplianceSummary(MaxResults: string | null | undefined, PaginationToken: string | null | undefined, requestBody: GetComplianceSummaryInput): Observable<GetComplianceSummaryOutput> {
 			return this.http.post<GetComplianceSummaryOutput>(this.baseUri + '#X-Amz-Target=ResourceGroupsTaggingAPI_20170126.GetComplianceSummary?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&PaginationToken=' + (PaginationToken == null ? '' : encodeURIComponent(PaginationToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -200,7 +200,7 @@ export namespace MyNS {
 		 * @param {string} PaginationToken Pagination token
 		 * @return {GetResourcesOutput} Success
 		 */
-		GetResources(ResourcesPerPage: string, PaginationToken: string, requestBody: GetResourcesInput): Observable<GetResourcesOutput> {
+		GetResources(ResourcesPerPage: string | null | undefined, PaginationToken: string | null | undefined, requestBody: GetResourcesInput): Observable<GetResourcesOutput> {
 			return this.http.post<GetResourcesOutput>(this.baseUri + '#X-Amz-Target=ResourceGroupsTaggingAPI_20170126.GetResources?ResourcesPerPage=' + (ResourcesPerPage == null ? '' : encodeURIComponent(ResourcesPerPage)) + '&PaginationToken=' + (PaginationToken == null ? '' : encodeURIComponent(PaginationToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -210,7 +210,7 @@ export namespace MyNS {
 		 * @param {string} PaginationToken Pagination token
 		 * @return {GetTagKeysOutput} Success
 		 */
-		GetTagKeys(PaginationToken: string, requestBody: GetTagKeysInput): Observable<GetTagKeysOutput> {
+		GetTagKeys(PaginationToken: string | null | undefined, requestBody: GetTagKeysInput): Observable<GetTagKeysOutput> {
 			return this.http.post<GetTagKeysOutput>(this.baseUri + '#X-Amz-Target=ResourceGroupsTaggingAPI_20170126.GetTagKeys?PaginationToken=' + (PaginationToken == null ? '' : encodeURIComponent(PaginationToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -220,7 +220,7 @@ export namespace MyNS {
 		 * @param {string} PaginationToken Pagination token
 		 * @return {GetTagValuesOutput} Success
 		 */
-		GetTagValues(PaginationToken: string, requestBody: GetTagValuesInput): Observable<GetTagValuesOutput> {
+		GetTagValues(PaginationToken: string | null | undefined, requestBody: GetTagValuesInput): Observable<GetTagValuesOutput> {
 			return this.http.post<GetTagValuesOutput>(this.baseUri + '#X-Amz-Target=ResourceGroupsTaggingAPI_20170126.GetTagValues?PaginationToken=' + (PaginationToken == null ? '' : encodeURIComponent(PaginationToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

@@ -39,9 +39,7 @@ namespace Fonlow.CodeDom.Web.Ts
 		{
 			string httpMethodName = HttpMethod.ToString().ToLower(); //Method is always uppercase.
 																	 //deal with parameters
-			var parameters = ParameterDescriptions.Select(d =>
-				new CodeParameterDeclarationExpression(TypeMapper.MapCodeTypeReferenceToTsText(d.ParameterTypeReference), d.Name))
-				.ToList();
+			var parameters = CreateCodeParameterDeclarationExpressions();
 
 			var returnTypeText = TypeMapper.MapCodeTypeReferenceToTsText(ReturnTypeReference);
 			if (returnTypeText == "any" || String.IsNullOrEmpty(returnTypeText) || returnTypeText == "response")
@@ -52,8 +50,8 @@ namespace Fonlow.CodeDom.Web.Ts
 
 			Debug.WriteLine("callback: " + callbackTypeText);
 			var callbackTypeReference = new CodeSnipetTypeReference(callbackTypeText);
-			parameters.Add(new CodeParameterDeclarationExpression(callbackTypeReference, "callback"));
-			Method.Parameters.AddRange(parameters.ToArray());
+			Method.Parameters.AddRange(parameters);
+			Method.Parameters.Add(new CodeParameterDeclarationExpression(callbackTypeReference, "callback"));
 
 			if (RequestBodyCodeTypeReference != null)
 			{

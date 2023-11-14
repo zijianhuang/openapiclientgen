@@ -385,14 +385,14 @@ namespace MyNS
 		public System.Nullable<System.Int32> Count { get; set; }
 	}
 	
-	public partial class Misc
+	public partial class MyClient
 	{
 		
 		private System.Net.Http.HttpClient client;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public MyClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -591,84 +591,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Create new Audit Stream
-		/// Streams_Create {organization}/_apis/audit/streams
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="daysToBackfill">The number of days of previously recorded audit data that will be replayed into the stream. A value of zero will result in only new events being streamed.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <param name="requestBody">Stream entry</param>
-		/// <returns>successful operation</returns>
-		public async Task<AuditStream> Streams_CreateAsync(string organization, int daysToBackfill, string api_version, AuditStream requestBody)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams&daysToBackfill="+daysToBackfill+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<AuditStream>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Create new Audit Stream
-		/// Streams_Create {organization}/_apis/audit/streams
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="daysToBackfill">The number of days of previously recorded audit data that will be replayed into the stream. A value of zero will result in only new events being streamed.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <param name="requestBody">Stream entry</param>
-		/// <returns>successful operation</returns>
-		public AuditStream Streams_Create(string organization, int daysToBackfill, string api_version, AuditStream requestBody)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams&daysToBackfill="+daysToBackfill+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<AuditStream>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Return all Audit Streams scoped to an organization
 		/// Streams_Query_All_Streams {organization}/_apis/audit/streams
 		/// </summary>
@@ -805,51 +727,79 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Delete Audit Stream
-		/// Streams_Delete {organization}/_apis/audit/streams/{streamId}
+		/// Create new Audit Stream
+		/// Streams_Create {organization}/_apis/audit/streams
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="streamId">Id of stream entry to delete</param>
+		/// <param name="daysToBackfill">The number of days of previously recorded audit data that will be replayed into the stream. A value of zero will result in only new events being streamed.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">Stream entry</param>
 		/// <returns>successful operation</returns>
-		public async Task Streams_DeleteAsync(string organization, int streamId, string api_version)
+		public async Task<AuditStream> Streams_CreateAsync(string organization, int daysToBackfill, string api_version, AuditStream requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams/"+streamId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams&daysToBackfill="+daysToBackfill+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
 			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<AuditStream>(jsonReader);
+				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
 		
 		/// <summary>
-		/// Delete Audit Stream
-		/// Streams_Delete {organization}/_apis/audit/streams/{streamId}
+		/// Create new Audit Stream
+		/// Streams_Create {organization}/_apis/audit/streams
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="streamId">Id of stream entry to delete</param>
+		/// <param name="daysToBackfill">The number of days of previously recorded audit data that will be replayed into the stream. A value of zero will result in only new events being streamed.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">Stream entry</param>
 		/// <returns>successful operation</returns>
-		public void Streams_Delete(string organization, int streamId, string api_version)
+		public AuditStream Streams_Create(string organization, int daysToBackfill, string api_version, AuditStream requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams/"+streamId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams&daysToBackfill="+daysToBackfill+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<AuditStream>(jsonReader);
+				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -972,6 +922,56 @@ namespace MyNS
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AuditStream>(jsonReader);
 				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete Audit Stream
+		/// Streams_Delete {organization}/_apis/audit/streams/{streamId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="streamId">Id of stream entry to delete</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Streams_DeleteAsync(string organization, int streamId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams/"+streamId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete Audit Stream
+		/// Streams_Delete {organization}/_apis/audit/streams/{streamId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="streamId">Id of stream entry to delete</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Streams_Delete(string organization, int streamId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams/"+streamId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{

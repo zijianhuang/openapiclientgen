@@ -3,44 +3,44 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface AddFlowOutputsResponse {
-		FlowArn?: string;
-		Outputs?: Array<Output>;
+		FlowArn?: string | null;
+		Outputs?: Array<Output> | null;
 	}
 
 
 	/** The settings for an output. */
 	export interface Output {
-		DataTransferSubscriberFeePercent?: number;
-		Description?: string;
-		Destination?: string;
+		DataTransferSubscriberFeePercent?: number | null;
+		Description?: string | null;
+		Destination?: string | null;
 
 		/** Information about the encryption of the flow. */
-		Encryption?: Encryption;
-		EntitlementArn?: string;
-		MediaLiveInputArn?: string;
+		Encryption?: Encryption | null;
+		EntitlementArn?: string | null;
+		MediaLiveInputArn?: string | null;
 		Name: string;
 		OutputArn: string;
-		Port?: number;
+		Port?: number | null;
 
 		/** Attributes related to the transport stream that are used in a source or output. */
-		Transport?: Transport;
+		Transport?: Transport | null;
 
 		/** The settings for attaching a VPC interface to an output. */
-		VpcInterfaceAttachment?: VpcInterfaceAttachment;
+		VpcInterfaceAttachment?: VpcInterfaceAttachment | null;
 	}
 
 
 	/** Information about the encryption of the flow. */
 	export interface Encryption {
 		Algorithm: EncryptionAlgorithm;
-		ConstantInitializationVector?: string;
-		DeviceId?: string;
-		KeyType?: EncryptionKeyType;
-		Region?: string;
-		ResourceId?: string;
+		ConstantInitializationVector?: string | null;
+		DeviceId?: string | null;
+		KeyType?: EncryptionKeyType | null;
+		Region?: string | null;
+		ResourceId?: string | null;
 		RoleArn: string;
-		SecretArn?: string;
-		Url?: string;
+		SecretArn?: string | null;
+		Url?: string | null;
 	}
 
 	export enum EncryptionAlgorithm { aes128 = 0, aes192 = 1, aes256 = 2 }
@@ -50,13 +50,13 @@ export namespace MyNS {
 
 	/** Attributes related to the transport stream that are used in a source or output. */
 	export interface Transport {
-		CidrAllowList?: Array<string>;
-		MaxBitrate?: number;
-		MaxLatency?: number;
+		CidrAllowList?: Array<string> | null;
+		MaxBitrate?: number | null;
+		MaxLatency?: number | null;
 		Protocol: TransportProtocol;
-		RemoteId?: string;
-		SmoothingLatency?: number;
-		StreamId?: string;
+		RemoteId?: string | null;
+		SmoothingLatency?: number | null;
+		StreamId?: string | null;
 	}
 
 	export enum TransportProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
@@ -64,28 +64,28 @@ export namespace MyNS {
 
 	/** The settings for attaching a VPC interface to an output. */
 	export interface VpcInterfaceAttachment {
-		VpcInterfaceName?: string;
+		VpcInterfaceName?: string | null;
 	}
 
 
 	/** The output that you want to add to this flow. */
 	export interface AddOutputRequest {
-		CidrAllowList?: Array<string>;
-		Description?: string;
-		Destination?: string;
+		CidrAllowList?: Array<string> | null;
+		Description?: string | null;
+		Destination?: string | null;
 
 		/** Information about the encryption of the flow. */
-		Encryption?: Encryption;
-		MaxLatency?: number;
-		Name?: string;
-		Port?: number;
+		Encryption?: Encryption | null;
+		MaxLatency?: number | null;
+		Name?: string | null;
+		Port?: number | null;
 		Protocol: AddOutputRequestProtocol;
-		RemoteId?: string;
-		SmoothingLatency?: number;
-		StreamId?: string;
+		RemoteId?: string | null;
+		SmoothingLatency?: number | null;
+		StreamId?: string | null;
 
 		/** The settings for attaching a VPC interface to an output. */
-		VpcInterfaceAttachment?: VpcInterfaceAttachment;
+		VpcInterfaceAttachment?: VpcInterfaceAttachment | null;
 	}
 
 	export enum AddOutputRequestProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
@@ -112,28 +112,28 @@ export namespace MyNS {
 	}
 
 	export interface AddFlowSourcesResponse {
-		FlowArn?: string;
-		Sources?: Array<Source>;
+		FlowArn?: string | null;
+		Sources?: Array<Source> | null;
 	}
 
 
 	/** The settings for the source of the flow. */
 	export interface Source {
-		DataTransferSubscriberFeePercent?: number;
+		DataTransferSubscriberFeePercent?: number | null;
 
 		/** Information about the encryption of the flow. */
-		Decryption?: Encryption;
-		Description?: string;
-		EntitlementArn?: string;
-		IngestIp?: string;
-		IngestPort?: number;
+		Decryption?: Encryption | null;
+		Description?: string | null;
+		EntitlementArn?: string | null;
+		IngestIp?: string | null;
+		IngestPort?: number | null;
 		Name: string;
 		SourceArn: string;
 
 		/** Attributes related to the transport stream that are used in a source or output. */
-		Transport?: Transport;
-		VpcInterfaceName?: string;
-		WhitelistCidr?: string;
+		Transport?: Transport | null;
+		VpcInterfaceName?: string | null;
+		WhitelistCidr?: string | null;
 	}
 
 
@@ -141,24 +141,24 @@ export namespace MyNS {
 	export interface SetSourceRequest {
 
 		/** Information about the encryption of the flow. */
-		Decryption?: Encryption;
-		Description?: string;
-		EntitlementArn?: string;
-		IngestPort?: number;
-		MaxBitrate?: number;
-		MaxLatency?: number;
-		Name?: string;
-		Protocol?: SetSourceRequestProtocol;
-		StreamId?: string;
-		VpcInterfaceName?: string;
-		WhitelistCidr?: string;
+		Decryption?: Encryption | null;
+		Description?: string | null;
+		EntitlementArn?: string | null;
+		IngestPort?: number | null;
+		MaxBitrate?: number | null;
+		MaxLatency?: number | null;
+		Name?: string | null;
+		Protocol?: SetSourceRequestProtocol | null;
+		StreamId?: string | null;
+		VpcInterfaceName?: string | null;
+		WhitelistCidr?: string | null;
 	}
 
 	export enum SetSourceRequestProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
 
 	export interface AddFlowVpcInterfacesResponse {
-		FlowArn?: string;
-		VpcInterfaces?: Array<VpcInterface>;
+		FlowArn?: string | null;
+		VpcInterfaces?: Array<VpcInterface> | null;
 	}
 
 
@@ -183,15 +183,15 @@ export namespace MyNS {
 	export interface CreateFlowResponse {
 
 		/** The settings for a flow, including its source, outputs, and entitlements. */
-		Flow?: Flow;
+		Flow?: Flow | null;
 	}
 
 
 	/** The settings for a flow, including its source, outputs, and entitlements. */
 	export interface Flow {
 		AvailabilityZone: string;
-		Description?: string;
-		EgressIp?: string;
+		Description?: string | null;
+		EgressIp?: string | null;
 		Entitlements: Array<Entitlement>;
 		FlowArn: string;
 		Name: string;
@@ -204,20 +204,20 @@ export namespace MyNS {
 		Source: Source;
 
 		/** The settings for source failover */
-		SourceFailoverConfig?: FailoverConfig;
-		Sources?: Array<Source>;
+		SourceFailoverConfig?: FailoverConfig | null;
+		Sources?: Array<Source> | null;
 		Status: FlowStatus;
-		VpcInterfaces?: Array<VpcInterface>;
+		VpcInterfaces?: Array<VpcInterface> | null;
 	}
 
 
 	/** The settings for a flow entitlement. */
 	export interface Entitlement {
-		DataTransferSubscriberFeePercent?: number;
-		Description?: string;
+		DataTransferSubscriberFeePercent?: number | null;
+		Description?: string | null;
 
 		/** Information about the encryption of the flow. */
-		Encryption?: Encryption;
+		Encryption?: Encryption | null;
 		EntitlementArn: string;
 		Name: string;
 		Subscribers: Array<string>;
@@ -226,8 +226,8 @@ export namespace MyNS {
 
 	/** The settings for source failover */
 	export interface FailoverConfig {
-		RecoveryWindow?: number;
-		State?: FailoverConfigState;
+		RecoveryWindow?: number | null;
+		State?: FailoverConfigState | null;
 	}
 
 	export enum FailoverConfigState { ENABLED = 0, DISABLED = 1 }
@@ -237,12 +237,12 @@ export namespace MyNS {
 
 	/** The entitlements that you want to grant on a flow. */
 	export interface GrantEntitlementRequest {
-		DataTransferSubscriberFeePercent?: number;
-		Description?: string;
+		DataTransferSubscriberFeePercent?: number | null;
+		Description?: string | null;
 
 		/** Information about the encryption of the flow. */
-		Encryption?: Encryption;
-		Name?: string;
+		Encryption?: Encryption | null;
+		Name?: string | null;
 		Subscribers: Array<string>;
 	}
 
@@ -254,17 +254,17 @@ export namespace MyNS {
 	}
 
 	export interface DeleteFlowResponse {
-		FlowArn?: string;
-		Status?: FlowStatus;
+		FlowArn?: string | null;
+		Status?: FlowStatus | null;
 	}
 
 	export interface DescribeFlowResponse {
 
 		/** The settings for a flow, including its source, outputs, and entitlements. */
-		Flow?: Flow;
+		Flow?: Flow | null;
 
 		/** Messages that provide the state of the flow. */
-		Messages?: Messages;
+		Messages?: Messages | null;
 	}
 
 
@@ -274,29 +274,29 @@ export namespace MyNS {
 	}
 
 	export interface GrantFlowEntitlementsResponse {
-		Entitlements?: Array<Entitlement>;
-		FlowArn?: string;
+		Entitlements?: Array<Entitlement> | null;
+		FlowArn?: string | null;
 	}
 
 	export interface GrantFlowEntitlements420Exception {
 	}
 
 	export interface ListEntitlementsResponse {
-		Entitlements?: Array<ListedEntitlement>;
-		NextToken?: string;
+		Entitlements?: Array<ListedEntitlement> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** An entitlement that has been granted to you from other AWS accounts. */
 	export interface ListedEntitlement {
-		DataTransferSubscriberFeePercent?: number;
+		DataTransferSubscriberFeePercent?: number | null;
 		EntitlementArn: string;
 		EntitlementName: string;
 	}
 
 	export interface ListFlowsResponse {
-		Flows?: Array<ListedFlow>;
-		NextToken?: string;
+		Flows?: Array<ListedFlow> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -313,54 +313,54 @@ export namespace MyNS {
 	export enum ListedFlowSourceType { OWNED = 0, ENTITLED = 1 }
 
 	export interface ListTagsForResourceResponse {
-		Tags?: __mapOf__string;
+		Tags?: __mapOf__string | null;
 	}
 
 	export interface __mapOf__string {
 	}
 
 	export interface RemoveFlowOutputResponse {
-		FlowArn?: string;
-		OutputArn?: string;
+		FlowArn?: string | null;
+		OutputArn?: string | null;
 	}
 
 	export interface RemoveFlowSourceResponse {
-		FlowArn?: string;
-		SourceArn?: string;
+		FlowArn?: string | null;
+		SourceArn?: string | null;
 	}
 
 	export interface RemoveFlowVpcInterfaceResponse {
-		FlowArn?: string;
-		NonDeletedNetworkInterfaceIds?: Array<string>;
-		VpcInterfaceName?: string;
+		FlowArn?: string | null;
+		NonDeletedNetworkInterfaceIds?: Array<string> | null;
+		VpcInterfaceName?: string | null;
 	}
 
 	export interface RevokeFlowEntitlementResponse {
-		EntitlementArn?: string;
-		FlowArn?: string;
+		EntitlementArn?: string | null;
+		FlowArn?: string | null;
 	}
 
 	export interface StartFlowResponse {
-		FlowArn?: string;
-		Status?: FlowStatus;
+		FlowArn?: string | null;
+		Status?: FlowStatus | null;
 	}
 
 	export interface StopFlowResponse {
-		FlowArn?: string;
-		Status?: FlowStatus;
+		FlowArn?: string | null;
+		Status?: FlowStatus | null;
 	}
 
 	export interface UpdateFlowResponse {
 
 		/** The settings for a flow, including its source, outputs, and entitlements. */
-		Flow?: Flow;
+		Flow?: Flow | null;
 	}
 
 	export interface UpdateFlowEntitlementResponse {
 
 		/** The settings for a flow entitlement. */
-		Entitlement?: Entitlement;
-		FlowArn?: string;
+		Entitlement?: Entitlement | null;
+		FlowArn?: string | null;
 	}
 
 	export enum Algorithm { aes128 = 0, aes192 = 1, aes256 = 2 }
@@ -368,17 +368,17 @@ export namespace MyNS {
 	export enum KeyType { speke = 0, static_key = 1 }
 
 	export interface UpdateFlowOutputResponse {
-		FlowArn?: string;
+		FlowArn?: string | null;
 
 		/** The settings for an output. */
-		Output?: Output;
+		Output?: Output | null;
 	}
 
 	export interface UpdateFlowSourceResponse {
-		FlowArn?: string;
+		FlowArn?: string | null;
 
 		/** The settings for the source of the flow. */
-		Source?: Source;
+		Source?: Source | null;
 	}
 
 
@@ -402,18 +402,18 @@ export namespace MyNS {
 
 	/** Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50). */
 	export interface CreateFlowRequest {
-		AvailabilityZone?: string;
-		Entitlements?: Array<GrantEntitlementRequest>;
+		AvailabilityZone?: string | null;
+		Entitlements?: Array<GrantEntitlementRequest> | null;
 		Name: string;
-		Outputs?: Array<AddOutputRequest>;
+		Outputs?: Array<AddOutputRequest> | null;
 
 		/** The settings for the source of the flow. */
-		Source?: SetSourceRequest;
+		Source?: SetSourceRequest | null;
 
 		/** The settings for source failover */
-		SourceFailoverConfig?: FailoverConfig;
-		Sources?: Array<SetSourceRequest>;
-		VpcInterfaces?: Array<VpcInterfaceRequest>;
+		SourceFailoverConfig?: FailoverConfig | null;
+		Sources?: Array<SetSourceRequest> | null;
+		VpcInterfaces?: Array<VpcInterfaceRequest> | null;
 	}
 
 	export interface DeleteFlowRequest {
@@ -471,15 +471,15 @@ export namespace MyNS {
 
 	/** Information about the encryption of the flow. */
 	export interface UpdateEncryption {
-		Algorithm?: EncryptionAlgorithm;
-		ConstantInitializationVector?: string;
-		DeviceId?: string;
-		KeyType?: UpdateEncryptionKeyType;
-		Region?: string;
-		ResourceId?: string;
-		RoleArn?: string;
-		SecretArn?: string;
-		Url?: string;
+		Algorithm?: EncryptionAlgorithm | null;
+		ConstantInitializationVector?: string | null;
+		DeviceId?: string | null;
+		KeyType?: UpdateEncryptionKeyType | null;
+		Region?: string | null;
+		ResourceId?: string | null;
+		RoleArn?: string | null;
+		SecretArn?: string | null;
+		Url?: string | null;
 	}
 
 	export enum UpdateEncryptionKeyType { speke = 0, static_key = 1 }
@@ -487,38 +487,38 @@ export namespace MyNS {
 
 	/** The settings for source failover */
 	export interface UpdateFailoverConfig {
-		RecoveryWindow?: number;
-		State?: FailoverConfigState;
+		RecoveryWindow?: number | null;
+		State?: FailoverConfigState | null;
 	}
 
 
 	/** The entitlement fields that you want to update. */
 	export interface UpdateFlowEntitlementRequest {
-		Description?: string;
+		Description?: string | null;
 
 		/** Information about the encryption of the flow. */
-		Encryption?: UpdateEncryption;
-		Subscribers?: Array<string>;
+		Encryption?: UpdateEncryption | null;
+		Subscribers?: Array<string> | null;
 	}
 
 
 	/** The fields that you want to update in the output. */
 	export interface UpdateFlowOutputRequest {
-		CidrAllowList?: Array<string>;
-		Description?: string;
-		Destination?: string;
+		CidrAllowList?: Array<string> | null;
+		Description?: string | null;
+		Destination?: string | null;
 
 		/** Information about the encryption of the flow. */
-		Encryption?: UpdateEncryption;
-		MaxLatency?: number;
-		Port?: number;
-		Protocol?: UpdateFlowOutputRequestProtocol;
-		RemoteId?: string;
-		SmoothingLatency?: number;
-		StreamId?: string;
+		Encryption?: UpdateEncryption | null;
+		MaxLatency?: number | null;
+		Port?: number | null;
+		Protocol?: UpdateFlowOutputRequestProtocol | null;
+		RemoteId?: string | null;
+		SmoothingLatency?: number | null;
+		StreamId?: string | null;
 
 		/** The settings for attaching a VPC interface to an output. */
-		VpcInterfaceAttachment?: VpcInterfaceAttachment;
+		VpcInterfaceAttachment?: VpcInterfaceAttachment | null;
 	}
 
 	export enum UpdateFlowOutputRequestProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
@@ -528,7 +528,7 @@ export namespace MyNS {
 	export interface UpdateFlowRequest {
 
 		/** The settings for source failover */
-		SourceFailoverConfig?: UpdateFailoverConfig;
+		SourceFailoverConfig?: UpdateFailoverConfig | null;
 	}
 
 
@@ -536,16 +536,16 @@ export namespace MyNS {
 	export interface UpdateFlowSourceRequest {
 
 		/** Information about the encryption of the flow. */
-		Decryption?: UpdateEncryption;
-		Description?: string;
-		EntitlementArn?: string;
-		IngestPort?: number;
-		MaxBitrate?: number;
-		MaxLatency?: number;
-		Protocol?: UpdateFlowSourceRequestProtocol;
-		StreamId?: string;
-		VpcInterfaceName?: string;
-		WhitelistCidr?: string;
+		Decryption?: UpdateEncryption | null;
+		Description?: string | null;
+		EntitlementArn?: string | null;
+		IngestPort?: number | null;
+		MaxBitrate?: number | null;
+		MaxLatency?: number | null;
+		Protocol?: UpdateFlowSourceRequestProtocol | null;
+		StreamId?: string | null;
+		VpcInterfaceName?: string | null;
+		WhitelistCidr?: string | null;
 	}
 
 	export enum UpdateFlowSourceRequestProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
@@ -603,7 +603,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListFlowsResponse} Success
 		 */
-		ListFlows(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListFlowsResponse> {
+		ListFlows(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListFlowsResponse> {
 			return this.http.get<ListFlowsResponse>(this.baseUri + 'v1/flows?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -656,7 +656,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListEntitlementsResponse} Success
 		 */
-		ListEntitlements(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListEntitlementsResponse> {
+		ListEntitlements(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListEntitlementsResponse> {
 			return this.http.get<ListEntitlementsResponse>(this.baseUri + 'v1/entitlements?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -819,10 +819,10 @@ export namespace MyNS {
 	export interface CreateFlowPostBody {
 
 		/** The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region. */
-		availabilityZone?: string;
+		availabilityZone?: string | null;
 
 		/** The entitlements that you want to grant on a flow. */
-		entitlements?: Array<GrantEntitlementRequest>;
+		entitlements?: Array<GrantEntitlementRequest> | null;
 
 		/**
 		 * The name of the flow.
@@ -831,51 +831,51 @@ export namespace MyNS {
 		name: string;
 
 		/** The outputs that you want to add to this flow. */
-		outputs?: Array<AddOutputRequest>;
+		outputs?: Array<AddOutputRequest> | null;
 
 		/** The settings for the source of the flow. */
-		source?: CreateFlowPostBodySource;
+		source?: CreateFlowPostBodySource | null;
 
 		/** The settings for source failover */
-		sourceFailoverConfig?: CreateFlowPostBodySourceFailoverConfig;
-		sources?: Array<SetSourceRequest>;
+		sourceFailoverConfig?: CreateFlowPostBodySourceFailoverConfig | null;
+		sources?: Array<SetSourceRequest> | null;
 
 		/** The VPC interfaces you want on the flow. */
-		vpcInterfaces?: Array<VpcInterfaceRequest>;
+		vpcInterfaces?: Array<VpcInterfaceRequest> | null;
 	}
 
 	export interface CreateFlowPostBodySource {
 
 		/** Information about the encryption of the flow. */
-		Decryption?: Encryption;
-		Description?: string;
-		EntitlementArn?: string;
-		IngestPort?: number;
-		MaxBitrate?: number;
-		MaxLatency?: number;
-		Name?: string;
-		Protocol?: CreateFlowPostBodySourceProtocol;
-		StreamId?: string;
-		VpcInterfaceName?: string;
-		WhitelistCidr?: string;
+		Decryption?: Encryption | null;
+		Description?: string | null;
+		EntitlementArn?: string | null;
+		IngestPort?: number | null;
+		MaxBitrate?: number | null;
+		MaxLatency?: number | null;
+		Name?: string | null;
+		Protocol?: CreateFlowPostBodySourceProtocol | null;
+		StreamId?: string | null;
+		VpcInterfaceName?: string | null;
+		WhitelistCidr?: string | null;
 	}
 
 	export enum CreateFlowPostBodySourceProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
 
 	export interface CreateFlowPostBodySourceFailoverConfig {
-		RecoveryWindow?: number;
-		State?: FailoverConfigState;
+		RecoveryWindow?: number | null;
+		State?: FailoverConfigState | null;
 	}
 
 	export interface UpdateFlowPutBody {
 
 		/** The settings for source failover */
-		sourceFailoverConfig?: UpdateFlowPutBodySourceFailoverConfig;
+		sourceFailoverConfig?: UpdateFlowPutBodySourceFailoverConfig | null;
 	}
 
 	export interface UpdateFlowPutBodySourceFailoverConfig {
-		RecoveryWindow?: number;
-		State?: FailoverConfigState;
+		RecoveryWindow?: number | null;
+		State?: FailoverConfigState | null;
 	}
 
 	export interface GrantFlowEntitlementsPostBody {
@@ -899,49 +899,49 @@ export namespace MyNS {
 	export interface UpdateFlowOutputPutBody {
 
 		/** The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16. */
-		cidrAllowList?: Array<string>;
+		cidrAllowList?: Array<string> | null;
 
 		/** A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user. */
-		description?: string;
+		description?: string | null;
 
 		/** The IP address where you want to send the output. */
-		destination?: string;
+		destination?: string | null;
 
 		/** Information about the encryption of the flow. */
-		encryption?: UpdateFlowOutputPutBodyEncryption;
+		encryption?: UpdateFlowOutputPutBodyEncryption | null;
 
 		/** The maximum latency in milliseconds for Zixi-based streams. */
-		maxLatency?: number;
+		maxLatency?: number | null;
 
 		/** The port to use when content is distributed to this output. */
-		port?: number;
+		port?: number | null;
 
 		/** The protocol to use for the output. */
-		protocol?: UpdateFlowOutputPutBodyProtocol;
+		protocol?: UpdateFlowOutputPutBodyProtocol | null;
 
 		/** The remote ID for the Zixi-pull stream. */
-		remoteId?: string;
+		remoteId?: string | null;
 
 		/** The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams. */
-		smoothingLatency?: number;
+		smoothingLatency?: number | null;
 
 		/** The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams. */
-		streamId?: string;
+		streamId?: string | null;
 
 		/** The settings for attaching a VPC interface to an output. */
-		vpcInterfaceAttachment?: UpdateFlowOutputPutBodyVpcInterfaceAttachment;
+		vpcInterfaceAttachment?: UpdateFlowOutputPutBodyVpcInterfaceAttachment | null;
 	}
 
 	export interface UpdateFlowOutputPutBodyEncryption {
-		Algorithm?: EncryptionAlgorithm;
-		ConstantInitializationVector?: string;
-		DeviceId?: string;
-		KeyType?: UpdateFlowOutputPutBodyEncryptionKeyType;
-		Region?: string;
-		ResourceId?: string;
-		RoleArn?: string;
-		SecretArn?: string;
-		Url?: string;
+		Algorithm?: EncryptionAlgorithm | null;
+		ConstantInitializationVector?: string | null;
+		DeviceId?: string | null;
+		KeyType?: UpdateFlowOutputPutBodyEncryptionKeyType | null;
+		Region?: string | null;
+		ResourceId?: string | null;
+		RoleArn?: string | null;
+		SecretArn?: string | null;
+		Url?: string | null;
 	}
 
 	export enum UpdateFlowOutputPutBodyEncryptionKeyType { speke = 0, static_key = 1 }
@@ -949,52 +949,52 @@ export namespace MyNS {
 	export enum UpdateFlowOutputPutBodyProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
 
 	export interface UpdateFlowOutputPutBodyVpcInterfaceAttachment {
-		VpcInterfaceName?: string;
+		VpcInterfaceName?: string | null;
 	}
 
 	export interface UpdateFlowSourcePutBody {
 
 		/** Information about the encryption of the flow. */
-		decryption?: UpdateFlowSourcePutBodyDecryption;
+		decryption?: UpdateFlowSourcePutBodyDecryption | null;
 
 		/** A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account. */
-		description?: string;
+		description?: string | null;
 
 		/** The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow. */
-		entitlementArn?: string;
+		entitlementArn?: string | null;
 
 		/** The port that the flow will be listening on for incoming content. */
-		ingestPort?: number;
+		ingestPort?: number | null;
 
 		/** The smoothing max bitrate for RIST, RTP, and RTP-FEC streams. */
-		maxBitrate?: number;
+		maxBitrate?: number | null;
 
 		/** The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams. */
-		maxLatency?: number;
+		maxLatency?: number | null;
 
 		/** The protocol that is used by the source. */
-		protocol?: UpdateFlowSourcePutBodyProtocol;
+		protocol?: UpdateFlowSourcePutBodyProtocol | null;
 
 		/** The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams. */
-		streamId?: string;
+		streamId?: string | null;
 
 		/** The name of the VPC Interface to configure this Source with. */
-		vpcInterfaceName?: string;
+		vpcInterfaceName?: string | null;
 
 		/** The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16. */
-		whitelistCidr?: string;
+		whitelistCidr?: string | null;
 	}
 
 	export interface UpdateFlowSourcePutBodyDecryption {
-		Algorithm?: EncryptionAlgorithm;
-		ConstantInitializationVector?: string;
-		DeviceId?: string;
-		KeyType?: UpdateFlowSourcePutBodyDecryptionKeyType;
-		Region?: string;
-		ResourceId?: string;
-		RoleArn?: string;
-		SecretArn?: string;
-		Url?: string;
+		Algorithm?: EncryptionAlgorithm | null;
+		ConstantInitializationVector?: string | null;
+		DeviceId?: string | null;
+		KeyType?: UpdateFlowSourcePutBodyDecryptionKeyType | null;
+		Region?: string | null;
+		ResourceId?: string | null;
+		RoleArn?: string | null;
+		SecretArn?: string | null;
+		Url?: string | null;
 	}
 
 	export enum UpdateFlowSourcePutBodyDecryptionKeyType { speke = 0, static_key = 1 }
@@ -1004,25 +1004,25 @@ export namespace MyNS {
 	export interface UpdateFlowEntitlementPutBody {
 
 		/** A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user. */
-		description?: string;
+		description?: string | null;
 
 		/** Information about the encryption of the flow. */
-		encryption?: UpdateFlowEntitlementPutBodyEncryption;
+		encryption?: UpdateFlowEntitlementPutBodyEncryption | null;
 
 		/** The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source. */
-		subscribers?: Array<string>;
+		subscribers?: Array<string> | null;
 	}
 
 	export interface UpdateFlowEntitlementPutBodyEncryption {
-		Algorithm?: EncryptionAlgorithm;
-		ConstantInitializationVector?: string;
-		DeviceId?: string;
-		KeyType?: UpdateFlowEntitlementPutBodyEncryptionKeyType;
-		Region?: string;
-		ResourceId?: string;
-		RoleArn?: string;
-		SecretArn?: string;
-		Url?: string;
+		Algorithm?: EncryptionAlgorithm | null;
+		ConstantInitializationVector?: string | null;
+		DeviceId?: string | null;
+		KeyType?: UpdateFlowEntitlementPutBodyEncryptionKeyType | null;
+		Region?: string | null;
+		ResourceId?: string | null;
+		RoleArn?: string | null;
+		SecretArn?: string | null;
+		Url?: string | null;
 	}
 
 	export enum UpdateFlowEntitlementPutBodyEncryptionKeyType { speke = 0, static_key = 1 }

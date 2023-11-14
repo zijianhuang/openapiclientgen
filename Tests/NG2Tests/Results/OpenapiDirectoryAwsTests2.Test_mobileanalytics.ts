@@ -9,19 +9,19 @@ export namespace MyNS {
 		timestamp: string;
 
 		/** Describes the session. Session information is required on ALL events. */
-		session?: Session;
-		version?: string;
-		attributes?: MapOfStringToString;
-		metrics?: MapOfStringToNumber;
+		session?: Session | null;
+		version?: string | null;
+		attributes?: MapOfStringToString | null;
+		metrics?: MapOfStringToNumber | null;
 	}
 
 
 	/** Describes the session. Session information is required on ALL events. */
 	export interface Session {
-		id?: string;
-		duration?: number;
-		startTimestamp?: string;
-		stopTimestamp?: string;
+		id?: string | null;
+		duration?: number | null;
+		startTimestamp?: string | null;
+		stopTimestamp?: string | null;
 	}
 
 	export interface MapOfStringToString {
@@ -33,7 +33,7 @@ export namespace MyNS {
 
 	/** An exception object returned when a request fails. */
 	export interface BadRequestException {
-		message?: string;
+		message?: string | null;
 	}
 
 

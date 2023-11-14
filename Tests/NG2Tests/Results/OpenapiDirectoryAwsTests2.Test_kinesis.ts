@@ -15,25 +15,25 @@ export namespace MyNS {
 
 	/** The requested resource could not be found. The stream might not be specified correctly. */
 	export interface ResourceNotFoundException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The resource is not available for this operation. For successful operation, the resource must be in the <code>ACTIVE</code> state. */
 	export interface ResourceInUseException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message. */
 	export interface InvalidArgumentException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.  */
 	export interface LimitExceededException {
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -54,13 +54,13 @@ export namespace MyNS {
 	/** Represents the input for <a>DeleteStream</a>. */
 	export interface DeleteStreamInput {
 		StreamName: string;
-		EnforceConsumerDeletion?: boolean;
+		EnforceConsumerDeletion?: boolean | null;
 	}
 
 	export interface DeregisterStreamConsumerInput {
-		StreamARN?: string;
-		ConsumerName?: string;
-		ConsumerARN?: string;
+		StreamARN?: string | null;
+		ConsumerName?: string | null;
+		ConsumerARN?: string | null;
 	}
 
 	export interface DescribeLimitsOutput {
@@ -93,8 +93,8 @@ export namespace MyNS {
 		RetentionPeriodHours: number;
 		StreamCreationTimestamp: Date;
 		EnhancedMonitoring: Array<EnhancedMetrics>;
-		EncryptionType?: StreamDescriptionEncryptionType;
-		KeyId?: string;
+		EncryptionType?: StreamDescriptionEncryptionType | null;
+		KeyId?: string | null;
 	}
 
 	export enum StreamDescriptionStreamStatus { CREATING = 0, DELETING = 1, ACTIVE = 2, UPDATING = 3 }
@@ -103,8 +103,8 @@ export namespace MyNS {
 	/** A uniquely identified group of data records in a Kinesis data stream. */
 	export interface Shard {
 		ShardId: string;
-		ParentShardId?: string;
-		AdjacentParentShardId?: string;
+		ParentShardId?: string | null;
+		AdjacentParentShardId?: string | null;
 
 		/**
 		 * The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.
@@ -130,13 +130,13 @@ export namespace MyNS {
 	/** The range of possible sequence numbers for the shard. */
 	export interface SequenceNumberRange {
 		StartingSequenceNumber: string;
-		EndingSequenceNumber?: string;
+		EndingSequenceNumber?: string | null;
 	}
 
 
 	/** Represents enhanced metrics types. */
 	export interface EnhancedMetrics {
-		ShardLevelMetrics?: Array<MetricsName>;
+		ShardLevelMetrics?: Array<MetricsName> | null;
 	}
 
 	export enum MetricsName { IncomingBytes = 0, IncomingRecords = 1, OutgoingBytes = 2, OutgoingRecords = 3, WriteProvisionedThroughputExceeded = 4, ReadProvisionedThroughputExceeded = 5, IteratorAgeMilliseconds = 6, ALL = 7 }
@@ -147,8 +147,8 @@ export namespace MyNS {
 	/** Represents the input for <code>DescribeStream</code>. */
 	export interface DescribeStreamInput {
 		StreamName: string;
-		Limit?: number;
-		ExclusiveStartShardId?: string;
+		Limit?: number | null;
+		ExclusiveStartShardId?: string | null;
 	}
 
 	export interface DescribeStreamConsumerOutput {
@@ -173,9 +173,9 @@ export namespace MyNS {
 	export enum ConsumerDescriptionConsumerStatus { CREATING = 0, DELETING = 1, ACTIVE = 2 }
 
 	export interface DescribeStreamConsumerInput {
-		StreamARN?: string;
-		ConsumerName?: string;
-		ConsumerARN?: string;
+		StreamARN?: string | null;
+		ConsumerName?: string | null;
+		ConsumerARN?: string | null;
 	}
 
 	export interface DescribeStreamSummaryOutput {
@@ -196,10 +196,10 @@ export namespace MyNS {
 		RetentionPeriodHours: number;
 		StreamCreationTimestamp: Date;
 		EnhancedMonitoring: Array<EnhancedMetrics>;
-		EncryptionType?: StreamDescriptionEncryptionType;
-		KeyId?: string;
+		EncryptionType?: StreamDescriptionEncryptionType | null;
+		KeyId?: string | null;
 		OpenShardCount: number;
-		ConsumerCount?: number;
+		ConsumerCount?: number | null;
 	}
 
 	export interface DescribeStreamSummaryInput {
@@ -209,9 +209,9 @@ export namespace MyNS {
 
 	/** Represents the output for <a>EnableEnhancedMonitoring</a> and <a>DisableEnhancedMonitoring</a>. */
 	export interface EnhancedMonitoringOutput {
-		StreamName?: string;
-		CurrentShardLevelMetrics?: Array<MetricsName>;
-		DesiredShardLevelMetrics?: Array<MetricsName>;
+		StreamName?: string | null;
+		CurrentShardLevelMetrics?: Array<MetricsName> | null;
+		DesiredShardLevelMetrics?: Array<MetricsName> | null;
 	}
 
 
@@ -232,79 +232,79 @@ export namespace MyNS {
 	/** Represents the output for <a>GetRecords</a>. */
 	export interface GetRecordsOutput {
 		Records: Array<Record>;
-		NextShardIterator?: string;
-		MillisBehindLatest?: number;
+		NextShardIterator?: string | null;
+		MillisBehindLatest?: number | null;
 	}
 
 
 	/** The unit of data of the Kinesis data stream, which is composed of a sequence number, a partition key, and a data blob. */
 	export interface Record {
 		SequenceNumber: string;
-		ApproximateArrivalTimestamp?: Date;
+		ApproximateArrivalTimestamp?: Date | null;
 		Data: string;
 		PartitionKey: string;
-		EncryptionType?: StreamDescriptionEncryptionType;
+		EncryptionType?: StreamDescriptionEncryptionType | null;
 	}
 
 
 	/** Represents the input for <a>GetRecords</a>. */
 	export interface GetRecordsInput {
 		ShardIterator: string;
-		Limit?: number;
+		Limit?: number | null;
 	}
 
 
 	/** The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>. */
 	export interface ProvisionedThroughputExceededException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The provided iterator exceeds the maximum age allowed. */
 	export interface ExpiredIteratorException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The request was rejected because the specified customer master key (CMK) isn't enabled. */
 	export interface KMSDisabledException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The request was rejected because the state of the specified resource isn't valid for this request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>. */
 	export interface KMSInvalidStateException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The ciphertext references a key that doesn't exist or that you don't have access to. */
 	export interface KMSAccessDeniedException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The request was rejected because the specified entity or resource can't be found. */
 	export interface KMSNotFoundException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The AWS access key ID needs a subscription for the service. */
 	export interface KMSOptInRequired {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The request was denied due to request throttling. For more information about throttling, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in the <i>AWS Key Management Service Developer Guide</i>. */
 	export interface KMSThrottlingException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** Represents the output for <code>GetShardIterator</code>. */
 	export interface GetShardIteratorOutput {
-		ShardIterator?: string;
+		ShardIterator?: string | null;
 	}
 
 
@@ -313,8 +313,8 @@ export namespace MyNS {
 		StreamName: string;
 		ShardId: string;
 		ShardIteratorType: GetShardIteratorInputShardIteratorType;
-		StartingSequenceNumber?: string;
-		Timestamp?: Date;
+		StartingSequenceNumber?: string | null;
+		Timestamp?: Date | null;
 	}
 
 	export enum GetShardIteratorInputShardIteratorType { AT_SEQUENCE_NUMBER = 0, AFTER_SEQUENCE_NUMBER = 1, TRIM_HORIZON = 2, LATEST = 3, AT_TIMESTAMP = 4 }
@@ -327,27 +327,27 @@ export namespace MyNS {
 	}
 
 	export interface ListShardsOutput {
-		Shards?: Array<Shard>;
-		NextToken?: string;
+		Shards?: Array<Shard> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListShardsInput {
-		StreamName?: string;
-		NextToken?: string;
-		ExclusiveStartShardId?: string;
-		MaxResults?: number;
-		StreamCreationTimestamp?: Date;
+		StreamName?: string | null;
+		NextToken?: string | null;
+		ExclusiveStartShardId?: string | null;
+		MaxResults?: number | null;
+		StreamCreationTimestamp?: Date | null;
 	}
 
 
 	/** The pagination token passed to the operation is expired. */
 	export interface ExpiredNextTokenException {
-		message?: string;
+		message?: string | null;
 	}
 
 	export interface ListStreamConsumersOutput {
-		Consumers?: Array<Consumer>;
-		NextToken?: string;
+		Consumers?: Array<Consumer> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -361,9 +361,9 @@ export namespace MyNS {
 
 	export interface ListStreamConsumersInput {
 		StreamARN: string;
-		NextToken?: string;
-		MaxResults?: number;
-		StreamCreationTimestamp?: Date;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		StreamCreationTimestamp?: Date | null;
 	}
 
 
@@ -376,8 +376,8 @@ export namespace MyNS {
 
 	/** Represents the input for <code>ListStreams</code>. */
 	export interface ListStreamsInput {
-		Limit?: number;
-		ExclusiveStartStreamName?: string;
+		Limit?: number | null;
+		ExclusiveStartStreamName?: string | null;
 	}
 
 
@@ -391,15 +391,15 @@ export namespace MyNS {
 	/** Metadata assigned to the stream, consisting of a key-value pair. */
 	export interface Tag {
 		Key: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 
 	/** Represents the input for <code>ListTagsForStream</code>. */
 	export interface ListTagsForStreamInput {
 		StreamName: string;
-		ExclusiveStartTagKey?: string;
-		Limit?: number;
+		ExclusiveStartTagKey?: string | null;
+		Limit?: number | null;
 	}
 
 
@@ -415,7 +415,7 @@ export namespace MyNS {
 	export interface PutRecordOutput {
 		ShardId: string;
 		SequenceNumber: string;
-		EncryptionType?: StreamDescriptionEncryptionType;
+		EncryptionType?: StreamDescriptionEncryptionType | null;
 	}
 
 
@@ -424,25 +424,25 @@ export namespace MyNS {
 		StreamName: string;
 		Data: string;
 		PartitionKey: string;
-		ExplicitHashKey?: string;
-		SequenceNumberForOrdering?: string;
+		ExplicitHashKey?: string | null;
+		SequenceNumberForOrdering?: string | null;
 	}
 
 
 	/**  <code>PutRecords</code> results. */
 	export interface PutRecordsOutput {
-		FailedRecordCount?: number;
+		FailedRecordCount?: number | null;
 		Records: Array<PutRecordsResultEntry>;
-		EncryptionType?: StreamDescriptionEncryptionType;
+		EncryptionType?: StreamDescriptionEncryptionType | null;
 	}
 
 
 	/** Represents the result of an individual record from a <code>PutRecords</code> request. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to the stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result. */
 	export interface PutRecordsResultEntry {
-		SequenceNumber?: string;
-		ShardId?: string;
-		ErrorCode?: string;
-		ErrorMessage?: string;
+		SequenceNumber?: string | null;
+		ShardId?: string | null;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 
@@ -456,7 +456,7 @@ export namespace MyNS {
 	/** Represents the output for <code>PutRecords</code>. */
 	export interface PutRecordsRequestEntry {
 		Data: string;
-		ExplicitHashKey?: string;
+		ExplicitHashKey?: string | null;
 		PartitionKey: string;
 	}
 
@@ -502,9 +502,9 @@ export namespace MyNS {
 	}
 
 	export interface UpdateShardCountOutput {
-		StreamName?: string;
-		CurrentShardCount?: number;
-		TargetShardCount?: number;
+		StreamName?: string | null;
+		CurrentShardCount?: number | null;
+		TargetShardCount?: number | null;
 	}
 
 	export interface UpdateShardCountInput {
@@ -522,15 +522,15 @@ export namespace MyNS {
 	export enum ShardIteratorType { AT_SEQUENCE_NUMBER = 0, AFTER_SEQUENCE_NUMBER = 1, TRIM_HORIZON = 2, LATEST = 3, AT_TIMESTAMP = 4 }
 
 	export interface InternalFailureException {
-		message?: string;
+		message?: string | null;
 	}
 
 	export enum ScalingType { UNIFORM_SCALING = 0 }
 
 	export interface StartingPosition {
 		Type: GetShardIteratorInputShardIteratorType;
-		SequenceNumber?: string;
-		Timestamp?: Date;
+		SequenceNumber?: string | null;
+		Timestamp?: Date | null;
 	}
 
 	export enum StreamStatus { CREATING = 0, DELETING = 1, ACTIVE = 2, UPDATING = 3 }
@@ -628,7 +628,7 @@ export namespace MyNS {
 		 * @param {string} ExclusiveStartShardId Pagination token
 		 * @return {DescribeStreamOutput} Success
 		 */
-		DescribeStream(Limit: string, ExclusiveStartShardId: string, requestBody: DescribeStreamInput): Observable<DescribeStreamOutput> {
+		DescribeStream(Limit: string | null | undefined, ExclusiveStartShardId: string | null | undefined, requestBody: DescribeStreamInput): Observable<DescribeStreamOutput> {
 			return this.http.post<DescribeStreamOutput>(this.baseUri + '#X-Amz-Target=Kinesis_20131202.DescribeStream?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&ExclusiveStartShardId=' + (ExclusiveStartShardId == null ? '' : encodeURIComponent(ExclusiveStartShardId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -711,7 +711,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListStreamConsumersOutput} Success
 		 */
-		ListStreamConsumers(MaxResults: string, NextToken: string, requestBody: ListStreamConsumersInput): Observable<ListStreamConsumersOutput> {
+		ListStreamConsumers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListStreamConsumersInput): Observable<ListStreamConsumersOutput> {
 			return this.http.post<ListStreamConsumersOutput>(this.baseUri + '#X-Amz-Target=Kinesis_20131202.ListStreamConsumers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -722,7 +722,7 @@ export namespace MyNS {
 		 * @param {string} ExclusiveStartStreamName Pagination token
 		 * @return {ListStreamsOutput} Success
 		 */
-		ListStreams(Limit: string, ExclusiveStartStreamName: string, requestBody: ListStreamsInput): Observable<ListStreamsOutput> {
+		ListStreams(Limit: string | null | undefined, ExclusiveStartStreamName: string | null | undefined, requestBody: ListStreamsInput): Observable<ListStreamsOutput> {
 			return this.http.post<ListStreamsOutput>(this.baseUri + '#X-Amz-Target=Kinesis_20131202.ListStreams?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&ExclusiveStartStreamName=' + (ExclusiveStartStreamName == null ? '' : encodeURIComponent(ExclusiveStartStreamName)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

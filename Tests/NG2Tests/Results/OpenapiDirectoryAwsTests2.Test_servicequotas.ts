@@ -59,39 +59,39 @@ export namespace MyNS {
 	export interface GetAWSDefaultServiceQuotaResponse {
 
 		/** A structure that contains the full set of details that define the service quota. */
-		Quota?: ServiceQuota;
+		Quota?: ServiceQuota | null;
 	}
 
 
 	/** A structure that contains the full set of details that define the service quota. */
 	export interface ServiceQuota {
-		ServiceCode?: string;
-		ServiceName?: string;
-		QuotaArn?: string;
-		QuotaCode?: string;
-		QuotaName?: string;
-		Value?: number;
-		Unit?: string;
-		Adjustable?: boolean;
-		GlobalQuota?: boolean;
+		ServiceCode?: string | null;
+		ServiceName?: string | null;
+		QuotaArn?: string | null;
+		QuotaCode?: string | null;
+		QuotaName?: string | null;
+		Value?: number | null;
+		Unit?: string | null;
+		Adjustable?: boolean | null;
+		GlobalQuota?: boolean | null;
 
 		/** A structure that uses CloudWatch metrics to gather data about the service quota. */
-		UsageMetric?: MetricInfo;
+		UsageMetric?: MetricInfo | null;
 
 		/** A structure that contains information about the quota period. */
-		Period?: QuotaPeriod;
+		Period?: QuotaPeriod | null;
 
 		/** Returns an error that explains why the action did not succeed. */
-		ErrorReason?: ErrorReason;
+		ErrorReason?: ErrorReason | null;
 	}
 
 
 	/** A structure that uses CloudWatch metrics to gather data about the service quota. */
 	export interface MetricInfo {
-		MetricNamespace?: string;
-		MetricName?: string;
-		MetricDimensions?: MetricDimensionsMapDefinition;
-		MetricStatisticRecommendation?: string;
+		MetricNamespace?: string | null;
+		MetricName?: string | null;
+		MetricDimensions?: MetricDimensionsMapDefinition | null;
+		MetricStatisticRecommendation?: string | null;
 	}
 
 	export interface MetricDimensionsMapDefinition {
@@ -100,8 +100,8 @@ export namespace MyNS {
 
 	/** A structure that contains information about the quota period. */
 	export interface QuotaPeriod {
-		PeriodValue?: number;
-		PeriodUnit?: QuotaPeriodPeriodUnit;
+		PeriodValue?: number | null;
+		PeriodUnit?: QuotaPeriodPeriodUnit | null;
 	}
 
 	export enum QuotaPeriodPeriodUnit { MICROSECOND = 0, MILLISECOND = 1, SECOND = 2, MINUTE = 3, HOUR = 4, DAY = 5, WEEK = 6 }
@@ -109,8 +109,8 @@ export namespace MyNS {
 
 	/** Returns an error that explains why the action did not succeed. */
 	export interface ErrorReason {
-		ErrorCode?: ErrorReasonErrorCode;
-		ErrorMessage?: string;
+		ErrorCode?: ErrorReasonErrorCode | null;
+		ErrorMessage?: string | null;
 	}
 
 	export enum ErrorReasonErrorCode { DEPENDENCY_ACCESS_DENIED_ERROR = 0, DEPENDENCY_THROTTLING_ERROR = 1, DEPENDENCY_SERVICE_ERROR = 2, SERVICE_QUOTA_NOT_AVAILABLE_ERROR = 3 }
@@ -121,7 +121,7 @@ export namespace MyNS {
 	}
 
 	export interface GetAssociationForServiceQuotaTemplateResponse {
-		ServiceQuotaTemplateAssociationStatus?: GetAssociationForServiceQuotaTemplateResponseServiceQuotaTemplateAssociationStatus;
+		ServiceQuotaTemplateAssociationStatus?: GetAssociationForServiceQuotaTemplateResponseServiceQuotaTemplateAssociationStatus | null;
 	}
 
 	export enum GetAssociationForServiceQuotaTemplateResponseServiceQuotaTemplateAssociationStatus { ASSOCIATED = 0, DISASSOCIATED = 1 }
@@ -132,26 +132,26 @@ export namespace MyNS {
 	export interface GetRequestedServiceQuotaChangeResponse {
 
 		/** A structure that contains information about a requested change for a quota. */
-		RequestedQuota?: RequestedServiceQuotaChange;
+		RequestedQuota?: RequestedServiceQuotaChange | null;
 	}
 
 
 	/** A structure that contains information about a requested change for a quota. */
 	export interface RequestedServiceQuotaChange {
-		Id?: string;
-		CaseId?: string;
-		ServiceCode?: string;
-		ServiceName?: string;
-		QuotaCode?: string;
-		QuotaName?: string;
-		DesiredValue?: number;
-		Status?: RequestedServiceQuotaChangeStatus;
-		Created?: Date;
-		LastUpdated?: Date;
-		Requester?: string;
-		QuotaArn?: string;
-		GlobalQuota?: boolean;
-		Unit?: string;
+		Id?: string | null;
+		CaseId?: string | null;
+		ServiceCode?: string | null;
+		ServiceName?: string | null;
+		QuotaCode?: string | null;
+		QuotaName?: string | null;
+		DesiredValue?: number | null;
+		Status?: RequestedServiceQuotaChangeStatus | null;
+		Created?: Date | null;
+		LastUpdated?: Date | null;
+		Requester?: string | null;
+		QuotaArn?: string | null;
+		GlobalQuota?: boolean | null;
+		Unit?: string | null;
 	}
 
 	export enum RequestedServiceQuotaChangeStatus { PENDING = 0, CASE_OPENED = 1, APPROVED = 2, DENIED = 3, CASE_CLOSED = 4 }
@@ -163,7 +163,7 @@ export namespace MyNS {
 	export interface GetServiceQuotaResponse {
 
 		/** A structure that contains the full set of details that define the service quota. */
-		Quota?: ServiceQuota;
+		Quota?: ServiceQuota | null;
 	}
 
 	export interface GetServiceQuotaRequest {
@@ -174,20 +174,20 @@ export namespace MyNS {
 	export interface GetServiceQuotaIncreaseRequestFromTemplateResponse {
 
 		/** A structure that contains information about one service quota increase request. */
-		ServiceQuotaIncreaseRequestInTemplate?: ServiceQuotaIncreaseRequestInTemplate;
+		ServiceQuotaIncreaseRequestInTemplate?: ServiceQuotaIncreaseRequestInTemplate | null;
 	}
 
 
 	/** A structure that contains information about one service quota increase request. */
 	export interface ServiceQuotaIncreaseRequestInTemplate {
-		ServiceCode?: string;
-		ServiceName?: string;
-		QuotaCode?: string;
-		QuotaName?: string;
-		DesiredValue?: number;
-		AwsRegion?: string;
-		Unit?: string;
-		GlobalQuota?: boolean;
+		ServiceCode?: string | null;
+		ServiceName?: string | null;
+		QuotaCode?: string | null;
+		QuotaName?: string | null;
+		DesiredValue?: number | null;
+		AwsRegion?: string | null;
+		Unit?: string | null;
+		GlobalQuota?: boolean | null;
 	}
 
 	export interface GetServiceQuotaIncreaseRequestFromTemplateRequest {
@@ -197,88 +197,88 @@ export namespace MyNS {
 	}
 
 	export interface ListAWSDefaultServiceQuotasResponse {
-		NextToken?: string;
-		Quotas?: Array<ServiceQuota>;
+		NextToken?: string | null;
+		Quotas?: Array<ServiceQuota> | null;
 	}
 
 	export interface ListAWSDefaultServiceQuotasRequest {
 		ServiceCode: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface InvalidPaginationTokenException {
 	}
 
 	export interface ListRequestedServiceQuotaChangeHistoryResponse {
-		NextToken?: string;
-		RequestedQuotas?: Array<RequestedServiceQuotaChange>;
+		NextToken?: string | null;
+		RequestedQuotas?: Array<RequestedServiceQuotaChange> | null;
 	}
 
 	export interface ListRequestedServiceQuotaChangeHistoryRequest {
-		ServiceCode?: string;
-		Status?: RequestedServiceQuotaChangeStatus;
-		NextToken?: string;
-		MaxResults?: number;
+		ServiceCode?: string | null;
+		Status?: RequestedServiceQuotaChangeStatus | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListRequestedServiceQuotaChangeHistoryByQuotaResponse {
-		NextToken?: string;
-		RequestedQuotas?: Array<RequestedServiceQuotaChange>;
+		NextToken?: string | null;
+		RequestedQuotas?: Array<RequestedServiceQuotaChange> | null;
 	}
 
 	export interface ListRequestedServiceQuotaChangeHistoryByQuotaRequest {
 		ServiceCode: string;
 		QuotaCode: string;
-		Status?: RequestedServiceQuotaChangeStatus;
-		NextToken?: string;
-		MaxResults?: number;
+		Status?: RequestedServiceQuotaChangeStatus | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListServiceQuotaIncreaseRequestsInTemplateResponse {
-		ServiceQuotaIncreaseRequestInTemplateList?: Array<ServiceQuotaIncreaseRequestInTemplate>;
-		NextToken?: string;
+		ServiceQuotaIncreaseRequestInTemplateList?: Array<ServiceQuotaIncreaseRequestInTemplate> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListServiceQuotaIncreaseRequestsInTemplateRequest {
-		ServiceCode?: string;
-		AwsRegion?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		ServiceCode?: string | null;
+		AwsRegion?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListServiceQuotasResponse {
-		NextToken?: string;
-		Quotas?: Array<ServiceQuota>;
+		NextToken?: string | null;
+		Quotas?: Array<ServiceQuota> | null;
 	}
 
 	export interface ListServiceQuotasRequest {
 		ServiceCode: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListServicesResponse {
-		NextToken?: string;
-		Services?: Array<ServiceInfo>;
+		NextToken?: string | null;
+		Services?: Array<ServiceInfo> | null;
 	}
 
 
 	/** A structure that contains the <code>ServiceName</code> and <code>ServiceCode</code>. It does not include all details of the service quota. To get those values, use the <a>ListServiceQuotas</a> operation.  */
 	export interface ServiceInfo {
-		ServiceCode?: string;
-		ServiceName?: string;
+		ServiceCode?: string | null;
+		ServiceName?: string | null;
 	}
 
 	export interface ListServicesRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface PutServiceQuotaIncreaseRequestIntoTemplateResponse {
 
 		/** A structure that contains information about one service quota increase request. */
-		ServiceQuotaIncreaseRequestInTemplate?: ServiceQuotaIncreaseRequestInTemplate;
+		ServiceQuotaIncreaseRequestInTemplate?: ServiceQuotaIncreaseRequestInTemplate | null;
 	}
 
 	export interface PutServiceQuotaIncreaseRequestIntoTemplateRequest {
@@ -294,7 +294,7 @@ export namespace MyNS {
 	export interface RequestServiceQuotaIncreaseResponse {
 
 		/** A structure that contains information about a requested change for a quota. */
-		RequestedQuota?: RequestedServiceQuotaChange;
+		RequestedQuota?: RequestedServiceQuotaChange | null;
 	}
 
 	export interface RequestServiceQuotaIncreaseRequest {
@@ -401,7 +401,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAWSDefaultServiceQuotasResponse} Success
 		 */
-		ListAWSDefaultServiceQuotas(MaxResults: string, NextToken: string, requestBody: ListAWSDefaultServiceQuotasRequest): Observable<ListAWSDefaultServiceQuotasResponse> {
+		ListAWSDefaultServiceQuotas(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAWSDefaultServiceQuotasRequest): Observable<ListAWSDefaultServiceQuotasResponse> {
 			return this.http.post<ListAWSDefaultServiceQuotasResponse>(this.baseUri + '#X-Amz-Target=ServiceQuotasV20190624.ListAWSDefaultServiceQuotas?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -412,7 +412,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRequestedServiceQuotaChangeHistoryResponse} Success
 		 */
-		ListRequestedServiceQuotaChangeHistory(MaxResults: string, NextToken: string, requestBody: ListRequestedServiceQuotaChangeHistoryRequest): Observable<ListRequestedServiceQuotaChangeHistoryResponse> {
+		ListRequestedServiceQuotaChangeHistory(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListRequestedServiceQuotaChangeHistoryRequest): Observable<ListRequestedServiceQuotaChangeHistoryResponse> {
 			return this.http.post<ListRequestedServiceQuotaChangeHistoryResponse>(this.baseUri + '#X-Amz-Target=ServiceQuotasV20190624.ListRequestedServiceQuotaChangeHistory?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -423,7 +423,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRequestedServiceQuotaChangeHistoryByQuotaResponse} Success
 		 */
-		ListRequestedServiceQuotaChangeHistoryByQuota(MaxResults: string, NextToken: string, requestBody: ListRequestedServiceQuotaChangeHistoryByQuotaRequest): Observable<ListRequestedServiceQuotaChangeHistoryByQuotaResponse> {
+		ListRequestedServiceQuotaChangeHistoryByQuota(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListRequestedServiceQuotaChangeHistoryByQuotaRequest): Observable<ListRequestedServiceQuotaChangeHistoryByQuotaResponse> {
 			return this.http.post<ListRequestedServiceQuotaChangeHistoryByQuotaResponse>(this.baseUri + '#X-Amz-Target=ServiceQuotasV20190624.ListRequestedServiceQuotaChangeHistoryByQuota?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -434,7 +434,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListServiceQuotaIncreaseRequestsInTemplateResponse} Success
 		 */
-		ListServiceQuotaIncreaseRequestsInTemplate(MaxResults: string, NextToken: string, requestBody: ListServiceQuotaIncreaseRequestsInTemplateRequest): Observable<ListServiceQuotaIncreaseRequestsInTemplateResponse> {
+		ListServiceQuotaIncreaseRequestsInTemplate(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListServiceQuotaIncreaseRequestsInTemplateRequest): Observable<ListServiceQuotaIncreaseRequestsInTemplateResponse> {
 			return this.http.post<ListServiceQuotaIncreaseRequestsInTemplateResponse>(this.baseUri + '#X-Amz-Target=ServiceQuotasV20190624.ListServiceQuotaIncreaseRequestsInTemplate?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -445,7 +445,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListServiceQuotasResponse} Success
 		 */
-		ListServiceQuotas(MaxResults: string, NextToken: string, requestBody: ListServiceQuotasRequest): Observable<ListServiceQuotasResponse> {
+		ListServiceQuotas(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListServiceQuotasRequest): Observable<ListServiceQuotasResponse> {
 			return this.http.post<ListServiceQuotasResponse>(this.baseUri + '#X-Amz-Target=ServiceQuotasV20190624.ListServiceQuotas?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -456,7 +456,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListServicesResponse} Success
 		 */
-		ListServices(MaxResults: string, NextToken: string, requestBody: ListServicesRequest): Observable<ListServicesResponse> {
+		ListServices(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListServicesRequest): Observable<ListServicesResponse> {
 			return this.http.post<ListServicesResponse>(this.baseUri + '#X-Amz-Target=ServiceQuotasV20190624.ListServices?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

@@ -3,21 +3,21 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateApplicationResponse {
-		ApplicationId?: string;
-		Author?: string;
-		CreationTime?: string;
-		Description?: string;
-		HomePageUrl?: string;
-		IsVerifiedAuthor?: boolean;
-		Labels?: Array<string>;
-		LicenseUrl?: string;
-		Name?: string;
-		ReadmeUrl?: string;
-		SpdxLicenseId?: string;
-		VerifiedAuthorUrl?: string;
+		ApplicationId?: string | null;
+		Author?: string | null;
+		CreationTime?: string | null;
+		Description?: string | null;
+		HomePageUrl?: string | null;
+		IsVerifiedAuthor?: boolean | null;
+		Labels?: Array<string> | null;
+		LicenseUrl?: string | null;
+		Name?: string | null;
+		ReadmeUrl?: string | null;
+		SpdxLicenseId?: string | null;
+		VerifiedAuthorUrl?: string | null;
 
 		/** Application version details. */
-		Version?: Version;
+		Version?: Version | null;
 	}
 
 
@@ -29,27 +29,27 @@ export namespace MyNS {
 		RequiredCapabilities: Array<Capability>;
 		ResourcesSupported: boolean;
 		SemanticVersion: string;
-		SourceCodeArchiveUrl?: string;
-		SourceCodeUrl?: string;
+		SourceCodeArchiveUrl?: string | null;
+		SourceCodeUrl?: string | null;
 		TemplateUrl: string;
 	}
 
 
 	/** Parameters supported by the application. */
 	export interface ParameterDefinition {
-		AllowedPattern?: string;
-		AllowedValues?: Array<string>;
-		ConstraintDescription?: string;
-		DefaultValue?: string;
-		Description?: string;
-		MaxLength?: number;
-		MaxValue?: number;
-		MinLength?: number;
-		MinValue?: number;
+		AllowedPattern?: string | null;
+		AllowedValues?: Array<string> | null;
+		ConstraintDescription?: string | null;
+		DefaultValue?: string | null;
+		Description?: string | null;
+		MaxLength?: number | null;
+		MaxValue?: number | null;
+		MinLength?: number | null;
+		MinValue?: number | null;
 		Name: string;
-		NoEcho?: boolean;
+		NoEcho?: boolean | null;
 		ReferencedByResources: Array<string>;
-		Type?: string;
+		Type?: string | null;
 	}
 
 
@@ -72,22 +72,22 @@ export namespace MyNS {
 	}
 
 	export interface CreateApplicationVersionResponse {
-		ApplicationId?: string;
-		CreationTime?: string;
-		ParameterDefinitions?: Array<ParameterDefinition>;
-		RequiredCapabilities?: Array<Capability>;
-		ResourcesSupported?: boolean;
-		SemanticVersion?: string;
-		SourceCodeArchiveUrl?: string;
-		SourceCodeUrl?: string;
-		TemplateUrl?: string;
+		ApplicationId?: string | null;
+		CreationTime?: string | null;
+		ParameterDefinitions?: Array<ParameterDefinition> | null;
+		RequiredCapabilities?: Array<Capability> | null;
+		ResourcesSupported?: boolean | null;
+		SemanticVersion?: string | null;
+		SourceCodeArchiveUrl?: string | null;
+		SourceCodeUrl?: string | null;
+		TemplateUrl?: string | null;
 	}
 
 	export interface CreateCloudFormationChangeSetResponse {
-		ApplicationId?: string;
-		ChangeSetId?: string;
-		SemanticVersion?: string;
-		StackId?: string;
+		ApplicationId?: string | null;
+		ChangeSetId?: string | null;
+		SemanticVersion?: string | null;
+		StackId?: string | null;
 	}
 
 
@@ -118,13 +118,13 @@ export namespace MyNS {
 	}
 
 	export interface CreateCloudFormationTemplateResponse {
-		ApplicationId?: string;
-		CreationTime?: string;
-		ExpirationTime?: string;
-		SemanticVersion?: string;
-		Status?: CreateCloudFormationTemplateResponseStatus;
-		TemplateId?: string;
-		TemplateUrl?: string;
+		ApplicationId?: string | null;
+		CreationTime?: string | null;
+		ExpirationTime?: string | null;
+		SemanticVersion?: string | null;
+		Status?: CreateCloudFormationTemplateResponseStatus | null;
+		TemplateId?: string | null;
+		TemplateUrl?: string | null;
 	}
 
 	export enum CreateCloudFormationTemplateResponseStatus { PREPARING = 0, ACTIVE = 1, EXPIRED = 2 }
@@ -133,49 +133,49 @@ export namespace MyNS {
 	}
 
 	export interface GetApplicationResponse {
-		ApplicationId?: string;
-		Author?: string;
-		CreationTime?: string;
-		Description?: string;
-		HomePageUrl?: string;
-		IsVerifiedAuthor?: boolean;
-		Labels?: Array<string>;
-		LicenseUrl?: string;
-		Name?: string;
-		ReadmeUrl?: string;
-		SpdxLicenseId?: string;
-		VerifiedAuthorUrl?: string;
+		ApplicationId?: string | null;
+		Author?: string | null;
+		CreationTime?: string | null;
+		Description?: string | null;
+		HomePageUrl?: string | null;
+		IsVerifiedAuthor?: boolean | null;
+		Labels?: Array<string> | null;
+		LicenseUrl?: string | null;
+		Name?: string | null;
+		ReadmeUrl?: string | null;
+		SpdxLicenseId?: string | null;
+		VerifiedAuthorUrl?: string | null;
 
 		/** Application version details. */
-		Version?: Version;
+		Version?: Version | null;
 	}
 
 	export interface GetApplicationPolicyResponse {
-		Statements?: Array<ApplicationPolicyStatement>;
+		Statements?: Array<ApplicationPolicyStatement> | null;
 	}
 
 
 	/** Policy statement applied to the application. */
 	export interface ApplicationPolicyStatement {
 		Actions: Array<string>;
-		PrincipalOrgIDs?: Array<string>;
+		PrincipalOrgIDs?: Array<string> | null;
 		Principals: Array<string>;
-		StatementId?: string;
+		StatementId?: string | null;
 	}
 
 	export interface GetCloudFormationTemplateResponse {
-		ApplicationId?: string;
-		CreationTime?: string;
-		ExpirationTime?: string;
-		SemanticVersion?: string;
-		Status?: CreateCloudFormationTemplateResponseStatus;
-		TemplateId?: string;
-		TemplateUrl?: string;
+		ApplicationId?: string | null;
+		CreationTime?: string | null;
+		ExpirationTime?: string | null;
+		SemanticVersion?: string | null;
+		Status?: CreateCloudFormationTemplateResponseStatus | null;
+		TemplateId?: string | null;
+		TemplateUrl?: string | null;
 	}
 
 	export interface ListApplicationDependenciesResponse {
-		Dependencies?: Array<ApplicationDependencySummary>;
-		NextToken?: string;
+		Dependencies?: Array<ApplicationDependencySummary> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -186,8 +186,8 @@ export namespace MyNS {
 	}
 
 	export interface ListApplicationVersionsResponse {
-		NextToken?: string;
-		Versions?: Array<VersionSummary>;
+		NextToken?: string | null;
+		Versions?: Array<VersionSummary> | null;
 	}
 
 
@@ -196,12 +196,12 @@ export namespace MyNS {
 		ApplicationId: string;
 		CreationTime: string;
 		SemanticVersion: string;
-		SourceCodeUrl?: string;
+		SourceCodeUrl?: string | null;
 	}
 
 	export interface ListApplicationsResponse {
-		Applications?: Array<ApplicationSummary>;
-		NextToken?: string;
+		Applications?: Array<ApplicationSummary> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -209,59 +209,59 @@ export namespace MyNS {
 	export interface ApplicationSummary {
 		ApplicationId: string;
 		Author: string;
-		CreationTime?: string;
+		CreationTime?: string | null;
 		Description: string;
-		HomePageUrl?: string;
-		Labels?: Array<string>;
+		HomePageUrl?: string | null;
+		Labels?: Array<string> | null;
 		Name: string;
-		SpdxLicenseId?: string;
+		SpdxLicenseId?: string | null;
 	}
 
 	export interface PutApplicationPolicyResponse {
-		Statements?: Array<ApplicationPolicyStatement>;
+		Statements?: Array<ApplicationPolicyStatement> | null;
 	}
 
 	export interface UpdateApplicationResponse {
-		ApplicationId?: string;
-		Author?: string;
-		CreationTime?: string;
-		Description?: string;
-		HomePageUrl?: string;
-		IsVerifiedAuthor?: boolean;
-		Labels?: Array<string>;
-		LicenseUrl?: string;
-		Name?: string;
-		ReadmeUrl?: string;
-		SpdxLicenseId?: string;
-		VerifiedAuthorUrl?: string;
+		ApplicationId?: string | null;
+		Author?: string | null;
+		CreationTime?: string | null;
+		Description?: string | null;
+		HomePageUrl?: string | null;
+		IsVerifiedAuthor?: boolean | null;
+		Labels?: Array<string> | null;
+		LicenseUrl?: string | null;
+		Name?: string | null;
+		ReadmeUrl?: string | null;
+		SpdxLicenseId?: string | null;
+		VerifiedAuthorUrl?: string | null;
 
 		/** Application version details. */
-		Version?: Version;
+		Version?: Version | null;
 	}
 
 	export interface CreateApplicationRequest {
 		Author: string;
 		Description: string;
-		HomePageUrl?: string;
-		Labels?: Array<string>;
-		LicenseBody?: string;
-		LicenseUrl?: string;
+		HomePageUrl?: string | null;
+		Labels?: Array<string> | null;
+		LicenseBody?: string | null;
+		LicenseUrl?: string | null;
 		Name: string;
-		ReadmeBody?: string;
-		ReadmeUrl?: string;
-		SemanticVersion?: string;
-		SourceCodeArchiveUrl?: string;
-		SourceCodeUrl?: string;
-		SpdxLicenseId?: string;
-		TemplateBody?: string;
-		TemplateUrl?: string;
+		ReadmeBody?: string | null;
+		ReadmeUrl?: string | null;
+		SemanticVersion?: string | null;
+		SourceCodeArchiveUrl?: string | null;
+		SourceCodeUrl?: string | null;
+		SpdxLicenseId?: string | null;
+		TemplateBody?: string | null;
+		TemplateUrl?: string | null;
 	}
 
 	export interface CreateApplicationVersionRequest {
-		SourceCodeArchiveUrl?: string;
-		SourceCodeUrl?: string;
-		TemplateBody?: string;
-		TemplateUrl?: string;
+		SourceCodeArchiveUrl?: string | null;
+		SourceCodeUrl?: string | null;
+		TemplateBody?: string | null;
+		TemplateUrl?: string | null;
 	}
 
 
@@ -270,32 +270,32 @@ export namespace MyNS {
 	 *  </i> Data Type.
 	 */
 	export interface RollbackConfiguration {
-		MonitoringTimeInMinutes?: number;
-		RollbackTriggers?: Array<RollbackTrigger>;
+		MonitoringTimeInMinutes?: number | null;
+		RollbackTriggers?: Array<RollbackTrigger> | null;
 	}
 
 	export interface CreateCloudFormationChangeSetRequest {
-		Capabilities?: Array<string>;
-		ChangeSetName?: string;
-		ClientToken?: string;
-		Description?: string;
-		NotificationArns?: Array<string>;
-		ParameterOverrides?: Array<ParameterValue>;
-		ResourceTypes?: Array<string>;
+		Capabilities?: Array<string> | null;
+		ChangeSetName?: string | null;
+		ClientToken?: string | null;
+		Description?: string | null;
+		NotificationArns?: Array<string> | null;
+		ParameterOverrides?: Array<ParameterValue> | null;
+		ResourceTypes?: Array<string> | null;
 
 		/**
 		 * This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a>
 		 * </i> Data Type.
 		 */
-		RollbackConfiguration?: RollbackConfiguration;
-		SemanticVersion?: string;
+		RollbackConfiguration?: RollbackConfiguration | null;
+		SemanticVersion?: string | null;
 		StackName: string;
-		Tags?: Array<Tag>;
-		TemplateId?: string;
+		Tags?: Array<Tag> | null;
+		TemplateId?: string | null;
 	}
 
 	export interface CreateCloudFormationTemplateRequest {
-		SemanticVersion?: string;
+		SemanticVersion?: string | null;
 	}
 
 	export enum Status { PREPARING = 0, ACTIVE = 1, EXPIRED = 2 }
@@ -330,12 +330,12 @@ export namespace MyNS {
 	}
 
 	export interface UpdateApplicationRequest {
-		Author?: string;
-		Description?: string;
-		HomePageUrl?: string;
-		Labels?: Array<string>;
-		ReadmeBody?: string;
-		ReadmeUrl?: string;
+		Author?: string | null;
+		Description?: string | null;
+		HomePageUrl?: string | null;
+		Labels?: Array<string> | null;
+		ReadmeBody?: string | null;
+		ReadmeUrl?: string | null;
 	}
 
 	@Injectable()
@@ -361,7 +361,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListApplicationsResponse} Success
 		 */
-		ListApplications(maxItems: number, nextToken: string, MaxItems: string, NextToken: string): Observable<ListApplicationsResponse> {
+		ListApplications(maxItems: number | null | undefined, nextToken: string | null | undefined, MaxItems: string | null | undefined, NextToken: string | null | undefined): Observable<ListApplicationsResponse> {
 			return this.http.get<ListApplicationsResponse>(this.baseUri + 'applications?maxItems=' + maxItems + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -413,7 +413,7 @@ export namespace MyNS {
 		 * @param {string} semanticVersion The semantic version of the application to get.
 		 * @return {GetApplicationResponse} Success
 		 */
-		GetApplication(applicationId: string, semanticVersion: string): Observable<GetApplicationResponse> {
+		GetApplication(applicationId: string, semanticVersion: string | null | undefined): Observable<GetApplicationResponse> {
 			return this.http.get<GetApplicationResponse>(this.baseUri + 'applications/' + (applicationId == null ? '' : encodeURIComponent(applicationId)) + '&semanticVersion=' + (semanticVersion == null ? '' : encodeURIComponent(semanticVersion)), {});
 		}
 
@@ -472,7 +472,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListApplicationDependenciesResponse} Success
 		 */
-		ListApplicationDependencies(applicationId: string, maxItems: number, nextToken: string, semanticVersion: string, MaxItems: string, NextToken: string): Observable<ListApplicationDependenciesResponse> {
+		ListApplicationDependencies(applicationId: string, maxItems: number | null | undefined, nextToken: string | null | undefined, semanticVersion: string | null | undefined, MaxItems: string | null | undefined, NextToken: string | null | undefined): Observable<ListApplicationDependenciesResponse> {
 			return this.http.get<ListApplicationDependenciesResponse>(this.baseUri + 'applications/' + (applicationId == null ? '' : encodeURIComponent(applicationId)) + '/dependencies&maxItems=' + maxItems + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&semanticVersion=' + (semanticVersion == null ? '' : encodeURIComponent(semanticVersion)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -486,7 +486,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListApplicationVersionsResponse} Success
 		 */
-		ListApplicationVersions(applicationId: string, maxItems: number, nextToken: string, MaxItems: string, NextToken: string): Observable<ListApplicationVersionsResponse> {
+		ListApplicationVersions(applicationId: string, maxItems: number | null | undefined, nextToken: string | null | undefined, MaxItems: string | null | undefined, NextToken: string | null | undefined): Observable<ListApplicationVersionsResponse> {
 			return this.http.get<ListApplicationVersionsResponse>(this.baseUri + 'applications/' + (applicationId == null ? '' : encodeURIComponent(applicationId)) + '/versions&maxItems=' + maxItems + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -516,19 +516,19 @@ export namespace MyNS {
 		description: string;
 
 		/** A URL with more information about the application, for example the location of your GitHub repository for the application. */
-		homePageUrl?: string;
+		homePageUrl?: string | null;
 
 		/** <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p> */
-		labels?: Array<string>;
+		labels?: Array<string> | null;
 
 		/**
 		 * <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application.
 		 * The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
 		 */
-		licenseBody?: string;
+		licenseBody?: string | null;
 
 		/** <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p> */
-		licenseUrl?: string;
+		licenseUrl?: string | null;
 
 		/**
 		 * <p>The name of the application that you want to publish.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
@@ -540,50 +540,50 @@ export namespace MyNS {
 		 * <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works.
 		 * The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
 		 */
-		readmeBody?: string;
+		readmeBody?: string | null;
 
 		/** <p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p> */
-		readmeUrl?: string;
+		readmeUrl?: string | null;
 
 		/**
 		 * <p>The semantic version of the application:</p><p>
 		 * <a href="https://semver.org/">https://semver.org/</a>
 		 * </p>
 		 */
-		semanticVersion?: string;
+		semanticVersion?: string | null;
 
 		/** <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p> */
-		sourceCodeArchiveUrl?: string;
+		sourceCodeArchiveUrl?: string | null;
 
 		/** A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit. */
-		sourceCodeUrl?: string;
+		sourceCodeUrl?: string | null;
 
 		/** A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>. */
-		spdxLicenseId?: string;
+		spdxLicenseId?: string | null;
 
 		/**
 		 * <p>The local raw packaged AWS SAM template file of your application.
 		 * The file has the format file://&lt;path>/&lt;filename>.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
 		 */
-		templateBody?: string;
+		templateBody?: string | null;
 
 		/** <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p> */
-		templateUrl?: string;
+		templateUrl?: string | null;
 	}
 
 	export interface CreateApplicationVersionPutBody {
 
 		/** <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p> */
-		sourceCodeArchiveUrl?: string;
+		sourceCodeArchiveUrl?: string | null;
 
 		/** A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit. */
-		sourceCodeUrl?: string;
+		sourceCodeUrl?: string | null;
 
 		/** The raw packaged AWS SAM template of your application. */
-		templateBody?: string;
+		templateBody?: string | null;
 
 		/** A link to the packaged AWS SAM template of your application. */
-		templateUrl?: string;
+		templateUrl?: string | null;
 	}
 
 	export interface CreateCloudFormationChangeSetPostBody {
@@ -613,53 +613,53 @@ export namespace MyNS {
 		 * all permissions associated with the application before deploying. If you don't specify
 		 * this parameter for an application that requires capabilities, the call will fail.</p>
 		 */
-		capabilities?: Array<string>;
+		capabilities?: Array<string> | null;
 
 		/**
 		 * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
 		 * </i> API.
 		 */
-		changeSetName?: string;
+		changeSetName?: string | null;
 
 		/**
 		 * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
 		 * </i> API.
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
 		 * </i> API.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
 		 * </i> API.
 		 */
-		notificationArns?: Array<string>;
+		notificationArns?: Array<string> | null;
 
 		/** A list of parameter values for the parameters of the application. */
-		parameterOverrides?: Array<ParameterValue>;
+		parameterOverrides?: Array<ParameterValue> | null;
 
 		/**
 		 * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
 		 * </i> API.
 		 */
-		resourceTypes?: Array<string>;
+		resourceTypes?: Array<string> | null;
 
 		/**
 		 * This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a>
 		 * </i> Data Type.
 		 */
-		rollbackConfiguration?: CreateCloudFormationChangeSetPostBodyRollbackConfiguration;
+		rollbackConfiguration?: CreateCloudFormationChangeSetPostBodyRollbackConfiguration | null;
 
 		/**
 		 * <p>The semantic version of the application:</p><p>
 		 * <a href="https://semver.org/">https://semver.org/</a>
 		 * </p>
 		 */
-		semanticVersion?: string;
+		semanticVersion?: string | null;
 
 		/**
 		 * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
@@ -672,15 +672,15 @@ export namespace MyNS {
 		 * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
 		 * </i> API.
 		 */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 
 		/** <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p> */
-		templateId?: string;
+		templateId?: string | null;
 	}
 
 	export interface CreateCloudFormationChangeSetPostBodyRollbackConfiguration {
-		MonitoringTimeInMinutes?: number;
-		RollbackTriggers?: Array<RollbackTrigger>;
+		MonitoringTimeInMinutes?: number | null;
+		RollbackTriggers?: Array<RollbackTrigger> | null;
 	}
 
 	export interface CreateCloudFormationTemplatePostBody {
@@ -690,28 +690,28 @@ export namespace MyNS {
 		 * <a href="https://semver.org/">https://semver.org/</a>
 		 * </p>
 		 */
-		semanticVersion?: string;
+		semanticVersion?: string | null;
 	}
 
 	export interface UpdateApplicationPatchBody {
 
 		/** <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p> */
-		author?: string;
+		author?: string | null;
 
 		/** <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p> */
-		description?: string;
+		description?: string | null;
 
 		/** A URL with more information about the application, for example the location of your GitHub repository for the application. */
-		homePageUrl?: string;
+		homePageUrl?: string | null;
 
 		/** <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p> */
-		labels?: Array<string>;
+		labels?: Array<string> | null;
 
 		/** <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p> */
-		readmeBody?: string;
+		readmeBody?: string | null;
 
 		/** <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p> */
-		readmeUrl?: string;
+		readmeUrl?: string | null;
 	}
 
 	export interface PutApplicationPolicyPutBody {

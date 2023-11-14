@@ -3,34 +3,34 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateDeliveryStreamOutput {
-		DeliveryStreamARN?: string;
+		DeliveryStreamARN?: string | null;
 	}
 
 	export interface CreateDeliveryStreamInput {
 		DeliveryStreamName: string;
-		DeliveryStreamType?: CreateDeliveryStreamInputDeliveryStreamType;
+		DeliveryStreamType?: CreateDeliveryStreamInputDeliveryStreamType | null;
 
 		/** The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream used as the source for a delivery stream. */
-		KinesisStreamSourceConfiguration?: KinesisStreamSourceConfiguration;
+		KinesisStreamSourceConfiguration?: KinesisStreamSourceConfiguration | null;
 
 		/** Specifies the type and Amazon Resource Name (ARN) of the CMK to use for Server-Side Encryption (SSE). */
-		DeliveryStreamEncryptionConfigurationInput?: DeliveryStreamEncryptionConfigurationInput;
+		DeliveryStreamEncryptionConfigurationInput?: DeliveryStreamEncryptionConfigurationInput | null;
 
 		/** Describes the configuration of a destination in Amazon S3. */
-		S3DestinationConfiguration?: S3DestinationConfiguration;
+		S3DestinationConfiguration?: S3DestinationConfiguration | null;
 
 		/** Describes the configuration of a destination in Amazon S3. */
-		ExtendedS3DestinationConfiguration?: ExtendedS3DestinationConfiguration;
+		ExtendedS3DestinationConfiguration?: ExtendedS3DestinationConfiguration | null;
 
 		/** Describes the configuration of a destination in Amazon Redshift. */
-		RedshiftDestinationConfiguration?: RedshiftDestinationConfiguration;
+		RedshiftDestinationConfiguration?: RedshiftDestinationConfiguration | null;
 
 		/** Describes the configuration of a destination in Amazon ES. */
-		ElasticsearchDestinationConfiguration?: ElasticsearchDestinationConfiguration;
+		ElasticsearchDestinationConfiguration?: ElasticsearchDestinationConfiguration | null;
 
 		/** Describes the configuration of a destination in Splunk. */
-		SplunkDestinationConfiguration?: SplunkDestinationConfiguration;
-		Tags?: Array<Tag>;
+		SplunkDestinationConfiguration?: SplunkDestinationConfiguration | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum CreateDeliveryStreamInputDeliveryStreamType { DirectPut = 0, KinesisStreamAsSource = 1 }
@@ -45,7 +45,7 @@ export namespace MyNS {
 
 	/** Specifies the type and Amazon Resource Name (ARN) of the CMK to use for Server-Side Encryption (SSE).  */
 	export interface DeliveryStreamEncryptionConfigurationInput {
-		KeyARN?: string;
+		KeyARN?: string | null;
 		KeyType: DeliveryStreamEncryptionConfigurationInputKeyType;
 	}
 
@@ -56,25 +56,25 @@ export namespace MyNS {
 	export interface S3DestinationConfiguration {
 		RoleARN: string;
 		BucketARN: string;
-		Prefix?: string;
-		ErrorOutputPrefix?: string;
+		Prefix?: string | null;
+		ErrorOutputPrefix?: string | null;
 
 		/** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. */
-		BufferingHints?: BufferingHints;
-		CompressionFormat?: S3DestinationConfigurationCompressionFormat;
+		BufferingHints?: BufferingHints | null;
+		CompressionFormat?: S3DestinationConfigurationCompressionFormat | null;
 
 		/** Describes the encryption for a destination in Amazon S3. */
-		EncryptionConfiguration?: EncryptionConfiguration;
+		EncryptionConfiguration?: EncryptionConfiguration | null;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
 	}
 
 
 	/** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. */
 	export interface BufferingHints {
-		SizeInMBs?: number;
-		IntervalInSeconds?: number;
+		SizeInMBs?: number | null;
+		IntervalInSeconds?: number | null;
 	}
 
 	export enum S3DestinationConfigurationCompressionFormat { UNCOMPRESSED = 0, GZIP = 1, ZIP = 2, Snappy = 3, HADOOP_SNAPPY = 4 }
@@ -82,10 +82,10 @@ export namespace MyNS {
 
 	/** Describes the encryption for a destination in Amazon S3. */
 	export interface EncryptionConfiguration {
-		NoEncryptionConfig?: EncryptionConfigurationNoEncryptionConfig;
+		NoEncryptionConfig?: EncryptionConfigurationNoEncryptionConfig | null;
 
 		/** Describes an encryption key for a destination in Amazon S3. */
-		KMSEncryptionConfig?: KMSEncryptionConfig;
+		KMSEncryptionConfig?: KMSEncryptionConfig | null;
 	}
 
 	export enum EncryptionConfigurationNoEncryptionConfig { NoEncryption = 0 }
@@ -99,9 +99,9 @@ export namespace MyNS {
 
 	/** Describes the Amazon CloudWatch logging options for your delivery stream. */
 	export interface CloudWatchLoggingOptions {
-		Enabled?: boolean;
-		LogGroupName?: string;
-		LogStreamName?: string;
+		Enabled?: boolean | null;
+		LogGroupName?: string | null;
+		LogStreamName?: string | null;
 	}
 
 
@@ -109,42 +109,42 @@ export namespace MyNS {
 	export interface ExtendedS3DestinationConfiguration {
 		RoleARN: string;
 		BucketARN: string;
-		Prefix?: string;
-		ErrorOutputPrefix?: string;
+		Prefix?: string | null;
+		ErrorOutputPrefix?: string | null;
 
 		/** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. */
-		BufferingHints?: BufferingHints;
-		CompressionFormat?: S3DestinationConfigurationCompressionFormat;
+		BufferingHints?: BufferingHints | null;
+		CompressionFormat?: S3DestinationConfigurationCompressionFormat | null;
 
 		/** Describes the encryption for a destination in Amazon S3. */
-		EncryptionConfiguration?: EncryptionConfiguration;
+		EncryptionConfiguration?: EncryptionConfiguration | null;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration;
-		S3BackupMode?: ExtendedS3DestinationConfigurationS3BackupMode;
+		ProcessingConfiguration?: ProcessingConfiguration | null;
+		S3BackupMode?: ExtendedS3DestinationConfigurationS3BackupMode | null;
 
 		/** Describes the configuration of a destination in Amazon S3. */
-		S3BackupConfiguration?: S3DestinationConfiguration;
+		S3BackupConfiguration?: S3DestinationConfiguration | null;
 
 		/** Specifies that you want Kinesis Data Firehose to convert data from the JSON format to the Parquet or ORC format before writing it to Amazon S3. Kinesis Data Firehose uses the serializer and deserializer that you specify, in addition to the column information from the AWS Glue table, to deserialize your input data from JSON and then serialize it to the Parquet or ORC format. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis Data Firehose Record Format Conversion</a>. */
-		DataFormatConversionConfiguration?: DataFormatConversionConfiguration;
+		DataFormatConversionConfiguration?: DataFormatConversionConfiguration | null;
 	}
 
 
 	/** Describes a data processing configuration. */
 	export interface ProcessingConfiguration {
-		Enabled?: boolean;
-		Processors?: Array<Processor>;
+		Enabled?: boolean | null;
+		Processors?: Array<Processor> | null;
 	}
 
 
 	/** Describes a data processor. */
 	export interface Processor {
 		Type: ProcessorType;
-		Parameters?: Array<ProcessorParameter>;
+		Parameters?: Array<ProcessorParameter> | null;
 	}
 
 	export enum ProcessorType { Lambda = 0 }
@@ -165,25 +165,25 @@ export namespace MyNS {
 	export interface DataFormatConversionConfiguration {
 
 		/** Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true. */
-		SchemaConfiguration?: SchemaConfiguration;
+		SchemaConfiguration?: SchemaConfiguration | null;
 
 		/** Specifies the deserializer you want to use to convert the format of the input data. This parameter is required if <code>Enabled</code> is set to true. */
-		InputFormatConfiguration?: InputFormatConfiguration;
+		InputFormatConfiguration?: InputFormatConfiguration | null;
 
 		/** Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true. */
-		OutputFormatConfiguration?: OutputFormatConfiguration;
-		Enabled?: boolean;
+		OutputFormatConfiguration?: OutputFormatConfiguration | null;
+		Enabled?: boolean | null;
 	}
 
 
 	/** Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true. */
 	export interface SchemaConfiguration {
-		RoleARN?: string;
-		CatalogId?: string;
-		DatabaseName?: string;
-		TableName?: string;
-		Region?: string;
-		VersionId?: string;
+		RoleARN?: string | null;
+		CatalogId?: string | null;
+		DatabaseName?: string | null;
+		TableName?: string | null;
+		Region?: string | null;
+		VersionId?: string | null;
 	}
 
 
@@ -191,7 +191,7 @@ export namespace MyNS {
 	export interface InputFormatConfiguration {
 
 		/** The deserializer you want Kinesis Data Firehose to use for converting the input data from JSON. Kinesis Data Firehose then serializes the data to its final format using the <a>Serializer</a>. Kinesis Data Firehose supports two types of deserializers: the <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-JSON">Apache Hive JSON SerDe</a> and the <a href="https://github.com/rcongiu/Hive-JSON-Serde">OpenX JSON SerDe</a>. */
-		Deserializer?: Deserializer;
+		Deserializer?: Deserializer | null;
 	}
 
 
@@ -199,18 +199,18 @@ export namespace MyNS {
 	export interface Deserializer {
 
 		/** The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog JsonSerDe. */
-		OpenXJsonSerDe?: OpenXJsonSerDe;
+		OpenXJsonSerDe?: OpenXJsonSerDe | null;
 
 		/** The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe. */
-		HiveJsonSerDe?: HiveJsonSerDe;
+		HiveJsonSerDe?: HiveJsonSerDe | null;
 	}
 
 
 	/** The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog JsonSerDe. */
 	export interface OpenXJsonSerDe {
-		ConvertDotsInJsonKeysToUnderscores?: boolean;
-		CaseInsensitive?: boolean;
-		ColumnToJsonKeyMappings?: ColumnToJsonKeyMappings;
+		ConvertDotsInJsonKeysToUnderscores?: boolean | null;
+		CaseInsensitive?: boolean | null;
+		ColumnToJsonKeyMappings?: ColumnToJsonKeyMappings | null;
 	}
 
 	export interface ColumnToJsonKeyMappings {
@@ -219,7 +219,7 @@ export namespace MyNS {
 
 	/** The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe. */
 	export interface HiveJsonSerDe {
-		TimestampFormats?: Array<string>;
+		TimestampFormats?: Array<string> | null;
 	}
 
 
@@ -227,7 +227,7 @@ export namespace MyNS {
 	export interface OutputFormatConfiguration {
 
 		/** The serializer that you want Kinesis Data Firehose to use to convert data to the target format before writing it to Amazon S3. Kinesis Data Firehose supports two types of serializers: the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/orc/OrcSerde.html">ORC SerDe</a> and the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/parquet/serde/ParquetHiveSerDe.html">Parquet SerDe</a>. */
-		Serializer?: Serializer;
+		Serializer?: Serializer | null;
 	}
 
 
@@ -235,21 +235,21 @@ export namespace MyNS {
 	export interface Serializer {
 
 		/** A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>. */
-		ParquetSerDe?: ParquetSerDe;
+		ParquetSerDe?: ParquetSerDe | null;
 
 		/** A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>. */
-		OrcSerDe?: OrcSerDe;
+		OrcSerDe?: OrcSerDe | null;
 	}
 
 
 	/** A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>. */
 	export interface ParquetSerDe {
-		BlockSizeBytes?: number;
-		PageSizeBytes?: number;
-		Compression?: ParquetSerDeCompression;
-		EnableDictionaryCompression?: boolean;
-		MaxPaddingBytes?: number;
-		WriterVersion?: ParquetSerDeWriterVersion;
+		BlockSizeBytes?: number | null;
+		PageSizeBytes?: number | null;
+		Compression?: ParquetSerDeCompression | null;
+		EnableDictionaryCompression?: boolean | null;
+		MaxPaddingBytes?: number | null;
+		WriterVersion?: ParquetSerDeWriterVersion | null;
 	}
 
 	export enum ParquetSerDeCompression { UNCOMPRESSED = 0, GZIP = 1, SNAPPY = 2 }
@@ -259,16 +259,16 @@ export namespace MyNS {
 
 	/** A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>. */
 	export interface OrcSerDe {
-		StripeSizeBytes?: number;
-		BlockSizeBytes?: number;
-		RowIndexStride?: number;
-		EnablePadding?: boolean;
-		PaddingTolerance?: number;
-		Compression?: OrcSerDeCompression;
-		BloomFilterColumns?: Array<string>;
-		BloomFilterFalsePositiveProbability?: number;
-		DictionaryKeyThreshold?: number;
-		FormatVersion?: OrcSerDeFormatVersion;
+		StripeSizeBytes?: number | null;
+		BlockSizeBytes?: number | null;
+		RowIndexStride?: number | null;
+		EnablePadding?: boolean | null;
+		PaddingTolerance?: number | null;
+		Compression?: OrcSerDeCompression | null;
+		BloomFilterColumns?: Array<string> | null;
+		BloomFilterFalsePositiveProbability?: number | null;
+		DictionaryKeyThreshold?: number | null;
+		FormatVersion?: OrcSerDeFormatVersion | null;
 	}
 
 	export enum OrcSerDeCompression { NONE = 0, ZLIB = 1, SNAPPY = 2 }
@@ -290,7 +290,7 @@ export namespace MyNS {
 		Password: string;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. */
-		RetryOptions?: RedshiftRetryOptions;
+		RetryOptions?: RedshiftRetryOptions | null;
 
 		/**
 		 * Describes the configuration of a destination in Amazon S3.
@@ -299,46 +299,46 @@ export namespace MyNS {
 		S3Configuration: S3DestinationConfiguration;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration;
-		S3BackupMode?: ExtendedS3DestinationConfigurationS3BackupMode;
+		ProcessingConfiguration?: ProcessingConfiguration | null;
+		S3BackupMode?: ExtendedS3DestinationConfigurationS3BackupMode | null;
 
 		/** Describes the configuration of a destination in Amazon S3. */
-		S3BackupConfiguration?: S3DestinationConfiguration;
+		S3BackupConfiguration?: S3DestinationConfiguration | null;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
 	}
 
 
 	/** Describes a <code>COPY</code> command for Amazon Redshift. */
 	export interface CopyCommand {
 		DataTableName: string;
-		DataTableColumns?: string;
-		CopyOptions?: string;
+		DataTableColumns?: string | null;
+		CopyOptions?: string | null;
 	}
 
 
 	/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. */
 	export interface RedshiftRetryOptions {
-		DurationInSeconds?: number;
+		DurationInSeconds?: number | null;
 	}
 
 
 	/** Describes the configuration of a destination in Amazon ES. */
 	export interface ElasticsearchDestinationConfiguration {
 		RoleARN: string;
-		DomainARN?: string;
-		ClusterEndpoint?: string;
+		DomainARN?: string | null;
+		ClusterEndpoint?: string | null;
 		IndexName: string;
-		TypeName?: string;
-		IndexRotationPeriod?: ElasticsearchDestinationConfigurationIndexRotationPeriod;
+		TypeName?: string | null;
+		IndexRotationPeriod?: ElasticsearchDestinationConfigurationIndexRotationPeriod | null;
 
 		/** Describes the buffering to perform before delivering data to the Amazon ES destination. */
-		BufferingHints?: ElasticsearchBufferingHints;
+		BufferingHints?: ElasticsearchBufferingHints | null;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. */
-		RetryOptions?: ElasticsearchRetryOptions;
-		S3BackupMode?: ElasticsearchDestinationConfigurationS3BackupMode;
+		RetryOptions?: ElasticsearchRetryOptions | null;
+		S3BackupMode?: ElasticsearchDestinationConfigurationS3BackupMode | null;
 
 		/**
 		 * Describes the configuration of a destination in Amazon S3.
@@ -347,13 +347,13 @@ export namespace MyNS {
 		S3Configuration: S3DestinationConfiguration;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration;
+		ProcessingConfiguration?: ProcessingConfiguration | null;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
 
 		/** The details of the VPC of the Amazon ES destination. */
-		VpcConfiguration?: VpcConfiguration;
+		VpcConfiguration?: VpcConfiguration | null;
 	}
 
 	export enum ElasticsearchDestinationConfigurationIndexRotationPeriod { NoRotation = 0, OneHour = 1, OneDay = 2, OneWeek = 3, OneMonth = 4 }
@@ -361,14 +361,14 @@ export namespace MyNS {
 
 	/** Describes the buffering to perform before delivering data to the Amazon ES destination. */
 	export interface ElasticsearchBufferingHints {
-		IntervalInSeconds?: number;
-		SizeInMBs?: number;
+		IntervalInSeconds?: number | null;
+		SizeInMBs?: number | null;
 	}
 
 
 	/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. */
 	export interface ElasticsearchRetryOptions {
-		DurationInSeconds?: number;
+		DurationInSeconds?: number | null;
 	}
 
 	export enum ElasticsearchDestinationConfigurationS3BackupMode { FailedDocumentsOnly = 0, AllDocuments = 1 }
@@ -387,11 +387,11 @@ export namespace MyNS {
 		HECEndpoint: string;
 		HECEndpointType: SplunkDestinationConfigurationHECEndpointType;
 		HECToken: string;
-		HECAcknowledgmentTimeoutInSeconds?: number;
+		HECAcknowledgmentTimeoutInSeconds?: number | null;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk. */
-		RetryOptions?: SplunkRetryOptions;
-		S3BackupMode?: SplunkDestinationConfigurationS3BackupMode;
+		RetryOptions?: SplunkRetryOptions | null;
+		S3BackupMode?: SplunkDestinationConfigurationS3BackupMode | null;
 
 		/**
 		 * Describes the configuration of a destination in Amazon S3.
@@ -400,10 +400,10 @@ export namespace MyNS {
 		S3Configuration: S3DestinationConfiguration;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration;
+		ProcessingConfiguration?: ProcessingConfiguration | null;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
 	}
 
 	export enum SplunkDestinationConfigurationHECEndpointType { Raw = 0, Event = 1 }
@@ -411,7 +411,7 @@ export namespace MyNS {
 
 	/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk. */
 	export interface SplunkRetryOptions {
-		DurationInSeconds?: number;
+		DurationInSeconds?: number | null;
 	}
 
 	export enum SplunkDestinationConfigurationS3BackupMode { FailedEventsOnly = 0, AllEvents = 1 }
@@ -420,7 +420,7 @@ export namespace MyNS {
 	/** Metadata that you can assign to a delivery stream, consisting of a key-value pair. */
 	export interface Tag {
 		Key: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export interface InvalidArgumentException {
@@ -440,7 +440,7 @@ export namespace MyNS {
 
 	export interface DeleteDeliveryStreamInput {
 		DeliveryStreamName: string;
-		AllowForceDelete?: boolean;
+		AllowForceDelete?: boolean | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -463,17 +463,17 @@ export namespace MyNS {
 		DeliveryStreamStatus: DeliveryStreamDescriptionDeliveryStreamStatus;
 
 		/** Provides details in case one of the following operations fails due to an error related to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>, <a>StopDeliveryStreamEncryption</a>. */
-		FailureDescription?: FailureDescription;
+		FailureDescription?: FailureDescription | null;
 
 		/** Contains information about the server-side encryption (SSE) status for the delivery stream, the type customer master key (CMK) in use, if any, and the ARN of the CMK. You can get <code>DeliveryStreamEncryptionConfiguration</code> by invoking the <a>DescribeDeliveryStream</a> operation. */
-		DeliveryStreamEncryptionConfiguration?: DeliveryStreamEncryptionConfiguration;
+		DeliveryStreamEncryptionConfiguration?: DeliveryStreamEncryptionConfiguration | null;
 		DeliveryStreamType: CreateDeliveryStreamInputDeliveryStreamType;
 		VersionId: string;
-		CreateTimestamp?: Date;
-		LastUpdateTimestamp?: Date;
+		CreateTimestamp?: Date | null;
+		LastUpdateTimestamp?: Date | null;
 
 		/** Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream. */
-		Source?: SourceDescription;
+		Source?: SourceDescription | null;
 		Destinations: Array<DestinationDescription>;
 		HasMoreDestinations: boolean;
 	}
@@ -492,12 +492,12 @@ export namespace MyNS {
 
 	/** Contains information about the server-side encryption (SSE) status for the delivery stream, the type customer master key (CMK) in use, if any, and the ARN of the CMK. You can get <code>DeliveryStreamEncryptionConfiguration</code> by invoking the <a>DescribeDeliveryStream</a> operation.  */
 	export interface DeliveryStreamEncryptionConfiguration {
-		KeyARN?: string;
-		KeyType?: DeliveryStreamEncryptionConfigurationInputKeyType;
-		Status?: DeliveryStreamEncryptionConfigurationStatus;
+		KeyARN?: string | null;
+		KeyType?: DeliveryStreamEncryptionConfigurationInputKeyType | null;
+		Status?: DeliveryStreamEncryptionConfigurationStatus | null;
 
 		/** Provides details in case one of the following operations fails due to an error related to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>, <a>StartDeliveryStreamEncryption</a>, <a>StopDeliveryStreamEncryption</a>. */
-		FailureDescription?: FailureDescription;
+		FailureDescription?: FailureDescription | null;
 	}
 
 	export enum DeliveryStreamEncryptionConfigurationStatus { ENABLED = 0, ENABLING = 1, ENABLING_FAILED = 2, DISABLED = 3, DISABLING = 4, DISABLING_FAILED = 5 }
@@ -507,15 +507,15 @@ export namespace MyNS {
 	export interface SourceDescription {
 
 		/** Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream. */
-		KinesisStreamSourceDescription?: KinesisStreamSourceDescription;
+		KinesisStreamSourceDescription?: KinesisStreamSourceDescription | null;
 	}
 
 
 	/** Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream. */
 	export interface KinesisStreamSourceDescription {
-		KinesisStreamARN?: string;
-		RoleARN?: string;
-		DeliveryStartTimestamp?: Date;
+		KinesisStreamARN?: string | null;
+		RoleARN?: string | null;
+		DeliveryStartTimestamp?: Date | null;
 	}
 
 
@@ -524,19 +524,19 @@ export namespace MyNS {
 		DestinationId: string;
 
 		/** Describes a destination in Amazon S3. */
-		S3DestinationDescription?: S3DestinationDescription;
+		S3DestinationDescription?: S3DestinationDescription | null;
 
 		/** Describes a destination in Amazon S3. */
-		ExtendedS3DestinationDescription?: ExtendedS3DestinationDescription;
+		ExtendedS3DestinationDescription?: ExtendedS3DestinationDescription | null;
 
 		/** Describes a destination in Amazon Redshift. */
-		RedshiftDestinationDescription?: RedshiftDestinationDescription;
+		RedshiftDestinationDescription?: RedshiftDestinationDescription | null;
 
 		/** The destination description in Amazon ES. */
-		ElasticsearchDestinationDescription?: ElasticsearchDestinationDescription;
+		ElasticsearchDestinationDescription?: ElasticsearchDestinationDescription | null;
 
 		/** Describes a destination in Splunk. */
-		SplunkDestinationDescription?: SplunkDestinationDescription;
+		SplunkDestinationDescription?: SplunkDestinationDescription | null;
 	}
 
 
@@ -544,8 +544,8 @@ export namespace MyNS {
 	export interface S3DestinationDescription {
 		RoleARN: string;
 		BucketARN: string;
-		Prefix?: string;
-		ErrorOutputPrefix?: string;
+		Prefix?: string | null;
+		ErrorOutputPrefix?: string | null;
 
 		/**
 		 * Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other.
@@ -561,7 +561,7 @@ export namespace MyNS {
 		EncryptionConfiguration: EncryptionConfiguration;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
 	}
 
 
@@ -569,8 +569,8 @@ export namespace MyNS {
 	export interface ExtendedS3DestinationDescription {
 		RoleARN: string;
 		BucketARN: string;
-		Prefix?: string;
-		ErrorOutputPrefix?: string;
+		Prefix?: string | null;
+		ErrorOutputPrefix?: string | null;
 
 		/**
 		 * Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other.
@@ -586,17 +586,17 @@ export namespace MyNS {
 		EncryptionConfiguration: EncryptionConfiguration;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration;
-		S3BackupMode?: ExtendedS3DestinationConfigurationS3BackupMode;
+		ProcessingConfiguration?: ProcessingConfiguration | null;
+		S3BackupMode?: ExtendedS3DestinationConfigurationS3BackupMode | null;
 
 		/** Describes a destination in Amazon S3. */
-		S3BackupDescription?: S3DestinationDescription;
+		S3BackupDescription?: S3DestinationDescription | null;
 
 		/** Specifies that you want Kinesis Data Firehose to convert data from the JSON format to the Parquet or ORC format before writing it to Amazon S3. Kinesis Data Firehose uses the serializer and deserializer that you specify, in addition to the column information from the AWS Glue table, to deserialize your input data from JSON and then serialize it to the Parquet or ORC format. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis Data Firehose Record Format Conversion</a>. */
-		DataFormatConversionConfiguration?: DataFormatConversionConfiguration;
+		DataFormatConversionConfiguration?: DataFormatConversionConfiguration | null;
 	}
 
 
@@ -613,7 +613,7 @@ export namespace MyNS {
 		Username: string;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. */
-		RetryOptions?: RedshiftRetryOptions;
+		RetryOptions?: RedshiftRetryOptions | null;
 
 		/**
 		 * Describes a destination in Amazon S3.
@@ -622,44 +622,44 @@ export namespace MyNS {
 		S3DestinationDescription: S3DestinationDescription;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration;
-		S3BackupMode?: ExtendedS3DestinationConfigurationS3BackupMode;
+		ProcessingConfiguration?: ProcessingConfiguration | null;
+		S3BackupMode?: ExtendedS3DestinationConfigurationS3BackupMode | null;
 
 		/** Describes a destination in Amazon S3. */
-		S3BackupDescription?: S3DestinationDescription;
+		S3BackupDescription?: S3DestinationDescription | null;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
 	}
 
 
 	/** The destination description in Amazon ES. */
 	export interface ElasticsearchDestinationDescription {
-		RoleARN?: string;
-		DomainARN?: string;
-		ClusterEndpoint?: string;
-		IndexName?: string;
-		TypeName?: string;
-		IndexRotationPeriod?: ElasticsearchDestinationConfigurationIndexRotationPeriod;
+		RoleARN?: string | null;
+		DomainARN?: string | null;
+		ClusterEndpoint?: string | null;
+		IndexName?: string | null;
+		TypeName?: string | null;
+		IndexRotationPeriod?: ElasticsearchDestinationConfigurationIndexRotationPeriod | null;
 
 		/** Describes the buffering to perform before delivering data to the Amazon ES destination. */
-		BufferingHints?: ElasticsearchBufferingHints;
+		BufferingHints?: ElasticsearchBufferingHints | null;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. */
-		RetryOptions?: ElasticsearchRetryOptions;
-		S3BackupMode?: ElasticsearchDestinationConfigurationS3BackupMode;
+		RetryOptions?: ElasticsearchRetryOptions | null;
+		S3BackupMode?: ElasticsearchDestinationConfigurationS3BackupMode | null;
 
 		/** Describes a destination in Amazon S3. */
-		S3DestinationDescription?: S3DestinationDescription;
+		S3DestinationDescription?: S3DestinationDescription | null;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration;
+		ProcessingConfiguration?: ProcessingConfiguration | null;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
 
 		/** The details of the VPC of the Amazon ES destination. */
-		VpcConfigurationDescription?: VpcConfigurationDescription;
+		VpcConfigurationDescription?: VpcConfigurationDescription | null;
 	}
 
 
@@ -674,29 +674,29 @@ export namespace MyNS {
 
 	/** Describes a destination in Splunk. */
 	export interface SplunkDestinationDescription {
-		HECEndpoint?: string;
-		HECEndpointType?: SplunkDestinationConfigurationHECEndpointType;
-		HECToken?: string;
-		HECAcknowledgmentTimeoutInSeconds?: number;
+		HECEndpoint?: string | null;
+		HECEndpointType?: SplunkDestinationConfigurationHECEndpointType | null;
+		HECToken?: string | null;
+		HECAcknowledgmentTimeoutInSeconds?: number | null;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk. */
-		RetryOptions?: SplunkRetryOptions;
-		S3BackupMode?: SplunkDestinationConfigurationS3BackupMode;
+		RetryOptions?: SplunkRetryOptions | null;
+		S3BackupMode?: SplunkDestinationConfigurationS3BackupMode | null;
 
 		/** Describes a destination in Amazon S3. */
-		S3DestinationDescription?: S3DestinationDescription;
+		S3DestinationDescription?: S3DestinationDescription | null;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration;
+		ProcessingConfiguration?: ProcessingConfiguration | null;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
 	}
 
 	export interface DescribeDeliveryStreamInput {
 		DeliveryStreamName: string;
-		Limit?: number;
-		ExclusiveStartDestinationId?: string;
+		Limit?: number | null;
+		ExclusiveStartDestinationId?: string | null;
 	}
 
 	export interface ListDeliveryStreamsOutput {
@@ -705,9 +705,9 @@ export namespace MyNS {
 	}
 
 	export interface ListDeliveryStreamsInput {
-		Limit?: number;
-		DeliveryStreamType?: CreateDeliveryStreamInputDeliveryStreamType;
-		ExclusiveStartDeliveryStreamName?: string;
+		Limit?: number | null;
+		DeliveryStreamType?: CreateDeliveryStreamInputDeliveryStreamType | null;
+		ExclusiveStartDeliveryStreamName?: string | null;
 	}
 
 	export interface ListTagsForDeliveryStreamOutput {
@@ -717,13 +717,13 @@ export namespace MyNS {
 
 	export interface ListTagsForDeliveryStreamInput {
 		DeliveryStreamName: string;
-		ExclusiveStartTagKey?: string;
-		Limit?: number;
+		ExclusiveStartTagKey?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface PutRecordOutput {
 		RecordId: string;
-		Encrypted?: boolean;
+		Encrypted?: boolean | null;
 	}
 
 	export interface PutRecordInput {
@@ -747,16 +747,16 @@ export namespace MyNS {
 
 	export interface PutRecordBatchOutput {
 		FailedPutCount: number;
-		Encrypted?: boolean;
+		Encrypted?: boolean | null;
 		RequestResponses: Array<PutRecordBatchResponseEntry>;
 	}
 
 
 	/** Contains the result for an individual record from a <a>PutRecordBatch</a> request. If the record is successfully added to your delivery stream, it receives a record ID. If the record fails to be added to your delivery stream, the result includes an error code and an error message. */
 	export interface PutRecordBatchResponseEntry {
-		RecordId?: string;
-		ErrorCode?: string;
-		ErrorMessage?: string;
+		RecordId?: string | null;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export interface PutRecordBatchInput {
@@ -771,7 +771,7 @@ export namespace MyNS {
 		DeliveryStreamName: string;
 
 		/** Specifies the type and Amazon Resource Name (ARN) of the CMK to use for Server-Side Encryption (SSE). */
-		DeliveryStreamEncryptionConfigurationInput?: DeliveryStreamEncryptionConfigurationInput;
+		DeliveryStreamEncryptionConfigurationInput?: DeliveryStreamEncryptionConfigurationInput | null;
 	}
 
 	export interface StopDeliveryStreamEncryptionOutput {
@@ -806,143 +806,143 @@ export namespace MyNS {
 		DestinationId: string;
 
 		/** Describes an update for a destination in Amazon S3. */
-		S3DestinationUpdate?: S3DestinationUpdate;
+		S3DestinationUpdate?: S3DestinationUpdate | null;
 
 		/** Describes an update for a destination in Amazon S3. */
-		ExtendedS3DestinationUpdate?: ExtendedS3DestinationUpdate;
+		ExtendedS3DestinationUpdate?: ExtendedS3DestinationUpdate | null;
 
 		/** Describes an update for a destination in Amazon Redshift. */
-		RedshiftDestinationUpdate?: RedshiftDestinationUpdate;
+		RedshiftDestinationUpdate?: RedshiftDestinationUpdate | null;
 
 		/** Describes an update for a destination in Amazon ES. */
-		ElasticsearchDestinationUpdate?: ElasticsearchDestinationUpdate;
+		ElasticsearchDestinationUpdate?: ElasticsearchDestinationUpdate | null;
 
 		/** Describes an update for a destination in Splunk. */
-		SplunkDestinationUpdate?: SplunkDestinationUpdate;
+		SplunkDestinationUpdate?: SplunkDestinationUpdate | null;
 	}
 
 
 	/** Describes an update for a destination in Amazon S3. */
 	export interface S3DestinationUpdate {
-		RoleARN?: string;
-		BucketARN?: string;
-		Prefix?: string;
-		ErrorOutputPrefix?: string;
+		RoleARN?: string | null;
+		BucketARN?: string | null;
+		Prefix?: string | null;
+		ErrorOutputPrefix?: string | null;
 
 		/** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. */
-		BufferingHints?: BufferingHints;
-		CompressionFormat?: S3DestinationConfigurationCompressionFormat;
+		BufferingHints?: BufferingHints | null;
+		CompressionFormat?: S3DestinationConfigurationCompressionFormat | null;
 
 		/** Describes the encryption for a destination in Amazon S3. */
-		EncryptionConfiguration?: EncryptionConfiguration;
+		EncryptionConfiguration?: EncryptionConfiguration | null;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
 	}
 
 
 	/** Describes an update for a destination in Amazon S3. */
 	export interface ExtendedS3DestinationUpdate {
-		RoleARN?: string;
-		BucketARN?: string;
-		Prefix?: string;
-		ErrorOutputPrefix?: string;
+		RoleARN?: string | null;
+		BucketARN?: string | null;
+		Prefix?: string | null;
+		ErrorOutputPrefix?: string | null;
 
 		/** Describes hints for the buffering to perform before delivering data to the destination. These options are treated as hints, and therefore Kinesis Data Firehose might choose to use different values when it is optimal. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other. */
-		BufferingHints?: BufferingHints;
-		CompressionFormat?: S3DestinationConfigurationCompressionFormat;
+		BufferingHints?: BufferingHints | null;
+		CompressionFormat?: S3DestinationConfigurationCompressionFormat | null;
 
 		/** Describes the encryption for a destination in Amazon S3. */
-		EncryptionConfiguration?: EncryptionConfiguration;
+		EncryptionConfiguration?: EncryptionConfiguration | null;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration;
-		S3BackupMode?: ExtendedS3DestinationConfigurationS3BackupMode;
+		ProcessingConfiguration?: ProcessingConfiguration | null;
+		S3BackupMode?: ExtendedS3DestinationConfigurationS3BackupMode | null;
 
 		/** Describes an update for a destination in Amazon S3. */
-		S3BackupUpdate?: S3DestinationUpdate;
+		S3BackupUpdate?: S3DestinationUpdate | null;
 
 		/** Specifies that you want Kinesis Data Firehose to convert data from the JSON format to the Parquet or ORC format before writing it to Amazon S3. Kinesis Data Firehose uses the serializer and deserializer that you specify, in addition to the column information from the AWS Glue table, to deserialize your input data from JSON and then serialize it to the Parquet or ORC format. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis Data Firehose Record Format Conversion</a>. */
-		DataFormatConversionConfiguration?: DataFormatConversionConfiguration;
+		DataFormatConversionConfiguration?: DataFormatConversionConfiguration | null;
 	}
 
 
 	/** Describes an update for a destination in Amazon Redshift. */
 	export interface RedshiftDestinationUpdate {
-		RoleARN?: string;
-		ClusterJDBCURL?: string;
+		RoleARN?: string | null;
+		ClusterJDBCURL?: string | null;
 
 		/** Describes a <code>COPY</code> command for Amazon Redshift. */
-		CopyCommand?: CopyCommand;
-		Username?: string;
-		Password?: string;
+		CopyCommand?: CopyCommand | null;
+		Username?: string | null;
+		Password?: string | null;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. */
-		RetryOptions?: RedshiftRetryOptions;
+		RetryOptions?: RedshiftRetryOptions | null;
 
 		/** Describes an update for a destination in Amazon S3. */
-		S3Update?: S3DestinationUpdate;
+		S3Update?: S3DestinationUpdate | null;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration;
-		S3BackupMode?: ExtendedS3DestinationConfigurationS3BackupMode;
+		ProcessingConfiguration?: ProcessingConfiguration | null;
+		S3BackupMode?: ExtendedS3DestinationConfigurationS3BackupMode | null;
 
 		/** Describes an update for a destination in Amazon S3. */
-		S3BackupUpdate?: S3DestinationUpdate;
+		S3BackupUpdate?: S3DestinationUpdate | null;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
 	}
 
 
 	/** Describes an update for a destination in Amazon ES. */
 	export interface ElasticsearchDestinationUpdate {
-		RoleARN?: string;
-		DomainARN?: string;
-		ClusterEndpoint?: string;
-		IndexName?: string;
-		TypeName?: string;
-		IndexRotationPeriod?: ElasticsearchDestinationConfigurationIndexRotationPeriod;
+		RoleARN?: string | null;
+		DomainARN?: string | null;
+		ClusterEndpoint?: string | null;
+		IndexName?: string | null;
+		TypeName?: string | null;
+		IndexRotationPeriod?: ElasticsearchDestinationConfigurationIndexRotationPeriod | null;
 
 		/** Describes the buffering to perform before delivering data to the Amazon ES destination. */
-		BufferingHints?: ElasticsearchBufferingHints;
+		BufferingHints?: ElasticsearchBufferingHints | null;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. */
-		RetryOptions?: ElasticsearchRetryOptions;
+		RetryOptions?: ElasticsearchRetryOptions | null;
 
 		/** Describes an update for a destination in Amazon S3. */
-		S3Update?: S3DestinationUpdate;
+		S3Update?: S3DestinationUpdate | null;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration;
+		ProcessingConfiguration?: ProcessingConfiguration | null;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
 	}
 
 
 	/** Describes an update for a destination in Splunk. */
 	export interface SplunkDestinationUpdate {
-		HECEndpoint?: string;
-		HECEndpointType?: SplunkDestinationConfigurationHECEndpointType;
-		HECToken?: string;
-		HECAcknowledgmentTimeoutInSeconds?: number;
+		HECEndpoint?: string | null;
+		HECEndpointType?: SplunkDestinationConfigurationHECEndpointType | null;
+		HECToken?: string | null;
+		HECAcknowledgmentTimeoutInSeconds?: number | null;
 
 		/** Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't receive an acknowledgment from Splunk. */
-		RetryOptions?: SplunkRetryOptions;
-		S3BackupMode?: SplunkDestinationConfigurationS3BackupMode;
+		RetryOptions?: SplunkRetryOptions | null;
+		S3BackupMode?: SplunkDestinationConfigurationS3BackupMode | null;
 
 		/** Describes an update for a destination in Amazon S3. */
-		S3Update?: S3DestinationUpdate;
+		S3Update?: S3DestinationUpdate | null;
 
 		/** Describes a data processing configuration. */
-		ProcessingConfiguration?: ProcessingConfiguration;
+		ProcessingConfiguration?: ProcessingConfiguration | null;
 
 		/** Describes the Amazon CloudWatch logging options for your delivery stream. */
-		CloudWatchLoggingOptions?: CloudWatchLoggingOptions;
+		CloudWatchLoggingOptions?: CloudWatchLoggingOptions | null;
 	}
 
 	export interface ConcurrentModificationException {

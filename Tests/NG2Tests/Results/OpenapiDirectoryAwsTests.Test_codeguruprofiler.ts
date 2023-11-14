@@ -48,14 +48,14 @@ export namespace MyNS {
 	export interface ProfilingGroupDescription {
 
 		/** <p/> */
-		agentOrchestrationConfig?: AgentOrchestrationConfig;
-		arn?: string;
-		createdAt?: Date;
-		name?: string;
+		agentOrchestrationConfig?: AgentOrchestrationConfig | null;
+		arn?: string | null;
+		createdAt?: Date | null;
+		name?: string | null;
 
 		/** Information about the profiling status. */
-		profilingStatus?: ProfilingStatus;
-		updatedAt?: Date;
+		profilingStatus?: ProfilingStatus | null;
+		updatedAt?: Date | null;
 	}
 
 
@@ -67,18 +67,18 @@ export namespace MyNS {
 
 	/** Information about the profiling status. */
 	export interface ProfilingStatus {
-		latestAgentOrchestratedAt?: Date;
-		latestAgentProfileReportedAt?: Date;
+		latestAgentOrchestratedAt?: Date | null;
+		latestAgentProfileReportedAt?: Date | null;
 
 		/** Information about the time range of the latest available aggregated profile. */
-		latestAggregatedProfile?: AggregatedProfileTime;
+		latestAggregatedProfile?: AggregatedProfileTime | null;
 	}
 
 
 	/** Information about the time range of the latest available aggregated profile. */
 	export interface AggregatedProfileTime {
-		period?: AggregatedProfileTimePeriod;
-		start?: Date;
+		period?: AggregatedProfileTimePeriod | null;
+		start?: Date | null;
 	}
 
 	export enum AggregatedProfileTimePeriod { P1D = 0, PT1H = 1, PT5M = 2 }
@@ -121,22 +121,22 @@ export namespace MyNS {
 
 	/** The structure representing the listProfileTimesResponse. */
 	export interface ListProfileTimesResponse {
-		nextToken?: string;
+		nextToken?: string | null;
 		profileTimes: Array<ProfileTime>;
 	}
 
 
 	/** Information about the profile time. */
 	export interface ProfileTime {
-		start?: Date;
+		start?: Date | null;
 	}
 
 
 	/** The structure representing the listProfilingGroupsResponse. */
 	export interface ListProfilingGroupsResponse {
-		nextToken?: string;
+		nextToken?: string | null;
 		profilingGroupNames: Array<string>;
-		profilingGroups?: Array<ProfilingGroupDescription>;
+		profilingGroups?: Array<ProfilingGroupDescription> | null;
 	}
 
 
@@ -176,7 +176,7 @@ export namespace MyNS {
 
 	/** The structure representing the configureAgentRequest. */
 	export interface ConfigureAgentRequest {
-		fleetInstanceId?: string;
+		fleetInstanceId?: string | null;
 	}
 
 
@@ -184,7 +184,7 @@ export namespace MyNS {
 	export interface CreateProfilingGroupRequest {
 
 		/** <p/> */
-		agentOrchestrationConfig?: AgentOrchestrationConfig;
+		agentOrchestrationConfig?: AgentOrchestrationConfig | null;
 		profilingGroupName: string;
 	}
 
@@ -230,7 +230,7 @@ export namespace MyNS {
 	/** The structure representing the putPermissionRequest. */
 	export interface PutPermissionRequest {
 		principals: Array<string>;
-		revisionId?: string;
+		revisionId?: string | null;
 	}
 
 
@@ -324,7 +324,7 @@ export namespace MyNS {
 		 * @param {Date} startTime <p>The start time of the profile to get.</p> <p>You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and <code>endTime</code>. </p>
 		 * @return {GetProfileResponse} Success
 		 */
-		GetProfile(endTime: Date, maxDepth: number, period: string, profilingGroupName: string, startTime: Date): Observable<GetProfileResponse> {
+		GetProfile(endTime: Date | null | undefined, maxDepth: number | null | undefined, period: string | null | undefined, profilingGroupName: string, startTime: Date | null | undefined): Observable<GetProfileResponse> {
 			return this.http.get<GetProfileResponse>(this.baseUri + 'profilingGroups/' + (profilingGroupName == null ? '' : encodeURIComponent(profilingGroupName)) + '/profile?endTime=' + endTime.toISOString() + '&maxDepth=' + maxDepth + '&period=' + (period == null ? '' : encodeURIComponent(period)) + '&startTime=' + startTime.toISOString(), {});
 		}
 
@@ -340,7 +340,7 @@ export namespace MyNS {
 		 * @param {Date} startTime The start time of the time range from which to list the profiles.
 		 * @return {ListProfileTimesResponse} Success
 		 */
-		ListProfileTimes(endTime: Date, maxResults: number, nextToken: string, orderBy: OrderBy, period: AggregatedProfileTimePeriod, profilingGroupName: string, startTime: Date): Observable<ListProfileTimesResponse> {
+		ListProfileTimes(endTime: Date, maxResults: number | null | undefined, nextToken: string | null | undefined, orderBy: OrderBy | null | undefined, period: AggregatedProfileTimePeriod, profilingGroupName: string, startTime: Date): Observable<ListProfileTimesResponse> {
 			return this.http.get<ListProfileTimesResponse>(this.baseUri + 'profilingGroups/' + (profilingGroupName == null ? '' : encodeURIComponent(profilingGroupName)) + '/profileTimes#endTime&period&startTime?endTime=' + endTime.toISOString() + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&orderBy=' + orderBy + '&period=' + period + '&startTime=' + startTime.toISOString(), {});
 		}
 
@@ -352,7 +352,7 @@ export namespace MyNS {
 		 * @param {string} nextToken <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
 		 * @return {ListProfilingGroupsResponse} Success
 		 */
-		ListProfilingGroups(includeDescription: boolean, maxResults: number, nextToken: string): Observable<ListProfilingGroupsResponse> {
+		ListProfilingGroups(includeDescription: boolean | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListProfilingGroupsResponse> {
 			return this.http.get<ListProfilingGroupsResponse>(this.baseUri + 'profilingGroups?includeDescription=' + includeDescription + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -363,7 +363,7 @@ export namespace MyNS {
 		 * @param {string} profilingGroupName <p/>
 		 * @return {void} 
 		 */
-		PostAgentProfile(profileToken: string, profilingGroupName: string, requestBody: PostAgentProfilePostBody): Observable<HttpResponse<string>> {
+		PostAgentProfile(profileToken: string | null | undefined, profilingGroupName: string, requestBody: PostAgentProfilePostBody): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'profilingGroups/' + (profilingGroupName == null ? '' : encodeURIComponent(profilingGroupName)) + '/agentProfile#Content-Type?profileToken=' + (profileToken == null ? '' : encodeURIComponent(profileToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -399,13 +399,13 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[\w-.:/]+$
 		 */
-		fleetInstanceId?: string;
+		fleetInstanceId?: string | null;
 	}
 
 	export interface CreateProfilingGroupPostBody {
 
 		/** <p/> */
-		agentOrchestrationConfig?: CreateProfilingGroupPostBodyAgentOrchestrationConfig;
+		agentOrchestrationConfig?: CreateProfilingGroupPostBodyAgentOrchestrationConfig | null;
 
 		/**
 		 * The name of the profiling group.
@@ -418,7 +418,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateProfilingGroupPostBodyAgentOrchestrationConfig {
-		profilingEnabled?: boolean;
+		profilingEnabled?: boolean | null;
 	}
 
 	export interface UpdateProfilingGroupPutBody {
@@ -431,7 +431,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateProfilingGroupPutBodyAgentOrchestrationConfig {
-		profilingEnabled?: boolean;
+		profilingEnabled?: boolean | null;
 	}
 
 	export interface PostAgentProfilePostBody {
@@ -457,7 +457,7 @@ export namespace MyNS {
 		 * A unique identifier for the current revision of the policy. This is required, if a policy exists for the profiling group. This is not required when creating the policy for the first time.
 		 * Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}
 		 */
-		revisionId?: string;
+		revisionId?: string | null;
 	}
 
 }

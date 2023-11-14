@@ -10,25 +10,25 @@ export namespace MyNS {
 		 * The input text upon which to perform language detection. Repeat this
 		 * parameter to perform language detection on multiple text inputs.
 		 */
-		q?: Array<string>;
+		q?: Array<string> | null;
 	}
 
 	export interface DetectionsListResponse {
 
 		/** A detections contains detection results of several text */
-		detections?: Array<Array<DetectionsResourceElement>>;
+		detections?: Array<Array<DetectionsResourceElement>> | null;
 	}
 
 	export interface DetectionsResourceElement {
 
 		/** The confidence of the detection result of this language. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** A boolean to indicate is the language detection result reliable. */
-		isReliable?: boolean;
+		isReliable?: boolean | null;
 
 		/** The language we detected. */
-		language?: string;
+		language?: string | null;
 	}
 
 
@@ -39,13 +39,13 @@ export namespace MyNS {
 		 * The language to use to return localized, human readable names of supported
 		 * languages.
 		 */
-		target?: string;
+		target?: string | null;
 	}
 
 	export interface LanguagesListResponse {
 
 		/** List of source/target languages supported by the translation API. If target parameter is unspecified, the list is sorted by the ASCII code point order of the language code. If target parameter is specified, the list is sorted by the collation order of the language name in the target language. */
-		languages?: Array<LanguagesResource>;
+		languages?: Array<LanguagesResource> | null;
 	}
 
 	export interface LanguagesResource {
@@ -55,10 +55,10 @@ export namespace MyNS {
 		 * identifier. (E.g. 'en', 'ja'). In certain cases, BCP-47 codes including
 		 * language + region identifiers are returned (e.g. 'zh-TW' and 'zh-CH')
 		 */
-		language?: string;
+		language?: string | null;
 
 		/** Human readable name of the language localized to the target language. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -69,19 +69,19 @@ export namespace MyNS {
 		 * The format of the source text, in either HTML (default) or plain-text. A
 		 * value of "html" indicates HTML and a value of "text" indicates plain-text.
 		 */
-		format?: string;
+		format?: string | null;
 
 		/**
 		 * The `model` type requested for this translation. Valid values are
 		 * listed in public documentation.
 		 */
-		model?: string;
+		model?: string | null;
 
 		/**
 		 * The input text to translate. Repeat this parameter to perform translation
 		 * operations on multiple text inputs.
 		 */
-		q?: Array<string>;
+		q?: Array<string> | null;
 
 		/**
 		 * The language of the source text, set to one of the language codes listed in
@@ -89,13 +89,13 @@ export namespace MyNS {
 		 * attempt to identify the source language automatically and return it within
 		 * the response.
 		 */
-		source?: string;
+		source?: string | null;
 
 		/**
 		 * The language to use for translation of the input text, set to one of the
 		 * language codes listed in Language Support.
 		 */
-		target?: string;
+		target?: string | null;
 	}
 
 
@@ -103,7 +103,7 @@ export namespace MyNS {
 	export interface TranslationsListResponse {
 
 		/** Translations contains list of translation results of given text */
-		translations?: Array<TranslationsResource>;
+		translations?: Array<TranslationsResource> | null;
 	}
 
 	export interface TranslationsResource {
@@ -114,17 +114,17 @@ export namespace MyNS {
 		 * source language was passed, auto-detection of the language will not
 		 * occur and this field will be empty.
 		 */
-		detectedSourceLanguage?: string;
+		detectedSourceLanguage?: string | null;
 
 		/**
 		 * The `model` type used for this translation. Valid values are
 		 * listed in public documentation. Can be different from requested `model`.
 		 * Present only if specific model type was explicitly requested.
 		 */
-		model?: string;
+		model?: string | null;
 
 		/** Text translated into the target language. */
-		translatedText?: string;
+		translatedText?: string | null;
 	}
 
 	@Injectable()
@@ -150,7 +150,7 @@ export namespace MyNS {
 		 * the response.
 		 * @return {void} Successful response
 		 */
-		Language_translations_list(q: Array<string>, target: string, cid: Array<string>, format: Language_translations_listFormat, model: string, source: string): Observable<HttpResponse<string>> {
+		Language_translations_list(q: Array<string>, target: string, cid: Array<string> | null | undefined, format: Language_translations_listFormat | null | undefined, model: string | null | undefined, source: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2?' + q.map(z => `q=${encodeURIComponent(z)}`).join('&') + '&target=' + (target == null ? '' : encodeURIComponent(target)) + '&' + cid.map(z => `cid=${encodeURIComponent(z)}`).join('&') + '&format=' + format + '&model=' + (model == null ? '' : encodeURIComponent(model)) + '&source=' + (source == null ? '' : encodeURIComponent(source)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -191,7 +191,7 @@ export namespace MyNS {
 		 * languages.
 		 * @return {void} Successful response
 		 */
-		Language_languages_list(model: string, target: string): Observable<HttpResponse<string>> {
+		Language_languages_list(model: string | null | undefined, target: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/languages?model=' + (model == null ? '' : encodeURIComponent(model)) + '&target=' + (target == null ? '' : encodeURIComponent(target)), { observe: 'response', responseType: 'text' });
 		}
 	}

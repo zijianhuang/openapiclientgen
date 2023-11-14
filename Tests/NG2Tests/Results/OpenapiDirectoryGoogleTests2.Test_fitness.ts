@@ -5,22 +5,22 @@ export namespace MyNS {
 	export interface AggregateBucket {
 
 		/** Available for Bucket.Type.ACTIVITY_TYPE, Bucket.Type.ACTIVITY_SEGMENT */
-		activity?: number;
+		activity?: number | null;
 
 		/** There will be one dataset per AggregateBy in the request. */
-		dataset?: Array<Dataset>;
+		dataset?: Array<Dataset> | null;
 
 		/** The end time for the aggregated data, in milliseconds since epoch, inclusive. */
-		endTimeMillis?: string;
+		endTimeMillis?: string | null;
 
 		/** Sessions contain metadata, such as a user-friendly name and time interval information. */
-		session?: Session;
+		session?: Session | null;
 
 		/** The start time for the aggregated data, in milliseconds since epoch, inclusive. */
-		startTimeMillis?: string;
+		startTimeMillis?: string | null;
 
 		/** The type of a bucket signifies how the data aggregation is performed in the bucket. */
-		type?: AggregateBucketType;
+		type?: AggregateBucketType | null;
 	}
 
 
@@ -28,19 +28,19 @@ export namespace MyNS {
 	export interface Dataset {
 
 		/** The data stream ID of the data source that created the points in this dataset. */
-		dataSourceId?: string;
+		dataSourceId?: string | null;
 
 		/** The largest end time of all data points in this possibly partial representation of the dataset. Time is in nanoseconds from epoch. This should also match the second part of the dataset identifier. */
-		maxEndTimeNs?: string;
+		maxEndTimeNs?: string | null;
 
 		/** The smallest start time of all data points in this possibly partial representation of the dataset. Time is in nanoseconds from epoch. This should also match the first part of the dataset identifier. */
-		minStartTimeNs?: string;
+		minStartTimeNs?: string | null;
 
 		/** This token will be set when a dataset is received in response to a GET request and the dataset is too large to be included in a single response. Provide this value in a subsequent GET request to return the next page of data points within this dataset. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A partial list of data points contained in the dataset, ordered by largest endTimeNanos first. This list is considered complete when retrieving a small dataset and partial when patching a dataset or retrieving a dataset that is too large to include in a single response. */
-		point?: Array<DataPoint>;
+		point?: Array<DataPoint> | null;
 	}
 
 
@@ -52,34 +52,34 @@ export namespace MyNS {
 	export interface DataPoint {
 
 		/** DO NOT USE THIS FIELD. It is ignored, and not stored. */
-		computationTimeMillis?: string;
+		computationTimeMillis?: string | null;
 
 		/** The data type defining the format of the values in this data point. */
-		dataTypeName?: string;
+		dataTypeName?: string | null;
 
 		/** The end time of the interval represented by this data point, in nanoseconds since epoch. */
-		endTimeNanos?: string;
+		endTimeNanos?: string | null;
 
 		/** Indicates the last time this data point was modified. Useful only in contexts where we are listing the data changes, rather than representing the current state of the data. */
-		modifiedTimeMillis?: string;
+		modifiedTimeMillis?: string | null;
 
 		/**
 		 * If the data point is contained in a dataset for a derived data source, this field will be populated with the data source stream ID that created the data point originally.
 		 * WARNING: do not rely on this field for anything other than debugging. The value of this field, if it is set at all, is an implementation detail and is not guaranteed to remain consistent.
 		 */
-		originDataSourceId?: string;
+		originDataSourceId?: string | null;
 
 		/** The raw timestamp from the original SensorEvent. */
-		rawTimestampNanos?: string;
+		rawTimestampNanos?: string | null;
 
 		/** The start time of the interval represented by this data point, in nanoseconds since epoch. */
-		startTimeNanos?: string;
+		startTimeNanos?: string | null;
 
 		/**
 		 * Values of each data type field for the data point. It is expected that each value corresponding to a data type field will occur in the same order that the field is listed with in the data type specified in a data source.
 		 * Only one of integer and floating point fields will be populated, depending on the format enum value within data source's type field.
 		 */
-		value?: Array<Value>;
+		value?: Array<Value> | null;
 	}
 
 
@@ -90,26 +90,26 @@ export namespace MyNS {
 	export interface Value {
 
 		/** Floating point value. When this is set, other values must not be set. */
-		fpVal?: number;
+		fpVal?: number | null;
 
 		/** Integer value. When this is set, other values must not be set. */
-		intVal?: number;
+		intVal?: number | null;
 
 		/** Map value. The valid key space and units for the corresponding value of each entry should be documented as part of the data type definition. Keys should be kept small whenever possible. Data streams with large keys and high data frequency may be down sampled. */
-		mapVal?: Array<ValueMapValEntry>;
+		mapVal?: Array<ValueMapValEntry> | null;
 
 		/** String value. When this is set, other values must not be set. Strings should be kept small whenever possible. Data streams with large string values and high data frequency may be down sampled. */
-		stringVal?: string;
+		stringVal?: string | null;
 	}
 
 	export interface ValueMapValEntry {
-		key?: string;
+		key?: string | null;
 
 		/**
 		 * Holder object for the value of an entry in a map field of a data point.
 		 * A map value supports a subset of the formats that the regular Value supports.
 		 */
-		value?: MapValue;
+		value?: MapValue | null;
 	}
 
 
@@ -120,7 +120,7 @@ export namespace MyNS {
 	export interface MapValue {
 
 		/** Floating point value. */
-		fpVal?: number;
+		fpVal?: number | null;
 	}
 
 
@@ -128,44 +128,44 @@ export namespace MyNS {
 	export interface Session {
 
 		/** Session active time. While start_time_millis and end_time_millis define the full session time, the active time can be shorter and specified by active_time_millis. If the inactive time during the session is known, it should also be inserted via a com.google.activity.segment data point with a STILL activity value */
-		activeTimeMillis?: string;
+		activeTimeMillis?: string | null;
 
 		/** The type of activity this session represents. */
-		activityType?: number;
-		application?: Application;
+		activityType?: number | null;
+		application?: Application | null;
 
 		/** A description for this session. */
-		description?: string;
+		description?: string | null;
 
 		/** An end time, in milliseconds since epoch, inclusive. */
-		endTimeMillis?: string;
+		endTimeMillis?: string | null;
 
 		/** A client-generated identifier that is unique across all sessions owned by this particular user. */
-		id?: string;
+		id?: string | null;
 
 		/** A timestamp that indicates when the session was last modified. */
-		modifiedTimeMillis?: string;
+		modifiedTimeMillis?: string | null;
 
 		/** A human readable name of the session. */
-		name?: string;
+		name?: string | null;
 
 		/** A start time, in milliseconds since epoch, inclusive. */
-		startTimeMillis?: string;
+		startTimeMillis?: string | null;
 	}
 
 	export interface Application {
 
 		/** An optional URI that can be used to link back to the application. */
-		detailsUrl?: string;
+		detailsUrl?: string | null;
 
 		/** The name of this application. This is required for REST clients, but we do not enforce uniqueness of this name. It is provided as a matter of convenience for other developers who would like to identify which REST created an Application or Data Source. */
-		name?: string;
+		name?: string | null;
 
 		/** Package name for this application. This is used as a unique identifier when created by Android applications, but cannot be specified by REST clients. REST clients will have their developer project number reflected into the Data Source data stream IDs, instead of the packageName. */
-		packageName?: string;
+		packageName?: string | null;
 
 		/** Version of the application. You should update this field whenever the application changes in a way that affects the computation of the data. */
-		version?: string;
+		version?: string | null;
 	}
 
 	export enum AggregateBucketType { activitySegment = 0, activityType = 1, session = 2, time = 3, unknown = 4 }
@@ -175,10 +175,10 @@ export namespace MyNS {
 	export interface AggregateBy {
 
 		/** A data source ID to aggregate. Only data from the specified data source ID will be included in the aggregation. If specified, this data source must exist; the OAuth scopes in the supplied credentials must grant read access to this data type. The dataset in the response will have the same data source ID. Note: Data can be aggregated by either the dataTypeName or the dataSourceId, not both. */
-		dataSourceId?: string;
+		dataSourceId?: string | null;
 
 		/** The data type to aggregate. All data sources providing this data type will contribute data to the aggregation. The response will contain a single dataset for this data type name. The dataset will have a data source ID of derived::com.google.android.gms:aggregated. If the user has no data for this data type, an empty data set will be returned. Note: Data can be aggregated by either the dataTypeName or the dataSourceId, not both. */
-		dataTypeName?: string;
+		dataTypeName?: string | null;
 	}
 
 
@@ -186,50 +186,50 @@ export namespace MyNS {
 	export interface AggregateRequest {
 
 		/** The specification of data to be aggregated. At least one aggregateBy spec must be provided. All data that is specified will be aggregated using the same bucketing criteria. There will be one dataset in the response for every aggregateBy spec. */
-		aggregateBy?: Array<AggregateBy>;
-		bucketByActivitySegment?: BucketByActivity;
-		bucketByActivityType?: BucketByActivity;
-		bucketBySession?: BucketBySession;
-		bucketByTime?: BucketByTime;
+		aggregateBy?: Array<AggregateBy> | null;
+		bucketByActivitySegment?: BucketByActivity | null;
+		bucketByActivityType?: BucketByActivity | null;
+		bucketBySession?: BucketBySession | null;
+		bucketByTime?: BucketByTime | null;
 
 		/** The end of a window of time. Data that intersects with this time window will be aggregated. The time is in milliseconds since epoch, inclusive. */
-		endTimeMillis?: string;
+		endTimeMillis?: string | null;
 
 		/** DO NOT POPULATE THIS FIELD. It is ignored. */
-		filteredDataQualityStandard?: Array<string>;
+		filteredDataQualityStandard?: Array<string> | null;
 
 		/** The start of a window of time. Data that intersects with this time window will be aggregated. The time is in milliseconds since epoch, inclusive. */
-		startTimeMillis?: string;
+		startTimeMillis?: string | null;
 	}
 
 	export interface BucketByActivity {
 
 		/** The default activity stream will be used if a specific activityDataSourceId is not specified. */
-		activityDataSourceId?: string;
+		activityDataSourceId?: string | null;
 
 		/** Specifies that only activity segments of duration longer than minDurationMillis are considered and used as a container for aggregated data. */
-		minDurationMillis?: string;
+		minDurationMillis?: string | null;
 	}
 
 	export interface BucketBySession {
 
 		/** Specifies that only sessions of duration longer than minDurationMillis are considered and used as a container for aggregated data. */
-		minDurationMillis?: string;
+		minDurationMillis?: string | null;
 	}
 
 	export interface BucketByTime {
 
 		/** Specifies that result buckets aggregate data by exactly durationMillis time frames. Time frames that contain no data will be included in the response with an empty dataset. */
-		durationMillis?: string;
-		period?: BucketByTimePeriod;
+		durationMillis?: string | null;
+		period?: BucketByTimePeriod | null;
 	}
 
 	export interface BucketByTimePeriod {
 
 		/** org.joda.timezone.DateTimeZone */
-		timeZoneId?: string;
-		type?: BucketByTimePeriodType;
-		value?: number;
+		timeZoneId?: string | null;
+		type?: BucketByTimePeriodType | null;
+		value?: number | null;
 	}
 
 	export enum BucketByTimePeriodType { day = 0, month = 1, week = 2 }
@@ -237,7 +237,7 @@ export namespace MyNS {
 	export interface AggregateResponse {
 
 		/** A list of buckets containing the aggregated data. */
-		bucket?: Array<AggregateBucket>;
+		bucket?: Array<AggregateBucket> | null;
 	}
 
 
@@ -247,10 +247,10 @@ export namespace MyNS {
 	 * Each data source produces a unique stream of data, with a unique identifier. Not all changes to data source affect the stream identifier, so that data collected by updated versions of the same application/device can still be considered to belong to the same data stream.
 	 */
 	export interface DataSource {
-		application?: Application;
+		application?: Application | null;
 
 		/** DO NOT POPULATE THIS FIELD. It is never populated in responses from the platform, and is ignored in queries. It will be removed in a future version entirely. */
-		dataQualityStandard?: Array<string>;
+		dataQualityStandard?: Array<string> | null;
 
 		/**
 		 * A unique identifier for the data stream produced by this data source. The identifier includes:
@@ -263,11 +263,11 @@ export namespace MyNS {
 		 * When any of the optional fields that make up the data stream ID are absent, they will be omitted from the data stream ID. The minimum viable data stream ID would be: type:dataType.name:developer project number
 		 * Finally, the developer project number and device UID are obfuscated when read by any REST or Android client that did not create the data source. Only the data source creator will see the developer project number in clear and normal form. This means a client will see a different set of data_stream_ids than another client with different credentials.
 		 */
-		dataStreamId?: string;
+		dataStreamId?: string | null;
 
 		/** The stream name uniquely identifies this particular data source among other data sources of the same type from the same underlying producer. Setting the stream name is optional, but should be done whenever an application exposes two streams for the same data type, or when a device has two equivalent sensors. */
-		dataStreamName?: string;
-		dataType?: DataType;
+		dataStreamName?: string | null;
+		dataType?: DataType | null;
 
 		/**
 		 * Representation of an integrated device (such as a phone or a wearable) that can hold sensors. Each sensor is exposed as a data source.
@@ -277,22 +277,22 @@ export namespace MyNS {
 		 * - Treat data differently depending on sensor type (accelerometers on a watch may give different patterns than those on a phone)
 		 * - Build different analysis models for each device/version.
 		 */
-		device?: Device;
+		device?: Device | null;
 
 		/** An end-user visible name for this data source. */
-		name?: string;
+		name?: string | null;
 
 		/** A constant describing the type of this data source. Indicates whether this data source produces raw or derived data. */
-		type?: DataSourceType;
+		type?: DataSourceType | null;
 	}
 
 	export interface DataType {
 
 		/** A field represents one dimension of a data type. */
-		field?: Array<DataTypeField>;
+		field?: Array<DataTypeField> | null;
 
 		/** Each data type has a unique, namespaced, name. All data types in the com.google namespace are shared as part of the platform. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -303,11 +303,11 @@ export namespace MyNS {
 	export interface DataTypeField {
 
 		/** The different supported formats for each field in a data type. */
-		format?: DataTypeFieldFormat;
+		format?: DataTypeFieldFormat | null;
 
 		/** Defines the name and format of data. Unlike data type names, field names are not namespaced, and only need to be unique within the data type. */
-		name?: string;
-		optional?: boolean;
+		name?: string | null;
+		optional?: boolean | null;
 	}
 
 	export enum DataTypeFieldFormat { blob = 0, floatList = 1, floatPoint = 2, integer = 3, integerList = 4, map = 5, _string = 6 }
@@ -324,22 +324,22 @@ export namespace MyNS {
 	export interface Device {
 
 		/** Manufacturer of the product/hardware. */
-		manufacturer?: string;
+		manufacturer?: string | null;
 
 		/** End-user visible model name for the device. */
-		model?: string;
+		model?: string | null;
 
 		/** A constant representing the type of the device. */
-		type?: DeviceType;
+		type?: DeviceType | null;
 
 		/**
 		 * The serial number or other unique ID for the hardware. This field is obfuscated when read by any REST or Android client that did not create the data source. Only the data source creator will see the uid field in clear and normal form.
 		 * The obfuscation preserves equality; that is, given two IDs, if id1 == id2, obfuscated(id1) == obfuscated(id2).
 		 */
-		uid?: string;
+		uid?: string | null;
 
 		/** Version string for the device hardware/software. */
-		version?: string;
+		version?: string | null;
 	}
 
 	export enum DeviceType { chestStrap = 0, headMounted = 1, phone = 2, scale = 3, tablet = 4, unknown = 5, watch = 6 }
@@ -349,37 +349,37 @@ export namespace MyNS {
 	export interface ListDataPointChangesResponse {
 
 		/** The data stream ID of the data source with data point changes. */
-		dataSourceId?: string;
+		dataSourceId?: string | null;
 
 		/** Deleted data points for the user. Note, for modifications this should be parsed before handling insertions. */
-		deletedDataPoint?: Array<DataPoint>;
+		deletedDataPoint?: Array<DataPoint> | null;
 
 		/** Inserted data points for the user. */
-		insertedDataPoint?: Array<DataPoint>;
+		insertedDataPoint?: Array<DataPoint> | null;
 
 		/** The continuation token, which is used to page through large result sets. Provide this value in a subsequent request to return the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	export interface ListDataSourcesResponse {
 
 		/** A previously created data source. */
-		dataSource?: Array<DataSource>;
+		dataSource?: Array<DataSource> | null;
 	}
 
 	export interface ListSessionsResponse {
 
 		/** If includeDeleted is set to true in the request, this list will contain sessions deleted with original end times that are within the startTime and endTime frame. */
-		deletedSession?: Array<Session>;
+		deletedSession?: Array<Session> | null;
 
 		/** Flag to indicate server has more data to transfer */
-		hasMoreData?: boolean;
+		hasMoreData?: boolean | null;
 
 		/** The continuation token, which is used to page through large result sets. Provide this value in a subsequent request to return the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Sessions with an end time that is between startTime and endTime of the request. */
-		session?: Array<Session>;
+		session?: Array<Session> | null;
 	}
 
 	@Injectable()
@@ -394,7 +394,7 @@ export namespace MyNS {
 		 * @param {Array<string>} dataTypeName The names of data types to include in the list. If not specified, all data sources will be returned.
 		 * @return {void} Successful response
 		 */
-		Fitness_users_dataSources_list(userId: string, dataTypeName: Array<string>): Observable<HttpResponse<string>> {
+		Fitness_users_dataSources_list(userId: string, dataTypeName: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (userId == null ? '' : encodeURIComponent(userId)) + '/dataSources&' + dataTypeName.map(z => `dataTypeName=${encodeURIComponent(z)}`).join('&') + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -456,7 +456,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of nextPageToken from the previous response.
 		 * @return {void} Successful response
 		 */
-		Fitness_users_dataSources_dataPointChanges_list(userId: string, dataSourceId: string, limit: number, pageToken: string): Observable<HttpResponse<string>> {
+		Fitness_users_dataSources_dataPointChanges_list(userId: string, dataSourceId: string, limit: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (userId == null ? '' : encodeURIComponent(userId)) + '/dataSources/' + (dataSourceId == null ? '' : encodeURIComponent(dataSourceId)) + '/dataPointChanges&limit=' + limit + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -470,7 +470,7 @@ export namespace MyNS {
 		 * @param {string} modifiedTimeMillis When the operation was performed on the client.
 		 * @return {void} Successful response
 		 */
-		Fitness_users_dataSources_datasets_delete(userId: string, dataSourceId: string, datasetId: string, currentTimeMillis: string, modifiedTimeMillis: string): Observable<HttpResponse<string>> {
+		Fitness_users_dataSources_datasets_delete(userId: string, dataSourceId: string, datasetId: string, currentTimeMillis: string | null | undefined, modifiedTimeMillis: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (userId == null ? '' : encodeURIComponent(userId)) + '/dataSources/' + (dataSourceId == null ? '' : encodeURIComponent(dataSourceId)) + '/datasets/' + (datasetId == null ? '' : encodeURIComponent(datasetId)) + '&currentTimeMillis=' + (currentTimeMillis == null ? '' : encodeURIComponent(currentTimeMillis)) + '&modifiedTimeMillis=' + (modifiedTimeMillis == null ? '' : encodeURIComponent(modifiedTimeMillis)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -484,7 +484,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The continuation token, which is used to page through large datasets. To get the next page of a dataset, set this parameter to the value of nextPageToken from the previous response. Each subsequent call will yield a partial dataset with data point end timestamps that are strictly smaller than those in the previous partial response.
 		 * @return {void} Successful response
 		 */
-		Fitness_users_dataSources_datasets_get(userId: string, dataSourceId: string, datasetId: string, limit: number, pageToken: string): Observable<HttpResponse<string>> {
+		Fitness_users_dataSources_datasets_get(userId: string, dataSourceId: string, datasetId: string, limit: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (userId == null ? '' : encodeURIComponent(userId)) + '/dataSources/' + (dataSourceId == null ? '' : encodeURIComponent(dataSourceId)) + '/datasets/' + (datasetId == null ? '' : encodeURIComponent(datasetId)) + '&limit=' + limit + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -497,7 +497,7 @@ export namespace MyNS {
 		 * @param {string} currentTimeMillis The client's current time in milliseconds since epoch. Note that the minStartTimeNs and maxEndTimeNs properties in the request body are in nanoseconds instead of milliseconds.
 		 * @return {void} Successful response
 		 */
-		Fitness_users_dataSources_datasets_patch(userId: string, dataSourceId: string, datasetId: string, currentTimeMillis: string, requestBody: Dataset): Observable<HttpResponse<string>> {
+		Fitness_users_dataSources_datasets_patch(userId: string, dataSourceId: string, datasetId: string, currentTimeMillis: string | null | undefined, requestBody: Dataset): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + (userId == null ? '' : encodeURIComponent(userId)) + '/dataSources/' + (dataSourceId == null ? '' : encodeURIComponent(dataSourceId)) + '/datasets/' + (datasetId == null ? '' : encodeURIComponent(datasetId)) + '&currentTimeMillis=' + (currentTimeMillis == null ? '' : encodeURIComponent(currentTimeMillis)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -522,7 +522,7 @@ export namespace MyNS {
 		 * @param {string} startTime An RFC3339 timestamp. Only sessions ending between the start and end times will be included in the response.
 		 * @return {void} Successful response
 		 */
-		Fitness_users_sessions_list(userId: string, activityType: Array<number>, endTime: string, includeDeleted: boolean, pageToken: string, startTime: string): Observable<HttpResponse<string>> {
+		Fitness_users_sessions_list(userId: string, activityType: Array<number> | null | undefined, endTime: string | null | undefined, includeDeleted: boolean | null | undefined, pageToken: string | null | undefined, startTime: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (userId == null ? '' : encodeURIComponent(userId)) + '/sessions&' + activityType.map(z => `activityType=${z}`).join('&') + '&endTime=' + (endTime == null ? '' : encodeURIComponent(endTime)) + '&includeDeleted=' + includeDeleted + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startTime=' + (startTime == null ? '' : encodeURIComponent(startTime)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -534,7 +534,7 @@ export namespace MyNS {
 		 * @param {string} currentTimeMillis The client's current time in milliseconds since epoch.
 		 * @return {void} Successful response
 		 */
-		Fitness_users_sessions_delete(userId: string, sessionId: string, currentTimeMillis: string): Observable<HttpResponse<string>> {
+		Fitness_users_sessions_delete(userId: string, sessionId: string, currentTimeMillis: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (userId == null ? '' : encodeURIComponent(userId)) + '/sessions/' + (sessionId == null ? '' : encodeURIComponent(sessionId)) + '&currentTimeMillis=' + (currentTimeMillis == null ? '' : encodeURIComponent(currentTimeMillis)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -546,7 +546,7 @@ export namespace MyNS {
 		 * @param {string} currentTimeMillis The client's current time in milliseconds since epoch.
 		 * @return {void} Successful response
 		 */
-		Fitness_users_sessions_update(userId: string, sessionId: string, currentTimeMillis: string, requestBody: Session): Observable<HttpResponse<string>> {
+		Fitness_users_sessions_update(userId: string, sessionId: string, currentTimeMillis: string | null | undefined, requestBody: Session): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (userId == null ? '' : encodeURIComponent(userId)) + '/sessions/' + (sessionId == null ? '' : encodeURIComponent(sessionId)) + '&currentTimeMillis=' + (currentTimeMillis == null ? '' : encodeURIComponent(currentTimeMillis)) + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}

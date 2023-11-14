@@ -6,7 +6,7 @@ export namespace MyNS {
 
 	export interface NewPet {
 		name: string;
-		tag?: string;
+		tag?: string | null;
 	}
 
 	export interface Error {
@@ -27,8 +27,8 @@ export namespace MyNS {
 		 * @param {number} limit maximum number of results to return
 		 * @return {Array<Pet>} pet response
 		 */
-		FindPets(tags: Array<string>, limit: number, callback: (data : Array<Pet>) => any) {
-			this.httpClient.get(this.baseUri + 'pets?' + tags.map(z => `tags=${encodeURIComponent(z)}`).join('&') + '&limit=' + limit, callback, this.error, this.statusCode);
+		FindPets(tags: Array<string> | null | undefined, limit: number | null | undefined, callback: (data : Array<Pet>) => any) {
+			this.httpClient.get(this.baseUri + 'pets?' + tags?.map(z => `tags=${encodeURIComponent(z)}`).join('&') + '&limit=' + limit, callback, this.error, this.statusCode);
 		}
 
 		/**

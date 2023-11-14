@@ -13,7 +13,7 @@ export namespace MyNS {
 		 * Enable email notification to project owners and editors on jobs's
 		 * completion/failure.
 		 */
-		jobNotificationEmails?: GooglePrivacyDlpV2JobNotificationEmails;
+		jobNotificationEmails?: GooglePrivacyDlpV2JobNotificationEmails | null;
 
 		/**
 		 * Publish a message into given Pub/Sub topic when DlpJob has completed. The
@@ -22,7 +22,7 @@ export namespace MyNS {
 		 * [`DlpJob.name`](/dlp/docs/reference/rest/v2/projects.dlpJobs#DlpJob).
 		 * Compatible with: Inspect, Risk
 		 */
-		pubSub?: GooglePrivacyDlpV2PublishToPubSub;
+		pubSub?: GooglePrivacyDlpV2PublishToPubSub | null;
 
 		/**
 		 * Publish findings of a DlpJob to Cloud Data Catalog. Labels summarizing the
@@ -36,7 +36,7 @@ export namespace MyNS {
 		 * all resources being scanned are BigQuery tables.
 		 * Compatible with: Inspect
 		 */
-		publishFindingsToCloudDataCatalog?: GooglePrivacyDlpV2PublishFindingsToCloudDataCatalog;
+		publishFindingsToCloudDataCatalog?: GooglePrivacyDlpV2PublishFindingsToCloudDataCatalog | null;
 
 		/**
 		 * Publish the result summary of a DlpJob to the Cloud Security
@@ -50,7 +50,7 @@ export namespace MyNS {
 		 * Only a single instance of this action can be specified.
 		 * Compatible with: Inspect
 		 */
-		publishSummaryToCscc?: GooglePrivacyDlpV2PublishSummaryToCscc;
+		publishSummaryToCscc?: GooglePrivacyDlpV2PublishSummaryToCscc | null;
 
 		/**
 		 * Enable Stackdriver metric dlp.googleapis.com/finding_count. This
@@ -58,7 +58,7 @@ export namespace MyNS {
 		 * how many findings were found for it. CustomDetectors will be bucketed
 		 * as 'Custom' under the Stackdriver label 'info_type'.
 		 */
-		publishToStackdriver?: GooglePrivacyDlpV2PublishToStackdriver;
+		publishToStackdriver?: GooglePrivacyDlpV2PublishToStackdriver | null;
 
 		/**
 		 * If set, the detailed findings will be persisted to the specified
@@ -66,7 +66,7 @@ export namespace MyNS {
 		 * specified.
 		 * Compatible with: Inspect, Risk
 		 */
-		saveFindings?: GooglePrivacyDlpV2SaveFindings;
+		saveFindings?: GooglePrivacyDlpV2SaveFindings | null;
 	}
 
 
@@ -93,7 +93,7 @@ export namespace MyNS {
 		 * the long running DlpJob sending the notifications.
 		 * Format is projects/{project}/topics/{topic}.
 		 */
-		topic?: string;
+		topic?: string | null;
 	}
 
 
@@ -148,7 +148,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2SaveFindings {
 
 		/** Cloud repository for storing output. */
-		outputConfig?: GooglePrivacyDlpV2OutputStorageConfig;
+		outputConfig?: GooglePrivacyDlpV2OutputStorageConfig | null;
 	}
 
 
@@ -166,7 +166,7 @@ export namespace MyNS {
 		 * existing table that has a schema.
 		 * Only for use with external storage.
 		 */
-		outputSchema?: GooglePrivacyDlpV2OutputStorageConfigOutputSchema;
+		outputSchema?: GooglePrivacyDlpV2OutputStorageConfigOutputSchema | null;
 
 		/**
 		 * Message defining the location of a BigQuery table. A table is uniquely
@@ -175,7 +175,7 @@ export namespace MyNS {
 		 * `<project_id>:<dataset_id>.<table_id>` or
 		 * `<project_id>.<dataset_id>.<table_id>`.
 		 */
-		table?: GooglePrivacyDlpV2BigQueryTable;
+		table?: GooglePrivacyDlpV2BigQueryTable | null;
 	}
 
 	export enum GooglePrivacyDlpV2OutputStorageConfigOutputSchema { OUTPUT_SCHEMA_UNSPECIFIED = 0, BASIC_COLUMNS = 1, GCS_COLUMNS = 2, DATASTORE_COLUMNS = 3, BIG_QUERY_COLUMNS = 4, ALL_COLUMNS = 5 }
@@ -191,16 +191,16 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2BigQueryTable {
 
 		/** Dataset ID of the table. */
-		datasetId?: string;
+		datasetId?: string | null;
 
 		/**
 		 * The Google Cloud Platform project ID of the project containing the table.
 		 * If omitted, project ID is inferred from the API call.
 		 */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** Name of the table. */
-		tableId?: string;
+		tableId?: string | null;
 	}
 
 
@@ -213,31 +213,31 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails {
 
 		/** Result of the categorical stats computation. */
-		categoricalStatsResult?: GooglePrivacyDlpV2CategoricalStatsResult;
+		categoricalStatsResult?: GooglePrivacyDlpV2CategoricalStatsResult | null;
 
 		/**
 		 * Result of the δ-presence computation. Note that these results are an
 		 * estimation, not exact values.
 		 */
-		deltaPresenceEstimationResult?: GooglePrivacyDlpV2DeltaPresenceEstimationResult;
+		deltaPresenceEstimationResult?: GooglePrivacyDlpV2DeltaPresenceEstimationResult | null;
 
 		/** Result of the k-anonymity computation. */
-		kAnonymityResult?: GooglePrivacyDlpV2KAnonymityResult;
+		kAnonymityResult?: GooglePrivacyDlpV2KAnonymityResult | null;
 
 		/**
 		 * Result of the reidentifiability analysis. Note that these results are an
 		 * estimation, not exact values.
 		 */
-		kMapEstimationResult?: GooglePrivacyDlpV2KMapEstimationResult;
+		kMapEstimationResult?: GooglePrivacyDlpV2KMapEstimationResult | null;
 
 		/** Result of the l-diversity computation. */
-		lDiversityResult?: GooglePrivacyDlpV2LDiversityResult;
+		lDiversityResult?: GooglePrivacyDlpV2LDiversityResult | null;
 
 		/** Result of the numerical stats computation. */
-		numericalStatsResult?: GooglePrivacyDlpV2NumericalStatsResult;
+		numericalStatsResult?: GooglePrivacyDlpV2NumericalStatsResult | null;
 
 		/** Privacy metric to compute for reidentification risk analysis. */
-		requestedPrivacyMetric?: GooglePrivacyDlpV2PrivacyMetric;
+		requestedPrivacyMetric?: GooglePrivacyDlpV2PrivacyMetric | null;
 
 		/**
 		 * Message defining the location of a BigQuery table. A table is uniquely
@@ -246,7 +246,7 @@ export namespace MyNS {
 		 * `<project_id>:<dataset_id>.<table_id>` or
 		 * `<project_id>.<dataset_id>.<table_id>`.
 		 */
-		requestedSourceTable?: GooglePrivacyDlpV2BigQueryTable;
+		requestedSourceTable?: GooglePrivacyDlpV2BigQueryTable | null;
 	}
 
 
@@ -254,7 +254,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2CategoricalStatsResult {
 
 		/** Histogram of value frequencies in the column. */
-		valueFrequencyHistogramBuckets?: Array<GooglePrivacyDlpV2CategoricalStatsHistogramBucket>;
+		valueFrequencyHistogramBuckets?: Array<GooglePrivacyDlpV2CategoricalStatsHistogramBucket> | null;
 	}
 
 
@@ -262,22 +262,22 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2CategoricalStatsHistogramBucket {
 
 		/** Total number of values in this bucket. */
-		bucketSize?: string;
+		bucketSize?: string | null;
 
 		/** Total number of distinct values in this bucket. */
-		bucketValueCount?: string;
+		bucketValueCount?: string | null;
 
 		/**
 		 * Sample of value frequencies in this bucket. The total number of
 		 * values returned per bucket is capped at 20.
 		 */
-		bucketValues?: Array<GooglePrivacyDlpV2ValueFrequency>;
+		bucketValues?: Array<GooglePrivacyDlpV2ValueFrequency> | null;
 
 		/** Lower bound on the value frequency of the values in this bucket. */
-		valueFrequencyLowerBound?: string;
+		valueFrequencyLowerBound?: string | null;
 
 		/** Upper bound on the value frequency of the values in this bucket. */
-		valueFrequencyUpperBound?: string;
+		valueFrequencyUpperBound?: string | null;
 	}
 
 
@@ -285,7 +285,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2ValueFrequency {
 
 		/** How many times the value is contained in the field. */
-		count?: string;
+		count?: string | null;
 
 		/**
 		 * Set of primitive values supported by the system.
@@ -295,7 +295,7 @@ export namespace MyNS {
 		 * 123456789, the number of bytes would be counted as 9, even though an
 		 * int64 only holds up to 8 bytes of data.
 		 */
-		value?: GooglePrivacyDlpV2Value;
+		value?: GooglePrivacyDlpV2Value | null;
 	}
 
 
@@ -310,7 +310,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2Value {
 
 		/** boolean */
-		booleanValue?: boolean;
+		booleanValue?: boolean | null;
 
 		/**
 		 * Represents a whole or partial calendar date, e.g. a birthday. The time of day
@@ -322,29 +322,29 @@ export namespace MyNS {
 		 * * A year and month value, with a zero day, e.g. a credit card expiration date
 		 * Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.
 		 */
-		dateValue?: GoogleTypeDate;
+		dateValue?: GoogleTypeDate | null;
 
 		/** day of week */
-		dayOfWeekValue?: GooglePrivacyDlpV2ValueDayOfWeekValue;
+		dayOfWeekValue?: GooglePrivacyDlpV2ValueDayOfWeekValue | null;
 
 		/** float */
-		floatValue?: number;
+		floatValue?: number | null;
 
 		/** integer */
-		integerValue?: string;
+		integerValue?: string | null;
 
 		/** string */
-		stringValue?: string;
+		stringValue?: string | null;
 
 		/**
 		 * Represents a time of day. The date and time zone are either not significant
 		 * or are specified elsewhere. An API may choose to allow leap seconds. Related
 		 * types are google.type.Date and `google.protobuf.Timestamp`.
 		 */
-		timeValue?: GoogleTypeTimeOfDay;
+		timeValue?: GoogleTypeTimeOfDay | null;
 
 		/** timestamp */
-		timestampValue?: string;
+		timestampValue?: string | null;
 	}
 
 
@@ -365,19 +365,19 @@ export namespace MyNS {
 		 * if specifying a year by itself or a year and month where the day is not
 		 * significant.
 		 */
-		day?: number;
+		day?: number | null;
 
 		/**
 		 * Month of year. Must be from 1 to 12, or 0 if specifying a year without a
 		 * month and day.
 		 */
-		month?: number;
+		month?: number | null;
 
 		/**
 		 * Year of date. Must be from 1 to 9999, or 0 if specifying a date without
 		 * a year.
 		 */
-		year?: number;
+		year?: number | null;
 	}
 
 	export enum GooglePrivacyDlpV2ValueDayOfWeekValue { DAY_OF_WEEK_UNSPECIFIED = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6, SUNDAY = 7 }
@@ -394,19 +394,19 @@ export namespace MyNS {
 		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose
 		 * to allow the value "24:00:00" for scenarios like business closing time.
 		 */
-		hours?: number;
+		hours?: number | null;
 
 		/** Minutes of hour of day. Must be from 0 to 59. */
-		minutes?: number;
+		minutes?: number | null;
 
 		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
-		nanos?: number;
+		nanos?: number | null;
 
 		/**
 		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may
 		 * allow the value 60 if it allows leap-seconds.
 		 */
-		seconds?: number;
+		seconds?: number | null;
 	}
 
 
@@ -426,7 +426,7 @@ export namespace MyNS {
 		 * mean that there are no record with an estimated probability in [0.1, 0.2)
 		 * nor larger or equal to 0.4.
 		 */
-		deltaPresenceEstimationHistogram?: Array<GooglePrivacyDlpV2DeltaPresenceEstimationHistogramBucket>;
+		deltaPresenceEstimationHistogram?: Array<GooglePrivacyDlpV2DeltaPresenceEstimationHistogramBucket> | null;
 	}
 
 
@@ -444,22 +444,22 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2DeltaPresenceEstimationHistogramBucket {
 
 		/** Number of records within these probability bounds. */
-		bucketSize?: string;
+		bucketSize?: string | null;
 
 		/** Total number of distinct quasi-identifier tuple values in this bucket. */
-		bucketValueCount?: string;
+		bucketValueCount?: string | null;
 
 		/**
 		 * Sample of quasi-identifier tuple values in this bucket. The total
 		 * number of classes returned per bucket is capped at 20.
 		 */
-		bucketValues?: Array<GooglePrivacyDlpV2DeltaPresenceEstimationQuasiIdValues>;
+		bucketValues?: Array<GooglePrivacyDlpV2DeltaPresenceEstimationQuasiIdValues> | null;
 
 		/** Always greater than or equal to min_probability. */
-		maxProbability?: number;
+		maxProbability?: number | null;
 
 		/** Between 0 and 1. */
-		minProbability?: number;
+		minProbability?: number | null;
 	}
 
 
@@ -476,10 +476,10 @@ export namespace MyNS {
 		 * same quasi-identifier values, and an estimated 100 people in the entire
 		 * population with these values, then δ is 0.15.
 		 */
-		estimatedProbability?: number;
+		estimatedProbability?: number | null;
 
 		/** The quasi-identifier values. */
-		quasiIdsValues?: Array<GooglePrivacyDlpV2Value>;
+		quasiIdsValues?: Array<GooglePrivacyDlpV2Value> | null;
 	}
 
 
@@ -487,7 +487,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2KAnonymityResult {
 
 		/** Histogram of k-anonymity equivalence classes. */
-		equivalenceClassHistogramBuckets?: Array<GooglePrivacyDlpV2KAnonymityHistogramBucket>;
+		equivalenceClassHistogramBuckets?: Array<GooglePrivacyDlpV2KAnonymityHistogramBucket> | null;
 	}
 
 
@@ -495,22 +495,22 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2KAnonymityHistogramBucket {
 
 		/** Total number of equivalence classes in this bucket. */
-		bucketSize?: string;
+		bucketSize?: string | null;
 
 		/** Total number of distinct equivalence classes in this bucket. */
-		bucketValueCount?: string;
+		bucketValueCount?: string | null;
 
 		/**
 		 * Sample of equivalence classes in this bucket. The total number of
 		 * classes returned per bucket is capped at 20.
 		 */
-		bucketValues?: Array<GooglePrivacyDlpV2KAnonymityEquivalenceClass>;
+		bucketValues?: Array<GooglePrivacyDlpV2KAnonymityEquivalenceClass> | null;
 
 		/** Lower bound on the size of the equivalence classes in this bucket. */
-		equivalenceClassSizeLowerBound?: string;
+		equivalenceClassSizeLowerBound?: string | null;
 
 		/** Upper bound on the size of the equivalence classes in this bucket. */
-		equivalenceClassSizeUpperBound?: string;
+		equivalenceClassSizeUpperBound?: string | null;
 	}
 
 
@@ -521,14 +521,14 @@ export namespace MyNS {
 		 * Size of the equivalence class, for example number of rows with the
 		 * above set of values.
 		 */
-		equivalenceClassSize?: string;
+		equivalenceClassSize?: string | null;
 
 		/**
 		 * Set of values defining the equivalence class. One value per
 		 * quasi-identifier column in the original KAnonymity metric message.
 		 * The order is always the same as the original request.
 		 */
-		quasiIdsValues?: Array<GooglePrivacyDlpV2Value>;
+		quasiIdsValues?: Array<GooglePrivacyDlpV2Value> | null;
 	}
 
 
@@ -548,7 +548,7 @@ export namespace MyNS {
 		 * mean that there are no record with an estimated anonymity of 4, 5, or
 		 * larger than 10.
 		 */
-		kMapEstimationHistogram?: Array<GooglePrivacyDlpV2KMapEstimationHistogramBucket>;
+		kMapEstimationHistogram?: Array<GooglePrivacyDlpV2KMapEstimationHistogramBucket> | null;
 	}
 
 
@@ -565,22 +565,22 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2KMapEstimationHistogramBucket {
 
 		/** Number of records within these anonymity bounds. */
-		bucketSize?: string;
+		bucketSize?: string | null;
 
 		/** Total number of distinct quasi-identifier tuple values in this bucket. */
-		bucketValueCount?: string;
+		bucketValueCount?: string | null;
 
 		/**
 		 * Sample of quasi-identifier tuple values in this bucket. The total
 		 * number of classes returned per bucket is capped at 20.
 		 */
-		bucketValues?: Array<GooglePrivacyDlpV2KMapEstimationQuasiIdValues>;
+		bucketValues?: Array<GooglePrivacyDlpV2KMapEstimationQuasiIdValues> | null;
 
 		/** Always greater than or equal to min_anonymity. */
-		maxAnonymity?: string;
+		maxAnonymity?: string | null;
 
 		/** Always positive. */
-		minAnonymity?: string;
+		minAnonymity?: string | null;
 	}
 
 
@@ -588,10 +588,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2KMapEstimationQuasiIdValues {
 
 		/** The estimated anonymity for these quasi-identifier values. */
-		estimatedAnonymity?: string;
+		estimatedAnonymity?: string | null;
 
 		/** The quasi-identifier values. */
-		quasiIdsValues?: Array<GooglePrivacyDlpV2Value>;
+		quasiIdsValues?: Array<GooglePrivacyDlpV2Value> | null;
 	}
 
 
@@ -599,7 +599,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2LDiversityResult {
 
 		/** Histogram of l-diversity equivalence class sensitive value frequencies. */
-		sensitiveValueFrequencyHistogramBuckets?: Array<GooglePrivacyDlpV2LDiversityHistogramBucket>;
+		sensitiveValueFrequencyHistogramBuckets?: Array<GooglePrivacyDlpV2LDiversityHistogramBucket> | null;
 	}
 
 
@@ -607,28 +607,28 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2LDiversityHistogramBucket {
 
 		/** Total number of equivalence classes in this bucket. */
-		bucketSize?: string;
+		bucketSize?: string | null;
 
 		/** Total number of distinct equivalence classes in this bucket. */
-		bucketValueCount?: string;
+		bucketValueCount?: string | null;
 
 		/**
 		 * Sample of equivalence classes in this bucket. The total number of
 		 * classes returned per bucket is capped at 20.
 		 */
-		bucketValues?: Array<GooglePrivacyDlpV2LDiversityEquivalenceClass>;
+		bucketValues?: Array<GooglePrivacyDlpV2LDiversityEquivalenceClass> | null;
 
 		/**
 		 * Lower bound on the sensitive value frequencies of the equivalence
 		 * classes in this bucket.
 		 */
-		sensitiveValueFrequencyLowerBound?: string;
+		sensitiveValueFrequencyLowerBound?: string | null;
 
 		/**
 		 * Upper bound on the sensitive value frequencies of the equivalence
 		 * classes in this bucket.
 		 */
-		sensitiveValueFrequencyUpperBound?: string;
+		sensitiveValueFrequencyUpperBound?: string | null;
 	}
 
 
@@ -636,19 +636,19 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2LDiversityEquivalenceClass {
 
 		/** Size of the k-anonymity equivalence class. */
-		equivalenceClassSize?: string;
+		equivalenceClassSize?: string | null;
 
 		/** Number of distinct sensitive values in this equivalence class. */
-		numDistinctSensitiveValues?: string;
+		numDistinctSensitiveValues?: string | null;
 
 		/**
 		 * Quasi-identifier values defining the k-anonymity equivalence
 		 * class. The order is always the same as the original request.
 		 */
-		quasiIdsValues?: Array<GooglePrivacyDlpV2Value>;
+		quasiIdsValues?: Array<GooglePrivacyDlpV2Value> | null;
 
 		/** Estimated frequencies of top sensitive values. */
-		topSensitiveValues?: Array<GooglePrivacyDlpV2ValueFrequency>;
+		topSensitiveValues?: Array<GooglePrivacyDlpV2ValueFrequency> | null;
 	}
 
 
@@ -663,7 +663,7 @@ export namespace MyNS {
 		 * 123456789, the number of bytes would be counted as 9, even though an
 		 * int64 only holds up to 8 bytes of data.
 		 */
-		maxValue?: GooglePrivacyDlpV2Value;
+		maxValue?: GooglePrivacyDlpV2Value | null;
 
 		/**
 		 * Set of primitive values supported by the system.
@@ -673,13 +673,13 @@ export namespace MyNS {
 		 * 123456789, the number of bytes would be counted as 9, even though an
 		 * int64 only holds up to 8 bytes of data.
 		 */
-		minValue?: GooglePrivacyDlpV2Value;
+		minValue?: GooglePrivacyDlpV2Value | null;
 
 		/**
 		 * List of 99 values that partition the set of field values into 100 equal
 		 * sized buckets.
 		 */
-		quantileValues?: Array<GooglePrivacyDlpV2Value>;
+		quantileValues?: Array<GooglePrivacyDlpV2Value> | null;
 	}
 
 
@@ -690,7 +690,7 @@ export namespace MyNS {
 		 * Compute numerical stats over an individual column, including
 		 * number of distinct values and value count distribution.
 		 */
-		categoricalStatsConfig?: GooglePrivacyDlpV2CategoricalStatsConfig;
+		categoricalStatsConfig?: GooglePrivacyDlpV2CategoricalStatsConfig | null;
 
 		/**
 		 * δ-presence metric, used to estimate how likely it is for an attacker to
@@ -698,10 +698,10 @@ export namespace MyNS {
 		 * Similarly to the k-map metric, we cannot compute δ-presence exactly without
 		 * knowing the attack dataset, so we use a statistical model instead.
 		 */
-		deltaPresenceEstimationConfig?: GooglePrivacyDlpV2DeltaPresenceEstimationConfig;
+		deltaPresenceEstimationConfig?: GooglePrivacyDlpV2DeltaPresenceEstimationConfig | null;
 
 		/** k-anonymity metric, used for analysis of reidentification risk. */
-		kAnonymityConfig?: GooglePrivacyDlpV2KAnonymityConfig;
+		kAnonymityConfig?: GooglePrivacyDlpV2KAnonymityConfig | null;
 
 		/**
 		 * Reidentifiability metric. This corresponds to a risk model similar to what
@@ -711,16 +711,16 @@ export namespace MyNS {
 		 * statistical model (indicated as one or several BigQuery tables), or by
 		 * extrapolating from the distribution of values in the input dataset.
 		 */
-		kMapEstimationConfig?: GooglePrivacyDlpV2KMapEstimationConfig;
+		kMapEstimationConfig?: GooglePrivacyDlpV2KMapEstimationConfig | null;
 
 		/** l-diversity metric, used for analysis of reidentification risk. */
-		lDiversityConfig?: GooglePrivacyDlpV2LDiversityConfig;
+		lDiversityConfig?: GooglePrivacyDlpV2LDiversityConfig | null;
 
 		/**
 		 * Compute numerical stats over an individual column, including
 		 * min, max, and quantiles.
 		 */
-		numericalStatsConfig?: GooglePrivacyDlpV2NumericalStatsConfig;
+		numericalStatsConfig?: GooglePrivacyDlpV2NumericalStatsConfig | null;
 	}
 
 
@@ -731,7 +731,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2CategoricalStatsConfig {
 
 		/** General identifier of a data field in a storage service. */
-		field?: GooglePrivacyDlpV2FieldId;
+		field?: GooglePrivacyDlpV2FieldId | null;
 	}
 
 
@@ -739,7 +739,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2FieldId {
 
 		/** Name describing the field. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -756,20 +756,20 @@ export namespace MyNS {
 		 * used to tag a quasi-identifiers field must appear in exactly one
 		 * field of one auxiliary table.
 		 */
-		auxiliaryTables?: Array<GooglePrivacyDlpV2StatisticalTable>;
+		auxiliaryTables?: Array<GooglePrivacyDlpV2StatisticalTable> | null;
 
 		/**
 		 * Required. Fields considered to be quasi-identifiers. No two fields can have the
 		 * same tag.
 		 */
-		quasiIds?: Array<GooglePrivacyDlpV2QuasiId>;
+		quasiIds?: Array<GooglePrivacyDlpV2QuasiId> | null;
 
 		/**
 		 * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
 		 * Set if no column is tagged with a region-specific InfoType (like
 		 * US_ZIP_5) or a region code.
 		 */
-		regionCode?: string;
+		regionCode?: string | null;
 	}
 
 
@@ -785,10 +785,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2StatisticalTable {
 
 		/** Required. Quasi-identifier columns. */
-		quasiIds?: Array<GooglePrivacyDlpV2QuasiIdentifierField>;
+		quasiIds?: Array<GooglePrivacyDlpV2QuasiIdentifierField> | null;
 
 		/** General identifier of a data field in a storage service. */
-		relativeFrequency?: GooglePrivacyDlpV2FieldId;
+		relativeFrequency?: GooglePrivacyDlpV2FieldId | null;
 
 		/**
 		 * Message defining the location of a BigQuery table. A table is uniquely
@@ -797,7 +797,7 @@ export namespace MyNS {
 		 * `<project_id>:<dataset_id>.<table_id>` or
 		 * `<project_id>.<dataset_id>.<table_id>`.
 		 */
-		table?: GooglePrivacyDlpV2BigQueryTable;
+		table?: GooglePrivacyDlpV2BigQueryTable | null;
 	}
 
 
@@ -812,10 +812,10 @@ export namespace MyNS {
 		 * indicate an auxiliary table that contains statistical information on
 		 * the possible values of this column (below).
 		 */
-		customTag?: string;
+		customTag?: string | null;
 
 		/** General identifier of a data field in a storage service. */
-		field?: GooglePrivacyDlpV2FieldId;
+		field?: GooglePrivacyDlpV2FieldId | null;
 	}
 
 
@@ -827,10 +827,10 @@ export namespace MyNS {
 		 * indicate an auxiliary table that contains statistical information on
 		 * the possible values of this column (below).
 		 */
-		customTag?: string;
+		customTag?: string | null;
 
 		/** General identifier of a data field in a storage service. */
-		field?: GooglePrivacyDlpV2FieldId;
+		field?: GooglePrivacyDlpV2FieldId | null;
 
 		/**
 		 * A generic empty message that you can re-use to avoid defining duplicated
@@ -841,10 +841,10 @@ export namespace MyNS {
 		 * }
 		 * The JSON representation for `Empty` is empty JSON object `{}`.
 		 */
-		inferred?: GoogleProtobufEmpty;
+		inferred?: GoogleProtobufEmpty | null;
 
 		/** Type of information detected by the API. */
-		infoType?: GooglePrivacyDlpV2InfoType;
+		infoType?: GooglePrivacyDlpV2InfoType | null;
 	}
 
 
@@ -871,7 +871,7 @@ export namespace MyNS {
 		 * a built-in type. InfoType names should conform to the pattern
 		 * `[a-zA-Z0-9_]{1,64}`.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -885,7 +885,7 @@ export namespace MyNS {
 		 * identifier. This message is used when generalizations or analysis must take
 		 * into account that multiple rows correspond to the same entity.
 		 */
-		entityId?: GooglePrivacyDlpV2EntityId;
+		entityId?: GooglePrivacyDlpV2EntityId | null;
 
 		/**
 		 * Set of fields to compute k-anonymity over. When multiple fields are
@@ -894,7 +894,7 @@ export namespace MyNS {
 		 * supported so long as they are not structs themselves or nested within
 		 * a repeated field.
 		 */
-		quasiIds?: Array<GooglePrivacyDlpV2FieldId>;
+		quasiIds?: Array<GooglePrivacyDlpV2FieldId> | null;
 	}
 
 
@@ -908,7 +908,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2EntityId {
 
 		/** General identifier of a data field in a storage service. */
-		field?: GooglePrivacyDlpV2FieldId;
+		field?: GooglePrivacyDlpV2FieldId | null;
 	}
 
 
@@ -927,20 +927,20 @@ export namespace MyNS {
 		 * used to tag a quasi-identifiers column must appear in exactly one column
 		 * of one auxiliary table.
 		 */
-		auxiliaryTables?: Array<GooglePrivacyDlpV2AuxiliaryTable>;
+		auxiliaryTables?: Array<GooglePrivacyDlpV2AuxiliaryTable> | null;
 
 		/**
 		 * Required. Fields considered to be quasi-identifiers. No two columns can have the
 		 * same tag.
 		 */
-		quasiIds?: Array<GooglePrivacyDlpV2TaggedField>;
+		quasiIds?: Array<GooglePrivacyDlpV2TaggedField> | null;
 
 		/**
 		 * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
 		 * Set if no column is tagged with a region-specific InfoType (like
 		 * US_ZIP_5) or a region code.
 		 */
-		regionCode?: string;
+		regionCode?: string | null;
 	}
 
 
@@ -956,10 +956,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2AuxiliaryTable {
 
 		/** Required. Quasi-identifier columns. */
-		quasiIds?: Array<GooglePrivacyDlpV2QuasiIdField>;
+		quasiIds?: Array<GooglePrivacyDlpV2QuasiIdField> | null;
 
 		/** General identifier of a data field in a storage service. */
-		relativeFrequency?: GooglePrivacyDlpV2FieldId;
+		relativeFrequency?: GooglePrivacyDlpV2FieldId | null;
 
 		/**
 		 * Message defining the location of a BigQuery table. A table is uniquely
@@ -968,7 +968,7 @@ export namespace MyNS {
 		 * `<project_id>:<dataset_id>.<table_id>` or
 		 * `<project_id>.<dataset_id>.<table_id>`.
 		 */
-		table?: GooglePrivacyDlpV2BigQueryTable;
+		table?: GooglePrivacyDlpV2BigQueryTable | null;
 	}
 
 
@@ -979,10 +979,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2QuasiIdField {
 
 		/** A auxiliary field. */
-		customTag?: string;
+		customTag?: string | null;
 
 		/** General identifier of a data field in a storage service. */
-		field?: GooglePrivacyDlpV2FieldId;
+		field?: GooglePrivacyDlpV2FieldId | null;
 	}
 
 
@@ -994,10 +994,10 @@ export namespace MyNS {
 		 * indicate an auxiliary table that contains statistical information on
 		 * the possible values of this column (below).
 		 */
-		customTag?: string;
+		customTag?: string | null;
 
 		/** General identifier of a data field in a storage service. */
-		field?: GooglePrivacyDlpV2FieldId;
+		field?: GooglePrivacyDlpV2FieldId | null;
 
 		/**
 		 * A generic empty message that you can re-use to avoid defining duplicated
@@ -1008,10 +1008,10 @@ export namespace MyNS {
 		 * }
 		 * The JSON representation for `Empty` is empty JSON object `{}`.
 		 */
-		inferred?: GoogleProtobufEmpty;
+		inferred?: GoogleProtobufEmpty | null;
 
 		/** Type of information detected by the API. */
-		infoType?: GooglePrivacyDlpV2InfoType;
+		infoType?: GooglePrivacyDlpV2InfoType | null;
 	}
 
 
@@ -1023,10 +1023,10 @@ export namespace MyNS {
 		 * defined for the l-diversity computation. When multiple fields are
 		 * specified, they are considered a single composite key.
 		 */
-		quasiIds?: Array<GooglePrivacyDlpV2FieldId>;
+		quasiIds?: Array<GooglePrivacyDlpV2FieldId> | null;
 
 		/** General identifier of a data field in a storage service. */
-		sensitiveAttribute?: GooglePrivacyDlpV2FieldId;
+		sensitiveAttribute?: GooglePrivacyDlpV2FieldId | null;
 	}
 
 
@@ -1037,7 +1037,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2NumericalStatsConfig {
 
 		/** General identifier of a data field in a storage service. */
-		field?: GooglePrivacyDlpV2FieldId;
+		field?: GooglePrivacyDlpV2FieldId | null;
 	}
 
 
@@ -1045,7 +1045,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2BigQueryField {
 
 		/** General identifier of a data field in a storage service. */
-		field?: GooglePrivacyDlpV2FieldId;
+		field?: GooglePrivacyDlpV2FieldId | null;
 
 		/**
 		 * Message defining the location of a BigQuery table. A table is uniquely
@@ -1054,7 +1054,7 @@ export namespace MyNS {
 		 * `<project_id>:<dataset_id>.<table_id>` or
 		 * `<project_id>.<dataset_id>.<table_id>`.
 		 */
-		table?: GooglePrivacyDlpV2BigQueryTable;
+		table?: GooglePrivacyDlpV2BigQueryTable | null;
 	}
 
 
@@ -1068,7 +1068,7 @@ export namespace MyNS {
 		 * `inspect_job.storage_config.big_query_options.identifying_fields` in
 		 * `CreateDlpJobRequest`.
 		 */
-		rowNumber?: string;
+		rowNumber?: string | null;
 
 		/**
 		 * Message defining the location of a BigQuery table. A table is uniquely
@@ -1077,7 +1077,7 @@ export namespace MyNS {
 		 * `<project_id>:<dataset_id>.<table_id>` or
 		 * `<project_id>.<dataset_id>.<table_id>`.
 		 */
-		tableReference?: GooglePrivacyDlpV2BigQueryTable;
+		tableReference?: GooglePrivacyDlpV2BigQueryTable | null;
 	}
 
 
@@ -1088,7 +1088,7 @@ export namespace MyNS {
 		 * References to fields excluded from scanning. This allows you to skip
 		 * inspection of entire columns which you know have no findings.
 		 */
-		excludedFields?: Array<GooglePrivacyDlpV2FieldId>;
+		excludedFields?: Array<GooglePrivacyDlpV2FieldId> | null;
 
 		/**
 		 * Table fields that may uniquely identify a row within the table. When
@@ -1097,7 +1097,7 @@ export namespace MyNS {
 		 * `location.content_locations.record_location.record_key.id_values`. Nested
 		 * fields such as `person.birthdate.year` are allowed.
 		 */
-		identifyingFields?: Array<GooglePrivacyDlpV2FieldId>;
+		identifyingFields?: Array<GooglePrivacyDlpV2FieldId> | null;
 
 		/**
 		 * Max number of rows to scan. If the table has more rows than this value, the
@@ -1105,7 +1105,7 @@ export namespace MyNS {
 		 * scanned. Only one of rows_limit and rows_limit_percent can be specified.
 		 * Cannot be used in conjunction with TimespanConfig.
 		 */
-		rowsLimit?: string;
+		rowsLimit?: string | null;
 
 		/**
 		 * Max percentage of rows to scan. The rest are omitted. The number of rows
@@ -1114,8 +1114,8 @@ export namespace MyNS {
 		 * rows_limit_percent can be specified. Cannot be used in conjunction with
 		 * TimespanConfig.
 		 */
-		rowsLimitPercent?: number;
-		sampleMethod?: GooglePrivacyDlpV2BigQueryOptionsSampleMethod;
+		rowsLimitPercent?: number | null;
+		sampleMethod?: GooglePrivacyDlpV2BigQueryOptionsSampleMethod | null;
 
 		/**
 		 * Message defining the location of a BigQuery table. A table is uniquely
@@ -1124,7 +1124,7 @@ export namespace MyNS {
 		 * `<project_id>:<dataset_id>.<table_id>` or
 		 * `<project_id>.<dataset_id>.<table_id>`.
 		 */
-		tableReference?: GooglePrivacyDlpV2BigQueryTable;
+		tableReference?: GooglePrivacyDlpV2BigQueryTable | null;
 	}
 
 	export enum GooglePrivacyDlpV2BigQueryOptionsSampleMethod { SAMPLE_METHOD_UNSPECIFIED = 0, TOP = 1, RANDOM_START = 2 }
@@ -1134,16 +1134,16 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2BoundingBox {
 
 		/** Height of the bounding box in pixels. */
-		height?: number;
+		height?: number | null;
 
 		/** Left coordinate of the bounding box. (0,0) is upper left. */
-		left?: number;
+		left?: number | null;
 
 		/** Top coordinate of the bounding box. (0,0) is upper left. */
-		top?: number;
+		top?: number | null;
 
 		/** Width of the bounding box in pixels. */
-		width?: number;
+		width?: number | null;
 	}
 
 
@@ -1158,7 +1158,7 @@ export namespace MyNS {
 		 * 123456789, the number of bytes would be counted as 9, even though an
 		 * int64 only holds up to 8 bytes of data.
 		 */
-		max?: GooglePrivacyDlpV2Value;
+		max?: GooglePrivacyDlpV2Value | null;
 
 		/**
 		 * Set of primitive values supported by the system.
@@ -1168,7 +1168,7 @@ export namespace MyNS {
 		 * 123456789, the number of bytes would be counted as 9, even though an
 		 * int64 only holds up to 8 bytes of data.
 		 */
-		min?: GooglePrivacyDlpV2Value;
+		min?: GooglePrivacyDlpV2Value | null;
 
 		/**
 		 * Set of primitive values supported by the system.
@@ -1178,7 +1178,7 @@ export namespace MyNS {
 		 * 123456789, the number of bytes would be counted as 9, even though an
 		 * int64 only holds up to 8 bytes of data.
 		 */
-		replacementValue?: GooglePrivacyDlpV2Value;
+		replacementValue?: GooglePrivacyDlpV2Value | null;
 	}
 
 
@@ -1196,7 +1196,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2BucketingConfig {
 
 		/** Set of buckets. Ranges must be non-overlapping. */
-		buckets?: Array<GooglePrivacyDlpV2Bucket>;
+		buckets?: Array<GooglePrivacyDlpV2Bucket> | null;
 	}
 
 
@@ -1204,10 +1204,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2ByteContentItem {
 
 		/** Content data to inspect or redact. */
-		data?: string;
+		data?: string | null;
 
 		/** The type of data stored in the bytes string. Default will be TEXT_UTF8. */
-		type?: GooglePrivacyDlpV2ByteContentItemType;
+		type?: GooglePrivacyDlpV2ByteContentItemType | null;
 	}
 
 	export enum GooglePrivacyDlpV2ByteContentItemType { BYTES_TYPE_UNSPECIFIED = 0, IMAGE = 1, IMAGE_JPEG = 2, IMAGE_BMP = 3, IMAGE_PNG = 4, IMAGE_SVG = 5, TEXT_UTF8 = 6, WORD_DOCUMENT = 7, PDF = 8, AVRO = 9 }
@@ -1234,7 +1234,7 @@ export namespace MyNS {
 		 * instruct Cloud DLP to skip `-` and mask 5 characters with `*`, Cloud DLP
 		 * returns `***-**5-5555`.
 		 */
-		charactersToIgnore?: Array<GooglePrivacyDlpV2CharsToIgnore>;
+		charactersToIgnore?: Array<GooglePrivacyDlpV2CharsToIgnore> | null;
 
 		/**
 		 * Character to use to mask the sensitive values&mdash;for example, `*` for an
@@ -1242,13 +1242,13 @@ export namespace MyNS {
 		 * code or credit card number. This string must have a length of 1. If not
 		 * supplied, this value defaults to `*` for strings, and `0` for digits.
 		 */
-		maskingCharacter?: string;
+		maskingCharacter?: string | null;
 
 		/**
 		 * Number of characters to mask. If not set, all matching chars will be
 		 * masked. Skipped characters do not count towards this tally.
 		 */
-		numberToMask?: number;
+		numberToMask?: number | null;
 
 		/**
 		 * Mask characters in reverse order. For example, if `masking_character` is
@@ -1257,7 +1257,7 @@ export namespace MyNS {
 		 * If `masking_character` is `*`, `number_to_mask` is `3`, and `reverse_order`
 		 * is `true`, then the string `12345` is masked as `12***`.
 		 */
-		reverseOrder?: boolean;
+		reverseOrder?: boolean | null;
 	}
 
 
@@ -1268,13 +1268,13 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2CharsToIgnore {
 
 		/** Characters to not transform when masking. */
-		charactersToSkip?: string;
+		charactersToSkip?: string | null;
 
 		/**
 		 * Common characters to not transform when masking. Useful to avoid removing
 		 * punctuation.
 		 */
-		commonCharactersToIgnore?: GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore;
+		commonCharactersToIgnore?: GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore | null;
 	}
 
 	export enum GooglePrivacyDlpV2CharsToIgnoreCommonCharactersToIgnore { COMMON_CHARS_TO_IGNORE_UNSPECIFIED = 0, NUMERIC = 1, ALPHA_UPPER_CASE = 2, ALPHA_LOWER_CASE = 3, PUNCTUATION = 4, WHITESPACE = 5 }
@@ -1287,7 +1287,7 @@ export namespace MyNS {
 		 * The url, in the format `gs://<bucket>/<path>`. Trailing wildcard in the
 		 * path is allowed.
 		 */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -1302,7 +1302,7 @@ export namespace MyNS {
 		 * than this value then the rest of the bytes are omitted. Only one
 		 * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
 		 */
-		bytesLimitPerFile?: string;
+		bytesLimitPerFile?: string | null;
 
 		/**
 		 * Max percentage of bytes to scan from a file. The rest are omitted. The
@@ -1310,10 +1310,10 @@ export namespace MyNS {
 		 * inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one
 		 * of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
 		 */
-		bytesLimitPerFilePercent?: number;
+		bytesLimitPerFilePercent?: number | null;
 
 		/** Set of files to scan. */
-		fileSet?: GooglePrivacyDlpV2FileSet;
+		fileSet?: GooglePrivacyDlpV2FileSet | null;
 
 		/**
 		 * List of file type groups to include in the scan.
@@ -1324,15 +1324,15 @@ export namespace MyNS {
 		 * does not support image inspection and no file_types were specified.
 		 * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
 		 */
-		fileTypes?: Array<string>;
+		fileTypes?: Array<string> | null;
 
 		/**
 		 * Limits the number of files to scan to this percentage of the input FileSet.
 		 * Number of files scanned is rounded down. Must be between 0 and 100,
 		 * inclusively. Both 0 and 100 means no limit. Defaults to 0.
 		 */
-		filesLimitPercent?: number;
-		sampleMethod?: GooglePrivacyDlpV2BigQueryOptionsSampleMethod;
+		filesLimitPercent?: number | null;
+		sampleMethod?: GooglePrivacyDlpV2BigQueryOptionsSampleMethod | null;
 	}
 
 
@@ -1367,7 +1367,7 @@ export namespace MyNS {
 		 * include all files directly under `gs://mybucket/directory/`, without matching
 		 * across `/`
 		 */
-		regexFileSet?: GooglePrivacyDlpV2CloudStorageRegexFileSet;
+		regexFileSet?: GooglePrivacyDlpV2CloudStorageRegexFileSet | null;
 
 		/**
 		 * The Cloud Storage url of the file(s) to scan, in the format
@@ -1379,7 +1379,7 @@ export namespace MyNS {
 		 * `gs://mybucket/directory/*`.
 		 * Exactly one of `url` or `regex_file_set` must be set.
 		 */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -1414,7 +1414,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2CloudStorageRegexFileSet {
 
 		/** The name of a Cloud Storage bucket. Required. */
-		bucketName?: string;
+		bucketName?: string | null;
 
 		/**
 		 * A list of regular expressions matching file paths to exclude. All files in
@@ -1424,7 +1424,7 @@ export namespace MyNS {
 		 * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
 		 * under the google/re2 repository on GitHub.
 		 */
-		excludeRegex?: Array<string>;
+		excludeRegex?: Array<string> | null;
 
 		/**
 		 * A list of regular expressions matching file paths to include. All files in
@@ -1436,7 +1436,7 @@ export namespace MyNS {
 		 * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
 		 * under the google/re2 repository on GitHub.
 		 */
-		includeRegex?: Array<string>;
+		includeRegex?: Array<string> | null;
 	}
 
 
@@ -1447,7 +1447,7 @@ export namespace MyNS {
 		 * A url representing a file or path (no wildcards) in Cloud Storage.
 		 * Example: gs://[BUCKET_NAME]/dictionary.txt
 		 */
-		path?: string;
+		path?: string | null;
 	}
 
 
@@ -1455,13 +1455,13 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2Color {
 
 		/** The amount of blue in the color as a value in the interval [0, 1]. */
-		blue?: number;
+		blue?: number | null;
 
 		/** The amount of green in the color as a value in the interval [0, 1]. */
-		green?: number;
+		green?: number | null;
 
 		/** The amount of red in the color as a value in the interval [0, 1]. */
-		red?: number;
+		red?: number | null;
 	}
 
 
@@ -1487,10 +1487,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2Condition {
 
 		/** General identifier of a data field in a storage service. */
-		field?: GooglePrivacyDlpV2FieldId;
+		field?: GooglePrivacyDlpV2FieldId | null;
 
 		/** Required. Operator used to compare the field or infoType to the value. */
-		operator?: GooglePrivacyDlpV2ConditionOperator;
+		operator?: GooglePrivacyDlpV2ConditionOperator | null;
 
 		/**
 		 * Set of primitive values supported by the system.
@@ -1500,7 +1500,7 @@ export namespace MyNS {
 		 * 123456789, the number of bytes would be counted as 9, even though an
 		 * int64 only holds up to 8 bytes of data.
 		 */
-		value?: GooglePrivacyDlpV2Value;
+		value?: GooglePrivacyDlpV2Value | null;
 	}
 
 	export enum GooglePrivacyDlpV2ConditionOperator { RELATIONAL_OPERATOR_UNSPECIFIED = 0, EQUAL_TO = 1, NOT_EQUAL_TO = 2, GREATER_THAN = 3, LESS_THAN = 4, GREATER_THAN_OR_EQUALS = 5, LESS_THAN_OR_EQUALS = 6, EXISTS = 7 }
@@ -1510,7 +1510,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2Conditions {
 
 		/** A collection of conditions. */
-		conditions?: Array<GooglePrivacyDlpV2Condition>;
+		conditions?: Array<GooglePrivacyDlpV2Condition> | null;
 	}
 
 
@@ -1526,13 +1526,13 @@ export namespace MyNS {
 		 * - BigQuery: 'Project:DataSetId.TableId'
 		 * - Google Cloud Storage: 'gs://Bucket/folders/filename.txt'
 		 */
-		fullPath?: string;
+		fullPath?: string | null;
 
 		/**
 		 * Project where the finding was found.
 		 * Can be different from the project that owns the finding.
 		 */
-		projectId?: string;
+		projectId?: string | null;
 
 		/**
 		 * The rest of the path after the root.
@@ -1542,7 +1542,7 @@ export namespace MyNS {
 		 * - Google Cloud Storage file `gs://bucket/folder/filename.txt`, the relative
 		 * path is `folder/filename.txt`
 		 */
-		relativePath?: string;
+		relativePath?: string | null;
 
 		/**
 		 * The root of the container.
@@ -1552,10 +1552,10 @@ export namespace MyNS {
 		 * - For Google Cloud Storage file `gs://bucket/folder/filename.txt`, the root
 		 * is `gs://bucket`
 		 */
-		rootPath?: string;
+		rootPath?: string | null;
 
 		/** Container type, for example BigQuery or Google Cloud Storage. */
-		type?: string;
+		type?: string | null;
 
 		/**
 		 * Findings container modification timestamp, if applicable.
@@ -1563,13 +1563,13 @@ export namespace MyNS {
 		 * For BigQuery table contains last_modified_time property.
 		 * For Datastore - not populated.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 
 		/**
 		 * Findings container version, if available
 		 * ("generation" for Google Cloud Storage).
 		 */
-		version?: string;
+		version?: string | null;
 	}
 
 
@@ -1577,17 +1577,17 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2ContentItem {
 
 		/** Container for bytes to inspect or redact. */
-		byteItem?: GooglePrivacyDlpV2ByteContentItem;
+		byteItem?: GooglePrivacyDlpV2ByteContentItem | null;
 
 		/**
 		 * Structured content to inspect. Up to 50,000 `Value`s per request allowed.
 		 * See https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
 		 * learn more.
 		 */
-		table?: GooglePrivacyDlpV2Table;
+		table?: GooglePrivacyDlpV2Table | null;
 
 		/** String data to inspect or redact. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -1599,10 +1599,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2Table {
 
 		/** Headers of the table. */
-		headers?: Array<GooglePrivacyDlpV2FieldId>;
+		headers?: Array<GooglePrivacyDlpV2FieldId> | null;
 
 		/** Rows of the table. */
-		rows?: Array<GooglePrivacyDlpV2Row>;
+		rows?: Array<GooglePrivacyDlpV2Row> | null;
 	}
 
 
@@ -1610,7 +1610,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2Row {
 
 		/** Individual cells. */
-		values?: Array<GooglePrivacyDlpV2Value>;
+		values?: Array<GooglePrivacyDlpV2Value> | null;
 	}
 
 
@@ -1630,7 +1630,7 @@ export namespace MyNS {
 		 * Nested names could be absent if the embedded object has no string
 		 * identifier (for an example an image contained within a document).
 		 */
-		containerName?: string;
+		containerName?: string | null;
 
 		/**
 		 * Findings container modification timestamp, if applicable.
@@ -1638,25 +1638,25 @@ export namespace MyNS {
 		 * For BigQuery table contains last_modified_time property.
 		 * For Datastore - not populated.
 		 */
-		containerTimestamp?: string;
+		containerTimestamp?: string | null;
 
 		/**
 		 * Findings container version, if available
 		 * ("generation" for Google Cloud Storage).
 		 */
-		containerVersion?: string;
+		containerVersion?: string | null;
 
 		/** Location of a finding within a document. */
-		documentLocation?: GooglePrivacyDlpV2DocumentLocation;
+		documentLocation?: GooglePrivacyDlpV2DocumentLocation | null;
 
 		/** Location of the finding within an image. */
-		imageLocation?: GooglePrivacyDlpV2ImageLocation;
+		imageLocation?: GooglePrivacyDlpV2ImageLocation | null;
 
 		/** Metadata Location */
-		metadataLocation?: GooglePrivacyDlpV2MetadataLocation;
+		metadataLocation?: GooglePrivacyDlpV2MetadataLocation | null;
 
 		/** Location of a finding within a row or record. */
-		recordLocation?: GooglePrivacyDlpV2RecordLocation;
+		recordLocation?: GooglePrivacyDlpV2RecordLocation | null;
 	}
 
 
@@ -1667,7 +1667,7 @@ export namespace MyNS {
 		 * Offset of the line, from the beginning of the file, where the finding
 		 * is located.
 		 */
-		fileOffset?: string;
+		fileOffset?: string | null;
 	}
 
 
@@ -1675,7 +1675,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2ImageLocation {
 
 		/** Bounding boxes locating the pixels within the image containing the finding. */
-		boundingBoxes?: Array<GooglePrivacyDlpV2BoundingBox>;
+		boundingBoxes?: Array<GooglePrivacyDlpV2BoundingBox> | null;
 	}
 
 
@@ -1683,16 +1683,16 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2MetadataLocation {
 
 		/** Storage metadata label to indicate which metadata entry contains findings. */
-		storageLabel?: GooglePrivacyDlpV2StorageMetadataLabel;
+		storageLabel?: GooglePrivacyDlpV2StorageMetadataLabel | null;
 
 		/** Type of metadata containing the finding. */
-		type?: GooglePrivacyDlpV2MetadataLocationType;
+		type?: GooglePrivacyDlpV2MetadataLocationType | null;
 	}
 
 
 	/** Storage metadata label to indicate which metadata entry contains findings. */
 	export interface GooglePrivacyDlpV2StorageMetadataLabel {
-		key?: string;
+		key?: string | null;
 	}
 
 	export enum GooglePrivacyDlpV2MetadataLocationType { METADATATYPE_UNSPECIFIED = 0, STORAGE_METADATA = 1 }
@@ -1702,13 +1702,13 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2RecordLocation {
 
 		/** General identifier of a data field in a storage service. */
-		fieldId?: GooglePrivacyDlpV2FieldId;
+		fieldId?: GooglePrivacyDlpV2FieldId | null;
 
 		/** Message for a unique key indicating a record that contains a finding. */
-		recordKey?: GooglePrivacyDlpV2RecordKey;
+		recordKey?: GooglePrivacyDlpV2RecordKey | null;
 
 		/** Location of a finding within a table. */
-		tableLocation?: GooglePrivacyDlpV2TableLocation;
+		tableLocation?: GooglePrivacyDlpV2TableLocation | null;
 	}
 
 
@@ -1716,16 +1716,16 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2RecordKey {
 
 		/** Row key for identifying a record in BigQuery table. */
-		bigQueryKey?: GooglePrivacyDlpV2BigQueryKey;
+		bigQueryKey?: GooglePrivacyDlpV2BigQueryKey | null;
 
 		/** Record key for a finding in Cloud Datastore. */
-		datastoreKey?: GooglePrivacyDlpV2DatastoreKey;
+		datastoreKey?: GooglePrivacyDlpV2DatastoreKey | null;
 
 		/**
 		 * Values of identifying columns in the given row. Order of values matches
 		 * the order of `identifying_fields` specified in the scanning request.
 		 */
-		idValues?: Array<string>;
+		idValues?: Array<string> | null;
 	}
 
 
@@ -1738,7 +1738,7 @@ export namespace MyNS {
 		 * reserved/read-only, the key is reserved/read-only.
 		 * A reserved/read-only key is forbidden in certain documented contexts.
 		 */
-		entityKey?: GooglePrivacyDlpV2Key;
+		entityKey?: GooglePrivacyDlpV2Key | null;
 	}
 
 
@@ -1757,7 +1757,7 @@ export namespace MyNS {
 		 * A partition ID contains several dimensions:
 		 * project ID and namespace ID.
 		 */
-		partitionId?: GooglePrivacyDlpV2PartitionId;
+		partitionId?: GooglePrivacyDlpV2PartitionId | null;
 
 		/**
 		 * The entity path.
@@ -1769,7 +1769,7 @@ export namespace MyNS {
 		 * the path are called the element's _ancestors_.
 		 * A path can never be empty, and a path can have at most 100 elements.
 		 */
-		path?: Array<GooglePrivacyDlpV2PathElement>;
+		path?: Array<GooglePrivacyDlpV2PathElement> | null;
 	}
 
 
@@ -1783,10 +1783,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2PartitionId {
 
 		/** If not empty, the ID of the namespace to which the entities belong. */
-		namespaceId?: string;
+		namespaceId?: string | null;
 
 		/** The ID of the project to which the entities belong. */
-		projectId?: string;
+		projectId?: string | null;
 	}
 
 
@@ -1802,7 +1802,7 @@ export namespace MyNS {
 		 * Never equal to zero. Values less than zero are discouraged and may not
 		 * be supported in the future.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * The kind of the entity.
@@ -1810,7 +1810,7 @@ export namespace MyNS {
 		 * A kind must not contain more than 1500 bytes when UTF-8 encoded.
 		 * Cannot be `""`.
 		 */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * The name of the entity.
@@ -1818,7 +1818,7 @@ export namespace MyNS {
 		 * A name must not be more than 1500 bytes when UTF-8 encoded.
 		 * Cannot be `""`.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -1826,7 +1826,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2TableLocation {
 
 		/** The zero-based index of the row where the finding is located. */
-		rowIndex?: string;
+		rowIndex?: string | null;
 	}
 
 
@@ -1837,13 +1837,13 @@ export namespace MyNS {
 		 * DeidentifyTemplates contains instructions on how to de-identify content.
 		 * See https://cloud.google.com/dlp/docs/concepts-templates to learn more.
 		 */
-		deidentifyTemplate?: GooglePrivacyDlpV2DeidentifyTemplate;
+		deidentifyTemplate?: GooglePrivacyDlpV2DeidentifyTemplate | null;
 
 		/**
 		 * The geographic location to store the deidentification template. Reserved
 		 * for future extensions.
 		 */
-		locationId?: string;
+		locationId?: string | null;
 
 		/**
 		 * The template id can contain uppercase and lowercase letters,
@@ -1851,7 +1851,7 @@ export namespace MyNS {
 		 * expression: `[a-zA-Z\\d-_]+`. The maximum length is 100
 		 * characters. Can be empty to allow the system to generate one.
 		 */
-		templateId?: string;
+		templateId?: string | null;
 	}
 
 
@@ -1862,16 +1862,16 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2DeidentifyTemplate {
 
 		/** Output only. The creation timestamp of an inspectTemplate. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** The configuration that controls how the data will change. */
-		deidentifyConfig?: GooglePrivacyDlpV2DeidentifyConfig;
+		deidentifyConfig?: GooglePrivacyDlpV2DeidentifyConfig | null;
 
 		/** Short description (max 256 chars). */
-		description?: string;
+		description?: string | null;
 
 		/** Display name (max 256 chars). */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Output only. The template name.
@@ -1879,10 +1879,10 @@ export namespace MyNS {
 		 * `projects/PROJECT_ID/deidentifyTemplates/TEMPLATE_ID` OR
 		 * `organizations/ORGANIZATION_ID/deidentifyTemplates/TEMPLATE_ID`
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Output only. The last update timestamp of an inspectTemplate. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -1895,13 +1895,13 @@ export namespace MyNS {
 		 * transformation is applied to only values that were identified as a specific
 		 * info_type.
 		 */
-		infoTypeTransformations?: GooglePrivacyDlpV2InfoTypeTransformations;
+		infoTypeTransformations?: GooglePrivacyDlpV2InfoTypeTransformations | null;
 
 		/**
 		 * A type of transformation that is applied over structured data such as a
 		 * table.
 		 */
-		recordTransformations?: GooglePrivacyDlpV2RecordTransformations;
+		recordTransformations?: GooglePrivacyDlpV2RecordTransformations | null;
 
 		/**
 		 * How to handle transformation errors during de-identification. A
@@ -1913,7 +1913,7 @@ export namespace MyNS {
 		 * handled, is returned in the response as part of the
 		 * `TransformationOverviews`.
 		 */
-		transformationErrorHandling?: GooglePrivacyDlpV2TransformationErrorHandling;
+		transformationErrorHandling?: GooglePrivacyDlpV2TransformationErrorHandling | null;
 	}
 
 
@@ -1929,7 +1929,7 @@ export namespace MyNS {
 		 * Required. Transformation for each infoType. Cannot specify more than one
 		 * for a given infoType.
 		 */
-		transformations?: Array<GooglePrivacyDlpV2InfoTypeTransformation>;
+		transformations?: Array<GooglePrivacyDlpV2InfoTypeTransformation> | null;
 	}
 
 
@@ -1944,10 +1944,10 @@ export namespace MyNS {
 		 * this transformation to apply to all findings that correspond to
 		 * infoTypes that were requested in `InspectConfig`.
 		 */
-		infoTypes?: Array<GooglePrivacyDlpV2InfoType>;
+		infoTypes?: Array<GooglePrivacyDlpV2InfoType> | null;
 
 		/** A rule for transforming a value. */
-		primitiveTransformation?: GooglePrivacyDlpV2PrimitiveTransformation;
+		primitiveTransformation?: GooglePrivacyDlpV2PrimitiveTransformation | null;
 	}
 
 
@@ -1965,7 +1965,7 @@ export namespace MyNS {
 		 * the type of the bound before comparing.
 		 * See https://cloud.google.com/dlp/docs/concepts-bucketing to learn more.
 		 */
-		bucketingConfig?: GooglePrivacyDlpV2BucketingConfig;
+		bucketingConfig?: GooglePrivacyDlpV2BucketingConfig | null;
 
 		/**
 		 * Partially mask a string by replacing a given number of characters with a
@@ -1975,14 +1975,14 @@ export namespace MyNS {
 		 * type. (This allows you to take a long like 123 and modify it to a string like
 		 * **3.
 		 */
-		characterMaskConfig?: GooglePrivacyDlpV2CharacterMaskConfig;
+		characterMaskConfig?: GooglePrivacyDlpV2CharacterMaskConfig | null;
 
 		/**
 		 * Pseudonymization method that generates deterministic encryption for the given
 		 * input. Outputs a base64 encoded representation of the encrypted output.
 		 * Uses AES-SIV based on the RFC https://tools.ietf.org/html/rfc5297.
 		 */
-		cryptoDeterministicConfig?: GooglePrivacyDlpV2CryptoDeterministicConfig;
+		cryptoDeterministicConfig?: GooglePrivacyDlpV2CryptoDeterministicConfig | null;
 
 		/**
 		 * Pseudonymization method that generates surrogates via cryptographic hashing.
@@ -1993,7 +1993,7 @@ export namespace MyNS {
 		 * Currently, only string and integer values can be hashed.
 		 * See https://cloud.google.com/dlp/docs/pseudonymization to learn more.
 		 */
-		cryptoHashConfig?: GooglePrivacyDlpV2CryptoHashConfig;
+		cryptoHashConfig?: GooglePrivacyDlpV2CryptoHashConfig | null;
 
 		/**
 		 * Replaces an identifier with a surrogate using Format Preserving Encryption
@@ -2009,14 +2009,14 @@ export namespace MyNS {
 		 * do not require preserving the input alphabet space and size, plus warrant
 		 * referential integrity.
 		 */
-		cryptoReplaceFfxFpeConfig?: GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig;
+		cryptoReplaceFfxFpeConfig?: GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig | null;
 
 		/**
 		 * Shifts dates by random number of days, with option to be consistent for the
 		 * same context. See https://cloud.google.com/dlp/docs/concepts-date-shifting
 		 * to learn more.
 		 */
-		dateShiftConfig?: GooglePrivacyDlpV2DateShiftConfig;
+		dateShiftConfig?: GooglePrivacyDlpV2DateShiftConfig | null;
 
 		/**
 		 * Buckets values based on fixed size ranges. The
@@ -2032,26 +2032,26 @@ export namespace MyNS {
 		 * be transformed to match the type of the bound before comparing.
 		 * See https://cloud.google.com/dlp/docs/concepts-bucketing to learn more.
 		 */
-		fixedSizeBucketingConfig?: GooglePrivacyDlpV2FixedSizeBucketingConfig;
+		fixedSizeBucketingConfig?: GooglePrivacyDlpV2FixedSizeBucketingConfig | null;
 
 		/**
 		 * Redact a given value. For example, if used with an `InfoTypeTransformation`
 		 * transforming PHONE_NUMBER, and input 'My phone number is 206-555-0123', the
 		 * output would be 'My phone number is '.
 		 */
-		redactConfig?: GooglePrivacyDlpV2RedactConfig;
+		redactConfig?: GooglePrivacyDlpV2RedactConfig | null;
 
 		/** Replace each input value with a given `Value`. */
-		replaceConfig?: GooglePrivacyDlpV2ReplaceValueConfig;
+		replaceConfig?: GooglePrivacyDlpV2ReplaceValueConfig | null;
 
 		/** Replace each matching finding with the name of the info_type. */
-		replaceWithInfoTypeConfig?: GooglePrivacyDlpV2ReplaceWithInfoTypeConfig;
+		replaceWithInfoTypeConfig?: GooglePrivacyDlpV2ReplaceWithInfoTypeConfig | null;
 
 		/**
 		 * For use with `Date`, `Timestamp`, and `TimeOfDay`, extract or preserve a
 		 * portion of the value.
 		 */
-		timePartConfig?: GooglePrivacyDlpV2TimePartConfig;
+		timePartConfig?: GooglePrivacyDlpV2TimePartConfig | null;
 	}
 
 
@@ -2063,7 +2063,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2CryptoDeterministicConfig {
 
 		/** General identifier of a data field in a storage service. */
-		context?: GooglePrivacyDlpV2FieldId;
+		context?: GooglePrivacyDlpV2FieldId | null;
 
 		/**
 		 * This is a data encryption key (DEK) (as opposed to
@@ -2072,10 +2072,10 @@ export namespace MyNS {
 		 * IAM policy on the KMS CryptoKey (KEK) to ensure an attacker cannot
 		 * unwrap the data crypto key.
 		 */
-		cryptoKey?: GooglePrivacyDlpV2CryptoKey;
+		cryptoKey?: GooglePrivacyDlpV2CryptoKey | null;
 
 		/** Type of information detected by the API. */
-		surrogateInfoType?: GooglePrivacyDlpV2InfoType;
+		surrogateInfoType?: GooglePrivacyDlpV2InfoType | null;
 	}
 
 
@@ -2095,19 +2095,19 @@ export namespace MyNS {
 		 * to perform a crypto transformation using a kms-wrapped crypto key:
 		 * dlp.kms.encrypt
 		 */
-		kmsWrapped?: GooglePrivacyDlpV2KmsWrappedCryptoKey;
+		kmsWrapped?: GooglePrivacyDlpV2KmsWrappedCryptoKey | null;
 
 		/**
 		 * Use this to have a random data crypto key generated.
 		 * It will be discarded after the request finishes.
 		 */
-		transient?: GooglePrivacyDlpV2TransientCryptoKey;
+		transient?: GooglePrivacyDlpV2TransientCryptoKey | null;
 
 		/**
 		 * Using raw keys is prone to security risks due to accidentally
 		 * leaking the key. Choose another type of key if possible.
 		 */
-		unwrapped?: GooglePrivacyDlpV2UnwrappedCryptoKey;
+		unwrapped?: GooglePrivacyDlpV2UnwrappedCryptoKey | null;
 	}
 
 
@@ -2121,10 +2121,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2KmsWrappedCryptoKey {
 
 		/** Required. The resource name of the KMS CryptoKey to use for unwrapping. */
-		cryptoKeyName?: string;
+		cryptoKeyName?: string | null;
 
 		/** Required. The wrapped data crypto key. */
-		wrappedKey?: string;
+		wrappedKey?: string | null;
 	}
 
 
@@ -2142,7 +2142,7 @@ export namespace MyNS {
 		 * When the data crypto key is generated, this name is not used in any way
 		 * (repeating the api call will result in a different key being generated).
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -2153,7 +2153,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2UnwrappedCryptoKey {
 
 		/** Required. A 128/192/256 bit key. */
-		key?: string;
+		key?: string | null;
 	}
 
 
@@ -2175,7 +2175,7 @@ export namespace MyNS {
 		 * IAM policy on the KMS CryptoKey (KEK) to ensure an attacker cannot
 		 * unwrap the data crypto key.
 		 */
-		cryptoKey?: GooglePrivacyDlpV2CryptoKey;
+		cryptoKey?: GooglePrivacyDlpV2CryptoKey | null;
 	}
 
 
@@ -2196,10 +2196,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig {
 
 		/** Common alphabets. */
-		commonAlphabet?: GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet;
+		commonAlphabet?: GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet | null;
 
 		/** General identifier of a data field in a storage service. */
-		context?: GooglePrivacyDlpV2FieldId;
+		context?: GooglePrivacyDlpV2FieldId | null;
 
 		/**
 		 * This is a data encryption key (DEK) (as opposed to
@@ -2208,7 +2208,7 @@ export namespace MyNS {
 		 * IAM policy on the KMS CryptoKey (KEK) to ensure an attacker cannot
 		 * unwrap the data crypto key.
 		 */
-		cryptoKey?: GooglePrivacyDlpV2CryptoKey;
+		cryptoKey?: GooglePrivacyDlpV2CryptoKey | null;
 
 		/**
 		 * This is supported by mapping these to the alphanumeric characters
@@ -2219,13 +2219,13 @@ export namespace MyNS {
 		 * This must be encoded as ASCII.
 		 * The order of characters does not matter.
 		 */
-		customAlphabet?: string;
+		customAlphabet?: string | null;
 
 		/** The native way to select the alphabet. Must be in the range [2, 95]. */
-		radix?: number;
+		radix?: number | null;
 
 		/** Type of information detected by the API. */
-		surrogateInfoType?: GooglePrivacyDlpV2InfoType;
+		surrogateInfoType?: GooglePrivacyDlpV2InfoType | null;
 	}
 
 	export enum GooglePrivacyDlpV2CryptoReplaceFfxFpeConfigCommonAlphabet { FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED = 0, NUMERIC = 1, HEXADECIMAL = 2, UPPER_CASE_ALPHA_NUMERIC = 3, ALPHA_NUMERIC = 4 }
@@ -2239,7 +2239,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2DateShiftConfig {
 
 		/** General identifier of a data field in a storage service. */
-		context?: GooglePrivacyDlpV2FieldId;
+		context?: GooglePrivacyDlpV2FieldId | null;
 
 		/**
 		 * This is a data encryption key (DEK) (as opposed to
@@ -2248,10 +2248,10 @@ export namespace MyNS {
 		 * IAM policy on the KMS CryptoKey (KEK) to ensure an attacker cannot
 		 * unwrap the data crypto key.
 		 */
-		cryptoKey?: GooglePrivacyDlpV2CryptoKey;
+		cryptoKey?: GooglePrivacyDlpV2CryptoKey | null;
 
 		/** Required. For example, -5 means shift date to at most 5 days back in the past. */
-		lowerBoundDays?: number;
+		lowerBoundDays?: number | null;
 
 		/**
 		 * Required. Range of shift in days. Actual shift will be selected at random within this
@@ -2259,7 +2259,7 @@ export namespace MyNS {
 		 * be more than 365250 days (1000 years) each direction.
 		 * For example, 3 means shift date to at most 3 days into the future.
 		 */
-		upperBoundDays?: number;
+		upperBoundDays?: number | null;
 	}
 
 
@@ -2285,7 +2285,7 @@ export namespace MyNS {
 		 * following buckets would be used: -10, 10-20, 20-30, 30-40, 40-50, 50-60,
 		 * 60-70, 70-80, 80-89, 89+. Precision up to 2 decimals works.
 		 */
-		bucketSize?: number;
+		bucketSize?: number | null;
 
 		/**
 		 * Set of primitive values supported by the system.
@@ -2295,7 +2295,7 @@ export namespace MyNS {
 		 * 123456789, the number of bytes would be counted as 9, even though an
 		 * int64 only holds up to 8 bytes of data.
 		 */
-		lowerBound?: GooglePrivacyDlpV2Value;
+		lowerBound?: GooglePrivacyDlpV2Value | null;
 
 		/**
 		 * Set of primitive values supported by the system.
@@ -2305,7 +2305,7 @@ export namespace MyNS {
 		 * 123456789, the number of bytes would be counted as 9, even though an
 		 * int64 only holds up to 8 bytes of data.
 		 */
-		upperBound?: GooglePrivacyDlpV2Value;
+		upperBound?: GooglePrivacyDlpV2Value | null;
 	}
 
 
@@ -2329,7 +2329,7 @@ export namespace MyNS {
 		 * 123456789, the number of bytes would be counted as 9, even though an
 		 * int64 only holds up to 8 bytes of data.
 		 */
-		newValue?: GooglePrivacyDlpV2Value;
+		newValue?: GooglePrivacyDlpV2Value | null;
 	}
 
 
@@ -2345,7 +2345,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2TimePartConfig {
 
 		/** The part of the time to keep. */
-		partToExtract?: GooglePrivacyDlpV2TimePartConfigPartToExtract;
+		partToExtract?: GooglePrivacyDlpV2TimePartConfigPartToExtract | null;
 	}
 
 	export enum GooglePrivacyDlpV2TimePartConfigPartToExtract { TIME_PART_UNSPECIFIED = 0, YEAR = 1, MONTH = 2, DAY_OF_MONTH = 3, DAY_OF_WEEK = 4, WEEK_OF_YEAR = 5, HOUR_OF_DAY = 6 }
@@ -2358,13 +2358,13 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2RecordTransformations {
 
 		/** Transform the record by applying various field transformations. */
-		fieldTransformations?: Array<GooglePrivacyDlpV2FieldTransformation>;
+		fieldTransformations?: Array<GooglePrivacyDlpV2FieldTransformation> | null;
 
 		/**
 		 * Configuration defining which records get suppressed entirely. Records that
 		 * match any suppression rule are omitted from the output.
 		 */
-		recordSuppressions?: Array<GooglePrivacyDlpV2RecordSuppression>;
+		recordSuppressions?: Array<GooglePrivacyDlpV2RecordSuppression> | null;
 	}
 
 
@@ -2375,10 +2375,10 @@ export namespace MyNS {
 		 * A condition for determining whether a transformation should be applied to
 		 * a field.
 		 */
-		condition?: GooglePrivacyDlpV2RecordCondition;
+		condition?: GooglePrivacyDlpV2RecordCondition | null;
 
 		/** Required. Input field(s) to apply the transformation to. */
-		fields?: Array<GooglePrivacyDlpV2FieldId>;
+		fields?: Array<GooglePrivacyDlpV2FieldId> | null;
 
 		/**
 		 * A type of transformation that will scan unstructured text and
@@ -2386,10 +2386,10 @@ export namespace MyNS {
 		 * transformation is applied to only values that were identified as a specific
 		 * info_type.
 		 */
-		infoTypeTransformations?: GooglePrivacyDlpV2InfoTypeTransformations;
+		infoTypeTransformations?: GooglePrivacyDlpV2InfoTypeTransformations | null;
 
 		/** A rule for transforming a value. */
-		primitiveTransformation?: GooglePrivacyDlpV2PrimitiveTransformation;
+		primitiveTransformation?: GooglePrivacyDlpV2PrimitiveTransformation | null;
 	}
 
 
@@ -2400,7 +2400,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2RecordCondition {
 
 		/** An expression, consisting or an operator and conditions. */
-		expressions?: GooglePrivacyDlpV2Expressions;
+		expressions?: GooglePrivacyDlpV2Expressions | null;
 	}
 
 
@@ -2408,13 +2408,13 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2Expressions {
 
 		/** A collection of conditions. */
-		conditions?: GooglePrivacyDlpV2Conditions;
+		conditions?: GooglePrivacyDlpV2Conditions | null;
 
 		/**
 		 * The operator to apply to the result of conditions. Default and currently
 		 * only supported value is `AND`.
 		 */
-		logicalOperator?: GooglePrivacyDlpV2ExpressionsLogicalOperator;
+		logicalOperator?: GooglePrivacyDlpV2ExpressionsLogicalOperator | null;
 	}
 
 	export enum GooglePrivacyDlpV2ExpressionsLogicalOperator { LOGICAL_OPERATOR_UNSPECIFIED = 0, AND = 1 }
@@ -2430,7 +2430,7 @@ export namespace MyNS {
 		 * A condition for determining whether a transformation should be applied to
 		 * a field.
 		 */
-		condition?: GooglePrivacyDlpV2RecordCondition;
+		condition?: GooglePrivacyDlpV2RecordCondition | null;
 	}
 
 
@@ -2452,10 +2452,10 @@ export namespace MyNS {
 		 * an an IP address, this mode would leave the IP address unchanged in the
 		 * response.
 		 */
-		leaveUntransformed?: GooglePrivacyDlpV2LeaveUntransformed;
+		leaveUntransformed?: GooglePrivacyDlpV2LeaveUntransformed | null;
 
 		/** Throw an error and fail the request when a transformation error occurs. */
-		throwError?: GooglePrivacyDlpV2ThrowError;
+		throwError?: GooglePrivacyDlpV2ThrowError | null;
 	}
 
 
@@ -2482,7 +2482,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2CreateDlpJobRequest {
 
 		/** Controls what and how to inspect for findings. */
-		inspectJob?: GooglePrivacyDlpV2InspectJobConfig;
+		inspectJob?: GooglePrivacyDlpV2InspectJobConfig | null;
 
 		/**
 		 * The job id can contain uppercase and lowercase letters,
@@ -2490,19 +2490,19 @@ export namespace MyNS {
 		 * expression: `[a-zA-Z\\d-_]+`. The maximum length is 100
 		 * characters. Can be empty to allow the system to generate one.
 		 */
-		jobId?: string;
+		jobId?: string | null;
 
 		/**
 		 * The geographic location to store and process the job. Reserved for
 		 * future extensions.
 		 */
-		locationId?: string;
+		locationId?: string | null;
 
 		/**
 		 * Configuration for a risk analysis job. See
 		 * https://cloud.google.com/dlp/docs/concepts-risk-analysis to learn more.
 		 */
-		riskJob?: GooglePrivacyDlpV2RiskAnalysisJobConfig;
+		riskJob?: GooglePrivacyDlpV2RiskAnalysisJobConfig | null;
 	}
 
 
@@ -2510,24 +2510,24 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2InspectJobConfig {
 
 		/** Actions to execute at the completion of the job. */
-		actions?: Array<GooglePrivacyDlpV2Action>;
+		actions?: Array<GooglePrivacyDlpV2Action> | null;
 
 		/**
 		 * Configuration description of the scanning process.
 		 * When used with redactContent only info_types and min_likelihood are currently
 		 * used.
 		 */
-		inspectConfig?: GooglePrivacyDlpV2InspectConfig;
+		inspectConfig?: GooglePrivacyDlpV2InspectConfig | null;
 
 		/**
 		 * If provided, will be used as the default for all values in InspectConfig.
 		 * `inspect_config` will be merged into the values persisted as part of the
 		 * template.
 		 */
-		inspectTemplateName?: string;
+		inspectTemplateName?: string | null;
 
 		/** Shared message indicating Cloud storage type. */
-		storageConfig?: GooglePrivacyDlpV2StorageConfig;
+		storageConfig?: GooglePrivacyDlpV2StorageConfig | null;
 	}
 
 
@@ -2542,22 +2542,22 @@ export namespace MyNS {
 		 * List of options defining data content to scan.
 		 * If empty, text, images, and other content will be included.
 		 */
-		contentOptions?: Array<string>;
+		contentOptions?: Array<string> | null;
 
 		/**
 		 * CustomInfoTypes provided by the user. See
 		 * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
 		 */
-		customInfoTypes?: Array<GooglePrivacyDlpV2CustomInfoType>;
+		customInfoTypes?: Array<GooglePrivacyDlpV2CustomInfoType> | null;
 
 		/** When true, excludes type information of the findings. */
-		excludeInfoTypes?: boolean;
+		excludeInfoTypes?: boolean | null;
 
 		/**
 		 * When true, a contextual quote from the data that triggered a finding is
 		 * included in the response; see Finding.quote.
 		 */
-		includeQuote?: boolean;
+		includeQuote?: boolean | null;
 
 		/**
 		 * Restricts what info_types to look for. The values must correspond to
@@ -2570,24 +2570,24 @@ export namespace MyNS {
 		 * run you should specify specific InfoTypes listed in the reference,
 		 * otherwise a default list will be used, which may change over time.
 		 */
-		infoTypes?: Array<GooglePrivacyDlpV2InfoType>;
+		infoTypes?: Array<GooglePrivacyDlpV2InfoType> | null;
 
 		/** Configuration to control the number of findings returned. */
-		limits?: GooglePrivacyDlpV2FindingLimits;
+		limits?: GooglePrivacyDlpV2FindingLimits | null;
 
 		/**
 		 * Only returns findings equal or above this threshold. The default is
 		 * POSSIBLE.
 		 * See https://cloud.google.com/dlp/docs/likelihood to learn more.
 		 */
-		minLikelihood?: GooglePrivacyDlpV2LikelihoodAdjustmentFixedLikelihood;
+		minLikelihood?: GooglePrivacyDlpV2LikelihoodAdjustmentFixedLikelihood | null;
 
 		/**
 		 * Set of rules to apply to the findings for this InspectConfig.
 		 * Exclusion rules, contained in the set are executed in the end, other
 		 * rules are executed in the order they are specified for each info type.
 		 */
-		ruleSet?: Array<GooglePrivacyDlpV2InspectionRuleSet>;
+		ruleSet?: Array<GooglePrivacyDlpV2InspectionRuleSet> | null;
 	}
 
 
@@ -2602,7 +2602,7 @@ export namespace MyNS {
 		 * Rules are applied in order that they are specified. Not supported for the
 		 * `surrogate_type` CustomInfoType.
 		 */
-		detectionRules?: Array<GooglePrivacyDlpV2DetectionRule>;
+		detectionRules?: Array<GooglePrivacyDlpV2DetectionRule> | null;
 
 		/**
 		 * Custom information type based on a dictionary of words or phrases. This can
@@ -2627,29 +2627,29 @@ export namespace MyNS {
 		 * these constraints, consider using `LargeCustomDictionaryConfig` in the
 		 * `StoredInfoType` API.
 		 */
-		dictionary?: GooglePrivacyDlpV2Dictionary;
+		dictionary?: GooglePrivacyDlpV2Dictionary | null;
 
 		/**
 		 * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
 		 * to be returned. It still can be used for rules matching.
 		 */
-		exclusionType?: GooglePrivacyDlpV2CustomInfoTypeExclusionType;
+		exclusionType?: GooglePrivacyDlpV2CustomInfoTypeExclusionType | null;
 
 		/** Type of information detected by the API. */
-		infoType?: GooglePrivacyDlpV2InfoType;
+		infoType?: GooglePrivacyDlpV2InfoType | null;
 
 		/**
 		 * Likelihood to return for this CustomInfoType. This base value can be
 		 * altered by a detection rule if the finding meets the criteria specified by
 		 * the rule. Defaults to `VERY_LIKELY` if not specified.
 		 */
-		likelihood?: GooglePrivacyDlpV2LikelihoodAdjustmentFixedLikelihood;
+		likelihood?: GooglePrivacyDlpV2LikelihoodAdjustmentFixedLikelihood | null;
 
 		/** Message defining a custom regular expression. */
-		regex?: GooglePrivacyDlpV2Regex;
+		regex?: GooglePrivacyDlpV2Regex | null;
 
 		/** A reference to a StoredInfoType to use with scanning. */
-		storedType?: GooglePrivacyDlpV2StoredType;
+		storedType?: GooglePrivacyDlpV2StoredType | null;
 
 		/**
 		 * Message for detecting output from deidentification transformations
@@ -2661,7 +2661,7 @@ export namespace MyNS {
 		 * transformation such as `surrogate_info_type`. This CustomInfoType does
 		 * not support the use of `detection_rules`.
 		 */
-		surrogateType?: GooglePrivacyDlpV2SurrogateType;
+		surrogateType?: GooglePrivacyDlpV2SurrogateType | null;
 	}
 
 
@@ -2677,7 +2677,7 @@ export namespace MyNS {
 		 * The rule that adjusts the likelihood of findings within a certain
 		 * proximity of hotwords.
 		 */
-		hotwordRule?: GooglePrivacyDlpV2HotwordRule;
+		hotwordRule?: GooglePrivacyDlpV2HotwordRule | null;
 	}
 
 
@@ -2688,19 +2688,19 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2HotwordRule {
 
 		/** Message defining a custom regular expression. */
-		hotwordRegex?: GooglePrivacyDlpV2Regex;
+		hotwordRegex?: GooglePrivacyDlpV2Regex | null;
 
 		/**
 		 * Message for specifying an adjustment to the likelihood of a finding as
 		 * part of a detection rule.
 		 */
-		likelihoodAdjustment?: GooglePrivacyDlpV2LikelihoodAdjustment;
+		likelihoodAdjustment?: GooglePrivacyDlpV2LikelihoodAdjustment | null;
 
 		/**
 		 * Message for specifying a window around a finding to apply a detection
 		 * rule.
 		 */
-		proximity?: GooglePrivacyDlpV2Proximity;
+		proximity?: GooglePrivacyDlpV2Proximity | null;
 	}
 
 
@@ -2711,14 +2711,14 @@ export namespace MyNS {
 		 * The index of the submatch to extract as findings. When not
 		 * specified, the entire match is returned. No more than 3 may be included.
 		 */
-		groupIndexes?: Array<number>;
+		groupIndexes?: Array<number> | null;
 
 		/**
 		 * Pattern defining the regular expression. Its syntax
 		 * (https://github.com/google/re2/wiki/Syntax) can be found under the
 		 * google/re2 repository on GitHub.
 		 */
-		pattern?: string;
+		pattern?: string | null;
 	}
 
 
@@ -2729,7 +2729,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2LikelihoodAdjustment {
 
 		/** Set the likelihood of a finding to a fixed value. */
-		fixedLikelihood?: GooglePrivacyDlpV2LikelihoodAdjustmentFixedLikelihood;
+		fixedLikelihood?: GooglePrivacyDlpV2LikelihoodAdjustmentFixedLikelihood | null;
 
 		/**
 		 * Increase or decrease the likelihood by the specified number of
@@ -2741,7 +2741,7 @@ export namespace MyNS {
 		 * adjustment of -1 when base likelihood is `VERY_LIKELY` will result in
 		 * a final likelihood of `LIKELY`.
 		 */
-		relativeLikelihood?: number;
+		relativeLikelihood?: number | null;
 	}
 
 	export enum GooglePrivacyDlpV2LikelihoodAdjustmentFixedLikelihood { LIKELIHOOD_UNSPECIFIED = 0, VERY_UNLIKELY = 1, UNLIKELY = 2, POSSIBLE = 3, LIKELY = 4, VERY_LIKELY = 5 }
@@ -2754,10 +2754,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2Proximity {
 
 		/** Number of characters after the finding to consider. */
-		windowAfter?: number;
+		windowAfter?: number | null;
 
 		/** Number of characters before the finding to consider. */
-		windowBefore?: number;
+		windowBefore?: number | null;
 	}
 
 
@@ -2787,10 +2787,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2Dictionary {
 
 		/** Message representing a single file or path in Cloud Storage. */
-		cloudStoragePath?: GooglePrivacyDlpV2CloudStoragePath;
+		cloudStoragePath?: GooglePrivacyDlpV2CloudStoragePath | null;
 
 		/** Message defining a list of words or phrases to search for in the data. */
-		wordList?: GooglePrivacyDlpV2WordList;
+		wordList?: GooglePrivacyDlpV2WordList | null;
 	}
 
 
@@ -2802,7 +2802,7 @@ export namespace MyNS {
 		 * at least one phrase and every phrase must contain at least 2 characters
 		 * that are letters or digits. [required]
 		 */
-		words?: Array<string>;
+		words?: Array<string> | null;
 	}
 
 	export enum GooglePrivacyDlpV2CustomInfoTypeExclusionType { EXCLUSION_TYPE_UNSPECIFIED = 0, EXCLUSION_TYPE_EXCLUDE = 1 }
@@ -2815,14 +2815,14 @@ export namespace MyNS {
 		 * Timestamp indicating when the version of the `StoredInfoType` used for
 		 * inspection was created. Output-only field, populated by the system.
 		 */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Resource name of the requested `StoredInfoType`, for example
 		 * `organizations/433245324/storedInfoTypes/432452342` or
 		 * `projects/project-id/storedInfoTypes/432452342`.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -2844,7 +2844,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2FindingLimits {
 
 		/** Configuration of findings limit given for specified infoTypes. */
-		maxFindingsPerInfoType?: Array<GooglePrivacyDlpV2InfoTypeLimit>;
+		maxFindingsPerInfoType?: Array<GooglePrivacyDlpV2InfoTypeLimit> | null;
 
 		/**
 		 * Max number of findings that will be returned for each item scanned.
@@ -2852,14 +2852,14 @@ export namespace MyNS {
 		 * the maximum returned is 2000 regardless if this is set higher.
 		 * When set within `InspectContentRequest`, this field is ignored.
 		 */
-		maxFindingsPerItem?: number;
+		maxFindingsPerItem?: number | null;
 
 		/**
 		 * Max number of findings that will be returned per request/job.
 		 * When set within `InspectContentRequest`, the maximum returned is 2000
 		 * regardless if this is set higher.
 		 */
-		maxFindingsPerRequest?: number;
+		maxFindingsPerRequest?: number | null;
 	}
 
 
@@ -2870,10 +2870,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2InfoTypeLimit {
 
 		/** Type of information detected by the API. */
-		infoType?: GooglePrivacyDlpV2InfoType;
+		infoType?: GooglePrivacyDlpV2InfoType | null;
 
 		/** Max findings limit for the given infoType. */
-		maxFindings?: number;
+		maxFindings?: number | null;
 	}
 
 
@@ -2884,10 +2884,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2InspectionRuleSet {
 
 		/** List of infoTypes this rule set is applied to. */
-		infoTypes?: Array<GooglePrivacyDlpV2InfoType>;
+		infoTypes?: Array<GooglePrivacyDlpV2InfoType> | null;
 
 		/** Set of rules to be applied to infoTypes. The rules are applied in order. */
-		rules?: Array<GooglePrivacyDlpV2InspectionRule>;
+		rules?: Array<GooglePrivacyDlpV2InspectionRule> | null;
 	}
 
 
@@ -2901,13 +2901,13 @@ export namespace MyNS {
 		 * The rule that specifies conditions when findings of infoTypes specified in
 		 * `InspectionRuleSet` are removed from results.
 		 */
-		exclusionRule?: GooglePrivacyDlpV2ExclusionRule;
+		exclusionRule?: GooglePrivacyDlpV2ExclusionRule | null;
 
 		/**
 		 * The rule that adjusts the likelihood of findings within a certain
 		 * proximity of hotwords.
 		 */
-		hotwordRule?: GooglePrivacyDlpV2HotwordRule;
+		hotwordRule?: GooglePrivacyDlpV2HotwordRule | null;
 	}
 
 
@@ -2940,16 +2940,16 @@ export namespace MyNS {
 		 * these constraints, consider using `LargeCustomDictionaryConfig` in the
 		 * `StoredInfoType` API.
 		 */
-		dictionary?: GooglePrivacyDlpV2Dictionary;
+		dictionary?: GooglePrivacyDlpV2Dictionary | null;
 
 		/** List of exclude infoTypes. */
-		excludeInfoTypes?: GooglePrivacyDlpV2ExcludeInfoTypes;
+		excludeInfoTypes?: GooglePrivacyDlpV2ExcludeInfoTypes | null;
 
 		/** How the rule is applied, see MatchingType documentation for details. */
-		matchingType?: GooglePrivacyDlpV2ExclusionRuleMatchingType;
+		matchingType?: GooglePrivacyDlpV2ExclusionRuleMatchingType | null;
 
 		/** Message defining a custom regular expression. */
-		regex?: GooglePrivacyDlpV2Regex;
+		regex?: GooglePrivacyDlpV2Regex | null;
 	}
 
 
@@ -2966,7 +2966,7 @@ export namespace MyNS {
 		 * That leads to "555-222-2222@example.org" to generate only a single
 		 * finding, namely email address.
 		 */
-		infoTypes?: Array<GooglePrivacyDlpV2InfoType>;
+		infoTypes?: Array<GooglePrivacyDlpV2InfoType> | null;
 	}
 
 	export enum GooglePrivacyDlpV2ExclusionRuleMatchingType { MATCHING_TYPE_UNSPECIFIED = 0, MATCHING_TYPE_FULL_MATCH = 1, MATCHING_TYPE_PARTIAL_MATCH = 2, MATCHING_TYPE_INVERSE_MATCH = 3 }
@@ -2976,28 +2976,28 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2StorageConfig {
 
 		/** Options defining BigQuery table and row identifiers. */
-		bigQueryOptions?: GooglePrivacyDlpV2BigQueryOptions;
+		bigQueryOptions?: GooglePrivacyDlpV2BigQueryOptions | null;
 
 		/**
 		 * Options defining a file or a set of files within a Google Cloud Storage
 		 * bucket.
 		 */
-		cloudStorageOptions?: GooglePrivacyDlpV2CloudStorageOptions;
+		cloudStorageOptions?: GooglePrivacyDlpV2CloudStorageOptions | null;
 
 		/** Options defining a data set within Google Cloud Datastore. */
-		datastoreOptions?: GooglePrivacyDlpV2DatastoreOptions;
+		datastoreOptions?: GooglePrivacyDlpV2DatastoreOptions | null;
 
 		/**
 		 * Configuration to control jobs where the content being inspected is outside
 		 * of Google Cloud Platform.
 		 */
-		hybridOptions?: GooglePrivacyDlpV2HybridOptions;
+		hybridOptions?: GooglePrivacyDlpV2HybridOptions | null;
 
 		/**
 		 * Configuration of the timespan of the items to include in scanning.
 		 * Currently only supported when inspecting Google Cloud Storage and BigQuery.
 		 */
-		timespanConfig?: GooglePrivacyDlpV2TimespanConfig;
+		timespanConfig?: GooglePrivacyDlpV2TimespanConfig | null;
 	}
 
 
@@ -3005,7 +3005,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2DatastoreOptions {
 
 		/** A representation of a Datastore kind. */
-		kind?: GooglePrivacyDlpV2KindExpression;
+		kind?: GooglePrivacyDlpV2KindExpression | null;
 
 		/**
 		 * Datastore partition ID.
@@ -3014,7 +3014,7 @@ export namespace MyNS {
 		 * A partition ID contains several dimensions:
 		 * project ID and namespace ID.
 		 */
-		partitionId?: GooglePrivacyDlpV2PartitionId;
+		partitionId?: GooglePrivacyDlpV2PartitionId | null;
 	}
 
 
@@ -3022,7 +3022,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2KindExpression {
 
 		/** The name of the kind. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -3036,7 +3036,7 @@ export namespace MyNS {
 		 * A short description of where the data is coming from. Will be stored once
 		 * in the job. 256 max length.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * To organize findings, these labels will be added to each finding.
@@ -3049,7 +3049,7 @@ export namespace MyNS {
 		 * * `"environment" : "production"`
 		 * * `"pipeline" : "etl"`
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * These are labels that each inspection request must include within their
@@ -3059,10 +3059,10 @@ export namespace MyNS {
 		 * to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`.
 		 * No more than 10 keys can be required.
 		 */
-		requiredFindingLabelKeys?: Array<string>;
+		requiredFindingLabelKeys?: Array<string> | null;
 
 		/** Instructions regarding the table content being inspected. */
-		tableOptions?: GooglePrivacyDlpV2TableOptions;
+		tableOptions?: GooglePrivacyDlpV2TableOptions | null;
 	}
 
 
@@ -3075,7 +3075,7 @@ export namespace MyNS {
 		 * each finding so that the finding can be traced to the specific row it came
 		 * from. No more than 3 may be provided.
 		 */
-		identifyingFields?: Array<GooglePrivacyDlpV2FieldId>;
+		identifyingFields?: Array<GooglePrivacyDlpV2FieldId> | null;
 	}
 
 
@@ -3091,19 +3091,19 @@ export namespace MyNS {
 		 * since the last time the JobTrigger executed. This will be based on the
 		 * time of the execution of the last run of the JobTrigger.
 		 */
-		enableAutoPopulationOfTimespanConfig?: boolean;
+		enableAutoPopulationOfTimespanConfig?: boolean | null;
 
 		/**
 		 * Exclude files or rows newer than this value.
 		 * If set to zero, no upper time limit is applied.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** Exclude files or rows older than this value. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** General identifier of a data field in a storage service. */
-		timestampField?: GooglePrivacyDlpV2FieldId;
+		timestampField?: GooglePrivacyDlpV2FieldId | null;
 	}
 
 
@@ -3117,10 +3117,10 @@ export namespace MyNS {
 		 * Actions to execute at the completion of the job. Are executed in the order
 		 * provided.
 		 */
-		actions?: Array<GooglePrivacyDlpV2Action>;
+		actions?: Array<GooglePrivacyDlpV2Action> | null;
 
 		/** Privacy metric to compute for reidentification risk analysis. */
-		privacyMetric?: GooglePrivacyDlpV2PrivacyMetric;
+		privacyMetric?: GooglePrivacyDlpV2PrivacyMetric | null;
 
 		/**
 		 * Message defining the location of a BigQuery table. A table is uniquely
@@ -3129,7 +3129,7 @@ export namespace MyNS {
 		 * `<project_id>:<dataset_id>.<table_id>` or
 		 * `<project_id>.<dataset_id>.<table_id>`.
 		 */
-		sourceTable?: GooglePrivacyDlpV2BigQueryTable;
+		sourceTable?: GooglePrivacyDlpV2BigQueryTable | null;
 	}
 
 
@@ -3142,13 +3142,13 @@ export namespace MyNS {
 		 * InspectConfig. See https://cloud.google.com/dlp/docs/concepts-templates
 		 * to learn more.
 		 */
-		inspectTemplate?: GooglePrivacyDlpV2InspectTemplate;
+		inspectTemplate?: GooglePrivacyDlpV2InspectTemplate | null;
 
 		/**
 		 * The geographic location to store the inspection template. Reserved for
 		 * future extensions.
 		 */
-		locationId?: string;
+		locationId?: string | null;
 
 		/**
 		 * The template id can contain uppercase and lowercase letters,
@@ -3156,7 +3156,7 @@ export namespace MyNS {
 		 * expression: `[a-zA-Z\\d-_]+`. The maximum length is 100
 		 * characters. Can be empty to allow the system to generate one.
 		 */
-		templateId?: string;
+		templateId?: string | null;
 	}
 
 
@@ -3169,20 +3169,20 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2InspectTemplate {
 
 		/** Output only. The creation timestamp of an inspectTemplate. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Short description (max 256 chars). */
-		description?: string;
+		description?: string | null;
 
 		/** Display name (max 256 chars). */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Configuration description of the scanning process.
 		 * When used with redactContent only info_types and min_likelihood are currently
 		 * used.
 		 */
-		inspectConfig?: GooglePrivacyDlpV2InspectConfig;
+		inspectConfig?: GooglePrivacyDlpV2InspectConfig | null;
 
 		/**
 		 * Output only. The template name.
@@ -3190,10 +3190,10 @@ export namespace MyNS {
 		 * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
 		 * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Output only. The last update timestamp of an inspectTemplate. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -3204,13 +3204,13 @@ export namespace MyNS {
 		 * Contains a configuration to make dlp api calls on a repeating basis.
 		 * See https://cloud.google.com/dlp/docs/concepts-job-triggers to learn more.
 		 */
-		jobTrigger?: GooglePrivacyDlpV2JobTrigger;
+		jobTrigger?: GooglePrivacyDlpV2JobTrigger | null;
 
 		/**
 		 * The geographic location to store the job trigger. Reserved for
 		 * future extensions.
 		 */
-		locationId?: string;
+		locationId?: string | null;
 
 		/**
 		 * The trigger id can contain uppercase and lowercase letters,
@@ -3218,7 +3218,7 @@ export namespace MyNS {
 		 * expression: `[a-zA-Z\\d-_]+`. The maximum length is 100
 		 * characters. Can be empty to allow the system to generate one.
 		 */
-		triggerId?: string;
+		triggerId?: string | null;
 	}
 
 
@@ -3229,13 +3229,13 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2JobTrigger {
 
 		/** Output only. The creation timestamp of a triggeredJob. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** User provided description (max 256 chars) */
-		description?: string;
+		description?: string | null;
 
 		/** Display name (max 100 chars) */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Output only. A stream of errors encountered when the trigger was activated. Repeated
@@ -3243,33 +3243,33 @@ export namespace MyNS {
 		 * Will return the last 100 errors. Whenever the JobTrigger is modified
 		 * this list will be cleared.
 		 */
-		errors?: Array<GooglePrivacyDlpV2Error>;
+		errors?: Array<GooglePrivacyDlpV2Error> | null;
 
 		/** Controls what and how to inspect for findings. */
-		inspectJob?: GooglePrivacyDlpV2InspectJobConfig;
+		inspectJob?: GooglePrivacyDlpV2InspectJobConfig | null;
 
 		/** Output only. The timestamp of the last time this trigger executed. */
-		lastRunTime?: string;
+		lastRunTime?: string | null;
 
 		/**
 		 * Unique resource name for the triggeredJob, assigned by the service when the
 		 * triggeredJob is created, for example
 		 * `projects/dlp-test-project/jobTriggers/53234423`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Required. A status for this trigger. */
-		status?: GooglePrivacyDlpV2JobTriggerStatus;
+		status?: GooglePrivacyDlpV2JobTriggerStatus | null;
 
 		/**
 		 * A list of triggers which will be OR'ed together. Only one in the list
 		 * needs to trigger for a job to be started. The list may contain only
 		 * a single Schedule trigger and must have at least one object.
 		 */
-		triggers?: Array<GooglePrivacyDlpV2Trigger>;
+		triggers?: Array<GooglePrivacyDlpV2Trigger> | null;
 
 		/** Output only. The last update timestamp of a triggeredJob. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -3287,10 +3287,10 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		details?: GoogleRpcStatus;
+		details?: GoogleRpcStatus | null;
 
 		/** The times the error occurred. */
-		timestamps?: Array<string>;
+		timestamps?: Array<string> | null;
 	}
 
 
@@ -3305,20 +3305,20 @@ export namespace MyNS {
 	export interface GoogleRpcStatus {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 	export enum GooglePrivacyDlpV2JobTriggerStatus { STATUS_UNSPECIFIED = 0, HEALTHY = 1, PAUSED = 2, CANCELLED = 3 }
@@ -3331,10 +3331,10 @@ export namespace MyNS {
 		 * Job trigger option for hybrid jobs. Jobs must be manually created
 		 * and finished.
 		 */
-		manual?: GooglePrivacyDlpV2Manual;
+		manual?: GooglePrivacyDlpV2Manual | null;
 
 		/** Schedule for triggeredJobs. */
-		schedule?: GooglePrivacyDlpV2Schedule;
+		schedule?: GooglePrivacyDlpV2Schedule | null;
 	}
 
 
@@ -3357,7 +3357,7 @@ export namespace MyNS {
 		 * This value must be set to a time duration greater than or equal
 		 * to 1 day and can be no longer than 60 days.
 		 */
-		recurrencePeriodDuration?: string;
+		recurrencePeriodDuration?: string | null;
 	}
 
 
@@ -3369,13 +3369,13 @@ export namespace MyNS {
 		 * by the user. For more information, see
 		 * https://cloud.google.com/dlp/docs/creating-custom-infotypes.
 		 */
-		config?: GooglePrivacyDlpV2StoredInfoTypeConfig;
+		config?: GooglePrivacyDlpV2StoredInfoTypeConfig | null;
 
 		/**
 		 * The geographic location to store the stored infoType. Reserved for
 		 * future extensions.
 		 */
-		locationId?: string;
+		locationId?: string | null;
 
 		/**
 		 * The storedInfoType ID can contain uppercase and lowercase letters,
@@ -3383,7 +3383,7 @@ export namespace MyNS {
 		 * expression: `[a-zA-Z\\d-_]+`. The maximum length is 100
 		 * characters. Can be empty to allow the system to generate one.
 		 */
-		storedInfoTypeId?: string;
+		storedInfoTypeId?: string | null;
 	}
 
 
@@ -3395,7 +3395,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2StoredInfoTypeConfig {
 
 		/** Description of the StoredInfoType (max 256 characters). */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Custom information type based on a dictionary of words or phrases. This can
@@ -3420,10 +3420,10 @@ export namespace MyNS {
 		 * these constraints, consider using `LargeCustomDictionaryConfig` in the
 		 * `StoredInfoType` API.
 		 */
-		dictionary?: GooglePrivacyDlpV2Dictionary;
+		dictionary?: GooglePrivacyDlpV2Dictionary | null;
 
 		/** Display name of the StoredInfoType (max 256 characters). */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Configuration for a custom dictionary created from a data source of any size
@@ -3433,10 +3433,10 @@ export namespace MyNS {
 		 * location. Consider using `CustomInfoType.Dictionary` for smaller dictionaries
 		 * that satisfy the size requirements.
 		 */
-		largeCustomDictionary?: GooglePrivacyDlpV2LargeCustomDictionaryConfig;
+		largeCustomDictionary?: GooglePrivacyDlpV2LargeCustomDictionaryConfig | null;
 
 		/** Message defining a custom regular expression. */
-		regex?: GooglePrivacyDlpV2Regex;
+		regex?: GooglePrivacyDlpV2Regex | null;
 	}
 
 
@@ -3451,13 +3451,13 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2LargeCustomDictionaryConfig {
 
 		/** Message defining a field of a BigQuery table. */
-		bigQueryField?: GooglePrivacyDlpV2BigQueryField;
+		bigQueryField?: GooglePrivacyDlpV2BigQueryField | null;
 
 		/** Message representing a set of files in Cloud Storage. */
-		cloudStorageFileSet?: GooglePrivacyDlpV2CloudStorageFileSet;
+		cloudStorageFileSet?: GooglePrivacyDlpV2CloudStorageFileSet | null;
 
 		/** Message representing a single file or path in Cloud Storage. */
-		outputPath?: GooglePrivacyDlpV2CloudStoragePath;
+		outputPath?: GooglePrivacyDlpV2CloudStoragePath | null;
 	}
 
 
@@ -3477,20 +3477,20 @@ export namespace MyNS {
 		 * * A year and month value, with a zero day, e.g. a credit card expiration date
 		 * Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.
 		 */
-		date?: GoogleTypeDate;
+		date?: GoogleTypeDate | null;
 
 		/** Day of week */
-		dayOfWeek?: GooglePrivacyDlpV2ValueDayOfWeekValue;
+		dayOfWeek?: GooglePrivacyDlpV2ValueDayOfWeekValue | null;
 
 		/**
 		 * Represents a time of day. The date and time zone are either not significant
 		 * or are specified elsewhere. An API may choose to allow leap seconds. Related
 		 * types are google.type.Date and `google.protobuf.Timestamp`.
 		 */
-		time?: GoogleTypeTimeOfDay;
+		time?: GoogleTypeTimeOfDay | null;
 
 		/** Time zone of the date time object. */
-		timeZone?: GooglePrivacyDlpV2TimeZone;
+		timeZone?: GooglePrivacyDlpV2TimeZone | null;
 	}
 
 
@@ -3501,7 +3501,7 @@ export namespace MyNS {
 		 * Set only if the offset can be determined. Positive for time ahead of UTC.
 		 * E.g. For "UTC-9", this value is -540.
 		 */
-		offsetMinutes?: number;
+		offsetMinutes?: number | null;
 	}
 
 
@@ -3509,7 +3509,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2DeidentifyContentRequest {
 
 		/** The configuration that controls how the data will change. */
-		deidentifyConfig?: GooglePrivacyDlpV2DeidentifyConfig;
+		deidentifyConfig?: GooglePrivacyDlpV2DeidentifyConfig | null;
 
 		/**
 		 * Template to use. Any configuration directly specified in
@@ -3518,14 +3518,14 @@ export namespace MyNS {
 		 * template. Repeated fields are appended. Singular sub-messages and groups
 		 * are recursively merged.
 		 */
-		deidentifyTemplateName?: string;
+		deidentifyTemplateName?: string | null;
 
 		/**
 		 * Configuration description of the scanning process.
 		 * When used with redactContent only info_types and min_likelihood are currently
 		 * used.
 		 */
-		inspectConfig?: GooglePrivacyDlpV2InspectConfig;
+		inspectConfig?: GooglePrivacyDlpV2InspectConfig | null;
 
 		/**
 		 * Template to use. Any configuration directly specified in
@@ -3534,16 +3534,16 @@ export namespace MyNS {
 		 * template. Repeated fields are appended. Singular sub-messages and groups
 		 * are recursively merged.
 		 */
-		inspectTemplateName?: string;
+		inspectTemplateName?: string | null;
 
 		/** Container structure for the content to inspect. */
-		item?: GooglePrivacyDlpV2ContentItem;
+		item?: GooglePrivacyDlpV2ContentItem | null;
 
 		/**
 		 * The geographic location to process de-identification. Reserved for future
 		 * extensions.
 		 */
-		locationId?: string;
+		locationId?: string | null;
 	}
 
 
@@ -3551,10 +3551,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2DeidentifyContentResponse {
 
 		/** Container structure for the content to inspect. */
-		item?: GooglePrivacyDlpV2ContentItem;
+		item?: GooglePrivacyDlpV2ContentItem | null;
 
 		/** Overview of the modifications that occurred. */
-		overview?: GooglePrivacyDlpV2TransformationOverview;
+		overview?: GooglePrivacyDlpV2TransformationOverview | null;
 	}
 
 
@@ -3562,10 +3562,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2TransformationOverview {
 
 		/** Transformations applied to the dataset. */
-		transformationSummaries?: Array<GooglePrivacyDlpV2TransformationSummary>;
+		transformationSummaries?: Array<GooglePrivacyDlpV2TransformationSummary> | null;
 
 		/** Total size in bytes that were transformed in some way. */
-		transformedBytes?: string;
+		transformedBytes?: string | null;
 	}
 
 
@@ -3577,32 +3577,32 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2TransformationSummary {
 
 		/** General identifier of a data field in a storage service. */
-		field?: GooglePrivacyDlpV2FieldId;
+		field?: GooglePrivacyDlpV2FieldId | null;
 
 		/**
 		 * The field transformation that was applied.
 		 * If multiple field transformations are requested for a single field,
 		 * this list will contain all of them; otherwise, only one is supplied.
 		 */
-		fieldTransformations?: Array<GooglePrivacyDlpV2FieldTransformation>;
+		fieldTransformations?: Array<GooglePrivacyDlpV2FieldTransformation> | null;
 
 		/** Type of information detected by the API. */
-		infoType?: GooglePrivacyDlpV2InfoType;
+		infoType?: GooglePrivacyDlpV2InfoType | null;
 
 		/**
 		 * Configuration to suppress records whose suppression conditions evaluate to
 		 * true.
 		 */
-		recordSuppress?: GooglePrivacyDlpV2RecordSuppression;
+		recordSuppress?: GooglePrivacyDlpV2RecordSuppression | null;
 
 		/** Collection of all transformations that took place or had an error. */
-		results?: Array<GooglePrivacyDlpV2SummaryResult>;
+		results?: Array<GooglePrivacyDlpV2SummaryResult> | null;
 
 		/** A rule for transforming a value. */
-		transformation?: GooglePrivacyDlpV2PrimitiveTransformation;
+		transformation?: GooglePrivacyDlpV2PrimitiveTransformation | null;
 
 		/** Total size in bytes that were transformed in some way. */
-		transformedBytes?: string;
+		transformedBytes?: string | null;
 	}
 
 
@@ -3613,16 +3613,16 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2SummaryResult {
 
 		/** Outcome of the transformation. */
-		code?: GooglePrivacyDlpV2SummaryResultCode;
+		code?: GooglePrivacyDlpV2SummaryResultCode | null;
 
 		/** Number of transformations counted by this result. */
-		count?: string;
+		count?: string | null;
 
 		/**
 		 * A place for warnings or errors to show up if a transformation didn't
 		 * work as expected.
 		 */
-		details?: string;
+		details?: string | null;
 	}
 
 	export enum GooglePrivacyDlpV2SummaryResultCode { TRANSFORMATION_RESULT_CODE_UNSPECIFIED = 0, SUCCESS = 1, ERROR = 2 }
@@ -3632,37 +3632,37 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2DlpJob {
 
 		/** Time when the job was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Time when the job finished. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** A stream of errors encountered running the job. */
-		errors?: Array<GooglePrivacyDlpV2Error>;
+		errors?: Array<GooglePrivacyDlpV2Error> | null;
 
 		/** The results of an inspect DataSource job. */
-		inspectDetails?: GooglePrivacyDlpV2InspectDataSourceDetails;
+		inspectDetails?: GooglePrivacyDlpV2InspectDataSourceDetails | null;
 
 		/**
 		 * If created by a job trigger, the resource name of the trigger that
 		 * instantiated the job.
 		 */
-		jobTriggerName?: string;
+		jobTriggerName?: string | null;
 
 		/** The server-assigned name. */
-		name?: string;
+		name?: string | null;
 
 		/** Result of a risk analysis operation request. */
-		riskDetails?: GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails;
+		riskDetails?: GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails | null;
 
 		/** Time when the job started. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** State of a job. */
-		state?: GooglePrivacyDlpV2DlpJobState;
+		state?: GooglePrivacyDlpV2DlpJobState | null;
 
 		/** The type of job. */
-		type?: GooglePrivacyDlpV2DlpJobType;
+		type?: GooglePrivacyDlpV2DlpJobType | null;
 	}
 
 
@@ -3670,10 +3670,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2InspectDataSourceDetails {
 
 		/** Snapshot of the inspection configuration. */
-		requestedOptions?: GooglePrivacyDlpV2RequestedOptions;
+		requestedOptions?: GooglePrivacyDlpV2RequestedOptions | null;
 
 		/** All result fields mentioned below are updated while the job is processing. */
-		result?: GooglePrivacyDlpV2Result;
+		result?: GooglePrivacyDlpV2Result | null;
 	}
 
 
@@ -3681,7 +3681,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2RequestedOptions {
 
 		/** Controls what and how to inspect for findings. */
-		jobConfig?: GooglePrivacyDlpV2InspectJobConfig;
+		jobConfig?: GooglePrivacyDlpV2InspectJobConfig | null;
 
 		/**
 		 * The inspectTemplate contains a configuration (set of types of sensitive data
@@ -3689,7 +3689,7 @@ export namespace MyNS {
 		 * InspectConfig. See https://cloud.google.com/dlp/docs/concepts-templates
 		 * to learn more.
 		 */
-		snapshotInspectTemplate?: GooglePrivacyDlpV2InspectTemplate;
+		snapshotInspectTemplate?: GooglePrivacyDlpV2InspectTemplate | null;
 	}
 
 
@@ -3697,19 +3697,19 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2Result {
 
 		/** Statistics related to processing hybrid inspect requests. */
-		hybridStats?: GooglePrivacyDlpV2HybridInspectStatistics;
+		hybridStats?: GooglePrivacyDlpV2HybridInspectStatistics | null;
 
 		/**
 		 * Statistics of how many instances of each info type were found during
 		 * inspect job.
 		 */
-		infoTypeStats?: Array<GooglePrivacyDlpV2InfoTypeStats>;
+		infoTypeStats?: Array<GooglePrivacyDlpV2InfoTypeStats> | null;
 
 		/** Total size in bytes that were processed. */
-		processedBytes?: string;
+		processedBytes?: string | null;
 
 		/** Estimate of the number of bytes to process. */
-		totalEstimatedBytes?: string;
+		totalEstimatedBytes?: string | null;
 	}
 
 
@@ -3720,7 +3720,7 @@ export namespace MyNS {
 		 * The number of hybrid inspection requests aborted because the job ran
 		 * out of quota or was ended before they could be processed.
 		 */
-		abortedCount?: string;
+		abortedCount?: string | null;
 
 		/**
 		 * The number of hybrid requests currently being processed. Only populated
@@ -3729,10 +3729,10 @@ export namespace MyNS {
 		 * Processing will take place as quickly as possible, but resource limitations
 		 * may impact how long a request is enqueued for.
 		 */
-		pendingCount?: string;
+		pendingCount?: string | null;
 
 		/** The number of hybrid inspection requests processed within this job. */
-		processedCount?: string;
+		processedCount?: string | null;
 	}
 
 
@@ -3740,10 +3740,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2InfoTypeStats {
 
 		/** Number of findings for this infoType. */
-		count?: string;
+		count?: string | null;
 
 		/** Type of information detected by the API. */
-		infoType?: GooglePrivacyDlpV2InfoType;
+		infoType?: GooglePrivacyDlpV2InfoType | null;
 	}
 
 	export enum GooglePrivacyDlpV2DlpJobState { JOB_STATE_UNSPECIFIED = 0, PENDING = 1, RUNNING = 2, DONE = 3, CANCELED = 4, FAILED = 5, ACTIVE = 6 }
@@ -3755,16 +3755,16 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2Finding {
 
 		/** Timestamp when finding was detected. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Type of information detected by the API. */
-		infoType?: GooglePrivacyDlpV2InfoType;
+		infoType?: GooglePrivacyDlpV2InfoType | null;
 
 		/** Time the job started that produced this finding. */
-		jobCreateTime?: string;
+		jobCreateTime?: string | null;
 
 		/** The job that stored the finding. */
-		jobName?: string;
+		jobName?: string | null;
 
 		/**
 		 * The labels associated with this `Finding`.
@@ -3777,20 +3777,20 @@ export namespace MyNS {
 		 * * `"environment" : "production"`
 		 * * `"pipeline" : "etl"`
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** Confidence of how likely it is that the `info_type` is correct. */
-		likelihood?: GooglePrivacyDlpV2LikelihoodAdjustmentFixedLikelihood;
+		likelihood?: GooglePrivacyDlpV2LikelihoodAdjustmentFixedLikelihood | null;
 
 		/** Specifies the location of the finding. */
-		location?: GooglePrivacyDlpV2Location;
+		location?: GooglePrivacyDlpV2Location | null;
 
 		/**
 		 * Resource name in format
 		 * projects/{project}/locations/{location}/findings/{finding} Populated only
 		 * when viewing persisted findings.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The content that was found. Even if the content is not textual, it
@@ -3799,16 +3799,16 @@ export namespace MyNS {
 		 * less than or equal to 4096 bytes long. If the finding exceeds 4096 bytes
 		 * in length, the quote may be omitted.
 		 */
-		quote?: string;
+		quote?: string | null;
 
 		/** Message for infoType-dependent details parsed from quote. */
-		quoteInfo?: GooglePrivacyDlpV2QuoteInfo;
+		quoteInfo?: GooglePrivacyDlpV2QuoteInfo | null;
 
 		/** The job that stored the finding. */
-		resourceName?: string;
+		resourceName?: string | null;
 
 		/** Job trigger name, if applicable, for this finding. */
-		triggerName?: string;
+		triggerName?: string | null;
 	}
 
 
@@ -3816,22 +3816,22 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2Location {
 
 		/** Generic half-open interval [start, end) */
-		byteRange?: GooglePrivacyDlpV2Range;
+		byteRange?: GooglePrivacyDlpV2Range | null;
 
 		/** Generic half-open interval [start, end) */
-		codepointRange?: GooglePrivacyDlpV2Range;
+		codepointRange?: GooglePrivacyDlpV2Range | null;
 
 		/**
 		 * Represents a container that may contain DLP findings.
 		 * Examples of a container include a file, table, or database record.
 		 */
-		container?: GooglePrivacyDlpV2Container;
+		container?: GooglePrivacyDlpV2Container | null;
 
 		/**
 		 * List of nested objects pointing to the precise location of the finding
 		 * within the file or record.
 		 */
-		contentLocations?: Array<GooglePrivacyDlpV2ContentLocation>;
+		contentLocations?: Array<GooglePrivacyDlpV2ContentLocation> | null;
 	}
 
 
@@ -3839,10 +3839,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2Range {
 
 		/** Index of the last character of the range (exclusive). */
-		end?: string;
+		end?: string | null;
 
 		/** Index of the first character of the range (inclusive). */
-		start?: string;
+		start?: string | null;
 	}
 
 
@@ -3853,7 +3853,7 @@ export namespace MyNS {
 		 * Message for a date time object.
 		 * e.g. 2018-01-01, 5th August.
 		 */
-		dateTime?: GooglePrivacyDlpV2DateTime;
+		dateTime?: GooglePrivacyDlpV2DateTime | null;
 	}
 
 
@@ -3869,10 +3869,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2HybridContentItem {
 
 		/** Populate to associate additional data with each finding. */
-		findingDetails?: GooglePrivacyDlpV2HybridFindingDetails;
+		findingDetails?: GooglePrivacyDlpV2HybridFindingDetails | null;
 
 		/** Container structure for the content to inspect. */
-		item?: GooglePrivacyDlpV2ContentItem;
+		item?: GooglePrivacyDlpV2ContentItem | null;
 	}
 
 
@@ -3883,7 +3883,7 @@ export namespace MyNS {
 		 * Represents a container that may contain DLP findings.
 		 * Examples of a container include a file, table, or database record.
 		 */
-		containerDetails?: GooglePrivacyDlpV2Container;
+		containerDetails?: GooglePrivacyDlpV2Container | null;
 
 		/**
 		 * Offset in bytes of the line, from the beginning of the file, where the
@@ -3891,7 +3891,7 @@ export namespace MyNS {
 		 * bigger item, such as a shard of a file and you want to track the absolute
 		 * position of the finding.
 		 */
-		fileOffset?: string;
+		fileOffset?: string | null;
 
 		/**
 		 * Labels to represent user provided metadata about the data being inspected.
@@ -3907,17 +3907,17 @@ export namespace MyNS {
 		 * * `"environment" : "production"`
 		 * * `"pipeline" : "etl"`
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Offset of the row for tables. Populate if the row(s) being scanned are
 		 * part of a bigger dataset and you want to keep track of their absolute
 		 * position.
 		 */
-		rowOffset?: string;
+		rowOffset?: string | null;
 
 		/** Instructions regarding the table content being inspected. */
-		tableOptions?: GooglePrivacyDlpV2TableOptions;
+		tableOptions?: GooglePrivacyDlpV2TableOptions | null;
 	}
 
 
@@ -3928,7 +3928,7 @@ export namespace MyNS {
 		 * An individual hybrid item to inspect. Will be stored temporarily during
 		 * processing.
 		 */
-		hybridItem?: GooglePrivacyDlpV2HybridContentItem;
+		hybridItem?: GooglePrivacyDlpV2HybridContentItem | null;
 	}
 
 
@@ -3939,7 +3939,7 @@ export namespace MyNS {
 		 * An individual hybrid item to inspect. Will be stored temporarily during
 		 * processing.
 		 */
-		hybridItem?: GooglePrivacyDlpV2HybridContentItem;
+		hybridItem?: GooglePrivacyDlpV2HybridContentItem | null;
 	}
 
 
@@ -3952,16 +3952,16 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2ImageRedactionConfig {
 
 		/** Type of information detected by the API. */
-		infoType?: GooglePrivacyDlpV2InfoType;
+		infoType?: GooglePrivacyDlpV2InfoType | null;
 
 		/**
 		 * If true, all text found in the image, regardless whether it matches an
 		 * info_type, is redacted. Only one should be provided.
 		 */
-		redactAllText?: boolean;
+		redactAllText?: boolean | null;
 
 		/** Represents a color in the RGB color space. */
-		redactionColor?: GooglePrivacyDlpV2Color;
+		redactionColor?: GooglePrivacyDlpV2Color | null;
 	}
 
 
@@ -3972,16 +3972,16 @@ export namespace MyNS {
 		 * Description of the infotype. Translated when language is provided in the
 		 * request.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/** Human readable form of the infoType name. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Internal name of the infoType. */
-		name?: string;
+		name?: string | null;
 
 		/** Which parts of the API supports this InfoType. */
-		supportedBy?: Array<string>;
+		supportedBy?: Array<string> | null;
 	}
 
 
@@ -3993,7 +3993,7 @@ export namespace MyNS {
 		 * When used with redactContent only info_types and min_likelihood are currently
 		 * used.
 		 */
-		inspectConfig?: GooglePrivacyDlpV2InspectConfig;
+		inspectConfig?: GooglePrivacyDlpV2InspectConfig | null;
 
 		/**
 		 * Template to use. Any configuration directly specified in
@@ -4002,10 +4002,10 @@ export namespace MyNS {
 		 * template. Repeated fields are appended. Singular sub-messages and groups
 		 * are recursively merged.
 		 */
-		inspectTemplateName?: string;
+		inspectTemplateName?: string | null;
 
 		/** Container structure for the content to inspect. */
-		item?: GooglePrivacyDlpV2ContentItem;
+		item?: GooglePrivacyDlpV2ContentItem | null;
 
 		/**
 		 * The geographic location to process content inspection. Reserved for future
@@ -4013,7 +4013,7 @@ export namespace MyNS {
 		 * When inspecting images location is restricted to 'global', 'us', 'asia',
 		 * and 'europe'.
 		 */
-		locationId?: string;
+		locationId?: string | null;
 	}
 
 
@@ -4021,7 +4021,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2InspectContentResponse {
 
 		/** All the findings for a single scanned item. */
-		result?: GooglePrivacyDlpV2InspectResult;
+		result?: GooglePrivacyDlpV2InspectResult | null;
 	}
 
 
@@ -4029,7 +4029,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2InspectResult {
 
 		/** List of findings for an item. */
-		findings?: Array<GooglePrivacyDlpV2Finding>;
+		findings?: Array<GooglePrivacyDlpV2Finding> | null;
 
 		/**
 		 * If true, then this item might have more findings than were returned,
@@ -4039,7 +4039,7 @@ export namespace MyNS {
 		 * allowed for a single API call. For best results, divide the input into
 		 * smaller batches.
 		 */
-		findingsTruncated?: boolean;
+		findingsTruncated?: boolean | null;
 	}
 
 
@@ -4047,7 +4047,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2LargeCustomDictionaryStats {
 
 		/** Approximate number of distinct phrases in the dictionary. */
-		approxNumPhrases?: string;
+		approxNumPhrases?: string | null;
 	}
 
 
@@ -4058,13 +4058,13 @@ export namespace MyNS {
 		 * List of deidentify templates, up to page_size in
 		 * ListDeidentifyTemplatesRequest.
 		 */
-		deidentifyTemplates?: Array<GooglePrivacyDlpV2DeidentifyTemplate>;
+		deidentifyTemplates?: Array<GooglePrivacyDlpV2DeidentifyTemplate> | null;
 
 		/**
 		 * If the next page is available then the next page token to be used
 		 * in following ListDeidentifyTemplates request.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -4072,10 +4072,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2ListDlpJobsResponse {
 
 		/** A list of DlpJobs that matches the specified filter in the request. */
-		jobs?: Array<GooglePrivacyDlpV2DlpJob>;
+		jobs?: Array<GooglePrivacyDlpV2DlpJob> | null;
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -4083,7 +4083,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2ListInfoTypesResponse {
 
 		/** Set of sensitive infoTypes. */
-		infoTypes?: Array<GooglePrivacyDlpV2InfoTypeDescription>;
+		infoTypes?: Array<GooglePrivacyDlpV2InfoTypeDescription> | null;
 	}
 
 
@@ -4091,13 +4091,13 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2ListInspectTemplatesResponse {
 
 		/** List of inspectTemplates, up to page_size in ListInspectTemplatesRequest. */
-		inspectTemplates?: Array<GooglePrivacyDlpV2InspectTemplate>;
+		inspectTemplates?: Array<GooglePrivacyDlpV2InspectTemplate> | null;
 
 		/**
 		 * If the next page is available then the next page token to be used
 		 * in following ListInspectTemplates request.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -4105,13 +4105,13 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2ListJobTriggersResponse {
 
 		/** List of triggeredJobs, up to page_size in ListJobTriggersRequest. */
-		jobTriggers?: Array<GooglePrivacyDlpV2JobTrigger>;
+		jobTriggers?: Array<GooglePrivacyDlpV2JobTrigger> | null;
 
 		/**
 		 * If the next page is available then the next page token to be used
 		 * in following ListJobTriggers request.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -4122,10 +4122,10 @@ export namespace MyNS {
 		 * If the next page is available then the next page token to be used
 		 * in following ListStoredInfoTypes request.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** List of storedInfoTypes, up to page_size in ListStoredInfoTypesRequest. */
-		storedInfoTypes?: Array<GooglePrivacyDlpV2StoredInfoType>;
+		storedInfoTypes?: Array<GooglePrivacyDlpV2StoredInfoType> | null;
 	}
 
 
@@ -4139,16 +4139,16 @@ export namespace MyNS {
 		 * Version of a StoredInfoType, including the configuration used to build it,
 		 * create timestamp, and current state.
 		 */
-		currentVersion?: GooglePrivacyDlpV2StoredInfoTypeVersion;
+		currentVersion?: GooglePrivacyDlpV2StoredInfoTypeVersion | null;
 
 		/** Resource name. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Pending versions of the stored info type. Empty if no versions are
 		 * pending.
 		 */
-		pendingVersions?: Array<GooglePrivacyDlpV2StoredInfoTypeVersion>;
+		pendingVersions?: Array<GooglePrivacyDlpV2StoredInfoTypeVersion> | null;
 	}
 
 
@@ -4163,13 +4163,13 @@ export namespace MyNS {
 		 * by the user. For more information, see
 		 * https://cloud.google.com/dlp/docs/creating-custom-infotypes.
 		 */
-		config?: GooglePrivacyDlpV2StoredInfoTypeConfig;
+		config?: GooglePrivacyDlpV2StoredInfoTypeConfig | null;
 
 		/**
 		 * Create timestamp of the version. Read-only, determined by the system
 		 * when the version is created.
 		 */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Errors that occurred when creating this storedInfoType version, or
@@ -4184,16 +4184,16 @@ export namespace MyNS {
 		 * storedInfoType to continue using it, reusing the same `config` if it was
 		 * not the source of the error.
 		 */
-		errors?: Array<GooglePrivacyDlpV2Error>;
+		errors?: Array<GooglePrivacyDlpV2Error> | null;
 
 		/**
 		 * Stored info type version state. Read-only, updated by the system
 		 * during dictionary creation.
 		 */
-		state?: GooglePrivacyDlpV2StoredInfoTypeVersionState;
+		state?: GooglePrivacyDlpV2StoredInfoTypeVersionState | null;
 
 		/** Statistics for a StoredInfoType. */
-		stats?: GooglePrivacyDlpV2StoredInfoTypeStats;
+		stats?: GooglePrivacyDlpV2StoredInfoTypeStats | null;
 	}
 
 	export enum GooglePrivacyDlpV2StoredInfoTypeVersionState { STORED_INFO_TYPE_STATE_UNSPECIFIED = 0, PENDING = 1, READY = 2, FAILED = 3, INVALID = 4 }
@@ -4203,7 +4203,7 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2StoredInfoTypeStats {
 
 		/** Summary statistics of a custom dictionary. */
-		largeCustomDictionary?: GooglePrivacyDlpV2LargeCustomDictionaryStats;
+		largeCustomDictionary?: GooglePrivacyDlpV2LargeCustomDictionaryStats | null;
 	}
 
 
@@ -4214,30 +4214,30 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2RedactImageRequest {
 
 		/** Container for bytes to inspect or redact. */
-		byteItem?: GooglePrivacyDlpV2ByteContentItem;
+		byteItem?: GooglePrivacyDlpV2ByteContentItem | null;
 
 		/** The configuration for specifying what content to redact from images. */
-		imageRedactionConfigs?: Array<GooglePrivacyDlpV2ImageRedactionConfig>;
+		imageRedactionConfigs?: Array<GooglePrivacyDlpV2ImageRedactionConfig> | null;
 
 		/**
 		 * Whether the response should include findings along with the redacted
 		 * image.
 		 */
-		includeFindings?: boolean;
+		includeFindings?: boolean | null;
 
 		/**
 		 * Configuration description of the scanning process.
 		 * When used with redactContent only info_types and min_likelihood are currently
 		 * used.
 		 */
-		inspectConfig?: GooglePrivacyDlpV2InspectConfig;
+		inspectConfig?: GooglePrivacyDlpV2InspectConfig | null;
 
 		/**
 		 * The geographic location to process the request. Reserved for future
 		 * extensions.
 		 * Location is restricted to 'global', 'us', 'asia', and 'europe'.
 		 */
-		locationId?: string;
+		locationId?: string | null;
 	}
 
 
@@ -4249,13 +4249,13 @@ export namespace MyNS {
 		 * set to true, then this field will include all text, if any, that was found
 		 * in the image.
 		 */
-		extractedText?: string;
+		extractedText?: string | null;
 
 		/** All the findings for a single scanned item. */
-		inspectResult?: GooglePrivacyDlpV2InspectResult;
+		inspectResult?: GooglePrivacyDlpV2InspectResult | null;
 
 		/** The redacted image. The type will be the same as the original image. */
-		redactedImage?: string;
+		redactedImage?: string | null;
 	}
 
 
@@ -4267,7 +4267,7 @@ export namespace MyNS {
 		 * When used with redactContent only info_types and min_likelihood are currently
 		 * used.
 		 */
-		inspectConfig?: GooglePrivacyDlpV2InspectConfig;
+		inspectConfig?: GooglePrivacyDlpV2InspectConfig | null;
 
 		/**
 		 * Template to use. Any configuration directly specified in
@@ -4276,19 +4276,19 @@ export namespace MyNS {
 		 * template. Repeated fields are appended. Singular sub-messages and groups
 		 * are recursively merged.
 		 */
-		inspectTemplateName?: string;
+		inspectTemplateName?: string | null;
 
 		/** Container structure for the content to inspect. */
-		item?: GooglePrivacyDlpV2ContentItem;
+		item?: GooglePrivacyDlpV2ContentItem | null;
 
 		/**
 		 * The geographic location to process content reidentification.  Reserved for
 		 * future extensions.
 		 */
-		locationId?: string;
+		locationId?: string | null;
 
 		/** The configuration that controls how the data will change. */
-		reidentifyConfig?: GooglePrivacyDlpV2DeidentifyConfig;
+		reidentifyConfig?: GooglePrivacyDlpV2DeidentifyConfig | null;
 
 		/**
 		 * Template to use. References an instance of `DeidentifyTemplate`.
@@ -4298,7 +4298,7 @@ export namespace MyNS {
 		 * template. Repeated fields are appended. Singular sub-messages and groups
 		 * are recursively merged.
 		 */
-		reidentifyTemplateName?: string;
+		reidentifyTemplateName?: string | null;
 	}
 
 
@@ -4306,10 +4306,10 @@ export namespace MyNS {
 	export interface GooglePrivacyDlpV2ReidentifyContentResponse {
 
 		/** Container structure for the content to inspect. */
-		item?: GooglePrivacyDlpV2ContentItem;
+		item?: GooglePrivacyDlpV2ContentItem | null;
 
 		/** Overview of the modifications that occurred. */
-		overview?: GooglePrivacyDlpV2TransformationOverview;
+		overview?: GooglePrivacyDlpV2TransformationOverview | null;
 	}
 
 
@@ -4320,10 +4320,10 @@ export namespace MyNS {
 		 * DeidentifyTemplates contains instructions on how to de-identify content.
 		 * See https://cloud.google.com/dlp/docs/concepts-templates to learn more.
 		 */
-		deidentifyTemplate?: GooglePrivacyDlpV2DeidentifyTemplate;
+		deidentifyTemplate?: GooglePrivacyDlpV2DeidentifyTemplate | null;
 
 		/** Mask to control which fields get updated. */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -4336,10 +4336,10 @@ export namespace MyNS {
 		 * InspectConfig. See https://cloud.google.com/dlp/docs/concepts-templates
 		 * to learn more.
 		 */
-		inspectTemplate?: GooglePrivacyDlpV2InspectTemplate;
+		inspectTemplate?: GooglePrivacyDlpV2InspectTemplate | null;
 
 		/** Mask to control which fields get updated. */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -4350,10 +4350,10 @@ export namespace MyNS {
 		 * Contains a configuration to make dlp api calls on a repeating basis.
 		 * See https://cloud.google.com/dlp/docs/concepts-job-triggers to learn more.
 		 */
-		jobTrigger?: GooglePrivacyDlpV2JobTrigger;
+		jobTrigger?: GooglePrivacyDlpV2JobTrigger | null;
 
 		/** Mask to control which fields get updated. */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -4365,10 +4365,10 @@ export namespace MyNS {
 		 * by the user. For more information, see
 		 * https://cloud.google.com/dlp/docs/creating-custom-infotypes.
 		 */
-		config?: GooglePrivacyDlpV2StoredInfoTypeConfig;
+		config?: GooglePrivacyDlpV2StoredInfoTypeConfig | null;
 
 		/** Mask to control which fields get updated. */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 	@Injectable()
@@ -4390,7 +4390,7 @@ export namespace MyNS {
 		 * extensions.
 		 * @return {void} Successful response
 		 */
-		Dlp_infoTypes_list(filter: string, languageCode: string, locationId: string): Observable<HttpResponse<string>> {
+		Dlp_infoTypes_list(filter: string | null | undefined, languageCode: string | null | undefined, locationId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/infoTypes?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&languageCode=' + (languageCode == null ? '' : encodeURIComponent(languageCode)) + '&locationId=' + (locationId == null ? '' : encodeURIComponent(locationId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4408,7 +4408,7 @@ export namespace MyNS {
 		 * en-US strings will be returned.
 		 * @return {void} Successful response
 		 */
-		Dlp_locations_infoTypes_list(locationId: string, filter: string, languageCode: string): Observable<HttpResponse<string>> {
+		Dlp_locations_infoTypes_list(locationId: string, filter: string | null | undefined, languageCode: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/locations/' + (locationId == null ? '' : encodeURIComponent(locationId)) + '/infoTypes&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&languageCode=' + (languageCode == null ? '' : encodeURIComponent(languageCode)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4574,7 +4574,7 @@ export namespace MyNS {
 		 * to `ListDeidentifyTemplates`.
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_deidentifyTemplates_list(parent: string, locationId: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dlp_projects_deidentifyTemplates_list(parent: string, locationId: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/deidentifyTemplates&locationId=' + (locationId == null ? '' : encodeURIComponent(locationId)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4638,7 +4638,7 @@ export namespace MyNS {
 		 * @param {GooglePrivacyDlpV2DlpJobType} type The type of job. Defaults to `DlpJobType.INSPECT`
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_dlpJobs_list(parent: string, filter: string, locationId: string, orderBy: string, pageSize: number, pageToken: string, type: GooglePrivacyDlpV2DlpJobType): Observable<HttpResponse<string>> {
+		Dlp_projects_dlpJobs_list(parent: string, filter: string | null | undefined, locationId: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, type: GooglePrivacyDlpV2DlpJobType | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/dlpJobs&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&locationId=' + (locationId == null ? '' : encodeURIComponent(locationId)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&type=' + type, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4697,7 +4697,7 @@ export namespace MyNS {
 		 * to `ListInspectTemplates`.
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_inspectTemplates_list(parent: string, locationId: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dlp_projects_inspectTemplates_list(parent: string, locationId: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/inspectTemplates&locationId=' + (locationId == null ? '' : encodeURIComponent(locationId)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4758,7 +4758,7 @@ export namespace MyNS {
 		 * change for subsequent calls.
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_jobTriggers_list(parent: string, filter: string, locationId: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dlp_projects_jobTriggers_list(parent: string, filter: string | null | undefined, locationId: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/jobTriggers&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&locationId=' + (locationId == null ? '' : encodeURIComponent(locationId)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4852,7 +4852,7 @@ export namespace MyNS {
 		 * to `ListDeidentifyTemplates`.
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_locations_deidentifyTemplates_list(parent: string, locationId: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dlp_projects_locations_deidentifyTemplates_list(parent: string, locationId: string, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/locations/' + (locationId == null ? '' : encodeURIComponent(locationId)) + '/deidentifyTemplates&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4918,7 +4918,7 @@ export namespace MyNS {
 		 * @param {GooglePrivacyDlpV2DlpJobType} type The type of job. Defaults to `DlpJobType.INSPECT`
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_locations_dlpJobs_list(parent: string, locationId: string, filter: string, orderBy: string, pageSize: number, pageToken: string, type: GooglePrivacyDlpV2DlpJobType): Observable<HttpResponse<string>> {
+		Dlp_projects_locations_dlpJobs_list(parent: string, locationId: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, type: GooglePrivacyDlpV2DlpJobType | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/locations/' + (locationId == null ? '' : encodeURIComponent(locationId)) + '/dlpJobs&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&type=' + type, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4982,7 +4982,7 @@ export namespace MyNS {
 		 * to `ListInspectTemplates`.
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_locations_inspectTemplates_list(parent: string, locationId: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dlp_projects_locations_inspectTemplates_list(parent: string, locationId: string, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/locations/' + (locationId == null ? '' : encodeURIComponent(locationId)) + '/inspectTemplates&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -5045,7 +5045,7 @@ export namespace MyNS {
 		 * change for subsequent calls.
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_locations_jobTriggers_list(parent: string, locationId: string, filter: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dlp_projects_locations_jobTriggers_list(parent: string, locationId: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/locations/' + (locationId == null ? '' : encodeURIComponent(locationId)) + '/jobTriggers&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -5089,7 +5089,7 @@ export namespace MyNS {
 		 * to `ListStoredInfoTypes`.
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_locations_storedInfoTypes_list(parent: string, locationId: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dlp_projects_locations_storedInfoTypes_list(parent: string, locationId: string, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/locations/' + (locationId == null ? '' : encodeURIComponent(locationId)) + '/storedInfoTypes&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -5134,7 +5134,7 @@ export namespace MyNS {
 		 * to `ListStoredInfoTypes`.
 		 * @return {void} Successful response
 		 */
-		Dlp_projects_storedInfoTypes_list(parent: string, locationId: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Dlp_projects_storedInfoTypes_list(parent: string, locationId: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/storedInfoTypes&locationId=' + (locationId == null ? '' : encodeURIComponent(locationId)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

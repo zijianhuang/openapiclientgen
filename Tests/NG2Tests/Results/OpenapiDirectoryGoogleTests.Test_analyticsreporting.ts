@@ -23,11 +23,11 @@ export namespace MyNS {
 		 * session ID 243742 has activity within 2019-08-25 and 2019-08-26. Session ID
 		 * 113472 is one session, and session ID 243742 is two sessions.
 		 */
-		activityTime?: string;
+		activityTime?: string | null;
 
 		/** Type of this activity. */
-		activityType?: ActivityActivityType;
-		appview?: ScreenviewData;
+		activityType?: ActivityActivityType | null;
+		appview?: ScreenviewData | null;
 
 		/**
 		 * For manual campaign tracking, it is the value of the utm_campaign campaign
@@ -35,28 +35,28 @@ export namespace MyNS {
 		 * online ad campaign(s) you use for the property. If you use neither, its
 		 * value is (not set).
 		 */
-		campaign?: string;
+		campaign?: string | null;
 
 		/**
 		 * The Channel Group associated with an end user's session for this View
 		 * (defined by the View's Channel Groupings).
 		 */
-		channelGrouping?: string;
+		channelGrouping?: string | null;
 
 		/** A list of all custom dimensions associated with this activity. */
-		customDimension?: Array<CustomDimension>;
+		customDimension?: Array<CustomDimension> | null;
 
 		/** E-commerce details associated with the user activity. */
-		ecommerce?: EcommerceData;
+		ecommerce?: EcommerceData | null;
 
 		/** Represents all the details pertaining to an event. */
-		event?: EventData;
+		event?: EventData | null;
 
 		/** Represents a set of goals that were reached in an activity. */
-		goals?: GoalSetData;
+		goals?: GoalSetData | null;
 
 		/** The hostname from which the tracking request was made. */
-		hostname?: string;
+		hostname?: string | null;
 
 		/**
 		 * For manual campaign tracking, it is the value of the utm_term campaign
@@ -67,10 +67,10 @@ export namespace MyNS {
 		 * placement, boomuserlist, user_interest, age, or gender. Otherwise its value
 		 * is (not set).
 		 */
-		keyword?: string;
+		keyword?: string | null;
 
 		/** The first page in users' sessions, or the landing page. */
-		landingPagePath?: string;
+		landingPagePath?: string | null;
 
 		/**
 		 * The type of referrals. For manual campaign tracking, it is the value of the
@@ -80,10 +80,10 @@ export namespace MyNS {
 		 * came directly to the property and document.referrer is empty, its value is
 		 * (none).
 		 */
-		medium?: string;
+		medium?: string | null;
 
 		/** Represents details collected when the visitor views a page. */
-		pageview?: PageviewData;
+		pageview?: PageviewData | null;
 
 		/**
 		 * The source of referrals. For manual campaign tracking, it is the value of
@@ -92,7 +92,7 @@ export namespace MyNS {
 		 * (e.g., document.referrer) referring the users. It may also contain a port
 		 * address. If users arrived without a referrer, its value is (direct).
 		 */
-		source?: string;
+		source?: string | null;
 	}
 
 	export enum ActivityActivityType { ACTIVITY_TYPE_UNSPECIFIED = 0, PAGEVIEW = 1, SCREENVIEW = 2, GOAL = 3, ECOMMERCE = 4, EVENT = 5 }
@@ -100,16 +100,16 @@ export namespace MyNS {
 	export interface ScreenviewData {
 
 		/** The application name. */
-		appName?: string;
+		appName?: string | null;
 
 		/** Mobile manufacturer or branded name. Eg: "Google", "Apple" etc. */
-		mobileDeviceBranding?: string;
+		mobileDeviceBranding?: string | null;
 
 		/** Mobile device model. Eg: "Pixel", "iPhone" etc. */
-		mobileDeviceModel?: string;
+		mobileDeviceModel?: string | null;
 
 		/** The name of the screen. */
-		screenName?: string;
+		screenName?: string | null;
 	}
 
 
@@ -117,13 +117,13 @@ export namespace MyNS {
 	export interface CustomDimension {
 
 		/** Slot number of custom dimension. */
-		index?: number;
+		index?: number | null;
 
 		/**
 		 * Value of the custom dimension. Default value (i.e. empty string) indicates
 		 * clearing sesion/visitor scope custom dimension value.
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -131,19 +131,19 @@ export namespace MyNS {
 	export interface EcommerceData {
 
 		/** Action associated with this e-commerce action. */
-		actionType?: EcommerceDataActionType;
+		actionType?: EcommerceDataActionType | null;
 
 		/** The type of this e-commerce activity. */
-		ecommerceType?: EcommerceDataEcommerceType;
+		ecommerceType?: EcommerceDataEcommerceType | null;
 
 		/** Details of the products in this transaction. */
-		products?: Array<ProductData>;
+		products?: Array<ProductData> | null;
 
 		/**
 		 * Represents details collected when the visitor performs a transaction on the
 		 * page.
 		 */
-		transaction?: TransactionData;
+		transaction?: TransactionData | null;
 	}
 
 	export enum EcommerceDataActionType { UNKNOWN = 0, CLICK = 1, DETAILS_VIEW = 2, ADD_TO_CART = 3, REMOVE_FROM_CART = 4, CHECKOUT = 5, PAYMENT = 6, REFUND = 7, CHECKOUT_OPTION = 8 }
@@ -155,19 +155,19 @@ export namespace MyNS {
 	export interface ProductData {
 
 		/** The total revenue from purchased product items. */
-		itemRevenue?: number;
+		itemRevenue?: number | null;
 
 		/**
 		 * The product name, supplied by the e-commerce tracking application, for
 		 * the purchased items.
 		 */
-		productName?: string;
+		productName?: string | null;
 
 		/** Total number of this product units in the transaction. */
-		productQuantity?: string;
+		productQuantity?: string | null;
 
 		/** Unique code that represents the product. */
-		productSku?: string;
+		productSku?: string | null;
 	}
 
 
@@ -181,16 +181,16 @@ export namespace MyNS {
 		 * The transaction ID, supplied by the e-commerce tracking method, for the
 		 * purchase in the shopping cart.
 		 */
-		transactionId?: string;
+		transactionId?: string | null;
 
 		/** The total sale revenue (excluding shipping and tax) of the transaction. */
-		transactionRevenue?: number;
+		transactionRevenue?: number | null;
 
 		/** Total cost of shipping. */
-		transactionShipping?: number;
+		transactionShipping?: number | null;
 
 		/** Total tax for the transaction. */
-		transactionTax?: number;
+		transactionTax?: number | null;
 	}
 
 
@@ -198,19 +198,19 @@ export namespace MyNS {
 	export interface EventData {
 
 		/** Type of interaction with the object. Eg: 'play'. */
-		eventAction?: string;
+		eventAction?: string | null;
 
 		/** The object on the page that was interacted with. Eg: 'Video'. */
-		eventCategory?: string;
+		eventCategory?: string | null;
 
 		/** Number of such events in this activity. */
-		eventCount?: string;
+		eventCount?: string | null;
 
 		/** Label attached with the event. */
-		eventLabel?: string;
+		eventLabel?: string | null;
 
 		/** Numeric value associated with the event. */
-		eventValue?: string;
+		eventValue?: string | null;
 	}
 
 
@@ -218,7 +218,7 @@ export namespace MyNS {
 	export interface GoalSetData {
 
 		/** All the goals that were reached in the current activity. */
-		goals?: Array<GoalData>;
+		goals?: Array<GoalData> | null;
 	}
 
 
@@ -226,28 +226,28 @@ export namespace MyNS {
 	export interface GoalData {
 
 		/** URL of the page where this goal was completed. */
-		goalCompletionLocation?: string;
+		goalCompletionLocation?: string | null;
 
 		/** Total number of goal completions in this activity. */
-		goalCompletions?: string;
+		goalCompletions?: string | null;
 
 		/** This identifies the goal as configured for the profile. */
-		goalIndex?: number;
+		goalIndex?: number | null;
 
 		/** Name of the goal. */
-		goalName?: string;
+		goalName?: string | null;
 
 		/** URL of the page one step prior to the goal completion. */
-		goalPreviousStep1?: string;
+		goalPreviousStep1?: string | null;
 
 		/** URL of the page two steps prior to the goal completion. */
-		goalPreviousStep2?: string;
+		goalPreviousStep2?: string | null;
 
 		/** URL of the page three steps prior to the goal completion. */
-		goalPreviousStep3?: string;
+		goalPreviousStep3?: string | null;
 
 		/** Value in this goal. */
-		goalValue?: number;
+		goalValue?: number | null;
 	}
 
 
@@ -255,10 +255,10 @@ export namespace MyNS {
 	export interface PageviewData {
 
 		/** The URL of the page that the visitor viewed. */
-		pagePath?: string;
+		pagePath?: string | null;
 
 		/** The title of the page that the visitor viewed. */
-		pageTitle?: string;
+		pageTitle?: string | null;
 	}
 
 
@@ -274,20 +274,20 @@ export namespace MyNS {
 		 * The start and end dates are specified in
 		 * [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) date format `YYYY-MM-DD`.
 		 */
-		dateRange?: DateRange;
+		dateRange?: DateRange | null;
 
 		/**
 		 * A unique name for the cohort. If not defined name will be auto-generated
 		 * with values cohort_[1234...].
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Type of the cohort. The only supported type as of now is
 		 * `FIRST_VISIT_DATE`. If this field is unspecified the cohort is treated
 		 * as `FIRST_VISIT_DATE` type cohort.
 		 */
-		type?: CohortType;
+		type?: CohortType | null;
 	}
 
 
@@ -299,10 +299,10 @@ export namespace MyNS {
 	export interface DateRange {
 
 		/** The end date for the query in the format `YYYY-MM-DD`. */
-		endDate?: string;
+		endDate?: string | null;
 
 		/** The start date for the query in the format `YYYY-MM-DD`. */
-		startDate?: string;
+		startDate?: string | null;
 	}
 
 	export enum CohortType { UNSPECIFIED_COHORT_TYPE = 0, FIRST_VISIT_DATE = 1 }
@@ -326,7 +326,7 @@ export namespace MyNS {
 	export interface CohortGroup {
 
 		/** The definition for the cohort. */
-		cohorts?: Array<Cohort>;
+		cohorts?: Array<Cohort> | null;
 
 		/**
 		 * Enable Life Time Value (LTV).  LTV measures lifetime value for users
@@ -357,7 +357,7 @@ export namespace MyNS {
 		 * [app view
 		 * ID](https://support.google.com/analytics/answer/2649553#WebVersusAppViews)
 		 */
-		lifetimeValue?: boolean;
+		lifetimeValue?: boolean | null;
 	}
 
 
@@ -365,10 +365,10 @@ export namespace MyNS {
 	export interface ColumnHeader {
 
 		/** The dimension names in the response. */
-		dimensions?: Array<string>;
+		dimensions?: Array<string> | null;
 
 		/** The headers for the metrics. */
-		metricHeader?: MetricHeader;
+		metricHeader?: MetricHeader | null;
 	}
 
 
@@ -376,10 +376,10 @@ export namespace MyNS {
 	export interface MetricHeader {
 
 		/** Headers for the metrics in the response. */
-		metricHeaderEntries?: Array<MetricHeaderEntry>;
+		metricHeaderEntries?: Array<MetricHeaderEntry> | null;
 
 		/** Headers for the pivots in the response. */
-		pivotHeaders?: Array<PivotHeader>;
+		pivotHeaders?: Array<PivotHeader> | null;
 	}
 
 
@@ -387,10 +387,10 @@ export namespace MyNS {
 	export interface MetricHeaderEntry {
 
 		/** The name of the header. */
-		name?: string;
+		name?: string | null;
 
 		/** The type of the metric, for example `INTEGER`. */
-		type?: MetricHeaderEntryType;
+		type?: MetricHeaderEntryType | null;
 	}
 
 	export enum MetricHeaderEntryType { METRIC_TYPE_UNSPECIFIED = 0, INTEGER = 1, FLOAT = 2, CURRENCY = 3, PERCENT = 4, TIME = 5 }
@@ -400,10 +400,10 @@ export namespace MyNS {
 	export interface PivotHeader {
 
 		/** A single pivot section header. */
-		pivotHeaderEntries?: Array<PivotHeaderEntry>;
+		pivotHeaderEntries?: Array<PivotHeaderEntry> | null;
 
 		/** The total number of groups for this pivot. */
-		totalPivotGroupsCount?: number;
+		totalPivotGroupsCount?: number | null;
 	}
 
 
@@ -414,13 +414,13 @@ export namespace MyNS {
 	export interface PivotHeaderEntry {
 
 		/** The name of the dimensions in the pivot response. */
-		dimensionNames?: Array<string>;
+		dimensionNames?: Array<string> | null;
 
 		/** The values for the dimensions in the pivot. */
-		dimensionValues?: Array<string>;
+		dimensionValues?: Array<string> | null;
 
 		/** Header for the metrics. */
-		metric?: MetricHeaderEntry;
+		metric?: MetricHeaderEntry | null;
 	}
 
 
@@ -431,10 +431,10 @@ export namespace MyNS {
 	export interface DateRangeValues {
 
 		/** The values of each pivot region. */
-		pivotValueRegions?: Array<PivotValueRegion>;
+		pivotValueRegions?: Array<PivotValueRegion> | null;
 
 		/** Each value corresponds to each Metric in the request. */
-		values?: Array<string>;
+		values?: Array<string> | null;
 	}
 
 
@@ -442,7 +442,7 @@ export namespace MyNS {
 	export interface PivotValueRegion {
 
 		/** The values of the metrics in each of the pivot regions. */
-		values?: Array<string>;
+		values?: Array<string> | null;
 	}
 
 
@@ -481,10 +481,10 @@ export namespace MyNS {
 		 * The client has to explicitly request `"orderType": "HISTOGRAM_BUCKET"`
 		 * for a histogram-mutated dimension.
 		 */
-		histogramBuckets?: Array<string>;
+		histogramBuckets?: Array<string> | null;
 
 		/** Name of the dimension to fetch, for example `ga:browser`. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -492,10 +492,10 @@ export namespace MyNS {
 	export interface DimensionFilter {
 
 		/** Should the match be case sensitive? Default is false. */
-		caseSensitive?: boolean;
+		caseSensitive?: boolean | null;
 
 		/** The dimension to filter on. A DimensionFilter must contain a dimension. */
-		dimensionName?: string;
+		dimensionName?: string | null;
 
 		/**
 		 * Strings or regular expression to match against. Only the first value of
@@ -503,16 +503,16 @@ export namespace MyNS {
 		 * If `IN_LIST` operator, then the entire list is used to filter the
 		 * dimensions as explained in the description of the `IN_LIST` operator.
 		 */
-		expressions?: Array<string>;
+		expressions?: Array<string> | null;
 
 		/**
 		 * Logical `NOT` operator. If this boolean is set to true, then the matching
 		 * dimension values will be excluded in the report. The default is false.
 		 */
-		not?: boolean;
+		not?: boolean | null;
 
 		/** How to match the dimension to the expression. The default is REGEXP. */
-		operator?: DimensionFilterOperator;
+		operator?: DimensionFilterOperator | null;
 	}
 
 	export enum DimensionFilterOperator { OPERATOR_UNSPECIFIED = 0, REGEXP = 1, BEGINS_WITH = 2, ENDS_WITH = 3, PARTIAL = 4, EXACT = 5, NUMERIC_EQUAL = 6, NUMERIC_GREATER_THAN = 7, NUMERIC_LESS_THAN = 8, IN_LIST = 9 }
@@ -528,13 +528,13 @@ export namespace MyNS {
 		 * The repeated set of filters. They are logically combined based on the
 		 * operator specified.
 		 */
-		filters?: Array<DimensionFilter>;
+		filters?: Array<DimensionFilter> | null;
 
 		/**
 		 * The operator for combining multiple dimension filters. If unspecified, it
 		 * is treated as an `OR`.
 		 */
-		operator?: DimensionFilterClauseOperator;
+		operator?: DimensionFilterClauseOperator | null;
 	}
 
 	export enum DimensionFilterClauseOperator { OPERATOR_UNSPECIFIED = 0, OR = 1, AND = 2 }
@@ -547,19 +547,19 @@ export namespace MyNS {
 	export interface DynamicSegment {
 
 		/** The name of the dynamic segment. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * SegmentDefinition defines the segment to be a set of SegmentFilters which
 		 * are combined together with a logical `AND` operation.
 		 */
-		sessionSegment?: SegmentDefinition;
+		sessionSegment?: SegmentDefinition | null;
 
 		/**
 		 * SegmentDefinition defines the segment to be a set of SegmentFilters which
 		 * are combined together with a logical `AND` operation.
 		 */
-		userSegment?: SegmentDefinition;
+		userSegment?: SegmentDefinition | null;
 	}
 
 
@@ -573,7 +573,7 @@ export namespace MyNS {
 		 * A segment is defined by a set of segment filters which are combined
 		 * together with a logical `AND` operation.
 		 */
-		segmentFilters?: Array<SegmentFilter>;
+		segmentFilters?: Array<SegmentFilter> | null;
 	}
 
 
@@ -605,20 +605,20 @@ export namespace MyNS {
 		 * }]
 		 * },
 		 */
-		not?: boolean;
+		not?: boolean | null;
 
 		/**
 		 * Sequence conditions consist of one or more steps, where each step is defined
 		 * by one or more dimension/metric conditions. Multiple steps can be combined
 		 * with special sequence operators.
 		 */
-		sequenceSegment?: SequenceSegment;
+		sequenceSegment?: SequenceSegment | null;
 
 		/**
 		 * A Simple segment conditions consist of one or more dimension/metric
 		 * conditions that can be combined.
 		 */
-		simpleSegment?: SimpleSegment;
+		simpleSegment?: SimpleSegment | null;
 	}
 
 
@@ -633,10 +633,10 @@ export namespace MyNS {
 		 * If set, first step condition must match the first hit of the visitor (in
 		 * the date range).
 		 */
-		firstStepShouldMatchFirstHit?: boolean;
+		firstStepShouldMatchFirstHit?: boolean | null;
 
 		/** The list of steps in the sequence. */
-		segmentSequenceSteps?: Array<SegmentSequenceStep>;
+		segmentSequenceSteps?: Array<SegmentSequenceStep> | null;
 	}
 
 
@@ -647,13 +647,13 @@ export namespace MyNS {
 		 * Specifies if the step immediately precedes or can be any time before the
 		 * next step.
 		 */
-		matchType?: SegmentSequenceStepMatchType;
+		matchType?: SegmentSequenceStepMatchType | null;
 
 		/**
 		 * A sequence is specified with a list of Or grouped filters which are
 		 * combined with `AND` operator.
 		 */
-		orFiltersForSegment?: Array<OrFiltersForSegment>;
+		orFiltersForSegment?: Array<OrFiltersForSegment> | null;
 	}
 
 	export enum SegmentSequenceStepMatchType { UNSPECIFIED_MATCH_TYPE = 0, PRECEDES = 1, IMMEDIATELY_PRECEDES = 2 }
@@ -666,7 +666,7 @@ export namespace MyNS {
 	export interface OrFiltersForSegment {
 
 		/** List of segment filters to be combined with a `OR` operator. */
-		segmentFilterClauses?: Array<SegmentFilterClause>;
+		segmentFilterClauses?: Array<SegmentFilterClause> | null;
 	}
 
 
@@ -677,13 +677,13 @@ export namespace MyNS {
 	export interface SegmentFilterClause {
 
 		/** Dimension filter specifies the filtering options on a dimension. */
-		dimensionFilter?: SegmentDimensionFilter;
+		dimensionFilter?: SegmentDimensionFilter | null;
 
 		/** Metric filter to be used in a segment filter clause. */
-		metricFilter?: SegmentMetricFilter;
+		metricFilter?: SegmentMetricFilter | null;
 
 		/** Matches the complement (`!`) of the filter. */
-		not?: boolean;
+		not?: boolean | null;
 	}
 
 
@@ -691,22 +691,22 @@ export namespace MyNS {
 	export interface SegmentDimensionFilter {
 
 		/** Should the match be case sensitive, ignored for `IN_LIST` operator. */
-		caseSensitive?: boolean;
+		caseSensitive?: boolean | null;
 
 		/** Name of the dimension for which the filter is being applied. */
-		dimensionName?: string;
+		dimensionName?: string | null;
 
 		/** The list of expressions, only the first element is used for all operators */
-		expressions?: Array<string>;
+		expressions?: Array<string> | null;
 
 		/** Maximum comparison values for `BETWEEN` match type. */
-		maxComparisonValue?: string;
+		maxComparisonValue?: string | null;
 
 		/** Minimum comparison values for `BETWEEN` match type. */
-		minComparisonValue?: string;
+		minComparisonValue?: string | null;
 
 		/** The operator to use to match the dimension with the expressions. */
-		operator?: SegmentDimensionFilterOperator;
+		operator?: SegmentDimensionFilterOperator | null;
 	}
 
 	export enum SegmentDimensionFilterOperator { OPERATOR_UNSPECIFIED = 0, REGEXP = 1, BEGINS_WITH = 2, ENDS_WITH = 3, PARTIAL = 4, EXACT = 5, IN_LIST = 6, NUMERIC_LESS_THAN = 7, NUMERIC_GREATER_THAN = 8, NUMERIC_BETWEEN = 9 }
@@ -719,22 +719,22 @@ export namespace MyNS {
 		 * The value to compare against. If the operator is `BETWEEN`, this value is
 		 * treated as minimum comparison value.
 		 */
-		comparisonValue?: string;
+		comparisonValue?: string | null;
 
 		/** Max comparison value is only used for `BETWEEN` operator. */
-		maxComparisonValue?: string;
+		maxComparisonValue?: string | null;
 
 		/**
 		 * The metric that will be filtered on. A `metricFilter` must contain a
 		 * metric name.
 		 */
-		metricName?: string;
+		metricName?: string | null;
 
 		/**
 		 * Specifies is the operation to perform to compare the metric. The default
 		 * is `EQUAL`.
 		 */
-		operator?: SegmentMetricFilterOperator;
+		operator?: SegmentMetricFilterOperator | null;
 
 		/**
 		 * Scope for a metric defines the level at which that metric is defined.  The
@@ -742,7 +742,7 @@ export namespace MyNS {
 		 * as defined in the data model. The primary scope is defined by if the
 		 * segment is selecting users or sessions.
 		 */
-		scope?: SegmentMetricFilterScope;
+		scope?: SegmentMetricFilterScope | null;
 	}
 
 	export enum SegmentMetricFilterOperator { UNSPECIFIED_OPERATOR = 0, LESS_THAN = 1, GREATER_THAN = 2, EQUAL = 3, BETWEEN = 4 }
@@ -760,7 +760,7 @@ export namespace MyNS {
 		 * A list of segment filters groups which are combined with logical `AND`
 		 * operator.
 		 */
-		orFiltersForSegment?: Array<OrFiltersForSegment>;
+		orFiltersForSegment?: Array<OrFiltersForSegment> | null;
 	}
 
 
@@ -772,7 +772,7 @@ export namespace MyNS {
 		 * There can be a maximum of 5 requests. All requests should have the same
 		 * `dateRanges`, `viewId`, `segments`, `samplingLevel`, and `cohortGroup`.
 		 */
-		reportRequests?: Array<ReportRequest>;
+		reportRequests?: Array<ReportRequest> | null;
 
 		/**
 		 * Enables
@@ -787,7 +787,7 @@ export namespace MyNS {
 		 * documentation](/analytics/devguides/reporting/core/v4/limits-quotas#analytics_reporting_api_v4)
 		 * for details.
 		 */
-		useResourceQuotas?: boolean;
+		useResourceQuotas?: boolean | null;
 	}
 
 
@@ -809,7 +809,7 @@ export namespace MyNS {
 		 * }]
 		 * }
 		 */
-		cohortGroup?: CohortGroup;
+		cohortGroup?: CohortGroup | null;
 
 		/**
 		 * Date ranges in the request. The request can have a maximum of 2 date
@@ -824,7 +824,7 @@ export namespace MyNS {
 		 * [ReportRequest](#ReportRequest) within a `batchGet` method must
 		 * contain the same `dateRanges` definition.
 		 */
-		dateRanges?: Array<DateRange>;
+		dateRanges?: Array<DateRange> | null;
 
 		/**
 		 * The dimension filter clauses for filtering Dimension Values. They are
@@ -832,13 +832,13 @@ export namespace MyNS {
 		 * before any dimensions are aggregated, so that the returned metrics
 		 * represent the total for only the relevant dimensions.
 		 */
-		dimensionFilterClauses?: Array<DimensionFilterClause>;
+		dimensionFilterClauses?: Array<DimensionFilterClause> | null;
 
 		/**
 		 * The dimensions requested.
 		 * Requests can have a total of 9 dimensions.
 		 */
-		dimensions?: Array<Dimension>;
+		dimensions?: Array<Dimension> | null;
 
 		/**
 		 * Dimension or metric filters that restrict the data returned for your
@@ -850,26 +850,26 @@ export namespace MyNS {
 		 * [Filters
 		 * reference](https://developers.google.com/analytics/devguides/reporting/core/v3/reference#filters).
 		 */
-		filtersExpression?: string;
+		filtersExpression?: string | null;
 
 		/**
 		 * If set to true, hides the total of all metrics for all the matching rows,
 		 * for every date range. The default false and will return the totals.
 		 */
-		hideTotals?: boolean;
+		hideTotals?: boolean | null;
 
 		/**
 		 * If set to true, hides the minimum and maximum across all matching rows.
 		 * The default is false and the value ranges are returned.
 		 */
-		hideValueRanges?: boolean;
+		hideValueRanges?: boolean | null;
 
 		/**
 		 * If set to false, the response does not include rows if all the retrieved
 		 * metrics are equal to zero. The default is false which will exclude these
 		 * rows.
 		 */
-		includeEmptyRows?: boolean;
+		includeEmptyRows?: boolean | null;
 
 		/**
 		 * The metric filter clauses. They are logically combined with the `AND`
@@ -877,21 +877,21 @@ export namespace MyNS {
 		 * comparing date range. Note that filtering on metrics occurs after the
 		 * metrics are aggregated.
 		 */
-		metricFilterClauses?: Array<MetricFilterClause>;
+		metricFilterClauses?: Array<MetricFilterClause> | null;
 
 		/**
 		 * The metrics requested.
 		 * Requests must specify at least one metric. Requests can have a
 		 * total of 10 metrics.
 		 */
-		metrics?: Array<Metric>;
+		metrics?: Array<Metric> | null;
 
 		/**
 		 * Sort order on output rows. To compare two rows, the elements of the
 		 * following are applied in order until a difference is found.  All date
 		 * ranges in the output get the same row order.
 		 */
-		orderBys?: Array<OrderBy>;
+		orderBys?: Array<OrderBy> | null;
 
 		/**
 		 * Page size is for paging and specifies the maximum number of returned rows.
@@ -903,7 +903,7 @@ export namespace MyNS {
 		 * so when segmenting only by country, you can't get more than 300 rows,
 		 * even if you set `pageSize` to a higher value.
 		 */
-		pageSize?: number;
+		pageSize?: number | null;
 
 		/**
 		 * A continuation token to get the next page of the results. Adding this to
@@ -911,10 +911,10 @@ export namespace MyNS {
 		 * be the value returned in the nextPageToken parameter in the response to
 		 * the GetReports request.
 		 */
-		pageToken?: string;
+		pageToken?: string | null;
 
 		/** The pivot definitions. Requests can have a maximum of 2 pivots. */
-		pivots?: Array<Pivot>;
+		pivots?: Array<Pivot> | null;
 
 		/**
 		 * The desired report
@@ -925,7 +925,7 @@ export namespace MyNS {
 		 * [developer guide](/analytics/devguides/reporting/core/v4/basics#sampling)
 		 * for details.
 		 */
-		samplingLevel?: ReportRequestSamplingLevel;
+		samplingLevel?: ReportRequestSamplingLevel | null;
 
 		/**
 		 * Segment the data returned for the request. A segment definition helps look
@@ -934,7 +934,7 @@ export namespace MyNS {
 		 * `batchGet` method must contain the same `segments` definition. Requests
 		 * with segments must have the `ga:segment` dimension.
 		 */
-		segments?: Array<Segment>;
+		segments?: Array<Segment> | null;
 
 		/**
 		 * The Analytics
@@ -942,7 +942,7 @@ export namespace MyNS {
 		 * from which to retrieve data. Every [ReportRequest](#ReportRequest)
 		 * within a `batchGet` method must contain the same `viewId`.
 		 */
-		viewId?: string;
+		viewId?: string | null;
 	}
 
 
@@ -956,13 +956,13 @@ export namespace MyNS {
 		 * The repeated set of filters. They are logically combined based on the
 		 * operator specified.
 		 */
-		filters?: Array<MetricFilter>;
+		filters?: Array<MetricFilter> | null;
 
 		/**
 		 * The operator for combining multiple metric filters. If unspecified, it is
 		 * treated as an `OR`.
 		 */
-		operator?: DimensionFilterClauseOperator;
+		operator?: DimensionFilterClauseOperator | null;
 	}
 
 
@@ -970,20 +970,20 @@ export namespace MyNS {
 	export interface MetricFilter {
 
 		/** The value to compare against. */
-		comparisonValue?: string;
+		comparisonValue?: string | null;
 
 		/**
 		 * The metric that will be filtered on. A metricFilter must contain a metric
 		 * name. A metric name can be an alias earlier defined as a metric or it can
 		 * also be a metric expression.
 		 */
-		metricName?: string;
+		metricName?: string | null;
 
 		/**
 		 * Logical `NOT` operator. If this boolean is set to true, then the matching
 		 * metric values will be excluded in the report. The default is false.
 		 */
-		not?: boolean;
+		not?: boolean | null;
 
 		/**
 		 * Is the metric `EQUAL`, `LESS_THAN` or `GREATER_THAN` the
@@ -991,7 +991,7 @@ export namespace MyNS {
 		 * `IS_MISSING`, checks if the metric is missing and would ignore the
 		 * comparisonValue.
 		 */
-		operator?: MetricFilterOperator;
+		operator?: MetricFilterOperator | null;
 	}
 
 	export enum MetricFilterOperator { OPERATOR_UNSPECIFIED = 0, EQUAL = 1, LESS_THAN = 2, GREATER_THAN = 3, IS_MISSING = 4 }
@@ -1011,7 +1011,7 @@ export namespace MyNS {
 		 * a complex expression which cannot be used in filtering and sorting.
 		 * The alias is also used in the response column header.
 		 */
-		alias?: string;
+		alias?: string | null;
 
 		/**
 		 * A metric expression in the request. An expression is constructed from one
@@ -1023,13 +1023,13 @@ export namespace MyNS {
 		 * Adding mixed `MetricType` (E.g., `CURRENCY` + `PERCENTAGE`) metrics
 		 * will result in unexpected results.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Specifies how the metric expression should be formatted, for example
 		 * `INTEGER`.
 		 */
-		formattingType?: MetricHeaderEntryType;
+		formattingType?: MetricHeaderEntryType | null;
 	}
 
 
@@ -1042,13 +1042,13 @@ export namespace MyNS {
 		 * Note, that you can only specify one field for sort here. For example,
 		 * `ga:browser, ga:city` is not valid.
 		 */
-		fieldName?: string;
+		fieldName?: string | null;
 
 		/** The order type. The default orderType is `VALUE`. */
-		orderType?: OrderByOrderType;
+		orderType?: OrderByOrderType | null;
 
 		/** The sorting order for the field. */
-		sortOrder?: OrderBySortOrder;
+		sortOrder?: OrderBySortOrder | null;
 	}
 
 	export enum OrderByOrderType { ORDER_TYPE_UNSPECIFIED = 0, VALUE = 1, DELTA = 2, SMART = 3, HISTOGRAM_BUCKET = 4, DIMENSION_AS_INTEGER = 5 }
@@ -1072,26 +1072,26 @@ export namespace MyNS {
 		 * specify key filters to restrict `ga:browser` to only "IE" or "Firefox",
 		 * then only those two browsers would show up as columns.
 		 */
-		dimensionFilterClauses?: Array<DimensionFilterClause>;
+		dimensionFilterClauses?: Array<DimensionFilterClause> | null;
 
 		/**
 		 * A list of dimensions to show as pivot columns. A Pivot can have a maximum
 		 * of 4 dimensions. Pivot dimensions are part of the restriction on the
 		 * total number of dimensions allowed in the request.
 		 */
-		dimensions?: Array<Dimension>;
+		dimensions?: Array<Dimension> | null;
 
 		/**
 		 * Specifies the maximum number of groups to return.
 		 * The default value is 10, also the maximum value is 1,000.
 		 */
-		maxGroupCount?: number;
+		maxGroupCount?: number | null;
 
 		/**
 		 * The pivot metrics. Pivot metrics are part of the
 		 * restriction on total number of metrics allowed in the request.
 		 */
-		metrics?: Array<Metric>;
+		metrics?: Array<Metric> | null;
 
 		/**
 		 * If k metrics were requested, then the response will contain some
@@ -1107,7 +1107,7 @@ export namespace MyNS {
 		 * The following let you choose which of the groups of k columns are
 		 * included in the response.
 		 */
-		startGroup?: number;
+		startGroup?: number | null;
 	}
 
 	export enum ReportRequestSamplingLevel { SAMPLING_UNSPECIFIED = 0, DEFAULT = 1, SMALL = 2, LARGE = 3 }
@@ -1124,10 +1124,10 @@ export namespace MyNS {
 		 * Dynamic segment definition for defining the segment within the request.
 		 * A segment can select users, sessions or both.
 		 */
-		dynamicSegment?: DynamicSegment;
+		dynamicSegment?: DynamicSegment | null;
 
 		/** The segment ID of a built-in or custom segment, for example `gaid::-3`. */
-		segmentId?: string;
+		segmentId?: string | null;
 	}
 
 
@@ -1141,16 +1141,16 @@ export namespace MyNS {
 		 * The amount of resource quota tokens deducted to execute the query. Includes
 		 * all responses.
 		 */
-		queryCost?: number;
+		queryCost?: number | null;
 
 		/** Responses corresponding to each of the request. */
-		reports?: Array<Report>;
+		reports?: Array<Report> | null;
 
 		/**
 		 * The resource quota tokens remaining for the property after the request is
 		 * completed.
 		 */
-		resourceQuotasRemaining?: ResourceQuotasRemaining;
+		resourceQuotasRemaining?: ResourceQuotasRemaining | null;
 	}
 
 
@@ -1158,13 +1158,13 @@ export namespace MyNS {
 	export interface Report {
 
 		/** Column headers. */
-		columnHeader?: ColumnHeader;
+		columnHeader?: ColumnHeader | null;
 
 		/** The data part of the report. */
-		data?: ReportData;
+		data?: ReportData | null;
 
 		/** Page token to retrieve the next page of results in the list. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1175,34 +1175,34 @@ export namespace MyNS {
 		 * The last time the data in the report was refreshed. All the hits received
 		 * before this timestamp are included in the calculation of the report.
 		 */
-		dataLastRefreshed?: string;
+		dataLastRefreshed?: string | null;
 
 		/**
 		 * Indicates if response to this request is golden or not. Data is
 		 * golden when the exact same request will not produce any new results if
 		 * asked at a later point in time.
 		 */
-		isDataGolden?: boolean;
+		isDataGolden?: boolean | null;
 
 		/**
 		 * Minimum and maximum values seen over all matching rows. These are both
 		 * empty when `hideValueRanges` in the request is false, or when
 		 * rowCount is zero.
 		 */
-		maximums?: Array<DateRangeValues>;
+		maximums?: Array<DateRangeValues> | null;
 
 		/**
 		 * Minimum and maximum values seen over all matching rows. These are both
 		 * empty when `hideValueRanges` in the request is false, or when
 		 * rowCount is zero.
 		 */
-		minimums?: Array<DateRangeValues>;
+		minimums?: Array<DateRangeValues> | null;
 
 		/** Total number of matching rows for this query. */
-		rowCount?: number;
+		rowCount?: number | null;
 
 		/** There's one ReportRow for every unique combination of dimensions. */
-		rows?: Array<ReportRow>;
+		rows?: Array<ReportRow> | null;
 
 		/**
 		 * If the results are
@@ -1212,7 +1212,7 @@ export namespace MyNS {
 		 * [developer guide](/analytics/devguides/reporting/core/v4/basics#sampling)
 		 * for details.
 		 */
-		samplesReadCounts?: Array<string>;
+		samplesReadCounts?: Array<string> | null;
 
 		/**
 		 * If the results are
@@ -1223,7 +1223,7 @@ export namespace MyNS {
 		 * [developer guide](/analytics/devguides/reporting/core/v4/basics#sampling)
 		 * for details.
 		 */
-		samplingSpaceSizes?: Array<string>;
+		samplingSpaceSizes?: Array<string> | null;
 
 		/**
 		 * For each requested date range, for the set of all rows that match
@@ -1235,7 +1235,7 @@ export namespace MyNS {
 		 * `3 / ((sum of all relevant ga:sessions) + 2)`.
 		 * Totals are computed before pagination.
 		 */
-		totals?: Array<DateRangeValues>;
+		totals?: Array<DateRangeValues> | null;
 	}
 
 
@@ -1243,10 +1243,10 @@ export namespace MyNS {
 	export interface ReportRow {
 
 		/** List of requested dimensions. */
-		dimensions?: Array<string>;
+		dimensions?: Array<string> | null;
 
 		/** List of metrics for each requested DateRange. */
-		metrics?: Array<DateRangeValues>;
+		metrics?: Array<DateRangeValues> | null;
 	}
 
 
@@ -1257,10 +1257,10 @@ export namespace MyNS {
 	export interface ResourceQuotasRemaining {
 
 		/** Daily resource quota remaining remaining. */
-		dailyQuotaTokensRemaining?: number;
+		dailyQuotaTokensRemaining?: number | null;
 
 		/** Hourly resource quota tokens remaining. */
-		hourlyQuotaTokensRemaining?: number;
+		hourlyQuotaTokensRemaining?: number | null;
 	}
 
 
@@ -1272,21 +1272,21 @@ export namespace MyNS {
 		 * types will be returned in the response. If empty, all activies will be
 		 * returned.
 		 */
-		activityTypes?: Array<ActivityActivityType>;
+		activityTypes?: Array<ActivityActivityType> | null;
 
 		/**
 		 * A contiguous set of days: startDate, startDate + 1 day, ..., endDate.
 		 * The start and end dates are specified in
 		 * [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) date format `YYYY-MM-DD`.
 		 */
-		dateRange?: DateRange;
+		dateRange?: DateRange | null;
 
 		/**
 		 * Page size is for paging and specifies the maximum number of returned rows.
 		 * Page size should be > 0. If the value is 0 or if the field isn't specified,
 		 * the request returns the default of 1000 rows per page.
 		 */
-		pageSize?: number;
+		pageSize?: number | null;
 
 		/**
 		 * A continuation token to get the next page of the results. Adding this to
@@ -1294,10 +1294,10 @@ export namespace MyNS {
 		 * be the value returned in the nextPageToken parameter in the response to
 		 * the [SearchUserActivityRequest](#SearchUserActivityRequest) request.
 		 */
-		pageToken?: string;
+		pageToken?: string | null;
 
 		/** Contains information to identify a particular user uniquely. */
-		user?: User;
+		user?: User | null;
 
 		/**
 		 * Required. The Analytics
@@ -1306,7 +1306,7 @@ export namespace MyNS {
 		 * [SearchUserActivityRequest](#SearchUserActivityRequest) must contain the
 		 * `viewId`.
 		 */
-		viewId?: string;
+		viewId?: string | null;
 	}
 
 
@@ -1317,10 +1317,10 @@ export namespace MyNS {
 		 * Type of the user in the request. The field `userId` is associated with this
 		 * type.
 		 */
-		type?: UserType;
+		type?: UserType | null;
 
 		/** Unique Id of the user for which the data is being requested. */
-		userId?: string;
+		userId?: string | null;
 	}
 
 	export enum UserType { USER_ID_TYPE_UNSPECIFIED = 0, USER_ID = 1, CLIENT_ID = 2 }
@@ -1334,7 +1334,7 @@ export namespace MyNS {
 		 * [SearchUserActivityRequest](#SearchUserActivityRequest) to retrieve the
 		 * next page.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/**
 		 * This field represents the
@@ -1343,13 +1343,13 @@ export namespace MyNS {
 		 * [developer guide](/analytics/devguides/reporting/core/v4/basics#sampling)
 		 * for details.
 		 */
-		sampleRate?: number;
+		sampleRate?: number | null;
 
 		/** Each record represents a session (device details, duration, etc). */
-		sessions?: Array<UserActivitySession>;
+		sessions?: Array<UserActivitySession> | null;
 
 		/** Total rows returned by this query (across different pages). */
-		totalRows?: number;
+		totalRows?: number | null;
 	}
 
 
@@ -1360,26 +1360,26 @@ export namespace MyNS {
 	export interface UserActivitySession {
 
 		/** Represents a detailed view into each of the activity in this session. */
-		activities?: Array<Activity>;
+		activities?: Array<Activity> | null;
 
 		/**
 		 * The data source of a hit. By default, hits sent from analytics.js are
 		 * reported as "web" and hits sent from the mobile SDKs are reported as "app".
 		 * These values can be overridden in the Measurement Protocol.
 		 */
-		dataSource?: string;
+		dataSource?: string | null;
 
 		/** The type of device used: "mobile", "tablet" etc. */
-		deviceCategory?: string;
+		deviceCategory?: string | null;
 
 		/** Platform on which the activity happened: "android", "ios" etc. */
-		platform?: string;
+		platform?: string | null;
 
 		/** Date of this session in ISO-8601 format. */
-		sessionDate?: string;
+		sessionDate?: string | null;
 
 		/** Unique ID of the session. */
-		sessionId?: string;
+		sessionId?: string | null;
 	}
 
 	@Injectable()

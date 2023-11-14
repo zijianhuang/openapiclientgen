@@ -11,10 +11,10 @@ export namespace MyNS {
 		 * [Learn
 		 * more](https://developers.google.com/analytics/devguides/collection/android/v4/campaigns#campaign-params)
 		 */
-		googlePlayAnalytics?: GooglePlayAnalytics;
+		googlePlayAnalytics?: GooglePlayAnalytics | null;
 
 		/** Parameters for iTunes Connect App Analytics. */
-		itunesConnectAnalytics?: ITunesConnectAnalytics;
+		itunesConnectAnalytics?: ITunesConnectAnalytics | null;
 	}
 
 
@@ -31,31 +31,31 @@ export namespace MyNS {
 		 * to measure Google AdWords ads. This value is generated dynamically and
 		 * should never be modified.
 		 */
-		gclid?: string;
+		gclid?: string | null;
 
 		/**
 		 * Campaign name; used for keyword analysis to identify a specific product
 		 * promotion or strategic campaign.
 		 */
-		utmCampaign?: string;
+		utmCampaign?: string | null;
 
 		/**
 		 * Campaign content; used for A/B testing and content-targeted ads to
 		 * differentiate ads or links that point to the same URL.
 		 */
-		utmContent?: string;
+		utmContent?: string | null;
 
 		/** Campaign medium; used to identify a medium such as email or cost-per-click. */
-		utmMedium?: string;
+		utmMedium?: string | null;
 
 		/**
 		 * Campaign source; used to identify a search engine, newsletter, or other
 		 * source.
 		 */
-		utmSource?: string;
+		utmSource?: string | null;
 
 		/** Campaign term; used with paid search to supply the keywords for ads. */
-		utmTerm?: string;
+		utmTerm?: string | null;
 	}
 
 
@@ -63,22 +63,22 @@ export namespace MyNS {
 	export interface ITunesConnectAnalytics {
 
 		/** Affiliate token used to create affiliate-coded links. */
-		at?: string;
+		at?: string | null;
 
 		/**
 		 * Campaign text that developers can optionally add to any link in order to
 		 * track sales from a specific marketing campaign.
 		 */
-		ct?: string;
+		ct?: string | null;
 
 		/** iTune media types, including music, podcasts, audiobooks and so on. */
-		mt?: string;
+		mt?: string | null;
 
 		/**
 		 * Provider token that enables analytics for Dynamic Links from within iTunes
 		 * Connect.
 		 */
-		pt?: string;
+		pt?: string | null;
 	}
 
 
@@ -86,19 +86,19 @@ export namespace MyNS {
 	export interface AndroidInfo {
 
 		/** Link to open on Android if the app is not installed. */
-		androidFallbackLink?: string;
+		androidFallbackLink?: string | null;
 
 		/** If specified, this overrides the ‘link’ parameter on Android. */
-		androidLink?: string;
+		androidLink?: string | null;
 
 		/**
 		 * Minimum version code for the Android app. If the installed app’s version
 		 * code is lower, then the user is taken to the Play Store.
 		 */
-		androidMinPackageVersionCode?: string;
+		androidMinPackageVersionCode?: string | null;
 
 		/** Android package name of the app. */
-		androidPackageName?: string;
+		androidPackageName?: string | null;
 	}
 
 
@@ -106,7 +106,7 @@ export namespace MyNS {
 	export interface CreateManagedShortLinkRequest {
 
 		/** Information about a Dynamic Link. */
-		dynamicLinkInfo?: DynamicLinkInfo;
+		dynamicLinkInfo?: DynamicLinkInfo | null;
 
 		/**
 		 * Full long Dynamic Link URL with desired query parameters specified.
@@ -115,7 +115,7 @@ export namespace MyNS {
 		 * [Learn
 		 * more](https://firebase.google.com/docs/reference/dynamic-links/link-shortener).
 		 */
-		longDynamicLink?: string;
+		longDynamicLink?: string | null;
 
 		/**
 		 * Link name to associate with the link. It's used for marketer to identify
@@ -123,13 +123,13 @@ export namespace MyNS {
 		 * (https://console.firebase.google.com/).
 		 * Links must be named to be tracked.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Google SDK version. Version takes the form "$major.$minor.$patch" */
-		sdkVersion?: string;
+		sdkVersion?: string | null;
 
 		/** Short Dynamic Link suffix. */
-		suffix?: Suffix;
+		suffix?: Suffix | null;
 	}
 
 
@@ -137,13 +137,13 @@ export namespace MyNS {
 	export interface DynamicLinkInfo {
 
 		/** Tracking parameters supported by Dynamic Link. */
-		analyticsInfo?: AnalyticsInfo;
+		analyticsInfo?: AnalyticsInfo | null;
 
 		/** Android related attributes to the Dynamic Link. */
-		androidInfo?: AndroidInfo;
+		androidInfo?: AndroidInfo | null;
 
 		/** Desktop related attributes to the Dynamic Link. */
-		desktopInfo?: DesktopInfo;
+		desktopInfo?: DesktopInfo | null;
 
 		/**
 		 * E.g. https://maps.app.goo.gl, https://maps.page.link, https://g.co/maps
@@ -151,7 +151,7 @@ export namespace MyNS {
 		 * j/c/g/firebase/dynamiclinks/uri/DdlDomain.java
 		 * Will fallback to dynamic_link_domain is this field is missing
 		 */
-		domainUriPrefix?: string;
+		domainUriPrefix?: string | null;
 
 		/**
 		 * Dynamic Links domain that the project owns, e.g. abcd.app.goo.gl
@@ -160,10 +160,10 @@ export namespace MyNS {
 		 * how to set up Dynamic Link domain associated with your Firebase project.
 		 * Required if missing domain_uri_prefix.
 		 */
-		dynamicLinkDomain?: string;
+		dynamicLinkDomain?: string | null;
 
 		/** iOS related attributes to the Dynamic Link.. */
-		iosInfo?: IosInfo;
+		iosInfo?: IosInfo | null;
 
 		/**
 		 * The link your app will open, You can specify any URL your app can handle.
@@ -172,16 +172,16 @@ export namespace MyNS {
 		 * [documentation](https://firebase.google.com/docs/dynamic-links/create-manually).
 		 * Required.
 		 */
-		link?: string;
+		link?: string | null;
 
 		/** Information of navigation behavior. */
-		navigationInfo?: NavigationInfo;
+		navigationInfo?: NavigationInfo | null;
 
 		/**
 		 * Parameters for social meta tag params.
 		 * Used to set meta tag data for link previews on social sites.
 		 */
-		socialMetaTagInfo?: SocialMetaTagInfo;
+		socialMetaTagInfo?: SocialMetaTagInfo | null;
 	}
 
 
@@ -189,7 +189,7 @@ export namespace MyNS {
 	export interface DesktopInfo {
 
 		/** Link to open on desktop. */
-		desktopFallbackLink?: string;
+		desktopFallbackLink?: string | null;
 	}
 
 
@@ -197,29 +197,29 @@ export namespace MyNS {
 	export interface IosInfo {
 
 		/** iOS App Store ID. */
-		iosAppStoreId?: string;
+		iosAppStoreId?: string | null;
 
 		/** iOS bundle ID of the app. */
-		iosBundleId?: string;
+		iosBundleId?: string | null;
 
 		/**
 		 * Custom (destination) scheme to use for iOS. By default, we’ll use the
 		 * bundle ID as the custom scheme. Developer can override this behavior using
 		 * this param.
 		 */
-		iosCustomScheme?: string;
+		iosCustomScheme?: string | null;
 
 		/** Link to open on iOS if the app is not installed. */
-		iosFallbackLink?: string;
+		iosFallbackLink?: string | null;
 
 		/** iPad bundle ID of the app. */
-		iosIpadBundleId?: string;
+		iosIpadBundleId?: string | null;
 
 		/** If specified, this overrides the ios_fallback_link value on iPads. */
-		iosIpadFallbackLink?: string;
+		iosIpadFallbackLink?: string | null;
 
 		/** iOS minimum version. */
-		iosMinimumVersion?: string;
+		iosMinimumVersion?: string | null;
 	}
 
 
@@ -230,7 +230,7 @@ export namespace MyNS {
 		 * If this option is on, FDL click will be forced to redirect rather than
 		 * show an interstitial page.
 		 */
-		enableForcedRedirect?: boolean;
+		enableForcedRedirect?: boolean | null;
 	}
 
 
@@ -241,13 +241,13 @@ export namespace MyNS {
 	export interface SocialMetaTagInfo {
 
 		/** A short description of the link. Optional. */
-		socialDescription?: string;
+		socialDescription?: string | null;
 
 		/** An image url string. Optional. */
-		socialImageLink?: string;
+		socialImageLink?: string | null;
 
 		/** Title to be displayed. Optional. */
-		socialTitle?: string;
+		socialTitle?: string | null;
 	}
 
 
@@ -255,10 +255,10 @@ export namespace MyNS {
 	export interface Suffix {
 
 		/** Only applies to Option.CUSTOM. */
-		customSuffix?: string;
+		customSuffix?: string | null;
 
 		/** Suffix option. */
-		option?: SuffixOption;
+		option?: SuffixOption | null;
 	}
 
 	export enum SuffixOption { OPTION_UNSPECIFIED = 0, UNGUESSABLE = 1, SHORT = 2, CUSTOM = 3 }
@@ -268,13 +268,13 @@ export namespace MyNS {
 	export interface CreateManagedShortLinkResponse {
 
 		/** Managed Short Link. */
-		managedShortLink?: ManagedShortLink;
+		managedShortLink?: ManagedShortLink | null;
 
 		/** Preview link to show the link flow chart. (debug info.) */
-		previewLink?: string;
+		previewLink?: string | null;
 
 		/** Information about potential warnings on link creation. */
-		warning?: Array<DynamicLinkWarning>;
+		warning?: Array<DynamicLinkWarning> | null;
 	}
 
 
@@ -282,28 +282,28 @@ export namespace MyNS {
 	export interface ManagedShortLink {
 
 		/** Creation timestamp of the short link. */
-		creationTime?: string;
+		creationTime?: string | null;
 
 		/** Attributes that have been flagged about this short url. */
-		flaggedAttribute?: Array<string>;
+		flaggedAttribute?: Array<string> | null;
 
 		/** Information about a Dynamic Link. */
-		info?: DynamicLinkInfo;
+		info?: DynamicLinkInfo | null;
 
 		/**
 		 * Short durable link url, for example, "https://sample.app.goo.gl/xyz123".
 		 * Required.
 		 */
-		link?: string;
+		link?: string | null;
 
 		/**
 		 * Link name defined by the creator.
 		 * Required.
 		 */
-		linkName?: string;
+		linkName?: string | null;
 
 		/** Visibility status of link. */
-		visibility?: ManagedShortLinkVisibility;
+		visibility?: ManagedShortLinkVisibility | null;
 	}
 
 	export enum ManagedShortLinkVisibility { UNSPECIFIED_VISIBILITY = 0, UNARCHIVED = 1, ARCHIVED = 2, NEVER_SHOWN = 3 }
@@ -313,13 +313,13 @@ export namespace MyNS {
 	export interface DynamicLinkWarning {
 
 		/** The warning code. */
-		warningCode?: DynamicLinkWarningWarningCode;
+		warningCode?: DynamicLinkWarningWarningCode | null;
 
 		/** The document describing the warning, and helps resolve. */
-		warningDocumentLink?: string;
+		warningDocumentLink?: string | null;
 
 		/** The warning message to help developers improve their requests. */
-		warningMessage?: string;
+		warningMessage?: string | null;
 	}
 
 	export enum DynamicLinkWarningWarningCode { CODE_UNSPECIFIED = 0, NOT_IN_PROJECT_ANDROID_PACKAGE_NAME = 1, NOT_INTEGER_ANDROID_PACKAGE_MIN_VERSION = 2, UNNECESSARY_ANDROID_PACKAGE_MIN_VERSION = 3, NOT_URI_ANDROID_LINK = 4, UNNECESSARY_ANDROID_LINK = 5, NOT_URI_ANDROID_FALLBACK_LINK = 6, BAD_URI_SCHEME_ANDROID_FALLBACK_LINK = 7, NOT_IN_PROJECT_IOS_BUNDLE_ID = 8, NOT_IN_PROJECT_IPAD_BUNDLE_ID = 9, UNNECESSARY_IOS_URL_SCHEME = 10, NOT_NUMERIC_IOS_APP_STORE_ID = 11, UNNECESSARY_IOS_APP_STORE_ID = 12, NOT_URI_IOS_FALLBACK_LINK = 13, BAD_URI_SCHEME_IOS_FALLBACK_LINK = 14, NOT_URI_IPAD_FALLBACK_LINK = 15, BAD_URI_SCHEME_IPAD_FALLBACK_LINK = 16, BAD_DEBUG_PARAM = 17, BAD_AD_PARAM = 18, DEPRECATED_PARAM = 19, UNRECOGNIZED_PARAM = 20, TOO_LONG_PARAM = 21, NOT_URI_SOCIAL_IMAGE_LINK = 22, BAD_URI_SCHEME_SOCIAL_IMAGE_LINK = 23, NOT_URI_SOCIAL_URL = 24, BAD_URI_SCHEME_SOCIAL_URL = 25, LINK_LENGTH_TOO_LONG = 26, LINK_WITH_FRAGMENTS = 27, NOT_MATCHING_IOS_BUNDLE_ID_AND_STORE_ID = 28 }
@@ -329,7 +329,7 @@ export namespace MyNS {
 	export interface CreateShortDynamicLinkRequest {
 
 		/** Information about a Dynamic Link. */
-		dynamicLinkInfo?: DynamicLinkInfo;
+		dynamicLinkInfo?: DynamicLinkInfo | null;
 
 		/**
 		 * Full long Dynamic Link URL with desired query parameters specified.
@@ -338,13 +338,13 @@ export namespace MyNS {
 		 * [Learn
 		 * more](https://firebase.google.com/docs/reference/dynamic-links/link-shortener).
 		 */
-		longDynamicLink?: string;
+		longDynamicLink?: string | null;
 
 		/** Google SDK version. Version takes the form "$major.$minor.$patch" */
-		sdkVersion?: string;
+		sdkVersion?: string | null;
 
 		/** Short Dynamic Link suffix. */
-		suffix?: Suffix;
+		suffix?: Suffix | null;
 	}
 
 
@@ -352,13 +352,13 @@ export namespace MyNS {
 	export interface CreateShortDynamicLinkResponse {
 
 		/** Preview link to show the link flow chart. (debug info.) */
-		previewLink?: string;
+		previewLink?: string | null;
 
 		/** Short Dynamic Link value. e.g. https://abcd.app.goo.gl/wxyz */
-		shortLink?: string;
+		shortLink?: string | null;
 
 		/** Information about potential warnings on link creation. */
-		warning?: Array<DynamicLinkWarning>;
+		warning?: Array<DynamicLinkWarning> | null;
 	}
 
 
@@ -366,16 +366,16 @@ export namespace MyNS {
 	export interface DeviceInfo {
 
 		/** Device model name. */
-		deviceModelName?: string;
+		deviceModelName?: string | null;
 
 		/** Device language code setting. */
-		languageCode?: string;
+		languageCode?: string | null;
 
 		/**
 		 * Device language code setting obtained by executing JavaScript code in
 		 * WebView.
 		 */
-		languageCodeFromWebview?: string;
+		languageCodeFromWebview?: string | null;
 
 		/**
 		 * Device language code raw setting.
@@ -383,16 +383,16 @@ export namespace MyNS {
 		 * For example WebView returns en_US, but iOS returns en-US.
 		 * Field below will return raw value returned by iOS.
 		 */
-		languageCodeRaw?: string;
+		languageCodeRaw?: string | null;
 
 		/** Device display resolution height. */
-		screenResolutionHeight?: string;
+		screenResolutionHeight?: string | null;
 
 		/** Device display resolution width. */
-		screenResolutionWidth?: string;
+		screenResolutionWidth?: string | null;
 
 		/** Device timezone setting. */
-		timezone?: string;
+		timezone?: string | null;
 	}
 
 
@@ -400,13 +400,13 @@ export namespace MyNS {
 	export interface DynamicLinkEventStat {
 
 		/** The number of times this event occurred. */
-		count?: string;
+		count?: string | null;
 
 		/** Link event. */
-		event?: DynamicLinkEventStatEvent;
+		event?: DynamicLinkEventStatEvent | null;
 
 		/** Requested platform. */
-		platform?: DynamicLinkEventStatPlatform;
+		platform?: DynamicLinkEventStatPlatform | null;
 	}
 
 	export enum DynamicLinkEventStatEvent { DYNAMIC_LINK_EVENT_UNSPECIFIED = 0, CLICK = 1, REDIRECT = 2, APP_INSTALL = 3, APP_FIRST_OPEN = 4, APP_RE_OPEN = 5 }
@@ -418,7 +418,7 @@ export namespace MyNS {
 	export interface DynamicLinkStats {
 
 		/** Dynamic Link event stats. */
-		linkEventStats?: Array<DynamicLinkEventStat>;
+		linkEventStats?: Array<DynamicLinkEventStat> | null;
 	}
 
 
@@ -433,42 +433,42 @@ export namespace MyNS {
 		 * App installation epoch time (https://en.wikipedia.org/wiki/Unix_time).
 		 * This is a client signal for a more accurate weak match.
 		 */
-		appInstallationTime?: string;
+		appInstallationTime?: string | null;
 
 		/** APP bundle ID. */
-		bundleId?: string;
+		bundleId?: string | null;
 
 		/** Signals associated with the device making the request. */
-		device?: DeviceInfo;
+		device?: DeviceInfo | null;
 
 		/**
 		 * iOS version, ie: 9.3.5.
 		 * Consider adding "build".
 		 */
-		iosVersion?: string;
+		iosVersion?: string | null;
 
 		/**
 		 * App post install attribution retrieval information. Disambiguates
 		 * mechanism (iSDK or developer invoked) to retrieve payload from
 		 * clicked link.
 		 */
-		retrievalMethod?: GetIosPostInstallAttributionRequestRetrievalMethod;
+		retrievalMethod?: GetIosPostInstallAttributionRequestRetrievalMethod | null;
 
 		/** Google SDK version. Version takes the form "$major.$minor.$patch" */
-		sdkVersion?: string;
+		sdkVersion?: string | null;
 
 		/**
 		 * Possible unique matched link that server need to check before performing
 		 * fingerprint match. If passed link is short server need to expand the link.
 		 * If link is long server need to vslidate the link.
 		 */
-		uniqueMatchLinkToCheck?: string;
+		uniqueMatchLinkToCheck?: string | null;
 
 		/**
 		 * Strong match page information. Disambiguates between default UI and
 		 * custom page to present when strong match succeeds/fails to find cookie.
 		 */
-		visualStyle?: GetIosPostInstallAttributionRequestVisualStyle;
+		visualStyle?: GetIosPostInstallAttributionRequestVisualStyle | null;
 	}
 
 	export enum GetIosPostInstallAttributionRequestRetrievalMethod { UNKNOWN_PAYLOAD_RETRIEVAL_METHOD = 0, IMPLICIT_WEAK_MATCH = 1, EXPLICIT_WEAK_MATCH = 2, EXPLICIT_STRONG_AFTER_WEAK_MATCH = 3 }
@@ -483,16 +483,16 @@ export namespace MyNS {
 		 * The minimum version for app, specified by dev through ?imv= parameter.
 		 * Return to iSDK to allow app to evaluate if current version meets this.
 		 */
-		appMinimumVersion?: string;
+		appMinimumVersion?: string | null;
 
 		/** The confidence of the returned attribution. */
-		attributionConfidence?: GetIosPostInstallAttributionResponseAttributionConfidence;
+		attributionConfidence?: GetIosPostInstallAttributionResponseAttributionConfidence | null;
 
 		/**
 		 * The deep-link attributed post-install via one of several techniques
 		 * (fingerprint, copy unique).
 		 */
-		deepLink?: string;
+		deepLink?: string | null;
 
 		/**
 		 * User-agent specific custom-scheme URIs for iSDK to open. This will be set
@@ -502,7 +502,7 @@ export namespace MyNS {
 		 * ie: firefox://open-url?url=http://www.example.com
 		 * ie: opera-http://example.com
 		 */
-		externalBrowserDestinationLink?: string;
+		externalBrowserDestinationLink?: string | null;
 
 		/**
 		 * The link to navigate to update the app if min version is not met.
@@ -510,35 +510,35 @@ export namespace MyNS {
 		 * specified by developer) or 2) AppStore URL (from ?isi= parameter, if
 		 * specified), or 3) the payload link (from required link= parameter).
 		 */
-		fallbackLink?: string;
+		fallbackLink?: string | null;
 
 		/**
 		 * Invitation ID attributed post-install via one of several techniques
 		 * (fingerprint, copy unique).
 		 */
-		invitationId?: string;
+		invitationId?: string | null;
 
 		/**
 		 * Instruction for iSDK to attemmpt to perform strong match. For instance,
 		 * if browser does not support/allow cookie or outside of support browsers,
 		 * this will be false.
 		 */
-		isStrongMatchExecutable?: boolean;
+		isStrongMatchExecutable?: boolean | null;
 
 		/**
 		 * Describes why match failed, ie: "discarded due to low confidence".
 		 * This message will be publicly visible.
 		 */
-		matchMessage?: string;
+		matchMessage?: string | null;
 
 		/** Which IP version the request was made from. */
-		requestIpVersion?: GetIosPostInstallAttributionResponseRequestIpVersion;
+		requestIpVersion?: GetIosPostInstallAttributionResponseRequestIpVersion | null;
 
 		/**
 		 * Entire FDL (short or long) attributed post-install via one of several
 		 * techniques (fingerprint, copy unique).
 		 */
-		requestedLink?: string;
+		requestedLink?: string | null;
 
 		/**
 		 * The entire FDL, expanded from a short link. It is the same as the
@@ -547,22 +547,22 @@ export namespace MyNS {
 		 * to a value when requested_link lack them, server determine the best
 		 * fallback_link when requested_link specifies >1 fallback links).
 		 */
-		resolvedLink?: string;
+		resolvedLink?: string | null;
 
 		/** Scion campaign value to be propagated by iSDK to Scion at post-install. */
-		utmCampaign?: string;
+		utmCampaign?: string | null;
 
 		/** Scion content value to be propagated by iSDK to Scion at app-reopen. */
-		utmContent?: string;
+		utmContent?: string | null;
 
 		/** Scion medium value to be propagated by iSDK to Scion at post-install. */
-		utmMedium?: string;
+		utmMedium?: string | null;
 
 		/** Scion source value to be propagated by iSDK to Scion at post-install. */
-		utmSource?: string;
+		utmSource?: string | null;
 
 		/** Scion term value to be propagated by iSDK to Scion at app-reopen. */
-		utmTerm?: string;
+		utmTerm?: string | null;
 	}
 
 	export enum GetIosPostInstallAttributionResponseAttributionConfidence { UNKNOWN_ATTRIBUTION_CONFIDENCE = 0, WEAK = 1, DEFAULT = 2, UNIQUE = 3 }
@@ -577,7 +577,7 @@ export namespace MyNS {
 	export interface GetIosReopenAttributionRequest {
 
 		/** APP bundle ID. */
-		bundleId?: string;
+		bundleId?: string | null;
 
 		/**
 		 * FDL link to be verified from an app universal link open.
@@ -589,10 +589,10 @@ export namespace MyNS {
 		 * 3) Invite FDL.
 		 * e.g. <app_code>.page.link/i/<invite_id_or_alias>
 		 */
-		requestedLink?: string;
+		requestedLink?: string | null;
 
 		/** Google SDK version. Version takes the form "$major.$minor.$patch" */
-		sdkVersion?: string;
+		sdkVersion?: string | null;
 	}
 
 
@@ -606,37 +606,37 @@ export namespace MyNS {
 		 * The deep-link attributed the app universal link open. For both regular
 		 * FDL links and invite FDL links.
 		 */
-		deepLink?: string;
+		deepLink?: string | null;
 
 		/** Optional invitation ID, for only invite typed requested FDL links. */
-		invitationId?: string;
+		invitationId?: string | null;
 
 		/**
 		 * FDL input value of the "&imv=" parameter, minimum app version to be
 		 * returned to Google Firebase SDK running on iOS-9.
 		 */
-		iosMinAppVersion?: string;
+		iosMinAppVersion?: string | null;
 
 		/**
 		 * The entire FDL, expanded from a short link. It is the same as the
 		 * requested_link, if it is long.
 		 */
-		resolvedLink?: string;
+		resolvedLink?: string | null;
 
 		/** Scion campaign value to be propagated by iSDK to Scion at app-reopen. */
-		utmCampaign?: string;
+		utmCampaign?: string | null;
 
 		/** Scion content value to be propagated by iSDK to Scion at app-reopen. */
-		utmContent?: string;
+		utmContent?: string | null;
 
 		/** Scion medium value to be propagated by iSDK to Scion at app-reopen. */
-		utmMedium?: string;
+		utmMedium?: string | null;
 
 		/** Scion source value to be propagated by iSDK to Scion at app-reopen. */
-		utmSource?: string;
+		utmSource?: string | null;
 
 		/** Scion term value to be propagated by iSDK to Scion at app-reopen. */
-		utmTerm?: string;
+		utmTerm?: string | null;
 	}
 
 	@Injectable()
@@ -706,7 +706,7 @@ export namespace MyNS {
 		 * @param {string} sdkVersion Google SDK version. Version takes the form "$major.$minor.$patch"
 		 * @return {void} Successful response
 		 */
-		Firebasedynamiclinks_getLinkStats(dynamicLink: string, durationDays: string, sdkVersion: string): Observable<HttpResponse<string>> {
+		Firebasedynamiclinks_getLinkStats(dynamicLink: string, durationDays: string | null | undefined, sdkVersion: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (dynamicLink == null ? '' : encodeURIComponent(dynamicLink)) + '/linkStats&durationDays=' + (durationDays == null ? '' : encodeURIComponent(durationDays)) + '&sdkVersion=' + (sdkVersion == null ? '' : encodeURIComponent(sdkVersion)), { observe: 'response', responseType: 'text' });
 		}
 	}

@@ -3,15 +3,15 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface BatchCreateVariableResult {
-		errors?: Array<BatchCreateVariableError>;
+		errors?: Array<BatchCreateVariableError> | null;
 	}
 
 
 	/** Provides the error of the batch create variable API. */
 	export interface BatchCreateVariableError {
-		name?: string;
-		code?: number;
-		message?: string;
+		name?: string | null;
+		code?: number | null;
+		message?: string | null;
 	}
 
 	export interface BatchCreateVariableRequest {
@@ -21,12 +21,12 @@ export namespace MyNS {
 
 	/** The variable entry in a list. */
 	export interface VariableEntry {
-		name?: string;
-		dataType?: string;
-		dataSource?: string;
-		defaultValue?: string;
-		description?: string;
-		variableType?: string;
+		name?: string | null;
+		dataType?: string | null;
+		dataSource?: string | null;
+		defaultValue?: string | null;
+		description?: string | null;
+		variableType?: string | null;
 	}
 
 	export interface ValidationException {
@@ -39,21 +39,21 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetVariableResult {
-		variables?: Array<Variable>;
-		errors?: Array<BatchGetVariableError>;
+		variables?: Array<Variable> | null;
+		errors?: Array<BatchGetVariableError> | null;
 	}
 
 
 	/** The variable. */
 	export interface Variable {
-		name?: string;
-		dataType?: VariableDataType;
-		dataSource?: VariableDataSource;
-		defaultValue?: string;
-		description?: string;
-		variableType?: string;
-		lastUpdatedTime?: string;
-		createdTime?: string;
+		name?: string | null;
+		dataType?: VariableDataType | null;
+		dataSource?: VariableDataSource | null;
+		defaultValue?: string | null;
+		description?: string | null;
+		variableType?: string | null;
+		lastUpdatedTime?: string | null;
+		createdTime?: string | null;
 	}
 
 	export enum VariableDataType { STRING = 0, INTEGER = 1, FLOAT = 2, BOOLEAN = 3 }
@@ -63,9 +63,9 @@ export namespace MyNS {
 
 	/** Provides the error of the batch get variable API. */
 	export interface BatchGetVariableError {
-		name?: string;
-		code?: number;
-		message?: string;
+		name?: string | null;
+		code?: number | null;
+		message?: string | null;
 	}
 
 	export interface BatchGetVariableRequest {
@@ -73,20 +73,20 @@ export namespace MyNS {
 	}
 
 	export interface CreateDetectorVersionResult {
-		detectorId?: string;
-		detectorVersionId?: string;
-		status?: CreateDetectorVersionResultStatus;
+		detectorId?: string | null;
+		detectorVersionId?: string | null;
+		status?: CreateDetectorVersionResultStatus | null;
 	}
 
 	export enum CreateDetectorVersionResultStatus { DRAFT = 0, ACTIVE = 1, INACTIVE = 2 }
 
 	export interface CreateDetectorVersionRequest {
 		detectorId: string;
-		description?: string;
-		externalModelEndpoints?: Array<string>;
+		description?: string | null;
+		externalModelEndpoints?: Array<string> | null;
 		rules: Array<Rule>;
-		modelVersions?: Array<ModelVersion>;
-		ruleExecutionMode?: CreateDetectorVersionRequestRuleExecutionMode;
+		modelVersions?: Array<ModelVersion> | null;
+		ruleExecutionMode?: CreateDetectorVersionRequestRuleExecutionMode | null;
 	}
 
 
@@ -113,28 +113,28 @@ export namespace MyNS {
 	}
 
 	export interface CreateModelVersionResult {
-		modelId?: string;
-		modelType?: ModelVersionModelType;
-		modelVersionNumber?: string;
-		status?: string;
+		modelId?: string | null;
+		modelType?: ModelVersionModelType | null;
+		modelVersionNumber?: string | null;
+		status?: string | null;
 	}
 
 	export interface CreateModelVersionRequest {
 		modelId: string;
 		modelType: ModelVersionModelType;
-		description?: string;
+		description?: string | null;
 	}
 
 	export interface CreateRuleResult {
 
 		/** A rule. */
-		rule?: Rule;
+		rule?: Rule | null;
 	}
 
 	export interface CreateRuleRequest {
 		ruleId: string;
 		detectorId: string;
-		description?: string;
+		description?: string | null;
 		expression: string;
 		language: CreateRuleRequestLanguage;
 		outcomes: Array<string>;
@@ -150,8 +150,8 @@ export namespace MyNS {
 		dataType: VariableDataType;
 		dataSource: VariableDataSource;
 		defaultValue: string;
-		description?: string;
-		variableType?: string;
+		description?: string | null;
+		variableType?: string | null;
 	}
 
 	export interface DeleteDetectorResult {
@@ -189,50 +189,50 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDetectorResult {
-		detectorId?: string;
-		detectorVersionSummaries?: Array<DetectorVersionSummary>;
-		nextToken?: string;
+		detectorId?: string | null;
+		detectorVersionSummaries?: Array<DetectorVersionSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** The summary of the detector version. */
 	export interface DetectorVersionSummary {
-		detectorVersionId?: string;
-		status?: CreateDetectorVersionResultStatus;
-		description?: string;
-		lastUpdatedTime?: string;
+		detectorVersionId?: string | null;
+		status?: CreateDetectorVersionResultStatus | null;
+		description?: string | null;
+		lastUpdatedTime?: string | null;
 	}
 
 	export interface DescribeDetectorRequest {
 		detectorId: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface DescribeModelVersionsResult {
-		modelVersionDetails?: Array<ModelVersionDetail>;
-		nextToken?: string;
+		modelVersionDetails?: Array<ModelVersionDetail> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Provides the model version details.  */
 	export interface ModelVersionDetail {
-		modelId?: string;
-		modelType?: ModelVersionModelType;
-		modelVersionNumber?: string;
-		description?: string;
-		status?: string;
+		modelId?: string | null;
+		modelType?: ModelVersionModelType | null;
+		modelVersionNumber?: string | null;
+		description?: string | null;
+		status?: string | null;
 
 		/** The training data source. */
-		trainingDataSource?: TrainingDataSource;
-		modelVariables?: Array<ModelVariable>;
+		trainingDataSource?: TrainingDataSource | null;
+		modelVariables?: Array<ModelVariable> | null;
 
 		/** The label schema. */
-		labelSchema?: LabelSchema;
-		validationMetrics?: MetricsMap;
-		trainingMetrics?: MetricsMap;
-		lastUpdatedTime?: string;
-		createdTime?: string;
+		labelSchema?: LabelSchema | null;
+		validationMetrics?: MetricsMap | null;
+		trainingMetrics?: MetricsMap | null;
+		lastUpdatedTime?: string | null;
+		createdTime?: string | null;
 	}
 
 
@@ -246,7 +246,7 @@ export namespace MyNS {
 	/** The model variable.&gt; */
 	export interface ModelVariable {
 		name: string;
-		index?: number;
+		index?: number | null;
 	}
 
 
@@ -263,24 +263,24 @@ export namespace MyNS {
 	}
 
 	export interface DescribeModelVersionsRequest {
-		modelId?: string;
-		modelVersionNumber?: string;
-		modelType?: ModelVersionModelType;
-		nextToken?: string;
-		maxResults?: number;
+		modelId?: string | null;
+		modelVersionNumber?: string | null;
+		modelType?: ModelVersionModelType | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface GetDetectorVersionResult {
-		detectorId?: string;
-		detectorVersionId?: string;
-		description?: string;
-		externalModelEndpoints?: Array<string>;
-		modelVersions?: Array<ModelVersion>;
-		rules?: Array<Rule>;
-		status?: CreateDetectorVersionResultStatus;
-		lastUpdatedTime?: string;
-		createdTime?: string;
-		ruleExecutionMode?: CreateDetectorVersionRequestRuleExecutionMode;
+		detectorId?: string | null;
+		detectorVersionId?: string | null;
+		description?: string | null;
+		externalModelEndpoints?: Array<string> | null;
+		modelVersions?: Array<ModelVersion> | null;
+		rules?: Array<Rule> | null;
+		status?: CreateDetectorVersionResultStatus | null;
+		lastUpdatedTime?: string | null;
+		createdTime?: string | null;
+		ruleExecutionMode?: CreateDetectorVersionRequestRuleExecutionMode | null;
 	}
 
 	export interface GetDetectorVersionRequest {
@@ -289,47 +289,47 @@ export namespace MyNS {
 	}
 
 	export interface GetDetectorsResult {
-		detectors?: Array<Detector>;
-		nextToken?: string;
+		detectors?: Array<Detector> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** The detector. */
 	export interface Detector {
-		detectorId?: string;
-		description?: string;
-		lastUpdatedTime?: string;
-		createdTime?: string;
+		detectorId?: string | null;
+		description?: string | null;
+		lastUpdatedTime?: string | null;
+		createdTime?: string | null;
 	}
 
 	export interface GetDetectorsRequest {
-		detectorId?: string;
-		nextToken?: string;
-		maxResults?: number;
+		detectorId?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface GetExternalModelsResult {
-		externalModels?: Array<ExternalModel>;
-		nextToken?: string;
+		externalModels?: Array<ExternalModel> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** The Amazon SageMaker model. */
 	export interface ExternalModel {
-		modelEndpoint?: string;
-		modelSource?: ExternalModelModelSource;
+		modelEndpoint?: string | null;
+		modelSource?: ExternalModelModelSource | null;
 
 		/** The role used to invoke external model endpoints. */
-		role?: Role;
+		role?: Role | null;
 
 		/** The model input configuration. */
-		inputConfiguration?: ModelInputConfiguration;
+		inputConfiguration?: ModelInputConfiguration | null;
 
 		/** Provides the model output configuration. */
-		outputConfiguration?: ModelOutputConfiguration;
-		modelEndpointStatus?: ExternalModelModelEndpointStatus;
-		lastUpdatedTime?: string;
-		createdTime?: string;
+		outputConfiguration?: ModelOutputConfiguration | null;
+		modelEndpointStatus?: ExternalModelModelEndpointStatus | null;
+		lastUpdatedTime?: string | null;
+		createdTime?: string | null;
 	}
 
 	export enum ExternalModelModelSource { SAGEMAKER = 0 }
@@ -344,10 +344,10 @@ export namespace MyNS {
 
 	/** The model input configuration. */
 	export interface ModelInputConfiguration {
-		format?: ModelInputConfigurationFormat;
+		format?: ModelInputConfigurationFormat | null;
 		isOpaque: boolean;
-		jsonInputTemplate?: string;
-		csvInputTemplate?: string;
+		jsonInputTemplate?: string | null;
+		csvInputTemplate?: string | null;
 	}
 
 	export enum ModelInputConfigurationFormat { TEXT_CSV = 0, APPLICATION_JSON = 1 }
@@ -356,8 +356,8 @@ export namespace MyNS {
 	/** Provides the model output configuration. */
 	export interface ModelOutputConfiguration {
 		format: ModelOutputConfigurationFormat;
-		jsonKeyToVariableMap?: JsonKeyToVariableMap;
-		csvIndexToVariableMap?: CsvIndexToVariableMap;
+		jsonKeyToVariableMap?: JsonKeyToVariableMap | null;
+		csvIndexToVariableMap?: CsvIndexToVariableMap | null;
 	}
 
 	export enum ModelOutputConfigurationFormat { TEXT_CSV = 0, APPLICATION_JSONLINES = 1 }
@@ -371,17 +371,17 @@ export namespace MyNS {
 	export enum ExternalModelModelEndpointStatus { ASSOCIATED = 0, DISSOCIATED = 1 }
 
 	export interface GetExternalModelsRequest {
-		modelEndpoint?: string;
-		nextToken?: string;
-		maxResults?: number;
+		modelEndpoint?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface GetModelVersionResult {
-		modelId?: string;
-		modelType?: ModelVersionModelType;
-		modelVersionNumber?: string;
-		description?: string;
-		status?: string;
+		modelId?: string | null;
+		modelType?: ModelVersionModelType | null;
+		modelVersionNumber?: string | null;
+		description?: string | null;
+		status?: string | null;
 	}
 
 	export interface GetModelVersionRequest {
@@ -391,58 +391,58 @@ export namespace MyNS {
 	}
 
 	export interface GetModelsResult {
-		nextToken?: string;
-		models?: Array<Model>;
+		nextToken?: string | null;
+		models?: Array<Model> | null;
 	}
 
 
 	/** The model. */
 	export interface Model {
-		modelId?: string;
-		modelType?: ModelVersionModelType;
-		description?: string;
+		modelId?: string | null;
+		modelType?: ModelVersionModelType | null;
+		description?: string | null;
 
 		/** The training data source. */
-		trainingDataSource?: TrainingDataSource;
-		modelVariables?: Array<ModelVariable>;
+		trainingDataSource?: TrainingDataSource | null;
+		modelVariables?: Array<ModelVariable> | null;
 
 		/** The label schema. */
-		labelSchema?: LabelSchema;
-		lastUpdatedTime?: string;
-		createdTime?: string;
+		labelSchema?: LabelSchema | null;
+		lastUpdatedTime?: string | null;
+		createdTime?: string | null;
 	}
 
 	export interface GetModelsRequest {
-		modelType?: ModelVersionModelType;
-		modelId?: string;
-		nextToken?: string;
-		maxResults?: number;
+		modelType?: ModelVersionModelType | null;
+		modelId?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface GetOutcomesResult {
-		outcomes?: Array<Outcome>;
-		nextToken?: string;
+		outcomes?: Array<Outcome> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** The outcome. */
 	export interface Outcome {
-		name?: string;
-		description?: string;
-		lastUpdatedTime?: string;
-		createdTime?: string;
+		name?: string | null;
+		description?: string | null;
+		lastUpdatedTime?: string | null;
+		createdTime?: string | null;
 	}
 
 	export interface GetOutcomesRequest {
-		name?: string;
-		nextToken?: string;
-		maxResults?: number;
+		name?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface GetPredictionResult {
-		outcomes?: Array<string>;
-		modelScores?: Array<ModelScores>;
-		ruleResults?: Array<RuleResult>;
+		outcomes?: Array<string> | null;
+		modelScores?: Array<ModelScores> | null;
+		ruleResults?: Array<RuleResult> | null;
 	}
 
 
@@ -450,8 +450,8 @@ export namespace MyNS {
 	export interface ModelScores {
 
 		/** The model version. */
-		modelVersion?: ModelVersion;
-		scores?: ModelPredictionMap;
+		modelVersion?: ModelVersion | null;
+		scores?: ModelPredictionMap | null;
 	}
 
 	export interface ModelPredictionMap {
@@ -460,16 +460,16 @@ export namespace MyNS {
 
 	/** The rule results. */
 	export interface RuleResult {
-		ruleId?: string;
-		outcomes?: Array<string>;
+		ruleId?: string | null;
+		outcomes?: Array<string> | null;
 	}
 
 	export interface GetPredictionRequest {
 		detectorId: string;
-		detectorVersionId?: string;
+		detectorVersionId?: string | null;
 		eventId: string;
-		eventAttributes?: EventAttributeMap;
-		externalModelEndpointDataBlobs?: ExternalModelEndpointDataBlobMap;
+		eventAttributes?: EventAttributeMap | null;
+		externalModelEndpointDataBlobs?: ExternalModelEndpointDataBlobMap | null;
 	}
 
 	export interface EventAttributeMap {
@@ -479,41 +479,41 @@ export namespace MyNS {
 	}
 
 	export interface GetRulesResult {
-		ruleDetails?: Array<RuleDetail>;
-		nextToken?: string;
+		ruleDetails?: Array<RuleDetail> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** The details of the rule. */
 	export interface RuleDetail {
-		ruleId?: string;
-		description?: string;
-		detectorId?: string;
-		ruleVersion?: string;
-		expression?: string;
-		language?: CreateRuleRequestLanguage;
-		outcomes?: Array<string>;
-		lastUpdatedTime?: string;
-		createdTime?: string;
+		ruleId?: string | null;
+		description?: string | null;
+		detectorId?: string | null;
+		ruleVersion?: string | null;
+		expression?: string | null;
+		language?: CreateRuleRequestLanguage | null;
+		outcomes?: Array<string> | null;
+		lastUpdatedTime?: string | null;
+		createdTime?: string | null;
 	}
 
 	export interface GetRulesRequest {
-		ruleId?: string;
+		ruleId?: string | null;
 		detectorId: string;
-		ruleVersion?: string;
-		nextToken?: string;
-		maxResults?: number;
+		ruleVersion?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface GetVariablesResult {
-		variables?: Array<Variable>;
-		nextToken?: string;
+		variables?: Array<Variable> | null;
+		nextToken?: string | null;
 	}
 
 	export interface GetVariablesRequest {
-		name?: string;
-		nextToken?: string;
-		maxResults?: number;
+		name?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface PutDetectorResult {
@@ -521,7 +521,7 @@ export namespace MyNS {
 
 	export interface PutDetectorRequest {
 		detectorId: string;
-		description?: string;
+		description?: string | null;
 	}
 
 	export interface PutExternalModelResult {
@@ -557,7 +557,7 @@ export namespace MyNS {
 	export interface PutModelRequest {
 		modelId: string;
 		modelType: ModelVersionModelType;
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The training data source.
@@ -578,7 +578,7 @@ export namespace MyNS {
 
 	export interface PutOutcomeRequest {
 		name: string;
-		description?: string;
+		description?: string | null;
 	}
 
 	export interface UpdateDetectorVersionResult {
@@ -589,9 +589,9 @@ export namespace MyNS {
 		detectorVersionId: string;
 		externalModelEndpoints: Array<string>;
 		rules: Array<Rule>;
-		description?: string;
-		modelVersions?: Array<ModelVersion>;
-		ruleExecutionMode?: CreateDetectorVersionRequestRuleExecutionMode;
+		description?: string | null;
+		modelVersions?: Array<ModelVersion> | null;
+		ruleExecutionMode?: CreateDetectorVersionRequestRuleExecutionMode | null;
 	}
 
 	export interface UpdateDetectorVersionMetadataResult {
@@ -641,7 +641,7 @@ export namespace MyNS {
 	export interface UpdateRuleVersionResult {
 
 		/** A rule. */
-		rule?: Rule;
+		rule?: Rule | null;
 	}
 
 	export interface UpdateRuleVersionRequest {
@@ -651,7 +651,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		rule: Rule;
-		description?: string;
+		description?: string | null;
 		expression: string;
 		language: CreateRuleRequestLanguage;
 		outcomes: Array<string>;
@@ -662,9 +662,9 @@ export namespace MyNS {
 
 	export interface UpdateVariableRequest {
 		name: string;
-		defaultValue?: string;
-		description?: string;
-		variableType?: string;
+		defaultValue?: string | null;
+		description?: string | null;
+		variableType?: string | null;
 	}
 
 	export enum RuleExecutionMode { ALL_MATCHED = 0, FIRST_MATCHED = 1 }
@@ -686,8 +686,8 @@ export namespace MyNS {
 
 	/** A pre-formed Amazon SageMaker model input you can include if your detector version includes an imported Amazon SageMaker model endpoint with pass-through input configuration. */
 	export interface ModelEndpointDataBlob {
-		byteBuffer?: string;
-		contentType?: string;
+		byteBuffer?: string | null;
+		contentType?: string | null;
 	}
 
 	export enum ModelInputDataFormat { TEXT_CSV = 0, APPLICATION_JSON = 1 }
@@ -807,7 +807,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeModelVersionsResult} Success
 		 */
-		DescribeModelVersions(maxResults: string, nextToken: string, requestBody: DescribeModelVersionsRequest): Observable<DescribeModelVersionsResult> {
+		DescribeModelVersions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeModelVersionsRequest): Observable<DescribeModelVersionsResult> {
 			return this.http.post<DescribeModelVersionsResult>(this.baseUri + '#X-Amz-Target=AWSHawksNestServiceFacade.DescribeModelVersions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -827,7 +827,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetDetectorsResult} Success
 		 */
-		GetDetectors(maxResults: string, nextToken: string, requestBody: GetDetectorsRequest): Observable<GetDetectorsResult> {
+		GetDetectors(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetDetectorsRequest): Observable<GetDetectorsResult> {
 			return this.http.post<GetDetectorsResult>(this.baseUri + '#X-Amz-Target=AWSHawksNestServiceFacade.GetDetectors?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -838,7 +838,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetExternalModelsResult} Success
 		 */
-		GetExternalModels(maxResults: string, nextToken: string, requestBody: GetExternalModelsRequest): Observable<GetExternalModelsResult> {
+		GetExternalModels(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetExternalModelsRequest): Observable<GetExternalModelsResult> {
 			return this.http.post<GetExternalModelsResult>(this.baseUri + '#X-Amz-Target=AWSHawksNestServiceFacade.GetExternalModels?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -858,7 +858,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetModelsResult} Success
 		 */
-		GetModels(maxResults: string, nextToken: string, requestBody: GetModelsRequest): Observable<GetModelsResult> {
+		GetModels(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetModelsRequest): Observable<GetModelsResult> {
 			return this.http.post<GetModelsResult>(this.baseUri + '#X-Amz-Target=AWSHawksNestServiceFacade.GetModels?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -869,7 +869,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetOutcomesResult} Success
 		 */
-		GetOutcomes(maxResults: string, nextToken: string, requestBody: GetOutcomesRequest): Observable<GetOutcomesResult> {
+		GetOutcomes(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetOutcomesRequest): Observable<GetOutcomesResult> {
 			return this.http.post<GetOutcomesResult>(this.baseUri + '#X-Amz-Target=AWSHawksNestServiceFacade.GetOutcomes?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -889,7 +889,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetRulesResult} Success
 		 */
-		GetRules(maxResults: string, nextToken: string, requestBody: GetRulesRequest): Observable<GetRulesResult> {
+		GetRules(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetRulesRequest): Observable<GetRulesResult> {
 			return this.http.post<GetRulesResult>(this.baseUri + '#X-Amz-Target=AWSHawksNestServiceFacade.GetRules?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -900,7 +900,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetVariablesResult} Success
 		 */
-		GetVariables(maxResults: string, nextToken: string, requestBody: GetVariablesRequest): Observable<GetVariablesResult> {
+		GetVariables(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetVariablesRequest): Observable<GetVariablesResult> {
 			return this.http.post<GetVariablesResult>(this.baseUri + '#X-Amz-Target=AWSHawksNestServiceFacade.GetVariables?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

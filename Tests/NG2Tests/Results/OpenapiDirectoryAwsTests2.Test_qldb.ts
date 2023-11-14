@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CancelJournalKinesisStreamResponse {
-		StreamId?: string;
+		StreamId?: string | null;
 	}
 
 	export interface InvalidParameterException {
@@ -16,11 +16,11 @@ export namespace MyNS {
 	}
 
 	export interface CreateLedgerResponse {
-		Name?: string;
-		Arn?: string;
-		State?: CreateLedgerResponseState;
-		CreationDateTime?: Date;
-		DeletionProtection?: boolean;
+		Name?: string | null;
+		Arn?: string | null;
+		State?: CreateLedgerResponseState | null;
+		CreationDateTime?: Date | null;
+		DeletionProtection?: boolean | null;
 	}
 
 	export enum CreateLedgerResponseState { CREATING = 0, ACTIVE = 1, DELETING = 2, DELETED = 3 }
@@ -37,19 +37,19 @@ export namespace MyNS {
 	export interface DescribeJournalKinesisStreamResponse {
 
 		/** The information about an Amazon QLDB journal stream, including the Amazon Resource Name (ARN), stream name, creation time, current status, and the parameters of your original stream creation request. */
-		Stream?: JournalKinesisStreamDescription;
+		Stream?: JournalKinesisStreamDescription | null;
 	}
 
 
 	/** The information about an Amazon QLDB journal stream, including the Amazon Resource Name (ARN), stream name, creation time, current status, and the parameters of your original stream creation request. */
 	export interface JournalKinesisStreamDescription {
 		LedgerName: string;
-		CreationTime?: Date;
-		InclusiveStartTime?: Date;
-		ExclusiveEndTime?: Date;
+		CreationTime?: Date | null;
+		InclusiveStartTime?: Date | null;
+		ExclusiveEndTime?: Date | null;
 		RoleArn: string;
 		StreamId: string;
-		Arn?: string;
+		Arn?: string | null;
 		Status: JournalKinesisStreamDescriptionStatus;
 
 		/**
@@ -57,7 +57,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		KinesisConfiguration: KinesisConfiguration;
-		ErrorCause?: JournalKinesisStreamDescriptionErrorCause;
+		ErrorCause?: JournalKinesisStreamDescriptionErrorCause | null;
 		StreamName: string;
 	}
 
@@ -67,7 +67,7 @@ export namespace MyNS {
 	/** The configuration settings of the Amazon Kinesis Data Streams destination for your Amazon QLDB journal stream. */
 	export interface KinesisConfiguration {
 		StreamArn: string;
-		AggregationEnabled?: boolean;
+		AggregationEnabled?: boolean | null;
 	}
 
 	export enum JournalKinesisStreamDescriptionErrorCause { KINESIS_STREAM_NOT_FOUND = 0, IAM_PERMISSION_REVOKED = 1 }
@@ -118,17 +118,17 @@ export namespace MyNS {
 	/** The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket. */
 	export interface S3EncryptionConfiguration {
 		ObjectEncryptionType: S3EncryptionConfigurationObjectEncryptionType;
-		KmsKeyArn?: string;
+		KmsKeyArn?: string | null;
 	}
 
 	export enum S3EncryptionConfigurationObjectEncryptionType { SSE_KMS = 0, SSE_S3 = 1, NO_ENCRYPTION = 2 }
 
 	export interface DescribeLedgerResponse {
-		Name?: string;
-		Arn?: string;
-		State?: CreateLedgerResponseState;
-		CreationDateTime?: Date;
-		DeletionProtection?: boolean;
+		Name?: string | null;
+		Arn?: string | null;
+		State?: CreateLedgerResponseState | null;
+		CreationDateTime?: Date | null;
+		DeletionProtection?: boolean | null;
 	}
 
 	export interface ExportJournalToS3Response {
@@ -144,13 +144,13 @@ export namespace MyNS {
 		Block: ValueHolder;
 
 		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
-		Proof?: ValueHolder;
+		Proof?: ValueHolder | null;
 	}
 
 
 	/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
 	export interface ValueHolder {
-		IonText?: string;
+		IonText?: string | null;
 	}
 
 	export interface GetDigestResponse {
@@ -166,7 +166,7 @@ export namespace MyNS {
 	export interface GetRevisionResponse {
 
 		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
-		Proof?: ValueHolder;
+		Proof?: ValueHolder | null;
 
 		/**
 		 * A structure that can contain an Amazon Ion value in multiple encoding formats.
@@ -176,42 +176,42 @@ export namespace MyNS {
 	}
 
 	export interface ListJournalKinesisStreamsForLedgerResponse {
-		Streams?: Array<JournalKinesisStreamDescription>;
-		NextToken?: string;
+		Streams?: Array<JournalKinesisStreamDescription> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListJournalS3ExportsResponse {
-		JournalS3Exports?: Array<JournalS3ExportDescription>;
-		NextToken?: string;
+		JournalS3Exports?: Array<JournalS3ExportDescription> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListJournalS3ExportsForLedgerResponse {
-		JournalS3Exports?: Array<JournalS3ExportDescription>;
-		NextToken?: string;
+		JournalS3Exports?: Array<JournalS3ExportDescription> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListLedgersResponse {
-		Ledgers?: Array<LedgerSummary>;
-		NextToken?: string;
+		Ledgers?: Array<LedgerSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about a ledger, including its name, state, and when it was created. */
 	export interface LedgerSummary {
-		Name?: string;
-		State?: CreateLedgerResponseState;
-		CreationDateTime?: Date;
+		Name?: string | null;
+		State?: CreateLedgerResponseState | null;
+		CreationDateTime?: Date | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface Tags {
 	}
 
 	export interface StreamJournalToKinesisResponse {
-		StreamId?: string;
+		StreamId?: string | null;
 	}
 
 	export interface TagResourceResponse {
@@ -221,11 +221,11 @@ export namespace MyNS {
 	}
 
 	export interface UpdateLedgerResponse {
-		Name?: string;
-		Arn?: string;
-		State?: CreateLedgerResponseState;
-		CreationDateTime?: Date;
-		DeletionProtection?: boolean;
+		Name?: string | null;
+		Arn?: string | null;
+		State?: CreateLedgerResponseState | null;
+		CreationDateTime?: Date | null;
+		DeletionProtection?: boolean | null;
 	}
 
 	export interface CancelJournalKinesisStreamRequest {
@@ -235,9 +235,9 @@ export namespace MyNS {
 
 	export interface CreateLedgerRequest {
 		Name: string;
-		Tags?: Tags;
+		Tags?: Tags | null;
 		PermissionsMode: PermissionsMode;
-		DeletionProtection?: boolean;
+		DeletionProtection?: boolean | null;
 	}
 
 	export enum LedgerState { CREATING = 0, ACTIVE = 1, DELETING = 2, DELETED = 3 }
@@ -279,7 +279,7 @@ export namespace MyNS {
 		BlockAddress: ValueHolder;
 
 		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
-		DigestTipAddress?: ValueHolder;
+		DigestTipAddress?: ValueHolder | null;
 	}
 
 	export interface GetDigestRequest {
@@ -295,7 +295,7 @@ export namespace MyNS {
 		DocumentId: string;
 
 		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
-		DigestTipAddress?: ValueHolder;
+		DigestTipAddress?: ValueHolder | null;
 	}
 
 	export enum StreamStatus { ACTIVE = 0, COMPLETED = 1, CANCELED = 2, FAILED = 3, IMPAIRED = 4 }
@@ -319,9 +319,9 @@ export namespace MyNS {
 
 	export interface StreamJournalToKinesisRequest {
 		RoleArn: string;
-		Tags?: Tags;
+		Tags?: Tags | null;
 		InclusiveStartTime: Date;
-		ExclusiveEndTime?: Date;
+		ExclusiveEndTime?: Date | null;
 
 		/**
 		 * The configuration settings of the Amazon Kinesis Data Streams destination for your Amazon QLDB journal stream.
@@ -339,7 +339,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateLedgerRequest {
-		DeletionProtection?: boolean;
+		DeletionProtection?: boolean | null;
 	}
 
 	@Injectable()
@@ -387,7 +387,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListLedgersResponse} Success
 		 */
-		ListLedgers(max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ListLedgersResponse> {
+		ListLedgers(max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListLedgersResponse> {
 			return this.http.get<ListLedgersResponse>(this.baseUri + 'ledgers?max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -452,7 +452,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListJournalS3ExportsForLedgerResponse} Success
 		 */
-		ListJournalS3ExportsForLedger(name: string, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ListJournalS3ExportsForLedgerResponse> {
+		ListJournalS3ExportsForLedger(name: string, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListJournalS3ExportsForLedgerResponse> {
 			return this.http.get<ListJournalS3ExportsForLedgerResponse>(this.baseUri + 'ledgers/' + (name == null ? '' : encodeURIComponent(name)) + '/journal-s3-exports&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -496,7 +496,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListJournalKinesisStreamsForLedgerResponse} Success
 		 */
-		ListJournalKinesisStreamsForLedger(name: string, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ListJournalKinesisStreamsForLedgerResponse> {
+		ListJournalKinesisStreamsForLedger(name: string, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListJournalKinesisStreamsForLedgerResponse> {
 			return this.http.get<ListJournalKinesisStreamsForLedgerResponse>(this.baseUri + 'ledgers/' + (name == null ? '' : encodeURIComponent(name)) + '/journal-kinesis-streams&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -519,7 +519,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListJournalS3ExportsResponse} Success
 		 */
-		ListJournalS3Exports(max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ListJournalS3ExportsResponse> {
+		ListJournalS3Exports(max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListJournalS3ExportsResponse> {
 			return this.http.get<ListJournalS3ExportsResponse>(this.baseUri + 'journal-s3-exports?max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -567,7 +567,7 @@ export namespace MyNS {
 		Name: string;
 
 		/** The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null. */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 
 		/**
 		 * The permissions mode to assign to the ledger that you want to create.
@@ -576,13 +576,13 @@ export namespace MyNS {
 		PermissionsMode: PermissionsMode;
 
 		/** <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p> <p>If deletion protection is enabled, you must first disable it before you can delete the ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>. The QLDB console disables deletion protection for you when you use it to delete a ledger.</p> */
-		DeletionProtection?: boolean;
+		DeletionProtection?: boolean | null;
 	}
 
 	export interface UpdateLedgerPatchBody {
 
 		/** <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p> <p>If deletion protection is enabled, you must first disable it before you can delete the ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>. The QLDB console disables deletion protection for you when you use it to delete a ledger.</p> */
-		DeletionProtection?: boolean;
+		DeletionProtection?: boolean | null;
 	}
 
 	export interface ExportJournalToS3PostBody {
@@ -615,11 +615,11 @@ export namespace MyNS {
 	}
 
 	export interface ExportJournalToS3PostBodyS3ExportConfiguration {
-		Bucket?: string;
-		Prefix?: string;
+		Bucket?: string | null;
+		Prefix?: string | null;
 
 		/** The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket. */
-		EncryptionConfiguration?: S3EncryptionConfiguration;
+		EncryptionConfiguration?: S3EncryptionConfiguration | null;
 	}
 
 	export interface GetBlockPostBody {
@@ -631,15 +631,15 @@ export namespace MyNS {
 		BlockAddress: GetBlockPostBodyBlockAddress;
 
 		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
-		DigestTipAddress?: GetBlockPostBodyDigestTipAddress;
+		DigestTipAddress?: GetBlockPostBodyDigestTipAddress | null;
 	}
 
 	export interface GetBlockPostBodyBlockAddress {
-		IonText?: string;
+		IonText?: string | null;
 	}
 
 	export interface GetBlockPostBodyDigestTipAddress {
-		IonText?: string;
+		IonText?: string | null;
 	}
 
 	export interface GetRevisionPostBody {
@@ -660,15 +660,15 @@ export namespace MyNS {
 		DocumentId: string;
 
 		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
-		DigestTipAddress?: GetRevisionPostBodyDigestTipAddress;
+		DigestTipAddress?: GetRevisionPostBodyDigestTipAddress | null;
 	}
 
 	export interface GetRevisionPostBodyBlockAddress {
-		IonText?: string;
+		IonText?: string | null;
 	}
 
 	export interface GetRevisionPostBodyDigestTipAddress {
-		IonText?: string;
+		IonText?: string | null;
 	}
 
 	export interface StreamJournalToKinesisPostBody {
@@ -682,7 +682,7 @@ export namespace MyNS {
 		RoleArn: string;
 
 		/** The key-value pairs to add as tags to the stream that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null. */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 
 		/**
 		 * <p>The inclusive start date and time from which to start streaming journal data. This parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code> </p> <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p> <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's <code>CreationDateTime</code>.</p>
@@ -691,7 +691,7 @@ export namespace MyNS {
 		InclusiveStartTime: Date;
 
 		/** <p>The exclusive date and time that specifies when the stream ends. If you keep this parameter blank, the stream runs indefinitely until you cancel it.</p> <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code> </p> */
-		ExclusiveEndTime?: Date;
+		ExclusiveEndTime?: Date | null;
 
 		/**
 		 * The configuration settings of the Amazon Kinesis Data Streams destination for your Amazon QLDB journal stream.
@@ -710,8 +710,8 @@ export namespace MyNS {
 	}
 
 	export interface StreamJournalToKinesisPostBodyKinesisConfiguration {
-		StreamArn?: string;
-		AggregationEnabled?: boolean;
+		StreamArn?: string | null;
+		AggregationEnabled?: boolean | null;
 	}
 
 	export interface TagResourcePostBody {

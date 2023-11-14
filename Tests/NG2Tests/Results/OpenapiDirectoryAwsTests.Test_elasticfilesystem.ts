@@ -5,20 +5,20 @@ export namespace MyNS {
 
 	/** Provides a description of an EFS file system access point. */
 	export interface AccessPointDescription {
-		ClientToken?: string;
-		Name?: string;
-		Tags?: Array<Tag>;
-		AccessPointId?: string;
-		AccessPointArn?: string;
-		FileSystemId?: string;
+		ClientToken?: string | null;
+		Name?: string | null;
+		Tags?: Array<Tag> | null;
+		AccessPointId?: string | null;
+		AccessPointArn?: string | null;
+		FileSystemId?: string | null;
 
 		/** The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point. */
-		PosixUser?: PosixUser;
+		PosixUser?: PosixUser | null;
 
 		/** Specifies the directory on the Amazon EFS file system that the access point provides access to. The access point exposes the specified file system path as the root directory of your file system to applications using the access point. NFS clients using the access point can only access data in the access point's <code>RootDirectory</code> and it's subdirectories. */
-		RootDirectory?: RootDirectory;
-		OwnerId?: string;
-		LifeCycleState?: AccessPointDescriptionLifeCycleState;
+		RootDirectory?: RootDirectory | null;
+		OwnerId?: string | null;
+		LifeCycleState?: AccessPointDescriptionLifeCycleState | null;
 	}
 
 
@@ -33,16 +33,16 @@ export namespace MyNS {
 	export interface PosixUser {
 		Uid: number;
 		Gid: number;
-		SecondaryGids?: Array<number>;
+		SecondaryGids?: Array<number> | null;
 	}
 
 
 	/** Specifies the directory on the Amazon EFS file system that the access point provides access to. The access point exposes the specified file system path as the root directory of your file system to applications using the access point. NFS clients using the access point can only access data in the access point's <code>RootDirectory</code> and it's subdirectories. */
 	export interface RootDirectory {
-		Path?: string;
+		Path?: string | null;
 
 		/** <p>Required if the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist. Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code> &gt; <code>Path</code>. If the access point root directory does not exist, EFS creates it with these settings when a client connects to the access point. When specifying <code>CreationInfo</code>, you must include values for all properties. </p> <important> <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> does not exist, attempts to mount the file system using the access point will fail.</p> </important> */
-		CreationInfo?: CreationInfo;
+		CreationInfo?: CreationInfo | null;
 	}
 
 
@@ -78,7 +78,7 @@ export namespace MyNS {
 		FileSystemId: string;
 		CreationTime: Date;
 		LifeCycleState: AccessPointDescriptionLifeCycleState;
-		Name?: string;
+		Name?: string | null;
 		NumberOfMountTargets: number;
 
 		/**
@@ -87,10 +87,10 @@ export namespace MyNS {
 		 */
 		SizeInBytes: FileSystemSize;
 		PerformanceMode: FileSystemDescriptionPerformanceMode;
-		Encrypted?: boolean;
-		KmsKeyId?: string;
-		ThroughputMode?: FileSystemDescriptionThroughputMode;
-		ProvisionedThroughputInMibps?: number;
+		Encrypted?: boolean | null;
+		KmsKeyId?: string | null;
+		ThroughputMode?: FileSystemDescriptionThroughputMode | null;
+		ProvisionedThroughputInMibps?: number | null;
 		Tags: Array<Tag>;
 	}
 
@@ -98,9 +98,9 @@ export namespace MyNS {
 	/** The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value represents the actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not necessarily the exact size the file system was at any instant in time. */
 	export interface FileSystemSize {
 		Value: number;
-		Timestamp?: Date;
-		ValueInIA?: number;
-		ValueInStandard?: number;
+		Timestamp?: Date | null;
+		ValueInIA?: number | null;
+		ValueInStandard?: number | null;
 	}
 
 	export enum FileSystemDescriptionPerformanceMode { generalPurpose = 0, maxIO = 1 }
@@ -122,15 +122,15 @@ export namespace MyNS {
 
 	/** Provides a description of a mount target. */
 	export interface MountTargetDescription {
-		OwnerId?: string;
+		OwnerId?: string | null;
 		MountTargetId: string;
 		FileSystemId: string;
 		SubnetId: string;
 		LifeCycleState: AccessPointDescriptionLifeCycleState;
-		IpAddress?: string;
-		NetworkInterfaceId?: string;
-		AvailabilityZoneId?: string;
-		AvailabilityZoneName?: string;
+		IpAddress?: string | null;
+		NetworkInterfaceId?: string | null;
+		AvailabilityZoneId?: string | null;
+		AvailabilityZoneName?: string | null;
 	}
 
 	export interface IncorrectFileSystemLifeCycleState {
@@ -173,32 +173,32 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAccessPointsResponse {
-		AccessPoints?: Array<AccessPointDescription>;
-		NextToken?: string;
+		AccessPoints?: Array<AccessPointDescription> | null;
+		NextToken?: string | null;
 	}
 
 	export interface FileSystemPolicyDescription {
-		FileSystemId?: string;
-		Policy?: string;
+		FileSystemId?: string | null;
+		Policy?: string | null;
 	}
 
 	export interface PolicyNotFound {
 	}
 
 	export interface DescribeFileSystemsResponse {
-		Marker?: string;
-		FileSystems?: Array<FileSystemDescription>;
-		NextMarker?: string;
+		Marker?: string | null;
+		FileSystems?: Array<FileSystemDescription> | null;
+		NextMarker?: string | null;
 	}
 
 	export interface LifecycleConfigurationDescription {
-		LifecyclePolicies?: Array<LifecyclePolicy>;
+		LifecyclePolicies?: Array<LifecyclePolicy> | null;
 	}
 
 
 	/** Describes a policy used by EFS lifecycle management to transition files to the Infrequent Access (IA) storage class. */
 	export interface LifecyclePolicy {
-		TransitionToIA?: LifecyclePolicyTransitionToIA;
+		TransitionToIA?: LifecyclePolicyTransitionToIA | null;
 	}
 
 	export enum LifecyclePolicyTransitionToIA { AFTER_7_DAYS = 0, AFTER_14_DAYS = 1, AFTER_30_DAYS = 2, AFTER_60_DAYS = 3, AFTER_90_DAYS = 4 }
@@ -213,22 +213,22 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeMountTargetsResponse {
-		Marker?: string;
-		MountTargets?: Array<MountTargetDescription>;
-		NextMarker?: string;
+		Marker?: string | null;
+		MountTargets?: Array<MountTargetDescription> | null;
+		NextMarker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeTagsResponse {
-		Marker?: string;
+		Marker?: string | null;
 		Tags: Array<Tag>;
-		NextMarker?: string;
+		NextMarker?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
-		NextToken?: string;
+		Tags?: Array<Tag> | null;
+		NextToken?: string | null;
 	}
 
 	export interface InvalidPolicyException {
@@ -241,14 +241,14 @@ export namespace MyNS {
 
 	export interface CreateAccessPointRequest {
 		ClientToken: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 		FileSystemId: string;
 
 		/** The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point. */
-		PosixUser?: PosixUser;
+		PosixUser?: PosixUser | null;
 
 		/** Specifies the directory on the Amazon EFS file system that the access point provides access to. The access point exposes the specified file system path as the root directory of your file system to applications using the access point. NFS clients using the access point can only access data in the access point's <code>RootDirectory</code> and it's subdirectories. */
-		RootDirectory?: RootDirectory;
+		RootDirectory?: RootDirectory | null;
 	}
 
 	export enum PerformanceMode { generalPurpose = 0, maxIO = 1 }
@@ -257,12 +257,12 @@ export namespace MyNS {
 
 	export interface CreateFileSystemRequest {
 		CreationToken: string;
-		PerformanceMode?: FileSystemDescriptionPerformanceMode;
-		Encrypted?: boolean;
-		KmsKeyId?: string;
-		ThroughputMode?: FileSystemDescriptionThroughputMode;
-		ProvisionedThroughputInMibps?: number;
-		Tags?: Array<Tag>;
+		PerformanceMode?: FileSystemDescriptionPerformanceMode | null;
+		Encrypted?: boolean | null;
+		KmsKeyId?: string | null;
+		ThroughputMode?: FileSystemDescriptionThroughputMode | null;
+		ProvisionedThroughputInMibps?: number | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -270,8 +270,8 @@ export namespace MyNS {
 	export interface CreateMountTargetRequest {
 		FileSystemId: string;
 		SubnetId: string;
-		IpAddress?: string;
-		SecurityGroups?: Array<string>;
+		IpAddress?: string | null;
+		SecurityGroups?: Array<string> | null;
 	}
 
 
@@ -339,12 +339,12 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ModifyMountTargetSecurityGroupsRequest {
-		SecurityGroups?: Array<string>;
+		SecurityGroups?: Array<string> | null;
 	}
 
 	export interface PutFileSystemPolicyRequest {
 		Policy: string;
-		BypassPolicyLockoutSafetyCheck?: boolean;
+		BypassPolicyLockoutSafetyCheck?: boolean | null;
 	}
 
 	export interface PutLifecycleConfigurationRequest {
@@ -359,8 +359,8 @@ export namespace MyNS {
 	}
 
 	export interface UpdateFileSystemRequest {
-		ThroughputMode?: FileSystemDescriptionThroughputMode;
-		ProvisionedThroughputInMibps?: number;
+		ThroughputMode?: FileSystemDescriptionThroughputMode | null;
+		ProvisionedThroughputInMibps?: number | null;
 	}
 
 	@Injectable()
@@ -386,7 +386,7 @@ export namespace MyNS {
 		 * @param {string} FileSystemId (Optional) If you provide a <code>FileSystemId</code>, EFS returns all access points for that file system; mutually exclusive with <code>AccessPointId</code>.
 		 * @return {DescribeAccessPointsResponse} Success
 		 */
-		DescribeAccessPoints(MaxResults: number, NextToken: string, AccessPointId: string, FileSystemId: string): Observable<DescribeAccessPointsResponse> {
+		DescribeAccessPoints(MaxResults: number | null | undefined, NextToken: string | null | undefined, AccessPointId: string | null | undefined, FileSystemId: string | null | undefined): Observable<DescribeAccessPointsResponse> {
 			return this.http.get<DescribeAccessPointsResponse>(this.baseUri + '2015-02-01/access-points?MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&AccessPointId=' + (AccessPointId == null ? '' : encodeURIComponent(AccessPointId)) + '&FileSystemId=' + (FileSystemId == null ? '' : encodeURIComponent(FileSystemId)), {});
 		}
 
@@ -408,7 +408,7 @@ export namespace MyNS {
 		 * @param {string} FileSystemId (Optional) ID of the file system whose description you want to retrieve (String).
 		 * @return {DescribeFileSystemsResponse} Success
 		 */
-		DescribeFileSystems(MaxItems: number, Marker: string, CreationToken: string, FileSystemId: string): Observable<DescribeFileSystemsResponse> {
+		DescribeFileSystems(MaxItems: number | null | undefined, Marker: string | null | undefined, CreationToken: string | null | undefined, FileSystemId: string | null | undefined): Observable<DescribeFileSystemsResponse> {
 			return this.http.get<DescribeFileSystemsResponse>(this.baseUri + '2015-02-01/file-systems?MaxItems=' + MaxItems + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&CreationToken=' + (CreationToken == null ? '' : encodeURIComponent(CreationToken)) + '&FileSystemId=' + (FileSystemId == null ? '' : encodeURIComponent(FileSystemId)), {});
 		}
 
@@ -431,7 +431,7 @@ export namespace MyNS {
 		 * @param {string} AccessPointId (Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.
 		 * @return {DescribeMountTargetsResponse} Success
 		 */
-		DescribeMountTargets(MaxItems: number, Marker: string, FileSystemId: string, MountTargetId: string, AccessPointId: string): Observable<DescribeMountTargetsResponse> {
+		DescribeMountTargets(MaxItems: number | null | undefined, Marker: string | null | undefined, FileSystemId: string | null | undefined, MountTargetId: string | null | undefined, AccessPointId: string | null | undefined): Observable<DescribeMountTargetsResponse> {
 			return this.http.get<DescribeMountTargetsResponse>(this.baseUri + '2015-02-01/mount-targets?MaxItems=' + MaxItems + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&FileSystemId=' + (FileSystemId == null ? '' : encodeURIComponent(FileSystemId)) + '&MountTargetId=' + (MountTargetId == null ? '' : encodeURIComponent(MountTargetId)) + '&AccessPointId=' + (AccessPointId == null ? '' : encodeURIComponent(AccessPointId)), {});
 		}
 
@@ -573,7 +573,7 @@ export namespace MyNS {
 		 * @param {string} FileSystemId The ID of the file system whose tag set you want to retrieve.
 		 * @return {DescribeTagsResponse} Success
 		 */
-		DescribeTags(MaxItems: number, Marker: string, FileSystemId: string): Observable<DescribeTagsResponse> {
+		DescribeTags(MaxItems: number | null | undefined, Marker: string | null | undefined, FileSystemId: string): Observable<DescribeTagsResponse> {
 			return this.http.get<DescribeTagsResponse>(this.baseUri + '2015-02-01/tags/' + (FileSystemId == null ? '' : encodeURIComponent(FileSystemId)) + '/?MaxItems=' + MaxItems + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), {});
 		}
 
@@ -585,7 +585,7 @@ export namespace MyNS {
 		 * @param {string} NextToken You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions if the response payload was paginated.
 		 * @return {ListTagsForResourceResponse} Success
 		 */
-		ListTagsForResource(ResourceId: string, MaxResults: number, NextToken: string): Observable<ListTagsForResourceResponse> {
+		ListTagsForResource(ResourceId: string, MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListTagsForResourceResponse> {
 			return this.http.get<ListTagsForResourceResponse>(this.baseUri + '2015-02-01/resource-tags/' + (ResourceId == null ? '' : encodeURIComponent(ResourceId)) + '&MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -622,7 +622,7 @@ export namespace MyNS {
 		ClientToken: string;
 
 		/** Creates tags associated with the access point. Each tag is a key-value pair. */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/**
 		 * The ID of the EFS file system that the access point provides access to.
@@ -631,23 +631,23 @@ export namespace MyNS {
 		FileSystemId: string;
 
 		/** The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point. */
-		PosixUser?: CreateAccessPointPostBodyPosixUser;
+		PosixUser?: CreateAccessPointPostBodyPosixUser | null;
 
 		/** Specifies the directory on the Amazon EFS file system that the access point provides access to. The access point exposes the specified file system path as the root directory of your file system to applications using the access point. NFS clients using the access point can only access data in the access point's <code>RootDirectory</code> and it's subdirectories. */
-		RootDirectory?: CreateAccessPointPostBodyRootDirectory;
+		RootDirectory?: CreateAccessPointPostBodyRootDirectory | null;
 	}
 
 	export interface CreateAccessPointPostBodyPosixUser {
-		Uid?: number;
-		Gid?: number;
-		SecondaryGids?: Array<number>;
+		Uid?: number | null;
+		Gid?: number | null;
+		SecondaryGids?: Array<number> | null;
 	}
 
 	export interface CreateAccessPointPostBodyRootDirectory {
-		Path?: string;
+		Path?: string | null;
 
 		/** <p>Required if the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist. Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code> &gt; <code>Path</code>. If the access point root directory does not exist, EFS creates it with these settings when a client connects to the access point. When specifying <code>CreationInfo</code>, you must include values for all properties. </p> <important> <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> does not exist, attempts to mount the file system using the access point will fail.</p> </important> */
-		CreationInfo?: CreationInfo;
+		CreationInfo?: CreationInfo | null;
 	}
 
 	export interface CreateFileSystemPostBody {
@@ -661,29 +661,29 @@ export namespace MyNS {
 		CreationToken: string;
 
 		/** The performance mode of the file system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed after the file system has been created. */
-		PerformanceMode?: FileSystemDescriptionPerformanceMode;
+		PerformanceMode?: FileSystemDescriptionPerformanceMode | null;
 
 		/** A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying <a>CreateFileSystemRequest$KmsKeyId</a> for an existing AWS Key Management Service (AWS KMS) customer master key (CMK). If you don't specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. */
-		Encrypted?: boolean;
+		Encrypted?: boolean | null;
 
 		/**
 		 * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system. This parameter is only required if you want to use a nondefault CMK. If this parameter is not specified, the default CMK for Amazon EFS is used. This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li> </ul> <p>If <code>KmsKeyId</code> is specified, the <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p> <important> <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs with EFS file systems.</p> </important>
 		 * Max length: 2048
 		 * Min length: 1
 		 */
-		KmsKeyId?: string;
+		KmsKeyId?: string | null;
 
 		/** The throughput mode for the file system to be created. There are two throughput modes to choose from for your file system: <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes as long as it’s been more than 24 hours since the last decrease or throughput mode change. For more, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying Throughput with Provisioned Mode</a> in the <i>Amazon EFS User Guide.</i> */
-		ThroughputMode?: FileSystemDescriptionThroughputMode;
+		ThroughputMode?: FileSystemDescriptionThroughputMode | null;
 
 		/**
 		 * The throughput, measured in MiB/s, that you want to provision for a file system that you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. You can get this limit increased by contacting AWS Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i>
 		 * Minimum: 1
 		 */
-		ProvisionedThroughputInMibps?: number;
+		ProvisionedThroughputInMibps?: number | null;
 
 		/** A value that specifies to create one or more tags associated with the file system. Each tag is a user-defined key-value pair. Name your file system on creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value pair. */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateMountTargetPostBody {
@@ -701,13 +701,13 @@ export namespace MyNS {
 		SubnetId: string;
 
 		/** Valid IPv4 address within the address range of the specified subnet. */
-		IpAddress?: string;
+		IpAddress?: string | null;
 
 		/**
 		 * Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.
 		 * Maximum items: 5
 		 */
-		SecurityGroups?: Array<string>;
+		SecurityGroups?: Array<string> | null;
 	}
 
 	export interface CreateTagsPostBody {
@@ -722,13 +722,13 @@ export namespace MyNS {
 	export interface UpdateFileSystemPutBody {
 
 		/** (Optional) The throughput mode that you want your file system to use. If you're not updating your throughput mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. */
-		ThroughputMode?: FileSystemDescriptionThroughputMode;
+		ThroughputMode?: FileSystemDescriptionThroughputMode | null;
 
 		/**
 		 * (Optional) The amount of throughput, in MiB/s, that you want to provision for your file system. Valid values are 1-1024. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on update. If you're not updating the amount of provisioned throughput for your file system, you don't need to provide this value in your request.
 		 * Minimum: 1
 		 */
-		ProvisionedThroughputInMibps?: number;
+		ProvisionedThroughputInMibps?: number | null;
 	}
 
 	export interface PutFileSystemPolicyPutBody {
@@ -740,7 +740,7 @@ export namespace MyNS {
 		Policy: string;
 
 		/** (Optional) A flag to indicate whether to bypass the <code>FileSystemPolicy</code> lockout safety check. The policy lockout safety check determines whether the policy in the request will prevent the principal making the request will be locked out from making future <code>PutFileSystemPolicy</code> requests on the file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the principal that is making the request from making a subsequent <code>PutFileSystemPolicy</code> request on the file system. The default value is False. */
-		BypassPolicyLockoutSafetyCheck?: boolean;
+		BypassPolicyLockoutSafetyCheck?: boolean | null;
 	}
 
 	export interface DeleteTagsPostBody {
@@ -769,7 +769,7 @@ export namespace MyNS {
 		 * An array of up to five VPC security group IDs.
 		 * Maximum items: 5
 		 */
-		SecurityGroups?: Array<string>;
+		SecurityGroups?: Array<string> | null;
 	}
 
 	export interface TagResourcePostBody {

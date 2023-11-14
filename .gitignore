@@ -25,6 +25,7 @@ Thumbs.db
 [Dd]ebug*/
 *.lib
 *.sbr
+*.bak*
 obj/
 [Rr]elease*/
 _ReSharper*/
@@ -48,3 +49,5 @@ node_modules
 /Tests/NG2TestBed/src/clientapi/ClientApiAuto.ts
 /Tests/openapi-directory
 /Tests/NG2TestBed/.angular
+/.github
+/ng2/.angular

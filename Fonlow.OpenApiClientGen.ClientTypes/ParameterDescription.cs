@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Runtime.Serialization;
+using System.CodeDom;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -19,12 +20,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public ParameterDescriptor ParameterDescriptor
 		{ get; set; }
+
+		public CodeTypeReference ParameterTypeReference { get; set; }
 	}
 
 	[Serializable]
 	public class ParameterDescriptor
 	{
-		public bool IsOptional
+		public bool IsRequired
 		{ get; set; }
 
 		public string ParameterName

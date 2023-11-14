@@ -3,9 +3,9 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CancelRotateSecretResponse {
-		ARN?: string;
-		Name?: string;
-		VersionId?: string;
+		ARN?: string | null;
+		Name?: string | null;
+		VersionId?: string | null;
 	}
 
 	export interface CancelRotateSecretRequest {
@@ -25,26 +25,26 @@ export namespace MyNS {
 	}
 
 	export interface CreateSecretResponse {
-		ARN?: string;
-		Name?: string;
-		VersionId?: string;
+		ARN?: string | null;
+		Name?: string | null;
+		VersionId?: string | null;
 	}
 
 	export interface CreateSecretRequest {
 		Name: string;
-		ClientRequestToken?: string;
-		Description?: string;
-		KmsKeyId?: string;
-		SecretBinary?: string;
-		SecretString?: string;
-		Tags?: Array<Tag>;
+		ClientRequestToken?: string | null;
+		Description?: string | null;
+		KmsKeyId?: string | null;
+		SecretBinary?: string | null;
+		SecretString?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** A structure that contains information about a tag. */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface LimitExceededException {
@@ -63,8 +63,8 @@ export namespace MyNS {
 	}
 
 	export interface DeleteResourcePolicyResponse {
-		ARN?: string;
-		Name?: string;
+		ARN?: string | null;
+		Name?: string | null;
 	}
 
 	export interface DeleteResourcePolicyRequest {
@@ -72,40 +72,40 @@ export namespace MyNS {
 	}
 
 	export interface DeleteSecretResponse {
-		ARN?: string;
-		Name?: string;
-		DeletionDate?: Date;
+		ARN?: string | null;
+		Name?: string | null;
+		DeletionDate?: Date | null;
 	}
 
 	export interface DeleteSecretRequest {
 		SecretId: string;
-		RecoveryWindowInDays?: number;
-		ForceDeleteWithoutRecovery?: boolean;
+		RecoveryWindowInDays?: number | null;
+		ForceDeleteWithoutRecovery?: boolean | null;
 	}
 
 	export interface DescribeSecretResponse {
-		ARN?: string;
-		Name?: string;
-		Description?: string;
-		KmsKeyId?: string;
-		RotationEnabled?: boolean;
-		RotationLambdaARN?: string;
+		ARN?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		KmsKeyId?: string | null;
+		RotationEnabled?: boolean | null;
+		RotationLambdaARN?: string | null;
 
 		/** A structure that defines the rotation configuration for the secret. */
-		RotationRules?: RotationRulesType;
-		LastRotatedDate?: Date;
-		LastChangedDate?: Date;
-		LastAccessedDate?: Date;
-		DeletedDate?: Date;
-		Tags?: Array<Tag>;
-		VersionIdsToStages?: SecretVersionsToStagesMapType;
-		OwningService?: string;
+		RotationRules?: RotationRulesType | null;
+		LastRotatedDate?: Date | null;
+		LastChangedDate?: Date | null;
+		LastAccessedDate?: Date | null;
+		DeletedDate?: Date | null;
+		Tags?: Array<Tag> | null;
+		VersionIdsToStages?: SecretVersionsToStagesMapType | null;
+		OwningService?: string | null;
 	}
 
 
 	/** A structure that defines the rotation configuration for the secret. */
 	export interface RotationRulesType {
-		AutomaticallyAfterDays?: number;
+		AutomaticallyAfterDays?: number | null;
 	}
 
 	export interface SecretVersionsToStagesMapType {
@@ -116,24 +116,24 @@ export namespace MyNS {
 	}
 
 	export interface GetRandomPasswordResponse {
-		RandomPassword?: string;
+		RandomPassword?: string | null;
 	}
 
 	export interface GetRandomPasswordRequest {
-		PasswordLength?: number;
-		ExcludeCharacters?: string;
-		ExcludeNumbers?: boolean;
-		ExcludePunctuation?: boolean;
-		ExcludeUppercase?: boolean;
-		ExcludeLowercase?: boolean;
-		IncludeSpace?: boolean;
-		RequireEachIncludedType?: boolean;
+		PasswordLength?: number | null;
+		ExcludeCharacters?: string | null;
+		ExcludeNumbers?: boolean | null;
+		ExcludePunctuation?: boolean | null;
+		ExcludeUppercase?: boolean | null;
+		ExcludeLowercase?: boolean | null;
+		IncludeSpace?: boolean | null;
+		RequireEachIncludedType?: boolean | null;
 	}
 
 	export interface GetResourcePolicyResponse {
-		ARN?: string;
-		Name?: string;
-		ResourcePolicy?: string;
+		ARN?: string | null;
+		Name?: string | null;
+		ResourcePolicy?: string | null;
 	}
 
 	export interface GetResourcePolicyRequest {
@@ -141,84 +141,84 @@ export namespace MyNS {
 	}
 
 	export interface GetSecretValueResponse {
-		ARN?: string;
-		Name?: string;
-		VersionId?: string;
-		SecretBinary?: string;
-		SecretString?: string;
-		VersionStages?: Array<string>;
-		CreatedDate?: Date;
+		ARN?: string | null;
+		Name?: string | null;
+		VersionId?: string | null;
+		SecretBinary?: string | null;
+		SecretString?: string | null;
+		VersionStages?: Array<string> | null;
+		CreatedDate?: Date | null;
 	}
 
 	export interface GetSecretValueRequest {
 		SecretId: string;
-		VersionId?: string;
-		VersionStage?: string;
+		VersionId?: string | null;
+		VersionStage?: string | null;
 	}
 
 	export interface DecryptionFailure {
 	}
 
 	export interface ListSecretVersionIdsResponse {
-		Versions?: Array<SecretVersionsListEntry>;
-		NextToken?: string;
-		ARN?: string;
-		Name?: string;
+		Versions?: Array<SecretVersionsListEntry> | null;
+		NextToken?: string | null;
+		ARN?: string | null;
+		Name?: string | null;
 	}
 
 
 	/** A structure that contains information about one version of a secret. */
 	export interface SecretVersionsListEntry {
-		VersionId?: string;
-		VersionStages?: Array<string>;
-		LastAccessedDate?: Date;
-		CreatedDate?: Date;
+		VersionId?: string | null;
+		VersionStages?: Array<string> | null;
+		LastAccessedDate?: Date | null;
+		CreatedDate?: Date | null;
 	}
 
 	export interface ListSecretVersionIdsRequest {
 		SecretId: string;
-		MaxResults?: number;
-		NextToken?: string;
-		IncludeDeprecated?: boolean;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		IncludeDeprecated?: boolean | null;
 	}
 
 	export interface InvalidNextTokenException {
 	}
 
 	export interface ListSecretsResponse {
-		SecretList?: Array<SecretListEntry>;
-		NextToken?: string;
+		SecretList?: Array<SecretListEntry> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use the <a>GetSecretValue</a> operation. */
 	export interface SecretListEntry {
-		ARN?: string;
-		Name?: string;
-		Description?: string;
-		KmsKeyId?: string;
-		RotationEnabled?: boolean;
-		RotationLambdaARN?: string;
+		ARN?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		KmsKeyId?: string | null;
+		RotationEnabled?: boolean | null;
+		RotationLambdaARN?: string | null;
 
 		/** A structure that defines the rotation configuration for the secret. */
-		RotationRules?: RotationRulesType;
-		LastRotatedDate?: Date;
-		LastChangedDate?: Date;
-		LastAccessedDate?: Date;
-		DeletedDate?: Date;
-		Tags?: Array<Tag>;
-		SecretVersionsToStages?: SecretVersionsToStagesMapType;
-		OwningService?: string;
+		RotationRules?: RotationRulesType | null;
+		LastRotatedDate?: Date | null;
+		LastChangedDate?: Date | null;
+		LastAccessedDate?: Date | null;
+		DeletedDate?: Date | null;
+		Tags?: Array<Tag> | null;
+		SecretVersionsToStages?: SecretVersionsToStagesMapType | null;
+		OwningService?: string | null;
 	}
 
 	export interface ListSecretsRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface PutResourcePolicyResponse {
-		ARN?: string;
-		Name?: string;
+		ARN?: string | null;
+		Name?: string | null;
 	}
 
 	export interface PutResourcePolicyRequest {
@@ -227,23 +227,23 @@ export namespace MyNS {
 	}
 
 	export interface PutSecretValueResponse {
-		ARN?: string;
-		Name?: string;
-		VersionId?: string;
-		VersionStages?: Array<string>;
+		ARN?: string | null;
+		Name?: string | null;
+		VersionId?: string | null;
+		VersionStages?: Array<string> | null;
 	}
 
 	export interface PutSecretValueRequest {
 		SecretId: string;
-		ClientRequestToken?: string;
-		SecretBinary?: string;
-		SecretString?: string;
-		VersionStages?: Array<string>;
+		ClientRequestToken?: string | null;
+		SecretBinary?: string | null;
+		SecretString?: string | null;
+		VersionStages?: Array<string> | null;
 	}
 
 	export interface RestoreSecretResponse {
-		ARN?: string;
-		Name?: string;
+		ARN?: string | null;
+		Name?: string | null;
 	}
 
 	export interface RestoreSecretRequest {
@@ -251,18 +251,18 @@ export namespace MyNS {
 	}
 
 	export interface RotateSecretResponse {
-		ARN?: string;
-		Name?: string;
-		VersionId?: string;
+		ARN?: string | null;
+		Name?: string | null;
+		VersionId?: string | null;
 	}
 
 	export interface RotateSecretRequest {
 		SecretId: string;
-		ClientRequestToken?: string;
-		RotationLambdaARN?: string;
+		ClientRequestToken?: string | null;
+		RotationLambdaARN?: string | null;
 
 		/** A structure that defines the rotation configuration for the secret. */
-		RotationRules?: RotationRulesType;
+		RotationRules?: RotationRulesType | null;
 	}
 
 	export interface TagResourceRequest {
@@ -276,30 +276,30 @@ export namespace MyNS {
 	}
 
 	export interface UpdateSecretResponse {
-		ARN?: string;
-		Name?: string;
-		VersionId?: string;
+		ARN?: string | null;
+		Name?: string | null;
+		VersionId?: string | null;
 	}
 
 	export interface UpdateSecretRequest {
 		SecretId: string;
-		ClientRequestToken?: string;
-		Description?: string;
-		KmsKeyId?: string;
-		SecretBinary?: string;
-		SecretString?: string;
+		ClientRequestToken?: string | null;
+		Description?: string | null;
+		KmsKeyId?: string | null;
+		SecretBinary?: string | null;
+		SecretString?: string | null;
 	}
 
 	export interface UpdateSecretVersionStageResponse {
-		ARN?: string;
-		Name?: string;
+		ARN?: string | null;
+		Name?: string | null;
 	}
 
 	export interface UpdateSecretVersionStageRequest {
 		SecretId: string;
 		VersionStage: string;
-		RemoveFromVersionId?: string;
-		MoveToVersionId?: string;
+		RemoveFromVersionId?: string | null;
+		MoveToVersionId?: string | null;
 	}
 
 	@Injectable()
@@ -386,7 +386,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSecretVersionIdsResponse} Success
 		 */
-		ListSecretVersionIds(MaxResults: string, NextToken: string, requestBody: ListSecretVersionIdsRequest): Observable<ListSecretVersionIdsResponse> {
+		ListSecretVersionIds(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListSecretVersionIdsRequest): Observable<ListSecretVersionIdsResponse> {
 			return this.http.post<ListSecretVersionIdsResponse>(this.baseUri + '#X-Amz-Target=secretsmanager.ListSecretVersionIds?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -397,7 +397,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSecretsResponse} Success
 		 */
-		ListSecrets(MaxResults: string, NextToken: string, requestBody: ListSecretsRequest): Observable<ListSecretsResponse> {
+		ListSecrets(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListSecretsRequest): Observable<ListSecretsResponse> {
 			return this.http.post<ListSecretsResponse>(this.baseUri + '#X-Amz-Target=secretsmanager.ListSecrets?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

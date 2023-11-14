@@ -3,33 +3,33 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface BatchGetNamedQueryOutput {
-		NamedQueries?: Array<NamedQuery>;
-		UnprocessedNamedQueryIds?: Array<UnprocessedNamedQueryId>;
+		NamedQueries?: Array<NamedQuery> | null;
+		UnprocessedNamedQueryIds?: Array<UnprocessedNamedQueryId> | null;
 	}
 
 
 	/** A query, where <code>QueryString</code> is the list of SQL query statements that comprise the query. */
 	export interface NamedQuery {
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 		Database: string;
 		QueryString: string;
-		NamedQueryId?: string;
-		WorkGroup?: string;
+		NamedQueryId?: string | null;
+		WorkGroup?: string | null;
 	}
 
 
 	/** Information about a named query ID that could not be processed. */
 	export interface UnprocessedNamedQueryId {
-		NamedQueryId?: string;
+		NamedQueryId?: string | null;
 
 		/**
 		 * The error code returned when the query execution failed to process, or when the processing request for the named query failed.
 		 * Max length: 256
 		 * Min length: 1
 		 */
-		ErrorCode?: string;
-		ErrorMessage?: string;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export interface BatchGetNamedQueryInput {
@@ -43,29 +43,29 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetQueryExecutionOutput {
-		QueryExecutions?: Array<QueryExecution>;
-		UnprocessedQueryExecutionIds?: Array<UnprocessedQueryExecutionId>;
+		QueryExecutions?: Array<QueryExecution> | null;
+		UnprocessedQueryExecutionIds?: Array<UnprocessedQueryExecutionId> | null;
 	}
 
 
 	/** Information about a single instance of a query execution. */
 	export interface QueryExecution {
-		QueryExecutionId?: string;
-		Query?: string;
-		StatementType?: QueryExecutionStatementType;
+		QueryExecutionId?: string | null;
+		Query?: string | null;
+		StatementType?: QueryExecutionStatementType | null;
 
 		/** The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the workgroup settings. */
-		ResultConfiguration?: ResultConfiguration;
+		ResultConfiguration?: ResultConfiguration | null;
 
 		/** The database and data catalog context in which the query execution occurs. */
-		QueryExecutionContext?: QueryExecutionContext;
+		QueryExecutionContext?: QueryExecutionContext | null;
 
 		/** The completion date, current state, submission time, and state change reason (if applicable) for the query execution. */
-		Status?: QueryExecutionStatus;
+		Status?: QueryExecutionStatus | null;
 
 		/** The amount of data scanned during the query execution and the amount of time that it took to execute, and the type of statement that was run. */
-		Statistics?: QueryExecutionStatistics;
-		WorkGroup?: string;
+		Statistics?: QueryExecutionStatistics | null;
+		WorkGroup?: string | null;
 	}
 
 	export enum QueryExecutionStatementType { DDL = 0, DML = 1, UTILITY = 2 }
@@ -73,17 +73,17 @@ export namespace MyNS {
 
 	/** The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the workgroup settings. */
 	export interface ResultConfiguration {
-		OutputLocation?: string;
+		OutputLocation?: string | null;
 
 		/** If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information. */
-		EncryptionConfiguration?: EncryptionConfiguration;
+		EncryptionConfiguration?: EncryptionConfiguration | null;
 	}
 
 
 	/** If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information. */
 	export interface EncryptionConfiguration {
 		EncryptionOption: EncryptionConfigurationEncryptionOption;
-		KmsKey?: string;
+		KmsKey?: string | null;
 	}
 
 	export enum EncryptionConfigurationEncryptionOption { SSE_S3 = 0, SSE_KMS = 1, CSE_KMS = 2 }
@@ -91,17 +91,17 @@ export namespace MyNS {
 
 	/** The database and data catalog context in which the query execution occurs. */
 	export interface QueryExecutionContext {
-		Database?: string;
-		Catalog?: string;
+		Database?: string | null;
+		Catalog?: string | null;
 	}
 
 
 	/** The completion date, current state, submission time, and state change reason (if applicable) for the query execution. */
 	export interface QueryExecutionStatus {
-		State?: QueryExecutionStatusState;
-		StateChangeReason?: string;
-		SubmissionDateTime?: Date;
-		CompletionDateTime?: Date;
+		State?: QueryExecutionStatusState | null;
+		StateChangeReason?: string | null;
+		SubmissionDateTime?: Date | null;
+		CompletionDateTime?: Date | null;
 	}
 
 	export enum QueryExecutionStatusState { QUEUED = 0, RUNNING = 1, SUCCEEDED = 2, FAILED = 3, CANCELLED = 4 }
@@ -109,27 +109,27 @@ export namespace MyNS {
 
 	/** The amount of data scanned during the query execution and the amount of time that it took to execute, and the type of statement that was run. */
 	export interface QueryExecutionStatistics {
-		EngineExecutionTimeInMillis?: number;
-		DataScannedInBytes?: number;
-		DataManifestLocation?: string;
-		TotalExecutionTimeInMillis?: number;
-		QueryQueueTimeInMillis?: number;
-		QueryPlanningTimeInMillis?: number;
-		ServiceProcessingTimeInMillis?: number;
+		EngineExecutionTimeInMillis?: number | null;
+		DataScannedInBytes?: number | null;
+		DataManifestLocation?: string | null;
+		TotalExecutionTimeInMillis?: number | null;
+		QueryQueueTimeInMillis?: number | null;
+		QueryPlanningTimeInMillis?: number | null;
+		ServiceProcessingTimeInMillis?: number | null;
 	}
 
 
 	/** Describes a query execution that failed to process. */
 	export interface UnprocessedQueryExecutionId {
-		QueryExecutionId?: string;
+		QueryExecutionId?: string | null;
 
 		/**
 		 * The error code returned when the query execution failed to process, or when the processing request for the named query failed.
 		 * Max length: 256
 		 * Min length: 1
 		 */
-		ErrorCode?: string;
-		ErrorMessage?: string;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export interface BatchGetQueryExecutionInput {
@@ -142,9 +142,9 @@ export namespace MyNS {
 	export interface CreateDataCatalogInput {
 		Name: string;
 		Type: CreateDataCatalogInputType;
-		Description?: string;
-		Parameters?: ParametersMap;
-		Tags?: Array<Tag>;
+		Description?: string | null;
+		Parameters?: ParametersMap | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum CreateDataCatalogInputType { LAMBDA = 0, GLUE = 1, HIVE = 2 }
@@ -155,21 +155,21 @@ export namespace MyNS {
 
 	/** A label that you assign to a resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs in your account. For best practices, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas.  */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface CreateNamedQueryOutput {
-		NamedQueryId?: string;
+		NamedQueryId?: string | null;
 	}
 
 	export interface CreateNamedQueryInput {
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 		Database: string;
 		QueryString: string;
-		ClientRequestToken?: string;
-		WorkGroup?: string;
+		ClientRequestToken?: string | null;
+		WorkGroup?: string | null;
 	}
 
 	export interface CreateWorkGroupOutput {
@@ -179,9 +179,9 @@ export namespace MyNS {
 		Name: string;
 
 		/** The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>. */
-		Configuration?: WorkGroupConfiguration;
-		Description?: string;
-		Tags?: Array<Tag>;
+		Configuration?: WorkGroupConfiguration | null;
+		Description?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -189,11 +189,11 @@ export namespace MyNS {
 	export interface WorkGroupConfiguration {
 
 		/** The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the workgroup settings. */
-		ResultConfiguration?: ResultConfiguration;
-		EnforceWorkGroupConfiguration?: boolean;
-		PublishCloudWatchMetricsEnabled?: boolean;
-		BytesScannedCutoffPerQuery?: number;
-		RequesterPaysEnabled?: boolean;
+		ResultConfiguration?: ResultConfiguration | null;
+		EnforceWorkGroupConfiguration?: boolean | null;
+		PublishCloudWatchMetricsEnabled?: boolean | null;
+		BytesScannedCutoffPerQuery?: number | null;
+		RequesterPaysEnabled?: boolean | null;
 	}
 
 	export interface DeleteDataCatalogOutput {
@@ -215,22 +215,22 @@ export namespace MyNS {
 
 	export interface DeleteWorkGroupInput {
 		WorkGroup: string;
-		RecursiveDeleteOption?: boolean;
+		RecursiveDeleteOption?: boolean | null;
 	}
 
 	export interface GetDataCatalogOutput {
 
 		/** Contains information about a data catalog in an AWS account. */
-		DataCatalog?: DataCatalog;
+		DataCatalog?: DataCatalog | null;
 	}
 
 
 	/** Contains information about a data catalog in an AWS account. */
 	export interface DataCatalog {
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 		Type: CreateDataCatalogInputType;
-		Parameters?: ParametersMap;
+		Parameters?: ParametersMap | null;
 	}
 
 	export interface GetDataCatalogInput {
@@ -240,15 +240,15 @@ export namespace MyNS {
 	export interface GetDatabaseOutput {
 
 		/** Contains metadata information for a database in a data catalog. */
-		Database?: Database;
+		Database?: Database | null;
 	}
 
 
 	/** Contains metadata information for a database in a data catalog. */
 	export interface Database {
 		Name: string;
-		Description?: string;
-		Parameters?: ParametersMap;
+		Description?: string | null;
+		Parameters?: ParametersMap | null;
 	}
 
 	export interface GetDatabaseInput {
@@ -262,7 +262,7 @@ export namespace MyNS {
 	export interface GetNamedQueryOutput {
 
 		/** A query, where <code>QueryString</code> is the list of SQL query statements that comprise the query. */
-		NamedQuery?: NamedQuery;
+		NamedQuery?: NamedQuery | null;
 	}
 
 	export interface GetNamedQueryInput {
@@ -272,7 +272,7 @@ export namespace MyNS {
 	export interface GetQueryExecutionOutput {
 
 		/** Information about a single instance of a query execution. */
-		QueryExecution?: QueryExecution;
+		QueryExecution?: QueryExecution | null;
 	}
 
 	export interface GetQueryExecutionInput {
@@ -280,87 +280,87 @@ export namespace MyNS {
 	}
 
 	export interface GetQueryResultsOutput {
-		UpdateCount?: number;
+		UpdateCount?: number | null;
 
 		/** The metadata and rows that comprise a query result set. The metadata describes the column structure and data types. To return a <code>ResultSet</code> object, use <a>GetQueryResults</a>. */
-		ResultSet?: ResultSet;
-		NextToken?: string;
+		ResultSet?: ResultSet | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The metadata and rows that comprise a query result set. The metadata describes the column structure and data types. To return a <code>ResultSet</code> object, use <a>GetQueryResults</a>. */
 	export interface ResultSet {
-		Rows?: Array<Row>;
+		Rows?: Array<Row> | null;
 
 		/** The metadata that describes the column structure and data types of a table of query results. To return a <code>ResultSetMetadata</code> object, use <a>GetQueryResults</a>. */
-		ResultSetMetadata?: ResultSetMetadata;
+		ResultSetMetadata?: ResultSetMetadata | null;
 	}
 
 
 	/** The rows that comprise a query result table. */
 	export interface Row {
-		Data?: Array<Datum>;
+		Data?: Array<Datum> | null;
 	}
 
 
 	/** A piece of data (a field in the table). */
 	export interface Datum {
-		VarCharValue?: string;
+		VarCharValue?: string | null;
 	}
 
 
 	/** The metadata that describes the column structure and data types of a table of query results. To return a <code>ResultSetMetadata</code> object, use <a>GetQueryResults</a>. */
 	export interface ResultSetMetadata {
-		ColumnInfo?: Array<ColumnInfo>;
+		ColumnInfo?: Array<ColumnInfo> | null;
 	}
 
 
 	/** Information about the columns in a query execution result. */
 	export interface ColumnInfo {
-		CatalogName?: string;
-		SchemaName?: string;
-		TableName?: string;
+		CatalogName?: string | null;
+		SchemaName?: string | null;
+		TableName?: string | null;
 		Name: string;
-		Label?: string;
+		Label?: string | null;
 		Type: string;
-		Precision?: number;
-		Scale?: number;
-		Nullable?: ColumnInfoNullable;
-		CaseSensitive?: boolean;
+		Precision?: number | null;
+		Scale?: number | null;
+		Nullable?: ColumnInfoNullable | null;
+		CaseSensitive?: boolean | null;
 	}
 
 	export enum ColumnInfoNullable { NOT_NULL = 0, NULLABLE = 1, UNKNOWN = 2 }
 
 	export interface GetQueryResultsInput {
 		QueryExecutionId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface GetTableMetadataOutput {
 
 		/** Contains metadata for a table. */
-		TableMetadata?: TableMetadata;
+		TableMetadata?: TableMetadata | null;
 	}
 
 
 	/** Contains metadata for a table. */
 	export interface TableMetadata {
 		Name: string;
-		CreateTime?: Date;
-		LastAccessTime?: Date;
-		TableType?: string;
-		Columns?: Array<Column>;
-		PartitionKeys?: Array<Column>;
-		Parameters?: ParametersMap;
+		CreateTime?: Date | null;
+		LastAccessTime?: Date | null;
+		TableType?: string | null;
+		Columns?: Array<Column> | null;
+		PartitionKeys?: Array<Column> | null;
+		Parameters?: ParametersMap | null;
 	}
 
 
 	/** Contains metadata for a column in a table. */
 	export interface Column {
 		Name: string;
-		Type?: string;
-		Comment?: string;
+		Type?: string | null;
+		Comment?: string | null;
 	}
 
 	export interface GetTableMetadataInput {
@@ -372,19 +372,19 @@ export namespace MyNS {
 	export interface GetWorkGroupOutput {
 
 		/** A workgroup, which contains a name, description, creation time, state, and other configuration, listed under <a>WorkGroup$Configuration</a>. Each workgroup enables you to isolate queries for you or your group of users from other queries in the same account, to configure the query results location and the encryption configuration (known as workgroup settings), to enable sending query metrics to Amazon CloudWatch, and to establish per-query data usage control limits for all queries in a workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>. */
-		WorkGroup?: WorkGroup;
+		WorkGroup?: WorkGroup | null;
 	}
 
 
 	/** A workgroup, which contains a name, description, creation time, state, and other configuration, listed under <a>WorkGroup$Configuration</a>. Each workgroup enables you to isolate queries for you or your group of users from other queries in the same account, to configure the query results location and the encryption configuration (known as workgroup settings), to enable sending query metrics to Amazon CloudWatch, and to establish per-query data usage control limits for all queries in a workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>. */
 	export interface WorkGroup {
 		Name: string;
-		State?: WorkGroupState;
+		State?: WorkGroupState | null;
 
 		/** The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>. */
-		Configuration?: WorkGroupConfiguration;
-		Description?: string;
-		CreationTime?: Date;
+		Configuration?: WorkGroupConfiguration | null;
+		Description?: string | null;
+		CreationTime?: Date | null;
 	}
 
 	export enum WorkGroupState { ENABLED = 0, DISABLED = 1 }
@@ -394,115 +394,115 @@ export namespace MyNS {
 	}
 
 	export interface ListDataCatalogsOutput {
-		DataCatalogsSummary?: Array<DataCatalogSummary>;
-		NextToken?: string;
+		DataCatalogsSummary?: Array<DataCatalogSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The summary information for the data catalog, which includes its name and type. */
 	export interface DataCatalogSummary {
-		CatalogName?: string;
-		Type?: CreateDataCatalogInputType;
+		CatalogName?: string | null;
+		Type?: CreateDataCatalogInputType | null;
 	}
 
 	export interface ListDataCatalogsInput {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListDatabasesOutput {
-		DatabaseList?: Array<Database>;
-		NextToken?: string;
+		DatabaseList?: Array<Database> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListDatabasesInput {
 		CatalogName: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListNamedQueriesOutput {
-		NamedQueryIds?: Array<string>;
-		NextToken?: string;
+		NamedQueryIds?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListNamedQueriesInput {
-		NextToken?: string;
-		MaxResults?: number;
-		WorkGroup?: string;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		WorkGroup?: string | null;
 	}
 
 	export interface ListQueryExecutionsOutput {
-		QueryExecutionIds?: Array<string>;
-		NextToken?: string;
+		QueryExecutionIds?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListQueryExecutionsInput {
-		NextToken?: string;
-		MaxResults?: number;
-		WorkGroup?: string;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		WorkGroup?: string | null;
 	}
 
 	export interface ListTableMetadataOutput {
-		TableMetadataList?: Array<TableMetadata>;
-		NextToken?: string;
+		TableMetadataList?: Array<TableMetadata> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTableMetadataInput {
 		CatalogName: string;
 		DatabaseName: string;
-		Expression?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		Expression?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTagsForResourceOutput {
-		Tags?: Array<Tag>;
-		NextToken?: string;
+		Tags?: Array<Tag> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceInput {
 		ResourceARN: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ResourceNotFoundException {
 	}
 
 	export interface ListWorkGroupsOutput {
-		WorkGroups?: Array<WorkGroupSummary>;
-		NextToken?: string;
+		WorkGroups?: Array<WorkGroupSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The summary information for the workgroup, which includes its name, state, description, and the date and time it was created. */
 	export interface WorkGroupSummary {
-		Name?: string;
-		State?: WorkGroupState;
-		Description?: string;
-		CreationTime?: Date;
+		Name?: string | null;
+		State?: WorkGroupState | null;
+		Description?: string | null;
+		CreationTime?: Date | null;
 	}
 
 	export interface ListWorkGroupsInput {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface StartQueryExecutionOutput {
-		QueryExecutionId?: string;
+		QueryExecutionId?: string | null;
 	}
 
 	export interface StartQueryExecutionInput {
 		QueryString: string;
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 
 		/** The database and data catalog context in which the query execution occurs. */
-		QueryExecutionContext?: QueryExecutionContext;
+		QueryExecutionContext?: QueryExecutionContext | null;
 
 		/** The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the workgroup settings. */
-		ResultConfiguration?: ResultConfiguration;
-		WorkGroup?: string;
+		ResultConfiguration?: ResultConfiguration | null;
+		WorkGroup?: string | null;
 	}
 
 	export interface TooManyRequestsException {
@@ -537,8 +537,8 @@ export namespace MyNS {
 	export interface UpdateDataCatalogInput {
 		Name: string;
 		Type: CreateDataCatalogInputType;
-		Description?: string;
-		Parameters?: ParametersMap;
+		Description?: string | null;
+		Parameters?: ParametersMap | null;
 	}
 
 	export interface UpdateWorkGroupOutput {
@@ -546,35 +546,35 @@ export namespace MyNS {
 
 	export interface UpdateWorkGroupInput {
 		WorkGroup: string;
-		Description?: string;
+		Description?: string | null;
 
 		/** The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified. */
-		ConfigurationUpdates?: WorkGroupConfigurationUpdates;
-		State?: WorkGroupState;
+		ConfigurationUpdates?: WorkGroupConfigurationUpdates | null;
+		State?: WorkGroupState | null;
 	}
 
 
 	/** The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified. */
 	export interface WorkGroupConfigurationUpdates {
-		EnforceWorkGroupConfiguration?: boolean;
+		EnforceWorkGroupConfiguration?: boolean | null;
 
 		/** The information about the updates in the query results, such as output location and encryption configuration for the query results. */
-		ResultConfigurationUpdates?: ResultConfigurationUpdates;
-		PublishCloudWatchMetricsEnabled?: boolean;
-		BytesScannedCutoffPerQuery?: number;
-		RemoveBytesScannedCutoffPerQuery?: boolean;
-		RequesterPaysEnabled?: boolean;
+		ResultConfigurationUpdates?: ResultConfigurationUpdates | null;
+		PublishCloudWatchMetricsEnabled?: boolean | null;
+		BytesScannedCutoffPerQuery?: number | null;
+		RemoveBytesScannedCutoffPerQuery?: boolean | null;
+		RequesterPaysEnabled?: boolean | null;
 	}
 
 
 	/** The information about the updates in the query results, such as output location and encryption configuration for the query results. */
 	export interface ResultConfigurationUpdates {
-		OutputLocation?: string;
-		RemoveOutputLocation?: boolean;
+		OutputLocation?: string | null;
+		RemoveOutputLocation?: boolean | null;
 
 		/** If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information. */
-		EncryptionConfiguration?: EncryptionConfiguration;
-		RemoveEncryptionConfiguration?: boolean;
+		EncryptionConfiguration?: EncryptionConfiguration | null;
+		RemoveEncryptionConfiguration?: boolean | null;
 	}
 
 	export enum ColumnNullable { NOT_NULL = 0, NULLABLE = 1, UNKNOWN = 2 }
@@ -707,7 +707,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetQueryResultsOutput} Success
 		 */
-		GetQueryResults(MaxResults: string, NextToken: string, requestBody: GetQueryResultsInput): Observable<GetQueryResultsOutput> {
+		GetQueryResults(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetQueryResultsInput): Observable<GetQueryResultsOutput> {
 			return this.http.post<GetQueryResultsOutput>(this.baseUri + '#X-Amz-Target=AmazonAthena.GetQueryResults?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -736,7 +736,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDataCatalogsOutput} Success
 		 */
-		ListDataCatalogs(MaxResults: string, NextToken: string, requestBody: ListDataCatalogsInput): Observable<ListDataCatalogsOutput> {
+		ListDataCatalogs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDataCatalogsInput): Observable<ListDataCatalogsOutput> {
 			return this.http.post<ListDataCatalogsOutput>(this.baseUri + '#X-Amz-Target=AmazonAthena.ListDataCatalogs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -747,7 +747,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDatabasesOutput} Success
 		 */
-		ListDatabases(MaxResults: string, NextToken: string, requestBody: ListDatabasesInput): Observable<ListDatabasesOutput> {
+		ListDatabases(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDatabasesInput): Observable<ListDatabasesOutput> {
 			return this.http.post<ListDatabasesOutput>(this.baseUri + '#X-Amz-Target=AmazonAthena.ListDatabases?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -758,7 +758,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListNamedQueriesOutput} Success
 		 */
-		ListNamedQueries(MaxResults: string, NextToken: string, requestBody: ListNamedQueriesInput): Observable<ListNamedQueriesOutput> {
+		ListNamedQueries(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListNamedQueriesInput): Observable<ListNamedQueriesOutput> {
 			return this.http.post<ListNamedQueriesOutput>(this.baseUri + '#X-Amz-Target=AmazonAthena.ListNamedQueries?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -769,7 +769,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListQueryExecutionsOutput} Success
 		 */
-		ListQueryExecutions(MaxResults: string, NextToken: string, requestBody: ListQueryExecutionsInput): Observable<ListQueryExecutionsOutput> {
+		ListQueryExecutions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListQueryExecutionsInput): Observable<ListQueryExecutionsOutput> {
 			return this.http.post<ListQueryExecutionsOutput>(this.baseUri + '#X-Amz-Target=AmazonAthena.ListQueryExecutions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -780,7 +780,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTableMetadataOutput} Success
 		 */
-		ListTableMetadata(MaxResults: string, NextToken: string, requestBody: ListTableMetadataInput): Observable<ListTableMetadataOutput> {
+		ListTableMetadata(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTableMetadataInput): Observable<ListTableMetadataOutput> {
 			return this.http.post<ListTableMetadataOutput>(this.baseUri + '#X-Amz-Target=AmazonAthena.ListTableMetadata?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -791,7 +791,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsForResourceOutput} Success
 		 */
-		ListTagsForResource(MaxResults: string, NextToken: string, requestBody: ListTagsForResourceInput): Observable<ListTagsForResourceOutput> {
+		ListTagsForResource(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTagsForResourceInput): Observable<ListTagsForResourceOutput> {
 			return this.http.post<ListTagsForResourceOutput>(this.baseUri + '#X-Amz-Target=AmazonAthena.ListTagsForResource?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -802,7 +802,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListWorkGroupsOutput} Success
 		 */
-		ListWorkGroups(MaxResults: string, NextToken: string, requestBody: ListWorkGroupsInput): Observable<ListWorkGroupsOutput> {
+		ListWorkGroups(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListWorkGroupsInput): Observable<ListWorkGroupsOutput> {
 			return this.http.post<ListWorkGroupsOutput>(this.baseUri + '#X-Amz-Target=AmazonAthena.ListWorkGroups?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

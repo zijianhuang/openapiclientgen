@@ -10,7 +10,7 @@ namespace Fonlow.CodeDom.Web
 	/// </summary>
 	public static class UriQueryHelper
 	{
-		public static string CreateUriQuery(string uriText, ParameterDescriptionEx[] parameterDescriptions)
+		public static string CreateUriQuery(string uriText, ParameterDescription[] parameterDescriptions)
 		{
 			UriTemplate template = new(uriText);
 			string[] parameterNames;
@@ -29,7 +29,7 @@ namespace Fonlow.CodeDom.Web
 
 			string newUriText = uriText;
 
-			foreach (ParameterDescriptionEx d in parameterDescriptions)
+			foreach (ParameterDescription d in parameterDescriptions)
 			{
 				if (d.ParameterDescriptor.ParameterBinder == ParameterBinder.FromBody || d.ParameterDescriptor.ParameterBinder == ParameterBinder.FromForm)
 				{
@@ -42,7 +42,7 @@ namespace Fonlow.CodeDom.Web
 			return newUriText;
 		}
 
-		public static string CreateUriQueryForTs(string uriText, ParameterDescriptionEx[] parameterDescriptions)
+		public static string CreateUriQueryForTs(string uriText, ParameterDescription[] parameterDescriptions)
 		{
 			UriTemplate template = new(uriText);
 			string[] parameterNames;
@@ -61,7 +61,7 @@ namespace Fonlow.CodeDom.Web
 
 			string newUriText = uriText;
 
-			foreach (ParameterDescriptionEx d in parameterDescriptions)
+			foreach (ParameterDescription d in parameterDescriptions)
 			{
 				if (d.ParameterDescriptor.ParameterBinder == ParameterBinder.FromBody || d.ParameterDescriptor.ParameterBinder == ParameterBinder.FromForm)
 				{

@@ -12,20 +12,20 @@ export namespace MyNS {
 	}
 
 	export interface DescribeVoicesOutput {
-		Voices?: Array<Voice>;
-		NextToken?: string;
+		Voices?: Array<Voice> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Description of the voice. */
 	export interface Voice {
-		Gender?: VoiceGender;
-		Id?: VoiceId;
-		LanguageCode?: VoiceLanguageCode;
-		LanguageName?: string;
-		Name?: string;
-		AdditionalLanguageCodes?: Array<LanguageCode>;
-		SupportedEngines?: Array<Engine>;
+		Gender?: VoiceGender | null;
+		Id?: VoiceId | null;
+		LanguageCode?: VoiceLanguageCode | null;
+		LanguageName?: string | null;
+		Name?: string | null;
+		AdditionalLanguageCodes?: Array<LanguageCode> | null;
+		SupportedEngines?: Array<Engine> | null;
 	}
 
 	export enum VoiceGender { Female = 0, Male = 1 }
@@ -44,28 +44,28 @@ export namespace MyNS {
 	export interface GetLexiconOutput {
 
 		/** Provides lexicon name and lexicon content in string format. For more information, see <a href="https://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon Specification (PLS) Version 1.0</a>. */
-		Lexicon?: Lexicon;
+		Lexicon?: Lexicon | null;
 
 		/** Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>. */
-		LexiconAttributes?: LexiconAttributes;
+		LexiconAttributes?: LexiconAttributes | null;
 	}
 
 
 	/** Provides lexicon name and lexicon content in string format. For more information, see <a href="https://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon Specification (PLS) Version 1.0</a>. */
 	export interface Lexicon {
-		Content?: string;
-		Name?: string;
+		Content?: string | null;
+		Name?: string | null;
 	}
 
 
 	/** Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>. */
 	export interface LexiconAttributes {
-		Alphabet?: string;
-		LanguageCode?: LexiconAttributesLanguageCode;
-		LastModified?: Date;
-		LexiconArn?: string;
-		LexemesCount?: number;
-		Size?: number;
+		Alphabet?: string | null;
+		LanguageCode?: LexiconAttributesLanguageCode | null;
+		LastModified?: Date | null;
+		LexiconArn?: string | null;
+		LexemesCount?: number | null;
+		Size?: number | null;
 	}
 
 	export enum LexiconAttributesLanguageCode { arb = 0, cmn_CN = 1, cy_GB = 2, da_DK = 3, de_DE = 4, en_AU = 5, en_GB = 6, en_GB_WLS = 7, en_IN = 8, en_US = 9, es_ES = 10, es_MX = 11, es_US = 12, fr_CA = 13, fr_FR = 14, is_IS = 15, it_IT = 16, ja_JP = 17, hi_IN = 18, ko_KR = 19, nb_NO = 20, nl_NL = 21, pl_PL = 22, pt_BR = 23, pt_PT = 24, ro_RO = 25, ru_RU = 26, sv_SE = 27, tr_TR = 28 }
@@ -73,27 +73,27 @@ export namespace MyNS {
 	export interface GetSpeechSynthesisTaskOutput {
 
 		/** SynthesisTask object that provides information about a speech synthesis task. */
-		SynthesisTask?: SynthesisTask;
+		SynthesisTask?: SynthesisTask | null;
 	}
 
 
 	/** SynthesisTask object that provides information about a speech synthesis task. */
 	export interface SynthesisTask {
-		Engine?: Engine;
-		TaskId?: string;
-		TaskStatus?: SynthesisTaskTaskStatus;
-		TaskStatusReason?: string;
-		OutputUri?: string;
-		CreationTime?: Date;
-		RequestCharacters?: number;
-		SnsTopicArn?: string;
-		LexiconNames?: Array<string>;
-		OutputFormat?: SynthesisTaskOutputFormat;
-		SampleRate?: string;
-		SpeechMarkTypes?: Array<SpeechMarkType>;
-		TextType?: SynthesisTaskTextType;
-		VoiceId?: VoiceId;
-		LanguageCode?: SynthesisTaskLanguageCode;
+		Engine?: Engine | null;
+		TaskId?: string | null;
+		TaskStatus?: SynthesisTaskTaskStatus | null;
+		TaskStatusReason?: string | null;
+		OutputUri?: string | null;
+		CreationTime?: Date | null;
+		RequestCharacters?: number | null;
+		SnsTopicArn?: string | null;
+		LexiconNames?: Array<string> | null;
+		OutputFormat?: SynthesisTaskOutputFormat | null;
+		SampleRate?: string | null;
+		SpeechMarkTypes?: Array<SpeechMarkType> | null;
+		TextType?: SynthesisTaskTextType | null;
+		VoiceId?: VoiceId | null;
+		LanguageCode?: SynthesisTaskLanguageCode | null;
 	}
 
 	export enum SynthesisTaskTaskStatus { scheduled = 0, inProgress = 1, completed = 2, failed = 3 }
@@ -113,22 +113,22 @@ export namespace MyNS {
 	}
 
 	export interface ListLexiconsOutput {
-		Lexicons?: Array<LexiconDescription>;
-		NextToken?: string;
+		Lexicons?: Array<LexiconDescription> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes the content of the lexicon. */
 	export interface LexiconDescription {
-		Name?: string;
+		Name?: string | null;
 
 		/** Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>. */
-		Attributes?: LexiconAttributes;
+		Attributes?: LexiconAttributes | null;
 	}
 
 	export interface ListSpeechSynthesisTasksOutput {
-		NextToken?: string;
-		SynthesisTasks?: Array<SynthesisTask>;
+		NextToken?: string | null;
+		SynthesisTasks?: Array<SynthesisTask> | null;
 	}
 
 	export interface PutLexiconOutput {
@@ -155,7 +155,7 @@ export namespace MyNS {
 	export interface StartSpeechSynthesisTaskOutput {
 
 		/** SynthesisTask object that provides information about a speech synthesis task. */
-		SynthesisTask?: SynthesisTask;
+		SynthesisTask?: SynthesisTask | null;
 	}
 
 	export interface TextLengthExceededException {
@@ -189,7 +189,7 @@ export namespace MyNS {
 	}
 
 	export interface SynthesizeSpeechOutput {
-		AudioStream?: string;
+		AudioStream?: string | null;
 	}
 
 	export interface DeleteLexiconInput {
@@ -223,31 +223,31 @@ export namespace MyNS {
 	export enum TextType { ssml = 0, text = 1 }
 
 	export interface StartSpeechSynthesisTaskInput {
-		Engine?: Engine;
-		LanguageCode?: StartSpeechSynthesisTaskInputLanguageCode;
-		LexiconNames?: Array<string>;
+		Engine?: Engine | null;
+		LanguageCode?: StartSpeechSynthesisTaskInputLanguageCode | null;
+		LexiconNames?: Array<string> | null;
 		OutputFormat: SynthesisTaskOutputFormat;
 		OutputS3BucketName: string;
-		OutputS3KeyPrefix?: string;
-		SampleRate?: string;
-		SnsTopicArn?: string;
-		SpeechMarkTypes?: Array<SpeechMarkType>;
+		OutputS3KeyPrefix?: string | null;
+		SampleRate?: string | null;
+		SnsTopicArn?: string | null;
+		SpeechMarkTypes?: Array<SpeechMarkType> | null;
 		Text: string;
-		TextType?: SynthesisTaskTextType;
+		TextType?: SynthesisTaskTextType | null;
 		VoiceId: VoiceId;
 	}
 
 	export enum StartSpeechSynthesisTaskInputLanguageCode { arb = 0, cmn_CN = 1, cy_GB = 2, da_DK = 3, de_DE = 4, en_AU = 5, en_GB = 6, en_GB_WLS = 7, en_IN = 8, en_US = 9, es_ES = 10, es_MX = 11, es_US = 12, fr_CA = 13, fr_FR = 14, is_IS = 15, it_IT = 16, ja_JP = 17, hi_IN = 18, ko_KR = 19, nb_NO = 20, nl_NL = 21, pl_PL = 22, pt_BR = 23, pt_PT = 24, ro_RO = 25, ru_RU = 26, sv_SE = 27, tr_TR = 28 }
 
 	export interface SynthesizeSpeechInput {
-		Engine?: Engine;
-		LanguageCode?: SynthesizeSpeechInputLanguageCode;
-		LexiconNames?: Array<string>;
+		Engine?: Engine | null;
+		LanguageCode?: SynthesizeSpeechInputLanguageCode | null;
+		LexiconNames?: Array<string> | null;
 		OutputFormat: SynthesisTaskOutputFormat;
-		SampleRate?: string;
-		SpeechMarkTypes?: Array<SpeechMarkType>;
+		SampleRate?: string | null;
+		SpeechMarkTypes?: Array<SpeechMarkType> | null;
 		Text: string;
-		TextType?: SynthesisTaskTextType;
+		TextType?: SynthesisTaskTextType | null;
 		VoiceId: VoiceId;
 	}
 
@@ -297,7 +297,7 @@ export namespace MyNS {
 		 * @param {string} NextToken An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.
 		 * @return {DescribeVoicesOutput} Success
 		 */
-		DescribeVoices(Engine: Engine, LanguageCode: DescribeVoicesLanguageCode, IncludeAdditionalLanguageCodes: boolean, NextToken: string): Observable<DescribeVoicesOutput> {
+		DescribeVoices(Engine: Engine | null | undefined, LanguageCode: DescribeVoicesLanguageCode | null | undefined, IncludeAdditionalLanguageCodes: boolean | null | undefined, NextToken: string | null | undefined): Observable<DescribeVoicesOutput> {
 			return this.http.get<DescribeVoicesOutput>(this.baseUri + 'v1/voices?Engine=' + Engine + '&LanguageCode=' + LanguageCode + '&IncludeAdditionalLanguageCodes=' + IncludeAdditionalLanguageCodes + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -317,7 +317,7 @@ export namespace MyNS {
 		 * @param {string} NextToken An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.
 		 * @return {ListLexiconsOutput} Success
 		 */
-		ListLexicons(NextToken: string): Observable<ListLexiconsOutput> {
+		ListLexicons(NextToken: string | null | undefined): Observable<ListLexiconsOutput> {
 			return this.http.get<ListLexiconsOutput>(this.baseUri + 'v1/lexicons?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -329,7 +329,7 @@ export namespace MyNS {
 		 * @param {SynthesisTaskTaskStatus} Status Status of the speech synthesis tasks returned in a List operation
 		 * @return {ListSpeechSynthesisTasksOutput} Success
 		 */
-		ListSpeechSynthesisTasks(MaxResults: number, NextToken: string, Status: SynthesisTaskTaskStatus): Observable<ListSpeechSynthesisTasksOutput> {
+		ListSpeechSynthesisTasks(MaxResults: number | null | undefined, NextToken: string | null | undefined, Status: SynthesisTaskTaskStatus | null | undefined): Observable<ListSpeechSynthesisTasksOutput> {
 			return this.http.get<ListSpeechSynthesisTasksOutput>(this.baseUri + 'v1/synthesisTasks?MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Status=' + Status, {});
 		}
 
@@ -366,16 +366,16 @@ export namespace MyNS {
 	export interface StartSpeechSynthesisTaskPostBody {
 
 		/** Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error. */
-		Engine?: Engine;
+		Engine?: Engine | null;
 
 		/** <p>Optional language code for the Speech Synthesis request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p> */
-		LanguageCode?: StartSpeechSynthesisTaskPostBodyLanguageCode;
+		LanguageCode?: StartSpeechSynthesisTaskPostBodyLanguageCode | null;
 
 		/**
 		 * List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice.
 		 * Maximum items: 5
 		 */
-		LexiconNames?: Array<string>;
+		LexiconNames?: Array<string> | null;
 
 		/**
 		 * The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.
@@ -394,22 +394,22 @@ export namespace MyNS {
 		 * The Amazon S3 key prefix for the output speech file.
 		 * Pattern: ^[0-9a-zA-Z\/\!\-_\.\*\'\(\)]{0,800}$
 		 */
-		OutputS3KeyPrefix?: string;
+		OutputS3KeyPrefix?: string | null;
 
 		/** <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p> <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p> */
-		SampleRate?: string;
+		SampleRate?: string | null;
 
 		/**
 		 * ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.
 		 * Pattern: ^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,256}$
 		 */
-		SnsTopicArn?: string;
+		SnsTopicArn?: string | null;
 
 		/**
 		 * The type of speech marks returned for the input text.
 		 * Maximum items: 4
 		 */
-		SpeechMarkTypes?: Array<SpeechMarkType>;
+		SpeechMarkTypes?: Array<SpeechMarkType> | null;
 
 		/**
 		 * The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text.
@@ -418,7 +418,7 @@ export namespace MyNS {
 		Text: string;
 
 		/** Specifies whether the input text is plain text or SSML. The default value is plain text. */
-		TextType?: SynthesisTaskTextType;
+		TextType?: SynthesisTaskTextType | null;
 
 		/**
 		 * Voice ID to use for the synthesis.
@@ -432,16 +432,16 @@ export namespace MyNS {
 	export interface SynthesizeSpeechPostBody {
 
 		/** Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error. */
-		Engine?: Engine;
+		Engine?: Engine | null;
 
 		/** <p>Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p> */
-		LanguageCode?: SynthesizeSpeechPostBodyLanguageCode;
+		LanguageCode?: SynthesizeSpeechPostBodyLanguageCode | null;
 
 		/**
 		 * List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.
 		 * Maximum items: 5
 		 */
-		LexiconNames?: Array<string>;
+		LexiconNames?: Array<string> | null;
 
 		/**
 		 * <p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>
@@ -450,13 +450,13 @@ export namespace MyNS {
 		OutputFormat: SynthesisTaskOutputFormat;
 
 		/** <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p> <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p> */
-		SampleRate?: string;
+		SampleRate?: string | null;
 
 		/**
 		 * The type of speech marks returned for the input text.
 		 * Maximum items: 4
 		 */
-		SpeechMarkTypes?: Array<SpeechMarkType>;
+		SpeechMarkTypes?: Array<SpeechMarkType> | null;
 
 		/**
 		 * Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text.
@@ -465,7 +465,7 @@ export namespace MyNS {
 		Text: string;
 
 		/** Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/ssml.html">Using SSML</a>. */
-		TextType?: SynthesisTaskTextType;
+		TextType?: SynthesisTaskTextType | null;
 
 		/**
 		 * Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.

@@ -11,13 +11,13 @@ export namespace MyNS {
 	export interface AwsAccessKey {
 
 		/** Required. AWS access key ID. */
-		accessKeyId?: string;
+		accessKeyId?: string | null;
 
 		/**
 		 * Required. AWS secret access key. This field is not returned in RPC
 		 * responses.
 		 */
-		secretAccessKey?: string;
+		secretAccessKey?: string | null;
 	}
 
 
@@ -32,14 +32,14 @@ export namespace MyNS {
 		 * [AWS Security
 		 * Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html)).
 		 */
-		awsAccessKey?: AwsAccessKey;
+		awsAccessKey?: AwsAccessKey | null;
 
 		/**
 		 * Required. S3 Bucket name (see
 		 * [Creating a
 		 * bucket](https://docs.aws.amazon.com/AmazonS3/latest/dev/create-bucket-get-location-example.html)).
 		 */
-		bucketName?: string;
+		bucketName?: string | null;
 	}
 
 
@@ -55,13 +55,13 @@ export namespace MyNS {
 	export interface AzureBlobStorageData {
 
 		/** Azure credentials */
-		azureCredentials?: AzureCredentials;
+		azureCredentials?: AzureCredentials | null;
 
 		/** Required. The container to transfer from the Azure Storage account. */
-		container?: string;
+		container?: string | null;
 
 		/** Required. The name of the Azure Storage account. */
-		storageAccount?: string;
+		storageAccount?: string | null;
 	}
 
 
@@ -74,7 +74,7 @@ export namespace MyNS {
 		 * signatures
 		 * (SAS)](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview)).
 		 */
-		sasToken?: string;
+		sasToken?: string | null;
 	}
 
 
@@ -95,19 +95,19 @@ export namespace MyNS {
 		 * if specifying a year by itself or a year and month where the day is not
 		 * significant.
 		 */
-		day?: number;
+		day?: number | null;
 
 		/**
 		 * Month of year. Must be from 1 to 12, or 0 if specifying a year without a
 		 * month and day.
 		 */
-		month?: number;
+		month?: number | null;
 
 		/**
 		 * Year of date. Must be from 1 to 9999, or 0 if specifying a date without
 		 * a year.
 		 */
-		year?: number;
+		year?: number | null;
 	}
 
 
@@ -128,13 +128,13 @@ export namespace MyNS {
 	export interface ErrorLogEntry {
 
 		/** A list of messages that carry the error details. */
-		errorDetails?: Array<string>;
+		errorDetails?: Array<string> | null;
 
 		/**
 		 * Required. A URL that refers to the target (a data source, a data sink,
 		 * or an object) with which the error is associated.
 		 */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -145,17 +145,17 @@ export namespace MyNS {
 	export interface ErrorSummary {
 
 		/** Required. */
-		errorCode?: ErrorSummaryErrorCode;
+		errorCode?: ErrorSummaryErrorCode | null;
 
 		/** Required. Count of this type of error. */
-		errorCount?: string;
+		errorCount?: string | null;
 
 		/**
 		 * Error samples.
 		 * At most 5 error log entries will be recorded for a given
 		 * error code for a single transfer operation.
 		 */
-		errorLogEntries?: Array<ErrorLogEntry>;
+		errorLogEntries?: Array<ErrorLogEntry> | null;
 	}
 
 	export enum ErrorSummaryErrorCode { OK = 0, CANCELLED = 1, UNKNOWN = 2, INVALID_ARGUMENT = 3, DEADLINE_EXCEEDED = 4, NOT_FOUND = 5, ALREADY_EXISTS = 6, PERMISSION_DENIED = 7, UNAUTHENTICATED = 8, RESOURCE_EXHAUSTED = 9, FAILED_PRECONDITION = 10, ABORTED = 11, OUT_OF_RANGE = 12, UNIMPLEMENTED = 13, INTERNAL = 14, UNAVAILABLE = 15, DATA_LOSS = 16 }
@@ -174,7 +174,7 @@ export namespace MyNS {
 		 * [Bucket Name
 		 * Requirements](https://cloud.google.com/storage/docs/naming#requirements)).
 		 */
-		bucketName?: string;
+		bucketName?: string | null;
 	}
 
 
@@ -182,7 +182,7 @@ export namespace MyNS {
 	export interface GoogleServiceAccount {
 
 		/** Email address of the service account. */
-		accountEmail?: string;
+		accountEmail?: string | null;
 	}
 
 
@@ -226,7 +226,7 @@ export namespace MyNS {
 		 * entries. This file must allow public access.  Currently, only URLs with
 		 * HTTP and HTTPS schemes are supported.
 		 */
-		listUrl?: string;
+		listUrl?: string | null;
 	}
 
 
@@ -234,10 +234,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -252,7 +252,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -262,13 +262,13 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/** Represents the transfer operation object. */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/** The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should have the format of `transferOperations/some/unique/name`. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -280,7 +280,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -295,20 +295,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -316,10 +316,10 @@ export namespace MyNS {
 	export interface ListTransferJobsResponse {
 
 		/** The list next page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of transfer jobs. */
-		transferJobs?: Array<TransferJob>;
+		transferJobs?: Array<TransferJob> | null;
 	}
 
 
@@ -330,19 +330,19 @@ export namespace MyNS {
 	export interface TransferJob {
 
 		/** Output only. The time that the transfer job was created. */
-		creationTime?: string;
+		creationTime?: string | null;
 
 		/** Output only. The time that the transfer job was deleted. */
-		deletionTime?: string;
+		deletionTime?: string | null;
 
 		/**
 		 * A description provided by the user for the job. Its max length is 1024
 		 * bytes when Unicode-encoded.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/** Output only. The time that the transfer job was last modified. */
-		lastModificationTime?: string;
+		lastModificationTime?: string | null;
 
 		/**
 		 * A unique name (within the transfer project) assigned when the job is
@@ -357,7 +357,7 @@ export namespace MyNS {
 		 * Invalid job names will fail with an
 		 * INVALID_ARGUMENT error.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Specification to configure notifications published to Cloud Pub/Sub.
@@ -375,13 +375,13 @@ export namespace MyNS {
 		 * The `PubsubMessage.data` will contain a TransferOperation resource
 		 * formatted according to the specified `PayloadFormat`.
 		 */
-		notificationConfig?: NotificationConfig;
+		notificationConfig?: NotificationConfig | null;
 
 		/** The ID of the Google Cloud Platform Project that owns the job. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** Transfers can be scheduled to recur or to run just once. */
-		schedule?: Schedule;
+		schedule?: Schedule | null;
 
 		/**
 		 * Status of the job. This value MUST be specified for
@@ -392,10 +392,10 @@ export namespace MyNS {
 		 * spawned by the transfer is running, the status change would not affect the
 		 * current operation.
 		 */
-		status?: TransferJobStatus;
+		status?: TransferJobStatus | null;
 
 		/** Configuration for running a transfer. */
-		transferSpec?: TransferSpec;
+		transferSpec?: TransferSpec | null;
 	}
 
 
@@ -421,10 +421,10 @@ export namespace MyNS {
 		 * Event types for which a notification is desired. If empty, send
 		 * notifications for all event types.
 		 */
-		eventTypes?: Array<string>;
+		eventTypes?: Array<string> | null;
 
 		/** Required. The desired format of the notification message payloads. */
-		payloadFormat?: NotificationConfigPayloadFormat;
+		payloadFormat?: NotificationConfigPayloadFormat | null;
 
 		/**
 		 * Required. The `Topic.name` of the Cloud Pub/Sub topic to which to publish
@@ -432,7 +432,7 @@ export namespace MyNS {
 		 * Not matching this format will result in an
 		 * INVALID_ARGUMENT error.
 		 */
-		pubsubTopic?: string;
+		pubsubTopic?: string | null;
 	}
 
 	export enum NotificationConfigPayloadFormat { PAYLOAD_FORMAT_UNSPECIFIED = 0, NONE = 1, JSON = 2 }
@@ -451,7 +451,7 @@ export namespace MyNS {
 		 * * A year and month value, with a zero day, e.g. a credit card expiration date
 		 * Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.
 		 */
-		scheduleEndDate?: Date;
+		scheduleEndDate?: Date | null;
 
 		/**
 		 * Represents a whole or partial calendar date, e.g. a birthday. The time of day
@@ -463,14 +463,14 @@ export namespace MyNS {
 		 * * A year and month value, with a zero day, e.g. a credit card expiration date
 		 * Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.
 		 */
-		scheduleStartDate?: Date;
+		scheduleStartDate?: Date | null;
 
 		/**
 		 * Represents a time of day. The date and time zone are either not significant
 		 * or are specified elsewhere. An API may choose to allow leap seconds. Related
 		 * types are google.type.Date and `google.protobuf.Timestamp`.
 		 */
-		startTimeOfDay?: TimeOfDay;
+		startTimeOfDay?: TimeOfDay | null;
 	}
 
 
@@ -485,19 +485,19 @@ export namespace MyNS {
 		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose
 		 * to allow the value "24:00:00" for scenarios like business closing time.
 		 */
-		hours?: number;
+		hours?: number | null;
 
 		/** Minutes of hour of day. Must be from 0 to 59. */
-		minutes?: number;
+		minutes?: number | null;
 
 		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
-		nanos?: number;
+		nanos?: number | null;
 
 		/**
 		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may
 		 * allow the value 60 if it allows leap-seconds.
 		 */
-		seconds?: number;
+		seconds?: number | null;
 	}
 
 	export enum TransferJobStatus { STATUS_UNSPECIFIED = 0, ENABLED = 1, DISABLED = 2, DELETED = 3 }
@@ -510,7 +510,7 @@ export namespace MyNS {
 		 * An AwsS3Data resource can be a data source, but not a data sink.
 		 * In an AwsS3Data resource, an object's name is the S3 object's key name.
 		 */
-		awsS3DataSource?: AwsS3Data;
+		awsS3DataSource?: AwsS3Data | null;
 
 		/**
 		 * An AzureBlobStorageData resource can be a data source, but not a data sink.
@@ -521,7 +521,7 @@ export namespace MyNS {
 		 * Storage blob's key
 		 * name](https://docs.microsoft.com/en-us/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#blob-names).
 		 */
-		azureBlobStorageDataSource?: AzureBlobStorageData;
+		azureBlobStorageDataSource?: AzureBlobStorageData | null;
 
 		/**
 		 * In a GcsData resource, an object's name is the Cloud Storage object's
@@ -529,7 +529,7 @@ export namespace MyNS {
 		 * property of Cloud Storage objects, which changes when the content or the
 		 * metadata of the object is updated.
 		 */
-		gcsDataSink?: GcsData;
+		gcsDataSink?: GcsData | null;
 
 		/**
 		 * In a GcsData resource, an object's name is the Cloud Storage object's
@@ -537,7 +537,7 @@ export namespace MyNS {
 		 * property of Cloud Storage objects, which changes when the content or the
 		 * metadata of the object is updated.
 		 */
-		gcsDataSource?: GcsData;
+		gcsDataSource?: GcsData | null;
 
 		/**
 		 * An HttpData resource specifies a list of objects on the web to be transferred
@@ -572,7 +572,7 @@ export namespace MyNS {
 		 * header in each response.
 		 * * ObjectConditions have no effect when filtering objects to transfer.
 		 */
-		httpDataSource?: HttpData;
+		httpDataSource?: HttpData | null;
 
 		/**
 		 * Conditions that determine which objects will be transferred. Applies only
@@ -582,13 +582,13 @@ export namespace MyNS {
 		 * the `updated` property of Cloud Storage objects and the `LastModified`
 		 * field of S3 objects.
 		 */
-		objectConditions?: ObjectConditions;
+		objectConditions?: ObjectConditions | null;
 
 		/**
 		 * TransferOptions uses three boolean parameters to define the actions
 		 * to be performed on objects in a transfer.
 		 */
-		transferOptions?: TransferOptions;
+		transferOptions?: TransferOptions | null;
 	}
 
 
@@ -607,7 +607,7 @@ export namespace MyNS {
 		 * include_prefixes.
 		 * The max size of `exclude_prefixes` is 1000.
 		 */
-		excludePrefixes?: Array<string>;
+		excludePrefixes?: Array<string> | null;
 
 		/**
 		 * If `include_prefixes` is specified, objects that satisfy the object
@@ -637,14 +637,14 @@ export namespace MyNS {
 		 * with the value of a path explicitly included by `include_prefixes`.
 		 * The max size of `include_prefixes` is 1000.
 		 */
-		includePrefixes?: Array<string>;
+		includePrefixes?: Array<string> | null;
 
 		/**
 		 * If specified, only objects with a "last modification time" before this
 		 * timestamp and objects that don't have a "last modification time" will be
 		 * transferred.
 		 */
-		lastModifiedBefore?: string;
+		lastModifiedBefore?: string | null;
 
 		/**
 		 * If specified, only objects with a "last modification time" on or after
@@ -657,7 +657,7 @@ export namespace MyNS {
 		 * *  `last_modified_since` to the start of the day
 		 * *  `last_modified_before` to the end of the day
 		 */
-		lastModifiedSince?: string;
+		lastModifiedSince?: string | null;
 
 		/**
 		 * If specified, only objects with a "last modification time" on or after
@@ -667,7 +667,7 @@ export namespace MyNS {
 		 * `NOW` refers to the start_time of the
 		 * `TransferOperation`.
 		 */
-		maxTimeElapsedSinceLastModification?: string;
+		maxTimeElapsedSinceLastModification?: string | null;
 
 		/**
 		 * If specified, only objects with a "last modification time" before
@@ -677,7 +677,7 @@ export namespace MyNS {
 		 * refers to the start_time of the
 		 * `TransferOperation`.
 		 */
-		minTimeElapsedSinceLastModification?: string;
+		minTimeElapsedSinceLastModification?: string | null;
 	}
 
 
@@ -693,17 +693,17 @@ export namespace MyNS {
 		 * **Note:** This option and delete_objects_unique_in_sink are mutually
 		 * exclusive.
 		 */
-		deleteObjectsFromSourceAfterTransfer?: boolean;
+		deleteObjectsFromSourceAfterTransfer?: boolean | null;
 
 		/**
 		 * Whether objects that exist only in the sink should be deleted.
 		 * **Note:** This option and delete_objects_from_source_after_transfer are
 		 * mutually exclusive.
 		 */
-		deleteObjectsUniqueInSink?: boolean;
+		deleteObjectsUniqueInSink?: boolean | null;
 
 		/** Whether overwriting objects that already exist in the sink is allowed. */
-		overwriteObjectsAlreadyExistingInSink?: boolean;
+		overwriteObjectsAlreadyExistingInSink?: boolean | null;
 	}
 
 
@@ -721,72 +721,72 @@ export namespace MyNS {
 	export interface TransferCounters {
 
 		/** Bytes that are copied to the data sink. */
-		bytesCopiedToSink?: string;
+		bytesCopiedToSink?: string | null;
 
 		/** Bytes that are deleted from the data sink. */
-		bytesDeletedFromSink?: string;
+		bytesDeletedFromSink?: string | null;
 
 		/** Bytes that are deleted from the data source. */
-		bytesDeletedFromSource?: string;
+		bytesDeletedFromSource?: string | null;
 
 		/** Bytes that failed to be deleted from the data sink. */
-		bytesFailedToDeleteFromSink?: string;
+		bytesFailedToDeleteFromSink?: string | null;
 
 		/**
 		 * Bytes found in the data source that are scheduled to be transferred,
 		 * excluding any that are filtered based on object conditions or skipped due
 		 * to sync.
 		 */
-		bytesFoundFromSource?: string;
+		bytesFoundFromSource?: string | null;
 
 		/** Bytes found only in the data sink that are scheduled to be deleted. */
-		bytesFoundOnlyFromSink?: string;
+		bytesFoundOnlyFromSink?: string | null;
 
 		/**
 		 * Bytes in the data source that failed to be transferred or that failed to
 		 * be deleted after being transferred.
 		 */
-		bytesFromSourceFailed?: string;
+		bytesFromSourceFailed?: string | null;
 
 		/**
 		 * Bytes in the data source that are not transferred because they already
 		 * exist in the data sink.
 		 */
-		bytesFromSourceSkippedBySync?: string;
+		bytesFromSourceSkippedBySync?: string | null;
 
 		/** Objects that are copied to the data sink. */
-		objectsCopiedToSink?: string;
+		objectsCopiedToSink?: string | null;
 
 		/** Objects that are deleted from the data sink. */
-		objectsDeletedFromSink?: string;
+		objectsDeletedFromSink?: string | null;
 
 		/** Objects that are deleted from the data source. */
-		objectsDeletedFromSource?: string;
+		objectsDeletedFromSource?: string | null;
 
 		/** Objects that failed to be deleted from the data sink. */
-		objectsFailedToDeleteFromSink?: string;
+		objectsFailedToDeleteFromSink?: string | null;
 
 		/**
 		 * Objects found in the data source that are scheduled to be transferred,
 		 * excluding any that are filtered based on object conditions or skipped due
 		 * to sync.
 		 */
-		objectsFoundFromSource?: string;
+		objectsFoundFromSource?: string | null;
 
 		/** Objects found only in the data sink that are scheduled to be deleted. */
-		objectsFoundOnlyFromSink?: string;
+		objectsFoundOnlyFromSink?: string | null;
 
 		/**
 		 * Objects in the data source that failed to be transferred or that failed
 		 * to be deleted after being transferred.
 		 */
-		objectsFromSourceFailed?: string;
+		objectsFromSourceFailed?: string | null;
 
 		/**
 		 * Objects in the data source that are not transferred because they already
 		 * exist in the data sink.
 		 */
-		objectsFromSourceSkippedBySync?: string;
+		objectsFromSourceSkippedBySync?: string | null;
 	}
 
 
@@ -794,16 +794,16 @@ export namespace MyNS {
 	export interface TransferOperation {
 
 		/** A collection of counters that report the progress of a transfer operation. */
-		counters?: TransferCounters;
+		counters?: TransferCounters | null;
 
 		/** End time of this transfer execution. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** Summarizes errors encountered with sample error log entries. */
-		errorBreakdowns?: Array<ErrorSummary>;
+		errorBreakdowns?: Array<ErrorSummary> | null;
 
 		/** A globally unique ID assigned by the system. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Specification to configure notifications published to Cloud Pub/Sub.
@@ -821,22 +821,22 @@ export namespace MyNS {
 		 * The `PubsubMessage.data` will contain a TransferOperation resource
 		 * formatted according to the specified `PayloadFormat`.
 		 */
-		notificationConfig?: NotificationConfig;
+		notificationConfig?: NotificationConfig | null;
 
 		/** The ID of the Google Cloud Platform Project that owns the operation. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** Start time of this transfer execution. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** Status of the transfer operation. */
-		status?: TransferOperationStatus;
+		status?: TransferOperationStatus | null;
 
 		/** The name of the transfer job that triggers this transfer operation. */
-		transferJobName?: string;
+		transferJobName?: string | null;
 
 		/** Configuration for running a transfer. */
-		transferSpec?: TransferSpec;
+		transferSpec?: TransferSpec | null;
 	}
 
 	export enum TransferOperationStatus { STATUS_UNSPECIFIED = 0, IN_PROGRESS = 1, PAUSED = 2, SUCCESS = 3, FAILED = 4, ABORTED = 5, QUEUED = 6 }
@@ -849,13 +849,13 @@ export namespace MyNS {
 		 * Required. The ID of the Google Cloud Platform Console project that owns the
 		 * job.
 		 */
-		projectId?: string;
+		projectId?: string | null;
 
 		/**
 		 * This resource represents the configuration of a transfer job that runs
 		 * periodically.
 		 */
-		transferJob?: TransferJob;
+		transferJob?: TransferJob | null;
 
 		/**
 		 * The field mask of the fields in `transferJob` that are to be updated in
@@ -868,7 +868,7 @@ export namespace MyNS {
 		 * specification missing any required fields will be rejected with the error
 		 * INVALID_ARGUMENT.
 		 */
-		updateTransferJobFieldMask?: string;
+		updateTransferJobFieldMask?: string | null;
 	}
 
 	@Injectable()
@@ -912,7 +912,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The list page token.
 		 * @return {void} Successful response
 		 */
-		Storagetransfer_transferJobs_list(filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Storagetransfer_transferJobs_list(filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/transferJobs?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -933,7 +933,7 @@ export namespace MyNS {
 		 * job.
 		 * @return {void} Successful response
 		 */
-		Storagetransfer_transferJobs_get(jobName: string, projectId: string): Observable<HttpResponse<string>> {
+		Storagetransfer_transferJobs_get(jobName: string, projectId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (jobName == null ? '' : encodeURIComponent(jobName)) + '&projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)), { observe: 'response', responseType: 'text' });
 		}
 

@@ -3,186 +3,186 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface Account {
-		address?: Address;
+		address?: Address | null;
 
 		/** Unique identifier of the account */
-		id?: number;
+		id?: number | null;
 
 		/** Name of the account */
-		name?: string;
+		name?: string | null;
 
 		/** Status of the account */
-		status?: string;
+		status?: string | null;
 	}
 
 	export interface Address {
 
 		/** Street portion of the address */
-		address_1?: string;
+		address_1?: string | null;
 
 		/** Additional address information */
-		address_2?: string;
+		address_2?: string | null;
 
 		/** City name */
-		city?: string;
+		city?: string | null;
 
 		/** Country code */
-		country?: string;
+		country?: string | null;
 
 		/** Postal code */
-		postal_code?: string;
+		postal_code?: string | null;
 
 		/** State/Province code */
-		state?: string;
+		state?: string | null;
 	}
 
 
 	/** Account object */
 	export interface AccountEmbeddedObject {
-		data?: Account;
+		data?: Account | null;
 	}
 
 	export interface AccountHalResponse {
 
 		/** Account object */
-		_embedded?: AccountEmbeddedObject;
-		_links?: Links;
+		_embedded?: AccountEmbeddedObject | null;
+		_links?: Links | null;
 
 		/** Current page number */
-		page?: number;
+		page?: number | null;
 
 		/** Number of records per page */
-		page_size?: number;
+		page_size?: number | null;
 
 		/** Total number of records */
-		total_items?: number;
+		total_items?: number | null;
 
 		/** Total number of pages */
-		total_pages?: number;
+		total_pages?: number | null;
 	}
 
 	export interface Links {
 
 		/** URL to the first page of records */
-		first?: FirstHref;
+		first?: FirstHref | null;
 
 		/** URL to the last page of records */
-		last?: LastHref;
+		last?: LastHref | null;
 
 		/** URL to the next page of records */
-		next?: NextHref;
+		next?: NextHref | null;
 
 		/** URL to the previous page of records */
-		prev?: PrevHref;
+		prev?: PrevHref | null;
 
 		/** URL to the current page of records */
-		self?: SelfHref;
+		self?: SelfHref | null;
 	}
 
 
 	/** URL to the first page of records */
 	export interface FirstHref {
-		href?: string;
+		href?: string | null;
 	}
 
 
 	/** URL to the last page of records */
 	export interface LastHref {
-		href?: string;
+		href?: string | null;
 	}
 
 
 	/** URL to the next page of records */
 	export interface NextHref {
-		href?: string;
+		href?: string | null;
 	}
 
 
 	/** URL to the previous page of records */
 	export interface PrevHref {
-		href?: string;
+		href?: string | null;
 	}
 
 
 	/** URL to the current page of records */
 	export interface SelfHref {
-		href?: string;
+		href?: string | null;
 	}
 
 	export interface AddressWithTimeZone {
 
 		/** Street portion of the address */
-		address_1?: string;
+		address_1?: string | null;
 
 		/** Additional address information */
-		address_2?: string;
+		address_2?: string | null;
 
 		/** City name */
-		city?: string;
+		city?: string | null;
 
 		/** Country code */
-		country?: string;
+		country?: string | null;
 
 		/** Postal code */
-		postal_code?: string;
+		postal_code?: string | null;
 
 		/** State/Province code */
-		state?: string;
+		state?: string | null;
 
 		/** Time zone */
-		time_zone?: string;
+		time_zone?: string | null;
 	}
 
 	export interface Location {
-		address?: AddressWithTimeZone;
+		address?: AddressWithTimeZone | null;
 
 		/** Unique identifier of the location */
-		id?: number;
+		id?: number | null;
 
 		/** Name of the location */
-		name?: string;
+		name?: string | null;
 	}
 
 
 	/** Location object */
 	export interface LocationEmbeddedObject {
-		data?: Location;
+		data?: Location | null;
 	}
 
 	export interface LocationHalResponse {
 
 		/** Location object */
-		_embedded?: LocationEmbeddedObject;
-		_links?: Links;
+		_embedded?: LocationEmbeddedObject | null;
+		_links?: Links | null;
 
 		/** Current page number */
-		page?: number;
+		page?: number | null;
 
 		/** Number of records per page */
-		page_size?: number;
+		page_size?: number | null;
 
 		/** Total number of records */
-		total_items?: number;
+		total_items?: number | null;
 
 		/** Total number of pages */
-		total_pages?: number;
+		total_pages?: number | null;
 	}
 
 
 	/** Collection of location objects */
 	export interface LocationsEmbeddedObject {
-		data?: Array<Location>;
+		data?: Array<Location> | null;
 	}
 
 	export interface LocationsHalResponse {
 
 		/** Collection of location objects */
-		_embedded?: LocationsEmbeddedObject;
-		_links?: Links;
-		page?: number;
-		page_size?: number;
-		total_items?: number;
-		total_pages?: number;
+		_embedded?: LocationsEmbeddedObject | null;
+		_links?: Links | null;
+		page?: number | null;
+		page_size?: number | null;
+		total_items?: number | null;
+		total_pages?: number | null;
 	}
 
 	@Injectable()

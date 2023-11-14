@@ -3,10 +3,10 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateBackupPlanOutput {
-		BackupPlanId?: string;
-		BackupPlanArn?: string;
-		CreationDate?: Date;
-		VersionId?: string;
+		BackupPlanId?: string | null;
+		BackupPlanArn?: string | null;
+		CreationDate?: Date | null;
+		VersionId?: string | null;
 	}
 
 
@@ -14,21 +14,21 @@ export namespace MyNS {
 	export interface BackupRuleInput {
 		RuleName: string;
 		TargetBackupVaultName: string;
-		ScheduleExpression?: string;
-		StartWindowMinutes?: number;
-		CompletionWindowMinutes?: number;
+		ScheduleExpression?: string | null;
+		StartWindowMinutes?: number | null;
+		CompletionWindowMinutes?: number | null;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: Lifecycle;
-		RecoveryPointTags?: Tags;
-		CopyActions?: Array<CopyAction>;
+		Lifecycle?: Lifecycle | null;
+		RecoveryPointTags?: Tags | null;
+		CopyActions?: Array<CopyAction> | null;
 	}
 
 
 	/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
 	export interface Lifecycle {
-		MoveToColdStorageAfterDays?: number;
-		DeleteAfterDays?: number;
+		MoveToColdStorageAfterDays?: number | null;
+		DeleteAfterDays?: number | null;
 	}
 
 	export interface Tags {
@@ -39,7 +39,7 @@ export namespace MyNS {
 	export interface CopyAction {
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: Lifecycle;
+		Lifecycle?: Lifecycle | null;
 		DestinationBackupVaultArn: string;
 	}
 
@@ -59,9 +59,9 @@ export namespace MyNS {
 	}
 
 	export interface CreateBackupSelectionOutput {
-		SelectionId?: string;
-		BackupPlanId?: string;
-		CreationDate?: Date;
+		SelectionId?: string | null;
+		BackupPlanId?: string | null;
+		CreationDate?: Date | null;
 	}
 
 
@@ -75,16 +75,16 @@ export namespace MyNS {
 	export enum ConditionConditionType { STRINGEQUALS = 0 }
 
 	export interface CreateBackupVaultOutput {
-		BackupVaultName?: string;
-		BackupVaultArn?: string;
-		CreationDate?: Date;
+		BackupVaultName?: string | null;
+		BackupVaultArn?: string | null;
+		CreationDate?: Date | null;
 	}
 
 	export interface DeleteBackupPlanOutput {
-		BackupPlanId?: string;
-		BackupPlanArn?: string;
-		DeletionDate?: Date;
-		VersionId?: string;
+		BackupPlanId?: string | null;
+		BackupPlanArn?: string | null;
+		DeletionDate?: Date | null;
+		VersionId?: string | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -94,25 +94,25 @@ export namespace MyNS {
 	}
 
 	export interface DescribeBackupJobOutput {
-		BackupJobId?: string;
-		BackupVaultName?: string;
-		BackupVaultArn?: string;
-		RecoveryPointArn?: string;
-		ResourceArn?: string;
-		CreationDate?: Date;
-		CompletionDate?: Date;
-		State?: DescribeBackupJobOutputState;
-		StatusMessage?: string;
-		PercentDone?: string;
-		BackupSizeInBytes?: number;
-		IamRoleArn?: string;
+		BackupJobId?: string | null;
+		BackupVaultName?: string | null;
+		BackupVaultArn?: string | null;
+		RecoveryPointArn?: string | null;
+		ResourceArn?: string | null;
+		CreationDate?: Date | null;
+		CompletionDate?: Date | null;
+		State?: DescribeBackupJobOutputState | null;
+		StatusMessage?: string | null;
+		PercentDone?: string | null;
+		BackupSizeInBytes?: number | null;
+		IamRoleArn?: string | null;
 
 		/** Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup. */
-		CreatedBy?: RecoveryPointCreator;
-		ResourceType?: string;
-		BytesTransferred?: number;
-		ExpectedCompletionDate?: Date;
-		StartBy?: Date;
+		CreatedBy?: RecoveryPointCreator | null;
+		ResourceType?: string | null;
+		BytesTransferred?: number | null;
+		ExpectedCompletionDate?: Date | null;
+		StartBy?: Date | null;
 	}
 
 	export enum DescribeBackupJobOutputState { CREATED = 0, PENDING = 1, RUNNING = 2, ABORTING = 3, ABORTED = 4, COMPLETED = 5, FAILED = 6, EXPIRED = 7 }
@@ -120,83 +120,83 @@ export namespace MyNS {
 
 	/** Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup. */
 	export interface RecoveryPointCreator {
-		BackupPlanId?: string;
-		BackupPlanArn?: string;
-		BackupPlanVersion?: string;
-		BackupRuleId?: string;
+		BackupPlanId?: string | null;
+		BackupPlanArn?: string | null;
+		BackupPlanVersion?: string | null;
+		BackupRuleId?: string | null;
 	}
 
 	export interface DependencyFailureException {
 	}
 
 	export interface DescribeBackupVaultOutput {
-		BackupVaultName?: string;
-		BackupVaultArn?: string;
-		EncryptionKeyArn?: string;
-		CreationDate?: Date;
-		CreatorRequestId?: string;
-		NumberOfRecoveryPoints?: number;
+		BackupVaultName?: string | null;
+		BackupVaultArn?: string | null;
+		EncryptionKeyArn?: string | null;
+		CreationDate?: Date | null;
+		CreatorRequestId?: string | null;
+		NumberOfRecoveryPoints?: number | null;
 	}
 
 	export interface DescribeCopyJobOutput {
 
 		/** Contains detailed information about a copy job. */
-		CopyJob?: CopyJob;
+		CopyJob?: CopyJob | null;
 	}
 
 
 	/** Contains detailed information about a copy job. */
 	export interface CopyJob {
-		CopyJobId?: string;
-		SourceBackupVaultArn?: string;
-		SourceRecoveryPointArn?: string;
-		DestinationBackupVaultArn?: string;
-		DestinationRecoveryPointArn?: string;
-		ResourceArn?: string;
-		CreationDate?: Date;
-		CompletionDate?: Date;
-		State?: CopyJobState;
-		StatusMessage?: string;
-		BackupSizeInBytes?: number;
-		IamRoleArn?: string;
+		CopyJobId?: string | null;
+		SourceBackupVaultArn?: string | null;
+		SourceRecoveryPointArn?: string | null;
+		DestinationBackupVaultArn?: string | null;
+		DestinationRecoveryPointArn?: string | null;
+		ResourceArn?: string | null;
+		CreationDate?: Date | null;
+		CompletionDate?: Date | null;
+		State?: CopyJobState | null;
+		StatusMessage?: string | null;
+		BackupSizeInBytes?: number | null;
+		IamRoleArn?: string | null;
 
 		/** Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup. */
-		CreatedBy?: RecoveryPointCreator;
-		ResourceType?: string;
+		CreatedBy?: RecoveryPointCreator | null;
+		ResourceType?: string | null;
 	}
 
 	export enum CopyJobState { CREATED = 0, RUNNING = 1, COMPLETED = 2, FAILED = 3 }
 
 	export interface DescribeProtectedResourceOutput {
-		ResourceArn?: string;
-		ResourceType?: string;
-		LastBackupTime?: Date;
+		ResourceArn?: string | null;
+		ResourceType?: string | null;
+		LastBackupTime?: Date | null;
 	}
 
 	export interface DescribeRecoveryPointOutput {
-		RecoveryPointArn?: string;
-		BackupVaultName?: string;
-		BackupVaultArn?: string;
-		ResourceArn?: string;
-		ResourceType?: string;
+		RecoveryPointArn?: string | null;
+		BackupVaultName?: string | null;
+		BackupVaultArn?: string | null;
+		ResourceArn?: string | null;
+		ResourceType?: string | null;
 
 		/** Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup. */
-		CreatedBy?: RecoveryPointCreator;
-		IamRoleArn?: string;
-		Status?: DescribeRecoveryPointOutputStatus;
-		CreationDate?: Date;
-		CompletionDate?: Date;
-		BackupSizeInBytes?: number;
+		CreatedBy?: RecoveryPointCreator | null;
+		IamRoleArn?: string | null;
+		Status?: DescribeRecoveryPointOutputStatus | null;
+		CreationDate?: Date | null;
+		CompletionDate?: Date | null;
+		BackupSizeInBytes?: number | null;
 
 		/** <p>Contains <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps, which are used to specify a lifecycle for a recovery point.</p> <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS Backup transitions and expires backups automatically according to the lifecycle that you define.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		CalculatedLifecycle?: CalculatedLifecycle;
+		CalculatedLifecycle?: CalculatedLifecycle | null;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: Lifecycle;
-		EncryptionKeyArn?: string;
-		IsEncrypted?: boolean;
-		StorageClass?: DescribeRecoveryPointOutputStorageClass;
-		LastRestoreTime?: Date;
+		Lifecycle?: Lifecycle | null;
+		EncryptionKeyArn?: string | null;
+		IsEncrypted?: boolean | null;
+		StorageClass?: DescribeRecoveryPointOutputStorageClass | null;
+		LastRestoreTime?: Date | null;
 	}
 
 	export enum DescribeRecoveryPointOutputStatus { COMPLETED = 0, PARTIAL = 1, DELETING = 2, EXPIRED = 3 }
@@ -204,50 +204,50 @@ export namespace MyNS {
 
 	/** <p>Contains <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps, which are used to specify a lifecycle for a recovery point.</p> <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS Backup transitions and expires backups automatically according to the lifecycle that you define.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
 	export interface CalculatedLifecycle {
-		MoveToColdStorageAt?: Date;
-		DeleteAt?: Date;
+		MoveToColdStorageAt?: Date | null;
+		DeleteAt?: Date | null;
 	}
 
 	export enum DescribeRecoveryPointOutputStorageClass { WARM = 0, COLD = 1, DELETED = 2 }
 
 	export interface DescribeRegionSettingsOutput {
-		ResourceTypeOptInPreference?: ResourceTypeOptInPreference;
+		ResourceTypeOptInPreference?: ResourceTypeOptInPreference | null;
 	}
 
 	export interface ResourceTypeOptInPreference {
 	}
 
 	export interface DescribeRestoreJobOutput {
-		RestoreJobId?: string;
-		RecoveryPointArn?: string;
-		CreationDate?: Date;
-		CompletionDate?: Date;
-		Status?: DescribeRestoreJobOutputStatus;
-		StatusMessage?: string;
-		PercentDone?: string;
-		BackupSizeInBytes?: number;
-		IamRoleArn?: string;
-		ExpectedCompletionTimeMinutes?: number;
-		CreatedResourceArn?: string;
+		RestoreJobId?: string | null;
+		RecoveryPointArn?: string | null;
+		CreationDate?: Date | null;
+		CompletionDate?: Date | null;
+		Status?: DescribeRestoreJobOutputStatus | null;
+		StatusMessage?: string | null;
+		PercentDone?: string | null;
+		BackupSizeInBytes?: number | null;
+		IamRoleArn?: string | null;
+		ExpectedCompletionTimeMinutes?: number | null;
+		CreatedResourceArn?: string | null;
 	}
 
 	export enum DescribeRestoreJobOutputStatus { PENDING = 0, RUNNING = 1, COMPLETED = 2, ABORTED = 3, FAILED = 4 }
 
 	export interface ExportBackupPlanTemplateOutput {
-		BackupPlanTemplateJson?: string;
+		BackupPlanTemplateJson?: string | null;
 	}
 
 	export interface GetBackupPlanOutput {
 
 		/** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources. */
-		BackupPlan?: BackupPlan;
-		BackupPlanId?: string;
-		BackupPlanArn?: string;
-		VersionId?: string;
-		CreatorRequestId?: string;
-		CreationDate?: Date;
-		DeletionDate?: Date;
-		LastExecutionDate?: Date;
+		BackupPlan?: BackupPlan | null;
+		BackupPlanId?: string | null;
+		BackupPlanArn?: string | null;
+		VersionId?: string | null;
+		CreatorRequestId?: string | null;
+		CreationDate?: Date | null;
+		DeletionDate?: Date | null;
+		LastExecutionDate?: Date | null;
 	}
 
 
@@ -262,37 +262,37 @@ export namespace MyNS {
 	export interface BackupRule {
 		RuleName: string;
 		TargetBackupVaultName: string;
-		ScheduleExpression?: string;
-		StartWindowMinutes?: number;
-		CompletionWindowMinutes?: number;
+		ScheduleExpression?: string | null;
+		StartWindowMinutes?: number | null;
+		CompletionWindowMinutes?: number | null;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: Lifecycle;
-		RecoveryPointTags?: Tags;
-		RuleId?: string;
-		CopyActions?: Array<CopyAction>;
+		Lifecycle?: Lifecycle | null;
+		RecoveryPointTags?: Tags | null;
+		RuleId?: string | null;
+		CopyActions?: Array<CopyAction> | null;
 	}
 
 	export interface GetBackupPlanFromJSONOutput {
 
 		/** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources. */
-		BackupPlan?: BackupPlan;
+		BackupPlan?: BackupPlan | null;
 	}
 
 	export interface GetBackupPlanFromTemplateOutput {
 
 		/** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources. */
-		BackupPlanDocument?: BackupPlan;
+		BackupPlanDocument?: BackupPlan | null;
 	}
 
 	export interface GetBackupSelectionOutput {
 
 		/** Used to specify a set of resources to a backup plan. */
-		BackupSelection?: BackupSelection;
-		SelectionId?: string;
-		BackupPlanId?: string;
-		CreationDate?: Date;
-		CreatorRequestId?: string;
+		BackupSelection?: BackupSelection | null;
+		SelectionId?: string | null;
+		BackupPlanId?: string | null;
+		CreationDate?: Date | null;
+		CreatorRequestId?: string | null;
 	}
 
 
@@ -300,257 +300,257 @@ export namespace MyNS {
 	export interface BackupSelection {
 		SelectionName: string;
 		IamRoleArn: string;
-		Resources?: Array<string>;
-		ListOfTags?: Array<Condition>;
+		Resources?: Array<string> | null;
+		ListOfTags?: Array<Condition> | null;
 	}
 
 	export interface GetBackupVaultAccessPolicyOutput {
-		BackupVaultName?: string;
-		BackupVaultArn?: string;
-		Policy?: string;
+		BackupVaultName?: string | null;
+		BackupVaultArn?: string | null;
+		Policy?: string | null;
 	}
 
 	export interface GetBackupVaultNotificationsOutput {
-		BackupVaultName?: string;
-		BackupVaultArn?: string;
-		SNSTopicArn?: string;
-		BackupVaultEvents?: Array<BackupVaultEvent>;
+		BackupVaultName?: string | null;
+		BackupVaultArn?: string | null;
+		SNSTopicArn?: string | null;
+		BackupVaultEvents?: Array<BackupVaultEvent> | null;
 	}
 
 	export enum BackupVaultEvent { BACKUP_JOB_STARTED = 0, BACKUP_JOB_COMPLETED = 1, BACKUP_JOB_SUCCESSFUL = 2, BACKUP_JOB_FAILED = 3, BACKUP_JOB_EXPIRED = 4, RESTORE_JOB_STARTED = 5, RESTORE_JOB_COMPLETED = 6, RESTORE_JOB_SUCCESSFUL = 7, RESTORE_JOB_FAILED = 8, COPY_JOB_STARTED = 9, COPY_JOB_SUCCESSFUL = 10, COPY_JOB_FAILED = 11, RECOVERY_POINT_MODIFIED = 12, BACKUP_PLAN_CREATED = 13, BACKUP_PLAN_MODIFIED = 14 }
 
 	export interface GetRecoveryPointRestoreMetadataOutput {
-		BackupVaultArn?: string;
-		RecoveryPointArn?: string;
-		RestoreMetadata?: Metadata;
+		BackupVaultArn?: string | null;
+		RecoveryPointArn?: string | null;
+		RestoreMetadata?: Metadata | null;
 	}
 
 	export interface Metadata {
 	}
 
 	export interface GetSupportedResourceTypesOutput {
-		ResourceTypes?: Array<string>;
+		ResourceTypes?: Array<string> | null;
 	}
 
 	export interface ListBackupJobsOutput {
-		BackupJobs?: Array<BackupJob>;
-		NextToken?: string;
+		BackupJobs?: Array<BackupJob> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains detailed information about a backup job. */
 	export interface BackupJob {
-		BackupJobId?: string;
-		BackupVaultName?: string;
-		BackupVaultArn?: string;
-		RecoveryPointArn?: string;
-		ResourceArn?: string;
-		CreationDate?: Date;
-		CompletionDate?: Date;
-		State?: DescribeBackupJobOutputState;
-		StatusMessage?: string;
-		PercentDone?: string;
-		BackupSizeInBytes?: number;
-		IamRoleArn?: string;
+		BackupJobId?: string | null;
+		BackupVaultName?: string | null;
+		BackupVaultArn?: string | null;
+		RecoveryPointArn?: string | null;
+		ResourceArn?: string | null;
+		CreationDate?: Date | null;
+		CompletionDate?: Date | null;
+		State?: DescribeBackupJobOutputState | null;
+		StatusMessage?: string | null;
+		PercentDone?: string | null;
+		BackupSizeInBytes?: number | null;
+		IamRoleArn?: string | null;
 
 		/** Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup. */
-		CreatedBy?: RecoveryPointCreator;
-		ExpectedCompletionDate?: Date;
-		StartBy?: Date;
-		ResourceType?: string;
-		BytesTransferred?: number;
+		CreatedBy?: RecoveryPointCreator | null;
+		ExpectedCompletionDate?: Date | null;
+		StartBy?: Date | null;
+		ResourceType?: string | null;
+		BytesTransferred?: number | null;
 	}
 
 	export interface ListBackupPlanTemplatesOutput {
-		NextToken?: string;
-		BackupPlanTemplatesList?: Array<BackupPlanTemplatesListMember>;
+		NextToken?: string | null;
+		BackupPlanTemplatesList?: Array<BackupPlanTemplatesListMember> | null;
 	}
 
 
 	/** An object specifying metadata associated with a backup plan template. */
 	export interface BackupPlanTemplatesListMember {
-		BackupPlanTemplateId?: string;
-		BackupPlanTemplateName?: string;
+		BackupPlanTemplateId?: string | null;
+		BackupPlanTemplateName?: string | null;
 	}
 
 	export interface ListBackupPlanVersionsOutput {
-		NextToken?: string;
-		BackupPlanVersionsList?: Array<BackupPlansListMember>;
+		NextToken?: string | null;
+		BackupPlanVersionsList?: Array<BackupPlansListMember> | null;
 	}
 
 
 	/** Contains metadata about a backup plan. */
 	export interface BackupPlansListMember {
-		BackupPlanArn?: string;
-		BackupPlanId?: string;
-		CreationDate?: Date;
-		DeletionDate?: Date;
-		VersionId?: string;
-		BackupPlanName?: string;
-		CreatorRequestId?: string;
-		LastExecutionDate?: Date;
+		BackupPlanArn?: string | null;
+		BackupPlanId?: string | null;
+		CreationDate?: Date | null;
+		DeletionDate?: Date | null;
+		VersionId?: string | null;
+		BackupPlanName?: string | null;
+		CreatorRequestId?: string | null;
+		LastExecutionDate?: Date | null;
 	}
 
 	export interface ListBackupPlansOutput {
-		NextToken?: string;
-		BackupPlansList?: Array<BackupPlansListMember>;
+		NextToken?: string | null;
+		BackupPlansList?: Array<BackupPlansListMember> | null;
 	}
 
 	export interface ListBackupSelectionsOutput {
-		NextToken?: string;
-		BackupSelectionsList?: Array<BackupSelectionsListMember>;
+		NextToken?: string | null;
+		BackupSelectionsList?: Array<BackupSelectionsListMember> | null;
 	}
 
 
 	/** Contains metadata about a <code>BackupSelection</code> object. */
 	export interface BackupSelectionsListMember {
-		SelectionId?: string;
-		SelectionName?: string;
-		BackupPlanId?: string;
-		CreationDate?: Date;
-		CreatorRequestId?: string;
-		IamRoleArn?: string;
+		SelectionId?: string | null;
+		SelectionName?: string | null;
+		BackupPlanId?: string | null;
+		CreationDate?: Date | null;
+		CreatorRequestId?: string | null;
+		IamRoleArn?: string | null;
 	}
 
 	export interface ListBackupVaultsOutput {
-		BackupVaultList?: Array<BackupVaultListMember>;
-		NextToken?: string;
+		BackupVaultList?: Array<BackupVaultListMember> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains metadata about a backup vault. */
 	export interface BackupVaultListMember {
-		BackupVaultName?: string;
-		BackupVaultArn?: string;
-		CreationDate?: Date;
-		EncryptionKeyArn?: string;
-		CreatorRequestId?: string;
-		NumberOfRecoveryPoints?: number;
+		BackupVaultName?: string | null;
+		BackupVaultArn?: string | null;
+		CreationDate?: Date | null;
+		EncryptionKeyArn?: string | null;
+		CreatorRequestId?: string | null;
+		NumberOfRecoveryPoints?: number | null;
 	}
 
 	export interface ListCopyJobsOutput {
-		CopyJobs?: Array<CopyJob>;
-		NextToken?: string;
+		CopyJobs?: Array<CopyJob> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListProtectedResourcesOutput {
-		Results?: Array<ProtectedResource>;
-		NextToken?: string;
+		Results?: Array<ProtectedResource> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A structure that contains information about a backed-up resource. */
 	export interface ProtectedResource {
-		ResourceArn?: string;
-		ResourceType?: string;
-		LastBackupTime?: Date;
+		ResourceArn?: string | null;
+		ResourceType?: string | null;
+		LastBackupTime?: Date | null;
 	}
 
 	export interface ListRecoveryPointsByBackupVaultOutput {
-		NextToken?: string;
-		RecoveryPoints?: Array<RecoveryPointByBackupVault>;
+		NextToken?: string | null;
+		RecoveryPoints?: Array<RecoveryPointByBackupVault> | null;
 	}
 
 
 	/** Contains detailed information about the recovery points stored in a backup vault. */
 	export interface RecoveryPointByBackupVault {
-		RecoveryPointArn?: string;
-		BackupVaultName?: string;
-		BackupVaultArn?: string;
-		ResourceArn?: string;
-		ResourceType?: string;
+		RecoveryPointArn?: string | null;
+		BackupVaultName?: string | null;
+		BackupVaultArn?: string | null;
+		ResourceArn?: string | null;
+		ResourceType?: string | null;
 
 		/** Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup. */
-		CreatedBy?: RecoveryPointCreator;
-		IamRoleArn?: string;
-		Status?: DescribeRecoveryPointOutputStatus;
-		CreationDate?: Date;
-		CompletionDate?: Date;
-		BackupSizeInBytes?: number;
+		CreatedBy?: RecoveryPointCreator | null;
+		IamRoleArn?: string | null;
+		Status?: DescribeRecoveryPointOutputStatus | null;
+		CreationDate?: Date | null;
+		CompletionDate?: Date | null;
+		BackupSizeInBytes?: number | null;
 
 		/** <p>Contains <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps, which are used to specify a lifecycle for a recovery point.</p> <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS Backup transitions and expires backups automatically according to the lifecycle that you define.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		CalculatedLifecycle?: CalculatedLifecycle;
+		CalculatedLifecycle?: CalculatedLifecycle | null;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: Lifecycle;
-		EncryptionKeyArn?: string;
-		IsEncrypted?: boolean;
-		LastRestoreTime?: Date;
+		Lifecycle?: Lifecycle | null;
+		EncryptionKeyArn?: string | null;
+		IsEncrypted?: boolean | null;
+		LastRestoreTime?: Date | null;
 	}
 
 	export interface ListRecoveryPointsByResourceOutput {
-		NextToken?: string;
-		RecoveryPoints?: Array<RecoveryPointByResource>;
+		NextToken?: string | null;
+		RecoveryPoints?: Array<RecoveryPointByResource> | null;
 	}
 
 
 	/** Contains detailed information about a saved recovery point. */
 	export interface RecoveryPointByResource {
-		RecoveryPointArn?: string;
-		CreationDate?: Date;
-		Status?: DescribeRecoveryPointOutputStatus;
-		EncryptionKeyArn?: string;
-		BackupSizeBytes?: number;
-		BackupVaultName?: string;
+		RecoveryPointArn?: string | null;
+		CreationDate?: Date | null;
+		Status?: DescribeRecoveryPointOutputStatus | null;
+		EncryptionKeyArn?: string | null;
+		BackupSizeBytes?: number | null;
+		BackupVaultName?: string | null;
 	}
 
 	export interface ListRestoreJobsOutput {
-		RestoreJobs?: Array<RestoreJobsListMember>;
-		NextToken?: string;
+		RestoreJobs?: Array<RestoreJobsListMember> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains metadata about a restore job. */
 	export interface RestoreJobsListMember {
-		RestoreJobId?: string;
-		RecoveryPointArn?: string;
-		CreationDate?: Date;
-		CompletionDate?: Date;
-		Status?: DescribeRestoreJobOutputStatus;
-		StatusMessage?: string;
-		PercentDone?: string;
-		BackupSizeInBytes?: number;
-		IamRoleArn?: string;
-		ExpectedCompletionTimeMinutes?: number;
-		CreatedResourceArn?: string;
+		RestoreJobId?: string | null;
+		RecoveryPointArn?: string | null;
+		CreationDate?: Date | null;
+		CompletionDate?: Date | null;
+		Status?: DescribeRestoreJobOutputStatus | null;
+		StatusMessage?: string | null;
+		PercentDone?: string | null;
+		BackupSizeInBytes?: number | null;
+		IamRoleArn?: string | null;
+		ExpectedCompletionTimeMinutes?: number | null;
+		CreatedResourceArn?: string | null;
 	}
 
 	export interface ListTagsOutput {
-		NextToken?: string;
-		Tags?: Tags;
+		NextToken?: string | null;
+		Tags?: Tags | null;
 	}
 
 	export interface StartBackupJobOutput {
-		BackupJobId?: string;
-		RecoveryPointArn?: string;
-		CreationDate?: Date;
+		BackupJobId?: string | null;
+		RecoveryPointArn?: string | null;
+		CreationDate?: Date | null;
 	}
 
 	export interface StartCopyJobOutput {
-		CopyJobId?: string;
-		CreationDate?: Date;
+		CopyJobId?: string | null;
+		CreationDate?: Date | null;
 	}
 
 	export interface StartRestoreJobOutput {
-		RestoreJobId?: string;
+		RestoreJobId?: string | null;
 	}
 
 	export interface UpdateBackupPlanOutput {
-		BackupPlanId?: string;
-		BackupPlanArn?: string;
-		CreationDate?: Date;
-		VersionId?: string;
+		BackupPlanId?: string | null;
+		BackupPlanArn?: string | null;
+		CreationDate?: Date | null;
+		VersionId?: string | null;
 	}
 
 	export interface UpdateRecoveryPointLifecycleOutput {
-		BackupVaultArn?: string;
-		RecoveryPointArn?: string;
+		BackupVaultArn?: string | null;
+		RecoveryPointArn?: string | null;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: Lifecycle;
+		Lifecycle?: Lifecycle | null;
 
 		/** <p>Contains <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps, which are used to specify a lifecycle for a recovery point.</p> <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS Backup transitions and expires backups automatically according to the lifecycle that you define.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		CalculatedLifecycle?: CalculatedLifecycle;
+		CalculatedLifecycle?: CalculatedLifecycle | null;
 	}
 
 	export enum BackupJobState { CREATED = 0, PENDING = 1, RUNNING = 2, ABORTING = 3, ABORTED = 4, COMPLETED = 5, FAILED = 6, EXPIRED = 7 }
@@ -571,8 +571,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		BackupPlan: BackupPlanInput;
-		BackupPlanTags?: Tags;
-		CreatorRequestId?: string;
+		BackupPlanTags?: Tags | null;
+		CreatorRequestId?: string | null;
 	}
 
 	export interface CreateBackupSelectionInput {
@@ -582,13 +582,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		BackupSelection: BackupSelection;
-		CreatorRequestId?: string;
+		CreatorRequestId?: string | null;
 	}
 
 	export interface CreateBackupVaultInput {
-		BackupVaultTags?: Tags;
-		EncryptionKeyArn?: string;
-		CreatorRequestId?: string;
+		BackupVaultTags?: Tags | null;
+		EncryptionKeyArn?: string | null;
+		CreatorRequestId?: string | null;
 	}
 
 	export interface DeleteBackupPlanInput {
@@ -698,7 +698,7 @@ export namespace MyNS {
 	}
 
 	export interface PutBackupVaultAccessPolicyInput {
-		Policy?: string;
+		Policy?: string | null;
 	}
 
 	export interface PutBackupVaultNotificationsInput {
@@ -710,13 +710,13 @@ export namespace MyNS {
 		BackupVaultName: string;
 		ResourceArn: string;
 		IamRoleArn: string;
-		IdempotencyToken?: string;
-		StartWindowMinutes?: number;
-		CompleteWindowMinutes?: number;
+		IdempotencyToken?: string | null;
+		StartWindowMinutes?: number | null;
+		CompleteWindowMinutes?: number | null;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: Lifecycle;
-		RecoveryPointTags?: Tags;
+		Lifecycle?: Lifecycle | null;
+		RecoveryPointTags?: Tags | null;
 	}
 
 	export interface StartCopyJobInput {
@@ -724,18 +724,18 @@ export namespace MyNS {
 		SourceBackupVaultName: string;
 		DestinationBackupVaultArn: string;
 		IamRoleArn: string;
-		IdempotencyToken?: string;
+		IdempotencyToken?: string | null;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: Lifecycle;
+		Lifecycle?: Lifecycle | null;
 	}
 
 	export interface StartRestoreJobInput {
 		RecoveryPointArn: string;
 		Metadata: Metadata;
 		IamRoleArn: string;
-		IdempotencyToken?: string;
-		ResourceType?: string;
+		IdempotencyToken?: string | null;
+		ResourceType?: string | null;
 	}
 
 	export interface StopBackupJobInput {
@@ -761,11 +761,11 @@ export namespace MyNS {
 	export interface UpdateRecoveryPointLifecycleInput {
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: Lifecycle;
+		Lifecycle?: Lifecycle | null;
 	}
 
 	export interface UpdateRegionSettingsInput {
-		ResourceTypeOptInPreference?: ResourceTypeOptInPreference;
+		ResourceTypeOptInPreference?: ResourceTypeOptInPreference | null;
 	}
 
 	@Injectable()
@@ -792,7 +792,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBackupPlansOutput} Success
 		 */
-		ListBackupPlans(nextToken: string, maxResults: number, includeDeleted: boolean, MaxResults: string, NextToken: string): Observable<ListBackupPlansOutput> {
+		ListBackupPlans(nextToken: string | null | undefined, maxResults: number | null | undefined, includeDeleted: boolean | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListBackupPlansOutput> {
 			return this.http.get<ListBackupPlansOutput>(this.baseUri + 'backup/plans/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&includeDeleted=' + includeDeleted + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -816,7 +816,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBackupSelectionsOutput} Success
 		 */
-		ListBackupSelections(backupPlanId: string, nextToken: string, maxResults: number, MaxResults: string, NextToken: string): Observable<ListBackupSelectionsOutput> {
+		ListBackupSelections(backupPlanId: string, nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListBackupSelectionsOutput> {
 			return this.http.get<ListBackupSelectionsOutput>(this.baseUri + 'backup/plans/' + (backupPlanId == null ? '' : encodeURIComponent(backupPlanId)) + '/selections/&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1070,7 +1070,7 @@ export namespace MyNS {
 		 * @param {string} versionId Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.
 		 * @return {GetBackupPlanOutput} Success
 		 */
-		GetBackupPlan(backupPlanId: string, versionId: string): Observable<GetBackupPlanOutput> {
+		GetBackupPlan(backupPlanId: string, versionId: string | null | undefined): Observable<GetBackupPlanOutput> {
 			return this.http.get<GetBackupPlanOutput>(this.baseUri + 'backup/plans/' + (backupPlanId == null ? '' : encodeURIComponent(backupPlanId)) + '/&versionId=' + (versionId == null ? '' : encodeURIComponent(versionId)), {});
 		}
 
@@ -1128,7 +1128,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBackupJobsOutput} Success
 		 */
-		ListBackupJobs(nextToken: string, maxResults: number, resourceArn: string, state: DescribeBackupJobOutputState, backupVaultName: string, createdBefore: Date, createdAfter: Date, resourceType: string, MaxResults: string, NextToken: string): Observable<ListBackupJobsOutput> {
+		ListBackupJobs(nextToken: string | null | undefined, maxResults: number | null | undefined, resourceArn: string | null | undefined, state: DescribeBackupJobOutputState | null | undefined, backupVaultName: string | null | undefined, createdBefore: Date | null | undefined, createdAfter: Date | null | undefined, resourceType: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListBackupJobsOutput> {
 			return this.http.get<ListBackupJobsOutput>(this.baseUri + 'backup-jobs/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&resourceArn=' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)) + '&state=' + state + '&backupVaultName=' + (backupVaultName == null ? '' : encodeURIComponent(backupVaultName)) + '&createdBefore=' + createdBefore.toISOString() + '&createdAfter=' + createdAfter.toISOString() + '&resourceType=' + (resourceType == null ? '' : encodeURIComponent(resourceType)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1141,7 +1141,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBackupPlanTemplatesOutput} Success
 		 */
-		ListBackupPlanTemplates(nextToken: string, maxResults: number, MaxResults: string, NextToken: string): Observable<ListBackupPlanTemplatesOutput> {
+		ListBackupPlanTemplates(nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListBackupPlanTemplatesOutput> {
 			return this.http.get<ListBackupPlanTemplatesOutput>(this.baseUri + 'backup/template/plans?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1155,7 +1155,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBackupPlanVersionsOutput} Success
 		 */
-		ListBackupPlanVersions(backupPlanId: string, nextToken: string, maxResults: number, MaxResults: string, NextToken: string): Observable<ListBackupPlanVersionsOutput> {
+		ListBackupPlanVersions(backupPlanId: string, nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListBackupPlanVersionsOutput> {
 			return this.http.get<ListBackupPlanVersionsOutput>(this.baseUri + 'backup/plans/' + (backupPlanId == null ? '' : encodeURIComponent(backupPlanId)) + '/versions/&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1168,7 +1168,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBackupVaultsOutput} Success
 		 */
-		ListBackupVaults(nextToken: string, maxResults: number, MaxResults: string, NextToken: string): Observable<ListBackupVaultsOutput> {
+		ListBackupVaults(nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListBackupVaultsOutput> {
 			return this.http.get<ListBackupVaultsOutput>(this.baseUri + 'backup-vaults/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1187,7 +1187,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCopyJobsOutput} Success
 		 */
-		ListCopyJobs(nextToken: string, maxResults: number, resourceArn: string, state: CopyJobState, createdBefore: Date, createdAfter: Date, resourceType: string, destinationVaultArn: string, MaxResults: string, NextToken: string): Observable<ListCopyJobsOutput> {
+		ListCopyJobs(nextToken: string | null | undefined, maxResults: number | null | undefined, resourceArn: string | null | undefined, state: CopyJobState | null | undefined, createdBefore: Date | null | undefined, createdAfter: Date | null | undefined, resourceType: string | null | undefined, destinationVaultArn: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListCopyJobsOutput> {
 			return this.http.get<ListCopyJobsOutput>(this.baseUri + 'copy-jobs/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&resourceArn=' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)) + '&state=' + state + '&createdBefore=' + createdBefore.toISOString() + '&createdAfter=' + createdAfter.toISOString() + '&resourceType=' + (resourceType == null ? '' : encodeURIComponent(resourceType)) + '&destinationVaultArn=' + (destinationVaultArn == null ? '' : encodeURIComponent(destinationVaultArn)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1200,7 +1200,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListProtectedResourcesOutput} Success
 		 */
-		ListProtectedResources(nextToken: string, maxResults: number, MaxResults: string, NextToken: string): Observable<ListProtectedResourcesOutput> {
+		ListProtectedResources(nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListProtectedResourcesOutput> {
 			return this.http.get<ListProtectedResourcesOutput>(this.baseUri + 'resources/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1219,7 +1219,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRecoveryPointsByBackupVaultOutput} Success
 		 */
-		ListRecoveryPointsByBackupVault(backupVaultName: string, nextToken: string, maxResults: number, resourceArn: string, resourceType: string, backupPlanId: string, createdBefore: Date, createdAfter: Date, MaxResults: string, NextToken: string): Observable<ListRecoveryPointsByBackupVaultOutput> {
+		ListRecoveryPointsByBackupVault(backupVaultName: string, nextToken: string | null | undefined, maxResults: number | null | undefined, resourceArn: string | null | undefined, resourceType: string | null | undefined, backupPlanId: string | null | undefined, createdBefore: Date | null | undefined, createdAfter: Date | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListRecoveryPointsByBackupVaultOutput> {
 			return this.http.get<ListRecoveryPointsByBackupVaultOutput>(this.baseUri + 'backup-vaults/' + (backupVaultName == null ? '' : encodeURIComponent(backupVaultName)) + '/recovery-points/&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&resourceArn=' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)) + '&resourceType=' + (resourceType == null ? '' : encodeURIComponent(resourceType)) + '&backupPlanId=' + (backupPlanId == null ? '' : encodeURIComponent(backupPlanId)) + '&createdBefore=' + createdBefore.toISOString() + '&createdAfter=' + createdAfter.toISOString() + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1233,7 +1233,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRecoveryPointsByResourceOutput} Success
 		 */
-		ListRecoveryPointsByResource(resourceArn: string, nextToken: string, maxResults: number, MaxResults: string, NextToken: string): Observable<ListRecoveryPointsByResourceOutput> {
+		ListRecoveryPointsByResource(resourceArn: string, nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListRecoveryPointsByResourceOutput> {
 			return this.http.get<ListRecoveryPointsByResourceOutput>(this.baseUri + 'resources/' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)) + '/recovery-points/&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1246,7 +1246,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRestoreJobsOutput} Success
 		 */
-		ListRestoreJobs(nextToken: string, maxResults: number, MaxResults: string, NextToken: string): Observable<ListRestoreJobsOutput> {
+		ListRestoreJobs(nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListRestoreJobsOutput> {
 			return this.http.get<ListRestoreJobsOutput>(this.baseUri + 'restore-jobs/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1260,7 +1260,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsOutput} Success
 		 */
-		ListTags(resourceArn: string, nextToken: string, maxResults: number, MaxResults: string, NextToken: string): Observable<ListTagsOutput> {
+		ListTags(resourceArn: string, nextToken: string | null | undefined, maxResults: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListTagsOutput> {
 			return this.http.get<ListTagsOutput>(this.baseUri + 'tags/' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)) + '/&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1321,15 +1321,15 @@ export namespace MyNS {
 		BackupPlan: CreateBackupPlanPutBodyBackupPlan;
 
 		/** To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan. */
-		BackupPlanTags?: {[id: string]: string };
+		BackupPlanTags?: {[id: string]: string } | null;
 
 		/** Identifies the request and allows failed requests to be retried without the risk of executing the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional. */
-		CreatorRequestId?: string;
+		CreatorRequestId?: string | null;
 	}
 
 	export interface CreateBackupPlanPutBodyBackupPlan {
-		BackupPlanName?: string;
-		Rules?: Array<BackupRuleInput>;
+		BackupPlanName?: string | null;
+		Rules?: Array<BackupRuleInput> | null;
 	}
 
 	export interface CreateBackupSelectionPutBody {
@@ -1341,26 +1341,26 @@ export namespace MyNS {
 		BackupSelection: CreateBackupSelectionPutBodyBackupSelection;
 
 		/** A unique string that identifies the request and allows failed requests to be retried without the risk of executing the operation twice. */
-		CreatorRequestId?: string;
+		CreatorRequestId?: string | null;
 	}
 
 	export interface CreateBackupSelectionPutBodyBackupSelection {
-		SelectionName?: string;
-		IamRoleArn?: string;
-		Resources?: Array<string>;
-		ListOfTags?: Array<Condition>;
+		SelectionName?: string | null;
+		IamRoleArn?: string | null;
+		Resources?: Array<string> | null;
+		ListOfTags?: Array<Condition> | null;
 	}
 
 	export interface CreateBackupVaultPutBody {
 
 		/** Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair. */
-		BackupVaultTags?: {[id: string]: string };
+		BackupVaultTags?: {[id: string]: string } | null;
 
 		/** The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. */
-		EncryptionKeyArn?: string;
+		EncryptionKeyArn?: string | null;
 
 		/** A unique string that identifies the request and allows failed requests to be retried without the risk of executing the operation twice. */
-		CreatorRequestId?: string;
+		CreatorRequestId?: string | null;
 	}
 
 	export interface UpdateBackupPlanPostBody {
@@ -1373,14 +1373,14 @@ export namespace MyNS {
 	}
 
 	export interface UpdateBackupPlanPostBodyBackupPlan {
-		BackupPlanName?: string;
-		Rules?: Array<BackupRuleInput>;
+		BackupPlanName?: string | null;
+		Rules?: Array<BackupRuleInput> | null;
 	}
 
 	export interface PutBackupVaultAccessPolicyPutBody {
 
 		/** The backup vault access policy document in JSON format. */
-		Policy?: string;
+		Policy?: string | null;
 	}
 
 	export interface PutBackupVaultNotificationsPutBody {
@@ -1401,18 +1401,18 @@ export namespace MyNS {
 	export interface UpdateRecoveryPointLifecyclePostBody {
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: UpdateRecoveryPointLifecyclePostBodyLifecycle;
+		Lifecycle?: UpdateRecoveryPointLifecyclePostBodyLifecycle | null;
 	}
 
 	export interface UpdateRecoveryPointLifecyclePostBodyLifecycle {
-		MoveToColdStorageAfterDays?: number;
-		DeleteAfterDays?: number;
+		MoveToColdStorageAfterDays?: number | null;
+		DeleteAfterDays?: number | null;
 	}
 
 	export interface UpdateRegionSettingsPutBody {
 
 		/** Updates the list of services along with the opt-in preferences for the region. */
-		ResourceTypeOptInPreference?: {[id: string]: boolean };
+		ResourceTypeOptInPreference?: {[id: string]: boolean } | null;
 	}
 
 	export interface GetBackupPlanFromJSONPostBody {
@@ -1446,24 +1446,24 @@ export namespace MyNS {
 		IamRoleArn: string;
 
 		/** A customer chosen string that can be used to distinguish between calls to <code>StartBackupJob</code>. */
-		IdempotencyToken?: string;
+		IdempotencyToken?: string | null;
 
 		/** A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. */
-		StartWindowMinutes?: number;
+		StartWindowMinutes?: number | null;
 
 		/** A value in minutes after a backup job is successfully started before it must be completed or it will be canceled by AWS Backup. This value is optional. */
-		CompleteWindowMinutes?: number;
+		CompleteWindowMinutes?: number | null;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: StartBackupJobPutBodyLifecycle;
+		Lifecycle?: StartBackupJobPutBodyLifecycle | null;
 
 		/** To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. */
-		RecoveryPointTags?: {[id: string]: string };
+		RecoveryPointTags?: {[id: string]: string } | null;
 	}
 
 	export interface StartBackupJobPutBodyLifecycle {
-		MoveToColdStorageAfterDays?: number;
-		DeleteAfterDays?: number;
+		MoveToColdStorageAfterDays?: number | null;
+		DeleteAfterDays?: number | null;
 	}
 
 	export interface StartCopyJobPutBody {
@@ -1494,15 +1494,15 @@ export namespace MyNS {
 		IamRoleArn: string;
 
 		/** A customer chosen string that can be used to distinguish between calls to <code>StartCopyJob</code>. */
-		IdempotencyToken?: string;
+		IdempotencyToken?: string | null;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: StartCopyJobPutBodyLifecycle;
+		Lifecycle?: StartCopyJobPutBodyLifecycle | null;
 	}
 
 	export interface StartCopyJobPutBodyLifecycle {
-		MoveToColdStorageAfterDays?: number;
-		DeleteAfterDays?: number;
+		MoveToColdStorageAfterDays?: number | null;
+		DeleteAfterDays?: number | null;
 	}
 
 	export interface StartRestoreJobPutBody {
@@ -1526,13 +1526,13 @@ export namespace MyNS {
 		IamRoleArn: string;
 
 		/** A customer chosen string that can be used to distinguish between calls to <code>StartRestoreJob</code>. */
-		IdempotencyToken?: string;
+		IdempotencyToken?: string | null;
 
 		/**
 		 * <p>Starts a job to restore a recovery point for one of the following resources:</p> <ul> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li> </ul>
 		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
 		 */
-		ResourceType?: string;
+		ResourceType?: string | null;
 	}
 
 	export interface TagResourcePostBody {

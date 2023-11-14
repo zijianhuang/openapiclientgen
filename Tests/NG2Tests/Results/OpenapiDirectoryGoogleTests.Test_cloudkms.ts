@@ -10,7 +10,7 @@ export namespace MyNS {
 		 * Required. The data encrypted with the named CryptoKeyVersion's public
 		 * key using OAEP.
 		 */
-		ciphertext?: string;
+		ciphertext?: string | null;
 	}
 
 
@@ -18,7 +18,7 @@ export namespace MyNS {
 	export interface AsymmetricDecryptResponse {
 
 		/** The decrypted data originally encrypted with the matching public key. */
-		plaintext?: string;
+		plaintext?: string | null;
 	}
 
 
@@ -26,7 +26,7 @@ export namespace MyNS {
 	export interface AsymmetricSignRequest {
 
 		/** A Digest holds a cryptographic message digest. */
-		digest?: Digest;
+		digest?: Digest | null;
 	}
 
 
@@ -34,13 +34,13 @@ export namespace MyNS {
 	export interface Digest {
 
 		/** A message digest produced with the SHA-256 algorithm. */
-		sha256?: string;
+		sha256?: string | null;
 
 		/** A message digest produced with the SHA-384 algorithm. */
-		sha384?: string;
+		sha384?: string | null;
 
 		/** A message digest produced with the SHA-512 algorithm. */
-		sha512?: string;
+		sha512?: string | null;
 	}
 
 
@@ -48,7 +48,7 @@ export namespace MyNS {
 	export interface AsymmetricSignResponse {
 
 		/** The created signature. */
-		signature?: string;
+		signature?: string | null;
 	}
 
 
@@ -104,14 +104,14 @@ export namespace MyNS {
 	export interface AuditConfig {
 
 		/** The configuration for logging of each type of permission. */
-		auditLogConfigs?: Array<AuditLogConfig>;
+		auditLogConfigs?: Array<AuditLogConfig> | null;
 
 		/**
 		 * Specifies a service that will be enabled for audit logging.
 		 * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
 		 * `allServices` is a special value that covers all services.
 		 */
-		service?: string;
+		service?: string | null;
 	}
 
 
@@ -141,10 +141,10 @@ export namespace MyNS {
 		 * permission.
 		 * Follows the same format of Binding.members.
 		 */
-		exemptedMembers?: Array<string>;
+		exemptedMembers?: Array<string> | null;
 
 		/** The log type that this config enables. */
-		logType?: AuditLogConfigLogType;
+		logType?: AuditLogConfigLogType | null;
 	}
 
 	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
@@ -177,7 +177,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -212,13 +212,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -252,26 +252,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -284,19 +284,19 @@ export namespace MyNS {
 	export interface CryptoKey {
 
 		/** Output only. The time at which this CryptoKey was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Labels with user-defined metadata. For more information, see
 		 * [Labeling Keys](/kms/docs/labeling-keys).
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Output only. The resource name for this CryptoKey in the format
 		 * `projects/locations/keyRings/cryptoKeys/*`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * At next_rotation_time, the Key Management Service will automatically:
@@ -310,7 +310,7 @@ export namespace MyNS {
 		 * ENCRYPT_DECRYPT support
 		 * automatic rotation. For other keys, this field must be omitted.
 		 */
-		nextRotationTime?: string;
+		nextRotationTime?: string | null;
 
 		/**
 		 * A CryptoKeyVersion represents an individual cryptographic key, and the
@@ -322,10 +322,10 @@ export namespace MyNS {
 		 * encrypt, decrypt, or sign data when an authorized user or application invokes
 		 * Cloud KMS.
 		 */
-		primary?: CryptoKeyVersion;
+		primary?: CryptoKeyVersion | null;
 
 		/** Immutable. The immutable purpose of this CryptoKey. */
-		purpose?: CryptoKeyPurpose;
+		purpose?: CryptoKeyPurpose | null;
 
 		/**
 		 * next_rotation_time will be advanced by this period when the service
@@ -336,7 +336,7 @@ export namespace MyNS {
 		 * ENCRYPT_DECRYPT support
 		 * automatic rotation. For other keys, this field must be omitted.
 		 */
-		rotationPeriod?: string;
+		rotationPeriod?: string | null;
 
 		/**
 		 * A CryptoKeyVersionTemplate specifies the properties to use when creating
@@ -344,7 +344,7 @@ export namespace MyNS {
 		 * CreateCryptoKeyVersion or
 		 * automatically as a result of auto-rotation.
 		 */
-		versionTemplate?: CryptoKeyVersionTemplate;
+		versionTemplate?: CryptoKeyVersionTemplate | null;
 	}
 
 
@@ -364,79 +364,79 @@ export namespace MyNS {
 		 * Output only. The CryptoKeyVersionAlgorithm that this
 		 * CryptoKeyVersion supports.
 		 */
-		algorithm?: CryptoKeyVersionAlgorithm;
+		algorithm?: CryptoKeyVersionAlgorithm | null;
 
 		/**
 		 * Contains an HSM-generated attestation about a key operation. For more
 		 * information, see [Verifying attestations]
 		 * (https://cloud.google.com/kms/docs/attest-key).
 		 */
-		attestation?: KeyOperationAttestation;
+		attestation?: KeyOperationAttestation | null;
 
 		/** Output only. The time at which this CryptoKeyVersion was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Output only. The time this CryptoKeyVersion's key material was
 		 * destroyed. Only present if state is
 		 * DESTROYED.
 		 */
-		destroyEventTime?: string;
+		destroyEventTime?: string | null;
 
 		/**
 		 * Output only. The time this CryptoKeyVersion's key material is scheduled
 		 * for destruction. Only present if state is
 		 * DESTROY_SCHEDULED.
 		 */
-		destroyTime?: string;
+		destroyTime?: string | null;
 
 		/**
 		 * ExternalProtectionLevelOptions stores a group of additional fields for
 		 * configuring a CryptoKeyVersion that are specific to the
 		 * EXTERNAL protection level.
 		 */
-		externalProtectionLevelOptions?: ExternalProtectionLevelOptions;
+		externalProtectionLevelOptions?: ExternalProtectionLevelOptions | null;
 
 		/**
 		 * Output only. The time this CryptoKeyVersion's key material was
 		 * generated.
 		 */
-		generateTime?: string;
+		generateTime?: string | null;
 
 		/**
 		 * Output only. The root cause of an import failure. Only present if
 		 * state is
 		 * IMPORT_FAILED.
 		 */
-		importFailureReason?: string;
+		importFailureReason?: string | null;
 
 		/**
 		 * Output only. The name of the ImportJob used to import this
 		 * CryptoKeyVersion. Only present if the underlying key material was
 		 * imported.
 		 */
-		importJob?: string;
+		importJob?: string | null;
 
 		/**
 		 * Output only. The time at which this CryptoKeyVersion's key material
 		 * was imported.
 		 */
-		importTime?: string;
+		importTime?: string | null;
 
 		/**
 		 * Output only. The resource name for this CryptoKeyVersion in the format
 		 * `projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/*`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Output only. The ProtectionLevel describing how crypto operations are
 		 * performed with this CryptoKeyVersion.
 		 */
-		protectionLevel?: CryptoKeyVersionProtectionLevel;
+		protectionLevel?: CryptoKeyVersionProtectionLevel | null;
 
 		/** The current state of the CryptoKeyVersion. */
-		state?: CryptoKeyVersionState;
+		state?: CryptoKeyVersionState | null;
 	}
 
 	export enum CryptoKeyVersionAlgorithm { CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED = 0, GOOGLE_SYMMETRIC_ENCRYPTION = 1, RSA_SIGN_PSS_2048_SHA256 = 2, RSA_SIGN_PSS_3072_SHA256 = 3, RSA_SIGN_PSS_4096_SHA256 = 4, RSA_SIGN_PSS_4096_SHA512 = 5, RSA_SIGN_PKCS1_2048_SHA256 = 6, RSA_SIGN_PKCS1_3072_SHA256 = 7, RSA_SIGN_PKCS1_4096_SHA256 = 8, RSA_SIGN_PKCS1_4096_SHA512 = 9, RSA_DECRYPT_OAEP_2048_SHA256 = 10, RSA_DECRYPT_OAEP_3072_SHA256 = 11, RSA_DECRYPT_OAEP_4096_SHA256 = 12, RSA_DECRYPT_OAEP_4096_SHA512 = 13, EC_SIGN_P256_SHA256 = 14, EC_SIGN_P384_SHA384 = 15, EXTERNAL_SYMMETRIC_ENCRYPTION = 16 }
@@ -453,10 +453,10 @@ export namespace MyNS {
 		 * Output only. The attestation data provided by the HSM when the key
 		 * operation was performed.
 		 */
-		content?: string;
+		content?: string | null;
 
 		/** Output only. The format of the attestation data. */
-		format?: KeyOperationAttestationFormat;
+		format?: KeyOperationAttestationFormat | null;
 	}
 
 	export enum KeyOperationAttestationFormat { ATTESTATION_FORMAT_UNSPECIFIED = 0, CAVIUM_V1_COMPRESSED = 1, CAVIUM_V2_COMPRESSED = 2 }
@@ -470,7 +470,7 @@ export namespace MyNS {
 	export interface ExternalProtectionLevelOptions {
 
 		/** The URI for an external resource that this CryptoKeyVersion represents. */
-		externalKeyUri?: string;
+		externalKeyUri?: string | null;
 	}
 
 	export enum CryptoKeyVersionProtectionLevel { PROTECTION_LEVEL_UNSPECIFIED = 0, SOFTWARE = 1, HSM = 2, EXTERNAL = 3 }
@@ -495,13 +495,13 @@ export namespace MyNS {
 		 * this field is omitted and CryptoKey.purpose is
 		 * ENCRYPT_DECRYPT.
 		 */
-		algorithm?: CryptoKeyVersionAlgorithm;
+		algorithm?: CryptoKeyVersionAlgorithm | null;
 
 		/**
 		 * ProtectionLevel to use when creating a CryptoKeyVersion based on
 		 * this template. Immutable. Defaults to SOFTWARE.
 		 */
-		protectionLevel?: CryptoKeyVersionProtectionLevel;
+		protectionLevel?: CryptoKeyVersionProtectionLevel | null;
 	}
 
 
@@ -512,13 +512,13 @@ export namespace MyNS {
 		 * Optional. Optional data that must match the data originally supplied in
 		 * EncryptRequest.additional_authenticated_data.
 		 */
-		additionalAuthenticatedData?: string;
+		additionalAuthenticatedData?: string | null;
 
 		/**
 		 * Required. The encrypted data originally returned in
 		 * EncryptResponse.ciphertext.
 		 */
-		ciphertext?: string;
+		ciphertext?: string | null;
 	}
 
 
@@ -526,7 +526,7 @@ export namespace MyNS {
 	export interface DecryptResponse {
 
 		/** The decrypted data originally supplied in EncryptRequest.plaintext. */
-		plaintext?: string;
+		plaintext?: string | null;
 	}
 
 
@@ -548,7 +548,7 @@ export namespace MyNS {
 		 * plaintext and additional_authenticated_data fields must be no larger than
 		 * 8KiB.
 		 */
-		additionalAuthenticatedData?: string;
+		additionalAuthenticatedData?: string | null;
 
 		/**
 		 * Required. The data to encrypt. Must be no larger than 64KiB.
@@ -559,7 +559,7 @@ export namespace MyNS {
 		 * plaintext and additional_authenticated_data fields must be no larger than
 		 * 8KiB.
 		 */
-		plaintext?: string;
+		plaintext?: string | null;
 	}
 
 
@@ -567,13 +567,13 @@ export namespace MyNS {
 	export interface EncryptResponse {
 
 		/** The encrypted data. */
-		ciphertext?: string;
+		ciphertext?: string | null;
 
 		/**
 		 * The resource name of the CryptoKeyVersion used in encryption. Check
 		 * this field to verify that the intended resource was used for encryption.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -586,13 +586,13 @@ export namespace MyNS {
 		 * version_template of the CryptoKey this
 		 * version imports into.
 		 */
-		algorithm?: CryptoKeyVersionAlgorithm;
+		algorithm?: CryptoKeyVersionAlgorithm | null;
 
 		/**
 		 * Required. The name of the ImportJob that was used to
 		 * wrap this key material.
 		 */
-		importJob?: string;
+		importJob?: string | null;
 
 		/**
 		 * Wrapped key material produced with
@@ -616,7 +616,7 @@ export namespace MyNS {
 		 * This format is the same as the format produced by PKCS#11 mechanism
 		 * CKM_RSA_AES_KEY_WRAP.
 		 */
-		rsaAesWrappedKey?: string;
+		rsaAesWrappedKey?: string | null;
 	}
 
 
@@ -652,34 +652,34 @@ export namespace MyNS {
 		 * information, see [Verifying attestations]
 		 * (https://cloud.google.com/kms/docs/attest-key).
 		 */
-		attestation?: KeyOperationAttestation;
+		attestation?: KeyOperationAttestation | null;
 
 		/** Output only. The time at which this ImportJob was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Output only. The time this ImportJob expired. Only present if
 		 * state is EXPIRED.
 		 */
-		expireEventTime?: string;
+		expireEventTime?: string | null;
 
 		/**
 		 * Output only. The time at which this ImportJob is scheduled for
 		 * expiration and can no longer be used to import key material.
 		 */
-		expireTime?: string;
+		expireTime?: string | null;
 
 		/** Output only. The time this ImportJob's key material was generated. */
-		generateTime?: string;
+		generateTime?: string | null;
 
 		/** Required. Immutable. The wrapping method to be used for incoming key material. */
-		importMethod?: ImportJobImportMethod;
+		importMethod?: ImportJobImportMethod | null;
 
 		/**
 		 * Output only. The resource name for this ImportJob in the format
 		 * `projects/locations/keyRings/importJobs/*`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Required. Immutable. The protection level of the ImportJob. This must match the
@@ -687,19 +687,19 @@ export namespace MyNS {
 		 * version_template on the CryptoKey you
 		 * attempt to import into.
 		 */
-		protectionLevel?: CryptoKeyVersionProtectionLevel;
+		protectionLevel?: CryptoKeyVersionProtectionLevel | null;
 
 		/**
 		 * The public key component of the wrapping key. For details of the type of
 		 * key this public key corresponds to, see the ImportMethod.
 		 */
-		publicKey?: WrappingPublicKey;
+		publicKey?: WrappingPublicKey | null;
 
 		/**
 		 * Output only. The current state of the ImportJob, indicating if it can
 		 * be used.
 		 */
-		state?: ImportJobState;
+		state?: ImportJobState | null;
 	}
 
 	export enum ImportJobImportMethod { IMPORT_METHOD_UNSPECIFIED = 0, RSA_OAEP_3072_SHA1_AES_256 = 1, RSA_OAEP_4096_SHA1_AES_256 = 2 }
@@ -718,7 +718,7 @@ export namespace MyNS {
 		 * [Textual Encoding of Subject Public Key Info]
 		 * (https://tools.ietf.org/html/rfc7468#section-13).
 		 */
-		pem?: string;
+		pem?: string | null;
 	}
 
 	export enum ImportJobState { IMPORT_JOB_STATE_UNSPECIFIED = 0, PENDING_GENERATION = 1, ACTIVE = 2, EXPIRED = 3 }
@@ -728,13 +728,13 @@ export namespace MyNS {
 	export interface KeyRing {
 
 		/** Output only. The time at which this KeyRing was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Output only. The resource name for the KeyRing in the format
 		 * `projects/locations/keyRings/*`.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -742,20 +742,20 @@ export namespace MyNS {
 	export interface ListCryptoKeyVersionsResponse {
 
 		/** The list of CryptoKeyVersions. */
-		cryptoKeyVersions?: Array<CryptoKeyVersion>;
+		cryptoKeyVersions?: Array<CryptoKeyVersion> | null;
 
 		/**
 		 * A token to retrieve next page of results. Pass this value in
 		 * ListCryptoKeyVersionsRequest.page_token to retrieve the next page of
 		 * results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/**
 		 * The total number of CryptoKeyVersions that matched the
 		 * query.
 		 */
-		totalSize?: number;
+		totalSize?: number | null;
 	}
 
 
@@ -763,16 +763,16 @@ export namespace MyNS {
 	export interface ListCryptoKeysResponse {
 
 		/** The list of CryptoKeys. */
-		cryptoKeys?: Array<CryptoKey>;
+		cryptoKeys?: Array<CryptoKey> | null;
 
 		/**
 		 * A token to retrieve next page of results. Pass this value in
 		 * ListCryptoKeysRequest.page_token to retrieve the next page of results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The total number of CryptoKeys that matched the query. */
-		totalSize?: number;
+		totalSize?: number | null;
 	}
 
 
@@ -780,16 +780,16 @@ export namespace MyNS {
 	export interface ListImportJobsResponse {
 
 		/** The list of ImportJobs. */
-		importJobs?: Array<ImportJob>;
+		importJobs?: Array<ImportJob> | null;
 
 		/**
 		 * A token to retrieve next page of results. Pass this value in
 		 * ListImportJobsRequest.page_token to retrieve the next page of results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The total number of ImportJobs that matched the query. */
-		totalSize?: number;
+		totalSize?: number | null;
 	}
 
 
@@ -797,16 +797,16 @@ export namespace MyNS {
 	export interface ListKeyRingsResponse {
 
 		/** The list of KeyRings. */
-		keyRings?: Array<KeyRing>;
+		keyRings?: Array<KeyRing> | null;
 
 		/**
 		 * A token to retrieve next page of results. Pass this value in
 		 * ListKeyRingsRequest.page_token to retrieve the next page of results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The total number of KeyRings that matched the query. */
-		totalSize?: number;
+		totalSize?: number | null;
 	}
 
 
@@ -814,10 +814,10 @@ export namespace MyNS {
 	export interface ListLocationsResponse {
 
 		/** A list of locations that matches the specified filter in the request. */
-		locations?: Array<Location>;
+		locations?: Array<Location> | null;
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -828,28 +828,28 @@ export namespace MyNS {
 		 * The friendly name for this location, typically a nearby city name.
 		 * For example, "Tokyo".
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
-		locationId?: string;
+		locationId?: string | null;
 
 		/**
 		 * Service-specific metadata. For example the available capacity at the given
 		 * location.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * Resource name for the location, which may vary between implementations.
 		 * For example: `"projects/example-project/locations/us-east1"`
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -861,14 +861,14 @@ export namespace MyNS {
 		 * protection_level
 		 * EXTERNAL can be created in this location.
 		 */
-		ekmAvailable?: boolean;
+		ekmAvailable?: boolean | null;
 
 		/**
 		 * Indicates whether CryptoKeys with
 		 * protection_level
 		 * HSM can be created in this location.
 		 */
-		hsmAvailable?: boolean;
+		hsmAvailable?: boolean | null;
 	}
 
 
@@ -932,14 +932,14 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Specifies cloud audit logging configuration for this policy. */
-		auditConfigs?: Array<AuditConfig>;
+		auditConfigs?: Array<AuditConfig> | null;
 
 		/**
 		 * Associates a list of `members` to a `role`. Optionally, may specify a
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -954,7 +954,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -974,7 +974,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -988,7 +988,7 @@ export namespace MyNS {
 		 * The Algorithm associated
 		 * with this key.
 		 */
-		algorithm?: CryptoKeyVersionAlgorithm;
+		algorithm?: CryptoKeyVersionAlgorithm | null;
 
 		/**
 		 * The public key, encoded in PEM format. For more information, see the
@@ -997,7 +997,7 @@ export namespace MyNS {
 		 * [Textual Encoding of Subject Public Key Info]
 		 * (https://tools.ietf.org/html/rfc7468#section-13).
 		 */
-		pem?: string;
+		pem?: string | null;
 	}
 
 
@@ -1066,7 +1066,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 
 		/**
 		 * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
@@ -1075,7 +1075,7 @@ export namespace MyNS {
 		 * paths: "bindings, etag"
 		 * This field is only used by Cloud IAM.
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -1088,7 +1088,7 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -1099,7 +1099,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -1107,7 +1107,7 @@ export namespace MyNS {
 	export interface UpdateCryptoKeyPrimaryVersionRequest {
 
 		/** Required. The id of the child CryptoKeyVersion to use as primary. */
-		cryptoKeyVersionId?: string;
+		cryptoKeyVersionId?: string | null;
 	}
 
 	@Injectable()
@@ -1138,7 +1138,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Required. List of fields to be updated in this request.
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_patch(name: string, updateMask: string, requestBody: CryptoKeyVersion): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_patch(name: string, updateMask: string | null | undefined, requestBody: CryptoKeyVersion): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1151,7 +1151,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/locations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1289,7 +1289,7 @@ export namespace MyNS {
 		 * @param {Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_listView} view The fields to include in the response.
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_list(parent: string, filter: string, orderBy: string, pageSize: number, pageToken: string, view: Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_listView): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_list(parent: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/cryptoKeyVersions&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1343,7 +1343,7 @@ export namespace MyNS {
 		 * @param {Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_listView} versionView The fields of the primary version to include in the response.
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_keyRings_cryptoKeys_list(parent: string, filter: string, orderBy: string, pageSize: number, pageToken: string, versionView: Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_listView): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_keyRings_cryptoKeys_list(parent: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, versionView: Cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/cryptoKeys&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&versionView=' + versionView, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1364,7 +1364,7 @@ export namespace MyNS {
 		 * before you can use this CryptoKey.
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_keyRings_cryptoKeys_create(parent: string, cryptoKeyId: string, skipInitialVersionCreation: boolean, requestBody: CryptoKey): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_keyRings_cryptoKeys_create(parent: string, cryptoKeyId: string | null | undefined, skipInitialVersionCreation: boolean | null | undefined, requestBody: CryptoKey): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/cryptoKeys&cryptoKeyId=' + (cryptoKeyId == null ? '' : encodeURIComponent(cryptoKeyId)) + '&skipInitialVersionCreation=' + skipInitialVersionCreation, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1389,7 +1389,7 @@ export namespace MyNS {
 		 * ListImportJobsResponse.next_page_token.
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_keyRings_importJobs_list(parent: string, filter: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_keyRings_importJobs_list(parent: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/importJobs&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1403,7 +1403,7 @@ export namespace MyNS {
 		 * expression `[a-zA-Z0-9_-]{1,63}`
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_keyRings_importJobs_create(parent: string, importJobId: string, requestBody: ImportJob): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_keyRings_importJobs_create(parent: string, importJobId: string | null | undefined, requestBody: ImportJob): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/importJobs&importJobId=' + (importJobId == null ? '' : encodeURIComponent(importJobId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1428,7 +1428,7 @@ export namespace MyNS {
 		 * ListKeyRingsResponse.next_page_token.
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_keyRings_list(parent: string, filter: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_keyRings_list(parent: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/keyRings&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1441,7 +1441,7 @@ export namespace MyNS {
 		 * expression `[a-zA-Z0-9_-]{1,63}`
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_keyRings_create(parent: string, keyRingId: string, requestBody: KeyRing): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_keyRings_create(parent: string, keyRingId: string | null | undefined, requestBody: KeyRing): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/keyRings&keyRingId=' + (keyRingId == null ? '' : encodeURIComponent(keyRingId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1460,7 +1460,7 @@ export namespace MyNS {
 		 * leave the field unset.
 		 * @return {void} Successful response
 		 */
-		Cloudkms_projects_locations_keyRings_cryptoKeys_getIamPolicy(resource: string, options_requestedPolicyVersion: number): Observable<HttpResponse<string>> {
+		Cloudkms_projects_locations_keyRings_cryptoKeys_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (resource == null ? '' : encodeURIComponent(resource)) + ':getIamPolicy&options_requestedPolicyVersion=' + options_requestedPolicyVersion, { observe: 'response', responseType: 'text' });
 		}
 

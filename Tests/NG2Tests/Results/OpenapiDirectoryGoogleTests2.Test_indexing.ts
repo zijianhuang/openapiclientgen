@@ -10,7 +10,7 @@ export namespace MyNS {
 		 * Summary of the most recent Indexing API notifications successfully received,
 		 * for a given URL.
 		 */
-		urlNotificationMetadata?: UrlNotificationMetadata;
+		urlNotificationMetadata?: UrlNotificationMetadata | null;
 	}
 
 
@@ -24,16 +24,16 @@ export namespace MyNS {
 		 * `UrlNotification` is the resource used in all Indexing API calls.
 		 * It describes one event in the life cycle of a Web Document.
 		 */
-		latestRemove?: UrlNotification;
+		latestRemove?: UrlNotification | null;
 
 		/**
 		 * `UrlNotification` is the resource used in all Indexing API calls.
 		 * It describes one event in the life cycle of a Web Document.
 		 */
-		latestUpdate?: UrlNotification;
+		latestUpdate?: UrlNotification | null;
 
 		/** URL to which this metadata refers. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -47,17 +47,17 @@ export namespace MyNS {
 		 * Creation timestamp for this notification.
 		 * Users should _not_ specify it, the field is ignored at the request time.
 		 */
-		notifyTime?: string;
+		notifyTime?: string | null;
 
 		/** The URL life cycle event that Google is being notified about. */
-		type?: UrlNotificationType;
+		type?: UrlNotificationType | null;
 
 		/**
 		 * The object of this notification. The URL must be owned by the publisher
 		 * of this notification and, in case of `URL_UPDATED` notifications, it _must_
 		 * be crawlable by Google.
 		 */
-		url?: string;
+		url?: string | null;
 	}
 
 	export enum UrlNotificationType { URL_NOTIFICATION_TYPE_UNSPECIFIED = 0, URL_UPDATED = 1, URL_DELETED = 2 }
@@ -75,7 +75,7 @@ export namespace MyNS {
 		 * @param {string} url URL that is being queried.
 		 * @return {void} Successful response
 		 */
-		Indexing_urlNotifications_getMetadata(url: string): Observable<HttpResponse<string>> {
+		Indexing_urlNotifications_getMetadata(url: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/urlNotifications/metadata?url=' + (url == null ? '' : encodeURIComponent(url)), { observe: 'response', responseType: 'text' });
 		}
 

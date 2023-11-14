@@ -2326,14 +2326,14 @@ namespace MyNS
 		public System.Nullable<System.Int32> WorkItemId { get; set; }
 	}
 	
-	public partial class Misc
+	public partial class MyClient
 	{
 		
 		private System.Net.Http.HttpClient client;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public MyClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -2976,6 +2976,74 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Gets the classification node for a given node path.
+		/// Classification_Nodes_Get {organization}/{project}/_apis/wit/classificationnodes/{structureGroup}/{path}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="structureGroup">Structure group of the classification node, area or iteration.</param>
+		/// <param name="path">Path of the classification node.</param>
+		/// <param name="depth">Depth of children to fetch.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<WorkItemClassificationNode> Classification_Nodes_GetAsync(string organization, string project, Classification_Nodes_GetStructureGroup structureGroup, string path, int depth, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+structureGroup+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&$depth="+depth+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<WorkItemClassificationNode>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Gets the classification node for a given node path.
+		/// Classification_Nodes_Get {organization}/{project}/_apis/wit/classificationnodes/{structureGroup}/{path}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="structureGroup">Structure group of the classification node, area or iteration.</param>
+		/// <param name="path">Path of the classification node.</param>
+		/// <param name="depth">Depth of children to fetch.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public WorkItemClassificationNode Classification_Nodes_Get(string organization, string project, Classification_Nodes_GetStructureGroup structureGroup, string path, int depth, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+structureGroup+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&$depth="+depth+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<WorkItemClassificationNode>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Create new or update an existing classification node.
 		/// Classification_Nodes_Create_Or_Update {organization}/{project}/_apis/wit/classificationnodes/{structureGroup}/{path}
 		/// </summary>
@@ -2986,7 +3054,7 @@ namespace MyNS
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <param name="requestBody">Node to create or update.</param>
 		/// <returns>successful operation</returns>
-		public async Task<WorkItemClassificationNode> Classification_Nodes_Create_Or_UpdateAsync(string organization, string project, Classification_Nodes_Create_Or_UpdateStructureGroup structureGroup, string path, string api_version, WorkItemClassificationNode requestBody)
+		public async Task<WorkItemClassificationNode> Classification_Nodes_Create_Or_UpdateAsync(string organization, string project, Classification_Nodes_GetStructureGroup structureGroup, string path, string api_version, WorkItemClassificationNode requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+structureGroup+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3027,7 +3095,7 @@ namespace MyNS
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <param name="requestBody">Node to create or update.</param>
 		/// <returns>successful operation</returns>
-		public WorkItemClassificationNode Classification_Nodes_Create_Or_Update(string organization, string project, Classification_Nodes_Create_Or_UpdateStructureGroup structureGroup, string path, string api_version, WorkItemClassificationNode requestBody)
+		public WorkItemClassificationNode Classification_Nodes_Create_Or_Update(string organization, string project, Classification_Nodes_GetStructureGroup structureGroup, string path, string api_version, WorkItemClassificationNode requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+structureGroup+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
@@ -3068,7 +3136,7 @@ namespace MyNS
 		/// <param name="reclassifyId">Id of the target classification node for reclassification.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task Classification_Nodes_DeleteAsync(string organization, string project, Classification_Nodes_Create_Or_UpdateStructureGroup structureGroup, string path, int reclassifyId, string api_version)
+		public async Task Classification_Nodes_DeleteAsync(string organization, string project, Classification_Nodes_GetStructureGroup structureGroup, string path, int reclassifyId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+structureGroup+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&$reclassifyId="+reclassifyId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
@@ -3096,7 +3164,7 @@ namespace MyNS
 		/// <param name="reclassifyId">Id of the target classification node for reclassification.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public void Classification_Nodes_Delete(string organization, string project, Classification_Nodes_Create_Or_UpdateStructureGroup structureGroup, string path, int reclassifyId, string api_version)
+		public void Classification_Nodes_Delete(string organization, string project, Classification_Nodes_GetStructureGroup structureGroup, string path, int reclassifyId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+structureGroup+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&$reclassifyId="+reclassifyId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
@@ -3114,74 +3182,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Gets the classification node for a given node path.
-		/// Classification_Nodes_Get {organization}/{project}/_apis/wit/classificationnodes/{structureGroup}/{path}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="structureGroup">Structure group of the classification node, area or iteration.</param>
-		/// <param name="path">Path of the classification node.</param>
-		/// <param name="depth">Depth of children to fetch.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<WorkItemClassificationNode> Classification_Nodes_GetAsync(string organization, string project, Classification_Nodes_Create_Or_UpdateStructureGroup structureGroup, string path, int depth, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+structureGroup+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&$depth="+depth+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WorkItemClassificationNode>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Gets the classification node for a given node path.
-		/// Classification_Nodes_Get {organization}/{project}/_apis/wit/classificationnodes/{structureGroup}/{path}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="structureGroup">Structure group of the classification node, area or iteration.</param>
-		/// <param name="path">Path of the classification node.</param>
-		/// <param name="depth">Depth of children to fetch.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public WorkItemClassificationNode Classification_Nodes_Get(string organization, string project, Classification_Nodes_Create_Or_UpdateStructureGroup structureGroup, string path, int depth, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+structureGroup+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&$depth="+depth+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WorkItemClassificationNode>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Update an existing classification node.
 		/// Classification_Nodes_Update {organization}/{project}/_apis/wit/classificationnodes/{structureGroup}/{path}
 		/// </summary>
@@ -3192,7 +3192,7 @@ namespace MyNS
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <param name="requestBody">Node to create or update.</param>
 		/// <returns>successful operation</returns>
-		public async Task<WorkItemClassificationNode> Classification_Nodes_UpdateAsync(string organization, string project, Classification_Nodes_Create_Or_UpdateStructureGroup structureGroup, string path, string api_version, WorkItemClassificationNode requestBody)
+		public async Task<WorkItemClassificationNode> Classification_Nodes_UpdateAsync(string organization, string project, Classification_Nodes_GetStructureGroup structureGroup, string path, string api_version, WorkItemClassificationNode requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+structureGroup+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
@@ -3233,7 +3233,7 @@ namespace MyNS
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <param name="requestBody">Node to create or update.</param>
 		/// <returns>successful operation</returns>
-		public WorkItemClassificationNode Classification_Nodes_Update(string organization, string project, Classification_Nodes_Create_Or_UpdateStructureGroup structureGroup, string path, string api_version, WorkItemClassificationNode requestBody)
+		public WorkItemClassificationNode Classification_Nodes_Update(string organization, string project, Classification_Nodes_GetStructureGroup structureGroup, string path, string api_version, WorkItemClassificationNode requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/classificationnodes/"+structureGroup+"/"+ (path==null? "" : Uri.EscapeDataString(path))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
@@ -3259,6 +3259,70 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Returns information for all fields. The project ID/name parameter is optional.
+		/// Fields_List {organization}/{project}/_apis/wit/fields
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="expand">Use ExtensionFields to include extension fields, otherwise exclude them. Unless the feature flag for this parameter is enabled, extension fields are always included.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<WorkItemField[]> Fields_ListAsync(string organization, string project, Fields_ListExpand expand, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/fields&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<WorkItemField[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Returns information for all fields. The project ID/name parameter is optional.
+		/// Fields_List {organization}/{project}/_apis/wit/fields
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="expand">Use ExtensionFields to include extension fields, otherwise exclude them. Unless the feature flag for this parameter is enabled, extension fields are always included.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public WorkItemField[] Fields_List(string organization, string project, Fields_ListExpand expand, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/fields&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<WorkItemField[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
 			}
 			}
 		}
@@ -3342,122 +3406,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Returns information for all fields. The project ID/name parameter is optional.
-		/// Fields_List {organization}/{project}/_apis/wit/fields
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="expand">Use ExtensionFields to include extension fields, otherwise exclude them. Unless the feature flag for this parameter is enabled, extension fields are always included.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<WorkItemField[]> Fields_ListAsync(string organization, string project, Fields_ListExpand expand, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/fields&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WorkItemField[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Returns information for all fields. The project ID/name parameter is optional.
-		/// Fields_List {organization}/{project}/_apis/wit/fields
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="expand">Use ExtensionFields to include extension fields, otherwise exclude them. Unless the feature flag for this parameter is enabled, extension fields are always included.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public WorkItemField[] Fields_List(string organization, string project, Fields_ListExpand expand, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/fields&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WorkItemField[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Deletes the field. To undelete a filed, see "Update Field" API.
-		/// Fields_Delete {organization}/{project}/_apis/wit/fields/{fieldNameOrRefName}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="fieldNameOrRefName">Field simple name or reference name</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Fields_DeleteAsync(string organization, string fieldNameOrRefName, string project, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/fields/"+ (fieldNameOrRefName==null? "" : Uri.EscapeDataString(fieldNameOrRefName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Deletes the field. To undelete a filed, see "Update Field" API.
-		/// Fields_Delete {organization}/{project}/_apis/wit/fields/{fieldNameOrRefName}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="fieldNameOrRefName">Field simple name or reference name</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Fields_Delete(string organization, string fieldNameOrRefName, string project, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/fields/"+ (fieldNameOrRefName==null? "" : Uri.EscapeDataString(fieldNameOrRefName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Gets information on a specific field.
 		/// Fields_Get {organization}/{project}/_apis/wit/fields/{fieldNameOrRefName}
 		/// </summary>
@@ -3513,6 +3461,58 @@ namespace MyNS
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemField>(jsonReader);
 				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Deletes the field. To undelete a filed, see "Update Field" API.
+		/// Fields_Delete {organization}/{project}/_apis/wit/fields/{fieldNameOrRefName}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="fieldNameOrRefName">Field simple name or reference name</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Fields_DeleteAsync(string organization, string fieldNameOrRefName, string project, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/fields/"+ (fieldNameOrRefName==null? "" : Uri.EscapeDataString(fieldNameOrRefName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Deletes the field. To undelete a filed, see "Update Field" API.
+		/// Fields_Delete {organization}/{project}/_apis/wit/fields/{fieldNameOrRefName}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="fieldNameOrRefName">Field simple name or reference name</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Fields_Delete(string organization, string fieldNameOrRefName, string project, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/fields/"+ (fieldNameOrRefName==null? "" : Uri.EscapeDataString(fieldNameOrRefName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{
@@ -3746,6 +3746,76 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Retrieves an individual query and its children
+		/// Queries_Get {organization}/{project}/_apis/wit/queries/{query}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="query">ID or path of the query.</param>
+		/// <param name="expand">Include the query string (wiql), clauses, query result columns, and sort options in the results.</param>
+		/// <param name="depth">In the folder of queries, return child queries and folders to this depth.</param>
+		/// <param name="includeDeleted">Include deleted queries and folders</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<QueryHierarchyItem> Queries_GetAsync(string organization, string project, string query, QueryBatchGetRequestExpand expand, int depth, bool includeDeleted, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/queries/"+ (query==null? "" : Uri.EscapeDataString(query))+"&$expand=" + expand+"&$depth="+depth+"&$includeDeleted="+includeDeleted+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<QueryHierarchyItem>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Retrieves an individual query and its children
+		/// Queries_Get {organization}/{project}/_apis/wit/queries/{query}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="query">ID or path of the query.</param>
+		/// <param name="expand">Include the query string (wiql), clauses, query result columns, and sort options in the results.</param>
+		/// <param name="depth">In the folder of queries, return child queries and folders to this depth.</param>
+		/// <param name="includeDeleted">Include deleted queries and folders</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public QueryHierarchyItem Queries_Get(string organization, string project, string query, QueryBatchGetRequestExpand expand, int depth, bool includeDeleted, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/queries/"+ (query==null? "" : Uri.EscapeDataString(query))+"&$expand=" + expand+"&$depth="+depth+"&$includeDeleted="+includeDeleted+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<QueryHierarchyItem>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Creates a query, or moves a query.
 		/// 
 		/// Learn more about Work Item Query Language (WIQL) syntax [here](https://docs.microsoft.com/en-us/vsts/collaborate/wiql-syntax?toc=/vsts/work/track/toc.json&bc=/vsts/work/track/breadcrumb/toc.json&view=vsts).
@@ -3875,76 +3945,6 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Retrieves an individual query and its children
-		/// Queries_Get {organization}/{project}/_apis/wit/queries/{query}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="query">ID or path of the query.</param>
-		/// <param name="expand">Include the query string (wiql), clauses, query result columns, and sort options in the results.</param>
-		/// <param name="depth">In the folder of queries, return child queries and folders to this depth.</param>
-		/// <param name="includeDeleted">Include deleted queries and folders</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<QueryHierarchyItem> Queries_GetAsync(string organization, string project, string query, QueryBatchGetRequestExpand expand, int depth, bool includeDeleted, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/queries/"+ (query==null? "" : Uri.EscapeDataString(query))+"&$expand=" + expand+"&$depth="+depth+"&$includeDeleted="+includeDeleted+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<QueryHierarchyItem>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Retrieves an individual query and its children
-		/// Queries_Get {organization}/{project}/_apis/wit/queries/{query}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="query">ID or path of the query.</param>
-		/// <param name="expand">Include the query string (wiql), clauses, query result columns, and sort options in the results.</param>
-		/// <param name="depth">In the folder of queries, return child queries and folders to this depth.</param>
-		/// <param name="includeDeleted">Include deleted queries and folders</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public QueryHierarchyItem Queries_Get(string organization, string project, string query, QueryBatchGetRequestExpand expand, int depth, bool includeDeleted, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/queries/"+ (query==null? "" : Uri.EscapeDataString(query))+"&$expand=" + expand+"&$depth="+depth+"&$includeDeleted="+includeDeleted+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<QueryHierarchyItem>(jsonReader);
-				}
 			}
 			finally
 			{
@@ -4174,58 +4174,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Destroys the specified work item permanently from the Recycle Bin. This action can not be undone.
-		/// Recyclebin_Destroy_Work_Item {organization}/{project}/_apis/wit/recyclebin/{id}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="id">ID of the work item to be destroyed permanently</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Recyclebin_Destroy_Work_ItemAsync(string organization, int id, string project, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/recyclebin/"+id+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Destroys the specified work item permanently from the Recycle Bin. This action can not be undone.
-		/// Recyclebin_Destroy_Work_Item {organization}/{project}/_apis/wit/recyclebin/{id}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="id">ID of the work item to be destroyed permanently</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Recyclebin_Destroy_Work_Item(string organization, int id, string project, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/recyclebin/"+id+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Gets a deleted work item from Recycle Bin.
 		/// Recyclebin_Get {organization}/{project}/_apis/wit/recyclebin/{id}
 		/// </summary>
@@ -4281,6 +4229,58 @@ namespace MyNS
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemDelete>(jsonReader);
 				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Destroys the specified work item permanently from the Recycle Bin. This action can not be undone.
+		/// Recyclebin_Destroy_Work_Item {organization}/{project}/_apis/wit/recyclebin/{id}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="id">ID of the work item to be destroyed permanently</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Recyclebin_Destroy_Work_ItemAsync(string organization, int id, string project, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/recyclebin/"+id+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Destroys the specified work item permanently from the Recycle Bin. This action can not be undone.
+		/// Recyclebin_Destroy_Work_Item {organization}/{project}/_apis/wit/recyclebin/{id}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="id">ID of the work item to be destroyed permanently</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Recyclebin_Destroy_Work_Item(string organization, int id, string project, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/recyclebin/"+id+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{
@@ -4726,54 +4726,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Tags_Delete {organization}/{project}/_apis/wit/tags/{tagIdOrName}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Tags_DeleteAsync(string organization, string project, string tagIdOrName, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/tags/"+ (tagIdOrName==null? "" : Uri.EscapeDataString(tagIdOrName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Tags_Delete {organization}/{project}/_apis/wit/tags/{tagIdOrName}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Tags_Delete(string organization, string project, string tagIdOrName, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/tags/"+ (tagIdOrName==null? "" : Uri.EscapeDataString(tagIdOrName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Tags_Get {organization}/{project}/_apis/wit/tags/{tagIdOrName}
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
@@ -4825,6 +4777,54 @@ namespace MyNS
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTagDefinition>(jsonReader);
 				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Tags_Delete {organization}/{project}/_apis/wit/tags/{tagIdOrName}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Tags_DeleteAsync(string organization, string project, string tagIdOrName, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/tags/"+ (tagIdOrName==null? "" : Uri.EscapeDataString(tagIdOrName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Tags_Delete {organization}/{project}/_apis/wit/tags/{tagIdOrName}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Tags_Delete(string organization, string project, string tagIdOrName, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/tags/"+ (tagIdOrName==null? "" : Uri.EscapeDataString(tagIdOrName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{
@@ -5050,72 +5050,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Deletes the specified work item and sends it to the Recycle Bin, so that it can be restored back, if required. Optionally, if the destroy parameter has been set to true, it destroys the work item permanently. WARNING: If the destroy parameter is set to true, work items deleted by this command will NOT go to recycle-bin and there is no way to restore/recover them after deletion. It is recommended NOT to use this parameter. If you do, please use this parameter with extreme caution.
-		/// Work_Items_Delete {organization}/{project}/_apis/wit/workitems/{id}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="id">ID of the work item to be deleted</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="destroy">Optional parameter, if set to true, the work item is deleted permanently. Please note: the destroy action is PERMANENT and cannot be undone.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<WorkItemDelete> Work_Items_DeleteAsync(string organization, int id, string project, bool destroy, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workitems/"+id+"&destroy="+destroy+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WorkItemDelete>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Deletes the specified work item and sends it to the Recycle Bin, so that it can be restored back, if required. Optionally, if the destroy parameter has been set to true, it destroys the work item permanently. WARNING: If the destroy parameter is set to true, work items deleted by this command will NOT go to recycle-bin and there is no way to restore/recover them after deletion. It is recommended NOT to use this parameter. If you do, please use this parameter with extreme caution.
-		/// Work_Items_Delete {organization}/{project}/_apis/wit/workitems/{id}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="id">ID of the work item to be deleted</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="destroy">Optional parameter, if set to true, the work item is deleted permanently. Please note: the destroy action is PERMANENT and cannot be undone.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public WorkItemDelete Work_Items_Delete(string organization, int id, string project, bool destroy, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workitems/"+id+"&destroy="+destroy+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WorkItemDelete>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Returns a single work item.
 		/// Work_Items_Get_Work_Item {organization}/{project}/_apis/wit/workitems/{id}
 		/// </summary>
@@ -5176,6 +5110,72 @@ namespace MyNS
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItem>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Deletes the specified work item and sends it to the Recycle Bin, so that it can be restored back, if required. Optionally, if the destroy parameter has been set to true, it destroys the work item permanently. WARNING: If the destroy parameter is set to true, work items deleted by this command will NOT go to recycle-bin and there is no way to restore/recover them after deletion. It is recommended NOT to use this parameter. If you do, please use this parameter with extreme caution.
+		/// Work_Items_Delete {organization}/{project}/_apis/wit/workitems/{id}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="id">ID of the work item to be deleted</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="destroy">Optional parameter, if set to true, the work item is deleted permanently. Please note: the destroy action is PERMANENT and cannot be undone.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<WorkItemDelete> Work_Items_DeleteAsync(string organization, int id, string project, bool destroy, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workitems/"+id+"&destroy="+destroy+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<WorkItemDelete>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Deletes the specified work item and sends it to the Recycle Bin, so that it can be restored back, if required. Optionally, if the destroy parameter has been set to true, it destroys the work item permanently. WARNING: If the destroy parameter is set to true, work items deleted by this command will NOT go to recycle-bin and there is no way to restore/recover them after deletion. It is recommended NOT to use this parameter. If you do, please use this parameter with extreme caution.
+		/// Work_Items_Delete {organization}/{project}/_apis/wit/workitems/{id}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="id">ID of the work item to be deleted</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="destroy">Optional parameter, if set to true, the work item is deleted permanently. Please note: the destroy action is PERMANENT and cannot be undone.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public WorkItemDelete Work_Items_Delete(string organization, int id, string project, bool destroy, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workitems/"+id+"&destroy="+destroy+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<WorkItemDelete>(jsonReader);
 				}
 			}
 			finally
@@ -5434,6 +5434,76 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Returns a list of work item comments by ids.
+		/// Comments_Get_Comments_Batch {organization}/{project}/_apis/wit/workItems/{workItemId}/comments
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="workItemId">Id of a work item to get comments for.</param>
+		/// <param name="ids">Comma-separated list of comment ids to return.</param>
+		/// <param name="includeDeleted">Specify if the deleted comments should be retrieved.</param>
+		/// <param name="expand">Specifies the additional data retrieval options for work item comments.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<CommentList> Comments_Get_Comments_BatchAsync(string organization, string project, int workItemId, string ids, bool includeDeleted, Comments_Get_Comments_BatchExpand expand, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&includeDeleted="+includeDeleted+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<CommentList>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Returns a list of work item comments by ids.
+		/// Comments_Get_Comments_Batch {organization}/{project}/_apis/wit/workItems/{workItemId}/comments
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="workItemId">Id of a work item to get comments for.</param>
+		/// <param name="ids">Comma-separated list of comment ids to return.</param>
+		/// <param name="includeDeleted">Specify if the deleted comments should be retrieved.</param>
+		/// <param name="expand">Specifies the additional data retrieval options for work item comments.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public CommentList Comments_Get_Comments_Batch(string organization, string project, int workItemId, string ids, bool includeDeleted, Comments_Get_Comments_BatchExpand expand, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&includeDeleted="+includeDeleted+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<CommentList>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Add a comment on a work item.
 		/// Comments_Add {organization}/{project}/_apis/wit/workItems/{workItemId}/comments
 		/// </summary>
@@ -5514,128 +5584,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Returns a list of work item comments by ids.
-		/// Comments_Get_Comments_Batch {organization}/{project}/_apis/wit/workItems/{workItemId}/comments
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="workItemId">Id of a work item to get comments for.</param>
-		/// <param name="ids">Comma-separated list of comment ids to return.</param>
-		/// <param name="includeDeleted">Specify if the deleted comments should be retrieved.</param>
-		/// <param name="expand">Specifies the additional data retrieval options for work item comments.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<CommentList> Comments_Get_Comments_BatchAsync(string organization, string project, int workItemId, string ids, bool includeDeleted, Comments_Get_Comments_BatchExpand expand, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&includeDeleted="+includeDeleted+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<CommentList>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Returns a list of work item comments by ids.
-		/// Comments_Get_Comments_Batch {organization}/{project}/_apis/wit/workItems/{workItemId}/comments
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="workItemId">Id of a work item to get comments for.</param>
-		/// <param name="ids">Comma-separated list of comment ids to return.</param>
-		/// <param name="includeDeleted">Specify if the deleted comments should be retrieved.</param>
-		/// <param name="expand">Specifies the additional data retrieval options for work item comments.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public CommentList Comments_Get_Comments_Batch(string organization, string project, int workItemId, string ids, bool includeDeleted, Comments_Get_Comments_BatchExpand expand, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&includeDeleted="+includeDeleted+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<CommentList>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete a comment on a work item.
-		/// Comments_Delete {organization}/{project}/_apis/wit/workItems/{workItemId}/comments/{commentId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="workItemId">Id of a work item.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Comments_DeleteAsync(string organization, string project, int workItemId, int commentId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments/"+commentId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete a comment on a work item.
-		/// Comments_Delete {organization}/{project}/_apis/wit/workItems/{workItemId}/comments/{commentId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="workItemId">Id of a work item.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Comments_Delete(string organization, string project, int workItemId, int commentId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments/"+commentId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Returns a work item comment.
 		/// Comments_Get_Comment {organization}/{project}/_apis/wit/workItems/{workItemId}/comments/{commentId}
 		/// </summary>
@@ -5697,6 +5645,58 @@ namespace MyNS
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Comment>(jsonReader);
 				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a comment on a work item.
+		/// Comments_Delete {organization}/{project}/_apis/wit/workItems/{workItemId}/comments/{commentId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="workItemId">Id of a work item.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Comments_DeleteAsync(string organization, string project, int workItemId, int commentId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments/"+commentId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a comment on a work item.
+		/// Comments_Delete {organization}/{project}/_apis/wit/workItems/{workItemId}/comments/{commentId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="workItemId">Id of a work item.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Comments_Delete(string organization, string project, int workItemId, int commentId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wit/workItems/"+workItemId+"/comments/"+commentId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{
@@ -6700,6 +6700,72 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Gets template
+		/// Templates_List {organization}/{project}/{team}/_apis/wit/templates
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="team">Team ID or team name</param>
+		/// <param name="workitemtypename">Optional, When specified returns templates for given Work item type.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<WorkItemTemplateReference[]> Templates_ListAsync(string organization, string project, string team, string workitemtypename, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/wit/templates&workitemtypename=" + (workitemtypename==null? "" : Uri.EscapeDataString(workitemtypename))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<WorkItemTemplateReference[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Gets template
+		/// Templates_List {organization}/{project}/{team}/_apis/wit/templates
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="team">Team ID or team name</param>
+		/// <param name="workitemtypename">Optional, When specified returns templates for given Work item type.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public WorkItemTemplateReference[] Templates_List(string organization, string project, string team, string workitemtypename, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/wit/templates&workitemtypename=" + (workitemtypename==null? "" : Uri.EscapeDataString(workitemtypename))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<WorkItemTemplateReference[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Creates a template
 		/// Templates_Create {organization}/{project}/{team}/_apis/wit/templates
 		/// </summary>
@@ -6775,126 +6841,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Gets template
-		/// Templates_List {organization}/{project}/{team}/_apis/wit/templates
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="workitemtypename">Optional, When specified returns templates for given Work item type.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<WorkItemTemplateReference[]> Templates_ListAsync(string organization, string project, string team, string workitemtypename, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/wit/templates&workitemtypename=" + (workitemtypename==null? "" : Uri.EscapeDataString(workitemtypename))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WorkItemTemplateReference[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Gets template
-		/// Templates_List {organization}/{project}/{team}/_apis/wit/templates
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="workitemtypename">Optional, When specified returns templates for given Work item type.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public WorkItemTemplateReference[] Templates_List(string organization, string project, string team, string workitemtypename, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/wit/templates&workitemtypename=" + (workitemtypename==null? "" : Uri.EscapeDataString(workitemtypename))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WorkItemTemplateReference[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Deletes the template with given id
-		/// Templates_Delete {organization}/{project}/{team}/_apis/wit/templates/{templateId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="templateId">Template id</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Templates_DeleteAsync(string organization, string project, string team, string templateId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/wit/templates/"+ (templateId==null? "" : Uri.EscapeDataString(templateId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Deletes the template with given id
-		/// Templates_Delete {organization}/{project}/{team}/_apis/wit/templates/{templateId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="templateId">Template id</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Templates_Delete(string organization, string project, string team, string templateId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/wit/templates/"+ (templateId==null? "" : Uri.EscapeDataString(templateId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 			}
 		}
@@ -7043,6 +6989,60 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Deletes the template with given id
+		/// Templates_Delete {organization}/{project}/{team}/_apis/wit/templates/{templateId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="team">Team ID or team name</param>
+		/// <param name="templateId">Template id</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Templates_DeleteAsync(string organization, string project, string team, string templateId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/wit/templates/"+ (templateId==null? "" : Uri.EscapeDataString(templateId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Deletes the template with given id
+		/// Templates_Delete {organization}/{project}/{team}/_apis/wit/templates/{templateId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="team">Team ID or team name</param>
+		/// <param name="templateId">Template id</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Templates_Delete(string organization, string project, string team, string templateId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/wit/templates/"+ (templateId==null? "" : Uri.EscapeDataString(templateId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
 			}
 			}
 		}
@@ -7202,7 +7202,7 @@ namespace MyNS
 		}
 	}
 	
-	public enum Classification_Nodes_Create_Or_UpdateStructureGroup
+	public enum Classification_Nodes_GetStructureGroup
 	{
 		
 		areas = 0,

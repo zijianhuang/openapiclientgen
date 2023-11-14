@@ -1401,14 +1401,14 @@ namespace MyNS
 		public System.Nullable<System.Int32> Count { get; set; }
 	}
 	
-	public partial class Misc
+	public partial class MyClient
 	{
 		
 		private System.Net.Http.HttpClient client;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public MyClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -2135,6 +2135,74 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Get a list of subscriptions.
+		/// Subscriptions_List {organization}/_apis/hooks/subscriptions
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="publisherId">ID for a subscription.</param>
+		/// <param name="eventType">The event type to filter on (if any).</param>
+		/// <param name="consumerId">ID for a consumer.</param>
+		/// <param name="consumerActionId">ID for a consumerActionId.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<Subscription[]> Subscriptions_ListAsync(string organization, string publisherId, string eventType, string consumerId, string consumerActionId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/hooks/subscriptions&publisherId=" + (publisherId==null? "" : Uri.EscapeDataString(publisherId))+"&eventType=" + (eventType==null? "" : Uri.EscapeDataString(eventType))+"&consumerId=" + (consumerId==null? "" : Uri.EscapeDataString(consumerId))+"&consumerActionId=" + (consumerActionId==null? "" : Uri.EscapeDataString(consumerActionId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Subscription[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get a list of subscriptions.
+		/// Subscriptions_List {organization}/_apis/hooks/subscriptions
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="publisherId">ID for a subscription.</param>
+		/// <param name="eventType">The event type to filter on (if any).</param>
+		/// <param name="consumerId">ID for a consumer.</param>
+		/// <param name="consumerActionId">ID for a consumerActionId.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public Subscription[] Subscriptions_List(string organization, string publisherId, string eventType, string consumerId, string consumerActionId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/hooks/subscriptions&publisherId=" + (publisherId==null? "" : Uri.EscapeDataString(publisherId))+"&eventType=" + (eventType==null? "" : Uri.EscapeDataString(eventType))+"&consumerId=" + (consumerId==null? "" : Uri.EscapeDataString(consumerId))+"&consumerActionId=" + (consumerActionId==null? "" : Uri.EscapeDataString(consumerActionId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Subscription[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Create a subscription.
 		/// Subscriptions_Create {organization}/_apis/hooks/subscriptions
 		/// </summary>
@@ -2206,124 +2274,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get a list of subscriptions.
-		/// Subscriptions_List {organization}/_apis/hooks/subscriptions
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="publisherId">ID for a subscription.</param>
-		/// <param name="eventType">The event type to filter on (if any).</param>
-		/// <param name="consumerId">ID for a consumer.</param>
-		/// <param name="consumerActionId">ID for a consumerActionId.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<Subscription[]> Subscriptions_ListAsync(string organization, string publisherId, string eventType, string consumerId, string consumerActionId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/hooks/subscriptions&publisherId=" + (publisherId==null? "" : Uri.EscapeDataString(publisherId))+"&eventType=" + (eventType==null? "" : Uri.EscapeDataString(eventType))+"&consumerId=" + (consumerId==null? "" : Uri.EscapeDataString(consumerId))+"&consumerActionId=" + (consumerActionId==null? "" : Uri.EscapeDataString(consumerActionId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Subscription[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get a list of subscriptions.
-		/// Subscriptions_List {organization}/_apis/hooks/subscriptions
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="publisherId">ID for a subscription.</param>
-		/// <param name="eventType">The event type to filter on (if any).</param>
-		/// <param name="consumerId">ID for a consumer.</param>
-		/// <param name="consumerActionId">ID for a consumerActionId.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public Subscription[] Subscriptions_List(string organization, string publisherId, string eventType, string consumerId, string consumerActionId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/hooks/subscriptions&publisherId=" + (publisherId==null? "" : Uri.EscapeDataString(publisherId))+"&eventType=" + (eventType==null? "" : Uri.EscapeDataString(eventType))+"&consumerId=" + (consumerId==null? "" : Uri.EscapeDataString(consumerId))+"&consumerActionId=" + (consumerActionId==null? "" : Uri.EscapeDataString(consumerActionId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Subscription[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete a specific service hooks subscription.
-		/// Subscriptions_Delete {organization}/_apis/hooks/subscriptions/{subscriptionId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="subscriptionId">ID for a subscription.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Subscriptions_DeleteAsync(string organization, string subscriptionId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/hooks/subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete a specific service hooks subscription.
-		/// Subscriptions_Delete {organization}/_apis/hooks/subscriptions/{subscriptionId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="subscriptionId">ID for a subscription.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Subscriptions_Delete(string organization, string subscriptionId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/hooks/subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 			}
 		}
@@ -2460,6 +2410,56 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a specific service hooks subscription.
+		/// Subscriptions_Delete {organization}/_apis/hooks/subscriptions/{subscriptionId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="subscriptionId">ID for a subscription.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Subscriptions_DeleteAsync(string organization, string subscriptionId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/hooks/subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a specific service hooks subscription.
+		/// Subscriptions_Delete {organization}/_apis/hooks/subscriptions/{subscriptionId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="subscriptionId">ID for a subscription.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Subscriptions_Delete(string organization, string subscriptionId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/hooks/subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
 			}
 			}
 		}

@@ -7,34 +7,34 @@ export namespace MyNS {
 	export interface Address {
 
 		/** A customer's physical address. An address can be composed of one to three lines. The addressline2 and addressLine3 are optional. */
-		addressLine1?: string;
+		addressLine1?: string | null;
 
 		/** Line 2 of the address. */
-		addressLine2?: string;
+		addressLine2?: string | null;
 
 		/** Line 3 of the address. */
-		addressLine3?: string;
+		addressLine3?: string | null;
 
 		/** The customer contact's name. This is required. */
-		contactName?: string;
+		contactName?: string | null;
 
 		/** For countryCode information, see the ISO 3166 country code elements. Verify that country is approved for resale of Google products. This property is required when creating a new customer. */
-		countryCode?: string;
+		countryCode?: string | null;
 
 		/** Identifies the resource as a customer address. Value: customers#address */
-		kind?: string;
+		kind?: string | null;
 
 		/** An example of a locality value is the city of San Francisco. */
-		locality?: string;
+		locality?: string | null;
 
 		/** The company or company division name. This is required. */
-		organizationName?: string;
+		organizationName?: string | null;
 
 		/** A postalCode example is a postal zip code such as 94043. This property is required when creating a new customer. */
-		postalCode?: string;
+		postalCode?: string | null;
 
 		/** An example of a region value is CA for the state of California. */
-		region?: string;
+		region?: string | null;
 	}
 
 
@@ -42,10 +42,10 @@ export namespace MyNS {
 	export interface ChangePlanRequest {
 
 		/** Google-issued code (100 char max) for discounted pricing on subscription plans. Deal code must be included in changePlan request in order to receive discounted rate. This property is optional. If a deal code has already been added to a subscription, this property may be left empty and the existing discounted rate will still apply (if not empty, only provide the deal code that is already present on the subscription). If a deal code has never been added to a subscription and this property is left blank, regular pricing will apply. */
-		dealCode?: string;
+		dealCode?: string | null;
 
 		/** Identifies the resource as a subscription change plan request. Value: subscriptions#changePlanRequest */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * The planName property is required. This is the name of the subscription's payment plan. For more information about the Google payment plans, see API concepts.
@@ -55,13 +55,13 @@ export namespace MyNS {
 		 * - FLEXIBLE - The flexible plan
 		 * - TRIAL - The 30-day free trial plan
 		 */
-		planName?: string;
+		planName?: string | null;
 
 		/** This is an optional property. This purchase order (PO) information is for resellers to use for their company tracking usage. If a purchaseOrderId value is given it appears in the API responses and shows up in the invoice. The property accepts up to 80 plain text characters. */
-		purchaseOrderId?: string;
+		purchaseOrderId?: string | null;
 
 		/** JSON template for subscription seats. */
-		seats?: Seats;
+		seats?: Seats | null;
 	}
 
 
@@ -69,16 +69,16 @@ export namespace MyNS {
 	export interface Seats {
 
 		/** Identifies the resource as a subscription seat setting. Value: subscriptions#seats */
-		kind?: string;
+		kind?: string | null;
 
 		/** Read-only field containing the current number of users that are assigned a license for the product defined in skuId. This field's value is equivalent to the numerical count of users returned by the Enterprise License Manager API method: listForProductAndSku */
-		licensedNumberOfSeats?: number;
+		licensedNumberOfSeats?: number | null;
 
 		/** This is a required property and is exclusive to subscriptions with FLEXIBLE or TRIAL plans. This property sets the maximum number of licensed users allowed on a subscription. This quantity can be increased up to the maximum limit defined in the reseller's contract. The minimum quantity is the current number of users in the customer account. Note: G Suite subscriptions automatically assign a license to every user. */
-		maximumNumberOfSeats?: number;
+		maximumNumberOfSeats?: number | null;
 
 		/** This is a required property and is exclusive to subscriptions with ANNUAL_MONTHLY_PAY and ANNUAL_YEARLY_PAY plans. This property sets the maximum number of licenses assignable to users on a subscription. The reseller can add more licenses, but once set, the numberOfSeats cannot be reduced until renewal. The reseller is invoiced based on the numberOfSeats value regardless of how many of these user licenses are assigned. Note: G Suite subscriptions automatically assign a license to every user. */
-		numberOfSeats?: number;
+		numberOfSeats?: number | null;
 	}
 
 
@@ -86,28 +86,28 @@ export namespace MyNS {
 	export interface Customer {
 
 		/** Like the "Customer email" in the reseller tools, this email is the secondary contact used if something happens to the customer's service such as service outage or a security issue. This property is required when creating a new customer and should not use the same domain as customerDomain. */
-		alternateEmail?: string;
+		alternateEmail?: string | null;
 
 		/** The customer's primary domain name string. customerDomain is required when creating a new customer. Do not include the www prefix in the domain when adding a customer. */
-		customerDomain?: string;
+		customerDomain?: string | null;
 
 		/** Whether the customer's primary domain has been verified. */
-		customerDomainVerified?: boolean;
+		customerDomainVerified?: boolean | null;
 
 		/** This property will always be returned in a response as the unique identifier generated by Google. In a request, this property can be either the primary domain or the unique identifier generated by Google. */
-		customerId?: string;
+		customerId?: string | null;
 
 		/** Identifies the resource as a customer. Value: reseller#customer */
-		kind?: string;
+		kind?: string | null;
 
 		/** Customer contact phone number. Must start with "+" followed by the country code. The rest of the number can be contiguous numbers or respect the phone local format conventions, but it must be a real phone number and not, for example, "123". This field is silently ignored if invalid. */
-		phoneNumber?: string;
+		phoneNumber?: string | null;
 
 		/** JSON template for address of a customer. */
-		postalAddress?: Address;
+		postalAddress?: Address | null;
 
 		/** URL to customer's Admin console dashboard. The read-only URL is generated by the API service. This is used if your client application requires the customer to complete a task in the Admin console. */
-		resourceUiUrl?: string;
+		resourceUiUrl?: string | null;
 	}
 
 
@@ -115,10 +115,10 @@ export namespace MyNS {
 	export interface RenewalSettings {
 
 		/** Identifies the resource as a subscription renewal setting. Value: subscriptions#renewalSettings */
-		kind?: string;
+		kind?: string | null;
 
 		/** Renewal settings for the annual commitment plan. For more detailed information, see renewal options in the administrator help center. When renewing a subscription, the renewalType is a required property. */
-		renewalType?: string;
+		renewalType?: string | null;
 	}
 
 
@@ -126,10 +126,10 @@ export namespace MyNS {
 	export interface ResellernotifyGetwatchdetailsResponse {
 
 		/** List of registered service accounts. */
-		serviceAccountEmailAddresses?: Array<string>;
+		serviceAccountEmailAddresses?: Array<string> | null;
 
 		/** Topic name of the PubSub */
-		topicName?: string;
+		topicName?: string | null;
 	}
 
 
@@ -137,7 +137,7 @@ export namespace MyNS {
 	export interface ResellernotifyResource {
 
 		/** Topic name of the PubSub */
-		topicName?: string;
+		topicName?: string | null;
 	}
 
 
@@ -145,49 +145,49 @@ export namespace MyNS {
 	export interface Subscription {
 
 		/** Read-only field that returns the current billing method for a subscription. */
-		billingMethod?: string;
+		billingMethod?: string | null;
 
 		/** The creationTime property is the date when subscription was created. It is in milliseconds using the Epoch format. See an example Epoch converter. */
-		creationTime?: string;
+		creationTime?: string | null;
 
 		/** Primary domain name of the customer */
-		customerDomain?: string;
+		customerDomain?: string | null;
 
 		/** This property will always be returned in a response as the unique identifier generated by Google. In a request, this property can be either the primary domain or the unique identifier generated by Google. */
-		customerId?: string;
+		customerId?: string | null;
 
 		/** Google-issued code (100 char max) for discounted pricing on subscription plans. Deal code must be included in insert requests in order to receive discounted rate. This property is optional, regular pricing applies if left empty. */
-		dealCode?: string;
+		dealCode?: string | null;
 
 		/** Identifies the resource as a Subscription. Value: reseller#subscription */
-		kind?: string;
+		kind?: string | null;
 
 		/** The plan property is required. In this version of the API, the G Suite plans are the flexible plan, annual commitment plan, and the 30-day free trial plan. For more information about the API"s payment plans, see the API concepts. */
-		plan?: SubscriptionPlan;
+		plan?: SubscriptionPlan | null;
 
 		/** This is an optional property. This purchase order (PO) information is for resellers to use for their company tracking usage. If a purchaseOrderId value is given it appears in the API responses and shows up in the invoice. The property accepts up to 80 plain text characters. */
-		purchaseOrderId?: string;
+		purchaseOrderId?: string | null;
 
 		/** JSON template for a subscription renewal settings. */
-		renewalSettings?: RenewalSettings;
+		renewalSettings?: RenewalSettings | null;
 
 		/** URL to customer's Subscriptions page in the Admin console. The read-only URL is generated by the API service. This is used if your client application requires the customer to complete a task using the Subscriptions page in the Admin console. */
-		resourceUiUrl?: string;
+		resourceUiUrl?: string | null;
 
 		/** JSON template for subscription seats. */
-		seats?: Seats;
+		seats?: Seats | null;
 
 		/** A required property. The skuId is a unique system identifier for a product's SKU assigned to a customer in the subscription. For products and SKUs available in this version of the API, see  Product and SKU IDs. */
-		skuId?: string;
+		skuId?: string | null;
 
 		/** Read-only external display name for a product's SKU assigned to a customer in the subscription. SKU names are subject to change at Google's discretion. For products and SKUs available in this version of the API, see  Product and SKU IDs. */
-		skuName?: string;
+		skuName?: string | null;
 
 		/** This is an optional property. */
-		status?: string;
+		status?: string | null;
 
 		/** The subscriptionId is the subscription identifier and is unique for each customer. This is a required property. Since a subscriptionId changes when a subscription is updated, we recommend not using this ID as a key for persistent data. Use the subscriptionId as described in retrieve all reseller subscriptions. */
-		subscriptionId?: string;
+		subscriptionId?: string | null;
 
 		/**
 		 * Read-only field containing an enumerable of all the current suspension reasons for a subscription. It is possible for a subscription to have many concurrent, overlapping suspension reasons. A subscription's STATUS is SUSPENDED until all pending suspensions are removed.
@@ -198,26 +198,26 @@ export namespace MyNS {
 		 * - TRIAL_ENDED - The customer's trial expired without a plan selected.
 		 * - OTHER - The customer is suspended for an internal Google reason (e.g. abuse or otherwise).
 		 */
-		suspensionReasons?: Array<string>;
+		suspensionReasons?: Array<string> | null;
 
 		/** Read-only transfer related information for the subscription. For more information, see retrieve transferable subscriptions for a customer. */
-		transferInfo?: SubscriptionTransferInfo;
+		transferInfo?: SubscriptionTransferInfo | null;
 
 		/** The G Suite annual commitment and flexible payment plans can be in a 30-day free trial. For more information, see the API concepts. */
-		trialSettings?: SubscriptionTrialSettings;
+		trialSettings?: SubscriptionTrialSettings | null;
 	}
 
 	export interface SubscriptionPlan {
 
 		/** In this version of the API, annual commitment plan's interval is one year.  Note: When billingMethod value is OFFLINE, the subscription property object plan.commitmentInterval is omitted in all API responses. */
-		commitmentInterval?: SubscriptionPlanCommitmentInterval;
+		commitmentInterval?: SubscriptionPlanCommitmentInterval | null;
 
 		/**
 		 * The isCommitmentPlan property's boolean value identifies the plan as an annual commitment plan:
 		 * - true — The subscription's plan is an annual commitment plan.
 		 * - false — The plan is not an annual commitment plan.
 		 */
-		isCommitmentPlan?: boolean;
+		isCommitmentPlan?: boolean | null;
 
 		/**
 		 * The planName property is required. This is the name of the subscription's plan. For more information about the Google payment plans, see the API concepts.
@@ -228,25 +228,25 @@ export namespace MyNS {
 		 * - TRIAL — The 30-day free trial plan. A subscription in trial will be suspended after the 30th free day if no payment plan is assigned. Calling changePlan will assign a payment plan to a trial but will not activate the plan. A trial will automatically begin its assigned payment plan after its 30th free day or immediately after calling startPaidService.
 		 * - FREE — The free plan is exclusive to the Cloud Identity SKU and does not incur any billing.
 		 */
-		planName?: string;
+		planName?: string | null;
 	}
 
 	export interface SubscriptionPlanCommitmentInterval {
 
 		/** An annual commitment plan's interval's endTime in milliseconds using the UNIX Epoch format. See an example Epoch converter. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** An annual commitment plan's interval's startTime in milliseconds using UNIX Epoch format. See an example Epoch converter. */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 	export interface SubscriptionTransferInfo {
 
 		/** When inserting a subscription, this is the minimum number of seats listed in the transfer order for this product. For example, if the customer has 20 users, the reseller cannot place a transfer order of 15 seats. The minimum is 20 seats. */
-		minimumTransferableSeats?: number;
+		minimumTransferableSeats?: number | null;
 
 		/** The time when transfer token or intent to transfer will expire. The time is in milliseconds using UNIX Epoch format. */
-		transferabilityExpirationTime?: string;
+		transferabilityExpirationTime?: string | null;
 	}
 
 	export interface SubscriptionTrialSettings {
@@ -256,10 +256,10 @@ export namespace MyNS {
 		 * - true — The plan is in trial.
 		 * - false — The plan is not in trial.
 		 */
-		isInTrial?: boolean;
+		isInTrial?: boolean | null;
 
 		/** Date when the trial ends. The value is in milliseconds using the UNIX Epoch format. See an example Epoch converter. */
-		trialEndTime?: string;
+		trialEndTime?: string | null;
 	}
 
 
@@ -267,13 +267,13 @@ export namespace MyNS {
 	export interface Subscriptions {
 
 		/** Identifies the resource as a collection of subscriptions. Value: reseller#subscriptions */
-		kind?: string;
+		kind?: string | null;
 
 		/** The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The subscriptions in this page of results. */
-		subscriptions?: Array<Subscription>;
+		subscriptions?: Array<Subscription> | null;
 	}
 
 	@Injectable()
@@ -287,7 +287,7 @@ export namespace MyNS {
 		 * @param {string} customerAuthToken The customerAuthToken query string is required when creating a resold account that transfers a direct customer's subscription or transfers another reseller customer's subscription to your reseller management. This is a hexadecimal authentication token needed to complete the subscription transfer. For more information, see the administrator help center.
 		 * @return {void} Successful response
 		 */
-		Reseller_customers_insert(customerAuthToken: string, requestBody: Customer): Observable<HttpResponse<string>> {
+		Reseller_customers_insert(customerAuthToken: string | null | undefined, requestBody: Customer): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'customers?customerAuthToken=' + (customerAuthToken == null ? '' : encodeURIComponent(customerAuthToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -328,7 +328,7 @@ export namespace MyNS {
 		 * @param {string} customerAuthToken The customerAuthToken query string is required when creating a resold account that transfers a direct customer's subscription or transfers another reseller customer's subscription to your reseller management. This is a hexadecimal authentication token needed to complete the subscription transfer. For more information, see the administrator help center.
 		 * @return {void} Successful response
 		 */
-		Reseller_subscriptions_insert(customerId: string, customerAuthToken: string, requestBody: Subscription): Observable<HttpResponse<string>> {
+		Reseller_subscriptions_insert(customerId: string, customerAuthToken: string | null | undefined, requestBody: Subscription): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'customers/' + (customerId == null ? '' : encodeURIComponent(customerId)) + '/subscriptions&customerAuthToken=' + (customerAuthToken == null ? '' : encodeURIComponent(customerAuthToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -436,7 +436,7 @@ export namespace MyNS {
 		 * @param {string} serviceAccountEmailAddress The service account which will own the created Cloud-PubSub topic.
 		 * @return {void} Successful response
 		 */
-		Reseller_resellernotify_register(serviceAccountEmailAddress: string): Observable<HttpResponse<string>> {
+		Reseller_resellernotify_register(serviceAccountEmailAddress: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'resellernotify/register?serviceAccountEmailAddress=' + (serviceAccountEmailAddress == null ? '' : encodeURIComponent(serviceAccountEmailAddress)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -446,7 +446,7 @@ export namespace MyNS {
 		 * @param {string} serviceAccountEmailAddress The service account which owns the Cloud-PubSub topic.
 		 * @return {void} Successful response
 		 */
-		Reseller_resellernotify_unregister(serviceAccountEmailAddress: string): Observable<HttpResponse<string>> {
+		Reseller_resellernotify_unregister(serviceAccountEmailAddress: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'resellernotify/unregister?serviceAccountEmailAddress=' + (serviceAccountEmailAddress == null ? '' : encodeURIComponent(serviceAccountEmailAddress)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -462,7 +462,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token to specify next page in the list
 		 * @return {void} Successful response
 		 */
-		Reseller_subscriptions_list(customerAuthToken: string, customerId: string, customerNamePrefix: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Reseller_subscriptions_list(customerAuthToken: string | null | undefined, customerId: string | null | undefined, customerNamePrefix: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'subscriptions?customerAuthToken=' + (customerAuthToken == null ? '' : encodeURIComponent(customerAuthToken)) + '&customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)) + '&customerNamePrefix=' + (customerNamePrefix == null ? '' : encodeURIComponent(customerNamePrefix)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 	}

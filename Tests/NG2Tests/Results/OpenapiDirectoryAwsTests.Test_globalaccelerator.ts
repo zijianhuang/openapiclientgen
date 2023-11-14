@@ -5,15 +5,15 @@ export namespace MyNS {
 	export interface AdvertiseByoipCidrResponse {
 
 		/** <p>Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP address (BYOIP).</p> <p>The following describes each BYOIP <code>State</code> that your IP address range can be in.</p> <ul> <li> <p> <b>PENDING_PROVISIONING</b> — You’ve submitted a request to provision an IP address range but it is not yet provisioned with AWS Global Accelerator.</p> </li> <li> <p> <b>READY</b> — The address range is provisioned with AWS Global Accelerator and can be advertised.</p> </li> <li> <p> <b>PENDING_ADVERTISING</b> — You’ve submitted a request for AWS Global Accelerator to advertise an address range but it is not yet being advertised.</p> </li> <li> <p> <b>ADVERTISING</b> — The address range is being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_WITHDRAWING</b> — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_DEPROVISIONING</b> — You’ve submitted a request to deprovision an address range from AWS Global Accelerator but it is still provisioned.</p> </li> <li> <p> <b>DEPROVISIONED</b> — The address range is deprovisioned from AWS Global Accelerator.</p> </li> <li> <p> <b>FAILED_PROVISION </b> — The request to provision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_ADVERTISING</b> — The request for AWS Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_WITHDRAW</b> — The request to withdraw the address range from advertising by AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_DEPROVISION </b> — The request to deprovision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> </ul> */
-		ByoipCidr?: ByoipCidr;
+		ByoipCidr?: ByoipCidr | null;
 	}
 
 
 	/** <p>Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP address (BYOIP).</p> <p>The following describes each BYOIP <code>State</code> that your IP address range can be in.</p> <ul> <li> <p> <b>PENDING_PROVISIONING</b> — You’ve submitted a request to provision an IP address range but it is not yet provisioned with AWS Global Accelerator.</p> </li> <li> <p> <b>READY</b> — The address range is provisioned with AWS Global Accelerator and can be advertised.</p> </li> <li> <p> <b>PENDING_ADVERTISING</b> — You’ve submitted a request for AWS Global Accelerator to advertise an address range but it is not yet being advertised.</p> </li> <li> <p> <b>ADVERTISING</b> — The address range is being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_WITHDRAWING</b> — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_DEPROVISIONING</b> — You’ve submitted a request to deprovision an address range from AWS Global Accelerator but it is still provisioned.</p> </li> <li> <p> <b>DEPROVISIONED</b> — The address range is deprovisioned from AWS Global Accelerator.</p> </li> <li> <p> <b>FAILED_PROVISION </b> — The request to provision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_ADVERTISING</b> — The request for AWS Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_WITHDRAW</b> — The request to withdraw the address range from advertising by AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_DEPROVISION </b> — The request to deprovision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> </ul> */
 	export interface ByoipCidr {
-		Cidr?: string;
-		State?: ByoipCidrState;
-		Events?: Array<ByoipCidrEvent>;
+		Cidr?: string | null;
+		State?: ByoipCidrState | null;
+		Events?: Array<ByoipCidrEvent> | null;
 	}
 
 	export enum ByoipCidrState { PENDING_PROVISIONING = 0, READY = 1, PENDING_ADVERTISING = 2, ADVERTISING = 3, PENDING_WITHDRAWING = 4, PENDING_DEPROVISIONING = 5, DEPROVISIONED = 6, FAILED_PROVISION = 7, FAILED_ADVERTISING = 8, FAILED_WITHDRAW = 9, FAILED_DEPROVISION = 10 }
@@ -21,8 +21,8 @@ export namespace MyNS {
 
 	/** A complex type that contains a <code>Message</code> and a <code>Timestamp</code> value for changes that you make in the status an IP address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP). */
 	export interface ByoipCidrEvent {
-		Message?: string;
-		Timestamp?: Date;
+		Message?: string | null;
+		Timestamp?: Date | null;
 	}
 
 	export interface AdvertiseByoipCidrRequest {
@@ -47,21 +47,21 @@ export namespace MyNS {
 	export interface CreateAcceleratorResponse {
 
 		/** An accelerator is a complex type that includes one or more listeners that process inbound connections and then direct traffic to one or more endpoint groups, each of which includes endpoints, such as load balancers. */
-		Accelerator?: Accelerator;
+		Accelerator?: Accelerator | null;
 	}
 
 
 	/** An accelerator is a complex type that includes one or more listeners that process inbound connections and then direct traffic to one or more endpoint groups, each of which includes endpoints, such as load balancers. */
 	export interface Accelerator {
-		AcceleratorArn?: string;
-		Name?: string;
-		IpAddressType?: AcceleratorIpAddressType;
-		Enabled?: boolean;
-		IpSets?: Array<IpSet>;
-		DnsName?: string;
-		Status?: AcceleratorStatus;
-		CreatedTime?: Date;
-		LastModifiedTime?: Date;
+		AcceleratorArn?: string | null;
+		Name?: string | null;
+		IpAddressType?: AcceleratorIpAddressType | null;
+		Enabled?: boolean | null;
+		IpSets?: Array<IpSet> | null;
+		DnsName?: string | null;
+		Status?: AcceleratorStatus | null;
+		CreatedTime?: Date | null;
+		LastModifiedTime?: Date | null;
 	}
 
 	export enum AcceleratorIpAddressType { IPV4 = 0 }
@@ -69,19 +69,19 @@ export namespace MyNS {
 
 	/** A complex type for the set of IP addresses for an accelerator. */
 	export interface IpSet {
-		IpFamily?: string;
-		IpAddresses?: Array<string>;
+		IpFamily?: string | null;
+		IpAddresses?: Array<string> | null;
 	}
 
 	export enum AcceleratorStatus { DEPLOYED = 0, IN_PROGRESS = 1 }
 
 	export interface CreateAcceleratorRequest {
 		Name: string;
-		IpAddressType?: AcceleratorIpAddressType;
-		IpAddresses?: Array<string>;
-		Enabled?: boolean;
+		IpAddressType?: AcceleratorIpAddressType | null;
+		IpAddresses?: Array<string> | null;
+		Enabled?: boolean | null;
 		IdempotencyToken: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -97,31 +97,31 @@ export namespace MyNS {
 	export interface CreateEndpointGroupResponse {
 
 		/** A complex type for the endpoint group. An AWS Region can have only one endpoint group for a specific listener. */
-		EndpointGroup?: EndpointGroup;
+		EndpointGroup?: EndpointGroup | null;
 	}
 
 
 	/** A complex type for the endpoint group. An AWS Region can have only one endpoint group for a specific listener.  */
 	export interface EndpointGroup {
-		EndpointGroupArn?: string;
-		EndpointGroupRegion?: string;
-		EndpointDescriptions?: Array<EndpointDescription>;
-		TrafficDialPercentage?: number;
-		HealthCheckPort?: number;
-		HealthCheckProtocol?: EndpointGroupHealthCheckProtocol;
-		HealthCheckPath?: string;
-		HealthCheckIntervalSeconds?: number;
-		ThresholdCount?: number;
+		EndpointGroupArn?: string | null;
+		EndpointGroupRegion?: string | null;
+		EndpointDescriptions?: Array<EndpointDescription> | null;
+		TrafficDialPercentage?: number | null;
+		HealthCheckPort?: number | null;
+		HealthCheckProtocol?: EndpointGroupHealthCheckProtocol | null;
+		HealthCheckPath?: string | null;
+		HealthCheckIntervalSeconds?: number | null;
+		ThresholdCount?: number | null;
 	}
 
 
 	/** A complex type for an endpoint. Each endpoint group can include one or more endpoints, such as load balancers. */
 	export interface EndpointDescription {
-		EndpointId?: string;
-		Weight?: number;
-		HealthState?: EndpointDescriptionHealthState;
-		HealthReason?: string;
-		ClientIPPreservationEnabled?: boolean;
+		EndpointId?: string | null;
+		Weight?: number | null;
+		HealthState?: EndpointDescriptionHealthState | null;
+		HealthReason?: string | null;
+		ClientIPPreservationEnabled?: boolean | null;
 	}
 
 	export enum EndpointDescriptionHealthState { INITIAL = 0, HEALTHY = 1, UNHEALTHY = 2 }
@@ -131,22 +131,22 @@ export namespace MyNS {
 	export interface CreateEndpointGroupRequest {
 		ListenerArn: string;
 		EndpointGroupRegion: string;
-		EndpointConfigurations?: Array<EndpointConfiguration>;
-		TrafficDialPercentage?: number;
-		HealthCheckPort?: number;
-		HealthCheckProtocol?: EndpointGroupHealthCheckProtocol;
-		HealthCheckPath?: string;
-		HealthCheckIntervalSeconds?: number;
-		ThresholdCount?: number;
+		EndpointConfigurations?: Array<EndpointConfiguration> | null;
+		TrafficDialPercentage?: number | null;
+		HealthCheckPort?: number | null;
+		HealthCheckProtocol?: EndpointGroupHealthCheckProtocol | null;
+		HealthCheckPath?: string | null;
+		HealthCheckIntervalSeconds?: number | null;
+		ThresholdCount?: number | null;
 		IdempotencyToken: string;
 	}
 
 
 	/** A complex type for endpoints. */
 	export interface EndpointConfiguration {
-		EndpointId?: string;
-		Weight?: number;
-		ClientIPPreservationEnabled?: boolean;
+		EndpointId?: string | null;
+		Weight?: number | null;
+		ClientIPPreservationEnabled?: boolean | null;
 	}
 
 	export interface AcceleratorNotFoundException {
@@ -161,23 +161,23 @@ export namespace MyNS {
 	export interface CreateListenerResponse {
 
 		/** A complex type for a listener. */
-		Listener?: Listener;
+		Listener?: Listener | null;
 	}
 
 
 	/** A complex type for a listener. */
 	export interface Listener {
-		ListenerArn?: string;
-		PortRanges?: Array<PortRange>;
-		Protocol?: ListenerProtocol;
-		ClientAffinity?: ListenerClientAffinity;
+		ListenerArn?: string | null;
+		PortRanges?: Array<PortRange> | null;
+		Protocol?: ListenerProtocol | null;
+		ClientAffinity?: ListenerClientAffinity | null;
 	}
 
 
 	/** A complex type for a range of ports for a listener. */
 	export interface PortRange {
-		FromPort?: number;
-		ToPort?: number;
+		FromPort?: number | null;
+		ToPort?: number | null;
 	}
 
 	export enum ListenerProtocol { TCP = 0, UDP = 1 }
@@ -188,7 +188,7 @@ export namespace MyNS {
 		AcceleratorArn: string;
 		PortRanges: Array<PortRange>;
 		Protocol: ListenerProtocol;
-		ClientAffinity?: ListenerClientAffinity;
+		ClientAffinity?: ListenerClientAffinity | null;
 		IdempotencyToken: string;
 	}
 
@@ -222,7 +222,7 @@ export namespace MyNS {
 	export interface DeprovisionByoipCidrResponse {
 
 		/** <p>Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP address (BYOIP).</p> <p>The following describes each BYOIP <code>State</code> that your IP address range can be in.</p> <ul> <li> <p> <b>PENDING_PROVISIONING</b> — You’ve submitted a request to provision an IP address range but it is not yet provisioned with AWS Global Accelerator.</p> </li> <li> <p> <b>READY</b> — The address range is provisioned with AWS Global Accelerator and can be advertised.</p> </li> <li> <p> <b>PENDING_ADVERTISING</b> — You’ve submitted a request for AWS Global Accelerator to advertise an address range but it is not yet being advertised.</p> </li> <li> <p> <b>ADVERTISING</b> — The address range is being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_WITHDRAWING</b> — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_DEPROVISIONING</b> — You’ve submitted a request to deprovision an address range from AWS Global Accelerator but it is still provisioned.</p> </li> <li> <p> <b>DEPROVISIONED</b> — The address range is deprovisioned from AWS Global Accelerator.</p> </li> <li> <p> <b>FAILED_PROVISION </b> — The request to provision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_ADVERTISING</b> — The request for AWS Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_WITHDRAW</b> — The request to withdraw the address range from advertising by AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_DEPROVISION </b> — The request to deprovision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> </ul> */
-		ByoipCidr?: ByoipCidr;
+		ByoipCidr?: ByoipCidr | null;
 	}
 
 	export interface DeprovisionByoipCidrRequest {
@@ -232,7 +232,7 @@ export namespace MyNS {
 	export interface DescribeAcceleratorResponse {
 
 		/** An accelerator is a complex type that includes one or more listeners that process inbound connections and then direct traffic to one or more endpoint groups, each of which includes endpoints, such as load balancers. */
-		Accelerator?: Accelerator;
+		Accelerator?: Accelerator | null;
 	}
 
 	export interface DescribeAcceleratorRequest {
@@ -242,15 +242,15 @@ export namespace MyNS {
 	export interface DescribeAcceleratorAttributesResponse {
 
 		/** Attributes of an accelerator. */
-		AcceleratorAttributes?: AcceleratorAttributes;
+		AcceleratorAttributes?: AcceleratorAttributes | null;
 	}
 
 
 	/** Attributes of an accelerator. */
 	export interface AcceleratorAttributes {
-		FlowLogsEnabled?: boolean;
-		FlowLogsS3Bucket?: string;
-		FlowLogsS3Prefix?: string;
+		FlowLogsEnabled?: boolean | null;
+		FlowLogsS3Bucket?: string | null;
+		FlowLogsS3Prefix?: string | null;
 	}
 
 	export interface DescribeAcceleratorAttributesRequest {
@@ -260,7 +260,7 @@ export namespace MyNS {
 	export interface DescribeEndpointGroupResponse {
 
 		/** A complex type for the endpoint group. An AWS Region can have only one endpoint group for a specific listener. */
-		EndpointGroup?: EndpointGroup;
+		EndpointGroup?: EndpointGroup | null;
 	}
 
 	export interface DescribeEndpointGroupRequest {
@@ -270,7 +270,7 @@ export namespace MyNS {
 	export interface DescribeListenerResponse {
 
 		/** A complex type for a listener. */
-		Listener?: Listener;
+		Listener?: Listener | null;
 	}
 
 	export interface DescribeListenerRequest {
@@ -278,52 +278,52 @@ export namespace MyNS {
 	}
 
 	export interface ListAcceleratorsResponse {
-		Accelerators?: Array<Accelerator>;
-		NextToken?: string;
+		Accelerators?: Array<Accelerator> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListAcceleratorsRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface InvalidNextTokenException {
 	}
 
 	export interface ListByoipCidrsResponse {
-		ByoipCidrs?: Array<ByoipCidr>;
-		NextToken?: string;
+		ByoipCidrs?: Array<ByoipCidr> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListByoipCidrsRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListEndpointGroupsResponse {
-		EndpointGroups?: Array<EndpointGroup>;
-		NextToken?: string;
+		EndpointGroups?: Array<EndpointGroup> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListEndpointGroupsRequest {
 		ListenerArn: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListListenersResponse {
-		Listeners?: Array<Listener>;
-		NextToken?: string;
+		Listeners?: Array<Listener> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListListenersRequest {
 		AcceleratorArn: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -333,7 +333,7 @@ export namespace MyNS {
 	export interface ProvisionByoipCidrResponse {
 
 		/** <p>Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP address (BYOIP).</p> <p>The following describes each BYOIP <code>State</code> that your IP address range can be in.</p> <ul> <li> <p> <b>PENDING_PROVISIONING</b> — You’ve submitted a request to provision an IP address range but it is not yet provisioned with AWS Global Accelerator.</p> </li> <li> <p> <b>READY</b> — The address range is provisioned with AWS Global Accelerator and can be advertised.</p> </li> <li> <p> <b>PENDING_ADVERTISING</b> — You’ve submitted a request for AWS Global Accelerator to advertise an address range but it is not yet being advertised.</p> </li> <li> <p> <b>ADVERTISING</b> — The address range is being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_WITHDRAWING</b> — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_DEPROVISIONING</b> — You’ve submitted a request to deprovision an address range from AWS Global Accelerator but it is still provisioned.</p> </li> <li> <p> <b>DEPROVISIONED</b> — The address range is deprovisioned from AWS Global Accelerator.</p> </li> <li> <p> <b>FAILED_PROVISION </b> — The request to provision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_ADVERTISING</b> — The request for AWS Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_WITHDRAW</b> — The request to withdraw the address range from advertising by AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_DEPROVISION </b> — The request to deprovision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> </ul> */
-		ByoipCidr?: ByoipCidr;
+		ByoipCidr?: ByoipCidr | null;
 	}
 
 	export interface ProvisionByoipCidrRequest {
@@ -372,63 +372,63 @@ export namespace MyNS {
 	export interface UpdateAcceleratorResponse {
 
 		/** An accelerator is a complex type that includes one or more listeners that process inbound connections and then direct traffic to one or more endpoint groups, each of which includes endpoints, such as load balancers. */
-		Accelerator?: Accelerator;
+		Accelerator?: Accelerator | null;
 	}
 
 	export interface UpdateAcceleratorRequest {
 		AcceleratorArn: string;
-		Name?: string;
-		IpAddressType?: AcceleratorIpAddressType;
-		Enabled?: boolean;
+		Name?: string | null;
+		IpAddressType?: AcceleratorIpAddressType | null;
+		Enabled?: boolean | null;
 	}
 
 	export interface UpdateAcceleratorAttributesResponse {
 
 		/** Attributes of an accelerator. */
-		AcceleratorAttributes?: AcceleratorAttributes;
+		AcceleratorAttributes?: AcceleratorAttributes | null;
 	}
 
 	export interface UpdateAcceleratorAttributesRequest {
 		AcceleratorArn: string;
-		FlowLogsEnabled?: boolean;
-		FlowLogsS3Bucket?: string;
-		FlowLogsS3Prefix?: string;
+		FlowLogsEnabled?: boolean | null;
+		FlowLogsS3Bucket?: string | null;
+		FlowLogsS3Prefix?: string | null;
 	}
 
 	export interface UpdateEndpointGroupResponse {
 
 		/** A complex type for the endpoint group. An AWS Region can have only one endpoint group for a specific listener. */
-		EndpointGroup?: EndpointGroup;
+		EndpointGroup?: EndpointGroup | null;
 	}
 
 	export interface UpdateEndpointGroupRequest {
 		EndpointGroupArn: string;
-		EndpointConfigurations?: Array<EndpointConfiguration>;
-		TrafficDialPercentage?: number;
-		HealthCheckPort?: number;
-		HealthCheckProtocol?: EndpointGroupHealthCheckProtocol;
-		HealthCheckPath?: string;
-		HealthCheckIntervalSeconds?: number;
-		ThresholdCount?: number;
+		EndpointConfigurations?: Array<EndpointConfiguration> | null;
+		TrafficDialPercentage?: number | null;
+		HealthCheckPort?: number | null;
+		HealthCheckProtocol?: EndpointGroupHealthCheckProtocol | null;
+		HealthCheckPath?: string | null;
+		HealthCheckIntervalSeconds?: number | null;
+		ThresholdCount?: number | null;
 	}
 
 	export interface UpdateListenerResponse {
 
 		/** A complex type for a listener. */
-		Listener?: Listener;
+		Listener?: Listener | null;
 	}
 
 	export interface UpdateListenerRequest {
 		ListenerArn: string;
-		PortRanges?: Array<PortRange>;
-		Protocol?: ListenerProtocol;
-		ClientAffinity?: ListenerClientAffinity;
+		PortRanges?: Array<PortRange> | null;
+		Protocol?: ListenerProtocol | null;
+		ClientAffinity?: ListenerClientAffinity | null;
 	}
 
 	export interface WithdrawByoipCidrResponse {
 
 		/** <p>Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP address (BYOIP).</p> <p>The following describes each BYOIP <code>State</code> that your IP address range can be in.</p> <ul> <li> <p> <b>PENDING_PROVISIONING</b> — You’ve submitted a request to provision an IP address range but it is not yet provisioned with AWS Global Accelerator.</p> </li> <li> <p> <b>READY</b> — The address range is provisioned with AWS Global Accelerator and can be advertised.</p> </li> <li> <p> <b>PENDING_ADVERTISING</b> — You’ve submitted a request for AWS Global Accelerator to advertise an address range but it is not yet being advertised.</p> </li> <li> <p> <b>ADVERTISING</b> — The address range is being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_WITHDRAWING</b> — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by AWS Global Accelerator.</p> </li> <li> <p> <b>PENDING_DEPROVISIONING</b> — You’ve submitted a request to deprovision an address range from AWS Global Accelerator but it is still provisioned.</p> </li> <li> <p> <b>DEPROVISIONED</b> — The address range is deprovisioned from AWS Global Accelerator.</p> </li> <li> <p> <b>FAILED_PROVISION </b> — The request to provision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_ADVERTISING</b> — The request for AWS Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_WITHDRAW</b> — The request to withdraw the address range from advertising by AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> <li> <p> <b>FAILED_DEPROVISION </b> — The request to deprovision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.</p> </li> </ul> */
-		ByoipCidr?: ByoipCidr;
+		ByoipCidr?: ByoipCidr | null;
 	}
 
 	export interface WithdrawByoipCidrRequest {

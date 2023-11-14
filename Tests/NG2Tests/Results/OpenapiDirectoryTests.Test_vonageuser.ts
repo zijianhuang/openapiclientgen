@@ -5,172 +5,172 @@ export namespace MyNS {
 	export interface Contact {
 
 		/** Contact type */
-		type?: string;
+		type?: string | null;
 
 		/** Contact value */
-		value?: string;
+		value?: string | null;
 	}
 
 	export interface DID {
 
 		/** Custom tag associated with the phone number */
-		custom_tag?: string;
+		custom_tag?: string | null;
 
 		/** Phone number */
-		phone_number?: string;
+		phone_number?: string | null;
 	}
 
 	export interface DetailedInvalidParam {
 
 		/** Invalid property name */
-		name?: string;
+		name?: string | null;
 
 		/** Invalid property reason */
-		reason?: string;
+		reason?: string | null;
 	}
 
 	export interface ErrorResponse {
 
 		/** Error message */
-		msg?: string;
+		msg?: string | null;
 
 		/** Http Response Code */
-		status?: number;
+		status?: number | null;
 	}
 
 
 	/** URL to the first page of records */
 	export interface FirstHref {
-		href?: string;
+		href?: string | null;
 	}
 
 
 	/** URL to the last page of records */
 	export interface LastHref {
-		href?: string;
+		href?: string | null;
 	}
 
 	export interface Links {
 
 		/** URL to the first page of records */
-		first?: FirstHref;
+		first?: FirstHref | null;
 
 		/** URL to the next page of records */
-		next?: NextHref;
+		next?: NextHref | null;
 
 		/** URL to the previous page of records */
-		prev?: PrevHref;
+		prev?: PrevHref | null;
 
 		/** URL to the current page of records */
-		self?: SelfHref;
+		self?: SelfHref | null;
 	}
 
 
 	/** URL to the next page of records */
 	export interface NextHref {
-		href?: string;
+		href?: string | null;
 	}
 
 
 	/** URL to the previous page of records */
 	export interface PrevHref {
-		href?: string;
+		href?: string | null;
 	}
 
 
 	/** URL to the current page of records */
 	export interface SelfHref {
-		href?: string;
+		href?: string | null;
 	}
 
 	export interface User {
 
 		/** Collection of contact objects */
-		contact_numbers?: Array<Contact>;
+		contact_numbers?: Array<Contact> | null;
 
 		/** Email address of the user */
-		email?: string;
+		email?: string | null;
 
 		/** Collection of extension objects */
-		extensions?: Array<UserExtension>;
+		extensions?: Array<UserExtension> | null;
 
 		/** First name of the user */
-		first_name?: string;
+		first_name?: string | null;
 
 		/** Unique identifier of the user */
-		id?: number;
+		id?: number | null;
 
 		/** Last name of the user */
-		last_name?: string;
+		last_name?: string | null;
 
 		/** Login name of the user */
-		login_name?: string;
+		login_name?: string | null;
 	}
 
 	export interface UserExtension {
 
 		/** Collection of phone numbers assigned to the extension */
-		dids?: Array<DID>;
+		dids?: Array<DID> | null;
 
 		/** Extension number */
-		extension_number?: string;
+		extension_number?: string | null;
 	}
 
 	export interface UserEmbeddedObject {
-		data?: User;
+		data?: User | null;
 	}
 
 	export interface UserHalResponse {
-		_embedded?: UserEmbeddedObject;
-		_links?: Links;
+		_embedded?: UserEmbeddedObject | null;
+		_links?: Links | null;
 
 		/** Current page number */
-		page?: number;
+		page?: number | null;
 
 		/** Number of records per page */
-		page_size?: number;
+		page_size?: number | null;
 
 		/** Total number of records */
-		total_items?: number;
+		total_items?: number | null;
 
 		/** Total number of pages */
-		total_pages?: number;
+		total_pages?: number | null;
 	}
 
 	export interface UsersEmbeddedObject {
-		data?: Array<User>;
+		data?: Array<User> | null;
 	}
 
 	export interface UsersHalResponse {
-		_embedded?: UsersEmbeddedObject;
-		_links?: Links;
+		_embedded?: UsersEmbeddedObject | null;
+		_links?: Links | null;
 
 		/** Current page number */
-		page?: number;
+		page?: number | null;
 
 		/** Number of records per page */
-		page_size?: number;
+		page_size?: number | null;
 
 		/** Total number of records */
-		total_items?: number;
+		total_items?: number | null;
 
 		/** Total number of pages */
-		total_pages?: number;
+		total_pages?: number | null;
 	}
 
 	export interface ValidationErrorsResponse {
 
 		/** Error Track ID */
-		instance?: string;
+		instance?: string | null;
 
 		/** Invalid parameters and their reason for failing */
-		invalid_parameters?: Array<DetailedInvalidParam>;
+		invalid_parameters?: Array<DetailedInvalidParam> | null;
 
 		/** Error status code */
-		status?: number;
+		status?: number | null;
 
 		/** Error title */
-		title?: string;
+		title?: string | null;
 	}
 
 	@Injectable()
@@ -190,7 +190,7 @@ export namespace MyNS {
 		 * @param {string} email Filter by email address
 		 * @return {UsersHalResponse} Success
 		 */
-		UserCtrl_getUsers(account_id: string, page_size: number, page: number, first_name: string, last_name: string, login_name: string, email: string): Observable<UsersHalResponse> {
+		UserCtrl_getUsers(account_id: string, page_size: number | null | undefined, page: number | null | undefined, first_name: string | null | undefined, last_name: string | null | undefined, login_name: string | null | undefined, email: string | null | undefined): Observable<UsersHalResponse> {
 			return this.http.get<UsersHalResponse>(this.baseUri + 'api/accounts/' + (account_id == null ? '' : encodeURIComponent(account_id)) + '/users&page_size=' + page_size + '&page=' + page + '&first_name=' + (first_name == null ? '' : encodeURIComponent(first_name)) + '&last_name=' + (last_name == null ? '' : encodeURIComponent(last_name)) + '&login_name=' + (login_name == null ? '' : encodeURIComponent(login_name)) + '&email=' + (email == null ? '' : encodeURIComponent(email)), {});
 		}
 

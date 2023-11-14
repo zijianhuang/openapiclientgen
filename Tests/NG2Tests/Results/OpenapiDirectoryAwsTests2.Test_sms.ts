@@ -5,32 +5,32 @@ export namespace MyNS {
 	export interface CreateAppResponse {
 
 		/** Information about the application. */
-		appSummary?: AppSummary;
-		serverGroups?: Array<ServerGroup>;
-		tags?: Array<Tag>;
+		appSummary?: AppSummary | null;
+		serverGroups?: Array<ServerGroup> | null;
+		tags?: Array<Tag> | null;
 	}
 
 
 	/** Information about the application. */
 	export interface AppSummary {
-		appId?: string;
-		name?: string;
-		description?: string;
-		status?: AppSummaryStatus;
-		statusMessage?: string;
-		replicationStatus?: AppSummaryReplicationStatus;
-		replicationStatusMessage?: string;
-		latestReplicationTime?: Date;
-		launchStatus?: AppSummaryLaunchStatus;
-		launchStatusMessage?: string;
+		appId?: string | null;
+		name?: string | null;
+		description?: string | null;
+		status?: AppSummaryStatus | null;
+		statusMessage?: string | null;
+		replicationStatus?: AppSummaryReplicationStatus | null;
+		replicationStatusMessage?: string | null;
+		latestReplicationTime?: Date | null;
+		launchStatus?: AppSummaryLaunchStatus | null;
+		launchStatusMessage?: string | null;
 
 		/** Details about the latest launch of an application. */
-		launchDetails?: LaunchDetails;
-		creationTime?: Date;
-		lastModified?: Date;
-		roleName?: string;
-		totalServerGroups?: number;
-		totalServers?: number;
+		launchDetails?: LaunchDetails | null;
+		creationTime?: Date | null;
+		lastModified?: Date | null;
+		roleName?: string | null;
+		totalServerGroups?: number | null;
+		totalServers?: number | null;
 	}
 
 	export enum AppSummaryStatus { CREATING = 0, ACTIVE = 1, UPDATING = 2, DELETING = 3, DELETED = 4, DELETE_FAILED = 5 }
@@ -42,29 +42,29 @@ export namespace MyNS {
 
 	/** Details about the latest launch of an application. */
 	export interface LaunchDetails {
-		latestLaunchTime?: Date;
-		stackName?: string;
-		stackId?: string;
+		latestLaunchTime?: Date | null;
+		stackName?: string | null;
+		stackId?: string | null;
 	}
 
 
 	/** A logical grouping of servers. */
 	export interface ServerGroup {
-		serverGroupId?: string;
-		name?: string;
-		serverList?: Array<Server>;
+		serverGroupId?: string | null;
+		name?: string | null;
+		serverList?: Array<Server> | null;
 	}
 
 
 	/** Represents a server. */
 	export interface Server {
-		serverId?: string;
-		serverType?: ServerServerType;
+		serverId?: string | null;
+		serverType?: ServerServerType | null;
 
 		/** Represents a VM server. */
-		vmServer?: VmServer;
-		replicationJobId?: string;
-		replicationJobTerminated?: boolean;
+		vmServer?: VmServer | null;
+		replicationJobId?: string | null;
+		replicationJobTerminated?: boolean | null;
 	}
 
 	export enum ServerServerType { VIRTUAL_MACHINE = 0 }
@@ -74,18 +74,18 @@ export namespace MyNS {
 	export interface VmServer {
 
 		/** Represents a VM server location. */
-		vmServerAddress?: VmServerAddress;
-		vmName?: string;
-		vmManagerName?: string;
-		vmManagerType?: VmServerVmManagerType;
-		vmPath?: string;
+		vmServerAddress?: VmServerAddress | null;
+		vmName?: string | null;
+		vmManagerName?: string | null;
+		vmManagerType?: VmServerVmManagerType | null;
+		vmPath?: string | null;
 	}
 
 
 	/** Represents a VM server location. */
 	export interface VmServerAddress {
-		vmManagerId?: string;
-		vmId?: string;
+		vmManagerId?: string | null;
+		vmId?: string | null;
 	}
 
 	export enum VmServerVmManagerType { VSPHERE = 0, SCVMM = 1, HYPERV_MANAGER = 2 }
@@ -93,17 +93,17 @@ export namespace MyNS {
 
 	/** A label that can be assigned to an application. */
 	export interface Tag {
-		key?: string;
-		value?: string;
+		key?: string | null;
+		value?: string | null;
 	}
 
 	export interface CreateAppRequest {
-		name?: string;
-		description?: string;
-		roleName?: string;
-		clientToken?: string;
-		serverGroups?: Array<ServerGroup>;
-		tags?: Array<Tag>;
+		name?: string | null;
+		description?: string | null;
+		roleName?: string | null;
+		clientToken?: string | null;
+		serverGroups?: Array<ServerGroup> | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface UnauthorizedOperationException {
@@ -122,20 +122,20 @@ export namespace MyNS {
 	}
 
 	export interface CreateReplicationJobResponse {
-		replicationJobId?: string;
+		replicationJobId?: string | null;
 	}
 
 	export interface CreateReplicationJobRequest {
 		serverId: string;
 		seedReplicationTime: Date;
-		frequency?: number;
-		runOnce?: boolean;
-		licenseType?: CreateReplicationJobRequestLicenseType;
-		roleName?: string;
-		description?: string;
-		numberOfRecentAmisToKeep?: number;
-		encrypted?: boolean;
-		kmsKeyId?: string;
+		frequency?: number | null;
+		runOnce?: boolean | null;
+		licenseType?: CreateReplicationJobRequestLicenseType | null;
+		roleName?: string | null;
+		description?: string | null;
+		numberOfRecentAmisToKeep?: number | null;
+		encrypted?: boolean | null;
+		kmsKeyId?: string | null;
 	}
 
 	export enum CreateReplicationJobRequestLicenseType { AWS = 0, BYOL = 1 }
@@ -156,23 +156,23 @@ export namespace MyNS {
 	}
 
 	export interface DeleteAppRequest {
-		appId?: string;
-		forceStopAppReplication?: boolean;
-		forceTerminateApp?: boolean;
+		appId?: string | null;
+		forceStopAppReplication?: boolean | null;
+		forceTerminateApp?: boolean | null;
 	}
 
 	export interface DeleteAppLaunchConfigurationResponse {
 	}
 
 	export interface DeleteAppLaunchConfigurationRequest {
-		appId?: string;
+		appId?: string | null;
 	}
 
 	export interface DeleteAppReplicationConfigurationResponse {
 	}
 
 	export interface DeleteAppReplicationConfigurationRequest {
-		appId?: string;
+		appId?: string | null;
 	}
 
 	export interface DeleteReplicationJobResponse {
@@ -201,19 +201,19 @@ export namespace MyNS {
 	export interface GenerateChangeSetResponse {
 
 		/** Location of the Amazon S3 object in the customer's account. */
-		s3Location?: S3Location;
+		s3Location?: S3Location | null;
 	}
 
 
 	/** Location of the Amazon S3 object in the customer's account. */
 	export interface S3Location {
-		bucket?: string;
-		key?: string;
+		bucket?: string | null;
+		key?: string | null;
 	}
 
 	export interface GenerateChangeSetRequest {
-		appId?: string;
-		changesetFormat?: GenerateChangeSetRequestChangesetFormat;
+		appId?: string | null;
+		changesetFormat?: GenerateChangeSetRequestChangesetFormat | null;
 	}
 
 	export enum GenerateChangeSetRequestChangesetFormat { JSON = 0, YAML = 1 }
@@ -221,38 +221,38 @@ export namespace MyNS {
 	export interface GenerateTemplateResponse {
 
 		/** Location of the Amazon S3 object in the customer's account. */
-		s3Location?: S3Location;
+		s3Location?: S3Location | null;
 	}
 
 	export interface GenerateTemplateRequest {
-		appId?: string;
-		templateFormat?: GenerateChangeSetRequestChangesetFormat;
+		appId?: string | null;
+		templateFormat?: GenerateChangeSetRequestChangesetFormat | null;
 	}
 
 	export interface GetAppResponse {
 
 		/** Information about the application. */
-		appSummary?: AppSummary;
-		serverGroups?: Array<ServerGroup>;
-		tags?: Array<Tag>;
+		appSummary?: AppSummary | null;
+		serverGroups?: Array<ServerGroup> | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface GetAppRequest {
-		appId?: string;
+		appId?: string | null;
 	}
 
 	export interface GetAppLaunchConfigurationResponse {
-		appId?: string;
-		roleName?: string;
-		serverGroupLaunchConfigurations?: Array<ServerGroupLaunchConfiguration>;
+		appId?: string | null;
+		roleName?: string | null;
+		serverGroupLaunchConfigurations?: Array<ServerGroupLaunchConfiguration> | null;
 	}
 
 
 	/** Launch configuration for a server group. */
 	export interface ServerGroupLaunchConfiguration {
-		serverGroupId?: string;
-		launchOrder?: number;
-		serverLaunchConfigurations?: Array<ServerLaunchConfiguration>;
+		serverGroupId?: string | null;
+		launchOrder?: number | null;
+		serverLaunchConfigurations?: Array<ServerLaunchConfiguration> | null;
 	}
 
 
@@ -260,17 +260,17 @@ export namespace MyNS {
 	export interface ServerLaunchConfiguration {
 
 		/** Represents a server. */
-		server?: Server;
-		logicalId?: string;
-		vpc?: string;
-		subnet?: string;
-		securityGroup?: string;
-		ec2KeyName?: string;
+		server?: Server | null;
+		logicalId?: string | null;
+		vpc?: string | null;
+		subnet?: string | null;
+		securityGroup?: string | null;
+		ec2KeyName?: string | null;
 
 		/** A script that runs on first launch of an Amazon EC2 instance. Used for configuring the server during launch. */
-		userData?: UserData;
-		instanceType?: string;
-		associatePublicIpAddress?: boolean;
+		userData?: UserData | null;
+		instanceType?: string | null;
+		associatePublicIpAddress?: boolean | null;
 	}
 
 
@@ -278,22 +278,22 @@ export namespace MyNS {
 	export interface UserData {
 
 		/** Location of the Amazon S3 object in the customer's account. */
-		s3Location?: S3Location;
+		s3Location?: S3Location | null;
 	}
 
 	export interface GetAppLaunchConfigurationRequest {
-		appId?: string;
+		appId?: string | null;
 	}
 
 	export interface GetAppReplicationConfigurationResponse {
-		serverGroupReplicationConfigurations?: Array<ServerGroupReplicationConfiguration>;
+		serverGroupReplicationConfigurations?: Array<ServerGroupReplicationConfiguration> | null;
 	}
 
 
 	/** Replication configuration for a server group. */
 	export interface ServerGroupReplicationConfiguration {
-		serverGroupId?: string;
-		serverReplicationConfigurations?: Array<ServerReplicationConfiguration>;
+		serverGroupId?: string | null;
+		serverReplicationConfigurations?: Array<ServerReplicationConfiguration> | null;
 	}
 
 
@@ -301,46 +301,46 @@ export namespace MyNS {
 	export interface ServerReplicationConfiguration {
 
 		/** Represents a server. */
-		server?: Server;
+		server?: Server | null;
 
 		/** Replication parameters for replicating a server. */
-		serverReplicationParameters?: ServerReplicationParameters;
+		serverReplicationParameters?: ServerReplicationParameters | null;
 	}
 
 
 	/** Replication parameters for replicating a server. */
 	export interface ServerReplicationParameters {
-		seedTime?: Date;
-		frequency?: number;
-		runOnce?: boolean;
-		licenseType?: CreateReplicationJobRequestLicenseType;
-		numberOfRecentAmisToKeep?: number;
-		encrypted?: boolean;
-		kmsKeyId?: string;
+		seedTime?: Date | null;
+		frequency?: number | null;
+		runOnce?: boolean | null;
+		licenseType?: CreateReplicationJobRequestLicenseType | null;
+		numberOfRecentAmisToKeep?: number | null;
+		encrypted?: boolean | null;
+		kmsKeyId?: string | null;
 	}
 
 	export interface GetAppReplicationConfigurationRequest {
-		appId?: string;
+		appId?: string | null;
 	}
 
 	export interface GetConnectorsResponse {
-		connectorList?: Array<Connector>;
-		nextToken?: string;
+		connectorList?: Array<Connector> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents a connector. */
 	export interface Connector {
-		connectorId?: string;
-		version?: string;
-		status?: ConnectorStatus;
-		capabilityList?: Array<ConnectorCapability>;
-		vmManagerName?: string;
-		vmManagerType?: ConnectorVmManagerType;
-		vmManagerId?: string;
-		ipAddress?: string;
-		macAddress?: string;
-		associatedOn?: Date;
+		connectorId?: string | null;
+		version?: string | null;
+		status?: ConnectorStatus | null;
+		capabilityList?: Array<ConnectorCapability> | null;
+		vmManagerName?: string | null;
+		vmManagerType?: ConnectorVmManagerType | null;
+		vmManagerId?: string | null;
+		ipAddress?: string | null;
+		macAddress?: string | null;
+		associatedOn?: Date | null;
 	}
 
 	export enum ConnectorStatus { HEALTHY = 0, UNHEALTHY = 1 }
@@ -350,38 +350,38 @@ export namespace MyNS {
 	export enum ConnectorVmManagerType { VSPHERE = 0, SCVMM = 1, HYPERV_MANAGER = 2 }
 
 	export interface GetConnectorsRequest {
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface GetReplicationJobsResponse {
-		replicationJobList?: Array<ReplicationJob>;
-		nextToken?: string;
+		replicationJobList?: Array<ReplicationJob> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents a replication job. */
 	export interface ReplicationJob {
-		replicationJobId?: string;
-		serverId?: string;
-		serverType?: ServerServerType;
+		replicationJobId?: string | null;
+		serverId?: string | null;
+		serverType?: ServerServerType | null;
 
 		/** Represents a VM server. */
-		vmServer?: VmServer;
-		seedReplicationTime?: Date;
-		frequency?: number;
-		runOnce?: boolean;
-		nextReplicationRunStartTime?: Date;
-		licenseType?: CreateReplicationJobRequestLicenseType;
-		roleName?: string;
-		latestAmiId?: string;
-		state?: ReplicationJobState;
-		statusMessage?: string;
-		description?: string;
-		numberOfRecentAmisToKeep?: number;
-		encrypted?: boolean;
-		kmsKeyId?: string;
-		replicationRunList?: Array<ReplicationRun>;
+		vmServer?: VmServer | null;
+		seedReplicationTime?: Date | null;
+		frequency?: number | null;
+		runOnce?: boolean | null;
+		nextReplicationRunStartTime?: Date | null;
+		licenseType?: CreateReplicationJobRequestLicenseType | null;
+		roleName?: string | null;
+		latestAmiId?: string | null;
+		state?: ReplicationJobState | null;
+		statusMessage?: string | null;
+		description?: string | null;
+		numberOfRecentAmisToKeep?: number | null;
+		encrypted?: boolean | null;
+		kmsKeyId?: string | null;
+		replicationRunList?: Array<ReplicationRun> | null;
 	}
 
 	export enum ReplicationJobState { PENDING = 0, ACTIVE = 1, FAILED = 2, DELETING = 3, DELETED = 4, COMPLETED = 5, PAUSED_ON_FAILURE = 6, FAILING = 7 }
@@ -389,19 +389,19 @@ export namespace MyNS {
 
 	/** Represents a replication run. */
 	export interface ReplicationRun {
-		replicationRunId?: string;
-		state?: ReplicationRunState;
-		type?: ReplicationRunType;
+		replicationRunId?: string | null;
+		state?: ReplicationRunState | null;
+		type?: ReplicationRunType | null;
 
 		/** Details of the current stage of a replication run. */
-		stageDetails?: ReplicationRunStageDetails;
-		statusMessage?: string;
-		amiId?: string;
-		scheduledStartTime?: Date;
-		completedTime?: Date;
-		description?: string;
-		encrypted?: boolean;
-		kmsKeyId?: string;
+		stageDetails?: ReplicationRunStageDetails | null;
+		statusMessage?: string | null;
+		amiId?: string | null;
+		scheduledStartTime?: Date | null;
+		completedTime?: Date | null;
+		description?: string | null;
+		encrypted?: boolean | null;
+		kmsKeyId?: string | null;
 	}
 
 	export enum ReplicationRunState { PENDING = 0, MISSED = 1, ACTIVE = 2, FAILED = 3, COMPLETED = 4, DELETING = 5, DELETED = 6 }
@@ -411,43 +411,43 @@ export namespace MyNS {
 
 	/** Details of the current stage of a replication run. */
 	export interface ReplicationRunStageDetails {
-		stage?: string;
-		stageProgress?: string;
+		stage?: string | null;
+		stageProgress?: string | null;
 	}
 
 	export interface GetReplicationJobsRequest {
-		replicationJobId?: string;
-		nextToken?: string;
-		maxResults?: number;
+		replicationJobId?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface GetReplicationRunsResponse {
 
 		/** Represents a replication job. */
-		replicationJob?: ReplicationJob;
-		replicationRunList?: Array<ReplicationRun>;
-		nextToken?: string;
+		replicationJob?: ReplicationJob | null;
+		replicationRunList?: Array<ReplicationRun> | null;
+		nextToken?: string | null;
 	}
 
 	export interface GetReplicationRunsRequest {
 		replicationJobId: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface GetServersResponse {
-		lastModifiedOn?: Date;
-		serverCatalogStatus?: GetServersResponseServerCatalogStatus;
-		serverList?: Array<Server>;
-		nextToken?: string;
+		lastModifiedOn?: Date | null;
+		serverCatalogStatus?: GetServersResponseServerCatalogStatus | null;
+		serverList?: Array<Server> | null;
+		nextToken?: string | null;
 	}
 
 	export enum GetServersResponseServerCatalogStatus { NOT_IMPORTED = 0, IMPORTING = 1, AVAILABLE = 2, DELETED = 3, EXPIRED = 4 }
 
 	export interface GetServersRequest {
-		nextToken?: string;
-		maxResults?: number;
-		vmServerAddressList?: Array<VmServerAddress>;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		vmServerAddressList?: Array<VmServerAddress> | null;
 	}
 
 	export interface ImportServerCatalogResponse {
@@ -460,51 +460,51 @@ export namespace MyNS {
 	}
 
 	export interface LaunchAppRequest {
-		appId?: string;
+		appId?: string | null;
 	}
 
 	export interface ListAppsResponse {
-		apps?: Array<AppSummary>;
-		nextToken?: string;
+		apps?: Array<AppSummary> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListAppsRequest {
-		appIds?: Array<string>;
-		nextToken?: string;
-		maxResults?: number;
+		appIds?: Array<string> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface PutAppLaunchConfigurationResponse {
 	}
 
 	export interface PutAppLaunchConfigurationRequest {
-		appId?: string;
-		roleName?: string;
-		serverGroupLaunchConfigurations?: Array<ServerGroupLaunchConfiguration>;
+		appId?: string | null;
+		roleName?: string | null;
+		serverGroupLaunchConfigurations?: Array<ServerGroupLaunchConfiguration> | null;
 	}
 
 	export interface PutAppReplicationConfigurationResponse {
 	}
 
 	export interface PutAppReplicationConfigurationRequest {
-		appId?: string;
-		serverGroupReplicationConfigurations?: Array<ServerGroupReplicationConfiguration>;
+		appId?: string | null;
+		serverGroupReplicationConfigurations?: Array<ServerGroupReplicationConfiguration> | null;
 	}
 
 	export interface StartAppReplicationResponse {
 	}
 
 	export interface StartAppReplicationRequest {
-		appId?: string;
+		appId?: string | null;
 	}
 
 	export interface StartOnDemandReplicationRunResponse {
-		replicationRunId?: string;
+		replicationRunId?: string | null;
 	}
 
 	export interface StartOnDemandReplicationRunRequest {
 		replicationJobId: string;
-		description?: string;
+		description?: string | null;
 	}
 
 	export interface ReplicationRunLimitExceededException {
@@ -514,31 +514,31 @@ export namespace MyNS {
 	}
 
 	export interface StopAppReplicationRequest {
-		appId?: string;
+		appId?: string | null;
 	}
 
 	export interface TerminateAppResponse {
 	}
 
 	export interface TerminateAppRequest {
-		appId?: string;
+		appId?: string | null;
 	}
 
 	export interface UpdateAppResponse {
 
 		/** Information about the application. */
-		appSummary?: AppSummary;
-		serverGroups?: Array<ServerGroup>;
-		tags?: Array<Tag>;
+		appSummary?: AppSummary | null;
+		serverGroups?: Array<ServerGroup> | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface UpdateAppRequest {
-		appId?: string;
-		name?: string;
-		description?: string;
-		roleName?: string;
-		serverGroups?: Array<ServerGroup>;
-		tags?: Array<Tag>;
+		appId?: string | null;
+		name?: string | null;
+		description?: string | null;
+		roleName?: string | null;
+		serverGroups?: Array<ServerGroup> | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface UpdateReplicationJobResponse {
@@ -546,14 +546,14 @@ export namespace MyNS {
 
 	export interface UpdateReplicationJobRequest {
 		replicationJobId: string;
-		frequency?: number;
-		nextReplicationRunStartTime?: Date;
-		licenseType?: CreateReplicationJobRequestLicenseType;
-		roleName?: string;
-		description?: string;
-		numberOfRecentAmisToKeep?: number;
-		encrypted?: boolean;
-		kmsKeyId?: string;
+		frequency?: number | null;
+		nextReplicationRunStartTime?: Date | null;
+		licenseType?: CreateReplicationJobRequestLicenseType | null;
+		roleName?: string | null;
+		description?: string | null;
+		numberOfRecentAmisToKeep?: number | null;
+		encrypted?: boolean | null;
+		kmsKeyId?: string | null;
 	}
 
 	export enum AppLaunchStatus { READY_FOR_CONFIGURATION = 0, CONFIGURATION_IN_PROGRESS = 1, CONFIGURATION_INVALID = 2, READY_FOR_LAUNCH = 3, VALIDATION_IN_PROGRESS = 4, LAUNCH_PENDING = 5, LAUNCH_IN_PROGRESS = 6, LAUNCHED = 7, DELTA_LAUNCH_IN_PROGRESS = 8, DELTA_LAUNCH_FAILED = 9, LAUNCH_FAILED = 10, TERMINATE_IN_PROGRESS = 11, TERMINATE_FAILED = 12, TERMINATED = 13 }
@@ -701,7 +701,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetConnectorsResponse} Success
 		 */
-		GetConnectors(maxResults: string, nextToken: string, requestBody: GetConnectorsRequest): Observable<GetConnectorsResponse> {
+		GetConnectors(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetConnectorsRequest): Observable<GetConnectorsResponse> {
 			return this.http.post<GetConnectorsResponse>(this.baseUri + '#X-Amz-Target=AWSServerMigrationService_V2016_10_24.GetConnectors?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -712,7 +712,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetReplicationJobsResponse} Success
 		 */
-		GetReplicationJobs(maxResults: string, nextToken: string, requestBody: GetReplicationJobsRequest): Observable<GetReplicationJobsResponse> {
+		GetReplicationJobs(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetReplicationJobsRequest): Observable<GetReplicationJobsResponse> {
 			return this.http.post<GetReplicationJobsResponse>(this.baseUri + '#X-Amz-Target=AWSServerMigrationService_V2016_10_24.GetReplicationJobs?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -723,7 +723,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetReplicationRunsResponse} Success
 		 */
-		GetReplicationRuns(maxResults: string, nextToken: string, requestBody: GetReplicationRunsRequest): Observable<GetReplicationRunsResponse> {
+		GetReplicationRuns(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetReplicationRunsRequest): Observable<GetReplicationRunsResponse> {
 			return this.http.post<GetReplicationRunsResponse>(this.baseUri + '#X-Amz-Target=AWSServerMigrationService_V2016_10_24.GetReplicationRuns?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -734,7 +734,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetServersResponse} Success
 		 */
-		GetServers(maxResults: string, nextToken: string, requestBody: GetServersRequest): Observable<GetServersResponse> {
+		GetServers(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetServersRequest): Observable<GetServersResponse> {
 			return this.http.post<GetServersResponse>(this.baseUri + '#X-Amz-Target=AWSServerMigrationService_V2016_10_24.GetServers?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

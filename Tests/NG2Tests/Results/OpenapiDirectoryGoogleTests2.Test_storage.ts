@@ -7,88 +7,88 @@ export namespace MyNS {
 	export interface Bucket {
 
 		/** Access controls on the bucket. */
-		acl?: Array<BucketAccessControl>;
+		acl?: Array<BucketAccessControl> | null;
 
 		/** The bucket's billing configuration. */
-		billing?: BucketBilling;
+		billing?: BucketBilling | null;
 
 		/** The bucket's Cross-Origin Resource Sharing (CORS) configuration. */
-		BucketCors?: Array<BucketCors>;
+		BucketCors?: Array<BucketCors> | null;
 
 		/** The default value for event-based hold on newly created objects in this bucket. Event-based hold is a way to retain objects indefinitely until an event occurs, signified by the hold's release. After being released, such objects will be subject to bucket-level retention (if any). One sample use case of this flag is for banks to hold loan documents for at least 3 years after loan is paid in full. Here, bucket-level retention is 3 years and the event is loan being paid in full. In this example, these objects will be held intact for any number of years until the event has occurred (event-based hold on the object is released) and then 3 more years after that. That means retention duration of the objects begins from the moment event-based hold transitioned from true to false. Objects under event-based hold cannot be deleted, overwritten or archived until the hold is removed. */
-		defaultEventBasedHold?: boolean;
+		defaultEventBasedHold?: boolean | null;
 
 		/** Default access controls to apply to new objects when no ACL is provided. */
-		defaultObjectAcl?: Array<ObjectAccessControl>;
+		defaultObjectAcl?: Array<ObjectAccessControl> | null;
 
 		/** Encryption configuration for a bucket. */
-		encryption?: BucketEncryption;
+		encryption?: BucketEncryption | null;
 
 		/** HTTP 1.1 Entity tag for the bucket. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The bucket's IAM configuration. */
-		iamConfiguration?: BucketIamConfiguration;
+		iamConfiguration?: BucketIamConfiguration | null;
 
 		/** The ID of the bucket. For buckets, the id and name properties are the same. */
-		id?: string;
+		id?: string | null;
 
 		/** The kind of item this is. For buckets, this is always storage#bucket. */
-		kind?: string;
+		kind?: string | null;
 
 		/** User-provided labels, in key/value pairs. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The bucket's lifecycle configuration. See lifecycle management for more information. */
-		lifecycle?: BucketLifecycle;
+		lifecycle?: BucketLifecycle | null;
 
 		/** The location of the bucket. Object data for objects in the bucket resides in physical storage within this region. Defaults to US. See the developer's guide for the authoritative list. */
-		location?: string;
+		location?: string | null;
 
 		/** The type of the bucket location. */
-		locationType?: string;
+		locationType?: string | null;
 
 		/** The bucket's logging configuration, which defines the destination bucket and optional name prefix for the current bucket's logs. */
-		logging?: BucketLogging;
+		logging?: BucketLogging | null;
 
 		/** The metadata generation of this bucket. */
-		metageneration?: string;
+		metageneration?: string | null;
 
 		/** The name of the bucket. */
-		name?: string;
+		name?: string | null;
 
 		/** The owner of the bucket. This is always the project team's owner group. */
-		owner?: BucketOwner;
+		owner?: BucketOwner | null;
 
 		/** The project number of the project the bucket belongs to. */
-		projectNumber?: string;
+		projectNumber?: string | null;
 
 		/** The bucket's retention policy. The retention policy enforces a minimum retention time for all objects contained in the bucket, based on their creation time. Any attempt to overwrite or delete objects younger than the retention period will result in a PERMISSION_DENIED error. An unlocked retention policy can be modified or removed from the bucket via a storage.buckets.update operation. A locked retention policy cannot be removed or shortened in duration for the lifetime of the bucket. Attempting to remove or decrease period of a locked retention policy will result in a PERMISSION_DENIED error. */
-		retentionPolicy?: BucketRetentionPolicy;
+		retentionPolicy?: BucketRetentionPolicy | null;
 
 		/** The URI of this bucket. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** The bucket's default storage class, used whenever no storageClass is specified for a newly-created object. This defines how objects in the bucket are stored and determines the SLA and the cost of storage. Values include MULTI_REGIONAL, REGIONAL, STANDARD, NEARLINE, COLDLINE, ARCHIVE, and DURABLE_REDUCED_AVAILABILITY. If this value is not specified when the bucket is created, it will default to STANDARD. For more information, see storage classes. */
-		storageClass?: string;
+		storageClass?: string | null;
 
 		/** The creation time of the bucket in RFC 3339 format. */
-		timeCreated?: Date;
+		timeCreated?: Date | null;
 
 		/** The modification time of the bucket in RFC 3339 format. */
-		updated?: Date;
+		updated?: Date | null;
 
 		/** The bucket's versioning configuration. */
-		versioning?: BucketVersioning;
+		versioning?: BucketVersioning | null;
 
 		/** The bucket's website configuration, controlling how the service behaves when accessing bucket contents as a web site. See the Static Website Examples for more information. */
-		website?: BucketWebsite;
+		website?: BucketWebsite | null;
 
 		/** The zone or zones from which the bucket is intended to use zonal quota. Requests for data from outside the specified affinities are still allowed but won't be able to use zonal quota. The zone or zones need to be within the bucket location otherwise the requests will fail with a 400 Bad Request response. */
-		zoneAffinity?: Array<string>;
+		zoneAffinity?: Array<string> | null;
 
 		/** If set, objects placed in this bucket are required to be separated by disaster domain. */
-		zoneSeparation?: boolean;
+		zoneSeparation?: boolean | null;
 	}
 
 
@@ -96,13 +96,13 @@ export namespace MyNS {
 	export interface BucketAccessControl {
 
 		/** The name of the bucket. */
-		bucket?: string;
+		bucket?: string | null;
 
 		/** The domain associated with the entity, if any. */
-		domain?: string;
+		domain?: string | null;
 
 		/** The email address associated with the entity, if any. */
-		email?: string;
+		email?: string | null;
 
 		/**
 		 * The entity holding the permission, in one of the following forms:
@@ -118,58 +118,58 @@ export namespace MyNS {
 		 * - The group example@googlegroups.com would be group-example@googlegroups.com.
 		 * - To refer to all members of the Google Apps for Business domain example.com, the entity would be domain-example.com.
 		 */
-		entity?: string;
+		entity?: string | null;
 
 		/** The ID for the entity, if any. */
-		entityId?: string;
+		entityId?: string | null;
 
 		/** HTTP 1.1 Entity tag for the access-control entry. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The ID of the access-control entry. */
-		id?: string;
+		id?: string | null;
 
 		/** The kind of item this is. For bucket access control entries, this is always storage#bucketAccessControl. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The project team associated with the entity, if any. */
-		projectTeam?: BucketAccessControlProjectTeam;
+		projectTeam?: BucketAccessControlProjectTeam | null;
 
 		/** The access permission for the entity. */
-		role?: string;
+		role?: string | null;
 
 		/** The link to this access-control entry. */
-		selfLink?: string;
+		selfLink?: string | null;
 	}
 
 	export interface BucketAccessControlProjectTeam {
 
 		/** The project number. */
-		projectNumber?: string;
+		projectNumber?: string | null;
 
 		/** The team. */
-		team?: string;
+		team?: string | null;
 	}
 
 	export interface BucketBilling {
 
 		/** When set to true, Requester Pays is enabled for this bucket. */
-		requesterPays?: boolean;
+		requesterPays?: boolean | null;
 	}
 
 	export interface BucketCors {
 
 		/** The value, in seconds, to return in the  Access-Control-Max-Age header used in preflight responses. */
-		maxAgeSeconds?: number;
+		maxAgeSeconds?: number | null;
 
 		/** The list of HTTP methods on which to include CORS response headers, (GET, OPTIONS, POST, etc) Note: "*" is permitted in the list of methods, and means "any method". */
-		method?: Array<string>;
+		method?: Array<string> | null;
 
 		/** The list of Origins eligible to receive CORS response headers. Note: "*" is permitted in the list of origins, and means "any Origin". */
-		origin?: Array<string>;
+		origin?: Array<string> | null;
 
 		/** The list of HTTP headers other than the simple response headers to give permission for the user-agent to share across domains. */
-		responseHeader?: Array<string>;
+		responseHeader?: Array<string> | null;
 	}
 
 
@@ -177,13 +177,13 @@ export namespace MyNS {
 	export interface ObjectAccessControl {
 
 		/** The name of the bucket. */
-		bucket?: string;
+		bucket?: string | null;
 
 		/** The domain associated with the entity, if any. */
-		domain?: string;
+		domain?: string | null;
 
 		/** The email address associated with the entity, if any. */
-		email?: string;
+		email?: string | null;
 
 		/**
 		 * The entity holding the permission, in one of the following forms:
@@ -199,166 +199,166 @@ export namespace MyNS {
 		 * - The group example@googlegroups.com would be group-example@googlegroups.com.
 		 * - To refer to all members of the Google Apps for Business domain example.com, the entity would be domain-example.com.
 		 */
-		entity?: string;
+		entity?: string | null;
 
 		/** The ID for the entity, if any. */
-		entityId?: string;
+		entityId?: string | null;
 
 		/** HTTP 1.1 Entity tag for the access-control entry. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The content generation of the object, if applied to an object. */
-		generation?: string;
+		generation?: string | null;
 
 		/** The ID of the access-control entry. */
-		id?: string;
+		id?: string | null;
 
 		/** The kind of item this is. For object access control entries, this is always storage#objectAccessControl. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The name of the object, if applied to an object. */
-		object?: string;
+		object?: string | null;
 
 		/** The project team associated with the entity, if any. */
-		projectTeam?: ObjectAccessControlProjectTeam;
+		projectTeam?: ObjectAccessControlProjectTeam | null;
 
 		/** The access permission for the entity. */
-		role?: string;
+		role?: string | null;
 
 		/** The link to this access-control entry. */
-		selfLink?: string;
+		selfLink?: string | null;
 	}
 
 	export interface ObjectAccessControlProjectTeam {
 
 		/** The project number. */
-		projectNumber?: string;
+		projectNumber?: string | null;
 
 		/** The team. */
-		team?: string;
+		team?: string | null;
 	}
 
 	export interface BucketEncryption {
 
 		/** A Cloud KMS key that will be used to encrypt objects inserted into this bucket, if no encryption method is specified. */
-		defaultKmsKeyName?: string;
+		defaultKmsKeyName?: string | null;
 	}
 
 	export interface BucketIamConfiguration {
 
 		/** The bucket's uniform bucket-level access configuration. The feature was formerly known as Bucket Policy Only. For backward compatibility, this field will be populated with identical information as the uniformBucketLevelAccess field. We recommend using the uniformBucketLevelAccess field to enable and disable the feature. */
-		bucketPolicyOnly?: BucketIamConfigurationBucketPolicyOnly;
+		bucketPolicyOnly?: BucketIamConfigurationBucketPolicyOnly | null;
 
 		/** The bucket's uniform bucket-level access configuration. */
-		uniformBucketLevelAccess?: BucketIamConfigurationUniformBucketLevelAccess;
+		uniformBucketLevelAccess?: BucketIamConfigurationUniformBucketLevelAccess | null;
 	}
 
 	export interface BucketIamConfigurationBucketPolicyOnly {
 
 		/** If set, access is controlled only by bucket-level or above IAM policies. */
-		enabled?: boolean;
+		enabled?: boolean | null;
 
 		/** The deadline for changing iamConfiguration.bucketPolicyOnly.enabled from true to false in RFC 3339 format. iamConfiguration.bucketPolicyOnly.enabled may be changed from true to false until the locked time, after which the field is immutable. */
-		lockedTime?: Date;
+		lockedTime?: Date | null;
 	}
 
 	export interface BucketIamConfigurationUniformBucketLevelAccess {
 
 		/** If set, access is controlled only by bucket-level or above IAM policies. */
-		enabled?: boolean;
+		enabled?: boolean | null;
 
 		/** The deadline for changing iamConfiguration.uniformBucketLevelAccess.enabled from true to false in RFC 3339  format. iamConfiguration.uniformBucketLevelAccess.enabled may be changed from true to false until the locked time, after which the field is immutable. */
-		lockedTime?: Date;
+		lockedTime?: Date | null;
 	}
 
 	export interface BucketLifecycle {
 
 		/** A lifecycle management rule, which is made of an action to take and the condition(s) under which the action will be taken. */
-		BucketLifecycleRule?: Array<BucketLifecycleRule>;
+		BucketLifecycleRule?: Array<BucketLifecycleRule> | null;
 	}
 
 	export interface BucketLifecycleRule {
 
 		/** The action to take. */
-		action?: BucketLifecycleAction;
+		action?: BucketLifecycleAction | null;
 
 		/** The condition(s) under which the action will be taken. */
-		condition?: BucketLifecycleCondition;
+		condition?: BucketLifecycleCondition | null;
 	}
 
 	export interface BucketLifecycleAction {
 
 		/** Target storage class. Required iff the type of the action is SetStorageClass. */
-		storageClass?: string;
+		storageClass?: string | null;
 
 		/** Type of the action. Currently, only Delete and SetStorageClass are supported. */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface BucketLifecycleCondition {
 
 		/** Age of an object (in days). This condition is satisfied when an object reaches the specified age. */
-		age?: number;
+		age?: number | null;
 
 		/** A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). This condition is satisfied when an object is created before midnight of the specified date in UTC. */
-		createdBefore?: Date;
+		createdBefore?: Date | null;
 
 		/** Relevant only for versioned objects. If the value is true, this condition matches live objects; if the value is false, it matches archived objects. */
-		isLive?: boolean;
+		isLive?: boolean | null;
 
 		/** A regular expression that satisfies the RE2 syntax. This condition is satisfied when the name of the object matches the RE2 pattern. Note: This feature is currently in the "Early Access" launch stage and is only available to a whitelisted set of users; that means that this feature may be changed in backward-incompatible ways and that it is not guaranteed to be released. */
-		matchesPattern?: string;
+		matchesPattern?: string | null;
 
 		/** Objects having any of the storage classes specified by this condition will be matched. Values include MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE, STANDARD, and DURABLE_REDUCED_AVAILABILITY. */
-		matchesStorageClass?: Array<string>;
+		matchesStorageClass?: Array<string> | null;
 
 		/** Relevant only for versioned objects. If the value is N, this condition is satisfied when there are at least N versions (including the live version) newer than this version of the object. */
-		numNewerVersions?: number;
+		numNewerVersions?: number | null;
 	}
 
 	export interface BucketLogging {
 
 		/** The destination bucket where the current bucket's logs should be placed. */
-		logBucket?: string;
+		logBucket?: string | null;
 
 		/** A prefix for log object names. */
-		logObjectPrefix?: string;
+		logObjectPrefix?: string | null;
 	}
 
 	export interface BucketOwner {
 
 		/** The entity, in the form project-owner-projectId. */
-		entity?: string;
+		entity?: string | null;
 
 		/** The ID for the entity. */
-		entityId?: string;
+		entityId?: string | null;
 	}
 
 	export interface BucketRetentionPolicy {
 
 		/** Server-determined value that indicates the time from which policy was enforced and effective. This value is in RFC 3339 format. */
-		effectiveTime?: Date;
+		effectiveTime?: Date | null;
 
 		/** Once locked, an object retention policy cannot be modified. */
-		isLocked?: boolean;
+		isLocked?: boolean | null;
 
 		/** The duration in seconds that objects need to be retained. Retention duration must be greater than zero and less than 100 years. Note that enforcement of retention periods less than a day is not guaranteed. Such periods should only be used for testing purposes. */
-		retentionPeriod?: string;
+		retentionPeriod?: string | null;
 	}
 
 	export interface BucketVersioning {
 
 		/** While set to true, versioning is fully enabled for this bucket. */
-		enabled?: boolean;
+		enabled?: boolean | null;
 	}
 
 	export interface BucketWebsite {
 
 		/** If the requested object path is missing, the service will ensure the path has a trailing '/', append this suffix, and attempt to retrieve the resulting object. This allows the creation of index.html objects to represent directory pages. */
-		mainPageSuffix?: string;
+		mainPageSuffix?: string | null;
 
 		/** If the requested object path is missing, and any mainPageSuffix object is missing, if applicable, the service will return the named object from this bucket as the content for a 404 Not Found result. */
-		notFoundPage?: string;
+		notFoundPage?: string | null;
 	}
 
 
@@ -366,10 +366,10 @@ export namespace MyNS {
 	export interface BucketAccessControls {
 
 		/** The list of items. */
-		items?: Array<BucketAccessControl>;
+		items?: Array<BucketAccessControl> | null;
 
 		/** The kind of item this is. For lists of bucket access control entries, this is always storage#bucketAccessControls. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -377,13 +377,13 @@ export namespace MyNS {
 	export interface Buckets {
 
 		/** The list of items. */
-		items?: Array<Bucket>;
+		items?: Array<Bucket> | null;
 
 		/** The kind of item this is. For lists of buckets, this is always storage#buckets. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -391,34 +391,34 @@ export namespace MyNS {
 	export interface Channel {
 
 		/** The address where notifications are delivered for this channel. */
-		address?: string;
+		address?: string | null;
 
 		/** Date and time of notification channel expiration, expressed as a Unix timestamp, in milliseconds. Optional. */
-		expiration?: string;
+		expiration?: string | null;
 
 		/** A UUID or similar unique string that identifies this channel. */
-		id?: string;
+		id?: string | null;
 
 		/** Identifies this as a notification channel used to watch for changes to a resource, which is "api#channel". */
-		kind?: string;
+		kind?: string | null;
 
 		/** Additional parameters controlling delivery channel behavior. Optional. */
-		params?: {[id: string]: string };
+		params?: {[id: string]: string } | null;
 
 		/** A Boolean value to indicate whether payload is wanted. Optional. */
-		payload?: boolean;
+		payload?: boolean | null;
 
 		/** An opaque ID that identifies the resource being watched on this channel. Stable across different API versions. */
-		resourceId?: string;
+		resourceId?: string | null;
 
 		/** A version-specific identifier for the watched resource. */
-		resourceUri?: string;
+		resourceUri?: string | null;
 
 		/** An arbitrary string delivered to the target address with each notification delivered over this channel. Optional. */
-		token?: string;
+		token?: string | null;
 
 		/** The type of delivery mechanism used for this channel. */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -426,13 +426,13 @@ export namespace MyNS {
 	export interface ComposeRequest {
 
 		/** An object. */
-		destination?: Object;
+		destination?: Object | null;
 
 		/** The kind of item this is. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The list of source objects that will be concatenated into a single object. */
-		ComposeRequestSourceObjects?: Array<ComposeRequestSourceObjects>;
+		ComposeRequestSourceObjects?: Array<ComposeRequestSourceObjects> | null;
 	}
 
 
@@ -440,133 +440,133 @@ export namespace MyNS {
 	export interface Object {
 
 		/** Access controls on the object. */
-		acl?: Array<ObjectAccessControl>;
+		acl?: Array<ObjectAccessControl> | null;
 
 		/** The name of the bucket containing this object. */
-		bucket?: string;
+		bucket?: string | null;
 
 		/** Cache-Control directive for the object data. If omitted, and the object is accessible to all anonymous users, the default will be public, max-age=3600. */
-		cacheControl?: string;
+		cacheControl?: string | null;
 
 		/** Number of underlying components that make up this object. Components are accumulated by compose operations. */
-		componentCount?: number;
+		componentCount?: number | null;
 
 		/** Content-Disposition of the object data. */
-		contentDisposition?: string;
+		contentDisposition?: string | null;
 
 		/** Content-Encoding of the object data. */
-		contentEncoding?: string;
+		contentEncoding?: string | null;
 
 		/** Content-Language of the object data. */
-		contentLanguage?: string;
+		contentLanguage?: string | null;
 
 		/** Content-Type of the object data. If an object is stored without a Content-Type, it is served as application/octet-stream. */
-		contentType?: string;
+		contentType?: string | null;
 
 		/** CRC32c checksum, as described in RFC 4960, Appendix B; encoded using base64 in big-endian byte order. For more information about using the CRC32c checksum, see Hashes and ETags: Best Practices. */
-		crc32c?: string;
+		crc32c?: string | null;
 
 		/** Metadata of customer-supplied encryption key, if the object is encrypted by such a key. */
-		customerEncryption?: ObjectCustomerEncryption;
+		customerEncryption?: ObjectCustomerEncryption | null;
 
 		/** HTTP 1.1 Entity tag for the object. */
-		etag?: string;
+		etag?: string | null;
 
 		/** Whether an object is under event-based hold. Event-based hold is a way to retain objects until an event occurs, which is signified by the hold's release (i.e. this value is set to false). After being released (set to false), such objects will be subject to bucket-level retention (if any). One sample use case of this flag is for banks to hold loan documents for at least 3 years after loan is paid in full. Here, bucket-level retention is 3 years and the event is the loan being paid in full. In this example, these objects will be held intact for any number of years until the event has occurred (event-based hold on the object is released) and then 3 more years after that. That means retention duration of the objects begins from the moment event-based hold transitioned from true to false. */
-		eventBasedHold?: boolean;
+		eventBasedHold?: boolean | null;
 
 		/** The content generation of this object. Used for object versioning. */
-		generation?: string;
+		generation?: string | null;
 
 		/** The ID of the object, including the bucket name, object name, and generation number. */
-		id?: string;
+		id?: string | null;
 
 		/** The kind of item this is. For objects, this is always storage#object. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Cloud KMS Key used to encrypt this object, if the object is encrypted by such a key. */
-		kmsKeyName?: string;
+		kmsKeyName?: string | null;
 
 		/** MD5 hash of the data; encoded using base64. For more information about using the MD5 hash, see Hashes and ETags: Best Practices. */
-		md5Hash?: string;
+		md5Hash?: string | null;
 
 		/** Media download link. */
-		mediaLink?: string;
+		mediaLink?: string | null;
 
 		/** User-provided metadata, in key/value pairs. */
-		metadata?: {[id: string]: string };
+		metadata?: {[id: string]: string } | null;
 
 		/** The version of the metadata for this object at this generation. Used for preconditions and for detecting changes in metadata. A metageneration number is only meaningful in the context of a particular generation of a particular object. */
-		metageneration?: string;
+		metageneration?: string | null;
 
 		/** The name of the object. Required if not specified by URL parameter. */
-		name?: string;
+		name?: string | null;
 
 		/** The owner of the object. This will always be the uploader of the object. */
-		owner?: ObjectOwner;
+		owner?: ObjectOwner | null;
 
 		/** A server-determined value that specifies the earliest time that the object's retention period expires. This value is in RFC 3339 format. Note 1: This field is not provided for objects with an active event-based hold, since retention expiration is unknown until the hold is removed. Note 2: This value can be provided even when temporary hold is set (so that the user can reason about policy without having to first unset the temporary hold). */
-		retentionExpirationTime?: Date;
+		retentionExpirationTime?: Date | null;
 
 		/** The link to this object. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Content-Length of the data in bytes. */
-		size?: string;
+		size?: string | null;
 
 		/** Storage class of the object. */
-		storageClass?: string;
+		storageClass?: string | null;
 
 		/** Whether an object is under temporary hold. While this flag is set to true, the object is protected against deletion and overwrites. A common use case of this flag is regulatory investigations where objects need to be retained while the investigation is ongoing. Note that unlike event-based hold, temporary hold does not impact retention expiration time of an object. */
-		temporaryHold?: boolean;
+		temporaryHold?: boolean | null;
 
 		/** The creation time of the object in RFC 3339 format. */
-		timeCreated?: Date;
+		timeCreated?: Date | null;
 
 		/** The deletion time of the object in RFC 3339 format. Will be returned if and only if this version of the object has been deleted. */
-		timeDeleted?: Date;
+		timeDeleted?: Date | null;
 
 		/** The time at which the object's storage class was last changed. When the object is initially created, it will be set to timeCreated. */
-		timeStorageClassUpdated?: Date;
+		timeStorageClassUpdated?: Date | null;
 
 		/** The modification time of the object metadata in RFC 3339 format. */
-		updated?: Date;
+		updated?: Date | null;
 	}
 
 	export interface ObjectCustomerEncryption {
 
 		/** The encryption algorithm. */
-		encryptionAlgorithm?: string;
+		encryptionAlgorithm?: string | null;
 
 		/** SHA256 hash value of the encryption key. */
-		keySha256?: string;
+		keySha256?: string | null;
 	}
 
 	export interface ObjectOwner {
 
 		/** The entity, in the form user-userId. */
-		entity?: string;
+		entity?: string | null;
 
 		/** The ID for the entity. */
-		entityId?: string;
+		entityId?: string | null;
 	}
 
 	export interface ComposeRequestSourceObjects {
 
 		/** The generation of this object to use as the source. */
-		generation?: string;
+		generation?: string | null;
 
 		/** The source object's name. All source objects must reside in the same bucket. */
-		name?: string;
+		name?: string | null;
 
 		/** Conditions that must be met for this operation to execute. */
-		objectPreconditions?: ComposeRequestObjectPreconditions;
+		objectPreconditions?: ComposeRequestObjectPreconditions | null;
 	}
 
 	export interface ComposeRequestObjectPreconditions {
 
 		/** Only perform the composition if the generation of the source object that would be used matches this value. If this value and a generation are both specified, they must be the same value or the call will fail. */
-		ifGenerationMatch?: string;
+		ifGenerationMatch?: string | null;
 	}
 
 
@@ -574,16 +574,16 @@ export namespace MyNS {
 	export interface Expr {
 
 		/** An optional description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI. */
-		description?: string;
+		description?: string | null;
 
 		/** Textual representation of an expression in Common Expression Language syntax. The application context of the containing message determines which well-known feature set of CEL is supported. */
-		expression?: string;
+		expression?: string | null;
 
 		/** An optional string indicating the location of the expression for error reporting, e.g. a file name and a position in the file. */
-		location?: string;
+		location?: string | null;
 
 		/** An optional title for the expression, i.e. a short string describing its purpose. This can be used e.g. in UIs which allow to enter the expression. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -591,13 +591,13 @@ export namespace MyNS {
 	export interface HmacKey {
 
 		/** The kind of item this is. For HMAC keys, this is always storage#hmacKey. */
-		kind?: string;
+		kind?: string | null;
 
 		/** JSON template to produce a JSON-style HMAC Key metadata resource. */
-		metadata?: HmacKeyMetadata;
+		metadata?: HmacKeyMetadata | null;
 
 		/** HMAC secret key material. */
-		secret?: string;
+		secret?: string | null;
 	}
 
 
@@ -605,34 +605,34 @@ export namespace MyNS {
 	export interface HmacKeyMetadata {
 
 		/** The ID of the HMAC Key. */
-		accessId?: string;
+		accessId?: string | null;
 
 		/** HTTP 1.1 Entity tag for the HMAC key. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The ID of the HMAC key, including the Project ID and the Access ID. */
-		id?: string;
+		id?: string | null;
 
 		/** The kind of item this is. For HMAC Key metadata, this is always storage#hmacKeyMetadata. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Project ID owning the service account to which the key authenticates. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** The link to this resource. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** The email address of the key's associated service account. */
-		serviceAccountEmail?: string;
+		serviceAccountEmail?: string | null;
 
 		/** The state of the key. Can be one of ACTIVE, INACTIVE, or DELETED. */
-		state?: string;
+		state?: string | null;
 
 		/** The creation time of the HMAC key in RFC 3339 format. */
-		timeCreated?: Date;
+		timeCreated?: Date | null;
 
 		/** The last modification time of the HMAC key metadata in RFC 3339 format. */
-		updated?: Date;
+		updated?: Date | null;
 	}
 
 
@@ -640,13 +640,13 @@ export namespace MyNS {
 	export interface HmacKeysMetadata {
 
 		/** The list of items. */
-		items?: Array<HmacKeyMetadata>;
+		items?: Array<HmacKeyMetadata> | null;
 
 		/** The kind of item this is. For lists of hmacKeys, this is always storage#hmacKeysMetadata. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -654,31 +654,31 @@ export namespace MyNS {
 	export interface Notification {
 
 		/** An optional list of additional attributes to attach to each Cloud PubSub message published for this notification subscription. */
-		custom_attributes?: {[id: string]: string };
+		custom_attributes?: {[id: string]: string } | null;
 
 		/** HTTP 1.1 Entity tag for this subscription notification. */
-		etag?: string;
+		etag?: string | null;
 
 		/** If present, only send notifications about listed event types. If empty, sent notifications for all event types. */
-		event_types?: Array<string>;
+		event_types?: Array<string> | null;
 
 		/** The ID of the notification. */
-		id?: string;
+		id?: string | null;
 
 		/** The kind of item this is. For notifications, this is always storage#notification. */
-		kind?: string;
+		kind?: string | null;
 
 		/** If present, only apply this notification configuration to object names that begin with this prefix. */
-		object_name_prefix?: string;
+		object_name_prefix?: string | null;
 
 		/** The desired content of the Payload. */
-		payload_format?: string;
+		payload_format?: string | null;
 
 		/** The canonical URL of this notification. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** The Cloud PubSub topic to which this subscription publishes. Formatted as: '//pubsub.googleapis.com/projects/{project-identifier}/topics/{my-topic}' */
-		topic?: string;
+		topic?: string | null;
 	}
 
 
@@ -686,10 +686,10 @@ export namespace MyNS {
 	export interface Notifications {
 
 		/** The list of items. */
-		items?: Array<Notification>;
+		items?: Array<Notification> | null;
 
 		/** The kind of item this is. For lists of notifications, this is always storage#notifications. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -697,10 +697,10 @@ export namespace MyNS {
 	export interface ObjectAccessControls {
 
 		/** The list of items. */
-		items?: Array<ObjectAccessControl>;
+		items?: Array<ObjectAccessControl> | null;
 
 		/** The kind of item this is. For lists of object access control entries, this is always storage#objectAccessControls. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -708,16 +708,16 @@ export namespace MyNS {
 	export interface Objects {
 
 		/** The list of items. */
-		items?: Array<Object>;
+		items?: Array<Object> | null;
 
 		/** The kind of item this is. For lists of objects, this is always storage#objects. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The list of prefixes of objects matching-but-not-listed up to and including the requested delimiter. */
-		prefixes?: Array<string>;
+		prefixes?: Array<string> | null;
 	}
 
 
@@ -725,25 +725,25 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** An association between a role, which comes with a set of permissions, and members who may assume that role. */
-		PolicyBindings?: Array<PolicyBindings>;
+		PolicyBindings?: Array<PolicyBindings> | null;
 
 		/** HTTP 1.1  Entity tag for the policy. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The kind of item this is. For policies, this is always storage#policy. This field is ignored on input. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The ID of the resource to which this policy belongs. Will be of the form projects/_/buckets/bucket for buckets, and projects/_/buckets/bucket/objects/object for objects. A specific generation may be specified by appending #generationNumber to the end of the object name, e.g. projects/_/buckets/my-bucket/objects/data.txt#17. The current generation can be denoted with #0. This field is ignored on input. */
-		resourceId?: string;
+		resourceId?: string | null;
 
 		/** The IAM policy format version. */
-		version?: number;
+		version?: number | null;
 	}
 
 	export interface PolicyBindings {
 
 		/** Represents an expression text. Example: title: "User account presence" description: "Determines whether the request has a user account" expression: "size(request.user) > 0" */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * A collection of identifiers for members who may assume the provided role. Recognized identifiers are as follows:
@@ -757,7 +757,7 @@ export namespace MyNS {
 		 * - projectEditor:projectid — Editors of the given project. For example, projectEditor:my-example-project
 		 * - projectViewer:projectid — Viewers of the given project. For example, projectViewer:my-example-project
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * The role to which members belong. Two types of roles are supported: new IAM roles, which grant permissions that do not map directly to those provided by ACLs, and legacy IAM roles, which do map directly to ACL permissions. All roles are of the format roles/storage.specificRole.
@@ -772,7 +772,7 @@ export namespace MyNS {
 		 * - roles/storage.legacyBucketWriter — Read access to buckets with object listing/creation/deletion. Equivalent to an ACL entry on a bucket with the WRITER role.
 		 * - roles/storage.legacyBucketOwner — Read and write access to existing buckets with object listing/creation/deletion. Equivalent to an ACL entry on a bucket with the OWNER role.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -780,22 +780,22 @@ export namespace MyNS {
 	export interface RewriteResponse {
 
 		/** true if the copy is finished; otherwise, false if the copy is in progress. This property is always present in the response. */
-		done?: boolean;
+		done?: boolean | null;
 
 		/** The kind of item this is. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The total size of the object being copied in bytes. This property is always present in the response. */
-		objectSize?: string;
+		objectSize?: string | null;
 
 		/** An object. */
-		resource?: Object;
+		resource?: Object | null;
 
 		/** A token to use in subsequent requests to continue copying data. This token is present in the response only when there is more data to copy. */
-		rewriteToken?: string;
+		rewriteToken?: string | null;
 
 		/** The total bytes written so far, which can be used to provide a waiting user with a progress indicator. This property is always present in the response. */
-		totalBytesRewritten?: string;
+		totalBytesRewritten?: string | null;
 	}
 
 
@@ -803,10 +803,10 @@ export namespace MyNS {
 	export interface ServiceAccount {
 
 		/** The ID of the notification. */
-		email_address?: string;
+		email_address?: string | null;
 
 		/** The kind of item this is. For notifications, this is always storage#notification. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -814,7 +814,7 @@ export namespace MyNS {
 	export interface TestIamPermissionsResponse {
 
 		/** The kind of item this is. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * The permissions held by the caller. Permissions are always of the format storage.resource.capability, where resource is one of buckets or objects. The supported permissions are as follows:
@@ -833,7 +833,7 @@ export namespace MyNS {
 		 * - storage.objects.setIamPolicy — Update object IAM policy.
 		 * - storage.objects.update — Update object metadata.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 	@Injectable()
@@ -853,7 +853,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request.
 		 * @return {void} Successful response
 		 */
-		Storage_buckets_list(project: string, maxResults: number, pageToken: string, prefix: string, projection: Storage_buckets_listProjection, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_buckets_list(project: string, maxResults: number | null | undefined, pageToken: string | null | undefined, prefix: string | null | undefined, projection: Storage_buckets_listProjection | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'b?project=' + (project == null ? '' : encodeURIComponent(project)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&prefix=' + (prefix == null ? '' : encodeURIComponent(prefix)) + '&projection=' + projection + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -868,7 +868,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request.
 		 * @return {void} Successful response
 		 */
-		Storage_buckets_insert(project: string, predefinedAcl: Storage_buckets_insertPredefinedAcl, predefinedDefaultObjectAcl: Storage_buckets_insertPredefinedDefaultObjectAcl, projection: Storage_buckets_listProjection, provisionalUserProject: string, userProject: string, requestBody: Bucket): Observable<HttpResponse<string>> {
+		Storage_buckets_insert(project: string, predefinedAcl: Storage_buckets_insertPredefinedAcl | null | undefined, predefinedDefaultObjectAcl: Storage_buckets_insertPredefinedDefaultObjectAcl | null | undefined, projection: Storage_buckets_listProjection | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined, requestBody: Bucket): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'b?project=' + (project == null ? '' : encodeURIComponent(project)) + '&predefinedAcl=' + predefinedAcl + '&predefinedDefaultObjectAcl=' + predefinedDefaultObjectAcl + '&projection=' + projection + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -882,7 +882,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_buckets_delete(bucket: string, ifMetagenerationMatch: string, ifMetagenerationNotMatch: string, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_buckets_delete(bucket: string, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -897,7 +897,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_buckets_get(bucket: string, ifMetagenerationMatch: string, ifMetagenerationNotMatch: string, projection: Storage_buckets_listProjection, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_buckets_get(bucket: string, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, projection: Storage_buckets_listProjection | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&projection=' + projection + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -914,7 +914,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_buckets_patch(bucket: string, ifMetagenerationMatch: string, ifMetagenerationNotMatch: string, predefinedAcl: Storage_buckets_patchPredefinedAcl, predefinedDefaultObjectAcl: Storage_buckets_patchPredefinedDefaultObjectAcl, projection: Storage_buckets_listProjection, provisionalUserProject: string, userProject: string, requestBody: Bucket): Observable<HttpResponse<string>> {
+		Storage_buckets_patch(bucket: string, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, predefinedAcl: Storage_buckets_patchPredefinedAcl | null | undefined, predefinedDefaultObjectAcl: Storage_buckets_patchPredefinedDefaultObjectAcl | null | undefined, projection: Storage_buckets_listProjection | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined, requestBody: Bucket): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&predefinedAcl=' + predefinedAcl + '&predefinedDefaultObjectAcl=' + predefinedDefaultObjectAcl + '&projection=' + projection + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -931,7 +931,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_buckets_update(bucket: string, ifMetagenerationMatch: string, ifMetagenerationNotMatch: string, predefinedAcl: Storage_buckets_updatePredefinedAcl, predefinedDefaultObjectAcl: Storage_buckets_updatePredefinedDefaultObjectAcl, projection: Storage_buckets_listProjection, provisionalUserProject: string, userProject: string, requestBody: Bucket): Observable<HttpResponse<string>> {
+		Storage_buckets_update(bucket: string, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, predefinedAcl: Storage_buckets_updatePredefinedAcl | null | undefined, predefinedDefaultObjectAcl: Storage_buckets_updatePredefinedDefaultObjectAcl | null | undefined, projection: Storage_buckets_listProjection | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined, requestBody: Bucket): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&predefinedAcl=' + predefinedAcl + '&predefinedDefaultObjectAcl=' + predefinedDefaultObjectAcl + '&projection=' + projection + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -943,7 +943,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_bucketAccessControls_list(bucket: string, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_bucketAccessControls_list(bucket: string, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/acl&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -955,7 +955,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_bucketAccessControls_insert(bucket: string, provisionalUserProject: string, userProject: string, requestBody: BucketAccessControl): Observable<HttpResponse<string>> {
+		Storage_bucketAccessControls_insert(bucket: string, provisionalUserProject: string | null | undefined, userProject: string | null | undefined, requestBody: BucketAccessControl): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/acl&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -968,7 +968,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_bucketAccessControls_delete(bucket: string, entity: string, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_bucketAccessControls_delete(bucket: string, entity: string, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -981,7 +981,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_bucketAccessControls_get(bucket: string, entity: string, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_bucketAccessControls_get(bucket: string, entity: string, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -994,7 +994,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_bucketAccessControls_patch(bucket: string, entity: string, provisionalUserProject: string, userProject: string, requestBody: BucketAccessControl): Observable<HttpResponse<string>> {
+		Storage_bucketAccessControls_patch(bucket: string, entity: string, provisionalUserProject: string | null | undefined, userProject: string | null | undefined, requestBody: BucketAccessControl): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1007,7 +1007,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_bucketAccessControls_update(bucket: string, entity: string, provisionalUserProject: string, userProject: string, requestBody: BucketAccessControl): Observable<HttpResponse<string>> {
+		Storage_bucketAccessControls_update(bucket: string, entity: string, provisionalUserProject: string | null | undefined, userProject: string | null | undefined, requestBody: BucketAccessControl): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1021,7 +1021,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_defaultObjectAccessControls_list(bucket: string, ifMetagenerationMatch: string, ifMetagenerationNotMatch: string, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_defaultObjectAccessControls_list(bucket: string, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/defaultObjectAcl&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1033,7 +1033,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_defaultObjectAccessControls_insert(bucket: string, provisionalUserProject: string, userProject: string, requestBody: ObjectAccessControl): Observable<HttpResponse<string>> {
+		Storage_defaultObjectAccessControls_insert(bucket: string, provisionalUserProject: string | null | undefined, userProject: string | null | undefined, requestBody: ObjectAccessControl): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/defaultObjectAcl&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1046,7 +1046,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_defaultObjectAccessControls_delete(bucket: string, entity: string, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_defaultObjectAccessControls_delete(bucket: string, entity: string, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/defaultObjectAcl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1059,7 +1059,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_defaultObjectAccessControls_get(bucket: string, entity: string, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_defaultObjectAccessControls_get(bucket: string, entity: string, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/defaultObjectAcl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1072,7 +1072,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_defaultObjectAccessControls_patch(bucket: string, entity: string, provisionalUserProject: string, userProject: string, requestBody: ObjectAccessControl): Observable<HttpResponse<string>> {
+		Storage_defaultObjectAccessControls_patch(bucket: string, entity: string, provisionalUserProject: string | null | undefined, userProject: string | null | undefined, requestBody: ObjectAccessControl): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/defaultObjectAcl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1085,7 +1085,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_defaultObjectAccessControls_update(bucket: string, entity: string, provisionalUserProject: string, userProject: string, requestBody: ObjectAccessControl): Observable<HttpResponse<string>> {
+		Storage_defaultObjectAccessControls_update(bucket: string, entity: string, provisionalUserProject: string | null | undefined, userProject: string | null | undefined, requestBody: ObjectAccessControl): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/defaultObjectAcl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1098,7 +1098,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_buckets_getIamPolicy(bucket: string, optionsRequestedPolicyVersion: number, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_buckets_getIamPolicy(bucket: string, optionsRequestedPolicyVersion: number | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/iam&optionsRequestedPolicyVersion=' + optionsRequestedPolicyVersion + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1110,7 +1110,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_buckets_setIamPolicy(bucket: string, provisionalUserProject: string, userProject: string, requestBody: Policy): Observable<HttpResponse<string>> {
+		Storage_buckets_setIamPolicy(bucket: string, provisionalUserProject: string | null | undefined, userProject: string | null | undefined, requestBody: Policy): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/iam&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1123,7 +1123,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_buckets_testIamPermissions(bucket: string, permissions: Array<string>, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_buckets_testIamPermissions(bucket: string, permissions: Array<string>, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/iam/testPermissions&' + permissions.map(z => `permissions=${encodeURIComponent(z)}`).join('&') + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1136,7 +1136,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_buckets_lockRetentionPolicy(bucket: string, ifMetagenerationMatch: string, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_buckets_lockRetentionPolicy(bucket: string, ifMetagenerationMatch: string, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/lockRetentionPolicy&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1148,7 +1148,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_notifications_list(bucket: string, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_notifications_list(bucket: string, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/notificationConfigs&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1160,7 +1160,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_notifications_insert(bucket: string, provisionalUserProject: string, userProject: string, requestBody: Notification): Observable<HttpResponse<string>> {
+		Storage_notifications_insert(bucket: string, provisionalUserProject: string | null | undefined, userProject: string | null | undefined, requestBody: Notification): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/notificationConfigs&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1173,7 +1173,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_notifications_delete(bucket: string, notification: string, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_notifications_delete(bucket: string, notification: string, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/notificationConfigs/' + (notification == null ? '' : encodeURIComponent(notification)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1186,7 +1186,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_notifications_get(bucket: string, notification: string, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_notifications_get(bucket: string, notification: string, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/notificationConfigs/' + (notification == null ? '' : encodeURIComponent(notification)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1207,7 +1207,7 @@ export namespace MyNS {
 		 * @param {boolean} versions If true, lists all versions of an object as distinct results. The default is false. For more information, see Object Versioning.
 		 * @return {void} Successful response
 		 */
-		Storage_objects_list(bucket: string, delimiter: string, endOffset: string, includeTrailingDelimiter: boolean, maxResults: number, pageToken: string, prefix: string, projection: Storage_buckets_listProjection, provisionalUserProject: string, startOffset: string, userProject: string, versions: boolean): Observable<HttpResponse<string>> {
+		Storage_objects_list(bucket: string, delimiter: string | null | undefined, endOffset: string | null | undefined, includeTrailingDelimiter: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, prefix: string | null | undefined, projection: Storage_buckets_listProjection | null | undefined, provisionalUserProject: string | null | undefined, startOffset: string | null | undefined, userProject: string | null | undefined, versions: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o&delimiter=' + (delimiter == null ? '' : encodeURIComponent(delimiter)) + '&endOffset=' + (endOffset == null ? '' : encodeURIComponent(endOffset)) + '&includeTrailingDelimiter=' + includeTrailingDelimiter + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&prefix=' + (prefix == null ? '' : encodeURIComponent(prefix)) + '&projection=' + projection + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&startOffset=' + (startOffset == null ? '' : encodeURIComponent(startOffset)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)) + '&versions=' + versions, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1228,7 +1228,7 @@ export namespace MyNS {
 		 * @param {boolean} versions If true, lists all versions of an object as distinct results. The default is false. For more information, see Object Versioning.
 		 * @return {void} Successful response
 		 */
-		Storage_objects_watchAll(bucket: string, delimiter: string, endOffset: string, includeTrailingDelimiter: boolean, maxResults: number, pageToken: string, prefix: string, projection: Storage_buckets_listProjection, provisionalUserProject: string, startOffset: string, userProject: string, versions: boolean, requestBody: Channel): Observable<HttpResponse<string>> {
+		Storage_objects_watchAll(bucket: string, delimiter: string | null | undefined, endOffset: string | null | undefined, includeTrailingDelimiter: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, prefix: string | null | undefined, projection: Storage_buckets_listProjection | null | undefined, provisionalUserProject: string | null | undefined, startOffset: string | null | undefined, userProject: string | null | undefined, versions: boolean | null | undefined, requestBody: Channel): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/watch&delimiter=' + (delimiter == null ? '' : encodeURIComponent(delimiter)) + '&endOffset=' + (endOffset == null ? '' : encodeURIComponent(endOffset)) + '&includeTrailingDelimiter=' + includeTrailingDelimiter + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&prefix=' + (prefix == null ? '' : encodeURIComponent(prefix)) + '&projection=' + projection + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&startOffset=' + (startOffset == null ? '' : encodeURIComponent(startOffset)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)) + '&versions=' + versions, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1246,7 +1246,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_objects_delete(bucket: string, _object: string, generation: string, ifGenerationMatch: string, ifGenerationNotMatch: string, ifMetagenerationMatch: string, ifMetagenerationNotMatch: string, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_objects_delete(bucket: string, _object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/{object}&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1265,7 +1265,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_objects_get(bucket: string, _object: string, generation: string, ifGenerationMatch: string, ifGenerationNotMatch: string, ifMetagenerationMatch: string, ifMetagenerationNotMatch: string, projection: Storage_buckets_listProjection, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_objects_get(bucket: string, _object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, projection: Storage_buckets_listProjection | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/{object}&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&projection=' + projection + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1285,7 +1285,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request, for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_objects_patch(bucket: string, _object: string, generation: string, ifGenerationMatch: string, ifGenerationNotMatch: string, ifMetagenerationMatch: string, ifMetagenerationNotMatch: string, predefinedAcl: Storage_objects_patchPredefinedAcl, projection: Storage_buckets_listProjection, provisionalUserProject: string, userProject: string, requestBody: Object): Observable<HttpResponse<string>> {
+		Storage_objects_patch(bucket: string, _object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, predefinedAcl: Storage_objects_patchPredefinedAcl | null | undefined, projection: Storage_buckets_listProjection | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined, requestBody: Object): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/{object}&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&predefinedAcl=' + predefinedAcl + '&projection=' + projection + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1305,7 +1305,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_objects_update(bucket: string, _object: string, generation: string, ifGenerationMatch: string, ifGenerationNotMatch: string, ifMetagenerationMatch: string, ifMetagenerationNotMatch: string, predefinedAcl: Storage_objects_updatePredefinedAcl, projection: Storage_buckets_listProjection, provisionalUserProject: string, userProject: string, requestBody: Object): Observable<HttpResponse<string>> {
+		Storage_objects_update(bucket: string, _object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, predefinedAcl: Storage_objects_updatePredefinedAcl | null | undefined, projection: Storage_buckets_listProjection | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined, requestBody: Object): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/{object}&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&predefinedAcl=' + predefinedAcl + '&projection=' + projection + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1319,7 +1319,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_objectAccessControls_list(bucket: string, _object: string, generation: string, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_objectAccessControls_list(bucket: string, _object: string, generation: string | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/{object}/acl&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1333,7 +1333,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_objectAccessControls_insert(bucket: string, _object: string, generation: string, provisionalUserProject: string, userProject: string, requestBody: ObjectAccessControl): Observable<HttpResponse<string>> {
+		Storage_objectAccessControls_insert(bucket: string, _object: string, generation: string | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined, requestBody: ObjectAccessControl): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/{object}/acl&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1348,7 +1348,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_objectAccessControls_delete(bucket: string, _object: string, entity: string, generation: string, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_objectAccessControls_delete(bucket: string, _object: string, entity: string, generation: string | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/{object}/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1363,7 +1363,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_objectAccessControls_get(bucket: string, _object: string, entity: string, generation: string, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_objectAccessControls_get(bucket: string, _object: string, entity: string, generation: string | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/{object}/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1378,7 +1378,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_objectAccessControls_patch(bucket: string, _object: string, entity: string, generation: string, provisionalUserProject: string, userProject: string, requestBody: ObjectAccessControl): Observable<HttpResponse<string>> {
+		Storage_objectAccessControls_patch(bucket: string, _object: string, entity: string, generation: string | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined, requestBody: ObjectAccessControl): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/{object}/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1393,7 +1393,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_objectAccessControls_update(bucket: string, _object: string, entity: string, generation: string, provisionalUserProject: string, userProject: string, requestBody: ObjectAccessControl): Observable<HttpResponse<string>> {
+		Storage_objectAccessControls_update(bucket: string, _object: string, entity: string, generation: string | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined, requestBody: ObjectAccessControl): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/{object}/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1407,7 +1407,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_objects_getIamPolicy(bucket: string, _object: string, generation: string, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_objects_getIamPolicy(bucket: string, _object: string, generation: string | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/{object}/iam&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1421,7 +1421,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_objects_setIamPolicy(bucket: string, _object: string, generation: string, provisionalUserProject: string, userProject: string, requestBody: Policy): Observable<HttpResponse<string>> {
+		Storage_objects_setIamPolicy(bucket: string, _object: string, generation: string | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined, requestBody: Policy): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/{object}/iam&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1436,7 +1436,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_objects_testIamPermissions(bucket: string, _object: string, permissions: Array<string>, generation: string, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_objects_testIamPermissions(bucket: string, _object: string, permissions: Array<string>, generation: string | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/{object}/iam/testPermissions&' + permissions.map(z => `permissions=${encodeURIComponent(z)}`).join('&') + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1453,7 +1453,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_objects_compose(destinationBucket: string, destinationObject: string, destinationPredefinedAcl: Storage_objects_composeDestinationPredefinedAcl, ifGenerationMatch: string, ifMetagenerationMatch: string, kmsKeyName: string, provisionalUserProject: string, userProject: string, requestBody: ComposeRequest): Observable<HttpResponse<string>> {
+		Storage_objects_compose(destinationBucket: string, destinationObject: string, destinationPredefinedAcl: Storage_objects_composeDestinationPredefinedAcl | null | undefined, ifGenerationMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, kmsKeyName: string | null | undefined, provisionalUserProject: string | null | undefined, userProject: string | null | undefined, requestBody: ComposeRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'b/' + (destinationBucket == null ? '' : encodeURIComponent(destinationBucket)) + '/o/' + (destinationObject == null ? '' : encodeURIComponent(destinationObject)) + '/compose&destinationPredefinedAcl=' + destinationPredefinedAcl + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&kmsKeyName=' + (kmsKeyName == null ? '' : encodeURIComponent(kmsKeyName)) + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1480,7 +1480,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_objects_copy(sourceBucket: string, sourceObject: string, destinationBucket: string, destinationObject: string, destinationKmsKeyName: string, destinationPredefinedAcl: Storage_objects_copyDestinationPredefinedAcl, ifGenerationMatch: string, ifGenerationNotMatch: string, ifMetagenerationMatch: string, ifMetagenerationNotMatch: string, ifSourceGenerationMatch: string, ifSourceGenerationNotMatch: string, ifSourceMetagenerationMatch: string, ifSourceMetagenerationNotMatch: string, projection: Storage_buckets_listProjection, provisionalUserProject: string, sourceGeneration: string, userProject: string, requestBody: Object): Observable<HttpResponse<string>> {
+		Storage_objects_copy(sourceBucket: string, sourceObject: string, destinationBucket: string, destinationObject: string, destinationKmsKeyName: string | null | undefined, destinationPredefinedAcl: Storage_objects_copyDestinationPredefinedAcl | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, ifSourceGenerationMatch: string | null | undefined, ifSourceGenerationNotMatch: string | null | undefined, ifSourceMetagenerationMatch: string | null | undefined, ifSourceMetagenerationNotMatch: string | null | undefined, projection: Storage_buckets_listProjection | null | undefined, provisionalUserProject: string | null | undefined, sourceGeneration: string | null | undefined, userProject: string | null | undefined, requestBody: Object): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'b/' + (sourceBucket == null ? '' : encodeURIComponent(sourceBucket)) + '/o/' + (sourceObject == null ? '' : encodeURIComponent(sourceObject)) + '/copyTo/b/' + (destinationBucket == null ? '' : encodeURIComponent(destinationBucket)) + '/o/' + (destinationObject == null ? '' : encodeURIComponent(destinationObject)) + '&destinationKmsKeyName=' + (destinationKmsKeyName == null ? '' : encodeURIComponent(destinationKmsKeyName)) + '&destinationPredefinedAcl=' + destinationPredefinedAcl + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&ifSourceGenerationMatch=' + (ifSourceGenerationMatch == null ? '' : encodeURIComponent(ifSourceGenerationMatch)) + '&ifSourceGenerationNotMatch=' + (ifSourceGenerationNotMatch == null ? '' : encodeURIComponent(ifSourceGenerationNotMatch)) + '&ifSourceMetagenerationMatch=' + (ifSourceMetagenerationMatch == null ? '' : encodeURIComponent(ifSourceMetagenerationMatch)) + '&ifSourceMetagenerationNotMatch=' + (ifSourceMetagenerationNotMatch == null ? '' : encodeURIComponent(ifSourceMetagenerationNotMatch)) + '&projection=' + projection + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&sourceGeneration=' + (sourceGeneration == null ? '' : encodeURIComponent(sourceGeneration)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1509,7 +1509,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_objects_rewrite(sourceBucket: string, sourceObject: string, destinationBucket: string, destinationObject: string, destinationKmsKeyName: string, destinationPredefinedAcl: Storage_objects_rewriteDestinationPredefinedAcl, ifGenerationMatch: string, ifGenerationNotMatch: string, ifMetagenerationMatch: string, ifMetagenerationNotMatch: string, ifSourceGenerationMatch: string, ifSourceGenerationNotMatch: string, ifSourceMetagenerationMatch: string, ifSourceMetagenerationNotMatch: string, maxBytesRewrittenPerCall: string, projection: Storage_buckets_listProjection, provisionalUserProject: string, rewriteToken: string, sourceGeneration: string, userProject: string, requestBody: Object): Observable<HttpResponse<string>> {
+		Storage_objects_rewrite(sourceBucket: string, sourceObject: string, destinationBucket: string, destinationObject: string, destinationKmsKeyName: string | null | undefined, destinationPredefinedAcl: Storage_objects_rewriteDestinationPredefinedAcl | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, ifSourceGenerationMatch: string | null | undefined, ifSourceGenerationNotMatch: string | null | undefined, ifSourceMetagenerationMatch: string | null | undefined, ifSourceMetagenerationNotMatch: string | null | undefined, maxBytesRewrittenPerCall: string | null | undefined, projection: Storage_buckets_listProjection | null | undefined, provisionalUserProject: string | null | undefined, rewriteToken: string | null | undefined, sourceGeneration: string | null | undefined, userProject: string | null | undefined, requestBody: Object): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'b/' + (sourceBucket == null ? '' : encodeURIComponent(sourceBucket)) + '/o/' + (sourceObject == null ? '' : encodeURIComponent(sourceObject)) + '/rewriteTo/b/' + (destinationBucket == null ? '' : encodeURIComponent(destinationBucket)) + '/o/' + (destinationObject == null ? '' : encodeURIComponent(destinationObject)) + '&destinationKmsKeyName=' + (destinationKmsKeyName == null ? '' : encodeURIComponent(destinationKmsKeyName)) + '&destinationPredefinedAcl=' + destinationPredefinedAcl + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&ifSourceGenerationMatch=' + (ifSourceGenerationMatch == null ? '' : encodeURIComponent(ifSourceGenerationMatch)) + '&ifSourceGenerationNotMatch=' + (ifSourceGenerationNotMatch == null ? '' : encodeURIComponent(ifSourceGenerationNotMatch)) + '&ifSourceMetagenerationMatch=' + (ifSourceMetagenerationMatch == null ? '' : encodeURIComponent(ifSourceMetagenerationMatch)) + '&ifSourceMetagenerationNotMatch=' + (ifSourceMetagenerationNotMatch == null ? '' : encodeURIComponent(ifSourceMetagenerationNotMatch)) + '&maxBytesRewrittenPerCall=' + (maxBytesRewrittenPerCall == null ? '' : encodeURIComponent(maxBytesRewrittenPerCall)) + '&projection=' + projection + '&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&rewriteToken=' + (rewriteToken == null ? '' : encodeURIComponent(rewriteToken)) + '&sourceGeneration=' + (sourceGeneration == null ? '' : encodeURIComponent(sourceGeneration)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1533,7 +1533,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request.
 		 * @return {void} Successful response
 		 */
-		Storage_projects_hmacKeys_list(projectId: string, maxResults: number, pageToken: string, serviceAccountEmail: string, showDeletedKeys: boolean, userProject: string): Observable<HttpResponse<string>> {
+		Storage_projects_hmacKeys_list(projectId: string, maxResults: number | null | undefined, pageToken: string | null | undefined, serviceAccountEmail: string | null | undefined, showDeletedKeys: boolean | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/hmacKeys&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&serviceAccountEmail=' + (serviceAccountEmail == null ? '' : encodeURIComponent(serviceAccountEmail)) + '&showDeletedKeys=' + showDeletedKeys + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1545,7 +1545,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request.
 		 * @return {void} Successful response
 		 */
-		Storage_projects_hmacKeys_create(projectId: string, serviceAccountEmail: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_projects_hmacKeys_create(projectId: string, serviceAccountEmail: string, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/hmacKeys&serviceAccountEmail=' + (serviceAccountEmail == null ? '' : encodeURIComponent(serviceAccountEmail)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1557,7 +1557,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request.
 		 * @return {void} Successful response
 		 */
-		Storage_projects_hmacKeys_delete(projectId: string, accessId: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_projects_hmacKeys_delete(projectId: string, accessId: string, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/hmacKeys/' + (accessId == null ? '' : encodeURIComponent(accessId)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1569,7 +1569,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request.
 		 * @return {void} Successful response
 		 */
-		Storage_projects_hmacKeys_get(projectId: string, accessId: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_projects_hmacKeys_get(projectId: string, accessId: string, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/hmacKeys/' + (accessId == null ? '' : encodeURIComponent(accessId)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1581,7 +1581,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request.
 		 * @return {void} Successful response
 		 */
-		Storage_projects_hmacKeys_update(projectId: string, accessId: string, userProject: string, requestBody: HmacKeyMetadata): Observable<HttpResponse<string>> {
+		Storage_projects_hmacKeys_update(projectId: string, accessId: string, userProject: string | null | undefined, requestBody: HmacKeyMetadata): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/hmacKeys/' + (accessId == null ? '' : encodeURIComponent(accessId)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1593,7 +1593,7 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request.
 		 * @return {void} Successful response
 		 */
-		Storage_projects_serviceAccount_get(projectId: string, provisionalUserProject: string, userProject: string): Observable<HttpResponse<string>> {
+		Storage_projects_serviceAccount_get(projectId: string, provisionalUserProject: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/serviceAccount&provisionalUserProject=' + (provisionalUserProject == null ? '' : encodeURIComponent(provisionalUserProject)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 	}

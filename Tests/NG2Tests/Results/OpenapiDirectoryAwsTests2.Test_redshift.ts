@@ -5,32 +5,32 @@ export namespace MyNS {
 	export interface AcceptReservedNodeExchangeOutputMessage {
 
 		/** Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node offerings. */
-		ExchangedReservedNode?: ReservedNode;
+		ExchangedReservedNode?: ReservedNode | null;
 	}
 
 
 	/** Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node offerings.  */
 	export interface ReservedNode {
-		ReservedNodeId?: string;
-		ReservedNodeOfferingId?: string;
-		NodeType?: string;
-		StartTime?: Date;
-		Duration?: number;
-		FixedPrice?: number;
-		UsagePrice?: number;
-		CurrencyCode?: string;
-		NodeCount?: number;
-		State?: string;
-		OfferingType?: string;
-		RecurringCharges?: Array<RecurringCharge>;
-		ReservedNodeOfferingType?: ReservedNodeReservedNodeOfferingType;
+		ReservedNodeId?: string | null;
+		ReservedNodeOfferingId?: string | null;
+		NodeType?: string | null;
+		StartTime?: Date | null;
+		Duration?: number | null;
+		FixedPrice?: number | null;
+		UsagePrice?: number | null;
+		CurrencyCode?: string | null;
+		NodeCount?: number | null;
+		State?: string | null;
+		OfferingType?: string | null;
+		RecurringCharges?: Array<RecurringCharge> | null;
+		ReservedNodeOfferingType?: ReservedNodeReservedNodeOfferingType | null;
 	}
 
 
 	/** Describes a recurring charge. */
 	export interface RecurringCharge {
-		RecurringChargeAmount?: number;
-		RecurringChargeFrequency?: string;
+		RecurringChargeAmount?: number | null;
+		RecurringChargeFrequency?: string | null;
 	}
 
 	export enum ReservedNodeReservedNodeOfferingType { Regular = 0, Upgradable = 1 }
@@ -59,41 +59,41 @@ export namespace MyNS {
 	export interface AuthorizeClusterSecurityGroupIngressResult {
 
 		/** Describes a security group. */
-		ClusterSecurityGroup?: ClusterSecurityGroup;
+		ClusterSecurityGroup?: ClusterSecurityGroup | null;
 	}
 
 
 	/** Describes a security group. */
 	export interface ClusterSecurityGroup {
-		ClusterSecurityGroupName?: string;
-		Description?: string;
-		EC2SecurityGroups?: Array<EC2SecurityGroup>;
-		IPRanges?: Array<IPRange>;
-		Tags?: Array<Tag>;
+		ClusterSecurityGroupName?: string | null;
+		Description?: string | null;
+		EC2SecurityGroups?: Array<EC2SecurityGroup> | null;
+		IPRanges?: Array<IPRange> | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** Describes an Amazon EC2 security group. */
 	export interface EC2SecurityGroup {
-		Status?: string;
-		EC2SecurityGroupName?: string;
-		EC2SecurityGroupOwnerId?: string;
-		Tags?: Array<Tag>;
+		Status?: string | null;
+		EC2SecurityGroupName?: string | null;
+		EC2SecurityGroupOwnerId?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** A tag consisting of a name/value pair for a resource. */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 
 	/** Describes an IP range used in a security group. */
 	export interface IPRange {
-		Status?: string;
-		CIDRIP?: string;
-		Tags?: Array<Tag>;
+		Status?: string | null;
+		CIDRIP?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ClusterSecurityGroupNotFoundFault {
@@ -111,52 +111,52 @@ export namespace MyNS {
 	export interface AuthorizeSnapshotAccessResult {
 
 		/** Describes a snapshot. */
-		Snapshot?: Snapshot;
+		Snapshot?: Snapshot | null;
 	}
 
 
 	/** Describes a snapshot. */
 	export interface Snapshot {
-		SnapshotIdentifier?: string;
-		ClusterIdentifier?: string;
-		SnapshotCreateTime?: Date;
-		Status?: string;
-		Port?: number;
-		AvailabilityZone?: string;
-		ClusterCreateTime?: Date;
-		MasterUsername?: string;
-		ClusterVersion?: string;
-		SnapshotType?: string;
-		NodeType?: string;
-		NumberOfNodes?: number;
-		DBName?: string;
-		VpcId?: string;
-		Encrypted?: boolean;
-		KmsKeyId?: string;
-		EncryptedWithHSM?: boolean;
-		AccountsWithRestoreAccess?: Array<AccountWithRestoreAccess>;
-		OwnerAccount?: string;
-		TotalBackupSizeInMegaBytes?: number;
-		ActualIncrementalBackupSizeInMegaBytes?: number;
-		BackupProgressInMegaBytes?: number;
-		CurrentBackupRateInMegaBytesPerSecond?: number;
-		EstimatedSecondsToCompletion?: number;
-		ElapsedTimeInSeconds?: number;
-		SourceRegion?: string;
-		Tags?: Array<Tag>;
-		RestorableNodeTypes?: Array<string>;
-		EnhancedVpcRouting?: boolean;
-		MaintenanceTrackName?: string;
-		ManualSnapshotRetentionPeriod?: number;
-		ManualSnapshotRemainingDays?: number;
-		SnapshotRetentionStartTime?: Date;
+		SnapshotIdentifier?: string | null;
+		ClusterIdentifier?: string | null;
+		SnapshotCreateTime?: Date | null;
+		Status?: string | null;
+		Port?: number | null;
+		AvailabilityZone?: string | null;
+		ClusterCreateTime?: Date | null;
+		MasterUsername?: string | null;
+		ClusterVersion?: string | null;
+		SnapshotType?: string | null;
+		NodeType?: string | null;
+		NumberOfNodes?: number | null;
+		DBName?: string | null;
+		VpcId?: string | null;
+		Encrypted?: boolean | null;
+		KmsKeyId?: string | null;
+		EncryptedWithHSM?: boolean | null;
+		AccountsWithRestoreAccess?: Array<AccountWithRestoreAccess> | null;
+		OwnerAccount?: string | null;
+		TotalBackupSizeInMegaBytes?: number | null;
+		ActualIncrementalBackupSizeInMegaBytes?: number | null;
+		BackupProgressInMegaBytes?: number | null;
+		CurrentBackupRateInMegaBytesPerSecond?: number | null;
+		EstimatedSecondsToCompletion?: number | null;
+		ElapsedTimeInSeconds?: number | null;
+		SourceRegion?: string | null;
+		Tags?: Array<Tag> | null;
+		RestorableNodeTypes?: Array<string> | null;
+		EnhancedVpcRouting?: boolean | null;
+		MaintenanceTrackName?: string | null;
+		ManualSnapshotRetentionPeriod?: number | null;
+		ManualSnapshotRemainingDays?: number | null;
+		SnapshotRetentionStartTime?: Date | null;
 	}
 
 
 	/** Describes an AWS customer account authorized to restore a snapshot. */
 	export interface AccountWithRestoreAccess {
-		AccountId?: string;
-		AccountAlias?: string;
+		AccountId?: string | null;
+		AccountAlias?: string | null;
 	}
 
 	export interface ClusterSnapshotNotFoundFault {
@@ -172,32 +172,32 @@ export namespace MyNS {
 	}
 
 	export interface BatchDeleteClusterSnapshotsResult {
-		Resources?: Array<string>;
-		Errors?: Array<SnapshotErrorMessage>;
+		Resources?: Array<string> | null;
+		Errors?: Array<SnapshotErrorMessage> | null;
 	}
 
 
 	/** Describes the errors returned by a snapshot. */
 	export interface SnapshotErrorMessage {
-		SnapshotIdentifier?: string;
-		SnapshotClusterIdentifier?: string;
-		FailureCode?: string;
-		FailureReason?: string;
+		SnapshotIdentifier?: string | null;
+		SnapshotClusterIdentifier?: string | null;
+		FailureCode?: string | null;
+		FailureReason?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DeleteClusterSnapshotMessage {
 		SnapshotIdentifier: string;
-		SnapshotClusterIdentifier?: string;
+		SnapshotClusterIdentifier?: string | null;
 	}
 
 	export interface BatchDeleteRequestSizeExceededFault {
 	}
 
 	export interface BatchModifyClusterSnapshotsOutputMessage {
-		Resources?: Array<string>;
-		Errors?: Array<SnapshotErrorMessage>;
+		Resources?: Array<string> | null;
+		Errors?: Array<SnapshotErrorMessage> | null;
 	}
 
 	export interface InvalidRetentionPeriodFault {
@@ -209,22 +209,22 @@ export namespace MyNS {
 
 	/** Describes the result of a cluster resize operation. */
 	export interface ResizeProgressMessage {
-		TargetNodeType?: string;
-		TargetNumberOfNodes?: number;
-		TargetClusterType?: string;
-		Status?: string;
-		ImportTablesCompleted?: Array<string>;
-		ImportTablesInProgress?: Array<string>;
-		ImportTablesNotStarted?: Array<string>;
-		AvgResizeRateInMegaBytesPerSecond?: number;
-		TotalResizeDataInMegaBytes?: number;
-		ProgressInMegaBytes?: number;
-		ElapsedTimeInSeconds?: number;
-		EstimatedTimeToCompletionInSeconds?: number;
-		ResizeType?: string;
-		Message?: string;
-		TargetEncryptionType?: string;
-		DataTransferProgressPercent?: number;
+		TargetNodeType?: string | null;
+		TargetNumberOfNodes?: number | null;
+		TargetClusterType?: string | null;
+		Status?: string | null;
+		ImportTablesCompleted?: Array<string> | null;
+		ImportTablesInProgress?: Array<string> | null;
+		ImportTablesNotStarted?: Array<string> | null;
+		AvgResizeRateInMegaBytesPerSecond?: number | null;
+		TotalResizeDataInMegaBytes?: number | null;
+		ProgressInMegaBytes?: number | null;
+		ElapsedTimeInSeconds?: number | null;
+		EstimatedTimeToCompletionInSeconds?: number | null;
+		ResizeType?: string | null;
+		Message?: string | null;
+		TargetEncryptionType?: string | null;
+		DataTransferProgressPercent?: number | null;
 	}
 
 	export interface ClusterNotFoundFault {
@@ -239,7 +239,7 @@ export namespace MyNS {
 	export interface CopyClusterSnapshotResult {
 
 		/** Describes a snapshot. */
-		Snapshot?: Snapshot;
+		Snapshot?: Snapshot | null;
 	}
 
 	export interface ClusterSnapshotAlreadyExistsFault {
@@ -251,196 +251,196 @@ export namespace MyNS {
 	export interface CreateClusterResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 
 	/** Describes a cluster. */
 	export interface Cluster {
-		ClusterIdentifier?: string;
-		NodeType?: string;
-		ClusterStatus?: string;
-		ClusterAvailabilityStatus?: string;
-		ModifyStatus?: string;
-		MasterUsername?: string;
-		DBName?: string;
+		ClusterIdentifier?: string | null;
+		NodeType?: string | null;
+		ClusterStatus?: string | null;
+		ClusterAvailabilityStatus?: string | null;
+		ModifyStatus?: string | null;
+		MasterUsername?: string | null;
+		DBName?: string | null;
 
 		/** Describes a connection endpoint. */
-		Endpoint?: Endpoint;
-		ClusterCreateTime?: Date;
-		AutomatedSnapshotRetentionPeriod?: number;
-		ManualSnapshotRetentionPeriod?: number;
-		ClusterSecurityGroups?: Array<ClusterSecurityGroupMembership>;
-		VpcSecurityGroups?: Array<VpcSecurityGroupMembership>;
-		ClusterParameterGroups?: Array<ClusterParameterGroupStatus>;
-		ClusterSubnetGroupName?: string;
-		VpcId?: string;
-		AvailabilityZone?: string;
-		PreferredMaintenanceWindow?: string;
+		Endpoint?: Endpoint | null;
+		ClusterCreateTime?: Date | null;
+		AutomatedSnapshotRetentionPeriod?: number | null;
+		ManualSnapshotRetentionPeriod?: number | null;
+		ClusterSecurityGroups?: Array<ClusterSecurityGroupMembership> | null;
+		VpcSecurityGroups?: Array<VpcSecurityGroupMembership> | null;
+		ClusterParameterGroups?: Array<ClusterParameterGroupStatus> | null;
+		ClusterSubnetGroupName?: string | null;
+		VpcId?: string | null;
+		AvailabilityZone?: string | null;
+		PreferredMaintenanceWindow?: string | null;
 
 		/** Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied. */
-		PendingModifiedValues?: PendingModifiedValues;
-		ClusterVersion?: string;
-		AllowVersionUpgrade?: boolean;
-		NumberOfNodes?: number;
-		PubliclyAccessible?: boolean;
-		Encrypted?: boolean;
+		PendingModifiedValues?: PendingModifiedValues | null;
+		ClusterVersion?: string | null;
+		AllowVersionUpgrade?: boolean | null;
+		NumberOfNodes?: number | null;
+		PubliclyAccessible?: boolean | null;
+		Encrypted?: boolean | null;
 
 		/** Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot. */
-		RestoreStatus?: RestoreStatus;
+		RestoreStatus?: RestoreStatus | null;
 
 		/** Describes the status of a cluster while it is in the process of resizing with an incremental resize. */
-		DataTransferProgress?: DataTransferProgress;
+		DataTransferProgress?: DataTransferProgress | null;
 
 		/** Describes the status of changes to HSM settings. */
-		HsmStatus?: HsmStatus;
+		HsmStatus?: HsmStatus | null;
 
 		/** Returns the destination region and retention period that are configured for cross-region snapshot copy. */
-		ClusterSnapshotCopyStatus?: ClusterSnapshotCopyStatus;
-		ClusterPublicKey?: string;
-		ClusterNodes?: Array<ClusterNode>;
+		ClusterSnapshotCopyStatus?: ClusterSnapshotCopyStatus | null;
+		ClusterPublicKey?: string | null;
+		ClusterNodes?: Array<ClusterNode> | null;
 
 		/** Describes the status of the elastic IP (EIP) address. */
-		ElasticIpStatus?: ElasticIpStatus;
-		ClusterRevisionNumber?: string;
-		Tags?: Array<Tag>;
-		KmsKeyId?: string;
-		EnhancedVpcRouting?: boolean;
-		IamRoles?: Array<ClusterIamRole>;
-		PendingActions?: Array<string>;
-		MaintenanceTrackName?: string;
-		ElasticResizeNumberOfNodeOptions?: string;
-		DeferredMaintenanceWindows?: Array<DeferredMaintenanceWindow>;
-		SnapshotScheduleIdentifier?: string;
-		SnapshotScheduleState?: ClusterSnapshotScheduleState;
-		ExpectedNextSnapshotScheduleTime?: Date;
-		ExpectedNextSnapshotScheduleTimeStatus?: string;
-		NextMaintenanceWindowStartTime?: Date;
+		ElasticIpStatus?: ElasticIpStatus | null;
+		ClusterRevisionNumber?: string | null;
+		Tags?: Array<Tag> | null;
+		KmsKeyId?: string | null;
+		EnhancedVpcRouting?: boolean | null;
+		IamRoles?: Array<ClusterIamRole> | null;
+		PendingActions?: Array<string> | null;
+		MaintenanceTrackName?: string | null;
+		ElasticResizeNumberOfNodeOptions?: string | null;
+		DeferredMaintenanceWindows?: Array<DeferredMaintenanceWindow> | null;
+		SnapshotScheduleIdentifier?: string | null;
+		SnapshotScheduleState?: ClusterSnapshotScheduleState | null;
+		ExpectedNextSnapshotScheduleTime?: Date | null;
+		ExpectedNextSnapshotScheduleTimeStatus?: string | null;
+		NextMaintenanceWindowStartTime?: Date | null;
 
 		/** Describes a resize operation. */
-		ResizeInfo?: ResizeInfo;
+		ResizeInfo?: ResizeInfo | null;
 	}
 
 
 	/** Describes a connection endpoint. */
 	export interface Endpoint {
-		Address?: string;
-		Port?: number;
+		Address?: string | null;
+		Port?: number | null;
 	}
 
 
 	/** Describes a cluster security group. */
 	export interface ClusterSecurityGroupMembership {
-		ClusterSecurityGroupName?: string;
-		Status?: string;
+		ClusterSecurityGroupName?: string | null;
+		Status?: string | null;
 	}
 
 
 	/** Describes the members of a VPC security group. */
 	export interface VpcSecurityGroupMembership {
-		VpcSecurityGroupId?: string;
-		Status?: string;
+		VpcSecurityGroupId?: string | null;
+		Status?: string | null;
 	}
 
 
 	/** Describes the status of a parameter group. */
 	export interface ClusterParameterGroupStatus {
-		ParameterGroupName?: string;
-		ParameterApplyStatus?: string;
-		ClusterParameterStatusList?: Array<ClusterParameterStatus>;
+		ParameterGroupName?: string | null;
+		ParameterApplyStatus?: string | null;
+		ClusterParameterStatusList?: Array<ClusterParameterStatus> | null;
 	}
 
 
 	/** Describes the status of a parameter group. */
 	export interface ClusterParameterStatus {
-		ParameterName?: string;
-		ParameterApplyStatus?: string;
-		ParameterApplyErrorDescription?: string;
+		ParameterName?: string | null;
+		ParameterApplyStatus?: string | null;
+		ParameterApplyErrorDescription?: string | null;
 	}
 
 
 	/** Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied. */
 	export interface PendingModifiedValues {
-		MasterUserPassword?: string;
-		NodeType?: string;
-		NumberOfNodes?: number;
-		ClusterType?: string;
-		ClusterVersion?: string;
-		AutomatedSnapshotRetentionPeriod?: number;
-		ClusterIdentifier?: string;
-		PubliclyAccessible?: boolean;
-		EnhancedVpcRouting?: boolean;
-		MaintenanceTrackName?: string;
-		EncryptionType?: string;
+		MasterUserPassword?: string | null;
+		NodeType?: string | null;
+		NumberOfNodes?: number | null;
+		ClusterType?: string | null;
+		ClusterVersion?: string | null;
+		AutomatedSnapshotRetentionPeriod?: number | null;
+		ClusterIdentifier?: string | null;
+		PubliclyAccessible?: boolean | null;
+		EnhancedVpcRouting?: boolean | null;
+		MaintenanceTrackName?: string | null;
+		EncryptionType?: string | null;
 	}
 
 
 	/** Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot. */
 	export interface RestoreStatus {
-		Status?: string;
-		CurrentRestoreRateInMegaBytesPerSecond?: number;
-		SnapshotSizeInMegaBytes?: number;
-		ProgressInMegaBytes?: number;
-		ElapsedTimeInSeconds?: number;
-		EstimatedTimeToCompletionInSeconds?: number;
+		Status?: string | null;
+		CurrentRestoreRateInMegaBytesPerSecond?: number | null;
+		SnapshotSizeInMegaBytes?: number | null;
+		ProgressInMegaBytes?: number | null;
+		ElapsedTimeInSeconds?: number | null;
+		EstimatedTimeToCompletionInSeconds?: number | null;
 	}
 
 
 	/** Describes the status of a cluster while it is in the process of resizing with an incremental resize. */
 	export interface DataTransferProgress {
-		Status?: string;
-		CurrentRateInMegaBytesPerSecond?: number;
-		TotalDataInMegaBytes?: number;
-		DataTransferredInMegaBytes?: number;
-		EstimatedTimeToCompletionInSeconds?: number;
-		ElapsedTimeInSeconds?: number;
+		Status?: string | null;
+		CurrentRateInMegaBytesPerSecond?: number | null;
+		TotalDataInMegaBytes?: number | null;
+		DataTransferredInMegaBytes?: number | null;
+		EstimatedTimeToCompletionInSeconds?: number | null;
+		ElapsedTimeInSeconds?: number | null;
 	}
 
 
 	/** Describes the status of changes to HSM settings. */
 	export interface HsmStatus {
-		HsmClientCertificateIdentifier?: string;
-		HsmConfigurationIdentifier?: string;
-		Status?: string;
+		HsmClientCertificateIdentifier?: string | null;
+		HsmConfigurationIdentifier?: string | null;
+		Status?: string | null;
 	}
 
 
 	/** Returns the destination region and retention period that are configured for cross-region snapshot copy. */
 	export interface ClusterSnapshotCopyStatus {
-		DestinationRegion?: string;
-		RetentionPeriod?: number;
-		ManualSnapshotRetentionPeriod?: number;
-		SnapshotCopyGrantName?: string;
+		DestinationRegion?: string | null;
+		RetentionPeriod?: number | null;
+		ManualSnapshotRetentionPeriod?: number | null;
+		SnapshotCopyGrantName?: string | null;
 	}
 
 
 	/** The identifier of a node in a cluster. */
 	export interface ClusterNode {
-		NodeRole?: string;
-		PrivateIPAddress?: string;
-		PublicIPAddress?: string;
+		NodeRole?: string | null;
+		PrivateIPAddress?: string | null;
+		PublicIPAddress?: string | null;
 	}
 
 
 	/** Describes the status of the elastic IP (EIP) address. */
 	export interface ElasticIpStatus {
-		ElasticIp?: string;
-		Status?: string;
+		ElasticIp?: string | null;
+		Status?: string | null;
 	}
 
 
 	/** An AWS Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access other AWS services. */
 	export interface ClusterIamRole {
-		IamRoleArn?: string;
-		ApplyStatus?: string;
+		IamRoleArn?: string | null;
+		ApplyStatus?: string | null;
 	}
 
 
 	/** Describes a deferred maintenance window */
 	export interface DeferredMaintenanceWindow {
-		DeferMaintenanceIdentifier?: string;
-		DeferMaintenanceStartTime?: Date;
-		DeferMaintenanceEndTime?: Date;
+		DeferMaintenanceIdentifier?: string | null;
+		DeferMaintenanceStartTime?: Date | null;
+		DeferMaintenanceEndTime?: Date | null;
 	}
 
 	export enum ClusterSnapshotScheduleState { MODIFYING = 0, ACTIVE = 1, FAILED = 2 }
@@ -448,8 +448,8 @@ export namespace MyNS {
 
 	/** Describes a resize operation. */
 	export interface ResizeInfo {
-		ResizeType?: string;
-		AllowCancelResize?: boolean;
+		ResizeType?: string | null;
+		AllowCancelResize?: boolean | null;
 	}
 
 	export interface ClusterAlreadyExistsFault {
@@ -509,16 +509,16 @@ export namespace MyNS {
 	export interface CreateClusterParameterGroupResult {
 
 		/** Describes a parameter group. */
-		ClusterParameterGroup?: ClusterParameterGroup;
+		ClusterParameterGroup?: ClusterParameterGroup | null;
 	}
 
 
 	/** Describes a parameter group. */
 	export interface ClusterParameterGroup {
-		ParameterGroupName?: string;
-		ParameterGroupFamily?: string;
-		Description?: string;
-		Tags?: Array<Tag>;
+		ParameterGroupName?: string | null;
+		ParameterGroupFamily?: string | null;
+		Description?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ClusterParameterGroupQuotaExceededFault {
@@ -530,7 +530,7 @@ export namespace MyNS {
 	export interface CreateClusterSecurityGroupResult {
 
 		/** Describes a security group. */
-		ClusterSecurityGroup?: ClusterSecurityGroup;
+		ClusterSecurityGroup?: ClusterSecurityGroup | null;
 	}
 
 	export interface ClusterSecurityGroupAlreadyExistsFault {
@@ -542,47 +542,47 @@ export namespace MyNS {
 	export interface CreateClusterSnapshotResult {
 
 		/** Describes a snapshot. */
-		Snapshot?: Snapshot;
+		Snapshot?: Snapshot | null;
 	}
 
 	export interface CreateClusterSubnetGroupResult {
 
 		/** Describes a subnet group. */
-		ClusterSubnetGroup?: ClusterSubnetGroup;
+		ClusterSubnetGroup?: ClusterSubnetGroup | null;
 	}
 
 
 	/** Describes a subnet group. */
 	export interface ClusterSubnetGroup {
-		ClusterSubnetGroupName?: string;
-		Description?: string;
-		VpcId?: string;
-		SubnetGroupStatus?: string;
-		Subnets?: Array<Subnet>;
-		Tags?: Array<Tag>;
+		ClusterSubnetGroupName?: string | null;
+		Description?: string | null;
+		VpcId?: string | null;
+		SubnetGroupStatus?: string | null;
+		Subnets?: Array<Subnet> | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** Describes a subnet. */
 	export interface Subnet {
-		SubnetIdentifier?: string;
+		SubnetIdentifier?: string | null;
 
 		/** Describes an availability zone. */
-		SubnetAvailabilityZone?: AvailabilityZone;
-		SubnetStatus?: string;
+		SubnetAvailabilityZone?: AvailabilityZone | null;
+		SubnetStatus?: string | null;
 	}
 
 
 	/** Describes an availability zone. */
 	export interface AvailabilityZone {
-		Name?: string;
-		SupportedPlatforms?: Array<SupportedPlatform>;
+		Name?: string | null;
+		SupportedPlatforms?: Array<SupportedPlatform> | null;
 	}
 
 
 	/** A list of supported platforms for orderable clusters. */
 	export interface SupportedPlatform {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface ClusterSubnetGroupAlreadyExistsFault {
@@ -597,23 +597,23 @@ export namespace MyNS {
 	export interface CreateEventSubscriptionResult {
 
 		/** Describes event subscriptions. */
-		EventSubscription?: EventSubscription;
+		EventSubscription?: EventSubscription | null;
 	}
 
 
 	/** Describes event subscriptions. */
 	export interface EventSubscription {
-		CustomerAwsId?: string;
-		CustSubscriptionId?: string;
-		SnsTopicArn?: string;
-		Status?: string;
-		SubscriptionCreationTime?: Date;
-		SourceType?: string;
-		SourceIdsList?: Array<string>;
-		EventCategoriesList?: Array<string>;
-		Severity?: string;
-		Enabled?: boolean;
-		Tags?: Array<Tag>;
+		CustomerAwsId?: string | null;
+		CustSubscriptionId?: string | null;
+		SnsTopicArn?: string | null;
+		Status?: string | null;
+		SubscriptionCreationTime?: Date | null;
+		SourceType?: string | null;
+		SourceIdsList?: Array<string> | null;
+		EventCategoriesList?: Array<string> | null;
+		Severity?: string | null;
+		Enabled?: boolean | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface EventSubscriptionQuotaExceededFault {
@@ -646,15 +646,15 @@ export namespace MyNS {
 	export interface CreateHsmClientCertificateResult {
 
 		/** Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files. */
-		HsmClientCertificate?: HsmClientCertificate;
+		HsmClientCertificate?: HsmClientCertificate | null;
 	}
 
 
 	/** Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files. */
 	export interface HsmClientCertificate {
-		HsmClientCertificateIdentifier?: string;
-		HsmClientCertificatePublicKey?: string;
-		Tags?: Array<Tag>;
+		HsmClientCertificateIdentifier?: string | null;
+		HsmClientCertificatePublicKey?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface HsmClientCertificateAlreadyExistsFault {
@@ -666,17 +666,17 @@ export namespace MyNS {
 	export interface CreateHsmConfigurationResult {
 
 		/** Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys. */
-		HsmConfiguration?: HsmConfiguration;
+		HsmConfiguration?: HsmConfiguration | null;
 	}
 
 
 	/** Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys. */
 	export interface HsmConfiguration {
-		HsmConfigurationIdentifier?: string;
-		Description?: string;
-		HsmIpAddress?: string;
-		HsmPartitionName?: string;
-		Tags?: Array<Tag>;
+		HsmConfigurationIdentifier?: string | null;
+		Description?: string | null;
+		HsmIpAddress?: string | null;
+		HsmPartitionName?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface HsmConfigurationAlreadyExistsFault {
@@ -688,33 +688,33 @@ export namespace MyNS {
 
 	/** Describes a scheduled action. You can use a scheduled action to trigger some Amazon Redshift API operations on a schedule. For information about which API operations can be scheduled, see <a>ScheduledActionType</a>.  */
 	export interface ScheduledAction {
-		ScheduledActionName?: string;
+		ScheduledActionName?: string | null;
 
 		/** The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler. */
-		TargetAction?: ScheduledActionType;
-		Schedule?: string;
-		IamRole?: string;
-		ScheduledActionDescription?: string;
-		State?: ScheduledActionState;
-		NextInvocations?: Array<string>;
-		StartTime?: Date;
-		EndTime?: Date;
+		TargetAction?: ScheduledActionType | null;
+		Schedule?: string | null;
+		IamRole?: string | null;
+		ScheduledActionDescription?: string | null;
+		State?: ScheduledActionState | null;
+		NextInvocations?: Array<string> | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
 	}
 
 
 	/** The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler.  */
 	export interface ScheduledActionType {
-		ResizeCluster?: ResizeClusterMessage;
-		PauseCluster?: PauseClusterMessage;
-		ResumeCluster?: ResumeClusterMessage;
+		ResizeCluster?: ResizeClusterMessage | null;
+		PauseCluster?: PauseClusterMessage | null;
+		ResumeCluster?: ResumeClusterMessage | null;
 	}
 
 	export interface ResizeClusterMessage {
 		ClusterIdentifier: string;
-		ClusterType?: string;
-		NodeType?: string;
-		NumberOfNodes?: number;
-		Classic?: boolean;
+		ClusterType?: string | null;
+		NodeType?: string | null;
+		NumberOfNodes?: number | null;
+		Classic?: boolean | null;
 	}
 
 	export interface PauseClusterMessage {
@@ -745,15 +745,15 @@ export namespace MyNS {
 	export interface CreateSnapshotCopyGrantResult {
 
 		/** <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from AWS KMS in the destination region.</p> <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p> */
-		SnapshotCopyGrant?: SnapshotCopyGrant;
+		SnapshotCopyGrant?: SnapshotCopyGrant | null;
 	}
 
 
 	/** <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from AWS KMS in the destination region.</p> <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p> */
 	export interface SnapshotCopyGrant {
-		SnapshotCopyGrantName?: string;
-		KmsKeyId?: string;
-		Tags?: Array<Tag>;
+		SnapshotCopyGrantName?: string | null;
+		KmsKeyId?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface SnapshotCopyGrantAlreadyExistsFault {
@@ -765,20 +765,20 @@ export namespace MyNS {
 
 	/** Describes a snapshot schedule. You can set a regular interval for creating snapshots of a cluster. You can also schedule snapshots for specific dates.  */
 	export interface SnapshotSchedule {
-		ScheduleDefinitions?: Array<string>;
-		ScheduleIdentifier?: string;
-		ScheduleDescription?: string;
-		Tags?: Array<Tag>;
-		NextInvocations?: Array<string>;
-		AssociatedClusterCount?: number;
-		AssociatedClusters?: Array<ClusterAssociatedToSchedule>;
+		ScheduleDefinitions?: Array<string> | null;
+		ScheduleIdentifier?: string | null;
+		ScheduleDescription?: string | null;
+		Tags?: Array<Tag> | null;
+		NextInvocations?: Array<string> | null;
+		AssociatedClusterCount?: number | null;
+		AssociatedClusters?: Array<ClusterAssociatedToSchedule> | null;
 	}
 
 
 	/** <p/> */
 	export interface ClusterAssociatedToSchedule {
-		ClusterIdentifier?: string;
-		ScheduleAssociationState?: ClusterSnapshotScheduleState;
+		ClusterIdentifier?: string | null;
+		ScheduleAssociationState?: ClusterSnapshotScheduleState | null;
 	}
 
 	export interface SnapshotScheduleAlreadyExistsFault {
@@ -796,14 +796,14 @@ export namespace MyNS {
 
 	/** Describes a usage limit object for a cluster.  */
 	export interface UsageLimit {
-		UsageLimitId?: string;
-		ClusterIdentifier?: string;
-		FeatureType?: UsageLimitFeatureType;
-		LimitType?: UsageLimitLimitType;
-		Amount?: number;
-		Period?: UsageLimitPeriod;
-		BreachAction?: UsageLimitBreachAction;
-		Tags?: Array<Tag>;
+		UsageLimitId?: string | null;
+		ClusterIdentifier?: string | null;
+		FeatureType?: UsageLimitFeatureType | null;
+		LimitType?: UsageLimitLimitType | null;
+		Amount?: number | null;
+		Period?: UsageLimitPeriod | null;
+		BreachAction?: UsageLimitBreachAction | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum UsageLimitFeatureType { spectrum = 0, concurrency_scaling = 1 }
@@ -823,7 +823,7 @@ export namespace MyNS {
 	export interface DeleteClusterResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface InvalidClusterParameterGroupStateFault {
@@ -832,7 +832,7 @@ export namespace MyNS {
 	export interface DeleteClusterSnapshotResult {
 
 		/** Describes a snapshot. */
-		Snapshot?: Snapshot;
+		Snapshot?: Snapshot | null;
 	}
 
 	export interface InvalidClusterSubnetStateFault {
@@ -866,70 +866,70 @@ export namespace MyNS {
 	}
 
 	export interface AccountAttributeList {
-		AccountAttributes?: Array<AccountAttribute>;
+		AccountAttributes?: Array<AccountAttribute> | null;
 	}
 
 
 	/** A name value pair that describes an aspect of an account.  */
 	export interface AccountAttribute {
-		AttributeName?: string;
-		AttributeValues?: Array<AttributeValueTarget>;
+		AttributeName?: string | null;
+		AttributeValues?: Array<AttributeValueTarget> | null;
 	}
 
 
 	/** Describes an attribute value. */
 	export interface AttributeValueTarget {
-		AttributeValue?: string;
+		AttributeValue?: string | null;
 	}
 
 	export interface ClusterDbRevisionsMessage {
-		Marker?: string;
-		ClusterDbRevisions?: Array<ClusterDbRevision>;
+		Marker?: string | null;
+		ClusterDbRevisions?: Array<ClusterDbRevision> | null;
 	}
 
 
 	/** Describes a <code>ClusterDbRevision</code>. */
 	export interface ClusterDbRevision {
-		ClusterIdentifier?: string;
-		CurrentDatabaseRevision?: string;
-		DatabaseRevisionReleaseDate?: Date;
-		RevisionTargets?: Array<RevisionTarget>;
+		ClusterIdentifier?: string | null;
+		CurrentDatabaseRevision?: string | null;
+		DatabaseRevisionReleaseDate?: Date | null;
+		RevisionTargets?: Array<RevisionTarget> | null;
 	}
 
 
 	/** Describes a <code>RevisionTarget</code>. */
 	export interface RevisionTarget {
-		DatabaseRevision?: string;
-		Description?: string;
-		DatabaseRevisionReleaseDate?: Date;
+		DatabaseRevision?: string | null;
+		Description?: string | null;
+		DatabaseRevisionReleaseDate?: Date | null;
 	}
 
 
 	/** Contains the output from the <a>DescribeClusterParameterGroups</a> action.  */
 	export interface ClusterParameterGroupsMessage {
-		Marker?: string;
-		ParameterGroups?: Array<ClusterParameterGroup>;
+		Marker?: string | null;
+		ParameterGroups?: Array<ClusterParameterGroup> | null;
 	}
 
 
 	/** Contains the output from the <a>DescribeClusterParameters</a> action.  */
 	export interface ClusterParameterGroupDetails {
-		Parameters?: Array<Parameter>;
-		Marker?: string;
+		Parameters?: Array<Parameter> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Describes a parameter in a cluster parameter group. */
 	export interface Parameter {
-		ParameterName?: string;
-		ParameterValue?: string;
-		Description?: string;
-		Source?: string;
-		DataType?: string;
-		AllowedValues?: string;
-		ApplyType?: ParameterApplyType;
-		IsModifiable?: boolean;
-		MinimumEngineVersion?: string;
+		ParameterName?: string | null;
+		ParameterValue?: string | null;
+		Description?: string | null;
+		Source?: string | null;
+		DataType?: string | null;
+		AllowedValues?: string | null;
+		ApplyType?: ParameterApplyType | null;
+		IsModifiable?: boolean | null;
+		MinimumEngineVersion?: string | null;
 	}
 
 	export enum ParameterApplyType { _static = 0, dynamic = 1 }
@@ -937,22 +937,22 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ClusterSecurityGroupMessage {
-		Marker?: string;
-		ClusterSecurityGroups?: Array<ClusterSecurityGroup>;
+		Marker?: string | null;
+		ClusterSecurityGroups?: Array<ClusterSecurityGroup> | null;
 	}
 
 
 	/** Contains the output from the <a>DescribeClusterSnapshots</a> action.  */
 	export interface SnapshotMessage {
-		Marker?: string;
-		Snapshots?: Array<Snapshot>;
+		Marker?: string | null;
+		Snapshots?: Array<Snapshot> | null;
 	}
 
 
 	/** Describes a sorting entity */
 	export interface SnapshotSortingEntity {
 		Attribute: SnapshotSortingEntityAttribute;
-		SortOrder?: SnapshotSortingEntitySortOrder;
+		SortOrder?: SnapshotSortingEntitySortOrder | null;
 	}
 
 	export enum SnapshotSortingEntityAttribute { SOURCE_TYPE = 0, TOTAL_SIZE = 1, CREATE_TIME = 2 }
@@ -962,119 +962,119 @@ export namespace MyNS {
 
 	/** Contains the output from the <a>DescribeClusterSubnetGroups</a> action.  */
 	export interface ClusterSubnetGroupMessage {
-		Marker?: string;
-		ClusterSubnetGroups?: Array<ClusterSubnetGroup>;
+		Marker?: string | null;
+		ClusterSubnetGroups?: Array<ClusterSubnetGroup> | null;
 	}
 
 	export interface TrackListMessage {
-		MaintenanceTracks?: Array<MaintenanceTrack>;
-		Marker?: string;
+		MaintenanceTracks?: Array<MaintenanceTrack> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Defines a maintenance track that determines which Amazon Redshift version to apply during a maintenance window. If the value for <code>MaintenanceTrack</code> is <code>current</code>, the cluster is updated to the most recently certified maintenance release. If the value is <code>trailing</code>, the cluster is updated to the previously certified maintenance release.  */
 	export interface MaintenanceTrack {
-		MaintenanceTrackName?: string;
-		DatabaseVersion?: string;
-		UpdateTargets?: Array<UpdateTarget>;
+		MaintenanceTrackName?: string | null;
+		DatabaseVersion?: string | null;
+		UpdateTargets?: Array<UpdateTarget> | null;
 	}
 
 
 	/** A maintenance track that you can switch the current track to. */
 	export interface UpdateTarget {
-		MaintenanceTrackName?: string;
-		DatabaseVersion?: string;
-		SupportedOperations?: Array<SupportedOperation>;
+		MaintenanceTrackName?: string | null;
+		DatabaseVersion?: string | null;
+		SupportedOperations?: Array<SupportedOperation> | null;
 	}
 
 
 	/** Describes the operations that are allowed on a maintenance track. */
 	export interface SupportedOperation {
-		OperationName?: string;
+		OperationName?: string | null;
 	}
 
 
 	/** Contains the output from the <a>DescribeClusterVersions</a> action.  */
 	export interface ClusterVersionsMessage {
-		Marker?: string;
-		ClusterVersions?: Array<ClusterVersion>;
+		Marker?: string | null;
+		ClusterVersions?: Array<ClusterVersion> | null;
 	}
 
 
 	/** Describes a cluster version, including the parameter group family and description of the version. */
 	export interface ClusterVersion {
-		ClusterVersion1?: string;
-		ClusterParameterGroupFamily?: string;
-		Description?: string;
+		ClusterVersion1?: string | null;
+		ClusterParameterGroupFamily?: string | null;
+		Description?: string | null;
 	}
 
 
 	/** Contains the output from the <a>DescribeClusters</a> action.  */
 	export interface ClustersMessage {
-		Marker?: string;
-		Clusters?: Array<Cluster>;
+		Marker?: string | null;
+		Clusters?: Array<Cluster> | null;
 	}
 
 	export interface DescribeDefaultClusterParametersResult {
 
 		/** Describes the default cluster parameters for a parameter group family. */
-		DefaultClusterParameters?: DefaultClusterParameters;
+		DefaultClusterParameters?: DefaultClusterParameters | null;
 	}
 
 
 	/** Describes the default cluster parameters for a parameter group family. */
 	export interface DefaultClusterParameters {
-		ParameterGroupFamily?: string;
-		Marker?: string;
-		Parameters?: Array<Parameter>;
+		ParameterGroupFamily?: string | null;
+		Marker?: string | null;
+		Parameters?: Array<Parameter> | null;
 	}
 
 
 	/** <p/> */
 	export interface EventCategoriesMessage {
-		EventCategoriesMapList?: Array<EventCategoriesMap>;
+		EventCategoriesMapList?: Array<EventCategoriesMap> | null;
 	}
 
 
 	/** Describes event categories. */
 	export interface EventCategoriesMap {
-		SourceType?: string;
-		Events?: Array<EventInfoMap>;
+		SourceType?: string | null;
+		Events?: Array<EventInfoMap> | null;
 	}
 
 
 	/** Describes event information. */
 	export interface EventInfoMap {
-		EventId?: string;
-		EventCategories?: Array<string>;
-		EventDescription?: string;
-		Severity?: string;
+		EventId?: string | null;
+		EventCategories?: Array<string> | null;
+		EventDescription?: string | null;
+		Severity?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface EventSubscriptionsMessage {
-		Marker?: string;
-		EventSubscriptionsList?: Array<EventSubscription>;
+		Marker?: string | null;
+		EventSubscriptionsList?: Array<EventSubscription> | null;
 	}
 
 
 	/** <p/> */
 	export interface EventsMessage {
-		Marker?: string;
-		Events?: Array<Event>;
+		Marker?: string | null;
+		Events?: Array<Event> | null;
 	}
 
 
 	/** Describes an event. */
 	export interface Event {
-		SourceIdentifier?: string;
-		SourceType?: EventSourceType;
-		Message?: string;
-		EventCategories?: Array<string>;
-		Severity?: string;
-		Date?: Date;
-		EventId?: string;
+		SourceIdentifier?: string | null;
+		SourceType?: EventSourceType | null;
+		Message?: string | null;
+		EventCategories?: Array<string> | null;
+		Severity?: string | null;
+		Date?: Date | null;
+		EventId?: string | null;
 	}
 
 	export enum EventSourceType { cluster = 0, cluster_parameter_group = 1, cluster_security_group = 2, cluster_snapshot = 3, scheduled_action = 4 }
@@ -1082,40 +1082,40 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface HsmClientCertificateMessage {
-		Marker?: string;
-		HsmClientCertificates?: Array<HsmClientCertificate>;
+		Marker?: string | null;
+		HsmClientCertificates?: Array<HsmClientCertificate> | null;
 	}
 
 
 	/** <p/> */
 	export interface HsmConfigurationMessage {
-		Marker?: string;
-		HsmConfigurations?: Array<HsmConfiguration>;
+		Marker?: string | null;
+		HsmConfigurations?: Array<HsmConfiguration> | null;
 	}
 
 
 	/** Describes the status of logging for a cluster. */
 	export interface LoggingStatus {
-		LoggingEnabled?: boolean;
-		BucketName?: string;
-		S3KeyPrefix?: string;
-		LastSuccessfulDeliveryTime?: Date;
-		LastFailureTime?: Date;
-		LastFailureMessage?: string;
+		LoggingEnabled?: boolean | null;
+		BucketName?: string | null;
+		S3KeyPrefix?: string | null;
+		LastSuccessfulDeliveryTime?: Date | null;
+		LastFailureTime?: Date | null;
+		LastFailureMessage?: string | null;
 	}
 
 	export interface NodeConfigurationOptionsMessage {
-		NodeConfigurationOptionList?: Array<NodeConfigurationOption>;
-		Marker?: string;
+		NodeConfigurationOptionList?: Array<NodeConfigurationOption> | null;
+		Marker?: string | null;
 	}
 
 
 	/** A list of node configurations. */
 	export interface NodeConfigurationOption {
-		NodeType?: string;
-		NumberOfNodes?: number;
-		EstimatedDiskUtilizationPercent?: number;
-		Mode?: NodeConfigurationOptionMode;
+		NodeType?: string | null;
+		NumberOfNodes?: number | null;
+		EstimatedDiskUtilizationPercent?: number | null;
+		Mode?: NodeConfigurationOptionMode | null;
 	}
 
 	export enum NodeConfigurationOptionMode { standard = 0, high_performance = 1 }
@@ -1123,9 +1123,9 @@ export namespace MyNS {
 
 	/** A set of elements to filter the returned node configurations. */
 	export interface NodeConfigurationOptionsFilter {
-		Name?: NodeConfigurationOptionsFilterName;
-		Operator?: NodeConfigurationOptionsFilterOperator;
-		Values?: Array<string>;
+		Name?: NodeConfigurationOptionsFilterName | null;
+		Operator?: NodeConfigurationOptionsFilterOperator | null;
+		Values?: Array<string> | null;
 	}
 
 	export enum NodeConfigurationOptionsFilterName { NodeType = 0, NumberOfNodes = 1, EstimatedDiskUtilizationPercent = 2, Mode = 3 }
@@ -1138,50 +1138,50 @@ export namespace MyNS {
 
 	/** Contains the output from the <a>DescribeOrderableClusterOptions</a> action.  */
 	export interface OrderableClusterOptionsMessage {
-		OrderableClusterOptions?: Array<OrderableClusterOption>;
-		Marker?: string;
+		OrderableClusterOptions?: Array<OrderableClusterOption> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Describes an orderable cluster option. */
 	export interface OrderableClusterOption {
-		ClusterVersion?: string;
-		ClusterType?: string;
-		NodeType?: string;
-		AvailabilityZones?: Array<AvailabilityZone>;
+		ClusterVersion?: string | null;
+		ClusterType?: string | null;
+		NodeType?: string | null;
+		AvailabilityZones?: Array<AvailabilityZone> | null;
 	}
 
 
 	/** <p/> */
 	export interface ReservedNodeOfferingsMessage {
-		Marker?: string;
-		ReservedNodeOfferings?: Array<ReservedNodeOffering>;
+		Marker?: string | null;
+		ReservedNodeOfferings?: Array<ReservedNodeOffering> | null;
 	}
 
 
 	/** Describes a reserved node offering. */
 	export interface ReservedNodeOffering {
-		ReservedNodeOfferingId?: string;
-		NodeType?: string;
-		Duration?: number;
-		FixedPrice?: number;
-		UsagePrice?: number;
-		CurrencyCode?: string;
-		OfferingType?: string;
-		RecurringCharges?: Array<RecurringCharge>;
-		ReservedNodeOfferingType?: ReservedNodeReservedNodeOfferingType;
+		ReservedNodeOfferingId?: string | null;
+		NodeType?: string | null;
+		Duration?: number | null;
+		FixedPrice?: number | null;
+		UsagePrice?: number | null;
+		CurrencyCode?: string | null;
+		OfferingType?: string | null;
+		RecurringCharges?: Array<RecurringCharge> | null;
+		ReservedNodeOfferingType?: ReservedNodeReservedNodeOfferingType | null;
 	}
 
 
 	/** <p/> */
 	export interface ReservedNodesMessage {
-		Marker?: string;
-		ReservedNodes?: Array<ReservedNode>;
+		Marker?: string | null;
+		ReservedNodes?: Array<ReservedNode> | null;
 	}
 
 	export interface ScheduledActionsMessage {
-		Marker?: string;
-		ScheduledActions?: Array<ScheduledAction>;
+		Marker?: string | null;
+		ScheduledActions?: Array<ScheduledAction> | null;
 	}
 
 
@@ -1196,44 +1196,44 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface SnapshotCopyGrantMessage {
-		Marker?: string;
-		SnapshotCopyGrants?: Array<SnapshotCopyGrant>;
+		Marker?: string | null;
+		SnapshotCopyGrants?: Array<SnapshotCopyGrant> | null;
 	}
 
 	export interface DescribeSnapshotSchedulesOutputMessage {
-		SnapshotSchedules?: Array<SnapshotSchedule>;
-		Marker?: string;
+		SnapshotSchedules?: Array<SnapshotSchedule> | null;
+		Marker?: string | null;
 	}
 
 	export interface CustomerStorageMessage {
-		TotalBackupSizeInMegaBytes?: number;
-		TotalProvisionedStorageInMegaBytes?: number;
+		TotalBackupSizeInMegaBytes?: number | null;
+		TotalProvisionedStorageInMegaBytes?: number | null;
 	}
 
 
 	/** <p/> */
 	export interface TableRestoreStatusMessage {
-		TableRestoreStatusDetails?: Array<TableRestoreStatus>;
-		Marker?: string;
+		TableRestoreStatusDetails?: Array<TableRestoreStatus> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Describes the status of a <a>RestoreTableFromClusterSnapshot</a> operation. */
 	export interface TableRestoreStatus {
-		TableRestoreRequestId?: string;
-		Status?: TableRestoreStatusStatus;
-		Message?: string;
-		RequestTime?: Date;
-		ProgressInMegaBytes?: number;
-		TotalDataInMegaBytes?: number;
-		ClusterIdentifier?: string;
-		SnapshotIdentifier?: string;
-		SourceDatabaseName?: string;
-		SourceSchemaName?: string;
-		SourceTableName?: string;
-		TargetDatabaseName?: string;
-		TargetSchemaName?: string;
-		NewTableName?: string;
+		TableRestoreRequestId?: string | null;
+		Status?: TableRestoreStatusStatus | null;
+		Message?: string | null;
+		RequestTime?: Date | null;
+		ProgressInMegaBytes?: number | null;
+		TotalDataInMegaBytes?: number | null;
+		ClusterIdentifier?: string | null;
+		SnapshotIdentifier?: string | null;
+		SourceDatabaseName?: string | null;
+		SourceSchemaName?: string | null;
+		SourceTableName?: string | null;
+		TargetDatabaseName?: string | null;
+		TargetSchemaName?: string | null;
+		NewTableName?: string | null;
 	}
 
 	export enum TableRestoreStatusStatus { PENDING = 0, IN_PROGRESS = 1, SUCCEEDED = 2, FAILED = 3, CANCELED = 4 }
@@ -1244,8 +1244,8 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface TaggedResourceListMessage {
-		TaggedResources?: Array<TaggedResource>;
-		Marker?: string;
+		TaggedResources?: Array<TaggedResource> | null;
+		Marker?: string | null;
 	}
 
 
@@ -1253,20 +1253,20 @@ export namespace MyNS {
 	export interface TaggedResource {
 
 		/** A tag consisting of a name/value pair for a resource. */
-		Tag?: Tag;
-		ResourceName?: string;
-		ResourceType?: string;
+		Tag?: Tag | null;
+		ResourceName?: string | null;
+		ResourceType?: string | null;
 	}
 
 	export interface UsageLimitList {
-		UsageLimits?: Array<UsageLimit>;
-		Marker?: string;
+		UsageLimits?: Array<UsageLimit> | null;
+		Marker?: string | null;
 	}
 
 	export interface DisableSnapshotCopyResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface SnapshotCopyAlreadyDisabledFault {
@@ -1287,7 +1287,7 @@ export namespace MyNS {
 	export interface EnableSnapshotCopyResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface IncompatibleOrderableOptions {
@@ -1305,20 +1305,20 @@ export namespace MyNS {
 
 	/** Temporary credentials with authorization to log on to an Amazon Redshift database.  */
 	export interface ClusterCredentials {
-		DbUser?: string;
-		DbPassword?: string;
-		Expiration?: Date;
+		DbUser?: string | null;
+		DbPassword?: string | null;
+		Expiration?: Date | null;
 	}
 
 	export interface GetReservedNodeExchangeOfferingsOutputMessage {
-		Marker?: string;
-		ReservedNodeOfferings?: Array<ReservedNodeOffering>;
+		Marker?: string | null;
+		ReservedNodeOfferings?: Array<ReservedNodeOffering> | null;
 	}
 
 	export interface ModifyClusterResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface UnsupportedOptionFault {
@@ -1330,7 +1330,7 @@ export namespace MyNS {
 	export interface ModifyClusterDbRevisionResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface ClusterOnLatestRevisionFault {
@@ -1339,32 +1339,32 @@ export namespace MyNS {
 	export interface ModifyClusterIamRolesResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface ModifyClusterMaintenanceResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 
 	/** <p/> */
 	export interface ClusterParameterGroupNameMessage {
-		ParameterGroupName?: string;
-		ParameterGroupStatus?: string;
+		ParameterGroupName?: string | null;
+		ParameterGroupStatus?: string | null;
 	}
 
 	export interface ModifyClusterSnapshotResult {
 
 		/** Describes a snapshot. */
-		Snapshot?: Snapshot;
+		Snapshot?: Snapshot | null;
 	}
 
 	export interface ModifyClusterSubnetGroupResult {
 
 		/** Describes a subnet group. */
-		ClusterSubnetGroup?: ClusterSubnetGroup;
+		ClusterSubnetGroup?: ClusterSubnetGroup | null;
 	}
 
 	export interface SubnetAlreadyInUse {
@@ -1373,13 +1373,13 @@ export namespace MyNS {
 	export interface ModifyEventSubscriptionResult {
 
 		/** Describes event subscriptions. */
-		EventSubscription?: EventSubscription;
+		EventSubscription?: EventSubscription | null;
 	}
 
 	export interface ModifySnapshotCopyRetentionPeriodResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface SnapshotCopyDisabledFault {
@@ -1391,13 +1391,13 @@ export namespace MyNS {
 	export interface PauseClusterResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface PurchaseReservedNodeOfferingResult {
 
 		/** Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node offerings. */
-		ReservedNode?: ReservedNode;
+		ReservedNode?: ReservedNode | null;
 	}
 
 	export interface ReservedNodeQuotaExceededFault {
@@ -1406,19 +1406,19 @@ export namespace MyNS {
 	export interface RebootClusterResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface ResizeClusterResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface RestoreFromClusterSnapshotResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface InvalidRestoreFault {
@@ -1427,7 +1427,7 @@ export namespace MyNS {
 	export interface RestoreTableFromClusterSnapshotResult {
 
 		/** Describes the status of a <a>RestoreTableFromClusterSnapshot</a> operation. */
-		TableRestoreStatus?: TableRestoreStatus;
+		TableRestoreStatus?: TableRestoreStatus | null;
 	}
 
 	export interface InProgressTableRestoreQuotaExceededFault {
@@ -1439,13 +1439,13 @@ export namespace MyNS {
 	export interface ResumeClusterResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface RevokeClusterSecurityGroupIngressResult {
 
 		/** Describes a security group. */
-		ClusterSecurityGroup?: ClusterSecurityGroup;
+		ClusterSecurityGroup?: ClusterSecurityGroup | null;
 	}
 
 	export interface AuthorizationNotFoundFault {
@@ -1454,13 +1454,13 @@ export namespace MyNS {
 	export interface RevokeSnapshotAccessResult {
 
 		/** Describes a snapshot. */
-		Snapshot?: Snapshot;
+		Snapshot?: Snapshot | null;
 	}
 
 	export interface RotateEncryptionKeyResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface AcceptReservedNodeExchangeInputMessage {
@@ -1474,16 +1474,16 @@ export namespace MyNS {
 	/** <p/> */
 	export interface AuthorizeClusterSecurityGroupIngressMessage {
 		ClusterSecurityGroupName: string;
-		CIDRIP?: string;
-		EC2SecurityGroupName?: string;
-		EC2SecurityGroupOwnerId?: string;
+		CIDRIP?: string | null;
+		EC2SecurityGroupName?: string | null;
+		EC2SecurityGroupOwnerId?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface AuthorizeSnapshotAccessMessage {
 		SnapshotIdentifier: string;
-		SnapshotClusterIdentifier?: string;
+		SnapshotClusterIdentifier?: string | null;
 		AccountWithRestoreAccess: string;
 	}
 
@@ -1493,8 +1493,8 @@ export namespace MyNS {
 
 	export interface BatchModifyClusterSnapshotsMessage {
 		SnapshotIdentifierList: Array<string>;
-		ManualSnapshotRetentionPeriod?: number;
-		Force?: boolean;
+		ManualSnapshotRetentionPeriod?: number | null;
+		Force?: boolean | null;
 	}
 
 	export interface CancelResizeMessage {
@@ -1507,44 +1507,44 @@ export namespace MyNS {
 	/** <p/> */
 	export interface CopyClusterSnapshotMessage {
 		SourceSnapshotIdentifier: string;
-		SourceSnapshotClusterIdentifier?: string;
+		SourceSnapshotClusterIdentifier?: string | null;
 		TargetSnapshotIdentifier: string;
-		ManualSnapshotRetentionPeriod?: number;
+		ManualSnapshotRetentionPeriod?: number | null;
 	}
 
 
 	/** <p/> */
 	export interface CreateClusterMessage {
-		DBName?: string;
+		DBName?: string | null;
 		ClusterIdentifier: string;
-		ClusterType?: string;
+		ClusterType?: string | null;
 		NodeType: string;
 		MasterUsername: string;
 		MasterUserPassword: string;
-		ClusterSecurityGroups?: Array<string>;
-		VpcSecurityGroupIds?: Array<string>;
-		ClusterSubnetGroupName?: string;
-		AvailabilityZone?: string;
-		PreferredMaintenanceWindow?: string;
-		ClusterParameterGroupName?: string;
-		AutomatedSnapshotRetentionPeriod?: number;
-		ManualSnapshotRetentionPeriod?: number;
-		Port?: number;
-		ClusterVersion?: string;
-		AllowVersionUpgrade?: boolean;
-		NumberOfNodes?: number;
-		PubliclyAccessible?: boolean;
-		Encrypted?: boolean;
-		HsmClientCertificateIdentifier?: string;
-		HsmConfigurationIdentifier?: string;
-		ElasticIp?: string;
-		Tags?: Array<Tag>;
-		KmsKeyId?: string;
-		EnhancedVpcRouting?: boolean;
-		AdditionalInfo?: string;
-		IamRoles?: Array<string>;
-		MaintenanceTrackName?: string;
-		SnapshotScheduleIdentifier?: string;
+		ClusterSecurityGroups?: Array<string> | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		ClusterSubnetGroupName?: string | null;
+		AvailabilityZone?: string | null;
+		PreferredMaintenanceWindow?: string | null;
+		ClusterParameterGroupName?: string | null;
+		AutomatedSnapshotRetentionPeriod?: number | null;
+		ManualSnapshotRetentionPeriod?: number | null;
+		Port?: number | null;
+		ClusterVersion?: string | null;
+		AllowVersionUpgrade?: boolean | null;
+		NumberOfNodes?: number | null;
+		PubliclyAccessible?: boolean | null;
+		Encrypted?: boolean | null;
+		HsmClientCertificateIdentifier?: string | null;
+		HsmConfigurationIdentifier?: string | null;
+		ElasticIp?: string | null;
+		Tags?: Array<Tag> | null;
+		KmsKeyId?: string | null;
+		EnhancedVpcRouting?: boolean | null;
+		AdditionalInfo?: string | null;
+		IamRoles?: Array<string> | null;
+		MaintenanceTrackName?: string | null;
+		SnapshotScheduleIdentifier?: string | null;
 	}
 
 
@@ -1553,7 +1553,7 @@ export namespace MyNS {
 		ParameterGroupName: string;
 		ParameterGroupFamily: string;
 		Description: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -1561,7 +1561,7 @@ export namespace MyNS {
 	export interface CreateClusterSecurityGroupMessage {
 		ClusterSecurityGroupName: string;
 		Description: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -1569,8 +1569,8 @@ export namespace MyNS {
 	export interface CreateClusterSnapshotMessage {
 		SnapshotIdentifier: string;
 		ClusterIdentifier: string;
-		ManualSnapshotRetentionPeriod?: number;
-		Tags?: Array<Tag>;
+		ManualSnapshotRetentionPeriod?: number | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -1579,7 +1579,7 @@ export namespace MyNS {
 		ClusterSubnetGroupName: string;
 		Description: string;
 		SubnetIds: Array<string>;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -1587,19 +1587,19 @@ export namespace MyNS {
 	export interface CreateEventSubscriptionMessage {
 		SubscriptionName: string;
 		SnsTopicArn: string;
-		SourceType?: string;
-		SourceIds?: Array<string>;
-		EventCategories?: Array<string>;
-		Severity?: string;
-		Enabled?: boolean;
-		Tags?: Array<Tag>;
+		SourceType?: string | null;
+		SourceIds?: Array<string> | null;
+		EventCategories?: Array<string> | null;
+		Severity?: string | null;
+		Enabled?: boolean | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** <p/> */
 	export interface CreateHsmClientCertificateMessage {
 		HsmClientCertificateIdentifier: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -1611,7 +1611,7 @@ export namespace MyNS {
 		HsmPartitionName: string;
 		HsmPartitionPassword: string;
 		HsmServerPublicCertificate: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateScheduledActionMessage {
@@ -1624,27 +1624,27 @@ export namespace MyNS {
 		TargetAction: ScheduledActionType;
 		Schedule: string;
 		IamRole: string;
-		ScheduledActionDescription?: string;
-		StartTime?: Date;
-		EndTime?: Date;
-		Enable?: boolean;
+		ScheduledActionDescription?: string | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		Enable?: boolean | null;
 	}
 
 
 	/** The result of the <code>CreateSnapshotCopyGrant</code> action. */
 	export interface CreateSnapshotCopyGrantMessage {
 		SnapshotCopyGrantName: string;
-		KmsKeyId?: string;
-		Tags?: Array<Tag>;
+		KmsKeyId?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateSnapshotScheduleMessage {
-		ScheduleDefinitions?: Array<string>;
-		ScheduleIdentifier?: string;
-		ScheduleDescription?: string;
-		Tags?: Array<Tag>;
-		DryRun?: boolean;
-		NextInvocations?: number;
+		ScheduleDefinitions?: Array<string> | null;
+		ScheduleIdentifier?: string | null;
+		ScheduleDescription?: string | null;
+		Tags?: Array<Tag> | null;
+		DryRun?: boolean | null;
+		NextInvocations?: number | null;
 	}
 
 
@@ -1659,9 +1659,9 @@ export namespace MyNS {
 		FeatureType: CreateUsageLimitMessageFeatureType;
 		LimitType: CreateUsageLimitMessageLimitType;
 		Amount: number;
-		Period?: UsageLimitPeriod;
-		BreachAction?: CreateUsageLimitMessageBreachAction;
-		Tags?: Array<Tag>;
+		Period?: UsageLimitPeriod | null;
+		BreachAction?: CreateUsageLimitMessageBreachAction | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum CreateUsageLimitMessageFeatureType { spectrum = 0, concurrency_scaling = 1 }
@@ -1674,9 +1674,9 @@ export namespace MyNS {
 	/** <p/> */
 	export interface DeleteClusterMessage {
 		ClusterIdentifier: string;
-		SkipFinalClusterSnapshot?: boolean;
-		FinalClusterSnapshotIdentifier?: string;
-		FinalClusterSnapshotRetentionPeriod?: number;
+		SkipFinalClusterSnapshot?: boolean | null;
+		FinalClusterSnapshotIdentifier?: string | null;
+		FinalClusterSnapshotRetentionPeriod?: number | null;
 	}
 
 
@@ -1741,118 +1741,118 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAccountAttributesMessage {
-		AttributeNames?: Array<string>;
+		AttributeNames?: Array<string> | null;
 	}
 
 	export interface DescribeClusterDbRevisionsMessage {
-		ClusterIdentifier?: string;
-		MaxRecords?: number;
-		Marker?: string;
+		ClusterIdentifier?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeClusterParameterGroupsMessage {
-		ParameterGroupName?: string;
-		MaxRecords?: number;
-		Marker?: string;
-		TagKeys?: Array<string>;
-		TagValues?: Array<string>;
+		ParameterGroupName?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		TagKeys?: Array<string> | null;
+		TagValues?: Array<string> | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeClusterParametersMessage {
 		ParameterGroupName: string;
-		Source?: string;
-		MaxRecords?: number;
-		Marker?: string;
+		Source?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeClusterSecurityGroupsMessage {
-		ClusterSecurityGroupName?: string;
-		MaxRecords?: number;
-		Marker?: string;
-		TagKeys?: Array<string>;
-		TagValues?: Array<string>;
+		ClusterSecurityGroupName?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		TagKeys?: Array<string> | null;
+		TagValues?: Array<string> | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeClusterSnapshotsMessage {
-		ClusterIdentifier?: string;
-		SnapshotIdentifier?: string;
-		SnapshotType?: string;
-		StartTime?: Date;
-		EndTime?: Date;
-		MaxRecords?: number;
-		Marker?: string;
-		OwnerAccount?: string;
-		TagKeys?: Array<string>;
-		TagValues?: Array<string>;
-		ClusterExists?: boolean;
-		SortingEntities?: Array<SnapshotSortingEntity>;
+		ClusterIdentifier?: string | null;
+		SnapshotIdentifier?: string | null;
+		SnapshotType?: string | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		OwnerAccount?: string | null;
+		TagKeys?: Array<string> | null;
+		TagValues?: Array<string> | null;
+		ClusterExists?: boolean | null;
+		SortingEntities?: Array<SnapshotSortingEntity> | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeClusterSubnetGroupsMessage {
-		ClusterSubnetGroupName?: string;
-		MaxRecords?: number;
-		Marker?: string;
-		TagKeys?: Array<string>;
-		TagValues?: Array<string>;
+		ClusterSubnetGroupName?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		TagKeys?: Array<string> | null;
+		TagValues?: Array<string> | null;
 	}
 
 	export interface DescribeClusterTracksMessage {
-		MaintenanceTrackName?: string;
-		MaxRecords?: number;
-		Marker?: string;
+		MaintenanceTrackName?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeClusterVersionsMessage {
-		ClusterVersion?: string;
-		ClusterParameterGroupFamily?: string;
-		MaxRecords?: number;
-		Marker?: string;
+		ClusterVersion?: string | null;
+		ClusterParameterGroupFamily?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeClustersMessage {
-		ClusterIdentifier?: string;
-		MaxRecords?: number;
-		Marker?: string;
-		TagKeys?: Array<string>;
-		TagValues?: Array<string>;
+		ClusterIdentifier?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		TagKeys?: Array<string> | null;
+		TagValues?: Array<string> | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeDefaultClusterParametersMessage {
 		ParameterGroupFamily: string;
-		MaxRecords?: number;
-		Marker?: string;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeEventCategoriesMessage {
-		SourceType?: string;
+		SourceType?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeEventSubscriptionsMessage {
-		SubscriptionName?: string;
-		MaxRecords?: number;
-		Marker?: string;
-		TagKeys?: Array<string>;
-		TagValues?: Array<string>;
+		SubscriptionName?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		TagKeys?: Array<string> | null;
+		TagValues?: Array<string> | null;
 	}
 
 	export enum SourceType { cluster = 0, cluster_parameter_group = 1, cluster_security_group = 2, cluster_snapshot = 3, scheduled_action = 4 }
@@ -1860,13 +1860,13 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeEventsMessage {
-		SourceIdentifier?: string;
-		SourceType?: DescribeEventsMessageSourceType;
-		StartTime?: Date;
-		EndTime?: Date;
-		Duration?: number;
-		MaxRecords?: number;
-		Marker?: string;
+		SourceIdentifier?: string | null;
+		SourceType?: DescribeEventsMessageSourceType | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		Duration?: number | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export enum DescribeEventsMessageSourceType { cluster = 0, cluster_parameter_group = 1, cluster_security_group = 2, cluster_snapshot = 3, scheduled_action = 4 }
@@ -1874,21 +1874,21 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeHsmClientCertificatesMessage {
-		HsmClientCertificateIdentifier?: string;
-		MaxRecords?: number;
-		Marker?: string;
-		TagKeys?: Array<string>;
-		TagValues?: Array<string>;
+		HsmClientCertificateIdentifier?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		TagKeys?: Array<string> | null;
+		TagValues?: Array<string> | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeHsmConfigurationsMessage {
-		HsmConfigurationIdentifier?: string;
-		MaxRecords?: number;
-		Marker?: string;
-		TagKeys?: Array<string>;
-		TagValues?: Array<string>;
+		HsmConfigurationIdentifier?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		TagKeys?: Array<string> | null;
+		TagValues?: Array<string> | null;
 	}
 
 
@@ -1899,12 +1899,12 @@ export namespace MyNS {
 
 	export interface DescribeNodeConfigurationOptionsMessage {
 		ActionType: DescribeNodeConfigurationOptionsMessageActionType;
-		ClusterIdentifier?: string;
-		SnapshotIdentifier?: string;
-		OwnerAccount?: string;
-		Filters?: Array<NodeConfigurationOptionsFilter>;
-		Marker?: string;
-		MaxRecords?: number;
+		ClusterIdentifier?: string | null;
+		SnapshotIdentifier?: string | null;
+		OwnerAccount?: string | null;
+		Filters?: Array<NodeConfigurationOptionsFilter> | null;
+		Marker?: string | null;
+		MaxRecords?: number | null;
 	}
 
 	export enum DescribeNodeConfigurationOptionsMessageActionType { restore_cluster = 0, recommend_node_config = 1, resize_cluster = 2 }
@@ -1912,26 +1912,26 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeOrderableClusterOptionsMessage {
-		ClusterVersion?: string;
-		NodeType?: string;
-		MaxRecords?: number;
-		Marker?: string;
+		ClusterVersion?: string | null;
+		NodeType?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeReservedNodeOfferingsMessage {
-		ReservedNodeOfferingId?: string;
-		MaxRecords?: number;
-		Marker?: string;
+		ReservedNodeOfferingId?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeReservedNodesMessage {
-		ReservedNodeId?: string;
-		MaxRecords?: number;
-		Marker?: string;
+		ReservedNodeId?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
@@ -1943,63 +1943,63 @@ export namespace MyNS {
 	export enum ScheduledActionTypeValues { ResizeCluster = 0, PauseCluster = 1, ResumeCluster = 2 }
 
 	export interface DescribeScheduledActionsMessage {
-		ScheduledActionName?: string;
-		TargetActionType?: ScheduledActionTypeValues;
-		StartTime?: Date;
-		EndTime?: Date;
-		Active?: boolean;
-		Filters?: Array<ScheduledActionFilter>;
-		Marker?: string;
-		MaxRecords?: number;
+		ScheduledActionName?: string | null;
+		TargetActionType?: ScheduledActionTypeValues | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		Active?: boolean | null;
+		Filters?: Array<ScheduledActionFilter> | null;
+		Marker?: string | null;
+		MaxRecords?: number | null;
 	}
 
 
 	/** The result of the <code>DescribeSnapshotCopyGrants</code> action. */
 	export interface DescribeSnapshotCopyGrantsMessage {
-		SnapshotCopyGrantName?: string;
-		MaxRecords?: number;
-		Marker?: string;
-		TagKeys?: Array<string>;
-		TagValues?: Array<string>;
+		SnapshotCopyGrantName?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		TagKeys?: Array<string> | null;
+		TagValues?: Array<string> | null;
 	}
 
 	export interface DescribeSnapshotSchedulesMessage {
-		ClusterIdentifier?: string;
-		ScheduleIdentifier?: string;
-		TagKeys?: Array<string>;
-		TagValues?: Array<string>;
-		Marker?: string;
-		MaxRecords?: number;
+		ClusterIdentifier?: string | null;
+		ScheduleIdentifier?: string | null;
+		TagKeys?: Array<string> | null;
+		TagValues?: Array<string> | null;
+		Marker?: string | null;
+		MaxRecords?: number | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeTableRestoreStatusMessage {
-		ClusterIdentifier?: string;
-		TableRestoreRequestId?: string;
-		MaxRecords?: number;
-		Marker?: string;
+		ClusterIdentifier?: string | null;
+		TableRestoreRequestId?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeTagsMessage {
-		ResourceName?: string;
-		ResourceType?: string;
-		MaxRecords?: number;
-		Marker?: string;
-		TagKeys?: Array<string>;
-		TagValues?: Array<string>;
+		ResourceName?: string | null;
+		ResourceType?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		TagKeys?: Array<string> | null;
+		TagValues?: Array<string> | null;
 	}
 
 	export interface DescribeUsageLimitsMessage {
-		UsageLimitId?: string;
-		ClusterIdentifier?: string;
-		FeatureType?: DescribeUsageLimitsMessageFeatureType;
-		MaxRecords?: number;
-		Marker?: string;
-		TagKeys?: Array<string>;
-		TagValues?: Array<string>;
+		UsageLimitId?: string | null;
+		ClusterIdentifier?: string | null;
+		FeatureType?: DescribeUsageLimitsMessageFeatureType | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		TagKeys?: Array<string> | null;
+		TagValues?: Array<string> | null;
 	}
 
 	export enum DescribeUsageLimitsMessageFeatureType { spectrum = 0, concurrency_scaling = 1 }
@@ -2021,7 +2021,7 @@ export namespace MyNS {
 	export interface EnableLoggingMessage {
 		ClusterIdentifier: string;
 		BucketName: string;
-		S3KeyPrefix?: string;
+		S3KeyPrefix?: string | null;
 	}
 
 
@@ -2029,28 +2029,28 @@ export namespace MyNS {
 	export interface EnableSnapshotCopyMessage {
 		ClusterIdentifier: string;
 		DestinationRegion: string;
-		RetentionPeriod?: number;
-		SnapshotCopyGrantName?: string;
-		ManualSnapshotRetentionPeriod?: number;
+		RetentionPeriod?: number | null;
+		SnapshotCopyGrantName?: string | null;
+		ManualSnapshotRetentionPeriod?: number | null;
 	}
 
 
 	/** The request parameters to get cluster credentials. */
 	export interface GetClusterCredentialsMessage {
 		DbUser: string;
-		DbName?: string;
+		DbName?: string | null;
 		ClusterIdentifier: string;
-		DurationSeconds?: number;
-		AutoCreate?: boolean;
-		DbGroups?: Array<string>;
+		DurationSeconds?: number | null;
+		AutoCreate?: boolean | null;
+		DbGroups?: Array<string> | null;
 	}
 
 
 	/** <p/> */
 	export interface GetReservedNodeExchangeOfferingsInputMessage {
 		ReservedNodeId: string;
-		MaxRecords?: number;
-		Marker?: string;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export enum Mode { standard = 0, high_performance = 1 }
@@ -2064,44 +2064,44 @@ export namespace MyNS {
 	/** <p/> */
 	export interface ModifyClusterIamRolesMessage {
 		ClusterIdentifier: string;
-		AddIamRoles?: Array<string>;
-		RemoveIamRoles?: Array<string>;
+		AddIamRoles?: Array<string> | null;
+		RemoveIamRoles?: Array<string> | null;
 	}
 
 	export interface ModifyClusterMaintenanceMessage {
 		ClusterIdentifier: string;
-		DeferMaintenance?: boolean;
-		DeferMaintenanceIdentifier?: string;
-		DeferMaintenanceStartTime?: Date;
-		DeferMaintenanceEndTime?: Date;
-		DeferMaintenanceDuration?: number;
+		DeferMaintenance?: boolean | null;
+		DeferMaintenanceIdentifier?: string | null;
+		DeferMaintenanceStartTime?: Date | null;
+		DeferMaintenanceEndTime?: Date | null;
+		DeferMaintenanceDuration?: number | null;
 	}
 
 
 	/** <p/> */
 	export interface ModifyClusterMessage {
 		ClusterIdentifier: string;
-		ClusterType?: string;
-		NodeType?: string;
-		NumberOfNodes?: number;
-		ClusterSecurityGroups?: Array<string>;
-		VpcSecurityGroupIds?: Array<string>;
-		MasterUserPassword?: string;
-		ClusterParameterGroupName?: string;
-		AutomatedSnapshotRetentionPeriod?: number;
-		ManualSnapshotRetentionPeriod?: number;
-		PreferredMaintenanceWindow?: string;
-		ClusterVersion?: string;
-		AllowVersionUpgrade?: boolean;
-		HsmClientCertificateIdentifier?: string;
-		HsmConfigurationIdentifier?: string;
-		NewClusterIdentifier?: string;
-		PubliclyAccessible?: boolean;
-		ElasticIp?: string;
-		EnhancedVpcRouting?: boolean;
-		MaintenanceTrackName?: string;
-		Encrypted?: boolean;
-		KmsKeyId?: string;
+		ClusterType?: string | null;
+		NodeType?: string | null;
+		NumberOfNodes?: number | null;
+		ClusterSecurityGroups?: Array<string> | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		MasterUserPassword?: string | null;
+		ClusterParameterGroupName?: string | null;
+		AutomatedSnapshotRetentionPeriod?: number | null;
+		ManualSnapshotRetentionPeriod?: number | null;
+		PreferredMaintenanceWindow?: string | null;
+		ClusterVersion?: string | null;
+		AllowVersionUpgrade?: boolean | null;
+		HsmClientCertificateIdentifier?: string | null;
+		HsmConfigurationIdentifier?: string | null;
+		NewClusterIdentifier?: string | null;
+		PubliclyAccessible?: boolean | null;
+		ElasticIp?: string | null;
+		EnhancedVpcRouting?: boolean | null;
+		MaintenanceTrackName?: string | null;
+		Encrypted?: boolean | null;
+		KmsKeyId?: string | null;
 	}
 
 
@@ -2113,21 +2113,21 @@ export namespace MyNS {
 
 	export interface ModifyClusterSnapshotMessage {
 		SnapshotIdentifier: string;
-		ManualSnapshotRetentionPeriod?: number;
-		Force?: boolean;
+		ManualSnapshotRetentionPeriod?: number | null;
+		Force?: boolean | null;
 	}
 
 	export interface ModifyClusterSnapshotScheduleMessage {
 		ClusterIdentifier: string;
-		ScheduleIdentifier?: string;
-		DisassociateSchedule?: boolean;
+		ScheduleIdentifier?: string | null;
+		DisassociateSchedule?: boolean | null;
 	}
 
 
 	/** <p/> */
 	export interface ModifyClusterSubnetGroupMessage {
 		ClusterSubnetGroupName: string;
-		Description?: string;
+		Description?: string | null;
 		SubnetIds: Array<string>;
 	}
 
@@ -2135,25 +2135,25 @@ export namespace MyNS {
 	/** <p/> */
 	export interface ModifyEventSubscriptionMessage {
 		SubscriptionName: string;
-		SnsTopicArn?: string;
-		SourceType?: string;
-		SourceIds?: Array<string>;
-		EventCategories?: Array<string>;
-		Severity?: string;
-		Enabled?: boolean;
+		SnsTopicArn?: string | null;
+		SourceType?: string | null;
+		SourceIds?: Array<string> | null;
+		EventCategories?: Array<string> | null;
+		Severity?: string | null;
+		Enabled?: boolean | null;
 	}
 
 	export interface ModifyScheduledActionMessage {
 		ScheduledActionName: string;
 
 		/** The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler. */
-		TargetAction?: ScheduledActionType;
-		Schedule?: string;
-		IamRole?: string;
-		ScheduledActionDescription?: string;
-		StartTime?: Date;
-		EndTime?: Date;
-		Enable?: boolean;
+		TargetAction?: ScheduledActionType | null;
+		Schedule?: string | null;
+		IamRole?: string | null;
+		ScheduledActionDescription?: string | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		Enable?: boolean | null;
 	}
 
 
@@ -2161,7 +2161,7 @@ export namespace MyNS {
 	export interface ModifySnapshotCopyRetentionPeriodMessage {
 		ClusterIdentifier: string;
 		RetentionPeriod: number;
-		Manual?: boolean;
+		Manual?: boolean | null;
 	}
 
 	export interface ModifySnapshotScheduleMessage {
@@ -2171,8 +2171,8 @@ export namespace MyNS {
 
 	export interface ModifyUsageLimitMessage {
 		UsageLimitId: string;
-		Amount?: number;
-		BreachAction?: ModifyUsageLimitMessageBreachAction;
+		Amount?: number | null;
+		BreachAction?: ModifyUsageLimitMessageBreachAction | null;
 	}
 
 	export enum ModifyUsageLimitMessageBreachAction { log = 0, emit_metric = 1, disable = 2 }
@@ -2183,7 +2183,7 @@ export namespace MyNS {
 	/** <p/> */
 	export interface PurchaseReservedNodeOfferingMessage {
 		ReservedNodeOfferingId: string;
-		NodeCount?: number;
+		NodeCount?: number | null;
 	}
 
 
@@ -2198,8 +2198,8 @@ export namespace MyNS {
 	/** <p/> */
 	export interface ResetClusterParameterGroupMessage {
 		ParameterGroupName: string;
-		ResetAllParameters?: boolean;
-		Parameters?: Array<Parameter>;
+		ResetAllParameters?: boolean | null;
+		Parameters?: Array<Parameter> | null;
 	}
 
 
@@ -2207,30 +2207,30 @@ export namespace MyNS {
 	export interface RestoreFromClusterSnapshotMessage {
 		ClusterIdentifier: string;
 		SnapshotIdentifier: string;
-		SnapshotClusterIdentifier?: string;
-		Port?: number;
-		AvailabilityZone?: string;
-		AllowVersionUpgrade?: boolean;
-		ClusterSubnetGroupName?: string;
-		PubliclyAccessible?: boolean;
-		OwnerAccount?: string;
-		HsmClientCertificateIdentifier?: string;
-		HsmConfigurationIdentifier?: string;
-		ElasticIp?: string;
-		ClusterParameterGroupName?: string;
-		ClusterSecurityGroups?: Array<string>;
-		VpcSecurityGroupIds?: Array<string>;
-		PreferredMaintenanceWindow?: string;
-		AutomatedSnapshotRetentionPeriod?: number;
-		ManualSnapshotRetentionPeriod?: number;
-		KmsKeyId?: string;
-		NodeType?: string;
-		EnhancedVpcRouting?: boolean;
-		AdditionalInfo?: string;
-		IamRoles?: Array<string>;
-		MaintenanceTrackName?: string;
-		SnapshotScheduleIdentifier?: string;
-		NumberOfNodes?: number;
+		SnapshotClusterIdentifier?: string | null;
+		Port?: number | null;
+		AvailabilityZone?: string | null;
+		AllowVersionUpgrade?: boolean | null;
+		ClusterSubnetGroupName?: string | null;
+		PubliclyAccessible?: boolean | null;
+		OwnerAccount?: string | null;
+		HsmClientCertificateIdentifier?: string | null;
+		HsmConfigurationIdentifier?: string | null;
+		ElasticIp?: string | null;
+		ClusterParameterGroupName?: string | null;
+		ClusterSecurityGroups?: Array<string> | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		PreferredMaintenanceWindow?: string | null;
+		AutomatedSnapshotRetentionPeriod?: number | null;
+		ManualSnapshotRetentionPeriod?: number | null;
+		KmsKeyId?: string | null;
+		NodeType?: string | null;
+		EnhancedVpcRouting?: boolean | null;
+		AdditionalInfo?: string | null;
+		IamRoles?: Array<string> | null;
+		MaintenanceTrackName?: string | null;
+		SnapshotScheduleIdentifier?: string | null;
+		NumberOfNodes?: number | null;
 	}
 
 
@@ -2239,10 +2239,10 @@ export namespace MyNS {
 		ClusterIdentifier: string;
 		SnapshotIdentifier: string;
 		SourceDatabaseName: string;
-		SourceSchemaName?: string;
+		SourceSchemaName?: string | null;
 		SourceTableName: string;
-		TargetDatabaseName?: string;
-		TargetSchemaName?: string;
+		TargetDatabaseName?: string | null;
+		TargetSchemaName?: string | null;
 		NewTableName: string;
 	}
 
@@ -2250,16 +2250,16 @@ export namespace MyNS {
 	/** <p/> */
 	export interface RevokeClusterSecurityGroupIngressMessage {
 		ClusterSecurityGroupName: string;
-		CIDRIP?: string;
-		EC2SecurityGroupName?: string;
-		EC2SecurityGroupOwnerId?: string;
+		CIDRIP?: string | null;
+		EC2SecurityGroupName?: string | null;
+		EC2SecurityGroupOwnerId?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface RevokeSnapshotAccessMessage {
 		SnapshotIdentifier: string;
-		SnapshotClusterIdentifier?: string;
+		SnapshotClusterIdentifier?: string | null;
 		AccountWithRestoreAccess: string;
 	}
 
@@ -2300,7 +2300,7 @@ export namespace MyNS {
 		 * @param {string} EC2SecurityGroupOwnerId <p>The AWS account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an acceptable value. </p> <p>Example: <code>111122223333</code> </p>
 		 * @return {void} Success
 		 */
-		GET_AuthorizeClusterSecurityGroupIngress(ClusterSecurityGroupName: string, CIDRIP: string, EC2SecurityGroupName: string, EC2SecurityGroupOwnerId: string, Action: GET_AuthorizeClusterSecurityGroupIngressAction, Version: GET_AuthorizeClusterSecurityGroupIngressVersion): Observable<HttpResponse<string>> {
+		GET_AuthorizeClusterSecurityGroupIngress(ClusterSecurityGroupName: string, CIDRIP: string | null | undefined, EC2SecurityGroupName: string | null | undefined, EC2SecurityGroupOwnerId: string | null | undefined, Action: GET_AuthorizeClusterSecurityGroupIngressAction, Version: GET_AuthorizeClusterSecurityGroupIngressVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=AuthorizeClusterSecurityGroupIngress?ClusterSecurityGroupName=' + (ClusterSecurityGroupName == null ? '' : encodeURIComponent(ClusterSecurityGroupName)) + '&CIDRIP=' + (CIDRIP == null ? '' : encodeURIComponent(CIDRIP)) + '&EC2SecurityGroupName=' + (EC2SecurityGroupName == null ? '' : encodeURIComponent(EC2SecurityGroupName)) + '&EC2SecurityGroupOwnerId=' + (EC2SecurityGroupOwnerId == null ? '' : encodeURIComponent(EC2SecurityGroupOwnerId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2312,7 +2312,7 @@ export namespace MyNS {
 		 * @param {string} AccountWithRestoreAccess <p>The identifier of the AWS customer account authorized to restore the specified snapshot.</p> <p>To share a snapshot with AWS support, specify amazon-redshift-support.</p>
 		 * @return {void} Success
 		 */
-		GET_AuthorizeSnapshotAccess(SnapshotIdentifier: string, SnapshotClusterIdentifier: string, AccountWithRestoreAccess: string, Action: GET_AuthorizeSnapshotAccessAction, Version: GET_AuthorizeSnapshotAccessVersion): Observable<HttpResponse<string>> {
+		GET_AuthorizeSnapshotAccess(SnapshotIdentifier: string, SnapshotClusterIdentifier: string | null | undefined, AccountWithRestoreAccess: string, Action: GET_AuthorizeSnapshotAccessAction, Version: GET_AuthorizeSnapshotAccessVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=AuthorizeSnapshotAccess?SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&SnapshotClusterIdentifier=' + (SnapshotClusterIdentifier == null ? '' : encodeURIComponent(SnapshotClusterIdentifier)) + '&AccountWithRestoreAccess=' + (AccountWithRestoreAccess == null ? '' : encodeURIComponent(AccountWithRestoreAccess)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2334,7 +2334,7 @@ export namespace MyNS {
 		 * @param {boolean} Force A boolean value indicating whether to override an exception if the retention period has passed. 
 		 * @return {void} Success
 		 */
-		GET_BatchModifyClusterSnapshots(SnapshotIdentifierList: Array<string>, ManualSnapshotRetentionPeriod: number, Force: boolean, Action: GET_BatchModifyClusterSnapshotsAction, Version: GET_BatchModifyClusterSnapshotsVersion): Observable<HttpResponse<string>> {
+		GET_BatchModifyClusterSnapshots(SnapshotIdentifierList: Array<string>, ManualSnapshotRetentionPeriod: number | null | undefined, Force: boolean | null | undefined, Action: GET_BatchModifyClusterSnapshotsAction, Version: GET_BatchModifyClusterSnapshotsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=BatchModifyClusterSnapshots?' + SnapshotIdentifierList.map(z => `SnapshotIdentifierList=${encodeURIComponent(z)}`).join('&') + '&ManualSnapshotRetentionPeriod=' + ManualSnapshotRetentionPeriod + '&Force=' + Force + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2357,7 +2357,7 @@ export namespace MyNS {
 		 * @param {number} ManualSnapshotRetentionPeriod <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
 		 * @return {void} Success
 		 */
-		GET_CopyClusterSnapshot(SourceSnapshotIdentifier: string, SourceSnapshotClusterIdentifier: string, TargetSnapshotIdentifier: string, ManualSnapshotRetentionPeriod: number, Action: GET_CopyClusterSnapshotAction, Version: GET_CopyClusterSnapshotVersion): Observable<HttpResponse<string>> {
+		GET_CopyClusterSnapshot(SourceSnapshotIdentifier: string, SourceSnapshotClusterIdentifier: string | null | undefined, TargetSnapshotIdentifier: string, ManualSnapshotRetentionPeriod: number | null | undefined, Action: GET_CopyClusterSnapshotAction, Version: GET_CopyClusterSnapshotVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CopyClusterSnapshot?SourceSnapshotIdentifier=' + (SourceSnapshotIdentifier == null ? '' : encodeURIComponent(SourceSnapshotIdentifier)) + '&SourceSnapshotClusterIdentifier=' + (SourceSnapshotClusterIdentifier == null ? '' : encodeURIComponent(SourceSnapshotClusterIdentifier)) + '&TargetSnapshotIdentifier=' + (TargetSnapshotIdentifier == null ? '' : encodeURIComponent(TargetSnapshotIdentifier)) + '&ManualSnapshotRetentionPeriod=' + ManualSnapshotRetentionPeriod + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2396,7 +2396,7 @@ export namespace MyNS {
 		 * @param {string} SnapshotScheduleIdentifier A unique identifier for the snapshot schedule.
 		 * @return {void} Success
 		 */
-		GET_CreateCluster(DBName: string, ClusterIdentifier: string, ClusterType: string, NodeType: string, MasterUsername: string, MasterUserPassword: string, ClusterSecurityGroups: Array<string>, VpcSecurityGroupIds: Array<string>, ClusterSubnetGroupName: string, AvailabilityZone: string, PreferredMaintenanceWindow: string, ClusterParameterGroupName: string, AutomatedSnapshotRetentionPeriod: number, ManualSnapshotRetentionPeriod: number, Port: number, ClusterVersion: string, AllowVersionUpgrade: boolean, NumberOfNodes: number, PubliclyAccessible: boolean, Encrypted: boolean, HsmClientCertificateIdentifier: string, HsmConfigurationIdentifier: string, ElasticIp: string, Tags: Array<Tag>, KmsKeyId: string, EnhancedVpcRouting: boolean, AdditionalInfo: string, IamRoles: Array<string>, MaintenanceTrackName: string, SnapshotScheduleIdentifier: string, Action: GET_CreateClusterAction, Version: GET_CreateClusterVersion): Observable<HttpResponse<string>> {
+		GET_CreateCluster(DBName: string | null | undefined, ClusterIdentifier: string, ClusterType: string | null | undefined, NodeType: string, MasterUsername: string, MasterUserPassword: string, ClusterSecurityGroups: Array<string> | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, ClusterSubnetGroupName: string | null | undefined, AvailabilityZone: string | null | undefined, PreferredMaintenanceWindow: string | null | undefined, ClusterParameterGroupName: string | null | undefined, AutomatedSnapshotRetentionPeriod: number | null | undefined, ManualSnapshotRetentionPeriod: number | null | undefined, Port: number | null | undefined, ClusterVersion: string | null | undefined, AllowVersionUpgrade: boolean | null | undefined, NumberOfNodes: number | null | undefined, PubliclyAccessible: boolean | null | undefined, Encrypted: boolean | null | undefined, HsmClientCertificateIdentifier: string | null | undefined, HsmConfigurationIdentifier: string | null | undefined, ElasticIp: string | null | undefined, Tags: Array<Tag> | null | undefined, KmsKeyId: string | null | undefined, EnhancedVpcRouting: boolean | null | undefined, AdditionalInfo: string | null | undefined, IamRoles: Array<string> | null | undefined, MaintenanceTrackName: string | null | undefined, SnapshotScheduleIdentifier: string | null | undefined, Action: GET_CreateClusterAction, Version: GET_CreateClusterVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateCluster?DBName=' + (DBName == null ? '' : encodeURIComponent(DBName)) + '&ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&ClusterType=' + (ClusterType == null ? '' : encodeURIComponent(ClusterType)) + '&NodeType=' + (NodeType == null ? '' : encodeURIComponent(NodeType)) + '&MasterUsername=' + (MasterUsername == null ? '' : encodeURIComponent(MasterUsername)) + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&' + ClusterSecurityGroups.map(z => `ClusterSecurityGroups=${encodeURIComponent(z)}`).join('&') + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&ClusterSubnetGroupName=' + (ClusterSubnetGroupName == null ? '' : encodeURIComponent(ClusterSubnetGroupName)) + '&AvailabilityZone=' + (AvailabilityZone == null ? '' : encodeURIComponent(AvailabilityZone)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&ClusterParameterGroupName=' + (ClusterParameterGroupName == null ? '' : encodeURIComponent(ClusterParameterGroupName)) + '&AutomatedSnapshotRetentionPeriod=' + AutomatedSnapshotRetentionPeriod + '&ManualSnapshotRetentionPeriod=' + ManualSnapshotRetentionPeriod + '&Port=' + Port + '&ClusterVersion=' + (ClusterVersion == null ? '' : encodeURIComponent(ClusterVersion)) + '&AllowVersionUpgrade=' + AllowVersionUpgrade + '&NumberOfNodes=' + NumberOfNodes + '&PubliclyAccessible=' + PubliclyAccessible + '&Encrypted=' + Encrypted + '&HsmClientCertificateIdentifier=' + (HsmClientCertificateIdentifier == null ? '' : encodeURIComponent(HsmClientCertificateIdentifier)) + '&HsmConfigurationIdentifier=' + (HsmConfigurationIdentifier == null ? '' : encodeURIComponent(HsmConfigurationIdentifier)) + '&ElasticIp=' + (ElasticIp == null ? '' : encodeURIComponent(ElasticIp)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&EnhancedVpcRouting=' + EnhancedVpcRouting + '&AdditionalInfo=' + (AdditionalInfo == null ? '' : encodeURIComponent(AdditionalInfo)) + '&' + IamRoles.map(z => `IamRoles=${encodeURIComponent(z)}`).join('&') + '&MaintenanceTrackName=' + (MaintenanceTrackName == null ? '' : encodeURIComponent(MaintenanceTrackName)) + '&SnapshotScheduleIdentifier=' + (SnapshotScheduleIdentifier == null ? '' : encodeURIComponent(SnapshotScheduleIdentifier)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2409,7 +2409,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags A list of tag instances.
 		 * @return {void} Success
 		 */
-		GET_CreateClusterParameterGroup(ParameterGroupName: string, ParameterGroupFamily: string, Description: string, Tags: Array<Tag>, Action: GET_CreateClusterParameterGroupAction, Version: GET_CreateClusterParameterGroupVersion): Observable<HttpResponse<string>> {
+		GET_CreateClusterParameterGroup(ParameterGroupName: string, ParameterGroupFamily: string, Description: string, Tags: Array<Tag> | null | undefined, Action: GET_CreateClusterParameterGroupAction, Version: GET_CreateClusterParameterGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateClusterParameterGroup?ParameterGroupName=' + (ParameterGroupName == null ? '' : encodeURIComponent(ParameterGroupName)) + '&ParameterGroupFamily=' + (ParameterGroupFamily == null ? '' : encodeURIComponent(ParameterGroupFamily)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2421,7 +2421,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags A list of tag instances.
 		 * @return {void} Success
 		 */
-		GET_CreateClusterSecurityGroup(ClusterSecurityGroupName: string, Description: string, Tags: Array<Tag>, Action: GET_CreateClusterSecurityGroupAction, Version: GET_CreateClusterSecurityGroupVersion): Observable<HttpResponse<string>> {
+		GET_CreateClusterSecurityGroup(ClusterSecurityGroupName: string, Description: string, Tags: Array<Tag> | null | undefined, Action: GET_CreateClusterSecurityGroupAction, Version: GET_CreateClusterSecurityGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateClusterSecurityGroup?ClusterSecurityGroupName=' + (ClusterSecurityGroupName == null ? '' : encodeURIComponent(ClusterSecurityGroupName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2434,7 +2434,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags A list of tag instances.
 		 * @return {void} Success
 		 */
-		GET_CreateClusterSnapshot(SnapshotIdentifier: string, ClusterIdentifier: string, ManualSnapshotRetentionPeriod: number, Tags: Array<Tag>, Action: GET_CreateClusterSnapshotAction, Version: GET_CreateClusterSnapshotVersion): Observable<HttpResponse<string>> {
+		GET_CreateClusterSnapshot(SnapshotIdentifier: string, ClusterIdentifier: string, ManualSnapshotRetentionPeriod: number | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateClusterSnapshotAction, Version: GET_CreateClusterSnapshotVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateClusterSnapshot?SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&ManualSnapshotRetentionPeriod=' + ManualSnapshotRetentionPeriod + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2447,7 +2447,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags A list of tag instances.
 		 * @return {void} Success
 		 */
-		GET_CreateClusterSubnetGroup(ClusterSubnetGroupName: string, Description: string, SubnetIds: Array<string>, Tags: Array<Tag>, Action: GET_CreateClusterSubnetGroupAction, Version: GET_CreateClusterSubnetGroupVersion): Observable<HttpResponse<string>> {
+		GET_CreateClusterSubnetGroup(ClusterSubnetGroupName: string, Description: string, SubnetIds: Array<string>, Tags: Array<Tag> | null | undefined, Action: GET_CreateClusterSubnetGroupAction, Version: GET_CreateClusterSubnetGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateClusterSubnetGroup?ClusterSubnetGroupName=' + (ClusterSubnetGroupName == null ? '' : encodeURIComponent(ClusterSubnetGroupName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + SubnetIds.map(z => `SubnetIds=${encodeURIComponent(z)}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2464,7 +2464,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags A list of tag instances.
 		 * @return {void} Success
 		 */
-		GET_CreateEventSubscription(SubscriptionName: string, SnsTopicArn: string, SourceType: string, SourceIds: Array<string>, EventCategories: Array<string>, Severity: string, Enabled: boolean, Tags: Array<Tag>, Action: GET_CreateEventSubscriptionAction, Version: GET_CreateEventSubscriptionVersion): Observable<HttpResponse<string>> {
+		GET_CreateEventSubscription(SubscriptionName: string, SnsTopicArn: string, SourceType: string | null | undefined, SourceIds: Array<string> | null | undefined, EventCategories: Array<string> | null | undefined, Severity: string | null | undefined, Enabled: boolean | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateEventSubscriptionAction, Version: GET_CreateEventSubscriptionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateEventSubscription?SubscriptionName=' + (SubscriptionName == null ? '' : encodeURIComponent(SubscriptionName)) + '&SnsTopicArn=' + (SnsTopicArn == null ? '' : encodeURIComponent(SnsTopicArn)) + '&SourceType=' + (SourceType == null ? '' : encodeURIComponent(SourceType)) + '&' + SourceIds.map(z => `SourceIds=${encodeURIComponent(z)}`).join('&') + '&' + EventCategories.map(z => `EventCategories=${encodeURIComponent(z)}`).join('&') + '&Severity=' + (Severity == null ? '' : encodeURIComponent(Severity)) + '&Enabled=' + Enabled + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2475,7 +2475,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags A list of tag instances.
 		 * @return {void} Success
 		 */
-		GET_CreateHsmClientCertificate(HsmClientCertificateIdentifier: string, Tags: Array<Tag>, Action: GET_CreateHsmClientCertificateAction, Version: GET_CreateHsmClientCertificateVersion): Observable<HttpResponse<string>> {
+		GET_CreateHsmClientCertificate(HsmClientCertificateIdentifier: string, Tags: Array<Tag> | null | undefined, Action: GET_CreateHsmClientCertificateAction, Version: GET_CreateHsmClientCertificateVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateHsmClientCertificate?HsmClientCertificateIdentifier=' + (HsmClientCertificateIdentifier == null ? '' : encodeURIComponent(HsmClientCertificateIdentifier)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2491,7 +2491,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags A list of tag instances.
 		 * @return {void} Success
 		 */
-		GET_CreateHsmConfiguration(HsmConfigurationIdentifier: string, Description: string, HsmIpAddress: string, HsmPartitionName: string, HsmPartitionPassword: string, HsmServerPublicCertificate: string, Tags: Array<Tag>, Action: GET_CreateHsmConfigurationAction, Version: GET_CreateHsmConfigurationVersion): Observable<HttpResponse<string>> {
+		GET_CreateHsmConfiguration(HsmConfigurationIdentifier: string, Description: string, HsmIpAddress: string, HsmPartitionName: string, HsmPartitionPassword: string, HsmServerPublicCertificate: string, Tags: Array<Tag> | null | undefined, Action: GET_CreateHsmConfigurationAction, Version: GET_CreateHsmConfigurationVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateHsmConfiguration?HsmConfigurationIdentifier=' + (HsmConfigurationIdentifier == null ? '' : encodeURIComponent(HsmConfigurationIdentifier)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&HsmIpAddress=' + (HsmIpAddress == null ? '' : encodeURIComponent(HsmIpAddress)) + '&HsmPartitionName=' + (HsmPartitionName == null ? '' : encodeURIComponent(HsmPartitionName)) + '&HsmPartitionPassword=' + (HsmPartitionPassword == null ? '' : encodeURIComponent(HsmPartitionPassword)) + '&HsmServerPublicCertificate=' + (HsmServerPublicCertificate == null ? '' : encodeURIComponent(HsmServerPublicCertificate)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2508,7 +2508,7 @@ export namespace MyNS {
 		 * @param {boolean} Enable If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <a>ScheduledAction</a>. 
 		 * @return {void} Success
 		 */
-		GET_CreateScheduledAction(ScheduledActionName: string, TargetAction: GET_CreateScheduledActionTargetAction, Schedule: string, IamRole: string, ScheduledActionDescription: string, StartTime: Date, EndTime: Date, Enable: boolean, Action: GET_CreateScheduledActionAction, Version: GET_CreateScheduledActionVersion): Observable<HttpResponse<string>> {
+		GET_CreateScheduledAction(ScheduledActionName: string, TargetAction: GET_CreateScheduledActionTargetAction, Schedule: string, IamRole: string, ScheduledActionDescription: string | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, Enable: boolean | null | undefined, Action: GET_CreateScheduledActionAction, Version: GET_CreateScheduledActionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateScheduledAction?ScheduledActionName=' + (ScheduledActionName == null ? '' : encodeURIComponent(ScheduledActionName)) + '&TargetAction=' + TargetAction + '&Schedule=' + (Schedule == null ? '' : encodeURIComponent(Schedule)) + '&IamRole=' + (IamRole == null ? '' : encodeURIComponent(IamRole)) + '&ScheduledActionDescription=' + (ScheduledActionDescription == null ? '' : encodeURIComponent(ScheduledActionDescription)) + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Enable=' + Enable + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2520,7 +2520,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags A list of tag instances.
 		 * @return {void} Success
 		 */
-		GET_CreateSnapshotCopyGrant(SnapshotCopyGrantName: string, KmsKeyId: string, Tags: Array<Tag>, Action: GET_CreateSnapshotCopyGrantAction, Version: GET_CreateSnapshotCopyGrantVersion): Observable<HttpResponse<string>> {
+		GET_CreateSnapshotCopyGrant(SnapshotCopyGrantName: string, KmsKeyId: string | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateSnapshotCopyGrantAction, Version: GET_CreateSnapshotCopyGrantVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateSnapshotCopyGrant?SnapshotCopyGrantName=' + (SnapshotCopyGrantName == null ? '' : encodeURIComponent(SnapshotCopyGrantName)) + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2535,7 +2535,7 @@ export namespace MyNS {
 		 * @param {number} NextInvocations <p/>
 		 * @return {void} Success
 		 */
-		GET_CreateSnapshotSchedule(ScheduleDefinitions: Array<string>, ScheduleIdentifier: string, ScheduleDescription: string, Tags: Array<Tag>, DryRun: boolean, NextInvocations: number, Action: GET_CreateSnapshotScheduleAction, Version: GET_CreateSnapshotScheduleVersion): Observable<HttpResponse<string>> {
+		GET_CreateSnapshotSchedule(ScheduleDefinitions: Array<string> | null | undefined, ScheduleIdentifier: string | null | undefined, ScheduleDescription: string | null | undefined, Tags: Array<Tag> | null | undefined, DryRun: boolean | null | undefined, NextInvocations: number | null | undefined, Action: GET_CreateSnapshotScheduleAction, Version: GET_CreateSnapshotScheduleVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateSnapshotSchedule?' + ScheduleDefinitions.map(z => `ScheduleDefinitions=${encodeURIComponent(z)}`).join('&') + '&ScheduleIdentifier=' + (ScheduleIdentifier == null ? '' : encodeURIComponent(ScheduleIdentifier)) + '&ScheduleDescription=' + (ScheduleDescription == null ? '' : encodeURIComponent(ScheduleDescription)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&DryRun=' + DryRun + '&NextInvocations=' + NextInvocations + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2562,7 +2562,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags A list of tag instances.
 		 * @return {void} Success
 		 */
-		GET_CreateUsageLimit(ClusterIdentifier: string, FeatureType: GET_CreateUsageLimitFeatureType, LimitType: GET_CreateUsageLimitLimitType, Amount: number, Period: UsageLimitPeriod, BreachAction: GET_CreateUsageLimitBreachAction, Tags: Array<Tag>, Action: GET_CreateUsageLimitAction, Version: GET_CreateUsageLimitVersion): Observable<HttpResponse<string>> {
+		GET_CreateUsageLimit(ClusterIdentifier: string, FeatureType: GET_CreateUsageLimitFeatureType, LimitType: GET_CreateUsageLimitLimitType, Amount: number, Period: UsageLimitPeriod | null | undefined, BreachAction: GET_CreateUsageLimitBreachAction | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateUsageLimitAction, Version: GET_CreateUsageLimitVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateUsageLimit?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&FeatureType=' + FeatureType + '&LimitType=' + LimitType + '&Amount=' + Amount + '&Period=' + Period + '&BreachAction=' + BreachAction + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2575,7 +2575,7 @@ export namespace MyNS {
 		 * @param {number} FinalClusterSnapshotRetentionPeriod <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
 		 * @return {void} Success
 		 */
-		GET_DeleteCluster(ClusterIdentifier: string, SkipFinalClusterSnapshot: boolean, FinalClusterSnapshotIdentifier: string, FinalClusterSnapshotRetentionPeriod: number, Action: GET_DeleteClusterAction, Version: GET_DeleteClusterVersion): Observable<HttpResponse<string>> {
+		GET_DeleteCluster(ClusterIdentifier: string, SkipFinalClusterSnapshot: boolean | null | undefined, FinalClusterSnapshotIdentifier: string | null | undefined, FinalClusterSnapshotRetentionPeriod: number | null | undefined, Action: GET_DeleteClusterAction, Version: GET_DeleteClusterVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeleteCluster?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&SkipFinalClusterSnapshot=' + SkipFinalClusterSnapshot + '&FinalClusterSnapshotIdentifier=' + (FinalClusterSnapshotIdentifier == null ? '' : encodeURIComponent(FinalClusterSnapshotIdentifier)) + '&FinalClusterSnapshotRetentionPeriod=' + FinalClusterSnapshotRetentionPeriod + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2606,7 +2606,7 @@ export namespace MyNS {
 		 * @param {string} SnapshotClusterIdentifier <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> <p>Constraints: Must be the name of valid cluster.</p>
 		 * @return {void} Success
 		 */
-		GET_DeleteClusterSnapshot(SnapshotIdentifier: string, SnapshotClusterIdentifier: string, Action: GET_DeleteClusterSnapshotAction, Version: GET_DeleteClusterSnapshotVersion): Observable<HttpResponse<string>> {
+		GET_DeleteClusterSnapshot(SnapshotIdentifier: string, SnapshotClusterIdentifier: string | null | undefined, Action: GET_DeleteClusterSnapshotAction, Version: GET_DeleteClusterSnapshotVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeleteClusterSnapshot?SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&SnapshotClusterIdentifier=' + (SnapshotClusterIdentifier == null ? '' : encodeURIComponent(SnapshotClusterIdentifier)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2707,7 +2707,7 @@ export namespace MyNS {
 		 * @param {Array<string>} AttributeNames A list of attribute names.
 		 * @return {void} Success
 		 */
-		GET_DescribeAccountAttributes(AttributeNames: Array<string>, Action: GET_DescribeAccountAttributesAction, Version: GET_DescribeAccountAttributesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeAccountAttributes(AttributeNames: Array<string> | null | undefined, Action: GET_DescribeAccountAttributesAction, Version: GET_DescribeAccountAttributesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeAccountAttributes?' + AttributeNames.map(z => `AttributeNames=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2719,7 +2719,7 @@ export namespace MyNS {
 		 * @param {string} Marker <p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>DescribeClusterDbRevisions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>marker</code> field of the response. You can retrieve the next set of response records by providing the returned <code>marker</code> value in the <code>marker</code> parameter and retrying the request. </p> <p>Constraints: You can specify either the <code>ClusterIdentifier</code> parameter, or the <code>marker</code> parameter, but not both.</p>
 		 * @return {void} Success
 		 */
-		GET_DescribeClusterDbRevisions(ClusterIdentifier: string, MaxRecords: number, Marker: string, Action: GET_DescribeClusterDbRevisionsAction, Version: GET_DescribeClusterDbRevisionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeClusterDbRevisions(ClusterIdentifier: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeClusterDbRevisionsAction, Version: GET_DescribeClusterDbRevisionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeClusterDbRevisions?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2733,7 +2733,7 @@ export namespace MyNS {
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching cluster parameter groups that are associated with the specified tag value or values. For example, suppose that you have parameter groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the parameter groups that have either or both of these tag values associated with them.
 		 * @return {void} Success
 		 */
-		GET_DescribeClusterParameterGroups(ParameterGroupName: string, MaxRecords: number, Marker: string, TagKeys: Array<string>, TagValues: Array<string>, Action: GET_DescribeClusterParameterGroupsAction, Version: GET_DescribeClusterParameterGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeClusterParameterGroups(ParameterGroupName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeClusterParameterGroupsAction, Version: GET_DescribeClusterParameterGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeClusterParameterGroups?ParameterGroupName=' + (ParameterGroupName == null ? '' : encodeURIComponent(ParameterGroupName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2746,7 +2746,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterParameters</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
 		 * @return {void} Success
 		 */
-		GET_DescribeClusterParameters(ParameterGroupName: string, Source: string, MaxRecords: number, Marker: string, Action: GET_DescribeClusterParametersAction, Version: GET_DescribeClusterParametersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeClusterParameters(ParameterGroupName: string, Source: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeClusterParametersAction, Version: GET_DescribeClusterParametersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeClusterParameters?ParameterGroupName=' + (ParameterGroupName == null ? '' : encodeURIComponent(ParameterGroupName)) + '&Source=' + (Source == null ? '' : encodeURIComponent(Source)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2760,7 +2760,7 @@ export namespace MyNS {
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching cluster security groups that are associated with the specified tag value or values. For example, suppose that you have security groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag values associated with them.
 		 * @return {void} Success
 		 */
-		GET_DescribeClusterSecurityGroups(ClusterSecurityGroupName: string, MaxRecords: number, Marker: string, TagKeys: Array<string>, TagValues: Array<string>, Action: GET_DescribeClusterSecurityGroupsAction, Version: GET_DescribeClusterSecurityGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeClusterSecurityGroups(ClusterSecurityGroupName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeClusterSecurityGroupsAction, Version: GET_DescribeClusterSecurityGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeClusterSecurityGroups?ClusterSecurityGroupName=' + (ClusterSecurityGroupName == null ? '' : encodeURIComponent(ClusterSecurityGroupName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2781,7 +2781,7 @@ export namespace MyNS {
 		 * @param {Array<SnapshotSortingEntity>} SortingEntities <p/>
 		 * @return {void} Success
 		 */
-		GET_DescribeClusterSnapshots(ClusterIdentifier: string, SnapshotIdentifier: string, SnapshotType: string, StartTime: Date, EndTime: Date, MaxRecords: number, Marker: string, OwnerAccount: string, TagKeys: Array<string>, TagValues: Array<string>, ClusterExists: boolean, SortingEntities: Array<SnapshotSortingEntity>, Action: GET_DescribeClusterSnapshotsAction, Version: GET_DescribeClusterSnapshotsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeClusterSnapshots(ClusterIdentifier: string | null | undefined, SnapshotIdentifier: string | null | undefined, SnapshotType: string | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, OwnerAccount: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, ClusterExists: boolean | null | undefined, SortingEntities: Array<SnapshotSortingEntity> | null | undefined, Action: GET_DescribeClusterSnapshotsAction, Version: GET_DescribeClusterSnapshotsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeClusterSnapshots?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&SnapshotType=' + (SnapshotType == null ? '' : encodeURIComponent(SnapshotType)) + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&OwnerAccount=' + (OwnerAccount == null ? '' : encodeURIComponent(OwnerAccount)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&ClusterExists=' + ClusterExists + '&' + SortingEntities.map(z => `SortingEntities=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2795,7 +2795,7 @@ export namespace MyNS {
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching cluster subnet groups that are associated with the specified tag value or values. For example, suppose that you have subnet groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag values associated with them.
 		 * @return {void} Success
 		 */
-		GET_DescribeClusterSubnetGroups(ClusterSubnetGroupName: string, MaxRecords: number, Marker: string, TagKeys: Array<string>, TagValues: Array<string>, Action: GET_DescribeClusterSubnetGroupsAction, Version: GET_DescribeClusterSubnetGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeClusterSubnetGroups(ClusterSubnetGroupName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeClusterSubnetGroupsAction, Version: GET_DescribeClusterSubnetGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeClusterSubnetGroups?ClusterSubnetGroupName=' + (ClusterSubnetGroupName == null ? '' : encodeURIComponent(ClusterSubnetGroupName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2807,7 +2807,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterTracks</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
 		 * @return {void} Success
 		 */
-		GET_DescribeClusterTracks(MaintenanceTrackName: string, MaxRecords: number, Marker: string, Action: GET_DescribeClusterTracksAction, Version: GET_DescribeClusterTracksVersion): Observable<HttpResponse<string>> {
+		GET_DescribeClusterTracks(MaintenanceTrackName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeClusterTracksAction, Version: GET_DescribeClusterTracksVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeClusterTracks?MaintenanceTrackName=' + (MaintenanceTrackName == null ? '' : encodeURIComponent(MaintenanceTrackName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2820,7 +2820,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterVersions</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
 		 * @return {void} Success
 		 */
-		GET_DescribeClusterVersions(ClusterVersion: string, ClusterParameterGroupFamily: string, MaxRecords: number, Marker: string, Action: GET_DescribeClusterVersionsAction, Version: GET_DescribeClusterVersionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeClusterVersions(ClusterVersion: string | null | undefined, ClusterParameterGroupFamily: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeClusterVersionsAction, Version: GET_DescribeClusterVersionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeClusterVersions?ClusterVersion=' + (ClusterVersion == null ? '' : encodeURIComponent(ClusterVersion)) + '&ClusterParameterGroupFamily=' + (ClusterParameterGroupFamily == null ? '' : encodeURIComponent(ClusterParameterGroupFamily)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2834,7 +2834,7 @@ export namespace MyNS {
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching clusters that are associated with the specified tag value or values. For example, suppose that you have clusters that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the clusters that have either or both of these tag values associated with them.
 		 * @return {void} Success
 		 */
-		GET_DescribeClusters(ClusterIdentifier: string, MaxRecords: number, Marker: string, TagKeys: Array<string>, TagValues: Array<string>, Action: GET_DescribeClustersAction, Version: GET_DescribeClustersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeClusters(ClusterIdentifier: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeClustersAction, Version: GET_DescribeClustersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeClusters?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2846,7 +2846,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDefaultClusterParameters</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
 		 * @return {void} Success
 		 */
-		GET_DescribeDefaultClusterParameters(ParameterGroupFamily: string, MaxRecords: number, Marker: string, Action: GET_DescribeDefaultClusterParametersAction, Version: GET_DescribeDefaultClusterParametersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDefaultClusterParameters(ParameterGroupFamily: string, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDefaultClusterParametersAction, Version: GET_DescribeDefaultClusterParametersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDefaultClusterParameters?ParameterGroupFamily=' + (ParameterGroupFamily == null ? '' : encodeURIComponent(ParameterGroupFamily)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2856,7 +2856,7 @@ export namespace MyNS {
 		 * @param {string} SourceType <p>The source type, such as cluster or parameter group, to which the described event categories apply.</p> <p>Valid values: cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
 		 * @return {void} Success
 		 */
-		GET_DescribeEventCategories(SourceType: string, Action: GET_DescribeEventCategoriesAction, Version: GET_DescribeEventCategoriesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeEventCategories(SourceType: string | null | undefined, Action: GET_DescribeEventCategoriesAction, Version: GET_DescribeEventCategoriesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeEventCategories?SourceType=' + (SourceType == null ? '' : encodeURIComponent(SourceType)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2870,7 +2870,7 @@ export namespace MyNS {
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching event notification subscriptions that are associated with the specified tag value or values. For example, suppose that you have subscriptions that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the subscriptions that have either or both of these tag values associated with them.
 		 * @return {void} Success
 		 */
-		GET_DescribeEventSubscriptions(SubscriptionName: string, MaxRecords: number, Marker: string, TagKeys: Array<string>, TagValues: Array<string>, Action: GET_DescribeEventSubscriptionsAction, Version: GET_DescribeEventSubscriptionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeEventSubscriptions(SubscriptionName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeEventSubscriptionsAction, Version: GET_DescribeEventSubscriptionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeEventSubscriptions?SubscriptionName=' + (SubscriptionName == null ? '' : encodeURIComponent(SubscriptionName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2886,7 +2886,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeEvents</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
 		 * @return {void} Success
 		 */
-		GET_DescribeEvents(SourceIdentifier: string, SourceType: GET_DescribeEventsSourceType, StartTime: Date, EndTime: Date, Duration: number, MaxRecords: number, Marker: string, Action: GET_DescribeEventsAction, Version: GET_DescribeEventsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeEvents(SourceIdentifier: string | null | undefined, SourceType: GET_DescribeEventsSourceType | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, Duration: number | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeEventsAction, Version: GET_DescribeEventsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeEvents?SourceIdentifier=' + (SourceIdentifier == null ? '' : encodeURIComponent(SourceIdentifier)) + '&SourceType=' + SourceType + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Duration=' + Duration + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2900,7 +2900,7 @@ export namespace MyNS {
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching HSM client certificates that are associated with the specified tag value or values. For example, suppose that you have HSM client certificates that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM client certificates that have either or both of these tag values associated with them.
 		 * @return {void} Success
 		 */
-		GET_DescribeHsmClientCertificates(HsmClientCertificateIdentifier: string, MaxRecords: number, Marker: string, TagKeys: Array<string>, TagValues: Array<string>, Action: GET_DescribeHsmClientCertificatesAction, Version: GET_DescribeHsmClientCertificatesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeHsmClientCertificates(HsmClientCertificateIdentifier: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeHsmClientCertificatesAction, Version: GET_DescribeHsmClientCertificatesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeHsmClientCertificates?HsmClientCertificateIdentifier=' + (HsmClientCertificateIdentifier == null ? '' : encodeURIComponent(HsmClientCertificateIdentifier)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2914,7 +2914,7 @@ export namespace MyNS {
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching HSM configurations that are associated with the specified tag value or values. For example, suppose that you have HSM configurations that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag values associated with them.
 		 * @return {void} Success
 		 */
-		GET_DescribeHsmConfigurations(HsmConfigurationIdentifier: string, MaxRecords: number, Marker: string, TagKeys: Array<string>, TagValues: Array<string>, Action: GET_DescribeHsmConfigurationsAction, Version: GET_DescribeHsmConfigurationsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeHsmConfigurations(HsmConfigurationIdentifier: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeHsmConfigurationsAction, Version: GET_DescribeHsmConfigurationsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeHsmConfigurations?HsmConfigurationIdentifier=' + (HsmConfigurationIdentifier == null ? '' : encodeURIComponent(HsmConfigurationIdentifier)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2940,7 +2940,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>500</code> </p> <p>Constraints: minimum 100, maximum 500.</p>
 		 * @return {void} Success
 		 */
-		GET_DescribeNodeConfigurationOptions(ActionType: GET_DescribeNodeConfigurationOptionsActionType, ClusterIdentifier: string, SnapshotIdentifier: string, OwnerAccount: string, Filter: Array<NodeConfigurationOptionsFilter>, Marker: string, MaxRecords: number, Action: GET_DescribeNodeConfigurationOptionsAction, Version: GET_DescribeNodeConfigurationOptionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeNodeConfigurationOptions(ActionType: GET_DescribeNodeConfigurationOptionsActionType, ClusterIdentifier: string | null | undefined, SnapshotIdentifier: string | null | undefined, OwnerAccount: string | null | undefined, Filter: Array<NodeConfigurationOptionsFilter> | null | undefined, Marker: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeNodeConfigurationOptionsAction, Version: GET_DescribeNodeConfigurationOptionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeNodeConfigurationOptions?ActionType=' + ActionType + '&ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&OwnerAccount=' + (OwnerAccount == null ? '' : encodeURIComponent(OwnerAccount)) + '&' + Filter.map(z => `Filter=${z}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2953,7 +2953,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeOrderableClusterOptions</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
 		 * @return {void} Success
 		 */
-		GET_DescribeOrderableClusterOptions(ClusterVersion: string, NodeType: string, MaxRecords: number, Marker: string, Action: GET_DescribeOrderableClusterOptionsAction, Version: GET_DescribeOrderableClusterOptionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeOrderableClusterOptions(ClusterVersion: string | null | undefined, NodeType: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeOrderableClusterOptionsAction, Version: GET_DescribeOrderableClusterOptionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeOrderableClusterOptions?ClusterVersion=' + (ClusterVersion == null ? '' : encodeURIComponent(ClusterVersion)) + '&NodeType=' + (NodeType == null ? '' : encodeURIComponent(NodeType)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2965,7 +2965,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeReservedNodeOfferings</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
 		 * @return {void} Success
 		 */
-		GET_DescribeReservedNodeOfferings(ReservedNodeOfferingId: string, MaxRecords: number, Marker: string, Action: GET_DescribeReservedNodeOfferingsAction, Version: GET_DescribeReservedNodeOfferingsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeReservedNodeOfferings(ReservedNodeOfferingId: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeReservedNodeOfferingsAction, Version: GET_DescribeReservedNodeOfferingsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeReservedNodeOfferings?ReservedNodeOfferingId=' + (ReservedNodeOfferingId == null ? '' : encodeURIComponent(ReservedNodeOfferingId)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2977,7 +2977,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeReservedNodes</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. 
 		 * @return {void} Success
 		 */
-		GET_DescribeReservedNodes(ReservedNodeId: string, MaxRecords: number, Marker: string, Action: GET_DescribeReservedNodesAction, Version: GET_DescribeReservedNodesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeReservedNodes(ReservedNodeId: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeReservedNodesAction, Version: GET_DescribeReservedNodesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeReservedNodes?ReservedNodeId=' + (ReservedNodeId == null ? '' : encodeURIComponent(ReservedNodeId)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3004,7 +3004,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>
 		 * @return {void} Success
 		 */
-		GET_DescribeScheduledActions(ScheduledActionName: string, TargetActionType: ScheduledActionTypeValues, StartTime: Date, EndTime: Date, Active: boolean, Filters: Array<ScheduledActionFilter>, Marker: string, MaxRecords: number, Action: GET_DescribeScheduledActionsAction, Version: GET_DescribeScheduledActionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeScheduledActions(ScheduledActionName: string | null | undefined, TargetActionType: ScheduledActionTypeValues | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, Active: boolean | null | undefined, Filters: Array<ScheduledActionFilter> | null | undefined, Marker: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeScheduledActionsAction, Version: GET_DescribeScheduledActionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeScheduledActions?ScheduledActionName=' + (ScheduledActionName == null ? '' : encodeURIComponent(ScheduledActionName)) + '&TargetActionType=' + TargetActionType + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Active=' + Active + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3018,7 +3018,7 @@ export namespace MyNS {
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.
 		 * @return {void} Success
 		 */
-		GET_DescribeSnapshotCopyGrants(SnapshotCopyGrantName: string, MaxRecords: number, Marker: string, TagKeys: Array<string>, TagValues: Array<string>, Action: GET_DescribeSnapshotCopyGrantsAction, Version: GET_DescribeSnapshotCopyGrantsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeSnapshotCopyGrants(SnapshotCopyGrantName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeSnapshotCopyGrantsAction, Version: GET_DescribeSnapshotCopyGrantsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeSnapshotCopyGrants?SnapshotCopyGrantName=' + (SnapshotCopyGrantName == null ? '' : encodeURIComponent(SnapshotCopyGrantName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3033,7 +3033,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value.
 		 * @return {void} Success
 		 */
-		GET_DescribeSnapshotSchedules(ClusterIdentifier: string, ScheduleIdentifier: string, TagKeys: Array<string>, TagValues: Array<string>, Marker: string, MaxRecords: number, Action: GET_DescribeSnapshotSchedulesAction, Version: GET_DescribeSnapshotSchedulesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeSnapshotSchedules(ClusterIdentifier: string | null | undefined, ScheduleIdentifier: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Marker: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeSnapshotSchedulesAction, Version: GET_DescribeSnapshotSchedulesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeSnapshotSchedules?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&ScheduleIdentifier=' + (ScheduleIdentifier == null ? '' : encodeURIComponent(ScheduleIdentifier)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3064,7 +3064,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional pagination token provided by a previous <code>DescribeTableRestoreStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.
 		 * @return {void} Success
 		 */
-		GET_DescribeTableRestoreStatus(ClusterIdentifier: string, TableRestoreRequestId: string, MaxRecords: number, Marker: string, Action: GET_DescribeTableRestoreStatusAction, Version: GET_DescribeTableRestoreStatusVersion): Observable<HttpResponse<string>> {
+		GET_DescribeTableRestoreStatus(ClusterIdentifier: string | null | undefined, TableRestoreRequestId: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeTableRestoreStatusAction, Version: GET_DescribeTableRestoreStatusVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeTableRestoreStatus?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&TableRestoreRequestId=' + (TableRestoreRequestId == null ? '' : encodeURIComponent(TableRestoreRequestId)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3079,7 +3079,7 @@ export namespace MyNS {
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.
 		 * @return {void} Success
 		 */
-		GET_DescribeTags(ResourceName: string, ResourceType: string, MaxRecords: number, Marker: string, TagKeys: Array<string>, TagValues: Array<string>, Action: GET_DescribeTagsAction, Version: GET_DescribeTagsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeTags(ResourceName: string | null | undefined, ResourceType: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeTagsAction, Version: GET_DescribeTagsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeTags?ResourceName=' + (ResourceName == null ? '' : encodeURIComponent(ResourceName)) + '&ResourceType=' + (ResourceType == null ? '' : encodeURIComponent(ResourceType)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3095,7 +3095,7 @@ export namespace MyNS {
 		 * @param {Array<string>} TagValues A tag value or values for which you want to return all matching usage limit objects that are associated with the specified tag value or values. For example, suppose that you have parameter groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the usage limit objects that have either or both of these tag values associated with them.
 		 * @return {void} Success
 		 */
-		GET_DescribeUsageLimits(UsageLimitId: string, ClusterIdentifier: string, FeatureType: GET_DescribeUsageLimitsFeatureType, MaxRecords: number, Marker: string, TagKeys: Array<string>, TagValues: Array<string>, Action: GET_DescribeUsageLimitsAction, Version: GET_DescribeUsageLimitsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeUsageLimits(UsageLimitId: string | null | undefined, ClusterIdentifier: string | null | undefined, FeatureType: GET_DescribeUsageLimitsFeatureType | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeUsageLimitsAction, Version: GET_DescribeUsageLimitsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeUsageLimits?UsageLimitId=' + (UsageLimitId == null ? '' : encodeURIComponent(UsageLimitId)) + '&ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&FeatureType=' + FeatureType + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3127,7 +3127,7 @@ export namespace MyNS {
 		 * @param {string} S3KeyPrefix <p>The prefix applied to the log file names.</p> <p>Constraints:</p> <ul> <li> <p>Cannot exceed 512 characters</p> </li> <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p> <ul> <li> <p>x00 to x20</p> </li> <li> <p>x22</p> </li> <li> <p>x27</p> </li> <li> <p>x5c</p> </li> <li> <p>x7f or larger</p> </li> </ul> </li> </ul>
 		 * @return {void} Success
 		 */
-		GET_EnableLogging(ClusterIdentifier: string, BucketName: string, S3KeyPrefix: string, Action: GET_EnableLoggingAction, Version: GET_EnableLoggingVersion): Observable<HttpResponse<string>> {
+		GET_EnableLogging(ClusterIdentifier: string, BucketName: string, S3KeyPrefix: string | null | undefined, Action: GET_EnableLoggingAction, Version: GET_EnableLoggingVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=EnableLogging?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&BucketName=' + (BucketName == null ? '' : encodeURIComponent(BucketName)) + '&S3KeyPrefix=' + (S3KeyPrefix == null ? '' : encodeURIComponent(S3KeyPrefix)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3141,7 +3141,7 @@ export namespace MyNS {
 		 * @param {number} ManualSnapshotRetentionPeriod <p>The number of days to retain newly copied snapshots in the destination AWS Region after they are copied from the source AWS Region. If the value is -1, the manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or an integer between 1 and 3,653.</p>
 		 * @return {void} Success
 		 */
-		GET_EnableSnapshotCopy(ClusterIdentifier: string, DestinationRegion: string, RetentionPeriod: number, SnapshotCopyGrantName: string, ManualSnapshotRetentionPeriod: number, Action: GET_EnableSnapshotCopyAction, Version: GET_EnableSnapshotCopyVersion): Observable<HttpResponse<string>> {
+		GET_EnableSnapshotCopy(ClusterIdentifier: string, DestinationRegion: string, RetentionPeriod: number | null | undefined, SnapshotCopyGrantName: string | null | undefined, ManualSnapshotRetentionPeriod: number | null | undefined, Action: GET_EnableSnapshotCopyAction, Version: GET_EnableSnapshotCopyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=EnableSnapshotCopy?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&DestinationRegion=' + (DestinationRegion == null ? '' : encodeURIComponent(DestinationRegion)) + '&RetentionPeriod=' + RetentionPeriod + '&SnapshotCopyGrantName=' + (SnapshotCopyGrantName == null ? '' : encodeURIComponent(SnapshotCopyGrantName)) + '&ManualSnapshotRetentionPeriod=' + ManualSnapshotRetentionPeriod + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3156,7 +3156,7 @@ export namespace MyNS {
 		 * @param {Array<string>} DbGroups <p>A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the current session, in addition to any group memberships for an existing user. If not specified, a new user is added only to PUBLIC.</p> <p>Database group name constraints</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li> <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
 		 * @return {void} Success
 		 */
-		GET_GetClusterCredentials(DbUser: string, DbName: string, ClusterIdentifier: string, DurationSeconds: number, AutoCreate: boolean, DbGroups: Array<string>, Action: GET_GetClusterCredentialsAction, Version: GET_GetClusterCredentialsVersion): Observable<HttpResponse<string>> {
+		GET_GetClusterCredentials(DbUser: string, DbName: string | null | undefined, ClusterIdentifier: string, DurationSeconds: number | null | undefined, AutoCreate: boolean | null | undefined, DbGroups: Array<string> | null | undefined, Action: GET_GetClusterCredentialsAction, Version: GET_GetClusterCredentialsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GetClusterCredentials?DbUser=' + (DbUser == null ? '' : encodeURIComponent(DbUser)) + '&DbName=' + (DbName == null ? '' : encodeURIComponent(DbName)) + '&ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&DurationSeconds=' + DurationSeconds + '&AutoCreate=' + AutoCreate + '&' + DbGroups.map(z => `DbGroups=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3168,7 +3168,7 @@ export namespace MyNS {
 		 * @param {string} Marker A value that indicates the starting point for the next set of ReservedNodeOfferings.
 		 * @return {void} Success
 		 */
-		GET_GetReservedNodeExchangeOfferings(ReservedNodeId: string, MaxRecords: number, Marker: string, Action: GET_GetReservedNodeExchangeOfferingsAction, Version: GET_GetReservedNodeExchangeOfferingsVersion): Observable<HttpResponse<string>> {
+		GET_GetReservedNodeExchangeOfferings(ReservedNodeId: string, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_GetReservedNodeExchangeOfferingsAction, Version: GET_GetReservedNodeExchangeOfferingsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GetReservedNodeExchangeOfferings?ReservedNodeId=' + (ReservedNodeId == null ? '' : encodeURIComponent(ReservedNodeId)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3199,7 +3199,7 @@ export namespace MyNS {
 		 * @param {string} KmsKeyId The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.
 		 * @return {void} Success
 		 */
-		GET_ModifyCluster(ClusterIdentifier: string, ClusterType: string, NodeType: string, NumberOfNodes: number, ClusterSecurityGroups: Array<string>, VpcSecurityGroupIds: Array<string>, MasterUserPassword: string, ClusterParameterGroupName: string, AutomatedSnapshotRetentionPeriod: number, ManualSnapshotRetentionPeriod: number, PreferredMaintenanceWindow: string, ClusterVersion: string, AllowVersionUpgrade: boolean, HsmClientCertificateIdentifier: string, HsmConfigurationIdentifier: string, NewClusterIdentifier: string, PubliclyAccessible: boolean, ElasticIp: string, EnhancedVpcRouting: boolean, MaintenanceTrackName: string, Encrypted: boolean, KmsKeyId: string, Action: GET_ModifyClusterAction, Version: GET_ModifyClusterVersion): Observable<HttpResponse<string>> {
+		GET_ModifyCluster(ClusterIdentifier: string, ClusterType: string | null | undefined, NodeType: string | null | undefined, NumberOfNodes: number | null | undefined, ClusterSecurityGroups: Array<string> | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, MasterUserPassword: string | null | undefined, ClusterParameterGroupName: string | null | undefined, AutomatedSnapshotRetentionPeriod: number | null | undefined, ManualSnapshotRetentionPeriod: number | null | undefined, PreferredMaintenanceWindow: string | null | undefined, ClusterVersion: string | null | undefined, AllowVersionUpgrade: boolean | null | undefined, HsmClientCertificateIdentifier: string | null | undefined, HsmConfigurationIdentifier: string | null | undefined, NewClusterIdentifier: string | null | undefined, PubliclyAccessible: boolean | null | undefined, ElasticIp: string | null | undefined, EnhancedVpcRouting: boolean | null | undefined, MaintenanceTrackName: string | null | undefined, Encrypted: boolean | null | undefined, KmsKeyId: string | null | undefined, Action: GET_ModifyClusterAction, Version: GET_ModifyClusterVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyCluster?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&ClusterType=' + (ClusterType == null ? '' : encodeURIComponent(ClusterType)) + '&NodeType=' + (NodeType == null ? '' : encodeURIComponent(NodeType)) + '&NumberOfNodes=' + NumberOfNodes + '&' + ClusterSecurityGroups.map(z => `ClusterSecurityGroups=${encodeURIComponent(z)}`).join('&') + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&ClusterParameterGroupName=' + (ClusterParameterGroupName == null ? '' : encodeURIComponent(ClusterParameterGroupName)) + '&AutomatedSnapshotRetentionPeriod=' + AutomatedSnapshotRetentionPeriod + '&ManualSnapshotRetentionPeriod=' + ManualSnapshotRetentionPeriod + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&ClusterVersion=' + (ClusterVersion == null ? '' : encodeURIComponent(ClusterVersion)) + '&AllowVersionUpgrade=' + AllowVersionUpgrade + '&HsmClientCertificateIdentifier=' + (HsmClientCertificateIdentifier == null ? '' : encodeURIComponent(HsmClientCertificateIdentifier)) + '&HsmConfigurationIdentifier=' + (HsmConfigurationIdentifier == null ? '' : encodeURIComponent(HsmConfigurationIdentifier)) + '&NewClusterIdentifier=' + (NewClusterIdentifier == null ? '' : encodeURIComponent(NewClusterIdentifier)) + '&PubliclyAccessible=' + PubliclyAccessible + '&ElasticIp=' + (ElasticIp == null ? '' : encodeURIComponent(ElasticIp)) + '&EnhancedVpcRouting=' + EnhancedVpcRouting + '&MaintenanceTrackName=' + (MaintenanceTrackName == null ? '' : encodeURIComponent(MaintenanceTrackName)) + '&Encrypted=' + Encrypted + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3222,7 +3222,7 @@ export namespace MyNS {
 		 * @param {Array<string>} RemoveIamRoles Zero or more IAM roles in ARN format to disassociate from the cluster. You can disassociate up to 10 IAM roles from a single cluster in a single request.
 		 * @return {void} Success
 		 */
-		GET_ModifyClusterIamRoles(ClusterIdentifier: string, AddIamRoles: Array<string>, RemoveIamRoles: Array<string>, Action: GET_ModifyClusterIamRolesAction, Version: GET_ModifyClusterIamRolesVersion): Observable<HttpResponse<string>> {
+		GET_ModifyClusterIamRoles(ClusterIdentifier: string, AddIamRoles: Array<string> | null | undefined, RemoveIamRoles: Array<string> | null | undefined, Action: GET_ModifyClusterIamRolesAction, Version: GET_ModifyClusterIamRolesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyClusterIamRoles?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&' + AddIamRoles.map(z => `AddIamRoles=${encodeURIComponent(z)}`).join('&') + '&' + RemoveIamRoles.map(z => `RemoveIamRoles=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3237,7 +3237,7 @@ export namespace MyNS {
 		 * @param {number} DeferMaintenanceDuration An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 45 days or less.
 		 * @return {void} Success
 		 */
-		GET_ModifyClusterMaintenance(ClusterIdentifier: string, DeferMaintenance: boolean, DeferMaintenanceIdentifier: string, DeferMaintenanceStartTime: Date, DeferMaintenanceEndTime: Date, DeferMaintenanceDuration: number, Action: GET_ModifyClusterMaintenanceAction, Version: GET_ModifyClusterMaintenanceVersion): Observable<HttpResponse<string>> {
+		GET_ModifyClusterMaintenance(ClusterIdentifier: string, DeferMaintenance: boolean | null | undefined, DeferMaintenanceIdentifier: string | null | undefined, DeferMaintenanceStartTime: Date | null | undefined, DeferMaintenanceEndTime: Date | null | undefined, DeferMaintenanceDuration: number | null | undefined, Action: GET_ModifyClusterMaintenanceAction, Version: GET_ModifyClusterMaintenanceVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyClusterMaintenance?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&DeferMaintenance=' + DeferMaintenance + '&DeferMaintenanceIdentifier=' + (DeferMaintenanceIdentifier == null ? '' : encodeURIComponent(DeferMaintenanceIdentifier)) + '&DeferMaintenanceStartTime=' + DeferMaintenanceStartTime.toISOString() + '&DeferMaintenanceEndTime=' + DeferMaintenanceEndTime.toISOString() + '&DeferMaintenanceDuration=' + DeferMaintenanceDuration + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3260,7 +3260,7 @@ export namespace MyNS {
 		 * @param {boolean} Force A Boolean option to override an exception if the retention period has already passed.
 		 * @return {void} Success
 		 */
-		GET_ModifyClusterSnapshot(SnapshotIdentifier: string, ManualSnapshotRetentionPeriod: number, Force: boolean, Action: GET_ModifyClusterSnapshotAction, Version: GET_ModifyClusterSnapshotVersion): Observable<HttpResponse<string>> {
+		GET_ModifyClusterSnapshot(SnapshotIdentifier: string, ManualSnapshotRetentionPeriod: number | null | undefined, Force: boolean | null | undefined, Action: GET_ModifyClusterSnapshotAction, Version: GET_ModifyClusterSnapshotVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyClusterSnapshot?SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&ManualSnapshotRetentionPeriod=' + ManualSnapshotRetentionPeriod + '&Force=' + Force + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3272,7 +3272,7 @@ export namespace MyNS {
 		 * @param {boolean} DisassociateSchedule A boolean to indicate whether to remove the assoiciation between the cluster and the schedule.
 		 * @return {void} Success
 		 */
-		GET_ModifyClusterSnapshotSchedule(ClusterIdentifier: string, ScheduleIdentifier: string, DisassociateSchedule: boolean, Action: GET_ModifyClusterSnapshotScheduleAction, Version: GET_ModifyClusterSnapshotScheduleVersion): Observable<HttpResponse<string>> {
+		GET_ModifyClusterSnapshotSchedule(ClusterIdentifier: string, ScheduleIdentifier: string | null | undefined, DisassociateSchedule: boolean | null | undefined, Action: GET_ModifyClusterSnapshotScheduleAction, Version: GET_ModifyClusterSnapshotScheduleVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyClusterSnapshotSchedule?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&ScheduleIdentifier=' + (ScheduleIdentifier == null ? '' : encodeURIComponent(ScheduleIdentifier)) + '&DisassociateSchedule=' + DisassociateSchedule + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3284,7 +3284,7 @@ export namespace MyNS {
 		 * @param {Array<string>} SubnetIds An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.
 		 * @return {void} Success
 		 */
-		GET_ModifyClusterSubnetGroup(ClusterSubnetGroupName: string, Description: string, SubnetIds: Array<string>, Action: GET_ModifyClusterSubnetGroupAction, Version: GET_ModifyClusterSubnetGroupVersion): Observable<HttpResponse<string>> {
+		GET_ModifyClusterSubnetGroup(ClusterSubnetGroupName: string, Description: string | null | undefined, SubnetIds: Array<string>, Action: GET_ModifyClusterSubnetGroupAction, Version: GET_ModifyClusterSubnetGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyClusterSubnetGroup?ClusterSubnetGroupName=' + (ClusterSubnetGroupName == null ? '' : encodeURIComponent(ClusterSubnetGroupName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + SubnetIds.map(z => `SubnetIds=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3300,7 +3300,7 @@ export namespace MyNS {
 		 * @param {boolean} Enabled A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled 
 		 * @return {void} Success
 		 */
-		GET_ModifyEventSubscription(SubscriptionName: string, SnsTopicArn: string, SourceType: string, SourceIds: Array<string>, EventCategories: Array<string>, Severity: string, Enabled: boolean, Action: GET_ModifyEventSubscriptionAction, Version: GET_ModifyEventSubscriptionVersion): Observable<HttpResponse<string>> {
+		GET_ModifyEventSubscription(SubscriptionName: string, SnsTopicArn: string | null | undefined, SourceType: string | null | undefined, SourceIds: Array<string> | null | undefined, EventCategories: Array<string> | null | undefined, Severity: string | null | undefined, Enabled: boolean | null | undefined, Action: GET_ModifyEventSubscriptionAction, Version: GET_ModifyEventSubscriptionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyEventSubscription?SubscriptionName=' + (SubscriptionName == null ? '' : encodeURIComponent(SubscriptionName)) + '&SnsTopicArn=' + (SnsTopicArn == null ? '' : encodeURIComponent(SnsTopicArn)) + '&SourceType=' + (SourceType == null ? '' : encodeURIComponent(SourceType)) + '&' + SourceIds.map(z => `SourceIds=${encodeURIComponent(z)}`).join('&') + '&' + EventCategories.map(z => `EventCategories=${encodeURIComponent(z)}`).join('&') + '&Severity=' + (Severity == null ? '' : encodeURIComponent(Severity)) + '&Enabled=' + Enabled + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3317,7 +3317,7 @@ export namespace MyNS {
 		 * @param {boolean} Enable A modified enable flag of the scheduled action. If true, the scheduled action is active. If false, the scheduled action is disabled. 
 		 * @return {void} Success
 		 */
-		GET_ModifyScheduledAction(ScheduledActionName: string, TargetAction: GET_ModifyScheduledActionTargetAction, Schedule: string, IamRole: string, ScheduledActionDescription: string, StartTime: Date, EndTime: Date, Enable: boolean, Action: GET_ModifyScheduledActionAction, Version: GET_ModifyScheduledActionVersion): Observable<HttpResponse<string>> {
+		GET_ModifyScheduledAction(ScheduledActionName: string, TargetAction: GET_ModifyScheduledActionTargetAction | null | undefined, Schedule: string | null | undefined, IamRole: string | null | undefined, ScheduledActionDescription: string | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, Enable: boolean | null | undefined, Action: GET_ModifyScheduledActionAction, Version: GET_ModifyScheduledActionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyScheduledAction?ScheduledActionName=' + (ScheduledActionName == null ? '' : encodeURIComponent(ScheduledActionName)) + '&TargetAction=' + TargetAction + '&Schedule=' + (Schedule == null ? '' : encodeURIComponent(Schedule)) + '&IamRole=' + (IamRole == null ? '' : encodeURIComponent(IamRole)) + '&ScheduledActionDescription=' + (ScheduledActionDescription == null ? '' : encodeURIComponent(ScheduledActionDescription)) + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Enable=' + Enable + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3329,7 +3329,7 @@ export namespace MyNS {
 		 * @param {boolean} Manual Indicates whether to apply the snapshot retention period to newly copied manual snapshots instead of automated snapshots.
 		 * @return {void} Success
 		 */
-		GET_ModifySnapshotCopyRetentionPeriod(ClusterIdentifier: string, RetentionPeriod: number, Manual: boolean, Action: GET_ModifySnapshotCopyRetentionPeriodAction, Version: GET_ModifySnapshotCopyRetentionPeriodVersion): Observable<HttpResponse<string>> {
+		GET_ModifySnapshotCopyRetentionPeriod(ClusterIdentifier: string, RetentionPeriod: number, Manual: boolean | null | undefined, Action: GET_ModifySnapshotCopyRetentionPeriodAction, Version: GET_ModifySnapshotCopyRetentionPeriodVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifySnapshotCopyRetentionPeriod?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&RetentionPeriod=' + RetentionPeriod + '&Manual=' + Manual + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3352,7 +3352,7 @@ export namespace MyNS {
 		 * @param {GET_ModifyUsageLimitBreachAction} BreachAction The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <a>UsageLimit</a>. 
 		 * @return {void} Success
 		 */
-		GET_ModifyUsageLimit(UsageLimitId: string, Amount: number, BreachAction: GET_ModifyUsageLimitBreachAction, Action: GET_ModifyUsageLimitAction, Version: GET_ModifyUsageLimitVersion): Observable<HttpResponse<string>> {
+		GET_ModifyUsageLimit(UsageLimitId: string, Amount: number | null | undefined, BreachAction: GET_ModifyUsageLimitBreachAction | null | undefined, Action: GET_ModifyUsageLimitAction, Version: GET_ModifyUsageLimitVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyUsageLimit?UsageLimitId=' + (UsageLimitId == null ? '' : encodeURIComponent(UsageLimitId)) + '&Amount=' + Amount + '&BreachAction=' + BreachAction + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3373,7 +3373,7 @@ export namespace MyNS {
 		 * @param {number} NodeCount <p>The number of reserved nodes that you want to purchase.</p> <p>Default: <code>1</code> </p>
 		 * @return {void} Success
 		 */
-		GET_PurchaseReservedNodeOffering(ReservedNodeOfferingId: string, NodeCount: number, Action: GET_PurchaseReservedNodeOfferingAction, Version: GET_PurchaseReservedNodeOfferingVersion): Observable<HttpResponse<string>> {
+		GET_PurchaseReservedNodeOffering(ReservedNodeOfferingId: string, NodeCount: number | null | undefined, Action: GET_PurchaseReservedNodeOfferingAction, Version: GET_PurchaseReservedNodeOfferingVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=PurchaseReservedNodeOffering?ReservedNodeOfferingId=' + (ReservedNodeOfferingId == null ? '' : encodeURIComponent(ReservedNodeOfferingId)) + '&NodeCount=' + NodeCount + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3395,7 +3395,7 @@ export namespace MyNS {
 		 * @param {Array<Parameter>} Parameters <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p> <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
 		 * @return {void} Success
 		 */
-		GET_ResetClusterParameterGroup(ParameterGroupName: string, ResetAllParameters: boolean, Parameters: Array<Parameter>, Action: GET_ResetClusterParameterGroupAction, Version: GET_ResetClusterParameterGroupVersion): Observable<HttpResponse<string>> {
+		GET_ResetClusterParameterGroup(ParameterGroupName: string, ResetAllParameters: boolean | null | undefined, Parameters: Array<Parameter> | null | undefined, Action: GET_ResetClusterParameterGroupAction, Version: GET_ResetClusterParameterGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ResetClusterParameterGroup?ParameterGroupName=' + (ParameterGroupName == null ? '' : encodeURIComponent(ParameterGroupName)) + '&ResetAllParameters=' + ResetAllParameters + '&' + Parameters.map(z => `Parameters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3409,7 +3409,7 @@ export namespace MyNS {
 		 * @param {boolean} Classic A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. 
 		 * @return {void} Success
 		 */
-		GET_ResizeCluster(ClusterIdentifier: string, ClusterType: string, NodeType: string, NumberOfNodes: number, Classic: boolean, Action: GET_ResizeClusterAction, Version: GET_ResizeClusterVersion): Observable<HttpResponse<string>> {
+		GET_ResizeCluster(ClusterIdentifier: string, ClusterType: string | null | undefined, NodeType: string | null | undefined, NumberOfNodes: number | null | undefined, Classic: boolean | null | undefined, Action: GET_ResizeClusterAction, Version: GET_ResizeClusterVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ResizeCluster?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&ClusterType=' + (ClusterType == null ? '' : encodeURIComponent(ClusterType)) + '&NodeType=' + (NodeType == null ? '' : encodeURIComponent(NodeType)) + '&NumberOfNodes=' + NumberOfNodes + '&Classic=' + Classic + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3444,7 +3444,7 @@ export namespace MyNS {
 		 * @param {number} NumberOfNodes The number of nodes specified when provisioning the restored cluster.
 		 * @return {void} Success
 		 */
-		GET_RestoreFromClusterSnapshot(ClusterIdentifier: string, SnapshotIdentifier: string, SnapshotClusterIdentifier: string, Port: number, AvailabilityZone: string, AllowVersionUpgrade: boolean, ClusterSubnetGroupName: string, PubliclyAccessible: boolean, OwnerAccount: string, HsmClientCertificateIdentifier: string, HsmConfigurationIdentifier: string, ElasticIp: string, ClusterParameterGroupName: string, ClusterSecurityGroups: Array<string>, VpcSecurityGroupIds: Array<string>, PreferredMaintenanceWindow: string, AutomatedSnapshotRetentionPeriod: number, ManualSnapshotRetentionPeriod: number, KmsKeyId: string, NodeType: string, EnhancedVpcRouting: boolean, AdditionalInfo: string, IamRoles: Array<string>, MaintenanceTrackName: string, SnapshotScheduleIdentifier: string, NumberOfNodes: number, Action: GET_RestoreFromClusterSnapshotAction, Version: GET_RestoreFromClusterSnapshotVersion): Observable<HttpResponse<string>> {
+		GET_RestoreFromClusterSnapshot(ClusterIdentifier: string, SnapshotIdentifier: string, SnapshotClusterIdentifier: string | null | undefined, Port: number | null | undefined, AvailabilityZone: string | null | undefined, AllowVersionUpgrade: boolean | null | undefined, ClusterSubnetGroupName: string | null | undefined, PubliclyAccessible: boolean | null | undefined, OwnerAccount: string | null | undefined, HsmClientCertificateIdentifier: string | null | undefined, HsmConfigurationIdentifier: string | null | undefined, ElasticIp: string | null | undefined, ClusterParameterGroupName: string | null | undefined, ClusterSecurityGroups: Array<string> | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, PreferredMaintenanceWindow: string | null | undefined, AutomatedSnapshotRetentionPeriod: number | null | undefined, ManualSnapshotRetentionPeriod: number | null | undefined, KmsKeyId: string | null | undefined, NodeType: string | null | undefined, EnhancedVpcRouting: boolean | null | undefined, AdditionalInfo: string | null | undefined, IamRoles: Array<string> | null | undefined, MaintenanceTrackName: string | null | undefined, SnapshotScheduleIdentifier: string | null | undefined, NumberOfNodes: number | null | undefined, Action: GET_RestoreFromClusterSnapshotAction, Version: GET_RestoreFromClusterSnapshotVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RestoreFromClusterSnapshot?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&SnapshotClusterIdentifier=' + (SnapshotClusterIdentifier == null ? '' : encodeURIComponent(SnapshotClusterIdentifier)) + '&Port=' + Port + '&AvailabilityZone=' + (AvailabilityZone == null ? '' : encodeURIComponent(AvailabilityZone)) + '&AllowVersionUpgrade=' + AllowVersionUpgrade + '&ClusterSubnetGroupName=' + (ClusterSubnetGroupName == null ? '' : encodeURIComponent(ClusterSubnetGroupName)) + '&PubliclyAccessible=' + PubliclyAccessible + '&OwnerAccount=' + (OwnerAccount == null ? '' : encodeURIComponent(OwnerAccount)) + '&HsmClientCertificateIdentifier=' + (HsmClientCertificateIdentifier == null ? '' : encodeURIComponent(HsmClientCertificateIdentifier)) + '&HsmConfigurationIdentifier=' + (HsmConfigurationIdentifier == null ? '' : encodeURIComponent(HsmConfigurationIdentifier)) + '&ElasticIp=' + (ElasticIp == null ? '' : encodeURIComponent(ElasticIp)) + '&ClusterParameterGroupName=' + (ClusterParameterGroupName == null ? '' : encodeURIComponent(ClusterParameterGroupName)) + '&' + ClusterSecurityGroups.map(z => `ClusterSecurityGroups=${encodeURIComponent(z)}`).join('&') + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&AutomatedSnapshotRetentionPeriod=' + AutomatedSnapshotRetentionPeriod + '&ManualSnapshotRetentionPeriod=' + ManualSnapshotRetentionPeriod + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&NodeType=' + (NodeType == null ? '' : encodeURIComponent(NodeType)) + '&EnhancedVpcRouting=' + EnhancedVpcRouting + '&AdditionalInfo=' + (AdditionalInfo == null ? '' : encodeURIComponent(AdditionalInfo)) + '&' + IamRoles.map(z => `IamRoles=${encodeURIComponent(z)}`).join('&') + '&MaintenanceTrackName=' + (MaintenanceTrackName == null ? '' : encodeURIComponent(MaintenanceTrackName)) + '&SnapshotScheduleIdentifier=' + (SnapshotScheduleIdentifier == null ? '' : encodeURIComponent(SnapshotScheduleIdentifier)) + '&NumberOfNodes=' + NumberOfNodes + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3461,7 +3461,7 @@ export namespace MyNS {
 		 * @param {string} NewTableName The name of the table to create as a result of the current request.
 		 * @return {void} Success
 		 */
-		GET_RestoreTableFromClusterSnapshot(ClusterIdentifier: string, SnapshotIdentifier: string, SourceDatabaseName: string, SourceSchemaName: string, SourceTableName: string, TargetDatabaseName: string, TargetSchemaName: string, NewTableName: string, Action: GET_RestoreTableFromClusterSnapshotAction, Version: GET_RestoreTableFromClusterSnapshotVersion): Observable<HttpResponse<string>> {
+		GET_RestoreTableFromClusterSnapshot(ClusterIdentifier: string, SnapshotIdentifier: string, SourceDatabaseName: string, SourceSchemaName: string | null | undefined, SourceTableName: string, TargetDatabaseName: string | null | undefined, TargetSchemaName: string | null | undefined, NewTableName: string, Action: GET_RestoreTableFromClusterSnapshotAction, Version: GET_RestoreTableFromClusterSnapshotVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RestoreTableFromClusterSnapshot?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&SourceDatabaseName=' + (SourceDatabaseName == null ? '' : encodeURIComponent(SourceDatabaseName)) + '&SourceSchemaName=' + (SourceSchemaName == null ? '' : encodeURIComponent(SourceSchemaName)) + '&SourceTableName=' + (SourceTableName == null ? '' : encodeURIComponent(SourceTableName)) + '&TargetDatabaseName=' + (TargetDatabaseName == null ? '' : encodeURIComponent(TargetDatabaseName)) + '&TargetSchemaName=' + (TargetSchemaName == null ? '' : encodeURIComponent(TargetSchemaName)) + '&NewTableName=' + (NewTableName == null ? '' : encodeURIComponent(NewTableName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3484,7 +3484,7 @@ export namespace MyNS {
 		 * @param {string} EC2SecurityGroupOwnerId <p>The AWS account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code> parameter. The AWS access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided. </p> <p>Example: <code>111122223333</code> </p>
 		 * @return {void} Success
 		 */
-		GET_RevokeClusterSecurityGroupIngress(ClusterSecurityGroupName: string, CIDRIP: string, EC2SecurityGroupName: string, EC2SecurityGroupOwnerId: string, Action: GET_RevokeClusterSecurityGroupIngressAction, Version: GET_RevokeClusterSecurityGroupIngressVersion): Observable<HttpResponse<string>> {
+		GET_RevokeClusterSecurityGroupIngress(ClusterSecurityGroupName: string, CIDRIP: string | null | undefined, EC2SecurityGroupName: string | null | undefined, EC2SecurityGroupOwnerId: string | null | undefined, Action: GET_RevokeClusterSecurityGroupIngressAction, Version: GET_RevokeClusterSecurityGroupIngressVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RevokeClusterSecurityGroupIngress?ClusterSecurityGroupName=' + (ClusterSecurityGroupName == null ? '' : encodeURIComponent(ClusterSecurityGroupName)) + '&CIDRIP=' + (CIDRIP == null ? '' : encodeURIComponent(CIDRIP)) + '&EC2SecurityGroupName=' + (EC2SecurityGroupName == null ? '' : encodeURIComponent(EC2SecurityGroupName)) + '&EC2SecurityGroupOwnerId=' + (EC2SecurityGroupOwnerId == null ? '' : encodeURIComponent(EC2SecurityGroupOwnerId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3496,7 +3496,7 @@ export namespace MyNS {
 		 * @param {string} AccountWithRestoreAccess The identifier of the AWS customer account that can no longer restore the specified snapshot.
 		 * @return {void} Success
 		 */
-		GET_RevokeSnapshotAccess(SnapshotIdentifier: string, SnapshotClusterIdentifier: string, AccountWithRestoreAccess: string, Action: GET_RevokeSnapshotAccessAction, Version: GET_RevokeSnapshotAccessVersion): Observable<HttpResponse<string>> {
+		GET_RevokeSnapshotAccess(SnapshotIdentifier: string, SnapshotClusterIdentifier: string | null | undefined, AccountWithRestoreAccess: string, Action: GET_RevokeSnapshotAccessAction, Version: GET_RevokeSnapshotAccessVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RevokeSnapshotAccess?SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&SnapshotClusterIdentifier=' + (SnapshotClusterIdentifier == null ? '' : encodeURIComponent(SnapshotClusterIdentifier)) + '&AccountWithRestoreAccess=' + (AccountWithRestoreAccess == null ? '' : encodeURIComponent(AccountWithRestoreAccess)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3602,9 +3602,9 @@ export namespace MyNS {
 	export enum POST_CreateHsmConfigurationVersion { _2012_12_01 = 0 }
 
 	export interface GET_CreateScheduledActionTargetAction {
-		ResizeCluster?: ResizeClusterMessage;
-		PauseCluster?: PauseClusterMessage;
-		ResumeCluster?: ResumeClusterMessage;
+		ResizeCluster?: ResizeClusterMessage | null;
+		PauseCluster?: PauseClusterMessage | null;
+		ResumeCluster?: ResumeClusterMessage | null;
 	}
 
 	export enum GET_CreateScheduledActionAction { CreateScheduledAction = 0 }
@@ -3992,9 +3992,9 @@ export namespace MyNS {
 	export enum POST_ModifyEventSubscriptionVersion { _2012_12_01 = 0 }
 
 	export interface GET_ModifyScheduledActionTargetAction {
-		ResizeCluster?: ResizeClusterMessage;
-		PauseCluster?: PauseClusterMessage;
-		ResumeCluster?: ResumeClusterMessage;
+		ResizeCluster?: ResizeClusterMessage | null;
+		PauseCluster?: PauseClusterMessage | null;
+		ResumeCluster?: ResumeClusterMessage | null;
 	}
 
 	export enum GET_ModifyScheduledActionAction { ModifyScheduledAction = 0 }

@@ -3,9 +3,9 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface AddInstanceFleetOutput {
-		ClusterId?: string;
-		InstanceFleetId?: string;
-		ClusterArn?: string;
+		ClusterId?: string | null;
+		InstanceFleetId?: string | null;
+		ClusterArn?: string | null;
 	}
 
 	export interface AddInstanceFleetInput {
@@ -21,14 +21,14 @@ export namespace MyNS {
 
 	/** <p>The configuration that defines an instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceFleetConfig {
-		Name?: string;
+		Name?: string | null;
 		InstanceFleetType: InstanceFleetConfigInstanceFleetType;
-		TargetOnDemandCapacity?: number;
-		TargetSpotCapacity?: number;
-		InstanceTypeConfigs?: Array<InstanceTypeConfig>;
+		TargetOnDemandCapacity?: number | null;
+		TargetSpotCapacity?: number | null;
+		InstanceTypeConfigs?: Array<InstanceTypeConfig> | null;
 
 		/** <p>The launch specification for Spot instances in the fleet, which determines the defined duration and provisioning timeout behavior.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
-		LaunchSpecifications?: InstanceFleetProvisioningSpecifications;
+		LaunchSpecifications?: InstanceFleetProvisioningSpecifications | null;
 	}
 
 	export enum InstanceFleetConfigInstanceFleetType { MASTER = 0, CORE = 1, TASK = 2 }
@@ -37,20 +37,20 @@ export namespace MyNS {
 	/** <p>An instance type configuration for each instance type in an instance fleet, which determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities. There can be a maximum of 5 instance type configurations in a fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceTypeConfig {
 		InstanceType: string;
-		WeightedCapacity?: number;
-		BidPrice?: string;
-		BidPriceAsPercentageOfOnDemandPrice?: number;
+		WeightedCapacity?: number | null;
+		BidPrice?: string | null;
+		BidPriceAsPercentageOfOnDemandPrice?: number | null;
 
 		/** The Amazon EBS configuration of a cluster instance. */
-		EbsConfiguration?: EbsConfiguration;
-		Configurations?: Array<Configuration>;
+		EbsConfiguration?: EbsConfiguration | null;
+		Configurations?: Array<Configuration> | null;
 	}
 
 
 	/** The Amazon EBS configuration of a cluster instance. */
 	export interface EbsConfiguration {
-		EbsBlockDeviceConfigs?: Array<EbsBlockDeviceConfig>;
-		EbsOptimized?: boolean;
+		EbsBlockDeviceConfigs?: Array<EbsBlockDeviceConfig> | null;
+		EbsOptimized?: boolean | null;
 	}
 
 
@@ -62,23 +62,23 @@ export namespace MyNS {
 		 * Required
 		 */
 		VolumeSpecification: VolumeSpecification;
-		VolumesPerInstance?: number;
+		VolumesPerInstance?: number | null;
 	}
 
 
 	/** EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster. */
 	export interface VolumeSpecification {
 		VolumeType: string;
-		Iops?: number;
+		Iops?: number | null;
 		SizeInGB: number;
 	}
 
 
 	/** <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>An optional configuration specification to be used when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring Applications</a>.</p> */
 	export interface Configuration {
-		Classification?: string;
-		Configurations?: Array<Configuration>;
-		Properties?: StringMap;
+		Classification?: string | null;
+		Configurations?: Array<Configuration> | null;
+		Properties?: StringMap | null;
 	}
 
 	export interface StringMap {
@@ -100,7 +100,7 @@ export namespace MyNS {
 	export interface SpotProvisioningSpecification {
 		TimeoutDurationMinutes: number;
 		TimeoutAction: SpotProvisioningSpecificationTimeoutAction;
-		BlockDurationMinutes?: number;
+		BlockDurationMinutes?: number | null;
 	}
 
 	export enum SpotProvisioningSpecificationTimeoutAction { SWITCH_TO_ON_DEMAND = 0, TERMINATE_CLUSTER = 1 }
@@ -114,9 +114,9 @@ export namespace MyNS {
 
 	/** Output from an AddInstanceGroups call. */
 	export interface AddInstanceGroupsOutput {
-		JobFlowId?: string;
-		InstanceGroupIds?: Array<string>;
-		ClusterArn?: string;
+		JobFlowId?: string | null;
+		InstanceGroupIds?: Array<string> | null;
+		ClusterArn?: string | null;
 	}
 
 
@@ -129,19 +129,19 @@ export namespace MyNS {
 
 	/** Configuration defining a new instance group. */
 	export interface InstanceGroupConfig {
-		Name?: string;
-		Market?: InstanceGroupConfigMarket;
+		Name?: string | null;
+		Market?: InstanceGroupConfigMarket | null;
 		InstanceRole: InstanceFleetConfigInstanceFleetType;
-		BidPrice?: string;
+		BidPrice?: string | null;
 		InstanceType: string;
 		InstanceCount: number;
-		Configurations?: Array<Configuration>;
+		Configurations?: Array<Configuration> | null;
 
 		/** The Amazon EBS configuration of a cluster instance. */
-		EbsConfiguration?: EbsConfiguration;
+		EbsConfiguration?: EbsConfiguration | null;
 
 		/** An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>. */
-		AutoScalingPolicy?: AutoScalingPolicy;
+		AutoScalingPolicy?: AutoScalingPolicy | null;
 	}
 
 	export enum InstanceGroupConfigMarket { ON_DEMAND = 0, SPOT = 1 }
@@ -169,7 +169,7 @@ export namespace MyNS {
 	/** A scale-in or scale-out rule that defines scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an instance group can comprise one or more automatic scaling rules. */
 	export interface ScalingRule {
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
@@ -187,7 +187,7 @@ export namespace MyNS {
 
 	/** The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment. */
 	export interface ScalingAction {
-		Market?: InstanceGroupConfigMarket;
+		Market?: InstanceGroupConfigMarket | null;
 
 		/**
 		 * An automatic scaling configuration, which describes how the policy adds or removes instances, the cooldown period, and the number of EC2 instances that will be added each time the CloudWatch metric alarm condition is satisfied.
@@ -199,9 +199,9 @@ export namespace MyNS {
 
 	/** An automatic scaling configuration, which describes how the policy adds or removes instances, the cooldown period, and the number of EC2 instances that will be added each time the CloudWatch metric alarm condition is satisfied. */
 	export interface SimpleScalingPolicyConfiguration {
-		AdjustmentType?: SimpleScalingPolicyConfigurationAdjustmentType;
+		AdjustmentType?: SimpleScalingPolicyConfigurationAdjustmentType | null;
 		ScalingAdjustment: number;
-		CoolDown?: number;
+		CoolDown?: number | null;
 	}
 
 	export enum SimpleScalingPolicyConfigurationAdjustmentType { CHANGE_IN_CAPACITY = 0, PERCENT_CHANGE_IN_CAPACITY = 1, EXACT_CAPACITY = 2 }
@@ -221,14 +221,14 @@ export namespace MyNS {
 	/** The definition of a CloudWatch metric alarm, which determines when an automatic scaling activity is triggered. When the defined alarm conditions are satisfied, scaling activity begins. */
 	export interface CloudWatchAlarmDefinition {
 		ComparisonOperator: CloudWatchAlarmDefinitionComparisonOperator;
-		EvaluationPeriods?: number;
+		EvaluationPeriods?: number | null;
 		MetricName: string;
-		Namespace?: string;
+		Namespace?: string | null;
 		Period: number;
-		Statistic?: CloudWatchAlarmDefinitionStatistic;
+		Statistic?: CloudWatchAlarmDefinitionStatistic | null;
 		Threshold: number;
-		Unit?: CloudWatchAlarmDefinitionUnit;
-		Dimensions?: Array<MetricDimension>;
+		Unit?: CloudWatchAlarmDefinitionUnit | null;
+		Dimensions?: Array<MetricDimension> | null;
 	}
 
 	export enum CloudWatchAlarmDefinitionComparisonOperator { GREATER_THAN_OR_EQUAL = 0, GREATER_THAN = 1, LESS_THAN = 2, LESS_THAN_OR_EQUAL = 3 }
@@ -240,8 +240,8 @@ export namespace MyNS {
 
 	/** A CloudWatch dimension, which is specified using a <code>Key</code> (known as a <code>Name</code> in CloudWatch), <code>Value</code> pair. By default, Amazon EMR uses one dimension whose <code>Key</code> is <code>JobFlowID</code> and <code>Value</code> is a variable representing the cluster ID, which is <code>${emr.clusterId}</code>. This enables the rule to bootstrap when the cluster ID becomes available. */
 	export interface MetricDimension {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface InternalServerError {
@@ -250,7 +250,7 @@ export namespace MyNS {
 
 	/**  The output for the <a>AddJobFlowSteps</a> operation.  */
 	export interface AddJobFlowStepsOutput {
-		StepIds?: Array<string>;
+		StepIds?: Array<string> | null;
 	}
 
 
@@ -264,7 +264,7 @@ export namespace MyNS {
 	/** Specification of a cluster (job flow) step. */
 	export interface StepConfig {
 		Name: string;
-		ActionOnFailure?: StepConfigActionOnFailure;
+		ActionOnFailure?: StepConfigActionOnFailure | null;
 
 		/**
 		 * A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.
@@ -278,17 +278,17 @@ export namespace MyNS {
 
 	/** A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail. */
 	export interface HadoopJarStepConfig {
-		Properties?: Array<KeyValue>;
+		Properties?: Array<KeyValue> | null;
 		Jar: string;
-		MainClass?: string;
-		Args?: Array<string>;
+		MainClass?: string | null;
+		Args?: Array<string> | null;
 	}
 
 
 	/** A key value pair. */
 	export interface KeyValue {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 
@@ -306,22 +306,22 @@ export namespace MyNS {
 
 	/** A key/value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>.  */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 
 	/**  The output for the <a>CancelSteps</a> operation.  */
 	export interface CancelStepsOutput {
-		CancelStepsInfoList?: Array<CancelStepsInfo>;
+		CancelStepsInfoList?: Array<CancelStepsInfo> | null;
 	}
 
 
 	/** Specification of the status of a CancelSteps request. Available only in Amazon EMR version 4.8.0 and later, excluding version 5.0.0. */
 	export interface CancelStepsInfo {
-		StepId?: string;
-		Status?: CancelStepsInfoStatus;
-		Reason?: string;
+		StepId?: string | null;
+		Status?: CancelStepsInfoStatus | null;
+		Reason?: string | null;
 	}
 
 	export enum CancelStepsInfoStatus { SUBMITTED = 0, FAILED = 1 }
@@ -331,7 +331,7 @@ export namespace MyNS {
 	export interface CancelStepsInput {
 		ClusterId: string;
 		StepIds: Array<string>;
-		StepCancellationOption?: CancelStepsInputStepCancellationOption;
+		StepCancellationOption?: CancelStepsInputStepCancellationOption | null;
 	}
 
 	export enum CancelStepsInputStepCancellationOption { SEND_INTERRUPT = 0, TERMINATE_PROCESS = 1 }
@@ -358,59 +358,59 @@ export namespace MyNS {
 	export interface DescribeClusterOutput {
 
 		/** The detailed description of the cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 
 	/** The detailed description of the cluster. */
 	export interface Cluster {
-		Id?: string;
-		Name?: string;
+		Id?: string | null;
+		Name?: string | null;
 
 		/** The detailed status of the cluster. */
-		Status?: ClusterStatus;
+		Status?: ClusterStatus | null;
 
 		/** Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on. */
-		Ec2InstanceAttributes?: Ec2InstanceAttributes;
-		InstanceCollectionType?: ClusterInstanceCollectionType;
-		LogUri?: string;
-		LogEncryptionKmsKeyId?: string;
-		RequestedAmiVersion?: string;
-		RunningAmiVersion?: string;
-		ReleaseLabel?: string;
-		AutoTerminate?: boolean;
-		TerminationProtected?: boolean;
-		VisibleToAllUsers?: boolean;
-		Applications?: Array<Application>;
-		Tags?: Array<Tag>;
-		ServiceRole?: string;
-		NormalizedInstanceHours?: number;
-		MasterPublicDnsName?: string;
-		Configurations?: Array<Configuration>;
-		SecurityConfiguration?: string;
-		AutoScalingRole?: string;
-		ScaleDownBehavior?: ClusterScaleDownBehavior;
-		CustomAmiId?: string;
-		EbsRootVolumeSize?: number;
-		RepoUpgradeOnBoot?: ClusterRepoUpgradeOnBoot;
+		Ec2InstanceAttributes?: Ec2InstanceAttributes | null;
+		InstanceCollectionType?: ClusterInstanceCollectionType | null;
+		LogUri?: string | null;
+		LogEncryptionKmsKeyId?: string | null;
+		RequestedAmiVersion?: string | null;
+		RunningAmiVersion?: string | null;
+		ReleaseLabel?: string | null;
+		AutoTerminate?: boolean | null;
+		TerminationProtected?: boolean | null;
+		VisibleToAllUsers?: boolean | null;
+		Applications?: Array<Application> | null;
+		Tags?: Array<Tag> | null;
+		ServiceRole?: string | null;
+		NormalizedInstanceHours?: number | null;
+		MasterPublicDnsName?: string | null;
+		Configurations?: Array<Configuration> | null;
+		SecurityConfiguration?: string | null;
+		AutoScalingRole?: string | null;
+		ScaleDownBehavior?: ClusterScaleDownBehavior | null;
+		CustomAmiId?: string | null;
+		EbsRootVolumeSize?: number | null;
+		RepoUpgradeOnBoot?: ClusterRepoUpgradeOnBoot | null;
 
 		/** Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>EMR Management Guide</i>. */
-		KerberosAttributes?: KerberosAttributes;
-		ClusterArn?: string;
-		OutpostArn?: string;
-		StepConcurrencyLevel?: number;
+		KerberosAttributes?: KerberosAttributes | null;
+		ClusterArn?: string | null;
+		OutpostArn?: string | null;
+		StepConcurrencyLevel?: number | null;
 	}
 
 
 	/** The detailed status of the cluster. */
 	export interface ClusterStatus {
-		State?: ClusterStatusState;
+		State?: ClusterStatusState | null;
 
 		/** The reason that the cluster changed to its current state. */
-		StateChangeReason?: ClusterStateChangeReason;
+		StateChangeReason?: ClusterStateChangeReason | null;
 
 		/** Represents the timeline of the cluster's lifecycle. */
-		Timeline?: ClusterTimeline;
+		Timeline?: ClusterTimeline | null;
 	}
 
 	export enum ClusterStatusState { STARTING = 0, BOOTSTRAPPING = 1, RUNNING = 2, WAITING = 3, TERMINATING = 4, TERMINATED = 5, TERMINATED_WITH_ERRORS = 6 }
@@ -418,8 +418,8 @@ export namespace MyNS {
 
 	/** The reason that the cluster changed to its current state. */
 	export interface ClusterStateChangeReason {
-		Code?: ClusterStateChangeReasonCode;
-		Message?: string;
+		Code?: ClusterStateChangeReasonCode | null;
+		Message?: string | null;
 	}
 
 	export enum ClusterStateChangeReasonCode { INTERNAL_ERROR = 0, VALIDATION_ERROR = 1, INSTANCE_FAILURE = 2, INSTANCE_FLEET_TIMEOUT = 3, BOOTSTRAP_FAILURE = 4, USER_REQUEST = 5, STEP_FAILURE = 6, ALL_STEPS_COMPLETED = 7 }
@@ -427,25 +427,25 @@ export namespace MyNS {
 
 	/** Represents the timeline of the cluster's lifecycle. */
 	export interface ClusterTimeline {
-		CreationDateTime?: Date;
-		ReadyDateTime?: Date;
-		EndDateTime?: Date;
+		CreationDateTime?: Date | null;
+		ReadyDateTime?: Date | null;
+		EndDateTime?: Date | null;
 	}
 
 
 	/** Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on. */
 	export interface Ec2InstanceAttributes {
-		Ec2KeyName?: string;
-		Ec2SubnetId?: string;
-		RequestedEc2SubnetIds?: Array<string>;
-		Ec2AvailabilityZone?: string;
-		RequestedEc2AvailabilityZones?: Array<string>;
-		IamInstanceProfile?: string;
-		EmrManagedMasterSecurityGroup?: string;
-		EmrManagedSlaveSecurityGroup?: string;
-		ServiceAccessSecurityGroup?: string;
-		AdditionalMasterSecurityGroups?: Array<string>;
-		AdditionalSlaveSecurityGroups?: Array<string>;
+		Ec2KeyName?: string | null;
+		Ec2SubnetId?: string | null;
+		RequestedEc2SubnetIds?: Array<string> | null;
+		Ec2AvailabilityZone?: string | null;
+		RequestedEc2AvailabilityZones?: Array<string> | null;
+		IamInstanceProfile?: string | null;
+		EmrManagedMasterSecurityGroup?: string | null;
+		EmrManagedSlaveSecurityGroup?: string | null;
+		ServiceAccessSecurityGroup?: string | null;
+		AdditionalMasterSecurityGroups?: Array<string> | null;
+		AdditionalSlaveSecurityGroups?: Array<string> | null;
 	}
 
 	export enum ClusterInstanceCollectionType { INSTANCE_FLEET = 0, INSTANCE_GROUP = 1 }
@@ -453,10 +453,10 @@ export namespace MyNS {
 
 	/** <p>With Amazon EMR release version 4.0 and later, the only accepted parameter is the application name. To pass arguments to applications, you use configuration classifications specified using configuration JSON objects. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring Applications</a>.</p> <p>With earlier Amazon EMR releases, the application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument.</p> */
 	export interface Application {
-		Name?: string;
-		Version?: string;
-		Args?: Array<string>;
-		AdditionalInfo?: StringMap;
+		Name?: string | null;
+		Version?: string | null;
+		Args?: Array<string> | null;
+		AdditionalInfo?: StringMap | null;
 	}
 
 	export enum ClusterScaleDownBehavior { TERMINATE_AT_INSTANCE_HOUR = 0, TERMINATE_AT_TASK_COMPLETION = 1 }
@@ -468,9 +468,9 @@ export namespace MyNS {
 	export interface KerberosAttributes {
 		Realm: string;
 		KdcAdminPassword: string;
-		CrossRealmTrustPrincipalPassword?: string;
-		ADDomainJoinUser?: string;
-		ADDomainJoinPassword?: string;
+		CrossRealmTrustPrincipalPassword?: string | null;
+		ADDomainJoinUser?: string | null;
+		ADDomainJoinPassword?: string | null;
 	}
 
 
@@ -482,7 +482,7 @@ export namespace MyNS {
 
 	/**  The output for the <a>DescribeJobFlows</a> operation.  */
 	export interface DescribeJobFlowsOutput {
-		JobFlows?: Array<JobFlowDetail>;
+		JobFlows?: Array<JobFlowDetail> | null;
 	}
 
 
@@ -490,9 +490,9 @@ export namespace MyNS {
 	export interface JobFlowDetail {
 		JobFlowId: string;
 		Name: string;
-		LogUri?: string;
-		LogEncryptionKmsKeyId?: string;
-		AmiVersion?: string;
+		LogUri?: string | null;
+		LogEncryptionKmsKeyId?: string | null;
+		AmiVersion?: string | null;
 
 		/**
 		 * Describes the status of the cluster (job flow).
@@ -505,14 +505,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		Instances: JobFlowInstancesDetail;
-		Steps?: Array<StepDetail>;
-		BootstrapActions?: Array<BootstrapActionDetail>;
-		SupportedProducts?: Array<string>;
-		VisibleToAllUsers?: boolean;
-		JobFlowRole?: string;
-		ServiceRole?: string;
-		AutoScalingRole?: string;
-		ScaleDownBehavior?: ClusterScaleDownBehavior;
+		Steps?: Array<StepDetail> | null;
+		BootstrapActions?: Array<BootstrapActionDetail> | null;
+		SupportedProducts?: Array<string> | null;
+		VisibleToAllUsers?: boolean | null;
+		JobFlowRole?: string | null;
+		ServiceRole?: string | null;
+		AutoScalingRole?: string | null;
+		ScaleDownBehavior?: ClusterScaleDownBehavior | null;
 	}
 
 
@@ -525,10 +525,10 @@ export namespace MyNS {
 		 */
 		State: JobFlowExecutionStatusDetailState;
 		CreationDateTime: Date;
-		StartDateTime?: Date;
-		ReadyDateTime?: Date;
-		EndDateTime?: Date;
-		LastStateChangeReason?: string;
+		StartDateTime?: Date | null;
+		ReadyDateTime?: Date | null;
+		EndDateTime?: Date | null;
+		LastStateChangeReason?: string | null;
 	}
 
 	export enum JobFlowExecutionStatusDetailState { STARTING = 0, BOOTSTRAPPING = 1, RUNNING = 2, WAITING = 3, SHUTTING_DOWN = 4, TERMINATED = 5, COMPLETED = 6, FAILED = 7 }
@@ -537,39 +537,39 @@ export namespace MyNS {
 	/** Specify the type of Amazon EC2 instances that the cluster (job flow) runs on. */
 	export interface JobFlowInstancesDetail {
 		MasterInstanceType: string;
-		MasterPublicDnsName?: string;
-		MasterInstanceId?: string;
+		MasterPublicDnsName?: string | null;
+		MasterInstanceId?: string | null;
 		SlaveInstanceType: string;
 		InstanceCount: number;
-		InstanceGroups?: Array<InstanceGroupDetail>;
-		NormalizedInstanceHours?: number;
-		Ec2KeyName?: string;
-		Ec2SubnetId?: string;
+		InstanceGroups?: Array<InstanceGroupDetail> | null;
+		NormalizedInstanceHours?: number | null;
+		Ec2KeyName?: string | null;
+		Ec2SubnetId?: string | null;
 
 		/** The Amazon EC2 Availability Zone configuration of the cluster (job flow). */
-		Placement?: PlacementType;
-		KeepJobFlowAliveWhenNoSteps?: boolean;
-		TerminationProtected?: boolean;
-		HadoopVersion?: string;
+		Placement?: PlacementType | null;
+		KeepJobFlowAliveWhenNoSteps?: boolean | null;
+		TerminationProtected?: boolean | null;
+		HadoopVersion?: string | null;
 	}
 
 
 	/** Detailed information about an instance group. */
 	export interface InstanceGroupDetail {
-		InstanceGroupId?: string;
-		Name?: string;
+		InstanceGroupId?: string | null;
+		Name?: string | null;
 		Market: InstanceGroupConfigMarket;
 		InstanceRole: InstanceFleetConfigInstanceFleetType;
-		BidPrice?: string;
+		BidPrice?: string | null;
 		InstanceType: string;
 		InstanceRequestCount: number;
 		InstanceRunningCount: number;
 		State: InstanceGroupDetailState;
-		LastStateChangeReason?: string;
+		LastStateChangeReason?: string | null;
 		CreationDateTime: Date;
-		StartDateTime?: Date;
-		ReadyDateTime?: Date;
-		EndDateTime?: Date;
+		StartDateTime?: Date | null;
+		ReadyDateTime?: Date | null;
+		EndDateTime?: Date | null;
 	}
 
 	export enum InstanceGroupDetailState { PROVISIONING = 0, BOOTSTRAPPING = 1, RUNNING = 2, RECONFIGURING = 3, RESIZING = 4, SUSPENDED = 5, TERMINATING = 6, TERMINATED = 7, ARRESTED = 8, SHUTTING_DOWN = 9, ENDED = 10 }
@@ -577,8 +577,8 @@ export namespace MyNS {
 
 	/** The Amazon EC2 Availability Zone configuration of the cluster (job flow). */
 	export interface PlacementType {
-		AvailabilityZone?: string;
-		AvailabilityZones?: Array<string>;
+		AvailabilityZone?: string | null;
+		AvailabilityZones?: Array<string> | null;
 	}
 
 
@@ -603,9 +603,9 @@ export namespace MyNS {
 	export interface StepExecutionStatusDetail {
 		State: StepExecutionStatusDetailState;
 		CreationDateTime: Date;
-		StartDateTime?: Date;
-		EndDateTime?: Date;
-		LastStateChangeReason?: string;
+		StartDateTime?: Date | null;
+		EndDateTime?: Date | null;
+		LastStateChangeReason?: string | null;
 	}
 
 	export enum StepExecutionStatusDetailState { PENDING = 0, RUNNING = 1, CONTINUE = 2, COMPLETED = 3, CANCELLED = 4, FAILED = 5, INTERRUPTED = 6 }
@@ -615,7 +615,7 @@ export namespace MyNS {
 	export interface BootstrapActionDetail {
 
 		/** Configuration of a bootstrap action. */
-		BootstrapActionConfig?: BootstrapActionConfig;
+		BootstrapActionConfig?: BootstrapActionConfig | null;
 	}
 
 
@@ -634,16 +634,16 @@ export namespace MyNS {
 	/** Configuration of the script to run during a bootstrap action. */
 	export interface ScriptBootstrapActionConfig {
 		Path: string;
-		Args?: Array<string>;
+		Args?: Array<string> | null;
 	}
 
 
 	/**  The input for the <a>DescribeJobFlows</a> operation.  */
 	export interface DescribeJobFlowsInput {
-		CreatedAfter?: Date;
-		CreatedBefore?: Date;
-		JobFlowIds?: Array<string>;
-		JobFlowStates?: Array<JobFlowExecutionState>;
+		CreatedAfter?: Date | null;
+		CreatedBefore?: Date | null;
+		JobFlowIds?: Array<string> | null;
+		JobFlowStates?: Array<JobFlowExecutionState> | null;
 	}
 
 
@@ -651,9 +651,9 @@ export namespace MyNS {
 	export enum JobFlowExecutionState { STARTING = 0, BOOTSTRAPPING = 1, RUNNING = 2, WAITING = 3, SHUTTING_DOWN = 4, TERMINATED = 5, COMPLETED = 6, FAILED = 7 }
 
 	export interface DescribeSecurityConfigurationOutput {
-		Name?: string;
-		SecurityConfiguration?: string;
-		CreationDateTime?: Date;
+		Name?: string | null;
+		SecurityConfiguration?: string | null;
+		CreationDateTime?: Date | null;
 	}
 
 	export interface DescribeSecurityConfigurationInput {
@@ -665,45 +665,45 @@ export namespace MyNS {
 	export interface DescribeStepOutput {
 
 		/** This represents a step in a cluster. */
-		Step?: Step;
+		Step?: Step | null;
 	}
 
 
 	/** This represents a step in a cluster. */
 	export interface Step {
-		Id?: string;
-		Name?: string;
+		Id?: string | null;
+		Name?: string | null;
 
 		/** A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail. */
-		Config?: HadoopStepConfig;
-		ActionOnFailure?: StepConfigActionOnFailure;
+		Config?: HadoopStepConfig | null;
+		ActionOnFailure?: StepConfigActionOnFailure | null;
 
 		/** The execution status details of the cluster step. */
-		Status?: StepStatus;
+		Status?: StepStatus | null;
 	}
 
 
 	/** A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail. */
 	export interface HadoopStepConfig {
-		Jar?: string;
-		Properties?: StringMap;
-		MainClass?: string;
-		Args?: Array<string>;
+		Jar?: string | null;
+		Properties?: StringMap | null;
+		MainClass?: string | null;
+		Args?: Array<string> | null;
 	}
 
 
 	/** The execution status details of the cluster step. */
 	export interface StepStatus {
-		State?: StepStatusState;
+		State?: StepStatusState | null;
 
 		/** The details of the step state change reason. */
-		StateChangeReason?: StepStateChangeReason;
+		StateChangeReason?: StepStateChangeReason | null;
 
 		/** The details of the step failure. The service attempts to detect the root cause for many common failures. */
-		FailureDetails?: FailureDetails;
+		FailureDetails?: FailureDetails | null;
 
 		/** The timeline of the cluster step lifecycle. */
-		Timeline?: StepTimeline;
+		Timeline?: StepTimeline | null;
 	}
 
 	export enum StepStatusState { PENDING = 0, CANCEL_PENDING = 1, RUNNING = 2, COMPLETED = 3, CANCELLED = 4, FAILED = 5, INTERRUPTED = 6 }
@@ -711,8 +711,8 @@ export namespace MyNS {
 
 	/** The details of the step state change reason. */
 	export interface StepStateChangeReason {
-		Code?: StepStateChangeReasonCode;
-		Message?: string;
+		Code?: StepStateChangeReasonCode | null;
+		Message?: string | null;
 	}
 
 	export enum StepStateChangeReasonCode { NONE = 0 }
@@ -720,17 +720,17 @@ export namespace MyNS {
 
 	/** The details of the step failure. The service attempts to detect the root cause for many common failures. */
 	export interface FailureDetails {
-		Reason?: string;
-		Message?: string;
-		LogFile?: string;
+		Reason?: string | null;
+		Message?: string | null;
+		LogFile?: string | null;
 	}
 
 
 	/** The timeline of the cluster step lifecycle. */
 	export interface StepTimeline {
-		CreationDateTime?: Date;
-		StartDateTime?: Date;
-		EndDateTime?: Date;
+		CreationDateTime?: Date | null;
+		StartDateTime?: Date | null;
+		EndDateTime?: Date | null;
 	}
 
 
@@ -759,14 +759,14 @@ export namespace MyNS {
 	/** A configuration for Amazon EMR block public access. When <code>BlockPublicSecurityGroupRules</code> is set to <code>true</code>, Amazon EMR prevents cluster creation if one of the cluster's security groups has a rule that allows inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code>. */
 	export interface BlockPublicAccessConfiguration {
 		BlockPublicSecurityGroupRules: boolean;
-		PermittedPublicSecurityGroupRuleRanges?: Array<PortRange>;
+		PermittedPublicSecurityGroupRuleRanges?: Array<PortRange> | null;
 	}
 
 
 	/** A list of port ranges that are permitted to allow inbound traffic from all public IP addresses. To specify a single port, use the same value for <code>MinRange</code> and <code>MaxRange</code>. */
 	export interface PortRange {
 		MinRange: number;
-		MaxRange?: number;
+		MaxRange?: number | null;
 	}
 
 
@@ -782,7 +782,7 @@ export namespace MyNS {
 	export interface GetManagedScalingPolicyOutput {
 
 		/** Managed scaling policy for an Amazon EMR cluster. The policy specifies the limits for resources that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration. */
-		ManagedScalingPolicy?: ManagedScalingPolicy;
+		ManagedScalingPolicy?: ManagedScalingPolicy | null;
 	}
 
 
@@ -790,7 +790,7 @@ export namespace MyNS {
 	export interface ManagedScalingPolicy {
 
 		/** The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster can not be above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. */
-		ComputeLimits?: ComputeLimits;
+		ComputeLimits?: ComputeLimits | null;
 	}
 
 
@@ -799,7 +799,7 @@ export namespace MyNS {
 		UnitType: ComputeLimitsUnitType;
 		MinimumCapacityUnits: number;
 		MaximumCapacityUnits: number;
-		MaximumOnDemandCapacityUnits?: number;
+		MaximumOnDemandCapacityUnits?: number | null;
 	}
 
 	export enum ComputeLimitsUnitType { InstanceFleetUnits = 0, Instances = 1, VCPU = 2 }
@@ -811,90 +811,90 @@ export namespace MyNS {
 
 	/** This output contains the bootstrap actions detail. */
 	export interface ListBootstrapActionsOutput {
-		BootstrapActions?: Array<Command>;
-		Marker?: string;
+		BootstrapActions?: Array<Command> | null;
+		Marker?: string | null;
 	}
 
 
 	/** An entity describing an executable that runs on a cluster. */
 	export interface Command {
-		Name?: string;
-		ScriptPath?: string;
-		Args?: Array<string>;
+		Name?: string | null;
+		ScriptPath?: string | null;
+		Args?: Array<string> | null;
 	}
 
 
 	/** This input determines which bootstrap actions to retrieve. */
 	export interface ListBootstrapActionsInput {
 		ClusterId: string;
-		Marker?: string;
+		Marker?: string | null;
 	}
 
 
 	/** This contains a ClusterSummaryList with the cluster details; for example, the cluster IDs, names, and status. */
 	export interface ListClustersOutput {
-		Clusters?: Array<ClusterSummary>;
-		Marker?: string;
+		Clusters?: Array<ClusterSummary> | null;
+		Marker?: string | null;
 	}
 
 
 	/** The summary description of the cluster. */
 	export interface ClusterSummary {
-		Id?: string;
-		Name?: string;
+		Id?: string | null;
+		Name?: string | null;
 
 		/** The detailed status of the cluster. */
-		Status?: ClusterStatus;
-		NormalizedInstanceHours?: number;
-		ClusterArn?: string;
-		OutpostArn?: string;
+		Status?: ClusterStatus | null;
+		NormalizedInstanceHours?: number | null;
+		ClusterArn?: string | null;
+		OutpostArn?: string | null;
 	}
 
 
 	/** This input determines how the ListClusters action filters the list of clusters that it returns. */
 	export interface ListClustersInput {
-		CreatedAfter?: Date;
-		CreatedBefore?: Date;
-		ClusterStates?: Array<ClusterState>;
-		Marker?: string;
+		CreatedAfter?: Date | null;
+		CreatedBefore?: Date | null;
+		ClusterStates?: Array<ClusterState> | null;
+		Marker?: string | null;
 	}
 
 	export enum ClusterState { STARTING = 0, BOOTSTRAPPING = 1, RUNNING = 2, WAITING = 3, TERMINATING = 4, TERMINATED = 5, TERMINATED_WITH_ERRORS = 6 }
 
 	export interface ListInstanceFleetsOutput {
-		InstanceFleets?: Array<InstanceFleet>;
-		Marker?: string;
+		InstanceFleets?: Array<InstanceFleet> | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p>Describes an instance fleet, which is a group of EC2 instances that host a particular node type (master, core, or task) in an Amazon EMR cluster. Instance fleets can consist of a mix of instance types and On-Demand and Spot instances, which are provisioned to meet a defined target capacity. </p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceFleet {
-		Id?: string;
-		Name?: string;
+		Id?: string | null;
+		Name?: string | null;
 
 		/** <p>The status of the instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
-		Status?: InstanceFleetStatus;
-		InstanceFleetType?: InstanceFleetConfigInstanceFleetType;
-		TargetOnDemandCapacity?: number;
-		TargetSpotCapacity?: number;
-		ProvisionedOnDemandCapacity?: number;
-		ProvisionedSpotCapacity?: number;
-		InstanceTypeSpecifications?: Array<InstanceTypeSpecification>;
+		Status?: InstanceFleetStatus | null;
+		InstanceFleetType?: InstanceFleetConfigInstanceFleetType | null;
+		TargetOnDemandCapacity?: number | null;
+		TargetSpotCapacity?: number | null;
+		ProvisionedOnDemandCapacity?: number | null;
+		ProvisionedSpotCapacity?: number | null;
+		InstanceTypeSpecifications?: Array<InstanceTypeSpecification> | null;
 
 		/** <p>The launch specification for Spot instances in the fleet, which determines the defined duration and provisioning timeout behavior.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
-		LaunchSpecifications?: InstanceFleetProvisioningSpecifications;
+		LaunchSpecifications?: InstanceFleetProvisioningSpecifications | null;
 	}
 
 
 	/** <p>The status of the instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceFleetStatus {
-		State?: InstanceFleetStatusState;
+		State?: InstanceFleetStatusState | null;
 
 		/** <p>Provides status change reason details for the instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
-		StateChangeReason?: InstanceFleetStateChangeReason;
+		StateChangeReason?: InstanceFleetStateChangeReason | null;
 
 		/** <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
-		Timeline?: InstanceFleetTimeline;
+		Timeline?: InstanceFleetTimeline | null;
 	}
 
 	export enum InstanceFleetStatusState { PROVISIONING = 0, BOOTSTRAPPING = 1, RUNNING = 2, RESIZING = 3, SUSPENDED = 4, TERMINATING = 5, TERMINATED = 6 }
@@ -902,8 +902,8 @@ export namespace MyNS {
 
 	/** <p>Provides status change reason details for the instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceFleetStateChangeReason {
-		Code?: InstanceFleetStateChangeReasonCode;
-		Message?: string;
+		Code?: InstanceFleetStateChangeReasonCode | null;
+		Message?: string | null;
 	}
 
 	export enum InstanceFleetStateChangeReasonCode { INTERNAL_ERROR = 0, VALIDATION_ERROR = 1, INSTANCE_FAILURE = 2, CLUSTER_TERMINATED = 3 }
@@ -911,21 +911,21 @@ export namespace MyNS {
 
 	/** <p>Provides historical timestamps for the instance fleet, including the time of creation, the time it became ready to run jobs, and the time of termination.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceFleetTimeline {
-		CreationDateTime?: Date;
-		ReadyDateTime?: Date;
-		EndDateTime?: Date;
+		CreationDateTime?: Date | null;
+		ReadyDateTime?: Date | null;
+		EndDateTime?: Date | null;
 	}
 
 
 	/** <p>The configuration specification for each instance type in an instance fleet.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceTypeSpecification {
-		InstanceType?: string;
-		WeightedCapacity?: number;
-		BidPrice?: string;
-		BidPriceAsPercentageOfOnDemandPrice?: number;
-		Configurations?: Array<Configuration>;
-		EbsBlockDevices?: Array<EbsBlockDevice>;
-		EbsOptimized?: boolean;
+		InstanceType?: string | null;
+		WeightedCapacity?: number | null;
+		BidPrice?: string | null;
+		BidPriceAsPercentageOfOnDemandPrice?: number | null;
+		Configurations?: Array<Configuration> | null;
+		EbsBlockDevices?: Array<EbsBlockDevice> | null;
+		EbsOptimized?: boolean | null;
 	}
 
 
@@ -933,92 +933,92 @@ export namespace MyNS {
 	export interface EbsBlockDevice {
 
 		/** EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster. */
-		VolumeSpecification?: VolumeSpecification;
-		Device?: string;
+		VolumeSpecification?: VolumeSpecification | null;
+		Device?: string | null;
 	}
 
 	export interface ListInstanceFleetsInput {
 		ClusterId: string;
-		Marker?: string;
+		Marker?: string | null;
 	}
 
 
 	/** This input determines which instance groups to retrieve. */
 	export interface ListInstanceGroupsOutput {
-		InstanceGroups?: Array<InstanceGroup>;
-		Marker?: string;
+		InstanceGroups?: Array<InstanceGroup> | null;
+		Marker?: string | null;
 	}
 
 
 	/** This entity represents an instance group, which is a group of instances that have common purpose. For example, CORE instance group is used for HDFS. */
 	export interface InstanceGroup {
-		Id?: string;
-		Name?: string;
-		Market?: InstanceGroupConfigMarket;
-		InstanceGroupType?: InstanceFleetConfigInstanceFleetType;
-		BidPrice?: string;
-		InstanceType?: string;
-		RequestedInstanceCount?: number;
-		RunningInstanceCount?: number;
+		Id?: string | null;
+		Name?: string | null;
+		Market?: InstanceGroupConfigMarket | null;
+		InstanceGroupType?: InstanceFleetConfigInstanceFleetType | null;
+		BidPrice?: string | null;
+		InstanceType?: string | null;
+		RequestedInstanceCount?: number | null;
+		RunningInstanceCount?: number | null;
 
 		/** The details of the instance group status. */
-		Status?: InstanceGroupStatus;
-		Configurations?: Array<Configuration>;
-		ConfigurationsVersion?: number;
-		LastSuccessfullyAppliedConfigurations?: Array<Configuration>;
-		LastSuccessfullyAppliedConfigurationsVersion?: number;
-		EbsBlockDevices?: Array<EbsBlockDevice>;
-		EbsOptimized?: boolean;
+		Status?: InstanceGroupStatus | null;
+		Configurations?: Array<Configuration> | null;
+		ConfigurationsVersion?: number | null;
+		LastSuccessfullyAppliedConfigurations?: Array<Configuration> | null;
+		LastSuccessfullyAppliedConfigurationsVersion?: number | null;
+		EbsBlockDevices?: Array<EbsBlockDevice> | null;
+		EbsOptimized?: boolean | null;
 
 		/** Policy for customizing shrink operations. Allows configuration of decommissioning timeout and targeted instance shrinking. */
-		ShrinkPolicy?: ShrinkPolicy;
+		ShrinkPolicy?: ShrinkPolicy | null;
 
 		/** An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>. */
-		AutoScalingPolicy?: AutoScalingPolicyDescription;
+		AutoScalingPolicy?: AutoScalingPolicyDescription | null;
 	}
 
 
 	/** The details of the instance group status. */
 	export interface InstanceGroupStatus {
-		State?: InstanceGroupDetailState;
+		State?: InstanceGroupDetailState | null;
 
 		/** The status change reason details for the instance group. */
-		StateChangeReason?: InstanceGroupStateChangeReason;
+		StateChangeReason?: InstanceGroupStateChangeReason | null;
 
 		/** The timeline of the instance group lifecycle. */
-		Timeline?: InstanceGroupTimeline;
+		Timeline?: InstanceGroupTimeline | null;
 	}
 
 
 	/** The status change reason details for the instance group. */
 	export interface InstanceGroupStateChangeReason {
-		Code?: InstanceFleetStateChangeReasonCode;
-		Message?: string;
+		Code?: InstanceFleetStateChangeReasonCode | null;
+		Message?: string | null;
 	}
 
 
 	/** The timeline of the instance group lifecycle. */
 	export interface InstanceGroupTimeline {
-		CreationDateTime?: Date;
-		ReadyDateTime?: Date;
-		EndDateTime?: Date;
+		CreationDateTime?: Date | null;
+		ReadyDateTime?: Date | null;
+		EndDateTime?: Date | null;
 	}
 
 
 	/** Policy for customizing shrink operations. Allows configuration of decommissioning timeout and targeted instance shrinking. */
 	export interface ShrinkPolicy {
-		DecommissionTimeout?: number;
+		DecommissionTimeout?: number | null;
 
 		/** Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group. */
-		InstanceResizePolicy?: InstanceResizePolicy;
+		InstanceResizePolicy?: InstanceResizePolicy | null;
 	}
 
 
 	/** Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group. */
 	export interface InstanceResizePolicy {
-		InstancesToTerminate?: Array<string>;
-		InstancesToProtect?: Array<string>;
-		InstanceTerminationTimeout?: number;
+		InstancesToTerminate?: Array<string> | null;
+		InstancesToProtect?: Array<string> | null;
+		InstanceTerminationTimeout?: number | null;
 	}
 
 
@@ -1026,20 +1026,20 @@ export namespace MyNS {
 	export interface AutoScalingPolicyDescription {
 
 		/** The status of an automatic scaling policy. */
-		Status?: AutoScalingPolicyStatus;
+		Status?: AutoScalingPolicyStatus | null;
 
 		/** The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activities triggered by automatic scaling rules will not cause an instance group to grow above or below these limits. */
-		Constraints?: ScalingConstraints;
-		Rules?: Array<ScalingRule>;
+		Constraints?: ScalingConstraints | null;
+		Rules?: Array<ScalingRule> | null;
 	}
 
 
 	/** The status of an automatic scaling policy.  */
 	export interface AutoScalingPolicyStatus {
-		State?: AutoScalingPolicyStatusState;
+		State?: AutoScalingPolicyStatusState | null;
 
 		/** The reason for an <a>AutoScalingPolicyStatus</a> change. */
-		StateChangeReason?: AutoScalingPolicyStateChangeReason;
+		StateChangeReason?: AutoScalingPolicyStateChangeReason | null;
 	}
 
 	export enum AutoScalingPolicyStatusState { PENDING = 0, ATTACHING = 1, ATTACHED = 2, DETACHING = 3, DETACHED = 4, FAILED = 5 }
@@ -1047,8 +1047,8 @@ export namespace MyNS {
 
 	/** The reason for an <a>AutoScalingPolicyStatus</a> change. */
 	export interface AutoScalingPolicyStateChangeReason {
-		Code?: AutoScalingPolicyStateChangeReasonCode;
-		Message?: string;
+		Code?: AutoScalingPolicyStateChangeReasonCode | null;
+		Message?: string | null;
 	}
 
 	export enum AutoScalingPolicyStateChangeReasonCode { USER_REQUEST = 0, PROVISION_FAILURE = 1, CLEANUP_FAILURE = 2 }
@@ -1057,45 +1057,45 @@ export namespace MyNS {
 	/** This input determines which instance groups to retrieve. */
 	export interface ListInstanceGroupsInput {
 		ClusterId: string;
-		Marker?: string;
+		Marker?: string | null;
 	}
 
 
 	/** This output contains the list of instances. */
 	export interface ListInstancesOutput {
-		Instances?: Array<Instance>;
-		Marker?: string;
+		Instances?: Array<Instance> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Represents an EC2 instance provisioned as part of cluster. */
 	export interface Instance {
-		Id?: string;
-		Ec2InstanceId?: string;
-		PublicDnsName?: string;
-		PublicIpAddress?: string;
-		PrivateDnsName?: string;
-		PrivateIpAddress?: string;
+		Id?: string | null;
+		Ec2InstanceId?: string | null;
+		PublicDnsName?: string | null;
+		PublicIpAddress?: string | null;
+		PrivateDnsName?: string | null;
+		PrivateIpAddress?: string | null;
 
 		/** The instance status details. */
-		Status?: InstanceStatus;
-		InstanceGroupId?: string;
-		InstanceFleetId?: string;
-		Market?: InstanceGroupConfigMarket;
-		InstanceType?: string;
-		EbsVolumes?: Array<EbsVolume>;
+		Status?: InstanceStatus | null;
+		InstanceGroupId?: string | null;
+		InstanceFleetId?: string | null;
+		Market?: InstanceGroupConfigMarket | null;
+		InstanceType?: string | null;
+		EbsVolumes?: Array<EbsVolume> | null;
 	}
 
 
 	/** The instance status details. */
 	export interface InstanceStatus {
-		State?: InstanceStatusState;
+		State?: InstanceStatusState | null;
 
 		/** The details of the status change reason for the instance. */
-		StateChangeReason?: InstanceStateChangeReason;
+		StateChangeReason?: InstanceStateChangeReason | null;
 
 		/** The timeline of the instance lifecycle. */
-		Timeline?: InstanceTimeline;
+		Timeline?: InstanceTimeline | null;
 	}
 
 	export enum InstanceStatusState { AWAITING_FULFILLMENT = 0, PROVISIONING = 1, BOOTSTRAPPING = 2, RUNNING = 3, TERMINATED = 4 }
@@ -1103,8 +1103,8 @@ export namespace MyNS {
 
 	/** The details of the status change reason for the instance. */
 	export interface InstanceStateChangeReason {
-		Code?: InstanceStateChangeReasonCode;
-		Message?: string;
+		Code?: InstanceStateChangeReasonCode | null;
+		Message?: string | null;
 	}
 
 	export enum InstanceStateChangeReasonCode { INTERNAL_ERROR = 0, VALIDATION_ERROR = 1, INSTANCE_FAILURE = 2, BOOTSTRAP_FAILURE = 3, CLUSTER_TERMINATED = 4 }
@@ -1112,28 +1112,28 @@ export namespace MyNS {
 
 	/** The timeline of the instance lifecycle. */
 	export interface InstanceTimeline {
-		CreationDateTime?: Date;
-		ReadyDateTime?: Date;
-		EndDateTime?: Date;
+		CreationDateTime?: Date | null;
+		ReadyDateTime?: Date | null;
+		EndDateTime?: Date | null;
 	}
 
 
 	/** EBS block device that's attached to an EC2 instance. */
 	export interface EbsVolume {
-		Device?: string;
-		VolumeId?: string;
+		Device?: string | null;
+		VolumeId?: string | null;
 	}
 
 
 	/** This input determines which instances to list. */
 	export interface ListInstancesInput {
 		ClusterId: string;
-		InstanceGroupId?: string;
-		InstanceGroupTypes?: Array<InstanceGroupType>;
-		InstanceFleetId?: string;
-		InstanceFleetType?: InstanceFleetConfigInstanceFleetType;
-		InstanceStates?: Array<InstanceState>;
-		Marker?: string;
+		InstanceGroupId?: string | null;
+		InstanceGroupTypes?: Array<InstanceGroupType> | null;
+		InstanceFleetId?: string | null;
+		InstanceFleetType?: InstanceFleetConfigInstanceFleetType | null;
+		InstanceStates?: Array<InstanceState> | null;
+		Marker?: string | null;
 	}
 
 	export enum InstanceGroupType { MASTER = 0, CORE = 1, TASK = 2 }
@@ -1141,60 +1141,60 @@ export namespace MyNS {
 	export enum InstanceState { AWAITING_FULFILLMENT = 0, PROVISIONING = 1, BOOTSTRAPPING = 2, RUNNING = 3, TERMINATED = 4 }
 
 	export interface ListSecurityConfigurationsOutput {
-		SecurityConfigurations?: Array<SecurityConfigurationSummary>;
-		Marker?: string;
+		SecurityConfigurations?: Array<SecurityConfigurationSummary> | null;
+		Marker?: string | null;
 	}
 
 
 	/** The creation date and time, and name, of a security configuration. */
 	export interface SecurityConfigurationSummary {
-		Name?: string;
-		CreationDateTime?: Date;
+		Name?: string | null;
+		CreationDateTime?: Date | null;
 	}
 
 	export interface ListSecurityConfigurationsInput {
-		Marker?: string;
+		Marker?: string | null;
 	}
 
 
 	/** This output contains the list of steps returned in reverse order. This means that the last step is the first element in the list. */
 	export interface ListStepsOutput {
-		Steps?: Array<StepSummary>;
-		Marker?: string;
+		Steps?: Array<StepSummary> | null;
+		Marker?: string | null;
 	}
 
 
 	/** The summary of the cluster step. */
 	export interface StepSummary {
-		Id?: string;
-		Name?: string;
+		Id?: string | null;
+		Name?: string | null;
 
 		/** A cluster step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail. */
-		Config?: HadoopStepConfig;
-		ActionOnFailure?: StepConfigActionOnFailure;
+		Config?: HadoopStepConfig | null;
+		ActionOnFailure?: StepConfigActionOnFailure | null;
 
 		/** The execution status details of the cluster step. */
-		Status?: StepStatus;
+		Status?: StepStatus | null;
 	}
 
 
 	/** This input determines which steps to list. */
 	export interface ListStepsInput {
 		ClusterId: string;
-		StepStates?: Array<StepState>;
-		StepIds?: Array<string>;
-		Marker?: string;
+		StepStates?: Array<StepState> | null;
+		StepIds?: Array<string> | null;
+		Marker?: string | null;
 	}
 
 	export enum StepState { PENDING = 0, CANCEL_PENDING = 1, RUNNING = 2, COMPLETED = 3, CANCELLED = 4, FAILED = 5, INTERRUPTED = 6 }
 
 	export interface ModifyClusterOutput {
-		StepConcurrencyLevel?: number;
+		StepConcurrencyLevel?: number | null;
 	}
 
 	export interface ModifyClusterInput {
 		ClusterId: string;
-		StepConcurrencyLevel?: number;
+		StepConcurrencyLevel?: number | null;
 	}
 
 	export interface ModifyInstanceFleetInput {
@@ -1211,36 +1211,36 @@ export namespace MyNS {
 	/** <p>Configuration parameters for an instance fleet modification request.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> */
 	export interface InstanceFleetModifyConfig {
 		InstanceFleetId: string;
-		TargetOnDemandCapacity?: number;
-		TargetSpotCapacity?: number;
+		TargetOnDemandCapacity?: number | null;
+		TargetSpotCapacity?: number | null;
 	}
 
 
 	/** Change the size of some instance groups. */
 	export interface ModifyInstanceGroupsInput {
-		ClusterId?: string;
-		InstanceGroups?: Array<InstanceGroupModifyConfig>;
+		ClusterId?: string | null;
+		InstanceGroups?: Array<InstanceGroupModifyConfig> | null;
 	}
 
 
 	/** Modify the size or configurations of an instance group. */
 	export interface InstanceGroupModifyConfig {
 		InstanceGroupId: string;
-		InstanceCount?: number;
-		EC2InstanceIdsToTerminate?: Array<string>;
+		InstanceCount?: number | null;
+		EC2InstanceIdsToTerminate?: Array<string> | null;
 
 		/** Policy for customizing shrink operations. Allows configuration of decommissioning timeout and targeted instance shrinking. */
-		ShrinkPolicy?: ShrinkPolicy;
-		Configurations?: Array<Configuration>;
+		ShrinkPolicy?: ShrinkPolicy | null;
+		Configurations?: Array<Configuration> | null;
 	}
 
 	export interface PutAutoScalingPolicyOutput {
-		ClusterId?: string;
-		InstanceGroupId?: string;
+		ClusterId?: string | null;
+		InstanceGroupId?: string | null;
 
 		/** An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>. */
-		AutoScalingPolicy?: AutoScalingPolicyDescription;
-		ClusterArn?: string;
+		AutoScalingPolicy?: AutoScalingPolicyDescription | null;
+		ClusterArn?: string | null;
 	}
 
 	export interface PutAutoScalingPolicyInput {
@@ -1309,79 +1309,79 @@ export namespace MyNS {
 
 	/**  The result of the <a>RunJobFlow</a> operation.  */
 	export interface RunJobFlowOutput {
-		JobFlowId?: string;
-		ClusterArn?: string;
+		JobFlowId?: string | null;
+		ClusterArn?: string | null;
 	}
 
 
 	/**  Input to the <a>RunJobFlow</a> operation.  */
 	export interface RunJobFlowInput {
 		Name: string;
-		LogUri?: string;
-		LogEncryptionKmsKeyId?: string;
-		AdditionalInfo?: string;
-		AmiVersion?: string;
-		ReleaseLabel?: string;
+		LogUri?: string | null;
+		LogEncryptionKmsKeyId?: string | null;
+		AdditionalInfo?: string | null;
+		AmiVersion?: string | null;
+		ReleaseLabel?: string | null;
 
 		/**
 		 * A description of the Amazon EC2 instance on which the cluster (job flow) runs. A valid JobFlowInstancesConfig must contain either InstanceGroups or InstanceFleets, which is the recommended configuration. They cannot be used together. You may also have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present), but we don't recommend this configuration.
 		 * Required
 		 */
 		Instances: JobFlowInstancesConfig;
-		Steps?: Array<StepConfig>;
-		BootstrapActions?: Array<BootstrapActionConfig>;
-		SupportedProducts?: Array<string>;
-		NewSupportedProducts?: Array<SupportedProductConfig>;
-		Applications?: Array<Application>;
-		Configurations?: Array<Configuration>;
-		VisibleToAllUsers?: boolean;
-		JobFlowRole?: string;
-		ServiceRole?: string;
-		Tags?: Array<Tag>;
-		SecurityConfiguration?: string;
-		AutoScalingRole?: string;
-		ScaleDownBehavior?: ClusterScaleDownBehavior;
-		CustomAmiId?: string;
-		EbsRootVolumeSize?: number;
-		RepoUpgradeOnBoot?: ClusterRepoUpgradeOnBoot;
+		Steps?: Array<StepConfig> | null;
+		BootstrapActions?: Array<BootstrapActionConfig> | null;
+		SupportedProducts?: Array<string> | null;
+		NewSupportedProducts?: Array<SupportedProductConfig> | null;
+		Applications?: Array<Application> | null;
+		Configurations?: Array<Configuration> | null;
+		VisibleToAllUsers?: boolean | null;
+		JobFlowRole?: string | null;
+		ServiceRole?: string | null;
+		Tags?: Array<Tag> | null;
+		SecurityConfiguration?: string | null;
+		AutoScalingRole?: string | null;
+		ScaleDownBehavior?: ClusterScaleDownBehavior | null;
+		CustomAmiId?: string | null;
+		EbsRootVolumeSize?: number | null;
+		RepoUpgradeOnBoot?: ClusterRepoUpgradeOnBoot | null;
 
 		/** Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>EMR Management Guide</i>. */
-		KerberosAttributes?: KerberosAttributes;
-		StepConcurrencyLevel?: number;
+		KerberosAttributes?: KerberosAttributes | null;
+		StepConcurrencyLevel?: number | null;
 
 		/** Managed scaling policy for an Amazon EMR cluster. The policy specifies the limits for resources that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration. */
-		ManagedScalingPolicy?: ManagedScalingPolicy;
+		ManagedScalingPolicy?: ManagedScalingPolicy | null;
 	}
 
 
 	/** A description of the Amazon EC2 instance on which the cluster (job flow) runs. A valid JobFlowInstancesConfig must contain either InstanceGroups or InstanceFleets, which is the recommended configuration. They cannot be used together. You may also have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present), but we don't recommend this configuration. */
 	export interface JobFlowInstancesConfig {
-		MasterInstanceType?: string;
-		SlaveInstanceType?: string;
-		InstanceCount?: number;
-		InstanceGroups?: Array<InstanceGroupConfig>;
-		InstanceFleets?: Array<InstanceFleetConfig>;
-		Ec2KeyName?: string;
+		MasterInstanceType?: string | null;
+		SlaveInstanceType?: string | null;
+		InstanceCount?: number | null;
+		InstanceGroups?: Array<InstanceGroupConfig> | null;
+		InstanceFleets?: Array<InstanceFleetConfig> | null;
+		Ec2KeyName?: string | null;
 
 		/** The Amazon EC2 Availability Zone configuration of the cluster (job flow). */
-		Placement?: PlacementType;
-		KeepJobFlowAliveWhenNoSteps?: boolean;
-		TerminationProtected?: boolean;
-		HadoopVersion?: string;
-		Ec2SubnetId?: string;
-		Ec2SubnetIds?: Array<string>;
-		EmrManagedMasterSecurityGroup?: string;
-		EmrManagedSlaveSecurityGroup?: string;
-		ServiceAccessSecurityGroup?: string;
-		AdditionalMasterSecurityGroups?: Array<string>;
-		AdditionalSlaveSecurityGroups?: Array<string>;
+		Placement?: PlacementType | null;
+		KeepJobFlowAliveWhenNoSteps?: boolean | null;
+		TerminationProtected?: boolean | null;
+		HadoopVersion?: string | null;
+		Ec2SubnetId?: string | null;
+		Ec2SubnetIds?: Array<string> | null;
+		EmrManagedMasterSecurityGroup?: string | null;
+		EmrManagedSlaveSecurityGroup?: string | null;
+		ServiceAccessSecurityGroup?: string | null;
+		AdditionalMasterSecurityGroups?: Array<string> | null;
+		AdditionalSlaveSecurityGroups?: Array<string> | null;
 	}
 
 
 	/** The list of supported product configurations which allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments. */
 	export interface SupportedProductConfig {
-		Name?: string;
-		Args?: Array<string>;
+		Name?: string | null;
+		Args?: Array<string> | null;
 	}
 
 
@@ -1570,7 +1570,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListBootstrapActionsOutput} Success
 		 */
-		ListBootstrapActions(Marker: string, requestBody: ListBootstrapActionsInput): Observable<ListBootstrapActionsOutput> {
+		ListBootstrapActions(Marker: string | null | undefined, requestBody: ListBootstrapActionsInput): Observable<ListBootstrapActionsOutput> {
 			return this.http.post<ListBootstrapActionsOutput>(this.baseUri + '#X-Amz-Target=ElasticMapReduce.ListBootstrapActions?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1580,7 +1580,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListClustersOutput} Success
 		 */
-		ListClusters(Marker: string, requestBody: ListClustersInput): Observable<ListClustersOutput> {
+		ListClusters(Marker: string | null | undefined, requestBody: ListClustersInput): Observable<ListClustersOutput> {
 			return this.http.post<ListClustersOutput>(this.baseUri + '#X-Amz-Target=ElasticMapReduce.ListClusters?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1590,7 +1590,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListInstanceFleetsOutput} Success
 		 */
-		ListInstanceFleets(Marker: string, requestBody: ListInstanceFleetsInput): Observable<ListInstanceFleetsOutput> {
+		ListInstanceFleets(Marker: string | null | undefined, requestBody: ListInstanceFleetsInput): Observable<ListInstanceFleetsOutput> {
 			return this.http.post<ListInstanceFleetsOutput>(this.baseUri + '#X-Amz-Target=ElasticMapReduce.ListInstanceFleets?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1600,7 +1600,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListInstanceGroupsOutput} Success
 		 */
-		ListInstanceGroups(Marker: string, requestBody: ListInstanceGroupsInput): Observable<ListInstanceGroupsOutput> {
+		ListInstanceGroups(Marker: string | null | undefined, requestBody: ListInstanceGroupsInput): Observable<ListInstanceGroupsOutput> {
 			return this.http.post<ListInstanceGroupsOutput>(this.baseUri + '#X-Amz-Target=ElasticMapReduce.ListInstanceGroups?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1610,7 +1610,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListInstancesOutput} Success
 		 */
-		ListInstances(Marker: string, requestBody: ListInstancesInput): Observable<ListInstancesOutput> {
+		ListInstances(Marker: string | null | undefined, requestBody: ListInstancesInput): Observable<ListInstancesOutput> {
 			return this.http.post<ListInstancesOutput>(this.baseUri + '#X-Amz-Target=ElasticMapReduce.ListInstances?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1620,7 +1620,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListSecurityConfigurationsOutput} Success
 		 */
-		ListSecurityConfigurations(Marker: string, requestBody: ListSecurityConfigurationsInput): Observable<ListSecurityConfigurationsOutput> {
+		ListSecurityConfigurations(Marker: string | null | undefined, requestBody: ListSecurityConfigurationsInput): Observable<ListSecurityConfigurationsOutput> {
 			return this.http.post<ListSecurityConfigurationsOutput>(this.baseUri + '#X-Amz-Target=ElasticMapReduce.ListSecurityConfigurations?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1630,7 +1630,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListStepsOutput} Success
 		 */
-		ListSteps(Marker: string, requestBody: ListStepsInput): Observable<ListStepsOutput> {
+		ListSteps(Marker: string | null | undefined, requestBody: ListStepsInput): Observable<ListStepsOutput> {
 			return this.http.post<ListStepsOutput>(this.baseUri + '#X-Amz-Target=ElasticMapReduce.ListSteps?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

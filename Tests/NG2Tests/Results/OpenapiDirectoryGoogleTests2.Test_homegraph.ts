@@ -7,7 +7,7 @@ export namespace MyNS {
 	export interface AgentDeviceId {
 
 		/** Third-party device ID. */
-		id?: string;
+		id?: string | null;
 	}
 
 
@@ -15,10 +15,10 @@ export namespace MyNS {
 	export interface AgentOtherDeviceId {
 
 		/** Project ID for your smart home Action. */
-		agentId?: string;
+		agentId?: string | null;
 
 		/** Unique third-party device ID. */
-		deviceId?: string;
+		deviceId?: string | null;
 	}
 
 
@@ -26,7 +26,7 @@ export namespace MyNS {
 	export interface Device {
 
 		/** Attributes for the traits supported by the device. */
-		attributes?: {[id: string]: any };
+		attributes?: {[id: string]: any } | null;
 
 		/**
 		 * Custom device attributes stored in Home Graph and provided to your
@@ -36,16 +36,16 @@ export namespace MyNS {
 		 * [EXECUTE](https://developers.google.com/assistant/smarthome/reference/intent/execute)
 		 * intent.
 		 */
-		customData?: {[id: string]: any };
+		customData?: {[id: string]: any } | null;
 
 		/** Device information. */
-		deviceInfo?: DeviceInfo;
+		deviceInfo?: DeviceInfo | null;
 
 		/** Third-party device ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Identifiers used to describe the device. */
-		name?: DeviceNames;
+		name?: DeviceNames | null;
 
 		/**
 		 * Indicates whether your smart home Action will report notifications
@@ -55,47 +55,47 @@ export namespace MyNS {
 		 * you should update this field and call
 		 * RequestSyncDevices.
 		 */
-		notificationSupportedByAgent?: boolean;
+		notificationSupportedByAgent?: boolean | null;
 
 		/**
 		 * Alternate IDs associated with this device.
 		 * This is used to identify cloud synced devices enabled for [local
 		 * fulfillment](https://developers.google.com/assistant/smarthome/concepts/local).
 		 */
-		otherDeviceIds?: Array<AgentOtherDeviceId>;
+		otherDeviceIds?: Array<AgentOtherDeviceId> | null;
 
 		/**
 		 * Suggested name for the room where this device is installed.
 		 * Google attempts to use this value during user setup.
 		 */
-		roomHint?: string;
+		roomHint?: string | null;
 
 		/**
 		 * Suggested name for the structure where this device is installed.
 		 * Google attempts to use this value during user setup.
 		 */
-		structureHint?: string;
+		structureHint?: string | null;
 
 		/**
 		 * Traits supported by the device.
 		 * See [device
 		 * traits](https://developers.google.com/assistant/smarthome/traits).
 		 */
-		traits?: Array<string>;
+		traits?: Array<string> | null;
 
 		/**
 		 * Hardware type of the device.
 		 * See [device
 		 * types](https://developers.google.com/assistant/smarthome/guides).
 		 */
-		type?: string;
+		type?: string | null;
 
 		/**
 		 * Indicates whether your smart home Action will report state of this device
 		 * to Google via
 		 * ReportStateAndNotification.
 		 */
-		willReportState?: boolean;
+		willReportState?: boolean | null;
 	}
 
 
@@ -103,16 +103,16 @@ export namespace MyNS {
 	export interface DeviceInfo {
 
 		/** Device hardware version. */
-		hwVersion?: string;
+		hwVersion?: string | null;
 
 		/** Device manufacturer. */
-		manufacturer?: string;
+		manufacturer?: string | null;
 
 		/** Device model. */
-		model?: string;
+		model?: string | null;
 
 		/** Device software version. */
-		swVersion?: string;
+		swVersion?: string | null;
 	}
 
 
@@ -123,13 +123,13 @@ export namespace MyNS {
 		 * List of names provided by the manufacturer rather than the user, such as
 		 * serial numbers, SKUs, etc.
 		 */
-		defaultNames?: Array<string>;
+		defaultNames?: Array<string> | null;
 
 		/** Primary name of the device, generally provided by the user. */
-		name?: string;
+		name?: string | null;
 
 		/** Additional names provided by the user for the device. */
-		nicknames?: Array<string>;
+		nicknames?: Array<string> | null;
 	}
 
 
@@ -153,16 +153,16 @@ export namespace MyNS {
 	export interface QueryRequest {
 
 		/** Required. Third-party user ID. */
-		agentUserId?: string;
+		agentUserId?: string | null;
 
 		/**
 		 * Required. Inputs containing third-party device IDs for which to
 		 * get the device states.
 		 */
-		inputs?: Array<QueryRequestInput>;
+		inputs?: Array<QueryRequestInput> | null;
 
 		/** Request ID used for debugging. */
-		requestId?: string;
+		requestId?: string | null;
 	}
 
 
@@ -170,7 +170,7 @@ export namespace MyNS {
 	export interface QueryRequestInput {
 
 		/** Payload containing device IDs. */
-		payload?: QueryRequestPayload;
+		payload?: QueryRequestPayload | null;
 	}
 
 
@@ -178,7 +178,7 @@ export namespace MyNS {
 	export interface QueryRequestPayload {
 
 		/** Third-party device IDs for which to get the device states. */
-		devices?: Array<AgentDeviceId>;
+		devices?: Array<AgentDeviceId> | null;
 	}
 
 
@@ -215,10 +215,10 @@ export namespace MyNS {
 	export interface QueryResponse {
 
 		/** Payload containing device states information. */
-		payload?: QueryResponsePayload;
+		payload?: QueryResponsePayload | null;
 
 		/** Request ID used for debugging. Copied from the request. */
-		requestId?: string;
+		requestId?: string | null;
 	}
 
 
@@ -229,7 +229,7 @@ export namespace MyNS {
 		 * States of the devices. Map of third-party device ID to struct of device
 		 * states.
 		 */
-		devices?: {[id: string]: any };
+		devices?: {[id: string]: any } | null;
 	}
 
 
@@ -241,14 +241,14 @@ export namespace MyNS {
 		 * section of the individual trait [reference
 		 * guides](https://developers.google.com/assistant/smarthome/traits).
 		 */
-		notifications?: {[id: string]: any };
+		notifications?: {[id: string]: any } | null;
 
 		/**
 		 * States of devices to update. See the **Device STATES** section
 		 * of the individual trait [reference
 		 * guides](https://developers.google.com/assistant/smarthome/traits).
 		 */
-		states?: {[id: string]: any };
+		states?: {[id: string]: any } | null;
 	}
 
 
@@ -282,19 +282,19 @@ export namespace MyNS {
 	export interface ReportStateAndNotificationRequest {
 
 		/** Required. Third-party user ID. */
-		agentUserId?: string;
+		agentUserId?: string | null;
 
 		/** Unique identifier per event (for example, a doorbell press). */
-		eventId?: string;
+		eventId?: string | null;
 
 		/** Token to maintain state in the follow up notification response. */
-		followUpToken?: string;
+		followUpToken?: string | null;
 
 		/** Payload containing the state and notification information for devices. */
-		payload?: StateAndNotificationPayload;
+		payload?: StateAndNotificationPayload | null;
 
 		/** Request ID used for debugging. */
-		requestId?: string;
+		requestId?: string | null;
 	}
 
 
@@ -302,7 +302,7 @@ export namespace MyNS {
 	export interface StateAndNotificationPayload {
 
 		/** The states and notifications specific to a device. */
-		devices?: ReportStateAndNotificationDevice;
+		devices?: ReportStateAndNotificationDevice | null;
 	}
 
 
@@ -314,7 +314,7 @@ export namespace MyNS {
 	export interface ReportStateAndNotificationResponse {
 
 		/** Request ID copied from ReportStateAndNotificationRequest. */
-		requestId?: string;
+		requestId?: string | null;
 	}
 
 
@@ -326,14 +326,14 @@ export namespace MyNS {
 	export interface RequestSyncDevicesRequest {
 
 		/** Required. Third-party user ID. */
-		agentUserId?: string;
+		agentUserId?: string | null;
 
 		/**
 		 * Optional. If set, the request will be added to a queue and a response will
 		 * be returned immediately. This enables concurrent requests for the given
 		 * `agent_user_id`, but the caller will not receive any error responses.
 		 */
-		async?: boolean;
+		async?: boolean | null;
 	}
 
 
@@ -355,10 +355,10 @@ export namespace MyNS {
 	export interface SyncRequest {
 
 		/** Required. Third-party user ID. */
-		agentUserId?: string;
+		agentUserId?: string | null;
 
 		/** Request ID used for debugging. */
-		requestId?: string;
+		requestId?: string | null;
 	}
 
 
@@ -405,10 +405,10 @@ export namespace MyNS {
 	export interface SyncResponse {
 
 		/** Payload containing device information. */
-		payload?: SyncResponsePayload;
+		payload?: SyncResponsePayload | null;
 
 		/** Request ID used for debugging. Copied from the request. */
-		requestId?: string;
+		requestId?: string | null;
 	}
 
 
@@ -416,10 +416,10 @@ export namespace MyNS {
 	export interface SyncResponsePayload {
 
 		/** Third-party user ID */
-		agentUserId?: string;
+		agentUserId?: string | null;
 
 		/** Devices associated with the third-party user. */
-		devices?: Array<Device>;
+		devices?: Array<Device> | null;
 	}
 
 	@Injectable()
@@ -506,7 +506,7 @@ export namespace MyNS {
 		 * @param {string} requestId Request ID used for debugging.
 		 * @return {void} Successful response
 		 */
-		Homegraph_agentUsers_delete(agentUserId: string, requestId: string): Observable<HttpResponse<string>> {
+		Homegraph_agentUsers_delete(agentUserId: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/' + (agentUserId == null ? '' : encodeURIComponent(agentUserId)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)), { observe: 'response', responseType: 'text' });
 		}
 	}

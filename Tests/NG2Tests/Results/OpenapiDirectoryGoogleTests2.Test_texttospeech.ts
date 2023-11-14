@@ -7,7 +7,7 @@ export namespace MyNS {
 	export interface AudioConfig {
 
 		/** Required. The format of the audio byte stream. */
-		audioEncoding?: AudioConfigAudioEncoding;
+		audioEncoding?: AudioConfigAudioEncoding | null;
 
 		/**
 		 * Optional. Input only. An identifier which selects 'audio effects' profiles
@@ -17,14 +17,14 @@ export namespace MyNS {
 		 * profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for
 		 * current supported profile ids.
 		 */
-		effectsProfileId?: Array<string>;
+		effectsProfileId?: Array<string> | null;
 
 		/**
 		 * Optional. Input only. Speaking pitch, in the range [-20.0, 20.0]. 20 means
 		 * increase 20 semitones from the original pitch. -20 means decrease 20
 		 * semitones from the original pitch.
 		 */
-		pitch?: number;
+		pitch?: number | null;
 
 		/**
 		 * Optional. The synthesis sample rate (in hertz) for this audio. When this is
@@ -35,7 +35,7 @@ export namespace MyNS {
 		 * encoding chosen, in which case it will fail the request and return
 		 * google.rpc.Code.INVALID_ARGUMENT.
 		 */
-		sampleRateHertz?: number;
+		sampleRateHertz?: number | null;
 
 		/**
 		 * Optional. Input only. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is
@@ -43,7 +43,7 @@ export namespace MyNS {
 		 * fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0
 		 * speed. Any other values < 0.25 or > 4.0 will return an error.
 		 */
-		speakingRate?: number;
+		speakingRate?: number | null;
 
 		/**
 		 * Optional. Input only. Volume gain (in dB) of the normal native volume
@@ -55,7 +55,7 @@ export namespace MyNS {
 		 * Strongly recommend not to exceed +10 (dB) as there's usually no effective
 		 * increase in loudness for any value greater than that.
 		 */
-		volumeGainDb?: number;
+		volumeGainDb?: number | null;
 	}
 
 	export enum AudioConfigAudioEncoding { AUDIO_ENCODING_UNSPECIFIED = 0, LINEAR16 = 1, MP3 = 2, OGG_OPUS = 3 }
@@ -65,7 +65,7 @@ export namespace MyNS {
 	export interface ListVoicesResponse {
 
 		/** The list of voices. */
-		voices?: Array<Voice>;
+		voices?: Array<Voice> | null;
 	}
 
 
@@ -77,16 +77,16 @@ export namespace MyNS {
 		 * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags (e.g.
 		 * "en-US", "es-419", "cmn-tw").
 		 */
-		languageCodes?: Array<string>;
+		languageCodes?: Array<string> | null;
 
 		/** The name of this voice.  Each distinct voice has a unique name. */
-		name?: string;
+		name?: string | null;
 
 		/** The natural sample rate (in hertz) for this voice. */
-		naturalSampleRateHertz?: number;
+		naturalSampleRateHertz?: number | null;
 
 		/** The gender of this voice. */
-		ssmlGender?: VoiceSsmlGender;
+		ssmlGender?: VoiceSsmlGender | null;
 	}
 
 	export enum VoiceSsmlGender { SSML_VOICE_GENDER_UNSPECIFIED = 0, MALE = 1, FEMALE = 2, NEUTRAL = 3 }
@@ -106,10 +106,10 @@ export namespace MyNS {
 		 * google.rpc.Code.INVALID_ARGUMENT. For more information, see
 		 * [SSML](/speech/text-to-speech/docs/ssml).
 		 */
-		ssml?: string;
+		ssml?: string | null;
 
 		/** The raw text to be synthesized. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -117,7 +117,7 @@ export namespace MyNS {
 	export interface SynthesizeSpeechRequest {
 
 		/** Description of audio data to be synthesized. */
-		audioConfig?: AudioConfig;
+		audioConfig?: AudioConfig | null;
 
 		/**
 		 * Contains text input to be synthesized. Either `text` or `ssml` must be
@@ -125,10 +125,10 @@ export namespace MyNS {
 		 * google.rpc.Code.INVALID_ARGUMENT. The input size is limited to 5000
 		 * characters.
 		 */
-		input?: SynthesisInput;
+		input?: SynthesisInput | null;
 
 		/** Description of which voice to use for a synthesis request. */
-		voice?: VoiceSelectionParams;
+		voice?: VoiceSelectionParams | null;
 	}
 
 
@@ -148,13 +148,13 @@ export namespace MyNS {
 		 * available), or even a different language, e.g. using "nb" (Norwegian
 		 * Bokmal) instead of "no" (Norwegian)".
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 
 		/**
 		 * The name of the voice. If not set, the service will choose a
 		 * voice based on the other parameters such as language_code and gender.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The preferred gender of the voice. If not set, the service will
@@ -163,7 +163,7 @@ export namespace MyNS {
 		 * voice of the appropriate gender is not available, the synthesizer should
 		 * substitute a voice with a different gender rather than failing the request.
 		 */
-		ssmlGender?: VoiceSsmlGender;
+		ssmlGender?: VoiceSsmlGender | null;
 	}
 
 
@@ -177,7 +177,7 @@ export namespace MyNS {
 		 * with all bytes fields, protobuffers use a pure binary representation,
 		 * whereas JSON representations use base64.
 		 */
-		audioContent?: string;
+		audioContent?: string | null;
 	}
 
 	@Injectable()
@@ -208,7 +208,7 @@ export namespace MyNS {
 		 * supported "yue-*" voices.
 		 * @return {void} Successful response
 		 */
-		Texttospeech_voices_list(languageCode: string): Observable<HttpResponse<string>> {
+		Texttospeech_voices_list(languageCode: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/voices?languageCode=' + (languageCode == null ? '' : encodeURIComponent(languageCode)), { observe: 'response', responseType: 'text' });
 		}
 	}

@@ -20,10 +20,10 @@ export namespace MyNS {
 	export interface Environment {
 
 		/** Configuration information for an environment. */
-		config?: EnvironmentConfig;
+		config?: EnvironmentConfig | null;
 
 		/** Output only. The time at which this environment was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Optional. User-defined labels for this environment.
@@ -34,7 +34,7 @@ export namespace MyNS {
 		 * * Both keys and values are additionally constrained to be <= 128 bytes in
 		 * size.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * The resource name of the environment, in the form:
@@ -42,19 +42,19 @@ export namespace MyNS {
 		 * EnvironmentId must start with a lowercase letter followed by up to 63
 		 * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The current state of the environment. */
-		state?: EnvironmentState;
+		state?: EnvironmentState | null;
 
 		/** Output only. The time at which this environment was last modified. */
-		updateTime?: string;
+		updateTime?: string | null;
 
 		/**
 		 * Output only. The UUID (Universally Unique IDentifier) associated with this environment.
 		 * This value is generated when the environment is created.
 		 */
-		uuid?: string;
+		uuid?: string | null;
 	}
 
 
@@ -66,7 +66,7 @@ export namespace MyNS {
 		 * [Airflow web
 		 * interface](/composer/docs/how-to/accessing/airflow-web-interface)).
 		 */
-		airflowUri?: string;
+		airflowUri?: string | null;
 
 		/**
 		 * Output only. The Cloud Storage prefix of the DAGs for this environment. Although Cloud
@@ -74,31 +74,31 @@ export namespace MyNS {
 		 * can be simulated using "/"-delimited object name prefixes. DAG objects for
 		 * this environment reside in a simulated directory with the given prefix.
 		 */
-		dagGcsPrefix?: string;
+		dagGcsPrefix?: string | null;
 
 		/** Output only. The Kubernetes Engine cluster used to run this environment. */
-		gkeCluster?: string;
+		gkeCluster?: string | null;
 
 		/**
 		 * The configuration information for the Kubernetes Engine nodes running
 		 * the Apache Airflow software.
 		 */
-		nodeConfig?: NodeConfig;
+		nodeConfig?: NodeConfig | null;
 
 		/**
 		 * The number of nodes in the Kubernetes Engine cluster that will be
 		 * used to run this environment.
 		 */
-		nodeCount?: number;
+		nodeCount?: number | null;
 
 		/**
 		 * The configuration information for configuring a Private IP Cloud Composer
 		 * environment.
 		 */
-		privateEnvironmentConfig?: PrivateEnvironmentConfig;
+		privateEnvironmentConfig?: PrivateEnvironmentConfig | null;
 
 		/** Specifies the selection and configuration of software inside the environment. */
-		softwareConfig?: SoftwareConfig;
+		softwareConfig?: SoftwareConfig | null;
 	}
 
 
@@ -112,13 +112,13 @@ export namespace MyNS {
 		 * Optional. The disk size in GB used for node VMs. Minimum size is 20GB.
 		 * If unspecified, defaults to 100GB. Cannot be updated.
 		 */
-		diskSizeGb?: number;
+		diskSizeGb?: number | null;
 
 		/**
 		 * Configuration for controlling how IPs are allocated in the
 		 * GKE cluster running the Apache Airflow software.
 		 */
-		ipAllocationPolicy?: IPAllocationPolicy;
+		ipAllocationPolicy?: IPAllocationPolicy | null;
 
 		/**
 		 * Optional. The Compute Engine [zone](/compute/docs/regions-zones) in which
@@ -135,7 +135,7 @@ export namespace MyNS {
 		 * specified, the location information from the specified field will be
 		 * propagated to the unspecified field.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. The Compute Engine
@@ -157,7 +157,7 @@ export namespace MyNS {
 		 * If this field is unspecified, the `machineTypeId` defaults
 		 * to "n1-standard-1".
 		 */
-		machineType?: string;
+		machineType?: string | null;
 
 		/**
 		 * Optional. The Compute Engine network to be used for machine
@@ -171,21 +171,21 @@ export namespace MyNS {
 		 * [Custom Subnet Network](/vpc/docs/vpc#vpc_networks_and_subnets)
 		 * is provided, `nodeConfig.subnetwork` must also be provided.
 		 */
-		network?: string;
+		network?: string | null;
 
 		/**
 		 * Optional. The set of Google API scopes to be made available on all
 		 * node VMs. If `oauth_scopes` is empty, defaults to
 		 * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
 		 */
-		oauthScopes?: Array<string>;
+		oauthScopes?: Array<string> | null;
 
 		/**
 		 * Optional. The Google Cloud Platform Service Account to be used by the node
 		 * VMs. If a service account is not specified, the "default" Compute Engine
 		 * service account is used. Cannot be updated.
 		 */
-		serviceAccount?: string;
+		serviceAccount?: string | null;
 
 		/**
 		 * Optional. The Compute Engine subnetwork to be used for machine
@@ -197,7 +197,7 @@ export namespace MyNS {
 		 * and the subnetwork must belong to the enclosing environment's project and
 		 * location.
 		 */
-		subnetwork?: string;
+		subnetwork?: string | null;
 
 		/**
 		 * Optional. The list of instance tags applied to all node VMs. Tags are used
@@ -205,7 +205,7 @@ export namespace MyNS {
 		 * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
 		 * Cannot be updated.
 		 */
-		tags?: Array<string>;
+		tags?: Array<string> | null;
 	}
 
 
@@ -228,14 +228,14 @@ export namespace MyNS {
 		 * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
 		 * to use.
 		 */
-		clusterIpv4CidrBlock?: string;
+		clusterIpv4CidrBlock?: string | null;
 
 		/**
 		 * Optional. The name of the GKE cluster's secondary range used to allocate
 		 * IP addresses to pods.
 		 * This field is applicable only when `use_ip_aliases` is true.
 		 */
-		clusterSecondaryRangeName?: string;
+		clusterSecondaryRangeName?: string | null;
 
 		/**
 		 * Optional. The IP address range of the services IP addresses in this
@@ -250,20 +250,20 @@ export namespace MyNS {
 		 * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
 		 * to use.
 		 */
-		servicesIpv4CidrBlock?: string;
+		servicesIpv4CidrBlock?: string | null;
 
 		/**
 		 * Optional. The name of the services' secondary range used to allocate
 		 * IP addresses to the GKE cluster.
 		 * This field is applicable only when `use_ip_aliases` is true.
 		 */
-		servicesSecondaryRangeName?: string;
+		servicesSecondaryRangeName?: string | null;
 
 		/**
 		 * Optional. Whether or not to enable Alias IPs in the GKE cluster.
 		 * If `true`, a VPC-native cluster is created.
 		 */
-		useIpAliases?: boolean;
+		useIpAliases?: boolean | null;
 	}
 
 
@@ -277,30 +277,30 @@ export namespace MyNS {
 		 * Optional. The CIDR block from which IP range in tenant project will be reserved for
 		 * Cloud SQL. Needs to be disjoint from `web_server_ipv4_cidr_block`.
 		 */
-		cloudSqlIpv4CidrBlock?: string;
+		cloudSqlIpv4CidrBlock?: string | null;
 
 		/**
 		 * Optional. If `true`, a Private IP Cloud Composer environment is created.
 		 * If this field is set to true, `IPAllocationPolicy.use_ip_aliases` must be
 		 * set to true.
 		 */
-		enablePrivateEnvironment?: boolean;
+		enablePrivateEnvironment?: boolean | null;
 
 		/**
 		 * Configuration options for the private GKE cluster in a Cloud Composer
 		 * environment.
 		 */
-		privateClusterConfig?: PrivateClusterConfig;
+		privateClusterConfig?: PrivateClusterConfig | null;
 
 		/**
 		 * Optional. The CIDR block from which IP range for web server will be reserved. Needs
 		 * to be disjoint from `private_cluster_config.master_ipv4_cidr_block` and
 		 * `cloud_sql_ipv4_cidr_block`.
 		 */
-		webServerIpv4CidrBlock?: string;
+		webServerIpv4CidrBlock?: string | null;
 
 		/** Output only. The IP range reserved for the tenant project's App Engine VMs. */
-		webServerIpv4ReservedRange?: string;
+		webServerIpv4ReservedRange?: string | null;
 	}
 
 
@@ -314,13 +314,13 @@ export namespace MyNS {
 		 * Optional. If `true`, access to the public endpoint of the GKE cluster is
 		 * denied.
 		 */
-		enablePrivateEndpoint?: boolean;
+		enablePrivateEndpoint?: boolean | null;
 
 		/**
 		 * Optional. The CIDR block from which IPv4 range for GKE master will be reserved. If
 		 * left blank, the default value of '172.16.0.0/23' is used.
 		 */
-		masterIpv4CidrBlock?: string;
+		masterIpv4CidrBlock?: string | null;
 
 		/**
 		 * Output only. The IP range in CIDR notation to use for the hosted master network. This
@@ -329,7 +329,7 @@ export namespace MyNS {
 		 * This range must not overlap with any other ranges in use
 		 * within the cluster's network.
 		 */
-		masterIpv4ReservedRange?: string;
+		masterIpv4ReservedRange?: string | null;
 	}
 
 
@@ -351,7 +351,7 @@ export namespace MyNS {
 		 * [blacklisted](/composer/docs/how-to/managing/setting-airflow-configurations#airflow_configuration_blacklists),
 		 * and cannot be overridden.
 		 */
-		airflowConfigOverrides?: {[id: string]: string };
+		airflowConfigOverrides?: {[id: string]: string } | null;
 
 		/**
 		 * Optional. Additional environment variables to provide to the Apache Airflow
@@ -375,7 +375,7 @@ export namespace MyNS {
 		 * * `SQL_REGION`
 		 * * `SQL_USER`
 		 */
-		envVariables?: {[id: string]: string };
+		envVariables?: {[id: string]: string } | null;
 
 		/**
 		 * The version of the software running in the environment.
@@ -396,7 +396,7 @@ export namespace MyNS {
 		 * See also [Version
 		 * List](/composer/docs/concepts/versioning/composer-versions).
 		 */
-		imageVersion?: string;
+		imageVersion?: string | null;
 
 		/**
 		 * Optional. Custom Python Package Index (PyPI) packages to be installed in
@@ -407,7 +407,7 @@ export namespace MyNS {
 		 * package without pinning it to a version specifier, use the empty string as
 		 * the value.
 		 */
-		pypiPackages?: {[id: string]: string };
+		pypiPackages?: {[id: string]: string } | null;
 
 		/**
 		 * Optional. The major version of Python used to run the Apache Airflow
@@ -415,7 +415,7 @@ export namespace MyNS {
 		 * Can be set to '2' or '3'. If not specified, the default is '2'. Cannot be
 		 * updated.
 		 */
-		pythonVersion?: string;
+		pythonVersion?: string | null;
 	}
 
 	export enum EnvironmentState { STATE_UNSPECIFIED = 0, CREATING = 1, RUNNING = 2, UPDATING = 3, DELETING = 4, ERROR = 5 }
@@ -428,16 +428,16 @@ export namespace MyNS {
 		 * The string identifier of the ImageVersion, in the form:
 		 * "composer-x.y.z-airflow-a.b(.c)"
 		 */
-		imageVersionId?: string;
+		imageVersionId?: string | null;
 
 		/**
 		 * Whether this is the default ImageVersion used by Composer during
 		 * environment creation if no input ImageVersion is specified.
 		 */
-		isDefault?: boolean;
+		isDefault?: boolean | null;
 
 		/** supported python versions */
-		supportedPythonVersions?: Array<string>;
+		supportedPythonVersions?: Array<string> | null;
 	}
 
 
@@ -445,10 +445,10 @@ export namespace MyNS {
 	export interface ListEnvironmentsResponse {
 
 		/** The list of environments returned by a ListEnvironmentsRequest. */
-		environments?: Array<Environment>;
+		environments?: Array<Environment> | null;
 
 		/** The page token used to query for the next page if one exists. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -456,10 +456,10 @@ export namespace MyNS {
 	export interface ListImageVersionsResponse {
 
 		/** The list of supported ImageVersions in a location. */
-		imageVersions?: Array<ImageVersion>;
+		imageVersions?: Array<ImageVersion> | null;
 
 		/** The page token used to query for the next page if one exists. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -467,10 +467,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -485,7 +485,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -495,7 +495,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -503,14 +503,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -522,7 +522,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -537,20 +537,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -558,28 +558,28 @@ export namespace MyNS {
 	export interface OperationMetadata {
 
 		/** Output only. The time the operation was submitted to the server. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Output only. The time when the operation terminated, regardless of its success.
 		 * This field is unset if the operation is still ongoing.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** Output only. The type of operation being performed. */
-		operationType?: OperationMetadataOperationType;
+		operationType?: OperationMetadataOperationType | null;
 
 		/**
 		 * Output only. The resource being operated on, as a [relative resource name](
 		 * /apis/design/resource_names#relative_resource_name).
 		 */
-		resource?: string;
+		resource?: string | null;
 
 		/** Output only. The UUID of the resource being operated on. */
-		resourceUuid?: string;
+		resourceUuid?: string | null;
 
 		/** Output only. The current operation state. */
-		state?: OperationMetadataState;
+		state?: OperationMetadataState | null;
 	}
 
 	export enum OperationMetadataOperationType { TYPE_UNSPECIFIED = 0, CREATE = 1, DELETE = 2, UPDATE = 3 }
@@ -744,7 +744,7 @@ export namespace MyNS {
 		 *  </table>
 		 * @return {void} Successful response
 		 */
-		Composer_projects_locations_environments_patch(name: string, updateMask: string, requestBody: Environment): Observable<HttpResponse<string>> {
+		Composer_projects_locations_environments_patch(name: string, updateMask: string | null | undefined, requestBody: Environment): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -765,7 +765,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Composer_projects_locations_operations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Composer_projects_locations_operations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/operations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -778,7 +778,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Composer_projects_locations_environments_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Composer_projects_locations_environments_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/environments&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -802,7 +802,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Composer_projects_locations_imageVersions_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Composer_projects_locations_imageVersions_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/imageVersions&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 	}

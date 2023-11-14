@@ -7,7 +7,7 @@ export namespace MyNS {
 	export interface BlockedResource {
 
 		/** URL of the blocked resource. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -18,10 +18,10 @@ export namespace MyNS {
 		 * Image data in format determined by the mime type. Currently, the format
 		 * will always be "image/png", but this might change in the future.
 		 */
-		data?: string;
+		data?: string | null;
 
 		/** The mime-type of the image data. */
-		mimeType?: string;
+		mimeType?: string | null;
 	}
 
 
@@ -29,7 +29,7 @@ export namespace MyNS {
 	export interface MobileFriendlyIssue {
 
 		/** Rule violated. */
-		rule?: MobileFriendlyIssueRule;
+		rule?: MobileFriendlyIssueRule | null;
 	}
 
 	export enum MobileFriendlyIssueRule { MOBILE_FRIENDLY_RULE_UNSPECIFIED = 0, USES_INCOMPATIBLE_PLUGINS = 1, CONFIGURE_VIEWPORT = 2, FIXED_WIDTH_VIEWPORT = 3, SIZE_CONTENT_TO_VIEWPORT = 4, USE_LEGIBLE_FONT_SIZES = 5, TAP_TARGETS_TOO_CLOSE = 6 }
@@ -39,7 +39,7 @@ export namespace MyNS {
 	export interface ResourceIssue {
 
 		/** Blocked resource. */
-		blockedResource?: BlockedResource;
+		blockedResource?: BlockedResource | null;
 	}
 
 
@@ -47,10 +47,10 @@ export namespace MyNS {
 	export interface RunMobileFriendlyTestRequest {
 
 		/** Whether or not screenshot is requested. Default is false. */
-		requestScreenshot?: boolean;
+		requestScreenshot?: boolean | null;
 
 		/** URL for inspection. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -61,19 +61,19 @@ export namespace MyNS {
 	export interface RunMobileFriendlyTestResponse {
 
 		/** Test verdict, whether the page is mobile friendly or not. */
-		mobileFriendliness?: RunMobileFriendlyTestResponseMobileFriendliness;
+		mobileFriendliness?: RunMobileFriendlyTestResponseMobileFriendliness | null;
 
 		/** List of mobile-usability issues. */
-		mobileFriendlyIssues?: Array<MobileFriendlyIssue>;
+		mobileFriendlyIssues?: Array<MobileFriendlyIssue> | null;
 
 		/** Information about embedded resources issues. */
-		resourceIssues?: Array<ResourceIssue>;
+		resourceIssues?: Array<ResourceIssue> | null;
 
 		/** Describe image data. */
-		screenshot?: Image;
+		screenshot?: Image | null;
 
 		/** Final state of the test, including error details if necessary. */
-		testStatus?: TestStatus;
+		testStatus?: TestStatus | null;
 	}
 
 	export enum RunMobileFriendlyTestResponseMobileFriendliness { MOBILE_FRIENDLY_TEST_RESULT_UNSPECIFIED = 0, MOBILE_FRIENDLY = 1, NOT_MOBILE_FRIENDLY = 2 }
@@ -83,10 +83,10 @@ export namespace MyNS {
 	export interface TestStatus {
 
 		/** Error details if applicable. */
-		details?: string;
+		details?: string | null;
 
 		/** Status of the test. */
-		status?: TestStatusStatus;
+		status?: TestStatusStatus | null;
 	}
 
 	export enum TestStatusStatus { TEST_STATUS_UNSPECIFIED = 0, COMPLETE = 1, INTERNAL_ERROR = 2, PAGE_UNREACHABLE = 3 }

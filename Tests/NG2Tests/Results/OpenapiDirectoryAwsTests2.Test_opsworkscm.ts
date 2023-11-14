@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface AssociateNodeResponse {
-		NodeAssociationStatusToken?: string;
+		NodeAssociationStatusToken?: string | null;
 	}
 
 	export interface AssociateNodeRequest {
@@ -22,8 +22,8 @@ export namespace MyNS {
 
 	/** A name and value pair that is specific to the engine of the server.  */
 	export interface EngineAttribute {
-		Name?: string;
-		Value?: string;
+		Name?: string | null;
+		Value?: string | null;
 	}
 
 	export interface InvalidStateException {
@@ -38,48 +38,48 @@ export namespace MyNS {
 	export interface CreateBackupResponse {
 
 		/** Describes a single backup. */
-		Backup?: Backup;
+		Backup?: Backup | null;
 	}
 
 
 	/** Describes a single backup.  */
 	export interface Backup {
-		BackupArn?: string;
-		BackupId?: string;
-		BackupType?: BackupBackupType;
-		CreatedAt?: Date;
-		Description?: string;
-		Engine?: string;
-		EngineModel?: string;
-		EngineVersion?: string;
-		InstanceProfileArn?: string;
-		InstanceType?: string;
-		KeyPair?: string;
+		BackupArn?: string | null;
+		BackupId?: string | null;
+		BackupType?: BackupBackupType | null;
+		CreatedAt?: Date | null;
+		Description?: string | null;
+		Engine?: string | null;
+		EngineModel?: string | null;
+		EngineVersion?: string | null;
+		InstanceProfileArn?: string | null;
+		InstanceType?: string | null;
+		KeyPair?: string | null;
 
 		/**
 		 * <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p> <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
 		 * Max length: 10000
 		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
 		 */
-		PreferredBackupWindow?: string;
+		PreferredBackupWindow?: string | null;
 
 		/**
 		 * <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p> <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
 		 * Max length: 10000
 		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
 		 */
-		PreferredMaintenanceWindow?: string;
-		S3DataSize?: number;
-		S3DataUrl?: string;
-		S3LogUrl?: string;
-		SecurityGroupIds?: Array<string>;
-		ServerName?: string;
-		ServiceRoleArn?: string;
-		Status?: BackupStatus;
-		StatusDescription?: string;
-		SubnetIds?: Array<string>;
-		ToolsVersion?: string;
-		UserArn?: string;
+		PreferredMaintenanceWindow?: string | null;
+		S3DataSize?: number | null;
+		S3DataUrl?: string | null;
+		S3LogUrl?: string | null;
+		SecurityGroupIds?: Array<string> | null;
+		ServerName?: string | null;
+		ServiceRoleArn?: string | null;
+		Status?: BackupStatus | null;
+		StatusDescription?: string | null;
+		SubnetIds?: Array<string> | null;
+		ToolsVersion?: string | null;
+		UserArn?: string | null;
 	}
 
 	export enum BackupBackupType { AUTOMATED = 0, MANUAL = 1 }
@@ -88,8 +88,8 @@ export namespace MyNS {
 
 	export interface CreateBackupRequest {
 		ServerName: string;
-		Description?: string;
-		Tags?: Array<Tag>;
+		Description?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -105,48 +105,48 @@ export namespace MyNS {
 	export interface CreateServerResponse {
 
 		/** Describes a configuration management server. */
-		Server?: Server;
+		Server?: Server | null;
 	}
 
 
 	/** Describes a configuration management server.  */
 	export interface Server {
-		AssociatePublicIpAddress?: boolean;
-		BackupRetentionCount?: number;
-		ServerName?: string;
-		CreatedAt?: Date;
-		CloudFormationStackArn?: string;
-		CustomDomain?: string;
-		DisableAutomatedBackup?: boolean;
-		Endpoint?: string;
-		Engine?: string;
-		EngineModel?: string;
-		EngineAttributes?: Array<EngineAttribute>;
-		EngineVersion?: string;
-		InstanceProfileArn?: string;
-		InstanceType?: string;
-		KeyPair?: string;
-		MaintenanceStatus?: ServerMaintenanceStatus;
+		AssociatePublicIpAddress?: boolean | null;
+		BackupRetentionCount?: number | null;
+		ServerName?: string | null;
+		CreatedAt?: Date | null;
+		CloudFormationStackArn?: string | null;
+		CustomDomain?: string | null;
+		DisableAutomatedBackup?: boolean | null;
+		Endpoint?: string | null;
+		Engine?: string | null;
+		EngineModel?: string | null;
+		EngineAttributes?: Array<EngineAttribute> | null;
+		EngineVersion?: string | null;
+		InstanceProfileArn?: string | null;
+		InstanceType?: string | null;
+		KeyPair?: string | null;
+		MaintenanceStatus?: ServerMaintenanceStatus | null;
 
 		/**
 		 * <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p> <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
 		 * Max length: 10000
 		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
 		 */
-		PreferredMaintenanceWindow?: string;
+		PreferredMaintenanceWindow?: string | null;
 
 		/**
 		 * <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p> <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
 		 * Max length: 10000
 		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
 		 */
-		PreferredBackupWindow?: string;
-		SecurityGroupIds?: Array<string>;
-		ServiceRoleArn?: string;
-		Status?: ServerStatus;
-		StatusReason?: string;
-		SubnetIds?: Array<string>;
-		ServerArn?: string;
+		PreferredBackupWindow?: string | null;
+		SecurityGroupIds?: Array<string> | null;
+		ServiceRoleArn?: string | null;
+		Status?: ServerStatus | null;
+		StatusReason?: string | null;
+		SubnetIds?: Array<string> | null;
+		ServerArn?: string | null;
 	}
 
 	export enum ServerMaintenanceStatus { SUCCESS = 0, FAILED = 1 }
@@ -154,39 +154,39 @@ export namespace MyNS {
 	export enum ServerStatus { BACKING_UP = 0, CONNECTION_LOST = 1, CREATING = 2, DELETING = 3, MODIFYING = 4, FAILED = 5, HEALTHY = 6, RUNNING = 7, RESTORING = 8, SETUP = 9, UNDER_MAINTENANCE = 10, UNHEALTHY = 11, TERMINATED = 12 }
 
 	export interface CreateServerRequest {
-		AssociatePublicIpAddress?: boolean;
-		CustomDomain?: string;
-		CustomCertificate?: string;
-		CustomPrivateKey?: string;
-		DisableAutomatedBackup?: boolean;
-		Engine?: string;
-		EngineModel?: string;
-		EngineVersion?: string;
-		EngineAttributes?: Array<EngineAttribute>;
-		BackupRetentionCount?: number;
+		AssociatePublicIpAddress?: boolean | null;
+		CustomDomain?: string | null;
+		CustomCertificate?: string | null;
+		CustomPrivateKey?: string | null;
+		DisableAutomatedBackup?: boolean | null;
+		Engine?: string | null;
+		EngineModel?: string | null;
+		EngineVersion?: string | null;
+		EngineAttributes?: Array<EngineAttribute> | null;
+		BackupRetentionCount?: number | null;
 		ServerName: string;
 		InstanceProfileArn: string;
 		InstanceType: string;
-		KeyPair?: string;
+		KeyPair?: string | null;
 
 		/**
 		 * <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p> <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
 		 * Max length: 10000
 		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
 		 */
-		PreferredMaintenanceWindow?: string;
+		PreferredMaintenanceWindow?: string | null;
 
 		/**
 		 * <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p> <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
 		 * Max length: 10000
 		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
 		 */
-		PreferredBackupWindow?: string;
-		SecurityGroupIds?: Array<string>;
+		PreferredBackupWindow?: string | null;
+		SecurityGroupIds?: Array<string> | null;
 		ServiceRoleArn: string;
-		SubnetIds?: Array<string>;
-		Tags?: Array<Tag>;
-		BackupId?: string;
+		SubnetIds?: Array<string> | null;
+		Tags?: Array<Tag> | null;
+		BackupId?: string | null;
 	}
 
 	export interface ResourceAlreadyExistsException {
@@ -209,60 +209,60 @@ export namespace MyNS {
 	export interface DescribeAccountAttributesResponse {
 
 		/** A list of individual account attributes. */
-		Attributes?: Array<AccountAttribute>;
+		Attributes?: Array<AccountAttribute> | null;
 	}
 
 
 	/** Stores account attributes.  */
 	export interface AccountAttribute {
-		Name?: string;
-		Maximum?: number;
-		Used?: number;
+		Name?: string | null;
+		Maximum?: number | null;
+		Used?: number | null;
 	}
 
 	export interface DescribeAccountAttributesRequest {
 	}
 
 	export interface DescribeBackupsResponse {
-		Backups?: Array<Backup>;
-		NextToken?: string;
+		Backups?: Array<Backup> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeBackupsRequest {
-		BackupId?: string;
-		ServerName?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		BackupId?: string | null;
+		ServerName?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface InvalidNextTokenException {
 	}
 
 	export interface DescribeEventsResponse {
-		ServerEvents?: Array<ServerEvent>;
-		NextToken?: string;
+		ServerEvents?: Array<ServerEvent> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** An event that is related to the server, such as the start of maintenance or backup.  */
 	export interface ServerEvent {
-		CreatedAt?: Date;
-		ServerName?: string;
-		Message?: string;
-		LogUrl?: string;
+		CreatedAt?: Date | null;
+		ServerName?: string | null;
+		Message?: string | null;
+		LogUrl?: string | null;
 	}
 
 	export interface DescribeEventsRequest {
 		ServerName: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface DescribeNodeAssociationStatusResponse {
 
 		/** <p>The status of the association or disassociation request. </p> <p class="title"> <b>Possible values:</b> </p> <ul> <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li> <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li> <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li> </ul> */
-		NodeAssociationStatus?: DescribeNodeAssociationStatusResponseNodeAssociationStatus;
-		EngineAttributes?: Array<EngineAttribute>;
+		NodeAssociationStatus?: DescribeNodeAssociationStatusResponseNodeAssociationStatus | null;
+		EngineAttributes?: Array<EngineAttribute> | null;
 	}
 
 	export enum DescribeNodeAssociationStatusResponseNodeAssociationStatus { SUCCESS = 0, FAILED = 1, IN_PROGRESS = 2 }
@@ -273,18 +273,18 @@ export namespace MyNS {
 	}
 
 	export interface DescribeServersResponse {
-		Servers?: Array<Server>;
-		NextToken?: string;
+		Servers?: Array<Server> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeServersRequest {
-		ServerName?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		ServerName?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface DisassociateNodeResponse {
-		NodeAssociationStatusToken?: string;
+		NodeAssociationStatusToken?: string | null;
 	}
 
 	export interface DisassociateNodeRequest {
@@ -297,31 +297,31 @@ export namespace MyNS {
 		 * Pattern: ^[\-\p{Alnum}_:.]+$
 		 */
 		NodeName: string;
-		EngineAttributes?: Array<EngineAttribute>;
+		EngineAttributes?: Array<EngineAttribute> | null;
 	}
 
 	export interface ExportServerEngineAttributeResponse {
 
 		/** A name and value pair that is specific to the engine of the server. */
-		EngineAttribute?: EngineAttribute;
-		ServerName?: string;
+		EngineAttribute?: EngineAttribute | null;
+		ServerName?: string | null;
 	}
 
 	export interface ExportServerEngineAttributeRequest {
 		ExportAttributeName: string;
 		ServerName: string;
-		InputAttributes?: Array<EngineAttribute>;
+		InputAttributes?: Array<EngineAttribute> | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
-		NextToken?: string;
+		Tags?: Array<Tag> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceRequest {
 		ResourceArn: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface RestoreServerResponse {
@@ -330,19 +330,19 @@ export namespace MyNS {
 	export interface RestoreServerRequest {
 		BackupId: string;
 		ServerName: string;
-		InstanceType?: string;
-		KeyPair?: string;
+		InstanceType?: string | null;
+		KeyPair?: string | null;
 	}
 
 	export interface StartMaintenanceResponse {
 
 		/** Describes a configuration management server. */
-		Server?: Server;
+		Server?: Server | null;
 	}
 
 	export interface StartMaintenanceRequest {
 		ServerName: string;
-		EngineAttributes?: Array<EngineAttribute>;
+		EngineAttributes?: Array<EngineAttribute> | null;
 	}
 
 	export interface TagResourceResponse {
@@ -364,12 +364,12 @@ export namespace MyNS {
 	export interface UpdateServerResponse {
 
 		/** Describes a configuration management server. */
-		Server?: Server;
+		Server?: Server | null;
 	}
 
 	export interface UpdateServerRequest {
-		DisableAutomatedBackup?: boolean;
-		BackupRetentionCount?: number;
+		DisableAutomatedBackup?: boolean | null;
+		BackupRetentionCount?: number | null;
 		ServerName: string;
 
 		/**
@@ -377,26 +377,26 @@ export namespace MyNS {
 		 * Max length: 10000
 		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
 		 */
-		PreferredMaintenanceWindow?: string;
+		PreferredMaintenanceWindow?: string | null;
 
 		/**
 		 * <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p> <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
 		 * Max length: 10000
 		 * Pattern: ^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$
 		 */
-		PreferredBackupWindow?: string;
+		PreferredBackupWindow?: string | null;
 	}
 
 	export interface UpdateServerEngineAttributesResponse {
 
 		/** Describes a configuration management server. */
-		Server?: Server;
+		Server?: Server | null;
 	}
 
 	export interface UpdateServerEngineAttributesRequest {
 		ServerName: string;
 		AttributeName: string;
-		AttributeValue?: string;
+		AttributeValue?: string | null;
 	}
 
 	export enum BackupType { AUTOMATED = 0, MANUAL = 1 }
@@ -473,7 +473,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeBackupsResponse} Success
 		 */
-		DescribeBackups(MaxResults: string, NextToken: string, requestBody: DescribeBackupsRequest): Observable<DescribeBackupsResponse> {
+		DescribeBackups(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeBackupsRequest): Observable<DescribeBackupsResponse> {
 			return this.http.post<DescribeBackupsResponse>(this.baseUri + '#X-Amz-Target=OpsWorksCM_V2016_11_01.DescribeBackups?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -484,7 +484,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeEventsResponse} Success
 		 */
-		DescribeEvents(MaxResults: string, NextToken: string, requestBody: DescribeEventsRequest): Observable<DescribeEventsResponse> {
+		DescribeEvents(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeEventsRequest): Observable<DescribeEventsResponse> {
 			return this.http.post<DescribeEventsResponse>(this.baseUri + '#X-Amz-Target=OpsWorksCM_V2016_11_01.DescribeEvents?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -504,7 +504,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeServersResponse} Success
 		 */
-		DescribeServers(MaxResults: string, NextToken: string, requestBody: DescribeServersRequest): Observable<DescribeServersResponse> {
+		DescribeServers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeServersRequest): Observable<DescribeServersResponse> {
 			return this.http.post<DescribeServersResponse>(this.baseUri + '#X-Amz-Target=OpsWorksCM_V2016_11_01.DescribeServers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -533,7 +533,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsForResourceResponse} Success
 		 */
-		ListTagsForResource(MaxResults: string, NextToken: string, requestBody: ListTagsForResourceRequest): Observable<ListTagsForResourceResponse> {
+		ListTagsForResource(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTagsForResourceRequest): Observable<ListTagsForResourceResponse> {
 			return this.http.post<ListTagsForResourceResponse>(this.baseUri + '#X-Amz-Target=OpsWorksCM_V2016_11_01.ListTagsForResource?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

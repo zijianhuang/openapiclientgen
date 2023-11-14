@@ -3,15 +3,15 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface BatchPutMessageResponse {
-		BatchPutMessageErrorEntries?: Array<BatchPutMessageErrorEntry>;
+		BatchPutMessageErrorEntries?: Array<BatchPutMessageErrorEntry> | null;
 	}
 
 
 	/** Contains information about the errors encountered. */
 	export interface BatchPutMessageErrorEntry {
-		messageId?: string;
-		errorCode?: BatchPutMessageErrorEntryErrorCode;
-		errorMessage?: string;
+		messageId?: string | null;
+		errorCode?: BatchPutMessageErrorEntryErrorCode | null;
+		errorMessage?: string | null;
 	}
 
 	export enum BatchPutMessageErrorEntryErrorCode { ResourceNotFoundException = 0, InvalidRequestException = 1, InternalFailureException = 2, ServiceUnavailableException = 3, ThrottlingException = 4 }
@@ -37,15 +37,15 @@ export namespace MyNS {
 	}
 
 	export interface BatchUpdateDetectorResponse {
-		batchUpdateDetectorErrorEntries?: Array<BatchUpdateDetectorErrorEntry>;
+		batchUpdateDetectorErrorEntries?: Array<BatchUpdateDetectorErrorEntry> | null;
 	}
 
 
 	/** Information about the error that occured when attempting to update a detector. */
 	export interface BatchUpdateDetectorErrorEntry {
-		messageId?: string;
-		errorCode?: BatchPutMessageErrorEntryErrorCode;
-		errorMessage?: string;
+		messageId?: string | null;
+		errorCode?: BatchPutMessageErrorEntryErrorCode | null;
+		errorMessage?: string | null;
 	}
 
 
@@ -53,7 +53,7 @@ export namespace MyNS {
 	export interface UpdateDetectorRequest {
 		messageId: string;
 		detectorModelName: string;
-		keyValue?: string;
+		keyValue?: string | null;
 
 		/**
 		 * The new state, variable values, and timer settings of the detector (instance).
@@ -87,20 +87,20 @@ export namespace MyNS {
 	export interface DescribeDetectorResponse {
 
 		/** Information about the detector (instance). */
-		detector?: Detector;
+		detector?: Detector | null;
 	}
 
 
 	/** Information about the detector (instance). */
 	export interface Detector {
-		detectorModelName?: string;
-		keyValue?: string;
-		detectorModelVersion?: string;
+		detectorModelName?: string | null;
+		keyValue?: string | null;
+		detectorModelVersion?: string | null;
 
 		/** Information about the current state of the detector instance. */
-		state?: DetectorState;
-		creationTime?: Date;
-		lastUpdateTime?: Date;
+		state?: DetectorState | null;
+		creationTime?: Date | null;
+		lastUpdateTime?: Date | null;
 	}
 
 
@@ -129,27 +129,27 @@ export namespace MyNS {
 	}
 
 	export interface ListDetectorsResponse {
-		detectorSummaries?: Array<DetectorSummary>;
-		nextToken?: string;
+		detectorSummaries?: Array<DetectorSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about the detector (instance). */
 	export interface DetectorSummary {
-		detectorModelName?: string;
-		keyValue?: string;
-		detectorModelVersion?: string;
+		detectorModelName?: string | null;
+		keyValue?: string | null;
+		detectorModelVersion?: string | null;
 
 		/** Information about the detector state. */
-		state?: DetectorStateSummary;
-		creationTime?: Date;
-		lastUpdateTime?: Date;
+		state?: DetectorStateSummary | null;
+		creationTime?: Date | null;
+		lastUpdateTime?: Date | null;
 	}
 
 
 	/** Information about the detector state. */
 	export interface DetectorStateSummary {
-		stateName?: string;
+		stateName?: string | null;
 	}
 
 	export enum ErrorCode { ResourceNotFoundException = 0, InvalidRequestException = 1, InternalFailureException = 2, ServiceUnavailableException = 3, ThrottlingException = 4 }
@@ -198,7 +198,7 @@ export namespace MyNS {
 		 * @param {string} keyValue A filter used to limit results to detectors (instances) created because of the given key ID.
 		 * @return {DescribeDetectorResponse} Success
 		 */
-		DescribeDetector(detectorModelName: string, keyValue: string): Observable<DescribeDetectorResponse> {
+		DescribeDetector(detectorModelName: string, keyValue: string | null | undefined): Observable<DescribeDetectorResponse> {
 			return this.http.get<DescribeDetectorResponse>(this.baseUri + 'detectors/' + (detectorModelName == null ? '' : encodeURIComponent(detectorModelName)) + '/keyValues/&keyValue=' + (keyValue == null ? '' : encodeURIComponent(keyValue)), {});
 		}
 
@@ -211,7 +211,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to return at one time.
 		 * @return {ListDetectorsResponse} Success
 		 */
-		ListDetectors(detectorModelName: string, stateName: string, nextToken: string, maxResults: number): Observable<ListDetectorsResponse> {
+		ListDetectors(detectorModelName: string, stateName: string | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDetectorsResponse> {
 			return this.http.get<ListDetectorsResponse>(this.baseUri + 'detectors/' + (detectorModelName == null ? '' : encodeURIComponent(detectorModelName)) + '&stateName=' + (stateName == null ? '' : encodeURIComponent(stateName)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 	}

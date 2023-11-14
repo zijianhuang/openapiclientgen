@@ -20,37 +20,37 @@ export namespace MyNS {
 
 	/** CreateAgentResponse */
 	export interface CreateAgentResponse {
-		AgentArn?: string;
+		AgentArn?: string | null;
 	}
 
 
 	/** CreateAgentRequest */
 	export interface CreateAgentRequest {
 		ActivationKey: string;
-		AgentName?: string;
-		Tags?: Array<TagListEntry>;
-		VpcEndpointId?: string;
-		SubnetArns?: Array<string>;
-		SecurityGroupArns?: Array<string>;
+		AgentName?: string | null;
+		Tags?: Array<TagListEntry> | null;
+		VpcEndpointId?: string | null;
+		SubnetArns?: Array<string> | null;
+		SecurityGroupArns?: Array<string> | null;
 	}
 
 
 	/** Represents a single entry in a list of AWS resource tags. <code>TagListEntry</code> returns an array that contains a list of tasks when the <a>ListTagsForResource</a> operation is called. */
 	export interface TagListEntry {
 		Key: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 
 	/** CreateLocationEfs */
 	export interface CreateLocationEfsResponse {
-		LocationArn?: string;
+		LocationArn?: string | null;
 	}
 
 
 	/** CreateLocationEfsRequest */
 	export interface CreateLocationEfsRequest {
-		Subdirectory?: string;
+		Subdirectory?: string | null;
 		EfsFilesystemArn: string;
 
 		/**
@@ -58,7 +58,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		Ec2Config: Ec2Config;
-		Tags?: Array<TagListEntry>;
+		Tags?: Array<TagListEntry> | null;
 	}
 
 
@@ -69,23 +69,23 @@ export namespace MyNS {
 	}
 
 	export interface CreateLocationFsxWindowsResponse {
-		LocationArn?: string;
+		LocationArn?: string | null;
 	}
 
 	export interface CreateLocationFsxWindowsRequest {
-		Subdirectory?: string;
+		Subdirectory?: string | null;
 		FsxFilesystemArn: string;
 		SecurityGroupArns: Array<string>;
-		Tags?: Array<TagListEntry>;
+		Tags?: Array<TagListEntry> | null;
 		User: string;
-		Domain?: string;
+		Domain?: string | null;
 		Password: string;
 	}
 
 
 	/** CreateLocationNfsResponse */
 	export interface CreateLocationNfsResponse {
-		LocationArn?: string;
+		LocationArn?: string | null;
 	}
 
 
@@ -101,8 +101,8 @@ export namespace MyNS {
 		OnPremConfig: OnPremConfig;
 
 		/** Represents the mount options that are available for DataSync to access an NFS location. */
-		MountOptions?: NfsMountOptions;
-		Tags?: Array<TagListEntry>;
+		MountOptions?: NfsMountOptions | null;
+		Tags?: Array<TagListEntry> | null;
 	}
 
 
@@ -114,7 +114,7 @@ export namespace MyNS {
 
 	/** Represents the mount options that are available for DataSync to access an NFS location. */
 	export interface NfsMountOptions {
-		Version?: NfsMountOptionsVersion;
+		Version?: NfsMountOptionsVersion | null;
 	}
 
 	export enum NfsMountOptionsVersion { AUTOMATIC = 0, NFS3 = 1, NFS4_0 = 2, NFS4_1 = 3 }
@@ -122,22 +122,22 @@ export namespace MyNS {
 
 	/** CreateLocationS3Response */
 	export interface CreateLocationS3Response {
-		LocationArn?: string;
+		LocationArn?: string | null;
 	}
 
 
 	/** CreateLocationS3Request */
 	export interface CreateLocationS3Request {
-		Subdirectory?: string;
+		Subdirectory?: string | null;
 		S3BucketArn: string;
-		S3StorageClass?: CreateLocationS3RequestS3StorageClass;
+		S3StorageClass?: CreateLocationS3RequestS3StorageClass | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p> <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>AWS DataSync User Guide</i>.</p>
 		 * Required
 		 */
 		S3Config: S3Config;
-		Tags?: Array<TagListEntry>;
+		Tags?: Array<TagListEntry> | null;
 	}
 
 	export enum CreateLocationS3RequestS3StorageClass { STANDARD = 0, STANDARD_IA = 1, ONEZONE_IA = 2, INTELLIGENT_TIERING = 3, GLACIER = 4, DEEP_ARCHIVE = 5 }
@@ -151,7 +151,7 @@ export namespace MyNS {
 
 	/** CreateLocationSmbResponse */
 	export interface CreateLocationSmbResponse {
-		LocationArn?: string;
+		LocationArn?: string | null;
 	}
 
 
@@ -160,19 +160,19 @@ export namespace MyNS {
 		Subdirectory: string;
 		ServerHostname: string;
 		User: string;
-		Domain?: string;
+		Domain?: string | null;
 		Password: string;
 		AgentArns: Array<string>;
 
 		/** Represents the mount options that are available for DataSync to access an SMB location. */
-		MountOptions?: SmbMountOptions;
-		Tags?: Array<TagListEntry>;
+		MountOptions?: SmbMountOptions | null;
+		Tags?: Array<TagListEntry> | null;
 	}
 
 
 	/** Represents the mount options that are available for DataSync to access an SMB location. */
 	export interface SmbMountOptions {
-		Version?: SmbMountOptionsVersion;
+		Version?: SmbMountOptionsVersion | null;
 	}
 
 	export enum SmbMountOptionsVersion { AUTOMATIC = 0, SMB2 = 1, SMB3 = 2 }
@@ -180,7 +180,7 @@ export namespace MyNS {
 
 	/** CreateTaskResponse */
 	export interface CreateTaskResponse {
-		TaskArn?: string;
+		TaskArn?: string | null;
 	}
 
 
@@ -188,33 +188,33 @@ export namespace MyNS {
 	export interface CreateTaskRequest {
 		SourceLocationArn: string;
 		DestinationLocationArn: string;
-		CloudWatchLogGroupArn?: string;
-		Name?: string;
+		CloudWatchLogGroupArn?: string | null;
+		Name?: string | null;
 
 		/** <p>Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> <p>A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.</p> */
-		Options?: Options;
-		Excludes?: Array<FilterRule>;
+		Options?: Options | null;
+		Excludes?: Array<FilterRule> | null;
 
 		/** Specifies the schedule you want your task to use for repeated executions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a>. */
-		Schedule?: TaskSchedule;
-		Tags?: Array<TagListEntry>;
+		Schedule?: TaskSchedule | null;
+		Tags?: Array<TagListEntry> | null;
 	}
 
 
 	/** <p>Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> <p>A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.</p> */
 	export interface Options {
-		VerifyMode?: OptionsVerifyMode;
-		OverwriteMode?: OptionsOverwriteMode;
-		Atime?: OptionsAtime;
-		Mtime?: OptionsMtime;
-		Uid?: OptionsUid;
-		Gid?: OptionsUid;
-		PreserveDeletedFiles?: OptionsPreserveDeletedFiles;
-		PreserveDevices?: OptionsMtime;
-		PosixPermissions?: OptionsMtime;
-		BytesPerSecond?: number;
-		TaskQueueing?: OptionsTaskQueueing;
-		LogLevel?: OptionsLogLevel;
+		VerifyMode?: OptionsVerifyMode | null;
+		OverwriteMode?: OptionsOverwriteMode | null;
+		Atime?: OptionsAtime | null;
+		Mtime?: OptionsMtime | null;
+		Uid?: OptionsUid | null;
+		Gid?: OptionsUid | null;
+		PreserveDeletedFiles?: OptionsPreserveDeletedFiles | null;
+		PreserveDevices?: OptionsMtime | null;
+		PosixPermissions?: OptionsMtime | null;
+		BytesPerSecond?: number | null;
+		TaskQueueing?: OptionsTaskQueueing | null;
+		LogLevel?: OptionsLogLevel | null;
 	}
 
 	export enum OptionsVerifyMode { POINT_IN_TIME_CONSISTENT = 0, ONLY_FILES_TRANSFERRED = 1, NONE = 2 }
@@ -236,8 +236,8 @@ export namespace MyNS {
 
 	/** Specifies which files, folders and objects to include or exclude when transferring files from source to destination. */
 	export interface FilterRule {
-		FilterType?: FilterRuleFilterType;
-		Value?: string;
+		FilterType?: FilterRuleFilterType | null;
+		Value?: string | null;
 	}
 
 	export enum FilterRuleFilterType { SIMPLE_PATTERN = 0 }
@@ -278,15 +278,15 @@ export namespace MyNS {
 
 	/** DescribeAgentResponse */
 	export interface DescribeAgentResponse {
-		AgentArn?: string;
-		Name?: string;
-		Status?: DescribeAgentResponseStatus;
-		LastConnectionTime?: Date;
-		CreationTime?: Date;
-		EndpointType?: DescribeAgentResponseEndpointType;
+		AgentArn?: string | null;
+		Name?: string | null;
+		Status?: DescribeAgentResponseStatus | null;
+		LastConnectionTime?: Date | null;
+		CreationTime?: Date | null;
+		EndpointType?: DescribeAgentResponseEndpointType | null;
 
 		/** The VPC endpoint, subnet and security group that an agent uses to access IP addresses in a VPC (Virtual Private Cloud). */
-		PrivateLinkConfig?: PrivateLinkConfig;
+		PrivateLinkConfig?: PrivateLinkConfig | null;
 	}
 
 	export enum DescribeAgentResponseStatus { ONLINE = 0, OFFLINE = 1 }
@@ -296,10 +296,10 @@ export namespace MyNS {
 
 	/** The VPC endpoint, subnet and security group that an agent uses to access IP addresses in a VPC (Virtual Private Cloud). */
 	export interface PrivateLinkConfig {
-		VpcEndpointId?: string;
-		PrivateLinkEndpoint?: string;
-		SubnetArns?: Array<string>;
-		SecurityGroupArns?: Array<string>;
+		VpcEndpointId?: string | null;
+		PrivateLinkEndpoint?: string | null;
+		SubnetArns?: Array<string> | null;
+		SecurityGroupArns?: Array<string> | null;
 	}
 
 
@@ -311,12 +311,12 @@ export namespace MyNS {
 
 	/** DescribeLocationEfsResponse */
 	export interface DescribeLocationEfsResponse {
-		LocationArn?: string;
-		LocationUri?: string;
+		LocationArn?: string | null;
+		LocationUri?: string | null;
 
 		/** The subnet and the security group that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified. */
-		Ec2Config?: Ec2Config;
-		CreationTime?: Date;
+		Ec2Config?: Ec2Config | null;
+		CreationTime?: Date | null;
 	}
 
 
@@ -326,12 +326,12 @@ export namespace MyNS {
 	}
 
 	export interface DescribeLocationFsxWindowsResponse {
-		LocationArn?: string;
-		LocationUri?: string;
-		SecurityGroupArns?: Array<string>;
-		CreationTime?: Date;
-		User?: string;
-		Domain?: string;
+		LocationArn?: string | null;
+		LocationUri?: string | null;
+		SecurityGroupArns?: Array<string> | null;
+		CreationTime?: Date | null;
+		User?: string | null;
+		Domain?: string | null;
 	}
 
 	export interface DescribeLocationFsxWindowsRequest {
@@ -341,15 +341,15 @@ export namespace MyNS {
 
 	/** DescribeLocationNfsResponse */
 	export interface DescribeLocationNfsResponse {
-		LocationArn?: string;
-		LocationUri?: string;
+		LocationArn?: string | null;
+		LocationUri?: string | null;
 
 		/** A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location. */
-		OnPremConfig?: OnPremConfig;
+		OnPremConfig?: OnPremConfig | null;
 
 		/** Represents the mount options that are available for DataSync to access an NFS location. */
-		MountOptions?: NfsMountOptions;
-		CreationTime?: Date;
+		MountOptions?: NfsMountOptions | null;
+		CreationTime?: Date | null;
 	}
 
 
@@ -361,13 +361,13 @@ export namespace MyNS {
 
 	/** DescribeLocationS3Response */
 	export interface DescribeLocationS3Response {
-		LocationArn?: string;
-		LocationUri?: string;
-		S3StorageClass?: CreateLocationS3RequestS3StorageClass;
+		LocationArn?: string | null;
+		LocationUri?: string | null;
+		S3StorageClass?: CreateLocationS3RequestS3StorageClass | null;
 
 		/** <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p> <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>AWS DataSync User Guide</i>.</p> */
-		S3Config?: S3Config;
-		CreationTime?: Date;
+		S3Config?: S3Config | null;
+		CreationTime?: Date | null;
 	}
 
 
@@ -379,15 +379,15 @@ export namespace MyNS {
 
 	/** DescribeLocationSmbResponse */
 	export interface DescribeLocationSmbResponse {
-		LocationArn?: string;
-		LocationUri?: string;
-		AgentArns?: Array<string>;
-		User?: string;
-		Domain?: string;
+		LocationArn?: string | null;
+		LocationUri?: string | null;
+		AgentArns?: Array<string> | null;
+		User?: string | null;
+		Domain?: string | null;
 
 		/** Represents the mount options that are available for DataSync to access an SMB location. */
-		MountOptions?: SmbMountOptions;
-		CreationTime?: Date;
+		MountOptions?: SmbMountOptions | null;
+		CreationTime?: Date | null;
 	}
 
 
@@ -399,25 +399,25 @@ export namespace MyNS {
 
 	/** DescribeTaskResponse */
 	export interface DescribeTaskResponse {
-		TaskArn?: string;
-		Status?: DescribeTaskResponseStatus;
-		Name?: string;
-		CurrentTaskExecutionArn?: string;
-		SourceLocationArn?: string;
-		DestinationLocationArn?: string;
-		CloudWatchLogGroupArn?: string;
-		SourceNetworkInterfaceArns?: Array<string>;
-		DestinationNetworkInterfaceArns?: Array<string>;
+		TaskArn?: string | null;
+		Status?: DescribeTaskResponseStatus | null;
+		Name?: string | null;
+		CurrentTaskExecutionArn?: string | null;
+		SourceLocationArn?: string | null;
+		DestinationLocationArn?: string | null;
+		CloudWatchLogGroupArn?: string | null;
+		SourceNetworkInterfaceArns?: Array<string> | null;
+		DestinationNetworkInterfaceArns?: Array<string> | null;
 
 		/** <p>Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> <p>A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.</p> */
-		Options?: Options;
-		Excludes?: Array<FilterRule>;
+		Options?: Options | null;
+		Excludes?: Array<FilterRule> | null;
 
 		/** Specifies the schedule you want your task to use for repeated executions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a>. */
-		Schedule?: TaskSchedule;
-		ErrorCode?: string;
-		ErrorDetail?: string;
-		CreationTime?: Date;
+		Schedule?: TaskSchedule | null;
+		ErrorCode?: string | null;
+		ErrorDetail?: string | null;
+		CreationTime?: Date | null;
 	}
 
 	export enum DescribeTaskResponseStatus { AVAILABLE = 0, CREATING = 1, QUEUED = 2, RUNNING = 3, UNAVAILABLE = 4 }
@@ -431,22 +431,22 @@ export namespace MyNS {
 
 	/** DescribeTaskExecutionResponse */
 	export interface DescribeTaskExecutionResponse {
-		TaskExecutionArn?: string;
-		Status?: DescribeTaskExecutionResponseStatus;
+		TaskExecutionArn?: string | null;
+		Status?: DescribeTaskExecutionResponseStatus | null;
 
 		/** <p>Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> <p>A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.</p> */
-		Options?: Options;
-		Excludes?: Array<FilterRule>;
-		Includes?: Array<FilterRule>;
-		StartTime?: Date;
-		EstimatedFilesToTransfer?: number;
-		EstimatedBytesToTransfer?: number;
-		FilesTransferred?: number;
-		BytesWritten?: number;
-		BytesTransferred?: number;
+		Options?: Options | null;
+		Excludes?: Array<FilterRule> | null;
+		Includes?: Array<FilterRule> | null;
+		StartTime?: Date | null;
+		EstimatedFilesToTransfer?: number | null;
+		EstimatedBytesToTransfer?: number | null;
+		FilesTransferred?: number | null;
+		BytesWritten?: number | null;
+		BytesTransferred?: number | null;
 
 		/** Describes the detailed result of a <code>TaskExecution</code> operation. This result includes the time in milliseconds spent in each phase, the status of the task execution, and the errors encountered. */
-		Result?: TaskExecutionResultDetail;
+		Result?: TaskExecutionResultDetail | null;
 	}
 
 	export enum DescribeTaskExecutionResponseStatus { QUEUED = 0, LAUNCHING = 1, PREPARING = 2, TRANSFERRING = 3, VERIFYING = 4, SUCCESS = 5, ERROR = 6 }
@@ -454,15 +454,15 @@ export namespace MyNS {
 
 	/** Describes the detailed result of a <code>TaskExecution</code> operation. This result includes the time in milliseconds spent in each phase, the status of the task execution, and the errors encountered. */
 	export interface TaskExecutionResultDetail {
-		PrepareDuration?: number;
-		PrepareStatus?: TaskExecutionResultDetailPrepareStatus;
-		TotalDuration?: number;
-		TransferDuration?: number;
-		TransferStatus?: TaskExecutionResultDetailPrepareStatus;
-		VerifyDuration?: number;
-		VerifyStatus?: TaskExecutionResultDetailPrepareStatus;
-		ErrorCode?: string;
-		ErrorDetail?: string;
+		PrepareDuration?: number | null;
+		PrepareStatus?: TaskExecutionResultDetailPrepareStatus | null;
+		TotalDuration?: number | null;
+		TransferDuration?: number | null;
+		TransferStatus?: TaskExecutionResultDetailPrepareStatus | null;
+		VerifyDuration?: number | null;
+		VerifyStatus?: TaskExecutionResultDetailPrepareStatus | null;
+		ErrorCode?: string | null;
+		ErrorDetail?: string | null;
 	}
 
 	export enum TaskExecutionResultDetailPrepareStatus { PENDING = 0, SUCCESS = 1, ERROR = 2 }
@@ -476,109 +476,109 @@ export namespace MyNS {
 
 	/** ListAgentsResponse */
 	export interface ListAgentsResponse {
-		Agents?: Array<AgentListEntry>;
-		NextToken?: string;
+		Agents?: Array<AgentListEntry> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of agents when the <a>ListAgents</a> operation is called. */
 	export interface AgentListEntry {
-		AgentArn?: string;
-		Name?: string;
-		Status?: DescribeAgentResponseStatus;
+		AgentArn?: string | null;
+		Name?: string | null;
+		Status?: DescribeAgentResponseStatus | null;
 	}
 
 
 	/** ListAgentsRequest */
 	export interface ListAgentsRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** ListLocationsResponse */
 	export interface ListLocationsResponse {
-		Locations?: Array<LocationListEntry>;
-		NextToken?: string;
+		Locations?: Array<LocationListEntry> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents a single entry in a list of locations. <code>LocationListEntry</code> returns an array that contains a list of locations when the <a>ListLocations</a> operation is called. */
 	export interface LocationListEntry {
-		LocationArn?: string;
-		LocationUri?: string;
+		LocationArn?: string | null;
+		LocationUri?: string | null;
 	}
 
 
 	/** ListLocationsRequest */
 	export interface ListLocationsRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** ListTagsForResourceResponse */
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<TagListEntry>;
-		NextToken?: string;
+		Tags?: Array<TagListEntry> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** ListTagsForResourceRequest */
 	export interface ListTagsForResourceRequest {
 		ResourceArn: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** ListTaskExecutionsResponse */
 	export interface ListTaskExecutionsResponse {
-		TaskExecutions?: Array<TaskExecutionListEntry>;
-		NextToken?: string;
+		TaskExecutions?: Array<TaskExecutionListEntry> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents a single entry in a list of task executions. <code>TaskExecutionListEntry</code> returns an array that contains a list of specific invocations of a task when <a>ListTaskExecutions</a> operation is called. */
 	export interface TaskExecutionListEntry {
-		TaskExecutionArn?: string;
-		Status?: DescribeTaskExecutionResponseStatus;
+		TaskExecutionArn?: string | null;
+		Status?: DescribeTaskExecutionResponseStatus | null;
 	}
 
 
 	/** ListTaskExecutions */
 	export interface ListTaskExecutionsRequest {
-		TaskArn?: string;
-		MaxResults?: number;
-		NextToken?: string;
+		TaskArn?: string | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** ListTasksResponse */
 	export interface ListTasksResponse {
-		Tasks?: Array<TaskListEntry>;
-		NextToken?: string;
+		Tasks?: Array<TaskListEntry> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of tasks when the <a>ListTasks</a> operation is called. A task includes the source and destination file systems to sync and the options to use for the tasks. */
 	export interface TaskListEntry {
-		TaskArn?: string;
-		Status?: DescribeTaskResponseStatus;
-		Name?: string;
+		TaskArn?: string | null;
+		Status?: DescribeTaskResponseStatus | null;
+		Name?: string | null;
 	}
 
 
 	/** ListTasksRequest */
 	export interface ListTasksRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** StartTaskExecutionResponse */
 	export interface StartTaskExecutionResponse {
-		TaskExecutionArn?: string;
+		TaskExecutionArn?: string | null;
 	}
 
 
@@ -587,8 +587,8 @@ export namespace MyNS {
 		TaskArn: string;
 
 		/** <p>Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> <p>A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.</p> */
-		OverrideOptions?: Options;
-		Includes?: Array<FilterRule>;
+		OverrideOptions?: Options | null;
+		Includes?: Array<FilterRule> | null;
 	}
 
 	export interface TagResourceResponse {
@@ -618,7 +618,7 @@ export namespace MyNS {
 	/** UpdateAgentRequest */
 	export interface UpdateAgentRequest {
 		AgentArn: string;
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateTaskResponse {
@@ -630,13 +630,13 @@ export namespace MyNS {
 		TaskArn: string;
 
 		/** <p>Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p> <p>A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.</p> */
-		Options?: Options;
-		Excludes?: Array<FilterRule>;
+		Options?: Options | null;
+		Excludes?: Array<FilterRule> | null;
 
 		/** Specifies the schedule you want your task to use for repeated executions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a>. */
-		Schedule?: TaskSchedule;
-		Name?: string;
-		CloudWatchLogGroupArn?: string;
+		Schedule?: TaskSchedule | null;
+		Name?: string | null;
+		CloudWatchLogGroupArn?: string | null;
 	}
 
 	export enum AgentStatus { ONLINE = 0, OFFLINE = 1 }
@@ -862,7 +862,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAgentsResponse} Success
 		 */
-		ListAgents(MaxResults: string, NextToken: string, requestBody: ListAgentsRequest): Observable<ListAgentsResponse> {
+		ListAgents(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAgentsRequest): Observable<ListAgentsResponse> {
 			return this.http.post<ListAgentsResponse>(this.baseUri + '#X-Amz-Target=FmrsService.ListAgents?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -873,7 +873,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListLocationsResponse} Success
 		 */
-		ListLocations(MaxResults: string, NextToken: string, requestBody: ListLocationsRequest): Observable<ListLocationsResponse> {
+		ListLocations(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListLocationsRequest): Observable<ListLocationsResponse> {
 			return this.http.post<ListLocationsResponse>(this.baseUri + '#X-Amz-Target=FmrsService.ListLocations?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -884,7 +884,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsForResourceResponse} Success
 		 */
-		ListTagsForResource(MaxResults: string, NextToken: string, requestBody: ListTagsForResourceRequest): Observable<ListTagsForResourceResponse> {
+		ListTagsForResource(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTagsForResourceRequest): Observable<ListTagsForResourceResponse> {
 			return this.http.post<ListTagsForResourceResponse>(this.baseUri + '#X-Amz-Target=FmrsService.ListTagsForResource?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -895,7 +895,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTaskExecutionsResponse} Success
 		 */
-		ListTaskExecutions(MaxResults: string, NextToken: string, requestBody: ListTaskExecutionsRequest): Observable<ListTaskExecutionsResponse> {
+		ListTaskExecutions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTaskExecutionsRequest): Observable<ListTaskExecutionsResponse> {
 			return this.http.post<ListTaskExecutionsResponse>(this.baseUri + '#X-Amz-Target=FmrsService.ListTaskExecutions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -906,7 +906,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTasksResponse} Success
 		 */
-		ListTasks(MaxResults: string, NextToken: string, requestBody: ListTasksRequest): Observable<ListTasksResponse> {
+		ListTasks(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTasksRequest): Observable<ListTasksResponse> {
 			return this.http.post<ListTasksResponse>(this.baseUri + '#X-Amz-Target=FmrsService.ListTasks?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

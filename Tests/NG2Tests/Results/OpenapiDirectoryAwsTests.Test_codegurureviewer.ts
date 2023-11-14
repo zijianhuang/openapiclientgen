@@ -5,22 +5,22 @@ export namespace MyNS {
 	export interface AssociateRepositoryResponse {
 
 		/** Information about a repository association. */
-		RepositoryAssociation?: RepositoryAssociation;
+		RepositoryAssociation?: RepositoryAssociation | null;
 	}
 
 
 	/** Information about a repository association. */
 	export interface RepositoryAssociation {
-		AssociationId?: string;
-		AssociationArn?: string;
-		ConnectionArn?: string;
-		Name?: string;
-		Owner?: string;
-		ProviderType?: RepositoryAssociationProviderType;
-		State?: RepositoryAssociationState;
-		StateReason?: string;
-		LastUpdatedTimeStamp?: Date;
-		CreatedTimeStamp?: Date;
+		AssociationId?: string | null;
+		AssociationArn?: string | null;
+		ConnectionArn?: string | null;
+		Name?: string | null;
+		Owner?: string | null;
+		ProviderType?: RepositoryAssociationProviderType | null;
+		State?: RepositoryAssociationState | null;
+		StateReason?: string | null;
+		LastUpdatedTimeStamp?: Date | null;
+		CreatedTimeStamp?: Date | null;
 	}
 
 	export enum RepositoryAssociationProviderType { CodeCommit = 0, GitHub = 1, Bitbucket = 2 }
@@ -59,29 +59,29 @@ export namespace MyNS {
 	export interface DescribeCodeReviewResponse {
 
 		/** Information about a code review. */
-		CodeReview?: CodeReview;
+		CodeReview?: CodeReview | null;
 	}
 
 
 	/**  Information about a code review.  */
 	export interface CodeReview {
-		Name?: string;
-		CodeReviewArn?: string;
-		RepositoryName?: string;
-		Owner?: string;
-		ProviderType?: RepositoryAssociationProviderType;
-		State?: CodeReviewState;
-		StateReason?: string;
-		CreatedTimeStamp?: Date;
-		LastUpdatedTimeStamp?: Date;
-		Type?: CodeReviewType;
-		PullRequestId?: string;
+		Name?: string | null;
+		CodeReviewArn?: string | null;
+		RepositoryName?: string | null;
+		Owner?: string | null;
+		ProviderType?: RepositoryAssociationProviderType | null;
+		State?: CodeReviewState | null;
+		StateReason?: string | null;
+		CreatedTimeStamp?: Date | null;
+		LastUpdatedTimeStamp?: Date | null;
+		Type?: CodeReviewType | null;
+		PullRequestId?: string | null;
 
 		/** Information about the source code type. */
-		SourceCodeType?: SourceCodeType;
+		SourceCodeType?: SourceCodeType | null;
 
 		/** Information about the statistics from the code review. */
-		Metrics?: Metrics;
+		Metrics?: Metrics | null;
 	}
 
 	export enum CodeReviewState { Completed = 0, Pending = 1, Failed = 2, Deleting = 3 }
@@ -93,21 +93,21 @@ export namespace MyNS {
 	export interface SourceCodeType {
 
 		/** The commit diff for the pull request. */
-		CommitDiff?: CommitDiffSourceCodeType;
+		CommitDiff?: CommitDiffSourceCodeType | null;
 	}
 
 
 	/**  The commit diff for the pull request.  */
 	export interface CommitDiffSourceCodeType {
-		SourceCommit?: string;
-		DestinationCommit?: string;
+		SourceCommit?: string | null;
+		DestinationCommit?: string | null;
 	}
 
 
 	/**  Information about the statistics from the code review.  */
 	export interface Metrics {
-		MeteredLinesOfCodeCount?: number;
-		FindingsCount?: number;
+		MeteredLinesOfCodeCount?: number | null;
+		FindingsCount?: number | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -116,18 +116,18 @@ export namespace MyNS {
 	export interface DescribeRecommendationFeedbackResponse {
 
 		/** Information about the recommendation feedback. */
-		RecommendationFeedback?: RecommendationFeedback;
+		RecommendationFeedback?: RecommendationFeedback | null;
 	}
 
 
 	/**  Information about the recommendation feedback.  */
 	export interface RecommendationFeedback {
-		CodeReviewArn?: string;
-		RecommendationId?: string;
-		Reactions?: Array<Reaction>;
-		UserId?: string;
-		CreatedTimeStamp?: Date;
-		LastUpdatedTimeStamp?: Date;
+		CodeReviewArn?: string | null;
+		RecommendationId?: string | null;
+		Reactions?: Array<Reaction> | null;
+		UserId?: string | null;
+		CreatedTimeStamp?: Date | null;
+		LastUpdatedTimeStamp?: Date | null;
 	}
 
 	export enum Reaction { ThumbsUp = 0, ThumbsDown = 1 }
@@ -135,7 +135,7 @@ export namespace MyNS {
 	export interface DescribeRepositoryAssociationResponse {
 
 		/** Information about a repository association. */
-		RepositoryAssociation?: RepositoryAssociation;
+		RepositoryAssociation?: RepositoryAssociation | null;
 	}
 
 	export interface NotFoundException {
@@ -144,37 +144,37 @@ export namespace MyNS {
 	export interface DisassociateRepositoryResponse {
 
 		/** Information about a repository association. */
-		RepositoryAssociation?: RepositoryAssociation;
+		RepositoryAssociation?: RepositoryAssociation | null;
 	}
 
 	export interface ListCodeReviewsResponse {
-		CodeReviewSummaries?: Array<CodeReviewSummary>;
-		NextToken?: string;
+		CodeReviewSummaries?: Array<CodeReviewSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/**  Information about the summary of the code review.  */
 	export interface CodeReviewSummary {
-		Name?: string;
-		CodeReviewArn?: string;
-		RepositoryName?: string;
-		Owner?: string;
-		ProviderType?: RepositoryAssociationProviderType;
-		State?: CodeReviewState;
-		CreatedTimeStamp?: Date;
-		LastUpdatedTimeStamp?: Date;
-		Type?: CodeReviewType;
-		PullRequestId?: string;
+		Name?: string | null;
+		CodeReviewArn?: string | null;
+		RepositoryName?: string | null;
+		Owner?: string | null;
+		ProviderType?: RepositoryAssociationProviderType | null;
+		State?: CodeReviewState | null;
+		CreatedTimeStamp?: Date | null;
+		LastUpdatedTimeStamp?: Date | null;
+		Type?: CodeReviewType | null;
+		PullRequestId?: string | null;
 
 		/** Information about metrics summaries. */
-		MetricsSummary?: MetricsSummary;
+		MetricsSummary?: MetricsSummary | null;
 	}
 
 
 	/**  Information about metrics summaries.  */
 	export interface MetricsSummary {
-		MeteredLinesOfCodeCount?: number;
-		FindingsCount?: number;
+		MeteredLinesOfCodeCount?: number | null;
+		FindingsCount?: number | null;
 	}
 
 	export enum ProviderType { CodeCommit = 0, GitHub = 1, Bitbucket = 2 }
@@ -182,49 +182,49 @@ export namespace MyNS {
 	export enum JobState { Completed = 0, Pending = 1, Failed = 2, Deleting = 3 }
 
 	export interface ListRecommendationFeedbackResponse {
-		RecommendationFeedbackSummaries?: Array<RecommendationFeedbackSummary>;
-		NextToken?: string;
+		RecommendationFeedbackSummaries?: Array<RecommendationFeedbackSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/**  Information about recommendation feedback summaries.  */
 	export interface RecommendationFeedbackSummary {
-		RecommendationId?: string;
-		Reactions?: Array<Reaction>;
-		UserId?: string;
+		RecommendationId?: string | null;
+		Reactions?: Array<Reaction> | null;
+		UserId?: string | null;
 	}
 
 	export interface ListRecommendationsResponse {
-		RecommendationSummaries?: Array<RecommendationSummary>;
-		NextToken?: string;
+		RecommendationSummaries?: Array<RecommendationSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/**  Information about recommendations.  */
 	export interface RecommendationSummary {
-		FilePath?: string;
-		RecommendationId?: string;
-		StartLine?: number;
-		EndLine?: number;
-		Description?: string;
+		FilePath?: string | null;
+		RecommendationId?: string | null;
+		StartLine?: number | null;
+		EndLine?: number | null;
+		Description?: string | null;
 	}
 
 	export interface ListRepositoryAssociationsResponse {
-		RepositoryAssociationSummaries?: Array<RepositoryAssociationSummary>;
-		NextToken?: string;
+		RepositoryAssociationSummaries?: Array<RepositoryAssociationSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about a repository association. */
 	export interface RepositoryAssociationSummary {
-		AssociationArn?: string;
-		ConnectionArn?: string;
-		LastUpdatedTimeStamp?: Date;
-		AssociationId?: string;
-		Name?: string;
-		Owner?: string;
-		ProviderType?: RepositoryAssociationProviderType;
-		State?: RepositoryAssociationState;
+		AssociationArn?: string | null;
+		ConnectionArn?: string | null;
+		LastUpdatedTimeStamp?: Date | null;
+		AssociationId?: string | null;
+		Name?: string | null;
+		Owner?: string | null;
+		ProviderType?: RepositoryAssociationProviderType | null;
+		State?: RepositoryAssociationState | null;
 	}
 
 	export interface PutRecommendationFeedbackResponse {
@@ -235,10 +235,10 @@ export namespace MyNS {
 	export interface Repository {
 
 		/** Information about an AWS CodeCommit repository. */
-		CodeCommit?: CodeCommitRepository;
+		CodeCommit?: CodeCommitRepository | null;
 
 		/** Information about a third party source repository connected through CodeStar Connections. */
-		Bitbucket?: ThirdPartySourceRepository;
+		Bitbucket?: ThirdPartySourceRepository | null;
 	}
 
 	export interface AssociateRepositoryRequest {
@@ -248,7 +248,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		Repository: Repository;
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 	}
 
 	export enum Type { PullRequest = 0 }
@@ -308,7 +308,7 @@ export namespace MyNS {
 		 * @param {string} NextToken <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>Treat this token as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
 		 * @return {ListRepositoryAssociationsResponse} Success
 		 */
-		ListRepositoryAssociations(ProviderType: Array<ProviderType>, State: Array<RepositoryAssociationState>, Name: Array<string>, Owner: Array<string>, MaxResults: number, NextToken: string): Observable<ListRepositoryAssociationsResponse> {
+		ListRepositoryAssociations(ProviderType: Array<ProviderType> | null | undefined, State: Array<RepositoryAssociationState> | null | undefined, Name: Array<string> | null | undefined, Owner: Array<string> | null | undefined, MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListRepositoryAssociationsResponse> {
 			return this.http.get<ListRepositoryAssociationsResponse>(this.baseUri + 'associations?' + ProviderType.map(z => `ProviderType=${z}`).join('&') + '&' + State.map(z => `State=${z}`).join('&') + '&' + Name.map(z => `Name=${encodeURIComponent(z)}`).join('&') + '&' + Owner.map(z => `Owner=${encodeURIComponent(z)}`).join('&') + '&MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -330,7 +330,7 @@ export namespace MyNS {
 		 * @param {string} UserId  Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request. 
 		 * @return {DescribeRecommendationFeedbackResponse} Success
 		 */
-		DescribeRecommendationFeedback(CodeReviewArn: string, RecommendationId: string, UserId: string): Observable<DescribeRecommendationFeedbackResponse> {
+		DescribeRecommendationFeedback(CodeReviewArn: string, RecommendationId: string, UserId: string | null | undefined): Observable<DescribeRecommendationFeedbackResponse> {
 			return this.http.get<DescribeRecommendationFeedbackResponse>(this.baseUri + 'feedback/' + (CodeReviewArn == null ? '' : encodeURIComponent(CodeReviewArn)) + '#RecommendationId&RecommendationId=' + (RecommendationId == null ? '' : encodeURIComponent(RecommendationId)) + '&UserId=' + (UserId == null ? '' : encodeURIComponent(UserId)), {});
 		}
 
@@ -365,7 +365,7 @@ export namespace MyNS {
 		 * @param {string} NextToken  If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. 
 		 * @return {ListCodeReviewsResponse} Success
 		 */
-		ListCodeReviews(ProviderTypes: Array<ProviderType>, States: Array<JobState>, RepositoryNames: Array<string>, Type: CodeReviewType, MaxResults: number, NextToken: string): Observable<ListCodeReviewsResponse> {
+		ListCodeReviews(ProviderTypes: Array<ProviderType> | null | undefined, States: Array<JobState> | null | undefined, RepositoryNames: Array<string> | null | undefined, Type: CodeReviewType, MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListCodeReviewsResponse> {
 			return this.http.get<ListCodeReviewsResponse>(this.baseUri + 'codereviews#Type?' + ProviderTypes.map(z => `ProviderTypes=${z}`).join('&') + '&' + States.map(z => `States=${z}`).join('&') + '&' + RepositoryNames.map(z => `RepositoryNames=${encodeURIComponent(z)}`).join('&') + '&Type=' + Type + '&MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -379,7 +379,7 @@ export namespace MyNS {
 		 * @param {Array<string>} RecommendationIds  Filter on recommendationIds that need to be applied before displaying the result. This can be used to query all the recommendation feedback for a given recommendation. 
 		 * @return {ListRecommendationFeedbackResponse} Success
 		 */
-		ListRecommendationFeedback(NextToken: string, MaxResults: number, CodeReviewArn: string, UserIds: Array<string>, RecommendationIds: Array<string>): Observable<ListRecommendationFeedbackResponse> {
+		ListRecommendationFeedback(NextToken: string | null | undefined, MaxResults: number | null | undefined, CodeReviewArn: string, UserIds: Array<string> | null | undefined, RecommendationIds: Array<string> | null | undefined): Observable<ListRecommendationFeedbackResponse> {
 			return this.http.get<ListRecommendationFeedbackResponse>(this.baseUri + 'feedback/' + (CodeReviewArn == null ? '' : encodeURIComponent(CodeReviewArn)) + '/RecommendationFeedback?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults + '&' + UserIds.map(z => `UserIds=${encodeURIComponent(z)}`).join('&') + '&' + RecommendationIds.map(z => `RecommendationIds=${encodeURIComponent(z)}`).join('&'), {});
 		}
 
@@ -391,7 +391,7 @@ export namespace MyNS {
 		 * @param {string} CodeReviewArn  The Amazon Resource Name (ARN) of the code review to describe. 
 		 * @return {ListRecommendationsResponse} Success
 		 */
-		ListRecommendations(NextToken: string, MaxResults: number, CodeReviewArn: string): Observable<ListRecommendationsResponse> {
+		ListRecommendations(NextToken: string | null | undefined, MaxResults: number | null | undefined, CodeReviewArn: string): Observable<ListRecommendationsResponse> {
 			return this.http.get<ListRecommendationsResponse>(this.baseUri + 'codereviews/' + (CodeReviewArn == null ? '' : encodeURIComponent(CodeReviewArn)) + '/Recommendations?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 
@@ -419,16 +419,16 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[\w-]+$
 		 */
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 	}
 
 	export interface AssociateRepositoryPostBodyRepository {
 
 		/** Information about an AWS CodeCommit repository. */
-		CodeCommit?: CodeCommitRepository;
+		CodeCommit?: CodeCommitRepository | null;
 
 		/** Information about a third party source repository connected through CodeStar Connections. */
-		Bitbucket?: ThirdPartySourceRepository;
+		Bitbucket?: ThirdPartySourceRepository | null;
 	}
 
 	export interface PutRecommendationFeedbackPutBody {

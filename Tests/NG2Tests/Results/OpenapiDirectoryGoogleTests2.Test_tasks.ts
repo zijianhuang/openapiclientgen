@@ -5,112 +5,112 @@ export namespace MyNS {
 	export interface Task_ {
 
 		/** Completion date of the task (as a RFC 3339 timestamp). This field is omitted if the task has not been completed. */
-		completed?: Date;
+		completed?: Date | null;
 
 		/** Flag indicating whether the task has been deleted. The default if False. */
-		deleted?: boolean;
+		deleted?: boolean | null;
 
 		/** Due date of the task (as a RFC 3339 timestamp). Optional. The due date only records date information; the time portion of the timestamp is discarded when setting the due date. It isn't possible to read or write the time that a task is due via the API. */
-		due?: Date;
+		due?: Date | null;
 
 		/** ETag of the resource. */
-		etag?: string;
+		etag?: string | null;
 
 		/** Flag indicating whether the task is hidden. This is the case if the task had been marked completed when the task list was last cleared. The default is False. This field is read-only. */
-		hidden?: boolean;
+		hidden?: boolean | null;
 
 		/** Task identifier. */
-		id?: string;
+		id?: string | null;
 
 		/** Type of the resource. This is always "tasks#task". */
-		kind?: string;
+		kind?: string | null;
 
 		/** Collection of links. This collection is read-only. */
-		Task_Links?: Array<Task_Links>;
+		Task_Links?: Array<Task_Links> | null;
 
 		/** Notes describing the task. Optional. */
-		notes?: string;
+		notes?: string | null;
 
 		/** Parent task identifier. This field is omitted if it is a top-level task. This field is read-only. Use the "move" method to move the task under a different parent or to the top level. */
-		parent?: string;
+		parent?: string | null;
 
 		/** String indicating the position of the task among its sibling tasks under the same parent task or at the top level. If this string is greater than another task's corresponding position string according to lexicographical ordering, the task is positioned after the other task under the same parent task (or at the top level). This field is read-only. Use the "move" method to move the task to another position. */
-		position?: string;
+		position?: string | null;
 
 		/** URL pointing to this task. Used to retrieve, update, or delete this task. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Status of the task. This is either "needsAction" or "completed". */
-		status?: string;
+		status?: string | null;
 
 		/** Title of the task. */
-		title?: string;
+		title?: string | null;
 
 		/** Last modification time of the task (as a RFC 3339 timestamp). */
-		updated?: Date;
+		updated?: Date | null;
 	}
 
 	export interface Task_Links {
 
 		/** The description. In HTML speak: Everything between <a> and </a>. */
-		description?: string;
+		description?: string | null;
 
 		/** The URL. */
-		link?: string;
+		link?: string | null;
 
 		/** Type of the link, e.g. "email". */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface TaskList {
 
 		/** ETag of the resource. */
-		etag?: string;
+		etag?: string | null;
 
 		/** Task list identifier. */
-		id?: string;
+		id?: string | null;
 
 		/** Type of the resource. This is always "tasks#taskList". */
-		kind?: string;
+		kind?: string | null;
 
 		/** URL pointing to this task list. Used to retrieve, update, or delete this task list. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Title of the task list. */
-		title?: string;
+		title?: string | null;
 
 		/** Last modification time of the task list (as a RFC 3339 timestamp). */
-		updated?: Date;
+		updated?: Date | null;
 	}
 
 	export interface TaskLists {
 
 		/** ETag of the resource. */
-		etag?: string;
+		etag?: string | null;
 
 		/** Collection of task lists. */
-		items?: Array<TaskList>;
+		items?: Array<TaskList> | null;
 
 		/** Type of the resource. This is always "tasks#taskLists". */
-		kind?: string;
+		kind?: string | null;
 
 		/** Token that can be used to request the next page of this result. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	export interface Tasks {
 
 		/** ETag of the resource. */
-		etag?: string;
+		etag?: string | null;
 
 		/** Collection of tasks. */
-		items?: Array<Task_>;
+		items?: Array<Task_> | null;
 
 		/** Type of the resource. This is always "tasks#tasks". */
-		kind?: string;
+		kind?: string | null;
 
 		/** Token used to access the next page of this result. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	@Injectable()
@@ -144,7 +144,7 @@ export namespace MyNS {
 		 * @param {string} updatedMin Lower bound for a task's last modification time (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by last modification time.
 		 * @return {void} Successful response
 		 */
-		Tasks_tasks_list(tasklist: string, completedMax: string, completedMin: string, dueMax: string, dueMin: string, maxResults: string, pageToken: string, showCompleted: boolean, showDeleted: boolean, showHidden: boolean, updatedMin: string): Observable<HttpResponse<string>> {
+		Tasks_tasks_list(tasklist: string, completedMax: string | null | undefined, completedMin: string | null | undefined, dueMax: string | null | undefined, dueMin: string | null | undefined, maxResults: string | null | undefined, pageToken: string | null | undefined, showCompleted: boolean | null | undefined, showDeleted: boolean | null | undefined, showHidden: boolean | null | undefined, updatedMin: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'lists/' + (tasklist == null ? '' : encodeURIComponent(tasklist)) + '/tasks&completedMax=' + (completedMax == null ? '' : encodeURIComponent(completedMax)) + '&completedMin=' + (completedMin == null ? '' : encodeURIComponent(completedMin)) + '&dueMax=' + (dueMax == null ? '' : encodeURIComponent(dueMax)) + '&dueMin=' + (dueMin == null ? '' : encodeURIComponent(dueMin)) + '&maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&showCompleted=' + showCompleted + '&showDeleted=' + showDeleted + '&showHidden=' + showHidden + '&updatedMin=' + (updatedMin == null ? '' : encodeURIComponent(updatedMin)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -156,7 +156,7 @@ export namespace MyNS {
 		 * @param {string} previous Previous sibling task identifier. If the task is created at the first position among its siblings, this parameter is omitted. Optional.
 		 * @return {void} Successful response
 		 */
-		Tasks_tasks_insert(tasklist: string, parent: string, previous: string, requestBody: Task_): Observable<HttpResponse<string>> {
+		Tasks_tasks_insert(tasklist: string, parent: string | null | undefined, previous: string | null | undefined, requestBody: Task_): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'lists/' + (tasklist == null ? '' : encodeURIComponent(tasklist)) + '/tasks&parent=' + (parent == null ? '' : encodeURIComponent(parent)) + '&previous=' + (previous == null ? '' : encodeURIComponent(previous)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -213,7 +213,7 @@ export namespace MyNS {
 		 * @param {string} previous New previous sibling task identifier. If the task is moved to the first position among its siblings, this parameter is omitted. Optional.
 		 * @return {void} Successful response
 		 */
-		Tasks_tasks_move(tasklist: string, task: string, parent: string, previous: string): Observable<HttpResponse<string>> {
+		Tasks_tasks_move(tasklist: string, task: string, parent: string | null | undefined, previous: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'lists/' + (tasklist == null ? '' : encodeURIComponent(tasklist)) + '/tasks/' + (task == null ? '' : encodeURIComponent(task)) + '/move&parent=' + (parent == null ? '' : encodeURIComponent(parent)) + '&previous=' + (previous == null ? '' : encodeURIComponent(previous)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -224,7 +224,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token specifying the result page to return. Optional.
 		 * @return {void} Successful response
 		 */
-		Tasks_tasklists_list(maxResults: string, pageToken: string): Observable<HttpResponse<string>> {
+		Tasks_tasklists_list(maxResults: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/@me/lists?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

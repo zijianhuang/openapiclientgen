@@ -11,13 +11,13 @@ export namespace MyNS {
 		 * `device_id` can be either the device numeric ID or the user-defined device
 		 * identifier.
 		 */
-		deviceId?: string;
+		deviceId?: string | null;
 
 		/**
 		 * Required. The value of `gateway_id` can be either the device numeric ID or the
 		 * user-defined device identifier.
 		 */
-		gatewayId?: string;
+		gatewayId?: string | null;
 	}
 
 
@@ -53,7 +53,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -88,13 +88,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -128,26 +128,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -159,10 +159,10 @@ export namespace MyNS {
 		 * Can be used to temporarily prevent the device from connecting if, for
 		 * example, the sensor is generating bad data and needs maintenance.
 		 */
-		blocked?: boolean;
+		blocked?: boolean | null;
 
 		/** The device configuration. Eventually delivered to devices. */
-		config?: DeviceConfig;
+		config?: DeviceConfig | null;
 
 		/**
 		 * The credentials used to authenticate this device. To allow credential
@@ -172,29 +172,29 @@ export namespace MyNS {
 		 * against the registry credentials. For details, see the description of the
 		 * `DeviceRegistry.credentials` field.
 		 */
-		credentials?: Array<DeviceCredential>;
+		credentials?: Array<DeviceCredential> | null;
 
 		/** Gateway-related configuration and state. */
-		gatewayConfig?: GatewayConfig;
+		gatewayConfig?: GatewayConfig | null;
 
 		/**
 		 * The user-defined device identifier. The device ID must be unique
 		 * within a device registry.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * [Output only] The last time a cloud-to-device config version acknowledgment
 		 * was received from the device. This field is only for configurations
 		 * sent through MQTT.
 		 */
-		lastConfigAckTime?: string;
+		lastConfigAckTime?: string | null;
 
 		/**
 		 * [Output only] The last time a cloud-to-device config version was sent to
 		 * the device.
 		 */
-		lastConfigSendTime?: string;
+		lastConfigSendTime?: string | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -204,21 +204,21 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		lastErrorStatus?: Status;
+		lastErrorStatus?: Status | null;
 
 		/**
 		 * [Output only] The time the most recent error occurred, such as a failure to
 		 * publish to Cloud Pub/Sub. This field is the timestamp of
 		 * 'last_error_status'.
 		 */
-		lastErrorTime?: string;
+		lastErrorTime?: string | null;
 
 		/**
 		 * [Output only] The last time a telemetry event was received. Timestamps are
 		 * periodically collected and written to storage; they may be stale by a few
 		 * minutes.
 		 */
-		lastEventTime?: string;
+		lastEventTime?: string | null;
 
 		/**
 		 * [Output only] The last time an MQTT `PINGREQ` was received. This field
@@ -227,21 +227,21 @@ export namespace MyNS {
 		 * have been sent. Timestamps are periodically collected and written to
 		 * storage; they may be stale by a few minutes.
 		 */
-		lastHeartbeatTime?: string;
+		lastHeartbeatTime?: string | null;
 
 		/**
 		 * [Output only] The last time a state event was received. Timestamps are
 		 * periodically collected and written to storage; they may be stale by a few
 		 * minutes.
 		 */
-		lastStateTime?: string;
+		lastStateTime?: string | null;
 
 		/**
 		 * **Beta Feature**
 		 * The logging verbosity for device activity. If unspecified,
 		 * DeviceRegistry.log_level will be used.
 		 */
-		logLevel?: DeviceLogLevel;
+		logLevel?: DeviceLogLevel | null;
 
 		/**
 		 * The metadata key-value pairs assigned to the device. This metadata is not
@@ -254,7 +254,7 @@ export namespace MyNS {
 		 * The total size of all keys and values must be less than 256 KB, and the
 		 * maximum number of key-value pairs is 500.
 		 */
-		metadata?: {[id: string]: string };
+		metadata?: {[id: string]: string } | null;
 
 		/**
 		 * The resource path name. For example,
@@ -263,16 +263,16 @@ export namespace MyNS {
 		 * When `name` is populated as a response from the service, it always ends
 		 * in the device numeric ID.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * [Output only] A server-defined unique numeric ID for the device. This is a
 		 * more compact way to identify devices, and it is globally unique.
 		 */
-		numId?: string;
+		numId?: string | null;
 
 		/** The device state, as reported by the device. */
-		state?: DeviceState;
+		state?: DeviceState | null;
 	}
 
 
@@ -280,13 +280,13 @@ export namespace MyNS {
 	export interface DeviceConfig {
 
 		/** The device configuration data. */
-		binaryData?: string;
+		binaryData?: string | null;
 
 		/**
 		 * [Output only] The time at which this configuration version was updated in
 		 * Cloud IoT Core. This timestamp is set by the server.
 		 */
-		cloudUpdateTime?: string;
+		cloudUpdateTime?: string | null;
 
 		/**
 		 * [Output only] The time at which Cloud IoT Core received the
@@ -299,7 +299,7 @@ export namespace MyNS {
 		 * versions may never be sent to the device, and therefore are never
 		 * acknowledged. This timestamp is set by Cloud IoT Core.
 		 */
-		deviceAckTime?: string;
+		deviceAckTime?: string | null;
 
 		/**
 		 * [Output only] The version of this update. The version number is assigned by
@@ -307,7 +307,7 @@ export namespace MyNS {
 		 * version must be 0 on the `CreateDevice` request if a `config` is
 		 * specified; the response of `CreateDevice` will always have a value of 1.
 		 */
-		version?: string;
+		version?: string | null;
 	}
 
 
@@ -319,10 +319,10 @@ export namespace MyNS {
 		 * credential will be ignored for new client authentication requests after
 		 * this timestamp; however, it will not be automatically deleted.
 		 */
-		expirationTime?: string;
+		expirationTime?: string | null;
 
 		/** A public key format and data. */
-		publicKey?: PublicKeyCredential;
+		publicKey?: PublicKeyCredential | null;
 	}
 
 
@@ -330,10 +330,10 @@ export namespace MyNS {
 	export interface PublicKeyCredential {
 
 		/** The format of the key. */
-		format?: PublicKeyCredentialFormat;
+		format?: PublicKeyCredentialFormat | null;
 
 		/** The key data. */
-		key?: string;
+		key?: string | null;
 	}
 
 	export enum PublicKeyCredentialFormat { UNSPECIFIED_PUBLIC_KEY_FORMAT = 0, RSA_PEM = 1, RSA_X509_PEM = 2, ES256_PEM = 3, ES256_X509_PEM = 4 }
@@ -346,19 +346,19 @@ export namespace MyNS {
 		 * Indicates how to authorize and/or authenticate devices to access the
 		 * gateway.
 		 */
-		gatewayAuthMethod?: GatewayConfigGatewayAuthMethod;
+		gatewayAuthMethod?: GatewayConfigGatewayAuthMethod | null;
 
 		/** Indicates whether the device is a gateway. */
-		gatewayType?: GatewayConfigGatewayType;
+		gatewayType?: GatewayConfigGatewayType | null;
 
 		/** [Output only] The ID of the gateway the device accessed most recently. */
-		lastAccessedGatewayId?: string;
+		lastAccessedGatewayId?: string | null;
 
 		/**
 		 * [Output only] The most recent time at which the device accessed the gateway
 		 * specified in `last_accessed_gateway`.
 		 */
-		lastAccessedGatewayTime?: string;
+		lastAccessedGatewayTime?: string | null;
 	}
 
 	export enum GatewayConfigGatewayAuthMethod { GATEWAY_AUTH_METHOD_UNSPECIFIED = 0, ASSOCIATION_ONLY = 1, DEVICE_AUTH_TOKEN_ONLY = 2, ASSOCIATION_AND_DEVICE_AUTH_TOKEN = 3 }
@@ -377,20 +377,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 	export enum DeviceLogLevel { LOG_LEVEL_UNSPECIFIED = 0, NONE = 1, ERROR = 2, INFO = 3, DEBUG = 4 }
@@ -400,13 +400,13 @@ export namespace MyNS {
 	export interface DeviceState {
 
 		/** The device state data. */
-		binaryData?: string;
+		binaryData?: string | null;
 
 		/**
 		 * [Output only] The time at which this state version was updated in Cloud
 		 * IoT Core.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -425,7 +425,7 @@ export namespace MyNS {
 		 * successfully created in a registry, it should be able to connect even if
 		 * its registry credentials are revoked, deleted, or modified.
 		 */
-		credentials?: Array<RegistryCredential>;
+		credentials?: Array<RegistryCredential> | null;
 
 		/**
 		 * The configuration for notification of telemetry events received from the
@@ -438,32 +438,32 @@ export namespace MyNS {
 		 * to do so using an HTTP connection, an error is returned. Up to 10
 		 * configurations may be provided.
 		 */
-		eventNotificationConfigs?: Array<EventNotificationConfig>;
+		eventNotificationConfigs?: Array<EventNotificationConfig> | null;
 
 		/** The configuration of the HTTP bridge for a device registry. */
-		httpConfig?: HttpConfig;
+		httpConfig?: HttpConfig | null;
 
 		/** The identifier of this device registry. For example, `myRegistry`. */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * **Beta Feature**
 		 * The default logging verbosity for activity from devices in this registry.
 		 * The verbosity level can be overridden by Device.log_level.
 		 */
-		logLevel?: DeviceLogLevel;
+		logLevel?: DeviceLogLevel | null;
 
 		/** The configuration of MQTT for a device registry. */
-		mqttConfig?: MqttConfig;
+		mqttConfig?: MqttConfig | null;
 
 		/**
 		 * The resource path name. For example,
 		 * `projects/example-project/locations/us-central1/registries/my-registry`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The configuration for notification of new states received from the device. */
-		stateNotificationConfig?: StateNotificationConfig;
+		stateNotificationConfig?: StateNotificationConfig | null;
 	}
 
 
@@ -471,7 +471,7 @@ export namespace MyNS {
 	export interface RegistryCredential {
 
 		/** A public key certificate format and data. */
-		publicKeyCertificate?: PublicKeyCertificate;
+		publicKeyCertificate?: PublicKeyCertificate | null;
 	}
 
 
@@ -479,13 +479,13 @@ export namespace MyNS {
 	export interface PublicKeyCertificate {
 
 		/** The certificate data. */
-		certificate?: string;
+		certificate?: string | null;
 
 		/** The certificate format. */
-		format?: PublicKeyCertificateFormat;
+		format?: PublicKeyCertificateFormat | null;
 
 		/** Details of an X.509 certificate. For informational purposes only. */
-		x509Details?: X509CertificateDetails;
+		x509Details?: X509CertificateDetails | null;
 	}
 
 	export enum PublicKeyCertificateFormat { UNSPECIFIED_PUBLIC_KEY_CERTIFICATE_FORMAT = 0, X509_CERTIFICATE_PEM = 1 }
@@ -495,22 +495,22 @@ export namespace MyNS {
 	export interface X509CertificateDetails {
 
 		/** The time the certificate becomes invalid. */
-		expiryTime?: string;
+		expiryTime?: string | null;
 
 		/** The entity that signed the certificate. */
-		issuer?: string;
+		issuer?: string | null;
 
 		/** The type of public key in the certificate. */
-		publicKeyType?: string;
+		publicKeyType?: string | null;
 
 		/** The algorithm used to sign the certificate. */
-		signatureAlgorithm?: string;
+		signatureAlgorithm?: string | null;
 
 		/** The time the certificate becomes valid. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** The entity the certificate and public key belong to. */
-		subject?: string;
+		subject?: string | null;
 	}
 
 
@@ -521,7 +521,7 @@ export namespace MyNS {
 		 * A Cloud Pub/Sub topic name. For example,
 		 * `projects/myProject/topics/deviceEvents`.
 		 */
-		pubsubTopicName?: string;
+		pubsubTopicName?: string | null;
 
 		/**
 		 * If the subfolder name matches this string exactly, this configuration will
@@ -529,7 +529,7 @@ export namespace MyNS {
 		 * all strings are matched. This field is used only for telemetry events;
 		 * subfolders are not supported for state changes.
 		 */
-		subfolderMatches?: string;
+		subfolderMatches?: string | null;
 	}
 
 
@@ -540,7 +540,7 @@ export namespace MyNS {
 		 * If enabled, allows devices to use DeviceService via the HTTP protocol.
 		 * Otherwise, any requests to DeviceService will fail for this registry.
 		 */
-		httpEnabledState?: HttpConfigHttpEnabledState;
+		httpEnabledState?: HttpConfigHttpEnabledState | null;
 	}
 
 	export enum HttpConfigHttpEnabledState { HTTP_STATE_UNSPECIFIED = 0, HTTP_ENABLED = 1, HTTP_DISABLED = 2 }
@@ -553,7 +553,7 @@ export namespace MyNS {
 		 * If enabled, allows connections using the MQTT protocol. Otherwise, MQTT
 		 * connections to this registry will fail.
 		 */
-		mqttEnabledState?: MqttConfigMqttEnabledState;
+		mqttEnabledState?: MqttConfigMqttEnabledState | null;
 	}
 
 	export enum MqttConfigMqttEnabledState { MQTT_STATE_UNSPECIFIED = 0, MQTT_ENABLED = 1, MQTT_DISABLED = 2 }
@@ -566,7 +566,7 @@ export namespace MyNS {
 		 * A Cloud Pub/Sub topic name. For example,
 		 * `projects/myProject/topics/deviceEvents`.
 		 */
-		pubsubTopicName?: string;
+		pubsubTopicName?: string | null;
 	}
 
 
@@ -587,7 +587,7 @@ export namespace MyNS {
 	export interface GetIamPolicyRequest {
 
 		/** Encapsulates settings provided to GetIamPolicy. */
-		options?: GetPolicyOptions;
+		options?: GetPolicyOptions | null;
 	}
 
 
@@ -602,7 +602,7 @@ export namespace MyNS {
 		 * Policies without any conditional bindings may specify any valid value or
 		 * leave the field unset.
 		 */
-		requestedPolicyVersion?: number;
+		requestedPolicyVersion?: number | null;
 	}
 
 
@@ -613,7 +613,7 @@ export namespace MyNS {
 		 * The device configuration for the last few versions. Versions are listed
 		 * in decreasing order, starting from the most recent one.
 		 */
-		deviceConfigs?: Array<DeviceConfig>;
+		deviceConfigs?: Array<DeviceConfig> | null;
 	}
 
 
@@ -621,14 +621,14 @@ export namespace MyNS {
 	export interface ListDeviceRegistriesResponse {
 
 		/** The registries that matched the query. */
-		deviceRegistries?: Array<DeviceRegistry>;
+		deviceRegistries?: Array<DeviceRegistry> | null;
 
 		/**
 		 * If not empty, indicates that there may be more registries that match the
 		 * request; this value should be passed in a new
 		 * `ListDeviceRegistriesRequest`.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -639,7 +639,7 @@ export namespace MyNS {
 		 * The last few device states. States are listed in descending order of server
 		 * update time, starting from the most recent one.
 		 */
-		deviceStates?: Array<DeviceState>;
+		deviceStates?: Array<DeviceState> | null;
 	}
 
 
@@ -647,13 +647,13 @@ export namespace MyNS {
 	export interface ListDevicesResponse {
 
 		/** The devices that match the request. */
-		devices?: Array<Device>;
+		devices?: Array<Device> | null;
 
 		/**
 		 * If not empty, indicates that there may be more devices that match the
 		 * request; this value should be passed in a new `ListDevicesRequest`.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -661,7 +661,7 @@ export namespace MyNS {
 	export interface ModifyCloudToDeviceConfigRequest {
 
 		/** Required. The configuration data for the device. */
-		binaryData?: string;
+		binaryData?: string | null;
 
 		/**
 		 * The version number to update. If this value is zero, it will not check the
@@ -670,7 +670,7 @@ export namespace MyNS {
 		 * does not match this version number. This is used to support multiple
 		 * simultaneous updates without losing data.
 		 */
-		versionToUpdate?: string;
+		versionToUpdate?: string | null;
 	}
 
 
@@ -738,7 +738,7 @@ export namespace MyNS {
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -753,7 +753,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -773,7 +773,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -781,7 +781,7 @@ export namespace MyNS {
 	export interface SendCommandToDeviceRequest {
 
 		/** Required. The command data to send to the device. */
-		binaryData?: string;
+		binaryData?: string | null;
 
 		/**
 		 * Optional subfolder for the command. If empty, the command will be delivered
@@ -790,7 +790,7 @@ export namespace MyNS {
 		 * subfolders are allowed. This field must not have more than 256 characters,
 		 * and must not contain any MQTT wildcards ("+" or "#") or null characters.
 		 */
-		subfolder?: string;
+		subfolder?: string | null;
 	}
 
 
@@ -859,7 +859,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 	}
 
 
@@ -872,7 +872,7 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -883,7 +883,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -895,13 +895,13 @@ export namespace MyNS {
 		 * `device_id` can be either the device numeric ID or the user-defined device
 		 * identifier.
 		 */
-		deviceId?: string;
+		deviceId?: string | null;
 
 		/**
 		 * Required. The value of `gateway_id` can be either the device numeric ID or the
 		 * user-defined device identifier.
 		 */
-		gatewayId?: string;
+		gatewayId?: string | null;
 	}
 
 
@@ -936,7 +936,7 @@ export namespace MyNS {
 		 * field mask is unset or empty, all fields are returned.
 		 * @return {void} Successful response
 		 */
-		Cloudiot_projects_locations_registries_devices_get(name: string, fieldMask: string): Observable<HttpResponse<string>> {
+		Cloudiot_projects_locations_registries_devices_get(name: string, fieldMask: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&fieldMask=' + (fieldMask == null ? '' : encodeURIComponent(fieldMask)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -954,7 +954,7 @@ export namespace MyNS {
 		 * Mutable top-level fields: `credentials`, `blocked`, and `metadata`
 		 * @return {void} Successful response
 		 */
-		Cloudiot_projects_locations_registries_devices_patch(name: string, updateMask: string, requestBody: Device): Observable<HttpResponse<string>> {
+		Cloudiot_projects_locations_registries_devices_patch(name: string, updateMask: string | null | undefined, requestBody: Device): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -970,7 +970,7 @@ export namespace MyNS {
 		 * value is zero, it will return all the versions available.
 		 * @return {void} Successful response
 		 */
-		Cloudiot_projects_locations_registries_devices_configVersions_list(name: string, numVersions: number): Observable<HttpResponse<string>> {
+		Cloudiot_projects_locations_registries_devices_configVersions_list(name: string, numVersions: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/configVersions&numVersions=' + numVersions, { observe: 'response', responseType: 'text' });
 		}
 
@@ -986,7 +986,7 @@ export namespace MyNS {
 		 * value is zero, it will return all the states available.
 		 * @return {void} Successful response
 		 */
-		Cloudiot_projects_locations_registries_devices_states_list(name: string, numStates: number): Observable<HttpResponse<string>> {
+		Cloudiot_projects_locations_registries_devices_states_list(name: string, numStates: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/states&numStates=' + numStates, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1060,7 +1060,7 @@ export namespace MyNS {
 		 * the system should return the next page of data.
 		 * @return {void} Successful response
 		 */
-		Cloudiot_projects_locations_registries_devices_list(parent: string, deviceIds: Array<string>, deviceNumIds: Array<string>, fieldMask: string, gatewayListOptions_associationsDeviceId: string, gatewayListOptions_associationsGatewayId: string, gatewayListOptions_gatewayType: GatewayConfigGatewayType, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudiot_projects_locations_registries_devices_list(parent: string, deviceIds: Array<string> | null | undefined, deviceNumIds: Array<string> | null | undefined, fieldMask: string | null | undefined, gatewayListOptions_associationsDeviceId: string | null | undefined, gatewayListOptions_associationsGatewayId: string | null | undefined, gatewayListOptions_gatewayType: GatewayConfigGatewayType | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/devices&' + deviceIds.map(z => `deviceIds=${encodeURIComponent(z)}`).join('&') + '&' + deviceNumIds.map(z => `deviceNumIds=${encodeURIComponent(z)}`).join('&') + '&fieldMask=' + (fieldMask == null ? '' : encodeURIComponent(fieldMask)) + '&gatewayListOptions_associationsDeviceId=' + (gatewayListOptions_associationsDeviceId == null ? '' : encodeURIComponent(gatewayListOptions_associationsDeviceId)) + '&gatewayListOptions_associationsGatewayId=' + (gatewayListOptions_associationsGatewayId == null ? '' : encodeURIComponent(gatewayListOptions_associationsGatewayId)) + '&gatewayListOptions_gatewayType=' + gatewayListOptions_gatewayType + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1090,7 +1090,7 @@ export namespace MyNS {
 		 * the system should return the next page of data.
 		 * @return {void} Successful response
 		 */
-		Cloudiot_projects_locations_registries_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudiot_projects_locations_registries_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/registries&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

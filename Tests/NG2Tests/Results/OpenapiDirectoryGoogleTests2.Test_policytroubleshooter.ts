@@ -12,7 +12,7 @@ export namespace MyNS {
 		 * For examples of full resource names for Google Cloud services, see
 		 * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
 		 */
-		fullResourceName?: string;
+		fullResourceName?: string | null;
 
 		/**
 		 * Required. The IAM permission to check for the specified member and resource.
@@ -21,7 +21,7 @@ export namespace MyNS {
 		 * For a complete list of predefined IAM roles and the permissions in each
 		 * role, see https://cloud.google.com/iam/help/roles/reference.
 		 */
-		permission?: string;
+		permission?: string | null;
 
 		/**
 		 * Required. The member, or principal, whose access you want to check, in the form of
@@ -31,7 +31,7 @@ export namespace MyNS {
 		 * The member must be a Google Account or a service account. Other types of
 		 * members are not supported.
 		 */
-		principal?: string;
+		principal?: string | null;
 	}
 
 
@@ -50,7 +50,7 @@ export namespace MyNS {
 		 * use the `access` field in the
 		 * TroubleshootIamPolicyResponse.
 		 */
-		access?: GoogleCloudPolicytroubleshooterV1betaBindingExplanationAccess;
+		access?: GoogleCloudPolicytroubleshooterV1betaBindingExplanationAccess | null;
 
 		/**
 		 * Represents a textual expression in the Common Expression Language (CEL)
@@ -76,7 +76,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: GoogleTypeExpr;
+		condition?: GoogleTypeExpr | null;
 
 		/**
 		 * Indicates whether each member in the binding includes the member specified
@@ -95,13 +95,13 @@ export namespace MyNS {
 		 * `group:product-eng@example.com`, and the `membership` field in the value is
 		 * set to `MEMBERSHIP_INCLUDED`.
 		 */
-		memberships?: {[id: string]: GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembership };
+		memberships?: {[id: string]: GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembership } | null;
 
 		/**
 		 * The relevance of this binding to the overall determination for the entire
 		 * policy.
 		 */
-		relevance?: GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembershipRelevance;
+		relevance?: GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembershipRelevance | null;
 
 		/**
 		 * The role that this binding grants. For example,
@@ -109,19 +109,19 @@ export namespace MyNS {
 		 * For a complete list of predefined IAM roles, as well as the permissions in
 		 * each role, see https://cloud.google.com/iam/help/roles/reference.
 		 */
-		role?: string;
+		role?: string | null;
 
 		/**
 		 * Indicates whether the role granted by this binding contains the specified
 		 * permission.
 		 */
-		rolePermission?: GoogleCloudPolicytroubleshooterV1betaBindingExplanationRolePermission;
+		rolePermission?: GoogleCloudPolicytroubleshooterV1betaBindingExplanationRolePermission | null;
 
 		/**
 		 * The relevance of the permission's existence, or nonexistence, in the role
 		 * to the overall determination for the entire policy.
 		 */
-		rolePermissionRelevance?: GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembershipRelevance;
+		rolePermissionRelevance?: GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembershipRelevance | null;
 	}
 
 	export enum GoogleCloudPolicytroubleshooterV1betaBindingExplanationAccess { ACCESS_STATE_UNSPECIFIED = 0, GRANTED = 1, NOT_GRANTED = 2, UNKNOWN_CONDITIONAL = 3, UNKNOWN_INFO_DENIED = 4 }
@@ -157,26 +157,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -184,13 +184,13 @@ export namespace MyNS {
 	export interface GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembership {
 
 		/** Indicates whether the binding includes the member. */
-		membership?: GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembershipMembership;
+		membership?: GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembershipMembership | null;
 
 		/**
 		 * The relevance of the member's status to the overall determination for the
 		 * binding.
 		 */
-		relevance?: GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembershipRelevance;
+		relevance?: GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembershipRelevance | null;
 	}
 
 	export enum GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembershipMembership { MEMBERSHIP_UNSPECIFIED = 0, MEMBERSHIP_INCLUDED = 1, MEMBERSHIP_NOT_INCLUDED = 2, MEMBERSHIP_UNKNOWN_INFO_DENIED = 3, MEMBERSHIP_UNKNOWN_UNSUPPORTED = 4 }
@@ -215,7 +215,7 @@ export namespace MyNS {
 		 * use the `access` field in the
 		 * TroubleshootIamPolicyResponse.
 		 */
-		access?: GoogleCloudPolicytroubleshooterV1betaBindingExplanationAccess;
+		access?: GoogleCloudPolicytroubleshooterV1betaBindingExplanationAccess | null;
 
 		/**
 		 * Details about how each binding in the policy affects the member's ability,
@@ -223,7 +223,7 @@ export namespace MyNS {
 		 * If the sender of the request does not have access to the policy, this field
 		 * is omitted.
 		 */
-		bindingExplanations?: Array<GoogleCloudPolicytroubleshooterV1betaBindingExplanation>;
+		bindingExplanations?: Array<GoogleCloudPolicytroubleshooterV1betaBindingExplanation> | null;
 
 		/**
 		 * The full resource name that identifies the resource. For example,
@@ -233,7 +233,7 @@ export namespace MyNS {
 		 * For examples of full resource names for Google Cloud services, see
 		 * https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
 		 */
-		fullResourceName?: string;
+		fullResourceName?: string | null;
 
 		/**
 		 * An Identity and Access Management (IAM) policy, which specifies access
@@ -292,7 +292,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: GoogleIamV1Policy;
+		policy?: GoogleIamV1Policy | null;
 
 		/**
 		 * The relevance of this policy to the overall determination in the
@@ -300,7 +300,7 @@ export namespace MyNS {
 		 * If the sender of the request does not have access to the policy, this field
 		 * is omitted.
 		 */
-		relevance?: GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembershipRelevance;
+		relevance?: GoogleCloudPolicytroubleshooterV1betaBindingExplanationAnnotatedMembershipRelevance | null;
 	}
 
 
@@ -364,14 +364,14 @@ export namespace MyNS {
 	export interface GoogleIamV1Policy {
 
 		/** Specifies cloud audit logging configuration for this policy. */
-		auditConfigs?: Array<GoogleIamV1AuditConfig>;
+		auditConfigs?: Array<GoogleIamV1AuditConfig> | null;
 
 		/**
 		 * Associates a list of `members` to a `role`. Optionally, may specify a
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<GoogleIamV1Binding>;
+		bindings?: Array<GoogleIamV1Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -386,7 +386,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -406,7 +406,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -462,14 +462,14 @@ export namespace MyNS {
 	export interface GoogleIamV1AuditConfig {
 
 		/** The configuration for logging of each type of permission. */
-		auditLogConfigs?: Array<GoogleIamV1AuditLogConfig>;
+		auditLogConfigs?: Array<GoogleIamV1AuditLogConfig> | null;
 
 		/**
 		 * Specifies a service that will be enabled for audit logging.
 		 * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
 		 * `allServices` is a special value that covers all services.
 		 */
-		service?: string;
+		service?: string | null;
 	}
 
 
@@ -499,10 +499,10 @@ export namespace MyNS {
 		 * permission.
 		 * Follows the same format of Binding.members.
 		 */
-		exemptedMembers?: Array<string>;
+		exemptedMembers?: Array<string> | null;
 
 		/** The log type that this config enables. */
-		logType?: GoogleIamV1AuditLogConfigLogType;
+		logType?: GoogleIamV1AuditLogConfigLogType | null;
 	}
 
 	export enum GoogleIamV1AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
@@ -535,7 +535,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: GoogleTypeExpr;
+		condition?: GoogleTypeExpr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -570,13 +570,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -584,7 +584,7 @@ export namespace MyNS {
 	export interface GoogleCloudPolicytroubleshooterV1betaTroubleshootIamPolicyRequest {
 
 		/** Information about the member, resource, and permission to check. */
-		accessTuple?: GoogleCloudPolicytroubleshooterV1betaAccessTuple;
+		accessTuple?: GoogleCloudPolicytroubleshooterV1betaAccessTuple | null;
 	}
 
 
@@ -595,7 +595,7 @@ export namespace MyNS {
 		 * Indicates whether the member has the specified permission for the specified
 		 * resource, based on evaluating all of the applicable policies.
 		 */
-		access?: GoogleCloudPolicytroubleshooterV1betaBindingExplanationAccess;
+		access?: GoogleCloudPolicytroubleshooterV1betaBindingExplanationAccess | null;
 
 		/**
 		 * List of IAM policies that were evaluated to check the member's permissions,
@@ -607,7 +607,7 @@ export namespace MyNS {
 		 * To learn more about the resource hierarchy, see
 		 * https://cloud.google.com/iam/help/resource-hierarchy.
 		 */
-		explainedPolicies?: Array<GoogleCloudPolicytroubleshooterV1betaExplainedPolicy>;
+		explainedPolicies?: Array<GoogleCloudPolicytroubleshooterV1betaExplainedPolicy> | null;
 	}
 
 	@Injectable()

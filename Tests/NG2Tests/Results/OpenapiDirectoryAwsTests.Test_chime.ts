@@ -30,21 +30,21 @@ export namespace MyNS {
 	}
 
 	export interface AssociatePhoneNumbersWithVoiceConnectorResponse {
-		PhoneNumberErrors?: Array<PhoneNumberError>;
+		PhoneNumberErrors?: Array<PhoneNumberError> | null;
 	}
 
 
 	/** If the phone number action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages. */
 	export interface PhoneNumberError {
-		PhoneNumberId?: string;
-		ErrorCode?: PhoneNumberErrorErrorCode;
-		ErrorMessage?: string;
+		PhoneNumberId?: string | null;
+		ErrorCode?: PhoneNumberErrorErrorCode | null;
+		ErrorMessage?: string | null;
 	}
 
 	export enum PhoneNumberErrorErrorCode { BadRequest = 0, Conflict = 1, Forbidden = 2, NotFound = 3, PreconditionFailed = 4, ResourceLimitExceeded = 5, ServiceFailure = 6, AccessDenied = 7, ServiceUnavailable = 8, Throttled = 9, Unauthorized = 10, Unprocessable = 11, VoiceConnectorGroupAssociationsExist = 12, PhoneNumberAssociationsExist = 13 }
 
 	export interface AssociatePhoneNumbersWithVoiceConnectorGroupResponse {
-		PhoneNumberErrors?: Array<PhoneNumberError>;
+		PhoneNumberErrors?: Array<PhoneNumberError> | null;
 	}
 
 	export interface AssociateSigninDelegateGroupsWithAccountResponse {
@@ -53,35 +53,35 @@ export namespace MyNS {
 
 	/** An Active Directory (AD) group whose members are granted permission to act as delegates. */
 	export interface SigninDelegateGroup {
-		GroupName?: string;
+		GroupName?: string | null;
 	}
 
 	export interface BatchCreateAttendeeResponse {
-		Attendees?: Array<Attendee>;
-		Errors?: Array<CreateAttendeeError>;
+		Attendees?: Array<Attendee> | null;
+		Errors?: Array<CreateAttendeeError> | null;
 	}
 
 
 	/** <p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends or when <a>DeleteAttendee</a> is called. After that, the attendee is unable to join the meeting.</p> <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p> */
 	export interface Attendee {
-		ExternalUserId?: string;
-		AttendeeId?: string;
-		JoinToken?: string;
+		ExternalUserId?: string | null;
+		AttendeeId?: string | null;
+		JoinToken?: string | null;
 	}
 
 
 	/** The list of errors returned when errors are encountered during the BatchCreateAttendee and CreateAttendee actions. This includes external user IDs, error codes, and error messages. */
 	export interface CreateAttendeeError {
-		ExternalUserId?: string;
-		ErrorCode?: string;
-		ErrorMessage?: string;
+		ExternalUserId?: string | null;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 
 	/** The Amazon Chime SDK attendee fields to create, used with the BatchCreateAttendee action. */
 	export interface CreateAttendeeRequestItem {
 		ExternalUserId: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -95,73 +95,73 @@ export namespace MyNS {
 	}
 
 	export interface BatchCreateRoomMembershipResponse {
-		Errors?: Array<MemberError>;
+		Errors?: Array<MemberError> | null;
 	}
 
 
 	/** The list of errors returned when a member action results in an error. */
 	export interface MemberError {
-		MemberId?: string;
-		ErrorCode?: PhoneNumberErrorErrorCode;
-		ErrorMessage?: string;
+		MemberId?: string | null;
+		ErrorCode?: PhoneNumberErrorErrorCode | null;
+		ErrorMessage?: string | null;
 	}
 
 
 	/** Membership details, such as member ID and member role. */
 	export interface MembershipItem {
-		MemberId?: string;
-		Role?: MembershipItemRole;
+		MemberId?: string | null;
+		Role?: MembershipItemRole | null;
 	}
 
 	export enum MembershipItemRole { Administrator = 0, Member = 1 }
 
 	export interface BatchDeletePhoneNumberResponse {
-		PhoneNumberErrors?: Array<PhoneNumberError>;
+		PhoneNumberErrors?: Array<PhoneNumberError> | null;
 	}
 
 	export interface BatchSuspendUserResponse {
-		UserErrors?: Array<UserError>;
+		UserErrors?: Array<UserError> | null;
 	}
 
 
 	/** The list of errors returned when errors are encountered during the <a>BatchSuspendUser</a>, <a>BatchUnsuspendUser</a>, or <a>BatchUpdateUser</a> actions. This includes user IDs, error codes, and error messages. */
 	export interface UserError {
-		UserId?: string;
-		ErrorCode?: PhoneNumberErrorErrorCode;
-		ErrorMessage?: string;
+		UserId?: string | null;
+		ErrorCode?: PhoneNumberErrorErrorCode | null;
+		ErrorMessage?: string | null;
 	}
 
 	export interface BatchUnsuspendUserResponse {
-		UserErrors?: Array<UserError>;
+		UserErrors?: Array<UserError> | null;
 	}
 
 	export interface BatchUpdatePhoneNumberResponse {
-		PhoneNumberErrors?: Array<PhoneNumberError>;
+		PhoneNumberErrors?: Array<PhoneNumberError> | null;
 	}
 
 
 	/** The phone number ID, product type, or calling name fields to update, used with the <a>BatchUpdatePhoneNumber</a> and <a>UpdatePhoneNumber</a> actions. */
 	export interface UpdatePhoneNumberRequestItem {
 		PhoneNumberId: string;
-		ProductType?: UpdatePhoneNumberRequestItemProductType;
-		CallingName?: string;
+		ProductType?: UpdatePhoneNumberRequestItemProductType | null;
+		CallingName?: string | null;
 	}
 
 	export enum UpdatePhoneNumberRequestItemProductType { BusinessCalling = 0, VoiceConnector = 1 }
 
 	export interface BatchUpdateUserResponse {
-		UserErrors?: Array<UserError>;
+		UserErrors?: Array<UserError> | null;
 	}
 
 
 	/** The user ID and user fields to update, used with the <a>BatchUpdateUser</a> action. */
 	export interface UpdateUserRequestItem {
 		UserId: string;
-		LicenseType?: UpdateUserRequestItemLicenseType;
-		UserType?: UpdateUserRequestItemUserType;
+		LicenseType?: UpdateUserRequestItemLicenseType | null;
+		UserType?: UpdateUserRequestItemUserType | null;
 
 		/** The Alexa for Business metadata associated with an Amazon Chime user, used to integrate Alexa for Business with a device. */
-		AlexaForBusinessMetadata?: AlexaForBusinessMetadata;
+		AlexaForBusinessMetadata?: AlexaForBusinessMetadata | null;
 	}
 
 	export enum UpdateUserRequestItemLicenseType { Basic = 0, Plus = 1, Pro = 2, ProTrial = 3 }
@@ -171,14 +171,14 @@ export namespace MyNS {
 
 	/** The Alexa for Business metadata associated with an Amazon Chime user, used to integrate Alexa for Business with a device. */
 	export interface AlexaForBusinessMetadata {
-		IsAlexaForBusinessEnabled?: boolean;
-		AlexaForBusinessRoomArn?: string;
+		IsAlexaForBusinessEnabled?: boolean | null;
+		AlexaForBusinessRoomArn?: string | null;
 	}
 
 	export interface CreateAccountResponse {
 
 		/** The Amazon Chime account details. An AWS account can have multiple Amazon Chime accounts. */
-		Account?: Account;
+		Account?: Account | null;
 	}
 
 
@@ -187,11 +187,11 @@ export namespace MyNS {
 		AwsAccountId: string;
 		AccountId: string;
 		Name: string;
-		AccountType?: AccountAccountType;
-		CreatedTimestamp?: Date;
-		DefaultLicense?: UpdateUserRequestItemLicenseType;
-		SupportedLicenses?: Array<License>;
-		SigninDelegateGroups?: Array<SigninDelegateGroup>;
+		AccountType?: AccountAccountType | null;
+		CreatedTimestamp?: Date | null;
+		DefaultLicense?: UpdateUserRequestItemLicenseType | null;
+		SupportedLicenses?: Array<License> | null;
+		SigninDelegateGroups?: Array<SigninDelegateGroup> | null;
 	}
 
 	export enum AccountAccountType { Team = 0, EnterpriseDirectory = 1, EnterpriseLWA = 2, EnterpriseOIDC = 3 }
@@ -201,27 +201,27 @@ export namespace MyNS {
 	export interface CreateAttendeeResponse {
 
 		/** <p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends or when <a>DeleteAttendee</a> is called. After that, the attendee is unable to join the meeting.</p> <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p> */
-		Attendee?: Attendee;
+		Attendee?: Attendee | null;
 	}
 
 	export interface CreateBotResponse {
 
 		/** A resource that allows Enterprise account administrators to configure an interface to receive events from Amazon Chime. */
-		Bot?: Bot;
+		Bot?: Bot | null;
 	}
 
 
 	/** A resource that allows Enterprise account administrators to configure an interface to receive events from Amazon Chime. */
 	export interface Bot {
-		BotId?: string;
-		UserId?: string;
-		DisplayName?: string;
-		BotType?: BotBotType;
-		Disabled?: boolean;
-		CreatedTimestamp?: Date;
-		UpdatedTimestamp?: Date;
-		BotEmail?: string;
-		SecurityToken?: string;
+		BotId?: string | null;
+		UserId?: string | null;
+		DisplayName?: string | null;
+		BotType?: BotBotType | null;
+		Disabled?: boolean | null;
+		CreatedTimestamp?: Date | null;
+		UpdatedTimestamp?: Date | null;
+		BotEmail?: string | null;
+		SecurityToken?: string | null;
 	}
 
 	export enum BotBotType { ChatBot = 0 }
@@ -229,47 +229,47 @@ export namespace MyNS {
 	export interface CreateMeetingResponse {
 
 		/** A meeting created using the Amazon Chime SDK. */
-		Meeting?: Meeting;
+		Meeting?: Meeting | null;
 	}
 
 
 	/** A meeting created using the Amazon Chime SDK. */
 	export interface Meeting {
-		MeetingId?: string;
-		ExternalMeetingId?: string;
+		MeetingId?: string | null;
+		ExternalMeetingId?: string | null;
 
 		/** A set of endpoints used by clients to connect to the media service group for a Amazon Chime SDK meeting. */
-		MediaPlacement?: MediaPlacement;
-		MediaRegion?: string;
+		MediaPlacement?: MediaPlacement | null;
+		MediaRegion?: string | null;
 	}
 
 
 	/** A set of endpoints used by clients to connect to the media service group for a Amazon Chime SDK meeting. */
 	export interface MediaPlacement {
-		AudioHostUrl?: string;
-		AudioFallbackUrl?: string;
-		ScreenDataUrl?: string;
-		ScreenSharingUrl?: string;
-		ScreenViewingUrl?: string;
-		SignalingUrl?: string;
-		TurnControlUrl?: string;
+		AudioHostUrl?: string | null;
+		AudioFallbackUrl?: string | null;
+		ScreenDataUrl?: string | null;
+		ScreenSharingUrl?: string | null;
+		ScreenViewingUrl?: string | null;
+		SignalingUrl?: string | null;
+		TurnControlUrl?: string | null;
 	}
 
 	export interface CreatePhoneNumberOrderResponse {
 
 		/** The details of a phone number order created for Amazon Chime. */
-		PhoneNumberOrder?: PhoneNumberOrder;
+		PhoneNumberOrder?: PhoneNumberOrder | null;
 	}
 
 
 	/** The details of a phone number order created for Amazon Chime. */
 	export interface PhoneNumberOrder {
-		PhoneNumberOrderId?: string;
-		ProductType?: UpdatePhoneNumberRequestItemProductType;
-		Status?: PhoneNumberOrderStatus;
-		OrderedPhoneNumbers?: Array<OrderedPhoneNumber>;
-		CreatedTimestamp?: Date;
-		UpdatedTimestamp?: Date;
+		PhoneNumberOrderId?: string | null;
+		ProductType?: UpdatePhoneNumberRequestItemProductType | null;
+		Status?: PhoneNumberOrderStatus | null;
+		OrderedPhoneNumbers?: Array<OrderedPhoneNumber> | null;
+		CreatedTimestamp?: Date | null;
+		UpdatedTimestamp?: Date | null;
 	}
 
 	export enum PhoneNumberOrderStatus { Processing = 0, Successful = 1, Failed = 2, Partial = 3 }
@@ -277,8 +277,8 @@ export namespace MyNS {
 
 	/** A phone number for which an order has been placed. */
 	export interface OrderedPhoneNumber {
-		E164PhoneNumber?: string;
-		Status?: OrderedPhoneNumberStatus;
+		E164PhoneNumber?: string | null;
+		Status?: OrderedPhoneNumberStatus | null;
 	}
 
 	export enum OrderedPhoneNumberStatus { Processing = 0, Acquired = 1, Failed = 2 }
@@ -286,27 +286,27 @@ export namespace MyNS {
 	export interface CreateProxySessionResponse {
 
 		/** The proxy session for an Amazon Chime Voice Connector. */
-		ProxySession?: ProxySession;
+		ProxySession?: ProxySession | null;
 	}
 
 
 	/** The proxy session for an Amazon Chime Voice Connector. */
 	export interface ProxySession {
-		VoiceConnectorId?: string;
-		ProxySessionId?: string;
-		Name?: string;
-		Status?: ProxySessionStatus;
-		ExpiryMinutes?: number;
-		Capabilities?: Array<Capability>;
-		CreatedTimestamp?: Date;
-		UpdatedTimestamp?: Date;
-		EndedTimestamp?: Date;
-		Participants?: Array<Participant>;
-		NumberSelectionBehavior?: ProxySessionNumberSelectionBehavior;
-		GeoMatchLevel?: ProxySessionGeoMatchLevel;
+		VoiceConnectorId?: string | null;
+		ProxySessionId?: string | null;
+		Name?: string | null;
+		Status?: ProxySessionStatus | null;
+		ExpiryMinutes?: number | null;
+		Capabilities?: Array<Capability> | null;
+		CreatedTimestamp?: Date | null;
+		UpdatedTimestamp?: Date | null;
+		EndedTimestamp?: Date | null;
+		Participants?: Array<Participant> | null;
+		NumberSelectionBehavior?: ProxySessionNumberSelectionBehavior | null;
+		GeoMatchLevel?: ProxySessionGeoMatchLevel | null;
 
 		/** The country and area code for a proxy phone number in a proxy phone session. */
-		GeoMatchParams?: GeoMatchParams;
+		GeoMatchParams?: GeoMatchParams | null;
 	}
 
 	export enum ProxySessionStatus { Open = 0, InProgress = 1, Closed = 2 }
@@ -316,8 +316,8 @@ export namespace MyNS {
 
 	/** The phone number and proxy phone number for a participant in an Amazon Chime Voice Connector proxy session. */
 	export interface Participant {
-		PhoneNumber?: string;
-		ProxyPhoneNumber?: string;
+		PhoneNumber?: string | null;
+		ProxyPhoneNumber?: string | null;
 	}
 
 	export enum ProxySessionNumberSelectionBehavior { PreferSticky = 0, AvoidSticky = 1 }
@@ -334,46 +334,46 @@ export namespace MyNS {
 	export interface CreateRoomResponse {
 
 		/** The Amazon Chime chat room details. */
-		Room?: Room;
+		Room?: Room | null;
 	}
 
 
 	/** The Amazon Chime chat room details. */
 	export interface Room {
-		RoomId?: string;
-		Name?: string;
-		AccountId?: string;
-		CreatedBy?: string;
-		CreatedTimestamp?: Date;
-		UpdatedTimestamp?: Date;
+		RoomId?: string | null;
+		Name?: string | null;
+		AccountId?: string | null;
+		CreatedBy?: string | null;
+		CreatedTimestamp?: Date | null;
+		UpdatedTimestamp?: Date | null;
 	}
 
 	export interface CreateRoomMembershipResponse {
 
 		/** The room membership details. */
-		RoomMembership?: RoomMembership;
+		RoomMembership?: RoomMembership | null;
 	}
 
 
 	/** The room membership details. */
 	export interface RoomMembership {
-		RoomId?: string;
+		RoomId?: string | null;
 
 		/** The member details, such as email address, name, member ID, and member type. */
-		Member?: Member;
-		Role?: MembershipItemRole;
-		InvitedBy?: string;
-		UpdatedTimestamp?: Date;
+		Member?: Member | null;
+		Role?: MembershipItemRole | null;
+		InvitedBy?: string | null;
+		UpdatedTimestamp?: Date | null;
 	}
 
 
 	/** The member details, such as email address, name, member ID, and member type. */
 	export interface Member {
-		MemberId?: string;
-		MemberType?: MemberMemberType;
-		Email?: string;
-		FullName?: string;
-		AccountId?: string;
+		MemberId?: string | null;
+		MemberType?: MemberMemberType | null;
+		Email?: string | null;
+		FullName?: string | null;
+		AccountId?: string | null;
 	}
 
 	export enum MemberMemberType { User = 0, Bot = 1, Webhook = 2 }
@@ -384,27 +384,27 @@ export namespace MyNS {
 	export interface CreateUserResponse {
 
 		/** The user on the Amazon Chime account. */
-		User?: User;
+		User?: User | null;
 	}
 
 
 	/** The user on the Amazon Chime account. */
 	export interface User {
 		UserId: string;
-		AccountId?: string;
-		PrimaryEmail?: string;
-		PrimaryProvisionedNumber?: string;
-		DisplayName?: string;
-		LicenseType?: UpdateUserRequestItemLicenseType;
-		UserType?: UpdateUserRequestItemUserType;
-		UserRegistrationStatus?: UserUserRegistrationStatus;
-		UserInvitationStatus?: UserUserInvitationStatus;
-		RegisteredOn?: Date;
-		InvitedOn?: Date;
+		AccountId?: string | null;
+		PrimaryEmail?: string | null;
+		PrimaryProvisionedNumber?: string | null;
+		DisplayName?: string | null;
+		LicenseType?: UpdateUserRequestItemLicenseType | null;
+		UserType?: UpdateUserRequestItemUserType | null;
+		UserRegistrationStatus?: UserUserRegistrationStatus | null;
+		UserInvitationStatus?: UserUserInvitationStatus | null;
+		RegisteredOn?: Date | null;
+		InvitedOn?: Date | null;
 
 		/** The Alexa for Business metadata associated with an Amazon Chime user, used to integrate Alexa for Business with a device. */
-		AlexaForBusinessMetadata?: AlexaForBusinessMetadata;
-		PersonalPIN?: string;
+		AlexaForBusinessMetadata?: AlexaForBusinessMetadata | null;
+		PersonalPIN?: string | null;
 	}
 
 	export enum UserUserRegistrationStatus { Unregistered = 0, Registered = 1, Suspended = 2 }
@@ -414,19 +414,19 @@ export namespace MyNS {
 	export interface CreateVoiceConnectorResponse {
 
 		/** The Amazon Chime Voice Connector configuration, including outbound host name and encryption settings. */
-		VoiceConnector?: VoiceConnector;
+		VoiceConnector?: VoiceConnector | null;
 	}
 
 
 	/** The Amazon Chime Voice Connector configuration, including outbound host name and encryption settings. */
 	export interface VoiceConnector {
-		VoiceConnectorId?: string;
-		AwsRegion?: VoiceConnectorAwsRegion;
-		Name?: string;
-		OutboundHostName?: string;
-		RequireEncryption?: boolean;
-		CreatedTimestamp?: Date;
-		UpdatedTimestamp?: Date;
+		VoiceConnectorId?: string | null;
+		AwsRegion?: VoiceConnectorAwsRegion | null;
+		Name?: string | null;
+		OutboundHostName?: string | null;
+		RequireEncryption?: boolean | null;
+		CreatedTimestamp?: Date | null;
+		UpdatedTimestamp?: Date | null;
 	}
 
 	export enum VoiceConnectorAwsRegion { us_east_1 = 0, us_west_2 = 1 }
@@ -434,17 +434,17 @@ export namespace MyNS {
 	export interface CreateVoiceConnectorGroupResponse {
 
 		/** The Amazon Chime Voice Connector group configuration, including associated Amazon Chime Voice Connectors. You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events. */
-		VoiceConnectorGroup?: VoiceConnectorGroup;
+		VoiceConnectorGroup?: VoiceConnectorGroup | null;
 	}
 
 
 	/** The Amazon Chime Voice Connector group configuration, including associated Amazon Chime Voice Connectors. You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events. */
 	export interface VoiceConnectorGroup {
-		VoiceConnectorGroupId?: string;
-		Name?: string;
-		VoiceConnectorItems?: Array<VoiceConnectorItem>;
-		CreatedTimestamp?: Date;
-		UpdatedTimestamp?: Date;
+		VoiceConnectorGroupId?: string | null;
+		Name?: string | null;
+		VoiceConnectorItems?: Array<VoiceConnectorItem> | null;
+		CreatedTimestamp?: Date | null;
+		UpdatedTimestamp?: Date | null;
 	}
 
 
@@ -464,11 +464,11 @@ export namespace MyNS {
 	}
 
 	export interface DisassociatePhoneNumbersFromVoiceConnectorResponse {
-		PhoneNumberErrors?: Array<PhoneNumberError>;
+		PhoneNumberErrors?: Array<PhoneNumberError> | null;
 	}
 
 	export interface DisassociatePhoneNumbersFromVoiceConnectorGroupResponse {
-		PhoneNumberErrors?: Array<PhoneNumberError>;
+		PhoneNumberErrors?: Array<PhoneNumberError> | null;
 	}
 
 	export interface DisassociateSigninDelegateGroupsFromAccountResponse {
@@ -477,98 +477,98 @@ export namespace MyNS {
 	export interface GetAccountResponse {
 
 		/** The Amazon Chime account details. An AWS account can have multiple Amazon Chime accounts. */
-		Account?: Account;
+		Account?: Account | null;
 	}
 
 	export interface GetAccountSettingsResponse {
 
 		/** Settings related to the Amazon Chime account. This includes settings that start or stop remote control of shared screens, or start or stop the dial-out option in the Amazon Chime web application. For more information about these settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>. */
-		AccountSettings?: AccountSettings;
+		AccountSettings?: AccountSettings | null;
 	}
 
 
 	/** Settings related to the Amazon Chime account. This includes settings that start or stop remote control of shared screens, or start or stop the dial-out option in the Amazon Chime web application. For more information about these settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>. */
 	export interface AccountSettings {
-		DisableRemoteControl?: boolean;
-		EnableDialOut?: boolean;
+		DisableRemoteControl?: boolean | null;
+		EnableDialOut?: boolean | null;
 	}
 
 	export interface GetAttendeeResponse {
 
 		/** <p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends or when <a>DeleteAttendee</a> is called. After that, the attendee is unable to join the meeting.</p> <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p> */
-		Attendee?: Attendee;
+		Attendee?: Attendee | null;
 	}
 
 	export interface GetBotResponse {
 
 		/** A resource that allows Enterprise account administrators to configure an interface to receive events from Amazon Chime. */
-		Bot?: Bot;
+		Bot?: Bot | null;
 	}
 
 	export interface GetEventsConfigurationResponse {
 
 		/** The configuration that allows a bot to receive outgoing events. Can be either an HTTPS endpoint or a Lambda function ARN. */
-		EventsConfiguration?: EventsConfiguration;
+		EventsConfiguration?: EventsConfiguration | null;
 	}
 
 
 	/** The configuration that allows a bot to receive outgoing events. Can be either an HTTPS endpoint or a Lambda function ARN. */
 	export interface EventsConfiguration {
-		BotId?: string;
-		OutboundEventsHTTPSEndpoint?: string;
-		LambdaFunctionArn?: string;
+		BotId?: string | null;
+		OutboundEventsHTTPSEndpoint?: string | null;
+		LambdaFunctionArn?: string | null;
 	}
 
 	export interface GetGlobalSettingsResponse {
 
 		/** The Amazon Chime Business Calling settings for the administrator's AWS account. Includes any Amazon S3 buckets designated for storing call detail records. */
-		BusinessCalling?: BusinessCallingSettings;
+		BusinessCalling?: BusinessCallingSettings | null;
 
 		/** The Amazon Chime Voice Connector settings. Includes any Amazon S3 buckets designated for storing call detail records. */
-		VoiceConnector?: VoiceConnectorSettings;
+		VoiceConnector?: VoiceConnectorSettings | null;
 	}
 
 
 	/** The Amazon Chime Business Calling settings for the administrator's AWS account. Includes any Amazon S3 buckets designated for storing call detail records. */
 	export interface BusinessCallingSettings {
-		CdrBucket?: string;
+		CdrBucket?: string | null;
 	}
 
 
 	/** The Amazon Chime Voice Connector settings. Includes any Amazon S3 buckets designated for storing call detail records. */
 	export interface VoiceConnectorSettings {
-		CdrBucket?: string;
+		CdrBucket?: string | null;
 	}
 
 	export interface GetMeetingResponse {
 
 		/** A meeting created using the Amazon Chime SDK. */
-		Meeting?: Meeting;
+		Meeting?: Meeting | null;
 	}
 
 	export interface GetPhoneNumberResponse {
 
 		/** A phone number used for Amazon Chime Business Calling or an Amazon Chime Voice Connector. */
-		PhoneNumber?: PhoneNumber;
+		PhoneNumber?: PhoneNumber | null;
 	}
 
 
 	/** A phone number used for Amazon Chime Business Calling or an Amazon Chime Voice Connector. */
 	export interface PhoneNumber {
-		PhoneNumberId?: string;
-		E164PhoneNumber?: string;
-		Type?: PhoneNumberType;
-		ProductType?: UpdatePhoneNumberRequestItemProductType;
-		Status?: PhoneNumberStatus;
+		PhoneNumberId?: string | null;
+		E164PhoneNumber?: string | null;
+		Type?: PhoneNumberType | null;
+		ProductType?: UpdatePhoneNumberRequestItemProductType | null;
+		Status?: PhoneNumberStatus | null;
 
 		/** The phone number capabilities for Amazon Chime Business Calling phone numbers, such as enabled inbound and outbound calling and text messaging. */
-		Capabilities?: PhoneNumberCapabilities;
-		Associations?: Array<PhoneNumberAssociation>;
-		CallingName?: string;
-		CallingNameStatus?: PhoneNumberCallingNameStatus;
-		CreatedTimestamp?: Date;
-		UpdatedTimestamp?: Date;
-		DeletionTimestamp?: Date;
+		Capabilities?: PhoneNumberCapabilities | null;
+		Associations?: Array<PhoneNumberAssociation> | null;
+		CallingName?: string | null;
+		CallingNameStatus?: PhoneNumberCallingNameStatus | null;
+		CreatedTimestamp?: Date | null;
+		UpdatedTimestamp?: Date | null;
+		DeletionTimestamp?: Date | null;
 	}
 
 	export enum PhoneNumberType { Local = 0, TollFree = 1 }
@@ -578,20 +578,20 @@ export namespace MyNS {
 
 	/** The phone number capabilities for Amazon Chime Business Calling phone numbers, such as enabled inbound and outbound calling and text messaging. */
 	export interface PhoneNumberCapabilities {
-		InboundCall?: boolean;
-		OutboundCall?: boolean;
-		InboundSMS?: boolean;
-		OutboundSMS?: boolean;
-		InboundMMS?: boolean;
-		OutboundMMS?: boolean;
+		InboundCall?: boolean | null;
+		OutboundCall?: boolean | null;
+		InboundSMS?: boolean | null;
+		OutboundSMS?: boolean | null;
+		InboundMMS?: boolean | null;
+		OutboundMMS?: boolean | null;
 	}
 
 
 	/** The phone number associations, such as Amazon Chime account ID, Amazon Chime user ID, Amazon Chime Voice Connector ID, or Amazon Chime Voice Connector group ID. */
 	export interface PhoneNumberAssociation {
-		Value?: string;
-		Name?: PhoneNumberAssociationName;
-		AssociatedTimestamp?: Date;
+		Value?: string | null;
+		Name?: PhoneNumberAssociationName | null;
+		AssociatedTimestamp?: Date | null;
 	}
 
 	export enum PhoneNumberAssociationName { AccountId = 0, UserId = 1, VoiceConnectorId = 2, VoiceConnectorGroupId = 3 }
@@ -601,25 +601,25 @@ export namespace MyNS {
 	export interface GetPhoneNumberOrderResponse {
 
 		/** The details of a phone number order created for Amazon Chime. */
-		PhoneNumberOrder?: PhoneNumberOrder;
+		PhoneNumberOrder?: PhoneNumberOrder | null;
 	}
 
 	export interface GetPhoneNumberSettingsResponse {
-		CallingName?: string;
-		CallingNameUpdatedTimestamp?: Date;
+		CallingName?: string | null;
+		CallingNameUpdatedTimestamp?: Date | null;
 	}
 
 	export interface GetProxySessionResponse {
 
 		/** The proxy session for an Amazon Chime Voice Connector. */
-		ProxySession?: ProxySession;
+		ProxySession?: ProxySession | null;
 	}
 
 	export interface GetRetentionSettingsResponse {
 
 		/** The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as chat room messages and chat conversation messages. */
-		RetentionSettings?: RetentionSettings;
-		InitiateDeletionTimestamp?: Date;
+		RetentionSettings?: RetentionSettings | null;
+		InitiateDeletionTimestamp?: Date | null;
 	}
 
 
@@ -627,40 +627,40 @@ export namespace MyNS {
 	export interface RetentionSettings {
 
 		/** The retention settings that determine how long to retain chat room messages for an Amazon Chime Enterprise account. */
-		RoomRetentionSettings?: RoomRetentionSettings;
+		RoomRetentionSettings?: RoomRetentionSettings | null;
 
 		/** The retention settings that determine how long to retain chat conversation messages for an Amazon Chime Enterprise account. */
-		ConversationRetentionSettings?: ConversationRetentionSettings;
+		ConversationRetentionSettings?: ConversationRetentionSettings | null;
 	}
 
 
 	/** The retention settings that determine how long to retain chat room messages for an Amazon Chime Enterprise account. */
 	export interface RoomRetentionSettings {
-		RetentionDays?: number;
+		RetentionDays?: number | null;
 	}
 
 
 	/** The retention settings that determine how long to retain chat conversation messages for an Amazon Chime Enterprise account. */
 	export interface ConversationRetentionSettings {
-		RetentionDays?: number;
+		RetentionDays?: number | null;
 	}
 
 	export interface GetRoomResponse {
 
 		/** The Amazon Chime chat room details. */
-		Room?: Room;
+		Room?: Room | null;
 	}
 
 	export interface GetUserResponse {
 
 		/** The user on the Amazon Chime account. */
-		User?: User;
+		User?: User | null;
 	}
 
 	export interface GetUserSettingsResponse {
 
 		/** Settings associated with an Amazon Chime user, including inbound and outbound calling and text messaging. */
-		UserSettings?: UserSettings;
+		UserSettings?: UserSettings | null;
 	}
 
 
@@ -685,48 +685,48 @@ export namespace MyNS {
 	export interface GetVoiceConnectorResponse {
 
 		/** The Amazon Chime Voice Connector configuration, including outbound host name and encryption settings. */
-		VoiceConnector?: VoiceConnector;
+		VoiceConnector?: VoiceConnector | null;
 	}
 
 	export interface GetVoiceConnectorGroupResponse {
 
 		/** The Amazon Chime Voice Connector group configuration, including associated Amazon Chime Voice Connectors. You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events. */
-		VoiceConnectorGroup?: VoiceConnectorGroup;
+		VoiceConnectorGroup?: VoiceConnectorGroup | null;
 	}
 
 	export interface GetVoiceConnectorLoggingConfigurationResponse {
 
 		/** The logging configuration associated with an Amazon Chime Voice Connector. Specifies whether SIP message logs are enabled for sending to Amazon CloudWatch Logs. */
-		LoggingConfiguration?: LoggingConfiguration;
+		LoggingConfiguration?: LoggingConfiguration | null;
 	}
 
 
 	/** The logging configuration associated with an Amazon Chime Voice Connector. Specifies whether SIP message logs are enabled for sending to Amazon CloudWatch Logs. */
 	export interface LoggingConfiguration {
-		EnableSIPLogs?: boolean;
+		EnableSIPLogs?: boolean | null;
 	}
 
 	export interface GetVoiceConnectorOriginationResponse {
 
 		/** Origination settings enable your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector. */
-		Origination?: Origination;
+		Origination?: Origination | null;
 	}
 
 
 	/** Origination settings enable your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector. */
 	export interface Origination {
-		Routes?: Array<OriginationRoute>;
-		Disabled?: boolean;
+		Routes?: Array<OriginationRoute> | null;
+		Disabled?: boolean | null;
 	}
 
 
 	/** Origination routes define call distribution properties for your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector. Limit: Ten origination routes for each Amazon Chime Voice Connector. */
 	export interface OriginationRoute {
-		Host?: string;
-		Port?: number;
-		Protocol?: OriginationRouteProtocol;
-		Priority?: number;
-		Weight?: number;
+		Host?: string | null;
+		Port?: number | null;
+		Protocol?: OriginationRouteProtocol | null;
+		Priority?: number | null;
+		Weight?: number | null;
 	}
 
 	export enum OriginationRouteProtocol { TCP = 0, UDP = 1 }
@@ -734,30 +734,30 @@ export namespace MyNS {
 	export interface GetVoiceConnectorProxyResponse {
 
 		/** The proxy configuration for an Amazon Chime Voice Connector. */
-		Proxy?: Proxy;
+		Proxy?: Proxy | null;
 	}
 
 
 	/** The proxy configuration for an Amazon Chime Voice Connector. */
 	export interface Proxy {
-		DefaultSessionExpiryMinutes?: number;
-		Disabled?: boolean;
-		FallBackPhoneNumber?: string;
-		PhoneNumberCountries?: Array<string>;
+		DefaultSessionExpiryMinutes?: number | null;
+		Disabled?: boolean | null;
+		FallBackPhoneNumber?: string | null;
+		PhoneNumberCountries?: Array<string> | null;
 	}
 
 	export interface GetVoiceConnectorStreamingConfigurationResponse {
 
 		/** The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours. */
-		StreamingConfiguration?: StreamingConfiguration;
+		StreamingConfiguration?: StreamingConfiguration | null;
 	}
 
 
 	/** The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours. */
 	export interface StreamingConfiguration {
 		DataRetentionInHours: number;
-		Disabled?: boolean;
-		StreamingNotificationTargets?: Array<StreamingNotificationTarget>;
+		Disabled?: boolean | null;
+		StreamingNotificationTargets?: Array<StreamingNotificationTarget> | null;
 	}
 
 
@@ -771,121 +771,121 @@ export namespace MyNS {
 	export interface GetVoiceConnectorTerminationResponse {
 
 		/** Termination settings enable your SIP hosts to make outbound calls using your Amazon Chime Voice Connector. */
-		Termination?: Termination;
+		Termination?: Termination | null;
 	}
 
 
 	/** Termination settings enable your SIP hosts to make outbound calls using your Amazon Chime Voice Connector. */
 	export interface Termination {
-		CpsLimit?: number;
-		DefaultPhoneNumber?: string;
-		CallingRegions?: Array<string>;
-		CidrAllowedList?: Array<string>;
-		Disabled?: boolean;
+		CpsLimit?: number | null;
+		DefaultPhoneNumber?: string | null;
+		CallingRegions?: Array<string> | null;
+		CidrAllowedList?: Array<string> | null;
+		Disabled?: boolean | null;
 	}
 
 	export interface GetVoiceConnectorTerminationHealthResponse {
 
 		/** The termination health details, including the source IP address and timestamp of the last successful SIP <code>OPTIONS</code> message from your SIP infrastructure. */
-		TerminationHealth?: TerminationHealth;
+		TerminationHealth?: TerminationHealth | null;
 	}
 
 
 	/** The termination health details, including the source IP address and timestamp of the last successful SIP <code>OPTIONS</code> message from your SIP infrastructure. */
 	export interface TerminationHealth {
-		Timestamp?: Date;
-		Source?: string;
+		Timestamp?: Date | null;
+		Source?: string | null;
 	}
 
 	export interface InviteUsersResponse {
-		Invites?: Array<Invite>;
+		Invites?: Array<Invite> | null;
 	}
 
 
 	/** Invitation object returned after emailing users to invite them to join the Amazon Chime <code>Team</code> account. */
 	export interface Invite {
-		InviteId?: string;
-		Status?: UserUserInvitationStatus;
-		EmailAddress?: string;
-		EmailStatus?: InviteEmailStatus;
+		InviteId?: string | null;
+		Status?: UserUserInvitationStatus | null;
+		EmailAddress?: string | null;
+		EmailStatus?: InviteEmailStatus | null;
 	}
 
 	export enum InviteEmailStatus { NotSent = 0, Sent = 1, Failed = 2 }
 
 	export interface ListAccountsResponse {
-		Accounts?: Array<Account>;
-		NextToken?: string;
+		Accounts?: Array<Account> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListAttendeeTagsResponse {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ListAttendeesResponse {
-		Attendees?: Array<Attendee>;
-		NextToken?: string;
+		Attendees?: Array<Attendee> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListBotsResponse {
-		Bots?: Array<Bot>;
-		NextToken?: string;
+		Bots?: Array<Bot> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListMeetingTagsResponse {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ListMeetingsResponse {
-		Meetings?: Array<Meeting>;
-		NextToken?: string;
+		Meetings?: Array<Meeting> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListPhoneNumberOrdersResponse {
-		PhoneNumberOrders?: Array<PhoneNumberOrder>;
-		NextToken?: string;
+		PhoneNumberOrders?: Array<PhoneNumberOrder> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListPhoneNumbersResponse {
-		PhoneNumbers?: Array<PhoneNumber>;
-		NextToken?: string;
+		PhoneNumbers?: Array<PhoneNumber> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListProxySessionsResponse {
-		ProxySessions?: Array<ProxySession>;
-		NextToken?: string;
+		ProxySessions?: Array<ProxySession> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListRoomMembershipsResponse {
-		RoomMemberships?: Array<RoomMembership>;
-		NextToken?: string;
+		RoomMemberships?: Array<RoomMembership> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListRoomsResponse {
-		Rooms?: Array<Room>;
-		NextToken?: string;
+		Rooms?: Array<Room> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ListUsersResponse {
-		Users?: Array<User>;
-		NextToken?: string;
+		Users?: Array<User> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListVoiceConnectorGroupsResponse {
-		VoiceConnectorGroups?: Array<VoiceConnectorGroup>;
-		NextToken?: string;
+		VoiceConnectorGroups?: Array<VoiceConnectorGroup> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListVoiceConnectorTerminationCredentialsResponse {
-		Usernames?: Array<string>;
+		Usernames?: Array<string> | null;
 	}
 
 	export interface ListVoiceConnectorsResponse {
-		VoiceConnectors?: Array<VoiceConnector>;
-		NextToken?: string;
+		VoiceConnectors?: Array<VoiceConnector> | null;
+		NextToken?: string | null;
 	}
 
 	export interface LogoutUserResponse {
@@ -894,51 +894,51 @@ export namespace MyNS {
 	export interface PutEventsConfigurationResponse {
 
 		/** The configuration that allows a bot to receive outgoing events. Can be either an HTTPS endpoint or a Lambda function ARN. */
-		EventsConfiguration?: EventsConfiguration;
+		EventsConfiguration?: EventsConfiguration | null;
 	}
 
 	export interface PutRetentionSettingsResponse {
 
 		/** The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as chat room messages and chat conversation messages. */
-		RetentionSettings?: RetentionSettings;
-		InitiateDeletionTimestamp?: Date;
+		RetentionSettings?: RetentionSettings | null;
+		InitiateDeletionTimestamp?: Date | null;
 	}
 
 	export interface PutVoiceConnectorLoggingConfigurationResponse {
 
 		/** The logging configuration associated with an Amazon Chime Voice Connector. Specifies whether SIP message logs are enabled for sending to Amazon CloudWatch Logs. */
-		LoggingConfiguration?: LoggingConfiguration;
+		LoggingConfiguration?: LoggingConfiguration | null;
 	}
 
 	export interface PutVoiceConnectorOriginationResponse {
 
 		/** Origination settings enable your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector. */
-		Origination?: Origination;
+		Origination?: Origination | null;
 	}
 
 	export interface PutVoiceConnectorProxyResponse {
 
 		/** The proxy configuration for an Amazon Chime Voice Connector. */
-		Proxy?: Proxy;
+		Proxy?: Proxy | null;
 	}
 
 	export interface PutVoiceConnectorStreamingConfigurationResponse {
 
 		/** The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours. */
-		StreamingConfiguration?: StreamingConfiguration;
+		StreamingConfiguration?: StreamingConfiguration | null;
 	}
 
 	export interface PutVoiceConnectorTerminationResponse {
 
 		/** Termination settings enable your SIP hosts to make outbound calls using your Amazon Chime Voice Connector. */
-		Termination?: Termination;
+		Termination?: Termination | null;
 	}
 
 
 	/** The SIP credentials used to authenticate requests to your Amazon Chime Voice Connector. */
 	export interface Credential {
-		Username?: string;
-		Password?: string;
+		Username?: string | null;
+		Password?: string | null;
 	}
 
 	export interface RedactConversationMessageResponse {
@@ -950,29 +950,29 @@ export namespace MyNS {
 	export interface RegenerateSecurityTokenResponse {
 
 		/** A resource that allows Enterprise account administrators to configure an interface to receive events from Amazon Chime. */
-		Bot?: Bot;
+		Bot?: Bot | null;
 	}
 
 	export interface ResetPersonalPINResponse {
 
 		/** The user on the Amazon Chime account. */
-		User?: User;
+		User?: User | null;
 	}
 
 	export interface RestorePhoneNumberResponse {
 
 		/** A phone number used for Amazon Chime Business Calling or an Amazon Chime Voice Connector. */
-		PhoneNumber?: PhoneNumber;
+		PhoneNumber?: PhoneNumber | null;
 	}
 
 	export interface SearchAvailablePhoneNumbersResponse {
-		E164PhoneNumbers?: Array<string>;
+		E164PhoneNumbers?: Array<string> | null;
 	}
 
 	export interface UpdateAccountResponse {
 
 		/** The Amazon Chime account details. An AWS account can have multiple Amazon Chime accounts. */
-		Account?: Account;
+		Account?: Account | null;
 	}
 
 	export interface UpdateAccountSettingsResponse {
@@ -981,49 +981,49 @@ export namespace MyNS {
 	export interface UpdateBotResponse {
 
 		/** A resource that allows Enterprise account administrators to configure an interface to receive events from Amazon Chime. */
-		Bot?: Bot;
+		Bot?: Bot | null;
 	}
 
 	export interface UpdatePhoneNumberResponse {
 
 		/** A phone number used for Amazon Chime Business Calling or an Amazon Chime Voice Connector. */
-		PhoneNumber?: PhoneNumber;
+		PhoneNumber?: PhoneNumber | null;
 	}
 
 	export interface UpdateProxySessionResponse {
 
 		/** The proxy session for an Amazon Chime Voice Connector. */
-		ProxySession?: ProxySession;
+		ProxySession?: ProxySession | null;
 	}
 
 	export interface UpdateRoomResponse {
 
 		/** The Amazon Chime chat room details. */
-		Room?: Room;
+		Room?: Room | null;
 	}
 
 	export interface UpdateRoomMembershipResponse {
 
 		/** The room membership details. */
-		RoomMembership?: RoomMembership;
+		RoomMembership?: RoomMembership | null;
 	}
 
 	export interface UpdateUserResponse {
 
 		/** The user on the Amazon Chime account. */
-		User?: User;
+		User?: User | null;
 	}
 
 	export interface UpdateVoiceConnectorResponse {
 
 		/** The Amazon Chime Voice Connector configuration, including outbound host name and encryption settings. */
-		VoiceConnector?: VoiceConnector;
+		VoiceConnector?: VoiceConnector | null;
 	}
 
 	export interface UpdateVoiceConnectorGroupResponse {
 
 		/** The Amazon Chime Voice Connector group configuration, including associated Amazon Chime Voice Connectors. You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events. */
-		VoiceConnectorGroup?: VoiceConnectorGroup;
+		VoiceConnectorGroup?: VoiceConnectorGroup | null;
 	}
 
 	export enum AccountType { Team = 0, EnterpriseDirectory = 1, EnterpriseLWA = 2, EnterpriseOIDC = 3 }
@@ -1033,13 +1033,13 @@ export namespace MyNS {
 	}
 
 	export interface AssociatePhoneNumbersWithVoiceConnectorGroupRequest {
-		E164PhoneNumbers?: Array<string>;
-		ForceAssociate?: boolean;
+		E164PhoneNumbers?: Array<string> | null;
+		ForceAssociate?: boolean | null;
 	}
 
 	export interface AssociatePhoneNumbersWithVoiceConnectorRequest {
-		E164PhoneNumbers?: Array<string>;
-		ForceAssociate?: boolean;
+		E164PhoneNumbers?: Array<string> | null;
+		ForceAssociate?: boolean | null;
 	}
 
 	export interface AssociateSigninDelegateGroupsWithAccountRequest {
@@ -1084,30 +1084,30 @@ export namespace MyNS {
 
 	export interface CreateAttendeeRequest {
 		ExternalUserId: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateBotRequest {
 		DisplayName: string;
-		Domain?: string;
+		Domain?: string | null;
 	}
 
 
 	/** The configuration for resource targets to receive notifications when Amazon Chime SDK meeting and attendee events occur. */
 	export interface MeetingNotificationConfiguration {
-		SnsTopicArn?: string;
-		SqsQueueArn?: string;
+		SnsTopicArn?: string | null;
+		SqsQueueArn?: string | null;
 	}
 
 	export interface CreateMeetingRequest {
 		ClientRequestToken: string;
-		ExternalMeetingId?: string;
-		MeetingHostId?: string;
-		MediaRegion?: string;
-		Tags?: Array<Tag>;
+		ExternalMeetingId?: string | null;
+		MeetingHostId?: string | null;
+		MediaRegion?: string | null;
+		Tags?: Array<Tag> | null;
 
 		/** The configuration for resource targets to receive notifications when Amazon Chime SDK meeting and attendee events occur. */
-		NotificationsConfiguration?: MeetingNotificationConfiguration;
+		NotificationsConfiguration?: MeetingNotificationConfiguration | null;
 	}
 
 	export enum PhoneNumberProductType { BusinessCalling = 0, VoiceConnector = 1 }
@@ -1123,44 +1123,44 @@ export namespace MyNS {
 
 	export interface CreateProxySessionRequest {
 		ParticipantPhoneNumbers: Array<string>;
-		Name?: string;
-		ExpiryMinutes?: number;
+		Name?: string | null;
+		ExpiryMinutes?: number | null;
 		Capabilities: Array<Capability>;
-		NumberSelectionBehavior?: ProxySessionNumberSelectionBehavior;
-		GeoMatchLevel?: ProxySessionGeoMatchLevel;
+		NumberSelectionBehavior?: ProxySessionNumberSelectionBehavior | null;
+		GeoMatchLevel?: ProxySessionGeoMatchLevel | null;
 
 		/** The country and area code for a proxy phone number in a proxy phone session. */
-		GeoMatchParams?: GeoMatchParams;
+		GeoMatchParams?: GeoMatchParams | null;
 	}
 
 	export enum RoomMembershipRole { Administrator = 0, Member = 1 }
 
 	export interface CreateRoomMembershipRequest {
 		MemberId: string;
-		Role?: MembershipItemRole;
+		Role?: MembershipItemRole | null;
 	}
 
 	export interface CreateRoomRequest {
 		Name: string;
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 	}
 
 	export enum UserType { PrivateUser = 0, SharedDevice = 1 }
 
 	export interface CreateUserRequest {
-		Username?: string;
-		Email?: string;
-		UserType?: UpdateUserRequestItemUserType;
+		Username?: string | null;
+		Email?: string | null;
+		UserType?: UpdateUserRequestItemUserType | null;
 	}
 
 	export interface CreateVoiceConnectorGroupRequest {
 		Name: string;
-		VoiceConnectorItems?: Array<VoiceConnectorItem>;
+		VoiceConnectorItems?: Array<VoiceConnectorItem> | null;
 	}
 
 	export interface CreateVoiceConnectorRequest {
 		Name: string;
-		AwsRegion?: CreateVoiceConnectorRequestAwsRegion;
+		AwsRegion?: CreateVoiceConnectorRequestAwsRegion | null;
 		RequireEncryption: boolean;
 	}
 
@@ -1206,7 +1206,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteVoiceConnectorTerminationCredentialsRequest {
-		Usernames?: Array<string>;
+		Usernames?: Array<string> | null;
 	}
 
 	export interface DeleteVoiceConnectorTerminationRequest {
@@ -1216,11 +1216,11 @@ export namespace MyNS {
 	}
 
 	export interface DisassociatePhoneNumbersFromVoiceConnectorGroupRequest {
-		E164PhoneNumbers?: Array<string>;
+		E164PhoneNumbers?: Array<string> | null;
 	}
 
 	export interface DisassociatePhoneNumbersFromVoiceConnectorRequest {
-		E164PhoneNumbers?: Array<string>;
+		E164PhoneNumbers?: Array<string> | null;
 	}
 
 	export interface DisassociateSigninDelegateGroupsFromAccountRequest {
@@ -1298,7 +1298,7 @@ export namespace MyNS {
 
 	export interface InviteUsersRequest {
 		UserEmailList: Array<string>;
-		UserType?: UpdateUserRequestItemUserType;
+		UserType?: UpdateUserRequestItemUserType | null;
 	}
 
 	export interface ListAccountsRequest {
@@ -1357,8 +1357,8 @@ export namespace MyNS {
 	export enum NotificationTarget { EventBridge = 0, SNS = 1, SQS = 2 }
 
 	export interface PutEventsConfigurationRequest {
-		OutboundEventsHTTPSEndpoint?: string;
-		LambdaFunctionArn?: string;
+		OutboundEventsHTTPSEndpoint?: string | null;
+		LambdaFunctionArn?: string | null;
 	}
 
 	export interface PutRetentionSettingsRequest {
@@ -1391,8 +1391,8 @@ export namespace MyNS {
 	export interface PutVoiceConnectorProxyRequest {
 		DefaultSessionExpiryMinutes: number;
 		PhoneNumberPoolCountries: Array<string>;
-		FallBackPhoneNumber?: string;
-		Disabled?: boolean;
+		FallBackPhoneNumber?: string | null;
+		Disabled?: boolean | null;
 	}
 
 	export interface PutVoiceConnectorStreamingConfigurationRequest {
@@ -1405,7 +1405,7 @@ export namespace MyNS {
 	}
 
 	export interface PutVoiceConnectorTerminationCredentialsRequest {
-		Credentials?: Array<Credential>;
+		Credentials?: Array<Credential> | null;
 	}
 
 	export interface PutVoiceConnectorTerminationRequest {
@@ -1464,7 +1464,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateAccountRequest {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateAccountSettingsRequest {
@@ -1477,7 +1477,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateBotRequest {
-		Disabled?: boolean;
+		Disabled?: boolean | null;
 	}
 
 	export interface UpdateGlobalSettingsRequest {
@@ -1496,8 +1496,8 @@ export namespace MyNS {
 	}
 
 	export interface UpdatePhoneNumberRequest {
-		ProductType?: UpdatePhoneNumberRequestItemProductType;
-		CallingName?: string;
+		ProductType?: UpdatePhoneNumberRequestItemProductType | null;
+		CallingName?: string | null;
 	}
 
 	export interface UpdatePhoneNumberSettingsRequest {
@@ -1506,23 +1506,23 @@ export namespace MyNS {
 
 	export interface UpdateProxySessionRequest {
 		Capabilities: Array<Capability>;
-		ExpiryMinutes?: number;
+		ExpiryMinutes?: number | null;
 	}
 
 	export interface UpdateRoomMembershipRequest {
-		Role?: MembershipItemRole;
+		Role?: MembershipItemRole | null;
 	}
 
 	export interface UpdateRoomRequest {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateUserRequest {
-		LicenseType?: UpdateUserRequestItemLicenseType;
-		UserType?: UpdateUserRequestItemUserType;
+		LicenseType?: UpdateUserRequestItemLicenseType | null;
+		UserType?: UpdateUserRequestItemUserType | null;
 
 		/** The Alexa for Business metadata associated with an Amazon Chime user, used to integrate Alexa for Business with a device. */
-		AlexaForBusinessMetadata?: AlexaForBusinessMetadata;
+		AlexaForBusinessMetadata?: AlexaForBusinessMetadata | null;
 	}
 
 	export interface UpdateUserSettingsRequest {
@@ -1671,7 +1671,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListUsersResponse} Success
 		 */
-		ListUsers(accountId: string, user_email: string, user_type: UpdateUserRequestItemUserType, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ListUsersResponse> {
+		ListUsers(accountId: string, user_email: string | null | undefined, user_type: UpdateUserRequestItemUserType | null | undefined, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListUsersResponse> {
 			return this.http.get<ListUsersResponse>(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/users&user_email=' + (user_email == null ? '' : encodeURIComponent(user_email)) + '&user_type=' + user_type + '&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1695,7 +1695,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAccountsResponse} Success
 		 */
-		ListAccounts(name: string, user_email: string, next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListAccountsResponse> {
+		ListAccounts(name: string | null | undefined, user_email: string | null | undefined, next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListAccountsResponse> {
 			return this.http.get<ListAccountsResponse>(this.baseUri + 'accounts?name=' + (name == null ? '' : encodeURIComponent(name)) + '&user_email=' + (user_email == null ? '' : encodeURIComponent(user_email)) + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1719,7 +1719,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAttendeesResponse} Success
 		 */
-		ListAttendees(meetingId: string, next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListAttendeesResponse> {
+		ListAttendees(meetingId: string, next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListAttendeesResponse> {
 			return this.http.get<ListAttendeesResponse>(this.baseUri + 'meetings/' + (meetingId == null ? '' : encodeURIComponent(meetingId)) + '/attendees&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1743,7 +1743,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBotsResponse} Success
 		 */
-		ListBots(accountId: string, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ListBotsResponse> {
+		ListBots(accountId: string, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListBotsResponse> {
 			return this.http.get<ListBotsResponse>(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/bots&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1765,7 +1765,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMeetingsResponse} Success
 		 */
-		ListMeetings(next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListMeetingsResponse> {
+		ListMeetings(next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListMeetingsResponse> {
 			return this.http.get<ListMeetingsResponse>(this.baseUri + 'meetings?next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1787,7 +1787,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPhoneNumberOrdersResponse} Success
 		 */
-		ListPhoneNumberOrders(next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListPhoneNumberOrdersResponse> {
+		ListPhoneNumberOrders(next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListPhoneNumberOrdersResponse> {
 			return this.http.get<ListPhoneNumberOrdersResponse>(this.baseUri + 'phone-number-orders?next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1812,7 +1812,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListProxySessionsResponse} Success
 		 */
-		ListProxySessions(voiceConnectorId: string, status: ProxySessionStatus, next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListProxySessionsResponse> {
+		ListProxySessions(voiceConnectorId: string, status: ProxySessionStatus | null | undefined, next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListProxySessionsResponse> {
 			return this.http.get<ListProxySessionsResponse>(this.baseUri + 'voice-connectors/' + (voiceConnectorId == null ? '' : encodeURIComponent(voiceConnectorId)) + '/proxy-sessions&status=' + status + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1837,7 +1837,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRoomsResponse} Success
 		 */
-		ListRooms(accountId: string, member_id: string, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ListRoomsResponse> {
+		ListRooms(accountId: string, member_id: string | null | undefined, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListRoomsResponse> {
 			return this.http.get<ListRoomsResponse>(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/rooms&member_id=' + (member_id == null ? '' : encodeURIComponent(member_id)) + '&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1863,7 +1863,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRoomMembershipsResponse} Success
 		 */
-		ListRoomMemberships(accountId: string, roomId: string, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ListRoomMembershipsResponse> {
+		ListRoomMemberships(accountId: string, roomId: string, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListRoomMembershipsResponse> {
 			return this.http.get<ListRoomMembershipsResponse>(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/rooms/' + (roomId == null ? '' : encodeURIComponent(roomId)) + '/memberships&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1895,7 +1895,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListVoiceConnectorsResponse} Success
 		 */
-		ListVoiceConnectors(next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListVoiceConnectorsResponse> {
+		ListVoiceConnectors(next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListVoiceConnectorsResponse> {
 			return this.http.get<ListVoiceConnectorsResponse>(this.baseUri + 'voice-connectors?next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1917,7 +1917,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListVoiceConnectorGroupsResponse} Success
 		 */
-		ListVoiceConnectorGroups(next_token: string, max_results: number, MaxResults: string, NextToken: string): Observable<ListVoiceConnectorGroupsResponse> {
+		ListVoiceConnectorGroups(next_token: string | null | undefined, max_results: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListVoiceConnectorGroupsResponse> {
 			return this.http.get<ListVoiceConnectorGroupsResponse>(this.baseUri + 'voice-connector-groups?next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&max_results=' + max_results + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2603,7 +2603,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPhoneNumbersResponse} Success
 		 */
-		ListPhoneNumbers(status: PhoneNumberStatus, product_type: UpdatePhoneNumberRequestItemProductType, filter_name: PhoneNumberAssociationName, filter_value: string, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ListPhoneNumbersResponse> {
+		ListPhoneNumbers(status: PhoneNumberStatus | null | undefined, product_type: UpdatePhoneNumberRequestItemProductType | null | undefined, filter_name: PhoneNumberAssociationName | null | undefined, filter_value: string | null | undefined, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListPhoneNumbersResponse> {
 			return this.http.get<ListPhoneNumbersResponse>(this.baseUri + 'phone-numbers?status=' + status + '&product_type=' + product_type + '&filter_name=' + filter_name + '&filter_value=' + (filter_value == null ? '' : encodeURIComponent(filter_value)) + '&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2716,7 +2716,7 @@ export namespace MyNS {
 		 * @param {string} next_token The token to use to retrieve the next page of results.
 		 * @return {SearchAvailablePhoneNumbersResponse} Success
 		 */
-		SearchAvailablePhoneNumbers(area_code: string, city: string, country: string, state: string, toll_free_prefix: string, max_results: number, next_token: string, type: SearchAvailablePhoneNumbersType): Observable<SearchAvailablePhoneNumbersResponse> {
+		SearchAvailablePhoneNumbers(area_code: string | null | undefined, city: string | null | undefined, country: string | null | undefined, state: string | null | undefined, toll_free_prefix: string | null | undefined, max_results: number | null | undefined, next_token: string | null | undefined, type: SearchAvailablePhoneNumbersType): Observable<SearchAvailablePhoneNumbersResponse> {
 			return this.http.get<SearchAvailablePhoneNumbersResponse>(this.baseUri + 'search#type=phone-numbers?area_code=' + (area_code == null ? '' : encodeURIComponent(area_code)) + '&city=' + (city == null ? '' : encodeURIComponent(city)) + '&country=' + (country == null ? '' : encodeURIComponent(country)) + '&state=' + (state == null ? '' : encodeURIComponent(state)) + '&toll_free_prefix=' + (toll_free_prefix == null ? '' : encodeURIComponent(toll_free_prefix)) + '&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&type=' + type, {});
 		}
 
@@ -2798,10 +2798,10 @@ export namespace MyNS {
 	export interface AssociatePhoneNumbersWithVoiceConnectorPostBody {
 
 		/** List of phone numbers, in E.164 format. */
-		E164PhoneNumbers?: Array<string>;
+		E164PhoneNumbers?: Array<string> | null;
 
 		/** If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations. */
-		ForceAssociate?: boolean;
+		ForceAssociate?: boolean | null;
 	}
 
 	export enum AssociatePhoneNumbersWithVoiceConnectorGroupOperation { associate_phone_numbers = 0 }
@@ -2809,10 +2809,10 @@ export namespace MyNS {
 	export interface AssociatePhoneNumbersWithVoiceConnectorGroupPostBody {
 
 		/** List of phone numbers, in E.164 format. */
-		E164PhoneNumbers?: Array<string>;
+		E164PhoneNumbers?: Array<string> | null;
 
 		/** If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector Group and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations. */
-		ForceAssociate?: boolean;
+		ForceAssociate?: boolean | null;
 	}
 
 	export enum AssociateSigninDelegateGroupsWithAccountOperation { associate_signin_delegate_groups = 0 }
@@ -2933,7 +2933,7 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 10
 		 */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateBotPostBody {
@@ -2948,7 +2948,7 @@ export namespace MyNS {
 		 * The domain of the Amazon Chime Enterprise account.
 		 * Pattern: .*\S.*
 		 */
-		Domain?: string;
+		Domain?: string | null;
 	}
 
 	export interface CreateMeetingPostBody {
@@ -2967,32 +2967,32 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 2
 		 */
-		ExternalMeetingId?: string;
+		ExternalMeetingId?: string | null;
 
 		/**
 		 * Reserved.
 		 * Max length: 64
 		 * Min length: 2
 		 */
-		MeetingHostId?: string;
+		MeetingHostId?: string | null;
 
 		/** The Region in which to create the meeting. Available values: <code>ap-northeast-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. */
-		MediaRegion?: string;
+		MediaRegion?: string | null;
 
 		/**
 		 * The tag key-value pairs.
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/** The configuration for resource targets to receive notifications when Amazon Chime SDK meeting and attendee events occur. */
-		NotificationsConfiguration?: CreateMeetingPostBodyNotificationsConfiguration;
+		NotificationsConfiguration?: CreateMeetingPostBodyNotificationsConfiguration | null;
 	}
 
 	export interface CreateMeetingPostBodyNotificationsConfiguration {
-		SnsTopicArn?: string;
-		SqsQueueArn?: string;
+		SnsTopicArn?: string | null;
+		SqsQueueArn?: string | null;
 	}
 
 	export interface CreatePhoneNumberOrderPostBody {
@@ -3024,13 +3024,13 @@ export namespace MyNS {
 		 * The name of the proxy session.
 		 * Pattern: ^$|^[a-zA-Z0-9 ]{0,30}$
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/**
 		 * The number of minutes allowed for the proxy session.
 		 * Minimum: 1
 		 */
-		ExpiryMinutes?: number;
+		ExpiryMinutes?: number | null;
 
 		/**
 		 * The proxy session capabilities.
@@ -3039,18 +3039,18 @@ export namespace MyNS {
 		Capabilities: Array<Capability>;
 
 		/** The preference for proxy phone number reuse, or stickiness, between the same participants across sessions. */
-		NumberSelectionBehavior?: ProxySessionNumberSelectionBehavior;
+		NumberSelectionBehavior?: ProxySessionNumberSelectionBehavior | null;
 
 		/** The preference for matching the country or area code of the proxy phone number with that of the first participant. */
-		GeoMatchLevel?: ProxySessionGeoMatchLevel;
+		GeoMatchLevel?: ProxySessionGeoMatchLevel | null;
 
 		/** The country and area code for a proxy phone number in a proxy phone session. */
-		GeoMatchParams?: CreateProxySessionPostBodyGeoMatchParams;
+		GeoMatchParams?: CreateProxySessionPostBodyGeoMatchParams | null;
 	}
 
 	export interface CreateProxySessionPostBodyGeoMatchParams {
-		Country?: string;
-		AreaCode?: string;
+		Country?: string | null;
+		AreaCode?: string | null;
 	}
 
 	export interface CreateRoomPostBody {
@@ -3067,7 +3067,7 @@ export namespace MyNS {
 		 * Min length: 2
 		 * Pattern: [-_a-zA-Z0-9]*
 		 */
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 	}
 
 	export interface CreateRoomMembershipPostBody {
@@ -3080,7 +3080,7 @@ export namespace MyNS {
 		MemberId: string;
 
 		/** The role of the member. */
-		Role?: MembershipItemRole;
+		Role?: MembershipItemRole | null;
 	}
 
 	export enum CreateUserOperation { create = 0 }
@@ -3088,16 +3088,16 @@ export namespace MyNS {
 	export interface CreateUserPostBody {
 
 		/** The user name. */
-		Username?: string;
+		Username?: string | null;
 
 		/**
 		 * The user's email address.
 		 * Pattern: .+@.+\..+
 		 */
-		Email?: string;
+		Email?: string | null;
 
 		/** The user type. */
-		UserType?: UpdateUserRequestItemUserType;
+		UserType?: UpdateUserRequestItemUserType | null;
 	}
 
 	export interface CreateVoiceConnectorPostBody {
@@ -3111,7 +3111,7 @@ export namespace MyNS {
 		Name: string;
 
 		/** The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code>. */
-		AwsRegion?: CreateVoiceConnectorPostBodyAwsRegion;
+		AwsRegion?: CreateVoiceConnectorPostBodyAwsRegion | null;
 
 		/**
 		 * When enabled, requires encryption for the Amazon Chime Voice Connector.
@@ -3133,7 +3133,7 @@ export namespace MyNS {
 		Name: string;
 
 		/** The Amazon Chime Voice Connectors to route inbound calls to. */
-		VoiceConnectorItems?: Array<VoiceConnectorItem>;
+		VoiceConnectorItems?: Array<VoiceConnectorItem> | null;
 	}
 
 	export interface UpdateAccountPostBody {
@@ -3144,28 +3144,28 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: .*\S.*
 		 */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface PutEventsConfigurationPutBody {
 
 		/** HTTPS endpoint that allows the bot to receive outgoing events. */
-		OutboundEventsHTTPSEndpoint?: string;
+		OutboundEventsHTTPSEndpoint?: string | null;
 
 		/** Lambda function ARN that allows the bot to receive outgoing events. */
-		LambdaFunctionArn?: string;
+		LambdaFunctionArn?: string | null;
 	}
 
 	export interface UpdatePhoneNumberPostBody {
 
 		/** The product type. */
-		ProductType?: UpdatePhoneNumberRequestItemProductType;
+		ProductType?: UpdatePhoneNumberRequestItemProductType | null;
 
 		/**
 		 * The outbound calling name associated with the phone number.
 		 * Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$
 		 */
-		CallingName?: string;
+		CallingName?: string | null;
 	}
 
 	export interface UpdateProxySessionPostBody {
@@ -3180,19 +3180,19 @@ export namespace MyNS {
 		 * The number of minutes allowed for the proxy session.
 		 * Minimum: 1
 		 */
-		ExpiryMinutes?: number;
+		ExpiryMinutes?: number | null;
 	}
 
 	export interface UpdateRoomPostBody {
 
 		/** The room name. */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateRoomMembershipPostBody {
 
 		/** The role of the member. */
-		Role?: MembershipItemRole;
+		Role?: MembershipItemRole | null;
 	}
 
 	export interface UpdateVoiceConnectorPutBody {
@@ -3239,8 +3239,8 @@ export namespace MyNS {
 	}
 
 	export interface PutVoiceConnectorOriginationPutBodyOrigination {
-		Routes?: Array<OriginationRoute>;
-		Disabled?: boolean;
+		Routes?: Array<OriginationRoute> | null;
+		Disabled?: boolean | null;
 	}
 
 	export interface PutVoiceConnectorProxyPutBody {
@@ -3263,10 +3263,10 @@ export namespace MyNS {
 		 * The phone number to route calls to after a proxy session expires.
 		 * Pattern: ^\+?[1-9]\d{1,14}$
 		 */
-		FallBackPhoneNumber?: string;
+		FallBackPhoneNumber?: string | null;
 
 		/** When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector. */
-		Disabled?: boolean;
+		Disabled?: boolean | null;
 	}
 
 	export interface PutVoiceConnectorStreamingConfigurationPutBody {
@@ -3279,9 +3279,9 @@ export namespace MyNS {
 	}
 
 	export interface PutVoiceConnectorStreamingConfigurationPutBodyStreamingConfiguration {
-		DataRetentionInHours?: number;
-		Disabled?: boolean;
-		StreamingNotificationTargets?: Array<StreamingNotificationTarget>;
+		DataRetentionInHours?: number | null;
+		Disabled?: boolean | null;
+		StreamingNotificationTargets?: Array<StreamingNotificationTarget> | null;
 	}
 
 	export interface PutVoiceConnectorTerminationPutBody {
@@ -3294,11 +3294,11 @@ export namespace MyNS {
 	}
 
 	export interface PutVoiceConnectorTerminationPutBodyTermination {
-		CpsLimit?: number;
-		DefaultPhoneNumber?: string;
-		CallingRegions?: Array<string>;
-		CidrAllowedList?: Array<string>;
-		Disabled?: boolean;
+		CpsLimit?: number | null;
+		DefaultPhoneNumber?: string | null;
+		CallingRegions?: Array<string> | null;
+		CidrAllowedList?: Array<string> | null;
+		Disabled?: boolean | null;
 	}
 
 	export enum DeleteVoiceConnectorTerminationCredentialsOperation { delete = 0 }
@@ -3306,7 +3306,7 @@ export namespace MyNS {
 	export interface DeleteVoiceConnectorTerminationCredentialsPostBody {
 
 		/** The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format. */
-		Usernames?: Array<string>;
+		Usernames?: Array<string> | null;
 	}
 
 	export enum DisassociatePhoneNumberFromUserOperation { disassociate_phone_number = 0 }
@@ -3316,7 +3316,7 @@ export namespace MyNS {
 	export interface DisassociatePhoneNumbersFromVoiceConnectorPostBody {
 
 		/** List of phone numbers, in E.164 format. */
-		E164PhoneNumbers?: Array<string>;
+		E164PhoneNumbers?: Array<string> | null;
 	}
 
 	export enum DisassociatePhoneNumbersFromVoiceConnectorGroupOperation { disassociate_phone_numbers = 0 }
@@ -3324,7 +3324,7 @@ export namespace MyNS {
 	export interface DisassociatePhoneNumbersFromVoiceConnectorGroupPostBody {
 
 		/** List of phone numbers, in E.164 format. */
-		E164PhoneNumbers?: Array<string>;
+		E164PhoneNumbers?: Array<string> | null;
 	}
 
 	export enum DisassociateSigninDelegateGroupsFromAccountOperation { disassociate_signin_delegate_groups = 0 }
@@ -3349,14 +3349,14 @@ export namespace MyNS {
 	}
 
 	export interface UpdateAccountSettingsPutBodyAccountSettings {
-		DisableRemoteControl?: boolean;
-		EnableDialOut?: boolean;
+		DisableRemoteControl?: boolean | null;
+		EnableDialOut?: boolean | null;
 	}
 
 	export interface UpdateBotPostBody {
 
 		/** When true, stops the specified bot from running in your account. */
-		Disabled?: boolean;
+		Disabled?: boolean | null;
 	}
 
 	export interface UpdateGlobalSettingsPutBody {
@@ -3375,11 +3375,11 @@ export namespace MyNS {
 	}
 
 	export interface UpdateGlobalSettingsPutBodyBusinessCalling {
-		CdrBucket?: string;
+		CdrBucket?: string | null;
 	}
 
 	export interface UpdateGlobalSettingsPutBodyVoiceConnector {
-		CdrBucket?: string;
+		CdrBucket?: string | null;
 	}
 
 	export interface UpdatePhoneNumberSettingsPutBody {
@@ -3404,27 +3404,27 @@ export namespace MyNS {
 	export interface PutRetentionSettingsPutBodyRetentionSettings {
 
 		/** The retention settings that determine how long to retain chat room messages for an Amazon Chime Enterprise account. */
-		RoomRetentionSettings?: RoomRetentionSettings;
+		RoomRetentionSettings?: RoomRetentionSettings | null;
 
 		/** The retention settings that determine how long to retain chat conversation messages for an Amazon Chime Enterprise account. */
-		ConversationRetentionSettings?: ConversationRetentionSettings;
+		ConversationRetentionSettings?: ConversationRetentionSettings | null;
 	}
 
 	export interface UpdateUserPostBody {
 
 		/** The user license type to update. This must be a supported license type for the Amazon Chime account that the user belongs to. */
-		LicenseType?: UpdateUserRequestItemLicenseType;
+		LicenseType?: UpdateUserRequestItemLicenseType | null;
 
 		/** The user type. */
-		UserType?: UpdateUserRequestItemUserType;
+		UserType?: UpdateUserRequestItemUserType | null;
 
 		/** The Alexa for Business metadata associated with an Amazon Chime user, used to integrate Alexa for Business with a device. */
-		AlexaForBusinessMetadata?: UpdateUserPostBodyAlexaForBusinessMetadata;
+		AlexaForBusinessMetadata?: UpdateUserPostBodyAlexaForBusinessMetadata | null;
 	}
 
 	export interface UpdateUserPostBodyAlexaForBusinessMetadata {
-		IsAlexaForBusinessEnabled?: boolean;
-		AlexaForBusinessRoomArn?: string;
+		IsAlexaForBusinessEnabled?: boolean | null;
+		AlexaForBusinessRoomArn?: string | null;
 	}
 
 	export interface UpdateUserSettingsPutBody {
@@ -3439,7 +3439,7 @@ export namespace MyNS {
 	export interface UpdateUserSettingsPutBodyUserSettings {
 
 		/** Settings that allow management of telephony permissions for an Amazon Chime user, such as inbound and outbound calling and text messaging. */
-		Telephony?: TelephonySettings;
+		Telephony?: TelephonySettings | null;
 	}
 
 	export interface PutVoiceConnectorLoggingConfigurationPutBody {
@@ -3452,7 +3452,7 @@ export namespace MyNS {
 	}
 
 	export interface PutVoiceConnectorLoggingConfigurationPutBodyLoggingConfiguration {
-		EnableSIPLogs?: boolean;
+		EnableSIPLogs?: boolean | null;
 	}
 
 	export enum InviteUsersOperation { add = 0 }
@@ -3467,7 +3467,7 @@ export namespace MyNS {
 		UserEmailList: Array<string>;
 
 		/** The user type. */
-		UserType?: UpdateUserRequestItemUserType;
+		UserType?: UpdateUserRequestItemUserType | null;
 	}
 
 	export enum LogoutUserOperation { logout = 0 }
@@ -3477,7 +3477,7 @@ export namespace MyNS {
 	export interface PutVoiceConnectorTerminationCredentialsPostBody {
 
 		/** The termination SIP credentials. */
-		Credentials?: Array<Credential>;
+		Credentials?: Array<Credential> | null;
 	}
 
 	export enum RedactConversationMessageOperation { redact = 0 }

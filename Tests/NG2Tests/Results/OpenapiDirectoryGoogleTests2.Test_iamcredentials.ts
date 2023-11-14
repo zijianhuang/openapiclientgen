@@ -15,7 +15,7 @@ export namespace MyNS {
 		 * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
 		 * character is required; replacing it with a project ID is invalid.
 		 */
-		delegates?: Array<string>;
+		delegates?: Array<string> | null;
 
 		/**
 		 * The desired lifetime duration of the access token in seconds.
@@ -23,7 +23,7 @@ export namespace MyNS {
 		 * not specified, the token's lifetime will be set to a default value of one
 		 * hour.
 		 */
-		lifetime?: string;
+		lifetime?: string | null;
 
 		/**
 		 * Required. Code to identify the scopes to be included in the OAuth 2.0 access token.
@@ -31,19 +31,19 @@ export namespace MyNS {
 		 * information.
 		 * At least one value required.
 		 */
-		scope?: Array<string>;
+		scope?: Array<string> | null;
 	}
 
 	export interface GenerateAccessTokenResponse {
 
 		/** The OAuth 2.0 access token. */
-		accessToken?: string;
+		accessToken?: string | null;
 
 		/**
 		 * Token expiration time.
 		 * The expiration time is always set.
 		 */
-		expireTime?: string;
+		expireTime?: string | null;
 	}
 
 	export interface GenerateIdTokenRequest {
@@ -52,7 +52,7 @@ export namespace MyNS {
 		 * Required. The audience for the token, such as the API or account that this token
 		 * grants access to.
 		 */
-		audience?: string;
+		audience?: string | null;
 
 		/**
 		 * The sequence of service accounts in a delegation chain. Each service
@@ -65,19 +65,19 @@ export namespace MyNS {
 		 * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
 		 * character is required; replacing it with a project ID is invalid.
 		 */
-		delegates?: Array<string>;
+		delegates?: Array<string> | null;
 
 		/**
 		 * Include the service account email in the token. If set to `true`, the
 		 * token will contain `email` and `email_verified` claims.
 		 */
-		includeEmail?: boolean;
+		includeEmail?: boolean | null;
 	}
 
 	export interface GenerateIdTokenResponse {
 
 		/** The OpenId Connect ID token. */
-		token?: string;
+		token?: string | null;
 	}
 
 	export interface SignBlobRequest {
@@ -93,19 +93,19 @@ export namespace MyNS {
 		 * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
 		 * character is required; replacing it with a project ID is invalid.
 		 */
-		delegates?: Array<string>;
+		delegates?: Array<string> | null;
 
 		/** Required. The bytes to sign. */
-		payload?: string;
+		payload?: string | null;
 	}
 
 	export interface SignBlobResponse {
 
 		/** The ID of the key used to sign the blob. */
-		keyId?: string;
+		keyId?: string | null;
 
 		/** The signed blob. */
-		signedBlob?: string;
+		signedBlob?: string | null;
 	}
 
 	export interface SignJwtRequest {
@@ -121,19 +121,19 @@ export namespace MyNS {
 		 * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
 		 * character is required; replacing it with a project ID is invalid.
 		 */
-		delegates?: Array<string>;
+		delegates?: Array<string> | null;
 
 		/** Required. The JWT payload to sign: a JSON object that contains a JWT Claims Set. */
-		payload?: string;
+		payload?: string | null;
 	}
 
 	export interface SignJwtResponse {
 
 		/** The ID of the key used to sign the JWT. */
-		keyId?: string;
+		keyId?: string | null;
 
 		/** The signed JWT. */
-		signedJwt?: string;
+		signedJwt?: string | null;
 	}
 
 	@Injectable()

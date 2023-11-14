@@ -7,7 +7,7 @@ export namespace MyNS {
 	export interface DeleteReportDefinitionResponse {
 
 		/** Whether the deletion was successful or not. */
-		ResponseMessage?: string;
+		ResponseMessage?: string | null;
 	}
 
 
@@ -19,7 +19,7 @@ export namespace MyNS {
 		 * Max length: 256
 		 * Pattern: [0-9A-Za-z!\-_.*\'()]+
 		 */
-		ReportName?: string;
+		ReportName?: string | null;
 	}
 
 	export interface InternalErrorException {
@@ -33,10 +33,10 @@ export namespace MyNS {
 	export interface DescribeReportDefinitionsResponse {
 
 		/** A list of report definitions. */
-		ReportDefinitions?: Array<ReportDefinition>;
+		ReportDefinitions?: Array<ReportDefinition> | null;
 
 		/** A generic string. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -97,9 +97,9 @@ export namespace MyNS {
 		S3Region: ReportDefinitionS3Region;
 
 		/** A list of additional artifacts. */
-		AdditionalArtifacts?: Array<AdditionalArtifact>;
-		RefreshClosedReports?: boolean;
-		ReportVersioning?: ReportDefinitionReportVersioning;
+		AdditionalArtifacts?: Array<AdditionalArtifact> | null;
+		RefreshClosedReports?: boolean | null;
+		ReportVersioning?: ReportDefinitionReportVersioning | null;
 	}
 
 	export enum ReportDefinitionTimeUnit { HOURLY = 0, DAILY = 1 }
@@ -129,10 +129,10 @@ export namespace MyNS {
 		 * Minimum: 5
 		 * Maximum: 5
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/** A generic string. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ModifyReportDefinitionResponse {
@@ -216,7 +216,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeReportDefinitionsResponse} Success
 		 */
-		DescribeReportDefinitions(MaxResults: string, NextToken: string, requestBody: DescribeReportDefinitionsRequest): Observable<DescribeReportDefinitionsResponse> {
+		DescribeReportDefinitions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeReportDefinitionsRequest): Observable<DescribeReportDefinitionsResponse> {
 			return this.http.post<DescribeReportDefinitionsResponse>(this.baseUri + '#X-Amz-Target=AWSOrigamiServiceGatewayService.DescribeReportDefinitions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

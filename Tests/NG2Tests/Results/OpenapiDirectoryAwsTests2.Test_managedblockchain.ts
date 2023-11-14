@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateMemberOutput {
-		MemberId?: string;
+		MemberId?: string | null;
 	}
 
 
@@ -11,7 +11,7 @@ export namespace MyNS {
 	export interface MemberFrameworkConfiguration {
 
 		/** Configuration properties for Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework. */
-		Fabric?: MemberFabricConfiguration;
+		Fabric?: MemberFabricConfiguration | null;
 	}
 
 
@@ -26,7 +26,7 @@ export namespace MyNS {
 	export interface MemberLogPublishingConfiguration {
 
 		/** Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework. */
-		Fabric?: MemberFabricLogPublishingConfiguration;
+		Fabric?: MemberFabricLogPublishingConfiguration | null;
 	}
 
 
@@ -34,7 +34,7 @@ export namespace MyNS {
 	export interface MemberFabricLogPublishingConfiguration {
 
 		/** A collection of log configurations. */
-		CaLogs?: LogConfigurations;
+		CaLogs?: LogConfigurations | null;
 	}
 
 
@@ -42,13 +42,13 @@ export namespace MyNS {
 	export interface LogConfigurations {
 
 		/** A configuration for logging events. */
-		Cloudwatch?: LogConfiguration;
+		Cloudwatch?: LogConfiguration | null;
 	}
 
 
 	/** A configuration for logging events. */
 	export interface LogConfiguration {
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 	}
 
 	export interface InvalidRequestException {
@@ -76,8 +76,8 @@ export namespace MyNS {
 	}
 
 	export interface CreateNetworkOutput {
-		NetworkId?: string;
-		MemberId?: string;
+		NetworkId?: string | null;
+		MemberId?: string | null;
 	}
 
 
@@ -91,15 +91,15 @@ export namespace MyNS {
 
 	/** A policy type that defines the voting rules for the network. The rules decide if a proposal is approved. Approval may be based on criteria such as the percentage of <code>YES</code> votes and the duration of the proposal. The policy applies to all proposals and is specified when the network is created. */
 	export interface ApprovalThresholdPolicy {
-		ThresholdPercentage?: number;
-		ProposalDurationInHours?: number;
-		ThresholdComparator?: ApprovalThresholdPolicyThresholdComparator;
+		ThresholdPercentage?: number | null;
+		ProposalDurationInHours?: number | null;
+		ThresholdComparator?: ApprovalThresholdPolicyThresholdComparator | null;
 	}
 
 	export enum ApprovalThresholdPolicyThresholdComparator { GREATER_THAN = 0, GREATER_THAN_OR_EQUAL_TO = 1 }
 
 	export interface CreateNodeOutput {
-		NodeId?: string;
+		NodeId?: string | null;
 	}
 
 
@@ -107,7 +107,7 @@ export namespace MyNS {
 	export interface NodeLogPublishingConfiguration {
 
 		/** Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain network. */
-		Fabric?: NodeFabricLogPublishingConfiguration;
+		Fabric?: NodeFabricLogPublishingConfiguration | null;
 	}
 
 
@@ -115,14 +115,14 @@ export namespace MyNS {
 	export interface NodeFabricLogPublishingConfiguration {
 
 		/** A collection of log configurations. */
-		ChaincodeLogs?: LogConfigurations;
+		ChaincodeLogs?: LogConfigurations | null;
 
 		/** A collection of log configurations. */
-		PeerLogs?: LogConfigurations;
+		PeerLogs?: LogConfigurations | null;
 	}
 
 	export interface CreateProposalOutput {
-		ProposalId?: string;
+		ProposalId?: string | null;
 	}
 
 
@@ -146,24 +146,24 @@ export namespace MyNS {
 	export interface GetMemberOutput {
 
 		/** Member configuration properties. */
-		Member?: Member;
+		Member?: Member | null;
 	}
 
 
 	/** Member configuration properties. */
 	export interface Member {
-		NetworkId?: string;
-		Id?: string;
-		Name?: string;
-		Description?: string;
+		NetworkId?: string | null;
+		Id?: string | null;
+		Name?: string | null;
+		Description?: string | null;
 
 		/** Attributes relevant to a member for the blockchain framework that the Managed Blockchain network uses. */
-		FrameworkAttributes?: MemberFrameworkAttributes;
+		FrameworkAttributes?: MemberFrameworkAttributes | null;
 
 		/** Configuration properties for logging events associated with a member of a Managed Blockchain network. */
-		LogPublishingConfiguration?: MemberLogPublishingConfiguration;
-		Status?: MemberStatus;
-		CreationDate?: Date;
+		LogPublishingConfiguration?: MemberLogPublishingConfiguration | null;
+		Status?: MemberStatus | null;
+		CreationDate?: Date | null;
 	}
 
 
@@ -171,14 +171,14 @@ export namespace MyNS {
 	export interface MemberFrameworkAttributes {
 
 		/** Attributes of Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework. */
-		Fabric?: MemberFabricAttributes;
+		Fabric?: MemberFabricAttributes | null;
 	}
 
 
 	/** Attributes of Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework. */
 	export interface MemberFabricAttributes {
-		AdminUsername?: string;
-		CaEndpoint?: string;
+		AdminUsername?: string | null;
+		CaEndpoint?: string | null;
 	}
 
 	export enum MemberStatus { CREATING = 0, AVAILABLE = 1, CREATE_FAILED = 2, UPDATING = 3, DELETING = 4, DELETED = 5 }
@@ -186,26 +186,26 @@ export namespace MyNS {
 	export interface GetNetworkOutput {
 
 		/** Network configuration properties. */
-		Network?: Network;
+		Network?: Network | null;
 	}
 
 
 	/** Network configuration properties. */
 	export interface Network {
-		Id?: string;
-		Name?: string;
-		Description?: string;
-		Framework?: NetworkFramework;
-		FrameworkVersion?: string;
+		Id?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		Framework?: NetworkFramework | null;
+		FrameworkVersion?: string | null;
 
 		/** Attributes relevant to the network for the blockchain framework that the network uses. */
-		FrameworkAttributes?: NetworkFrameworkAttributes;
-		VpcEndpointServiceName?: string;
+		FrameworkAttributes?: NetworkFrameworkAttributes | null;
+		VpcEndpointServiceName?: string | null;
 
 		/** The voting rules for the network to decide if a proposal is accepted */
-		VotingPolicy?: VotingPolicy;
-		Status?: NetworkStatus;
-		CreationDate?: Date;
+		VotingPolicy?: VotingPolicy | null;
+		Status?: NetworkStatus | null;
+		CreationDate?: Date | null;
 	}
 
 	export enum NetworkFramework { HYPERLEDGER_FABRIC = 0 }
@@ -215,14 +215,14 @@ export namespace MyNS {
 	export interface NetworkFrameworkAttributes {
 
 		/** Attributes of Hyperledger Fabric for a network. */
-		Fabric?: NetworkFabricAttributes;
+		Fabric?: NetworkFabricAttributes | null;
 	}
 
 
 	/** Attributes of Hyperledger Fabric for a network. */
 	export interface NetworkFabricAttributes {
-		OrderingServiceEndpoint?: string;
-		Edition?: NetworkFabricConfigurationEdition;
+		OrderingServiceEndpoint?: string | null;
+		Edition?: NetworkFabricConfigurationEdition | null;
 	}
 
 
@@ -230,7 +230,7 @@ export namespace MyNS {
 	export interface VotingPolicy {
 
 		/** A policy type that defines the voting rules for the network. The rules decide if a proposal is approved. Approval may be based on criteria such as the percentage of <code>YES</code> votes and the duration of the proposal. The policy applies to all proposals and is specified when the network is created. */
-		ApprovalThresholdPolicy?: ApprovalThresholdPolicy;
+		ApprovalThresholdPolicy?: ApprovalThresholdPolicy | null;
 	}
 
 	export enum NetworkStatus { CREATING = 0, AVAILABLE = 1, CREATE_FAILED = 2, DELETING = 3, DELETED = 4 }
@@ -238,25 +238,25 @@ export namespace MyNS {
 	export interface GetNodeOutput {
 
 		/** Configuration properties of a peer node. */
-		Node?: Node;
+		Node?: Node | null;
 	}
 
 
 	/** Configuration properties of a peer node. */
 	export interface Node {
-		NetworkId?: string;
-		MemberId?: string;
-		Id?: string;
-		InstanceType?: string;
-		AvailabilityZone?: string;
+		NetworkId?: string | null;
+		MemberId?: string | null;
+		Id?: string | null;
+		InstanceType?: string | null;
+		AvailabilityZone?: string | null;
 
 		/** Attributes relevant to a peer node on a Managed Blockchain network for the blockchain framework that the network uses. */
-		FrameworkAttributes?: NodeFrameworkAttributes;
+		FrameworkAttributes?: NodeFrameworkAttributes | null;
 
 		/** Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain network. */
-		LogPublishingConfiguration?: NodeLogPublishingConfiguration;
-		Status?: NodeStatus;
-		CreationDate?: Date;
+		LogPublishingConfiguration?: NodeLogPublishingConfiguration | null;
+		Status?: NodeStatus | null;
+		CreationDate?: Date | null;
 	}
 
 
@@ -264,14 +264,14 @@ export namespace MyNS {
 	export interface NodeFrameworkAttributes {
 
 		/** Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric. */
-		Fabric?: NodeFabricAttributes;
+		Fabric?: NodeFabricAttributes | null;
 	}
 
 
 	/** Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric. */
 	export interface NodeFabricAttributes {
-		PeerEndpoint?: string;
-		PeerEventEndpoint?: string;
+		PeerEndpoint?: string | null;
+		PeerEventEndpoint?: string | null;
 	}
 
 	export enum NodeStatus { CREATING = 0, AVAILABLE = 1, CREATE_FAILED = 2, UPDATING = 3, DELETING = 4, DELETED = 5, FAILED = 6 }
@@ -279,52 +279,52 @@ export namespace MyNS {
 	export interface GetProposalOutput {
 
 		/** Properties of a proposal on a Managed Blockchain network. */
-		Proposal?: Proposal;
+		Proposal?: Proposal | null;
 	}
 
 
 	/** Properties of a proposal on a Managed Blockchain network. */
 	export interface Proposal {
-		ProposalId?: string;
-		NetworkId?: string;
-		Description?: string;
+		ProposalId?: string | null;
+		NetworkId?: string | null;
+		Description?: string | null;
 
 		/** The actions to carry out if a proposal is <code>APPROVED</code>. */
-		Actions?: ProposalActions;
-		ProposedByMemberId?: string;
-		ProposedByMemberName?: string;
-		Status?: ProposalStatus;
-		CreationDate?: Date;
-		ExpirationDate?: Date;
-		YesVoteCount?: number;
-		NoVoteCount?: number;
-		OutstandingVoteCount?: number;
+		Actions?: ProposalActions | null;
+		ProposedByMemberId?: string | null;
+		ProposedByMemberName?: string | null;
+		Status?: ProposalStatus | null;
+		CreationDate?: Date | null;
+		ExpirationDate?: Date | null;
+		YesVoteCount?: number | null;
+		NoVoteCount?: number | null;
+		OutstandingVoteCount?: number | null;
 	}
 
 
 	/**  The actions to carry out if a proposal is <code>APPROVED</code>.  */
 	export interface ProposalActions {
-		Invitations?: Array<InviteAction>;
-		Removals?: Array<RemoveAction>;
+		Invitations?: Array<InviteAction> | null;
+		Removals?: Array<RemoveAction> | null;
 	}
 
 	export enum ProposalStatus { IN_PROGRESS = 0, APPROVED = 1, REJECTED = 2, EXPIRED = 3, ACTION_FAILED = 4 }
 
 	export interface ListInvitationsOutput {
-		Invitations?: Array<Invitation>;
-		NextToken?: string;
+		Invitations?: Array<Invitation> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** An invitation to an AWS account to create a member and join the network. */
 	export interface Invitation {
-		InvitationId?: string;
-		CreationDate?: Date;
-		ExpirationDate?: Date;
-		Status?: InvitationStatus;
+		InvitationId?: string | null;
+		CreationDate?: Date | null;
+		ExpirationDate?: Date | null;
+		Status?: InvitationStatus | null;
 
 		/** A summary of network configuration properties. */
-		NetworkSummary?: NetworkSummary;
+		NetworkSummary?: NetworkSummary | null;
 	}
 
 	export enum InvitationStatus { PENDING = 0, ACCEPTED = 1, ACCEPTING = 2, REJECTED = 3, EXPIRED = 4 }
@@ -332,81 +332,81 @@ export namespace MyNS {
 
 	/** A summary of network configuration properties. */
 	export interface NetworkSummary {
-		Id?: string;
-		Name?: string;
-		Description?: string;
-		Framework?: NetworkFramework;
-		FrameworkVersion?: string;
-		Status?: NetworkStatus;
-		CreationDate?: Date;
+		Id?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		Framework?: NetworkFramework | null;
+		FrameworkVersion?: string | null;
+		Status?: NetworkStatus | null;
+		CreationDate?: Date | null;
 	}
 
 	export interface ListMembersOutput {
-		Members?: Array<MemberSummary>;
-		NextToken?: string;
+		Members?: Array<MemberSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A summary of configuration properties for a member. */
 	export interface MemberSummary {
-		Id?: string;
-		Name?: string;
-		Description?: string;
-		Status?: MemberStatus;
-		CreationDate?: Date;
-		IsOwned?: boolean;
+		Id?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		Status?: MemberStatus | null;
+		CreationDate?: Date | null;
+		IsOwned?: boolean | null;
 	}
 
 	export interface ListNetworksOutput {
-		Networks?: Array<NetworkSummary>;
-		NextToken?: string;
+		Networks?: Array<NetworkSummary> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListNodesOutput {
-		Nodes?: Array<NodeSummary>;
-		NextToken?: string;
+		Nodes?: Array<NodeSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A summary of configuration properties for a peer node. */
 	export interface NodeSummary {
-		Id?: string;
-		Status?: NodeStatus;
-		CreationDate?: Date;
-		AvailabilityZone?: string;
-		InstanceType?: string;
+		Id?: string | null;
+		Status?: NodeStatus | null;
+		CreationDate?: Date | null;
+		AvailabilityZone?: string | null;
+		InstanceType?: string | null;
 	}
 
 	export interface ListProposalVotesOutput {
-		ProposalVotes?: Array<VoteSummary>;
-		NextToken?: string;
+		ProposalVotes?: Array<VoteSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/**  Properties of an individual vote that a member cast for a proposal.  */
 	export interface VoteSummary {
-		Vote?: VoteSummaryVote;
-		MemberName?: string;
-		MemberId?: string;
+		Vote?: VoteSummaryVote | null;
+		MemberName?: string | null;
+		MemberId?: string | null;
 	}
 
 	export enum VoteSummaryVote { YES = 0, NO = 1 }
 
 	export interface ListProposalsOutput {
-		Proposals?: Array<ProposalSummary>;
-		NextToken?: string;
+		Proposals?: Array<ProposalSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Properties of a proposal. */
 	export interface ProposalSummary {
-		ProposalId?: string;
-		Description?: string;
-		ProposedByMemberId?: string;
-		ProposedByMemberName?: string;
-		Status?: ProposalStatus;
-		CreationDate?: Date;
-		ExpirationDate?: Date;
+		ProposalId?: string | null;
+		Description?: string | null;
+		ProposedByMemberId?: string | null;
+		ProposedByMemberName?: string | null;
+		Status?: ProposalStatus | null;
+		CreationDate?: Date | null;
+		ExpirationDate?: Date | null;
 	}
 
 	export interface RejectInvitationOutput {
@@ -430,7 +430,7 @@ export namespace MyNS {
 	/** Configuration properties of the member. */
 	export interface MemberConfiguration {
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * Configuration properties relevant to a member for the blockchain framework that the Managed Blockchain network uses.
@@ -439,7 +439,7 @@ export namespace MyNS {
 		FrameworkConfiguration: MemberFrameworkConfiguration;
 
 		/** Configuration properties for logging events associated with a member of a Managed Blockchain network. */
-		LogPublishingConfiguration?: MemberLogPublishingConfiguration;
+		LogPublishingConfiguration?: MemberLogPublishingConfiguration | null;
 	}
 
 	export interface CreateMemberInput {
@@ -460,18 +460,18 @@ export namespace MyNS {
 	export interface NetworkFrameworkConfiguration {
 
 		/** Hyperledger Fabric configuration properties for the network. */
-		Fabric?: NetworkFabricConfiguration;
+		Fabric?: NetworkFabricConfiguration | null;
 	}
 
 	export interface CreateNetworkInput {
 		ClientRequestToken: string;
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 		Framework: NetworkFramework;
 		FrameworkVersion: string;
 
 		/** Configuration properties relevant to the network for the blockchain framework that the network uses. */
-		FrameworkConfiguration?: NetworkFrameworkConfiguration;
+		FrameworkConfiguration?: NetworkFrameworkConfiguration | null;
 
 		/**
 		 * The voting rules for the network to decide if a proposal is accepted
@@ -493,7 +493,7 @@ export namespace MyNS {
 		AvailabilityZone: string;
 
 		/** Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain network. */
-		LogPublishingConfiguration?: NodeLogPublishingConfiguration;
+		LogPublishingConfiguration?: NodeLogPublishingConfiguration | null;
 	}
 
 	export interface CreateNodeInput {
@@ -515,7 +515,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		Actions: ProposalActions;
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface DeleteMemberInput {
@@ -562,13 +562,13 @@ export namespace MyNS {
 	export interface UpdateMemberInput {
 
 		/** Configuration properties for logging events associated with a member of a Managed Blockchain network. */
-		LogPublishingConfiguration?: MemberLogPublishingConfiguration;
+		LogPublishingConfiguration?: MemberLogPublishingConfiguration | null;
 	}
 
 	export interface UpdateNodeInput {
 
 		/** Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain network. */
-		LogPublishingConfiguration?: NodeLogPublishingConfiguration;
+		LogPublishingConfiguration?: NodeLogPublishingConfiguration | null;
 	}
 
 	export enum VoteValue { YES = 0, NO = 1 }
@@ -606,7 +606,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMembersOutput} Success
 		 */
-		ListMembers(networkId: string, name: string, status: MemberStatus, isOwned: boolean, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListMembersOutput> {
+		ListMembers(networkId: string, name: string | null | undefined, status: MemberStatus | null | undefined, isOwned: boolean | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListMembersOutput> {
 			return this.http.get<ListMembersOutput>(this.baseUri + 'networks/' + (networkId == null ? '' : encodeURIComponent(networkId)) + '/members&name=' + (name == null ? '' : encodeURIComponent(name)) + '&status=' + status + '&isOwned=' + isOwned + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -631,7 +631,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListNetworksOutput} Success
 		 */
-		ListNetworks(name: string, framework: NetworkFramework, status: NetworkStatus, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListNetworksOutput> {
+		ListNetworks(name: string | null | undefined, framework: NetworkFramework | null | undefined, status: NetworkStatus | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListNetworksOutput> {
 			return this.http.get<ListNetworksOutput>(this.baseUri + 'networks?name=' + (name == null ? '' : encodeURIComponent(name)) + '&framework=' + framework + '&status=' + status + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -658,7 +658,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListNodesOutput} Success
 		 */
-		ListNodes(networkId: string, memberId: string, status: NodeStatus, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListNodesOutput> {
+		ListNodes(networkId: string, memberId: string, status: NodeStatus | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListNodesOutput> {
 			return this.http.get<ListNodesOutput>(this.baseUri + 'networks/' + (networkId == null ? '' : encodeURIComponent(networkId)) + '/members/' + (memberId == null ? '' : encodeURIComponent(memberId)) + '/nodes&status=' + status + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -682,7 +682,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListProposalsOutput} Success
 		 */
-		ListProposals(networkId: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListProposalsOutput> {
+		ListProposals(networkId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListProposalsOutput> {
 			return this.http.get<ListProposalsOutput>(this.baseUri + 'networks/' + (networkId == null ? '' : encodeURIComponent(networkId)) + '/proposals&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -785,7 +785,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInvitationsOutput} Success
 		 */
-		ListInvitations(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListInvitationsOutput> {
+		ListInvitations(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListInvitationsOutput> {
 			return this.http.get<ListInvitationsOutput>(this.baseUri + 'invitations?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -800,7 +800,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListProposalVotesOutput} Success
 		 */
-		ListProposalVotes(networkId: string, proposalId: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListProposalVotesOutput> {
+		ListProposalVotes(networkId: string, proposalId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListProposalVotesOutput> {
 			return this.http.get<ListProposalVotesOutput>(this.baseUri + 'networks/' + (networkId == null ? '' : encodeURIComponent(networkId)) + '/proposals/' + (proposalId == null ? '' : encodeURIComponent(proposalId)) + '/votes&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -852,14 +852,14 @@ export namespace MyNS {
 	}
 
 	export interface CreateMemberPostBodyMemberConfiguration {
-		Name?: string;
-		Description?: string;
+		Name?: string | null;
+		Description?: string | null;
 
 		/** Configuration properties relevant to a member for the blockchain framework that the Managed Blockchain network uses. */
-		FrameworkConfiguration?: MemberFrameworkConfiguration;
+		FrameworkConfiguration?: MemberFrameworkConfiguration | null;
 
 		/** Configuration properties for logging events associated with a member of a Managed Blockchain network. */
-		LogPublishingConfiguration?: MemberLogPublishingConfiguration;
+		LogPublishingConfiguration?: MemberLogPublishingConfiguration | null;
 	}
 
 	export interface CreateNetworkPostBody {
@@ -885,7 +885,7 @@ export namespace MyNS {
 		 * An optional description for the network.
 		 * Max length: 128
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * The blockchain framework that the network uses.
@@ -902,7 +902,7 @@ export namespace MyNS {
 		FrameworkVersion: string;
 
 		/** Configuration properties relevant to the network for the blockchain framework that the network uses. */
-		FrameworkConfiguration?: CreateNetworkPostBodyFrameworkConfiguration;
+		FrameworkConfiguration?: CreateNetworkPostBodyFrameworkConfiguration | null;
 
 		/**
 		 * The voting rules for the network to decide if a proposal is accepted
@@ -920,24 +920,24 @@ export namespace MyNS {
 	export interface CreateNetworkPostBodyFrameworkConfiguration {
 
 		/** Hyperledger Fabric configuration properties for the network. */
-		Fabric?: NetworkFabricConfiguration;
+		Fabric?: NetworkFabricConfiguration | null;
 	}
 
 	export interface CreateNetworkPostBodyVotingPolicy {
 
 		/** A policy type that defines the voting rules for the network. The rules decide if a proposal is approved. Approval may be based on criteria such as the percentage of <code>YES</code> votes and the duration of the proposal. The policy applies to all proposals and is specified when the network is created. */
-		ApprovalThresholdPolicy?: ApprovalThresholdPolicy;
+		ApprovalThresholdPolicy?: ApprovalThresholdPolicy | null;
 	}
 
 	export interface CreateNetworkPostBodyMemberConfiguration {
-		Name?: string;
-		Description?: string;
+		Name?: string | null;
+		Description?: string | null;
 
 		/** Configuration properties relevant to a member for the blockchain framework that the Managed Blockchain network uses. */
-		FrameworkConfiguration?: MemberFrameworkConfiguration;
+		FrameworkConfiguration?: MemberFrameworkConfiguration | null;
 
 		/** Configuration properties for logging events associated with a member of a Managed Blockchain network. */
-		LogPublishingConfiguration?: MemberLogPublishingConfiguration;
+		LogPublishingConfiguration?: MemberLogPublishingConfiguration | null;
 	}
 
 	export interface CreateNodePostBody {
@@ -958,11 +958,11 @@ export namespace MyNS {
 	}
 
 	export interface CreateNodePostBodyNodeConfiguration {
-		InstanceType?: string;
-		AvailabilityZone?: string;
+		InstanceType?: string | null;
+		AvailabilityZone?: string | null;
 
 		/** Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain network. */
-		LogPublishingConfiguration?: NodeLogPublishingConfiguration;
+		LogPublishingConfiguration?: NodeLogPublishingConfiguration | null;
 	}
 
 	export interface CreateProposalPostBody {
@@ -993,36 +993,36 @@ export namespace MyNS {
 		 * A description for the proposal that is visible to voting members, for example, "Proposal to add Example Corp. as member."
 		 * Max length: 128
 		 */
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface CreateProposalPostBodyActions {
-		Invitations?: Array<InviteAction>;
-		Removals?: Array<RemoveAction>;
+		Invitations?: Array<InviteAction> | null;
+		Removals?: Array<RemoveAction> | null;
 	}
 
 	export interface UpdateMemberPatchBody {
 
 		/** Configuration properties for logging events associated with a member of a Managed Blockchain network. */
-		LogPublishingConfiguration?: UpdateMemberPatchBodyLogPublishingConfiguration;
+		LogPublishingConfiguration?: UpdateMemberPatchBodyLogPublishingConfiguration | null;
 	}
 
 	export interface UpdateMemberPatchBodyLogPublishingConfiguration {
 
 		/** Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework. */
-		Fabric?: MemberFabricLogPublishingConfiguration;
+		Fabric?: MemberFabricLogPublishingConfiguration | null;
 	}
 
 	export interface UpdateNodePatchBody {
 
 		/** Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain network. */
-		LogPublishingConfiguration?: UpdateNodePatchBodyLogPublishingConfiguration;
+		LogPublishingConfiguration?: UpdateNodePatchBodyLogPublishingConfiguration | null;
 	}
 
 	export interface UpdateNodePatchBodyLogPublishingConfiguration {
 
 		/** Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain network. */
-		Fabric?: NodeFabricLogPublishingConfiguration;
+		Fabric?: NodeFabricLogPublishingConfiguration | null;
 	}
 
 	export interface VoteOnProposalPostBody {

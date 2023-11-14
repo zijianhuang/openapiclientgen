@@ -16,13 +16,13 @@ export namespace MyNS {
 		 * Files in the workspace matching any path pattern will be uploaded to
 		 * Cloud Storage with this location as a prefix.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/** Path globs used to match files in the build's workspace. */
-		paths?: Array<string>;
+		paths?: Array<string> | null;
 
 		/** Start and end times for a build execution phase. */
-		timing?: TimeSpan;
+		timing?: TimeSpan | null;
 	}
 
 
@@ -30,10 +30,10 @@ export namespace MyNS {
 	export interface TimeSpan {
 
 		/** End of time span. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** Start of time span. */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 
@@ -44,14 +44,14 @@ export namespace MyNS {
 	export interface ArtifactResult {
 
 		/** The file hash of the artifact. */
-		fileHash?: Array<FileHashes>;
+		fileHash?: Array<FileHashes> | null;
 
 		/**
 		 * The path of an artifact in a Google Cloud Storage bucket, with the
 		 * generation number. For example,
 		 * `gs://mybucket/path/to/output.jar#generation`.
 		 */
-		location?: string;
+		location?: string | null;
 	}
 
 
@@ -62,7 +62,7 @@ export namespace MyNS {
 	export interface FileHashes {
 
 		/** Collection of file hashes. */
-		fileHash?: Array<Hash>;
+		fileHash?: Array<Hash> | null;
 	}
 
 
@@ -70,10 +70,10 @@ export namespace MyNS {
 	export interface Hash {
 
 		/** The type of hash that was performed. */
-		type?: HashType;
+		type?: HashType | null;
 
 		/** The hash value. */
-		value?: string;
+		value?: string | null;
 	}
 
 	export enum HashType { NONE = 0, SHA256 = 1, MD5 = 2 }
@@ -93,13 +93,13 @@ export namespace MyNS {
 		 * results field.
 		 * If any of the images fail to be pushed, the build is marked FAILURE.
 		 */
-		images?: Array<string>;
+		images?: Array<string> | null;
 
 		/**
 		 * Files in the workspace to upload to Cloud Storage upon successful
 		 * completion of all build steps.
 		 */
-		objects?: ArtifactObjects;
+		objects?: ArtifactObjects | null;
 	}
 
 
@@ -125,26 +125,26 @@ export namespace MyNS {
 		 * Artifacts produced by a build that should be uploaded upon
 		 * successful completion of all build steps.
 		 */
-		artifacts?: Artifacts;
+		artifacts?: Artifacts | null;
 
 		/**
 		 * Output only. The ID of the `BuildTrigger` that triggered this build, if it
 		 * was triggered automatically.
 		 */
-		buildTriggerId?: string;
+		buildTriggerId?: string | null;
 
 		/** Output only. Time at which the request to create the build was received. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Output only. Time at which execution of the build was finished.
 		 * The difference between finish_time and start_time is the duration of the
 		 * build's execution.
 		 */
-		finishTime?: string;
+		finishTime?: string | null;
 
 		/** Output only. Unique identifier of the build. */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * A list of images to be pushed upon the successful completion of all build
@@ -155,10 +155,10 @@ export namespace MyNS {
 		 * If any of the images fail to be pushed, the build status is marked
 		 * `FAILURE`.
 		 */
-		images?: Array<string>;
+		images?: Array<string> | null;
 
 		/** Output only. URL to logs for this build in Google Cloud Console. */
-		logUrl?: string;
+		logUrl?: string | null;
 
 		/**
 		 * Google Cloud Storage bucket where logs should be written (see
@@ -166,13 +166,13 @@ export namespace MyNS {
 		 * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
 		 * Logs file names will be of the format `${logs_bucket}/log-${build_id}.txt`.
 		 */
-		logsBucket?: string;
+		logsBucket?: string | null;
 
 		/** Optional arguments to enable specific features of builds. */
-		options?: BuildOptions;
+		options?: BuildOptions | null;
 
 		/** Output only. ID of the project. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/**
 		 * TTL in queue for this build. If provided and the build is enqueued longer
@@ -180,40 +180,40 @@ export namespace MyNS {
 		 * `EXPIRED`.
 		 * The TTL starts ticking from create_time.
 		 */
-		queueTtl?: string;
+		queueTtl?: string | null;
 
 		/** Artifacts created by the build pipeline. */
-		results?: Results;
+		results?: Results | null;
 
 		/** Secrets to decrypt using Cloud Key Management Service. */
-		secrets?: Array<Secret>;
+		secrets?: Array<Secret> | null;
 
 		/** Location of the source in a supported storage service. */
-		source?: Source;
+		source?: Source | null;
 
 		/**
 		 * Provenance of the source. Ways to find the original source, or verify that
 		 * some source was used for this build.
 		 */
-		sourceProvenance?: SourceProvenance;
+		sourceProvenance?: SourceProvenance | null;
 
 		/** Output only. Time at which execution of the build was started. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** Output only. Status of the build. */
-		status?: BuildStatus;
+		status?: BuildStatus | null;
 
 		/** Output only. Customer-readable message about the current status. */
-		statusDetail?: string;
+		statusDetail?: string | null;
 
 		/** Required. The operations to be performed on the workspace. */
-		steps?: Array<BuildStep>;
+		steps?: Array<BuildStep> | null;
 
 		/** Substitutions data for `Build` resource. */
-		substitutions?: {[id: string]: string };
+		substitutions?: {[id: string]: string } | null;
 
 		/** Tags for annotation of a `Build`. These are not docker tags. */
-		tags?: Array<string>;
+		tags?: Array<string> | null;
 
 		/**
 		 * Amount of time that this build should be allowed to run, to second
@@ -221,7 +221,7 @@ export namespace MyNS {
 		 * and the build status will be `TIMEOUT`.
 		 * Default time is ten minutes.
 		 */
-		timeout?: string;
+		timeout?: string | null;
 
 		/**
 		 * Output only. Stores timing information for phases of the build. Valid keys
@@ -232,7 +232,7 @@ export namespace MyNS {
 		 * If the build does not specify source or images,
 		 * these keys will not be included.
 		 */
-		timing?: {[id: string]: TimeSpan };
+		timing?: {[id: string]: TimeSpan } | null;
 	}
 
 
@@ -247,7 +247,7 @@ export namespace MyNS {
 		 * requested. At present, the maximum disk size is 1000GB; builds that request
 		 * more than the maximum are rejected with an error.
 		 */
-		diskSizeGb?: string;
+		diskSizeGb?: string | null;
 
 		/**
 		 * A list of global environment variable definitions that will exist for all
@@ -256,25 +256,25 @@ export namespace MyNS {
 		 * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
 		 * being given the value "VALUE".
 		 */
-		env?: Array<string>;
+		env?: Array<string> | null;
 
 		/**
 		 * Option to define build log streaming behavior to Google Cloud
 		 * Storage.
 		 */
-		logStreamingOption?: BuildOptionsLogStreamingOption;
+		logStreamingOption?: BuildOptionsLogStreamingOption | null;
 
 		/**
 		 * Option to specify the logging mode, which determines where the logs are
 		 * stored.
 		 */
-		logging?: BuildOptionsLogging;
+		logging?: BuildOptionsLogging | null;
 
 		/** Compute Engine machine type on which to run the build. */
-		machineType?: BuildOptionsMachineType;
+		machineType?: BuildOptionsMachineType | null;
 
 		/** Requested verifiability options. */
-		requestedVerifyOption?: BuildOptionsRequestedVerifyOption;
+		requestedVerifyOption?: BuildOptionsRequestedVerifyOption | null;
 
 		/**
 		 * A list of global environment variables, which are encrypted using a Cloud
@@ -282,16 +282,16 @@ export namespace MyNS {
 		 * build's `Secret`. These variables will be available to all build steps
 		 * in this build.
 		 */
-		secretEnv?: Array<string>;
+		secretEnv?: Array<string> | null;
 
 		/** Requested hash for SourceProvenance. */
-		sourceProvenanceHash?: Array<HashType>;
+		sourceProvenanceHash?: Array<HashType> | null;
 
 		/**
 		 * Option to specify behavior when there is an error in the substitution
 		 * checks.
 		 */
-		substitutionOption?: BuildOptionsSubstitutionOption;
+		substitutionOption?: BuildOptionsSubstitutionOption | null;
 
 		/**
 		 * Global list of volumes to mount for ALL build steps
@@ -302,14 +302,14 @@ export namespace MyNS {
 		 * Using a global volume in a build with only one step is not valid as
 		 * it is indicative of a build request with an incorrect configuration.
 		 */
-		volumes?: Array<Volume>;
+		volumes?: Array<Volume> | null;
 
 		/**
 		 * Option to specify a `WorkerPool` for the build.
 		 * Format: projects/{project}/workerPools/{workerPool}
 		 * This field is experimental.
 		 */
-		workerPool?: string;
+		workerPool?: string | null;
 	}
 
 	export enum BuildOptionsLogStreamingOption { STREAM_DEFAULT = 0, STREAM_ON = 1, STREAM_OFF = 2 }
@@ -334,14 +334,14 @@ export namespace MyNS {
 		 * Volume names must be unique per build step and must be valid names for
 		 * Docker volumes. Each named volume must be used by at least two build steps.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Path at which to mount the volume.
 		 * Paths must be absolute and cannot conflict with other volume paths on the
 		 * same build step or with certain reserved volume paths.
 		 */
-		path?: string;
+		path?: string | null;
 	}
 
 
@@ -349,16 +349,16 @@ export namespace MyNS {
 	export interface Results {
 
 		/** Path to the artifact manifest. Only populated when artifacts are uploaded. */
-		artifactManifest?: string;
+		artifactManifest?: string | null;
 
 		/** Start and end times for a build execution phase. */
-		artifactTiming?: TimeSpan;
+		artifactTiming?: TimeSpan | null;
 
 		/**
 		 * List of build step digests, in the order corresponding to build step
 		 * indices.
 		 */
-		buildStepImages?: Array<string>;
+		buildStepImages?: Array<string> | null;
 
 		/**
 		 * List of build step outputs, produced by builder images, in the order
@@ -367,13 +367,13 @@ export namespace MyNS {
 		 * can produce this output by writing to `$BUILDER_OUTPUT/output`.
 		 * Only the first 4KB of data is stored.
 		 */
-		buildStepOutputs?: Array<string>;
+		buildStepOutputs?: Array<string> | null;
 
 		/** Container images that were built as a part of the build. */
-		images?: Array<BuiltImage>;
+		images?: Array<BuiltImage> | null;
 
 		/** Number of artifacts uploaded. Only populated when artifacts are uploaded. */
-		numArtifacts?: string;
+		numArtifacts?: string | null;
 	}
 
 
@@ -381,16 +381,16 @@ export namespace MyNS {
 	export interface BuiltImage {
 
 		/** Docker Registry 2.0 digest. */
-		digest?: string;
+		digest?: string | null;
 
 		/**
 		 * Name used to push the container image to Google Container Registry, as
 		 * presented to `docker push`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Start and end times for a build execution phase. */
-		pushTiming?: TimeSpan;
+		pushTiming?: TimeSpan | null;
 	}
 
 
@@ -401,7 +401,7 @@ export namespace MyNS {
 	export interface Secret {
 
 		/** Cloud KMS key name to use to decrypt these envs. */
-		kmsKeyName?: string;
+		kmsKeyName?: string | null;
 
 		/**
 		 * Map of environment variable name to its encrypted value.
@@ -410,7 +410,7 @@ export namespace MyNS {
 		 * 64 KB in size. There can be at most 100 secret values across all of a
 		 * build's secrets.
 		 */
-		secretEnv?: {[id: string]: string };
+		secretEnv?: {[id: string]: string } | null;
 	}
 
 
@@ -418,10 +418,10 @@ export namespace MyNS {
 	export interface Source {
 
 		/** Location of the source in a Google Cloud Source Repository. */
-		repoSource?: RepoSource;
+		repoSource?: RepoSource | null;
 
 		/** Location of the source in an archive file in Google Cloud Storage. */
-		storageSource?: StorageSource;
+		storageSource?: StorageSource | null;
 	}
 
 
@@ -433,45 +433,45 @@ export namespace MyNS {
 		 * The syntax of the regular expressions accepted is the syntax accepted by
 		 * RE2 and described at https://github.com/google/re2/wiki/Syntax
 		 */
-		branchName?: string;
+		branchName?: string | null;
 
 		/** Explicit commit SHA to build. */
-		commitSha?: string;
+		commitSha?: string | null;
 
 		/**
 		 * Directory, relative to the source root, in which to run the build.
 		 * This must be a relative path. If a step's `dir` is specified and is an
 		 * absolute path, this value is ignored for that step's execution.
 		 */
-		dir?: string;
+		dir?: string | null;
 
 		/**
 		 * Only trigger a build if the revision regex does NOT match the revision
 		 * regex.
 		 */
-		invertRegex?: boolean;
+		invertRegex?: boolean | null;
 
 		/**
 		 * ID of the project that owns the Cloud Source Repository. If omitted, the
 		 * project ID requesting the build is assumed.
 		 */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** Required. Name of the Cloud Source Repository. */
-		repoName?: string;
+		repoName?: string | null;
 
 		/**
 		 * Substitutions to use in a triggered build.
 		 * Should only be used with RunBuildTrigger
 		 */
-		substitutions?: {[id: string]: string };
+		substitutions?: {[id: string]: string } | null;
 
 		/**
 		 * Regex matching tags to build.
 		 * The syntax of the regular expressions accepted is the syntax accepted by
 		 * RE2 and described at https://github.com/google/re2/wiki/Syntax
 		 */
-		tagName?: string;
+		tagName?: string | null;
 	}
 
 
@@ -483,20 +483,20 @@ export namespace MyNS {
 		 * [Bucket Name
 		 * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
 		 */
-		bucket?: string;
+		bucket?: string | null;
 
 		/**
 		 * Google Cloud Storage generation for the object. If the generation is
 		 * omitted, the latest generation will be used.
 		 */
-		generation?: string;
+		generation?: string | null;
 
 		/**
 		 * Google Cloud Storage object containing the source.
 		 * This object must be a gzipped archive file (`.tar.gz`) containing source to
 		 * build.
 		 */
-		object?: string;
+		object?: string | null;
 	}
 
 
@@ -516,13 +516,13 @@ export namespace MyNS {
 		 * If the build source came in a single package such as a gzipped tarfile
 		 * (`.tar.gz`), the `FileHash` will be for the single path to that file.
 		 */
-		fileHashes?: {[id: string]: FileHashes };
+		fileHashes?: {[id: string]: FileHashes } | null;
 
 		/** Location of the source in a Google Cloud Source Repository. */
-		resolvedRepoSource?: RepoSource;
+		resolvedRepoSource?: RepoSource | null;
 
 		/** Location of the source in an archive file in Google Cloud Storage. */
-		resolvedStorageSource?: StorageSource;
+		resolvedStorageSource?: StorageSource | null;
 	}
 
 	export enum BuildStatus { STATUS_UNKNOWN = 0, QUEUED = 1, WORKING = 2, SUCCESS = 3, FAILURE = 4, INTERNAL_ERROR = 5, TIMEOUT = 6, CANCELLED = 7, EXPIRED = 8 }
@@ -538,7 +538,7 @@ export namespace MyNS {
 		 * an entrypoint, the first element in args is used as the entrypoint,
 		 * and the remainder will be used as arguments.
 		 */
-		args?: Array<string>;
+		args?: Array<string> | null;
 
 		/**
 		 * Working directory to use when running this step's container.
@@ -550,26 +550,26 @@ export namespace MyNS {
 		 * which specifies an absolute path, the `RepoSource` `dir` is ignored for
 		 * the step's execution.
 		 */
-		dir?: string;
+		dir?: string | null;
 
 		/**
 		 * Entrypoint to be used instead of the build step image's default entrypoint.
 		 * If unset, the image's default entrypoint is used.
 		 */
-		entrypoint?: string;
+		entrypoint?: string | null;
 
 		/**
 		 * A list of environment variable definitions to be used when running a step.
 		 * The elements are of the form "KEY=VALUE" for the environment variable "KEY"
 		 * being given the value "VALUE".
 		 */
-		env?: Array<string>;
+		env?: Array<string> | null;
 
 		/**
 		 * Unique identifier for this build step, used in `wait_for` to
 		 * reference this build step as a dependency.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Required. The name of the container image that will run this particular
@@ -587,34 +587,34 @@ export namespace MyNS {
 		 * host's Docker daemon's cache and is available to use as the name for a
 		 * later build step.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Start and end times for a build execution phase. */
-		pullTiming?: TimeSpan;
+		pullTiming?: TimeSpan | null;
 
 		/**
 		 * A list of environment variables which are encrypted using a Cloud Key
 		 * Management Service crypto key. These values must be specified in the
 		 * build's `Secret`.
 		 */
-		secretEnv?: Array<string>;
+		secretEnv?: Array<string> | null;
 
 		/**
 		 * Output only. Status of the build step. At this time, build step status is
 		 * only updated on build completion; step status is not updated in real-time
 		 * as the build progresses.
 		 */
-		status?: BuildStatus;
+		status?: BuildStatus | null;
 
 		/**
 		 * Time limit for executing this build step. If not defined, the step has no
 		 * time limit and will be allowed to continue to run until either it completes
 		 * or the build itself times out.
 		 */
-		timeout?: string;
+		timeout?: string | null;
 
 		/** Start and end times for a build execution phase. */
-		timing?: TimeSpan;
+		timing?: TimeSpan | null;
 
 		/**
 		 * List of volumes to mount into the build step.
@@ -624,7 +624,7 @@ export namespace MyNS {
 		 * Using a named volume in only one step is not valid as it is indicative
 		 * of a build request with an incorrect configuration.
 		 */
-		volumes?: Array<Volume>;
+		volumes?: Array<Volume> | null;
 
 		/**
 		 * The ID(s) of the step(s) that this build step depends on.
@@ -633,7 +633,7 @@ export namespace MyNS {
 		 * start when all previous build steps in the `Build.Steps` list have
 		 * completed successfully.
 		 */
-		waitFor?: Array<string>;
+		waitFor?: Array<string> | null;
 	}
 
 
@@ -656,7 +656,7 @@ export namespace MyNS {
 		 * resolved from the specified branch or tag.
 		 * - $SHORT_SHA: first 7 characters of $REVISION_ID or $COMMIT_SHA.
 		 */
-		build?: Build;
+		build?: Build | null;
 	}
 
 
@@ -682,32 +682,32 @@ export namespace MyNS {
 		 * resolved from the specified branch or tag.
 		 * - $SHORT_SHA: first 7 characters of $REVISION_ID or $COMMIT_SHA.
 		 */
-		build?: Build;
+		build?: Build | null;
 
 		/** Output only. Time when the trigger was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Human-readable description of this trigger. */
-		description?: string;
+		description?: string | null;
 
 		/** If true, the trigger will never result in a build. */
-		disabled?: boolean;
+		disabled?: boolean | null;
 
 		/**
 		 * Path, from the source root, to a file whose contents is used for the
 		 * template.
 		 */
-		filename?: string;
+		filename?: string | null;
 
 		/**
 		 * GitHubEventsConfig describes the configuration of a trigger that creates a
 		 * build whenever a GitHub event is received.
 		 * This message is experimental.
 		 */
-		github?: GitHubEventsConfig;
+		github?: GitHubEventsConfig | null;
 
 		/** Output only. Unique identifier of the trigger. */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * ignored_files and included_files are file glob matches using
@@ -718,7 +718,7 @@ export namespace MyNS {
 		 * any of the ignored_file globs. If the change has no files that are
 		 * outside of the ignored_files globs, then we do not trigger a build.
 		 */
-		ignoredFiles?: Array<string>;
+		ignoredFiles?: Array<string> | null;
 
 		/**
 		 * If any of the files altered in the commit pass the ignored_files
@@ -729,7 +729,7 @@ export namespace MyNS {
 		 * least one of those files matches a included_files glob. If not,
 		 * then we do not trigger a build.
 		 */
-		includedFiles?: Array<string>;
+		includedFiles?: Array<string> | null;
 
 		/**
 		 * User-assigned name of the trigger. Must be unique within the project.
@@ -738,20 +738,20 @@ export namespace MyNS {
 		 * + They can be 1-64 characters long.
 		 * + They must begin and end with an alphanumeric character.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Substitutions for Build resource. The keys must match the following
 		 * regular expression: `^_[A-Z0-9_]+$`.The keys cannot conflict with the
 		 * keys in bindings.
 		 */
-		substitutions?: {[id: string]: string };
+		substitutions?: {[id: string]: string } | null;
 
 		/** Tags for annotation of a `BuildTrigger` */
-		tags?: Array<string>;
+		tags?: Array<string> | null;
 
 		/** Location of the source in a Google Cloud Source Repository. */
-		triggerTemplate?: RepoSource;
+		triggerTemplate?: RepoSource | null;
 	}
 
 
@@ -763,29 +763,29 @@ export namespace MyNS {
 	export interface GitHubEventsConfig {
 
 		/** The installationID that emits the GitHub event. */
-		installationId?: string;
+		installationId?: string | null;
 
 		/**
 		 * Name of the repository. For example: The name for
 		 * https://github.com/googlecloudplatform/cloud-builders is "cloud-builders".
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Owner of the repository. For example: The owner for
 		 * https://github.com/googlecloudplatform/cloud-builders is
 		 * "googlecloudplatform".
 		 */
-		owner?: string;
+		owner?: string | null;
 
 		/**
 		 * PullRequestFilter contains filter properties for matching GitHub Pull
 		 * Requests.
 		 */
-		pullRequest?: PullRequestFilter;
+		pullRequest?: PullRequestFilter | null;
 
 		/** Push contains filter properties for matching GitHub git pushes. */
-		push?: PushFilter;
+		push?: PushFilter | null;
 	}
 
 
@@ -800,16 +800,16 @@ export namespace MyNS {
 		 * The syntax of the regular expressions accepted is the syntax accepted by
 		 * RE2 and described at https://github.com/google/re2/wiki/Syntax
 		 */
-		branch?: string;
+		branch?: string | null;
 
 		/**
 		 * Whether to block builds on a "/gcbrun" comment from a repository admin or
 		 * collaborator.
 		 */
-		commentControl?: PullRequestFilterCommentControl;
+		commentControl?: PullRequestFilterCommentControl | null;
 
 		/** If true, branches that do NOT match the git_ref will trigger a build. */
-		invertRegex?: boolean;
+		invertRegex?: boolean | null;
 	}
 
 	export enum PullRequestFilterCommentControl { COMMENTS_DISABLED = 0, COMMENTS_ENABLED = 1 }
@@ -823,20 +823,20 @@ export namespace MyNS {
 		 * The syntax of the regular expressions accepted is the syntax accepted by
 		 * RE2 and described at https://github.com/google/re2/wiki/Syntax
 		 */
-		branch?: string;
+		branch?: string | null;
 
 		/**
 		 * When true, only trigger a build if the revision regex does NOT match the
 		 * git_ref regex.
 		 */
-		invertRegex?: boolean;
+		invertRegex?: boolean | null;
 
 		/**
 		 * Regexes matching tags to build.
 		 * The syntax of the regular expressions accepted is the syntax accepted by
 		 * RE2 and described at https://github.com/google/re2/wiki/Syntax
 		 */
-		tag?: string;
+		tag?: string | null;
 	}
 
 
@@ -867,10 +867,10 @@ export namespace MyNS {
 	export interface ListBuildTriggersResponse {
 
 		/** Token to receive the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** `BuildTriggers` for the project, sorted by `create_time` descending. */
-		triggers?: Array<BuildTrigger>;
+		triggers?: Array<BuildTrigger> | null;
 	}
 
 
@@ -878,10 +878,10 @@ export namespace MyNS {
 	export interface ListBuildsResponse {
 
 		/** Builds will be sorted by `create_time`, descending. */
-		builds?: Array<Build>;
+		builds?: Array<Build> | null;
 
 		/** Token to receive the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -889,10 +889,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -907,7 +907,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -917,7 +917,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -925,14 +925,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -944,7 +944,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -959,20 +959,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -996,7 +996,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token to provide to skip to a particular spot in the list.
 		 * @return {void} Successful response
 		 */
-		Cloudbuild_projects_builds_list(projectId: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudbuild_projects_builds_list(projectId: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/builds&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1076,7 +1076,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token to provide to skip to a particular spot in the list.
 		 * @return {void} Successful response
 		 */
-		Cloudbuild_projects_triggers_list(projectId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudbuild_projects_triggers_list(projectId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/triggers&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

@@ -11,9 +11,9 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <NeutralLanguage>en</NeutralLanguage>
     <Copyright>Copyright © Zijian Huang 2021-2023</Copyright>
-    <Version>2.5.0</Version>
+    <Version>2.6.0</Version>
     <PackageTags>Swagger, Open API Specification, C#, .NET Core, Web API, TypeScript, Angular, YAML</PackageTags>
-    <PackageReleaseNotes>.NET 7</PackageReleaseNotes>
+    <PackageReleaseNotes>* Angular FormGroup; * optional null type.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -39,7 +39,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0" />
-    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.6" />
+    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.10" />
   </ItemGroup>
 
   <ItemGroup>

@@ -20,19 +20,19 @@ export namespace MyNS {
 	export interface GdataBlobstore2Info {
 
 		/** gdata */
-		blobGeneration?: string;
+		blobGeneration?: string | null;
 
 		/** gdata */
-		blobId?: string;
+		blobId?: string | null;
 
 		/** gdata */
-		downloadReadHandle?: string;
+		downloadReadHandle?: string | null;
 
 		/** gdata */
-		readToken?: string;
+		readToken?: string | null;
 
 		/** gdata */
-		uploadMetadataContainer?: string;
+		uploadMetadataContainer?: string | null;
 	}
 
 
@@ -40,37 +40,37 @@ export namespace MyNS {
 	export interface GdataCompositeMedia {
 
 		/** gdata */
-		blobRef?: string;
+		blobRef?: string | null;
 
 		/** gdata */
-		blobstore2Info?: GdataBlobstore2Info;
+		blobstore2Info?: GdataBlobstore2Info | null;
 
 		/** gdata */
-		cosmoBinaryReference?: string;
+		cosmoBinaryReference?: string | null;
 
 		/** gdata */
-		crc32cHash?: string;
+		crc32cHash?: string | null;
 
 		/** gdata */
-		inline?: string;
+		inline?: string | null;
 
 		/** gdata */
-		length?: string;
+		length?: string | null;
 
 		/** gdata */
-		md5Hash?: string;
+		md5Hash?: string | null;
 
 		/** gdata */
-		objectId?: GdataObjectId;
+		objectId?: GdataObjectId | null;
 
 		/** gdata */
-		path?: string;
+		path?: string | null;
 
 		/** gdata */
-		referenceType?: GdataCompositeMediaReferenceType;
+		referenceType?: GdataCompositeMediaReferenceType | null;
 
 		/** gdata */
-		sha1Hash?: string;
+		sha1Hash?: string | null;
 	}
 
 
@@ -78,13 +78,13 @@ export namespace MyNS {
 	export interface GdataObjectId {
 
 		/** gdata */
-		bucketName?: string;
+		bucketName?: string | null;
 
 		/** gdata */
-		generation?: string;
+		generation?: string | null;
 
 		/** gdata */
-		objectName?: string;
+		objectName?: string | null;
 	}
 
 	export enum GdataCompositeMediaReferenceType { PATH = 0, BLOB_REF = 1, INLINE = 2, BIGSTORE_REF = 3, COSMO_BINARY_REFERENCE = 4 }
@@ -94,19 +94,19 @@ export namespace MyNS {
 	export interface GdataContentTypeInfo {
 
 		/** gdata */
-		bestGuess?: string;
+		bestGuess?: string | null;
 
 		/** gdata */
-		fromBytes?: string;
+		fromBytes?: string | null;
 
 		/** gdata */
-		fromFileName?: string;
+		fromFileName?: string | null;
 
 		/** gdata */
-		fromHeader?: string;
+		fromHeader?: string | null;
 
 		/** gdata */
-		fromUrlPath?: string;
+		fromUrlPath?: string | null;
 	}
 
 
@@ -114,19 +114,19 @@ export namespace MyNS {
 	export interface GdataDiffChecksumsResponse {
 
 		/** gdata */
-		checksumsLocation?: GdataCompositeMedia;
+		checksumsLocation?: GdataCompositeMedia | null;
 
 		/** gdata */
-		chunkSizeBytes?: string;
+		chunkSizeBytes?: string | null;
 
 		/** gdata */
-		objectLocation?: GdataCompositeMedia;
+		objectLocation?: GdataCompositeMedia | null;
 
 		/** gdata */
-		objectSizeBytes?: string;
+		objectSizeBytes?: string | null;
 
 		/** gdata */
-		objectVersion?: string;
+		objectVersion?: string | null;
 	}
 
 
@@ -134,7 +134,7 @@ export namespace MyNS {
 	export interface GdataDiffDownloadResponse {
 
 		/** gdata */
-		objectLocation?: GdataCompositeMedia;
+		objectLocation?: GdataCompositeMedia | null;
 	}
 
 
@@ -142,13 +142,13 @@ export namespace MyNS {
 	export interface GdataDiffUploadRequest {
 
 		/** gdata */
-		checksumsInfo?: GdataCompositeMedia;
+		checksumsInfo?: GdataCompositeMedia | null;
 
 		/** gdata */
-		objectInfo?: GdataCompositeMedia;
+		objectInfo?: GdataCompositeMedia | null;
 
 		/** gdata */
-		objectVersion?: string;
+		objectVersion?: string | null;
 	}
 
 
@@ -156,10 +156,10 @@ export namespace MyNS {
 	export interface GdataDiffUploadResponse {
 
 		/** gdata */
-		objectVersion?: string;
+		objectVersion?: string | null;
 
 		/** gdata */
-		originalObject?: GdataCompositeMedia;
+		originalObject?: GdataCompositeMedia | null;
 	}
 
 
@@ -167,10 +167,10 @@ export namespace MyNS {
 	export interface GdataDiffVersionResponse {
 
 		/** gdata */
-		objectSizeBytes?: string;
+		objectSizeBytes?: string | null;
 
 		/** gdata */
-		objectVersion?: string;
+		objectVersion?: string | null;
 	}
 
 
@@ -178,10 +178,10 @@ export namespace MyNS {
 	export interface GdataDownloadParameters {
 
 		/** gdata */
-		allowGzipCompression?: boolean;
+		allowGzipCompression?: boolean | null;
 
 		/** gdata */
-		ignoreRange?: boolean;
+		ignoreRange?: boolean | null;
 	}
 
 
@@ -189,94 +189,94 @@ export namespace MyNS {
 	export interface GdataMedia {
 
 		/** gdata */
-		algorithm?: string;
+		algorithm?: string | null;
 
 		/** gdata */
-		bigstoreObjectRef?: string;
+		bigstoreObjectRef?: string | null;
 
 		/** gdata */
-		blobRef?: string;
+		blobRef?: string | null;
 
 		/** gdata */
-		blobstore2Info?: GdataBlobstore2Info;
+		blobstore2Info?: GdataBlobstore2Info | null;
 
 		/** gdata */
-		compositeMedia?: Array<GdataCompositeMedia>;
+		compositeMedia?: Array<GdataCompositeMedia> | null;
 
 		/** gdata */
-		contentType?: string;
+		contentType?: string | null;
 
 		/** gdata */
-		contentTypeInfo?: GdataContentTypeInfo;
+		contentTypeInfo?: GdataContentTypeInfo | null;
 
 		/** gdata */
-		cosmoBinaryReference?: string;
+		cosmoBinaryReference?: string | null;
 
 		/** gdata */
-		crc32cHash?: string;
+		crc32cHash?: string | null;
 
 		/** gdata */
-		diffChecksumsResponse?: GdataDiffChecksumsResponse;
+		diffChecksumsResponse?: GdataDiffChecksumsResponse | null;
 
 		/** gdata */
-		diffDownloadResponse?: GdataDiffDownloadResponse;
+		diffDownloadResponse?: GdataDiffDownloadResponse | null;
 
 		/** gdata */
-		diffUploadRequest?: GdataDiffUploadRequest;
+		diffUploadRequest?: GdataDiffUploadRequest | null;
 
 		/** gdata */
-		diffUploadResponse?: GdataDiffUploadResponse;
+		diffUploadResponse?: GdataDiffUploadResponse | null;
 
 		/** gdata */
-		diffVersionResponse?: GdataDiffVersionResponse;
+		diffVersionResponse?: GdataDiffVersionResponse | null;
 
 		/** gdata */
-		downloadParameters?: GdataDownloadParameters;
+		downloadParameters?: GdataDownloadParameters | null;
 
 		/** gdata */
-		filename?: string;
+		filename?: string | null;
 
 		/** gdata */
-		hash?: string;
+		hash?: string | null;
 
 		/** gdata */
-		hashVerified?: boolean;
+		hashVerified?: boolean | null;
 
 		/** gdata */
-		inline?: string;
+		inline?: string | null;
 
 		/** gdata */
-		isPotentialRetry?: boolean;
+		isPotentialRetry?: boolean | null;
 
 		/** gdata */
-		length?: string;
+		length?: string | null;
 
 		/** gdata */
-		md5Hash?: string;
+		md5Hash?: string | null;
 
 		/** gdata */
-		mediaId?: string;
+		mediaId?: string | null;
 
 		/** gdata */
-		objectId?: GdataObjectId;
+		objectId?: GdataObjectId | null;
 
 		/** gdata */
-		path?: string;
+		path?: string | null;
 
 		/** gdata */
-		referenceType?: GdataMediaReferenceType;
+		referenceType?: GdataMediaReferenceType | null;
 
 		/** gdata */
-		sha1Hash?: string;
+		sha1Hash?: string | null;
 
 		/** gdata */
-		sha256Hash?: string;
+		sha256Hash?: string | null;
 
 		/** gdata */
-		timestamp?: string;
+		timestamp?: string | null;
 
 		/** gdata */
-		token?: string;
+		token?: string | null;
 	}
 
 	export enum GdataMediaReferenceType { PATH = 0, BLOB_REF = 1, INLINE = 2, GET_MEDIA = 3, COMPOSITE_MEDIA = 4, BIGSTORE_REF = 5, DIFF_VERSION_RESPONSE = 6, DIFF_CHECKSUMS_RESPONSE = 7, DIFF_DOWNLOAD_RESPONSE = 8, DIFF_UPLOAD_REQUEST = 9, DIFF_UPLOAD_RESPONSE = 10, COSMO_BINARY_REFERENCE = 11, ARBITRARY_BYTES = 12 }
@@ -286,31 +286,31 @@ export namespace MyNS {
 	export interface Job {
 
 		/** The creation date/time of the job. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * The date/time when this job will expire/expired. After a job expired, no
 		 * new reports are generated.
 		 */
-		expireTime?: string;
+		expireTime?: string | null;
 
 		/** The server-generated ID of the job (max. 40 characters). */
-		id?: string;
+		id?: string | null;
 
 		/** The name of the job (max. 100 characters). */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The type of reports this job creates. Corresponds to the ID of a
 		 * ReportType.
 		 */
-		reportTypeId?: string;
+		reportTypeId?: string | null;
 
 		/**
 		 * True if this a system-managed job that cannot be modified by the user;
 		 * otherwise false.
 		 */
-		systemManaged?: boolean;
+		systemManaged?: boolean | null;
 	}
 
 
@@ -318,7 +318,7 @@ export namespace MyNS {
 	export interface ListJobsResponse {
 
 		/** The list of jobs. */
-		jobs?: Array<Job>;
+		jobs?: Array<Job> | null;
 
 		/**
 		 * A token to retrieve next page of results.
@@ -327,7 +327,7 @@ export namespace MyNS {
 		 * field in the subsequent call to `ListJobs` method to retrieve the next
 		 * page of results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -341,10 +341,10 @@ export namespace MyNS {
 		 * field in the subsequent call to `ListReportTypes` method to retrieve the
 		 * next page of results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The list of report types. */
-		reportTypes?: Array<ReportType>;
+		reportTypes?: Array<ReportType> | null;
 	}
 
 
@@ -352,20 +352,20 @@ export namespace MyNS {
 	export interface ReportType {
 
 		/** The date/time when this report type was/will be deprecated. */
-		deprecateTime?: string;
+		deprecateTime?: string | null;
 
 		/** The ID of the report type (max. 100 characters). */
-		id?: string;
+		id?: string | null;
 
 		/** The name of the report type (max. 100 characters). */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * True if this a system-managed report type; otherwise false. Reporting jobs
 		 * for system-managed report types are created automatically and can thus not
 		 * be used in the `CreateJob` method.
 		 */
-		systemManaged?: boolean;
+		systemManaged?: boolean | null;
 	}
 
 
@@ -379,10 +379,10 @@ export namespace MyNS {
 		 * field in the subsequent call to `ListReports` method to retrieve the next
 		 * page of results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The list of report types. */
-		reports?: Array<Report>;
+		reports?: Array<Report> | null;
 	}
 
 
@@ -393,31 +393,31 @@ export namespace MyNS {
 	export interface Report {
 
 		/** The date/time when this report was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** The URL from which the report can be downloaded (max. 1000 characters). */
-		downloadUrl?: string;
+		downloadUrl?: string | null;
 
 		/**
 		 * The end of the time period that the report instance covers. The value is
 		 * exclusive.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** The server-generated ID of the report. */
-		id?: string;
+		id?: string | null;
 
 		/** The date/time when the job this report belongs to will expire/expired. */
-		jobExpireTime?: string;
+		jobExpireTime?: string | null;
 
 		/** The ID of the job that created this report. */
-		jobId?: string;
+		jobId?: string | null;
 
 		/**
 		 * The start of the time period that the report instance covers. The value is
 		 * inclusive.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 	@Injectable()
@@ -441,7 +441,7 @@ export namespace MyNS {
 		 * returned in response to the previous call to the `ListJobs` method.
 		 * @return {void} Successful response
 		 */
-		Youtubereporting_jobs_list(includeSystemManaged: boolean, onBehalfOfContentOwner: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Youtubereporting_jobs_list(includeSystemManaged: boolean | null | undefined, onBehalfOfContentOwner: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/jobs?includeSystemManaged=' + includeSystemManaged + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -452,7 +452,7 @@ export namespace MyNS {
 		 * not set, the user is acting for himself (his own channel).
 		 * @return {void} Successful response
 		 */
-		Youtubereporting_jobs_create(onBehalfOfContentOwner: string, requestBody: Job): Observable<HttpResponse<string>> {
+		Youtubereporting_jobs_create(onBehalfOfContentOwner: string | null | undefined, requestBody: Job): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/jobs?onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -464,7 +464,7 @@ export namespace MyNS {
 		 * not set, the user is acting for himself (his own channel).
 		 * @return {void} Successful response
 		 */
-		Youtubereporting_jobs_delete(jobId: string, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		Youtubereporting_jobs_delete(jobId: string, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -476,7 +476,7 @@ export namespace MyNS {
 		 * not set, the user is acting for himself (his own channel).
 		 * @return {void} Successful response
 		 */
-		Youtubereporting_jobs_get(jobId: string, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		Youtubereporting_jobs_get(jobId: string, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -500,7 +500,7 @@ export namespace MyNS {
 		 * date/time are returned.
 		 * @return {void} Successful response
 		 */
-		Youtubereporting_jobs_reports_list(jobId: string, createdAfter: string, onBehalfOfContentOwner: string, pageSize: number, pageToken: string, startTimeAtOrAfter: string, startTimeBefore: string): Observable<HttpResponse<string>> {
+		Youtubereporting_jobs_reports_list(jobId: string, createdAfter: string | null | undefined, onBehalfOfContentOwner: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, startTimeAtOrAfter: string | null | undefined, startTimeBefore: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/reports&createdAfter=' + (createdAfter == null ? '' : encodeURIComponent(createdAfter)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startTimeAtOrAfter=' + (startTimeAtOrAfter == null ? '' : encodeURIComponent(startTimeAtOrAfter)) + '&startTimeBefore=' + (startTimeBefore == null ? '' : encodeURIComponent(startTimeBefore)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -513,7 +513,7 @@ export namespace MyNS {
 		 * not set, the user is acting for himself (his own channel).
 		 * @return {void} Successful response
 		 */
-		Youtubereporting_jobs_reports_get(jobId: string, reportId: string, onBehalfOfContentOwner: string): Observable<HttpResponse<string>> {
+		Youtubereporting_jobs_reports_get(jobId: string, reportId: string, onBehalfOfContentOwner: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/reports/' + (reportId == null ? '' : encodeURIComponent(reportId)) + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -544,7 +544,7 @@ export namespace MyNS {
 		 * returned in response to the previous call to the `ListReportTypes` method.
 		 * @return {void} Successful response
 		 */
-		Youtubereporting_reportTypes_list(includeSystemManaged: boolean, onBehalfOfContentOwner: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Youtubereporting_reportTypes_list(includeSystemManaged: boolean | null | undefined, onBehalfOfContentOwner: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/reportTypes?includeSystemManaged=' + includeSystemManaged + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 	}

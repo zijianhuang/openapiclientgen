@@ -5,19 +5,19 @@ export namespace MyNS {
 	export interface CreateCapacityProviderResponse {
 
 		/** The details of a capacity provider. */
-		capacityProvider?: CapacityProvider;
+		capacityProvider?: CapacityProvider | null;
 	}
 
 
 	/** The details of a capacity provider. */
 	export interface CapacityProvider {
-		capacityProviderArn?: string;
-		name?: string;
-		status?: CapacityProviderStatus;
+		capacityProviderArn?: string | null;
+		name?: string | null;
+		status?: CapacityProviderStatus | null;
 
 		/** The details of the Auto Scaling group for the capacity provider. */
-		autoScalingGroupProvider?: AutoScalingGroupProvider;
-		tags?: Array<Tag>;
+		autoScalingGroupProvider?: AutoScalingGroupProvider | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export enum CapacityProviderStatus { ACTIVE = 0 }
@@ -28,17 +28,17 @@ export namespace MyNS {
 		autoScalingGroupArn: string;
 
 		/** <p>The managed scaling settings for the Auto Scaling group capacity provider.</p> <p>When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using an Amazon ECS-managed CloudWatch metric with the specified <code>targetCapacity</code> value as the target value for the metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling">Using Managed Scaling</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.</p> */
-		managedScaling?: ManagedScaling;
-		managedTerminationProtection?: ManagedScalingStatus;
+		managedScaling?: ManagedScaling | null;
+		managedTerminationProtection?: ManagedScalingStatus | null;
 	}
 
 
 	/** <p>The managed scaling settings for the Auto Scaling group capacity provider.</p> <p>When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using an Amazon ECS-managed CloudWatch metric with the specified <code>targetCapacity</code> value as the target value for the metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling">Using Managed Scaling</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.</p> */
 	export interface ManagedScaling {
-		status?: ManagedScalingStatus;
-		targetCapacity?: number;
-		minimumScalingStepSize?: number;
-		maximumScalingStepSize?: number;
+		status?: ManagedScalingStatus | null;
+		targetCapacity?: number | null;
+		minimumScalingStepSize?: number | null;
+		maximumScalingStepSize?: number | null;
 	}
 
 	export enum ManagedScalingStatus { ENABLED = 0, DISABLED = 1 }
@@ -46,8 +46,8 @@ export namespace MyNS {
 
 	/** <p>The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p> <p>The following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> </ul> */
 	export interface Tag {
-		key?: string;
-		value?: string;
+		key?: string | null;
+		value?: string | null;
 	}
 
 	export interface CreateCapacityProviderRequest {
@@ -58,7 +58,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		autoScalingGroupProvider: AutoScalingGroupProvider;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface ServerException {
@@ -76,40 +76,40 @@ export namespace MyNS {
 	export interface CreateClusterResponse {
 
 		/** A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously. */
-		cluster?: Cluster;
+		cluster?: Cluster | null;
 	}
 
 
 	/** A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously. */
 	export interface Cluster {
-		clusterArn?: string;
-		clusterName?: string;
-		status?: string;
-		registeredContainerInstancesCount?: number;
-		runningTasksCount?: number;
-		pendingTasksCount?: number;
-		activeServicesCount?: number;
-		statistics?: Array<KeyValuePair>;
-		tags?: Array<Tag>;
-		settings?: Array<ClusterSetting>;
-		capacityProviders?: Array<string>;
-		defaultCapacityProviderStrategy?: Array<CapacityProviderStrategyItem>;
-		attachments?: Array<Attachment>;
-		attachmentsStatus?: string;
+		clusterArn?: string | null;
+		clusterName?: string | null;
+		status?: string | null;
+		registeredContainerInstancesCount?: number | null;
+		runningTasksCount?: number | null;
+		pendingTasksCount?: number | null;
+		activeServicesCount?: number | null;
+		statistics?: Array<KeyValuePair> | null;
+		tags?: Array<Tag> | null;
+		settings?: Array<ClusterSetting> | null;
+		capacityProviders?: Array<string> | null;
+		defaultCapacityProviderStrategy?: Array<CapacityProviderStrategyItem> | null;
+		attachments?: Array<Attachment> | null;
+		attachmentsStatus?: string | null;
 	}
 
 
 	/** A key-value pair object. */
 	export interface KeyValuePair {
-		name?: string;
-		value?: string;
+		name?: string | null;
+		value?: string | null;
 	}
 
 
 	/** The settings to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a cluster. */
 	export interface ClusterSetting {
-		name?: ClusterSettingName;
-		value?: string;
+		name?: ClusterSettingName | null;
+		value?: string | null;
 	}
 
 	export enum ClusterSettingName { containerInsights = 0 }
@@ -118,89 +118,89 @@ export namespace MyNS {
 	/** The details of a capacity provider strategy. */
 	export interface CapacityProviderStrategyItem {
 		capacityProvider: string;
-		weight?: number;
-		base?: number;
+		weight?: number | null;
+		base?: number | null;
 	}
 
 
 	/** An object representing a container instance or task attachment. */
 	export interface Attachment {
-		id?: string;
-		type?: string;
-		status?: string;
-		details?: Array<KeyValuePair>;
+		id?: string | null;
+		type?: string | null;
+		status?: string | null;
+		details?: Array<KeyValuePair> | null;
 	}
 
 	export interface CreateClusterRequest {
-		clusterName?: string;
-		tags?: Array<Tag>;
-		settings?: Array<ClusterSetting>;
-		capacityProviders?: Array<string>;
-		defaultCapacityProviderStrategy?: Array<CapacityProviderStrategyItem>;
+		clusterName?: string | null;
+		tags?: Array<Tag> | null;
+		settings?: Array<ClusterSetting> | null;
+		capacityProviders?: Array<string> | null;
+		defaultCapacityProviderStrategy?: Array<CapacityProviderStrategyItem> | null;
 	}
 
 	export interface CreateServiceResponse {
 
 		/** Details on a service within a cluster */
-		service?: Service;
+		service?: Service | null;
 	}
 
 
 	/** Details on a service within a cluster */
 	export interface Service {
-		serviceArn?: string;
-		serviceName?: string;
-		clusterArn?: string;
-		loadBalancers?: Array<LoadBalancer>;
-		serviceRegistries?: Array<ServiceRegistry>;
-		status?: string;
-		desiredCount?: number;
-		runningCount?: number;
-		pendingCount?: number;
-		launchType?: ServiceLaunchType;
-		capacityProviderStrategy?: Array<CapacityProviderStrategyItem>;
-		platformVersion?: string;
-		taskDefinition?: string;
+		serviceArn?: string | null;
+		serviceName?: string | null;
+		clusterArn?: string | null;
+		loadBalancers?: Array<LoadBalancer> | null;
+		serviceRegistries?: Array<ServiceRegistry> | null;
+		status?: string | null;
+		desiredCount?: number | null;
+		runningCount?: number | null;
+		pendingCount?: number | null;
+		launchType?: ServiceLaunchType | null;
+		capacityProviderStrategy?: Array<CapacityProviderStrategyItem> | null;
+		platformVersion?: string | null;
+		taskDefinition?: string | null;
 
 		/** Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks. */
-		deploymentConfiguration?: DeploymentConfiguration;
-		taskSets?: Array<TaskSet>;
-		deployments?: Array<Deployment>;
-		roleArn?: string;
-		events?: Array<ServiceEvent>;
-		createdAt?: Date;
-		placementConstraints?: Array<PlacementConstraint>;
-		placementStrategy?: Array<PlacementStrategy>;
+		deploymentConfiguration?: DeploymentConfiguration | null;
+		taskSets?: Array<TaskSet> | null;
+		deployments?: Array<Deployment> | null;
+		roleArn?: string | null;
+		events?: Array<ServiceEvent> | null;
+		createdAt?: Date | null;
+		placementConstraints?: Array<PlacementConstraint> | null;
+		placementStrategy?: Array<PlacementStrategy> | null;
 
 		/** An object representing the network configuration for a task or service. */
-		networkConfiguration?: NetworkConfiguration;
-		healthCheckGracePeriodSeconds?: number;
-		schedulingStrategy?: ServiceSchedulingStrategy;
+		networkConfiguration?: NetworkConfiguration | null;
+		healthCheckGracePeriodSeconds?: number | null;
+		schedulingStrategy?: ServiceSchedulingStrategy | null;
 
 		/** The deployment controller to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
-		deploymentController?: DeploymentController;
-		tags?: Array<Tag>;
-		createdBy?: string;
-		enableECSManagedTags?: boolean;
-		propagateTags?: ServicePropagateTags;
+		deploymentController?: DeploymentController | null;
+		tags?: Array<Tag> | null;
+		createdBy?: string | null;
+		enableECSManagedTags?: boolean | null;
+		propagateTags?: ServicePropagateTags | null;
 	}
 
 
 	/** <p>The load balancer configuration to use with a service or task set.</p> <p>For specific notes and restrictions regarding the use of load balancers with services and task sets, see the CreateService and CreateTaskSet actions.</p> */
 	export interface LoadBalancer {
-		targetGroupArn?: string;
-		loadBalancerName?: string;
-		containerName?: string;
-		containerPort?: number;
+		targetGroupArn?: string | null;
+		loadBalancerName?: string | null;
+		containerName?: string | null;
+		containerPort?: number | null;
 	}
 
 
 	/** Details of the service registry. */
 	export interface ServiceRegistry {
-		registryArn?: string;
-		port?: number;
-		containerName?: string;
-		containerPort?: number;
+		registryArn?: string | null;
+		port?: number | null;
+		containerName?: string | null;
+		containerPort?: number | null;
 	}
 
 	export enum ServiceLaunchType { EC2 = 0, FARGATE = 1 }
@@ -208,40 +208,40 @@ export namespace MyNS {
 
 	/** Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks. */
 	export interface DeploymentConfiguration {
-		maximumPercent?: number;
-		minimumHealthyPercent?: number;
+		maximumPercent?: number | null;
+		minimumHealthyPercent?: number | null;
 	}
 
 
 	/** Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. */
 	export interface TaskSet {
-		id?: string;
-		taskSetArn?: string;
-		serviceArn?: string;
-		clusterArn?: string;
-		startedBy?: string;
-		externalId?: string;
-		status?: string;
-		taskDefinition?: string;
-		computedDesiredCount?: number;
-		pendingCount?: number;
-		runningCount?: number;
-		createdAt?: Date;
-		updatedAt?: Date;
-		launchType?: ServiceLaunchType;
-		capacityProviderStrategy?: Array<CapacityProviderStrategyItem>;
-		platformVersion?: string;
+		id?: string | null;
+		taskSetArn?: string | null;
+		serviceArn?: string | null;
+		clusterArn?: string | null;
+		startedBy?: string | null;
+		externalId?: string | null;
+		status?: string | null;
+		taskDefinition?: string | null;
+		computedDesiredCount?: number | null;
+		pendingCount?: number | null;
+		runningCount?: number | null;
+		createdAt?: Date | null;
+		updatedAt?: Date | null;
+		launchType?: ServiceLaunchType | null;
+		capacityProviderStrategy?: Array<CapacityProviderStrategyItem> | null;
+		platformVersion?: string | null;
 
 		/** An object representing the network configuration for a task or service. */
-		networkConfiguration?: NetworkConfiguration;
-		loadBalancers?: Array<LoadBalancer>;
-		serviceRegistries?: Array<ServiceRegistry>;
+		networkConfiguration?: NetworkConfiguration | null;
+		loadBalancers?: Array<LoadBalancer> | null;
+		serviceRegistries?: Array<ServiceRegistry> | null;
 
 		/** A floating-point percentage of the desired number of tasks to place and keep running in the task set. */
-		scale?: Scale;
-		stabilityStatus?: TaskSetStabilityStatus;
-		stabilityStatusAt?: Date;
-		tags?: Array<Tag>;
+		scale?: Scale | null;
+		stabilityStatus?: TaskSetStabilityStatus | null;
+		stabilityStatusAt?: Date | null;
+		tags?: Array<Tag> | null;
 	}
 
 
@@ -249,22 +249,22 @@ export namespace MyNS {
 	export interface NetworkConfiguration {
 
 		/** An object representing the networking details for a task or service. */
-		awsvpcConfiguration?: AwsVpcConfiguration;
+		awsvpcConfiguration?: AwsVpcConfiguration | null;
 	}
 
 
 	/** An object representing the networking details for a task or service. */
 	export interface AwsVpcConfiguration {
 		subnets: Array<string>;
-		securityGroups?: Array<string>;
-		assignPublicIp?: ManagedScalingStatus;
+		securityGroups?: Array<string> | null;
+		assignPublicIp?: ManagedScalingStatus | null;
 	}
 
 
 	/** A floating-point percentage of the desired number of tasks to place and keep running in the task set. */
 	export interface Scale {
-		value?: number;
-		unit?: ScaleUnit;
+		value?: number | null;
+		unit?: ScaleUnit | null;
 	}
 
 	export enum ScaleUnit { PERCENT = 0 }
@@ -274,35 +274,35 @@ export namespace MyNS {
 
 	/** The details of an Amazon ECS service deployment. This is used only when a service uses the <code>ECS</code> deployment controller type. */
 	export interface Deployment {
-		id?: string;
-		status?: string;
-		taskDefinition?: string;
-		desiredCount?: number;
-		pendingCount?: number;
-		runningCount?: number;
-		createdAt?: Date;
-		updatedAt?: Date;
-		capacityProviderStrategy?: Array<CapacityProviderStrategyItem>;
-		launchType?: ServiceLaunchType;
-		platformVersion?: string;
+		id?: string | null;
+		status?: string | null;
+		taskDefinition?: string | null;
+		desiredCount?: number | null;
+		pendingCount?: number | null;
+		runningCount?: number | null;
+		createdAt?: Date | null;
+		updatedAt?: Date | null;
+		capacityProviderStrategy?: Array<CapacityProviderStrategyItem> | null;
+		launchType?: ServiceLaunchType | null;
+		platformVersion?: string | null;
 
 		/** An object representing the network configuration for a task or service. */
-		networkConfiguration?: NetworkConfiguration;
+		networkConfiguration?: NetworkConfiguration | null;
 	}
 
 
 	/** Details on an event associated with a service. */
 	export interface ServiceEvent {
-		id?: string;
-		createdAt?: Date;
-		message?: string;
+		id?: string | null;
+		createdAt?: Date | null;
+		message?: string | null;
 	}
 
 
 	/** <p>An object representing a constraint on task placement. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note> <p>If you are using the Fargate launch type, task placement constraints are not supported.</p> </note> */
 	export interface PlacementConstraint {
-		type?: PlacementConstraintType;
-		expression?: string;
+		type?: PlacementConstraintType | null;
+		expression?: string | null;
 	}
 
 	export enum PlacementConstraintType { distinctInstance = 0, memberOf = 1 }
@@ -310,8 +310,8 @@ export namespace MyNS {
 
 	/** The task placement strategy for a task or service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task Placement Strategies</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
 	export interface PlacementStrategy {
-		type?: PlacementStrategyType;
-		field?: string;
+		type?: PlacementStrategyType | null;
+		field?: string | null;
 	}
 
 	export enum PlacementStrategyType { random = 0, spread = 1, binpack = 2 }
@@ -329,33 +329,33 @@ export namespace MyNS {
 	export enum ServicePropagateTags { TASK_DEFINITION = 0, SERVICE = 1 }
 
 	export interface CreateServiceRequest {
-		cluster?: string;
+		cluster?: string | null;
 		serviceName: string;
-		taskDefinition?: string;
-		loadBalancers?: Array<LoadBalancer>;
-		serviceRegistries?: Array<ServiceRegistry>;
-		desiredCount?: number;
-		clientToken?: string;
-		launchType?: ServiceLaunchType;
-		capacityProviderStrategy?: Array<CapacityProviderStrategyItem>;
-		platformVersion?: string;
-		role?: string;
+		taskDefinition?: string | null;
+		loadBalancers?: Array<LoadBalancer> | null;
+		serviceRegistries?: Array<ServiceRegistry> | null;
+		desiredCount?: number | null;
+		clientToken?: string | null;
+		launchType?: ServiceLaunchType | null;
+		capacityProviderStrategy?: Array<CapacityProviderStrategyItem> | null;
+		platformVersion?: string | null;
+		role?: string | null;
 
 		/** Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks. */
-		deploymentConfiguration?: DeploymentConfiguration;
-		placementConstraints?: Array<PlacementConstraint>;
-		placementStrategy?: Array<PlacementStrategy>;
+		deploymentConfiguration?: DeploymentConfiguration | null;
+		placementConstraints?: Array<PlacementConstraint> | null;
+		placementStrategy?: Array<PlacementStrategy> | null;
 
 		/** An object representing the network configuration for a task or service. */
-		networkConfiguration?: NetworkConfiguration;
-		healthCheckGracePeriodSeconds?: number;
-		schedulingStrategy?: ServiceSchedulingStrategy;
+		networkConfiguration?: NetworkConfiguration | null;
+		healthCheckGracePeriodSeconds?: number | null;
+		schedulingStrategy?: ServiceSchedulingStrategy | null;
 
 		/** The deployment controller to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
-		deploymentController?: DeploymentController;
-		tags?: Array<Tag>;
-		enableECSManagedTags?: boolean;
-		propagateTags?: ServicePropagateTags;
+		deploymentController?: DeploymentController | null;
+		tags?: Array<Tag> | null;
+		enableECSManagedTags?: boolean | null;
+		propagateTags?: ServicePropagateTags | null;
 	}
 
 	export interface ClusterNotFoundException {
@@ -376,27 +376,27 @@ export namespace MyNS {
 	export interface CreateTaskSetResponse {
 
 		/** Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. */
-		taskSet?: TaskSet;
+		taskSet?: TaskSet | null;
 	}
 
 	export interface CreateTaskSetRequest {
 		service: string;
 		cluster: string;
-		externalId?: string;
+		externalId?: string | null;
 		taskDefinition: string;
 
 		/** An object representing the network configuration for a task or service. */
-		networkConfiguration?: NetworkConfiguration;
-		loadBalancers?: Array<LoadBalancer>;
-		serviceRegistries?: Array<ServiceRegistry>;
-		launchType?: ServiceLaunchType;
-		capacityProviderStrategy?: Array<CapacityProviderStrategyItem>;
-		platformVersion?: string;
+		networkConfiguration?: NetworkConfiguration | null;
+		loadBalancers?: Array<LoadBalancer> | null;
+		serviceRegistries?: Array<ServiceRegistry> | null;
+		launchType?: ServiceLaunchType | null;
+		capacityProviderStrategy?: Array<CapacityProviderStrategyItem> | null;
+		platformVersion?: string | null;
 
 		/** A floating-point percentage of the desired number of tasks to place and keep running in the task set. */
-		scale?: Scale;
-		clientToken?: string;
-		tags?: Array<Tag>;
+		scale?: Scale | null;
+		clientToken?: string | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface ServiceNotFoundException {
@@ -408,41 +408,41 @@ export namespace MyNS {
 	export interface DeleteAccountSettingResponse {
 
 		/** The current account setting for a resource. */
-		setting?: Setting;
+		setting?: Setting | null;
 	}
 
 
 	/** The current account setting for a resource. */
 	export interface Setting {
-		name?: SettingName;
-		value?: string;
-		principalArn?: string;
+		name?: SettingName | null;
+		value?: string | null;
+		principalArn?: string | null;
 	}
 
 	export enum SettingName { serviceLongArnFormat = 0, taskLongArnFormat = 1, containerInstanceLongArnFormat = 2, awsvpcTrunking = 3, containerInsights = 4 }
 
 	export interface DeleteAccountSettingRequest {
 		name: SettingName;
-		principalArn?: string;
+		principalArn?: string | null;
 	}
 
 	export interface DeleteAttributesResponse {
-		attributes?: Array<Attribute>;
+		attributes?: Array<Attribute> | null;
 	}
 
 
 	/** An attribute is a name-value pair associated with an Amazon ECS object. Attributes enable you to extend the Amazon ECS data model by adding custom metadata to your resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
 	export interface Attribute {
 		name: string;
-		value?: string;
-		targetType?: AttributeTargetType;
-		targetId?: string;
+		value?: string | null;
+		targetType?: AttributeTargetType | null;
+		targetId?: string | null;
 	}
 
 	export enum AttributeTargetType { container_instance = 0 }
 
 	export interface DeleteAttributesRequest {
-		cluster?: string;
+		cluster?: string | null;
 		attributes: Array<Attribute>;
 	}
 
@@ -452,7 +452,7 @@ export namespace MyNS {
 	export interface DeleteClusterResponse {
 
 		/** A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously. */
-		cluster?: Cluster;
+		cluster?: Cluster | null;
 	}
 
 	export interface DeleteClusterRequest {
@@ -474,26 +474,26 @@ export namespace MyNS {
 	export interface DeleteServiceResponse {
 
 		/** Details on a service within a cluster */
-		service?: Service;
+		service?: Service | null;
 	}
 
 	export interface DeleteServiceRequest {
-		cluster?: string;
+		cluster?: string | null;
 		service: string;
-		force?: boolean;
+		force?: boolean | null;
 	}
 
 	export interface DeleteTaskSetResponse {
 
 		/** Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. */
-		taskSet?: TaskSet;
+		taskSet?: TaskSet | null;
 	}
 
 	export interface DeleteTaskSetRequest {
 		cluster: string;
 		service: string;
 		taskSet: string;
-		force?: boolean;
+		force?: boolean | null;
 	}
 
 	export interface TaskSetNotFoundException {
@@ -502,144 +502,144 @@ export namespace MyNS {
 	export interface DeregisterContainerInstanceResponse {
 
 		/** An EC2 instance that is running the Amazon ECS agent and has been registered with a cluster. */
-		containerInstance?: ContainerInstance;
+		containerInstance?: ContainerInstance | null;
 	}
 
 
 	/** An EC2 instance that is running the Amazon ECS agent and has been registered with a cluster. */
 	export interface ContainerInstance {
-		containerInstanceArn?: string;
-		ec2InstanceId?: string;
-		capacityProviderName?: string;
-		version?: number;
+		containerInstanceArn?: string | null;
+		ec2InstanceId?: string | null;
+		capacityProviderName?: string | null;
+		version?: number | null;
 
 		/** The Docker and Amazon ECS container agent version information about a container instance. */
-		versionInfo?: VersionInfo;
-		remainingResources?: Array<Resource>;
-		registeredResources?: Array<Resource>;
-		status?: string;
-		statusReason?: string;
-		agentConnected?: boolean;
-		runningTasksCount?: number;
-		pendingTasksCount?: number;
-		agentUpdateStatus?: ContainerInstanceAgentUpdateStatus;
-		attributes?: Array<Attribute>;
-		registeredAt?: Date;
-		attachments?: Array<Attachment>;
-		tags?: Array<Tag>;
+		versionInfo?: VersionInfo | null;
+		remainingResources?: Array<Resource> | null;
+		registeredResources?: Array<Resource> | null;
+		status?: string | null;
+		statusReason?: string | null;
+		agentConnected?: boolean | null;
+		runningTasksCount?: number | null;
+		pendingTasksCount?: number | null;
+		agentUpdateStatus?: ContainerInstanceAgentUpdateStatus | null;
+		attributes?: Array<Attribute> | null;
+		registeredAt?: Date | null;
+		attachments?: Array<Attachment> | null;
+		tags?: Array<Tag> | null;
 	}
 
 
 	/** The Docker and Amazon ECS container agent version information about a container instance. */
 	export interface VersionInfo {
-		agentVersion?: string;
-		agentHash?: string;
-		dockerVersion?: string;
+		agentVersion?: string | null;
+		agentHash?: string | null;
+		dockerVersion?: string | null;
 	}
 
 
 	/** Describes the resources available for a container instance. */
 	export interface Resource {
-		name?: string;
-		type?: string;
-		doubleValue?: number;
-		longValue?: number;
-		integerValue?: number;
-		stringSetValue?: Array<string>;
+		name?: string | null;
+		type?: string | null;
+		doubleValue?: number | null;
+		longValue?: number | null;
+		integerValue?: number | null;
+		stringSetValue?: Array<string> | null;
 	}
 
 	export enum ContainerInstanceAgentUpdateStatus { PENDING = 0, STAGING = 1, STAGED = 2, UPDATING = 3, UPDATED = 4, FAILED = 5 }
 
 	export interface DeregisterContainerInstanceRequest {
-		cluster?: string;
+		cluster?: string | null;
 		containerInstance: string;
-		force?: boolean;
+		force?: boolean | null;
 	}
 
 	export interface DeregisterTaskDefinitionResponse {
 
 		/** The details of a task definition which describes the container and volume definitions of an Amazon Elastic Container Service task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task. */
-		taskDefinition?: TaskDefinition;
+		taskDefinition?: TaskDefinition | null;
 	}
 
 
 	/** The details of a task definition which describes the container and volume definitions of an Amazon Elastic Container Service task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task. */
 	export interface TaskDefinition {
-		taskDefinitionArn?: string;
-		containerDefinitions?: Array<ContainerDefinition>;
-		family?: string;
-		taskRoleArn?: string;
-		executionRoleArn?: string;
-		networkMode?: TaskDefinitionNetworkMode;
-		revision?: number;
-		volumes?: Array<Volume>;
-		status?: TaskDefinitionStatus;
-		requiresAttributes?: Array<Attribute>;
-		placementConstraints?: Array<TaskDefinitionPlacementConstraint>;
-		compatibilities?: Array<Compatibility>;
-		requiresCompatibilities?: Array<Compatibility>;
-		cpu?: string;
-		memory?: string;
-		inferenceAccelerators?: Array<InferenceAccelerator>;
-		pidMode?: TaskDefinitionPidMode;
-		ipcMode?: TaskDefinitionIpcMode;
+		taskDefinitionArn?: string | null;
+		containerDefinitions?: Array<ContainerDefinition> | null;
+		family?: string | null;
+		taskRoleArn?: string | null;
+		executionRoleArn?: string | null;
+		networkMode?: TaskDefinitionNetworkMode | null;
+		revision?: number | null;
+		volumes?: Array<Volume> | null;
+		status?: TaskDefinitionStatus | null;
+		requiresAttributes?: Array<Attribute> | null;
+		placementConstraints?: Array<TaskDefinitionPlacementConstraint> | null;
+		compatibilities?: Array<Compatibility> | null;
+		requiresCompatibilities?: Array<Compatibility> | null;
+		cpu?: string | null;
+		memory?: string | null;
+		inferenceAccelerators?: Array<InferenceAccelerator> | null;
+		pidMode?: TaskDefinitionPidMode | null;
+		ipcMode?: TaskDefinitionIpcMode | null;
 
 		/** <p>The configuration details for the App Mesh proxy.</p> <p>For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later.</p> */
-		proxyConfiguration?: ProxyConfiguration;
+		proxyConfiguration?: ProxyConfiguration | null;
 	}
 
 
 	/** Container definitions are used in task definitions to describe the different containers that are launched as part of a task. */
 	export interface ContainerDefinition {
-		name?: string;
-		image?: string;
+		name?: string | null;
+		image?: string | null;
 
 		/** The repository credentials for private registry authentication. */
-		repositoryCredentials?: RepositoryCredentials;
-		cpu?: number;
-		memory?: number;
-		memoryReservation?: number;
-		links?: Array<string>;
-		portMappings?: Array<PortMapping>;
-		essential?: boolean;
-		entryPoint?: Array<string>;
-		command?: Array<string>;
-		environment?: Array<KeyValuePair>;
-		environmentFiles?: Array<EnvironmentFile>;
-		mountPoints?: Array<MountPoint>;
-		volumesFrom?: Array<VolumeFrom>;
+		repositoryCredentials?: RepositoryCredentials | null;
+		cpu?: number | null;
+		memory?: number | null;
+		memoryReservation?: number | null;
+		links?: Array<string> | null;
+		portMappings?: Array<PortMapping> | null;
+		essential?: boolean | null;
+		entryPoint?: Array<string> | null;
+		command?: Array<string> | null;
+		environment?: Array<KeyValuePair> | null;
+		environmentFiles?: Array<EnvironmentFile> | null;
+		mountPoints?: Array<MountPoint> | null;
+		volumesFrom?: Array<VolumeFrom> | null;
 
 		/** Linux-specific options that are applied to the container, such as Linux <a>KernelCapabilities</a>. */
-		linuxParameters?: LinuxParameters;
-		secrets?: Array<Secret>;
-		dependsOn?: Array<ContainerDependency>;
-		startTimeout?: number;
-		stopTimeout?: number;
-		hostname?: string;
-		user?: string;
-		workingDirectory?: string;
-		disableNetworking?: boolean;
-		privileged?: boolean;
-		readonlyRootFilesystem?: boolean;
-		dnsServers?: Array<string>;
-		dnsSearchDomains?: Array<string>;
-		extraHosts?: Array<HostEntry>;
-		dockerSecurityOptions?: Array<string>;
-		interactive?: boolean;
-		pseudoTerminal?: boolean;
-		dockerLabels?: DockerLabelsMap;
-		ulimits?: Array<Ulimit>;
+		linuxParameters?: LinuxParameters | null;
+		secrets?: Array<Secret> | null;
+		dependsOn?: Array<ContainerDependency> | null;
+		startTimeout?: number | null;
+		stopTimeout?: number | null;
+		hostname?: string | null;
+		user?: string | null;
+		workingDirectory?: string | null;
+		disableNetworking?: boolean | null;
+		privileged?: boolean | null;
+		readonlyRootFilesystem?: boolean | null;
+		dnsServers?: Array<string> | null;
+		dnsSearchDomains?: Array<string> | null;
+		extraHosts?: Array<HostEntry> | null;
+		dockerSecurityOptions?: Array<string> | null;
+		interactive?: boolean | null;
+		pseudoTerminal?: boolean | null;
+		dockerLabels?: DockerLabelsMap | null;
+		ulimits?: Array<Ulimit> | null;
 
 		/** <p>The log configuration specification for the container.</p> <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>. By default, containers use the same logging driver that the Docker daemon uses; however the container may use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <p>The following should be noted when specifying a log configuration for your containers:</p> <ul> <li> <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the valid values below). Additional log drivers may be available in future releases of the Amazon ECS container agent.</p> </li> <li> <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p> </li> <li> <p>For tasks using the EC2 launch type, the Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li> <li> <p>For tasks using the Fargate launch type, because you do not have access to the underlying infrastructure your tasks are hosted on, any additional software needed will have to be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.</p> </li> </ul> */
-		logConfiguration?: LogConfiguration;
+		logConfiguration?: LogConfiguration | null;
 
 		/** <p>An object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile).</p> <p>You can view the health status of both individual containers and a task with the DescribeTasks API operation or when viewing the task details in the console.</p> <p>The following describes the possible <code>healthStatus</code> values for a container:</p> <ul> <li> <p> <code>HEALTHY</code>-The container health check has passed successfully.</p> </li> <li> <p> <code>UNHEALTHY</code>-The container health check has failed.</p> </li> <li> <p> <code>UNKNOWN</code>-The container health check is being evaluated or there is no container health check defined.</p> </li> </ul> <p>The following describes the possible <code>healthStatus</code> values for a task. The container health check status of nonessential containers do not have an effect on the health status of a task.</p> <ul> <li> <p> <code>HEALTHY</code>-All essential containers within the task have passed their health checks.</p> </li> <li> <p> <code>UNHEALTHY</code>-One or more essential containers have failed their health check.</p> </li> <li> <p> <code>UNKNOWN</code>-The essential containers within the task are still having their health checks evaluated or there are no container health checks defined.</p> </li> </ul> <p>If a task is run manually, and not as part of a service, the task will continue its lifecycle regardless of its health status. For tasks that are part of a service, if the task reports as unhealthy then the task will be stopped and the service scheduler will replace it.</p> <p>The following are notes about container health check support:</p> <ul> <li> <p>Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a>.</p> </li> <li> <p>Container health checks are supported for Fargate tasks if you are using platform version 1.1.0 or greater. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform Versions</a>.</p> </li> <li> <p>Container health checks are not supported for tasks that are part of a service that is configured to use a Classic Load Balancer.</p> </li> </ul> */
-		healthCheck?: HealthCheck;
-		systemControls?: Array<SystemControl>;
-		resourceRequirements?: Array<ResourceRequirement>;
+		healthCheck?: HealthCheck | null;
+		systemControls?: Array<SystemControl> | null;
+		resourceRequirements?: Array<ResourceRequirement> | null;
 
 		/** The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
-		firelensConfiguration?: FirelensConfiguration;
+		firelensConfiguration?: FirelensConfiguration | null;
 	}
 
 
@@ -651,9 +651,9 @@ export namespace MyNS {
 
 	/** <p>Port mappings allow containers to access ports on the host container instance to send or receive traffic. Port mappings are specified as part of the container definition.</p> <p>If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports should be specified using <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as the <code>containerPort</code>.</p> <p>After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.</p> */
 	export interface PortMapping {
-		containerPort?: number;
-		hostPort?: number;
-		protocol?: PortMappingProtocol;
+		containerPort?: number | null;
+		hostPort?: number | null;
+		protocol?: PortMappingProtocol | null;
 	}
 
 	export enum PortMappingProtocol { tcp = 0, udp = 1 }
@@ -670,16 +670,16 @@ export namespace MyNS {
 
 	/** Details on a volume mount point that is used in a container definition. */
 	export interface MountPoint {
-		sourceVolume?: string;
-		containerPath?: string;
-		readOnly?: boolean;
+		sourceVolume?: string | null;
+		containerPath?: string | null;
+		readOnly?: boolean | null;
 	}
 
 
 	/** Details on a data volume from another container in the same task definition. */
 	export interface VolumeFrom {
-		sourceContainer?: string;
-		readOnly?: boolean;
+		sourceContainer?: string | null;
+		readOnly?: boolean | null;
 	}
 
 
@@ -687,28 +687,28 @@ export namespace MyNS {
 	export interface LinuxParameters {
 
 		/** The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker. For more information on the default capabilities and the non-default available capabilities, see <a href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities">Runtime privilege and Linux capabilities</a> in the <i>Docker run reference</i>. For more detailed information on these Linux capabilities, see the <a href="http://man7.org/linux/man-pages/man7/capabilities.7.html">capabilities(7)</a> Linux manual page. */
-		capabilities?: KernelCapabilities;
-		devices?: Array<Device>;
-		initProcessEnabled?: boolean;
-		sharedMemorySize?: number;
-		tmpfs?: Array<Tmpfs>;
-		maxSwap?: number;
-		swappiness?: number;
+		capabilities?: KernelCapabilities | null;
+		devices?: Array<Device> | null;
+		initProcessEnabled?: boolean | null;
+		sharedMemorySize?: number | null;
+		tmpfs?: Array<Tmpfs> | null;
+		maxSwap?: number | null;
+		swappiness?: number | null;
 	}
 
 
 	/** The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker. For more information on the default capabilities and the non-default available capabilities, see <a href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities">Runtime privilege and Linux capabilities</a> in the <i>Docker run reference</i>. For more detailed information on these Linux capabilities, see the <a href="http://man7.org/linux/man-pages/man7/capabilities.7.html">capabilities(7)</a> Linux manual page. */
 	export interface KernelCapabilities {
-		add?: Array<string>;
-		drop?: Array<string>;
+		add?: Array<string> | null;
+		drop?: Array<string> | null;
 	}
 
 
 	/** An object representing a container instance host device. */
 	export interface Device {
 		hostPath: string;
-		containerPath?: string;
-		permissions?: Array<DeviceCgroupPermission>;
+		containerPath?: string | null;
+		permissions?: Array<DeviceCgroupPermission> | null;
 	}
 
 	export enum DeviceCgroupPermission { read = 0, write = 1, mknod = 2 }
@@ -718,7 +718,7 @@ export namespace MyNS {
 	export interface Tmpfs {
 		containerPath: string;
 		size: number;
-		mountOptions?: Array<string>;
+		mountOptions?: Array<string> | null;
 	}
 
 
@@ -761,8 +761,8 @@ export namespace MyNS {
 	/** <p>The log configuration specification for the container.</p> <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>. By default, containers use the same logging driver that the Docker daemon uses; however the container may use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <p>The following should be noted when specifying a log configuration for your containers:</p> <ul> <li> <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the valid values below). Additional log drivers may be available in future releases of the Amazon ECS container agent.</p> </li> <li> <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p> </li> <li> <p>For tasks using the EC2 launch type, the Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li> <li> <p>For tasks using the Fargate launch type, because you do not have access to the underlying infrastructure your tasks are hosted on, any additional software needed will have to be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.</p> </li> </ul> */
 	export interface LogConfiguration {
 		logDriver: LogConfigurationLogDriver;
-		options?: LogConfigurationOptionsMap;
-		secretOptions?: Array<Secret>;
+		options?: LogConfigurationOptionsMap | null;
+		secretOptions?: Array<Secret> | null;
 	}
 
 	export enum LogConfigurationLogDriver { json_file = 0, syslog = 1, journald = 2, gelf = 3, fluentd = 4, awslogs = 5, splunk = 6, awsfirelens = 7 }
@@ -774,17 +774,17 @@ export namespace MyNS {
 	/** <p>An object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile).</p> <p>You can view the health status of both individual containers and a task with the DescribeTasks API operation or when viewing the task details in the console.</p> <p>The following describes the possible <code>healthStatus</code> values for a container:</p> <ul> <li> <p> <code>HEALTHY</code>-The container health check has passed successfully.</p> </li> <li> <p> <code>UNHEALTHY</code>-The container health check has failed.</p> </li> <li> <p> <code>UNKNOWN</code>-The container health check is being evaluated or there is no container health check defined.</p> </li> </ul> <p>The following describes the possible <code>healthStatus</code> values for a task. The container health check status of nonessential containers do not have an effect on the health status of a task.</p> <ul> <li> <p> <code>HEALTHY</code>-All essential containers within the task have passed their health checks.</p> </li> <li> <p> <code>UNHEALTHY</code>-One or more essential containers have failed their health check.</p> </li> <li> <p> <code>UNKNOWN</code>-The essential containers within the task are still having their health checks evaluated or there are no container health checks defined.</p> </li> </ul> <p>If a task is run manually, and not as part of a service, the task will continue its lifecycle regardless of its health status. For tasks that are part of a service, if the task reports as unhealthy then the task will be stopped and the service scheduler will replace it.</p> <p>The following are notes about container health check support:</p> <ul> <li> <p>Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS Container Agent</a>.</p> </li> <li> <p>Container health checks are supported for Fargate tasks if you are using platform version 1.1.0 or greater. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform Versions</a>.</p> </li> <li> <p>Container health checks are not supported for tasks that are part of a service that is configured to use a Classic Load Balancer.</p> </li> </ul> */
 	export interface HealthCheck {
 		command: Array<string>;
-		interval?: number;
-		timeout?: number;
-		retries?: number;
-		startPeriod?: number;
+		interval?: number | null;
+		timeout?: number | null;
+		retries?: number | null;
+		startPeriod?: number | null;
 	}
 
 
 	/** <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network mode for the following reasons:</p> <ul> <li> <p>For tasks that use the <code>awsvpc</code> network mode, if you set <code>systemControls</code> for any container, it applies to all containers in the task. If you set different <code>systemControls</code> for multiple containers in a single task, the container that is started last determines which <code>systemControls</code> take effect.</p> </li> <li> <p>For tasks that use the <code>host</code> network mode, the <code>systemControls</code> parameter applies to the container instance's kernel parameter as well as that of all containers of any tasks running on that container instance.</p> </li> </ul> */
 	export interface SystemControl {
-		namespace?: string;
-		value?: string;
+		namespace?: string | null;
+		value?: string | null;
 	}
 
 
@@ -800,7 +800,7 @@ export namespace MyNS {
 	/** The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
 	export interface FirelensConfiguration {
 		type: FirelensConfigurationType;
-		options?: FirelensConfigurationOptionsMap;
+		options?: FirelensConfigurationOptionsMap | null;
 	}
 
 	export enum FirelensConfigurationType { fluentd = 0, fluentbit = 1 }
@@ -813,32 +813,32 @@ export namespace MyNS {
 
 	/** A data volume used in a task definition. For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and optional <code>sourcePath</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using Data Volumes in Tasks</a>. */
 	export interface Volume {
-		name?: string;
+		name?: string | null;
 
 		/** Details on a container instance bind mount host volume. */
-		host?: HostVolumeProperties;
+		host?: HostVolumeProperties | null;
 
 		/** This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you are using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify a <code>host</code> instead. */
-		dockerVolumeConfiguration?: DockerVolumeConfiguration;
+		dockerVolumeConfiguration?: DockerVolumeConfiguration | null;
 
 		/** This parameter is specified when you are using an Amazon Elastic File System file system for task storage. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html">Amazon EFS Volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
-		efsVolumeConfiguration?: EFSVolumeConfiguration;
+		efsVolumeConfiguration?: EFSVolumeConfiguration | null;
 	}
 
 
 	/** Details on a container instance bind mount host volume. */
 	export interface HostVolumeProperties {
-		sourcePath?: string;
+		sourcePath?: string | null;
 	}
 
 
 	/** This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you are using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify a <code>host</code> instead. */
 	export interface DockerVolumeConfiguration {
-		scope?: DockerVolumeConfigurationScope;
-		autoprovision?: boolean;
-		driver?: string;
-		driverOpts?: StringMap;
-		labels?: StringMap;
+		scope?: DockerVolumeConfigurationScope | null;
+		autoprovision?: boolean | null;
+		driver?: string | null;
+		driverOpts?: StringMap | null;
+		labels?: StringMap | null;
 	}
 
 	export enum DockerVolumeConfigurationScope { task = 0, shared = 1 }
@@ -850,19 +850,19 @@ export namespace MyNS {
 	/** This parameter is specified when you are using an Amazon Elastic File System file system for task storage. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html">Amazon EFS Volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
 	export interface EFSVolumeConfiguration {
 		fileSystemId: string;
-		rootDirectory?: string;
-		transitEncryption?: ManagedScalingStatus;
-		transitEncryptionPort?: number;
+		rootDirectory?: string | null;
+		transitEncryption?: ManagedScalingStatus | null;
+		transitEncryptionPort?: number | null;
 
 		/** The authorization configuration details for the Amazon EFS file system. */
-		authorizationConfig?: EFSAuthorizationConfig;
+		authorizationConfig?: EFSAuthorizationConfig | null;
 	}
 
 
 	/** The authorization configuration details for the Amazon EFS file system. */
 	export interface EFSAuthorizationConfig {
-		accessPointId?: string;
-		iam?: ManagedScalingStatus;
+		accessPointId?: string | null;
+		iam?: ManagedScalingStatus | null;
 	}
 
 	export enum TaskDefinitionStatus { ACTIVE = 0, INACTIVE = 1 }
@@ -870,8 +870,8 @@ export namespace MyNS {
 
 	/** <p>An object representing a constraint on task placement in the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note> <p>If you are using the Fargate launch type, task placement constraints are not supported.</p> </note> */
 	export interface TaskDefinitionPlacementConstraint {
-		type?: TaskDefinitionPlacementConstraintType;
-		expression?: string;
+		type?: TaskDefinitionPlacementConstraintType | null;
+		expression?: string | null;
 	}
 
 	export enum TaskDefinitionPlacementConstraintType { memberOf = 0 }
@@ -892,9 +892,9 @@ export namespace MyNS {
 
 	/** <p>The configuration details for the App Mesh proxy.</p> <p>For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later.</p> */
 	export interface ProxyConfiguration {
-		type?: ProxyConfigurationType;
+		type?: ProxyConfigurationType | null;
 		containerName: string;
-		properties?: Array<KeyValuePair>;
+		properties?: Array<KeyValuePair> | null;
 	}
 
 	export enum ProxyConfigurationType { APPMESH = 0 }
@@ -904,62 +904,62 @@ export namespace MyNS {
 	}
 
 	export interface DescribeCapacityProvidersResponse {
-		capacityProviders?: Array<CapacityProvider>;
-		failures?: Array<Failure>;
-		nextToken?: string;
+		capacityProviders?: Array<CapacityProvider> | null;
+		failures?: Array<Failure> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** A failed resource. */
 	export interface Failure {
-		arn?: string;
-		reason?: string;
-		detail?: string;
+		arn?: string | null;
+		reason?: string | null;
+		detail?: string | null;
 	}
 
 	export interface DescribeCapacityProvidersRequest {
-		capacityProviders?: Array<string>;
-		include?: Array<CapacityProviderField>;
-		maxResults?: number;
-		nextToken?: string;
+		capacityProviders?: Array<string> | null;
+		include?: Array<CapacityProviderField> | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export enum CapacityProviderField { TAGS = 0 }
 
 	export interface DescribeClustersResponse {
-		clusters?: Array<Cluster>;
-		failures?: Array<Failure>;
+		clusters?: Array<Cluster> | null;
+		failures?: Array<Failure> | null;
 	}
 
 	export interface DescribeClustersRequest {
-		clusters?: Array<string>;
-		include?: Array<ClusterField>;
+		clusters?: Array<string> | null;
+		include?: Array<ClusterField> | null;
 	}
 
 	export enum ClusterField { ATTACHMENTS = 0, SETTINGS = 1, STATISTICS = 2, TAGS = 3 }
 
 	export interface DescribeContainerInstancesResponse {
-		containerInstances?: Array<ContainerInstance>;
-		failures?: Array<Failure>;
+		containerInstances?: Array<ContainerInstance> | null;
+		failures?: Array<Failure> | null;
 	}
 
 	export interface DescribeContainerInstancesRequest {
-		cluster?: string;
+		cluster?: string | null;
 		containerInstances: Array<string>;
-		include?: Array<ContainerInstanceField>;
+		include?: Array<ContainerInstanceField> | null;
 	}
 
 	export enum ContainerInstanceField { TAGS = 0 }
 
 	export interface DescribeServicesResponse {
-		services?: Array<Service>;
-		failures?: Array<Failure>;
+		services?: Array<Service> | null;
+		failures?: Array<Failure> | null;
 	}
 
 	export interface DescribeServicesRequest {
-		cluster?: string;
+		cluster?: string | null;
 		services: Array<string>;
-		include?: Array<ServiceField>;
+		include?: Array<ServiceField> | null;
 	}
 
 	export enum ServiceField { TAGS = 0 }
@@ -967,74 +967,74 @@ export namespace MyNS {
 	export interface DescribeTaskDefinitionResponse {
 
 		/** The details of a task definition which describes the container and volume definitions of an Amazon Elastic Container Service task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task. */
-		taskDefinition?: TaskDefinition;
-		tags?: Array<Tag>;
+		taskDefinition?: TaskDefinition | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface DescribeTaskDefinitionRequest {
 		taskDefinition: string;
-		include?: Array<TaskDefinitionField>;
+		include?: Array<TaskDefinitionField> | null;
 	}
 
 	export enum TaskDefinitionField { TAGS = 0 }
 
 	export interface DescribeTaskSetsResponse {
-		taskSets?: Array<TaskSet>;
-		failures?: Array<Failure>;
+		taskSets?: Array<TaskSet> | null;
+		failures?: Array<Failure> | null;
 	}
 
 	export interface DescribeTaskSetsRequest {
 		cluster: string;
 		service: string;
-		taskSets?: Array<string>;
-		include?: Array<TaskSetField>;
+		taskSets?: Array<string> | null;
+		include?: Array<TaskSetField> | null;
 	}
 
 	export enum TaskSetField { TAGS = 0 }
 
 	export interface DescribeTasksResponse {
-		tasks?: Array<Task_>;
-		failures?: Array<Failure>;
+		tasks?: Array<Task_> | null;
+		failures?: Array<Failure> | null;
 	}
 
 
 	/** Details on a task in a cluster. */
 	export interface Task_ {
-		attachments?: Array<Attachment>;
-		attributes?: Array<Attribute>;
-		availabilityZone?: string;
-		capacityProviderName?: string;
-		clusterArn?: string;
-		connectivity?: Task_Connectivity;
-		connectivityAt?: Date;
-		containerInstanceArn?: string;
-		containers?: Array<Container>;
-		cpu?: string;
-		createdAt?: Date;
-		desiredStatus?: string;
-		executionStoppedAt?: Date;
-		group?: string;
-		healthStatus?: ContainerHealthStatus;
-		inferenceAccelerators?: Array<InferenceAccelerator>;
-		lastStatus?: string;
-		launchType?: ServiceLaunchType;
-		memory?: string;
+		attachments?: Array<Attachment> | null;
+		attributes?: Array<Attribute> | null;
+		availabilityZone?: string | null;
+		capacityProviderName?: string | null;
+		clusterArn?: string | null;
+		connectivity?: Task_Connectivity | null;
+		connectivityAt?: Date | null;
+		containerInstanceArn?: string | null;
+		containers?: Array<Container> | null;
+		cpu?: string | null;
+		createdAt?: Date | null;
+		desiredStatus?: string | null;
+		executionStoppedAt?: Date | null;
+		group?: string | null;
+		healthStatus?: ContainerHealthStatus | null;
+		inferenceAccelerators?: Array<InferenceAccelerator> | null;
+		lastStatus?: string | null;
+		launchType?: ServiceLaunchType | null;
+		memory?: string | null;
 
 		/** The overrides associated with a task. */
-		overrides?: TaskOverride;
-		platformVersion?: string;
-		pullStartedAt?: Date;
-		pullStoppedAt?: Date;
-		startedAt?: Date;
-		startedBy?: string;
-		stopCode?: Task_StopCode;
-		stoppedAt?: Date;
-		stoppedReason?: string;
-		stoppingAt?: Date;
-		tags?: Array<Tag>;
-		taskArn?: string;
-		taskDefinitionArn?: string;
-		version?: number;
+		overrides?: TaskOverride | null;
+		platformVersion?: string | null;
+		pullStartedAt?: Date | null;
+		pullStoppedAt?: Date | null;
+		startedAt?: Date | null;
+		startedBy?: string | null;
+		stopCode?: Task_StopCode | null;
+		stoppedAt?: Date | null;
+		stoppedReason?: string | null;
+		stoppingAt?: Date | null;
+		tags?: Array<Tag> | null;
+		taskArn?: string | null;
+		taskDefinitionArn?: string | null;
+		version?: number | null;
 	}
 
 	export enum Task_Connectivity { CONNECTED = 0, DISCONNECTED = 1 }
@@ -1042,39 +1042,39 @@ export namespace MyNS {
 
 	/** A Docker container that is part of a task. */
 	export interface Container {
-		containerArn?: string;
-		taskArn?: string;
-		name?: string;
-		image?: string;
-		imageDigest?: string;
-		runtimeId?: string;
-		lastStatus?: string;
-		exitCode?: number;
-		reason?: string;
-		networkBindings?: Array<NetworkBinding>;
-		networkInterfaces?: Array<NetworkInterface>;
-		healthStatus?: ContainerHealthStatus;
-		cpu?: string;
-		memory?: string;
-		memoryReservation?: string;
-		gpuIds?: Array<string>;
+		containerArn?: string | null;
+		taskArn?: string | null;
+		name?: string | null;
+		image?: string | null;
+		imageDigest?: string | null;
+		runtimeId?: string | null;
+		lastStatus?: string | null;
+		exitCode?: number | null;
+		reason?: string | null;
+		networkBindings?: Array<NetworkBinding> | null;
+		networkInterfaces?: Array<NetworkInterface> | null;
+		healthStatus?: ContainerHealthStatus | null;
+		cpu?: string | null;
+		memory?: string | null;
+		memoryReservation?: string | null;
+		gpuIds?: Array<string> | null;
 	}
 
 
 	/** Details on the network bindings between a container and its host container instance. After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <a>DescribeTasks</a> API responses. */
 	export interface NetworkBinding {
-		bindIP?: string;
-		containerPort?: number;
-		hostPort?: number;
-		protocol?: PortMappingProtocol;
+		bindIP?: string | null;
+		containerPort?: number | null;
+		hostPort?: number | null;
+		protocol?: PortMappingProtocol | null;
 	}
 
 
 	/** An object representing the elastic network interface for tasks that use the <code>awsvpc</code> network mode. */
 	export interface NetworkInterface {
-		attachmentId?: string;
-		privateIpv4Address?: string;
-		ipv6Address?: string;
+		attachmentId?: string | null;
+		privateIpv4Address?: string | null;
+		ipv6Address?: string | null;
 	}
 
 	export enum ContainerHealthStatus { HEALTHY = 0, UNHEALTHY = 1, UNKNOWN = 2 }
@@ -1082,124 +1082,124 @@ export namespace MyNS {
 
 	/** The overrides associated with a task. */
 	export interface TaskOverride {
-		containerOverrides?: Array<ContainerOverride>;
-		cpu?: string;
-		inferenceAcceleratorOverrides?: Array<InferenceAcceleratorOverride>;
-		executionRoleArn?: string;
-		memory?: string;
-		taskRoleArn?: string;
+		containerOverrides?: Array<ContainerOverride> | null;
+		cpu?: string | null;
+		inferenceAcceleratorOverrides?: Array<InferenceAcceleratorOverride> | null;
+		executionRoleArn?: string | null;
+		memory?: string | null;
+		taskRoleArn?: string | null;
 	}
 
 
 	/** The overrides that should be sent to a container. An empty container override can be passed in. An example of an empty container override would be <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is specified, the <code>name</code> parameter must be included. */
 	export interface ContainerOverride {
-		name?: string;
-		command?: Array<string>;
-		environment?: Array<KeyValuePair>;
-		environmentFiles?: Array<EnvironmentFile>;
-		cpu?: number;
-		memory?: number;
-		memoryReservation?: number;
-		resourceRequirements?: Array<ResourceRequirement>;
+		name?: string | null;
+		command?: Array<string> | null;
+		environment?: Array<KeyValuePair> | null;
+		environmentFiles?: Array<EnvironmentFile> | null;
+		cpu?: number | null;
+		memory?: number | null;
+		memoryReservation?: number | null;
+		resourceRequirements?: Array<ResourceRequirement> | null;
 	}
 
 
 	/** Details on an Elastic Inference accelerator task override. This parameter is used to override the Elastic Inference accelerator specified in the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. */
 	export interface InferenceAcceleratorOverride {
-		deviceName?: string;
-		deviceType?: string;
+		deviceName?: string | null;
+		deviceType?: string | null;
 	}
 
 	export enum Task_StopCode { TaskFailedToStart = 0, EssentialContainerExited = 1, UserInitiated = 2 }
 
 	export interface DescribeTasksRequest {
-		cluster?: string;
+		cluster?: string | null;
 		tasks: Array<string>;
-		include?: Array<TaskField>;
+		include?: Array<TaskField> | null;
 	}
 
 	export enum TaskField { TAGS = 0 }
 
 	export interface DiscoverPollEndpointResponse {
-		endpoint?: string;
-		telemetryEndpoint?: string;
+		endpoint?: string | null;
+		telemetryEndpoint?: string | null;
 	}
 
 	export interface DiscoverPollEndpointRequest {
-		containerInstance?: string;
-		cluster?: string;
+		containerInstance?: string | null;
+		cluster?: string | null;
 	}
 
 	export interface ListAccountSettingsResponse {
-		settings?: Array<Setting>;
-		nextToken?: string;
+		settings?: Array<Setting> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListAccountSettingsRequest {
-		name?: SettingName;
-		value?: string;
-		principalArn?: string;
-		effectiveSettings?: boolean;
-		nextToken?: string;
-		maxResults?: number;
+		name?: SettingName | null;
+		value?: string | null;
+		principalArn?: string | null;
+		effectiveSettings?: boolean | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListAttributesResponse {
-		attributes?: Array<Attribute>;
-		nextToken?: string;
+		attributes?: Array<Attribute> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListAttributesRequest {
-		cluster?: string;
+		cluster?: string | null;
 		targetType: ListAttributesRequestTargetType;
-		attributeName?: string;
-		attributeValue?: string;
-		nextToken?: string;
-		maxResults?: number;
+		attributeName?: string | null;
+		attributeValue?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export enum ListAttributesRequestTargetType { container_instance = 0 }
 
 	export interface ListClustersResponse {
-		clusterArns?: Array<string>;
-		nextToken?: string;
+		clusterArns?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListClustersRequest {
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListContainerInstancesResponse {
-		containerInstanceArns?: Array<string>;
-		nextToken?: string;
+		containerInstanceArns?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListContainerInstancesRequest {
-		cluster?: string;
-		filter?: string;
-		nextToken?: string;
-		maxResults?: number;
-		status?: ListContainerInstancesRequestStatus;
+		cluster?: string | null;
+		filter?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		status?: ListContainerInstancesRequestStatus | null;
 	}
 
 	export enum ListContainerInstancesRequestStatus { ACTIVE = 0, DRAINING = 1, REGISTERING = 2, DEREGISTERING = 3, REGISTRATION_FAILED = 4 }
 
 	export interface ListServicesResponse {
-		serviceArns?: Array<string>;
-		nextToken?: string;
+		serviceArns?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListServicesRequest {
-		cluster?: string;
-		nextToken?: string;
-		maxResults?: number;
-		launchType?: ServiceLaunchType;
-		schedulingStrategy?: ServiceSchedulingStrategy;
+		cluster?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		launchType?: ServiceLaunchType | null;
+		schedulingStrategy?: ServiceSchedulingStrategy | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -1207,49 +1207,49 @@ export namespace MyNS {
 	}
 
 	export interface ListTaskDefinitionFamiliesResponse {
-		families?: Array<string>;
-		nextToken?: string;
+		families?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListTaskDefinitionFamiliesRequest {
-		familyPrefix?: string;
-		status?: ListTaskDefinitionFamiliesRequestStatus;
-		nextToken?: string;
-		maxResults?: number;
+		familyPrefix?: string | null;
+		status?: ListTaskDefinitionFamiliesRequestStatus | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export enum ListTaskDefinitionFamiliesRequestStatus { ACTIVE = 0, INACTIVE = 1, ALL = 2 }
 
 	export interface ListTaskDefinitionsResponse {
-		taskDefinitionArns?: Array<string>;
-		nextToken?: string;
+		taskDefinitionArns?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListTaskDefinitionsRequest {
-		familyPrefix?: string;
-		status?: TaskDefinitionStatus;
-		sort?: ListTaskDefinitionsRequestSort;
-		nextToken?: string;
-		maxResults?: number;
+		familyPrefix?: string | null;
+		status?: TaskDefinitionStatus | null;
+		sort?: ListTaskDefinitionsRequestSort | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export enum ListTaskDefinitionsRequestSort { ASC = 0, DESC = 1 }
 
 	export interface ListTasksResponse {
-		taskArns?: Array<string>;
-		nextToken?: string;
+		taskArns?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListTasksRequest {
-		cluster?: string;
-		containerInstance?: string;
-		family?: string;
-		nextToken?: string;
-		maxResults?: number;
-		startedBy?: string;
-		serviceName?: string;
-		desiredStatus?: ListTasksRequestDesiredStatus;
-		launchType?: ServiceLaunchType;
+		cluster?: string | null;
+		containerInstance?: string | null;
+		family?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		startedBy?: string | null;
+		serviceName?: string | null;
+		desiredStatus?: ListTasksRequestDesiredStatus | null;
+		launchType?: ServiceLaunchType | null;
 	}
 
 	export enum ListTasksRequestDesiredStatus { RUNNING = 0, PENDING = 1, STOPPED = 2 }
@@ -1257,19 +1257,19 @@ export namespace MyNS {
 	export interface PutAccountSettingResponse {
 
 		/** The current account setting for a resource. */
-		setting?: Setting;
+		setting?: Setting | null;
 	}
 
 	export interface PutAccountSettingRequest {
 		name: SettingName;
 		value: string;
-		principalArn?: string;
+		principalArn?: string | null;
 	}
 
 	export interface PutAccountSettingDefaultResponse {
 
 		/** The current account setting for a resource. */
-		setting?: Setting;
+		setting?: Setting | null;
 	}
 
 	export interface PutAccountSettingDefaultRequest {
@@ -1278,11 +1278,11 @@ export namespace MyNS {
 	}
 
 	export interface PutAttributesResponse {
-		attributes?: Array<Attribute>;
+		attributes?: Array<Attribute> | null;
 	}
 
 	export interface PutAttributesRequest {
-		cluster?: string;
+		cluster?: string | null;
 		attributes: Array<Attribute>;
 	}
 
@@ -1292,7 +1292,7 @@ export namespace MyNS {
 	export interface PutClusterCapacityProvidersResponse {
 
 		/** A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously. */
-		cluster?: Cluster;
+		cluster?: Cluster | null;
 	}
 
 	export interface PutClusterCapacityProvidersRequest {
@@ -1307,21 +1307,21 @@ export namespace MyNS {
 	export interface RegisterContainerInstanceResponse {
 
 		/** An EC2 instance that is running the Amazon ECS agent and has been registered with a cluster. */
-		containerInstance?: ContainerInstance;
+		containerInstance?: ContainerInstance | null;
 	}
 
 	export interface RegisterContainerInstanceRequest {
-		cluster?: string;
-		instanceIdentityDocument?: string;
-		instanceIdentityDocumentSignature?: string;
-		totalResources?: Array<Resource>;
+		cluster?: string | null;
+		instanceIdentityDocument?: string | null;
+		instanceIdentityDocumentSignature?: string | null;
+		totalResources?: Array<Resource> | null;
 
 		/** The Docker and Amazon ECS container agent version information about a container instance. */
-		versionInfo?: VersionInfo;
-		containerInstanceArn?: string;
-		attributes?: Array<Attribute>;
-		platformDevices?: Array<PlatformDevice>;
-		tags?: Array<Tag>;
+		versionInfo?: VersionInfo | null;
+		containerInstanceArn?: string | null;
+		attributes?: Array<Attribute> | null;
+		platformDevices?: Array<PlatformDevice> | null;
+		tags?: Array<Tag> | null;
 	}
 
 
@@ -1336,55 +1336,55 @@ export namespace MyNS {
 	export interface RegisterTaskDefinitionResponse {
 
 		/** The details of a task definition which describes the container and volume definitions of an Amazon Elastic Container Service task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task. */
-		taskDefinition?: TaskDefinition;
-		tags?: Array<Tag>;
+		taskDefinition?: TaskDefinition | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface RegisterTaskDefinitionRequest {
 		family: string;
-		taskRoleArn?: string;
-		executionRoleArn?: string;
-		networkMode?: TaskDefinitionNetworkMode;
+		taskRoleArn?: string | null;
+		executionRoleArn?: string | null;
+		networkMode?: TaskDefinitionNetworkMode | null;
 		containerDefinitions: Array<ContainerDefinition>;
-		volumes?: Array<Volume>;
-		placementConstraints?: Array<TaskDefinitionPlacementConstraint>;
-		requiresCompatibilities?: Array<Compatibility>;
-		cpu?: string;
-		memory?: string;
-		tags?: Array<Tag>;
-		pidMode?: TaskDefinitionPidMode;
-		ipcMode?: TaskDefinitionIpcMode;
+		volumes?: Array<Volume> | null;
+		placementConstraints?: Array<TaskDefinitionPlacementConstraint> | null;
+		requiresCompatibilities?: Array<Compatibility> | null;
+		cpu?: string | null;
+		memory?: string | null;
+		tags?: Array<Tag> | null;
+		pidMode?: TaskDefinitionPidMode | null;
+		ipcMode?: TaskDefinitionIpcMode | null;
 
 		/** <p>The configuration details for the App Mesh proxy.</p> <p>For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later.</p> */
-		proxyConfiguration?: ProxyConfiguration;
-		inferenceAccelerators?: Array<InferenceAccelerator>;
+		proxyConfiguration?: ProxyConfiguration | null;
+		inferenceAccelerators?: Array<InferenceAccelerator> | null;
 	}
 
 	export interface RunTaskResponse {
-		tasks?: Array<Task_>;
-		failures?: Array<Failure>;
+		tasks?: Array<Task_> | null;
+		failures?: Array<Failure> | null;
 	}
 
 	export interface RunTaskRequest {
-		capacityProviderStrategy?: Array<CapacityProviderStrategyItem>;
-		cluster?: string;
-		count?: number;
-		enableECSManagedTags?: boolean;
-		group?: string;
-		launchType?: ServiceLaunchType;
+		capacityProviderStrategy?: Array<CapacityProviderStrategyItem> | null;
+		cluster?: string | null;
+		count?: number | null;
+		enableECSManagedTags?: boolean | null;
+		group?: string | null;
+		launchType?: ServiceLaunchType | null;
 
 		/** An object representing the network configuration for a task or service. */
-		networkConfiguration?: NetworkConfiguration;
+		networkConfiguration?: NetworkConfiguration | null;
 
 		/** The overrides associated with a task. */
-		overrides?: TaskOverride;
-		placementConstraints?: Array<PlacementConstraint>;
-		placementStrategy?: Array<PlacementStrategy>;
-		platformVersion?: string;
-		propagateTags?: ServicePropagateTags;
-		referenceId?: string;
-		startedBy?: string;
-		tags?: Array<Tag>;
+		overrides?: TaskOverride | null;
+		placementConstraints?: Array<PlacementConstraint> | null;
+		placementStrategy?: Array<PlacementStrategy> | null;
+		platformVersion?: string | null;
+		propagateTags?: ServicePropagateTags | null;
+		referenceId?: string | null;
+		startedBy?: string | null;
+		tags?: Array<Tag> | null;
 		taskDefinition: string;
 	}
 
@@ -1392,46 +1392,46 @@ export namespace MyNS {
 	}
 
 	export interface StartTaskResponse {
-		tasks?: Array<Task_>;
-		failures?: Array<Failure>;
+		tasks?: Array<Task_> | null;
+		failures?: Array<Failure> | null;
 	}
 
 	export interface StartTaskRequest {
-		cluster?: string;
+		cluster?: string | null;
 		containerInstances: Array<string>;
-		enableECSManagedTags?: boolean;
-		group?: string;
+		enableECSManagedTags?: boolean | null;
+		group?: string | null;
 
 		/** An object representing the network configuration for a task or service. */
-		networkConfiguration?: NetworkConfiguration;
+		networkConfiguration?: NetworkConfiguration | null;
 
 		/** The overrides associated with a task. */
-		overrides?: TaskOverride;
-		propagateTags?: ServicePropagateTags;
-		referenceId?: string;
-		startedBy?: string;
-		tags?: Array<Tag>;
+		overrides?: TaskOverride | null;
+		propagateTags?: ServicePropagateTags | null;
+		referenceId?: string | null;
+		startedBy?: string | null;
+		tags?: Array<Tag> | null;
 		taskDefinition: string;
 	}
 
 	export interface StopTaskResponse {
 
 		/** Details on a task in a cluster. */
-		task?: Task_;
+		task?: Task_ | null;
 	}
 
 	export interface StopTaskRequest {
-		cluster?: string;
+		cluster?: string | null;
 		task: string;
-		reason?: string;
+		reason?: string | null;
 	}
 
 	export interface SubmitAttachmentStateChangesResponse {
-		acknowledgment?: string;
+		acknowledgment?: string | null;
 	}
 
 	export interface SubmitAttachmentStateChangesRequest {
-		cluster?: string;
+		cluster?: string | null;
 		attachments: Array<AttachmentStateChange>;
 	}
 
@@ -1443,46 +1443,46 @@ export namespace MyNS {
 	}
 
 	export interface SubmitContainerStateChangeResponse {
-		acknowledgment?: string;
+		acknowledgment?: string | null;
 	}
 
 	export interface SubmitContainerStateChangeRequest {
-		cluster?: string;
-		task?: string;
-		containerName?: string;
-		runtimeId?: string;
-		status?: string;
-		exitCode?: number;
-		reason?: string;
-		networkBindings?: Array<NetworkBinding>;
+		cluster?: string | null;
+		task?: string | null;
+		containerName?: string | null;
+		runtimeId?: string | null;
+		status?: string | null;
+		exitCode?: number | null;
+		reason?: string | null;
+		networkBindings?: Array<NetworkBinding> | null;
 	}
 
 	export interface SubmitTaskStateChangeResponse {
-		acknowledgment?: string;
+		acknowledgment?: string | null;
 	}
 
 	export interface SubmitTaskStateChangeRequest {
-		cluster?: string;
-		task?: string;
-		status?: string;
-		reason?: string;
-		containers?: Array<ContainerStateChange>;
-		attachments?: Array<AttachmentStateChange>;
-		pullStartedAt?: Date;
-		pullStoppedAt?: Date;
-		executionStoppedAt?: Date;
+		cluster?: string | null;
+		task?: string | null;
+		status?: string | null;
+		reason?: string | null;
+		containers?: Array<ContainerStateChange> | null;
+		attachments?: Array<AttachmentStateChange> | null;
+		pullStartedAt?: Date | null;
+		pullStoppedAt?: Date | null;
+		executionStoppedAt?: Date | null;
 	}
 
 
 	/** An object representing a change in state for a container. */
 	export interface ContainerStateChange {
-		containerName?: string;
-		imageDigest?: string;
-		runtimeId?: string;
-		exitCode?: number;
-		networkBindings?: Array<NetworkBinding>;
-		reason?: string;
-		status?: string;
+		containerName?: string | null;
+		imageDigest?: string | null;
+		runtimeId?: string | null;
+		exitCode?: number | null;
+		networkBindings?: Array<NetworkBinding> | null;
+		reason?: string | null;
+		status?: string | null;
 	}
 
 	export interface TagResourceResponse {
@@ -1507,7 +1507,7 @@ export namespace MyNS {
 	export interface UpdateClusterSettingsResponse {
 
 		/** A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously. */
-		cluster?: Cluster;
+		cluster?: Cluster | null;
 	}
 
 	export interface UpdateClusterSettingsRequest {
@@ -1518,11 +1518,11 @@ export namespace MyNS {
 	export interface UpdateContainerAgentResponse {
 
 		/** An EC2 instance that is running the Amazon ECS agent and has been registered with a cluster. */
-		containerInstance?: ContainerInstance;
+		containerInstance?: ContainerInstance | null;
 	}
 
 	export interface UpdateContainerAgentRequest {
-		cluster?: string;
+		cluster?: string | null;
 		containerInstance: string;
 	}
 
@@ -1533,12 +1533,12 @@ export namespace MyNS {
 	}
 
 	export interface UpdateContainerInstancesStateResponse {
-		containerInstances?: Array<ContainerInstance>;
-		failures?: Array<Failure>;
+		containerInstances?: Array<ContainerInstance> | null;
+		failures?: Array<Failure> | null;
 	}
 
 	export interface UpdateContainerInstancesStateRequest {
-		cluster?: string;
+		cluster?: string | null;
 		containerInstances: Array<string>;
 		status: ListContainerInstancesRequestStatus;
 	}
@@ -1546,32 +1546,32 @@ export namespace MyNS {
 	export interface UpdateServiceResponse {
 
 		/** Details on a service within a cluster */
-		service?: Service;
+		service?: Service | null;
 	}
 
 	export interface UpdateServiceRequest {
-		cluster?: string;
+		cluster?: string | null;
 		service: string;
-		desiredCount?: number;
-		taskDefinition?: string;
-		capacityProviderStrategy?: Array<CapacityProviderStrategyItem>;
+		desiredCount?: number | null;
+		taskDefinition?: string | null;
+		capacityProviderStrategy?: Array<CapacityProviderStrategyItem> | null;
 
 		/** Optional deployment parameters that control how many tasks run during a deployment and the ordering of stopping and starting tasks. */
-		deploymentConfiguration?: DeploymentConfiguration;
+		deploymentConfiguration?: DeploymentConfiguration | null;
 
 		/** An object representing the network configuration for a task or service. */
-		networkConfiguration?: NetworkConfiguration;
-		placementConstraints?: Array<PlacementConstraint>;
-		placementStrategy?: Array<PlacementStrategy>;
-		platformVersion?: string;
-		forceNewDeployment?: boolean;
-		healthCheckGracePeriodSeconds?: number;
+		networkConfiguration?: NetworkConfiguration | null;
+		placementConstraints?: Array<PlacementConstraint> | null;
+		placementStrategy?: Array<PlacementStrategy> | null;
+		platformVersion?: string | null;
+		forceNewDeployment?: boolean | null;
+		healthCheckGracePeriodSeconds?: number | null;
 	}
 
 	export interface UpdateServicePrimaryTaskSetResponse {
 
 		/** Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. */
-		taskSet?: TaskSet;
+		taskSet?: TaskSet | null;
 	}
 
 	export interface UpdateServicePrimaryTaskSetRequest {
@@ -1583,7 +1583,7 @@ export namespace MyNS {
 	export interface UpdateTaskSetResponse {
 
 		/** Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. */
-		taskSet?: TaskSet;
+		taskSet?: TaskSet | null;
 	}
 
 	export interface UpdateTaskSetRequest {
@@ -1831,7 +1831,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAccountSettingsResponse} Success
 		 */
-		ListAccountSettings(maxResults: string, nextToken: string, requestBody: ListAccountSettingsRequest): Observable<ListAccountSettingsResponse> {
+		ListAccountSettings(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListAccountSettingsRequest): Observable<ListAccountSettingsResponse> {
 			return this.http.post<ListAccountSettingsResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerServiceV20141113.ListAccountSettings?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1842,7 +1842,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAttributesResponse} Success
 		 */
-		ListAttributes(maxResults: string, nextToken: string, requestBody: ListAttributesRequest): Observable<ListAttributesResponse> {
+		ListAttributes(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListAttributesRequest): Observable<ListAttributesResponse> {
 			return this.http.post<ListAttributesResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerServiceV20141113.ListAttributes?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1853,7 +1853,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListClustersResponse} Success
 		 */
-		ListClusters(maxResults: string, nextToken: string, requestBody: ListClustersRequest): Observable<ListClustersResponse> {
+		ListClusters(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListClustersRequest): Observable<ListClustersResponse> {
 			return this.http.post<ListClustersResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerServiceV20141113.ListClusters?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1864,7 +1864,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListContainerInstancesResponse} Success
 		 */
-		ListContainerInstances(maxResults: string, nextToken: string, requestBody: ListContainerInstancesRequest): Observable<ListContainerInstancesResponse> {
+		ListContainerInstances(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListContainerInstancesRequest): Observable<ListContainerInstancesResponse> {
 			return this.http.post<ListContainerInstancesResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerServiceV20141113.ListContainerInstances?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1875,7 +1875,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListServicesResponse} Success
 		 */
-		ListServices(maxResults: string, nextToken: string, requestBody: ListServicesRequest): Observable<ListServicesResponse> {
+		ListServices(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListServicesRequest): Observable<ListServicesResponse> {
 			return this.http.post<ListServicesResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerServiceV20141113.ListServices?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1895,7 +1895,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTaskDefinitionFamiliesResponse} Success
 		 */
-		ListTaskDefinitionFamilies(maxResults: string, nextToken: string, requestBody: ListTaskDefinitionFamiliesRequest): Observable<ListTaskDefinitionFamiliesResponse> {
+		ListTaskDefinitionFamilies(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListTaskDefinitionFamiliesRequest): Observable<ListTaskDefinitionFamiliesResponse> {
 			return this.http.post<ListTaskDefinitionFamiliesResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerServiceV20141113.ListTaskDefinitionFamilies?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1906,7 +1906,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTaskDefinitionsResponse} Success
 		 */
-		ListTaskDefinitions(maxResults: string, nextToken: string, requestBody: ListTaskDefinitionsRequest): Observable<ListTaskDefinitionsResponse> {
+		ListTaskDefinitions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListTaskDefinitionsRequest): Observable<ListTaskDefinitionsResponse> {
 			return this.http.post<ListTaskDefinitionsResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerServiceV20141113.ListTaskDefinitions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1917,7 +1917,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTasksResponse} Success
 		 */
-		ListTasks(maxResults: string, nextToken: string, requestBody: ListTasksRequest): Observable<ListTasksResponse> {
+		ListTasks(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListTasksRequest): Observable<ListTasksResponse> {
 			return this.http.post<ListTasksResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerServiceV20141113.ListTasks?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

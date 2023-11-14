@@ -3,15 +3,15 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface BatchDeleteBuildsOutput {
-		buildsDeleted?: Array<string>;
-		buildsNotDeleted?: Array<BuildNotDeleted>;
+		buildsDeleted?: Array<string> | null;
+		buildsNotDeleted?: Array<BuildNotDeleted> | null;
 	}
 
 
 	/** Information about a build that could not be successfully deleted. */
 	export interface BuildNotDeleted {
-		id?: string;
-		statusCode?: string;
+		id?: string | null;
+		statusCode?: string | null;
 	}
 
 	export interface BatchDeleteBuildsInput {
@@ -22,57 +22,57 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetBuildsOutput {
-		builds?: Array<Build>;
-		buildsNotFound?: Array<string>;
+		builds?: Array<Build> | null;
+		buildsNotFound?: Array<string> | null;
 	}
 
 
 	/** Information about a build. */
 	export interface Build {
-		id?: string;
-		arn?: string;
-		buildNumber?: number;
-		startTime?: Date;
-		endTime?: Date;
-		currentPhase?: string;
-		buildStatus?: BuildBuildStatus;
-		sourceVersion?: string;
-		resolvedSourceVersion?: string;
-		projectName?: string;
-		phases?: Array<BuildPhase>;
+		id?: string | null;
+		arn?: string | null;
+		buildNumber?: number | null;
+		startTime?: Date | null;
+		endTime?: Date | null;
+		currentPhase?: string | null;
+		buildStatus?: BuildBuildStatus | null;
+		sourceVersion?: string | null;
+		resolvedSourceVersion?: string | null;
+		projectName?: string | null;
+		phases?: Array<BuildPhase> | null;
 
 		/** Information about the build input source code for the build project. */
-		source?: ProjectSource;
-		secondarySources?: Array<ProjectSource>;
-		secondarySourceVersions?: Array<ProjectSourceVersion>;
+		source?: ProjectSource | null;
+		secondarySources?: Array<ProjectSource> | null;
+		secondarySourceVersions?: Array<ProjectSourceVersion> | null;
 
 		/** Information about build output artifacts. */
-		artifacts?: BuildArtifacts;
-		secondaryArtifacts?: Array<BuildArtifacts>;
+		artifacts?: BuildArtifacts | null;
+		secondaryArtifacts?: Array<BuildArtifacts> | null;
 
 		/** Information about the cache for the build project. */
-		cache?: ProjectCache;
+		cache?: ProjectCache | null;
 
 		/** Information about the build environment of the build project. */
-		environment?: ProjectEnvironment;
-		serviceRole?: string;
+		environment?: ProjectEnvironment | null;
+		serviceRole?: string | null;
 
 		/** Information about build logs in Amazon CloudWatch Logs. */
-		logs?: LogsLocation;
-		timeoutInMinutes?: number;
-		queuedTimeoutInMinutes?: number;
-		buildComplete?: boolean;
-		initiator?: string;
+		logs?: LogsLocation | null;
+		timeoutInMinutes?: number | null;
+		queuedTimeoutInMinutes?: number | null;
+		buildComplete?: boolean | null;
+		initiator?: string | null;
 
 		/** Information about the VPC configuration that AWS CodeBuild accesses. */
-		vpcConfig?: VpcConfig;
+		vpcConfig?: VpcConfig | null;
 
 		/** Describes a network interface. */
-		networkInterface?: NetworkInterface;
-		encryptionKey?: string;
-		exportedEnvironmentVariables?: Array<ExportedEnvironmentVariable>;
-		reportArns?: Array<string>;
-		fileSystemLocations?: Array<ProjectFileSystemLocation>;
+		networkInterface?: NetworkInterface | null;
+		encryptionKey?: string | null;
+		exportedEnvironmentVariables?: Array<ExportedEnvironmentVariable> | null;
+		reportArns?: Array<string> | null;
+		fileSystemLocations?: Array<ProjectFileSystemLocation> | null;
 	}
 
 	export enum BuildBuildStatus { SUCCEEDED = 0, FAILED = 1, FAULT = 2, TIMED_OUT = 3, IN_PROGRESS = 4, STOPPED = 5 }
@@ -80,12 +80,12 @@ export namespace MyNS {
 
 	/** Information about a stage for a build. */
 	export interface BuildPhase {
-		phaseType?: BuildPhasePhaseType;
-		phaseStatus?: BuildBuildStatus;
-		startTime?: Date;
-		endTime?: Date;
-		durationInSeconds?: number;
-		contexts?: Array<PhaseContext>;
+		phaseType?: BuildPhasePhaseType | null;
+		phaseStatus?: BuildBuildStatus | null;
+		startTime?: Date | null;
+		endTime?: Date | null;
+		durationInSeconds?: number | null;
+		contexts?: Array<PhaseContext> | null;
 	}
 
 	export enum BuildPhasePhaseType { SUBMITTED = 0, QUEUED = 1, PROVISIONING = 2, DOWNLOAD_SOURCE = 3, INSTALL = 4, PRE_BUILD = 5, BUILD = 6, POST_BUILD = 7, UPLOAD_ARTIFACTS = 8, FINALIZING = 9, COMPLETED = 10 }
@@ -93,26 +93,26 @@ export namespace MyNS {
 
 	/** Additional information about a build phase that has an error. You can use this information for troubleshooting. */
 	export interface PhaseContext {
-		statusCode?: string;
-		message?: string;
+		statusCode?: string | null;
+		message?: string | null;
 	}
 
 
 	/** Information about the build input source code for the build project. */
 	export interface ProjectSource {
 		type: ProjectSourceType;
-		location?: string;
-		gitCloneDepth?: number;
+		location?: string | null;
+		gitCloneDepth?: number | null;
 
 		/** Information about the Git submodules configuration for an AWS CodeBuild build project. */
-		gitSubmodulesConfig?: GitSubmodulesConfig;
-		buildspec?: string;
+		gitSubmodulesConfig?: GitSubmodulesConfig | null;
+		buildspec?: string | null;
 
 		/** <p>Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p> <p>This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly.</p> */
-		auth?: SourceAuth;
-		reportBuildStatus?: boolean;
-		insecureSsl?: boolean;
-		sourceIdentifier?: string;
+		auth?: SourceAuth | null;
+		reportBuildStatus?: boolean | null;
+		insecureSsl?: boolean | null;
+		sourceIdentifier?: string | null;
 	}
 
 	export enum ProjectSourceType { CODECOMMIT = 0, CODEPIPELINE = 1, GITHUB = 2, S3 = 3, BITBUCKET = 4, GITHUB_ENTERPRISE = 5, NO_SOURCE = 6 }
@@ -127,7 +127,7 @@ export namespace MyNS {
 	/** <p>Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p> <p>This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly.</p> */
 	export interface SourceAuth {
 		type: SourceAuthType;
-		resource?: string;
+		resource?: string | null;
 	}
 
 	export enum SourceAuthType { OAUTH = 0 }
@@ -142,20 +142,20 @@ export namespace MyNS {
 
 	/** Information about build output artifacts. */
 	export interface BuildArtifacts {
-		location?: string;
-		sha256sum?: string;
-		md5sum?: string;
-		overrideArtifactName?: boolean;
-		encryptionDisabled?: boolean;
-		artifactIdentifier?: string;
+		location?: string | null;
+		sha256sum?: string | null;
+		md5sum?: string | null;
+		overrideArtifactName?: boolean | null;
+		encryptionDisabled?: boolean | null;
+		artifactIdentifier?: string | null;
 	}
 
 
 	/** Information about the cache for the build project. */
 	export interface ProjectCache {
 		type: ProjectCacheType;
-		location?: string;
-		modes?: Array<CacheMode>;
+		location?: string | null;
+		modes?: Array<CacheMode> | null;
 	}
 
 	export enum ProjectCacheType { NO_CACHE = 0, S3 = 1, LOCAL = 2 }
@@ -168,13 +168,13 @@ export namespace MyNS {
 		type: ProjectEnvironmentType;
 		image: string;
 		computeType: ProjectEnvironmentComputeType;
-		environmentVariables?: Array<EnvironmentVariable>;
-		privilegedMode?: boolean;
-		certificate?: string;
+		environmentVariables?: Array<EnvironmentVariable> | null;
+		privilegedMode?: boolean | null;
+		certificate?: string | null;
 
 		/** <p> Information about credentials that provide access to a private Docker registry. When this is set: </p> <ul> <li> <p> <code>imagePullCredentialsType</code> must be set to <code>SERVICE_ROLE</code>. </p> </li> <li> <p> images cannot be curated or an Amazon ECR image.</p> </li> </ul> <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html">Private Registry with AWS Secrets Manager Sample for AWS CodeBuild</a>. </p> */
-		registryCredential?: RegistryCredential;
-		imagePullCredentialsType?: ProjectEnvironmentImagePullCredentialsType;
+		registryCredential?: RegistryCredential | null;
+		imagePullCredentialsType?: ProjectEnvironmentImagePullCredentialsType | null;
 	}
 
 	export enum ProjectEnvironmentType { WINDOWS_CONTAINER = 0, LINUX_CONTAINER = 1, LINUX_GPU_CONTAINER = 2, ARM_CONTAINER = 3 }
@@ -186,7 +186,7 @@ export namespace MyNS {
 	export interface EnvironmentVariable {
 		name: string;
 		value: string;
-		type?: EnvironmentVariableType;
+		type?: EnvironmentVariableType | null;
 	}
 
 	export enum EnvironmentVariableType { PLAINTEXT = 0, PARAMETER_STORE = 1, SECRETS_MANAGER = 2 }
@@ -205,26 +205,26 @@ export namespace MyNS {
 
 	/** Information about build logs in Amazon CloudWatch Logs. */
 	export interface LogsLocation {
-		groupName?: string;
-		streamName?: string;
-		deepLink?: string;
-		s3DeepLink?: string;
-		cloudWatchLogsArn?: string;
-		s3LogsArn?: string;
+		groupName?: string | null;
+		streamName?: string | null;
+		deepLink?: string | null;
+		s3DeepLink?: string | null;
+		cloudWatchLogsArn?: string | null;
+		s3LogsArn?: string | null;
 
 		/** Information about Amazon CloudWatch Logs for a build project. */
-		cloudWatchLogs?: CloudWatchLogsConfig;
+		cloudWatchLogs?: CloudWatchLogsConfig | null;
 
 		/** Information about S3 logs for a build project. */
-		s3Logs?: S3LogsConfig;
+		s3Logs?: S3LogsConfig | null;
 	}
 
 
 	/**  Information about Amazon CloudWatch Logs for a build project.  */
 	export interface CloudWatchLogsConfig {
 		status: CloudWatchLogsConfigStatus;
-		groupName?: string;
-		streamName?: string;
+		groupName?: string | null;
+		streamName?: string | null;
 	}
 
 	export enum CloudWatchLogsConfigStatus { ENABLED = 0, DISABLED = 1 }
@@ -233,40 +233,40 @@ export namespace MyNS {
 	/**  Information about S3 logs for a build project.  */
 	export interface S3LogsConfig {
 		status: CloudWatchLogsConfigStatus;
-		location?: string;
-		encryptionDisabled?: boolean;
+		location?: string | null;
+		encryptionDisabled?: boolean | null;
 	}
 
 
 	/** Information about the VPC configuration that AWS CodeBuild accesses. */
 	export interface VpcConfig {
-		vpcId?: string;
-		subnets?: Array<string>;
-		securityGroupIds?: Array<string>;
+		vpcId?: string | null;
+		subnets?: Array<string> | null;
+		securityGroupIds?: Array<string> | null;
 	}
 
 
 	/** Describes a network interface. */
 	export interface NetworkInterface {
-		subnetId?: string;
-		networkInterfaceId?: string;
+		subnetId?: string | null;
+		networkInterfaceId?: string | null;
 	}
 
 
 	/**  Information about an exported environment variable.  */
 	export interface ExportedEnvironmentVariable {
-		name?: string;
-		value?: string;
+		name?: string | null;
+		value?: string | null;
 	}
 
 
 	/**  Information about a file system created by Amazon Elastic File System (EFS). For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html">What Is Amazon Elastic File System?</a>  */
 	export interface ProjectFileSystemLocation {
-		type?: ProjectFileSystemLocationType;
-		location?: string;
-		mountPoint?: string;
-		identifier?: string;
-		mountOptions?: string;
+		type?: ProjectFileSystemLocationType | null;
+		location?: string | null;
+		mountPoint?: string | null;
+		identifier?: string | null;
+		mountOptions?: string | null;
 	}
 
 	export enum ProjectFileSystemLocationType { EFS = 0 }
@@ -276,66 +276,66 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetProjectsOutput {
-		projects?: Array<Project>;
-		projectsNotFound?: Array<string>;
+		projects?: Array<Project> | null;
+		projectsNotFound?: Array<string> | null;
 	}
 
 
 	/** Information about a build project. */
 	export interface Project {
-		name?: string;
-		arn?: string;
-		description?: string;
+		name?: string | null;
+		arn?: string | null;
+		description?: string | null;
 
 		/** Information about the build input source code for the build project. */
-		source?: ProjectSource;
-		secondarySources?: Array<ProjectSource>;
-		sourceVersion?: string;
-		secondarySourceVersions?: Array<ProjectSourceVersion>;
+		source?: ProjectSource | null;
+		secondarySources?: Array<ProjectSource> | null;
+		sourceVersion?: string | null;
+		secondarySourceVersions?: Array<ProjectSourceVersion> | null;
 
 		/** Information about the build output artifacts for the build project. */
-		artifacts?: ProjectArtifacts;
-		secondaryArtifacts?: Array<ProjectArtifacts>;
+		artifacts?: ProjectArtifacts | null;
+		secondaryArtifacts?: Array<ProjectArtifacts> | null;
 
 		/** Information about the cache for the build project. */
-		cache?: ProjectCache;
+		cache?: ProjectCache | null;
 
 		/** Information about the build environment of the build project. */
-		environment?: ProjectEnvironment;
-		serviceRole?: string;
-		timeoutInMinutes?: number;
-		queuedTimeoutInMinutes?: number;
-		encryptionKey?: string;
-		tags?: Array<Tag>;
-		created?: Date;
-		lastModified?: Date;
+		environment?: ProjectEnvironment | null;
+		serviceRole?: string | null;
+		timeoutInMinutes?: number | null;
+		queuedTimeoutInMinutes?: number | null;
+		encryptionKey?: string | null;
+		tags?: Array<Tag> | null;
+		created?: Date | null;
+		lastModified?: Date | null;
 
 		/** Information about a webhook that connects repository events to a build project in AWS CodeBuild. */
-		webhook?: Webhook;
+		webhook?: Webhook | null;
 
 		/** Information about the VPC configuration that AWS CodeBuild accesses. */
-		vpcConfig?: VpcConfig;
+		vpcConfig?: VpcConfig | null;
 
 		/** Information about the build badge for the build project. */
-		badge?: ProjectBadge;
+		badge?: ProjectBadge | null;
 
 		/** Information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both. */
-		logsConfig?: LogsConfig;
-		fileSystemLocations?: Array<ProjectFileSystemLocation>;
+		logsConfig?: LogsConfig | null;
+		fileSystemLocations?: Array<ProjectFileSystemLocation> | null;
 	}
 
 
 	/** Information about the build output artifacts for the build project. */
 	export interface ProjectArtifacts {
 		type: ProjectArtifactsType;
-		location?: string;
-		path?: string;
-		namespaceType?: ProjectArtifactsNamespaceType;
-		name?: string;
-		packaging?: ProjectArtifactsPackaging;
-		overrideArtifactName?: boolean;
-		encryptionDisabled?: boolean;
-		artifactIdentifier?: string;
+		location?: string | null;
+		path?: string | null;
+		namespaceType?: ProjectArtifactsNamespaceType | null;
+		name?: string | null;
+		packaging?: ProjectArtifactsPackaging | null;
+		overrideArtifactName?: boolean | null;
+		encryptionDisabled?: boolean | null;
+		artifactIdentifier?: string | null;
 	}
 
 	export enum ProjectArtifactsType { CODEPIPELINE = 0, S3 = 1, NO_ARTIFACTS = 2 }
@@ -347,19 +347,19 @@ export namespace MyNS {
 
 	/** <p>A tag, consisting of a key and a value.</p> <p>This tag is available for use by AWS services that support tags in AWS CodeBuild.</p> */
 	export interface Tag {
-		key?: string;
-		value?: string;
+		key?: string | null;
+		value?: string | null;
 	}
 
 
 	/** Information about a webhook that connects repository events to a build project in AWS CodeBuild. */
 	export interface Webhook {
-		url?: string;
-		payloadUrl?: string;
-		secret?: string;
-		branchFilter?: string;
-		filterGroups?: Array<Array<WebhookFilter>>;
-		lastModifiedSecret?: Date;
+		url?: string | null;
+		payloadUrl?: string | null;
+		secret?: string | null;
+		branchFilter?: string | null;
+		filterGroups?: Array<Array<WebhookFilter>> | null;
+		lastModifiedSecret?: Date | null;
 	}
 
 
@@ -367,7 +367,7 @@ export namespace MyNS {
 	export interface WebhookFilter {
 		type: WebhookFilterType;
 		pattern: string;
-		excludeMatchedPattern?: boolean;
+		excludeMatchedPattern?: boolean | null;
 	}
 
 	export enum WebhookFilterType { EVENT = 0, BASE_REF = 1, HEAD_REF = 2, ACTOR_ACCOUNT_ID = 3, FILE_PATH = 4, COMMIT_MESSAGE = 5 }
@@ -375,8 +375,8 @@ export namespace MyNS {
 
 	/** Information about the build badge for the build project. */
 	export interface ProjectBadge {
-		badgeEnabled?: boolean;
-		badgeRequestUrl?: string;
+		badgeEnabled?: boolean | null;
+		badgeRequestUrl?: string | null;
 	}
 
 
@@ -384,10 +384,10 @@ export namespace MyNS {
 	export interface LogsConfig {
 
 		/** Information about Amazon CloudWatch Logs for a build project. */
-		cloudWatchLogs?: CloudWatchLogsConfig;
+		cloudWatchLogs?: CloudWatchLogsConfig | null;
 
 		/** Information about S3 logs for a build project. */
-		s3Logs?: S3LogsConfig;
+		s3Logs?: S3LogsConfig | null;
 	}
 
 	export interface BatchGetProjectsInput {
@@ -395,22 +395,22 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetReportGroupsOutput {
-		reportGroups?: Array<ReportGroup>;
-		reportGroupsNotFound?: Array<string>;
+		reportGroups?: Array<ReportGroup> | null;
+		reportGroupsNotFound?: Array<string> | null;
 	}
 
 
 	/**  A series of reports. Each report contains information about the results from running a series of test cases. You specify the test cases for a report group in the buildspec for a build project using one or more paths to the test case files.  */
 	export interface ReportGroup {
-		arn?: string;
-		name?: string;
-		type?: ReportGroupType;
+		arn?: string | null;
+		name?: string | null;
+		type?: ReportGroupType | null;
 
 		/** Information about the location where the run of a report is exported. */
-		exportConfig?: ReportExportConfig;
-		created?: Date;
-		lastModified?: Date;
-		tags?: Array<Tag>;
+		exportConfig?: ReportExportConfig | null;
+		created?: Date | null;
+		lastModified?: Date | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export enum ReportGroupType { TEST = 0 }
@@ -418,10 +418,10 @@ export namespace MyNS {
 
 	/**  Information about the location where the run of a report is exported.  */
 	export interface ReportExportConfig {
-		exportConfigType?: ReportExportConfigExportConfigType;
+		exportConfigType?: ReportExportConfigExportConfigType | null;
 
 		/** Information about the S3 bucket where the raw data of a report are exported. */
-		s3Destination?: S3ReportExportConfig;
+		s3Destination?: S3ReportExportConfig | null;
 	}
 
 	export enum ReportExportConfigExportConfigType { S3 = 0, NO_EXPORT = 1 }
@@ -429,11 +429,11 @@ export namespace MyNS {
 
 	/**  Information about the S3 bucket where the raw data of a report are exported.  */
 	export interface S3ReportExportConfig {
-		bucket?: string;
-		path?: string;
-		packaging?: S3ReportExportConfigPackaging;
-		encryptionKey?: string;
-		encryptionDisabled?: boolean;
+		bucket?: string | null;
+		path?: string | null;
+		packaging?: S3ReportExportConfigPackaging | null;
+		encryptionKey?: string | null;
+		encryptionDisabled?: boolean | null;
 	}
 
 	export enum S3ReportExportConfigPackaging { ZIP = 0, NONE = 1 }
@@ -443,28 +443,28 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetReportsOutput {
-		reports?: Array<Report>;
-		reportsNotFound?: Array<string>;
+		reports?: Array<Report> | null;
+		reportsNotFound?: Array<string> | null;
 	}
 
 
 	/**  Information about the results from running a series of test cases during the run of a build project. The test cases are specified in the buildspec for the build project using one or more paths to the test case files. You can specify any type of tests you want, such as unit tests, integration tests, and functional tests.  */
 	export interface Report {
-		arn?: string;
-		type?: ReportGroupType;
-		name?: string;
-		reportGroupArn?: string;
-		executionId?: string;
-		status?: ReportStatus;
-		created?: Date;
-		expired?: Date;
+		arn?: string | null;
+		type?: ReportGroupType | null;
+		name?: string | null;
+		reportGroupArn?: string | null;
+		executionId?: string | null;
+		status?: ReportStatus | null;
+		created?: Date | null;
+		expired?: Date | null;
 
 		/** Information about the location where the run of a report is exported. */
-		exportConfig?: ReportExportConfig;
-		truncated?: boolean;
+		exportConfig?: ReportExportConfig | null;
+		truncated?: boolean | null;
 
 		/** Information about a test report. */
-		testSummary?: TestReportSummary;
+		testSummary?: TestReportSummary | null;
 	}
 
 	export enum ReportStatus { GENERATING = 0, SUCCEEDED = 1, FAILED = 2, INCOMPLETE = 3, DELETING = 4 }
@@ -487,31 +487,31 @@ export namespace MyNS {
 	export interface CreateProjectOutput {
 
 		/** Information about a build project. */
-		project?: Project;
+		project?: Project | null;
 	}
 
 	export interface CreateProjectInput {
 		name: string;
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Information about the build input source code for the build project.
 		 * Required
 		 */
 		source: ProjectSource;
-		secondarySources?: Array<ProjectSource>;
-		sourceVersion?: string;
-		secondarySourceVersions?: Array<ProjectSourceVersion>;
+		secondarySources?: Array<ProjectSource> | null;
+		sourceVersion?: string | null;
+		secondarySourceVersions?: Array<ProjectSourceVersion> | null;
 
 		/**
 		 * Information about the build output artifacts for the build project.
 		 * Required
 		 */
 		artifacts: ProjectArtifacts;
-		secondaryArtifacts?: Array<ProjectArtifacts>;
+		secondaryArtifacts?: Array<ProjectArtifacts> | null;
 
 		/** Information about the cache for the build project. */
-		cache?: ProjectCache;
+		cache?: ProjectCache | null;
 
 		/**
 		 * Information about the build environment of the build project.
@@ -519,18 +519,18 @@ export namespace MyNS {
 		 */
 		environment: ProjectEnvironment;
 		serviceRole: string;
-		timeoutInMinutes?: number;
-		queuedTimeoutInMinutes?: number;
-		encryptionKey?: string;
-		tags?: Array<Tag>;
+		timeoutInMinutes?: number | null;
+		queuedTimeoutInMinutes?: number | null;
+		encryptionKey?: string | null;
+		tags?: Array<Tag> | null;
 
 		/** Information about the VPC configuration that AWS CodeBuild accesses. */
-		vpcConfig?: VpcConfig;
-		badgeEnabled?: boolean;
+		vpcConfig?: VpcConfig | null;
+		badgeEnabled?: boolean | null;
 
 		/** Information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both. */
-		logsConfig?: LogsConfig;
-		fileSystemLocations?: Array<ProjectFileSystemLocation>;
+		logsConfig?: LogsConfig | null;
+		fileSystemLocations?: Array<ProjectFileSystemLocation> | null;
 	}
 
 	export interface ResourceAlreadyExistsException {
@@ -542,7 +542,7 @@ export namespace MyNS {
 	export interface CreateReportGroupOutput {
 
 		/** A series of reports. Each report contains information about the results from running a series of test cases. You specify the test cases for a report group in the buildspec for a build project using one or more paths to the test case files. */
-		reportGroup?: ReportGroup;
+		reportGroup?: ReportGroup | null;
 	}
 
 	export interface CreateReportGroupInput {
@@ -554,19 +554,19 @@ export namespace MyNS {
 		 * Required
 		 */
 		exportConfig: ReportExportConfig;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateWebhookOutput {
 
 		/** Information about a webhook that connects repository events to a build project in AWS CodeBuild. */
-		webhook?: Webhook;
+		webhook?: Webhook | null;
 	}
 
 	export interface CreateWebhookInput {
 		projectName: string;
-		branchFilter?: string;
-		filterGroups?: Array<Array<WebhookFilter>>;
+		branchFilter?: string | null;
+		filterGroups?: Array<Array<WebhookFilter>> | null;
 	}
 
 	export interface OAuthProviderException {
@@ -604,7 +604,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteSourceCredentialsOutput {
-		arn?: string;
+		arn?: string | null;
 	}
 
 	export interface DeleteSourceCredentialsInput {
@@ -619,40 +619,40 @@ export namespace MyNS {
 	}
 
 	export interface DescribeTestCasesOutput {
-		nextToken?: string;
-		testCases?: Array<TestCase>;
+		nextToken?: string | null;
+		testCases?: Array<TestCase> | null;
 	}
 
 
 	/**  Information about a test case created using a framework such as NUnit or Cucumber. A test case might be a unit test or a configuration test.  */
 	export interface TestCase {
-		reportArn?: string;
-		testRawDataPath?: string;
-		prefix?: string;
-		name?: string;
-		status?: string;
-		durationInNanoSeconds?: number;
-		message?: string;
-		expired?: Date;
+		reportArn?: string | null;
+		testRawDataPath?: string | null;
+		prefix?: string | null;
+		name?: string | null;
+		status?: string | null;
+		durationInNanoSeconds?: number | null;
+		message?: string | null;
+		expired?: Date | null;
 	}
 
 	export interface DescribeTestCasesInput {
 		reportArn: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 
 		/** A filter used to return specific types of test cases. */
-		filter?: TestCaseFilter;
+		filter?: TestCaseFilter | null;
 	}
 
 
 	/**  A filter used to return specific types of test cases.  */
 	export interface TestCaseFilter {
-		status?: string;
+		status?: string | null;
 	}
 
 	export interface GetResourcePolicyOutput {
-		policy?: string;
+		policy?: string | null;
 	}
 
 	export interface GetResourcePolicyInput {
@@ -660,15 +660,15 @@ export namespace MyNS {
 	}
 
 	export interface ImportSourceCredentialsOutput {
-		arn?: string;
+		arn?: string | null;
 	}
 
 	export interface ImportSourceCredentialsInput {
-		username?: string;
+		username?: string | null;
 		token: string;
 		serverType: ImportSourceCredentialsInputServerType;
 		authType: ImportSourceCredentialsInputAuthType;
-		shouldOverwrite?: boolean;
+		shouldOverwrite?: boolean | null;
 	}
 
 	export enum ImportSourceCredentialsInputServerType { GITHUB = 0, BITBUCKET = 1, GITHUB_ENTERPRISE = 2 }
@@ -683,37 +683,37 @@ export namespace MyNS {
 	}
 
 	export interface ListBuildsOutput {
-		ids?: Array<string>;
-		nextToken?: string;
+		ids?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListBuildsInput {
-		sortOrder?: ListBuildsInputSortOrder;
-		nextToken?: string;
+		sortOrder?: ListBuildsInputSortOrder | null;
+		nextToken?: string | null;
 	}
 
 	export enum ListBuildsInputSortOrder { ASCENDING = 0, DESCENDING = 1 }
 
 	export interface ListBuildsForProjectOutput {
-		ids?: Array<string>;
-		nextToken?: string;
+		ids?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListBuildsForProjectInput {
 		projectName: string;
-		sortOrder?: ListBuildsInputSortOrder;
-		nextToken?: string;
+		sortOrder?: ListBuildsInputSortOrder | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListCuratedEnvironmentImagesOutput {
-		platforms?: Array<EnvironmentPlatform>;
+		platforms?: Array<EnvironmentPlatform> | null;
 	}
 
 
 	/** A set of Docker images that are related by platform and are managed by AWS CodeBuild. */
 	export interface EnvironmentPlatform {
-		platform?: EnvironmentPlatformPlatform;
-		languages?: Array<EnvironmentLanguage>;
+		platform?: EnvironmentPlatformPlatform | null;
+		languages?: Array<EnvironmentLanguage> | null;
 	}
 
 	export enum EnvironmentPlatformPlatform { DEBIAN = 0, AMAZON_LINUX = 1, UBUNTU = 2, WINDOWS_SERVER = 3 }
@@ -721,8 +721,8 @@ export namespace MyNS {
 
 	/** A set of Docker images that are related by programming language and are managed by AWS CodeBuild. */
 	export interface EnvironmentLanguage {
-		language?: EnvironmentLanguageLanguage;
-		images?: Array<EnvironmentImage>;
+		language?: EnvironmentLanguageLanguage | null;
+		images?: Array<EnvironmentImage> | null;
 	}
 
 	export enum EnvironmentLanguageLanguage { JAVA = 0, PYTHON = 1, NODE_JS = 2, RUBY = 3, GOLANG = 4, DOCKER = 5, ANDROID = 6, DOTNET = 7, BASE = 8, PHP = 9 }
@@ -730,117 +730,117 @@ export namespace MyNS {
 
 	/** Information about a Docker image that is managed by AWS CodeBuild. */
 	export interface EnvironmentImage {
-		name?: string;
-		description?: string;
-		versions?: Array<string>;
+		name?: string | null;
+		description?: string | null;
+		versions?: Array<string> | null;
 	}
 
 	export interface ListCuratedEnvironmentImagesInput {
 	}
 
 	export interface ListProjectsOutput {
-		nextToken?: string;
-		projects?: Array<string>;
+		nextToken?: string | null;
+		projects?: Array<string> | null;
 	}
 
 	export interface ListProjectsInput {
-		sortBy?: ListProjectsInputSortBy;
-		sortOrder?: ListBuildsInputSortOrder;
-		nextToken?: string;
+		sortBy?: ListProjectsInputSortBy | null;
+		sortOrder?: ListBuildsInputSortOrder | null;
+		nextToken?: string | null;
 	}
 
 	export enum ListProjectsInputSortBy { NAME = 0, CREATED_TIME = 1, LAST_MODIFIED_TIME = 2 }
 
 	export interface ListReportGroupsOutput {
-		nextToken?: string;
-		reportGroups?: Array<string>;
+		nextToken?: string | null;
+		reportGroups?: Array<string> | null;
 	}
 
 	export interface ListReportGroupsInput {
-		sortOrder?: ListBuildsInputSortOrder;
-		sortBy?: ListProjectsInputSortBy;
-		nextToken?: string;
-		maxResults?: number;
+		sortOrder?: ListBuildsInputSortOrder | null;
+		sortBy?: ListProjectsInputSortBy | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListReportsOutput {
-		nextToken?: string;
-		reports?: Array<string>;
+		nextToken?: string | null;
+		reports?: Array<string> | null;
 	}
 
 	export interface ListReportsInput {
-		sortOrder?: ListBuildsInputSortOrder;
-		nextToken?: string;
-		maxResults?: number;
+		sortOrder?: ListBuildsInputSortOrder | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 
 		/** A filter used to return reports with the status specified by the input <code>status</code> parameter. */
-		filter?: ReportFilter;
+		filter?: ReportFilter | null;
 	}
 
 
 	/**  A filter used to return reports with the status specified by the input <code>status</code> parameter.  */
 	export interface ReportFilter {
-		status?: ReportStatus;
+		status?: ReportStatus | null;
 	}
 
 	export interface ListReportsForReportGroupOutput {
-		nextToken?: string;
-		reports?: Array<string>;
+		nextToken?: string | null;
+		reports?: Array<string> | null;
 	}
 
 	export interface ListReportsForReportGroupInput {
 		reportGroupArn: string;
-		nextToken?: string;
-		sortOrder?: ListBuildsInputSortOrder;
-		maxResults?: number;
+		nextToken?: string | null;
+		sortOrder?: ListBuildsInputSortOrder | null;
+		maxResults?: number | null;
 
 		/** A filter used to return reports with the status specified by the input <code>status</code> parameter. */
-		filter?: ReportFilter;
+		filter?: ReportFilter | null;
 	}
 
 	export interface ListSharedProjectsOutput {
-		nextToken?: string;
-		projects?: Array<string>;
+		nextToken?: string | null;
+		projects?: Array<string> | null;
 	}
 
 	export interface ListSharedProjectsInput {
-		sortBy?: ListSharedProjectsInputSortBy;
-		sortOrder?: ListBuildsInputSortOrder;
-		maxResults?: number;
-		nextToken?: string;
+		sortBy?: ListSharedProjectsInputSortBy | null;
+		sortOrder?: ListBuildsInputSortOrder | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export enum ListSharedProjectsInputSortBy { ARN = 0, MODIFIED_TIME = 1 }
 
 	export interface ListSharedReportGroupsOutput {
-		nextToken?: string;
-		reportGroups?: Array<string>;
+		nextToken?: string | null;
+		reportGroups?: Array<string> | null;
 	}
 
 	export interface ListSharedReportGroupsInput {
-		sortOrder?: ListBuildsInputSortOrder;
-		sortBy?: ListSharedProjectsInputSortBy;
-		nextToken?: string;
-		maxResults?: number;
+		sortOrder?: ListBuildsInputSortOrder | null;
+		sortBy?: ListSharedProjectsInputSortBy | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListSourceCredentialsOutput {
-		sourceCredentialsInfos?: Array<SourceCredentialsInfo>;
+		sourceCredentialsInfos?: Array<SourceCredentialsInfo> | null;
 	}
 
 
 	/**  Information about the credentials for a GitHub, GitHub Enterprise, or Bitbucket repository.  */
 	export interface SourceCredentialsInfo {
-		arn?: string;
-		serverType?: ImportSourceCredentialsInputServerType;
-		authType?: ImportSourceCredentialsInputAuthType;
+		arn?: string | null;
+		serverType?: ImportSourceCredentialsInputServerType | null;
+		authType?: ImportSourceCredentialsInputAuthType | null;
 	}
 
 	export interface ListSourceCredentialsInput {
 	}
 
 	export interface PutResourcePolicyOutput {
-		resourceArn?: string;
+		resourceArn?: string | null;
 	}
 
 	export interface PutResourcePolicyInput {
@@ -851,56 +851,56 @@ export namespace MyNS {
 	export interface StartBuildOutput {
 
 		/** Information about a build. */
-		build?: Build;
+		build?: Build | null;
 	}
 
 	export interface StartBuildInput {
 		projectName: string;
-		secondarySourcesOverride?: Array<ProjectSource>;
-		secondarySourcesVersionOverride?: Array<ProjectSourceVersion>;
-		sourceVersion?: string;
+		secondarySourcesOverride?: Array<ProjectSource> | null;
+		secondarySourcesVersionOverride?: Array<ProjectSourceVersion> | null;
+		sourceVersion?: string | null;
 
 		/** Information about the build output artifacts for the build project. */
-		artifactsOverride?: ProjectArtifacts;
-		secondaryArtifactsOverride?: Array<ProjectArtifacts>;
-		environmentVariablesOverride?: Array<EnvironmentVariable>;
-		sourceTypeOverride?: ProjectSourceType;
-		sourceLocationOverride?: string;
+		artifactsOverride?: ProjectArtifacts | null;
+		secondaryArtifactsOverride?: Array<ProjectArtifacts> | null;
+		environmentVariablesOverride?: Array<EnvironmentVariable> | null;
+		sourceTypeOverride?: ProjectSourceType | null;
+		sourceLocationOverride?: string | null;
 
 		/** <p>Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p> <p>This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly.</p> */
-		sourceAuthOverride?: SourceAuth;
-		gitCloneDepthOverride?: number;
+		sourceAuthOverride?: SourceAuth | null;
+		gitCloneDepthOverride?: number | null;
 
 		/** Information about the Git submodules configuration for an AWS CodeBuild build project. */
-		gitSubmodulesConfigOverride?: GitSubmodulesConfig;
-		buildspecOverride?: string;
-		insecureSslOverride?: boolean;
-		reportBuildStatusOverride?: boolean;
-		environmentTypeOverride?: ProjectEnvironmentType;
-		imageOverride?: string;
-		computeTypeOverride?: ProjectEnvironmentComputeType;
-		certificateOverride?: string;
+		gitSubmodulesConfigOverride?: GitSubmodulesConfig | null;
+		buildspecOverride?: string | null;
+		insecureSslOverride?: boolean | null;
+		reportBuildStatusOverride?: boolean | null;
+		environmentTypeOverride?: ProjectEnvironmentType | null;
+		imageOverride?: string | null;
+		computeTypeOverride?: ProjectEnvironmentComputeType | null;
+		certificateOverride?: string | null;
 
 		/** Information about the cache for the build project. */
-		cacheOverride?: ProjectCache;
-		serviceRoleOverride?: string;
-		privilegedModeOverride?: boolean;
-		timeoutInMinutesOverride?: number;
-		queuedTimeoutInMinutesOverride?: number;
-		encryptionKeyOverride?: string;
+		cacheOverride?: ProjectCache | null;
+		serviceRoleOverride?: string | null;
+		privilegedModeOverride?: boolean | null;
+		timeoutInMinutesOverride?: number | null;
+		queuedTimeoutInMinutesOverride?: number | null;
+		encryptionKeyOverride?: string | null;
 
 		/** Information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both. */
-		logsConfigOverride?: LogsConfig;
+		logsConfigOverride?: LogsConfig | null;
 
 		/** <p> Information about credentials that provide access to a private Docker registry. When this is set: </p> <ul> <li> <p> <code>imagePullCredentialsType</code> must be set to <code>SERVICE_ROLE</code>. </p> </li> <li> <p> images cannot be curated or an Amazon ECR image.</p> </li> </ul> <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html">Private Registry with AWS Secrets Manager Sample for AWS CodeBuild</a>. </p> */
-		registryCredentialOverride?: RegistryCredential;
-		imagePullCredentialsTypeOverride?: ProjectEnvironmentImagePullCredentialsType;
+		registryCredentialOverride?: RegistryCredential | null;
+		imagePullCredentialsTypeOverride?: ProjectEnvironmentImagePullCredentialsType | null;
 	}
 
 	export interface StopBuildOutput {
 
 		/** Information about a build. */
-		build?: Build;
+		build?: Build | null;
 	}
 
 	export interface StopBuildInput {
@@ -910,68 +910,68 @@ export namespace MyNS {
 	export interface UpdateProjectOutput {
 
 		/** Information about a build project. */
-		project?: Project;
+		project?: Project | null;
 	}
 
 	export interface UpdateProjectInput {
 		name: string;
-		description?: string;
+		description?: string | null;
 
 		/** Information about the build input source code for the build project. */
-		source?: ProjectSource;
-		secondarySources?: Array<ProjectSource>;
-		sourceVersion?: string;
-		secondarySourceVersions?: Array<ProjectSourceVersion>;
+		source?: ProjectSource | null;
+		secondarySources?: Array<ProjectSource> | null;
+		sourceVersion?: string | null;
+		secondarySourceVersions?: Array<ProjectSourceVersion> | null;
 
 		/** Information about the build output artifacts for the build project. */
-		artifacts?: ProjectArtifacts;
-		secondaryArtifacts?: Array<ProjectArtifacts>;
+		artifacts?: ProjectArtifacts | null;
+		secondaryArtifacts?: Array<ProjectArtifacts> | null;
 
 		/** Information about the cache for the build project. */
-		cache?: ProjectCache;
+		cache?: ProjectCache | null;
 
 		/** Information about the build environment of the build project. */
-		environment?: ProjectEnvironment;
-		serviceRole?: string;
-		timeoutInMinutes?: number;
-		queuedTimeoutInMinutes?: number;
-		encryptionKey?: string;
-		tags?: Array<Tag>;
+		environment?: ProjectEnvironment | null;
+		serviceRole?: string | null;
+		timeoutInMinutes?: number | null;
+		queuedTimeoutInMinutes?: number | null;
+		encryptionKey?: string | null;
+		tags?: Array<Tag> | null;
 
 		/** Information about the VPC configuration that AWS CodeBuild accesses. */
-		vpcConfig?: VpcConfig;
-		badgeEnabled?: boolean;
+		vpcConfig?: VpcConfig | null;
+		badgeEnabled?: boolean | null;
 
 		/** Information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both. */
-		logsConfig?: LogsConfig;
-		fileSystemLocations?: Array<ProjectFileSystemLocation>;
+		logsConfig?: LogsConfig | null;
+		fileSystemLocations?: Array<ProjectFileSystemLocation> | null;
 	}
 
 	export interface UpdateReportGroupOutput {
 
 		/** A series of reports. Each report contains information about the results from running a series of test cases. You specify the test cases for a report group in the buildspec for a build project using one or more paths to the test case files. */
-		reportGroup?: ReportGroup;
+		reportGroup?: ReportGroup | null;
 	}
 
 	export interface UpdateReportGroupInput {
 		arn: string;
 
 		/** Information about the location where the run of a report is exported. */
-		exportConfig?: ReportExportConfig;
-		tags?: Array<Tag>;
+		exportConfig?: ReportExportConfig | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface UpdateWebhookOutput {
 
 		/** Information about a webhook that connects repository events to a build project in AWS CodeBuild. */
-		webhook?: Webhook;
+		webhook?: Webhook | null;
 	}
 
 	export interface UpdateWebhookInput {
 		projectName: string;
-		branchFilter?: string;
-		rotateSecret?: boolean;
-		filterGroups?: Array<Array<WebhookFilter>>;
+		branchFilter?: string | null;
+		rotateSecret?: boolean | null;
+		filterGroups?: Array<Array<WebhookFilter>> | null;
 	}
 
 	export enum ArtifactNamespace { NONE = 0, BUILD_ID = 1 }
@@ -1162,7 +1162,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeTestCasesOutput} Success
 		 */
-		DescribeTestCases(maxResults: string, nextToken: string, requestBody: DescribeTestCasesInput): Observable<DescribeTestCasesOutput> {
+		DescribeTestCases(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeTestCasesInput): Observable<DescribeTestCasesOutput> {
 			return this.http.post<DescribeTestCasesOutput>(this.baseUri + '#X-Amz-Target=CodeBuild_20161006.DescribeTestCases?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1199,7 +1199,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListBuildsOutput} Success
 		 */
-		ListBuilds(nextToken: string, requestBody: ListBuildsInput): Observable<ListBuildsOutput> {
+		ListBuilds(nextToken: string | null | undefined, requestBody: ListBuildsInput): Observable<ListBuildsOutput> {
 			return this.http.post<ListBuildsOutput>(this.baseUri + '#X-Amz-Target=CodeBuild_20161006.ListBuilds?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1209,7 +1209,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListBuildsForProjectOutput} Success
 		 */
-		ListBuildsForProject(nextToken: string, requestBody: ListBuildsForProjectInput): Observable<ListBuildsForProjectOutput> {
+		ListBuildsForProject(nextToken: string | null | undefined, requestBody: ListBuildsForProjectInput): Observable<ListBuildsForProjectOutput> {
 			return this.http.post<ListBuildsForProjectOutput>(this.baseUri + '#X-Amz-Target=CodeBuild_20161006.ListBuildsForProject?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1228,7 +1228,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListProjectsOutput} Success
 		 */
-		ListProjects(nextToken: string, requestBody: ListProjectsInput): Observable<ListProjectsOutput> {
+		ListProjects(nextToken: string | null | undefined, requestBody: ListProjectsInput): Observable<ListProjectsOutput> {
 			return this.http.post<ListProjectsOutput>(this.baseUri + '#X-Amz-Target=CodeBuild_20161006.ListProjects?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1239,7 +1239,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListReportGroupsOutput} Success
 		 */
-		ListReportGroups(maxResults: string, nextToken: string, requestBody: ListReportGroupsInput): Observable<ListReportGroupsOutput> {
+		ListReportGroups(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListReportGroupsInput): Observable<ListReportGroupsOutput> {
 			return this.http.post<ListReportGroupsOutput>(this.baseUri + '#X-Amz-Target=CodeBuild_20161006.ListReportGroups?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1250,7 +1250,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListReportsOutput} Success
 		 */
-		ListReports(maxResults: string, nextToken: string, requestBody: ListReportsInput): Observable<ListReportsOutput> {
+		ListReports(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListReportsInput): Observable<ListReportsOutput> {
 			return this.http.post<ListReportsOutput>(this.baseUri + '#X-Amz-Target=CodeBuild_20161006.ListReports?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1261,7 +1261,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListReportsForReportGroupOutput} Success
 		 */
-		ListReportsForReportGroup(maxResults: string, nextToken: string, requestBody: ListReportsForReportGroupInput): Observable<ListReportsForReportGroupOutput> {
+		ListReportsForReportGroup(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListReportsForReportGroupInput): Observable<ListReportsForReportGroupOutput> {
 			return this.http.post<ListReportsForReportGroupOutput>(this.baseUri + '#X-Amz-Target=CodeBuild_20161006.ListReportsForReportGroup?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1272,7 +1272,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSharedProjectsOutput} Success
 		 */
-		ListSharedProjects(maxResults: string, nextToken: string, requestBody: ListSharedProjectsInput): Observable<ListSharedProjectsOutput> {
+		ListSharedProjects(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListSharedProjectsInput): Observable<ListSharedProjectsOutput> {
 			return this.http.post<ListSharedProjectsOutput>(this.baseUri + '#X-Amz-Target=CodeBuild_20161006.ListSharedProjects?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1283,7 +1283,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSharedReportGroupsOutput} Success
 		 */
-		ListSharedReportGroups(maxResults: string, nextToken: string, requestBody: ListSharedReportGroupsInput): Observable<ListSharedReportGroupsOutput> {
+		ListSharedReportGroups(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListSharedReportGroupsInput): Observable<ListSharedReportGroupsOutput> {
 			return this.http.post<ListSharedReportGroupsOutput>(this.baseUri + '#X-Amz-Target=CodeBuild_20161006.ListSharedReportGroups?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

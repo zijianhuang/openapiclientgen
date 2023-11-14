@@ -3,38 +3,38 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface DescribeAffectedAccountsForOrganizationResponse {
-		affectedAccounts?: Array<string>;
-		eventScopeCode?: DescribeAffectedAccountsForOrganizationResponseEventScopeCode;
-		nextToken?: string;
+		affectedAccounts?: Array<string> | null;
+		eventScopeCode?: DescribeAffectedAccountsForOrganizationResponseEventScopeCode | null;
+		nextToken?: string | null;
 	}
 
 	export enum DescribeAffectedAccountsForOrganizationResponseEventScopeCode { PUBLIC = 0, ACCOUNT_SPECIFIC = 1, NONE = 2 }
 
 	export interface DescribeAffectedAccountsForOrganizationRequest {
 		eventArn: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface InvalidPaginationToken {
 	}
 
 	export interface DescribeAffectedEntitiesResponse {
-		entities?: Array<AffectedEntity>;
-		nextToken?: string;
+		entities?: Array<AffectedEntity> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about an entity that is affected by a Health event. */
 	export interface AffectedEntity {
-		entityArn?: string;
-		eventArn?: string;
-		entityValue?: string;
-		entityUrl?: string;
-		awsAccountId?: string;
-		lastUpdatedTime?: Date;
-		statusCode?: AffectedEntityStatusCode;
-		tags?: TagSet;
+		entityArn?: string | null;
+		eventArn?: string | null;
+		entityValue?: string | null;
+		entityUrl?: string | null;
+		awsAccountId?: string | null;
+		lastUpdatedTime?: Date | null;
+		statusCode?: AffectedEntityStatusCode | null;
+		tags?: TagSet | null;
 	}
 
 	export enum AffectedEntityStatusCode { IMPAIRED = 0, UNIMPAIRED = 1, UNKNOWN = 2 }
@@ -49,27 +49,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		filter: EntityFilter;
-		locale?: string;
-		nextToken?: string;
-		maxResults?: number;
+		locale?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 
 	/** The values to use to filter results from the <a>DescribeAffectedEntities</a> operation. */
 	export interface EntityFilter {
 		eventArns: Array<string>;
-		entityArns?: Array<string>;
-		entityValues?: Array<string>;
-		lastUpdatedTimes?: Array<DateTimeRange>;
-		tags?: Array<TagSet>;
-		statusCodes?: Array<EntityStatusCode>;
+		entityArns?: Array<string> | null;
+		entityValues?: Array<string> | null;
+		lastUpdatedTimes?: Array<DateTimeRange> | null;
+		tags?: Array<TagSet> | null;
+		statusCodes?: Array<EntityStatusCode> | null;
 	}
 
 
 	/** A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>. */
 	export interface DateTimeRange {
-		from?: Date;
-		to?: Date;
+		from?: Date | null;
+		to?: Date | null;
 	}
 
 	export enum EntityStatusCode { IMPAIRED = 0, UNIMPAIRED = 1, UNKNOWN = 2 }
@@ -78,86 +78,86 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAffectedEntitiesForOrganizationResponse {
-		entities?: Array<AffectedEntity>;
-		failedSet?: Array<OrganizationAffectedEntitiesErrorItem>;
-		nextToken?: string;
+		entities?: Array<AffectedEntity> | null;
+		failedSet?: Array<OrganizationAffectedEntitiesErrorItem> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Error information returned when a <a>DescribeAffectedEntitiesForOrganization</a> operation cannot find or process a specific entity. */
 	export interface OrganizationAffectedEntitiesErrorItem {
-		awsAccountId?: string;
-		eventArn?: string;
-		errorName?: string;
-		errorMessage?: string;
+		awsAccountId?: string | null;
+		eventArn?: string | null;
+		errorName?: string | null;
+		errorMessage?: string | null;
 	}
 
 	export interface DescribeAffectedEntitiesForOrganizationRequest {
 		organizationEntityFilters: Array<EventAccountFilter>;
-		locale?: string;
-		nextToken?: string;
-		maxResults?: number;
+		locale?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 
 	/** The values used to filter results from the <a>DescribeEventDetailsForOrganization</a> and <a>DescribeAffectedEntitiesForOrganization</a> operations. */
 	export interface EventAccountFilter {
 		eventArn: string;
-		awsAccountId?: string;
+		awsAccountId?: string | null;
 	}
 
 	export interface DescribeEntityAggregatesResponse {
-		entityAggregates?: Array<EntityAggregate>;
+		entityAggregates?: Array<EntityAggregate> | null;
 	}
 
 
 	/** The number of entities that are affected by one or more events. Returned by the <a>DescribeEntityAggregates</a> operation. */
 	export interface EntityAggregate {
-		eventArn?: string;
-		count?: number;
+		eventArn?: string | null;
+		count?: number | null;
 	}
 
 	export interface DescribeEntityAggregatesRequest {
-		eventArns?: Array<string>;
+		eventArns?: Array<string> | null;
 	}
 
 	export interface DescribeEventAggregatesResponse {
-		eventAggregates?: Array<EventAggregate>;
-		nextToken?: string;
+		eventAggregates?: Array<EventAggregate> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** The number of events of each issue type. Returned by the <a>DescribeEventAggregates</a> operation. */
 	export interface EventAggregate {
-		aggregateValue?: string;
-		count?: number;
+		aggregateValue?: string | null;
+		count?: number | null;
 	}
 
 	export interface DescribeEventAggregatesRequest {
 
 		/** The values to use to filter results from the <a>DescribeEvents</a> and <a>DescribeEventAggregates</a> operations. */
-		filter?: EventFilter;
+		filter?: EventFilter | null;
 		aggregateField: DescribeEventAggregatesRequestAggregateField;
-		maxResults?: number;
-		nextToken?: string;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 
 	/** The values to use to filter results from the <a>DescribeEvents</a> and <a>DescribeEventAggregates</a> operations. */
 	export interface EventFilter {
-		eventArns?: Array<string>;
-		eventTypeCodes?: Array<string>;
-		services?: Array<string>;
-		regions?: Array<string>;
-		availabilityZones?: Array<string>;
-		startTimes?: Array<DateTimeRange>;
-		endTimes?: Array<DateTimeRange>;
-		lastUpdatedTimes?: Array<DateTimeRange>;
-		entityArns?: Array<string>;
-		entityValues?: Array<string>;
-		eventTypeCategories?: Array<EventTypeCategory>;
-		tags?: Array<TagSet>;
-		eventStatusCodes?: Array<EventStatusCode>;
+		eventArns?: Array<string> | null;
+		eventTypeCodes?: Array<string> | null;
+		services?: Array<string> | null;
+		regions?: Array<string> | null;
+		availabilityZones?: Array<string> | null;
+		startTimes?: Array<DateTimeRange> | null;
+		endTimes?: Array<DateTimeRange> | null;
+		lastUpdatedTimes?: Array<DateTimeRange> | null;
+		entityArns?: Array<string> | null;
+		entityValues?: Array<string> | null;
+		eventTypeCategories?: Array<EventTypeCategory> | null;
+		tags?: Array<TagSet> | null;
+		eventStatusCodes?: Array<EventStatusCode> | null;
 	}
 
 	export enum EventTypeCategory { issue = 0, accountNotification = 1, scheduledChange = 2, investigation = 3 }
@@ -167,8 +167,8 @@ export namespace MyNS {
 	export enum DescribeEventAggregatesRequestAggregateField { eventTypeCategory = 0 }
 
 	export interface DescribeEventDetailsResponse {
-		successfulSet?: Array<EventDetails>;
-		failedSet?: Array<EventDetailsErrorItem>;
+		successfulSet?: Array<EventDetails> | null;
+		failedSet?: Array<EventDetailsErrorItem> | null;
 	}
 
 
@@ -176,33 +176,33 @@ export namespace MyNS {
 	export interface EventDetails {
 
 		/** Summary information about an AWS Health event. */
-		event?: Event;
+		event?: Event | null;
 
 		/** The detailed description of the event. Included in the information returned by the <a>DescribeEventDetails</a> operation. */
-		eventDescription?: EventDescription;
-		eventMetadata?: EventMetadata;
+		eventDescription?: EventDescription | null;
+		eventMetadata?: EventMetadata | null;
 	}
 
 
 	/** Summary information about an AWS Health event. */
 	export interface Event {
-		arn?: string;
-		service?: string;
-		eventTypeCode?: string;
-		eventTypeCategory?: EventTypeCategory;
-		region?: string;
-		availabilityZone?: string;
-		startTime?: Date;
-		endTime?: Date;
-		lastUpdatedTime?: Date;
-		statusCode?: EventStatusCode;
-		eventScopeCode?: DescribeAffectedAccountsForOrganizationResponseEventScopeCode;
+		arn?: string | null;
+		service?: string | null;
+		eventTypeCode?: string | null;
+		eventTypeCategory?: EventTypeCategory | null;
+		region?: string | null;
+		availabilityZone?: string | null;
+		startTime?: Date | null;
+		endTime?: Date | null;
+		lastUpdatedTime?: Date | null;
+		statusCode?: EventStatusCode | null;
+		eventScopeCode?: DescribeAffectedAccountsForOrganizationResponseEventScopeCode | null;
 	}
 
 
 	/** The detailed description of the event. Included in the information returned by the <a>DescribeEventDetails</a> operation. */
 	export interface EventDescription {
-		latestDescription?: string;
+		latestDescription?: string | null;
 	}
 
 	export interface EventMetadata {
@@ -211,145 +211,145 @@ export namespace MyNS {
 
 	/** Error information returned when a <a>DescribeEventDetails</a> operation cannot find a specified event. */
 	export interface EventDetailsErrorItem {
-		eventArn?: string;
-		errorName?: string;
-		errorMessage?: string;
+		eventArn?: string | null;
+		errorName?: string | null;
+		errorMessage?: string | null;
 	}
 
 	export interface DescribeEventDetailsRequest {
 		eventArns: Array<string>;
-		locale?: string;
+		locale?: string | null;
 	}
 
 	export interface DescribeEventDetailsForOrganizationResponse {
-		successfulSet?: Array<OrganizationEventDetails>;
-		failedSet?: Array<OrganizationEventDetailsErrorItem>;
+		successfulSet?: Array<OrganizationEventDetails> | null;
+		failedSet?: Array<OrganizationEventDetailsErrorItem> | null;
 	}
 
 
 	/** Detailed information about an event. A combination of an <a>Event</a> object, an <a>EventDescription</a> object, and additional metadata about the event. Returned by the <a>DescribeEventDetailsForOrganization</a> operation. */
 	export interface OrganizationEventDetails {
-		awsAccountId?: string;
+		awsAccountId?: string | null;
 
 		/** Summary information about an AWS Health event. */
-		event?: Event;
+		event?: Event | null;
 
 		/** The detailed description of the event. Included in the information returned by the <a>DescribeEventDetails</a> operation. */
-		eventDescription?: EventDescription;
-		eventMetadata?: EventMetadata;
+		eventDescription?: EventDescription | null;
+		eventMetadata?: EventMetadata | null;
 	}
 
 
 	/** Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a specified event. */
 	export interface OrganizationEventDetailsErrorItem {
-		awsAccountId?: string;
-		eventArn?: string;
-		errorName?: string;
-		errorMessage?: string;
+		awsAccountId?: string | null;
+		eventArn?: string | null;
+		errorName?: string | null;
+		errorMessage?: string | null;
 	}
 
 	export interface DescribeEventDetailsForOrganizationRequest {
 		organizationEventDetailFilters: Array<EventAccountFilter>;
-		locale?: string;
+		locale?: string | null;
 	}
 
 	export interface DescribeEventTypesResponse {
-		eventTypes?: Array<EventType>;
-		nextToken?: string;
+		eventTypes?: Array<EventType> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Metadata about a type of event that is reported by AWS Health. Data consists of the category (for example, <code>issue</code>), the service (for example, <code>EC2</code>), and the event type code (for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>). */
 	export interface EventType {
-		service?: string;
-		code?: string;
-		category?: EventTypeCategory;
+		service?: string | null;
+		code?: string | null;
+		category?: EventTypeCategory | null;
 	}
 
 	export interface DescribeEventTypesRequest {
 
 		/** The values to use to filter results from the <a>DescribeEventTypes</a> operation. */
-		filter?: EventTypeFilter;
-		locale?: string;
-		nextToken?: string;
-		maxResults?: number;
+		filter?: EventTypeFilter | null;
+		locale?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 
 	/** The values to use to filter results from the <a>DescribeEventTypes</a> operation. */
 	export interface EventTypeFilter {
-		eventTypeCodes?: Array<string>;
-		services?: Array<string>;
-		eventTypeCategories?: Array<EventTypeCategory>;
+		eventTypeCodes?: Array<string> | null;
+		services?: Array<string> | null;
+		eventTypeCategories?: Array<EventTypeCategory> | null;
 	}
 
 	export interface DescribeEventsResponse {
-		events?: Array<Event>;
-		nextToken?: string;
+		events?: Array<Event> | null;
+		nextToken?: string | null;
 	}
 
 	export interface DescribeEventsRequest {
 
 		/** The values to use to filter results from the <a>DescribeEvents</a> and <a>DescribeEventAggregates</a> operations. */
-		filter?: EventFilter;
-		nextToken?: string;
-		maxResults?: number;
-		locale?: string;
+		filter?: EventFilter | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		locale?: string | null;
 	}
 
 	export interface DescribeEventsForOrganizationResponse {
-		events?: Array<OrganizationEvent>;
-		nextToken?: string;
+		events?: Array<OrganizationEvent> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Summary information about an event, returned by the <a>DescribeEventsForOrganization</a> operation. */
 	export interface OrganizationEvent {
-		arn?: string;
-		service?: string;
-		eventTypeCode?: string;
-		eventTypeCategory?: EventTypeCategory;
-		eventScopeCode?: DescribeAffectedAccountsForOrganizationResponseEventScopeCode;
-		region?: string;
-		startTime?: Date;
-		endTime?: Date;
-		lastUpdatedTime?: Date;
-		statusCode?: EventStatusCode;
+		arn?: string | null;
+		service?: string | null;
+		eventTypeCode?: string | null;
+		eventTypeCategory?: EventTypeCategory | null;
+		eventScopeCode?: DescribeAffectedAccountsForOrganizationResponseEventScopeCode | null;
+		region?: string | null;
+		startTime?: Date | null;
+		endTime?: Date | null;
+		lastUpdatedTime?: Date | null;
+		statusCode?: EventStatusCode | null;
 	}
 
 	export interface DescribeEventsForOrganizationRequest {
 
 		/** The values to filter results from the <a>DescribeEventsForOrganization</a> operation. */
-		filter?: OrganizationEventFilter;
-		nextToken?: string;
-		maxResults?: number;
-		locale?: string;
+		filter?: OrganizationEventFilter | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		locale?: string | null;
 	}
 
 
 	/** The values to filter results from the <a>DescribeEventsForOrganization</a> operation. */
 	export interface OrganizationEventFilter {
-		eventTypeCodes?: Array<string>;
-		awsAccountIds?: Array<string>;
-		services?: Array<string>;
-		regions?: Array<string>;
+		eventTypeCodes?: Array<string> | null;
+		awsAccountIds?: Array<string> | null;
+		services?: Array<string> | null;
+		regions?: Array<string> | null;
 
 		/** A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>. */
-		startTime?: DateTimeRange;
+		startTime?: DateTimeRange | null;
 
 		/** A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>. */
-		endTime?: DateTimeRange;
+		endTime?: DateTimeRange | null;
 
 		/** A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>. */
-		lastUpdatedTime?: DateTimeRange;
-		entityArns?: Array<string>;
-		entityValues?: Array<string>;
-		eventTypeCategories?: Array<EventTypeCategory>;
-		eventStatusCodes?: Array<EventStatusCode>;
+		lastUpdatedTime?: DateTimeRange | null;
+		entityArns?: Array<string> | null;
+		entityValues?: Array<string> | null;
+		eventTypeCategories?: Array<EventTypeCategory> | null;
+		eventStatusCodes?: Array<EventStatusCode> | null;
 	}
 
 	export interface DescribeHealthServiceStatusForOrganizationResponse {
-		healthServiceAccessStatusForOrganization?: string;
+		healthServiceAccessStatusForOrganization?: string | null;
 	}
 
 	export interface ConcurrentModificationException {
@@ -371,7 +371,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeAffectedAccountsForOrganizationResponse} Success
 		 */
-		DescribeAffectedAccountsForOrganization(maxResults: string, nextToken: string, requestBody: DescribeAffectedAccountsForOrganizationRequest): Observable<DescribeAffectedAccountsForOrganizationResponse> {
+		DescribeAffectedAccountsForOrganization(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeAffectedAccountsForOrganizationRequest): Observable<DescribeAffectedAccountsForOrganizationResponse> {
 			return this.http.post<DescribeAffectedAccountsForOrganizationResponse>(this.baseUri + '#X-Amz-Target=AWSHealth_20160804.DescribeAffectedAccountsForOrganization?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -382,7 +382,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeAffectedEntitiesResponse} Success
 		 */
-		DescribeAffectedEntities(maxResults: string, nextToken: string, requestBody: DescribeAffectedEntitiesRequest): Observable<DescribeAffectedEntitiesResponse> {
+		DescribeAffectedEntities(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeAffectedEntitiesRequest): Observable<DescribeAffectedEntitiesResponse> {
 			return this.http.post<DescribeAffectedEntitiesResponse>(this.baseUri + '#X-Amz-Target=AWSHealth_20160804.DescribeAffectedEntities?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -393,7 +393,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeAffectedEntitiesForOrganizationResponse} Success
 		 */
-		DescribeAffectedEntitiesForOrganization(maxResults: string, nextToken: string, requestBody: DescribeAffectedEntitiesForOrganizationRequest): Observable<DescribeAffectedEntitiesForOrganizationResponse> {
+		DescribeAffectedEntitiesForOrganization(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeAffectedEntitiesForOrganizationRequest): Observable<DescribeAffectedEntitiesForOrganizationResponse> {
 			return this.http.post<DescribeAffectedEntitiesForOrganizationResponse>(this.baseUri + '#X-Amz-Target=AWSHealth_20160804.DescribeAffectedEntitiesForOrganization?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -413,7 +413,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeEventAggregatesResponse} Success
 		 */
-		DescribeEventAggregates(maxResults: string, nextToken: string, requestBody: DescribeEventAggregatesRequest): Observable<DescribeEventAggregatesResponse> {
+		DescribeEventAggregates(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeEventAggregatesRequest): Observable<DescribeEventAggregatesResponse> {
 			return this.http.post<DescribeEventAggregatesResponse>(this.baseUri + '#X-Amz-Target=AWSHealth_20160804.DescribeEventAggregates?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -442,7 +442,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeEventTypesResponse} Success
 		 */
-		DescribeEventTypes(maxResults: string, nextToken: string, requestBody: DescribeEventTypesRequest): Observable<DescribeEventTypesResponse> {
+		DescribeEventTypes(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeEventTypesRequest): Observable<DescribeEventTypesResponse> {
 			return this.http.post<DescribeEventTypesResponse>(this.baseUri + '#X-Amz-Target=AWSHealth_20160804.DescribeEventTypes?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -453,7 +453,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeEventsResponse} Success
 		 */
-		DescribeEvents(maxResults: string, nextToken: string, requestBody: DescribeEventsRequest): Observable<DescribeEventsResponse> {
+		DescribeEvents(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeEventsRequest): Observable<DescribeEventsResponse> {
 			return this.http.post<DescribeEventsResponse>(this.baseUri + '#X-Amz-Target=AWSHealth_20160804.DescribeEvents?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -464,7 +464,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeEventsForOrganizationResponse} Success
 		 */
-		DescribeEventsForOrganization(maxResults: string, nextToken: string, requestBody: DescribeEventsForOrganizationRequest): Observable<DescribeEventsForOrganizationResponse> {
+		DescribeEventsForOrganization(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeEventsForOrganizationRequest): Observable<DescribeEventsForOrganizationResponse> {
 			return this.http.post<DescribeEventsForOrganizationResponse>(this.baseUri + '#X-Amz-Target=AWSHealth_20160804.DescribeEventsForOrganization?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

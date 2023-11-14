@@ -30,9 +30,9 @@ namespace Fonlow.CodeDom.Web
 				}
 
 				string path = System.IO.Path.Combine(csharpClientProjectDir, settings.ClientLibraryFileName);
-				ControllersClientApiGen gen = new(settings);
-				gen.CreateCodeDom(paths, components);
-				gen.Save(path);
+				ControllersClientApiGen csGen = new(settings);
+				csGen.CreateCodeDom(paths, components);
+				csGen.Save(path);
 			}
 
 			string CreateTsPath(string folder, string fileName)

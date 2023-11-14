@@ -5,21 +5,21 @@ export namespace MyNS {
 	export interface AcceptSharedDirectoryResult {
 
 		/** Details about the shared directory in the directory owner account for which the share request in the directory consumer account has been accepted. */
-		SharedDirectory?: SharedDirectory;
+		SharedDirectory?: SharedDirectory | null;
 	}
 
 
 	/** Details about the shared directory in the directory owner account for which the share request in the directory consumer account has been accepted. */
 	export interface SharedDirectory {
-		OwnerAccountId?: string;
-		OwnerDirectoryId?: string;
-		ShareMethod?: SharedDirectoryShareMethod;
-		SharedAccountId?: string;
-		SharedDirectoryId?: string;
-		ShareStatus?: SharedDirectoryShareStatus;
-		ShareNotes?: string;
-		CreatedDateTime?: Date;
-		LastUpdatedDateTime?: Date;
+		OwnerAccountId?: string | null;
+		OwnerDirectoryId?: string | null;
+		ShareMethod?: SharedDirectoryShareMethod | null;
+		SharedAccountId?: string | null;
+		SharedDirectoryId?: string | null;
+		ShareStatus?: SharedDirectoryShareStatus | null;
+		ShareNotes?: string | null;
+		CreatedDateTime?: Date | null;
+		LastUpdatedDateTime?: Date | null;
 	}
 
 	export enum SharedDirectoryShareMethod { ORGANIZATIONS = 0, HANDSHAKE = 1 }
@@ -51,14 +51,14 @@ export namespace MyNS {
 	export interface AddIpRoutesRequest {
 		DirectoryId: string;
 		IpRoutes: Array<IpRoute>;
-		UpdateSecurityGroupForDirectoryControllers?: boolean;
+		UpdateSecurityGroupForDirectoryControllers?: boolean | null;
 	}
 
 
 	/** IP address block. This is often the address block of the DNS server used for your on-premises domain.  */
 	export interface IpRoute {
-		CidrIp?: string;
-		Description?: string;
+		CidrIp?: string | null;
+		Description?: string | null;
 	}
 
 	export interface EntityAlreadyExistsException {
@@ -99,16 +99,16 @@ export namespace MyNS {
 
 	/** Contains the results of the <a>ConnectDirectory</a> operation. */
 	export interface ConnectDirectoryResult {
-		DirectoryId?: string;
+		DirectoryId?: string | null;
 	}
 
 
 	/** Contains the inputs for the <a>ConnectDirectory</a> operation. */
 	export interface ConnectDirectoryRequest {
 		Name: string;
-		ShortName?: string;
+		ShortName?: string | null;
 		Password: string;
-		Description?: string;
+		Description?: string | null;
 		Size: ConnectDirectoryRequestSize;
 
 		/**
@@ -116,7 +116,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		ConnectSettings: DirectoryConnectSettings;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum ConnectDirectoryRequestSize { Small = 0, Large = 1 }
@@ -136,8 +136,8 @@ export namespace MyNS {
 
 	/** Contains the results of the <a>CreateAlias</a> operation. */
 	export interface CreateAliasResult {
-		DirectoryId?: string;
-		Alias?: string;
+		DirectoryId?: string | null;
+		Alias?: string | null;
 	}
 
 
@@ -152,22 +152,22 @@ export namespace MyNS {
 	export interface CreateComputerResult {
 
 		/** Contains information about a computer account in a directory. */
-		Computer?: Computer;
+		Computer?: Computer | null;
 	}
 
 
 	/** Contains information about a computer account in a directory. */
 	export interface Computer {
-		ComputerId?: string;
-		ComputerName?: string;
-		ComputerAttributes?: Array<Attribute>;
+		ComputerId?: string | null;
+		ComputerName?: string | null;
+		ComputerAttributes?: Array<Attribute> | null;
 	}
 
 
 	/** Represents a named directory attribute. */
 	export interface Attribute {
-		Name?: string;
-		Value?: string;
+		Name?: string | null;
+		Value?: string | null;
 	}
 
 
@@ -176,8 +176,8 @@ export namespace MyNS {
 		DirectoryId: string;
 		ComputerName: string;
 		Password: string;
-		OrganizationalUnitDistinguishedName?: string;
-		ComputerAttributes?: Array<Attribute>;
+		OrganizationalUnitDistinguishedName?: string | null;
+		ComputerAttributes?: Array<Attribute> | null;
 	}
 
 	export interface AuthenticationFailedException {
@@ -202,21 +202,21 @@ export namespace MyNS {
 
 	/** Contains the results of the <a>CreateDirectory</a> operation. */
 	export interface CreateDirectoryResult {
-		DirectoryId?: string;
+		DirectoryId?: string | null;
 	}
 
 
 	/** Contains the inputs for the <a>CreateDirectory</a> operation.  */
 	export interface CreateDirectoryRequest {
 		Name: string;
-		ShortName?: string;
+		ShortName?: string | null;
 		Password: string;
-		Description?: string;
+		Description?: string | null;
 		Size: ConnectDirectoryRequestSize;
 
 		/** Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation. */
-		VpcSettings?: DirectoryVpcSettings;
-		Tags?: Array<Tag>;
+		VpcSettings?: DirectoryVpcSettings | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -240,24 +240,24 @@ export namespace MyNS {
 
 	/** Result of a CreateMicrosoftAD request. */
 	export interface CreateMicrosoftADResult {
-		DirectoryId?: string;
+		DirectoryId?: string | null;
 	}
 
 
 	/** Creates an AWS Managed Microsoft AD directory. */
 	export interface CreateMicrosoftADRequest {
 		Name: string;
-		ShortName?: string;
+		ShortName?: string | null;
 		Password: string;
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.
 		 * Required
 		 */
 		VpcSettings: DirectoryVpcSettings;
-		Edition?: CreateMicrosoftADRequestEdition;
-		Tags?: Array<Tag>;
+		Edition?: CreateMicrosoftADRequestEdition | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum CreateMicrosoftADRequestEdition { Enterprise = 0, Standard = 1 }
@@ -265,14 +265,14 @@ export namespace MyNS {
 
 	/** Contains the results of the <a>CreateSnapshot</a> operation. */
 	export interface CreateSnapshotResult {
-		SnapshotId?: string;
+		SnapshotId?: string | null;
 	}
 
 
 	/** Contains the inputs for the <a>CreateSnapshot</a> operation. */
 	export interface CreateSnapshotRequest {
 		DirectoryId: string;
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface SnapshotLimitExceededException {
@@ -281,7 +281,7 @@ export namespace MyNS {
 
 	/** The result of a CreateTrust request. */
 	export interface CreateTrustResult {
-		TrustId?: string;
+		TrustId?: string | null;
 	}
 
 
@@ -291,9 +291,9 @@ export namespace MyNS {
 		RemoteDomainName: string;
 		TrustPassword: string;
 		TrustDirection: CreateTrustRequestTrustDirection;
-		TrustType?: CreateTrustRequestTrustType;
-		ConditionalForwarderIpAddrs?: Array<string>;
-		SelectiveAuth?: CreateTrustRequestSelectiveAuth;
+		TrustType?: CreateTrustRequestTrustType | null;
+		ConditionalForwarderIpAddrs?: Array<string> | null;
+		SelectiveAuth?: CreateTrustRequestSelectiveAuth | null;
 	}
 
 	export enum CreateTrustRequestTrustDirection { One_Way_Outgoing = 0, One_Way_Incoming = 1, Two_Way = 2 }
@@ -317,7 +317,7 @@ export namespace MyNS {
 
 	/** Contains the results of the <a>DeleteDirectory</a> operation. */
 	export interface DeleteDirectoryResult {
-		DirectoryId?: string;
+		DirectoryId?: string | null;
 	}
 
 
@@ -336,7 +336,7 @@ export namespace MyNS {
 
 	/** Contains the results of the <a>DeleteSnapshot</a> operation. */
 	export interface DeleteSnapshotResult {
-		SnapshotId?: string;
+		SnapshotId?: string | null;
 	}
 
 
@@ -348,14 +348,14 @@ export namespace MyNS {
 
 	/** The result of a DeleteTrust request. */
 	export interface DeleteTrustResult {
-		TrustId?: string;
+		TrustId?: string | null;
 	}
 
 
 	/** Deletes the local side of an existing trust relationship between the AWS Managed Microsoft AD directory and the external domain. */
 	export interface DeleteTrustRequest {
 		TrustId: string;
-		DeleteAssociatedConditionalForwarder?: boolean;
+		DeleteAssociatedConditionalForwarder?: boolean | null;
 	}
 
 	export interface DeregisterCertificateResult {
@@ -390,18 +390,18 @@ export namespace MyNS {
 	export interface DescribeCertificateResult {
 
 		/** Information about the certificate. */
-		Certificate?: Certificate;
+		Certificate?: Certificate | null;
 	}
 
 
 	/** Information about the certificate. */
 	export interface Certificate {
-		CertificateId?: string;
-		State?: CertificateState;
-		StateReason?: string;
-		CommonName?: string;
-		RegisteredDateTime?: Date;
-		ExpiryDateTime?: Date;
+		CertificateId?: string | null;
+		State?: CertificateState | null;
+		StateReason?: string | null;
+		CommonName?: string | null;
+		RegisteredDateTime?: Date | null;
+		ExpiryDateTime?: Date | null;
 	}
 
 	export enum CertificateState { Registering = 0, Registered = 1, RegisterFailed = 2, Deregistering = 3, Deregistered = 4, DeregisterFailed = 5 }
@@ -414,15 +414,15 @@ export namespace MyNS {
 
 	/** The result of a DescribeConditionalForwarder request. */
 	export interface DescribeConditionalForwardersResult {
-		ConditionalForwarders?: Array<ConditionalForwarder>;
+		ConditionalForwarders?: Array<ConditionalForwarder> | null;
 	}
 
 
 	/** Points to a remote domain with which you are setting up a trust relationship. Conditional forwarders are required in order to set up a trust relationship with another domain. */
 	export interface ConditionalForwarder {
-		RemoteDomainName?: string;
-		DnsIpAddrs?: Array<string>;
-		ReplicationScope?: ConditionalForwarderReplicationScope;
+		RemoteDomainName?: string | null;
+		DnsIpAddrs?: Array<string> | null;
+		ReplicationScope?: ConditionalForwarderReplicationScope | null;
 	}
 
 	export enum ConditionalForwarderReplicationScope { Domain = 0 }
@@ -431,7 +431,7 @@ export namespace MyNS {
 	/** Describes a conditional forwarder. */
 	export interface DescribeConditionalForwardersRequest {
 		DirectoryId: string;
-		RemoteDomainNames?: Array<string>;
+		RemoteDomainNames?: Array<string> | null;
 	}
 
 
@@ -439,45 +439,45 @@ export namespace MyNS {
 	export interface DescribeDirectoriesResult {
 
 		/** A list of directory descriptions. */
-		DirectoryDescriptions?: Array<DirectoryDescription>;
-		NextToken?: string;
+		DirectoryDescriptions?: Array<DirectoryDescription> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains information about an AWS Directory Service directory. */
 	export interface DirectoryDescription {
-		DirectoryId?: string;
-		Name?: string;
-		ShortName?: string;
-		Size?: ConnectDirectoryRequestSize;
-		Edition?: CreateMicrosoftADRequestEdition;
-		Alias?: string;
-		AccessUrl?: string;
-		Description?: string;
-		DnsIpAddrs?: Array<string>;
-		Stage?: DirectoryDescriptionStage;
-		ShareStatus?: SharedDirectoryShareStatus;
-		ShareMethod?: SharedDirectoryShareMethod;
-		ShareNotes?: string;
-		LaunchTime?: Date;
-		StageLastUpdatedDateTime?: Date;
-		Type?: DirectoryDescriptionType;
+		DirectoryId?: string | null;
+		Name?: string | null;
+		ShortName?: string | null;
+		Size?: ConnectDirectoryRequestSize | null;
+		Edition?: CreateMicrosoftADRequestEdition | null;
+		Alias?: string | null;
+		AccessUrl?: string | null;
+		Description?: string | null;
+		DnsIpAddrs?: Array<string> | null;
+		Stage?: DirectoryDescriptionStage | null;
+		ShareStatus?: SharedDirectoryShareStatus | null;
+		ShareMethod?: SharedDirectoryShareMethod | null;
+		ShareNotes?: string | null;
+		LaunchTime?: Date | null;
+		StageLastUpdatedDateTime?: Date | null;
+		Type?: DirectoryDescriptionType | null;
 
 		/** Contains information about the directory. */
-		VpcSettings?: DirectoryVpcSettingsDescription;
+		VpcSettings?: DirectoryVpcSettingsDescription | null;
 
 		/** Contains information about an AD Connector directory. */
-		ConnectSettings?: DirectoryConnectSettingsDescription;
+		ConnectSettings?: DirectoryConnectSettingsDescription | null;
 
 		/** Contains information about a Remote Authentication Dial In User Service (RADIUS) server. */
-		RadiusSettings?: RadiusSettings;
-		RadiusStatus?: DirectoryDescriptionRadiusStatus;
-		StageReason?: string;
-		SsoEnabled?: boolean;
-		DesiredNumberOfDomainControllers?: number;
+		RadiusSettings?: RadiusSettings | null;
+		RadiusStatus?: DirectoryDescriptionRadiusStatus | null;
+		StageReason?: string | null;
+		SsoEnabled?: boolean | null;
+		DesiredNumberOfDomainControllers?: number | null;
 
 		/** Describes the directory owner account details that have been shared to the directory consumer account. */
-		OwnerDirectoryDescription?: OwnerDirectoryDescription;
+		OwnerDirectoryDescription?: OwnerDirectoryDescription | null;
 	}
 
 	export enum DirectoryDescriptionStage { Requested = 0, Creating = 1, Created = 2, Active = 3, Inoperable = 4, Impaired = 5, Restoring = 6, RestoreFailed = 7, Deleting = 8, Deleted = 9, Failed = 10 }
@@ -487,34 +487,34 @@ export namespace MyNS {
 
 	/** Contains information about the directory. */
 	export interface DirectoryVpcSettingsDescription {
-		VpcId?: string;
-		SubnetIds?: Array<string>;
-		SecurityGroupId?: string;
-		AvailabilityZones?: Array<string>;
+		VpcId?: string | null;
+		SubnetIds?: Array<string> | null;
+		SecurityGroupId?: string | null;
+		AvailabilityZones?: Array<string> | null;
 	}
 
 
 	/** Contains information about an AD Connector directory. */
 	export interface DirectoryConnectSettingsDescription {
-		VpcId?: string;
-		SubnetIds?: Array<string>;
-		CustomerUserName?: string;
-		SecurityGroupId?: string;
-		AvailabilityZones?: Array<string>;
-		ConnectIps?: Array<string>;
+		VpcId?: string | null;
+		SubnetIds?: Array<string> | null;
+		CustomerUserName?: string | null;
+		SecurityGroupId?: string | null;
+		AvailabilityZones?: Array<string> | null;
+		ConnectIps?: Array<string> | null;
 	}
 
 
 	/** Contains information about a Remote Authentication Dial In User Service (RADIUS) server. */
 	export interface RadiusSettings {
-		RadiusServers?: Array<string>;
-		RadiusPort?: number;
-		RadiusTimeout?: number;
-		RadiusRetries?: number;
-		SharedSecret?: string;
-		AuthenticationProtocol?: RadiusSettingsAuthenticationProtocol;
-		DisplayLabel?: string;
-		UseSameUsername?: boolean;
+		RadiusServers?: Array<string> | null;
+		RadiusPort?: number | null;
+		RadiusTimeout?: number | null;
+		RadiusRetries?: number | null;
+		SharedSecret?: string | null;
+		AuthenticationProtocol?: RadiusSettingsAuthenticationProtocol | null;
+		DisplayLabel?: string | null;
+		UseSameUsername?: boolean | null;
 	}
 
 	export enum RadiusSettingsAuthenticationProtocol { PAP = 0, CHAP = 1, MS_CHAPv1 = 2, MS_CHAPv2 = 3 }
@@ -524,16 +524,16 @@ export namespace MyNS {
 
 	/** Describes the directory owner account details that have been shared to the directory consumer account. */
 	export interface OwnerDirectoryDescription {
-		DirectoryId?: string;
-		AccountId?: string;
-		DnsIpAddrs?: Array<string>;
+		DirectoryId?: string | null;
+		AccountId?: string | null;
+		DnsIpAddrs?: Array<string> | null;
 
 		/** Contains information about the directory. */
-		VpcSettings?: DirectoryVpcSettingsDescription;
+		VpcSettings?: DirectoryVpcSettingsDescription | null;
 
 		/** Contains information about a Remote Authentication Dial In User Service (RADIUS) server. */
-		RadiusSettings?: RadiusSettings;
-		RadiusStatus?: DirectoryDescriptionRadiusStatus;
+		RadiusSettings?: RadiusSettings | null;
+		RadiusStatus?: DirectoryDescriptionRadiusStatus | null;
 	}
 
 
@@ -541,57 +541,57 @@ export namespace MyNS {
 	export interface DescribeDirectoriesRequest {
 
 		/** A list of directory identifiers. */
-		DirectoryIds?: Array<string>;
-		NextToken?: string;
-		Limit?: number;
+		DirectoryIds?: Array<string> | null;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface InvalidNextTokenException {
 	}
 
 	export interface DescribeDomainControllersResult {
-		DomainControllers?: Array<DomainController>;
-		NextToken?: string;
+		DomainControllers?: Array<DomainController> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains information about the domain controllers for a specified directory. */
 	export interface DomainController {
-		DirectoryId?: string;
-		DomainControllerId?: string;
-		DnsIpAddr?: string;
-		VpcId?: string;
-		SubnetId?: string;
-		AvailabilityZone?: string;
-		Status?: DomainControllerStatus;
-		StatusReason?: string;
-		LaunchTime?: Date;
-		StatusLastUpdatedDateTime?: Date;
+		DirectoryId?: string | null;
+		DomainControllerId?: string | null;
+		DnsIpAddr?: string | null;
+		VpcId?: string | null;
+		SubnetId?: string | null;
+		AvailabilityZone?: string | null;
+		Status?: DomainControllerStatus | null;
+		StatusReason?: string | null;
+		LaunchTime?: Date | null;
+		StatusLastUpdatedDateTime?: Date | null;
 	}
 
 	export enum DomainControllerStatus { Creating = 0, Active = 1, Impaired = 2, Restoring = 3, Deleting = 4, Deleted = 5, Failed = 6 }
 
 	export interface DescribeDomainControllersRequest {
 		DirectoryId: string;
-		DomainControllerIds?: Array<string>;
-		NextToken?: string;
-		Limit?: number;
+		DomainControllerIds?: Array<string> | null;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 
 	/** The result of a DescribeEventTopic request. */
 	export interface DescribeEventTopicsResult {
-		EventTopics?: Array<EventTopic>;
+		EventTopics?: Array<EventTopic> | null;
 	}
 
 
 	/** Information about SNS topic and AWS Directory Service directory associations. */
 	export interface EventTopic {
-		DirectoryId?: string;
-		TopicName?: string;
-		TopicArn?: string;
-		CreatedDateTime?: Date;
-		Status?: EventTopicStatus;
+		DirectoryId?: string | null;
+		TopicName?: string | null;
+		TopicArn?: string | null;
+		CreatedDateTime?: Date | null;
+		Status?: EventTopicStatus | null;
 	}
 
 	export enum EventTopicStatus { Registered = 0, Topic_not_found = 1, Failed = 2, Deleted = 3 }
@@ -599,46 +599,46 @@ export namespace MyNS {
 
 	/** Describes event topics. */
 	export interface DescribeEventTopicsRequest {
-		DirectoryId?: string;
-		TopicNames?: Array<string>;
+		DirectoryId?: string | null;
+		TopicNames?: Array<string> | null;
 	}
 
 	export interface DescribeLDAPSSettingsResult {
-		LDAPSSettingsInfo?: Array<LDAPSSettingInfo>;
-		NextToken?: string;
+		LDAPSSettingsInfo?: Array<LDAPSSettingInfo> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains general information about the LDAPS settings. */
 	export interface LDAPSSettingInfo {
-		LDAPSStatus?: LDAPSSettingInfoLDAPSStatus;
-		LDAPSStatusReason?: string;
-		LastUpdatedDateTime?: Date;
+		LDAPSStatus?: LDAPSSettingInfoLDAPSStatus | null;
+		LDAPSStatusReason?: string | null;
+		LastUpdatedDateTime?: Date | null;
 	}
 
 	export enum LDAPSSettingInfoLDAPSStatus { Enabling = 0, Enabled = 1, EnableFailed = 2, Disabled = 3 }
 
 	export interface DescribeLDAPSSettingsRequest {
 		DirectoryId: string;
-		Type?: DescribeLDAPSSettingsRequestType;
-		NextToken?: string;
-		Limit?: number;
+		Type?: DescribeLDAPSSettingsRequestType | null;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export enum DescribeLDAPSSettingsRequestType { Client = 0 }
 
 	export interface DescribeSharedDirectoriesResult {
-		SharedDirectories?: Array<SharedDirectory>;
-		NextToken?: string;
+		SharedDirectories?: Array<SharedDirectory> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeSharedDirectoriesRequest {
 		OwnerDirectoryId: string;
 
 		/** A list of directory identifiers. */
-		SharedDirectoryIds?: Array<string>;
-		NextToken?: string;
-		Limit?: number;
+		SharedDirectoryIds?: Array<string> | null;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 
@@ -646,19 +646,19 @@ export namespace MyNS {
 	export interface DescribeSnapshotsResult {
 
 		/** A list of descriptions of directory snapshots. */
-		Snapshots?: Array<Snapshot>;
-		NextToken?: string;
+		Snapshots?: Array<Snapshot> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes a directory snapshot. */
 	export interface Snapshot {
-		DirectoryId?: string;
-		SnapshotId?: string;
-		Type?: SnapshotType;
-		Name?: string;
-		Status?: DirectoryDescriptionRadiusStatus;
-		StartTime?: Date;
+		DirectoryId?: string | null;
+		SnapshotId?: string | null;
+		Type?: SnapshotType | null;
+		Name?: string | null;
+		Status?: DirectoryDescriptionRadiusStatus | null;
+		StartTime?: Date | null;
 	}
 
 	export enum SnapshotType { Auto = 0, Manual = 1 }
@@ -666,35 +666,35 @@ export namespace MyNS {
 
 	/** Contains the inputs for the <a>DescribeSnapshots</a> operation. */
 	export interface DescribeSnapshotsRequest {
-		DirectoryId?: string;
+		DirectoryId?: string | null;
 
 		/** A list of directory snapshot identifiers. */
-		SnapshotIds?: Array<string>;
-		NextToken?: string;
-		Limit?: number;
+		SnapshotIds?: Array<string> | null;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 
 	/** The result of a DescribeTrust request. */
 	export interface DescribeTrustsResult {
-		Trusts?: Array<Trust>;
-		NextToken?: string;
+		Trusts?: Array<Trust> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes a trust relationship between an AWS Managed Microsoft AD directory and an external domain. */
 	export interface Trust {
-		DirectoryId?: string;
-		TrustId?: string;
-		RemoteDomainName?: string;
-		TrustType?: CreateTrustRequestTrustType;
-		TrustDirection?: TrustTrustDirection;
-		TrustState?: TrustTrustState;
-		CreatedDateTime?: Date;
-		LastUpdatedDateTime?: Date;
-		StateLastUpdatedDateTime?: Date;
-		TrustStateReason?: string;
-		SelectiveAuth?: CreateTrustRequestSelectiveAuth;
+		DirectoryId?: string | null;
+		TrustId?: string | null;
+		RemoteDomainName?: string | null;
+		TrustType?: CreateTrustRequestTrustType | null;
+		TrustDirection?: TrustTrustDirection | null;
+		TrustState?: TrustTrustState | null;
+		CreatedDateTime?: Date | null;
+		LastUpdatedDateTime?: Date | null;
+		StateLastUpdatedDateTime?: Date | null;
+		TrustStateReason?: string | null;
+		SelectiveAuth?: CreateTrustRequestSelectiveAuth | null;
 	}
 
 	export enum TrustTrustDirection { One_Way_Outgoing = 0, One_Way_Incoming = 1, Two_Way = 2 }
@@ -704,10 +704,10 @@ export namespace MyNS {
 
 	/** Describes the trust relationships for a particular AWS Managed Microsoft AD directory. If no input parameters are are provided, such as directory ID or trust ID, this request describes all the trust relationships. */
 	export interface DescribeTrustsRequest {
-		DirectoryId?: string;
-		TrustIds?: Array<string>;
-		NextToken?: string;
-		Limit?: number;
+		DirectoryId?: string | null;
+		TrustIds?: Array<string> | null;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface DisableLDAPSResult {
@@ -741,8 +741,8 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>DisableSso</a> operation. */
 	export interface DisableSsoRequest {
 		DirectoryId: string;
-		UserName?: string;
-		Password?: string;
+		UserName?: string | null;
+		Password?: string | null;
 	}
 
 	export interface EnableLDAPSResult {
@@ -782,8 +782,8 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>EnableSso</a> operation. */
 	export interface EnableSsoRequest {
 		DirectoryId: string;
-		UserName?: string;
-		Password?: string;
+		UserName?: string | null;
+		Password?: string | null;
 	}
 
 
@@ -791,21 +791,21 @@ export namespace MyNS {
 	export interface GetDirectoryLimitsResult {
 
 		/** Contains directory limit information for a Region. */
-		DirectoryLimits?: DirectoryLimits;
+		DirectoryLimits?: DirectoryLimits | null;
 	}
 
 
 	/** Contains directory limit information for a Region. */
 	export interface DirectoryLimits {
-		CloudOnlyDirectoriesLimit?: number;
-		CloudOnlyDirectoriesCurrentCount?: number;
-		CloudOnlyDirectoriesLimitReached?: boolean;
-		CloudOnlyMicrosoftADLimit?: number;
-		CloudOnlyMicrosoftADCurrentCount?: number;
-		CloudOnlyMicrosoftADLimitReached?: boolean;
-		ConnectedDirectoriesLimit?: number;
-		ConnectedDirectoriesCurrentCount?: number;
-		ConnectedDirectoriesLimitReached?: boolean;
+		CloudOnlyDirectoriesLimit?: number | null;
+		CloudOnlyDirectoriesCurrentCount?: number | null;
+		CloudOnlyDirectoriesLimitReached?: boolean | null;
+		CloudOnlyMicrosoftADLimit?: number | null;
+		CloudOnlyMicrosoftADCurrentCount?: number | null;
+		CloudOnlyMicrosoftADLimitReached?: boolean | null;
+		ConnectedDirectoriesLimit?: number | null;
+		ConnectedDirectoriesCurrentCount?: number | null;
+		ConnectedDirectoriesLimitReached?: boolean | null;
 	}
 
 
@@ -818,15 +818,15 @@ export namespace MyNS {
 	export interface GetSnapshotLimitsResult {
 
 		/** Contains manual snapshot limit information for a directory. */
-		SnapshotLimits?: SnapshotLimits;
+		SnapshotLimits?: SnapshotLimits | null;
 	}
 
 
 	/** Contains manual snapshot limit information for a directory. */
 	export interface SnapshotLimits {
-		ManualSnapshotsLimit?: number;
-		ManualSnapshotsCurrentCount?: number;
-		ManualSnapshotsLimitReached?: boolean;
+		ManualSnapshotsLimit?: number | null;
+		ManualSnapshotsCurrentCount?: number | null;
+		ManualSnapshotsLimitReached?: boolean | null;
 	}
 
 
@@ -836,106 +836,106 @@ export namespace MyNS {
 	}
 
 	export interface ListCertificatesResult {
-		NextToken?: string;
-		CertificatesInfo?: Array<CertificateInfo>;
+		NextToken?: string | null;
+		CertificatesInfo?: Array<CertificateInfo> | null;
 	}
 
 
 	/** Contains general information about a certificate. */
 	export interface CertificateInfo {
-		CertificateId?: string;
-		CommonName?: string;
-		State?: CertificateState;
-		ExpiryDateTime?: Date;
+		CertificateId?: string | null;
+		CommonName?: string | null;
+		State?: CertificateState | null;
+		ExpiryDateTime?: Date | null;
 	}
 
 	export interface ListCertificatesRequest {
 		DirectoryId: string;
-		NextToken?: string;
-		Limit?: number;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListIpRoutesResult {
-		IpRoutesInfo?: Array<IpRouteInfo>;
-		NextToken?: string;
+		IpRoutesInfo?: Array<IpRouteInfo> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about one or more IP address blocks. */
 	export interface IpRouteInfo {
-		DirectoryId?: string;
-		CidrIp?: string;
-		IpRouteStatusMsg?: IpRouteInfoIpRouteStatusMsg;
-		AddedDateTime?: Date;
-		IpRouteStatusReason?: string;
-		Description?: string;
+		DirectoryId?: string | null;
+		CidrIp?: string | null;
+		IpRouteStatusMsg?: IpRouteInfoIpRouteStatusMsg | null;
+		AddedDateTime?: Date | null;
+		IpRouteStatusReason?: string | null;
+		Description?: string | null;
 	}
 
 	export enum IpRouteInfoIpRouteStatusMsg { Adding = 0, Added = 1, Removing = 2, Removed = 3, AddFailed = 4, RemoveFailed = 5 }
 
 	export interface ListIpRoutesRequest {
 		DirectoryId: string;
-		NextToken?: string;
-		Limit?: number;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListLogSubscriptionsResult {
-		LogSubscriptions?: Array<LogSubscription>;
-		NextToken?: string;
+		LogSubscriptions?: Array<LogSubscription> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents a log subscription, which tracks real-time data from a chosen log group to a specified destination. */
 	export interface LogSubscription {
-		DirectoryId?: string;
-		LogGroupName?: string;
-		SubscriptionCreatedDateTime?: Date;
+		DirectoryId?: string | null;
+		LogGroupName?: string | null;
+		SubscriptionCreatedDateTime?: Date | null;
 	}
 
 	export interface ListLogSubscriptionsRequest {
-		DirectoryId?: string;
-		NextToken?: string;
-		Limit?: number;
+		DirectoryId?: string | null;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListSchemaExtensionsResult {
-		SchemaExtensionsInfo?: Array<SchemaExtensionInfo>;
-		NextToken?: string;
+		SchemaExtensionsInfo?: Array<SchemaExtensionInfo> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about a schema extension. */
 	export interface SchemaExtensionInfo {
-		DirectoryId?: string;
-		SchemaExtensionId?: string;
-		Description?: string;
-		SchemaExtensionStatus?: SchemaExtensionInfoSchemaExtensionStatus;
-		SchemaExtensionStatusReason?: string;
-		StartDateTime?: Date;
-		EndDateTime?: Date;
+		DirectoryId?: string | null;
+		SchemaExtensionId?: string | null;
+		Description?: string | null;
+		SchemaExtensionStatus?: SchemaExtensionInfoSchemaExtensionStatus | null;
+		SchemaExtensionStatusReason?: string | null;
+		StartDateTime?: Date | null;
+		EndDateTime?: Date | null;
 	}
 
 	export enum SchemaExtensionInfoSchemaExtensionStatus { Initializing = 0, CreatingSnapshot = 1, UpdatingSchema = 2, Replicating = 3, CancelInProgress = 4, RollbackInProgress = 5, Cancelled = 6, Failed = 7, Completed = 8 }
 
 	export interface ListSchemaExtensionsRequest {
 		DirectoryId: string;
-		NextToken?: string;
-		Limit?: number;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListTagsForResourceResult {
-		Tags?: Array<Tag>;
-		NextToken?: string;
+		Tags?: Array<Tag> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceRequest {
 		ResourceId: string;
-		NextToken?: string;
-		Limit?: number;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface RegisterCertificateResult {
-		CertificateId?: string;
+		CertificateId?: string | null;
 	}
 
 	export interface RegisterCertificateRequest {
@@ -965,7 +965,7 @@ export namespace MyNS {
 	}
 
 	export interface RejectSharedDirectoryResult {
-		SharedDirectoryId?: string;
+		SharedDirectoryId?: string | null;
 	}
 
 	export interface RejectSharedDirectoryRequest {
@@ -1015,12 +1015,12 @@ export namespace MyNS {
 	}
 
 	export interface ShareDirectoryResult {
-		SharedDirectoryId?: string;
+		SharedDirectoryId?: string | null;
 	}
 
 	export interface ShareDirectoryRequest {
 		DirectoryId: string;
-		ShareNotes?: string;
+		ShareNotes?: string | null;
 
 		/**
 		 * Identifier that contains details about the directory consumer account.
@@ -1052,7 +1052,7 @@ export namespace MyNS {
 	}
 
 	export interface StartSchemaExtensionResult {
-		SchemaExtensionId?: string;
+		SchemaExtensionId?: string | null;
 	}
 
 	export interface StartSchemaExtensionRequest {
@@ -1063,7 +1063,7 @@ export namespace MyNS {
 	}
 
 	export interface UnshareDirectoryResult {
-		SharedDirectoryId?: string;
+		SharedDirectoryId?: string | null;
 	}
 
 	export interface UnshareDirectoryRequest {
@@ -1133,19 +1133,19 @@ export namespace MyNS {
 		 * The AWS request identifier.
 		 * Pattern: ^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$
 		 */
-		RequestId?: string;
-		TrustId?: string;
+		RequestId?: string | null;
+		TrustId?: string | null;
 	}
 
 	export interface UpdateTrustRequest {
 		TrustId: string;
-		SelectiveAuth?: CreateTrustRequestSelectiveAuth;
+		SelectiveAuth?: CreateTrustRequestSelectiveAuth | null;
 	}
 
 
 	/** Result of a VerifyTrust request. */
 	export interface VerifyTrustResult {
-		TrustId?: string;
+		TrustId?: string | null;
 	}
 
 
@@ -1413,7 +1413,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeDomainControllersResult} Success
 		 */
-		DescribeDomainControllers(Limit: string, NextToken: string, requestBody: DescribeDomainControllersRequest): Observable<DescribeDomainControllersResult> {
+		DescribeDomainControllers(Limit: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeDomainControllersRequest): Observable<DescribeDomainControllersResult> {
 			return this.http.post<DescribeDomainControllersResult>(this.baseUri + '#X-Amz-Target=DirectoryService_20150416.DescribeDomainControllers?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

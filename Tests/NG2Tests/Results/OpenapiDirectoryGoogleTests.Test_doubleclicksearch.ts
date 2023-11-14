@@ -7,22 +7,22 @@ export namespace MyNS {
 	export interface Availability {
 
 		/** DS advertiser ID. */
-		advertiserId?: string;
+		advertiserId?: string | null;
 
 		/** DS agency ID. */
-		agencyId?: string;
+		agencyId?: string | null;
 
 		/** The time by which all conversions have been uploaded, in epoch millis UTC. */
-		availabilityTimestamp?: string;
+		availabilityTimestamp?: string | null;
 
 		/** The numeric segmentation identifier (for example, DoubleClick Search Floodlight activity ID). */
-		segmentationId?: string;
+		segmentationId?: string | null;
 
 		/** The friendly segmentation identifier (for example, DoubleClick Search Floodlight activity name). */
-		segmentationName?: string;
+		segmentationName?: string | null;
 
 		/** The segmentation type that this availability is for (its default value is FLOODLIGHT). */
-		segmentationType?: string;
+		segmentationType?: string | null;
 	}
 
 
@@ -30,110 +30,110 @@ export namespace MyNS {
 	export interface Conversion {
 
 		/** DS ad group ID. */
-		adGroupId?: string;
+		adGroupId?: string | null;
 
 		/** DS ad ID. */
-		adId?: string;
+		adId?: string | null;
 
 		/** DS advertiser ID. */
-		advertiserId?: string;
+		advertiserId?: string | null;
 
 		/** DS agency ID. */
-		agencyId?: string;
+		agencyId?: string | null;
 
 		/** Available to advertisers only after contacting DoubleClick Search customer support. */
-		attributionModel?: string;
+		attributionModel?: string | null;
 
 		/** DS campaign ID. */
-		campaignId?: string;
+		campaignId?: string | null;
 
 		/**
 		 * Sales channel for the product. Acceptable values are:
 		 * - "local": a physical store
 		 * - "online": an online store
 		 */
-		channel?: string;
+		channel?: string | null;
 
 		/** DS click ID for the conversion. */
-		clickId?: string;
+		clickId?: string | null;
 
 		/**
 		 * For offline conversions, advertisers provide this ID. Advertisers can specify any ID that is meaningful to them. Each conversion in a request must specify a unique ID, and the combination of ID and timestamp must be unique amongst all conversions within the advertiser.
 		 * For online conversions, DS copies the dsConversionId or floodlightOrderId into this property depending on the advertiser's Floodlight instructions.
 		 */
-		conversionId?: string;
+		conversionId?: string | null;
 
 		/** The time at which the conversion was last modified, in epoch millis UTC. */
-		conversionModifiedTimestamp?: string;
+		conversionModifiedTimestamp?: string | null;
 
 		/** The time at which the conversion took place, in epoch millis UTC. */
-		conversionTimestamp?: string;
+		conversionTimestamp?: string | null;
 
 		/** Available to advertisers only after contacting DoubleClick Search customer support. */
-		countMillis?: string;
+		countMillis?: string | null;
 
 		/** DS criterion (keyword) ID. */
-		criterionId?: string;
+		criterionId?: string | null;
 
 		/** The currency code for the conversion's revenue. Should be in ISO 4217 alphabetic (3-char) format. */
-		currencyCode?: string;
+		currencyCode?: string | null;
 
 		/** Custom dimensions for the conversion, which can be used to filter data in a report. */
-		customDimension?: Array<CustomDimension>;
+		customDimension?: Array<CustomDimension> | null;
 
 		/** Custom metrics for the conversion. */
-		customMetric?: Array<CustomMetric>;
+		customMetric?: Array<CustomMetric> | null;
 
 		/** The type of device on which the conversion occurred. */
-		deviceType?: string;
+		deviceType?: string | null;
 
 		/** ID that DoubleClick Search generates for each conversion. */
-		dsConversionId?: string;
+		dsConversionId?: string | null;
 
 		/** DS engine account ID. */
-		engineAccountId?: string;
+		engineAccountId?: string | null;
 
 		/** The Floodlight order ID provided by the advertiser for the conversion. */
-		floodlightOrderId?: string;
+		floodlightOrderId?: string | null;
 
 		/** ID that DS generates and uses to uniquely identify the inventory account that contains the product. */
-		inventoryAccountId?: string;
+		inventoryAccountId?: string | null;
 
 		/** The country registered for the Merchant Center feed that contains the product. Use an ISO 3166 code to specify a country. */
-		productCountry?: string;
+		productCountry?: string | null;
 
 		/** DS product group ID. */
-		productGroupId?: string;
+		productGroupId?: string | null;
 
 		/** The product ID (SKU). */
-		productId?: string;
+		productId?: string | null;
 
 		/** The language registered for the Merchant Center feed that contains the product. Use an ISO 639 code to specify a language. */
-		productLanguage?: string;
+		productLanguage?: string | null;
 
 		/** The quantity of this conversion, in millis. */
-		quantityMillis?: string;
+		quantityMillis?: string | null;
 
 		/** The revenue amount of this TRANSACTION conversion, in micros (value multiplied by 1000000, no decimal). For example, to specify a revenue value of "10" enter "10000000" (10 million) in your request. */
-		revenueMicros?: string;
+		revenueMicros?: string | null;
 
 		/** The numeric segmentation identifier (for example, DoubleClick Search Floodlight activity ID). */
-		segmentationId?: string;
+		segmentationId?: string | null;
 
 		/** The friendly segmentation identifier (for example, DoubleClick Search Floodlight activity name). */
-		segmentationName?: string;
+		segmentationName?: string | null;
 
 		/** The segmentation type of this conversion (for example, FLOODLIGHT). */
-		segmentationType?: string;
+		segmentationType?: string | null;
 
 		/** The state of the conversion, that is, either ACTIVE or REMOVED. Note: state DELETED is deprecated. */
-		state?: string;
+		state?: string | null;
 
 		/** The ID of the local store for which the product was advertised. Applicable only when the channel is "local". */
-		storeId?: string;
+		storeId?: string | null;
 
 		/** The type of the conversion, that is, either ACTION or TRANSACTION. An ACTION conversion is an action by the user that has no monetarily quantifiable value, while a TRANSACTION conversion is an action that does have a monetarily quantifiable value. Examples are email list signups (ACTION) versus ecommerce purchases (TRANSACTION). */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -141,10 +141,10 @@ export namespace MyNS {
 	export interface CustomDimension {
 
 		/** Custom dimension name. */
-		name?: string;
+		name?: string | null;
 
 		/** Custom dimension value. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -152,10 +152,10 @@ export namespace MyNS {
 	export interface CustomMetric {
 
 		/** Custom metric name. */
-		name?: string;
+		name?: string | null;
 
 		/** Custom metric numeric value. */
-		value?: number;
+		value?: number | null;
 	}
 
 
@@ -163,10 +163,10 @@ export namespace MyNS {
 	export interface ConversionList {
 
 		/** The conversions being requested. */
-		conversion?: Array<Conversion>;
+		conversion?: Array<Conversion> | null;
 
 		/** Identifies this as a ConversionList resource. Value: the fixed string doubleclicksearch#conversionList. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -174,40 +174,40 @@ export namespace MyNS {
 	export interface Report {
 
 		/** Asynchronous report only. Contains a list of generated report files once the report has successfully completed. */
-		ReportFiles?: Array<ReportFiles>;
+		ReportFiles?: Array<ReportFiles> | null;
 
 		/** Asynchronous report only. Id of the report. */
-		id?: string;
+		id?: string | null;
 
 		/** Asynchronous report only. True if and only if the report has completed successfully and the report files are ready to be downloaded. */
-		isReportReady?: boolean;
+		isReportReady?: boolean | null;
 
 		/** Identifies this as a Report resource. Value: the fixed string doubleclicksearch#report. */
-		kind?: string;
+		kind?: string | null;
 
 		/** A request object used to create a DoubleClick Search report. */
-		request?: ReportRequest;
+		request?: ReportRequest | null;
 
 		/** The number of report rows generated by the report, not including headers. */
-		rowCount?: number;
+		rowCount?: number | null;
 
 		/** Synchronous report only. Generated report rows. */
-		rows?: Array<ReportRow>;
+		rows?: Array<ReportRow> | null;
 
 		/** The currency code of all monetary values produced in the report, including values that are set by users (e.g., keyword bid settings) and metrics (e.g., cost and revenue). The currency code of a report is determined by the statisticsCurrency field of the report request. */
-		statisticsCurrencyCode?: string;
+		statisticsCurrencyCode?: string | null;
 
 		/** If all statistics of the report are sourced from the same time zone, this would be it. Otherwise the field is unset. */
-		statisticsTimeZone?: string;
+		statisticsTimeZone?: string | null;
 	}
 
 	export interface ReportFiles {
 
 		/** The size of this report file in bytes. */
-		byteCount?: string;
+		byteCount?: string | null;
 
 		/** Use this url to download the report file. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -218,64 +218,64 @@ export namespace MyNS {
 		 * The columns to include in the report. This includes both DoubleClick Search columns and saved columns. For DoubleClick Search columns, only the columnName parameter is required. For saved columns only the savedColumnName parameter is required. Both columnName and savedColumnName cannot be set in the same stanza.
 		 * The maximum number of columns per request is 300.
 		 */
-		columns?: Array<ReportApiColumnSpec>;
+		columns?: Array<ReportApiColumnSpec> | null;
 
 		/** Format that the report should be returned in. Currently csv or tsv is supported. */
-		downloadFormat?: string;
+		downloadFormat?: string | null;
 
 		/**
 		 * A list of filters to be applied to the report.
 		 * The maximum number of filters per request is 300.
 		 */
-		ReportRequestFilters?: Array<ReportRequestFilters>;
+		ReportRequestFilters?: Array<ReportRequestFilters> | null;
 
 		/** Determines if removed entities should be included in the report. Defaults to false. Deprecated, please use includeRemovedEntities instead. */
-		includeDeletedEntities?: boolean;
+		includeDeletedEntities?: boolean | null;
 
 		/** Determines if removed entities should be included in the report. Defaults to false. */
-		includeRemovedEntities?: boolean;
+		includeRemovedEntities?: boolean | null;
 
 		/**
 		 * Asynchronous report only. The maximum number of rows per report file. A large report is split into many files based on this field. Acceptable values are 1000000 to 100000000, inclusive.
 		 * Minimum: 1000000
 		 * Maximum: 100000000
 		 */
-		maxRowsPerFile?: number;
+		maxRowsPerFile?: number | null;
 
 		/**
 		 * Synchronous report only. A list of columns and directions defining sorting to be performed on the report rows.
 		 * The maximum number of orderings per request is 300.
 		 */
-		ReportRequestOrderBy?: Array<ReportRequestOrderBy>;
+		ReportRequestOrderBy?: Array<ReportRequestOrderBy> | null;
 
 		/** The reportScope is a set of IDs that are used to determine which subset of entities will be returned in the report. The full lineage of IDs from the lowest scoped level desired up through agency is required. */
-		reportScope?: ReportRequestReportScope;
+		reportScope?: ReportRequestReportScope | null;
 
 		/** Determines the type of rows that are returned in the report. For example, if you specify reportType: keyword, each row in the report will contain data about a keyword. See the Types of Reports reference for the columns that are available for each type. */
-		reportType?: string;
+		reportType?: string | null;
 
 		/**
 		 * Synchronous report only. The maximum number of rows to return; additional rows are dropped. Acceptable values are 0 to 10000, inclusive. Defaults to 10000.
 		 * Minimum: 0
 		 * Maximum: 10000
 		 */
-		rowCount?: number;
+		rowCount?: number | null;
 
 		/**
 		 * Synchronous report only. Zero-based index of the first row to return. Acceptable values are 0 to 50000, inclusive. Defaults to 0.
 		 * Minimum: 0
 		 * Maximum: 50000
 		 */
-		startRow?: number;
+		startRow?: number | null;
 
 		/** Specifies the currency in which monetary will be returned. Possible values are: usd, agency (valid if the report is scoped to agency or lower), advertiser (valid if the report is scoped to * advertiser or lower), or account (valid if the report is scoped to engine account or lower). */
-		statisticsCurrency?: string;
+		statisticsCurrency?: string | null;
 
 		/** If metrics are requested in a report, this argument will be used to restrict the metrics to a specific time range. */
-		timeRange?: ReportRequestTimeRange;
+		timeRange?: ReportRequestTimeRange | null;
 
 		/** If true, the report would only be created if all the requested stat data are sourced from a single timezone. Defaults to false. */
-		verifySingleTimeZone?: boolean;
+		verifySingleTimeZone?: boolean | null;
 	}
 
 
@@ -283,104 +283,104 @@ export namespace MyNS {
 	export interface ReportApiColumnSpec {
 
 		/** Name of a DoubleClick Search column to include in the report. */
-		columnName?: string;
+		columnName?: string | null;
 
 		/**
 		 * Segments a report by a custom dimension. The report must be scoped to an advertiser or lower, and the custom dimension must already be set up in DoubleClick Search. The custom dimension name, which appears in DoubleClick Search, is case sensitive.
 		 * If used in a conversion report, returns the value of the specified custom dimension for the given conversion, if set. This column does not segment the conversion report.
 		 */
-		customDimensionName?: string;
+		customDimensionName?: string | null;
 
 		/** Name of a custom metric to include in the report. The report must be scoped to an advertiser or lower, and the custom metric must already be set up in DoubleClick Search. The custom metric name, which appears in DoubleClick Search, is case sensitive. */
-		customMetricName?: string;
+		customMetricName?: string | null;
 
 		/** Inclusive day in YYYY-MM-DD format. When provided, this overrides the overall time range of the report for this column only. Must be provided together with startDate. */
-		endDate?: string;
+		endDate?: string | null;
 
 		/** Synchronous report only. Set to true to group by this column. Defaults to false. */
-		groupByColumn?: boolean;
+		groupByColumn?: boolean | null;
 
 		/** Text used to identify this column in the report output; defaults to columnName or savedColumnName when not specified. This can be used to prevent collisions between DoubleClick Search columns and saved columns with the same name. */
-		headerText?: string;
+		headerText?: string | null;
 
 		/** The platform that is used to provide data for the custom dimension. Acceptable values are "floodlight". */
-		platformSource?: string;
+		platformSource?: string | null;
 
 		/**
 		 * Returns metrics only for a specific type of product activity. Accepted values are:
 		 * - "sold": returns metrics only for products that were sold
 		 * - "advertised": returns metrics only for products that were advertised in a Shopping campaign, and that might or might not have been sold
 		 */
-		productReportPerspective?: string;
+		productReportPerspective?: string | null;
 
 		/** Name of a saved column to include in the report. The report must be scoped at advertiser or lower, and this saved column must already be created in the DoubleClick Search UI. */
-		savedColumnName?: string;
+		savedColumnName?: string | null;
 
 		/** Inclusive date in YYYY-MM-DD format. When provided, this overrides the overall time range of the report for this column only. Must be provided together with endDate. */
-		startDate?: string;
+		startDate?: string | null;
 	}
 
 	export interface ReportRequestFilters {
 
 		/** A request object used to create a DoubleClick Search report. */
-		column?: ReportApiColumnSpec;
+		column?: ReportApiColumnSpec | null;
 
 		/** Operator to use in the filter. See the filter reference for a list of available operators. */
-		operator?: string;
+		operator?: string | null;
 
 		/**
 		 * A list of values to filter the column value against.
 		 * The maximum number of filter values per request is 300.
 		 */
-		values?: Array<string>;
+		values?: Array<string> | null;
 	}
 
 	export interface ReportRequestOrderBy {
 
 		/** A request object used to create a DoubleClick Search report. */
-		column?: ReportApiColumnSpec;
+		column?: ReportApiColumnSpec | null;
 
 		/** The sort direction, which is either ascending or descending. */
-		sortOrder?: string;
+		sortOrder?: string | null;
 	}
 
 	export interface ReportRequestReportScope {
 
 		/** DS ad group ID. */
-		adGroupId?: string;
+		adGroupId?: string | null;
 
 		/** DS ad ID. */
-		adId?: string;
+		adId?: string | null;
 
 		/** DS advertiser ID. */
-		advertiserId?: string;
+		advertiserId?: string | null;
 
 		/** DS agency ID. */
-		agencyId?: string;
+		agencyId?: string | null;
 
 		/** DS campaign ID. */
-		campaignId?: string;
+		campaignId?: string | null;
 
 		/** DS engine account ID. */
-		engineAccountId?: string;
+		engineAccountId?: string | null;
 
 		/** DS keyword ID. */
-		keywordId?: string;
+		keywordId?: string | null;
 	}
 
 	export interface ReportRequestTimeRange {
 
 		/** Inclusive UTC timestamp in RFC format, e.g., 2013-07-16T10:16:23.555Z. See additional references on how changed attribute reports work. */
-		changedAttributesSinceTimestamp?: Date;
+		changedAttributesSinceTimestamp?: Date | null;
 
 		/** Inclusive UTC timestamp in RFC format, e.g., 2013-07-16T10:16:23.555Z. See additional references on how changed metrics reports work. */
-		changedMetricsSinceTimestamp?: Date;
+		changedMetricsSinceTimestamp?: Date | null;
 
 		/** Inclusive date in YYYY-MM-DD format. */
-		endDate?: string;
+		endDate?: string | null;
 
 		/** Inclusive date in YYYY-MM-DD format. */
-		startDate?: string;
+		startDate?: string | null;
 	}
 
 
@@ -393,13 +393,13 @@ export namespace MyNS {
 	export interface SavedColumn {
 
 		/** Identifies this as a SavedColumn resource. Value: the fixed string doubleclicksearch#savedColumn. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The name of the saved column. */
-		savedColumnName?: string;
+		savedColumnName?: string | null;
 
 		/** The type of data this saved column will produce. */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -407,10 +407,10 @@ export namespace MyNS {
 	export interface SavedColumnList {
 
 		/** The saved columns being requested. */
-		items?: Array<SavedColumn>;
+		items?: Array<SavedColumn> | null;
 
 		/** Identifies this as a SavedColumnList resource. Value: the fixed string doubleclicksearch#savedColumnList. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -418,7 +418,7 @@ export namespace MyNS {
 	export interface UpdateAvailabilityRequest {
 
 		/** The availabilities being requested. */
-		availabilities?: Array<Availability>;
+		availabilities?: Array<Availability> | null;
 	}
 
 
@@ -426,7 +426,7 @@ export namespace MyNS {
 	export interface UpdateAvailabilityResponse {
 
 		/** The availabilities being returned. */
-		availabilities?: Array<Availability>;
+		availabilities?: Array<Availability> | null;
 	}
 
 	@Injectable()
@@ -450,7 +450,7 @@ export namespace MyNS {
 		 * @param {string} criterionId Numeric ID of the criterion.
 		 * @return {void} Successful response
 		 */
-		Doubleclicksearch_conversion_get(agencyId: string, advertiserId: string, engineAccountId: string, endDate: number, rowCount: number, startDate: number, startRow: number, adGroupId: string, adId: string, campaignId: string, criterionId: string): Observable<HttpResponse<string>> {
+		Doubleclicksearch_conversion_get(agencyId: string, advertiserId: string, engineAccountId: string, endDate: number, rowCount: number, startDate: number, startRow: number, adGroupId: string | null | undefined, adId: string | null | undefined, campaignId: string | null | undefined, criterionId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'agency/' + (agencyId == null ? '' : encodeURIComponent(agencyId)) + '/advertiser/' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '/engine/' + (engineAccountId == null ? '' : encodeURIComponent(engineAccountId)) + '/conversion&endDate=' + endDate + '&rowCount=' + rowCount + '&startDate=' + startDate + '&startRow=' + startRow + '&adGroupId=' + (adGroupId == null ? '' : encodeURIComponent(adGroupId)) + '&adId=' + (adId == null ? '' : encodeURIComponent(adId)) + '&campaignId=' + (campaignId == null ? '' : encodeURIComponent(campaignId)) + '&criterionId=' + (criterionId == null ? '' : encodeURIComponent(criterionId)), { observe: 'response', responseType: 'text' });
 		}
 

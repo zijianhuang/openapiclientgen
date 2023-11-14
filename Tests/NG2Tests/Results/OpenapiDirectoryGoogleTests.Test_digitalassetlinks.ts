@@ -7,7 +7,7 @@ export namespace MyNS {
 	export interface AndroidAppAsset {
 
 		/** Describes an X509 certificate. */
-		certificate?: CertificateInfo;
+		certificate?: CertificateInfo | null;
 
 		/**
 		 * Android App assets are naturally identified by their Java package name.
@@ -15,7 +15,7 @@ export namespace MyNS {
 		 * `com.google.android.apps.maps`.
 		 * REQUIRED
 		 */
-		packageName?: string;
+		packageName?: string | null;
 	}
 
 
@@ -40,7 +40,7 @@ export namespace MyNS {
 		 * and represent the result as a hexstring (that is, uppercase hexadecimal
 		 * representations of each octet, separated by colons).
 		 */
-		sha256Fingerprint?: string;
+		sha256Fingerprint?: string | null;
 	}
 
 
@@ -53,10 +53,10 @@ export namespace MyNS {
 	export interface Asset {
 
 		/** Describes an android app asset. */
-		androidApp?: AndroidAppAsset;
+		androidApp?: AndroidAppAsset | null;
 
 		/** Describes a web asset. */
-		web?: WebAsset;
+		web?: WebAsset | null;
 	}
 
 
@@ -89,7 +89,7 @@ export namespace MyNS {
 		 * *   `https://www.google.com:444/`  (port does not match)
 		 * REQUIRED
 		 */
-		site?: string;
+		site?: string | null;
 	}
 
 
@@ -106,23 +106,23 @@ export namespace MyNS {
 		 * You should not attempt to programmatically parse this data.  For
 		 * programmatic access, use the error_code field below.
 		 */
-		debugString?: string;
+		debugString?: string | null;
 
 		/** Error codes that describe the result of the Check operation. */
-		errorCode?: Array<string>;
+		errorCode?: Array<string> | null;
 
 		/**
 		 * Set to true if the assets specified in the request are linked by the
 		 * relation specified in the request.
 		 */
-		linked?: boolean;
+		linked?: boolean | null;
 
 		/**
 		 * From serving time, how much longer the response should be considered valid
 		 * barring further updates.
 		 * REQUIRED
 		 */
-		maxAge?: string;
+		maxAge?: string | null;
 	}
 
 
@@ -139,20 +139,20 @@ export namespace MyNS {
 		 * You should not attempt to programmatically parse this data.  For
 		 * programmatic access, use the error_code field below.
 		 */
-		debugString?: string;
+		debugString?: string | null;
 
 		/** Error codes that describe the result of the List operation. */
-		errorCode?: Array<string>;
+		errorCode?: Array<string> | null;
 
 		/**
 		 * From serving time, how much longer the response should be considered valid
 		 * barring further updates.
 		 * REQUIRED
 		 */
-		maxAge?: string;
+		maxAge?: string | null;
 
 		/** A list of all the matching statements that have been found. */
-		statements?: Array<Statement>;
+		statements?: Array<Statement> | null;
 	}
 
 
@@ -180,7 +180,7 @@ export namespace MyNS {
 		 * Example: `delegate_permission/common.handle_all_urls`
 		 * REQUIRED
 		 */
-		relation?: string;
+		relation?: string | null;
 
 		/**
 		 * Uniquely identifies an asset.
@@ -188,7 +188,7 @@ export namespace MyNS {
 		 * typically provides some service or content.  Examples of assets are websites,
 		 * Android apps, Twitter feeds, and Plus Pages.
 		 */
-		source?: Asset;
+		source?: Asset | null;
 
 		/**
 		 * Uniquely identifies an asset.
@@ -196,7 +196,7 @@ export namespace MyNS {
 		 * typically provides some service or content.  Examples of assets are websites,
 		 * Android apps, Twitter feeds, and Plus Pages.
 		 */
-		target?: Asset;
+		target?: Asset | null;
 	}
 
 	@Injectable()
@@ -328,7 +328,7 @@ export namespace MyNS {
 		 * REQUIRED
 		 * @return {void} Successful response
 		 */
-		Digitalassetlinks_assetlinks_check(relation: string, source_androidApp_certificate_sha256Fingerprint: string, source_androidApp_packageName: string, source_web_site: string, target_androidApp_certificate_sha256Fingerprint: string, target_androidApp_packageName: string, target_web_site: string): Observable<HttpResponse<string>> {
+		Digitalassetlinks_assetlinks_check(relation: string | null | undefined, source_androidApp_certificate_sha256Fingerprint: string | null | undefined, source_androidApp_packageName: string | null | undefined, source_web_site: string | null | undefined, target_androidApp_certificate_sha256Fingerprint: string | null | undefined, target_androidApp_packageName: string | null | undefined, target_web_site: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/assetlinks:check?relation=' + (relation == null ? '' : encodeURIComponent(relation)) + '&source_androidApp_certificate_sha256Fingerprint=' + (source_androidApp_certificate_sha256Fingerprint == null ? '' : encodeURIComponent(source_androidApp_certificate_sha256Fingerprint)) + '&source_androidApp_packageName=' + (source_androidApp_packageName == null ? '' : encodeURIComponent(source_androidApp_packageName)) + '&source_web_site=' + (source_web_site == null ? '' : encodeURIComponent(source_web_site)) + '&target_androidApp_certificate_sha256Fingerprint=' + (target_androidApp_certificate_sha256Fingerprint == null ? '' : encodeURIComponent(target_androidApp_certificate_sha256Fingerprint)) + '&target_androidApp_packageName=' + (target_androidApp_packageName == null ? '' : encodeURIComponent(target_androidApp_packageName)) + '&target_web_site=' + (target_web_site == null ? '' : encodeURIComponent(target_web_site)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -405,7 +405,7 @@ export namespace MyNS {
 		 * REQUIRED
 		 * @return {void} Successful response
 		 */
-		Digitalassetlinks_statements_list(relation: string, source_androidApp_certificate_sha256Fingerprint: string, source_androidApp_packageName: string, source_web_site: string): Observable<HttpResponse<string>> {
+		Digitalassetlinks_statements_list(relation: string | null | undefined, source_androidApp_certificate_sha256Fingerprint: string | null | undefined, source_androidApp_packageName: string | null | undefined, source_web_site: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/statements:list?relation=' + (relation == null ? '' : encodeURIComponent(relation)) + '&source_androidApp_certificate_sha256Fingerprint=' + (source_androidApp_certificate_sha256Fingerprint == null ? '' : encodeURIComponent(source_androidApp_certificate_sha256Fingerprint)) + '&source_androidApp_packageName=' + (source_androidApp_packageName == null ? '' : encodeURIComponent(source_androidApp_packageName)) + '&source_web_site=' + (source_web_site == null ? '' : encodeURIComponent(source_web_site)), { observe: 'response', responseType: 'text' });
 		}
 	}

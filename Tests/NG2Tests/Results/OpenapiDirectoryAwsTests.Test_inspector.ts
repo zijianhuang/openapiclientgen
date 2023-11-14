@@ -18,7 +18,7 @@ export namespace MyNS {
 	/** This data type is used as a request parameter in the <a>AddAttributesToFindings</a> and <a>CreateAssessmentTemplate</a> actions. */
 	export interface Attribute {
 		key: string;
-		value?: string;
+		value?: string | null;
 	}
 
 	export interface InternalException {
@@ -42,7 +42,7 @@ export namespace MyNS {
 
 	export interface CreateAssessmentTargetRequest {
 		assessmentTargetName: string;
-		resourceGroupArn?: string;
+		resourceGroupArn?: string | null;
 	}
 
 	export interface LimitExceededException {
@@ -60,7 +60,7 @@ export namespace MyNS {
 		assessmentTemplateName: string;
 		durationInSeconds: number;
 		rulesPackageArns: Array<string>;
-		userAttributesForFindings?: Array<Attribute>;
+		userAttributesForFindings?: Array<Attribute> | null;
 	}
 
 	export interface CreateExclusionsPreviewResponse {
@@ -86,7 +86,7 @@ export namespace MyNS {
 	/** This data type is used as one of the elements of the <a>ResourceGroup</a> data type. */
 	export interface ResourceGroupTag {
 		key: string;
-		value?: string;
+		value?: string | null;
 	}
 
 	export interface DeleteAssessmentRunRequest {
@@ -120,8 +120,8 @@ export namespace MyNS {
 		rulesPackageArns: Array<string>;
 		userAttributesForFindings: Array<Attribute>;
 		createdAt: Date;
-		startedAt?: Date;
-		completedAt?: Date;
+		startedAt?: Date | null;
+		completedAt?: Date | null;
 		stateChangedAt: Date;
 		dataCollected: boolean;
 		stateChanges: Array<AssessmentRunStateChange>;
@@ -143,10 +143,10 @@ export namespace MyNS {
 	export interface AssessmentRunNotification {
 		date: Date;
 		event: AssessmentRunNotificationEvent;
-		message?: string;
+		message?: string | null;
 		error: boolean;
-		snsTopicArn?: string;
-		snsPublishStatusCode?: AssessmentRunNotificationSnsPublishStatusCode;
+		snsTopicArn?: string | null;
+		snsPublishStatusCode?: AssessmentRunNotificationSnsPublishStatusCode | null;
 	}
 
 	export enum AssessmentRunNotificationEvent { ASSESSMENT_RUN_STARTED = 0, ASSESSMENT_RUN_COMPLETED = 1, ASSESSMENT_RUN_STATE_CHANGED = 2, FINDING_REPORTED = 3, OTHER = 4 }
@@ -170,7 +170,7 @@ export namespace MyNS {
 	export interface AssessmentTarget {
 		arn: string;
 		name: string;
-		resourceGroupArn?: string;
+		resourceGroupArn?: string | null;
 		createdAt: Date;
 		updatedAt: Date;
 	}
@@ -193,7 +193,7 @@ export namespace MyNS {
 		durationInSeconds: number;
 		rulesPackageArns: Array<string>;
 		userAttributesForFindings: Array<Attribute>;
-		lastAssessmentRunArn?: string;
+		lastAssessmentRunArn?: string | null;
 		assessmentRunCount: number;
 		createdAt: Date;
 	}
@@ -218,7 +218,7 @@ export namespace MyNS {
 
 	export interface DescribeExclusionsRequest {
 		exclusionArns: Array<string>;
-		locale?: DescribeExclusionsRequestLocale;
+		locale?: DescribeExclusionsRequestLocale | null;
 	}
 
 	export enum DescribeExclusionsRequestLocale { EN_US = 0 }
@@ -232,23 +232,23 @@ export namespace MyNS {
 	/** Contains information about an Amazon Inspector finding. This data type is used as the response element in the <a>DescribeFindings</a> action. */
 	export interface Finding {
 		arn: string;
-		schemaVersion?: number;
-		service?: string;
+		schemaVersion?: number | null;
+		service?: string | null;
 
 		/** This data type is used in the <a>Finding</a> data type. */
-		serviceAttributes?: InspectorServiceAttributes;
-		assetType?: FindingAssetType;
+		serviceAttributes?: InspectorServiceAttributes | null;
+		assetType?: FindingAssetType | null;
 
 		/** A collection of attributes of the host from which the finding is generated. */
-		assetAttributes?: AssetAttributes;
-		id?: string;
-		title?: string;
-		description?: string;
-		recommendation?: string;
-		severity?: FindingSeverity;
-		numericSeverity?: number;
-		confidence?: number;
-		indicatorOfCompromise?: boolean;
+		assetAttributes?: AssetAttributes | null;
+		id?: string | null;
+		title?: string | null;
+		description?: string | null;
+		recommendation?: string | null;
+		severity?: FindingSeverity | null;
+		numericSeverity?: number | null;
+		confidence?: number | null;
+		indicatorOfCompromise?: boolean | null;
 		attributes: Array<Attribute>;
 		userAttributes: Array<Attribute>;
 		createdAt: Date;
@@ -259,8 +259,8 @@ export namespace MyNS {
 	/** This data type is used in the <a>Finding</a> data type. */
 	export interface InspectorServiceAttributes {
 		schemaVersion: number;
-		assessmentRunArn?: string;
-		rulesPackageArn?: string;
+		assessmentRunArn?: string | null;
+		rulesPackageArn?: string | null;
 	}
 
 	export enum FindingAssetType { ec2_instance = 0 }
@@ -269,56 +269,56 @@ export namespace MyNS {
 	/** A collection of attributes of the host from which the finding is generated. */
 	export interface AssetAttributes {
 		schemaVersion: number;
-		agentId?: string;
-		autoScalingGroup?: string;
-		amiId?: string;
-		hostname?: string;
-		ipv4Addresses?: Array<string>;
-		tags?: Array<Tag>;
-		networkInterfaces?: Array<NetworkInterface>;
+		agentId?: string | null;
+		autoScalingGroup?: string | null;
+		amiId?: string | null;
+		hostname?: string | null;
+		ipv4Addresses?: Array<string> | null;
+		tags?: Array<Tag> | null;
+		networkInterfaces?: Array<NetworkInterface> | null;
 	}
 
 
 	/** A key and value pair. This data type is used as a request parameter in the <a>SetTagsForResource</a> action and a response element in the <a>ListTagsForResource</a> action. */
 	export interface Tag {
 		key: string;
-		value?: string;
+		value?: string | null;
 	}
 
 
 	/** Contains information about the network interfaces interacting with an EC2 instance. This data type is used as one of the elements of the <a>AssetAttributes</a> data type. */
 	export interface NetworkInterface {
-		networkInterfaceId?: string;
-		subnetId?: string;
-		vpcId?: string;
-		privateDnsName?: string;
-		privateIpAddress?: string;
-		privateIpAddresses?: Array<PrivateIp>;
-		publicDnsName?: string;
-		publicIp?: string;
-		ipv6Addresses?: Array<string>;
-		securityGroups?: Array<SecurityGroup>;
+		networkInterfaceId?: string | null;
+		subnetId?: string | null;
+		vpcId?: string | null;
+		privateDnsName?: string | null;
+		privateIpAddress?: string | null;
+		privateIpAddresses?: Array<PrivateIp> | null;
+		publicDnsName?: string | null;
+		publicIp?: string | null;
+		ipv6Addresses?: Array<string> | null;
+		securityGroups?: Array<SecurityGroup> | null;
 	}
 
 
 	/** Contains information about a private IP address associated with a network interface. This data type is used as a response element in the <a>DescribeFindings</a> action. */
 	export interface PrivateIp {
-		privateDnsName?: string;
-		privateIpAddress?: string;
+		privateDnsName?: string | null;
+		privateIpAddress?: string | null;
 	}
 
 
 	/** Contains information about a security group associated with a network interface. This data type is used as one of the elements of the <a>NetworkInterface</a> data type. */
 	export interface SecurityGroup {
-		groupName?: string;
-		groupId?: string;
+		groupName?: string | null;
+		groupId?: string | null;
 	}
 
 	export enum FindingSeverity { Low = 0, Medium = 1, High = 2, Informational = 3, Undefined = 4 }
 
 	export interface DescribeFindingsRequest {
 		findingArns: Array<string>;
-		locale?: DescribeExclusionsRequestLocale;
+		locale?: DescribeExclusionsRequestLocale | null;
 	}
 
 	export interface DescribeResourceGroupsResponse {
@@ -350,17 +350,17 @@ export namespace MyNS {
 		name: string;
 		version: string;
 		provider: string;
-		description?: string;
+		description?: string | null;
 	}
 
 	export interface DescribeRulesPackagesRequest {
 		rulesPackageArns: Array<string>;
-		locale?: DescribeExclusionsRequestLocale;
+		locale?: DescribeExclusionsRequestLocale | null;
 	}
 
 	export interface GetAssessmentReportResponse {
 		status: GetAssessmentReportResponseStatus;
-		url?: string;
+		url?: string | null;
 	}
 
 	export enum GetAssessmentReportResponseStatus { WORK_IN_PROGRESS = 0, FAILED = 1, COMPLETED = 2 }
@@ -380,8 +380,8 @@ export namespace MyNS {
 
 	export interface GetExclusionsPreviewResponse {
 		previewStatus: GetExclusionsPreviewResponsePreviewStatus;
-		exclusionPreviews?: Array<ExclusionPreview>;
-		nextToken?: string;
+		exclusionPreviews?: Array<ExclusionPreview> | null;
+		nextToken?: string | null;
 	}
 
 	export enum GetExclusionsPreviewResponsePreviewStatus { WORK_IN_PROGRESS = 0, COMPLETED = 1 }
@@ -393,14 +393,14 @@ export namespace MyNS {
 		description: string;
 		recommendation: string;
 		scopes: Array<Scope>;
-		attributes?: Array<Attribute>;
+		attributes?: Array<Attribute> | null;
 	}
 
 
 	/** This data type contains key-value pairs that identify various Amazon resources. */
 	export interface Scope {
-		key?: ScopeKey;
-		value?: string;
+		key?: ScopeKey | null;
+		value?: string | null;
 	}
 
 	export enum ScopeKey { INSTANCE_ID = 0, RULES_PACKAGE_ARN = 1 }
@@ -408,9 +408,9 @@ export namespace MyNS {
 	export interface GetExclusionsPreviewRequest {
 		assessmentTemplateArn: string;
 		previewToken: string;
-		nextToken?: string;
-		maxResults?: number;
-		locale?: DescribeExclusionsRequestLocale;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		locale?: DescribeExclusionsRequestLocale | null;
 	}
 
 	export interface GetTelemetryMetadataResponse {
@@ -422,7 +422,7 @@ export namespace MyNS {
 	export interface TelemetryMetadata {
 		messageType: string;
 		count: number;
-		dataSize?: number;
+		dataSize?: number | null;
 	}
 
 	export interface GetTelemetryMetadataRequest {
@@ -431,7 +431,7 @@ export namespace MyNS {
 
 	export interface ListAssessmentRunAgentsResponse {
 		assessmentRunAgents: Array<AssessmentRunAgent>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -441,8 +441,8 @@ export namespace MyNS {
 		assessmentRunArn: string;
 		agentHealth: AssessmentRunAgentAgentHealth;
 		agentHealthCode: AssessmentRunAgentAgentHealthCode;
-		agentHealthDetails?: string;
-		autoScalingGroup?: string;
+		agentHealthDetails?: string | null;
+		autoScalingGroup?: string | null;
 		telemetryMetadata: Array<TelemetryMetadata>;
 	}
 
@@ -454,9 +454,9 @@ export namespace MyNS {
 		assessmentRunArn: string;
 
 		/** Contains information about an Amazon Inspector agent. This data type is used as a request parameter in the <a>ListAssessmentRunAgents</a> action. */
-		filter?: AgentFilter;
-		nextToken?: string;
-		maxResults?: number;
+		filter?: AgentFilter | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 
@@ -472,98 +472,98 @@ export namespace MyNS {
 
 	export interface ListAssessmentRunsResponse {
 		assessmentRunArns: Array<string>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListAssessmentRunsRequest {
-		assessmentTemplateArns?: Array<string>;
+		assessmentTemplateArns?: Array<string> | null;
 
 		/** Used as the request parameter in the <a>ListAssessmentRuns</a> action. */
-		filter?: AssessmentRunFilter;
-		nextToken?: string;
-		maxResults?: number;
+		filter?: AssessmentRunFilter | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 
 	/** Used as the request parameter in the <a>ListAssessmentRuns</a> action. */
 	export interface AssessmentRunFilter {
-		namePattern?: string;
-		states?: Array<AssessmentRunState>;
+		namePattern?: string | null;
+		states?: Array<AssessmentRunState> | null;
 
 		/** This data type is used in the <a>AssessmentTemplateFilter</a> data type. */
-		durationRange?: DurationRange;
-		rulesPackageArns?: Array<string>;
+		durationRange?: DurationRange | null;
+		rulesPackageArns?: Array<string> | null;
 
 		/** This data type is used in the <a>AssessmentRunFilter</a> data type. */
-		startTimeRange?: TimestampRange;
+		startTimeRange?: TimestampRange | null;
 
 		/** This data type is used in the <a>AssessmentRunFilter</a> data type. */
-		completionTimeRange?: TimestampRange;
+		completionTimeRange?: TimestampRange | null;
 
 		/** This data type is used in the <a>AssessmentRunFilter</a> data type. */
-		stateChangeTimeRange?: TimestampRange;
+		stateChangeTimeRange?: TimestampRange | null;
 	}
 
 
 	/** This data type is used in the <a>AssessmentTemplateFilter</a> data type. */
 	export interface DurationRange {
-		minSeconds?: number;
-		maxSeconds?: number;
+		minSeconds?: number | null;
+		maxSeconds?: number | null;
 	}
 
 
 	/** This data type is used in the <a>AssessmentRunFilter</a> data type. */
 	export interface TimestampRange {
-		beginDate?: Date;
-		endDate?: Date;
+		beginDate?: Date | null;
+		endDate?: Date | null;
 	}
 
 	export interface ListAssessmentTargetsResponse {
 		assessmentTargetArns: Array<string>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListAssessmentTargetsRequest {
 
 		/** Used as the request parameter in the <a>ListAssessmentTargets</a> action. */
-		filter?: AssessmentTargetFilter;
-		nextToken?: string;
-		maxResults?: number;
+		filter?: AssessmentTargetFilter | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 
 	/** Used as the request parameter in the <a>ListAssessmentTargets</a> action. */
 	export interface AssessmentTargetFilter {
-		assessmentTargetNamePattern?: string;
+		assessmentTargetNamePattern?: string | null;
 	}
 
 	export interface ListAssessmentTemplatesResponse {
 		assessmentTemplateArns: Array<string>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListAssessmentTemplatesRequest {
-		assessmentTargetArns?: Array<string>;
+		assessmentTargetArns?: Array<string> | null;
 
 		/** Used as the request parameter in the <a>ListAssessmentTemplates</a> action. */
-		filter?: AssessmentTemplateFilter;
-		nextToken?: string;
-		maxResults?: number;
+		filter?: AssessmentTemplateFilter | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 
 	/** Used as the request parameter in the <a>ListAssessmentTemplates</a> action. */
 	export interface AssessmentTemplateFilter {
-		namePattern?: string;
+		namePattern?: string | null;
 
 		/** This data type is used in the <a>AssessmentTemplateFilter</a> data type. */
-		durationRange?: DurationRange;
-		rulesPackageArns?: Array<string>;
+		durationRange?: DurationRange | null;
+		rulesPackageArns?: Array<string> | null;
 	}
 
 	export interface ListEventSubscriptionsResponse {
 		subscriptions: Array<Subscription>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -582,61 +582,61 @@ export namespace MyNS {
 	}
 
 	export interface ListEventSubscriptionsRequest {
-		resourceArn?: string;
-		nextToken?: string;
-		maxResults?: number;
+		resourceArn?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListExclusionsResponse {
 		exclusionArns: Array<string>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListExclusionsRequest {
 		assessmentRunArn: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListFindingsResponse {
 		findingArns: Array<string>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListFindingsRequest {
-		assessmentRunArns?: Array<string>;
+		assessmentRunArns?: Array<string> | null;
 
 		/** This data type is used as a request parameter in the <a>ListFindings</a> action. */
-		filter?: FindingFilter;
-		nextToken?: string;
-		maxResults?: number;
+		filter?: FindingFilter | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 
 	/** This data type is used as a request parameter in the <a>ListFindings</a> action. */
 	export interface FindingFilter {
-		agentIds?: Array<string>;
-		autoScalingGroups?: Array<string>;
-		ruleNames?: Array<string>;
-		severities?: Array<Severity>;
-		rulesPackageArns?: Array<string>;
-		attributes?: Array<Attribute>;
-		userAttributes?: Array<Attribute>;
+		agentIds?: Array<string> | null;
+		autoScalingGroups?: Array<string> | null;
+		ruleNames?: Array<string> | null;
+		severities?: Array<Severity> | null;
+		rulesPackageArns?: Array<string> | null;
+		attributes?: Array<Attribute> | null;
+		userAttributes?: Array<Attribute> | null;
 
 		/** This data type is used in the <a>AssessmentRunFilter</a> data type. */
-		creationTimeRange?: TimestampRange;
+		creationTimeRange?: TimestampRange | null;
 	}
 
 	export enum Severity { Low = 0, Medium = 1, High = 2, Informational = 3, Undefined = 4 }
 
 	export interface ListRulesPackagesResponse {
 		rulesPackageArns: Array<string>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListRulesPackagesRequest {
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListTagsForResourceResponse {
@@ -649,26 +649,26 @@ export namespace MyNS {
 
 	export interface PreviewAgentsResponse {
 		agentPreviews: Array<AgentPreview>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Used as a response element in the <a>PreviewAgents</a> action. */
 	export interface AgentPreview {
-		hostname?: string;
+		hostname?: string | null;
 		agentId: string;
-		autoScalingGroup?: string;
-		agentHealth?: AssessmentRunAgentAgentHealth;
-		agentVersion?: string;
-		operatingSystem?: string;
-		kernelVersion?: string;
-		ipv4Address?: string;
+		autoScalingGroup?: string | null;
+		agentHealth?: AssessmentRunAgentAgentHealth | null;
+		agentVersion?: string | null;
+		operatingSystem?: string | null;
+		kernelVersion?: string | null;
+		ipv4Address?: string | null;
 	}
 
 	export interface PreviewAgentsRequest {
 		previewAgentsArn: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface RegisterCrossAccountAccessRoleRequest {
@@ -686,7 +686,7 @@ export namespace MyNS {
 
 	export interface SetTagsForResourceRequest {
 		resourceArn: string;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface StartAssessmentRunResponse {
@@ -695,7 +695,7 @@ export namespace MyNS {
 
 	export interface StartAssessmentRunRequest {
 		assessmentTemplateArn: string;
-		assessmentRunName?: string;
+		assessmentRunName?: string | null;
 	}
 
 	export interface AgentsAlreadyRunningAssessmentException {
@@ -703,7 +703,7 @@ export namespace MyNS {
 
 	export interface StopAssessmentRunRequest {
 		assessmentRunArn: string;
-		stopAction?: StopAssessmentRunRequestStopAction;
+		stopAction?: StopAssessmentRunRequestStopAction | null;
 	}
 
 	export enum StopAssessmentRunRequestStopAction { START_EVALUATION = 0, SKIP_EVALUATION = 1 }
@@ -723,7 +723,7 @@ export namespace MyNS {
 	export interface UpdateAssessmentTargetRequest {
 		assessmentTargetArn: string;
 		assessmentTargetName: string;
-		resourceGroupArn?: string;
+		resourceGroupArn?: string | null;
 	}
 
 	export enum InspectorEvent { ASSESSMENT_RUN_STARTED = 0, ASSESSMENT_RUN_COMPLETED = 1, ASSESSMENT_RUN_STATE_CHANGED = 2, FINDING_REPORTED = 3, OTHER = 4 }
@@ -742,7 +742,7 @@ export namespace MyNS {
 		description: string;
 		recommendation: string;
 		scopes: Array<Scope>;
-		attributes?: Array<Attribute>;
+		attributes?: Array<Attribute> | null;
 	}
 
 	export enum FailedItemErrorCode { INVALID_ARN = 0, DUPLICATE_ARN = 1, ITEM_DOES_NOT_EXIST = 2, ACCESS_DENIED = 3, LIMIT_EXCEEDED = 4, INTERNAL_ERROR = 5 }
@@ -931,7 +931,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetExclusionsPreviewResponse} Success
 		 */
-		GetExclusionsPreview(maxResults: string, nextToken: string, requestBody: GetExclusionsPreviewRequest): Observable<GetExclusionsPreviewResponse> {
+		GetExclusionsPreview(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetExclusionsPreviewRequest): Observable<GetExclusionsPreviewResponse> {
 			return this.http.post<GetExclusionsPreviewResponse>(this.baseUri + '#X-Amz-Target=InspectorService.GetExclusionsPreview?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -951,7 +951,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAssessmentRunAgentsResponse} Success
 		 */
-		ListAssessmentRunAgents(maxResults: string, nextToken: string, requestBody: ListAssessmentRunAgentsRequest): Observable<ListAssessmentRunAgentsResponse> {
+		ListAssessmentRunAgents(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListAssessmentRunAgentsRequest): Observable<ListAssessmentRunAgentsResponse> {
 			return this.http.post<ListAssessmentRunAgentsResponse>(this.baseUri + '#X-Amz-Target=InspectorService.ListAssessmentRunAgents?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -962,7 +962,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAssessmentRunsResponse} Success
 		 */
-		ListAssessmentRuns(maxResults: string, nextToken: string, requestBody: ListAssessmentRunsRequest): Observable<ListAssessmentRunsResponse> {
+		ListAssessmentRuns(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListAssessmentRunsRequest): Observable<ListAssessmentRunsResponse> {
 			return this.http.post<ListAssessmentRunsResponse>(this.baseUri + '#X-Amz-Target=InspectorService.ListAssessmentRuns?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -973,7 +973,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAssessmentTargetsResponse} Success
 		 */
-		ListAssessmentTargets(maxResults: string, nextToken: string, requestBody: ListAssessmentTargetsRequest): Observable<ListAssessmentTargetsResponse> {
+		ListAssessmentTargets(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListAssessmentTargetsRequest): Observable<ListAssessmentTargetsResponse> {
 			return this.http.post<ListAssessmentTargetsResponse>(this.baseUri + '#X-Amz-Target=InspectorService.ListAssessmentTargets?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -984,7 +984,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAssessmentTemplatesResponse} Success
 		 */
-		ListAssessmentTemplates(maxResults: string, nextToken: string, requestBody: ListAssessmentTemplatesRequest): Observable<ListAssessmentTemplatesResponse> {
+		ListAssessmentTemplates(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListAssessmentTemplatesRequest): Observable<ListAssessmentTemplatesResponse> {
 			return this.http.post<ListAssessmentTemplatesResponse>(this.baseUri + '#X-Amz-Target=InspectorService.ListAssessmentTemplates?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -995,7 +995,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListEventSubscriptionsResponse} Success
 		 */
-		ListEventSubscriptions(maxResults: string, nextToken: string, requestBody: ListEventSubscriptionsRequest): Observable<ListEventSubscriptionsResponse> {
+		ListEventSubscriptions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListEventSubscriptionsRequest): Observable<ListEventSubscriptionsResponse> {
 			return this.http.post<ListEventSubscriptionsResponse>(this.baseUri + '#X-Amz-Target=InspectorService.ListEventSubscriptions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1006,7 +1006,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListExclusionsResponse} Success
 		 */
-		ListExclusions(maxResults: string, nextToken: string, requestBody: ListExclusionsRequest): Observable<ListExclusionsResponse> {
+		ListExclusions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListExclusionsRequest): Observable<ListExclusionsResponse> {
 			return this.http.post<ListExclusionsResponse>(this.baseUri + '#X-Amz-Target=InspectorService.ListExclusions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1017,7 +1017,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListFindingsResponse} Success
 		 */
-		ListFindings(maxResults: string, nextToken: string, requestBody: ListFindingsRequest): Observable<ListFindingsResponse> {
+		ListFindings(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListFindingsRequest): Observable<ListFindingsResponse> {
 			return this.http.post<ListFindingsResponse>(this.baseUri + '#X-Amz-Target=InspectorService.ListFindings?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1028,7 +1028,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListRulesPackagesResponse} Success
 		 */
-		ListRulesPackages(maxResults: string, nextToken: string, requestBody: ListRulesPackagesRequest): Observable<ListRulesPackagesResponse> {
+		ListRulesPackages(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListRulesPackagesRequest): Observable<ListRulesPackagesResponse> {
 			return this.http.post<ListRulesPackagesResponse>(this.baseUri + '#X-Amz-Target=InspectorService.ListRulesPackages?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1048,7 +1048,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {PreviewAgentsResponse} Success
 		 */
-		PreviewAgents(maxResults: string, nextToken: string, requestBody: PreviewAgentsRequest): Observable<PreviewAgentsResponse> {
+		PreviewAgents(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: PreviewAgentsRequest): Observable<PreviewAgentsResponse> {
 			return this.http.post<PreviewAgentsResponse>(this.baseUri + '#X-Amz-Target=InspectorService.PreviewAgents?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

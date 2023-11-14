@@ -7,10 +7,10 @@ export namespace MyNS {
 	export interface Challenge {
 
 		/** The wrapper message of any data and its signature. */
-		alternativeChallenge?: SignedData;
+		alternativeChallenge?: SignedData | null;
 
 		/** The wrapper message of any data and its signature. */
-		challenge?: SignedData;
+		challenge?: SignedData | null;
 	}
 
 
@@ -18,10 +18,10 @@ export namespace MyNS {
 	export interface SignedData {
 
 		/** The data to be signed. */
-		data?: string;
+		data?: string | null;
 
 		/** The signature of the data field. */
-		signature?: string;
+		signature?: string | null;
 	}
 
 
@@ -42,7 +42,7 @@ export namespace MyNS {
 	export interface VerifyChallengeResponseRequest {
 
 		/** The wrapper message of any data and its signature. */
-		challengeResponse?: SignedData;
+		challengeResponse?: SignedData | null;
 
 		/**
 		 * Service can optionally provide identity information about the device
@@ -52,7 +52,7 @@ export namespace MyNS {
 		 * If present, this value will be checked against contents
 		 * of the response, and verification will fail if there is no match.
 		 */
-		expectedIdentity?: string;
+		expectedIdentity?: string | null;
 	}
 
 
@@ -63,13 +63,13 @@ export namespace MyNS {
 		 * Device enrollment id is returned in this field (for the machine response
 		 * only).
 		 */
-		deviceEnrollmentId?: string;
+		deviceEnrollmentId?: string | null;
 
 		/**
 		 * Device permanent id is returned in this field (for the machine response
 		 * only).
 		 */
-		devicePermanentId?: string;
+		devicePermanentId?: string | null;
 
 		/**
 		 * Certificate Signing Request (in the SPKAC format, base64 encoded) is
@@ -78,7 +78,7 @@ export namespace MyNS {
 		 * (the option to include CSR is now available for both user and machine
 		 * responses)
 		 */
-		signedPublicKeyAndChallenge?: string;
+		signedPublicKeyAndChallenge?: string | null;
 
 		/**
 		 * For EMCert check, device permanent id is returned here.
@@ -87,7 +87,7 @@ export namespace MyNS {
 		 * This field is deprecated, please use device_permanent_id or
 		 * signed_public_key_and_challenge fields.
 		 */
-		verificationOutput?: string;
+		verificationOutput?: string | null;
 	}
 
 	@Injectable()

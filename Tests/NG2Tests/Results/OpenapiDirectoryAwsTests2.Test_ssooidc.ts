@@ -3,11 +3,11 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateTokenResponse {
-		accessToken?: string;
-		tokenType?: string;
-		expiresIn?: number;
-		refreshToken?: string;
-		idToken?: string;
+		accessToken?: string | null;
+		tokenType?: string | null;
+		expiresIn?: number | null;
+		refreshToken?: string | null;
+		idToken?: string | null;
 	}
 
 	export interface InvalidRequestException {
@@ -44,24 +44,24 @@ export namespace MyNS {
 	}
 
 	export interface RegisterClientResponse {
-		clientId?: string;
-		clientSecret?: string;
-		clientIdIssuedAt?: number;
-		clientSecretExpiresAt?: number;
-		authorizationEndpoint?: string;
-		tokenEndpoint?: string;
+		clientId?: string | null;
+		clientSecret?: string | null;
+		clientIdIssuedAt?: number | null;
+		clientSecretExpiresAt?: number | null;
+		authorizationEndpoint?: string | null;
+		tokenEndpoint?: string | null;
 	}
 
 	export interface InvalidClientMetadataException {
 	}
 
 	export interface StartDeviceAuthorizationResponse {
-		deviceCode?: string;
-		userCode?: string;
-		verificationUri?: string;
-		verificationUriComplete?: string;
-		expiresIn?: number;
-		interval?: number;
+		deviceCode?: string | null;
+		userCode?: string | null;
+		verificationUri?: string | null;
+		verificationUriComplete?: string | null;
+		expiresIn?: number | null;
+		interval?: number | null;
 	}
 
 	export interface CreateTokenRequest {
@@ -69,16 +69,16 @@ export namespace MyNS {
 		clientSecret: string;
 		grantType: string;
 		deviceCode: string;
-		code?: string;
-		refreshToken?: string;
-		scope?: Array<string>;
-		redirectUri?: string;
+		code?: string | null;
+		refreshToken?: string | null;
+		scope?: Array<string> | null;
+		redirectUri?: string | null;
 	}
 
 	export interface RegisterClientRequest {
 		clientName: string;
 		clientType: string;
-		scopes?: Array<string>;
+		scopes?: Array<string> | null;
 	}
 
 	export interface StartDeviceAuthorizationRequest {
@@ -147,16 +147,16 @@ export namespace MyNS {
 		deviceCode: string;
 
 		/** The authorization code received from the authorization service. This parameter is required to perform an authorization grant request to get access to a token. */
-		code?: string;
+		code?: string | null;
 
 		/** The token used to obtain an access token in the event that the access token is invalid or expired. This token is not issued by the service. */
-		refreshToken?: string;
+		refreshToken?: string | null;
 
 		/** The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token. */
-		scope?: Array<string>;
+		scope?: Array<string> | null;
 
 		/** The location of the application that will receive the authorization code. Users authorize the service to send the request to this location. */
-		redirectUri?: string;
+		redirectUri?: string | null;
 	}
 
 	export interface RegisterClientPostBody {
@@ -174,7 +174,7 @@ export namespace MyNS {
 		clientType: string;
 
 		/** The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token. */
-		scopes?: Array<string>;
+		scopes?: Array<string> | null;
 	}
 
 	export interface StartDeviceAuthorizationPostBody {

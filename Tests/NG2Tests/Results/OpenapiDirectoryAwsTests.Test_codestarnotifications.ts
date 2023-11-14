@@ -3,14 +3,14 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateNotificationRuleResult {
-		Arn?: string;
+		Arn?: string | null;
 	}
 
 
 	/** Information about the SNS topics associated with a notification rule. */
 	export interface Target {
-		TargetType?: string;
-		TargetAddress?: string;
+		TargetType?: string | null;
+		TargetAddress?: string | null;
 	}
 
 	export interface ResourceAlreadyExistsException {
@@ -32,7 +32,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteNotificationRuleResult {
-		Arn?: string;
+		Arn?: string | null;
 	}
 
 	export interface DeleteTargetResult {
@@ -40,33 +40,33 @@ export namespace MyNS {
 
 	export interface DescribeNotificationRuleResult {
 		Arn: string;
-		Name?: string;
-		EventTypes?: Array<EventTypeSummary>;
-		Resource?: string;
-		Targets?: Array<TargetSummary>;
-		DetailType?: DescribeNotificationRuleResultDetailType;
-		CreatedBy?: string;
-		Status?: DescribeNotificationRuleResultStatus;
-		CreatedTimestamp?: Date;
-		LastModifiedTimestamp?: Date;
-		Tags?: Tags;
+		Name?: string | null;
+		EventTypes?: Array<EventTypeSummary> | null;
+		Resource?: string | null;
+		Targets?: Array<TargetSummary> | null;
+		DetailType?: DescribeNotificationRuleResultDetailType | null;
+		CreatedBy?: string | null;
+		Status?: DescribeNotificationRuleResultStatus | null;
+		CreatedTimestamp?: Date | null;
+		LastModifiedTimestamp?: Date | null;
+		Tags?: Tags | null;
 	}
 
 
 	/** Returns information about an event that has triggered a notification rule. */
 	export interface EventTypeSummary {
-		EventTypeId?: string;
-		ServiceName?: string;
-		EventTypeName?: string;
-		ResourceType?: string;
+		EventTypeId?: string | null;
+		ServiceName?: string | null;
+		EventTypeName?: string | null;
+		ResourceType?: string | null;
 	}
 
 
 	/** Information about the targets specified for a notification rule. */
 	export interface TargetSummary {
-		TargetAddress?: string;
-		TargetType?: string;
-		TargetStatus?: TargetSummaryTargetStatus;
+		TargetAddress?: string | null;
+		TargetType?: string | null;
+		TargetStatus?: TargetSummaryTargetStatus | null;
 	}
 
 	export enum TargetSummaryTargetStatus { PENDING = 0, ACTIVE = 1, UNREACHABLE = 2, INACTIVE = 3, DEACTIVATED = 4 }
@@ -82,8 +82,8 @@ export namespace MyNS {
 	}
 
 	export interface ListEventTypesResult {
-		EventTypes?: Array<EventTypeSummary>;
-		NextToken?: string;
+		EventTypes?: Array<EventTypeSummary> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -99,15 +99,15 @@ export namespace MyNS {
 	}
 
 	export interface ListNotificationRulesResult {
-		NextToken?: string;
-		NotificationRules?: Array<NotificationRuleSummary>;
+		NextToken?: string | null;
+		NotificationRules?: Array<NotificationRuleSummary> | null;
 	}
 
 
 	/** Information about a specified notification rule. */
 	export interface NotificationRuleSummary {
-		Id?: string;
-		Arn?: string;
+		Id?: string | null;
+		Arn?: string | null;
 	}
 
 
@@ -120,12 +120,12 @@ export namespace MyNS {
 	export enum ListNotificationRulesFilterName { EVENT_TYPE_ID = 0, CREATED_BY = 1, RESOURCE = 2, TARGET_ADDRESS = 3 }
 
 	export interface ListTagsForResourceResult {
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface ListTargetsResult {
-		Targets?: Array<TargetSummary>;
-		NextToken?: string;
+		Targets?: Array<TargetSummary> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -138,11 +138,11 @@ export namespace MyNS {
 	export enum ListTargetsFilterName { TARGET_TYPE = 0, TARGET_ADDRESS = 1, TARGET_STATUS = 2 }
 
 	export interface SubscribeResult {
-		Arn?: string;
+		Arn?: string | null;
 	}
 
 	export interface TagResourceResult {
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface UnsubscribeResult {
@@ -165,9 +165,9 @@ export namespace MyNS {
 		Resource: string;
 		Targets: Array<Target>;
 		DetailType: DescribeNotificationRuleResultDetailType;
-		ClientRequestToken?: string;
-		Tags?: Tags;
-		Status?: DescribeNotificationRuleResultStatus;
+		ClientRequestToken?: string | null;
+		Tags?: Tags | null;
+		Status?: DescribeNotificationRuleResultStatus | null;
 	}
 
 	export interface DeleteNotificationRuleRequest {
@@ -176,7 +176,7 @@ export namespace MyNS {
 
 	export interface DeleteTargetRequest {
 		TargetAddress: string;
-		ForceUnsubscribeAll?: boolean;
+		ForceUnsubscribeAll?: boolean | null;
 	}
 
 	export interface DescribeNotificationRuleRequest {
@@ -184,15 +184,15 @@ export namespace MyNS {
 	}
 
 	export interface ListEventTypesRequest {
-		Filters?: Array<ListEventTypesFilter>;
-		NextToken?: string;
-		MaxResults?: number;
+		Filters?: Array<ListEventTypesFilter> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListNotificationRulesRequest {
-		Filters?: Array<ListNotificationRulesFilter>;
-		NextToken?: string;
-		MaxResults?: number;
+		Filters?: Array<ListNotificationRulesFilter> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -200,9 +200,9 @@ export namespace MyNS {
 	}
 
 	export interface ListTargetsRequest {
-		Filters?: Array<ListTargetsFilter>;
-		NextToken?: string;
-		MaxResults?: number;
+		Filters?: Array<ListTargetsFilter> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface SubscribeRequest {
@@ -213,7 +213,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		Target: Target;
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 	}
 
 	export interface TagResourceRequest {
@@ -235,11 +235,11 @@ export namespace MyNS {
 
 	export interface UpdateNotificationRuleRequest {
 		Arn: string;
-		Name?: string;
-		Status?: DescribeNotificationRuleResultStatus;
-		EventTypeIds?: Array<string>;
-		Targets?: Array<Target>;
-		DetailType?: DescribeNotificationRuleResultDetailType;
+		Name?: string | null;
+		Status?: DescribeNotificationRuleResultStatus | null;
+		EventTypeIds?: Array<string> | null;
+		Targets?: Array<Target> | null;
+		DetailType?: DescribeNotificationRuleResultDetailType | null;
 	}
 
 	@Injectable()
@@ -290,7 +290,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListEventTypesResult} Success
 		 */
-		ListEventTypes(MaxResults: string, NextToken: string, requestBody: ListEventTypesPostBody): Observable<ListEventTypesResult> {
+		ListEventTypes(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListEventTypesPostBody): Observable<ListEventTypesResult> {
 			return this.http.post<ListEventTypesResult>(this.baseUri + 'listEventTypes?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -301,7 +301,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListNotificationRulesResult} Success
 		 */
-		ListNotificationRules(MaxResults: string, NextToken: string, requestBody: ListNotificationRulesPostBody): Observable<ListNotificationRulesResult> {
+		ListNotificationRules(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListNotificationRulesPostBody): Observable<ListNotificationRulesResult> {
 			return this.http.post<ListNotificationRulesResult>(this.baseUri + 'listNotificationRules?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -321,7 +321,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTargetsResult} Success
 		 */
-		ListTargets(MaxResults: string, NextToken: string, requestBody: ListTargetsPostBody): Observable<ListTargetsResult> {
+		ListTargets(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTargetsPostBody): Observable<ListTargetsResult> {
 			return this.http.post<ListTargetsResult>(this.baseUri + 'listTargets?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -414,13 +414,13 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[\w:/-]+$
 		 */
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 
 		/** A list of tags to apply to this notification rule. Key names cannot start with "aws". */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 
 		/** The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED, notifications aren't sent for the notification rule. */
-		Status?: DescribeNotificationRuleResultStatus;
+		Status?: DescribeNotificationRuleResultStatus | null;
 	}
 
 	export interface DeleteNotificationRulePostBody {
@@ -444,7 +444,7 @@ export namespace MyNS {
 		TargetAddress: string;
 
 		/** A Boolean value that can be used to delete all associations with this SNS topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your AWS account are deleted. */
-		ForceUnsubscribeAll?: boolean;
+		ForceUnsubscribeAll?: boolean | null;
 	}
 
 	export interface DescribeNotificationRulePostBody {
@@ -460,39 +460,39 @@ export namespace MyNS {
 	export interface ListEventTypesPostBody {
 
 		/** The filters to use to return information by service or resource type. */
-		Filters?: Array<ListEventTypesFilter>;
+		Filters?: Array<ListEventTypesFilter> | null;
 
 		/**
 		 * An enumeration token that, when provided in a request, returns the next batch of the results.
 		 * Pattern: ^[\w/+=]+$
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of results that can be returned is 100.
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListNotificationRulesPostBody {
 
 		/** <p>The filters to use to return information by service or resource type. For valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p> </note> */
-		Filters?: Array<ListNotificationRulesFilter>;
+		Filters?: Array<ListNotificationRulesFilter> | null;
 
 		/**
 		 * An enumeration token that, when provided in a request, returns the next batch of the results.
 		 * Pattern: ^[\w/+=]+$
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTagsForResourcePostBody {
@@ -508,20 +508,20 @@ export namespace MyNS {
 	export interface ListTargetsPostBody {
 
 		/** <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note> <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p> </note> */
-		Filters?: Array<ListTargetsFilter>;
+		Filters?: Array<ListTargetsFilter> | null;
 
 		/**
 		 * An enumeration token that, when provided in a request, returns the next batch of the results.
 		 * Pattern: ^[\w/+=]+$
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface SubscribePostBody {
@@ -545,12 +545,12 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[\w:/-]+$
 		 */
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 	}
 
 	export interface SubscribePostBodyTarget {
-		TargetType?: string;
-		TargetAddress?: string;
+		TargetType?: string | null;
+		TargetAddress?: string | null;
 	}
 
 	export interface TagResourcePostBody {
@@ -618,22 +618,22 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [A-Za-z0-9\-_ ]+$
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/** The status of the notification rule. Valid statuses include enabled (sending notifications) or disabled (not sending notifications). */
-		Status?: DescribeNotificationRuleResultStatus;
+		Status?: DescribeNotificationRuleResultStatus | null;
 
 		/** A list of event types associated with this notification rule. */
-		EventTypeIds?: Array<string>;
+		EventTypeIds?: Array<string> | null;
 
 		/**
 		 * The address and type of the targets to receive notifications from this notification rule.
 		 * Maximum items: 10
 		 */
-		Targets?: Array<Target>;
+		Targets?: Array<Target> | null;
 
 		/** The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created. */
-		DetailType?: DescribeNotificationRuleResultDetailType;
+		DetailType?: DescribeNotificationRuleResultDetailType | null;
 	}
 
 }

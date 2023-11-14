@@ -3,27 +3,27 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface BatchCreatePartitionResponse {
-		Errors?: Array<PartitionError>;
+		Errors?: Array<PartitionError> | null;
 	}
 
 
 	/** Contains information about a partition error. */
 	export interface PartitionError {
-		PartitionValues?: Array<string>;
+		PartitionValues?: Array<string> | null;
 
 		/** Contains details about an error. */
-		ErrorDetail?: ErrorDetail;
+		ErrorDetail?: ErrorDetail | null;
 	}
 
 
 	/** Contains details about an error. */
 	export interface ErrorDetail {
-		ErrorCode?: string;
-		ErrorMessage?: string;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export interface BatchCreatePartitionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 		TableName: string;
 		PartitionInputList: Array<PartitionInput>;
@@ -32,43 +32,43 @@ export namespace MyNS {
 
 	/** The structure used to create and update a partition. */
 	export interface PartitionInput {
-		Values?: Array<string>;
-		LastAccessTime?: Date;
+		Values?: Array<string> | null;
+		LastAccessTime?: Date | null;
 
 		/** Describes the physical storage of table data. */
-		StorageDescriptor?: StorageDescriptor;
-		Parameters?: ParametersMap;
-		LastAnalyzedTime?: Date;
+		StorageDescriptor?: StorageDescriptor | null;
+		Parameters?: ParametersMap | null;
+		LastAnalyzedTime?: Date | null;
 	}
 
 
 	/** Describes the physical storage of table data. */
 	export interface StorageDescriptor {
-		Columns?: Array<Column>;
-		Location?: string;
-		InputFormat?: string;
-		OutputFormat?: string;
-		Compressed?: boolean;
-		NumberOfBuckets?: number;
+		Columns?: Array<Column> | null;
+		Location?: string | null;
+		InputFormat?: string | null;
+		OutputFormat?: string | null;
+		Compressed?: boolean | null;
+		NumberOfBuckets?: number | null;
 
 		/** Information about a serialization/deserialization program (SerDe) that serves as an extractor and loader. */
-		SerdeInfo?: SerDeInfo;
-		BucketColumns?: Array<string>;
-		SortColumns?: Array<Order>;
-		Parameters?: ParametersMap;
+		SerdeInfo?: SerDeInfo | null;
+		BucketColumns?: Array<string> | null;
+		SortColumns?: Array<Order> | null;
+		Parameters?: ParametersMap | null;
 
 		/** Specifies skewed values in a table. Skewed values are those that occur with very high frequency. */
-		SkewedInfo?: SkewedInfo;
-		StoredAsSubDirectories?: boolean;
+		SkewedInfo?: SkewedInfo | null;
+		StoredAsSubDirectories?: boolean | null;
 	}
 
 
 	/** A column in a <code>Table</code>. */
 	export interface Column {
 		Name: string;
-		Type?: string;
-		Comment?: string;
-		Parameters?: ParametersMap;
+		Type?: string | null;
+		Comment?: string | null;
+		Parameters?: ParametersMap | null;
 	}
 
 	export interface ParametersMap {
@@ -77,9 +77,9 @@ export namespace MyNS {
 
 	/** Information about a serialization/deserialization program (SerDe) that serves as an extractor and loader. */
 	export interface SerDeInfo {
-		Name?: string;
-		SerializationLibrary?: string;
-		Parameters?: ParametersMap;
+		Name?: string | null;
+		SerializationLibrary?: string | null;
+		Parameters?: ParametersMap | null;
 	}
 
 
@@ -92,9 +92,9 @@ export namespace MyNS {
 
 	/** Specifies skewed values in a table. Skewed values are those that occur with very high frequency. */
 	export interface SkewedInfo {
-		SkewedColumnNames?: Array<string>;
-		SkewedColumnValues?: Array<string>;
-		SkewedColumnValueLocationMaps?: LocationMap;
+		SkewedColumnNames?: Array<string> | null;
+		SkewedColumnValues?: Array<string> | null;
+		SkewedColumnValueLocationMaps?: LocationMap | null;
 	}
 
 	export interface LocationMap {
@@ -122,24 +122,24 @@ export namespace MyNS {
 	}
 
 	export interface BatchDeleteConnectionResponse {
-		Succeeded?: Array<string>;
-		Errors?: ErrorByName;
+		Succeeded?: Array<string> | null;
+		Errors?: ErrorByName | null;
 	}
 
 	export interface ErrorByName {
 	}
 
 	export interface BatchDeleteConnectionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		ConnectionNameList: Array<string>;
 	}
 
 	export interface BatchDeletePartitionResponse {
-		Errors?: Array<PartitionError>;
+		Errors?: Array<PartitionError> | null;
 	}
 
 	export interface BatchDeletePartitionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 		TableName: string;
 		PartitionsToDelete: Array<PartitionValueList>;
@@ -152,108 +152,108 @@ export namespace MyNS {
 	}
 
 	export interface BatchDeleteTableResponse {
-		Errors?: Array<TableError>;
+		Errors?: Array<TableError> | null;
 	}
 
 
 	/** An error record for table operations. */
 	export interface TableError {
-		TableName?: string;
+		TableName?: string | null;
 
 		/** Contains details about an error. */
-		ErrorDetail?: ErrorDetail;
+		ErrorDetail?: ErrorDetail | null;
 	}
 
 	export interface BatchDeleteTableRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 		TablesToDelete: Array<string>;
 	}
 
 	export interface BatchDeleteTableVersionResponse {
-		Errors?: Array<TableVersionError>;
+		Errors?: Array<TableVersionError> | null;
 	}
 
 
 	/** An error record for table-version operations. */
 	export interface TableVersionError {
-		TableName?: string;
-		VersionId?: string;
+		TableName?: string | null;
+		VersionId?: string | null;
 
 		/** Contains details about an error. */
-		ErrorDetail?: ErrorDetail;
+		ErrorDetail?: ErrorDetail | null;
 	}
 
 	export interface BatchDeleteTableVersionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 		TableName: string;
 		VersionIds: Array<string>;
 	}
 
 	export interface BatchGetCrawlersResponse {
-		Crawlers?: Array<Crawler>;
-		CrawlersNotFound?: Array<string>;
+		Crawlers?: Array<Crawler> | null;
+		CrawlersNotFound?: Array<string> | null;
 	}
 
 
 	/** Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the AWS Glue Data Catalog. */
 	export interface Crawler {
-		Name?: string;
-		Role?: string;
+		Name?: string | null;
+		Role?: string | null;
 
 		/** Specifies data stores to crawl. */
-		Targets?: CrawlerTargets;
-		DatabaseName?: string;
-		Description?: string;
-		Classifiers?: Array<string>;
+		Targets?: CrawlerTargets | null;
+		DatabaseName?: string | null;
+		Description?: string | null;
+		Classifiers?: Array<string> | null;
 
 		/** A policy that specifies update and deletion behaviors for the crawler. */
-		SchemaChangePolicy?: SchemaChangePolicy;
-		State?: CrawlerState;
-		TablePrefix?: string;
+		SchemaChangePolicy?: SchemaChangePolicy | null;
+		State?: CrawlerState | null;
+		TablePrefix?: string | null;
 
 		/** A scheduling object using a <code>cron</code> statement to schedule an event. */
-		Schedule?: Schedule;
-		CrawlElapsedTime?: number;
-		CreationTime?: Date;
-		LastUpdated?: Date;
+		Schedule?: Schedule | null;
+		CrawlElapsedTime?: number | null;
+		CreationTime?: Date | null;
+		LastUpdated?: Date | null;
 
 		/** Status and error information about the most recent crawl. */
-		LastCrawl?: LastCrawlInfo;
-		Version?: number;
-		Configuration?: string;
-		CrawlerSecurityConfiguration?: string;
+		LastCrawl?: LastCrawlInfo | null;
+		Version?: number | null;
+		Configuration?: string | null;
+		CrawlerSecurityConfiguration?: string | null;
 	}
 
 
 	/** Specifies data stores to crawl. */
 	export interface CrawlerTargets {
-		S3Targets?: Array<S3Target>;
-		JdbcTargets?: Array<JdbcTarget>;
-		DynamoDBTargets?: Array<DynamoDBTarget>;
-		CatalogTargets?: Array<CatalogTarget>;
+		S3Targets?: Array<S3Target> | null;
+		JdbcTargets?: Array<JdbcTarget> | null;
+		DynamoDBTargets?: Array<DynamoDBTarget> | null;
+		CatalogTargets?: Array<CatalogTarget> | null;
 	}
 
 
 	/** Specifies a data store in Amazon Simple Storage Service (Amazon S3). */
 	export interface S3Target {
-		Path?: string;
-		Exclusions?: Array<string>;
+		Path?: string | null;
+		Exclusions?: Array<string> | null;
 	}
 
 
 	/** Specifies a JDBC data store to crawl. */
 	export interface JdbcTarget {
-		ConnectionName?: string;
-		Path?: string;
-		Exclusions?: Array<string>;
+		ConnectionName?: string | null;
+		Path?: string | null;
+		Exclusions?: Array<string> | null;
 	}
 
 
 	/** Specifies an Amazon DynamoDB table to crawl. */
 	export interface DynamoDBTarget {
-		Path?: string;
+		Path?: string | null;
 	}
 
 
@@ -266,8 +266,8 @@ export namespace MyNS {
 
 	/** A policy that specifies update and deletion behaviors for the crawler. */
 	export interface SchemaChangePolicy {
-		UpdateBehavior?: SchemaChangePolicyUpdateBehavior;
-		DeleteBehavior?: SchemaChangePolicyDeleteBehavior;
+		UpdateBehavior?: SchemaChangePolicyUpdateBehavior | null;
+		DeleteBehavior?: SchemaChangePolicyDeleteBehavior | null;
 	}
 
 	export enum SchemaChangePolicyUpdateBehavior { LOG = 0, UPDATE_IN_DATABASE = 1 }
@@ -279,8 +279,8 @@ export namespace MyNS {
 
 	/** A scheduling object using a <code>cron</code> statement to schedule an event. */
 	export interface Schedule {
-		ScheduleExpression?: string;
-		State?: ScheduleState;
+		ScheduleExpression?: string | null;
+		State?: ScheduleState | null;
 	}
 
 	export enum ScheduleState { SCHEDULED = 0, NOT_SCHEDULED = 1, TRANSITIONING = 2 }
@@ -288,12 +288,12 @@ export namespace MyNS {
 
 	/** Status and error information about the most recent crawl. */
 	export interface LastCrawlInfo {
-		Status?: LastCrawlInfoStatus;
-		ErrorMessage?: string;
-		LogGroup?: string;
-		LogStream?: string;
-		MessagePrefix?: string;
-		StartTime?: Date;
+		Status?: LastCrawlInfoStatus | null;
+		ErrorMessage?: string | null;
+		LogGroup?: string | null;
+		LogStream?: string | null;
+		MessagePrefix?: string | null;
+		StartTime?: Date | null;
 	}
 
 	export enum LastCrawlInfoStatus { SUCCEEDED = 0, CANCELLED = 1, FAILED = 2 }
@@ -303,38 +303,38 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetDevEndpointsResponse {
-		DevEndpoints?: Array<DevEndpoint>;
-		DevEndpointsNotFound?: Array<string>;
+		DevEndpoints?: Array<DevEndpoint> | null;
+		DevEndpointsNotFound?: Array<string> | null;
 	}
 
 
 	/** A development endpoint where a developer can remotely debug extract, transform, and load (ETL) scripts. */
 	export interface DevEndpoint {
-		EndpointName?: string;
-		RoleArn?: string;
-		SecurityGroupIds?: Array<string>;
-		SubnetId?: string;
-		YarnEndpointAddress?: string;
-		PrivateAddress?: string;
-		ZeppelinRemoteSparkInterpreterPort?: number;
-		PublicAddress?: string;
-		Status?: string;
-		WorkerType?: DevEndpointWorkerType;
-		GlueVersion?: string;
-		NumberOfWorkers?: number;
-		NumberOfNodes?: number;
-		AvailabilityZone?: string;
-		VpcId?: string;
-		ExtraPythonLibsS3Path?: string;
-		ExtraJarsS3Path?: string;
-		FailureReason?: string;
-		LastUpdateStatus?: string;
-		CreatedTimestamp?: Date;
-		LastModifiedTimestamp?: Date;
-		PublicKey?: string;
-		PublicKeys?: Array<string>;
-		SecurityConfiguration?: string;
-		Arguments?: MapValue;
+		EndpointName?: string | null;
+		RoleArn?: string | null;
+		SecurityGroupIds?: Array<string> | null;
+		SubnetId?: string | null;
+		YarnEndpointAddress?: string | null;
+		PrivateAddress?: string | null;
+		ZeppelinRemoteSparkInterpreterPort?: number | null;
+		PublicAddress?: string | null;
+		Status?: string | null;
+		WorkerType?: DevEndpointWorkerType | null;
+		GlueVersion?: string | null;
+		NumberOfWorkers?: number | null;
+		NumberOfNodes?: number | null;
+		AvailabilityZone?: string | null;
+		VpcId?: string | null;
+		ExtraPythonLibsS3Path?: string | null;
+		ExtraJarsS3Path?: string | null;
+		FailureReason?: string | null;
+		LastUpdateStatus?: string | null;
+		CreatedTimestamp?: Date | null;
+		LastModifiedTimestamp?: Date | null;
+		PublicKey?: string | null;
+		PublicKeys?: Array<string> | null;
+		SecurityConfiguration?: string | null;
+		Arguments?: MapValue | null;
 	}
 
 	export enum DevEndpointWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
@@ -350,55 +350,55 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetJobsResponse {
-		Jobs?: Array<Job>;
-		JobsNotFound?: Array<string>;
+		Jobs?: Array<Job> | null;
+		JobsNotFound?: Array<string> | null;
 	}
 
 
 	/** Specifies a job definition. */
 	export interface Job {
-		Name?: string;
-		Description?: string;
-		LogUri?: string;
-		Role?: string;
-		CreatedOn?: Date;
-		LastModifiedOn?: Date;
+		Name?: string | null;
+		Description?: string | null;
+		LogUri?: string | null;
+		Role?: string | null;
+		CreatedOn?: Date | null;
+		LastModifiedOn?: Date | null;
 
 		/** An execution property of a job. */
-		ExecutionProperty?: ExecutionProperty;
+		ExecutionProperty?: ExecutionProperty | null;
 
 		/** Specifies code executed when a job is run. */
-		Command?: JobCommand;
-		DefaultArguments?: GenericMap;
-		NonOverridableArguments?: GenericMap;
+		Command?: JobCommand | null;
+		DefaultArguments?: GenericMap | null;
+		NonOverridableArguments?: GenericMap | null;
 
 		/** Specifies the connections used by a job. */
-		Connections?: ConnectionsList;
-		MaxRetries?: number;
-		AllocatedCapacity?: number;
-		Timeout?: number;
-		MaxCapacity?: number;
-		WorkerType?: JobWorkerType;
-		NumberOfWorkers?: number;
-		SecurityConfiguration?: string;
+		Connections?: ConnectionsList | null;
+		MaxRetries?: number | null;
+		AllocatedCapacity?: number | null;
+		Timeout?: number | null;
+		MaxCapacity?: number | null;
+		WorkerType?: JobWorkerType | null;
+		NumberOfWorkers?: number | null;
+		SecurityConfiguration?: string | null;
 
 		/** Specifies configuration properties of a notification. */
-		NotificationProperty?: NotificationProperty;
-		GlueVersion?: string;
+		NotificationProperty?: NotificationProperty | null;
+		GlueVersion?: string | null;
 	}
 
 
 	/** An execution property of a job. */
 	export interface ExecutionProperty {
-		MaxConcurrentRuns?: number;
+		MaxConcurrentRuns?: number | null;
 	}
 
 
 	/** Specifies code executed when a job is run. */
 	export interface JobCommand {
-		Name?: string;
-		ScriptLocation?: string;
-		PythonVersion?: string;
+		Name?: string | null;
+		ScriptLocation?: string | null;
+		PythonVersion?: string | null;
 	}
 
 	export interface GenericMap {
@@ -407,7 +407,7 @@ export namespace MyNS {
 
 	/** Specifies the connections used by a job. */
 	export interface ConnectionsList {
-		Connections?: Array<string>;
+		Connections?: Array<string> | null;
 	}
 
 	export enum JobWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
@@ -415,7 +415,7 @@ export namespace MyNS {
 
 	/** Specifies configuration properties of a notification. */
 	export interface NotificationProperty {
-		NotifyDelayAfter?: number;
+		NotifyDelayAfter?: number | null;
 	}
 
 	export interface BatchGetJobsRequest {
@@ -423,51 +423,51 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetPartitionResponse {
-		Partitions?: Array<Partition>;
-		UnprocessedKeys?: Array<PartitionValueList>;
+		Partitions?: Array<Partition> | null;
+		UnprocessedKeys?: Array<PartitionValueList> | null;
 	}
 
 
 	/** Represents a slice of table data. */
 	export interface Partition {
-		Values?: Array<string>;
-		DatabaseName?: string;
-		TableName?: string;
-		CreationTime?: Date;
-		LastAccessTime?: Date;
+		Values?: Array<string> | null;
+		DatabaseName?: string | null;
+		TableName?: string | null;
+		CreationTime?: Date | null;
+		LastAccessTime?: Date | null;
 
 		/** Describes the physical storage of table data. */
-		StorageDescriptor?: StorageDescriptor;
-		Parameters?: ParametersMap;
-		LastAnalyzedTime?: Date;
+		StorageDescriptor?: StorageDescriptor | null;
+		Parameters?: ParametersMap | null;
+		LastAnalyzedTime?: Date | null;
 	}
 
 	export interface BatchGetPartitionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 		TableName: string;
 		PartitionsToGet: Array<PartitionValueList>;
 	}
 
 	export interface BatchGetTriggersResponse {
-		Triggers?: Array<Trigger>;
-		TriggersNotFound?: Array<string>;
+		Triggers?: Array<Trigger> | null;
+		TriggersNotFound?: Array<string> | null;
 	}
 
 
 	/** Information about a specific trigger. */
 	export interface Trigger {
-		Name?: string;
-		WorkflowName?: string;
-		Id?: string;
-		Type?: TriggerType;
-		State?: TriggerState;
-		Description?: string;
-		Schedule?: string;
-		Actions?: Array<Action>;
+		Name?: string | null;
+		WorkflowName?: string | null;
+		Id?: string | null;
+		Type?: TriggerType | null;
+		State?: TriggerState | null;
+		Description?: string | null;
+		Schedule?: string | null;
+		Actions?: Array<Action> | null;
 
 		/** Defines the predicate of the trigger, which determines when it fires. */
-		Predicate?: Predicate;
+		Predicate?: Predicate | null;
 	}
 
 	export enum TriggerType { SCHEDULED = 0, CONDITIONAL = 1, ON_DEMAND = 2 }
@@ -477,21 +477,21 @@ export namespace MyNS {
 
 	/** Defines an action to be initiated by a trigger. */
 	export interface Action {
-		JobName?: string;
-		Arguments?: GenericMap;
-		Timeout?: number;
-		SecurityConfiguration?: string;
+		JobName?: string | null;
+		Arguments?: GenericMap | null;
+		Timeout?: number | null;
+		SecurityConfiguration?: string | null;
 
 		/** Specifies configuration properties of a notification. */
-		NotificationProperty?: NotificationProperty;
-		CrawlerName?: string;
+		NotificationProperty?: NotificationProperty | null;
+		CrawlerName?: string | null;
 	}
 
 
 	/** Defines the predicate of the trigger, which determines when it fires. */
 	export interface Predicate {
-		Logical?: PredicateLogical;
-		Conditions?: Array<Condition>;
+		Logical?: PredicateLogical | null;
+		Conditions?: Array<Condition> | null;
 	}
 
 	export enum PredicateLogical { AND = 0, ANY = 1 }
@@ -499,11 +499,11 @@ export namespace MyNS {
 
 	/** Defines a condition under which a trigger fires. */
 	export interface Condition {
-		LogicalOperator?: ConditionLogicalOperator;
-		JobName?: string;
-		State?: ConditionState;
-		CrawlerName?: string;
-		CrawlState?: ConditionCrawlState;
+		LogicalOperator?: ConditionLogicalOperator | null;
+		JobName?: string | null;
+		State?: ConditionState | null;
+		CrawlerName?: string | null;
+		CrawlState?: ConditionCrawlState | null;
 	}
 
 	export enum ConditionLogicalOperator { EQUALS = 0 }
@@ -517,24 +517,24 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetWorkflowsResponse {
-		Workflows?: Array<Workflow>;
-		MissingWorkflows?: Array<string>;
+		Workflows?: Array<Workflow> | null;
+		MissingWorkflows?: Array<string> | null;
 	}
 
 
 	/** A workflow represents a flow in which AWS Glue components should be executed to complete a logical task. */
 	export interface Workflow {
-		Name?: string;
-		Description?: string;
-		DefaultRunProperties?: WorkflowRunProperties;
-		CreatedOn?: Date;
-		LastModifiedOn?: Date;
+		Name?: string | null;
+		Description?: string | null;
+		DefaultRunProperties?: WorkflowRunProperties | null;
+		CreatedOn?: Date | null;
+		LastModifiedOn?: Date | null;
 
 		/** A workflow run is an execution of a workflow providing all the runtime information. */
-		LastRun?: WorkflowRun;
+		LastRun?: WorkflowRun | null;
 
 		/** A workflow graph represents the complete workflow containing all the AWS Glue components present in the workflow and all the directed connections between them. */
-		Graph?: WorkflowGraph;
+		Graph?: WorkflowGraph | null;
 	}
 
 	export interface WorkflowRunProperties {
@@ -543,18 +543,18 @@ export namespace MyNS {
 
 	/** A workflow run is an execution of a workflow providing all the runtime information. */
 	export interface WorkflowRun {
-		Name?: string;
-		WorkflowRunId?: string;
-		WorkflowRunProperties?: WorkflowRunProperties;
-		StartedOn?: Date;
-		CompletedOn?: Date;
-		Status?: WorkflowRunStatus;
+		Name?: string | null;
+		WorkflowRunId?: string | null;
+		WorkflowRunProperties?: WorkflowRunProperties | null;
+		StartedOn?: Date | null;
+		CompletedOn?: Date | null;
+		Status?: WorkflowRunStatus | null;
 
 		/** Workflow run statistics provides statistics about the workflow run. */
-		Statistics?: WorkflowRunStatistics;
+		Statistics?: WorkflowRunStatistics | null;
 
 		/** A workflow graph represents the complete workflow containing all the AWS Glue components present in the workflow and all the directed connections between them. */
-		Graph?: WorkflowGraph;
+		Graph?: WorkflowGraph | null;
 	}
 
 	export enum WorkflowRunStatus { RUNNING = 0, COMPLETED = 1, STOPPING = 2, STOPPED = 3 }
@@ -562,36 +562,36 @@ export namespace MyNS {
 
 	/** Workflow run statistics provides statistics about the workflow run. */
 	export interface WorkflowRunStatistics {
-		TotalActions?: number;
-		TimeoutActions?: number;
-		FailedActions?: number;
-		StoppedActions?: number;
-		SucceededActions?: number;
-		RunningActions?: number;
+		TotalActions?: number | null;
+		TimeoutActions?: number | null;
+		FailedActions?: number | null;
+		StoppedActions?: number | null;
+		SucceededActions?: number | null;
+		RunningActions?: number | null;
 	}
 
 
 	/** A workflow graph represents the complete workflow containing all the AWS Glue components present in the workflow and all the directed connections between them. */
 	export interface WorkflowGraph {
-		Nodes?: Array<Node>;
-		Edges?: Array<Edge>;
+		Nodes?: Array<Node> | null;
+		Edges?: Array<Edge> | null;
 	}
 
 
 	/** A node represents an AWS Glue component like Trigger, Job etc. which is part of a workflow. */
 	export interface Node {
-		Type?: NodeType;
-		Name?: string;
-		UniqueId?: string;
+		Type?: NodeType | null;
+		Name?: string | null;
+		UniqueId?: string | null;
 
 		/** The details of a Trigger node present in the workflow. */
-		TriggerDetails?: TriggerNodeDetails;
+		TriggerDetails?: TriggerNodeDetails | null;
 
 		/** The details of a Job node present in the workflow. */
-		JobDetails?: JobNodeDetails;
+		JobDetails?: JobNodeDetails | null;
 
 		/** The details of a Crawler node present in the workflow. */
-		CrawlerDetails?: CrawlerNodeDetails;
+		CrawlerDetails?: CrawlerNodeDetails | null;
 	}
 
 	export enum NodeType { CRAWLER = 0, JOB = 1, TRIGGER = 2 }
@@ -601,49 +601,49 @@ export namespace MyNS {
 	export interface TriggerNodeDetails {
 
 		/** Information about a specific trigger. */
-		Trigger?: Trigger;
+		Trigger?: Trigger | null;
 	}
 
 
 	/** The details of a Job node present in the workflow. */
 	export interface JobNodeDetails {
-		JobRuns?: Array<JobRun>;
+		JobRuns?: Array<JobRun> | null;
 	}
 
 
 	/** Contains information about a job run. */
 	export interface JobRun {
-		Id?: string;
-		Attempt?: number;
-		PreviousRunId?: string;
-		TriggerName?: string;
-		JobName?: string;
-		StartedOn?: Date;
-		LastModifiedOn?: Date;
-		CompletedOn?: Date;
-		JobRunState?: ConditionState;
-		Arguments?: GenericMap;
-		ErrorMessage?: string;
-		PredecessorRuns?: Array<Predecessor>;
-		AllocatedCapacity?: number;
-		ExecutionTime?: number;
-		Timeout?: number;
-		MaxCapacity?: number;
-		WorkerType?: JobRunWorkerType;
-		NumberOfWorkers?: number;
-		SecurityConfiguration?: string;
-		LogGroupName?: string;
+		Id?: string | null;
+		Attempt?: number | null;
+		PreviousRunId?: string | null;
+		TriggerName?: string | null;
+		JobName?: string | null;
+		StartedOn?: Date | null;
+		LastModifiedOn?: Date | null;
+		CompletedOn?: Date | null;
+		JobRunState?: ConditionState | null;
+		Arguments?: GenericMap | null;
+		ErrorMessage?: string | null;
+		PredecessorRuns?: Array<Predecessor> | null;
+		AllocatedCapacity?: number | null;
+		ExecutionTime?: number | null;
+		Timeout?: number | null;
+		MaxCapacity?: number | null;
+		WorkerType?: JobRunWorkerType | null;
+		NumberOfWorkers?: number | null;
+		SecurityConfiguration?: string | null;
+		LogGroupName?: string | null;
 
 		/** Specifies configuration properties of a notification. */
-		NotificationProperty?: NotificationProperty;
-		GlueVersion?: string;
+		NotificationProperty?: NotificationProperty | null;
+		GlueVersion?: string | null;
 	}
 
 
 	/** A job run that was used in the predicate of a conditional trigger that triggered this job run. */
 	export interface Predecessor {
-		JobName?: string;
-		RunId?: string;
+		JobName?: string | null;
+		RunId?: string | null;
 	}
 
 	export enum JobRunWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
@@ -651,52 +651,52 @@ export namespace MyNS {
 
 	/** The details of a Crawler node present in the workflow. */
 	export interface CrawlerNodeDetails {
-		Crawls?: Array<Crawl>;
+		Crawls?: Array<Crawl> | null;
 	}
 
 
 	/** The details of a crawl in the workflow. */
 	export interface Crawl {
-		State?: ConditionCrawlState;
-		StartedOn?: Date;
-		CompletedOn?: Date;
-		ErrorMessage?: string;
-		LogGroup?: string;
-		LogStream?: string;
+		State?: ConditionCrawlState | null;
+		StartedOn?: Date | null;
+		CompletedOn?: Date | null;
+		ErrorMessage?: string | null;
+		LogGroup?: string | null;
+		LogStream?: string | null;
 	}
 
 
 	/** An edge represents a directed connection between two AWS Glue components which are part of the workflow the edge belongs to. */
 	export interface Edge {
-		SourceId?: string;
-		DestinationId?: string;
+		SourceId?: string | null;
+		DestinationId?: string | null;
 	}
 
 	export interface BatchGetWorkflowsRequest {
 		Names: Array<string>;
-		IncludeGraph?: boolean;
+		IncludeGraph?: boolean | null;
 	}
 
 	export interface BatchStopJobRunResponse {
-		SuccessfulSubmissions?: Array<BatchStopJobRunSuccessfulSubmission>;
-		Errors?: Array<BatchStopJobRunError>;
+		SuccessfulSubmissions?: Array<BatchStopJobRunSuccessfulSubmission> | null;
+		Errors?: Array<BatchStopJobRunError> | null;
 	}
 
 
 	/** Records a successful request to stop a specified <code>JobRun</code>. */
 	export interface BatchStopJobRunSuccessfulSubmission {
-		JobName?: string;
-		JobRunId?: string;
+		JobName?: string | null;
+		JobRunId?: string | null;
 	}
 
 
 	/** Records an error that occurred when attempting to stop a specified job run. */
 	export interface BatchStopJobRunError {
-		JobName?: string;
-		JobRunId?: string;
+		JobName?: string | null;
+		JobRunId?: string | null;
 
 		/** Contains details about an error. */
-		ErrorDetail?: ErrorDetail;
+		ErrorDetail?: ErrorDetail | null;
 	}
 
 	export interface BatchStopJobRunRequest {
@@ -705,9 +705,9 @@ export namespace MyNS {
 	}
 
 	export interface CancelMLTaskRunResponse {
-		TransformId?: string;
-		TaskRunId?: string;
-		Status?: ConditionState;
+		TransformId?: string | null;
+		TaskRunId?: string | null;
+		Status?: ConditionState | null;
 	}
 
 	export interface CancelMLTaskRunRequest {
@@ -721,16 +721,16 @@ export namespace MyNS {
 	export interface CreateClassifierRequest {
 
 		/** Specifies a <code>grok</code> classifier for <code>CreateClassifier</code> to create. */
-		GrokClassifier?: CreateGrokClassifierRequest;
+		GrokClassifier?: CreateGrokClassifierRequest | null;
 
 		/** Specifies an XML classifier for <code>CreateClassifier</code> to create. */
-		XMLClassifier?: CreateXMLClassifierRequest;
+		XMLClassifier?: CreateXMLClassifierRequest | null;
 
 		/** Specifies a JSON classifier for <code>CreateClassifier</code> to create. */
-		JsonClassifier?: CreateJsonClassifierRequest;
+		JsonClassifier?: CreateJsonClassifierRequest | null;
 
 		/** Specifies a custom CSV classifier for <code>CreateClassifier</code> to create. */
-		CsvClassifier?: CreateCsvClassifierRequest;
+		CsvClassifier?: CreateCsvClassifierRequest | null;
 	}
 
 
@@ -739,7 +739,7 @@ export namespace MyNS {
 		Classification: string;
 		Name: string;
 		GrokPattern: string;
-		CustomPatterns?: string;
+		CustomPatterns?: string | null;
 	}
 
 
@@ -747,7 +747,7 @@ export namespace MyNS {
 	export interface CreateXMLClassifierRequest {
 		Classification: string;
 		Name: string;
-		RowTag?: string;
+		RowTag?: string | null;
 	}
 
 
@@ -761,12 +761,12 @@ export namespace MyNS {
 	/** Specifies a custom CSV classifier for <code>CreateClassifier</code> to create. */
 	export interface CreateCsvClassifierRequest {
 		Name: string;
-		Delimiter?: string;
-		QuoteSymbol?: string;
-		ContainsHeader?: CreateCsvClassifierRequestContainsHeader;
-		Header?: Array<string>;
-		DisableValueTrimming?: boolean;
-		AllowSingleColumn?: boolean;
+		Delimiter?: string | null;
+		QuoteSymbol?: string | null;
+		ContainsHeader?: CreateCsvClassifierRequestContainsHeader | null;
+		Header?: Array<string> | null;
+		DisableValueTrimming?: boolean | null;
+		AllowSingleColumn?: boolean | null;
 	}
 
 	export enum CreateCsvClassifierRequestContainsHeader { UNKNOWN = 0, PRESENT = 1, ABSENT = 2 }
@@ -775,7 +775,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateConnectionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 
 		/**
 		 * A structure that is used to specify a connection to create or update.
@@ -788,13 +788,13 @@ export namespace MyNS {
 	/** A structure that is used to specify a connection to create or update. */
 	export interface ConnectionInput {
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 		ConnectionType: ConnectionInputConnectionType;
-		MatchCriteria?: Array<string>;
+		MatchCriteria?: Array<string> | null;
 		ConnectionProperties: ConnectionProperties;
 
 		/** Specifies the physical requirements for a connection. */
-		PhysicalConnectionRequirements?: PhysicalConnectionRequirements;
+		PhysicalConnectionRequirements?: PhysicalConnectionRequirements | null;
 	}
 
 	export enum ConnectionInputConnectionType { JDBC = 0, SFTP = 1, MONGODB = 2, KAFKA = 3 }
@@ -805,9 +805,9 @@ export namespace MyNS {
 
 	/** Specifies the physical requirements for a connection. */
 	export interface PhysicalConnectionRequirements {
-		SubnetId?: string;
-		SecurityGroupIdList?: Array<string>;
-		AvailabilityZone?: string;
+		SubnetId?: string | null;
+		SecurityGroupIdList?: Array<string> | null;
+		AvailabilityZone?: string | null;
 	}
 
 	export interface CreateCrawlerResponse {
@@ -816,23 +816,23 @@ export namespace MyNS {
 	export interface CreateCrawlerRequest {
 		Name: string;
 		Role: string;
-		DatabaseName?: string;
-		Description?: string;
+		DatabaseName?: string | null;
+		Description?: string | null;
 
 		/**
 		 * Specifies data stores to crawl.
 		 * Required
 		 */
 		Targets: CrawlerTargets;
-		Schedule?: string;
-		Classifiers?: Array<string>;
-		TablePrefix?: string;
+		Schedule?: string | null;
+		Classifiers?: Array<string> | null;
+		TablePrefix?: string | null;
 
 		/** A policy that specifies update and deletion behaviors for the crawler. */
-		SchemaChangePolicy?: SchemaChangePolicy;
-		Configuration?: string;
-		CrawlerSecurityConfiguration?: string;
-		Tags?: TagsMap;
+		SchemaChangePolicy?: SchemaChangePolicy | null;
+		Configuration?: string | null;
+		CrawlerSecurityConfiguration?: string | null;
+		Tags?: TagsMap | null;
 	}
 
 	export interface TagsMap {
@@ -842,7 +842,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateDatabaseRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 
 		/**
 		 * The structure used to create or update a database.
@@ -855,10 +855,10 @@ export namespace MyNS {
 	/** The structure used to create or update a database. */
 	export interface DatabaseInput {
 		Name: string;
-		Description?: string;
-		LocationUri?: string;
-		Parameters?: ParametersMap;
-		CreateTableDefaultPermissions?: Array<PrincipalPermissions>;
+		Description?: string | null;
+		LocationUri?: string | null;
+		Parameters?: ParametersMap | null;
+		CreateTableDefaultPermissions?: Array<PrincipalPermissions> | null;
 	}
 
 
@@ -866,38 +866,38 @@ export namespace MyNS {
 	export interface PrincipalPermissions {
 
 		/** The AWS Lake Formation principal. */
-		Principal?: DataLakePrincipal;
-		Permissions?: Array<Permission>;
+		Principal?: DataLakePrincipal | null;
+		Permissions?: Array<Permission> | null;
 	}
 
 
 	/** The AWS Lake Formation principal. */
 	export interface DataLakePrincipal {
-		DataLakePrincipalIdentifier?: string;
+		DataLakePrincipalIdentifier?: string | null;
 	}
 
 	export enum Permission { ALL = 0, SELECT = 1, ALTER = 2, DROP = 3, DELETE = 4, INSERT = 5, CREATE_DATABASE = 6, CREATE_TABLE = 7, DATA_LOCATION_ACCESS = 8 }
 
 	export interface CreateDevEndpointResponse {
-		EndpointName?: string;
-		Status?: string;
-		SecurityGroupIds?: Array<string>;
-		SubnetId?: string;
-		RoleArn?: string;
-		YarnEndpointAddress?: string;
-		ZeppelinRemoteSparkInterpreterPort?: number;
-		NumberOfNodes?: number;
-		WorkerType?: CreateDevEndpointResponseWorkerType;
-		GlueVersion?: string;
-		NumberOfWorkers?: number;
-		AvailabilityZone?: string;
-		VpcId?: string;
-		ExtraPythonLibsS3Path?: string;
-		ExtraJarsS3Path?: string;
-		FailureReason?: string;
-		SecurityConfiguration?: string;
-		CreatedTimestamp?: Date;
-		Arguments?: MapValue;
+		EndpointName?: string | null;
+		Status?: string | null;
+		SecurityGroupIds?: Array<string> | null;
+		SubnetId?: string | null;
+		RoleArn?: string | null;
+		YarnEndpointAddress?: string | null;
+		ZeppelinRemoteSparkInterpreterPort?: number | null;
+		NumberOfNodes?: number | null;
+		WorkerType?: CreateDevEndpointResponseWorkerType | null;
+		GlueVersion?: string | null;
+		NumberOfWorkers?: number | null;
+		AvailabilityZone?: string | null;
+		VpcId?: string | null;
+		ExtraPythonLibsS3Path?: string | null;
+		ExtraJarsS3Path?: string | null;
+		FailureReason?: string | null;
+		SecurityConfiguration?: string | null;
+		CreatedTimestamp?: Date | null;
+		Arguments?: MapValue | null;
 	}
 
 	export enum CreateDevEndpointResponseWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
@@ -905,19 +905,19 @@ export namespace MyNS {
 	export interface CreateDevEndpointRequest {
 		EndpointName: string;
 		RoleArn: string;
-		SecurityGroupIds?: Array<string>;
-		SubnetId?: string;
-		PublicKey?: string;
-		PublicKeys?: Array<string>;
-		NumberOfNodes?: number;
-		WorkerType?: CreateDevEndpointRequestWorkerType;
-		GlueVersion?: string;
-		NumberOfWorkers?: number;
-		ExtraPythonLibsS3Path?: string;
-		ExtraJarsS3Path?: string;
-		SecurityConfiguration?: string;
-		Tags?: TagsMap;
-		Arguments?: MapValue;
+		SecurityGroupIds?: Array<string> | null;
+		SubnetId?: string | null;
+		PublicKey?: string | null;
+		PublicKeys?: Array<string> | null;
+		NumberOfNodes?: number | null;
+		WorkerType?: CreateDevEndpointRequestWorkerType | null;
+		GlueVersion?: string | null;
+		NumberOfWorkers?: number | null;
+		ExtraPythonLibsS3Path?: string | null;
+		ExtraJarsS3Path?: string | null;
+		SecurityConfiguration?: string | null;
+		Tags?: TagsMap | null;
+		Arguments?: MapValue | null;
 	}
 
 	export enum CreateDevEndpointRequestWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
@@ -929,40 +929,40 @@ export namespace MyNS {
 	}
 
 	export interface CreateJobResponse {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface CreateJobRequest {
 		Name: string;
-		Description?: string;
-		LogUri?: string;
+		Description?: string | null;
+		LogUri?: string | null;
 		Role: string;
 
 		/** An execution property of a job. */
-		ExecutionProperty?: ExecutionProperty;
+		ExecutionProperty?: ExecutionProperty | null;
 
 		/**
 		 * Specifies code executed when a job is run.
 		 * Required
 		 */
 		Command: JobCommand;
-		DefaultArguments?: GenericMap;
-		NonOverridableArguments?: GenericMap;
+		DefaultArguments?: GenericMap | null;
+		NonOverridableArguments?: GenericMap | null;
 
 		/** Specifies the connections used by a job. */
-		Connections?: ConnectionsList;
-		MaxRetries?: number;
-		AllocatedCapacity?: number;
-		Timeout?: number;
-		MaxCapacity?: number;
-		SecurityConfiguration?: string;
-		Tags?: TagsMap;
+		Connections?: ConnectionsList | null;
+		MaxRetries?: number | null;
+		AllocatedCapacity?: number | null;
+		Timeout?: number | null;
+		MaxCapacity?: number | null;
+		SecurityConfiguration?: string | null;
+		Tags?: TagsMap | null;
 
 		/** Specifies configuration properties of a notification. */
-		NotificationProperty?: NotificationProperty;
-		GlueVersion?: string;
-		NumberOfWorkers?: number;
-		WorkerType?: CreateJobRequestWorkerType;
+		NotificationProperty?: NotificationProperty | null;
+		GlueVersion?: string | null;
+		NumberOfWorkers?: number | null;
+		WorkerType?: CreateJobRequestWorkerType | null;
 	}
 
 	export enum CreateJobRequestWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
@@ -971,12 +971,12 @@ export namespace MyNS {
 	}
 
 	export interface CreateMLTransformResponse {
-		TransformId?: string;
+		TransformId?: string | null;
 	}
 
 	export interface CreateMLTransformRequest {
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 		InputRecordTables: Array<GlueTable>;
 
 		/**
@@ -985,13 +985,13 @@ export namespace MyNS {
 		 */
 		Parameters: TransformParameters;
 		Role: string;
-		GlueVersion?: string;
-		MaxCapacity?: number;
-		WorkerType?: CreateMLTransformRequestWorkerType;
-		NumberOfWorkers?: number;
-		Timeout?: number;
-		MaxRetries?: number;
-		Tags?: TagsMap;
+		GlueVersion?: string | null;
+		MaxCapacity?: number | null;
+		WorkerType?: CreateMLTransformRequestWorkerType | null;
+		NumberOfWorkers?: number | null;
+		Timeout?: number | null;
+		MaxRetries?: number | null;
+		Tags?: TagsMap | null;
 	}
 
 
@@ -999,8 +999,8 @@ export namespace MyNS {
 	export interface GlueTable {
 		DatabaseName: string;
 		TableName: string;
-		CatalogId?: string;
-		ConnectionName?: string;
+		CatalogId?: string | null;
+		ConnectionName?: string | null;
 	}
 
 
@@ -1009,7 +1009,7 @@ export namespace MyNS {
 		TransformType: TransformParametersTransformType;
 
 		/** The parameters to configure the find matches transform. */
-		FindMatchesParameters?: FindMatchesParameters;
+		FindMatchesParameters?: FindMatchesParameters | null;
 	}
 
 	export enum TransformParametersTransformType { FIND_MATCHES = 0 }
@@ -1017,10 +1017,10 @@ export namespace MyNS {
 
 	/** The parameters to configure the find matches transform. */
 	export interface FindMatchesParameters {
-		PrimaryKeyColumnName?: string;
-		PrecisionRecallTradeoff?: number;
-		AccuracyCostTradeoff?: number;
-		EnforceProvidedLabels?: boolean;
+		PrimaryKeyColumnName?: string | null;
+		PrecisionRecallTradeoff?: number | null;
+		AccuracyCostTradeoff?: number | null;
+		EnforceProvidedLabels?: boolean | null;
 	}
 
 	export enum CreateMLTransformRequestWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
@@ -1029,7 +1029,7 @@ export namespace MyNS {
 	}
 
 	export interface CreatePartitionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 		TableName: string;
 
@@ -1041,14 +1041,14 @@ export namespace MyNS {
 	}
 
 	export interface CreateScriptResponse {
-		PythonScript?: string;
-		ScalaCode?: string;
+		PythonScript?: string | null;
+		ScalaCode?: string | null;
 	}
 
 	export interface CreateScriptRequest {
-		DagNodes?: Array<CodeGenNode>;
-		DagEdges?: Array<CodeGenEdge>;
-		Language?: CreateScriptRequestLanguage;
+		DagNodes?: Array<CodeGenNode> | null;
+		DagEdges?: Array<CodeGenEdge> | null;
+		Language?: CreateScriptRequestLanguage | null;
 	}
 
 
@@ -1057,7 +1057,7 @@ export namespace MyNS {
 		Id: string;
 		NodeType: string;
 		Args: Array<CodeGenNodeArg>;
-		LineNumber?: number;
+		LineNumber?: number | null;
 	}
 
 
@@ -1065,7 +1065,7 @@ export namespace MyNS {
 	export interface CodeGenNodeArg {
 		Name: string;
 		Value: string;
-		Param?: boolean;
+		Param?: boolean | null;
 	}
 
 
@@ -1073,14 +1073,14 @@ export namespace MyNS {
 	export interface CodeGenEdge {
 		Source: string;
 		Target: string;
-		TargetParameter?: string;
+		TargetParameter?: string | null;
 	}
 
 	export enum CreateScriptRequestLanguage { PYTHON = 0, SCALA = 1 }
 
 	export interface CreateSecurityConfigurationResponse {
-		Name?: string;
-		CreatedTimestamp?: Date;
+		Name?: string | null;
+		CreatedTimestamp?: Date | null;
 	}
 
 	export interface CreateSecurityConfigurationRequest {
@@ -1096,20 +1096,20 @@ export namespace MyNS {
 
 	/** Specifies an encryption configuration. */
 	export interface EncryptionConfiguration {
-		S3Encryption?: Array<S3Encryption>;
+		S3Encryption?: Array<S3Encryption> | null;
 
 		/** Specifies how Amazon CloudWatch data should be encrypted. */
-		CloudWatchEncryption?: CloudWatchEncryption;
+		CloudWatchEncryption?: CloudWatchEncryption | null;
 
 		/** Specifies how job bookmark data should be encrypted. */
-		JobBookmarksEncryption?: JobBookmarksEncryption;
+		JobBookmarksEncryption?: JobBookmarksEncryption | null;
 	}
 
 
 	/** Specifies how Amazon Simple Storage Service (Amazon S3) data should be encrypted. */
 	export interface S3Encryption {
-		S3EncryptionMode?: S3EncryptionS3EncryptionMode;
-		KmsKeyArn?: string;
+		S3EncryptionMode?: S3EncryptionS3EncryptionMode | null;
+		KmsKeyArn?: string | null;
 	}
 
 	export enum S3EncryptionS3EncryptionMode { DISABLED = 0, SSE_KMS = 1, SSE_S3 = 2 }
@@ -1117,8 +1117,8 @@ export namespace MyNS {
 
 	/** Specifies how Amazon CloudWatch data should be encrypted. */
 	export interface CloudWatchEncryption {
-		CloudWatchEncryptionMode?: CloudWatchEncryptionCloudWatchEncryptionMode;
-		KmsKeyArn?: string;
+		CloudWatchEncryptionMode?: CloudWatchEncryptionCloudWatchEncryptionMode | null;
+		KmsKeyArn?: string | null;
 	}
 
 	export enum CloudWatchEncryptionCloudWatchEncryptionMode { DISABLED = 0, SSE_KMS = 1 }
@@ -1126,8 +1126,8 @@ export namespace MyNS {
 
 	/** Specifies how job bookmark data should be encrypted. */
 	export interface JobBookmarksEncryption {
-		JobBookmarksEncryptionMode?: JobBookmarksEncryptionJobBookmarksEncryptionMode;
-		KmsKeyArn?: string;
+		JobBookmarksEncryptionMode?: JobBookmarksEncryptionJobBookmarksEncryptionMode | null;
+		KmsKeyArn?: string | null;
 	}
 
 	export enum JobBookmarksEncryptionJobBookmarksEncryptionMode { DISABLED = 0, CSE_KMS = 1 }
@@ -1136,7 +1136,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateTableRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 
 		/**
@@ -1150,44 +1150,44 @@ export namespace MyNS {
 	/** A structure used to define a table. */
 	export interface TableInput {
 		Name: string;
-		Description?: string;
-		Owner?: string;
-		LastAccessTime?: Date;
-		LastAnalyzedTime?: Date;
-		Retention?: number;
+		Description?: string | null;
+		Owner?: string | null;
+		LastAccessTime?: Date | null;
+		LastAnalyzedTime?: Date | null;
+		Retention?: number | null;
 
 		/** Describes the physical storage of table data. */
-		StorageDescriptor?: StorageDescriptor;
-		PartitionKeys?: Array<Column>;
-		ViewOriginalText?: string;
-		ViewExpandedText?: string;
-		TableType?: string;
-		Parameters?: ParametersMap;
+		StorageDescriptor?: StorageDescriptor | null;
+		PartitionKeys?: Array<Column> | null;
+		ViewOriginalText?: string | null;
+		ViewExpandedText?: string | null;
+		TableType?: string | null;
+		Parameters?: ParametersMap | null;
 	}
 
 	export interface CreateTriggerResponse {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface CreateTriggerRequest {
 		Name: string;
-		WorkflowName?: string;
+		WorkflowName?: string | null;
 		Type: TriggerType;
-		Schedule?: string;
+		Schedule?: string | null;
 
 		/** Defines the predicate of the trigger, which determines when it fires. */
-		Predicate?: Predicate;
+		Predicate?: Predicate | null;
 		Actions: Array<Action>;
-		Description?: string;
-		StartOnCreation?: boolean;
-		Tags?: TagsMap;
+		Description?: string | null;
+		StartOnCreation?: boolean | null;
+		Tags?: TagsMap | null;
 	}
 
 	export interface CreateUserDefinedFunctionResponse {
 	}
 
 	export interface CreateUserDefinedFunctionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 
 		/**
@@ -1200,11 +1200,11 @@ export namespace MyNS {
 
 	/** A structure used to create or update a user-defined function. */
 	export interface UserDefinedFunctionInput {
-		FunctionName?: string;
-		ClassName?: string;
-		OwnerName?: string;
-		OwnerType?: UserDefinedFunctionInputOwnerType;
-		ResourceUris?: Array<ResourceUri>;
+		FunctionName?: string | null;
+		ClassName?: string | null;
+		OwnerName?: string | null;
+		OwnerType?: UserDefinedFunctionInputOwnerType | null;
+		ResourceUris?: Array<ResourceUri> | null;
 	}
 
 	export enum UserDefinedFunctionInputOwnerType { USER = 0, ROLE = 1, GROUP = 2 }
@@ -1212,21 +1212,21 @@ export namespace MyNS {
 
 	/** The URIs for function resources. */
 	export interface ResourceUri {
-		ResourceType?: ResourceUriResourceType;
-		Uri?: string;
+		ResourceType?: ResourceUriResourceType | null;
+		Uri?: string | null;
 	}
 
 	export enum ResourceUriResourceType { JAR = 0, FILE = 1, ARCHIVE = 2 }
 
 	export interface CreateWorkflowResponse {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface CreateWorkflowRequest {
 		Name: string;
-		Description?: string;
-		DefaultRunProperties?: WorkflowRunProperties;
-		Tags?: TagsMap;
+		Description?: string | null;
+		DefaultRunProperties?: WorkflowRunProperties | null;
+		Tags?: TagsMap | null;
 	}
 
 	export interface DeleteClassifierResponse {
@@ -1240,7 +1240,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteConnectionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		ConnectionName: string;
 	}
 
@@ -1261,7 +1261,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteDatabaseRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		Name: string;
 	}
 
@@ -1273,7 +1273,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteJobResponse {
-		JobName?: string;
+		JobName?: string | null;
 	}
 
 	export interface DeleteJobRequest {
@@ -1281,7 +1281,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteMLTransformResponse {
-		TransformId?: string;
+		TransformId?: string | null;
 	}
 
 	export interface DeleteMLTransformRequest {
@@ -1292,7 +1292,7 @@ export namespace MyNS {
 	}
 
 	export interface DeletePartitionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 		TableName: string;
 		PartitionValues: Array<string>;
@@ -1302,7 +1302,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteResourcePolicyRequest {
-		PolicyHashCondition?: string;
+		PolicyHashCondition?: string | null;
 	}
 
 	export interface ConditionCheckFailureException {
@@ -1319,7 +1319,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteTableRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 		Name: string;
 	}
@@ -1328,14 +1328,14 @@ export namespace MyNS {
 	}
 
 	export interface DeleteTableVersionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 		TableName: string;
 		VersionId: string;
 	}
 
 	export interface DeleteTriggerResponse {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface DeleteTriggerRequest {
@@ -1346,13 +1346,13 @@ export namespace MyNS {
 	}
 
 	export interface DeleteUserDefinedFunctionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 		FunctionName: string;
 	}
 
 	export interface DeleteWorkflowResponse {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface DeleteWorkflowRequest {
@@ -1362,25 +1362,25 @@ export namespace MyNS {
 	export interface GetCatalogImportStatusResponse {
 
 		/** A structure containing migration status information. */
-		ImportStatus?: CatalogImportStatus;
+		ImportStatus?: CatalogImportStatus | null;
 	}
 
 
 	/** A structure containing migration status information. */
 	export interface CatalogImportStatus {
-		ImportCompleted?: boolean;
-		ImportTime?: Date;
-		ImportedBy?: string;
+		ImportCompleted?: boolean | null;
+		ImportTime?: Date | null;
+		ImportedBy?: string | null;
 	}
 
 	export interface GetCatalogImportStatusRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 	}
 
 	export interface GetClassifierResponse {
 
 		/** <p>Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle. If it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format.</p> <p>You can use the standard classifiers that AWS Glue provides, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier, as specified in one of the fields in the <code>Classifier</code> object.</p> */
-		Classifier?: Classifier;
+		Classifier?: Classifier | null;
 	}
 
 
@@ -1388,16 +1388,16 @@ export namespace MyNS {
 	export interface Classifier {
 
 		/** A classifier that uses <code>grok</code> patterns. */
-		GrokClassifier?: GrokClassifier;
+		GrokClassifier?: GrokClassifier | null;
 
 		/** A classifier for <code>XML</code> content. */
-		XMLClassifier?: XMLClassifier;
+		XMLClassifier?: XMLClassifier | null;
 
 		/** A classifier for <code>JSON</code> content. */
-		JsonClassifier?: JsonClassifier;
+		JsonClassifier?: JsonClassifier | null;
 
 		/** A classifier for custom <code>CSV</code> content. */
-		CsvClassifier?: CsvClassifier;
+		CsvClassifier?: CsvClassifier | null;
 	}
 
 
@@ -1405,11 +1405,11 @@ export namespace MyNS {
 	export interface GrokClassifier {
 		Name: string;
 		Classification: string;
-		CreationTime?: Date;
-		LastUpdated?: Date;
-		Version?: number;
+		CreationTime?: Date | null;
+		LastUpdated?: Date | null;
+		Version?: number | null;
 		GrokPattern: string;
-		CustomPatterns?: string;
+		CustomPatterns?: string | null;
 	}
 
 
@@ -1417,19 +1417,19 @@ export namespace MyNS {
 	export interface XMLClassifier {
 		Name: string;
 		Classification: string;
-		CreationTime?: Date;
-		LastUpdated?: Date;
-		Version?: number;
-		RowTag?: string;
+		CreationTime?: Date | null;
+		LastUpdated?: Date | null;
+		Version?: number | null;
+		RowTag?: string | null;
 	}
 
 
 	/** A classifier for <code>JSON</code> content. */
 	export interface JsonClassifier {
 		Name: string;
-		CreationTime?: Date;
-		LastUpdated?: Date;
-		Version?: number;
+		CreationTime?: Date | null;
+		LastUpdated?: Date | null;
+		Version?: number | null;
 		JsonPath: string;
 	}
 
@@ -1437,15 +1437,15 @@ export namespace MyNS {
 	/** A classifier for custom <code>CSV</code> content. */
 	export interface CsvClassifier {
 		Name: string;
-		CreationTime?: Date;
-		LastUpdated?: Date;
-		Version?: number;
-		Delimiter?: string;
-		QuoteSymbol?: string;
-		ContainsHeader?: CreateCsvClassifierRequestContainsHeader;
-		Header?: Array<string>;
-		DisableValueTrimming?: boolean;
-		AllowSingleColumn?: boolean;
+		CreationTime?: Date | null;
+		LastUpdated?: Date | null;
+		Version?: number | null;
+		Delimiter?: string | null;
+		QuoteSymbol?: string | null;
+		ContainsHeader?: CreateCsvClassifierRequestContainsHeader | null;
+		Header?: Array<string> | null;
+		DisableValueTrimming?: boolean | null;
+		AllowSingleColumn?: boolean | null;
 	}
 
 	export interface GetClassifierRequest {
@@ -1453,69 +1453,69 @@ export namespace MyNS {
 	}
 
 	export interface GetClassifiersResponse {
-		Classifiers?: Array<Classifier>;
-		NextToken?: string;
+		Classifiers?: Array<Classifier> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetClassifiersRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetConnectionResponse {
 
 		/** Defines a connection to a data source. */
-		Connection?: Connection;
+		Connection?: Connection | null;
 	}
 
 
 	/** Defines a connection to a data source. */
 	export interface Connection {
-		Name?: string;
-		Description?: string;
-		ConnectionType?: ConnectionInputConnectionType;
-		MatchCriteria?: Array<string>;
-		ConnectionProperties?: ConnectionProperties;
+		Name?: string | null;
+		Description?: string | null;
+		ConnectionType?: ConnectionInputConnectionType | null;
+		MatchCriteria?: Array<string> | null;
+		ConnectionProperties?: ConnectionProperties | null;
 
 		/** Specifies the physical requirements for a connection. */
-		PhysicalConnectionRequirements?: PhysicalConnectionRequirements;
-		CreationTime?: Date;
-		LastUpdatedTime?: Date;
-		LastUpdatedBy?: string;
+		PhysicalConnectionRequirements?: PhysicalConnectionRequirements | null;
+		CreationTime?: Date | null;
+		LastUpdatedTime?: Date | null;
+		LastUpdatedBy?: string | null;
 	}
 
 	export interface GetConnectionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		Name: string;
-		HidePassword?: boolean;
+		HidePassword?: boolean | null;
 	}
 
 	export interface GetConnectionsResponse {
-		ConnectionList?: Array<Connection>;
-		NextToken?: string;
+		ConnectionList?: Array<Connection> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetConnectionsRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 
 		/** Filters the connection definitions that are returned by the <code>GetConnections</code> API operation. */
-		Filter?: GetConnectionsFilter;
-		HidePassword?: boolean;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: GetConnectionsFilter | null;
+		HidePassword?: boolean | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** Filters the connection definitions that are returned by the <code>GetConnections</code> API operation. */
 	export interface GetConnectionsFilter {
-		MatchCriteria?: Array<string>;
-		ConnectionType?: ConnectionInputConnectionType;
+		MatchCriteria?: Array<string> | null;
+		ConnectionType?: ConnectionInputConnectionType | null;
 	}
 
 	export interface GetCrawlerResponse {
 
 		/** Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the AWS Glue Data Catalog. */
-		Crawler?: Crawler;
+		Crawler?: Crawler | null;
 	}
 
 	export interface GetCrawlerRequest {
@@ -1523,43 +1523,43 @@ export namespace MyNS {
 	}
 
 	export interface GetCrawlerMetricsResponse {
-		CrawlerMetricsList?: Array<CrawlerMetrics>;
-		NextToken?: string;
+		CrawlerMetricsList?: Array<CrawlerMetrics> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Metrics for a specified crawler. */
 	export interface CrawlerMetrics {
-		CrawlerName?: string;
-		TimeLeftSeconds?: number;
-		StillEstimating?: boolean;
-		LastRuntimeSeconds?: number;
-		MedianRuntimeSeconds?: number;
-		TablesCreated?: number;
-		TablesUpdated?: number;
-		TablesDeleted?: number;
+		CrawlerName?: string | null;
+		TimeLeftSeconds?: number | null;
+		StillEstimating?: boolean | null;
+		LastRuntimeSeconds?: number | null;
+		MedianRuntimeSeconds?: number | null;
+		TablesCreated?: number | null;
+		TablesUpdated?: number | null;
+		TablesDeleted?: number | null;
 	}
 
 	export interface GetCrawlerMetricsRequest {
-		CrawlerNameList?: Array<string>;
-		MaxResults?: number;
-		NextToken?: string;
+		CrawlerNameList?: Array<string> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetCrawlersResponse {
-		Crawlers?: Array<Crawler>;
-		NextToken?: string;
+		Crawlers?: Array<Crawler> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetCrawlersRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetDataCatalogEncryptionSettingsResponse {
 
 		/** Contains configuration information for maintaining Data Catalog security. */
-		DataCatalogEncryptionSettings?: DataCatalogEncryptionSettings;
+		DataCatalogEncryptionSettings?: DataCatalogEncryptionSettings | null;
 	}
 
 
@@ -1567,17 +1567,17 @@ export namespace MyNS {
 	export interface DataCatalogEncryptionSettings {
 
 		/** Specifies the encryption-at-rest configuration for the Data Catalog. */
-		EncryptionAtRest?: EncryptionAtRest;
+		EncryptionAtRest?: EncryptionAtRest | null;
 
 		/** <p>The data structure used by the Data Catalog to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.</p> <p>When a <code>CreationConnection</code> request arrives containing a password, the Data Catalog first encrypts the password using your AWS KMS key. It then encrypts the whole connection object again if catalog encryption is also enabled.</p> <p>This encryption requires that you set AWS KMS key permissions to enable or restrict access on the password key according to your security requirements. For example, you might want only administrators to have decrypt permission on the password key.</p> */
-		ConnectionPasswordEncryption?: ConnectionPasswordEncryption;
+		ConnectionPasswordEncryption?: ConnectionPasswordEncryption | null;
 	}
 
 
 	/** Specifies the encryption-at-rest configuration for the Data Catalog. */
 	export interface EncryptionAtRest {
 		CatalogEncryptionMode: EncryptionAtRestCatalogEncryptionMode;
-		SseAwsKmsKeyId?: string;
+		SseAwsKmsKeyId?: string | null;
 	}
 
 	export enum EncryptionAtRestCatalogEncryptionMode { DISABLED = 0, SSE_KMS = 1 }
@@ -1586,59 +1586,59 @@ export namespace MyNS {
 	/** <p>The data structure used by the Data Catalog to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.</p> <p>When a <code>CreationConnection</code> request arrives containing a password, the Data Catalog first encrypts the password using your AWS KMS key. It then encrypts the whole connection object again if catalog encryption is also enabled.</p> <p>This encryption requires that you set AWS KMS key permissions to enable or restrict access on the password key according to your security requirements. For example, you might want only administrators to have decrypt permission on the password key.</p> */
 	export interface ConnectionPasswordEncryption {
 		ReturnConnectionPasswordEncrypted: boolean;
-		AwsKmsKeyId?: string;
+		AwsKmsKeyId?: string | null;
 	}
 
 	export interface GetDataCatalogEncryptionSettingsRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 	}
 
 	export interface GetDatabaseResponse {
 
 		/** The <code>Database</code> object represents a logical grouping of tables that might reside in a Hive metastore or an RDBMS. */
-		Database?: Database;
+		Database?: Database | null;
 	}
 
 
 	/** The <code>Database</code> object represents a logical grouping of tables that might reside in a Hive metastore or an RDBMS. */
 	export interface Database {
 		Name: string;
-		Description?: string;
-		LocationUri?: string;
-		Parameters?: ParametersMap;
-		CreateTime?: Date;
-		CreateTableDefaultPermissions?: Array<PrincipalPermissions>;
+		Description?: string | null;
+		LocationUri?: string | null;
+		Parameters?: ParametersMap | null;
+		CreateTime?: Date | null;
+		CreateTableDefaultPermissions?: Array<PrincipalPermissions> | null;
 	}
 
 	export interface GetDatabaseRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		Name: string;
 	}
 
 	export interface GetDatabasesResponse {
 		DatabaseList: Array<Database>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface GetDatabasesRequest {
-		CatalogId?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		CatalogId?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface GetDataflowGraphResponse {
-		DagNodes?: Array<CodeGenNode>;
-		DagEdges?: Array<CodeGenEdge>;
+		DagNodes?: Array<CodeGenNode> | null;
+		DagEdges?: Array<CodeGenEdge> | null;
 	}
 
 	export interface GetDataflowGraphRequest {
-		PythonScript?: string;
+		PythonScript?: string | null;
 	}
 
 	export interface GetDevEndpointResponse {
 
 		/** A development endpoint where a developer can remotely debug extract, transform, and load (ETL) scripts. */
-		DevEndpoint?: DevEndpoint;
+		DevEndpoint?: DevEndpoint | null;
 	}
 
 	export interface GetDevEndpointRequest {
@@ -1646,19 +1646,19 @@ export namespace MyNS {
 	}
 
 	export interface GetDevEndpointsResponse {
-		DevEndpoints?: Array<DevEndpoint>;
-		NextToken?: string;
+		DevEndpoints?: Array<DevEndpoint> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetDevEndpointsRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetJobResponse {
 
 		/** Specifies a job definition. */
-		Job?: Job;
+		Job?: Job | null;
 	}
 
 	export interface GetJobRequest {
@@ -1668,90 +1668,90 @@ export namespace MyNS {
 	export interface GetJobBookmarkResponse {
 
 		/** Defines a point that a job can resume processing. */
-		JobBookmarkEntry?: JobBookmarkEntry;
+		JobBookmarkEntry?: JobBookmarkEntry | null;
 	}
 
 
 	/** Defines a point that a job can resume processing. */
 	export interface JobBookmarkEntry {
-		JobName?: string;
-		Version?: number;
-		Run?: number;
-		Attempt?: number;
-		PreviousRunId?: string;
-		RunId?: string;
-		JobBookmark?: string;
+		JobName?: string | null;
+		Version?: number | null;
+		Run?: number | null;
+		Attempt?: number | null;
+		PreviousRunId?: string | null;
+		RunId?: string | null;
+		JobBookmark?: string | null;
 	}
 
 	export interface GetJobBookmarkRequest {
 		JobName: string;
-		RunId?: string;
+		RunId?: string | null;
 	}
 
 	export interface GetJobRunResponse {
 
 		/** Contains information about a job run. */
-		JobRun?: JobRun;
+		JobRun?: JobRun | null;
 	}
 
 	export interface GetJobRunRequest {
 		JobName: string;
 		RunId: string;
-		PredecessorsIncluded?: boolean;
+		PredecessorsIncluded?: boolean | null;
 	}
 
 	export interface GetJobRunsResponse {
-		JobRuns?: Array<JobRun>;
-		NextToken?: string;
+		JobRuns?: Array<JobRun> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetJobRunsRequest {
 		JobName: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface GetJobsResponse {
-		Jobs?: Array<Job>;
-		NextToken?: string;
+		Jobs?: Array<Job> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetJobsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface GetMLTaskRunResponse {
-		TransformId?: string;
-		TaskRunId?: string;
-		Status?: ConditionState;
-		LogGroupName?: string;
+		TransformId?: string | null;
+		TaskRunId?: string | null;
+		Status?: ConditionState | null;
+		LogGroupName?: string | null;
 
 		/** The configuration properties for the task run. */
-		Properties?: TaskRunProperties;
-		ErrorString?: string;
-		StartedOn?: Date;
-		LastModifiedOn?: Date;
-		CompletedOn?: Date;
-		ExecutionTime?: number;
+		Properties?: TaskRunProperties | null;
+		ErrorString?: string | null;
+		StartedOn?: Date | null;
+		LastModifiedOn?: Date | null;
+		CompletedOn?: Date | null;
+		ExecutionTime?: number | null;
 	}
 
 
 	/** The configuration properties for the task run. */
 	export interface TaskRunProperties {
-		TaskType?: TaskRunPropertiesTaskType;
+		TaskType?: TaskRunPropertiesTaskType | null;
 
 		/** Specifies configuration properties for an importing labels task run. */
-		ImportLabelsTaskRunProperties?: ImportLabelsTaskRunProperties;
+		ImportLabelsTaskRunProperties?: ImportLabelsTaskRunProperties | null;
 
 		/** Specifies configuration properties for an exporting labels task run. */
-		ExportLabelsTaskRunProperties?: ExportLabelsTaskRunProperties;
+		ExportLabelsTaskRunProperties?: ExportLabelsTaskRunProperties | null;
 
 		/** Specifies configuration properties for a labeling set generation task run. */
-		LabelingSetGenerationTaskRunProperties?: LabelingSetGenerationTaskRunProperties;
+		LabelingSetGenerationTaskRunProperties?: LabelingSetGenerationTaskRunProperties | null;
 
 		/** Specifies configuration properties for a Find Matches task run. */
-		FindMatchesTaskRunProperties?: FindMatchesTaskRunProperties;
+		FindMatchesTaskRunProperties?: FindMatchesTaskRunProperties | null;
 	}
 
 	export enum TaskRunPropertiesTaskType { EVALUATION = 0, LABELING_SET_GENERATION = 1, IMPORT_LABELS = 2, EXPORT_LABELS = 3, FIND_MATCHES = 4 }
@@ -1759,28 +1759,28 @@ export namespace MyNS {
 
 	/** Specifies configuration properties for an importing labels task run. */
 	export interface ImportLabelsTaskRunProperties {
-		InputS3Path?: string;
-		Replace?: boolean;
+		InputS3Path?: string | null;
+		Replace?: boolean | null;
 	}
 
 
 	/** Specifies configuration properties for an exporting labels task run. */
 	export interface ExportLabelsTaskRunProperties {
-		OutputS3Path?: string;
+		OutputS3Path?: string | null;
 	}
 
 
 	/** Specifies configuration properties for a labeling set generation task run. */
 	export interface LabelingSetGenerationTaskRunProperties {
-		OutputS3Path?: string;
+		OutputS3Path?: string | null;
 	}
 
 
 	/** Specifies configuration properties for a Find Matches task run. */
 	export interface FindMatchesTaskRunProperties {
-		JobId?: string;
-		JobName?: string;
-		JobRunId?: string;
+		JobId?: string | null;
+		JobName?: string | null;
+		JobRunId?: string | null;
 	}
 
 	export interface GetMLTaskRunRequest {
@@ -1789,46 +1789,46 @@ export namespace MyNS {
 	}
 
 	export interface GetMLTaskRunsResponse {
-		TaskRuns?: Array<TaskRun>;
-		NextToken?: string;
+		TaskRuns?: Array<TaskRun> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The sampling parameters that are associated with the machine learning transform. */
 	export interface TaskRun {
-		TransformId?: string;
-		TaskRunId?: string;
-		Status?: ConditionState;
-		LogGroupName?: string;
+		TransformId?: string | null;
+		TaskRunId?: string | null;
+		Status?: ConditionState | null;
+		LogGroupName?: string | null;
 
 		/** The configuration properties for the task run. */
-		Properties?: TaskRunProperties;
-		ErrorString?: string;
-		StartedOn?: Date;
-		LastModifiedOn?: Date;
-		CompletedOn?: Date;
-		ExecutionTime?: number;
+		Properties?: TaskRunProperties | null;
+		ErrorString?: string | null;
+		StartedOn?: Date | null;
+		LastModifiedOn?: Date | null;
+		CompletedOn?: Date | null;
+		ExecutionTime?: number | null;
 	}
 
 	export interface GetMLTaskRunsRequest {
 		TransformId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 
 		/** The criteria that are used to filter the task runs for the machine learning transform. */
-		Filter?: TaskRunFilterCriteria;
+		Filter?: TaskRunFilterCriteria | null;
 
 		/** The sorting criteria that are used to sort the list of task runs for the machine learning transform. */
-		Sort?: TaskRunSortCriteria;
+		Sort?: TaskRunSortCriteria | null;
 	}
 
 
 	/** The criteria that are used to filter the task runs for the machine learning transform. */
 	export interface TaskRunFilterCriteria {
-		TaskRunType?: TaskRunPropertiesTaskType;
-		Status?: ConditionState;
-		StartedBefore?: Date;
-		StartedAfter?: Date;
+		TaskRunType?: TaskRunPropertiesTaskType | null;
+		Status?: ConditionState | null;
+		StartedBefore?: Date | null;
+		StartedAfter?: Date | null;
 	}
 
 
@@ -1843,28 +1843,28 @@ export namespace MyNS {
 	export enum TaskRunSortCriteriaSortDirection { DESCENDING = 0, ASCENDING = 1 }
 
 	export interface GetMLTransformResponse {
-		TransformId?: string;
-		Name?: string;
-		Description?: string;
-		Status?: GetMLTransformResponseStatus;
-		CreatedOn?: Date;
-		LastModifiedOn?: Date;
-		InputRecordTables?: Array<GlueTable>;
+		TransformId?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		Status?: GetMLTransformResponseStatus | null;
+		CreatedOn?: Date | null;
+		LastModifiedOn?: Date | null;
+		InputRecordTables?: Array<GlueTable> | null;
 
 		/** The algorithm-specific parameters that are associated with the machine learning transform. */
-		Parameters?: TransformParameters;
+		Parameters?: TransformParameters | null;
 
 		/** Evaluation metrics provide an estimate of the quality of your machine learning transform. */
-		EvaluationMetrics?: EvaluationMetrics;
-		LabelCount?: number;
-		Schema?: Array<SchemaColumn>;
-		Role?: string;
-		GlueVersion?: string;
-		MaxCapacity?: number;
-		WorkerType?: GetMLTransformResponseWorkerType;
-		NumberOfWorkers?: number;
-		Timeout?: number;
-		MaxRetries?: number;
+		EvaluationMetrics?: EvaluationMetrics | null;
+		LabelCount?: number | null;
+		Schema?: Array<SchemaColumn> | null;
+		Role?: string | null;
+		GlueVersion?: string | null;
+		MaxCapacity?: number | null;
+		WorkerType?: GetMLTransformResponseWorkerType | null;
+		NumberOfWorkers?: number | null;
+		Timeout?: number | null;
+		MaxRetries?: number | null;
 	}
 
 	export enum GetMLTransformResponseStatus { NOT_READY = 0, READY = 1, DELETING = 2 }
@@ -1875,35 +1875,35 @@ export namespace MyNS {
 		TransformType: TransformParametersTransformType;
 
 		/** The evaluation metrics for the find matches algorithm. The quality of your machine learning transform is measured by getting your transform to predict some matches and comparing the results to known matches from the same dataset. The quality metrics are based on a subset of your data, so they are not precise. */
-		FindMatchesMetrics?: FindMatchesMetrics;
+		FindMatchesMetrics?: FindMatchesMetrics | null;
 	}
 
 
 	/** The evaluation metrics for the find matches algorithm. The quality of your machine learning transform is measured by getting your transform to predict some matches and comparing the results to known matches from the same dataset. The quality metrics are based on a subset of your data, so they are not precise. */
 	export interface FindMatchesMetrics {
-		AreaUnderPRCurve?: number;
-		Precision?: number;
-		Recall?: number;
-		F1?: number;
+		AreaUnderPRCurve?: number | null;
+		Precision?: number | null;
+		Recall?: number | null;
+		F1?: number | null;
 
 		/** <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p> <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p> */
-		ConfusionMatrix?: ConfusionMatrix;
+		ConfusionMatrix?: ConfusionMatrix | null;
 	}
 
 
 	/** <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p> <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p> */
 	export interface ConfusionMatrix {
-		NumTruePositives?: number;
-		NumFalsePositives?: number;
-		NumTrueNegatives?: number;
-		NumFalseNegatives?: number;
+		NumTruePositives?: number | null;
+		NumFalsePositives?: number | null;
+		NumTrueNegatives?: number | null;
+		NumFalseNegatives?: number | null;
 	}
 
 
 	/** A key-value pair representing a column and data type that this transform can run against. The <code>Schema</code> parameter of the <code>MLTransform</code> may contain up to 100 of these structures. */
 	export interface SchemaColumn {
-		Name?: string;
-		DataType?: string;
+		Name?: string | null;
+		DataType?: string | null;
 	}
 
 	export enum GetMLTransformResponseWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
@@ -1914,61 +1914,61 @@ export namespace MyNS {
 
 	export interface GetMLTransformsResponse {
 		Transforms: Array<MLTransform>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** A structure for a machine learning transform. */
 	export interface MLTransform {
-		TransformId?: string;
-		Name?: string;
-		Description?: string;
-		Status?: GetMLTransformResponseStatus;
-		CreatedOn?: Date;
-		LastModifiedOn?: Date;
-		InputRecordTables?: Array<GlueTable>;
+		TransformId?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		Status?: GetMLTransformResponseStatus | null;
+		CreatedOn?: Date | null;
+		LastModifiedOn?: Date | null;
+		InputRecordTables?: Array<GlueTable> | null;
 
 		/** The algorithm-specific parameters that are associated with the machine learning transform. */
-		Parameters?: TransformParameters;
+		Parameters?: TransformParameters | null;
 
 		/** Evaluation metrics provide an estimate of the quality of your machine learning transform. */
-		EvaluationMetrics?: EvaluationMetrics;
-		LabelCount?: number;
-		Schema?: Array<SchemaColumn>;
-		Role?: string;
-		GlueVersion?: string;
-		MaxCapacity?: number;
-		WorkerType?: MLTransformWorkerType;
-		NumberOfWorkers?: number;
-		Timeout?: number;
-		MaxRetries?: number;
+		EvaluationMetrics?: EvaluationMetrics | null;
+		LabelCount?: number | null;
+		Schema?: Array<SchemaColumn> | null;
+		Role?: string | null;
+		GlueVersion?: string | null;
+		MaxCapacity?: number | null;
+		WorkerType?: MLTransformWorkerType | null;
+		NumberOfWorkers?: number | null;
+		Timeout?: number | null;
+		MaxRetries?: number | null;
 	}
 
 	export enum MLTransformWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
 
 	export interface GetMLTransformsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 
 		/** The criteria used to filter the machine learning transforms. */
-		Filter?: TransformFilterCriteria;
+		Filter?: TransformFilterCriteria | null;
 
 		/** The sorting criteria that are associated with the machine learning transform. */
-		Sort?: TransformSortCriteria;
+		Sort?: TransformSortCriteria | null;
 	}
 
 
 	/** The criteria used to filter the machine learning transforms. */
 	export interface TransformFilterCriteria {
-		Name?: string;
-		TransformType?: TransformParametersTransformType;
-		Status?: GetMLTransformResponseStatus;
-		GlueVersion?: string;
-		CreatedBefore?: Date;
-		CreatedAfter?: Date;
-		LastModifiedBefore?: Date;
-		LastModifiedAfter?: Date;
-		Schema?: Array<SchemaColumn>;
+		Name?: string | null;
+		TransformType?: TransformParametersTransformType | null;
+		Status?: GetMLTransformResponseStatus | null;
+		GlueVersion?: string | null;
+		CreatedBefore?: Date | null;
+		CreatedAfter?: Date | null;
+		LastModifiedBefore?: Date | null;
+		LastModifiedAfter?: Date | null;
+		Schema?: Array<SchemaColumn> | null;
 	}
 
 
@@ -1987,12 +1987,12 @@ export namespace MyNS {
 
 	/** Defines a mapping. */
 	export interface MappingEntry {
-		SourceTable?: string;
-		SourcePath?: string;
-		SourceType?: string;
-		TargetTable?: string;
-		TargetPath?: string;
-		TargetType?: string;
+		SourceTable?: string | null;
+		SourcePath?: string | null;
+		SourceType?: string | null;
+		TargetTable?: string | null;
+		TargetPath?: string | null;
+		TargetType?: string | null;
 	}
 
 	export interface GetMappingRequest {
@@ -2002,10 +2002,10 @@ export namespace MyNS {
 		 * Required
 		 */
 		Source: CatalogEntry;
-		Sinks?: Array<CatalogEntry>;
+		Sinks?: Array<CatalogEntry> | null;
 
 		/** The location of resources. */
-		Location?: Location;
+		Location?: Location | null;
 	}
 
 
@@ -2018,39 +2018,39 @@ export namespace MyNS {
 
 	/** The location of resources. */
 	export interface Location {
-		Jdbc?: Array<CodeGenNodeArg>;
-		S3?: Array<CodeGenNodeArg>;
-		DynamoDB?: Array<CodeGenNodeArg>;
+		Jdbc?: Array<CodeGenNodeArg> | null;
+		S3?: Array<CodeGenNodeArg> | null;
+		DynamoDB?: Array<CodeGenNodeArg> | null;
 	}
 
 	export interface GetPartitionResponse {
 
 		/** Represents a slice of table data. */
-		Partition?: Partition;
+		Partition?: Partition | null;
 	}
 
 	export interface GetPartitionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 		TableName: string;
 		PartitionValues: Array<string>;
 	}
 
 	export interface GetPartitionsResponse {
-		Partitions?: Array<Partition>;
-		NextToken?: string;
+		Partitions?: Array<Partition> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetPartitionsRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 		TableName: string;
-		Expression?: string;
-		NextToken?: string;
+		Expression?: string | null;
+		NextToken?: string | null;
 
 		/** Defines a non-overlapping region of a table's partitions, allowing multiple requests to be executed in parallel. */
-		Segment?: Segment;
-		MaxResults?: number;
+		Segment?: Segment | null;
+		MaxResults?: number | null;
 	}
 
 
@@ -2061,8 +2061,8 @@ export namespace MyNS {
 	}
 
 	export interface GetPlanResponse {
-		PythonScript?: string;
-		ScalaCode?: string;
+		PythonScript?: string | null;
+		ScalaCode?: string | null;
 	}
 
 	export interface GetPlanRequest {
@@ -2073,18 +2073,18 @@ export namespace MyNS {
 		 * Required
 		 */
 		Source: CatalogEntry;
-		Sinks?: Array<CatalogEntry>;
+		Sinks?: Array<CatalogEntry> | null;
 
 		/** The location of resources. */
-		Location?: Location;
-		Language?: CreateScriptRequestLanguage;
+		Location?: Location | null;
+		Language?: CreateScriptRequestLanguage | null;
 	}
 
 	export interface GetResourcePolicyResponse {
-		PolicyInJson?: string;
-		PolicyHash?: string;
-		CreateTime?: Date;
-		UpdateTime?: Date;
+		PolicyInJson?: string | null;
+		PolicyHash?: string | null;
+		CreateTime?: Date | null;
+		UpdateTime?: Date | null;
 	}
 
 	export interface GetResourcePolicyRequest {
@@ -2093,17 +2093,17 @@ export namespace MyNS {
 	export interface GetSecurityConfigurationResponse {
 
 		/** Specifies a security configuration. */
-		SecurityConfiguration?: SecurityConfiguration;
+		SecurityConfiguration?: SecurityConfiguration | null;
 	}
 
 
 	/** Specifies a security configuration. */
 	export interface SecurityConfiguration {
-		Name?: string;
-		CreatedTimeStamp?: Date;
+		Name?: string | null;
+		CreatedTimeStamp?: Date | null;
 
 		/** Specifies an encryption configuration. */
-		EncryptionConfiguration?: EncryptionConfiguration;
+		EncryptionConfiguration?: EncryptionConfiguration | null;
 	}
 
 	export interface GetSecurityConfigurationRequest {
@@ -2111,47 +2111,47 @@ export namespace MyNS {
 	}
 
 	export interface GetSecurityConfigurationsResponse {
-		SecurityConfigurations?: Array<SecurityConfiguration>;
-		NextToken?: string;
+		SecurityConfigurations?: Array<SecurityConfiguration> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetSecurityConfigurationsRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetTableResponse {
 
 		/** Represents a collection of related data organized in columns and rows. */
-		Table?: Table;
+		Table?: Table | null;
 	}
 
 
 	/** Represents a collection of related data organized in columns and rows. */
 	export interface Table {
 		Name: string;
-		DatabaseName?: string;
-		Description?: string;
-		Owner?: string;
-		CreateTime?: Date;
-		UpdateTime?: Date;
-		LastAccessTime?: Date;
-		LastAnalyzedTime?: Date;
-		Retention?: number;
+		DatabaseName?: string | null;
+		Description?: string | null;
+		Owner?: string | null;
+		CreateTime?: Date | null;
+		UpdateTime?: Date | null;
+		LastAccessTime?: Date | null;
+		LastAnalyzedTime?: Date | null;
+		Retention?: number | null;
 
 		/** Describes the physical storage of table data. */
-		StorageDescriptor?: StorageDescriptor;
-		PartitionKeys?: Array<Column>;
-		ViewOriginalText?: string;
-		ViewExpandedText?: string;
-		TableType?: string;
-		Parameters?: ParametersMap;
-		CreatedBy?: string;
-		IsRegisteredWithLakeFormation?: boolean;
+		StorageDescriptor?: StorageDescriptor | null;
+		PartitionKeys?: Array<Column> | null;
+		ViewOriginalText?: string | null;
+		ViewExpandedText?: string | null;
+		TableType?: string | null;
+		Parameters?: ParametersMap | null;
+		CreatedBy?: string | null;
+		IsRegisteredWithLakeFormation?: boolean | null;
 	}
 
 	export interface GetTableRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 		Name: string;
 	}
@@ -2159,7 +2159,7 @@ export namespace MyNS {
 	export interface GetTableVersionResponse {
 
 		/** Specifies a version of a table. */
-		TableVersion?: TableVersion;
+		TableVersion?: TableVersion | null;
 	}
 
 
@@ -2167,45 +2167,45 @@ export namespace MyNS {
 	export interface TableVersion {
 
 		/** Represents a collection of related data organized in columns and rows. */
-		Table?: Table;
-		VersionId?: string;
+		Table?: Table | null;
+		VersionId?: string | null;
 	}
 
 	export interface GetTableVersionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 		TableName: string;
-		VersionId?: string;
+		VersionId?: string | null;
 	}
 
 	export interface GetTableVersionsResponse {
-		TableVersions?: Array<TableVersion>;
-		NextToken?: string;
+		TableVersions?: Array<TableVersion> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetTableVersionsRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 		TableName: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface GetTablesResponse {
-		TableList?: Array<Table>;
-		NextToken?: string;
+		TableList?: Array<Table> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetTablesRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
-		Expression?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		Expression?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface GetTagsResponse {
-		Tags?: TagsMap;
+		Tags?: TagsMap | null;
 	}
 
 	export interface GetTagsRequest {
@@ -2215,7 +2215,7 @@ export namespace MyNS {
 	export interface GetTriggerResponse {
 
 		/** Information about a specific trigger. */
-		Trigger?: Trigger;
+		Trigger?: Trigger | null;
 	}
 
 	export interface GetTriggerRequest {
@@ -2223,78 +2223,78 @@ export namespace MyNS {
 	}
 
 	export interface GetTriggersResponse {
-		Triggers?: Array<Trigger>;
-		NextToken?: string;
+		Triggers?: Array<Trigger> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetTriggersRequest {
-		NextToken?: string;
-		DependentJobName?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		DependentJobName?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface GetUserDefinedFunctionResponse {
 
 		/** Represents the equivalent of a Hive user-defined function (<code>UDF</code>) definition. */
-		UserDefinedFunction?: UserDefinedFunction;
+		UserDefinedFunction?: UserDefinedFunction | null;
 	}
 
 
 	/** Represents the equivalent of a Hive user-defined function (<code>UDF</code>) definition. */
 	export interface UserDefinedFunction {
-		FunctionName?: string;
-		DatabaseName?: string;
-		ClassName?: string;
-		OwnerName?: string;
-		OwnerType?: UserDefinedFunctionInputOwnerType;
-		CreateTime?: Date;
-		ResourceUris?: Array<ResourceUri>;
+		FunctionName?: string | null;
+		DatabaseName?: string | null;
+		ClassName?: string | null;
+		OwnerName?: string | null;
+		OwnerType?: UserDefinedFunctionInputOwnerType | null;
+		CreateTime?: Date | null;
+		ResourceUris?: Array<ResourceUri> | null;
 	}
 
 	export interface GetUserDefinedFunctionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 		FunctionName: string;
 	}
 
 	export interface GetUserDefinedFunctionsResponse {
-		UserDefinedFunctions?: Array<UserDefinedFunction>;
-		NextToken?: string;
+		UserDefinedFunctions?: Array<UserDefinedFunction> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetUserDefinedFunctionsRequest {
-		CatalogId?: string;
-		DatabaseName?: string;
+		CatalogId?: string | null;
+		DatabaseName?: string | null;
 		Pattern: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface GetWorkflowResponse {
 
 		/** A workflow represents a flow in which AWS Glue components should be executed to complete a logical task. */
-		Workflow?: Workflow;
+		Workflow?: Workflow | null;
 	}
 
 	export interface GetWorkflowRequest {
 		Name: string;
-		IncludeGraph?: boolean;
+		IncludeGraph?: boolean | null;
 	}
 
 	export interface GetWorkflowRunResponse {
 
 		/** A workflow run is an execution of a workflow providing all the runtime information. */
-		Run?: WorkflowRun;
+		Run?: WorkflowRun | null;
 	}
 
 	export interface GetWorkflowRunRequest {
 		Name: string;
 		RunId: string;
-		IncludeGraph?: boolean;
+		IncludeGraph?: boolean | null;
 	}
 
 	export interface GetWorkflowRunPropertiesResponse {
-		RunProperties?: WorkflowRunProperties;
+		RunProperties?: WorkflowRunProperties | null;
 	}
 
 	export interface GetWorkflowRunPropertiesRequest {
@@ -2303,101 +2303,101 @@ export namespace MyNS {
 	}
 
 	export interface GetWorkflowRunsResponse {
-		Runs?: Array<WorkflowRun>;
-		NextToken?: string;
+		Runs?: Array<WorkflowRun> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetWorkflowRunsRequest {
 		Name: string;
-		IncludeGraph?: boolean;
-		NextToken?: string;
-		MaxResults?: number;
+		IncludeGraph?: boolean | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ImportCatalogToGlueResponse {
 	}
 
 	export interface ImportCatalogToGlueRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 	}
 
 	export interface ListCrawlersResponse {
-		CrawlerNames?: Array<string>;
-		NextToken?: string;
+		CrawlerNames?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListCrawlersRequest {
-		MaxResults?: number;
-		NextToken?: string;
-		Tags?: TagsMap;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		Tags?: TagsMap | null;
 	}
 
 	export interface ListDevEndpointsResponse {
-		DevEndpointNames?: Array<string>;
-		NextToken?: string;
+		DevEndpointNames?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListDevEndpointsRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		Tags?: TagsMap;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		Tags?: TagsMap | null;
 	}
 
 	export interface ListJobsResponse {
-		JobNames?: Array<string>;
-		NextToken?: string;
+		JobNames?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListJobsRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		Tags?: TagsMap;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		Tags?: TagsMap | null;
 	}
 
 	export interface ListMLTransformsResponse {
 		TransformIds: Array<string>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListMLTransformsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 
 		/** The criteria used to filter the machine learning transforms. */
-		Filter?: TransformFilterCriteria;
+		Filter?: TransformFilterCriteria | null;
 
 		/** The sorting criteria that are associated with the machine learning transform. */
-		Sort?: TransformSortCriteria;
-		Tags?: TagsMap;
+		Sort?: TransformSortCriteria | null;
+		Tags?: TagsMap | null;
 	}
 
 	export interface ListTriggersResponse {
-		TriggerNames?: Array<string>;
-		NextToken?: string;
+		TriggerNames?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTriggersRequest {
-		NextToken?: string;
-		DependentJobName?: string;
-		MaxResults?: number;
-		Tags?: TagsMap;
+		NextToken?: string | null;
+		DependentJobName?: string | null;
+		MaxResults?: number | null;
+		Tags?: TagsMap | null;
 	}
 
 	export interface ListWorkflowsResponse {
-		Workflows?: Array<string>;
-		NextToken?: string;
+		Workflows?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListWorkflowsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface PutDataCatalogEncryptionSettingsResponse {
 	}
 
 	export interface PutDataCatalogEncryptionSettingsRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 
 		/**
 		 * Contains configuration information for maintaining Data Catalog security.
@@ -2407,13 +2407,13 @@ export namespace MyNS {
 	}
 
 	export interface PutResourcePolicyResponse {
-		PolicyHash?: string;
+		PolicyHash?: string | null;
 	}
 
 	export interface PutResourcePolicyRequest {
 		PolicyInJson: string;
-		PolicyHashCondition?: string;
-		PolicyExistsCondition?: PutResourcePolicyRequestPolicyExistsCondition;
+		PolicyHashCondition?: string | null;
+		PolicyExistsCondition?: PutResourcePolicyRequestPolicyExistsCondition | null;
 	}
 
 	export enum PutResourcePolicyRequestPolicyExistsCondition { MUST_EXIST = 0, NOT_EXIST = 1, NONE = 2 }
@@ -2430,34 +2430,34 @@ export namespace MyNS {
 	export interface ResetJobBookmarkResponse {
 
 		/** Defines a point that a job can resume processing. */
-		JobBookmarkEntry?: JobBookmarkEntry;
+		JobBookmarkEntry?: JobBookmarkEntry | null;
 	}
 
 	export interface ResetJobBookmarkRequest {
 		JobName: string;
-		RunId?: string;
+		RunId?: string | null;
 	}
 
 	export interface SearchTablesResponse {
-		NextToken?: string;
-		TableList?: Array<Table>;
+		NextToken?: string | null;
+		TableList?: Array<Table> | null;
 	}
 
 	export interface SearchTablesRequest {
-		CatalogId?: string;
-		NextToken?: string;
-		Filters?: Array<PropertyPredicate>;
-		SearchText?: string;
-		SortCriteria?: Array<SortCriterion>;
-		MaxResults?: number;
+		CatalogId?: string | null;
+		NextToken?: string | null;
+		Filters?: Array<PropertyPredicate> | null;
+		SearchText?: string | null;
+		SortCriteria?: Array<SortCriterion> | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** Defines a property predicate. */
 	export interface PropertyPredicate {
-		Key?: string;
-		Value?: string;
-		Comparator?: PropertyPredicateComparator;
+		Key?: string | null;
+		Value?: string | null;
+		Comparator?: PropertyPredicateComparator | null;
 	}
 
 	export enum PropertyPredicateComparator { EQUALS = 0, GREATER_THAN = 1, LESS_THAN = 2, GREATER_THAN_EQUALS = 3, LESS_THAN_EQUALS = 4 }
@@ -2465,8 +2465,8 @@ export namespace MyNS {
 
 	/** Specifies a field to sort by and a sort order. */
 	export interface SortCriterion {
-		FieldName?: string;
-		Sort?: SortCriterionSort;
+		FieldName?: string | null;
+		Sort?: SortCriterionSort | null;
 	}
 
 	export enum SortCriterionSort { ASC = 0, DESC = 1 }
@@ -2492,7 +2492,7 @@ export namespace MyNS {
 	}
 
 	export interface StartExportLabelsTaskRunResponse {
-		TaskRunId?: string;
+		TaskRunId?: string | null;
 	}
 
 	export interface StartExportLabelsTaskRunRequest {
@@ -2501,32 +2501,32 @@ export namespace MyNS {
 	}
 
 	export interface StartImportLabelsTaskRunResponse {
-		TaskRunId?: string;
+		TaskRunId?: string | null;
 	}
 
 	export interface StartImportLabelsTaskRunRequest {
 		TransformId: string;
 		InputS3Path: string;
-		ReplaceAllLabels?: boolean;
+		ReplaceAllLabels?: boolean | null;
 	}
 
 	export interface StartJobRunResponse {
-		JobRunId?: string;
+		JobRunId?: string | null;
 	}
 
 	export interface StartJobRunRequest {
 		JobName: string;
-		JobRunId?: string;
-		Arguments?: GenericMap;
-		AllocatedCapacity?: number;
-		Timeout?: number;
-		MaxCapacity?: number;
-		SecurityConfiguration?: string;
+		JobRunId?: string | null;
+		Arguments?: GenericMap | null;
+		AllocatedCapacity?: number | null;
+		Timeout?: number | null;
+		MaxCapacity?: number | null;
+		SecurityConfiguration?: string | null;
 
 		/** Specifies configuration properties of a notification. */
-		NotificationProperty?: NotificationProperty;
-		WorkerType?: StartJobRunRequestWorkerType;
-		NumberOfWorkers?: number;
+		NotificationProperty?: NotificationProperty | null;
+		WorkerType?: StartJobRunRequestWorkerType | null;
+		NumberOfWorkers?: number | null;
 	}
 
 	export enum StartJobRunRequestWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
@@ -2535,7 +2535,7 @@ export namespace MyNS {
 	}
 
 	export interface StartMLEvaluationTaskRunResponse {
-		TaskRunId?: string;
+		TaskRunId?: string | null;
 	}
 
 	export interface StartMLEvaluationTaskRunRequest {
@@ -2546,7 +2546,7 @@ export namespace MyNS {
 	}
 
 	export interface StartMLLabelingSetGenerationTaskRunResponse {
-		TaskRunId?: string;
+		TaskRunId?: string | null;
 	}
 
 	export interface StartMLLabelingSetGenerationTaskRunRequest {
@@ -2555,7 +2555,7 @@ export namespace MyNS {
 	}
 
 	export interface StartTriggerResponse {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface StartTriggerRequest {
@@ -2563,7 +2563,7 @@ export namespace MyNS {
 	}
 
 	export interface StartWorkflowRunResponse {
-		RunId?: string;
+		RunId?: string | null;
 	}
 
 	export interface StartWorkflowRunRequest {
@@ -2594,7 +2594,7 @@ export namespace MyNS {
 	}
 
 	export interface StopTriggerResponse {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface StopTriggerRequest {
@@ -2634,52 +2634,52 @@ export namespace MyNS {
 	export interface UpdateClassifierRequest {
 
 		/** Specifies a grok classifier to update when passed to <code>UpdateClassifier</code>. */
-		GrokClassifier?: UpdateGrokClassifierRequest;
+		GrokClassifier?: UpdateGrokClassifierRequest | null;
 
 		/** Specifies an XML classifier to be updated. */
-		XMLClassifier?: UpdateXMLClassifierRequest;
+		XMLClassifier?: UpdateXMLClassifierRequest | null;
 
 		/** Specifies a JSON classifier to be updated. */
-		JsonClassifier?: UpdateJsonClassifierRequest;
+		JsonClassifier?: UpdateJsonClassifierRequest | null;
 
 		/** Specifies a custom CSV classifier to be updated. */
-		CsvClassifier?: UpdateCsvClassifierRequest;
+		CsvClassifier?: UpdateCsvClassifierRequest | null;
 	}
 
 
 	/** Specifies a grok classifier to update when passed to <code>UpdateClassifier</code>. */
 	export interface UpdateGrokClassifierRequest {
 		Name: string;
-		Classification?: string;
-		GrokPattern?: string;
-		CustomPatterns?: string;
+		Classification?: string | null;
+		GrokPattern?: string | null;
+		CustomPatterns?: string | null;
 	}
 
 
 	/** Specifies an XML classifier to be updated. */
 	export interface UpdateXMLClassifierRequest {
 		Name: string;
-		Classification?: string;
-		RowTag?: string;
+		Classification?: string | null;
+		RowTag?: string | null;
 	}
 
 
 	/** Specifies a JSON classifier to be updated. */
 	export interface UpdateJsonClassifierRequest {
 		Name: string;
-		JsonPath?: string;
+		JsonPath?: string | null;
 	}
 
 
 	/** Specifies a custom CSV classifier to be updated. */
 	export interface UpdateCsvClassifierRequest {
 		Name: string;
-		Delimiter?: string;
-		QuoteSymbol?: string;
-		ContainsHeader?: CreateCsvClassifierRequestContainsHeader;
-		Header?: Array<string>;
-		DisableValueTrimming?: boolean;
-		AllowSingleColumn?: boolean;
+		Delimiter?: string | null;
+		QuoteSymbol?: string | null;
+		ContainsHeader?: CreateCsvClassifierRequestContainsHeader | null;
+		Header?: Array<string> | null;
+		DisableValueTrimming?: boolean | null;
+		AllowSingleColumn?: boolean | null;
 	}
 
 	export interface VersionMismatchException {
@@ -2689,7 +2689,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateConnectionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		Name: string;
 
 		/**
@@ -2704,20 +2704,20 @@ export namespace MyNS {
 
 	export interface UpdateCrawlerRequest {
 		Name: string;
-		Role?: string;
-		DatabaseName?: string;
-		Description?: string;
+		Role?: string | null;
+		DatabaseName?: string | null;
+		Description?: string | null;
 
 		/** Specifies data stores to crawl. */
-		Targets?: CrawlerTargets;
-		Schedule?: string;
-		Classifiers?: Array<string>;
-		TablePrefix?: string;
+		Targets?: CrawlerTargets | null;
+		Schedule?: string | null;
+		Classifiers?: Array<string> | null;
+		TablePrefix?: string | null;
 
 		/** A policy that specifies update and deletion behaviors for the crawler. */
-		SchemaChangePolicy?: SchemaChangePolicy;
-		Configuration?: string;
-		CrawlerSecurityConfiguration?: string;
+		SchemaChangePolicy?: SchemaChangePolicy | null;
+		Configuration?: string | null;
+		CrawlerSecurityConfiguration?: string | null;
 	}
 
 	export interface UpdateCrawlerScheduleResponse {
@@ -2725,14 +2725,14 @@ export namespace MyNS {
 
 	export interface UpdateCrawlerScheduleRequest {
 		CrawlerName: string;
-		Schedule?: string;
+		Schedule?: string | null;
 	}
 
 	export interface UpdateDatabaseResponse {
 	}
 
 	export interface UpdateDatabaseRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		Name: string;
 
 		/**
@@ -2747,26 +2747,26 @@ export namespace MyNS {
 
 	export interface UpdateDevEndpointRequest {
 		EndpointName: string;
-		PublicKey?: string;
-		AddPublicKeys?: Array<string>;
-		DeletePublicKeys?: Array<string>;
+		PublicKey?: string | null;
+		AddPublicKeys?: Array<string> | null;
+		DeletePublicKeys?: Array<string> | null;
 
 		/** Custom libraries to be loaded into a development endpoint. */
-		CustomLibraries?: DevEndpointCustomLibraries;
-		UpdateEtlLibraries?: boolean;
-		DeleteArguments?: Array<string>;
-		AddArguments?: MapValue;
+		CustomLibraries?: DevEndpointCustomLibraries | null;
+		UpdateEtlLibraries?: boolean | null;
+		DeleteArguments?: Array<string> | null;
+		AddArguments?: MapValue | null;
 	}
 
 
 	/** Custom libraries to be loaded into a development endpoint. */
 	export interface DevEndpointCustomLibraries {
-		ExtraPythonLibsS3Path?: string;
-		ExtraJarsS3Path?: string;
+		ExtraPythonLibsS3Path?: string | null;
+		ExtraJarsS3Path?: string | null;
 	}
 
 	export interface UpdateJobResponse {
-		JobName?: string;
+		JobName?: string | null;
 	}
 
 	export interface UpdateJobRequest {
@@ -2782,53 +2782,53 @@ export namespace MyNS {
 
 	/** Specifies information used to update an existing job definition. The previous job definition is completely overwritten by this information. */
 	export interface JobUpdate {
-		Description?: string;
-		LogUri?: string;
-		Role?: string;
+		Description?: string | null;
+		LogUri?: string | null;
+		Role?: string | null;
 
 		/** An execution property of a job. */
-		ExecutionProperty?: ExecutionProperty;
+		ExecutionProperty?: ExecutionProperty | null;
 
 		/** Specifies code executed when a job is run. */
-		Command?: JobCommand;
-		DefaultArguments?: GenericMap;
-		NonOverridableArguments?: GenericMap;
+		Command?: JobCommand | null;
+		DefaultArguments?: GenericMap | null;
+		NonOverridableArguments?: GenericMap | null;
 
 		/** Specifies the connections used by a job. */
-		Connections?: ConnectionsList;
-		MaxRetries?: number;
-		AllocatedCapacity?: number;
-		Timeout?: number;
-		MaxCapacity?: number;
-		WorkerType?: JobUpdateWorkerType;
-		NumberOfWorkers?: number;
-		SecurityConfiguration?: string;
+		Connections?: ConnectionsList | null;
+		MaxRetries?: number | null;
+		AllocatedCapacity?: number | null;
+		Timeout?: number | null;
+		MaxCapacity?: number | null;
+		WorkerType?: JobUpdateWorkerType | null;
+		NumberOfWorkers?: number | null;
+		SecurityConfiguration?: string | null;
 
 		/** Specifies configuration properties of a notification. */
-		NotificationProperty?: NotificationProperty;
-		GlueVersion?: string;
+		NotificationProperty?: NotificationProperty | null;
+		GlueVersion?: string | null;
 	}
 
 	export enum JobUpdateWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
 
 	export interface UpdateMLTransformResponse {
-		TransformId?: string;
+		TransformId?: string | null;
 	}
 
 	export interface UpdateMLTransformRequest {
 		TransformId: string;
-		Name?: string;
-		Description?: string;
+		Name?: string | null;
+		Description?: string | null;
 
 		/** The algorithm-specific parameters that are associated with the machine learning transform. */
-		Parameters?: TransformParameters;
-		Role?: string;
-		GlueVersion?: string;
-		MaxCapacity?: number;
-		WorkerType?: UpdateMLTransformRequestWorkerType;
-		NumberOfWorkers?: number;
-		Timeout?: number;
-		MaxRetries?: number;
+		Parameters?: TransformParameters | null;
+		Role?: string | null;
+		GlueVersion?: string | null;
+		MaxCapacity?: number | null;
+		WorkerType?: UpdateMLTransformRequestWorkerType | null;
+		NumberOfWorkers?: number | null;
+		Timeout?: number | null;
+		MaxRetries?: number | null;
 	}
 
 	export enum UpdateMLTransformRequestWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
@@ -2837,7 +2837,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdatePartitionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 		TableName: string;
 		PartitionValueList: Array<string>;
@@ -2853,7 +2853,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateTableRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 
 		/**
@@ -2861,13 +2861,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		TableInput: TableInput;
-		SkipArchive?: boolean;
+		SkipArchive?: boolean | null;
 	}
 
 	export interface UpdateTriggerResponse {
 
 		/** Information about a specific trigger. */
-		Trigger?: Trigger;
+		Trigger?: Trigger | null;
 	}
 
 	export interface UpdateTriggerRequest {
@@ -2883,20 +2883,20 @@ export namespace MyNS {
 
 	/** A structure used to provide information used to update a trigger. This object updates the previous trigger definition by overwriting it completely. */
 	export interface TriggerUpdate {
-		Name?: string;
-		Description?: string;
-		Schedule?: string;
-		Actions?: Array<Action>;
+		Name?: string | null;
+		Description?: string | null;
+		Schedule?: string | null;
+		Actions?: Array<Action> | null;
 
 		/** Defines the predicate of the trigger, which determines when it fires. */
-		Predicate?: Predicate;
+		Predicate?: Predicate | null;
 	}
 
 	export interface UpdateUserDefinedFunctionResponse {
 	}
 
 	export interface UpdateUserDefinedFunctionRequest {
-		CatalogId?: string;
+		CatalogId?: string | null;
 		DatabaseName: string;
 		FunctionName: string;
 
@@ -2908,13 +2908,13 @@ export namespace MyNS {
 	}
 
 	export interface UpdateWorkflowResponse {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface UpdateWorkflowRequest {
 		Name: string;
-		Description?: string;
-		DefaultRunProperties?: WorkflowRunProperties;
+		Description?: string | null;
+		DefaultRunProperties?: WorkflowRunProperties | null;
 	}
 
 	export enum TaskStatusType { STARTING = 0, RUNNING = 1, STOPPING = 2, STOPPED = 3, SUCCEEDED = 4, FAILED = 5, TIMEOUT = 6 }
@@ -3381,7 +3381,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetClassifiersResponse} Success
 		 */
-		GetClassifiers(MaxResults: string, NextToken: string, requestBody: GetClassifiersRequest): Observable<GetClassifiersResponse> {
+		GetClassifiers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetClassifiersRequest): Observable<GetClassifiersResponse> {
 			return this.http.post<GetClassifiersResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetClassifiers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3401,7 +3401,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetConnectionsResponse} Success
 		 */
-		GetConnections(MaxResults: string, NextToken: string, requestBody: GetConnectionsRequest): Observable<GetConnectionsResponse> {
+		GetConnections(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetConnectionsRequest): Observable<GetConnectionsResponse> {
 			return this.http.post<GetConnectionsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetConnections?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3421,7 +3421,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetCrawlerMetricsResponse} Success
 		 */
-		GetCrawlerMetrics(MaxResults: string, NextToken: string, requestBody: GetCrawlerMetricsRequest): Observable<GetCrawlerMetricsResponse> {
+		GetCrawlerMetrics(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetCrawlerMetricsRequest): Observable<GetCrawlerMetricsResponse> {
 			return this.http.post<GetCrawlerMetricsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetCrawlerMetrics?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3432,7 +3432,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetCrawlersResponse} Success
 		 */
-		GetCrawlers(MaxResults: string, NextToken: string, requestBody: GetCrawlersRequest): Observable<GetCrawlersResponse> {
+		GetCrawlers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetCrawlersRequest): Observable<GetCrawlersResponse> {
 			return this.http.post<GetCrawlersResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetCrawlers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3461,7 +3461,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetDatabasesResponse} Success
 		 */
-		GetDatabases(MaxResults: string, NextToken: string, requestBody: GetDatabasesRequest): Observable<GetDatabasesResponse> {
+		GetDatabases(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetDatabasesRequest): Observable<GetDatabasesResponse> {
 			return this.http.post<GetDatabasesResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetDatabases?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3490,7 +3490,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetDevEndpointsResponse} Success
 		 */
-		GetDevEndpoints(MaxResults: string, NextToken: string, requestBody: GetDevEndpointsRequest): Observable<GetDevEndpointsResponse> {
+		GetDevEndpoints(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetDevEndpointsRequest): Observable<GetDevEndpointsResponse> {
 			return this.http.post<GetDevEndpointsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetDevEndpoints?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3528,7 +3528,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetJobRunsResponse} Success
 		 */
-		GetJobRuns(MaxResults: string, NextToken: string, requestBody: GetJobRunsRequest): Observable<GetJobRunsResponse> {
+		GetJobRuns(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetJobRunsRequest): Observable<GetJobRunsResponse> {
 			return this.http.post<GetJobRunsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetJobRuns?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3539,7 +3539,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetJobsResponse} Success
 		 */
-		GetJobs(MaxResults: string, NextToken: string, requestBody: GetJobsRequest): Observable<GetJobsResponse> {
+		GetJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetJobsRequest): Observable<GetJobsResponse> {
 			return this.http.post<GetJobsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3559,7 +3559,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetMLTaskRunsResponse} Success
 		 */
-		GetMLTaskRuns(MaxResults: string, NextToken: string, requestBody: GetMLTaskRunsRequest): Observable<GetMLTaskRunsResponse> {
+		GetMLTaskRuns(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetMLTaskRunsRequest): Observable<GetMLTaskRunsResponse> {
 			return this.http.post<GetMLTaskRunsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetMLTaskRuns?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3579,7 +3579,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetMLTransformsResponse} Success
 		 */
-		GetMLTransforms(MaxResults: string, NextToken: string, requestBody: GetMLTransformsRequest): Observable<GetMLTransformsResponse> {
+		GetMLTransforms(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetMLTransformsRequest): Observable<GetMLTransformsResponse> {
 			return this.http.post<GetMLTransformsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetMLTransforms?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3608,7 +3608,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetPartitionsResponse} Success
 		 */
-		GetPartitions(MaxResults: string, NextToken: string, requestBody: GetPartitionsRequest): Observable<GetPartitionsResponse> {
+		GetPartitions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetPartitionsRequest): Observable<GetPartitionsResponse> {
 			return this.http.post<GetPartitionsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetPartitions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3646,7 +3646,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetSecurityConfigurationsResponse} Success
 		 */
-		GetSecurityConfigurations(MaxResults: string, NextToken: string, requestBody: GetSecurityConfigurationsRequest): Observable<GetSecurityConfigurationsResponse> {
+		GetSecurityConfigurations(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetSecurityConfigurationsRequest): Observable<GetSecurityConfigurationsResponse> {
 			return this.http.post<GetSecurityConfigurationsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetSecurityConfigurations?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3675,7 +3675,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetTableVersionsResponse} Success
 		 */
-		GetTableVersions(MaxResults: string, NextToken: string, requestBody: GetTableVersionsRequest): Observable<GetTableVersionsResponse> {
+		GetTableVersions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetTableVersionsRequest): Observable<GetTableVersionsResponse> {
 			return this.http.post<GetTableVersionsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetTableVersions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3686,7 +3686,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetTablesResponse} Success
 		 */
-		GetTables(MaxResults: string, NextToken: string, requestBody: GetTablesRequest): Observable<GetTablesResponse> {
+		GetTables(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetTablesRequest): Observable<GetTablesResponse> {
 			return this.http.post<GetTablesResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetTables?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3715,7 +3715,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetTriggersResponse} Success
 		 */
-		GetTriggers(MaxResults: string, NextToken: string, requestBody: GetTriggersRequest): Observable<GetTriggersResponse> {
+		GetTriggers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetTriggersRequest): Observable<GetTriggersResponse> {
 			return this.http.post<GetTriggersResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetTriggers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3735,7 +3735,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetUserDefinedFunctionsResponse} Success
 		 */
-		GetUserDefinedFunctions(MaxResults: string, NextToken: string, requestBody: GetUserDefinedFunctionsRequest): Observable<GetUserDefinedFunctionsResponse> {
+		GetUserDefinedFunctions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetUserDefinedFunctionsRequest): Observable<GetUserDefinedFunctionsResponse> {
 			return this.http.post<GetUserDefinedFunctionsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetUserDefinedFunctions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3773,7 +3773,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetWorkflowRunsResponse} Success
 		 */
-		GetWorkflowRuns(MaxResults: string, NextToken: string, requestBody: GetWorkflowRunsRequest): Observable<GetWorkflowRunsResponse> {
+		GetWorkflowRuns(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetWorkflowRunsRequest): Observable<GetWorkflowRunsResponse> {
 			return this.http.post<GetWorkflowRunsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.GetWorkflowRuns?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3793,7 +3793,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCrawlersResponse} Success
 		 */
-		ListCrawlers(MaxResults: string, NextToken: string, requestBody: ListCrawlersRequest): Observable<ListCrawlersResponse> {
+		ListCrawlers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListCrawlersRequest): Observable<ListCrawlersResponse> {
 			return this.http.post<ListCrawlersResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.ListCrawlers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3804,7 +3804,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDevEndpointsResponse} Success
 		 */
-		ListDevEndpoints(MaxResults: string, NextToken: string, requestBody: ListDevEndpointsRequest): Observable<ListDevEndpointsResponse> {
+		ListDevEndpoints(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDevEndpointsRequest): Observable<ListDevEndpointsResponse> {
 			return this.http.post<ListDevEndpointsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.ListDevEndpoints?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3815,7 +3815,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListJobsResponse} Success
 		 */
-		ListJobs(MaxResults: string, NextToken: string, requestBody: ListJobsRequest): Observable<ListJobsResponse> {
+		ListJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListJobsRequest): Observable<ListJobsResponse> {
 			return this.http.post<ListJobsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.ListJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3826,7 +3826,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMLTransformsResponse} Success
 		 */
-		ListMLTransforms(MaxResults: string, NextToken: string, requestBody: ListMLTransformsRequest): Observable<ListMLTransformsResponse> {
+		ListMLTransforms(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListMLTransformsRequest): Observable<ListMLTransformsResponse> {
 			return this.http.post<ListMLTransformsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.ListMLTransforms?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3837,7 +3837,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTriggersResponse} Success
 		 */
-		ListTriggers(MaxResults: string, NextToken: string, requestBody: ListTriggersRequest): Observable<ListTriggersResponse> {
+		ListTriggers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTriggersRequest): Observable<ListTriggersResponse> {
 			return this.http.post<ListTriggersResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.ListTriggers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3848,7 +3848,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListWorkflowsResponse} Success
 		 */
-		ListWorkflows(MaxResults: string, NextToken: string, requestBody: ListWorkflowsRequest): Observable<ListWorkflowsResponse> {
+		ListWorkflows(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListWorkflowsRequest): Observable<ListWorkflowsResponse> {
 			return this.http.post<ListWorkflowsResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.ListWorkflows?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -3895,7 +3895,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {SearchTablesResponse} Success
 		 */
-		SearchTables(MaxResults: string, NextToken: string, requestBody: SearchTablesRequest): Observable<SearchTablesResponse> {
+		SearchTables(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: SearchTablesRequest): Observable<SearchTablesResponse> {
 			return this.http.post<SearchTablesResponse>(this.baseUri + '#X-Amz-Target=AWSGlue.SearchTables?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

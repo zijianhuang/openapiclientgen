@@ -26,7 +26,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateAddressResult {
-		AddressId?: string;
+		AddressId?: string | null;
 	}
 
 	export interface CreateAddressRequest {
@@ -41,20 +41,20 @@ export namespace MyNS {
 
 	/** The address that you want the Snowball or Snowballs associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown. */
 	export interface Address {
-		AddressId?: string;
-		Name?: string;
-		Company?: string;
-		Street1?: string;
-		Street2?: string;
-		Street3?: string;
-		City?: string;
-		StateOrProvince?: string;
-		PrefectureOrDistrict?: string;
-		Landmark?: string;
-		Country?: string;
-		PostalCode?: string;
-		PhoneNumber?: string;
-		IsRestricted?: boolean;
+		AddressId?: string | null;
+		Name?: string | null;
+		Company?: string | null;
+		Street1?: string | null;
+		Street2?: string | null;
+		Street3?: string | null;
+		City?: string | null;
+		StateOrProvince?: string | null;
+		PrefectureOrDistrict?: string | null;
+		Landmark?: string | null;
+		Country?: string | null;
+		PostalCode?: string | null;
+		PhoneNumber?: string | null;
+		IsRestricted?: boolean | null;
 	}
 
 	export interface InvalidAddressException {
@@ -64,7 +64,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateClusterResult {
-		ClusterId?: string;
+		ClusterId?: string | null;
 	}
 
 	export interface CreateClusterRequest {
@@ -75,19 +75,19 @@ export namespace MyNS {
 		 * Required
 		 */
 		Resources: JobResource;
-		Description?: string;
+		Description?: string | null;
 		AddressId: string;
-		KmsKeyARN?: string;
+		KmsKeyARN?: string | null;
 		RoleARN: string;
-		SnowballType?: CreateClusterRequestSnowballType;
+		SnowballType?: CreateClusterRequestSnowballType | null;
 		ShippingOption: CreateClusterRequestShippingOption;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p> */
-		Notification?: Notification;
-		ForwardingAddressId?: string;
+		Notification?: Notification | null;
+		ForwardingAddressId?: string | null;
 
 		/** The tax documents required in your AWS Region. */
-		TaxDocuments?: TaxDocuments;
+		TaxDocuments?: TaxDocuments | null;
 	}
 
 	export enum CreateClusterRequestJobType { IMPORT = 0, EXPORT = 1, LOCAL_USE = 2 }
@@ -95,45 +95,45 @@ export namespace MyNS {
 
 	/** Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job. */
 	export interface JobResource {
-		S3Resources?: Array<S3Resource>;
-		LambdaResources?: Array<LambdaResource>;
-		Ec2AmiResources?: Array<Ec2AmiResource>;
+		S3Resources?: Array<S3Resource> | null;
+		LambdaResources?: Array<LambdaResource> | null;
+		Ec2AmiResources?: Array<Ec2AmiResource> | null;
 	}
 
 
 	/** Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted. */
 	export interface S3Resource {
-		BucketArn?: string;
+		BucketArn?: string | null;
 
 		/** Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted. */
-		KeyRange?: KeyRange;
+		KeyRange?: KeyRange | null;
 	}
 
 
 	/** Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted. */
 	export interface KeyRange {
-		BeginMarker?: string;
-		EndMarker?: string;
+		BeginMarker?: string | null;
+		EndMarker?: string | null;
 	}
 
 
 	/** Identifies  */
 	export interface LambdaResource {
-		LambdaArn?: string;
-		EventTriggers?: Array<EventTriggerDefinition>;
+		LambdaArn?: string | null;
+		EventTriggers?: Array<EventTriggerDefinition> | null;
 	}
 
 
 	/** The container for the <a>EventTriggerDefinition$EventResourceARN</a>. */
 	export interface EventTriggerDefinition {
-		EventResourceARN?: string;
+		EventResourceARN?: string | null;
 	}
 
 
 	/** A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and the Snowball Edge AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the AWS Cloud and on the device. */
 	export interface Ec2AmiResource {
 		AmiId: string;
-		SnowballAmiId?: string;
+		SnowballAmiId?: string | null;
 	}
 
 	export enum CreateClusterRequestSnowballType { STANDARD = 0, EDGE = 1, EDGE_C = 2, EDGE_CG = 3, EDGE_S = 4 }
@@ -143,9 +143,9 @@ export namespace MyNS {
 
 	/** <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p> */
 	export interface Notification {
-		SnsTopicARN?: string;
-		JobStatesToNotify?: Array<JobState>;
-		NotifyAll?: boolean;
+		SnsTopicARN?: string | null;
+		JobStatesToNotify?: Array<JobState> | null;
+		NotifyAll?: boolean | null;
 	}
 
 	export enum JobState { New = 0, PreparingAppliance = 1, PreparingShipment = 2, InTransitToCustomer = 3, WithCustomer = 4, InTransitToAWS = 5, WithAWSSortingFacility = 6, WithAWS = 7, InProgress = 8, Complete = 9, Cancelled = 10, Listing = 11, Pending = 12 }
@@ -155,13 +155,13 @@ export namespace MyNS {
 	export interface TaxDocuments {
 
 		/** The tax documents required in AWS Regions in India. */
-		IND?: INDTaxDocuments;
+		IND?: INDTaxDocuments | null;
 	}
 
 
 	/** The tax documents required in AWS Regions in India. */
 	export interface INDTaxDocuments {
-		GSTIN?: string;
+		GSTIN?: string | null;
 	}
 
 	export interface InvalidInputCombinationException {
@@ -171,29 +171,29 @@ export namespace MyNS {
 	}
 
 	export interface CreateJobResult {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 	export interface CreateJobRequest {
-		JobType?: CreateClusterRequestJobType;
+		JobType?: CreateClusterRequestJobType | null;
 
 		/** Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job. */
-		Resources?: JobResource;
-		Description?: string;
-		AddressId?: string;
-		KmsKeyARN?: string;
-		RoleARN?: string;
-		SnowballCapacityPreference?: CreateJobRequestSnowballCapacityPreference;
-		ShippingOption?: CreateClusterRequestShippingOption;
+		Resources?: JobResource | null;
+		Description?: string | null;
+		AddressId?: string | null;
+		KmsKeyARN?: string | null;
+		RoleARN?: string | null;
+		SnowballCapacityPreference?: CreateJobRequestSnowballCapacityPreference | null;
+		ShippingOption?: CreateClusterRequestShippingOption | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p> */
-		Notification?: Notification;
-		ClusterId?: string;
-		SnowballType?: CreateClusterRequestSnowballType;
-		ForwardingAddressId?: string;
+		Notification?: Notification | null;
+		ClusterId?: string | null;
+		SnowballType?: CreateClusterRequestSnowballType | null;
+		ForwardingAddressId?: string | null;
 
 		/** The tax documents required in your AWS Region. */
-		TaxDocuments?: TaxDocuments;
+		TaxDocuments?: TaxDocuments | null;
 	}
 
 	export enum CreateJobRequestSnowballCapacityPreference { T50 = 0, T80 = 1, T100 = 2, T42 = 3, T98 = 4, NoPreference = 5 }
@@ -204,7 +204,7 @@ export namespace MyNS {
 	export interface DescribeAddressResult {
 
 		/** The address that you want the Snowball or Snowballs associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown. */
-		Address?: Address;
+		Address?: Address | null;
 	}
 
 	export interface DescribeAddressRequest {
@@ -212,13 +212,13 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAddressesResult {
-		Addresses?: Array<Address>;
-		NextToken?: string;
+		Addresses?: Array<Address> | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeAddressesRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface InvalidNextTokenException {
@@ -227,32 +227,32 @@ export namespace MyNS {
 	export interface DescribeClusterResult {
 
 		/** Contains metadata about a specific cluster. */
-		ClusterMetadata?: ClusterMetadata;
+		ClusterMetadata?: ClusterMetadata | null;
 	}
 
 
 	/** Contains metadata about a specific cluster. */
 	export interface ClusterMetadata {
-		ClusterId?: string;
-		Description?: string;
-		KmsKeyARN?: string;
-		RoleARN?: string;
-		ClusterState?: ClusterMetadataClusterState;
-		JobType?: CreateClusterRequestJobType;
-		SnowballType?: CreateClusterRequestSnowballType;
-		CreationDate?: Date;
+		ClusterId?: string | null;
+		Description?: string | null;
+		KmsKeyARN?: string | null;
+		RoleARN?: string | null;
+		ClusterState?: ClusterMetadataClusterState | null;
+		JobType?: CreateClusterRequestJobType | null;
+		SnowballType?: CreateClusterRequestSnowballType | null;
+		CreationDate?: Date | null;
 
 		/** Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job. */
-		Resources?: JobResource;
-		AddressId?: string;
-		ShippingOption?: CreateClusterRequestShippingOption;
+		Resources?: JobResource | null;
+		AddressId?: string | null;
+		ShippingOption?: CreateClusterRequestShippingOption | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p> */
-		Notification?: Notification;
-		ForwardingAddressId?: string;
+		Notification?: Notification | null;
+		ForwardingAddressId?: string | null;
 
 		/** The tax documents required in your AWS Region. */
-		TaxDocuments?: TaxDocuments;
+		TaxDocuments?: TaxDocuments | null;
 	}
 
 	export enum ClusterMetadataClusterState { AwaitingQuorum = 0, Pending = 1, InUse = 2, Complete = 3, Cancelled = 4 }
@@ -264,79 +264,79 @@ export namespace MyNS {
 	export interface DescribeJobResult {
 
 		/** Contains information about a specific job including shipping information, job status, and other important metadata. This information is returned as a part of the response syntax of the <code>DescribeJob</code> action. */
-		JobMetadata?: JobMetadata;
-		SubJobMetadata?: Array<JobMetadata>;
+		JobMetadata?: JobMetadata | null;
+		SubJobMetadata?: Array<JobMetadata> | null;
 	}
 
 
 	/** Contains information about a specific job including shipping information, job status, and other important metadata. This information is returned as a part of the response syntax of the <code>DescribeJob</code> action. */
 	export interface JobMetadata {
-		JobId?: string;
-		JobState?: JobState;
-		JobType?: CreateClusterRequestJobType;
-		SnowballType?: CreateClusterRequestSnowballType;
-		CreationDate?: Date;
+		JobId?: string | null;
+		JobState?: JobState | null;
+		JobType?: CreateClusterRequestJobType | null;
+		SnowballType?: CreateClusterRequestSnowballType | null;
+		CreationDate?: Date | null;
 
 		/** Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job. */
-		Resources?: JobResource;
-		Description?: string;
-		KmsKeyARN?: string;
-		RoleARN?: string;
-		AddressId?: string;
+		Resources?: JobResource | null;
+		Description?: string | null;
+		KmsKeyARN?: string | null;
+		RoleARN?: string | null;
+		AddressId?: string | null;
 
 		/** A job's shipping information, including inbound and outbound tracking numbers and shipping speed options. */
-		ShippingDetails?: ShippingDetails;
-		SnowballCapacityPreference?: CreateJobRequestSnowballCapacityPreference;
+		ShippingDetails?: ShippingDetails | null;
+		SnowballCapacityPreference?: CreateJobRequestSnowballCapacityPreference | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p> */
-		Notification?: Notification;
+		Notification?: Notification | null;
 
 		/** Defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs. */
-		DataTransferProgress?: DataTransfer;
+		DataTransferProgress?: DataTransfer | null;
 
 		/** <p>Contains job logs. Whenever Snowball is used to import data into or export data out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you'll have to make another call to the <code>DescribeJob</code> action.</p> <p>For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snowball for your job part is being delivered to you.</p> <p>The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.</p> <p>For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.</p> */
-		JobLogInfo?: JobLogs;
-		ClusterId?: string;
-		ForwardingAddressId?: string;
+		JobLogInfo?: JobLogs | null;
+		ClusterId?: string | null;
+		ForwardingAddressId?: string | null;
 
 		/** The tax documents required in your AWS Region. */
-		TaxDocuments?: TaxDocuments;
+		TaxDocuments?: TaxDocuments | null;
 	}
 
 
 	/** A job's shipping information, including inbound and outbound tracking numbers and shipping speed options. */
 	export interface ShippingDetails {
-		ShippingOption?: CreateClusterRequestShippingOption;
+		ShippingOption?: CreateClusterRequestShippingOption | null;
 
 		/** The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment. */
-		InboundShipment?: Shipment;
+		InboundShipment?: Shipment | null;
 
 		/** The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment. */
-		OutboundShipment?: Shipment;
+		OutboundShipment?: Shipment | null;
 	}
 
 
 	/** The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment. */
 	export interface Shipment {
-		Status?: string;
-		TrackingNumber?: string;
+		Status?: string | null;
+		TrackingNumber?: string | null;
 	}
 
 
 	/** Defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs. */
 	export interface DataTransfer {
-		BytesTransferred?: number;
-		ObjectsTransferred?: number;
-		TotalBytes?: number;
-		TotalObjects?: number;
+		BytesTransferred?: number | null;
+		ObjectsTransferred?: number | null;
+		TotalBytes?: number | null;
+		TotalObjects?: number | null;
 	}
 
 
 	/** <p>Contains job logs. Whenever Snowball is used to import data into or export data out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you'll have to make another call to the <code>DescribeJob</code> action.</p> <p>For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snowball for your job part is being delivered to you.</p> <p>The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.</p> <p>For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.</p> */
 	export interface JobLogs {
-		JobCompletionReportURI?: string;
-		JobSuccessLogURI?: string;
-		JobFailureLogURI?: string;
+		JobCompletionReportURI?: string | null;
+		JobSuccessLogURI?: string | null;
+		JobFailureLogURI?: string | null;
 	}
 
 	export interface DescribeJobRequest {
@@ -344,7 +344,7 @@ export namespace MyNS {
 	}
 
 	export interface GetJobManifestResult {
-		ManifestURI?: string;
+		ManifestURI?: string | null;
 	}
 
 	export interface GetJobManifestRequest {
@@ -352,7 +352,7 @@ export namespace MyNS {
 	}
 
 	export interface GetJobUnlockCodeResult {
-		UnlockCode?: string;
+		UnlockCode?: string | null;
 	}
 
 	export interface GetJobUnlockCodeRequest {
@@ -360,15 +360,15 @@ export namespace MyNS {
 	}
 
 	export interface GetSnowballUsageResult {
-		SnowballLimit?: number;
-		SnowballsInUse?: number;
+		SnowballLimit?: number | null;
+		SnowballsInUse?: number | null;
 	}
 
 	export interface GetSnowballUsageRequest {
 	}
 
 	export interface GetSoftwareUpdatesResult {
-		UpdatesURI?: string;
+		UpdatesURI?: string | null;
 	}
 
 	export interface GetSoftwareUpdatesRequest {
@@ -376,72 +376,72 @@ export namespace MyNS {
 	}
 
 	export interface ListClusterJobsResult {
-		JobListEntries?: Array<JobListEntry>;
-		NextToken?: string;
+		JobListEntries?: Array<JobListEntry> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job. */
 	export interface JobListEntry {
-		JobId?: string;
-		JobState?: JobState;
-		IsMaster?: boolean;
-		JobType?: CreateClusterRequestJobType;
-		SnowballType?: CreateClusterRequestSnowballType;
-		CreationDate?: Date;
-		Description?: string;
+		JobId?: string | null;
+		JobState?: JobState | null;
+		IsMaster?: boolean | null;
+		JobType?: CreateClusterRequestJobType | null;
+		SnowballType?: CreateClusterRequestSnowballType | null;
+		CreationDate?: Date | null;
+		Description?: string | null;
 	}
 
 	export interface ListClusterJobsRequest {
 		ClusterId: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListClustersResult {
-		ClusterListEntries?: Array<ClusterListEntry>;
-		NextToken?: string;
+		ClusterListEntries?: Array<ClusterListEntry> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains a cluster's state, a cluster's ID, and other important information. */
 	export interface ClusterListEntry {
-		ClusterId?: string;
-		ClusterState?: ClusterMetadataClusterState;
-		CreationDate?: Date;
-		Description?: string;
+		ClusterId?: string | null;
+		ClusterState?: ClusterMetadataClusterState | null;
+		CreationDate?: Date | null;
+		Description?: string | null;
 	}
 
 	export interface ListClustersRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListCompatibleImagesResult {
-		CompatibleImages?: Array<CompatibleImage>;
-		NextToken?: string;
+		CompatibleImages?: Array<CompatibleImage> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A JSON-formatted object that describes a compatible Amazon Machine Image (AMI), including the ID and name for a Snowball Edge AMI. This AMI is compatible with the device's physical hardware requirements, and it should be able to be run in an SBE1 instance on the device. */
 	export interface CompatibleImage {
-		AmiId?: string;
-		Name?: string;
+		AmiId?: string | null;
+		Name?: string | null;
 	}
 
 	export interface ListCompatibleImagesRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListJobsResult {
-		JobListEntries?: Array<JobListEntry>;
-		NextToken?: string;
+		JobListEntries?: Array<JobListEntry> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListJobsRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface UpdateClusterResult {
@@ -449,17 +449,17 @@ export namespace MyNS {
 
 	export interface UpdateClusterRequest {
 		ClusterId: string;
-		RoleARN?: string;
-		Description?: string;
+		RoleARN?: string | null;
+		Description?: string | null;
 
 		/** Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job. */
-		Resources?: JobResource;
-		AddressId?: string;
-		ShippingOption?: CreateClusterRequestShippingOption;
+		Resources?: JobResource | null;
+		AddressId?: string | null;
+		ShippingOption?: CreateClusterRequestShippingOption | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p> */
-		Notification?: Notification;
-		ForwardingAddressId?: string;
+		Notification?: Notification | null;
+		ForwardingAddressId?: string | null;
 	}
 
 	export interface UpdateJobResult {
@@ -467,18 +467,18 @@ export namespace MyNS {
 
 	export interface UpdateJobRequest {
 		JobId: string;
-		RoleARN?: string;
+		RoleARN?: string | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p> */
-		Notification?: Notification;
+		Notification?: Notification | null;
 
 		/** Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job. */
-		Resources?: JobResource;
-		AddressId?: string;
-		ShippingOption?: CreateClusterRequestShippingOption;
-		Description?: string;
-		SnowballCapacityPreference?: CreateJobRequestSnowballCapacityPreference;
-		ForwardingAddressId?: string;
+		Resources?: JobResource | null;
+		AddressId?: string | null;
+		ShippingOption?: CreateClusterRequestShippingOption | null;
+		Description?: string | null;
+		SnowballCapacityPreference?: CreateJobRequestSnowballCapacityPreference | null;
+		ForwardingAddressId?: string | null;
 	}
 
 	export enum ClusterState { AwaitingQuorum = 0, Pending = 1, InUse = 2, Complete = 3, Cancelled = 4 }
@@ -557,7 +557,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeAddressesResult} Success
 		 */
-		DescribeAddresses(MaxResults: string, NextToken: string, requestBody: DescribeAddressesRequest): Observable<DescribeAddressesResult> {
+		DescribeAddresses(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeAddressesRequest): Observable<DescribeAddressesResult> {
 			return this.http.post<DescribeAddressesResult>(this.baseUri + '#X-Amz-Target=AWSIESnowballJobManagementService.DescribeAddresses?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -649,7 +649,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListJobsResult} Success
 		 */
-		ListJobs(MaxResults: string, NextToken: string, requestBody: ListJobsRequest): Observable<ListJobsResult> {
+		ListJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListJobsRequest): Observable<ListJobsResult> {
 			return this.http.post<ListJobsResult>(this.baseUri + '#X-Amz-Target=AWSIESnowballJobManagementService.ListJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

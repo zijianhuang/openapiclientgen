@@ -5,7 +5,7 @@ export namespace MyNS {
 
 	/** The output for the BulkPublish operation. */
 	export interface BulkPublishResponse {
-		IdentityPoolId?: string;
+		IdentityPoolId?: string | null;
 	}
 
 
@@ -49,19 +49,19 @@ export namespace MyNS {
 	export interface DeleteDatasetResponse {
 
 		/** A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs. */
-		Dataset?: Dataset;
+		Dataset?: Dataset | null;
 	}
 
 
 	/** A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs. */
 	export interface Dataset {
-		IdentityId?: string;
-		DatasetName?: string;
-		CreationDate?: Date;
-		LastModifiedDate?: Date;
-		LastModifiedBy?: string;
-		DataStorage?: number;
-		NumRecords?: number;
+		IdentityId?: string | null;
+		DatasetName?: string | null;
+		CreationDate?: Date | null;
+		LastModifiedDate?: Date | null;
+		LastModifiedBy?: string | null;
+		DataStorage?: number | null;
+		NumRecords?: number | null;
 	}
 
 
@@ -81,7 +81,7 @@ export namespace MyNS {
 	export interface DescribeDatasetResponse {
 
 		/** A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs. */
-		Dataset?: Dataset;
+		Dataset?: Dataset | null;
 	}
 
 
@@ -89,16 +89,16 @@ export namespace MyNS {
 	export interface DescribeIdentityPoolUsageResponse {
 
 		/** Usage information for the identity pool. */
-		IdentityPoolUsage?: IdentityPoolUsage;
+		IdentityPoolUsage?: IdentityPoolUsage | null;
 	}
 
 
 	/** Usage information for the identity pool. */
 	export interface IdentityPoolUsage {
-		IdentityPoolId?: string;
-		SyncSessionsCount?: number;
-		DataStorage?: number;
-		LastModifiedDate?: Date;
+		IdentityPoolId?: string | null;
+		SyncSessionsCount?: number | null;
+		DataStorage?: number | null;
+		LastModifiedDate?: Date | null;
 	}
 
 
@@ -106,27 +106,27 @@ export namespace MyNS {
 	export interface DescribeIdentityUsageResponse {
 
 		/** Usage information for the identity. */
-		IdentityUsage?: IdentityUsage;
+		IdentityUsage?: IdentityUsage | null;
 	}
 
 
 	/** Usage information for the identity. */
 	export interface IdentityUsage {
-		IdentityId?: string;
-		IdentityPoolId?: string;
-		LastModifiedDate?: Date;
-		DatasetCount?: number;
-		DataStorage?: number;
+		IdentityId?: string | null;
+		IdentityPoolId?: string | null;
+		LastModifiedDate?: Date | null;
+		DatasetCount?: number | null;
+		DataStorage?: number | null;
 	}
 
 
 	/** The output for the GetBulkPublishDetails operation. */
 	export interface GetBulkPublishDetailsResponse {
-		IdentityPoolId?: string;
-		BulkPublishStartTime?: Date;
-		BulkPublishCompleteTime?: Date;
-		BulkPublishStatus?: GetBulkPublishDetailsResponseBulkPublishStatus;
-		FailureMessage?: string;
+		IdentityPoolId?: string | null;
+		BulkPublishStartTime?: Date | null;
+		BulkPublishCompleteTime?: Date | null;
+		BulkPublishStatus?: GetBulkPublishDetailsResponseBulkPublishStatus | null;
+		FailureMessage?: string | null;
 	}
 
 	export enum GetBulkPublishDetailsResponseBulkPublishStatus { NOT_STARTED = 0, IN_PROGRESS = 1, FAILED = 2, SUCCEEDED = 3 }
@@ -134,7 +134,7 @@ export namespace MyNS {
 
 	/** The response from the GetCognitoEvents request */
 	export interface GetCognitoEventsResponse {
-		Events?: Events;
+		Events?: Events | null;
 	}
 
 	export interface Events {
@@ -143,28 +143,28 @@ export namespace MyNS {
 
 	/** The output for the GetIdentityPoolConfiguration operation. */
 	export interface GetIdentityPoolConfigurationResponse {
-		IdentityPoolId?: string;
+		IdentityPoolId?: string | null;
 
 		/** Configuration options to be applied to the identity pool. */
-		PushSync?: PushSync;
+		PushSync?: PushSync | null;
 
 		/** Configuration options for configure Cognito streams. */
-		CognitoStreams?: CognitoStreams;
+		CognitoStreams?: CognitoStreams | null;
 	}
 
 
 	/** Configuration options to be applied to the identity pool. */
 	export interface PushSync {
-		ApplicationArns?: Array<string>;
-		RoleArn?: string;
+		ApplicationArns?: Array<string> | null;
+		RoleArn?: string | null;
 	}
 
 
 	/** Configuration options for configure Cognito streams. */
 	export interface CognitoStreams {
-		StreamName?: string;
-		RoleArn?: string;
-		StreamingStatus?: CognitoStreamsStreamingStatus;
+		StreamName?: string | null;
+		RoleArn?: string | null;
+		StreamingStatus?: CognitoStreamsStreamingStatus | null;
 	}
 
 	export enum CognitoStreamsStreamingStatus { ENABLED = 0, DISABLED = 1 }
@@ -172,49 +172,49 @@ export namespace MyNS {
 
 	/** Returned for a successful ListDatasets request. */
 	export interface ListDatasetsResponse {
-		Datasets?: Array<Dataset>;
-		Count?: number;
-		NextToken?: string;
+		Datasets?: Array<Dataset> | null;
+		Count?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Returned for a successful ListIdentityPoolUsage request. */
 	export interface ListIdentityPoolUsageResponse {
-		IdentityPoolUsages?: Array<IdentityPoolUsage>;
-		MaxResults?: number;
-		Count?: number;
-		NextToken?: string;
+		IdentityPoolUsages?: Array<IdentityPoolUsage> | null;
+		MaxResults?: number | null;
+		Count?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Returned for a successful ListRecordsRequest. */
 	export interface ListRecordsResponse {
-		Records?: Array<Record>;
-		NextToken?: string;
-		Count?: number;
-		DatasetSyncCount?: number;
-		LastModifiedBy?: string;
-		MergedDatasetNames?: Array<string>;
-		DatasetExists?: boolean;
-		DatasetDeletedAfterRequestedSyncCount?: boolean;
-		SyncSessionToken?: string;
+		Records?: Array<Record> | null;
+		NextToken?: string | null;
+		Count?: number | null;
+		DatasetSyncCount?: number | null;
+		LastModifiedBy?: string | null;
+		MergedDatasetNames?: Array<string> | null;
+		DatasetExists?: boolean | null;
+		DatasetDeletedAfterRequestedSyncCount?: boolean | null;
+		SyncSessionToken?: string | null;
 	}
 
 
 	/** The basic data structure of a dataset. */
 	export interface Record {
-		Key?: string;
-		Value?: string;
-		SyncCount?: number;
-		LastModifiedDate?: Date;
-		LastModifiedBy?: string;
-		DeviceLastModifiedDate?: Date;
+		Key?: string | null;
+		Value?: string | null;
+		SyncCount?: number | null;
+		LastModifiedDate?: Date | null;
+		LastModifiedBy?: string | null;
+		DeviceLastModifiedDate?: Date | null;
 	}
 
 
 	/** Response to a RegisterDevice request. */
 	export interface RegisterDeviceResponse {
-		DeviceId?: string;
+		DeviceId?: string | null;
 	}
 
 	export interface InvalidConfigurationException {
@@ -224,13 +224,13 @@ export namespace MyNS {
 
 	/** The output for the SetIdentityPoolConfiguration operation */
 	export interface SetIdentityPoolConfigurationResponse {
-		IdentityPoolId?: string;
+		IdentityPoolId?: string | null;
 
 		/** Configuration options to be applied to the identity pool. */
-		PushSync?: PushSync;
+		PushSync?: PushSync | null;
 
 		/** Configuration options for configure Cognito streams. */
-		CognitoStreams?: CognitoStreams;
+		CognitoStreams?: CognitoStreams | null;
 	}
 
 	export enum StreamingStatus { ENABLED = 0, DISABLED = 1 }
@@ -254,7 +254,7 @@ export namespace MyNS {
 
 	/** Returned for a successful UpdateRecordsRequest. */
 	export interface UpdateRecordsResponse {
-		Records?: Array<Record>;
+		Records?: Array<Record> | null;
 	}
 
 
@@ -262,9 +262,9 @@ export namespace MyNS {
 	export interface RecordPatch {
 		Op: RecordPatchOp;
 		Key: string;
-		Value?: string;
+		Value?: string | null;
 		SyncCount: number;
-		DeviceLastModifiedDate?: Date;
+		DeviceLastModifiedDate?: Date | null;
 	}
 
 	export enum RecordPatchOp { replace = 0, remove = 1 }
@@ -366,10 +366,10 @@ export namespace MyNS {
 	export interface SetIdentityPoolConfigurationRequest {
 
 		/** Configuration options to be applied to the identity pool. */
-		PushSync?: PushSync;
+		PushSync?: PushSync | null;
 
 		/** Configuration options for configure Cognito streams. */
-		CognitoStreams?: CognitoStreams;
+		CognitoStreams?: CognitoStreams | null;
 	}
 
 
@@ -385,8 +385,8 @@ export namespace MyNS {
 
 	/** A request to post updates to records or add and delete records for a dataset and user. */
 	export interface UpdateRecordsRequest {
-		DeviceId?: string;
-		RecordPatches?: Array<RecordPatch>;
+		DeviceId?: string | null;
+		RecordPatches?: Array<RecordPatch> | null;
 		SyncSessionToken: string;
 	}
 
@@ -521,7 +521,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned.
 		 * @return {ListDatasetsResponse} Success
 		 */
-		ListDatasets(IdentityPoolId: string, IdentityId: string, nextToken: string, maxResults: number): Observable<ListDatasetsResponse> {
+		ListDatasets(IdentityPoolId: string, IdentityId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDatasetsResponse> {
 			return this.http.get<ListDatasetsResponse>(this.baseUri + 'identitypools/' + (IdentityPoolId == null ? '' : encodeURIComponent(IdentityPoolId)) + '/identities/' + (IdentityId == null ? '' : encodeURIComponent(IdentityId)) + '/datasets&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -532,7 +532,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned.
 		 * @return {ListIdentityPoolUsageResponse} Success
 		 */
-		ListIdentityPoolUsage(nextToken: string, maxResults: number): Observable<ListIdentityPoolUsageResponse> {
+		ListIdentityPoolUsage(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListIdentityPoolUsageResponse> {
 			return this.http.get<ListIdentityPoolUsageResponse>(this.baseUri + 'identitypools?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -548,7 +548,7 @@ export namespace MyNS {
 		 * @param {string} syncSessionToken A token containing a session ID, identity ID, and expiration.
 		 * @return {ListRecordsResponse} Success
 		 */
-		ListRecords(IdentityPoolId: string, IdentityId: string, DatasetName: string, lastSyncCount: number, nextToken: string, maxResults: number, syncSessionToken: string): Observable<ListRecordsResponse> {
+		ListRecords(IdentityPoolId: string, IdentityId: string, DatasetName: string, lastSyncCount: number | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined, syncSessionToken: string | null | undefined): Observable<ListRecordsResponse> {
 			return this.http.get<ListRecordsResponse>(this.baseUri + 'identitypools/' + (IdentityPoolId == null ? '' : encodeURIComponent(IdentityPoolId)) + '/identities/' + (IdentityId == null ? '' : encodeURIComponent(IdentityId)) + '/datasets/' + (DatasetName == null ? '' : encodeURIComponent(DatasetName)) + '/records&lastSyncCount=' + lastSyncCount + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&syncSessionToken=' + (syncSessionToken == null ? '' : encodeURIComponent(syncSessionToken)), {});
 		}
 
@@ -597,10 +597,10 @@ export namespace MyNS {
 		 * Max length: 256
 		 * Min length: 1
 		 */
-		DeviceId?: string;
+		DeviceId?: string | null;
 
 		/** A list of patch operations. */
-		RecordPatches?: Array<RecordPatch>;
+		RecordPatches?: Array<RecordPatch> | null;
 
 		/**
 		 * The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
@@ -621,21 +621,21 @@ export namespace MyNS {
 	export interface SetIdentityPoolConfigurationPostBody {
 
 		/** Configuration options to be applied to the identity pool. */
-		PushSync?: SetIdentityPoolConfigurationPostBodyPushSync;
+		PushSync?: SetIdentityPoolConfigurationPostBodyPushSync | null;
 
 		/** Configuration options for configure Cognito streams. */
-		CognitoStreams?: SetIdentityPoolConfigurationPostBodyCognitoStreams;
+		CognitoStreams?: SetIdentityPoolConfigurationPostBodyCognitoStreams | null;
 	}
 
 	export interface SetIdentityPoolConfigurationPostBodyPushSync {
-		ApplicationArns?: Array<string>;
-		RoleArn?: string;
+		ApplicationArns?: Array<string> | null;
+		RoleArn?: string | null;
 	}
 
 	export interface SetIdentityPoolConfigurationPostBodyCognitoStreams {
-		StreamName?: string;
-		RoleArn?: string;
-		StreamingStatus?: CognitoStreamsStreamingStatus;
+		StreamName?: string | null;
+		RoleArn?: string | null;
+		StreamingStatus?: CognitoStreamsStreamingStatus | null;
 	}
 
 	export interface RegisterDevicePostBody {

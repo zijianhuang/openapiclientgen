@@ -11,7 +11,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_AnnotateVideoProgress {
 
 		/** Progress metadata for all videos specified in `AnnotateVideoRequest`. */
-		annotationProgress?: Array<GoogleCloudVideointelligenceV1_VideoAnnotationProgress>;
+		annotationProgress?: Array<GoogleCloudVideointelligenceV1_VideoAnnotationProgress> | null;
 	}
 
 
@@ -22,28 +22,28 @@ export namespace MyNS {
 		 * Specifies which feature is being tracked if the request contains more than
 		 * one features.
 		 */
-		feature?: GoogleCloudVideointelligenceV1_VideoAnnotationProgressFeature;
+		feature?: GoogleCloudVideointelligenceV1_VideoAnnotationProgressFeature | null;
 
 		/**
 		 * Video file location in
 		 * [Cloud Storage](https://cloud.google.com/storage/).
 		 */
-		inputUri?: string;
+		inputUri?: string | null;
 
 		/**
 		 * Approximate percentage processed thus far. Guaranteed to be
 		 * 100 when fully processed.
 		 */
-		progressPercent?: number;
+		progressPercent?: number | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1_VideoSegment | null;
 
 		/** Time when the request was received. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** Time of the most recent update. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 	export enum GoogleCloudVideointelligenceV1_VideoAnnotationProgressFeature { FEATURE_UNSPECIFIED = 0, LABEL_DETECTION = 1, SHOT_CHANGE_DETECTION = 2, EXPLICIT_CONTENT_DETECTION = 3, SPEECH_TRANSCRIPTION = 4, TEXT_DETECTION = 5, OBJECT_TRACKING = 6, LOGO_RECOGNITION = 7 }
@@ -56,13 +56,13 @@ export namespace MyNS {
 		 * Time-offset, relative to the beginning of the video,
 		 * corresponding to the end of the segment (inclusive).
 		 */
-		endTimeOffset?: string;
+		endTimeOffset?: string | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video,
 		 * corresponding to the start of the segment (inclusive).
 		 */
-		startTimeOffset?: string;
+		startTimeOffset?: string | null;
 	}
 
 
@@ -70,14 +70,14 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_AnnotateVideoRequest {
 
 		/** Required. Requested video annotation features. */
-		features?: Array<GoogleCloudVideointelligenceV1_VideoAnnotationProgressFeature>;
+		features?: Array<GoogleCloudVideointelligenceV1_VideoAnnotationProgressFeature> | null;
 
 		/**
 		 * The video data bytes.
 		 * If unset, the input video(s) should be specified via `input_uri`.
 		 * If set, `input_uri` should be unset.
 		 */
-		inputContent?: string;
+		inputContent?: string | null;
 
 		/**
 		 * Input video location. Currently, only
@@ -91,14 +91,14 @@ export namespace MyNS {
 		 * '?' to match 1 character. If unset, the input video should be embedded
 		 * in the request as `input_content`. If set, `input_content` should be unset.
 		 */
-		inputUri?: string;
+		inputUri?: string | null;
 
 		/**
 		 * Optional. Cloud region where annotation should take place. Supported cloud
 		 * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
 		 * is specified, a region will be determined based on video file location.
 		 */
-		locationId?: string;
+		locationId?: string | null;
 
 		/**
 		 * Optional. Location where the output (in JSON format) should be stored.
@@ -108,10 +108,10 @@ export namespace MyNS {
 		 * google.rpc.Code.INVALID_ARGUMENT). For more information, see
 		 * [Request URIs](https://cloud.google.com/storage/docs/request-endpoints).
 		 */
-		outputUri?: string;
+		outputUri?: string | null;
 
 		/** Video context and/or feature-specific parameters. */
-		videoContext?: GoogleCloudVideointelligenceV1_VideoContext;
+		videoContext?: GoogleCloudVideointelligenceV1_VideoContext | null;
 	}
 
 
@@ -119,29 +119,29 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_VideoContext {
 
 		/** Config for EXPLICIT_CONTENT_DETECTION. */
-		explicitContentDetectionConfig?: GoogleCloudVideointelligenceV1_ExplicitContentDetectionConfig;
+		explicitContentDetectionConfig?: GoogleCloudVideointelligenceV1_ExplicitContentDetectionConfig | null;
 
 		/** Config for LABEL_DETECTION. */
-		labelDetectionConfig?: GoogleCloudVideointelligenceV1_LabelDetectionConfig;
+		labelDetectionConfig?: GoogleCloudVideointelligenceV1_LabelDetectionConfig | null;
 
 		/** Config for OBJECT_TRACKING. */
-		objectTrackingConfig?: GoogleCloudVideointelligenceV1_ObjectTrackingConfig;
+		objectTrackingConfig?: GoogleCloudVideointelligenceV1_ObjectTrackingConfig | null;
 
 		/**
 		 * Video segments to annotate. The segments may overlap and are not required
 		 * to be contiguous or span the whole video. If unspecified, each video is
 		 * treated as a single segment.
 		 */
-		segments?: Array<GoogleCloudVideointelligenceV1_VideoSegment>;
+		segments?: Array<GoogleCloudVideointelligenceV1_VideoSegment> | null;
 
 		/** Config for SHOT_CHANGE_DETECTION. */
-		shotChangeDetectionConfig?: GoogleCloudVideointelligenceV1_ShotChangeDetectionConfig;
+		shotChangeDetectionConfig?: GoogleCloudVideointelligenceV1_ShotChangeDetectionConfig | null;
 
 		/** Config for SPEECH_TRANSCRIPTION. */
-		speechTranscriptionConfig?: GoogleCloudVideointelligenceV1_SpeechTranscriptionConfig;
+		speechTranscriptionConfig?: GoogleCloudVideointelligenceV1_SpeechTranscriptionConfig | null;
 
 		/** Config for TEXT_DETECTION. */
-		textDetectionConfig?: GoogleCloudVideointelligenceV1_TextDetectionConfig;
+		textDetectionConfig?: GoogleCloudVideointelligenceV1_TextDetectionConfig | null;
 	}
 
 
@@ -153,7 +153,7 @@ export namespace MyNS {
 		 * Supported values: "builtin/stable" (the default if unset) and
 		 * "builtin/latest".
 		 */
-		model?: string;
+		model?: string | null;
 	}
 
 
@@ -168,28 +168,28 @@ export namespace MyNS {
 		 * Note: for best results please follow the default threshold. We will update
 		 * the default threshold everytime when we release a new model.
 		 */
-		frameConfidenceThreshold?: number;
+		frameConfidenceThreshold?: number | null;
 
 		/**
 		 * What labels should be detected with LABEL_DETECTION, in addition to
 		 * video-level labels or segment-level labels.
 		 * If unspecified, defaults to `SHOT_MODE`.
 		 */
-		labelDetectionMode?: GoogleCloudVideointelligenceV1_LabelDetectionConfigLabelDetectionMode;
+		labelDetectionMode?: GoogleCloudVideointelligenceV1_LabelDetectionConfigLabelDetectionMode | null;
 
 		/**
 		 * Model to use for label detection.
 		 * Supported values: "builtin/stable" (the default if unset) and
 		 * "builtin/latest".
 		 */
-		model?: string;
+		model?: string | null;
 
 		/**
 		 * Whether the video has been shot from a stationary (i.e. non-moving) camera.
 		 * When set to true, might improve detection accuracy for moving objects.
 		 * Should be used with `SHOT_AND_FRAME_MODE` enabled.
 		 */
-		stationaryCamera?: boolean;
+		stationaryCamera?: boolean | null;
 
 		/**
 		 * The confidence threshold we perform filtering on the labels from
@@ -199,7 +199,7 @@ export namespace MyNS {
 		 * Note: for best results please follow the default threshold. We will update
 		 * the default threshold everytime when we release a new model.
 		 */
-		videoConfidenceThreshold?: number;
+		videoConfidenceThreshold?: number | null;
 	}
 
 	export enum GoogleCloudVideointelligenceV1_LabelDetectionConfigLabelDetectionMode { LABEL_DETECTION_MODE_UNSPECIFIED = 0, SHOT_MODE = 1, FRAME_MODE = 2, SHOT_AND_FRAME_MODE = 3 }
@@ -213,7 +213,7 @@ export namespace MyNS {
 		 * Supported values: "builtin/stable" (the default if unset) and
 		 * "builtin/latest".
 		 */
-		model?: string;
+		model?: string | null;
 	}
 
 
@@ -225,7 +225,7 @@ export namespace MyNS {
 		 * Supported values: "builtin/stable" (the default if unset) and
 		 * "builtin/latest".
 		 */
-		model?: string;
+		model?: string | null;
 	}
 
 
@@ -236,14 +236,14 @@ export namespace MyNS {
 		 * Optional. For file formats, such as MXF or MKV, supporting multiple audio
 		 * tracks, specify up to two tracks. Default: track 0.
 		 */
-		audioTracks?: Array<number>;
+		audioTracks?: Array<number> | null;
 
 		/**
 		 * Optional. If set, specifies the estimated number of speakers in the conversation.
 		 * If not set, defaults to '2'.
 		 * Ignored unless enable_speaker_diarization is set to true.
 		 */
-		diarizationSpeakerCount?: number;
+		diarizationSpeakerCount?: number | null;
 
 		/**
 		 * Optional. If 'true', adds punctuation to recognition result hypotheses.
@@ -253,7 +253,7 @@ export namespace MyNS {
 		 * offered as an experimental service, complimentary to all users. In the
 		 * future this may be exclusively available as a premium feature."
 		 */
-		enableAutomaticPunctuation?: boolean;
+		enableAutomaticPunctuation?: boolean | null;
 
 		/**
 		 * Optional. If 'true', enables speaker detection for each recognized word in
@@ -264,14 +264,14 @@ export namespace MyNS {
 		 * This is done in order to improve our speaker tags as our models learn to
 		 * identify the speakers in the conversation over time.
 		 */
-		enableSpeakerDiarization?: boolean;
+		enableSpeakerDiarization?: boolean | null;
 
 		/**
 		 * Optional. If `true`, the top result includes a list of words and the
 		 * confidence for those words. If `false`, no word-level confidence
 		 * information is returned. The default is `false`.
 		 */
-		enableWordConfidence?: boolean;
+		enableWordConfidence?: boolean | null;
 
 		/**
 		 * Optional. If set to `true`, the server will attempt to filter out
@@ -279,7 +279,7 @@ export namespace MyNS {
 		 * with asterisks, e.g. "f***". If set to `false` or omitted, profanities
 		 * won't be filtered out.
 		 */
-		filterProfanity?: boolean;
+		filterProfanity?: boolean | null;
 
 		/**
 		 * Required. *Required* The language of the supplied audio as a
@@ -288,7 +288,7 @@ export namespace MyNS {
 		 * See [Language Support](https://cloud.google.com/speech/docs/languages)
 		 * for a list of the currently supported language codes.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 
 		/**
 		 * Optional. Maximum number of recognition hypotheses to be returned.
@@ -297,10 +297,10 @@ export namespace MyNS {
 		 * `max_alternatives`. Valid values are `0`-`30`. A value of `0` or `1` will
 		 * return a maximum of one. If omitted, will return a maximum of one.
 		 */
-		maxAlternatives?: number;
+		maxAlternatives?: number | null;
 
 		/** Optional. A means to provide context to assist the speech recognition. */
-		speechContexts?: Array<GoogleCloudVideointelligenceV1_SpeechContext>;
+		speechContexts?: Array<GoogleCloudVideointelligenceV1_SpeechContext> | null;
 	}
 
 
@@ -318,7 +318,7 @@ export namespace MyNS {
 		 * to add additional words to the vocabulary of the recognizer. See
 		 * [usage limits](https://cloud.google.com/speech/limits#content).
 		 */
-		phrases?: Array<string>;
+		phrases?: Array<string> | null;
 	}
 
 
@@ -331,14 +331,14 @@ export namespace MyNS {
 		 * be language code in BCP-47 format.
 		 * Automatic language detection is performed if no hint is provided.
 		 */
-		languageHints?: Array<string>;
+		languageHints?: Array<string> | null;
 
 		/**
 		 * Model to use for text detection.
 		 * Supported values: "builtin/stable" (the default if unset) and
 		 * "builtin/latest".
 		 */
-		model?: string;
+		model?: string | null;
 	}
 
 
@@ -350,7 +350,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_AnnotateVideoResponse {
 
 		/** Annotation results for all videos specified in `AnnotateVideoRequest`. */
-		annotationResults?: Array<GoogleCloudVideointelligenceV1_VideoAnnotationResults>;
+		annotationResults?: Array<GoogleCloudVideointelligenceV1_VideoAnnotationResults> | null;
 	}
 
 
@@ -365,41 +365,41 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: GoogleRpc_Status;
+		error?: GoogleRpc_Status | null;
 
 		/**
 		 * Explicit content annotation (based on per-frame visual signals only).
 		 * If no explicit content has been detected in a frame, no annotations are
 		 * present for that frame.
 		 */
-		explicitAnnotation?: GoogleCloudVideointelligenceV1_ExplicitContentAnnotation;
+		explicitAnnotation?: GoogleCloudVideointelligenceV1_ExplicitContentAnnotation | null;
 
 		/**
 		 * Label annotations on frame level.
 		 * There is exactly one element for each unique label.
 		 */
-		frameLabelAnnotations?: Array<GoogleCloudVideointelligenceV1_LabelAnnotation>;
+		frameLabelAnnotations?: Array<GoogleCloudVideointelligenceV1_LabelAnnotation> | null;
 
 		/**
 		 * Video file location in
 		 * [Cloud Storage](https://cloud.google.com/storage/).
 		 */
-		inputUri?: string;
+		inputUri?: string | null;
 
 		/** Annotations for list of logos detected, tracked and recognized in video. */
-		logoRecognitionAnnotations?: Array<GoogleCloudVideointelligenceV1_LogoRecognitionAnnotation>;
+		logoRecognitionAnnotations?: Array<GoogleCloudVideointelligenceV1_LogoRecognitionAnnotation> | null;
 
 		/** Annotations for list of objects detected and tracked in video. */
-		objectAnnotations?: Array<GoogleCloudVideointelligenceV1_ObjectTrackingAnnotation>;
+		objectAnnotations?: Array<GoogleCloudVideointelligenceV1_ObjectTrackingAnnotation> | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1_VideoSegment | null;
 
 		/**
 		 * Topical label annotations on video level or user specified segment level.
 		 * There is exactly one element for each unique label.
 		 */
-		segmentLabelAnnotations?: Array<GoogleCloudVideointelligenceV1_LabelAnnotation>;
+		segmentLabelAnnotations?: Array<GoogleCloudVideointelligenceV1_LabelAnnotation> | null;
 
 		/**
 		 * Presence label annotations on video level or user specified segment level.
@@ -409,16 +409,16 @@ export namespace MyNS {
 		 * available only when the client sets `LabelDetectionConfig.model` to
 		 * "builtin/latest" in the request.
 		 */
-		segmentPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1_LabelAnnotation>;
+		segmentPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1_LabelAnnotation> | null;
 
 		/** Shot annotations. Each shot is represented as a video segment. */
-		shotAnnotations?: Array<GoogleCloudVideointelligenceV1_VideoSegment>;
+		shotAnnotations?: Array<GoogleCloudVideointelligenceV1_VideoSegment> | null;
 
 		/**
 		 * Topical label annotations on shot level.
 		 * There is exactly one element for each unique label.
 		 */
-		shotLabelAnnotations?: Array<GoogleCloudVideointelligenceV1_LabelAnnotation>;
+		shotLabelAnnotations?: Array<GoogleCloudVideointelligenceV1_LabelAnnotation> | null;
 
 		/**
 		 * Presence label annotations on shot level. There is exactly one element for
@@ -427,17 +427,17 @@ export namespace MyNS {
 		 * labels detected in video content and is made available only when the client
 		 * sets `LabelDetectionConfig.model` to "builtin/latest" in the request.
 		 */
-		shotPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1_LabelAnnotation>;
+		shotPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1_LabelAnnotation> | null;
 
 		/** Speech transcription. */
-		speechTranscriptions?: Array<GoogleCloudVideointelligenceV1_SpeechTranscription>;
+		speechTranscriptions?: Array<GoogleCloudVideointelligenceV1_SpeechTranscription> | null;
 
 		/**
 		 * OCR text detection and tracking.
 		 * Annotations for list of detected text snippets. Each will have list of
 		 * frame information associated with it.
 		 */
-		textAnnotations?: Array<GoogleCloudVideointelligenceV1_TextAnnotation>;
+		textAnnotations?: Array<GoogleCloudVideointelligenceV1_TextAnnotation> | null;
 	}
 
 
@@ -452,20 +452,20 @@ export namespace MyNS {
 	export interface GoogleRpc_Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -477,7 +477,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_ExplicitContentAnnotation {
 
 		/** All video frames where explicit content was detected. */
-		frames?: Array<GoogleCloudVideointelligenceV1_ExplicitContentFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1_ExplicitContentFrame> | null;
 	}
 
 
@@ -485,13 +485,13 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_ExplicitContentFrame {
 
 		/** Likelihood of the pornography content.. */
-		pornographyLikelihood?: GoogleCloudVideointelligenceV1_ExplicitContentFramePornographyLikelihood;
+		pornographyLikelihood?: GoogleCloudVideointelligenceV1_ExplicitContentFramePornographyLikelihood | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video, corresponding to the
 		 * video frame for this location.
 		 */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 	export enum GoogleCloudVideointelligenceV1_ExplicitContentFramePornographyLikelihood { LIKELIHOOD_UNSPECIFIED = 0, VERY_UNLIKELY = 1, UNLIKELY = 2, POSSIBLE = 3, LIKELY = 4, VERY_LIKELY = 5 }
@@ -506,16 +506,16 @@ export namespace MyNS {
 		 * cases there might be more than one categories e.g. `Terrier` could also be
 		 * a `pet`.
 		 */
-		categoryEntities?: Array<GoogleCloudVideointelligenceV1_Entity>;
+		categoryEntities?: Array<GoogleCloudVideointelligenceV1_Entity> | null;
 
 		/** Detected entity from video analysis. */
-		entity?: GoogleCloudVideointelligenceV1_Entity;
+		entity?: GoogleCloudVideointelligenceV1_Entity | null;
 
 		/** All video frames where a label was detected. */
-		frames?: Array<GoogleCloudVideointelligenceV1_LabelFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1_LabelFrame> | null;
 
 		/** All video segments where a label was detected. */
-		segments?: Array<GoogleCloudVideointelligenceV1_LabelSegment>;
+		segments?: Array<GoogleCloudVideointelligenceV1_LabelSegment> | null;
 	}
 
 
@@ -523,17 +523,17 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_Entity {
 
 		/** Textual description, e.g. `Fixed-gear bicycle`. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Opaque entity ID. Some IDs may be available in
 		 * [Google Knowledge Graph Search
 		 * API](https://developers.google.com/knowledge-graph/).
 		 */
-		entityId?: string;
+		entityId?: string | null;
 
 		/** Language code for `description` in BCP-47 format. */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -541,13 +541,13 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_LabelFrame {
 
 		/** Confidence that the label is accurate. Range: [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video, corresponding to the
 		 * video frame for this location.
 		 */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -555,10 +555,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_LabelSegment {
 
 		/** Confidence that the label is accurate. Range: [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1_VideoSegment | null;
 	}
 
 
@@ -566,19 +566,19 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_LogoRecognitionAnnotation {
 
 		/** Detected entity from video analysis. */
-		entity?: GoogleCloudVideointelligenceV1_Entity;
+		entity?: GoogleCloudVideointelligenceV1_Entity | null;
 
 		/**
 		 * All video segments where the recognized logo appears. There might be
 		 * multiple instances of the same logo class appearing in one VideoSegment.
 		 */
-		segments?: Array<GoogleCloudVideointelligenceV1_VideoSegment>;
+		segments?: Array<GoogleCloudVideointelligenceV1_VideoSegment> | null;
 
 		/**
 		 * All logo tracks where the recognized logo appears. Each track corresponds
 		 * to one logo instance appearing in consecutive frames.
 		 */
-		tracks?: Array<GoogleCloudVideointelligenceV1_Track>;
+		tracks?: Array<GoogleCloudVideointelligenceV1_Track> | null;
 	}
 
 
@@ -586,16 +586,16 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_Track {
 
 		/** Optional. Attributes in the track level. */
-		attributes?: Array<GoogleCloudVideointelligenceV1_DetectedAttribute>;
+		attributes?: Array<GoogleCloudVideointelligenceV1_DetectedAttribute> | null;
 
 		/** Optional. The confidence score of the tracked object. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1_VideoSegment | null;
 
 		/** The object with timestamp and attributes per frame in the track. */
-		timestampedObjects?: Array<GoogleCloudVideointelligenceV1_TimestampedObject>;
+		timestampedObjects?: Array<GoogleCloudVideointelligenceV1_TimestampedObject> | null;
 	}
 
 
@@ -603,19 +603,19 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_DetectedAttribute {
 
 		/** Detected attribute confidence. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * The name of the attribute, i.e. glasses, dark_glasses, mouth_open etc.
 		 * A full list of supported type names will be provided in the document.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Text value of the detection result. For example, the value for "HairColor"
 		 * can be "black", "blonde", etc.
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -627,23 +627,23 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_TimestampedObject {
 
 		/** Optional. The attributes of the object in the bounding box. */
-		attributes?: Array<GoogleCloudVideointelligenceV1_DetectedAttribute>;
+		attributes?: Array<GoogleCloudVideointelligenceV1_DetectedAttribute> | null;
 
 		/** Optional. The detected landmarks. */
-		landmarks?: Array<GoogleCloudVideointelligenceV1_DetectedLandmark>;
+		landmarks?: Array<GoogleCloudVideointelligenceV1_DetectedLandmark> | null;
 
 		/**
 		 * Normalized bounding box.
 		 * The normalized vertex coordinates are relative to the original image.
 		 * Range: [0, 1].
 		 */
-		normalizedBoundingBox?: GoogleCloudVideointelligenceV1_NormalizedBoundingBox;
+		normalizedBoundingBox?: GoogleCloudVideointelligenceV1_NormalizedBoundingBox | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video,
 		 * corresponding to the video frame for this object.
 		 */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -654,17 +654,17 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_DetectedLandmark {
 
 		/** The confidence score of the detected landmark. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** The name of this landmark, i.e. left_hand, right_shoulder. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * A vertex represents a 2D point in the image.
 		 * NOTE: the normalized vertex coordinates are relative to the original image
 		 * and range from 0 to 1.
 		 */
-		point?: GoogleCloudVideointelligenceV1_NormalizedVertex;
+		point?: GoogleCloudVideointelligenceV1_NormalizedVertex | null;
 	}
 
 
@@ -676,10 +676,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_NormalizedVertex {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 	}
 
 
@@ -691,16 +691,16 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_NormalizedBoundingBox {
 
 		/** Bottom Y coordinate. */
-		bottom?: number;
+		bottom?: number | null;
 
 		/** Left X coordinate. */
-		left?: number;
+		left?: number | null;
 
 		/** Right X coordinate. */
-		right?: number;
+		right?: number | null;
 
 		/** Top Y coordinate. */
-		top?: number;
+		top?: number | null;
 	}
 
 
@@ -708,10 +708,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_ObjectTrackingAnnotation {
 
 		/** Object category's labeling confidence of this track. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Detected entity from video analysis. */
-		entity?: GoogleCloudVideointelligenceV1_Entity;
+		entity?: GoogleCloudVideointelligenceV1_Entity | null;
 
 		/**
 		 * Information corresponding to all frames where this object track appears.
@@ -719,10 +719,10 @@ export namespace MyNS {
 		 * messages in frames.
 		 * Streaming mode: it can only be one ObjectTrackingFrame message in frames.
 		 */
-		frames?: Array<GoogleCloudVideointelligenceV1_ObjectTrackingFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1_ObjectTrackingFrame> | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1_VideoSegment | null;
 
 		/**
 		 * Streaming mode ONLY.
@@ -732,7 +732,7 @@ export namespace MyNS {
 		 * the customers can correlate the results of the ongoing
 		 * ObjectTrackAnnotation of the same track_id over time.
 		 */
-		trackId?: string;
+		trackId?: string | null;
 	}
 
 
@@ -747,10 +747,10 @@ export namespace MyNS {
 		 * The normalized vertex coordinates are relative to the original image.
 		 * Range: [0, 1].
 		 */
-		normalizedBoundingBox?: GoogleCloudVideointelligenceV1_NormalizedBoundingBox;
+		normalizedBoundingBox?: GoogleCloudVideointelligenceV1_NormalizedBoundingBox | null;
 
 		/** The timestamp of the frame in microseconds. */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -763,14 +763,14 @@ export namespace MyNS {
 		 * accuracy, with the top (first) alternative being the most probable, as
 		 * ranked by the recognizer.
 		 */
-		alternatives?: Array<GoogleCloudVideointelligenceV1_SpeechRecognitionAlternative>;
+		alternatives?: Array<GoogleCloudVideointelligenceV1_SpeechRecognitionAlternative> | null;
 
 		/**
 		 * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of
 		 * the language in this result. This language code was detected to have the
 		 * most likelihood of being spoken in the audio.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -785,17 +785,17 @@ export namespace MyNS {
 		 * to be always provided.
 		 * The default of 0.0 is a sentinel value indicating `confidence` was not set.
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Transcript text representing the words that the user spoke. */
-		transcript?: string;
+		transcript?: string | null;
 
 		/**
 		 * Output only. A list of word-specific information for each recognized word.
 		 * Note: When `enable_speaker_diarization` is true, you will see all the words
 		 * from the beginning of the audio.
 		 */
-		words?: Array<GoogleCloudVideointelligenceV1_WordInfo>;
+		words?: Array<GoogleCloudVideointelligenceV1_WordInfo> | null;
 	}
 
 
@@ -814,7 +814,7 @@ export namespace MyNS {
 		 * to be always provided.
 		 * The default of 0.0 is a sentinel value indicating `confidence` was not set.
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Time offset relative to the beginning of the audio, and
@@ -822,7 +822,7 @@ export namespace MyNS {
 		 * `enable_word_time_offsets=true` and only in the top hypothesis. This is an
 		 * experimental feature and the accuracy of the time offset can vary.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * Output only. A distinct integer value is assigned for every speaker within
@@ -830,7 +830,7 @@ export namespace MyNS {
 		 * have spoken this word. Value ranges from 1 up to diarization_speaker_count,
 		 * and is only set if speaker diarization is enabled.
 		 */
-		speakerTag?: number;
+		speakerTag?: number | null;
 
 		/**
 		 * Time offset relative to the beginning of the audio, and
@@ -838,10 +838,10 @@ export namespace MyNS {
 		 * `enable_word_time_offsets=true` and only in the top hypothesis. This is an
 		 * experimental feature and the accuracy of the time offset can vary.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** The word corresponding to this set of information. */
-		word?: string;
+		word?: string | null;
 	}
 
 
@@ -853,10 +853,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_TextAnnotation {
 
 		/** All video segments where OCR detected text appears. */
-		segments?: Array<GoogleCloudVideointelligenceV1_TextSegment>;
+		segments?: Array<GoogleCloudVideointelligenceV1_TextSegment> | null;
 
 		/** The detected text. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -867,13 +867,13 @@ export namespace MyNS {
 		 * Confidence for the track of detected text. It is calculated as the highest
 		 * over all frames where OCR detected text appears.
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Information related to the frames where OCR detected text appears. */
-		frames?: Array<GoogleCloudVideointelligenceV1_TextFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1_TextFrame> | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1_VideoSegment | null;
 	}
 
 
@@ -901,10 +901,10 @@ export namespace MyNS {
 		 * than 0, or greater than 1 due to trignometric calculations for location of
 		 * the box.
 		 */
-		rotatedBoundingBox?: GoogleCloudVideointelligenceV1_NormalizedBoundingPoly;
+		rotatedBoundingBox?: GoogleCloudVideointelligenceV1_NormalizedBoundingPoly | null;
 
 		/** Timestamp of this frame. */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -928,7 +928,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1_NormalizedBoundingPoly {
 
 		/** Normalized vertices of the bounding polygon. */
-		vertices?: Array<GoogleCloudVideointelligenceV1_NormalizedVertex>;
+		vertices?: Array<GoogleCloudVideointelligenceV1_NormalizedVertex> | null;
 	}
 
 
@@ -940,7 +940,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1beta2_AnnotateVideoProgress {
 
 		/** Progress metadata for all videos specified in `AnnotateVideoRequest`. */
-		annotationProgress?: Array<GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress>;
+		annotationProgress?: Array<GoogleCloudVideointelligenceV1beta2_VideoAnnotationProgress> | null;
 	}
 
 
@@ -951,28 +951,28 @@ export namespace MyNS {
 		 * Specifies which feature is being tracked if the request contains more than
 		 * one features.
 		 */
-		feature?: GoogleCloudVideointelligenceV1_VideoAnnotationProgressFeature;
+		feature?: GoogleCloudVideointelligenceV1_VideoAnnotationProgressFeature | null;
 
 		/**
 		 * Video file location in
 		 * [Cloud Storage](https://cloud.google.com/storage/).
 		 */
-		inputUri?: string;
+		inputUri?: string | null;
 
 		/**
 		 * Approximate percentage processed thus far. Guaranteed to be
 		 * 100 when fully processed.
 		 */
-		progressPercent?: number;
+		progressPercent?: number | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1beta2_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1beta2_VideoSegment | null;
 
 		/** Time when the request was received. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** Time of the most recent update. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -983,13 +983,13 @@ export namespace MyNS {
 		 * Time-offset, relative to the beginning of the video,
 		 * corresponding to the end of the segment (inclusive).
 		 */
-		endTimeOffset?: string;
+		endTimeOffset?: string | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video,
 		 * corresponding to the start of the segment (inclusive).
 		 */
-		startTimeOffset?: string;
+		startTimeOffset?: string | null;
 	}
 
 
@@ -1001,7 +1001,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1beta2_AnnotateVideoResponse {
 
 		/** Annotation results for all videos specified in `AnnotateVideoRequest`. */
-		annotationResults?: Array<GoogleCloudVideointelligenceV1beta2_VideoAnnotationResults>;
+		annotationResults?: Array<GoogleCloudVideointelligenceV1beta2_VideoAnnotationResults> | null;
 	}
 
 
@@ -1016,41 +1016,41 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: GoogleRpc_Status;
+		error?: GoogleRpc_Status | null;
 
 		/**
 		 * Explicit content annotation (based on per-frame visual signals only).
 		 * If no explicit content has been detected in a frame, no annotations are
 		 * present for that frame.
 		 */
-		explicitAnnotation?: GoogleCloudVideointelligenceV1beta2_ExplicitContentAnnotation;
+		explicitAnnotation?: GoogleCloudVideointelligenceV1beta2_ExplicitContentAnnotation | null;
 
 		/**
 		 * Label annotations on frame level.
 		 * There is exactly one element for each unique label.
 		 */
-		frameLabelAnnotations?: Array<GoogleCloudVideointelligenceV1beta2_LabelAnnotation>;
+		frameLabelAnnotations?: Array<GoogleCloudVideointelligenceV1beta2_LabelAnnotation> | null;
 
 		/**
 		 * Video file location in
 		 * [Cloud Storage](https://cloud.google.com/storage/).
 		 */
-		inputUri?: string;
+		inputUri?: string | null;
 
 		/** Annotations for list of logos detected, tracked and recognized in video. */
-		logoRecognitionAnnotations?: Array<GoogleCloudVideointelligenceV1beta2_LogoRecognitionAnnotation>;
+		logoRecognitionAnnotations?: Array<GoogleCloudVideointelligenceV1beta2_LogoRecognitionAnnotation> | null;
 
 		/** Annotations for list of objects detected and tracked in video. */
-		objectAnnotations?: Array<GoogleCloudVideointelligenceV1beta2_ObjectTrackingAnnotation>;
+		objectAnnotations?: Array<GoogleCloudVideointelligenceV1beta2_ObjectTrackingAnnotation> | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1beta2_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1beta2_VideoSegment | null;
 
 		/**
 		 * Topical label annotations on video level or user specified segment level.
 		 * There is exactly one element for each unique label.
 		 */
-		segmentLabelAnnotations?: Array<GoogleCloudVideointelligenceV1beta2_LabelAnnotation>;
+		segmentLabelAnnotations?: Array<GoogleCloudVideointelligenceV1beta2_LabelAnnotation> | null;
 
 		/**
 		 * Presence label annotations on video level or user specified segment level.
@@ -1060,16 +1060,16 @@ export namespace MyNS {
 		 * available only when the client sets `LabelDetectionConfig.model` to
 		 * "builtin/latest" in the request.
 		 */
-		segmentPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1beta2_LabelAnnotation>;
+		segmentPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1beta2_LabelAnnotation> | null;
 
 		/** Shot annotations. Each shot is represented as a video segment. */
-		shotAnnotations?: Array<GoogleCloudVideointelligenceV1beta2_VideoSegment>;
+		shotAnnotations?: Array<GoogleCloudVideointelligenceV1beta2_VideoSegment> | null;
 
 		/**
 		 * Topical label annotations on shot level.
 		 * There is exactly one element for each unique label.
 		 */
-		shotLabelAnnotations?: Array<GoogleCloudVideointelligenceV1beta2_LabelAnnotation>;
+		shotLabelAnnotations?: Array<GoogleCloudVideointelligenceV1beta2_LabelAnnotation> | null;
 
 		/**
 		 * Presence label annotations on shot level. There is exactly one element for
@@ -1078,17 +1078,17 @@ export namespace MyNS {
 		 * labels detected in video content and is made available only when the client
 		 * sets `LabelDetectionConfig.model` to "builtin/latest" in the request.
 		 */
-		shotPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1beta2_LabelAnnotation>;
+		shotPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1beta2_LabelAnnotation> | null;
 
 		/** Speech transcription. */
-		speechTranscriptions?: Array<GoogleCloudVideointelligenceV1beta2_SpeechTranscription>;
+		speechTranscriptions?: Array<GoogleCloudVideointelligenceV1beta2_SpeechTranscription> | null;
 
 		/**
 		 * OCR text detection and tracking.
 		 * Annotations for list of detected text snippets. Each will have list of
 		 * frame information associated with it.
 		 */
-		textAnnotations?: Array<GoogleCloudVideointelligenceV1beta2_TextAnnotation>;
+		textAnnotations?: Array<GoogleCloudVideointelligenceV1beta2_TextAnnotation> | null;
 	}
 
 
@@ -1100,7 +1100,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1beta2_ExplicitContentAnnotation {
 
 		/** All video frames where explicit content was detected. */
-		frames?: Array<GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame> | null;
 	}
 
 
@@ -1108,13 +1108,13 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1beta2_ExplicitContentFrame {
 
 		/** Likelihood of the pornography content.. */
-		pornographyLikelihood?: GoogleCloudVideointelligenceV1_ExplicitContentFramePornographyLikelihood;
+		pornographyLikelihood?: GoogleCloudVideointelligenceV1_ExplicitContentFramePornographyLikelihood | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video, corresponding to the
 		 * video frame for this location.
 		 */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -1127,16 +1127,16 @@ export namespace MyNS {
 		 * cases there might be more than one categories e.g. `Terrier` could also be
 		 * a `pet`.
 		 */
-		categoryEntities?: Array<GoogleCloudVideointelligenceV1beta2_Entity>;
+		categoryEntities?: Array<GoogleCloudVideointelligenceV1beta2_Entity> | null;
 
 		/** Detected entity from video analysis. */
-		entity?: GoogleCloudVideointelligenceV1beta2_Entity;
+		entity?: GoogleCloudVideointelligenceV1beta2_Entity | null;
 
 		/** All video frames where a label was detected. */
-		frames?: Array<GoogleCloudVideointelligenceV1beta2_LabelFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1beta2_LabelFrame> | null;
 
 		/** All video segments where a label was detected. */
-		segments?: Array<GoogleCloudVideointelligenceV1beta2_LabelSegment>;
+		segments?: Array<GoogleCloudVideointelligenceV1beta2_LabelSegment> | null;
 	}
 
 
@@ -1144,17 +1144,17 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1beta2_Entity {
 
 		/** Textual description, e.g. `Fixed-gear bicycle`. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Opaque entity ID. Some IDs may be available in
 		 * [Google Knowledge Graph Search
 		 * API](https://developers.google.com/knowledge-graph/).
 		 */
-		entityId?: string;
+		entityId?: string | null;
 
 		/** Language code for `description` in BCP-47 format. */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -1162,13 +1162,13 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1beta2_LabelFrame {
 
 		/** Confidence that the label is accurate. Range: [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video, corresponding to the
 		 * video frame for this location.
 		 */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -1176,10 +1176,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1beta2_LabelSegment {
 
 		/** Confidence that the label is accurate. Range: [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1beta2_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1beta2_VideoSegment | null;
 	}
 
 
@@ -1187,19 +1187,19 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1beta2_LogoRecognitionAnnotation {
 
 		/** Detected entity from video analysis. */
-		entity?: GoogleCloudVideointelligenceV1beta2_Entity;
+		entity?: GoogleCloudVideointelligenceV1beta2_Entity | null;
 
 		/**
 		 * All video segments where the recognized logo appears. There might be
 		 * multiple instances of the same logo class appearing in one VideoSegment.
 		 */
-		segments?: Array<GoogleCloudVideointelligenceV1beta2_VideoSegment>;
+		segments?: Array<GoogleCloudVideointelligenceV1beta2_VideoSegment> | null;
 
 		/**
 		 * All logo tracks where the recognized logo appears. Each track corresponds
 		 * to one logo instance appearing in consecutive frames.
 		 */
-		tracks?: Array<GoogleCloudVideointelligenceV1beta2_Track>;
+		tracks?: Array<GoogleCloudVideointelligenceV1beta2_Track> | null;
 	}
 
 
@@ -1207,16 +1207,16 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1beta2_Track {
 
 		/** Optional. Attributes in the track level. */
-		attributes?: Array<GoogleCloudVideointelligenceV1beta2_DetectedAttribute>;
+		attributes?: Array<GoogleCloudVideointelligenceV1beta2_DetectedAttribute> | null;
 
 		/** Optional. The confidence score of the tracked object. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1beta2_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1beta2_VideoSegment | null;
 
 		/** The object with timestamp and attributes per frame in the track. */
-		timestampedObjects?: Array<GoogleCloudVideointelligenceV1beta2_TimestampedObject>;
+		timestampedObjects?: Array<GoogleCloudVideointelligenceV1beta2_TimestampedObject> | null;
 	}
 
 
@@ -1224,19 +1224,19 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1beta2_DetectedAttribute {
 
 		/** Detected attribute confidence. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * The name of the attribute, i.e. glasses, dark_glasses, mouth_open etc.
 		 * A full list of supported type names will be provided in the document.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Text value of the detection result. For example, the value for "HairColor"
 		 * can be "black", "blonde", etc.
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -1248,23 +1248,23 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1beta2_TimestampedObject {
 
 		/** Optional. The attributes of the object in the bounding box. */
-		attributes?: Array<GoogleCloudVideointelligenceV1beta2_DetectedAttribute>;
+		attributes?: Array<GoogleCloudVideointelligenceV1beta2_DetectedAttribute> | null;
 
 		/** Optional. The detected landmarks. */
-		landmarks?: Array<GoogleCloudVideointelligenceV1beta2_DetectedLandmark>;
+		landmarks?: Array<GoogleCloudVideointelligenceV1beta2_DetectedLandmark> | null;
 
 		/**
 		 * Normalized bounding box.
 		 * The normalized vertex coordinates are relative to the original image.
 		 * Range: [0, 1].
 		 */
-		normalizedBoundingBox?: GoogleCloudVideointelligenceV1beta2_NormalizedBoundingBox;
+		normalizedBoundingBox?: GoogleCloudVideointelligenceV1beta2_NormalizedBoundingBox | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video,
 		 * corresponding to the video frame for this object.
 		 */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -1275,17 +1275,17 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1beta2_DetectedLandmark {
 
 		/** The confidence score of the detected landmark. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** The name of this landmark, i.e. left_hand, right_shoulder. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * A vertex represents a 2D point in the image.
 		 * NOTE: the normalized vertex coordinates are relative to the original image
 		 * and range from 0 to 1.
 		 */
-		point?: GoogleCloudVideointelligenceV1beta2_NormalizedVertex;
+		point?: GoogleCloudVideointelligenceV1beta2_NormalizedVertex | null;
 	}
 
 
@@ -1297,10 +1297,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1beta2_NormalizedVertex {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 	}
 
 
@@ -1312,16 +1312,16 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1beta2_NormalizedBoundingBox {
 
 		/** Bottom Y coordinate. */
-		bottom?: number;
+		bottom?: number | null;
 
 		/** Left X coordinate. */
-		left?: number;
+		left?: number | null;
 
 		/** Right X coordinate. */
-		right?: number;
+		right?: number | null;
 
 		/** Top Y coordinate. */
-		top?: number;
+		top?: number | null;
 	}
 
 
@@ -1329,10 +1329,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1beta2_ObjectTrackingAnnotation {
 
 		/** Object category's labeling confidence of this track. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Detected entity from video analysis. */
-		entity?: GoogleCloudVideointelligenceV1beta2_Entity;
+		entity?: GoogleCloudVideointelligenceV1beta2_Entity | null;
 
 		/**
 		 * Information corresponding to all frames where this object track appears.
@@ -1340,10 +1340,10 @@ export namespace MyNS {
 		 * messages in frames.
 		 * Streaming mode: it can only be one ObjectTrackingFrame message in frames.
 		 */
-		frames?: Array<GoogleCloudVideointelligenceV1beta2_ObjectTrackingFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1beta2_ObjectTrackingFrame> | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1beta2_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1beta2_VideoSegment | null;
 
 		/**
 		 * Streaming mode ONLY.
@@ -1353,7 +1353,7 @@ export namespace MyNS {
 		 * the customers can correlate the results of the ongoing
 		 * ObjectTrackAnnotation of the same track_id over time.
 		 */
-		trackId?: string;
+		trackId?: string | null;
 	}
 
 
@@ -1368,10 +1368,10 @@ export namespace MyNS {
 		 * The normalized vertex coordinates are relative to the original image.
 		 * Range: [0, 1].
 		 */
-		normalizedBoundingBox?: GoogleCloudVideointelligenceV1beta2_NormalizedBoundingBox;
+		normalizedBoundingBox?: GoogleCloudVideointelligenceV1beta2_NormalizedBoundingBox | null;
 
 		/** The timestamp of the frame in microseconds. */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -1384,14 +1384,14 @@ export namespace MyNS {
 		 * accuracy, with the top (first) alternative being the most probable, as
 		 * ranked by the recognizer.
 		 */
-		alternatives?: Array<GoogleCloudVideointelligenceV1beta2_SpeechRecognitionAlternative>;
+		alternatives?: Array<GoogleCloudVideointelligenceV1beta2_SpeechRecognitionAlternative> | null;
 
 		/**
 		 * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of
 		 * the language in this result. This language code was detected to have the
 		 * most likelihood of being spoken in the audio.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -1406,17 +1406,17 @@ export namespace MyNS {
 		 * to be always provided.
 		 * The default of 0.0 is a sentinel value indicating `confidence` was not set.
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Transcript text representing the words that the user spoke. */
-		transcript?: string;
+		transcript?: string | null;
 
 		/**
 		 * Output only. A list of word-specific information for each recognized word.
 		 * Note: When `enable_speaker_diarization` is true, you will see all the words
 		 * from the beginning of the audio.
 		 */
-		words?: Array<GoogleCloudVideointelligenceV1beta2_WordInfo>;
+		words?: Array<GoogleCloudVideointelligenceV1beta2_WordInfo> | null;
 	}
 
 
@@ -1435,7 +1435,7 @@ export namespace MyNS {
 		 * to be always provided.
 		 * The default of 0.0 is a sentinel value indicating `confidence` was not set.
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Time offset relative to the beginning of the audio, and
@@ -1443,7 +1443,7 @@ export namespace MyNS {
 		 * `enable_word_time_offsets=true` and only in the top hypothesis. This is an
 		 * experimental feature and the accuracy of the time offset can vary.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * Output only. A distinct integer value is assigned for every speaker within
@@ -1451,7 +1451,7 @@ export namespace MyNS {
 		 * have spoken this word. Value ranges from 1 up to diarization_speaker_count,
 		 * and is only set if speaker diarization is enabled.
 		 */
-		speakerTag?: number;
+		speakerTag?: number | null;
 
 		/**
 		 * Time offset relative to the beginning of the audio, and
@@ -1459,10 +1459,10 @@ export namespace MyNS {
 		 * `enable_word_time_offsets=true` and only in the top hypothesis. This is an
 		 * experimental feature and the accuracy of the time offset can vary.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** The word corresponding to this set of information. */
-		word?: string;
+		word?: string | null;
 	}
 
 
@@ -1474,10 +1474,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1beta2_TextAnnotation {
 
 		/** All video segments where OCR detected text appears. */
-		segments?: Array<GoogleCloudVideointelligenceV1beta2_TextSegment>;
+		segments?: Array<GoogleCloudVideointelligenceV1beta2_TextSegment> | null;
 
 		/** The detected text. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -1488,13 +1488,13 @@ export namespace MyNS {
 		 * Confidence for the track of detected text. It is calculated as the highest
 		 * over all frames where OCR detected text appears.
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Information related to the frames where OCR detected text appears. */
-		frames?: Array<GoogleCloudVideointelligenceV1beta2_TextFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1beta2_TextFrame> | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1beta2_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1beta2_VideoSegment | null;
 	}
 
 
@@ -1522,10 +1522,10 @@ export namespace MyNS {
 		 * than 0, or greater than 1 due to trignometric calculations for location of
 		 * the box.
 		 */
-		rotatedBoundingBox?: GoogleCloudVideointelligenceV1beta2_NormalizedBoundingPoly;
+		rotatedBoundingBox?: GoogleCloudVideointelligenceV1beta2_NormalizedBoundingPoly | null;
 
 		/** Timestamp of this frame. */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -1549,7 +1549,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1beta2_NormalizedBoundingPoly {
 
 		/** Normalized vertices of the bounding polygon. */
-		vertices?: Array<GoogleCloudVideointelligenceV1beta2_NormalizedVertex>;
+		vertices?: Array<GoogleCloudVideointelligenceV1beta2_NormalizedVertex> | null;
 	}
 
 
@@ -1561,7 +1561,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p1beta1_AnnotateVideoProgress {
 
 		/** Progress metadata for all videos specified in `AnnotateVideoRequest`. */
-		annotationProgress?: Array<GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress>;
+		annotationProgress?: Array<GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationProgress> | null;
 	}
 
 
@@ -1572,28 +1572,28 @@ export namespace MyNS {
 		 * Specifies which feature is being tracked if the request contains more than
 		 * one features.
 		 */
-		feature?: GoogleCloudVideointelligenceV1_VideoAnnotationProgressFeature;
+		feature?: GoogleCloudVideointelligenceV1_VideoAnnotationProgressFeature | null;
 
 		/**
 		 * Video file location in
 		 * [Cloud Storage](https://cloud.google.com/storage/).
 		 */
-		inputUri?: string;
+		inputUri?: string | null;
 
 		/**
 		 * Approximate percentage processed thus far. Guaranteed to be
 		 * 100 when fully processed.
 		 */
-		progressPercent?: number;
+		progressPercent?: number | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1p1beta1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1p1beta1_VideoSegment | null;
 
 		/** Time when the request was received. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** Time of the most recent update. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -1604,13 +1604,13 @@ export namespace MyNS {
 		 * Time-offset, relative to the beginning of the video,
 		 * corresponding to the end of the segment (inclusive).
 		 */
-		endTimeOffset?: string;
+		endTimeOffset?: string | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video,
 		 * corresponding to the start of the segment (inclusive).
 		 */
-		startTimeOffset?: string;
+		startTimeOffset?: string | null;
 	}
 
 
@@ -1622,7 +1622,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p1beta1_AnnotateVideoResponse {
 
 		/** Annotation results for all videos specified in `AnnotateVideoRequest`. */
-		annotationResults?: Array<GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationResults>;
+		annotationResults?: Array<GoogleCloudVideointelligenceV1p1beta1_VideoAnnotationResults> | null;
 	}
 
 
@@ -1637,41 +1637,41 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: GoogleRpc_Status;
+		error?: GoogleRpc_Status | null;
 
 		/**
 		 * Explicit content annotation (based on per-frame visual signals only).
 		 * If no explicit content has been detected in a frame, no annotations are
 		 * present for that frame.
 		 */
-		explicitAnnotation?: GoogleCloudVideointelligenceV1p1beta1_ExplicitContentAnnotation;
+		explicitAnnotation?: GoogleCloudVideointelligenceV1p1beta1_ExplicitContentAnnotation | null;
 
 		/**
 		 * Label annotations on frame level.
 		 * There is exactly one element for each unique label.
 		 */
-		frameLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation>;
+		frameLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation> | null;
 
 		/**
 		 * Video file location in
 		 * [Cloud Storage](https://cloud.google.com/storage/).
 		 */
-		inputUri?: string;
+		inputUri?: string | null;
 
 		/** Annotations for list of logos detected, tracked and recognized in video. */
-		logoRecognitionAnnotations?: Array<GoogleCloudVideointelligenceV1p1beta1_LogoRecognitionAnnotation>;
+		logoRecognitionAnnotations?: Array<GoogleCloudVideointelligenceV1p1beta1_LogoRecognitionAnnotation> | null;
 
 		/** Annotations for list of objects detected and tracked in video. */
-		objectAnnotations?: Array<GoogleCloudVideointelligenceV1p1beta1_ObjectTrackingAnnotation>;
+		objectAnnotations?: Array<GoogleCloudVideointelligenceV1p1beta1_ObjectTrackingAnnotation> | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1p1beta1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1p1beta1_VideoSegment | null;
 
 		/**
 		 * Topical label annotations on video level or user specified segment level.
 		 * There is exactly one element for each unique label.
 		 */
-		segmentLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation>;
+		segmentLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation> | null;
 
 		/**
 		 * Presence label annotations on video level or user specified segment level.
@@ -1681,16 +1681,16 @@ export namespace MyNS {
 		 * available only when the client sets `LabelDetectionConfig.model` to
 		 * "builtin/latest" in the request.
 		 */
-		segmentPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation>;
+		segmentPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation> | null;
 
 		/** Shot annotations. Each shot is represented as a video segment. */
-		shotAnnotations?: Array<GoogleCloudVideointelligenceV1p1beta1_VideoSegment>;
+		shotAnnotations?: Array<GoogleCloudVideointelligenceV1p1beta1_VideoSegment> | null;
 
 		/**
 		 * Topical label annotations on shot level.
 		 * There is exactly one element for each unique label.
 		 */
-		shotLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation>;
+		shotLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation> | null;
 
 		/**
 		 * Presence label annotations on shot level. There is exactly one element for
@@ -1699,17 +1699,17 @@ export namespace MyNS {
 		 * labels detected in video content and is made available only when the client
 		 * sets `LabelDetectionConfig.model` to "builtin/latest" in the request.
 		 */
-		shotPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation>;
+		shotPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p1beta1_LabelAnnotation> | null;
 
 		/** Speech transcription. */
-		speechTranscriptions?: Array<GoogleCloudVideointelligenceV1p1beta1_SpeechTranscription>;
+		speechTranscriptions?: Array<GoogleCloudVideointelligenceV1p1beta1_SpeechTranscription> | null;
 
 		/**
 		 * OCR text detection and tracking.
 		 * Annotations for list of detected text snippets. Each will have list of
 		 * frame information associated with it.
 		 */
-		textAnnotations?: Array<GoogleCloudVideointelligenceV1p1beta1_TextAnnotation>;
+		textAnnotations?: Array<GoogleCloudVideointelligenceV1p1beta1_TextAnnotation> | null;
 	}
 
 
@@ -1721,7 +1721,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p1beta1_ExplicitContentAnnotation {
 
 		/** All video frames where explicit content was detected. */
-		frames?: Array<GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame> | null;
 	}
 
 
@@ -1729,13 +1729,13 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p1beta1_ExplicitContentFrame {
 
 		/** Likelihood of the pornography content.. */
-		pornographyLikelihood?: GoogleCloudVideointelligenceV1_ExplicitContentFramePornographyLikelihood;
+		pornographyLikelihood?: GoogleCloudVideointelligenceV1_ExplicitContentFramePornographyLikelihood | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video, corresponding to the
 		 * video frame for this location.
 		 */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -1748,16 +1748,16 @@ export namespace MyNS {
 		 * cases there might be more than one categories e.g. `Terrier` could also be
 		 * a `pet`.
 		 */
-		categoryEntities?: Array<GoogleCloudVideointelligenceV1p1beta1_Entity>;
+		categoryEntities?: Array<GoogleCloudVideointelligenceV1p1beta1_Entity> | null;
 
 		/** Detected entity from video analysis. */
-		entity?: GoogleCloudVideointelligenceV1p1beta1_Entity;
+		entity?: GoogleCloudVideointelligenceV1p1beta1_Entity | null;
 
 		/** All video frames where a label was detected. */
-		frames?: Array<GoogleCloudVideointelligenceV1p1beta1_LabelFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1p1beta1_LabelFrame> | null;
 
 		/** All video segments where a label was detected. */
-		segments?: Array<GoogleCloudVideointelligenceV1p1beta1_LabelSegment>;
+		segments?: Array<GoogleCloudVideointelligenceV1p1beta1_LabelSegment> | null;
 	}
 
 
@@ -1765,17 +1765,17 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p1beta1_Entity {
 
 		/** Textual description, e.g. `Fixed-gear bicycle`. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Opaque entity ID. Some IDs may be available in
 		 * [Google Knowledge Graph Search
 		 * API](https://developers.google.com/knowledge-graph/).
 		 */
-		entityId?: string;
+		entityId?: string | null;
 
 		/** Language code for `description` in BCP-47 format. */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -1783,13 +1783,13 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p1beta1_LabelFrame {
 
 		/** Confidence that the label is accurate. Range: [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video, corresponding to the
 		 * video frame for this location.
 		 */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -1797,10 +1797,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p1beta1_LabelSegment {
 
 		/** Confidence that the label is accurate. Range: [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1p1beta1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1p1beta1_VideoSegment | null;
 	}
 
 
@@ -1808,19 +1808,19 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p1beta1_LogoRecognitionAnnotation {
 
 		/** Detected entity from video analysis. */
-		entity?: GoogleCloudVideointelligenceV1p1beta1_Entity;
+		entity?: GoogleCloudVideointelligenceV1p1beta1_Entity | null;
 
 		/**
 		 * All video segments where the recognized logo appears. There might be
 		 * multiple instances of the same logo class appearing in one VideoSegment.
 		 */
-		segments?: Array<GoogleCloudVideointelligenceV1p1beta1_VideoSegment>;
+		segments?: Array<GoogleCloudVideointelligenceV1p1beta1_VideoSegment> | null;
 
 		/**
 		 * All logo tracks where the recognized logo appears. Each track corresponds
 		 * to one logo instance appearing in consecutive frames.
 		 */
-		tracks?: Array<GoogleCloudVideointelligenceV1p1beta1_Track>;
+		tracks?: Array<GoogleCloudVideointelligenceV1p1beta1_Track> | null;
 	}
 
 
@@ -1828,16 +1828,16 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p1beta1_Track {
 
 		/** Optional. Attributes in the track level. */
-		attributes?: Array<GoogleCloudVideointelligenceV1p1beta1_DetectedAttribute>;
+		attributes?: Array<GoogleCloudVideointelligenceV1p1beta1_DetectedAttribute> | null;
 
 		/** Optional. The confidence score of the tracked object. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1p1beta1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1p1beta1_VideoSegment | null;
 
 		/** The object with timestamp and attributes per frame in the track. */
-		timestampedObjects?: Array<GoogleCloudVideointelligenceV1p1beta1_TimestampedObject>;
+		timestampedObjects?: Array<GoogleCloudVideointelligenceV1p1beta1_TimestampedObject> | null;
 	}
 
 
@@ -1845,19 +1845,19 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p1beta1_DetectedAttribute {
 
 		/** Detected attribute confidence. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * The name of the attribute, i.e. glasses, dark_glasses, mouth_open etc.
 		 * A full list of supported type names will be provided in the document.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Text value of the detection result. For example, the value for "HairColor"
 		 * can be "black", "blonde", etc.
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -1869,23 +1869,23 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p1beta1_TimestampedObject {
 
 		/** Optional. The attributes of the object in the bounding box. */
-		attributes?: Array<GoogleCloudVideointelligenceV1p1beta1_DetectedAttribute>;
+		attributes?: Array<GoogleCloudVideointelligenceV1p1beta1_DetectedAttribute> | null;
 
 		/** Optional. The detected landmarks. */
-		landmarks?: Array<GoogleCloudVideointelligenceV1p1beta1_DetectedLandmark>;
+		landmarks?: Array<GoogleCloudVideointelligenceV1p1beta1_DetectedLandmark> | null;
 
 		/**
 		 * Normalized bounding box.
 		 * The normalized vertex coordinates are relative to the original image.
 		 * Range: [0, 1].
 		 */
-		normalizedBoundingBox?: GoogleCloudVideointelligenceV1p1beta1_NormalizedBoundingBox;
+		normalizedBoundingBox?: GoogleCloudVideointelligenceV1p1beta1_NormalizedBoundingBox | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video,
 		 * corresponding to the video frame for this object.
 		 */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -1896,17 +1896,17 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p1beta1_DetectedLandmark {
 
 		/** The confidence score of the detected landmark. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** The name of this landmark, i.e. left_hand, right_shoulder. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * A vertex represents a 2D point in the image.
 		 * NOTE: the normalized vertex coordinates are relative to the original image
 		 * and range from 0 to 1.
 		 */
-		point?: GoogleCloudVideointelligenceV1p1beta1_NormalizedVertex;
+		point?: GoogleCloudVideointelligenceV1p1beta1_NormalizedVertex | null;
 	}
 
 
@@ -1918,10 +1918,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p1beta1_NormalizedVertex {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 	}
 
 
@@ -1933,16 +1933,16 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p1beta1_NormalizedBoundingBox {
 
 		/** Bottom Y coordinate. */
-		bottom?: number;
+		bottom?: number | null;
 
 		/** Left X coordinate. */
-		left?: number;
+		left?: number | null;
 
 		/** Right X coordinate. */
-		right?: number;
+		right?: number | null;
 
 		/** Top Y coordinate. */
-		top?: number;
+		top?: number | null;
 	}
 
 
@@ -1950,10 +1950,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p1beta1_ObjectTrackingAnnotation {
 
 		/** Object category's labeling confidence of this track. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Detected entity from video analysis. */
-		entity?: GoogleCloudVideointelligenceV1p1beta1_Entity;
+		entity?: GoogleCloudVideointelligenceV1p1beta1_Entity | null;
 
 		/**
 		 * Information corresponding to all frames where this object track appears.
@@ -1961,10 +1961,10 @@ export namespace MyNS {
 		 * messages in frames.
 		 * Streaming mode: it can only be one ObjectTrackingFrame message in frames.
 		 */
-		frames?: Array<GoogleCloudVideointelligenceV1p1beta1_ObjectTrackingFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1p1beta1_ObjectTrackingFrame> | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1p1beta1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1p1beta1_VideoSegment | null;
 
 		/**
 		 * Streaming mode ONLY.
@@ -1974,7 +1974,7 @@ export namespace MyNS {
 		 * the customers can correlate the results of the ongoing
 		 * ObjectTrackAnnotation of the same track_id over time.
 		 */
-		trackId?: string;
+		trackId?: string | null;
 	}
 
 
@@ -1989,10 +1989,10 @@ export namespace MyNS {
 		 * The normalized vertex coordinates are relative to the original image.
 		 * Range: [0, 1].
 		 */
-		normalizedBoundingBox?: GoogleCloudVideointelligenceV1p1beta1_NormalizedBoundingBox;
+		normalizedBoundingBox?: GoogleCloudVideointelligenceV1p1beta1_NormalizedBoundingBox | null;
 
 		/** The timestamp of the frame in microseconds. */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -2005,14 +2005,14 @@ export namespace MyNS {
 		 * accuracy, with the top (first) alternative being the most probable, as
 		 * ranked by the recognizer.
 		 */
-		alternatives?: Array<GoogleCloudVideointelligenceV1p1beta1_SpeechRecognitionAlternative>;
+		alternatives?: Array<GoogleCloudVideointelligenceV1p1beta1_SpeechRecognitionAlternative> | null;
 
 		/**
 		 * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of
 		 * the language in this result. This language code was detected to have the
 		 * most likelihood of being spoken in the audio.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -2027,17 +2027,17 @@ export namespace MyNS {
 		 * to be always provided.
 		 * The default of 0.0 is a sentinel value indicating `confidence` was not set.
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Transcript text representing the words that the user spoke. */
-		transcript?: string;
+		transcript?: string | null;
 
 		/**
 		 * Output only. A list of word-specific information for each recognized word.
 		 * Note: When `enable_speaker_diarization` is true, you will see all the words
 		 * from the beginning of the audio.
 		 */
-		words?: Array<GoogleCloudVideointelligenceV1p1beta1_WordInfo>;
+		words?: Array<GoogleCloudVideointelligenceV1p1beta1_WordInfo> | null;
 	}
 
 
@@ -2056,7 +2056,7 @@ export namespace MyNS {
 		 * to be always provided.
 		 * The default of 0.0 is a sentinel value indicating `confidence` was not set.
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Time offset relative to the beginning of the audio, and
@@ -2064,7 +2064,7 @@ export namespace MyNS {
 		 * `enable_word_time_offsets=true` and only in the top hypothesis. This is an
 		 * experimental feature and the accuracy of the time offset can vary.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * Output only. A distinct integer value is assigned for every speaker within
@@ -2072,7 +2072,7 @@ export namespace MyNS {
 		 * have spoken this word. Value ranges from 1 up to diarization_speaker_count,
 		 * and is only set if speaker diarization is enabled.
 		 */
-		speakerTag?: number;
+		speakerTag?: number | null;
 
 		/**
 		 * Time offset relative to the beginning of the audio, and
@@ -2080,10 +2080,10 @@ export namespace MyNS {
 		 * `enable_word_time_offsets=true` and only in the top hypothesis. This is an
 		 * experimental feature and the accuracy of the time offset can vary.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** The word corresponding to this set of information. */
-		word?: string;
+		word?: string | null;
 	}
 
 
@@ -2095,10 +2095,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p1beta1_TextAnnotation {
 
 		/** All video segments where OCR detected text appears. */
-		segments?: Array<GoogleCloudVideointelligenceV1p1beta1_TextSegment>;
+		segments?: Array<GoogleCloudVideointelligenceV1p1beta1_TextSegment> | null;
 
 		/** The detected text. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -2109,13 +2109,13 @@ export namespace MyNS {
 		 * Confidence for the track of detected text. It is calculated as the highest
 		 * over all frames where OCR detected text appears.
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Information related to the frames where OCR detected text appears. */
-		frames?: Array<GoogleCloudVideointelligenceV1p1beta1_TextFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1p1beta1_TextFrame> | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1p1beta1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1p1beta1_VideoSegment | null;
 	}
 
 
@@ -2143,10 +2143,10 @@ export namespace MyNS {
 		 * than 0, or greater than 1 due to trignometric calculations for location of
 		 * the box.
 		 */
-		rotatedBoundingBox?: GoogleCloudVideointelligenceV1p1beta1_NormalizedBoundingPoly;
+		rotatedBoundingBox?: GoogleCloudVideointelligenceV1p1beta1_NormalizedBoundingPoly | null;
 
 		/** Timestamp of this frame. */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -2170,7 +2170,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p1beta1_NormalizedBoundingPoly {
 
 		/** Normalized vertices of the bounding polygon. */
-		vertices?: Array<GoogleCloudVideointelligenceV1p1beta1_NormalizedVertex>;
+		vertices?: Array<GoogleCloudVideointelligenceV1p1beta1_NormalizedVertex> | null;
 	}
 
 
@@ -2182,7 +2182,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p2beta1_AnnotateVideoProgress {
 
 		/** Progress metadata for all videos specified in `AnnotateVideoRequest`. */
-		annotationProgress?: Array<GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress>;
+		annotationProgress?: Array<GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationProgress> | null;
 	}
 
 
@@ -2193,28 +2193,28 @@ export namespace MyNS {
 		 * Specifies which feature is being tracked if the request contains more than
 		 * one features.
 		 */
-		feature?: GoogleCloudVideointelligenceV1_VideoAnnotationProgressFeature;
+		feature?: GoogleCloudVideointelligenceV1_VideoAnnotationProgressFeature | null;
 
 		/**
 		 * Video file location in
 		 * [Cloud Storage](https://cloud.google.com/storage/).
 		 */
-		inputUri?: string;
+		inputUri?: string | null;
 
 		/**
 		 * Approximate percentage processed thus far. Guaranteed to be
 		 * 100 when fully processed.
 		 */
-		progressPercent?: number;
+		progressPercent?: number | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1p2beta1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1p2beta1_VideoSegment | null;
 
 		/** Time when the request was received. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** Time of the most recent update. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -2225,13 +2225,13 @@ export namespace MyNS {
 		 * Time-offset, relative to the beginning of the video,
 		 * corresponding to the end of the segment (inclusive).
 		 */
-		endTimeOffset?: string;
+		endTimeOffset?: string | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video,
 		 * corresponding to the start of the segment (inclusive).
 		 */
-		startTimeOffset?: string;
+		startTimeOffset?: string | null;
 	}
 
 
@@ -2243,7 +2243,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p2beta1_AnnotateVideoResponse {
 
 		/** Annotation results for all videos specified in `AnnotateVideoRequest`. */
-		annotationResults?: Array<GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationResults>;
+		annotationResults?: Array<GoogleCloudVideointelligenceV1p2beta1_VideoAnnotationResults> | null;
 	}
 
 
@@ -2258,41 +2258,41 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: GoogleRpc_Status;
+		error?: GoogleRpc_Status | null;
 
 		/**
 		 * Explicit content annotation (based on per-frame visual signals only).
 		 * If no explicit content has been detected in a frame, no annotations are
 		 * present for that frame.
 		 */
-		explicitAnnotation?: GoogleCloudVideointelligenceV1p2beta1_ExplicitContentAnnotation;
+		explicitAnnotation?: GoogleCloudVideointelligenceV1p2beta1_ExplicitContentAnnotation | null;
 
 		/**
 		 * Label annotations on frame level.
 		 * There is exactly one element for each unique label.
 		 */
-		frameLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation>;
+		frameLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation> | null;
 
 		/**
 		 * Video file location in
 		 * [Cloud Storage](https://cloud.google.com/storage/).
 		 */
-		inputUri?: string;
+		inputUri?: string | null;
 
 		/** Annotations for list of logos detected, tracked and recognized in video. */
-		logoRecognitionAnnotations?: Array<GoogleCloudVideointelligenceV1p2beta1_LogoRecognitionAnnotation>;
+		logoRecognitionAnnotations?: Array<GoogleCloudVideointelligenceV1p2beta1_LogoRecognitionAnnotation> | null;
 
 		/** Annotations for list of objects detected and tracked in video. */
-		objectAnnotations?: Array<GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingAnnotation>;
+		objectAnnotations?: Array<GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingAnnotation> | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1p2beta1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1p2beta1_VideoSegment | null;
 
 		/**
 		 * Topical label annotations on video level or user specified segment level.
 		 * There is exactly one element for each unique label.
 		 */
-		segmentLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation>;
+		segmentLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation> | null;
 
 		/**
 		 * Presence label annotations on video level or user specified segment level.
@@ -2302,16 +2302,16 @@ export namespace MyNS {
 		 * available only when the client sets `LabelDetectionConfig.model` to
 		 * "builtin/latest" in the request.
 		 */
-		segmentPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation>;
+		segmentPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation> | null;
 
 		/** Shot annotations. Each shot is represented as a video segment. */
-		shotAnnotations?: Array<GoogleCloudVideointelligenceV1p2beta1_VideoSegment>;
+		shotAnnotations?: Array<GoogleCloudVideointelligenceV1p2beta1_VideoSegment> | null;
 
 		/**
 		 * Topical label annotations on shot level.
 		 * There is exactly one element for each unique label.
 		 */
-		shotLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation>;
+		shotLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation> | null;
 
 		/**
 		 * Presence label annotations on shot level. There is exactly one element for
@@ -2320,17 +2320,17 @@ export namespace MyNS {
 		 * labels detected in video content and is made available only when the client
 		 * sets `LabelDetectionConfig.model` to "builtin/latest" in the request.
 		 */
-		shotPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation>;
+		shotPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p2beta1_LabelAnnotation> | null;
 
 		/** Speech transcription. */
-		speechTranscriptions?: Array<GoogleCloudVideointelligenceV1p2beta1_SpeechTranscription>;
+		speechTranscriptions?: Array<GoogleCloudVideointelligenceV1p2beta1_SpeechTranscription> | null;
 
 		/**
 		 * OCR text detection and tracking.
 		 * Annotations for list of detected text snippets. Each will have list of
 		 * frame information associated with it.
 		 */
-		textAnnotations?: Array<GoogleCloudVideointelligenceV1p2beta1_TextAnnotation>;
+		textAnnotations?: Array<GoogleCloudVideointelligenceV1p2beta1_TextAnnotation> | null;
 	}
 
 
@@ -2342,7 +2342,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p2beta1_ExplicitContentAnnotation {
 
 		/** All video frames where explicit content was detected. */
-		frames?: Array<GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame> | null;
 	}
 
 
@@ -2350,13 +2350,13 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p2beta1_ExplicitContentFrame {
 
 		/** Likelihood of the pornography content.. */
-		pornographyLikelihood?: GoogleCloudVideointelligenceV1_ExplicitContentFramePornographyLikelihood;
+		pornographyLikelihood?: GoogleCloudVideointelligenceV1_ExplicitContentFramePornographyLikelihood | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video, corresponding to the
 		 * video frame for this location.
 		 */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -2369,16 +2369,16 @@ export namespace MyNS {
 		 * cases there might be more than one categories e.g. `Terrier` could also be
 		 * a `pet`.
 		 */
-		categoryEntities?: Array<GoogleCloudVideointelligenceV1p2beta1_Entity>;
+		categoryEntities?: Array<GoogleCloudVideointelligenceV1p2beta1_Entity> | null;
 
 		/** Detected entity from video analysis. */
-		entity?: GoogleCloudVideointelligenceV1p2beta1_Entity;
+		entity?: GoogleCloudVideointelligenceV1p2beta1_Entity | null;
 
 		/** All video frames where a label was detected. */
-		frames?: Array<GoogleCloudVideointelligenceV1p2beta1_LabelFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1p2beta1_LabelFrame> | null;
 
 		/** All video segments where a label was detected. */
-		segments?: Array<GoogleCloudVideointelligenceV1p2beta1_LabelSegment>;
+		segments?: Array<GoogleCloudVideointelligenceV1p2beta1_LabelSegment> | null;
 	}
 
 
@@ -2386,17 +2386,17 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p2beta1_Entity {
 
 		/** Textual description, e.g. `Fixed-gear bicycle`. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Opaque entity ID. Some IDs may be available in
 		 * [Google Knowledge Graph Search
 		 * API](https://developers.google.com/knowledge-graph/).
 		 */
-		entityId?: string;
+		entityId?: string | null;
 
 		/** Language code for `description` in BCP-47 format. */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -2404,13 +2404,13 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p2beta1_LabelFrame {
 
 		/** Confidence that the label is accurate. Range: [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video, corresponding to the
 		 * video frame for this location.
 		 */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -2418,10 +2418,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p2beta1_LabelSegment {
 
 		/** Confidence that the label is accurate. Range: [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1p2beta1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1p2beta1_VideoSegment | null;
 	}
 
 
@@ -2429,19 +2429,19 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p2beta1_LogoRecognitionAnnotation {
 
 		/** Detected entity from video analysis. */
-		entity?: GoogleCloudVideointelligenceV1p2beta1_Entity;
+		entity?: GoogleCloudVideointelligenceV1p2beta1_Entity | null;
 
 		/**
 		 * All video segments where the recognized logo appears. There might be
 		 * multiple instances of the same logo class appearing in one VideoSegment.
 		 */
-		segments?: Array<GoogleCloudVideointelligenceV1p2beta1_VideoSegment>;
+		segments?: Array<GoogleCloudVideointelligenceV1p2beta1_VideoSegment> | null;
 
 		/**
 		 * All logo tracks where the recognized logo appears. Each track corresponds
 		 * to one logo instance appearing in consecutive frames.
 		 */
-		tracks?: Array<GoogleCloudVideointelligenceV1p2beta1_Track>;
+		tracks?: Array<GoogleCloudVideointelligenceV1p2beta1_Track> | null;
 	}
 
 
@@ -2449,16 +2449,16 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p2beta1_Track {
 
 		/** Optional. Attributes in the track level. */
-		attributes?: Array<GoogleCloudVideointelligenceV1p2beta1_DetectedAttribute>;
+		attributes?: Array<GoogleCloudVideointelligenceV1p2beta1_DetectedAttribute> | null;
 
 		/** Optional. The confidence score of the tracked object. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1p2beta1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1p2beta1_VideoSegment | null;
 
 		/** The object with timestamp and attributes per frame in the track. */
-		timestampedObjects?: Array<GoogleCloudVideointelligenceV1p2beta1_TimestampedObject>;
+		timestampedObjects?: Array<GoogleCloudVideointelligenceV1p2beta1_TimestampedObject> | null;
 	}
 
 
@@ -2466,19 +2466,19 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p2beta1_DetectedAttribute {
 
 		/** Detected attribute confidence. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * The name of the attribute, i.e. glasses, dark_glasses, mouth_open etc.
 		 * A full list of supported type names will be provided in the document.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Text value of the detection result. For example, the value for "HairColor"
 		 * can be "black", "blonde", etc.
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -2490,23 +2490,23 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p2beta1_TimestampedObject {
 
 		/** Optional. The attributes of the object in the bounding box. */
-		attributes?: Array<GoogleCloudVideointelligenceV1p2beta1_DetectedAttribute>;
+		attributes?: Array<GoogleCloudVideointelligenceV1p2beta1_DetectedAttribute> | null;
 
 		/** Optional. The detected landmarks. */
-		landmarks?: Array<GoogleCloudVideointelligenceV1p2beta1_DetectedLandmark>;
+		landmarks?: Array<GoogleCloudVideointelligenceV1p2beta1_DetectedLandmark> | null;
 
 		/**
 		 * Normalized bounding box.
 		 * The normalized vertex coordinates are relative to the original image.
 		 * Range: [0, 1].
 		 */
-		normalizedBoundingBox?: GoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingBox;
+		normalizedBoundingBox?: GoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingBox | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video,
 		 * corresponding to the video frame for this object.
 		 */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -2517,17 +2517,17 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p2beta1_DetectedLandmark {
 
 		/** The confidence score of the detected landmark. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** The name of this landmark, i.e. left_hand, right_shoulder. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * A vertex represents a 2D point in the image.
 		 * NOTE: the normalized vertex coordinates are relative to the original image
 		 * and range from 0 to 1.
 		 */
-		point?: GoogleCloudVideointelligenceV1p2beta1_NormalizedVertex;
+		point?: GoogleCloudVideointelligenceV1p2beta1_NormalizedVertex | null;
 	}
 
 
@@ -2539,10 +2539,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p2beta1_NormalizedVertex {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 	}
 
 
@@ -2554,16 +2554,16 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingBox {
 
 		/** Bottom Y coordinate. */
-		bottom?: number;
+		bottom?: number | null;
 
 		/** Left X coordinate. */
-		left?: number;
+		left?: number | null;
 
 		/** Right X coordinate. */
-		right?: number;
+		right?: number | null;
 
 		/** Top Y coordinate. */
-		top?: number;
+		top?: number | null;
 	}
 
 
@@ -2571,10 +2571,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingAnnotation {
 
 		/** Object category's labeling confidence of this track. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Detected entity from video analysis. */
-		entity?: GoogleCloudVideointelligenceV1p2beta1_Entity;
+		entity?: GoogleCloudVideointelligenceV1p2beta1_Entity | null;
 
 		/**
 		 * Information corresponding to all frames where this object track appears.
@@ -2582,10 +2582,10 @@ export namespace MyNS {
 		 * messages in frames.
 		 * Streaming mode: it can only be one ObjectTrackingFrame message in frames.
 		 */
-		frames?: Array<GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingFrame> | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1p2beta1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1p2beta1_VideoSegment | null;
 
 		/**
 		 * Streaming mode ONLY.
@@ -2595,7 +2595,7 @@ export namespace MyNS {
 		 * the customers can correlate the results of the ongoing
 		 * ObjectTrackAnnotation of the same track_id over time.
 		 */
-		trackId?: string;
+		trackId?: string | null;
 	}
 
 
@@ -2610,10 +2610,10 @@ export namespace MyNS {
 		 * The normalized vertex coordinates are relative to the original image.
 		 * Range: [0, 1].
 		 */
-		normalizedBoundingBox?: GoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingBox;
+		normalizedBoundingBox?: GoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingBox | null;
 
 		/** The timestamp of the frame in microseconds. */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -2626,14 +2626,14 @@ export namespace MyNS {
 		 * accuracy, with the top (first) alternative being the most probable, as
 		 * ranked by the recognizer.
 		 */
-		alternatives?: Array<GoogleCloudVideointelligenceV1p2beta1_SpeechRecognitionAlternative>;
+		alternatives?: Array<GoogleCloudVideointelligenceV1p2beta1_SpeechRecognitionAlternative> | null;
 
 		/**
 		 * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of
 		 * the language in this result. This language code was detected to have the
 		 * most likelihood of being spoken in the audio.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -2648,17 +2648,17 @@ export namespace MyNS {
 		 * to be always provided.
 		 * The default of 0.0 is a sentinel value indicating `confidence` was not set.
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Transcript text representing the words that the user spoke. */
-		transcript?: string;
+		transcript?: string | null;
 
 		/**
 		 * Output only. A list of word-specific information for each recognized word.
 		 * Note: When `enable_speaker_diarization` is true, you will see all the words
 		 * from the beginning of the audio.
 		 */
-		words?: Array<GoogleCloudVideointelligenceV1p2beta1_WordInfo>;
+		words?: Array<GoogleCloudVideointelligenceV1p2beta1_WordInfo> | null;
 	}
 
 
@@ -2677,7 +2677,7 @@ export namespace MyNS {
 		 * to be always provided.
 		 * The default of 0.0 is a sentinel value indicating `confidence` was not set.
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Time offset relative to the beginning of the audio, and
@@ -2685,7 +2685,7 @@ export namespace MyNS {
 		 * `enable_word_time_offsets=true` and only in the top hypothesis. This is an
 		 * experimental feature and the accuracy of the time offset can vary.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * Output only. A distinct integer value is assigned for every speaker within
@@ -2693,7 +2693,7 @@ export namespace MyNS {
 		 * have spoken this word. Value ranges from 1 up to diarization_speaker_count,
 		 * and is only set if speaker diarization is enabled.
 		 */
-		speakerTag?: number;
+		speakerTag?: number | null;
 
 		/**
 		 * Time offset relative to the beginning of the audio, and
@@ -2701,10 +2701,10 @@ export namespace MyNS {
 		 * `enable_word_time_offsets=true` and only in the top hypothesis. This is an
 		 * experimental feature and the accuracy of the time offset can vary.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** The word corresponding to this set of information. */
-		word?: string;
+		word?: string | null;
 	}
 
 
@@ -2716,10 +2716,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p2beta1_TextAnnotation {
 
 		/** All video segments where OCR detected text appears. */
-		segments?: Array<GoogleCloudVideointelligenceV1p2beta1_TextSegment>;
+		segments?: Array<GoogleCloudVideointelligenceV1p2beta1_TextSegment> | null;
 
 		/** The detected text. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -2730,13 +2730,13 @@ export namespace MyNS {
 		 * Confidence for the track of detected text. It is calculated as the highest
 		 * over all frames where OCR detected text appears.
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Information related to the frames where OCR detected text appears. */
-		frames?: Array<GoogleCloudVideointelligenceV1p2beta1_TextFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1p2beta1_TextFrame> | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1p2beta1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1p2beta1_VideoSegment | null;
 	}
 
 
@@ -2764,10 +2764,10 @@ export namespace MyNS {
 		 * than 0, or greater than 1 due to trignometric calculations for location of
 		 * the box.
 		 */
-		rotatedBoundingBox?: GoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingPoly;
+		rotatedBoundingBox?: GoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingPoly | null;
 
 		/** Timestamp of this frame. */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -2791,7 +2791,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingPoly {
 
 		/** Normalized vertices of the bounding polygon. */
-		vertices?: Array<GoogleCloudVideointelligenceV1p2beta1_NormalizedVertex>;
+		vertices?: Array<GoogleCloudVideointelligenceV1p2beta1_NormalizedVertex> | null;
 	}
 
 
@@ -2803,7 +2803,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoProgress {
 
 		/** Progress metadata for all videos specified in `AnnotateVideoRequest`. */
-		annotationProgress?: Array<GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress>;
+		annotationProgress?: Array<GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgress> | null;
 	}
 
 
@@ -2814,28 +2814,28 @@ export namespace MyNS {
 		 * Specifies which feature is being tracked if the request contains more than
 		 * one features.
 		 */
-		feature?: GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgressFeature;
+		feature?: GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgressFeature | null;
 
 		/**
 		 * Video file location in
 		 * [Cloud Storage](https://cloud.google.com/storage/).
 		 */
-		inputUri?: string;
+		inputUri?: string | null;
 
 		/**
 		 * Approximate percentage processed thus far. Guaranteed to be
 		 * 100 when fully processed.
 		 */
-		progressPercent?: number;
+		progressPercent?: number | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1p3beta1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1p3beta1_VideoSegment | null;
 
 		/** Time when the request was received. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** Time of the most recent update. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 	export enum GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationProgressFeature { FEATURE_UNSPECIFIED = 0, LABEL_DETECTION = 1, SHOT_CHANGE_DETECTION = 2, EXPLICIT_CONTENT_DETECTION = 3, FACE_DETECTION = 4, SPEECH_TRANSCRIPTION = 5, TEXT_DETECTION = 6, OBJECT_TRACKING = 7, LOGO_RECOGNITION = 8, CELEBRITY_RECOGNITION = 9, PERSON_DETECTION = 10 }
@@ -2848,13 +2848,13 @@ export namespace MyNS {
 		 * Time-offset, relative to the beginning of the video,
 		 * corresponding to the end of the segment (inclusive).
 		 */
-		endTimeOffset?: string;
+		endTimeOffset?: string | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video,
 		 * corresponding to the start of the segment (inclusive).
 		 */
-		startTimeOffset?: string;
+		startTimeOffset?: string | null;
 	}
 
 
@@ -2866,7 +2866,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_AnnotateVideoResponse {
 
 		/** Annotation results for all videos specified in `AnnotateVideoRequest`. */
-		annotationResults?: Array<GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationResults>;
+		annotationResults?: Array<GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationResults> | null;
 	}
 
 
@@ -2874,7 +2874,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_VideoAnnotationResults {
 
 		/** Celebrity recognition annotation per video. */
-		celebrityRecognitionAnnotations?: GoogleCloudVideointelligenceV1p3beta1_CelebrityRecognitionAnnotation;
+		celebrityRecognitionAnnotations?: GoogleCloudVideointelligenceV1p3beta1_CelebrityRecognitionAnnotation | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -2884,47 +2884,47 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: GoogleRpc_Status;
+		error?: GoogleRpc_Status | null;
 
 		/**
 		 * Explicit content annotation (based on per-frame visual signals only).
 		 * If no explicit content has been detected in a frame, no annotations are
 		 * present for that frame.
 		 */
-		explicitAnnotation?: GoogleCloudVideointelligenceV1p3beta1_ExplicitContentAnnotation;
+		explicitAnnotation?: GoogleCloudVideointelligenceV1p3beta1_ExplicitContentAnnotation | null;
 
 		/** Face detection annotations. */
-		faceDetectionAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_FaceDetectionAnnotation>;
+		faceDetectionAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_FaceDetectionAnnotation> | null;
 
 		/**
 		 * Label annotations on frame level.
 		 * There is exactly one element for each unique label.
 		 */
-		frameLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation>;
+		frameLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation> | null;
 
 		/**
 		 * Video file location in
 		 * [Cloud Storage](https://cloud.google.com/storage/).
 		 */
-		inputUri?: string;
+		inputUri?: string | null;
 
 		/** Annotations for list of logos detected, tracked and recognized in video. */
-		logoRecognitionAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_LogoRecognitionAnnotation>;
+		logoRecognitionAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_LogoRecognitionAnnotation> | null;
 
 		/** Annotations for list of objects detected and tracked in video. */
-		objectAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_ObjectTrackingAnnotation>;
+		objectAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_ObjectTrackingAnnotation> | null;
 
 		/** Person detection annotations. */
-		personDetectionAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_PersonDetectionAnnotation>;
+		personDetectionAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_PersonDetectionAnnotation> | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1p3beta1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1p3beta1_VideoSegment | null;
 
 		/**
 		 * Topical label annotations on video level or user specified segment level.
 		 * There is exactly one element for each unique label.
 		 */
-		segmentLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation>;
+		segmentLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation> | null;
 
 		/**
 		 * Presence label annotations on video level or user specified segment level.
@@ -2934,16 +2934,16 @@ export namespace MyNS {
 		 * available only when the client sets `LabelDetectionConfig.model` to
 		 * "builtin/latest" in the request.
 		 */
-		segmentPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation>;
+		segmentPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation> | null;
 
 		/** Shot annotations. Each shot is represented as a video segment. */
-		shotAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_VideoSegment>;
+		shotAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_VideoSegment> | null;
 
 		/**
 		 * Topical label annotations on shot level.
 		 * There is exactly one element for each unique label.
 		 */
-		shotLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation>;
+		shotLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation> | null;
 
 		/**
 		 * Presence label annotations on shot level. There is exactly one element for
@@ -2952,17 +2952,17 @@ export namespace MyNS {
 		 * labels detected in video content and is made available only when the client
 		 * sets `LabelDetectionConfig.model` to "builtin/latest" in the request.
 		 */
-		shotPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation>;
+		shotPresenceLabelAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation> | null;
 
 		/** Speech transcription. */
-		speechTranscriptions?: Array<GoogleCloudVideointelligenceV1p3beta1_SpeechTranscription>;
+		speechTranscriptions?: Array<GoogleCloudVideointelligenceV1p3beta1_SpeechTranscription> | null;
 
 		/**
 		 * OCR text detection and tracking.
 		 * Annotations for list of detected text snippets. Each will have list of
 		 * frame information associated with it.
 		 */
-		textAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_TextAnnotation>;
+		textAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_TextAnnotation> | null;
 	}
 
 
@@ -2973,7 +2973,7 @@ export namespace MyNS {
 		 * The tracks detected from the input video, including recognized celebrities
 		 * and other detected faces in the video.
 		 */
-		celebrityTracks?: Array<GoogleCloudVideointelligenceV1p3beta1_CelebrityTrack>;
+		celebrityTracks?: Array<GoogleCloudVideointelligenceV1p3beta1_CelebrityTrack> | null;
 	}
 
 
@@ -2984,10 +2984,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_CelebrityTrack {
 
 		/** Top N match of the celebrities for the face in this track. */
-		celebrities?: Array<GoogleCloudVideointelligenceV1p3beta1_RecognizedCelebrity>;
+		celebrities?: Array<GoogleCloudVideointelligenceV1p3beta1_RecognizedCelebrity> | null;
 
 		/** A track of an object instance. */
-		faceTrack?: GoogleCloudVideointelligenceV1p3beta1_Track;
+		faceTrack?: GoogleCloudVideointelligenceV1p3beta1_Track | null;
 	}
 
 
@@ -2995,10 +2995,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_RecognizedCelebrity {
 
 		/** Celebrity definition. */
-		celebrity?: GoogleCloudVideointelligenceV1p3beta1_Celebrity;
+		celebrity?: GoogleCloudVideointelligenceV1p3beta1_Celebrity | null;
 
 		/** Recognition confidence. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 	}
 
 
@@ -3009,10 +3009,10 @@ export namespace MyNS {
 		 * Textual description of additional information about the celebrity, if
 		 * applicable.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/** The celebrity name. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * The resource name of the celebrity. Have the format
@@ -3020,7 +3020,7 @@ export namespace MyNS {
 		 * kg-mid is the id in Google knowledge graph, which is unique for the
 		 * celebrity.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -3028,16 +3028,16 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_Track {
 
 		/** Optional. Attributes in the track level. */
-		attributes?: Array<GoogleCloudVideointelligenceV1p3beta1_DetectedAttribute>;
+		attributes?: Array<GoogleCloudVideointelligenceV1p3beta1_DetectedAttribute> | null;
 
 		/** Optional. The confidence score of the tracked object. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1p3beta1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1p3beta1_VideoSegment | null;
 
 		/** The object with timestamp and attributes per frame in the track. */
-		timestampedObjects?: Array<GoogleCloudVideointelligenceV1p3beta1_TimestampedObject>;
+		timestampedObjects?: Array<GoogleCloudVideointelligenceV1p3beta1_TimestampedObject> | null;
 	}
 
 
@@ -3045,19 +3045,19 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_DetectedAttribute {
 
 		/** Detected attribute confidence. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * The name of the attribute, i.e. glasses, dark_glasses, mouth_open etc.
 		 * A full list of supported type names will be provided in the document.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Text value of the detection result. For example, the value for "HairColor"
 		 * can be "black", "blonde", etc.
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -3069,23 +3069,23 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_TimestampedObject {
 
 		/** Optional. The attributes of the object in the bounding box. */
-		attributes?: Array<GoogleCloudVideointelligenceV1p3beta1_DetectedAttribute>;
+		attributes?: Array<GoogleCloudVideointelligenceV1p3beta1_DetectedAttribute> | null;
 
 		/** Optional. The detected landmarks. */
-		landmarks?: Array<GoogleCloudVideointelligenceV1p3beta1_DetectedLandmark>;
+		landmarks?: Array<GoogleCloudVideointelligenceV1p3beta1_DetectedLandmark> | null;
 
 		/**
 		 * Normalized bounding box.
 		 * The normalized vertex coordinates are relative to the original image.
 		 * Range: [0, 1].
 		 */
-		normalizedBoundingBox?: GoogleCloudVideointelligenceV1p3beta1_NormalizedBoundingBox;
+		normalizedBoundingBox?: GoogleCloudVideointelligenceV1p3beta1_NormalizedBoundingBox | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video,
 		 * corresponding to the video frame for this object.
 		 */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -3096,17 +3096,17 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_DetectedLandmark {
 
 		/** The confidence score of the detected landmark. Range [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** The name of this landmark, i.e. left_hand, right_shoulder. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * A vertex represents a 2D point in the image.
 		 * NOTE: the normalized vertex coordinates are relative to the original image
 		 * and range from 0 to 1.
 		 */
-		point?: GoogleCloudVideointelligenceV1p3beta1_NormalizedVertex;
+		point?: GoogleCloudVideointelligenceV1p3beta1_NormalizedVertex | null;
 	}
 
 
@@ -3118,10 +3118,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_NormalizedVertex {
 
 		/** X coordinate. */
-		x?: number;
+		x?: number | null;
 
 		/** Y coordinate. */
-		y?: number;
+		y?: number | null;
 	}
 
 
@@ -3133,16 +3133,16 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_NormalizedBoundingBox {
 
 		/** Bottom Y coordinate. */
-		bottom?: number;
+		bottom?: number | null;
 
 		/** Left X coordinate. */
-		left?: number;
+		left?: number | null;
 
 		/** Right X coordinate. */
-		right?: number;
+		right?: number | null;
 
 		/** Top Y coordinate. */
-		top?: number;
+		top?: number | null;
 	}
 
 
@@ -3154,7 +3154,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_ExplicitContentAnnotation {
 
 		/** All video frames where explicit content was detected. */
-		frames?: Array<GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame> | null;
 	}
 
 
@@ -3162,13 +3162,13 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_ExplicitContentFrame {
 
 		/** Likelihood of the pornography content.. */
-		pornographyLikelihood?: GoogleCloudVideointelligenceV1_ExplicitContentFramePornographyLikelihood;
+		pornographyLikelihood?: GoogleCloudVideointelligenceV1_ExplicitContentFramePornographyLikelihood | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video, corresponding to the
 		 * video frame for this location.
 		 */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -3176,10 +3176,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_FaceDetectionAnnotation {
 
 		/** The thumbnail of a person's face. */
-		thumbnail?: string;
+		thumbnail?: string | null;
 
 		/** The face tracks with attributes. */
-		tracks?: Array<GoogleCloudVideointelligenceV1p3beta1_Track>;
+		tracks?: Array<GoogleCloudVideointelligenceV1p3beta1_Track> | null;
 	}
 
 
@@ -3192,16 +3192,16 @@ export namespace MyNS {
 		 * cases there might be more than one categories e.g. `Terrier` could also be
 		 * a `pet`.
 		 */
-		categoryEntities?: Array<GoogleCloudVideointelligenceV1p3beta1_Entity>;
+		categoryEntities?: Array<GoogleCloudVideointelligenceV1p3beta1_Entity> | null;
 
 		/** Detected entity from video analysis. */
-		entity?: GoogleCloudVideointelligenceV1p3beta1_Entity;
+		entity?: GoogleCloudVideointelligenceV1p3beta1_Entity | null;
 
 		/** All video frames where a label was detected. */
-		frames?: Array<GoogleCloudVideointelligenceV1p3beta1_LabelFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1p3beta1_LabelFrame> | null;
 
 		/** All video segments where a label was detected. */
-		segments?: Array<GoogleCloudVideointelligenceV1p3beta1_LabelSegment>;
+		segments?: Array<GoogleCloudVideointelligenceV1p3beta1_LabelSegment> | null;
 	}
 
 
@@ -3209,17 +3209,17 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_Entity {
 
 		/** Textual description, e.g. `Fixed-gear bicycle`. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Opaque entity ID. Some IDs may be available in
 		 * [Google Knowledge Graph Search
 		 * API](https://developers.google.com/knowledge-graph/).
 		 */
-		entityId?: string;
+		entityId?: string | null;
 
 		/** Language code for `description` in BCP-47 format. */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -3227,13 +3227,13 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_LabelFrame {
 
 		/** Confidence that the label is accurate. Range: [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Time-offset, relative to the beginning of the video, corresponding to the
 		 * video frame for this location.
 		 */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -3241,10 +3241,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_LabelSegment {
 
 		/** Confidence that the label is accurate. Range: [0, 1]. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1p3beta1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1p3beta1_VideoSegment | null;
 	}
 
 
@@ -3252,19 +3252,19 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_LogoRecognitionAnnotation {
 
 		/** Detected entity from video analysis. */
-		entity?: GoogleCloudVideointelligenceV1p3beta1_Entity;
+		entity?: GoogleCloudVideointelligenceV1p3beta1_Entity | null;
 
 		/**
 		 * All video segments where the recognized logo appears. There might be
 		 * multiple instances of the same logo class appearing in one VideoSegment.
 		 */
-		segments?: Array<GoogleCloudVideointelligenceV1p3beta1_VideoSegment>;
+		segments?: Array<GoogleCloudVideointelligenceV1p3beta1_VideoSegment> | null;
 
 		/**
 		 * All logo tracks where the recognized logo appears. Each track corresponds
 		 * to one logo instance appearing in consecutive frames.
 		 */
-		tracks?: Array<GoogleCloudVideointelligenceV1p3beta1_Track>;
+		tracks?: Array<GoogleCloudVideointelligenceV1p3beta1_Track> | null;
 	}
 
 
@@ -3272,10 +3272,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_ObjectTrackingAnnotation {
 
 		/** Object category's labeling confidence of this track. */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Detected entity from video analysis. */
-		entity?: GoogleCloudVideointelligenceV1p3beta1_Entity;
+		entity?: GoogleCloudVideointelligenceV1p3beta1_Entity | null;
 
 		/**
 		 * Information corresponding to all frames where this object track appears.
@@ -3283,10 +3283,10 @@ export namespace MyNS {
 		 * messages in frames.
 		 * Streaming mode: it can only be one ObjectTrackingFrame message in frames.
 		 */
-		frames?: Array<GoogleCloudVideointelligenceV1p3beta1_ObjectTrackingFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1p3beta1_ObjectTrackingFrame> | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1p3beta1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1p3beta1_VideoSegment | null;
 
 		/**
 		 * Streaming mode ONLY.
@@ -3296,7 +3296,7 @@ export namespace MyNS {
 		 * the customers can correlate the results of the ongoing
 		 * ObjectTrackAnnotation of the same track_id over time.
 		 */
-		trackId?: string;
+		trackId?: string | null;
 	}
 
 
@@ -3311,10 +3311,10 @@ export namespace MyNS {
 		 * The normalized vertex coordinates are relative to the original image.
 		 * Range: [0, 1].
 		 */
-		normalizedBoundingBox?: GoogleCloudVideointelligenceV1p3beta1_NormalizedBoundingBox;
+		normalizedBoundingBox?: GoogleCloudVideointelligenceV1p3beta1_NormalizedBoundingBox | null;
 
 		/** The timestamp of the frame in microseconds. */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -3322,7 +3322,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_PersonDetectionAnnotation {
 
 		/** The trackes that a person is detected. */
-		tracks?: Array<GoogleCloudVideointelligenceV1p3beta1_Track>;
+		tracks?: Array<GoogleCloudVideointelligenceV1p3beta1_Track> | null;
 	}
 
 
@@ -3335,14 +3335,14 @@ export namespace MyNS {
 		 * accuracy, with the top (first) alternative being the most probable, as
 		 * ranked by the recognizer.
 		 */
-		alternatives?: Array<GoogleCloudVideointelligenceV1p3beta1_SpeechRecognitionAlternative>;
+		alternatives?: Array<GoogleCloudVideointelligenceV1p3beta1_SpeechRecognitionAlternative> | null;
 
 		/**
 		 * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of
 		 * the language in this result. This language code was detected to have the
 		 * most likelihood of being spoken in the audio.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 	}
 
 
@@ -3357,17 +3357,17 @@ export namespace MyNS {
 		 * to be always provided.
 		 * The default of 0.0 is a sentinel value indicating `confidence` was not set.
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Transcript text representing the words that the user spoke. */
-		transcript?: string;
+		transcript?: string | null;
 
 		/**
 		 * Output only. A list of word-specific information for each recognized word.
 		 * Note: When `enable_speaker_diarization` is true, you will see all the words
 		 * from the beginning of the audio.
 		 */
-		words?: Array<GoogleCloudVideointelligenceV1p3beta1_WordInfo>;
+		words?: Array<GoogleCloudVideointelligenceV1p3beta1_WordInfo> | null;
 	}
 
 
@@ -3386,7 +3386,7 @@ export namespace MyNS {
 		 * to be always provided.
 		 * The default of 0.0 is a sentinel value indicating `confidence` was not set.
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * Time offset relative to the beginning of the audio, and
@@ -3394,7 +3394,7 @@ export namespace MyNS {
 		 * `enable_word_time_offsets=true` and only in the top hypothesis. This is an
 		 * experimental feature and the accuracy of the time offset can vary.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * Output only. A distinct integer value is assigned for every speaker within
@@ -3402,7 +3402,7 @@ export namespace MyNS {
 		 * have spoken this word. Value ranges from 1 up to diarization_speaker_count,
 		 * and is only set if speaker diarization is enabled.
 		 */
-		speakerTag?: number;
+		speakerTag?: number | null;
 
 		/**
 		 * Time offset relative to the beginning of the audio, and
@@ -3410,10 +3410,10 @@ export namespace MyNS {
 		 * `enable_word_time_offsets=true` and only in the top hypothesis. This is an
 		 * experimental feature and the accuracy of the time offset can vary.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** The word corresponding to this set of information. */
-		word?: string;
+		word?: string | null;
 	}
 
 
@@ -3425,10 +3425,10 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_TextAnnotation {
 
 		/** All video segments where OCR detected text appears. */
-		segments?: Array<GoogleCloudVideointelligenceV1p3beta1_TextSegment>;
+		segments?: Array<GoogleCloudVideointelligenceV1p3beta1_TextSegment> | null;
 
 		/** The detected text. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -3439,13 +3439,13 @@ export namespace MyNS {
 		 * Confidence for the track of detected text. It is calculated as the highest
 		 * over all frames where OCR detected text appears.
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/** Information related to the frames where OCR detected text appears. */
-		frames?: Array<GoogleCloudVideointelligenceV1p3beta1_TextFrame>;
+		frames?: Array<GoogleCloudVideointelligenceV1p3beta1_TextFrame> | null;
 
 		/** Video segment. */
-		segment?: GoogleCloudVideointelligenceV1p3beta1_VideoSegment;
+		segment?: GoogleCloudVideointelligenceV1p3beta1_VideoSegment | null;
 	}
 
 
@@ -3473,10 +3473,10 @@ export namespace MyNS {
 		 * than 0, or greater than 1 due to trignometric calculations for location of
 		 * the box.
 		 */
-		rotatedBoundingBox?: GoogleCloudVideointelligenceV1p3beta1_NormalizedBoundingPoly;
+		rotatedBoundingBox?: GoogleCloudVideointelligenceV1p3beta1_NormalizedBoundingPoly | null;
 
 		/** Timestamp of this frame. */
-		timeOffset?: string;
+		timeOffset?: string | null;
 	}
 
 
@@ -3500,7 +3500,7 @@ export namespace MyNS {
 	export interface GoogleCloudVideointelligenceV1p3beta1_NormalizedBoundingPoly {
 
 		/** Normalized vertices of the bounding polygon. */
-		vertices?: Array<GoogleCloudVideointelligenceV1p3beta1_NormalizedVertex>;
+		vertices?: Array<GoogleCloudVideointelligenceV1p3beta1_NormalizedVertex> | null;
 	}
 
 
@@ -3515,7 +3515,7 @@ export namespace MyNS {
 		 * Streaming annotation results corresponding to a portion of the video
 		 * that is currently being processed.
 		 */
-		annotationResults?: GoogleCloudVideointelligenceV1p3beta1_StreamingVideoAnnotationResults;
+		annotationResults?: GoogleCloudVideointelligenceV1p3beta1_StreamingVideoAnnotationResults | null;
 
 		/**
 		 * Cloud Storage URI that stores annotation results of one streaming session.
@@ -3523,7 +3523,7 @@ export namespace MyNS {
 		 * Example uri format:
 		 * gs://bucket_id/object_id/cloud_project_name-session_id
 		 */
-		annotationResultsUri?: string;
+		annotationResultsUri?: string | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -3533,7 +3533,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: GoogleRpc_Status;
+		error?: GoogleRpc_Status | null;
 	}
 
 
@@ -3548,16 +3548,16 @@ export namespace MyNS {
 		 * If no explicit content has been detected in a frame, no annotations are
 		 * present for that frame.
 		 */
-		explicitAnnotation?: GoogleCloudVideointelligenceV1p3beta1_ExplicitContentAnnotation;
+		explicitAnnotation?: GoogleCloudVideointelligenceV1p3beta1_ExplicitContentAnnotation | null;
 
 		/** Label annotation results. */
-		labelAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation>;
+		labelAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_LabelAnnotation> | null;
 
 		/** Object tracking results. */
-		objectAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_ObjectTrackingAnnotation>;
+		objectAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_ObjectTrackingAnnotation> | null;
 
 		/** Shot annotation results. Each shot is represented as a video segment. */
-		shotAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_VideoSegment>;
+		shotAnnotations?: Array<GoogleCloudVideointelligenceV1p3beta1_VideoSegment> | null;
 	}
 
 
@@ -3570,10 +3570,10 @@ export namespace MyNS {
 	export interface GoogleLongrunning_ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<GoogleLongrunning_Operation>;
+		operations?: Array<GoogleLongrunning_Operation> | null;
 	}
 
 
@@ -3588,7 +3588,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -3598,7 +3598,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: GoogleRpc_Status;
+		error?: GoogleRpc_Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -3606,14 +3606,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -3625,7 +3625,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -3744,7 +3744,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Videointelligence_projects_locations_operations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Videointelligence_projects_locations_operations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/operations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

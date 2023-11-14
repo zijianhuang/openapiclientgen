@@ -51,9 +51,9 @@ export namespace MyNS {
 
 	/** Returns information about errors in a BatchAssociateApprovalRuleTemplateWithRepositories operation. */
 	export interface BatchAssociateApprovalRuleTemplateWithRepositoriesError {
-		repositoryName?: string;
-		errorCode?: string;
-		errorMessage?: string;
+		repositoryName?: string | null;
+		errorCode?: string | null;
+		errorMessage?: string | null;
 	}
 
 	export interface BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
@@ -69,11 +69,11 @@ export namespace MyNS {
 
 	export interface BatchDescribeMergeConflictsOutput {
 		conflicts: Array<Conflict>;
-		nextToken?: string;
-		errors?: Array<BatchDescribeMergeConflictsError>;
+		nextToken?: string | null;
+		errors?: Array<BatchDescribeMergeConflictsError> | null;
 		destinationCommitId: string;
 		sourceCommitId: string;
-		baseCommitId?: string;
+		baseCommitId?: string | null;
 	}
 
 
@@ -81,49 +81,49 @@ export namespace MyNS {
 	export interface Conflict {
 
 		/** Information about the metadata for a conflict in a merge operation. */
-		conflictMetadata?: ConflictMetadata;
-		mergeHunks?: Array<MergeHunk>;
+		conflictMetadata?: ConflictMetadata | null;
+		mergeHunks?: Array<MergeHunk> | null;
 	}
 
 
 	/** Information about the metadata for a conflict in a merge operation. */
 	export interface ConflictMetadata {
-		filePath?: string;
+		filePath?: string | null;
 
 		/** Information about the size of files in a merge or pull request. */
-		fileSizes?: FileSizes;
+		fileSizes?: FileSizes | null;
 
 		/** Information about file modes in a merge or pull request. */
-		fileModes?: FileModes;
+		fileModes?: FileModes | null;
 
 		/** Information about the type of an object in a merge operation. */
-		objectTypes?: ObjectTypes;
-		numberOfConflicts?: number;
+		objectTypes?: ObjectTypes | null;
+		numberOfConflicts?: number | null;
 
 		/** Information about whether a file is binary or textual in a merge or pull request operation. */
-		isBinaryFile?: IsBinaryFile;
-		contentConflict?: boolean;
-		fileModeConflict?: boolean;
-		objectTypeConflict?: boolean;
+		isBinaryFile?: IsBinaryFile | null;
+		contentConflict?: boolean | null;
+		fileModeConflict?: boolean | null;
+		objectTypeConflict?: boolean | null;
 
 		/** Information about the file operation conflicts in a merge operation. */
-		mergeOperations?: MergeOperations;
+		mergeOperations?: MergeOperations | null;
 	}
 
 
 	/** Information about the size of files in a merge or pull request. */
 	export interface FileSizes {
-		source?: number;
-		destination?: number;
-		base?: number;
+		source?: number | null;
+		destination?: number | null;
+		base?: number | null;
 	}
 
 
 	/** Information about file modes in a merge or pull request. */
 	export interface FileModes {
-		source?: FileModesSource;
-		destination?: FileModesSource;
-		base?: FileModesSource;
+		source?: FileModesSource | null;
+		destination?: FileModesSource | null;
+		base?: FileModesSource | null;
 	}
 
 	export enum FileModesSource { EXECUTABLE = 0, NORMAL = 1, SYMLINK = 2 }
@@ -131,9 +131,9 @@ export namespace MyNS {
 
 	/** Information about the type of an object in a merge operation. */
 	export interface ObjectTypes {
-		source?: ObjectTypesSource;
-		destination?: ObjectTypesSource;
-		base?: ObjectTypesSource;
+		source?: ObjectTypesSource | null;
+		destination?: ObjectTypesSource | null;
+		base?: ObjectTypesSource | null;
 	}
 
 	export enum ObjectTypesSource { FILE = 0, DIRECTORY = 1, GIT_LINK = 2, SYMBOLIC_LINK = 3 }
@@ -141,16 +141,16 @@ export namespace MyNS {
 
 	/** Information about whether a file is binary or textual in a merge or pull request operation. */
 	export interface IsBinaryFile {
-		source?: boolean;
-		destination?: boolean;
-		base?: boolean;
+		source?: boolean | null;
+		destination?: boolean | null;
+		base?: boolean | null;
 	}
 
 
 	/** Information about the file operation conflicts in a merge operation. */
 	export interface MergeOperations {
-		source?: MergeOperationsSource;
-		destination?: MergeOperationsSource;
+		source?: MergeOperationsSource | null;
+		destination?: MergeOperationsSource | null;
 	}
 
 	export enum MergeOperationsSource { A = 0, M = 1, D = 2 }
@@ -158,24 +158,24 @@ export namespace MyNS {
 
 	/** Information about merge hunks in a merge or pull request operation. */
 	export interface MergeHunk {
-		isConflict?: boolean;
+		isConflict?: boolean | null;
 
 		/** Information about the details of a merge hunk that contains a conflict in a merge or pull request operation. */
-		source?: MergeHunkDetail;
+		source?: MergeHunkDetail | null;
 
 		/** Information about the details of a merge hunk that contains a conflict in a merge or pull request operation. */
-		destination?: MergeHunkDetail;
+		destination?: MergeHunkDetail | null;
 
 		/** Information about the details of a merge hunk that contains a conflict in a merge or pull request operation. */
-		base?: MergeHunkDetail;
+		base?: MergeHunkDetail | null;
 	}
 
 
 	/** Information about the details of a merge hunk that contains a conflict in a merge or pull request operation. */
 	export interface MergeHunkDetail {
-		startLine?: number;
-		endLine?: number;
-		hunkContent?: string;
+		startLine?: number | null;
+		endLine?: number | null;
+		hunkContent?: string | null;
 	}
 
 
@@ -191,12 +191,12 @@ export namespace MyNS {
 		destinationCommitSpecifier: string;
 		sourceCommitSpecifier: string;
 		mergeOption: BatchDescribeMergeConflictsInputMergeOption;
-		maxMergeHunks?: number;
-		maxConflictFiles?: number;
-		filePaths?: Array<string>;
-		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel;
-		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy;
-		nextToken?: string;
+		maxMergeHunks?: number | null;
+		maxConflictFiles?: number | null;
+		filePaths?: Array<string> | null;
+		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
+		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy | null;
+		nextToken?: string | null;
 	}
 
 	export enum BatchDescribeMergeConflictsInputMergeOption { FAST_FORWARD_MERGE = 0, SQUASH_MERGE = 1, THREE_WAY_MERGE = 2 }
@@ -252,9 +252,9 @@ export namespace MyNS {
 
 	/** Returns information about errors in a BatchDisassociateApprovalRuleTemplateFromRepositories operation. */
 	export interface BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
-		repositoryName?: string;
-		errorCode?: string;
-		errorMessage?: string;
+		repositoryName?: string | null;
+		errorCode?: string | null;
+		errorMessage?: string | null;
 	}
 
 	export interface BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
@@ -263,40 +263,40 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetCommitsOutput {
-		commits?: Array<Commit>;
-		errors?: Array<BatchGetCommitsError>;
+		commits?: Array<Commit> | null;
+		errors?: Array<BatchGetCommitsError> | null;
 	}
 
 
 	/** Returns information about a specific commit. */
 	export interface Commit {
-		commitId?: string;
-		treeId?: string;
-		parents?: Array<string>;
-		message?: string;
+		commitId?: string | null;
+		treeId?: string | null;
+		parents?: Array<string> | null;
+		message?: string | null;
 
 		/** Information about the user who made a specified commit. */
-		author?: UserInfo;
+		author?: UserInfo | null;
 
 		/** Information about the user who made a specified commit. */
-		committer?: UserInfo;
-		additionalData?: string;
+		committer?: UserInfo | null;
+		additionalData?: string | null;
 	}
 
 
 	/** Information about the user who made a specified commit. */
 	export interface UserInfo {
-		name?: string;
-		email?: string;
-		date?: string;
+		name?: string | null;
+		email?: string | null;
+		date?: string | null;
 	}
 
 
 	/** Returns information about errors in a BatchGetCommits operation. */
 	export interface BatchGetCommitsError {
-		commitId?: string;
-		errorCode?: string;
-		errorMessage?: string;
+		commitId?: string | null;
+		errorCode?: string | null;
+		errorMessage?: string | null;
 	}
 
 	export interface BatchGetCommitsInput {
@@ -313,23 +313,23 @@ export namespace MyNS {
 
 	/** Represents the output of a batch get repositories operation. */
 	export interface BatchGetRepositoriesOutput {
-		repositories?: Array<RepositoryMetadata>;
-		repositoriesNotFound?: Array<string>;
+		repositories?: Array<RepositoryMetadata> | null;
+		repositoriesNotFound?: Array<string> | null;
 	}
 
 
 	/** Information about a repository. */
 	export interface RepositoryMetadata {
-		accountId?: string;
-		repositoryId?: string;
-		repositoryName?: string;
-		repositoryDescription?: string;
-		defaultBranch?: string;
-		lastModifiedDate?: Date;
-		creationDate?: Date;
-		cloneUrlHttp?: string;
-		cloneUrlSsh?: string;
-		Arn?: string;
+		accountId?: string | null;
+		repositoryId?: string | null;
+		repositoryName?: string | null;
+		repositoryDescription?: string | null;
+		defaultBranch?: string | null;
+		lastModifiedDate?: Date | null;
+		creationDate?: Date | null;
+		cloneUrlHttp?: string | null;
+		cloneUrlSsh?: string | null;
+		Arn?: string | null;
 	}
 
 
@@ -350,20 +350,20 @@ export namespace MyNS {
 
 	/** Returns information about an approval rule template. */
 	export interface ApprovalRuleTemplate {
-		approvalRuleTemplateId?: string;
-		approvalRuleTemplateName?: string;
-		approvalRuleTemplateDescription?: string;
-		approvalRuleTemplateContent?: string;
-		ruleContentSha256?: string;
-		lastModifiedDate?: Date;
-		creationDate?: Date;
-		lastModifiedUser?: string;
+		approvalRuleTemplateId?: string | null;
+		approvalRuleTemplateName?: string | null;
+		approvalRuleTemplateDescription?: string | null;
+		approvalRuleTemplateContent?: string | null;
+		ruleContentSha256?: string | null;
+		lastModifiedDate?: Date | null;
+		creationDate?: Date | null;
+		lastModifiedUser?: string | null;
 	}
 
 	export interface CreateApprovalRuleTemplateInput {
 		approvalRuleTemplateName: string;
 		approvalRuleTemplateContent: string;
-		approvalRuleTemplateDescription?: string;
+		approvalRuleTemplateDescription?: string | null;
 	}
 
 	export interface ApprovalRuleTemplateNameAlreadyExistsException {
@@ -405,50 +405,50 @@ export namespace MyNS {
 	}
 
 	export interface CreateCommitOutput {
-		commitId?: string;
-		treeId?: string;
-		filesAdded?: Array<FileMetadata>;
-		filesUpdated?: Array<FileMetadata>;
-		filesDeleted?: Array<FileMetadata>;
+		commitId?: string | null;
+		treeId?: string | null;
+		filesAdded?: Array<FileMetadata> | null;
+		filesUpdated?: Array<FileMetadata> | null;
+		filesDeleted?: Array<FileMetadata> | null;
 	}
 
 
 	/** A file to be added, updated, or deleted as part of a commit. */
 	export interface FileMetadata {
-		absolutePath?: string;
-		blobId?: string;
-		fileMode?: FileModesSource;
+		absolutePath?: string | null;
+		blobId?: string | null;
+		fileMode?: FileModesSource | null;
 	}
 
 	export interface CreateCommitInput {
 		repositoryName: string;
 		branchName: string;
-		parentCommitId?: string;
-		authorName?: string;
-		email?: string;
-		commitMessage?: string;
-		keepEmptyFolders?: boolean;
-		putFiles?: Array<PutFileEntry>;
-		deleteFiles?: Array<DeleteFileEntry>;
-		setFileModes?: Array<SetFileModeEntry>;
+		parentCommitId?: string | null;
+		authorName?: string | null;
+		email?: string | null;
+		commitMessage?: string | null;
+		keepEmptyFolders?: boolean | null;
+		putFiles?: Array<PutFileEntry> | null;
+		deleteFiles?: Array<DeleteFileEntry> | null;
+		setFileModes?: Array<SetFileModeEntry> | null;
 	}
 
 
 	/** Information about a file added or updated as part of a commit. */
 	export interface PutFileEntry {
 		filePath: string;
-		fileMode?: FileModesSource;
-		fileContent?: string;
+		fileMode?: FileModesSource | null;
+		fileContent?: string | null;
 
 		/** Information about a source file that is part of changes made in a commit. */
-		sourceFile?: SourceFileSpecifier;
+		sourceFile?: SourceFileSpecifier | null;
 	}
 
 
 	/** Information about a source file that is part of changes made in a commit. */
 	export interface SourceFileSpecifier {
 		filePath: string;
-		isMove?: boolean;
+		isMove?: boolean | null;
 	}
 
 
@@ -560,17 +560,17 @@ export namespace MyNS {
 
 	/** Returns information about a pull request. */
 	export interface PullRequest {
-		pullRequestId?: string;
-		title?: string;
-		description?: string;
-		lastActivityDate?: Date;
-		creationDate?: Date;
-		pullRequestStatus?: PullRequestPullRequestStatus;
-		authorArn?: string;
-		pullRequestTargets?: Array<PullRequestTarget>;
-		clientRequestToken?: string;
-		revisionId?: string;
-		approvalRules?: Array<ApprovalRule>;
+		pullRequestId?: string | null;
+		title?: string | null;
+		description?: string | null;
+		lastActivityDate?: Date | null;
+		creationDate?: Date | null;
+		pullRequestStatus?: PullRequestPullRequestStatus | null;
+		authorArn?: string | null;
+		pullRequestTargets?: Array<PullRequestTarget> | null;
+		clientRequestToken?: string | null;
+		revisionId?: string | null;
+		approvalRules?: Array<ApprovalRule> | null;
 	}
 
 	export enum PullRequestPullRequestStatus { OPEN = 0, CLOSED = 1 }
@@ -578,53 +578,53 @@ export namespace MyNS {
 
 	/** Returns information about a pull request target. */
 	export interface PullRequestTarget {
-		repositoryName?: string;
-		sourceReference?: string;
-		destinationReference?: string;
-		destinationCommit?: string;
-		sourceCommit?: string;
-		mergeBase?: string;
+		repositoryName?: string | null;
+		sourceReference?: string | null;
+		destinationReference?: string | null;
+		destinationCommit?: string | null;
+		sourceCommit?: string | null;
+		mergeBase?: string | null;
 
 		/** Returns information about a merge or potential merge between a source reference and a destination reference in a pull request. */
-		mergeMetadata?: MergeMetadata;
+		mergeMetadata?: MergeMetadata | null;
 	}
 
 
 	/** Returns information about a merge or potential merge between a source reference and a destination reference in a pull request. */
 	export interface MergeMetadata {
-		isMerged?: boolean;
-		mergedBy?: string;
-		mergeCommitId?: string;
-		mergeOption?: BatchDescribeMergeConflictsInputMergeOption;
+		isMerged?: boolean | null;
+		mergedBy?: string | null;
+		mergeCommitId?: string | null;
+		mergeOption?: BatchDescribeMergeConflictsInputMergeOption | null;
 	}
 
 
 	/** Returns information about an approval rule. */
 	export interface ApprovalRule {
-		approvalRuleId?: string;
-		approvalRuleName?: string;
-		approvalRuleContent?: string;
-		ruleContentSha256?: string;
-		lastModifiedDate?: Date;
-		creationDate?: Date;
-		lastModifiedUser?: string;
+		approvalRuleId?: string | null;
+		approvalRuleName?: string | null;
+		approvalRuleContent?: string | null;
+		ruleContentSha256?: string | null;
+		lastModifiedDate?: Date | null;
+		creationDate?: Date | null;
+		lastModifiedUser?: string | null;
 
 		/** Returns information about the template that created the approval rule for a pull request. */
-		originApprovalRuleTemplate?: OriginApprovalRuleTemplate;
+		originApprovalRuleTemplate?: OriginApprovalRuleTemplate | null;
 	}
 
 
 	/** Returns information about the template that created the approval rule for a pull request. */
 	export interface OriginApprovalRuleTemplate {
-		approvalRuleTemplateId?: string;
-		approvalRuleTemplateName?: string;
+		approvalRuleTemplateId?: string | null;
+		approvalRuleTemplateName?: string | null;
 	}
 
 	export interface CreatePullRequestInput {
 		title: string;
-		description?: string;
+		description?: string | null;
 		targets: Array<Target>;
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 	}
 
 
@@ -632,7 +632,7 @@ export namespace MyNS {
 	export interface Target {
 		repositoryName: string;
 		sourceReference: string;
-		destinationReference?: string;
+		destinationReference?: string | null;
 	}
 
 	export interface ClientRequestTokenRequiredException {
@@ -736,15 +736,15 @@ export namespace MyNS {
 	export interface CreateRepositoryOutput {
 
 		/** Information about a repository. */
-		repositoryMetadata?: RepositoryMetadata;
+		repositoryMetadata?: RepositoryMetadata | null;
 	}
 
 
 	/** Represents the input of a create repository operation. */
 	export interface CreateRepositoryInput {
 		repositoryName: string;
-		repositoryDescription?: string;
-		tags?: TagsMap;
+		repositoryDescription?: string | null;
+		tags?: TagsMap | null;
 	}
 
 	export interface TagsMap {
@@ -772,8 +772,8 @@ export namespace MyNS {
 	}
 
 	export interface CreateUnreferencedMergeCommitOutput {
-		commitId?: string;
-		treeId?: string;
+		commitId?: string | null;
+		treeId?: string | null;
 	}
 
 	export interface CreateUnreferencedMergeCommitInput {
@@ -781,23 +781,23 @@ export namespace MyNS {
 		sourceCommitSpecifier: string;
 		destinationCommitSpecifier: string;
 		mergeOption: BatchDescribeMergeConflictsInputMergeOption;
-		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel;
-		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy;
-		authorName?: string;
-		email?: string;
-		commitMessage?: string;
-		keepEmptyFolders?: boolean;
+		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
+		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy | null;
+		authorName?: string | null;
+		email?: string | null;
+		commitMessage?: string | null;
+		keepEmptyFolders?: boolean | null;
 
 		/** If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge. */
-		conflictResolution?: ConflictResolution;
+		conflictResolution?: ConflictResolution | null;
 	}
 
 
 	/** If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge. */
 	export interface ConflictResolution {
-		replaceContents?: Array<ReplaceContentEntry>;
-		deleteFiles?: Array<DeleteFileEntry>;
-		setFileModes?: Array<SetFileModeEntry>;
+		replaceContents?: Array<ReplaceContentEntry> | null;
+		deleteFiles?: Array<DeleteFileEntry> | null;
+		setFileModes?: Array<SetFileModeEntry> | null;
 	}
 
 
@@ -805,8 +805,8 @@ export namespace MyNS {
 	export interface ReplaceContentEntry {
 		filePath: string;
 		replacementType: ReplaceContentEntryReplacementType;
-		content?: string;
-		fileMode?: FileModesSource;
+		content?: string | null;
+		fileMode?: FileModesSource | null;
 	}
 
 	export enum ReplaceContentEntryReplacementType { KEEP_BASE = 0, KEEP_SOURCE = 1, KEEP_DESTINATION = 2, USE_NEW_CONTENT = 3 }
@@ -854,14 +854,14 @@ export namespace MyNS {
 	export interface DeleteBranchOutput {
 
 		/** Returns information about a branch. */
-		deletedBranch?: BranchInfo;
+		deletedBranch?: BranchInfo | null;
 	}
 
 
 	/** Returns information about a branch. */
 	export interface BranchInfo {
-		branchName?: string;
-		commitId?: string;
+		branchName?: string | null;
+		commitId?: string | null;
 	}
 
 
@@ -877,20 +877,20 @@ export namespace MyNS {
 	export interface DeleteCommentContentOutput {
 
 		/** Returns information about a specific comment. */
-		comment?: Comment;
+		comment?: Comment | null;
 	}
 
 
 	/** Returns information about a specific comment. */
 	export interface Comment {
-		commentId?: string;
-		content?: string;
-		inReplyTo?: string;
-		creationDate?: Date;
-		lastModifiedDate?: Date;
-		authorArn?: string;
-		deleted?: boolean;
-		clientRequestToken?: string;
+		commentId?: string | null;
+		content?: string | null;
+		inReplyTo?: string | null;
+		creationDate?: Date | null;
+		lastModifiedDate?: Date | null;
+		authorArn?: string | null;
+		deleted?: boolean | null;
+		clientRequestToken?: string | null;
 	}
 
 	export interface DeleteCommentContentInput {
@@ -921,10 +921,10 @@ export namespace MyNS {
 		branchName: string;
 		filePath: string;
 		parentCommitId: string;
-		keepEmptyFolders?: boolean;
-		commitMessage?: string;
-		name?: string;
-		email?: string;
+		keepEmptyFolders?: boolean | null;
+		commitMessage?: string | null;
+		name?: string | null;
+		email?: string | null;
 	}
 
 	export interface DeletePullRequestApprovalRuleOutput {
@@ -942,7 +942,7 @@ export namespace MyNS {
 
 	/** Represents the output of a delete repository operation. */
 	export interface DeleteRepositoryOutput {
-		repositoryId?: string;
+		repositoryId?: string | null;
 	}
 
 
@@ -959,10 +959,10 @@ export namespace MyNS {
 		 */
 		conflictMetadata: ConflictMetadata;
 		mergeHunks: Array<MergeHunk>;
-		nextToken?: string;
+		nextToken?: string | null;
 		destinationCommitId: string;
 		sourceCommitId: string;
-		baseCommitId?: string;
+		baseCommitId?: string | null;
 	}
 
 	export interface DescribeMergeConflictsInput {
@@ -970,46 +970,46 @@ export namespace MyNS {
 		destinationCommitSpecifier: string;
 		sourceCommitSpecifier: string;
 		mergeOption: BatchDescribeMergeConflictsInputMergeOption;
-		maxMergeHunks?: number;
+		maxMergeHunks?: number | null;
 		filePath: string;
-		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel;
-		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy;
-		nextToken?: string;
+		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
+		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy | null;
+		nextToken?: string | null;
 	}
 
 	export interface DescribePullRequestEventsOutput {
 		pullRequestEvents: Array<PullRequestEvent>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Returns information about a pull request event. */
 	export interface PullRequestEvent {
-		pullRequestId?: string;
-		eventDate?: Date;
-		pullRequestEventType?: PullRequestEventPullRequestEventType;
-		actorArn?: string;
+		pullRequestId?: string | null;
+		eventDate?: Date | null;
+		pullRequestEventType?: PullRequestEventPullRequestEventType | null;
+		actorArn?: string | null;
 
 		/** Metadata about the pull request that is used when comparing the pull request source with its destination. */
-		pullRequestCreatedEventMetadata?: PullRequestCreatedEventMetadata;
+		pullRequestCreatedEventMetadata?: PullRequestCreatedEventMetadata | null;
 
 		/** Information about a change to the status of a pull request. */
-		pullRequestStatusChangedEventMetadata?: PullRequestStatusChangedEventMetadata;
+		pullRequestStatusChangedEventMetadata?: PullRequestStatusChangedEventMetadata | null;
 
 		/** Information about an update to the source branch of a pull request. */
-		pullRequestSourceReferenceUpdatedEventMetadata?: PullRequestSourceReferenceUpdatedEventMetadata;
+		pullRequestSourceReferenceUpdatedEventMetadata?: PullRequestSourceReferenceUpdatedEventMetadata | null;
 
 		/** Returns information about the change in the merge state for a pull request event. */
-		pullRequestMergedStateChangedEventMetadata?: PullRequestMergedStateChangedEventMetadata;
+		pullRequestMergedStateChangedEventMetadata?: PullRequestMergedStateChangedEventMetadata | null;
 
 		/** Returns information about an event for an approval rule. */
-		approvalRuleEventMetadata?: ApprovalRuleEventMetadata;
+		approvalRuleEventMetadata?: ApprovalRuleEventMetadata | null;
 
 		/** Returns information about a change in the approval state for a pull request. */
-		approvalStateChangedEventMetadata?: ApprovalStateChangedEventMetadata;
+		approvalStateChangedEventMetadata?: ApprovalStateChangedEventMetadata | null;
 
 		/** Returns information about an override event for approval rules for a pull request. */
-		approvalRuleOverriddenEventMetadata?: ApprovalRuleOverriddenEventMetadata;
+		approvalRuleOverriddenEventMetadata?: ApprovalRuleOverriddenEventMetadata | null;
 	}
 
 	export enum PullRequestEventPullRequestEventType { PULL_REQUEST_CREATED = 0, PULL_REQUEST_STATUS_CHANGED = 1, PULL_REQUEST_SOURCE_REFERENCE_UPDATED = 2, PULL_REQUEST_MERGE_STATE_CHANGED = 3, PULL_REQUEST_APPROVAL_RULE_CREATED = 4, PULL_REQUEST_APPROVAL_RULE_UPDATED = 5, PULL_REQUEST_APPROVAL_RULE_DELETED = 6, PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN = 7, PULL_REQUEST_APPROVAL_STATE_CHANGED = 8 }
@@ -1017,50 +1017,50 @@ export namespace MyNS {
 
 	/** Metadata about the pull request that is used when comparing the pull request source with its destination. */
 	export interface PullRequestCreatedEventMetadata {
-		repositoryName?: string;
-		sourceCommitId?: string;
-		destinationCommitId?: string;
-		mergeBase?: string;
+		repositoryName?: string | null;
+		sourceCommitId?: string | null;
+		destinationCommitId?: string | null;
+		mergeBase?: string | null;
 	}
 
 
 	/** Information about a change to the status of a pull request. */
 	export interface PullRequestStatusChangedEventMetadata {
-		pullRequestStatus?: PullRequestPullRequestStatus;
+		pullRequestStatus?: PullRequestPullRequestStatus | null;
 	}
 
 
 	/** Information about an update to the source branch of a pull request. */
 	export interface PullRequestSourceReferenceUpdatedEventMetadata {
-		repositoryName?: string;
-		beforeCommitId?: string;
-		afterCommitId?: string;
-		mergeBase?: string;
+		repositoryName?: string | null;
+		beforeCommitId?: string | null;
+		afterCommitId?: string | null;
+		mergeBase?: string | null;
 	}
 
 
 	/** Returns information about the change in the merge state for a pull request event.  */
 	export interface PullRequestMergedStateChangedEventMetadata {
-		repositoryName?: string;
-		destinationReference?: string;
+		repositoryName?: string | null;
+		destinationReference?: string | null;
 
 		/** Returns information about a merge or potential merge between a source reference and a destination reference in a pull request. */
-		mergeMetadata?: MergeMetadata;
+		mergeMetadata?: MergeMetadata | null;
 	}
 
 
 	/** Returns information about an event for an approval rule. */
 	export interface ApprovalRuleEventMetadata {
-		approvalRuleName?: string;
-		approvalRuleId?: string;
-		approvalRuleContent?: string;
+		approvalRuleName?: string | null;
+		approvalRuleId?: string | null;
+		approvalRuleContent?: string | null;
 	}
 
 
 	/** Returns information about a change in the approval state for a pull request. */
 	export interface ApprovalStateChangedEventMetadata {
-		revisionId?: string;
-		approvalStatus?: ApprovalStateChangedEventMetadataApprovalStatus;
+		revisionId?: string | null;
+		approvalStatus?: ApprovalStateChangedEventMetadataApprovalStatus | null;
 	}
 
 	export enum ApprovalStateChangedEventMetadataApprovalStatus { APPROVE = 0, REVOKE = 1 }
@@ -1068,18 +1068,18 @@ export namespace MyNS {
 
 	/** Returns information about an override event for approval rules for a pull request. */
 	export interface ApprovalRuleOverriddenEventMetadata {
-		revisionId?: string;
-		overrideStatus?: ApprovalRuleOverriddenEventMetadataOverrideStatus;
+		revisionId?: string | null;
+		overrideStatus?: ApprovalRuleOverriddenEventMetadataOverrideStatus | null;
 	}
 
 	export enum ApprovalRuleOverriddenEventMetadataOverrideStatus { OVERRIDE = 0, REVOKE = 1 }
 
 	export interface DescribePullRequestEventsInput {
 		pullRequestId: string;
-		pullRequestEventType?: PullRequestEventPullRequestEventType;
-		actorArn?: string;
-		nextToken?: string;
-		maxResults?: number;
+		pullRequestEventType?: PullRequestEventPullRequestEventType | null;
+		actorArn?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface InvalidPullRequestEventTypeException {
@@ -1111,10 +1111,10 @@ export namespace MyNS {
 
 	/** Returns information about the approval rules applied to a pull request and whether conditions have been met. */
 	export interface Evaluation {
-		approved?: boolean;
-		overridden?: boolean;
-		approvalRulesSatisfied?: Array<string>;
-		approvalRulesNotSatisfied?: Array<string>;
+		approved?: boolean | null;
+		overridden?: boolean | null;
+		approvalRulesSatisfied?: Array<string> | null;
+		approvalRulesNotSatisfied?: Array<string> | null;
 	}
 
 	export interface EvaluatePullRequestApprovalRulesInput {
@@ -1174,20 +1174,20 @@ export namespace MyNS {
 	export interface GetBranchOutput {
 
 		/** Returns information about a branch. */
-		branch?: BranchInfo;
+		branch?: BranchInfo | null;
 	}
 
 
 	/** Represents the input of a get branch operation. */
 	export interface GetBranchInput {
-		repositoryName?: string;
-		branchName?: string;
+		repositoryName?: string | null;
+		branchName?: string | null;
 	}
 
 	export interface GetCommentOutput {
 
 		/** Returns information about a specific comment. */
-		comment?: Comment;
+		comment?: Comment | null;
 	}
 
 	export interface GetCommentInput {
@@ -1195,69 +1195,69 @@ export namespace MyNS {
 	}
 
 	export interface GetCommentsForComparedCommitOutput {
-		commentsForComparedCommitData?: Array<CommentsForComparedCommit>;
-		nextToken?: string;
+		commentsForComparedCommitData?: Array<CommentsForComparedCommit> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Returns information about comments on the comparison between two commits. */
 	export interface CommentsForComparedCommit {
-		repositoryName?: string;
-		beforeCommitId?: string;
-		afterCommitId?: string;
-		beforeBlobId?: string;
-		afterBlobId?: string;
+		repositoryName?: string | null;
+		beforeCommitId?: string | null;
+		afterCommitId?: string | null;
+		beforeBlobId?: string | null;
+		afterBlobId?: string | null;
 
 		/** Returns information about the location of a change or comment in the comparison between two commits or a pull request. */
-		location?: Location;
-		comments?: Array<Comment>;
+		location?: Location | null;
+		comments?: Array<Comment> | null;
 	}
 
 
 	/** Returns information about the location of a change or comment in the comparison between two commits or a pull request. */
 	export interface Location {
-		filePath?: string;
-		filePosition?: number;
-		relativeFileVersion?: LocationRelativeFileVersion;
+		filePath?: string | null;
+		filePosition?: number | null;
+		relativeFileVersion?: LocationRelativeFileVersion | null;
 	}
 
 	export enum LocationRelativeFileVersion { BEFORE = 0, AFTER = 1 }
 
 	export interface GetCommentsForComparedCommitInput {
 		repositoryName: string;
-		beforeCommitId?: string;
+		beforeCommitId?: string | null;
 		afterCommitId: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface GetCommentsForPullRequestOutput {
-		commentsForPullRequestData?: Array<CommentsForPullRequest>;
-		nextToken?: string;
+		commentsForPullRequestData?: Array<CommentsForPullRequest> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Returns information about comments on a pull request. */
 	export interface CommentsForPullRequest {
-		pullRequestId?: string;
-		repositoryName?: string;
-		beforeCommitId?: string;
-		afterCommitId?: string;
-		beforeBlobId?: string;
-		afterBlobId?: string;
+		pullRequestId?: string | null;
+		repositoryName?: string | null;
+		beforeCommitId?: string | null;
+		afterCommitId?: string | null;
+		beforeBlobId?: string | null;
+		afterBlobId?: string | null;
 
 		/** Returns information about the location of a change or comment in the comparison between two commits or a pull request. */
-		location?: Location;
-		comments?: Array<Comment>;
+		location?: Location | null;
+		comments?: Array<Comment> | null;
 	}
 
 	export interface GetCommentsForPullRequestInput {
 		pullRequestId: string;
-		repositoryName?: string;
-		beforeCommitId?: string;
-		afterCommitId?: string;
-		nextToken?: string;
-		maxResults?: number;
+		repositoryName?: string | null;
+		beforeCommitId?: string | null;
+		afterCommitId?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface RepositoryNotAssociatedWithPullRequestException {
@@ -1285,8 +1285,8 @@ export namespace MyNS {
 	}
 
 	export interface GetDifferencesOutput {
-		differences?: Array<Difference>;
-		NextToken?: string;
+		differences?: Array<Difference> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -1294,29 +1294,29 @@ export namespace MyNS {
 	export interface Difference {
 
 		/** Returns information about a specific Git blob object. */
-		beforeBlob?: BlobMetadata;
+		beforeBlob?: BlobMetadata | null;
 
 		/** Returns information about a specific Git blob object. */
-		afterBlob?: BlobMetadata;
-		changeType?: MergeOperationsSource;
+		afterBlob?: BlobMetadata | null;
+		changeType?: MergeOperationsSource | null;
 	}
 
 
 	/** Returns information about a specific Git blob object. */
 	export interface BlobMetadata {
-		blobId?: string;
-		path?: string;
-		mode?: string;
+		blobId?: string | null;
+		path?: string | null;
+		mode?: string | null;
 	}
 
 	export interface GetDifferencesInput {
 		repositoryName: string;
-		beforeCommitSpecifier?: string;
+		beforeCommitSpecifier?: string | null;
 		afterCommitSpecifier: string;
-		beforePath?: string;
-		afterPath?: string;
-		MaxResults?: number;
-		NextToken?: string;
+		beforePath?: string | null;
+		afterPath?: string | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface PathDoesNotExistException {
@@ -1333,57 +1333,57 @@ export namespace MyNS {
 
 	export interface GetFileInput {
 		repositoryName: string;
-		commitSpecifier?: string;
+		commitSpecifier?: string | null;
 		filePath: string;
 	}
 
 	export interface GetFolderOutput {
 		commitId: string;
 		folderPath: string;
-		treeId?: string;
-		subFolders?: Array<Folder>;
-		files?: Array<File>;
-		symbolicLinks?: Array<SymbolicLink>;
-		subModules?: Array<SubModule>;
+		treeId?: string | null;
+		subFolders?: Array<Folder> | null;
+		files?: Array<File> | null;
+		symbolicLinks?: Array<SymbolicLink> | null;
+		subModules?: Array<SubModule> | null;
 	}
 
 
 	/** Returns information about a folder in a repository. */
 	export interface Folder {
-		treeId?: string;
-		absolutePath?: string;
-		relativePath?: string;
+		treeId?: string | null;
+		absolutePath?: string | null;
+		relativePath?: string | null;
 	}
 
 
 	/** Returns information about a file in a repository. */
 	export interface File {
-		blobId?: string;
-		absolutePath?: string;
-		relativePath?: string;
-		fileMode?: FileModesSource;
+		blobId?: string | null;
+		absolutePath?: string | null;
+		relativePath?: string | null;
+		fileMode?: FileModesSource | null;
 	}
 
 
 	/** Returns information about a symbolic link in a repository folder. */
 	export interface SymbolicLink {
-		blobId?: string;
-		absolutePath?: string;
-		relativePath?: string;
-		fileMode?: FileModesSource;
+		blobId?: string | null;
+		absolutePath?: string | null;
+		relativePath?: string | null;
+		fileMode?: FileModesSource | null;
 	}
 
 
 	/** Returns information about a submodule reference in a repository folder. */
 	export interface SubModule {
-		commitId?: string;
-		absolutePath?: string;
-		relativePath?: string;
+		commitId?: string | null;
+		absolutePath?: string | null;
+		relativePath?: string | null;
 	}
 
 	export interface GetFolderInput {
 		repositoryName: string;
-		commitSpecifier?: string;
+		commitSpecifier?: string | null;
 		folderPath: string;
 	}
 
@@ -1391,27 +1391,27 @@ export namespace MyNS {
 	}
 
 	export interface GetMergeCommitOutput {
-		sourceCommitId?: string;
-		destinationCommitId?: string;
-		baseCommitId?: string;
-		mergedCommitId?: string;
+		sourceCommitId?: string | null;
+		destinationCommitId?: string | null;
+		baseCommitId?: string | null;
+		mergedCommitId?: string | null;
 	}
 
 	export interface GetMergeCommitInput {
 		repositoryName: string;
 		sourceCommitSpecifier: string;
 		destinationCommitSpecifier: string;
-		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel;
-		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy;
+		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
+		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy | null;
 	}
 
 	export interface GetMergeConflictsOutput {
 		mergeable: boolean;
 		destinationCommitId: string;
 		sourceCommitId: string;
-		baseCommitId?: string;
+		baseCommitId?: string | null;
 		conflictMetadataList: Array<ConflictMetadata>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface GetMergeConflictsInput {
@@ -1419,10 +1419,10 @@ export namespace MyNS {
 		destinationCommitSpecifier: string;
 		sourceCommitSpecifier: string;
 		mergeOption: BatchDescribeMergeConflictsInputMergeOption;
-		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel;
-		maxConflictFiles?: number;
-		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy;
-		nextToken?: string;
+		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
+		maxConflictFiles?: number | null;
+		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy | null;
+		nextToken?: string | null;
 	}
 
 	export interface InvalidDestinationCommitSpecifierException {
@@ -1444,8 +1444,8 @@ export namespace MyNS {
 		repositoryName: string;
 		sourceCommitSpecifier: string;
 		destinationCommitSpecifier: string;
-		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel;
-		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy;
+		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
+		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy | null;
 	}
 
 	export interface GetPullRequestOutput {
@@ -1462,14 +1462,14 @@ export namespace MyNS {
 	}
 
 	export interface GetPullRequestApprovalStatesOutput {
-		approvals?: Array<Approval>;
+		approvals?: Array<Approval> | null;
 	}
 
 
 	/** Returns information about a specific approval on a pull request. */
 	export interface Approval {
-		userArn?: string;
-		approvalState?: ApprovalStateChangedEventMetadataApprovalStatus;
+		userArn?: string | null;
+		approvalState?: ApprovalStateChangedEventMetadataApprovalStatus | null;
 	}
 
 	export interface GetPullRequestApprovalStatesInput {
@@ -1478,8 +1478,8 @@ export namespace MyNS {
 	}
 
 	export interface GetPullRequestOverrideStateOutput {
-		overridden?: boolean;
-		overrider?: string;
+		overridden?: boolean | null;
+		overrider?: string | null;
 	}
 
 	export interface GetPullRequestOverrideStateInput {
@@ -1492,7 +1492,7 @@ export namespace MyNS {
 	export interface GetRepositoryOutput {
 
 		/** Information about a repository. */
-		repositoryMetadata?: RepositoryMetadata;
+		repositoryMetadata?: RepositoryMetadata | null;
 	}
 
 
@@ -1504,8 +1504,8 @@ export namespace MyNS {
 
 	/** Represents the output of a get repository triggers operation. */
 	export interface GetRepositoryTriggersOutput {
-		configurationId?: string;
-		triggers?: Array<RepositoryTrigger>;
+		configurationId?: string | null;
+		triggers?: Array<RepositoryTrigger> | null;
 	}
 
 
@@ -1513,8 +1513,8 @@ export namespace MyNS {
 	export interface RepositoryTrigger {
 		name: string;
 		destinationArn: string;
-		customData?: string;
-		branches?: Array<string>;
+		customData?: string | null;
+		branches?: Array<string> | null;
 		events: Array<RepositoryTriggerEventEnum>;
 	}
 
@@ -1527,51 +1527,51 @@ export namespace MyNS {
 	}
 
 	export interface ListApprovalRuleTemplatesOutput {
-		approvalRuleTemplateNames?: Array<string>;
-		nextToken?: string;
+		approvalRuleTemplateNames?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListApprovalRuleTemplatesInput {
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
-		approvalRuleTemplateNames?: Array<string>;
-		nextToken?: string;
+		approvalRuleTemplateNames?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListAssociatedApprovalRuleTemplatesForRepositoryInput {
 		repositoryName: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 
 	/** Represents the output of a list branches operation. */
 	export interface ListBranchesOutput {
-		branches?: Array<string>;
-		nextToken?: string;
+		branches?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the input of a list branches operation. */
 	export interface ListBranchesInput {
 		repositoryName: string;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListPullRequestsOutput {
 		pullRequestIds: Array<string>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListPullRequestsInput {
 		repositoryName: string;
-		authorArn?: string;
-		pullRequestStatus?: PullRequestPullRequestStatus;
-		nextToken?: string;
-		maxResults?: number;
+		authorArn?: string | null;
+		pullRequestStatus?: PullRequestPullRequestStatus | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface InvalidPullRequestStatusException {
@@ -1586,23 +1586,23 @@ export namespace MyNS {
 
 	/** Represents the output of a list repositories operation. */
 	export interface ListRepositoriesOutput {
-		repositories?: Array<RepositoryNameIdPair>;
-		nextToken?: string;
+		repositories?: Array<RepositoryNameIdPair> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about a repository name and ID. */
 	export interface RepositoryNameIdPair {
-		repositoryName?: string;
-		repositoryId?: string;
+		repositoryName?: string | null;
+		repositoryId?: string | null;
 	}
 
 
 	/** Represents the input of a list repositories operation. */
 	export interface ListRepositoriesInput {
-		nextToken?: string;
-		sortBy?: ListRepositoriesInputSortBy;
-		order?: ListRepositoriesInputOrder;
+		nextToken?: string | null;
+		sortBy?: ListRepositoriesInputSortBy | null;
+		order?: ListRepositoriesInputOrder | null;
 	}
 
 	export enum ListRepositoriesInputSortBy { repositoryName = 0, lastModifiedDate = 1 }
@@ -1616,24 +1616,24 @@ export namespace MyNS {
 	}
 
 	export interface ListRepositoriesForApprovalRuleTemplateOutput {
-		repositoryNames?: Array<string>;
-		nextToken?: string;
+		repositoryNames?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListRepositoriesForApprovalRuleTemplateInput {
 		approvalRuleTemplateName: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListTagsForResourceOutput {
-		tags?: TagsMap;
-		nextToken?: string;
+		tags?: TagsMap | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceInput {
 		resourceArn: string;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ResourceArnRequiredException {
@@ -1643,72 +1643,72 @@ export namespace MyNS {
 	}
 
 	export interface MergeBranchesByFastForwardOutput {
-		commitId?: string;
-		treeId?: string;
+		commitId?: string | null;
+		treeId?: string | null;
 	}
 
 	export interface MergeBranchesByFastForwardInput {
 		repositoryName: string;
 		sourceCommitSpecifier: string;
 		destinationCommitSpecifier: string;
-		targetBranch?: string;
+		targetBranch?: string | null;
 	}
 
 	export interface InvalidTargetBranchException {
 	}
 
 	export interface MergeBranchesBySquashOutput {
-		commitId?: string;
-		treeId?: string;
+		commitId?: string | null;
+		treeId?: string | null;
 	}
 
 	export interface MergeBranchesBySquashInput {
 		repositoryName: string;
 		sourceCommitSpecifier: string;
 		destinationCommitSpecifier: string;
-		targetBranch?: string;
-		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel;
-		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy;
-		authorName?: string;
-		email?: string;
-		commitMessage?: string;
-		keepEmptyFolders?: boolean;
+		targetBranch?: string | null;
+		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
+		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy | null;
+		authorName?: string | null;
+		email?: string | null;
+		commitMessage?: string | null;
+		keepEmptyFolders?: boolean | null;
 
 		/** If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge. */
-		conflictResolution?: ConflictResolution;
+		conflictResolution?: ConflictResolution | null;
 	}
 
 	export interface MergeBranchesByThreeWayOutput {
-		commitId?: string;
-		treeId?: string;
+		commitId?: string | null;
+		treeId?: string | null;
 	}
 
 	export interface MergeBranchesByThreeWayInput {
 		repositoryName: string;
 		sourceCommitSpecifier: string;
 		destinationCommitSpecifier: string;
-		targetBranch?: string;
-		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel;
-		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy;
-		authorName?: string;
-		email?: string;
-		commitMessage?: string;
-		keepEmptyFolders?: boolean;
+		targetBranch?: string | null;
+		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
+		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy | null;
+		authorName?: string | null;
+		email?: string | null;
+		commitMessage?: string | null;
+		keepEmptyFolders?: boolean | null;
 
 		/** If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge. */
-		conflictResolution?: ConflictResolution;
+		conflictResolution?: ConflictResolution | null;
 	}
 
 	export interface MergePullRequestByFastForwardOutput {
 
 		/** Returns information about a pull request. */
-		pullRequest?: PullRequest;
+		pullRequest?: PullRequest | null;
 	}
 
 	export interface MergePullRequestByFastForwardInput {
 		pullRequestId: string;
 		repositoryName: string;
-		sourceCommitId?: string;
+		sourceCommitId?: string | null;
 	}
 
 	export interface TipOfSourceReferenceIsDifferentException {
@@ -1720,43 +1720,43 @@ export namespace MyNS {
 	export interface MergePullRequestBySquashOutput {
 
 		/** Returns information about a pull request. */
-		pullRequest?: PullRequest;
+		pullRequest?: PullRequest | null;
 	}
 
 	export interface MergePullRequestBySquashInput {
 		pullRequestId: string;
 		repositoryName: string;
-		sourceCommitId?: string;
-		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel;
-		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy;
-		commitMessage?: string;
-		authorName?: string;
-		email?: string;
-		keepEmptyFolders?: boolean;
+		sourceCommitId?: string | null;
+		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
+		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy | null;
+		commitMessage?: string | null;
+		authorName?: string | null;
+		email?: string | null;
+		keepEmptyFolders?: boolean | null;
 
 		/** If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge. */
-		conflictResolution?: ConflictResolution;
+		conflictResolution?: ConflictResolution | null;
 	}
 
 	export interface MergePullRequestByThreeWayOutput {
 
 		/** Returns information about a pull request. */
-		pullRequest?: PullRequest;
+		pullRequest?: PullRequest | null;
 	}
 
 	export interface MergePullRequestByThreeWayInput {
 		pullRequestId: string;
 		repositoryName: string;
-		sourceCommitId?: string;
-		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel;
-		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy;
-		commitMessage?: string;
-		authorName?: string;
-		email?: string;
-		keepEmptyFolders?: boolean;
+		sourceCommitId?: string | null;
+		conflictDetailLevel?: BatchDescribeMergeConflictsInputConflictDetailLevel | null;
+		conflictResolutionStrategy?: BatchDescribeMergeConflictsInputConflictResolutionStrategy | null;
+		commitMessage?: string | null;
+		authorName?: string | null;
+		email?: string | null;
+		keepEmptyFolders?: boolean | null;
 
 		/** If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge. */
-		conflictResolution?: ConflictResolution;
+		conflictResolution?: ConflictResolution | null;
 	}
 
 	export interface OverridePullRequestApprovalRulesInput {
@@ -1775,28 +1775,28 @@ export namespace MyNS {
 	}
 
 	export interface PostCommentForComparedCommitOutput {
-		repositoryName?: string;
-		beforeCommitId?: string;
-		afterCommitId?: string;
-		beforeBlobId?: string;
-		afterBlobId?: string;
+		repositoryName?: string | null;
+		beforeCommitId?: string | null;
+		afterCommitId?: string | null;
+		beforeBlobId?: string | null;
+		afterBlobId?: string | null;
 
 		/** Returns information about the location of a change or comment in the comparison between two commits or a pull request. */
-		location?: Location;
+		location?: Location | null;
 
 		/** Returns information about a specific comment. */
-		comment?: Comment;
+		comment?: Comment | null;
 	}
 
 	export interface PostCommentForComparedCommitInput {
 		repositoryName: string;
-		beforeCommitId?: string;
+		beforeCommitId?: string | null;
 		afterCommitId: string;
 
 		/** Returns information about the location of a change or comment in the comparison between two commits or a pull request. */
-		location?: Location;
+		location?: Location | null;
 		content: string;
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 	}
 
 	export interface CommentContentRequiredException {
@@ -1818,18 +1818,18 @@ export namespace MyNS {
 	}
 
 	export interface PostCommentForPullRequestOutput {
-		repositoryName?: string;
-		pullRequestId?: string;
-		beforeCommitId?: string;
-		afterCommitId?: string;
-		beforeBlobId?: string;
-		afterBlobId?: string;
+		repositoryName?: string | null;
+		pullRequestId?: string | null;
+		beforeCommitId?: string | null;
+		afterCommitId?: string | null;
+		beforeBlobId?: string | null;
+		afterBlobId?: string | null;
 
 		/** Returns information about the location of a change or comment in the comparison between two commits or a pull request. */
-		location?: Location;
+		location?: Location | null;
 
 		/** Returns information about a specific comment. */
-		comment?: Comment;
+		comment?: Comment | null;
 	}
 
 	export interface PostCommentForPullRequestInput {
@@ -1839,20 +1839,20 @@ export namespace MyNS {
 		afterCommitId: string;
 
 		/** Returns information about the location of a change or comment in the comparison between two commits or a pull request. */
-		location?: Location;
+		location?: Location | null;
 		content: string;
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 	}
 
 	export interface PostCommentReplyOutput {
 
 		/** Returns information about a specific comment. */
-		comment?: Comment;
+		comment?: Comment | null;
 	}
 
 	export interface PostCommentReplyInput {
 		inReplyTo: string;
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 		content: string;
 	}
 
@@ -1867,11 +1867,11 @@ export namespace MyNS {
 		branchName: string;
 		fileContent: string;
 		filePath: string;
-		fileMode?: FileModesSource;
-		parentCommitId?: string;
-		commitMessage?: string;
-		name?: string;
-		email?: string;
+		fileMode?: FileModesSource | null;
+		parentCommitId?: string | null;
+		commitMessage?: string | null;
+		name?: string | null;
+		email?: string | null;
 	}
 
 	export interface FileContentRequiredException {
@@ -1883,7 +1883,7 @@ export namespace MyNS {
 
 	/** Represents the output of a put repository triggers operation. */
 	export interface PutRepositoryTriggersOutput {
-		configurationId?: string;
+		configurationId?: string | null;
 	}
 
 
@@ -1943,15 +1943,15 @@ export namespace MyNS {
 
 	/** Represents the output of a test repository triggers operation. */
 	export interface TestRepositoryTriggersOutput {
-		successfulExecutions?: Array<string>;
-		failedExecutions?: Array<RepositoryTriggerExecutionFailure>;
+		successfulExecutions?: Array<string> | null;
+		failedExecutions?: Array<RepositoryTriggerExecutionFailure> | null;
 	}
 
 
 	/** A trigger failed to run. */
 	export interface RepositoryTriggerExecutionFailure {
-		trigger?: string;
-		failureMessage?: string;
+		trigger?: string | null;
+		failureMessage?: string | null;
 	}
 
 
@@ -1984,7 +1984,7 @@ export namespace MyNS {
 	export interface UpdateApprovalRuleTemplateContentInput {
 		approvalRuleTemplateName: string;
 		newRuleContent: string;
-		existingRuleContentSha256?: string;
+		existingRuleContentSha256?: string | null;
 	}
 
 	export interface InvalidRuleContentSha256Exception {
@@ -2021,7 +2021,7 @@ export namespace MyNS {
 	export interface UpdateCommentOutput {
 
 		/** Returns information about a specific comment. */
-		comment?: Comment;
+		comment?: Comment | null;
 	}
 
 	export interface UpdateCommentInput {
@@ -2051,7 +2051,7 @@ export namespace MyNS {
 	export interface UpdatePullRequestApprovalRuleContentInput {
 		pullRequestId: string;
 		approvalRuleName: string;
-		existingRuleContentSha256?: string;
+		existingRuleContentSha256?: string | null;
 		newRuleContent: string;
 	}
 
@@ -2131,7 +2131,7 @@ export namespace MyNS {
 	/** Represents the input of an update repository description operation. */
 	export interface UpdateRepositoryDescriptionInput {
 		repositoryName: string;
-		repositoryDescription?: string;
+		repositoryDescription?: string | null;
 	}
 
 
@@ -2350,7 +2350,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeMergeConflictsOutput} Success
 		 */
-		DescribeMergeConflicts(maxMergeHunks: string, nextToken: string, requestBody: DescribeMergeConflictsInput): Observable<DescribeMergeConflictsOutput> {
+		DescribeMergeConflicts(maxMergeHunks: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeMergeConflictsInput): Observable<DescribeMergeConflictsOutput> {
 			return this.http.post<DescribeMergeConflictsOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.DescribeMergeConflicts?maxMergeHunks=' + (maxMergeHunks == null ? '' : encodeURIComponent(maxMergeHunks)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2361,7 +2361,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribePullRequestEventsOutput} Success
 		 */
-		DescribePullRequestEvents(maxResults: string, nextToken: string, requestBody: DescribePullRequestEventsInput): Observable<DescribePullRequestEventsOutput> {
+		DescribePullRequestEvents(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribePullRequestEventsInput): Observable<DescribePullRequestEventsOutput> {
 			return this.http.post<DescribePullRequestEventsOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.DescribePullRequestEvents?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2426,7 +2426,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetCommentsForComparedCommitOutput} Success
 		 */
-		GetCommentsForComparedCommit(maxResults: string, nextToken: string, requestBody: GetCommentsForComparedCommitInput): Observable<GetCommentsForComparedCommitOutput> {
+		GetCommentsForComparedCommit(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetCommentsForComparedCommitInput): Observable<GetCommentsForComparedCommitOutput> {
 			return this.http.post<GetCommentsForComparedCommitOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.GetCommentsForComparedCommit?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2437,7 +2437,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetCommentsForPullRequestOutput} Success
 		 */
-		GetCommentsForPullRequest(maxResults: string, nextToken: string, requestBody: GetCommentsForPullRequestInput): Observable<GetCommentsForPullRequestOutput> {
+		GetCommentsForPullRequest(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetCommentsForPullRequestInput): Observable<GetCommentsForPullRequestOutput> {
 			return this.http.post<GetCommentsForPullRequestOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.GetCommentsForPullRequest?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2457,7 +2457,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetDifferencesOutput} Success
 		 */
-		GetDifferences(MaxResults: string, NextToken: string, requestBody: GetDifferencesInput): Observable<GetDifferencesOutput> {
+		GetDifferences(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetDifferencesInput): Observable<GetDifferencesOutput> {
 			return this.http.post<GetDifferencesOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.GetDifferences?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2495,7 +2495,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetMergeConflictsOutput} Success
 		 */
-		GetMergeConflicts(maxConflictFiles: string, nextToken: string, requestBody: GetMergeConflictsInput): Observable<GetMergeConflictsOutput> {
+		GetMergeConflicts(maxConflictFiles: string | null | undefined, nextToken: string | null | undefined, requestBody: GetMergeConflictsInput): Observable<GetMergeConflictsOutput> {
 			return this.http.post<GetMergeConflictsOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.GetMergeConflicts?maxConflictFiles=' + (maxConflictFiles == null ? '' : encodeURIComponent(maxConflictFiles)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2560,7 +2560,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListApprovalRuleTemplatesOutput} Success
 		 */
-		ListApprovalRuleTemplates(maxResults: string, nextToken: string, requestBody: ListApprovalRuleTemplatesInput): Observable<ListApprovalRuleTemplatesOutput> {
+		ListApprovalRuleTemplates(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListApprovalRuleTemplatesInput): Observable<ListApprovalRuleTemplatesOutput> {
 			return this.http.post<ListApprovalRuleTemplatesOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.ListApprovalRuleTemplates?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2571,7 +2571,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAssociatedApprovalRuleTemplatesForRepositoryOutput} Success
 		 */
-		ListAssociatedApprovalRuleTemplatesForRepository(maxResults: string, nextToken: string, requestBody: ListAssociatedApprovalRuleTemplatesForRepositoryInput): Observable<ListAssociatedApprovalRuleTemplatesForRepositoryOutput> {
+		ListAssociatedApprovalRuleTemplatesForRepository(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListAssociatedApprovalRuleTemplatesForRepositoryInput): Observable<ListAssociatedApprovalRuleTemplatesForRepositoryOutput> {
 			return this.http.post<ListAssociatedApprovalRuleTemplatesForRepositoryOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.ListAssociatedApprovalRuleTemplatesForRepository?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2581,7 +2581,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListBranchesOutput} Success
 		 */
-		ListBranches(nextToken: string, requestBody: ListBranchesInput): Observable<ListBranchesOutput> {
+		ListBranches(nextToken: string | null | undefined, requestBody: ListBranchesInput): Observable<ListBranchesOutput> {
 			return this.http.post<ListBranchesOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.ListBranches?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2592,7 +2592,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListPullRequestsOutput} Success
 		 */
-		ListPullRequests(maxResults: string, nextToken: string, requestBody: ListPullRequestsInput): Observable<ListPullRequestsOutput> {
+		ListPullRequests(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListPullRequestsInput): Observable<ListPullRequestsOutput> {
 			return this.http.post<ListPullRequestsOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.ListPullRequests?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2602,7 +2602,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListRepositoriesOutput} Success
 		 */
-		ListRepositories(nextToken: string, requestBody: ListRepositoriesInput): Observable<ListRepositoriesOutput> {
+		ListRepositories(nextToken: string | null | undefined, requestBody: ListRepositoriesInput): Observable<ListRepositoriesOutput> {
 			return this.http.post<ListRepositoriesOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.ListRepositories?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2613,7 +2613,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListRepositoriesForApprovalRuleTemplateOutput} Success
 		 */
-		ListRepositoriesForApprovalRuleTemplate(maxResults: string, nextToken: string, requestBody: ListRepositoriesForApprovalRuleTemplateInput): Observable<ListRepositoriesForApprovalRuleTemplateOutput> {
+		ListRepositoriesForApprovalRuleTemplate(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListRepositoriesForApprovalRuleTemplateInput): Observable<ListRepositoriesForApprovalRuleTemplateOutput> {
 			return this.http.post<ListRepositoriesForApprovalRuleTemplateOutput>(this.baseUri + '#X-Amz-Target=CodeCommit_20150413.ListRepositoriesForApprovalRuleTemplate?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

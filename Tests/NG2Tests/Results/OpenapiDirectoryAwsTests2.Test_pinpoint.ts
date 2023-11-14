@@ -17,7 +17,7 @@ export namespace MyNS {
 		Arn: string;
 		Id: string;
 		Name: string;
-		tags?: MapOf__string;
+		tags?: MapOf__string | null;
 	}
 
 	export interface MapOf__string {
@@ -56,46 +56,46 @@ export namespace MyNS {
 
 	/** Provides information about the status, configuration, and other settings for a campaign. */
 	export interface CampaignResponse {
-		AdditionalTreatments?: Array<TreatmentResource>;
+		AdditionalTreatments?: Array<TreatmentResource> | null;
 		ApplicationId: string;
 		Arn: string;
 		CreationDate: string;
 
 		/** Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment. */
-		CustomDeliveryConfiguration?: CustomDeliveryConfiguration;
+		CustomDeliveryConfiguration?: CustomDeliveryConfiguration | null;
 
 		/** Provides information about the status of a campaign. */
-		DefaultState?: CampaignState;
-		Description?: string;
-		HoldoutPercent?: number;
+		DefaultState?: CampaignState | null;
+		Description?: string | null;
+		HoldoutPercent?: number | null;
 
 		/** Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign. */
-		Hook?: CampaignHook;
+		Hook?: CampaignHook | null;
 		Id: string;
-		IsPaused?: boolean;
+		IsPaused?: boolean | null;
 		LastModifiedDate: string;
 
 		/** For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns and journeys in the application can send. */
-		Limits?: CampaignLimits;
+		Limits?: CampaignLimits | null;
 
 		/** Specifies the message configuration settings for a campaign. */
-		MessageConfiguration?: MessageConfiguration;
-		Name?: string;
+		MessageConfiguration?: MessageConfiguration | null;
+		Name?: string | null;
 
 		/** Specifies the schedule settings for a campaign. */
-		Schedule?: Schedule;
+		Schedule?: Schedule | null;
 		SegmentId: string;
 		SegmentVersion: number;
 
 		/** Provides information about the status of a campaign. */
-		State?: CampaignState;
-		tags?: MapOf__string;
+		State?: CampaignState | null;
+		tags?: MapOf__string | null;
 
 		/** Specifies the message template to use for the message, for each type of channel. */
-		TemplateConfiguration?: TemplateConfiguration;
-		TreatmentDescription?: string;
-		TreatmentName?: string;
-		Version?: number;
+		TemplateConfiguration?: TemplateConfiguration | null;
+		TreatmentDescription?: string | null;
+		TreatmentName?: string | null;
+		Version?: number | null;
 	}
 
 
@@ -103,30 +103,30 @@ export namespace MyNS {
 	export interface TreatmentResource {
 
 		/** Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment. */
-		CustomDeliveryConfiguration?: CustomDeliveryConfiguration;
+		CustomDeliveryConfiguration?: CustomDeliveryConfiguration | null;
 		Id: string;
 
 		/** Specifies the message configuration settings for a campaign. */
-		MessageConfiguration?: MessageConfiguration;
+		MessageConfiguration?: MessageConfiguration | null;
 
 		/** Specifies the schedule settings for a campaign. */
-		Schedule?: Schedule;
+		Schedule?: Schedule | null;
 		SizePercent: number;
 
 		/** Provides information about the status of a campaign. */
-		State?: CampaignState;
+		State?: CampaignState | null;
 
 		/** Specifies the message template to use for the message, for each type of channel. */
-		TemplateConfiguration?: TemplateConfiguration;
-		TreatmentDescription?: string;
-		TreatmentName?: string;
+		TemplateConfiguration?: TemplateConfiguration | null;
+		TreatmentDescription?: string | null;
+		TreatmentName?: string | null;
 	}
 
 
 	/** Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment. */
 	export interface CustomDeliveryConfiguration {
 		DeliveryUri: string;
-		EndpointTypes?: Array<__EndpointTypesElement>;
+		EndpointTypes?: Array<__EndpointTypesElement> | null;
 	}
 
 	export enum __EndpointTypesElement { PUSH = 0, GCM = 1, APNS = 2, APNS_SANDBOX = 3, APNS_VOIP = 4, APNS_VOIP_SANDBOX = 5, ADM = 6, SMS = 7, VOICE = 8, EMAIL = 9, BAIDU = 10, CUSTOM = 11 }
@@ -136,45 +136,45 @@ export namespace MyNS {
 	export interface MessageConfiguration {
 
 		/** Specifies the content and settings for a push notification that's sent to recipients of a campaign. */
-		ADMMessage?: Message;
+		ADMMessage?: Message | null;
 
 		/** Specifies the content and settings for a push notification that's sent to recipients of a campaign. */
-		APNSMessage?: Message;
+		APNSMessage?: Message | null;
 
 		/** Specifies the content and settings for a push notification that's sent to recipients of a campaign. */
-		BaiduMessage?: Message;
+		BaiduMessage?: Message | null;
 
 		/** Specifies the contents of a message that's sent through a custom channel to recipients of a campaign. */
-		CustomMessage?: CampaignCustomMessage;
+		CustomMessage?: CampaignCustomMessage | null;
 
 		/** Specifies the content and settings for a push notification that's sent to recipients of a campaign. */
-		DefaultMessage?: Message;
+		DefaultMessage?: Message | null;
 
 		/** Specifies the content and "From" address for an email message that's sent to recipients of a campaign. */
-		EmailMessage?: CampaignEmailMessage;
+		EmailMessage?: CampaignEmailMessage | null;
 
 		/** Specifies the content and settings for a push notification that's sent to recipients of a campaign. */
-		GCMMessage?: Message;
+		GCMMessage?: Message | null;
 
 		/** Specifies the content and settings for an SMS message that's sent to recipients of a campaign. */
-		SMSMessage?: CampaignSmsMessage;
+		SMSMessage?: CampaignSmsMessage | null;
 	}
 
 
 	/** Specifies the content and settings for a push notification that's sent to recipients of a campaign. */
 	export interface Message {
-		Action?: MessageAction;
-		Body?: string;
-		ImageIconUrl?: string;
-		ImageSmallIconUrl?: string;
-		ImageUrl?: string;
-		JsonBody?: string;
-		MediaUrl?: string;
-		RawContent?: string;
-		SilentPush?: boolean;
-		TimeToLive?: number;
-		Title?: string;
-		Url?: string;
+		Action?: MessageAction | null;
+		Body?: string | null;
+		ImageIconUrl?: string | null;
+		ImageSmallIconUrl?: string | null;
+		ImageUrl?: string | null;
+		JsonBody?: string | null;
+		MediaUrl?: string | null;
+		RawContent?: string | null;
+		SilentPush?: boolean | null;
+		TimeToLive?: number | null;
+		Title?: string | null;
+		Url?: string | null;
 	}
 
 	export enum MessageAction { OPEN_APP = 0, DEEP_LINK = 1, URL = 2 }
@@ -182,24 +182,24 @@ export namespace MyNS {
 
 	/** Specifies the contents of a message that's sent through a custom channel to recipients of a campaign. */
 	export interface CampaignCustomMessage {
-		Data?: string;
+		Data?: string | null;
 	}
 
 
 	/** Specifies the content and "From" address for an email message that's sent to recipients of a campaign. */
 	export interface CampaignEmailMessage {
-		Body?: string;
-		FromAddress?: string;
-		HtmlBody?: string;
-		Title?: string;
+		Body?: string | null;
+		FromAddress?: string | null;
+		HtmlBody?: string | null;
+		Title?: string | null;
 	}
 
 
 	/** Specifies the content and settings for an SMS message that's sent to recipients of a campaign. */
 	export interface CampaignSmsMessage {
-		Body?: string;
-		MessageType?: CampaignSmsMessageMessageType;
-		SenderId?: string;
+		Body?: string | null;
+		MessageType?: CampaignSmsMessageMessageType | null;
+		SenderId?: string | null;
 	}
 
 	export enum CampaignSmsMessageMessageType { TRANSACTIONAL = 0, PROMOTIONAL = 1 }
@@ -207,17 +207,17 @@ export namespace MyNS {
 
 	/** Specifies the schedule settings for a campaign. */
 	export interface Schedule {
-		EndTime?: string;
+		EndTime?: string | null;
 
 		/** Specifies the settings for events that cause a campaign to be sent. */
-		EventFilter?: CampaignEventFilter;
-		Frequency?: ScheduleFrequency;
-		IsLocalTime?: boolean;
+		EventFilter?: CampaignEventFilter | null;
+		Frequency?: ScheduleFrequency | null;
+		IsLocalTime?: boolean | null;
 
 		/** Specifies the start and end times that define a time range when messages aren't sent to endpoints. */
-		QuietTime?: QuietTime;
+		QuietTime?: QuietTime | null;
 		StartTime: string;
-		Timezone?: string;
+		Timezone?: string | null;
 	}
 
 
@@ -235,11 +235,11 @@ export namespace MyNS {
 
 	/** Specifies the dimensions for an event filter that determines when a campaign is sent or a journey activity is performed. */
 	export interface EventDimensions {
-		Attributes?: MapOfAttributeDimension;
+		Attributes?: MapOfAttributeDimension | null;
 
 		/** Specifies the dimension type and values for a segment dimension. */
-		EventType?: SetDimension;
-		Metrics?: MapOfMetricDimension;
+		EventType?: SetDimension | null;
+		Metrics?: MapOfMetricDimension | null;
 	}
 
 	export interface MapOfAttributeDimension {
@@ -248,7 +248,7 @@ export namespace MyNS {
 
 	/** Specifies the dimension type and values for a segment dimension. */
 	export interface SetDimension {
-		DimensionType?: SetDimensionDimensionType;
+		DimensionType?: SetDimensionDimensionType | null;
 		Values: Array<string>;
 	}
 
@@ -264,14 +264,14 @@ export namespace MyNS {
 
 	/** Specifies the start and end times that define a time range when messages aren't sent to endpoints. */
 	export interface QuietTime {
-		End?: string;
-		Start?: string;
+		End?: string | null;
+		Start?: string | null;
 	}
 
 
 	/** Provides information about the status of a campaign. */
 	export interface CampaignState {
-		CampaignStatus?: CampaignStateCampaignStatus;
+		CampaignStatus?: CampaignStateCampaignStatus | null;
 	}
 
 	export enum CampaignStateCampaignStatus { SCHEDULED = 0, EXECUTING = 1, PENDING_NEXT_RUN = 2, COMPLETED = 3, PAUSED = 4, DELETED = 5 }
@@ -281,31 +281,31 @@ export namespace MyNS {
 	export interface TemplateConfiguration {
 
 		/** Specifies the name and version of the message template to use for the message. */
-		EmailTemplate?: Template;
+		EmailTemplate?: Template | null;
 
 		/** Specifies the name and version of the message template to use for the message. */
-		PushTemplate?: Template;
+		PushTemplate?: Template | null;
 
 		/** Specifies the name and version of the message template to use for the message. */
-		SMSTemplate?: Template;
+		SMSTemplate?: Template | null;
 
 		/** Specifies the name and version of the message template to use for the message. */
-		VoiceTemplate?: Template;
+		VoiceTemplate?: Template | null;
 	}
 
 
 	/** Specifies the name and version of the message template to use for the message. */
 	export interface Template {
-		Name?: string;
-		Version?: string;
+		Name?: string | null;
+		Version?: string | null;
 	}
 
 
 	/** Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign. */
 	export interface CampaignHook {
-		LambdaFunctionName?: string;
-		Mode?: CampaignHookMode;
-		WebUrl?: string;
+		LambdaFunctionName?: string | null;
+		Mode?: CampaignHookMode | null;
+		WebUrl?: string | null;
 	}
 
 	export enum CampaignHookMode { DELIVERY = 0, FILTER = 1 }
@@ -313,10 +313,10 @@ export namespace MyNS {
 
 	/** For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns and journeys in the application can send. */
 	export interface CampaignLimits {
-		Daily?: number;
-		MaximumDuration?: number;
-		MessagesPerSecond?: number;
-		Total?: number;
+		Daily?: number | null;
+		MaximumDuration?: number | null;
+		MessagesPerSecond?: number | null;
+		Total?: number | null;
 	}
 
 
@@ -324,19 +324,19 @@ export namespace MyNS {
 	export interface WriteTreatmentResource {
 
 		/** Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment. */
-		CustomDeliveryConfiguration?: CustomDeliveryConfiguration;
+		CustomDeliveryConfiguration?: CustomDeliveryConfiguration | null;
 
 		/** Specifies the message configuration settings for a campaign. */
-		MessageConfiguration?: MessageConfiguration;
+		MessageConfiguration?: MessageConfiguration | null;
 
 		/** Specifies the schedule settings for a campaign. */
-		Schedule?: Schedule;
+		Schedule?: Schedule | null;
 		SizePercent: number;
 
 		/** Specifies the message template to use for the message, for each type of channel. */
-		TemplateConfiguration?: TemplateConfiguration;
-		TreatmentDescription?: string;
-		TreatmentName?: string;
+		TemplateConfiguration?: TemplateConfiguration | null;
+		TreatmentDescription?: string | null;
+		TreatmentName?: string | null;
 	}
 
 	export interface CreateEmailTemplateResponse {
@@ -351,9 +351,9 @@ export namespace MyNS {
 
 	/** Provides information about a request to create a message template. */
 	export interface CreateTemplateMessageBody {
-		Arn?: string;
-		Message?: string;
-		RequestID?: string;
+		Arn?: string | null;
+		Message?: string | null;
+		RequestID?: string | null;
 	}
 
 	export interface CreateExportJobResponse {
@@ -369,8 +369,8 @@ export namespace MyNS {
 	/** Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console. */
 	export interface ExportJobResponse {
 		ApplicationId: string;
-		CompletedPieces?: number;
-		CompletionDate?: string;
+		CompletedPieces?: number | null;
+		CompletionDate?: string | null;
 		CreationDate: string;
 
 		/**
@@ -378,13 +378,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		Definition: ExportJobResource;
-		FailedPieces?: number;
-		Failures?: Array<string>;
+		FailedPieces?: number | null;
+		Failures?: Array<string> | null;
 		Id: string;
 		JobStatus: ExportJobResponseJobStatus;
-		TotalFailures?: number;
-		TotalPieces?: number;
-		TotalProcessed?: number;
+		TotalFailures?: number | null;
+		TotalPieces?: number | null;
+		TotalProcessed?: number | null;
 		Type: string;
 	}
 
@@ -393,8 +393,8 @@ export namespace MyNS {
 	export interface ExportJobResource {
 		RoleArn: string;
 		S3UrlPrefix: string;
-		SegmentId?: string;
-		SegmentVersion?: number;
+		SegmentId?: string | null;
+		SegmentVersion?: number | null;
 	}
 
 	export enum ExportJobResponseJobStatus { CREATED = 0, PREPARING_FOR_INITIALIZATION = 1, INITIALIZING = 2, PROCESSING = 3, PENDING_JOB = 4, COMPLETING = 5, COMPLETED = 6, FAILING = 7, FAILED = 8 }
@@ -412,8 +412,8 @@ export namespace MyNS {
 	/** Provides information about the status and settings of a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console. */
 	export interface ImportJobResponse {
 		ApplicationId: string;
-		CompletedPieces?: number;
-		CompletionDate?: string;
+		CompletedPieces?: number | null;
+		CompletionDate?: string | null;
 		CreationDate: string;
 
 		/**
@@ -421,27 +421,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		Definition: ImportJobResource;
-		FailedPieces?: number;
-		Failures?: Array<string>;
+		FailedPieces?: number | null;
+		Failures?: Array<string> | null;
 		Id: string;
 		JobStatus: ExportJobResponseJobStatus;
-		TotalFailures?: number;
-		TotalPieces?: number;
-		TotalProcessed?: number;
+		TotalFailures?: number | null;
+		TotalPieces?: number | null;
+		TotalProcessed?: number | null;
 		Type: string;
 	}
 
 
 	/** Provides information about the resource settings for a job that imports endpoint definitions from one or more files. The files can be stored in an Amazon Simple Storage Service (Amazon S3) bucket or uploaded directly from a computer by using the Amazon Pinpoint console. */
 	export interface ImportJobResource {
-		DefineSegment?: boolean;
-		ExternalId?: string;
+		DefineSegment?: boolean | null;
+		ExternalId?: string | null;
 		Format: ImportJobResourceFormat;
-		RegisterEndpoints?: boolean;
+		RegisterEndpoints?: boolean | null;
 		RoleArn: string;
 		S3Url: string;
-		SegmentId?: string;
-		SegmentName?: string;
+		SegmentId?: string | null;
+		SegmentName?: string | null;
 	}
 
 	export enum ImportJobResourceFormat { CSV = 0, JSON = 1 }
@@ -460,29 +460,29 @@ export namespace MyNS {
 
 	/** Provides information about the status, configuration, and other settings for a journey. */
 	export interface JourneyResponse {
-		Activities?: MapOfActivity;
+		Activities?: MapOfActivity | null;
 		ApplicationId: string;
-		CreationDate?: string;
+		CreationDate?: string | null;
 		Id: string;
-		LastModifiedDate?: string;
+		LastModifiedDate?: string | null;
 
 		/** Specifies limits on the messages that a journey can send and the number of times participants can enter a journey. */
-		Limits?: JourneyLimits;
-		LocalTime?: boolean;
+		Limits?: JourneyLimits | null;
+		LocalTime?: boolean | null;
 		Name: string;
 
 		/** Specifies the start and end times that define a time range when messages aren't sent to endpoints. */
-		QuietTime?: QuietTime;
-		RefreshFrequency?: string;
+		QuietTime?: QuietTime | null;
+		RefreshFrequency?: string | null;
 
 		/** Specifies the schedule settings for a journey. */
-		Schedule?: JourneySchedule;
-		StartActivity?: string;
+		Schedule?: JourneySchedule | null;
+		StartActivity?: string | null;
 
 		/** Specifies the conditions for the first activity in a journey. This activity and its conditions determine which users are participants in a journey. */
-		StartCondition?: StartCondition;
-		State?: JourneyResponseState;
-		tags?: MapOf__string;
+		StartCondition?: StartCondition | null;
+		State?: JourneyResponseState | null;
+		tags?: MapOf__string | null;
 	}
 
 	export interface MapOfActivity {
@@ -491,26 +491,26 @@ export namespace MyNS {
 
 	/** Specifies limits on the messages that a journey can send and the number of times participants can enter a journey. */
 	export interface JourneyLimits {
-		DailyCap?: number;
-		EndpointReentryCap?: number;
-		MessagesPerSecond?: number;
+		DailyCap?: number | null;
+		EndpointReentryCap?: number | null;
+		MessagesPerSecond?: number | null;
 	}
 
 
 	/** Specifies the schedule settings for a journey. */
 	export interface JourneySchedule {
-		EndTime?: Date;
-		StartTime?: Date;
-		Timezone?: string;
+		EndTime?: Date | null;
+		StartTime?: Date | null;
+		Timezone?: string | null;
 	}
 
 
 	/** Specifies the conditions for the first activity in a journey. This activity and its conditions determine which users are participants in a journey. */
 	export interface StartCondition {
-		Description?: string;
+		Description?: string | null;
 
 		/** Specifies a segment to associate with an activity in a journey. */
-		SegmentStartCondition?: SegmentCondition;
+		SegmentStartCondition?: SegmentCondition | null;
 	}
 
 
@@ -535,37 +535,37 @@ export namespace MyNS {
 
 	/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel. */
 	export interface AndroidPushNotificationTemplate {
-		Action?: MessageAction;
-		Body?: string;
-		ImageIconUrl?: string;
-		ImageUrl?: string;
-		RawContent?: string;
-		SmallImageIconUrl?: string;
-		Sound?: string;
-		Title?: string;
-		Url?: string;
+		Action?: MessageAction | null;
+		Body?: string | null;
+		ImageIconUrl?: string | null;
+		ImageUrl?: string | null;
+		RawContent?: string | null;
+		SmallImageIconUrl?: string | null;
+		Sound?: string | null;
+		Title?: string | null;
+		Url?: string | null;
 	}
 
 
 	/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the APNs (Apple Push Notification service) channel. */
 	export interface APNSPushNotificationTemplate {
-		Action?: MessageAction;
-		Body?: string;
-		MediaUrl?: string;
-		RawContent?: string;
-		Sound?: string;
-		Title?: string;
-		Url?: string;
+		Action?: MessageAction | null;
+		Body?: string | null;
+		MediaUrl?: string | null;
+		RawContent?: string | null;
+		Sound?: string | null;
+		Title?: string | null;
+		Url?: string | null;
 	}
 
 
 	/** Specifies the default settings and content for a message template that can be used in messages that are sent through a push notification channel. */
 	export interface DefaultPushNotificationTemplate {
-		Action?: MessageAction;
-		Body?: string;
-		Sound?: string;
-		Title?: string;
-		Url?: string;
+		Action?: MessageAction | null;
+		Body?: string | null;
+		Sound?: string | null;
+		Title?: string | null;
+		Url?: string | null;
 	}
 
 	export interface CreateRecommenderConfigurationResponse {
@@ -580,18 +580,18 @@ export namespace MyNS {
 
 	/** Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model. */
 	export interface RecommenderConfigurationResponse {
-		Attributes?: MapOf__string;
+		Attributes?: MapOf__string | null;
 		CreationDate: string;
-		Description?: string;
+		Description?: string | null;
 		Id: string;
 		LastModifiedDate: string;
-		Name?: string;
-		RecommendationProviderIdType?: string;
+		Name?: string | null;
+		RecommendationProviderIdType?: string | null;
 		RecommendationProviderRoleArn: string;
 		RecommendationProviderUri: string;
-		RecommendationTransformerUri?: string;
-		RecommendationsDisplayName?: string;
-		RecommendationsPerMessage?: number;
+		RecommendationTransformerUri?: string | null;
+		RecommendationsDisplayName?: string | null;
+		RecommendationsPerMessage?: number | null;
 	}
 
 	export interface CreateSegmentResponse {
@@ -611,36 +611,36 @@ export namespace MyNS {
 		CreationDate: string;
 
 		/** Specifies the dimension settings for a segment. */
-		Dimensions?: SegmentDimensions;
+		Dimensions?: SegmentDimensions | null;
 		Id: string;
 
 		/** Provides information about the import job that created a segment. An import job is a job that creates a user segment by importing endpoint definitions. */
-		ImportDefinition?: SegmentImportResource;
-		LastModifiedDate?: string;
-		Name?: string;
+		ImportDefinition?: SegmentImportResource | null;
+		LastModifiedDate?: string | null;
+		Name?: string | null;
 
 		/** Specifies the settings that define the relationships between segment groups for a segment. */
-		SegmentGroups?: SegmentGroupList;
+		SegmentGroups?: SegmentGroupList | null;
 		SegmentType: SegmentResponseSegmentType;
-		tags?: MapOf__string;
-		Version?: number;
+		tags?: MapOf__string | null;
+		Version?: number | null;
 	}
 
 
 	/** Specifies the dimension settings for a segment. */
 	export interface SegmentDimensions {
-		Attributes?: MapOfAttributeDimension;
+		Attributes?: MapOfAttributeDimension | null;
 
 		/** Specifies dimension settings for including or excluding endpoints from a segment based on how recently an endpoint was active. */
-		Behavior?: SegmentBehaviors;
+		Behavior?: SegmentBehaviors | null;
 
 		/** Specifies demographic-based dimension settings for including or excluding endpoints from a segment. These settings derive from characteristics of endpoint devices, such as platform, make, and model. */
-		Demographic?: SegmentDemographics;
+		Demographic?: SegmentDemographics | null;
 
 		/** Specifies geographical dimension settings for a segment. */
-		Location?: SegmentLocation;
-		Metrics?: MapOfMetricDimension;
-		UserAttributes?: MapOfAttributeDimension;
+		Location?: SegmentLocation | null;
+		Metrics?: MapOfMetricDimension | null;
+		UserAttributes?: MapOfAttributeDimension | null;
 	}
 
 
@@ -648,7 +648,7 @@ export namespace MyNS {
 	export interface SegmentBehaviors {
 
 		/** Specifies criteria for including or excluding endpoints from a segment based on how recently an endpoint was active. */
-		Recency?: RecencyDimension;
+		Recency?: RecencyDimension | null;
 	}
 
 
@@ -667,22 +667,22 @@ export namespace MyNS {
 	export interface SegmentDemographics {
 
 		/** Specifies the dimension type and values for a segment dimension. */
-		AppVersion?: SetDimension;
+		AppVersion?: SetDimension | null;
 
 		/** Specifies the dimension type and values for a segment dimension. */
-		Channel?: SetDimension;
+		Channel?: SetDimension | null;
 
 		/** Specifies the dimension type and values for a segment dimension. */
-		DeviceType?: SetDimension;
+		DeviceType?: SetDimension | null;
 
 		/** Specifies the dimension type and values for a segment dimension. */
-		Make?: SetDimension;
+		Make?: SetDimension | null;
 
 		/** Specifies the dimension type and values for a segment dimension. */
-		Model?: SetDimension;
+		Model?: SetDimension | null;
 
 		/** Specifies the dimension type and values for a segment dimension. */
-		Platform?: SetDimension;
+		Platform?: SetDimension | null;
 	}
 
 
@@ -690,10 +690,10 @@ export namespace MyNS {
 	export interface SegmentLocation {
 
 		/** Specifies the dimension type and values for a segment dimension. */
-		Country?: SetDimension;
+		Country?: SetDimension | null;
 
 		/** Specifies GPS-based criteria for including or excluding endpoints from a segment. */
-		GPSPoint?: GPSPointDimension;
+		GPSPoint?: GPSPointDimension | null;
 	}
 
 
@@ -705,7 +705,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		Coordinates: GPSCoordinates;
-		RangeInKilometers?: number;
+		RangeInKilometers?: number | null;
 	}
 
 
@@ -718,7 +718,7 @@ export namespace MyNS {
 
 	/** Provides information about the import job that created a segment. An import job is a job that creates a user segment by importing endpoint definitions. */
 	export interface SegmentImportResource {
-		ChannelCounts?: MapOf__integer;
+		ChannelCounts?: MapOf__integer | null;
 		ExternalId: string;
 		Format: ImportJobResourceFormat;
 		RoleArn: string;
@@ -732,24 +732,24 @@ export namespace MyNS {
 
 	/** Specifies the settings that define the relationships between segment groups for a segment. */
 	export interface SegmentGroupList {
-		Groups?: Array<SegmentGroup>;
-		Include?: SegmentGroupSourceType;
+		Groups?: Array<SegmentGroup> | null;
+		Include?: SegmentGroupSourceType | null;
 	}
 
 
 	/** Specifies the base segments and dimensions for a segment, and the relationships between these base segments and dimensions. */
 	export interface SegmentGroup {
-		Dimensions?: Array<SegmentDimensions>;
-		SourceSegments?: Array<SegmentReference>;
-		SourceType?: SegmentGroupSourceType;
-		Type?: SegmentGroupSourceType;
+		Dimensions?: Array<SegmentDimensions> | null;
+		SourceSegments?: Array<SegmentReference> | null;
+		SourceType?: SegmentGroupSourceType | null;
+		Type?: SegmentGroupSourceType | null;
 	}
 
 
 	/** Specifies the segment identifier and version of a segment. */
 	export interface SegmentReference {
 		Id: string;
-		Version?: number;
+		Version?: number | null;
 	}
 
 	export enum SegmentGroupSourceType { ALL = 0, ANY = 1, NONE = 2 }
@@ -786,16 +786,16 @@ export namespace MyNS {
 
 	/** Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application. */
 	export interface ADMChannelResponse {
-		ApplicationId?: string;
-		CreationDate?: string;
-		Enabled?: boolean;
-		HasCredential?: boolean;
-		Id?: string;
-		IsArchived?: boolean;
-		LastModifiedBy?: string;
-		LastModifiedDate?: string;
+		ApplicationId?: string | null;
+		CreationDate?: string | null;
+		Enabled?: boolean | null;
+		HasCredential?: boolean | null;
+		Id?: string | null;
+		IsArchived?: boolean | null;
+		LastModifiedBy?: string | null;
+		LastModifiedDate?: string | null;
 		Platform: string;
-		Version?: number;
+		Version?: number | null;
 	}
 
 	export interface DeleteApnsChannelResponse {
@@ -810,18 +810,18 @@ export namespace MyNS {
 
 	/** Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application. */
 	export interface APNSChannelResponse {
-		ApplicationId?: string;
-		CreationDate?: string;
-		DefaultAuthenticationMethod?: string;
-		Enabled?: boolean;
-		HasCredential?: boolean;
-		HasTokenKey?: boolean;
-		Id?: string;
-		IsArchived?: boolean;
-		LastModifiedBy?: string;
-		LastModifiedDate?: string;
+		ApplicationId?: string | null;
+		CreationDate?: string | null;
+		DefaultAuthenticationMethod?: string | null;
+		Enabled?: boolean | null;
+		HasCredential?: boolean | null;
+		HasTokenKey?: boolean | null;
+		Id?: string | null;
+		IsArchived?: boolean | null;
+		LastModifiedBy?: string | null;
+		LastModifiedDate?: string | null;
 		Platform: string;
-		Version?: number;
+		Version?: number | null;
 	}
 
 	export interface DeleteApnsSandboxChannelResponse {
@@ -836,18 +836,18 @@ export namespace MyNS {
 
 	/** Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application. */
 	export interface APNSSandboxChannelResponse {
-		ApplicationId?: string;
-		CreationDate?: string;
-		DefaultAuthenticationMethod?: string;
-		Enabled?: boolean;
-		HasCredential?: boolean;
-		HasTokenKey?: boolean;
-		Id?: string;
-		IsArchived?: boolean;
-		LastModifiedBy?: string;
-		LastModifiedDate?: string;
+		ApplicationId?: string | null;
+		CreationDate?: string | null;
+		DefaultAuthenticationMethod?: string | null;
+		Enabled?: boolean | null;
+		HasCredential?: boolean | null;
+		HasTokenKey?: boolean | null;
+		Id?: string | null;
+		IsArchived?: boolean | null;
+		LastModifiedBy?: string | null;
+		LastModifiedDate?: string | null;
 		Platform: string;
-		Version?: number;
+		Version?: number | null;
 	}
 
 	export interface DeleteApnsVoipChannelResponse {
@@ -862,18 +862,18 @@ export namespace MyNS {
 
 	/** Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application. */
 	export interface APNSVoipChannelResponse {
-		ApplicationId?: string;
-		CreationDate?: string;
-		DefaultAuthenticationMethod?: string;
-		Enabled?: boolean;
-		HasCredential?: boolean;
-		HasTokenKey?: boolean;
-		Id?: string;
-		IsArchived?: boolean;
-		LastModifiedBy?: string;
-		LastModifiedDate?: string;
+		ApplicationId?: string | null;
+		CreationDate?: string | null;
+		DefaultAuthenticationMethod?: string | null;
+		Enabled?: boolean | null;
+		HasCredential?: boolean | null;
+		HasTokenKey?: boolean | null;
+		Id?: string | null;
+		IsArchived?: boolean | null;
+		LastModifiedBy?: string | null;
+		LastModifiedDate?: string | null;
 		Platform: string;
-		Version?: number;
+		Version?: number | null;
 	}
 
 	export interface DeleteApnsVoipSandboxChannelResponse {
@@ -888,18 +888,18 @@ export namespace MyNS {
 
 	/** Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application. */
 	export interface APNSVoipSandboxChannelResponse {
-		ApplicationId?: string;
-		CreationDate?: string;
-		DefaultAuthenticationMethod?: string;
-		Enabled?: boolean;
-		HasCredential?: boolean;
-		HasTokenKey?: boolean;
-		Id?: string;
-		IsArchived?: boolean;
-		LastModifiedBy?: string;
-		LastModifiedDate?: string;
+		ApplicationId?: string | null;
+		CreationDate?: string | null;
+		DefaultAuthenticationMethod?: string | null;
+		Enabled?: boolean | null;
+		HasCredential?: boolean | null;
+		HasTokenKey?: boolean | null;
+		Id?: string | null;
+		IsArchived?: boolean | null;
+		LastModifiedBy?: string | null;
+		LastModifiedDate?: string | null;
 		Platform: string;
-		Version?: number;
+		Version?: number | null;
 	}
 
 	export interface DeleteAppResponse {
@@ -923,17 +923,17 @@ export namespace MyNS {
 
 	/** Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application. */
 	export interface BaiduChannelResponse {
-		ApplicationId?: string;
-		CreationDate?: string;
+		ApplicationId?: string | null;
+		CreationDate?: string | null;
 		Credential: string;
-		Enabled?: boolean;
-		HasCredential?: boolean;
-		Id?: string;
-		IsArchived?: boolean;
-		LastModifiedBy?: string;
-		LastModifiedDate?: string;
+		Enabled?: boolean | null;
+		HasCredential?: boolean | null;
+		Id?: string | null;
+		IsArchived?: boolean | null;
+		LastModifiedBy?: string | null;
+		LastModifiedDate?: string | null;
 		Platform: string;
-		Version?: number;
+		Version?: number | null;
 	}
 
 	export interface DeleteCampaignResponse {
@@ -957,21 +957,21 @@ export namespace MyNS {
 
 	/** Provides information about the status and settings of the email channel for an application. */
 	export interface EmailChannelResponse {
-		ApplicationId?: string;
-		ConfigurationSet?: string;
-		CreationDate?: string;
-		Enabled?: boolean;
-		FromAddress?: string;
-		HasCredential?: boolean;
-		Id?: string;
-		Identity?: string;
-		IsArchived?: boolean;
-		LastModifiedBy?: string;
-		LastModifiedDate?: string;
-		MessagesPerSecond?: number;
+		ApplicationId?: string | null;
+		ConfigurationSet?: string | null;
+		CreationDate?: string | null;
+		Enabled?: boolean | null;
+		FromAddress?: string | null;
+		HasCredential?: boolean | null;
+		Id?: string | null;
+		Identity?: string | null;
+		IsArchived?: boolean | null;
+		LastModifiedBy?: string | null;
+		LastModifiedDate?: string | null;
+		MessagesPerSecond?: number | null;
 		Platform: string;
-		RoleArn?: string;
-		Version?: number;
+		RoleArn?: string | null;
+		Version?: number | null;
 	}
 
 	export interface DeleteEmailTemplateResponse {
@@ -986,8 +986,8 @@ export namespace MyNS {
 
 	/** Provides information about an API request or response. */
 	export interface MessageBody {
-		Message?: string;
-		RequestID?: string;
+		Message?: string | null;
+		RequestID?: string | null;
 	}
 
 	export interface DeleteEndpointResponse {
@@ -1002,27 +1002,27 @@ export namespace MyNS {
 
 	/** Provides information about the channel type and other settings for an endpoint. */
 	export interface EndpointResponse {
-		Address?: string;
-		ApplicationId?: string;
-		Attributes?: MapOfListOf__string;
-		ChannelType?: __EndpointTypesElement;
-		CohortId?: string;
-		CreationDate?: string;
+		Address?: string | null;
+		ApplicationId?: string | null;
+		Attributes?: MapOfListOf__string | null;
+		ChannelType?: __EndpointTypesElement | null;
+		CohortId?: string | null;
+		CreationDate?: string | null;
 
 		/** Specifies demographic information about an endpoint, such as the applicable time zone and platform. */
-		Demographic?: EndpointDemographic;
-		EffectiveDate?: string;
-		EndpointStatus?: string;
-		Id?: string;
+		Demographic?: EndpointDemographic | null;
+		EffectiveDate?: string | null;
+		EndpointStatus?: string | null;
+		Id?: string | null;
 
 		/** Specifies geographic information about an endpoint. */
-		Location?: EndpointLocation;
-		Metrics?: MapOf__double;
-		OptOut?: string;
-		RequestId?: string;
+		Location?: EndpointLocation | null;
+		Metrics?: MapOf__double | null;
+		OptOut?: string | null;
+		RequestId?: string | null;
 
 		/** Specifies data for one or more attributes that describe the user who's associated with an endpoint. */
-		User?: EndpointUser;
+		User?: EndpointUser | null;
 	}
 
 	export interface MapOfListOf__string {
@@ -1031,25 +1031,25 @@ export namespace MyNS {
 
 	/** Specifies demographic information about an endpoint, such as the applicable time zone and platform. */
 	export interface EndpointDemographic {
-		AppVersion?: string;
-		Locale?: string;
-		Make?: string;
-		Model?: string;
-		ModelVersion?: string;
-		Platform?: string;
-		PlatformVersion?: string;
-		Timezone?: string;
+		AppVersion?: string | null;
+		Locale?: string | null;
+		Make?: string | null;
+		Model?: string | null;
+		ModelVersion?: string | null;
+		Platform?: string | null;
+		PlatformVersion?: string | null;
+		Timezone?: string | null;
 	}
 
 
 	/** Specifies geographic information about an endpoint. */
 	export interface EndpointLocation {
-		City?: string;
-		Country?: string;
-		Latitude?: number;
-		Longitude?: number;
-		PostalCode?: string;
-		Region?: string;
+		City?: string | null;
+		Country?: string | null;
+		Latitude?: number | null;
+		Longitude?: number | null;
+		PostalCode?: string | null;
+		Region?: string | null;
 	}
 
 	export interface MapOf__double {
@@ -1058,8 +1058,8 @@ export namespace MyNS {
 
 	/** Specifies data for one or more attributes that describe the user who's associated with an endpoint. */
 	export interface EndpointUser {
-		UserAttributes?: MapOfListOf__string;
-		UserId?: string;
+		UserAttributes?: MapOfListOf__string | null;
+		UserId?: string | null;
 	}
 
 	export interface DeleteEventStreamResponse {
@@ -1076,9 +1076,9 @@ export namespace MyNS {
 	export interface EventStream {
 		ApplicationId: string;
 		DestinationStreamArn: string;
-		ExternalId?: string;
-		LastModifiedDate?: string;
-		LastUpdatedBy?: string;
+		ExternalId?: string | null;
+		LastModifiedDate?: string | null;
+		LastUpdatedBy?: string | null;
 		RoleArn: string;
 	}
 
@@ -1094,17 +1094,17 @@ export namespace MyNS {
 
 	/** Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. */
 	export interface GCMChannelResponse {
-		ApplicationId?: string;
-		CreationDate?: string;
+		ApplicationId?: string | null;
+		CreationDate?: string | null;
 		Credential: string;
-		Enabled?: boolean;
-		HasCredential?: boolean;
-		Id?: string;
-		IsArchived?: boolean;
-		LastModifiedBy?: string;
-		LastModifiedDate?: string;
+		Enabled?: boolean | null;
+		HasCredential?: boolean | null;
+		Id?: string | null;
+		IsArchived?: boolean | null;
+		LastModifiedBy?: string | null;
+		LastModifiedDate?: string | null;
 		Platform: string;
-		Version?: number;
+		Version?: number | null;
 	}
 
 	export interface DeleteJourneyResponse {
@@ -1155,20 +1155,20 @@ export namespace MyNS {
 
 	/** Provides information about the status and settings of the SMS channel for an application. */
 	export interface SMSChannelResponse {
-		ApplicationId?: string;
-		CreationDate?: string;
-		Enabled?: boolean;
-		HasCredential?: boolean;
-		Id?: string;
-		IsArchived?: boolean;
-		LastModifiedBy?: string;
-		LastModifiedDate?: string;
+		ApplicationId?: string | null;
+		CreationDate?: string | null;
+		Enabled?: boolean | null;
+		HasCredential?: boolean | null;
+		Id?: string | null;
+		IsArchived?: boolean | null;
+		LastModifiedBy?: string | null;
+		LastModifiedDate?: string | null;
 		Platform: string;
-		PromotionalMessagesPerSecond?: number;
-		SenderId?: string;
-		ShortCode?: string;
-		TransactionalMessagesPerSecond?: number;
-		Version?: number;
+		PromotionalMessagesPerSecond?: number | null;
+		SenderId?: string | null;
+		ShortCode?: string | null;
+		TransactionalMessagesPerSecond?: number | null;
+		Version?: number | null;
 	}
 
 	export interface DeleteSmsTemplateResponse {
@@ -1207,16 +1207,16 @@ export namespace MyNS {
 
 	/** Provides information about the status and settings of the voice channel for an application. */
 	export interface VoiceChannelResponse {
-		ApplicationId?: string;
-		CreationDate?: string;
-		Enabled?: boolean;
-		HasCredential?: boolean;
-		Id?: string;
-		IsArchived?: boolean;
-		LastModifiedBy?: string;
-		LastModifiedDate?: string;
+		ApplicationId?: string | null;
+		CreationDate?: string | null;
+		Enabled?: boolean | null;
+		HasCredential?: boolean | null;
+		Id?: string | null;
+		IsArchived?: boolean | null;
+		LastModifiedBy?: string | null;
+		LastModifiedDate?: string | null;
 		Platform: string;
-		Version?: number;
+		Version?: number | null;
 	}
 
 	export interface DeleteVoiceTemplateResponse {
@@ -1303,7 +1303,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		KpiResult: BaseKpiResult;
-		NextToken?: string;
+		NextToken?: string | null;
 		StartTime: Date;
 	}
 
@@ -1343,14 +1343,14 @@ export namespace MyNS {
 		ApplicationId: string;
 
 		/** Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign. */
-		CampaignHook?: CampaignHook;
-		LastModifiedDate?: string;
+		CampaignHook?: CampaignHook | null;
+		LastModifiedDate?: string | null;
 
 		/** For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns and journeys in the application can send. */
-		Limits?: CampaignLimits;
+		Limits?: CampaignLimits | null;
 
 		/** Specifies the start and end times that define a time range when messages aren't sent to endpoints. */
-		QuietTime?: QuietTime;
+		QuietTime?: QuietTime | null;
 	}
 
 	export interface GetAppsResponse {
@@ -1365,8 +1365,8 @@ export namespace MyNS {
 
 	/** Provides information about all of your applications. */
 	export interface ApplicationsResponse {
-		Item?: Array<ApplicationResponse>;
-		NextToken?: string;
+		Item?: Array<ApplicationResponse> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetBaiduChannelResponse {
@@ -1400,7 +1400,7 @@ export namespace MyNS {
 	/** Provides information about the activities that were performed by a campaign. */
 	export interface ActivitiesResponse {
 		Item: Array<ActivityResponse>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -1408,17 +1408,17 @@ export namespace MyNS {
 	export interface ActivityResponse {
 		ApplicationId: string;
 		CampaignId: string;
-		End?: string;
+		End?: string | null;
 		Id: string;
-		Result?: string;
-		ScheduledStart?: string;
-		Start?: string;
-		State?: string;
-		SuccessfulEndpointCount?: number;
-		TimezonesCompletedCount?: number;
-		TimezonesTotalCount?: number;
-		TotalEndpointCount?: number;
-		TreatmentId?: string;
+		Result?: string | null;
+		ScheduledStart?: string | null;
+		Start?: string | null;
+		State?: string | null;
+		SuccessfulEndpointCount?: number | null;
+		TimezonesCompletedCount?: number | null;
+		TimezonesTotalCount?: number | null;
+		TotalEndpointCount?: number | null;
+		TreatmentId?: string | null;
 	}
 
 	export interface GetCampaignDateRangeKpiResponse {
@@ -1443,7 +1443,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		KpiResult: BaseKpiResult;
-		NextToken?: string;
+		NextToken?: string | null;
 		StartTime: Date;
 	}
 
@@ -1469,7 +1469,7 @@ export namespace MyNS {
 	/** Provides information about the configuration and other settings for all the campaigns that are associated with an application. */
 	export interface CampaignsResponse {
 		Item: Array<CampaignResponse>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface GetCampaignsResponse {
@@ -1520,19 +1520,19 @@ export namespace MyNS {
 
 	/** Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel. */
 	export interface EmailTemplateResponse {
-		Arn?: string;
+		Arn?: string | null;
 		CreationDate: string;
-		DefaultSubstitutions?: string;
-		HtmlPart?: string;
+		DefaultSubstitutions?: string | null;
+		HtmlPart?: string | null;
 		LastModifiedDate: string;
-		RecommenderId?: string;
-		Subject?: string;
-		tags?: MapOf__string;
-		TemplateDescription?: string;
+		RecommenderId?: string | null;
+		Subject?: string | null;
+		tags?: MapOf__string | null;
+		TemplateDescription?: string | null;
 		TemplateName: string;
 		TemplateType: EmailTemplateResponseTemplateType;
-		TextPart?: string;
-		Version?: string;
+		TextPart?: string | null;
+		Version?: string | null;
 	}
 
 	export enum EmailTemplateResponseTemplateType { EMAIL = 0, SMS = 1, VOICE = 2, PUSH = 3 }
@@ -1577,7 +1577,7 @@ export namespace MyNS {
 	/** Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file. */
 	export interface ExportJobsResponse {
 		Item: Array<ExportJobResponse>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface GetGcmChannelResponse {
@@ -1611,7 +1611,7 @@ export namespace MyNS {
 	/** Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files. */
 	export interface ImportJobsResponse {
 		Item: Array<ImportJobResponse>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface GetJourneyResponse {
@@ -1645,7 +1645,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		KpiResult: BaseKpiResult;
-		NextToken?: string;
+		NextToken?: string | null;
 		StartTime: Date;
 	}
 
@@ -1701,29 +1701,29 @@ export namespace MyNS {
 	export interface PushNotificationTemplateResponse {
 
 		/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel. */
-		ADM?: AndroidPushNotificationTemplate;
+		ADM?: AndroidPushNotificationTemplate | null;
 
 		/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the APNs (Apple Push Notification service) channel. */
-		APNS?: APNSPushNotificationTemplate;
-		Arn?: string;
+		APNS?: APNSPushNotificationTemplate | null;
+		Arn?: string | null;
 
 		/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel. */
-		Baidu?: AndroidPushNotificationTemplate;
+		Baidu?: AndroidPushNotificationTemplate | null;
 		CreationDate: string;
 
 		/** Specifies the default settings and content for a message template that can be used in messages that are sent through a push notification channel. */
-		Default?: DefaultPushNotificationTemplate;
-		DefaultSubstitutions?: string;
+		Default?: DefaultPushNotificationTemplate | null;
+		DefaultSubstitutions?: string | null;
 
 		/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel. */
-		GCM?: AndroidPushNotificationTemplate;
+		GCM?: AndroidPushNotificationTemplate | null;
 		LastModifiedDate: string;
-		RecommenderId?: string;
-		tags?: MapOf__string;
-		TemplateDescription?: string;
+		RecommenderId?: string | null;
+		tags?: MapOf__string | null;
+		TemplateDescription?: string | null;
 		TemplateName: string;
 		TemplateType: EmailTemplateResponseTemplateType;
-		Version?: string;
+		Version?: string | null;
 	}
 
 	export interface GetRecommenderConfigurationResponse {
@@ -1748,7 +1748,7 @@ export namespace MyNS {
 	/** Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account. */
 	export interface ListRecommenderConfigurationsResponse {
 		Item: Array<RecommenderConfigurationResponse>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface GetSegmentResponse {
@@ -1800,7 +1800,7 @@ export namespace MyNS {
 	/** Provides information about all the segments that are associated with an application. */
 	export interface SegmentsResponse {
 		Item: Array<SegmentResponse>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface GetSegmentsResponse {
@@ -1833,17 +1833,17 @@ export namespace MyNS {
 
 	/** Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel. */
 	export interface SMSTemplateResponse {
-		Arn?: string;
-		Body?: string;
+		Arn?: string | null;
+		Body?: string | null;
 		CreationDate: string;
-		DefaultSubstitutions?: string;
+		DefaultSubstitutions?: string | null;
 		LastModifiedDate: string;
-		RecommenderId?: string;
-		tags?: MapOf__string;
-		TemplateDescription?: string;
+		RecommenderId?: string | null;
+		tags?: MapOf__string | null;
+		TemplateDescription?: string | null;
 		TemplateName: string;
 		TemplateType: EmailTemplateResponseTemplateType;
-		Version?: string;
+		Version?: string | null;
 	}
 
 	export interface GetUserEndpointsResponse {
@@ -1876,18 +1876,18 @@ export namespace MyNS {
 
 	/** Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel. */
 	export interface VoiceTemplateResponse {
-		Arn?: string;
-		Body?: string;
+		Arn?: string | null;
+		Body?: string | null;
 		CreationDate: string;
-		DefaultSubstitutions?: string;
-		LanguageCode?: string;
+		DefaultSubstitutions?: string | null;
+		LanguageCode?: string | null;
 		LastModifiedDate: string;
-		tags?: MapOf__string;
-		TemplateDescription?: string;
+		tags?: MapOf__string | null;
+		TemplateDescription?: string | null;
 		TemplateName: string;
 		TemplateType: EmailTemplateResponseTemplateType;
-		Version?: string;
-		VoiceId?: string;
+		Version?: string | null;
+		VoiceId?: string | null;
 	}
 
 	export interface ListJourneysResponse {
@@ -1903,7 +1903,7 @@ export namespace MyNS {
 	/** Provides information about the status, configuration, and other settings for all the journeys that are associated with an application. */
 	export interface JourneysResponse {
 		Item: Array<JourneyResponse>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
@@ -1934,21 +1934,21 @@ export namespace MyNS {
 	/** Provides information about all the versions of a specific message template. */
 	export interface TemplateVersionsResponse {
 		Item: Array<TemplateVersionResponse>;
-		Message?: string;
-		NextToken?: string;
-		RequestID?: string;
+		Message?: string | null;
+		NextToken?: string | null;
+		RequestID?: string | null;
 	}
 
 
 	/** Provides information about a specific version of a message template. */
 	export interface TemplateVersionResponse {
 		CreationDate: string;
-		DefaultSubstitutions?: string;
+		DefaultSubstitutions?: string | null;
 		LastModifiedDate: string;
-		TemplateDescription?: string;
+		TemplateDescription?: string | null;
 		TemplateName: string;
 		TemplateType: string;
-		Version?: string;
+		Version?: string | null;
 	}
 
 	export interface ListTemplatesResponse {
@@ -1964,21 +1964,21 @@ export namespace MyNS {
 	/** Provides information about all the message templates that are associated with your Amazon Pinpoint account. */
 	export interface TemplatesResponse {
 		Item: Array<TemplateResponse>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Provides information about a message template that's associated with your Amazon Pinpoint account. */
 	export interface TemplateResponse {
-		Arn?: string;
+		Arn?: string | null;
 		CreationDate: string;
-		DefaultSubstitutions?: string;
+		DefaultSubstitutions?: string | null;
 		LastModifiedDate: string;
-		tags?: MapOf__string;
-		TemplateDescription?: string;
+		tags?: MapOf__string | null;
+		TemplateDescription?: string | null;
 		TemplateName: string;
 		TemplateType: EmailTemplateResponseTemplateType;
-		Version?: string;
+		Version?: string | null;
 	}
 
 	export interface PhoneNumberValidateResponse {
@@ -1993,20 +1993,20 @@ export namespace MyNS {
 
 	/** Provides information about a phone number. */
 	export interface NumberValidateResponse {
-		Carrier?: string;
-		City?: string;
-		CleansedPhoneNumberE164?: string;
-		CleansedPhoneNumberNational?: string;
-		Country?: string;
-		CountryCodeIso2?: string;
-		CountryCodeNumeric?: string;
-		County?: string;
-		OriginalCountryCodeIso2?: string;
-		OriginalPhoneNumber?: string;
-		PhoneType?: string;
-		PhoneTypeCode?: number;
-		Timezone?: string;
-		ZipCode?: string;
+		Carrier?: string | null;
+		City?: string | null;
+		CleansedPhoneNumberE164?: string | null;
+		CleansedPhoneNumberNational?: string | null;
+		Country?: string | null;
+		CountryCodeIso2?: string | null;
+		CountryCodeNumeric?: string | null;
+		County?: string | null;
+		OriginalCountryCodeIso2?: string | null;
+		OriginalPhoneNumber?: string | null;
+		PhoneType?: string | null;
+		PhoneTypeCode?: number | null;
+		Timezone?: string | null;
+		ZipCode?: string | null;
 	}
 
 	export interface PutEventStreamResponse {
@@ -2030,7 +2030,7 @@ export namespace MyNS {
 
 	/** Provides information about endpoints and the events that they're associated with. */
 	export interface EventsResponse {
-		Results?: MapOfItemResponse;
+		Results?: MapOfItemResponse | null;
 	}
 
 	export interface MapOfItemResponse {
@@ -2053,7 +2053,7 @@ export namespace MyNS {
 	export interface AttributesResource {
 		ApplicationId: string;
 		AttributeType: string;
-		Attributes?: Array<string>;
+		Attributes?: Array<string> | null;
 	}
 
 	export interface SendMessagesResponse {
@@ -2069,9 +2069,9 @@ export namespace MyNS {
 	/** Provides information about the results of a request to send a message to an endpoint address. */
 	export interface MessageResponse {
 		ApplicationId: string;
-		EndpointResult?: MapOfEndpointMessageResult;
-		RequestId?: string;
-		Result?: MapOfMessageResult;
+		EndpointResult?: MapOfEndpointMessageResult | null;
+		RequestId?: string | null;
+		Result?: MapOfMessageResult | null;
 	}
 
 	export interface MapOfEndpointMessageResult {
@@ -2091,135 +2091,135 @@ export namespace MyNS {
 	export interface DirectMessageConfiguration {
 
 		/** Specifies the settings for a one-time message that's sent directly to an endpoint through the ADM (Amazon Device Messaging) channel. */
-		ADMMessage?: ADMMessage;
+		ADMMessage?: ADMMessage | null;
 
 		/** Specifies the settings for a one-time message that's sent directly to an endpoint through the APNs (Apple Push Notification service) channel. */
-		APNSMessage?: APNSMessage;
+		APNSMessage?: APNSMessage | null;
 
 		/** Specifies the settings for a one-time message that's sent directly to an endpoint through the Baidu (Baidu Cloud Push) channel. */
-		BaiduMessage?: BaiduMessage;
+		BaiduMessage?: BaiduMessage | null;
 
 		/** Specifies the default message for all channels. */
-		DefaultMessage?: DefaultMessage;
+		DefaultMessage?: DefaultMessage | null;
 
 		/** Specifies the default settings and content for a push notification that's sent directly to an endpoint. */
-		DefaultPushNotificationMessage?: DefaultPushNotificationMessage;
+		DefaultPushNotificationMessage?: DefaultPushNotificationMessage | null;
 
 		/** Specifies the default settings and content for a one-time email message that's sent directly to an endpoint. */
-		EmailMessage?: EmailMessage;
+		EmailMessage?: EmailMessage | null;
 
 		/** Specifies the settings for a one-time message that's sent directly to an endpoint through the GCM channel. The GCM channel enables Amazon Pinpoint to send messages to the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. */
-		GCMMessage?: GCMMessage;
+		GCMMessage?: GCMMessage | null;
 
 		/** Specifies the default settings for a one-time SMS message that's sent directly to an endpoint. */
-		SMSMessage?: SMSMessage;
+		SMSMessage?: SMSMessage | null;
 
 		/** Specifies the settings for a one-time voice message that's sent directly to an endpoint through the voice channel. */
-		VoiceMessage?: VoiceMessage;
+		VoiceMessage?: VoiceMessage | null;
 	}
 
 
 	/** Specifies the settings for a one-time message that's sent directly to an endpoint through the ADM (Amazon Device Messaging) channel. */
 	export interface ADMMessage {
-		Action?: MessageAction;
-		Body?: string;
-		ConsolidationKey?: string;
-		Data?: MapOf__string;
-		ExpiresAfter?: string;
-		IconReference?: string;
-		ImageIconUrl?: string;
-		ImageUrl?: string;
-		MD5?: string;
-		RawContent?: string;
-		SilentPush?: boolean;
-		SmallImageIconUrl?: string;
-		Sound?: string;
-		Substitutions?: MapOfListOf__string;
-		Title?: string;
-		Url?: string;
+		Action?: MessageAction | null;
+		Body?: string | null;
+		ConsolidationKey?: string | null;
+		Data?: MapOf__string | null;
+		ExpiresAfter?: string | null;
+		IconReference?: string | null;
+		ImageIconUrl?: string | null;
+		ImageUrl?: string | null;
+		MD5?: string | null;
+		RawContent?: string | null;
+		SilentPush?: boolean | null;
+		SmallImageIconUrl?: string | null;
+		Sound?: string | null;
+		Substitutions?: MapOfListOf__string | null;
+		Title?: string | null;
+		Url?: string | null;
 	}
 
 
 	/** Specifies the settings for a one-time message that's sent directly to an endpoint through the APNs (Apple Push Notification service) channel. */
 	export interface APNSMessage {
-		APNSPushType?: string;
-		Action?: MessageAction;
-		Badge?: number;
-		Body?: string;
-		Category?: string;
-		CollapseId?: string;
-		Data?: MapOf__string;
-		MediaUrl?: string;
-		PreferredAuthenticationMethod?: string;
-		Priority?: string;
-		RawContent?: string;
-		SilentPush?: boolean;
-		Sound?: string;
-		Substitutions?: MapOfListOf__string;
-		ThreadId?: string;
-		TimeToLive?: number;
-		Title?: string;
-		Url?: string;
+		APNSPushType?: string | null;
+		Action?: MessageAction | null;
+		Badge?: number | null;
+		Body?: string | null;
+		Category?: string | null;
+		CollapseId?: string | null;
+		Data?: MapOf__string | null;
+		MediaUrl?: string | null;
+		PreferredAuthenticationMethod?: string | null;
+		Priority?: string | null;
+		RawContent?: string | null;
+		SilentPush?: boolean | null;
+		Sound?: string | null;
+		Substitutions?: MapOfListOf__string | null;
+		ThreadId?: string | null;
+		TimeToLive?: number | null;
+		Title?: string | null;
+		Url?: string | null;
 	}
 
 
 	/** Specifies the settings for a one-time message that's sent directly to an endpoint through the Baidu (Baidu Cloud Push) channel. */
 	export interface BaiduMessage {
-		Action?: MessageAction;
-		Body?: string;
-		Data?: MapOf__string;
-		IconReference?: string;
-		ImageIconUrl?: string;
-		ImageUrl?: string;
-		RawContent?: string;
-		SilentPush?: boolean;
-		SmallImageIconUrl?: string;
-		Sound?: string;
-		Substitutions?: MapOfListOf__string;
-		TimeToLive?: number;
-		Title?: string;
-		Url?: string;
+		Action?: MessageAction | null;
+		Body?: string | null;
+		Data?: MapOf__string | null;
+		IconReference?: string | null;
+		ImageIconUrl?: string | null;
+		ImageUrl?: string | null;
+		RawContent?: string | null;
+		SilentPush?: boolean | null;
+		SmallImageIconUrl?: string | null;
+		Sound?: string | null;
+		Substitutions?: MapOfListOf__string | null;
+		TimeToLive?: number | null;
+		Title?: string | null;
+		Url?: string | null;
 	}
 
 
 	/** Specifies the default message for all channels. */
 	export interface DefaultMessage {
-		Body?: string;
-		Substitutions?: MapOfListOf__string;
+		Body?: string | null;
+		Substitutions?: MapOfListOf__string | null;
 	}
 
 
 	/** Specifies the default settings and content for a push notification that's sent directly to an endpoint. */
 	export interface DefaultPushNotificationMessage {
-		Action?: MessageAction;
-		Body?: string;
-		Data?: MapOf__string;
-		SilentPush?: boolean;
-		Substitutions?: MapOfListOf__string;
-		Title?: string;
-		Url?: string;
+		Action?: MessageAction | null;
+		Body?: string | null;
+		Data?: MapOf__string | null;
+		SilentPush?: boolean | null;
+		Substitutions?: MapOfListOf__string | null;
+		Title?: string | null;
+		Url?: string | null;
 	}
 
 
 	/** Specifies the default settings and content for a one-time email message that's sent directly to an endpoint. */
 	export interface EmailMessage {
-		Body?: string;
-		FeedbackForwardingAddress?: string;
-		FromAddress?: string;
+		Body?: string | null;
+		FeedbackForwardingAddress?: string | null;
+		FromAddress?: string | null;
 
 		/** Specifies the contents of an email message, represented as a raw MIME message. */
-		RawEmail?: RawEmail;
-		ReplyToAddresses?: Array<string>;
+		RawEmail?: RawEmail | null;
+		ReplyToAddresses?: Array<string> | null;
 
 		/** Specifies the contents of an email message, composed of a subject, a text part, and an HTML part. */
-		SimpleEmail?: SimpleEmail;
-		Substitutions?: MapOfListOf__string;
+		SimpleEmail?: SimpleEmail | null;
+		Substitutions?: MapOfListOf__string | null;
 	}
 
 
 	/** Specifies the contents of an email message, represented as a raw MIME message. */
 	export interface RawEmail {
-		Data?: string;
+		Data?: string | null;
 	}
 
 
@@ -2227,64 +2227,64 @@ export namespace MyNS {
 	export interface SimpleEmail {
 
 		/** Specifies the subject or body of an email message, represented as textual email data and the applicable character set. */
-		HtmlPart?: SimpleEmailPart;
+		HtmlPart?: SimpleEmailPart | null;
 
 		/** Specifies the subject or body of an email message, represented as textual email data and the applicable character set. */
-		Subject?: SimpleEmailPart;
+		Subject?: SimpleEmailPart | null;
 
 		/** Specifies the subject or body of an email message, represented as textual email data and the applicable character set. */
-		TextPart?: SimpleEmailPart;
+		TextPart?: SimpleEmailPart | null;
 	}
 
 
 	/** Specifies the subject or body of an email message, represented as textual email data and the applicable character set. */
 	export interface SimpleEmailPart {
-		Charset?: string;
-		Data?: string;
+		Charset?: string | null;
+		Data?: string | null;
 	}
 
 
 	/** Specifies the settings for a one-time message that's sent directly to an endpoint through the GCM channel. The GCM channel enables Amazon Pinpoint to send messages to the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. */
 	export interface GCMMessage {
-		Action?: MessageAction;
-		Body?: string;
-		CollapseKey?: string;
-		Data?: MapOf__string;
-		IconReference?: string;
-		ImageIconUrl?: string;
-		ImageUrl?: string;
-		Priority?: string;
-		RawContent?: string;
-		RestrictedPackageName?: string;
-		SilentPush?: boolean;
-		SmallImageIconUrl?: string;
-		Sound?: string;
-		Substitutions?: MapOfListOf__string;
-		TimeToLive?: number;
-		Title?: string;
-		Url?: string;
+		Action?: MessageAction | null;
+		Body?: string | null;
+		CollapseKey?: string | null;
+		Data?: MapOf__string | null;
+		IconReference?: string | null;
+		ImageIconUrl?: string | null;
+		ImageUrl?: string | null;
+		Priority?: string | null;
+		RawContent?: string | null;
+		RestrictedPackageName?: string | null;
+		SilentPush?: boolean | null;
+		SmallImageIconUrl?: string | null;
+		Sound?: string | null;
+		Substitutions?: MapOfListOf__string | null;
+		TimeToLive?: number | null;
+		Title?: string | null;
+		Url?: string | null;
 	}
 
 
 	/** Specifies the default settings for a one-time SMS message that's sent directly to an endpoint. */
 	export interface SMSMessage {
-		Body?: string;
-		Keyword?: string;
-		MediaUrl?: string;
-		MessageType?: CampaignSmsMessageMessageType;
-		OriginationNumber?: string;
-		SenderId?: string;
-		Substitutions?: MapOfListOf__string;
+		Body?: string | null;
+		Keyword?: string | null;
+		MediaUrl?: string | null;
+		MessageType?: CampaignSmsMessageMessageType | null;
+		OriginationNumber?: string | null;
+		SenderId?: string | null;
+		Substitutions?: MapOfListOf__string | null;
 	}
 
 
 	/** Specifies the settings for a one-time voice message that's sent directly to an endpoint through the voice channel. */
 	export interface VoiceMessage {
-		Body?: string;
-		LanguageCode?: string;
-		OriginationNumber?: string;
-		Substitutions?: MapOfListOf__string;
-		VoiceId?: string;
+		Body?: string | null;
+		LanguageCode?: string | null;
+		OriginationNumber?: string | null;
+		Substitutions?: MapOfListOf__string | null;
+		VoiceId?: string | null;
 	}
 
 	export interface SendUsersMessagesResponse {
@@ -2300,8 +2300,8 @@ export namespace MyNS {
 	/** Provides information about which users and endpoints a message was sent to. */
 	export interface SendUsersMessageResponse {
 		ApplicationId: string;
-		RequestId?: string;
-		Result?: MapOfMapOfEndpointMessageResult;
+		RequestId?: string | null;
+		Result?: MapOfMapOfEndpointMessageResult | null;
 	}
 
 	export interface MapOfMapOfEndpointMessageResult {
@@ -2420,24 +2420,24 @@ export namespace MyNS {
 
 	/** Specifies an endpoint to create or update and the settings and attributes to set or change for the endpoint. */
 	export interface EndpointBatchItem {
-		Address?: string;
-		Attributes?: MapOfListOf__string;
-		ChannelType?: __EndpointTypesElement;
+		Address?: string | null;
+		Attributes?: MapOfListOf__string | null;
+		ChannelType?: __EndpointTypesElement | null;
 
 		/** Specifies demographic information about an endpoint, such as the applicable time zone and platform. */
-		Demographic?: EndpointDemographic;
-		EffectiveDate?: string;
-		EndpointStatus?: string;
-		Id?: string;
+		Demographic?: EndpointDemographic | null;
+		EffectiveDate?: string | null;
+		EndpointStatus?: string | null;
+		Id?: string | null;
 
 		/** Specifies geographic information about an endpoint. */
-		Location?: EndpointLocation;
-		Metrics?: MapOf__double;
-		OptOut?: string;
-		RequestId?: string;
+		Location?: EndpointLocation | null;
+		Metrics?: MapOf__double | null;
+		OptOut?: string | null;
+		RequestId?: string | null;
 
 		/** Specifies data for one or more attributes that describe the user who's associated with an endpoint. */
-		User?: EndpointUser;
+		User?: EndpointUser | null;
 	}
 
 	export interface UpdateGcmChannelResponse {
@@ -2544,7 +2544,7 @@ export namespace MyNS {
 	export interface ADMChannelRequest {
 		ClientId: string;
 		ClientSecret: string;
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 	}
 
 	export enum Action { OPEN_APP = 0, DEEP_LINK = 1, URL = 2 }
@@ -2552,72 +2552,72 @@ export namespace MyNS {
 
 	/** Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application. */
 	export interface APNSChannelRequest {
-		BundleId?: string;
-		Certificate?: string;
-		DefaultAuthenticationMethod?: string;
-		Enabled?: boolean;
-		PrivateKey?: string;
-		TeamId?: string;
-		TokenKey?: string;
-		TokenKeyId?: string;
+		BundleId?: string | null;
+		Certificate?: string | null;
+		DefaultAuthenticationMethod?: string | null;
+		Enabled?: boolean | null;
+		PrivateKey?: string | null;
+		TeamId?: string | null;
+		TokenKey?: string | null;
+		TokenKeyId?: string | null;
 	}
 
 
 	/** Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application. */
 	export interface APNSSandboxChannelRequest {
-		BundleId?: string;
-		Certificate?: string;
-		DefaultAuthenticationMethod?: string;
-		Enabled?: boolean;
-		PrivateKey?: string;
-		TeamId?: string;
-		TokenKey?: string;
-		TokenKeyId?: string;
+		BundleId?: string | null;
+		Certificate?: string | null;
+		DefaultAuthenticationMethod?: string | null;
+		Enabled?: boolean | null;
+		PrivateKey?: string | null;
+		TeamId?: string | null;
+		TokenKey?: string | null;
+		TokenKeyId?: string | null;
 	}
 
 
 	/** Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application. */
 	export interface APNSVoipChannelRequest {
-		BundleId?: string;
-		Certificate?: string;
-		DefaultAuthenticationMethod?: string;
-		Enabled?: boolean;
-		PrivateKey?: string;
-		TeamId?: string;
-		TokenKey?: string;
-		TokenKeyId?: string;
+		BundleId?: string | null;
+		Certificate?: string | null;
+		DefaultAuthenticationMethod?: string | null;
+		Enabled?: boolean | null;
+		PrivateKey?: string | null;
+		TeamId?: string | null;
+		TokenKey?: string | null;
+		TokenKeyId?: string | null;
 	}
 
 
 	/** Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application. */
 	export interface APNSVoipSandboxChannelRequest {
-		BundleId?: string;
-		Certificate?: string;
-		DefaultAuthenticationMethod?: string;
-		Enabled?: boolean;
-		PrivateKey?: string;
-		TeamId?: string;
-		TokenKey?: string;
-		TokenKeyId?: string;
+		BundleId?: string | null;
+		Certificate?: string | null;
+		DefaultAuthenticationMethod?: string | null;
+		Enabled?: boolean | null;
+		PrivateKey?: string | null;
+		TeamId?: string | null;
+		TokenKey?: string | null;
+		TokenKeyId?: string | null;
 	}
 
 
 	/** The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants. */
 	export interface CustomMessageActivity {
-		DeliveryUri?: string;
-		EndpointTypes?: Array<__EndpointTypesElement>;
+		DeliveryUri?: string | null;
+		EndpointTypes?: Array<__EndpointTypesElement> | null;
 
 		/** Specifies the message content for a custom channel message that's sent to participants in a journey. */
-		MessageConfig?: JourneyCustomMessage;
-		NextActivity?: string;
-		TemplateName?: string;
-		TemplateVersion?: string;
+		MessageConfig?: JourneyCustomMessage | null;
+		NextActivity?: string | null;
+		TemplateName?: string | null;
+		TemplateVersion?: string | null;
 	}
 
 
 	/** Specifies the message content for a custom channel message that's sent to participants in a journey. */
 	export interface JourneyCustomMessage {
-		Data?: string;
+		Data?: string | null;
 	}
 
 
@@ -2625,19 +2625,19 @@ export namespace MyNS {
 	export interface ConditionalSplitActivity {
 
 		/** Specifies the conditions to evaluate for an activity in a journey, and how to evaluate those conditions. */
-		Condition?: Condition;
+		Condition?: Condition | null;
 
 		/** Specifies a duration or a date and time that indicates when Amazon Pinpoint determines whether an activity's conditions have been met or an activity moves participants to the next activity in a journey. */
-		EvaluationWaitTime?: WaitTime;
-		FalseActivity?: string;
-		TrueActivity?: string;
+		EvaluationWaitTime?: WaitTime | null;
+		FalseActivity?: string | null;
+		TrueActivity?: string | null;
 	}
 
 
 	/** Specifies the conditions to evaluate for an activity in a journey, and how to evaluate those conditions. */
 	export interface Condition {
-		Conditions?: Array<SimpleCondition>;
-		Operator?: ConditionOperator;
+		Conditions?: Array<SimpleCondition> | null;
+		Operator?: ConditionOperator | null;
 	}
 
 
@@ -2645,13 +2645,13 @@ export namespace MyNS {
 	export interface SimpleCondition {
 
 		/** Specifies the conditions to evaluate for an event that applies to an activity in a journey. */
-		EventCondition?: EventCondition;
+		EventCondition?: EventCondition | null;
 
 		/** Specifies a segment to associate with an activity in a journey. */
-		SegmentCondition?: SegmentCondition;
+		SegmentCondition?: SegmentCondition | null;
 
 		/** Specifies the dimension settings for a segment. */
-		SegmentDimensions?: SegmentDimensions;
+		SegmentDimensions?: SegmentDimensions | null;
 	}
 
 
@@ -2659,8 +2659,8 @@ export namespace MyNS {
 	export interface EventCondition {
 
 		/** Specifies the dimensions for an event filter that determines when a campaign is sent or a journey activity is performed. */
-		Dimensions?: EventDimensions;
-		MessageActivity?: string;
+		Dimensions?: EventDimensions | null;
+		MessageActivity?: string | null;
 	}
 
 	export enum ConditionOperator { ALL = 0, ANY = 1 }
@@ -2668,8 +2668,8 @@ export namespace MyNS {
 
 	/** Specifies a duration or a date and time that indicates when Amazon Pinpoint determines whether an activity's conditions have been met or an activity moves participants to the next activity in a journey. */
 	export interface WaitTime {
-		WaitFor?: string;
-		WaitUntil?: string;
+		WaitFor?: string | null;
+		WaitUntil?: string | null;
 	}
 
 
@@ -2677,33 +2677,33 @@ export namespace MyNS {
 	export interface EmailMessageActivity {
 
 		/** Specifies the "From" address for an email message that's sent to participants in a journey. */
-		MessageConfig?: JourneyEmailMessage;
-		NextActivity?: string;
-		TemplateName?: string;
-		TemplateVersion?: string;
+		MessageConfig?: JourneyEmailMessage | null;
+		NextActivity?: string | null;
+		TemplateName?: string | null;
+		TemplateVersion?: string | null;
 	}
 
 
 	/** Specifies the "From" address for an email message that's sent to participants in a journey. */
 	export interface JourneyEmailMessage {
-		FromAddress?: string;
+		FromAddress?: string | null;
 	}
 
 
 	/** Specifies the settings for a holdout activity in a journey. This type of activity stops a journey for a specified percentage of participants. */
 	export interface HoldoutActivity {
-		NextActivity?: string;
+		NextActivity?: string | null;
 		Percentage: number;
 	}
 
 
 	/** Specifies the settings for a multivariate split activity in a journey. This type of activity sends participants down one of as many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify. */
 	export interface MultiConditionalSplitActivity {
-		Branches?: Array<MultiConditionalBranch>;
-		DefaultActivity?: string;
+		Branches?: Array<MultiConditionalBranch> | null;
+		DefaultActivity?: string | null;
 
 		/** Specifies a duration or a date and time that indicates when Amazon Pinpoint determines whether an activity's conditions have been met or an activity moves participants to the next activity in a journey. */
-		EvaluationWaitTime?: WaitTime;
+		EvaluationWaitTime?: WaitTime | null;
 	}
 
 
@@ -2711,8 +2711,8 @@ export namespace MyNS {
 	export interface MultiConditionalBranch {
 
 		/** Specifies a condition to evaluate for an activity in a journey. */
-		Condition?: SimpleCondition;
-		NextActivity?: string;
+		Condition?: SimpleCondition | null;
+		NextActivity?: string | null;
 	}
 
 
@@ -2720,29 +2720,29 @@ export namespace MyNS {
 	export interface PushMessageActivity {
 
 		/** Specifies the message configuration for a push notification that's sent to participants in a journey. */
-		MessageConfig?: JourneyPushMessage;
-		NextActivity?: string;
-		TemplateName?: string;
-		TemplateVersion?: string;
+		MessageConfig?: JourneyPushMessage | null;
+		NextActivity?: string | null;
+		TemplateName?: string | null;
+		TemplateVersion?: string | null;
 	}
 
 
 	/** Specifies the message configuration for a push notification that's sent to participants in a journey. */
 	export interface JourneyPushMessage {
-		TimeToLive?: string;
+		TimeToLive?: string | null;
 	}
 
 
 	/** Specifies the settings for a random split activity in a journey. This type of activity randomly sends specified percentages of participants down one of as many as five paths in a journey, based on conditions that you specify. */
 	export interface RandomSplitActivity {
-		Branches?: Array<RandomSplitEntry>;
+		Branches?: Array<RandomSplitEntry> | null;
 	}
 
 
 	/** Specifies the settings for a path in a random split activity in a journey. */
 	export interface RandomSplitEntry {
-		NextActivity?: string;
-		Percentage?: number;
+		NextActivity?: string | null;
+		Percentage?: number | null;
 	}
 
 
@@ -2750,26 +2750,26 @@ export namespace MyNS {
 	export interface SMSMessageActivity {
 
 		/** Specifies the sender ID and message type for an SMS message that's sent to participants in a journey. */
-		MessageConfig?: JourneySMSMessage;
-		NextActivity?: string;
-		TemplateName?: string;
-		TemplateVersion?: string;
+		MessageConfig?: JourneySMSMessage | null;
+		NextActivity?: string | null;
+		TemplateName?: string | null;
+		TemplateVersion?: string | null;
 	}
 
 
 	/** Specifies the sender ID and message type for an SMS message that's sent to participants in a journey. */
 	export interface JourneySMSMessage {
-		MessageType?: CampaignSmsMessageMessageType;
-		SenderId?: string;
+		MessageType?: CampaignSmsMessageMessageType | null;
+		SenderId?: string | null;
 	}
 
 
 	/** Specifies the settings for a wait activity in a journey. This type of activity waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey. */
 	export interface WaitActivity {
-		NextActivity?: string;
+		NextActivity?: string | null;
 
 		/** Specifies a duration or a date and time that indicates when Amazon Pinpoint determines whether an activity's conditions have been met or an activity moves participants to the next activity in a journey. */
-		WaitTime?: WaitTime;
+		WaitTime?: WaitTime | null;
 	}
 
 
@@ -2777,43 +2777,43 @@ export namespace MyNS {
 	export interface Activity {
 
 		/** The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants. */
-		CUSTOM?: CustomMessageActivity;
+		CUSTOM?: CustomMessageActivity | null;
 
 		/** Specifies the settings for a yes/no split activity in a journey. This type of activity sends participants down one of two paths in a journey, based on conditions that you specify. */
-		ConditionalSplit?: ConditionalSplitActivity;
-		Description?: string;
+		ConditionalSplit?: ConditionalSplitActivity | null;
+		Description?: string | null;
 
 		/** Specifies the settings for an email activity in a journey. This type of activity sends an email message to participants. */
-		EMAIL?: EmailMessageActivity;
+		EMAIL?: EmailMessageActivity | null;
 
 		/** Specifies the settings for a holdout activity in a journey. This type of activity stops a journey for a specified percentage of participants. */
-		Holdout?: HoldoutActivity;
+		Holdout?: HoldoutActivity | null;
 
 		/** Specifies the settings for a multivariate split activity in a journey. This type of activity sends participants down one of as many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify. */
-		MultiCondition?: MultiConditionalSplitActivity;
+		MultiCondition?: MultiConditionalSplitActivity | null;
 
 		/** Specifies the settings for a push notification activity in a journey. This type of activity sends a push notification to participants. */
-		PUSH?: PushMessageActivity;
+		PUSH?: PushMessageActivity | null;
 
 		/** Specifies the settings for a random split activity in a journey. This type of activity randomly sends specified percentages of participants down one of as many as five paths in a journey, based on conditions that you specify. */
-		RandomSplit?: RandomSplitActivity;
+		RandomSplit?: RandomSplitActivity | null;
 
 		/** Specifies the settings for an SMS activity in a journey. This type of activity sends a text message to participants. */
-		SMS?: SMSMessageActivity;
+		SMS?: SMSMessageActivity | null;
 
 		/** Specifies the settings for a wait activity in a journey. This type of activity waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey. */
-		Wait?: WaitActivity;
+		Wait?: WaitActivity | null;
 	}
 
 
 	/** Specifies address-based configuration settings for a message that's sent directly to an endpoint. */
 	export interface AddressConfiguration {
-		BodyOverride?: string;
-		ChannelType?: __EndpointTypesElement;
-		Context?: MapOf__string;
-		RawContent?: string;
-		Substitutions?: MapOfListOf__string;
-		TitleOverride?: string;
+		BodyOverride?: string | null;
+		ChannelType?: __EndpointTypesElement | null;
+		Context?: MapOf__string | null;
+		RawContent?: string | null;
+		Substitutions?: MapOfListOf__string | null;
+		TitleOverride?: string | null;
 	}
 
 	export enum AttributeType { INCLUSIVE = 0, EXCLUSIVE = 1 }
@@ -2821,7 +2821,7 @@ export namespace MyNS {
 
 	/** Specifies attribute-based criteria for including or excluding endpoints from a segment. */
 	export interface AttributeDimension {
-		AttributeType?: SetDimensionDimensionType;
+		AttributeType?: SetDimensionDimensionType | null;
 		Values: Array<string>;
 	}
 
@@ -2829,7 +2829,7 @@ export namespace MyNS {
 	/** Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application. */
 	export interface BaiduChannelRequest {
 		ApiKey: string;
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 		SecretKey: string;
 	}
 
@@ -2844,15 +2844,15 @@ export namespace MyNS {
 
 	/** Provides information about the general settings and status of a channel for an application. */
 	export interface ChannelResponse {
-		ApplicationId?: string;
-		CreationDate?: string;
-		Enabled?: boolean;
-		HasCredential?: boolean;
-		Id?: string;
-		IsArchived?: boolean;
-		LastModifiedBy?: string;
-		LastModifiedDate?: string;
-		Version?: number;
+		ApplicationId?: string | null;
+		CreationDate?: string | null;
+		Enabled?: boolean | null;
+		HasCredential?: boolean | null;
+		Id?: string | null;
+		IsArchived?: boolean | null;
+		LastModifiedBy?: string | null;
+		LastModifiedDate?: string | null;
+		Version?: number | null;
 	}
 
 	export enum Operator { ALL = 0, ANY = 1 }
@@ -2861,7 +2861,7 @@ export namespace MyNS {
 	/** Specifies the display name of an application and the tags to associate with the application. */
 	export interface CreateApplicationRequest {
 		Name: string;
-		tags?: MapOf__string;
+		tags?: MapOf__string | null;
 	}
 
 	export interface CreateAppRequest {
@@ -2876,34 +2876,34 @@ export namespace MyNS {
 
 	/** Specifies the configuration and other settings for a campaign. */
 	export interface WriteCampaignRequest {
-		AdditionalTreatments?: Array<WriteTreatmentResource>;
+		AdditionalTreatments?: Array<WriteTreatmentResource> | null;
 
 		/** Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment. */
-		CustomDeliveryConfiguration?: CustomDeliveryConfiguration;
-		Description?: string;
-		HoldoutPercent?: number;
+		CustomDeliveryConfiguration?: CustomDeliveryConfiguration | null;
+		Description?: string | null;
+		HoldoutPercent?: number | null;
 
 		/** Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign. */
-		Hook?: CampaignHook;
-		IsPaused?: boolean;
+		Hook?: CampaignHook | null;
+		IsPaused?: boolean | null;
 
 		/** For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns and journeys in the application can send. */
-		Limits?: CampaignLimits;
+		Limits?: CampaignLimits | null;
 
 		/** Specifies the message configuration settings for a campaign. */
-		MessageConfiguration?: MessageConfiguration;
-		Name?: string;
+		MessageConfiguration?: MessageConfiguration | null;
+		Name?: string | null;
 
 		/** Specifies the schedule settings for a campaign. */
-		Schedule?: Schedule;
-		SegmentId?: string;
-		SegmentVersion?: number;
-		tags?: MapOf__string;
+		Schedule?: Schedule | null;
+		SegmentId?: string | null;
+		SegmentVersion?: number | null;
+		tags?: MapOf__string | null;
 
 		/** Specifies the message template to use for the message, for each type of channel. */
-		TemplateConfiguration?: TemplateConfiguration;
-		TreatmentDescription?: string;
-		TreatmentName?: string;
+		TemplateConfiguration?: TemplateConfiguration | null;
+		TreatmentDescription?: string | null;
+		TreatmentName?: string | null;
 	}
 
 	export interface CreateCampaignRequest {
@@ -2918,13 +2918,13 @@ export namespace MyNS {
 
 	/** Specifies the content and settings for a message template that can be used in messages that are sent through the email channel. */
 	export interface EmailTemplateRequest {
-		DefaultSubstitutions?: string;
-		HtmlPart?: string;
-		RecommenderId?: string;
-		Subject?: string;
-		tags?: MapOf__string;
-		TemplateDescription?: string;
-		TextPart?: string;
+		DefaultSubstitutions?: string | null;
+		HtmlPart?: string | null;
+		RecommenderId?: string | null;
+		Subject?: string | null;
+		tags?: MapOf__string | null;
+		TemplateDescription?: string | null;
+		TextPart?: string | null;
 	}
 
 	export interface CreateEmailTemplateRequest {
@@ -2941,8 +2941,8 @@ export namespace MyNS {
 	export interface ExportJobRequest {
 		RoleArn: string;
 		S3UrlPrefix: string;
-		SegmentId?: string;
-		SegmentVersion?: number;
+		SegmentId?: string | null;
+		SegmentVersion?: number | null;
 	}
 
 	export interface CreateExportJobRequest {
@@ -2957,14 +2957,14 @@ export namespace MyNS {
 
 	/** Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket. */
 	export interface ImportJobRequest {
-		DefineSegment?: boolean;
-		ExternalId?: string;
+		DefineSegment?: boolean | null;
+		ExternalId?: string | null;
 		Format: ImportJobResourceFormat;
-		RegisterEndpoints?: boolean;
+		RegisterEndpoints?: boolean | null;
 		RoleArn: string;
 		S3Url: string;
-		SegmentId?: string;
-		SegmentName?: string;
+		SegmentId?: string | null;
+		SegmentName?: string | null;
 	}
 
 	export interface CreateImportJobRequest {
@@ -2979,26 +2979,26 @@ export namespace MyNS {
 
 	/** Specifies the configuration and other settings for a journey. */
 	export interface WriteJourneyRequest {
-		Activities?: MapOfActivity;
-		CreationDate?: string;
-		LastModifiedDate?: string;
+		Activities?: MapOfActivity | null;
+		CreationDate?: string | null;
+		LastModifiedDate?: string | null;
 
 		/** Specifies limits on the messages that a journey can send and the number of times participants can enter a journey. */
-		Limits?: JourneyLimits;
-		LocalTime?: boolean;
+		Limits?: JourneyLimits | null;
+		LocalTime?: boolean | null;
 		Name: string;
 
 		/** Specifies the start and end times that define a time range when messages aren't sent to endpoints. */
-		QuietTime?: QuietTime;
-		RefreshFrequency?: string;
+		QuietTime?: QuietTime | null;
+		RefreshFrequency?: string | null;
 
 		/** Specifies the schedule settings for a journey. */
-		Schedule?: JourneySchedule;
-		StartActivity?: string;
+		Schedule?: JourneySchedule | null;
+		StartActivity?: string | null;
 
 		/** Specifies the conditions for the first activity in a journey. This activity and its conditions determine which users are participants in a journey. */
-		StartCondition?: StartCondition;
-		State?: JourneyResponseState;
+		StartCondition?: StartCondition | null;
+		State?: JourneyResponseState | null;
 	}
 
 	export interface CreateJourneyRequest {
@@ -3015,23 +3015,23 @@ export namespace MyNS {
 	export interface PushNotificationTemplateRequest {
 
 		/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel. */
-		ADM?: AndroidPushNotificationTemplate;
+		ADM?: AndroidPushNotificationTemplate | null;
 
 		/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the APNs (Apple Push Notification service) channel. */
-		APNS?: APNSPushNotificationTemplate;
+		APNS?: APNSPushNotificationTemplate | null;
 
 		/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel. */
-		Baidu?: AndroidPushNotificationTemplate;
+		Baidu?: AndroidPushNotificationTemplate | null;
 
 		/** Specifies the default settings and content for a message template that can be used in messages that are sent through a push notification channel. */
-		Default?: DefaultPushNotificationTemplate;
-		DefaultSubstitutions?: string;
+		Default?: DefaultPushNotificationTemplate | null;
+		DefaultSubstitutions?: string | null;
 
 		/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel. */
-		GCM?: AndroidPushNotificationTemplate;
-		RecommenderId?: string;
-		tags?: MapOf__string;
-		TemplateDescription?: string;
+		GCM?: AndroidPushNotificationTemplate | null;
+		RecommenderId?: string | null;
+		tags?: MapOf__string | null;
+		TemplateDescription?: string | null;
 	}
 
 	export interface CreatePushTemplateRequest {
@@ -3046,15 +3046,15 @@ export namespace MyNS {
 
 	/** Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model. */
 	export interface CreateRecommenderConfiguration {
-		Attributes?: MapOf__string;
-		Description?: string;
-		Name?: string;
-		RecommendationProviderIdType?: string;
+		Attributes?: MapOf__string | null;
+		Description?: string | null;
+		Name?: string | null;
+		RecommendationProviderIdType?: string | null;
 		RecommendationProviderRoleArn: string;
 		RecommendationProviderUri: string;
-		RecommendationTransformerUri?: string;
-		RecommendationsDisplayName?: string;
-		RecommendationsPerMessage?: number;
+		RecommendationTransformerUri?: string | null;
+		RecommendationsDisplayName?: string | null;
+		RecommendationsPerMessage?: number | null;
 	}
 
 	export interface CreateRecommenderConfigurationRequest {
@@ -3071,12 +3071,12 @@ export namespace MyNS {
 	export interface WriteSegmentRequest {
 
 		/** Specifies the dimension settings for a segment. */
-		Dimensions?: SegmentDimensions;
-		Name?: string;
+		Dimensions?: SegmentDimensions | null;
+		Name?: string | null;
 
 		/** Specifies the settings that define the relationships between segment groups for a segment. */
-		SegmentGroups?: SegmentGroupList;
-		tags?: MapOf__string;
+		SegmentGroups?: SegmentGroupList | null;
+		tags?: MapOf__string | null;
 	}
 
 	export interface CreateSegmentRequest {
@@ -3091,11 +3091,11 @@ export namespace MyNS {
 
 	/** Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel. */
 	export interface SMSTemplateRequest {
-		Body?: string;
-		DefaultSubstitutions?: string;
-		RecommenderId?: string;
-		tags?: MapOf__string;
-		TemplateDescription?: string;
+		Body?: string | null;
+		DefaultSubstitutions?: string | null;
+		RecommenderId?: string | null;
+		tags?: MapOf__string | null;
+		TemplateDescription?: string | null;
 	}
 
 	export interface CreateSmsTemplateRequest {
@@ -3110,12 +3110,12 @@ export namespace MyNS {
 
 	/** Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel. */
 	export interface VoiceTemplateRequest {
-		Body?: string;
-		DefaultSubstitutions?: string;
-		LanguageCode?: string;
-		tags?: MapOf__string;
-		TemplateDescription?: string;
-		VoiceId?: string;
+		Body?: string | null;
+		DefaultSubstitutions?: string | null;
+		LanguageCode?: string | null;
+		tags?: MapOf__string | null;
+		TemplateDescription?: string | null;
+		VoiceId?: string | null;
 	}
 
 	export interface CreateVoiceTemplateRequest {
@@ -3202,11 +3202,11 @@ export namespace MyNS {
 
 	/** Specifies the status and settings of the email channel for an application. */
 	export interface EmailChannelRequest {
-		ConfigurationSet?: string;
-		Enabled?: boolean;
+		ConfigurationSet?: string | null;
+		Enabled?: boolean | null;
 		FromAddress: string;
 		Identity: string;
-		RoleArn?: string;
+		RoleArn?: string | null;
 	}
 
 	export enum TemplateType { EMAIL = 0, SMS = 1, VOICE = 2, PUSH = 3 }
@@ -3220,106 +3220,106 @@ export namespace MyNS {
 
 	/** Provides the status code and message that result from processing data for an endpoint. */
 	export interface EndpointItemResponse {
-		Message?: string;
-		StatusCode?: number;
+		Message?: string | null;
+		StatusCode?: number | null;
 	}
 
 
 	/** Provides information about the delivery status and results of sending a message directly to an endpoint. */
 	export interface EndpointMessageResult {
-		Address?: string;
+		Address?: string | null;
 		DeliveryStatus: DeliveryStatus;
-		MessageId?: string;
+		MessageId?: string | null;
 		StatusCode: number;
-		StatusMessage?: string;
-		UpdatedToken?: string;
+		StatusMessage?: string | null;
+		UpdatedToken?: string | null;
 	}
 
 
 	/** Specifies the channel type and other settings for an endpoint. */
 	export interface EndpointRequest {
-		Address?: string;
-		Attributes?: MapOfListOf__string;
-		ChannelType?: __EndpointTypesElement;
+		Address?: string | null;
+		Attributes?: MapOfListOf__string | null;
+		ChannelType?: __EndpointTypesElement | null;
 
 		/** Specifies demographic information about an endpoint, such as the applicable time zone and platform. */
-		Demographic?: EndpointDemographic;
-		EffectiveDate?: string;
-		EndpointStatus?: string;
+		Demographic?: EndpointDemographic | null;
+		EffectiveDate?: string | null;
+		EndpointStatus?: string | null;
 
 		/** Specifies geographic information about an endpoint. */
-		Location?: EndpointLocation;
-		Metrics?: MapOf__double;
-		OptOut?: string;
-		RequestId?: string;
+		Location?: EndpointLocation | null;
+		Metrics?: MapOf__double | null;
+		OptOut?: string | null;
+		RequestId?: string | null;
 
 		/** Specifies data for one or more attributes that describe the user who's associated with an endpoint. */
-		User?: EndpointUser;
+		User?: EndpointUser | null;
 	}
 
 
 	/** Specifies the content, including message variables and attributes, to use in a message that's sent directly to an endpoint. */
 	export interface EndpointSendConfiguration {
-		BodyOverride?: string;
-		Context?: MapOf__string;
-		RawContent?: string;
-		Substitutions?: MapOfListOf__string;
-		TitleOverride?: string;
+		BodyOverride?: string | null;
+		Context?: MapOf__string | null;
+		RawContent?: string | null;
+		Substitutions?: MapOfListOf__string | null;
+		TitleOverride?: string | null;
 	}
 
 
 	/** Provides information about a session. */
 	export interface Session {
-		Duration?: number;
+		Duration?: number | null;
 		Id: string;
 		StartTimestamp: string;
-		StopTimestamp?: string;
+		StopTimestamp?: string | null;
 	}
 
 
 	/** Specifies information about an event that reports data to Amazon Pinpoint. */
 	export interface Event {
-		AppPackageName?: string;
-		AppTitle?: string;
-		AppVersionCode?: string;
-		Attributes?: MapOf__string;
-		ClientSdkVersion?: string;
+		AppPackageName?: string | null;
+		AppTitle?: string | null;
+		AppVersionCode?: string | null;
+		Attributes?: MapOf__string | null;
+		ClientSdkVersion?: string | null;
 		EventType: string;
-		Metrics?: MapOf__double;
-		SdkName?: string;
+		Metrics?: MapOf__double | null;
+		SdkName?: string | null;
 
 		/** Provides information about a session. */
-		Session?: Session;
+		Session?: Session | null;
 		Timestamp: string;
 	}
 
 
 	/** Provides the status code and message that result from processing an event. */
 	export interface EventItemResponse {
-		Message?: string;
-		StatusCode?: number;
+		Message?: string | null;
+		StatusCode?: number | null;
 	}
 
 
 	/** Specifies the properties and attributes of an endpoint that's associated with an event. */
 	export interface PublicEndpoint {
-		Address?: string;
-		Attributes?: MapOfListOf__string;
-		ChannelType?: __EndpointTypesElement;
+		Address?: string | null;
+		Attributes?: MapOfListOf__string | null;
+		ChannelType?: __EndpointTypesElement | null;
 
 		/** Specifies demographic information about an endpoint, such as the applicable time zone and platform. */
-		Demographic?: EndpointDemographic;
-		EffectiveDate?: string;
-		EndpointStatus?: string;
+		Demographic?: EndpointDemographic | null;
+		EffectiveDate?: string | null;
+		EndpointStatus?: string | null;
 
 		/** Specifies geographic information about an endpoint. */
-		Location?: EndpointLocation;
-		Metrics?: MapOf__double;
-		OptOut?: string;
-		RequestId?: string;
+		Location?: EndpointLocation | null;
+		Metrics?: MapOf__double | null;
+		OptOut?: string | null;
+		RequestId?: string | null;
 
 		/** Specifies data for one or more attributes that describe the user who's associated with an endpoint. */
-		User?: EndpointUser;
+		User?: EndpointUser | null;
 	}
 
 	export interface MapOfEvent {
@@ -3351,7 +3351,7 @@ export namespace MyNS {
 	/** Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. */
 	export interface GCMChannelRequest {
 		ApiKey: string;
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 	}
 
 	export interface GetAdmChannelRequest {
@@ -3496,14 +3496,14 @@ export namespace MyNS {
 	export interface ItemResponse {
 
 		/** Provides the status code and message that result from processing data for an endpoint. */
-		EndpointItemResponse?: EndpointItemResponse;
-		EventsItemResponse?: MapOfEventItemResponse;
+		EndpointItemResponse?: EndpointItemResponse | null;
+		EventsItemResponse?: MapOfEventItemResponse | null;
 	}
 
 
 	/** Changes the status of a journey. */
 	export interface JourneyStateRequest {
-		State?: JourneyResponseState;
+		State?: JourneyResponseState | null;
 	}
 
 	export interface ListJourneysRequest {
@@ -3521,9 +3521,9 @@ export namespace MyNS {
 
 	/** Specifies the configuration and other settings for a message. */
 	export interface MessageRequest {
-		Addresses?: MapOfAddressConfiguration;
-		Context?: MapOf__string;
-		Endpoints?: MapOfEndpointSendConfiguration;
+		Addresses?: MapOfAddressConfiguration | null;
+		Context?: MapOf__string | null;
+		Endpoints?: MapOfEndpointSendConfiguration | null;
 
 		/**
 		 * Specifies the settings and content for the default message and any default messages that you tailored for specific channels.
@@ -3532,18 +3532,18 @@ export namespace MyNS {
 		MessageConfiguration: DirectMessageConfiguration;
 
 		/** Specifies the message template to use for the message, for each type of channel. */
-		TemplateConfiguration?: TemplateConfiguration;
-		TraceId?: string;
+		TemplateConfiguration?: TemplateConfiguration | null;
+		TraceId?: string | null;
 	}
 
 
 	/** Provides information about the results of sending a message directly to an endpoint address. */
 	export interface MessageResult {
 		DeliveryStatus: DeliveryStatus;
-		MessageId?: string;
+		MessageId?: string | null;
 		StatusCode: number;
-		StatusMessage?: string;
-		UpdatedToken?: string;
+		StatusMessage?: string | null;
+		UpdatedToken?: string | null;
 	}
 
 
@@ -3556,8 +3556,8 @@ export namespace MyNS {
 
 	/** Specifies a phone number to validate and retrieve information about. */
 	export interface NumberValidateRequest {
-		IsoCountryCode?: string;
-		PhoneNumber?: string;
+		IsoCountryCode?: string | null;
+		PhoneNumber?: string | null;
 	}
 
 	export interface PhoneNumberValidateRequest {
@@ -3599,7 +3599,7 @@ export namespace MyNS {
 
 	/** Specifies one or more attributes to remove from all the endpoints that are associated with an application. */
 	export interface UpdateAttributesRequest {
-		Blacklist?: Array<string>;
+		Blacklist?: Array<string> | null;
 	}
 
 	export interface RemoveAttributesRequest {
@@ -3614,9 +3614,9 @@ export namespace MyNS {
 
 	/** Specifies the status and settings of the SMS channel for an application. */
 	export interface SMSChannelRequest {
-		Enabled?: boolean;
-		SenderId?: string;
-		ShortCode?: string;
+		Enabled?: boolean | null;
+		SenderId?: string | null;
+		ShortCode?: string | null;
 	}
 
 	export enum SourceType { ALL = 0, ANY = 1, NONE = 2 }
@@ -3637,7 +3637,7 @@ export namespace MyNS {
 
 	/** Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users. */
 	export interface SendUsersMessageRequest {
-		Context?: MapOf__string;
+		Context?: MapOf__string | null;
 
 		/**
 		 * Specifies the settings and content for the default message and any default messages that you tailored for specific channels.
@@ -3646,8 +3646,8 @@ export namespace MyNS {
 		MessageConfiguration: DirectMessageConfiguration;
 
 		/** Specifies the message template to use for the message, for each type of channel. */
-		TemplateConfiguration?: TemplateConfiguration;
-		TraceId?: string;
+		TemplateConfiguration?: TemplateConfiguration | null;
+		TraceId?: string | null;
 		Users: MapOfEndpointSendConfiguration;
 	}
 
@@ -3672,7 +3672,7 @@ export namespace MyNS {
 
 	/** Specifies which version of a message template to use as the active version of the template. */
 	export interface TemplateActiveVersionRequest {
-		Version?: string;
+		Version?: string | null;
 	}
 
 	export interface UntagResourceRequest {
@@ -3728,14 +3728,14 @@ export namespace MyNS {
 	export interface WriteApplicationSettingsRequest {
 
 		/** Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign. */
-		CampaignHook?: CampaignHook;
-		CloudWatchMetricsEnabled?: boolean;
+		CampaignHook?: CampaignHook | null;
+		CloudWatchMetricsEnabled?: boolean | null;
 
 		/** For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns and journeys in the application can send. */
-		Limits?: CampaignLimits;
+		Limits?: CampaignLimits | null;
 
 		/** Specifies the start and end times that define a time range when messages aren't sent to endpoints. */
-		QuietTime?: QuietTime;
+		QuietTime?: QuietTime | null;
 	}
 
 	export interface UpdateApplicationSettingsRequest {
@@ -3840,15 +3840,15 @@ export namespace MyNS {
 
 	/** Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model. */
 	export interface UpdateRecommenderConfiguration {
-		Attributes?: MapOf__string;
-		Description?: string;
-		Name?: string;
-		RecommendationProviderIdType?: string;
+		Attributes?: MapOf__string | null;
+		Description?: string | null;
+		Name?: string | null;
+		RecommendationProviderIdType?: string | null;
 		RecommendationProviderRoleArn: string;
 		RecommendationProviderUri: string;
-		RecommendationTransformerUri?: string;
-		RecommendationsDisplayName?: string;
-		RecommendationsPerMessage?: number;
+		RecommendationTransformerUri?: string | null;
+		RecommendationsDisplayName?: string | null;
+		RecommendationsPerMessage?: number | null;
 	}
 
 	export interface UpdateRecommenderConfigurationRequest {
@@ -3899,7 +3899,7 @@ export namespace MyNS {
 
 	/** Specifies the status and settings of the voice channel for an application. */
 	export interface VoiceChannelRequest {
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 	}
 
 	export interface UpdateVoiceChannelRequest {
@@ -3941,7 +3941,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetAppsResponse} Success
 		 */
-		GetApps(page_size: string, token: string): Observable<GetAppsResponse> {
+		GetApps(page_size: string | null | undefined, token: string | null | undefined): Observable<GetAppsResponse> {
 			return this.http.get<GetAppsResponse>(this.baseUri + 'v1/apps?page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -3963,7 +3963,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetCampaignsResponse} Success
 		 */
-		GetCampaigns(application_id: string, page_size: string, token: string): Observable<GetCampaignsResponse> {
+		GetCampaigns(application_id: string, page_size: string | null | undefined, token: string | null | undefined): Observable<GetCampaignsResponse> {
 			return this.http.get<GetCampaignsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/campaigns&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -3984,7 +3984,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {void} 
 		 */
-		DeleteEmailTemplate(template_name: string, version: string): Observable<HttpResponse<string>> {
+		DeleteEmailTemplate(template_name: string, version: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/email&version=' + (version == null ? '' : encodeURIComponent(version)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3995,7 +3995,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {GetEmailTemplateResponse} Success
 		 */
-		GetEmailTemplate(template_name: string, version: string): Observable<GetEmailTemplateResponse> {
+		GetEmailTemplate(template_name: string, version: string | null | undefined): Observable<GetEmailTemplateResponse> {
 			return this.http.get<GetEmailTemplateResponse>(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/email&version=' + (version == null ? '' : encodeURIComponent(version)), {});
 		}
 
@@ -4007,7 +4007,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {void} 
 		 */
-		UpdateEmailTemplate(create_new_version: boolean, template_name: string, version: string, requestBody: UpdateEmailTemplatePutBody): Observable<HttpResponse<string>> {
+		UpdateEmailTemplate(create_new_version: boolean | null | undefined, template_name: string, version: string | null | undefined, requestBody: UpdateEmailTemplatePutBody): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/email?create_new_version=' + create_new_version + '&version=' + (version == null ? '' : encodeURIComponent(version)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4029,7 +4029,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetExportJobsResponse} Success
 		 */
-		GetExportJobs(application_id: string, page_size: string, token: string): Observable<GetExportJobsResponse> {
+		GetExportJobs(application_id: string, page_size: string | null | undefined, token: string | null | undefined): Observable<GetExportJobsResponse> {
 			return this.http.get<GetExportJobsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/jobs/export&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -4051,7 +4051,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetImportJobsResponse} Success
 		 */
-		GetImportJobs(application_id: string, page_size: string, token: string): Observable<GetImportJobsResponse> {
+		GetImportJobs(application_id: string, page_size: string | null | undefined, token: string | null | undefined): Observable<GetImportJobsResponse> {
 			return this.http.get<GetImportJobsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/jobs/import&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -4073,7 +4073,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {ListJourneysResponse} Success
 		 */
-		ListJourneys(application_id: string, page_size: string, token: string): Observable<ListJourneysResponse> {
+		ListJourneys(application_id: string, page_size: string | null | undefined, token: string | null | undefined): Observable<ListJourneysResponse> {
 			return this.http.get<ListJourneysResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/journeys&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -4094,7 +4094,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {void} 
 		 */
-		DeletePushTemplate(template_name: string, version: string): Observable<HttpResponse<string>> {
+		DeletePushTemplate(template_name: string, version: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/push&version=' + (version == null ? '' : encodeURIComponent(version)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4105,7 +4105,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {GetPushTemplateResponse} Success
 		 */
-		GetPushTemplate(template_name: string, version: string): Observable<GetPushTemplateResponse> {
+		GetPushTemplate(template_name: string, version: string | null | undefined): Observable<GetPushTemplateResponse> {
 			return this.http.get<GetPushTemplateResponse>(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/push&version=' + (version == null ? '' : encodeURIComponent(version)), {});
 		}
 
@@ -4117,7 +4117,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {void} 
 		 */
-		UpdatePushTemplate(create_new_version: boolean, template_name: string, version: string, requestBody: UpdatePushTemplatePutBody): Observable<HttpResponse<string>> {
+		UpdatePushTemplate(create_new_version: boolean | null | undefined, template_name: string, version: string | null | undefined, requestBody: UpdatePushTemplatePutBody): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/push?create_new_version=' + create_new_version + '&version=' + (version == null ? '' : encodeURIComponent(version)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4137,7 +4137,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetRecommenderConfigurationsResponse} Success
 		 */
-		GetRecommenderConfigurations(page_size: string, token: string): Observable<GetRecommenderConfigurationsResponse> {
+		GetRecommenderConfigurations(page_size: string | null | undefined, token: string | null | undefined): Observable<GetRecommenderConfigurationsResponse> {
 			return this.http.get<GetRecommenderConfigurationsResponse>(this.baseUri + 'v1/recommenders?page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -4159,7 +4159,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetSegmentsResponse} Success
 		 */
-		GetSegments(application_id: string, page_size: string, token: string): Observable<GetSegmentsResponse> {
+		GetSegments(application_id: string, page_size: string | null | undefined, token: string | null | undefined): Observable<GetSegmentsResponse> {
 			return this.http.get<GetSegmentsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/segments&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -4180,7 +4180,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {void} 
 		 */
-		DeleteSmsTemplate(template_name: string, version: string): Observable<HttpResponse<string>> {
+		DeleteSmsTemplate(template_name: string, version: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/sms&version=' + (version == null ? '' : encodeURIComponent(version)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4191,7 +4191,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {GetSmsTemplateResponse} Success
 		 */
-		GetSmsTemplate(template_name: string, version: string): Observable<GetSmsTemplateResponse> {
+		GetSmsTemplate(template_name: string, version: string | null | undefined): Observable<GetSmsTemplateResponse> {
 			return this.http.get<GetSmsTemplateResponse>(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/sms&version=' + (version == null ? '' : encodeURIComponent(version)), {});
 		}
 
@@ -4203,7 +4203,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {void} 
 		 */
-		UpdateSmsTemplate(create_new_version: boolean, template_name: string, version: string, requestBody: UpdateSmsTemplatePutBody): Observable<HttpResponse<string>> {
+		UpdateSmsTemplate(create_new_version: boolean | null | undefined, template_name: string, version: string | null | undefined, requestBody: UpdateSmsTemplatePutBody): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/sms?create_new_version=' + create_new_version + '&version=' + (version == null ? '' : encodeURIComponent(version)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4224,7 +4224,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {void} 
 		 */
-		DeleteVoiceTemplate(template_name: string, version: string): Observable<HttpResponse<string>> {
+		DeleteVoiceTemplate(template_name: string, version: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/voice&version=' + (version == null ? '' : encodeURIComponent(version)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4235,7 +4235,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {GetVoiceTemplateResponse} Success
 		 */
-		GetVoiceTemplate(template_name: string, version: string): Observable<GetVoiceTemplateResponse> {
+		GetVoiceTemplate(template_name: string, version: string | null | undefined): Observable<GetVoiceTemplateResponse> {
 			return this.http.get<GetVoiceTemplateResponse>(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/voice&version=' + (version == null ? '' : encodeURIComponent(version)), {});
 		}
 
@@ -4247,7 +4247,7 @@ export namespace MyNS {
 		 * @param {string} version <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
 		 * @return {void} 
 		 */
-		UpdateVoiceTemplate(create_new_version: boolean, template_name: string, version: string, requestBody: UpdateVoiceTemplatePutBody): Observable<HttpResponse<string>> {
+		UpdateVoiceTemplate(create_new_version: boolean | null | undefined, template_name: string, version: string | null | undefined, requestBody: UpdateVoiceTemplatePutBody): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/voice?create_new_version=' + create_new_version + '&version=' + (version == null ? '' : encodeURIComponent(version)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4796,7 +4796,7 @@ export namespace MyNS {
 		 * @param {Date} start_time The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.
 		 * @return {GetApplicationDateRangeKpiResponse} Success
 		 */
-		GetApplicationDateRangeKpi(application_id: string, end_time: Date, kpi_name: string, next_token: string, page_size: string, start_time: Date): Observable<GetApplicationDateRangeKpiResponse> {
+		GetApplicationDateRangeKpi(application_id: string, end_time: Date | null | undefined, kpi_name: string, next_token: string | null | undefined, page_size: string | null | undefined, start_time: Date | null | undefined): Observable<GetApplicationDateRangeKpiResponse> {
 			return this.http.get<GetApplicationDateRangeKpiResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/kpis/daterange/' + (kpi_name == null ? '' : encodeURIComponent(kpi_name)) + '&end_time=' + end_time.toISOString() + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&start_time=' + start_time.toISOString(), {});
 		}
 
@@ -4829,7 +4829,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetCampaignActivitiesResponse} Success
 		 */
-		GetCampaignActivities(application_id: string, campaign_id: string, page_size: string, token: string): Observable<GetCampaignActivitiesResponse> {
+		GetCampaignActivities(application_id: string, campaign_id: string, page_size: string | null | undefined, token: string | null | undefined): Observable<GetCampaignActivitiesResponse> {
 			return this.http.get<GetCampaignActivitiesResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/campaigns/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/activities&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -4845,7 +4845,7 @@ export namespace MyNS {
 		 * @param {Date} start_time The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.
 		 * @return {GetCampaignDateRangeKpiResponse} Success
 		 */
-		GetCampaignDateRangeKpi(application_id: string, campaign_id: string, end_time: Date, kpi_name: string, next_token: string, page_size: string, start_time: Date): Observable<GetCampaignDateRangeKpiResponse> {
+		GetCampaignDateRangeKpi(application_id: string, campaign_id: string, end_time: Date | null | undefined, kpi_name: string, next_token: string | null | undefined, page_size: string | null | undefined, start_time: Date | null | undefined): Observable<GetCampaignDateRangeKpiResponse> {
 			return this.http.get<GetCampaignDateRangeKpiResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/campaigns/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/kpis/daterange/' + (kpi_name == null ? '' : encodeURIComponent(kpi_name)) + '&end_time=' + end_time.toISOString() + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&start_time=' + start_time.toISOString(), {});
 		}
 
@@ -4870,7 +4870,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetCampaignVersionsResponse} Success
 		 */
-		GetCampaignVersions(application_id: string, campaign_id: string, page_size: string, token: string): Observable<GetCampaignVersionsResponse> {
+		GetCampaignVersions(application_id: string, campaign_id: string, page_size: string | null | undefined, token: string | null | undefined): Observable<GetCampaignVersionsResponse> {
 			return this.http.get<GetCampaignVersionsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/campaigns/' + (campaign_id == null ? '' : encodeURIComponent(campaign_id)) + '/versions&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -4918,7 +4918,7 @@ export namespace MyNS {
 		 * @param {Date} start_time The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.
 		 * @return {GetJourneyDateRangeKpiResponse} Success
 		 */
-		GetJourneyDateRangeKpi(application_id: string, end_time: Date, journey_id: string, kpi_name: string, next_token: string, page_size: string, start_time: Date): Observable<GetJourneyDateRangeKpiResponse> {
+		GetJourneyDateRangeKpi(application_id: string, end_time: Date | null | undefined, journey_id: string, kpi_name: string, next_token: string | null | undefined, page_size: string | null | undefined, start_time: Date | null | undefined): Observable<GetJourneyDateRangeKpiResponse> {
 			return this.http.get<GetJourneyDateRangeKpiResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/journeys/' + (journey_id == null ? '' : encodeURIComponent(journey_id)) + '/kpis/daterange/' + (kpi_name == null ? '' : encodeURIComponent(kpi_name)) + '&end_time=' + end_time.toISOString() + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&start_time=' + start_time.toISOString(), {});
 		}
 
@@ -4932,7 +4932,7 @@ export namespace MyNS {
 		 * @param {string} page_size The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
 		 * @return {GetJourneyExecutionActivityMetricsResponse} Success
 		 */
-		GetJourneyExecutionActivityMetrics(application_id: string, journey_activity_id: string, journey_id: string, next_token: string, page_size: string): Observable<GetJourneyExecutionActivityMetricsResponse> {
+		GetJourneyExecutionActivityMetrics(application_id: string, journey_activity_id: string, journey_id: string, next_token: string | null | undefined, page_size: string | null | undefined): Observable<GetJourneyExecutionActivityMetricsResponse> {
 			return this.http.get<GetJourneyExecutionActivityMetricsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/journeys/' + (journey_id == null ? '' : encodeURIComponent(journey_id)) + '/activities/' + (journey_activity_id == null ? '' : encodeURIComponent(journey_activity_id)) + '/execution-metrics&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)), {});
 		}
 
@@ -4945,7 +4945,7 @@ export namespace MyNS {
 		 * @param {string} page_size The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.
 		 * @return {GetJourneyExecutionMetricsResponse} Success
 		 */
-		GetJourneyExecutionMetrics(application_id: string, journey_id: string, next_token: string, page_size: string): Observable<GetJourneyExecutionMetricsResponse> {
+		GetJourneyExecutionMetrics(application_id: string, journey_id: string, next_token: string | null | undefined, page_size: string | null | undefined): Observable<GetJourneyExecutionMetricsResponse> {
 			return this.http.get<GetJourneyExecutionMetricsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/journeys/' + (journey_id == null ? '' : encodeURIComponent(journey_id)) + '/execution-metrics&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)), {});
 		}
 
@@ -4958,7 +4958,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetSegmentExportJobsResponse} Success
 		 */
-		GetSegmentExportJobs(application_id: string, page_size: string, segment_id: string, token: string): Observable<GetSegmentExportJobsResponse> {
+		GetSegmentExportJobs(application_id: string, page_size: string | null | undefined, segment_id: string, token: string | null | undefined): Observable<GetSegmentExportJobsResponse> {
 			return this.http.get<GetSegmentExportJobsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/segments/' + (segment_id == null ? '' : encodeURIComponent(segment_id)) + '/jobs/export&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -4971,7 +4971,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetSegmentImportJobsResponse} Success
 		 */
-		GetSegmentImportJobs(application_id: string, page_size: string, segment_id: string, token: string): Observable<GetSegmentImportJobsResponse> {
+		GetSegmentImportJobs(application_id: string, page_size: string | null | undefined, segment_id: string, token: string | null | undefined): Observable<GetSegmentImportJobsResponse> {
 			return this.http.get<GetSegmentImportJobsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/segments/' + (segment_id == null ? '' : encodeURIComponent(segment_id)) + '/jobs/import&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -4996,7 +4996,7 @@ export namespace MyNS {
 		 * @param {string} token The NextToken string that specifies which page of results to return in a paginated response.
 		 * @return {GetSegmentVersionsResponse} Success
 		 */
-		GetSegmentVersions(application_id: string, page_size: string, segment_id: string, token: string): Observable<GetSegmentVersionsResponse> {
+		GetSegmentVersions(application_id: string, page_size: string | null | undefined, segment_id: string, token: string | null | undefined): Observable<GetSegmentVersionsResponse> {
 			return this.http.get<GetSegmentVersionsResponse>(this.baseUri + 'v1/apps/' + (application_id == null ? '' : encodeURIComponent(application_id)) + '/segments/' + (segment_id == null ? '' : encodeURIComponent(segment_id)) + '/versions&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&token=' + (token == null ? '' : encodeURIComponent(token)), {});
 		}
 
@@ -5029,7 +5029,7 @@ export namespace MyNS {
 		 * @param {string} template_type The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.
 		 * @return {ListTemplateVersionsResponse} Success
 		 */
-		ListTemplateVersions(next_token: string, page_size: string, template_name: string, template_type: string): Observable<ListTemplateVersionsResponse> {
+		ListTemplateVersions(next_token: string | null | undefined, page_size: string | null | undefined, template_name: string, template_type: string): Observable<ListTemplateVersionsResponse> {
 			return this.http.get<ListTemplateVersionsResponse>(this.baseUri + 'v1/templates/' + (template_name == null ? '' : encodeURIComponent(template_name)) + '/' + (template_type == null ? '' : encodeURIComponent(template_type)) + '/versions?next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)), {});
 		}
 
@@ -5042,7 +5042,7 @@ export namespace MyNS {
 		 * @param {string} template_type The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.
 		 * @return {ListTemplatesResponse} Success
 		 */
-		ListTemplates(next_token: string, page_size: string, prefix: string, template_type: string): Observable<ListTemplatesResponse> {
+		ListTemplates(next_token: string | null | undefined, page_size: string | null | undefined, prefix: string | null | undefined, template_type: string | null | undefined): Observable<ListTemplatesResponse> {
 			return this.http.get<ListTemplatesResponse>(this.baseUri + 'v1/templates?next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&page_size=' + (page_size == null ? '' : encodeURIComponent(page_size)) + '&prefix=' + (prefix == null ? '' : encodeURIComponent(prefix)) + '&template_type=' + (template_type == null ? '' : encodeURIComponent(template_type)), {});
 		}
 
@@ -5150,8 +5150,8 @@ export namespace MyNS {
 	}
 
 	export interface CreateAppPostBodyCreateApplicationRequest {
-		Name?: string;
-		tags?: MapOf__string;
+		Name?: string | null;
+		tags?: MapOf__string | null;
 	}
 
 	export interface CreateCampaignPostBody {
@@ -5164,34 +5164,34 @@ export namespace MyNS {
 	}
 
 	export interface CreateCampaignPostBodyWriteCampaignRequest {
-		AdditionalTreatments?: Array<WriteTreatmentResource>;
+		AdditionalTreatments?: Array<WriteTreatmentResource> | null;
 
 		/** Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment. */
-		CustomDeliveryConfiguration?: CustomDeliveryConfiguration;
-		Description?: string;
-		HoldoutPercent?: number;
+		CustomDeliveryConfiguration?: CustomDeliveryConfiguration | null;
+		Description?: string | null;
+		HoldoutPercent?: number | null;
 
 		/** Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign. */
-		Hook?: CampaignHook;
-		IsPaused?: boolean;
+		Hook?: CampaignHook | null;
+		IsPaused?: boolean | null;
 
 		/** For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns and journeys in the application can send. */
-		Limits?: CampaignLimits;
+		Limits?: CampaignLimits | null;
 
 		/** Specifies the message configuration settings for a campaign. */
-		MessageConfiguration?: MessageConfiguration;
-		Name?: string;
+		MessageConfiguration?: MessageConfiguration | null;
+		Name?: string | null;
 
 		/** Specifies the schedule settings for a campaign. */
-		Schedule?: Schedule;
-		SegmentId?: string;
-		SegmentVersion?: number;
-		tags?: MapOf__string;
+		Schedule?: Schedule | null;
+		SegmentId?: string | null;
+		SegmentVersion?: number | null;
+		tags?: MapOf__string | null;
 
 		/** Specifies the message template to use for the message, for each type of channel. */
-		TemplateConfiguration?: TemplateConfiguration;
-		TreatmentDescription?: string;
-		TreatmentName?: string;
+		TemplateConfiguration?: TemplateConfiguration | null;
+		TreatmentDescription?: string | null;
+		TreatmentName?: string | null;
 	}
 
 	export interface CreateEmailTemplatePostBody {
@@ -5204,13 +5204,13 @@ export namespace MyNS {
 	}
 
 	export interface CreateEmailTemplatePostBodyEmailTemplateRequest {
-		DefaultSubstitutions?: string;
-		HtmlPart?: string;
-		RecommenderId?: string;
-		Subject?: string;
-		tags?: MapOf__string;
-		TemplateDescription?: string;
-		TextPart?: string;
+		DefaultSubstitutions?: string | null;
+		HtmlPart?: string | null;
+		RecommenderId?: string | null;
+		Subject?: string | null;
+		tags?: MapOf__string | null;
+		TemplateDescription?: string | null;
+		TextPart?: string | null;
 	}
 
 	export interface UpdateEmailTemplatePutBody {
@@ -5223,13 +5223,13 @@ export namespace MyNS {
 	}
 
 	export interface UpdateEmailTemplatePutBodyEmailTemplateRequest {
-		DefaultSubstitutions?: string;
-		HtmlPart?: string;
-		RecommenderId?: string;
-		Subject?: string;
-		tags?: MapOf__string;
-		TemplateDescription?: string;
-		TextPart?: string;
+		DefaultSubstitutions?: string | null;
+		HtmlPart?: string | null;
+		RecommenderId?: string | null;
+		Subject?: string | null;
+		tags?: MapOf__string | null;
+		TemplateDescription?: string | null;
+		TextPart?: string | null;
 	}
 
 	export interface CreateExportJobPostBody {
@@ -5242,10 +5242,10 @@ export namespace MyNS {
 	}
 
 	export interface CreateExportJobPostBodyExportJobRequest {
-		RoleArn?: string;
-		S3UrlPrefix?: string;
-		SegmentId?: string;
-		SegmentVersion?: number;
+		RoleArn?: string | null;
+		S3UrlPrefix?: string | null;
+		SegmentId?: string | null;
+		SegmentVersion?: number | null;
 	}
 
 	export interface CreateImportJobPostBody {
@@ -5258,14 +5258,14 @@ export namespace MyNS {
 	}
 
 	export interface CreateImportJobPostBodyImportJobRequest {
-		DefineSegment?: boolean;
-		ExternalId?: string;
-		Format?: ImportJobResourceFormat;
-		RegisterEndpoints?: boolean;
-		RoleArn?: string;
-		S3Url?: string;
-		SegmentId?: string;
-		SegmentName?: string;
+		DefineSegment?: boolean | null;
+		ExternalId?: string | null;
+		Format?: ImportJobResourceFormat | null;
+		RegisterEndpoints?: boolean | null;
+		RoleArn?: string | null;
+		S3Url?: string | null;
+		SegmentId?: string | null;
+		SegmentName?: string | null;
 	}
 
 	export interface CreateJourneyPostBody {
@@ -5278,26 +5278,26 @@ export namespace MyNS {
 	}
 
 	export interface CreateJourneyPostBodyWriteJourneyRequest {
-		Activities?: MapOfActivity;
-		CreationDate?: string;
-		LastModifiedDate?: string;
+		Activities?: MapOfActivity | null;
+		CreationDate?: string | null;
+		LastModifiedDate?: string | null;
 
 		/** Specifies limits on the messages that a journey can send and the number of times participants can enter a journey. */
-		Limits?: JourneyLimits;
-		LocalTime?: boolean;
-		Name?: string;
+		Limits?: JourneyLimits | null;
+		LocalTime?: boolean | null;
+		Name?: string | null;
 
 		/** Specifies the start and end times that define a time range when messages aren't sent to endpoints. */
-		QuietTime?: QuietTime;
-		RefreshFrequency?: string;
+		QuietTime?: QuietTime | null;
+		RefreshFrequency?: string | null;
 
 		/** Specifies the schedule settings for a journey. */
-		Schedule?: JourneySchedule;
-		StartActivity?: string;
+		Schedule?: JourneySchedule | null;
+		StartActivity?: string | null;
 
 		/** Specifies the conditions for the first activity in a journey. This activity and its conditions determine which users are participants in a journey. */
-		StartCondition?: StartCondition;
-		State?: JourneyResponseState;
+		StartCondition?: StartCondition | null;
+		State?: JourneyResponseState | null;
 	}
 
 	export interface CreatePushTemplatePostBody {
@@ -5312,23 +5312,23 @@ export namespace MyNS {
 	export interface CreatePushTemplatePostBodyPushNotificationTemplateRequest {
 
 		/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel. */
-		ADM?: AndroidPushNotificationTemplate;
+		ADM?: AndroidPushNotificationTemplate | null;
 
 		/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the APNs (Apple Push Notification service) channel. */
-		APNS?: APNSPushNotificationTemplate;
+		APNS?: APNSPushNotificationTemplate | null;
 
 		/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel. */
-		Baidu?: AndroidPushNotificationTemplate;
+		Baidu?: AndroidPushNotificationTemplate | null;
 
 		/** Specifies the default settings and content for a message template that can be used in messages that are sent through a push notification channel. */
-		Default?: DefaultPushNotificationTemplate;
-		DefaultSubstitutions?: string;
+		Default?: DefaultPushNotificationTemplate | null;
+		DefaultSubstitutions?: string | null;
 
 		/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel. */
-		GCM?: AndroidPushNotificationTemplate;
-		RecommenderId?: string;
-		tags?: MapOf__string;
-		TemplateDescription?: string;
+		GCM?: AndroidPushNotificationTemplate | null;
+		RecommenderId?: string | null;
+		tags?: MapOf__string | null;
+		TemplateDescription?: string | null;
 	}
 
 	export interface UpdatePushTemplatePutBody {
@@ -5343,23 +5343,23 @@ export namespace MyNS {
 	export interface UpdatePushTemplatePutBodyPushNotificationTemplateRequest {
 
 		/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel. */
-		ADM?: AndroidPushNotificationTemplate;
+		ADM?: AndroidPushNotificationTemplate | null;
 
 		/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the APNs (Apple Push Notification service) channel. */
-		APNS?: APNSPushNotificationTemplate;
+		APNS?: APNSPushNotificationTemplate | null;
 
 		/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel. */
-		Baidu?: AndroidPushNotificationTemplate;
+		Baidu?: AndroidPushNotificationTemplate | null;
 
 		/** Specifies the default settings and content for a message template that can be used in messages that are sent through a push notification channel. */
-		Default?: DefaultPushNotificationTemplate;
-		DefaultSubstitutions?: string;
+		Default?: DefaultPushNotificationTemplate | null;
+		DefaultSubstitutions?: string | null;
 
 		/** Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel. */
-		GCM?: AndroidPushNotificationTemplate;
-		RecommenderId?: string;
-		tags?: MapOf__string;
-		TemplateDescription?: string;
+		GCM?: AndroidPushNotificationTemplate | null;
+		RecommenderId?: string | null;
+		tags?: MapOf__string | null;
+		TemplateDescription?: string | null;
 	}
 
 	export interface CreateRecommenderConfigurationPostBody {
@@ -5372,15 +5372,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateRecommenderConfigurationPostBodyCreateRecommenderConfiguration {
-		Attributes?: MapOf__string;
-		Description?: string;
-		Name?: string;
-		RecommendationProviderIdType?: string;
-		RecommendationProviderRoleArn?: string;
-		RecommendationProviderUri?: string;
-		RecommendationTransformerUri?: string;
-		RecommendationsDisplayName?: string;
-		RecommendationsPerMessage?: number;
+		Attributes?: MapOf__string | null;
+		Description?: string | null;
+		Name?: string | null;
+		RecommendationProviderIdType?: string | null;
+		RecommendationProviderRoleArn?: string | null;
+		RecommendationProviderUri?: string | null;
+		RecommendationTransformerUri?: string | null;
+		RecommendationsDisplayName?: string | null;
+		RecommendationsPerMessage?: number | null;
 	}
 
 	export interface CreateSegmentPostBody {
@@ -5395,12 +5395,12 @@ export namespace MyNS {
 	export interface CreateSegmentPostBodyWriteSegmentRequest {
 
 		/** Specifies the dimension settings for a segment. */
-		Dimensions?: SegmentDimensions;
-		Name?: string;
+		Dimensions?: SegmentDimensions | null;
+		Name?: string | null;
 
 		/** Specifies the settings that define the relationships between segment groups for a segment. */
-		SegmentGroups?: SegmentGroupList;
-		tags?: MapOf__string;
+		SegmentGroups?: SegmentGroupList | null;
+		tags?: MapOf__string | null;
 	}
 
 	export interface CreateSmsTemplatePostBody {
@@ -5413,11 +5413,11 @@ export namespace MyNS {
 	}
 
 	export interface CreateSmsTemplatePostBodySMSTemplateRequest {
-		Body?: string;
-		DefaultSubstitutions?: string;
-		RecommenderId?: string;
-		tags?: MapOf__string;
-		TemplateDescription?: string;
+		Body?: string | null;
+		DefaultSubstitutions?: string | null;
+		RecommenderId?: string | null;
+		tags?: MapOf__string | null;
+		TemplateDescription?: string | null;
 	}
 
 	export interface UpdateSmsTemplatePutBody {
@@ -5430,11 +5430,11 @@ export namespace MyNS {
 	}
 
 	export interface UpdateSmsTemplatePutBodySMSTemplateRequest {
-		Body?: string;
-		DefaultSubstitutions?: string;
-		RecommenderId?: string;
-		tags?: MapOf__string;
-		TemplateDescription?: string;
+		Body?: string | null;
+		DefaultSubstitutions?: string | null;
+		RecommenderId?: string | null;
+		tags?: MapOf__string | null;
+		TemplateDescription?: string | null;
 	}
 
 	export interface CreateVoiceTemplatePostBody {
@@ -5447,12 +5447,12 @@ export namespace MyNS {
 	}
 
 	export interface CreateVoiceTemplatePostBodyVoiceTemplateRequest {
-		Body?: string;
-		DefaultSubstitutions?: string;
-		LanguageCode?: string;
-		tags?: MapOf__string;
-		TemplateDescription?: string;
-		VoiceId?: string;
+		Body?: string | null;
+		DefaultSubstitutions?: string | null;
+		LanguageCode?: string | null;
+		tags?: MapOf__string | null;
+		TemplateDescription?: string | null;
+		VoiceId?: string | null;
 	}
 
 	export interface UpdateVoiceTemplatePutBody {
@@ -5465,12 +5465,12 @@ export namespace MyNS {
 	}
 
 	export interface UpdateVoiceTemplatePutBodyVoiceTemplateRequest {
-		Body?: string;
-		DefaultSubstitutions?: string;
-		LanguageCode?: string;
-		tags?: MapOf__string;
-		TemplateDescription?: string;
-		VoiceId?: string;
+		Body?: string | null;
+		DefaultSubstitutions?: string | null;
+		LanguageCode?: string | null;
+		tags?: MapOf__string | null;
+		TemplateDescription?: string | null;
+		VoiceId?: string | null;
 	}
 
 	export interface UpdateAdmChannelPutBody {
@@ -5483,9 +5483,9 @@ export namespace MyNS {
 	}
 
 	export interface UpdateAdmChannelPutBodyADMChannelRequest {
-		ClientId?: string;
-		ClientSecret?: string;
-		Enabled?: boolean;
+		ClientId?: string | null;
+		ClientSecret?: string | null;
+		Enabled?: boolean | null;
 	}
 
 	export interface UpdateApnsChannelPutBody {
@@ -5498,14 +5498,14 @@ export namespace MyNS {
 	}
 
 	export interface UpdateApnsChannelPutBodyAPNSChannelRequest {
-		BundleId?: string;
-		Certificate?: string;
-		DefaultAuthenticationMethod?: string;
-		Enabled?: boolean;
-		PrivateKey?: string;
-		TeamId?: string;
-		TokenKey?: string;
-		TokenKeyId?: string;
+		BundleId?: string | null;
+		Certificate?: string | null;
+		DefaultAuthenticationMethod?: string | null;
+		Enabled?: boolean | null;
+		PrivateKey?: string | null;
+		TeamId?: string | null;
+		TokenKey?: string | null;
+		TokenKeyId?: string | null;
 	}
 
 	export interface UpdateApnsSandboxChannelPutBody {
@@ -5518,14 +5518,14 @@ export namespace MyNS {
 	}
 
 	export interface UpdateApnsSandboxChannelPutBodyAPNSSandboxChannelRequest {
-		BundleId?: string;
-		Certificate?: string;
-		DefaultAuthenticationMethod?: string;
-		Enabled?: boolean;
-		PrivateKey?: string;
-		TeamId?: string;
-		TokenKey?: string;
-		TokenKeyId?: string;
+		BundleId?: string | null;
+		Certificate?: string | null;
+		DefaultAuthenticationMethod?: string | null;
+		Enabled?: boolean | null;
+		PrivateKey?: string | null;
+		TeamId?: string | null;
+		TokenKey?: string | null;
+		TokenKeyId?: string | null;
 	}
 
 	export interface UpdateApnsVoipChannelPutBody {
@@ -5538,14 +5538,14 @@ export namespace MyNS {
 	}
 
 	export interface UpdateApnsVoipChannelPutBodyAPNSVoipChannelRequest {
-		BundleId?: string;
-		Certificate?: string;
-		DefaultAuthenticationMethod?: string;
-		Enabled?: boolean;
-		PrivateKey?: string;
-		TeamId?: string;
-		TokenKey?: string;
-		TokenKeyId?: string;
+		BundleId?: string | null;
+		Certificate?: string | null;
+		DefaultAuthenticationMethod?: string | null;
+		Enabled?: boolean | null;
+		PrivateKey?: string | null;
+		TeamId?: string | null;
+		TokenKey?: string | null;
+		TokenKeyId?: string | null;
 	}
 
 	export interface UpdateApnsVoipSandboxChannelPutBody {
@@ -5558,14 +5558,14 @@ export namespace MyNS {
 	}
 
 	export interface UpdateApnsVoipSandboxChannelPutBodyAPNSVoipSandboxChannelRequest {
-		BundleId?: string;
-		Certificate?: string;
-		DefaultAuthenticationMethod?: string;
-		Enabled?: boolean;
-		PrivateKey?: string;
-		TeamId?: string;
-		TokenKey?: string;
-		TokenKeyId?: string;
+		BundleId?: string | null;
+		Certificate?: string | null;
+		DefaultAuthenticationMethod?: string | null;
+		Enabled?: boolean | null;
+		PrivateKey?: string | null;
+		TeamId?: string | null;
+		TokenKey?: string | null;
+		TokenKeyId?: string | null;
 	}
 
 	export interface UpdateBaiduChannelPutBody {
@@ -5578,9 +5578,9 @@ export namespace MyNS {
 	}
 
 	export interface UpdateBaiduChannelPutBodyBaiduChannelRequest {
-		ApiKey?: string;
-		Enabled?: boolean;
-		SecretKey?: string;
+		ApiKey?: string | null;
+		Enabled?: boolean | null;
+		SecretKey?: string | null;
 	}
 
 	export interface UpdateCampaignPutBody {
@@ -5593,34 +5593,34 @@ export namespace MyNS {
 	}
 
 	export interface UpdateCampaignPutBodyWriteCampaignRequest {
-		AdditionalTreatments?: Array<WriteTreatmentResource>;
+		AdditionalTreatments?: Array<WriteTreatmentResource> | null;
 
 		/** Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment. */
-		CustomDeliveryConfiguration?: CustomDeliveryConfiguration;
-		Description?: string;
-		HoldoutPercent?: number;
+		CustomDeliveryConfiguration?: CustomDeliveryConfiguration | null;
+		Description?: string | null;
+		HoldoutPercent?: number | null;
 
 		/** Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign. */
-		Hook?: CampaignHook;
-		IsPaused?: boolean;
+		Hook?: CampaignHook | null;
+		IsPaused?: boolean | null;
 
 		/** For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns and journeys in the application can send. */
-		Limits?: CampaignLimits;
+		Limits?: CampaignLimits | null;
 
 		/** Specifies the message configuration settings for a campaign. */
-		MessageConfiguration?: MessageConfiguration;
-		Name?: string;
+		MessageConfiguration?: MessageConfiguration | null;
+		Name?: string | null;
 
 		/** Specifies the schedule settings for a campaign. */
-		Schedule?: Schedule;
-		SegmentId?: string;
-		SegmentVersion?: number;
-		tags?: MapOf__string;
+		Schedule?: Schedule | null;
+		SegmentId?: string | null;
+		SegmentVersion?: number | null;
+		tags?: MapOf__string | null;
 
 		/** Specifies the message template to use for the message, for each type of channel. */
-		TemplateConfiguration?: TemplateConfiguration;
-		TreatmentDescription?: string;
-		TreatmentName?: string;
+		TemplateConfiguration?: TemplateConfiguration | null;
+		TreatmentDescription?: string | null;
+		TreatmentName?: string | null;
 	}
 
 	export interface UpdateEmailChannelPutBody {
@@ -5633,11 +5633,11 @@ export namespace MyNS {
 	}
 
 	export interface UpdateEmailChannelPutBodyEmailChannelRequest {
-		ConfigurationSet?: string;
-		Enabled?: boolean;
-		FromAddress?: string;
-		Identity?: string;
-		RoleArn?: string;
+		ConfigurationSet?: string | null;
+		Enabled?: boolean | null;
+		FromAddress?: string | null;
+		Identity?: string | null;
+		RoleArn?: string | null;
 	}
 
 	export interface UpdateEndpointPutBody {
@@ -5650,23 +5650,23 @@ export namespace MyNS {
 	}
 
 	export interface UpdateEndpointPutBodyEndpointRequest {
-		Address?: string;
-		Attributes?: MapOfListOf__string;
-		ChannelType?: __EndpointTypesElement;
+		Address?: string | null;
+		Attributes?: MapOfListOf__string | null;
+		ChannelType?: __EndpointTypesElement | null;
 
 		/** Specifies demographic information about an endpoint, such as the applicable time zone and platform. */
-		Demographic?: EndpointDemographic;
-		EffectiveDate?: string;
-		EndpointStatus?: string;
+		Demographic?: EndpointDemographic | null;
+		EffectiveDate?: string | null;
+		EndpointStatus?: string | null;
 
 		/** Specifies geographic information about an endpoint. */
-		Location?: EndpointLocation;
-		Metrics?: MapOf__double;
-		OptOut?: string;
-		RequestId?: string;
+		Location?: EndpointLocation | null;
+		Metrics?: MapOf__double | null;
+		OptOut?: string | null;
+		RequestId?: string | null;
 
 		/** Specifies data for one or more attributes that describe the user who's associated with an endpoint. */
-		User?: EndpointUser;
+		User?: EndpointUser | null;
 	}
 
 	export interface PutEventStreamPostBody {
@@ -5679,8 +5679,8 @@ export namespace MyNS {
 	}
 
 	export interface PutEventStreamPostBodyWriteEventStream {
-		DestinationStreamArn?: string;
-		RoleArn?: string;
+		DestinationStreamArn?: string | null;
+		RoleArn?: string | null;
 	}
 
 	export interface UpdateGcmChannelPutBody {
@@ -5693,8 +5693,8 @@ export namespace MyNS {
 	}
 
 	export interface UpdateGcmChannelPutBodyGCMChannelRequest {
-		ApiKey?: string;
-		Enabled?: boolean;
+		ApiKey?: string | null;
+		Enabled?: boolean | null;
 	}
 
 	export interface UpdateJourneyPutBody {
@@ -5707,26 +5707,26 @@ export namespace MyNS {
 	}
 
 	export interface UpdateJourneyPutBodyWriteJourneyRequest {
-		Activities?: MapOfActivity;
-		CreationDate?: string;
-		LastModifiedDate?: string;
+		Activities?: MapOfActivity | null;
+		CreationDate?: string | null;
+		LastModifiedDate?: string | null;
 
 		/** Specifies limits on the messages that a journey can send and the number of times participants can enter a journey. */
-		Limits?: JourneyLimits;
-		LocalTime?: boolean;
-		Name?: string;
+		Limits?: JourneyLimits | null;
+		LocalTime?: boolean | null;
+		Name?: string | null;
 
 		/** Specifies the start and end times that define a time range when messages aren't sent to endpoints. */
-		QuietTime?: QuietTime;
-		RefreshFrequency?: string;
+		QuietTime?: QuietTime | null;
+		RefreshFrequency?: string | null;
 
 		/** Specifies the schedule settings for a journey. */
-		Schedule?: JourneySchedule;
-		StartActivity?: string;
+		Schedule?: JourneySchedule | null;
+		StartActivity?: string | null;
 
 		/** Specifies the conditions for the first activity in a journey. This activity and its conditions determine which users are participants in a journey. */
-		StartCondition?: StartCondition;
-		State?: JourneyResponseState;
+		StartCondition?: StartCondition | null;
+		State?: JourneyResponseState | null;
 	}
 
 	export interface UpdateRecommenderConfigurationPutBody {
@@ -5739,15 +5739,15 @@ export namespace MyNS {
 	}
 
 	export interface UpdateRecommenderConfigurationPutBodyUpdateRecommenderConfiguration {
-		Attributes?: MapOf__string;
-		Description?: string;
-		Name?: string;
-		RecommendationProviderIdType?: string;
-		RecommendationProviderRoleArn?: string;
-		RecommendationProviderUri?: string;
-		RecommendationTransformerUri?: string;
-		RecommendationsDisplayName?: string;
-		RecommendationsPerMessage?: number;
+		Attributes?: MapOf__string | null;
+		Description?: string | null;
+		Name?: string | null;
+		RecommendationProviderIdType?: string | null;
+		RecommendationProviderRoleArn?: string | null;
+		RecommendationProviderUri?: string | null;
+		RecommendationTransformerUri?: string | null;
+		RecommendationsDisplayName?: string | null;
+		RecommendationsPerMessage?: number | null;
 	}
 
 	export interface UpdateSegmentPutBody {
@@ -5762,12 +5762,12 @@ export namespace MyNS {
 	export interface UpdateSegmentPutBodyWriteSegmentRequest {
 
 		/** Specifies the dimension settings for a segment. */
-		Dimensions?: SegmentDimensions;
-		Name?: string;
+		Dimensions?: SegmentDimensions | null;
+		Name?: string | null;
 
 		/** Specifies the settings that define the relationships between segment groups for a segment. */
-		SegmentGroups?: SegmentGroupList;
-		tags?: MapOf__string;
+		SegmentGroups?: SegmentGroupList | null;
+		tags?: MapOf__string | null;
 	}
 
 	export interface UpdateSmsChannelPutBody {
@@ -5780,9 +5780,9 @@ export namespace MyNS {
 	}
 
 	export interface UpdateSmsChannelPutBodySMSChannelRequest {
-		Enabled?: boolean;
-		SenderId?: string;
-		ShortCode?: string;
+		Enabled?: boolean | null;
+		SenderId?: string | null;
+		ShortCode?: string | null;
 	}
 
 	export interface UpdateVoiceChannelPutBody {
@@ -5795,7 +5795,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateVoiceChannelPutBodyVoiceChannelRequest {
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 	}
 
 	export interface UpdateApplicationSettingsPutBody {
@@ -5810,14 +5810,14 @@ export namespace MyNS {
 	export interface UpdateApplicationSettingsPutBodyWriteApplicationSettingsRequest {
 
 		/** Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign. */
-		CampaignHook?: CampaignHook;
-		CloudWatchMetricsEnabled?: boolean;
+		CampaignHook?: CampaignHook | null;
+		CloudWatchMetricsEnabled?: boolean | null;
 
 		/** For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns and journeys in the application can send. */
-		Limits?: CampaignLimits;
+		Limits?: CampaignLimits | null;
 
 		/** Specifies the start and end times that define a time range when messages aren't sent to endpoints. */
-		QuietTime?: QuietTime;
+		QuietTime?: QuietTime | null;
 	}
 
 	export interface TagResourcePostBody {
@@ -5830,7 +5830,7 @@ export namespace MyNS {
 	}
 
 	export interface TagResourcePostBodyTagsModel {
-		tags?: MapOf__string;
+		tags?: MapOf__string | null;
 	}
 
 	export interface PhoneNumberValidatePostBody {
@@ -5843,8 +5843,8 @@ export namespace MyNS {
 	}
 
 	export interface PhoneNumberValidatePostBodyNumberValidateRequest {
-		IsoCountryCode?: string;
-		PhoneNumber?: string;
+		IsoCountryCode?: string | null;
+		PhoneNumber?: string | null;
 	}
 
 	export interface PutEventsPostBody {
@@ -5857,7 +5857,7 @@ export namespace MyNS {
 	}
 
 	export interface PutEventsPostBodyEventsRequest {
-		BatchItem?: MapOfEventsBatch;
+		BatchItem?: MapOfEventsBatch | null;
 	}
 
 	export interface RemoveAttributesPutBody {
@@ -5870,7 +5870,7 @@ export namespace MyNS {
 	}
 
 	export interface RemoveAttributesPutBodyUpdateAttributesRequest {
-		Blacklist?: Array<string>;
+		Blacklist?: Array<string> | null;
 	}
 
 	export interface SendMessagesPostBody {
@@ -5883,16 +5883,16 @@ export namespace MyNS {
 	}
 
 	export interface SendMessagesPostBodyMessageRequest {
-		Addresses?: MapOfAddressConfiguration;
-		Context?: MapOf__string;
-		Endpoints?: MapOfEndpointSendConfiguration;
+		Addresses?: MapOfAddressConfiguration | null;
+		Context?: MapOf__string | null;
+		Endpoints?: MapOfEndpointSendConfiguration | null;
 
 		/** Specifies the settings and content for the default message and any default messages that you tailored for specific channels. */
-		MessageConfiguration?: DirectMessageConfiguration;
+		MessageConfiguration?: DirectMessageConfiguration | null;
 
 		/** Specifies the message template to use for the message, for each type of channel. */
-		TemplateConfiguration?: TemplateConfiguration;
-		TraceId?: string;
+		TemplateConfiguration?: TemplateConfiguration | null;
+		TraceId?: string | null;
 	}
 
 	export interface SendUsersMessagesPostBody {
@@ -5905,15 +5905,15 @@ export namespace MyNS {
 	}
 
 	export interface SendUsersMessagesPostBodySendUsersMessageRequest {
-		Context?: MapOf__string;
+		Context?: MapOf__string | null;
 
 		/** Specifies the settings and content for the default message and any default messages that you tailored for specific channels. */
-		MessageConfiguration?: DirectMessageConfiguration;
+		MessageConfiguration?: DirectMessageConfiguration | null;
 
 		/** Specifies the message template to use for the message, for each type of channel. */
-		TemplateConfiguration?: TemplateConfiguration;
-		TraceId?: string;
-		Users?: MapOfEndpointSendConfiguration;
+		TemplateConfiguration?: TemplateConfiguration | null;
+		TraceId?: string | null;
+		Users?: MapOfEndpointSendConfiguration | null;
 	}
 
 	export interface UpdateEndpointsBatchPutBody {
@@ -5926,7 +5926,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateEndpointsBatchPutBodyEndpointBatchRequest {
-		Item?: Array<EndpointBatchItem>;
+		Item?: Array<EndpointBatchItem> | null;
 	}
 
 	export interface UpdateJourneyStatePutBody {
@@ -5939,7 +5939,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateJourneyStatePutBodyJourneyStateRequest {
-		State?: JourneyResponseState;
+		State?: JourneyResponseState | null;
 	}
 
 	export interface UpdateTemplateActiveVersionPutBody {
@@ -5952,7 +5952,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateTemplateActiveVersionPutBodyTemplateActiveVersionRequest {
-		Version?: string;
+		Version?: string | null;
 	}
 
 }

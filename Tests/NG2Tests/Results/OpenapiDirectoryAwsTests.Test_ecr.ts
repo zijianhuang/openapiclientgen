@@ -3,17 +3,17 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface BatchCheckLayerAvailabilityResponse {
-		layers?: Array<Layer>;
-		failures?: Array<LayerFailure>;
+		layers?: Array<Layer> | null;
+		failures?: Array<LayerFailure> | null;
 	}
 
 
 	/** An object representing an Amazon ECR image layer. */
 	export interface Layer {
-		layerDigest?: string;
-		layerAvailability?: LayerLayerAvailability;
-		layerSize?: number;
-		mediaType?: string;
+		layerDigest?: string | null;
+		layerAvailability?: LayerLayerAvailability | null;
+		layerSize?: number | null;
+		mediaType?: string | null;
 	}
 
 	export enum LayerLayerAvailability { AVAILABLE = 0, UNAVAILABLE = 1 }
@@ -21,15 +21,15 @@ export namespace MyNS {
 
 	/** An object representing an Amazon ECR image layer failure. */
 	export interface LayerFailure {
-		layerDigest?: string;
-		failureCode?: LayerFailureFailureCode;
-		failureReason?: string;
+		layerDigest?: string | null;
+		failureCode?: LayerFailureFailureCode | null;
+		failureReason?: string | null;
 	}
 
 	export enum LayerFailureFailureCode { InvalidLayerDigest = 0, MissingLayerDigest = 1 }
 
 	export interface BatchCheckLayerAvailabilityRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
 		layerDigests: Array<string>;
 	}
@@ -44,15 +44,15 @@ export namespace MyNS {
 	}
 
 	export interface BatchDeleteImageResponse {
-		imageIds?: Array<ImageIdentifier>;
-		failures?: Array<ImageFailure>;
+		imageIds?: Array<ImageIdentifier> | null;
+		failures?: Array<ImageFailure> | null;
 	}
 
 
 	/** An object with identifying information for an Amazon ECR image. */
 	export interface ImageIdentifier {
-		imageDigest?: string;
-		imageTag?: string;
+		imageDigest?: string | null;
+		imageTag?: string | null;
 	}
 
 
@@ -60,9 +60,9 @@ export namespace MyNS {
 	export interface ImageFailure {
 
 		/** An object with identifying information for an Amazon ECR image. */
-		imageId?: ImageIdentifier;
-		failureCode?: ImageFailureFailureCode;
-		failureReason?: string;
+		imageId?: ImageIdentifier | null;
+		failureCode?: ImageFailureFailureCode | null;
+		failureReason?: string | null;
 	}
 
 	export enum ImageFailureFailureCode { InvalidImageDigest = 0, InvalidImageTag = 1, ImageTagDoesNotMatchDigest = 2, ImageNotFound = 3, MissingDigestAndTag = 4, ImageReferencedByManifestList = 5 }
@@ -70,44 +70,44 @@ export namespace MyNS {
 
 	/** Deletes specified images within a specified repository. Images are specified with either the <code>imageTag</code> or <code>imageDigest</code>. */
 	export interface BatchDeleteImageRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
 		imageIds: Array<ImageIdentifier>;
 	}
 
 	export interface BatchGetImageResponse {
-		images?: Array<Image>;
-		failures?: Array<ImageFailure>;
+		images?: Array<Image> | null;
+		failures?: Array<ImageFailure> | null;
 	}
 
 
 	/** An object representing an Amazon ECR image. */
 	export interface Image {
-		registryId?: string;
-		repositoryName?: string;
+		registryId?: string | null;
+		repositoryName?: string | null;
 
 		/** An object with identifying information for an Amazon ECR image. */
-		imageId?: ImageIdentifier;
-		imageManifest?: string;
-		imageManifestMediaType?: string;
+		imageId?: ImageIdentifier | null;
+		imageManifest?: string | null;
+		imageManifestMediaType?: string | null;
 	}
 
 	export interface BatchGetImageRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
 		imageIds: Array<ImageIdentifier>;
-		acceptedMediaTypes?: Array<string>;
+		acceptedMediaTypes?: Array<string> | null;
 	}
 
 	export interface CompleteLayerUploadResponse {
-		registryId?: string;
-		repositoryName?: string;
-		uploadId?: string;
-		layerDigest?: string;
+		registryId?: string | null;
+		repositoryName?: string | null;
+		uploadId?: string | null;
+		layerDigest?: string | null;
 	}
 
 	export interface CompleteLayerUploadRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
 		uploadId: string;
 		layerDigests: Array<string>;
@@ -131,21 +131,21 @@ export namespace MyNS {
 	export interface CreateRepositoryResponse {
 
 		/** An object representing a repository. */
-		repository?: Repository;
+		repository?: Repository | null;
 	}
 
 
 	/** An object representing a repository. */
 	export interface Repository {
-		repositoryArn?: string;
-		registryId?: string;
-		repositoryName?: string;
-		repositoryUri?: string;
-		createdAt?: Date;
-		imageTagMutability?: RepositoryImageTagMutability;
+		repositoryArn?: string | null;
+		registryId?: string | null;
+		repositoryName?: string | null;
+		repositoryUri?: string | null;
+		createdAt?: Date | null;
+		imageTagMutability?: RepositoryImageTagMutability | null;
 
 		/** The image scanning configuration for a repository. */
-		imageScanningConfiguration?: ImageScanningConfiguration;
+		imageScanningConfiguration?: ImageScanningConfiguration | null;
 	}
 
 	export enum RepositoryImageTagMutability { MUTABLE = 0, IMMUTABLE = 1 }
@@ -153,23 +153,23 @@ export namespace MyNS {
 
 	/** The image scanning configuration for a repository. */
 	export interface ImageScanningConfiguration {
-		scanOnPush?: boolean;
+		scanOnPush?: boolean | null;
 	}
 
 	export interface CreateRepositoryRequest {
 		repositoryName: string;
-		tags?: Array<Tag>;
-		imageTagMutability?: RepositoryImageTagMutability;
+		tags?: Array<Tag> | null;
+		imageTagMutability?: RepositoryImageTagMutability | null;
 
 		/** The image scanning configuration for a repository. */
-		imageScanningConfiguration?: ImageScanningConfiguration;
+		imageScanningConfiguration?: ImageScanningConfiguration | null;
 	}
 
 
 	/** The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface InvalidTagParameterException {
@@ -185,14 +185,14 @@ export namespace MyNS {
 	}
 
 	export interface DeleteLifecyclePolicyResponse {
-		registryId?: string;
-		repositoryName?: string;
-		lifecyclePolicyText?: string;
-		lastEvaluatedAt?: Date;
+		registryId?: string | null;
+		repositoryName?: string | null;
+		lifecyclePolicyText?: string | null;
+		lastEvaluatedAt?: Date | null;
 	}
 
 	export interface DeleteLifecyclePolicyRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
 	}
 
@@ -202,26 +202,26 @@ export namespace MyNS {
 	export interface DeleteRepositoryResponse {
 
 		/** An object representing a repository. */
-		repository?: Repository;
+		repository?: Repository | null;
 	}
 
 	export interface DeleteRepositoryRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
-		force?: boolean;
+		force?: boolean | null;
 	}
 
 	export interface RepositoryNotEmptyException {
 	}
 
 	export interface DeleteRepositoryPolicyResponse {
-		registryId?: string;
-		repositoryName?: string;
-		policyText?: string;
+		registryId?: string | null;
+		repositoryName?: string | null;
+		policyText?: string | null;
 	}
 
 	export interface DeleteRepositoryPolicyRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
 	}
 
@@ -229,25 +229,25 @@ export namespace MyNS {
 	}
 
 	export interface DescribeImageScanFindingsResponse {
-		registryId?: string;
-		repositoryName?: string;
+		registryId?: string | null;
+		repositoryName?: string | null;
 
 		/** An object with identifying information for an Amazon ECR image. */
-		imageId?: ImageIdentifier;
+		imageId?: ImageIdentifier | null;
 
 		/** The current status of an image scan. */
-		imageScanStatus?: ImageScanStatus;
+		imageScanStatus?: ImageScanStatus | null;
 
 		/** The details of an image scan. */
-		imageScanFindings?: ImageScanFindings;
-		nextToken?: string;
+		imageScanFindings?: ImageScanFindings | null;
+		nextToken?: string | null;
 	}
 
 
 	/** The current status of an image scan. */
 	export interface ImageScanStatus {
-		status?: ImageScanStatusStatus;
-		description?: string;
+		status?: ImageScanStatusStatus | null;
+		description?: string | null;
 	}
 
 	export enum ImageScanStatusStatus { IN_PROGRESS = 0, COMPLETE = 1, FAILED = 2 }
@@ -255,20 +255,20 @@ export namespace MyNS {
 
 	/** The details of an image scan. */
 	export interface ImageScanFindings {
-		imageScanCompletedAt?: Date;
-		vulnerabilitySourceUpdatedAt?: Date;
-		findings?: Array<ImageScanFinding>;
-		findingSeverityCounts?: FindingSeverityCounts;
+		imageScanCompletedAt?: Date | null;
+		vulnerabilitySourceUpdatedAt?: Date | null;
+		findings?: Array<ImageScanFinding> | null;
+		findingSeverityCounts?: FindingSeverityCounts | null;
 	}
 
 
 	/** Contains information about an image scan finding. */
 	export interface ImageScanFinding {
-		name?: string;
-		description?: string;
-		uri?: string;
-		severity?: ImageScanFindingSeverity;
-		attributes?: Array<Attribute>;
+		name?: string | null;
+		description?: string | null;
+		uri?: string | null;
+		severity?: ImageScanFindingSeverity | null;
+		attributes?: Array<Attribute> | null;
 	}
 
 	export enum ImageScanFindingSeverity { INFORMATIONAL = 0, LOW = 1, MEDIUM = 2, HIGH = 3, CRITICAL = 4, UNDEFINED = 5 }
@@ -277,14 +277,14 @@ export namespace MyNS {
 	/** This data type is used in the <a>ImageScanFinding</a> data type. */
 	export interface Attribute {
 		key: string;
-		value?: string;
+		value?: string | null;
 	}
 
 	export interface FindingSeverityCounts {
 	}
 
 	export interface DescribeImageScanFindingsRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
 
 		/**
@@ -292,8 +292,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		imageId: ImageIdentifier;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ImageNotFoundException {
@@ -303,89 +303,89 @@ export namespace MyNS {
 	}
 
 	export interface DescribeImagesResponse {
-		imageDetails?: Array<ImageDetail>;
-		nextToken?: string;
+		imageDetails?: Array<ImageDetail> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** An object that describes an image returned by a <a>DescribeImages</a> operation. */
 	export interface ImageDetail {
-		registryId?: string;
-		repositoryName?: string;
-		imageDigest?: string;
-		imageTags?: Array<string>;
-		imageSizeInBytes?: number;
-		imagePushedAt?: Date;
+		registryId?: string | null;
+		repositoryName?: string | null;
+		imageDigest?: string | null;
+		imageTags?: Array<string> | null;
+		imageSizeInBytes?: number | null;
+		imagePushedAt?: Date | null;
 
 		/** The current status of an image scan. */
-		imageScanStatus?: ImageScanStatus;
+		imageScanStatus?: ImageScanStatus | null;
 
 		/** A summary of the last completed image scan. */
-		imageScanFindingsSummary?: ImageScanFindingsSummary;
+		imageScanFindingsSummary?: ImageScanFindingsSummary | null;
 	}
 
 
 	/** A summary of the last completed image scan. */
 	export interface ImageScanFindingsSummary {
-		imageScanCompletedAt?: Date;
-		vulnerabilitySourceUpdatedAt?: Date;
-		findingSeverityCounts?: FindingSeverityCounts;
+		imageScanCompletedAt?: Date | null;
+		vulnerabilitySourceUpdatedAt?: Date | null;
+		findingSeverityCounts?: FindingSeverityCounts | null;
 	}
 
 	export interface DescribeImagesRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
-		imageIds?: Array<ImageIdentifier>;
-		nextToken?: string;
-		maxResults?: number;
+		imageIds?: Array<ImageIdentifier> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 
 		/** An object representing a filter on a <a>DescribeImages</a> operation. */
-		filter?: DescribeImagesFilter;
+		filter?: DescribeImagesFilter | null;
 	}
 
 
 	/** An object representing a filter on a <a>DescribeImages</a> operation. */
 	export interface DescribeImagesFilter {
-		tagStatus?: DescribeImagesFilterTagStatus;
+		tagStatus?: DescribeImagesFilterTagStatus | null;
 	}
 
 	export enum DescribeImagesFilterTagStatus { TAGGED = 0, UNTAGGED = 1, ANY = 2 }
 
 	export interface DescribeRepositoriesResponse {
-		repositories?: Array<Repository>;
-		nextToken?: string;
+		repositories?: Array<Repository> | null;
+		nextToken?: string | null;
 	}
 
 	export interface DescribeRepositoriesRequest {
-		registryId?: string;
-		repositoryNames?: Array<string>;
-		nextToken?: string;
-		maxResults?: number;
+		registryId?: string | null;
+		repositoryNames?: Array<string> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface GetAuthorizationTokenResponse {
-		authorizationData?: Array<AuthorizationData>;
+		authorizationData?: Array<AuthorizationData> | null;
 	}
 
 
 	/** An object representing authorization data for an Amazon ECR registry. */
 	export interface AuthorizationData {
-		authorizationToken?: string;
-		expiresAt?: Date;
-		proxyEndpoint?: string;
+		authorizationToken?: string | null;
+		expiresAt?: Date | null;
+		proxyEndpoint?: string | null;
 	}
 
 	export interface GetAuthorizationTokenRequest {
-		registryIds?: Array<string>;
+		registryIds?: Array<string> | null;
 	}
 
 	export interface GetDownloadUrlForLayerResponse {
-		downloadUrl?: string;
-		layerDigest?: string;
+		downloadUrl?: string | null;
+		layerDigest?: string | null;
 	}
 
 	export interface GetDownloadUrlForLayerRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
 		layerDigest: string;
 	}
@@ -397,27 +397,27 @@ export namespace MyNS {
 	}
 
 	export interface GetLifecyclePolicyResponse {
-		registryId?: string;
-		repositoryName?: string;
-		lifecyclePolicyText?: string;
-		lastEvaluatedAt?: Date;
+		registryId?: string | null;
+		repositoryName?: string | null;
+		lifecyclePolicyText?: string | null;
+		lastEvaluatedAt?: Date | null;
 	}
 
 	export interface GetLifecyclePolicyRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
 	}
 
 	export interface GetLifecyclePolicyPreviewResponse {
-		registryId?: string;
-		repositoryName?: string;
-		lifecyclePolicyText?: string;
-		status?: GetLifecyclePolicyPreviewResponseStatus;
-		nextToken?: string;
-		previewResults?: Array<LifecyclePolicyPreviewResult>;
+		registryId?: string | null;
+		repositoryName?: string | null;
+		lifecyclePolicyText?: string | null;
+		status?: GetLifecyclePolicyPreviewResponseStatus | null;
+		nextToken?: string | null;
+		previewResults?: Array<LifecyclePolicyPreviewResult> | null;
 
 		/** The summary of the lifecycle policy preview request. */
-		summary?: LifecyclePolicyPreviewSummary;
+		summary?: LifecyclePolicyPreviewSummary | null;
 	}
 
 	export enum GetLifecyclePolicyPreviewResponseStatus { IN_PROGRESS = 0, COMPLETE = 1, EXPIRED = 2, FAILED = 3 }
@@ -425,19 +425,19 @@ export namespace MyNS {
 
 	/** The result of the lifecycle policy preview. */
 	export interface LifecyclePolicyPreviewResult {
-		imageTags?: Array<string>;
-		imageDigest?: string;
-		imagePushedAt?: Date;
+		imageTags?: Array<string> | null;
+		imageDigest?: string | null;
+		imagePushedAt?: Date | null;
 
 		/** The type of action to be taken. */
-		action?: LifecyclePolicyRuleAction;
-		appliedRulePriority?: number;
+		action?: LifecyclePolicyRuleAction | null;
+		appliedRulePriority?: number | null;
 	}
 
 
 	/** The type of action to be taken. */
 	export interface LifecyclePolicyRuleAction {
-		type?: LifecyclePolicyRuleActionType;
+		type?: LifecyclePolicyRuleActionType | null;
 	}
 
 	export enum LifecyclePolicyRuleActionType { EXPIRE = 0 }
@@ -445,73 +445,73 @@ export namespace MyNS {
 
 	/** The summary of the lifecycle policy preview request. */
 	export interface LifecyclePolicyPreviewSummary {
-		expiringImageTotalCount?: number;
+		expiringImageTotalCount?: number | null;
 	}
 
 	export interface GetLifecyclePolicyPreviewRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
-		imageIds?: Array<ImageIdentifier>;
-		nextToken?: string;
-		maxResults?: number;
+		imageIds?: Array<ImageIdentifier> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 
 		/** The filter for the lifecycle policy preview. */
-		filter?: LifecyclePolicyPreviewFilter;
+		filter?: LifecyclePolicyPreviewFilter | null;
 	}
 
 
 	/** The filter for the lifecycle policy preview. */
 	export interface LifecyclePolicyPreviewFilter {
-		tagStatus?: DescribeImagesFilterTagStatus;
+		tagStatus?: DescribeImagesFilterTagStatus | null;
 	}
 
 	export interface LifecyclePolicyPreviewNotFoundException {
 	}
 
 	export interface GetRepositoryPolicyResponse {
-		registryId?: string;
-		repositoryName?: string;
-		policyText?: string;
+		registryId?: string | null;
+		repositoryName?: string | null;
+		policyText?: string | null;
 	}
 
 	export interface GetRepositoryPolicyRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
 	}
 
 	export interface InitiateLayerUploadResponse {
-		uploadId?: string;
-		partSize?: number;
+		uploadId?: string | null;
+		partSize?: number | null;
 	}
 
 	export interface InitiateLayerUploadRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
 	}
 
 	export interface ListImagesResponse {
-		imageIds?: Array<ImageIdentifier>;
-		nextToken?: string;
+		imageIds?: Array<ImageIdentifier> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListImagesRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 
 		/** An object representing a filter on a <a>ListImages</a> operation. */
-		filter?: ListImagesFilter;
+		filter?: ListImagesFilter | null;
 	}
 
 
 	/** An object representing a filter on a <a>ListImages</a> operation. */
 	export interface ListImagesFilter {
-		tagStatus?: DescribeImagesFilterTagStatus;
+		tagStatus?: DescribeImagesFilterTagStatus | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -521,15 +521,15 @@ export namespace MyNS {
 	export interface PutImageResponse {
 
 		/** An object representing an Amazon ECR image. */
-		image?: Image;
+		image?: Image | null;
 	}
 
 	export interface PutImageRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
 		imageManifest: string;
-		imageManifestMediaType?: string;
-		imageTag?: string;
+		imageManifestMediaType?: string | null;
+		imageTag?: string | null;
 	}
 
 	export interface ImageAlreadyExistsException {
@@ -542,15 +542,15 @@ export namespace MyNS {
 	}
 
 	export interface PutImageScanningConfigurationResponse {
-		registryId?: string;
-		repositoryName?: string;
+		registryId?: string | null;
+		repositoryName?: string | null;
 
 		/** The image scanning configuration for a repository. */
-		imageScanningConfiguration?: ImageScanningConfiguration;
+		imageScanningConfiguration?: ImageScanningConfiguration | null;
 	}
 
 	export interface PutImageScanningConfigurationRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
 
 		/**
@@ -561,55 +561,55 @@ export namespace MyNS {
 	}
 
 	export interface PutImageTagMutabilityResponse {
-		registryId?: string;
-		repositoryName?: string;
-		imageTagMutability?: RepositoryImageTagMutability;
+		registryId?: string | null;
+		repositoryName?: string | null;
+		imageTagMutability?: RepositoryImageTagMutability | null;
 	}
 
 	export interface PutImageTagMutabilityRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
 		imageTagMutability: RepositoryImageTagMutability;
 	}
 
 	export interface PutLifecyclePolicyResponse {
-		registryId?: string;
-		repositoryName?: string;
-		lifecyclePolicyText?: string;
+		registryId?: string | null;
+		repositoryName?: string | null;
+		lifecyclePolicyText?: string | null;
 	}
 
 	export interface PutLifecyclePolicyRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
 		lifecyclePolicyText: string;
 	}
 
 	export interface SetRepositoryPolicyResponse {
-		registryId?: string;
-		repositoryName?: string;
-		policyText?: string;
+		registryId?: string | null;
+		repositoryName?: string | null;
+		policyText?: string | null;
 	}
 
 	export interface SetRepositoryPolicyRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
 		policyText: string;
-		force?: boolean;
+		force?: boolean | null;
 	}
 
 	export interface StartImageScanResponse {
-		registryId?: string;
-		repositoryName?: string;
+		registryId?: string | null;
+		repositoryName?: string | null;
 
 		/** An object with identifying information for an Amazon ECR image. */
-		imageId?: ImageIdentifier;
+		imageId?: ImageIdentifier | null;
 
 		/** The current status of an image scan. */
-		imageScanStatus?: ImageScanStatus;
+		imageScanStatus?: ImageScanStatus | null;
 	}
 
 	export interface StartImageScanRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
 
 		/**
@@ -623,16 +623,16 @@ export namespace MyNS {
 	}
 
 	export interface StartLifecyclePolicyPreviewResponse {
-		registryId?: string;
-		repositoryName?: string;
-		lifecyclePolicyText?: string;
-		status?: GetLifecyclePolicyPreviewResponseStatus;
+		registryId?: string | null;
+		repositoryName?: string | null;
+		lifecyclePolicyText?: string | null;
+		status?: GetLifecyclePolicyPreviewResponseStatus | null;
 	}
 
 	export interface StartLifecyclePolicyPreviewRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
-		lifecyclePolicyText?: string;
+		lifecyclePolicyText?: string | null;
 	}
 
 	export interface LifecyclePolicyPreviewInProgressException {
@@ -655,14 +655,14 @@ export namespace MyNS {
 	}
 
 	export interface UploadLayerPartResponse {
-		registryId?: string;
-		repositoryName?: string;
-		uploadId?: string;
-		lastByteReceived?: number;
+		registryId?: string | null;
+		repositoryName?: string | null;
+		uploadId?: string | null;
+		lastByteReceived?: number | null;
 	}
 
 	export interface UploadLayerPartRequest {
-		registryId?: string;
+		registryId?: string | null;
 		repositoryName: string;
 		uploadId: string;
 		partFirstByte: number;
@@ -775,7 +775,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeImageScanFindingsResponse} Success
 		 */
-		DescribeImageScanFindings(maxResults: string, nextToken: string, requestBody: DescribeImageScanFindingsRequest): Observable<DescribeImageScanFindingsResponse> {
+		DescribeImageScanFindings(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeImageScanFindingsRequest): Observable<DescribeImageScanFindingsResponse> {
 			return this.http.post<DescribeImageScanFindingsResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerRegistry_V20150921.DescribeImageScanFindings?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -786,7 +786,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeImagesResponse} Success
 		 */
-		DescribeImages(maxResults: string, nextToken: string, requestBody: DescribeImagesRequest): Observable<DescribeImagesResponse> {
+		DescribeImages(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeImagesRequest): Observable<DescribeImagesResponse> {
 			return this.http.post<DescribeImagesResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerRegistry_V20150921.DescribeImages?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -797,7 +797,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeRepositoriesResponse} Success
 		 */
-		DescribeRepositories(maxResults: string, nextToken: string, requestBody: DescribeRepositoriesRequest): Observable<DescribeRepositoriesResponse> {
+		DescribeRepositories(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeRepositoriesRequest): Observable<DescribeRepositoriesResponse> {
 			return this.http.post<DescribeRepositoriesResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerRegistry_V20150921.DescribeRepositories?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -835,7 +835,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetLifecyclePolicyPreviewResponse} Success
 		 */
-		GetLifecyclePolicyPreview(maxResults: string, nextToken: string, requestBody: GetLifecyclePolicyPreviewRequest): Observable<GetLifecyclePolicyPreviewResponse> {
+		GetLifecyclePolicyPreview(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetLifecyclePolicyPreviewRequest): Observable<GetLifecyclePolicyPreviewResponse> {
 			return this.http.post<GetLifecyclePolicyPreviewResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerRegistry_V20150921.GetLifecyclePolicyPreview?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -864,7 +864,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListImagesResponse} Success
 		 */
-		ListImages(maxResults: string, nextToken: string, requestBody: ListImagesRequest): Observable<ListImagesResponse> {
+		ListImages(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListImagesRequest): Observable<ListImagesResponse> {
 			return this.http.post<ListImagesResponse>(this.baseUri + '#X-Amz-Target=AmazonEC2ContainerRegistry_V20150921.ListImages?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

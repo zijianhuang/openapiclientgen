@@ -3,200 +3,200 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface APIBillingPeriodUsageOut {
-		apiKey?: string;
-		billingStatus?: string;
-		hardLimit?: number;
-		periodEnded?: number;
-		periodStarted?: number;
-		softLimit?: number;
-		stripeCurrentPeriodEnd?: number;
-		stripeCurrentPeriodStart?: number;
-		subscriptionStarted?: number;
-		usage?: number;
+		apiKey?: string | null;
+		billingStatus?: string | null;
+		hardLimit?: number | null;
+		periodEnded?: number | null;
+		periodStarted?: number | null;
+		softLimit?: number | null;
+		stripeCurrentPeriodEnd?: number | null;
+		stripeCurrentPeriodStart?: number | null;
+		subscriptionStarted?: number | null;
+		usage?: number | null;
 	}
 
 	export interface APICounterV2Out {
-		apiKey?: APIKeyOut;
-		apiService?: string;
-		createdDateTime?: number;
-		lastFlushedDateTime?: number;
-		lastUsedDateTime?: number;
-		serviceFeaturesUsage?: {[id: string]: number };
-		totalUsage?: number;
+		apiKey?: APIKeyOut | null;
+		apiService?: string | null;
+		createdDateTime?: number | null;
+		lastFlushedDateTime?: number | null;
+		lastUsedDateTime?: number | null;
+		serviceFeaturesUsage?: {[id: string]: number } | null;
+		totalUsage?: number | null;
 	}
 
 	export interface APIKeyOut {
-		admin?: boolean;
-		anonymized?: boolean;
-		apiKey?: string;
-		corporate?: boolean;
-		disabled?: boolean;
-		learnable?: boolean;
-		partner?: boolean;
-		striped?: boolean;
-		userId?: string;
-		vetted?: boolean;
+		admin?: boolean | null;
+		anonymized?: boolean | null;
+		apiKey?: string | null;
+		corporate?: boolean | null;
+		disabled?: boolean | null;
+		learnable?: boolean | null;
+		partner?: boolean | null;
+		striped?: boolean | null;
+		userId?: string | null;
+		vetted?: boolean | null;
 	}
 
 	export interface APIPeriodUsageOut {
-		billingPeriod?: APIBillingPeriodUsageOut;
-		overageCurrency?: string;
-		overageExclTax?: number;
-		overageInclTax?: number;
-		overageQuantity?: number;
-		subscription?: APIPlanSubscriptionOut;
+		billingPeriod?: APIBillingPeriodUsageOut | null;
+		overageCurrency?: string | null;
+		overageExclTax?: number | null;
+		overageInclTax?: number | null;
+		overageQuantity?: number | null;
+		subscription?: APIPlanSubscriptionOut | null;
 	}
 
 	export interface APIPlanSubscriptionOut {
-		apiKey?: string;
-		currency?: string;
-		currencyFactor?: number;
-		planBaseFeesKey?: string;
-		planEnded?: number;
-		planName?: string;
-		planQuota?: number;
-		planStarted?: number;
-		planStatus?: string;
-		price?: number;
-		priceOverage?: number;
-		priceOverageUSD?: number;
-		priceUSD?: number;
-		priorPlanStarted?: number;
-		stripeCustomerId?: string;
-		stripeStatus?: string;
-		stripeSubscription?: string;
-		taxRate?: number;
-		userId?: string;
+		apiKey?: string | null;
+		currency?: string | null;
+		currencyFactor?: number | null;
+		planBaseFeesKey?: string | null;
+		planEnded?: number | null;
+		planName?: string | null;
+		planQuota?: number | null;
+		planStarted?: number | null;
+		planStatus?: string | null;
+		price?: number | null;
+		priceOverage?: number | null;
+		priceOverageUSD?: number | null;
+		priceUSD?: number | null;
+		priorPlanStarted?: number | null;
+		stripeCustomerId?: string | null;
+		stripeStatus?: string | null;
+		stripeSubscription?: string | null;
+		taxRate?: number | null;
+		userId?: string | null;
 	}
 
 	export interface APIPlanOut {
-		planName?: string;
-		planQuota?: number;
-		price?: number;
-		priceOverage?: number;
+		planName?: string | null;
+		planQuota?: number | null;
+		price?: number | null;
+		priceOverage?: number | null;
 	}
 
 	export interface APIPlansOut {
-		currencyIso3?: string;
-		currencySymbol?: string;
-		plans?: Array<APIPlanOut>;
-		usageRatioForDupplicates?: number;
+		currencyIso3?: string | null;
+		currencySymbol?: string | null;
+		plans?: Array<APIPlanOut> | null;
+		usageRatioForDupplicates?: number | null;
 	}
 
 	export interface APIServiceOut {
-		costInUnits?: number;
-		serviceGroup?: string;
-		serviceName?: string;
+		costInUnits?: number | null;
+		serviceGroup?: string | null;
+		serviceName?: string | null;
 	}
 
 	export interface APIServicesOut {
-		apiServices?: Array<APIServiceOut>;
+		apiServices?: Array<APIServiceOut> | null;
 	}
 
 	export interface APIUsageAggregatedOut {
-		colHeaders?: Array<string>;
-		data?: Array<string>;
-		historyTruncated?: boolean;
-		periodEnd?: number;
-		periodStart?: number;
-		rowHeaders?: Array<string>;
-		timeUnit?: string;
-		totalUsage?: number;
+		colHeaders?: Array<string> | null;
+		data?: Array<string> | null;
+		historyTruncated?: boolean | null;
+		periodEnd?: number | null;
+		periodStart?: number | null;
+		rowHeaders?: Array<string> | null;
+		timeUnit?: string | null;
+		totalUsage?: number | null;
 	}
 
 
 	/** Represents the output of inferring the LIKELY ethnicity from a personal name, given an country of residence. */
 	export interface BatchFirstLastNameDiasporaedOut {
-		personalNames?: Array<FirstLastNameDiasporaedOut>;
+		personalNames?: Array<FirstLastNameDiasporaedOut> | null;
 	}
 
 
 	/** Represents the output of inferring the LIKELY ethnicity from a personal name, given an country of residence. */
 	export interface FirstLastNameDiasporaedOut {
-		countryIso2?: string;
-		ethnicity?: string;
-		ethnicityAlt?: string;
-		firstName?: string;
-		id?: string;
-		lastName?: string;
-		lifted?: boolean;
+		countryIso2?: string | null;
+		ethnicity?: string | null;
+		ethnicityAlt?: string | null;
+		firstName?: string | null;
+		id?: string | null;
+		lastName?: string | null;
+		lifted?: boolean | null;
 
 		/** Compatibility to NamSor_v1 Origin score value */
-		score?: number;
+		score?: number | null;
 	}
 
 	export interface BatchFirstLastNameGenderIn {
-		personalNames?: Array<FirstLastNameGenderIn>;
+		personalNames?: Array<FirstLastNameGenderIn> | null;
 	}
 
 	export interface FirstLastNameGenderIn {
-		firstName?: string;
-		gender?: string;
-		id?: string;
-		lastName?: string;
+		firstName?: string | null;
+		gender?: string | null;
+		id?: string | null;
+		lastName?: string | null;
 	}
 
 
 	/** Represents the output of inferring the LIKELY gender from a list of personal names. */
 	export interface BatchFirstLastNameGenderedOut {
-		personalNames?: Array<FirstLastNameGenderedOut>;
+		personalNames?: Array<FirstLastNameGenderedOut> | null;
 	}
 
 
 	/** Represents the output of inferring the LIKELY gender from a personal name. */
 	export interface FirstLastNameGenderedOut {
-		firstName?: string;
+		firstName?: string | null;
 
 		/** Compatibility to NamSor_v1 Gender Scale M[-1..U..+1]F value */
-		genderScale?: number;
-		id?: string;
-		lastName?: string;
+		genderScale?: number | null;
+		id?: string | null;
+		lastName?: string | null;
 
 		/** Most likely gender */
-		likelyGender?: FirstLastNameGenderedOutLikelyGender;
-		probabilityCalibrated?: number;
-		score?: number;
+		likelyGender?: FirstLastNameGenderedOutLikelyGender | null;
+		probabilityCalibrated?: number | null;
+		score?: number | null;
 	}
 
 	export enum FirstLastNameGenderedOutLikelyGender { male = 0, female = 1, unknown = 2 }
 
 	export interface BatchFirstLastNameGeoIn {
-		personalNames?: Array<FirstLastNameGeoIn>;
+		personalNames?: Array<FirstLastNameGeoIn> | null;
 	}
 
 	export interface FirstLastNameGeoIn {
-		countryIso2?: string;
-		firstName?: string;
-		id?: string;
-		lastName?: string;
+		countryIso2?: string | null;
+		firstName?: string | null;
+		id?: string | null;
+		lastName?: string | null;
 	}
 
 	export interface BatchFirstLastNameGeoZippedIn {
-		personalNames?: Array<FirstLastNameGeoZippedIn>;
+		personalNames?: Array<FirstLastNameGeoZippedIn> | null;
 	}
 
 	export interface FirstLastNameGeoZippedIn {
-		countryIso2?: string;
-		firstName?: string;
-		id?: string;
-		lastName?: string;
-		zipCode?: string;
+		countryIso2?: string | null;
+		firstName?: string | null;
+		id?: string | null;
+		lastName?: string | null;
+		zipCode?: string | null;
 	}
 
 	export interface BatchFirstLastNameIn {
-		personalNames?: Array<FirstLastNameIn>;
+		personalNames?: Array<FirstLastNameIn> | null;
 	}
 
 	export interface FirstLastNameIn {
-		firstName?: string;
-		id?: string;
-		lastName?: string;
+		firstName?: string | null;
+		id?: string | null;
+		lastName?: string | null;
 	}
 
 
 	/** Represents the output of inferring the LIKELY origin from a list of personal names. */
 	export interface BatchFirstLastNameOriginedOut {
-		personalNames?: Array<FirstLastNameOriginedOut>;
+		personalNames?: Array<FirstLastNameOriginedOut> | null;
 	}
 
 
@@ -204,440 +204,440 @@ export namespace MyNS {
 	export interface FirstLastNameOriginedOut {
 
 		/** Most likely country of Origin */
-		countryOrigin?: string;
+		countryOrigin?: string | null;
 
 		/** Second best alternative : country of Origin */
-		countryOriginAlt?: string;
-		firstName?: string;
-		id?: string;
-		lastName?: string;
+		countryOriginAlt?: string | null;
+		firstName?: string | null;
+		id?: string | null;
+		lastName?: string | null;
 
 		/** Most likely region of Origin (based on countryOrigin ISO2 code) */
-		regionOrigin?: string;
+		regionOrigin?: string | null;
 
 		/** Compatibility to NamSor_v1 Origin score value */
-		score?: number;
+		score?: number | null;
 
 		/** Most likely region of Origin (based on countryOrigin ISO2 code) */
-		subRegionOrigin?: string;
+		subRegionOrigin?: string | null;
 
 		/** Most likely region of Origin (based on countryOrigin ISO2 code) */
-		topRegionOrigin?: string;
+		topRegionOrigin?: string | null;
 	}
 
 
 	/** Represents the output of inferring the LIKELY country and phone code of personal names+phones. */
 	export interface BatchFirstLastNamePhoneCodedOut {
-		personalNamesWithPhoneNumbers?: Array<FirstLastNamePhoneCodedOut>;
+		personalNamesWithPhoneNumbers?: Array<FirstLastNamePhoneCodedOut> | null;
 	}
 
 
 	/** Represents the output of inferring the LIKELY country and phone code from a personal name and phone number. */
 	export interface FirstLastNamePhoneCodedOut {
-		countryIso2?: string;
-		firstName?: string;
-		id?: string;
-		internationalPhoneNumberVerified?: string;
-		lastName?: string;
-		originCountryIso2?: string;
-		originCountryIso2Alt?: string;
-		phoneCountryCode?: number;
-		phoneCountryCodeAlt?: number;
-		phoneCountryIso2?: string;
-		phoneCountryIso2Alt?: string;
-		phoneCountryIso2Verified?: string;
-		phoneNumber?: string;
-		score?: number;
-		verified?: boolean;
+		countryIso2?: string | null;
+		firstName?: string | null;
+		id?: string | null;
+		internationalPhoneNumberVerified?: string | null;
+		lastName?: string | null;
+		originCountryIso2?: string | null;
+		originCountryIso2Alt?: string | null;
+		phoneCountryCode?: number | null;
+		phoneCountryCodeAlt?: number | null;
+		phoneCountryIso2?: string | null;
+		phoneCountryIso2Alt?: string | null;
+		phoneCountryIso2Verified?: string | null;
+		phoneNumber?: string | null;
+		score?: number | null;
+		verified?: boolean | null;
 	}
 
 	export interface BatchFirstLastNamePhoneNumberGeoIn {
-		personalNamesWithPhoneNumbers?: Array<FirstLastNamePhoneNumberGeoIn>;
+		personalNamesWithPhoneNumbers?: Array<FirstLastNamePhoneNumberGeoIn> | null;
 	}
 
 	export interface FirstLastNamePhoneNumberGeoIn {
 
 		/** Represents the output of inferring the LIKELY country of Origin from a personal name. */
-		FirstLastNameOriginedOut?: FirstLastNameOriginedOut;
-		countryIso2?: string;
-		countryIso2Alt?: string;
-		firstName?: string;
-		id?: string;
-		lastName?: string;
-		phoneNumber?: string;
+		FirstLastNameOriginedOut?: FirstLastNameOriginedOut | null;
+		countryIso2?: string | null;
+		countryIso2Alt?: string | null;
+		firstName?: string | null;
+		id?: string | null;
+		lastName?: string | null;
+		phoneNumber?: string | null;
 	}
 
 	export interface BatchFirstLastNamePhoneNumberIn {
-		personalNamesWithPhoneNumbers?: Array<FirstLastNamePhoneNumberIn>;
+		personalNamesWithPhoneNumbers?: Array<FirstLastNamePhoneNumberIn> | null;
 	}
 
 	export interface FirstLastNamePhoneNumberIn {
 
 		/** Represents the output of inferring the LIKELY country of Origin from a personal name. */
-		FirstLastNameOriginedOut?: FirstLastNameOriginedOut;
-		firstName?: string;
-		id?: string;
-		lastName?: string;
-		phoneNumber?: string;
+		FirstLastNameOriginedOut?: FirstLastNameOriginedOut | null;
+		firstName?: string | null;
+		id?: string | null;
+		lastName?: string | null;
+		phoneNumber?: string | null;
 	}
 
 
 	/** Represents the output of inferring the LIKELY US 'race/ethnicity' from a personal name, given US country of residence and (optionally) a ZIP5 code. */
 	export interface BatchFirstLastNameUSRaceEthnicityOut {
-		personalNames?: Array<FirstLastNameUSRaceEthnicityOut>;
+		personalNames?: Array<FirstLastNameUSRaceEthnicityOut> | null;
 	}
 
 
 	/** Represents the output of inferring the LIKELY US 'race/ethnicity' from a personal name, given US country of residence and (optionally) a ZIP5 code. */
 	export interface FirstLastNameUSRaceEthnicityOut {
-		firstName?: string;
-		id?: string;
-		lastName?: string;
+		firstName?: string | null;
+		id?: string | null;
+		lastName?: string | null;
 
 		/** Most likely US 'race'/ethnicity */
-		raceEthnicity?: FirstLastNameUSRaceEthnicityOutRaceEthnicity;
+		raceEthnicity?: FirstLastNameUSRaceEthnicityOutRaceEthnicity | null;
 
 		/** Second most likely US 'race'/ethnicity */
-		raceEthnicityAlt?: FirstLastNameUSRaceEthnicityOutRaceEthnicity;
+		raceEthnicityAlt?: FirstLastNameUSRaceEthnicityOutRaceEthnicity | null;
 
 		/** Compatibility to NamSor_v1 Origin score value */
-		score?: number;
+		score?: number | null;
 	}
 
 	export enum FirstLastNameUSRaceEthnicityOutRaceEthnicity { W_NL = 0, HL = 1, A = 2, B_NL = 3 }
 
 	export interface BatchMatchPersonalFirstLastNameIn {
-		personalNames?: Array<MatchPersonalFirstLastNameIn>;
+		personalNames?: Array<MatchPersonalFirstLastNameIn> | null;
 	}
 
 	export interface MatchPersonalFirstLastNameIn {
-		id?: string;
-		name?: string;
-		name1?: FirstLastNameIn;
-		name2?: PersonalNameIn;
+		id?: string | null;
+		name?: string | null;
+		name1?: FirstLastNameIn | null;
+		name2?: PersonalNameIn | null;
 	}
 
 	export interface PersonalNameIn {
-		id?: string;
-		name?: string;
+		id?: string | null;
+		name?: string | null;
 	}
 
 	export interface BatchNameMatchCandidatesOut {
-		namesAndMatchCandidates?: Array<NameMatchCandidatesOut>;
+		namesAndMatchCandidates?: Array<NameMatchCandidatesOut> | null;
 	}
 
 	export interface NameMatchCandidatesOut {
-		firstName?: string;
-		id?: string;
-		lastName?: string;
-		matchCandidates?: Array<NameMatchCandidateOut>;
+		firstName?: string | null;
+		id?: string | null;
+		lastName?: string | null;
+		matchCandidates?: Array<NameMatchCandidateOut> | null;
 	}
 
 	export interface NameMatchCandidateOut {
-		candidateName?: string;
-		probability?: number;
+		candidateName?: string | null;
+		probability?: number | null;
 	}
 
 	export interface BatchNameMatchedOut {
-		matchedNames?: Array<NameMatchedOut>;
+		matchedNames?: Array<NameMatchedOut> | null;
 	}
 
 	export interface NameMatchedOut {
-		id?: string;
-		matchStatus?: string;
-		score?: number;
+		id?: string | null;
+		matchStatus?: string | null;
+		score?: number | null;
 	}
 
 	export interface BatchParsedFullNameGeoIn {
-		personalNames?: Array<ParsedFullNameGeoIn>;
+		personalNames?: Array<ParsedFullNameGeoIn> | null;
 	}
 
 	export interface ParsedFullNameGeoIn {
-		countryIso2?: string;
-		firstName?: string;
-		id?: string;
-		lastName?: string;
-		middleName?: string;
-		prefixOrTitle?: string;
-		suffix?: string;
+		countryIso2?: string | null;
+		firstName?: string | null;
+		id?: string | null;
+		lastName?: string | null;
+		middleName?: string | null;
+		prefixOrTitle?: string | null;
+		suffix?: string | null;
 	}
 
 	export interface BatchParsedFullNameIn {
-		personalNames?: Array<ParsedFullNameIn>;
+		personalNames?: Array<ParsedFullNameIn> | null;
 	}
 
 	export interface ParsedFullNameIn {
-		firstName?: string;
-		id?: string;
-		lastName?: string;
-		middleName?: string;
-		prefixOrTitle?: string;
-		suffix?: string;
+		firstName?: string | null;
+		id?: string | null;
+		lastName?: string | null;
+		middleName?: string | null;
+		prefixOrTitle?: string | null;
+		suffix?: string | null;
 	}
 
 	export interface BatchPersonalNameGenderedOut {
-		personalNames?: Array<PersonalNameGenderedOut>;
+		personalNames?: Array<PersonalNameGenderedOut> | null;
 	}
 
 	export interface PersonalNameGenderedOut {
 
 		/** Compatibility to NamSor_v1 Gender Scale M[-1..U..+1]F value */
-		genderScale?: number;
-		id?: string;
+		genderScale?: number | null;
+		id?: string | null;
 
 		/** Most likely gender */
-		likelyGender?: FirstLastNameGenderedOutLikelyGender;
-		name?: string;
-		score?: number;
+		likelyGender?: FirstLastNameGenderedOutLikelyGender | null;
+		name?: string | null;
+		score?: number | null;
 	}
 
 	export interface BatchPersonalNameGeoIn {
-		personalNames?: Array<PersonalNameGeoIn>;
+		personalNames?: Array<PersonalNameGeoIn> | null;
 	}
 
 	export interface PersonalNameGeoIn {
-		countryIso2?: string;
-		id?: string;
-		name?: string;
+		countryIso2?: string | null;
+		id?: string | null;
+		name?: string | null;
 	}
 
 	export interface BatchPersonalNameGeoOut {
-		personalNames?: Array<PersonalNameGeoOut>;
+		personalNames?: Array<PersonalNameGeoOut> | null;
 	}
 
 	export interface PersonalNameGeoOut {
-		country?: string;
-		countryAlt?: string;
-		id?: string;
-		name?: string;
-		region?: string;
-		score?: number;
-		subRegion?: string;
-		topRegion?: string;
+		country?: string | null;
+		countryAlt?: string | null;
+		id?: string | null;
+		name?: string | null;
+		region?: string | null;
+		score?: number | null;
+		subRegion?: string | null;
+		topRegion?: string | null;
 	}
 
 	export interface BatchPersonalNameIn {
-		personalNames?: Array<PersonalNameIn>;
+		personalNames?: Array<PersonalNameIn> | null;
 	}
 
 	export interface BatchPersonalNameParsedOut {
-		personalNames?: Array<PersonalNameParsedOut>;
+		personalNames?: Array<PersonalNameParsedOut> | null;
 	}
 
 	export interface PersonalNameParsedOut {
-		firstLastName?: FirstLastNameOut;
-		id?: string;
-		name?: string;
-		nameParserType?: string;
-		nameParserTypeAlt?: string;
-		score?: number;
+		firstLastName?: FirstLastNameOut | null;
+		id?: string | null;
+		name?: string | null;
+		nameParserType?: string | null;
+		nameParserTypeAlt?: string | null;
+		score?: number | null;
 	}
 
 	export interface FirstLastNameOut {
-		firstName?: string;
-		id?: string;
-		lastName?: string;
+		firstName?: string | null;
+		id?: string | null;
+		lastName?: string | null;
 	}
 
 	export interface BillingHistoryOut {
-		corporateInvoices?: Array<InvoiceOut>;
-		stripeInvoices?: Array<InvoiceOut>;
+		corporateInvoices?: Array<InvoiceOut> | null;
+		stripeInvoices?: Array<InvoiceOut> | null;
 	}
 
 	export interface InvoiceOut {
-		amountDue?: number;
-		amountPaid?: number;
-		amountRemaining?: number;
-		attempted?: boolean;
-		currency?: string;
-		description?: string;
-		dueDate?: Date;
-		invoiceDate?: Date;
-		invoiceId?: string;
-		invoicePdf?: string;
-		invoiceStatus?: string;
-		isStriped?: boolean;
-		items?: Array<InvoiceItemOut>;
-		periodEnd?: Date;
-		periodStart?: Date;
-		receiptNumber?: string;
-		stripeCustomerId?: string;
-		subTotal?: number;
-		tax?: number;
-		taxPercent?: number;
-		total?: number;
-		userId?: string;
+		amountDue?: number | null;
+		amountPaid?: number | null;
+		amountRemaining?: number | null;
+		attempted?: boolean | null;
+		currency?: string | null;
+		description?: string | null;
+		dueDate?: Date | null;
+		invoiceDate?: Date | null;
+		invoiceId?: string | null;
+		invoicePdf?: string | null;
+		invoiceStatus?: string | null;
+		isStriped?: boolean | null;
+		items?: Array<InvoiceItemOut> | null;
+		periodEnd?: Date | null;
+		periodStart?: Date | null;
+		receiptNumber?: string | null;
+		stripeCustomerId?: string | null;
+		subTotal?: number | null;
+		tax?: number | null;
+		taxPercent?: number | null;
+		total?: number | null;
+		userId?: string | null;
 	}
 
 	export interface InvoiceItemOut {
-		amount?: number;
-		currency?: string;
-		description?: string;
-		invoiceItemType?: string;
-		itemId?: string;
-		planDesc?: string;
-		planName?: string;
-		planNickname?: string;
-		quantity?: number;
-		subscription?: string;
-		subscriptionItem?: string;
+		amount?: number | null;
+		currency?: string | null;
+		description?: string | null;
+		invoiceItemType?: string | null;
+		itemId?: string | null;
+		planDesc?: string | null;
+		planName?: string | null;
+		planNickname?: string | null;
+		quantity?: number | null;
+		subscription?: string | null;
+		subscriptionItem?: string | null;
 	}
 
 	export interface BillingInfoInOut {
-		addressCity?: string;
-		addressCountry?: string;
-		addressLine1?: string;
-		addressLine2?: string;
-		addressPostalCode?: string;
-		addressState?: string;
-		billingEmail?: string;
-		customerName?: string;
-		customerPhone?: string;
-		preferredCurrency?: string;
-		vatID?: string;
+		addressCity?: string | null;
+		addressCountry?: string | null;
+		addressLine1?: string | null;
+		addressLine2?: string | null;
+		addressPostalCode?: string | null;
+		addressState?: string | null;
+		billingEmail?: string | null;
+		customerName?: string | null;
+		customerPhone?: string | null;
+		preferredCurrency?: string | null;
+		vatID?: string | null;
 	}
 
 
 	/** Simple metrics on a classifier */
 	export interface ClassifierMetricsOut {
-		aiNonVettedEstimatePrecision?: number;
-		aiNonVettedEstimateRecall?: number;
-		aiNonVettedEstimateTotal?: number;
-		aiNonVettedExpectedClassMetrics?: Array<ExpectedClassMetricsOut>;
-		aiNonVettedLearnTotal?: number;
-		aiStartTime?: number;
-		aiVettedEstimatePrecision?: number;
-		aiVettedEstimateRecall?: number;
-		aiVettedEstimateTotal?: number;
-		aiVettedExpectedClassMetrics?: Array<ExpectedClassMetricsOut>;
-		aiVettedLearnTotal?: number;
-		bufferSize?: number;
-		classifierName?: string;
-		classifyDurationsCurrent?: number;
-		classifyDurationsSummary?: number;
-		factKeysSize?: number;
-		factsLearned?: number;
-		featuresSize?: number;
-		learnDurationsCurrent?: number;
-		learnDurationsSummary?: number;
-		learnQueueSize?: number;
-		metricTimeStamp?: number;
-		preClassifyQueueSize?: number;
+		aiNonVettedEstimatePrecision?: number | null;
+		aiNonVettedEstimateRecall?: number | null;
+		aiNonVettedEstimateTotal?: number | null;
+		aiNonVettedExpectedClassMetrics?: Array<ExpectedClassMetricsOut> | null;
+		aiNonVettedLearnTotal?: number | null;
+		aiStartTime?: number | null;
+		aiVettedEstimatePrecision?: number | null;
+		aiVettedEstimateRecall?: number | null;
+		aiVettedEstimateTotal?: number | null;
+		aiVettedExpectedClassMetrics?: Array<ExpectedClassMetricsOut> | null;
+		aiVettedLearnTotal?: number | null;
+		bufferSize?: number | null;
+		classifierName?: string | null;
+		classifyDurationsCurrent?: number | null;
+		classifyDurationsSummary?: number | null;
+		factKeysSize?: number | null;
+		factsLearned?: number | null;
+		featuresSize?: number | null;
+		learnDurationsCurrent?: number | null;
+		learnDurationsSummary?: number | null;
+		learnQueueSize?: number | null;
+		metricTimeStamp?: number | null;
+		preClassifyQueueSize?: number | null;
 	}
 
 
 	/** Simple metrics on a classifier, for a given expected class */
 	export interface ExpectedClassMetricsOut {
-		aiEstimatePrecision?: number;
-		aiEstimateRecall?: number;
-		aiEstimateTotal?: number;
-		aiLearnTotal?: number;
-		classifierName?: string;
-		expectedClass?: string;
+		aiEstimatePrecision?: number | null;
+		aiEstimateRecall?: number | null;
+		aiEstimateTotal?: number | null;
+		aiLearnTotal?: number | null;
+		classifierName?: string | null;
+		expectedClass?: string | null;
 	}
 
 	export interface CurrenciesOut {
-		currenciesIso3?: Array<string>;
+		currenciesIso3?: Array<string> | null;
 	}
 
 	export interface DeployUIOut {
-		errorMessage?: string;
-		succeeded?: boolean;
+		errorMessage?: string | null;
+		succeeded?: boolean | null;
 	}
 
 	export interface FeedbackLoopOut {
-		feedbackCredits?: number;
+		feedbackCredits?: number | null;
 	}
 
 	export interface NamSorCounterOut {
-		counter?: number;
+		counter?: number | null;
 	}
 
 	export interface RomanizedNameOut {
-		id?: string;
-		latinName?: string;
-		originalName?: string;
-		score?: number;
-		sourceLanguage?: string;
-		sourceScript?: string;
-		targetLanguage?: string;
-		targetScript?: string;
+		id?: string | null;
+		latinName?: string | null;
+		originalName?: string | null;
+		score?: number | null;
+		sourceLanguage?: string | null;
+		sourceScript?: string | null;
+		targetLanguage?: string | null;
+		targetScript?: string | null;
 	}
 
 	export interface SoftwareVersionOut {
-		softwareNameAndVersion?: string;
-		softwareVersion?: Array<number>;
+		softwareNameAndVersion?: string | null;
+		softwareVersion?: Array<number> | null;
 	}
 
 
 	/** Simple metrics on source, with details by classifier. */
 	export interface SourceDetailedMetricsOut {
-		aiEstimatePrecision?: number;
-		aiEstimateRecall?: number;
-		aiEstimateTotal?: number;
-		aiLearnTotal?: number;
-		aiStartTime?: number;
-		classifierName?: string;
-		expectedClassMetrics?: Array<ExpectedClassMetricsOut>;
-		metricTimeStamp?: number;
-		snapshotDate?: number;
-		source?: APIKeyOut;
+		aiEstimatePrecision?: number | null;
+		aiEstimateRecall?: number | null;
+		aiEstimateTotal?: number | null;
+		aiLearnTotal?: number | null;
+		aiStartTime?: number | null;
+		classifierName?: string | null;
+		expectedClassMetrics?: Array<ExpectedClassMetricsOut> | null;
+		metricTimeStamp?: number | null;
+		snapshotDate?: number | null;
+		source?: APIKeyOut | null;
 	}
 
 
 	/** Simple metrics on a classifier, for a given source */
 	export interface SourceMetricsOut {
-		aiEstimatePrecision?: number;
-		aiEstimateRecall?: number;
-		aiEstimateTotal?: number;
-		aiLearnTotal?: number;
-		aiStartTime?: number;
-		classifierName?: string;
-		metricTimeStamp?: number;
-		snapshotDate?: number;
-		source?: APIKeyOut;
+		aiEstimatePrecision?: number | null;
+		aiEstimateRecall?: number | null;
+		aiEstimateTotal?: number | null;
+		aiLearnTotal?: number | null;
+		aiStartTime?: number | null;
+		classifierName?: string | null;
+		metricTimeStamp?: number | null;
+		snapshotDate?: number | null;
+		source?: APIKeyOut | null;
 	}
 
 	export interface StripeCardOut {
-		brand?: string;
-		defaultCard?: boolean;
-		expMonth?: number;
-		expYear?: number;
-		last4?: string;
-		sourceId?: string;
+		brand?: string | null;
+		defaultCard?: boolean | null;
+		expMonth?: number | null;
+		expYear?: number | null;
+		last4?: string | null;
+		sourceId?: string | null;
 	}
 
 	export interface StripeCustomerOut {
-		sourceCountry?: string;
-		sourceCurrency?: string;
-		stripeCustomerId?: string;
-		stripedCards?: Array<StripeCardOut>;
+		sourceCountry?: string | null;
+		sourceCurrency?: string | null;
+		stripeCustomerId?: string | null;
+		stripedCards?: Array<StripeCardOut> | null;
 	}
 
 	export interface SystemMetricsOut {
-		classifierMetrics?: Array<ClassifierMetricsOut>;
-		freeMem?: number;
-		maxMem?: number;
-		sourceMetrics?: Array<SourceMetricsOut>;
-		totalMem?: number;
+		classifierMetrics?: Array<ClassifierMetricsOut> | null;
+		freeMem?: number | null;
+		maxMem?: number | null;
+		sourceMetrics?: Array<SourceMetricsOut> | null;
+		totalMem?: number | null;
 	}
 
 	export interface UserInfoOut {
-		apiKey?: string;
-		disabled?: boolean;
-		displayName?: string;
-		email?: string;
-		emailVerified?: boolean;
-		firstKnownIpAddress?: string;
-		otherInfos?: Array<UserInfoOut>;
-		phoneNumber?: string;
-		photoUrl?: string;
-		providerId?: string;
-		stripeCustomerId?: string;
-		stripePerishableKey?: string;
-		timeStamp?: number;
-		uid?: string;
-		verifyToken?: string;
+		apiKey?: string | null;
+		disabled?: boolean | null;
+		displayName?: string | null;
+		email?: string | null;
+		emailVerified?: boolean | null;
+		firstKnownIpAddress?: string | null;
+		otherInfos?: Array<UserInfoOut> | null;
+		phoneNumber?: string | null;
+		photoUrl?: string | null;
+		providerId?: string | null;
+		stripeCustomerId?: string | null;
+		stripePerishableKey?: string | null;
+		timeStamp?: number | null;
+		uid?: string | null;
+		verifyToken?: string | null;
 	}
 
 	@Injectable()
@@ -1264,7 +1264,7 @@ export namespace MyNS {
 		 * Get api2/json/stripeConnect
 		 * @return {void} 
 		 */
-		StripeConnect(scope: string, code: string, error: string, error_description: string): Observable<HttpResponse<string>> {
+		StripeConnect(scope: string | null | undefined, code: string | null | undefined, error: string | null | undefined, error_description: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'api2/json/stripeConnect?scope=' + (scope == null ? '' : encodeURIComponent(scope)) + '&code=' + (code == null ? '' : encodeURIComponent(code)) + '&error=' + (error == null ? '' : encodeURIComponent(error)) + '&error_description=' + (error_description == null ? '' : encodeURIComponent(error_description)), { observe: 'response', responseType: 'text' });
 		}
 

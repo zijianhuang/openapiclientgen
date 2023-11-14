@@ -12,7 +12,7 @@ export namespace MyNS {
 	export interface AccessDeniedPageSettings {
 
 		/** The URI to be redirected to when access is denied. */
-		accessDeniedPageUri?: string;
+		accessDeniedPageUri?: string | null;
 	}
 
 
@@ -23,16 +23,16 @@ export namespace MyNS {
 		 * Allows customers to configure HTTP request paths that'll allow HTTP OPTIONS
 		 * call to bypass authentication and authorization.
 		 */
-		corsSettings?: CorsSettings;
+		corsSettings?: CorsSettings | null;
 
 		/** Allows customers to configure tenant_id for GCIP instance per-app. */
-		gcipSettings?: GcipSettings;
+		gcipSettings?: GcipSettings | null;
 
 		/**
 		 * Configuration for OAuth login&consent flow behavior as well as for OAuth
 		 * Credentials.
 		 */
-		oauthSettings?: OAuthSettings;
+		oauthSettings?: OAuthSettings | null;
 
 		/**
 		 * PolicyDelegationConfig allows google-internal teams to use IAP for apps
@@ -41,7 +41,7 @@ export namespace MyNS {
 		 * This is only ever supposed to be used by google internal teams, hence the
 		 * restriction on the proto.
 		 */
-		policyDelegationSettings?: PolicyDelegationSettings;
+		policyDelegationSettings?: PolicyDelegationSettings | null;
 	}
 
 
@@ -55,7 +55,7 @@ export namespace MyNS {
 		 * Configuration to allow HTTP OPTIONS calls to skip authorization. If
 		 * undefined, IAP will not apply any special logic to OPTIONS requests.
 		 */
-		allowHttpOptions?: boolean;
+		allowHttpOptions?: boolean | null;
 	}
 
 
@@ -67,7 +67,7 @@ export namespace MyNS {
 		 * Typically, all resources within the same project share the same login page,
 		 * though it could be overridden at the sub resource level.
 		 */
-		loginPageUri?: string;
+		loginPageUri?: string | null;
 
 		/**
 		 * GCIP tenant ids that are linked to the IAP resource.
@@ -77,7 +77,7 @@ export namespace MyNS {
 		 * If agent flow is used, tenant_ids should only contain one single element,
 		 * while for tenant flow, tenant_ids can contain multiple elements.
 		 */
-		tenantIds?: Array<string>;
+		tenantIds?: Array<string> | null;
 	}
 
 
@@ -96,7 +96,7 @@ export namespace MyNS {
 		 * are outlined here:
 		 * https://cloud.google.com/iap/docs/sharing-oauth-clients#risks.
 		 */
-		clientId?: string;
+		clientId?: string | null;
 
 		/**
 		 * Domain hint to send as hd=? parameter in OAuth request flow. Enables
@@ -105,7 +105,7 @@ export namespace MyNS {
 		 * Note: IAP does not verify that the id token's hd claim matches this value
 		 * since access behavior is managed by IAM policies.
 		 */
-		loginHint?: string;
+		loginHint?: string | null;
 	}
 
 
@@ -119,7 +119,7 @@ export namespace MyNS {
 	export interface PolicyDelegationSettings {
 
 		/** Permission to check in IAM. */
-		iamPermission?: string;
+		iamPermission?: string | null;
 
 		/**
 		 * The DNS name of the service (e.g. "resourcemanager.googleapis.com").
@@ -128,13 +128,13 @@ export namespace MyNS {
 		 * the same as IamServiceSpec.service of the service where the resource type
 		 * is defined.
 		 */
-		iamServiceName?: string;
-		policyName?: PolicyName;
-		resource?: Resource;
+		iamServiceName?: string | null;
+		policyName?: PolicyName | null;
+		resource?: Resource | null;
 	}
 
 	export interface PolicyName {
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * For Cloud IAM:
@@ -145,10 +145,10 @@ export namespace MyNS {
 		 * For Local IAM:
 		 * This field should be set to "local".
 		 */
-		region?: string;
+		region?: string | null;
 
 		/** Valid values for type might be 'gce', 'gcs', 'project', 'account' etc. */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface Resource {
@@ -167,7 +167,7 @@ export namespace MyNS {
 		 * data availability and management requirements.
 		 * * Talk to iam-conditions-eng@ about your use case.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Name of the resource on which conditions will be evaluated.
@@ -180,7 +180,7 @@ export namespace MyNS {
 		 * to the parent resource. If the parent resource is a project, this field
 		 * should be left unset.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The name of the service this resource belongs to. It is configured using
@@ -190,7 +190,7 @@ export namespace MyNS {
 		 * is set as 'cloudresourcemanager.googleapis.com' according to
 		 * //configs/cloud/resourcetypes/google/cloud/resourcemanager/prod.yaml
 		 */
-		service?: string;
+		service?: string | null;
 
 		/**
 		 * The public resource type name of the resource on which conditions will be
@@ -201,7 +201,7 @@ export namespace MyNS {
 		 * //configs/cloud/resourcetypes/google/cloud/resourcemanager/prod.yaml
 		 * For details see go/iam-conditions-integration-guide.
 		 */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -214,7 +214,7 @@ export namespace MyNS {
 		 * access is denied to users. If IAP prevents access to this page, the default
 		 * IAP error page will be displayed instead.
 		 */
-		accessDeniedPageSettings?: AccessDeniedPageSettings;
+		accessDeniedPageSettings?: AccessDeniedPageSettings | null;
 
 		/**
 		 * Configuration for RCTokens generated for CSM workloads protected by IAP.
@@ -222,7 +222,7 @@ export namespace MyNS {
 		 * RCToken is primarily used for ISTIO deployments, and can be scoped to a
 		 * single mesh by configuring the audience field accordingly
 		 */
-		csmSettings?: CsmSettings;
+		csmSettings?: CsmSettings | null;
 	}
 
 
@@ -238,7 +238,7 @@ export namespace MyNS {
 		 * Audience claim set in the generated RCToken. This value is not validated by
 		 * IAP.
 		 */
-		rctokenAud?: string;
+		rctokenAud?: string | null;
 	}
 
 
@@ -269,7 +269,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -304,13 +304,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -344,26 +344,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -374,23 +374,23 @@ export namespace MyNS {
 	export interface Brand {
 
 		/** Application name displayed on OAuth consent screen. */
-		applicationTitle?: string;
+		applicationTitle?: string | null;
 
 		/**
 		 * Output only. Identifier of the brand.
 		 * NOTE: GCP project number achieves the same brand identification purpose as
 		 * only one brand per project can be created.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Output only. Whether the brand is only intended for usage inside the
 		 * GSuite organization only.
 		 */
-		orgInternalOnly?: boolean;
+		orgInternalOnly?: boolean | null;
 
 		/** Support email displayed on the OAuth consent screen. */
-		supportEmail?: string;
+		supportEmail?: string | null;
 	}
 
 
@@ -411,7 +411,7 @@ export namespace MyNS {
 	export interface GetIamPolicyRequest {
 
 		/** Encapsulates settings provided to GetIamPolicy. */
-		options?: GetPolicyOptions;
+		options?: GetPolicyOptions | null;
 	}
 
 
@@ -426,7 +426,7 @@ export namespace MyNS {
 		 * Policies without any conditional bindings may specify any valid value or
 		 * leave the field unset.
 		 */
-		requestedPolicyVersion?: number;
+		requestedPolicyVersion?: number | null;
 	}
 
 
@@ -434,13 +434,13 @@ export namespace MyNS {
 	export interface IapSettings {
 
 		/** Access related settings for IAP protected apps. */
-		accessSettings?: AccessSettings;
+		accessSettings?: AccessSettings | null;
 
 		/** Wrapper over application specific settings for IAP. */
-		applicationSettings?: ApplicationSettings;
+		applicationSettings?: ApplicationSettings | null;
 
 		/** Required. The resource name of the IAP protected resource. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -448,13 +448,13 @@ export namespace MyNS {
 	export interface IdentityAwareProxyClient {
 
 		/** Human-friendly name given to the OAuth client. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Output only. Unique identifier of the OAuth client. */
-		name?: string;
+		name?: string | null;
 
 		/** Output only. Client secret of the OAuth client. */
-		secret?: string;
+		secret?: string | null;
 	}
 
 
@@ -462,7 +462,7 @@ export namespace MyNS {
 	export interface ListBrandsResponse {
 
 		/** Brands existing in the project. */
-		brands?: Array<Brand>;
+		brands?: Array<Brand> | null;
 	}
 
 
@@ -470,13 +470,13 @@ export namespace MyNS {
 	export interface ListIdentityAwareProxyClientsResponse {
 
 		/** Clients existing in the brand. */
-		identityAwareProxyClients?: Array<IdentityAwareProxyClient>;
+		identityAwareProxyClients?: Array<IdentityAwareProxyClient> | null;
 
 		/**
 		 * A token, which can be send as `page_token` to retrieve the next page.
 		 * If this field is omitted, there are no subsequent pages.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -544,7 +544,7 @@ export namespace MyNS {
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -559,7 +559,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -579,7 +579,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -648,7 +648,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 	}
 
 
@@ -661,7 +661,7 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -672,7 +672,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 	@Injectable()
@@ -729,7 +729,7 @@ export namespace MyNS {
 		 * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
 		 * @return {void} Successful response
 		 */
-		Iap_updateIapSettings(name: string, updateMask: string, requestBody: IapSettings): Observable<HttpResponse<string>> {
+		Iap_updateIapSettings(name: string, updateMask: string | null | undefined, requestBody: IapSettings): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + ':iapSettings&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -790,7 +790,7 @@ export namespace MyNS {
 		 * token.
 		 * @return {void} Successful response
 		 */
-		Iap_projects_brands_identityAwareProxyClients_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Iap_projects_brands_identityAwareProxyClients_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/identityAwareProxyClients&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

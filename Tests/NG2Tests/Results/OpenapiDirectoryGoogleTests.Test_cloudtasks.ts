@@ -75,14 +75,14 @@ export namespace MyNS {
 		 * and the following scope:
 		 * `https://www.googleapis.com/auth/cloud-platform`
 		 */
-		appEngineRouting?: AppEngineRouting;
+		appEngineRouting?: AppEngineRouting | null;
 
 		/**
 		 * HTTP request body.
 		 * A request body is allowed only if the HTTP method is POST or PUT. It is
 		 * an error to set a body on a task with an incompatible HttpMethod.
 		 */
-		body?: string;
+		body?: string | null;
 
 		/**
 		 * HTTP request headers.
@@ -119,7 +119,7 @@ export namespace MyNS {
 		 * the size, there is a limit on the maximum size of the Task. For more
 		 * information, see the CreateTask documentation.
 		 */
-		headers?: {[id: string]: string };
+		headers?: {[id: string]: string } | null;
 
 		/**
 		 * The HTTP method to use for the request. The default is POST.
@@ -133,7 +133,7 @@ export namespace MyNS {
 		 * [Python Request
 		 * Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
 		 */
-		httpMethod?: AppEngineHttpRequestHttpMethod;
+		httpMethod?: AppEngineHttpRequestHttpMethod | null;
 
 		/**
 		 * The relative URI.
@@ -142,7 +142,7 @@ export namespace MyNS {
 		 * If the relative URI is empty, then the root path "/" will be used.
 		 * No spaces are allowed, and the maximum length allowed is 2083 characters.
 		 */
-		relativeUri?: string;
+		relativeUri?: string | null;
 	}
 
 
@@ -178,7 +178,7 @@ export namespace MyNS {
 		 * [How Requests are
 		 * Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed).
 		 */
-		host?: string;
+		host?: string | null;
 
 		/**
 		 * App instance.
@@ -193,7 +193,7 @@ export namespace MyNS {
 		 * and [App Engine Flex request
 		 * routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
 		 */
-		instance?: string;
+		instance?: string | null;
 
 		/**
 		 * App service.
@@ -211,7 +211,7 @@ export namespace MyNS {
 		 * version, and
 		 * instance are the empty string.
 		 */
-		service?: string;
+		service?: string | null;
 
 		/**
 		 * App version.
@@ -229,7 +229,7 @@ export namespace MyNS {
 		 * version, and
 		 * instance are the empty string.
 		 */
-		version?: string;
+		version?: string | null;
 	}
 
 	export enum AppEngineHttpRequestHttpMethod { HTTP_METHOD_UNSPECIFIED = 0, POST = 1, GET = 2, HEAD = 3, PUT = 4, DELETE = 5, PATCH = 6, OPTIONS = 7 }
@@ -242,7 +242,7 @@ export namespace MyNS {
 		 * Output only. The time that this attempt was dispatched.
 		 * `dispatch_time` will be truncated to the nearest microsecond.
 		 */
-		dispatchTime?: string;
+		dispatchTime?: string | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -252,19 +252,19 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		responseStatus?: Status;
+		responseStatus?: Status | null;
 
 		/**
 		 * Output only. The time that this attempt response was received.
 		 * `response_time` will be truncated to the nearest microsecond.
 		 */
-		responseTime?: string;
+		responseTime?: string | null;
 
 		/**
 		 * Output only. The time that this attempt was scheduled.
 		 * `schedule_time` will be truncated to the nearest microsecond.
 		 */
-		scheduleTime?: string;
+		scheduleTime?: string | null;
 	}
 
 
@@ -279,20 +279,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -323,7 +323,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -358,13 +358,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -398,26 +398,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -436,10 +436,10 @@ export namespace MyNS {
 		 * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
 		 * permission on the Task resource.
 		 */
-		responseView?: CreateTaskRequestResponseView;
+		responseView?: CreateTaskRequestResponseView | null;
 
 		/** A unit of scheduled work. */
-		task?: Task_;
+		task?: Task_ | null;
 	}
 
 	export enum CreateTaskRequestResponseView { VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
@@ -499,20 +499,20 @@ export namespace MyNS {
 		 * Requests) response from an app handler does not cause traffic congestion
 		 * control to throttle the queue.
 		 */
-		appEngineHttpRequest?: AppEngineHttpRequest;
+		appEngineHttpRequest?: AppEngineHttpRequest | null;
 
 		/**
 		 * Output only. The time that the task was created.
 		 * `create_time` will be truncated to the nearest second.
 		 */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Output only. The number of attempts dispatched.
 		 * This count includes attempts which have been dispatched but haven't
 		 * received a response.
 		 */
-		dispatchCount?: number;
+		dispatchCount?: number | null;
 
 		/**
 		 * The deadline for requests sent to the worker. If the worker does not
@@ -542,10 +542,10 @@ export namespace MyNS {
 		 * `dispatch_deadline` will be truncated to the nearest millisecond. The
 		 * deadline is an approximate deadline.
 		 */
-		dispatchDeadline?: string;
+		dispatchDeadline?: string | null;
 
 		/** The status of a task attempt. */
-		firstAttempt?: Attempt;
+		firstAttempt?: Attempt | null;
 
 		/**
 		 * HTTP request.
@@ -571,10 +571,10 @@ export namespace MyNS {
 		 * spikes in create task rates, the queue being unpaused, or many tasks
 		 * that are scheduled at the same time).
 		 */
-		httpRequest?: HttpRequest;
+		httpRequest?: HttpRequest | null;
 
 		/** The status of a task attempt. */
-		lastAttempt?: Attempt;
+		lastAttempt?: Attempt | null;
 
 		/**
 		 * Optionally caller-specified in CreateTask.
@@ -595,22 +595,22 @@ export namespace MyNS {
 		 * * `TASK_ID` can contain only letters ([A-Za-z]), numbers ([0-9]),
 		 * hyphens (-), or underscores (_). The maximum length is 500 characters.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Output only. The number of attempts which have received a response. */
-		responseCount?: number;
+		responseCount?: number | null;
 
 		/**
 		 * The time when the task is scheduled to be attempted or retried.
 		 * `schedule_time` will be truncated to the nearest microsecond.
 		 */
-		scheduleTime?: string;
+		scheduleTime?: string | null;
 
 		/**
 		 * Output only. The view specifies which subset of the Task has
 		 * been returned.
 		 */
-		view?: CreateTaskRequestResponseView;
+		view?: CreateTaskRequestResponseView | null;
 	}
 
 
@@ -646,7 +646,7 @@ export namespace MyNS {
 		 * HTTP method is POST, PUT, or PATCH. It is an
 		 * error to set body on a task with an incompatible HttpMethod.
 		 */
-		body?: string;
+		body?: string | null;
 
 		/**
 		 * HTTP request headers.
@@ -671,10 +671,10 @@ export namespace MyNS {
 		 * specified using comma-separated values.
 		 * The size of the headers must be less than 80KB.
 		 */
-		headers?: {[id: string]: string };
+		headers?: {[id: string]: string } | null;
 
 		/** The HTTP method to use for the request. The default is POST. */
-		httpMethod?: AppEngineHttpRequestHttpMethod;
+		httpMethod?: AppEngineHttpRequestHttpMethod | null;
 
 		/**
 		 * Contains information needed for generating an
@@ -682,7 +682,7 @@ export namespace MyNS {
 		 * This type of authorization should generally only be used when calling Google
 		 * APIs hosted on *.googleapis.com.
 		 */
-		oauthToken?: OAuthToken;
+		oauthToken?: OAuthToken | null;
 
 		/**
 		 * Contains information needed for generating an
@@ -692,7 +692,7 @@ export namespace MyNS {
 		 * calling Cloud Run, or endpoints where you intend to validate the token
 		 * yourself.
 		 */
-		oidcToken?: OidcToken;
+		oidcToken?: OidcToken | null;
 
 		/**
 		 * Required. The full url path that the request will be sent to.
@@ -703,7 +703,7 @@ export namespace MyNS {
 		 * The `Location` header response from a redirect response [`300` - `399`]
 		 * may be followed. The redirect is not counted as a separate attempt.
 		 */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -720,7 +720,7 @@ export namespace MyNS {
 		 * If not specified, "https://www.googleapis.com/auth/cloud-platform"
 		 * will be used.
 		 */
-		scope?: string;
+		scope?: string | null;
 
 		/**
 		 * [Service account email](https://cloud.google.com/iam/docs/service-accounts)
@@ -729,7 +729,7 @@ export namespace MyNS {
 		 * caller must have iam.serviceAccounts.actAs permission for the service
 		 * account.
 		 */
-		serviceAccountEmail?: string;
+		serviceAccountEmail?: string | null;
 	}
 
 
@@ -747,7 +747,7 @@ export namespace MyNS {
 		 * Audience to be used when generating OIDC token. If not specified, the URI
 		 * specified in target will be used.
 		 */
-		audience?: string;
+		audience?: string | null;
 
 		/**
 		 * [Service account email](https://cloud.google.com/iam/docs/service-accounts)
@@ -756,7 +756,7 @@ export namespace MyNS {
 		 * caller must have iam.serviceAccounts.actAs permission for the service
 		 * account.
 		 */
-		serviceAccountEmail?: string;
+		serviceAccountEmail?: string | null;
 	}
 
 
@@ -777,7 +777,7 @@ export namespace MyNS {
 	export interface GetIamPolicyRequest {
 
 		/** Encapsulates settings provided to GetIamPolicy. */
-		options?: GetPolicyOptions;
+		options?: GetPolicyOptions | null;
 	}
 
 
@@ -792,7 +792,7 @@ export namespace MyNS {
 		 * Policies without any conditional bindings may specify any valid value or
 		 * leave the field unset.
 		 */
-		requestedPolicyVersion?: number;
+		requestedPolicyVersion?: number | null;
 	}
 
 
@@ -800,10 +800,10 @@ export namespace MyNS {
 	export interface ListLocationsResponse {
 
 		/** A list of locations that matches the specified filter in the request. */
-		locations?: Array<Location>;
+		locations?: Array<Location> | null;
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -814,28 +814,28 @@ export namespace MyNS {
 		 * The friendly name for this location, typically a nearby city name.
 		 * For example, "Tokyo".
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
-		locationId?: string;
+		locationId?: string | null;
 
 		/**
 		 * Service-specific metadata. For example the available capacity at the given
 		 * location.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * Resource name for the location, which may vary between implementations.
 		 * For example: `"projects/example-project/locations/us-east1"`
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -850,10 +850,10 @@ export namespace MyNS {
 		 * If the next_page_token is empty, there are no more results.
 		 * The page token is valid for only 2 hours.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The list of queues. */
-		queues?: Array<Queue>;
+		queues?: Array<Queue> | null;
 	}
 
 
@@ -883,7 +883,7 @@ export namespace MyNS {
 		 * and the following scope:
 		 * `https://www.googleapis.com/auth/cloud-platform`
 		 */
-		appEngineRoutingOverride?: AppEngineRouting;
+		appEngineRoutingOverride?: AppEngineRouting | null;
 
 		/**
 		 * Caller-specified and required in CreateQueue,
@@ -903,7 +903,7 @@ export namespace MyNS {
 		 * * `QUEUE_ID` can contain letters ([A-Za-z]), numbers ([0-9]), or
 		 * hyphens (-). The maximum length is 100 characters.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Output only. The last time this queue was purged.
@@ -915,7 +915,7 @@ export namespace MyNS {
 		 * Purge time will be truncated to the nearest microsecond. Purge
 		 * time will be unset if the queue has never been purged.
 		 */
-		purgeTime?: string;
+		purgeTime?: string | null;
 
 		/**
 		 * Rate limits.
@@ -924,19 +924,19 @@ export namespace MyNS {
 		 * Note: The debugging command, RunTask, will run a task
 		 * even if the queue has reached its RateLimits.
 		 */
-		rateLimits?: RateLimits;
+		rateLimits?: RateLimits | null;
 
 		/**
 		 * Retry config.
 		 * These settings determine when a failed task attempt is retried.
 		 */
-		retryConfig?: RetryConfig;
+		retryConfig?: RetryConfig | null;
 
 		/**
 		 * Configuration options for writing logs to
 		 * [Stackdriver Logging](https://cloud.google.com/logging/docs/).
 		 */
-		stackdriverLoggingConfig?: StackdriverLoggingConfig;
+		stackdriverLoggingConfig?: StackdriverLoggingConfig | null;
 
 		/**
 		 * Output only. The state of the queue.
@@ -946,7 +946,7 @@ export namespace MyNS {
 		 * [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref).
 		 * UpdateQueue cannot be used to change `state`.
 		 */
-		state?: QueueState;
+		state?: QueueState | null;
 	}
 
 
@@ -989,7 +989,7 @@ export namespace MyNS {
 		 * max_dispatches_per_second
 		 * is updated.
 		 */
-		maxBurstSize?: number;
+		maxBurstSize?: number | null;
 
 		/**
 		 * The maximum number of concurrent tasks that Cloud Tasks allows
@@ -1003,7 +1003,7 @@ export namespace MyNS {
 		 * [max_concurrent_requests in
 		 * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
 		 */
-		maxConcurrentDispatches?: number;
+		maxConcurrentDispatches?: number | null;
 
 		/**
 		 * The maximum rate at which tasks are dispatched from this queue.
@@ -1014,7 +1014,7 @@ export namespace MyNS {
 		 * [rate in
 		 * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
 		 */
-		maxDispatchesPerSecond?: number;
+		maxDispatchesPerSecond?: number | null;
 	}
 
 
@@ -1036,7 +1036,7 @@ export namespace MyNS {
 		 * [task_retry_limit in
 		 * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
 		 */
-		maxAttempts?: number;
+		maxAttempts?: number | null;
 
 		/**
 		 * A task will be scheduled for retry between
@@ -1051,7 +1051,7 @@ export namespace MyNS {
 		 * [max_backoff_seconds in
 		 * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
 		 */
-		maxBackoff?: string;
+		maxBackoff?: string | null;
 
 		/**
 		 * The time between retries will double `max_doublings` times.
@@ -1076,7 +1076,7 @@ export namespace MyNS {
 		 * [max_doublings in
 		 * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
 		 */
-		maxDoublings?: number;
+		maxDoublings?: number | null;
 
 		/**
 		 * If positive, `max_retry_duration` specifies the time limit for
@@ -1093,7 +1093,7 @@ export namespace MyNS {
 		 * [task_age_limit in
 		 * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
 		 */
-		maxRetryDuration?: string;
+		maxRetryDuration?: string | null;
 
 		/**
 		 * A task will be scheduled for retry between
@@ -1108,7 +1108,7 @@ export namespace MyNS {
 		 * [min_backoff_seconds in
 		 * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#retry_parameters).
 		 */
-		minBackoff?: string;
+		minBackoff?: string | null;
 	}
 
 
@@ -1124,7 +1124,7 @@ export namespace MyNS {
 		 * This field may contain any value between 0.0 and 1.0, inclusive.
 		 * 0.0 is the default and means that no operations are logged.
 		 */
-		samplingRatio?: number;
+		samplingRatio?: number | null;
 	}
 
 	export enum QueueState { STATE_UNSPECIFIED = 0, RUNNING = 1, PAUSED = 2, DISABLED = 3 }
@@ -1140,10 +1140,10 @@ export namespace MyNS {
 		 * page_token.
 		 * If the next_page_token is empty, there are no more results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The list of tasks. */
-		tasks?: Array<Task_>;
+		tasks?: Array<Task_> | null;
 	}
 
 
@@ -1216,7 +1216,7 @@ export namespace MyNS {
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -1231,7 +1231,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -1251,7 +1251,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -1283,7 +1283,7 @@ export namespace MyNS {
 		 * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
 		 * permission on the Task resource.
 		 */
-		responseView?: CreateTaskRequestResponseView;
+		responseView?: CreateTaskRequestResponseView | null;
 	}
 
 
@@ -1347,7 +1347,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 	}
 
 
@@ -1360,7 +1360,7 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -1371,7 +1371,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 	@Injectable()
@@ -1410,7 +1410,7 @@ export namespace MyNS {
 		 * permission on the Task resource.
 		 * @return {void} Successful response
 		 */
-		Cloudtasks_projects_locations_queues_tasks_get(name: string, responseView: CreateTaskRequestResponseView): Observable<HttpResponse<string>> {
+		Cloudtasks_projects_locations_queues_tasks_get(name: string, responseView: CreateTaskRequestResponseView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '&responseView=' + responseView, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1448,7 +1448,7 @@ export namespace MyNS {
 		 * If empty, then all fields will be updated.
 		 * @return {void} Successful response
 		 */
-		Cloudtasks_projects_locations_queues_patch(name: string, updateMask: string, requestBody: Queue): Observable<HttpResponse<string>> {
+		Cloudtasks_projects_locations_queues_patch(name: string, updateMask: string | null | undefined, requestBody: Queue): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1461,7 +1461,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Cloudtasks_projects_locations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudtasks_projects_locations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '/locations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1575,7 +1575,7 @@ export namespace MyNS {
 		 * filter while iterating through pages.
 		 * @return {void} Successful response
 		 */
-		Cloudtasks_projects_locations_queues_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudtasks_projects_locations_queues_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/queues&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1638,7 +1638,7 @@ export namespace MyNS {
 		 * permission on the Task resource.
 		 * @return {void} Successful response
 		 */
-		Cloudtasks_projects_locations_queues_tasks_list(parent: string, pageSize: number, pageToken: string, responseView: CreateTaskRequestResponseView): Observable<HttpResponse<string>> {
+		Cloudtasks_projects_locations_queues_tasks_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined, responseView: CreateTaskRequestResponseView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/tasks&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&responseView=' + responseView, { observe: 'response', responseType: 'text' });
 		}
 

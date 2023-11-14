@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateLifecyclePolicyResponse {
-		PolicyId?: string;
+		PolicyId?: string | null;
 	}
 
 	export enum PolicyTypeValues { EBS_SNAPSHOT_MANAGEMENT = 0 }
@@ -20,29 +20,29 @@ export namespace MyNS {
 
 	/** Specifies a backup schedule. */
 	export interface Schedule {
-		Name?: string;
-		CopyTags?: boolean;
-		TagsToAdd?: Array<Tag>;
-		VariableTags?: Array<Tag>;
+		Name?: string | null;
+		CopyTags?: boolean | null;
+		TagsToAdd?: Array<Tag> | null;
+		VariableTags?: Array<Tag> | null;
 
 		/** <p>Specifies when to create snapshots of EBS volumes.</p> <p>You must specify either a Cron expression or an interval, interval unit, and start time. You cannot specify both.</p> */
-		CreateRule?: CreateRule;
+		CreateRule?: CreateRule | null;
 
 		/** Specifies the retention rule for a lifecycle policy. You can retain snapshots based on either a count or a time interval. */
-		RetainRule?: RetainRule;
+		RetainRule?: RetainRule | null;
 
 		/** Specifies a rule for enabling fast snapshot restore. You can enable fast snapshot restore based on either a count or a time interval. */
-		FastRestoreRule?: FastRestoreRule;
-		CrossRegionCopyRules?: Array<CrossRegionCopyRule>;
+		FastRestoreRule?: FastRestoreRule | null;
+		CrossRegionCopyRules?: Array<CrossRegionCopyRule> | null;
 	}
 
 
 	/** <p>Specifies when to create snapshots of EBS volumes.</p> <p>You must specify either a Cron expression or an interval, interval unit, and start time. You cannot specify both.</p> */
 	export interface CreateRule {
-		Interval?: number;
-		IntervalUnit?: CreateRuleIntervalUnit;
-		Times?: Array<string>;
-		CronExpression?: string;
+		Interval?: number | null;
+		IntervalUnit?: CreateRuleIntervalUnit | null;
+		Times?: Array<string> | null;
+		CronExpression?: string | null;
 	}
 
 	export enum CreateRuleIntervalUnit { HOURS = 0 }
@@ -50,9 +50,9 @@ export namespace MyNS {
 
 	/** Specifies the retention rule for a lifecycle policy. You can retain snapshots based on either a count or a time interval. */
 	export interface RetainRule {
-		Count?: number;
-		Interval?: number;
-		IntervalUnit?: RetainRuleIntervalUnit;
+		Count?: number | null;
+		Interval?: number | null;
+		IntervalUnit?: RetainRuleIntervalUnit | null;
 	}
 
 	export enum RetainRuleIntervalUnit { DAYS = 0, WEEKS = 1, MONTHS = 2, YEARS = 3 }
@@ -60,9 +60,9 @@ export namespace MyNS {
 
 	/** Specifies a rule for enabling fast snapshot restore. You can enable fast snapshot restore based on either a count or a time interval. */
 	export interface FastRestoreRule {
-		Count?: number;
-		Interval?: number;
-		IntervalUnit?: RetainRuleIntervalUnit;
+		Count?: number | null;
+		Interval?: number | null;
+		IntervalUnit?: RetainRuleIntervalUnit | null;
 		AvailabilityZones: Array<string>;
 	}
 
@@ -71,24 +71,24 @@ export namespace MyNS {
 	export interface CrossRegionCopyRule {
 		TargetRegion: string;
 		Encrypted: boolean;
-		CmkArn?: string;
-		CopyTags?: boolean;
+		CmkArn?: string | null;
+		CopyTags?: boolean | null;
 
 		/** Specifies the retention rule for cross-Region snapshot copies. */
-		RetainRule?: CrossRegionCopyRetainRule;
+		RetainRule?: CrossRegionCopyRetainRule | null;
 	}
 
 
 	/** Specifies the retention rule for cross-Region snapshot copies. */
 	export interface CrossRegionCopyRetainRule {
-		Interval?: number;
-		IntervalUnit?: RetainRuleIntervalUnit;
+		Interval?: number | null;
+		IntervalUnit?: RetainRuleIntervalUnit | null;
 	}
 
 
 	/** Specifies optional parameters to add to a policy. The set of valid parameters depends on the combination of policy type and resource type. */
 	export interface Parameters {
-		ExcludeBootVolume?: boolean;
+		ExcludeBootVolume?: boolean | null;
 	}
 
 	export interface InvalidRequestException {
@@ -107,16 +107,16 @@ export namespace MyNS {
 	}
 
 	export interface GetLifecyclePoliciesResponse {
-		Policies?: Array<LifecyclePolicySummary>;
+		Policies?: Array<LifecyclePolicySummary> | null;
 	}
 
 
 	/** Summary information about a lifecycle policy. */
 	export interface LifecyclePolicySummary {
-		PolicyId?: string;
-		Description?: string;
-		State?: LifecyclePolicySummaryState;
-		Tags?: TagMap;
+		PolicyId?: string | null;
+		Description?: string | null;
+		State?: LifecyclePolicySummaryState | null;
+		Tags?: TagMap | null;
 	}
 
 	export enum LifecyclePolicySummaryState { ENABLED = 0, DISABLED = 1, ERROR = 2 }
@@ -127,40 +127,40 @@ export namespace MyNS {
 	export interface GetLifecyclePolicyResponse {
 
 		/** Detailed information about a lifecycle policy. */
-		Policy?: LifecyclePolicy;
+		Policy?: LifecyclePolicy | null;
 	}
 
 
 	/** Detailed information about a lifecycle policy. */
 	export interface LifecyclePolicy {
-		PolicyId?: string;
-		Description?: string;
-		State?: LifecyclePolicySummaryState;
-		StatusMessage?: string;
-		ExecutionRoleArn?: string;
-		DateCreated?: Date;
-		DateModified?: Date;
+		PolicyId?: string | null;
+		Description?: string | null;
+		State?: LifecyclePolicySummaryState | null;
+		StatusMessage?: string | null;
+		ExecutionRoleArn?: string | null;
+		DateCreated?: Date | null;
+		DateModified?: Date | null;
 
 		/** Specifies the configuration of a lifecycle policy. */
-		PolicyDetails?: PolicyDetails;
-		Tags?: TagMap;
-		PolicyArn?: string;
+		PolicyDetails?: PolicyDetails | null;
+		Tags?: TagMap | null;
+		PolicyArn?: string | null;
 	}
 
 
 	/** Specifies the configuration of a lifecycle policy. */
 	export interface PolicyDetails {
-		PolicyType?: PolicyTypeValues;
-		ResourceTypes?: Array<ResourceTypeValues>;
-		TargetTags?: Array<Tag>;
-		Schedules?: Array<Schedule>;
+		PolicyType?: PolicyTypeValues | null;
+		ResourceTypes?: Array<ResourceTypeValues> | null;
+		TargetTags?: Array<Tag> | null;
+		Schedules?: Array<Schedule> | null;
 
 		/** Specifies optional parameters to add to a policy. The set of valid parameters depends on the combination of policy type and resource type. */
-		Parameters?: Parameters;
+		Parameters?: Parameters | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: TagMap;
+		Tags?: TagMap | null;
 	}
 
 	export interface TagResourceResponse {
@@ -184,7 +184,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		PolicyDetails: PolicyDetails;
-		Tags?: TagMap;
+		Tags?: TagMap | null;
 	}
 
 	export enum IntervalUnitValues { HOURS = 0 }
@@ -213,12 +213,12 @@ export namespace MyNS {
 	}
 
 	export interface UpdateLifecyclePolicyRequest {
-		ExecutionRoleArn?: string;
-		State?: SettablePolicyStateValues;
-		Description?: string;
+		ExecutionRoleArn?: string | null;
+		State?: SettablePolicyStateValues | null;
+		Description?: string | null;
 
 		/** Specifies the configuration of a lifecycle policy. */
-		PolicyDetails?: PolicyDetails;
+		PolicyDetails?: PolicyDetails | null;
 	}
 
 	@Injectable()
@@ -245,7 +245,7 @@ export namespace MyNS {
 		 * @param {Array<string>} tagsToAdd <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p> <p>These user-defined tags are added in addition to the AWS-added lifecycle tags.</p>
 		 * @return {GetLifecyclePoliciesResponse} Success
 		 */
-		GetLifecyclePolicies(policyIds: Array<string>, state: LifecyclePolicySummaryState, resourceTypes: Array<ResourceTypeValues>, targetTags: Array<string>, tagsToAdd: Array<string>): Observable<GetLifecyclePoliciesResponse> {
+		GetLifecyclePolicies(policyIds: Array<string> | null | undefined, state: LifecyclePolicySummaryState | null | undefined, resourceTypes: Array<ResourceTypeValues> | null | undefined, targetTags: Array<string> | null | undefined, tagsToAdd: Array<string> | null | undefined): Observable<GetLifecyclePoliciesResponse> {
 			return this.http.get<GetLifecyclePoliciesResponse>(this.baseUri + 'policies?' + policyIds.map(z => `policyIds=${encodeURIComponent(z)}`).join('&') + '&state=' + state + '&' + resourceTypes.map(z => `resourceTypes=${z}`).join('&') + '&' + targetTags.map(z => `targetTags=${encodeURIComponent(z)}`).join('&') + '&' + tagsToAdd.map(z => `tagsToAdd=${encodeURIComponent(z)}`).join('&'), {});
 		}
 
@@ -344,17 +344,17 @@ export namespace MyNS {
 		PolicyDetails: CreateLifecyclePolicyPostBodyPolicyDetails;
 
 		/** The tags to apply to the lifecycle policy during creation. */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateLifecyclePolicyPostBodyPolicyDetails {
-		PolicyType?: PolicyTypeValues;
-		ResourceTypes?: Array<ResourceTypeValues>;
-		TargetTags?: Array<Tag>;
-		Schedules?: Array<Schedule>;
+		PolicyType?: PolicyTypeValues | null;
+		ResourceTypes?: Array<ResourceTypeValues> | null;
+		TargetTags?: Array<Tag> | null;
+		Schedules?: Array<Schedule> | null;
 
 		/** Specifies optional parameters to add to a policy. The set of valid parameters depends on the combination of policy type and resource type. */
-		Parameters?: Parameters;
+		Parameters?: Parameters | null;
 	}
 
 	export interface TagResourcePostBody {
@@ -374,10 +374,10 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*
 		 */
-		ExecutionRoleArn?: string;
+		ExecutionRoleArn?: string | null;
 
 		/** The desired activation state of the lifecycle policy after creation. */
-		State?: SettablePolicyStateValues;
+		State?: SettablePolicyStateValues | null;
 
 		/**
 		 * A description of the lifecycle policy.
@@ -385,20 +385,20 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: [0-9A-Za-z _-]+
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/** Specifies the configuration of a lifecycle policy. */
-		PolicyDetails?: UpdateLifecyclePolicyPatchBodyPolicyDetails;
+		PolicyDetails?: UpdateLifecyclePolicyPatchBodyPolicyDetails | null;
 	}
 
 	export interface UpdateLifecyclePolicyPatchBodyPolicyDetails {
-		PolicyType?: PolicyTypeValues;
-		ResourceTypes?: Array<ResourceTypeValues>;
-		TargetTags?: Array<Tag>;
-		Schedules?: Array<Schedule>;
+		PolicyType?: PolicyTypeValues | null;
+		ResourceTypes?: Array<ResourceTypeValues> | null;
+		TargetTags?: Array<Tag> | null;
+		Schedules?: Array<Schedule> | null;
 
 		/** Specifies optional parameters to add to a policy. The set of valid parameters depends on the combination of policy type and resource type. */
-		Parameters?: Parameters;
+		Parameters?: Parameters | null;
 	}
 
 }

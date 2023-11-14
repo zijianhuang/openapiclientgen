@@ -3,9 +3,9 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface Application {
-		Id?: string;
-		Name?: string;
-		Description?: string;
+		Id?: string | null;
+		Name?: string | null;
+		Description?: string | null;
 	}
 
 	export interface BadRequestException {
@@ -15,13 +15,13 @@ export namespace MyNS {
 	}
 
 	export interface ConfigurationProfile {
-		ApplicationId?: string;
-		Id?: string;
-		Name?: string;
-		Description?: string;
-		LocationUri?: string;
-		RetrievalRoleArn?: string;
-		Validators?: Array<Validator>;
+		ApplicationId?: string | null;
+		Id?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		LocationUri?: string | null;
+		RetrievalRoleArn?: string | null;
+		Validators?: Array<Validator> | null;
 	}
 
 
@@ -37,14 +37,14 @@ export namespace MyNS {
 	}
 
 	export interface DeploymentStrategy {
-		Id?: string;
-		Name?: string;
-		Description?: string;
-		DeploymentDurationInMinutes?: number;
-		GrowthType?: DeploymentStrategyGrowthType;
-		GrowthFactor?: number;
-		FinalBakeTimeInMinutes?: number;
-		ReplicateTo?: DeploymentStrategyReplicateTo;
+		Id?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		DeploymentDurationInMinutes?: number | null;
+		GrowthType?: DeploymentStrategyGrowthType | null;
+		GrowthFactor?: number | null;
+		FinalBakeTimeInMinutes?: number | null;
+		ReplicateTo?: DeploymentStrategyReplicateTo | null;
 	}
 
 	export enum DeploymentStrategyGrowthType { LINEAR = 0, EXPONENTIAL = 1 }
@@ -52,12 +52,12 @@ export namespace MyNS {
 	export enum DeploymentStrategyReplicateTo { NONE = 0, SSM_DOCUMENT = 1 }
 
 	export interface Environment {
-		ApplicationId?: string;
-		Id?: string;
-		Name?: string;
-		Description?: string;
-		State?: EnvironmentState;
-		Monitors?: Array<Monitor>;
+		ApplicationId?: string | null;
+		Id?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		State?: EnvironmentState | null;
+		Monitors?: Array<Monitor> | null;
 	}
 
 	export enum EnvironmentState { READY_FOR_DEPLOYMENT = 0, DEPLOYING = 1, ROLLING_BACK = 2, ROLLED_BACK = 3 }
@@ -65,36 +65,36 @@ export namespace MyNS {
 
 	/** Amazon CloudWatch alarms to monitor during the deployment process. */
 	export interface Monitor {
-		AlarmArn?: string;
-		AlarmRoleArn?: string;
+		AlarmArn?: string | null;
+		AlarmRoleArn?: string | null;
 	}
 
 	export interface ConflictException {
 	}
 
 	export interface Configuration {
-		Content?: string;
+		Content?: string | null;
 	}
 
 	export interface Deployment {
-		ApplicationId?: string;
-		EnvironmentId?: string;
-		DeploymentStrategyId?: string;
-		ConfigurationProfileId?: string;
-		DeploymentNumber?: number;
-		ConfigurationName?: string;
-		ConfigurationLocationUri?: string;
-		ConfigurationVersion?: string;
-		Description?: string;
-		DeploymentDurationInMinutes?: number;
-		GrowthType?: DeploymentStrategyGrowthType;
-		GrowthFactor?: number;
-		FinalBakeTimeInMinutes?: number;
-		State?: DeploymentState;
-		EventLog?: Array<DeploymentEvent>;
-		PercentageComplete?: number;
-		StartedAt?: Date;
-		CompletedAt?: Date;
+		ApplicationId?: string | null;
+		EnvironmentId?: string | null;
+		DeploymentStrategyId?: string | null;
+		ConfigurationProfileId?: string | null;
+		DeploymentNumber?: number | null;
+		ConfigurationName?: string | null;
+		ConfigurationLocationUri?: string | null;
+		ConfigurationVersion?: string | null;
+		Description?: string | null;
+		DeploymentDurationInMinutes?: number | null;
+		GrowthType?: DeploymentStrategyGrowthType | null;
+		GrowthFactor?: number | null;
+		FinalBakeTimeInMinutes?: number | null;
+		State?: DeploymentState | null;
+		EventLog?: Array<DeploymentEvent> | null;
+		PercentageComplete?: number | null;
+		StartedAt?: Date | null;
+		CompletedAt?: Date | null;
 	}
 
 	export enum DeploymentState { BAKING = 0, VALIDATING = 1, DEPLOYING = 2, COMPLETE = 3, ROLLING_BACK = 4, ROLLED_BACK = 5 }
@@ -102,10 +102,10 @@ export namespace MyNS {
 
 	/** An object that describes a deployment event. */
 	export interface DeploymentEvent {
-		EventType?: DeploymentEventEventType;
-		TriggeredBy?: DeploymentEventTriggeredBy;
-		Description?: string;
-		OccurredAt?: Date;
+		EventType?: DeploymentEventEventType | null;
+		TriggeredBy?: DeploymentEventTriggeredBy | null;
+		Description?: string | null;
+		OccurredAt?: Date | null;
 	}
 
 	export enum DeploymentEventEventType { PERCENTAGE_UPDATED = 0, ROLLBACK_STARTED = 1, ROLLBACK_COMPLETED = 2, BAKE_TIME_STARTED = 3, DEPLOYMENT_STARTED = 4, DEPLOYMENT_COMPLETED = 5 }
@@ -113,58 +113,58 @@ export namespace MyNS {
 	export enum DeploymentEventTriggeredBy { USER = 0, APPCONFIG = 1, CLOUDWATCH_ALARM = 2, INTERNAL_ERROR = 3 }
 
 	export interface Applications {
-		Items?: Array<Application>;
-		NextToken?: string;
+		Items?: Array<Application> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ConfigurationProfiles {
-		Items?: Array<ConfigurationProfileSummary>;
-		NextToken?: string;
+		Items?: Array<ConfigurationProfileSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A summary of a configuration profile. */
 	export interface ConfigurationProfileSummary {
-		ApplicationId?: string;
-		Id?: string;
-		Name?: string;
-		LocationUri?: string;
-		ValidatorTypes?: Array<ValidatorType>;
+		ApplicationId?: string | null;
+		Id?: string | null;
+		Name?: string | null;
+		LocationUri?: string | null;
+		ValidatorTypes?: Array<ValidatorType> | null;
 	}
 
 	export interface DeploymentStrategies {
-		Items?: Array<DeploymentStrategy>;
-		NextToken?: string;
+		Items?: Array<DeploymentStrategy> | null;
+		NextToken?: string | null;
 	}
 
 	export interface Deployments {
-		Items?: Array<DeploymentSummary>;
-		NextToken?: string;
+		Items?: Array<DeploymentSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about the deployment. */
 	export interface DeploymentSummary {
-		DeploymentNumber?: number;
-		ConfigurationName?: string;
-		ConfigurationVersion?: string;
-		DeploymentDurationInMinutes?: number;
-		GrowthType?: DeploymentStrategyGrowthType;
-		GrowthFactor?: number;
-		FinalBakeTimeInMinutes?: number;
-		State?: DeploymentState;
-		PercentageComplete?: number;
-		StartedAt?: Date;
-		CompletedAt?: Date;
+		DeploymentNumber?: number | null;
+		ConfigurationName?: string | null;
+		ConfigurationVersion?: string | null;
+		DeploymentDurationInMinutes?: number | null;
+		GrowthType?: DeploymentStrategyGrowthType | null;
+		GrowthFactor?: number | null;
+		FinalBakeTimeInMinutes?: number | null;
+		State?: DeploymentState | null;
+		PercentageComplete?: number | null;
+		StartedAt?: Date | null;
+		CompletedAt?: Date | null;
 	}
 
 	export interface Environments {
-		Items?: Array<Environment>;
-		NextToken?: string;
+		Items?: Array<Environment> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ResourceTags {
-		Tags?: TagMap;
+		Tags?: TagMap | null;
 	}
 
 	export interface TagMap {
@@ -172,17 +172,17 @@ export namespace MyNS {
 
 	export interface CreateApplicationRequest {
 		Name: string;
-		Description?: string;
-		Tags?: TagMap;
+		Description?: string | null;
+		Tags?: TagMap | null;
 	}
 
 	export interface CreateConfigurationProfileRequest {
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 		LocationUri: string;
 		RetrievalRoleArn: string;
-		Validators?: Array<Validator>;
-		Tags?: TagMap;
+		Validators?: Array<Validator> | null;
+		Tags?: TagMap | null;
 	}
 
 	export enum GrowthType { LINEAR = 0, EXPONENTIAL = 1 }
@@ -191,20 +191,20 @@ export namespace MyNS {
 
 	export interface CreateDeploymentStrategyRequest {
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 		DeploymentDurationInMinutes: number;
-		FinalBakeTimeInMinutes?: number;
+		FinalBakeTimeInMinutes?: number | null;
 		GrowthFactor: number;
-		GrowthType?: DeploymentStrategyGrowthType;
+		GrowthType?: DeploymentStrategyGrowthType | null;
 		ReplicateTo: DeploymentStrategyReplicateTo;
-		Tags?: TagMap;
+		Tags?: TagMap | null;
 	}
 
 	export interface CreateEnvironmentRequest {
 		Name: string;
-		Description?: string;
-		Monitors?: Array<Monitor>;
-		Tags?: TagMap;
+		Description?: string | null;
+		Monitors?: Array<Monitor> | null;
+		Tags?: TagMap | null;
 	}
 
 	export interface DeleteApplicationRequest {
@@ -263,8 +263,8 @@ export namespace MyNS {
 		DeploymentStrategyId: string;
 		ConfigurationProfileId: string;
 		ConfigurationVersion: string;
-		Description?: string;
-		Tags?: TagMap;
+		Description?: string | null;
+		Tags?: TagMap | null;
 	}
 
 	export interface StopDeploymentRequest {
@@ -278,29 +278,29 @@ export namespace MyNS {
 	}
 
 	export interface UpdateApplicationRequest {
-		Name?: string;
-		Description?: string;
+		Name?: string | null;
+		Description?: string | null;
 	}
 
 	export interface UpdateConfigurationProfileRequest {
-		Name?: string;
-		Description?: string;
-		RetrievalRoleArn?: string;
-		Validators?: Array<Validator>;
+		Name?: string | null;
+		Description?: string | null;
+		RetrievalRoleArn?: string | null;
+		Validators?: Array<Validator> | null;
 	}
 
 	export interface UpdateDeploymentStrategyRequest {
-		Description?: string;
-		DeploymentDurationInMinutes?: number;
-		FinalBakeTimeInMinutes?: number;
-		GrowthFactor?: number;
-		GrowthType?: DeploymentStrategyGrowthType;
+		Description?: string | null;
+		DeploymentDurationInMinutes?: number | null;
+		FinalBakeTimeInMinutes?: number | null;
+		GrowthFactor?: number | null;
+		GrowthType?: DeploymentStrategyGrowthType | null;
 	}
 
 	export interface UpdateEnvironmentRequest {
-		Name?: string;
-		Description?: string;
-		Monitors?: Array<Monitor>;
+		Name?: string | null;
+		Description?: string | null;
+		Monitors?: Array<Monitor> | null;
 	}
 
 	export interface ValidateConfigurationRequest {
@@ -329,7 +329,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {Applications} Success
 		 */
-		ListApplications(max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<Applications> {
+		ListApplications(max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<Applications> {
 			return this.http.get<Applications>(this.baseUri + 'applications?max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -353,7 +353,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ConfigurationProfiles} Success
 		 */
-		ListConfigurationProfiles(ApplicationId: string, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<ConfigurationProfiles> {
+		ListConfigurationProfiles(ApplicationId: string, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ConfigurationProfiles> {
 			return this.http.get<ConfigurationProfiles>(this.baseUri + 'applications/' + (ApplicationId == null ? '' : encodeURIComponent(ApplicationId)) + '/configurationprofiles&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -375,7 +375,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DeploymentStrategies} Success
 		 */
-		ListDeploymentStrategies(max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<DeploymentStrategies> {
+		ListDeploymentStrategies(max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<DeploymentStrategies> {
 			return this.http.get<DeploymentStrategies>(this.baseUri + 'deploymentstrategies?max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -399,7 +399,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {Environments} Success
 		 */
-		ListEnvironments(ApplicationId: string, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<Environments> {
+		ListEnvironments(ApplicationId: string, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<Environments> {
 			return this.http.get<Environments>(this.baseUri + 'applications/' + (ApplicationId == null ? '' : encodeURIComponent(ApplicationId)) + '/environments&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -519,7 +519,7 @@ export namespace MyNS {
 		 * @param {string} client_configuration_version <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important> <p>AWS AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p> <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p> </important> <p>For more information about working with configurations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AWS AppConfig User Guide</i>.</p>
 		 * @return {Configuration} Success
 		 */
-		GetConfiguration(Application: string, Environment: string, Configuration: string, client_id: string, client_configuration_version: string): Observable<Configuration> {
+		GetConfiguration(Application: string, Environment: string, Configuration: string, client_id: string, client_configuration_version: string | null | undefined): Observable<Configuration> {
 			return this.http.get<Configuration>(this.baseUri + 'applications/' + (Application == null ? '' : encodeURIComponent(Application)) + '/environments/' + (Environment == null ? '' : encodeURIComponent(Environment)) + '/configurations/' + (Configuration == null ? '' : encodeURIComponent(Configuration)) + '#client_id&client_id=' + (client_id == null ? '' : encodeURIComponent(client_id)) + '&client_configuration_version=' + (client_configuration_version == null ? '' : encodeURIComponent(client_configuration_version)), {});
 		}
 
@@ -578,7 +578,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {Deployments} Success
 		 */
-		ListDeployments(ApplicationId: string, EnvironmentId: string, max_results: number, next_token: string, MaxResults: string, NextToken: string): Observable<Deployments> {
+		ListDeployments(ApplicationId: string, EnvironmentId: string, max_results: number | null | undefined, next_token: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<Deployments> {
 			return this.http.get<Deployments>(this.baseUri + 'applications/' + (ApplicationId == null ? '' : encodeURIComponent(ApplicationId)) + '/environments/' + (EnvironmentId == null ? '' : encodeURIComponent(EnvironmentId)) + '/deployments&max_results=' + max_results + '&next_token=' + (next_token == null ? '' : encodeURIComponent(next_token)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -652,10 +652,10 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/** Metadata to assign to the application. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define. */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateConfigurationProfilePostBody {
@@ -673,7 +673,7 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * A URI to locate the configuration. You can specify a Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM document, specify either the document name in the format <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name (ARN). For a parameter, specify either the parameter name in the format <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3 object, specify the URI in the following format: <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example: s3://my-bucket/my-app/us-east-1/my-config.json
@@ -697,10 +697,10 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 2
 		 */
-		Validators?: Array<Validator>;
+		Validators?: Array<Validator> | null;
 
 		/** Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define. */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateDeploymentStrategyPostBody {
@@ -718,7 +718,7 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * Total amount of time for a deployment to last.
@@ -733,7 +733,7 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 1440
 		 */
-		FinalBakeTimeInMinutes?: number;
+		FinalBakeTimeInMinutes?: number | null;
 
 		/**
 		 * The percentage of targets to receive a deployed configuration during each interval.
@@ -744,7 +744,7 @@ export namespace MyNS {
 		GrowthFactor: number;
 
 		/** <p>The algorithm used to define how percentage grows over time. AWS AppConfig supports the following growth types:</p> <p> <b>Linear</b>: For this type, AppConfig processes the deployment by dividing the total number of targets by the value specified for <code>Step percentage</code>. For example, a linear deployment that uses a <code>Step percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After those deployments are complete, the system deploys the configuration to the next 10 percent. This continues until 100% of the targets have successfully received the configuration.</p> <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p> <p> <code>2*(2^0)</code> </p> <p> <code>2*(2^1)</code> </p> <p> <code>2*(2^2)</code> </p> <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p> */
-		GrowthType?: DeploymentStrategyGrowthType;
+		GrowthType?: DeploymentStrategyGrowthType | null;
 
 		/**
 		 * Save the deployment strategy to a Systems Manager (SSM) document.
@@ -753,7 +753,7 @@ export namespace MyNS {
 		ReplicateTo: DeploymentStrategyReplicateTo;
 
 		/** Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define. */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateEnvironmentPostBody {
@@ -771,17 +771,17 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * Amazon CloudWatch alarms to monitor during the deployment process.
 		 * Minimum items: 0
 		 * Maximum items: 5
 		 */
-		Monitors?: Array<Monitor>;
+		Monitors?: Array<Monitor> | null;
 
 		/** Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define. */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 	}
 
 	export interface UpdateApplicationPatchBody {
@@ -791,14 +791,14 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 1
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/**
 		 * A description of the application.
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface UpdateConfigurationProfilePatchBody {
@@ -808,14 +808,14 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 1
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/**
 		 * A description of the configuration profile.
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * The ARN of an IAM role with permission to access the configuration at the specified LocationUri.
@@ -823,14 +823,14 @@ export namespace MyNS {
 		 * Min length: 20
 		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
 		 */
-		RetrievalRoleArn?: string;
+		RetrievalRoleArn?: string | null;
 
 		/**
 		 * A list of methods for validating the configuration.
 		 * Minimum items: 0
 		 * Maximum items: 2
 		 */
-		Validators?: Array<Validator>;
+		Validators?: Array<Validator> | null;
 	}
 
 	export interface UpdateEnvironmentPatchBody {
@@ -840,21 +840,21 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 1
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/**
 		 * A description of the environment.
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * Amazon CloudWatch alarms to monitor during the deployment process.
 		 * Minimum items: 0
 		 * Maximum items: 5
 		 */
-		Monitors?: Array<Monitor>;
+		Monitors?: Array<Monitor> | null;
 	}
 
 	export interface UpdateDeploymentStrategyPatchBody {
@@ -864,31 +864,31 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * Total amount of time for a deployment to last.
 		 * Minimum: 0
 		 * Maximum: 1440
 		 */
-		DeploymentDurationInMinutes?: number;
+		DeploymentDurationInMinutes?: number | null;
 
 		/**
 		 * The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic roll back.
 		 * Minimum: 0
 		 * Maximum: 1440
 		 */
-		FinalBakeTimeInMinutes?: number;
+		FinalBakeTimeInMinutes?: number | null;
 
 		/**
 		 * The percentage of targets to receive a deployed configuration during each interval.
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		GrowthFactor?: number;
+		GrowthFactor?: number | null;
 
 		/** <p>The algorithm used to define how percentage grows over time. AWS AppConfig supports the following growth types:</p> <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p> <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p> <p> <code>2*(2^0)</code> </p> <p> <code>2*(2^1)</code> </p> <p> <code>2*(2^2)</code> </p> <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p> */
-		GrowthType?: DeploymentStrategyGrowthType;
+		GrowthType?: DeploymentStrategyGrowthType | null;
 	}
 
 	export interface StartDeploymentPostBody {
@@ -920,10 +920,10 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/** Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define. */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 	}
 
 	export interface TagResourcePostBody {

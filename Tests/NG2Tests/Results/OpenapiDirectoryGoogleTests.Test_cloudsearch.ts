@@ -22,7 +22,7 @@ export namespace MyNS {
 		 * The operator name can only contain lowercase letters (a-z).
 		 * The maximum length is 32 characters.
 		 */
-		operatorName?: string;
+		operatorName?: string | null;
 	}
 
 
@@ -34,22 +34,22 @@ export namespace MyNS {
 		 * optional. Search operators let users restrict the query to specific fields
 		 * relevant to the type of item being searched.
 		 */
-		operatorOptions?: BooleanOperatorOptions;
+		operatorOptions?: BooleanOperatorOptions | null;
 	}
 
 	export interface CheckAccessResponse {
 
 		/** Returns true if principal has access.  Returns false otherwise. */
-		hasAccess?: boolean;
+		hasAccess?: boolean | null;
 	}
 
 	export interface CompositeFilter {
 
 		/** The logic operator of the sub filter. */
-		logicOperator?: CompositeFilterLogicOperator;
+		logicOperator?: CompositeFilterLogicOperator | null;
 
 		/** Sub filters. */
-		subFilters?: Array<Filter>;
+		subFilters?: Array<Filter> | null;
 	}
 
 	export enum CompositeFilterLogicOperator { AND = 0, OR = 1, NOT = 2 }
@@ -67,8 +67,8 @@ export namespace MyNS {
 	 * a top-level AND.
 	 */
 	export interface Filter {
-		compositeFilter?: CompositeFilter;
-		valueFilter?: ValueFilter;
+		compositeFilter?: CompositeFilter | null;
+		valueFilter?: ValueFilter | null;
 	}
 
 	export interface ValueFilter {
@@ -85,23 +85,23 @@ export namespace MyNS {
 		 * schema. The query filters the results for the property values that are
 		 * greater than or less than  the supplied value in the query.
 		 */
-		operatorName?: string;
+		operatorName?: string | null;
 
 		/** Definition of a single value with generic type. */
-		value?: Value;
+		value?: Value | null;
 	}
 
 
 	/** Definition of a single value with generic type. */
 	export interface Value {
-		booleanValue?: boolean;
+		booleanValue?: boolean | null;
 
 		/** Represents a whole calendar date, for example a date of birth. The time of day and time zone are either specified elsewhere or are not significant. The date is relative to the [Proleptic Gregorian Calendar](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar). The date must be a valid calendar date between the year 1 and 9999. */
-		dateValue?: Date;
-		doubleValue?: number;
-		integerValue?: string;
-		stringValue?: string;
-		timestampValue?: string;
+		dateValue?: Date | null;
+		doubleValue?: number | null;
+		integerValue?: string | null;
+		stringValue?: string | null;
+		timestampValue?: string | null;
 	}
 
 
@@ -109,13 +109,13 @@ export namespace MyNS {
 	export interface Date {
 
 		/** Day of month. Must be from 1 to 31 and valid for the year and month. */
-		day?: number;
+		day?: number | null;
 
 		/** Month of date. Must be from 1 to 12. */
-		month?: number;
+		month?: number | null;
 
 		/** Year of date. Must be from 1 to 9999. */
-		year?: number;
+		year?: number | null;
 	}
 
 
@@ -123,19 +123,19 @@ export namespace MyNS {
 	export interface CustomerIndexStats {
 
 		/** Represents a whole calendar date, for example a date of birth. The time of day and time zone are either specified elsewhere or are not significant. The date is relative to the [Proleptic Gregorian Calendar](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar). The date must be a valid calendar date between the year 1 and 9999. */
-		date?: Date;
+		date?: Date | null;
 
 		/** Number of items aggregrated by status code. */
-		itemCountByStatus?: Array<ItemCountByStatus>;
+		itemCountByStatus?: Array<ItemCountByStatus> | null;
 	}
 
 	export interface ItemCountByStatus {
 
 		/** Number of items matching the status code. */
-		count?: string;
+		count?: string | null;
 
 		/** Status of the items. */
-		statusCode?: ItemCountByStatusStatusCode;
+		statusCode?: ItemCountByStatusStatusCode | null;
 	}
 
 	export enum ItemCountByStatusStatusCode { CODE_UNSPECIFIED = 0, ERROR = 1, MODIFIED = 2, NEW_ITEM = 3, ACCEPTED = 4 }
@@ -143,39 +143,39 @@ export namespace MyNS {
 	export interface CustomerQueryStats {
 
 		/** Represents a whole calendar date, for example a date of birth. The time of day and time zone are either specified elsewhere or are not significant. The date is relative to the [Proleptic Gregorian Calendar](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar). The date must be a valid calendar date between the year 1 and 9999. */
-		date?: Date;
-		queryCountByStatus?: Array<QueryCountByStatus>;
+		date?: Date | null;
+		queryCountByStatus?: Array<QueryCountByStatus> | null;
 	}
 
 	export interface QueryCountByStatus {
-		count?: string;
+		count?: string | null;
 
 		/** This represents the http status code. */
-		statusCode?: number;
+		statusCode?: number | null;
 	}
 
 	export interface CustomerSessionStats {
 
 		/** Represents a whole calendar date, for example a date of birth. The time of day and time zone are either specified elsewhere or are not significant. The date is relative to the [Proleptic Gregorian Calendar](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar). The date must be a valid calendar date between the year 1 and 9999. */
-		date?: Date;
+		date?: Date | null;
 
 		/** The count of search sessions on the day */
-		searchSessionsCount?: string;
+		searchSessionsCount?: string | null;
 	}
 
 	export interface CustomerUserStats {
 
 		/** Represents a whole calendar date, for example a date of birth. The time of day and time zone are either specified elsewhere or are not significant. The date is relative to the [Proleptic Gregorian Calendar](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar). The date must be a valid calendar date between the year 1 and 9999. */
-		date?: Date;
+		date?: Date | null;
 
 		/** The count of unique active users in the past one day */
-		oneDayActiveUsersCount?: string;
+		oneDayActiveUsersCount?: string | null;
 
 		/** The count of unique active users in the past seven days */
-		sevenDaysActiveUsersCount?: string;
+		sevenDaysActiveUsersCount?: string | null;
 
 		/** The count of unique active users in the past thirty days */
-		thirtyDaysActiveUsersCount?: string;
+		thirtyDaysActiveUsersCount?: string | null;
 	}
 
 
@@ -192,19 +192,19 @@ export namespace MyNS {
 		 * Disabling this does not imply halting process of previously
 		 * accepted data.
 		 */
-		disableModifications?: boolean;
+		disableModifications?: boolean | null;
 
 		/** Disable serving any search or assist results. */
-		disableServing?: boolean;
+		disableServing?: boolean | null;
 
 		/**
 		 * Required. Display name of the datasource
 		 * The maximum length is 300 characters.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** List of service accounts that have indexing access. */
-		indexingServiceAccounts?: Array<string>;
+		indexingServiceAccounts?: Array<string> | null;
 
 		/**
 		 * This field restricts visibility to items at the datasource level. Items
@@ -214,20 +214,20 @@ export namespace MyNS {
 		 * items. This ensures a high level access on the entire datasource, and
 		 * that the individual items are not shared outside this visibility.
 		 */
-		itemsVisibility?: Array<GSuitePrincipal>;
+		itemsVisibility?: Array<GSuitePrincipal> | null;
 
 		/**
 		 * Name of the datasource resource.
 		 * Format: datasources/{source_id}.
 		 * <br />The name is ignored when creating a datasource.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * IDs of the Long Running Operations (LROs) currently running for this
 		 * schema.
 		 */
-		operationIds?: Array<string>;
+		operationIds?: Array<string> | null;
 
 		/**
 		 * A short name or alias for the source.  This value will be used to match the
@@ -239,7 +239,7 @@ export namespace MyNS {
 		 * groups, sites, calendar, hangouts, gplus, keep, people, teams.
 		 * Its maximum length is 32 characters.
 		 */
-		shortName?: string;
+		shortName?: string | null;
 	}
 
 	export interface GSuitePrincipal {
@@ -248,13 +248,13 @@ export namespace MyNS {
 		 * This principal represents all users of the G Suite domain of the
 		 * customer.
 		 */
-		gsuiteDomain?: boolean;
+		gsuiteDomain?: boolean | null;
 
 		/** This principal references a G Suite group account */
-		gsuiteGroupEmail?: string;
+		gsuiteGroupEmail?: string | null;
 
 		/** This principal references a G Suite user account */
-		gsuiteUserEmail?: string;
+		gsuiteUserEmail?: string | null;
 	}
 
 
@@ -262,10 +262,10 @@ export namespace MyNS {
 	export interface DataSourceIndexStats {
 
 		/** Represents a whole calendar date, for example a date of birth. The time of day and time zone are either specified elsewhere or are not significant. The date is relative to the [Proleptic Gregorian Calendar](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar). The date must be a valid calendar date between the year 1 and 9999. */
-		date?: Date;
+		date?: Date | null;
 
 		/** Number of items aggregrated by status code. */
-		itemCountByStatus?: Array<ItemCountByStatus>;
+		itemCountByStatus?: Array<ItemCountByStatus> | null;
 	}
 
 
@@ -282,10 +282,10 @@ export namespace MyNS {
 		 * "objecttype", "type" and "mimetype".
 		 * For now, schema specific filters cannot be used to filter suggestions.
 		 */
-		filterOptions?: Array<FilterOptions>;
+		filterOptions?: Array<FilterOptions> | null;
 
 		/** Defines sources for the suggest/search APIs. */
-		source?: Source;
+		source?: Source | null;
 	}
 
 
@@ -303,14 +303,14 @@ export namespace MyNS {
 		 * or a NOT. AND can appear only at the top-most level. OR can appear only under
 		 * a top-level AND.
 		 */
-		filter?: Filter;
+		filter?: Filter | null;
 
 		/**
 		 * If object_type is set, only objects of that type are returned. This should
 		 * correspond to the name of the object that was registered within the
 		 * definition of schema. The maximum length is 256 characters.
 		 */
-		objectType?: string;
+		objectType?: string | null;
 	}
 
 
@@ -321,10 +321,10 @@ export namespace MyNS {
 		 * Source name for content indexed by the
 		 * Indexing API.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Predefined content source for Google Apps. */
-		predefinedSource?: SourcePredefinedSource;
+		predefinedSource?: SourcePredefinedSource | null;
 	}
 
 	export enum SourcePredefinedSource { NONE = 0, QUERY_HISTORY = 1, PERSON = 2, GOOGLE_DRIVE = 3, GOOGLE_GMAIL = 4, GOOGLE_SITES = 5, GOOGLE_GROUPS = 6, GOOGLE_CALENDAR = 7, GOOGLE_KEEP = 8 }
@@ -347,7 +347,7 @@ export namespace MyNS {
 		 * The operator name can only contain lowercase letters (a-z).
 		 * The maximum length is 32 characters.
 		 */
-		greaterThanOperatorName?: string;
+		greaterThanOperatorName?: string | null;
 
 		/**
 		 * Indicates the operator name required in the query in order to isolate the
@@ -359,7 +359,7 @@ export namespace MyNS {
 		 * The operator name can only contain lowercase letters (a-z).
 		 * The maximum length is 32 characters.
 		 */
-		lessThanOperatorName?: string;
+		lessThanOperatorName?: string | null;
 
 		/**
 		 * Indicates the actual string required in the query in order to isolate the
@@ -374,7 +374,7 @@ export namespace MyNS {
 		 * The operator name can only contain lowercase letters (a-z).
 		 * The maximum length is 32 characters.
 		 */
-		operatorName?: string;
+		operatorName?: string | null;
 	}
 
 
@@ -386,13 +386,13 @@ export namespace MyNS {
 		 * Search operators let users restrict the query to specific fields relevant
 		 * to the type of item being searched.
 		 */
-		operatorOptions?: DateOperatorOptions;
+		operatorOptions?: DateOperatorOptions | null;
 	}
 
 
 	/** List of date values. */
 	export interface DateValues {
-		values?: Array<Date>;
+		values?: Array<Date> | null;
 	}
 
 
@@ -403,7 +403,7 @@ export namespace MyNS {
 		 * If you are asked by Google to help with debugging, set this field.
 		 * Otherwise, ignore this field.
 		 */
-		enableDebugging?: boolean;
+		enableDebugging?: boolean | null;
 	}
 
 	export interface DeleteQueueItemsRequest {
@@ -412,13 +412,13 @@ export namespace MyNS {
 		 * Name of connector making this call.
 		 * <br />Format: datasources/{source_id}/connectors/{ID}
 		 */
-		connectorName?: string;
+		connectorName?: string | null;
 
 		/** Shared request debug options for all cloudsearch RPC methods. */
-		debugOptions?: DebugOptions;
+		debugOptions?: DebugOptions | null;
 
 		/** Name of a queue to delete items from. */
-		queue?: string;
+		queue?: string | null;
 	}
 
 
@@ -437,7 +437,7 @@ export namespace MyNS {
 		 * for the object. If the name is not a defined property in the schema, an
 		 * error is given when attempting to update the schema.
 		 */
-		propertyName?: string;
+		propertyName?: string | null;
 	}
 
 
@@ -454,7 +454,7 @@ export namespace MyNS {
 		 * The operator name can only contain lowercase letters (a-z).
 		 * The maximum length is 32 characters.
 		 */
-		operatorName?: string;
+		operatorName?: string | null;
 	}
 
 
@@ -466,19 +466,19 @@ export namespace MyNS {
 		 * optional. Search operators let users restrict the query to specific fields
 		 * relevant to the type of item being searched.
 		 */
-		operatorOptions?: DoubleOperatorOptions;
+		operatorOptions?: DoubleOperatorOptions | null;
 	}
 
 
 	/** List of double values. */
 	export interface DoubleValues {
-		values?: Array<number>;
+		values?: Array<number> | null;
 	}
 
 
 	/** Drive follow-up search restricts (e.g. "followup:suggestions"). */
 	export interface DriveFollowUpRestrict {
-		type?: DriveFollowUpRestrictType;
+		type?: DriveFollowUpRestrictType | null;
 	}
 
 	export enum DriveFollowUpRestrictType { UNSPECIFIED = 0, FOLLOWUP_SUGGESTIONS = 1, FOLLOWUP_ACTION_ITEMS = 2 }
@@ -486,7 +486,7 @@ export namespace MyNS {
 
 	/** Drive location search restricts (e.g. "is:starred"). */
 	export interface DriveLocationRestrict {
-		type?: DriveLocationRestrictType;
+		type?: DriveLocationRestrictType | null;
 	}
 
 	export enum DriveLocationRestrictType { UNSPECIFIED = 0, TRASHED = 1, STARRED = 2 }
@@ -494,7 +494,7 @@ export namespace MyNS {
 
 	/** Drive mime-type search restricts (e.g. "type:pdf"). */
 	export interface DriveMimeTypeRestrict {
-		type?: DriveMimeTypeRestrictType;
+		type?: DriveMimeTypeRestrictType | null;
 	}
 
 	export enum DriveMimeTypeRestrictType { UNSPECIFIED = 0, PDF = 1, DOCUMENT = 2, PRESENTATION = 3, SPREADSHEET = 4, FORM = 5, DRAWING = 6, SCRIPT = 7, MAP = 8, IMAGE = 9, AUDIO = 10, VIDEO = 11, FOLDER = 12, ARCHIVE = 13, SITE = 14 }
@@ -502,7 +502,7 @@ export namespace MyNS {
 
 	/** The time span search restrict (e.g. "after:2017-09-11 before:2017-09-12"). */
 	export interface DriveTimeSpanRestrict {
-		type?: DriveTimeSpanRestrictType;
+		type?: DriveTimeSpanRestrictType | null;
 	}
 
 	export enum DriveTimeSpanRestrictType { UNSPECIFIED = 0, TODAY = 1, YESTERDAY = 2, LAST_7_DAYS = 3, LAST_30_DAYS = 4, LAST_90_DAYS = 5 }
@@ -512,7 +512,7 @@ export namespace MyNS {
 	export interface EmailAddress {
 
 		/** The email address. */
-		emailAddress?: string;
+		emailAddress?: string | null;
 	}
 
 
@@ -542,7 +542,7 @@ export namespace MyNS {
 		 * The operator name can only contain lowercase letters (a-z).
 		 * The maximum length is 32 characters.
 		 */
-		operatorName?: string;
+		operatorName?: string | null;
 	}
 
 
@@ -570,7 +570,7 @@ export namespace MyNS {
 		 * results to only items that have *p0* as this property's value, with the
 		 * query *priority:p0*.
 		 */
-		operatorOptions?: EnumOperatorOptions;
+		operatorOptions?: EnumOperatorOptions | null;
 
 		/**
 		 * Used to specify the ordered ranking for the enumeration that determines how
@@ -580,7 +580,7 @@ export namespace MyNS {
 		 * isRepeatable
 		 * is false.
 		 */
-		orderedRanking?: EnumPropertyOptionsOrderedRanking;
+		orderedRanking?: EnumPropertyOptionsOrderedRanking | null;
 
 		/**
 		 * The list of possible values for the enumeration property. All
@@ -593,7 +593,7 @@ export namespace MyNS {
 		 * values to allow adding a value in between previously registered values.
 		 * The maximum number of elements is 100.
 		 */
-		possibleValues?: Array<EnumValuePair>;
+		possibleValues?: Array<EnumValuePair> | null;
 	}
 
 	export enum EnumPropertyOptionsOrderedRanking { NO_ORDER = 0, ASCENDING = 1, DESCENDING = 2 }
@@ -621,13 +621,13 @@ export namespace MyNS {
 		 * The integer value of the EnumValuePair which must be non-negative.
 		 * Optional.
 		 */
-		integerValue?: number;
+		integerValue?: number | null;
 
 		/**
 		 * The string value of the EnumValuePair.
 		 * The maximum length is 32 characters.
 		 */
-		stringValue?: string;
+		stringValue?: string | null;
 	}
 
 
@@ -635,22 +635,22 @@ export namespace MyNS {
 	export interface EnumValues {
 
 		/** The maximum allowable length for string values is 32 characters. */
-		values?: Array<string>;
+		values?: Array<string> | null;
 	}
 
 
 	/** Error information about the response. */
 	export interface ErrorInfo {
-		errorMessages?: Array<ErrorMessage>;
+		errorMessages?: Array<ErrorMessage> | null;
 	}
 
 
 	/** Error message per source response. */
 	export interface ErrorMessage {
-		errorMessage?: string;
+		errorMessage?: string | null;
 
 		/** Defines sources for the suggest/search APIs. */
-		source?: Source;
+		source?: Source | null;
 	}
 
 
@@ -666,7 +666,7 @@ export namespace MyNS {
 		 * Number of results that match the bucket value. Counts are only returned
 		 * for searches when count accuracy is ensured. Can be empty.
 		 */
-		count?: number;
+		count?: number | null;
 
 		/**
 		 * Percent of results that match the bucket value. This value is between
@@ -674,10 +674,10 @@ export namespace MyNS {
 		 * Because percentages are always returned, you should render percentages
 		 * instead of counts.
 		 */
-		percentage?: number;
+		percentage?: number | null;
 
 		/** Definition of a single value with generic type. */
-		value?: Value;
+		value?: Value | null;
 	}
 
 
@@ -692,25 +692,25 @@ export namespace MyNS {
 		 * Defaults to 10.
 		 * Maximum value is 100.
 		 */
-		numFacetBuckets?: number;
+		numFacetBuckets?: number | null;
 
 		/**
 		 * If object_type is set, only those objects of that type will be used to
 		 * compute facets. If empty, then all objects will be used to compute facets.
 		 */
-		objectType?: string;
+		objectType?: string | null;
 
 		/**
 		 * Name of the operator chosen for faceting. @see
 		 * cloudsearch.SchemaPropertyOptions
 		 */
-		operatorName?: string;
+		operatorName?: string | null;
 
 		/**
 		 * Source name to facet on. Format: datasources/{source_id}
 		 * If empty, all data sources will be used.
 		 */
-		sourceName?: string;
+		sourceName?: string | null;
 	}
 
 
@@ -718,28 +718,28 @@ export namespace MyNS {
 	export interface FacetResult {
 
 		/** FacetBuckets for values in response containing at least a single result. */
-		buckets?: Array<FacetBucket>;
+		buckets?: Array<FacetBucket> | null;
 
 		/** Object type for which facet results are returned. Can be empty. */
-		objectType?: string;
+		objectType?: string | null;
 
 		/**
 		 * Name of the operator chosen for faceting. @see
 		 * cloudsearch.SchemaPropertyOptions
 		 */
-		operatorName?: string;
+		operatorName?: string | null;
 
 		/** Source name for which facet results are returned. Will not be empty. */
-		sourceName?: string;
+		sourceName?: string | null;
 	}
 
 	export interface FieldViolation {
 
 		/** Description of the error. */
-		description?: string;
+		description?: string | null;
 
 		/** Path of field with violation. */
-		field?: string;
+		field?: string | null;
 	}
 
 
@@ -758,7 +758,7 @@ export namespace MyNS {
 		 * The duration after which an object should be considered
 		 * stale. The default value is 180 days (in seconds).
 		 */
-		freshnessDuration?: string;
+		freshnessDuration?: string | null;
 
 		/**
 		 * This property indicates the freshness level of the object in the index.
@@ -775,74 +775,74 @@ export namespace MyNS {
 		 * When a property is used to calculate freshness, the value defaults
 		 * to 2 years from the current time.
 		 */
-		freshnessProperty?: string;
+		freshnessProperty?: string | null;
 	}
 
 	export interface GetCustomerIndexStatsResponse {
 
 		/** Summary of indexed item counts, one for each day in the requested range. */
-		stats?: Array<CustomerIndexStats>;
+		stats?: Array<CustomerIndexStats> | null;
 	}
 
 	export interface GetCustomerQueryStatsResponse {
-		stats?: Array<CustomerQueryStats>;
+		stats?: Array<CustomerQueryStats> | null;
 	}
 
 	export interface GetCustomerSessionStatsResponse {
-		stats?: Array<CustomerSessionStats>;
+		stats?: Array<CustomerSessionStats> | null;
 	}
 
 	export interface GetCustomerUserStatsResponse {
-		stats?: Array<CustomerUserStats>;
+		stats?: Array<CustomerUserStats> | null;
 	}
 
 	export interface GetDataSourceIndexStatsResponse {
 
 		/** Summary of indexed item counts, one for each day in the requested range. */
-		stats?: Array<DataSourceIndexStats>;
+		stats?: Array<DataSourceIndexStats> | null;
 	}
 
 	export interface GetSearchApplicationQueryStatsResponse {
-		stats?: Array<SearchApplicationQueryStats>;
+		stats?: Array<SearchApplicationQueryStats> | null;
 	}
 
 	export interface SearchApplicationQueryStats {
 
 		/** Represents a whole calendar date, for example a date of birth. The time of day and time zone are either specified elsewhere or are not significant. The date is relative to the [Proleptic Gregorian Calendar](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar). The date must be a valid calendar date between the year 1 and 9999. */
-		date?: Date;
-		queryCountByStatus?: Array<QueryCountByStatus>;
+		date?: Date | null;
+		queryCountByStatus?: Array<QueryCountByStatus> | null;
 	}
 
 	export interface GetSearchApplicationSessionStatsResponse {
-		stats?: Array<SearchApplicationSessionStats>;
+		stats?: Array<SearchApplicationSessionStats> | null;
 	}
 
 	export interface SearchApplicationSessionStats {
 
 		/** Represents a whole calendar date, for example a date of birth. The time of day and time zone are either specified elsewhere or are not significant. The date is relative to the [Proleptic Gregorian Calendar](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar). The date must be a valid calendar date between the year 1 and 9999. */
-		date?: Date;
+		date?: Date | null;
 
 		/** The count of search sessions on the day */
-		searchSessionsCount?: string;
+		searchSessionsCount?: string | null;
 	}
 
 	export interface GetSearchApplicationUserStatsResponse {
-		stats?: Array<SearchApplicationUserStats>;
+		stats?: Array<SearchApplicationUserStats> | null;
 	}
 
 	export interface SearchApplicationUserStats {
 
 		/** Represents a whole calendar date, for example a date of birth. The time of day and time zone are either specified elsewhere or are not significant. The date is relative to the [Proleptic Gregorian Calendar](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar). The date must be a valid calendar date between the year 1 and 9999. */
-		date?: Date;
+		date?: Date | null;
 
 		/** The count of unique active users in the past one day */
-		oneDayActiveUsersCount?: string;
+		oneDayActiveUsersCount?: string | null;
 
 		/** The count of unique active users in the past seven days */
-		sevenDaysActiveUsersCount?: string;
+		sevenDaysActiveUsersCount?: string | null;
 
 		/** The count of unique active users in the past thirty days */
-		thirtyDaysActiveUsersCount?: string;
+		thirtyDaysActiveUsersCount?: string | null;
 	}
 
 
@@ -865,7 +865,7 @@ export namespace MyNS {
 		 * The operator name can only contain lowercase letters (a-z).
 		 * The maximum length is 32 characters.
 		 */
-		operatorName?: string;
+		operatorName?: string | null;
 	}
 
 
@@ -877,8 +877,8 @@ export namespace MyNS {
 		 * Search operators let users restrict the query to specific fields relevant
 		 * to the type of item being searched.
 		 */
-		operatorOptions?: HtmlOperatorOptions;
-		retrievalImportance?: RetrievalImportance;
+		operatorOptions?: HtmlOperatorOptions | null;
+		retrievalImportance?: RetrievalImportance | null;
 	}
 
 	export interface RetrievalImportance {
@@ -888,7 +888,7 @@ export namespace MyNS {
 		 * during retrieval. Once set, the token importance of a property cannot be
 		 * changed.
 		 */
-		importance?: RetrievalImportanceImportance;
+		importance?: RetrievalImportanceImportance | null;
 	}
 
 	export enum RetrievalImportanceImportance { DEFAULT = 0, HIGHEST = 1, HIGH = 2, LOW = 3, NONE = 4 }
@@ -898,7 +898,7 @@ export namespace MyNS {
 	export interface HtmlValues {
 
 		/** The maximum allowable length for html values is 2048 characters. */
-		values?: Array<string>;
+		values?: Array<string> | null;
 	}
 
 	export interface IndexItemOptions {
@@ -907,7 +907,7 @@ export namespace MyNS {
 		 * Specifies if the index request should allow gsuite principals that do not
 		 * exist or are deleted in the index request.
 		 */
-		allowUnknownGsuitePrincipals?: boolean;
+		allowUnknownGsuitePrincipals?: boolean | null;
 	}
 
 	export interface IndexItemRequest {
@@ -916,20 +916,20 @@ export namespace MyNS {
 		 * Name of connector making this call.
 		 * <br />Format: datasources/{source_id}/connectors/{ID}
 		 */
-		connectorName?: string;
+		connectorName?: string | null;
 
 		/** Shared request debug options for all cloudsearch RPC methods. */
-		debugOptions?: DebugOptions;
-		indexItemOptions?: IndexItemOptions;
+		debugOptions?: DebugOptions | null;
+		indexItemOptions?: IndexItemOptions | null;
 
 		/**
 		 * Represents a single object that is an item in the search index, such as a
 		 * file, folder, or a database record.
 		 */
-		item?: Item;
+		item?: Item | null;
 
 		/** Required. The RequestMode for this request. */
-		mode?: IndexItemRequestMode;
+		mode?: IndexItemRequestMode | null;
 	}
 
 
@@ -943,16 +943,16 @@ export namespace MyNS {
 		 * Access control list information for the item. For more information see
 		 * https://developers.google.com/cloud-search/docs/guides/index-your-data#acls
 		 */
-		acl?: ItemAcl;
+		acl?: ItemAcl | null;
 
 		/** Content of an item to be indexed and surfaced by Cloud Search. */
-		content?: ItemContent;
+		content?: ItemContent | null;
 
 		/** Type for this item. */
-		itemType?: ItemItemType;
+		itemType?: ItemItemType | null;
 
 		/** Available metadata fields for the item. */
-		metadata?: ItemMetadata;
+		metadata?: ItemMetadata | null;
 
 		/**
 		 * Name of the Item. Format:
@@ -960,25 +960,25 @@ export namespace MyNS {
 		 * <br />This is a required field.
 		 * The maximum length is 1536 characters.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Additional state connector can store for this item.
 		 * The maximum length is 10000 bytes.
 		 */
-		payload?: string;
+		payload?: string | null;
 
 		/**
 		 * Queue this item belongs to.
 		 * The maximum length is 100 characters.
 		 */
-		queue?: string;
+		queue?: string | null;
 
 		/** This contains item's status and any errors. */
-		status?: ItemStatus;
+		status?: ItemStatus | null;
 
 		/** Available structured data fields for the item. */
-		structuredData?: ItemStructuredData;
+		structuredData?: ItemStructuredData | null;
 
 		/**
 		 * Required. The indexing system stores the version from the datasource as a
@@ -990,7 +990,7 @@ export namespace MyNS {
 		 * currently indexed item.
 		 * The maximum length for this field is 1024 bytes.
 		 */
-		version?: string;
+		version?: string | null;
 	}
 
 
@@ -1008,7 +1008,7 @@ export namespace MyNS {
 		 * inheritAclFrom field
 		 * is set, this field should be set to a valid AclInheritanceType.
 		 */
-		aclInheritanceType?: ItemAclAclInheritanceType;
+		aclInheritanceType?: ItemAclAclInheritanceType | null;
 
 		/**
 		 * List of principals who are explicitly denied access to the item in search
@@ -1016,7 +1016,7 @@ export namespace MyNS {
 		 * to handle exceptions and override the list allowed readers.
 		 * The maximum number of elements is 100.
 		 */
-		deniedReaders?: Array<Principal>;
+		deniedReaders?: Array<Principal> | null;
 
 		/**
 		 * Name of the item to inherit the Access Permission List (ACL) from.
@@ -1033,7 +1033,7 @@ export namespace MyNS {
 		 * field.
 		 * The maximum length for this field is 1536 characters.
 		 */
-		inheritAclFrom?: string;
+		inheritAclFrom?: string | null;
 
 		/**
 		 * Optional. List of owners for the item. This field has no bearing on
@@ -1041,7 +1041,7 @@ export namespace MyNS {
 		 * a slight ranking boosts items where the querying user is an owner.
 		 * The maximum number of elements is 5.
 		 */
-		owners?: Array<Principal>;
+		owners?: Array<Principal> | null;
 
 		/**
 		 * List of principals who are allowed to see the item in search results.
@@ -1051,7 +1051,7 @@ export namespace MyNS {
 		 * containers.
 		 * The maximum number of elements is 1000.
 		 */
-		readers?: Array<Principal>;
+		readers?: Array<Principal> | null;
 	}
 
 	export enum ItemAclAclInheritanceType { NOT_APPLICABLE = 0, CHILD_OVERRIDE = 1, PARENT_OVERRIDE = 2, BOTH_PERMIT = 3 }
@@ -1065,15 +1065,15 @@ export namespace MyNS {
 		 * The name field must specify the group resource name with this format:
 		 * identitysources/{source_id}/groups/{ID}
 		 */
-		groupResourceName?: string;
-		gsuitePrincipal?: GSuitePrincipal;
+		groupResourceName?: string | null;
+		gsuitePrincipal?: GSuitePrincipal | null;
 
 		/**
 		 * This principal is a user identified using an external identity.
 		 * The name field must specify the user resource name with this format:
 		 * identitysources/{source_id}/users/{ID}
 		 */
-		userResourceName?: string;
+		userResourceName?: string | null;
 	}
 
 
@@ -1087,21 +1087,21 @@ export namespace MyNS {
 		 * Updating of item content may refer to this uploaded content via
 		 * contentDataRef.
 		 */
-		contentDataRef?: UploadItemRef;
-		contentFormat?: ItemContentContentFormat;
+		contentDataRef?: UploadItemRef | null;
+		contentFormat?: ItemContentContentFormat | null;
 
 		/**
 		 * Hashing info calculated and provided by the API client for content.
 		 * Can be used with the items.push method to calculate modified state.
 		 * The maximum length is 2048 characters.
 		 */
-		hash?: string;
+		hash?: string | null;
 
 		/**
 		 * Content that is supplied inlined within the update method.
 		 * The maximum length is 102400 bytes (100 KiB).
 		 */
-		inlineContent?: string;
+		inlineContent?: string | null;
 	}
 
 
@@ -1118,7 +1118,7 @@ export namespace MyNS {
 		 * Name of the content reference.
 		 * The maximum length is 2048 characters.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 	export enum ItemContentContentFormat { UNSPECIFIED = 0, HTML = 1, TEXT = 2, RAW = 3 }
@@ -1137,7 +1137,7 @@ export namespace MyNS {
 		 * inheritAclFrom
 		 * field. The maximum length is 1536 characters.
 		 */
-		containerName?: string;
+		containerName?: string | null;
 
 		/**
 		 * The BCP-47 language code for the item, such as "en-US" or "sr-Latn". For
@@ -1145,10 +1145,10 @@ export namespace MyNS {
 		 * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
 		 * The maximum length is 32 characters.
 		 */
-		contentLanguage?: string;
+		contentLanguage?: string | null;
 
 		/** The time when the item was created in the source repository. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Hashing value provided by the API caller.
@@ -1157,14 +1157,14 @@ export namespace MyNS {
 		 * method to calculate modified state.
 		 * The maximum length is 2048 characters.
 		 */
-		hash?: string;
+		hash?: string | null;
 
 		/**
 		 * A list of interactions for the item.  Interactions are used to improve
 		 * Search quality, but are not exposed to end users.
 		 * The maximum number of elements is 1000.
 		 */
-		interactions?: Array<Interaction>;
+		interactions?: Array<Interaction> | null;
 
 		/**
 		 * Additional keywords or phrases that should match the item.
@@ -1172,7 +1172,7 @@ export namespace MyNS {
 		 * The maximum number of elements is 100.
 		 * The maximum length is 8192 characters.
 		 */
-		keywords?: Array<string>;
+		keywords?: Array<string> | null;
 
 		/**
 		 * The original mime-type of
@@ -1180,7 +1180,7 @@ export namespace MyNS {
 		 * in the source repository.
 		 * The maximum length is 256 characters.
 		 */
-		mimeType?: string;
+		mimeType?: string | null;
 
 		/**
 		 * The type of the item.  This should correspond to the name of an object
@@ -1190,10 +1190,10 @@ export namespace MyNS {
 		 * objectType to 'document'.
 		 * The maximum length is 256 characters.
 		 */
-		objectType?: string;
+		objectType?: string | null;
 
 		/** Additional search quality metadata of the item. */
-		searchQualityMetadata?: SearchQualityMetadata;
+		searchQualityMetadata?: SearchQualityMetadata | null;
 
 		/**
 		 * Link to the source repository serving the data.  &#83;earch results apply
@@ -1202,17 +1202,17 @@ export namespace MyNS {
 		 * trigger a redirect notice; to avoid this, encode the URL.
 		 * The maximum length is 2048 characters.
 		 */
-		sourceRepositoryUrl?: string;
+		sourceRepositoryUrl?: string | null;
 
 		/**
 		 * The title of the item.  If given, this will be the displayed title of the
 		 * Search result.
 		 * The maximum length is 2048 characters.
 		 */
-		title?: string;
+		title?: string | null;
 
 		/** The time when the item was last modified in the source repository. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -1223,11 +1223,11 @@ export namespace MyNS {
 		 * The time when the user acted on the item.  If multiple actions of the same
 		 * type exist for a single user, only the most recent action is recorded.
 		 */
-		interactionTime?: string;
+		interactionTime?: string | null;
 
 		/** Reference to a user, group, or domain. */
-		principal?: Principal;
-		type?: InteractionType;
+		principal?: Principal | null;
+		type?: InteractionType | null;
 	}
 
 	export enum InteractionType { UNSPECIFIED = 0, VIEW = 1, EDIT = 2 }
@@ -1241,7 +1241,7 @@ export namespace MyNS {
 		 * Value should be between 0.0 (lowest quality) and 1.0 (highest quality). The
 		 * default value is 0.0.
 		 */
-		quality?: number;
+		quality?: number | null;
 	}
 
 
@@ -1249,28 +1249,28 @@ export namespace MyNS {
 	export interface ItemStatus {
 
 		/** Status code. */
-		code?: ItemCountByStatusStatusCode;
+		code?: ItemCountByStatusStatusCode | null;
 
 		/** Error details in case the item is in ERROR state. */
-		processingErrors?: Array<ProcessingError>;
+		processingErrors?: Array<ProcessingError> | null;
 
 		/** Repository error reported by connector. */
-		repositoryErrors?: Array<RepositoryError>;
+		repositoryErrors?: Array<RepositoryError> | null;
 	}
 
 	export interface ProcessingError {
 
 		/** Error code indicating the nature of the error. */
-		code?: ProcessingErrorCode;
+		code?: ProcessingErrorCode | null;
 
 		/** Description of the error. */
-		errorMessage?: string;
+		errorMessage?: string | null;
 
 		/**
 		 * In case the item fields are invalid, this field contains the details
 		 * about the validation errors.
 		 */
-		fieldViolations?: Array<FieldViolation>;
+		fieldViolations?: Array<FieldViolation> | null;
 	}
 
 	export enum ProcessingErrorCode { PROCESSING_ERROR_CODE_UNSPECIFIED = 0, MALFORMED_REQUEST = 1, UNSUPPORTED_CONTENT_FORMAT = 2, INDIRECT_BROKEN_ACL = 3, ACL_CYCLE = 4 }
@@ -1283,13 +1283,13 @@ export namespace MyNS {
 		 * Message that describes the error. The maximum allowable length
 		 * of the message is 8192 characters.
 		 */
-		errorMessage?: string;
+		errorMessage?: string | null;
 
 		/** Error codes.  Matches the definition of HTTP status codes. */
-		httpStatusCode?: number;
+		httpStatusCode?: number | null;
 
 		/** Type of error. */
-		type?: RepositoryErrorType;
+		type?: RepositoryErrorType | null;
 	}
 
 	export enum RepositoryErrorType { UNKNOWN = 0, NETWORK_ERROR = 1, DNS_ERROR = 2, CONNECTION_ERROR = 3, AUTHENTICATION_ERROR = 4, AUTHORIZATION_ERROR = 5, SERVER_ERROR = 6, QUOTA_EXCEEDED = 7, SERVICE_UNAVAILABLE = 8, CLIENT_ERROR = 9 }
@@ -1305,10 +1305,10 @@ export namespace MyNS {
 		 * method to calculate modified state.
 		 * The maximum length is 2048 characters.
 		 */
-		hash?: string;
+		hash?: string | null;
 
 		/** A structured data object consisting of named properties. */
-		object?: StructuredDataObject;
+		object?: StructuredDataObject | null;
 	}
 
 
@@ -1319,7 +1319,7 @@ export namespace MyNS {
 		 * The properties for the object.
 		 * The maximum number of elements is 1000.
 		 */
-		properties?: Array<NamedProperty>;
+		properties?: Array<NamedProperty> | null;
 	}
 
 
@@ -1329,50 +1329,50 @@ export namespace MyNS {
 	 * definition of `objectType`.
 	 */
 	export interface NamedProperty {
-		booleanValue?: boolean;
+		booleanValue?: boolean | null;
 
 		/** List of date values. */
-		dateValues?: DateValues;
+		dateValues?: DateValues | null;
 
 		/** List of double values. */
-		doubleValues?: DoubleValues;
+		doubleValues?: DoubleValues | null;
 
 		/** List of enum values. */
-		enumValues?: EnumValues;
+		enumValues?: EnumValues | null;
 
 		/** List of html values. */
-		htmlValues?: HtmlValues;
+		htmlValues?: HtmlValues | null;
 
 		/** List of integer values. */
-		integerValues?: IntegerValues;
+		integerValues?: IntegerValues | null;
 
 		/**
 		 * The name of the property.  This name should correspond to the name of the
 		 * property that was registered for object definition in the schema.
 		 * The maximum allowable length for this property is 256 characters.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** List of object values. */
-		objectValues?: ObjectValues;
+		objectValues?: ObjectValues | null;
 
 		/** List of text values. */
-		textValues?: TextValues;
+		textValues?: TextValues | null;
 
 		/** List of timestamp values. */
-		timestampValues?: TimestampValues;
+		timestampValues?: TimestampValues | null;
 	}
 
 
 	/** List of integer values. */
 	export interface IntegerValues {
-		values?: Array<string>;
+		values?: Array<string> | null;
 	}
 
 
 	/** List of object values. */
 	export interface ObjectValues {
-		values?: Array<StructuredDataObject>;
+		values?: Array<StructuredDataObject> | null;
 	}
 
 
@@ -1380,13 +1380,13 @@ export namespace MyNS {
 	export interface TextValues {
 
 		/** The maximum allowable length for text values is 2048 characters. */
-		values?: Array<string>;
+		values?: Array<string> | null;
 	}
 
 
 	/** List of timestamp values. */
 	export interface TimestampValues {
-		values?: Array<string>;
+		values?: Array<string> | null;
 	}
 
 	export enum IndexItemRequestMode { UNSPECIFIED = 0, SYNCHRONOUS = 1, ASYNCHRONOUS = 2 }
@@ -1409,7 +1409,7 @@ export namespace MyNS {
 		 * The operator name can only contain lowercase letters (a-z).
 		 * The maximum length is 32 characters.
 		 */
-		greaterThanOperatorName?: string;
+		greaterThanOperatorName?: string | null;
 
 		/**
 		 * Indicates the operator name required in the query in order to isolate the
@@ -1421,7 +1421,7 @@ export namespace MyNS {
 		 * The operator name can only contain lowercase letters (a-z).
 		 * The maximum length is 32 characters.
 		 */
-		lessThanOperatorName?: string;
+		lessThanOperatorName?: string | null;
 
 		/**
 		 * Indicates the operator name required in the query in order to isolate the
@@ -1435,7 +1435,7 @@ export namespace MyNS {
 		 * The operator name can only contain lowercase letters (a-z).
 		 * The maximum length is 32 characters.
 		 */
-		operatorName?: string;
+		operatorName?: string | null;
 	}
 
 
@@ -1449,7 +1449,7 @@ export namespace MyNS {
 		 * Indexing requests with values greater than the maximum are accepted and
 		 * ranked with the same weight as items indexed with the maximum value.
 		 */
-		maximumValue?: string;
+		maximumValue?: string | null;
 
 		/**
 		 * The minimum value of the property. The minimum and maximum values for the
@@ -1458,21 +1458,21 @@ export namespace MyNS {
 		 * Indexing requests with values less than the minimum are accepted and
 		 * ranked with the same weight as items indexed with the minimum value.
 		 */
-		minimumValue?: string;
+		minimumValue?: string | null;
 
 		/**
 		 * Used to provide a search operator for integer properties. This is
 		 * optional. Search operators let users restrict the query to specific fields
 		 * relevant to the type of item being searched.
 		 */
-		operatorOptions?: IntegerOperatorOptions;
+		operatorOptions?: IntegerOperatorOptions | null;
 
 		/**
 		 * Used to specify the ordered ranking for the integer. Can only be used if
 		 * isRepeatable
 		 * is false.
 		 */
-		orderedRanking?: EnumPropertyOptionsOrderedRanking;
+		orderedRanking?: EnumPropertyOptionsOrderedRanking | null;
 	}
 
 	export interface ListDataSourceResponse {
@@ -1481,35 +1481,35 @@ export namespace MyNS {
 		 * Token to retrieve the next page of results, or empty if there are no
 		 * more results in the list.
 		 */
-		nextPageToken?: string;
-		sources?: Array<DataSource>;
+		nextPageToken?: string | null;
+		sources?: Array<DataSource> | null;
 	}
 
 	export interface ListItemNamesForUnmappedIdentityResponse {
-		itemNames?: Array<string>;
+		itemNames?: Array<string> | null;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no
 		 * more results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	export interface ListItemsResponse {
-		items?: Array<Item>;
+		items?: Array<Item> | null;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no
 		 * more results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
 	/** List sources response. */
 	export interface ListQuerySourcesResponse {
-		nextPageToken?: string;
-		sources?: Array<QuerySource>;
+		nextPageToken?: string | null;
+		sources?: Array<QuerySource> | null;
 	}
 
 
@@ -1517,19 +1517,19 @@ export namespace MyNS {
 	export interface QuerySource {
 
 		/** Display name of the data source. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** List of all operators applicable for this source. */
-		operators?: Array<QueryOperator>;
+		operators?: Array<QueryOperator> | null;
 
 		/**
 		 * A short name or alias for the source.  This value can be used with the
 		 * 'source' operator.
 		 */
-		shortName?: string;
+		shortName?: string | null;
 
 		/** Defines sources for the suggest/search APIs. */
-		source?: Source;
+		source?: Source | null;
 	}
 
 
@@ -1537,55 +1537,55 @@ export namespace MyNS {
 	export interface QueryOperator {
 
 		/** Display name of the operator */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Potential list of values for the opeatror field. This field is only filled
 		 * when we can safely enumerate all the possible values of this operator.
 		 */
-		enumValues?: Array<string>;
+		enumValues?: Array<string> | null;
 
 		/**
 		 * Indicates the operator name that can be used to  isolate the property using
 		 * the greater-than operator.
 		 */
-		greaterThanOperatorName?: string;
+		greaterThanOperatorName?: string | null;
 
 		/** Can this operator be used to get facets. */
-		isFacetable?: boolean;
+		isFacetable?: boolean | null;
 
 		/** Indicates if multiple values can be set for this property. */
-		isRepeatable?: boolean;
+		isRepeatable?: boolean | null;
 
 		/**
 		 * Will the property associated with this facet be returned as part of search
 		 * results.
 		 */
-		isReturnable?: boolean;
+		isReturnable?: boolean | null;
 
 		/** Can this operator be used to sort results. */
-		isSortable?: boolean;
+		isSortable?: boolean | null;
 
 		/** Can get suggestions for this field. */
-		isSuggestable?: boolean;
+		isSuggestable?: boolean | null;
 
 		/**
 		 * Indicates the operator name that can be used to  isolate the property using
 		 * the less-than operator.
 		 */
-		lessThanOperatorName?: string;
+		lessThanOperatorName?: string | null;
 
 		/**
 		 * Name of the object corresponding to the operator. This field is only filled
 		 * for schema-specific operators, and is unset for common operators.
 		 */
-		objectType?: string;
+		objectType?: string | null;
 
 		/** The name of the operator. */
-		operatorName?: string;
+		operatorName?: string | null;
 
 		/** Type of the operator. */
-		type?: QueryOperatorType;
+		type?: QueryOperatorType | null;
 	}
 
 	export enum QueryOperatorType { UNKNOWN = 0, INTEGER = 1, DOUBLE = 2, TIMESTAMP = 3, BOOLEAN = 4, ENUM = 5, DATE = 6, TEXT = 7, HTML = 8 }
@@ -1596,8 +1596,8 @@ export namespace MyNS {
 		 * Token to retrieve the next page of results, or empty if there are no
 		 * more results in the list.
 		 */
-		nextPageToken?: string;
-		searchApplications?: Array<SearchApplication>;
+		nextPageToken?: string | null;
+		searchApplications?: Array<SearchApplication> | null;
 	}
 
 
@@ -1608,7 +1608,7 @@ export namespace MyNS {
 		 * Retrictions applied to the configurations.
 		 * The maximum number of elements is 10.
 		 */
-		dataSourceRestrictions?: Array<DataSourceRestriction>;
+		dataSourceRestrictions?: Array<DataSourceRestriction> | null;
 
 		/**
 		 * The default fields for returning facet results.
@@ -1616,36 +1616,36 @@ export namespace MyNS {
 		 * data_source_restrictions
 		 * above.
 		 */
-		defaultFacetOptions?: Array<FacetOptions>;
-		defaultSortOptions?: SortOptions;
+		defaultFacetOptions?: Array<FacetOptions> | null;
+		defaultSortOptions?: SortOptions | null;
 
 		/**
 		 * Display name of the Search Application.
 		 * The maximum length is 300 characters.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Name of the Search Application.
 		 * <br />Format: searchapplications/{application_id}.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * IDs of the Long Running Operations (LROs) currently running for this
 		 * schema. Output only field.
 		 */
-		operationIds?: Array<string>;
+		operationIds?: Array<string> | null;
 
 		/**
 		 * Scoring configurations for a source while processing a
 		 * Search or
 		 * Suggest request.
 		 */
-		scoringConfig?: ScoringConfig;
+		scoringConfig?: ScoringConfig | null;
 
 		/** Configuration for a sources specified in data_source_restrictions. */
-		sourceConfig?: Array<SourceConfig>;
+		sourceConfig?: Array<SourceConfig> | null;
 	}
 
 	export interface SortOptions {
@@ -1655,10 +1655,10 @@ export namespace MyNS {
 		 * The corresponding property must be marked as
 		 * sortable.
 		 */
-		operatorName?: string;
+		operatorName?: string | null;
 
 		/** Ascending is the default sort order */
-		sortOrder?: SortOptionsSortOrder;
+		sortOrder?: SortOptionsSortOrder | null;
 	}
 
 	export enum SortOptionsSortOrder { ASCENDING = 0, DESCENDING = 1 }
@@ -1676,13 +1676,13 @@ export namespace MyNS {
 		 * as a ranking signal. Note that this setting is not available in the Admin
 		 * UI.
 		 */
-		disableFreshness?: boolean;
+		disableFreshness?: boolean | null;
 
 		/**
 		 * Whether to personalize the results. By default, personal signals will
 		 * be used to boost results.
 		 */
-		disablePersonalization?: boolean;
+		disablePersonalization?: boolean | null;
 	}
 
 
@@ -1700,16 +1700,16 @@ export namespace MyNS {
 		 * and source diversity in search results, you can set a condition to reduce
 		 * repetitive results by source.
 		 */
-		crowdingConfig?: SourceCrowdingConfig;
+		crowdingConfig?: SourceCrowdingConfig | null;
 
 		/**
 		 * Set the scoring configuration. This allows modifying the ranking of results
 		 * for a source.
 		 */
-		scoringConfig?: SourceScoringConfig;
+		scoringConfig?: SourceScoringConfig | null;
 
 		/** Defines sources for the suggest/search APIs. */
-		source?: Source;
+		source?: Source | null;
 	}
 
 
@@ -1726,13 +1726,13 @@ export namespace MyNS {
 		 * Maximum number of results allowed from a source.
 		 * No limits will be set on results if this value is less than or equal to 0.
 		 */
-		numResults?: number;
+		numResults?: number | null;
 
 		/**
 		 * Maximum number of suggestions allowed from a source.
 		 * No limits will be set on results if this value is less than or equal to 0.
 		 */
-		numSuggestions?: number;
+		numSuggestions?: number | null;
 	}
 
 
@@ -1743,7 +1743,7 @@ export namespace MyNS {
 	export interface SourceScoringConfig {
 
 		/** Importance of the source. */
-		sourceImportance?: SourceScoringConfigSourceImportance;
+		sourceImportance?: SourceScoringConfigSourceImportance | null;
 	}
 
 	export enum SourceScoringConfigSourceImportance { DEFAULT = 0, LOW = 1, HIGH = 2 }
@@ -1754,17 +1754,17 @@ export namespace MyNS {
 		 * Token to retrieve the next page of results, or empty if there are no
 		 * more results in the list.
 		 */
-		nextPageToken?: string;
-		unmappedIdentities?: Array<UnmappedIdentity>;
+		nextPageToken?: string | null;
+		unmappedIdentities?: Array<UnmappedIdentity> | null;
 	}
 
 	export interface UnmappedIdentity {
 
 		/** Reference to a user, group, or domain. */
-		externalIdentity?: Principal;
+		externalIdentity?: Principal | null;
 
 		/** The resolution status for the external identity. */
-		resolutionStatusCode?: UnmappedIdentityResolutionStatusCode;
+		resolutionStatusCode?: UnmappedIdentityResolutionStatusCode | null;
 	}
 
 	export enum UnmappedIdentityResolutionStatusCode { CODE_UNSPECIFIED = 0, NOT_FOUND = 1, IDENTITY_SOURCE_NOT_FOUND = 2, IDENTITY_SOURCE_MISCONFIGURED = 3, TOO_MANY_MAPPINGS_FOUND = 4, INTERNAL_ERROR = 5 }
@@ -1774,10 +1774,10 @@ export namespace MyNS {
 	export interface MatchRange {
 
 		/** End of the match in the snippet. */
-		end?: number;
+		end?: number | null;
 
 		/** Starting position of the match in the snippet. */
-		start?: number;
+		start?: number | null;
 	}
 
 
@@ -1785,7 +1785,7 @@ export namespace MyNS {
 	export interface Media {
 
 		/** Name of the media resource. */
-		resourceName?: string;
+		resourceName?: string | null;
 	}
 
 
@@ -1793,23 +1793,23 @@ export namespace MyNS {
 	export interface Metadata {
 
 		/** The creation time for this document or object in the search result. */
-		createTime?: string;
-		displayOptions?: ResultDisplayMetadata;
+		createTime?: string | null;
+		displayOptions?: ResultDisplayMetadata | null;
 
 		/** Indexed fields in structured data, returned as a generic named property. */
-		fields?: Array<NamedProperty>;
+		fields?: Array<NamedProperty> | null;
 
 		/** Mime type of the search result. */
-		mimeType?: string;
+		mimeType?: string | null;
 
 		/** Object type of the search result. */
-		objectType?: string;
+		objectType?: string | null;
 
 		/** Object to represent a person. */
-		owner?: Person;
+		owner?: Person | null;
 
 		/** Defines sources for the suggest/search APIs. */
-		source?: Source;
+		source?: Source | null;
 
 		/**
 		 * The last modified date for the object in the search result. If not
@@ -1817,22 +1817,22 @@ export namespace MyNS {
 		 * `updateTime` is used for calculating freshness and is not set, this
 		 * value defaults to 2 years from the current time.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 	export interface ResultDisplayMetadata {
 
 		/** The metalines content to be displayed with the result. */
-		metalines?: Array<ResultDisplayLine>;
+		metalines?: Array<ResultDisplayLine> | null;
 
 		/** The display label for the object. */
-		objectTypeLabel?: string;
+		objectTypeLabel?: string | null;
 	}
 
 
 	/** The collection of fields that make up a displayed line */
 	export interface ResultDisplayLine {
-		fields?: Array<ResultDisplayField>;
+		fields?: Array<ResultDisplayField> | null;
 	}
 
 
@@ -1840,17 +1840,17 @@ export namespace MyNS {
 	export interface ResultDisplayField {
 
 		/** The display label for the property. */
-		label?: string;
+		label?: string | null;
 
 		/** The operator name of the property. */
-		operatorName?: string;
+		operatorName?: string | null;
 
 		/**
 		 * A typed name-value pair for structured data.  The type of the value should
 		 * be the same as the registered type for the `name` property in the object
 		 * definition of `objectType`.
 		 */
-		property?: NamedProperty;
+		property?: NamedProperty | null;
 	}
 
 
@@ -1858,26 +1858,26 @@ export namespace MyNS {
 	export interface Person {
 
 		/** The person's email addresses */
-		emailAddresses?: Array<EmailAddress>;
+		emailAddresses?: Array<EmailAddress> | null;
 
 		/**
 		 * The resource name of the person to provide information about.
 		 * See <a href="https://developers.google.com/people/api/rest/v1/people/get">
 		 * People.get</a> from Google People API.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Obfuscated ID of a person. */
-		obfuscatedId?: string;
+		obfuscatedId?: string | null;
 
 		/** The person's name */
-		personNames?: Array<Name>;
+		personNames?: Array<Name> | null;
 
 		/**
 		 * A person's read-only photo. A picture shown next to the person's name to
 		 * help others recognize the person in search results.
 		 */
-		photos?: Array<Photo>;
+		photos?: Array<Photo> | null;
 	}
 
 
@@ -1888,7 +1888,7 @@ export namespace MyNS {
 		 * The read-only display name formatted according to the locale specified by
 		 * the viewer's account or the <code>Accept-Language</code> HTTP header.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 	}
 
 
@@ -1896,7 +1896,7 @@ export namespace MyNS {
 	export interface Photo {
 
 		/** The URL of the photo. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -1910,7 +1910,7 @@ export namespace MyNS {
 		 * The list of displayed properties for the metaline. The maximum number of
 		 * properties is 5.
 		 */
-		properties?: Array<DisplayedProperty>;
+		properties?: Array<DisplayedProperty> | null;
 	}
 
 
@@ -1929,16 +1929,16 @@ export namespace MyNS {
 		 * or numbers (0-9).
 		 * The maximum length is 256 characters.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The options for an object. */
-		options?: ObjectOptions;
+		options?: ObjectOptions | null;
 
 		/**
 		 * The property definitions for the object.
 		 * The maximum number of elements is 1000.
 		 */
-		propertyDefinitions?: Array<PropertyDefinition>;
+		propertyDefinitions?: Array<PropertyDefinition> | null;
 	}
 
 
@@ -1946,7 +1946,7 @@ export namespace MyNS {
 	export interface ObjectOptions {
 
 		/** The display options for an object. */
-		displayOptions?: ObjectDisplayOptions;
+		displayOptions?: ObjectDisplayOptions | null;
 
 		/**
 		 * Indicates which freshness property to use when adjusting search ranking for
@@ -1957,7 +1957,7 @@ export namespace MyNS {
 		 * this way, calendar events that occur closer to the time of the search query
 		 * are considered higher quality and ranked accordingly.
 		 */
-		freshnessOptions?: FreshnessOptions;
+		freshnessOptions?: FreshnessOptions | null;
 	}
 
 
@@ -1974,7 +1974,7 @@ export namespace MyNS {
 		 * is_returnable
 		 * to true. The maximum number of metalines is 3.
 		 */
-		metalines?: Array<Metaline>;
+		metalines?: Array<Metaline> | null;
 
 		/**
 		 * The user friendly label to display in the search result to indicate the
@@ -1982,7 +1982,7 @@ export namespace MyNS {
 		 * displayed on the context line of the search results. The maximum length
 		 * is 32 characters.
 		 */
-		objectDisplayLabel?: string;
+		objectDisplayLabel?: string | null;
 	}
 
 
@@ -1990,16 +1990,16 @@ export namespace MyNS {
 	export interface PropertyDefinition {
 
 		/** Options for boolean properties. */
-		booleanPropertyOptions?: BooleanPropertyOptions;
+		booleanPropertyOptions?: BooleanPropertyOptions | null;
 
 		/** Options for date properties. */
-		datePropertyOptions?: DatePropertyOptions;
+		datePropertyOptions?: DatePropertyOptions | null;
 
 		/** The display options for a property. */
-		displayOptions?: PropertyDisplayOptions;
+		displayOptions?: PropertyDisplayOptions | null;
 
 		/** Options for double properties. */
-		doublePropertyOptions?: DoublePropertyOptions;
+		doublePropertyOptions?: DoublePropertyOptions | null;
 
 		/**
 		 * Options for enum properties, which allow you to define a restricted set of
@@ -2011,13 +2011,13 @@ export namespace MyNS {
 		 * that search users could add *priority:p0* to their query to restrict the set
 		 * of results to only those items indexed with the value *p0*.
 		 */
-		enumPropertyOptions?: EnumPropertyOptions;
+		enumPropertyOptions?: EnumPropertyOptions | null;
 
 		/** Options for html properties. */
-		htmlPropertyOptions?: HtmlPropertyOptions;
+		htmlPropertyOptions?: HtmlPropertyOptions | null;
 
 		/** Options for integer properties. */
-		integerPropertyOptions?: IntegerPropertyOptions;
+		integerPropertyOptions?: IntegerPropertyOptions | null;
 
 		/**
 		 * Indicates that the property can be used for generating facets. Cannot be
@@ -2025,7 +2025,7 @@ export namespace MyNS {
 		 * this option.
 		 * Only supported for Boolean, Enum, and Text properties.
 		 */
-		isFacetable?: boolean;
+		isFacetable?: boolean | null;
 
 		/**
 		 * Indicates that multiple values are allowed for the property. For example, a
@@ -2034,7 +2034,7 @@ export namespace MyNS {
 		 * If set to false, properties that contain more than one value cause the
 		 * indexing request for that item to be rejected.
 		 */
-		isRepeatable?: boolean;
+		isRepeatable?: boolean | null;
 
 		/**
 		 * Indicates that the property identifies data that should be returned in
@@ -2045,7 +2045,7 @@ export namespace MyNS {
 		 * only if the field is needed for search results. Cannot be true for
 		 * properties whose type is an object.
 		 */
-		isReturnable?: boolean;
+		isReturnable?: boolean | null;
 
 		/**
 		 * Indicates that the property can be used for sorting. Cannot be true for
@@ -2054,10 +2054,10 @@ export namespace MyNS {
 		 * Only supported for Boolean, Date, Double, Integer, and Timestamp
 		 * properties.
 		 */
-		isSortable?: boolean;
+		isSortable?: boolean | null;
 
 		/** Indicates that the property can be used for generating query suggestions. */
-		isSuggestable?: boolean;
+		isSuggestable?: boolean | null;
 
 		/**
 		 * Indicates that users can perform wildcard search for this
@@ -2065,7 +2065,7 @@ export namespace MyNS {
 		 * set this option. In a given datasource maximum of 5 properties can be
 		 * marked as is_wildcard_searchable.
 		 */
-		isWildcardSearchable?: boolean;
+		isWildcardSearchable?: boolean | null;
 
 		/**
 		 * The name of the property. Item indexing requests sent to the Indexing API
@@ -2080,16 +2080,16 @@ export namespace MyNS {
 		 * or numbers (0-9).
 		 * The maximum length is 256 characters.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Options for object properties. */
-		objectPropertyOptions?: ObjectPropertyOptions;
+		objectPropertyOptions?: ObjectPropertyOptions | null;
 
 		/** Options for text properties. */
-		textPropertyOptions?: TextPropertyOptions;
+		textPropertyOptions?: TextPropertyOptions | null;
 
 		/** Options for timestamp properties. */
-		timestampPropertyOptions?: TimestampPropertyOptions;
+		timestampPropertyOptions?: TimestampPropertyOptions | null;
 	}
 
 
@@ -2107,7 +2107,7 @@ export namespace MyNS {
 		 * OPTIONAL; if not given, only the property values are displayed.
 		 * The maximum length is 32 characters.
 		 */
-		displayLabel?: string;
+		displayLabel?: string | null;
 	}
 
 
@@ -2120,7 +2120,7 @@ export namespace MyNS {
 		 * subobjectProperties might be named *street*, *city*, and *state*.
 		 * The maximum number of elements is 1000.
 		 */
-		subobjectProperties?: Array<PropertyDefinition>;
+		subobjectProperties?: Array<PropertyDefinition> | null;
 	}
 
 
@@ -2132,8 +2132,8 @@ export namespace MyNS {
 		 * Search operators let users restrict the query to specific fields relevant
 		 * to the type of item being searched.
 		 */
-		operatorOptions?: TextOperatorOptions;
-		retrievalImportance?: RetrievalImportance;
+		operatorOptions?: TextOperatorOptions | null;
+		retrievalImportance?: RetrievalImportance | null;
 	}
 
 
@@ -2155,7 +2155,7 @@ export namespace MyNS {
 		 * "science-fiction" the queries "genre:science" and "genre:fiction"
 		 * matches the item.
 		 */
-		exactMatchWithOperator?: boolean;
+		exactMatchWithOperator?: boolean | null;
 
 		/**
 		 * Indicates the operator name required in the query in order to isolate the
@@ -2169,7 +2169,7 @@ export namespace MyNS {
 		 * The operator name can only contain lowercase letters (a-z).
 		 * The maximum length is 32 characters.
 		 */
-		operatorName?: string;
+		operatorName?: string | null;
 	}
 
 
@@ -2181,7 +2181,7 @@ export namespace MyNS {
 		 * optional. Search operators let users restrict the query to specific fields
 		 * relevant to the type of item being searched.
 		 */
-		operatorOptions?: TimestampOperatorOptions;
+		operatorOptions?: TimestampOperatorOptions | null;
 	}
 
 
@@ -2202,7 +2202,7 @@ export namespace MyNS {
 		 * The operator name can only contain lowercase letters (a-z).
 		 * The maximum length is 32 characters.
 		 */
-		greaterThanOperatorName?: string;
+		greaterThanOperatorName?: string | null;
 
 		/**
 		 * Indicates the operator name required in the query in order to isolate the
@@ -2214,7 +2214,7 @@ export namespace MyNS {
 		 * The operator name can only contain lowercase letters (a-z).
 		 * The maximum length is 32 characters.
 		 */
-		lessThanOperatorName?: string;
+		lessThanOperatorName?: string | null;
 
 		/**
 		 * Indicates the operator name required in the query in order to isolate the
@@ -2228,7 +2228,7 @@ export namespace MyNS {
 		 * name can only contain lowercase letters (a-z). The maximum length is 32
 		 * characters.
 		 */
-		operatorName?: string;
+		operatorName?: string | null;
 	}
 
 
@@ -2243,7 +2243,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -2253,7 +2253,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -2261,14 +2261,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -2280,7 +2280,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -2295,20 +2295,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -2316,7 +2316,7 @@ export namespace MyNS {
 	export interface PeopleSuggestion {
 
 		/** Object to represent a person. */
-		person?: Person;
+		person?: Person | null;
 	}
 
 	export interface PollItemsRequest {
@@ -2325,26 +2325,26 @@ export namespace MyNS {
 		 * Name of connector making this call.
 		 * <br />Format: datasources/{source_id}/connectors/{ID}
 		 */
-		connectorName?: string;
+		connectorName?: string | null;
 
 		/** Shared request debug options for all cloudsearch RPC methods. */
-		debugOptions?: DebugOptions;
+		debugOptions?: DebugOptions | null;
 
 		/**
 		 * Maximum number of items to return.
 		 * <br />The maximum value is 100 and the default value is 20.
 		 */
-		limit?: number;
+		limit?: number | null;
 
 		/**
 		 * Queue name to fetch items from.  If unspecified, PollItems will
 		 * fetch from 'default' queue.
 		 * The maximum length is 100 characters.
 		 */
-		queue?: string;
+		queue?: string | null;
 
 		/** Limit the items polled to the ones with these statuses. */
-		statusCodes?: Array<ItemCountByStatusStatusCode>;
+		statusCodes?: Array<ItemCountByStatusStatusCode> | null;
 	}
 
 	export interface PollItemsResponse {
@@ -2360,7 +2360,7 @@ export namespace MyNS {
 		 * <br />status
 		 * <br />queue
 		 */
-		items?: Array<Item>;
+		items?: Array<Item> | null;
 	}
 
 
@@ -2375,7 +2375,7 @@ export namespace MyNS {
 		 * error.
 		 * The maximum length is 2048 characters.
 		 */
-		contentHash?: string;
+		contentHash?: string | null;
 
 		/**
 		 * Metadata hash of the item according to the repository. If specified, this
@@ -2385,24 +2385,24 @@ export namespace MyNS {
 		 * error.
 		 * The maximum length is 2048 characters.
 		 */
-		metadataHash?: string;
+		metadataHash?: string | null;
 
 		/**
 		 * Provides additional document state information for the connector,
 		 * such as an alternate repository ID and other metadata.
 		 * The maximum length is 8192 bytes.
 		 */
-		payload?: string;
+		payload?: string | null;
 
 		/**
 		 * Queue to which this item belongs to.  The <code>default</code> queue is
 		 * chosen if this field is not specified. The maximum length is
 		 * 512 characters.
 		 */
-		queue?: string;
+		queue?: string | null;
 
 		/** Errors when the connector is communicating to the source repository. */
-		repositoryError?: RepositoryError;
+		repositoryError?: RepositoryError | null;
 
 		/**
 		 * Structured data hash of the item according to the repository. If specified,
@@ -2411,10 +2411,10 @@ export namespace MyNS {
 		 * results in argument error.
 		 * The maximum length is 2048 characters.
 		 */
-		structuredDataHash?: string;
+		structuredDataHash?: string | null;
 
 		/** The type of the push operation that defines the push behavior. */
-		type?: PushItemType;
+		type?: PushItemType | null;
 	}
 
 	export enum PushItemType { UNSPECIFIED = 0, MODIFIED = 1, NOT_MODIFIED = 2, REPOSITORY_ERROR = 3, REQUEUE = 4 }
@@ -2425,17 +2425,17 @@ export namespace MyNS {
 		 * Name of connector making this call.
 		 * <br />Format: datasources/{source_id}/connectors/{ID}
 		 */
-		connectorName?: string;
+		connectorName?: string | null;
 
 		/** Shared request debug options for all cloudsearch RPC methods. */
-		debugOptions?: DebugOptions;
+		debugOptions?: DebugOptions | null;
 
 		/** Represents an item to be pushed to the indexing queue. */
-		item?: PushItem;
+		item?: PushItem | null;
 	}
 
 	export interface QueryInterpretation {
-		interpretationType?: QueryInterpretationInterpretationType;
+		interpretationType?: QueryInterpretationInterpretationType | null;
 
 		/**
 		 * The interpretation of the query used in search. For example, queries with
@@ -2443,13 +2443,13 @@ export namespace MyNS {
 		 * "from:john source:mail". This field will not be filled when the reason is
 		 * NOT_ENOUGH_RESULTS_FOUND_FOR_USER_QUERY.
 		 */
-		interpretedQuery?: string;
+		interpretedQuery?: string | null;
 
 		/**
 		 * The reason for interpretation of the query. This field will not be
 		 * UNSPECIFIED if the interpretation type is not NONE.
 		 */
-		reason?: QueryInterpretationReason;
+		reason?: QueryInterpretationReason | null;
 	}
 
 	export enum QueryInterpretationInterpretationType { NONE = 0, BLEND = 1, REPLACE = 2 }
@@ -2465,7 +2465,7 @@ export namespace MyNS {
 		 * false, Set to true to disable natural language interpretation. NL
 		 * interpretation only applies to predefined datasources.
 		 */
-		disableNlInterpretation?: boolean;
+		disableNlInterpretation?: boolean | null;
 
 		/**
 		 * Enable this flag to turn off all internal optimizations like natural
@@ -2473,7 +2473,7 @@ export namespace MyNS {
 		 * and usage of synonyms including custom ones.
 		 * Nl interpretation will be disabled if either one of the two flags is true.
 		 */
-		enableVerbatimMode?: boolean;
+		enableVerbatimMode?: boolean | null;
 	}
 
 
@@ -2481,7 +2481,7 @@ export namespace MyNS {
 	export interface QueryItem {
 
 		/** True if the text was generated by means other than a previous user search. */
-		isSynthetic?: boolean;
+		isSynthetic?: boolean | null;
 	}
 
 
@@ -2497,7 +2497,7 @@ export namespace MyNS {
 	export interface RequestOptions {
 
 		/** Shared request debug options for all cloudsearch RPC methods. */
-		debugOptions?: DebugOptions;
+		debugOptions?: DebugOptions | null;
 
 		/**
 		 * The BCP-47 language code, such as "en-US" or "sr-Latn".
@@ -2512,10 +2512,10 @@ export namespace MyNS {
 		 * The suggest API does not use this parameter. Instead, suggest autocompletes
 		 * only based on characters in the query.
 		 */
-		languageCode?: string;
+		languageCode?: string | null;
 
 		/** Id of the application created using SearchApplicationsService. */
-		searchApplicationId?: string;
+		searchApplicationId?: string | null;
 
 		/**
 		 * Current user's time zone id, such as "America/Los_Angeles" or
@@ -2526,13 +2526,13 @@ export namespace MyNS {
 		 * This field is used to correctly interpret date and time queries.
 		 * If this field is not specified, the default time zone (UTC) is used.
 		 */
-		timeZone?: string;
+		timeZone?: string | null;
 	}
 
 	export interface ResetSearchApplicationRequest {
 
 		/** Shared request debug options for all cloudsearch RPC methods. */
-		debugOptions?: DebugOptions;
+		debugOptions?: DebugOptions | null;
 	}
 
 
@@ -2540,7 +2540,7 @@ export namespace MyNS {
 	export interface ResponseDebugInfo {
 
 		/** General debug info formatted for display. */
-		formattedDebugInfo?: string;
+		formattedDebugInfo?: string | null;
 	}
 
 
@@ -2551,19 +2551,19 @@ export namespace MyNS {
 	export interface RestrictItem {
 
 		/** Drive follow-up search restricts (e.g. "followup:suggestions"). */
-		driveFollowUpRestrict?: DriveFollowUpRestrict;
+		driveFollowUpRestrict?: DriveFollowUpRestrict | null;
 
 		/** Drive location search restricts (e.g. "is:starred"). */
-		driveLocationRestrict?: DriveLocationRestrict;
+		driveLocationRestrict?: DriveLocationRestrict | null;
 
 		/** Drive mime-type search restricts (e.g. "type:pdf"). */
-		driveMimeTypeRestrict?: DriveMimeTypeRestrict;
+		driveMimeTypeRestrict?: DriveMimeTypeRestrict | null;
 
 		/** The time span search restrict (e.g. "after:2017-09-11 before:2017-09-12"). */
-		driveTimeSpanRestrict?: DriveTimeSpanRestrict;
+		driveTimeSpanRestrict?: DriveTimeSpanRestrict | null;
 
 		/** The search restrict (e.g. "after:2017-09-11 before:2017-09-12"). */
-		searchOperator?: string;
+		searchOperator?: string | null;
 	}
 
 
@@ -2571,7 +2571,7 @@ export namespace MyNS {
 	export interface ResultCounts {
 
 		/** Result count information for each source with results. */
-		sourceResultCounts?: Array<SourceResultCount>;
+		sourceResultCounts?: Array<SourceResultCount> | null;
 	}
 
 
@@ -2579,16 +2579,16 @@ export namespace MyNS {
 	export interface SourceResultCount {
 
 		/** Whether there are more search results for this source. */
-		hasMoreResults?: boolean;
+		hasMoreResults?: boolean | null;
 
 		/** The estimated result count for this source. */
-		resultCountEstimate?: string;
+		resultCountEstimate?: string | null;
 
 		/** The exact result count for this source. */
-		resultCountExact?: string;
+		resultCountExact?: string | null;
 
 		/** Defines sources for the suggest/search APIs. */
-		source?: Source;
+		source?: Source | null;
 	}
 
 
@@ -2596,7 +2596,7 @@ export namespace MyNS {
 	export interface ResultDebugInfo {
 
 		/** General debug info formatted for display. */
-		formattedDebugInfo?: string;
+		formattedDebugInfo?: string | null;
 	}
 
 
@@ -2607,39 +2607,39 @@ export namespace MyNS {
 		 * The list of top-level objects for the data source.
 		 * The maximum number of elements is 10.
 		 */
-		objectDefinitions?: Array<ObjectDefinition>;
+		objectDefinitions?: Array<ObjectDefinition> | null;
 
 		/**
 		 * IDs of the Long Running Operations (LROs) currently running for this
 		 * schema. After modifying the schema, wait for operations to complete
 		 * before indexing additional content.
 		 */
-		operationIds?: Array<string>;
+		operationIds?: Array<string> | null;
 	}
 
 	export interface SearchItemsByViewUrlRequest {
 
 		/** Shared request debug options for all cloudsearch RPC methods. */
-		debugOptions?: DebugOptions;
+		debugOptions?: DebugOptions | null;
 
 		/** The next_page_token value returned from a previous request, if any. */
-		pageToken?: string;
+		pageToken?: string | null;
 
 		/**
 		 * Specify the full view URL to find the corresponding item.
 		 * The maximum length is 2048 characters.
 		 */
-		viewUrl?: string;
+		viewUrl?: string | null;
 	}
 
 	export interface SearchItemsByViewUrlResponse {
-		items?: Array<Item>;
+		items?: Array<Item> | null;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no
 		 * more results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -2650,15 +2650,15 @@ export namespace MyNS {
 		 * The sources to use for querying. If not specified, all data sources
 		 * from the current search application are used.
 		 */
-		dataSourceRestrictions?: Array<DataSourceRestriction>;
-		facetOptions?: Array<FacetOptions>;
+		dataSourceRestrictions?: Array<DataSourceRestriction> | null;
+		facetOptions?: Array<FacetOptions> | null;
 
 		/**
 		 * Maximum number of search results to return in one page.
 		 * Valid values are between 1 and 100, inclusive.
 		 * Default value is 10.
 		 */
-		pageSize?: number;
+		pageSize?: number | null;
 
 		/**
 		 * The raw query string.
@@ -2666,17 +2666,17 @@ export namespace MyNS {
 		 * Cheat
 		 * Sheet](https://gsuite.google.com/learning-center/products/cloudsearch/cheat-sheet/)
 		 */
-		query?: string;
+		query?: string | null;
 
 		/** Options to interpret user query. */
-		queryInterpretationOptions?: QueryInterpretationOptions;
+		queryInterpretationOptions?: QueryInterpretationOptions | null;
 
 		/** Shared request options for all RPC methods. */
-		requestOptions?: RequestOptions;
-		sortOptions?: SortOptions;
+		requestOptions?: RequestOptions | null;
+		sortOptions?: SortOptions | null;
 
 		/** Starting index of the results. */
-		start?: number;
+		start?: number | null;
 	}
 
 
@@ -2684,38 +2684,38 @@ export namespace MyNS {
 	export interface SearchResponse {
 
 		/** Debugging information about the response. */
-		debugInfo?: ResponseDebugInfo;
+		debugInfo?: ResponseDebugInfo | null;
 
 		/** Error information about the response. */
-		errorInfo?: ErrorInfo;
+		errorInfo?: ErrorInfo | null;
 
 		/** Repeated facet results. */
-		facetResults?: Array<FacetResult>;
+		facetResults?: Array<FacetResult> | null;
 
 		/** Whether there are more search results matching the query. */
-		hasMoreResults?: boolean;
-		queryInterpretation?: QueryInterpretation;
+		hasMoreResults?: boolean | null;
+		queryInterpretation?: QueryInterpretation | null;
 
 		/** The estimated result count for this query. */
-		resultCountEstimate?: string;
+		resultCountEstimate?: string | null;
 
 		/** The exact result count for this query. */
-		resultCountExact?: string;
+		resultCountExact?: string | null;
 
 		/** Result count information */
-		resultCounts?: ResultCounts;
+		resultCounts?: ResultCounts | null;
 
 		/** Results from a search query. */
-		results?: Array<SearchResult>;
+		results?: Array<SearchResult> | null;
 
 		/** Suggested spelling for the query. */
-		spellResults?: Array<SpellResult>;
+		spellResults?: Array<SpellResult> | null;
 
 		/**
 		 * Structured results for the user query. These results are not counted
 		 * against the page_size.
 		 */
-		structuredResults?: Array<StructuredResult>;
+		structuredResults?: Array<StructuredResult> | null;
 	}
 
 
@@ -2727,28 +2727,28 @@ export namespace MyNS {
 		 * be one level of clustered results. If current source is not enabled for
 		 * clustering, this field will be empty.
 		 */
-		clusteredResults?: Array<SearchResult>;
+		clusteredResults?: Array<SearchResult> | null;
 
 		/** Debugging information about the result. */
-		debugInfo?: ResultDebugInfo;
+		debugInfo?: ResultDebugInfo | null;
 
 		/** Metadata of a matched search result. */
-		metadata?: Metadata;
+		metadata?: Metadata | null;
 
 		/**
 		 * Snippet of the search result, which summarizes the content of the resulting
 		 * page.
 		 */
-		snippet?: Snippet;
+		snippet?: Snippet | null;
 
 		/** Title of the search result. */
-		title?: string;
+		title?: string | null;
 
 		/**
 		 * The URL of the search result. The URL contains a Google redirect to the
 		 * actual item. This URL is signed and shouldn't be changed.
 		 */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -2759,20 +2759,20 @@ export namespace MyNS {
 	export interface Snippet {
 
 		/** The matched ranges in the snippet. */
-		matchRanges?: Array<MatchRange>;
+		matchRanges?: Array<MatchRange> | null;
 
 		/**
 		 * The snippet of the document.
 		 * The snippet of the document. May contain escaped HTML character that
 		 * should be unescaped prior to rendering.
 		 */
-		snippet?: string;
+		snippet?: string | null;
 	}
 
 	export interface SpellResult {
 
 		/** The suggested spelling of the query. */
-		suggestedQuery?: string;
+		suggestedQuery?: string | null;
 	}
 
 
@@ -2780,7 +2780,7 @@ export namespace MyNS {
 	export interface StructuredResult {
 
 		/** Object to represent a person. */
-		person?: Person;
+		person?: Person | null;
 	}
 
 
@@ -2791,10 +2791,10 @@ export namespace MyNS {
 		 * Name of connector making this call.
 		 * <br />Format: datasources/{source_id}/connectors/{ID}
 		 */
-		connectorName?: string;
+		connectorName?: string | null;
 
 		/** Shared request debug options for all cloudsearch RPC methods. */
-		debugOptions?: DebugOptions;
+		debugOptions?: DebugOptions | null;
 	}
 
 
@@ -2807,17 +2807,17 @@ export namespace MyNS {
 		 * NOTE: Suggestions are supported only for third party data sources and
 		 * people (i.e. PredefinedSource.PERSON).
 		 */
-		dataSourceRestrictions?: Array<DataSourceRestriction>;
+		dataSourceRestrictions?: Array<DataSourceRestriction> | null;
 
 		/**
 		 * Partial query for which autocomplete suggestions will be shown.
 		 * For example, if the query is "sea", then the server might return
 		 * "season", "search", "seagull" and so on.
 		 */
-		query?: string;
+		query?: string | null;
 
 		/** Shared request options for all RPC methods. */
-		requestOptions?: RequestOptions;
+		requestOptions?: RequestOptions | null;
 	}
 
 
@@ -2825,7 +2825,7 @@ export namespace MyNS {
 	export interface SuggestResponse {
 
 		/** List of suggestions. */
-		suggestResults?: Array<SuggestResult>;
+		suggestResults?: Array<SuggestResult> | null;
 	}
 
 
@@ -2833,22 +2833,22 @@ export namespace MyNS {
 	export interface SuggestResult {
 
 		/** This field contains information about the person being suggested. */
-		peopleSuggestion?: PeopleSuggestion;
+		peopleSuggestion?: PeopleSuggestion | null;
 
 		/**
 		 * This field does not contain anything as of now and is just used as an
 		 * indicator that the suggest result was a phrase completion.
 		 */
-		querySuggestion?: QuerySuggestion;
+		querySuggestion?: QuerySuggestion | null;
 
 		/** Defines sources for the suggest/search APIs. */
-		source?: Source;
+		source?: Source | null;
 
 		/**
 		 * The suggested query that will be used for search, when the user
 		 * clicks on the suggestion
 		 */
-		suggestedQuery?: string;
+		suggestedQuery?: string | null;
 	}
 
 	export interface UnreserveItemsRequest {
@@ -2857,41 +2857,41 @@ export namespace MyNS {
 		 * Name of connector making this call.
 		 * <br />Format: datasources/{source_id}/connectors/{ID}
 		 */
-		connectorName?: string;
+		connectorName?: string | null;
 
 		/** Shared request debug options for all cloudsearch RPC methods. */
-		debugOptions?: DebugOptions;
+		debugOptions?: DebugOptions | null;
 
 		/** Name of a queue to unreserve items from. */
-		queue?: string;
+		queue?: string | null;
 	}
 
 	export interface UpdateDataSourceRequest {
 
 		/** Shared request debug options for all cloudsearch RPC methods. */
-		debugOptions?: DebugOptions;
+		debugOptions?: DebugOptions | null;
 
 		/**
 		 * Datasource is a logical namespace for items to be indexed.
 		 * All items must belong to a datasource.  This is the prerequisite before
 		 * items can be indexed into Cloud Search.
 		 */
-		source?: DataSource;
+		source?: DataSource | null;
 	}
 
 	export interface UpdateSchemaRequest {
 
 		/** Shared request debug options for all cloudsearch RPC methods. */
-		debugOptions?: DebugOptions;
+		debugOptions?: DebugOptions | null;
 
 		/** The schema definition for a data source. */
-		schema?: Schema;
+		schema?: Schema | null;
 
 		/**
 		 * If true, the schema will be checked for validity,
 		 * but will not be registered with the data source, even if valid.
 		 */
-		validateOnly?: boolean;
+		validateOnly?: boolean | null;
 	}
 
 	@Injectable()
@@ -2922,7 +2922,7 @@ export namespace MyNS {
 		 * Otherwise, ignore this field.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_debug_datasources_items_checkAccess(name: string, debugOptions_enableDebugging: boolean, requestBody: Principal): Observable<HttpResponse<string>> {
+		Cloudsearch_debug_datasources_items_checkAccess(name: string, debugOptions_enableDebugging: boolean | null | undefined, requestBody: Principal): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/debug/' + (name == null ? '' : encodeURIComponent(name)) + ':checkAccess&debugOptions_enableDebugging=' + debugOptions_enableDebugging, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2939,7 +2939,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_debug_identitysources_items_listForunmappedidentity(parent: string, debugOptions_enableDebugging: boolean, groupResourceName: string, pageSize: number, pageToken: string, userResourceName: string): Observable<HttpResponse<string>> {
+		Cloudsearch_debug_identitysources_items_listForunmappedidentity(parent: string, debugOptions_enableDebugging: boolean | null | undefined, groupResourceName: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, userResourceName: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/debug/' + (parent == null ? '' : encodeURIComponent(parent)) + '/items:forunmappedidentity&debugOptions_enableDebugging=' + debugOptions_enableDebugging + '&groupResourceName=' + (groupResourceName == null ? '' : encodeURIComponent(groupResourceName)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&userResourceName=' + (userResourceName == null ? '' : encodeURIComponent(userResourceName)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2957,7 +2957,7 @@ export namespace MyNS {
 		 * @param {UnmappedIdentityResolutionStatusCode} resolutionStatusCode Limit users selection to this status.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_debug_identitysources_unmappedids_list(parent: string, debugOptions_enableDebugging: boolean, pageSize: number, pageToken: string, resolutionStatusCode: UnmappedIdentityResolutionStatusCode): Observable<HttpResponse<string>> {
+		Cloudsearch_debug_identitysources_unmappedids_list(parent: string, debugOptions_enableDebugging: boolean | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, resolutionStatusCode: UnmappedIdentityResolutionStatusCode | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/debug/' + (parent == null ? '' : encodeURIComponent(parent)) + '/unmappedids&debugOptions_enableDebugging=' + debugOptions_enableDebugging + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&resolutionStatusCode=' + resolutionStatusCode, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2985,7 +2985,7 @@ export namespace MyNS {
 		 * The maximum length for this field is 1024 bytes.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_indexing_datasources_items_delete(name: string, connectorName: string, debugOptions_enableDebugging: boolean, mode: IndexItemRequestMode, version: string): Observable<HttpResponse<string>> {
+		Cloudsearch_indexing_datasources_items_delete(name: string, connectorName: string | null | undefined, debugOptions_enableDebugging: boolean | null | undefined, mode: IndexItemRequestMode | null | undefined, version: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/indexing/' + (name == null ? '' : encodeURIComponent(name)) + '&connectorName=' + (connectorName == null ? '' : encodeURIComponent(connectorName)) + '&debugOptions_enableDebugging=' + debugOptions_enableDebugging + '&mode=' + mode + '&version=' + (version == null ? '' : encodeURIComponent(version)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3002,7 +3002,7 @@ export namespace MyNS {
 		 * Otherwise, ignore this field.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_indexing_datasources_items_get(name: string, connectorName: string, debugOptions_enableDebugging: boolean): Observable<HttpResponse<string>> {
+		Cloudsearch_indexing_datasources_items_get(name: string, connectorName: string | null | undefined, debugOptions_enableDebugging: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/indexing/' + (name == null ? '' : encodeURIComponent(name)) + '&connectorName=' + (connectorName == null ? '' : encodeURIComponent(connectorName)) + '&debugOptions_enableDebugging=' + debugOptions_enableDebugging, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3043,7 +3043,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_indexing_datasources_items_list(name: string, brief: boolean, connectorName: string, debugOptions_enableDebugging: boolean, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudsearch_indexing_datasources_items_list(name: string, brief: boolean | null | undefined, connectorName: string | null | undefined, debugOptions_enableDebugging: boolean | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/indexing/' + (name == null ? '' : encodeURIComponent(name)) + '/items&brief=' + brief + '&connectorName=' + (connectorName == null ? '' : encodeURIComponent(connectorName)) + '&debugOptions_enableDebugging=' + debugOptions_enableDebugging + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3121,7 +3121,7 @@ export namespace MyNS {
 		 * Otherwise, ignore this field.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_indexing_datasources_deleteSchema(name: string, debugOptions_enableDebugging: boolean): Observable<HttpResponse<string>> {
+		Cloudsearch_indexing_datasources_deleteSchema(name: string, debugOptions_enableDebugging: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/indexing/' + (name == null ? '' : encodeURIComponent(name)) + '/schema&debugOptions_enableDebugging=' + debugOptions_enableDebugging, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3135,7 +3135,7 @@ export namespace MyNS {
 		 * Otherwise, ignore this field.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_indexing_datasources_getSchema(name: string, debugOptions_enableDebugging: boolean): Observable<HttpResponse<string>> {
+		Cloudsearch_indexing_datasources_getSchema(name: string, debugOptions_enableDebugging: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/indexing/' + (name == null ? '' : encodeURIComponent(name)) + '/schema&debugOptions_enableDebugging=' + debugOptions_enableDebugging, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3254,7 +3254,7 @@ export namespace MyNS {
 		 * If this field is not specified, the default time zone (UTC) is used.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_query_sources_list(pageToken: string, requestOptions_debugOptions_enableDebugging: boolean, requestOptions_languageCode: string, requestOptions_searchApplicationId: string, requestOptions_timeZone: string): Observable<HttpResponse<string>> {
+		Cloudsearch_query_sources_list(pageToken: string | null | undefined, requestOptions_debugOptions_enableDebugging: boolean | null | undefined, requestOptions_languageCode: string | null | undefined, requestOptions_searchApplicationId: string | null | undefined, requestOptions_timeZone: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/query/sources?pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&requestOptions_debugOptions_enableDebugging=' + requestOptions_debugOptions_enableDebugging + '&requestOptions_languageCode=' + (requestOptions_languageCode == null ? '' : encodeURIComponent(requestOptions_languageCode)) + '&requestOptions_searchApplicationId=' + (requestOptions_searchApplicationId == null ? '' : encodeURIComponent(requestOptions_searchApplicationId)) + '&requestOptions_timeZone=' + (requestOptions_timeZone == null ? '' : encodeURIComponent(requestOptions_timeZone)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3284,7 +3284,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Starting index of the results.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_settings_datasources_list(debugOptions_enableDebugging: boolean, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudsearch_settings_datasources_list(debugOptions_enableDebugging: boolean | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/settings/datasources?debugOptions_enableDebugging=' + debugOptions_enableDebugging + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3309,7 +3309,7 @@ export namespace MyNS {
 		 * <br/> The default value is 10
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_settings_searchapplications_list(debugOptions_enableDebugging: boolean, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudsearch_settings_searchapplications_list(debugOptions_enableDebugging: boolean | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/settings/searchapplications?debugOptions_enableDebugging=' + debugOptions_enableDebugging + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3333,7 +3333,7 @@ export namespace MyNS {
 		 * Otherwise, ignore this field.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_settings_datasources_delete(name: string, debugOptions_enableDebugging: boolean): Observable<HttpResponse<string>> {
+		Cloudsearch_settings_datasources_delete(name: string, debugOptions_enableDebugging: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1/settings/' + (name == null ? '' : encodeURIComponent(name)) + '&debugOptions_enableDebugging=' + debugOptions_enableDebugging, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3347,7 +3347,7 @@ export namespace MyNS {
 		 * Otherwise, ignore this field.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_settings_datasources_get(name: string, debugOptions_enableDebugging: boolean): Observable<HttpResponse<string>> {
+		Cloudsearch_settings_datasources_get(name: string, debugOptions_enableDebugging: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/settings/' + (name == null ? '' : encodeURIComponent(name)) + '&debugOptions_enableDebugging=' + debugOptions_enableDebugging, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3391,7 +3391,7 @@ export namespace MyNS {
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_stats_getIndex(fromDate_day: number, fromDate_month: number, fromDate_year: number, toDate_day: number, toDate_month: number, toDate_year: number): Observable<HttpResponse<string>> {
+		Cloudsearch_stats_getIndex(fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/stats/index?fromDate_day=' + fromDate_day + '&fromDate_month=' + fromDate_month + '&fromDate_year=' + fromDate_year + '&toDate_day=' + toDate_day + '&toDate_month=' + toDate_month + '&toDate_year=' + toDate_year, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3409,7 +3409,7 @@ export namespace MyNS {
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_stats_index_datasources_get(name: string, fromDate_day: number, fromDate_month: number, fromDate_year: number, toDate_day: number, toDate_month: number, toDate_year: number): Observable<HttpResponse<string>> {
+		Cloudsearch_stats_index_datasources_get(name: string, fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/stats/index/' + (name == null ? '' : encodeURIComponent(name)) + '&fromDate_day=' + fromDate_day + '&fromDate_month=' + fromDate_month + '&fromDate_year=' + fromDate_year + '&toDate_day=' + toDate_day + '&toDate_month=' + toDate_month + '&toDate_year=' + toDate_year, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3425,7 +3425,7 @@ export namespace MyNS {
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_stats_getQuery(fromDate_day: number, fromDate_month: number, fromDate_year: number, toDate_day: number, toDate_month: number, toDate_year: number): Observable<HttpResponse<string>> {
+		Cloudsearch_stats_getQuery(fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/stats/query?fromDate_day=' + fromDate_day + '&fromDate_month=' + fromDate_month + '&fromDate_year=' + fromDate_year + '&toDate_day=' + toDate_day + '&toDate_month=' + toDate_month + '&toDate_year=' + toDate_year, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3443,7 +3443,7 @@ export namespace MyNS {
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_stats_query_searchapplications_get(name: string, fromDate_day: number, fromDate_month: number, fromDate_year: number, toDate_day: number, toDate_month: number, toDate_year: number): Observable<HttpResponse<string>> {
+		Cloudsearch_stats_query_searchapplications_get(name: string, fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/stats/query/' + (name == null ? '' : encodeURIComponent(name)) + '&fromDate_day=' + fromDate_day + '&fromDate_month=' + fromDate_month + '&fromDate_year=' + fromDate_year + '&toDate_day=' + toDate_day + '&toDate_month=' + toDate_month + '&toDate_year=' + toDate_year, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3460,7 +3460,7 @@ export namespace MyNS {
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_stats_getSession(fromDate_day: number, fromDate_month: number, fromDate_year: number, toDate_day: number, toDate_month: number, toDate_year: number): Observable<HttpResponse<string>> {
+		Cloudsearch_stats_getSession(fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/stats/session?fromDate_day=' + fromDate_day + '&fromDate_month=' + fromDate_month + '&fromDate_year=' + fromDate_year + '&toDate_day=' + toDate_day + '&toDate_month=' + toDate_month + '&toDate_year=' + toDate_year, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3479,7 +3479,7 @@ export namespace MyNS {
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_stats_session_searchapplications_get(name: string, fromDate_day: number, fromDate_month: number, fromDate_year: number, toDate_day: number, toDate_month: number, toDate_year: number): Observable<HttpResponse<string>> {
+		Cloudsearch_stats_session_searchapplications_get(name: string, fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/stats/session/' + (name == null ? '' : encodeURIComponent(name)) + '&fromDate_day=' + fromDate_day + '&fromDate_month=' + fromDate_month + '&fromDate_year=' + fromDate_year + '&toDate_day=' + toDate_day + '&toDate_month=' + toDate_month + '&toDate_year=' + toDate_year, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3495,7 +3495,7 @@ export namespace MyNS {
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_stats_getUser(fromDate_day: number, fromDate_month: number, fromDate_year: number, toDate_day: number, toDate_month: number, toDate_year: number): Observable<HttpResponse<string>> {
+		Cloudsearch_stats_getUser(fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/stats/user?fromDate_day=' + fromDate_day + '&fromDate_month=' + fromDate_month + '&fromDate_year=' + fromDate_year + '&toDate_day=' + toDate_day + '&toDate_month=' + toDate_month + '&toDate_year=' + toDate_year, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3513,7 +3513,7 @@ export namespace MyNS {
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
 		 * @return {void} Successful response
 		 */
-		Cloudsearch_stats_user_searchapplications_get(name: string, fromDate_day: number, fromDate_month: number, fromDate_year: number, toDate_day: number, toDate_month: number, toDate_year: number): Observable<HttpResponse<string>> {
+		Cloudsearch_stats_user_searchapplications_get(name: string, fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/stats/user/' + (name == null ? '' : encodeURIComponent(name)) + '&fromDate_day=' + fromDate_day + '&fromDate_month=' + fromDate_month + '&fromDate_year=' + fromDate_year + '&toDate_day=' + toDate_day + '&toDate_month=' + toDate_month + '&toDate_year=' + toDate_year, { observe: 'response', responseType: 'text' });
 		}
 

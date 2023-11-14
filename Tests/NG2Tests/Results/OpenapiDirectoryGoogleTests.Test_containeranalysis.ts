@@ -7,10 +7,10 @@ export namespace MyNS {
 	export interface AliasContext {
 
 		/** The alias kind. */
-		kind?: AliasContextKind;
+		kind?: AliasContextKind | null;
 
 		/** The alias name. */
-		name?: string;
+		name?: string | null;
 	}
 
 	export enum AliasContextKind { KIND_UNSPECIFIED = 0, FIXED = 1, MOVABLE = 2, OTHER = 3 }
@@ -23,13 +23,13 @@ export namespace MyNS {
 		 * Hash or checksum value of a binary, or Docker Registry 2.0 digest of a
 		 * container.
 		 */
-		checksum?: string;
+		checksum?: string | null;
 
 		/**
 		 * Artifact ID, if any; for container images, this will be a URL by digest
 		 * like `gcr.io/projectID/imagename@sha256:123456`.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Related artifact names. This may be the path to a binary or jar file, or in
@@ -38,7 +38,7 @@ export namespace MyNS {
 		 * single Artifact ID can have multiple names, for example if two tags are
 		 * applied to one image.
 		 */
-		names?: Array<string>;
+		names?: Array<string> | null;
 	}
 
 
@@ -60,14 +60,14 @@ export namespace MyNS {
 		 * verify and any metadata necessary to interpret that plaintext.  The
 		 * signatures should always be over the `serialized_payload` bytestring.
 		 */
-		genericSignedAttestation?: GenericSignedAttestation;
+		genericSignedAttestation?: GenericSignedAttestation | null;
 
 		/**
 		 * An attestation wrapper with a PGP-compatible signature. This message only
 		 * supports `ATTACHED` signatures, where the payload that is signed is included
 		 * alongside the signature itself in the same file.
 		 */
-		pgpSignedAttestation?: PgpSignedAttestation;
+		pgpSignedAttestation?: PgpSignedAttestation | null;
 	}
 
 
@@ -85,14 +85,14 @@ export namespace MyNS {
 		 * supports, and that the attestation payload is a valid instantiation of that
 		 * type (for example by validating a JSON schema).
 		 */
-		contentType?: GenericSignedAttestationContentType;
+		contentType?: GenericSignedAttestationContentType | null;
 
 		/**
 		 * The serialized payload that is verified by one or more `signatures`.
 		 * The encoding and semantic meaning of this payload must match what is set in
 		 * `content_type`.
 		 */
-		serializedPayload?: string;
+		serializedPayload?: string | null;
 
 		/**
 		 * One or more signatures over `serialized_payload`.  Verifier implementations
@@ -100,7 +100,7 @@ export namespace MyNS {
 		 * `signature` verifies `serialized_payload`.  See `Signature` in common.proto
 		 * for more details on signature structure and verification.
 		 */
-		signatures?: Array<Signature>;
+		signatures?: Array<Signature> | null;
 	}
 
 	export enum GenericSignedAttestationContentType { CONTENT_TYPE_UNSPECIFIED = 0, SIMPLE_SIGNING_JSON = 1 }
@@ -146,7 +146,7 @@ export namespace MyNS {
 		 * * "ni:///sha-256;cD9o9Cq6LG3jD0iKXqEi_vdjJGecm_iXkbqVoScViaU"
 		 * * "nih:///sha-256;703f68f42aba2c6de30f488a5ea122fef76324679c9bf89791ba95a1271589a5"
 		 */
-		publicKeyId?: string;
+		publicKeyId?: string | null;
 
 		/**
 		 * The content of the signature, an opaque bytestring.
@@ -156,7 +156,7 @@ export namespace MyNS {
 		 * serialization that can always be unambiguously computed to derive the
 		 * payload.
 		 */
-		signature?: string;
+		signature?: string | null;
 	}
 
 
@@ -173,7 +173,7 @@ export namespace MyNS {
 		 * supports, and that the attestation payload is a valid instantiation of that
 		 * type (for example by validating a JSON schema).
 		 */
-		contentType?: GenericSignedAttestationContentType;
+		contentType?: GenericSignedAttestationContentType | null;
 
 		/**
 		 * The cryptographic fingerprint of the key used to generate the signature,
@@ -193,7 +193,7 @@ export namespace MyNS {
 		 * ```
 		 * Above, the fingerprint is `24FF6481B76AC91E66A00AC657A93A81EF3AE6FB`.
 		 */
-		pgpKeyId?: string;
+		pgpKeyId?: string | null;
 
 		/**
 		 * Required. The raw content of the signature, as output by GNU Privacy Guard
@@ -206,7 +206,7 @@ export namespace MyNS {
 		 * expected in this field in `signature.gpg` for the `payload.json`
 		 * attestation payload.
 		 */
-		signature?: string;
+		signature?: string | null;
 	}
 
 
@@ -231,7 +231,7 @@ export namespace MyNS {
 		 * security sensitive contexts, such as when looking up attestations to
 		 * verify.
 		 */
-		hint?: Hint;
+		hint?: Hint | null;
 	}
 
 
@@ -250,7 +250,7 @@ export namespace MyNS {
 		 * Required. The human readable name of this attestation authority, for
 		 * example "qa".
 		 */
-		humanReadableName?: string;
+		humanReadableName?: string | null;
 	}
 
 
@@ -264,13 +264,13 @@ export namespace MyNS {
 	export interface Basis {
 
 		/** A set of properties that uniquely identify a given Docker image. */
-		fingerprint?: Fingerprint;
+		fingerprint?: Fingerprint | null;
 
 		/**
 		 * Required. Immutable. The resource_url for the resource representing the
 		 * basis of associated occurrence images.
 		 */
-		resourceUrl?: string;
+		resourceUrl?: string | null;
 	}
 
 
@@ -281,17 +281,17 @@ export namespace MyNS {
 		 * Required. The layer ID of the final layer in the Docker image's v1
 		 * representation.
 		 */
-		v1Name?: string;
+		v1Name?: string | null;
 
 		/** Required. The ordered list of v2 blobs that represent a given image. */
-		v2Blob?: Array<string>;
+		v2Blob?: Array<string> | null;
 
 		/**
 		 * Output only. The name of the image's v2 blobs computed via:
 		 * [bottom] := v2_blobbottom := sha256(v2_blob[N] + " " + v2_name[N+1])
 		 * Only the name of the final blob is kept.
 		 */
-		v2Name?: string;
+		v2Name?: string | null;
 	}
 
 
@@ -299,7 +299,7 @@ export namespace MyNS {
 	export interface BatchCreateNotesRequest {
 
 		/** Required. The notes to create. Max allowed length is 1000. */
-		notes?: {[id: string]: Note };
+		notes?: {[id: string]: Note } | null;
 	}
 
 
@@ -316,7 +316,7 @@ export namespace MyNS {
 		 * lookup to find all attached attestation occurrences, even if they don't all
 		 * live in the same project.
 		 */
-		attestationAuthority?: Authority;
+		attestationAuthority?: Authority | null;
 
 		/**
 		 * Basis describes the base image portion (Note) of the DockerImage
@@ -325,72 +325,72 @@ export namespace MyNS {
 		 * FROM <Basis.resource_url>
 		 * Or an equivalent reference, e.g. a tag of the resource_url.
 		 */
-		baseImage?: Basis;
+		baseImage?: Basis | null;
 
 		/**
 		 * Note holding the version of the provider's builder and the signature of the
 		 * provenance message in the build details occurrence.
 		 */
-		build?: Build;
+		build?: Build | null;
 
 		/**
 		 * Output only. The time this note was created. This field can be used as a
 		 * filter in list requests.
 		 */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** An artifact that can be deployed in some runtime. */
-		deployable?: Deployable;
+		deployable?: Deployable | null;
 
 		/**
 		 * A note that indicates a type of analysis a provider would perform. This note
 		 * exists in a provider's project. A `Discovery` occurrence is created in a
 		 * consumer's project at the start of analysis.
 		 */
-		discovery?: Discovery;
+		discovery?: Discovery | null;
 
 		/** Time of expiration for this note. Empty if note does not expire. */
-		expirationTime?: string;
+		expirationTime?: string | null;
 
 		/**
 		 * Output only. The type of analysis. This field can be used as a filter in
 		 * list requests.
 		 */
-		kind?: DiscoveryAnalysisKind;
+		kind?: DiscoveryAnalysisKind | null;
 
 		/** A detailed description of this note. */
-		longDescription?: string;
+		longDescription?: string | null;
 
 		/**
 		 * Output only. The name of the note in the form of
 		 * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * This represents a particular package that is distributed over various
 		 * channels. E.g., glibc (aka libc6) is distributed by many, at various
 		 * versions.
 		 */
-		package?: Package;
+		package?: Package | null;
 
 		/** Other notes related to this note. */
-		relatedNoteNames?: Array<string>;
+		relatedNoteNames?: Array<string> | null;
 
 		/** URLs associated with this note. */
-		relatedUrl?: Array<RelatedUrl>;
+		relatedUrl?: Array<RelatedUrl> | null;
 
 		/** A one sentence description of this note. */
-		shortDescription?: string;
+		shortDescription?: string | null;
 
 		/**
 		 * Output only. The time this note was last updated. This field can be used as
 		 * a filter in list requests.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 
 		/** Vulnerability provides metadata about a security vulnerability in a Note. */
-		vulnerability?: Vulnerability;
+		vulnerability?: Vulnerability | null;
 	}
 
 
@@ -401,10 +401,10 @@ export namespace MyNS {
 	export interface Build {
 
 		/** Required. Immutable. Version of the builder which produced this build. */
-		builderVersion?: string;
+		builderVersion?: string | null;
 
 		/** Message encapsulating the signature of the verified build. */
-		signature?: BuildSignature;
+		signature?: BuildSignature | null;
 	}
 
 
@@ -417,13 +417,13 @@ export namespace MyNS {
 		 * CN for a cert), or a reference to an external key (such as a reference to a
 		 * key in Cloud Key Management Service).
 		 */
-		keyId?: string;
+		keyId?: string | null;
 
 		/**
 		 * The type of the key, either stored in `public_key` or referenced in
 		 * `key_id`.
 		 */
-		keyType?: BuildSignatureKeyType;
+		keyType?: BuildSignatureKeyType | null;
 
 		/**
 		 * Public key of the builder which can be used to verify that the related
@@ -438,13 +438,13 @@ export namespace MyNS {
 		 * signed.bin. OpenSSL can then verify the signature:
 		 * `openssl sha256 -verify public.pem -signature signature.bin signed.bin`
 		 */
-		publicKey?: string;
+		publicKey?: string | null;
 
 		/**
 		 * Required. Signature of the related `BuildProvenance`. In JSON, this is
 		 * base-64 encoded.
 		 */
-		signature?: string;
+		signature?: string | null;
 	}
 
 	export enum BuildSignatureKeyType { KEY_TYPE_UNSPECIFIED = 0, PGP_ASCII_ARMORED = 1, PKIX_PEM = 2 }
@@ -454,7 +454,7 @@ export namespace MyNS {
 	export interface Deployable {
 
 		/** Required. Resource URI for the artifact being deployed. */
-		resourceUri?: Array<string>;
+		resourceUri?: Array<string> | null;
 	}
 
 
@@ -469,7 +469,7 @@ export namespace MyNS {
 		 * Required. Immutable. The kind of analysis that is handled by this
 		 * discovery.
 		 */
-		analysisKind?: DiscoveryAnalysisKind;
+		analysisKind?: DiscoveryAnalysisKind | null;
 	}
 
 	export enum DiscoveryAnalysisKind { NOTE_KIND_UNSPECIFIED = 0, VULNERABILITY = 1, BUILD = 2, IMAGE = 3, PACKAGE = 4, DEPLOYMENT = 5, DISCOVERY = 6, ATTESTATION = 7 }
@@ -483,10 +483,10 @@ export namespace MyNS {
 	export interface Package {
 
 		/** The various channels by which a package is distributed. */
-		distribution?: Array<Distribution>;
+		distribution?: Array<Distribution> | null;
 
 		/** Required. Immutable. The name of the package. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -500,25 +500,25 @@ export namespace MyNS {
 		 * The CPU architecture for which packages in this distribution channel were
 		 * built.
 		 */
-		architecture?: DistributionArchitecture;
+		architecture?: DistributionArchitecture | null;
 
 		/**
 		 * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
 		 * denoting the package manager version distributing a package.
 		 */
-		cpeUri?: string;
+		cpeUri?: string | null;
 
 		/** The distribution channel-specific description of this package. */
-		description?: string;
+		description?: string | null;
 
 		/** Version contains structured information about the version of a package. */
-		latestVersion?: Version;
+		latestVersion?: Version | null;
 
 		/** A freeform string denoting the maintainer of this package. */
-		maintainer?: string;
+		maintainer?: string | null;
 
 		/** The distribution channel-specific homepage for this package. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export enum DistributionArchitecture { ARCHITECTURE_UNSPECIFIED = 0, X86 = 1, X64 = 2 }
@@ -528,22 +528,22 @@ export namespace MyNS {
 	export interface Version {
 
 		/** Used to correct mistakes in the version numbering scheme. */
-		epoch?: number;
+		epoch?: number | null;
 
 		/**
 		 * Required. Distinguishes between sentinel MIN/MAX versions and normal
 		 * versions.
 		 */
-		kind?: VersionKind;
+		kind?: VersionKind | null;
 
 		/**
 		 * Required only when version kind is NORMAL. The main part of the version
 		 * name.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The iteration of the package build from the above version. */
-		revision?: string;
+		revision?: string | null;
 	}
 
 	export enum VersionKind { VERSION_KIND_UNSPECIFIED = 0, NORMAL = 1, MINIMUM = 2, MAXIMUM = 3 }
@@ -553,10 +553,10 @@ export namespace MyNS {
 	export interface RelatedUrl {
 
 		/** Label to describe usage of the URL. */
-		label?: string;
+		label?: string | null;
 
 		/** Specific URL associated with the resource. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -564,30 +564,30 @@ export namespace MyNS {
 	export interface Vulnerability {
 
 		/** The CVSS score for this vulnerability. */
-		cvssScore?: number;
+		cvssScore?: number | null;
 
 		/**
 		 * Common Vulnerability Scoring System version 3.
 		 * For details, see https://www.first.org/cvss/specification-document
 		 */
-		cvssV3?: CVSSv3;
+		cvssV3?: CVSSv3 | null;
 
 		/**
 		 * All information about the package to specifically identify this
 		 * vulnerability. One entry per (version range and cpe_uri) the package
 		 * vulnerability has manifested in.
 		 */
-		details?: Array<Detail>;
+		details?: Array<Detail> | null;
 
 		/** Note provider assigned impact of the vulnerability. */
-		severity?: VulnerabilitySeverity;
+		severity?: VulnerabilitySeverity | null;
 
 		/**
 		 * The time this information was last changed at the source. This is an
 		 * upstream timestamp from the underlying information source - e.g. Ubuntu
 		 * security tracker.
 		 */
-		sourceUpdateTime?: string;
+		sourceUpdateTime?: string | null;
 
 		/**
 		 * Windows details get their own format because the information format and
@@ -595,7 +595,7 @@ export namespace MyNS {
 		 * patches, thus Windows vulnerabilities really are a missing package, rather
 		 * than a package being at an incorrect version.
 		 */
-		windowsDetails?: Array<WindowsDetail>;
+		windowsDetails?: Array<WindowsDetail> | null;
 	}
 
 
@@ -604,25 +604,25 @@ export namespace MyNS {
 	 * For details, see https://www.first.org/cvss/specification-document
 	 */
 	export interface CVSSv3 {
-		attackComplexity?: CVSSv3AttackComplexity;
+		attackComplexity?: CVSSv3AttackComplexity | null;
 
 		/**
 		 * Base Metrics
 		 * Represents the intrinsic characteristics of a vulnerability that are
 		 * constant over time and across user environments.
 		 */
-		attackVector?: CVSSv3AttackVector;
-		availabilityImpact?: CVSSv3AvailabilityImpact;
+		attackVector?: CVSSv3AttackVector | null;
+		availabilityImpact?: CVSSv3AvailabilityImpact | null;
 
 		/** The base score is a function of the base metric scores. */
-		baseScore?: number;
-		confidentialityImpact?: CVSSv3AvailabilityImpact;
-		exploitabilityScore?: number;
-		impactScore?: number;
-		integrityImpact?: CVSSv3AvailabilityImpact;
-		privilegesRequired?: CVSSv3PrivilegesRequired;
-		scope?: CVSSv3Scope;
-		userInteraction?: CVSSv3UserInteraction;
+		baseScore?: number | null;
+		confidentialityImpact?: CVSSv3AvailabilityImpact | null;
+		exploitabilityScore?: number | null;
+		impactScore?: number | null;
+		integrityImpact?: CVSSv3AvailabilityImpact | null;
+		privilegesRequired?: CVSSv3PrivilegesRequired | null;
+		scope?: CVSSv3Scope | null;
+		userInteraction?: CVSSv3UserInteraction | null;
 	}
 
 	export enum CVSSv3AttackComplexity { ATTACK_COMPLEXITY_UNSPECIFIED = 0, ATTACK_COMPLEXITY_LOW = 1, ATTACK_COMPLEXITY_HIGH = 2 }
@@ -651,44 +651,44 @@ export namespace MyNS {
 		 * vulnerability manifests. Examples include distro or storage location for
 		 * vulnerable jar.
 		 */
-		cpeUri?: string;
+		cpeUri?: string | null;
 
 		/** A vendor-specific description of this note. */
-		description?: string;
+		description?: string | null;
 
 		/** The location of the vulnerability. */
-		fixedLocation?: VulnerabilityLocation;
+		fixedLocation?: VulnerabilityLocation | null;
 
 		/**
 		 * Whether this detail is obsolete. Occurrences are expected not to point to
 		 * obsolete details.
 		 */
-		isObsolete?: boolean;
+		isObsolete?: boolean | null;
 
 		/** Version contains structured information about the version of a package. */
-		maxAffectedVersion?: Version;
+		maxAffectedVersion?: Version | null;
 
 		/** Version contains structured information about the version of a package. */
-		minAffectedVersion?: Version;
+		minAffectedVersion?: Version | null;
 
 		/** Required. The name of the package where the vulnerability was found. */
-		package?: string;
+		package?: string | null;
 
 		/**
 		 * The type of package; whether native or non native(ruby gems, node.js
 		 * packages etc).
 		 */
-		packageType?: string;
+		packageType?: string | null;
 
 		/** The severity (eg: distro assigned severity) for this vulnerability. */
-		severityName?: string;
+		severityName?: string | null;
 
 		/**
 		 * The time this information was last changed at the source. This is an
 		 * upstream timestamp from the underlying information source - e.g. Ubuntu
 		 * security tracker.
 		 */
-		sourceUpdateTime?: string;
+		sourceUpdateTime?: string | null;
 	}
 
 
@@ -699,13 +699,13 @@ export namespace MyNS {
 		 * Required. The CPE URI in [cpe format](https://cpe.mitre.org/specification/)
 		 * format. Examples include distro or storage location for vulnerable jar.
 		 */
-		cpeUri?: string;
+		cpeUri?: string | null;
 
 		/** Required. The package being described. */
-		package?: string;
+		package?: string | null;
 
 		/** Version contains structured information about the version of a package. */
-		version?: Version;
+		version?: Version | null;
 	}
 
 	export enum VulnerabilitySeverity { SEVERITY_UNSPECIFIED = 0, MINIMAL = 1, LOW = 2, MEDIUM = 3, HIGH = 4, CRITICAL = 5 }
@@ -718,10 +718,10 @@ export namespace MyNS {
 		 * vulnerability manifests. Examples include distro or storage location for
 		 * vulnerable jar.
 		 */
-		cpeUri?: string;
+		cpeUri?: string | null;
 
 		/** The description of the vulnerability. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Required. The names of the KBs which have hotfixes to mitigate this
@@ -729,22 +729,22 @@ export namespace MyNS {
 		 * multiple KBs) that mitigate a given vulnerability. Currently any listed
 		 * kb's presence is considered a fix.
 		 */
-		fixingKbs?: Array<KnowledgeBase>;
+		fixingKbs?: Array<KnowledgeBase> | null;
 
 		/** Required. The name of the vulnerability. */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface KnowledgeBase {
 
 		/** The KB name (generally of the form KB[0-9]+ i.e. KB123456). */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * A link to the KB in the Windows update catalog -
 		 * https://www.catalog.update.microsoft.com/
 		 */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -752,7 +752,7 @@ export namespace MyNS {
 	export interface BatchCreateNotesResponse {
 
 		/** The notes that were created. */
-		notes?: Array<Note>;
+		notes?: Array<Note> | null;
 	}
 
 
@@ -760,7 +760,7 @@ export namespace MyNS {
 	export interface BatchCreateOccurrencesRequest {
 
 		/** Required. The occurrences to create. Max allowed length is 1000. */
-		occurrences?: Array<Occurrence>;
+		occurrences?: Array<Occurrence> | null;
 	}
 
 
@@ -768,56 +768,56 @@ export namespace MyNS {
 	export interface Occurrence {
 
 		/** Details of an attestation occurrence. */
-		attestation?: Details;
+		attestation?: Details | null;
 
 		/** Details of a build occurrence. */
-		build?: GrafeasV1beta1BuildDetails;
+		build?: GrafeasV1beta1BuildDetails | null;
 
 		/** Output only. The time this occurrence was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Details of a deployment occurrence. */
-		deployment?: GrafeasV1beta1DeploymentDetails;
+		deployment?: GrafeasV1beta1DeploymentDetails | null;
 
 		/** Details of an image occurrence. */
-		derivedImage?: GrafeasV1beta1ImageDetails;
+		derivedImage?: GrafeasV1beta1ImageDetails | null;
 
 		/** Details of a discovery occurrence. */
-		discovered?: GrafeasV1beta1DiscoveryDetails;
+		discovered?: GrafeasV1beta1DiscoveryDetails | null;
 
 		/** Details of a package occurrence. */
-		installation?: GrafeasV1beta1PackageDetails;
+		installation?: GrafeasV1beta1PackageDetails | null;
 
 		/**
 		 * Output only. This explicitly denotes which of the occurrence details are
 		 * specified. This field can be used as a filter in list requests.
 		 */
-		kind?: DiscoveryAnalysisKind;
+		kind?: DiscoveryAnalysisKind | null;
 
 		/**
 		 * Output only. The name of the occurrence in the form of
 		 * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Required. Immutable. The analysis note associated with this occurrence, in
 		 * the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be
 		 * used as a filter in list requests.
 		 */
-		noteName?: string;
+		noteName?: string | null;
 
 		/** A description of actions that can be taken to remedy the note. */
-		remediation?: string;
+		remediation?: string | null;
 
 		/** An entity that can have metadata. For example, a Docker image. */
-		resource?: Resource;
+		resource?: Resource | null;
 
 		/** Output only. The time this occurrence was last updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 
 		/** Details of a vulnerability Occurrence. */
-		vulnerability?: GrafeasV1beta1VulnerabilityDetails;
+		vulnerability?: GrafeasV1beta1VulnerabilityDetails | null;
 	}
 
 
@@ -834,7 +834,7 @@ export namespace MyNS {
 		 * verified) and intent (which authority was this attestation intended to sign
 		 * for).
 		 */
-		attestation?: Attestation;
+		attestation?: Attestation | null;
 	}
 
 
@@ -845,7 +845,7 @@ export namespace MyNS {
 		 * Provenance of a build. Contains all information needed to verify the full
 		 * details about the build from source to completion.
 		 */
-		provenance?: BuildProvenance;
+		provenance?: BuildProvenance | null;
 
 		/**
 		 * Serialized JSON representation of the provenance, used in generating the
@@ -859,7 +859,7 @@ export namespace MyNS {
 		 * provenance is marshalled to json as well to prevent incompatibilities with
 		 * future changes.
 		 */
-		provenanceBytes?: string;
+		provenanceBytes?: string | null;
 	}
 
 
@@ -873,47 +873,47 @@ export namespace MyNS {
 		 * Special options applied to this build. This is a catch-all field where
 		 * build providers can enter any desired additional details.
 		 */
-		buildOptions?: {[id: string]: string };
+		buildOptions?: {[id: string]: string } | null;
 
 		/** Version string of the builder at the time this build was executed. */
-		builderVersion?: string;
+		builderVersion?: string | null;
 
 		/** Output of the build. */
-		builtArtifacts?: Array<Artifact>;
+		builtArtifacts?: Array<Artifact> | null;
 
 		/** Commands requested by the build. */
-		commands?: Array<Command>;
+		commands?: Array<Command> | null;
 
 		/** Time at which the build was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * E-mail address of the user who initiated this build. Note that this was the
 		 * user's e-mail address at the time the build was initiated; this address may
 		 * not represent the same end-user for all time.
 		 */
-		creator?: string;
+		creator?: string | null;
 
 		/** Time at which execution of the build was finished. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** Required. Unique identifier of the build. */
-		id?: string;
+		id?: string | null;
 
 		/** URI where any logs for this provenance were written. */
-		logsUri?: string;
+		logsUri?: string | null;
 
 		/** ID of the project. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** Source describes the location of the source used for the build. */
-		sourceProvenance?: Source;
+		sourceProvenance?: Source | null;
 
 		/** Time at which execution of the build was started. */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** Trigger identifier if the build was triggered automatically; empty if not. */
-		triggerId?: string;
+		triggerId?: string | null;
 	}
 
 
@@ -921,31 +921,31 @@ export namespace MyNS {
 	export interface Command {
 
 		/** Command-line arguments used when executing this command. */
-		args?: Array<string>;
+		args?: Array<string> | null;
 
 		/**
 		 * Working directory (relative to project source root) used when running this
 		 * command.
 		 */
-		dir?: string;
+		dir?: string | null;
 
 		/** Environment variables set before running this command. */
-		env?: Array<string>;
+		env?: Array<string> | null;
 
 		/**
 		 * Optional unique identifier for this command, used in wait_for to reference
 		 * this command as a dependency.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Required. Name of the command, as presented on the command line, or if the
 		 * command is packaged as a Docker container, as presented to `docker pull`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The ID(s) of the command(s) that this command depends on. */
-		waitFor?: Array<string>;
+		waitFor?: Array<string> | null;
 	}
 
 
@@ -958,19 +958,19 @@ export namespace MyNS {
 		 * remotes or submodules. This list will not include the context specified in
 		 * the context field.
 		 */
-		additionalContexts?: Array<SourceContext>;
+		additionalContexts?: Array<SourceContext> | null;
 
 		/**
 		 * If provided, the input binary artifacts for the build came from this
 		 * location.
 		 */
-		artifactStorageSourceUri?: string;
+		artifactStorageSourceUri?: string | null;
 
 		/**
 		 * A SourceContext is a reference to a tree of files. A SourceContext together
 		 * with a path point to a unique revision of a single file or directory.
 		 */
-		context?: SourceContext;
+		context?: SourceContext | null;
 
 		/**
 		 * Hash(es) of the build source, which can be used to verify that the original
@@ -980,7 +980,7 @@ export namespace MyNS {
 		 * If the build source came in a single package such as a gzipped tarfile
 		 * (.tar.gz), the FileHash will be for the single path to that file.
 		 */
-		fileHashes?: {[id: string]: FileHashes };
+		fileHashes?: {[id: string]: FileHashes } | null;
 	}
 
 
@@ -994,19 +994,19 @@ export namespace MyNS {
 		 * A CloudRepoSourceContext denotes a particular revision in a Google Cloud
 		 * Source Repo.
 		 */
-		cloudRepo?: CloudRepoSourceContext;
+		cloudRepo?: CloudRepoSourceContext | null;
 
 		/** A SourceContext referring to a Gerrit project. */
-		gerrit?: GerritSourceContext;
+		gerrit?: GerritSourceContext | null;
 
 		/**
 		 * A GitSourceContext denotes a particular revision in a third party Git
 		 * repository (e.g., GitHub).
 		 */
-		git?: GitSourceContext;
+		git?: GitSourceContext | null;
 
 		/** Labels with user defined metadata. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 	}
 
 
@@ -1017,13 +1017,13 @@ export namespace MyNS {
 	export interface CloudRepoSourceContext {
 
 		/** An alias to a repo revision. */
-		aliasContext?: AliasContext;
+		aliasContext?: AliasContext | null;
 
 		/** A unique identifier for a Cloud Repo. */
-		repoId?: RepoId;
+		repoId?: RepoId | null;
 
 		/** A revision ID. */
-		revisionId?: string;
+		revisionId?: string | null;
 	}
 
 
@@ -1034,10 +1034,10 @@ export namespace MyNS {
 		 * Selects a repo using a Google Cloud Platform project ID (e.g.,
 		 * winged-cargo-31) and a repo name within that project.
 		 */
-		projectRepoId?: ProjectRepoId;
+		projectRepoId?: ProjectRepoId | null;
 
 		/** A server-assigned, globally unique identifier. */
-		uid?: string;
+		uid?: string | null;
 	}
 
 
@@ -1048,10 +1048,10 @@ export namespace MyNS {
 	export interface ProjectRepoId {
 
 		/** The ID of the project. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** The name of the repo. Leave empty for the default repo. */
-		repoName?: string;
+		repoName?: string | null;
 	}
 
 
@@ -1059,20 +1059,20 @@ export namespace MyNS {
 	export interface GerritSourceContext {
 
 		/** An alias to a repo revision. */
-		aliasContext?: AliasContext;
+		aliasContext?: AliasContext | null;
 
 		/**
 		 * The full project name within the host. Projects may be nested, so
 		 * "project/subproject" is a valid project name. The "repo name" is the
 		 * hostURI/project.
 		 */
-		gerritProject?: string;
+		gerritProject?: string | null;
 
 		/** The URI of a running Gerrit instance. */
-		hostUri?: string;
+		hostUri?: string | null;
 
 		/** A revision (commit) ID. */
-		revisionId?: string;
+		revisionId?: string | null;
 	}
 
 
@@ -1083,10 +1083,10 @@ export namespace MyNS {
 	export interface GitSourceContext {
 
 		/** Git commit hash. */
-		revisionId?: string;
+		revisionId?: string | null;
 
 		/** Git repository URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -1097,7 +1097,7 @@ export namespace MyNS {
 	export interface FileHashes {
 
 		/** Required. Collection of file hashes. */
-		fileHash?: Array<Hash>;
+		fileHash?: Array<Hash> | null;
 	}
 
 
@@ -1105,10 +1105,10 @@ export namespace MyNS {
 	export interface Hash {
 
 		/** Required. The type of hash that was performed. */
-		type?: HashType;
+		type?: HashType | null;
 
 		/** Required. The hash value. */
-		value?: string;
+		value?: string | null;
 	}
 
 	export enum HashType { HASH_TYPE_UNSPECIFIED = 0, SHA256 = 1 }
@@ -1118,7 +1118,7 @@ export namespace MyNS {
 	export interface GrafeasV1beta1DeploymentDetails {
 
 		/** The period during which some deployable was active in a runtime. */
-		deployment?: Deployment;
+		deployment?: Deployment | null;
 	}
 
 
@@ -1126,28 +1126,28 @@ export namespace MyNS {
 	export interface Deployment {
 
 		/** Address of the runtime element hosting this deployment. */
-		address?: string;
+		address?: string | null;
 
 		/** Configuration used to create this deployment. */
-		config?: string;
+		config?: string | null;
 
 		/** Required. Beginning of the lifetime of this deployment. */
-		deployTime?: string;
+		deployTime?: string | null;
 
 		/** Platform hosting this deployment. */
-		platform?: DeploymentPlatform;
+		platform?: DeploymentPlatform | null;
 
 		/**
 		 * Output only. Resource URI for the artifact being deployed taken from
 		 * the deployable field with the same name.
 		 */
-		resourceUri?: Array<string>;
+		resourceUri?: Array<string> | null;
 
 		/** End of the lifetime of this deployment. */
-		undeployTime?: string;
+		undeployTime?: string | null;
 
 		/** Identity of the user that triggered this deployment. */
-		userEmail?: string;
+		userEmail?: string | null;
 	}
 
 	export enum DeploymentPlatform { PLATFORM_UNSPECIFIED = 0, GKE = 1, FLEX = 2, CUSTOM = 3 }
@@ -1161,7 +1161,7 @@ export namespace MyNS {
 		 * relationship. This image would be produced from a Dockerfile with FROM
 		 * <DockerImage.Basis in attached Note>.
 		 */
-		derivedImage?: Derived;
+		derivedImage?: Derived | null;
 	}
 
 
@@ -1176,23 +1176,23 @@ export namespace MyNS {
 		 * Output only. This contains the base image URL for the derived image
 		 * occurrence.
 		 */
-		baseResourceUrl?: string;
+		baseResourceUrl?: string | null;
 
 		/**
 		 * Output only. The number of layers by which this image differs from the
 		 * associated image basis.
 		 */
-		distance?: number;
+		distance?: number | null;
 
 		/** A set of properties that uniquely identify a given Docker image. */
-		fingerprint?: Fingerprint;
+		fingerprint?: Fingerprint | null;
 
 		/**
 		 * This contains layer-specific metadata, if populated it has length
 		 * "distance" and is ordered with [distance] being the layer immediately
 		 * following the base image and [1] being the final layer.
 		 */
-		layerInfo?: Array<Layer>;
+		layerInfo?: Array<Layer> | null;
 	}
 
 
@@ -1200,10 +1200,10 @@ export namespace MyNS {
 	export interface Layer {
 
 		/** The recovered arguments to the Dockerfile directive. */
-		arguments?: string;
+		arguments?: string | null;
 
 		/** Required. The recovered Dockerfile directive used to construct this layer. */
-		directive?: LayerDirective;
+		directive?: LayerDirective | null;
 	}
 
 	export enum LayerDirective { DIRECTIVE_UNSPECIFIED = 0, MAINTAINER = 1, RUN = 2, CMD = 3, LABEL = 4, EXPOSE = 5, ENV = 6, ADD = 7, COPY = 8, ENTRYPOINT = 9, VOLUME = 10, USER = 11, WORKDIR = 12, ARG = 13, ONBUILD = 14, STOPSIGNAL = 15, HEALTHCHECK = 16, SHELL = 17 }
@@ -1213,7 +1213,7 @@ export namespace MyNS {
 	export interface GrafeasV1beta1DiscoveryDetails {
 
 		/** Provides information about the analysis status of a discovered resource. */
-		discovered?: Discovered;
+		discovered?: Discovered | null;
 	}
 
 
@@ -1221,7 +1221,7 @@ export namespace MyNS {
 	export interface Discovered {
 
 		/** The status of discovery for the resource. */
-		analysisStatus?: DiscoveredAnalysisStatus;
+		analysisStatus?: DiscoveredAnalysisStatus | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -1231,16 +1231,16 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		analysisStatusError?: Status;
+		analysisStatusError?: Status | null;
 
 		/** Whether the resource is continuously analyzed. */
-		continuousAnalysis?: DiscoveredContinuousAnalysis;
+		continuousAnalysis?: DiscoveredContinuousAnalysis | null;
 
 		/**
 		 * The last time continuous analysis was done for this resource.
 		 * Deprecated, do not use.
 		 */
-		lastAnalysisTime?: string;
+		lastAnalysisTime?: string | null;
 	}
 
 	export enum DiscoveredAnalysisStatus { ANALYSIS_STATUS_UNSPECIFIED = 0, PENDING = 1, SCANNING = 2, FINISHED_SUCCESS = 3, FINISHED_FAILED = 4, FINISHED_UNSUPPORTED = 5 }
@@ -1257,20 +1257,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 	export enum DiscoveredContinuousAnalysis { CONTINUOUS_ANALYSIS_UNSPECIFIED = 0, ACTIVE = 1, INACTIVE = 2 }
@@ -1283,7 +1283,7 @@ export namespace MyNS {
 		 * This represents how a particular software package may be installed on a
 		 * system.
 		 */
-		installation?: Installation;
+		installation?: Installation | null;
 	}
 
 
@@ -1297,10 +1297,10 @@ export namespace MyNS {
 		 * Required. All of the places within the filesystem versions of this package
 		 * have been found.
 		 */
-		location?: Array<Location>;
+		location?: Array<Location> | null;
 
 		/** Output only. The name of the installed package. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -1314,13 +1314,13 @@ export namespace MyNS {
 		 * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
 		 * denoting the package manager version distributing a package.
 		 */
-		cpeUri?: string;
+		cpeUri?: string | null;
 
 		/** The path from which we gathered that this package/version is installed. */
-		path?: string;
+		path?: string | null;
 
 		/** Version contains structured information about the version of a package. */
-		version?: Version;
+		version?: Version | null;
 	}
 
 
@@ -1328,20 +1328,20 @@ export namespace MyNS {
 	export interface Resource {
 
 		/** Container message for hash values. */
-		contentHash?: Hash;
+		contentHash?: Hash | null;
 
 		/**
 		 * Deprecated, do not use. Use uri instead.
 		 * The name of the resource. For example, the name of a Docker image -
 		 * "Debian".
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Required. The unique URI of the resource. For example,
 		 * `https://gcr.io/project/image@sha256:foo` for a Docker image.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -1353,38 +1353,38 @@ export namespace MyNS {
 		 * scale of 0-10 where 0 indicates low severity and 10 indicates high
 		 * severity.
 		 */
-		cvssScore?: number;
+		cvssScore?: number | null;
 
 		/**
 		 * The distro assigned severity for this vulnerability when it is
 		 * available, and note provider assigned severity when distro has not yet
 		 * assigned a severity for this vulnerability.
 		 */
-		effectiveSeverity?: VulnerabilitySeverity;
+		effectiveSeverity?: VulnerabilitySeverity | null;
 
 		/** Output only. A detailed description of this vulnerability. */
-		longDescription?: string;
+		longDescription?: string | null;
 
 		/**
 		 * Required. The set of affected locations and their fixes (if available)
 		 * within the associated resource.
 		 */
-		packageIssue?: Array<PackageIssue>;
+		packageIssue?: Array<PackageIssue> | null;
 
 		/** Output only. URLs related to this vulnerability. */
-		relatedUrls?: Array<RelatedUrl>;
+		relatedUrls?: Array<RelatedUrl> | null;
 
 		/** Output only. The note provider assigned Severity of the vulnerability. */
-		severity?: VulnerabilitySeverity;
+		severity?: VulnerabilitySeverity | null;
 
 		/** Output only. A one sentence description of this vulnerability. */
-		shortDescription?: string;
+		shortDescription?: string | null;
 
 		/**
 		 * The type of package; whether native or non native(ruby gems, node.js
 		 * packages etc)
 		 */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -1395,16 +1395,16 @@ export namespace MyNS {
 	export interface PackageIssue {
 
 		/** The location of the vulnerability. */
-		affectedLocation?: VulnerabilityLocation;
+		affectedLocation?: VulnerabilityLocation | null;
 
 		/** The location of the vulnerability. */
-		fixedLocation?: VulnerabilityLocation;
+		fixedLocation?: VulnerabilityLocation | null;
 
 		/**
 		 * Deprecated, use Details.effective_severity instead
 		 * The severity (e.g., distro assigned severity) for this vulnerability.
 		 */
-		severityName?: string;
+		severityName?: string | null;
 	}
 
 
@@ -1412,7 +1412,7 @@ export namespace MyNS {
 	export interface BatchCreateOccurrencesResponse {
 
 		/** The occurrences that were created. */
-		occurrences?: Array<Occurrence>;
+		occurrences?: Array<Occurrence> | null;
 	}
 
 
@@ -1443,7 +1443,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -1478,13 +1478,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -1518,26 +1518,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -1558,19 +1558,19 @@ export namespace MyNS {
 	export interface FixableTotalByDigest {
 
 		/** The number of fixable vulnerabilities associated with this resource. */
-		fixableCount?: string;
+		fixableCount?: string | null;
 
 		/** An entity that can have metadata. For example, a Docker image. */
-		resource?: Resource;
+		resource?: Resource | null;
 
 		/**
 		 * The severity for this count. SEVERITY_UNSPECIFIED indicates total across
 		 * all severities.
 		 */
-		severity?: VulnerabilitySeverity;
+		severity?: VulnerabilitySeverity | null;
 
 		/** The total number of vulnerabilities associated with this resource. */
-		totalCount?: string;
+		totalCount?: string | null;
 	}
 
 
@@ -1578,7 +1578,7 @@ export namespace MyNS {
 	export interface GetIamPolicyRequest {
 
 		/** Encapsulates settings provided to GetIamPolicy. */
-		options?: GetPolicyOptions;
+		options?: GetPolicyOptions | null;
 	}
 
 
@@ -1593,7 +1593,7 @@ export namespace MyNS {
 		 * Policies without any conditional bindings may specify any valid value or
 		 * leave the field unset.
 		 */
-		requestedPolicyVersion?: number;
+		requestedPolicyVersion?: number | null;
 	}
 
 
@@ -1604,10 +1604,10 @@ export namespace MyNS {
 	export interface GoogleDevtoolsContaineranalysisV1alpha1OperationMetadata {
 
 		/** Output only. The time this operation was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Output only. The time that this operation was marked completed or failed. */
-		endTime?: string;
+		endTime?: string | null;
 	}
 
 
@@ -1615,10 +1615,10 @@ export namespace MyNS {
 	export interface ListNoteOccurrencesResponse {
 
 		/** Token to provide to skip to a particular spot in the list. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The occurrences attached to the specified note. */
-		occurrences?: Array<Occurrence>;
+		occurrences?: Array<Occurrence> | null;
 	}
 
 
@@ -1630,10 +1630,10 @@ export namespace MyNS {
 		 * `page_token` for the following request. An empty value means no more
 		 * results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The notes requested. */
-		notes?: Array<Note>;
+		notes?: Array<Note> | null;
 	}
 
 
@@ -1645,10 +1645,10 @@ export namespace MyNS {
 		 * `page_token` for the following request. An empty value means no more
 		 * results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The occurrences requested. */
-		occurrences?: Array<Occurrence>;
+		occurrences?: Array<Occurrence> | null;
 	}
 
 
@@ -1660,10 +1660,10 @@ export namespace MyNS {
 		 * `page_token` for the following request. An empty value means no more
 		 * results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The scan configurations requested. */
-		scanConfigs?: Array<ScanConfig>;
+		scanConfigs?: Array<ScanConfig> | null;
 	}
 
 
@@ -1675,25 +1675,25 @@ export namespace MyNS {
 	export interface ScanConfig {
 
 		/** Output only. The time this scan config was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Output only. A human-readable description of what the scan configuration
 		 * does.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/** Whether the scan is enabled. */
-		enabled?: boolean;
+		enabled?: boolean | null;
 
 		/**
 		 * Output only. The name of the scan configuration in the form of
 		 * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Output only. The time this scan config was last updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -1761,7 +1761,7 @@ export namespace MyNS {
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -1776,7 +1776,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -1796,7 +1796,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -1860,7 +1860,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 	}
 
 
@@ -1873,7 +1873,7 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -1884,7 +1884,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -1895,7 +1895,7 @@ export namespace MyNS {
 	export interface VulnerabilityOccurrencesSummary {
 
 		/** A listing by resource of the number of fixable and total vulnerabilities. */
-		counts?: Array<FixableTotalByDigest>;
+		counts?: Array<FixableTotalByDigest> | null;
 	}
 
 	@Injectable()
@@ -1933,7 +1933,7 @@ export namespace MyNS {
 		 * @param {string} updateMask The fields to update.
 		 * @return {void} Successful response
 		 */
-		Containeranalysis_projects_notes_patch(name: string, updateMask: string, requestBody: Note): Observable<HttpResponse<string>> {
+		Containeranalysis_projects_notes_patch(name: string, updateMask: string | null | undefined, requestBody: Note): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1972,7 +1972,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token to provide to skip to a particular spot in the list.
 		 * @return {void} Successful response
 		 */
-		Containeranalysis_projects_notes_occurrences_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Containeranalysis_projects_notes_occurrences_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '/occurrences&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1987,7 +1987,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token to provide to skip to a particular spot in the list.
 		 * @return {void} Successful response
 		 */
-		Containeranalysis_projects_notes_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Containeranalysis_projects_notes_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/notes&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1999,7 +1999,7 @@ export namespace MyNS {
 		 * @param {string} noteId Required. The ID to use for this note.
 		 * @return {void} Successful response
 		 */
-		Containeranalysis_projects_notes_create(parent: string, noteId: string, requestBody: Note): Observable<HttpResponse<string>> {
+		Containeranalysis_projects_notes_create(parent: string, noteId: string | null | undefined, requestBody: Note): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/notes&noteId=' + (noteId == null ? '' : encodeURIComponent(noteId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2025,7 +2025,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token to provide to skip to a particular spot in the list.
 		 * @return {void} Successful response
 		 */
-		Containeranalysis_projects_occurrences_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Containeranalysis_projects_occurrences_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/occurrences&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2059,7 +2059,7 @@ export namespace MyNS {
 		 * @param {string} filter The filter expression.
 		 * @return {void} Successful response
 		 */
-		Containeranalysis_projects_occurrences_getVulnerabilitySummary(parent: string, filter: string): Observable<HttpResponse<string>> {
+		Containeranalysis_projects_occurrences_getVulnerabilitySummary(parent: string, filter: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/occurrences:vulnerabilitySummary&filter=' + (filter == null ? '' : encodeURIComponent(filter)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2073,7 +2073,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token to provide to skip to a particular spot in the list.
 		 * @return {void} Successful response
 		 */
-		Containeranalysis_projects_scanConfigs_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Containeranalysis_projects_scanConfigs_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/scanConfigs&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

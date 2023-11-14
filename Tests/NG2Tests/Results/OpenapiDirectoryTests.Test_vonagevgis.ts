@@ -5,32 +5,32 @@ export namespace MyNS {
 	export interface Account {
 
 		/** Unique identifier of the account */
-		id?: number;
+		id?: number | null;
 
 		/** Name of the account */
-		name?: string;
+		name?: string | null;
 
 		/** Organization of the account */
-		org?: string;
+		org?: string | null;
 
 		/** Status of the account */
-		status?: AccountStatus;
-		AccountUcis?: Array<AccountUcis>;
+		status?: AccountStatus | null;
+		AccountUcis?: Array<AccountUcis> | null;
 	}
 
 	export enum AccountStatus { PENDING = 0, ACTIVE = 1, DELETED = 2, ARCHIVED = 3 }
 
 	export interface AccountUcis {
-		health?: AccountHealth;
-		id?: number;
-		type?: string;
-		ucpAccountId?: string;
-		ucpLabel?: string;
+		health?: AccountHealth | null;
+		id?: number | null;
+		type?: string | null;
+		ucpAccountId?: string | null;
+		ucpLabel?: string | null;
 	}
 
 	export interface AccountHealth {
-		message?: string;
-		status?: string;
+		message?: string | null;
+		status?: string | null;
 	}
 
 	export interface Call {
@@ -42,10 +42,10 @@ export namespace MyNS {
 		accountId: number;
 
 		/** Time to answer the call */
-		answerTime?: Date;
+		answerTime?: Date | null;
 
 		/** Remote caller ID */
-		callerId?: string;
+		callerId?: string | null;
 
 		/**
 		 * Direction of the call
@@ -60,10 +60,10 @@ export namespace MyNS {
 		duration: number;
 
 		/** End time of the call */
-		endTime?: Date;
+		endTime?: Date | null;
 
 		/** External identifier of the call */
-		externalId?: string;
+		externalId?: string | null;
 
 		/**
 		 * Unique identifier of the call
@@ -133,14 +133,14 @@ export namespace MyNS {
 	}
 
 	export interface Error {
-		field?: string;
-		message?: string;
+		field?: string | null;
+		message?: string | null;
 	}
 
 	export interface ErrorResponse {
-		errorCode?: string;
-		errorMessage?: string;
-		errors?: Array<Error>;
+		errorCode?: string | null;
+		errorMessage?: string | null;
+		errors?: Array<Error> | null;
 	}
 
 	export interface Event {
@@ -152,10 +152,10 @@ export namespace MyNS {
 		accountId: number;
 
 		/** Time to answer the event */
-		answerTime?: Date;
+		answerTime?: Date | null;
 
 		/** Remote caller ID */
-		callerId?: string;
+		callerId?: string | null;
 
 		/**
 		 * Direction of the event
@@ -164,13 +164,13 @@ export namespace MyNS {
 		direction: CallDirection;
 
 		/** Duration of the call in milliseconds */
-		duration?: number;
+		duration?: number | null;
 
 		/** End time of the event */
-		endTime?: Date;
+		endTime?: Date | null;
 
 		/** External identifier of the event */
-		externalId?: string;
+		externalId?: string | null;
 
 		/**
 		 * Unique identifier of the event
@@ -183,7 +183,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		phoneNumber: string;
-		smsData?: string;
+		smsData?: string | null;
 
 		/**
 		 * Start time of the event
@@ -219,100 +219,100 @@ export namespace MyNS {
 	export interface EventsCount {
 
 		/** Number of events found */
-		count?: number;
+		count?: number | null;
 	}
 
 	export interface User {
 
 		/** Unique identifier of the user's account */
-		accountId?: number;
+		accountId?: number | null;
 
 		/** The name of the user's account */
-		acountLabel?: string;
+		acountLabel?: string | null;
 
 		/** Contact number of the user */
-		contactNumber?: string;
+		contactNumber?: string | null;
 
 		/** Email address of the user */
-		emailAddress?: string;
+		emailAddress?: string | null;
 
 		/** First name of the user */
-		firstName?: string;
+		firstName?: string | null;
 
 		/** Unique identifier of the user */
-		id?: number;
+		id?: number | null;
 
 		/** Last name of the user */
-		lastName?: string;
-		UserRoles?: Array<UserRoles>;
+		lastName?: string | null;
+		UserRoles?: Array<UserRoles> | null;
 
 		/** Status of the user */
-		status?: AccountStatus;
-		UserUcis?: Array<UserUcis>;
+		status?: AccountStatus | null;
+		UserUcis?: Array<UserUcis> | null;
 	}
 
 	export interface UserRoles {
 
 		/** Code for the role */
-		code?: string;
+		code?: string | null;
 
 		/** Name for the role */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface UserUcis {
-		health?: UserHealth;
-		id?: number;
-		type?: string;
-		ucpLabel?: string;
+		health?: UserHealth | null;
+		id?: number | null;
+		type?: string | null;
+		ucpLabel?: string | null;
 	}
 
 	export interface UserHealth {
-		message?: string;
-		status?: string;
+		message?: string | null;
+		status?: string | null;
 	}
 
 	export interface Webhook {
 
 		/** Unique identifier of the account */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Created time for the webhook */
-		createdAt?: string;
+		createdAt?: string | null;
 
 		/** Subscribed events for the webhook */
-		events?: Array<CallType>;
+		events?: Array<CallType> | null;
 
 		/** Expiration time for the webhook */
-		expireAt?: string;
+		expireAt?: string | null;
 
 		/** Unique identifier for the webhook */
-		id?: string;
+		id?: string | null;
 
 		/** Metadata policy for the webhook */
-		metadataPolicy?: WebhookMetadataPolicy;
+		metadataPolicy?: WebhookMetadataPolicy | null;
 
 		/** Scheduled purge time for the webhook */
-		purgeAt?: string;
+		purgeAt?: string | null;
 
 		/** Last renewed time for the webhook */
-		renewedAt?: string;
+		renewedAt?: string | null;
 
 		/** Signing algorithm for the webhook */
-		signingAlgo?: WebhookSigningAlgo;
+		signingAlgo?: WebhookSigningAlgo | null;
 
 		/** Signing key for the webhook */
-		signingKey?: string;
-		statistics?: WebhookStatistics;
+		signingKey?: string | null;
+		statistics?: WebhookStatistics | null;
 
 		/** Status for the webhook */
-		status?: WebhookStatus;
+		status?: WebhookStatus | null;
 
 		/** Destination URL for events */
-		url?: string;
+		url?: string | null;
 
 		/** Unique identifier of the user */
-		userId?: string;
+		userId?: string | null;
 	}
 
 	export enum WebhookMetadataPolicy { NONE = 0, HEADER = 1, BODY = 2 }
@@ -322,16 +322,16 @@ export namespace MyNS {
 	export interface WebhookStatistics {
 
 		/** Current delivery status */
-		failed?: boolean;
+		failed?: boolean | null;
 
 		/** Total delivery attempts */
-		totalAttempts?: number;
+		totalAttempts?: number | null;
 
 		/** Total failed deliveries */
-		totalFailures?: number;
+		totalFailures?: number | null;
 
 		/** Total successful deliveries */
-		totalSuccesses?: number;
+		totalSuccesses?: number | null;
 	}
 
 	export enum WebhookStatus { ACTIVE = 0, PAUSED = 1 }
@@ -339,19 +339,19 @@ export namespace MyNS {
 	export interface WebhookCreate {
 
 		/** Events to subscribe to the webhook */
-		events?: Array<CallType>;
+		events?: Array<CallType> | null;
 
 		/** Metadata policy for the webhook */
-		metadataPolicy?: WebhookMetadataPolicy;
+		metadataPolicy?: WebhookMetadataPolicy | null;
 
 		/** Signing algorithm for the webhook */
-		signingAlgo?: WebhookCreateSigningAlgo;
+		signingAlgo?: WebhookCreateSigningAlgo | null;
 
 		/** Signing key for the webhook */
-		signingKey?: string;
+		signingKey?: string | null;
 
 		/** Destination URL for events */
-		url?: string;
+		url?: string | null;
 	}
 
 	export enum WebhookCreateSigningAlgo { HMAC_SHA256 = 0 }
@@ -393,7 +393,7 @@ export namespace MyNS {
 		 * @param {string} sort Sort calls by property
 		 * @return {Array<Call>} Successful
 		 */
-		ListCalls(fromDate: number, toDate: number, direction: CallDirection, states: ListCallsStates, offset: number, size: number, order: ListCallsOrder, sort: string): Observable<Array<Call>> {
+		ListCalls(fromDate: number | null | undefined, toDate: number | null | undefined, direction: CallDirection | null | undefined, states: ListCallsStates | null | undefined, offset: number | null | undefined, size: number | null | undefined, order: ListCallsOrder | null | undefined, sort: string | null | undefined): Observable<Array<Call>> {
 			return this.http.get<Array<Call>>(this.baseUri + 'self/calls?fromDate=' + fromDate + '&toDate=' + toDate + '&direction=' + direction + '&states=' + states + '&offset=' + offset + '&size=' + size + '&order=' + order + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), {});
 		}
 
@@ -416,7 +416,7 @@ export namespace MyNS {
 		 * @param {ListCallsStates} states Filter calls by state. For multiple criteria, seperate values by a comma.
 		 * @return {EventsCount} Successful
 		 */
-		GetCallsCount(fromDate: number, toDate: number, direction: CallDirection, states: ListCallsStates): Observable<EventsCount> {
+		GetCallsCount(fromDate: number | null | undefined, toDate: number | null | undefined, direction: CallDirection | null | undefined, states: ListCallsStates | null | undefined): Observable<EventsCount> {
 			return this.http.get<EventsCount>(this.baseUri + 'self/calls/count?fromDate=' + fromDate + '&toDate=' + toDate + '&direction=' + direction + '&states=' + states, {});
 		}
 
@@ -505,7 +505,7 @@ export namespace MyNS {
 		 * @param {string} sort Sort events by property
 		 * @return {Array<Event>} Successful
 		 */
-		ListEvents(types: CallType, fromDate: number, toDate: number, direction: CallDirection, states: CallState, offset: number, size: number, order: ListCallsOrder, sort: string): Observable<Array<Event>> {
+		ListEvents(types: CallType | null | undefined, fromDate: number | null | undefined, toDate: number | null | undefined, direction: CallDirection | null | undefined, states: CallState | null | undefined, offset: number | null | undefined, size: number | null | undefined, order: ListCallsOrder | null | undefined, sort: string | null | undefined): Observable<Array<Event>> {
 			return this.http.get<Array<Event>>(this.baseUri + 'self/events?types=' + types + '&fromDate=' + fromDate + '&toDate=' + toDate + '&direction=' + direction + '&states=' + states + '&offset=' + offset + '&size=' + size + '&order=' + order + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), {});
 		}
 
@@ -518,7 +518,7 @@ export namespace MyNS {
 		 * @param {ListCallsStates} states Filter events by state
 		 * @return {EventsCount} Successful
 		 */
-		GetEventsCount(fromDate: number, toDate: number, direction: CallDirection, states: ListCallsStates): Observable<EventsCount> {
+		GetEventsCount(fromDate: number | null | undefined, toDate: number | null | undefined, direction: CallDirection | null | undefined, states: ListCallsStates | null | undefined): Observable<EventsCount> {
 			return this.http.get<EventsCount>(this.baseUri + 'self/events/count?fromDate=' + fromDate + '&toDate=' + toDate + '&direction=' + direction + '&states=' + states, {});
 		}
 

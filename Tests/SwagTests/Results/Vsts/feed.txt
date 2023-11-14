@@ -1177,14 +1177,14 @@ namespace MyNS
 		public System.Nullable<System.Int32> Count { get; set; }
 	}
 	
-	public partial class Misc
+	public partial class MyClient
 	{
 		
 		private System.Net.Http.HttpClient client;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public MyClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -1595,6 +1595,78 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Get all feeds in an account where you have the provided role access.
+		/// 
+		/// If the project parameter is present, gets all feeds in the given project.
+		/// If omitted, gets all feeds in the organization.
+		/// Feed__Management_Get_Feeds {organization}/{project}/_apis/packaging/feeds
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="feedRole">Filter by this role, either Administrator(4), Contributor(3), or Reader(2) level permissions.</param>
+		/// <param name="includeDeletedUpstreams">Include upstreams that have been deleted in the response.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<Feed[]> Feed__Management_Get_FeedsAsync(string organization, string project, FeedPermissionRole feedRole, bool includeDeletedUpstreams, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/feeds&feedRole=" + feedRole+"&includeDeletedUpstreams="+includeDeletedUpstreams+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Feed[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get all feeds in an account where you have the provided role access.
+		/// 
+		/// If the project parameter is present, gets all feeds in the given project.
+		/// If omitted, gets all feeds in the organization.
+		/// Feed__Management_Get_Feeds {organization}/{project}/_apis/packaging/feeds
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="feedRole">Filter by this role, either Administrator(4), Contributor(3), or Reader(2) level permissions.</param>
+		/// <param name="includeDeletedUpstreams">Include upstreams that have been deleted in the response.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public Feed[] Feed__Management_Get_Feeds(string organization, string project, FeedPermissionRole feedRole, bool includeDeletedUpstreams, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/feeds&feedRole=" + feedRole+"&includeDeletedUpstreams="+includeDeletedUpstreams+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Feed[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Create a feed, a container for various package types.
 		/// 
 		/// Feeds can be created in a project if the project parameter is included in the request url.
@@ -1679,136 +1751,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Get all feeds in an account where you have the provided role access.
-		/// 
-		/// If the project parameter is present, gets all feeds in the given project.
-		/// If omitted, gets all feeds in the organization.
-		/// Feed__Management_Get_Feeds {organization}/{project}/_apis/packaging/feeds
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="feedRole">Filter by this role, either Administrator(4), Contributor(3), or Reader(2) level permissions.</param>
-		/// <param name="includeDeletedUpstreams">Include upstreams that have been deleted in the response.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<Feed[]> Feed__Management_Get_FeedsAsync(string organization, string project, FeedPermissionRole feedRole, bool includeDeletedUpstreams, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/feeds&feedRole=" + feedRole+"&includeDeletedUpstreams="+includeDeletedUpstreams+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Feed[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get all feeds in an account where you have the provided role access.
-		/// 
-		/// If the project parameter is present, gets all feeds in the given project.
-		/// If omitted, gets all feeds in the organization.
-		/// Feed__Management_Get_Feeds {organization}/{project}/_apis/packaging/feeds
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="feedRole">Filter by this role, either Administrator(4), Contributor(3), or Reader(2) level permissions.</param>
-		/// <param name="includeDeletedUpstreams">Include upstreams that have been deleted in the response.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public Feed[] Feed__Management_Get_Feeds(string organization, string project, FeedPermissionRole feedRole, bool includeDeletedUpstreams, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/feeds&feedRole=" + feedRole+"&includeDeletedUpstreams="+includeDeletedUpstreams+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Feed[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Remove a feed and all its packages. The feed moves to the recycle bin and is reversible.
-		/// 
-		/// The project parameter must be supplied if the feed was created in a project.
-		/// If the feed is not associated with any project, omit the project parameter from the request.
-		/// Feed__Management_Delete_Feed {organization}/{project}/_apis/packaging/feeds/{feedId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="feedId">Name or Id of the feed.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Feed__Management_Delete_FeedAsync(string organization, string feedId, string project, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/feeds/"+ (feedId==null? "" : Uri.EscapeDataString(feedId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Remove a feed and all its packages. The feed moves to the recycle bin and is reversible.
-		/// 
-		/// The project parameter must be supplied if the feed was created in a project.
-		/// If the feed is not associated with any project, omit the project parameter from the request.
-		/// Feed__Management_Delete_Feed {organization}/{project}/_apis/packaging/feeds/{feedId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="feedId">Name or Id of the feed.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Feed__Management_Delete_Feed(string organization, string feedId, string project, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/feeds/"+ (feedId==null? "" : Uri.EscapeDataString(feedId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Get the settings for a specific feed.
 		/// 
 		/// The project parameter must be supplied if the feed was created in a project.
@@ -1872,6 +1814,64 @@ namespace MyNS
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Feed>(jsonReader);
 				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Remove a feed and all its packages. The feed moves to the recycle bin and is reversible.
+		/// 
+		/// The project parameter must be supplied if the feed was created in a project.
+		/// If the feed is not associated with any project, omit the project parameter from the request.
+		/// Feed__Management_Delete_Feed {organization}/{project}/_apis/packaging/feeds/{feedId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="feedId">Name or Id of the feed.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Feed__Management_Delete_FeedAsync(string organization, string feedId, string project, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/feeds/"+ (feedId==null? "" : Uri.EscapeDataString(feedId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Remove a feed and all its packages. The feed moves to the recycle bin and is reversible.
+		/// 
+		/// The project parameter must be supplied if the feed was created in a project.
+		/// If the feed is not associated with any project, omit the project parameter from the request.
+		/// Feed__Management_Delete_Feed {organization}/{project}/_apis/packaging/feeds/{feedId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="feedId">Name or Id of the feed.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Feed__Management_Delete_Feed(string organization, string feedId, string project, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/feeds/"+ (feedId==null? "" : Uri.EscapeDataString(feedId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{
@@ -3109,64 +3109,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Delete the retention policy for a feed.
-		/// 
-		/// The project parameter must be supplied if the feed was created in a project.
-		/// If the feed is not associated with any project, omit the project parameter from the request.
-		/// Retention__Policies_Delete_Retention_Policy {organization}/{project}/_apis/packaging/Feeds/{feedId}/retentionpolicies
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="feedId">Name or ID of the feed.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Retention__Policies_Delete_Retention_PolicyAsync(string organization, string feedId, string project, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/Feeds/"+ (feedId==null? "" : Uri.EscapeDataString(feedId))+"/retentionpolicies&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete the retention policy for a feed.
-		/// 
-		/// The project parameter must be supplied if the feed was created in a project.
-		/// If the feed is not associated with any project, omit the project parameter from the request.
-		/// Retention__Policies_Delete_Retention_Policy {organization}/{project}/_apis/packaging/Feeds/{feedId}/retentionpolicies
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="feedId">Name or ID of the feed.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Retention__Policies_Delete_Retention_Policy(string organization, string feedId, string project, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/Feeds/"+ (feedId==null? "" : Uri.EscapeDataString(feedId))+"/retentionpolicies&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Get the retention policy for a feed.
 		/// 
 		/// The project parameter must be supplied if the feed was created in a project.
@@ -3323,6 +3265,132 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Delete the retention policy for a feed.
+		/// 
+		/// The project parameter must be supplied if the feed was created in a project.
+		/// If the feed is not associated with any project, omit the project parameter from the request.
+		/// Retention__Policies_Delete_Retention_Policy {organization}/{project}/_apis/packaging/Feeds/{feedId}/retentionpolicies
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="feedId">Name or ID of the feed.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Retention__Policies_Delete_Retention_PolicyAsync(string organization, string feedId, string project, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/Feeds/"+ (feedId==null? "" : Uri.EscapeDataString(feedId))+"/retentionpolicies&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete the retention policy for a feed.
+		/// 
+		/// The project parameter must be supplied if the feed was created in a project.
+		/// If the feed is not associated with any project, omit the project parameter from the request.
+		/// Retention__Policies_Delete_Retention_Policy {organization}/{project}/_apis/packaging/Feeds/{feedId}/retentionpolicies
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="feedId">Name or ID of the feed.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Retention__Policies_Delete_Retention_Policy(string organization, string feedId, string project, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/Feeds/"+ (feedId==null? "" : Uri.EscapeDataString(feedId))+"/retentionpolicies&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get all views for a feed.
+		/// 
+		/// The project parameter must be supplied if the feed was created in a project.
+		/// Feed__Management_Get_Feed_Views {organization}/{project}/_apis/packaging/Feeds/{feedId}/views
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="feedId">Name or Id of the feed.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<FeedView[]> Feed__Management_Get_Feed_ViewsAsync(string organization, string feedId, string project, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/Feeds/"+ (feedId==null? "" : Uri.EscapeDataString(feedId))+"/views&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<FeedView[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get all views for a feed.
+		/// 
+		/// The project parameter must be supplied if the feed was created in a project.
+		/// Feed__Management_Get_Feed_Views {organization}/{project}/_apis/packaging/Feeds/{feedId}/views
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="feedId">Name or Id of the feed.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public FeedView[] Feed__Management_Get_Feed_Views(string organization, string feedId, string project, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/Feeds/"+ (feedId==null? "" : Uri.EscapeDataString(feedId))+"/views&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<FeedView[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Create a new view on the referenced feed.
 		/// 
 		/// The project parameter must be supplied if the feed was created in a project.
@@ -3407,132 +3475,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Get all views for a feed.
-		/// 
-		/// The project parameter must be supplied if the feed was created in a project.
-		/// Feed__Management_Get_Feed_Views {organization}/{project}/_apis/packaging/Feeds/{feedId}/views
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="feedId">Name or Id of the feed.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<FeedView[]> Feed__Management_Get_Feed_ViewsAsync(string organization, string feedId, string project, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/Feeds/"+ (feedId==null? "" : Uri.EscapeDataString(feedId))+"/views&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<FeedView[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get all views for a feed.
-		/// 
-		/// The project parameter must be supplied if the feed was created in a project.
-		/// Feed__Management_Get_Feed_Views {organization}/{project}/_apis/packaging/Feeds/{feedId}/views
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="feedId">Name or Id of the feed.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public FeedView[] Feed__Management_Get_Feed_Views(string organization, string feedId, string project, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/Feeds/"+ (feedId==null? "" : Uri.EscapeDataString(feedId))+"/views&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<FeedView[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete a feed view.
-		/// 
-		/// The project parameter must be supplied if the feed was created in a project.
-		/// Feed__Management_Delete_Feed_View {organization}/{project}/_apis/packaging/Feeds/{feedId}/views/{viewId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="feedId">Name or Id of the feed.</param>
-		/// <param name="viewId">Name or Id of the view.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Feed__Management_Delete_Feed_ViewAsync(string organization, string feedId, string viewId, string project, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/Feeds/"+ (feedId==null? "" : Uri.EscapeDataString(feedId))+"/views/"+ (viewId==null? "" : Uri.EscapeDataString(viewId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete a feed view.
-		/// 
-		/// The project parameter must be supplied if the feed was created in a project.
-		/// Feed__Management_Delete_Feed_View {organization}/{project}/_apis/packaging/Feeds/{feedId}/views/{viewId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="feedId">Name or Id of the feed.</param>
-		/// <param name="viewId">Name or Id of the view.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Feed__Management_Delete_Feed_View(string organization, string feedId, string viewId, string project, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/Feeds/"+ (feedId==null? "" : Uri.EscapeDataString(feedId))+"/views/"+ (viewId==null? "" : Uri.EscapeDataString(viewId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Get a view by Id.
 		/// 
 		/// The project parameter must be supplied if the feed was created in a project.
@@ -3594,6 +3536,64 @@ namespace MyNS
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<FeedView>(jsonReader);
 				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a feed view.
+		/// 
+		/// The project parameter must be supplied if the feed was created in a project.
+		/// Feed__Management_Delete_Feed_View {organization}/{project}/_apis/packaging/Feeds/{feedId}/views/{viewId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="feedId">Name or Id of the feed.</param>
+		/// <param name="viewId">Name or Id of the view.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Feed__Management_Delete_Feed_ViewAsync(string organization, string feedId, string viewId, string project, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/Feeds/"+ (feedId==null? "" : Uri.EscapeDataString(feedId))+"/views/"+ (viewId==null? "" : Uri.EscapeDataString(viewId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a feed view.
+		/// 
+		/// The project parameter must be supplied if the feed was created in a project.
+		/// Feed__Management_Delete_Feed_View {organization}/{project}/_apis/packaging/Feeds/{feedId}/views/{viewId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="feedId">Name or Id of the feed.</param>
+		/// <param name="viewId">Name or Id of the view.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Feed__Management_Delete_Feed_View(string organization, string feedId, string viewId, string project, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/packaging/Feeds/"+ (feedId==null? "" : Uri.EscapeDataString(feedId))+"/views/"+ (viewId==null? "" : Uri.EscapeDataString(viewId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{

@@ -7,10 +7,10 @@ export namespace MyNS {
 	export interface AchievementResetAllResponse {
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#achievementResetAllResponse. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The achievement reset results. */
-		results?: Array<AchievementResetResponse>;
+		results?: Array<AchievementResetResponse> | null;
 	}
 
 
@@ -24,16 +24,16 @@ export namespace MyNS {
 		 * - "REVEALED" - Achievement is revealed.
 		 * - "UNLOCKED" - Achievement is unlocked.
 		 */
-		currentState?: string;
+		currentState?: string | null;
 
 		/** The ID of an achievement for which player state has been updated. */
-		definitionId?: string;
+		definitionId?: string | null;
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#achievementResetResponse. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Flag to indicate if the requested update actually occurred. */
-		updateOccurred?: boolean;
+		updateOccurred?: boolean | null;
 	}
 
 
@@ -41,10 +41,10 @@ export namespace MyNS {
 	export interface AchievementResetMultipleForAllRequest {
 
 		/** The IDs of achievements to reset. */
-		achievement_ids?: Array<string>;
+		achievement_ids?: Array<string> | null;
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#achievementResetMultipleForAllRequest. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -52,10 +52,10 @@ export namespace MyNS {
 	export interface EventsResetMultipleForAllRequest {
 
 		/** The IDs of events to reset. */
-		event_ids?: Array<string>;
+		event_ids?: Array<string> | null;
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#eventsResetMultipleForAllRequest. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -63,10 +63,10 @@ export namespace MyNS {
 	export interface GamesPlayedResource {
 
 		/** True if the player was auto-matched with the currently authenticated user. */
-		autoMatched?: boolean;
+		autoMatched?: boolean | null;
 
 		/** The last time the player played the game in milliseconds since the epoch in UTC. */
-		timeMillis?: string;
+		timeMillis?: string | null;
 	}
 
 
@@ -74,16 +74,16 @@ export namespace MyNS {
 	export interface GamesPlayerExperienceInfoResource {
 
 		/** The current number of experience points for the player. */
-		currentExperiencePoints?: string;
+		currentExperiencePoints?: string | null;
 
 		/** This is a JSON template for 1P/3P metadata about a user's level. */
-		currentLevel?: GamesPlayerLevelResource;
+		currentLevel?: GamesPlayerLevelResource | null;
 
 		/** The timestamp when the player was leveled up, in millis since Unix epoch UTC. */
-		lastLevelUpTimestampMillis?: string;
+		lastLevelUpTimestampMillis?: string | null;
 
 		/** This is a JSON template for 1P/3P metadata about a user's level. */
-		nextLevel?: GamesPlayerLevelResource;
+		nextLevel?: GamesPlayerLevelResource | null;
 	}
 
 
@@ -91,13 +91,13 @@ export namespace MyNS {
 	export interface GamesPlayerLevelResource {
 
 		/** The level for the user. */
-		level?: number;
+		level?: number | null;
 
 		/** The maximum experience points for this level. */
-		maxExperiencePoints?: string;
+		maxExperiencePoints?: string | null;
 
 		/** The minimum experience points for this level. */
-		minExperiencePoints?: string;
+		minExperiencePoints?: string | null;
 	}
 
 
@@ -105,13 +105,13 @@ export namespace MyNS {
 	export interface HiddenPlayer {
 
 		/** The time this player was hidden. */
-		hiddenTimeMillis?: string;
+		hiddenTimeMillis?: string | null;
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#hiddenPlayer. */
-		kind?: string;
+		kind?: string | null;
 
 		/** This is a JSON template for a Player resource. */
-		player?: Player;
+		player?: Player | null;
 	}
 
 
@@ -119,53 +119,53 @@ export namespace MyNS {
 	export interface Player {
 
 		/** The base URL for the image that represents the player. */
-		avatarImageUrl?: string;
+		avatarImageUrl?: string | null;
 
 		/** The url to the landscape mode player banner image. */
-		bannerUrlLandscape?: string;
+		bannerUrlLandscape?: string | null;
 
 		/** The url to the portrait mode player banner image. */
-		bannerUrlPortrait?: string;
+		bannerUrlPortrait?: string | null;
 
 		/** The name to display for the player. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** This is a JSON template for 1P/3P metadata about the player's experience. */
-		experienceInfo?: GamesPlayerExperienceInfoResource;
+		experienceInfo?: GamesPlayerExperienceInfoResource | null;
 
 		/** The friend status of the given player, relative to the requester. This is unset if the player is not sharing their friends list with the game. */
-		friendStatus?: string;
+		friendStatus?: string | null;
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#player. */
-		kind?: string;
+		kind?: string | null;
 
 		/** This is a JSON template for metadata about a player playing a game with the currently authenticated user. */
-		lastPlayedWith?: GamesPlayedResource;
+		lastPlayedWith?: GamesPlayedResource | null;
 
 		/** An object representation of the individual components of the player's name. For some players, these fields may not be present. */
-		name?: PlayerName;
+		name?: PlayerName | null;
 
 		/** The player ID that was used for this player the first time they signed into the game in question. This is only populated for calls to player.get for the requesting player, only if the player ID has subsequently changed, and only to clients that support remapping player IDs. */
-		originalPlayerId?: string;
+		originalPlayerId?: string | null;
 
 		/** The ID of the player. */
-		playerId?: string;
-		playerStattus?: string;
+		playerId?: string | null;
+		playerStattus?: string | null;
 
 		/** This is a JSON template for profile settings */
-		profileSettings?: ProfileSettings;
+		profileSettings?: ProfileSettings | null;
 
 		/** The player's title rewarded for their game activities. */
-		title?: string;
+		title?: string | null;
 	}
 
 	export interface PlayerName {
 
 		/** The family name of this player. In some places, this is known as the last name. */
-		familyName?: string;
+		familyName?: string | null;
 
 		/** The given name of this player. In some places, this is known as the first name. */
-		givenName?: string;
+		givenName?: string | null;
 	}
 
 
@@ -173,8 +173,8 @@ export namespace MyNS {
 	export interface ProfileSettings {
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#profileSettings. */
-		kind?: string;
-		profileVisible?: boolean;
+		kind?: string | null;
+		profileVisible?: boolean | null;
 	}
 
 
@@ -182,13 +182,13 @@ export namespace MyNS {
 	export interface HiddenPlayerList {
 
 		/** The players. */
-		items?: Array<HiddenPlayer>;
+		items?: Array<HiddenPlayer> | null;
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#hiddenPlayerList. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The pagination token for the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -196,10 +196,10 @@ export namespace MyNS {
 	export interface PlayerScoreResetAllResponse {
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#playerScoreResetResponse. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The leaderboard reset results. */
-		results?: Array<PlayerScoreResetResponse>;
+		results?: Array<PlayerScoreResetResponse> | null;
 	}
 
 
@@ -207,10 +207,10 @@ export namespace MyNS {
 	export interface PlayerScoreResetResponse {
 
 		/** The ID of an leaderboard for which player state has been updated. */
-		definitionId?: string;
+		definitionId?: string | null;
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#playerScoreResetResponse. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * The time spans of the updated score.
@@ -219,7 +219,7 @@ export namespace MyNS {
 		 * - "WEEKLY" - The score is a weekly score.
 		 * - "DAILY" - The score is a daily score.
 		 */
-		resetScoreTimeSpans?: Array<string>;
+		resetScoreTimeSpans?: Array<string> | null;
 	}
 
 
@@ -227,10 +227,10 @@ export namespace MyNS {
 	export interface ScoresResetMultipleForAllRequest {
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string gamesManagement#scoresResetMultipleForAllRequest. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The IDs of leaderboards to reset. */
-		leaderboard_ids?: Array<string>;
+		leaderboard_ids?: Array<string> | null;
 	}
 
 	@Injectable()
@@ -293,7 +293,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		GamesManagement_applications_listHidden(applicationId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		GamesManagement_applications_listHidden(applicationId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'applications/' + (applicationId == null ? '' : encodeURIComponent(applicationId)) + '/players/hidden&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

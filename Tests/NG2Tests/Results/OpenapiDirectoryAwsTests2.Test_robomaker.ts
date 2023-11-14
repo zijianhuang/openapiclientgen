@@ -3,44 +3,44 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface BatchDescribeSimulationJobResponse {
-		jobs?: Array<SimulationJob>;
-		unprocessedJobs?: Array<string>;
+		jobs?: Array<SimulationJob> | null;
+		unprocessedJobs?: Array<string> | null;
 	}
 
 
 	/** Information about a simulation job. */
 	export interface SimulationJob {
-		arn?: string;
-		name?: string;
-		status?: SimulationJobStatus;
-		lastStartedAt?: Date;
-		lastUpdatedAt?: Date;
-		failureBehavior?: SimulationJobFailureBehavior;
-		failureCode?: SimulationJobFailureCode;
-		failureReason?: string;
-		clientRequestToken?: string;
+		arn?: string | null;
+		name?: string | null;
+		status?: SimulationJobStatus | null;
+		lastStartedAt?: Date | null;
+		lastUpdatedAt?: Date | null;
+		failureBehavior?: SimulationJobFailureBehavior | null;
+		failureCode?: SimulationJobFailureCode | null;
+		failureReason?: string | null;
+		clientRequestToken?: string | null;
 
 		/** The output location. */
-		outputLocation?: OutputLocation;
+		outputLocation?: OutputLocation | null;
 
 		/** The logging configuration. */
-		loggingConfig?: LoggingConfig;
-		maxJobDurationInSeconds?: number;
-		simulationTimeMillis?: number;
-		iamRole?: string;
-		robotApplications?: Array<RobotApplicationConfig>;
-		simulationApplications?: Array<SimulationApplicationConfig>;
-		dataSources?: Array<DataSource>;
-		tags?: TagMap;
+		loggingConfig?: LoggingConfig | null;
+		maxJobDurationInSeconds?: number | null;
+		simulationTimeMillis?: number | null;
+		iamRole?: string | null;
+		robotApplications?: Array<RobotApplicationConfig> | null;
+		simulationApplications?: Array<SimulationApplicationConfig> | null;
+		dataSources?: Array<DataSource> | null;
+		tags?: TagMap | null;
 
 		/** VPC configuration associated with your simulation job. */
-		vpcConfig?: VPCConfigResponse;
+		vpcConfig?: VPCConfigResponse | null;
 
 		/** Describes a network interface. */
-		networkInterface?: NetworkInterface;
+		networkInterface?: NetworkInterface | null;
 
 		/** Compute information for the simulation job */
-		compute?: ComputeResponse;
+		compute?: ComputeResponse | null;
 	}
 
 	export enum SimulationJobStatus { Pending = 0, Preparing = 1, Running = 2, Restarting = 3, Completed = 4, Failed = 5, RunningFailed = 6, Terminating = 7, Terminated = 8, Canceled = 9 }
@@ -52,8 +52,8 @@ export namespace MyNS {
 
 	/** The output location. */
 	export interface OutputLocation {
-		s3Bucket?: string;
-		s3Prefix?: string;
+		s3Bucket?: string | null;
+		s3Prefix?: string | null;
 	}
 
 
@@ -66,7 +66,7 @@ export namespace MyNS {
 	/** Application configuration information for a robot. */
 	export interface RobotApplicationConfig {
 		application: string;
-		applicationVersion?: string;
+		applicationVersion?: string | null;
 
 		/**
 		 * Information about a launch configuration.
@@ -80,11 +80,11 @@ export namespace MyNS {
 	export interface LaunchConfig {
 		packageName: string;
 		launchFile: string;
-		environmentVariables?: EnvironmentVariableMap;
+		environmentVariables?: EnvironmentVariableMap | null;
 
 		/** Configuration information for port forwarding. */
-		portForwardingConfig?: PortForwardingConfig;
-		streamUI?: boolean;
+		portForwardingConfig?: PortForwardingConfig | null;
+		streamUI?: boolean | null;
 	}
 
 	export interface EnvironmentVariableMap {
@@ -93,7 +93,7 @@ export namespace MyNS {
 
 	/** Configuration information for port forwarding. */
 	export interface PortForwardingConfig {
-		portMappings?: Array<PortMapping>;
+		portMappings?: Array<PortMapping> | null;
 	}
 
 
@@ -101,14 +101,14 @@ export namespace MyNS {
 	export interface PortMapping {
 		jobPort: number;
 		applicationPort: number;
-		enableOnPublicIp?: boolean;
+		enableOnPublicIp?: boolean | null;
 	}
 
 
 	/** Information about a simulation application configuration. */
 	export interface SimulationApplicationConfig {
 		application: string;
-		applicationVersion?: string;
+		applicationVersion?: string | null;
 
 		/**
 		 * Information about a launch configuration.
@@ -120,16 +120,16 @@ export namespace MyNS {
 
 	/** Information about a data source. */
 	export interface DataSource {
-		name?: string;
-		s3Bucket?: string;
-		s3Keys?: Array<S3KeyOutput>;
+		name?: string | null;
+		s3Bucket?: string | null;
+		s3Keys?: Array<S3KeyOutput> | null;
 	}
 
 
 	/** Information about S3 keys. */
 	export interface S3KeyOutput {
-		s3Key?: string;
-		etag?: string;
+		s3Key?: string | null;
+		etag?: string | null;
 	}
 
 	export interface TagMap {
@@ -138,24 +138,24 @@ export namespace MyNS {
 
 	/** VPC configuration associated with your simulation job. */
 	export interface VPCConfigResponse {
-		subnets?: Array<string>;
-		securityGroups?: Array<string>;
-		vpcId?: string;
-		assignPublicIp?: boolean;
+		subnets?: Array<string> | null;
+		securityGroups?: Array<string> | null;
+		vpcId?: string | null;
+		assignPublicIp?: boolean | null;
 	}
 
 
 	/** Describes a network interface. */
 	export interface NetworkInterface {
-		networkInterfaceId?: string;
-		privateIpAddress?: string;
-		publicIpAddress?: string;
+		networkInterfaceId?: string | null;
+		privateIpAddress?: string | null;
+		publicIpAddress?: string | null;
 	}
 
 
 	/** Compute information for the simulation job */
 	export interface ComputeResponse {
-		simulationUnitLimit?: number;
+		simulationUnitLimit?: number | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -180,17 +180,17 @@ export namespace MyNS {
 	}
 
 	export interface CreateDeploymentJobResponse {
-		arn?: string;
-		fleet?: string;
-		status?: CreateDeploymentJobResponseStatus;
-		deploymentApplicationConfigs?: Array<DeploymentApplicationConfig>;
-		failureReason?: string;
-		failureCode?: CreateDeploymentJobResponseFailureCode;
-		createdAt?: Date;
+		arn?: string | null;
+		fleet?: string | null;
+		status?: CreateDeploymentJobResponseStatus | null;
+		deploymentApplicationConfigs?: Array<DeploymentApplicationConfig> | null;
+		failureReason?: string | null;
+		failureCode?: CreateDeploymentJobResponseFailureCode | null;
+		createdAt?: Date | null;
 
 		/** Information about a deployment configuration. */
-		deploymentConfig?: DeploymentConfig;
-		tags?: TagMap;
+		deploymentConfig?: DeploymentConfig | null;
+		tags?: TagMap | null;
 	}
 
 	export enum CreateDeploymentJobResponseStatus { Pending = 0, Preparing = 1, InProgress = 2, Failed = 3, Succeeded = 4, Canceled = 5 }
@@ -212,10 +212,10 @@ export namespace MyNS {
 	/** Configuration information for a deployment launch. */
 	export interface DeploymentLaunchConfig {
 		packageName: string;
-		preLaunchFile?: string;
+		preLaunchFile?: string | null;
 		launchFile: string;
-		postLaunchFile?: string;
-		environmentVariables?: EnvironmentVariableMap;
+		postLaunchFile?: string | null;
+		environmentVariables?: EnvironmentVariableMap | null;
 	}
 
 	export enum CreateDeploymentJobResponseFailureCode { ResourceNotFound = 0, EnvironmentSetupError = 1, EtagMismatch = 2, FailureThresholdBreached = 3, RobotDeploymentAborted = 4, RobotDeploymentNoResponse = 5, RobotAgentConnectionTimeout = 6, GreengrassDeploymentFailed = 7, InvalidGreengrassGroup = 8, MissingRobotArchitecture = 9, MissingRobotApplicationArchitecture = 10, MissingRobotDeploymentResource = 11, GreengrassGroupVersionDoesNotExist = 12, LambdaDeleted = 13, ExtractingBundleFailure = 14, PreLaunchFileFailure = 15, PostLaunchFileFailure = 16, BadPermissionError = 17, DownloadConditionFailed = 18, InternalServerError = 19 }
@@ -223,12 +223,12 @@ export namespace MyNS {
 
 	/** Information about a deployment configuration. */
 	export interface DeploymentConfig {
-		concurrentDeploymentPercentage?: number;
-		failureThresholdPercentage?: number;
-		robotDeploymentTimeoutInSeconds?: number;
+		concurrentDeploymentPercentage?: number | null;
+		failureThresholdPercentage?: number | null;
+		robotDeploymentTimeoutInSeconds?: number | null;
 
 		/** Information about an S3 object. */
-		downloadConditionFile?: S3Object;
+		downloadConditionFile?: S3Object | null;
 	}
 
 
@@ -236,7 +236,7 @@ export namespace MyNS {
 	export interface S3Object {
 		bucket: string;
 		key: string;
-		etag?: string;
+		etag?: string | null;
 	}
 
 	export interface LimitExceededException {
@@ -249,19 +249,19 @@ export namespace MyNS {
 	}
 
 	export interface CreateFleetResponse {
-		arn?: string;
-		name?: string;
-		createdAt?: Date;
-		tags?: TagMap;
+		arn?: string | null;
+		name?: string | null;
+		createdAt?: Date | null;
+		tags?: TagMap | null;
 	}
 
 	export interface CreateRobotResponse {
-		arn?: string;
-		name?: string;
-		createdAt?: Date;
-		greengrassGroupId?: string;
-		architecture?: CreateRobotResponseArchitecture;
-		tags?: TagMap;
+		arn?: string | null;
+		name?: string | null;
+		createdAt?: Date | null;
+		greengrassGroupId?: string | null;
+		architecture?: CreateRobotResponseArchitecture | null;
+		tags?: TagMap | null;
 	}
 
 	export enum CreateRobotResponseArchitecture { X86_64 = 0, ARM64 = 1, ARMHF = 2 }
@@ -270,32 +270,32 @@ export namespace MyNS {
 	}
 
 	export interface CreateRobotApplicationResponse {
-		arn?: string;
-		name?: string;
-		version?: string;
-		sources?: Array<Source>;
+		arn?: string | null;
+		name?: string | null;
+		version?: string | null;
+		sources?: Array<Source> | null;
 
 		/** Information about a robot software suite (ROS distribution). */
-		robotSoftwareSuite?: RobotSoftwareSuite;
-		lastUpdatedAt?: Date;
-		revisionId?: string;
-		tags?: TagMap;
+		robotSoftwareSuite?: RobotSoftwareSuite | null;
+		lastUpdatedAt?: Date | null;
+		revisionId?: string | null;
+		tags?: TagMap | null;
 	}
 
 
 	/** Information about a source. */
 	export interface Source {
-		s3Bucket?: string;
-		s3Key?: string;
-		etag?: string;
-		architecture?: CreateRobotResponseArchitecture;
+		s3Bucket?: string | null;
+		s3Key?: string | null;
+		etag?: string | null;
+		architecture?: CreateRobotResponseArchitecture | null;
 	}
 
 
 	/** Information about a robot software suite (ROS distribution). */
 	export interface RobotSoftwareSuite {
-		name?: RobotSoftwareSuiteName;
-		version?: RobotSoftwareSuiteVersion;
+		name?: RobotSoftwareSuiteName | null;
+		version?: RobotSoftwareSuiteVersion | null;
 	}
 
 	export enum RobotSoftwareSuiteName { ROS = 0, ROS2 = 1 }
@@ -305,9 +305,9 @@ export namespace MyNS {
 
 	/** Information about a source configuration. */
 	export interface SourceConfig {
-		s3Bucket?: string;
-		s3Key?: string;
-		architecture?: CreateRobotResponseArchitecture;
+		s3Bucket?: string | null;
+		s3Key?: string | null;
+		architecture?: CreateRobotResponseArchitecture | null;
 	}
 
 	export enum RobotSoftwareSuiteType { ROS = 0, ROS2 = 1 }
@@ -315,41 +315,41 @@ export namespace MyNS {
 	export enum RobotSoftwareSuiteVersionType { Kinetic = 0, Melodic = 1, Dashing = 2 }
 
 	export interface CreateRobotApplicationVersionResponse {
-		arn?: string;
-		name?: string;
-		version?: string;
-		sources?: Array<Source>;
+		arn?: string | null;
+		name?: string | null;
+		version?: string | null;
+		sources?: Array<Source> | null;
 
 		/** Information about a robot software suite (ROS distribution). */
-		robotSoftwareSuite?: RobotSoftwareSuite;
-		lastUpdatedAt?: Date;
-		revisionId?: string;
+		robotSoftwareSuite?: RobotSoftwareSuite | null;
+		lastUpdatedAt?: Date | null;
+		revisionId?: string | null;
 	}
 
 	export interface CreateSimulationApplicationResponse {
-		arn?: string;
-		name?: string;
-		version?: string;
-		sources?: Array<Source>;
+		arn?: string | null;
+		name?: string | null;
+		version?: string | null;
+		sources?: Array<Source> | null;
 
 		/** Information about a simulation software suite. */
-		simulationSoftwareSuite?: SimulationSoftwareSuite;
+		simulationSoftwareSuite?: SimulationSoftwareSuite | null;
 
 		/** Information about a robot software suite (ROS distribution). */
-		robotSoftwareSuite?: RobotSoftwareSuite;
+		robotSoftwareSuite?: RobotSoftwareSuite | null;
 
 		/** Information about a rendering engine. */
-		renderingEngine?: RenderingEngine;
-		lastUpdatedAt?: Date;
-		revisionId?: string;
-		tags?: TagMap;
+		renderingEngine?: RenderingEngine | null;
+		lastUpdatedAt?: Date | null;
+		revisionId?: string | null;
+		tags?: TagMap | null;
 	}
 
 
 	/** Information about a simulation software suite. */
 	export interface SimulationSoftwareSuite {
-		name?: SimulationSoftwareSuiteName;
-		version?: string;
+		name?: SimulationSoftwareSuiteName | null;
+		version?: string | null;
 	}
 
 	export enum SimulationSoftwareSuiteName { Gazebo = 0, RosbagPlay = 1 }
@@ -357,8 +357,8 @@ export namespace MyNS {
 
 	/** Information about a rendering engine. */
 	export interface RenderingEngine {
-		name?: RenderingEngineName;
-		version?: string;
+		name?: RenderingEngineName | null;
+		version?: string | null;
 	}
 
 	export enum RenderingEngineName { OGRE = 0 }
@@ -368,50 +368,50 @@ export namespace MyNS {
 	export enum RenderingEngineType { OGRE = 0 }
 
 	export interface CreateSimulationApplicationVersionResponse {
-		arn?: string;
-		name?: string;
-		version?: string;
-		sources?: Array<Source>;
+		arn?: string | null;
+		name?: string | null;
+		version?: string | null;
+		sources?: Array<Source> | null;
 
 		/** Information about a simulation software suite. */
-		simulationSoftwareSuite?: SimulationSoftwareSuite;
+		simulationSoftwareSuite?: SimulationSoftwareSuite | null;
 
 		/** Information about a robot software suite (ROS distribution). */
-		robotSoftwareSuite?: RobotSoftwareSuite;
+		robotSoftwareSuite?: RobotSoftwareSuite | null;
 
 		/** Information about a rendering engine. */
-		renderingEngine?: RenderingEngine;
-		lastUpdatedAt?: Date;
-		revisionId?: string;
+		renderingEngine?: RenderingEngine | null;
+		lastUpdatedAt?: Date | null;
+		revisionId?: string | null;
 	}
 
 	export interface CreateSimulationJobResponse {
-		arn?: string;
-		status?: SimulationJobStatus;
-		lastStartedAt?: Date;
-		lastUpdatedAt?: Date;
-		failureBehavior?: SimulationJobFailureBehavior;
-		failureCode?: SimulationJobFailureCode;
-		clientRequestToken?: string;
+		arn?: string | null;
+		status?: SimulationJobStatus | null;
+		lastStartedAt?: Date | null;
+		lastUpdatedAt?: Date | null;
+		failureBehavior?: SimulationJobFailureBehavior | null;
+		failureCode?: SimulationJobFailureCode | null;
+		clientRequestToken?: string | null;
 
 		/** The output location. */
-		outputLocation?: OutputLocation;
+		outputLocation?: OutputLocation | null;
 
 		/** The logging configuration. */
-		loggingConfig?: LoggingConfig;
-		maxJobDurationInSeconds?: number;
-		simulationTimeMillis?: number;
-		iamRole?: string;
-		robotApplications?: Array<RobotApplicationConfig>;
-		simulationApplications?: Array<SimulationApplicationConfig>;
-		dataSources?: Array<DataSource>;
-		tags?: TagMap;
+		loggingConfig?: LoggingConfig | null;
+		maxJobDurationInSeconds?: number | null;
+		simulationTimeMillis?: number | null;
+		iamRole?: string | null;
+		robotApplications?: Array<RobotApplicationConfig> | null;
+		simulationApplications?: Array<SimulationApplicationConfig> | null;
+		dataSources?: Array<DataSource> | null;
+		tags?: TagMap | null;
 
 		/** VPC configuration associated with your simulation job. */
-		vpcConfig?: VPCConfigResponse;
+		vpcConfig?: VPCConfigResponse | null;
 
 		/** Compute information for the simulation job */
-		compute?: ComputeResponse;
+		compute?: ComputeResponse | null;
 	}
 
 
@@ -438,37 +438,37 @@ export namespace MyNS {
 	}
 
 	export interface DeregisterRobotResponse {
-		fleet?: string;
-		robot?: string;
+		fleet?: string | null;
+		robot?: string | null;
 	}
 
 	export interface DescribeDeploymentJobResponse {
-		arn?: string;
-		fleet?: string;
-		status?: CreateDeploymentJobResponseStatus;
+		arn?: string | null;
+		fleet?: string | null;
+		status?: CreateDeploymentJobResponseStatus | null;
 
 		/** Information about a deployment configuration. */
-		deploymentConfig?: DeploymentConfig;
-		deploymentApplicationConfigs?: Array<DeploymentApplicationConfig>;
-		failureReason?: string;
-		failureCode?: CreateDeploymentJobResponseFailureCode;
-		createdAt?: Date;
-		robotDeploymentSummary?: Array<RobotDeployment>;
-		tags?: TagMap;
+		deploymentConfig?: DeploymentConfig | null;
+		deploymentApplicationConfigs?: Array<DeploymentApplicationConfig> | null;
+		failureReason?: string | null;
+		failureCode?: CreateDeploymentJobResponseFailureCode | null;
+		createdAt?: Date | null;
+		robotDeploymentSummary?: Array<RobotDeployment> | null;
+		tags?: TagMap | null;
 	}
 
 
 	/** Information about a robot deployment. */
 	export interface RobotDeployment {
-		arn?: string;
-		deploymentStartTime?: Date;
-		deploymentFinishTime?: Date;
-		status?: RobotDeploymentStatus;
+		arn?: string | null;
+		deploymentStartTime?: Date | null;
+		deploymentFinishTime?: Date | null;
+		status?: RobotDeploymentStatus | null;
 
 		/** Information about the progress of a deployment job. */
-		progressDetail?: ProgressDetail;
-		failureReason?: string;
-		failureCode?: CreateDeploymentJobResponseFailureCode;
+		progressDetail?: ProgressDetail | null;
+		failureReason?: string | null;
+		failureCode?: CreateDeploymentJobResponseFailureCode | null;
 	}
 
 	export enum RobotDeploymentStatus { Available = 0, Registered = 1, PendingNewDeployment = 2, Deploying = 3, Failed = 4, InSync = 5, NoResponse = 6 }
@@ -476,133 +476,133 @@ export namespace MyNS {
 
 	/** Information about the progress of a deployment job. */
 	export interface ProgressDetail {
-		currentProgress?: ProgressDetailCurrentProgress;
-		percentDone?: number;
-		estimatedTimeRemainingSeconds?: number;
-		targetResource?: string;
+		currentProgress?: ProgressDetailCurrentProgress | null;
+		percentDone?: number | null;
+		estimatedTimeRemainingSeconds?: number | null;
+		targetResource?: string | null;
 	}
 
 	export enum ProgressDetailCurrentProgress { Validating = 0, DownloadingExtracting = 1, ExecutingDownloadCondition = 2, ExecutingPreLaunch = 3, Launching = 4, ExecutingPostLaunch = 5, Finished = 6 }
 
 	export interface DescribeFleetResponse {
-		name?: string;
-		arn?: string;
-		robots?: Array<Robot>;
-		createdAt?: Date;
-		lastDeploymentStatus?: CreateDeploymentJobResponseStatus;
-		lastDeploymentJob?: string;
-		lastDeploymentTime?: Date;
-		tags?: TagMap;
+		name?: string | null;
+		arn?: string | null;
+		robots?: Array<Robot> | null;
+		createdAt?: Date | null;
+		lastDeploymentStatus?: CreateDeploymentJobResponseStatus | null;
+		lastDeploymentJob?: string | null;
+		lastDeploymentTime?: Date | null;
+		tags?: TagMap | null;
 	}
 
 
 	/** Information about a robot. */
 	export interface Robot {
-		arn?: string;
-		name?: string;
-		fleetArn?: string;
-		status?: RobotDeploymentStatus;
-		greenGrassGroupId?: string;
-		createdAt?: Date;
-		architecture?: CreateRobotResponseArchitecture;
-		lastDeploymentJob?: string;
-		lastDeploymentTime?: Date;
+		arn?: string | null;
+		name?: string | null;
+		fleetArn?: string | null;
+		status?: RobotDeploymentStatus | null;
+		greenGrassGroupId?: string | null;
+		createdAt?: Date | null;
+		architecture?: CreateRobotResponseArchitecture | null;
+		lastDeploymentJob?: string | null;
+		lastDeploymentTime?: Date | null;
 	}
 
 	export interface DescribeRobotResponse {
-		arn?: string;
-		name?: string;
-		fleetArn?: string;
-		status?: RobotDeploymentStatus;
-		greengrassGroupId?: string;
-		createdAt?: Date;
-		architecture?: CreateRobotResponseArchitecture;
-		lastDeploymentJob?: string;
-		lastDeploymentTime?: Date;
-		tags?: TagMap;
+		arn?: string | null;
+		name?: string | null;
+		fleetArn?: string | null;
+		status?: RobotDeploymentStatus | null;
+		greengrassGroupId?: string | null;
+		createdAt?: Date | null;
+		architecture?: CreateRobotResponseArchitecture | null;
+		lastDeploymentJob?: string | null;
+		lastDeploymentTime?: Date | null;
+		tags?: TagMap | null;
 	}
 
 	export interface DescribeRobotApplicationResponse {
-		arn?: string;
-		name?: string;
-		version?: string;
-		sources?: Array<Source>;
+		arn?: string | null;
+		name?: string | null;
+		version?: string | null;
+		sources?: Array<Source> | null;
 
 		/** Information about a robot software suite (ROS distribution). */
-		robotSoftwareSuite?: RobotSoftwareSuite;
-		revisionId?: string;
-		lastUpdatedAt?: Date;
-		tags?: TagMap;
+		robotSoftwareSuite?: RobotSoftwareSuite | null;
+		revisionId?: string | null;
+		lastUpdatedAt?: Date | null;
+		tags?: TagMap | null;
 	}
 
 	export interface DescribeSimulationApplicationResponse {
-		arn?: string;
-		name?: string;
-		version?: string;
-		sources?: Array<Source>;
+		arn?: string | null;
+		name?: string | null;
+		version?: string | null;
+		sources?: Array<Source> | null;
 
 		/** Information about a simulation software suite. */
-		simulationSoftwareSuite?: SimulationSoftwareSuite;
+		simulationSoftwareSuite?: SimulationSoftwareSuite | null;
 
 		/** Information about a robot software suite (ROS distribution). */
-		robotSoftwareSuite?: RobotSoftwareSuite;
+		robotSoftwareSuite?: RobotSoftwareSuite | null;
 
 		/** Information about a rendering engine. */
-		renderingEngine?: RenderingEngine;
-		revisionId?: string;
-		lastUpdatedAt?: Date;
-		tags?: TagMap;
+		renderingEngine?: RenderingEngine | null;
+		revisionId?: string | null;
+		lastUpdatedAt?: Date | null;
+		tags?: TagMap | null;
 	}
 
 	export interface DescribeSimulationJobResponse {
-		arn?: string;
-		name?: string;
-		status?: SimulationJobStatus;
-		lastStartedAt?: Date;
-		lastUpdatedAt?: Date;
-		failureBehavior?: SimulationJobFailureBehavior;
-		failureCode?: SimulationJobFailureCode;
-		failureReason?: string;
-		clientRequestToken?: string;
+		arn?: string | null;
+		name?: string | null;
+		status?: SimulationJobStatus | null;
+		lastStartedAt?: Date | null;
+		lastUpdatedAt?: Date | null;
+		failureBehavior?: SimulationJobFailureBehavior | null;
+		failureCode?: SimulationJobFailureCode | null;
+		failureReason?: string | null;
+		clientRequestToken?: string | null;
 
 		/** The output location. */
-		outputLocation?: OutputLocation;
+		outputLocation?: OutputLocation | null;
 
 		/** The logging configuration. */
-		loggingConfig?: LoggingConfig;
-		maxJobDurationInSeconds?: number;
-		simulationTimeMillis?: number;
-		iamRole?: string;
-		robotApplications?: Array<RobotApplicationConfig>;
-		simulationApplications?: Array<SimulationApplicationConfig>;
-		dataSources?: Array<DataSource>;
-		tags?: TagMap;
+		loggingConfig?: LoggingConfig | null;
+		maxJobDurationInSeconds?: number | null;
+		simulationTimeMillis?: number | null;
+		iamRole?: string | null;
+		robotApplications?: Array<RobotApplicationConfig> | null;
+		simulationApplications?: Array<SimulationApplicationConfig> | null;
+		dataSources?: Array<DataSource> | null;
+		tags?: TagMap | null;
 
 		/** VPC configuration associated with your simulation job. */
-		vpcConfig?: VPCConfigResponse;
+		vpcConfig?: VPCConfigResponse | null;
 
 		/** Describes a network interface. */
-		networkInterface?: NetworkInterface;
+		networkInterface?: NetworkInterface | null;
 
 		/** Compute information for the simulation job */
-		compute?: ComputeResponse;
+		compute?: ComputeResponse | null;
 	}
 
 	export interface DescribeSimulationJobBatchResponse {
-		arn?: string;
-		status?: DescribeSimulationJobBatchResponseStatus;
-		lastUpdatedAt?: Date;
-		createdAt?: Date;
-		clientRequestToken?: string;
+		arn?: string | null;
+		status?: DescribeSimulationJobBatchResponseStatus | null;
+		lastUpdatedAt?: Date | null;
+		createdAt?: Date | null;
+		clientRequestToken?: string | null;
 
 		/** Information about the batch policy. */
-		batchPolicy?: BatchPolicy;
-		failureCode?: DescribeSimulationJobBatchResponseFailureCode;
-		failureReason?: string;
-		failedRequests?: Array<FailedCreateSimulationJobRequest>;
-		pendingRequests?: Array<SimulationJobRequest>;
-		createdRequests?: Array<SimulationJobSummary>;
-		tags?: TagMap;
+		batchPolicy?: BatchPolicy | null;
+		failureCode?: DescribeSimulationJobBatchResponseFailureCode | null;
+		failureReason?: string | null;
+		failedRequests?: Array<FailedCreateSimulationJobRequest> | null;
+		pendingRequests?: Array<SimulationJobRequest> | null;
+		createdRequests?: Array<SimulationJobSummary> | null;
+		tags?: TagMap | null;
 	}
 
 	export enum DescribeSimulationJobBatchResponseStatus { Pending = 0, InProgress = 1, Failed = 2, Completed = 3, Canceled = 4, Canceling = 5, Completing = 6, TimingOut = 7, TimedOut = 8 }
@@ -610,8 +610,8 @@ export namespace MyNS {
 
 	/** Information about the batch policy. */
 	export interface BatchPolicy {
-		timeoutInSeconds?: number;
-		maxConcurrency?: number;
+		timeoutInSeconds?: number | null;
+		maxConcurrency?: number | null;
 	}
 
 	export enum DescribeSimulationJobBatchResponseFailureCode { InternalServiceError = 0 }
@@ -621,10 +621,10 @@ export namespace MyNS {
 	export interface FailedCreateSimulationJobRequest {
 
 		/** Information about a simulation job request. */
-		request?: SimulationJobRequest;
-		failureReason?: string;
-		failureCode?: SimulationJobFailureCode;
-		failedAt?: Date;
+		request?: SimulationJobRequest | null;
+		failureReason?: string | null;
+		failureCode?: SimulationJobFailureCode | null;
+		failedAt?: Date | null;
 	}
 
 
@@ -632,198 +632,198 @@ export namespace MyNS {
 	export interface SimulationJobRequest {
 
 		/** The output location. */
-		outputLocation?: OutputLocation;
+		outputLocation?: OutputLocation | null;
 
 		/** The logging configuration. */
-		loggingConfig?: LoggingConfig;
+		loggingConfig?: LoggingConfig | null;
 		maxJobDurationInSeconds: number;
-		iamRole?: string;
-		failureBehavior?: SimulationJobFailureBehavior;
-		useDefaultApplications?: boolean;
-		robotApplications?: Array<RobotApplicationConfig>;
-		simulationApplications?: Array<SimulationApplicationConfig>;
-		dataSources?: Array<DataSourceConfig>;
+		iamRole?: string | null;
+		failureBehavior?: SimulationJobFailureBehavior | null;
+		useDefaultApplications?: boolean | null;
+		robotApplications?: Array<RobotApplicationConfig> | null;
+		simulationApplications?: Array<SimulationApplicationConfig> | null;
+		dataSources?: Array<DataSourceConfig> | null;
 
 		/** If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs. */
-		vpcConfig?: VPCConfig;
+		vpcConfig?: VPCConfig | null;
 
 		/** Compute information for the simulation job. */
-		compute?: Compute;
-		tags?: TagMap;
+		compute?: Compute | null;
+		tags?: TagMap | null;
 	}
 
 
 	/** If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs. */
 	export interface VPCConfig {
 		subnets: Array<string>;
-		securityGroups?: Array<string>;
-		assignPublicIp?: boolean;
+		securityGroups?: Array<string> | null;
+		assignPublicIp?: boolean | null;
 	}
 
 
 	/** Compute information for the simulation job. */
 	export interface Compute {
-		simulationUnitLimit?: number;
+		simulationUnitLimit?: number | null;
 	}
 
 
 	/** Summary information for a simulation job. */
 	export interface SimulationJobSummary {
-		arn?: string;
-		lastUpdatedAt?: Date;
-		name?: string;
-		status?: SimulationJobStatus;
-		simulationApplicationNames?: Array<string>;
-		robotApplicationNames?: Array<string>;
-		dataSourceNames?: Array<string>;
+		arn?: string | null;
+		lastUpdatedAt?: Date | null;
+		name?: string | null;
+		status?: SimulationJobStatus | null;
+		simulationApplicationNames?: Array<string> | null;
+		robotApplicationNames?: Array<string> | null;
+		dataSourceNames?: Array<string> | null;
 	}
 
 	export interface ListDeploymentJobsResponse {
-		deploymentJobs?: Array<DeploymentJob>;
-		nextToken?: string;
+		deploymentJobs?: Array<DeploymentJob> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about a deployment job. */
 	export interface DeploymentJob {
-		arn?: string;
-		fleet?: string;
-		status?: CreateDeploymentJobResponseStatus;
-		deploymentApplicationConfigs?: Array<DeploymentApplicationConfig>;
+		arn?: string | null;
+		fleet?: string | null;
+		status?: CreateDeploymentJobResponseStatus | null;
+		deploymentApplicationConfigs?: Array<DeploymentApplicationConfig> | null;
 
 		/** Information about a deployment configuration. */
-		deploymentConfig?: DeploymentConfig;
-		failureReason?: string;
-		failureCode?: CreateDeploymentJobResponseFailureCode;
-		createdAt?: Date;
+		deploymentConfig?: DeploymentConfig | null;
+		failureReason?: string | null;
+		failureCode?: CreateDeploymentJobResponseFailureCode | null;
+		createdAt?: Date | null;
 	}
 
 
 	/** Information about a filter. */
 	export interface Filter {
-		name?: string;
-		values?: Array<string>;
+		name?: string | null;
+		values?: Array<string> | null;
 	}
 
 	export interface ListFleetsResponse {
-		fleetDetails?: Array<Fleet>;
-		nextToken?: string;
+		fleetDetails?: Array<Fleet> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about a fleet. */
 	export interface Fleet {
-		name?: string;
-		arn?: string;
-		createdAt?: Date;
-		lastDeploymentStatus?: CreateDeploymentJobResponseStatus;
-		lastDeploymentJob?: string;
-		lastDeploymentTime?: Date;
+		name?: string | null;
+		arn?: string | null;
+		createdAt?: Date | null;
+		lastDeploymentStatus?: CreateDeploymentJobResponseStatus | null;
+		lastDeploymentJob?: string | null;
+		lastDeploymentTime?: Date | null;
 	}
 
 	export interface ListRobotApplicationsResponse {
-		robotApplicationSummaries?: Array<RobotApplicationSummary>;
-		nextToken?: string;
+		robotApplicationSummaries?: Array<RobotApplicationSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Summary information for a robot application. */
 	export interface RobotApplicationSummary {
-		name?: string;
-		arn?: string;
-		version?: string;
-		lastUpdatedAt?: Date;
+		name?: string | null;
+		arn?: string | null;
+		version?: string | null;
+		lastUpdatedAt?: Date | null;
 
 		/** Information about a robot software suite (ROS distribution). */
-		robotSoftwareSuite?: RobotSoftwareSuite;
+		robotSoftwareSuite?: RobotSoftwareSuite | null;
 	}
 
 	export interface ListRobotsResponse {
-		robots?: Array<Robot>;
-		nextToken?: string;
+		robots?: Array<Robot> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListSimulationApplicationsResponse {
-		simulationApplicationSummaries?: Array<SimulationApplicationSummary>;
-		nextToken?: string;
+		simulationApplicationSummaries?: Array<SimulationApplicationSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Summary information for a simulation application. */
 	export interface SimulationApplicationSummary {
-		name?: string;
-		arn?: string;
-		version?: string;
-		lastUpdatedAt?: Date;
+		name?: string | null;
+		arn?: string | null;
+		version?: string | null;
+		lastUpdatedAt?: Date | null;
 
 		/** Information about a robot software suite (ROS distribution). */
-		robotSoftwareSuite?: RobotSoftwareSuite;
+		robotSoftwareSuite?: RobotSoftwareSuite | null;
 
 		/** Information about a simulation software suite. */
-		simulationSoftwareSuite?: SimulationSoftwareSuite;
+		simulationSoftwareSuite?: SimulationSoftwareSuite | null;
 	}
 
 	export interface ListSimulationJobBatchesResponse {
-		simulationJobBatchSummaries?: Array<SimulationJobBatchSummary>;
-		nextToken?: string;
+		simulationJobBatchSummaries?: Array<SimulationJobBatchSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about a simulation job batch. */
 	export interface SimulationJobBatchSummary {
-		arn?: string;
-		lastUpdatedAt?: Date;
-		createdAt?: Date;
-		status?: DescribeSimulationJobBatchResponseStatus;
-		failedRequestCount?: number;
-		pendingRequestCount?: number;
-		createdRequestCount?: number;
+		arn?: string | null;
+		lastUpdatedAt?: Date | null;
+		createdAt?: Date | null;
+		status?: DescribeSimulationJobBatchResponseStatus | null;
+		failedRequestCount?: number | null;
+		pendingRequestCount?: number | null;
+		createdRequestCount?: number | null;
 	}
 
 	export interface ListSimulationJobsResponse {
 		simulationJobSummaries: Array<SimulationJobSummary>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export interface RegisterRobotResponse {
-		fleet?: string;
-		robot?: string;
+		fleet?: string | null;
+		robot?: string | null;
 	}
 
 	export interface RestartSimulationJobResponse {
 	}
 
 	export interface StartSimulationJobBatchResponse {
-		arn?: string;
-		status?: DescribeSimulationJobBatchResponseStatus;
-		createdAt?: Date;
-		clientRequestToken?: string;
+		arn?: string | null;
+		status?: DescribeSimulationJobBatchResponseStatus | null;
+		createdAt?: Date | null;
+		clientRequestToken?: string | null;
 
 		/** Information about the batch policy. */
-		batchPolicy?: BatchPolicy;
-		failureCode?: DescribeSimulationJobBatchResponseFailureCode;
-		failureReason?: string;
-		failedRequests?: Array<FailedCreateSimulationJobRequest>;
-		pendingRequests?: Array<SimulationJobRequest>;
-		createdRequests?: Array<SimulationJobSummary>;
-		tags?: TagMap;
+		batchPolicy?: BatchPolicy | null;
+		failureCode?: DescribeSimulationJobBatchResponseFailureCode | null;
+		failureReason?: string | null;
+		failedRequests?: Array<FailedCreateSimulationJobRequest> | null;
+		pendingRequests?: Array<SimulationJobRequest> | null;
+		createdRequests?: Array<SimulationJobSummary> | null;
+		tags?: TagMap | null;
 	}
 
 	export interface SyncDeploymentJobResponse {
-		arn?: string;
-		fleet?: string;
-		status?: CreateDeploymentJobResponseStatus;
+		arn?: string | null;
+		fleet?: string | null;
+		status?: CreateDeploymentJobResponseStatus | null;
 
 		/** Information about a deployment configuration. */
-		deploymentConfig?: DeploymentConfig;
-		deploymentApplicationConfigs?: Array<DeploymentApplicationConfig>;
-		failureReason?: string;
-		failureCode?: CreateDeploymentJobResponseFailureCode;
-		createdAt?: Date;
+		deploymentConfig?: DeploymentConfig | null;
+		deploymentApplicationConfigs?: Array<DeploymentApplicationConfig> | null;
+		failureReason?: string | null;
+		failureCode?: CreateDeploymentJobResponseFailureCode | null;
+		createdAt?: Date | null;
 	}
 
 	export interface TagResourceResponse {
@@ -833,33 +833,33 @@ export namespace MyNS {
 	}
 
 	export interface UpdateRobotApplicationResponse {
-		arn?: string;
-		name?: string;
-		version?: string;
-		sources?: Array<Source>;
+		arn?: string | null;
+		name?: string | null;
+		version?: string | null;
+		sources?: Array<Source> | null;
 
 		/** Information about a robot software suite (ROS distribution). */
-		robotSoftwareSuite?: RobotSoftwareSuite;
-		lastUpdatedAt?: Date;
-		revisionId?: string;
+		robotSoftwareSuite?: RobotSoftwareSuite | null;
+		lastUpdatedAt?: Date | null;
+		revisionId?: string | null;
 	}
 
 	export interface UpdateSimulationApplicationResponse {
-		arn?: string;
-		name?: string;
-		version?: string;
-		sources?: Array<Source>;
+		arn?: string | null;
+		name?: string | null;
+		version?: string | null;
+		sources?: Array<Source> | null;
 
 		/** Information about a simulation software suite. */
-		simulationSoftwareSuite?: SimulationSoftwareSuite;
+		simulationSoftwareSuite?: SimulationSoftwareSuite | null;
 
 		/** Information about a robot software suite (ROS distribution). */
-		robotSoftwareSuite?: RobotSoftwareSuite;
+		robotSoftwareSuite?: RobotSoftwareSuite | null;
 
 		/** Information about a rendering engine. */
-		renderingEngine?: RenderingEngine;
-		lastUpdatedAt?: Date;
-		revisionId?: string;
+		renderingEngine?: RenderingEngine | null;
+		lastUpdatedAt?: Date | null;
+		revisionId?: string | null;
 	}
 
 	export enum Architecture { X86_64 = 0, ARM64 = 1, ARMHF = 2 }
@@ -883,11 +883,11 @@ export namespace MyNS {
 	export interface CreateDeploymentJobRequest {
 
 		/** Information about a deployment configuration. */
-		deploymentConfig?: DeploymentConfig;
+		deploymentConfig?: DeploymentConfig | null;
 		clientRequestToken: string;
 		fleet: string;
 		deploymentApplicationConfigs: Array<DeploymentApplicationConfig>;
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export enum DeploymentStatus { Pending = 0, Preparing = 1, InProgress = 2, Failed = 3, Succeeded = 4, Canceled = 5 }
@@ -896,7 +896,7 @@ export namespace MyNS {
 
 	export interface CreateFleetRequest {
 		name: string;
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export interface CreateRobotApplicationRequest {
@@ -908,19 +908,19 @@ export namespace MyNS {
 		 * Required
 		 */
 		robotSoftwareSuite: RobotSoftwareSuite;
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export interface CreateRobotApplicationVersionRequest {
 		application: string;
-		currentRevisionId?: string;
+		currentRevisionId?: string | null;
 	}
 
 	export interface CreateRobotRequest {
 		name: string;
 		architecture: CreateRobotResponseArchitecture;
 		greengrassGroupId: string;
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export interface CreateSimulationApplicationRequest {
@@ -940,38 +940,38 @@ export namespace MyNS {
 		robotSoftwareSuite: RobotSoftwareSuite;
 
 		/** Information about a rendering engine. */
-		renderingEngine?: RenderingEngine;
-		tags?: TagMap;
+		renderingEngine?: RenderingEngine | null;
+		tags?: TagMap | null;
 	}
 
 	export interface CreateSimulationApplicationVersionRequest {
 		application: string;
-		currentRevisionId?: string;
+		currentRevisionId?: string | null;
 	}
 
 	export enum FailureBehavior { Fail = 0, Continue = 1 }
 
 	export interface CreateSimulationJobRequest {
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 
 		/** The output location. */
-		outputLocation?: OutputLocation;
+		outputLocation?: OutputLocation | null;
 
 		/** The logging configuration. */
-		loggingConfig?: LoggingConfig;
+		loggingConfig?: LoggingConfig | null;
 		maxJobDurationInSeconds: number;
 		iamRole: string;
-		failureBehavior?: SimulationJobFailureBehavior;
-		robotApplications?: Array<RobotApplicationConfig>;
-		simulationApplications?: Array<SimulationApplicationConfig>;
-		dataSources?: Array<DataSourceConfig>;
-		tags?: TagMap;
+		failureBehavior?: SimulationJobFailureBehavior | null;
+		robotApplications?: Array<RobotApplicationConfig> | null;
+		simulationApplications?: Array<SimulationApplicationConfig> | null;
+		dataSources?: Array<DataSourceConfig> | null;
+		tags?: TagMap | null;
 
 		/** If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs. */
-		vpcConfig?: VPCConfig;
+		vpcConfig?: VPCConfig | null;
 
 		/** Compute information for the simulation job. */
-		compute?: Compute;
+		compute?: Compute | null;
 	}
 
 	export enum SimulationJobErrorCode { InternalServiceError = 0, RobotApplicationCrash = 1, SimulationApplicationCrash = 2, BadPermissionsRobotApplication = 3, BadPermissionsSimulationApplication = 4, BadPermissionsS3Object = 5, BadPermissionsS3Output = 6, BadPermissionsCloudwatchLogs = 7, SubnetIpLimitExceeded = 8, ENILimitExceeded = 9, BadPermissionsUserCredentials = 10, InvalidBundleRobotApplication = 11, InvalidBundleSimulationApplication = 12, InvalidS3Resource = 13, LimitExceeded = 14, MismatchedEtag = 15, RobotApplicationVersionMismatchedEtag = 16, SimulationApplicationVersionMismatchedEtag = 17, ResourceNotFound = 18, RequestThrottled = 19, BatchTimedOut = 20, BatchCanceled = 21, InvalidInput = 22, WrongRegionS3Bucket = 23, WrongRegionS3Output = 24, WrongRegionRobotApplication = 25, WrongRegionSimulationApplication = 26 }
@@ -982,7 +982,7 @@ export namespace MyNS {
 
 	export interface DeleteRobotApplicationRequest {
 		application: string;
-		applicationVersion?: string;
+		applicationVersion?: string | null;
 	}
 
 	export interface DeleteRobotRequest {
@@ -991,7 +991,7 @@ export namespace MyNS {
 
 	export interface DeleteSimulationApplicationRequest {
 		application: string;
-		applicationVersion?: string;
+		applicationVersion?: string | null;
 	}
 
 	export interface DeregisterRobotRequest {
@@ -1009,7 +1009,7 @@ export namespace MyNS {
 
 	export interface DescribeRobotApplicationRequest {
 		application: string;
-		applicationVersion?: string;
+		applicationVersion?: string | null;
 	}
 
 	export interface DescribeRobotRequest {
@@ -1020,7 +1020,7 @@ export namespace MyNS {
 
 	export interface DescribeSimulationApplicationRequest {
 		application: string;
-		applicationVersion?: string;
+		applicationVersion?: string | null;
 	}
 
 	export interface DescribeSimulationJobBatchRequest {
@@ -1036,47 +1036,47 @@ export namespace MyNS {
 	}
 
 	export interface ListDeploymentJobsRequest {
-		filters?: Array<Filter>;
-		nextToken?: string;
-		maxResults?: number;
+		filters?: Array<Filter> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListFleetsRequest {
-		nextToken?: string;
-		maxResults?: number;
-		filters?: Array<Filter>;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		filters?: Array<Filter> | null;
 	}
 
 	export interface ListRobotApplicationsRequest {
-		versionQualifier?: string;
-		nextToken?: string;
-		maxResults?: number;
-		filters?: Array<Filter>;
+		versionQualifier?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		filters?: Array<Filter> | null;
 	}
 
 	export interface ListRobotsRequest {
-		nextToken?: string;
-		maxResults?: number;
-		filters?: Array<Filter>;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		filters?: Array<Filter> | null;
 	}
 
 	export interface ListSimulationApplicationsRequest {
-		versionQualifier?: string;
-		nextToken?: string;
-		maxResults?: number;
-		filters?: Array<Filter>;
+		versionQualifier?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		filters?: Array<Filter> | null;
 	}
 
 	export interface ListSimulationJobBatchesRequest {
-		nextToken?: string;
-		maxResults?: number;
-		filters?: Array<Filter>;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		filters?: Array<Filter> | null;
 	}
 
 	export interface ListSimulationJobsRequest {
-		nextToken?: string;
-		maxResults?: number;
-		filters?: Array<Filter>;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		filters?: Array<Filter> | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -1094,12 +1094,12 @@ export namespace MyNS {
 	}
 
 	export interface StartSimulationJobBatchRequest {
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 
 		/** Information about the batch policy. */
-		batchPolicy?: BatchPolicy;
+		batchPolicy?: BatchPolicy | null;
 		createSimulationJobRequests: Array<SimulationJobRequest>;
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export interface SyncDeploymentJobRequest {
@@ -1123,7 +1123,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		robotSoftwareSuite: RobotSoftwareSuite;
-		currentRevisionId?: string;
+		currentRevisionId?: string | null;
 	}
 
 	export interface UpdateSimulationApplicationRequest {
@@ -1143,8 +1143,8 @@ export namespace MyNS {
 		robotSoftwareSuite: RobotSoftwareSuite;
 
 		/** Information about a rendering engine. */
-		renderingEngine?: RenderingEngine;
-		currentRevisionId?: string;
+		renderingEngine?: RenderingEngine | null;
+		currentRevisionId?: string | null;
 	}
 
 	@Injectable()
@@ -1375,7 +1375,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDeploymentJobsResponse} Success
 		 */
-		ListDeploymentJobs(maxResults: string, nextToken: string, requestBody: ListDeploymentJobsPostBody): Observable<ListDeploymentJobsResponse> {
+		ListDeploymentJobs(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListDeploymentJobsPostBody): Observable<ListDeploymentJobsResponse> {
 			return this.http.post<ListDeploymentJobsResponse>(this.baseUri + 'listDeploymentJobs?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1386,7 +1386,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListFleetsResponse} Success
 		 */
-		ListFleets(maxResults: string, nextToken: string, requestBody: ListFleetsPostBody): Observable<ListFleetsResponse> {
+		ListFleets(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListFleetsPostBody): Observable<ListFleetsResponse> {
 			return this.http.post<ListFleetsResponse>(this.baseUri + 'listFleets?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1397,7 +1397,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListRobotApplicationsResponse} Success
 		 */
-		ListRobotApplications(maxResults: string, nextToken: string, requestBody: ListRobotApplicationsPostBody): Observable<ListRobotApplicationsResponse> {
+		ListRobotApplications(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListRobotApplicationsPostBody): Observable<ListRobotApplicationsResponse> {
 			return this.http.post<ListRobotApplicationsResponse>(this.baseUri + 'listRobotApplications?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1408,7 +1408,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListRobotsResponse} Success
 		 */
-		ListRobots(maxResults: string, nextToken: string, requestBody: ListRobotsPostBody): Observable<ListRobotsResponse> {
+		ListRobots(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListRobotsPostBody): Observable<ListRobotsResponse> {
 			return this.http.post<ListRobotsResponse>(this.baseUri + 'listRobots?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1419,7 +1419,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSimulationApplicationsResponse} Success
 		 */
-		ListSimulationApplications(maxResults: string, nextToken: string, requestBody: ListSimulationApplicationsPostBody): Observable<ListSimulationApplicationsResponse> {
+		ListSimulationApplications(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListSimulationApplicationsPostBody): Observable<ListSimulationApplicationsResponse> {
 			return this.http.post<ListSimulationApplicationsResponse>(this.baseUri + 'listSimulationApplications?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1430,7 +1430,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSimulationJobBatchesResponse} Success
 		 */
-		ListSimulationJobBatches(maxResults: string, nextToken: string, requestBody: ListSimulationJobBatchesPostBody): Observable<ListSimulationJobBatchesResponse> {
+		ListSimulationJobBatches(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListSimulationJobBatchesPostBody): Observable<ListSimulationJobBatchesResponse> {
 			return this.http.post<ListSimulationJobBatchesResponse>(this.baseUri + 'listSimulationJobBatches?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1441,7 +1441,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSimulationJobsResponse} Success
 		 */
-		ListSimulationJobs(maxResults: string, nextToken: string, requestBody: ListSimulationJobsPostBody): Observable<ListSimulationJobsResponse> {
+		ListSimulationJobs(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListSimulationJobsPostBody): Observable<ListSimulationJobsResponse> {
 			return this.http.post<ListSimulationJobsResponse>(this.baseUri + 'listSimulationJobs?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1581,7 +1581,7 @@ export namespace MyNS {
 	export interface CreateDeploymentJobPostBody {
 
 		/** Information about a deployment configuration. */
-		deploymentConfig?: CreateDeploymentJobPostBodyDeploymentConfig;
+		deploymentConfig?: CreateDeploymentJobPostBodyDeploymentConfig | null;
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
@@ -1610,16 +1610,16 @@ export namespace MyNS {
 		deploymentApplicationConfigs: Array<DeploymentApplicationConfig>;
 
 		/** A map that contains tag keys and tag values that are attached to the deployment job. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateDeploymentJobPostBodyDeploymentConfig {
-		concurrentDeploymentPercentage?: number;
-		failureThresholdPercentage?: number;
-		robotDeploymentTimeoutInSeconds?: number;
+		concurrentDeploymentPercentage?: number | null;
+		failureThresholdPercentage?: number | null;
+		robotDeploymentTimeoutInSeconds?: number | null;
 
 		/** Information about an S3 object. */
-		downloadConditionFile?: S3Object;
+		downloadConditionFile?: S3Object | null;
 	}
 
 	export interface CreateFleetPostBody {
@@ -1634,7 +1634,7 @@ export namespace MyNS {
 		name: string;
 
 		/** A map that contains tag keys and tag values that are attached to the fleet. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateRobotPostBody {
@@ -1664,7 +1664,7 @@ export namespace MyNS {
 		greengrassGroupId: string;
 
 		/** A map that contains tag keys and tag values that are attached to the robot. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateRobotApplicationPostBody {
@@ -1691,12 +1691,12 @@ export namespace MyNS {
 		robotSoftwareSuite: CreateRobotApplicationPostBodyRobotSoftwareSuite;
 
 		/** A map that contains tag keys and tag values that are attached to the robot application. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateRobotApplicationPostBodyRobotSoftwareSuite {
-		name?: RobotSoftwareSuiteName;
-		version?: RobotSoftwareSuiteVersion;
+		name?: RobotSoftwareSuiteName | null;
+		version?: RobotSoftwareSuiteVersion | null;
 	}
 
 	export interface CreateRobotApplicationVersionPostBody {
@@ -1716,7 +1716,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.\-]*
 		 */
-		currentRevisionId?: string;
+		currentRevisionId?: string | null;
 	}
 
 	export interface CreateSimulationApplicationPostBody {
@@ -1749,25 +1749,25 @@ export namespace MyNS {
 		robotSoftwareSuite: CreateSimulationApplicationPostBodyRobotSoftwareSuite;
 
 		/** Information about a rendering engine. */
-		renderingEngine?: CreateSimulationApplicationPostBodyRenderingEngine;
+		renderingEngine?: CreateSimulationApplicationPostBodyRenderingEngine | null;
 
 		/** A map that contains tag keys and tag values that are attached to the simulation application. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateSimulationApplicationPostBodySimulationSoftwareSuite {
-		name?: SimulationSoftwareSuiteName;
-		version?: string;
+		name?: SimulationSoftwareSuiteName | null;
+		version?: string | null;
 	}
 
 	export interface CreateSimulationApplicationPostBodyRobotSoftwareSuite {
-		name?: RobotSoftwareSuiteName;
-		version?: RobotSoftwareSuiteVersion;
+		name?: RobotSoftwareSuiteName | null;
+		version?: RobotSoftwareSuiteVersion | null;
 	}
 
 	export interface CreateSimulationApplicationPostBodyRenderingEngine {
-		name?: RenderingEngineName;
-		version?: string;
+		name?: RenderingEngineName | null;
+		version?: string | null;
 	}
 
 	export interface CreateSimulationApplicationVersionPostBody {
@@ -1787,7 +1787,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.\-]*
 		 */
-		currentRevisionId?: string;
+		currentRevisionId?: string | null;
 	}
 
 	export interface CreateSimulationJobPostBody {
@@ -1798,13 +1798,13 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_\-=]*
 		 */
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 
 		/** The output location. */
-		outputLocation?: CreateSimulationJobPostBodyOutputLocation;
+		outputLocation?: CreateSimulationJobPostBodyOutputLocation | null;
 
 		/** The logging configuration. */
-		loggingConfig?: CreateSimulationJobPostBodyLoggingConfig;
+		loggingConfig?: CreateSimulationJobPostBodyLoggingConfig | null;
 
 		/**
 		 * The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.
@@ -1822,56 +1822,56 @@ export namespace MyNS {
 		iamRole: string;
 
 		/** <p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd> <p>Restart the simulation job in the same host instance.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl> */
-		failureBehavior?: SimulationJobFailureBehavior;
+		failureBehavior?: SimulationJobFailureBehavior | null;
 
 		/**
 		 * The robot application to use in the simulation job.
 		 * Minimum items: 1
 		 * Maximum items: 1
 		 */
-		robotApplications?: Array<RobotApplicationConfig>;
+		robotApplications?: Array<RobotApplicationConfig> | null;
 
 		/**
 		 * The simulation application to use in the simulation job.
 		 * Minimum items: 1
 		 * Maximum items: 1
 		 */
-		simulationApplications?: Array<SimulationApplicationConfig>;
+		simulationApplications?: Array<SimulationApplicationConfig> | null;
 
 		/**
 		 * <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note> <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p> </note>
 		 * Minimum items: 1
 		 * Maximum items: 5
 		 */
-		dataSources?: Array<DataSourceConfig>;
+		dataSources?: Array<DataSourceConfig> | null;
 
 		/** A map that contains tag keys and tag values that are attached to the simulation job. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/** If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs. */
-		vpcConfig?: CreateSimulationJobPostBodyVpcConfig;
+		vpcConfig?: CreateSimulationJobPostBodyVpcConfig | null;
 
 		/** Compute information for the simulation job. */
-		compute?: CreateSimulationJobPostBodyCompute;
+		compute?: CreateSimulationJobPostBodyCompute | null;
 	}
 
 	export interface CreateSimulationJobPostBodyOutputLocation {
-		s3Bucket?: string;
-		s3Prefix?: string;
+		s3Bucket?: string | null;
+		s3Prefix?: string | null;
 	}
 
 	export interface CreateSimulationJobPostBodyLoggingConfig {
-		recordAllRosTopics?: boolean;
+		recordAllRosTopics?: boolean | null;
 	}
 
 	export interface CreateSimulationJobPostBodyVpcConfig {
-		subnets?: Array<string>;
-		securityGroups?: Array<string>;
-		assignPublicIp?: boolean;
+		subnets?: Array<string> | null;
+		securityGroups?: Array<string> | null;
+		assignPublicIp?: boolean | null;
 	}
 
 	export interface CreateSimulationJobPostBodyCompute {
-		simulationUnitLimit?: number;
+		simulationUnitLimit?: number | null;
 	}
 
 	export interface DeleteFleetPostBody {
@@ -1915,7 +1915,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: (\$LATEST)|[0-9]*
 		 */
-		applicationVersion?: string;
+		applicationVersion?: string | null;
 	}
 
 	export interface DeleteSimulationApplicationPostBody {
@@ -1935,7 +1935,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: (\$LATEST)|[0-9]*
 		 */
-		applicationVersion?: string;
+		applicationVersion?: string | null;
 	}
 
 	export interface DeregisterRobotPostBody {
@@ -2012,7 +2012,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: (\$LATEST)|[0-9]*
 		 */
-		applicationVersion?: string;
+		applicationVersion?: string | null;
 	}
 
 	export interface DescribeSimulationApplicationPostBody {
@@ -2032,7 +2032,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: (\$LATEST)|[0-9]*
 		 */
-		applicationVersion?: string;
+		applicationVersion?: string | null;
 	}
 
 	export interface DescribeSimulationJobPostBody {
@@ -2066,7 +2066,7 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 1
 		 */
-		filters?: Array<Filter>;
+		filters?: Array<Filter> | null;
 
 		/**
 		 * The <code>nextToken</code> value returned from a previous paginated <code>ListDeploymentJobs</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
@@ -2074,10 +2074,10 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.\-\/+=]*
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/** When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable. */
-		maxResults?: number;
+		maxResults?: number | null;
 	}
 
 	export interface ListFleetsPostBody {
@@ -2088,17 +2088,17 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.\-\/+=]*
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/** When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable. */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/**
 		 * <p>Optional filters to limit results.</p> <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
 		 * Minimum items: 1
 		 * Maximum items: 1
 		 */
-		filters?: Array<Filter>;
+		filters?: Array<Filter> | null;
 	}
 
 	export interface ListRobotApplicationsPostBody {
@@ -2109,7 +2109,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ALL
 		 */
-		versionQualifier?: string;
+		versionQualifier?: string | null;
 
 		/**
 		 * The <code>nextToken</code> value returned from a previous paginated <code>ListRobotApplications</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
@@ -2117,17 +2117,17 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.\-\/+=]*
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/** When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/**
 		 * <p>Optional filters to limit results.</p> <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
 		 * Minimum items: 1
 		 * Maximum items: 1
 		 */
-		filters?: Array<Filter>;
+		filters?: Array<Filter> | null;
 	}
 
 	export interface ListRobotsPostBody {
@@ -2138,17 +2138,17 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.\-\/+=]*
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/** When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable. */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/**
 		 * <p>Optional filters to limit results.</p> <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Registered</code> or the status <code>Available</code>.</p>
 		 * Minimum items: 1
 		 * Maximum items: 1
 		 */
-		filters?: Array<Filter>;
+		filters?: Array<Filter> | null;
 	}
 
 	export interface ListSimulationApplicationsPostBody {
@@ -2159,7 +2159,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ALL
 		 */
-		versionQualifier?: string;
+		versionQualifier?: string | null;
 
 		/**
 		 * The <code>nextToken</code> value returned from a previous paginated <code>ListSimulationApplications</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
@@ -2167,17 +2167,17 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.\-\/+=]*
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/** When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/**
 		 * <p>Optional list of filters to limit results.</p> <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
 		 * Minimum items: 1
 		 * Maximum items: 1
 		 */
-		filters?: Array<Filter>;
+		filters?: Array<Filter> | null;
 	}
 
 	export interface ListSimulationJobBatchesPostBody {
@@ -2188,17 +2188,17 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.\-\/+=]*
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/** When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/**
 		 * Optional filters to limit results.
 		 * Minimum items: 1
 		 * Maximum items: 1
 		 */
-		filters?: Array<Filter>;
+		filters?: Array<Filter> | null;
 	}
 
 	export interface ListSimulationJobsPostBody {
@@ -2209,17 +2209,17 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.\-\/+=]*
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/** When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable. */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/**
 		 * <p>Optional filters to limit results.</p> <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.</p>
 		 * Minimum items: 1
 		 * Maximum items: 1
 		 */
-		filters?: Array<Filter>;
+		filters?: Array<Filter> | null;
 	}
 
 	export interface TagResourcePostBody {
@@ -2272,10 +2272,10 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_\-=]*
 		 */
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 
 		/** Information about the batch policy. */
-		batchPolicy?: StartSimulationJobBatchPostBodyBatchPolicy;
+		batchPolicy?: StartSimulationJobBatchPostBodyBatchPolicy | null;
 
 		/**
 		 * A list of simulation job requests to create in the batch.
@@ -2285,12 +2285,12 @@ export namespace MyNS {
 		createSimulationJobRequests: Array<SimulationJobRequest>;
 
 		/** A map that contains tag keys and tag values that are attached to the deployment job batch. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface StartSimulationJobBatchPostBodyBatchPolicy {
-		timeoutInSeconds?: number;
-		maxConcurrency?: number;
+		timeoutInSeconds?: number | null;
+		maxConcurrency?: number | null;
 	}
 
 	export interface SyncDeploymentJobPostBody {
@@ -2343,12 +2343,12 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.\-]*
 		 */
-		currentRevisionId?: string;
+		currentRevisionId?: string | null;
 	}
 
 	export interface UpdateRobotApplicationPostBodyRobotSoftwareSuite {
-		name?: RobotSoftwareSuiteName;
-		version?: RobotSoftwareSuiteVersion;
+		name?: RobotSoftwareSuiteName | null;
+		version?: RobotSoftwareSuiteVersion | null;
 	}
 
 	export interface UpdateSimulationApplicationPostBody {
@@ -2381,7 +2381,7 @@ export namespace MyNS {
 		robotSoftwareSuite: UpdateSimulationApplicationPostBodyRobotSoftwareSuite;
 
 		/** Information about a rendering engine. */
-		renderingEngine?: UpdateSimulationApplicationPostBodyRenderingEngine;
+		renderingEngine?: UpdateSimulationApplicationPostBodyRenderingEngine | null;
 
 		/**
 		 * The revision id for the robot application.
@@ -2389,22 +2389,22 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.\-]*
 		 */
-		currentRevisionId?: string;
+		currentRevisionId?: string | null;
 	}
 
 	export interface UpdateSimulationApplicationPostBodySimulationSoftwareSuite {
-		name?: SimulationSoftwareSuiteName;
-		version?: string;
+		name?: SimulationSoftwareSuiteName | null;
+		version?: string | null;
 	}
 
 	export interface UpdateSimulationApplicationPostBodyRobotSoftwareSuite {
-		name?: RobotSoftwareSuiteName;
-		version?: RobotSoftwareSuiteVersion;
+		name?: RobotSoftwareSuiteName | null;
+		version?: RobotSoftwareSuiteVersion | null;
 	}
 
 	export interface UpdateSimulationApplicationPostBodyRenderingEngine {
-		name?: RenderingEngineName;
-		version?: string;
+		name?: RenderingEngineName | null;
+		version?: string | null;
 	}
 
 }

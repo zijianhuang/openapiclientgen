@@ -42,7 +42,7 @@ export namespace MyNS {
 		 * used with your request. The `app_token` parameter is required if an app token is not passed via the `X-App-Token` HTTP header. Clients must [register for their own app tokens](https://dev.socrata.com/docs/app-tokens.html).
 		 * @return {void} OK
 		 */
-		DataV1AvailabilityGetByEntity_idAndApp_token(entity_id: string, app_token: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		DataV1AvailabilityGetByEntity_idAndApp_token(entity_id: string, app_token: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'data/v1/availability/?entity_id=' + (entity_id == null ? '' : encodeURIComponent(entity_id)) + '&app_token=' + (app_token == null ? '' : encodeURIComponent(app_token)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -56,7 +56,7 @@ export namespace MyNS {
 		 * used with your request. The `app_token` parameter is required if an app token is not passed via the `X-App-Token` HTTP header. Clients must [register for their own app tokens](https://dev.socrata.com/docs/app-tokens.html).
 		 * @return {void} OK
 		 */
-		DataV1Constraint_variableGetByEntity_idAndConstraintAndApp_token(variable: string, entity_id: string, constraint: string, app_token: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		DataV1Constraint_variableGetByEntity_idAndConstraintAndApp_token(variable: string, entity_id: string, constraint: string, app_token: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'data/v1/constraint/' + (variable == null ? '' : encodeURIComponent(variable)) + '&entity_id=' + (entity_id == null ? '' : encodeURIComponent(entity_id)) + '&constraint=' + (constraint == null ? '' : encodeURIComponent(constraint)) + '&app_token=' + (app_token == null ? '' : encodeURIComponent(app_token)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -73,7 +73,7 @@ export namespace MyNS {
 		 * used with your request. The `app_token` parameter is required if an app token is not passed via the `X-App-Token` HTTP header. Clients must [register for their own app tokens](https://dev.socrata.com/docs/app-tokens.html).
 		 * @return {void} OK
 		 */
-		DataV1MapNewGetByVariableAndEntity_idAndConstraintAndApp_token(variable: string, entity_id: string, constraint: string, app_token: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		DataV1MapNewGetByVariableAndEntity_idAndConstraintAndApp_token(variable: string, entity_id: string, constraint: string | null | undefined, app_token: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'data/v1/map/new?variable=' + (variable == null ? '' : encodeURIComponent(variable)) + '&entity_id=' + (entity_id == null ? '' : encodeURIComponent(entity_id)) + '&constraint=' + (constraint == null ? '' : encodeURIComponent(constraint)) + '&app_token=' + (app_token == null ? '' : encodeURIComponent(app_token)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -110,7 +110,7 @@ export namespace MyNS {
 		 * used with your request. The `app_token` parameter is required if an app token is not passed via the `X-App-Token` HTTP header. Clients must [register for their own app tokens](https://dev.socrata.com/docs/app-tokens.html).
 		 * @return {void} OK
 		 */
-		DataV1ValuesGetByVariableAndEntity_idAndForecastAndDescribeAndFormatAndApp_token(variable: string, entity_id: string, forecast: number, describe: boolean, format: DataV1ValuesGetByVariableAndEntity_idAndForecastAndDescribeAndFormatAndApp_tokenFormat, app_token: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		DataV1ValuesGetByVariableAndEntity_idAndForecastAndDescribeAndFormatAndApp_token(variable: string, entity_id: string | null | undefined, forecast: number | null | undefined, describe: boolean | null | undefined, format: DataV1ValuesGetByVariableAndEntity_idAndForecastAndDescribeAndFormatAndApp_tokenFormat | null | undefined, app_token: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'data/v1/values?variable=' + (variable == null ? '' : encodeURIComponent(variable)) + '&entity_id=' + (entity_id == null ? '' : encodeURIComponent(entity_id)) + '&forecast=' + forecast + '&describe=' + describe + '&format=' + format + '&app_token=' + (app_token == null ? '' : encodeURIComponent(app_token)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -124,7 +124,7 @@ export namespace MyNS {
 		 * used with your request. The `app_token` parameter is required if an app token is not passed via the `X-App-Token` HTTP header. Clients must [register for their own app tokens](https://dev.socrata.com/docs/app-tokens.html).
 		 * @return {void} OK
 		 */
-		EntityV1GetByEntity_idAndEntity_nameAndEntity_typeAndApp_token(entity_id: string, entity_name: string, entity_type: string, app_token: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		EntityV1GetByEntity_idAndEntity_nameAndEntity_typeAndApp_token(entity_id: string | null | undefined, entity_name: string | null | undefined, entity_type: string | null | undefined, app_token: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'entity/v1?entity_id=' + (entity_id == null ? '' : encodeURIComponent(entity_id)) + '&entity_name=' + (entity_name == null ? '' : encodeURIComponent(entity_name)) + '&entity_type=' + (entity_type == null ? '' : encodeURIComponent(entity_type)) + '&app_token=' + (app_token == null ? '' : encodeURIComponent(app_token)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -142,7 +142,7 @@ export namespace MyNS {
 		 * used with your request. The `app_token` parameter is required if an app token is not passed via the `X-App-Token` HTTP header. Clients must [register for their own app tokens](https://dev.socrata.com/docs/app-tokens.html).
 		 * @return {void} OK
 		 */
-		EntityV1_relationGetByEntity_idAndVariable_idAndLimitAndApp_token(relation: EntityV1_relationGetByEntity_idAndVariable_idAndLimitAndApp_tokenRelation, entity_id: string, variable_id: string, limit: number, app_token: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		EntityV1_relationGetByEntity_idAndVariable_idAndLimitAndApp_token(relation: EntityV1_relationGetByEntity_idAndVariable_idAndLimitAndApp_tokenRelation, entity_id: string, variable_id: string | null | undefined, limit: number | null | undefined, app_token: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'entity/v1/' + relation + '?entity_id=' + (entity_id == null ? '' : encodeURIComponent(entity_id)) + '&variable_id=' + (variable_id == null ? '' : encodeURIComponent(variable_id)) + '&limit=' + limit + '&app_token=' + (app_token == null ? '' : encodeURIComponent(app_token)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -160,7 +160,7 @@ export namespace MyNS {
 		 * used with your request. The `app_token` parameter is required if an app token is not passed via the `X-App-Token` HTTP header. Clients must [register for their own app tokens](https://dev.socrata.com/docs/app-tokens.html).
 		 * @return {void} OK
 		 */
-		SearchV1DatasetGetByEntity_idAndDataset_idAndLimitAndOffsetAndApp_token(entity_id: string, dataset_id: string, limit: number, offset: number, app_token: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		SearchV1DatasetGetByEntity_idAndDataset_idAndLimitAndOffsetAndApp_token(entity_id: string | null | undefined, dataset_id: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined, app_token: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'search/v1/dataset?entity_id=' + (entity_id == null ? '' : encodeURIComponent(entity_id)) + '&dataset_id=' + (dataset_id == null ? '' : encodeURIComponent(dataset_id)) + '&limit=' + limit + '&offset=' + offset + '&app_token=' + (app_token == null ? '' : encodeURIComponent(app_token)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -176,7 +176,7 @@ export namespace MyNS {
 		 * used with your request. The `app_token` parameter is required if an app token is not passed via the `X-App-Token` HTTP header. Clients must [register for their own app tokens](https://dev.socrata.com/docs/app-tokens.html).
 		 * @return {void} OK
 		 */
-		SearchV1QuestionGetByQueryAndLimitAndOffsetAndApp_token(query: string, limit: number, offset: number, app_token: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		SearchV1QuestionGetByQueryAndLimitAndOffsetAndApp_token(query: string, limit: number | null | undefined, offset: number | null | undefined, app_token: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'search/v1/question?query=' + (query == null ? '' : encodeURIComponent(query)) + '&limit=' + limit + '&offset=' + offset + '&app_token=' + (app_token == null ? '' : encodeURIComponent(app_token)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -197,7 +197,7 @@ export namespace MyNS {
 		 * used with your request. The `app_token` parameter is required if an app token is not passed via the `X-App-Token` HTTP header. Clients must [register for their own app tokens](https://dev.socrata.com/docs/app-tokens.html).
 		 * @return {void} OK
 		 */
-		SuggestV1_typeGetByQueryAndLimitAndVariable_idAndApp_token(type: SuggestV1_typeGetByQueryAndLimitAndVariable_idAndApp_tokenType, query: string, limit: number, variable_id: string, app_token: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		SuggestV1_typeGetByQueryAndLimitAndVariable_idAndApp_token(type: SuggestV1_typeGetByQueryAndLimitAndVariable_idAndApp_tokenType, query: string, limit: number | null | undefined, variable_id: string | null | undefined, app_token: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'suggest/v1/' + type + '?query=' + (query == null ? '' : encodeURIComponent(query)) + '&limit=' + limit + '&variable_id=' + (variable_id == null ? '' : encodeURIComponent(variable_id)) + '&app_token=' + (app_token == null ? '' : encodeURIComponent(app_token)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 	}

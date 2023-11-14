@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface GetMediaOutput {
-		Payload?: string;
+		Payload?: string | null;
 	}
 
 	export enum StartSelectorType { FRAGMENT_NUMBER = 0, SERVER_TIMESTAMP = 1, PRODUCER_TIMESTAMP = 2, NOW = 3, EARLIEST = 4, CONTINUATION_TOKEN = 5 }
@@ -30,14 +30,14 @@ export namespace MyNS {
 	/** <p>Identifies the chunk on the Kinesis video stream where you want the <code>GetMedia</code> API to start returning media data. You have the following options to identify the starting chunk: </p> <ul> <li> <p>Choose the latest (or oldest) chunk.</p> </li> <li> <p>Identify a specific chunk. You can identify a specific chunk either by providing a fragment number or timestamp (server or producer). </p> </li> <li> <p>Each chunk's metadata includes a continuation token as a Matroska (MKV) tag (<code>AWS_KINESISVIDEO_CONTINUATION_TOKEN</code>). If your previous <code>GetMedia</code> request terminated, you can use this tag value in your next <code>GetMedia</code> request. The API then starts returning chunks starting where the last API ended.</p> </li> </ul> */
 	export interface StartSelector {
 		StartSelectorType: StartSelectorType;
-		AfterFragmentNumber?: string;
-		StartTimestamp?: Date;
-		ContinuationToken?: string;
+		AfterFragmentNumber?: string | null;
+		StartTimestamp?: Date | null;
+		ContinuationToken?: string | null;
 	}
 
 	export interface GetMediaInput {
-		StreamName?: string;
-		StreamARN?: string;
+		StreamName?: string | null;
+		StreamARN?: string | null;
 
 		/**
 		 * <p>Identifies the chunk on the Kinesis video stream where you want the <code>GetMedia</code> API to start returning media data. You have the following options to identify the starting chunk: </p> <ul> <li> <p>Choose the latest (or oldest) chunk.</p> </li> <li> <p>Identify a specific chunk. You can identify a specific chunk either by providing a fragment number or timestamp (server or producer). </p> </li> <li> <p>Each chunk's metadata includes a continuation token as a Matroska (MKV) tag (<code>AWS_KINESISVIDEO_CONTINUATION_TOKEN</code>). If your previous <code>GetMedia</code> request terminated, you can use this tag value in your next <code>GetMedia</code> request. The API then starts returning chunks starting where the last API ended.</p> </li> </ul>
@@ -69,7 +69,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
-		StreamName?: string;
+		StreamName?: string | null;
 
 		/**
 		 * The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.
@@ -77,7 +77,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
-		StreamARN?: string;
+		StreamARN?: string | null;
 
 		/**
 		 * <p>Identifies the chunk on the Kinesis video stream where you want the <code>GetMedia</code> API to start returning media data. You have the following options to identify the starting chunk: </p> <ul> <li> <p>Choose the latest (or oldest) chunk.</p> </li> <li> <p>Identify a specific chunk. You can identify a specific chunk either by providing a fragment number or timestamp (server or producer). </p> </li> <li> <p>Each chunk's metadata includes a continuation token as a Matroska (MKV) tag (<code>AWS_KINESISVIDEO_CONTINUATION_TOKEN</code>). If your previous <code>GetMedia</code> request terminated, you can use this tag value in your next <code>GetMedia</code> request. The API then starts returning chunks starting where the last API ended.</p> </li> </ul>
@@ -87,10 +87,10 @@ export namespace MyNS {
 	}
 
 	export interface GetMediaPostBodyStartSelector {
-		StartSelectorType?: StartSelectorType;
-		AfterFragmentNumber?: string;
-		StartTimestamp?: Date;
-		ContinuationToken?: string;
+		StartSelectorType?: StartSelectorType | null;
+		AfterFragmentNumber?: string | null;
+		StartTimestamp?: Date | null;
+		ContinuationToken?: string | null;
 	}
 
 }

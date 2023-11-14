@@ -50,7 +50,7 @@ export namespace MyNS {
 		AccessKeyId: string;
 		Status: AccessKeyStatus;
 		SecretAccessKey: string;
-		CreateDate?: Date;
+		CreateDate?: Date | null;
 	}
 
 	export enum AccessKeyStatus { Active = 0, Inactive = 1 }
@@ -132,29 +132,29 @@ export namespace MyNS {
 		 */
 		Arn: string;
 		CreateDate: Date;
-		AssumeRolePolicyDocument?: string;
-		Description?: string;
-		MaxSessionDuration?: number;
+		AssumeRolePolicyDocument?: string | null;
+		Description?: string | null;
+		MaxSessionDuration?: number | null;
 
 		/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
-		PermissionsBoundary?: AttachedPermissionsBoundary;
-		Tags?: Array<Tag>;
+		PermissionsBoundary?: AttachedPermissionsBoundary | null;
+		Tags?: Array<Tag> | null;
 
 		/** <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.</p> <p>This data type is returned as a response element in the <a>GetRole</a> and <a>GetAccountAuthorizationDetails</a> operations.</p> */
-		RoleLastUsed?: RoleLastUsed;
+		RoleLastUsed?: RoleLastUsed | null;
 	}
 
 
 	/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
 	export interface AttachedPermissionsBoundary {
-		PermissionsBoundaryType?: AttachedPermissionsBoundaryPermissionsBoundaryType;
+		PermissionsBoundaryType?: AttachedPermissionsBoundaryPermissionsBoundaryType | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		PermissionsBoundaryArn?: string;
+		PermissionsBoundaryArn?: string | null;
 	}
 
 	export enum AttachedPermissionsBoundaryPermissionsBoundaryType { PermissionsBoundaryPolicy = 0 }
@@ -169,8 +169,8 @@ export namespace MyNS {
 
 	/** <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.</p> <p>This data type is returned as a response element in the <a>GetRole</a> and <a>GetAccountAuthorizationDetails</a> operations.</p> */
 	export interface RoleLastUsed {
-		LastUsedDate?: Date;
-		Region?: string;
+		LastUsedDate?: Date | null;
+		Region?: string | null;
 	}
 
 
@@ -189,7 +189,7 @@ export namespace MyNS {
 	export interface LoginProfile {
 		UserName: string;
 		CreateDate: Date;
-		PasswordResetRequired?: boolean;
+		PasswordResetRequired?: boolean | null;
 	}
 
 
@@ -201,7 +201,7 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		OpenIDConnectProviderArn?: string;
+		OpenIDConnectProviderArn?: string | null;
 	}
 
 
@@ -209,29 +209,29 @@ export namespace MyNS {
 	export interface CreatePolicyResponse {
 
 		/** <p>Contains information about a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
-		Policy?: Policy;
+		Policy?: Policy | null;
 	}
 
 
 	/** <p>Contains information about a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface Policy {
-		PolicyName?: string;
-		PolicyId?: string;
+		PolicyName?: string | null;
+		PolicyId?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		Arn?: string;
-		Path?: string;
-		DefaultVersionId?: string;
-		AttachmentCount?: number;
-		PermissionsBoundaryUsageCount?: number;
-		IsAttachable?: boolean;
-		Description?: string;
-		CreateDate?: Date;
-		UpdateDate?: Date;
+		Arn?: string | null;
+		Path?: string | null;
+		DefaultVersionId?: string | null;
+		AttachmentCount?: number | null;
+		PermissionsBoundaryUsageCount?: number | null;
+		IsAttachable?: boolean | null;
+		Description?: string | null;
+		CreateDate?: Date | null;
+		UpdateDate?: Date | null;
 	}
 
 	export interface MalformedPolicyDocumentException {
@@ -242,16 +242,16 @@ export namespace MyNS {
 	export interface CreatePolicyVersionResponse {
 
 		/** <p>Contains information about a version of a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
-		PolicyVersion?: PolicyVersion;
+		PolicyVersion?: PolicyVersion | null;
 	}
 
 
 	/** <p>Contains information about a version of a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyVersion {
-		Document?: string;
-		VersionId?: string;
-		IsDefaultVersion?: boolean;
-		CreateDate?: Date;
+		Document?: string | null;
+		VersionId?: string | null;
+		IsDefaultVersion?: boolean | null;
+		CreateDate?: Date | null;
 	}
 
 
@@ -277,19 +277,19 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		SAMLProviderArn?: string;
+		SAMLProviderArn?: string | null;
 	}
 
 	export interface CreateServiceLinkedRoleResponse {
 
 		/** Contains information about an IAM role. This structure is returned as a response element in several API operations that interact with roles. */
-		Role?: Role;
+		Role?: Role | null;
 	}
 
 	export interface CreateServiceSpecificCredentialResponse {
 
 		/** Contains the details of a service-specific credential. */
-		ServiceSpecificCredential?: ServiceSpecificCredential;
+		ServiceSpecificCredential?: ServiceSpecificCredential | null;
 	}
 
 
@@ -312,7 +312,7 @@ export namespace MyNS {
 	export interface CreateUserResponse {
 
 		/** <p>Contains information about an IAM user entity.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p> <a>ListUsers</a> </p> </li> </ul> */
-		User?: User;
+		User?: User | null;
 	}
 
 
@@ -330,11 +330,11 @@ export namespace MyNS {
 		 */
 		Arn: string;
 		CreateDate: Date;
-		PasswordLastUsed?: Date;
+		PasswordLastUsed?: Date | null;
 
 		/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
-		PermissionsBoundary?: AttachedPermissionsBoundary;
-		Tags?: Array<Tag>;
+		PermissionsBoundary?: AttachedPermissionsBoundary | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -352,12 +352,12 @@ export namespace MyNS {
 	/** Contains information about a virtual MFA device. */
 	export interface VirtualMFADevice {
 		SerialNumber: string;
-		Base32StringSeed?: string;
-		QRCodePNG?: string;
+		Base32StringSeed?: string | null;
+		QRCodePNG?: string | null;
 
 		/** <p>Contains information about an IAM user entity.</p> <p>This data type is used as a response element in the following operations:</p> <ul> <li> <p> <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p> <a>ListUsers</a> </p> </li> </ul> */
-		User?: User;
-		EnableDate?: Date;
+		User?: User | null;
+		EnableDate?: Date | null;
 	}
 
 	export interface DeleteConflictException {
@@ -373,30 +373,30 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>GenerateCredentialReport</a> request.  */
 	export interface GenerateCredentialReportResponse {
-		State?: GenerateCredentialReportResponseState;
-		Description?: string;
+		State?: GenerateCredentialReportResponseState | null;
+		Description?: string | null;
 	}
 
 	export enum GenerateCredentialReportResponseState { STARTED = 0, INPROGRESS = 1, COMPLETE = 2 }
 
 	export interface GenerateOrganizationsAccessReportResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 	export interface ReportGenerationLimitExceededException {
 	}
 
 	export interface GenerateServiceLastAccessedDetailsResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 
 	/** Contains the response to a successful <a>GetAccessKeyLastUsed</a> request. It is also returned as a member of the <a>AccessKeyMetaData</a> structure returned by the <a>ListAccessKeys</a> action. */
 	export interface GetAccessKeyLastUsedResponse {
-		UserName?: string;
+		UserName?: string | null;
 
 		/** <p>Contains information about the last time an AWS access key was used since IAM began tracking this information on April 22, 2015.</p> <p>This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> operation.</p> */
-		AccessKeyLastUsed?: AccessKeyLastUsed;
+		AccessKeyLastUsed?: AccessKeyLastUsed | null;
 	}
 
 
@@ -410,125 +410,125 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>GetAccountAuthorizationDetails</a> request.  */
 	export interface GetAccountAuthorizationDetailsResponse {
-		UserDetailList?: Array<UserDetail>;
-		GroupDetailList?: Array<GroupDetail>;
-		RoleDetailList?: Array<RoleDetail>;
-		Policies?: Array<ManagedPolicyDetail>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		UserDetailList?: Array<UserDetail> | null;
+		GroupDetailList?: Array<GroupDetail> | null;
+		RoleDetailList?: Array<RoleDetail> | null;
+		Policies?: Array<ManagedPolicyDetail> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p>Contains information about an IAM user, including all the user's policies and all the IAM groups the user is in.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
 	export interface UserDetail {
-		Path?: string;
-		UserName?: string;
-		UserId?: string;
+		Path?: string | null;
+		UserName?: string | null;
+		UserId?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		Arn?: string;
-		CreateDate?: Date;
-		UserPolicyList?: Array<PolicyDetail>;
-		GroupList?: Array<string>;
-		AttachedManagedPolicies?: Array<AttachedPolicy>;
+		Arn?: string | null;
+		CreateDate?: Date | null;
+		UserPolicyList?: Array<PolicyDetail> | null;
+		GroupList?: Array<string> | null;
+		AttachedManagedPolicies?: Array<AttachedPolicy> | null;
 
 		/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
-		PermissionsBoundary?: AttachedPermissionsBoundary;
-		Tags?: Array<Tag>;
+		PermissionsBoundary?: AttachedPermissionsBoundary | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** <p>Contains information about an IAM policy, including the policy document.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
 	export interface PolicyDetail {
-		PolicyName?: string;
-		PolicyDocument?: string;
+		PolicyName?: string | null;
+		PolicyDocument?: string | null;
 	}
 
 
 	/** <p>Contains information about an attached policy.</p> <p>An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the <a>ListAttachedGroupPolicies</a>, <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface AttachedPolicy {
-		PolicyName?: string;
+		PolicyName?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		PolicyArn?: string;
+		PolicyArn?: string | null;
 	}
 
 
 	/** <p>Contains information about an IAM group, including all of the group's policies.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
 	export interface GroupDetail {
-		Path?: string;
-		GroupName?: string;
-		GroupId?: string;
+		Path?: string | null;
+		GroupName?: string | null;
+		GroupId?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		Arn?: string;
-		CreateDate?: Date;
-		GroupPolicyList?: Array<PolicyDetail>;
-		AttachedManagedPolicies?: Array<AttachedPolicy>;
+		Arn?: string | null;
+		CreateDate?: Date | null;
+		GroupPolicyList?: Array<PolicyDetail> | null;
+		AttachedManagedPolicies?: Array<AttachedPolicy> | null;
 	}
 
 
 	/** <p>Contains information about an IAM role, including all of the role's policies.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> */
 	export interface RoleDetail {
-		Path?: string;
-		RoleName?: string;
-		RoleId?: string;
+		Path?: string | null;
+		RoleName?: string | null;
+		RoleId?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		Arn?: string;
-		CreateDate?: Date;
-		AssumeRolePolicyDocument?: string;
+		Arn?: string | null;
+		CreateDate?: Date | null;
+		AssumeRolePolicyDocument?: string | null;
 
 		/** Contains a list of instance profiles. */
-		InstanceProfileList?: Array<InstanceProfile>;
-		RolePolicyList?: Array<PolicyDetail>;
-		AttachedManagedPolicies?: Array<AttachedPolicy>;
+		InstanceProfileList?: Array<InstanceProfile> | null;
+		RolePolicyList?: Array<PolicyDetail> | null;
+		AttachedManagedPolicies?: Array<AttachedPolicy> | null;
 
 		/** <p>Contains information about an attached permissions boundary.</p> <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
-		PermissionsBoundary?: AttachedPermissionsBoundary;
-		Tags?: Array<Tag>;
+		PermissionsBoundary?: AttachedPermissionsBoundary | null;
+		Tags?: Array<Tag> | null;
 
 		/** <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.</p> <p>This data type is returned as a response element in the <a>GetRole</a> and <a>GetAccountAuthorizationDetails</a> operations.</p> */
-		RoleLastUsed?: RoleLastUsed;
+		RoleLastUsed?: RoleLastUsed | null;
 	}
 
 
 	/** <p>Contains information about a managed policy, including the policy's ARN, versions, and the number of principal entities (users, groups, and roles) that the policy is attached to.</p> <p>This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.</p> <p>For more information about managed policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface ManagedPolicyDetail {
-		PolicyName?: string;
-		PolicyId?: string;
+		PolicyName?: string | null;
+		PolicyId?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		Arn?: string;
-		Path?: string;
-		DefaultVersionId?: string;
-		AttachmentCount?: number;
-		PermissionsBoundaryUsageCount?: number;
-		IsAttachable?: boolean;
-		Description?: string;
-		CreateDate?: Date;
-		UpdateDate?: Date;
-		PolicyVersionList?: Array<PolicyVersion>;
+		Arn?: string | null;
+		Path?: string | null;
+		DefaultVersionId?: string | null;
+		AttachmentCount?: number | null;
+		PermissionsBoundaryUsageCount?: number | null;
+		IsAttachable?: boolean | null;
+		Description?: string | null;
+		CreateDate?: Date | null;
+		UpdateDate?: Date | null;
+		PolicyVersionList?: Array<PolicyVersion> | null;
 	}
 
 	export enum EntityType { User = 0, Role = 1, Group = 2, LocalManagedPolicy = 3, AWSManagedPolicy = 4 }
@@ -547,22 +547,22 @@ export namespace MyNS {
 
 	/** <p>Contains information about the account password policy.</p> <p> This data type is used as a response element in the <a>GetAccountPasswordPolicy</a> operation. </p> */
 	export interface PasswordPolicy {
-		MinimumPasswordLength?: number;
-		RequireSymbols?: boolean;
-		RequireNumbers?: boolean;
-		RequireUppercaseCharacters?: boolean;
-		RequireLowercaseCharacters?: boolean;
-		AllowUsersToChangePassword?: boolean;
-		ExpirePasswords?: boolean;
-		MaxPasswordAge?: number;
-		PasswordReusePrevention?: number;
-		HardExpiry?: boolean;
+		MinimumPasswordLength?: number | null;
+		RequireSymbols?: boolean | null;
+		RequireNumbers?: boolean | null;
+		RequireUppercaseCharacters?: boolean | null;
+		RequireLowercaseCharacters?: boolean | null;
+		AllowUsersToChangePassword?: boolean | null;
+		ExpirePasswords?: boolean | null;
+		MaxPasswordAge?: number | null;
+		PasswordReusePrevention?: number | null;
+		HardExpiry?: boolean | null;
 	}
 
 
 	/** Contains the response to a successful <a>GetAccountSummary</a> request.  */
 	export interface GetAccountSummaryResponse {
-		SummaryMap?: SummaryMapType;
+		SummaryMap?: SummaryMapType | null;
 	}
 
 	export interface SummaryMapType {
@@ -571,15 +571,15 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>GetContextKeysForPrincipalPolicy</a> or <a>GetContextKeysForCustomPolicy</a> request.  */
 	export interface GetContextKeysForPolicyResponse {
-		ContextKeyNames?: Array<string>;
+		ContextKeyNames?: Array<string> | null;
 	}
 
 
 	/** Contains the response to a successful <a>GetCredentialReport</a> request.  */
 	export interface GetCredentialReportResponse {
-		Content?: string;
-		ReportFormat?: GetCredentialReportResponseReportFormat;
-		GeneratedTime?: Date;
+		Content?: string | null;
+		ReportFormat?: GetCredentialReportResponseReportFormat | null;
+		GeneratedTime?: Date | null;
 	}
 
 	export enum GetCredentialReportResponseReportFormat { text_csv = 0 }
@@ -608,8 +608,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		Users: Array<User>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -651,26 +651,26 @@ export namespace MyNS {
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		Url?: string;
-		ClientIDList?: Array<string>;
+		Url?: string | null;
+		ClientIDList?: Array<string> | null;
 
 		/** Contains a list of thumbprints of identity provider server certificates. */
-		ThumbprintList?: Array<string>;
-		CreateDate?: Date;
+		ThumbprintList?: Array<string> | null;
+		CreateDate?: Date | null;
 	}
 
 	export interface GetOrganizationsAccessReportResponse {
 		JobStatus: GetOrganizationsAccessReportResponseJobStatus;
 		JobCreationDate: Date;
-		JobCompletionDate?: Date;
-		NumberOfServicesAccessible?: number;
-		NumberOfServicesNotAccessed?: number;
-		AccessDetails?: Array<AccessDetail>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		JobCompletionDate?: Date | null;
+		NumberOfServicesAccessible?: number | null;
+		NumberOfServicesNotAccessed?: number | null;
+		AccessDetails?: Array<AccessDetail> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 
 		/** <p>Contains information about the reason that the operation failed.</p> <p>This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p> */
-		ErrorDetails?: ErrorDetails;
+		ErrorDetails?: ErrorDetails | null;
 	}
 
 	export enum GetOrganizationsAccessReportResponseJobStatus { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2 }
@@ -680,10 +680,10 @@ export namespace MyNS {
 	export interface AccessDetail {
 		ServiceName: string;
 		ServiceNamespace: string;
-		Region?: string;
-		EntityPath?: string;
-		LastAuthenticatedTime?: Date;
-		TotalAuthenticatedEntities?: number;
+		Region?: string | null;
+		EntityPath?: string | null;
+		LastAuthenticatedTime?: Date | null;
+		TotalAuthenticatedEntities?: number | null;
 	}
 
 
@@ -698,7 +698,7 @@ export namespace MyNS {
 	export interface GetPolicyResponse {
 
 		/** <p>Contains information about a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
-		Policy?: Policy;
+		Policy?: Policy | null;
 	}
 
 
@@ -706,7 +706,7 @@ export namespace MyNS {
 	export interface GetPolicyVersionResponse {
 
 		/** <p>Contains information about a version of a managed policy.</p> <p>This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
-		PolicyVersion?: PolicyVersion;
+		PolicyVersion?: PolicyVersion | null;
 	}
 
 
@@ -731,9 +731,9 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>GetSAMLProvider</a> request.  */
 	export interface GetSAMLProviderResponse {
-		SAMLMetadataDocument?: string;
-		CreateDate?: Date;
-		ValidUntil?: Date;
+		SAMLMetadataDocument?: string | null;
+		CreateDate?: Date | null;
+		ValidUntil?: Date | null;
 	}
 
 
@@ -741,7 +741,7 @@ export namespace MyNS {
 	export interface GetSSHPublicKeyResponse {
 
 		/** <p>Contains information about an SSH public key.</p> <p>This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a> operations. </p> */
-		SSHPublicKey?: SSHPublicKey;
+		SSHPublicKey?: SSHPublicKey | null;
 	}
 
 
@@ -752,7 +752,7 @@ export namespace MyNS {
 		Fingerprint: string;
 		SSHPublicKeyBody: string;
 		Status: AccessKeyStatus;
-		UploadDate?: Date;
+		UploadDate?: Date | null;
 	}
 
 	export interface UnrecognizedPublicKeyEncodingException {
@@ -779,7 +779,7 @@ export namespace MyNS {
 		 */
 		ServerCertificateMetadata: ServerCertificateMetadata;
 		CertificateBody: string;
-		CertificateChain?: string;
+		CertificateChain?: string | null;
 	}
 
 
@@ -796,21 +796,21 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn: string;
-		UploadDate?: Date;
-		Expiration?: Date;
+		UploadDate?: Date | null;
+		Expiration?: Date | null;
 	}
 
 	export interface GetServiceLastAccessedDetailsResponse {
 		JobStatus: GetOrganizationsAccessReportResponseJobStatus;
-		JobType?: GetServiceLastAccessedDetailsResponseJobType;
+		JobType?: GetServiceLastAccessedDetailsResponseJobType | null;
 		JobCreationDate: Date;
 		ServicesLastAccessed: Array<ServiceLastAccessed>;
 		JobCompletionDate: Date;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 
 		/** <p>Contains information about the reason that the operation failed.</p> <p>This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p> */
-		Error?: ErrorDetails;
+		Error?: ErrorDetails | null;
 	}
 
 	export enum GetServiceLastAccessedDetailsResponseJobType { SERVICE_LEVEL = 0, ACTION_LEVEL = 1 }
@@ -819,7 +819,7 @@ export namespace MyNS {
 	/** <p>Contains details about the most recent attempt to access the service.</p> <p>This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation.</p> */
 	export interface ServiceLastAccessed {
 		ServiceName: string;
-		LastAuthenticated?: Date;
+		LastAuthenticated?: Date | null;
 		ServiceNamespace: string;
 
 		/**
@@ -827,25 +827,25 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		LastAuthenticatedEntity?: string;
-		LastAuthenticatedRegion?: string;
-		TotalAuthenticatedEntities?: number;
-		TrackedActionsLastAccessed?: Array<TrackedActionLastAccessed>;
+		LastAuthenticatedEntity?: string | null;
+		LastAuthenticatedRegion?: string | null;
+		TotalAuthenticatedEntities?: number | null;
+		TrackedActionsLastAccessed?: Array<TrackedActionLastAccessed> | null;
 	}
 
 
 	/** <p>Contains details about the most recent attempt to access an action within the service.</p> <p>This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation.</p> */
 	export interface TrackedActionLastAccessed {
-		ActionName?: string;
+		ActionName?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		LastAccessedEntity?: string;
-		LastAccessedTime?: Date;
-		LastAccessedRegion?: string;
+		LastAccessedEntity?: string | null;
+		LastAccessedTime?: Date | null;
+		LastAccessedRegion?: string | null;
 	}
 
 	export interface GetServiceLastAccessedDetailsWithEntitiesResponse {
@@ -853,11 +853,11 @@ export namespace MyNS {
 		JobCreationDate: Date;
 		JobCompletionDate: Date;
 		EntityDetailsList: Array<EntityDetails>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 
 		/** <p>Contains information about the reason that the operation failed.</p> <p>This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p> */
-		Error?: ErrorDetails;
+		Error?: ErrorDetails | null;
 	}
 
 
@@ -869,7 +869,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		EntityInfo: EntityInfo;
-		LastAuthenticated?: Date;
+		LastAuthenticated?: Date | null;
 	}
 
 
@@ -886,7 +886,7 @@ export namespace MyNS {
 		Name: string;
 		Type: EntityInfoType;
 		Id: string;
-		Path?: string;
+		Path?: string | null;
 	}
 
 	export enum EntityInfoType { USER = 0, ROLE = 1, GROUP = 2 }
@@ -895,7 +895,7 @@ export namespace MyNS {
 		Status: GetServiceLinkedRoleDeletionStatusResponseStatus;
 
 		/** <p>The reason that the service-linked role deletion failed.</p> <p>This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.</p> */
-		Reason?: DeletionTaskFailureReasonType;
+		Reason?: DeletionTaskFailureReasonType | null;
 	}
 
 	export enum GetServiceLinkedRoleDeletionStatusResponseStatus { SUCCEEDED = 0, IN_PROGRESS = 1, FAILED = 2, NOT_STARTED = 3 }
@@ -903,15 +903,15 @@ export namespace MyNS {
 
 	/** <p>The reason that the service-linked role deletion failed.</p> <p>This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.</p> */
 	export interface DeletionTaskFailureReasonType {
-		Reason?: string;
-		RoleUsageList?: Array<RoleUsageType>;
+		Reason?: string | null;
+		RoleUsageList?: Array<RoleUsageType> | null;
 	}
 
 
 	/** <p>An object that contains details about how a service-linked role is used, if that information is returned by the service.</p> <p>This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.</p> */
 	export interface RoleUsageType {
-		Region?: string;
-		Resources?: Array<string>;
+		Region?: string | null;
+		Resources?: Array<string> | null;
 	}
 
 
@@ -942,80 +942,80 @@ export namespace MyNS {
 		 * Required
 		 */
 		AccessKeyMetadata: Array<AccessKeyMetadata>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p>Contains information about an AWS access key, without its secret key.</p> <p>This data type is used as a response element in the <a>ListAccessKeys</a> operation.</p> */
 	export interface AccessKeyMetadata {
-		UserName?: string;
-		AccessKeyId?: string;
-		Status?: AccessKeyStatus;
-		CreateDate?: Date;
+		UserName?: string | null;
+		AccessKeyId?: string | null;
+		Status?: AccessKeyStatus | null;
+		CreateDate?: Date | null;
 	}
 
 
 	/** Contains the response to a successful <a>ListAccountAliases</a> request.  */
 	export interface ListAccountAliasesResponse {
 		AccountAliases: Array<string>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** Contains the response to a successful <a>ListAttachedGroupPolicies</a> request.  */
 	export interface ListAttachedGroupPoliciesResponse {
-		AttachedPolicies?: Array<AttachedPolicy>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		AttachedPolicies?: Array<AttachedPolicy> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** Contains the response to a successful <a>ListAttachedRolePolicies</a> request.  */
 	export interface ListAttachedRolePoliciesResponse {
-		AttachedPolicies?: Array<AttachedPolicy>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		AttachedPolicies?: Array<AttachedPolicy> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** Contains the response to a successful <a>ListAttachedUserPolicies</a> request.  */
 	export interface ListAttachedUserPoliciesResponse {
-		AttachedPolicies?: Array<AttachedPolicy>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		AttachedPolicies?: Array<AttachedPolicy> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** Contains the response to a successful <a>ListEntitiesForPolicy</a> request.  */
 	export interface ListEntitiesForPolicyResponse {
-		PolicyGroups?: Array<PolicyGroup>;
-		PolicyUsers?: Array<PolicyUser>;
-		PolicyRoles?: Array<PolicyRole>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		PolicyGroups?: Array<PolicyGroup> | null;
+		PolicyUsers?: Array<PolicyUser> | null;
+		PolicyRoles?: Array<PolicyRole> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p>Contains information about a group that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyGroup {
-		GroupName?: string;
-		GroupId?: string;
+		GroupName?: string | null;
+		GroupId?: string | null;
 	}
 
 
 	/** <p>Contains information about a user that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyUser {
-		UserName?: string;
-		UserId?: string;
+		UserName?: string | null;
+		UserId?: string | null;
 	}
 
 
 	/** <p>Contains information about a role that a managed policy is attached to.</p> <p>This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p> */
 	export interface PolicyRole {
-		RoleName?: string;
-		RoleId?: string;
+		RoleName?: string | null;
+		RoleId?: string | null;
 	}
 
 
@@ -1027,8 +1027,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		PolicyNames: Array<string>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1040,8 +1040,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		Groups: Array<Group>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1053,8 +1053,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		Groups: Array<Group>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1066,8 +1066,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		InstanceProfiles: Array<InstanceProfile>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1079,8 +1079,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		InstanceProfiles: Array<InstanceProfile>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1092,8 +1092,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		MFADevices: Array<MFADevice>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1109,7 +1109,7 @@ export namespace MyNS {
 	export interface ListOpenIDConnectProvidersResponse {
 
 		/** Contains a list of IAM OpenID Connect providers. */
-		OpenIDConnectProviderList?: Array<OpenIDConnectProviderListEntry>;
+		OpenIDConnectProviderList?: Array<OpenIDConnectProviderListEntry> | null;
 	}
 
 
@@ -1121,28 +1121,28 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		Arn?: string;
+		Arn?: string | null;
 	}
 
 
 	/** Contains the response to a successful <a>ListPolicies</a> request.  */
 	export interface ListPoliciesResponse {
-		Policies?: Array<Policy>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		Policies?: Array<Policy> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 	export interface ListPoliciesGrantingServiceAccessResponse {
 		PoliciesGrantingServiceAccess: Array<ListPoliciesGrantingServiceAccessEntry>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p>Contains details about the permissions policies that are attached to the specified identity (user, group, or role).</p> <p>This data type is used as a response element in the <a>ListPoliciesGrantingServiceAccess</a> operation.</p> */
 	export interface ListPoliciesGrantingServiceAccessEntry {
-		ServiceNamespace?: string;
-		Policies?: Array<PolicyGrantingServiceAccess>;
+		ServiceNamespace?: string | null;
+		Policies?: Array<PolicyGrantingServiceAccess> | null;
 	}
 
 
@@ -1156,9 +1156,9 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		PolicyArn?: string;
-		EntityType?: EntityInfoType;
-		EntityName?: string;
+		PolicyArn?: string | null;
+		EntityType?: EntityInfoType | null;
+		EntityName?: string | null;
 	}
 
 	export enum PolicyGrantingServiceAccessPolicyType { INLINE = 0, MANAGED = 1 }
@@ -1166,9 +1166,9 @@ export namespace MyNS {
 
 	/** Contains the response to a successful <a>ListPolicyVersions</a> request.  */
 	export interface ListPolicyVersionsResponse {
-		Versions?: Array<PolicyVersion>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		Versions?: Array<PolicyVersion> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1180,14 +1180,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		PolicyNames: Array<string>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 	export interface ListRoleTagsResponse {
 		Tags: Array<Tag>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1199,14 +1199,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		Roles: Array<Role>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** Contains the response to a successful <a>ListSAMLProviders</a> request.  */
 	export interface ListSAMLProvidersResponse {
-		SAMLProviderList?: Array<SAMLProviderListEntry>;
+		SAMLProviderList?: Array<SAMLProviderListEntry> | null;
 	}
 
 
@@ -1218,17 +1218,17 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		Arn?: string;
-		ValidUntil?: Date;
-		CreateDate?: Date;
+		Arn?: string | null;
+		ValidUntil?: Date | null;
+		CreateDate?: Date | null;
 	}
 
 
 	/** Contains the response to a successful <a>ListSSHPublicKeys</a> request. */
 	export interface ListSSHPublicKeysResponse {
-		SSHPublicKeys?: Array<SSHPublicKeyMetadata>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		SSHPublicKeys?: Array<SSHPublicKeyMetadata> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1244,12 +1244,12 @@ export namespace MyNS {
 	/** Contains the response to a successful <a>ListServerCertificates</a> request.  */
 	export interface ListServerCertificatesResponse {
 		ServerCertificateMetadataList: Array<ServerCertificateMetadata>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 	export interface ListServiceSpecificCredentialsResponse {
-		ServiceSpecificCredentials?: Array<ServiceSpecificCredentialMetadata>;
+		ServiceSpecificCredentials?: Array<ServiceSpecificCredentialMetadata> | null;
 	}
 
 
@@ -1272,8 +1272,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		Certificates: Array<SigningCertificate>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1283,7 +1283,7 @@ export namespace MyNS {
 		CertificateId: string;
 		CertificateBody: string;
 		Status: AccessKeyStatus;
-		UploadDate?: Date;
+		UploadDate?: Date | null;
 	}
 
 
@@ -1295,14 +1295,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		PolicyNames: Array<string>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 	export interface ListUserTagsResponse {
 		Tags: Array<Tag>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
@@ -1314,48 +1314,48 @@ export namespace MyNS {
 		 * Required
 		 */
 		Users: Array<User>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** Contains the response to a successful <a>ListVirtualMFADevices</a> request.  */
 	export interface ListVirtualMFADevicesResponse {
 		VirtualMFADevices: Array<VirtualMFADevice>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 	export interface ResetServiceSpecificCredentialResponse {
 
 		/** Contains the details of a service-specific credential. */
-		ServiceSpecificCredential?: ServiceSpecificCredential;
+		ServiceSpecificCredential?: ServiceSpecificCredential | null;
 	}
 
 
 	/** Contains the response to a successful <a>SimulatePrincipalPolicy</a> or <a>SimulateCustomPolicy</a> request. */
 	export interface SimulatePolicyResponse {
-		EvaluationResults?: Array<EvaluationResult>;
-		IsTruncated?: boolean;
-		Marker?: string;
+		EvaluationResults?: Array<EvaluationResult> | null;
+		IsTruncated?: boolean | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p>Contains the results of a simulation.</p> <p>This data type is used by the return parameter of <code> <a>SimulateCustomPolicy</a> </code> and <code> <a>SimulatePrincipalPolicy</a> </code>.</p> */
 	export interface EvaluationResult {
 		EvalActionName: string;
-		EvalResourceName?: string;
+		EvalResourceName?: string | null;
 		EvalDecision: EvaluationResultEvalDecision;
-		MatchedStatements?: Array<Statement>;
-		MissingContextValues?: Array<string>;
+		MatchedStatements?: Array<Statement> | null;
+		MissingContextValues?: Array<string> | null;
 
 		/** Contains information about the effect that Organizations has on a policy simulation. */
-		OrganizationsDecisionDetail?: OrganizationsDecisionDetail;
+		OrganizationsDecisionDetail?: OrganizationsDecisionDetail | null;
 
 		/** Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is applied to an IAM entity. */
-		PermissionsBoundaryDecisionDetail?: PermissionsBoundaryDecisionDetail;
-		EvalDecisionDetails?: EvalDecisionDetailsType;
-		ResourceSpecificResults?: Array<ResourceSpecificResult>;
+		PermissionsBoundaryDecisionDetail?: PermissionsBoundaryDecisionDetail | null;
+		EvalDecisionDetails?: EvalDecisionDetailsType | null;
+		ResourceSpecificResults?: Array<ResourceSpecificResult> | null;
 	}
 
 	export enum EvaluationResultEvalDecision { allowed = 0, explicitDeny = 1, implicitDeny = 2 }
@@ -1363,14 +1363,14 @@ export namespace MyNS {
 
 	/** <p>Contains a reference to a <code>Statement</code> element in a policy document that determines the result of the simulation.</p> <p>This data type is used by the <code>MatchedStatements</code> member of the <code> <a>EvaluationResult</a> </code> type.</p> */
 	export interface Statement {
-		SourcePolicyId?: string;
-		SourcePolicyType?: StatementSourcePolicyType;
+		SourcePolicyId?: string | null;
+		SourcePolicyType?: StatementSourcePolicyType | null;
 
 		/** <p>Contains the row and column of a location of a <code>Statement</code> element in a policy document.</p> <p>This data type is used as a member of the <code> <a>Statement</a> </code> type.</p> */
-		StartPosition?: Position;
+		StartPosition?: Position | null;
 
 		/** <p>Contains the row and column of a location of a <code>Statement</code> element in a policy document.</p> <p>This data type is used as a member of the <code> <a>Statement</a> </code> type.</p> */
-		EndPosition?: Position;
+		EndPosition?: Position | null;
 	}
 
 	export enum StatementSourcePolicyType { user = 0, group = 1, role = 2, aws_managed = 3, user_managed = 4, resource = 5, none = 6 }
@@ -1378,20 +1378,20 @@ export namespace MyNS {
 
 	/** <p>Contains the row and column of a location of a <code>Statement</code> element in a policy document.</p> <p>This data type is used as a member of the <code> <a>Statement</a> </code> type.</p> */
 	export interface Position {
-		Line?: number;
-		Column?: number;
+		Line?: number | null;
+		Column?: number | null;
 	}
 
 
 	/** Contains information about the effect that Organizations has on a policy simulation. */
 	export interface OrganizationsDecisionDetail {
-		AllowedByOrganizations?: boolean;
+		AllowedByOrganizations?: boolean | null;
 	}
 
 
 	/** Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is applied to an IAM entity. */
 	export interface PermissionsBoundaryDecisionDetail {
-		AllowedByPermissionsBoundary?: boolean;
+		AllowedByPermissionsBoundary?: boolean | null;
 	}
 
 	export interface EvalDecisionDetailsType {
@@ -1402,20 +1402,20 @@ export namespace MyNS {
 	export interface ResourceSpecificResult {
 		EvalResourceName: string;
 		EvalResourceDecision: EvaluationResultEvalDecision;
-		MatchedStatements?: Array<Statement>;
-		MissingContextValues?: Array<string>;
-		EvalDecisionDetails?: EvalDecisionDetailsType;
+		MatchedStatements?: Array<Statement> | null;
+		MissingContextValues?: Array<string> | null;
+		EvalDecisionDetails?: EvalDecisionDetailsType | null;
 
 		/** Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is applied to an IAM entity. */
-		PermissionsBoundaryDecisionDetail?: PermissionsBoundaryDecisionDetail;
+		PermissionsBoundaryDecisionDetail?: PermissionsBoundaryDecisionDetail | null;
 	}
 
 
 	/** <p>Contains information about a condition context key. It includes the name of the key and specifies the value (or values, if the context key supports multiple values) to use in the simulation. This information is used when evaluating the <code>Condition</code> elements of the input policies.</p> <p>This data type is used as an input parameter to <a>SimulateCustomPolicy</a> and <a>SimulatePrincipalPolicy</a>.</p> */
 	export interface ContextEntry {
-		ContextKeyName?: string;
-		ContextKeyValues?: Array<string>;
-		ContextKeyType?: ContextEntryContextKeyType;
+		ContextKeyName?: string | null;
+		ContextKeyValues?: Array<string> | null;
+		ContextKeyType?: ContextEntryContextKeyType | null;
 	}
 
 	export enum ContextEntryContextKeyType { _string = 0, stringList = 1, numeric = 2, numericList = 3, boolean = 4, booleanList = 5, ip = 6, ipList = 7, binary = 8, binaryList = 9, date = 10, dateList = 11 }
@@ -1429,7 +1429,7 @@ export namespace MyNS {
 	export interface UpdateRoleDescriptionResponse {
 
 		/** Contains information about an IAM role. This structure is returned as a response element in several API operations that interact with roles. */
-		Role?: Role;
+		Role?: Role | null;
 	}
 
 
@@ -1441,7 +1441,7 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		SAMLProviderArn?: string;
+		SAMLProviderArn?: string | null;
 	}
 
 
@@ -1449,7 +1449,7 @@ export namespace MyNS {
 	export interface UploadSSHPublicKeyResponse {
 
 		/** <p>Contains information about an SSH public key.</p> <p>This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a> operations. </p> */
-		SSHPublicKey?: SSHPublicKey;
+		SSHPublicKey?: SSHPublicKey | null;
 	}
 
 	export interface InvalidPublicKeyException {
@@ -1463,7 +1463,7 @@ export namespace MyNS {
 	export interface UploadServerCertificateResponse {
 
 		/** <p>Contains information about a server certificate without its certificate body, certificate chain, and private key.</p> <p> This data type is used as a response element in the <a>UploadServerCertificate</a> and <a>ListServerCertificates</a> operations. </p> */
-		ServerCertificateMetadata?: ServerCertificateMetadata;
+		ServerCertificateMetadata?: ServerCertificateMetadata | null;
 	}
 
 	export interface MalformedCertificateException {
@@ -1561,7 +1561,7 @@ export namespace MyNS {
 	export enum ContextKeyTypeEnum { _string = 0, stringList = 1, numeric = 2, numericList = 3, boolean = 4, booleanList = 5, ip = 6, ipList = 7, binary = 8, binaryList = 9, date = 10, dateList = 11 }
 
 	export interface CreateAccessKeyRequest {
-		UserName?: string;
+		UserName?: string | null;
 	}
 
 	export interface CreateAccountAliasRequest {
@@ -1569,19 +1569,19 @@ export namespace MyNS {
 	}
 
 	export interface CreateGroupRequest {
-		Path?: string;
+		Path?: string | null;
 		GroupName: string;
 	}
 
 	export interface CreateInstanceProfileRequest {
 		InstanceProfileName: string;
-		Path?: string;
+		Path?: string | null;
 	}
 
 	export interface CreateLoginProfileRequest {
 		UserName: string;
 		Password: string;
-		PasswordResetRequired?: boolean;
+		PasswordResetRequired?: boolean | null;
 	}
 
 	export interface CreateOpenIDConnectProviderRequest {
@@ -1593,7 +1593,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		Url: string;
-		ClientIDList?: Array<string>;
+		ClientIDList?: Array<string> | null;
 
 		/**
 		 * Contains a list of thumbprints of identity provider server certificates.
@@ -1604,9 +1604,9 @@ export namespace MyNS {
 
 	export interface CreatePolicyRequest {
 		PolicyName: string;
-		Path?: string;
+		Path?: string | null;
 		PolicyDocument: string;
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface CreatePolicyVersionRequest {
@@ -1619,23 +1619,23 @@ export namespace MyNS {
 		 */
 		PolicyArn: string;
 		PolicyDocument: string;
-		SetAsDefault?: boolean;
+		SetAsDefault?: boolean | null;
 	}
 
 	export interface CreateRoleRequest {
-		Path?: string;
+		Path?: string | null;
 		RoleName: string;
 		AssumeRolePolicyDocument: string;
-		Description?: string;
-		MaxSessionDuration?: number;
+		Description?: string | null;
+		MaxSessionDuration?: number | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		PermissionsBoundary?: string;
-		Tags?: Array<Tag>;
+		PermissionsBoundary?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateSAMLProviderRequest {
@@ -1645,8 +1645,8 @@ export namespace MyNS {
 
 	export interface CreateServiceLinkedRoleRequest {
 		AWSServiceName: string;
-		Description?: string;
-		CustomSuffix?: string;
+		Description?: string | null;
+		CustomSuffix?: string | null;
 	}
 
 	export interface CreateServiceSpecificCredentialRequest {
@@ -1655,7 +1655,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateUserRequest {
-		Path?: string;
+		Path?: string | null;
 		UserName: string;
 
 		/**
@@ -1663,12 +1663,12 @@ export namespace MyNS {
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		PermissionsBoundary?: string;
-		Tags?: Array<Tag>;
+		PermissionsBoundary?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateVirtualMFADeviceRequest {
-		Path?: string;
+		Path?: string | null;
 		VirtualMFADeviceName: string;
 	}
 
@@ -1678,7 +1678,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteAccessKeyRequest {
-		UserName?: string;
+		UserName?: string | null;
 		AccessKeyId: string;
 	}
 
@@ -1775,12 +1775,12 @@ export namespace MyNS {
 	}
 
 	export interface DeleteServiceSpecificCredentialRequest {
-		UserName?: string;
+		UserName?: string | null;
 		ServiceSpecificCredentialId: string;
 	}
 
 	export interface DeleteSigningCertificateRequest {
-		UserName?: string;
+		UserName?: string | null;
 		CertificateId: string;
 	}
 
@@ -1854,7 +1854,7 @@ export namespace MyNS {
 
 	export interface GenerateOrganizationsAccessReportRequest {
 		EntityPath: string;
-		OrganizationsPolicyId?: string;
+		OrganizationsPolicyId?: string | null;
 	}
 
 	export interface GenerateServiceLastAccessedDetailsRequest {
@@ -1866,7 +1866,7 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		Arn: string;
-		Granularity?: GetServiceLastAccessedDetailsResponseJobType;
+		Granularity?: GetServiceLastAccessedDetailsResponseJobType | null;
 	}
 
 	export interface GetAccessKeyLastUsedRequest {
@@ -1874,9 +1874,9 @@ export namespace MyNS {
 	}
 
 	export interface GetAccountAuthorizationDetailsRequest {
-		Filter?: Array<EntityType>;
-		MaxItems?: number;
-		Marker?: string;
+		Filter?: Array<EntityType> | null;
+		MaxItems?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface GetContextKeysForCustomPolicyRequest {
@@ -1892,7 +1892,7 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicySourceArn: string;
-		PolicyInputList?: Array<string>;
+		PolicyInputList?: Array<string> | null;
 	}
 
 	export enum ReportFormatType { text_csv = 0 }
@@ -1904,8 +1904,8 @@ export namespace MyNS {
 
 	export interface GetGroupRequest {
 		GroupName: string;
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface GetInstanceProfileRequest {
@@ -1931,9 +1931,9 @@ export namespace MyNS {
 
 	export interface GetOrganizationsAccessReportRequest {
 		JobId: string;
-		MaxItems?: number;
-		Marker?: string;
-		SortKey?: SortKeyType;
+		MaxItems?: number | null;
+		Marker?: string | null;
+		SortKey?: SortKeyType | null;
 	}
 
 	export enum JobStatusType { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2 }
@@ -1995,15 +1995,15 @@ export namespace MyNS {
 
 	export interface GetServiceLastAccessedDetailsRequest {
 		JobId: string;
-		MaxItems?: number;
-		Marker?: string;
+		MaxItems?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface GetServiceLastAccessedDetailsWithEntitiesRequest {
 		JobId: string;
 		ServiceNamespace: string;
-		MaxItems?: number;
-		Marker?: string;
+		MaxItems?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface GetServiceLinkedRoleDeletionStatusRequest {
@@ -2016,39 +2016,39 @@ export namespace MyNS {
 	}
 
 	export interface GetUserRequest {
-		UserName?: string;
+		UserName?: string | null;
 	}
 
 	export interface ListAccessKeysRequest {
-		UserName?: string;
-		Marker?: string;
-		MaxItems?: number;
+		UserName?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListAccountAliasesRequest {
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListAttachedGroupPoliciesRequest {
 		GroupName: string;
-		PathPrefix?: string;
-		Marker?: string;
-		MaxItems?: number;
+		PathPrefix?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListAttachedRolePoliciesRequest {
 		RoleName: string;
-		PathPrefix?: string;
-		Marker?: string;
-		MaxItems?: number;
+		PathPrefix?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListAttachedUserPoliciesRequest {
 		UserName: string;
-		PathPrefix?: string;
-		Marker?: string;
-		MaxItems?: number;
+		PathPrefix?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 
@@ -2064,56 +2064,56 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicyArn: string;
-		EntityFilter?: EntityType;
-		PathPrefix?: string;
+		EntityFilter?: EntityType | null;
+		PathPrefix?: string | null;
 
 		/** <p>The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
-		PolicyUsageFilter?: PolicyUsageType;
-		Marker?: string;
-		MaxItems?: number;
+		PolicyUsageFilter?: PolicyUsageType | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListGroupPoliciesRequest {
 		GroupName: string;
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListGroupsForUserRequest {
 		UserName: string;
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListGroupsRequest {
-		PathPrefix?: string;
-		Marker?: string;
-		MaxItems?: number;
+		PathPrefix?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListInstanceProfilesForRoleRequest {
 		RoleName: string;
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListInstanceProfilesRequest {
-		PathPrefix?: string;
-		Marker?: string;
-		MaxItems?: number;
+		PathPrefix?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListMFADevicesRequest {
-		UserName?: string;
-		Marker?: string;
-		MaxItems?: number;
+		UserName?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListOpenIDConnectProvidersRequest {
 	}
 
 	export interface ListPoliciesGrantingServiceAccessRequest {
-		Marker?: string;
+		Marker?: string | null;
 
 		/**
 		 * <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p> <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>. </p>
@@ -2128,14 +2128,14 @@ export namespace MyNS {
 	export enum PolicyScopeType { All = 0, AWS = 1, Local = 2 }
 
 	export interface ListPoliciesRequest {
-		Scope?: PolicyScopeType;
-		OnlyAttached?: boolean;
-		PathPrefix?: string;
+		Scope?: PolicyScopeType | null;
+		OnlyAttached?: boolean | null;
+		PathPrefix?: string | null;
 
 		/** <p>The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.</p> <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p> */
-		PolicyUsageFilter?: PolicyUsageType;
-		Marker?: string;
-		MaxItems?: number;
+		PolicyUsageFilter?: PolicyUsageType | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListPolicyVersionsRequest {
@@ -2147,78 +2147,78 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicyArn: string;
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListRolePoliciesRequest {
 		RoleName: string;
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListRoleTagsRequest {
 		RoleName: string;
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListRolesRequest {
-		PathPrefix?: string;
-		Marker?: string;
-		MaxItems?: number;
+		PathPrefix?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListSAMLProvidersRequest {
 	}
 
 	export interface ListSSHPublicKeysRequest {
-		UserName?: string;
-		Marker?: string;
-		MaxItems?: number;
+		UserName?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListServerCertificatesRequest {
-		PathPrefix?: string;
-		Marker?: string;
-		MaxItems?: number;
+		PathPrefix?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListServiceSpecificCredentialsRequest {
-		UserName?: string;
-		ServiceName?: string;
+		UserName?: string | null;
+		ServiceName?: string | null;
 	}
 
 	export interface ListSigningCertificatesRequest {
-		UserName?: string;
-		Marker?: string;
-		MaxItems?: number;
+		UserName?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListUserPoliciesRequest {
 		UserName: string;
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListUserTagsRequest {
 		UserName: string;
-		Marker?: string;
-		MaxItems?: number;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export interface ListUsersRequest {
-		PathPrefix?: string;
-		Marker?: string;
-		MaxItems?: number;
+		PathPrefix?: string | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export enum AssignmentStatusType { Assigned = 0, Unassigned = 1, Any = 2 }
 
 	export interface ListVirtualMFADevicesRequest {
-		AssignmentStatus?: AssignmentStatusType;
-		Marker?: string;
-		MaxItems?: number;
+		AssignmentStatus?: AssignmentStatusType | null;
+		Marker?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export enum PolicyType { INLINE = 0, MANAGED = 1 }
@@ -2290,7 +2290,7 @@ export namespace MyNS {
 	}
 
 	export interface ResetServiceSpecificCredentialRequest {
-		UserName?: string;
+		UserName?: string | null;
 		ServiceSpecificCredentialId: string;
 	}
 
@@ -2321,16 +2321,16 @@ export namespace MyNS {
 
 	export interface SimulateCustomPolicyRequest {
 		PolicyInputList: Array<string>;
-		PermissionsBoundaryPolicyInputList?: Array<string>;
+		PermissionsBoundaryPolicyInputList?: Array<string> | null;
 		ActionNames: Array<string>;
-		ResourceArns?: Array<string>;
-		ResourcePolicy?: string;
-		ResourceOwner?: string;
-		CallerArn?: string;
-		ContextEntries?: Array<ContextEntry>;
-		ResourceHandlingOption?: string;
-		MaxItems?: number;
-		Marker?: string;
+		ResourceArns?: Array<string> | null;
+		ResourcePolicy?: string | null;
+		ResourceOwner?: string | null;
+		CallerArn?: string | null;
+		ContextEntries?: Array<ContextEntry> | null;
+		ResourceHandlingOption?: string | null;
+		MaxItems?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface SimulatePrincipalPolicyRequest {
@@ -2342,17 +2342,17 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		PolicySourceArn: string;
-		PolicyInputList?: Array<string>;
-		PermissionsBoundaryPolicyInputList?: Array<string>;
+		PolicyInputList?: Array<string> | null;
+		PermissionsBoundaryPolicyInputList?: Array<string> | null;
 		ActionNames: Array<string>;
-		ResourceArns?: Array<string>;
-		ResourcePolicy?: string;
-		ResourceOwner?: string;
-		CallerArn?: string;
-		ContextEntries?: Array<ContextEntry>;
-		ResourceHandlingOption?: string;
-		MaxItems?: number;
-		Marker?: string;
+		ResourceArns?: Array<string> | null;
+		ResourcePolicy?: string | null;
+		ResourceOwner?: string | null;
+		CallerArn?: string | null;
+		ContextEntries?: Array<ContextEntry> | null;
+		ResourceHandlingOption?: string | null;
+		MaxItems?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface TagRoleRequest {
@@ -2376,21 +2376,21 @@ export namespace MyNS {
 	}
 
 	export interface UpdateAccessKeyRequest {
-		UserName?: string;
+		UserName?: string | null;
 		AccessKeyId: string;
 		Status: AccessKeyStatus;
 	}
 
 	export interface UpdateAccountPasswordPolicyRequest {
-		MinimumPasswordLength?: number;
-		RequireSymbols?: boolean;
-		RequireNumbers?: boolean;
-		RequireUppercaseCharacters?: boolean;
-		RequireLowercaseCharacters?: boolean;
-		AllowUsersToChangePassword?: boolean;
-		MaxPasswordAge?: number;
-		PasswordReusePrevention?: number;
-		HardExpiry?: boolean;
+		MinimumPasswordLength?: number | null;
+		RequireSymbols?: boolean | null;
+		RequireNumbers?: boolean | null;
+		RequireUppercaseCharacters?: boolean | null;
+		RequireLowercaseCharacters?: boolean | null;
+		AllowUsersToChangePassword?: boolean | null;
+		MaxPasswordAge?: number | null;
+		PasswordReusePrevention?: number | null;
+		HardExpiry?: boolean | null;
 	}
 
 	export interface UpdateAssumeRolePolicyRequest {
@@ -2400,14 +2400,14 @@ export namespace MyNS {
 
 	export interface UpdateGroupRequest {
 		GroupName: string;
-		NewPath?: string;
-		NewGroupName?: string;
+		NewPath?: string | null;
+		NewGroupName?: string | null;
 	}
 
 	export interface UpdateLoginProfileRequest {
 		UserName: string;
-		Password?: string;
-		PasswordResetRequired?: boolean;
+		Password?: string | null;
+		PasswordResetRequired?: boolean | null;
 	}
 
 	export interface UpdateOpenIDConnectProviderThumbprintRequest {
@@ -2434,8 +2434,8 @@ export namespace MyNS {
 
 	export interface UpdateRoleRequest {
 		RoleName: string;
-		Description?: string;
-		MaxSessionDuration?: number;
+		Description?: string | null;
+		MaxSessionDuration?: number | null;
 	}
 
 	export interface UpdateSAMLProviderRequest {
@@ -2458,26 +2458,26 @@ export namespace MyNS {
 
 	export interface UpdateServerCertificateRequest {
 		ServerCertificateName: string;
-		NewPath?: string;
-		NewServerCertificateName?: string;
+		NewPath?: string | null;
+		NewServerCertificateName?: string | null;
 	}
 
 	export interface UpdateServiceSpecificCredentialRequest {
-		UserName?: string;
+		UserName?: string | null;
 		ServiceSpecificCredentialId: string;
 		Status: AccessKeyStatus;
 	}
 
 	export interface UpdateSigningCertificateRequest {
-		UserName?: string;
+		UserName?: string | null;
 		CertificateId: string;
 		Status: AccessKeyStatus;
 	}
 
 	export interface UpdateUserRequest {
 		UserName: string;
-		NewPath?: string;
-		NewUserName?: string;
+		NewPath?: string | null;
+		NewUserName?: string | null;
 	}
 
 	export interface UploadSSHPublicKeyRequest {
@@ -2486,15 +2486,15 @@ export namespace MyNS {
 	}
 
 	export interface UploadServerCertificateRequest {
-		Path?: string;
+		Path?: string | null;
 		ServerCertificateName: string;
 		CertificateBody: string;
 		PrivateKey: string;
-		CertificateChain?: string;
+		CertificateChain?: string | null;
 	}
 
 	export interface UploadSigningCertificateRequest {
-		UserName?: string;
+		UserName?: string | null;
 		CertificateBody: string;
 	}
 
@@ -2588,7 +2588,7 @@ export namespace MyNS {
 		 * @param {string} UserName <p>The name of the IAM user that the new key will belong to.</p> <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
 		 * @return {void} Success
 		 */
-		GET_CreateAccessKey(UserName: string, Action: GET_CreateAccessKeyAction, Version: GET_CreateAccessKeyVersion): Observable<HttpResponse<string>> {
+		GET_CreateAccessKey(UserName: string | null | undefined, Action: GET_CreateAccessKeyAction, Version: GET_CreateAccessKeyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateAccessKey?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2609,7 +2609,7 @@ export namespace MyNS {
 		 * @param {string} GroupName <p>The name of the group to create. Do not include the path in this value.</p> <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
 		 * @return {void} Success
 		 */
-		GET_CreateGroup(Path: string, GroupName: string, Action: GET_CreateGroupAction, Version: GET_CreateGroupVersion): Observable<HttpResponse<string>> {
+		GET_CreateGroup(Path: string | null | undefined, GroupName: string, Action: GET_CreateGroupAction, Version: GET_CreateGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateGroup?Path=' + (Path == null ? '' : encodeURIComponent(Path)) + '&GroupName=' + (GroupName == null ? '' : encodeURIComponent(GroupName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2620,7 +2620,7 @@ export namespace MyNS {
 		 * @param {string} Path <p> The path to the instance profile. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p> <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
 		 * @return {void} Success
 		 */
-		GET_CreateInstanceProfile(InstanceProfileName: string, Path: string, Action: GET_CreateInstanceProfileAction, Version: GET_CreateInstanceProfileVersion): Observable<HttpResponse<string>> {
+		GET_CreateInstanceProfile(InstanceProfileName: string, Path: string | null | undefined, Action: GET_CreateInstanceProfileAction, Version: GET_CreateInstanceProfileVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateInstanceProfile?InstanceProfileName=' + (InstanceProfileName == null ? '' : encodeURIComponent(InstanceProfileName)) + '&Path=' + (Path == null ? '' : encodeURIComponent(Path)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2632,7 +2632,7 @@ export namespace MyNS {
 		 * @param {boolean} PasswordResetRequired Specifies whether the user is required to set a new password on next sign-in.
 		 * @return {void} Success
 		 */
-		GET_CreateLoginProfile(UserName: string, Password: string, PasswordResetRequired: boolean, Action: GET_CreateLoginProfileAction, Version: GET_CreateLoginProfileVersion): Observable<HttpResponse<string>> {
+		GET_CreateLoginProfile(UserName: string, Password: string, PasswordResetRequired: boolean | null | undefined, Action: GET_CreateLoginProfileAction, Version: GET_CreateLoginProfileVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateLoginProfile?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&Password=' + (Password == null ? '' : encodeURIComponent(Password)) + '&PasswordResetRequired=' + PasswordResetRequired + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2644,7 +2644,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ThumbprintList <p>A list of server certificate thumbprints for the OpenID Connect (OIDC) identity provider's server certificates. Typically this list includes only one entry. However, IAM lets you have up to five thumbprints for an OIDC provider. This lets you maintain multiple thumbprints if the identity provider is rotating certificates.</p> <p>The server certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509 certificate used by the domain where the OpenID Connect provider makes its keys available. It is always a 40-character string.</p> <p>You must provide at least one thumbprint when creating an IAM OIDC provider. For example, assume that the OIDC provider is <code>server.example.com</code> and the provider stores its keys at https://keys.server.example.com/openid-connect. In that case, the thumbprint string would be the hex-encoded SHA-1 hash value of the certificate used by https://keys.server.example.com.</p> <p>For more information about obtaining the OIDC provider's thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User Guide</i>.</p>
 		 * @return {void} Success
 		 */
-		GET_CreateOpenIDConnectProvider(Url: string, ClientIDList: Array<string>, ThumbprintList: Array<string>, Action: GET_CreateOpenIDConnectProviderAction, Version: GET_CreateOpenIDConnectProviderVersion): Observable<HttpResponse<string>> {
+		GET_CreateOpenIDConnectProvider(Url: string, ClientIDList: Array<string> | null | undefined, ThumbprintList: Array<string>, Action: GET_CreateOpenIDConnectProviderAction, Version: GET_CreateOpenIDConnectProviderVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateOpenIDConnectProvider?Url=' + (Url == null ? '' : encodeURIComponent(Url)) + '&' + ClientIDList.map(z => `ClientIDList=${encodeURIComponent(z)}`).join('&') + '&' + ThumbprintList.map(z => `ThumbprintList=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2657,7 +2657,7 @@ export namespace MyNS {
 		 * @param {string} Description <p>A friendly description of the policy.</p> <p>Typically used to store information about the permissions defined in the policy. For example, "Grants access to production DynamoDB tables."</p> <p>The policy description is immutable. After a value is assigned, it cannot be changed.</p>
 		 * @return {void} Success
 		 */
-		GET_CreatePolicy(PolicyName: string, Path: string, PolicyDocument: string, Description: string, Action: GET_CreatePolicyAction, Version: GET_CreatePolicyVersion): Observable<HttpResponse<string>> {
+		GET_CreatePolicy(PolicyName: string, Path: string | null | undefined, PolicyDocument: string, Description: string | null | undefined, Action: GET_CreatePolicyAction, Version: GET_CreatePolicyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreatePolicy?PolicyName=' + (PolicyName == null ? '' : encodeURIComponent(PolicyName)) + '&Path=' + (Path == null ? '' : encodeURIComponent(Path)) + '&PolicyDocument=' + (PolicyDocument == null ? '' : encodeURIComponent(PolicyDocument)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2669,7 +2669,7 @@ export namespace MyNS {
 		 * @param {boolean} SetAsDefault <p>Specifies whether to set this version as the policy's default version.</p> <p>When this parameter is <code>true</code>, the new policy version becomes the operative version. That is, it becomes the version that is in effect for the IAM users, groups, and roles that the policy is attached to.</p> <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
 		 * @return {void} Success
 		 */
-		GET_CreatePolicyVersion(PolicyArn: string, PolicyDocument: string, SetAsDefault: boolean, Action: GET_CreatePolicyVersionAction, Version: GET_CreatePolicyVersionVersion): Observable<HttpResponse<string>> {
+		GET_CreatePolicyVersion(PolicyArn: string, PolicyDocument: string, SetAsDefault: boolean | null | undefined, Action: GET_CreatePolicyVersionAction, Version: GET_CreatePolicyVersionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreatePolicyVersion?PolicyArn=' + (PolicyArn == null ? '' : encodeURIComponent(PolicyArn)) + '&PolicyDocument=' + (PolicyDocument == null ? '' : encodeURIComponent(PolicyDocument)) + '&SetAsDefault=' + SetAsDefault + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2685,7 +2685,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags <p>A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire request fails and the role is not created.</p> </note>
 		 * @return {void} Success
 		 */
-		GET_CreateRole(Path: string, RoleName: string, AssumeRolePolicyDocument: string, Description: string, MaxSessionDuration: number, PermissionsBoundary: string, Tags: Array<Tag>, Action: GET_CreateRoleAction, Version: GET_CreateRoleVersion): Observable<HttpResponse<string>> {
+		GET_CreateRole(Path: string | null | undefined, RoleName: string, AssumeRolePolicyDocument: string, Description: string | null | undefined, MaxSessionDuration: number | null | undefined, PermissionsBoundary: string | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateRoleAction, Version: GET_CreateRoleVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateRole?Path=' + (Path == null ? '' : encodeURIComponent(Path)) + '&RoleName=' + (RoleName == null ? '' : encodeURIComponent(RoleName)) + '&AssumeRolePolicyDocument=' + (AssumeRolePolicyDocument == null ? '' : encodeURIComponent(AssumeRolePolicyDocument)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&MaxSessionDuration=' + MaxSessionDuration + '&PermissionsBoundary=' + (PermissionsBoundary == null ? '' : encodeURIComponent(PermissionsBoundary)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2708,7 +2708,7 @@ export namespace MyNS {
 		 * @param {string} CustomSuffix <p/> <p>A string that you provide, which is combined with the service-provided prefix to form the complete role name. If you make multiple requests for the same service, then you must supply a different <code>CustomSuffix</code> for each request. Otherwise the request fails with a duplicate role name error. For example, you could add <code>-1</code> or <code>-debug</code> to the suffix.</p> <p>Some services do not support the <code>CustomSuffix</code> parameter. If you provide an optional suffix and the operation fails, try the operation again without the suffix.</p>
 		 * @return {void} Success
 		 */
-		GET_CreateServiceLinkedRole(AWSServiceName: string, Description: string, CustomSuffix: string, Action: GET_CreateServiceLinkedRoleAction, Version: GET_CreateServiceLinkedRoleVersion): Observable<HttpResponse<string>> {
+		GET_CreateServiceLinkedRole(AWSServiceName: string, Description: string | null | undefined, CustomSuffix: string | null | undefined, Action: GET_CreateServiceLinkedRoleAction, Version: GET_CreateServiceLinkedRoleVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateServiceLinkedRole?AWSServiceName=' + (AWSServiceName == null ? '' : encodeURIComponent(AWSServiceName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&CustomSuffix=' + (CustomSuffix == null ? '' : encodeURIComponent(CustomSuffix)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2732,7 +2732,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags <p>A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the tags is invalid or if you exceed the allowed number of tags per user, then the entire request fails and the user is not created.</p> </note>
 		 * @return {void} Success
 		 */
-		GET_CreateUser(Path: string, UserName: string, PermissionsBoundary: string, Tags: Array<Tag>, Action: GET_CreateUserAction, Version: GET_CreateUserVersion): Observable<HttpResponse<string>> {
+		GET_CreateUser(Path: string | null | undefined, UserName: string, PermissionsBoundary: string | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateUserAction, Version: GET_CreateUserVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateUser?Path=' + (Path == null ? '' : encodeURIComponent(Path)) + '&UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&PermissionsBoundary=' + (PermissionsBoundary == null ? '' : encodeURIComponent(PermissionsBoundary)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2743,7 +2743,7 @@ export namespace MyNS {
 		 * @param {string} VirtualMFADeviceName <p>The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.</p> <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
 		 * @return {void} Success
 		 */
-		GET_CreateVirtualMFADevice(Path: string, VirtualMFADeviceName: string, Action: GET_CreateVirtualMFADeviceAction, Version: GET_CreateVirtualMFADeviceVersion): Observable<HttpResponse<string>> {
+		GET_CreateVirtualMFADevice(Path: string | null | undefined, VirtualMFADeviceName: string, Action: GET_CreateVirtualMFADeviceAction, Version: GET_CreateVirtualMFADeviceVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateVirtualMFADevice?Path=' + (Path == null ? '' : encodeURIComponent(Path)) + '&VirtualMFADeviceName=' + (VirtualMFADeviceName == null ? '' : encodeURIComponent(VirtualMFADeviceName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2765,7 +2765,7 @@ export namespace MyNS {
 		 * @param {string} AccessKeyId <p>The access key ID for the access key ID and secret access key you want to delete.</p> <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
 		 * @return {void} Success
 		 */
-		GET_DeleteAccessKey(UserName: string, AccessKeyId: string, Action: GET_DeleteAccessKeyAction, Version: GET_DeleteAccessKeyVersion): Observable<HttpResponse<string>> {
+		GET_DeleteAccessKey(UserName: string | null | undefined, AccessKeyId: string, Action: GET_DeleteAccessKeyAction, Version: GET_DeleteAccessKeyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeleteAccessKey?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&AccessKeyId=' + (AccessKeyId == null ? '' : encodeURIComponent(AccessKeyId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2948,7 +2948,7 @@ export namespace MyNS {
 		 * @param {string} ServiceSpecificCredentialId <p>The unique identifier of the service-specific credential. You can get this value by calling <a>ListServiceSpecificCredentials</a>.</p> <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
 		 * @return {void} Success
 		 */
-		GET_DeleteServiceSpecificCredential(UserName: string, ServiceSpecificCredentialId: string, Action: GET_DeleteServiceSpecificCredentialAction, Version: GET_DeleteServiceSpecificCredentialVersion): Observable<HttpResponse<string>> {
+		GET_DeleteServiceSpecificCredential(UserName: string | null | undefined, ServiceSpecificCredentialId: string, Action: GET_DeleteServiceSpecificCredentialAction, Version: GET_DeleteServiceSpecificCredentialVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeleteServiceSpecificCredential?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&ServiceSpecificCredentialId=' + (ServiceSpecificCredentialId == null ? '' : encodeURIComponent(ServiceSpecificCredentialId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2959,7 +2959,7 @@ export namespace MyNS {
 		 * @param {string} CertificateId <p>The ID of the signing certificate to delete.</p> <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of characters that can be upper- or lower-cased letters or digits.</p>
 		 * @return {void} Success
 		 */
-		GET_DeleteSigningCertificate(UserName: string, CertificateId: string, Action: GET_DeleteSigningCertificateAction, Version: GET_DeleteSigningCertificateVersion): Observable<HttpResponse<string>> {
+		GET_DeleteSigningCertificate(UserName: string | null | undefined, CertificateId: string, Action: GET_DeleteSigningCertificateAction, Version: GET_DeleteSigningCertificateVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeleteSigningCertificate?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&CertificateId=' + (CertificateId == null ? '' : encodeURIComponent(CertificateId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3075,7 +3075,7 @@ export namespace MyNS {
 		 * @param {string} OrganizationsPolicyId <p>The identifier of the AWS Organizations service control policy (SCP). This parameter is optional.</p> <p>This ID is used to generate information about when an account principal that is limited by the SCP attempted to access an AWS service.</p>
 		 * @return {void} Success
 		 */
-		GET_GenerateOrganizationsAccessReport(EntityPath: string, OrganizationsPolicyId: string, Action: GET_GenerateOrganizationsAccessReportAction, Version: GET_GenerateOrganizationsAccessReportVersion): Observable<HttpResponse<string>> {
+		GET_GenerateOrganizationsAccessReport(EntityPath: string, OrganizationsPolicyId: string | null | undefined, Action: GET_GenerateOrganizationsAccessReportAction, Version: GET_GenerateOrganizationsAccessReportVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GenerateOrganizationsAccessReport?EntityPath=' + (EntityPath == null ? '' : encodeURIComponent(EntityPath)) + '&OrganizationsPolicyId=' + (OrganizationsPolicyId == null ? '' : encodeURIComponent(OrganizationsPolicyId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3086,7 +3086,7 @@ export namespace MyNS {
 		 * @param {GetServiceLastAccessedDetailsResponseJobType} Granularity The level of detail that you want to generate. You can specify whether you want to generate information about the last attempt to access services or actions. If you specify service-level granularity, this operation generates only service data. If you specify action-level granularity, it generates service and action data. If you don't include this optional parameter, the operation generates service data.
 		 * @return {void} Success
 		 */
-		GET_GenerateServiceLastAccessedDetails(Arn: string, Granularity: GetServiceLastAccessedDetailsResponseJobType, Action: GET_GenerateServiceLastAccessedDetailsAction, Version: GET_GenerateServiceLastAccessedDetailsVersion): Observable<HttpResponse<string>> {
+		GET_GenerateServiceLastAccessedDetails(Arn: string, Granularity: GetServiceLastAccessedDetailsResponseJobType | null | undefined, Action: GET_GenerateServiceLastAccessedDetailsAction, Version: GET_GenerateServiceLastAccessedDetailsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GenerateServiceLastAccessedDetails?Arn=' + (Arn == null ? '' : encodeURIComponent(Arn)) + '&Granularity=' + Granularity + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3108,7 +3108,7 @@ export namespace MyNS {
 		 * @param {string} Marker Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.
 		 * @return {void} Success
 		 */
-		GET_GetAccountAuthorizationDetails(Filter: Array<EntityType>, MaxItems: number, Marker: string, Action: GET_GetAccountAuthorizationDetailsAction, Version: GET_GetAccountAuthorizationDetailsVersion): Observable<HttpResponse<string>> {
+		GET_GetAccountAuthorizationDetails(Filter: Array<EntityType> | null | undefined, MaxItems: number | null | undefined, Marker: string | null | undefined, Action: GET_GetAccountAuthorizationDetailsAction, Version: GET_GetAccountAuthorizationDetailsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GetAccountAuthorizationDetails?' + Filter.map(z => `Filter=${z}`).join('&') + '&MaxItems=' + MaxItems + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3165,7 +3165,7 @@ export namespace MyNS {
 		 * @param {Array<string>} PolicyInputList <p>An optional list of additional policies for which you want the list of context keys that are referenced.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li> </ul>
 		 * @return {void} Success
 		 */
-		GET_GetContextKeysForPrincipalPolicy(PolicySourceArn: string, PolicyInputList: Array<string>, Action: GET_GetContextKeysForPrincipalPolicyAction, Version: GET_GetContextKeysForPrincipalPolicyVersion): Observable<HttpResponse<string>> {
+		GET_GetContextKeysForPrincipalPolicy(PolicySourceArn: string, PolicyInputList: Array<string> | null | undefined, Action: GET_GetContextKeysForPrincipalPolicyAction, Version: GET_GetContextKeysForPrincipalPolicyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GetContextKeysForPrincipalPolicy?PolicySourceArn=' + (PolicySourceArn == null ? '' : encodeURIComponent(PolicySourceArn)) + '&' + PolicyInputList.map(z => `PolicyInputList=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3195,7 +3195,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_GetGroup(GroupName: string, Marker: string, MaxItems: number, Action: GET_GetGroupAction, Version: GET_GetGroupVersion): Observable<HttpResponse<string>> {
+		GET_GetGroup(GroupName: string, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_GetGroupAction, Version: GET_GetGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GetGroup?GroupName=' + (GroupName == null ? '' : encodeURIComponent(GroupName)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3249,7 +3249,7 @@ export namespace MyNS {
 		 * @param {SortKeyType} SortKey The key that is used to sort the results. If you choose the namespace key, the results are returned in alphabetical order. If you choose the time key, the results are sorted numerically by the date and time.
 		 * @return {void} Success
 		 */
-		GET_GetOrganizationsAccessReport(JobId: string, MaxItems: number, Marker: string, SortKey: SortKeyType, Action: GET_GetOrganizationsAccessReportAction, Version: GET_GetOrganizationsAccessReportVersion): Observable<HttpResponse<string>> {
+		GET_GetOrganizationsAccessReport(JobId: string, MaxItems: number | null | undefined, Marker: string | null | undefined, SortKey: SortKeyType | null | undefined, Action: GET_GetOrganizationsAccessReportAction, Version: GET_GetOrganizationsAccessReportVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GetOrganizationsAccessReport?JobId=' + (JobId == null ? '' : encodeURIComponent(JobId)) + '&MaxItems=' + MaxItems + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&SortKey=' + SortKey + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3335,7 +3335,7 @@ export namespace MyNS {
 		 * @param {string} Marker Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.
 		 * @return {void} Success
 		 */
-		GET_GetServiceLastAccessedDetails(JobId: string, MaxItems: number, Marker: string, Action: GET_GetServiceLastAccessedDetailsAction, Version: GET_GetServiceLastAccessedDetailsVersion): Observable<HttpResponse<string>> {
+		GET_GetServiceLastAccessedDetails(JobId: string, MaxItems: number | null | undefined, Marker: string | null | undefined, Action: GET_GetServiceLastAccessedDetailsAction, Version: GET_GetServiceLastAccessedDetailsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GetServiceLastAccessedDetails?JobId=' + (JobId == null ? '' : encodeURIComponent(JobId)) + '&MaxItems=' + MaxItems + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3348,7 +3348,7 @@ export namespace MyNS {
 		 * @param {string} Marker Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.
 		 * @return {void} Success
 		 */
-		GET_GetServiceLastAccessedDetailsWithEntities(JobId: string, ServiceNamespace: string, MaxItems: number, Marker: string, Action: GET_GetServiceLastAccessedDetailsWithEntitiesAction, Version: GET_GetServiceLastAccessedDetailsWithEntitiesVersion): Observable<HttpResponse<string>> {
+		GET_GetServiceLastAccessedDetailsWithEntities(JobId: string, ServiceNamespace: string, MaxItems: number | null | undefined, Marker: string | null | undefined, Action: GET_GetServiceLastAccessedDetailsWithEntitiesAction, Version: GET_GetServiceLastAccessedDetailsWithEntitiesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GetServiceLastAccessedDetailsWithEntities?JobId=' + (JobId == null ? '' : encodeURIComponent(JobId)) + '&ServiceNamespace=' + (ServiceNamespace == null ? '' : encodeURIComponent(ServiceNamespace)) + '&MaxItems=' + MaxItems + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3368,7 +3368,7 @@ export namespace MyNS {
 		 * @param {string} UserName <p>The name of the user to get information about.</p> <p>This parameter is optional. If it is not included, it defaults to the user making the request. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
 		 * @return {void} Success
 		 */
-		GET_GetUser(UserName: string, Action: GET_GetUserAction, Version: GET_GetUserVersion): Observable<HttpResponse<string>> {
+		GET_GetUser(UserName: string | null | undefined, Action: GET_GetUserAction, Version: GET_GetUserVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GetUser?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3391,7 +3391,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListAccessKeys(UserName: string, Marker: string, MaxItems: number, Action: GET_ListAccessKeysAction, Version: GET_ListAccessKeysVersion): Observable<HttpResponse<string>> {
+		GET_ListAccessKeys(UserName: string | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListAccessKeysAction, Version: GET_ListAccessKeysVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListAccessKeys?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3402,7 +3402,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListAccountAliases(Marker: string, MaxItems: number, Action: GET_ListAccountAliasesAction, Version: GET_ListAccountAliasesVersion): Observable<HttpResponse<string>> {
+		GET_ListAccountAliases(Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListAccountAliasesAction, Version: GET_ListAccountAliasesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListAccountAliases?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3415,7 +3415,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListAttachedGroupPolicies(GroupName: string, PathPrefix: string, Marker: string, MaxItems: number, Action: GET_ListAttachedGroupPoliciesAction, Version: GET_ListAttachedGroupPoliciesVersion): Observable<HttpResponse<string>> {
+		GET_ListAttachedGroupPolicies(GroupName: string, PathPrefix: string | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListAttachedGroupPoliciesAction, Version: GET_ListAttachedGroupPoliciesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListAttachedGroupPolicies?GroupName=' + (GroupName == null ? '' : encodeURIComponent(GroupName)) + '&PathPrefix=' + (PathPrefix == null ? '' : encodeURIComponent(PathPrefix)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3428,7 +3428,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListAttachedRolePolicies(RoleName: string, PathPrefix: string, Marker: string, MaxItems: number, Action: GET_ListAttachedRolePoliciesAction, Version: GET_ListAttachedRolePoliciesVersion): Observable<HttpResponse<string>> {
+		GET_ListAttachedRolePolicies(RoleName: string, PathPrefix: string | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListAttachedRolePoliciesAction, Version: GET_ListAttachedRolePoliciesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListAttachedRolePolicies?RoleName=' + (RoleName == null ? '' : encodeURIComponent(RoleName)) + '&PathPrefix=' + (PathPrefix == null ? '' : encodeURIComponent(PathPrefix)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3441,7 +3441,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListAttachedUserPolicies(UserName: string, PathPrefix: string, Marker: string, MaxItems: number, Action: GET_ListAttachedUserPoliciesAction, Version: GET_ListAttachedUserPoliciesVersion): Observable<HttpResponse<string>> {
+		GET_ListAttachedUserPolicies(UserName: string, PathPrefix: string | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListAttachedUserPoliciesAction, Version: GET_ListAttachedUserPoliciesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListAttachedUserPolicies?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&PathPrefix=' + (PathPrefix == null ? '' : encodeURIComponent(PathPrefix)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3456,7 +3456,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListEntitiesForPolicy(PolicyArn: string, EntityFilter: EntityType, PathPrefix: string, PolicyUsageFilter: PolicyUsageType, Marker: string, MaxItems: number, Action: GET_ListEntitiesForPolicyAction, Version: GET_ListEntitiesForPolicyVersion): Observable<HttpResponse<string>> {
+		GET_ListEntitiesForPolicy(PolicyArn: string, EntityFilter: EntityType | null | undefined, PathPrefix: string | null | undefined, PolicyUsageFilter: PolicyUsageType | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListEntitiesForPolicyAction, Version: GET_ListEntitiesForPolicyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListEntitiesForPolicy?PolicyArn=' + (PolicyArn == null ? '' : encodeURIComponent(PolicyArn)) + '&EntityFilter=' + EntityFilter + '&PathPrefix=' + (PathPrefix == null ? '' : encodeURIComponent(PathPrefix)) + '&PolicyUsageFilter=' + PolicyUsageFilter + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3468,7 +3468,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListGroupPolicies(GroupName: string, Marker: string, MaxItems: number, Action: GET_ListGroupPoliciesAction, Version: GET_ListGroupPoliciesVersion): Observable<HttpResponse<string>> {
+		GET_ListGroupPolicies(GroupName: string, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListGroupPoliciesAction, Version: GET_ListGroupPoliciesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListGroupPolicies?GroupName=' + (GroupName == null ? '' : encodeURIComponent(GroupName)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3480,7 +3480,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListGroups(PathPrefix: string, Marker: string, MaxItems: number, Action: GET_ListGroupsAction, Version: GET_ListGroupsVersion): Observable<HttpResponse<string>> {
+		GET_ListGroups(PathPrefix: string | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListGroupsAction, Version: GET_ListGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListGroups?PathPrefix=' + (PathPrefix == null ? '' : encodeURIComponent(PathPrefix)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3492,7 +3492,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListGroupsForUser(UserName: string, Marker: string, MaxItems: number, Action: GET_ListGroupsForUserAction, Version: GET_ListGroupsForUserVersion): Observable<HttpResponse<string>> {
+		GET_ListGroupsForUser(UserName: string, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListGroupsForUserAction, Version: GET_ListGroupsForUserVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListGroupsForUser?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3504,7 +3504,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListInstanceProfiles(PathPrefix: string, Marker: string, MaxItems: number, Action: GET_ListInstanceProfilesAction, Version: GET_ListInstanceProfilesVersion): Observable<HttpResponse<string>> {
+		GET_ListInstanceProfiles(PathPrefix: string | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListInstanceProfilesAction, Version: GET_ListInstanceProfilesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListInstanceProfiles?PathPrefix=' + (PathPrefix == null ? '' : encodeURIComponent(PathPrefix)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3516,7 +3516,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListInstanceProfilesForRole(RoleName: string, Marker: string, MaxItems: number, Action: GET_ListInstanceProfilesForRoleAction, Version: GET_ListInstanceProfilesForRoleVersion): Observable<HttpResponse<string>> {
+		GET_ListInstanceProfilesForRole(RoleName: string, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListInstanceProfilesForRoleAction, Version: GET_ListInstanceProfilesForRoleVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListInstanceProfilesForRole?RoleName=' + (RoleName == null ? '' : encodeURIComponent(RoleName)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3528,7 +3528,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListMFADevices(UserName: string, Marker: string, MaxItems: number, Action: GET_ListMFADevicesAction, Version: GET_ListMFADevicesVersion): Observable<HttpResponse<string>> {
+		GET_ListMFADevices(UserName: string | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListMFADevicesAction, Version: GET_ListMFADevicesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListMFADevices?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3552,7 +3552,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListPolicies(Scope: PolicyScopeType, OnlyAttached: boolean, PathPrefix: string, PolicyUsageFilter: PolicyUsageType, Marker: string, MaxItems: number, Action: GET_ListPoliciesAction, Version: GET_ListPoliciesVersion): Observable<HttpResponse<string>> {
+		GET_ListPolicies(Scope: PolicyScopeType | null | undefined, OnlyAttached: boolean | null | undefined, PathPrefix: string | null | undefined, PolicyUsageFilter: PolicyUsageType | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListPoliciesAction, Version: GET_ListPoliciesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListPolicies?Scope=' + Scope + '&OnlyAttached=' + OnlyAttached + '&PathPrefix=' + (PathPrefix == null ? '' : encodeURIComponent(PathPrefix)) + '&PolicyUsageFilter=' + PolicyUsageFilter + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3564,7 +3564,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ServiceNamespaces <p>The service namespace for the AWS services whose policies you want to list.</p> <p>To learn the service namespace for a service, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions, Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
 		 * @return {void} Success
 		 */
-		GET_ListPoliciesGrantingServiceAccess(Marker: string, Arn: string, ServiceNamespaces: Array<string>, Action: GET_ListPoliciesGrantingServiceAccessAction, Version: GET_ListPoliciesGrantingServiceAccessVersion): Observable<HttpResponse<string>> {
+		GET_ListPoliciesGrantingServiceAccess(Marker: string | null | undefined, Arn: string, ServiceNamespaces: Array<string>, Action: GET_ListPoliciesGrantingServiceAccessAction, Version: GET_ListPoliciesGrantingServiceAccessVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListPoliciesGrantingServiceAccess?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Arn=' + (Arn == null ? '' : encodeURIComponent(Arn)) + '&' + ServiceNamespaces.map(z => `ServiceNamespaces=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3576,7 +3576,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListPolicyVersions(PolicyArn: string, Marker: string, MaxItems: number, Action: GET_ListPolicyVersionsAction, Version: GET_ListPolicyVersionsVersion): Observable<HttpResponse<string>> {
+		GET_ListPolicyVersions(PolicyArn: string, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListPolicyVersionsAction, Version: GET_ListPolicyVersionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListPolicyVersions?PolicyArn=' + (PolicyArn == null ? '' : encodeURIComponent(PolicyArn)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3588,7 +3588,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListRolePolicies(RoleName: string, Marker: string, MaxItems: number, Action: GET_ListRolePoliciesAction, Version: GET_ListRolePoliciesVersion): Observable<HttpResponse<string>> {
+		GET_ListRolePolicies(RoleName: string, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListRolePoliciesAction, Version: GET_ListRolePoliciesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListRolePolicies?RoleName=' + (RoleName == null ? '' : encodeURIComponent(RoleName)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3600,7 +3600,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>(Optional) Use this only when paginating results to indicate the maximum number of items that you want in the response. If additional items exist beyond the maximum that you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when more results are available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListRoleTags(RoleName: string, Marker: string, MaxItems: number, Action: GET_ListRoleTagsAction, Version: GET_ListRoleTagsVersion): Observable<HttpResponse<string>> {
+		GET_ListRoleTags(RoleName: string, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListRoleTagsAction, Version: GET_ListRoleTagsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListRoleTags?RoleName=' + (RoleName == null ? '' : encodeURIComponent(RoleName)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3612,7 +3612,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListRoles(PathPrefix: string, Marker: string, MaxItems: number, Action: GET_ListRolesAction, Version: GET_ListRolesVersion): Observable<HttpResponse<string>> {
+		GET_ListRoles(PathPrefix: string | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListRolesAction, Version: GET_ListRolesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListRoles?PathPrefix=' + (PathPrefix == null ? '' : encodeURIComponent(PathPrefix)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3633,7 +3633,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListSSHPublicKeys(UserName: string, Marker: string, MaxItems: number, Action: GET_ListSSHPublicKeysAction, Version: GET_ListSSHPublicKeysVersion): Observable<HttpResponse<string>> {
+		GET_ListSSHPublicKeys(UserName: string | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListSSHPublicKeysAction, Version: GET_ListSSHPublicKeysVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListSSHPublicKeys?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3645,7 +3645,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListServerCertificates(PathPrefix: string, Marker: string, MaxItems: number, Action: GET_ListServerCertificatesAction, Version: GET_ListServerCertificatesVersion): Observable<HttpResponse<string>> {
+		GET_ListServerCertificates(PathPrefix: string | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListServerCertificatesAction, Version: GET_ListServerCertificatesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListServerCertificates?PathPrefix=' + (PathPrefix == null ? '' : encodeURIComponent(PathPrefix)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3656,7 +3656,7 @@ export namespace MyNS {
 		 * @param {string} ServiceName Filters the returned results to only those for the specified AWS service. If not specified, then AWS returns service-specific credentials for all services.
 		 * @return {void} Success
 		 */
-		GET_ListServiceSpecificCredentials(UserName: string, ServiceName: string, Action: GET_ListServiceSpecificCredentialsAction, Version: GET_ListServiceSpecificCredentialsVersion): Observable<HttpResponse<string>> {
+		GET_ListServiceSpecificCredentials(UserName: string | null | undefined, ServiceName: string | null | undefined, Action: GET_ListServiceSpecificCredentialsAction, Version: GET_ListServiceSpecificCredentialsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListServiceSpecificCredentials?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&ServiceName=' + (ServiceName == null ? '' : encodeURIComponent(ServiceName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3668,7 +3668,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListSigningCertificates(UserName: string, Marker: string, MaxItems: number, Action: GET_ListSigningCertificatesAction, Version: GET_ListSigningCertificatesVersion): Observable<HttpResponse<string>> {
+		GET_ListSigningCertificates(UserName: string | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListSigningCertificatesAction, Version: GET_ListSigningCertificatesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListSigningCertificates?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3680,7 +3680,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListUserPolicies(UserName: string, Marker: string, MaxItems: number, Action: GET_ListUserPoliciesAction, Version: GET_ListUserPoliciesVersion): Observable<HttpResponse<string>> {
+		GET_ListUserPolicies(UserName: string, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListUserPoliciesAction, Version: GET_ListUserPoliciesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListUserPolicies?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3692,7 +3692,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>(Optional) Use this only when paginating results to indicate the maximum number of items that you want in the response. If additional items exist beyond the maximum that you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when more results are available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListUserTags(UserName: string, Marker: string, MaxItems: number, Action: GET_ListUserTagsAction, Version: GET_ListUserTagsVersion): Observable<HttpResponse<string>> {
+		GET_ListUserTags(UserName: string, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListUserTagsAction, Version: GET_ListUserTagsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListUserTags?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3704,7 +3704,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListUsers(PathPrefix: string, Marker: string, MaxItems: number, Action: GET_ListUsersAction, Version: GET_ListUsersVersion): Observable<HttpResponse<string>> {
+		GET_ListUsers(PathPrefix: string | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListUsersAction, Version: GET_ListUsersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListUsers?PathPrefix=' + (PathPrefix == null ? '' : encodeURIComponent(PathPrefix)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3716,7 +3716,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
 		 * @return {void} Success
 		 */
-		GET_ListVirtualMFADevices(AssignmentStatus: AssignmentStatusType, Marker: string, MaxItems: number, Action: GET_ListVirtualMFADevicesAction, Version: GET_ListVirtualMFADevicesVersion): Observable<HttpResponse<string>> {
+		GET_ListVirtualMFADevices(AssignmentStatus: AssignmentStatusType | null | undefined, Marker: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListVirtualMFADevicesAction, Version: GET_ListVirtualMFADevicesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListVirtualMFADevices?AssignmentStatus=' + AssignmentStatus + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3818,7 +3818,7 @@ export namespace MyNS {
 		 * @param {string} ServiceSpecificCredentialId <p>The unique identifier of the service-specific credential.</p> <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
 		 * @return {void} Success
 		 */
-		GET_ResetServiceSpecificCredential(UserName: string, ServiceSpecificCredentialId: string, Action: GET_ResetServiceSpecificCredentialAction, Version: GET_ResetServiceSpecificCredentialVersion): Observable<HttpResponse<string>> {
+		GET_ResetServiceSpecificCredential(UserName: string | null | undefined, ServiceSpecificCredentialId: string, Action: GET_ResetServiceSpecificCredentialAction, Version: GET_ResetServiceSpecificCredentialVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ResetServiceSpecificCredential?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&ServiceSpecificCredentialId=' + (ServiceSpecificCredentialId == null ? '' : encodeURIComponent(ServiceSpecificCredentialId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3872,7 +3872,7 @@ export namespace MyNS {
 		 * @param {string} Marker Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.
 		 * @return {void} Success
 		 */
-		GET_SimulateCustomPolicy(PolicyInputList: Array<string>, PermissionsBoundaryPolicyInputList: Array<string>, ActionNames: Array<string>, ResourceArns: Array<string>, ResourcePolicy: string, ResourceOwner: string, CallerArn: string, ContextEntries: Array<ContextEntry>, ResourceHandlingOption: string, MaxItems: number, Marker: string, Action: GET_SimulateCustomPolicyAction, Version: GET_SimulateCustomPolicyVersion): Observable<HttpResponse<string>> {
+		GET_SimulateCustomPolicy(PolicyInputList: Array<string>, PermissionsBoundaryPolicyInputList: Array<string> | null | undefined, ActionNames: Array<string>, ResourceArns: Array<string> | null | undefined, ResourcePolicy: string | null | undefined, ResourceOwner: string | null | undefined, CallerArn: string | null | undefined, ContextEntries: Array<ContextEntry> | null | undefined, ResourceHandlingOption: string | null | undefined, MaxItems: number | null | undefined, Marker: string | null | undefined, Action: GET_SimulateCustomPolicyAction, Version: GET_SimulateCustomPolicyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SimulateCustomPolicy?' + PolicyInputList.map(z => `PolicyInputList=${encodeURIComponent(z)}`).join('&') + '&' + PermissionsBoundaryPolicyInputList.map(z => `PermissionsBoundaryPolicyInputList=${encodeURIComponent(z)}`).join('&') + '&' + ActionNames.map(z => `ActionNames=${encodeURIComponent(z)}`).join('&') + '&' + ResourceArns.map(z => `ResourceArns=${encodeURIComponent(z)}`).join('&') + '&ResourcePolicy=' + (ResourcePolicy == null ? '' : encodeURIComponent(ResourcePolicy)) + '&ResourceOwner=' + (ResourceOwner == null ? '' : encodeURIComponent(ResourceOwner)) + '&CallerArn=' + (CallerArn == null ? '' : encodeURIComponent(CallerArn)) + '&' + ContextEntries.map(z => `ContextEntries=${z}`).join('&') + '&ResourceHandlingOption=' + (ResourceHandlingOption == null ? '' : encodeURIComponent(ResourceHandlingOption)) + '&MaxItems=' + MaxItems + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3893,7 +3893,7 @@ export namespace MyNS {
 		 * @param {string} Marker Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.
 		 * @return {void} Success
 		 */
-		GET_SimulatePrincipalPolicy(PolicySourceArn: string, PolicyInputList: Array<string>, PermissionsBoundaryPolicyInputList: Array<string>, ActionNames: Array<string>, ResourceArns: Array<string>, ResourcePolicy: string, ResourceOwner: string, CallerArn: string, ContextEntries: Array<ContextEntry>, ResourceHandlingOption: string, MaxItems: number, Marker: string, Action: GET_SimulatePrincipalPolicyAction, Version: GET_SimulatePrincipalPolicyVersion): Observable<HttpResponse<string>> {
+		GET_SimulatePrincipalPolicy(PolicySourceArn: string, PolicyInputList: Array<string> | null | undefined, PermissionsBoundaryPolicyInputList: Array<string> | null | undefined, ActionNames: Array<string>, ResourceArns: Array<string> | null | undefined, ResourcePolicy: string | null | undefined, ResourceOwner: string | null | undefined, CallerArn: string | null | undefined, ContextEntries: Array<ContextEntry> | null | undefined, ResourceHandlingOption: string | null | undefined, MaxItems: number | null | undefined, Marker: string | null | undefined, Action: GET_SimulatePrincipalPolicyAction, Version: GET_SimulatePrincipalPolicyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SimulatePrincipalPolicy?PolicySourceArn=' + (PolicySourceArn == null ? '' : encodeURIComponent(PolicySourceArn)) + '&' + PolicyInputList.map(z => `PolicyInputList=${encodeURIComponent(z)}`).join('&') + '&' + PermissionsBoundaryPolicyInputList.map(z => `PermissionsBoundaryPolicyInputList=${encodeURIComponent(z)}`).join('&') + '&' + ActionNames.map(z => `ActionNames=${encodeURIComponent(z)}`).join('&') + '&' + ResourceArns.map(z => `ResourceArns=${encodeURIComponent(z)}`).join('&') + '&ResourcePolicy=' + (ResourcePolicy == null ? '' : encodeURIComponent(ResourcePolicy)) + '&ResourceOwner=' + (ResourceOwner == null ? '' : encodeURIComponent(ResourceOwner)) + '&CallerArn=' + (CallerArn == null ? '' : encodeURIComponent(CallerArn)) + '&' + ContextEntries.map(z => `ContextEntries=${z}`).join('&') + '&ResourceHandlingOption=' + (ResourceHandlingOption == null ? '' : encodeURIComponent(ResourceHandlingOption)) + '&MaxItems=' + MaxItems + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3949,7 +3949,7 @@ export namespace MyNS {
 		 * @param {AccessKeyStatus} Status  The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
 		 * @return {void} Success
 		 */
-		GET_UpdateAccessKey(UserName: string, AccessKeyId: string, Status: AccessKeyStatus, Action: GET_UpdateAccessKeyAction, Version: GET_UpdateAccessKeyVersion): Observable<HttpResponse<string>> {
+		GET_UpdateAccessKey(UserName: string | null | undefined, AccessKeyId: string, Status: AccessKeyStatus, Action: GET_UpdateAccessKeyAction, Version: GET_UpdateAccessKeyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateAccessKey?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&AccessKeyId=' + (AccessKeyId == null ? '' : encodeURIComponent(AccessKeyId)) + '&Status=' + Status + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3967,7 +3967,7 @@ export namespace MyNS {
 		 * @param {boolean} HardExpiry <p>Prevents IAM users from setting a new password after their password has expired. The IAM user cannot be accessed until an administrator resets the password.</p> <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that IAM users can change their passwords after they expire and continue to sign in as the user.</p>
 		 * @return {void} Success
 		 */
-		GET_UpdateAccountPasswordPolicy(MinimumPasswordLength: number, RequireSymbols: boolean, RequireNumbers: boolean, RequireUppercaseCharacters: boolean, RequireLowercaseCharacters: boolean, AllowUsersToChangePassword: boolean, MaxPasswordAge: number, PasswordReusePrevention: number, HardExpiry: boolean, Action: GET_UpdateAccountPasswordPolicyAction, Version: GET_UpdateAccountPasswordPolicyVersion): Observable<HttpResponse<string>> {
+		GET_UpdateAccountPasswordPolicy(MinimumPasswordLength: number | null | undefined, RequireSymbols: boolean | null | undefined, RequireNumbers: boolean | null | undefined, RequireUppercaseCharacters: boolean | null | undefined, RequireLowercaseCharacters: boolean | null | undefined, AllowUsersToChangePassword: boolean | null | undefined, MaxPasswordAge: number | null | undefined, PasswordReusePrevention: number | null | undefined, HardExpiry: boolean | null | undefined, Action: GET_UpdateAccountPasswordPolicyAction, Version: GET_UpdateAccountPasswordPolicyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateAccountPasswordPolicy?MinimumPasswordLength=' + MinimumPasswordLength + '&RequireSymbols=' + RequireSymbols + '&RequireNumbers=' + RequireNumbers + '&RequireUppercaseCharacters=' + RequireUppercaseCharacters + '&RequireLowercaseCharacters=' + RequireLowercaseCharacters + '&AllowUsersToChangePassword=' + AllowUsersToChangePassword + '&MaxPasswordAge=' + MaxPasswordAge + '&PasswordReusePrevention=' + PasswordReusePrevention + '&HardExpiry=' + HardExpiry + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3990,7 +3990,7 @@ export namespace MyNS {
 		 * @param {string} NewGroupName <p>New name for the IAM group. Only include this if changing the group's name.</p> <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
 		 * @return {void} Success
 		 */
-		GET_UpdateGroup(GroupName: string, NewPath: string, NewGroupName: string, Action: GET_UpdateGroupAction, Version: GET_UpdateGroupVersion): Observable<HttpResponse<string>> {
+		GET_UpdateGroup(GroupName: string, NewPath: string | null | undefined, NewGroupName: string | null | undefined, Action: GET_UpdateGroupAction, Version: GET_UpdateGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateGroup?GroupName=' + (GroupName == null ? '' : encodeURIComponent(GroupName)) + '&NewPath=' + (NewPath == null ? '' : encodeURIComponent(NewPath)) + '&NewGroupName=' + (NewGroupName == null ? '' : encodeURIComponent(NewGroupName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4002,7 +4002,7 @@ export namespace MyNS {
 		 * @param {boolean} PasswordResetRequired Allows this new password to be used only once by requiring the specified IAM user to set a new password on next sign-in.
 		 * @return {void} Success
 		 */
-		GET_UpdateLoginProfile(UserName: string, Password: string, PasswordResetRequired: boolean, Action: GET_UpdateLoginProfileAction, Version: GET_UpdateLoginProfileVersion): Observable<HttpResponse<string>> {
+		GET_UpdateLoginProfile(UserName: string, Password: string | null | undefined, PasswordResetRequired: boolean | null | undefined, Action: GET_UpdateLoginProfileAction, Version: GET_UpdateLoginProfileVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateLoginProfile?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&Password=' + (Password == null ? '' : encodeURIComponent(Password)) + '&PasswordResetRequired=' + PasswordResetRequired + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4025,7 +4025,7 @@ export namespace MyNS {
 		 * @param {number} MaxSessionDuration <p>The maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to 12 hours.</p> <p>Anyone who assumes the role from the AWS CLI or API can use the <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code> CLI parameter to request a longer session. The <code>MaxSessionDuration</code> setting determines the maximum duration that can be requested using the <code>DurationSeconds</code> parameter. If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in the <i>IAM User Guide</i>.</p>
 		 * @return {void} Success
 		 */
-		GET_UpdateRole(RoleName: string, Description: string, MaxSessionDuration: number, Action: GET_UpdateRoleAction, Version: GET_UpdateRoleVersion): Observable<HttpResponse<string>> {
+		GET_UpdateRole(RoleName: string, Description: string | null | undefined, MaxSessionDuration: number | null | undefined, Action: GET_UpdateRoleAction, Version: GET_UpdateRoleVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateRole?RoleName=' + (RoleName == null ? '' : encodeURIComponent(RoleName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&MaxSessionDuration=' + MaxSessionDuration + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4071,7 +4071,7 @@ export namespace MyNS {
 		 * @param {string} NewServerCertificateName <p>The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p> <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
 		 * @return {void} Success
 		 */
-		GET_UpdateServerCertificate(ServerCertificateName: string, NewPath: string, NewServerCertificateName: string, Action: GET_UpdateServerCertificateAction, Version: GET_UpdateServerCertificateVersion): Observable<HttpResponse<string>> {
+		GET_UpdateServerCertificate(ServerCertificateName: string, NewPath: string | null | undefined, NewServerCertificateName: string | null | undefined, Action: GET_UpdateServerCertificateAction, Version: GET_UpdateServerCertificateVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateServerCertificate?ServerCertificateName=' + (ServerCertificateName == null ? '' : encodeURIComponent(ServerCertificateName)) + '&NewPath=' + (NewPath == null ? '' : encodeURIComponent(NewPath)) + '&NewServerCertificateName=' + (NewServerCertificateName == null ? '' : encodeURIComponent(NewServerCertificateName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4083,7 +4083,7 @@ export namespace MyNS {
 		 * @param {AccessKeyStatus} Status The status to be assigned to the service-specific credential.
 		 * @return {void} Success
 		 */
-		GET_UpdateServiceSpecificCredential(UserName: string, ServiceSpecificCredentialId: string, Status: AccessKeyStatus, Action: GET_UpdateServiceSpecificCredentialAction, Version: GET_UpdateServiceSpecificCredentialVersion): Observable<HttpResponse<string>> {
+		GET_UpdateServiceSpecificCredential(UserName: string | null | undefined, ServiceSpecificCredentialId: string, Status: AccessKeyStatus, Action: GET_UpdateServiceSpecificCredentialAction, Version: GET_UpdateServiceSpecificCredentialVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateServiceSpecificCredential?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&ServiceSpecificCredentialId=' + (ServiceSpecificCredentialId == null ? '' : encodeURIComponent(ServiceSpecificCredentialId)) + '&Status=' + Status + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4095,7 +4095,7 @@ export namespace MyNS {
 		 * @param {AccessKeyStatus} Status  The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for API calls to AWS <code>Inactive</code> means that the certificate cannot be used.
 		 * @return {void} Success
 		 */
-		GET_UpdateSigningCertificate(UserName: string, CertificateId: string, Status: AccessKeyStatus, Action: GET_UpdateSigningCertificateAction, Version: GET_UpdateSigningCertificateVersion): Observable<HttpResponse<string>> {
+		GET_UpdateSigningCertificate(UserName: string | null | undefined, CertificateId: string, Status: AccessKeyStatus, Action: GET_UpdateSigningCertificateAction, Version: GET_UpdateSigningCertificateVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateSigningCertificate?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&CertificateId=' + (CertificateId == null ? '' : encodeURIComponent(CertificateId)) + '&Status=' + Status + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4107,7 +4107,7 @@ export namespace MyNS {
 		 * @param {string} NewUserName <p>New name for the user. Include this parameter only if you're changing the user's name.</p> <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
 		 * @return {void} Success
 		 */
-		GET_UpdateUser(UserName: string, NewPath: string, NewUserName: string, Action: GET_UpdateUserAction, Version: GET_UpdateUserVersion): Observable<HttpResponse<string>> {
+		GET_UpdateUser(UserName: string, NewPath: string | null | undefined, NewUserName: string | null | undefined, Action: GET_UpdateUserAction, Version: GET_UpdateUserVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateUser?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&NewPath=' + (NewPath == null ? '' : encodeURIComponent(NewPath)) + '&NewUserName=' + (NewUserName == null ? '' : encodeURIComponent(NewUserName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4132,7 +4132,7 @@ export namespace MyNS {
 		 * @param {string} CertificateChain <p>The contents of the certificate chain. This is typically a concatenation of the PEM-encoded public key certificates of the chain.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li> </ul>
 		 * @return {void} Success
 		 */
-		GET_UploadServerCertificate(Path: string, ServerCertificateName: string, CertificateBody: string, PrivateKey: string, CertificateChain: string, Action: GET_UploadServerCertificateAction, Version: GET_UploadServerCertificateVersion): Observable<HttpResponse<string>> {
+		GET_UploadServerCertificate(Path: string | null | undefined, ServerCertificateName: string, CertificateBody: string, PrivateKey: string, CertificateChain: string | null | undefined, Action: GET_UploadServerCertificateAction, Version: GET_UploadServerCertificateVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UploadServerCertificate?Path=' + (Path == null ? '' : encodeURIComponent(Path)) + '&ServerCertificateName=' + (ServerCertificateName == null ? '' : encodeURIComponent(ServerCertificateName)) + '&CertificateBody=' + (CertificateBody == null ? '' : encodeURIComponent(CertificateBody)) + '&PrivateKey=' + (PrivateKey == null ? '' : encodeURIComponent(PrivateKey)) + '&CertificateChain=' + (CertificateChain == null ? '' : encodeURIComponent(CertificateChain)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4143,7 +4143,7 @@ export namespace MyNS {
 		 * @param {string} CertificateBody <p>The contents of the signing certificate.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li> </ul>
 		 * @return {void} Success
 		 */
-		GET_UploadSigningCertificate(UserName: string, CertificateBody: string, Action: GET_UploadSigningCertificateAction, Version: GET_UploadSigningCertificateVersion): Observable<HttpResponse<string>> {
+		GET_UploadSigningCertificate(UserName: string | null | undefined, CertificateBody: string, Action: GET_UploadSigningCertificateAction, Version: GET_UploadSigningCertificateVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UploadSigningCertificate?UserName=' + (UserName == null ? '' : encodeURIComponent(UserName)) + '&CertificateBody=' + (CertificateBody == null ? '' : encodeURIComponent(CertificateBody)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 	}

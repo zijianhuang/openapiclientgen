@@ -52,7 +52,7 @@ export namespace MyNS {
 	export interface MeshSpec {
 
 		/** An object that represents the egress filter rules for a service mesh. */
-		egressFilter?: EgressFilter;
+		egressFilter?: EgressFilter | null;
 	}
 
 
@@ -66,7 +66,7 @@ export namespace MyNS {
 
 	/** An object that represents the status of a service mesh. */
 	export interface MeshStatus {
-		status?: MeshStatusStatus;
+		status?: MeshStatusStatus | null;
 	}
 
 	export enum MeshStatusStatus { ACTIVE = 0, DELETED = 1, INACTIVE = 2 }
@@ -80,7 +80,7 @@ export namespace MyNS {
 	 */
 	export interface TagRef {
 		key: string;
-		value?: string;
+		value?: string | null;
 	}
 
 	export interface BadRequestException {
@@ -147,17 +147,17 @@ export namespace MyNS {
 	export interface RouteSpec {
 
 		/** An object that represents a gRPC route type. */
-		grpcRoute?: GrpcRoute;
+		grpcRoute?: GrpcRoute | null;
 
 		/** An object that represents an HTTP or HTTP/2 route type. */
-		http2Route?: HttpRoute;
+		http2Route?: HttpRoute | null;
 
 		/** An object that represents an HTTP or HTTP/2 route type. */
-		httpRoute?: HttpRoute;
-		priority?: number;
+		httpRoute?: HttpRoute | null;
+		priority?: number | null;
 
 		/** An object that represents a TCP route type. */
-		tcpRoute?: TcpRoute;
+		tcpRoute?: TcpRoute | null;
 	}
 
 
@@ -177,7 +177,7 @@ export namespace MyNS {
 		match: GrpcRouteMatch;
 
 		/** An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. */
-		retryPolicy?: GrpcRetryPolicy;
+		retryPolicy?: GrpcRetryPolicy | null;
 	}
 
 
@@ -201,31 +201,31 @@ export namespace MyNS {
 
 	/** An object that represents the criteria for determining a request match. */
 	export interface GrpcRouteMatch {
-		metadata?: Array<GrpcRouteMetadata>;
-		methodName?: string;
-		serviceName?: string;
+		metadata?: Array<GrpcRouteMetadata> | null;
+		methodName?: string | null;
+		serviceName?: string | null;
 	}
 
 
 	/** An object that represents the match metadata for the route. */
 	export interface GrpcRouteMetadata {
-		invert?: boolean;
+		invert?: boolean | null;
 
 		/** An object that represents the match method. Specify one of the match values. */
-		match?: GrpcRouteMetadataMatchMethod;
+		match?: GrpcRouteMetadataMatchMethod | null;
 		name: string;
 	}
 
 
 	/** An object that represents the match method. Specify one of the match values. */
 	export interface GrpcRouteMetadataMatchMethod {
-		exact?: string;
-		prefix?: string;
+		exact?: string | null;
+		prefix?: string | null;
 
 		/** An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched. */
-		range?: MatchRange;
-		regex?: string;
-		suffix?: string;
+		range?: MatchRange | null;
+		regex?: string | null;
+		suffix?: string | null;
 	}
 
 
@@ -238,8 +238,8 @@ export namespace MyNS {
 
 	/** An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. */
 	export interface GrpcRetryPolicy {
-		grpcRetryEvents?: Array<GrpcRetryPolicyEvent>;
-		httpRetryEvents?: Array<string>;
+		grpcRetryEvents?: Array<GrpcRetryPolicyEvent> | null;
+		httpRetryEvents?: Array<string> | null;
 		maxRetries: number;
 
 		/**
@@ -247,7 +247,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		perRetryTimeout: Duration;
-		tcpRetryEvents?: Array<TcpRetryPolicyEvent>;
+		tcpRetryEvents?: Array<TcpRetryPolicyEvent> | null;
 	}
 
 	export enum GrpcRetryPolicyEvent { cancelled = 0, deadline_exceeded = 1, _internal = 2, resource_exhausted = 3, unavailable = 4 }
@@ -255,8 +255,8 @@ export namespace MyNS {
 
 	/** An object that represents a duration of time. */
 	export interface Duration {
-		unit?: DurationUnit;
-		value?: number;
+		unit?: DurationUnit | null;
+		value?: number | null;
 	}
 
 	export enum DurationUnit { ms = 0, s = 1 }
@@ -281,7 +281,7 @@ export namespace MyNS {
 		match: HttpRouteMatch;
 
 		/** An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. */
-		retryPolicy?: HttpRetryPolicy;
+		retryPolicy?: HttpRetryPolicy | null;
 	}
 
 
@@ -296,22 +296,22 @@ export namespace MyNS {
 	 *          virtual router.
 	 */
 	export interface HttpRouteMatch {
-		headers?: Array<HttpRouteHeader>;
-		method?: HttpRouteMatchMethod;
+		headers?: Array<HttpRouteHeader> | null;
+		method?: HttpRouteMatchMethod | null;
 		prefix: string;
-		scheme?: HttpRouteMatchScheme;
+		scheme?: HttpRouteMatchScheme | null;
 	}
 
 
 	/** An object that represents the HTTP header in the request. */
 	export interface HttpRouteHeader {
-		invert?: boolean;
+		invert?: boolean | null;
 
 		/**
 		 * An object that represents the method and value to match with the header value sent in a
 		 * request. Specify one match method.
 		 */
-		match?: HeaderMatchMethod;
+		match?: HeaderMatchMethod | null;
 		name: string;
 	}
 
@@ -321,13 +321,13 @@ export namespace MyNS {
 	 *          request. Specify one match method.
 	 */
 	export interface HeaderMatchMethod {
-		exact?: string;
-		prefix?: string;
+		exact?: string | null;
+		prefix?: string | null;
 
 		/** An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched. */
-		range?: MatchRange;
-		regex?: string;
-		suffix?: string;
+		range?: MatchRange | null;
+		regex?: string | null;
+		suffix?: string | null;
 	}
 
 	export enum HttpRouteMatchMethod { CONNECT = 0, DELETE = 1, GET = 2, HEAD = 3, OPTIONS = 4, PATCH = 5, POST = 6, PUT = 7, TRACE = 8 }
@@ -337,7 +337,7 @@ export namespace MyNS {
 
 	/** An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. */
 	export interface HttpRetryPolicy {
-		httpRetryEvents?: Array<string>;
+		httpRetryEvents?: Array<string> | null;
 		maxRetries: number;
 
 		/**
@@ -345,7 +345,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		perRetryTimeout: Duration;
-		tcpRetryEvents?: Array<TcpRetryPolicyEvent>;
+		tcpRetryEvents?: Array<TcpRetryPolicyEvent> | null;
 	}
 
 
@@ -410,15 +410,15 @@ export namespace MyNS {
 	export interface VirtualNodeSpec {
 
 		/** An object that represents the default properties for a backend. */
-		backendDefaults?: BackendDefaults;
-		backends?: Array<Backend>;
-		listeners?: Array<Listener>;
+		backendDefaults?: BackendDefaults | null;
+		backends?: Array<Backend> | null;
+		listeners?: Array<Listener> | null;
 
 		/** An object that represents the logging information for a virtual node. */
-		logging?: Logging;
+		logging?: Logging | null;
 
 		/** An object that represents the service discovery information for a virtual node. */
-		serviceDiscovery?: ServiceDiscovery;
+		serviceDiscovery?: ServiceDiscovery | null;
 	}
 
 
@@ -426,7 +426,7 @@ export namespace MyNS {
 	export interface BackendDefaults {
 
 		/** An object that represents a client policy. */
-		clientPolicy?: ClientPolicy;
+		clientPolicy?: ClientPolicy | null;
 	}
 
 
@@ -434,14 +434,14 @@ export namespace MyNS {
 	export interface ClientPolicy {
 
 		/** An object that represents a Transport Layer Security (TLS) client policy. */
-		tls?: ClientPolicyTls;
+		tls?: ClientPolicyTls | null;
 	}
 
 
 	/** An object that represents a Transport Layer Security (TLS) client policy. */
 	export interface ClientPolicyTls {
-		enforce?: boolean;
-		ports?: Array<number>;
+		enforce?: boolean | null;
+		ports?: Array<number> | null;
 
 		/**
 		 * An object that represents a Transport Layer Security (TLS) validation context.
@@ -469,10 +469,10 @@ export namespace MyNS {
 		 * An object that represents a TLS validation context trust for an AWS Certicate Manager (ACM)
 		 * certificate.
 		 */
-		acm?: TlsValidationContextAcmTrust;
+		acm?: TlsValidationContextAcmTrust | null;
 
 		/** An object that represents a Transport Layer Security (TLS) validation context trust for a local file. */
-		file?: TlsValidationContextFileTrust;
+		file?: TlsValidationContextFileTrust | null;
 	}
 
 
@@ -498,7 +498,7 @@ export namespace MyNS {
 	export interface Backend {
 
 		/** An object that represents a virtual service backend for a virtual node. */
-		virtualService?: VirtualServiceBackend;
+		virtualService?: VirtualServiceBackend | null;
 	}
 
 
@@ -506,7 +506,7 @@ export namespace MyNS {
 	export interface VirtualServiceBackend {
 
 		/** An object that represents a client policy. */
-		clientPolicy?: ClientPolicy;
+		clientPolicy?: ClientPolicy | null;
 		virtualServiceName: string;
 	}
 
@@ -515,7 +515,7 @@ export namespace MyNS {
 	export interface Listener {
 
 		/** An object that represents the health check policy for a virtual node's listener. */
-		healthCheck?: HealthCheckPolicy;
+		healthCheck?: HealthCheckPolicy | null;
 
 		/**
 		 * An object that represents a port mapping.
@@ -524,7 +524,7 @@ export namespace MyNS {
 		portMapping: PortMapping;
 
 		/** An object that represents the Transport Layer Security (TLS) properties for a listener. */
-		tls?: ListenerTls;
+		tls?: ListenerTls | null;
 	}
 
 
@@ -532,8 +532,8 @@ export namespace MyNS {
 	export interface HealthCheckPolicy {
 		healthyThreshold: number;
 		intervalMillis: number;
-		path?: string;
-		port?: number;
+		path?: string | null;
+		port?: number | null;
 		protocol: HealthCheckPolicyProtocol;
 		timeoutMillis: number;
 		unhealthyThreshold: number;
@@ -565,13 +565,13 @@ export namespace MyNS {
 	export interface ListenerTlsCertificate {
 
 		/** An object that represents an AWS Certicate Manager (ACM) certificate. */
-		acm?: ListenerTlsAcmCertificate;
+		acm?: ListenerTlsAcmCertificate | null;
 
 		/**
 		 * An object that represents a local file certificate.
 		 * The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.
 		 */
-		file?: ListenerTlsFileCertificate;
+		file?: ListenerTlsFileCertificate | null;
 	}
 
 
@@ -597,7 +597,7 @@ export namespace MyNS {
 	export interface Logging {
 
 		/** An object that represents the access logging information for a virtual node. */
-		accessLog?: AccessLog;
+		accessLog?: AccessLog | null;
 	}
 
 
@@ -605,7 +605,7 @@ export namespace MyNS {
 	export interface AccessLog {
 
 		/** An object that represents an access log file. */
-		file?: FileAccessLog;
+		file?: FileAccessLog | null;
 	}
 
 
@@ -622,13 +622,13 @@ export namespace MyNS {
 		 * An object that represents the AWS Cloud Map service discovery information for your virtual
 		 * node.
 		 */
-		awsCloudMap?: AwsCloudMapServiceDiscovery;
+		awsCloudMap?: AwsCloudMapServiceDiscovery | null;
 
 		/**
 		 * An object that represents the DNS service discovery information for your virtual
 		 * node.
 		 */
-		dns?: DnsServiceDiscovery;
+		dns?: DnsServiceDiscovery | null;
 	}
 
 
@@ -637,7 +637,7 @@ export namespace MyNS {
 	 *          node.
 	 */
 	export interface AwsCloudMapServiceDiscovery {
-		attributes?: Array<AwsCloudMapInstanceAttribute>;
+		attributes?: Array<AwsCloudMapInstanceAttribute> | null;
 		namespaceName: string;
 		serviceName: string;
 	}
@@ -704,7 +704,7 @@ export namespace MyNS {
 
 	/** An object that represents the specification of a virtual router. */
 	export interface VirtualRouterSpec {
-		listeners?: Array<VirtualRouterListener>;
+		listeners?: Array<VirtualRouterListener> | null;
 	}
 
 
@@ -763,7 +763,7 @@ export namespace MyNS {
 	export interface VirtualServiceSpec {
 
 		/** An object that represents the provider for a virtual service. */
-		provider?: VirtualServiceProvider;
+		provider?: VirtualServiceProvider | null;
 	}
 
 
@@ -771,10 +771,10 @@ export namespace MyNS {
 	export interface VirtualServiceProvider {
 
 		/** An object that represents a virtual node service provider. */
-		virtualNode?: VirtualNodeServiceProvider;
+		virtualNode?: VirtualNodeServiceProvider | null;
 
 		/** An object that represents a virtual node service provider. */
-		virtualRouter?: VirtualRouterServiceProvider;
+		virtualRouter?: VirtualRouterServiceProvider | null;
 	}
 
 
@@ -890,7 +890,7 @@ export namespace MyNS {
 
 	export interface ListMeshesOutput {
 		meshes: Array<MeshRef>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -906,7 +906,7 @@ export namespace MyNS {
 	}
 
 	export interface ListRoutesOutput {
-		nextToken?: string;
+		nextToken?: string | null;
 		routes: Array<RouteRef>;
 	}
 
@@ -925,12 +925,12 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceOutput {
-		nextToken?: string;
+		nextToken?: string | null;
 		tags: Array<TagRef>;
 	}
 
 	export interface ListVirtualNodesOutput {
-		nextToken?: string;
+		nextToken?: string | null;
 		virtualNodes: Array<VirtualNodeRef>;
 	}
 
@@ -948,7 +948,7 @@ export namespace MyNS {
 	}
 
 	export interface ListVirtualRoutersOutput {
-		nextToken?: string;
+		nextToken?: string | null;
 		virtualRouters: Array<VirtualRouterRef>;
 	}
 
@@ -966,7 +966,7 @@ export namespace MyNS {
 	}
 
 	export interface ListVirtualServicesOutput {
-		nextToken?: string;
+		nextToken?: string | null;
 		virtualServices: Array<VirtualServiceRef>;
 	}
 
@@ -1048,21 +1048,21 @@ export namespace MyNS {
 	}
 
 	export interface UpdateMeshInput {
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** An object that represents the specification of a service mesh. */
-		spec?: MeshSpec;
+		spec?: MeshSpec | null;
 	}
 
 	export interface CreateVirtualRouterInput {
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * An object that represents the specification of a virtual router.
 		 * Required
 		 */
 		spec: VirtualRouterSpec;
-		tags?: Array<TagRef>;
+		tags?: Array<TagRef> | null;
 		virtualRouterName: string;
 	}
 
@@ -1082,14 +1082,14 @@ export namespace MyNS {
 	export enum MeshStatusCode { ACTIVE = 0, DELETED = 1, INACTIVE = 2 }
 
 	export interface CreateVirtualNodeInput {
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * An object that represents the specification of a virtual node.
 		 * Required
 		 */
 		spec: VirtualNodeSpec;
-		tags?: Array<TagRef>;
+		tags?: Array<TagRef> | null;
 		virtualNodeName: string;
 	}
 
@@ -1097,7 +1097,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateVirtualNodeInput {
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * An object that represents the specification of a virtual node.
@@ -1110,19 +1110,19 @@ export namespace MyNS {
 	}
 
 	export interface CreateVirtualServiceInput {
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * An object that represents the specification of a virtual service.
 		 * Required
 		 */
 		spec: VirtualServiceSpec;
-		tags?: Array<TagRef>;
+		tags?: Array<TagRef> | null;
 		virtualServiceName: string;
 	}
 
 	export interface UpdateVirtualRouterInput {
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * An object that represents the specification of a virtual router.
@@ -1143,7 +1143,7 @@ export namespace MyNS {
 	export enum VirtualNodeStatusCode { ACTIVE = 0, DELETED = 1, INACTIVE = 2 }
 
 	export interface UpdateVirtualServiceInput {
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * An object that represents the specification of a virtual service.
@@ -1156,12 +1156,12 @@ export namespace MyNS {
 	}
 
 	export interface CreateMeshInput {
-		clientToken?: string;
+		clientToken?: string | null;
 		meshName: string;
 
 		/** An object that represents the specification of a service mesh. */
-		spec?: MeshSpec;
-		tags?: Array<TagRef>;
+		spec?: MeshSpec | null;
+		tags?: Array<TagRef> | null;
 	}
 
 	export interface DescribeVirtualServiceInput {
@@ -1185,7 +1185,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateRouteInput {
-		clientToken?: string;
+		clientToken?: string | null;
 		routeName: string;
 
 		/**
@@ -1193,11 +1193,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		spec: RouteSpec;
-		tags?: Array<TagRef>;
+		tags?: Array<TagRef> | null;
 	}
 
 	export interface UpdateRouteInput {
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * An object that represents a route specification. Specify one route type.
@@ -1253,7 +1253,7 @@ export namespace MyNS {
 		 *         </note>
 		 * @return {ListMeshesOutput} Success
 		 */
-		ListMeshes(limit: number, nextToken: string): Observable<ListMeshesOutput> {
+		ListMeshes(limit: number | null | undefined, nextToken: string | null | undefined): Observable<ListMeshesOutput> {
 			return this.http.get<ListMeshesOutput>(this.baseUri + 'v20190125/meshes?limit=' + limit + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -1271,7 +1271,7 @@ export namespace MyNS {
 		 *          a shared mesh, then you must be the owner of the virtual router resource.
 		 * @return {CreateRouteOutput} Success
 		 */
-		CreateRoute(meshName: string, meshOwner: string, virtualRouterName: string, requestBody: CreateRoutePutBody): Observable<CreateRouteOutput> {
+		CreateRoute(meshName: string, meshOwner: string | null | undefined, virtualRouterName: string, requestBody: CreateRoutePutBody): Observable<CreateRouteOutput> {
 			return this.http.put<CreateRouteOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouter/' + (virtualRouterName == null ? '' : encodeURIComponent(virtualRouterName)) + '/routes&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1296,7 +1296,7 @@ export namespace MyNS {
 		 * @param {string} virtualRouterName The name of the virtual router to list routes in.
 		 * @return {ListRoutesOutput} Success
 		 */
-		ListRoutes(limit: number, meshName: string, meshOwner: string, nextToken: string, virtualRouterName: string): Observable<ListRoutesOutput> {
+		ListRoutes(limit: number | null | undefined, meshName: string, meshOwner: string | null | undefined, nextToken: string | null | undefined, virtualRouterName: string): Observable<ListRoutesOutput> {
 			return this.http.get<ListRoutesOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouter/' + (virtualRouterName == null ? '' : encodeURIComponent(virtualRouterName)) + '/routes?limit=' + limit + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -1329,7 +1329,7 @@ export namespace MyNS {
 		 *              the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
 		 * @return {CreateVirtualNodeOutput} Success
 		 */
-		CreateVirtualNode(meshName: string, meshOwner: string, requestBody: CreateVirtualNodePutBody): Observable<CreateVirtualNodeOutput> {
+		CreateVirtualNode(meshName: string, meshOwner: string | null | undefined, requestBody: CreateVirtualNodePutBody): Observable<CreateVirtualNodeOutput> {
 			return this.http.put<CreateVirtualNodeOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualNodes&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1353,7 +1353,7 @@ export namespace MyNS {
 		 *          results that returned the <code>nextToken</code> value.
 		 * @return {ListVirtualNodesOutput} Success
 		 */
-		ListVirtualNodes(limit: number, meshName: string, meshOwner: string, nextToken: string): Observable<ListVirtualNodesOutput> {
+		ListVirtualNodes(limit: number | null | undefined, meshName: string, meshOwner: string | null | undefined, nextToken: string | null | undefined): Observable<ListVirtualNodesOutput> {
 			return this.http.get<ListVirtualNodesOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualNodes?limit=' + limit + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -1372,7 +1372,7 @@ export namespace MyNS {
 		 *              the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
 		 * @return {CreateVirtualRouterOutput} Success
 		 */
-		CreateVirtualRouter(meshName: string, meshOwner: string, requestBody: CreateVirtualRouterPutBody): Observable<CreateVirtualRouterOutput> {
+		CreateVirtualRouter(meshName: string, meshOwner: string | null | undefined, requestBody: CreateVirtualRouterPutBody): Observable<CreateVirtualRouterOutput> {
 			return this.http.put<CreateVirtualRouterOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouters&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1396,7 +1396,7 @@ export namespace MyNS {
 		 *          previous results that returned the <code>nextToken</code> value.
 		 * @return {ListVirtualRoutersOutput} Success
 		 */
-		ListVirtualRouters(limit: number, meshName: string, meshOwner: string, nextToken: string): Observable<ListVirtualRoutersOutput> {
+		ListVirtualRouters(limit: number | null | undefined, meshName: string, meshOwner: string | null | undefined, nextToken: string | null | undefined): Observable<ListVirtualRoutersOutput> {
 			return this.http.get<ListVirtualRoutersOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouters?limit=' + limit + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -1415,7 +1415,7 @@ export namespace MyNS {
 		 *              the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
 		 * @return {CreateVirtualServiceOutput} Success
 		 */
-		CreateVirtualService(meshName: string, meshOwner: string, requestBody: CreateVirtualServicePutBody): Observable<CreateVirtualServiceOutput> {
+		CreateVirtualService(meshName: string, meshOwner: string | null | undefined, requestBody: CreateVirtualServicePutBody): Observable<CreateVirtualServiceOutput> {
 			return this.http.put<CreateVirtualServiceOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualServices&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1439,7 +1439,7 @@ export namespace MyNS {
 		 *          previous results that returned the <code>nextToken</code> value.
 		 * @return {ListVirtualServicesOutput} Success
 		 */
-		ListVirtualServices(limit: number, meshName: string, meshOwner: string, nextToken: string): Observable<ListVirtualServicesOutput> {
+		ListVirtualServices(limit: number | null | undefined, meshName: string, meshOwner: string | null | undefined, nextToken: string | null | undefined): Observable<ListVirtualServicesOutput> {
 			return this.http.get<ListVirtualServicesOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualServices?limit=' + limit + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -1463,7 +1463,7 @@ export namespace MyNS {
 		 *                the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
 		 * @return {DescribeMeshOutput} Success
 		 */
-		DescribeMesh(meshName: string, meshOwner: string): Observable<DescribeMeshOutput> {
+		DescribeMesh(meshName: string, meshOwner: string | null | undefined): Observable<DescribeMeshOutput> {
 			return this.http.get<DescribeMeshOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), {});
 		}
 
@@ -1487,7 +1487,7 @@ export namespace MyNS {
 		 * @param {string} virtualRouterName The name of the virtual router to delete the route in.
 		 * @return {DeleteRouteOutput} Success
 		 */
-		DeleteRoute(meshName: string, meshOwner: string, routeName: string, virtualRouterName: string): Observable<DeleteRouteOutput> {
+		DeleteRoute(meshName: string, meshOwner: string | null | undefined, routeName: string, virtualRouterName: string): Observable<DeleteRouteOutput> {
 			return this.http.delete<DeleteRouteOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouter/' + (virtualRouterName == null ? '' : encodeURIComponent(virtualRouterName)) + '/routes/' + (routeName == null ? '' : encodeURIComponent(routeName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), {});
 		}
 
@@ -1501,7 +1501,7 @@ export namespace MyNS {
 		 * @param {string} virtualRouterName The name of the virtual router that the route is associated with.
 		 * @return {DescribeRouteOutput} Success
 		 */
-		DescribeRoute(meshName: string, meshOwner: string, routeName: string, virtualRouterName: string): Observable<DescribeRouteOutput> {
+		DescribeRoute(meshName: string, meshOwner: string | null | undefined, routeName: string, virtualRouterName: string): Observable<DescribeRouteOutput> {
 			return this.http.get<DescribeRouteOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouter/' + (virtualRouterName == null ? '' : encodeURIComponent(virtualRouterName)) + '/routes/' + (routeName == null ? '' : encodeURIComponent(routeName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), {});
 		}
 
@@ -1515,7 +1515,7 @@ export namespace MyNS {
 		 * @param {string} virtualRouterName The name of the virtual router that the route is associated with.
 		 * @return {UpdateRouteOutput} Success
 		 */
-		UpdateRoute(meshName: string, meshOwner: string, routeName: string, virtualRouterName: string, requestBody: UpdateRoutePutBody): Observable<UpdateRouteOutput> {
+		UpdateRoute(meshName: string, meshOwner: string | null | undefined, routeName: string, virtualRouterName: string, requestBody: UpdateRoutePutBody): Observable<UpdateRouteOutput> {
 			return this.http.put<UpdateRouteOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouter/' + (virtualRouterName == null ? '' : encodeURIComponent(virtualRouterName)) + '/routes/' + (routeName == null ? '' : encodeURIComponent(routeName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1530,7 +1530,7 @@ export namespace MyNS {
 		 * @param {string} virtualNodeName The name of the virtual node to delete.
 		 * @return {DeleteVirtualNodeOutput} Success
 		 */
-		DeleteVirtualNode(meshName: string, meshOwner: string, virtualNodeName: string): Observable<DeleteVirtualNodeOutput> {
+		DeleteVirtualNode(meshName: string, meshOwner: string | null | undefined, virtualNodeName: string): Observable<DeleteVirtualNodeOutput> {
 			return this.http.delete<DeleteVirtualNodeOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualNodes/' + (virtualNodeName == null ? '' : encodeURIComponent(virtualNodeName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), {});
 		}
 
@@ -1543,7 +1543,7 @@ export namespace MyNS {
 		 * @param {string} virtualNodeName The name of the virtual node to describe.
 		 * @return {DescribeVirtualNodeOutput} Success
 		 */
-		DescribeVirtualNode(meshName: string, meshOwner: string, virtualNodeName: string): Observable<DescribeVirtualNodeOutput> {
+		DescribeVirtualNode(meshName: string, meshOwner: string | null | undefined, virtualNodeName: string): Observable<DescribeVirtualNodeOutput> {
 			return this.http.get<DescribeVirtualNodeOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualNodes/' + (virtualNodeName == null ? '' : encodeURIComponent(virtualNodeName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), {});
 		}
 
@@ -1556,7 +1556,7 @@ export namespace MyNS {
 		 * @param {string} virtualNodeName The name of the virtual node to update.
 		 * @return {UpdateVirtualNodeOutput} Success
 		 */
-		UpdateVirtualNode(meshName: string, meshOwner: string, virtualNodeName: string, requestBody: UpdateVirtualNodePutBody): Observable<UpdateVirtualNodeOutput> {
+		UpdateVirtualNode(meshName: string, meshOwner: string | null | undefined, virtualNodeName: string, requestBody: UpdateVirtualNodePutBody): Observable<UpdateVirtualNodeOutput> {
 			return this.http.put<UpdateVirtualNodeOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualNodes/' + (virtualNodeName == null ? '' : encodeURIComponent(virtualNodeName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1571,7 +1571,7 @@ export namespace MyNS {
 		 * @param {string} virtualRouterName The name of the virtual router to delete.
 		 * @return {DeleteVirtualRouterOutput} Success
 		 */
-		DeleteVirtualRouter(meshName: string, meshOwner: string, virtualRouterName: string): Observable<DeleteVirtualRouterOutput> {
+		DeleteVirtualRouter(meshName: string, meshOwner: string | null | undefined, virtualRouterName: string): Observable<DeleteVirtualRouterOutput> {
 			return this.http.delete<DeleteVirtualRouterOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouters/' + (virtualRouterName == null ? '' : encodeURIComponent(virtualRouterName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), {});
 		}
 
@@ -1584,7 +1584,7 @@ export namespace MyNS {
 		 * @param {string} virtualRouterName The name of the virtual router to describe.
 		 * @return {DescribeVirtualRouterOutput} Success
 		 */
-		DescribeVirtualRouter(meshName: string, meshOwner: string, virtualRouterName: string): Observable<DescribeVirtualRouterOutput> {
+		DescribeVirtualRouter(meshName: string, meshOwner: string | null | undefined, virtualRouterName: string): Observable<DescribeVirtualRouterOutput> {
 			return this.http.get<DescribeVirtualRouterOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouters/' + (virtualRouterName == null ? '' : encodeURIComponent(virtualRouterName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), {});
 		}
 
@@ -1597,7 +1597,7 @@ export namespace MyNS {
 		 * @param {string} virtualRouterName The name of the virtual router to update.
 		 * @return {UpdateVirtualRouterOutput} Success
 		 */
-		UpdateVirtualRouter(meshName: string, meshOwner: string, virtualRouterName: string, requestBody: UpdateVirtualRouterPutBody): Observable<UpdateVirtualRouterOutput> {
+		UpdateVirtualRouter(meshName: string, meshOwner: string | null | undefined, virtualRouterName: string, requestBody: UpdateVirtualRouterPutBody): Observable<UpdateVirtualRouterOutput> {
 			return this.http.put<UpdateVirtualRouterOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualRouters/' + (virtualRouterName == null ? '' : encodeURIComponent(virtualRouterName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1610,7 +1610,7 @@ export namespace MyNS {
 		 * @param {string} virtualServiceName The name of the virtual service to delete.
 		 * @return {DeleteVirtualServiceOutput} Success
 		 */
-		DeleteVirtualService(meshName: string, meshOwner: string, virtualServiceName: string): Observable<DeleteVirtualServiceOutput> {
+		DeleteVirtualService(meshName: string, meshOwner: string | null | undefined, virtualServiceName: string): Observable<DeleteVirtualServiceOutput> {
 			return this.http.delete<DeleteVirtualServiceOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualServices/' + (virtualServiceName == null ? '' : encodeURIComponent(virtualServiceName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), {});
 		}
 
@@ -1623,7 +1623,7 @@ export namespace MyNS {
 		 * @param {string} virtualServiceName The name of the virtual service to describe.
 		 * @return {DescribeVirtualServiceOutput} Success
 		 */
-		DescribeVirtualService(meshName: string, meshOwner: string, virtualServiceName: string): Observable<DescribeVirtualServiceOutput> {
+		DescribeVirtualService(meshName: string, meshOwner: string | null | undefined, virtualServiceName: string): Observable<DescribeVirtualServiceOutput> {
 			return this.http.get<DescribeVirtualServiceOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualServices/' + (virtualServiceName == null ? '' : encodeURIComponent(virtualServiceName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), {});
 		}
 
@@ -1636,7 +1636,7 @@ export namespace MyNS {
 		 * @param {string} virtualServiceName The name of the virtual service to update.
 		 * @return {UpdateVirtualServiceOutput} Success
 		 */
-		UpdateVirtualService(meshName: string, meshOwner: string, virtualServiceName: string, requestBody: UpdateVirtualServicePutBody): Observable<UpdateVirtualServiceOutput> {
+		UpdateVirtualService(meshName: string, meshOwner: string | null | undefined, virtualServiceName: string, requestBody: UpdateVirtualServicePutBody): Observable<UpdateVirtualServiceOutput> {
 			return this.http.put<UpdateVirtualServiceOutput>(this.baseUri + 'v20190125/meshes/' + (meshName == null ? '' : encodeURIComponent(meshName)) + '/virtualServices/' + (virtualServiceName == null ? '' : encodeURIComponent(virtualServiceName)) + '&meshOwner=' + (meshOwner == null ? '' : encodeURIComponent(meshOwner)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1658,7 +1658,7 @@ export namespace MyNS {
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) that identifies the resource to list the tags for.
 		 * @return {ListTagsForResourceOutput} Success
 		 */
-		ListTagsForResource(limit: number, nextToken: string, resourceArn: string): Observable<ListTagsForResourceOutput> {
+		ListTagsForResource(limit: number | null | undefined, nextToken: string | null | undefined, resourceArn: string): Observable<ListTagsForResourceOutput> {
 			return this.http.get<ListTagsForResourceOutput>(this.baseUri + 'v20190125/tags#resourceArn?limit=' + limit + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&resourceArn=' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)), {});
 		}
 
@@ -1692,7 +1692,7 @@ export namespace MyNS {
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the
 		 * request. Up to 36 letters, numbers, hyphens, and underscores are allowed.
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * The name to use for the service mesh.
@@ -1703,7 +1703,7 @@ export namespace MyNS {
 		meshName: string;
 
 		/** An object that represents the specification of a service mesh. */
-		spec?: CreateMeshPutBodySpec;
+		spec?: CreateMeshPutBodySpec | null;
 
 		/**
 		 * Optional metadata that you can apply to the service mesh to assist with categorization
@@ -1713,13 +1713,13 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 50
 		 */
-		tags?: Array<TagRef>;
+		tags?: Array<TagRef> | null;
 	}
 
 	export interface CreateMeshPutBodySpec {
 
 		/** An object that represents the egress filter rules for a service mesh. */
-		egressFilter?: EgressFilter;
+		egressFilter?: EgressFilter | null;
 	}
 
 	export interface CreateRoutePutBody {
@@ -1728,7 +1728,7 @@ export namespace MyNS {
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the
 		 * request. Up to 36 letters, numbers, hyphens, and underscores are allowed.
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * The name to use for the route.
@@ -1752,23 +1752,23 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 50
 		 */
-		tags?: Array<TagRef>;
+		tags?: Array<TagRef> | null;
 	}
 
 	export interface CreateRoutePutBodySpec {
 
 		/** An object that represents a gRPC route type. */
-		grpcRoute?: GrpcRoute;
+		grpcRoute?: GrpcRoute | null;
 
 		/** An object that represents an HTTP or HTTP/2 route type. */
-		http2Route?: HttpRoute;
+		http2Route?: HttpRoute | null;
 
 		/** An object that represents an HTTP or HTTP/2 route type. */
-		httpRoute?: HttpRoute;
-		priority?: number;
+		httpRoute?: HttpRoute | null;
+		priority?: number | null;
 
 		/** An object that represents a TCP route type. */
-		tcpRoute?: TcpRoute;
+		tcpRoute?: TcpRoute | null;
 	}
 
 	export interface CreateVirtualNodePutBody {
@@ -1777,7 +1777,7 @@ export namespace MyNS {
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the
 		 * request. Up to 36 letters, numbers, hyphens, and underscores are allowed.
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * An object that represents the specification of a virtual node.
@@ -1793,7 +1793,7 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 50
 		 */
-		tags?: Array<TagRef>;
+		tags?: Array<TagRef> | null;
 
 		/**
 		 * The name to use for the virtual node.
@@ -1807,15 +1807,15 @@ export namespace MyNS {
 	export interface CreateVirtualNodePutBodySpec {
 
 		/** An object that represents the default properties for a backend. */
-		backendDefaults?: BackendDefaults;
-		backends?: Array<Backend>;
-		listeners?: Array<Listener>;
+		backendDefaults?: BackendDefaults | null;
+		backends?: Array<Backend> | null;
+		listeners?: Array<Listener> | null;
 
 		/** An object that represents the logging information for a virtual node. */
-		logging?: Logging;
+		logging?: Logging | null;
 
 		/** An object that represents the service discovery information for a virtual node. */
-		serviceDiscovery?: ServiceDiscovery;
+		serviceDiscovery?: ServiceDiscovery | null;
 	}
 
 	export interface CreateVirtualRouterPutBody {
@@ -1824,7 +1824,7 @@ export namespace MyNS {
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the
 		 * request. Up to 36 letters, numbers, hyphens, and underscores are allowed.
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * An object that represents the specification of a virtual router.
@@ -1840,7 +1840,7 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 50
 		 */
-		tags?: Array<TagRef>;
+		tags?: Array<TagRef> | null;
 
 		/**
 		 * The name to use for the virtual router.
@@ -1852,7 +1852,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateVirtualRouterPutBodySpec {
-		listeners?: Array<VirtualRouterListener>;
+		listeners?: Array<VirtualRouterListener> | null;
 	}
 
 	export interface CreateVirtualServicePutBody {
@@ -1861,7 +1861,7 @@ export namespace MyNS {
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the
 		 * request. Up to 36 letters, numbers, hyphens, and underscores are allowed.
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * An object that represents the specification of a virtual service.
@@ -1877,7 +1877,7 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 50
 		 */
-		tags?: Array<TagRef>;
+		tags?: Array<TagRef> | null;
 
 		/**
 		 * The name to use for the virtual service.
@@ -1889,7 +1889,7 @@ export namespace MyNS {
 	export interface CreateVirtualServicePutBodySpec {
 
 		/** An object that represents the provider for a virtual service. */
-		provider?: VirtualServiceProvider;
+		provider?: VirtualServiceProvider | null;
 	}
 
 	export interface UpdateMeshPutBody {
@@ -1898,16 +1898,16 @@ export namespace MyNS {
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the
 		 * request. Up to 36 letters, numbers, hyphens, and underscores are allowed.
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** An object that represents the specification of a service mesh. */
-		spec?: UpdateMeshPutBodySpec;
+		spec?: UpdateMeshPutBodySpec | null;
 	}
 
 	export interface UpdateMeshPutBodySpec {
 
 		/** An object that represents the egress filter rules for a service mesh. */
-		egressFilter?: EgressFilter;
+		egressFilter?: EgressFilter | null;
 	}
 
 	export interface UpdateRoutePutBody {
@@ -1916,7 +1916,7 @@ export namespace MyNS {
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the
 		 * request. Up to 36 letters, numbers, hyphens, and underscores are allowed.
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * An object that represents a route specification. Specify one route type.
@@ -1928,17 +1928,17 @@ export namespace MyNS {
 	export interface UpdateRoutePutBodySpec {
 
 		/** An object that represents a gRPC route type. */
-		grpcRoute?: GrpcRoute;
+		grpcRoute?: GrpcRoute | null;
 
 		/** An object that represents an HTTP or HTTP/2 route type. */
-		http2Route?: HttpRoute;
+		http2Route?: HttpRoute | null;
 
 		/** An object that represents an HTTP or HTTP/2 route type. */
-		httpRoute?: HttpRoute;
-		priority?: number;
+		httpRoute?: HttpRoute | null;
+		priority?: number | null;
 
 		/** An object that represents a TCP route type. */
-		tcpRoute?: TcpRoute;
+		tcpRoute?: TcpRoute | null;
 	}
 
 	export interface UpdateVirtualNodePutBody {
@@ -1947,7 +1947,7 @@ export namespace MyNS {
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the
 		 * request. Up to 36 letters, numbers, hyphens, and underscores are allowed.
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * An object that represents the specification of a virtual node.
@@ -1959,15 +1959,15 @@ export namespace MyNS {
 	export interface UpdateVirtualNodePutBodySpec {
 
 		/** An object that represents the default properties for a backend. */
-		backendDefaults?: BackendDefaults;
-		backends?: Array<Backend>;
-		listeners?: Array<Listener>;
+		backendDefaults?: BackendDefaults | null;
+		backends?: Array<Backend> | null;
+		listeners?: Array<Listener> | null;
 
 		/** An object that represents the logging information for a virtual node. */
-		logging?: Logging;
+		logging?: Logging | null;
 
 		/** An object that represents the service discovery information for a virtual node. */
-		serviceDiscovery?: ServiceDiscovery;
+		serviceDiscovery?: ServiceDiscovery | null;
 	}
 
 	export interface UpdateVirtualRouterPutBody {
@@ -1976,7 +1976,7 @@ export namespace MyNS {
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the
 		 * request. Up to 36 letters, numbers, hyphens, and underscores are allowed.
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * An object that represents the specification of a virtual router.
@@ -1986,7 +1986,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateVirtualRouterPutBodySpec {
-		listeners?: Array<VirtualRouterListener>;
+		listeners?: Array<VirtualRouterListener> | null;
 	}
 
 	export interface UpdateVirtualServicePutBody {
@@ -1995,7 +1995,7 @@ export namespace MyNS {
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the
 		 * request. Up to 36 letters, numbers, hyphens, and underscores are allowed.
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * An object that represents the specification of a virtual service.
@@ -2007,7 +2007,7 @@ export namespace MyNS {
 	export interface UpdateVirtualServicePutBodySpec {
 
 		/** An object that represents the provider for a virtual service. */
-		provider?: VirtualServiceProvider;
+		provider?: VirtualServiceProvider | null;
 	}
 
 	export interface TagResourcePutBody {

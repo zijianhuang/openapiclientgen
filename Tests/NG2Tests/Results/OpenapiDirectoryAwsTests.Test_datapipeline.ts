@@ -11,8 +11,8 @@ export namespace MyNS {
 	/** Contains the parameters for ActivatePipeline. */
 	export interface ActivatePipelineInput {
 		pipelineId: string;
-		parameterValues?: Array<ParameterValue>;
-		startTimestamp?: Date;
+		parameterValues?: Array<ParameterValue> | null;
+		startTimestamp?: Date | null;
 	}
 
 
@@ -25,25 +25,25 @@ export namespace MyNS {
 
 	/** The specified pipeline was not found. Verify that you used the correct user and account identifiers. */
 	export interface PipelineNotFoundException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The specified pipeline has been deleted. */
 	export interface PipelineDeletedException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** An internal service error occurred. */
 	export interface InternalServiceError {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account. */
 	export interface InvalidRequestException {
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -76,8 +76,8 @@ export namespace MyNS {
 	export interface CreatePipelineInput {
 		name: string;
 		uniqueId: string;
-		description?: string;
-		tags?: Array<Tag>;
+		description?: string | null;
+		tags?: Array<Tag> | null;
 	}
 
 
@@ -89,7 +89,7 @@ export namespace MyNS {
 	/** Contains the parameters for DeactivatePipeline. */
 	export interface DeactivatePipelineInput {
 		pipelineId: string;
-		cancelActive?: boolean;
+		cancelActive?: boolean | null;
 	}
 
 
@@ -102,8 +102,8 @@ export namespace MyNS {
 	/** Contains the output of DescribeObjects. */
 	export interface DescribeObjectsOutput {
 		pipelineObjects: Array<PipelineObject>;
-		marker?: string;
-		hasMoreResults?: boolean;
+		marker?: string | null;
+		hasMoreResults?: boolean | null;
 	}
 
 
@@ -118,8 +118,8 @@ export namespace MyNS {
 	/** A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (<code>StringValue</code>) or a reference to another object (<code>RefValue</code>) but not as both. */
 	export interface Field {
 		key: string;
-		stringValue?: string;
-		refValue?: string;
+		stringValue?: string | null;
+		refValue?: string | null;
 	}
 
 
@@ -127,8 +127,8 @@ export namespace MyNS {
 	export interface DescribeObjectsInput {
 		pipelineId: string;
 		objectIds: Array<string>;
-		evaluateExpressions?: boolean;
-		marker?: string;
+		evaluateExpressions?: boolean | null;
+		marker?: string | null;
 	}
 
 
@@ -143,8 +143,8 @@ export namespace MyNS {
 		pipelineId: string;
 		name: string;
 		fields: Array<Field>;
-		description?: string;
-		tags?: Array<Tag>;
+		description?: string | null;
+		tags?: Array<Tag> | null;
 	}
 
 
@@ -170,15 +170,15 @@ export namespace MyNS {
 
 	/** The specified task was not found.  */
 	export interface TaskNotFoundException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** Contains the output of GetPipelineDefinition. */
 	export interface GetPipelineDefinitionOutput {
-		pipelineObjects?: Array<PipelineObject>;
-		parameterObjects?: Array<ParameterObject>;
-		parameterValues?: Array<ParameterValue>;
+		pipelineObjects?: Array<PipelineObject> | null;
+		parameterObjects?: Array<ParameterObject> | null;
+		parameterValues?: Array<ParameterValue> | null;
 	}
 
 
@@ -199,28 +199,28 @@ export namespace MyNS {
 	/** Contains the parameters for GetPipelineDefinition. */
 	export interface GetPipelineDefinitionInput {
 		pipelineId: string;
-		version?: string;
+		version?: string | null;
 	}
 
 
 	/** Contains the output of ListPipelines. */
 	export interface ListPipelinesOutput {
 		pipelineIdList: Array<PipelineIdName>;
-		marker?: string;
-		hasMoreResults?: boolean;
+		marker?: string | null;
+		hasMoreResults?: boolean | null;
 	}
 
 
 	/** Contains the name and identifier of a pipeline. */
 	export interface PipelineIdName {
-		id?: string;
-		name?: string;
+		id?: string | null;
+		name?: string | null;
 	}
 
 
 	/** Contains the parameters for ListPipelines. */
 	export interface ListPipelinesInput {
-		marker?: string;
+		marker?: string | null;
 	}
 
 
@@ -228,16 +228,16 @@ export namespace MyNS {
 	export interface PollForTaskOutput {
 
 		/** Contains information about a pipeline task that is assigned to a task runner. */
-		taskObject?: TaskObject;
+		taskObject?: TaskObject | null;
 	}
 
 
 	/** Contains information about a pipeline task that is assigned to a task runner. */
 	export interface TaskObject {
-		taskId?: string;
-		pipelineId?: string;
-		attemptId?: string;
-		objects?: PipelineObjectMap;
+		taskId?: string | null;
+		pipelineId?: string | null;
+		attemptId?: string | null;
+		objects?: PipelineObjectMap | null;
 	}
 
 	export interface PipelineObjectMap {
@@ -247,39 +247,39 @@ export namespace MyNS {
 	/** Contains the parameters for PollForTask. */
 	export interface PollForTaskInput {
 		workerGroup: string;
-		hostname?: string;
+		hostname?: string | null;
 
 		/** <p><p>Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a metadata URI from the EC2 instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p></p> */
-		instanceIdentity?: InstanceIdentity;
+		instanceIdentity?: InstanceIdentity | null;
 	}
 
 
 	/** <p><p>Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a metadata URI from the EC2 instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p></p> */
 	export interface InstanceIdentity {
-		document?: string;
-		signature?: string;
+		document?: string | null;
+		signature?: string | null;
 	}
 
 
 	/** Contains the output of PutPipelineDefinition. */
 	export interface PutPipelineDefinitionOutput {
-		validationErrors?: Array<ValidationError>;
-		validationWarnings?: Array<ValidationWarning>;
+		validationErrors?: Array<ValidationError> | null;
+		validationWarnings?: Array<ValidationWarning> | null;
 		errored: boolean;
 	}
 
 
 	/** Defines a validation error. Validation errors prevent pipeline activation. The set of validation errors that can be returned are defined by AWS Data Pipeline. */
 	export interface ValidationError {
-		id?: string;
-		errors?: Array<string>;
+		id?: string | null;
+		errors?: Array<string> | null;
 	}
 
 
 	/** Defines a validation warning. Validation warnings do not prevent pipeline activation. The set of validation warnings that can be returned are defined by AWS Data Pipeline. */
 	export interface ValidationWarning {
-		id?: string;
-		warnings?: Array<string>;
+		id?: string | null;
+		warnings?: Array<string> | null;
 	}
 
 
@@ -287,16 +287,16 @@ export namespace MyNS {
 	export interface PutPipelineDefinitionInput {
 		pipelineId: string;
 		pipelineObjects: Array<PipelineObject>;
-		parameterObjects?: Array<ParameterObject>;
-		parameterValues?: Array<ParameterValue>;
+		parameterObjects?: Array<ParameterObject> | null;
+		parameterValues?: Array<ParameterValue> | null;
 	}
 
 
 	/** Contains the output of QueryObjects. */
 	export interface QueryObjectsOutput {
-		ids?: Array<string>;
-		marker?: string;
-		hasMoreResults?: boolean;
+		ids?: Array<string> | null;
+		marker?: string | null;
+		hasMoreResults?: boolean | null;
 	}
 
 
@@ -305,10 +305,10 @@ export namespace MyNS {
 		pipelineId: string;
 
 		/** Defines the query to run against an object. */
-		query?: Query;
+		query?: Query | null;
 		sphere: string;
-		marker?: string;
-		limit?: number;
+		marker?: string | null;
+		limit?: number | null;
 	}
 
 
@@ -316,23 +316,23 @@ export namespace MyNS {
 	export interface Query {
 
 		/** The list of Selectors that define queries on individual fields. */
-		selectors?: Array<Selector>;
+		selectors?: Array<Selector> | null;
 	}
 
 
 	/** A comparision that is used to determine whether a query should return this object. */
 	export interface Selector {
-		fieldName?: string;
+		fieldName?: string | null;
 
 		/** Contains a logical operation for comparing the value of a field with a specified value. */
-		operator?: Operator;
+		operator?: Operator | null;
 	}
 
 
 	/** Contains a logical operation for comparing the value of a field with a specified value. */
 	export interface Operator {
-		type?: OperatorType;
-		values?: Array<string>;
+		type?: OperatorType | null;
+		values?: Array<string> | null;
 	}
 
 	export enum OperatorType { EQ = 0, REF_EQ = 1, LE = 2, GE = 3, BETWEEN = 4 }
@@ -359,7 +359,7 @@ export namespace MyNS {
 	/** Contains the parameters for ReportTaskProgress. */
 	export interface ReportTaskProgressInput {
 		taskId: string;
-		fields?: Array<Field>;
+		fields?: Array<Field> | null;
 	}
 
 
@@ -372,8 +372,8 @@ export namespace MyNS {
 	/** Contains the parameters for ReportTaskRunnerHeartbeat. */
 	export interface ReportTaskRunnerHeartbeatInput {
 		taskrunnerId: string;
-		workerGroup?: string;
-		hostname?: string;
+		workerGroup?: string | null;
+		hostname?: string | null;
 	}
 
 
@@ -394,9 +394,9 @@ export namespace MyNS {
 	export interface SetTaskStatusInput {
 		taskId: string;
 		taskStatus: SetTaskStatusInputTaskStatus;
-		errorId?: string;
-		errorMessage?: string;
-		errorStackTrace?: string;
+		errorId?: string | null;
+		errorMessage?: string | null;
+		errorStackTrace?: string | null;
 	}
 
 	export enum SetTaskStatusInputTaskStatus { FINISHED = 0, FAILED = 1, FALSE = 2 }
@@ -404,8 +404,8 @@ export namespace MyNS {
 
 	/** Contains the output of ValidatePipelineDefinition. */
 	export interface ValidatePipelineDefinitionOutput {
-		validationErrors?: Array<ValidationError>;
-		validationWarnings?: Array<ValidationWarning>;
+		validationErrors?: Array<ValidationError> | null;
+		validationWarnings?: Array<ValidationWarning> | null;
 		errored: boolean;
 	}
 
@@ -414,8 +414,8 @@ export namespace MyNS {
 	export interface ValidatePipelineDefinitionInput {
 		pipelineId: string;
 		pipelineObjects: Array<PipelineObject>;
-		parameterObjects?: Array<ParameterObject>;
-		parameterValues?: Array<ParameterValue>;
+		parameterObjects?: Array<ParameterObject> | null;
+		parameterValues?: Array<ParameterValue> | null;
 	}
 
 	export enum TaskStatus { FINISHED = 0, FAILED = 1, FALSE = 2 }
@@ -476,7 +476,7 @@ export namespace MyNS {
 		 * @param {string} marker Pagination token
 		 * @return {DescribeObjectsOutput} Success
 		 */
-		DescribeObjects(marker: string, requestBody: DescribeObjectsInput): Observable<DescribeObjectsOutput> {
+		DescribeObjects(marker: string | null | undefined, requestBody: DescribeObjectsInput): Observable<DescribeObjectsOutput> {
 			return this.http.post<DescribeObjectsOutput>(this.baseUri + '#X-Amz-Target=DataPipeline.DescribeObjects?marker=' + (marker == null ? '' : encodeURIComponent(marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -513,7 +513,7 @@ export namespace MyNS {
 		 * @param {string} marker Pagination token
 		 * @return {ListPipelinesOutput} Success
 		 */
-		ListPipelines(marker: string, requestBody: ListPipelinesInput): Observable<ListPipelinesOutput> {
+		ListPipelines(marker: string | null | undefined, requestBody: ListPipelinesInput): Observable<ListPipelinesOutput> {
 			return this.http.post<ListPipelinesOutput>(this.baseUri + '#X-Amz-Target=DataPipeline.ListPipelines?marker=' + (marker == null ? '' : encodeURIComponent(marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -542,7 +542,7 @@ export namespace MyNS {
 		 * @param {string} marker Pagination token
 		 * @return {QueryObjectsOutput} Success
 		 */
-		QueryObjects(limit: string, marker: string, requestBody: QueryObjectsInput): Observable<QueryObjectsOutput> {
+		QueryObjects(limit: string | null | undefined, marker: string | null | undefined, requestBody: QueryObjectsInput): Observable<QueryObjectsOutput> {
 			return this.http.post<QueryObjectsOutput>(this.baseUri + '#X-Amz-Target=DataPipeline.QueryObjects?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

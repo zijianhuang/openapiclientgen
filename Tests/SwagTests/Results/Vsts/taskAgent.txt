@@ -4757,14 +4757,14 @@ namespace MyNS
 		public System.Nullable<System.Int32> Count { get; set; }
 	}
 	
-	public partial class Misc
+	public partial class MyClient
 	{
 		
 		private System.Net.Http.HttpClient client;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public MyClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -4774,6 +4774,64 @@ namespace MyNS
 
 			this.client = client;
 			this.jsonSerializerSettings = jsonSerializerSettings;
+		}
+		
+		/// <summary>
+		/// Agentclouds_List {organization}/_apis/distributedtask/agentclouds
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<TaskAgentCloud[]> Agentclouds_ListAsync(string organization, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/agentclouds&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<TaskAgentCloud[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Agentclouds_List {organization}/_apis/distributedtask/agentclouds
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public TaskAgentCloud[] Agentclouds_List(string organization, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/agentclouds&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<TaskAgentCloud[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
 		}
 		
 		/// <summary>
@@ -4849,14 +4907,14 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Agentclouds_List {organization}/_apis/distributedtask/agentclouds
+		/// Agentclouds_Get {organization}/_apis/distributedtask/agentclouds/{agentCloudId}
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<TaskAgentCloud[]> Agentclouds_ListAsync(string organization, string api_version)
+		public async Task<TaskAgentCloud> Agentclouds_GetAsync(string organization, int agentCloudId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/agentclouds&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/agentclouds/"+agentCloudId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -4867,7 +4925,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TaskAgentCloud[]>(jsonReader);
+				return serializer.Deserialize<TaskAgentCloud>(jsonReader);
 				}
 			}
 			finally
@@ -4878,14 +4936,14 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Agentclouds_List {organization}/_apis/distributedtask/agentclouds
+		/// Agentclouds_Get {organization}/_apis/distributedtask/agentclouds/{agentCloudId}
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public TaskAgentCloud[] Agentclouds_List(string organization, string api_version)
+		public TaskAgentCloud Agentclouds_Get(string organization, int agentCloudId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/agentclouds&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/agentclouds/"+agentCloudId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -4896,7 +4954,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TaskAgentCloud[]>(jsonReader);
+				return serializer.Deserialize<TaskAgentCloud>(jsonReader);
 				}
 			}
 			finally
@@ -4945,64 +5003,6 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/agentclouds/"+agentCloudId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TaskAgentCloud>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Agentclouds_Get {organization}/_apis/distributedtask/agentclouds/{agentCloudId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<TaskAgentCloud> Agentclouds_GetAsync(string organization, int agentCloudId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/agentclouds/"+agentCloudId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TaskAgentCloud>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Agentclouds_Get {organization}/_apis/distributedtask/agentclouds/{agentCloudId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public TaskAgentCloud Agentclouds_Get(string organization, int agentCloudId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/agentclouds/"+agentCloudId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
@@ -5141,6 +5141,70 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Get a list of agent pools.
+		/// Pools_Get_Agent_Pools_By_Ids {organization}/_apis/distributedtask/pools
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="poolIds">pool Ids to fetch</param>
+		/// <param name="actionFilter">Filter by whether the calling user has use or manage permissions</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<TaskAgentPool[]> Pools_Get_Agent_Pools_By_IdsAsync(string organization, string poolIds, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools&poolIds=" + (poolIds==null? "" : Uri.EscapeDataString(poolIds))+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<TaskAgentPool[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get a list of agent pools.
+		/// Pools_Get_Agent_Pools_By_Ids {organization}/_apis/distributedtask/pools
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="poolIds">pool Ids to fetch</param>
+		/// <param name="actionFilter">Filter by whether the calling user has use or manage permissions</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public TaskAgentPool[] Pools_Get_Agent_Pools_By_Ids(string organization, string poolIds, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools&poolIds=" + (poolIds==null? "" : Uri.EscapeDataString(poolIds))+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<TaskAgentPool[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Create an agent pool.
 		/// Pools_Add {organization}/_apis/distributedtask/pools
 		/// </summary>
@@ -5217,120 +5281,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Get a list of agent pools.
-		/// Pools_Get_Agent_Pools_By_Ids {organization}/_apis/distributedtask/pools
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="poolIds">pool Ids to fetch</param>
-		/// <param name="actionFilter">Filter by whether the calling user has use or manage permissions</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<TaskAgentPool[]> Pools_Get_Agent_Pools_By_IdsAsync(string organization, string poolIds, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools&poolIds=" + (poolIds==null? "" : Uri.EscapeDataString(poolIds))+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TaskAgentPool[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get a list of agent pools.
-		/// Pools_Get_Agent_Pools_By_Ids {organization}/_apis/distributedtask/pools
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="poolIds">pool Ids to fetch</param>
-		/// <param name="actionFilter">Filter by whether the calling user has use or manage permissions</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public TaskAgentPool[] Pools_Get_Agent_Pools_By_Ids(string organization, string poolIds, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools&poolIds=" + (poolIds==null? "" : Uri.EscapeDataString(poolIds))+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TaskAgentPool[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete an agent pool.
-		/// Pools_Delete {organization}/_apis/distributedtask/pools/{poolId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="poolId">ID of the agent pool to delete</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Pools_DeleteAsync(string organization, int poolId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools/"+poolId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete an agent pool.
-		/// Pools_Delete {organization}/_apis/distributedtask/pools/{poolId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="poolId">ID of the agent pool to delete</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Pools_Delete(string organization, int poolId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools/"+poolId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Get information about an agent pool.
 		/// Pools_Get {organization}/_apis/distributedtask/pools/{poolId}
 		/// </summary>
@@ -5388,6 +5338,56 @@ namespace MyNS
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TaskAgentPool>(jsonReader);
 				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete an agent pool.
+		/// Pools_Delete {organization}/_apis/distributedtask/pools/{poolId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="poolId">ID of the agent pool to delete</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Pools_DeleteAsync(string organization, int poolId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools/"+poolId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete an agent pool.
+		/// Pools_Delete {organization}/_apis/distributedtask/pools/{poolId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="poolId">ID of the agent pool to delete</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Pools_Delete(string organization, int poolId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools/"+poolId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{
@@ -5475,84 +5475,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Adds an agent to a pool.  You probably don't want to call this endpoint directly. Instead, [configure an agent](https://docs.microsoft.com/azure/devops/pipelines/agents/agents) using the agent download package.
-		/// Agents_Add {organization}/_apis/distributedtask/pools/{poolId}/agents
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="poolId">The agent pool in which to add the agent</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <param name="requestBody">Details about the agent being added</param>
-		/// <returns>successful operation</returns>
-		public async Task<TaskAgent> Agents_AddAsync(string organization, int poolId, string api_version, TaskAgent requestBody)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools/"+poolId+"/agents&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TaskAgent>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Adds an agent to a pool.  You probably don't want to call this endpoint directly. Instead, [configure an agent](https://docs.microsoft.com/azure/devops/pipelines/agents/agents) using the agent download package.
-		/// Agents_Add {organization}/_apis/distributedtask/pools/{poolId}/agents
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="poolId">The agent pool in which to add the agent</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <param name="requestBody">Details about the agent being added</param>
-		/// <returns>successful operation</returns>
-		public TaskAgent Agents_Add(string organization, int poolId, string api_version, TaskAgent requestBody)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools/"+poolId+"/agents&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TaskAgent>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Get a list of agents.
 		/// Agents_List {organization}/_apis/distributedtask/pools/{poolId}/agents
 		/// </summary>
@@ -5627,53 +5549,79 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Delete an agent.  You probably don't want to call this endpoint directly. Instead, [use the agent configuration script](https://docs.microsoft.com/azure/devops/pipelines/agents/agents) to remove an agent from your organization.
-		/// Agents_Delete {organization}/_apis/distributedtask/pools/{poolId}/agents/{agentId}
+		/// Adds an agent to a pool.  You probably don't want to call this endpoint directly. Instead, [configure an agent](https://docs.microsoft.com/azure/devops/pipelines/agents/agents) using the agent download package.
+		/// Agents_Add {organization}/_apis/distributedtask/pools/{poolId}/agents
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="poolId">The pool ID to remove the agent from</param>
-		/// <param name="agentId">The agent ID to remove</param>
+		/// <param name="poolId">The agent pool in which to add the agent</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">Details about the agent being added</param>
 		/// <returns>successful operation</returns>
-		public async Task Agents_DeleteAsync(string organization, int poolId, int agentId, string api_version)
+		public async Task<TaskAgent> Agents_AddAsync(string organization, int poolId, string api_version, TaskAgent requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools/"+poolId+"/agents/"+agentId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools/"+poolId+"/agents&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
 			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<TaskAgent>(jsonReader);
+				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
 		
 		/// <summary>
-		/// Delete an agent.  You probably don't want to call this endpoint directly. Instead, [use the agent configuration script](https://docs.microsoft.com/azure/devops/pipelines/agents/agents) to remove an agent from your organization.
-		/// Agents_Delete {organization}/_apis/distributedtask/pools/{poolId}/agents/{agentId}
+		/// Adds an agent to a pool.  You probably don't want to call this endpoint directly. Instead, [configure an agent](https://docs.microsoft.com/azure/devops/pipelines/agents/agents) using the agent download package.
+		/// Agents_Add {organization}/_apis/distributedtask/pools/{poolId}/agents
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="poolId">The pool ID to remove the agent from</param>
-		/// <param name="agentId">The agent ID to remove</param>
+		/// <param name="poolId">The agent pool in which to add the agent</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <param name="requestBody">Details about the agent being added</param>
 		/// <returns>successful operation</returns>
-		public void Agents_Delete(string organization, int poolId, int agentId, string api_version)
+		public TaskAgent Agents_Add(string organization, int poolId, string api_version, TaskAgent requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools/"+poolId+"/agents/"+agentId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools/"+poolId+"/agents&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<TaskAgent>(jsonReader);
+				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -5826,6 +5774,58 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete an agent.  You probably don't want to call this endpoint directly. Instead, [use the agent configuration script](https://docs.microsoft.com/azure/devops/pipelines/agents/agents) to remove an agent from your organization.
+		/// Agents_Delete {organization}/_apis/distributedtask/pools/{poolId}/agents/{agentId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="poolId">The pool ID to remove the agent from</param>
+		/// <param name="agentId">The agent ID to remove</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Agents_DeleteAsync(string organization, int poolId, int agentId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools/"+poolId+"/agents/"+agentId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete an agent.  You probably don't want to call this endpoint directly. Instead, [use the agent configuration script](https://docs.microsoft.com/azure/devops/pipelines/agents/agents) to remove an agent from your organization.
+		/// Agents_Delete {organization}/_apis/distributedtask/pools/{poolId}/agents/{agentId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="poolId">The pool ID to remove the agent from</param>
+		/// <param name="agentId">The agent ID to remove</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Agents_Delete(string organization, int poolId, int agentId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/pools/"+poolId+"/agents/"+agentId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
 			}
 			}
 		}
@@ -6047,56 +6047,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Delete a variable group
-		/// Variablegroups_Delete {organization}/_apis/distributedtask/variablegroups/{groupId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="groupId">Id of the variable group.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Variablegroups_DeleteAsync(string organization, int groupId, string projectIds, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/variablegroups/"+groupId+"&projectIds=" + (projectIds==null? "" : Uri.EscapeDataString(projectIds))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete a variable group
-		/// Variablegroups_Delete {organization}/_apis/distributedtask/variablegroups/{groupId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="groupId">Id of the variable group.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Variablegroups_Delete(string organization, int groupId, string projectIds, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/variablegroups/"+groupId+"&projectIds=" + (projectIds==null? "" : Uri.EscapeDataString(projectIds))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Update a variable group.
 		/// Variablegroups_Update {organization}/_apis/distributedtask/variablegroups/{groupId}
 		/// </summary>
@@ -6173,6 +6123,56 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Delete a variable group
+		/// Variablegroups_Delete {organization}/_apis/distributedtask/variablegroups/{groupId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="groupId">Id of the variable group.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Variablegroups_DeleteAsync(string organization, int groupId, string projectIds, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/variablegroups/"+groupId+"&projectIds=" + (projectIds==null? "" : Uri.EscapeDataString(projectIds))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a variable group
+		/// Variablegroups_Delete {organization}/_apis/distributedtask/variablegroups/{groupId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="groupId">Id of the variable group.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Variablegroups_Delete(string organization, int groupId, string projectIds, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/distributedtask/variablegroups/"+groupId+"&projectIds=" + (projectIds==null? "" : Uri.EscapeDataString(projectIds))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// GET the Yaml schema used for Yaml file validation.
 		/// Yamlschema_Get {organization}/_apis/distributedtask/yamlschema
 		/// </summary>
@@ -6223,6 +6223,80 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				return jsonReader.ReadAsString();
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get a list of deployment groups by name or IDs.
+		/// Deploymentgroups_List {organization}/{project}/_apis/distributedtask/deploymentgroups
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="name">Name of the deployment group.</param>
+		/// <param name="actionFilter">Get only deployment groups on which this action can be performed.</param>
+		/// <param name="expand">Include these additional details in the returned objects.</param>
+		/// <param name="continuationToken">Get deployment groups with names greater than this continuationToken lexicographically.</param>
+		/// <param name="top">Maximum number of deployment groups to return. Default is **1000**.</param>
+		/// <param name="ids">Comma separated list of IDs of the deployment groups.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<DeploymentGroup[]> Deploymentgroups_ListAsync(string organization, string project, string name, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, Deploymentgroups_ListExpand expand, string continuationToken, int top, string ids, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups&name=" + (name==null? "" : Uri.EscapeDataString(name))+"&actionFilter=" + actionFilter+"&$expand=" + expand+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&$top="+top+"&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<DeploymentGroup[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get a list of deployment groups by name or IDs.
+		/// Deploymentgroups_List {organization}/{project}/_apis/distributedtask/deploymentgroups
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="name">Name of the deployment group.</param>
+		/// <param name="actionFilter">Get only deployment groups on which this action can be performed.</param>
+		/// <param name="expand">Include these additional details in the returned objects.</param>
+		/// <param name="continuationToken">Get deployment groups with names greater than this continuationToken lexicographically.</param>
+		/// <param name="top">Maximum number of deployment groups to return. Default is **1000**.</param>
+		/// <param name="ids">Comma separated list of IDs of the deployment groups.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public DeploymentGroup[] Deploymentgroups_List(string organization, string project, string name, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, Deploymentgroups_ListExpand expand, string continuationToken, int top, string ids, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups&name=" + (name==null? "" : Uri.EscapeDataString(name))+"&actionFilter=" + actionFilter+"&$expand=" + expand+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&$top="+top+"&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<DeploymentGroup[]>(jsonReader);
 				}
 			}
 			finally
@@ -6311,132 +6385,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Get a list of deployment groups by name or IDs.
-		/// Deploymentgroups_List {organization}/{project}/_apis/distributedtask/deploymentgroups
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="name">Name of the deployment group.</param>
-		/// <param name="actionFilter">Get only deployment groups on which this action can be performed.</param>
-		/// <param name="expand">Include these additional details in the returned objects.</param>
-		/// <param name="continuationToken">Get deployment groups with names greater than this continuationToken lexicographically.</param>
-		/// <param name="top">Maximum number of deployment groups to return. Default is **1000**.</param>
-		/// <param name="ids">Comma separated list of IDs of the deployment groups.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<DeploymentGroup[]> Deploymentgroups_ListAsync(string organization, string project, string name, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, Deploymentgroups_ListExpand expand, string continuationToken, int top, string ids, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups&name=" + (name==null? "" : Uri.EscapeDataString(name))+"&actionFilter=" + actionFilter+"&$expand=" + expand+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&$top="+top+"&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<DeploymentGroup[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get a list of deployment groups by name or IDs.
-		/// Deploymentgroups_List {organization}/{project}/_apis/distributedtask/deploymentgroups
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="name">Name of the deployment group.</param>
-		/// <param name="actionFilter">Get only deployment groups on which this action can be performed.</param>
-		/// <param name="expand">Include these additional details in the returned objects.</param>
-		/// <param name="continuationToken">Get deployment groups with names greater than this continuationToken lexicographically.</param>
-		/// <param name="top">Maximum number of deployment groups to return. Default is **1000**.</param>
-		/// <param name="ids">Comma separated list of IDs of the deployment groups.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public DeploymentGroup[] Deploymentgroups_List(string organization, string project, string name, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, Deploymentgroups_ListExpand expand, string continuationToken, int top, string ids, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups&name=" + (name==null? "" : Uri.EscapeDataString(name))+"&actionFilter=" + actionFilter+"&$expand=" + expand+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&$top="+top+"&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<DeploymentGroup[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete a deployment group.
-		/// Deploymentgroups_Delete {organization}/{project}/_apis/distributedtask/deploymentgroups/{deploymentGroupId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="deploymentGroupId">ID of the deployment group to be deleted.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Deploymentgroups_DeleteAsync(string organization, string project, int deploymentGroupId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete a deployment group.
-		/// Deploymentgroups_Delete {organization}/{project}/_apis/distributedtask/deploymentgroups/{deploymentGroupId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="deploymentGroupId">ID of the deployment group to be deleted.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Deploymentgroups_Delete(string organization, string project, int deploymentGroupId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Get a deployment group by its ID.
 		/// Deploymentgroups_Get {organization}/{project}/_apis/distributedtask/deploymentgroups/{deploymentGroupId}
 		/// </summary>
@@ -6496,6 +6444,58 @@ namespace MyNS
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<DeploymentGroup>(jsonReader);
 				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a deployment group.
+		/// Deploymentgroups_Delete {organization}/{project}/_apis/distributedtask/deploymentgroups/{deploymentGroupId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="deploymentGroupId">ID of the deployment group to be deleted.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Deploymentgroups_DeleteAsync(string organization, string project, int deploymentGroupId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a deployment group.
+		/// Deploymentgroups_Delete {organization}/{project}/_apis/distributedtask/deploymentgroups/{deploymentGroupId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="deploymentGroupId">ID of the deployment group to be deleted.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Deploymentgroups_Delete(string organization, string project, int deploymentGroupId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{
@@ -6747,60 +6747,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Delete a deployment target in a deployment group. This deletes the agent from associated deployment pool too.
-		/// Targets_Delete {organization}/{project}/_apis/distributedtask/deploymentgroups/{deploymentGroupId}/targets/{targetId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="deploymentGroupId">ID of the deployment group in which deployment target is deleted.</param>
-		/// <param name="targetId">ID of the deployment target to delete.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Targets_DeleteAsync(string organization, string project, int deploymentGroupId, int targetId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"/targets/"+targetId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete a deployment target in a deployment group. This deletes the agent from associated deployment pool too.
-		/// Targets_Delete {organization}/{project}/_apis/distributedtask/deploymentgroups/{deploymentGroupId}/targets/{targetId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="deploymentGroupId">ID of the deployment group in which deployment target is deleted.</param>
-		/// <param name="targetId">ID of the deployment target to delete.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Targets_Delete(string organization, string project, int deploymentGroupId, int targetId, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"/targets/"+targetId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Get a deployment target by its ID in a deployment group
 		/// Targets_Get {organization}/{project}/_apis/distributedtask/deploymentgroups/{deploymentGroupId}/targets/{targetId}
 		/// </summary>
@@ -6859,6 +6805,126 @@ namespace MyNS
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<DeploymentMachine>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a deployment target in a deployment group. This deletes the agent from associated deployment pool too.
+		/// Targets_Delete {organization}/{project}/_apis/distributedtask/deploymentgroups/{deploymentGroupId}/targets/{targetId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="deploymentGroupId">ID of the deployment group in which deployment target is deleted.</param>
+		/// <param name="targetId">ID of the deployment target to delete.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Targets_DeleteAsync(string organization, string project, int deploymentGroupId, int targetId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"/targets/"+targetId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a deployment target in a deployment group. This deletes the agent from associated deployment pool too.
+		/// Targets_Delete {organization}/{project}/_apis/distributedtask/deploymentgroups/{deploymentGroupId}/targets/{targetId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="deploymentGroupId">ID of the deployment group in which deployment target is deleted.</param>
+		/// <param name="targetId">ID of the deployment target to delete.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Targets_Delete(string organization, string project, int deploymentGroupId, int targetId, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/deploymentgroups/"+deploymentGroupId+"/targets/"+targetId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get a list of agent queues by pool ids
+		/// Queues_Get_Agent_Queues_For_Pools {organization}/{project}/_apis/distributedtask/queues
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="poolIds">A comma-separated list of pool ids to get the corresponding queues for</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="actionFilter">Filter by whether the calling user has use or manage permissions</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<TaskAgentQueue[]> Queues_Get_Agent_Queues_For_PoolsAsync(string organization, string poolIds, string project, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/queues&poolIds=" + (poolIds==null? "" : Uri.EscapeDataString(poolIds))+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<TaskAgentQueue[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get a list of agent queues by pool ids
+		/// Queues_Get_Agent_Queues_For_Pools {organization}/{project}/_apis/distributedtask/queues
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="poolIds">A comma-separated list of pool ids to get the corresponding queues for</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="actionFilter">Filter by whether the calling user has use or manage permissions</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public TaskAgentQueue[] Queues_Get_Agent_Queues_For_Pools(string organization, string poolIds, string project, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/queues&poolIds=" + (poolIds==null? "" : Uri.EscapeDataString(poolIds))+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<TaskAgentQueue[]>(jsonReader);
 				}
 			}
 			finally
@@ -6949,124 +7015,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Get a list of agent queues by pool ids
-		/// Queues_Get_Agent_Queues_For_Pools {organization}/{project}/_apis/distributedtask/queues
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="poolIds">A comma-separated list of pool ids to get the corresponding queues for</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="actionFilter">Filter by whether the calling user has use or manage permissions</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<TaskAgentQueue[]> Queues_Get_Agent_Queues_For_PoolsAsync(string organization, string poolIds, string project, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/queues&poolIds=" + (poolIds==null? "" : Uri.EscapeDataString(poolIds))+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TaskAgentQueue[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get a list of agent queues by pool ids
-		/// Queues_Get_Agent_Queues_For_Pools {organization}/{project}/_apis/distributedtask/queues
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="poolIds">A comma-separated list of pool ids to get the corresponding queues for</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="actionFilter">Filter by whether the calling user has use or manage permissions</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public TaskAgentQueue[] Queues_Get_Agent_Queues_For_Pools(string organization, string poolIds, string project, Pools_Get_Agent_Pools_By_IdsActionFilter actionFilter, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/queues&poolIds=" + (poolIds==null? "" : Uri.EscapeDataString(poolIds))+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<TaskAgentQueue[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Removes an agent queue from a project.
-		/// Queues_Delete {organization}/{project}/_apis/distributedtask/queues/{queueId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="queueId">The agent queue to remove</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Queues_DeleteAsync(string organization, int queueId, string project, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/queues/"+queueId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Removes an agent queue from a project.
-		/// Queues_Delete {organization}/{project}/_apis/distributedtask/queues/{queueId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="queueId">The agent queue to remove</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Queues_Delete(string organization, int queueId, string project, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/queues/"+queueId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Get information about an agent queue.
 		/// Queues_Get {organization}/{project}/_apis/distributedtask/queues/{queueId}
 		/// </summary>
@@ -7124,6 +7072,58 @@ namespace MyNS
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TaskAgentQueue>(jsonReader);
 				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Removes an agent queue from a project.
+		/// Queues_Delete {organization}/{project}/_apis/distributedtask/queues/{queueId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="queueId">The agent queue to remove</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Queues_DeleteAsync(string organization, int queueId, string project, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/queues/"+queueId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Removes an agent queue from a project.
+		/// Queues_Delete {organization}/{project}/_apis/distributedtask/queues/{queueId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="queueId">The agent queue to remove</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Queues_Delete(string organization, int queueId, string project, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/queues/"+queueId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{
@@ -7206,60 +7206,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete a task group.
-		/// Taskgroups_Delete {organization}/{project}/_apis/distributedtask/taskgroups/{taskGroupId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="taskGroupId">Id of the task group to be deleted.</param>
-		/// <param name="comment">Comments to delete.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Taskgroups_DeleteAsync(string organization, string project, string taskGroupId, string comment, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/taskgroups/"+ (taskGroupId==null? "" : Uri.EscapeDataString(taskGroupId))+"&comment=" + (comment==null? "" : Uri.EscapeDataString(comment))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete a task group.
-		/// Taskgroups_Delete {organization}/{project}/_apis/distributedtask/taskgroups/{taskGroupId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="taskGroupId">Id of the task group to be deleted.</param>
-		/// <param name="comment">Comments to delete.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Taskgroups_Delete(string organization, string project, string taskGroupId, string comment, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/taskgroups/"+ (taskGroupId==null? "" : Uri.EscapeDataString(taskGroupId))+"&comment=" + (comment==null? "" : Uri.EscapeDataString(comment))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 			}
 		}
@@ -7416,6 +7362,60 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a task group.
+		/// Taskgroups_Delete {organization}/{project}/_apis/distributedtask/taskgroups/{taskGroupId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="taskGroupId">Id of the task group to be deleted.</param>
+		/// <param name="comment">Comments to delete.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Taskgroups_DeleteAsync(string organization, string project, string taskGroupId, string comment, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/taskgroups/"+ (taskGroupId==null? "" : Uri.EscapeDataString(taskGroupId))+"&comment=" + (comment==null? "" : Uri.EscapeDataString(comment))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete a task group.
+		/// Taskgroups_Delete {organization}/{project}/_apis/distributedtask/taskgroups/{taskGroupId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="taskGroupId">Id of the task group to be deleted.</param>
+		/// <param name="comment">Comments to delete.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Taskgroups_Delete(string organization, string project, string taskGroupId, string comment, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/distributedtask/taskgroups/"+ (taskGroupId==null? "" : Uri.EscapeDataString(taskGroupId))+"&comment=" + (comment==null? "" : Uri.EscapeDataString(comment))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
 			}
 			}
 		}

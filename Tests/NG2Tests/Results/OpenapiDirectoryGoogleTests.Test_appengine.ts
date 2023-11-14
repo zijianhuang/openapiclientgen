@@ -7,19 +7,19 @@ export namespace MyNS {
 	export interface ApiConfigHandler {
 
 		/** Action to take when users access resources that require authentication. Defaults to redirect. */
-		authFailAction?: ApiConfigHandlerAuthFailAction;
+		authFailAction?: ApiConfigHandlerAuthFailAction | null;
 
 		/** Level of login required to access this resource. Defaults to optional. */
-		login?: ApiConfigHandlerLogin;
+		login?: ApiConfigHandlerLogin | null;
 
 		/** Path to the script from the application root directory. */
-		script?: string;
+		script?: string | null;
 
 		/** Security (HTTPS) enforcement for this URL. */
-		securityLevel?: ApiConfigHandlerSecurityLevel;
+		securityLevel?: ApiConfigHandlerSecurityLevel | null;
 
 		/** URL to serve the endpoint at. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export enum ApiConfigHandlerAuthFailAction { AUTH_FAIL_ACTION_UNSPECIFIED = 0, AUTH_FAIL_ACTION_REDIRECT = 1, AUTH_FAIL_ACTION_UNAUTHORIZED = 2 }
@@ -33,7 +33,7 @@ export namespace MyNS {
 	export interface ApiEndpointHandler {
 
 		/** Path to the script from the application root directory. */
-		scriptPath?: string;
+		scriptPath?: string | null;
 	}
 
 
@@ -41,43 +41,43 @@ export namespace MyNS {
 	export interface Application {
 
 		/** Google Apps authentication domain that controls which users can access this application.Defaults to open access for any Google Account. */
-		authDomain?: string;
+		authDomain?: string | null;
 
 		/** Google Cloud Storage bucket that can be used for storing files associated with this application. This bucket is associated with the application and can be used by the gcloud deployment commands.@OutputOnly */
-		codeBucket?: string;
+		codeBucket?: string | null;
 
 		/** Google Cloud Storage bucket that can be used by this application to store content.@OutputOnly */
-		defaultBucket?: string;
+		defaultBucket?: string | null;
 
 		/** Cookie expiration policy for this application. */
-		defaultCookieExpiration?: string;
+		defaultCookieExpiration?: string | null;
 
 		/** Hostname used to reach this application, as resolved by App Engine.@OutputOnly */
-		defaultHostname?: string;
+		defaultHostname?: string | null;
 
 		/** HTTP path dispatch rules for requests to the application that do not explicitly target a service or version. Rules are order-dependent. Up to 20 dispatch rules can be supported. */
-		dispatchRules?: Array<UrlDispatchRule>;
+		dispatchRules?: Array<UrlDispatchRule> | null;
 
 		/** The feature specific settings to be used in the application. These define behaviors that are user configurable. */
-		featureSettings?: FeatureSettings;
+		featureSettings?: FeatureSettings | null;
 
 		/** The Google Container Registry domain used for storing managed build docker images for this application. */
-		gcrDomain?: string;
+		gcrDomain?: string | null;
 
 		/** Identity-Aware Proxy */
-		iap?: IdentityAwareProxy;
+		iap?: IdentityAwareProxy | null;
 
 		/** Identifier of the Application resource. This identifier is equivalent to the project ID of the Google Cloud Platform project where you want to deploy your application. Example: myapp. */
-		id?: string;
+		id?: string | null;
 
 		/** Location from which this application runs. Application instances run out of the data centers in the specified location, which is also where all of the application's end user content is stored.Defaults to us-central.View the list of supported locations (https://cloud.google.com/appengine/docs/locations). */
-		locationId?: string;
+		locationId?: string | null;
 
 		/** Full path to the Application resource in the API. Example: apps/myapp.@OutputOnly */
-		name?: string;
+		name?: string | null;
 
 		/** Serving status of this application. */
-		servingStatus?: ApplicationServingStatus;
+		servingStatus?: ApplicationServingStatus | null;
 	}
 
 
@@ -85,13 +85,13 @@ export namespace MyNS {
 	export interface UrlDispatchRule {
 
 		/** Domain name to match against. The wildcard "*" is supported if specified before a period: "*.".Defaults to matching all domains: "*". */
-		domain?: string;
+		domain?: string | null;
 
 		/** Pathname within the host. Must start with a "/". A single "*" can be included at the end of the path.The sum of the lengths of the domain and path may not exceed 100 characters. */
-		path?: string;
+		path?: string | null;
 
 		/** Resource ID of a service in this application that should serve the matched request. The service must already exist. Example: default. */
-		service?: string;
+		service?: string | null;
 	}
 
 
@@ -99,10 +99,10 @@ export namespace MyNS {
 	export interface FeatureSettings {
 
 		/** Boolean value indicating if split health checks should be used instead of the legacy health checks. At an app.yaml level, this means defaulting to 'readiness_check' and 'liveness_check' values instead of 'health_check' ones. Once the legacy 'health_check' behavior is deprecated, and this value is always true, this setting can be removed. */
-		splitHealthChecks?: boolean;
+		splitHealthChecks?: boolean | null;
 
 		/** If true, use Container-Optimized OS (https://cloud.google.com/container-optimized-os/) base image for VMs, rather than a base Debian image. */
-		useContainerOptimizedOs?: boolean;
+		useContainerOptimizedOs?: boolean | null;
 	}
 
 
@@ -110,16 +110,16 @@ export namespace MyNS {
 	export interface IdentityAwareProxy {
 
 		/** Whether the serving infrastructure will authenticate and authorize all incoming requests.If true, the oauth2_client_id and oauth2_client_secret fields must be non-empty. */
-		enabled?: boolean;
+		enabled?: boolean | null;
 
 		/** OAuth2 client ID to use for the authentication flow. */
-		oauth2ClientId?: string;
+		oauth2ClientId?: string | null;
 
 		/** OAuth2 client secret to use for the authentication flow.For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2_client_secret_sha256 field.@InputOnly */
-		oauth2ClientSecret?: string;
+		oauth2ClientSecret?: string | null;
 
 		/** Hex-encoded SHA-256 hash of the client secret.@OutputOnly */
-		oauth2ClientSecretSha256?: string;
+		oauth2ClientSecretSha256?: string | null;
 	}
 
 	export enum ApplicationServingStatus { UNSPECIFIED = 0, SERVING = 1, USER_DISABLED = 2, SYSTEM_DISABLED = 3 }
@@ -129,31 +129,31 @@ export namespace MyNS {
 	export interface AuthorizedCertificate {
 
 		/** An SSL certificate obtained from a certificate authority. */
-		certificateRawData?: CertificateRawData;
+		certificateRawData?: CertificateRawData | null;
 
 		/** The user-specified display name of the certificate. This is not guaranteed to be unique. Example: My Certificate. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Aggregate count of the domain mappings with this certificate mapped. This count includes domain mappings on applications for which the user does not have VIEWER permissions.Only returned by GET or LIST requests when specifically requested by the view=FULL_CERTIFICATE option.@OutputOnly */
-		domainMappingsCount?: number;
+		domainMappingsCount?: number | null;
 
 		/** Topmost applicable domains of this certificate. This certificate applies to these domains and their subdomains. Example: example.com.@OutputOnly */
-		domainNames?: Array<string>;
+		domainNames?: Array<string> | null;
 
 		/** The time when this certificate expires. To update the renewal time on this certificate, upload an SSL certificate with a different expiration time using AuthorizedCertificates.UpdateAuthorizedCertificate.@OutputOnly */
-		expireTime?: string;
+		expireTime?: string | null;
 
 		/** Relative name of the certificate. This is a unique value autogenerated on AuthorizedCertificate resource creation. Example: 12345.@OutputOnly */
-		id?: string;
+		id?: string | null;
 
 		/** A certificate managed by App Engine. */
-		managedCertificate?: ManagedCertificate;
+		managedCertificate?: ManagedCertificate | null;
 
 		/** Full path to the AuthorizedCertificate resource in the API. Example: apps/myapp/authorizedCertificates/12345.@OutputOnly */
-		name?: string;
+		name?: string | null;
 
 		/** The full paths to user visible Domain Mapping resources that have this certificate mapped. Example: apps/myapp/domainMappings/example.com.This may not represent the full list of mapped domain mappings if the user does not have VIEWER permissions on all of the applications that have this certificate mapped. See domain_mappings_count for a complete count.Only returned by GET or LIST requests when specifically requested by the view=FULL_CERTIFICATE option.@OutputOnly */
-		visibleDomainMappings?: Array<string>;
+		visibleDomainMappings?: Array<string> | null;
 	}
 
 
@@ -161,10 +161,10 @@ export namespace MyNS {
 	export interface CertificateRawData {
 
 		/** Unencrypted PEM encoded RSA private key. This field is set once on certificate creation and then encrypted. The key size must be 2048 bits or fewer. Must include the header and footer. Example: <pre> -----BEGIN RSA PRIVATE KEY----- <unencrypted_key_value> -----END RSA PRIVATE KEY----- </pre> @InputOnly */
-		privateKey?: string;
+		privateKey?: string | null;
 
 		/** PEM encoded x.509 public key certificate. This field is set once on certificate creation. Must include the header and footer. Example: <pre> -----BEGIN CERTIFICATE----- <certificate_value> -----END CERTIFICATE----- </pre> */
-		publicCertificate?: string;
+		publicCertificate?: string | null;
 	}
 
 
@@ -172,10 +172,10 @@ export namespace MyNS {
 	export interface ManagedCertificate {
 
 		/** Time at which the certificate was last renewed. The renewal process is fully managed. Certificate renewal will automatically occur before the certificate expires. Renewal errors can be tracked via ManagementStatus.@OutputOnly */
-		lastRenewalTime?: string;
+		lastRenewalTime?: string | null;
 
 		/** Status of certificate management. Refers to the most recent certificate acquisition or renewal attempt.@OutputOnly */
-		status?: ManagedCertificateStatus;
+		status?: ManagedCertificateStatus | null;
 	}
 
 	export enum ManagedCertificateStatus { MANAGEMENT_STATUS_UNSPECIFIED = 0, OK = 1, PENDING = 2, FAILED_RETRYING_NOT_VISIBLE = 3, FAILED_PERMANENT = 4, FAILED_RETRYING_CAA_FORBIDDEN = 5, FAILED_RETRYING_CAA_CHECKING = 6 }
@@ -185,10 +185,10 @@ export namespace MyNS {
 	export interface AuthorizedDomain {
 
 		/** Fully qualified domain name of the domain authorized for use. Example: example.com. */
-		id?: string;
+		id?: string | null;
 
 		/** Full path to the AuthorizedDomain resource in the API. Example: apps/myapp/authorizedDomains/example.com.@OutputOnly */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -196,43 +196,43 @@ export namespace MyNS {
 	export interface AutomaticScaling {
 
 		/** The time period that the Autoscaler (https://cloud.google.com/compute/docs/autoscaler/) should wait before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. Only applicable in the App Engine flexible environment. */
-		coolDownPeriod?: string;
+		coolDownPeriod?: string | null;
 
 		/** Target scaling by CPU usage. */
-		cpuUtilization?: CpuUtilization;
+		cpuUtilization?: CpuUtilization | null;
 
 		/** Target scaling by disk usage. Only applicable in the App Engine flexible environment. */
-		diskUtilization?: DiskUtilization;
+		diskUtilization?: DiskUtilization | null;
 
 		/** Number of concurrent requests an automatic scaling instance can accept before the scheduler spawns a new instance.Defaults to a runtime-specific value. */
-		maxConcurrentRequests?: number;
+		maxConcurrentRequests?: number | null;
 
 		/** Maximum number of idle instances that should be maintained for this version. */
-		maxIdleInstances?: number;
+		maxIdleInstances?: number | null;
 
 		/** Maximum amount of time that a request should wait in the pending queue before starting a new instance to handle it. */
-		maxPendingLatency?: string;
+		maxPendingLatency?: string | null;
 
 		/** Maximum number of instances that should be started to handle requests for this version. */
-		maxTotalInstances?: number;
+		maxTotalInstances?: number | null;
 
 		/** Minimum number of idle instances that should be maintained for this version. Only applicable for the default version of a service. */
-		minIdleInstances?: number;
+		minIdleInstances?: number | null;
 
 		/** Minimum amount of time a request should wait in the pending queue before starting a new instance to handle it. */
-		minPendingLatency?: string;
+		minPendingLatency?: string | null;
 
 		/** Minimum number of running instances that should be maintained for this version. */
-		minTotalInstances?: number;
+		minTotalInstances?: number | null;
 
 		/** Target scaling by network usage. Only applicable in the App Engine flexible environment. */
-		networkUtilization?: NetworkUtilization;
+		networkUtilization?: NetworkUtilization | null;
 
 		/** Target scaling by request utilization. Only applicable in the App Engine flexible environment. */
-		requestUtilization?: RequestUtilization;
+		requestUtilization?: RequestUtilization | null;
 
 		/** Scheduler settings for standard environment. */
-		standardSchedulerSettings?: StandardSchedulerSettings;
+		standardSchedulerSettings?: StandardSchedulerSettings | null;
 	}
 
 
@@ -240,10 +240,10 @@ export namespace MyNS {
 	export interface CpuUtilization {
 
 		/** Period of time over which CPU utilization is calculated. */
-		aggregationWindowLength?: string;
+		aggregationWindowLength?: string | null;
 
 		/** Target CPU utilization ratio to maintain when scaling. Must be between 0 and 1. */
-		targetUtilization?: number;
+		targetUtilization?: number | null;
 	}
 
 
@@ -251,16 +251,16 @@ export namespace MyNS {
 	export interface DiskUtilization {
 
 		/** Target bytes read per second. */
-		targetReadBytesPerSecond?: number;
+		targetReadBytesPerSecond?: number | null;
 
 		/** Target ops read per seconds. */
-		targetReadOpsPerSecond?: number;
+		targetReadOpsPerSecond?: number | null;
 
 		/** Target bytes written per second. */
-		targetWriteBytesPerSecond?: number;
+		targetWriteBytesPerSecond?: number | null;
 
 		/** Target ops written per second. */
-		targetWriteOpsPerSecond?: number;
+		targetWriteOpsPerSecond?: number | null;
 	}
 
 
@@ -268,16 +268,16 @@ export namespace MyNS {
 	export interface NetworkUtilization {
 
 		/** Target bytes received per second. */
-		targetReceivedBytesPerSecond?: number;
+		targetReceivedBytesPerSecond?: number | null;
 
 		/** Target packets received per second. */
-		targetReceivedPacketsPerSecond?: number;
+		targetReceivedPacketsPerSecond?: number | null;
 
 		/** Target bytes sent per second. */
-		targetSentBytesPerSecond?: number;
+		targetSentBytesPerSecond?: number | null;
 
 		/** Target packets sent per second. */
-		targetSentPacketsPerSecond?: number;
+		targetSentPacketsPerSecond?: number | null;
 	}
 
 
@@ -285,10 +285,10 @@ export namespace MyNS {
 	export interface RequestUtilization {
 
 		/** Target number of concurrent requests. */
-		targetConcurrentRequests?: number;
+		targetConcurrentRequests?: number | null;
 
 		/** Target requests per second. */
-		targetRequestCountPerSecond?: number;
+		targetRequestCountPerSecond?: number | null;
 	}
 
 
@@ -296,16 +296,16 @@ export namespace MyNS {
 	export interface StandardSchedulerSettings {
 
 		/** Maximum number of instances to run for this version. Set to zero to disable max_instances configuration. */
-		maxInstances?: number;
+		maxInstances?: number | null;
 
 		/** Minimum number of instances to run for this version. Set to zero to disable min_instances configuration. */
-		minInstances?: number;
+		minInstances?: number | null;
 
 		/** Target CPU utilization ratio to maintain when scaling. */
-		targetCpuUtilization?: number;
+		targetCpuUtilization?: number | null;
 
 		/** Target throughput utilization ratio to maintain when scaling */
-		targetThroughputUtilization?: number;
+		targetThroughputUtilization?: number | null;
 	}
 
 
@@ -313,10 +313,10 @@ export namespace MyNS {
 	export interface BasicScaling {
 
 		/** Duration of time after the last request that an instance must wait before the instance is shut down. */
-		idleTimeout?: string;
+		idleTimeout?: string | null;
 
 		/** Maximum number of instances to create for this version. */
-		maxInstances?: number;
+		maxInstances?: number | null;
 	}
 
 
@@ -324,7 +324,7 @@ export namespace MyNS {
 	export interface BatchUpdateIngressRulesRequest {
 
 		/** A list of FirewallRules to replace the existing set. */
-		ingressRules?: Array<FirewallRule>;
+		ingressRules?: Array<FirewallRule> | null;
 	}
 
 
@@ -332,16 +332,16 @@ export namespace MyNS {
 	export interface FirewallRule {
 
 		/** The action to take on matched requests. */
-		action?: FirewallRuleAction;
+		action?: FirewallRuleAction | null;
 
 		/** An optional string description of this rule. This field has a maximum length of 100 characters. */
-		description?: string;
+		description?: string | null;
 
 		/** A positive integer between 1, Int32.MaxValue-1 that defines the order of rule evaluation. Rules with the lowest priority are evaluated first.A default rule at priority Int32.MaxValue matches all IPv4 and IPv6 traffic when no previous rule matches. Only the action of this rule can be modified by the user. */
-		priority?: number;
+		priority?: number | null;
 
 		/** IP address or range, defined using CIDR notation, of requests that this rule applies to. You can use the wildcard character "*" to match all IPs equivalent to "0/0" and "::/0" together. Examples: 192.168.1.1 or 192.168.0.0/16 or 2001:db8::/32  or 2001:0db8:0000:0042:0000:8a2e:0370:7334.<p>Truncation will be silently performed on addresses which are not properly truncated. For example, 1.2.3.4/24 is accepted as the same address as 1.2.3.0/24. Similarly, for IPv6, 2001:db8::1/32 is accepted as the same address as 2001:db8::/32. */
-		sourceRange?: string;
+		sourceRange?: string | null;
 	}
 
 	export enum FirewallRuleAction { UNSPECIFIED_ACTION = 0, ALLOW = 1, DENY = 2 }
@@ -351,7 +351,7 @@ export namespace MyNS {
 	export interface BatchUpdateIngressRulesResponse {
 
 		/** The full list of ingress FirewallRules for this application. */
-		ingressRules?: Array<FirewallRule>;
+		ingressRules?: Array<FirewallRule> | null;
 	}
 
 
@@ -359,10 +359,10 @@ export namespace MyNS {
 	export interface CloudBuildOptions {
 
 		/** Path to the yaml file used in deployment, used to determine runtime configuration details.Required for flexible environment builds.See https://cloud.google.com/appengine/docs/standard/python/config/appref for more details. */
-		appYamlPath?: string;
+		appYamlPath?: string | null;
 
 		/** The Cloud Build timeout used as part of any dependent builds performed by version creation. Defaults to 10 minutes. */
-		cloudBuildTimeout?: string;
+		cloudBuildTimeout?: string | null;
 	}
 
 
@@ -370,7 +370,7 @@ export namespace MyNS {
 	export interface ContainerInfo {
 
 		/** URI to the hosted container image in Google Container Registry. The URI must be fully qualified and include a tag or digest. Examples: "gcr.io/my-project/image:tag" or "gcr.io/my-project/image@digest" */
-		image?: string;
+		image?: string | null;
 	}
 
 
@@ -378,7 +378,7 @@ export namespace MyNS {
 	export interface CreateVersionMetadataV1 {
 
 		/** The Cloud Build ID if one was created as part of the version create. @OutputOnly */
-		cloudBuildId?: string;
+		cloudBuildId?: string | null;
 	}
 
 
@@ -386,7 +386,7 @@ export namespace MyNS {
 	export interface CreateVersionMetadataV1Alpha {
 
 		/** The Cloud Build ID if one was created as part of the version create. @OutputOnly */
-		cloudBuildId?: string;
+		cloudBuildId?: string | null;
 	}
 
 
@@ -394,7 +394,7 @@ export namespace MyNS {
 	export interface CreateVersionMetadataV1Beta {
 
 		/** The Cloud Build ID if one was created as part of the version create. @OutputOnly */
-		cloudBuildId?: string;
+		cloudBuildId?: string | null;
 	}
 
 
@@ -406,7 +406,7 @@ export namespace MyNS {
 		 * [USERNAME]:ssh-rsa [KEY_VALUE] [USERNAME]
 		 * [USERNAME]:ssh-rsa [KEY_VALUE] google-ssh {"userName":"[USERNAME]","expireOn":"[EXPIRE_TIME]"}For more information, see Adding and Removing SSH Keys (https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys).
 		 */
-		sshKey?: string;
+		sshKey?: string | null;
 	}
 
 
@@ -414,16 +414,16 @@ export namespace MyNS {
 	export interface Deployment {
 
 		/** Options for the build operations performed as a part of the version deployment. Only applicable for App Engine flexible environment when creating a version using source code directly. */
-		cloudBuildOptions?: CloudBuildOptions;
+		cloudBuildOptions?: CloudBuildOptions | null;
 
 		/** Docker image that is used to create a container and start a VM instance for the version that you deploy. Only applicable for instances running in the App Engine flexible environment. */
-		container?: ContainerInfo;
+		container?: ContainerInfo | null;
 
 		/** Manifest of the files stored in Google Cloud Storage that are included as part of this version. All files must be readable using the credentials supplied with this call. */
-		files?: {[id: string]: FileInfo };
+		files?: {[id: string]: FileInfo } | null;
 
 		/** The zip file information for a zip deployment. */
-		zip?: ZipInfo;
+		zip?: ZipInfo | null;
 	}
 
 
@@ -431,13 +431,13 @@ export namespace MyNS {
 	export interface FileInfo {
 
 		/** The MIME type of the file.Defaults to the value from Google Cloud Storage. */
-		mimeType?: string;
+		mimeType?: string | null;
 
 		/** The SHA1 hash of the file, in hex. */
-		sha1Sum?: string;
+		sha1Sum?: string | null;
 
 		/** URL source to use to fetch this file. Must be a URL to a resource in Google Cloud Storage in the form 'http(s)://storage.googleapis.com/<bucket>/<object>'. */
-		sourceUrl?: string;
+		sourceUrl?: string | null;
 	}
 
 
@@ -445,10 +445,10 @@ export namespace MyNS {
 	export interface ZipInfo {
 
 		/** An estimate of the number of files in a zip for a zip deployment. If set, must be greater than or equal to the actual number of files. Used for optimizing performance; if not provided, deployment may be slow. */
-		filesCount?: number;
+		filesCount?: number | null;
 
 		/** URL of the zip file to deploy from. Must be a URL to a resource in Google Cloud Storage in the form 'http(s)://storage.googleapis.com/<bucket>/<object>'. */
-		sourceUrl?: string;
+		sourceUrl?: string | null;
 	}
 
 
@@ -456,16 +456,16 @@ export namespace MyNS {
 	export interface DomainMapping {
 
 		/** Relative name of the domain serving the application. Example: example.com. */
-		id?: string;
+		id?: string | null;
 
 		/** Full path to the DomainMapping resource in the API. Example: apps/myapp/domainMapping/example.com.@OutputOnly */
-		name?: string;
+		name?: string | null;
 
 		/** The resource records required to configure this domain mapping. These records must be added to the domain's DNS configuration in order to serve the application via this domain mapping.@OutputOnly */
-		resourceRecords?: Array<ResourceRecord>;
+		resourceRecords?: Array<ResourceRecord> | null;
 
 		/** SSL configuration for a DomainMapping resource. */
-		sslSettings?: SslSettings;
+		sslSettings?: SslSettings | null;
 	}
 
 
@@ -473,13 +473,13 @@ export namespace MyNS {
 	export interface ResourceRecord {
 
 		/** Relative name of the object affected by this record. Only applicable for CNAME records. Example: 'www'. */
-		name?: string;
+		name?: string | null;
 
 		/** Data for this record. Values vary by record type, as defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1). */
-		rrdata?: string;
+		rrdata?: string | null;
 
 		/** Resource record type. Example: AAAA. */
-		type?: ResourceRecordType;
+		type?: ResourceRecordType | null;
 	}
 
 	export enum ResourceRecordType { RECORD_TYPE_UNSPECIFIED = 0, A = 1, AAAA = 2, CNAME = 3 }
@@ -489,13 +489,13 @@ export namespace MyNS {
 	export interface SslSettings {
 
 		/** ID of the AuthorizedCertificate resource configuring SSL for the application. Clearing this field will remove SSL support.By default, a managed certificate is automatically created for every domain mapping. To omit SSL support or to configure SSL manually, specify SslManagementType.MANUAL on a CREATE or UPDATE request. You must be authorized to administer the AuthorizedCertificate resource to manually map it to a DomainMapping resource. Example: 12345. */
-		certificateId?: string;
+		certificateId?: string | null;
 
 		/** ID of the managed AuthorizedCertificate resource currently being provisioned, if applicable. Until the new managed certificate has been successfully provisioned, the previous SSL state will be preserved. Once the provisioning process completes, the certificate_id field will reflect the new managed certificate and this field will be left empty. To remove SSL support while there is still a pending managed certificate, clear the certificate_id field with an UpdateDomainMappingRequest.@OutputOnly */
-		pendingManagedCertificateId?: string;
+		pendingManagedCertificateId?: string | null;
 
 		/** SSL management type for this domain. If AUTOMATIC, a managed certificate is automatically provisioned. If MANUAL, certificate_id must be manually specified in order to configure SSL for this domain. */
-		sslManagementType?: SslSettingsSslManagementType;
+		sslManagementType?: SslSettingsSslManagementType | null;
 	}
 
 	export enum SslSettingsSslManagementType { SSL_MANAGEMENT_TYPE_UNSPECIFIED = 0, AUTOMATIC = 1, MANUAL = 2 }
@@ -516,16 +516,16 @@ export namespace MyNS {
 	export interface EndpointsApiService {
 
 		/** Endpoints service configuration ID as specified by the Service Management API. For example "2016-09-19r1".By default, the rollout strategy for Endpoints is RolloutStrategy.FIXED. This means that Endpoints starts up with a particular configuration ID. When a new configuration is rolled out, Endpoints must be given the new configuration ID. The config_id field is used to give the configuration ID and is required in this case.Endpoints also has a rollout strategy called RolloutStrategy.MANAGED. When using this, Endpoints fetches the latest configuration and does not need the configuration ID. In this case, config_id must be omitted. */
-		configId?: string;
+		configId?: string | null;
 
 		/** Enable or disable trace sampling. By default, this is set to false for enabled. */
-		disableTraceSampling?: boolean;
+		disableTraceSampling?: boolean | null;
 
 		/** Endpoints service name which is the name of the "service" resource in the Service Management API. For example "myapi.endpoints.myproject.cloud.goog" */
-		name?: string;
+		name?: string | null;
 
 		/** Endpoints rollout strategy. If FIXED, config_id must be specified. If MANAGED, config_id must be omitted. */
-		rolloutStrategy?: EndpointsApiServiceRolloutStrategy;
+		rolloutStrategy?: EndpointsApiServiceRolloutStrategy | null;
 	}
 
 	export enum EndpointsApiServiceRolloutStrategy { UNSPECIFIED_ROLLOUT_STRATEGY = 0, FIXED = 1, MANAGED = 2 }
@@ -535,7 +535,7 @@ export namespace MyNS {
 	export interface Entrypoint {
 
 		/** The format should be a shell command that can be fed to bash -c. */
-		shell?: string;
+		shell?: string | null;
 	}
 
 
@@ -543,13 +543,13 @@ export namespace MyNS {
 	export interface ErrorHandler {
 
 		/** Error condition this handler applies to. */
-		errorCode?: ErrorHandlerErrorCode;
+		errorCode?: ErrorHandlerErrorCode | null;
 
 		/** MIME type of file. Defaults to text/html. */
-		mimeType?: string;
+		mimeType?: string | null;
 
 		/** Static file content to be served for this error. */
-		staticFile?: string;
+		staticFile?: string | null;
 	}
 
 	export enum ErrorHandlerErrorCode { ERROR_CODE_UNSPECIFIED = 0, ERROR_CODE_DEFAULT = 1, ERROR_CODE_OVER_QUOTA = 2, ERROR_CODE_DOS_API_DENIAL = 3, ERROR_CODE_TIMEOUT = 4 }
@@ -559,25 +559,25 @@ export namespace MyNS {
 	export interface HealthCheck {
 
 		/** Interval between health checks. */
-		checkInterval?: string;
+		checkInterval?: string | null;
 
 		/** Whether to explicitly disable health checks for this instance. */
-		disableHealthCheck?: boolean;
+		disableHealthCheck?: boolean | null;
 
 		/** Number of consecutive successful health checks required before receiving traffic. */
-		healthyThreshold?: string;
+		healthyThreshold?: string | null;
 
 		/** Host header to send when performing an HTTP health check. Example: "myapp.appspot.com" */
-		host?: string;
+		host?: string | null;
 
 		/** Number of consecutive failed health checks required before an instance is restarted. */
-		restartThreshold?: string;
+		restartThreshold?: string | null;
 
 		/** Time before the health check is considered failed. */
-		timeout?: string;
+		timeout?: string | null;
 
 		/** Number of consecutive failed health checks required before removing traffic. */
-		unhealthyThreshold?: string;
+		unhealthyThreshold?: string | null;
 	}
 
 
@@ -585,52 +585,52 @@ export namespace MyNS {
 	export interface Instance {
 
 		/** App Engine release this instance is running on.@OutputOnly */
-		appEngineRelease?: string;
+		appEngineRelease?: string | null;
 
 		/** Availability of the instance.@OutputOnly */
-		availability?: InstanceAvailability;
+		availability?: InstanceAvailability | null;
 
 		/** Average latency (ms) over the last minute.@OutputOnly */
-		averageLatency?: number;
+		averageLatency?: number | null;
 
 		/** Number of errors since this instance was started.@OutputOnly */
-		errors?: number;
+		errors?: number | null;
 
 		/** Relative name of the instance within the version. Example: instance-1.@OutputOnly */
-		id?: string;
+		id?: string | null;
 
 		/** Total memory in use (bytes).@OutputOnly */
-		memoryUsage?: string;
+		memoryUsage?: string | null;
 
 		/** Full path to the Instance resource in the API. Example: apps/myapp/services/default/versions/v1/instances/instance-1.@OutputOnly */
-		name?: string;
+		name?: string | null;
 
 		/** Average queries per second (QPS) over the last minute.@OutputOnly */
-		qps?: number;
+		qps?: number | null;
 
 		/** Number of requests since this instance was started.@OutputOnly */
-		requests?: number;
+		requests?: number | null;
 
 		/** Time that this instance was started.@OutputOnly */
-		startTime?: string;
+		startTime?: string | null;
 
 		/** Whether this instance is in debug mode. Only applicable for instances in App Engine flexible environment.@OutputOnly */
-		vmDebugEnabled?: boolean;
+		vmDebugEnabled?: boolean | null;
 
 		/** Virtual machine ID of this instance. Only applicable for instances in App Engine flexible environment.@OutputOnly */
-		vmId?: string;
+		vmId?: string | null;
 
 		/** The IP address of this instance. Only applicable for instances in App Engine flexible environment.@OutputOnly */
-		vmIp?: string;
+		vmIp?: string | null;
 
 		/** Name of the virtual machine where this instance lives. Only applicable for instances in App Engine flexible environment.@OutputOnly */
-		vmName?: string;
+		vmName?: string | null;
 
 		/** Status of the virtual machine where this instance lives. Only applicable for instances in App Engine flexible environment.@OutputOnly */
-		vmStatus?: string;
+		vmStatus?: string | null;
 
 		/** Zone where the virtual machine is located. Only applicable for instances in App Engine flexible environment.@OutputOnly */
-		vmZoneName?: string;
+		vmZoneName?: string | null;
 	}
 
 	export enum InstanceAvailability { UNSPECIFIED = 0, RESIDENT = 1, DYNAMIC = 2 }
@@ -640,10 +640,10 @@ export namespace MyNS {
 	export interface Library {
 
 		/** Name of the library. Example: "django". */
-		name?: string;
+		name?: string | null;
 
 		/** Version of the library to select, or "latest". */
-		version?: string;
+		version?: string | null;
 	}
 
 
@@ -651,10 +651,10 @@ export namespace MyNS {
 	export interface ListAuthorizedCertificatesResponse {
 
 		/** The SSL certificates the user is authorized to administer. */
-		certificates?: Array<AuthorizedCertificate>;
+		certificates?: Array<AuthorizedCertificate> | null;
 
 		/** Continuation token for fetching the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -662,10 +662,10 @@ export namespace MyNS {
 	export interface ListAuthorizedDomainsResponse {
 
 		/** The authorized domains belonging to the user. */
-		domains?: Array<AuthorizedDomain>;
+		domains?: Array<AuthorizedDomain> | null;
 
 		/** Continuation token for fetching the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -673,10 +673,10 @@ export namespace MyNS {
 	export interface ListDomainMappingsResponse {
 
 		/** The domain mappings for the application. */
-		domainMappings?: Array<DomainMapping>;
+		domainMappings?: Array<DomainMapping> | null;
 
 		/** Continuation token for fetching the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -684,10 +684,10 @@ export namespace MyNS {
 	export interface ListIngressRulesResponse {
 
 		/** The ingress FirewallRules for this application. */
-		ingressRules?: Array<FirewallRule>;
+		ingressRules?: Array<FirewallRule> | null;
 
 		/** Continuation token for fetching the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -695,10 +695,10 @@ export namespace MyNS {
 	export interface ListInstancesResponse {
 
 		/** The instances belonging to the requested version. */
-		instances?: Array<Instance>;
+		instances?: Array<Instance> | null;
 
 		/** Continuation token for fetching the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -706,10 +706,10 @@ export namespace MyNS {
 	export interface ListLocationsResponse {
 
 		/** A list of locations that matches the specified filter in the request. */
-		locations?: Array<Location>;
+		locations?: Array<Location> | null;
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -717,22 +717,22 @@ export namespace MyNS {
 	export interface Location {
 
 		/** The friendly name for this location, typically a nearby city name. For example, "Tokyo". */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The canonical id for this location. For example: "us-east1". */
-		locationId?: string;
+		locationId?: string | null;
 
 		/** Service-specific metadata. For example the available capacity at the given location. */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/** Resource name for the location, which may vary between implementations. For example: "projects/example-project/locations/us-east1" */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -740,10 +740,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -751,19 +751,19 @@ export namespace MyNS {
 	export interface Operation {
 
 		/** If the value is false, it means the operation is still in progress. If true, the operation is completed, and either error or response is available. */
-		done?: boolean;
+		done?: boolean | null;
 
 		/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
-		error?: Status;
+		error?: Status | null;
 
 		/** Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any. */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/** The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the name should be a resource name ending with operations/{unique_id}. */
-		name?: string;
+		name?: string | null;
 
 		/** The normal response of the operation in case of success. If the original method returns no data on success, such as Delete, the response is google.protobuf.Empty. If the original method is standard Get/Create/Update, the response should be the resource. For other methods, the response should have the type XxxResponse, where Xxx is the original method name. For example, if the original method name is TakeSnapshot(), the inferred response type is TakeSnapshotResponse. */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -771,13 +771,13 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -785,10 +785,10 @@ export namespace MyNS {
 	export interface ListServicesResponse {
 
 		/** Continuation token for fetching the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The services belonging to the requested application. */
-		services?: Array<Service>;
+		services?: Array<Service> | null;
 	}
 
 
@@ -796,13 +796,13 @@ export namespace MyNS {
 	export interface Service {
 
 		/** Relative name of the service within the application. Example: default.@OutputOnly */
-		id?: string;
+		id?: string | null;
 
 		/** Full path to the Service resource in the API. Example: apps/myapp/services/default.@OutputOnly */
-		name?: string;
+		name?: string | null;
 
 		/** Traffic routing configuration for versions within a single service. Traffic splits define how traffic directed to the service is assigned to versions. */
-		split?: TrafficSplit;
+		split?: TrafficSplit | null;
 	}
 
 
@@ -810,10 +810,10 @@ export namespace MyNS {
 	export interface TrafficSplit {
 
 		/** Mapping from version IDs within the service to fractional (0.000, 1] allocations of traffic for that version. Each version can be specified only once, but some versions in the service may not have any traffic allocation. Services that have traffic allocated cannot be deleted until either the service is deleted or their traffic allocation is removed. Allocations must sum to 1. Up to two decimal place precision is supported for IP-based splits and up to three decimal places is supported for cookie-based splits. */
-		allocations?: {[id: string]: number };
+		allocations?: {[id: string]: number } | null;
 
 		/** Mechanism used to determine which version a request is sent to. The traffic selection algorithm will be stable for either type until allocations are changed. */
-		shardBy?: TrafficSplitShardBy;
+		shardBy?: TrafficSplitShardBy | null;
 	}
 
 	export enum TrafficSplitShardBy { UNSPECIFIED = 0, COOKIE = 1, IP = 2, RANDOM = 3 }
@@ -823,10 +823,10 @@ export namespace MyNS {
 	export interface ListVersionsResponse {
 
 		/** Continuation token for fetching the next page of results. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The versions belonging to the requested service. */
-		versions?: Array<Version>;
+		versions?: Array<Version> | null;
 	}
 
 
@@ -834,119 +834,119 @@ export namespace MyNS {
 	export interface Version {
 
 		/** Google Cloud Endpoints (https://cloud.google.com/appengine/docs/python/endpoints/) configuration for API handlers. */
-		apiConfig?: ApiConfigHandler;
+		apiConfig?: ApiConfigHandler | null;
 
 		/** Automatic scaling is based on request rate, response latencies, and other application metrics. */
-		automaticScaling?: AutomaticScaling;
+		automaticScaling?: AutomaticScaling | null;
 
 		/** A service with basic scaling will create an instance when the application receives a request. The instance will be turned down when the app becomes idle. Basic scaling is ideal for work that is intermittent or driven by user activity. */
-		basicScaling?: BasicScaling;
+		basicScaling?: BasicScaling | null;
 
 		/** Metadata settings that are supplied to this version to enable beta runtime features. */
-		betaSettings?: {[id: string]: string };
+		betaSettings?: {[id: string]: string } | null;
 
 		/** Time that this version was created.@OutputOnly */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Email address of the user who created this version.@OutputOnly */
-		createdBy?: string;
+		createdBy?: string | null;
 
 		/** Duration that static files should be cached by web proxies and browsers. Only applicable if the corresponding StaticFilesHandler (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler) does not specify its own expiration time.Only returned in GET requests if view=FULL is set. */
-		defaultExpiration?: string;
+		defaultExpiration?: string | null;
 
 		/** Code and application artifacts used to deploy a version to App Engine. */
-		deployment?: Deployment;
+		deployment?: Deployment | null;
 
 		/** Total size in bytes of all the files that are included in this version and currently hosted on the App Engine disk.@OutputOnly */
-		diskUsageBytes?: string;
+		diskUsageBytes?: string | null;
 
 		/** Cloud Endpoints (https://cloud.google.com/endpoints) configuration. The Endpoints API Service provides tooling for serving Open API and gRPC endpoints via an NGINX proxy. Only valid for App Engine Flexible environment deployments.The fields here refer to the name and configuration ID of a "service" resource in the Service Management API (https://cloud.google.com/service-management/overview). */
-		endpointsApiService?: EndpointsApiService;
+		endpointsApiService?: EndpointsApiService | null;
 
 		/** The entrypoint for the application. */
-		entrypoint?: Entrypoint;
+		entrypoint?: Entrypoint | null;
 
 		/** App Engine execution environment for this version.Defaults to standard. */
-		env?: string;
+		env?: string | null;
 
 		/** Environment variables available to the application.Only returned in GET requests if view=FULL is set. */
-		envVariables?: {[id: string]: string };
+		envVariables?: {[id: string]: string } | null;
 
 		/** Custom static error pages. Limited to 10KB per page.Only returned in GET requests if view=FULL is set. */
-		errorHandlers?: Array<ErrorHandler>;
+		errorHandlers?: Array<ErrorHandler> | null;
 
 		/** An ordered list of URL-matching patterns that should be applied to incoming requests. The first matching URL handles the request and other request handlers are not attempted.Only returned in GET requests if view=FULL is set. */
-		handlers?: Array<UrlMap>;
+		handlers?: Array<UrlMap> | null;
 
 		/** Health checking configuration for VM instances. Unhealthy instances are killed and replaced with new instances. Only applicable for instances in App Engine flexible environment. */
-		healthCheck?: HealthCheck;
+		healthCheck?: HealthCheck | null;
 
 		/** Relative name of the version within the service. Example: v1. Version names can contain only lowercase letters, numbers, or hyphens. Reserved names: "default", "latest", and any name with the prefix "ah-". */
-		id?: string;
+		id?: string | null;
 
 		/** Before an application can receive email or XMPP messages, the application must be configured to enable the service. */
-		inboundServices?: Array<string>;
+		inboundServices?: Array<string> | null;
 
 		/**
 		 * Instance class that is used to run this version. Valid values are:
 		 * AutomaticScaling: F1, F2, F4, F4_1G
 		 * ManualScaling or BasicScaling: B1, B2, B4, B8, B4_1GDefaults to F1 for AutomaticScaling and B1 for ManualScaling or BasicScaling.
 		 */
-		instanceClass?: string;
+		instanceClass?: string | null;
 
 		/** Configuration for third-party Python runtime libraries that are required by the application.Only returned in GET requests if view=FULL is set. */
-		libraries?: Array<Library>;
+		libraries?: Array<Library> | null;
 
 		/** Health checking configuration for VM instances. Unhealthy instances are killed and replaced with new instances. */
-		livenessCheck?: LivenessCheck;
+		livenessCheck?: LivenessCheck | null;
 
 		/** A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time. */
-		manualScaling?: ManualScaling;
+		manualScaling?: ManualScaling | null;
 
 		/** Full path to the Version resource in the API. Example: apps/myapp/services/default/versions/v1.@OutputOnly */
-		name?: string;
+		name?: string | null;
 
 		/** Extra network settings. Only applicable in the App Engine flexible environment. */
-		network?: Network;
+		network?: Network | null;
 
 		/** Files that match this pattern will not be built into this version. Only applicable for Go runtimes.Only returned in GET requests if view=FULL is set. */
-		nobuildFilesRegex?: string;
+		nobuildFilesRegex?: string | null;
 
 		/** Readiness checking configuration for VM instances. Unhealthy instances are removed from traffic rotation. */
-		readinessCheck?: ReadinessCheck;
+		readinessCheck?: ReadinessCheck | null;
 
 		/** Machine resources for a version. */
-		resources?: Resources;
+		resources?: Resources | null;
 
 		/** Desired runtime. Example: python27. */
-		runtime?: string;
+		runtime?: string | null;
 
 		/** The version of the API in the given runtime environment. Please see the app.yaml reference for valid values at https://cloud.google.com/appengine/docs/standard/<language>/config/appref */
-		runtimeApiVersion?: string;
+		runtimeApiVersion?: string | null;
 
 		/** The channel of the runtime to use. Only available for some runtimes. Defaults to the default channel. */
-		runtimeChannel?: string;
+		runtimeChannel?: string | null;
 
 		/** The path or name of the app's main executable. */
-		runtimeMainExecutablePath?: string;
+		runtimeMainExecutablePath?: string | null;
 
 		/** Current serving status of this version. Only the versions with a SERVING status create instances and can be billed.SERVING_STATUS_UNSPECIFIED is an invalid value. Defaults to SERVING. */
-		servingStatus?: VersionServingStatus;
+		servingStatus?: VersionServingStatus | null;
 
 		/** Whether multiple requests can be dispatched to this version at once. */
-		threadsafe?: boolean;
+		threadsafe?: boolean | null;
 
 		/** Serving URL for this version. Example: "https://myversion-dot-myservice-dot-myapp.appspot.com"@OutputOnly */
-		versionUrl?: string;
+		versionUrl?: string | null;
 
 		/** Whether to deploy this version in a container on a virtual machine. */
-		vm?: boolean;
+		vm?: boolean | null;
 
 		/** VPC access connector specification. */
-		vpcAccessConnector?: VpcAccessConnector;
+		vpcAccessConnector?: VpcAccessConnector | null;
 
 		/** The Google Compute Engine zones that are supported by this version in the App Engine flexible environment. Deprecated. */
-		zones?: Array<string>;
+		zones?: Array<string> | null;
 	}
 
 
@@ -954,28 +954,28 @@ export namespace MyNS {
 	export interface UrlMap {
 
 		/** Uses Google Cloud Endpoints to handle requests. */
-		apiEndpoint?: ApiEndpointHandler;
+		apiEndpoint?: ApiEndpointHandler | null;
 
 		/** Action to take when users access resources that require authentication. Defaults to redirect. */
-		authFailAction?: ApiConfigHandlerAuthFailAction;
+		authFailAction?: ApiConfigHandlerAuthFailAction | null;
 
 		/** Level of login required to access this resource. Not supported for Node.js in the App Engine standard environment. */
-		login?: ApiConfigHandlerLogin;
+		login?: ApiConfigHandlerLogin | null;
 
 		/** 30x code to use when performing redirects for the secure field. Defaults to 302. */
-		redirectHttpResponseCode?: UrlMapRedirectHttpResponseCode;
+		redirectHttpResponseCode?: UrlMapRedirectHttpResponseCode | null;
 
 		/** Executes a script to handle the request that matches the URL pattern. */
-		script?: ScriptHandler;
+		script?: ScriptHandler | null;
 
 		/** Security (HTTPS) enforcement for this URL. */
-		securityLevel?: ApiConfigHandlerSecurityLevel;
+		securityLevel?: ApiConfigHandlerSecurityLevel | null;
 
 		/** Files served directly to the user for a given URL, such as images, CSS stylesheets, or JavaScript source files. Static file handlers describe which files in the application directory are static files, and which URLs serve them. */
-		staticFiles?: StaticFilesHandler;
+		staticFiles?: StaticFilesHandler | null;
 
 		/** URL prefix. Uses regular expression syntax, which means regexp special characters must be escaped, but should not contain groupings. All URLs that begin with this prefix are handled by this handler, using the portion of the URL after the prefix as part of the file path. */
-		urlRegex?: string;
+		urlRegex?: string | null;
 	}
 
 	export enum UrlMapRedirectHttpResponseCode { REDIRECT_HTTP_RESPONSE_CODE_UNSPECIFIED = 0, REDIRECT_HTTP_RESPONSE_CODE_301 = 1, REDIRECT_HTTP_RESPONSE_CODE_302 = 2, REDIRECT_HTTP_RESPONSE_CODE_303 = 3, REDIRECT_HTTP_RESPONSE_CODE_307 = 4 }
@@ -985,7 +985,7 @@ export namespace MyNS {
 	export interface ScriptHandler {
 
 		/** Path to the script from the application root directory. */
-		scriptPath?: string;
+		scriptPath?: string | null;
 	}
 
 
@@ -993,25 +993,25 @@ export namespace MyNS {
 	export interface StaticFilesHandler {
 
 		/** Whether files should also be uploaded as code data. By default, files declared in static file handlers are uploaded as static data and are only served to end users; they cannot be read by the application. If enabled, uploads are charged against both your code and static data storage resource quotas. */
-		applicationReadable?: boolean;
+		applicationReadable?: boolean | null;
 
 		/** Time a static file served by this handler should be cached by web proxies and browsers. */
-		expiration?: string;
+		expiration?: string | null;
 
 		/** HTTP headers to use for all responses from these URLs. */
-		httpHeaders?: {[id: string]: string };
+		httpHeaders?: {[id: string]: string } | null;
 
 		/** MIME type used to serve all files served by this handler.Defaults to file-specific MIME types, which are derived from each file's filename extension. */
-		mimeType?: string;
+		mimeType?: string | null;
 
 		/** Path to the static files matched by the URL pattern, from the application root directory. The path can refer to text matched in groupings in the URL pattern. */
-		path?: string;
+		path?: string | null;
 
 		/** Whether this handler should match the request if the file referenced by the handler does not exist. */
-		requireMatchingFile?: boolean;
+		requireMatchingFile?: boolean | null;
 
 		/** Regular expression that matches the file paths for all files that should be referenced by this handler. */
-		uploadPathRegex?: string;
+		uploadPathRegex?: string | null;
 	}
 
 
@@ -1019,25 +1019,25 @@ export namespace MyNS {
 	export interface LivenessCheck {
 
 		/** Interval between health checks. */
-		checkInterval?: string;
+		checkInterval?: string | null;
 
 		/** Number of consecutive failed checks required before considering the VM unhealthy. */
-		failureThreshold?: string;
+		failureThreshold?: string | null;
 
 		/** Host header to send when performing a HTTP Liveness check. Example: "myapp.appspot.com" */
-		host?: string;
+		host?: string | null;
 
 		/** The initial delay before starting to execute the checks. */
-		initialDelay?: string;
+		initialDelay?: string | null;
 
 		/** The request path. */
-		path?: string;
+		path?: string | null;
 
 		/** Number of consecutive successful checks required before considering the VM healthy. */
-		successThreshold?: string;
+		successThreshold?: string | null;
 
 		/** Time before the check is considered failed. */
-		timeout?: string;
+		timeout?: string | null;
 	}
 
 
@@ -1045,7 +1045,7 @@ export namespace MyNS {
 	export interface ManualScaling {
 
 		/** Number of instances to assign to the service at the start. This number can later be altered by using the Modules API (https://cloud.google.com/appengine/docs/python/modules/functions) set_num_instances() function. */
-		instances?: number;
+		instances?: number | null;
 	}
 
 
@@ -1053,16 +1053,16 @@ export namespace MyNS {
 	export interface Network {
 
 		/** List of ports, or port pairs, to forward from the virtual machine to the application container. Only applicable in the App Engine flexible environment. */
-		forwardedPorts?: Array<string>;
+		forwardedPorts?: Array<string> | null;
 
 		/** Tag to apply to the instance during creation. Only applicable in the App Engine flexible environment. */
-		instanceTag?: string;
+		instanceTag?: string | null;
 
 		/** Google Compute Engine network where the virtual machines are created. Specify the short name, not the resource path.Defaults to default. */
-		name?: string;
+		name?: string | null;
 
 		/** Enable session affinity. Only applicable in the App Engine flexible environment. */
-		sessionAffinity?: boolean;
+		sessionAffinity?: boolean | null;
 
 		/**
 		 * Google Cloud Platform sub-network where the virtual machines are created. Specify the short name, not the resource path.If a subnetwork name is specified, a network name will also be required unless it is for the default network.
@@ -1070,7 +1070,7 @@ export namespace MyNS {
 		 * If the network that the instance is being created in is an auto Subnet Mode Network, then only network name should be specified (not the subnetwork_name) and the IP address is created from the IPCidrRange of the subnetwork that exists in that zone for that network.
 		 * If the network that the instance is being created in is a custom Subnet Mode Network, then the subnetwork_name must be specified and the IP address is created from the IPCidrRange of the subnetwork.If specified, the subnetwork must exist in the same region as the App Engine flexible environment application.
 		 */
-		subnetworkName?: string;
+		subnetworkName?: string | null;
 	}
 
 
@@ -1078,25 +1078,25 @@ export namespace MyNS {
 	export interface ReadinessCheck {
 
 		/** A maximum time limit on application initialization, measured from moment the application successfully replies to a healthcheck until it is ready to serve traffic. */
-		appStartTimeout?: string;
+		appStartTimeout?: string | null;
 
 		/** Interval between health checks. */
-		checkInterval?: string;
+		checkInterval?: string | null;
 
 		/** Number of consecutive failed checks required before removing traffic. */
-		failureThreshold?: string;
+		failureThreshold?: string | null;
 
 		/** Host header to send when performing a HTTP Readiness check. Example: "myapp.appspot.com" */
-		host?: string;
+		host?: string | null;
 
 		/** The request path. */
-		path?: string;
+		path?: string | null;
 
 		/** Number of consecutive successful checks required before receiving traffic. */
-		successThreshold?: string;
+		successThreshold?: string | null;
 
 		/** Time before the check is considered failed. */
-		timeout?: string;
+		timeout?: string | null;
 	}
 
 
@@ -1104,16 +1104,16 @@ export namespace MyNS {
 	export interface Resources {
 
 		/** Number of CPU cores needed. */
-		cpu?: number;
+		cpu?: number | null;
 
 		/** Disk size (GB) needed. */
-		diskGb?: number;
+		diskGb?: number | null;
 
 		/** Memory (GB) needed. */
-		memoryGb?: number;
+		memoryGb?: number | null;
 
 		/** User specified volumes. */
-		volumes?: Array<Volume>;
+		volumes?: Array<Volume> | null;
 	}
 
 
@@ -1121,13 +1121,13 @@ export namespace MyNS {
 	export interface Volume {
 
 		/** Unique name for the volume. */
-		name?: string;
+		name?: string | null;
 
 		/** Volume size in gigabytes. */
-		sizeGb?: number;
+		sizeGb?: number | null;
 
 		/** Underlying volume type, e.g. 'tmpfs'. */
-		volumeType?: string;
+		volumeType?: string | null;
 	}
 
 	export enum VersionServingStatus { SERVING_STATUS_UNSPECIFIED = 0, SERVING = 1, STOPPED = 2 }
@@ -1137,7 +1137,7 @@ export namespace MyNS {
 	export interface VpcAccessConnector {
 
 		/** Full Serverless VPC Access Connector name e.g. /projects/my-project/locations/us-central1/connectors/c1. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -1145,10 +1145,10 @@ export namespace MyNS {
 	export interface LocationMetadata {
 
 		/** App Engine flexible environment is available in the given location.@OutputOnly */
-		flexibleEnvironmentAvailable?: boolean;
+		flexibleEnvironmentAvailable?: boolean | null;
 
 		/** App Engine standard environment is available in the given location.@OutputOnly */
-		standardEnvironmentAvailable?: boolean;
+		standardEnvironmentAvailable?: boolean | null;
 	}
 
 
@@ -1156,28 +1156,28 @@ export namespace MyNS {
 	export interface OperationMetadataV1 {
 
 		/** Metadata for the given google.longrunning.Operation during a google.appengine.v1.CreateVersionRequest. */
-		createVersionMetadata?: CreateVersionMetadataV1;
+		createVersionMetadata?: CreateVersionMetadataV1 | null;
 
 		/** Time that this operation completed.@OutputOnly */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** Ephemeral message that may change every time the operation is polled. @OutputOnly */
-		ephemeralMessage?: string;
+		ephemeralMessage?: string | null;
 
 		/** Time that this operation was created.@OutputOnly */
-		insertTime?: string;
+		insertTime?: string | null;
 
 		/** API method that initiated this operation. Example: google.appengine.v1.Versions.CreateVersion.@OutputOnly */
-		method?: string;
+		method?: string | null;
 
 		/** Name of the resource that this operation is acting on. Example: apps/myapp/services/default.@OutputOnly */
-		target?: string;
+		target?: string | null;
 
 		/** User who requested this operation.@OutputOnly */
-		user?: string;
+		user?: string | null;
 
 		/** Durable messages that persist on every operation poll. @OutputOnly */
-		warning?: Array<string>;
+		warning?: Array<string> | null;
 	}
 
 
@@ -1185,28 +1185,28 @@ export namespace MyNS {
 	export interface OperationMetadataV1Alpha {
 
 		/** Metadata for the given google.longrunning.Operation during a google.appengine.v1alpha.CreateVersionRequest. */
-		createVersionMetadata?: CreateVersionMetadataV1Alpha;
+		createVersionMetadata?: CreateVersionMetadataV1Alpha | null;
 
 		/** Time that this operation completed.@OutputOnly */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** Ephemeral message that may change every time the operation is polled. @OutputOnly */
-		ephemeralMessage?: string;
+		ephemeralMessage?: string | null;
 
 		/** Time that this operation was created.@OutputOnly */
-		insertTime?: string;
+		insertTime?: string | null;
 
 		/** API method that initiated this operation. Example: google.appengine.v1alpha.Versions.CreateVersion.@OutputOnly */
-		method?: string;
+		method?: string | null;
 
 		/** Name of the resource that this operation is acting on. Example: apps/myapp/services/default.@OutputOnly */
-		target?: string;
+		target?: string | null;
 
 		/** User who requested this operation.@OutputOnly */
-		user?: string;
+		user?: string | null;
 
 		/** Durable messages that persist on every operation poll. @OutputOnly */
-		warning?: Array<string>;
+		warning?: Array<string> | null;
 	}
 
 
@@ -1214,28 +1214,28 @@ export namespace MyNS {
 	export interface OperationMetadataV1Beta {
 
 		/** Metadata for the given google.longrunning.Operation during a google.appengine.v1beta.CreateVersionRequest. */
-		createVersionMetadata?: CreateVersionMetadataV1Beta;
+		createVersionMetadata?: CreateVersionMetadataV1Beta | null;
 
 		/** Time that this operation completed.@OutputOnly */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** Ephemeral message that may change every time the operation is polled. @OutputOnly */
-		ephemeralMessage?: string;
+		ephemeralMessage?: string | null;
 
 		/** Time that this operation was created.@OutputOnly */
-		insertTime?: string;
+		insertTime?: string | null;
 
 		/** API method that initiated this operation. Example: google.appengine.v1beta.Versions.CreateVersion.@OutputOnly */
-		method?: string;
+		method?: string | null;
 
 		/** Name of the resource that this operation is acting on. Example: apps/myapp/services/default.@OutputOnly */
-		target?: string;
+		target?: string | null;
 
 		/** User who requested this operation.@OutputOnly */
-		user?: string;
+		user?: string | null;
 
 		/** Durable messages that persist on every operation poll. @OutputOnly */
-		warning?: Array<string>;
+		warning?: Array<string> | null;
 	}
 
 
@@ -1278,7 +1278,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Standard field mask for the set of fields to be updated.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_patch(appsId: string, updateMask: string, requestBody: Application): Observable<HttpResponse<string>> {
+		Appengine_apps_patch(appsId: string, updateMask: string | null | undefined, requestBody: Application): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1291,7 +1291,7 @@ export namespace MyNS {
 		 * @param {Appengine_apps_authorizedCertificates_listView} view Controls the set of fields returned in the LIST response.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_authorizedCertificates_list(appsId: string, pageSize: number, pageToken: string, view: Appengine_apps_authorizedCertificates_listView): Observable<HttpResponse<string>> {
+		Appengine_apps_authorizedCertificates_list(appsId: string, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Appengine_apps_authorizedCertificates_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/authorizedCertificates&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1324,7 +1324,7 @@ export namespace MyNS {
 		 * @param {Appengine_apps_authorizedCertificates_listView} view Controls the set of fields returned in the GET response.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_authorizedCertificates_get(appsId: string, authorizedCertificatesId: string, view: Appengine_apps_authorizedCertificates_listView): Observable<HttpResponse<string>> {
+		Appengine_apps_authorizedCertificates_get(appsId: string, authorizedCertificatesId: string, view: Appengine_apps_authorizedCertificates_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/authorizedCertificates/' + (authorizedCertificatesId == null ? '' : encodeURIComponent(authorizedCertificatesId)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1336,7 +1336,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Standard field mask for the set of fields to be updated. Updates are only supported on the certificate_raw_data and display_name fields.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_authorizedCertificates_patch(appsId: string, authorizedCertificatesId: string, updateMask: string, requestBody: AuthorizedCertificate): Observable<HttpResponse<string>> {
+		Appengine_apps_authorizedCertificates_patch(appsId: string, authorizedCertificatesId: string, updateMask: string | null | undefined, requestBody: AuthorizedCertificate): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/authorizedCertificates/' + (authorizedCertificatesId == null ? '' : encodeURIComponent(authorizedCertificatesId)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1348,7 +1348,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_authorizedDomains_list(appsId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Appengine_apps_authorizedDomains_list(appsId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/authorizedDomains&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1360,7 +1360,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_domainMappings_list(appsId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Appengine_apps_domainMappings_list(appsId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/domainMappings&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1371,7 +1371,7 @@ export namespace MyNS {
 		 * @param {Appengine_apps_domainMappings_createOverrideStrategy} overrideStrategy Whether the domain creation should override any existing mappings for this domain. By default, overrides are rejected.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_domainMappings_create(appsId: string, overrideStrategy: Appengine_apps_domainMappings_createOverrideStrategy, requestBody: DomainMapping): Observable<HttpResponse<string>> {
+		Appengine_apps_domainMappings_create(appsId: string, overrideStrategy: Appengine_apps_domainMappings_createOverrideStrategy | null | undefined, requestBody: DomainMapping): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/domainMappings&overrideStrategy=' + overrideStrategy, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1405,7 +1405,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Standard field mask for the set of fields to be updated.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_domainMappings_patch(appsId: string, domainMappingsId: string, updateMask: string, requestBody: DomainMapping): Observable<HttpResponse<string>> {
+		Appengine_apps_domainMappings_patch(appsId: string, domainMappingsId: string, updateMask: string | null | undefined, requestBody: DomainMapping): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/domainMappings/' + (domainMappingsId == null ? '' : encodeURIComponent(domainMappingsId)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1418,7 +1418,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_firewall_ingressRules_list(appsId: string, matchingAddress: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Appengine_apps_firewall_ingressRules_list(appsId: string, matchingAddress: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/firewall/ingressRules&matchingAddress=' + (matchingAddress == null ? '' : encodeURIComponent(matchingAddress)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1462,7 +1462,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Standard field mask for the set of fields to be updated.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_firewall_ingressRules_patch(appsId: string, ingressRulesId: string, updateMask: string, requestBody: FirewallRule): Observable<HttpResponse<string>> {
+		Appengine_apps_firewall_ingressRules_patch(appsId: string, ingressRulesId: string, updateMask: string | null | undefined, requestBody: FirewallRule): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/firewall/ingressRules/' + (ingressRulesId == null ? '' : encodeURIComponent(ingressRulesId)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1485,7 +1485,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_locations_list(appsId: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Appengine_apps_locations_list(appsId: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/locations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1509,7 +1509,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_operations_list(appsId: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Appengine_apps_operations_list(appsId: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/operations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1532,7 +1532,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_services_list(appsId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Appengine_apps_services_list(appsId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/services&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1567,7 +1567,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Standard field mask for the set of fields to be updated.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_services_patch(appsId: string, servicesId: string, migrateTraffic: boolean, updateMask: string, requestBody: Service): Observable<HttpResponse<string>> {
+		Appengine_apps_services_patch(appsId: string, servicesId: string, migrateTraffic: boolean | null | undefined, updateMask: string | null | undefined, requestBody: Service): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/services/' + (servicesId == null ? '' : encodeURIComponent(servicesId)) + '&migrateTraffic=' + migrateTraffic + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1581,7 +1581,7 @@ export namespace MyNS {
 		 * @param {Appengine_apps_services_versions_listView} view Controls the set of fields returned in the List response.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_services_versions_list(appsId: string, servicesId: string, pageSize: number, pageToken: string, view: Appengine_apps_services_versions_listView): Observable<HttpResponse<string>> {
+		Appengine_apps_services_versions_list(appsId: string, servicesId: string, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Appengine_apps_services_versions_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/services/' + (servicesId == null ? '' : encodeURIComponent(servicesId)) + '/versions&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1617,7 +1617,7 @@ export namespace MyNS {
 		 * @param {Appengine_apps_services_versions_listView} view Controls the set of fields returned in the Get response.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_services_versions_get(appsId: string, servicesId: string, versionsId: string, view: Appengine_apps_services_versions_listView): Observable<HttpResponse<string>> {
+		Appengine_apps_services_versions_get(appsId: string, servicesId: string, versionsId: string, view: Appengine_apps_services_versions_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/services/' + (servicesId == null ? '' : encodeURIComponent(servicesId)) + '/versions/' + (versionsId == null ? '' : encodeURIComponent(versionsId)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1643,7 +1643,7 @@ export namespace MyNS {
 		 * @param {string} updateMask Standard field mask for the set of fields to be updated.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_services_versions_patch(appsId: string, servicesId: string, versionsId: string, updateMask: string, requestBody: Version): Observable<HttpResponse<string>> {
+		Appengine_apps_services_versions_patch(appsId: string, servicesId: string, versionsId: string, updateMask: string | null | undefined, requestBody: Version): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/services/' + (servicesId == null ? '' : encodeURIComponent(servicesId)) + '/versions/' + (versionsId == null ? '' : encodeURIComponent(versionsId)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1657,7 +1657,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {void} Successful response
 		 */
-		Appengine_apps_services_versions_instances_list(appsId: string, servicesId: string, versionsId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Appengine_apps_services_versions_instances_list(appsId: string, servicesId: string, versionsId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/apps/' + (appsId == null ? '' : encodeURIComponent(appsId)) + '/services/' + (servicesId == null ? '' : encodeURIComponent(servicesId)) + '/versions/' + (versionsId == null ? '' : encodeURIComponent(versionsId)) + '/instances&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

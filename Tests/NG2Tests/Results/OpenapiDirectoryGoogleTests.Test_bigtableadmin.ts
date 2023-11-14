@@ -10,7 +10,7 @@ export namespace MyNS {
 	export interface AppProfile {
 
 		/** Optional long form description of the use case for this AppProfile. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Strongly validated etag for optimistic concurrency control. Preserve the
@@ -22,7 +22,7 @@ export namespace MyNS {
 		 * [RFC 7232](https://tools.ietf.org/html/rfc7232#section-2.3) for more
 		 * details.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Read/write requests are routed to the nearest cluster in the instance, and
@@ -31,21 +31,21 @@ export namespace MyNS {
 		 * equidistant. Choosing this option sacrifices read-your-writes consistency
 		 * to improve availability.
 		 */
-		multiClusterRoutingUseAny?: MultiClusterRoutingUseAny;
+		multiClusterRoutingUseAny?: MultiClusterRoutingUseAny | null;
 
 		/**
 		 * (`OutputOnly`)
 		 * The unique name of the app profile. Values are of the form
 		 * `projects/<project>/instances/<instance>/appProfiles/_a-zA-Z0-9*`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Unconditionally routes all read/write requests to a specific cluster.
 		 * This option preserves read-your-writes consistency but does not improve
 		 * availability.
 		 */
-		singleClusterRouting?: SingleClusterRouting;
+		singleClusterRouting?: SingleClusterRouting | null;
 	}
 
 
@@ -72,10 +72,10 @@ export namespace MyNS {
 		 * allowed by this app profile. It is unsafe to send these requests to
 		 * the same table/row/column in multiple clusters.
 		 */
-		allowTransactionalWrites?: boolean;
+		allowTransactionalWrites?: boolean | null;
 
 		/** The cluster to which read/write requests should be routed. */
-		clusterId?: string;
+		clusterId?: string | null;
 	}
 
 
@@ -131,14 +131,14 @@ export namespace MyNS {
 	export interface AuditConfig {
 
 		/** The configuration for logging of each type of permission. */
-		auditLogConfigs?: Array<AuditLogConfig>;
+		auditLogConfigs?: Array<AuditLogConfig> | null;
 
 		/**
 		 * Specifies a service that will be enabled for audit logging.
 		 * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
 		 * `allServices` is a special value that covers all services.
 		 */
-		service?: string;
+		service?: string | null;
 	}
 
 
@@ -168,10 +168,10 @@ export namespace MyNS {
 		 * permission.
 		 * Follows the same format of Binding.members.
 		 */
-		exemptedMembers?: Array<string>;
+		exemptedMembers?: Array<string> | null;
 
 		/** The log type that this config enables. */
-		logType?: AuditLogConfigLogType;
+		logType?: AuditLogConfigLogType | null;
 	}
 
 	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
@@ -204,7 +204,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -239,13 +239,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -279,26 +279,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -309,7 +309,7 @@ export namespace MyNS {
 	export interface CheckConsistencyRequest {
 
 		/** Required. The token created using GenerateConsistencyToken for the Table. */
-		consistencyToken?: string;
+		consistencyToken?: string | null;
 	}
 
 
@@ -323,7 +323,7 @@ export namespace MyNS {
 		 * True only if the token is consistent. A token is consistent if replication
 		 * has caught up with the restrictions specified in the request.
 		 */
-		consistent?: boolean;
+		consistent?: boolean | null;
 	}
 
 
@@ -339,7 +339,7 @@ export namespace MyNS {
 		 * The type of storage used by this cluster to serve its
 		 * parent instance's tables, unless explicitly overridden.
 		 */
-		defaultStorageType?: ClusterDefaultStorageType;
+		defaultStorageType?: ClusterDefaultStorageType | null;
 
 		/**
 		 * (`CreationOnly`)
@@ -348,26 +348,26 @@ export namespace MyNS {
 		 * cluster. Currently only zones are supported, so values should be of the
 		 * form `projects/{project}/locations/{zone}`.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Required. (`OutputOnly`)
 		 * The unique name of the cluster. Values are of the form
 		 * `projects/{project}/instances/{instance}/clusters/a-z*`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Required. The number of nodes allocated to this cluster. More nodes enable higher
 		 * throughput and more consistent performance.
 		 */
-		serveNodes?: number;
+		serveNodes?: number | null;
 
 		/**
 		 * (`OutputOnly`)
 		 * The current state of the cluster.
 		 */
-		state?: ClusterState;
+		state?: ClusterState | null;
 	}
 
 	export enum ClusterDefaultStorageType { STORAGE_TYPE_UNSPECIFIED = 0, SSD = 1, HDD = 2 }
@@ -379,7 +379,7 @@ export namespace MyNS {
 	export interface ColumnFamily {
 
 		/** Rule for determining which cells to delete during garbage collection. */
-		gcRule?: GcRule;
+		gcRule?: GcRule | null;
 	}
 
 
@@ -387,20 +387,20 @@ export namespace MyNS {
 	export interface GcRule {
 
 		/** A GcRule which deletes cells matching all of the given rules. */
-		intersection?: Intersection;
+		intersection?: Intersection | null;
 
 		/**
 		 * Delete cells in a column older than the given age.
 		 * Values must be at least one millisecond, and will be truncated to
 		 * microsecond granularity.
 		 */
-		maxAge?: string;
+		maxAge?: string | null;
 
 		/** Delete all cells in a column except the most recent N. */
-		maxNumVersions?: number;
+		maxNumVersions?: number | null;
 
 		/** A GcRule which deletes cells matching any of the given rules. */
-		union?: Union;
+		union?: Union | null;
 	}
 
 
@@ -408,7 +408,7 @@ export namespace MyNS {
 	export interface Intersection {
 
 		/** Only delete cells which would be deleted by every element of `rules`. */
-		rules?: Array<GcRule>;
+		rules?: Array<GcRule> | null;
 	}
 
 
@@ -416,7 +416,7 @@ export namespace MyNS {
 	export interface Union {
 
 		/** Delete cells which would be deleted by any element of `rules`. */
-		rules?: Array<GcRule>;
+		rules?: Array<GcRule> | null;
 	}
 
 
@@ -424,13 +424,13 @@ export namespace MyNS {
 	export interface CreateClusterMetadata {
 
 		/** The time at which the operation failed or was completed successfully. */
-		finishTime?: string;
+		finishTime?: string | null;
 
 		/** Request message for BigtableInstanceAdmin.CreateCluster. */
-		originalRequest?: CreateClusterRequest;
+		originalRequest?: CreateClusterRequest | null;
 
 		/** The time at which the original request was received. */
-		requestTime?: string;
+		requestTime?: string | null;
 
 		/**
 		 * Keys: the full `name` of each table that existed in the instance when
@@ -441,7 +441,7 @@ export namespace MyNS {
 		 * Values: information on how much of a table's data has been copied to the
 		 * newly-created cluster so far.
 		 */
-		tables?: {[id: string]: TableProgress };
+		tables?: {[id: string]: TableProgress } | null;
 	}
 
 
@@ -453,21 +453,21 @@ export namespace MyNS {
 		 * of serving all Tables in the parent
 		 * Instance.
 		 */
-		cluster?: Cluster;
+		cluster?: Cluster | null;
 
 		/**
 		 * Required. The ID to be used when referring to the new cluster within its instance,
 		 * e.g., just `mycluster` rather than
 		 * `projects/myproject/instances/myinstance/clusters/mycluster`.
 		 */
-		clusterId?: string;
+		clusterId?: string | null;
 
 		/**
 		 * Required. The unique name of the instance in which to create the new cluster.
 		 * Values are of the form
 		 * `projects/{project}/instances/{instance}`.
 		 */
-		parent?: string;
+		parent?: string | null;
 	}
 
 
@@ -479,11 +479,11 @@ export namespace MyNS {
 		 * This will eventually reach 'estimated_size_bytes' unless the table copy
 		 * is CANCELLED.
 		 */
-		estimatedCopiedBytes?: string;
+		estimatedCopiedBytes?: string | null;
 
 		/** Estimate of the size of the table to be copied. */
-		estimatedSizeBytes?: string;
-		state?: TableProgressState;
+		estimatedSizeBytes?: string | null;
+		state?: TableProgressState | null;
 	}
 
 	export enum TableProgressState { STATE_UNSPECIFIED = 0, PENDING = 1, COPYING = 2, COMPLETED = 3, CANCELLED = 4 }
@@ -493,13 +493,13 @@ export namespace MyNS {
 	export interface CreateInstanceMetadata {
 
 		/** The time at which the operation failed or was completed successfully. */
-		finishTime?: string;
+		finishTime?: string | null;
 
 		/** Request message for BigtableInstanceAdmin.CreateInstance. */
-		originalRequest?: CreateInstanceRequest;
+		originalRequest?: CreateInstanceRequest | null;
 
 		/** The time at which the original request was received. */
-		requestTime?: string;
+		requestTime?: string | null;
 	}
 
 
@@ -513,7 +513,7 @@ export namespace MyNS {
 		 * Fields marked `OutputOnly` must be left blank.
 		 * Currently, at most four clusters can be specified.
 		 */
-		clusters?: {[id: string]: Cluster };
+		clusters?: {[id: string]: Cluster } | null;
 
 		/**
 		 * A collection of Bigtable Tables and
@@ -521,20 +521,20 @@ export namespace MyNS {
 		 * All tables in an instance are served from all
 		 * Clusters in the instance.
 		 */
-		instance?: Instance;
+		instance?: Instance | null;
 
 		/**
 		 * Required. The ID to be used when referring to the new instance within its project,
 		 * e.g., just `myinstance` rather than
 		 * `projects/myproject/instances/myinstance`.
 		 */
-		instanceId?: string;
+		instanceId?: string | null;
 
 		/**
 		 * Required. The unique name of the project in which to create the new instance.
 		 * Values are of the form `projects/{project}`.
 		 */
-		parent?: string;
+		parent?: string | null;
 	}
 
 
@@ -551,7 +551,7 @@ export namespace MyNS {
 		 * Can be changed at any time, but should be kept globally unique
 		 * to avoid confusion.
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Required. Labels are a flexible and lightweight mechanism for organizing cloud
@@ -565,23 +565,23 @@ export namespace MyNS {
 		 * * No more than 64 labels can be associated with a given resource.
 		 * * Keys and values must both be under 128 bytes.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Required. (`OutputOnly`)
 		 * The unique name of the instance. Values are of the form
 		 * `projects/{project}/instances/a-z+[a-z0-9]`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * (`OutputOnly`)
 		 * The current state of the instance.
 		 */
-		state?: InstanceState;
+		state?: InstanceState | null;
 
 		/** Required. The type of the instance. Defaults to `PRODUCTION`. */
-		type?: InstanceType;
+		type?: InstanceType | null;
 	}
 
 	export enum InstanceState { STATE_NOT_KNOWN = 0, READY = 1, CREATING = 2 }
@@ -611,20 +611,20 @@ export namespace MyNS {
 		 * - Tablet 4 `[customer_2, other)      => {"customer_2"}.`
 		 * - Tablet 5 `[other, )                => {"other", "zz"}.`
 		 */
-		initialSplits?: Array<Split>;
+		initialSplits?: Array<Split> | null;
 
 		/**
 		 * A collection of user data indexed by row, column, and timestamp.
 		 * Each table is served using the resources of its parent cluster.
 		 */
-		table?: Table;
+		table?: Table | null;
 
 		/**
 		 * Required. The name by which the new table should be referred to within the parent
 		 * instance, e.g., `foobar` rather than `{parent}/tables/foobar`.
 		 * Maximum 50 characters.
 		 */
-		tableId?: string;
+		tableId?: string | null;
 	}
 
 
@@ -632,7 +632,7 @@ export namespace MyNS {
 	export interface Split {
 
 		/** Row key to use as an initial tablet boundary. */
-		key?: string;
+		key?: string | null;
 	}
 
 
@@ -649,14 +649,14 @@ export namespace MyNS {
 		 * there will be an entry for the cluster with UNKNOWN `replication_status`.
 		 * Views: `REPLICATION_VIEW`, `FULL`
 		 */
-		clusterStates?: {[id: string]: ClusterState };
+		clusterStates?: {[id: string]: ClusterState } | null;
 
 		/**
 		 * (`CreationOnly`)
 		 * The column families configured for this table, mapped by column family ID.
 		 * Views: `SCHEMA_VIEW`, `FULL`
 		 */
-		columnFamilies?: {[id: string]: ColumnFamily };
+		columnFamilies?: {[id: string]: ColumnFamily } | null;
 
 		/**
 		 * (`CreationOnly`)
@@ -665,14 +665,14 @@ export namespace MyNS {
 		 * If unspecified at creation time, the value will be set to `MILLIS`.
 		 * Views: `SCHEMA_VIEW`, `FULL`.
 		 */
-		granularity?: TableGranularity;
+		granularity?: TableGranularity | null;
 
 		/**
 		 * Output only. The unique name of the table. Values are of the form
 		 * `projects/<project>/instances/<instance>/tables/_a-zA-Z0-9*`.
 		 * Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 	export enum TableGranularity { TIMESTAMP_GRANULARITY_UNSPECIFIED = 0, MILLIS = 1 }
@@ -685,13 +685,13 @@ export namespace MyNS {
 	export interface DropRowRangeRequest {
 
 		/** Delete all rows in the table. Setting this to false is a no-op. */
-		deleteAllDataFromTable?: boolean;
+		deleteAllDataFromTable?: boolean | null;
 
 		/**
 		 * Delete all rows that start with this row key prefix. Prefix cannot be
 		 * zero length.
 		 */
-		rowKeyPrefix?: string;
+		rowKeyPrefix?: string | null;
 	}
 
 
@@ -723,7 +723,7 @@ export namespace MyNS {
 	export interface GenerateConsistencyTokenResponse {
 
 		/** The generated consistency token. */
-		consistencyToken?: string;
+		consistencyToken?: string | null;
 	}
 
 
@@ -731,7 +731,7 @@ export namespace MyNS {
 	export interface GetIamPolicyRequest {
 
 		/** Encapsulates settings provided to GetIamPolicy. */
-		options?: GetPolicyOptions;
+		options?: GetPolicyOptions | null;
 	}
 
 
@@ -746,7 +746,7 @@ export namespace MyNS {
 		 * Policies without any conditional bindings may specify any valid value or
 		 * leave the field unset.
 		 */
-		requestedPolicyVersion?: number;
+		requestedPolicyVersion?: number | null;
 	}
 
 
@@ -754,7 +754,7 @@ export namespace MyNS {
 	export interface ListAppProfilesResponse {
 
 		/** The list of requested app profiles. */
-		appProfiles?: Array<AppProfile>;
+		appProfiles?: Array<AppProfile> | null;
 
 		/**
 		 * Locations from which AppProfile information could not be retrieved,
@@ -762,14 +762,14 @@ export namespace MyNS {
 		 * AppProfiles from these locations may be missing from `app_profiles`.
 		 * Values are of the form `projects/<project>/locations/<zone_id>`
 		 */
-		failedLocations?: Array<string>;
+		failedLocations?: Array<string> | null;
 
 		/**
 		 * Set if not all app profiles could be returned in a single response.
 		 * Pass this value to `page_token` in another request to get the next
 		 * page of results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -777,7 +777,7 @@ export namespace MyNS {
 	export interface ListClustersResponse {
 
 		/** The list of requested clusters. */
-		clusters?: Array<Cluster>;
+		clusters?: Array<Cluster> | null;
 
 		/**
 		 * Locations from which Cluster information could not be retrieved,
@@ -786,10 +786,10 @@ export namespace MyNS {
 		 * or may only have partial information returned.
 		 * Values are of the form `projects/<project>/locations/<zone_id>`
 		 */
-		failedLocations?: Array<string>;
+		failedLocations?: Array<string> | null;
 
 		/** DEPRECATED: This field is unused and ignored. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -804,13 +804,13 @@ export namespace MyNS {
 		 * Cluster in a failed location may only have partial information returned.
 		 * Values are of the form `projects/<project>/locations/<zone_id>`
 		 */
-		failedLocations?: Array<string>;
+		failedLocations?: Array<string> | null;
 
 		/** The list of requested instances. */
-		instances?: Array<Instance>;
+		instances?: Array<Instance> | null;
 
 		/** DEPRECATED: This field is unused and ignored. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -818,10 +818,10 @@ export namespace MyNS {
 	export interface ListLocationsResponse {
 
 		/** A list of locations that matches the specified filter in the request. */
-		locations?: Array<Location>;
+		locations?: Array<Location> | null;
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -832,28 +832,28 @@ export namespace MyNS {
 		 * The friendly name for this location, typically a nearby city name.
 		 * For example, "Tokyo".
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
-		locationId?: string;
+		locationId?: string | null;
 
 		/**
 		 * Service-specific metadata. For example the available capacity at the given
 		 * location.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * Resource name for the location, which may vary between implementations.
 		 * For example: `"projects/example-project/locations/us-east1"`
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -861,10 +861,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -879,7 +879,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -889,7 +889,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -897,14 +897,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -916,7 +916,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -931,20 +931,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -959,10 +959,10 @@ export namespace MyNS {
 		 * Pass this value to `page_token` in another request to get the next
 		 * page of results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The tables present in the requested instance. */
-		tables?: Array<Table>;
+		tables?: Array<Table> | null;
 	}
 
 
@@ -970,19 +970,19 @@ export namespace MyNS {
 	export interface Modification {
 
 		/** A set of columns within a table which share a common configuration. */
-		create?: ColumnFamily;
+		create?: ColumnFamily | null;
 
 		/**
 		 * Drop (delete) the column family with the given ID, or fail if no such
 		 * family exists.
 		 */
-		drop?: boolean;
+		drop?: boolean | null;
 
 		/** The ID of the column family to be modified. */
-		id?: string;
+		id?: string | null;
 
 		/** A set of columns within a table which share a common configuration. */
-		update?: ColumnFamily;
+		update?: ColumnFamily | null;
 	}
 
 
@@ -998,7 +998,7 @@ export namespace MyNS {
 		 * masked by later ones (in the case of repeated updates to the same family,
 		 * for example).
 		 */
-		modifications?: Array<Modification>;
+		modifications?: Array<Modification> | null;
 	}
 
 
@@ -1011,13 +1011,13 @@ export namespace MyNS {
 		 * All tables in an instance are served from all
 		 * Clusters in the instance.
 		 */
-		instance?: Instance;
+		instance?: Instance | null;
 
 		/**
 		 * Required. The subset of Instance fields which should be replaced.
 		 * Must be explicitly set.
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -1081,14 +1081,14 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Specifies cloud audit logging configuration for this policy. */
-		auditConfigs?: Array<AuditConfig>;
+		auditConfigs?: Array<AuditConfig> | null;
 
 		/**
 		 * Associates a list of `members` to a `role`. Optionally, may specify a
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -1103,7 +1103,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -1123,7 +1123,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -1187,7 +1187,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 
 		/**
 		 * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
@@ -1196,7 +1196,7 @@ export namespace MyNS {
 		 * paths: "bindings, etag"
 		 * This field is only used by Cloud IAM.
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -1209,7 +1209,7 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -1220,7 +1220,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -1233,17 +1233,17 @@ export namespace MyNS {
 	export interface UpdateClusterMetadata {
 
 		/** The time at which the operation failed or was completed successfully. */
-		finishTime?: string;
+		finishTime?: string | null;
 
 		/**
 		 * A resizable group of nodes in a particular cloud location, capable
 		 * of serving all Tables in the parent
 		 * Instance.
 		 */
-		originalRequest?: Cluster;
+		originalRequest?: Cluster | null;
 
 		/** The time at which the original request was received. */
-		requestTime?: string;
+		requestTime?: string | null;
 	}
 
 
@@ -1251,13 +1251,13 @@ export namespace MyNS {
 	export interface UpdateInstanceMetadata {
 
 		/** The time at which the operation failed or was completed successfully. */
-		finishTime?: string;
+		finishTime?: string | null;
 
 		/** Request message for BigtableInstanceAdmin.PartialUpdateInstance. */
-		originalRequest?: PartialUpdateInstanceRequest;
+		originalRequest?: PartialUpdateInstanceRequest | null;
 
 		/** The time at which the original request was received. */
-		requestTime?: string;
+		requestTime?: string | null;
 	}
 
 	@Injectable()
@@ -1274,7 +1274,7 @@ export namespace MyNS {
 		 * @param {boolean} ignoreWarnings Required. If true, ignore safety checks when deleting the app profile.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_instances_tables_delete(name: string, ignoreWarnings: boolean): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_instances_tables_delete(name: string, ignoreWarnings: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '&ignoreWarnings=' + ignoreWarnings, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1288,7 +1288,7 @@ export namespace MyNS {
 		 * Defaults to `SCHEMA_VIEW` if unspecified.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_instances_tables_get(name: string, view: Bigtableadmin_projects_instances_tables_getView): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_instances_tables_get(name: string, view: Bigtableadmin_projects_instances_tables_getView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1303,7 +1303,7 @@ export namespace MyNS {
 		 * If unset, all fields will be replaced.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_instances_appProfiles_patch(name: string, ignoreWarnings: boolean, updateMask: string, requestBody: AppProfile): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_instances_appProfiles_patch(name: string, ignoreWarnings: boolean | null | undefined, updateMask: string | null | undefined, requestBody: AppProfile): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '&ignoreWarnings=' + ignoreWarnings + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1328,7 +1328,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_locations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_locations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '/locations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1349,7 +1349,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_operations_projects_operations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigtableadmin_operations_projects_operations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '/operations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1448,7 +1448,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The value of `next_page_token` returned by a previous call.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_instances_appProfiles_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_instances_appProfiles_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/appProfiles&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1464,7 +1464,7 @@ export namespace MyNS {
 		 * @param {boolean} ignoreWarnings If true, ignore safety checks when creating the app profile.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_instances_appProfiles_create(parent: string, appProfileId: string, ignoreWarnings: boolean, requestBody: AppProfile): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_instances_appProfiles_create(parent: string, appProfileId: string | null | undefined, ignoreWarnings: boolean | null | undefined, requestBody: AppProfile): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/appProfiles&appProfileId=' + (appProfileId == null ? '' : encodeURIComponent(appProfileId)) + '&ignoreWarnings=' + ignoreWarnings, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1478,7 +1478,7 @@ export namespace MyNS {
 		 * @param {string} pageToken DEPRECATED: This field is unused and ignored.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_instances_clusters_list(parent: string, pageToken: string): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_instances_clusters_list(parent: string, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/clusters&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1493,7 +1493,7 @@ export namespace MyNS {
 		 * `projects/myproject/instances/myinstance/clusters/mycluster`.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_instances_clusters_create(parent: string, clusterId: string, requestBody: Cluster): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_instances_clusters_create(parent: string, clusterId: string | null | undefined, requestBody: Cluster): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/clusters&clusterId=' + (clusterId == null ? '' : encodeURIComponent(clusterId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1505,7 +1505,7 @@ export namespace MyNS {
 		 * @param {string} pageToken DEPRECATED: This field is unused and ignored.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_instances_list(parent: string, pageToken: string): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_instances_list(parent: string, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/instances&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1537,7 +1537,7 @@ export namespace MyNS {
 		 * Only NAME_ONLY view (default) and REPLICATION_VIEW are supported.
 		 * @return {void} Successful response
 		 */
-		Bigtableadmin_projects_instances_tables_list(parent: string, pageSize: number, pageToken: string, view: Bigtableadmin_projects_instances_tables_getView): Observable<HttpResponse<string>> {
+		Bigtableadmin_projects_instances_tables_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Bigtableadmin_projects_instances_tables_getView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/tables&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 

@@ -3,14 +3,14 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface Assets {
-		pagination?: Pagination;
-		items?: Array<Asset>;
+		pagination?: Pagination | null;
+		items?: Array<Asset> | null;
 	}
 
 	export interface Asset {
 
 		/** The Xero-generated Id for the asset */
-		assetId?: string;
+		assetId?: string | null;
 
 		/**
 		 * The name of the asset
@@ -19,48 +19,48 @@ export namespace MyNS {
 		assetName: string;
 
 		/** The Xero-generated Id for the asset type */
-		assetTypeId?: string;
+		assetTypeId?: string | null;
 
 		/** Must be unique. */
-		assetNumber?: string;
+		assetNumber?: string | null;
 
 		/** The date the asset was purchased YYYY-MM-DD */
-		purchaseDate?: Date;
+		purchaseDate?: Date | null;
 
 		/** The purchase price of the asset */
-		purchasePrice?: number;
+		purchasePrice?: number | null;
 
 		/** The price the asset was disposed at */
-		disposalPrice?: number;
+		disposalPrice?: number | null;
 
 		/** See Asset Status Codes. */
-		assetStatus?: AssetAssetStatus;
+		assetStatus?: AssetAssetStatus | null;
 
 		/** The date the asset’s warranty expires (if needed) YYYY-MM-DD */
-		warrantyExpiryDate?: string;
+		warrantyExpiryDate?: string | null;
 
 		/** The asset's serial number */
-		serialNumber?: string;
-		bookDepreciationSetting?: BookDepreciationSetting;
-		bookDepreciationDetail?: BookDepreciationDetail;
+		serialNumber?: string | null;
+		bookDepreciationSetting?: BookDepreciationSetting | null;
+		bookDepreciationDetail?: BookDepreciationDetail | null;
 
 		/** Boolean to indicate whether depreciation can be rolled back for this asset individually. This is true if it doesn't have 'legacy' journal entries and if there is no lock period that would prevent this asset from rolling back. */
-		canRollback?: boolean;
+		canRollback?: boolean | null;
 
 		/** The accounting value of the asset */
-		accountingBookValue?: number;
+		accountingBookValue?: number | null;
 
 		/** Boolean to indicate whether delete is enabled */
-		isDeleteEnabledForDate?: boolean;
+		isDeleteEnabledForDate?: boolean | null;
 	}
 
 	export enum AssetAssetStatus { Draft = 0, Registered = 1, Disposed = 2 }
 
 	export interface Pagination {
-		page?: number;
-		pageSize?: number;
-		pageCount?: number;
-		itemCount?: number;
+		page?: number | null;
+		pageSize?: number | null;
+		pageCount?: number | null;
+		itemCount?: number | null;
 	}
 
 
@@ -74,7 +74,7 @@ export namespace MyNS {
 	export interface AssetType {
 
 		/** Xero generated unique identifier for asset types */
-		assetTypeId?: string;
+		assetTypeId?: string | null;
 
 		/**
 		 * The name of the asset type
@@ -83,44 +83,44 @@ export namespace MyNS {
 		assetTypeName: string;
 
 		/** The asset account for fixed assets of this type */
-		fixedAssetAccountId?: string;
+		fixedAssetAccountId?: string | null;
 
 		/** The expense account for the depreciation of fixed assets of this type */
-		depreciationExpenseAccountId?: string;
+		depreciationExpenseAccountId?: string | null;
 
 		/** The account for accumulated depreciation of fixed assets of this type */
-		accumulatedDepreciationAccountId?: string;
+		accumulatedDepreciationAccountId?: string | null;
 		bookDepreciationSetting: BookDepreciationSetting;
 
 		/** All asset types that have accumulated depreciation for any assets that use them are deemed ‘locked’ and cannot be removed. */
-		locks?: number;
+		locks?: number | null;
 	}
 
 	export interface BookDepreciationSetting {
 
 		/** The method of depreciation applied to this asset. See Depreciation Methods */
-		depreciationMethod?: BookDepreciationSettingDepreciationMethod;
+		depreciationMethod?: BookDepreciationSettingDepreciationMethod | null;
 
 		/** The method of averaging applied to this asset. See Averaging Methods */
-		averagingMethod?: BookDepreciationSettingAveragingMethod;
+		averagingMethod?: BookDepreciationSettingAveragingMethod | null;
 
 		/** The rate of depreciation (e.g. 0.05) */
-		depreciationRate?: number;
+		depreciationRate?: number | null;
 
 		/** Effective life of the asset in years (e.g. 5) */
-		effectiveLifeYears?: number;
+		effectiveLifeYears?: number | null;
 
 		/** See Depreciation Calculation Methods */
-		depreciationCalculationMethod?: BookDepreciationSettingDepreciationCalculationMethod;
+		depreciationCalculationMethod?: BookDepreciationSettingDepreciationCalculationMethod | null;
 
 		/** Unique Xero identifier for the depreciable object */
-		depreciableObjectId?: string;
+		depreciableObjectId?: string | null;
 
 		/** The type of asset object */
-		depreciableObjectType?: string;
+		depreciableObjectType?: string | null;
 
 		/** Unique Xero identifier for the effective date change */
-		bookEffectiveDateOfChangeId?: string;
+		bookEffectiveDateOfChangeId?: string | null;
 	}
 
 	export enum BookDepreciationSettingDepreciationMethod { NoDepreciation = 0, StraightLine = 1, DiminishingValue100 = 2, DiminishingValue150 = 3, DiminishingValue200 = 4, FullDepreciation = 5 }
@@ -132,109 +132,109 @@ export namespace MyNS {
 	export interface BookDepreciationDetail {
 
 		/** When an asset is disposed, this will be the sell price minus the purchase price if a profit was made. */
-		currentCapitalGain?: number;
+		currentCapitalGain?: number | null;
 
 		/** When an asset is disposed, this will be the lowest one of sell price or purchase price, minus the current book value. */
-		currentGainLoss?: number;
+		currentGainLoss?: number | null;
 
 		/** YYYY-MM-DD */
-		depreciationStartDate?: Date;
+		depreciationStartDate?: Date | null;
 
 		/** The value of the asset you want to depreciate, if this is less than the cost of the asset. */
-		costLimit?: number;
+		costLimit?: number | null;
 
 		/** The value of the asset remaining when you've fully depreciated it. */
-		residualValue?: number;
+		residualValue?: number | null;
 
 		/** All depreciation prior to the current financial year. */
-		priorAccumDepreciationAmount?: number;
+		priorAccumDepreciationAmount?: number | null;
 
 		/** All depreciation occurring in the current financial year. */
-		currentAccumDepreciationAmount?: number;
+		currentAccumDepreciationAmount?: number | null;
 	}
 
 	export interface Setting {
 
 		/** The prefix used for fixed asset numbers (“FA-” by default) */
-		assetNumberPrefix?: string;
+		assetNumberPrefix?: string | null;
 
 		/** The next available sequence number */
-		assetNumberSequence?: string;
+		assetNumberSequence?: string | null;
 
 		/** The date depreciation calculations started on registered fixed assets in Xero */
-		assetStartDate?: Date;
+		assetStartDate?: Date | null;
 
 		/** The last depreciation date */
-		lastDepreciationDate?: Date;
+		lastDepreciationDate?: Date | null;
 
 		/** Default account that gains are posted to */
-		defaultGainOnDisposalAccountId?: string;
+		defaultGainOnDisposalAccountId?: string | null;
 
 		/** Default account that losses are posted to */
-		defaultLossOnDisposalAccountId?: string;
+		defaultLossOnDisposalAccountId?: string | null;
 
 		/** Default account that capital gains are posted to */
-		defaultCapitalGainOnDisposalAccountId?: string;
+		defaultCapitalGainOnDisposalAccountId?: string | null;
 
 		/** opt in for tax calculation */
-		optInForTax?: boolean;
+		optInForTax?: boolean | null;
 	}
 
 	export interface Error {
 
 		/** Array of elements of resource validation errors */
-		resourceValidationErrors?: Array<ResourceValidationErrorsElement>;
+		resourceValidationErrors?: Array<ResourceValidationErrorsElement> | null;
 
 		/** Array of elements of field validation errors */
-		fieldValidationErrors?: Array<FieldValidationErrorsElement>;
+		fieldValidationErrors?: Array<FieldValidationErrorsElement> | null;
 
 		/** The internal type of error, not accessible externally */
-		type?: string;
+		type?: string | null;
 
 		/** Title of the error */
-		title?: string;
+		title?: string | null;
 
 		/** Detail of the error */
-		detail?: string;
+		detail?: string | null;
 	}
 
 	export interface ResourceValidationErrorsElement {
 
 		/** The field name of the erroneous field */
-		resourceName?: string;
+		resourceName?: string | null;
 
 		/** Explaination of the resource validation error */
-		localisedMessage?: string;
+		localisedMessage?: string | null;
 
 		/** Internal type of the resource error message */
-		type?: string;
+		type?: string | null;
 
 		/** Title of the resource validation error */
-		title?: string;
+		title?: string | null;
 
 		/** Detail of the resource validation error */
-		detail?: string;
+		detail?: string | null;
 	}
 
 	export interface FieldValidationErrorsElement {
 
 		/** The field name of the erroneous field */
-		fieldName?: string;
+		fieldName?: string | null;
 
 		/** The provided value */
-		valueProvided?: string;
+		valueProvided?: string | null;
 
 		/** Explaination of the field validation error */
-		localisedMessage?: string;
+		localisedMessage?: string | null;
 
 		/** Internal type of the field validation error message */
-		type?: string;
+		type?: string | null;
 
 		/** Title of the field validation error */
-		title?: string;
+		title?: string | null;
 
 		/** Detail of the field validation error */
-		detail?: string;
+		detail?: string | null;
 	}
 
 	@Injectable()
@@ -254,7 +254,7 @@ export namespace MyNS {
 		 * @param {GetAssetsFilterBy} filterBy A string that can be used to filter the list to only return assets containing the text. Checks it against the AssetName, AssetNumber, Description and AssetTypeName fields.
 		 * @return {Assets} search results matching criteria
 		 */
-		GetAssets(status: AssetStatusQueryParam, page: number, pageSize: number, orderBy: GetAssetsOrderBy, sortDirection: GetAssetsSortDirection, filterBy: GetAssetsFilterBy): Observable<Assets> {
+		GetAssets(status: AssetStatusQueryParam, page: number | null | undefined, pageSize: number | null | undefined, orderBy: GetAssetsOrderBy | null | undefined, sortDirection: GetAssetsSortDirection | null | undefined, filterBy: GetAssetsFilterBy | null | undefined): Observable<Assets> {
 			return this.http.get<Assets>(this.baseUri + 'Assets?status=' + status + '&page=' + page + '&pageSize=' + pageSize + '&orderBy=' + orderBy + '&sortDirection=' + sortDirection + '&filterBy=' + filterBy, {});
 		}
 

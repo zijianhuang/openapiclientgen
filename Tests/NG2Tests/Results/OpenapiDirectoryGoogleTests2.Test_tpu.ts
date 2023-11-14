@@ -7,10 +7,10 @@ export namespace MyNS {
 	export interface AcceleratorType {
 
 		/** The resource name. */
-		name?: string;
+		name?: string | null;
 
 		/** the accelerator type. */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -31,13 +31,13 @@ export namespace MyNS {
 	export interface ListAcceleratorTypesResponse {
 
 		/** The listed nodes. */
-		acceleratorTypes?: Array<AcceleratorType>;
+		acceleratorTypes?: Array<AcceleratorType> | null;
 
 		/** The next page token or empty if none. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Locations that could not be reached. */
-		unreachable?: Array<string>;
+		unreachable?: Array<string> | null;
 	}
 
 
@@ -45,10 +45,10 @@ export namespace MyNS {
 	export interface ListLocationsResponse {
 
 		/** A list of locations that matches the specified filter in the request. */
-		locations?: Array<Location>;
+		locations?: Array<Location> | null;
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -59,28 +59,28 @@ export namespace MyNS {
 		 * The friendly name for this location, typically a nearby city name.
 		 * For example, "Tokyo".
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
-		locationId?: string;
+		locationId?: string | null;
 
 		/**
 		 * Service-specific metadata. For example the available capacity at the given
 		 * location.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * Resource name for the location, which may vary between implementations.
 		 * For example: `"projects/example-project/locations/us-east1"`
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -88,13 +88,13 @@ export namespace MyNS {
 	export interface ListNodesResponse {
 
 		/** The next page token or empty if none. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The listed nodes. */
-		nodes?: Array<Node>;
+		nodes?: Array<Node> | null;
 
 		/** Locations that could not be reached. */
-		unreachable?: Array<string>;
+		unreachable?: Array<string> | null;
 	}
 
 
@@ -105,7 +105,7 @@ export namespace MyNS {
 		 * The type of hardware accelerators associated with this node.
 		 * Required.
 		 */
-		acceleratorType?: string;
+		acceleratorType?: string | null;
 
 		/**
 		 * The CIDR block that the TPU node will use when selecting an IP address.
@@ -117,56 +117,56 @@ export namespace MyNS {
 		 * provided network is peered with another network that is using that CIDR
 		 * block.
 		 */
-		cidrBlock?: string;
+		cidrBlock?: string | null;
 
 		/** Output only. The time when the node was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** The user-supplied description of the TPU. Maximum of 512 characters. */
-		description?: string;
+		description?: string | null;
 
 		/** The health status of the TPU node. */
-		health?: NodeHealth;
+		health?: NodeHealth | null;
 
 		/**
 		 * Output only. If this field is populated, it contains a description of why the TPU Node
 		 * is unhealthy.
 		 */
-		healthDescription?: string;
+		healthDescription?: string | null;
 
 		/**
 		 * Output only. DEPRECATED! Use network_endpoints instead.
 		 * The network address for the TPU Node as visible to Compute Engine
 		 * instances.
 		 */
-		ipAddress?: string;
+		ipAddress?: string | null;
 
 		/** Resource labels to represent user-provided metadata. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** Output only. The immutable name of the TPU */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The name of a network they wish to peer the TPU node to. It must be a
 		 * preexisting Compute Engine network inside of the project on which this API
 		 * has been activated. If none is provided, "default" will be used.
 		 */
-		network?: string;
+		network?: string | null;
 
 		/**
 		 * Output only. The network endpoints where TPU workers can be accessed and
 		 * sent work. It is recommended that Tensorflow clients of the node reach out
 		 * to the 0th entry in this map first.
 		 */
-		networkEndpoints?: Array<NetworkEndpoint>;
+		networkEndpoints?: Array<NetworkEndpoint> | null;
 
 		/**
 		 * Output only. DEPRECATED! Use network_endpoints instead.
 		 * The network port for the TPU Node as visible to Compute Engine instances.
 		 */
-		port?: string;
-		schedulingConfig?: SchedulingConfig;
+		port?: string | null;
+		schedulingConfig?: SchedulingConfig | null;
 
 		/**
 		 * Output only. The service account used to run the tensor flow services within the node.
@@ -174,16 +174,16 @@ export namespace MyNS {
 		 * Tensorflow job running in the Node, this account must have permissions to
 		 * that data.
 		 */
-		serviceAccount?: string;
+		serviceAccount?: string | null;
 
 		/** Output only. The current state for the TPU Node. */
-		state?: NodeState;
+		state?: NodeState | null;
 
 		/**
 		 * The version of Tensorflow running in the Node.
 		 * Required.
 		 */
-		tensorflowVersion?: string;
+		tensorflowVersion?: string | null;
 	}
 
 	export enum NodeHealth { HEALTH_UNSPECIFIED = 0, HEALTHY = 1, DEPRECATED_UNHEALTHY = 2, TIMEOUT = 3, UNHEALTHY_TENSORFLOW = 4, UNHEALTHY_MAINTENANCE = 5 }
@@ -193,17 +193,17 @@ export namespace MyNS {
 	export interface NetworkEndpoint {
 
 		/** The IP address of this network endpoint. */
-		ipAddress?: string;
+		ipAddress?: string | null;
 
 		/** The port of this network endpoint. */
-		port?: number;
+		port?: number | null;
 	}
 
 	export interface SchedulingConfig {
-		preemptible?: boolean;
+		preemptible?: boolean | null;
 
 		/** Whether the node is created under a reservation. */
-		reserved?: boolean;
+		reserved?: boolean | null;
 	}
 
 	export enum NodeState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, RESTARTING = 3, REIMAGING = 4, DELETING = 5, REPAIRING = 6, STOPPED = 7, STOPPING = 8, STARTING = 9, PREEMPTED = 10, TERMINATED = 11, HIDING = 12, HIDDEN = 13, UNHIDING = 14 }
@@ -213,10 +213,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -231,7 +231,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -241,7 +241,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -249,14 +249,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -268,7 +268,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -283,20 +283,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -304,13 +304,13 @@ export namespace MyNS {
 	export interface ListTensorFlowVersionsResponse {
 
 		/** The next page token or empty if none. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The listed nodes. */
-		tensorflowVersions?: Array<TensorFlowVersion>;
+		tensorflowVersions?: Array<TensorFlowVersion> | null;
 
 		/** Locations that could not be reached. */
-		unreachable?: Array<string>;
+		unreachable?: Array<string> | null;
 	}
 
 
@@ -318,10 +318,10 @@ export namespace MyNS {
 	export interface TensorFlowVersion {
 
 		/** The resource name. */
-		name?: string;
+		name?: string | null;
 
 		/** the tensorflow version. */
-		version?: string;
+		version?: string | null;
 	}
 
 
@@ -329,7 +329,7 @@ export namespace MyNS {
 	export interface OperationMetadata {
 
 		/** [Output only] API version used to start the operation. */
-		apiVersion?: string;
+		apiVersion?: string | null;
 
 		/**
 		 * [Output only] Identifies whether the user has requested cancellation
@@ -337,22 +337,22 @@ export namespace MyNS {
 		 * have Operation.error value with a google.rpc.Status.code of 1,
 		 * corresponding to `Code.CANCELLED`.
 		 */
-		cancelRequested?: boolean;
+		cancelRequested?: boolean | null;
 
 		/** [Output only] The time the operation was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** [Output only] The time the operation finished running. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** [Output only] Human-readable status of the operation, if any. */
-		statusDetail?: string;
+		statusDetail?: string | null;
 
 		/** [Output only] Server-defined resource path for the target of the operation. */
-		target?: string;
+		target?: string | null;
 
 		/** [Output only] Name of the verb executed by the operation. */
-		verb?: string;
+		verb?: string | null;
 	}
 
 
@@ -360,7 +360,7 @@ export namespace MyNS {
 	export interface ReimageNodeRequest {
 
 		/** The version for reimage to create. */
-		tensorflowVersion?: string;
+		tensorflowVersion?: string | null;
 	}
 
 
@@ -407,7 +407,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Tpu_projects_locations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Tpu_projects_locations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/locations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -428,7 +428,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Tpu_projects_locations_operations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Tpu_projects_locations_operations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/operations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -491,7 +491,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Tpu_projects_locations_acceleratorTypes_list(parent: string, filter: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Tpu_projects_locations_acceleratorTypes_list(parent: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/acceleratorTypes&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -503,7 +503,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Tpu_projects_locations_nodes_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Tpu_projects_locations_nodes_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/nodes&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -514,7 +514,7 @@ export namespace MyNS {
 		 * @param {string} nodeId The unqualified resource name.
 		 * @return {void} Successful response
 		 */
-		Tpu_projects_locations_nodes_create(parent: string, nodeId: string, requestBody: Node): Observable<HttpResponse<string>> {
+		Tpu_projects_locations_nodes_create(parent: string, nodeId: string | null | undefined, requestBody: Node): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/nodes&nodeId=' + (nodeId == null ? '' : encodeURIComponent(nodeId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -528,7 +528,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Tpu_projects_locations_tensorflowVersions_list(parent: string, filter: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Tpu_projects_locations_tensorflowVersions_list(parent: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/tensorflowVersions&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 	}

@@ -7,42 +7,42 @@ export namespace MyNS {
 	export interface Account {
 
 		/** Indicates whether the merchant sells adult content. */
-		adultContent?: boolean;
+		adultContent?: boolean | null;
 
 		/** List of linked AdWords accounts that are active or pending approval. To create a new link request, add a new link with status `active` to the list. It will remain in a `pending` state until approved or rejected either in the AdWords interface or through the  AdWords API. To delete an active link, or to cancel a link request, remove it from the list. */
-		adwordsLinks?: Array<AccountAdwordsLink>;
-		businessInformation?: AccountBusinessInformation;
-		googleMyBusinessLink?: AccountGoogleMyBusinessLink;
+		adwordsLinks?: Array<AccountAdwordsLink> | null;
+		businessInformation?: AccountBusinessInformation | null;
+		googleMyBusinessLink?: AccountGoogleMyBusinessLink | null;
 
 		/** Required for update. Merchant Center account ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#account`" */
-		kind?: string;
+		kind?: string | null;
 
 		/** Required. Display name for the account. */
-		name?: string;
+		name?: string | null;
 
 		/** [DEPRECATED] This field is never returned and will be ignored if provided. */
-		reviewsUrl?: string;
+		reviewsUrl?: string | null;
 
 		/** Client-specific, locally-unique, internal ID for the child account. */
-		sellerId?: string;
+		sellerId?: string | null;
 
 		/** Users with access to the account. Every account (except for subaccounts) must have at least one admin user. */
-		users?: Array<AccountUser>;
+		users?: Array<AccountUser> | null;
 
 		/** The merchant's website. */
-		websiteUrl?: string;
+		websiteUrl?: string | null;
 
 		/** List of linked YouTube channels that are active or pending approval. To create a new link request, add a new link with status `active` to the list. It will remain in a `pending` state until approved or rejected in the YT Creator Studio interface. To delete an active link, or to cancel a link request, remove it from the list. */
-		youtubeChannelLinks?: Array<AccountYouTubeChannelLink>;
+		youtubeChannelLinks?: Array<AccountYouTubeChannelLink> | null;
 	}
 
 	export interface AccountAdwordsLink {
 
 		/** Customer ID of the AdWords account. */
-		adwordsId?: string;
+		adwordsId?: string | null;
 
 		/**
 		 * Status of the link between this Merchant Center account and the AdWords account. Upon retrieval, it represents the actual status of the link and can be either `active` if it was approved in Google AdWords or `pending` if it's pending approval. Upon insertion, it represents the intended status of the link. Re-uploading a link with status `active` when it's still pending or with status `pending` when it's already active will have no effect: the status will remain unchanged. Re-uploading a link with deprecated status `inactive` is equivalent to not submitting the link at all and will delete the link if it was active or cancel the link request if it was pending.
@@ -50,51 +50,51 @@ export namespace MyNS {
 		 * - "`active`"
 		 * - "`pending`"
 		 */
-		status?: string;
+		status?: string | null;
 	}
 
 	export interface AccountBusinessInformation {
-		address?: AccountAddress;
-		customerService?: AccountCustomerService;
+		address?: AccountAddress | null;
+		customerService?: AccountCustomerService | null;
 
 		/** The phone number of the business. */
-		phoneNumber?: string;
+		phoneNumber?: string | null;
 	}
 
 	export interface AccountAddress {
 
 		/** CLDR country code (e.g. "US"). */
-		country?: string;
+		country?: string | null;
 
 		/** City, town or commune. May also include dependent localities or sublocalities (e.g. neighborhoods or suburbs). */
-		locality?: string;
+		locality?: string | null;
 
 		/** Postal code or ZIP (e.g. "94043"). */
-		postalCode?: string;
+		postalCode?: string | null;
 
 		/** Top-level administrative subdivision of the country. For example, a state like California ("CA") or a province like Quebec ("QC"). */
-		region?: string;
+		region?: string | null;
 
 		/** Street-level part of the address. */
-		streetAddress?: string;
+		streetAddress?: string | null;
 	}
 
 	export interface AccountCustomerService {
 
 		/** Customer service email. */
-		email?: string;
+		email?: string | null;
 
 		/** Customer service phone number. */
-		phoneNumber?: string;
+		phoneNumber?: string | null;
 
 		/** Customer service URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface AccountGoogleMyBusinessLink {
 
 		/** The GMB email address of which a specific account within a GMB account. A sample account within a GMB account could be a business account with set of locations, managed under the GMB account. */
-		gmbEmail?: string;
+		gmbEmail?: string | null;
 
 		/**
 		 * Status of the link between this Merchant Center account and the GMB account.
@@ -102,43 +102,43 @@ export namespace MyNS {
 		 * - "`active`"
 		 * - "`pending`"
 		 */
-		status?: string;
+		status?: string | null;
 	}
 
 	export interface AccountUser {
 
 		/** Whether user is an admin. */
-		admin?: boolean;
+		admin?: boolean | null;
 
 		/** User's email address. */
-		emailAddress?: string;
+		emailAddress?: string | null;
 
 		/** Whether user is an order manager. */
-		orderManager?: boolean;
+		orderManager?: boolean | null;
 
 		/** Whether user can access payment statements. */
-		paymentsAnalyst?: boolean;
+		paymentsAnalyst?: boolean | null;
 
 		/** Whether user can manage payment settings. */
-		paymentsManager?: boolean;
+		paymentsManager?: boolean | null;
 	}
 
 	export interface AccountYouTubeChannelLink {
 
 		/** Channel ID. */
-		channelId?: string;
+		channelId?: string | null;
 
 		/** Status of the link between this Merchant Center account and the YouTube channel. Upon retrieval, it represents the actual status of the link and can be either `active` if it was approved in YT Creator Studio or `pending` if it's pending approval. Upon insertion, it represents the intended status of the link. Re-uploading a link with status `active` when it's still pending or with status `pending` when it's already active will have no effect: the status will remain unchanged. Re-uploading a link with deprecated status `inactive` is equivalent to not submitting the link at all and will delete the link if it was active or cancel the link request if it was pending. */
-		status?: string;
+		status?: string | null;
 	}
 
 	export interface AccountIdentifier {
 
 		/** The aggregator ID, set for aggregators and subaccounts (in that case, it represents the aggregator of the subaccount). */
-		aggregatorId?: string;
+		aggregatorId?: string | null;
 
 		/** The merchant account ID, set for individual accounts and subaccounts. */
-		merchantId?: string;
+		merchantId?: string | null;
 	}
 
 
@@ -146,40 +146,40 @@ export namespace MyNS {
 	export interface AccountStatus {
 
 		/** The ID of the account for which the status is reported. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** A list of account level issues. */
-		accountLevelIssues?: Array<AccountStatusAccountLevelIssue>;
+		accountLevelIssues?: Array<AccountStatusAccountLevelIssue> | null;
 
 		/** DEPRECATED - never populated. */
-		dataQualityIssues?: Array<AccountStatusDataQualityIssue>;
+		dataQualityIssues?: Array<AccountStatusDataQualityIssue> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#accountStatus`" */
-		kind?: string;
+		kind?: string | null;
 
 		/** List of product-related data by channel, destination, and country. Data in this field may be delayed by up to 30 minutes. */
-		products?: Array<AccountStatusProducts>;
+		products?: Array<AccountStatusProducts> | null;
 
 		/** Whether the account's website is claimed or not. */
-		websiteClaimed?: boolean;
+		websiteClaimed?: boolean | null;
 	}
 
 	export interface AccountStatusAccountLevelIssue {
 
 		/** Country for which this issue is reported. */
-		country?: string;
+		country?: string | null;
 
 		/** The destination the issue applies to. */
-		destination?: string;
+		destination?: string | null;
 
 		/** Additional details about the issue. */
-		detail?: string;
+		detail?: string | null;
 
 		/** The URL of a web page to help resolving this issue. */
-		documentation?: string;
+		documentation?: string | null;
 
 		/** Issue identifier. */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Severity of the issue.
@@ -188,22 +188,22 @@ export namespace MyNS {
 		 * - "`error`"
 		 * - "`suggestion`"
 		 */
-		severity?: string;
+		severity?: string | null;
 
 		/** Short description of the issue. */
-		title?: string;
+		title?: string | null;
 	}
 
 	export interface AccountStatusDataQualityIssue {
-		country?: string;
-		destination?: string;
-		detail?: string;
-		displayedValue?: string;
-		exampleItems?: Array<AccountStatusExampleItem>;
-		id?: string;
-		lastChecked?: string;
-		location?: string;
-		numItems?: string;
+		country?: string | null;
+		destination?: string | null;
+		detail?: string | null;
+		displayedValue?: string | null;
+		exampleItems?: Array<AccountStatusExampleItem> | null;
+		id?: string | null;
+		lastChecked?: string | null;
+		location?: string | null;
+		numItems?: string | null;
 
 		/**
 		 * Acceptable values are:
@@ -211,16 +211,16 @@ export namespace MyNS {
 		 * - "`error`"
 		 * - "`suggestion`"
 		 */
-		severity?: string;
-		submittedValue?: string;
+		severity?: string | null;
+		submittedValue?: string | null;
 	}
 
 	export interface AccountStatusExampleItem {
-		itemId?: string;
-		link?: string;
-		submittedValue?: string;
-		title?: string;
-		valueOnLandingPage?: string;
+		itemId?: string | null;
+		link?: string | null;
+		submittedValue?: string | null;
+		title?: string | null;
+		valueOnLandingPage?: string | null;
 	}
 
 	export interface AccountStatusProducts {
@@ -231,59 +231,59 @@ export namespace MyNS {
 		 * - "`local`"
 		 * - "`online`"
 		 */
-		channel?: string;
+		channel?: string | null;
 
 		/** The country the data applies to. */
-		country?: string;
+		country?: string | null;
 
 		/** The destination the data applies to. */
-		destination?: string;
+		destination?: string | null;
 
 		/** List of item-level issues. */
-		itemLevelIssues?: Array<AccountStatusItemLevelIssue>;
-		statistics?: AccountStatusStatistics;
+		itemLevelIssues?: Array<AccountStatusItemLevelIssue> | null;
+		statistics?: AccountStatusStatistics | null;
 	}
 
 	export interface AccountStatusItemLevelIssue {
 
 		/** The attribute's name, if the issue is caused by a single attribute. */
-		attributeName?: string;
+		attributeName?: string | null;
 
 		/** The error code of the issue. */
-		code?: string;
+		code?: string | null;
 
 		/** A short issue description in English. */
-		description?: string;
+		description?: string | null;
 
 		/** A detailed issue description in English. */
-		detail?: string;
+		detail?: string | null;
 
 		/** The URL of a web page to help with resolving this issue. */
-		documentation?: string;
+		documentation?: string | null;
 
 		/** Number of items with this issue. */
-		numItems?: string;
+		numItems?: string | null;
 
 		/** Whether the issue can be resolved by the merchant. */
-		resolution?: string;
+		resolution?: string | null;
 
 		/** How this issue affects serving of the offer. */
-		servability?: string;
+		servability?: string | null;
 	}
 
 	export interface AccountStatusStatistics {
 
 		/** Number of active offers. */
-		active?: string;
+		active?: string | null;
 
 		/** Number of disapproved offers. */
-		disapproved?: string;
+		disapproved?: string | null;
 
 		/** Number of expiring offers. */
-		expiring?: string;
+		expiring?: string | null;
 
 		/** Number of pending offers. */
-		pending?: string;
+		pending?: string | null;
 	}
 
 
@@ -291,13 +291,13 @@ export namespace MyNS {
 	export interface AccountTax {
 
 		/** Required. The ID of the account to which these account tax settings belong. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#accountTax". */
-		kind?: string;
+		kind?: string | null;
 
 		/** Tax rules. Updating the tax rules will enable US taxes (not reversible). Defining no rules is equivalent to not charging tax at all. */
-		rules?: Array<AccountTaxTaxRule>;
+		rules?: Array<AccountTaxTaxRule> | null;
 	}
 
 
@@ -305,19 +305,19 @@ export namespace MyNS {
 	export interface AccountTaxTaxRule {
 
 		/** Country code in which tax is applicable. */
-		country?: string;
+		country?: string | null;
 
 		/** Required. State (or province) is which the tax is applicable, described by its location ID (also called criteria ID). */
-		locationId?: string;
+		locationId?: string | null;
 
 		/** Explicit tax rate in percent, represented as a floating point number without the percentage character. Must not be negative. */
-		ratePercent?: string;
+		ratePercent?: string | null;
 
 		/** If true, shipping charges are also taxed. */
-		shippingTaxed?: boolean;
+		shippingTaxed?: boolean | null;
 
 		/** Whether the tax rate is taken from a global tax table or specified explicitly. */
-		useGlobalRate?: boolean;
+		useGlobalRate?: boolean | null;
 	}
 
 	export interface AccountsAuthInfoResponse {
@@ -328,22 +328,22 @@ export namespace MyNS {
 		 * - For an aggregator: only the aggregator ID is defined
 		 * - For a subaccount of an MCA: both the merchant ID and the aggregator ID are defined.
 		 */
-		accountIdentifiers?: Array<AccountIdentifier>;
+		accountIdentifiers?: Array<AccountIdentifier> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#accountsAuthInfoResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface AccountsClaimWebsiteResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#accountsClaimWebsiteResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface AccountsCustomBatchRequest {
 
 		/** The request entries to be processed in the batch. */
-		entries?: Array<AccountsCustomBatchRequestEntry>;
+		entries?: Array<AccountsCustomBatchRequestEntry> | null;
 	}
 
 
@@ -351,20 +351,20 @@ export namespace MyNS {
 	export interface AccountsCustomBatchRequestEntry {
 
 		/** Account data. After the creation of a new account it may take a few minutes before it is fully operational. The methods delete, insert, and update require the admin role. */
-		account?: Account;
+		account?: Account | null;
 
 		/** The ID of the targeted account. Only defined if the method is not `insert`. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** An entry ID, unique within the batch request. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** Whether the account should be deleted if the account has offers. Only applicable if the method is `delete`. */
-		force?: boolean;
-		linkRequest?: AccountsCustomBatchRequestEntryLinkRequest;
+		force?: boolean | null;
+		linkRequest?: AccountsCustomBatchRequestEntryLinkRequest | null;
 
 		/** The ID of the managing account. */
-		merchantId?: string;
+		merchantId?: string | null;
 
 		/**
 		 * The method of the batch entry.
@@ -376,10 +376,10 @@ export namespace MyNS {
 		 * - "`link`"
 		 * - "`update`"
 		 */
-		method?: string;
+		method?: string | null;
 
 		/** Only applicable if the method is `claimwebsite`. Indicates whether or not to take the claim from another account in case there is a conflict. */
-		overwrite?: boolean;
+		overwrite?: boolean | null;
 	}
 
 	export interface AccountsCustomBatchRequestEntryLinkRequest {
@@ -391,7 +391,7 @@ export namespace MyNS {
 		 * - "`remove`"
 		 * - "`request`"
 		 */
-		action?: string;
+		action?: string | null;
 
 		/**
 		 * Type of the link between the two accounts.
@@ -399,19 +399,19 @@ export namespace MyNS {
 		 * - "`channelPartner`"
 		 * - "`eCommercePlatform`"
 		 */
-		linkType?: string;
+		linkType?: string | null;
 
 		/** The ID of the linked account. */
-		linkedAccountId?: string;
+		linkedAccountId?: string | null;
 	}
 
 	export interface AccountsCustomBatchResponse {
 
 		/** The result of the execution of the batch requests. */
-		entries?: Array<AccountsCustomBatchResponseEntry>;
+		entries?: Array<AccountsCustomBatchResponseEntry> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#accountsCustomBatchResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -419,16 +419,16 @@ export namespace MyNS {
 	export interface AccountsCustomBatchResponseEntry {
 
 		/** Account data. After the creation of a new account it may take a few minutes before it is fully operational. The methods delete, insert, and update require the admin role. */
-		account?: Account;
+		account?: Account | null;
 
 		/** The ID of the request entry this entry responds to. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** A list of errors returned by a failed batch entry. */
-		errors?: Errors;
+		errors?: Errors | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#accountsCustomBatchResponseEntry`" */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * Deprecated. This field is never set.
@@ -437,7 +437,7 @@ export namespace MyNS {
 		 * - "`inactive`"
 		 * - "`pending`"
 		 */
-		linkStatus?: string;
+		linkStatus?: string | null;
 	}
 
 
@@ -445,13 +445,13 @@ export namespace MyNS {
 	export interface Errors {
 
 		/** The HTTP status of the first error in `errors`. */
-		code?: string;
+		code?: string | null;
 
 		/** A list of errors. */
-		errors?: Array<Error>;
+		errors?: Array<Error> | null;
 
 		/** The message of the first error in `errors`. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -459,13 +459,13 @@ export namespace MyNS {
 	export interface Error {
 
 		/** The domain of the error. */
-		domain?: string;
+		domain?: string | null;
 
 		/** A description of the error. */
-		message?: string;
+		message?: string | null;
 
 		/** The error code. */
-		reason?: string;
+		reason?: string | null;
 	}
 
 	export interface AccountsLinkRequest {
@@ -477,7 +477,7 @@ export namespace MyNS {
 		 * - "`remove`"
 		 * - "`request`"
 		 */
-		action?: string;
+		action?: string | null;
 
 		/**
 		 * Type of the link between the two accounts.
@@ -485,32 +485,32 @@ export namespace MyNS {
 		 * - "`channelPartner`"
 		 * - "`eCommercePlatform`"
 		 */
-		linkType?: string;
+		linkType?: string | null;
 
 		/** The ID of the linked account. */
-		linkedAccountId?: string;
+		linkedAccountId?: string | null;
 	}
 
 	export interface AccountsLinkResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#accountsLinkResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface AccountsListResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#accountsListResponse". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The token for the retrieval of the next page of accounts. */
-		nextPageToken?: string;
-		resources?: Array<Account>;
+		nextPageToken?: string | null;
+		resources?: Array<Account> | null;
 	}
 
 	export interface AccountstatusesCustomBatchRequest {
 
 		/** The request entries to be processed in the batch. */
-		entries?: Array<AccountstatusesCustomBatchRequestEntry>;
+		entries?: Array<AccountstatusesCustomBatchRequestEntry> | null;
 	}
 
 
@@ -518,32 +518,32 @@ export namespace MyNS {
 	export interface AccountstatusesCustomBatchRequestEntry {
 
 		/** The ID of the (sub-)account whose status to get. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** An entry ID, unique within the batch request. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination. */
-		destinations?: Array<string>;
+		destinations?: Array<string> | null;
 
 		/** The ID of the managing account. */
-		merchantId?: string;
+		merchantId?: string | null;
 
 		/**
 		 * The method of the batch entry.
 		 * Acceptable values are:
 		 * - "`get`"
 		 */
-		method?: string;
+		method?: string | null;
 	}
 
 	export interface AccountstatusesCustomBatchResponse {
 
 		/** The result of the execution of the batch requests. */
-		entries?: Array<AccountstatusesCustomBatchResponseEntry>;
+		entries?: Array<AccountstatusesCustomBatchResponseEntry> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#accountstatusesCustomBatchResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -551,29 +551,29 @@ export namespace MyNS {
 	export interface AccountstatusesCustomBatchResponseEntry {
 
 		/** The status of an account, i.e., information about its products, which is computed offline and not returned immediately at insertion time. */
-		accountStatus?: AccountStatus;
+		accountStatus?: AccountStatus | null;
 
 		/** The ID of the request entry this entry responds to. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** A list of errors returned by a failed batch entry. */
-		errors?: Errors;
+		errors?: Errors | null;
 	}
 
 	export interface AccountstatusesListResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#accountstatusesListResponse". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The token for the retrieval of the next page of account statuses. */
-		nextPageToken?: string;
-		resources?: Array<AccountStatus>;
+		nextPageToken?: string | null;
+		resources?: Array<AccountStatus> | null;
 	}
 
 	export interface AccounttaxCustomBatchRequest {
 
 		/** The request entries to be processed in the batch. */
-		entries?: Array<AccounttaxCustomBatchRequestEntry>;
+		entries?: Array<AccounttaxCustomBatchRequestEntry> | null;
 	}
 
 
@@ -581,16 +581,16 @@ export namespace MyNS {
 	export interface AccounttaxCustomBatchRequestEntry {
 
 		/** The ID of the account for which to get/update account tax settings. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** The tax settings of a merchant account. All methods require the admin role. */
-		accountTax?: AccountTax;
+		accountTax?: AccountTax | null;
 
 		/** An entry ID, unique within the batch request. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** The ID of the managing account. */
-		merchantId?: string;
+		merchantId?: string | null;
 
 		/**
 		 * The method of the batch entry.
@@ -598,16 +598,16 @@ export namespace MyNS {
 		 * - "`get`"
 		 * - "`update`"
 		 */
-		method?: string;
+		method?: string | null;
 	}
 
 	export interface AccounttaxCustomBatchResponse {
 
 		/** The result of the execution of the batch requests. */
-		entries?: Array<AccounttaxCustomBatchResponseEntry>;
+		entries?: Array<AccounttaxCustomBatchResponseEntry> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#accounttaxCustomBatchResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -615,83 +615,83 @@ export namespace MyNS {
 	export interface AccounttaxCustomBatchResponseEntry {
 
 		/** The tax settings of a merchant account. All methods require the admin role. */
-		accountTax?: AccountTax;
+		accountTax?: AccountTax | null;
 
 		/** The ID of the request entry this entry responds to. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** A list of errors returned by a failed batch entry. */
-		errors?: Errors;
+		errors?: Errors | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#accounttaxCustomBatchResponseEntry`" */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface AccounttaxListResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#accounttaxListResponse". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The token for the retrieval of the next page of account tax settings. */
-		nextPageToken?: string;
-		resources?: Array<AccountTax>;
+		nextPageToken?: string | null;
+		resources?: Array<AccountTax> | null;
 	}
 
 	export interface Amount {
-		pretax?: Price;
-		tax?: Price;
+		pretax?: Price | null;
+		tax?: Price | null;
 	}
 
 	export interface Price {
 
 		/** The currency of the price. */
-		currency?: string;
+		currency?: string | null;
 
 		/** The price represented as a number. */
-		value?: string;
+		value?: string | null;
 	}
 
 	export interface BusinessDayConfig {
 
 		/** Regular business days. May not be empty. */
-		businessDays?: Array<string>;
+		businessDays?: Array<string> | null;
 	}
 
 	export interface CarrierRate {
 
 		/** Carrier service, such as `"UPS"` or `"Fedex"`. The list of supported carriers can be retrieved via the `getSupportedCarriers` method. Required. */
-		carrierName?: string;
+		carrierName?: string | null;
 
 		/** Carrier service, such as `"ground"` or `"2 days"`. The list of supported services for a carrier can be retrieved via the `getSupportedCarriers` method. Required. */
-		carrierService?: string;
-		flatAdjustment?: Price;
+		carrierService?: string | null;
+		flatAdjustment?: Price | null;
 
 		/** Name of the carrier rate. Must be unique per rate group. Required. */
-		name?: string;
+		name?: string | null;
 
 		/** Shipping origin for this carrier rate. Required. */
-		originPostalCode?: string;
+		originPostalCode?: string | null;
 
 		/** Multiplicative shipping rate modifier as a number in decimal notation. Can be negative. For example `"5.4"` increases the rate by 5.4%, `"-3"` decreases the rate by 3%. Optional. */
-		percentageAdjustment?: string;
+		percentageAdjustment?: string | null;
 	}
 
 	export interface CarriersCarrier {
 
 		/** The CLDR country code of the carrier (e.g., "US"). Always present. */
-		country?: string;
+		country?: string | null;
 
 		/** The name of the carrier (e.g., `"UPS"`). Always present. */
-		name?: string;
+		name?: string | null;
 
 		/** A list of supported services (e.g., `"ground"`) for that carrier. Contains at least one service. */
-		services?: Array<string>;
+		services?: Array<string> | null;
 	}
 
 	export interface CustomAttribute {
 
 		/** The name of the attribute. Underscores will be replaced by spaces upon insertion. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The type of the attribute.
@@ -706,28 +706,28 @@ export namespace MyNS {
 		 * - "`time`"
 		 * - "`url`"
 		 */
-		type?: string;
+		type?: string | null;
 
 		/** Free-form unit of the attribute. Unit can only be used for values of type int, float, or price. */
-		unit?: string;
+		unit?: string | null;
 
 		/** The value of the attribute. */
-		value?: string;
+		value?: string | null;
 	}
 
 	export interface CustomGroup {
 
 		/** The sub-attributes. */
-		attributes?: Array<CustomAttribute>;
+		attributes?: Array<CustomAttribute> | null;
 
 		/** The name of the group. Underscores will be replaced by spaces upon insertion. */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface CustomerReturnReason {
 
 		/** Description of the reason. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Code of the return reason.
@@ -747,19 +747,19 @@ export namespace MyNS {
 		 * - "`receivedTooLate`"
 		 * - "`undeliverable`"
 		 */
-		reasonCode?: string;
+		reasonCode?: string | null;
 	}
 
 	export interface CutoffTime {
 
 		/** Hour of the cutoff time until which an order has to be placed to be processed in the same day. Required. */
-		hour?: string;
+		hour?: string | null;
 
 		/** Minute of the cutoff time until which an order has to be placed to be processed in the same day. Required. */
-		minute?: string;
+		minute?: string | null;
 
 		/** Timezone identifier for the cutoff time. A list of identifiers can be found in  the AdWords API documentation. E.g. "Europe/Zurich". Required. */
-		timezone?: string;
+		timezone?: string | null;
 	}
 
 
@@ -767,10 +767,10 @@ export namespace MyNS {
 	export interface Datafeed {
 
 		/** The two-letter ISO 639-1 language in which the attributes are defined in the data feed. */
-		attributeLanguage?: string;
+		attributeLanguage?: string | null;
 
 		/** [DEPRECATED] Please use targets[].language instead. The two-letter ISO 639-1 language of the items in the feed. Must be a valid language for `targetCountry`. */
-		contentLanguage?: string;
+		contentLanguage?: string | null;
 
 		/**
 		 * Required. The type of data feed. For product inventory feeds, only feeds for local stores, not online stores, are supported.
@@ -779,32 +779,32 @@ export namespace MyNS {
 		 * - "`product inventory`"
 		 * - "`products`"
 		 */
-		contentType?: string;
+		contentType?: string | null;
 
 		/** The required fields vary based on the frequency of fetching. For a monthly fetch schedule, day_of_month and hour are required. For a weekly fetch schedule, weekday and hour are required. For a daily fetch schedule, only hour is required. */
-		fetchSchedule?: DatafeedFetchSchedule;
+		fetchSchedule?: DatafeedFetchSchedule | null;
 
 		/** Required. The filename of the feed. All feeds must have a unique file name. */
-		fileName?: string;
-		format?: DatafeedFormat;
+		fileName?: string | null;
+		format?: DatafeedFormat | null;
 
 		/** Required for update. The ID of the data feed. */
-		id?: string;
+		id?: string | null;
 
 		/** [DEPRECATED] Please use targets[].includedDestinations instead. The list of intended destinations (corresponds to checked check boxes in Merchant Center). */
-		intendedDestinations?: Array<string>;
+		intendedDestinations?: Array<string> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#datafeed`" */
-		kind?: string;
+		kind?: string | null;
 
 		/** Required for insert. A descriptive name of the data feed. */
-		name?: string;
+		name?: string | null;
 
 		/** [DEPRECATED] Please use targets[].country instead. The country where the items in the feed will be included in the search index, represented as a CLDR territory code. */
-		targetCountry?: string;
+		targetCountry?: string | null;
 
 		/** The targets this feed should apply to (country, language, destinations). */
-		targets?: Array<DatafeedTarget>;
+		targets?: Array<DatafeedTarget> | null;
 	}
 
 
@@ -812,28 +812,28 @@ export namespace MyNS {
 	export interface DatafeedFetchSchedule {
 
 		/** The day of the month the feed file should be fetched (1-31). */
-		dayOfMonth?: string;
+		dayOfMonth?: string | null;
 
 		/** The URL where the feed file can be fetched. Google Merchant Center will support automatic scheduled uploads using the HTTP, HTTPS, FTP, or SFTP protocols, so the value will need to be a valid link using one of those four protocols. */
-		fetchUrl?: string;
+		fetchUrl?: string | null;
 
 		/** The hour of the day the feed file should be fetched (0-23). */
-		hour?: string;
+		hour?: string | null;
 
 		/** The minute of the hour the feed file should be fetched (0-59). Read-only. */
-		minuteOfHour?: string;
+		minuteOfHour?: string | null;
 
 		/** An optional password for fetch_url. */
-		password?: string;
+		password?: string | null;
 
 		/** Whether the scheduled fetch is paused or not. */
-		paused?: boolean;
+		paused?: boolean | null;
 
 		/** Time zone used for schedule. UTC by default. E.g., "America/Los_Angeles". */
-		timeZone?: string;
+		timeZone?: string | null;
 
 		/** An optional user name for fetch_url. */
-		username?: string;
+		username?: string | null;
 
 		/**
 		 * The day of the week the feed file should be fetched.
@@ -846,7 +846,7 @@ export namespace MyNS {
 		 * - "`saturday`"
 		 * - "`sunday`"
 		 */
-		weekday?: string;
+		weekday?: string | null;
 	}
 
 	export interface DatafeedFormat {
@@ -858,7 +858,7 @@ export namespace MyNS {
 		 * - "`tab`"
 		 * - "`tilde`"
 		 */
-		columnDelimiter?: string;
+		columnDelimiter?: string | null;
 
 		/**
 		 * Character encoding scheme of the data feed. If not specified, the encoding will be auto-detected.
@@ -869,7 +869,7 @@ export namespace MyNS {
 		 * - "`utf-8`"
 		 * - "`windows-1252`"
 		 */
-		fileEncoding?: string;
+		fileEncoding?: string | null;
 
 		/**
 		 * Specifies how double quotes are interpreted. If not specified, the mode will be auto-detected. Ignored for non-DSV data feeds.
@@ -877,16 +877,16 @@ export namespace MyNS {
 		 * - "`normal character`"
 		 * - "`value quoting`"
 		 */
-		quotingMode?: string;
+		quotingMode?: string | null;
 	}
 
 	export interface DatafeedTarget {
 
 		/** The country where the items in the feed will be included in the search index, represented as a  CLDR territory code. */
-		country?: string;
+		country?: string | null;
 
 		/** The list of destinations to exclude for this target (corresponds to unchecked check boxes in Merchant Center). */
-		excludedDestinations?: Array<string>;
+		excludedDestinations?: Array<string> | null;
 
 		/**
 		 * The list of destinations to include for this target (corresponds to checked check boxes in Merchant Center). Default destinations are always included unless provided in `excludedDestinations`.
@@ -896,10 +896,10 @@ export namespace MyNS {
 		 * - ShoppingActions
 		 * - SurfacesAcrossGoogle
 		 */
-		includedDestinations?: Array<string>;
+		includedDestinations?: Array<string> | null;
 
 		/** The two-letter ISO 639-1 language of the items in the feed. Must be a valid language for `targets[].country`. */
-		language?: string;
+		language?: string | null;
 	}
 
 
@@ -907,28 +907,28 @@ export namespace MyNS {
 	export interface DatafeedStatus {
 
 		/** The country for which the status is reported, represented as a  CLDR territory code. */
-		country?: string;
+		country?: string | null;
 
 		/** The ID of the feed for which the status is reported. */
-		datafeedId?: string;
+		datafeedId?: string | null;
 
 		/** The list of errors occurring in the feed. */
-		errors?: Array<DatafeedStatusError>;
+		errors?: Array<DatafeedStatusError> | null;
 
 		/** The number of items in the feed that were processed. */
-		itemsTotal?: string;
+		itemsTotal?: string | null;
 
 		/** The number of items in the feed that were valid. */
-		itemsValid?: string;
+		itemsValid?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#datafeedStatus`" */
-		kind?: string;
+		kind?: string | null;
 
 		/** The two-letter ISO 639-1 language for which the status is reported. */
-		language?: string;
+		language?: string | null;
 
 		/** The last date at which the feed was uploaded. */
-		lastUploadDate?: string;
+		lastUploadDate?: string | null;
 
 		/**
 		 * The processing status of the feed.
@@ -938,10 +938,10 @@ export namespace MyNS {
 		 * - "`none`": The feed has not yet been processed. For example, a feed that has never been uploaded will have this processing status.
 		 * - "`success`": The feed was processed successfully, though some items might have had errors.
 		 */
-		processingStatus?: string;
+		processingStatus?: string | null;
 
 		/** The list of errors occurring in the feed. */
-		warnings?: Array<DatafeedStatusError>;
+		warnings?: Array<DatafeedStatusError> | null;
 	}
 
 
@@ -949,16 +949,16 @@ export namespace MyNS {
 	export interface DatafeedStatusError {
 
 		/** The code of the error, e.g., "validation/invalid_value". */
-		code?: string;
+		code?: string | null;
 
 		/** The number of occurrences of the error in the feed. */
-		count?: string;
+		count?: string | null;
 
 		/** A list of example occurrences of the error, grouped by product. */
-		examples?: Array<DatafeedStatusExample>;
+		examples?: Array<DatafeedStatusExample> | null;
 
 		/** The error message, e.g., "Invalid price". */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -966,19 +966,19 @@ export namespace MyNS {
 	export interface DatafeedStatusExample {
 
 		/** The ID of the example item. */
-		itemId?: string;
+		itemId?: string | null;
 
 		/** Line number in the data feed where the example is found. */
-		lineNumber?: string;
+		lineNumber?: string | null;
 
 		/** The problematic value. */
-		value?: string;
+		value?: string | null;
 	}
 
 	export interface DatafeedsCustomBatchRequest {
 
 		/** The request entries to be processed in the batch. */
-		entries?: Array<DatafeedsCustomBatchRequestEntry>;
+		entries?: Array<DatafeedsCustomBatchRequestEntry> | null;
 	}
 
 
@@ -986,16 +986,16 @@ export namespace MyNS {
 	export interface DatafeedsCustomBatchRequestEntry {
 
 		/** An entry ID, unique within the batch request. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** Datafeed configuration data. */
-		datafeed?: Datafeed;
+		datafeed?: Datafeed | null;
 
 		/** The ID of the data feed to get, delete or fetch. */
-		datafeedId?: string;
+		datafeedId?: string | null;
 
 		/** The ID of the managing account. */
-		merchantId?: string;
+		merchantId?: string | null;
 
 		/**
 		 * The method of the batch entry.
@@ -1006,16 +1006,16 @@ export namespace MyNS {
 		 * - "`insert`"
 		 * - "`update`"
 		 */
-		method?: string;
+		method?: string | null;
 	}
 
 	export interface DatafeedsCustomBatchResponse {
 
 		/** The result of the execution of the batch requests. */
-		entries?: Array<DatafeedsCustomBatchResponseEntry>;
+		entries?: Array<DatafeedsCustomBatchResponseEntry> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#datafeedsCustomBatchResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -1023,35 +1023,35 @@ export namespace MyNS {
 	export interface DatafeedsCustomBatchResponseEntry {
 
 		/** The ID of the request entry this entry responds to. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** Datafeed configuration data. */
-		datafeed?: Datafeed;
+		datafeed?: Datafeed | null;
 
 		/** A list of errors returned by a failed batch entry. */
-		errors?: Errors;
+		errors?: Errors | null;
 	}
 
 	export interface DatafeedsFetchNowResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#datafeedsFetchNowResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface DatafeedsListResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#datafeedsListResponse". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The token for the retrieval of the next page of datafeeds. */
-		nextPageToken?: string;
-		resources?: Array<Datafeed>;
+		nextPageToken?: string | null;
+		resources?: Array<Datafeed> | null;
 	}
 
 	export interface DatafeedstatusesCustomBatchRequest {
 
 		/** The request entries to be processed in the batch. */
-		entries?: Array<DatafeedstatusesCustomBatchRequestEntry>;
+		entries?: Array<DatafeedstatusesCustomBatchRequestEntry> | null;
 	}
 
 
@@ -1059,35 +1059,35 @@ export namespace MyNS {
 	export interface DatafeedstatusesCustomBatchRequestEntry {
 
 		/** An entry ID, unique within the batch request. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** The country for which to get the datafeed status. If this parameter is provided then language must also be provided. Note that for multi-target datafeeds this parameter is required. */
-		country?: string;
+		country?: string | null;
 
 		/** The ID of the data feed to get. */
-		datafeedId?: string;
+		datafeedId?: string | null;
 
 		/** The language for which to get the datafeed status. If this parameter is provided then country must also be provided. Note that for multi-target datafeeds this parameter is required. */
-		language?: string;
+		language?: string | null;
 
 		/** The ID of the managing account. */
-		merchantId?: string;
+		merchantId?: string | null;
 
 		/**
 		 * The method of the batch entry.
 		 * Acceptable values are:
 		 * - "`get`"
 		 */
-		method?: string;
+		method?: string | null;
 	}
 
 	export interface DatafeedstatusesCustomBatchResponse {
 
 		/** The result of the execution of the batch requests. */
-		entries?: Array<DatafeedstatusesCustomBatchResponseEntry>;
+		entries?: Array<DatafeedstatusesCustomBatchResponseEntry> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#datafeedstatusesCustomBatchResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -1095,110 +1095,110 @@ export namespace MyNS {
 	export interface DatafeedstatusesCustomBatchResponseEntry {
 
 		/** The ID of the request entry this entry responds to. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** The status of a datafeed, i.e., the result of the last retrieval of the datafeed computed asynchronously when the feed processing is finished. */
-		datafeedStatus?: DatafeedStatus;
+		datafeedStatus?: DatafeedStatus | null;
 
 		/** A list of errors returned by a failed batch entry. */
-		errors?: Errors;
+		errors?: Errors | null;
 	}
 
 	export interface DatafeedstatusesListResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#datafeedstatusesListResponse". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The token for the retrieval of the next page of datafeed statuses. */
-		nextPageToken?: string;
-		resources?: Array<DatafeedStatus>;
+		nextPageToken?: string | null;
+		resources?: Array<DatafeedStatus> | null;
 	}
 
 	export interface DeliveryTime {
-		cutoffTime?: CutoffTime;
-		handlingBusinessDayConfig?: BusinessDayConfig;
+		cutoffTime?: CutoffTime | null;
+		handlingBusinessDayConfig?: BusinessDayConfig | null;
 
 		/** Holiday cutoff definitions. If configured, they specify order cutoff times for holiday-specific shipping. */
-		holidayCutoffs?: Array<HolidayCutoff>;
+		holidayCutoffs?: Array<HolidayCutoff> | null;
 
 		/** Maximum number of business days spent before an order is shipped. 0 means same day shipped, 1 means next day shipped. Must be greater than or equal to `minHandlingTimeInDays`. */
-		maxHandlingTimeInDays?: string;
+		maxHandlingTimeInDays?: string | null;
 
 		/** Maximum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Must be greater than or equal to `minTransitTimeInDays`. */
-		maxTransitTimeInDays?: string;
+		maxTransitTimeInDays?: string | null;
 
 		/** Minimum number of business days spent before an order is shipped. 0 means same day shipped, 1 means next day shipped. */
-		minHandlingTimeInDays?: string;
+		minHandlingTimeInDays?: string | null;
 
 		/** Minimum number of business days that is spent in transit. 0 means same day delivery, 1 means next day delivery. Either `{min,max}TransitTimeInDays` or `transitTimeTable` must be set, but not both. */
-		minTransitTimeInDays?: string;
-		transitBusinessDayConfig?: BusinessDayConfig;
-		transitTimeTable?: TransitTable;
+		minTransitTimeInDays?: string | null;
+		transitBusinessDayConfig?: BusinessDayConfig | null;
+		transitTimeTable?: TransitTable | null;
 	}
 
 	export interface HolidayCutoff {
 
 		/** Date of the order deadline, in ISO 8601 format. E.g. "2016-11-29" for 29th November 2016. Required. */
-		deadlineDate?: string;
+		deadlineDate?: string | null;
 
 		/** Hour of the day on the deadline date until which the order has to be placed to qualify for the delivery guarantee. Possible values are: 0 (midnight), 1, ..., 12 (noon), 13, ..., 23. Required. */
-		deadlineHour?: string;
+		deadlineHour?: string | null;
 
 		/** Timezone identifier for the deadline hour. A list of identifiers can be found in  the AdWords API documentation. E.g. "Europe/Zurich". Required. */
-		deadlineTimezone?: string;
+		deadlineTimezone?: string | null;
 
 		/** Unique identifier for the holiday. Required. */
-		holidayId?: string;
+		holidayId?: string | null;
 
 		/** Date on which the deadline will become visible to consumers in ISO 8601 format. E.g. "2016-10-31" for 31st October 2016. Required. */
-		visibleFromDate?: string;
+		visibleFromDate?: string | null;
 	}
 
 	export interface TransitTable {
 
 		/** A list of postal group names. The last value can be `"all other locations"`. Example: `["zone 1", "zone 2", "all other locations"]`. The referred postal code groups must match the delivery country of the service. */
-		postalCodeGroupNames?: Array<string>;
-		rows?: Array<TransitTableTransitTimeRow>;
+		postalCodeGroupNames?: Array<string> | null;
+		rows?: Array<TransitTableTransitTimeRow> | null;
 
 		/** A list of transit time labels. The last value can be `"all other labels"`. Example: `["food", "electronics", "all other labels"]`. */
-		transitTimeLabels?: Array<string>;
+		transitTimeLabels?: Array<string> | null;
 	}
 
 	export interface TransitTableTransitTimeRow {
-		values?: Array<TransitTableTransitTimeRowTransitTimeValue>;
+		values?: Array<TransitTableTransitTimeRowTransitTimeValue> | null;
 	}
 
 	export interface TransitTableTransitTimeRowTransitTimeValue {
 
 		/** Must be greater than or equal to `minTransitTimeInDays`. */
-		maxTransitTimeInDays?: string;
+		maxTransitTimeInDays?: string | null;
 
 		/** Transit time range (min-max) in business days. 0 means same day delivery, 1 means next day delivery. */
-		minTransitTimeInDays?: string;
+		minTransitTimeInDays?: string | null;
 	}
 
 	export interface GmbAccounts {
 
 		/** The ID of the account. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** A list of GMB accounts which are available to the merchant. */
-		gmbAccounts?: Array<GmbAccountsGmbAccount>;
+		gmbAccounts?: Array<GmbAccountsGmbAccount> | null;
 	}
 
 	export interface GmbAccountsGmbAccount {
 
 		/** The email which identifies the GMB account. */
-		email?: string;
+		email?: string | null;
 
 		/** Number of listings under this account. */
-		listingCount?: string;
+		listingCount?: string | null;
 
 		/** The name of the GMB account. */
-		name?: string;
+		name?: string | null;
 
 		/** The type of the GMB account (User or Business). */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -1206,25 +1206,25 @@ export namespace MyNS {
 	export interface Headers {
 
 		/** A list of location ID sets. Must be non-empty. Can only be set if all other fields are not set. */
-		locations?: Array<LocationIdSet>;
+		locations?: Array<LocationIdSet> | null;
 
 		/** A list of inclusive number of items upper bounds. The last value can be `"infinity"`. For example `["10", "50", "infinity"]` represents the headers "<= 10 items", " 50 items". Must be non-empty. Can only be set if all other fields are not set. */
-		numberOfItems?: Array<string>;
+		numberOfItems?: Array<string> | null;
 
 		/** A list of postal group names. The last value can be `"all other locations"`. Example: `["zone 1", "zone 2", "all other locations"]`. The referred postal code groups must match the delivery country of the service. Must be non-empty. Can only be set if all other fields are not set. */
-		postalCodeGroupNames?: Array<string>;
+		postalCodeGroupNames?: Array<string> | null;
 
 		/** A list of inclusive order price upper bounds. The last price's value can be `"infinity"`. For example `[{"value": "10", "currency": "USD"}, {"value": "500", "currency": "USD"}, {"value": "infinity", "currency": "USD"}]` represents the headers "<= $10", " $500". All prices within a service must have the same currency. Must be non-empty. Can only be set if all other fields are not set. */
-		prices?: Array<Price>;
+		prices?: Array<Price> | null;
 
 		/** A list of inclusive order weight upper bounds. The last weight's value can be `"infinity"`. For example `[{"value": "10", "unit": "kg"}, {"value": "50", "unit": "kg"}, {"value": "infinity", "unit": "kg"}]` represents the headers "<= 10kg", " 50kg". All weights within a service must have the same unit. Must be non-empty. Can only be set if all other fields are not set. */
-		weights?: Array<Weight>;
+		weights?: Array<Weight> | null;
 	}
 
 	export interface LocationIdSet {
 
 		/** A non-empty list of location IDs. They must all be of the same location type (e.g., state). */
-		locationIds?: Array<string>;
+		locationIds?: Array<string> | null;
 	}
 
 	export interface Weight {
@@ -1235,28 +1235,28 @@ export namespace MyNS {
 		 * - "`kg`"
 		 * - "`lb`"
 		 */
-		unit?: string;
+		unit?: string | null;
 
 		/** Required. The weight represented as a number. */
-		value?: string;
+		value?: string | null;
 	}
 
 	export interface HolidaysHoliday {
 
 		/** The CLDR territory code of the country in which the holiday is available. E.g. "US", "DE", "GB". A holiday cutoff can only be configured in a shipping settings service with matching delivery country. Always present. */
-		countryCode?: string;
+		countryCode?: string | null;
 
 		/** Date of the holiday, in ISO 8601 format. E.g. "2016-12-25" for Christmas 2016. Always present. */
-		date?: string;
+		date?: string | null;
 
 		/** Date on which the order has to arrive at the customer's, in ISO 8601 format. E.g. "2016-12-24" for 24th December 2016. Always present. */
-		deliveryGuaranteeDate?: string;
+		deliveryGuaranteeDate?: string | null;
 
 		/** Hour of the day in the delivery location's timezone on the guaranteed delivery date by which the order has to arrive at the customer's. Possible values are: 0 (midnight), 1, ..., 12 (noon), 13, ..., 23. Always present. */
-		deliveryGuaranteeHour?: string;
+		deliveryGuaranteeHour?: string | null;
 
 		/** Unique identifier for the holiday to be used when configuring holiday cutoffs. Always present. */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * The holiday type. Always present.
@@ -1270,14 +1270,14 @@ export namespace MyNS {
 		 * - "`Thanksgiving`"
 		 * - "`Valentine's Day`"
 		 */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface Installment {
-		amount?: Price;
+		amount?: Price | null;
 
 		/** The number of installments the buyer has to pay. */
-		months?: string;
+		months?: string | null;
 	}
 
 
@@ -1291,54 +1291,54 @@ export namespace MyNS {
 		 * - "`out of stock`"
 		 * - "`preorder`"
 		 */
-		availability?: string;
+		availability?: string | null;
 
 		/** Custom label 0 for custom grouping of items in a Shopping campaign. Only supported for online products. */
-		customLabel0?: string;
+		customLabel0?: string | null;
 
 		/** Custom label 1 for custom grouping of items in a Shopping campaign. Only supported for online products. */
-		customLabel1?: string;
+		customLabel1?: string | null;
 
 		/** Custom label 2 for custom grouping of items in a Shopping campaign. Only supported for online products. */
-		customLabel2?: string;
+		customLabel2?: string | null;
 
 		/** Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products. */
-		customLabel3?: string;
+		customLabel3?: string | null;
 
 		/** Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products. */
-		customLabel4?: string;
-		installment?: Installment;
+		customLabel4?: string | null;
+		installment?: Installment | null;
 
 		/** The instore product location. Supported only for local products. */
-		instoreProductLocation?: string;
+		instoreProductLocation?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#inventory`" */
-		kind?: string;
-		loyaltyPoints?: LoyaltyPoints;
-		pickup?: InventoryPickup;
-		price?: Price;
+		kind?: string | null;
+		loyaltyPoints?: LoyaltyPoints | null;
+		pickup?: InventoryPickup | null;
+		price?: Price | null;
 
 		/** The quantity of the product. Must be equal to or greater than zero. Supported only for local products. */
-		quantity?: string;
-		salePrice?: Price;
+		quantity?: string | null;
+		salePrice?: Price | null;
 
 		/** A date range represented by a pair of ISO 8601 dates separated by a space, comma, or slash. Both dates might be specified as 'null' if undecided. */
-		salePriceEffectiveDate?: string;
+		salePriceEffectiveDate?: string | null;
 
 		/** The quantity of the product that is available for selling on Google. Supported only for online products. */
-		sellOnGoogleQuantity?: string;
+		sellOnGoogleQuantity?: string | null;
 	}
 
 	export interface LoyaltyPoints {
 
 		/** Name of loyalty points program. It is recommended to limit the name to 12 full-width characters or 24 Roman characters. */
-		name?: string;
+		name?: string | null;
 
 		/** The retailer's loyalty points in absolute value. */
-		pointsValue?: string;
+		pointsValue?: string | null;
 
 		/** The ratio of a point when converted to currency. Google assumes currency based on Merchant Center settings. If ratio is left out, it defaults to 1.0. */
-		ratio?: number;
+		ratio?: number | null;
 	}
 
 	export interface InventoryPickup {
@@ -1351,7 +1351,7 @@ export namespace MyNS {
 		 * - "`reserve`"
 		 * - "`ship to store`"
 		 */
-		pickupMethod?: string;
+		pickupMethod?: string | null;
 
 		/**
 		 * The expected date that an order will be ready for pickup, relative to when the order is placed. Only supported for local inventory. Must be submitted together with `pickupMethod`.
@@ -1367,13 +1367,13 @@ export namespace MyNS {
 		 * - "`three day`"
 		 * - "`two day`"
 		 */
-		pickupSla?: string;
+		pickupSla?: string | null;
 	}
 
 	export interface InventoryCustomBatchRequest {
 
 		/** The request entries to be processed in the batch. */
-		entries?: Array<InventoryCustomBatchRequestEntry>;
+		entries?: Array<InventoryCustomBatchRequestEntry> | null;
 	}
 
 
@@ -1381,28 +1381,28 @@ export namespace MyNS {
 	export interface InventoryCustomBatchRequestEntry {
 
 		/** An entry ID, unique within the batch request. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** (== resource_for v2.inventory ==) */
-		inventory?: Inventory;
+		inventory?: Inventory | null;
 
 		/** The ID of the managing account. */
-		merchantId?: string;
+		merchantId?: string | null;
 
 		/** The ID of the product for which to update price and availability. */
-		productId?: string;
+		productId?: string | null;
 
 		/** The code of the store for which to update price and availability. Use `online` to update price and availability of an online product. */
-		storeCode?: string;
+		storeCode?: string | null;
 	}
 
 	export interface InventoryCustomBatchResponse {
 
 		/** The result of the execution of the batch requests. */
-		entries?: Array<InventoryCustomBatchResponseEntry>;
+		entries?: Array<InventoryCustomBatchResponseEntry> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#inventoryCustomBatchResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -1410,13 +1410,13 @@ export namespace MyNS {
 	export interface InventoryCustomBatchResponseEntry {
 
 		/** The ID of the request entry this entry responds to. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** A list of errors returned by a failed batch entry. */
-		errors?: Errors;
+		errors?: Errors | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#inventoryCustomBatchResponseEntry`" */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface InventorySetRequest {
@@ -1428,76 +1428,76 @@ export namespace MyNS {
 		 * - "`out of stock`"
 		 * - "`preorder`"
 		 */
-		availability?: string;
+		availability?: string | null;
 
 		/** Custom label 0 for custom grouping of items in a Shopping campaign. Only supported for online products. */
-		customLabel0?: string;
+		customLabel0?: string | null;
 
 		/** Custom label 1 for custom grouping of items in a Shopping campaign. Only supported for online products. */
-		customLabel1?: string;
+		customLabel1?: string | null;
 
 		/** Custom label 2 for custom grouping of items in a Shopping campaign. Only supported for online products. */
-		customLabel2?: string;
+		customLabel2?: string | null;
 
 		/** Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products. */
-		customLabel3?: string;
+		customLabel3?: string | null;
 
 		/** Custom label 3 for custom grouping of items in a Shopping campaign. Only supported for online products. */
-		customLabel4?: string;
-		installment?: Installment;
+		customLabel4?: string | null;
+		installment?: Installment | null;
 
 		/** The instore product location. Supported only for local products. */
-		instoreProductLocation?: string;
-		loyaltyPoints?: LoyaltyPoints;
-		pickup?: InventoryPickup;
-		price?: Price;
+		instoreProductLocation?: string | null;
+		loyaltyPoints?: LoyaltyPoints | null;
+		pickup?: InventoryPickup | null;
+		price?: Price | null;
 
 		/** The quantity of the product. Must be equal to or greater than zero. Supported only for local products. */
-		quantity?: string;
-		salePrice?: Price;
+		quantity?: string | null;
+		salePrice?: Price | null;
 
 		/** A date range represented by a pair of ISO 8601 dates separated by a space, comma, or slash. Both dates might be specified as 'null' if undecided. */
-		salePriceEffectiveDate?: string;
+		salePriceEffectiveDate?: string | null;
 
 		/** The quantity of the product that is available for selling on Google. Supported only for online products. */
-		sellOnGoogleQuantity?: string;
+		sellOnGoogleQuantity?: string | null;
 	}
 
 	export interface InventorySetResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#inventorySetResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface InvoiceSummary {
 
 		/** Summary of the total amounts of the additional charges. */
-		additionalChargeSummaries?: Array<InvoiceSummaryAdditionalChargeSummary>;
-		customerBalance?: Amount;
-		googleBalance?: Amount;
-		merchantBalance?: Amount;
-		productTotal?: Amount;
+		additionalChargeSummaries?: Array<InvoiceSummaryAdditionalChargeSummary> | null;
+		customerBalance?: Amount | null;
+		googleBalance?: Amount | null;
+		merchantBalance?: Amount | null;
+		productTotal?: Amount | null;
 
 		/** Deprecated. */
-		promotionSummaries?: Array<Promotion>;
+		promotionSummaries?: Array<Promotion> | null;
 	}
 
 	export interface InvoiceSummaryAdditionalChargeSummary {
-		totalAmount?: Amount;
+		totalAmount?: Amount | null;
 
 		/**
 		 * [required] Type of the additional charge.
 		 * Acceptable values are:
 		 * - "`shipping`"
 		 */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface Promotion {
-		promotionAmount?: Amount;
+		promotionAmount?: Amount | null;
 
 		/** [required] ID of the promotion. */
-		promotionId?: string;
+		promotionId?: string | null;
 	}
 
 	export interface LiaAboutPageSettings {
@@ -1509,35 +1509,35 @@ export namespace MyNS {
 		 * - "`inactive`"
 		 * - "`pending`"
 		 */
-		status?: string;
+		status?: string | null;
 
 		/** The URL for the About page. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface LiaCountrySettings {
-		about?: LiaAboutPageSettings;
+		about?: LiaAboutPageSettings | null;
 
 		/** Required. CLDR country code (e.g. "US"). */
-		country?: string;
+		country?: string | null;
 
 		/** The status of the "Merchant hosted local storefront" feature. */
-		hostedLocalStorefrontActive?: boolean;
-		inventory?: LiaInventorySettings;
-		onDisplayToOrder?: LiaOnDisplayToOrderSettings;
-		posDataProvider?: LiaPosDataProvider;
+		hostedLocalStorefrontActive?: boolean | null;
+		inventory?: LiaInventorySettings | null;
+		onDisplayToOrder?: LiaOnDisplayToOrderSettings | null;
+		posDataProvider?: LiaPosDataProvider | null;
 
 		/** The status of the "Store pickup" feature. */
-		storePickupActive?: boolean;
+		storePickupActive?: boolean | null;
 	}
 
 	export interface LiaInventorySettings {
 
 		/** The email of the contact for the inventory verification process. */
-		inventoryVerificationContactEmail?: string;
+		inventoryVerificationContactEmail?: string | null;
 
 		/** The name of the contact for the inventory verification process. */
-		inventoryVerificationContactName?: string;
+		inventoryVerificationContactName?: string | null;
 
 		/**
 		 * The status of the verification contact.
@@ -1546,7 +1546,7 @@ export namespace MyNS {
 		 * - "`inactive`"
 		 * - "`pending`"
 		 */
-		inventoryVerificationContactStatus?: string;
+		inventoryVerificationContactStatus?: string | null;
 
 		/**
 		 * The status of the inventory verification process.
@@ -1555,13 +1555,13 @@ export namespace MyNS {
 		 * - "`inactive`"
 		 * - "`pending`"
 		 */
-		status?: string;
+		status?: string | null;
 	}
 
 	export interface LiaOnDisplayToOrderSettings {
 
 		/** Shipping cost and policy URL. */
-		shippingCostPolicyUrl?: string;
+		shippingCostPolicyUrl?: string | null;
 
 		/**
 		 * The status of the ?On display to order? feature.
@@ -1570,16 +1570,16 @@ export namespace MyNS {
 		 * - "`inactive`"
 		 * - "`pending`"
 		 */
-		status?: string;
+		status?: string | null;
 	}
 
 	export interface LiaPosDataProvider {
 
 		/** The ID of the POS data provider. */
-		posDataProviderId?: string;
+		posDataProviderId?: string | null;
 
 		/** The account ID by which this merchant is known to the POS data provider. */
-		posExternalAccountId?: string;
+		posExternalAccountId?: string | null;
 	}
 
 
@@ -1587,46 +1587,46 @@ export namespace MyNS {
 	export interface LiaSettings {
 
 		/** The ID of the account to which these LIA settings belong. Ignored upon update, always present in get request responses. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** The LIA settings for each country. */
-		countrySettings?: Array<LiaCountrySettings>;
+		countrySettings?: Array<LiaCountrySettings> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#liaSettings`" */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface LiasettingsCustomBatchRequest {
 
 		/** The request entries to be processed in the batch. */
-		entries?: Array<LiasettingsCustomBatchRequestEntry>;
+		entries?: Array<LiasettingsCustomBatchRequestEntry> | null;
 	}
 
 	export interface LiasettingsCustomBatchRequestEntry {
 
 		/** The ID of the account for which to get/update account shipping settings. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** An entry ID, unique within the batch request. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** Inventory validation contact email. Required only for SetInventoryValidationContact. */
-		contactEmail?: string;
+		contactEmail?: string | null;
 
 		/** Inventory validation contact name. Required only for SetInventoryValidationContact. */
-		contactName?: string;
+		contactName?: string | null;
 
 		/** The country code. Required only for RequestInventoryVerification. */
-		country?: string;
+		country?: string | null;
 
 		/** The GMB account. Required only for RequestGmbAccess. */
-		gmbEmail?: string;
+		gmbEmail?: string | null;
 
 		/** Local Inventory ads (LIA) settings. All methods except listposdataproviders require the admin role. */
-		liaSettings?: LiaSettings;
+		liaSettings?: LiaSettings | null;
 
 		/** The ID of the managing account. */
-		merchantId?: string;
+		merchantId?: string | null;
 
 		/**
 		 * The method of the batch entry.
@@ -1638,117 +1638,117 @@ export namespace MyNS {
 		 * - "`setInventoryVerificationContact`"
 		 * - "`update`"
 		 */
-		method?: string;
+		method?: string | null;
 
 		/** The ID of POS data provider. Required only for SetPosProvider. */
-		posDataProviderId?: string;
+		posDataProviderId?: string | null;
 
 		/** The account ID by which this merchant is known to the POS provider. */
-		posExternalAccountId?: string;
+		posExternalAccountId?: string | null;
 	}
 
 	export interface LiasettingsCustomBatchResponse {
 
 		/** The result of the execution of the batch requests. */
-		entries?: Array<LiasettingsCustomBatchResponseEntry>;
+		entries?: Array<LiasettingsCustomBatchResponseEntry> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#liasettingsCustomBatchResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface LiasettingsCustomBatchResponseEntry {
 
 		/** The ID of the request entry to which this entry responds. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** A list of errors returned by a failed batch entry. */
-		errors?: Errors;
-		gmbAccounts?: GmbAccounts;
+		errors?: Errors | null;
+		gmbAccounts?: GmbAccounts | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#liasettingsCustomBatchResponseEntry`" */
-		kind?: string;
+		kind?: string | null;
 
 		/** Local Inventory ads (LIA) settings. All methods except listposdataproviders require the admin role. */
-		liaSettings?: LiaSettings;
+		liaSettings?: LiaSettings | null;
 
 		/** The list of POS data providers. */
-		posDataProviders?: Array<PosDataProviders>;
+		posDataProviders?: Array<PosDataProviders> | null;
 	}
 
 	export interface PosDataProviders {
 
 		/** Country code. */
-		country?: string;
+		country?: string | null;
 
 		/** A list of POS data providers. */
-		posDataProviders?: Array<PosDataProvidersPosDataProvider>;
+		posDataProviders?: Array<PosDataProvidersPosDataProvider> | null;
 	}
 
 	export interface PosDataProvidersPosDataProvider {
 
 		/** The display name of Pos data Provider. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** The full name of this POS data Provider. */
-		fullName?: string;
+		fullName?: string | null;
 
 		/** The ID of the account. */
-		providerId?: string;
+		providerId?: string | null;
 	}
 
 	export interface LiasettingsGetAccessibleGmbAccountsResponse {
 
 		/** The ID of the account. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** A list of GMB accounts which are available to the merchant. */
-		gmbAccounts?: Array<GmbAccountsGmbAccount>;
+		gmbAccounts?: Array<GmbAccountsGmbAccount> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#liasettingsGetAccessibleGmbAccountsResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface LiasettingsListPosDataProvidersResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#liasettingsListPosDataProvidersResponse". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The list of POS data providers for each eligible country */
-		posDataProviders?: Array<PosDataProviders>;
+		posDataProviders?: Array<PosDataProviders> | null;
 	}
 
 	export interface LiasettingsListResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#liasettingsListResponse". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The token for the retrieval of the next page of LIA settings. */
-		nextPageToken?: string;
-		resources?: Array<LiaSettings>;
+		nextPageToken?: string | null;
+		resources?: Array<LiaSettings> | null;
 	}
 
 	export interface LiasettingsRequestGmbAccessResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#liasettingsRequestGmbAccessResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface LiasettingsRequestInventoryVerificationResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#liasettingsRequestInventoryVerificationResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface LiasettingsSetInventoryVerificationContactResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#liasettingsSetInventoryVerificationContactResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface LiasettingsSetPosDataProviderResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#liasettingsSetPosDataProviderResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -1756,34 +1756,34 @@ export namespace MyNS {
 	export interface MerchantOrderReturn {
 
 		/** The date of creation of the return, in ISO 8601 format. */
-		creationDate?: string;
+		creationDate?: string | null;
 
 		/** Merchant defined order ID. */
-		merchantOrderId?: string;
+		merchantOrderId?: string | null;
 
 		/** Google order ID. */
-		orderId?: string;
+		orderId?: string | null;
 
 		/** Order return ID generated by Google. */
-		orderReturnId?: string;
+		orderReturnId?: string | null;
 
 		/** Items of the return. */
-		returnItems?: Array<MerchantOrderReturnItem>;
+		returnItems?: Array<MerchantOrderReturnItem> | null;
 
 		/** Shipments of the return. */
-		returnShipments?: Array<ReturnShipment>;
+		returnShipments?: Array<ReturnShipment> | null;
 	}
 
 	export interface MerchantOrderReturnItem {
-		customerReturnReason?: CustomerReturnReason;
+		customerReturnReason?: CustomerReturnReason | null;
 
 		/** Product level item ID. If the returned items are of the same product, they will have the same ID. */
-		itemId?: string;
-		merchantReturnReason?: RefundReason;
-		product?: OrderLineItemProduct;
+		itemId?: string | null;
+		merchantReturnReason?: RefundReason | null;
+		product?: OrderLineItemProduct | null;
 
 		/** IDs of the return shipments that this return item belongs to. */
-		returnShipmentIds?: Array<string>;
+		returnShipmentIds?: Array<string> | null;
 
 		/**
 		 * State of the item.
@@ -1794,13 +1794,13 @@ export namespace MyNS {
 		 * - "`refunded`"
 		 * - "`rejected`"
 		 */
-		state?: string;
+		state?: string | null;
 	}
 
 	export interface RefundReason {
 
 		/** Description of the reason. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Code of the refund reason.
@@ -1850,13 +1850,13 @@ export namespace MyNS {
 		 * - "`unsupportedPoBoxAddress`"
 		 * - "`wrongProductShipped`"
 		 */
-		reasonCode?: string;
+		reasonCode?: string | null;
 	}
 
 	export interface OrderLineItemProduct {
 
 		/** Brand of the item. */
-		brand?: string;
+		brand?: string | null;
 
 		/**
 		 * The item's channel (online or local).
@@ -1864,7 +1864,7 @@ export namespace MyNS {
 		 * - "`local`"
 		 * - "`online`"
 		 */
-		channel?: string;
+		channel?: string | null;
 
 		/**
 		 * Condition or state of the item.
@@ -1873,69 +1873,69 @@ export namespace MyNS {
 		 * - "`refurbished`"
 		 * - "`used`"
 		 */
-		condition?: string;
+		condition?: string | null;
 
 		/** The two-letter ISO 639-1 language code for the item. */
-		contentLanguage?: string;
+		contentLanguage?: string | null;
 
 		/** Associated fees at order creation time. */
-		fees?: Array<OrderLineItemProductFee>;
+		fees?: Array<OrderLineItemProductFee> | null;
 
 		/** Global Trade Item Number (GTIN) of the item. */
-		gtin?: string;
+		gtin?: string | null;
 
 		/** The REST ID of the product. */
-		id?: string;
+		id?: string | null;
 
 		/** URL of an image of the item. */
-		imageLink?: string;
+		imageLink?: string | null;
 
 		/** Shared identifier for all variants of the same product. */
-		itemGroupId?: string;
+		itemGroupId?: string | null;
 
 		/** Manufacturer Part Number (MPN) of the item. */
-		mpn?: string;
+		mpn?: string | null;
 
 		/** An identifier of the item. */
-		offerId?: string;
-		price?: Price;
+		offerId?: string | null;
+		price?: Price | null;
 
 		/** URL to the cached image shown to the user when order was placed. */
-		shownImage?: string;
+		shownImage?: string | null;
 
 		/** The CLDR territory code of the target country of the product. */
-		targetCountry?: string;
+		targetCountry?: string | null;
 
 		/** The title of the product. */
-		title?: string;
+		title?: string | null;
 
 		/** Variant attributes for the item. These are dimensions of the product, such as color, gender, material, pattern, and size. You can find a comprehensive list of variant attributes here. */
-		variantAttributes?: Array<OrderLineItemProductVariantAttribute>;
+		variantAttributes?: Array<OrderLineItemProductVariantAttribute> | null;
 	}
 
 	export interface OrderLineItemProductFee {
-		amount?: Price;
+		amount?: Price | null;
 
 		/** Name of the fee. */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface OrderLineItemProductVariantAttribute {
 
 		/** The dimension of the variant. */
-		dimension?: string;
+		dimension?: string | null;
 
 		/** The value for the dimension. */
-		value?: string;
+		value?: string | null;
 	}
 
 	export interface ReturnShipment {
 
 		/** The date of creation of the shipment, in ISO 8601 format. */
-		creationDate?: string;
+		creationDate?: string | null;
 
 		/** The date of delivery of the shipment, in ISO 8601 format. */
-		deliveryDate?: string;
+		deliveryDate?: string | null;
 
 		/**
 		 * Type of the return method.
@@ -1944,16 +1944,16 @@ export namespace MyNS {
 		 * - "`contactCustomerSupport`"
 		 * - "`returnless`"
 		 */
-		returnMethodType?: string;
+		returnMethodType?: string | null;
 
 		/** Shipment ID generated by Google. */
-		shipmentId?: string;
+		shipmentId?: string | null;
 
 		/** Tracking information of the shipment. One return shipment might be handled by several shipping carriers sequentially. */
-		shipmentTrackingInfos?: Array<ShipmentTrackingInfo>;
+		shipmentTrackingInfos?: Array<ShipmentTrackingInfo> | null;
 
 		/** The date of shipping of the shipment, in ISO 8601 format. */
-		shippingDate?: string;
+		shippingDate?: string | null;
 
 		/**
 		 * State of the shipment.
@@ -1963,7 +1963,7 @@ export namespace MyNS {
 		 * - "`shipped`"
 		 * - "`undeliverable`"
 		 */
-		state?: string;
+		state?: string | null;
 	}
 
 	export interface ShipmentTrackingInfo {
@@ -2002,14 +2002,14 @@ export namespace MyNS {
 		 * - "`ups`"
 		 * - "`usps`"
 		 */
-		carrier?: string;
+		carrier?: string | null;
 
 		/** The tracking number for the package. */
-		trackingNumber?: string;
+		trackingNumber?: string | null;
 	}
 
 	export interface MinimumOrderValueTable {
-		storeCodeSetWithMovs?: Array<MinimumOrderValueTableStoreCodeSetWithMov>;
+		storeCodeSetWithMovs?: Array<MinimumOrderValueTableStoreCodeSetWithMov> | null;
 	}
 
 
@@ -2017,8 +2017,8 @@ export namespace MyNS {
 	export interface MinimumOrderValueTableStoreCodeSetWithMov {
 
 		/** A list of unique store codes or empty for the catch all. */
-		storeCodes?: Array<string>;
-		value?: Price;
+		storeCodes?: Array<string> | null;
+		value?: Price | null;
 	}
 
 
@@ -2026,7 +2026,7 @@ export namespace MyNS {
 	export interface Order {
 
 		/** Whether the order was acknowledged. */
-		acknowledged?: boolean;
+		acknowledged?: boolean | null;
 
 		/**
 		 * Deprecated.
@@ -2034,24 +2034,24 @@ export namespace MyNS {
 		 * - "`googleExpress`"
 		 * - "`purchasesOnGoogle`"
 		 */
-		channelType?: string;
-		customer?: OrderCustomer;
-		deliveryDetails?: OrderDeliveryDetails;
+		channelType?: string | null;
+		customer?: OrderCustomer | null;
+		deliveryDetails?: OrderDeliveryDetails | null;
 
 		/** The REST ID of the order. Globally unique. */
-		id?: string;
+		id?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#order`" */
-		kind?: string;
+		kind?: string | null;
 
 		/** Line items that are ordered. */
-		lineItems?: Array<OrderLineItem>;
-		merchantId?: string;
+		lineItems?: Array<OrderLineItem> | null;
+		merchantId?: string | null;
 
 		/** Merchant-provided ID of the order. */
-		merchantOrderId?: string;
-		netAmount?: Price;
-		paymentMethod?: OrderPaymentMethod;
+		merchantOrderId?: string | null;
+		netAmount?: Price | null;
+		paymentMethod?: OrderPaymentMethod | null;
 
 		/**
 		 * The status of the payment.
@@ -2061,11 +2061,11 @@ export namespace MyNS {
 		 * - "`paymentSecured`"
 		 * - "`pendingAuthorization`"
 		 */
-		paymentStatus?: string;
-		pickupDetails?: OrderPickupDetails;
+		paymentStatus?: string | null;
+		pickupDetails?: OrderPickupDetails | null;
 
 		/** The date when the order was placed, in ISO 8601 format. */
-		placedDate?: string;
+		placedDate?: string | null;
 
 		/**
 		 * The details of the merchant provided promotions applied to the order.
@@ -2076,15 +2076,15 @@ export namespace MyNS {
 		 * Only 1 promotion can be applied to an offerId in a given order. To refund an item which had a promotion applied to it, make sure to refund the amount after first subtracting the promotion discount from the item price.
 		 * More details about the program are here.
 		 */
-		promotions?: Array<OrderLegacyPromotion>;
+		promotions?: Array<OrderLegacyPromotion> | null;
 
 		/** Refunds for the order. */
-		refunds?: Array<OrderRefund>;
+		refunds?: Array<OrderRefund> | null;
 
 		/** Shipments of the order. */
-		shipments?: Array<OrderShipment>;
-		shippingCost?: Price;
-		shippingCostTax?: Price;
+		shipments?: Array<OrderShipment> | null;
+		shippingCost?: Price | null;
+		shippingCostTax?: Price | null;
 
 		/**
 		 * Deprecated. Shipping details are provided with line items instead.
@@ -2096,7 +2096,7 @@ export namespace MyNS {
 		 * - "`standard`"
 		 * - "`twoDay`"
 		 */
-		shippingOption?: string;
+		shippingOption?: string | null;
 
 		/**
 		 * The status of the order.
@@ -2111,7 +2111,7 @@ export namespace MyNS {
 		 * - "`returned`"
 		 * - "`shipped`"
 		 */
-		status?: string;
+		status?: string | null;
 
 		/**
 		 * The party responsible for collecting and remitting taxes.
@@ -2119,21 +2119,21 @@ export namespace MyNS {
 		 * - "`marketplaceFacilitator`"
 		 * - "`merchant`"
 		 */
-		taxCollector?: string;
+		taxCollector?: string | null;
 	}
 
 	export interface OrderCustomer {
 
 		/** Deprecated. */
-		email?: string;
+		email?: string | null;
 
 		/** Deprecated. Please use marketingRightsInfo instead. */
-		explicitMarketingPreference?: boolean;
+		explicitMarketingPreference?: boolean | null;
 
 		/** Full name of the customer. */
-		fullName?: string;
-		invoiceReceivingEmail?: string;
-		marketingRightsInfo?: OrderCustomerMarketingRightsInfo;
+		fullName?: string | null;
+		invoiceReceivingEmail?: string | null;
+		marketingRightsInfo?: OrderCustomerMarketingRightsInfo | null;
 	}
 
 	export interface OrderCustomerMarketingRightsInfo {
@@ -2144,26 +2144,26 @@ export namespace MyNS {
 		 * - "`denied`"
 		 * - "`granted`"
 		 */
-		explicitMarketingPreference?: string;
+		explicitMarketingPreference?: string | null;
 
 		/** Timestamp when last time marketing preference was updated. Could be empty, if user wasn't offered a selection yet. */
-		lastUpdatedTimestamp?: string;
+		lastUpdatedTimestamp?: string | null;
 
 		/** Email address that can be used for marketing purposes. The field may be empty even if `explicitMarketingPreference` is 'granted'. This happens when retrieving an old order from the customer who deleted their account. */
-		marketingEmailAddress?: string;
+		marketingEmailAddress?: string | null;
 	}
 
 	export interface OrderDeliveryDetails {
-		address?: OrderAddress;
+		address?: OrderAddress | null;
 
 		/** The phone number of the person receiving the delivery. */
-		phoneNumber?: string;
+		phoneNumber?: string | null;
 	}
 
 	export interface OrderAddress {
 
 		/** CLDR country code (e.g. "US"). */
-		country?: string;
+		country?: string | null;
 
 		/**
 		 * Strings representing the lines of the printed label for mailing the order, for example:
@@ -2172,75 +2172,75 @@ export namespace MyNS {
 		 * Mountain View, CA, 94043
 		 * United States
 		 */
-		fullAddress?: Array<string>;
+		fullAddress?: Array<string> | null;
 
 		/** Whether the address is a post office box. */
-		isPostOfficeBox?: boolean;
+		isPostOfficeBox?: boolean | null;
 
 		/** City, town or commune. May also include dependent localities or sublocalities (e.g. neighborhoods or suburbs). */
-		locality?: string;
+		locality?: string | null;
 
 		/** Postal Code or ZIP (e.g. "94043"). */
-		postalCode?: string;
+		postalCode?: string | null;
 
 		/** Name of the recipient. */
-		recipientName?: string;
+		recipientName?: string | null;
 
 		/** Top-level administrative subdivision of the country. For example, a state like California ("CA") or a province like Quebec ("QC"). */
-		region?: string;
+		region?: string | null;
 
 		/** Street-level part of the address. */
-		streetAddress?: Array<string>;
+		streetAddress?: Array<string> | null;
 	}
 
 	export interface OrderLineItem {
 
 		/** Annotations that are attached to the line item. */
-		annotations?: Array<OrderMerchantProvidedAnnotation>;
+		annotations?: Array<OrderMerchantProvidedAnnotation> | null;
 
 		/** Cancellations of the line item. */
-		cancellations?: Array<OrderCancellation>;
+		cancellations?: Array<OrderCancellation> | null;
 
 		/** The ID of the line item. */
-		id?: string;
-		price?: Price;
-		product?: OrderLineItemProduct;
+		id?: string | null;
+		price?: Price | null;
+		product?: OrderLineItemProduct | null;
 
 		/** Number of items canceled. */
-		quantityCanceled?: string;
+		quantityCanceled?: string | null;
 
 		/** Number of items delivered. */
-		quantityDelivered?: string;
+		quantityDelivered?: string | null;
 
 		/** Number of items ordered. */
-		quantityOrdered?: string;
+		quantityOrdered?: string | null;
 
 		/** Number of items pending. */
-		quantityPending?: string;
+		quantityPending?: string | null;
 
 		/** Number of items ready for pickup. */
-		quantityReadyForPickup?: string;
+		quantityReadyForPickup?: string | null;
 
 		/** Number of items returned. */
-		quantityReturned?: string;
+		quantityReturned?: string | null;
 
 		/** Number of items shipped. */
-		quantityShipped?: string;
-		returnInfo?: OrderLineItemReturnInfo;
+		quantityShipped?: string | null;
+		returnInfo?: OrderLineItemReturnInfo | null;
 
 		/** Returns of the line item. */
-		returns?: Array<OrderReturn>;
-		shippingDetails?: OrderLineItemShippingDetails;
-		tax?: Price;
+		returns?: Array<OrderReturn> | null;
+		shippingDetails?: OrderLineItemShippingDetails | null;
+		tax?: Price | null;
 	}
 
 	export interface OrderMerchantProvidedAnnotation {
 
 		/** Key for additional merchant provided (as key-value pairs) annotation about the line item. */
-		key?: string;
+		key?: string | null;
 
 		/** Value for additional merchant provided (as key-value pairs) annotation about the line item. */
-		value?: string;
+		value?: string | null;
 	}
 
 	export interface OrderCancellation {
@@ -2255,13 +2255,13 @@ export namespace MyNS {
 		 * - "`googleSabre`"
 		 * - "`merchant`"
 		 */
-		actor?: string;
+		actor?: string | null;
 
 		/** Date on which the cancellation has been created, in ISO 8601 format. */
-		creationDate?: string;
+		creationDate?: string | null;
 
 		/** The quantity that was canceled. */
-		quantity?: string;
+		quantity?: string | null;
 
 		/**
 		 * The reason for the cancellation. Orders that are canceled with a noInventory reason will lead to the removal of the product from Shopping Actions until you make an update to that product. This will not affect your Shopping ads.
@@ -2295,22 +2295,22 @@ export namespace MyNS {
 		 * - "`undeliverableShippingAddress`"
 		 * - "`unsupportedPoBoxAddress`"
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/** The explanation of the reason. */
-		reasonText?: string;
+		reasonText?: string | null;
 	}
 
 	export interface OrderLineItemReturnInfo {
 
 		/** Required. How many days later the item can be returned. */
-		daysToReturn?: number;
+		daysToReturn?: number | null;
 
 		/** Required. Whether the item is returnable. */
-		isReturnable?: boolean;
+		isReturnable?: boolean | null;
 
 		/** Required. URL of the item return policy. */
-		policyUrl?: string;
+		policyUrl?: string | null;
 	}
 
 	export interface OrderReturn {
@@ -2325,13 +2325,13 @@ export namespace MyNS {
 		 * - "`googleSabre`"
 		 * - "`merchant`"
 		 */
-		actor?: string;
+		actor?: string | null;
 
 		/** Date on which the item has been created, in ISO 8601 format. */
-		creationDate?: string;
+		creationDate?: string | null;
 
 		/** Quantity that is returned. */
-		quantity?: string;
+		quantity?: string | null;
 
 		/**
 		 * The reason for the return.
@@ -2350,20 +2350,20 @@ export namespace MyNS {
 		 * - "`unsupportedPoBoxAddress`"
 		 * - "`wrongProductShipped`"
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/** The explanation of the reason. */
-		reasonText?: string;
+		reasonText?: string | null;
 	}
 
 	export interface OrderLineItemShippingDetails {
 
 		/** Required. The delivery by date, in ISO 8601 format. */
-		deliverByDate?: string;
-		method?: OrderLineItemShippingDetailsMethod;
+		deliverByDate?: string | null;
+		method?: OrderLineItemShippingDetailsMethod | null;
 
 		/** Required. The ship by date, in ISO 8601 format. */
-		shipByDate?: string;
+		shipByDate?: string | null;
 
 		/**
 		 * Type of shipment. Indicates whether `deliveryDetails` or `pickupDetails` is applicable for this shipment.
@@ -2371,38 +2371,38 @@ export namespace MyNS {
 		 * - "`delivery`"
 		 * - "`pickup`"
 		 */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface OrderLineItemShippingDetailsMethod {
 
 		/** The carrier for the shipping. Optional. See `shipments[].carrier` for a list of acceptable values. */
-		carrier?: string;
+		carrier?: string | null;
 
 		/** Required. Maximum transit time. */
-		maxDaysInTransit?: string;
+		maxDaysInTransit?: string | null;
 
 		/** Required. The name of the shipping method. */
-		methodName?: string;
+		methodName?: string | null;
 
 		/** Required. Minimum transit time. */
-		minDaysInTransit?: string;
+		minDaysInTransit?: string | null;
 	}
 
 	export interface OrderPaymentMethod {
-		billingAddress?: OrderAddress;
+		billingAddress?: OrderAddress | null;
 
 		/** The card expiration month (January = 1, February = 2 etc.). */
-		expirationMonth?: number;
+		expirationMonth?: number | null;
 
 		/** The card expiration year (4-digit, e.g. 2015). */
-		expirationYear?: number;
+		expirationYear?: number | null;
 
 		/** The last four digits of the card number. */
-		lastFourDigits?: string;
+		lastFourDigits?: string | null;
 
 		/** The billing phone number. */
-		phoneNumber?: string;
+		phoneNumber?: string | null;
 
 		/**
 		 * The type of instrument.
@@ -2415,45 +2415,45 @@ export namespace MyNS {
 		 * - "`VISA`"
 		 * - "``"
 		 */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface OrderPickupDetails {
-		address?: OrderAddress;
+		address?: OrderAddress | null;
 
 		/** Collectors authorized to pick up shipment from the pickup location. */
-		collectors?: Array<OrderPickupDetailsCollector>;
+		collectors?: Array<OrderPickupDetailsCollector> | null;
 
 		/** ID of the pickup location. */
-		locationId?: string;
+		locationId?: string | null;
 	}
 
 	export interface OrderPickupDetailsCollector {
 
 		/** Name of the person picking up the shipment. */
-		name?: string;
+		name?: string | null;
 
 		/** Phone number of the person picking up the shipment. */
-		phoneNumber?: string;
+		phoneNumber?: string | null;
 	}
 
 	export interface OrderLegacyPromotion {
-		benefits?: Array<OrderLegacyPromotionBenefit>;
+		benefits?: Array<OrderLegacyPromotionBenefit> | null;
 
 		/**
 		 * The date and time frame when the promotion is active and ready for validation review. Note that the promotion live time may be delayed for a few hours due to the validation review.
 		 * Start date and end date are separated by a forward slash (/). The start date is specified by the format (YYYY-MM-DD), followed by the letter ?T?, the time of the day when the sale starts (in Greenwich Mean Time, GMT), followed by an expression of the time zone for the sale. The end date is in the same format.
 		 */
-		effectiveDates?: string;
+		effectiveDates?: string | null;
 
 		/** Optional. The text code that corresponds to the promotion when applied on the retailer?s website. */
-		genericRedemptionCode?: string;
+		genericRedemptionCode?: string | null;
 
 		/** The unique ID of the promotion. */
-		id?: string;
+		id?: string | null;
 
 		/** The full title of the promotion. */
-		longTitle?: string;
+		longTitle?: string | null;
 
 		/**
 		 * Whether the promotion is applicable to all products or only specific products.
@@ -2461,21 +2461,21 @@ export namespace MyNS {
 		 * - "`allProducts`"
 		 * - "`specificProducts`"
 		 */
-		productApplicability?: string;
+		productApplicability?: string | null;
 
 		/**
 		 * Indicates that the promotion is valid online.
 		 * Acceptable values are:
 		 * - "`online`"
 		 */
-		redemptionChannel?: string;
+		redemptionChannel?: string | null;
 	}
 
 	export interface OrderLegacyPromotionBenefit {
-		discount?: Price;
+		discount?: Price | null;
 
 		/** The OfferId(s) that were purchased in this order and map to this specific benefit of the promotion. */
-		offerIds?: Array<string>;
+		offerIds?: Array<string> | null;
 
 		/**
 		 * Further describes the benefit of the promotion. Note that we will expand on this enumeration as we support new promotion sub-types.
@@ -2495,8 +2495,8 @@ export namespace MyNS {
 		 * - "`rewardPoints`"
 		 * - "`salePrice`"
 		 */
-		subType?: string;
-		taxImpact?: Price;
+		subType?: string | null;
+		taxImpact?: Price | null;
 
 		/**
 		 * Describes whether the promotion applies to products (e.g. 20% off) or to shipping (e.g. Free Shipping).
@@ -2504,7 +2504,7 @@ export namespace MyNS {
 		 * - "`product`"
 		 * - "`shipping`"
 		 */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface OrderRefund {
@@ -2519,11 +2519,11 @@ export namespace MyNS {
 		 * - "`googleSabre`"
 		 * - "`merchant`"
 		 */
-		actor?: string;
-		amount?: Price;
+		actor?: string | null;
+		amount?: Price | null;
 
 		/** Date on which the item has been created, in ISO 8601 format. */
-		creationDate?: string;
+		creationDate?: string | null;
 
 		/**
 		 * The reason for the refund.
@@ -2573,10 +2573,10 @@ export namespace MyNS {
 		 * - "`unsupportedPoBoxAddress`"
 		 * - "`wrongProductShipped`"
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/** The explanation of the reason. */
-		reasonText?: string;
+		reasonText?: string | null;
 	}
 
 	export interface OrderShipment {
@@ -2622,19 +2622,19 @@ export namespace MyNS {
 		 * - "`db schenker`" (DB Schenker)
 		 * - "`aramex`" (Aramex)
 		 */
-		carrier?: string;
+		carrier?: string | null;
 
 		/** Date on which the shipment has been created, in ISO 8601 format. */
-		creationDate?: string;
+		creationDate?: string | null;
 
 		/** Date on which the shipment has been delivered, in ISO 8601 format. Present only if `status` is `delivered` */
-		deliveryDate?: string;
+		deliveryDate?: string | null;
 
 		/** The ID of the shipment. */
-		id?: string;
+		id?: string | null;
 
 		/** The line items that are shipped. */
-		lineItems?: Array<OrderShipmentLineItemShipment>;
+		lineItems?: Array<OrderShipmentLineItemShipment> | null;
 
 		/**
 		 * The status of the shipment.
@@ -2644,136 +2644,136 @@ export namespace MyNS {
 		 * - "`shipped`"
 		 * - "`undeliverable`"
 		 */
-		status?: string;
+		status?: string | null;
 
 		/** The tracking ID for the shipment. */
-		trackingId?: string;
+		trackingId?: string | null;
 	}
 
 	export interface OrderShipmentLineItemShipment {
 
 		/** The ID of the line item that is shipped. This value is assigned by Google when an order is created. Either lineItemId or productId is required. */
-		lineItemId?: string;
+		lineItemId?: string | null;
 
 		/** The ID of the product to ship. This is the REST ID used in the products service. Either lineItemId or productId is required. */
-		productId?: string;
+		productId?: string | null;
 
 		/** The quantity that is shipped. */
-		quantity?: string;
+		quantity?: string | null;
 	}
 
 
 	/** Order disbursement. All methods require the payment analyst role. (== resource_for v2.orderreports ==) (== resource_for v2.1.orderreports ==) */
 	export interface OrderReportDisbursement {
-		disbursementAmount?: Price;
+		disbursementAmount?: Price | null;
 
 		/** The disbursement date, in ISO 8601 format. */
-		disbursementCreationDate?: string;
+		disbursementCreationDate?: string | null;
 
 		/** The date the disbursement was initiated, in ISO 8601 format. */
-		disbursementDate?: string;
+		disbursementDate?: string | null;
 
 		/** The ID of the disbursement. */
-		disbursementId?: string;
+		disbursementId?: string | null;
 
 		/** The ID of the managing account. */
-		merchantId?: string;
+		merchantId?: string | null;
 	}
 
 	export interface OrderReportTransaction {
-		disbursementAmount?: Price;
+		disbursementAmount?: Price | null;
 
 		/** The date the disbursement was created, in ISO 8601 format. */
-		disbursementCreationDate?: string;
+		disbursementCreationDate?: string | null;
 
 		/** The date the disbursement was initiated, in ISO 8601 format. */
-		disbursementDate?: string;
+		disbursementDate?: string | null;
 
 		/** The ID of the disbursement. */
-		disbursementId?: string;
+		disbursementId?: string | null;
 
 		/** The ID of the managing account. */
-		merchantId?: string;
+		merchantId?: string | null;
 
 		/** Merchant-provided ID of the order. */
-		merchantOrderId?: string;
+		merchantOrderId?: string | null;
 
 		/** The ID of the order. */
-		orderId?: string;
-		productAmount?: Amount;
-		productAmountWithRemittedTax?: ProductAmount;
+		orderId?: string | null;
+		productAmount?: Amount | null;
+		productAmountWithRemittedTax?: ProductAmount | null;
 
 		/** The date of the transaction, in ISO 8601 format. */
-		transactionDate?: string;
+		transactionDate?: string | null;
 	}
 
 	export interface ProductAmount {
-		priceAmount?: Price;
-		remittedTaxAmount?: Price;
-		taxAmount?: Price;
+		priceAmount?: Price | null;
+		remittedTaxAmount?: Price | null;
+		taxAmount?: Price | null;
 	}
 
 	export interface OrderinvoicesCreateChargeInvoiceRequest {
 
 		/** [required] The ID of the invoice. */
-		invoiceId?: string;
-		invoiceSummary?: InvoiceSummary;
+		invoiceId?: string | null;
+		invoiceSummary?: InvoiceSummary | null;
 
 		/** [required] Invoice details per line item. */
-		lineItemInvoices?: Array<ShipmentInvoiceLineItemInvoice>;
+		lineItemInvoices?: Array<ShipmentInvoiceLineItemInvoice> | null;
 
 		/** [required] The ID of the operation, unique across all operations for a given order. */
-		operationId?: string;
+		operationId?: string | null;
 
 		/** [required] ID of the shipment group. It is assigned by the merchant in the `shipLineItems` method and is used to group multiple line items that have the same kind of shipping charges. */
-		shipmentGroupId?: string;
+		shipmentGroupId?: string | null;
 	}
 
 	export interface ShipmentInvoiceLineItemInvoice {
 
 		/** ID of the line item. Either lineItemId or productId must be set. */
-		lineItemId?: string;
+		lineItemId?: string | null;
 
 		/** ID of the product. This is the REST ID used in the products service. Either lineItemId or productId must be set. */
-		productId?: string;
+		productId?: string | null;
 
 		/** [required] The shipment unit ID is assigned by the merchant and defines individual quantities within a line item. The same ID can be assigned to units that are the same while units that differ must be assigned a different ID (for example: free or promotional units). */
-		shipmentUnitIds?: Array<string>;
-		unitInvoice?: UnitInvoice;
+		shipmentUnitIds?: Array<string> | null;
+		unitInvoice?: UnitInvoice | null;
 	}
 
 	export interface UnitInvoice {
 
 		/** Additional charges for a unit, e.g. shipping costs. */
-		additionalCharges?: Array<UnitInvoiceAdditionalCharge>;
+		additionalCharges?: Array<UnitInvoiceAdditionalCharge> | null;
 
 		/** Deprecated. */
-		promotions?: Array<Promotion>;
-		unitPricePretax?: Price;
+		promotions?: Array<Promotion> | null;
+		unitPricePretax?: Price | null;
 
 		/** Tax amounts to apply to the unit price. */
-		unitPriceTaxes?: Array<UnitInvoiceTaxLine>;
+		unitPriceTaxes?: Array<UnitInvoiceTaxLine> | null;
 	}
 
 	export interface UnitInvoiceAdditionalCharge {
-		additionalChargeAmount?: Amount;
+		additionalChargeAmount?: Amount | null;
 
 		/** Deprecated. */
-		additionalChargePromotions?: Array<Promotion>;
+		additionalChargePromotions?: Array<Promotion> | null;
 
 		/**
 		 * [required] Type of the additional charge.
 		 * Acceptable values are:
 		 * - "`shipping`"
 		 */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface UnitInvoiceTaxLine {
-		taxAmount?: Price;
+		taxAmount?: Price | null;
 
 		/** Optional name of the tax type. This should only be provided if `taxType` is `otherFeeTax`. */
-		taxName?: string;
+		taxName?: string | null;
 
 		/**
 		 * [required] Type of the tax.
@@ -2782,7 +2782,7 @@ export namespace MyNS {
 		 * - "`otherFeeTax`"
 		 * - "`sales`"
 		 */
-		taxType?: string;
+		taxType?: string | null;
 	}
 
 	export interface OrderinvoicesCreateChargeInvoiceResponse {
@@ -2793,30 +2793,30 @@ export namespace MyNS {
 		 * - "duplicate"
 		 * - "executed"
 		 */
-		executionStatus?: string;
+		executionStatus?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#orderinvoicesCreateChargeInvoiceResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface OrderinvoicesCreateRefundInvoiceRequest {
 
 		/** [required] The ID of the invoice. */
-		invoiceId?: string;
+		invoiceId?: string | null;
 
 		/** [required] The ID of the operation, unique across all operations for a given order. */
-		operationId?: string;
-		refundOnlyOption?: OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceRefundOption;
-		returnOption?: OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceReturnOption;
+		operationId?: string | null;
+		refundOnlyOption?: OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceRefundOption | null;
+		returnOption?: OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceReturnOption | null;
 
 		/** Invoice details for different shipment groups. */
-		shipmentInvoices?: Array<ShipmentInvoice>;
+		shipmentInvoices?: Array<ShipmentInvoice> | null;
 	}
 
 	export interface OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceRefundOption {
 
 		/** Optional description of the refund reason. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * [required] Reason for the refund.
@@ -2866,13 +2866,13 @@ export namespace MyNS {
 		 * - "`unsupportedPoBoxAddress`"
 		 * - "`wrongProductShipped`"
 		 */
-		reason?: string;
+		reason?: string | null;
 	}
 
 	export interface OrderinvoicesCustomBatchRequestEntryCreateRefundInvoiceReturnOption {
 
 		/** Optional description of the return reason. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * [required] Reason for the return.
@@ -2891,17 +2891,17 @@ export namespace MyNS {
 		 * - "`unsupportedPoBoxAddress`"
 		 * - "`wrongProductShipped`"
 		 */
-		reason?: string;
+		reason?: string | null;
 	}
 
 	export interface ShipmentInvoice {
-		invoiceSummary?: InvoiceSummary;
+		invoiceSummary?: InvoiceSummary | null;
 
 		/** [required] Invoice details per line item. */
-		lineItemInvoices?: Array<ShipmentInvoiceLineItemInvoice>;
+		lineItemInvoices?: Array<ShipmentInvoiceLineItemInvoice> | null;
 
 		/** [required] ID of the shipment group. It is assigned by the merchant in the `shipLineItems` method and is used to group multiple line items that have the same kind of shipping charges. */
-		shipmentGroupId?: string;
+		shipmentGroupId?: string | null;
 	}
 
 	export interface OrderinvoicesCreateRefundInvoiceResponse {
@@ -2912,50 +2912,50 @@ export namespace MyNS {
 		 * - "duplicate"
 		 * - "executed"
 		 */
-		executionStatus?: string;
+		executionStatus?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#orderinvoicesCreateRefundInvoiceResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface OrderreportsListDisbursementsResponse {
 
 		/** The list of disbursements. */
-		disbursements?: Array<OrderReportDisbursement>;
+		disbursements?: Array<OrderReportDisbursement> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#orderreportsListDisbursementsResponse". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The token for the retrieval of the next page of disbursements. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	export interface OrderreportsListTransactionsResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#orderreportsListTransactionsResponse". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The token for the retrieval of the next page of transactions. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The list of transactions. */
-		transactions?: Array<OrderReportTransaction>;
+		transactions?: Array<OrderReportTransaction> | null;
 	}
 
 	export interface OrderreturnsListResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#orderreturnsListResponse". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The token for the retrieval of the next page of returns. */
-		nextPageToken?: string;
-		resources?: Array<MerchantOrderReturn>;
+		nextPageToken?: string | null;
+		resources?: Array<MerchantOrderReturn> | null;
 	}
 
 	export interface OrdersAcknowledgeRequest {
 
 		/** The ID of the operation. Unique across all operations for a given order. */
-		operationId?: string;
+		operationId?: string | null;
 	}
 
 	export interface OrdersAcknowledgeResponse {
@@ -2966,34 +2966,34 @@ export namespace MyNS {
 		 * - "duplicate"
 		 * - "executed"
 		 */
-		executionStatus?: string;
+		executionStatus?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersAcknowledgeResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface OrdersAdvanceTestOrderResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersAdvanceTestOrderResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface OrdersCancelLineItemRequest {
-		amount?: Price;
-		amountPretax?: Price;
-		amountTax?: Price;
+		amount?: Price | null;
+		amountPretax?: Price | null;
+		amountTax?: Price | null;
 
 		/** The ID of the line item to cancel. Either lineItemId or productId is required. */
-		lineItemId?: string;
+		lineItemId?: string | null;
 
 		/** The ID of the operation. Unique across all operations for a given order. */
-		operationId?: string;
+		operationId?: string | null;
 
 		/** The ID of the product to cancel. This is the REST ID used in the products service. Either lineItemId or productId is required. */
-		productId?: string;
+		productId?: string | null;
 
 		/** The quantity to cancel. */
-		quantity?: string;
+		quantity?: string | null;
 
 		/**
 		 * The reason for the cancellation.
@@ -3009,10 +3009,10 @@ export namespace MyNS {
 		 * - "`undeliverableShippingAddress`"
 		 * - "`unsupportedPoBoxAddress`"
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/** The explanation of the reason. */
-		reasonText?: string;
+		reasonText?: string | null;
 	}
 
 	export interface OrdersCancelLineItemResponse {
@@ -3023,16 +3023,16 @@ export namespace MyNS {
 		 * - "duplicate"
 		 * - "executed"
 		 */
-		executionStatus?: string;
+		executionStatus?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersCancelLineItemResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface OrdersCancelRequest {
 
 		/** The ID of the operation. Unique across all operations for a given order. */
-		operationId?: string;
+		operationId?: string | null;
 
 		/**
 		 * The reason for the cancellation.
@@ -3048,10 +3048,10 @@ export namespace MyNS {
 		 * - "`undeliverableShippingAddress`"
 		 * - "`unsupportedPoBoxAddress`"
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/** The explanation of the reason. */
-		reasonText?: string;
+		reasonText?: string | null;
 	}
 
 	export interface OrdersCancelResponse {
@@ -3062,10 +3062,10 @@ export namespace MyNS {
 		 * - "duplicate"
 		 * - "executed"
 		 */
-		executionStatus?: string;
+		executionStatus?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersCancelResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface OrdersCancelTestOrderByCustomerRequest {
@@ -3077,13 +3077,13 @@ export namespace MyNS {
 		 * - "`orderedWrongItem`"
 		 * - "`other`"
 		 */
-		reason?: string;
+		reason?: string | null;
 	}
 
 	export interface OrdersCancelTestOrderByCustomerResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersCancelTestOrderByCustomerResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface OrdersCreateTestOrderRequest {
@@ -3094,7 +3094,7 @@ export namespace MyNS {
 		 * - "`US`"
 		 * - "`FR`"  Defaults to `US`.
 		 */
-		country?: string;
+		country?: string | null;
 
 		/**
 		 * The test order template to use. Specify as an alternative to `testOrder` as a shortcut for retrieving a template and then creating an order using that template.
@@ -3105,25 +3105,25 @@ export namespace MyNS {
 		 * - "`template2`"
 		 * - "`template3`"
 		 */
-		templateName?: string;
-		testOrder?: TestOrder;
+		templateName?: string | null;
+		testOrder?: TestOrder | null;
 	}
 
 	export interface TestOrder {
-		customer?: TestOrderCustomer;
+		customer?: TestOrderCustomer | null;
 
 		/** Whether the orderinvoices service should support this order. */
-		enableOrderinvoices?: boolean;
+		enableOrderinvoices?: boolean | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#testOrder`" */
-		kind?: string;
+		kind?: string | null;
 
 		/** Required. Line items that are ordered. At least one line item must be provided. */
-		lineItems?: Array<TestOrderLineItem>;
+		lineItems?: Array<TestOrderLineItem> | null;
 
 		/** Restricted. Do not use. */
-		notificationMode?: string;
-		paymentMethod?: TestOrderPaymentMethod;
+		notificationMode?: string | null;
+		paymentMethod?: TestOrderPaymentMethod | null;
 
 		/**
 		 * Required. Identifier of one of the predefined delivery addresses for the delivery.
@@ -3132,7 +3132,7 @@ export namespace MyNS {
 		 * - "`jim`"
 		 * - "`pam`"
 		 */
-		predefinedDeliveryAddress?: string;
+		predefinedDeliveryAddress?: string | null;
 
 		/**
 		 * Identifier of one of the predefined pickup details. Required for orders containing line items with shipping type `pickup`.
@@ -3141,12 +3141,12 @@ export namespace MyNS {
 		 * - "`jim`"
 		 * - "`pam`"
 		 */
-		predefinedPickupDetails?: string;
+		predefinedPickupDetails?: string | null;
 
 		/** Deprecated. Ignored if provided. */
-		promotions?: Array<OrderLegacyPromotion>;
-		shippingCost?: Price;
-		shippingCostTax?: Price;
+		promotions?: Array<OrderLegacyPromotion> | null;
+		shippingCost?: Price | null;
+		shippingCostTax?: Price | null;
 
 		/**
 		 * Required. The requested shipping option.
@@ -3158,7 +3158,7 @@ export namespace MyNS {
 		 * - "`standard`"
 		 * - "`twoDay`"
 		 */
-		shippingOption?: string;
+		shippingOption?: string | null;
 	}
 
 	export interface TestOrderCustomer {
@@ -3170,14 +3170,14 @@ export namespace MyNS {
 		 * - "`pog.jim.halpert@gmail.com`"
 		 * - "`penpog.pam.beesly@gmail.comding`"
 		 */
-		email?: string;
+		email?: string | null;
 
 		/** Deprecated. Please use marketingRightsInfo instead. */
-		explicitMarketingPreference?: boolean;
+		explicitMarketingPreference?: boolean | null;
 
 		/** Full name of the customer. */
-		fullName?: string;
-		marketingRightsInfo?: TestOrderCustomerMarketingRightsInfo;
+		fullName?: string | null;
+		marketingRightsInfo?: TestOrderCustomerMarketingRightsInfo | null;
 	}
 
 	export interface TestOrderCustomerMarketingRightsInfo {
@@ -3188,40 +3188,40 @@ export namespace MyNS {
 		 * - "`denied`"
 		 * - "`granted`"
 		 */
-		explicitMarketingPreference?: string;
+		explicitMarketingPreference?: string | null;
 
 		/** Timestamp when last time marketing preference was updated. Could be empty, if user wasn't offered a selection yet. */
-		lastUpdatedTimestamp?: string;
+		lastUpdatedTimestamp?: string | null;
 	}
 
 	export interface TestOrderLineItem {
-		product?: TestOrderLineItemProduct;
+		product?: TestOrderLineItemProduct | null;
 
 		/** Required. Number of items ordered. */
-		quantityOrdered?: string;
-		returnInfo?: OrderLineItemReturnInfo;
-		shippingDetails?: OrderLineItemShippingDetails;
-		unitTax?: Price;
+		quantityOrdered?: string | null;
+		returnInfo?: OrderLineItemReturnInfo | null;
+		shippingDetails?: OrderLineItemShippingDetails | null;
+		unitTax?: Price | null;
 	}
 
 	export interface TestOrderLineItemProduct {
 
 		/** Required. Brand of the item. */
-		brand?: string;
+		brand?: string | null;
 
 		/**
 		 * Deprecated.
 		 * Acceptable values are:
 		 * - "`online`"
 		 */
-		channel?: string;
+		channel?: string | null;
 
 		/**
 		 * Required. Condition or state of the item.
 		 * Acceptable values are:
 		 * - "`new`"
 		 */
-		condition?: string;
+		condition?: string | null;
 
 		/**
 		 * Required. The two-letter ISO 639-1 language code for the item.
@@ -3229,47 +3229,47 @@ export namespace MyNS {
 		 * - "`en`"
 		 * - "`fr`"
 		 */
-		contentLanguage?: string;
+		contentLanguage?: string | null;
 
 		/** Fees for the item. Optional. */
-		fees?: Array<OrderLineItemProductFee>;
+		fees?: Array<OrderLineItemProductFee> | null;
 
 		/** Global Trade Item Number (GTIN) of the item. Optional. */
-		gtin?: string;
+		gtin?: string | null;
 
 		/** Required. URL of an image of the item. */
-		imageLink?: string;
+		imageLink?: string | null;
 
 		/** Shared identifier for all variants of the same product. Optional. */
-		itemGroupId?: string;
+		itemGroupId?: string | null;
 
 		/** Manufacturer Part Number (MPN) of the item. Optional. */
-		mpn?: string;
+		mpn?: string | null;
 
 		/** Required. An identifier of the item. */
-		offerId?: string;
-		price?: Price;
+		offerId?: string | null;
+		price?: Price | null;
 
 		/** Required. The CLDR territory code of the target country of the product. */
-		targetCountry?: string;
+		targetCountry?: string | null;
 
 		/** Required. The title of the product. */
-		title?: string;
+		title?: string | null;
 
 		/** Variant attributes for the item. Optional. */
-		variantAttributes?: Array<OrderLineItemProductVariantAttribute>;
+		variantAttributes?: Array<OrderLineItemProductVariantAttribute> | null;
 	}
 
 	export interface TestOrderPaymentMethod {
 
 		/** The card expiration month (January = 1, February = 2 etc.). */
-		expirationMonth?: number;
+		expirationMonth?: number | null;
 
 		/** The card expiration year (4-digit, e.g. 2015). */
-		expirationYear?: number;
+		expirationYear?: number | null;
 
 		/** The last four digits of the card number. */
-		lastFourDigits?: string;
+		lastFourDigits?: string | null;
 
 		/**
 		 * The billing address.
@@ -3278,7 +3278,7 @@ export namespace MyNS {
 		 * - "`jim`"
 		 * - "`pam`"
 		 */
-		predefinedBillingAddress?: string;
+		predefinedBillingAddress?: string | null;
 
 		/**
 		 * The type of instrument. Note that real orders might have different values than the four values accepted by `createTestOrder`.
@@ -3288,61 +3288,61 @@ export namespace MyNS {
 		 * - "`MASTERCARD`"
 		 * - "`VISA`"
 		 */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface OrdersCreateTestOrderResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersCreateTestOrderResponse". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The ID of the newly created test order. */
-		orderId?: string;
+		orderId?: string | null;
 	}
 
 	export interface OrdersCreateTestReturnRequest {
 
 		/** Returned items. */
-		items?: Array<OrdersCustomBatchRequestEntryCreateTestReturnReturnItem>;
+		items?: Array<OrdersCustomBatchRequestEntryCreateTestReturnReturnItem> | null;
 	}
 
 	export interface OrdersCustomBatchRequestEntryCreateTestReturnReturnItem {
 
 		/** The ID of the line item to return. */
-		lineItemId?: string;
+		lineItemId?: string | null;
 
 		/** Quantity that is returned. */
-		quantity?: string;
+		quantity?: string | null;
 	}
 
 	export interface OrdersCreateTestReturnResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersCreateTestReturnResponse". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The ID of the newly created test order return. */
-		returnId?: string;
+		returnId?: string | null;
 	}
 
 	export interface OrdersCustomBatchRequest {
 
 		/** The request entries to be processed in the batch. */
-		entries?: Array<OrdersCustomBatchRequestEntry>;
+		entries?: Array<OrdersCustomBatchRequestEntry> | null;
 	}
 
 	export interface OrdersCustomBatchRequestEntry {
 
 		/** An entry ID, unique within the batch request. */
-		batchId?: string;
-		cancel?: OrdersCustomBatchRequestEntryCancel;
-		cancelLineItem?: OrdersCustomBatchRequestEntryCancelLineItem;
-		inStoreRefundLineItem?: OrdersCustomBatchRequestEntryInStoreRefundLineItem;
+		batchId?: string | null;
+		cancel?: OrdersCustomBatchRequestEntryCancel | null;
+		cancelLineItem?: OrdersCustomBatchRequestEntryCancelLineItem | null;
+		inStoreRefundLineItem?: OrdersCustomBatchRequestEntryInStoreRefundLineItem | null;
 
 		/** The ID of the managing account. */
-		merchantId?: string;
+		merchantId?: string | null;
 
 		/** The merchant order ID. Required for `updateMerchantOrderId` and `getByMerchantOrderId` methods. */
-		merchantOrderId?: string;
+		merchantOrderId?: string | null;
 
 		/**
 		 * The method of the batch entry.
@@ -3363,21 +3363,21 @@ export namespace MyNS {
 		 * - "`updateMerchantOrderId`"
 		 * - "`updateShipment`"
 		 */
-		method?: string;
+		method?: string | null;
 
 		/** The ID of the operation. Unique across all operations for a given order. Required for all methods beside `get` and `getByMerchantOrderId`. */
-		operationId?: string;
+		operationId?: string | null;
 
 		/** The ID of the order. Required for all methods beside `getByMerchantOrderId`. */
-		orderId?: string;
-		refund?: OrdersCustomBatchRequestEntryRefund;
-		rejectReturnLineItem?: OrdersCustomBatchRequestEntryRejectReturnLineItem;
-		returnLineItem?: OrdersCustomBatchRequestEntryReturnLineItem;
-		returnRefundLineItem?: OrdersCustomBatchRequestEntryReturnRefundLineItem;
-		setLineItemMetadata?: OrdersCustomBatchRequestEntrySetLineItemMetadata;
-		shipLineItems?: OrdersCustomBatchRequestEntryShipLineItems;
-		updateLineItemShippingDetails?: OrdersCustomBatchRequestEntryUpdateLineItemShippingDetails;
-		updateShipment?: OrdersCustomBatchRequestEntryUpdateShipment;
+		orderId?: string | null;
+		refund?: OrdersCustomBatchRequestEntryRefund | null;
+		rejectReturnLineItem?: OrdersCustomBatchRequestEntryRejectReturnLineItem | null;
+		returnLineItem?: OrdersCustomBatchRequestEntryReturnLineItem | null;
+		returnRefundLineItem?: OrdersCustomBatchRequestEntryReturnRefundLineItem | null;
+		setLineItemMetadata?: OrdersCustomBatchRequestEntrySetLineItemMetadata | null;
+		shipLineItems?: OrdersCustomBatchRequestEntryShipLineItems | null;
+		updateLineItemShippingDetails?: OrdersCustomBatchRequestEntryUpdateLineItemShippingDetails | null;
+		updateShipment?: OrdersCustomBatchRequestEntryUpdateShipment | null;
 	}
 
 	export interface OrdersCustomBatchRequestEntryCancel {
@@ -3396,25 +3396,25 @@ export namespace MyNS {
 		 * - "`undeliverableShippingAddress`"
 		 * - "`unsupportedPoBoxAddress`"
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/** The explanation of the reason. */
-		reasonText?: string;
+		reasonText?: string | null;
 	}
 
 	export interface OrdersCustomBatchRequestEntryCancelLineItem {
-		amount?: Price;
-		amountPretax?: Price;
-		amountTax?: Price;
+		amount?: Price | null;
+		amountPretax?: Price | null;
+		amountTax?: Price | null;
 
 		/** The ID of the line item to cancel. Either lineItemId or productId is required. */
-		lineItemId?: string;
+		lineItemId?: string | null;
 
 		/** The ID of the product to cancel. This is the REST ID used in the products service. Either lineItemId or productId is required. */
-		productId?: string;
+		productId?: string | null;
 
 		/** The quantity to cancel. */
-		quantity?: string;
+		quantity?: string | null;
 
 		/**
 		 * The reason for the cancellation.
@@ -3430,24 +3430,24 @@ export namespace MyNS {
 		 * - "`undeliverableShippingAddress`"
 		 * - "`unsupportedPoBoxAddress`"
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/** The explanation of the reason. */
-		reasonText?: string;
+		reasonText?: string | null;
 	}
 
 	export interface OrdersCustomBatchRequestEntryInStoreRefundLineItem {
-		amountPretax?: Price;
-		amountTax?: Price;
+		amountPretax?: Price | null;
+		amountTax?: Price | null;
 
 		/** The ID of the line item to return. Either lineItemId or productId is required. */
-		lineItemId?: string;
+		lineItemId?: string | null;
 
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
-		productId?: string;
+		productId?: string | null;
 
 		/** The quantity to return and refund. */
-		quantity?: string;
+		quantity?: string | null;
 
 		/**
 		 * The reason for the return.
@@ -3466,16 +3466,16 @@ export namespace MyNS {
 		 * - "`unsupportedPoBoxAddress`"
 		 * - "`wrongProductShipped`"
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/** The explanation of the reason. */
-		reasonText?: string;
+		reasonText?: string | null;
 	}
 
 	export interface OrdersCustomBatchRequestEntryRefund {
-		amount?: Price;
-		amountPretax?: Price;
-		amountTax?: Price;
+		amount?: Price | null;
+		amountPretax?: Price | null;
+		amountTax?: Price | null;
 
 		/**
 		 * The reason for the refund.
@@ -3497,22 +3497,22 @@ export namespace MyNS {
 		 * - "`undeliverableShippingAddress`"
 		 * - "`wrongProductShipped`"
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/** The explanation of the reason. */
-		reasonText?: string;
+		reasonText?: string | null;
 	}
 
 	export interface OrdersCustomBatchRequestEntryRejectReturnLineItem {
 
 		/** The ID of the line item to return. Either lineItemId or productId is required. */
-		lineItemId?: string;
+		lineItemId?: string | null;
 
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
-		productId?: string;
+		productId?: string | null;
 
 		/** The quantity to return and refund. */
-		quantity?: string;
+		quantity?: string | null;
 
 		/**
 		 * The reason for the return.
@@ -3523,22 +3523,22 @@ export namespace MyNS {
 		 * - "`other`"
 		 * - "`outOfReturnWindow`"
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/** The explanation of the reason. */
-		reasonText?: string;
+		reasonText?: string | null;
 	}
 
 	export interface OrdersCustomBatchRequestEntryReturnLineItem {
 
 		/** The ID of the line item to return. Either lineItemId or productId is required. */
-		lineItemId?: string;
+		lineItemId?: string | null;
 
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
-		productId?: string;
+		productId?: string | null;
 
 		/** The quantity to return. */
-		quantity?: string;
+		quantity?: string | null;
 
 		/**
 		 * The reason for the return.
@@ -3557,24 +3557,24 @@ export namespace MyNS {
 		 * - "`unsupportedPoBoxAddress`"
 		 * - "`wrongProductShipped`"
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/** The explanation of the reason. */
-		reasonText?: string;
+		reasonText?: string | null;
 	}
 
 	export interface OrdersCustomBatchRequestEntryReturnRefundLineItem {
-		amountPretax?: Price;
-		amountTax?: Price;
+		amountPretax?: Price | null;
+		amountTax?: Price | null;
 
 		/** The ID of the line item to return. Either lineItemId or productId is required. */
-		lineItemId?: string;
+		lineItemId?: string | null;
 
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
-		productId?: string;
+		productId?: string | null;
 
 		/** The quantity to return and refund. */
-		quantity?: string;
+		quantity?: string | null;
 
 		/**
 		 * The reason for the return.
@@ -3593,53 +3593,53 @@ export namespace MyNS {
 		 * - "`unsupportedPoBoxAddress`"
 		 * - "`wrongProductShipped`"
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/** The explanation of the reason. */
-		reasonText?: string;
+		reasonText?: string | null;
 	}
 
 	export interface OrdersCustomBatchRequestEntrySetLineItemMetadata {
-		annotations?: Array<OrderMerchantProvidedAnnotation>;
+		annotations?: Array<OrderMerchantProvidedAnnotation> | null;
 
 		/** The ID of the line item to set metadata. Either lineItemId or productId is required. */
-		lineItemId?: string;
+		lineItemId?: string | null;
 
 		/** The ID of the product to set metadata. This is the REST ID used in the products service. Either lineItemId or productId is required. */
-		productId?: string;
+		productId?: string | null;
 	}
 
 	export interface OrdersCustomBatchRequestEntryShipLineItems {
 
 		/** Deprecated. Please use shipmentInfo instead. The carrier handling the shipment. See `shipments[].carrier` in the  Orders resource representation for a list of acceptable values. */
-		carrier?: string;
+		carrier?: string | null;
 
 		/** Line items to ship. */
-		lineItems?: Array<OrderShipmentLineItemShipment>;
+		lineItems?: Array<OrderShipmentLineItemShipment> | null;
 
 		/** ID of the shipment group. Required for orders that use the orderinvoices service. */
-		shipmentGroupId?: string;
+		shipmentGroupId?: string | null;
 
 		/** Deprecated. Please use shipmentInfo instead. The ID of the shipment. */
-		shipmentId?: string;
+		shipmentId?: string | null;
 
 		/** Shipment information. This field is repeated because a single line item can be shipped in several packages (and have several tracking IDs). */
-		shipmentInfos?: Array<OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo>;
+		shipmentInfos?: Array<OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo> | null;
 
 		/** Deprecated. Please use shipmentInfo instead. The tracking ID for the shipment. */
-		trackingId?: string;
+		trackingId?: string | null;
 	}
 
 	export interface OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo {
 
 		/** The carrier handling the shipment. See `shipments[].carrier` in the  Orders resource representation for a list of acceptable values. */
-		carrier?: string;
+		carrier?: string | null;
 
 		/** Required. The ID of the shipment. This is assigned by the merchant and is unique to each shipment. */
-		shipmentId?: string;
+		shipmentId?: string | null;
 
 		/** The tracking ID for the shipment. */
-		trackingId?: string;
+		trackingId?: string | null;
 	}
 
 	export interface OrdersCustomBatchRequestEntryUpdateLineItemShippingDetails {
@@ -3648,31 +3648,31 @@ export namespace MyNS {
 		 * Updated delivery by date, in ISO 8601 format. If not specified only ship by date is updated.
 		 * Provided date should be within 1 year timeframe and can not be a date in the past.
 		 */
-		deliverByDate?: string;
+		deliverByDate?: string | null;
 
 		/** The ID of the line item to set metadata. Either lineItemId or productId is required. */
-		lineItemId?: string;
+		lineItemId?: string | null;
 
 		/** The ID of the product to set metadata. This is the REST ID used in the products service. Either lineItemId or productId is required. */
-		productId?: string;
+		productId?: string | null;
 
 		/**
 		 * Updated ship by date, in ISO 8601 format. If not specified only deliver by date is updated.
 		 * Provided date should be within 1 year timeframe and can not be a date in the past.
 		 */
-		shipByDate?: string;
+		shipByDate?: string | null;
 	}
 
 	export interface OrdersCustomBatchRequestEntryUpdateShipment {
 
 		/** The carrier handling the shipment. Not updated if missing. See `shipments[].carrier` in the  Orders resource representation for a list of acceptable values. */
-		carrier?: string;
+		carrier?: string | null;
 
 		/** Date on which the shipment has been delivered, in ISO 8601 format. Optional and can be provided only if `status` is `delivered`. */
-		deliveryDate?: string;
+		deliveryDate?: string | null;
 
 		/** The ID of the shipment. */
-		shipmentId?: string;
+		shipmentId?: string | null;
 
 		/**
 		 * New status for the shipment. Not updated if missing.
@@ -3680,28 +3680,28 @@ export namespace MyNS {
 		 * - "`delivered`"
 		 * - "`undeliverable`"
 		 */
-		status?: string;
+		status?: string | null;
 
 		/** The tracking ID for the shipment. Not updated if missing. */
-		trackingId?: string;
+		trackingId?: string | null;
 	}
 
 	export interface OrdersCustomBatchResponse {
 
 		/** The result of the execution of the batch requests. */
-		entries?: Array<OrdersCustomBatchResponseEntry>;
+		entries?: Array<OrdersCustomBatchResponseEntry> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersCustomBatchResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface OrdersCustomBatchResponseEntry {
 
 		/** The ID of the request entry this entry responds to. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** A list of errors returned by a failed batch entry. */
-		errors?: Errors;
+		errors?: Errors | null;
 
 		/**
 		 * The status of the execution. Only defined if
@@ -3711,46 +3711,46 @@ export namespace MyNS {
 		 * - "`duplicate`"
 		 * - "`executed`"
 		 */
-		executionStatus?: string;
+		executionStatus?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#ordersCustomBatchResponseEntry`" */
-		kind?: string;
+		kind?: string | null;
 
 		/** Order. Production access (all methods) requires the order manager role. Sandbox access does not. (== resource_for v2.orders ==) (== resource_for v2.1.orders ==) */
-		order?: Order;
+		order?: Order | null;
 	}
 
 	export interface OrdersGetByMerchantOrderIdResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersGetByMerchantOrderIdResponse". */
-		kind?: string;
+		kind?: string | null;
 
 		/** Order. Production access (all methods) requires the order manager role. Sandbox access does not. (== resource_for v2.orders ==) (== resource_for v2.1.orders ==) */
-		order?: Order;
+		order?: Order | null;
 	}
 
 	export interface OrdersGetTestOrderTemplateResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersGetTestOrderTemplateResponse". */
-		kind?: string;
-		template?: TestOrder;
+		kind?: string | null;
+		template?: TestOrder | null;
 	}
 
 	export interface OrdersInStoreRefundLineItemRequest {
-		amountPretax?: Price;
-		amountTax?: Price;
+		amountPretax?: Price | null;
+		amountTax?: Price | null;
 
 		/** The ID of the line item to return. Either lineItemId or productId is required. */
-		lineItemId?: string;
+		lineItemId?: string | null;
 
 		/** The ID of the operation. Unique across all operations for a given order. */
-		operationId?: string;
+		operationId?: string | null;
 
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
-		productId?: string;
+		productId?: string | null;
 
 		/** The quantity to return and refund. */
-		quantity?: string;
+		quantity?: string | null;
 
 		/**
 		 * The reason for the return.
@@ -3769,10 +3769,10 @@ export namespace MyNS {
 		 * - "`unsupportedPoBoxAddress`"
 		 * - "`wrongProductShipped`"
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/** The explanation of the reason. */
-		reasonText?: string;
+		reasonText?: string | null;
 	}
 
 	export interface OrdersInStoreRefundLineItemResponse {
@@ -3783,29 +3783,29 @@ export namespace MyNS {
 		 * - "duplicate"
 		 * - "executed"
 		 */
-		executionStatus?: string;
+		executionStatus?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersInStoreRefundLineItemResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface OrdersListResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersListResponse". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The token for the retrieval of the next page of orders. */
-		nextPageToken?: string;
-		resources?: Array<Order>;
+		nextPageToken?: string | null;
+		resources?: Array<Order> | null;
 	}
 
 	export interface OrdersRefundRequest {
-		amount?: Price;
-		amountPretax?: Price;
-		amountTax?: Price;
+		amount?: Price | null;
+		amountPretax?: Price | null;
+		amountTax?: Price | null;
 
 		/** The ID of the operation. Unique across all operations for a given order. */
-		operationId?: string;
+		operationId?: string | null;
 
 		/**
 		 * The reason for the refund.
@@ -3827,10 +3827,10 @@ export namespace MyNS {
 		 * - "`undeliverableShippingAddress`"
 		 * - "`wrongProductShipped`"
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/** The explanation of the reason. */
-		reasonText?: string;
+		reasonText?: string | null;
 	}
 
 	export interface OrdersRefundResponse {
@@ -3841,25 +3841,25 @@ export namespace MyNS {
 		 * - "duplicate"
 		 * - "executed"
 		 */
-		executionStatus?: string;
+		executionStatus?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersRefundResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface OrdersRejectReturnLineItemRequest {
 
 		/** The ID of the line item to return. Either lineItemId or productId is required. */
-		lineItemId?: string;
+		lineItemId?: string | null;
 
 		/** The ID of the operation. Unique across all operations for a given order. */
-		operationId?: string;
+		operationId?: string | null;
 
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
-		productId?: string;
+		productId?: string | null;
 
 		/** The quantity to return and refund. */
-		quantity?: string;
+		quantity?: string | null;
 
 		/**
 		 * The reason for the return.
@@ -3870,10 +3870,10 @@ export namespace MyNS {
 		 * - "`other`"
 		 * - "`outOfReturnWindow`"
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/** The explanation of the reason. */
-		reasonText?: string;
+		reasonText?: string | null;
 	}
 
 	export interface OrdersRejectReturnLineItemResponse {
@@ -3884,25 +3884,25 @@ export namespace MyNS {
 		 * - "duplicate"
 		 * - "executed"
 		 */
-		executionStatus?: string;
+		executionStatus?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersRejectReturnLineItemResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface OrdersReturnLineItemRequest {
 
 		/** The ID of the line item to return. Either lineItemId or productId is required. */
-		lineItemId?: string;
+		lineItemId?: string | null;
 
 		/** The ID of the operation. Unique across all operations for a given order. */
-		operationId?: string;
+		operationId?: string | null;
 
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
-		productId?: string;
+		productId?: string | null;
 
 		/** The quantity to return. */
-		quantity?: string;
+		quantity?: string | null;
 
 		/**
 		 * The reason for the return.
@@ -3921,10 +3921,10 @@ export namespace MyNS {
 		 * - "`unsupportedPoBoxAddress`"
 		 * - "`wrongProductShipped`"
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/** The explanation of the reason. */
-		reasonText?: string;
+		reasonText?: string | null;
 	}
 
 	export interface OrdersReturnLineItemResponse {
@@ -3935,27 +3935,27 @@ export namespace MyNS {
 		 * - "duplicate"
 		 * - "executed"
 		 */
-		executionStatus?: string;
+		executionStatus?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersReturnLineItemResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface OrdersReturnRefundLineItemRequest {
-		amountPretax?: Price;
-		amountTax?: Price;
+		amountPretax?: Price | null;
+		amountTax?: Price | null;
 
 		/** The ID of the line item to return. Either lineItemId or productId is required. */
-		lineItemId?: string;
+		lineItemId?: string | null;
 
 		/** The ID of the operation. Unique across all operations for a given order. */
-		operationId?: string;
+		operationId?: string | null;
 
 		/** The ID of the product to return. This is the REST ID used in the products service. Either lineItemId or productId is required. */
-		productId?: string;
+		productId?: string | null;
 
 		/** The quantity to return and refund. */
-		quantity?: string;
+		quantity?: string | null;
 
 		/**
 		 * The reason for the return.
@@ -3974,10 +3974,10 @@ export namespace MyNS {
 		 * - "`unsupportedPoBoxAddress`"
 		 * - "`wrongProductShipped`"
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/** The explanation of the reason. */
-		reasonText?: string;
+		reasonText?: string | null;
 	}
 
 	export interface OrdersReturnRefundLineItemResponse {
@@ -3988,23 +3988,23 @@ export namespace MyNS {
 		 * - "duplicate"
 		 * - "executed"
 		 */
-		executionStatus?: string;
+		executionStatus?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersReturnRefundLineItemResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface OrdersSetLineItemMetadataRequest {
-		annotations?: Array<OrderMerchantProvidedAnnotation>;
+		annotations?: Array<OrderMerchantProvidedAnnotation> | null;
 
 		/** The ID of the line item to set metadata. Either lineItemId or productId is required. */
-		lineItemId?: string;
+		lineItemId?: string | null;
 
 		/** The ID of the operation. Unique across all operations for a given order. */
-		operationId?: string;
+		operationId?: string | null;
 
 		/** The ID of the product to set metadata. This is the REST ID used in the products service. Either lineItemId or productId is required. */
-		productId?: string;
+		productId?: string | null;
 	}
 
 	export interface OrdersSetLineItemMetadataResponse {
@@ -4015,34 +4015,34 @@ export namespace MyNS {
 		 * - "duplicate"
 		 * - "executed"
 		 */
-		executionStatus?: string;
+		executionStatus?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersSetLineItemMetadataResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface OrdersShipLineItemsRequest {
 
 		/** Deprecated. Please use shipmentInfo instead. The carrier handling the shipment. See `shipments[].carrier` in the  Orders resource representation for a list of acceptable values. */
-		carrier?: string;
+		carrier?: string | null;
 
 		/** Line items to ship. */
-		lineItems?: Array<OrderShipmentLineItemShipment>;
+		lineItems?: Array<OrderShipmentLineItemShipment> | null;
 
 		/** The ID of the operation. Unique across all operations for a given order. */
-		operationId?: string;
+		operationId?: string | null;
 
 		/** ID of the shipment group. Required for orders that use the orderinvoices service. */
-		shipmentGroupId?: string;
+		shipmentGroupId?: string | null;
 
 		/** Deprecated. Please use shipmentInfo instead. The ID of the shipment. */
-		shipmentId?: string;
+		shipmentId?: string | null;
 
 		/** Shipment information. This field is repeated because a single line item can be shipped in several packages (and have several tracking IDs). */
-		shipmentInfos?: Array<OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo>;
+		shipmentInfos?: Array<OrdersCustomBatchRequestEntryShipLineItemsShipmentInfo> | null;
 
 		/** Deprecated. Please use shipmentInfo instead. The tracking ID for the shipment. */
-		trackingId?: string;
+		trackingId?: string | null;
 	}
 
 	export interface OrdersShipLineItemsResponse {
@@ -4053,10 +4053,10 @@ export namespace MyNS {
 		 * - "duplicate"
 		 * - "executed"
 		 */
-		executionStatus?: string;
+		executionStatus?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersShipLineItemsResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface OrdersUpdateLineItemShippingDetailsRequest {
@@ -4065,22 +4065,22 @@ export namespace MyNS {
 		 * Updated delivery by date, in ISO 8601 format. If not specified only ship by date is updated.
 		 * Provided date should be within 1 year timeframe and can not be a date in the past.
 		 */
-		deliverByDate?: string;
+		deliverByDate?: string | null;
 
 		/** The ID of the line item to set metadata. Either lineItemId or productId is required. */
-		lineItemId?: string;
+		lineItemId?: string | null;
 
 		/** The ID of the operation. Unique across all operations for a given order. */
-		operationId?: string;
+		operationId?: string | null;
 
 		/** The ID of the product to set metadata. This is the REST ID used in the products service. Either lineItemId or productId is required. */
-		productId?: string;
+		productId?: string | null;
 
 		/**
 		 * Updated ship by date, in ISO 8601 format. If not specified only deliver by date is updated.
 		 * Provided date should be within 1 year timeframe and can not be a date in the past.
 		 */
-		shipByDate?: string;
+		shipByDate?: string | null;
 	}
 
 	export interface OrdersUpdateLineItemShippingDetailsResponse {
@@ -4091,19 +4091,19 @@ export namespace MyNS {
 		 * - "duplicate"
 		 * - "executed"
 		 */
-		executionStatus?: string;
+		executionStatus?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersUpdateLineItemShippingDetailsResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface OrdersUpdateMerchantOrderIdRequest {
 
 		/** The merchant order id to be assigned to the order. Must be unique per merchant. */
-		merchantOrderId?: string;
+		merchantOrderId?: string | null;
 
 		/** The ID of the operation. Unique across all operations for a given order. */
-		operationId?: string;
+		operationId?: string | null;
 	}
 
 	export interface OrdersUpdateMerchantOrderIdResponse {
@@ -4114,25 +4114,25 @@ export namespace MyNS {
 		 * - "duplicate"
 		 * - "executed"
 		 */
-		executionStatus?: string;
+		executionStatus?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersUpdateMerchantOrderIdResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface OrdersUpdateShipmentRequest {
 
 		/** The carrier handling the shipment. Not updated if missing. See `shipments[].carrier` in the  Orders resource representation for a list of acceptable values. */
-		carrier?: string;
+		carrier?: string | null;
 
 		/** Date on which the shipment has been delivered, in ISO 8601 format. Optional and can be provided only if `status` is `delivered`. */
-		deliveryDate?: string;
+		deliveryDate?: string | null;
 
 		/** The ID of the operation. Unique across all operations for a given order. */
-		operationId?: string;
+		operationId?: string | null;
 
 		/** The ID of the shipment. */
-		shipmentId?: string;
+		shipmentId?: string | null;
 
 		/**
 		 * New status for the shipment. Not updated if missing.
@@ -4140,10 +4140,10 @@ export namespace MyNS {
 		 * - "`delivered`"
 		 * - "`undeliverable`"
 		 */
-		status?: string;
+		status?: string | null;
 
 		/** The tracking ID for the shipment. Not updated if missing. */
-		trackingId?: string;
+		trackingId?: string | null;
 	}
 
 	export interface OrdersUpdateShipmentResponse {
@@ -4154,49 +4154,49 @@ export namespace MyNS {
 		 * - "duplicate"
 		 * - "executed"
 		 */
-		executionStatus?: string;
+		executionStatus?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#ordersUpdateShipmentResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface PickupCarrierService {
 
 		/** The name of the pickup carrier (e.g., `"UPS"`). Required. */
-		carrierName?: string;
+		carrierName?: string | null;
 
 		/** The name of the pickup service (e.g., `"Access point"`). Required. */
-		serviceName?: string;
+		serviceName?: string | null;
 	}
 
 	export interface PickupServicesPickupService {
 
 		/** The name of the carrier (e.g., `"UPS"`). Always present. */
-		carrierName?: string;
+		carrierName?: string | null;
 
 		/** The CLDR country code of the carrier (e.g., "US"). Always present. */
-		country?: string;
+		country?: string | null;
 
 		/** The name of the pickup service (e.g., `"Access point"`). Always present. */
-		serviceName?: string;
+		serviceName?: string | null;
 	}
 
 	export interface PosCustomBatchRequest {
 
 		/** The request entries to be processed in the batch. */
-		entries?: Array<PosCustomBatchRequestEntry>;
+		entries?: Array<PosCustomBatchRequestEntry> | null;
 	}
 
 	export interface PosCustomBatchRequestEntry {
 
 		/** An entry ID, unique within the batch request. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** The absolute quantity of an item available at the given store. */
-		inventory?: PosInventory;
+		inventory?: PosInventory | null;
 
 		/** The ID of the POS data provider. */
-		merchantId?: string;
+		merchantId?: string | null;
 
 		/**
 		 * The method of the batch entry.
@@ -4207,19 +4207,19 @@ export namespace MyNS {
 		 * - "`inventory`"
 		 * - "`sale`"
 		 */
-		method?: string;
+		method?: string | null;
 
 		/** The change of the available quantity of an item at the given store. */
-		sale?: PosSale;
+		sale?: PosSale | null;
 
 		/** Store resource. */
-		store?: PosStore;
+		store?: PosStore | null;
 
 		/** The store code. Set this only if the method is `delete` or `get`. */
-		storeCode?: string;
+		storeCode?: string | null;
 
 		/** The ID of the account for which to get/submit data. */
-		targetMerchantId?: string;
+		targetMerchantId?: string | null;
 	}
 
 
@@ -4227,29 +4227,29 @@ export namespace MyNS {
 	export interface PosInventory {
 
 		/** Required. The two-letter ISO 639-1 language code for the item. */
-		contentLanguage?: string;
+		contentLanguage?: string | null;
 
 		/** Global Trade Item Number. */
-		gtin?: string;
+		gtin?: string | null;
 
 		/** Required. A unique identifier for the item. */
-		itemId?: string;
+		itemId?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#posInventory`" */
-		kind?: string;
-		price?: Price;
+		kind?: string | null;
+		price?: Price | null;
 
 		/** Required. The available quantity of the item. */
-		quantity?: string;
+		quantity?: string | null;
 
 		/** Required. The identifier of the merchant's store. Either a `storeCode` inserted via the API or the code of the store in Google My Business. */
-		storeCode?: string;
+		storeCode?: string | null;
 
 		/** Required. The CLDR territory code for the item. */
-		targetCountry?: string;
+		targetCountry?: string | null;
 
 		/** Required. The inventory timestamp, in ISO 8601 format. */
-		timestamp?: string;
+		timestamp?: string | null;
 	}
 
 
@@ -4257,32 +4257,32 @@ export namespace MyNS {
 	export interface PosSale {
 
 		/** Required. The two-letter ISO 639-1 language code for the item. */
-		contentLanguage?: string;
+		contentLanguage?: string | null;
 
 		/** Global Trade Item Number. */
-		gtin?: string;
+		gtin?: string | null;
 
 		/** Required. A unique identifier for the item. */
-		itemId?: string;
+		itemId?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#posSale`" */
-		kind?: string;
-		price?: Price;
+		kind?: string | null;
+		price?: Price | null;
 
 		/** Required. The relative change of the available quantity. Negative for items returned. */
-		quantity?: string;
+		quantity?: string | null;
 
 		/** A unique ID to group items from the same sale event. */
-		saleId?: string;
+		saleId?: string | null;
 
 		/** Required. The identifier of the merchant's store. Either a `storeCode` inserted via the API or the code of the store in Google My Business. */
-		storeCode?: string;
+		storeCode?: string | null;
 
 		/** Required. The CLDR territory code for the item. */
-		targetCountry?: string;
+		targetCountry?: string | null;
 
 		/** Required. The inventory timestamp, in ISO 8601 format. */
-		timestamp?: string;
+		timestamp?: string | null;
 	}
 
 
@@ -4290,183 +4290,183 @@ export namespace MyNS {
 	export interface PosStore {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#posStore`" */
-		kind?: string;
+		kind?: string | null;
 
 		/** Required. The street address of the store. */
-		storeAddress?: string;
+		storeAddress?: string | null;
 
 		/** Required. A store identifier that is unique for the given merchant. */
-		storeCode?: string;
+		storeCode?: string | null;
 	}
 
 	export interface PosCustomBatchResponse {
 
 		/** The result of the execution of the batch requests. */
-		entries?: Array<PosCustomBatchResponseEntry>;
+		entries?: Array<PosCustomBatchResponseEntry> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#posCustomBatchResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface PosCustomBatchResponseEntry {
 
 		/** The ID of the request entry to which this entry responds. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** A list of errors returned by a failed batch entry. */
-		errors?: Errors;
+		errors?: Errors | null;
 
 		/** The absolute quantity of an item available at the given store. */
-		inventory?: PosInventory;
+		inventory?: PosInventory | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#posCustomBatchResponseEntry`" */
-		kind?: string;
+		kind?: string | null;
 
 		/** The change of the available quantity of an item at the given store. */
-		sale?: PosSale;
+		sale?: PosSale | null;
 
 		/** Store resource. */
-		store?: PosStore;
+		store?: PosStore | null;
 	}
 
 	export interface PosInventoryRequest {
 
 		/** Required. The two-letter ISO 639-1 language code for the item. */
-		contentLanguage?: string;
+		contentLanguage?: string | null;
 
 		/** Global Trade Item Number. */
-		gtin?: string;
+		gtin?: string | null;
 
 		/** Required. A unique identifier for the item. */
-		itemId?: string;
-		price?: Price;
+		itemId?: string | null;
+		price?: Price | null;
 
 		/** Required. The available quantity of the item. */
-		quantity?: string;
+		quantity?: string | null;
 
 		/** Required. The identifier of the merchant's store. Either a `storeCode` inserted via the API or the code of the store in Google My Business. */
-		storeCode?: string;
+		storeCode?: string | null;
 
 		/** Required. The CLDR territory code for the item. */
-		targetCountry?: string;
+		targetCountry?: string | null;
 
 		/** Required. The inventory timestamp, in ISO 8601 format. */
-		timestamp?: string;
+		timestamp?: string | null;
 	}
 
 	export interface PosInventoryResponse {
 
 		/** Required. The two-letter ISO 639-1 language code for the item. */
-		contentLanguage?: string;
+		contentLanguage?: string | null;
 
 		/** Global Trade Item Number. */
-		gtin?: string;
+		gtin?: string | null;
 
 		/** Required. A unique identifier for the item. */
-		itemId?: string;
+		itemId?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#posInventoryResponse". */
-		kind?: string;
-		price?: Price;
+		kind?: string | null;
+		price?: Price | null;
 
 		/** Required. The available quantity of the item. */
-		quantity?: string;
+		quantity?: string | null;
 
 		/** Required. The identifier of the merchant's store. Either a `storeCode` inserted via the API or the code of the store in Google My Business. */
-		storeCode?: string;
+		storeCode?: string | null;
 
 		/** Required. The CLDR territory code for the item. */
-		targetCountry?: string;
+		targetCountry?: string | null;
 
 		/** Required. The inventory timestamp, in ISO 8601 format. */
-		timestamp?: string;
+		timestamp?: string | null;
 	}
 
 	export interface PosListResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#posListResponse". */
-		kind?: string;
-		resources?: Array<PosStore>;
+		kind?: string | null;
+		resources?: Array<PosStore> | null;
 	}
 
 	export interface PosSaleRequest {
 
 		/** Required. The two-letter ISO 639-1 language code for the item. */
-		contentLanguage?: string;
+		contentLanguage?: string | null;
 
 		/** Global Trade Item Number. */
-		gtin?: string;
+		gtin?: string | null;
 
 		/** Required. A unique identifier for the item. */
-		itemId?: string;
-		price?: Price;
+		itemId?: string | null;
+		price?: Price | null;
 
 		/** Required. The relative change of the available quantity. Negative for items returned. */
-		quantity?: string;
+		quantity?: string | null;
 
 		/** A unique ID to group items from the same sale event. */
-		saleId?: string;
+		saleId?: string | null;
 
 		/** Required. The identifier of the merchant's store. Either a `storeCode` inserted via the API or the code of the store in Google My Business. */
-		storeCode?: string;
+		storeCode?: string | null;
 
 		/** Required. The CLDR territory code for the item. */
-		targetCountry?: string;
+		targetCountry?: string | null;
 
 		/** Required. The inventory timestamp, in ISO 8601 format. */
-		timestamp?: string;
+		timestamp?: string | null;
 	}
 
 	export interface PosSaleResponse {
 
 		/** Required. The two-letter ISO 639-1 language code for the item. */
-		contentLanguage?: string;
+		contentLanguage?: string | null;
 
 		/** Global Trade Item Number. */
-		gtin?: string;
+		gtin?: string | null;
 
 		/** Required. A unique identifier for the item. */
-		itemId?: string;
+		itemId?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#posSaleResponse". */
-		kind?: string;
-		price?: Price;
+		kind?: string | null;
+		price?: Price | null;
 
 		/** Required. The relative change of the available quantity. Negative for items returned. */
-		quantity?: string;
+		quantity?: string | null;
 
 		/** A unique ID to group items from the same sale event. */
-		saleId?: string;
+		saleId?: string | null;
 
 		/** Required. The identifier of the merchant's store. Either a `storeCode` inserted via the API or the code of the store in Google My Business. */
-		storeCode?: string;
+		storeCode?: string | null;
 
 		/** Required. The CLDR territory code for the item. */
-		targetCountry?: string;
+		targetCountry?: string | null;
 
 		/** Required. The inventory timestamp, in ISO 8601 format. */
-		timestamp?: string;
+		timestamp?: string | null;
 	}
 
 	export interface PostalCodeGroup {
 
 		/** The CLDR territory code of the country the postal code group applies to. Required. */
-		country?: string;
+		country?: string | null;
 
 		/** The name of the postal code group, referred to in headers. Required. */
-		name?: string;
+		name?: string | null;
 
 		/** A range of postal codes. Required. */
-		postalCodeRanges?: Array<PostalCodeRange>;
+		postalCodeRanges?: Array<PostalCodeRange> | null;
 	}
 
 	export interface PostalCodeRange {
 
 		/** A postal code or a pattern of the form `prefix*` denoting the inclusive lower bound of the range defining the area. Examples values: `"94108"`, `"9410*"`, `"9*"`. Required. */
-		postalCodeRangeBegin?: string;
+		postalCodeRangeBegin?: string | null;
 
 		/** A postal code or a pattern of the form `prefix*` denoting the inclusive upper bound of the range defining the area. It must have the same length as `postalCodeRangeBegin`: if `postalCodeRangeBegin` is a postal code then `postalCodeRangeEnd` must be a postal code too; if `postalCodeRangeBegin` is a pattern then `postalCodeRangeEnd` must be a pattern with the same prefix length. Optional: if not set, then the area is defined as being all the postal codes matching `postalCodeRangeBegin`. */
-		postalCodeRangeEnd?: string;
+		postalCodeRangeEnd?: string | null;
 	}
 
 
@@ -4478,22 +4478,22 @@ export namespace MyNS {
 	export interface Product {
 
 		/** Additional URLs of images of the item. */
-		additionalImageLinks?: Array<string>;
+		additionalImageLinks?: Array<string> | null;
 
 		/** Additional categories of the item (formatted as in products data specification). */
-		additionalProductTypes?: Array<string>;
+		additionalProductTypes?: Array<string> | null;
 
 		/** Set to true if the item is targeted towards adults. */
-		adult?: boolean;
+		adult?: boolean | null;
 
 		/** Used to group items in an arbitrary way. Only for CPA%, discouraged otherwise. */
-		adwordsGrouping?: string;
+		adwordsGrouping?: string | null;
 
 		/** Similar to adwords_grouping, but only works on CPC. */
-		adwordsLabels?: Array<string>;
+		adwordsLabels?: Array<string> | null;
 
 		/** Allows advertisers to override the item URL when the product is shown within the context of Product Ads. */
-		adwordsRedirect?: string;
+		adwordsRedirect?: string | null;
 
 		/**
 		 * Target age group of the item.
@@ -4505,10 +4505,10 @@ export namespace MyNS {
 		 * - "`toddler`"
 		 * - "`youngAdult`"
 		 */
-		ageGroup?: string;
+		ageGroup?: string | null;
 
 		/** Deprecated. Do not use. */
-		aspects?: Array<ProductAspect>;
+		aspects?: Array<ProductAspect> | null;
 
 		/**
 		 * Availability status of the item.
@@ -4517,13 +4517,13 @@ export namespace MyNS {
 		 * - "`out of stock`"
 		 * - "`preorder`"
 		 */
-		availability?: string;
+		availability?: string | null;
 
 		/** The day a pre-ordered product becomes available for delivery, in ISO 8601 format. */
-		availabilityDate?: string;
+		availabilityDate?: string | null;
 
 		/** Brand of the item. */
-		brand?: string;
+		brand?: string | null;
 
 		/**
 		 * Required. The item's channel (online or local).
@@ -4531,10 +4531,10 @@ export namespace MyNS {
 		 * - "`local`"
 		 * - "`online`"
 		 */
-		channel?: string;
+		channel?: string | null;
 
 		/** Color of the item. */
-		color?: string;
+		color?: string | null;
 
 		/**
 		 * Condition or state of the item.
@@ -4542,53 +4542,53 @@ export namespace MyNS {
 		 * - "`local`"
 		 * - "`online`"
 		 */
-		condition?: string;
+		condition?: string | null;
 
 		/** Required. The two-letter ISO 639-1 language code for the item. */
-		contentLanguage?: string;
-		costOfGoodsSold?: Price;
+		contentLanguage?: string | null;
+		costOfGoodsSold?: Price | null;
 
 		/** A list of custom (merchant-provided) attributes. It can also be used for submitting any attribute of the feed specification in its generic form (e.g., `{ "name": "size type", "value": "regular" }`). This is useful for submitting attributes not explicitly exposed by the API, such as additional attributes used for Shopping Actions. */
-		customAttributes?: Array<CustomAttribute>;
+		customAttributes?: Array<CustomAttribute> | null;
 
 		/** A list of custom (merchant-provided) custom attribute groups. */
-		customGroups?: Array<CustomGroup>;
+		customGroups?: Array<CustomGroup> | null;
 
 		/** Custom label 0 for custom grouping of items in a Shopping campaign. */
-		customLabel0?: string;
+		customLabel0?: string | null;
 
 		/** Custom label 1 for custom grouping of items in a Shopping campaign. */
-		customLabel1?: string;
+		customLabel1?: string | null;
 
 		/** Custom label 2 for custom grouping of items in a Shopping campaign. */
-		customLabel2?: string;
+		customLabel2?: string | null;
 
 		/** Custom label 3 for custom grouping of items in a Shopping campaign. */
-		customLabel3?: string;
+		customLabel3?: string | null;
 
 		/** Custom label 4 for custom grouping of items in a Shopping campaign. */
-		customLabel4?: string;
+		customLabel4?: string | null;
 
 		/** Description of the item. */
-		description?: string;
+		description?: string | null;
 
 		/** Specifies the intended destinations for the product. */
-		destinations?: Array<ProductDestination>;
+		destinations?: Array<ProductDestination> | null;
 
 		/** An identifier for an item for dynamic remarketing campaigns. */
-		displayAdsId?: string;
+		displayAdsId?: string | null;
 
 		/** URL directly to your item's landing page for dynamic remarketing campaigns. */
-		displayAdsLink?: string;
+		displayAdsLink?: string | null;
 
 		/** Advertiser-specified recommendations. */
-		displayAdsSimilarIds?: Array<string>;
+		displayAdsSimilarIds?: Array<string> | null;
 
 		/** Title of an item for dynamic remarketing campaigns. */
-		displayAdsTitle?: string;
+		displayAdsTitle?: string | null;
 
 		/** Offer margin for dynamic remarketing campaigns. */
-		displayAdsValue?: number;
+		displayAdsValue?: number | null;
 
 		/**
 		 * The energy efficiency class as defined in EU directive 2010/30/EU.
@@ -4604,10 +4604,10 @@ export namespace MyNS {
 		 * - "`F`"
 		 * - "`G`"
 		 */
-		energyEfficiencyClass?: string;
+		energyEfficiencyClass?: string | null;
 
 		/** Date on which the item should expire, as specified upon insertion, in ISO 8601 format. The actual expiration date in Google Shopping is exposed in `productstatuses` as `googleExpirationDate` and might be earlier if `expirationDate` is too far in the future. */
-		expirationDate?: string;
+		expirationDate?: string | null;
 
 		/**
 		 * Target gender of the item.
@@ -4616,42 +4616,42 @@ export namespace MyNS {
 		 * - "`male`"
 		 * - "`unisex`"
 		 */
-		gender?: string;
+		gender?: string | null;
 
 		/** Google's category of the item (see Google product taxonomy). */
-		googleProductCategory?: string;
+		googleProductCategory?: string | null;
 
 		/** Global Trade Item Number (GTIN) of the item. */
-		gtin?: string;
+		gtin?: string | null;
 
 		/**
 		 * The REST ID of the product. Content API methods that operate on products take this as their `productId` parameter.
 		 * The REST ID for a product is of the form channel:contentLanguage:targetCountry:offerId.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/** False when the item does not have unique product identifiers appropriate to its category, such as GTIN, MPN, and brand. Required according to the Unique Product Identifier Rules for all target countries except for Canada. */
-		identifierExists?: boolean;
+		identifierExists?: boolean | null;
 
 		/** URL of an image of the item. */
-		imageLink?: string;
-		installment?: Installment;
+		imageLink?: string | null;
+		installment?: Installment | null;
 
 		/** Whether the item is a merchant-defined bundle. A bundle is a custom grouping of different products sold by a merchant for a single price. */
-		isBundle?: boolean;
+		isBundle?: boolean | null;
 
 		/** Shared identifier for all variants of the same product. */
-		itemGroupId?: string;
+		itemGroupId?: string | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#product`" */
-		kind?: string;
+		kind?: string | null;
 
 		/** URL directly linking to your item's page on your website. */
-		link?: string;
-		loyaltyPoints?: LoyaltyPoints;
+		link?: string | null;
+		loyaltyPoints?: LoyaltyPoints | null;
 
 		/** The material of which the item is made. */
-		material?: string;
+		material?: string | null;
 
 		/**
 		 * The energy efficiency class as defined in EU directive 2010/30/EU.
@@ -4667,10 +4667,10 @@ export namespace MyNS {
 		 * - "`F`"
 		 * - "`G`"
 		 */
-		maxEnergyEfficiencyClass?: string;
+		maxEnergyEfficiencyClass?: string | null;
 
 		/** Maximal product handling time (in business days). */
-		maxHandlingTime?: string;
+		maxHandlingTime?: string | null;
 
 		/**
 		 * The energy efficiency class as defined in EU directive 2010/30/EU.
@@ -4686,55 +4686,55 @@ export namespace MyNS {
 		 * - "`F`"
 		 * - "`G`"
 		 */
-		minEnergyEfficiencyClass?: string;
+		minEnergyEfficiencyClass?: string | null;
 
 		/** Minimal product handling time (in business days). */
-		minHandlingTime?: string;
+		minHandlingTime?: string | null;
 
 		/** Link to a mobile-optimized version of the landing page. */
-		mobileLink?: string;
+		mobileLink?: string | null;
 
 		/** Manufacturer Part Number (MPN) of the item. */
-		mpn?: string;
+		mpn?: string | null;
 
 		/** The number of identical products in a merchant-defined multipack. */
-		multipack?: string;
+		multipack?: string | null;
 
 		/**
 		 * Required. A unique identifier for the item. Leading and trailing whitespaces are stripped and multiple whitespaces are replaced by a single whitespace upon submission. Only valid unicode characters are accepted. See the products feed specification for details.
 		 * Note: Content API methods that operate on products take the REST ID of the product, not this identifier.
 		 */
-		offerId?: string;
+		offerId?: string | null;
 
 		/** Deprecated. */
-		onlineOnly?: boolean;
+		onlineOnly?: boolean | null;
 
 		/** The item's pattern (e.g. polka dots). */
-		pattern?: string;
-		price?: Price;
+		pattern?: string | null;
+		price?: Price | null;
 
 		/** Your category of the item (formatted as in products data specification). */
-		productType?: string;
+		productType?: string | null;
 
 		/** The unique ID of a promotion. */
-		promotionIds?: Array<string>;
-		salePrice?: Price;
+		promotionIds?: Array<string> | null;
+		salePrice?: Price | null;
 
 		/** Date range during which the item is on sale (see products data specification). */
-		salePriceEffectiveDate?: string;
+		salePriceEffectiveDate?: string | null;
 
 		/** The quantity of the product that is available for selling on Google. Supported only for online products. */
-		sellOnGoogleQuantity?: string;
+		sellOnGoogleQuantity?: string | null;
 
 		/** Shipping rules. */
-		shipping?: Array<ProductShipping>;
-		shippingHeight?: ProductShippingDimension;
+		shipping?: Array<ProductShipping> | null;
+		shippingHeight?: ProductShippingDimension | null;
 
 		/** The shipping label of the product, used to group product in account-level shipping rules. */
-		shippingLabel?: string;
-		shippingLength?: ProductShippingDimension;
-		shippingWeight?: ProductShippingWeight;
-		shippingWidth?: ProductShippingDimension;
+		shippingLabel?: string | null;
+		shippingLength?: ProductShippingDimension | null;
+		shippingWeight?: ProductShippingWeight | null;
+		shippingWidth?: ProductShippingDimension | null;
 
 		/**
 		 * System in which the size is specified. Recommended for apparel items.
@@ -4751,7 +4751,7 @@ export namespace MyNS {
 		 * - "`UK`"
 		 * - "`US`"
 		 */
-		sizeSystem?: string;
+		sizeSystem?: string | null;
 
 		/**
 		 * The cut of the item. Recommended for apparel items.
@@ -4763,10 +4763,10 @@ export namespace MyNS {
 		 * - "`plus`"
 		 * - "`regular`"
 		 */
-		sizeType?: string;
+		sizeType?: string | null;
 
 		/** Size of the item. Only one value is allowed. For variants with different sizes, insert a separate product for each size with the same `itemGroupId` value (see size definition). */
-		sizes?: Array<string>;
+		sizes?: Array<string> | null;
 
 		/**
 		 * The source of the offer, i.e., how the offer was created.
@@ -4775,42 +4775,42 @@ export namespace MyNS {
 		 * - "`crawl`"
 		 * - "`feed`"
 		 */
-		source?: string;
+		source?: string | null;
 
 		/** Required. The CLDR territory code for the item. */
-		targetCountry?: string;
+		targetCountry?: string | null;
 
 		/** Tax information. */
-		taxes?: Array<ProductTax>;
+		taxes?: Array<ProductTax> | null;
 
 		/** Title of the item. */
-		title?: string;
-		unitPricingBaseMeasure?: ProductUnitPricingBaseMeasure;
-		unitPricingMeasure?: ProductUnitPricingMeasure;
+		title?: string | null;
+		unitPricingBaseMeasure?: ProductUnitPricingBaseMeasure | null;
+		unitPricingMeasure?: ProductUnitPricingMeasure | null;
 
 		/** Deprecated. The read-only list of intended destinations which passed validation. */
-		validatedDestinations?: Array<string>;
+		validatedDestinations?: Array<string> | null;
 
 		/** Read-only warnings. */
-		warnings?: Array<Error>;
+		warnings?: Array<Error> | null;
 	}
 
 	export interface ProductAspect {
 
 		/** Deprecated. */
-		aspectName?: string;
+		aspectName?: string | null;
 
 		/** Deprecated. */
-		destinationName?: string;
+		destinationName?: string | null;
 
 		/** Deprecated. */
-		intention?: string;
+		intention?: string | null;
 	}
 
 	export interface ProductDestination {
 
 		/** The name of the destination. */
-		destinationName?: string;
+		destinationName?: string | null;
 
 		/**
 		 * Whether the destination is required, excluded or should be validated.
@@ -4820,86 +4820,86 @@ export namespace MyNS {
 		 * - "`optional`"
 		 * - "`required`"
 		 */
-		intention?: string;
+		intention?: string | null;
 	}
 
 	export interface ProductShipping {
 
 		/** The CLDR territory code of the country to which an item will ship. */
-		country?: string;
+		country?: string | null;
 
 		/** The location where the shipping is applicable, represented by a location group name. */
-		locationGroupName?: string;
+		locationGroupName?: string | null;
 
 		/** The numeric ID of a location that the shipping rate applies to as defined in the AdWords API. */
-		locationId?: string;
+		locationId?: string | null;
 
 		/** The postal code range that the shipping rate applies to, represented by a postal code, a postal code prefix followed by a * wildcard, a range between two postal codes or two postal code prefixes of equal length. */
-		postalCode?: string;
-		price?: Price;
+		postalCode?: string | null;
+		price?: Price | null;
 
 		/** The geographic region to which a shipping rate applies. */
-		region?: string;
+		region?: string | null;
 
 		/** A free-form description of the service class or delivery speed. */
-		service?: string;
+		service?: string | null;
 	}
 
 	export interface ProductShippingDimension {
 
 		/** The unit of value. */
-		unit?: string;
+		unit?: string | null;
 
 		/** The dimension of the product used to calculate the shipping cost of the item. */
-		value?: number;
+		value?: number | null;
 	}
 
 	export interface ProductShippingWeight {
 
 		/** The unit of value. */
-		unit?: string;
+		unit?: string | null;
 
 		/** The weight of the product used to calculate the shipping cost of the item. */
-		value?: number;
+		value?: number | null;
 	}
 
 	export interface ProductTax {
 
 		/** The country within which the item is taxed, specified as a CLDR territory code. */
-		country?: string;
+		country?: string | null;
 
 		/** The numeric ID of a location that the tax rate applies to as defined in the AdWords API. */
-		locationId?: string;
+		locationId?: string | null;
 
 		/** The postal code range that the tax rate applies to, represented by a ZIP code, a ZIP code prefix using * wildcard, a range between two ZIP codes or two ZIP code prefixes of equal length. Examples: 94114, 94*, 94002-95460, 94*-95*. */
-		postalCode?: string;
+		postalCode?: string | null;
 
 		/** The percentage of tax rate that applies to the item price. */
-		rate?: number;
+		rate?: number | null;
 
 		/** The geographic region to which the tax rate applies. */
-		region?: string;
+		region?: string | null;
 
 		/** Set to true if tax is charged on shipping. */
-		taxShip?: boolean;
+		taxShip?: boolean | null;
 	}
 
 	export interface ProductUnitPricingBaseMeasure {
 
 		/** The unit of the denominator. */
-		unit?: string;
+		unit?: string | null;
 
 		/** The denominator of the unit price. */
-		value?: string;
+		value?: string | null;
 	}
 
 	export interface ProductUnitPricingMeasure {
 
 		/** The unit of the measure. */
-		unit?: string;
+		unit?: string | null;
 
 		/** The measure of an item. */
-		value?: number;
+		value?: number | null;
 	}
 
 
@@ -4907,59 +4907,59 @@ export namespace MyNS {
 	export interface ProductStatus {
 
 		/** Date on which the item has been created, in ISO 8601 format. */
-		creationDate?: string;
+		creationDate?: string | null;
 
 		/** DEPRECATED - never populated */
-		dataQualityIssues?: Array<ProductStatusDataQualityIssue>;
+		dataQualityIssues?: Array<ProductStatusDataQualityIssue> | null;
 
 		/** The intended destinations for the product. */
-		destinationStatuses?: Array<ProductStatusDestinationStatus>;
+		destinationStatuses?: Array<ProductStatusDestinationStatus> | null;
 
 		/** Date on which the item expires in Google Shopping, in ISO 8601 format. */
-		googleExpirationDate?: string;
+		googleExpirationDate?: string | null;
 
 		/** A list of all issues associated with the product. */
-		itemLevelIssues?: Array<ProductStatusItemLevelIssue>;
+		itemLevelIssues?: Array<ProductStatusItemLevelIssue> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#productStatus`" */
-		kind?: string;
+		kind?: string | null;
 
 		/** Date on which the item has been last updated, in ISO 8601 format. */
-		lastUpdateDate?: string;
+		lastUpdateDate?: string | null;
 
 		/** The link to the product. */
-		link?: string;
+		link?: string | null;
 
 		/**
 		 * Required product attributes are primarily defined by the products data specification. See the  Products Data Specification Help Center article for information.
 		 * Some attributes are country-specific, so make sure you select the appropriate country in the drop-down selector at the top of the page.
 		 * Product data. After inserting, updating, or deleting a product, it may take several minutes before changes take effect.
 		 */
-		product?: Product;
+		product?: Product | null;
 
 		/** The ID of the product for which status is reported. */
-		productId?: string;
+		productId?: string | null;
 
 		/** The title of the product. */
-		title?: string;
+		title?: string | null;
 	}
 
 	export interface ProductStatusDataQualityIssue {
-		destination?: string;
-		detail?: string;
-		fetchStatus?: string;
-		id?: string;
-		location?: string;
-		severity?: string;
-		timestamp?: string;
-		valueOnLandingPage?: string;
-		valueProvided?: string;
+		destination?: string | null;
+		detail?: string | null;
+		fetchStatus?: string | null;
+		id?: string | null;
+		location?: string | null;
+		severity?: string | null;
+		timestamp?: string | null;
+		valueOnLandingPage?: string | null;
+		valueProvided?: string | null;
 	}
 
 	export interface ProductStatusDestinationStatus {
 
 		/** Whether the approval status might change due to further processing. */
-		approvalPending?: boolean;
+		approvalPending?: boolean | null;
 
 		/**
 		 * The destination's approval status.
@@ -4967,10 +4967,10 @@ export namespace MyNS {
 		 * - "`approved`"
 		 * - "`disapproved`"
 		 */
-		approvalStatus?: string;
+		approvalStatus?: string | null;
 
 		/** The name of the destination */
-		destination?: string;
+		destination?: string | null;
 
 		/**
 		 * Provided for backward compatibility only. Always set to "required".
@@ -4980,40 +4980,40 @@ export namespace MyNS {
 		 * - "`optional`"
 		 * - "`required`"
 		 */
-		intention?: string;
+		intention?: string | null;
 	}
 
 	export interface ProductStatusItemLevelIssue {
 
 		/** The attribute's name, if the issue is caused by a single attribute. */
-		attributeName?: string;
+		attributeName?: string | null;
 
 		/** The error code of the issue. */
-		code?: string;
+		code?: string | null;
 
 		/** A short issue description in English. */
-		description?: string;
+		description?: string | null;
 
 		/** The destination the issue applies to. */
-		destination?: string;
+		destination?: string | null;
 
 		/** A detailed issue description in English. */
-		detail?: string;
+		detail?: string | null;
 
 		/** The URL of a web page to help with resolving this issue. */
-		documentation?: string;
+		documentation?: string | null;
 
 		/** Whether the issue can be resolved by the merchant. */
-		resolution?: string;
+		resolution?: string | null;
 
 		/** How this issue affects serving of the offer. */
-		servability?: string;
+		servability?: string | null;
 	}
 
 	export interface ProductsCustomBatchRequest {
 
 		/** The request entries to be processed in the batch. */
-		entries?: Array<ProductsCustomBatchRequestEntry>;
+		entries?: Array<ProductsCustomBatchRequestEntry> | null;
 	}
 
 
@@ -5021,10 +5021,10 @@ export namespace MyNS {
 	export interface ProductsCustomBatchRequestEntry {
 
 		/** An entry ID, unique within the batch request. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** The ID of the managing account. */
-		merchantId?: string;
+		merchantId?: string | null;
 
 		/**
 		 * The method of the batch entry.
@@ -5033,26 +5033,26 @@ export namespace MyNS {
 		 * - "`get`"
 		 * - "`insert`"
 		 */
-		method?: string;
+		method?: string | null;
 
 		/**
 		 * Required product attributes are primarily defined by the products data specification. See the  Products Data Specification Help Center article for information.
 		 * Some attributes are country-specific, so make sure you select the appropriate country in the drop-down selector at the top of the page.
 		 * Product data. After inserting, updating, or deleting a product, it may take several minutes before changes take effect.
 		 */
-		product?: Product;
+		product?: Product | null;
 
 		/** The ID of the product to get or delete. Only defined if the method is `get` or `delete`. */
-		productId?: string;
+		productId?: string | null;
 	}
 
 	export interface ProductsCustomBatchResponse {
 
 		/** The result of the execution of the batch requests. */
-		entries?: Array<ProductsCustomBatchResponseEntry>;
+		entries?: Array<ProductsCustomBatchResponseEntry> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#productsCustomBatchResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -5060,36 +5060,36 @@ export namespace MyNS {
 	export interface ProductsCustomBatchResponseEntry {
 
 		/** The ID of the request entry this entry responds to. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** A list of errors returned by a failed batch entry. */
-		errors?: Errors;
+		errors?: Errors | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#productsCustomBatchResponseEntry`" */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * Required product attributes are primarily defined by the products data specification. See the  Products Data Specification Help Center article for information.
 		 * Some attributes are country-specific, so make sure you select the appropriate country in the drop-down selector at the top of the page.
 		 * Product data. After inserting, updating, or deleting a product, it may take several minutes before changes take effect.
 		 */
-		product?: Product;
+		product?: Product | null;
 	}
 
 	export interface ProductsListResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#productsListResponse". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The token for the retrieval of the next page of products. */
-		nextPageToken?: string;
-		resources?: Array<Product>;
+		nextPageToken?: string | null;
+		resources?: Array<Product> | null;
 	}
 
 	export interface ProductstatusesCustomBatchRequest {
 
 		/** The request entries to be processed in the batch. */
-		entries?: Array<ProductstatusesCustomBatchRequestEntry>;
+		entries?: Array<ProductstatusesCustomBatchRequestEntry> | null;
 	}
 
 
@@ -5097,33 +5097,33 @@ export namespace MyNS {
 	export interface ProductstatusesCustomBatchRequestEntry {
 
 		/** An entry ID, unique within the batch request. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination. */
-		destinations?: Array<string>;
-		includeAttributes?: boolean;
+		destinations?: Array<string> | null;
+		includeAttributes?: boolean | null;
 
 		/** The ID of the managing account. */
-		merchantId?: string;
+		merchantId?: string | null;
 
 		/**
 		 * The method of the batch entry.
 		 * Acceptable values are:
 		 * - "`get`"
 		 */
-		method?: string;
+		method?: string | null;
 
 		/** The ID of the product whose status to get. */
-		productId?: string;
+		productId?: string | null;
 	}
 
 	export interface ProductstatusesCustomBatchResponse {
 
 		/** The result of the execution of the batch requests. */
-		entries?: Array<ProductstatusesCustomBatchResponseEntry>;
+		entries?: Array<ProductstatusesCustomBatchResponseEntry> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#productstatusesCustomBatchResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -5131,66 +5131,66 @@ export namespace MyNS {
 	export interface ProductstatusesCustomBatchResponseEntry {
 
 		/** The ID of the request entry this entry responds to. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** A list of errors returned by a failed batch entry. */
-		errors?: Errors;
+		errors?: Errors | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#productstatusesCustomBatchResponseEntry`" */
-		kind?: string;
+		kind?: string | null;
 
 		/** The status of a product, i.e., information about a product computed asynchronously. */
-		productStatus?: ProductStatus;
+		productStatus?: ProductStatus | null;
 	}
 
 	export interface ProductstatusesListResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#productstatusesListResponse". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The token for the retrieval of the next page of products statuses. */
-		nextPageToken?: string;
-		resources?: Array<ProductStatus>;
+		nextPageToken?: string | null;
+		resources?: Array<ProductStatus> | null;
 	}
 
 	export interface RateGroup {
 
 		/** A list of shipping labels defining the products to which this rate group applies to. This is a disjunction: only one of the labels has to match for the rate group to apply. May only be empty for the last rate group of a service. Required. */
-		applicableShippingLabels?: Array<string>;
+		applicableShippingLabels?: Array<string> | null;
 
 		/** A list of carrier rates that can be referred to by `mainTable` or `singleValue`. */
-		carrierRates?: Array<CarrierRate>;
-		mainTable?: Table;
+		carrierRates?: Array<CarrierRate> | null;
+		mainTable?: Table | null;
 
 		/** Name of the rate group. Optional. If set has to be unique within shipping service. */
-		name?: string;
+		name?: string | null;
 
 		/** The single value of a rate group or the value of a rate group table's cell. Exactly one of `noShipping`, `flatRate`, `pricePercentage`, `carrierRateName`, `subtableName` must be set. */
-		singleValue?: Value;
+		singleValue?: Value | null;
 
 		/** A list of subtables referred to by `mainTable`. Can only be set if `mainTable` is set. */
-		subtables?: Array<Table>;
+		subtables?: Array<Table> | null;
 	}
 
 	export interface Table {
 
 		/** A non-empty list of row or column headers for a table. Exactly one of `prices`, `weights`, `numItems`, `postalCodeGroupNames`, or `location` must be set. */
-		columnHeaders?: Headers;
+		columnHeaders?: Headers | null;
 
 		/** Name of the table. Required for subtables, ignored for the main table. */
-		name?: string;
+		name?: string | null;
 
 		/** A non-empty list of row or column headers for a table. Exactly one of `prices`, `weights`, `numItems`, `postalCodeGroupNames`, or `location` must be set. */
-		rowHeaders?: Headers;
+		rowHeaders?: Headers | null;
 
 		/** The list of rows that constitute the table. Must have the same length as `rowHeaders`. Required. */
-		rows?: Array<Row>;
+		rows?: Array<Row> | null;
 	}
 
 	export interface Row {
 
 		/** The list of cells that constitute the row. Must have the same length as `columnHeaders` for two-dimensional tables, a length of 1 for one-dimensional tables. Required. */
-		cells?: Array<Value>;
+		cells?: Array<Value> | null;
 	}
 
 
@@ -5198,30 +5198,30 @@ export namespace MyNS {
 	export interface Value {
 
 		/** The name of a carrier rate referring to a carrier rate defined in the same rate group. Can only be set if all other fields are not set. */
-		carrierRateName?: string;
-		flatRate?: Price;
+		carrierRateName?: string | null;
+		flatRate?: Price | null;
 
 		/** If true, then the product can't ship. Must be true when set, can only be set if all other fields are not set. */
-		noShipping?: boolean;
+		noShipping?: boolean | null;
 
 		/** A percentage of the price represented as a number in decimal notation (e.g., `"5.4"`). Can only be set if all other fields are not set. */
-		pricePercentage?: string;
+		pricePercentage?: string | null;
 
 		/** The name of a subtable. Can only be set in table cells (i.e., not for single values), and only if all other fields are not set. */
-		subtableName?: string;
+		subtableName?: string | null;
 	}
 
 	export interface Service {
 
 		/** A boolean exposing the active status of the shipping service. Required. */
-		active?: boolean;
+		active?: boolean | null;
 
 		/** The CLDR code of the currency to which this service applies. Must match that of the prices in rate groups. */
-		currency?: string;
+		currency?: string | null;
 
 		/** The CLDR territory code of the country to which the service applies. Required. */
-		deliveryCountry?: string;
-		deliveryTime?: DeliveryTime;
+		deliveryCountry?: string | null;
+		deliveryTime?: DeliveryTime | null;
 
 		/**
 		 * Eligibility for this service.
@@ -5230,16 +5230,16 @@ export namespace MyNS {
 		 * - "`All scenarios except Shopping Actions`"
 		 * - "`Shopping Actions`"
 		 */
-		eligibility?: string;
-		minimumOrderValue?: Price;
-		minimumOrderValueTable?: MinimumOrderValueTable;
+		eligibility?: string | null;
+		minimumOrderValue?: Price | null;
+		minimumOrderValueTable?: MinimumOrderValueTable | null;
 
 		/** Free-form name of the service. Must be unique within target account. Required. */
-		name?: string;
-		pickupService?: PickupCarrierService;
+		name?: string | null;
+		pickupService?: PickupCarrierService | null;
 
 		/** Shipping rate group definitions. Only the last one is allowed to have an empty `applicableShippingLabels`, which means "everything else". The other `applicableShippingLabels` must not overlap. */
-		rateGroups?: Array<RateGroup>;
+		rateGroups?: Array<RateGroup> | null;
 
 		/**
 		 * Type of locations this service ships orders to.
@@ -5247,7 +5247,7 @@ export namespace MyNS {
 		 * - "`delivery`"
 		 * - "`pickup`"
 		 */
-		shipmentType?: string;
+		shipmentType?: string | null;
 	}
 
 
@@ -5255,19 +5255,19 @@ export namespace MyNS {
 	export interface ShippingSettings {
 
 		/** The ID of the account to which these account shipping settings belong. Ignored upon update, always present in get request responses. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** A list of postal code groups that can be referred to in `services`. Optional. */
-		postalCodeGroups?: Array<PostalCodeGroup>;
+		postalCodeGroups?: Array<PostalCodeGroup> | null;
 
 		/** The target account's list of services. Optional. */
-		services?: Array<Service>;
+		services?: Array<Service> | null;
 	}
 
 	export interface ShippingsettingsCustomBatchRequest {
 
 		/** The request entries to be processed in the batch. */
-		entries?: Array<ShippingsettingsCustomBatchRequestEntry>;
+		entries?: Array<ShippingsettingsCustomBatchRequestEntry> | null;
 	}
 
 
@@ -5275,13 +5275,13 @@ export namespace MyNS {
 	export interface ShippingsettingsCustomBatchRequestEntry {
 
 		/** The ID of the account for which to get/update account shipping settings. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** An entry ID, unique within the batch request. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** The ID of the managing account. */
-		merchantId?: string;
+		merchantId?: string | null;
 
 		/**
 		 * The method of the batch entry.
@@ -5289,19 +5289,19 @@ export namespace MyNS {
 		 * - "`get`"
 		 * - "`update`"
 		 */
-		method?: string;
+		method?: string | null;
 
 		/** The merchant account's shipping settings. All methods except getsupportedcarriers and getsupportedholidays require the admin role. */
-		shippingSettings?: ShippingSettings;
+		shippingSettings?: ShippingSettings | null;
 	}
 
 	export interface ShippingsettingsCustomBatchResponse {
 
 		/** The result of the execution of the batch requests. */
-		entries?: Array<ShippingsettingsCustomBatchResponseEntry>;
+		entries?: Array<ShippingsettingsCustomBatchResponseEntry> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#shippingsettingsCustomBatchResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -5309,53 +5309,53 @@ export namespace MyNS {
 	export interface ShippingsettingsCustomBatchResponseEntry {
 
 		/** The ID of the request entry to which this entry responds. */
-		batchId?: string;
+		batchId?: string | null;
 
 		/** A list of errors returned by a failed batch entry. */
-		errors?: Errors;
+		errors?: Errors | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "`content#shippingsettingsCustomBatchResponseEntry`" */
-		kind?: string;
+		kind?: string | null;
 
 		/** The merchant account's shipping settings. All methods except getsupportedcarriers and getsupportedholidays require the admin role. */
-		shippingSettings?: ShippingSettings;
+		shippingSettings?: ShippingSettings | null;
 	}
 
 	export interface ShippingsettingsGetSupportedCarriersResponse {
 
 		/** A list of supported carriers. May be empty. */
-		carriers?: Array<CarriersCarrier>;
+		carriers?: Array<CarriersCarrier> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#shippingsettingsGetSupportedCarriersResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface ShippingsettingsGetSupportedHolidaysResponse {
 
 		/** A list of holidays applicable for delivery guarantees. May be empty. */
-		holidays?: Array<HolidaysHoliday>;
+		holidays?: Array<HolidaysHoliday> | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#shippingsettingsGetSupportedHolidaysResponse". */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface ShippingsettingsGetSupportedPickupServicesResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#shippingsettingsGetSupportedPickupServicesResponse". */
-		kind?: string;
+		kind?: string | null;
 
 		/** A list of supported pickup services. May be empty. */
-		pickupServices?: Array<PickupServicesPickupService>;
+		pickupServices?: Array<PickupServicesPickupService> | null;
 	}
 
 	export interface ShippingsettingsListResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "content#shippingsettingsListResponse". */
-		kind?: string;
+		kind?: string | null;
 
 		/** The token for the retrieval of the next page of shipping settings. */
-		nextPageToken?: string;
-		resources?: Array<ShippingSettings>;
+		nextPageToken?: string | null;
+		resources?: Array<ShippingSettings> | null;
 	}
 
 	@Injectable()
@@ -5378,7 +5378,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_accounts_custombatch(dryRun: boolean, requestBody: AccountsCustomBatchRequest): Observable<HttpResponse<string>> {
+		Content_accounts_custombatch(dryRun: boolean | null | undefined, requestBody: AccountsCustomBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'accounts/batch?dryRun=' + dryRun, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5397,7 +5397,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_accounttax_custombatch(dryRun: boolean, requestBody: AccounttaxCustomBatchRequest): Observable<HttpResponse<string>> {
+		Content_accounttax_custombatch(dryRun: boolean | null | undefined, requestBody: AccounttaxCustomBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'accounttax/batch?dryRun=' + dryRun, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5407,7 +5407,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_datafeeds_custombatch(dryRun: boolean, requestBody: DatafeedsCustomBatchRequest): Observable<HttpResponse<string>> {
+		Content_datafeeds_custombatch(dryRun: boolean | null | undefined, requestBody: DatafeedsCustomBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'datafeeds/batch?dryRun=' + dryRun, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5426,7 +5426,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_inventory_custombatch(dryRun: boolean, requestBody: InventoryCustomBatchRequest): Observable<HttpResponse<string>> {
+		Content_inventory_custombatch(dryRun: boolean | null | undefined, requestBody: InventoryCustomBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'inventory/batch?dryRun=' + dryRun, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5436,7 +5436,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_liasettings_custombatch(dryRun: boolean, requestBody: LiasettingsCustomBatchRequest): Observable<HttpResponse<string>> {
+		Content_liasettings_custombatch(dryRun: boolean | null | undefined, requestBody: LiasettingsCustomBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'liasettings/batch?dryRun=' + dryRun, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5464,7 +5464,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_pos_custombatch(dryRun: boolean, requestBody: PosCustomBatchRequest): Observable<HttpResponse<string>> {
+		Content_pos_custombatch(dryRun: boolean | null | undefined, requestBody: PosCustomBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'pos/batch?dryRun=' + dryRun, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5474,7 +5474,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_products_custombatch(dryRun: boolean, requestBody: ProductsCustomBatchRequest): Observable<HttpResponse<string>> {
+		Content_products_custombatch(dryRun: boolean | null | undefined, requestBody: ProductsCustomBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'products/batch?dryRun=' + dryRun, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5484,7 +5484,7 @@ export namespace MyNS {
 		 * @param {boolean} includeAttributes Flag to include full product data in the results of this request. The default value is false.
 		 * @return {void} Successful response
 		 */
-		Content_productstatuses_custombatch(includeAttributes: boolean, requestBody: ProductstatusesCustomBatchRequest): Observable<HttpResponse<string>> {
+		Content_productstatuses_custombatch(includeAttributes: boolean | null | undefined, requestBody: ProductstatusesCustomBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'productstatuses/batch?includeAttributes=' + includeAttributes, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5494,7 +5494,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_shippingsettings_custombatch(dryRun: boolean, requestBody: ShippingsettingsCustomBatchRequest): Observable<HttpResponse<string>> {
+		Content_shippingsettings_custombatch(dryRun: boolean | null | undefined, requestBody: ShippingsettingsCustomBatchRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'shippingsettings/batch?dryRun=' + dryRun, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5506,7 +5506,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_accounts_list(merchantId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_accounts_list(merchantId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/accounts&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5517,7 +5517,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_accounts_insert(merchantId: string, dryRun: boolean, requestBody: Account): Observable<HttpResponse<string>> {
+		Content_accounts_insert(merchantId: string, dryRun: boolean | null | undefined, requestBody: Account): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/accounts&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5530,7 +5530,7 @@ export namespace MyNS {
 		 * @param {boolean} force Flag to delete sub-accounts with products. The default value is false.
 		 * @return {void} Successful response
 		 */
-		Content_accounts_delete(merchantId: string, accountId: string, dryRun: boolean, force: boolean): Observable<HttpResponse<string>> {
+		Content_accounts_delete(merchantId: string, accountId: string, dryRun: boolean | null | undefined, force: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '&dryRun=' + dryRun + '&force=' + force + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5553,7 +5553,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_accounts_update(merchantId: string, accountId: string, dryRun: boolean, requestBody: Account): Observable<HttpResponse<string>> {
+		Content_accounts_update(merchantId: string, accountId: string, dryRun: boolean | null | undefined, requestBody: Account): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5565,7 +5565,7 @@ export namespace MyNS {
 		 * @param {boolean} overwrite Only available to selected merchants. When set to True, this flag removes any existing claim on the requested website by another account and replaces it with a claim from this account.
 		 * @return {void} Successful response
 		 */
-		Content_accounts_claimwebsite(merchantId: string, accountId: string, overwrite: boolean): Observable<HttpResponse<string>> {
+		Content_accounts_claimwebsite(merchantId: string, accountId: string, overwrite: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/claimwebsite&overwrite=' + overwrite + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5589,7 +5589,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_accountstatuses_list(merchantId: string, destinations: Array<string>, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_accountstatuses_list(merchantId: string, destinations: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/accountstatuses&' + destinations.map(z => `destinations=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5601,7 +5601,7 @@ export namespace MyNS {
 		 * @param {Array<string>} destinations If set, only issues for the specified destinations are returned, otherwise only issues for the Shopping destination.
 		 * @return {void} Successful response
 		 */
-		Content_accountstatuses_get(merchantId: string, accountId: string, destinations: Array<string>): Observable<HttpResponse<string>> {
+		Content_accountstatuses_get(merchantId: string, accountId: string, destinations: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/accountstatuses/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '&' + destinations.map(z => `destinations=${encodeURIComponent(z)}`).join('&') + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5613,7 +5613,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_accounttax_list(merchantId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_accounttax_list(merchantId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/accounttax&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5636,7 +5636,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_accounttax_update(merchantId: string, accountId: string, dryRun: boolean, requestBody: AccountTax): Observable<HttpResponse<string>> {
+		Content_accounttax_update(merchantId: string, accountId: string, dryRun: boolean | null | undefined, requestBody: AccountTax): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/accounttax/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5648,7 +5648,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_datafeeds_list(merchantId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_datafeeds_list(merchantId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/datafeeds&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5659,7 +5659,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_datafeeds_insert(merchantId: string, dryRun: boolean, requestBody: Datafeed): Observable<HttpResponse<string>> {
+		Content_datafeeds_insert(merchantId: string, dryRun: boolean | null | undefined, requestBody: Datafeed): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/datafeeds&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5671,7 +5671,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_datafeeds_delete(merchantId: string, datafeedId: string, dryRun: boolean): Observable<HttpResponse<string>> {
+		Content_datafeeds_delete(merchantId: string, datafeedId: string, dryRun: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/datafeeds/' + (datafeedId == null ? '' : encodeURIComponent(datafeedId)) + '&dryRun=' + dryRun + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5694,7 +5694,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_datafeeds_update(merchantId: string, datafeedId: string, dryRun: boolean, requestBody: Datafeed): Observable<HttpResponse<string>> {
+		Content_datafeeds_update(merchantId: string, datafeedId: string, dryRun: boolean | null | undefined, requestBody: Datafeed): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/datafeeds/' + (datafeedId == null ? '' : encodeURIComponent(datafeedId)) + '&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5706,7 +5706,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_datafeeds_fetchnow(merchantId: string, datafeedId: string, dryRun: boolean): Observable<HttpResponse<string>> {
+		Content_datafeeds_fetchnow(merchantId: string, datafeedId: string, dryRun: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/datafeeds/' + (datafeedId == null ? '' : encodeURIComponent(datafeedId)) + '/fetchNow&dryRun=' + dryRun + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5718,7 +5718,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_datafeedstatuses_list(merchantId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_datafeedstatuses_list(merchantId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/datafeedstatuses&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5731,7 +5731,7 @@ export namespace MyNS {
 		 * @param {string} language The language for which to get the datafeed status. If this parameter is provided then country must also be provided. Note that this parameter is required for feeds targeting multiple countries and languages, since a feed may have a different status for each target.
 		 * @return {void} Successful response
 		 */
-		Content_datafeedstatuses_get(merchantId: string, datafeedId: string, country: string, language: string): Observable<HttpResponse<string>> {
+		Content_datafeedstatuses_get(merchantId: string, datafeedId: string, country: string | null | undefined, language: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/datafeedstatuses/' + (datafeedId == null ? '' : encodeURIComponent(datafeedId)) + '&country=' + (country == null ? '' : encodeURIComponent(country)) + '&language=' + (language == null ? '' : encodeURIComponent(language)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5744,7 +5744,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_inventory_set(merchantId: string, storeCode: string, productId: string, dryRun: boolean, requestBody: InventorySetRequest): Observable<HttpResponse<string>> {
+		Content_inventory_set(merchantId: string, storeCode: string, productId: string, dryRun: boolean | null | undefined, requestBody: InventorySetRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/inventory/' + (storeCode == null ? '' : encodeURIComponent(storeCode)) + '/products/' + (productId == null ? '' : encodeURIComponent(productId)) + '&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5756,7 +5756,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_liasettings_list(merchantId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_liasettings_list(merchantId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/liasettings&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5779,7 +5779,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_liasettings_update(merchantId: string, accountId: string, dryRun: boolean, requestBody: LiaSettings): Observable<HttpResponse<string>> {
+		Content_liasettings_update(merchantId: string, accountId: string, dryRun: boolean | null | undefined, requestBody: LiaSettings): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/liasettings/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -5843,7 +5843,7 @@ export namespace MyNS {
 		 * @param {string} posExternalAccountId The account ID by which this merchant is known to the POS data provider.
 		 * @return {void} Successful response
 		 */
-		Content_liasettings_setposdataprovider(merchantId: string, accountId: string, country: string, posDataProviderId: string, posExternalAccountId: string): Observable<HttpResponse<string>> {
+		Content_liasettings_setposdataprovider(merchantId: string, accountId: string, country: string, posDataProviderId: string | null | undefined, posExternalAccountId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/liasettings/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/setposdataprovider&country=' + (country == null ? '' : encodeURIComponent(country)) + '&posDataProviderId=' + (posDataProviderId == null ? '' : encodeURIComponent(posDataProviderId)) + '&posExternalAccountId=' + (posExternalAccountId == null ? '' : encodeURIComponent(posExternalAccountId)) + '', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5879,7 +5879,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_orderreports_listdisbursements(merchantId: string, disbursementStartDate: string, disbursementEndDate: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_orderreports_listdisbursements(merchantId: string, disbursementStartDate: string, disbursementEndDate: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/orderreports/disbursements&disbursementStartDate=' + (disbursementStartDate == null ? '' : encodeURIComponent(disbursementStartDate)) + '&disbursementEndDate=' + (disbursementEndDate == null ? '' : encodeURIComponent(disbursementEndDate)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5894,7 +5894,7 @@ export namespace MyNS {
 		 * @param {string} transactionEndDate The last date in which transaction occurred. In ISO 8601 format. Default: current date.
 		 * @return {void} Successful response
 		 */
-		Content_orderreports_listtransactions(merchantId: string, disbursementId: string, transactionStartDate: string, maxResults: number, pageToken: string, transactionEndDate: string): Observable<HttpResponse<string>> {
+		Content_orderreports_listtransactions(merchantId: string, disbursementId: string, transactionStartDate: string, maxResults: number | null | undefined, pageToken: string | null | undefined, transactionEndDate: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/orderreports/disbursements/' + (disbursementId == null ? '' : encodeURIComponent(disbursementId)) + '/transactions&transactionStartDate=' + (transactionStartDate == null ? '' : encodeURIComponent(transactionStartDate)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&transactionEndDate=' + (transactionEndDate == null ? '' : encodeURIComponent(transactionEndDate)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5909,7 +5909,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_orderreturns_list(merchantId: string, createdEndDate: string, createdStartDate: string, maxResults: number, orderBy: Content_orderreturns_listOrderBy, pageToken: string): Observable<HttpResponse<string>> {
+		Content_orderreturns_list(merchantId: string, createdEndDate: string | null | undefined, createdStartDate: string | null | undefined, maxResults: number | null | undefined, orderBy: Content_orderreturns_listOrderBy | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/orderreturns&createdEndDate=' + (createdEndDate == null ? '' : encodeURIComponent(createdEndDate)) + '&createdStartDate=' + (createdStartDate == null ? '' : encodeURIComponent(createdStartDate)) + '&maxResults=' + maxResults + '&orderBy=' + orderBy + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -5941,7 +5941,7 @@ export namespace MyNS {
 		 * @param {Array<string>} statuses Obtains orders that match any of the specified statuses. Please note that active is a shortcut for pendingShipment and partiallyShipped, and completed is a shortcut for shipped, partiallyDelivered, delivered, partiallyReturned, returned, and canceled.
 		 * @return {void} Successful response
 		 */
-		Content_orders_list(merchantId: string, acknowledged: boolean, maxResults: number, orderBy: string, pageToken: string, placedDateEnd: string, placedDateStart: string, statuses: Array<string>): Observable<HttpResponse<string>> {
+		Content_orders_list(merchantId: string, acknowledged: boolean | null | undefined, maxResults: number | null | undefined, orderBy: string | null | undefined, pageToken: string | null | undefined, placedDateEnd: string | null | undefined, placedDateStart: string | null | undefined, statuses: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/orders&acknowledged=' + acknowledged + '&maxResults=' + maxResults + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&placedDateEnd=' + (placedDateEnd == null ? '' : encodeURIComponent(placedDateEnd)) + '&placedDateStart=' + (placedDateStart == null ? '' : encodeURIComponent(placedDateStart)) + '&' + statuses.map(z => `statuses=${encodeURIComponent(z)}`).join('&') + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -6130,7 +6130,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_pos_inventory(merchantId: string, targetMerchantId: string, dryRun: boolean, requestBody: PosInventoryRequest): Observable<HttpResponse<string>> {
+		Content_pos_inventory(merchantId: string, targetMerchantId: string, dryRun: boolean | null | undefined, requestBody: PosInventoryRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/pos/' + (targetMerchantId == null ? '' : encodeURIComponent(targetMerchantId)) + '/inventory&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -6142,7 +6142,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_pos_sale(merchantId: string, targetMerchantId: string, dryRun: boolean, requestBody: PosSaleRequest): Observable<HttpResponse<string>> {
+		Content_pos_sale(merchantId: string, targetMerchantId: string, dryRun: boolean | null | undefined, requestBody: PosSaleRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/pos/' + (targetMerchantId == null ? '' : encodeURIComponent(targetMerchantId)) + '/sale&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -6165,7 +6165,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_pos_insert(merchantId: string, targetMerchantId: string, dryRun: boolean, requestBody: PosStore): Observable<HttpResponse<string>> {
+		Content_pos_insert(merchantId: string, targetMerchantId: string, dryRun: boolean | null | undefined, requestBody: PosStore): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/pos/' + (targetMerchantId == null ? '' : encodeURIComponent(targetMerchantId)) + '/store&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -6178,7 +6178,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_pos_delete(merchantId: string, targetMerchantId: string, storeCode: string, dryRun: boolean): Observable<HttpResponse<string>> {
+		Content_pos_delete(merchantId: string, targetMerchantId: string, storeCode: string, dryRun: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/pos/' + (targetMerchantId == null ? '' : encodeURIComponent(targetMerchantId)) + '/store/' + (storeCode == null ? '' : encodeURIComponent(storeCode)) + '&dryRun=' + dryRun + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -6203,7 +6203,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_products_list(merchantId: string, includeInvalidInsertedItems: boolean, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_products_list(merchantId: string, includeInvalidInsertedItems: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/products&includeInvalidInsertedItems=' + includeInvalidInsertedItems + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -6214,7 +6214,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_products_insert(merchantId: string, dryRun: boolean, requestBody: Product): Observable<HttpResponse<string>> {
+		Content_products_insert(merchantId: string, dryRun: boolean | null | undefined, requestBody: Product): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/products&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -6226,7 +6226,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_products_delete(merchantId: string, productId: string, dryRun: boolean): Observable<HttpResponse<string>> {
+		Content_products_delete(merchantId: string, productId: string, dryRun: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/products/' + (productId == null ? '' : encodeURIComponent(productId)) + '&dryRun=' + dryRun + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -6252,7 +6252,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_productstatuses_list(merchantId: string, destinations: Array<string>, includeAttributes: boolean, includeInvalidInsertedItems: boolean, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_productstatuses_list(merchantId: string, destinations: Array<string> | null | undefined, includeAttributes: boolean | null | undefined, includeInvalidInsertedItems: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/productstatuses&' + destinations.map(z => `destinations=${encodeURIComponent(z)}`).join('&') + '&includeAttributes=' + includeAttributes + '&includeInvalidInsertedItems=' + includeInvalidInsertedItems + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -6265,7 +6265,7 @@ export namespace MyNS {
 		 * @param {boolean} includeAttributes Flag to include full product data in the result of this get request. The default value is false.
 		 * @return {void} Successful response
 		 */
-		Content_productstatuses_get(merchantId: string, productId: string, destinations: Array<string>, includeAttributes: boolean): Observable<HttpResponse<string>> {
+		Content_productstatuses_get(merchantId: string, productId: string, destinations: Array<string> | null | undefined, includeAttributes: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/productstatuses/' + (productId == null ? '' : encodeURIComponent(productId)) + '&' + destinations.map(z => `destinations=${encodeURIComponent(z)}`).join('&') + '&includeAttributes=' + includeAttributes + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -6277,7 +6277,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {void} Successful response
 		 */
-		Content_shippingsettings_list(merchantId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Content_shippingsettings_list(merchantId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/shippingsettings&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '', { observe: 'response', responseType: 'text' });
 		}
 
@@ -6300,7 +6300,7 @@ export namespace MyNS {
 		 * @param {boolean} dryRun Flag to simulate a request like in a live environment. If set to true, dry-run mode checks the validity of the request and returns errors (if any).
 		 * @return {void} Successful response
 		 */
-		Content_shippingsettings_update(merchantId: string, accountId: string, dryRun: boolean, requestBody: ShippingSettings): Observable<HttpResponse<string>> {
+		Content_shippingsettings_update(merchantId: string, accountId: string, dryRun: boolean | null | undefined, requestBody: ShippingSettings): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/shippingsettings/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '&dryRun=' + dryRun + '', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -6374,7 +6374,7 @@ export namespace MyNS {
 		 * @param {string} country The country of the template to retrieve. Defaults to US.
 		 * @return {void} Successful response
 		 */
-		Content_orders_gettestordertemplate(merchantId: string, templateName: Content_orders_gettestordertemplateTemplateName, country: string): Observable<HttpResponse<string>> {
+		Content_orders_gettestordertemplate(merchantId: string, templateName: Content_orders_gettestordertemplateTemplateName, country: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + (merchantId == null ? '' : encodeURIComponent(merchantId)) + '/testordertemplates/' + templateName + '&country=' + (country == null ? '' : encodeURIComponent(country)) + '', { observe: 'response', responseType: 'text' });
 		}
 	}

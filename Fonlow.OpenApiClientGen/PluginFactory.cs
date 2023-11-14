@@ -26,7 +26,7 @@ namespace Fonlow.CodeDom.Web
 			Assembly assembly;
 			try
 			{
-				assembly = Assembly.LoadFile(assemblyFilePath); // the main program does not generally has the plugin assembly registered in deps.json, so it is better to load file.
+				assembly = Assembly.LoadFrom(assemblyFilePath); // the main program does not generally has the plugin assembly registered in deps.json, so it is better to load file.
 				Trace.TraceInformation("Assembly {0} is loaded for type {1}.", assemblyFilePath, "ICommand");
 			}
 			catch (System.IO.FileLoadException e)

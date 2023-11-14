@@ -7,10 +7,10 @@ export namespace MyNS {
 	export interface BatchUpdateScheduleResponse {
 
 		/** List of actions that have been created in the schedule. */
-		Creates?: BatchScheduleActionCreateResult;
+		Creates?: BatchScheduleActionCreateResult | null;
 
 		/** List of actions that have been deleted from the schedule. */
-		Deletes?: BatchScheduleActionDeleteResult;
+		Deletes?: BatchScheduleActionDeleteResult | null;
 	}
 
 
@@ -52,31 +52,31 @@ export namespace MyNS {
 	export interface ScheduleActionSettings {
 
 		/** Settings for the action to insert a user-defined ID3 tag in each HLS segment */
-		HlsId3SegmentTaggingSettings?: HlsId3SegmentTaggingScheduleActionSettings;
+		HlsId3SegmentTaggingSettings?: HlsId3SegmentTaggingScheduleActionSettings | null;
 
 		/** Settings for the action to emit HLS metadata */
-		HlsTimedMetadataSettings?: HlsTimedMetadataScheduleActionSettings;
+		HlsTimedMetadataSettings?: HlsTimedMetadataScheduleActionSettings | null;
 
 		/** Settings for the "switch input" action: to switch from ingesting one input to ingesting another input. */
-		InputSwitchSettings?: InputSwitchScheduleActionSettings;
+		InputSwitchSettings?: InputSwitchScheduleActionSettings | null;
 
 		/** Settings for the action to set pause state of a channel. */
-		PauseStateSettings?: PauseStateScheduleActionSettings;
+		PauseStateSettings?: PauseStateScheduleActionSettings | null;
 
 		/** Settings for a SCTE-35 return_to_network message. */
-		Scte35ReturnToNetworkSettings?: Scte35ReturnToNetworkScheduleActionSettings;
+		Scte35ReturnToNetworkSettings?: Scte35ReturnToNetworkScheduleActionSettings | null;
 
 		/** Settings for a SCTE-35 splice_insert message. */
-		Scte35SpliceInsertSettings?: Scte35SpliceInsertScheduleActionSettings;
+		Scte35SpliceInsertSettings?: Scte35SpliceInsertScheduleActionSettings | null;
 
 		/** Settings for a SCTE-35 time_signal. */
-		Scte35TimeSignalSettings?: Scte35TimeSignalScheduleActionSettings;
+		Scte35TimeSignalSettings?: Scte35TimeSignalScheduleActionSettings | null;
 
 		/** Settings for the action to activate a static image. */
-		StaticImageActivateSettings?: StaticImageActivateScheduleActionSettings;
+		StaticImageActivateSettings?: StaticImageActivateScheduleActionSettings | null;
 
 		/** Settings for the action to deactivate the image in a specific layer. */
-		StaticImageDeactivateSettings?: StaticImageDeactivateScheduleActionSettings;
+		StaticImageDeactivateSettings?: StaticImageDeactivateScheduleActionSettings | null;
 	}
 
 
@@ -112,10 +112,10 @@ export namespace MyNS {
 		InputAttachmentNameReference: string;
 
 		/** Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file. */
-		InputClippingSettings?: InputClippingSettings;
+		InputClippingSettings?: InputClippingSettings | null;
 
 		/** Placeholder documentation for __listOf__string */
-		UrlPath?: Array<string>;
+		UrlPath?: Array<string> | null;
 	}
 
 
@@ -129,10 +129,10 @@ export namespace MyNS {
 		InputTimecodeSource: InputClippingSettingsInputTimecodeSource;
 
 		/** Settings to identify the start of the clip. */
-		StartTimecode?: StartTimecode;
+		StartTimecode?: StartTimecode | null;
 
 		/** Settings to identify the end of the clip. */
-		StopTimecode?: StopTimecode;
+		StopTimecode?: StopTimecode | null;
 	}
 
 	export enum InputClippingSettingsInputTimecodeSource { ZEROBASED = 0, EMBEDDED = 1 }
@@ -142,7 +142,7 @@ export namespace MyNS {
 	export interface StartTimecode {
 
 		/** Placeholder documentation for __string */
-		Timecode?: string;
+		Timecode?: string | null;
 	}
 
 
@@ -150,10 +150,10 @@ export namespace MyNS {
 	export interface StopTimecode {
 
 		/** If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode. */
-		LastFrameClippingBehavior?: StopTimecodeLastFrameClippingBehavior;
+		LastFrameClippingBehavior?: StopTimecodeLastFrameClippingBehavior | null;
 
 		/** Placeholder documentation for __string */
-		Timecode?: string;
+		Timecode?: string | null;
 	}
 
 	export enum StopTimecodeLastFrameClippingBehavior { EXCLUDE_LAST_FRAME = 0, INCLUDE_LAST_FRAME = 1 }
@@ -163,7 +163,7 @@ export namespace MyNS {
 	export interface PauseStateScheduleActionSettings {
 
 		/** Placeholder documentation for __listOfPipelinePauseStateSettings */
-		Pipelines?: Array<PipelinePauseStateSettings>;
+		Pipelines?: Array<PipelinePauseStateSettings> | null;
 	}
 
 
@@ -201,7 +201,7 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 8589934591
 		 */
-		Duration?: number;
+		Duration?: number | null;
 
 		/**
 		 * Placeholder documentation for __longMin0Max4294967295
@@ -250,14 +250,14 @@ export namespace MyNS {
 	export interface Scte35SegmentationDescriptor {
 
 		/** Corresponds to SCTE-35 delivery_not_restricted_flag parameter. To declare delivery restrictions, include this element and its four "restriction" flags. To declare that there are no restrictions, omit this element. */
-		DeliveryRestrictions?: Scte35DeliveryRestrictions;
+		DeliveryRestrictions?: Scte35DeliveryRestrictions | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max255
 		 * Minimum: 0
 		 * Maximum: 255
 		 */
-		SegmentNum?: number;
+		SegmentNum?: number | null;
 
 		/**
 		 * Corresponds to SCTE-35 segmentation_event_cancel_indicator. SEGMENTATION_EVENT_NOT_CANCELED corresponds to 0 in the SCTE-35 specification and indicates that this is an insertion request. SEGMENTATION_EVENT_CANCELED corresponds to 1 in the SCTE-35 specification and indicates that this is a cancelation request, in which case complete this field and the existing event ID to cancel.
@@ -270,7 +270,7 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 1099511627775
 		 */
-		SegmentationDuration?: number;
+		SegmentationDuration?: number | null;
 
 		/**
 		 * Placeholder documentation for __longMin0Max4294967295
@@ -285,38 +285,38 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 255
 		 */
-		SegmentationTypeId?: number;
+		SegmentationTypeId?: number | null;
 
 		/** Placeholder documentation for __string */
-		SegmentationUpid?: string;
+		SegmentationUpid?: string | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max255
 		 * Minimum: 0
 		 * Maximum: 255
 		 */
-		SegmentationUpidType?: number;
+		SegmentationUpidType?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max255
 		 * Minimum: 0
 		 * Maximum: 255
 		 */
-		SegmentsExpected?: number;
+		SegmentsExpected?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max255
 		 * Minimum: 0
 		 * Maximum: 255
 		 */
-		SubSegmentNum?: number;
+		SubSegmentNum?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max255
 		 * Minimum: 0
 		 * Maximum: 255
 		 */
-		SubSegmentsExpected?: number;
+		SubSegmentsExpected?: number | null;
 	}
 
 
@@ -366,25 +366,25 @@ export namespace MyNS {
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		Duration?: number;
+		Duration?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		FadeIn?: number;
+		FadeIn?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		FadeOut?: number;
+		FadeOut?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1
 		 * Minimum: 1
 		 */
-		Height?: number;
+		Height?: number | null;
 
 		/**
 		 * Input Location
@@ -396,33 +396,33 @@ export namespace MyNS {
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		ImageX?: number;
+		ImageX?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		ImageY?: number;
+		ImageY?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max7
 		 * Minimum: 0
 		 * Maximum: 7
 		 */
-		Layer?: number;
+		Layer?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max100
 		 * Minimum: 0
 		 * Maximum: 100
 		 */
-		Opacity?: number;
+		Opacity?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1
 		 * Minimum: 1
 		 */
-		Width?: number;
+		Width?: number | null;
 	}
 
 
@@ -430,7 +430,7 @@ export namespace MyNS {
 	export interface InputLocation {
 
 		/** Placeholder documentation for __string */
-		PasswordParam?: string;
+		PasswordParam?: string | null;
 
 		/**
 		 * Placeholder documentation for __string
@@ -439,7 +439,7 @@ export namespace MyNS {
 		Uri: string;
 
 		/** Placeholder documentation for __string */
-		Username?: string;
+		Username?: string | null;
 	}
 
 
@@ -450,14 +450,14 @@ export namespace MyNS {
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		FadeOut?: number;
+		FadeOut?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max7
 		 * Minimum: 0
 		 * Maximum: 7
 		 */
-		Layer?: number;
+		Layer?: number | null;
 	}
 
 
@@ -465,13 +465,13 @@ export namespace MyNS {
 	export interface ScheduleActionStartSettings {
 
 		/** Start time for the action. */
-		FixedModeScheduleActionStartSettings?: FixedModeScheduleActionStartSettings;
+		FixedModeScheduleActionStartSettings?: FixedModeScheduleActionStartSettings | null;
 
 		/** Settings to specify if an action follows another. */
-		FollowModeScheduleActionStartSettings?: FollowModeScheduleActionStartSettings;
+		FollowModeScheduleActionStartSettings?: FollowModeScheduleActionStartSettings | null;
 
 		/** Settings to configure an action so that it occurs as soon as possible. */
-		ImmediateModeScheduleActionStartSettings?: ImmediateModeScheduleActionStartSettings;
+		ImmediateModeScheduleActionStartSettings?: ImmediateModeScheduleActionStartSettings | null;
 	}
 
 
@@ -549,7 +549,7 @@ export namespace MyNS {
 	export interface CreateChannelResponse {
 
 		/** Placeholder documentation for Channel */
-		Channel?: Channel;
+		Channel?: Channel | null;
 	}
 
 
@@ -557,49 +557,49 @@ export namespace MyNS {
 	export interface Channel {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** A standard channel has two encoding pipelines and a single pipeline channel only has one. */
-		ChannelClass?: ChannelChannelClass;
+		ChannelClass?: ChannelChannelClass | null;
 
 		/** Placeholder documentation for __listOfOutputDestination */
-		Destinations?: Array<OutputDestination>;
+		Destinations?: Array<OutputDestination> | null;
 
 		/** Placeholder documentation for __listOfChannelEgressEndpoint */
-		EgressEndpoints?: Array<ChannelEgressEndpoint>;
+		EgressEndpoints?: Array<ChannelEgressEndpoint> | null;
 
 		/** Encoder Settings */
-		EncoderSettings?: EncoderSettings;
+		EncoderSettings?: EncoderSettings | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** Placeholder documentation for __listOfInputAttachment */
-		InputAttachments?: Array<InputAttachment>;
+		InputAttachments?: Array<InputAttachment> | null;
 
 		/** Placeholder documentation for InputSpecification */
-		InputSpecification?: InputSpecification;
+		InputSpecification?: InputSpecification | null;
 
 		/** The log level the user wants for their channel. */
-		LogLevel?: ChannelLogLevel;
+		LogLevel?: ChannelLogLevel | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __listOfPipelineDetail */
-		PipelineDetails?: Array<PipelineDetail>;
+		PipelineDetails?: Array<PipelineDetail> | null;
 
 		/** Placeholder documentation for __integer */
-		PipelinesRunningCount?: number;
+		PipelinesRunningCount?: number | null;
 
 		/** Placeholder documentation for __string */
-		RoleArn?: string;
+		RoleArn?: string | null;
 
 		/** Placeholder documentation for ChannelState */
-		State?: ChannelState;
+		State?: ChannelState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export enum ChannelChannelClass { STANDARD = 0, SINGLE_PIPELINE = 1 }
@@ -609,16 +609,16 @@ export namespace MyNS {
 	export interface OutputDestination {
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** Placeholder documentation for __listOfMediaPackageOutputDestinationSettings */
-		MediaPackageSettings?: Array<MediaPackageOutputDestinationSettings>;
+		MediaPackageSettings?: Array<MediaPackageOutputDestinationSettings> | null;
 
 		/** Multiplex Program Input Destination Settings for outputting a Channel to a Multiplex */
-		MultiplexSettings?: MultiplexProgramChannelDestinationSettings;
+		MultiplexSettings?: MultiplexProgramChannelDestinationSettings | null;
 
 		/** Placeholder documentation for __listOfOutputDestinationSettings */
-		Settings?: Array<OutputDestinationSettings>;
+		Settings?: Array<OutputDestinationSettings> | null;
 	}
 
 
@@ -629,7 +629,7 @@ export namespace MyNS {
 		 * Placeholder documentation for __stringMin1
 		 * Min length: 1
 		 */
-		ChannelId?: string;
+		ChannelId?: string | null;
 	}
 
 
@@ -640,13 +640,13 @@ export namespace MyNS {
 		 * Placeholder documentation for __stringMin1
 		 * Min length: 1
 		 */
-		MultiplexId?: string;
+		MultiplexId?: string | null;
 
 		/**
 		 * Placeholder documentation for __stringMin1
 		 * Min length: 1
 		 */
-		ProgramName?: string;
+		ProgramName?: string | null;
 	}
 
 
@@ -654,16 +654,16 @@ export namespace MyNS {
 	export interface OutputDestinationSettings {
 
 		/** Placeholder documentation for __string */
-		PasswordParam?: string;
+		PasswordParam?: string | null;
 
 		/** Placeholder documentation for __string */
-		StreamName?: string;
+		StreamName?: string | null;
 
 		/** Placeholder documentation for __string */
-		Url?: string;
+		Url?: string | null;
 
 		/** Placeholder documentation for __string */
-		Username?: string;
+		Username?: string | null;
 	}
 
 
@@ -671,7 +671,7 @@ export namespace MyNS {
 	export interface ChannelEgressEndpoint {
 
 		/** Placeholder documentation for __string */
-		SourceIp?: string;
+		SourceIp?: string | null;
 	}
 
 
@@ -685,22 +685,22 @@ export namespace MyNS {
 		AudioDescriptions: Array<AudioDescription>;
 
 		/** Avail Blanking */
-		AvailBlanking?: AvailBlanking;
+		AvailBlanking?: AvailBlanking | null;
 
 		/** Avail Configuration */
-		AvailConfiguration?: AvailConfiguration;
+		AvailConfiguration?: AvailConfiguration | null;
 
 		/** Blackout Slate */
-		BlackoutSlate?: BlackoutSlate;
+		BlackoutSlate?: BlackoutSlate | null;
 
 		/** Placeholder documentation for __listOfCaptionDescription */
-		CaptionDescriptions?: Array<CaptionDescription>;
+		CaptionDescriptions?: Array<CaptionDescription> | null;
 
 		/** Global Configuration */
-		GlobalConfiguration?: GlobalConfiguration;
+		GlobalConfiguration?: GlobalConfiguration | null;
 
 		/** Nielsen Configuration */
-		NielsenConfiguration?: NielsenConfiguration;
+		NielsenConfiguration?: NielsenConfiguration | null;
 
 		/**
 		 * Placeholder documentation for __listOfOutputGroup
@@ -726,7 +726,7 @@ export namespace MyNS {
 	export interface AudioDescription {
 
 		/** Audio Normalization Settings */
-		AudioNormalizationSettings?: AudioNormalizationSettings;
+		AudioNormalizationSettings?: AudioNormalizationSettings | null;
 
 		/**
 		 * Placeholder documentation for __string
@@ -735,23 +735,23 @@ export namespace MyNS {
 		AudioSelectorName: string;
 
 		/** Audio Type */
-		AudioType?: AudioDescriptionAudioType;
+		AudioType?: AudioDescriptionAudioType | null;
 
 		/** Audio Description Audio Type Control */
-		AudioTypeControl?: AudioDescriptionAudioTypeControl;
+		AudioTypeControl?: AudioDescriptionAudioTypeControl | null;
 
 		/** Audio Codec Settings */
-		CodecSettings?: AudioCodecSettings;
+		CodecSettings?: AudioCodecSettings | null;
 
 		/**
 		 * Placeholder documentation for __stringMin3Max3
 		 * Max length: 3
 		 * Min length: 3
 		 */
-		LanguageCode?: string;
+		LanguageCode?: string | null;
 
 		/** Audio Description Language Code Control */
-		LanguageCodeControl?: AudioDescriptionAudioTypeControl;
+		LanguageCodeControl?: AudioDescriptionAudioTypeControl | null;
 
 		/**
 		 * Placeholder documentation for __string
@@ -760,10 +760,10 @@ export namespace MyNS {
 		Name: string;
 
 		/** Remix Settings */
-		RemixSettings?: RemixSettings;
+		RemixSettings?: RemixSettings | null;
 
 		/** Placeholder documentation for __string */
-		StreamName?: string;
+		StreamName?: string | null;
 	}
 
 
@@ -771,13 +771,13 @@ export namespace MyNS {
 	export interface AudioNormalizationSettings {
 
 		/** Audio Normalization Algorithm */
-		Algorithm?: AudioNormalizationSettingsAlgorithm;
+		Algorithm?: AudioNormalizationSettingsAlgorithm | null;
 
 		/** Audio Normalization Algorithm Control */
-		AlgorithmControl?: AudioNormalizationSettingsAlgorithmControl;
+		AlgorithmControl?: AudioNormalizationSettingsAlgorithmControl | null;
 
 		/** Placeholder documentation for __doubleMinNegative59Max0 */
-		TargetLkfs?: number;
+		TargetLkfs?: number | null;
 	}
 
 	export enum AudioNormalizationSettingsAlgorithm { ITU_1770_1 = 0, ITU_1770_2 = 1 }
@@ -793,19 +793,19 @@ export namespace MyNS {
 	export interface AudioCodecSettings {
 
 		/** Aac Settings */
-		AacSettings?: AacSettings;
+		AacSettings?: AacSettings | null;
 
 		/** Ac3 Settings */
-		Ac3Settings?: Ac3Settings;
+		Ac3Settings?: Ac3Settings | null;
 
 		/** Eac3 Settings */
-		Eac3Settings?: Eac3Settings;
+		Eac3Settings?: Eac3Settings | null;
 
 		/** Mp2 Settings */
-		Mp2Settings?: Mp2Settings;
+		Mp2Settings?: Mp2Settings | null;
 
 		/** Pass Through Settings */
-		PassThroughSettings?: PassThroughSettings;
+		PassThroughSettings?: PassThroughSettings | null;
 	}
 
 
@@ -813,31 +813,31 @@ export namespace MyNS {
 	export interface AacSettings {
 
 		/** Placeholder documentation for __double */
-		Bitrate?: number;
+		Bitrate?: number | null;
 
 		/** Aac Coding Mode */
-		CodingMode?: AacSettingsCodingMode;
+		CodingMode?: AacSettingsCodingMode | null;
 
 		/** Aac Input Type */
-		InputType?: AacSettingsInputType;
+		InputType?: AacSettingsInputType | null;
 
 		/** Aac Profile */
-		Profile?: AacSettingsProfile;
+		Profile?: AacSettingsProfile | null;
 
 		/** Aac Rate Control Mode */
-		RateControlMode?: AacSettingsRateControlMode;
+		RateControlMode?: AacSettingsRateControlMode | null;
 
 		/** Aac Raw Format */
-		RawFormat?: AacSettingsRawFormat;
+		RawFormat?: AacSettingsRawFormat | null;
 
 		/** Placeholder documentation for __double */
-		SampleRate?: number;
+		SampleRate?: number | null;
 
 		/** Aac Spec */
-		Spec?: AacSettingsSpec;
+		Spec?: AacSettingsSpec | null;
 
 		/** Aac Vbr Quality */
-		VbrQuality?: AacSettingsVbrQuality;
+		VbrQuality?: AacSettingsVbrQuality | null;
 	}
 
 	export enum AacSettingsCodingMode { AD_RECEIVER_MIX = 0, CODING_MODE_1_0 = 1, CODING_MODE_1_1 = 2, CODING_MODE_2_0 = 3, CODING_MODE_5_1 = 4 }
@@ -859,29 +859,29 @@ export namespace MyNS {
 	export interface Ac3Settings {
 
 		/** Placeholder documentation for __double */
-		Bitrate?: number;
+		Bitrate?: number | null;
 
 		/** Ac3 Bitstream Mode */
-		BitstreamMode?: Ac3SettingsBitstreamMode;
+		BitstreamMode?: Ac3SettingsBitstreamMode | null;
 
 		/** Ac3 Coding Mode */
-		CodingMode?: Ac3SettingsCodingMode;
+		CodingMode?: Ac3SettingsCodingMode | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1Max31
 		 * Minimum: 1
 		 * Maximum: 31
 		 */
-		Dialnorm?: number;
+		Dialnorm?: number | null;
 
 		/** Ac3 Drc Profile */
-		DrcProfile?: Ac3SettingsDrcProfile;
+		DrcProfile?: Ac3SettingsDrcProfile | null;
 
 		/** Ac3 Lfe Filter */
-		LfeFilter?: Ac3SettingsLfeFilter;
+		LfeFilter?: Ac3SettingsLfeFilter | null;
 
 		/** Ac3 Metadata Control */
-		MetadataControl?: AudioDescriptionAudioTypeControl;
+		MetadataControl?: AudioDescriptionAudioTypeControl | null;
 	}
 
 	export enum Ac3SettingsBitstreamMode { COMMENTARY = 0, COMPLETE_MAIN = 1, DIALOGUE = 2, EMERGENCY = 3, HEARING_IMPAIRED = 4, MUSIC_AND_EFFECTS = 5, VISUALLY_IMPAIRED = 6, VOICE_OVER = 7 }
@@ -897,68 +897,68 @@ export namespace MyNS {
 	export interface Eac3Settings {
 
 		/** Eac3 Attenuation Control */
-		AttenuationControl?: Eac3SettingsAttenuationControl;
+		AttenuationControl?: Eac3SettingsAttenuationControl | null;
 
 		/** Placeholder documentation for __double */
-		Bitrate?: number;
+		Bitrate?: number | null;
 
 		/** Eac3 Bitstream Mode */
-		BitstreamMode?: Eac3SettingsBitstreamMode;
+		BitstreamMode?: Eac3SettingsBitstreamMode | null;
 
 		/** Eac3 Coding Mode */
-		CodingMode?: Eac3SettingsCodingMode;
+		CodingMode?: Eac3SettingsCodingMode | null;
 
 		/** Eac3 Dc Filter */
-		DcFilter?: Ac3SettingsLfeFilter;
+		DcFilter?: Ac3SettingsLfeFilter | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1Max31
 		 * Minimum: 1
 		 * Maximum: 31
 		 */
-		Dialnorm?: number;
+		Dialnorm?: number | null;
 
 		/** Eac3 Drc Line */
-		DrcLine?: Eac3SettingsDrcLine;
+		DrcLine?: Eac3SettingsDrcLine | null;
 
 		/** Eac3 Drc Rf */
-		DrcRf?: Eac3SettingsDrcLine;
+		DrcRf?: Eac3SettingsDrcLine | null;
 
 		/** Eac3 Lfe Control */
-		LfeControl?: Eac3SettingsLfeControl;
+		LfeControl?: Eac3SettingsLfeControl | null;
 
 		/** Eac3 Lfe Filter */
-		LfeFilter?: Ac3SettingsLfeFilter;
+		LfeFilter?: Ac3SettingsLfeFilter | null;
 
 		/** Placeholder documentation for __double */
-		LoRoCenterMixLevel?: number;
+		LoRoCenterMixLevel?: number | null;
 
 		/** Placeholder documentation for __double */
-		LoRoSurroundMixLevel?: number;
+		LoRoSurroundMixLevel?: number | null;
 
 		/** Placeholder documentation for __double */
-		LtRtCenterMixLevel?: number;
+		LtRtCenterMixLevel?: number | null;
 
 		/** Placeholder documentation for __double */
-		LtRtSurroundMixLevel?: number;
+		LtRtSurroundMixLevel?: number | null;
 
 		/** Eac3 Metadata Control */
-		MetadataControl?: AudioDescriptionAudioTypeControl;
+		MetadataControl?: AudioDescriptionAudioTypeControl | null;
 
 		/** Eac3 Passthrough Control */
-		PassthroughControl?: Eac3SettingsPassthroughControl;
+		PassthroughControl?: Eac3SettingsPassthroughControl | null;
 
 		/** Eac3 Phase Control */
-		PhaseControl?: Eac3SettingsPhaseControl;
+		PhaseControl?: Eac3SettingsPhaseControl | null;
 
 		/** Eac3 Stereo Downmix */
-		StereoDownmix?: Eac3SettingsStereoDownmix;
+		StereoDownmix?: Eac3SettingsStereoDownmix | null;
 
 		/** Eac3 Surround Ex Mode */
-		SurroundExMode?: Eac3SettingsSurroundExMode;
+		SurroundExMode?: Eac3SettingsSurroundExMode | null;
 
 		/** Eac3 Surround Mode */
-		SurroundMode?: Eac3SettingsSurroundExMode;
+		SurroundMode?: Eac3SettingsSurroundExMode | null;
 	}
 
 	export enum Eac3SettingsAttenuationControl { ATTENUATE_3_DB = 0, NONE = 1 }
@@ -984,13 +984,13 @@ export namespace MyNS {
 	export interface Mp2Settings {
 
 		/** Placeholder documentation for __double */
-		Bitrate?: number;
+		Bitrate?: number | null;
 
 		/** Mp2 Coding Mode */
-		CodingMode?: Mp2SettingsCodingMode;
+		CodingMode?: Mp2SettingsCodingMode | null;
 
 		/** Placeholder documentation for __double */
-		SampleRate?: number;
+		SampleRate?: number | null;
 	}
 
 	export enum Mp2SettingsCodingMode { CODING_MODE_1_0 = 0, CODING_MODE_2_0 = 1 }
@@ -1015,14 +1015,14 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 16
 		 */
-		ChannelsIn?: number;
+		ChannelsIn?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1Max8
 		 * Minimum: 1
 		 * Maximum: 8
 		 */
-		ChannelsOut?: number;
+		ChannelsOut?: number | null;
 	}
 
 
@@ -1070,10 +1070,10 @@ export namespace MyNS {
 	export interface AvailBlanking {
 
 		/** Input Location */
-		AvailBlankingImage?: InputLocation;
+		AvailBlankingImage?: InputLocation | null;
 
 		/** Avail Blanking State */
-		State?: Ac3SettingsLfeFilter;
+		State?: Ac3SettingsLfeFilter | null;
 	}
 
 
@@ -1081,7 +1081,7 @@ export namespace MyNS {
 	export interface AvailConfiguration {
 
 		/** Avail Settings */
-		AvailSettings?: AvailSettings;
+		AvailSettings?: AvailSettings | null;
 	}
 
 
@@ -1089,10 +1089,10 @@ export namespace MyNS {
 	export interface AvailSettings {
 
 		/** Scte35 Splice Insert */
-		Scte35SpliceInsert?: Scte35SpliceInsert;
+		Scte35SpliceInsert?: Scte35SpliceInsert | null;
 
 		/** Scte35 Time Signal Apos */
-		Scte35TimeSignalApos?: Scte35TimeSignalApos;
+		Scte35TimeSignalApos?: Scte35TimeSignalApos | null;
 	}
 
 
@@ -1104,13 +1104,13 @@ export namespace MyNS {
 		 * Minimum: -1000
 		 * Maximum: 1000
 		 */
-		AdAvailOffset?: number;
+		AdAvailOffset?: number | null;
 
 		/** Scte35 Splice Insert No Regional Blackout Behavior */
-		NoRegionalBlackoutFlag?: Scte35SpliceInsertNoRegionalBlackoutFlag;
+		NoRegionalBlackoutFlag?: Scte35SpliceInsertNoRegionalBlackoutFlag | null;
 
 		/** Scte35 Splice Insert Web Delivery Allowed Behavior */
-		WebDeliveryAllowedFlag?: Scte35SpliceInsertNoRegionalBlackoutFlag;
+		WebDeliveryAllowedFlag?: Scte35SpliceInsertNoRegionalBlackoutFlag | null;
 	}
 
 	export enum Scte35SpliceInsertNoRegionalBlackoutFlag { FOLLOW = 0, IGNORE = 1 }
@@ -1124,13 +1124,13 @@ export namespace MyNS {
 		 * Minimum: -1000
 		 * Maximum: 1000
 		 */
-		AdAvailOffset?: number;
+		AdAvailOffset?: number | null;
 
 		/** Scte35 Apos No Regional Blackout Behavior */
-		NoRegionalBlackoutFlag?: Scte35SpliceInsertNoRegionalBlackoutFlag;
+		NoRegionalBlackoutFlag?: Scte35SpliceInsertNoRegionalBlackoutFlag | null;
 
 		/** Scte35 Apos Web Delivery Allowed Behavior */
-		WebDeliveryAllowedFlag?: Scte35SpliceInsertNoRegionalBlackoutFlag;
+		WebDeliveryAllowedFlag?: Scte35SpliceInsertNoRegionalBlackoutFlag | null;
 	}
 
 
@@ -1138,23 +1138,23 @@ export namespace MyNS {
 	export interface BlackoutSlate {
 
 		/** Input Location */
-		BlackoutSlateImage?: InputLocation;
+		BlackoutSlateImage?: InputLocation | null;
 
 		/** Blackout Slate Network End Blackout */
-		NetworkEndBlackout?: Ac3SettingsLfeFilter;
+		NetworkEndBlackout?: Ac3SettingsLfeFilter | null;
 
 		/** Input Location */
-		NetworkEndBlackoutImage?: InputLocation;
+		NetworkEndBlackoutImage?: InputLocation | null;
 
 		/**
 		 * Placeholder documentation for __stringMin34Max34
 		 * Max length: 34
 		 * Min length: 34
 		 */
-		NetworkId?: string;
+		NetworkId?: string | null;
 
 		/** Blackout Slate State */
-		State?: Ac3SettingsLfeFilter;
+		State?: Ac3SettingsLfeFilter | null;
 	}
 
 
@@ -1168,13 +1168,13 @@ export namespace MyNS {
 		CaptionSelectorName: string;
 
 		/** Caption Destination Settings */
-		DestinationSettings?: CaptionDestinationSettings;
+		DestinationSettings?: CaptionDestinationSettings | null;
 
 		/** Placeholder documentation for __string */
-		LanguageCode?: string;
+		LanguageCode?: string | null;
 
 		/** Placeholder documentation for __string */
-		LanguageDescription?: string;
+		LanguageDescription?: string | null;
 
 		/**
 		 * Placeholder documentation for __string
@@ -1188,40 +1188,40 @@ export namespace MyNS {
 	export interface CaptionDestinationSettings {
 
 		/** Arib Destination Settings */
-		AribDestinationSettings?: AribDestinationSettings;
+		AribDestinationSettings?: AribDestinationSettings | null;
 
 		/** Burn In Destination Settings */
-		BurnInDestinationSettings?: BurnInDestinationSettings;
+		BurnInDestinationSettings?: BurnInDestinationSettings | null;
 
 		/** Dvb Sub Destination Settings */
-		DvbSubDestinationSettings?: DvbSubDestinationSettings;
+		DvbSubDestinationSettings?: DvbSubDestinationSettings | null;
 
 		/** Embedded Destination Settings */
-		EmbeddedDestinationSettings?: EmbeddedDestinationSettings;
+		EmbeddedDestinationSettings?: EmbeddedDestinationSettings | null;
 
 		/** Embedded Plus Scte20 Destination Settings */
-		EmbeddedPlusScte20DestinationSettings?: EmbeddedPlusScte20DestinationSettings;
+		EmbeddedPlusScte20DestinationSettings?: EmbeddedPlusScte20DestinationSettings | null;
 
 		/** Rtmp Caption Info Destination Settings */
-		RtmpCaptionInfoDestinationSettings?: RtmpCaptionInfoDestinationSettings;
+		RtmpCaptionInfoDestinationSettings?: RtmpCaptionInfoDestinationSettings | null;
 
 		/** Scte20 Plus Embedded Destination Settings */
-		Scte20PlusEmbeddedDestinationSettings?: Scte20PlusEmbeddedDestinationSettings;
+		Scte20PlusEmbeddedDestinationSettings?: Scte20PlusEmbeddedDestinationSettings | null;
 
 		/** Scte27 Destination Settings */
-		Scte27DestinationSettings?: Scte27DestinationSettings;
+		Scte27DestinationSettings?: Scte27DestinationSettings | null;
 
 		/** Smpte Tt Destination Settings */
-		SmpteTtDestinationSettings?: SmpteTtDestinationSettings;
+		SmpteTtDestinationSettings?: SmpteTtDestinationSettings | null;
 
 		/** Teletext Destination Settings */
-		TeletextDestinationSettings?: TeletextDestinationSettings;
+		TeletextDestinationSettings?: TeletextDestinationSettings | null;
 
 		/** Ttml Destination Settings */
-		TtmlDestinationSettings?: TtmlDestinationSettings;
+		TtmlDestinationSettings?: TtmlDestinationSettings | null;
 
 		/** Webvtt Destination Settings */
-		WebvttDestinationSettings?: WebvttDestinationSettings;
+		WebvttDestinationSettings?: WebvttDestinationSettings | null;
 	}
 
 
@@ -1234,81 +1234,81 @@ export namespace MyNS {
 	export interface BurnInDestinationSettings {
 
 		/** Burn In Alignment */
-		Alignment?: BurnInDestinationSettingsAlignment;
+		Alignment?: BurnInDestinationSettingsAlignment | null;
 
 		/** Burn In Background Color */
-		BackgroundColor?: BurnInDestinationSettingsBackgroundColor;
+		BackgroundColor?: BurnInDestinationSettingsBackgroundColor | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max255
 		 * Minimum: 0
 		 * Maximum: 255
 		 */
-		BackgroundOpacity?: number;
+		BackgroundOpacity?: number | null;
 
 		/** Input Location */
-		Font?: InputLocation;
+		Font?: InputLocation | null;
 
 		/** Burn In Font Color */
-		FontColor?: BurnInDestinationSettingsFontColor;
+		FontColor?: BurnInDestinationSettingsFontColor | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max255
 		 * Minimum: 0
 		 * Maximum: 255
 		 */
-		FontOpacity?: number;
+		FontOpacity?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin96Max600
 		 * Minimum: 96
 		 * Maximum: 600
 		 */
-		FontResolution?: number;
+		FontResolution?: number | null;
 
 		/** Placeholder documentation for __string */
-		FontSize?: string;
+		FontSize?: string | null;
 
 		/** Burn In Outline Color */
-		OutlineColor?: BurnInDestinationSettingsFontColor;
+		OutlineColor?: BurnInDestinationSettingsFontColor | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max10
 		 * Minimum: 0
 		 * Maximum: 10
 		 */
-		OutlineSize?: number;
+		OutlineSize?: number | null;
 
 		/** Burn In Shadow Color */
-		ShadowColor?: BurnInDestinationSettingsBackgroundColor;
+		ShadowColor?: BurnInDestinationSettingsBackgroundColor | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max255
 		 * Minimum: 0
 		 * Maximum: 255
 		 */
-		ShadowOpacity?: number;
+		ShadowOpacity?: number | null;
 
 		/** Placeholder documentation for __integer */
-		ShadowXOffset?: number;
+		ShadowXOffset?: number | null;
 
 		/** Placeholder documentation for __integer */
-		ShadowYOffset?: number;
+		ShadowYOffset?: number | null;
 
 		/** Burn In Teletext Grid Control */
-		TeletextGridControl?: BurnInDestinationSettingsTeletextGridControl;
+		TeletextGridControl?: BurnInDestinationSettingsTeletextGridControl | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		XPosition?: number;
+		XPosition?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		YPosition?: number;
+		YPosition?: number | null;
 	}
 
 	export enum BurnInDestinationSettingsAlignment { CENTERED = 0, LEFT = 1, SMART = 2 }
@@ -1324,81 +1324,81 @@ export namespace MyNS {
 	export interface DvbSubDestinationSettings {
 
 		/** Dvb Sub Destination Alignment */
-		Alignment?: BurnInDestinationSettingsAlignment;
+		Alignment?: BurnInDestinationSettingsAlignment | null;
 
 		/** Dvb Sub Destination Background Color */
-		BackgroundColor?: BurnInDestinationSettingsBackgroundColor;
+		BackgroundColor?: BurnInDestinationSettingsBackgroundColor | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max255
 		 * Minimum: 0
 		 * Maximum: 255
 		 */
-		BackgroundOpacity?: number;
+		BackgroundOpacity?: number | null;
 
 		/** Input Location */
-		Font?: InputLocation;
+		Font?: InputLocation | null;
 
 		/** Dvb Sub Destination Font Color */
-		FontColor?: BurnInDestinationSettingsFontColor;
+		FontColor?: BurnInDestinationSettingsFontColor | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max255
 		 * Minimum: 0
 		 * Maximum: 255
 		 */
-		FontOpacity?: number;
+		FontOpacity?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin96Max600
 		 * Minimum: 96
 		 * Maximum: 600
 		 */
-		FontResolution?: number;
+		FontResolution?: number | null;
 
 		/** Placeholder documentation for __string */
-		FontSize?: string;
+		FontSize?: string | null;
 
 		/** Dvb Sub Destination Outline Color */
-		OutlineColor?: BurnInDestinationSettingsFontColor;
+		OutlineColor?: BurnInDestinationSettingsFontColor | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max10
 		 * Minimum: 0
 		 * Maximum: 10
 		 */
-		OutlineSize?: number;
+		OutlineSize?: number | null;
 
 		/** Dvb Sub Destination Shadow Color */
-		ShadowColor?: BurnInDestinationSettingsBackgroundColor;
+		ShadowColor?: BurnInDestinationSettingsBackgroundColor | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max255
 		 * Minimum: 0
 		 * Maximum: 255
 		 */
-		ShadowOpacity?: number;
+		ShadowOpacity?: number | null;
 
 		/** Placeholder documentation for __integer */
-		ShadowXOffset?: number;
+		ShadowXOffset?: number | null;
 
 		/** Placeholder documentation for __integer */
-		ShadowYOffset?: number;
+		ShadowYOffset?: number | null;
 
 		/** Dvb Sub Destination Teletext Grid Control */
-		TeletextGridControl?: BurnInDestinationSettingsTeletextGridControl;
+		TeletextGridControl?: BurnInDestinationSettingsTeletextGridControl | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		XPosition?: number;
+		XPosition?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		YPosition?: number;
+		YPosition?: number | null;
 	}
 
 
@@ -1441,7 +1441,7 @@ export namespace MyNS {
 	export interface TtmlDestinationSettings {
 
 		/** Ttml Destination Style Control */
-		StyleControl?: TtmlDestinationSettingsStyleControl;
+		StyleControl?: TtmlDestinationSettingsStyleControl | null;
 	}
 
 	export enum TtmlDestinationSettingsStyleControl { PASSTHROUGH = 0, USE_CONFIGURED = 1 }
@@ -1460,22 +1460,22 @@ export namespace MyNS {
 		 * Minimum: -60
 		 * Maximum: 60
 		 */
-		InitialAudioGain?: number;
+		InitialAudioGain?: number | null;
 
 		/** Global Configuration Input End Action */
-		InputEndAction?: GlobalConfigurationInputEndAction;
+		InputEndAction?: GlobalConfigurationInputEndAction | null;
 
 		/** Input Loss Behavior */
-		InputLossBehavior?: InputLossBehavior;
+		InputLossBehavior?: InputLossBehavior | null;
 
 		/** Global Configuration Output Locking Mode */
-		OutputLockingMode?: GlobalConfigurationOutputLockingMode;
+		OutputLockingMode?: GlobalConfigurationOutputLockingMode | null;
 
 		/** Global Configuration Output Timing Source */
-		OutputTimingSource?: GlobalConfigurationOutputTimingSource;
+		OutputTimingSource?: GlobalConfigurationOutputTimingSource | null;
 
 		/** Global Configuration Low Framerate Inputs */
-		SupportLowFramerateInputs?: Ac3SettingsLfeFilter;
+		SupportLowFramerateInputs?: Ac3SettingsLfeFilter | null;
 	}
 
 	export enum GlobalConfigurationInputEndAction { NONE = 0, SWITCH_AND_LOOP_INPUTS = 1 }
@@ -1489,27 +1489,27 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 1000000
 		 */
-		BlackFrameMsec?: number;
+		BlackFrameMsec?: number | null;
 
 		/**
 		 * Placeholder documentation for __stringMin6Max6
 		 * Max length: 6
 		 * Min length: 6
 		 */
-		InputLossImageColor?: string;
+		InputLossImageColor?: string | null;
 
 		/** Input Location */
-		InputLossImageSlate?: InputLocation;
+		InputLossImageSlate?: InputLocation | null;
 
 		/** Input Loss Image Type */
-		InputLossImageType?: InputLossBehaviorInputLossImageType;
+		InputLossImageType?: InputLossBehaviorInputLossImageType | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max1000000
 		 * Minimum: 0
 		 * Maximum: 1000000
 		 */
-		RepeatFrameMsec?: number;
+		RepeatFrameMsec?: number | null;
 	}
 
 	export enum InputLossBehaviorInputLossImageType { COLOR = 0, SLATE = 1 }
@@ -1523,10 +1523,10 @@ export namespace MyNS {
 	export interface NielsenConfiguration {
 
 		/** Placeholder documentation for __string */
-		DistributorId?: string;
+		DistributorId?: string | null;
 
 		/** State of Nielsen PCM to ID3 tagging */
-		NielsenPcmToId3Tagging?: Ac3SettingsLfeFilter;
+		NielsenPcmToId3Tagging?: Ac3SettingsLfeFilter | null;
 	}
 
 
@@ -1537,7 +1537,7 @@ export namespace MyNS {
 		 * Placeholder documentation for __stringMax32
 		 * Max length: 32
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/**
 		 * Output Group Settings
@@ -1557,28 +1557,28 @@ export namespace MyNS {
 	export interface OutputGroupSettings {
 
 		/** Archive Group Settings */
-		ArchiveGroupSettings?: ArchiveGroupSettings;
+		ArchiveGroupSettings?: ArchiveGroupSettings | null;
 
 		/** Frame Capture Group Settings */
-		FrameCaptureGroupSettings?: FrameCaptureGroupSettings;
+		FrameCaptureGroupSettings?: FrameCaptureGroupSettings | null;
 
 		/** Hls Group Settings */
-		HlsGroupSettings?: HlsGroupSettings;
+		HlsGroupSettings?: HlsGroupSettings | null;
 
 		/** Media Package Group Settings */
-		MediaPackageGroupSettings?: MediaPackageGroupSettings;
+		MediaPackageGroupSettings?: MediaPackageGroupSettings | null;
 
 		/** Ms Smooth Group Settings */
-		MsSmoothGroupSettings?: MsSmoothGroupSettings;
+		MsSmoothGroupSettings?: MsSmoothGroupSettings | null;
 
 		/** Multiplex Group Settings */
-		MultiplexGroupSettings?: MultiplexGroupSettings;
+		MultiplexGroupSettings?: MultiplexGroupSettings | null;
 
 		/** Rtmp Group Settings */
-		RtmpGroupSettings?: RtmpGroupSettings;
+		RtmpGroupSettings?: RtmpGroupSettings | null;
 
 		/** Udp Group Settings */
-		UdpGroupSettings?: UdpGroupSettings;
+		UdpGroupSettings?: UdpGroupSettings | null;
 	}
 
 
@@ -1595,7 +1595,7 @@ export namespace MyNS {
 		 * Placeholder documentation for __integerMin1
 		 * Minimum: 1
 		 */
-		RolloverInterval?: number;
+		RolloverInterval?: number | null;
 	}
 
 
@@ -1603,7 +1603,7 @@ export namespace MyNS {
 	export interface OutputLocationRef {
 
 		/** Placeholder documentation for __string */
-		DestinationRefId?: string;
+		DestinationRefId?: string | null;
 	}
 
 
@@ -1622,38 +1622,38 @@ export namespace MyNS {
 	export interface HlsGroupSettings {
 
 		/** Placeholder documentation for __listOfHlsAdMarkers */
-		AdMarkers?: Array<HlsAdMarkers>;
+		AdMarkers?: Array<HlsAdMarkers> | null;
 
 		/** Placeholder documentation for __string */
-		BaseUrlContent?: string;
+		BaseUrlContent?: string | null;
 
 		/** Placeholder documentation for __string */
-		BaseUrlContent1?: string;
+		BaseUrlContent1?: string | null;
 
 		/** Placeholder documentation for __string */
-		BaseUrlManifest?: string;
+		BaseUrlManifest?: string | null;
 
 		/** Placeholder documentation for __string */
-		BaseUrlManifest1?: string;
+		BaseUrlManifest1?: string | null;
 
 		/** Placeholder documentation for __listOfCaptionLanguageMapping */
-		CaptionLanguageMappings?: Array<CaptionLanguageMapping>;
+		CaptionLanguageMappings?: Array<CaptionLanguageMapping> | null;
 
 		/** Hls Caption Language Setting */
-		CaptionLanguageSetting?: HlsGroupSettingsCaptionLanguageSetting;
+		CaptionLanguageSetting?: HlsGroupSettingsCaptionLanguageSetting | null;
 
 		/** Hls Client Cache */
-		ClientCache?: Ac3SettingsLfeFilter;
+		ClientCache?: Ac3SettingsLfeFilter | null;
 
 		/** Hls Codec Specification */
-		CodecSpecification?: HlsGroupSettingsCodecSpecification;
+		CodecSpecification?: HlsGroupSettingsCodecSpecification | null;
 
 		/**
 		 * Placeholder documentation for __stringMin32Max32
 		 * Max length: 32
 		 * Min length: 32
 		 */
-		ConstantIv?: string;
+		ConstantIv?: string | null;
 
 		/**
 		 * Reference to an OutputDestination ID defined in the channel
@@ -1662,116 +1662,116 @@ export namespace MyNS {
 		Destination: OutputLocationRef;
 
 		/** Hls Directory Structure */
-		DirectoryStructure?: HlsGroupSettingsDirectoryStructure;
+		DirectoryStructure?: HlsGroupSettingsDirectoryStructure | null;
 
 		/** Hls Encryption Type */
-		EncryptionType?: HlsGroupSettingsEncryptionType;
+		EncryptionType?: HlsGroupSettingsEncryptionType | null;
 
 		/** Hls Cdn Settings */
-		HlsCdnSettings?: HlsCdnSettings;
+		HlsCdnSettings?: HlsCdnSettings | null;
 
 		/** State of HLS ID3 Segment Tagging */
-		HlsId3SegmentTagging?: Ac3SettingsLfeFilter;
+		HlsId3SegmentTagging?: Ac3SettingsLfeFilter | null;
 
 		/** When set to "standard", an I-Frame only playlist will be written out for each video output in the output group. This I-Frame only playlist will contain byte range offsets pointing to the I-frame(s) in each segment. */
-		IFrameOnlyPlaylists?: HlsGroupSettingsIFrameOnlyPlaylists;
+		IFrameOnlyPlaylists?: HlsGroupSettingsIFrameOnlyPlaylists | null;
 
 		/**
 		 * Placeholder documentation for __integerMin3
 		 * Minimum: 3
 		 */
-		IndexNSegments?: number;
+		IndexNSegments?: number | null;
 
 		/** Input Loss Action For Hls Out */
-		InputLossAction?: HlsGroupSettingsInputLossAction;
+		InputLossAction?: HlsGroupSettingsInputLossAction | null;
 
 		/** Hls Iv In Manifest */
-		IvInManifest?: HlsGroupSettingsIvInManifest;
+		IvInManifest?: HlsGroupSettingsIvInManifest | null;
 
 		/** Hls Iv Source */
-		IvSource?: HlsGroupSettingsIvSource;
+		IvSource?: HlsGroupSettingsIvSource | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1
 		 * Minimum: 1
 		 */
-		KeepSegments?: number;
+		KeepSegments?: number | null;
 
 		/** Placeholder documentation for __string */
-		KeyFormat?: string;
+		KeyFormat?: string | null;
 
 		/** Placeholder documentation for __string */
-		KeyFormatVersions?: string;
+		KeyFormatVersions?: string | null;
 
 		/** Key Provider Settings */
-		KeyProviderSettings?: KeyProviderSettings;
+		KeyProviderSettings?: KeyProviderSettings | null;
 
 		/** Hls Manifest Compression */
-		ManifestCompression?: HlsGroupSettingsManifestCompression;
+		ManifestCompression?: HlsGroupSettingsManifestCompression | null;
 
 		/** Hls Manifest Duration Format */
-		ManifestDurationFormat?: HlsGroupSettingsManifestDurationFormat;
+		ManifestDurationFormat?: HlsGroupSettingsManifestDurationFormat | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		MinSegmentLength?: number;
+		MinSegmentLength?: number | null;
 
 		/** Hls Mode */
-		Mode?: HlsGroupSettingsMode;
+		Mode?: HlsGroupSettingsMode | null;
 
 		/** Hls Output Selection */
-		OutputSelection?: HlsGroupSettingsOutputSelection;
+		OutputSelection?: HlsGroupSettingsOutputSelection | null;
 
 		/** Hls Program Date Time */
-		ProgramDateTime?: HlsGroupSettingsIvInManifest;
+		ProgramDateTime?: HlsGroupSettingsIvInManifest | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max3600
 		 * Minimum: 0
 		 * Maximum: 3600
 		 */
-		ProgramDateTimePeriod?: number;
+		ProgramDateTimePeriod?: number | null;
 
 		/** Hls Redundant Manifest */
-		RedundantManifest?: Ac3SettingsLfeFilter;
+		RedundantManifest?: Ac3SettingsLfeFilter | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1
 		 * Minimum: 1
 		 */
-		SegmentLength?: number;
+		SegmentLength?: number | null;
 
 		/** Hls Segmentation Mode */
-		SegmentationMode?: HlsGroupSettingsSegmentationMode;
+		SegmentationMode?: HlsGroupSettingsSegmentationMode | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1
 		 * Minimum: 1
 		 */
-		SegmentsPerSubdirectory?: number;
+		SegmentsPerSubdirectory?: number | null;
 
 		/** Hls Stream Inf Resolution */
-		StreamInfResolution?: HlsGroupSettingsIvInManifest;
+		StreamInfResolution?: HlsGroupSettingsIvInManifest | null;
 
 		/** Hls Timed Metadata Id3 Frame */
-		TimedMetadataId3Frame?: HlsGroupSettingsTimedMetadataId3Frame;
+		TimedMetadataId3Frame?: HlsGroupSettingsTimedMetadataId3Frame | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		TimedMetadataId3Period?: number;
+		TimedMetadataId3Period?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		TimestampDeltaMilliseconds?: number;
+		TimestampDeltaMilliseconds?: number | null;
 
 		/** Hls Ts File Mode */
-		TsFileMode?: HlsGroupSettingsTsFileMode;
+		TsFileMode?: HlsGroupSettingsTsFileMode | null;
 	}
 
 
@@ -1819,16 +1819,16 @@ export namespace MyNS {
 	export interface HlsCdnSettings {
 
 		/** Hls Akamai Settings */
-		HlsAkamaiSettings?: HlsAkamaiSettings;
+		HlsAkamaiSettings?: HlsAkamaiSettings | null;
 
 		/** Hls Basic Put Settings */
-		HlsBasicPutSettings?: HlsBasicPutSettings;
+		HlsBasicPutSettings?: HlsBasicPutSettings | null;
 
 		/** Hls Media Store Settings */
-		HlsMediaStoreSettings?: HlsMediaStoreSettings;
+		HlsMediaStoreSettings?: HlsMediaStoreSettings | null;
 
 		/** Hls Webdav Settings */
-		HlsWebdavSettings?: HlsWebdavSettings;
+		HlsWebdavSettings?: HlsWebdavSettings | null;
 	}
 
 
@@ -1839,36 +1839,36 @@ export namespace MyNS {
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		ConnectionRetryInterval?: number;
+		ConnectionRetryInterval?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max600
 		 * Minimum: 0
 		 * Maximum: 600
 		 */
-		FilecacheDuration?: number;
+		FilecacheDuration?: number | null;
 
 		/** Hls Akamai Http Transfer Mode */
-		HttpTransferMode?: HlsAkamaiSettingsHttpTransferMode;
+		HttpTransferMode?: HlsAkamaiSettingsHttpTransferMode | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		NumRetries?: number;
+		NumRetries?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max15
 		 * Minimum: 0
 		 * Maximum: 15
 		 */
-		RestartDelay?: number;
+		RestartDelay?: number | null;
 
 		/** Placeholder documentation for __string */
-		Salt?: string;
+		Salt?: string | null;
 
 		/** Placeholder documentation for __string */
-		Token?: string;
+		Token?: string | null;
 	}
 
 	export enum HlsAkamaiSettingsHttpTransferMode { CHUNKED = 0, NON_CHUNKED = 1 }
@@ -1881,27 +1881,27 @@ export namespace MyNS {
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		ConnectionRetryInterval?: number;
+		ConnectionRetryInterval?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max600
 		 * Minimum: 0
 		 * Maximum: 600
 		 */
-		FilecacheDuration?: number;
+		FilecacheDuration?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		NumRetries?: number;
+		NumRetries?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max15
 		 * Minimum: 0
 		 * Maximum: 15
 		 */
-		RestartDelay?: number;
+		RestartDelay?: number | null;
 	}
 
 
@@ -1912,30 +1912,30 @@ export namespace MyNS {
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		ConnectionRetryInterval?: number;
+		ConnectionRetryInterval?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max600
 		 * Minimum: 0
 		 * Maximum: 600
 		 */
-		FilecacheDuration?: number;
+		FilecacheDuration?: number | null;
 
 		/** Hls Media Store Storage Class */
-		MediaStoreStorageClass?: HlsMediaStoreSettingsMediaStoreStorageClass;
+		MediaStoreStorageClass?: HlsMediaStoreSettingsMediaStoreStorageClass | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		NumRetries?: number;
+		NumRetries?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max15
 		 * Minimum: 0
 		 * Maximum: 15
 		 */
-		RestartDelay?: number;
+		RestartDelay?: number | null;
 	}
 
 	export enum HlsMediaStoreSettingsMediaStoreStorageClass { TEMPORAL = 0 }
@@ -1948,30 +1948,30 @@ export namespace MyNS {
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		ConnectionRetryInterval?: number;
+		ConnectionRetryInterval?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max600
 		 * Minimum: 0
 		 * Maximum: 600
 		 */
-		FilecacheDuration?: number;
+		FilecacheDuration?: number | null;
 
 		/** Hls Webdav Http Transfer Mode */
-		HttpTransferMode?: HlsAkamaiSettingsHttpTransferMode;
+		HttpTransferMode?: HlsAkamaiSettingsHttpTransferMode | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		NumRetries?: number;
+		NumRetries?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max15
 		 * Minimum: 0
 		 * Maximum: 15
 		 */
-		RestartDelay?: number;
+		RestartDelay?: number | null;
 	}
 
 	export enum HlsGroupSettingsIFrameOnlyPlaylists { DISABLED = 0, STANDARD = 1 }
@@ -1987,7 +1987,7 @@ export namespace MyNS {
 	export interface KeyProviderSettings {
 
 		/** Static Key Settings */
-		StaticKeySettings?: StaticKeySettings;
+		StaticKeySettings?: StaticKeySettings | null;
 	}
 
 
@@ -1995,7 +1995,7 @@ export namespace MyNS {
 	export interface StaticKeySettings {
 
 		/** Input Location */
-		KeyProviderServer?: InputLocation;
+		KeyProviderServer?: InputLocation | null;
 
 		/**
 		 * Placeholder documentation for __stringMin32Max32
@@ -2036,19 +2036,19 @@ export namespace MyNS {
 	export interface MsSmoothGroupSettings {
 
 		/** Placeholder documentation for __string */
-		AcquisitionPointId?: string;
+		AcquisitionPointId?: string | null;
 
 		/** Smooth Group Audio Only Timecode Control */
-		AudioOnlyTimecodeControl?: MsSmoothGroupSettingsAudioOnlyTimecodeControl;
+		AudioOnlyTimecodeControl?: MsSmoothGroupSettingsAudioOnlyTimecodeControl | null;
 
 		/** Smooth Group Certificate Mode */
-		CertificateMode?: MsSmoothGroupSettingsCertificateMode;
+		CertificateMode?: MsSmoothGroupSettingsCertificateMode | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		ConnectionRetryInterval?: number;
+		ConnectionRetryInterval?: number | null;
 
 		/**
 		 * Reference to an OutputDestination ID defined in the channel
@@ -2057,62 +2057,62 @@ export namespace MyNS {
 		Destination: OutputLocationRef;
 
 		/** Placeholder documentation for __string */
-		EventId?: string;
+		EventId?: string | null;
 
 		/** Smooth Group Event Id Mode */
-		EventIdMode?: MsSmoothGroupSettingsEventIdMode;
+		EventIdMode?: MsSmoothGroupSettingsEventIdMode | null;
 
 		/** Smooth Group Event Stop Behavior */
-		EventStopBehavior?: MsSmoothGroupSettingsEventStopBehavior;
+		EventStopBehavior?: MsSmoothGroupSettingsEventStopBehavior | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		FilecacheDuration?: number;
+		FilecacheDuration?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1
 		 * Minimum: 1
 		 */
-		FragmentLength?: number;
+		FragmentLength?: number | null;
 
 		/** Input Loss Action For Ms Smooth Out */
-		InputLossAction?: HlsGroupSettingsInputLossAction;
+		InputLossAction?: HlsGroupSettingsInputLossAction | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		NumRetries?: number;
+		NumRetries?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		RestartDelay?: number;
+		RestartDelay?: number | null;
 
 		/** Smooth Group Segmentation Mode */
-		SegmentationMode?: HlsGroupSettingsSegmentationMode;
+		SegmentationMode?: HlsGroupSettingsSegmentationMode | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max10000
 		 * Minimum: 0
 		 * Maximum: 10000
 		 */
-		SendDelayMs?: number;
+		SendDelayMs?: number | null;
 
 		/** Smooth Group Sparse Track Type */
-		SparseTrackType?: MsSmoothGroupSettingsSparseTrackType;
+		SparseTrackType?: MsSmoothGroupSettingsSparseTrackType | null;
 
 		/** Smooth Group Stream Manifest Behavior */
-		StreamManifestBehavior?: MsSmoothGroupSettingsStreamManifestBehavior;
+		StreamManifestBehavior?: MsSmoothGroupSettingsStreamManifestBehavior | null;
 
 		/** Placeholder documentation for __string */
-		TimestampOffset?: string;
+		TimestampOffset?: string | null;
 
 		/** Smooth Group Timestamp Offset Mode */
-		TimestampOffsetMode?: MsSmoothGroupSettingsTimestampOffsetMode;
+		TimestampOffsetMode?: MsSmoothGroupSettingsTimestampOffsetMode | null;
 	}
 
 	export enum MsSmoothGroupSettingsAudioOnlyTimecodeControl { PASSTHROUGH = 0, USE_CONFIGURED_CLOCK = 1 }
@@ -2139,28 +2139,28 @@ export namespace MyNS {
 	export interface RtmpGroupSettings {
 
 		/** Authentication Scheme */
-		AuthenticationScheme?: RtmpGroupSettingsAuthenticationScheme;
+		AuthenticationScheme?: RtmpGroupSettingsAuthenticationScheme | null;
 
 		/** Rtmp Cache Full Behavior */
-		CacheFullBehavior?: RtmpGroupSettingsCacheFullBehavior;
+		CacheFullBehavior?: RtmpGroupSettingsCacheFullBehavior | null;
 
 		/**
 		 * Placeholder documentation for __integerMin30
 		 * Minimum: 30
 		 */
-		CacheLength?: number;
+		CacheLength?: number | null;
 
 		/** Rtmp Caption Data */
-		CaptionData?: RtmpGroupSettingsCaptionData;
+		CaptionData?: RtmpGroupSettingsCaptionData | null;
 
 		/** Input Loss Action For Rtmp Out */
-		InputLossAction?: HlsGroupSettingsInputLossAction;
+		InputLossAction?: HlsGroupSettingsInputLossAction | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		RestartDelay?: number;
+		RestartDelay?: number | null;
 	}
 
 	export enum RtmpGroupSettingsAuthenticationScheme { AKAMAI = 0, COMMON = 1 }
@@ -2174,16 +2174,16 @@ export namespace MyNS {
 	export interface UdpGroupSettings {
 
 		/** Input Loss Action For Udp Out */
-		InputLossAction?: UdpGroupSettingsInputLossAction;
+		InputLossAction?: UdpGroupSettingsInputLossAction | null;
 
 		/** Udp Timed Metadata Id3 Frame */
-		TimedMetadataId3Frame?: HlsGroupSettingsTimedMetadataId3Frame;
+		TimedMetadataId3Frame?: HlsGroupSettingsTimedMetadataId3Frame | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		TimedMetadataId3Period?: number;
+		TimedMetadataId3Period?: number | null;
 	}
 
 	export enum UdpGroupSettingsInputLossAction { DROP_PROGRAM = 0, DROP_TS = 1, EMIT_PROGRAM = 2 }
@@ -2193,17 +2193,17 @@ export namespace MyNS {
 	export interface Output {
 
 		/** Placeholder documentation for __listOf__string */
-		AudioDescriptionNames?: Array<string>;
+		AudioDescriptionNames?: Array<string> | null;
 
 		/** Placeholder documentation for __listOf__string */
-		CaptionDescriptionNames?: Array<string>;
+		CaptionDescriptionNames?: Array<string> | null;
 
 		/**
 		 * Placeholder documentation for __stringMin1Max255
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		OutputName?: string;
+		OutputName?: string | null;
 
 		/**
 		 * Output Settings
@@ -2212,7 +2212,7 @@ export namespace MyNS {
 		OutputSettings: OutputSettings;
 
 		/** Placeholder documentation for __string */
-		VideoDescriptionName?: string;
+		VideoDescriptionName?: string | null;
 	}
 
 
@@ -2220,28 +2220,28 @@ export namespace MyNS {
 	export interface OutputSettings {
 
 		/** Archive Output Settings */
-		ArchiveOutputSettings?: ArchiveOutputSettings;
+		ArchiveOutputSettings?: ArchiveOutputSettings | null;
 
 		/** Frame Capture Output Settings */
-		FrameCaptureOutputSettings?: FrameCaptureOutputSettings;
+		FrameCaptureOutputSettings?: FrameCaptureOutputSettings | null;
 
 		/** Hls Output Settings */
-		HlsOutputSettings?: HlsOutputSettings;
+		HlsOutputSettings?: HlsOutputSettings | null;
 
 		/** Media Package Output Settings */
-		MediaPackageOutputSettings?: MediaPackageOutputSettings;
+		MediaPackageOutputSettings?: MediaPackageOutputSettings | null;
 
 		/** Ms Smooth Output Settings */
-		MsSmoothOutputSettings?: MsSmoothOutputSettings;
+		MsSmoothOutputSettings?: MsSmoothOutputSettings | null;
 
 		/** Multiplex Output Settings */
-		MultiplexOutputSettings?: MultiplexOutputSettings;
+		MultiplexOutputSettings?: MultiplexOutputSettings | null;
 
 		/** Rtmp Output Settings */
-		RtmpOutputSettings?: RtmpOutputSettings;
+		RtmpOutputSettings?: RtmpOutputSettings | null;
 
 		/** Udp Output Settings */
-		UdpOutputSettings?: UdpOutputSettings;
+		UdpOutputSettings?: UdpOutputSettings | null;
 	}
 
 
@@ -2255,10 +2255,10 @@ export namespace MyNS {
 		ContainerSettings: ArchiveContainerSettings;
 
 		/** Placeholder documentation for __string */
-		Extension?: string;
+		Extension?: string | null;
 
 		/** Placeholder documentation for __string */
-		NameModifier?: string;
+		NameModifier?: string | null;
 	}
 
 
@@ -2266,7 +2266,7 @@ export namespace MyNS {
 	export interface ArchiveContainerSettings {
 
 		/** M2ts Settings */
-		M2tsSettings?: M2tsSettings;
+		M2tsSettings?: M2tsSettings | null;
 	}
 
 
@@ -2274,175 +2274,175 @@ export namespace MyNS {
 	export interface M2tsSettings {
 
 		/** M2ts Absent Input Audio Behavior */
-		AbsentInputAudioBehavior?: M2tsSettingsAbsentInputAudioBehavior;
+		AbsentInputAudioBehavior?: M2tsSettingsAbsentInputAudioBehavior | null;
 
 		/** M2ts Arib */
-		Arib?: Ac3SettingsLfeFilter;
+		Arib?: Ac3SettingsLfeFilter | null;
 
 		/** Placeholder documentation for __string */
-		AribCaptionsPid?: string;
+		AribCaptionsPid?: string | null;
 
 		/** M2ts Arib Captions Pid Control */
-		AribCaptionsPidControl?: M2tsSettingsAribCaptionsPidControl;
+		AribCaptionsPidControl?: M2tsSettingsAribCaptionsPidControl | null;
 
 		/** M2ts Audio Buffer Model */
-		AudioBufferModel?: M2tsSettingsAudioBufferModel;
+		AudioBufferModel?: M2tsSettingsAudioBufferModel | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		AudioFramesPerPes?: number;
+		AudioFramesPerPes?: number | null;
 
 		/** Placeholder documentation for __string */
-		AudioPids?: string;
+		AudioPids?: string | null;
 
 		/** M2ts Audio Stream Type */
-		AudioStreamType?: M2tsSettingsAudioBufferModel;
+		AudioStreamType?: M2tsSettingsAudioBufferModel | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		Bitrate?: number;
+		Bitrate?: number | null;
 
 		/** M2ts Buffer Model */
-		BufferModel?: M2tsSettingsBufferModel;
+		BufferModel?: M2tsSettingsBufferModel | null;
 
 		/** M2ts Cc Descriptor */
-		CcDescriptor?: Ac3SettingsLfeFilter;
+		CcDescriptor?: Ac3SettingsLfeFilter | null;
 
 		/** DVB Network Information Table (NIT) */
-		DvbNitSettings?: DvbNitSettings;
+		DvbNitSettings?: DvbNitSettings | null;
 
 		/** DVB Service Description Table (SDT) */
-		DvbSdtSettings?: DvbSdtSettings;
+		DvbSdtSettings?: DvbSdtSettings | null;
 
 		/** Placeholder documentation for __string */
-		DvbSubPids?: string;
+		DvbSubPids?: string | null;
 
 		/** DVB Time and Date Table (SDT) */
-		DvbTdtSettings?: DvbTdtSettings;
+		DvbTdtSettings?: DvbTdtSettings | null;
 
 		/** Placeholder documentation for __string */
-		DvbTeletextPid?: string;
+		DvbTeletextPid?: string | null;
 
 		/** M2ts Ebif Control */
-		Ebif?: M2tsSettingsEbif;
+		Ebif?: M2tsSettingsEbif | null;
 
 		/** M2ts Audio Interval */
-		EbpAudioInterval?: M2tsSettingsEbpAudioInterval;
+		EbpAudioInterval?: M2tsSettingsEbpAudioInterval | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max10000
 		 * Minimum: 0
 		 * Maximum: 10000
 		 */
-		EbpLookaheadMs?: number;
+		EbpLookaheadMs?: number | null;
 
 		/** M2ts Ebp Placement */
-		EbpPlacement?: M2tsSettingsEbpPlacement;
+		EbpPlacement?: M2tsSettingsEbpPlacement | null;
 
 		/** Placeholder documentation for __string */
-		EcmPid?: string;
+		EcmPid?: string | null;
 
 		/** M2ts Es Rate In Pes */
-		EsRateInPes?: HlsGroupSettingsIvInManifest;
+		EsRateInPes?: HlsGroupSettingsIvInManifest | null;
 
 		/** Placeholder documentation for __string */
-		EtvPlatformPid?: string;
+		EtvPlatformPid?: string | null;
 
 		/** Placeholder documentation for __string */
-		EtvSignalPid?: string;
+		EtvSignalPid?: string | null;
 
 		/** Placeholder documentation for __doubleMin0 */
-		FragmentTime?: number;
+		FragmentTime?: number | null;
 
 		/** M2ts Klv */
-		Klv?: M2tsSettingsEbif;
+		Klv?: M2tsSettingsEbif | null;
 
 		/** Placeholder documentation for __string */
-		KlvDataPids?: string;
+		KlvDataPids?: string | null;
 
 		/** M2ts Nielsen Id3 Behavior */
-		NielsenId3Behavior?: M2tsSettingsNielsenId3Behavior;
+		NielsenId3Behavior?: M2tsSettingsNielsenId3Behavior | null;
 
 		/** Placeholder documentation for __doubleMin0 */
-		NullPacketBitrate?: number;
+		NullPacketBitrate?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max1000
 		 * Minimum: 0
 		 * Maximum: 1000
 		 */
-		PatInterval?: number;
+		PatInterval?: number | null;
 
 		/** M2ts Pcr Control */
-		PcrControl?: M2tsSettingsPcrControl;
+		PcrControl?: M2tsSettingsPcrControl | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max500
 		 * Minimum: 0
 		 * Maximum: 500
 		 */
-		PcrPeriod?: number;
+		PcrPeriod?: number | null;
 
 		/** Placeholder documentation for __string */
-		PcrPid?: string;
+		PcrPid?: string | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max1000
 		 * Minimum: 0
 		 * Maximum: 1000
 		 */
-		PmtInterval?: number;
+		PmtInterval?: number | null;
 
 		/** Placeholder documentation for __string */
-		PmtPid?: string;
+		PmtPid?: string | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max65535
 		 * Minimum: 0
 		 * Maximum: 65535
 		 */
-		ProgramNum?: number;
+		ProgramNum?: number | null;
 
 		/** M2ts Rate Mode */
-		RateMode?: AacSettingsRateControlMode;
+		RateMode?: AacSettingsRateControlMode | null;
 
 		/** Placeholder documentation for __string */
-		Scte27Pids?: string;
+		Scte27Pids?: string | null;
 
 		/** M2ts Scte35 Control */
-		Scte35Control?: M2tsSettingsEbif;
+		Scte35Control?: M2tsSettingsEbif | null;
 
 		/** Placeholder documentation for __string */
-		Scte35Pid?: string;
+		Scte35Pid?: string | null;
 
 		/** M2ts Segmentation Markers */
-		SegmentationMarkers?: M2tsSettingsSegmentationMarkers;
+		SegmentationMarkers?: M2tsSettingsSegmentationMarkers | null;
 
 		/** M2ts Segmentation Style */
-		SegmentationStyle?: M2tsSettingsSegmentationStyle;
+		SegmentationStyle?: M2tsSettingsSegmentationStyle | null;
 
 		/** Placeholder documentation for __doubleMin1 */
-		SegmentationTime?: number;
+		SegmentationTime?: number | null;
 
 		/** M2ts Timed Metadata Behavior */
-		TimedMetadataBehavior?: M2tsSettingsNielsenId3Behavior;
+		TimedMetadataBehavior?: M2tsSettingsNielsenId3Behavior | null;
 
 		/** Placeholder documentation for __string */
-		TimedMetadataPid?: string;
+		TimedMetadataPid?: string | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max65535
 		 * Minimum: 0
 		 * Maximum: 65535
 		 */
-		TransportStreamId?: number;
+		TransportStreamId?: number | null;
 
 		/** Placeholder documentation for __string */
-		VideoPid?: string;
+		VideoPid?: string | null;
 	}
 
 	export enum M2tsSettingsAbsentInputAudioBehavior { DROP = 0, ENCODE_SILENCE = 1 }
@@ -2478,7 +2478,7 @@ export namespace MyNS {
 		 * Minimum: 25
 		 * Maximum: 10000
 		 */
-		RepInterval?: number;
+		RepInterval?: number | null;
 	}
 
 
@@ -2486,28 +2486,28 @@ export namespace MyNS {
 	export interface DvbSdtSettings {
 
 		/** Dvb Sdt Output Sdt */
-		OutputSdt?: DvbSdtSettingsOutputSdt;
+		OutputSdt?: DvbSdtSettingsOutputSdt | null;
 
 		/**
 		 * Placeholder documentation for __integerMin25Max2000
 		 * Minimum: 25
 		 * Maximum: 2000
 		 */
-		RepInterval?: number;
+		RepInterval?: number | null;
 
 		/**
 		 * Placeholder documentation for __stringMin1Max256
 		 * Max length: 256
 		 * Min length: 1
 		 */
-		ServiceName?: string;
+		ServiceName?: string | null;
 
 		/**
 		 * Placeholder documentation for __stringMin1Max256
 		 * Max length: 256
 		 * Min length: 1
 		 */
-		ServiceProviderName?: string;
+		ServiceProviderName?: string | null;
 	}
 
 	export enum DvbSdtSettingsOutputSdt { SDT_FOLLOW = 0, SDT_FOLLOW_IF_PRESENT = 1, SDT_MANUAL = 2, SDT_NONE = 3 }
@@ -2521,7 +2521,7 @@ export namespace MyNS {
 		 * Minimum: 1000
 		 * Maximum: 30000
 		 */
-		RepInterval?: number;
+		RepInterval?: number | null;
 	}
 
 	export enum M2tsSettingsEbif { NONE = 0, PASSTHROUGH = 1 }
@@ -2543,7 +2543,7 @@ export namespace MyNS {
 	export interface FrameCaptureOutputSettings {
 
 		/** Placeholder documentation for __string */
-		NameModifier?: string;
+		NameModifier?: string | null;
 	}
 
 
@@ -2551,7 +2551,7 @@ export namespace MyNS {
 	export interface HlsOutputSettings {
 
 		/** Hls H265 Packaging Type */
-		H265PackagingType?: HlsOutputSettingsH265PackagingType;
+		H265PackagingType?: HlsOutputSettingsH265PackagingType | null;
 
 		/**
 		 * Hls Settings
@@ -2563,10 +2563,10 @@ export namespace MyNS {
 		 * Placeholder documentation for __stringMin1
 		 * Min length: 1
 		 */
-		NameModifier?: string;
+		NameModifier?: string | null;
 
 		/** Placeholder documentation for __string */
-		SegmentModifier?: string;
+		SegmentModifier?: string | null;
 	}
 
 	export enum HlsOutputSettingsH265PackagingType { HEV1 = 0, HVC1 = 1 }
@@ -2576,13 +2576,13 @@ export namespace MyNS {
 	export interface HlsSettings {
 
 		/** Audio Only Hls Settings */
-		AudioOnlyHlsSettings?: AudioOnlyHlsSettings;
+		AudioOnlyHlsSettings?: AudioOnlyHlsSettings | null;
 
 		/** Fmp4 Hls Settings */
-		Fmp4HlsSettings?: Fmp4HlsSettings;
+		Fmp4HlsSettings?: Fmp4HlsSettings | null;
 
 		/** Standard Hls Settings */
-		StandardHlsSettings?: StandardHlsSettings;
+		StandardHlsSettings?: StandardHlsSettings | null;
 	}
 
 
@@ -2590,16 +2590,16 @@ export namespace MyNS {
 	export interface AudioOnlyHlsSettings {
 
 		/** Placeholder documentation for __string */
-		AudioGroupId?: string;
+		AudioGroupId?: string | null;
 
 		/** Input Location */
-		AudioOnlyImage?: InputLocation;
+		AudioOnlyImage?: InputLocation | null;
 
 		/** Audio Only Hls Track Type */
-		AudioTrackType?: AudioOnlyHlsSettingsAudioTrackType;
+		AudioTrackType?: AudioOnlyHlsSettingsAudioTrackType | null;
 
 		/** Audio Only Hls Segment Type */
-		SegmentType?: AudioOnlyHlsSettingsSegmentType;
+		SegmentType?: AudioOnlyHlsSettingsSegmentType | null;
 	}
 
 	export enum AudioOnlyHlsSettingsAudioTrackType { ALTERNATE_AUDIO_AUTO_SELECT = 0, ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT = 1, ALTERNATE_AUDIO_NOT_AUTO_SELECT = 2, AUDIO_ONLY_VARIANT_STREAM = 3 }
@@ -2611,13 +2611,13 @@ export namespace MyNS {
 	export interface Fmp4HlsSettings {
 
 		/** Placeholder documentation for __string */
-		AudioRenditionSets?: string;
+		AudioRenditionSets?: string | null;
 
 		/** Fmp4 Nielsen Id3 Behavior */
-		NielsenId3Behavior?: M2tsSettingsNielsenId3Behavior;
+		NielsenId3Behavior?: M2tsSettingsNielsenId3Behavior | null;
 
 		/** Fmp4 Timed Metadata Behavior */
-		TimedMetadataBehavior?: M2tsSettingsNielsenId3Behavior;
+		TimedMetadataBehavior?: M2tsSettingsNielsenId3Behavior | null;
 	}
 
 
@@ -2625,7 +2625,7 @@ export namespace MyNS {
 	export interface StandardHlsSettings {
 
 		/** Placeholder documentation for __string */
-		AudioRenditionSets?: string;
+		AudioRenditionSets?: string | null;
 
 		/**
 		 * Settings information for the .m3u8 container
@@ -2642,75 +2642,75 @@ export namespace MyNS {
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		AudioFramesPerPes?: number;
+		AudioFramesPerPes?: number | null;
 
 		/** Placeholder documentation for __string */
-		AudioPids?: string;
+		AudioPids?: string | null;
 
 		/** Placeholder documentation for __string */
-		EcmPid?: string;
+		EcmPid?: string | null;
 
 		/** M3u8 Nielsen Id3 Behavior */
-		NielsenId3Behavior?: M2tsSettingsNielsenId3Behavior;
+		NielsenId3Behavior?: M2tsSettingsNielsenId3Behavior | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max1000
 		 * Minimum: 0
 		 * Maximum: 1000
 		 */
-		PatInterval?: number;
+		PatInterval?: number | null;
 
 		/** M3u8 Pcr Control */
-		PcrControl?: M2tsSettingsPcrControl;
+		PcrControl?: M2tsSettingsPcrControl | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max500
 		 * Minimum: 0
 		 * Maximum: 500
 		 */
-		PcrPeriod?: number;
+		PcrPeriod?: number | null;
 
 		/** Placeholder documentation for __string */
-		PcrPid?: string;
+		PcrPid?: string | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max1000
 		 * Minimum: 0
 		 * Maximum: 1000
 		 */
-		PmtInterval?: number;
+		PmtInterval?: number | null;
 
 		/** Placeholder documentation for __string */
-		PmtPid?: string;
+		PmtPid?: string | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max65535
 		 * Minimum: 0
 		 * Maximum: 65535
 		 */
-		ProgramNum?: number;
+		ProgramNum?: number | null;
 
 		/** M3u8 Scte35 Behavior */
-		Scte35Behavior?: M2tsSettingsNielsenId3Behavior;
+		Scte35Behavior?: M2tsSettingsNielsenId3Behavior | null;
 
 		/** Placeholder documentation for __string */
-		Scte35Pid?: string;
+		Scte35Pid?: string | null;
 
 		/** M3u8 Timed Metadata Behavior */
-		TimedMetadataBehavior?: M2tsSettingsNielsenId3Behavior;
+		TimedMetadataBehavior?: M2tsSettingsNielsenId3Behavior | null;
 
 		/** Placeholder documentation for __string */
-		TimedMetadataPid?: string;
+		TimedMetadataPid?: string | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max65535
 		 * Minimum: 0
 		 * Maximum: 65535
 		 */
-		TransportStreamId?: number;
+		TransportStreamId?: number | null;
 
 		/** Placeholder documentation for __string */
-		VideoPid?: string;
+		VideoPid?: string | null;
 	}
 
 
@@ -2723,10 +2723,10 @@ export namespace MyNS {
 	export interface MsSmoothOutputSettings {
 
 		/** Ms Smooth H265 Packaging Type */
-		H265PackagingType?: HlsOutputSettingsH265PackagingType;
+		H265PackagingType?: HlsOutputSettingsH265PackagingType | null;
 
 		/** Placeholder documentation for __string */
-		NameModifier?: string;
+		NameModifier?: string | null;
 	}
 
 
@@ -2745,13 +2745,13 @@ export namespace MyNS {
 	export interface RtmpOutputSettings {
 
 		/** Rtmp Output Certificate Mode */
-		CertificateMode?: MsSmoothGroupSettingsCertificateMode;
+		CertificateMode?: MsSmoothGroupSettingsCertificateMode | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1
 		 * Minimum: 1
 		 */
-		ConnectionRetryInterval?: number;
+		ConnectionRetryInterval?: number | null;
 
 		/**
 		 * Reference to an OutputDestination ID defined in the channel
@@ -2763,7 +2763,7 @@ export namespace MyNS {
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		NumRetries?: number;
+		NumRetries?: number | null;
 	}
 
 
@@ -2775,7 +2775,7 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 10000
 		 */
-		BufferMsec?: number;
+		BufferMsec?: number | null;
 
 		/**
 		 * Udp Container Settings
@@ -2790,7 +2790,7 @@ export namespace MyNS {
 		Destination: OutputLocationRef;
 
 		/** Fec Output Settings */
-		FecOutputSettings?: FecOutputSettings;
+		FecOutputSettings?: FecOutputSettings | null;
 	}
 
 
@@ -2798,7 +2798,7 @@ export namespace MyNS {
 	export interface UdpContainerSettings {
 
 		/** M2ts Settings */
-		M2tsSettings?: M2tsSettings;
+		M2tsSettings?: M2tsSettings | null;
 	}
 
 
@@ -2810,17 +2810,17 @@ export namespace MyNS {
 		 * Minimum: 4
 		 * Maximum: 20
 		 */
-		ColumnDepth?: number;
+		ColumnDepth?: number | null;
 
 		/** Fec Output Include Fec */
-		IncludeFec?: FecOutputSettingsIncludeFec;
+		IncludeFec?: FecOutputSettingsIncludeFec | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1Max20
 		 * Minimum: 1
 		 * Maximum: 20
 		 */
-		RowLength?: number;
+		RowLength?: number | null;
 	}
 
 	export enum FecOutputSettingsIncludeFec { COLUMN = 0, COLUMN_AND_ROW = 1 }
@@ -2840,7 +2840,7 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 1000000
 		 */
-		SyncThreshold?: number;
+		SyncThreshold?: number | null;
 	}
 
 	export enum TimecodeConfigSource { EMBEDDED = 0, SYSTEMCLOCK = 1, ZEROBASED = 2 }
@@ -2850,10 +2850,10 @@ export namespace MyNS {
 	export interface VideoDescription {
 
 		/** Video Codec Settings */
-		CodecSettings?: VideoCodecSettings;
+		CodecSettings?: VideoCodecSettings | null;
 
 		/** Placeholder documentation for __integer */
-		Height?: number;
+		Height?: number | null;
 
 		/**
 		 * Placeholder documentation for __string
@@ -2862,20 +2862,20 @@ export namespace MyNS {
 		Name: string;
 
 		/** Video Description Respond To Afd */
-		RespondToAfd?: VideoDescriptionRespondToAfd;
+		RespondToAfd?: VideoDescriptionRespondToAfd | null;
 
 		/** Video Description Scaling Behavior */
-		ScalingBehavior?: VideoDescriptionScalingBehavior;
+		ScalingBehavior?: VideoDescriptionScalingBehavior | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max100
 		 * Minimum: 0
 		 * Maximum: 100
 		 */
-		Sharpness?: number;
+		Sharpness?: number | null;
 
 		/** Placeholder documentation for __integer */
-		Width?: number;
+		Width?: number | null;
 	}
 
 
@@ -2883,13 +2883,13 @@ export namespace MyNS {
 	export interface VideoCodecSettings {
 
 		/** Frame Capture Settings */
-		FrameCaptureSettings?: FrameCaptureSettings;
+		FrameCaptureSettings?: FrameCaptureSettings | null;
 
 		/** H264 Settings */
-		H264Settings?: H264Settings;
+		H264Settings?: H264Settings | null;
 
 		/** H265 Settings */
-		H265Settings?: H265Settings;
+		H265Settings?: H265Settings | null;
 	}
 
 
@@ -2905,7 +2905,7 @@ export namespace MyNS {
 		CaptureInterval: number;
 
 		/** Frame Capture Interval Unit */
-		CaptureIntervalUnits?: FrameCaptureSettingsCaptureIntervalUnits;
+		CaptureIntervalUnits?: FrameCaptureSettingsCaptureIntervalUnits | null;
 	}
 
 	export enum FrameCaptureSettingsCaptureIntervalUnits { MILLISECONDS = 0, SECONDS = 1 }
@@ -2915,176 +2915,176 @@ export namespace MyNS {
 	export interface H264Settings {
 
 		/** H264 Adaptive Quantization */
-		AdaptiveQuantization?: H264SettingsAdaptiveQuantization;
+		AdaptiveQuantization?: H264SettingsAdaptiveQuantization | null;
 
 		/** Afd Signaling */
-		AfdSignaling?: H264SettingsAfdSignaling;
+		AfdSignaling?: H264SettingsAfdSignaling | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1000
 		 * Minimum: 1000
 		 */
-		Bitrate?: number;
+		Bitrate?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max100
 		 * Minimum: 0
 		 * Maximum: 100
 		 */
-		BufFillPct?: number;
+		BufFillPct?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		BufSize?: number;
+		BufSize?: number | null;
 
 		/** H264 Color Metadata */
-		ColorMetadata?: H264SettingsColorMetadata;
+		ColorMetadata?: H264SettingsColorMetadata | null;
 
 		/** H264 Color Space Settings */
-		ColorSpaceSettings?: H264ColorSpaceSettings;
+		ColorSpaceSettings?: H264ColorSpaceSettings | null;
 
 		/** H264 Entropy Encoding */
-		EntropyEncoding?: H264SettingsEntropyEncoding;
+		EntropyEncoding?: H264SettingsEntropyEncoding | null;
 
 		/** H264 Filter Settings */
-		FilterSettings?: H264FilterSettings;
+		FilterSettings?: H264FilterSettings | null;
 
 		/** Fixed Afd */
-		FixedAfd?: H264SettingsFixedAfd;
+		FixedAfd?: H264SettingsFixedAfd | null;
 
 		/** H264 Flicker Aq */
-		FlickerAq?: Ac3SettingsLfeFilter;
+		FlickerAq?: Ac3SettingsLfeFilter | null;
 
 		/** H264 Force Field Pictures */
-		ForceFieldPictures?: Ac3SettingsLfeFilter;
+		ForceFieldPictures?: Ac3SettingsLfeFilter | null;
 
 		/** H264 Framerate Control */
-		FramerateControl?: H264SettingsFramerateControl;
+		FramerateControl?: H264SettingsFramerateControl | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1
 		 * Minimum: 1
 		 */
-		FramerateDenominator?: number;
+		FramerateDenominator?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1
 		 * Minimum: 1
 		 */
-		FramerateNumerator?: number;
+		FramerateNumerator?: number | null;
 
 		/** H264 Gop BReference */
-		GopBReference?: Ac3SettingsLfeFilter;
+		GopBReference?: Ac3SettingsLfeFilter | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		GopClosedCadence?: number;
+		GopClosedCadence?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max7
 		 * Minimum: 0
 		 * Maximum: 7
 		 */
-		GopNumBFrames?: number;
+		GopNumBFrames?: number | null;
 
 		/** Placeholder documentation for __double */
-		GopSize?: number;
+		GopSize?: number | null;
 
 		/** H264 Gop Size Units */
-		GopSizeUnits?: H264SettingsGopSizeUnits;
+		GopSizeUnits?: H264SettingsGopSizeUnits | null;
 
 		/** H264 Level */
-		Level?: H264SettingsLevel;
+		Level?: H264SettingsLevel | null;
 
 		/** H264 Look Ahead Rate Control */
-		LookAheadRateControl?: H264SettingsLookAheadRateControl;
+		LookAheadRateControl?: H264SettingsLookAheadRateControl | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1000
 		 * Minimum: 1000
 		 */
-		MaxBitrate?: number;
+		MaxBitrate?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max30
 		 * Minimum: 0
 		 * Maximum: 30
 		 */
-		MinIInterval?: number;
+		MinIInterval?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1Max6
 		 * Minimum: 1
 		 * Maximum: 6
 		 */
-		NumRefFrames?: number;
+		NumRefFrames?: number | null;
 
 		/** H264 Par Control */
-		ParControl?: H264SettingsFramerateControl;
+		ParControl?: H264SettingsFramerateControl | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1
 		 * Minimum: 1
 		 */
-		ParDenominator?: number;
+		ParDenominator?: number | null;
 
 		/** Placeholder documentation for __integer */
-		ParNumerator?: number;
+		ParNumerator?: number | null;
 
 		/** H264 Profile */
-		Profile?: H264SettingsProfile;
+		Profile?: H264SettingsProfile | null;
 
 		/** H264 Quality Level */
-		QualityLevel?: H264SettingsQualityLevel;
+		QualityLevel?: H264SettingsQualityLevel | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1Max10
 		 * Minimum: 1
 		 * Maximum: 10
 		 */
-		QvbrQualityLevel?: number;
+		QvbrQualityLevel?: number | null;
 
 		/** H264 Rate Control Mode */
-		RateControlMode?: H264SettingsRateControlMode;
+		RateControlMode?: H264SettingsRateControlMode | null;
 
 		/** H264 Scan Type */
-		ScanType?: H264SettingsScanType;
+		ScanType?: H264SettingsScanType | null;
 
 		/** H264 Scene Change Detect */
-		SceneChangeDetect?: Ac3SettingsLfeFilter;
+		SceneChangeDetect?: Ac3SettingsLfeFilter | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1Max32
 		 * Minimum: 1
 		 * Maximum: 32
 		 */
-		Slices?: number;
+		Slices?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max128
 		 * Minimum: 0
 		 * Maximum: 128
 		 */
-		Softness?: number;
+		Softness?: number | null;
 
 		/** H264 Spatial Aq */
-		SpatialAq?: Ac3SettingsLfeFilter;
+		SpatialAq?: Ac3SettingsLfeFilter | null;
 
 		/** H264 Sub Gop Length */
-		SubgopLength?: H264SettingsSubgopLength;
+		SubgopLength?: H264SettingsSubgopLength | null;
 
 		/** H264 Syntax */
-		Syntax?: H264SettingsSyntax;
+		Syntax?: H264SettingsSyntax | null;
 
 		/** H264 Temporal Aq */
-		TemporalAq?: Ac3SettingsLfeFilter;
+		TemporalAq?: Ac3SettingsLfeFilter | null;
 
 		/** H264 Timecode Insertion Behavior */
-		TimecodeInsertion?: H264SettingsTimecodeInsertion;
+		TimecodeInsertion?: H264SettingsTimecodeInsertion | null;
 	}
 
 	export enum H264SettingsAdaptiveQuantization { HIGH = 0, HIGHER = 1, LOW = 2, MAX = 3, MEDIUM = 4, OFF = 5 }
@@ -3098,13 +3098,13 @@ export namespace MyNS {
 	export interface H264ColorSpaceSettings {
 
 		/** Passthrough applies no color space conversion to the output */
-		ColorSpacePassthroughSettings?: ColorSpacePassthroughSettings;
+		ColorSpacePassthroughSettings?: ColorSpacePassthroughSettings | null;
 
 		/** Rec601 Settings */
-		Rec601Settings?: Rec601Settings;
+		Rec601Settings?: Rec601Settings | null;
 
 		/** Rec709 Settings */
-		Rec709Settings?: Rec709Settings;
+		Rec709Settings?: Rec709Settings | null;
 	}
 
 
@@ -3129,7 +3129,7 @@ export namespace MyNS {
 	export interface H264FilterSettings {
 
 		/** Temporal Filter Settings */
-		TemporalFilterSettings?: TemporalFilterSettings;
+		TemporalFilterSettings?: TemporalFilterSettings | null;
 	}
 
 
@@ -3137,10 +3137,10 @@ export namespace MyNS {
 	export interface TemporalFilterSettings {
 
 		/** Temporal Filter Post Filter Sharpening */
-		PostFilterSharpening?: TemporalFilterSettingsPostFilterSharpening;
+		PostFilterSharpening?: TemporalFilterSettingsPostFilterSharpening | null;
 
 		/** Temporal Filter Strength */
-		Strength?: TemporalFilterSettingsStrength;
+		Strength?: TemporalFilterSettingsStrength | null;
 	}
 
 	export enum TemporalFilterSettingsPostFilterSharpening { AUTO = 0, DISABLED = 1, ENABLED = 2 }
@@ -3176,39 +3176,39 @@ export namespace MyNS {
 	export interface H265Settings {
 
 		/** H265 Adaptive Quantization */
-		AdaptiveQuantization?: H264SettingsAdaptiveQuantization;
+		AdaptiveQuantization?: H264SettingsAdaptiveQuantization | null;
 
 		/** Afd Signaling */
-		AfdSignaling?: H264SettingsAfdSignaling;
+		AfdSignaling?: H264SettingsAfdSignaling | null;
 
 		/** H265 Alternative Transfer Function */
-		AlternativeTransferFunction?: H265SettingsAlternativeTransferFunction;
+		AlternativeTransferFunction?: H265SettingsAlternativeTransferFunction | null;
 
 		/**
 		 * Placeholder documentation for __integerMin100000Max40000000
 		 * Minimum: 100000
 		 * Maximum: 40000000
 		 */
-		Bitrate?: number;
+		Bitrate?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin100000Max80000000
 		 * Minimum: 100000
 		 * Maximum: 80000000
 		 */
-		BufSize?: number;
+		BufSize?: number | null;
 
 		/** H265 Color Metadata */
-		ColorMetadata?: H264SettingsColorMetadata;
+		ColorMetadata?: H264SettingsColorMetadata | null;
 
 		/** H265 Color Space Settings */
-		ColorSpaceSettings?: H265ColorSpaceSettings;
+		ColorSpaceSettings?: H265ColorSpaceSettings | null;
 
 		/** Fixed Afd */
-		FixedAfd?: H264SettingsFixedAfd;
+		FixedAfd?: H264SettingsFixedAfd | null;
 
 		/** H265 Flicker Aq */
-		FlickerAq?: Ac3SettingsLfeFilter;
+		FlickerAq?: Ac3SettingsLfeFilter | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1Max3003
@@ -3229,77 +3229,77 @@ export namespace MyNS {
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		GopClosedCadence?: number;
+		GopClosedCadence?: number | null;
 
 		/** Placeholder documentation for __double */
-		GopSize?: number;
+		GopSize?: number | null;
 
 		/** H265 Gop Size Units */
-		GopSizeUnits?: H264SettingsGopSizeUnits;
+		GopSizeUnits?: H264SettingsGopSizeUnits | null;
 
 		/** H265 Level */
-		Level?: H265SettingsLevel;
+		Level?: H265SettingsLevel | null;
 
 		/** H265 Look Ahead Rate Control */
-		LookAheadRateControl?: H264SettingsLookAheadRateControl;
+		LookAheadRateControl?: H264SettingsLookAheadRateControl | null;
 
 		/**
 		 * Placeholder documentation for __integerMin100000Max40000000
 		 * Minimum: 100000
 		 * Maximum: 40000000
 		 */
-		MaxBitrate?: number;
+		MaxBitrate?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max30
 		 * Minimum: 0
 		 * Maximum: 30
 		 */
-		MinIInterval?: number;
+		MinIInterval?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1
 		 * Minimum: 1
 		 */
-		ParDenominator?: number;
+		ParDenominator?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1
 		 * Minimum: 1
 		 */
-		ParNumerator?: number;
+		ParNumerator?: number | null;
 
 		/** H265 Profile */
-		Profile?: H265SettingsProfile;
+		Profile?: H265SettingsProfile | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1Max10
 		 * Minimum: 1
 		 * Maximum: 10
 		 */
-		QvbrQualityLevel?: number;
+		QvbrQualityLevel?: number | null;
 
 		/** H265 Rate Control Mode */
-		RateControlMode?: H265SettingsRateControlMode;
+		RateControlMode?: H265SettingsRateControlMode | null;
 
 		/** H265 Scan Type */
-		ScanType?: H265SettingsScanType;
+		ScanType?: H265SettingsScanType | null;
 
 		/** H265 Scene Change Detect */
-		SceneChangeDetect?: Ac3SettingsLfeFilter;
+		SceneChangeDetect?: Ac3SettingsLfeFilter | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1Max16
 		 * Minimum: 1
 		 * Maximum: 16
 		 */
-		Slices?: number;
+		Slices?: number | null;
 
 		/** H265 Tier */
-		Tier?: H265SettingsTier;
+		Tier?: H265SettingsTier | null;
 
 		/** H265 Timecode Insertion Behavior */
-		TimecodeInsertion?: H264SettingsTimecodeInsertion;
+		TimecodeInsertion?: H264SettingsTimecodeInsertion | null;
 	}
 
 	export enum H265SettingsAlternativeTransferFunction { INSERT = 0, OMIT = 1 }
@@ -3309,16 +3309,16 @@ export namespace MyNS {
 	export interface H265ColorSpaceSettings {
 
 		/** Passthrough applies no color space conversion to the output */
-		ColorSpacePassthroughSettings?: ColorSpacePassthroughSettings;
+		ColorSpacePassthroughSettings?: ColorSpacePassthroughSettings | null;
 
 		/** Hdr10 Settings */
-		Hdr10Settings?: Hdr10Settings;
+		Hdr10Settings?: Hdr10Settings | null;
 
 		/** Rec601 Settings */
-		Rec601Settings?: Rec601Settings;
+		Rec601Settings?: Rec601Settings | null;
 
 		/** Rec709 Settings */
-		Rec709Settings?: Rec709Settings;
+		Rec709Settings?: Rec709Settings | null;
 	}
 
 
@@ -3330,14 +3330,14 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 32768
 		 */
-		MaxCll?: number;
+		MaxCll?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max32768
 		 * Minimum: 0
 		 * Maximum: 32768
 		 */
-		MaxFall?: number;
+		MaxFall?: number | null;
 	}
 
 	export enum H265SettingsLevel { H265_LEVEL_1 = 0, H265_LEVEL_2 = 1, H265_LEVEL_2_1 = 2, H265_LEVEL_3 = 3, H265_LEVEL_3_1 = 4, H265_LEVEL_4 = 5, H265_LEVEL_4_1 = 6, H265_LEVEL_5 = 7, H265_LEVEL_5_1 = 8, H265_LEVEL_5_2 = 9, H265_LEVEL_6 = 10, H265_LEVEL_6_1 = 11, H265_LEVEL_6_2 = 12, H265_LEVEL_AUTO = 13 }
@@ -3359,16 +3359,16 @@ export namespace MyNS {
 	export interface InputAttachment {
 
 		/** The settings for Automatic Input Failover. */
-		AutomaticInputFailoverSettings?: AutomaticInputFailoverSettings;
+		AutomaticInputFailoverSettings?: AutomaticInputFailoverSettings | null;
 
 		/** Placeholder documentation for __string */
-		InputAttachmentName?: string;
+		InputAttachmentName?: string | null;
 
 		/** Placeholder documentation for __string */
-		InputId?: string;
+		InputId?: string | null;
 
 		/** Live Event input parameters. There can be multiple inputs in a single Live Event. */
-		InputSettings?: InputSettings;
+		InputSettings?: InputSettings | null;
 	}
 
 
@@ -3380,7 +3380,7 @@ export namespace MyNS {
 		 * If \"EQUAL_INPUT_PREFERENCE\", then the active input will stay active as long as it is healthy.
 		 * If \"PRIMARY_INPUT_PREFERRED\", then always switch back to the primary input when it is healthy.
 		 */
-		InputPreference?: AutomaticInputFailoverSettingsInputPreference;
+		InputPreference?: AutomaticInputFailoverSettingsInputPreference | null;
 
 		/**
 		 * Placeholder documentation for __string
@@ -3396,38 +3396,38 @@ export namespace MyNS {
 	export interface InputSettings {
 
 		/** Placeholder documentation for __listOfAudioSelector */
-		AudioSelectors?: Array<AudioSelector>;
+		AudioSelectors?: Array<AudioSelector> | null;
 
 		/** Placeholder documentation for __listOfCaptionSelector */
-		CaptionSelectors?: Array<CaptionSelector>;
+		CaptionSelectors?: Array<CaptionSelector> | null;
 
 		/** Input Deblock Filter */
-		DeblockFilter?: Ac3SettingsLfeFilter;
+		DeblockFilter?: Ac3SettingsLfeFilter | null;
 
 		/** Input Denoise Filter */
-		DenoiseFilter?: Ac3SettingsLfeFilter;
+		DenoiseFilter?: Ac3SettingsLfeFilter | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1Max5
 		 * Minimum: 1
 		 * Maximum: 5
 		 */
-		FilterStrength?: number;
+		FilterStrength?: number | null;
 
 		/** Input Filter */
-		InputFilter?: InputSettingsInputFilter;
+		InputFilter?: InputSettingsInputFilter | null;
 
 		/** Network source to transcode. Must be accessible to the Elemental Live node that is running the live event through a network connection. */
-		NetworkInputSettings?: NetworkInputSettings;
+		NetworkInputSettings?: NetworkInputSettings | null;
 
 		/** Smpte2038 Data Preference */
-		Smpte2038DataPreference?: InputSettingsSmpte2038DataPreference;
+		Smpte2038DataPreference?: InputSettingsSmpte2038DataPreference | null;
 
 		/** Input Source End Behavior */
-		SourceEndBehavior?: InputSettingsSourceEndBehavior;
+		SourceEndBehavior?: InputSettingsSourceEndBehavior | null;
 
 		/** Specifies a particular video stream within an input source. An input may have only a single video selector. */
-		VideoSelector?: VideoSelector;
+		VideoSelector?: VideoSelector | null;
 	}
 
 
@@ -3442,7 +3442,7 @@ export namespace MyNS {
 		Name: string;
 
 		/** Audio Selector Settings */
-		SelectorSettings?: AudioSelectorSettings;
+		SelectorSettings?: AudioSelectorSettings | null;
 	}
 
 
@@ -3450,13 +3450,13 @@ export namespace MyNS {
 	export interface AudioSelectorSettings {
 
 		/** Audio Language Selection */
-		AudioLanguageSelection?: AudioLanguageSelection;
+		AudioLanguageSelection?: AudioLanguageSelection | null;
 
 		/** Audio Pid Selection */
-		AudioPidSelection?: AudioPidSelection;
+		AudioPidSelection?: AudioPidSelection | null;
 
 		/** Audio Track Selection */
-		AudioTrackSelection?: AudioTrackSelection;
+		AudioTrackSelection?: AudioTrackSelection | null;
 	}
 
 
@@ -3470,7 +3470,7 @@ export namespace MyNS {
 		LanguageCode: string;
 
 		/** Audio Language Selection Policy */
-		LanguageSelectionPolicy?: AudioLanguageSelectionLanguageSelectionPolicy;
+		LanguageSelectionPolicy?: AudioLanguageSelectionLanguageSelectionPolicy | null;
 	}
 
 	export enum AudioLanguageSelectionLanguageSelectionPolicy { LOOSE = 0, STRICT = 1 }
@@ -3516,7 +3516,7 @@ export namespace MyNS {
 	export interface CaptionSelector {
 
 		/** Placeholder documentation for __string */
-		LanguageCode?: string;
+		LanguageCode?: string | null;
 
 		/**
 		 * Placeholder documentation for __stringMin1
@@ -3526,7 +3526,7 @@ export namespace MyNS {
 		Name: string;
 
 		/** Caption Selector Settings */
-		SelectorSettings?: CaptionSelectorSettings;
+		SelectorSettings?: CaptionSelectorSettings | null;
 	}
 
 
@@ -3534,22 +3534,22 @@ export namespace MyNS {
 	export interface CaptionSelectorSettings {
 
 		/** Arib Source Settings */
-		AribSourceSettings?: AribSourceSettings;
+		AribSourceSettings?: AribSourceSettings | null;
 
 		/** Dvb Sub Source Settings */
-		DvbSubSourceSettings?: DvbSubSourceSettings;
+		DvbSubSourceSettings?: DvbSubSourceSettings | null;
 
 		/** Embedded Source Settings */
-		EmbeddedSourceSettings?: EmbeddedSourceSettings;
+		EmbeddedSourceSettings?: EmbeddedSourceSettings | null;
 
 		/** Scte20 Source Settings */
-		Scte20SourceSettings?: Scte20SourceSettings;
+		Scte20SourceSettings?: Scte20SourceSettings | null;
 
 		/** Scte27 Source Settings */
-		Scte27SourceSettings?: Scte27SourceSettings;
+		Scte27SourceSettings?: Scte27SourceSettings | null;
 
 		/** Teletext Source Settings */
-		TeletextSourceSettings?: TeletextSourceSettings;
+		TeletextSourceSettings?: TeletextSourceSettings | null;
 	}
 
 
@@ -3565,7 +3565,7 @@ export namespace MyNS {
 		 * Placeholder documentation for __integerMin1
 		 * Minimum: 1
 		 */
-		Pid?: number;
+		Pid?: number | null;
 	}
 
 
@@ -3573,24 +3573,24 @@ export namespace MyNS {
 	export interface EmbeddedSourceSettings {
 
 		/** Embedded Convert608 To708 */
-		Convert608To708?: EmbeddedSourceSettingsConvert608To708;
+		Convert608To708?: EmbeddedSourceSettingsConvert608To708 | null;
 
 		/** Embedded Scte20 Detection */
-		Scte20Detection?: EmbeddedSourceSettingsScte20Detection;
+		Scte20Detection?: EmbeddedSourceSettingsScte20Detection | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1Max4
 		 * Minimum: 1
 		 * Maximum: 4
 		 */
-		Source608ChannelNumber?: number;
+		Source608ChannelNumber?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1Max5
 		 * Minimum: 1
 		 * Maximum: 5
 		 */
-		Source608TrackNumber?: number;
+		Source608TrackNumber?: number | null;
 	}
 
 	export enum EmbeddedSourceSettingsConvert608To708 { DISABLED = 0, UPCONVERT = 1 }
@@ -3602,14 +3602,14 @@ export namespace MyNS {
 	export interface Scte20SourceSettings {
 
 		/** Scte20 Convert608 To708 */
-		Convert608To708?: EmbeddedSourceSettingsConvert608To708;
+		Convert608To708?: EmbeddedSourceSettingsConvert608To708 | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1Max4
 		 * Minimum: 1
 		 * Maximum: 4
 		 */
-		Source608ChannelNumber?: number;
+		Source608ChannelNumber?: number | null;
 	}
 
 
@@ -3620,7 +3620,7 @@ export namespace MyNS {
 		 * Placeholder documentation for __integerMin1
 		 * Minimum: 1
 		 */
-		Pid?: number;
+		Pid?: number | null;
 	}
 
 
@@ -3628,7 +3628,7 @@ export namespace MyNS {
 	export interface TeletextSourceSettings {
 
 		/** Placeholder documentation for __string */
-		PageNumber?: string;
+		PageNumber?: string | null;
 	}
 
 	export enum InputSettingsInputFilter { AUTO = 0, DISABLED = 1, FORCED = 2 }
@@ -3638,10 +3638,10 @@ export namespace MyNS {
 	export interface NetworkInputSettings {
 
 		/** Hls Input Settings */
-		HlsInputSettings?: HlsInputSettings;
+		HlsInputSettings?: HlsInputSettings | null;
 
 		/** Network Input Server Validation */
-		ServerValidation?: NetworkInputSettingsServerValidation;
+		ServerValidation?: NetworkInputSettingsServerValidation | null;
 	}
 
 
@@ -3652,25 +3652,25 @@ export namespace MyNS {
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		Bandwidth?: number;
+		Bandwidth?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		BufferSegments?: number;
+		BufferSegments?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		Retries?: number;
+		Retries?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0
 		 * Minimum: 0
 		 */
-		RetryInterval?: number;
+		RetryInterval?: number | null;
 	}
 
 	export enum NetworkInputSettingsServerValidation { CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME = 0, CHECK_CRYPTOGRAPHY_ONLY = 1 }
@@ -3684,13 +3684,13 @@ export namespace MyNS {
 	export interface VideoSelector {
 
 		/** Video Selector Color Space */
-		ColorSpace?: VideoSelectorColorSpace;
+		ColorSpace?: VideoSelectorColorSpace | null;
 
 		/** Video Selector Color Space Usage */
-		ColorSpaceUsage?: VideoSelectorColorSpaceUsage;
+		ColorSpaceUsage?: VideoSelectorColorSpaceUsage | null;
 
 		/** Video Selector Settings */
-		SelectorSettings?: VideoSelectorSettings;
+		SelectorSettings?: VideoSelectorSettings | null;
 	}
 
 	export enum VideoSelectorColorSpace { FOLLOW = 0, REC_601 = 1, REC_709 = 2 }
@@ -3702,10 +3702,10 @@ export namespace MyNS {
 	export interface VideoSelectorSettings {
 
 		/** Video Selector Pid */
-		VideoSelectorPid?: VideoSelectorPid;
+		VideoSelectorPid?: VideoSelectorPid | null;
 
 		/** Video Selector Program Id */
-		VideoSelectorProgramId?: VideoSelectorProgramId;
+		VideoSelectorProgramId?: VideoSelectorProgramId | null;
 	}
 
 
@@ -3717,7 +3717,7 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 8191
 		 */
-		Pid?: number;
+		Pid?: number | null;
 	}
 
 
@@ -3729,7 +3729,7 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 65536
 		 */
-		ProgramId?: number;
+		ProgramId?: number | null;
 	}
 
 
@@ -3737,15 +3737,15 @@ export namespace MyNS {
 	export interface InputSpecification {
 
 		/** codec in increasing order of complexity */
-		Codec?: InputSpecificationCodec;
+		Codec?: InputSpecificationCodec | null;
 
 		/** Maximum input bitrate in megabits per second. Bitrates up to 50 Mbps are supported currently. */
-		MaximumBitrate?: InputSpecificationMaximumBitrate;
+		MaximumBitrate?: InputSpecificationMaximumBitrate | null;
 
 		/**
 		 * Input resolution based on lines of vertical resolution in the input; SD is less than 720 lines, HD is 720 to 1080 lines, UHD is greater than 1080 lines
 		 */
-		Resolution?: InputSpecificationResolution;
+		Resolution?: InputSpecificationResolution | null;
 	}
 
 	export enum InputSpecificationCodec { MPEG2 = 0, AVC = 1, HEVC = 2 }
@@ -3761,13 +3761,13 @@ export namespace MyNS {
 	export interface PipelineDetail {
 
 		/** Placeholder documentation for __string */
-		ActiveInputAttachmentName?: string;
+		ActiveInputAttachmentName?: string | null;
 
 		/** Placeholder documentation for __string */
-		ActiveInputSwitchActionName?: string;
+		ActiveInputSwitchActionName?: string | null;
 
 		/** Placeholder documentation for __string */
-		PipelineId?: string;
+		PipelineId?: string | null;
 	}
 
 	export enum ChannelState { CREATING = 0, CREATE_FAILED = 1, IDLE = 2, STARTING = 3, RUNNING = 4, RECOVERING = 5, STOPPING = 6, DELETING = 7, DELETED = 8, UPDATING = 9, UPDATE_FAILED = 10 }
@@ -3799,7 +3799,7 @@ export namespace MyNS {
 	export interface CreateInputResponse {
 
 		/** Placeholder documentation for Input */
-		Input?: Input;
+		Input?: Input | null;
 	}
 
 
@@ -3807,53 +3807,53 @@ export namespace MyNS {
 	export interface Input {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** Placeholder documentation for __listOf__string */
-		AttachedChannels?: Array<string>;
+		AttachedChannels?: Array<string> | null;
 
 		/** Placeholder documentation for __listOfInputDestination */
-		Destinations?: Array<InputDestination>;
+		Destinations?: Array<InputDestination> | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** A standard input has two sources and a single pipeline input only has one. */
-		InputClass?: ChannelChannelClass;
+		InputClass?: ChannelChannelClass | null;
 
 		/** Placeholder documentation for __listOfInputDeviceSettings */
-		InputDevices?: Array<InputDeviceSettings>;
+		InputDevices?: Array<InputDeviceSettings> | null;
 
 		/**
 		 * There are two types of input sources, static and dynamic. If an input source is dynamic you can
 		 * change the source url of the input dynamically using an input switch action. However, the only input type
 		 * to support a dynamic url at this time is MP4_FILE. By default all input sources are static.
 		 */
-		InputSourceType?: InputInputSourceType;
+		InputSourceType?: InputInputSourceType | null;
 
 		/** Placeholder documentation for __listOfMediaConnectFlow */
-		MediaConnectFlows?: Array<MediaConnectFlow>;
+		MediaConnectFlows?: Array<MediaConnectFlow> | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __string */
-		RoleArn?: string;
+		RoleArn?: string | null;
 
 		/** Placeholder documentation for __listOf__string */
-		SecurityGroups?: Array<string>;
+		SecurityGroups?: Array<string> | null;
 
 		/** Placeholder documentation for __listOfInputSource */
-		Sources?: Array<InputSource>;
+		Sources?: Array<InputSource> | null;
 
 		/** Placeholder documentation for InputState */
-		State?: InputState;
+		State?: InputState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** Placeholder documentation for InputType */
-		Type?: InputType;
+		Type?: InputType | null;
 	}
 
 
@@ -3861,16 +3861,16 @@ export namespace MyNS {
 	export interface InputDestination {
 
 		/** Placeholder documentation for __string */
-		Ip?: string;
+		Ip?: string | null;
 
 		/** Placeholder documentation for __string */
-		Port?: string;
+		Port?: string | null;
 
 		/** Placeholder documentation for __string */
-		Url?: string;
+		Url?: string | null;
 
 		/** The properties for a VPC type input destination. */
-		Vpc?: InputDestinationVpc;
+		Vpc?: InputDestinationVpc | null;
 	}
 
 
@@ -3878,10 +3878,10 @@ export namespace MyNS {
 	export interface InputDestinationVpc {
 
 		/** Placeholder documentation for __string */
-		AvailabilityZone?: string;
+		AvailabilityZone?: string | null;
 
 		/** Placeholder documentation for __string */
-		NetworkInterfaceId?: string;
+		NetworkInterfaceId?: string | null;
 	}
 
 
@@ -3889,7 +3889,7 @@ export namespace MyNS {
 	export interface InputDeviceSettings {
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 	}
 
 	export enum InputInputSourceType { STATIC = 0, DYNAMIC = 1 }
@@ -3899,7 +3899,7 @@ export namespace MyNS {
 	export interface MediaConnectFlow {
 
 		/** Placeholder documentation for __string */
-		FlowArn?: string;
+		FlowArn?: string | null;
 	}
 
 
@@ -3907,13 +3907,13 @@ export namespace MyNS {
 	export interface InputSource {
 
 		/** Placeholder documentation for __string */
-		PasswordParam?: string;
+		PasswordParam?: string | null;
 
 		/** Placeholder documentation for __string */
-		Url?: string;
+		Url?: string | null;
 
 		/** Placeholder documentation for __string */
-		Username?: string;
+		Username?: string | null;
 	}
 
 	export enum InputState { CREATING = 0, DETACHED = 1, ATTACHED = 2, DELETING = 3, DELETED = 4 }
@@ -3925,7 +3925,7 @@ export namespace MyNS {
 	export interface InputDestinationRequest {
 
 		/** Placeholder documentation for __string */
-		StreamName?: string;
+		StreamName?: string | null;
 	}
 
 
@@ -3933,7 +3933,7 @@ export namespace MyNS {
 	export interface MediaConnectFlowRequest {
 
 		/** Placeholder documentation for __string */
-		FlowArn?: string;
+		FlowArn?: string | null;
 	}
 
 
@@ -3941,13 +3941,13 @@ export namespace MyNS {
 	export interface InputSourceRequest {
 
 		/** Placeholder documentation for __string */
-		PasswordParam?: string;
+		PasswordParam?: string | null;
 
 		/** Placeholder documentation for __string */
-		Url?: string;
+		Url?: string | null;
 
 		/** Placeholder documentation for __string */
-		Username?: string;
+		Username?: string | null;
 	}
 
 
@@ -3955,7 +3955,7 @@ export namespace MyNS {
 	export interface CreateInputSecurityGroupResponse {
 
 		/** An Input Security Group */
-		SecurityGroup?: InputSecurityGroup;
+		SecurityGroup?: InputSecurityGroup | null;
 	}
 
 
@@ -3963,22 +3963,22 @@ export namespace MyNS {
 	export interface InputSecurityGroup {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** Placeholder documentation for __listOf__string */
-		Inputs?: Array<string>;
+		Inputs?: Array<string> | null;
 
 		/** Placeholder documentation for InputSecurityGroupState */
-		State?: InputSecurityGroupState;
+		State?: InputSecurityGroupState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** Placeholder documentation for __listOfInputWhitelistRule */
-		WhitelistRules?: Array<InputWhitelistRule>;
+		WhitelistRules?: Array<InputWhitelistRule> | null;
 	}
 
 	export enum InputSecurityGroupState { IDLE = 0, IN_USE = 1, UPDATING = 2, DELETED = 3 }
@@ -3988,7 +3988,7 @@ export namespace MyNS {
 	export interface InputWhitelistRule {
 
 		/** Placeholder documentation for __string */
-		Cidr?: string;
+		Cidr?: string | null;
 	}
 
 
@@ -3996,7 +3996,7 @@ export namespace MyNS {
 	export interface InputWhitelistRuleCidr {
 
 		/** Placeholder documentation for __string */
-		Cidr?: string;
+		Cidr?: string | null;
 	}
 
 
@@ -4004,7 +4004,7 @@ export namespace MyNS {
 	export interface CreateMultiplexResponse {
 
 		/** The multiplex object. */
-		Multiplex?: Multiplex;
+		Multiplex?: Multiplex | null;
 	}
 
 
@@ -4012,34 +4012,34 @@ export namespace MyNS {
 	export interface Multiplex {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** Placeholder documentation for __listOf__string */
-		AvailabilityZones?: Array<string>;
+		AvailabilityZones?: Array<string> | null;
 
 		/** Placeholder documentation for __listOfMultiplexOutputDestination */
-		Destinations?: Array<MultiplexOutputDestination>;
+		Destinations?: Array<MultiplexOutputDestination> | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** Contains configuration for a Multiplex event */
-		MultiplexSettings?: MultiplexSettings;
+		MultiplexSettings?: MultiplexSettings | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __integer */
-		PipelinesRunningCount?: number;
+		PipelinesRunningCount?: number | null;
 
 		/** Placeholder documentation for __integer */
-		ProgramCount?: number;
+		ProgramCount?: number | null;
 
 		/** The current state of the multiplex. */
-		State?: MultiplexState;
+		State?: MultiplexState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -4047,7 +4047,7 @@ export namespace MyNS {
 	export interface MultiplexOutputDestination {
 
 		/** Multiplex MediaConnect output destination settings. */
-		MediaConnectSettings?: MultiplexMediaConnectOutputDestinationSettings;
+		MediaConnectSettings?: MultiplexMediaConnectOutputDestinationSettings | null;
 	}
 
 
@@ -4058,7 +4058,7 @@ export namespace MyNS {
 		 * Placeholder documentation for __stringMin1
 		 * Min length: 1
 		 */
-		EntitlementArn?: string;
+		EntitlementArn?: string | null;
 	}
 
 
@@ -4070,7 +4070,7 @@ export namespace MyNS {
 		 * Minimum: 1000
 		 * Maximum: 3000
 		 */
-		MaximumVideoBufferDelayMilliseconds?: number;
+		MaximumVideoBufferDelayMilliseconds?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1000000Max100000000
@@ -4093,7 +4093,7 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 100000000
 		 */
-		TransportStreamReservedBitrate?: number;
+		TransportStreamReservedBitrate?: number | null;
 	}
 
 	export enum MultiplexState { CREATING = 0, CREATE_FAILED = 1, IDLE = 2, STARTING = 3, RUNNING = 4, RECOVERING = 5, STOPPING = 6, DELETING = 7, DELETED = 8 }
@@ -4103,7 +4103,7 @@ export namespace MyNS {
 	export interface CreateMultiplexProgramResponse {
 
 		/** The multiplex program object. */
-		MultiplexProgram?: MultiplexProgram;
+		MultiplexProgram?: MultiplexProgram | null;
 	}
 
 
@@ -4111,16 +4111,16 @@ export namespace MyNS {
 	export interface MultiplexProgram {
 
 		/** Placeholder documentation for __string */
-		ChannelId?: string;
+		ChannelId?: string | null;
 
 		/** Multiplex Program settings configuration. */
-		MultiplexProgramSettings?: MultiplexProgramSettings;
+		MultiplexProgramSettings?: MultiplexProgramSettings | null;
 
 		/** Packet identifiers map for a given Multiplex program. */
-		PacketIdentifiersMap?: MultiplexProgramPacketIdentifiersMap;
+		PacketIdentifiersMap?: MultiplexProgramPacketIdentifiersMap | null;
 
 		/** Placeholder documentation for __string */
-		ProgramName?: string;
+		ProgramName?: string | null;
 	}
 
 
@@ -4134,7 +4134,7 @@ export namespace MyNS {
 		 * it will not switch back to the other pipeline based on it recovering to a healthy state,
 		 * it will only switch if the active pipeline becomes unhealthy.
 		 */
-		PreferredChannelPipeline?: MultiplexProgramSettingsPreferredChannelPipeline;
+		PreferredChannelPipeline?: MultiplexProgramSettingsPreferredChannelPipeline | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max65535
@@ -4145,10 +4145,10 @@ export namespace MyNS {
 		ProgramNumber: number;
 
 		/** Transport stream service descriptor configuration for the Multiplex program. */
-		ServiceDescriptor?: MultiplexProgramServiceDescriptor;
+		ServiceDescriptor?: MultiplexProgramServiceDescriptor | null;
 
 		/** The video configuration for each program in a multiplex. */
-		VideoSettings?: MultiplexVideoSettings;
+		VideoSettings?: MultiplexVideoSettings | null;
 	}
 
 	export enum MultiplexProgramSettingsPreferredChannelPipeline { CURRENTLY_ACTIVE = 0, PIPELINE_0 = 1, PIPELINE_1 = 2 }
@@ -4181,10 +4181,10 @@ export namespace MyNS {
 		 * Minimum: 100000
 		 * Maximum: 100000000
 		 */
-		ConstantBitrate?: number;
+		ConstantBitrate?: number | null;
 
 		/** Statmux rate control settings */
-		StatmuxSettings?: MultiplexStatmuxVideoSettings;
+		StatmuxSettings?: MultiplexStatmuxVideoSettings | null;
 	}
 
 
@@ -4196,14 +4196,14 @@ export namespace MyNS {
 		 * Minimum: 100000
 		 * Maximum: 100000000
 		 */
-		MaximumBitrate?: number;
+		MaximumBitrate?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin100000Max100000000
 		 * Minimum: 100000
 		 * Maximum: 100000000
 		 */
-		MinimumBitrate?: number;
+		MinimumBitrate?: number | null;
 	}
 
 
@@ -4211,43 +4211,43 @@ export namespace MyNS {
 	export interface MultiplexProgramPacketIdentifiersMap {
 
 		/** Placeholder documentation for __listOf__integer */
-		AudioPids?: Array<number>;
+		AudioPids?: Array<number> | null;
 
 		/** Placeholder documentation for __listOf__integer */
-		DvbSubPids?: Array<number>;
+		DvbSubPids?: Array<number> | null;
 
 		/** Placeholder documentation for __integer */
-		DvbTeletextPid?: number;
+		DvbTeletextPid?: number | null;
 
 		/** Placeholder documentation for __integer */
-		EtvPlatformPid?: number;
+		EtvPlatformPid?: number | null;
 
 		/** Placeholder documentation for __integer */
-		EtvSignalPid?: number;
+		EtvSignalPid?: number | null;
 
 		/** Placeholder documentation for __listOf__integer */
-		KlvDataPids?: Array<number>;
+		KlvDataPids?: Array<number> | null;
 
 		/** Placeholder documentation for __integer */
-		PcrPid?: number;
+		PcrPid?: number | null;
 
 		/** Placeholder documentation for __integer */
-		PmtPid?: number;
+		PmtPid?: number | null;
 
 		/** Placeholder documentation for __integer */
-		PrivateMetadataPid?: number;
+		PrivateMetadataPid?: number | null;
 
 		/** Placeholder documentation for __listOf__integer */
-		Scte27Pids?: Array<number>;
+		Scte27Pids?: Array<number> | null;
 
 		/** Placeholder documentation for __integer */
-		Scte35Pid?: number;
+		Scte35Pid?: number | null;
 
 		/** Placeholder documentation for __integer */
-		TimedMetadataPid?: number;
+		TimedMetadataPid?: number | null;
 
 		/** Placeholder documentation for __integer */
-		VideoPid?: number;
+		VideoPid?: number | null;
 	}
 
 
@@ -4265,49 +4265,49 @@ export namespace MyNS {
 	export interface DeleteChannelResponse {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** A standard channel has two encoding pipelines and a single pipeline channel only has one. */
-		ChannelClass?: ChannelChannelClass;
+		ChannelClass?: ChannelChannelClass | null;
 
 		/** Placeholder documentation for __listOfOutputDestination */
-		Destinations?: Array<OutputDestination>;
+		Destinations?: Array<OutputDestination> | null;
 
 		/** Placeholder documentation for __listOfChannelEgressEndpoint */
-		EgressEndpoints?: Array<ChannelEgressEndpoint>;
+		EgressEndpoints?: Array<ChannelEgressEndpoint> | null;
 
 		/** Encoder Settings */
-		EncoderSettings?: EncoderSettings;
+		EncoderSettings?: EncoderSettings | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** Placeholder documentation for __listOfInputAttachment */
-		InputAttachments?: Array<InputAttachment>;
+		InputAttachments?: Array<InputAttachment> | null;
 
 		/** Placeholder documentation for InputSpecification */
-		InputSpecification?: InputSpecification;
+		InputSpecification?: InputSpecification | null;
 
 		/** The log level the user wants for their channel. */
-		LogLevel?: ChannelLogLevel;
+		LogLevel?: ChannelLogLevel | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __listOfPipelineDetail */
-		PipelineDetails?: Array<PipelineDetail>;
+		PipelineDetails?: Array<PipelineDetail> | null;
 
 		/** Placeholder documentation for __integer */
-		PipelinesRunningCount?: number;
+		PipelinesRunningCount?: number | null;
 
 		/** Placeholder documentation for __string */
-		RoleArn?: string;
+		RoleArn?: string | null;
 
 		/** Placeholder documentation for ChannelState */
-		State?: ChannelState;
+		State?: ChannelState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -4325,34 +4325,34 @@ export namespace MyNS {
 	export interface DeleteMultiplexResponse {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** Placeholder documentation for __listOf__string */
-		AvailabilityZones?: Array<string>;
+		AvailabilityZones?: Array<string> | null;
 
 		/** Placeholder documentation for __listOfMultiplexOutputDestination */
-		Destinations?: Array<MultiplexOutputDestination>;
+		Destinations?: Array<MultiplexOutputDestination> | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** Contains configuration for a Multiplex event */
-		MultiplexSettings?: MultiplexSettings;
+		MultiplexSettings?: MultiplexSettings | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __integer */
-		PipelinesRunningCount?: number;
+		PipelinesRunningCount?: number | null;
 
 		/** Placeholder documentation for __integer */
-		ProgramCount?: number;
+		ProgramCount?: number | null;
 
 		/** The current state of the multiplex. */
-		State?: MultiplexState;
+		State?: MultiplexState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -4360,16 +4360,16 @@ export namespace MyNS {
 	export interface DeleteMultiplexProgramResponse {
 
 		/** Placeholder documentation for __string */
-		ChannelId?: string;
+		ChannelId?: string | null;
 
 		/** Multiplex Program settings configuration. */
-		MultiplexProgramSettings?: MultiplexProgramSettings;
+		MultiplexProgramSettings?: MultiplexProgramSettings | null;
 
 		/** Packet identifiers map for a given Multiplex program. */
-		PacketIdentifiersMap?: MultiplexProgramPacketIdentifiersMap;
+		PacketIdentifiersMap?: MultiplexProgramPacketIdentifiersMap | null;
 
 		/** Placeholder documentation for __string */
-		ProgramName?: string;
+		ProgramName?: string | null;
 	}
 
 
@@ -4377,58 +4377,58 @@ export namespace MyNS {
 	export interface DeleteReservationResponse {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** Placeholder documentation for __integer */
-		Count?: number;
+		Count?: number | null;
 
 		/** Placeholder documentation for __string */
-		CurrencyCode?: string;
+		CurrencyCode?: string | null;
 
 		/** Placeholder documentation for __integer */
-		Duration?: number;
+		Duration?: number | null;
 
 		/** Units for duration, e.g. 'MONTHS' */
-		DurationUnits?: DeleteReservationResponseDurationUnits;
+		DurationUnits?: DeleteReservationResponseDurationUnits | null;
 
 		/** Placeholder documentation for __string */
-		End?: string;
+		End?: string | null;
 
 		/** Placeholder documentation for __double */
-		FixedPrice?: number;
+		FixedPrice?: number | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __string */
-		OfferingDescription?: string;
+		OfferingDescription?: string | null;
 
 		/** Placeholder documentation for __string */
-		OfferingId?: string;
+		OfferingId?: string | null;
 
 		/** Offering type, e.g. 'NO_UPFRONT' */
-		OfferingType?: DeleteReservationResponseOfferingType;
+		OfferingType?: DeleteReservationResponseOfferingType | null;
 
 		/** Placeholder documentation for __string */
-		Region?: string;
+		Region?: string | null;
 
 		/** Placeholder documentation for __string */
-		ReservationId?: string;
+		ReservationId?: string | null;
 
 		/** Resource configuration (codec, resolution, bitrate, ...) */
-		ResourceSpecification?: ReservationResourceSpecification;
+		ResourceSpecification?: ReservationResourceSpecification | null;
 
 		/** Placeholder documentation for __string */
-		Start?: string;
+		Start?: string | null;
 
 		/** Current reservation state */
-		State?: DeleteReservationResponseState;
+		State?: DeleteReservationResponseState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** Placeholder documentation for __double */
-		UsagePrice?: number;
+		UsagePrice?: number | null;
 	}
 
 	export enum DeleteReservationResponseDurationUnits { MONTHS = 0 }
@@ -4440,30 +4440,30 @@ export namespace MyNS {
 	export interface ReservationResourceSpecification {
 
 		/** A standard channel has two encoding pipelines and a single pipeline channel only has one. */
-		ChannelClass?: ChannelChannelClass;
+		ChannelClass?: ChannelChannelClass | null;
 
 		/** Codec, 'MPEG2', 'AVC', 'HEVC', or 'AUDIO' */
-		Codec?: ReservationResourceSpecificationCodec;
+		Codec?: ReservationResourceSpecificationCodec | null;
 
 		/** Maximum bitrate in megabits per second */
-		MaximumBitrate?: InputSpecificationMaximumBitrate;
+		MaximumBitrate?: InputSpecificationMaximumBitrate | null;
 
 		/** Maximum framerate in frames per second (Outputs only) */
-		MaximumFramerate?: ReservationResourceSpecificationMaximumFramerate;
+		MaximumFramerate?: ReservationResourceSpecificationMaximumFramerate | null;
 
 		/**
 		 * Resolution based on lines of vertical resolution; SD is less than 720 lines, HD is 720 to 1080 lines, FHD is 1080 lines, UHD is greater than 1080 lines
 		 */
-		Resolution?: ReservationResourceSpecificationResolution;
+		Resolution?: ReservationResourceSpecificationResolution | null;
 
 		/** Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL' */
-		ResourceType?: ReservationResourceSpecificationResourceType;
+		ResourceType?: ReservationResourceSpecificationResourceType | null;
 
 		/** Special features, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION' */
-		SpecialFeature?: ReservationResourceSpecificationSpecialFeature;
+		SpecialFeature?: ReservationResourceSpecificationSpecialFeature | null;
 
 		/** Video quality, e.g. 'STANDARD' (Outputs only) */
-		VideoQuality?: ReservationResourceSpecificationVideoQuality;
+		VideoQuality?: ReservationResourceSpecificationVideoQuality | null;
 	}
 
 	export enum ReservationResourceSpecificationCodec { MPEG2 = 0, AVC = 1, HEVC = 2, AUDIO = 3 }
@@ -4490,49 +4490,49 @@ export namespace MyNS {
 	export interface DescribeChannelResponse {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** A standard channel has two encoding pipelines and a single pipeline channel only has one. */
-		ChannelClass?: ChannelChannelClass;
+		ChannelClass?: ChannelChannelClass | null;
 
 		/** Placeholder documentation for __listOfOutputDestination */
-		Destinations?: Array<OutputDestination>;
+		Destinations?: Array<OutputDestination> | null;
 
 		/** Placeholder documentation for __listOfChannelEgressEndpoint */
-		EgressEndpoints?: Array<ChannelEgressEndpoint>;
+		EgressEndpoints?: Array<ChannelEgressEndpoint> | null;
 
 		/** Encoder Settings */
-		EncoderSettings?: EncoderSettings;
+		EncoderSettings?: EncoderSettings | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** Placeholder documentation for __listOfInputAttachment */
-		InputAttachments?: Array<InputAttachment>;
+		InputAttachments?: Array<InputAttachment> | null;
 
 		/** Placeholder documentation for InputSpecification */
-		InputSpecification?: InputSpecification;
+		InputSpecification?: InputSpecification | null;
 
 		/** The log level the user wants for their channel. */
-		LogLevel?: ChannelLogLevel;
+		LogLevel?: ChannelLogLevel | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __listOfPipelineDetail */
-		PipelineDetails?: Array<PipelineDetail>;
+		PipelineDetails?: Array<PipelineDetail> | null;
 
 		/** Placeholder documentation for __integer */
-		PipelinesRunningCount?: number;
+		PipelinesRunningCount?: number | null;
 
 		/** Placeholder documentation for __string */
-		RoleArn?: string;
+		RoleArn?: string | null;
 
 		/** Placeholder documentation for ChannelState */
-		State?: ChannelState;
+		State?: ChannelState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -4540,53 +4540,53 @@ export namespace MyNS {
 	export interface DescribeInputResponse {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** Placeholder documentation for __listOf__string */
-		AttachedChannels?: Array<string>;
+		AttachedChannels?: Array<string> | null;
 
 		/** Placeholder documentation for __listOfInputDestination */
-		Destinations?: Array<InputDestination>;
+		Destinations?: Array<InputDestination> | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** A standard input has two sources and a single pipeline input only has one. */
-		InputClass?: ChannelChannelClass;
+		InputClass?: ChannelChannelClass | null;
 
 		/** Placeholder documentation for __listOfInputDeviceSettings */
-		InputDevices?: Array<InputDeviceSettings>;
+		InputDevices?: Array<InputDeviceSettings> | null;
 
 		/**
 		 * There are two types of input sources, static and dynamic. If an input source is dynamic you can
 		 * change the source url of the input dynamically using an input switch action. However, the only input type
 		 * to support a dynamic url at this time is MP4_FILE. By default all input sources are static.
 		 */
-		InputSourceType?: InputInputSourceType;
+		InputSourceType?: InputInputSourceType | null;
 
 		/** Placeholder documentation for __listOfMediaConnectFlow */
-		MediaConnectFlows?: Array<MediaConnectFlow>;
+		MediaConnectFlows?: Array<MediaConnectFlow> | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __string */
-		RoleArn?: string;
+		RoleArn?: string | null;
 
 		/** Placeholder documentation for __listOf__string */
-		SecurityGroups?: Array<string>;
+		SecurityGroups?: Array<string> | null;
 
 		/** Placeholder documentation for __listOfInputSource */
-		Sources?: Array<InputSource>;
+		Sources?: Array<InputSource> | null;
 
 		/** Placeholder documentation for InputState */
-		State?: InputState;
+		State?: InputState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** Placeholder documentation for InputType */
-		Type?: InputType;
+		Type?: InputType | null;
 	}
 
 
@@ -4594,34 +4594,34 @@ export namespace MyNS {
 	export interface DescribeInputDeviceResponse {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** The state of the connection between the input device and AWS. */
-		ConnectionState?: DescribeInputDeviceResponseConnectionState;
+		ConnectionState?: DescribeInputDeviceResponseConnectionState | null;
 
 		/** The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration. */
-		DeviceSettingsSyncState?: DescribeInputDeviceResponseDeviceSettingsSyncState;
+		DeviceSettingsSyncState?: DescribeInputDeviceResponseDeviceSettingsSyncState | null;
 
 		/** Settings that describe the active source from the input device, and the video characteristics of that source. */
-		HdDeviceSettings?: InputDeviceHdSettings;
+		HdDeviceSettings?: InputDeviceHdSettings | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** Placeholder documentation for __string */
-		MacAddress?: string;
+		MacAddress?: string | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** The network settings for the input device. */
-		NetworkSettings?: InputDeviceNetworkSettings;
+		NetworkSettings?: InputDeviceNetworkSettings | null;
 
 		/** Placeholder documentation for __string */
-		SerialNumber?: string;
+		SerialNumber?: string | null;
 
 		/** The type of the input device. For an AWS Elemental Link device that outputs resolutions up to 1080, choose "HD". */
-		Type?: DescribeInputDeviceResponseType;
+		Type?: DescribeInputDeviceResponseType | null;
 	}
 
 	export enum DescribeInputDeviceResponseConnectionState { DISCONNECTED = 0, CONNECTED = 1 }
@@ -4633,28 +4633,28 @@ export namespace MyNS {
 	export interface InputDeviceHdSettings {
 
 		/** The source at the input device that is currently active. */
-		ActiveInput?: InputDeviceHdSettingsActiveInput;
+		ActiveInput?: InputDeviceHdSettingsActiveInput | null;
 
 		/** The source to activate (use) from the input device. */
-		ConfiguredInput?: InputDeviceHdSettingsConfiguredInput;
+		ConfiguredInput?: InputDeviceHdSettingsConfiguredInput | null;
 
 		/** The state of the input device. */
-		DeviceState?: InputDeviceHdSettingsDeviceState;
+		DeviceState?: InputDeviceHdSettingsDeviceState | null;
 
 		/** Placeholder documentation for __double */
-		Framerate?: number;
+		Framerate?: number | null;
 
 		/** Placeholder documentation for __integer */
-		Height?: number;
+		Height?: number | null;
 
 		/** Placeholder documentation for __integer */
-		MaxBitrate?: number;
+		MaxBitrate?: number | null;
 
 		/** The scan type of the video source. */
-		ScanType?: H264SettingsScanType;
+		ScanType?: H264SettingsScanType | null;
 
 		/** Placeholder documentation for __integer */
-		Width?: number;
+		Width?: number | null;
 	}
 
 	export enum InputDeviceHdSettingsActiveInput { HDMI = 0, SDI = 1 }
@@ -4668,19 +4668,19 @@ export namespace MyNS {
 	export interface InputDeviceNetworkSettings {
 
 		/** Placeholder documentation for __listOf__string */
-		DnsAddresses?: Array<string>;
+		DnsAddresses?: Array<string> | null;
 
 		/** Placeholder documentation for __string */
-		Gateway?: string;
+		Gateway?: string | null;
 
 		/** Placeholder documentation for __string */
-		IpAddress?: string;
+		IpAddress?: string | null;
 
 		/** Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address. */
-		IpScheme?: InputDeviceNetworkSettingsIpScheme;
+		IpScheme?: InputDeviceNetworkSettingsIpScheme | null;
 
 		/** Placeholder documentation for __string */
-		SubnetMask?: string;
+		SubnetMask?: string | null;
 	}
 
 	export enum InputDeviceNetworkSettingsIpScheme { STATIC = 0, DHCP = 1 }
@@ -4692,22 +4692,22 @@ export namespace MyNS {
 	export interface DescribeInputSecurityGroupResponse {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** Placeholder documentation for __listOf__string */
-		Inputs?: Array<string>;
+		Inputs?: Array<string> | null;
 
 		/** Placeholder documentation for InputSecurityGroupState */
-		State?: InputSecurityGroupState;
+		State?: InputSecurityGroupState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** Placeholder documentation for __listOfInputWhitelistRule */
-		WhitelistRules?: Array<InputWhitelistRule>;
+		WhitelistRules?: Array<InputWhitelistRule> | null;
 	}
 
 
@@ -4715,34 +4715,34 @@ export namespace MyNS {
 	export interface DescribeMultiplexResponse {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** Placeholder documentation for __listOf__string */
-		AvailabilityZones?: Array<string>;
+		AvailabilityZones?: Array<string> | null;
 
 		/** Placeholder documentation for __listOfMultiplexOutputDestination */
-		Destinations?: Array<MultiplexOutputDestination>;
+		Destinations?: Array<MultiplexOutputDestination> | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** Contains configuration for a Multiplex event */
-		MultiplexSettings?: MultiplexSettings;
+		MultiplexSettings?: MultiplexSettings | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __integer */
-		PipelinesRunningCount?: number;
+		PipelinesRunningCount?: number | null;
 
 		/** Placeholder documentation for __integer */
-		ProgramCount?: number;
+		ProgramCount?: number | null;
 
 		/** The current state of the multiplex. */
-		State?: MultiplexState;
+		State?: MultiplexState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -4750,16 +4750,16 @@ export namespace MyNS {
 	export interface DescribeMultiplexProgramResponse {
 
 		/** Placeholder documentation for __string */
-		ChannelId?: string;
+		ChannelId?: string | null;
 
 		/** Multiplex Program settings configuration. */
-		MultiplexProgramSettings?: MultiplexProgramSettings;
+		MultiplexProgramSettings?: MultiplexProgramSettings | null;
 
 		/** Packet identifiers map for a given Multiplex program. */
-		PacketIdentifiersMap?: MultiplexProgramPacketIdentifiersMap;
+		PacketIdentifiersMap?: MultiplexProgramPacketIdentifiersMap | null;
 
 		/** Placeholder documentation for __string */
-		ProgramName?: string;
+		ProgramName?: string | null;
 	}
 
 
@@ -4767,37 +4767,37 @@ export namespace MyNS {
 	export interface DescribeOfferingResponse {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** Placeholder documentation for __string */
-		CurrencyCode?: string;
+		CurrencyCode?: string | null;
 
 		/** Placeholder documentation for __integer */
-		Duration?: number;
+		Duration?: number | null;
 
 		/** Units for duration, e.g. 'MONTHS' */
-		DurationUnits?: DeleteReservationResponseDurationUnits;
+		DurationUnits?: DeleteReservationResponseDurationUnits | null;
 
 		/** Placeholder documentation for __double */
-		FixedPrice?: number;
+		FixedPrice?: number | null;
 
 		/** Placeholder documentation for __string */
-		OfferingDescription?: string;
+		OfferingDescription?: string | null;
 
 		/** Placeholder documentation for __string */
-		OfferingId?: string;
+		OfferingId?: string | null;
 
 		/** Offering type, e.g. 'NO_UPFRONT' */
-		OfferingType?: DeleteReservationResponseOfferingType;
+		OfferingType?: DeleteReservationResponseOfferingType | null;
 
 		/** Placeholder documentation for __string */
-		Region?: string;
+		Region?: string | null;
 
 		/** Resource configuration (codec, resolution, bitrate, ...) */
-		ResourceSpecification?: ReservationResourceSpecification;
+		ResourceSpecification?: ReservationResourceSpecification | null;
 
 		/** Placeholder documentation for __double */
-		UsagePrice?: number;
+		UsagePrice?: number | null;
 	}
 
 
@@ -4805,58 +4805,58 @@ export namespace MyNS {
 	export interface DescribeReservationResponse {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** Placeholder documentation for __integer */
-		Count?: number;
+		Count?: number | null;
 
 		/** Placeholder documentation for __string */
-		CurrencyCode?: string;
+		CurrencyCode?: string | null;
 
 		/** Placeholder documentation for __integer */
-		Duration?: number;
+		Duration?: number | null;
 
 		/** Units for duration, e.g. 'MONTHS' */
-		DurationUnits?: DeleteReservationResponseDurationUnits;
+		DurationUnits?: DeleteReservationResponseDurationUnits | null;
 
 		/** Placeholder documentation for __string */
-		End?: string;
+		End?: string | null;
 
 		/** Placeholder documentation for __double */
-		FixedPrice?: number;
+		FixedPrice?: number | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __string */
-		OfferingDescription?: string;
+		OfferingDescription?: string | null;
 
 		/** Placeholder documentation for __string */
-		OfferingId?: string;
+		OfferingId?: string | null;
 
 		/** Offering type, e.g. 'NO_UPFRONT' */
-		OfferingType?: DeleteReservationResponseOfferingType;
+		OfferingType?: DeleteReservationResponseOfferingType | null;
 
 		/** Placeholder documentation for __string */
-		Region?: string;
+		Region?: string | null;
 
 		/** Placeholder documentation for __string */
-		ReservationId?: string;
+		ReservationId?: string | null;
 
 		/** Resource configuration (codec, resolution, bitrate, ...) */
-		ResourceSpecification?: ReservationResourceSpecification;
+		ResourceSpecification?: ReservationResourceSpecification | null;
 
 		/** Placeholder documentation for __string */
-		Start?: string;
+		Start?: string | null;
 
 		/** Current reservation state */
-		State?: DeleteReservationResponseState;
+		State?: DeleteReservationResponseState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** Placeholder documentation for __double */
-		UsagePrice?: number;
+		UsagePrice?: number | null;
 	}
 
 
@@ -4864,10 +4864,10 @@ export namespace MyNS {
 	export interface DescribeScheduleResponse {
 
 		/** Placeholder documentation for __string */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/** Placeholder documentation for __listOfScheduleAction */
-		ScheduleActions?: Array<ScheduleAction>;
+		ScheduleActions?: Array<ScheduleAction> | null;
 	}
 
 
@@ -4875,10 +4875,10 @@ export namespace MyNS {
 	export interface ListChannelsResponse {
 
 		/** Placeholder documentation for __listOfChannelSummary */
-		Channels?: Array<ChannelSummary>;
+		Channels?: Array<ChannelSummary> | null;
 
 		/** Placeholder documentation for __string */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -4886,43 +4886,43 @@ export namespace MyNS {
 	export interface ChannelSummary {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** A standard channel has two encoding pipelines and a single pipeline channel only has one. */
-		ChannelClass?: ChannelChannelClass;
+		ChannelClass?: ChannelChannelClass | null;
 
 		/** Placeholder documentation for __listOfOutputDestination */
-		Destinations?: Array<OutputDestination>;
+		Destinations?: Array<OutputDestination> | null;
 
 		/** Placeholder documentation for __listOfChannelEgressEndpoint */
-		EgressEndpoints?: Array<ChannelEgressEndpoint>;
+		EgressEndpoints?: Array<ChannelEgressEndpoint> | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** Placeholder documentation for __listOfInputAttachment */
-		InputAttachments?: Array<InputAttachment>;
+		InputAttachments?: Array<InputAttachment> | null;
 
 		/** Placeholder documentation for InputSpecification */
-		InputSpecification?: InputSpecification;
+		InputSpecification?: InputSpecification | null;
 
 		/** The log level the user wants for their channel. */
-		LogLevel?: ChannelLogLevel;
+		LogLevel?: ChannelLogLevel | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __integer */
-		PipelinesRunningCount?: number;
+		PipelinesRunningCount?: number | null;
 
 		/** Placeholder documentation for __string */
-		RoleArn?: string;
+		RoleArn?: string | null;
 
 		/** Placeholder documentation for ChannelState */
-		State?: ChannelState;
+		State?: ChannelState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -4930,10 +4930,10 @@ export namespace MyNS {
 	export interface ListInputDevicesResponse {
 
 		/** Placeholder documentation for __listOfInputDeviceSummary */
-		InputDevices?: Array<InputDeviceSummary>;
+		InputDevices?: Array<InputDeviceSummary> | null;
 
 		/** Placeholder documentation for __string */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -4941,34 +4941,34 @@ export namespace MyNS {
 	export interface InputDeviceSummary {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** The state of the connection between the input device and AWS. */
-		ConnectionState?: DescribeInputDeviceResponseConnectionState;
+		ConnectionState?: DescribeInputDeviceResponseConnectionState | null;
 
 		/** The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration. */
-		DeviceSettingsSyncState?: DescribeInputDeviceResponseDeviceSettingsSyncState;
+		DeviceSettingsSyncState?: DescribeInputDeviceResponseDeviceSettingsSyncState | null;
 
 		/** Settings that describe the active source from the input device, and the video characteristics of that source. */
-		HdDeviceSettings?: InputDeviceHdSettings;
+		HdDeviceSettings?: InputDeviceHdSettings | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** Placeholder documentation for __string */
-		MacAddress?: string;
+		MacAddress?: string | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** The network settings for the input device. */
-		NetworkSettings?: InputDeviceNetworkSettings;
+		NetworkSettings?: InputDeviceNetworkSettings | null;
 
 		/** Placeholder documentation for __string */
-		SerialNumber?: string;
+		SerialNumber?: string | null;
 
 		/** The type of the input device. For an AWS Elemental Link device that outputs resolutions up to 1080, choose "HD". */
-		Type?: DescribeInputDeviceResponseType;
+		Type?: DescribeInputDeviceResponseType | null;
 	}
 
 
@@ -4976,10 +4976,10 @@ export namespace MyNS {
 	export interface ListInputSecurityGroupsResponse {
 
 		/** Placeholder documentation for __listOfInputSecurityGroup */
-		InputSecurityGroups?: Array<InputSecurityGroup>;
+		InputSecurityGroups?: Array<InputSecurityGroup> | null;
 
 		/** Placeholder documentation for __string */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -4987,10 +4987,10 @@ export namespace MyNS {
 	export interface ListInputsResponse {
 
 		/** Placeholder documentation for __listOfInput */
-		Inputs?: Array<Input>;
+		Inputs?: Array<Input> | null;
 
 		/** Placeholder documentation for __string */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -4998,10 +4998,10 @@ export namespace MyNS {
 	export interface ListMultiplexProgramsResponse {
 
 		/** Placeholder documentation for __listOfMultiplexProgramSummary */
-		MultiplexPrograms?: Array<MultiplexProgramSummary>;
+		MultiplexPrograms?: Array<MultiplexProgramSummary> | null;
 
 		/** Placeholder documentation for __string */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -5009,10 +5009,10 @@ export namespace MyNS {
 	export interface MultiplexProgramSummary {
 
 		/** Placeholder documentation for __string */
-		ChannelId?: string;
+		ChannelId?: string | null;
 
 		/** Placeholder documentation for __string */
-		ProgramName?: string;
+		ProgramName?: string | null;
 	}
 
 
@@ -5020,10 +5020,10 @@ export namespace MyNS {
 	export interface ListMultiplexesResponse {
 
 		/** Placeholder documentation for __listOfMultiplexSummary */
-		Multiplexes?: Array<MultiplexSummary>;
+		Multiplexes?: Array<MultiplexSummary> | null;
 
 		/** Placeholder documentation for __string */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -5031,31 +5031,31 @@ export namespace MyNS {
 	export interface MultiplexSummary {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** Placeholder documentation for __listOf__string */
-		AvailabilityZones?: Array<string>;
+		AvailabilityZones?: Array<string> | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** Contains summary configuration for a Multiplex event. */
-		MultiplexSettings?: MultiplexSettingsSummary;
+		MultiplexSettings?: MultiplexSettingsSummary | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __integer */
-		PipelinesRunningCount?: number;
+		PipelinesRunningCount?: number | null;
 
 		/** Placeholder documentation for __integer */
-		ProgramCount?: number;
+		ProgramCount?: number | null;
 
 		/** The current state of the multiplex. */
-		State?: MultiplexState;
+		State?: MultiplexState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -5067,7 +5067,7 @@ export namespace MyNS {
 		 * Minimum: 1000000
 		 * Maximum: 100000000
 		 */
-		TransportStreamBitrate?: number;
+		TransportStreamBitrate?: number | null;
 	}
 
 
@@ -5075,10 +5075,10 @@ export namespace MyNS {
 	export interface ListOfferingsResponse {
 
 		/** Placeholder documentation for __string */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/** Placeholder documentation for __listOfOffering */
-		Offerings?: Array<Offering>;
+		Offerings?: Array<Offering> | null;
 	}
 
 
@@ -5086,37 +5086,37 @@ export namespace MyNS {
 	export interface Offering {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** Placeholder documentation for __string */
-		CurrencyCode?: string;
+		CurrencyCode?: string | null;
 
 		/** Placeholder documentation for __integer */
-		Duration?: number;
+		Duration?: number | null;
 
 		/** Units for duration, e.g. 'MONTHS' */
-		DurationUnits?: DeleteReservationResponseDurationUnits;
+		DurationUnits?: DeleteReservationResponseDurationUnits | null;
 
 		/** Placeholder documentation for __double */
-		FixedPrice?: number;
+		FixedPrice?: number | null;
 
 		/** Placeholder documentation for __string */
-		OfferingDescription?: string;
+		OfferingDescription?: string | null;
 
 		/** Placeholder documentation for __string */
-		OfferingId?: string;
+		OfferingId?: string | null;
 
 		/** Offering type, e.g. 'NO_UPFRONT' */
-		OfferingType?: DeleteReservationResponseOfferingType;
+		OfferingType?: DeleteReservationResponseOfferingType | null;
 
 		/** Placeholder documentation for __string */
-		Region?: string;
+		Region?: string | null;
 
 		/** Resource configuration (codec, resolution, bitrate, ...) */
-		ResourceSpecification?: ReservationResourceSpecification;
+		ResourceSpecification?: ReservationResourceSpecification | null;
 
 		/** Placeholder documentation for __double */
-		UsagePrice?: number;
+		UsagePrice?: number | null;
 	}
 
 
@@ -5124,10 +5124,10 @@ export namespace MyNS {
 	export interface ListReservationsResponse {
 
 		/** Placeholder documentation for __string */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/** Placeholder documentation for __listOfReservation */
-		Reservations?: Array<Reservation>;
+		Reservations?: Array<Reservation> | null;
 	}
 
 
@@ -5135,58 +5135,58 @@ export namespace MyNS {
 	export interface Reservation {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** Placeholder documentation for __integer */
-		Count?: number;
+		Count?: number | null;
 
 		/** Placeholder documentation for __string */
-		CurrencyCode?: string;
+		CurrencyCode?: string | null;
 
 		/** Placeholder documentation for __integer */
-		Duration?: number;
+		Duration?: number | null;
 
 		/** Units for duration, e.g. 'MONTHS' */
-		DurationUnits?: DeleteReservationResponseDurationUnits;
+		DurationUnits?: DeleteReservationResponseDurationUnits | null;
 
 		/** Placeholder documentation for __string */
-		End?: string;
+		End?: string | null;
 
 		/** Placeholder documentation for __double */
-		FixedPrice?: number;
+		FixedPrice?: number | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __string */
-		OfferingDescription?: string;
+		OfferingDescription?: string | null;
 
 		/** Placeholder documentation for __string */
-		OfferingId?: string;
+		OfferingId?: string | null;
 
 		/** Offering type, e.g. 'NO_UPFRONT' */
-		OfferingType?: DeleteReservationResponseOfferingType;
+		OfferingType?: DeleteReservationResponseOfferingType | null;
 
 		/** Placeholder documentation for __string */
-		Region?: string;
+		Region?: string | null;
 
 		/** Placeholder documentation for __string */
-		ReservationId?: string;
+		ReservationId?: string | null;
 
 		/** Resource configuration (codec, resolution, bitrate, ...) */
-		ResourceSpecification?: ReservationResourceSpecification;
+		ResourceSpecification?: ReservationResourceSpecification | null;
 
 		/** Placeholder documentation for __string */
-		Start?: string;
+		Start?: string | null;
 
 		/** Current reservation state */
-		State?: DeleteReservationResponseState;
+		State?: DeleteReservationResponseState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** Placeholder documentation for __double */
-		UsagePrice?: number;
+		UsagePrice?: number | null;
 	}
 
 
@@ -5194,7 +5194,7 @@ export namespace MyNS {
 	export interface ListTagsForResourceResponse {
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -5202,7 +5202,7 @@ export namespace MyNS {
 	export interface PurchaseOfferingResponse {
 
 		/** Reserved resources available to use */
-		Reservation?: Reservation;
+		Reservation?: Reservation | null;
 	}
 
 
@@ -5210,49 +5210,49 @@ export namespace MyNS {
 	export interface StartChannelResponse {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** A standard channel has two encoding pipelines and a single pipeline channel only has one. */
-		ChannelClass?: ChannelChannelClass;
+		ChannelClass?: ChannelChannelClass | null;
 
 		/** Placeholder documentation for __listOfOutputDestination */
-		Destinations?: Array<OutputDestination>;
+		Destinations?: Array<OutputDestination> | null;
 
 		/** Placeholder documentation for __listOfChannelEgressEndpoint */
-		EgressEndpoints?: Array<ChannelEgressEndpoint>;
+		EgressEndpoints?: Array<ChannelEgressEndpoint> | null;
 
 		/** Encoder Settings */
-		EncoderSettings?: EncoderSettings;
+		EncoderSettings?: EncoderSettings | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** Placeholder documentation for __listOfInputAttachment */
-		InputAttachments?: Array<InputAttachment>;
+		InputAttachments?: Array<InputAttachment> | null;
 
 		/** Placeholder documentation for InputSpecification */
-		InputSpecification?: InputSpecification;
+		InputSpecification?: InputSpecification | null;
 
 		/** The log level the user wants for their channel. */
-		LogLevel?: ChannelLogLevel;
+		LogLevel?: ChannelLogLevel | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __listOfPipelineDetail */
-		PipelineDetails?: Array<PipelineDetail>;
+		PipelineDetails?: Array<PipelineDetail> | null;
 
 		/** Placeholder documentation for __integer */
-		PipelinesRunningCount?: number;
+		PipelinesRunningCount?: number | null;
 
 		/** Placeholder documentation for __string */
-		RoleArn?: string;
+		RoleArn?: string | null;
 
 		/** Placeholder documentation for ChannelState */
-		State?: ChannelState;
+		State?: ChannelState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -5260,34 +5260,34 @@ export namespace MyNS {
 	export interface StartMultiplexResponse {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** Placeholder documentation for __listOf__string */
-		AvailabilityZones?: Array<string>;
+		AvailabilityZones?: Array<string> | null;
 
 		/** Placeholder documentation for __listOfMultiplexOutputDestination */
-		Destinations?: Array<MultiplexOutputDestination>;
+		Destinations?: Array<MultiplexOutputDestination> | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** Contains configuration for a Multiplex event */
-		MultiplexSettings?: MultiplexSettings;
+		MultiplexSettings?: MultiplexSettings | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __integer */
-		PipelinesRunningCount?: number;
+		PipelinesRunningCount?: number | null;
 
 		/** Placeholder documentation for __integer */
-		ProgramCount?: number;
+		ProgramCount?: number | null;
 
 		/** The current state of the multiplex. */
-		State?: MultiplexState;
+		State?: MultiplexState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -5295,49 +5295,49 @@ export namespace MyNS {
 	export interface StopChannelResponse {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** A standard channel has two encoding pipelines and a single pipeline channel only has one. */
-		ChannelClass?: ChannelChannelClass;
+		ChannelClass?: ChannelChannelClass | null;
 
 		/** Placeholder documentation for __listOfOutputDestination */
-		Destinations?: Array<OutputDestination>;
+		Destinations?: Array<OutputDestination> | null;
 
 		/** Placeholder documentation for __listOfChannelEgressEndpoint */
-		EgressEndpoints?: Array<ChannelEgressEndpoint>;
+		EgressEndpoints?: Array<ChannelEgressEndpoint> | null;
 
 		/** Encoder Settings */
-		EncoderSettings?: EncoderSettings;
+		EncoderSettings?: EncoderSettings | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** Placeholder documentation for __listOfInputAttachment */
-		InputAttachments?: Array<InputAttachment>;
+		InputAttachments?: Array<InputAttachment> | null;
 
 		/** Placeholder documentation for InputSpecification */
-		InputSpecification?: InputSpecification;
+		InputSpecification?: InputSpecification | null;
 
 		/** The log level the user wants for their channel. */
-		LogLevel?: ChannelLogLevel;
+		LogLevel?: ChannelLogLevel | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __listOfPipelineDetail */
-		PipelineDetails?: Array<PipelineDetail>;
+		PipelineDetails?: Array<PipelineDetail> | null;
 
 		/** Placeholder documentation for __integer */
-		PipelinesRunningCount?: number;
+		PipelinesRunningCount?: number | null;
 
 		/** Placeholder documentation for __string */
-		RoleArn?: string;
+		RoleArn?: string | null;
 
 		/** Placeholder documentation for ChannelState */
-		State?: ChannelState;
+		State?: ChannelState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -5345,34 +5345,34 @@ export namespace MyNS {
 	export interface StopMultiplexResponse {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** Placeholder documentation for __listOf__string */
-		AvailabilityZones?: Array<string>;
+		AvailabilityZones?: Array<string> | null;
 
 		/** Placeholder documentation for __listOfMultiplexOutputDestination */
-		Destinations?: Array<MultiplexOutputDestination>;
+		Destinations?: Array<MultiplexOutputDestination> | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** Contains configuration for a Multiplex event */
-		MultiplexSettings?: MultiplexSettings;
+		MultiplexSettings?: MultiplexSettings | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __integer */
-		PipelinesRunningCount?: number;
+		PipelinesRunningCount?: number | null;
 
 		/** Placeholder documentation for __integer */
-		ProgramCount?: number;
+		ProgramCount?: number | null;
 
 		/** The current state of the multiplex. */
-		State?: MultiplexState;
+		State?: MultiplexState | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -5380,7 +5380,7 @@ export namespace MyNS {
 	export interface UpdateChannelResponse {
 
 		/** Placeholder documentation for Channel */
-		Channel?: Channel;
+		Channel?: Channel | null;
 	}
 
 
@@ -5388,7 +5388,7 @@ export namespace MyNS {
 	export interface UpdateChannelClassResponse {
 
 		/** Placeholder documentation for Channel */
-		Channel?: Channel;
+		Channel?: Channel | null;
 	}
 
 
@@ -5396,7 +5396,7 @@ export namespace MyNS {
 	export interface UpdateInputResponse {
 
 		/** Placeholder documentation for Input */
-		Input?: Input;
+		Input?: Input | null;
 	}
 
 
@@ -5404,7 +5404,7 @@ export namespace MyNS {
 	export interface InputDeviceRequest {
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 	}
 
 
@@ -5412,34 +5412,34 @@ export namespace MyNS {
 	export interface UpdateInputDeviceResponse {
 
 		/** Placeholder documentation for __string */
-		Arn?: string;
+		Arn?: string | null;
 
 		/** The state of the connection between the input device and AWS. */
-		ConnectionState?: DescribeInputDeviceResponseConnectionState;
+		ConnectionState?: DescribeInputDeviceResponseConnectionState | null;
 
 		/** The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration. */
-		DeviceSettingsSyncState?: DescribeInputDeviceResponseDeviceSettingsSyncState;
+		DeviceSettingsSyncState?: DescribeInputDeviceResponseDeviceSettingsSyncState | null;
 
 		/** Settings that describe the active source from the input device, and the video characteristics of that source. */
-		HdDeviceSettings?: InputDeviceHdSettings;
+		HdDeviceSettings?: InputDeviceHdSettings | null;
 
 		/** Placeholder documentation for __string */
-		Id?: string;
+		Id?: string | null;
 
 		/** Placeholder documentation for __string */
-		MacAddress?: string;
+		MacAddress?: string | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** The network settings for the input device. */
-		NetworkSettings?: InputDeviceNetworkSettings;
+		NetworkSettings?: InputDeviceNetworkSettings | null;
 
 		/** Placeholder documentation for __string */
-		SerialNumber?: string;
+		SerialNumber?: string | null;
 
 		/** The type of the input device. For an AWS Elemental Link device that outputs resolutions up to 1080, choose "HD". */
-		Type?: DescribeInputDeviceResponseType;
+		Type?: DescribeInputDeviceResponseType | null;
 	}
 
 
@@ -5451,7 +5451,7 @@ export namespace MyNS {
 	export interface UpdateInputSecurityGroupResponse {
 
 		/** An Input Security Group */
-		SecurityGroup?: InputSecurityGroup;
+		SecurityGroup?: InputSecurityGroup | null;
 	}
 
 
@@ -5459,7 +5459,7 @@ export namespace MyNS {
 	export interface UpdateMultiplexResponse {
 
 		/** The multiplex object. */
-		Multiplex?: Multiplex;
+		Multiplex?: Multiplex | null;
 	}
 
 
@@ -5467,7 +5467,7 @@ export namespace MyNS {
 	export interface UpdateMultiplexProgramResponse {
 
 		/** The multiplex program object. */
-		MultiplexProgram?: MultiplexProgram;
+		MultiplexProgram?: MultiplexProgram | null;
 	}
 
 
@@ -5475,7 +5475,7 @@ export namespace MyNS {
 	export interface UpdateReservationResponse {
 
 		/** Reserved resources available to use */
-		Reservation?: Reservation;
+		Reservation?: Reservation | null;
 	}
 
 
@@ -5601,10 +5601,10 @@ export namespace MyNS {
 	export interface BatchUpdateScheduleRequest {
 
 		/** A list of schedule actions to create (in a request) or that have been created (in a response). */
-		Creates?: BatchScheduleActionCreateRequest;
+		Creates?: BatchScheduleActionCreateRequest | null;
 
 		/** A list of schedule actions to delete. */
-		Deletes?: BatchScheduleActionDeleteRequest;
+		Deletes?: BatchScheduleActionDeleteRequest | null;
 	}
 
 
@@ -5652,37 +5652,37 @@ export namespace MyNS {
 	export interface CreateChannelRequest {
 
 		/** A standard channel has two encoding pipelines and a single pipeline channel only has one. */
-		ChannelClass?: ChannelChannelClass;
+		ChannelClass?: ChannelChannelClass | null;
 
 		/** Placeholder documentation for __listOfOutputDestination */
-		Destinations?: Array<OutputDestination>;
+		Destinations?: Array<OutputDestination> | null;
 
 		/** Encoder Settings */
-		EncoderSettings?: EncoderSettings;
+		EncoderSettings?: EncoderSettings | null;
 
 		/** Placeholder documentation for __listOfInputAttachment */
-		InputAttachments?: Array<InputAttachment>;
+		InputAttachments?: Array<InputAttachment> | null;
 
 		/** Placeholder documentation for InputSpecification */
-		InputSpecification?: InputSpecification;
+		InputSpecification?: InputSpecification | null;
 
 		/** The log level the user wants for their channel. */
-		LogLevel?: ChannelLogLevel;
+		LogLevel?: ChannelLogLevel | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __string */
-		RequestId?: string;
+		RequestId?: string | null;
 
 		/** Placeholder documentation for __string */
-		Reserved?: string;
+		Reserved?: string | null;
 
 		/** Placeholder documentation for __string */
-		RoleArn?: string;
+		RoleArn?: string | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -5695,7 +5695,7 @@ export namespace MyNS {
 	export interface InputVpcRequest {
 
 		/** Placeholder documentation for __listOf__string */
-		SecurityGroupIds?: Array<string>;
+		SecurityGroupIds?: Array<string> | null;
 
 		/**
 		 * Placeholder documentation for __listOf__string
@@ -5709,34 +5709,34 @@ export namespace MyNS {
 	export interface CreateInputRequest {
 
 		/** Placeholder documentation for __listOfInputDestinationRequest */
-		Destinations?: Array<InputDestinationRequest>;
+		Destinations?: Array<InputDestinationRequest> | null;
 
 		/** Placeholder documentation for __listOfInputDeviceSettings */
-		InputDevices?: Array<InputDeviceSettings>;
+		InputDevices?: Array<InputDeviceSettings> | null;
 
 		/** Placeholder documentation for __listOf__string */
-		InputSecurityGroups?: Array<string>;
+		InputSecurityGroups?: Array<string> | null;
 
 		/** Placeholder documentation for __listOfMediaConnectFlowRequest */
-		MediaConnectFlows?: Array<MediaConnectFlowRequest>;
+		MediaConnectFlows?: Array<MediaConnectFlowRequest> | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __string */
-		RequestId?: string;
+		RequestId?: string | null;
 
 		/** Placeholder documentation for __string */
-		RoleArn?: string;
+		RoleArn?: string | null;
 
 		/** Placeholder documentation for __listOfInputSourceRequest */
-		Sources?: Array<InputSourceRequest>;
+		Sources?: Array<InputSourceRequest> | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** Placeholder documentation for InputType */
-		Type?: InputType;
+		Type?: InputType | null;
 
 		/**
 		 * Settings for a private VPC Input.
@@ -5744,7 +5744,7 @@ export namespace MyNS {
 		 * This property requires setting the roleArn property on Input creation.
 		 * Not compatible with the inputSecurityGroups property.
 		 */
-		Vpc?: InputVpcRequest;
+		Vpc?: InputVpcRequest | null;
 	}
 
 
@@ -5752,10 +5752,10 @@ export namespace MyNS {
 	export interface CreateInputSecurityGroupRequest {
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** Placeholder documentation for __listOfInputWhitelistRuleCidr */
-		WhitelistRules?: Array<InputWhitelistRuleCidr>;
+		WhitelistRules?: Array<InputWhitelistRuleCidr> | null;
 	}
 
 
@@ -5810,7 +5810,7 @@ export namespace MyNS {
 		RequestId: string;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -5818,7 +5818,7 @@ export namespace MyNS {
 	export interface CreateTagsRequest {
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -6315,10 +6315,10 @@ export namespace MyNS {
 	export interface InputDeviceConfigurableSettings {
 
 		/** The source to activate (use) from the input device. */
-		ConfiguredInput?: InputDeviceHdSettingsConfiguredInput;
+		ConfiguredInput?: InputDeviceHdSettingsConfiguredInput | null;
 
 		/** Placeholder documentation for __integer */
-		MaxBitrate?: number;
+		MaxBitrate?: number | null;
 	}
 
 
@@ -6566,16 +6566,16 @@ export namespace MyNS {
 		Count: number;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __string */
-		RequestId?: string;
+		RequestId?: string | null;
 
 		/** Placeholder documentation for __string */
-		Start?: string;
+		Start?: string | null;
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -6707,7 +6707,7 @@ export namespace MyNS {
 		ChannelClass: ChannelChannelClass;
 
 		/** Placeholder documentation for __listOfOutputDestination */
-		Destinations?: Array<OutputDestination>;
+		Destinations?: Array<OutputDestination> | null;
 	}
 
 
@@ -6715,25 +6715,25 @@ export namespace MyNS {
 	export interface UpdateChannelRequest {
 
 		/** Placeholder documentation for __listOfOutputDestination */
-		Destinations?: Array<OutputDestination>;
+		Destinations?: Array<OutputDestination> | null;
 
 		/** Encoder Settings */
-		EncoderSettings?: EncoderSettings;
+		EncoderSettings?: EncoderSettings | null;
 
 		/** Placeholder documentation for __listOfInputAttachment */
-		InputAttachments?: Array<InputAttachment>;
+		InputAttachments?: Array<InputAttachment> | null;
 
 		/** Placeholder documentation for InputSpecification */
-		InputSpecification?: InputSpecification;
+		InputSpecification?: InputSpecification | null;
 
 		/** The log level the user wants for their channel. */
-		LogLevel?: ChannelLogLevel;
+		LogLevel?: ChannelLogLevel | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __string */
-		RoleArn?: string;
+		RoleArn?: string | null;
 	}
 
 
@@ -6741,10 +6741,10 @@ export namespace MyNS {
 	export interface UpdateInputDeviceRequest {
 
 		/** Configurable settings for the input device. */
-		HdDeviceSettings?: InputDeviceConfigurableSettings;
+		HdDeviceSettings?: InputDeviceConfigurableSettings | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 	}
 
 
@@ -6752,25 +6752,25 @@ export namespace MyNS {
 	export interface UpdateInputRequest {
 
 		/** Placeholder documentation for __listOfInputDestinationRequest */
-		Destinations?: Array<InputDestinationRequest>;
+		Destinations?: Array<InputDestinationRequest> | null;
 
 		/** Placeholder documentation for __listOfInputDeviceRequest */
-		InputDevices?: Array<InputDeviceRequest>;
+		InputDevices?: Array<InputDeviceRequest> | null;
 
 		/** Placeholder documentation for __listOf__string */
-		InputSecurityGroups?: Array<string>;
+		InputSecurityGroups?: Array<string> | null;
 
 		/** Placeholder documentation for __listOfMediaConnectFlowRequest */
-		MediaConnectFlows?: Array<MediaConnectFlowRequest>;
+		MediaConnectFlows?: Array<MediaConnectFlowRequest> | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 
 		/** Placeholder documentation for __string */
-		RoleArn?: string;
+		RoleArn?: string | null;
 
 		/** Placeholder documentation for __listOfInputSourceRequest */
-		Sources?: Array<InputSourceRequest>;
+		Sources?: Array<InputSourceRequest> | null;
 	}
 
 
@@ -6778,10 +6778,10 @@ export namespace MyNS {
 	export interface UpdateInputSecurityGroupRequest {
 
 		/** Placeholder documentation for Tags */
-		Tags?: Tags;
+		Tags?: Tags | null;
 
 		/** Placeholder documentation for __listOfInputWhitelistRuleCidr */
-		WhitelistRules?: Array<InputWhitelistRuleCidr>;
+		WhitelistRules?: Array<InputWhitelistRuleCidr> | null;
 	}
 
 
@@ -6789,7 +6789,7 @@ export namespace MyNS {
 	export interface UpdateMultiplexProgramRequest {
 
 		/** Multiplex Program settings configuration. */
-		MultiplexProgramSettings?: MultiplexProgramSettings;
+		MultiplexProgramSettings?: MultiplexProgramSettings | null;
 	}
 
 
@@ -6797,10 +6797,10 @@ export namespace MyNS {
 	export interface UpdateMultiplexRequest {
 
 		/** Contains configuration for a Multiplex event */
-		MultiplexSettings?: MultiplexSettings;
+		MultiplexSettings?: MultiplexSettings | null;
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 	}
 
 
@@ -6808,7 +6808,7 @@ export namespace MyNS {
 	export interface UpdateReservationRequest {
 
 		/** Placeholder documentation for __string */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	@Injectable()
@@ -6844,7 +6844,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeScheduleResponse} Success
 		 */
-		DescribeSchedule(channelId: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<DescribeScheduleResponse> {
+		DescribeSchedule(channelId: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<DescribeScheduleResponse> {
 			return this.http.get<DescribeScheduleResponse>(this.baseUri + 'prod/channels/' + (channelId == null ? '' : encodeURIComponent(channelId)) + '/schedule&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -6864,7 +6864,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelsResponse} Success
 		 */
-		ListChannels(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListChannelsResponse> {
+		ListChannels(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListChannelsResponse> {
 			return this.http.get<ListChannelsResponse>(this.baseUri + 'prod/channels?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -6884,7 +6884,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInputsResponse} Success
 		 */
-		ListInputs(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListInputsResponse> {
+		ListInputs(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListInputsResponse> {
 			return this.http.get<ListInputsResponse>(this.baseUri + 'prod/inputs?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -6904,7 +6904,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInputSecurityGroupsResponse} Success
 		 */
-		ListInputSecurityGroups(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListInputSecurityGroupsResponse> {
+		ListInputSecurityGroups(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListInputSecurityGroupsResponse> {
 			return this.http.get<ListInputSecurityGroupsResponse>(this.baseUri + 'prod/inputSecurityGroups?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -6926,7 +6926,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMultiplexesResponse} Success
 		 */
-		ListMultiplexes(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListMultiplexesResponse> {
+		ListMultiplexes(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListMultiplexesResponse> {
 			return this.http.get<ListMultiplexesResponse>(this.baseUri + 'prod/multiplexes?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -6950,7 +6950,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMultiplexProgramsResponse} Success
 		 */
-		ListMultiplexPrograms(maxResults: number, multiplexId: string, nextToken: string, MaxResults: string, NextToken: string): Observable<ListMultiplexProgramsResponse> {
+		ListMultiplexPrograms(maxResults: number | null | undefined, multiplexId: string, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListMultiplexProgramsResponse> {
 			return this.http.get<ListMultiplexProgramsResponse>(this.baseUri + 'prod/multiplexes/' + (multiplexId == null ? '' : encodeURIComponent(multiplexId)) + '/programs?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -7202,7 +7202,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInputDevicesResponse} Success
 		 */
-		ListInputDevices(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListInputDevicesResponse> {
+		ListInputDevices(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListInputDevicesResponse> {
 			return this.http.get<ListInputDevicesResponse>(this.baseUri + 'prod/inputDevices?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -7223,7 +7223,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListOfferingsResponse} Success
 		 */
-		ListOfferings(channelClass: string, channelConfiguration: string, codec: string, duration: string, maxResults: number, maximumBitrate: string, maximumFramerate: string, nextToken: string, resolution: string, resourceType: string, specialFeature: string, videoQuality: string, MaxResults: string, NextToken: string): Observable<ListOfferingsResponse> {
+		ListOfferings(channelClass: string | null | undefined, channelConfiguration: string | null | undefined, codec: string | null | undefined, duration: string | null | undefined, maxResults: number | null | undefined, maximumBitrate: string | null | undefined, maximumFramerate: string | null | undefined, nextToken: string | null | undefined, resolution: string | null | undefined, resourceType: string | null | undefined, specialFeature: string | null | undefined, videoQuality: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListOfferingsResponse> {
 			return this.http.get<ListOfferingsResponse>(this.baseUri + 'prod/offerings?channelClass=' + (channelClass == null ? '' : encodeURIComponent(channelClass)) + '&channelConfiguration=' + (channelConfiguration == null ? '' : encodeURIComponent(channelConfiguration)) + '&codec=' + (codec == null ? '' : encodeURIComponent(codec)) + '&duration=' + (duration == null ? '' : encodeURIComponent(duration)) + '&maxResults=' + maxResults + '&maximumBitrate=' + (maximumBitrate == null ? '' : encodeURIComponent(maximumBitrate)) + '&maximumFramerate=' + (maximumFramerate == null ? '' : encodeURIComponent(maximumFramerate)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&resolution=' + (resolution == null ? '' : encodeURIComponent(resolution)) + '&resourceType=' + (resourceType == null ? '' : encodeURIComponent(resourceType)) + '&specialFeature=' + (specialFeature == null ? '' : encodeURIComponent(specialFeature)) + '&videoQuality=' + (videoQuality == null ? '' : encodeURIComponent(videoQuality)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -7242,7 +7242,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListReservationsResponse} Success
 		 */
-		ListReservations(channelClass: string, codec: string, maxResults: number, maximumBitrate: string, maximumFramerate: string, nextToken: string, resolution: string, resourceType: string, specialFeature: string, videoQuality: string, MaxResults: string, NextToken: string): Observable<ListReservationsResponse> {
+		ListReservations(channelClass: string | null | undefined, codec: string | null | undefined, maxResults: number | null | undefined, maximumBitrate: string | null | undefined, maximumFramerate: string | null | undefined, nextToken: string | null | undefined, resolution: string | null | undefined, resourceType: string | null | undefined, specialFeature: string | null | undefined, videoQuality: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListReservationsResponse> {
 			return this.http.get<ListReservationsResponse>(this.baseUri + 'prod/reservations?channelClass=' + (channelClass == null ? '' : encodeURIComponent(channelClass)) + '&codec=' + (codec == null ? '' : encodeURIComponent(codec)) + '&maxResults=' + maxResults + '&maximumBitrate=' + (maximumBitrate == null ? '' : encodeURIComponent(maximumBitrate)) + '&maximumFramerate=' + (maximumFramerate == null ? '' : encodeURIComponent(maximumFramerate)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&resolution=' + (resolution == null ? '' : encodeURIComponent(resolution)) + '&resourceType=' + (resourceType == null ? '' : encodeURIComponent(resourceType)) + '&specialFeature=' + (specialFeature == null ? '' : encodeURIComponent(specialFeature)) + '&videoQuality=' + (videoQuality == null ? '' : encodeURIComponent(videoQuality)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -7310,138 +7310,138 @@ export namespace MyNS {
 	export interface BatchUpdateSchedulePutBody {
 
 		/** A list of schedule actions to create (in a request) or that have been created (in a response). */
-		creates?: BatchUpdateSchedulePutBodyCreates;
+		creates?: BatchUpdateSchedulePutBodyCreates | null;
 
 		/** A list of schedule actions to delete. */
-		deletes?: BatchUpdateSchedulePutBodyDeletes;
+		deletes?: BatchUpdateSchedulePutBodyDeletes | null;
 	}
 
 	export interface BatchUpdateSchedulePutBodyCreates {
 
 		/** Placeholder documentation for __listOfScheduleAction */
-		ScheduleActions?: Array<ScheduleAction>;
+		ScheduleActions?: Array<ScheduleAction> | null;
 	}
 
 	export interface BatchUpdateSchedulePutBodyDeletes {
 
 		/** Placeholder documentation for __listOf__string */
-		ActionNames?: Array<string>;
+		ActionNames?: Array<string> | null;
 	}
 
 	export interface CreateChannelPostBody {
 
 		/** A standard channel has two encoding pipelines and a single pipeline channel only has one. */
-		channelClass?: ChannelChannelClass;
+		channelClass?: ChannelChannelClass | null;
 
 		/** Placeholder documentation for __listOfOutputDestination */
-		destinations?: Array<OutputDestination>;
+		destinations?: Array<OutputDestination> | null;
 
 		/** Encoder Settings */
-		encoderSettings?: CreateChannelPostBodyEncoderSettings;
+		encoderSettings?: CreateChannelPostBodyEncoderSettings | null;
 
 		/** Placeholder documentation for __listOfInputAttachment */
-		inputAttachments?: Array<InputAttachment>;
+		inputAttachments?: Array<InputAttachment> | null;
 
 		/** Placeholder documentation for InputSpecification */
-		inputSpecification?: CreateChannelPostBodyInputSpecification;
+		inputSpecification?: CreateChannelPostBodyInputSpecification | null;
 
 		/** The log level the user wants for their channel. */
-		logLevel?: ChannelLogLevel;
+		logLevel?: ChannelLogLevel | null;
 
 		/** Placeholder documentation for __string */
-		name?: string;
+		name?: string | null;
 
 		/** Placeholder documentation for __string */
-		requestId?: string;
+		requestId?: string | null;
 
 		/** Placeholder documentation for __string */
-		reserved?: string;
+		reserved?: string | null;
 
 		/** Placeholder documentation for __string */
-		roleArn?: string;
+		roleArn?: string | null;
 
 		/** Placeholder documentation for Tags */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateChannelPostBodyEncoderSettings {
 
 		/** Placeholder documentation for __listOfAudioDescription */
-		AudioDescriptions?: Array<AudioDescription>;
+		AudioDescriptions?: Array<AudioDescription> | null;
 
 		/** Avail Blanking */
-		AvailBlanking?: AvailBlanking;
+		AvailBlanking?: AvailBlanking | null;
 
 		/** Avail Configuration */
-		AvailConfiguration?: AvailConfiguration;
+		AvailConfiguration?: AvailConfiguration | null;
 
 		/** Blackout Slate */
-		BlackoutSlate?: BlackoutSlate;
+		BlackoutSlate?: BlackoutSlate | null;
 
 		/** Placeholder documentation for __listOfCaptionDescription */
-		CaptionDescriptions?: Array<CaptionDescription>;
+		CaptionDescriptions?: Array<CaptionDescription> | null;
 
 		/** Global Configuration */
-		GlobalConfiguration?: GlobalConfiguration;
+		GlobalConfiguration?: GlobalConfiguration | null;
 
 		/** Nielsen Configuration */
-		NielsenConfiguration?: NielsenConfiguration;
+		NielsenConfiguration?: NielsenConfiguration | null;
 
 		/** Placeholder documentation for __listOfOutputGroup */
-		OutputGroups?: Array<OutputGroup>;
+		OutputGroups?: Array<OutputGroup> | null;
 
 		/** Timecode Config */
-		TimecodeConfig?: TimecodeConfig;
+		TimecodeConfig?: TimecodeConfig | null;
 
 		/** Placeholder documentation for __listOfVideoDescription */
-		VideoDescriptions?: Array<VideoDescription>;
+		VideoDescriptions?: Array<VideoDescription> | null;
 	}
 
 	export interface CreateChannelPostBodyInputSpecification {
 
 		/** codec in increasing order of complexity */
-		Codec?: InputSpecificationCodec;
+		Codec?: InputSpecificationCodec | null;
 
 		/** Maximum input bitrate in megabits per second. Bitrates up to 50 Mbps are supported currently. */
-		MaximumBitrate?: InputSpecificationMaximumBitrate;
+		MaximumBitrate?: InputSpecificationMaximumBitrate | null;
 
 		/**
 		 * Input resolution based on lines of vertical resolution in the input; SD is less than 720 lines, HD is 720 to 1080 lines, UHD is greater than 1080 lines
 		 */
-		Resolution?: InputSpecificationResolution;
+		Resolution?: InputSpecificationResolution | null;
 	}
 
 	export interface CreateInputPostBody {
 
 		/** Placeholder documentation for __listOfInputDestinationRequest */
-		destinations?: Array<InputDestinationRequest>;
+		destinations?: Array<InputDestinationRequest> | null;
 
 		/** Placeholder documentation for __listOfInputDeviceSettings */
-		inputDevices?: Array<InputDeviceSettings>;
+		inputDevices?: Array<InputDeviceSettings> | null;
 
 		/** Placeholder documentation for __listOf__string */
-		inputSecurityGroups?: Array<string>;
+		inputSecurityGroups?: Array<string> | null;
 
 		/** Placeholder documentation for __listOfMediaConnectFlowRequest */
-		mediaConnectFlows?: Array<MediaConnectFlowRequest>;
+		mediaConnectFlows?: Array<MediaConnectFlowRequest> | null;
 
 		/** Placeholder documentation for __string */
-		name?: string;
+		name?: string | null;
 
 		/** Placeholder documentation for __string */
-		requestId?: string;
+		requestId?: string | null;
 
 		/** Placeholder documentation for __string */
-		roleArn?: string;
+		roleArn?: string | null;
 
 		/** Placeholder documentation for __listOfInputSourceRequest */
-		sources?: Array<InputSourceRequest>;
+		sources?: Array<InputSourceRequest> | null;
 
 		/** Placeholder documentation for Tags */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/** Placeholder documentation for InputType */
-		type?: InputType;
+		type?: InputType | null;
 
 		/**
 		 * Settings for a private VPC Input.
@@ -7449,25 +7449,25 @@ export namespace MyNS {
 		 * This property requires setting the roleArn property on Input creation.
 		 * Not compatible with the inputSecurityGroups property.
 		 */
-		vpc?: CreateInputPostBodyVpc;
+		vpc?: CreateInputPostBodyVpc | null;
 	}
 
 	export interface CreateInputPostBodyVpc {
 
 		/** Placeholder documentation for __listOf__string */
-		SecurityGroupIds?: Array<string>;
+		SecurityGroupIds?: Array<string> | null;
 
 		/** Placeholder documentation for __listOf__string */
-		SubnetIds?: Array<string>;
+		SubnetIds?: Array<string> | null;
 	}
 
 	export interface CreateInputSecurityGroupPostBody {
 
 		/** Placeholder documentation for Tags */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/** Placeholder documentation for __listOfInputWhitelistRuleCidr */
-		whitelistRules?: Array<InputWhitelistRuleCidr>;
+		whitelistRules?: Array<InputWhitelistRuleCidr> | null;
 	}
 
 	export interface CreateMultiplexPostBody {
@@ -7497,7 +7497,7 @@ export namespace MyNS {
 		requestId: string;
 
 		/** Placeholder documentation for Tags */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateMultiplexPostBodyMultiplexSettings {
@@ -7507,28 +7507,28 @@ export namespace MyNS {
 		 * Minimum: 1000
 		 * Maximum: 3000
 		 */
-		MaximumVideoBufferDelayMilliseconds?: number;
+		MaximumVideoBufferDelayMilliseconds?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1000000Max100000000
 		 * Minimum: 1000000
 		 * Maximum: 100000000
 		 */
-		TransportStreamBitrate?: number;
+		TransportStreamBitrate?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max65535
 		 * Minimum: 0
 		 * Maximum: 65535
 		 */
-		TransportStreamId?: number;
+		TransportStreamId?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max100000000
 		 * Minimum: 0
 		 * Maximum: 100000000
 		 */
-		TransportStreamReservedBitrate?: number;
+		TransportStreamReservedBitrate?: number | null;
 	}
 
 	export interface CreateMultiplexProgramPostBody {
@@ -7561,139 +7561,139 @@ export namespace MyNS {
 		 * it will not switch back to the other pipeline based on it recovering to a healthy state,
 		 * it will only switch if the active pipeline becomes unhealthy.
 		 */
-		PreferredChannelPipeline?: MultiplexProgramSettingsPreferredChannelPipeline;
+		PreferredChannelPipeline?: MultiplexProgramSettingsPreferredChannelPipeline | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max65535
 		 * Minimum: 0
 		 * Maximum: 65535
 		 */
-		ProgramNumber?: number;
+		ProgramNumber?: number | null;
 
 		/** Transport stream service descriptor configuration for the Multiplex program. */
-		ServiceDescriptor?: MultiplexProgramServiceDescriptor;
+		ServiceDescriptor?: MultiplexProgramServiceDescriptor | null;
 
 		/** The video configuration for each program in a multiplex. */
-		VideoSettings?: MultiplexVideoSettings;
+		VideoSettings?: MultiplexVideoSettings | null;
 	}
 
 	export interface CreateTagsPostBody {
 
 		/** Placeholder documentation for Tags */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface UpdateChannelPutBody {
 
 		/** Placeholder documentation for __listOfOutputDestination */
-		destinations?: Array<OutputDestination>;
+		destinations?: Array<OutputDestination> | null;
 
 		/** Encoder Settings */
-		encoderSettings?: UpdateChannelPutBodyEncoderSettings;
+		encoderSettings?: UpdateChannelPutBodyEncoderSettings | null;
 
 		/** Placeholder documentation for __listOfInputAttachment */
-		inputAttachments?: Array<InputAttachment>;
+		inputAttachments?: Array<InputAttachment> | null;
 
 		/** Placeholder documentation for InputSpecification */
-		inputSpecification?: UpdateChannelPutBodyInputSpecification;
+		inputSpecification?: UpdateChannelPutBodyInputSpecification | null;
 
 		/** The log level the user wants for their channel. */
-		logLevel?: ChannelLogLevel;
+		logLevel?: ChannelLogLevel | null;
 
 		/** Placeholder documentation for __string */
-		name?: string;
+		name?: string | null;
 
 		/** Placeholder documentation for __string */
-		roleArn?: string;
+		roleArn?: string | null;
 	}
 
 	export interface UpdateChannelPutBodyEncoderSettings {
 
 		/** Placeholder documentation for __listOfAudioDescription */
-		AudioDescriptions?: Array<AudioDescription>;
+		AudioDescriptions?: Array<AudioDescription> | null;
 
 		/** Avail Blanking */
-		AvailBlanking?: AvailBlanking;
+		AvailBlanking?: AvailBlanking | null;
 
 		/** Avail Configuration */
-		AvailConfiguration?: AvailConfiguration;
+		AvailConfiguration?: AvailConfiguration | null;
 
 		/** Blackout Slate */
-		BlackoutSlate?: BlackoutSlate;
+		BlackoutSlate?: BlackoutSlate | null;
 
 		/** Placeholder documentation for __listOfCaptionDescription */
-		CaptionDescriptions?: Array<CaptionDescription>;
+		CaptionDescriptions?: Array<CaptionDescription> | null;
 
 		/** Global Configuration */
-		GlobalConfiguration?: GlobalConfiguration;
+		GlobalConfiguration?: GlobalConfiguration | null;
 
 		/** Nielsen Configuration */
-		NielsenConfiguration?: NielsenConfiguration;
+		NielsenConfiguration?: NielsenConfiguration | null;
 
 		/** Placeholder documentation for __listOfOutputGroup */
-		OutputGroups?: Array<OutputGroup>;
+		OutputGroups?: Array<OutputGroup> | null;
 
 		/** Timecode Config */
-		TimecodeConfig?: TimecodeConfig;
+		TimecodeConfig?: TimecodeConfig | null;
 
 		/** Placeholder documentation for __listOfVideoDescription */
-		VideoDescriptions?: Array<VideoDescription>;
+		VideoDescriptions?: Array<VideoDescription> | null;
 	}
 
 	export interface UpdateChannelPutBodyInputSpecification {
 
 		/** codec in increasing order of complexity */
-		Codec?: InputSpecificationCodec;
+		Codec?: InputSpecificationCodec | null;
 
 		/** Maximum input bitrate in megabits per second. Bitrates up to 50 Mbps are supported currently. */
-		MaximumBitrate?: InputSpecificationMaximumBitrate;
+		MaximumBitrate?: InputSpecificationMaximumBitrate | null;
 
 		/**
 		 * Input resolution based on lines of vertical resolution in the input; SD is less than 720 lines, HD is 720 to 1080 lines, UHD is greater than 1080 lines
 		 */
-		Resolution?: InputSpecificationResolution;
+		Resolution?: InputSpecificationResolution | null;
 	}
 
 	export interface UpdateInputPutBody {
 
 		/** Placeholder documentation for __listOfInputDestinationRequest */
-		destinations?: Array<InputDestinationRequest>;
+		destinations?: Array<InputDestinationRequest> | null;
 
 		/** Placeholder documentation for __listOfInputDeviceRequest */
-		inputDevices?: Array<InputDeviceRequest>;
+		inputDevices?: Array<InputDeviceRequest> | null;
 
 		/** Placeholder documentation for __listOf__string */
-		inputSecurityGroups?: Array<string>;
+		inputSecurityGroups?: Array<string> | null;
 
 		/** Placeholder documentation for __listOfMediaConnectFlowRequest */
-		mediaConnectFlows?: Array<MediaConnectFlowRequest>;
+		mediaConnectFlows?: Array<MediaConnectFlowRequest> | null;
 
 		/** Placeholder documentation for __string */
-		name?: string;
+		name?: string | null;
 
 		/** Placeholder documentation for __string */
-		roleArn?: string;
+		roleArn?: string | null;
 
 		/** Placeholder documentation for __listOfInputSourceRequest */
-		sources?: Array<InputSourceRequest>;
+		sources?: Array<InputSourceRequest> | null;
 	}
 
 	export interface UpdateInputSecurityGroupPutBody {
 
 		/** Placeholder documentation for Tags */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/** Placeholder documentation for __listOfInputWhitelistRuleCidr */
-		whitelistRules?: Array<InputWhitelistRuleCidr>;
+		whitelistRules?: Array<InputWhitelistRuleCidr> | null;
 	}
 
 	export interface UpdateMultiplexPutBody {
 
 		/** Contains configuration for a Multiplex event */
-		multiplexSettings?: UpdateMultiplexPutBodyMultiplexSettings;
+		multiplexSettings?: UpdateMultiplexPutBodyMultiplexSettings | null;
 
 		/** Placeholder documentation for __string */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface UpdateMultiplexPutBodyMultiplexSettings {
@@ -7703,34 +7703,34 @@ export namespace MyNS {
 		 * Minimum: 1000
 		 * Maximum: 3000
 		 */
-		MaximumVideoBufferDelayMilliseconds?: number;
+		MaximumVideoBufferDelayMilliseconds?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin1000000Max100000000
 		 * Minimum: 1000000
 		 * Maximum: 100000000
 		 */
-		TransportStreamBitrate?: number;
+		TransportStreamBitrate?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max65535
 		 * Minimum: 0
 		 * Maximum: 65535
 		 */
-		TransportStreamId?: number;
+		TransportStreamId?: number | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max100000000
 		 * Minimum: 0
 		 * Maximum: 100000000
 		 */
-		TransportStreamReservedBitrate?: number;
+		TransportStreamReservedBitrate?: number | null;
 	}
 
 	export interface UpdateMultiplexProgramPutBody {
 
 		/** Multiplex Program settings configuration. */
-		multiplexProgramSettings?: UpdateMultiplexProgramPutBodyMultiplexProgramSettings;
+		multiplexProgramSettings?: UpdateMultiplexProgramPutBodyMultiplexProgramSettings | null;
 	}
 
 	export interface UpdateMultiplexProgramPutBodyMultiplexProgramSettings {
@@ -7742,44 +7742,44 @@ export namespace MyNS {
 		 * it will not switch back to the other pipeline based on it recovering to a healthy state,
 		 * it will only switch if the active pipeline becomes unhealthy.
 		 */
-		PreferredChannelPipeline?: MultiplexProgramSettingsPreferredChannelPipeline;
+		PreferredChannelPipeline?: MultiplexProgramSettingsPreferredChannelPipeline | null;
 
 		/**
 		 * Placeholder documentation for __integerMin0Max65535
 		 * Minimum: 0
 		 * Maximum: 65535
 		 */
-		ProgramNumber?: number;
+		ProgramNumber?: number | null;
 
 		/** Transport stream service descriptor configuration for the Multiplex program. */
-		ServiceDescriptor?: MultiplexProgramServiceDescriptor;
+		ServiceDescriptor?: MultiplexProgramServiceDescriptor | null;
 
 		/** The video configuration for each program in a multiplex. */
-		VideoSettings?: MultiplexVideoSettings;
+		VideoSettings?: MultiplexVideoSettings | null;
 	}
 
 	export interface UpdateReservationPutBody {
 
 		/** Placeholder documentation for __string */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface UpdateInputDevicePutBody {
 
 		/** Configurable settings for the input device. */
-		hdDeviceSettings?: UpdateInputDevicePutBodyHdDeviceSettings;
+		hdDeviceSettings?: UpdateInputDevicePutBodyHdDeviceSettings | null;
 
 		/** Placeholder documentation for __string */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface UpdateInputDevicePutBodyHdDeviceSettings {
 
 		/** The source to activate (use) from the input device. */
-		ConfiguredInput?: InputDeviceHdSettingsConfiguredInput;
+		ConfiguredInput?: InputDeviceHdSettingsConfiguredInput | null;
 
 		/** Placeholder documentation for __integer */
-		MaxBitrate?: number;
+		MaxBitrate?: number | null;
 	}
 
 	export interface PurchaseOfferingPostBody {
@@ -7792,16 +7792,16 @@ export namespace MyNS {
 		count: number;
 
 		/** Placeholder documentation for __string */
-		name?: string;
+		name?: string | null;
 
 		/** Placeholder documentation for __string */
-		requestId?: string;
+		requestId?: string | null;
 
 		/** Placeholder documentation for __string */
-		start?: string;
+		start?: string | null;
 
 		/** Placeholder documentation for Tags */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface UpdateChannelClassPutBody {
@@ -7813,7 +7813,7 @@ export namespace MyNS {
 		channelClass: ChannelChannelClass;
 
 		/** Placeholder documentation for __listOfOutputDestination */
-		destinations?: Array<OutputDestination>;
+		destinations?: Array<OutputDestination> | null;
 	}
 
 }

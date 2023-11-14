@@ -34,32 +34,32 @@ export namespace MyNS {
 	}
 
 	export interface DeleteInsightRulesOutput {
-		Failures?: Array<PartialFailure>;
+		Failures?: Array<PartialFailure> | null;
 	}
 
 
 	/** This array is empty if the API operation was successful for all the rules specified in the request. If the operation could not process one of the rules, the following data is returned for each of those rules. */
 	export interface PartialFailure {
-		FailureResource?: string;
-		ExceptionType?: string;
-		FailureCode?: string;
-		FailureDescription?: string;
+		FailureResource?: string | null;
+		ExceptionType?: string | null;
+		FailureCode?: string | null;
+		FailureDescription?: string | null;
 	}
 
 	export interface DescribeAlarmHistoryOutput {
-		AlarmHistoryItems?: Array<AlarmHistoryItem>;
-		NextToken?: string;
+		AlarmHistoryItems?: Array<AlarmHistoryItem> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents the history of a specific alarm. */
 	export interface AlarmHistoryItem {
-		AlarmName?: string;
-		AlarmType?: AlarmHistoryItemAlarmType;
-		Timestamp?: Date;
-		HistoryItemType?: AlarmHistoryItemHistoryItemType;
-		HistorySummary?: string;
-		HistoryData?: string;
+		AlarmName?: string | null;
+		AlarmType?: AlarmHistoryItemAlarmType | null;
+		Timestamp?: Date | null;
+		HistoryItemType?: AlarmHistoryItemHistoryItemType | null;
+		HistorySummary?: string | null;
+		HistoryData?: string | null;
 	}
 
 	export enum AlarmHistoryItemAlarmType { CompositeAlarm = 0, MetricAlarm = 1 }
@@ -72,27 +72,27 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAlarmsOutput {
-		CompositeAlarms?: Array<CompositeAlarm>;
-		MetricAlarms?: Array<MetricAlarm>;
-		NextToken?: string;
+		CompositeAlarms?: Array<CompositeAlarm> | null;
+		MetricAlarms?: Array<MetricAlarm> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The details about a composite alarm. */
 	export interface CompositeAlarm {
-		ActionsEnabled?: boolean;
-		AlarmActions?: Array<string>;
-		AlarmArn?: string;
-		AlarmConfigurationUpdatedTimestamp?: Date;
-		AlarmDescription?: string;
-		AlarmName?: string;
-		AlarmRule?: string;
-		InsufficientDataActions?: Array<string>;
-		OKActions?: Array<string>;
-		StateReason?: string;
-		StateReasonData?: string;
-		StateUpdatedTimestamp?: Date;
-		StateValue?: CompositeAlarmStateValue;
+		ActionsEnabled?: boolean | null;
+		AlarmActions?: Array<string> | null;
+		AlarmArn?: string | null;
+		AlarmConfigurationUpdatedTimestamp?: Date | null;
+		AlarmDescription?: string | null;
+		AlarmName?: string | null;
+		AlarmRule?: string | null;
+		InsufficientDataActions?: Array<string> | null;
+		OKActions?: Array<string> | null;
+		StateReason?: string | null;
+		StateReasonData?: string | null;
+		StateUpdatedTimestamp?: Date | null;
+		StateValue?: CompositeAlarmStateValue | null;
 	}
 
 	export enum CompositeAlarmStateValue { OK = 0, ALARM = 1, INSUFFICIENT_DATA = 2 }
@@ -100,33 +100,33 @@ export namespace MyNS {
 
 	/** The details about a metric alarm. */
 	export interface MetricAlarm {
-		AlarmName?: string;
-		AlarmArn?: string;
-		AlarmDescription?: string;
-		AlarmConfigurationUpdatedTimestamp?: Date;
-		ActionsEnabled?: boolean;
-		OKActions?: Array<string>;
-		AlarmActions?: Array<string>;
-		InsufficientDataActions?: Array<string>;
-		StateValue?: CompositeAlarmStateValue;
-		StateReason?: string;
-		StateReasonData?: string;
-		StateUpdatedTimestamp?: Date;
-		MetricName?: string;
-		Namespace?: string;
-		Statistic?: MetricAlarmStatistic;
-		ExtendedStatistic?: string;
-		Dimensions?: Array<Dimension>;
-		Period?: number;
-		Unit?: MetricAlarmUnit;
-		EvaluationPeriods?: number;
-		DatapointsToAlarm?: number;
-		Threshold?: number;
-		ComparisonOperator?: MetricAlarmComparisonOperator;
-		TreatMissingData?: string;
-		EvaluateLowSampleCountPercentile?: string;
-		Metrics?: Array<MetricDataQuery>;
-		ThresholdMetricId?: string;
+		AlarmName?: string | null;
+		AlarmArn?: string | null;
+		AlarmDescription?: string | null;
+		AlarmConfigurationUpdatedTimestamp?: Date | null;
+		ActionsEnabled?: boolean | null;
+		OKActions?: Array<string> | null;
+		AlarmActions?: Array<string> | null;
+		InsufficientDataActions?: Array<string> | null;
+		StateValue?: CompositeAlarmStateValue | null;
+		StateReason?: string | null;
+		StateReasonData?: string | null;
+		StateUpdatedTimestamp?: Date | null;
+		MetricName?: string | null;
+		Namespace?: string | null;
+		Statistic?: MetricAlarmStatistic | null;
+		ExtendedStatistic?: string | null;
+		Dimensions?: Array<Dimension> | null;
+		Period?: number | null;
+		Unit?: MetricAlarmUnit | null;
+		EvaluationPeriods?: number | null;
+		DatapointsToAlarm?: number | null;
+		Threshold?: number | null;
+		ComparisonOperator?: MetricAlarmComparisonOperator | null;
+		TreatMissingData?: string | null;
+		EvaluateLowSampleCountPercentile?: string | null;
+		Metrics?: Array<MetricDataQuery> | null;
+		ThresholdMetricId?: string | null;
 	}
 
 	export enum MetricAlarmStatistic { SampleCount = 0, Average = 1, Sum = 2, Minimum = 3, Maximum = 4 }
@@ -141,11 +141,11 @@ export namespace MyNS {
 		Id: string;
 
 		/** This structure defines the metric to be returned, along with the statistics, period, and units. */
-		MetricStat?: MetricStat;
-		Expression?: string;
-		Label?: string;
-		ReturnData?: boolean;
-		Period?: number;
+		MetricStat?: MetricStat | null;
+		Expression?: string | null;
+		Label?: string | null;
+		ReturnData?: boolean | null;
+		Period?: number | null;
 	}
 
 
@@ -159,46 +159,46 @@ export namespace MyNS {
 		Metric: Metric;
 		Period: number;
 		Stat: string;
-		Unit?: MetricStatUnit;
+		Unit?: MetricStatUnit | null;
 	}
 
 
 	/** Represents a specific metric. */
 	export interface Metric {
-		Namespace?: string;
-		MetricName?: string;
-		Dimensions?: Array<Dimension>;
+		Namespace?: string | null;
+		MetricName?: string | null;
+		Dimensions?: Array<Dimension> | null;
 	}
 
 	export enum MetricStatUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface DescribeAlarmsForMetricOutput {
-		MetricAlarms?: Array<MetricAlarm>;
+		MetricAlarms?: Array<MetricAlarm> | null;
 	}
 
 	export interface DescribeAnomalyDetectorsOutput {
-		AnomalyDetectors?: Array<AnomalyDetector>;
-		NextToken?: string;
+		AnomalyDetectors?: Array<AnomalyDetector> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** An anomaly detection model associated with a particular CloudWatch metric and statistic. You can use the model to display a band of expected normal values when the metric is graphed. */
 	export interface AnomalyDetector {
-		Namespace?: string;
-		MetricName?: string;
-		Dimensions?: Array<Dimension>;
-		Stat?: string;
+		Namespace?: string | null;
+		MetricName?: string | null;
+		Dimensions?: Array<Dimension> | null;
+		Stat?: string | null;
 
 		/** The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric. */
-		Configuration?: AnomalyDetectorConfiguration;
-		StateValue?: AnomalyDetectorStateValue;
+		Configuration?: AnomalyDetectorConfiguration | null;
+		StateValue?: AnomalyDetectorStateValue | null;
 	}
 
 
 	/** The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric. */
 	export interface AnomalyDetectorConfiguration {
-		ExcludedTimeRanges?: Array<Range>;
-		MetricTimezone?: string;
+		ExcludedTimeRanges?: Array<Range> | null;
+		MetricTimezone?: string | null;
 	}
 
 
@@ -211,8 +211,8 @@ export namespace MyNS {
 	export enum AnomalyDetectorStateValue { PENDING_TRAINING = 0, TRAINED_INSUFFICIENT_DATA = 1, TRAINED = 2 }
 
 	export interface DescribeInsightRulesOutput {
-		NextToken?: string;
-		InsightRules?: Array<InsightRule>;
+		NextToken?: string | null;
+		InsightRules?: Array<InsightRule> | null;
 	}
 
 
@@ -225,29 +225,29 @@ export namespace MyNS {
 	}
 
 	export interface DisableInsightRulesOutput {
-		Failures?: Array<PartialFailure>;
+		Failures?: Array<PartialFailure> | null;
 	}
 
 	export interface EnableInsightRulesOutput {
-		Failures?: Array<PartialFailure>;
+		Failures?: Array<PartialFailure> | null;
 	}
 
 	export interface LimitExceededException {
 	}
 
 	export interface GetDashboardOutput {
-		DashboardArn?: string;
-		DashboardBody?: string;
-		DashboardName?: string;
+		DashboardArn?: string | null;
+		DashboardBody?: string | null;
+		DashboardName?: string | null;
 	}
 
 	export interface GetInsightRuleReportOutput {
-		KeyLabels?: Array<string>;
-		AggregationStatistic?: string;
-		AggregateValue?: number;
-		ApproximateUniqueCount?: number;
-		Contributors?: Array<InsightRuleContributor>;
-		MetricDatapoints?: Array<InsightRuleMetricDatapoint>;
+		KeyLabels?: Array<string> | null;
+		AggregationStatistic?: string | null;
+		AggregateValue?: number | null;
+		ApproximateUniqueCount?: number | null;
+		Contributors?: Array<InsightRuleContributor> | null;
+		MetricDatapoints?: Array<InsightRuleMetricDatapoint> | null;
 	}
 
 
@@ -269,30 +269,30 @@ export namespace MyNS {
 	/** <p>One data point from the metric time series returned in a Contributor Insights rule report.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a>.</p> */
 	export interface InsightRuleMetricDatapoint {
 		Timestamp: Date;
-		UniqueContributors?: number;
-		MaxContributorValue?: number;
-		SampleCount?: number;
-		Average?: number;
-		Sum?: number;
-		Minimum?: number;
-		Maximum?: number;
+		UniqueContributors?: number | null;
+		MaxContributorValue?: number | null;
+		SampleCount?: number | null;
+		Average?: number | null;
+		Sum?: number | null;
+		Minimum?: number | null;
+		Maximum?: number | null;
 	}
 
 	export interface GetMetricDataOutput {
-		MetricDataResults?: Array<MetricDataResult>;
-		NextToken?: string;
-		Messages?: Array<MessageData>;
+		MetricDataResults?: Array<MetricDataResult> | null;
+		NextToken?: string | null;
+		Messages?: Array<MessageData> | null;
 	}
 
 
 	/** A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code> structures. Each of these structures includes the data points for that metric, along with the timestamps of those data points and other identifying information. */
 	export interface MetricDataResult {
-		Id?: string;
-		Label?: string;
-		Timestamps?: Array<string>;
-		Values?: Array<number>;
-		StatusCode?: MetricDataResultStatusCode;
-		Messages?: Array<MessageData>;
+		Id?: string | null;
+		Label?: string | null;
+		Timestamps?: Array<string> | null;
+		Values?: Array<number> | null;
+		StatusCode?: MetricDataResultStatusCode | null;
+		Messages?: Array<MessageData> | null;
 	}
 
 	export enum MetricDataResultStatusCode { Complete = 0, InternalError = 1, PartialData = 2 }
@@ -300,26 +300,26 @@ export namespace MyNS {
 
 	/** A message returned by the <code>GetMetricData</code>API, including a code and a description. */
 	export interface MessageData {
-		Code?: string;
-		Value?: string;
+		Code?: string | null;
+		Value?: string | null;
 	}
 
 	export interface GetMetricStatisticsOutput {
-		Label?: string;
-		Datapoints?: Array<Datapoint>;
+		Label?: string | null;
+		Datapoints?: Array<Datapoint> | null;
 	}
 
 
 	/** Encapsulates the statistical data that CloudWatch computes from metric data. */
 	export interface Datapoint {
-		Timestamp?: Date;
-		SampleCount?: number;
-		Average?: number;
-		Sum?: number;
-		Minimum?: number;
-		Maximum?: number;
-		Unit?: DatapointUnit;
-		ExtendedStatistics?: DatapointValueMap;
+		Timestamp?: Date | null;
+		SampleCount?: number | null;
+		Average?: number | null;
+		Sum?: number | null;
+		Minimum?: number | null;
+		Maximum?: number | null;
+		Unit?: DatapointUnit | null;
+		ExtendedStatistics?: DatapointValueMap | null;
 	}
 
 	export enum DatapointUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
@@ -333,37 +333,37 @@ export namespace MyNS {
 	}
 
 	export interface GetMetricWidgetImageOutput {
-		MetricWidgetImage?: string;
+		MetricWidgetImage?: string | null;
 	}
 
 	export interface ListDashboardsOutput {
-		DashboardEntries?: Array<DashboardEntry>;
-		NextToken?: string;
+		DashboardEntries?: Array<DashboardEntry> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents a specific dashboard. */
 	export interface DashboardEntry {
-		DashboardName?: string;
-		DashboardArn?: string;
-		LastModified?: Date;
-		Size?: number;
+		DashboardName?: string | null;
+		DashboardArn?: string | null;
+		LastModified?: Date | null;
+		Size?: number | null;
 	}
 
 	export interface ListMetricsOutput {
-		Metrics?: Array<Metric>;
-		NextToken?: string;
+		Metrics?: Array<Metric> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents filters for a dimension. */
 	export interface DimensionFilter {
 		Name: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export interface ListTagsForResourceOutput {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -380,14 +380,14 @@ export namespace MyNS {
 	}
 
 	export interface PutDashboardOutput {
-		DashboardValidationMessages?: Array<DashboardValidationMessage>;
+		DashboardValidationMessages?: Array<DashboardValidationMessage> | null;
 	}
 
 
 	/** An error or warning for the operation. */
 	export interface DashboardValidationMessage {
-		DataPath?: string;
-		Message?: string;
+		DataPath?: string | null;
+		Message?: string | null;
 	}
 
 	export interface DashboardInvalidInputError {
@@ -400,16 +400,16 @@ export namespace MyNS {
 	/** Encapsulates the information sent to either create a metric or add new values to be aggregated into an existing metric. */
 	export interface MetricDatum {
 		MetricName: string;
-		Dimensions?: Array<Dimension>;
-		Timestamp?: Date;
-		Value?: number;
+		Dimensions?: Array<Dimension> | null;
+		Timestamp?: Date | null;
+		Value?: number | null;
 
 		/** Represents a set of statistics that describes a specific metric. */
-		StatisticValues?: StatisticSet;
-		Values?: Array<number>;
-		Counts?: Array<number>;
-		Unit?: MetricDatumUnit;
-		StorageResolution?: number;
+		StatisticValues?: StatisticSet | null;
+		Values?: Array<number> | null;
+		Counts?: Array<number> | null;
+		Unit?: MetricDatumUnit | null;
+		StorageResolution?: number | null;
 	}
 
 
@@ -450,7 +450,7 @@ export namespace MyNS {
 	export interface DeleteAnomalyDetectorInput {
 		Namespace: string;
 		MetricName: string;
-		Dimensions?: Array<Dimension>;
+		Dimensions?: Array<Dimension> | null;
 		Stat: string;
 	}
 
@@ -465,51 +465,51 @@ export namespace MyNS {
 	export enum ScanBy { TimestampDescending = 0, TimestampAscending = 1 }
 
 	export interface DescribeAlarmHistoryInput {
-		AlarmName?: string;
-		AlarmTypes?: Array<AlarmType>;
-		HistoryItemType?: AlarmHistoryItemHistoryItemType;
-		StartDate?: Date;
-		EndDate?: Date;
-		MaxRecords?: number;
-		NextToken?: string;
-		ScanBy?: ScanBy;
+		AlarmName?: string | null;
+		AlarmTypes?: Array<AlarmType> | null;
+		HistoryItemType?: AlarmHistoryItemHistoryItemType | null;
+		StartDate?: Date | null;
+		EndDate?: Date | null;
+		MaxRecords?: number | null;
+		NextToken?: string | null;
+		ScanBy?: ScanBy | null;
 	}
 
 	export interface DescribeAlarmsForMetricInput {
 		MetricName: string;
 		Namespace: string;
-		Statistic?: MetricAlarmStatistic;
-		ExtendedStatistic?: string;
-		Dimensions?: Array<Dimension>;
-		Period?: number;
-		Unit?: DescribeAlarmsForMetricInputUnit;
+		Statistic?: MetricAlarmStatistic | null;
+		ExtendedStatistic?: string | null;
+		Dimensions?: Array<Dimension> | null;
+		Period?: number | null;
+		Unit?: DescribeAlarmsForMetricInputUnit | null;
 	}
 
 	export enum DescribeAlarmsForMetricInputUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface DescribeAlarmsInput {
-		AlarmNames?: Array<string>;
-		AlarmNamePrefix?: string;
-		AlarmTypes?: Array<AlarmType>;
-		ChildrenOfAlarmName?: string;
-		ParentsOfAlarmName?: string;
-		StateValue?: CompositeAlarmStateValue;
-		ActionPrefix?: string;
-		MaxRecords?: number;
-		NextToken?: string;
+		AlarmNames?: Array<string> | null;
+		AlarmNamePrefix?: string | null;
+		AlarmTypes?: Array<AlarmType> | null;
+		ChildrenOfAlarmName?: string | null;
+		ParentsOfAlarmName?: string | null;
+		StateValue?: CompositeAlarmStateValue | null;
+		ActionPrefix?: string | null;
+		MaxRecords?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeAnomalyDetectorsInput {
-		NextToken?: string;
-		MaxResults?: number;
-		Namespace?: string;
-		MetricName?: string;
-		Dimensions?: Array<Dimension>;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		Namespace?: string | null;
+		MetricName?: string | null;
+		Dimensions?: Array<Dimension> | null;
 	}
 
 	export interface DescribeInsightRulesInput {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface DisableAlarmActionsInput {
@@ -537,49 +537,49 @@ export namespace MyNS {
 		StartTime: Date;
 		EndTime: Date;
 		Period: number;
-		MaxContributorCount?: number;
-		Metrics?: Array<string>;
-		OrderBy?: string;
+		MaxContributorCount?: number | null;
+		Metrics?: Array<string> | null;
+		OrderBy?: string | null;
 	}
 
 	export interface GetMetricDataInput {
 		MetricDataQueries: Array<MetricDataQuery>;
 		StartTime: Date;
 		EndTime: Date;
-		NextToken?: string;
-		ScanBy?: ScanBy;
-		MaxDatapoints?: number;
+		NextToken?: string | null;
+		ScanBy?: ScanBy | null;
+		MaxDatapoints?: number | null;
 	}
 
 	export interface GetMetricStatisticsInput {
 		Namespace: string;
 		MetricName: string;
-		Dimensions?: Array<Dimension>;
+		Dimensions?: Array<Dimension> | null;
 		StartTime: Date;
 		EndTime: Date;
 		Period: number;
-		Statistics?: Array<Statistic>;
-		ExtendedStatistics?: Array<string>;
-		Unit?: GetMetricStatisticsInputUnit;
+		Statistics?: Array<Statistic> | null;
+		ExtendedStatistics?: Array<string> | null;
+		Unit?: GetMetricStatisticsInputUnit | null;
 	}
 
 	export enum GetMetricStatisticsInputUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface GetMetricWidgetImageInput {
 		MetricWidget: string;
-		OutputFormat?: string;
+		OutputFormat?: string | null;
 	}
 
 	export interface ListDashboardsInput {
-		DashboardNamePrefix?: string;
-		NextToken?: string;
+		DashboardNamePrefix?: string | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListMetricsInput {
-		Namespace?: string;
-		MetricName?: string;
-		Dimensions?: Array<DimensionFilter>;
-		NextToken?: string;
+		Namespace?: string | null;
+		MetricName?: string | null;
+		Dimensions?: Array<DimensionFilter> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceInput {
@@ -591,22 +591,22 @@ export namespace MyNS {
 	export interface PutAnomalyDetectorInput {
 		Namespace: string;
 		MetricName: string;
-		Dimensions?: Array<Dimension>;
+		Dimensions?: Array<Dimension> | null;
 		Stat: string;
 
 		/** The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric. */
-		Configuration?: AnomalyDetectorConfiguration;
+		Configuration?: AnomalyDetectorConfiguration | null;
 	}
 
 	export interface PutCompositeAlarmInput {
-		ActionsEnabled?: boolean;
-		AlarmActions?: Array<string>;
-		AlarmDescription?: string;
+		ActionsEnabled?: boolean | null;
+		AlarmActions?: Array<string> | null;
+		AlarmDescription?: string | null;
 		AlarmName: string;
 		AlarmRule: string;
-		InsufficientDataActions?: Array<string>;
-		OKActions?: Array<string>;
-		Tags?: Array<Tag>;
+		InsufficientDataActions?: Array<string> | null;
+		OKActions?: Array<string> | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface PutDashboardInput {
@@ -616,34 +616,34 @@ export namespace MyNS {
 
 	export interface PutInsightRuleInput {
 		RuleName: string;
-		RuleState?: string;
+		RuleState?: string | null;
 		RuleDefinition: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface PutMetricAlarmInput {
 		AlarmName: string;
-		AlarmDescription?: string;
-		ActionsEnabled?: boolean;
-		OKActions?: Array<string>;
-		AlarmActions?: Array<string>;
-		InsufficientDataActions?: Array<string>;
-		MetricName?: string;
-		Namespace?: string;
-		Statistic?: MetricAlarmStatistic;
-		ExtendedStatistic?: string;
-		Dimensions?: Array<Dimension>;
-		Period?: number;
-		Unit?: PutMetricAlarmInputUnit;
+		AlarmDescription?: string | null;
+		ActionsEnabled?: boolean | null;
+		OKActions?: Array<string> | null;
+		AlarmActions?: Array<string> | null;
+		InsufficientDataActions?: Array<string> | null;
+		MetricName?: string | null;
+		Namespace?: string | null;
+		Statistic?: MetricAlarmStatistic | null;
+		ExtendedStatistic?: string | null;
+		Dimensions?: Array<Dimension> | null;
+		Period?: number | null;
+		Unit?: PutMetricAlarmInputUnit | null;
 		EvaluationPeriods: number;
-		DatapointsToAlarm?: number;
-		Threshold?: number;
+		DatapointsToAlarm?: number | null;
+		Threshold?: number | null;
 		ComparisonOperator: MetricAlarmComparisonOperator;
-		TreatMissingData?: string;
-		EvaluateLowSampleCountPercentile?: string;
-		Metrics?: Array<MetricDataQuery>;
-		Tags?: Array<Tag>;
-		ThresholdMetricId?: string;
+		TreatMissingData?: string | null;
+		EvaluateLowSampleCountPercentile?: string | null;
+		Metrics?: Array<MetricDataQuery> | null;
+		Tags?: Array<Tag> | null;
+		ThresholdMetricId?: string | null;
 	}
 
 	export enum PutMetricAlarmInputUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
@@ -657,7 +657,7 @@ export namespace MyNS {
 		AlarmName: string;
 		StateValue: CompositeAlarmStateValue;
 		StateReason: string;
-		StateReasonData?: string;
+		StateReasonData?: string | null;
 	}
 
 	export interface TagResourceInput {
@@ -694,7 +694,7 @@ export namespace MyNS {
 		 * @param {string} Stat The statistic associated with the anomaly detection model to delete.
 		 * @return {void} Success
 		 */
-		GET_DeleteAnomalyDetector(Namespace: string, MetricName: string, Dimensions: Array<Dimension>, Stat: string, Action: GET_DeleteAnomalyDetectorAction, Version: GET_DeleteAnomalyDetectorVersion): Observable<HttpResponse<string>> {
+		GET_DeleteAnomalyDetector(Namespace: string, MetricName: string, Dimensions: Array<Dimension> | null | undefined, Stat: string, Action: GET_DeleteAnomalyDetectorAction, Version: GET_DeleteAnomalyDetectorVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeleteAnomalyDetector?Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&' + Dimensions.map(z => `Dimensions=${z}`).join('&') + '&Stat=' + (Stat == null ? '' : encodeURIComponent(Stat)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -731,7 +731,7 @@ export namespace MyNS {
 		 * @param {ScanBy} ScanBy Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest history returned first.
 		 * @return {void} Success
 		 */
-		GET_DescribeAlarmHistory(AlarmName: string, AlarmTypes: Array<AlarmType>, HistoryItemType: AlarmHistoryItemHistoryItemType, StartDate: Date, EndDate: Date, MaxRecords: number, NextToken: string, ScanBy: ScanBy, Action: GET_DescribeAlarmHistoryAction, Version: GET_DescribeAlarmHistoryVersion): Observable<HttpResponse<string>> {
+		GET_DescribeAlarmHistory(AlarmName: string | null | undefined, AlarmTypes: Array<AlarmType> | null | undefined, HistoryItemType: AlarmHistoryItemHistoryItemType | null | undefined, StartDate: Date | null | undefined, EndDate: Date | null | undefined, MaxRecords: number | null | undefined, NextToken: string | null | undefined, ScanBy: ScanBy | null | undefined, Action: GET_DescribeAlarmHistoryAction, Version: GET_DescribeAlarmHistoryVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeAlarmHistory?AlarmName=' + (AlarmName == null ? '' : encodeURIComponent(AlarmName)) + '&' + AlarmTypes.map(z => `AlarmTypes=${z}`).join('&') + '&HistoryItemType=' + HistoryItemType + '&StartDate=' + StartDate.toISOString() + '&EndDate=' + EndDate.toISOString() + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&ScanBy=' + ScanBy + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -749,7 +749,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token returned by a previous call to indicate that there is more data available.
 		 * @return {void} Success
 		 */
-		GET_DescribeAlarms(AlarmNames: Array<string>, AlarmNamePrefix: string, AlarmTypes: Array<AlarmType>, ChildrenOfAlarmName: string, ParentsOfAlarmName: string, StateValue: CompositeAlarmStateValue, ActionPrefix: string, MaxRecords: number, NextToken: string, Action: GET_DescribeAlarmsAction, Version: GET_DescribeAlarmsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeAlarms(AlarmNames: Array<string> | null | undefined, AlarmNamePrefix: string | null | undefined, AlarmTypes: Array<AlarmType> | null | undefined, ChildrenOfAlarmName: string | null | undefined, ParentsOfAlarmName: string | null | undefined, StateValue: CompositeAlarmStateValue | null | undefined, ActionPrefix: string | null | undefined, MaxRecords: number | null | undefined, NextToken: string | null | undefined, Action: GET_DescribeAlarmsAction, Version: GET_DescribeAlarmsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeAlarms?' + AlarmNames.map(z => `AlarmNames=${encodeURIComponent(z)}`).join('&') + '&AlarmNamePrefix=' + (AlarmNamePrefix == null ? '' : encodeURIComponent(AlarmNamePrefix)) + '&' + AlarmTypes.map(z => `AlarmTypes=${z}`).join('&') + '&ChildrenOfAlarmName=' + (ChildrenOfAlarmName == null ? '' : encodeURIComponent(ChildrenOfAlarmName)) + '&ParentsOfAlarmName=' + (ParentsOfAlarmName == null ? '' : encodeURIComponent(ParentsOfAlarmName)) + '&StateValue=' + StateValue + '&ActionPrefix=' + (ActionPrefix == null ? '' : encodeURIComponent(ActionPrefix)) + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -765,7 +765,7 @@ export namespace MyNS {
 		 * @param {GET_DescribeAlarmsForMetricUnit} Unit The unit for the metric.
 		 * @return {void} Success
 		 */
-		GET_DescribeAlarmsForMetric(MetricName: string, Namespace: string, Statistic: MetricAlarmStatistic, ExtendedStatistic: string, Dimensions: Array<Dimension>, Period: number, Unit: GET_DescribeAlarmsForMetricUnit, Action: GET_DescribeAlarmsForMetricAction, Version: GET_DescribeAlarmsForMetricVersion): Observable<HttpResponse<string>> {
+		GET_DescribeAlarmsForMetric(MetricName: string, Namespace: string, Statistic: MetricAlarmStatistic | null | undefined, ExtendedStatistic: string | null | undefined, Dimensions: Array<Dimension> | null | undefined, Period: number | null | undefined, Unit: GET_DescribeAlarmsForMetricUnit | null | undefined, Action: GET_DescribeAlarmsForMetricAction, Version: GET_DescribeAlarmsForMetricVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeAlarmsForMetric?MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&Statistic=' + Statistic + '&ExtendedStatistic=' + (ExtendedStatistic == null ? '' : encodeURIComponent(ExtendedStatistic)) + '&' + Dimensions.map(z => `Dimensions=${z}`).join('&') + '&Period=' + Period + '&Unit=' + Unit + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -779,7 +779,7 @@ export namespace MyNS {
 		 * @param {Array<Dimension>} Dimensions Limits the results to only the anomaly detection models that are associated with the specified metric dimensions. If there are multiple metrics that have these dimensions and have anomaly detection models associated, they're all returned.
 		 * @return {void} Success
 		 */
-		GET_DescribeAnomalyDetectors(NextToken: string, MaxResults: number, Namespace: string, MetricName: string, Dimensions: Array<Dimension>, Action: GET_DescribeAnomalyDetectorsAction, Version: GET_DescribeAnomalyDetectorsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeAnomalyDetectors(NextToken: string | null | undefined, MaxResults: number | null | undefined, Namespace: string | null | undefined, MetricName: string | null | undefined, Dimensions: Array<Dimension> | null | undefined, Action: GET_DescribeAnomalyDetectorsAction, Version: GET_DescribeAnomalyDetectorsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeAnomalyDetectors?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults + '&Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&' + Dimensions.map(z => `Dimensions=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -790,7 +790,7 @@ export namespace MyNS {
 		 * @param {number} MaxResults This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum value may be different.
 		 * @return {void} Success
 		 */
-		GET_DescribeInsightRules(NextToken: string, MaxResults: number, Action: GET_DescribeInsightRulesAction, Version: GET_DescribeInsightRulesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeInsightRules(NextToken: string | null | undefined, MaxResults: number | null | undefined, Action: GET_DescribeInsightRulesAction, Version: GET_DescribeInsightRulesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeInsightRules?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -856,7 +856,7 @@ export namespace MyNS {
 		 * @param {string} OrderBy Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.
 		 * @return {void} Success
 		 */
-		GET_GetInsightRuleReport(RuleName: string, StartTime: Date, EndTime: Date, Period: number, MaxContributorCount: number, Metrics: Array<string>, OrderBy: string, Action: GET_GetInsightRuleReportAction, Version: GET_GetInsightRuleReportVersion): Observable<HttpResponse<string>> {
+		GET_GetInsightRuleReport(RuleName: string, StartTime: Date, EndTime: Date, Period: number, MaxContributorCount: number | null | undefined, Metrics: Array<string> | null | undefined, OrderBy: string | null | undefined, Action: GET_GetInsightRuleReportAction, Version: GET_GetInsightRuleReportVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GetInsightRuleReport?RuleName=' + (RuleName == null ? '' : encodeURIComponent(RuleName)) + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Period=' + Period + '&MaxContributorCount=' + MaxContributorCount + '&' + Metrics.map(z => `Metrics=${encodeURIComponent(z)}`).join('&') + '&OrderBy=' + (OrderBy == null ? '' : encodeURIComponent(OrderBy)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -871,7 +871,7 @@ export namespace MyNS {
 		 * @param {number} MaxDatapoints The maximum number of data points the request should return before paginating. If you omit this, the default of 100,800 is used.
 		 * @return {void} Success
 		 */
-		GET_GetMetricData(MetricDataQueries: Array<MetricDataQuery>, StartTime: Date, EndTime: Date, NextToken: string, ScanBy: ScanBy, MaxDatapoints: number, Action: GET_GetMetricDataAction, Version: GET_GetMetricDataVersion): Observable<HttpResponse<string>> {
+		GET_GetMetricData(MetricDataQueries: Array<MetricDataQuery>, StartTime: Date, EndTime: Date, NextToken: string | null | undefined, ScanBy: ScanBy | null | undefined, MaxDatapoints: number | null | undefined, Action: GET_GetMetricDataAction, Version: GET_GetMetricDataVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GetMetricData?' + MetricDataQueries.map(z => `MetricDataQueries=${z}`).join('&') + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&ScanBy=' + ScanBy + '&MaxDatapoints=' + MaxDatapoints + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -889,7 +889,7 @@ export namespace MyNS {
 		 * @param {GET_GetMetricStatisticsUnit} Unit The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.
 		 * @return {void} Success
 		 */
-		GET_GetMetricStatistics(Namespace: string, MetricName: string, Dimensions: Array<Dimension>, StartTime: Date, EndTime: Date, Period: number, Statistics: Array<Statistic>, ExtendedStatistics: Array<string>, Unit: GET_GetMetricStatisticsUnit, Action: GET_GetMetricStatisticsAction, Version: GET_GetMetricStatisticsVersion): Observable<HttpResponse<string>> {
+		GET_GetMetricStatistics(Namespace: string, MetricName: string, Dimensions: Array<Dimension> | null | undefined, StartTime: Date, EndTime: Date, Period: number, Statistics: Array<Statistic> | null | undefined, ExtendedStatistics: Array<string> | null | undefined, Unit: GET_GetMetricStatisticsUnit | null | undefined, Action: GET_GetMetricStatisticsAction, Version: GET_GetMetricStatisticsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GetMetricStatistics?Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&' + Dimensions.map(z => `Dimensions=${z}`).join('&') + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Period=' + Period + '&' + Statistics.map(z => `Statistics=${z}`).join('&') + '&' + ExtendedStatistics.map(z => `ExtendedStatistics=${encodeURIComponent(z)}`).join('&') + '&Unit=' + Unit + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -900,7 +900,7 @@ export namespace MyNS {
 		 * @param {string} OutputFormat <p>The format of the resulting image. Only PNG images are supported.</p> <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> field. For example:</p> <p> <code> &lt;GetMetricWidgetImageResponse xmlns=&lt;URLstring&gt;&gt;</code> </p> <p> <code> &lt;GetMetricWidgetImageResult&gt;</code> </p> <p> <code> &lt;MetricWidgetImage&gt;</code> </p> <p> <code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p> <p> <code> &lt;/MetricWidgetImage&gt;</code> </p> <p> <code> &lt;/GetMetricWidgetImageResult&gt;</code> </p> <p> <code> &lt;ResponseMetadata&gt;</code> </p> <p> <code> &lt;RequestId&gt;6f0d4192-4d42-11e8-82c1-f539a07e0e3b&lt;/RequestId&gt;</code> </p> <p> <code> &lt;/ResponseMetadata&gt;</code> </p> <p> <code>&lt;/GetMetricWidgetImageResponse&gt;</code> </p> <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an AWS SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image. </p>
 		 * @return {void} Success
 		 */
-		GET_GetMetricWidgetImage(MetricWidget: string, OutputFormat: string, Action: GET_GetMetricWidgetImageAction, Version: GET_GetMetricWidgetImageVersion): Observable<HttpResponse<string>> {
+		GET_GetMetricWidgetImage(MetricWidget: string, OutputFormat: string | null | undefined, Action: GET_GetMetricWidgetImageAction, Version: GET_GetMetricWidgetImageVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GetMetricWidgetImage?MetricWidget=' + (MetricWidget == null ? '' : encodeURIComponent(MetricWidget)) + '&OutputFormat=' + (OutputFormat == null ? '' : encodeURIComponent(OutputFormat)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -911,7 +911,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token returned by a previous call to indicate that there is more data available.
 		 * @return {void} Success
 		 */
-		GET_ListDashboards(DashboardNamePrefix: string, NextToken: string, Action: GET_ListDashboardsAction, Version: GET_ListDashboardsVersion): Observable<HttpResponse<string>> {
+		GET_ListDashboards(DashboardNamePrefix: string | null | undefined, NextToken: string | null | undefined, Action: GET_ListDashboardsAction, Version: GET_ListDashboardsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListDashboards?DashboardNamePrefix=' + (DashboardNamePrefix == null ? '' : encodeURIComponent(DashboardNamePrefix)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -924,7 +924,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token returned by a previous call to indicate that there is more data available.
 		 * @return {void} Success
 		 */
-		GET_ListMetrics(Namespace: string, MetricName: string, Dimensions: Array<DimensionFilter>, NextToken: string, Action: GET_ListMetricsAction, Version: GET_ListMetricsVersion): Observable<HttpResponse<string>> {
+		GET_ListMetrics(Namespace: string | null | undefined, MetricName: string | null | undefined, Dimensions: Array<DimensionFilter> | null | undefined, NextToken: string | null | undefined, Action: GET_ListMetricsAction, Version: GET_ListMetricsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListMetrics?Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&' + Dimensions.map(z => `Dimensions=${z}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -948,7 +948,7 @@ export namespace MyNS {
 		 * @param {GET_PutAnomalyDetectorConfiguration} Configuration <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. You can specify as many as 10 time ranges.</p> <p>The configuration can also include the time zone to use for the metric.</p> <p>You can in</p>
 		 * @return {void} Success
 		 */
-		GET_PutAnomalyDetector(Namespace: string, MetricName: string, Dimensions: Array<Dimension>, Stat: string, Configuration: GET_PutAnomalyDetectorConfiguration, Action: GET_PutAnomalyDetectorAction, Version: GET_PutAnomalyDetectorVersion): Observable<HttpResponse<string>> {
+		GET_PutAnomalyDetector(Namespace: string, MetricName: string, Dimensions: Array<Dimension> | null | undefined, Stat: string, Configuration: GET_PutAnomalyDetectorConfiguration | null | undefined, Action: GET_PutAnomalyDetectorAction, Version: GET_PutAnomalyDetectorVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=PutAnomalyDetector?Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&' + Dimensions.map(z => `Dimensions=${z}`).join('&') + '&Stat=' + (Stat == null ? '' : encodeURIComponent(Stat)) + '&Configuration=' + Configuration + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -965,7 +965,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p>
 		 * @return {void} Success
 		 */
-		GET_PutCompositeAlarm(ActionsEnabled: boolean, AlarmActions: Array<string>, AlarmDescription: string, AlarmName: string, AlarmRule: string, InsufficientDataActions: Array<string>, OKActions: Array<string>, Tags: Array<Tag>, Action: GET_PutCompositeAlarmAction, Version: GET_PutCompositeAlarmVersion): Observable<HttpResponse<string>> {
+		GET_PutCompositeAlarm(ActionsEnabled: boolean | null | undefined, AlarmActions: Array<string> | null | undefined, AlarmDescription: string | null | undefined, AlarmName: string, AlarmRule: string, InsufficientDataActions: Array<string> | null | undefined, OKActions: Array<string> | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_PutCompositeAlarmAction, Version: GET_PutCompositeAlarmVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=PutCompositeAlarm?ActionsEnabled=' + ActionsEnabled + '&' + AlarmActions.map(z => `AlarmActions=${encodeURIComponent(z)}`).join('&') + '&AlarmDescription=' + (AlarmDescription == null ? '' : encodeURIComponent(AlarmDescription)) + '&AlarmName=' + (AlarmName == null ? '' : encodeURIComponent(AlarmName)) + '&AlarmRule=' + (AlarmRule == null ? '' : encodeURIComponent(AlarmRule)) + '&' + InsufficientDataActions.map(z => `InsufficientDataActions=${encodeURIComponent(z)}`).join('&') + '&' + OKActions.map(z => `OKActions=${encodeURIComponent(z)}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -989,7 +989,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags <p>A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags with a rule.</p> <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p> <p>To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.</p> <p>If you are using this operation to update an existing Contributor Insights rule, any tags you specify in this parameter are ignored. To change the tags of an existing rule, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
 		 * @return {void} Success
 		 */
-		GET_PutInsightRule(RuleName: string, RuleState: string, RuleDefinition: string, Tags: Array<Tag>, Action: GET_PutInsightRuleAction, Version: GET_PutInsightRuleVersion): Observable<HttpResponse<string>> {
+		GET_PutInsightRule(RuleName: string, RuleState: string | null | undefined, RuleDefinition: string, Tags: Array<Tag> | null | undefined, Action: GET_PutInsightRuleAction, Version: GET_PutInsightRuleVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=PutInsightRule?RuleName=' + (RuleName == null ? '' : encodeURIComponent(RuleName)) + '&RuleState=' + (RuleState == null ? '' : encodeURIComponent(RuleState)) + '&RuleDefinition=' + (RuleDefinition == null ? '' : encodeURIComponent(RuleDefinition)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1020,7 +1020,7 @@ export namespace MyNS {
 		 * @param {string} ThresholdMetricId <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p> <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p> <p>If your alarm uses this parameter, it cannot have Auto Scaling actions.</p>
 		 * @return {void} Success
 		 */
-		GET_PutMetricAlarm(AlarmName: string, AlarmDescription: string, ActionsEnabled: boolean, OKActions: Array<string>, AlarmActions: Array<string>, InsufficientDataActions: Array<string>, MetricName: string, Namespace: string, Statistic: MetricAlarmStatistic, ExtendedStatistic: string, Dimensions: Array<Dimension>, Period: number, Unit: GET_PutMetricAlarmUnit, EvaluationPeriods: number, DatapointsToAlarm: number, Threshold: number, ComparisonOperator: MetricAlarmComparisonOperator, TreatMissingData: string, EvaluateLowSampleCountPercentile: string, Metrics: Array<MetricDataQuery>, Tags: Array<Tag>, ThresholdMetricId: string, Action: GET_PutMetricAlarmAction, Version: GET_PutMetricAlarmVersion): Observable<HttpResponse<string>> {
+		GET_PutMetricAlarm(AlarmName: string, AlarmDescription: string | null | undefined, ActionsEnabled: boolean | null | undefined, OKActions: Array<string> | null | undefined, AlarmActions: Array<string> | null | undefined, InsufficientDataActions: Array<string> | null | undefined, MetricName: string | null | undefined, Namespace: string | null | undefined, Statistic: MetricAlarmStatistic | null | undefined, ExtendedStatistic: string | null | undefined, Dimensions: Array<Dimension> | null | undefined, Period: number | null | undefined, Unit: GET_PutMetricAlarmUnit | null | undefined, EvaluationPeriods: number, DatapointsToAlarm: number | null | undefined, Threshold: number | null | undefined, ComparisonOperator: MetricAlarmComparisonOperator, TreatMissingData: string | null | undefined, EvaluateLowSampleCountPercentile: string | null | undefined, Metrics: Array<MetricDataQuery> | null | undefined, Tags: Array<Tag> | null | undefined, ThresholdMetricId: string | null | undefined, Action: GET_PutMetricAlarmAction, Version: GET_PutMetricAlarmVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=PutMetricAlarm?AlarmName=' + (AlarmName == null ? '' : encodeURIComponent(AlarmName)) + '&AlarmDescription=' + (AlarmDescription == null ? '' : encodeURIComponent(AlarmDescription)) + '&ActionsEnabled=' + ActionsEnabled + '&' + OKActions.map(z => `OKActions=${encodeURIComponent(z)}`).join('&') + '&' + AlarmActions.map(z => `AlarmActions=${encodeURIComponent(z)}`).join('&') + '&' + InsufficientDataActions.map(z => `InsufficientDataActions=${encodeURIComponent(z)}`).join('&') + '&MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&Statistic=' + Statistic + '&ExtendedStatistic=' + (ExtendedStatistic == null ? '' : encodeURIComponent(ExtendedStatistic)) + '&' + Dimensions.map(z => `Dimensions=${z}`).join('&') + '&Period=' + Period + '&Unit=' + Unit + '&EvaluationPeriods=' + EvaluationPeriods + '&DatapointsToAlarm=' + DatapointsToAlarm + '&Threshold=' + Threshold + '&ComparisonOperator=' + ComparisonOperator + '&TreatMissingData=' + (TreatMissingData == null ? '' : encodeURIComponent(TreatMissingData)) + '&EvaluateLowSampleCountPercentile=' + (EvaluateLowSampleCountPercentile == null ? '' : encodeURIComponent(EvaluateLowSampleCountPercentile)) + '&' + Metrics.map(z => `Metrics=${z}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&ThresholdMetricId=' + (ThresholdMetricId == null ? '' : encodeURIComponent(ThresholdMetricId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1044,7 +1044,7 @@ export namespace MyNS {
 		 * @param {string} StateReasonData <p>The reason that this alarm is set to this specific state, in JSON format.</p> <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
 		 * @return {void} Success
 		 */
-		GET_SetAlarmState(AlarmName: string, StateValue: CompositeAlarmStateValue, StateReason: string, StateReasonData: string, Action: GET_SetAlarmStateAction, Version: GET_SetAlarmStateVersion): Observable<HttpResponse<string>> {
+		GET_SetAlarmState(AlarmName: string, StateValue: CompositeAlarmStateValue, StateReason: string, StateReasonData: string | null | undefined, Action: GET_SetAlarmStateAction, Version: GET_SetAlarmStateVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SetAlarmState?AlarmName=' + (AlarmName == null ? '' : encodeURIComponent(AlarmName)) + '&StateValue=' + StateValue + '&StateReason=' + (StateReason == null ? '' : encodeURIComponent(StateReason)) + '&StateReasonData=' + (StateReasonData == null ? '' : encodeURIComponent(StateReasonData)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1202,8 +1202,8 @@ export namespace MyNS {
 	export enum POST_ListTagsForResourceVersion { _2010_08_01 = 0 }
 
 	export interface GET_PutAnomalyDetectorConfiguration {
-		ExcludedTimeRanges?: Array<Range>;
-		MetricTimezone?: string;
+		ExcludedTimeRanges?: Array<Range> | null;
+		MetricTimezone?: string | null;
 	}
 
 	export enum GET_PutAnomalyDetectorAction { PutAnomalyDetector = 0 }

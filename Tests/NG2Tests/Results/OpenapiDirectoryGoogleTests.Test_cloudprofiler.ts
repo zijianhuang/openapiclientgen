@@ -12,10 +12,10 @@ export namespace MyNS {
 	export interface CreateProfileRequest {
 
 		/** Deployment contains the deployment identification information. */
-		deployment?: Deployment;
+		deployment?: Deployment | null;
 
 		/** One or more profile types that the agent is capable of providing. */
-		profileType?: Array<string>;
+		profileType?: Array<string> | null;
 	}
 
 
@@ -35,13 +35,13 @@ export namespace MyNS {
 		 * is "us-central1-a", an example of a region is "us-central1" or
 		 * "us-central".
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Project ID is the ID of a cloud project.
 		 * Validation regex: `^a-z{4,61}[a-z0-9]$`.
 		 */
-		projectId?: string;
+		projectId?: string | null;
 
 		/**
 		 * Target is the service name used to group related deployments:
@@ -51,7 +51,7 @@ export namespace MyNS {
 		 * * Job name for Dataflow.
 		 * Validation regex: `^[a-z]([-a-z0-9_.]{0,253}[a-z0-9])?$`.
 		 */
-		target?: string;
+		target?: string | null;
 	}
 
 
@@ -59,7 +59,7 @@ export namespace MyNS {
 	export interface Profile {
 
 		/** Deployment contains the deployment identification information. */
-		deployment?: Deployment;
+		deployment?: Deployment | null;
 
 		/**
 		 * Duration of the profiling session.
@@ -69,30 +69,30 @@ export namespace MyNS {
 		 * data, in case the profiling can't be stopped immediately (e.g. in case
 		 * stopping the profiling is handled asynchronously).
 		 */
-		duration?: string;
+		duration?: string | null;
 
 		/**
 		 * Input only. Labels associated to this specific profile. These labels will
 		 * get merged with the deployment labels for the final data set.  See
 		 * documentation on deployment labels for validation rules and limits.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** Output only. Opaque, server-assigned, unique ID for this profile. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Input only. Profile bytes, as a gzip compressed serialized proto, the
 		 * format is https://github.com/google/pprof/blob/master/proto/profile.proto.
 		 */
-		profileBytes?: string;
+		profileBytes?: string | null;
 
 		/**
 		 * Type of profile.
 		 * For offline mode, this must be specified when creating the profile. For
 		 * online mode it is assigned and returned by the server.
 		 */
-		profileType?: ProfileProfileType;
+		profileType?: ProfileProfileType | null;
 	}
 
 	export enum ProfileProfileType { PROFILE_TYPE_UNSPECIFIED = 0, CPU = 1, WALL = 2, HEAP = 3, THREADS = 4, CONTENTION = 5, PEAK_HEAP = 6, HEAP_ALLOC = 7 }
@@ -115,7 +115,7 @@ export namespace MyNS {
 		 * fields are overwritten.
 		 * @return {void} Successful response
 		 */
-		Cloudprofiler_projects_profiles_patch(name: string, updateMask: string, requestBody: Profile): Observable<HttpResponse<string>> {
+		Cloudprofiler_projects_profiles_patch(name: string, updateMask: string | null | undefined, requestBody: Profile): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 

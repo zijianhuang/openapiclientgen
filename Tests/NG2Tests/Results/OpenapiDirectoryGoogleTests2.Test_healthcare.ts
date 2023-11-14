@@ -55,14 +55,14 @@ export namespace MyNS {
 	export interface AuditConfig {
 
 		/** The configuration for logging of each type of permission. */
-		auditLogConfigs?: Array<AuditLogConfig>;
+		auditLogConfigs?: Array<AuditLogConfig> | null;
 
 		/**
 		 * Specifies a service that will be enabled for audit logging.
 		 * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
 		 * `allServices` is a special value that covers all services.
 		 */
-		service?: string;
+		service?: string | null;
 	}
 
 
@@ -92,10 +92,10 @@ export namespace MyNS {
 		 * permission.
 		 * Follows the same format of Binding.members.
 		 */
-		exemptedMembers?: Array<string>;
+		exemptedMembers?: Array<string> | null;
 
 		/** The log type that this config enables. */
-		logType?: AuditLogConfigLogType;
+		logType?: AuditLogConfigLogType | null;
 	}
 
 	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
@@ -128,7 +128,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr;
+		condition?: Expr | null;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -163,13 +163,13 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string>;
+		members?: Array<string> | null;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
-		role?: string;
+		role?: string | null;
 	}
 
 
@@ -203,26 +203,26 @@ export namespace MyNS {
 		 * Optional. Description of the expression. This is a longer text which
 		 * describes the expression, e.g. when hovered over it in a UI.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Textual representation of an expression in Common Expression Language
 		 * syntax.
 		 */
-		expression?: string;
+		expression?: string | null;
 
 		/**
 		 * Optional. String indicating the location of the expression for error
 		 * reporting, e.g. a file name and a position in the file.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * Optional. Title for the expression, i.e. a short string describing
 		 * its purpose. This can be used e.g. in UIs which allow to enter the
 		 * expression.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -235,7 +235,7 @@ export namespace MyNS {
 	export interface CharacterMaskConfig {
 
 		/** Character to mask the sensitive values. If not supplied, defaults to "*". */
-		maskingCharacter?: string;
+		maskingCharacter?: string | null;
 	}
 
 
@@ -247,7 +247,7 @@ export namespace MyNS {
 		 * See http://www.hl7.org/implement/standards/index.cfm?ref=common for details
 		 * on the standard.
 		 */
-		message?: Message;
+		message?: Message | null;
 	}
 
 
@@ -259,10 +259,10 @@ export namespace MyNS {
 	export interface Message {
 
 		/** Output only. The datetime when the message was created. Set by the server. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Raw message bytes. */
-		data?: string;
+		data?: string | null;
 
 		/**
 		 * User-supplied key-value pairs used to organize HL7v2 stores.
@@ -275,44 +275,44 @@ export namespace MyNS {
 		 * following PCRE regular expression: [\p{Ll}\p{Lo}\p{N}_-]{0,63}
 		 * No more than 64 labels can be associated with a given store.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The message type for this message. MSH-9.1. */
-		messageType?: string;
+		messageType?: string | null;
 
 		/**
 		 * Resource name of the Message, of the form
 		 * `projects/{project_id}/datasets/{dataset_id}/hl7V2Stores/{hl7_v2_store_id}/messages/{message_id}`.
 		 * Assigned by the server.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The content of an HL7v2 message in a structured format. */
-		parsedData?: ParsedData;
+		parsedData?: ParsedData | null;
 
 		/**
 		 * All patient IDs listed in the PID-2, PID-3, and PID-4 segments of this
 		 * message.
 		 */
-		patientIds?: Array<PatientId>;
+		patientIds?: Array<PatientId> | null;
 
 		/**
 		 * The content of an HL7v2 message in a structured format as specified by a
 		 * schema.
 		 */
-		schematizedData?: SchematizedData;
+		schematizedData?: SchematizedData | null;
 
 		/** The hospital that this message came from. MSH-4. */
-		sendFacility?: string;
+		sendFacility?: string | null;
 
 		/** The datetime the sending application sent this message. MSH-7. */
-		sendTime?: string;
+		sendTime?: string | null;
 	}
 
 
 	/** The content of an HL7v2 message in a structured format. */
 	export interface ParsedData {
-		segments?: Array<Segment>;
+		segments?: Array<Segment> | null;
 	}
 
 
@@ -333,16 +333,16 @@ export namespace MyNS {
 		 * * (1[0].1, "HbA1c") denotes that the first component of the
 		 * first Instance of Field 1, which is repeated, has the value "HbA1c".
 		 */
-		fields?: {[id: string]: string };
+		fields?: {[id: string]: string } | null;
 
 		/** A string that indicates the type of segment. For example, EVN or PID. */
-		segmentId?: string;
+		segmentId?: string | null;
 
 		/**
 		 * Set ID for segments that can be in a set. This can be empty if it's
 		 * missing or isn't applicable.
 		 */
-		setId?: string;
+		setId?: string | null;
 	}
 
 
@@ -350,10 +350,10 @@ export namespace MyNS {
 	export interface PatientId {
 
 		/** ID type. For example, MRN or NHS. */
-		type?: string;
+		type?: string | null;
 
 		/** The patient's unique identifier. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -364,10 +364,10 @@ export namespace MyNS {
 	export interface SchematizedData {
 
 		/** JSON output of the parser. */
-		data?: string;
+		data?: string | null;
 
 		/** The error output of the parser. */
-		error?: string;
+		error?: string | null;
 	}
 
 
@@ -384,7 +384,7 @@ export namespace MyNS {
 		 * key. A default key is generated for each Deidentify operation and is used
 		 * wherever crypto_key is not specified.
 		 */
-		cryptoKey?: string;
+		cryptoKey?: string | null;
 	}
 
 
@@ -400,7 +400,7 @@ export namespace MyNS {
 		 * Output only. Resource name of the dataset, of the form
 		 * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The default timezone used by this dataset. Must be a either a valid IANA
@@ -408,7 +408,7 @@ export namespace MyNS {
 		 * This is used for parsing times in resources, such as HL7 messages, where no
 		 * explicit timezone is specified.
 		 */
-		timeZone?: string;
+		timeZone?: string | null;
 	}
 
 
@@ -423,7 +423,7 @@ export namespace MyNS {
 		 * key and the patient ID. A default key is generated for each
 		 * Deidentify operation and is used wherever crypto_key is not specified.
 		 */
-		cryptoKey?: string;
+		cryptoKey?: string | null;
 	}
 
 
@@ -436,14 +436,14 @@ export namespace MyNS {
 	export interface DeidentifyConfig {
 
 		/** Specifies the parameters needed for de-identification of DICOM stores. */
-		dicom?: DicomConfig;
+		dicom?: DicomConfig | null;
 
 		/** Specifies how to handle de-identification of a FHIR store. */
-		fhir?: FhirConfig;
+		fhir?: FhirConfig | null;
 
 		/** Specifies how to handle de-identification of image pixels. */
-		image?: ImageConfig;
-		text?: TextConfig;
+		image?: ImageConfig | null;
+		text?: TextConfig | null;
 	}
 
 
@@ -451,13 +451,13 @@ export namespace MyNS {
 	export interface DicomConfig {
 
 		/** Tag filtering profile that determines which tags to keep/remove. */
-		filterProfile?: DicomConfigFilterProfile;
+		filterProfile?: DicomConfigFilterProfile | null;
 
 		/** List of tags to be filtered. */
-		keepList?: TagFilterList;
+		keepList?: TagFilterList | null;
 
 		/** List of tags to be filtered. */
-		removeList?: TagFilterList;
+		removeList?: TagFilterList | null;
 
 		/**
 		 * If true, skip replacing StudyInstanceUID, SeriesInstanceUID,
@@ -469,7 +469,7 @@ export namespace MyNS {
 		 * possible to recover the individual's identity."
 		 * http://dicom.nema.org/medical/dicom/current/output/chtml/part15/sect_E.3.9.html
 		 */
-		skipIdRedaction?: boolean;
+		skipIdRedaction?: boolean | null;
 	}
 
 	export enum DicomConfigFilterProfile { TAG_FILTER_PROFILE_UNSPECIFIED = 0, MINIMAL_KEEP_LIST_PROFILE = 1, ATTRIBUTE_CONFIDENTIALITY_BASIC_PROFILE = 2, KEEP_ALL_PROFILE = 3, DEIDENTIFY_TAG_CONTENTS = 4 }
@@ -485,7 +485,7 @@ export namespace MyNS {
 		 * They may be provided by "Keyword" or "Tag". For example "PatientID",
 		 * "00100010".
 		 */
-		tags?: Array<string>;
+		tags?: Array<string> | null;
 	}
 
 
@@ -499,7 +499,7 @@ export namespace MyNS {
 		 * If a field can be matched by more than one FieldMetadata, the first
 		 * FieldMetadata.Action is applied.
 		 */
-		fieldMetadataList?: Array<FieldMetadata>;
+		fieldMetadataList?: Array<FieldMetadata> | null;
 	}
 
 
@@ -510,7 +510,7 @@ export namespace MyNS {
 	export interface FieldMetadata {
 
 		/** Deidentify action for one field. */
-		action?: FieldMetadataAction;
+		action?: FieldMetadataAction | null;
 
 		/**
 		 * List of paths to FHIR fields to redact. Each path is a
@@ -529,7 +529,7 @@ export namespace MyNS {
 		 * The sub-type for HumanName(for example HumanName.given,
 		 * HumanName.family) can be omitted.
 		 */
-		paths?: Array<string>;
+		paths?: Array<string> | null;
 	}
 
 	export enum FieldMetadataAction { ACTION_UNSPECIFIED = 0, TRANSFORM = 1, INSPECT_AND_TRANSFORM = 2, DO_NOT_TRANSFORM = 3 }
@@ -539,7 +539,7 @@ export namespace MyNS {
 	export interface ImageConfig {
 
 		/** Determines how to redact text from image. */
-		textRedactionMode?: ImageConfigTextRedactionMode;
+		textRedactionMode?: ImageConfigTextRedactionMode | null;
 	}
 
 	export enum ImageConfigTextRedactionMode { TEXT_REDACTION_MODE_UNSPECIFIED = 0, REDACT_ALL_TEXT = 1, REDACT_SENSITIVE_TEXT = 2, REDACT_NO_TEXT = 3 }
@@ -547,7 +547,7 @@ export namespace MyNS {
 	export interface TextConfig {
 
 		/** The transformations to apply to the detected data. */
-		transformations?: Array<InfoTypeTransformation>;
+		transformations?: Array<InfoTypeTransformation> | null;
 	}
 
 
@@ -558,7 +558,7 @@ export namespace MyNS {
 	export interface InfoTypeTransformation {
 
 		/** Mask a string by replacing its characters with a fixed character. */
-		characterMaskConfig?: CharacterMaskConfig;
+		characterMaskConfig?: CharacterMaskConfig | null;
 
 		/**
 		 * Pseudonymization method that generates surrogates via cryptographic hashing.
@@ -566,26 +566,26 @@ export namespace MyNS {
 		 * Outputs a base64-encoded representation of the hashed output
 		 * (for example, `L7k0BHmF1ha5U3NfGykjro4xWi1MPVQPjhMAZbSV9mM=`).
 		 */
-		cryptoHashConfig?: CryptoHashConfig;
+		cryptoHashConfig?: CryptoHashConfig | null;
 
 		/**
 		 * Shift a date forward or backward in time by a random amount which is
 		 * consistent for a given patient and crypto key combination.
 		 */
-		dateShiftConfig?: DateShiftConfig;
+		dateShiftConfig?: DateShiftConfig | null;
 
 		/**
 		 * InfoTypes to apply this transformation to. If this is not specified, this
 		 * transformation becomes the default transformation, and is used for any
 		 * info_type that is not specified in another transformation.
 		 */
-		infoTypes?: Array<string>;
+		infoTypes?: Array<string> | null;
 
 		/**
 		 * Define how to redact sensitive values. Default behaviour is erase.
 		 * For example, "My name is Jane." becomes "My name is ."
 		 */
-		redactConfig?: RedactConfig;
+		redactConfig?: RedactConfig | null;
 
 		/**
 		 * When using the
@@ -595,7 +595,7 @@ export namespace MyNS {
 		 * TRANSFORM
 		 * action is equivalent to redacting.
 		 */
-		replaceWithInfoTypeConfig?: ReplaceWithInfoTypeConfig;
+		replaceWithInfoTypeConfig?: ReplaceWithInfoTypeConfig | null;
 	}
 
 
@@ -628,7 +628,7 @@ export namespace MyNS {
 		 * https://tools.ietf.org/html/rfc6838 media type or subtype. Configs are
 		 * applied in a nested manner at runtime.
 		 */
-		config?: DeidentifyConfig;
+		config?: DeidentifyConfig | null;
 
 		/**
 		 * The name of the dataset resource to create and write the redacted data to.
@@ -637,7 +637,7 @@ export namespace MyNS {
 		 * source dataset. De-identifying data across multiple projects or locations
 		 * is not supported.
 		 */
-		destinationDataset?: string;
+		destinationDataset?: string | null;
 	}
 
 
@@ -650,7 +650,7 @@ export namespace MyNS {
 		 * https://tools.ietf.org/html/rfc6838 media type or subtype. Configs are
 		 * applied in a nested manner at runtime.
 		 */
-		config?: DeidentifyConfig;
+		config?: DeidentifyConfig | null;
 
 		/**
 		 * The name of the DICOM store to create and write the redacted data to.
@@ -663,10 +663,10 @@ export namespace MyNS {
 		 * * The caller must have the necessary permissions to create the destination
 		 * DICOM store.
 		 */
-		destinationStore?: string;
+		destinationStore?: string | null;
 
 		/** Specifies the filter configuration for DICOM resources. */
-		filterConfig?: DicomFilterConfig;
+		filterConfig?: DicomFilterConfig | null;
 	}
 
 
@@ -684,7 +684,7 @@ export namespace MyNS {
 		 * `roles/storage.objectViewer` Cloud IAM role for this Cloud Storage
 		 * location.
 		 */
-		resourcePathsGcsUri?: string;
+		resourcePathsGcsUri?: string | null;
 	}
 
 
@@ -692,16 +692,16 @@ export namespace MyNS {
 	export interface DeidentifyErrorDetails {
 
 		/** Number of resources that failed to process. */
-		failureResourceCount?: string;
+		failureResourceCount?: string | null;
 
 		/** Number of stores that failed to process. */
-		failureStoreCount?: string;
+		failureStoreCount?: string | null;
 
 		/** Number of resources successfully processed. */
-		successResourceCount?: string;
+		successResourceCount?: string | null;
 
 		/** Number of stores successfully processed. */
-		successStoreCount?: string;
+		successStoreCount?: string | null;
 	}
 
 
@@ -714,7 +714,7 @@ export namespace MyNS {
 		 * https://tools.ietf.org/html/rfc6838 media type or subtype. Configs are
 		 * applied in a nested manner at runtime.
 		 */
-		config?: DeidentifyConfig;
+		config?: DeidentifyConfig | null;
 
 		/**
 		 * The name of the FHIR store to create and write the redacted data to.
@@ -727,10 +727,10 @@ export namespace MyNS {
 		 * * The caller must have the healthcare.fhirResources.update permission to
 		 * write to the destination FHIR store.
 		 */
-		destinationStore?: string;
+		destinationStore?: string | null;
 
 		/** Filter configuration. */
-		resourceFilter?: FhirFilter;
+		resourceFilter?: FhirFilter | null;
 	}
 
 
@@ -738,7 +738,7 @@ export namespace MyNS {
 	export interface FhirFilter {
 
 		/** A list of FHIR resources. */
-		resources?: Resources;
+		resources?: Resources | null;
 	}
 
 
@@ -746,7 +746,7 @@ export namespace MyNS {
 	export interface Resources {
 
 		/** List of resources IDs. For example, "Patient/1234". */
-		resources?: Array<string>;
+		resources?: Array<string> | null;
 	}
 
 
@@ -759,13 +759,13 @@ export namespace MyNS {
 		 * * Invalid user input data
 		 * * Transient errors that could be skipped
 		 */
-		failureResourceCount?: string;
+		failureResourceCount?: string | null;
 
 		/** Number of resources successfully processed. */
-		successResourceCount?: string;
+		successResourceCount?: string | null;
 
 		/** Number of stores successfully processed. */
-		successStoreCount?: string;
+		successStoreCount?: string | null;
 	}
 
 
@@ -783,16 +783,16 @@ export namespace MyNS {
 		 * following PCRE regular expression: [\p{Ll}\p{Lo}\p{N}_-]{0,63}
 		 * No more than 64 labels can be associated with a given store.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Output only. Resource name of the DICOM store, of the form
 		 * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Specifies where to send notifications upon changes to a data store. */
-		notificationConfig?: NotificationConfig;
+		notificationConfig?: NotificationConfig | null;
 	}
 
 
@@ -817,7 +817,7 @@ export namespace MyNS {
 		 * logs](/healthcare/docs/how-tos/stackdriver-logging)). If the number of
 		 * errors exceeds a certain rate, some aren't submitted.
 		 */
-		pubsubTopic?: string;
+		pubsubTopic?: string | null;
 	}
 
 
@@ -849,10 +849,10 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/** The identifier of the resource. */
-		resource?: string;
+		resource?: string | null;
 	}
 
 
@@ -867,20 +867,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -895,13 +895,13 @@ export namespace MyNS {
 	export interface ExportDicomDataRequest {
 
 		/** The BigQuery table where the server writes the output. */
-		bigqueryDestination?: GoogleCloudHealthcareV1beta1DicomBigQueryDestination;
+		bigqueryDestination?: GoogleCloudHealthcareV1beta1DicomBigQueryDestination | null;
 
 		/**
 		 * The Cloud Storage location where the server writes the output and the export
 		 * configuration.
 		 */
-		gcsDestination?: GoogleCloudHealthcareV1beta1DicomGcsDestination;
+		gcsDestination?: GoogleCloudHealthcareV1beta1DicomGcsDestination | null;
 	}
 
 
@@ -914,13 +914,13 @@ export namespace MyNS {
 		 * set and the destination table already exists, the export call returns an
 		 * error.
 		 */
-		force?: boolean;
+		force?: boolean | null;
 
 		/**
 		 * BigQuery URI to a table, up to 2000 characters long, in the format
 		 * `bq://projectId.bqDatasetId.tableId`
 		 */
-		tableUri?: string;
+		tableUri?: string | null;
 	}
 
 
@@ -963,7 +963,7 @@ export namespace MyNS {
 		 * If unspecified, the instances are exported in the original
 		 * DICOM format they were uploaded in.
 		 */
-		mimeType?: string;
+		mimeType?: string | null;
 
 		/**
 		 * The Cloud Storage destination to export to.
@@ -973,7 +973,7 @@ export namespace MyNS {
 		 * The user is responsible for creating the Cloud Storage bucket referenced in
 		 * `uri_prefix`.
 		 */
-		uriPrefix?: string;
+		uriPrefix?: string | null;
 	}
 
 
@@ -986,10 +986,10 @@ export namespace MyNS {
 	export interface ExportResourcesRequest {
 
 		/** The configuration for exporting to BigQuery. */
-		bigqueryDestination?: GoogleCloudHealthcareV1beta1FhirBigQueryDestination;
+		bigqueryDestination?: GoogleCloudHealthcareV1beta1FhirBigQueryDestination | null;
 
 		/** The configuration for exporting to Cloud Storage. */
-		gcsDestination?: GoogleCloudHealthcareV1beta1FhirRestGcsDestination;
+		gcsDestination?: GoogleCloudHealthcareV1beta1FhirRestGcsDestination | null;
 	}
 
 
@@ -1000,20 +1000,20 @@ export namespace MyNS {
 		 * BigQuery URI to a dataset, up to 2000 characters long, in the format
 		 * `bq://projectId.bqDatasetId`
 		 */
-		datasetUri?: string;
+		datasetUri?: string | null;
 
 		/**
 		 * If this flag is `TRUE`, all tables will be deleted from the dataset before
 		 * the new exported tables are written. If the flag is not set and the
 		 * destination dataset contains tables, the export call returns an error.
 		 */
-		force?: boolean;
+		force?: boolean | null;
 
 		/**
 		 * Configuration for the FHIR BigQuery schema. Determines how the server
 		 * generates the schema.
 		 */
-		schemaConfig?: SchemaConfig;
+		schemaConfig?: SchemaConfig | null;
 	}
 
 
@@ -1031,13 +1031,13 @@ export namespace MyNS {
 		 * specified or set to 0, the server will use the default value 2. The
 		 * maximum depth allowed is 5.
 		 */
-		recursiveStructureDepth?: string;
+		recursiveStructureDepth?: string | null;
 
 		/**
 		 * Specifies the output schema type. If unspecified, the default is
 		 * `LOSSLESS`.
 		 */
-		schemaType?: SchemaConfigSchemaType;
+		schemaType?: SchemaConfigSchemaType | null;
 	}
 
 	export enum SchemaConfigSchemaType { SCHEMA_TYPE_UNSPECIFIED = 0, LOSSLESS = 1, ANALYTICS = 2 }
@@ -1053,7 +1053,7 @@ export namespace MyNS {
 		 * The user is responsible for creating the Cloud Storage bucket referenced in
 		 * `uri_prefix`.
 		 */
-		uriPrefix?: string;
+		uriPrefix?: string | null;
 	}
 
 
@@ -1069,7 +1069,7 @@ export namespace MyNS {
 		 * call by setting the HTTP header `Prefer: handling=strict` or
 		 * `Prefer: handling=lenient`.
 		 */
-		defaultSearchHandlingStrict?: boolean;
+		defaultSearchHandlingStrict?: boolean | null;
 
 		/**
 		 * Whether to disable referential integrity in this FHIR store. This field is
@@ -1082,7 +1082,7 @@ export namespace MyNS {
 		 * GetPatientEverything, do not return all the results if broken references
 		 * exist.
 		 */
-		disableReferentialIntegrity?: boolean;
+		disableReferentialIntegrity?: boolean | null;
 
 		/**
 		 * Whether to disable resource versioning for this FHIR store. This field can
@@ -1093,7 +1093,7 @@ export namespace MyNS {
 		 * If set to true, no historical versions are kept. The server sends
 		 * errors for attempts to read the historical versions.
 		 */
-		disableResourceVersioning?: boolean;
+		disableResourceVersioning?: boolean | null;
 
 		/**
 		 * Whether this FHIR store has the [updateCreate
@@ -1106,7 +1106,7 @@ export namespace MyNS {
 		 * patient identifiers, those IDs are part of the FHIR resource path
 		 * recorded in Cloud audit logs and Cloud Pub/Sub notifications.
 		 */
-		enableUpdateCreate?: boolean;
+		enableUpdateCreate?: boolean | null;
 
 		/**
 		 * User-supplied key-value pairs used to organize FHIR stores.
@@ -1119,16 +1119,16 @@ export namespace MyNS {
 		 * following PCRE regular expression: [\p{Ll}\p{Lo}\p{N}_-]{0,63}
 		 * No more than 64 labels can be associated with a given store.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Output only. Resource name of the FHIR store, of the form
 		 * `projects/{project_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Specifies where to send notifications upon changes to a data store. */
-		notificationConfig?: NotificationConfig;
+		notificationConfig?: NotificationConfig | null;
 
 		/**
 		 * A list of streaming configs that configure the destinations of streaming
@@ -1145,7 +1145,7 @@ export namespace MyNS {
 		 * Some lag (typically on the order of dozens of seconds) is expected before
 		 * the results show up in the streaming destination.
 		 */
-		streamConfigs?: Array<StreamConfig>;
+		streamConfigs?: Array<StreamConfig> | null;
 
 		/**
 		 * The FHIR specification version that this FHIR store supports natively. This
@@ -1153,7 +1153,7 @@ export namespace MyNS {
 		 * contain FHIR resources of a different version.
 		 * An empty value is treated as STU3.
 		 */
-		version?: FhirStoreVersion;
+		version?: FhirStoreVersion | null;
 	}
 
 
@@ -1161,7 +1161,7 @@ export namespace MyNS {
 	export interface StreamConfig {
 
 		/** The configuration for exporting to BigQuery. */
-		bigqueryDestination?: GoogleCloudHealthcareV1beta1FhirBigQueryDestination;
+		bigqueryDestination?: GoogleCloudHealthcareV1beta1FhirBigQueryDestination | null;
 
 		/**
 		 * Supply a FHIR resource type (such as "Patient" or "Observation").
@@ -1170,7 +1170,7 @@ export namespace MyNS {
 		 * The server treats an empty list as an intent to stream all the
 		 * supported resource types in this FHIR store.
 		 */
-		resourceTypes?: Array<string>;
+		resourceTypes?: Array<string> | null;
 	}
 
 	export enum FhirStoreVersion { VERSION_UNSPECIFIED = 0, DSTU2 = 1, STU3 = 2, R4 = 3 }
@@ -1183,25 +1183,25 @@ export namespace MyNS {
 		 * The maximum number of times this field can be repeated. 0 or -1 means
 		 * unbounded.
 		 */
-		maxOccurs?: number;
+		maxOccurs?: number | null;
 
 		/** The minimum number of times this field must be present/repeated. */
-		minOccurs?: number;
+		minOccurs?: number | null;
 
 		/** The name of the field. For example, "PID-1" or just "1". */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The HL7v2 table this field refers to. For example, PID-15 (Patient's
 		 * Primary Language) usually refers to table "0296".
 		 */
-		table?: string;
+		table?: string | null;
 
 		/**
 		 * The type of this field. A Type with this name must be defined in an
 		 * Hl7TypesConfig.
 		 */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -1209,10 +1209,10 @@ export namespace MyNS {
 	export interface GoogleCloudHealthcareV1beta1DeidentifyDeidentifyDicomStoreSummary {
 
 		/** Number of objects that processing failed for. */
-		failureResourceCount?: string;
+		failureResourceCount?: string | null;
 
 		/** Number of objects successfully processed. */
-		successResourceCount?: string;
+		successResourceCount?: string | null;
 	}
 
 
@@ -1220,7 +1220,7 @@ export namespace MyNS {
 	export interface GoogleCloudHealthcareV1beta1DeidentifyDeidentifyFhirStoreSummary {
 
 		/** Number of resources successfully processed. */
-		successResourceCount?: string;
+		successResourceCount?: string | null;
 	}
 
 
@@ -1245,7 +1245,7 @@ export namespace MyNS {
 		 * Files matching the wildcard are expected to contain content only, no
 		 * metadata.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -1259,23 +1259,23 @@ export namespace MyNS {
 	export interface GoogleCloudHealthcareV1beta1FhirRestExportResourcesErrorDetails {
 
 		/** The number of resources that had errors. */
-		errorCount?: string;
+		errorCount?: string | null;
 
 		/**
 		 * The name of the FHIR store where resources have been exported, in the
 		 * format
 		 * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
 		 */
-		fhirStore?: string;
+		fhirStore?: string | null;
 
 		/**
 		 * The total number of resources included in the export operation. This is
 		 * the sum of the success and error counts.
 		 */
-		resourceCount?: string;
+		resourceCount?: string | null;
 
 		/** The number of resources that were exported. */
-		successCount?: string;
+		successCount?: string | null;
 	}
 
 
@@ -1292,10 +1292,10 @@ export namespace MyNS {
 		 * format
 		 * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
 		 */
-		fhirStore?: string;
+		fhirStore?: string | null;
 
 		/** The total number of resources exported from the requested FHIR store. */
-		resourceCount?: string;
+		resourceCount?: string | null;
 	}
 
 
@@ -1319,7 +1319,7 @@ export namespace MyNS {
 		 * Files matching the wildcard are expected to contain content only, no
 		 * metadata.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -1333,23 +1333,23 @@ export namespace MyNS {
 	export interface GoogleCloudHealthcareV1beta1FhirRestImportResourcesErrorDetails {
 
 		/** The number of resources that had errors. */
-		errorCount?: string;
+		errorCount?: string | null;
 
 		/**
 		 * The name of the FHIR store where resources have been imported, in the
 		 * format
 		 * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
 		 */
-		fhirStore?: string;
+		fhirStore?: string | null;
 
 		/**
 		 * The total number of resources included in the source data. This is the sum
 		 * of the success and error counts.
 		 */
-		inputSize?: string;
+		inputSize?: string | null;
 
 		/** The number of resources that have been imported. */
-		successCount?: string;
+		successCount?: string | null;
 	}
 
 
@@ -1366,10 +1366,10 @@ export namespace MyNS {
 		 * format
 		 * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
 		 */
-		fhirStore?: string;
+		fhirStore?: string | null;
 
 		/** The total number of resources included in the source data. */
-		inputSize?: string;
+		inputSize?: string | null;
 	}
 
 
@@ -1377,10 +1377,10 @@ export namespace MyNS {
 	export interface GroupOrSegment {
 
 		/** An HL7v2 logical group construct. */
-		group?: SchemaGroup;
+		group?: SchemaGroup | null;
 
 		/** An HL7v2 Segment. */
-		segment?: SchemaSegment;
+		segment?: SchemaSegment | null;
 	}
 
 
@@ -1391,22 +1391,22 @@ export namespace MyNS {
 		 * True indicates that this is a choice group, meaning that only one of its
 		 * segments can exist in a given message.
 		 */
-		choice?: boolean;
+		choice?: boolean | null;
 
 		/**
 		 * The maximum number of times this group can be repeated. 0 or -1 means
 		 * unbounded.
 		 */
-		maxOccurs?: number;
+		maxOccurs?: number | null;
 
 		/** Nested groups and/or segments. */
-		members?: Array<GroupOrSegment>;
+		members?: Array<GroupOrSegment> | null;
 
 		/** The minimum number of times this group must be present/repeated. */
-		minOccurs?: number;
+		minOccurs?: number | null;
 
 		/** The name of this group. For example, "ORDER_DETAIL". */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -1417,13 +1417,13 @@ export namespace MyNS {
 		 * The maximum number of times this segment can be present in this group.
 		 * 0 or -1 means unbounded.
 		 */
-		maxOccurs?: number;
+		maxOccurs?: number | null;
 
 		/** The minimum number of times this segment can be present in this group. */
-		minOccurs?: number;
+		minOccurs?: number | null;
 
 		/** The Segment type. For example, "PID". */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -1438,13 +1438,13 @@ export namespace MyNS {
 		 * Map from each HL7v2 message type and trigger event pair, such as ADT_A04,
 		 * to its schema configuration root group.
 		 */
-		messageSchemaConfigs?: {[id: string]: SchemaGroup };
+		messageSchemaConfigs?: {[id: string]: SchemaGroup } | null;
 
 		/**
 		 * Each VersionSource is tested and only if they all match is the schema used
 		 * for the message.
 		 */
-		version?: Array<VersionSource>;
+		version?: Array<VersionSource> | null;
 	}
 
 
@@ -1452,13 +1452,13 @@ export namespace MyNS {
 	export interface VersionSource {
 
 		/** The field to extract from the MSH segment. For example, "3.1" or "18[1].1". */
-		mshField?: string;
+		mshField?: string | null;
 
 		/**
 		 * The value to match with the field. For example, "My Application Name" or
 		 * "2.3".
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -1466,13 +1466,13 @@ export namespace MyNS {
 	export interface Hl7TypesConfig {
 
 		/** The HL7v2 type definitions. */
-		type?: Array<Type>;
+		type?: Array<Type> | null;
 
 		/**
 		 * The version selectors that this config applies to. A message must match
 		 * ALL version sources to apply.
 		 */
-		version?: Array<VersionSource>;
+		version?: Array<VersionSource> | null;
 	}
 
 
@@ -1480,19 +1480,19 @@ export namespace MyNS {
 	export interface Type {
 
 		/** The (sub) fields this type has (if not primitive). */
-		fields?: Array<Field>;
+		fields?: Array<Field> | null;
 
 		/**
 		 * The name of this type. This would be the segment or datatype name.
 		 * For example, "PID" or "XPN".
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * If this is a primitive type then this field is the type of the primitive
 		 * For example, STRING. Leave unspecified for composite types.
 		 */
-		primitive?: TypePrimitive;
+		primitive?: TypePrimitive | null;
 	}
 
 	export enum TypePrimitive { PRIMITIVE_UNSPECIFIED = 0, STRING = 1, VARIES = 2, UNESCAPED_STRING = 3 }
@@ -1528,7 +1528,7 @@ export namespace MyNS {
 		 * used to assert the existence of a label. For example,
 		 * `labels."priority":*`.
 		 */
-		filter?: string;
+		filter?: string | null;
 
 		/**
 		 * The [Cloud Pubsub](https://cloud.google.com/pubsub/docs/) topic that
@@ -1548,7 +1548,7 @@ export namespace MyNS {
 		 * logged to Stackdriver (see [Viewing logs](/healthcare/docs/how-
 		 * tos/stackdriver-logging)).
 		 */
-		pubsubTopic?: string;
+		pubsubTopic?: string | null;
 	}
 
 
@@ -1566,16 +1566,16 @@ export namespace MyNS {
 		 * following PCRE regular expression: [\p{Ll}\p{Lo}\p{N}_-]{0,63}
 		 * No more than 64 labels can be associated with a given store.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Output only. Resource name of the HL7v2 store, of the form
 		 * `projects/{project_id}/datasets/{dataset_id}/hl7V2Stores/{hl7v2_store_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Specifies where to send notifications upon changes to a data store. */
-		notificationConfig?: NotificationConfig;
+		notificationConfig?: NotificationConfig | null;
 
 		/**
 		 * A list of notification configs. Each configuration uses a filter to
@@ -1583,13 +1583,13 @@ export namespace MyNS {
 		 * the corresponding notification destination. Only the message name is sent
 		 * as part of the notification. Supplied by the client.
 		 */
-		notificationConfigs?: Array<Hl7V2NotificationConfig>;
+		notificationConfigs?: Array<Hl7V2NotificationConfig> | null;
 
 		/**
 		 * The configuration for the parser. It determines how the server parses the
 		 * messages.
 		 */
-		parserConfig?: ParserConfig;
+		parserConfig?: ParserConfig | null;
 
 		/**
 		 * Determines whether duplicate messages should be rejected. A duplicate
@@ -1604,7 +1604,7 @@ export namespace MyNS {
 		 * requests with a duplicate message will be rejected by the store, and
 		 * IngestMessageErrorDetail returns a NACK message upon rejection.
 		 */
-		rejectDuplicateMessage?: boolean;
+		rejectDuplicateMessage?: boolean | null;
 	}
 
 
@@ -1615,17 +1615,17 @@ export namespace MyNS {
 	export interface ParserConfig {
 
 		/** Determines whether messages with no header are allowed. */
-		allowNullHeader?: boolean;
+		allowNullHeader?: boolean | null;
 
 		/** A schema package contains a set of schemas and type definitions. */
-		schema?: SchemaPackage;
+		schema?: SchemaPackage | null;
 
 		/**
 		 * Byte(s) to use as the segment terminator. If this is unset, '\r' is
 		 * used as segment terminator, matching the HL7 version 2
 		 * specification.
 		 */
-		segmentTerminator?: string;
+		segmentTerminator?: string | null;
 	}
 
 
@@ -1637,7 +1637,7 @@ export namespace MyNS {
 		 * incoming messages can omit any group, segment, field, component, or
 		 * subcomponent.
 		 */
-		ignoreMinOccurs?: boolean;
+		ignoreMinOccurs?: boolean | null;
 
 		/**
 		 * Schema configs that are layered based on their VersionSources that
@@ -1645,10 +1645,10 @@ export namespace MyNS {
 		 * override those in lower indices with the same message type and trigger
 		 * event if their VersionSources all match an incoming message.
 		 */
-		schemas?: Array<Hl7SchemaConfig>;
+		schemas?: Array<Hl7SchemaConfig> | null;
 
 		/** Determines how messages that don't parse successfully are handled. */
-		schematizedParsingType?: SchemaPackageSchematizedParsingType;
+		schematizedParsingType?: SchemaPackageSchematizedParsingType | null;
 
 		/**
 		 * Schema type definitions that are layered based on their VersionSources
@@ -1656,7 +1656,7 @@ export namespace MyNS {
 		 * override those in lower indices with the same type name if their
 		 * VersionSources all match an incoming message.
 		 */
-		types?: Array<Hl7TypesConfig>;
+		types?: Array<Hl7TypesConfig> | null;
 	}
 
 	export enum SchemaPackageSchematizedParsingType { SCHEMATIZED_PARSING_TYPE_UNSPECIFIED = 0, SOFT_FAIL = 1, HARD_FAIL = 2 }
@@ -1696,16 +1696,16 @@ export namespace MyNS {
 	export interface HttpBody {
 
 		/** The HTTP Content-Type header value specifying the content type of the body. */
-		contentType?: string;
+		contentType?: string | null;
 
 		/** The HTTP request/response body as raw binary. */
-		data?: string;
+		data?: string | null;
 
 		/**
 		 * Application specific response metadata. Must be set in the first response
 		 * for streaming APIs.
 		 */
-		extensions?: Array<string>;
+		extensions?: Array<string> | null;
 	}
 
 
@@ -1717,7 +1717,7 @@ export namespace MyNS {
 		 * Contains sample errors encountered in imports of individual resources.
 		 * For example, a Cloud Storage object.
 		 */
-		sampleErrors?: Array<ErrorDetail>;
+		sampleErrors?: Array<ErrorDetail> | null;
 	}
 
 
@@ -1730,7 +1730,7 @@ export namespace MyNS {
 	export interface ImportDicomDataRequest {
 
 		/** Specifies the configuration for importing data from Cloud Storage. */
-		gcsSource?: GoogleCloudHealthcareV1beta1DicomGcsSource;
+		gcsSource?: GoogleCloudHealthcareV1beta1DicomGcsSource | null;
 	}
 
 
@@ -1746,10 +1746,10 @@ export namespace MyNS {
 		 * The content structure in the source location. If not specified, the server
 		 * treats the input source files as BUNDLE.
 		 */
-		contentStructure?: ImportResourcesRequestContentStructure;
+		contentStructure?: ImportResourcesRequestContentStructure | null;
 
 		/** Specifies the configuration for importing data from Cloud Storage. */
-		gcsSource?: GoogleCloudHealthcareV1beta1FhirRestGcsSource;
+		gcsSource?: GoogleCloudHealthcareV1beta1FhirRestGcsSource | null;
 	}
 
 	export enum ImportResourcesRequestContentStructure { CONTENT_STRUCTURE_UNSPECIFIED = 0, BUNDLE = 1, RESOURCE = 2, BUNDLE_PRETTY = 3, RESOURCE_PRETTY = 4 }
@@ -1763,7 +1763,7 @@ export namespace MyNS {
 		 * See http://www.hl7.org/implement/standards/index.cfm?ref=common for details
 		 * on the standard.
 		 */
-		message?: Message;
+		message?: Message | null;
 	}
 
 
@@ -1774,14 +1774,14 @@ export namespace MyNS {
 	export interface IngestMessageResponse {
 
 		/** HL7v2 ACK message. */
-		hl7Ack?: string;
+		hl7Ack?: string | null;
 
 		/**
 		 * A complete HL7v2 message.
 		 * See http://www.hl7.org/implement/standards/index.cfm?ref=common for details
 		 * on the standard.
 		 */
-		message?: Message;
+		message?: Message | null;
 	}
 
 
@@ -1789,13 +1789,13 @@ export namespace MyNS {
 	export interface ListDatasetsResponse {
 
 		/** The first page of datasets. */
-		datasets?: Array<Dataset>;
+		datasets?: Array<Dataset> | null;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no
 		 * more results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1806,13 +1806,13 @@ export namespace MyNS {
 		 * The returned DICOM stores. Won't be more DICOM stores than the value of
 		 * page_size in the request.
 		 */
-		dicomStores?: Array<DicomStore>;
+		dicomStores?: Array<DicomStore> | null;
 
 		/**
 		 * Token to retrieve the next page of results or empty if there are no more
 		 * results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1823,13 +1823,13 @@ export namespace MyNS {
 		 * The returned FHIR stores. Won't be more FHIR stores than the value of
 		 * page_size in the request.
 		 */
-		fhirStores?: Array<FhirStore>;
+		fhirStores?: Array<FhirStore> | null;
 
 		/**
 		 * Token to retrieve the next page of results or empty if there are no more
 		 * results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1840,13 +1840,13 @@ export namespace MyNS {
 		 * The returned HL7v2 stores. Won't be more HL7v2 stores than the value of
 		 * page_size in the request.
 		 */
-		hl7V2Stores?: Array<Hl7V2Store>;
+		hl7V2Stores?: Array<Hl7V2Store> | null;
 
 		/**
 		 * Token to retrieve the next page of results or empty if there are no more
 		 * results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1854,10 +1854,10 @@ export namespace MyNS {
 	export interface ListLocationsResponse {
 
 		/** A list of locations that matches the specified filter in the request. */
-		locations?: Array<Location>;
+		locations?: Array<Location> | null;
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1868,28 +1868,28 @@ export namespace MyNS {
 		 * The friendly name for this location, typically a nearby city name.
 		 * For example, "Tokyo".
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
-		locationId?: string;
+		locationId?: string | null;
 
 		/**
 		 * Service-specific metadata. For example the available capacity at the given
 		 * location.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * Resource name for the location, which may vary between implementations.
 		 * For example: `"projects/example-project/locations/us-east1"`
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -1902,13 +1902,13 @@ export namespace MyNS {
 		 * view for
 		 * populated fields.
 		 */
-		hl7V2Messages?: Array<Message>;
+		hl7V2Messages?: Array<Message> | null;
 
 		/**
 		 * Token to retrieve the next page of results or empty if there are no more
 		 * results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -1916,10 +1916,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -1934,7 +1934,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -1944,7 +1944,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -1952,14 +1952,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -1971,7 +1971,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -1982,26 +1982,26 @@ export namespace MyNS {
 	export interface OperationMetadata {
 
 		/** The name of the API method that initiated the operation. */
-		apiMethodName?: string;
+		apiMethodName?: string | null;
 
 		/** Specifies if cancellation was requested for the operation. */
-		cancelRequested?: boolean;
+		cancelRequested?: boolean | null;
 
 		/** ProgressCounter provides counters to describe an operation's progress. */
-		counter?: ProgressCounter;
+		counter?: ProgressCounter | null;
 
 		/** The time at which the operation was created by the API. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** The time at which execution was completed. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * A link to audit and error logs in the log viewer. Error logs are generated
 		 * only by some operations, listed at
 		 * https://cloud.google.com/healthcare/docs/how-tos/stackdriver-logging.
 		 */
-		logsUrl?: string;
+		logsUrl?: string | null;
 	}
 
 
@@ -2009,13 +2009,13 @@ export namespace MyNS {
 	export interface ProgressCounter {
 
 		/** The number of units that failed in the operation. */
-		failure?: string;
+		failure?: string | null;
 
 		/** The number of units that are pending in the operation. */
-		pending?: string;
+		pending?: string | null;
 
 		/** The number of units that succeeded in the operation. */
-		success?: string;
+		success?: string | null;
 	}
 
 
@@ -2079,14 +2079,14 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Specifies cloud audit logging configuration for this policy. */
-		auditConfigs?: Array<AuditConfig>;
+		auditConfigs?: Array<AuditConfig> | null;
 
 		/**
 		 * Associates a list of `members` to a `role`. Optionally, may specify a
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding>;
+		bindings?: Array<Binding> | null;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -2101,7 +2101,7 @@ export namespace MyNS {
 		 * you to overwrite a version `3` policy with a version `1` policy, and all of
 		 * the conditions in the version `3` policy are lost.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * Specifies the format of the policy.
@@ -2121,7 +2121,7 @@ export namespace MyNS {
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
 		 */
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -2135,7 +2135,7 @@ export namespace MyNS {
 		 * [STU3](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html),
 		 * [R4](http://hl7.org/implement/standards/fhir/R4/resourcelist.html)).
 		 */
-		resourceType?: string;
+		resourceType?: string | null;
 	}
 
 
@@ -2199,7 +2199,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy;
+		policy?: Policy | null;
 
 		/**
 		 * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
@@ -2208,7 +2208,7 @@ export namespace MyNS {
 		 * paths: "bindings, etag"
 		 * This field is only used by Cloud IAM.
 		 */
-		updateMask?: string;
+		updateMask?: string | null;
 	}
 
 
@@ -2221,7 +2221,7 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 
@@ -2232,7 +2232,7 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string>;
+		permissions?: Array<string> | null;
 	}
 
 	@Injectable()
@@ -2258,7 +2258,7 @@ export namespace MyNS {
 		 * When unspecified, equivalent to FULL.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_hl7V2Stores_messages_get(name: string, view: Healthcare_projects_locations_datasets_hl7V2Stores_messages_getView): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_hl7V2Stores_messages_get(name: string, view: Healthcare_projects_locations_datasets_hl7V2Stores_messages_getView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2278,7 +2278,7 @@ export namespace MyNS {
 		 * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_hl7V2Stores_messages_patch(name: string, updateMask: string, requestBody: Message): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_hl7V2Stores_messages_patch(name: string, updateMask: string | null | undefined, requestBody: Message): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2333,7 +2333,7 @@ export namespace MyNS {
 		 * date is provided, all records prior to the end date are in scope.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_fhirStores_fhir_Patient_everything(name: string, _count: number, _page_token: string, end: string, start: string): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_fhirStores_fhir_Patient_everything(name: string, _count: number | null | undefined, _page_token: string | null | undefined, end: string | null | undefined, start: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '/$everything&_count=' + _count + '&_page_token=' + (_page_token == null ? '' : encodeURIComponent(_page_token)) + '&end=' + (end == null ? '' : encodeURIComponent(end)) + '&start=' + (start == null ? '' : encodeURIComponent(start)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2388,7 +2388,7 @@ export namespace MyNS {
 		 * include a time zone.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_fhirStores_fhir_history(name: string, _at: string, _count: number, _page_token: string, _since: string): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_fhirStores_fhir_history(name: string, _at: string | null | undefined, _count: number | null | undefined, _page_token: string | null | undefined, _since: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '/_history&_at=' + (_at == null ? '' : encodeURIComponent(_at)) + '&_count=' + _count + '&_page_token=' + (_page_token == null ? '' : encodeURIComponent(_page_token)) + '&_since=' + (_since == null ? '' : encodeURIComponent(_since)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2425,7 +2425,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '/locations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2446,7 +2446,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_operations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_operations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '/operations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2515,7 +2515,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/datasets&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2534,7 +2534,7 @@ export namespace MyNS {
 		 * The string must match the following regex: `[\p{L}\p{N}_\-\.]{1,256}`.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_create(parent: string, datasetId: string, requestBody: Dataset): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_create(parent: string, datasetId: string | null | undefined, requestBody: Dataset): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/datasets&datasetId=' + (datasetId == null ? '' : encodeURIComponent(datasetId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2550,7 +2550,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from the previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_dicomStores_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_dicomStores_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/dicomStores&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2562,7 +2562,7 @@ export namespace MyNS {
 		 * Any string value up to 256 characters in length.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_dicomStores_create(parent: string, dicomStoreId: string, requestBody: DicomStore): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_dicomStores_create(parent: string, dicomStoreId: string | null | undefined, requestBody: DicomStore): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/dicomStores&dicomStoreId=' + (dicomStoreId == null ? '' : encodeURIComponent(dicomStoreId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2670,7 +2670,7 @@ export namespace MyNS {
 		 * [R4](http://hl7.org/implement/standards/fhir/R4/resourcelist.html)).
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_fhirStores_search(parent: string, resourceType: string): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_fhirStores_search(parent: string, resourceType: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/fhir&resourceType=' + (resourceType == null ? '' : encodeURIComponent(resourceType)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2954,7 +2954,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from the previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_fhirStores_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_fhirStores_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/fhirStores&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2966,7 +2966,7 @@ export namespace MyNS {
 		 * The string must match the following regex: `[\p{L}\p{N}_\-\.]{1,256}`.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_fhirStores_create(parent: string, fhirStoreId: string, requestBody: FhirStore): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_fhirStores_create(parent: string, fhirStoreId: string | null | undefined, requestBody: FhirStore): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/fhirStores&fhirStoreId=' + (fhirStoreId == null ? '' : encodeURIComponent(fhirStoreId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2982,7 +2982,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token value returned from the previous List request, if any.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_hl7V2Stores_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_hl7V2Stores_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/hl7V2Stores&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2994,7 +2994,7 @@ export namespace MyNS {
 		 * The string must match the following regex: `[\p{L}\p{N}_\-\.]{1,256}`.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_hl7V2Stores_create(parent: string, hl7V2StoreId: string, requestBody: Hl7V2Store): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_hl7V2Stores_create(parent: string, hl7V2StoreId: string | null | undefined, requestBody: Hl7V2Store): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/hl7V2Stores&hl7V2StoreId=' + (hl7V2StoreId == null ? '' : encodeURIComponent(hl7V2StoreId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -3038,7 +3038,7 @@ export namespace MyNS {
 		 * response, which impacts the performance of this method.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_hl7V2Stores_messages_list(parent: string, filter: string, orderBy: string, pageSize: number, pageToken: string, view: Healthcare_projects_locations_datasets_hl7V2Stores_messages_getView): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_hl7V2Stores_messages_list(parent: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Healthcare_projects_locations_datasets_hl7V2Stores_messages_getView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/messages&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3084,7 +3084,7 @@ export namespace MyNS {
 		 * leave the field unset.
 		 * @return {void} Successful response
 		 */
-		Healthcare_projects_locations_datasets_annotationStores_getIamPolicy(resource: string, options_requestedPolicyVersion: number): Observable<HttpResponse<string>> {
+		Healthcare_projects_locations_datasets_annotationStores_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (resource == null ? '' : encodeURIComponent(resource)) + ':getIamPolicy&options_requestedPolicyVersion=' + options_requestedPolicyVersion, { observe: 'response', responseType: 'text' });
 		}
 

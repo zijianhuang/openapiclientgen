@@ -7,27 +7,27 @@ export namespace MyNS {
 	export interface Account {
 
 		/** The Account ID uniquely identifies the GTM Account. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/**
 		 * The fingerprint of the GTM Account as computed at storage time.
 		 * This value is recomputed whenever the account is modified.
 		 */
-		fingerprint?: string;
+		fingerprint?: string | null;
 
 		/**
 		 * Account display name.
 		 * @mutable tagmanager.accounts.create
 		 * @mutable tagmanager.accounts.update
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Whether the account shares data anonymously with Google and others.
 		 * @mutable tagmanager.accounts.create
 		 * @mutable tagmanager.accounts.update
 		 */
-		shareData?: boolean;
+		shareData?: boolean | null;
 	}
 
 
@@ -40,7 +40,7 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.permissions.create
 		 * @mutable tagmanager.accounts.permissions.update
 		 */
-		permission?: Array<string>;
+		permission?: Array<string> | null;
 	}
 
 
@@ -66,14 +66,14 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.triggers.create
 		 * @mutable tagmanager.accounts.containers.triggers.update
 		 */
-		parameter?: Array<Parameter>;
+		parameter?: Array<Parameter> | null;
 
 		/**
 		 * The type of operator for this condition.
 		 * @mutable tagmanager.accounts.containers.triggers.create
 		 * @mutable tagmanager.accounts.containers.triggers.update
 		 */
-		type?: ConditionType;
+		type?: ConditionType | null;
 	}
 
 
@@ -90,7 +90,7 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.tags.create
 		 * @mutable tagmanager.accounts.containers.tags.update
 		 */
-		key?: string;
+		key?: string | null;
 
 		/**
 		 * This list parameter's parameters (keys will be ignored).
@@ -101,7 +101,7 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.tags.create
 		 * @mutable tagmanager.accounts.containers.tags.update
 		 */
-		list?: Array<Parameter>;
+		list?: Array<Parameter> | null;
 
 		/**
 		 * This map parameter's parameters (must have keys; keys must be unique).
@@ -112,7 +112,7 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.tags.create
 		 * @mutable tagmanager.accounts.containers.tags.update
 		 */
-		map?: Array<Parameter>;
+		map?: Array<Parameter> | null;
 
 		/**
 		 * The parameter type.  Valid values are:<ul>
@@ -137,7 +137,7 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.tags.create
 		 * @mutable tagmanager.accounts.containers.tags.update
 		 */
-		type?: ParameterType;
+		type?: ParameterType | null;
 
 		/**
 		 * A parameter's value (may contain variable references such as
@@ -150,7 +150,7 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.tags.create
 		 * @mutable tagmanager.accounts.containers.tags.update
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 	export enum ParameterType { template = 0, integer = 1, boolean = 2, list = 3, map = 4, triggerReference = 5, tagReference = 6 }
@@ -162,17 +162,17 @@ export namespace MyNS {
 	export interface Container {
 
 		/** GTM Account ID. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** The Container ID uniquely identifies the GTM Container. */
-		containerId?: string;
+		containerId?: string | null;
 
 		/**
 		 * Optional list of domain names associated with the Container.
 		 * @mutable tagmanager.accounts.containers.create
 		 * @mutable tagmanager.accounts.containers.update
 		 */
-		domainName?: Array<string>;
+		domainName?: Array<string> | null;
 
 		/**
 		 * List of enabled built-in variables. Valid values include: <code>pageUrl,
@@ -185,44 +185,44 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.create
 		 * @mutable tagmanager.accounts.containers.update
 		 */
-		enabledBuiltInVariable?: Array<string>;
+		enabledBuiltInVariable?: Array<string> | null;
 
 		/**
 		 * The fingerprint of the GTM Container as computed at storage time.  This
 		 * value is recomputed whenever the account is modified.
 		 */
-		fingerprint?: string;
+		fingerprint?: string | null;
 
 		/**
 		 * Container display name.
 		 * @mutable tagmanager.accounts.containers.create
 		 * @mutable tagmanager.accounts.containers.update
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Container Notes.
 		 * @mutable tagmanager.accounts.containers.create
 		 * @mutable tagmanager.accounts.containers.update
 		 */
-		notes?: string;
+		notes?: string | null;
 
 		/** Container Public ID. */
-		publicId?: string;
+		publicId?: string | null;
 
 		/**
 		 * Container Country ID.
 		 * @mutable tagmanager.accounts.containers.create
 		 * @mutable tagmanager.accounts.containers.update
 		 */
-		timeZoneCountryId?: string;
+		timeZoneCountryId?: string | null;
 
 		/**
 		 * Container Time Zone ID.
 		 * @mutable tagmanager.accounts.containers.create
 		 * @mutable tagmanager.accounts.containers.update
 		 */
-		timeZoneId?: string;
+		timeZoneId?: string | null;
 
 		/**
 		 * List of Usage Contexts for the Container. Valid values include: <code>web,
@@ -230,7 +230,7 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.create
 		 * @mutable tagmanager.accounts.containers.update
 		 */
-		usageContext?: Array<string>;
+		usageContext?: Array<string> | null;
 	}
 
 
@@ -242,7 +242,7 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.permissions.create
 		 * @mutable tagmanager.accounts.permissions.update
 		 */
-		containerId?: string;
+		containerId?: string | null;
 
 		/**
 		 * List of Container permissions.
@@ -250,7 +250,7 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.permissions.create
 		 * @mutable tagmanager.accounts.permissions.update
 		 */
-		permission?: Array<string>;
+		permission?: Array<string> | null;
 	}
 
 
@@ -258,57 +258,57 @@ export namespace MyNS {
 	export interface ContainerVersion {
 
 		/** GTM Account ID. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Represents a Google Tag Manager Container. */
-		container?: Container;
+		container?: Container | null;
 
 		/** GTM Container ID. */
-		containerId?: string;
+		containerId?: string | null;
 
 		/** The Container Version ID uniquely identifies the GTM Container Version. */
-		containerVersionId?: string;
+		containerVersionId?: string | null;
 
 		/** A value of true indicates this container version has been deleted. */
-		deleted?: boolean;
+		deleted?: boolean | null;
 
 		/**
 		 * The fingerprint of the GTM Container Version as computed at
 		 * storage time. This value is recomputed whenever the container version is
 		 * modified.
 		 */
-		fingerprint?: string;
+		fingerprint?: string | null;
 
 		/** The folders in the container that this version was taken from. */
-		folder?: Array<Folder>;
+		folder?: Array<Folder> | null;
 
 		/** The macros in the container that this version was taken from. */
-		macro?: Array<Macro>;
+		macro?: Array<Macro> | null;
 
 		/**
 		 * Container version display name.
 		 * @mutable tagmanager.accounts.containers.versions.update
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * User notes on how to apply this container version in the
 		 * container.
 		 * @mutable tagmanager.accounts.containers.versions.update
 		 */
-		notes?: string;
+		notes?: string | null;
 
 		/** The rules in the container that this version was taken from. */
-		rule?: Array<Rule>;
+		rule?: Array<Rule> | null;
 
 		/** The tags in the container that this version was taken from. */
-		tag?: Array<Tag>;
+		tag?: Array<Tag> | null;
 
 		/** The triggers in the container that this version was taken from. */
-		trigger?: Array<Trigger>;
+		trigger?: Array<Trigger> | null;
 
 		/** The variables in the container that this version was taken from. */
-		variable?: Array<Variable>;
+		variable?: Array<Variable> | null;
 	}
 
 
@@ -316,26 +316,26 @@ export namespace MyNS {
 	export interface Folder {
 
 		/** GTM Account ID. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** GTM Container ID. */
-		containerId?: string;
+		containerId?: string | null;
 
 		/**
 		 * The fingerprint of the GTM Folder as computed at storage time.
 		 * This value is recomputed whenever the folder is modified.
 		 */
-		fingerprint?: string;
+		fingerprint?: string | null;
 
 		/** The Folder ID uniquely identifies the GTM Folder. */
-		folderId?: string;
+		folderId?: string | null;
 
 		/**
 		 * Folder display name.
 		 * @mutable tagmanager.accounts.containers.folders.create
 		 * @mutable tagmanager.accounts.containers.folders.update
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -343,10 +343,10 @@ export namespace MyNS {
 	export interface Macro {
 
 		/** GTM Account ID. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** GTM Container ID. */
-		containerId?: string;
+		containerId?: string | null;
 
 		/**
 		 * For mobile containers only: A list of rule IDs for disabling conditional
@@ -355,7 +355,7 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.macros.create
 		 * @mutable tagmanager.accounts.containers.macros.update
 		 */
-		disablingRuleId?: Array<string>;
+		disablingRuleId?: Array<string> | null;
 
 		/**
 		 * For mobile containers only: A list of rule IDs for enabling conditional
@@ -364,61 +364,61 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.macros.create
 		 * @mutable tagmanager.accounts.containers.macros.update
 		 */
-		enablingRuleId?: Array<string>;
+		enablingRuleId?: Array<string> | null;
 
 		/**
 		 * The fingerprint of the GTM Macro as computed at storage time.
 		 * This value is recomputed whenever the macro is modified.
 		 */
-		fingerprint?: string;
+		fingerprint?: string | null;
 
 		/** The Macro ID uniquely identifies the GTM Macro. */
-		macroId?: string;
+		macroId?: string | null;
 
 		/**
 		 * Macro display name.
 		 * @mutable tagmanager.accounts.containers.macros.create
 		 * @mutable tagmanager.accounts.containers.macros.update
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * User notes on how to apply this macro in the container.
 		 * @mutable tagmanager.accounts.containers.macros.create
 		 * @mutable tagmanager.accounts.containers.macros.update
 		 */
-		notes?: string;
+		notes?: string | null;
 
 		/**
 		 * The macro's parameters.
 		 * @mutable tagmanager.accounts.containers.macros.create
 		 * @mutable tagmanager.accounts.containers.macros.update
 		 */
-		parameter?: Array<Parameter>;
+		parameter?: Array<Parameter> | null;
 
 		/** Parent folder id. */
-		parentFolderId?: string;
+		parentFolderId?: string | null;
 
 		/**
 		 * The end timestamp in milliseconds to schedule a macro.
 		 * @mutable tagmanager.accounts.containers.macros.create
 		 * @mutable tagmanager.accounts.containers.macros.update
 		 */
-		scheduleEndMs?: string;
+		scheduleEndMs?: string | null;
 
 		/**
 		 * The start timestamp in milliseconds to schedule a macro.
 		 * @mutable tagmanager.accounts.containers.macros.create
 		 * @mutable tagmanager.accounts.containers.macros.update
 		 */
-		scheduleStartMs?: string;
+		scheduleStartMs?: string | null;
 
 		/**
 		 * GTM Macro Type.
 		 * @mutable tagmanager.accounts.containers.macros.create
 		 * @mutable tagmanager.accounts.containers.macros.update
 		 */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -426,40 +426,40 @@ export namespace MyNS {
 	export interface Rule {
 
 		/** GTM Account ID. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/**
 		 * The list of conditions that make up this rule (implicit AND between them).
 		 * @mutable tagmanager.accounts.containers.rules.create
 		 * @mutable tagmanager.accounts.containers.rules.update
 		 */
-		condition?: Array<Condition>;
+		condition?: Array<Condition> | null;
 
 		/** GTM Container ID. */
-		containerId?: string;
+		containerId?: string | null;
 
 		/**
 		 * The fingerprint of the GTM Rule as computed at storage time.
 		 * This value is recomputed whenever the rule is modified.
 		 */
-		fingerprint?: string;
+		fingerprint?: string | null;
 
 		/**
 		 * Rule display name.
 		 * @mutable tagmanager.accounts.containers.rules.create
 		 * @mutable tagmanager.accounts.containers.rules.update
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * User notes on how to apply this rule in the container.
 		 * @mutable tagmanager.accounts.containers.rules.create
 		 * @mutable tagmanager.accounts.containers.rules.update
 		 */
-		notes?: string;
+		notes?: string | null;
 
 		/** The Rule ID uniquely identifies the GTM Rule. */
-		ruleId?: string;
+		ruleId?: string | null;
 	}
 
 
@@ -467,7 +467,7 @@ export namespace MyNS {
 	export interface Tag {
 
 		/** GTM Account ID. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/**
 		 * Blocking rule IDs. If any of the listed rules evaluate to true, the tag
@@ -475,7 +475,7 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.tags.create
 		 * @mutable tagmanager.accounts.containers.tags.update
 		 */
-		blockingRuleId?: Array<string>;
+		blockingRuleId?: Array<string> | null;
 
 		/**
 		 * Blocking trigger IDs. If any of the listed triggers evaluate to true, the
@@ -484,16 +484,16 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.tags.create
 		 * @mutable tagmanager.accounts.containers.tags.update
 		 */
-		blockingTriggerId?: Array<string>;
+		blockingTriggerId?: Array<string> | null;
 
 		/** GTM Container ID. */
-		containerId?: string;
+		containerId?: string | null;
 
 		/**
 		 * The fingerprint of the GTM Tag as computed at storage time.
 		 * This value is recomputed whenever the tag is modified.
 		 */
-		fingerprint?: string;
+		fingerprint?: string | null;
 
 		/**
 		 * Firing rule IDs. A tag will fire when any of the listed rules are true and
@@ -501,7 +501,7 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.tags.create
 		 * @mutable tagmanager.accounts.containers.tags.update
 		 */
-		firingRuleId?: Array<string>;
+		firingRuleId?: Array<string> | null;
 
 		/**
 		 * Firing trigger IDs. A tag will fire when any of the listed triggers are
@@ -510,7 +510,7 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.tags.create
 		 * @mutable tagmanager.accounts.containers.tags.update
 		 */
-		firingTriggerId?: Array<string>;
+		firingTriggerId?: Array<string> | null;
 
 		/**
 		 * If set to true, this tag will only fire in the live environment (e.g. not
@@ -518,74 +518,74 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.tags.create
 		 * @mutable tagmanager.accounts.containers.tags.update
 		 */
-		liveOnly?: boolean;
+		liveOnly?: boolean | null;
 
 		/**
 		 * Tag display name.
 		 * @mutable tagmanager.accounts.containers.tags.create
 		 * @mutable tagmanager.accounts.containers.tags.update
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * User notes on how to apply this tag in the container.
 		 * @mutable tagmanager.accounts.containers.tags.create
 		 * @mutable tagmanager.accounts.containers.tags.update
 		 */
-		notes?: string;
+		notes?: string | null;
 
 		/**
 		 * The tag's parameters.
 		 * @mutable tagmanager.accounts.containers.tags.create
 		 * @mutable tagmanager.accounts.containers.tags.update
 		 */
-		parameter?: Array<Parameter>;
+		parameter?: Array<Parameter> | null;
 
 		/** Parent folder id. */
-		parentFolderId?: string;
+		parentFolderId?: string | null;
 
 		/**
 		 * True if the tag is paused.
 		 * @mutable tagmanager.accounts.containers.tags.create
 		 * @mutable tagmanager.accounts.containers.tags.update
 		 */
-		paused?: boolean;
+		paused?: boolean | null;
 
 		/** Represents a Google Tag Manager Parameter. */
-		priority?: Parameter;
+		priority?: Parameter | null;
 
 		/**
 		 * The end timestamp in milliseconds to schedule a tag.
 		 * @mutable tagmanager.accounts.containers.tags.create
 		 * @mutable tagmanager.accounts.containers.tags.update
 		 */
-		scheduleEndMs?: string;
+		scheduleEndMs?: string | null;
 
 		/**
 		 * The start timestamp in milliseconds to schedule a tag.
 		 * @mutable tagmanager.accounts.containers.tags.create
 		 * @mutable tagmanager.accounts.containers.tags.update
 		 */
-		scheduleStartMs?: string;
+		scheduleStartMs?: string | null;
 
 		/** The list of setup tags. Currently we only allow one. */
-		setupTag?: Array<SetupTag>;
+		setupTag?: Array<SetupTag> | null;
 
 		/** Option to fire this tag. */
-		tagFiringOption?: TagTagFiringOption;
+		tagFiringOption?: TagTagFiringOption | null;
 
 		/** The Tag ID uniquely identifies the GTM Tag. */
-		tagId?: string;
+		tagId?: string | null;
 
 		/** The list of teardown tags. Currently we only allow one. */
-		teardownTag?: Array<TeardownTag>;
+		teardownTag?: Array<TeardownTag> | null;
 
 		/**
 		 * GTM Tag Type.
 		 * @mutable tagmanager.accounts.containers.tags.create
 		 * @mutable tagmanager.accounts.containers.tags.update
 		 */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface SetupTag {
@@ -595,10 +595,10 @@ export namespace MyNS {
 		 * successfully.
 		 * If false, fire the main tag regardless of setup tag firing status.
 		 */
-		stopOnSetupFailure?: boolean;
+		stopOnSetupFailure?: boolean | null;
 
 		/** The name of the setup tag. */
-		tagName?: string;
+		tagName?: string | null;
 	}
 
 	export enum TagTagFiringOption { unlimited = 0, oncePerEvent = 1, oncePerLoad = 2 }
@@ -610,10 +610,10 @@ export namespace MyNS {
 		 * successfully.
 		 * If false, fire the teardown tag regardless of main tag firing status.
 		 */
-		stopTeardownOnFailure?: boolean;
+		stopTeardownOnFailure?: boolean | null;
 
 		/** The name of the teardown tag. */
-		tagName?: string;
+		tagName?: string | null;
 	}
 
 
@@ -621,23 +621,23 @@ export namespace MyNS {
 	export interface Trigger {
 
 		/** GTM Account ID. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/**
 		 * Used in the case of auto event tracking.
 		 * @mutable tagmanager.accounts.containers.triggers.create
 		 * @mutable tagmanager.accounts.containers.triggers.update
 		 */
-		autoEventFilter?: Array<Condition>;
+		autoEventFilter?: Array<Condition> | null;
 
 		/** Represents a Google Tag Manager Parameter. */
-		checkValidation?: Parameter;
+		checkValidation?: Parameter | null;
 
 		/** GTM Container ID. */
-		containerId?: string;
+		containerId?: string | null;
 
 		/** Represents a Google Tag Manager Parameter. */
-		continuousTimeMinMilliseconds?: Parameter;
+		continuousTimeMinMilliseconds?: Parameter | null;
 
 		/**
 		 * Used in the case of custom event, which is fired iff all Conditions are
@@ -645,92 +645,92 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.triggers.create
 		 * @mutable tagmanager.accounts.containers.triggers.update
 		 */
-		customEventFilter?: Array<Condition>;
+		customEventFilter?: Array<Condition> | null;
 
 		/** Represents a Google Tag Manager Parameter. */
-		eventName?: Parameter;
+		eventName?: Parameter | null;
 
 		/**
 		 * The trigger will only fire iff all Conditions are true.
 		 * @mutable tagmanager.accounts.containers.triggers.create
 		 * @mutable tagmanager.accounts.containers.triggers.update
 		 */
-		filter?: Array<Condition>;
+		filter?: Array<Condition> | null;
 
 		/**
 		 * The fingerprint of the GTM Trigger as computed at storage time.
 		 * This value is recomputed whenever the trigger is modified.
 		 */
-		fingerprint?: string;
+		fingerprint?: string | null;
 
 		/** Represents a Google Tag Manager Parameter. */
-		horizontalScrollPercentageList?: Parameter;
+		horizontalScrollPercentageList?: Parameter | null;
 
 		/** Represents a Google Tag Manager Parameter. */
-		interval?: Parameter;
+		interval?: Parameter | null;
 
 		/** Represents a Google Tag Manager Parameter. */
-		intervalSeconds?: Parameter;
+		intervalSeconds?: Parameter | null;
 
 		/** Represents a Google Tag Manager Parameter. */
-		limit?: Parameter;
+		limit?: Parameter | null;
 
 		/** Represents a Google Tag Manager Parameter. */
-		maxTimerLengthSeconds?: Parameter;
+		maxTimerLengthSeconds?: Parameter | null;
 
 		/**
 		 * Trigger display name.
 		 * @mutable tagmanager.accounts.containers.triggers.create
 		 * @mutable tagmanager.accounts.containers.triggers.update
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Additional parameters.
 		 * @mutable tagmanager.accounts.containers.workspaces.triggers.create
 		 * @mutable tagmanager.accounts.containers.workspaces.triggers.update
 		 */
-		parameter?: Array<Parameter>;
+		parameter?: Array<Parameter> | null;
 
 		/** Parent folder id. */
-		parentFolderId?: string;
+		parentFolderId?: string | null;
 
 		/** Represents a Google Tag Manager Parameter. */
-		selector?: Parameter;
+		selector?: Parameter | null;
 
 		/** Represents a Google Tag Manager Parameter. */
-		totalTimeMinMilliseconds?: Parameter;
+		totalTimeMinMilliseconds?: Parameter | null;
 
 		/** The Trigger ID uniquely identifies the GTM Trigger. */
-		triggerId?: string;
+		triggerId?: string | null;
 
 		/**
 		 * Defines the data layer event that causes this trigger.
 		 * @mutable tagmanager.accounts.containers.triggers.create
 		 * @mutable tagmanager.accounts.containers.triggers.update
 		 */
-		type?: TriggerType;
+		type?: TriggerType | null;
 
 		/** Represents a Google Tag Manager Parameter. */
-		uniqueTriggerId?: Parameter;
+		uniqueTriggerId?: Parameter | null;
 
 		/** Represents a Google Tag Manager Parameter. */
-		verticalScrollPercentageList?: Parameter;
+		verticalScrollPercentageList?: Parameter | null;
 
 		/** Represents a Google Tag Manager Parameter. */
-		visibilitySelector?: Parameter;
+		visibilitySelector?: Parameter | null;
 
 		/** Represents a Google Tag Manager Parameter. */
-		visiblePercentageMax?: Parameter;
+		visiblePercentageMax?: Parameter | null;
 
 		/** Represents a Google Tag Manager Parameter. */
-		visiblePercentageMin?: Parameter;
+		visiblePercentageMin?: Parameter | null;
 
 		/** Represents a Google Tag Manager Parameter. */
-		waitForTags?: Parameter;
+		waitForTags?: Parameter | null;
 
 		/** Represents a Google Tag Manager Parameter. */
-		waitForTagsTimeout?: Parameter;
+		waitForTagsTimeout?: Parameter | null;
 	}
 
 	export enum TriggerType { pageview = 0, domReady = 1, windowLoaded = 2, customEvent = 3, triggerGroup = 4, always = 5, formSubmission = 6, click = 7, linkClick = 8, jsError = 9, historyChange = 10, timer = 11, ampClick = 12, ampTimer = 13, ampScroll = 14, ampVisibility = 15, youTubeVideo = 16, scrollDepth = 17, elementVisibility = 18 }
@@ -740,10 +740,10 @@ export namespace MyNS {
 	export interface Variable {
 
 		/** GTM Account ID. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** GTM Container ID. */
-		containerId?: string;
+		containerId?: string | null;
 
 		/**
 		 * For mobile containers only: A list of trigger IDs for disabling conditional
@@ -752,7 +752,7 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.variables.create
 		 * @mutable tagmanager.accounts.containers.variables.update
 		 */
-		disablingTriggerId?: Array<string>;
+		disablingTriggerId?: Array<string> | null;
 
 		/**
 		 * For mobile containers only: A list of trigger IDs for enabling conditional
@@ -761,61 +761,61 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.variables.create
 		 * @mutable tagmanager.accounts.containers.variables.update
 		 */
-		enablingTriggerId?: Array<string>;
+		enablingTriggerId?: Array<string> | null;
 
 		/**
 		 * The fingerprint of the GTM Variable as computed at storage time.
 		 * This value is recomputed whenever the variable is modified.
 		 */
-		fingerprint?: string;
+		fingerprint?: string | null;
 
 		/**
 		 * Variable display name.
 		 * @mutable tagmanager.accounts.containers.variables.create
 		 * @mutable tagmanager.accounts.containers.variables.update
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * User notes on how to apply this variable in the container.
 		 * @mutable tagmanager.accounts.containers.variables.create
 		 * @mutable tagmanager.accounts.containers.variables.update
 		 */
-		notes?: string;
+		notes?: string | null;
 
 		/**
 		 * The variable's parameters.
 		 * @mutable tagmanager.accounts.containers.variables.create
 		 * @mutable tagmanager.accounts.containers.variables.update
 		 */
-		parameter?: Array<Parameter>;
+		parameter?: Array<Parameter> | null;
 
 		/** Parent folder id. */
-		parentFolderId?: string;
+		parentFolderId?: string | null;
 
 		/**
 		 * The end timestamp in milliseconds to schedule a variable.
 		 * @mutable tagmanager.accounts.containers.variables.create
 		 * @mutable tagmanager.accounts.containers.variables.update
 		 */
-		scheduleEndMs?: string;
+		scheduleEndMs?: string | null;
 
 		/**
 		 * The start timestamp in milliseconds to schedule a variable.
 		 * @mutable tagmanager.accounts.containers.variables.create
 		 * @mutable tagmanager.accounts.containers.variables.update
 		 */
-		scheduleStartMs?: string;
+		scheduleStartMs?: string | null;
 
 		/**
 		 * GTM Variable Type.
 		 * @mutable tagmanager.accounts.containers.variables.create
 		 * @mutable tagmanager.accounts.containers.variables.update
 		 */
-		type?: string;
+		type?: string | null;
 
 		/** The Variable ID uniquely identifies the GTM Variable. */
-		variableId?: string;
+		variableId?: string | null;
 	}
 
 
@@ -823,34 +823,34 @@ export namespace MyNS {
 	export interface ContainerVersionHeader {
 
 		/** GTM Account ID. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** GTM Container ID. */
-		containerId?: string;
+		containerId?: string | null;
 
 		/** The Container Version ID uniquely identifies the GTM Container Version. */
-		containerVersionId?: string;
+		containerVersionId?: string | null;
 
 		/** A value of true indicates this container version has been deleted. */
-		deleted?: boolean;
+		deleted?: boolean | null;
 
 		/** Container version display name. */
-		name?: string;
+		name?: string | null;
 
 		/** Number of macros in the container version. */
-		numMacros?: string;
+		numMacros?: string | null;
 
 		/** Number of rules in the container version. */
-		numRules?: string;
+		numRules?: string | null;
 
 		/** Number of tags in the container version. */
-		numTags?: string;
+		numTags?: string | null;
 
 		/** Number of triggers in the container version. */
-		numTriggers?: string;
+		numTriggers?: string | null;
 
 		/** Number of variables in the container version. */
-		numVariables?: string;
+		numVariables?: string | null;
 	}
 
 
@@ -858,16 +858,16 @@ export namespace MyNS {
 	export interface CreateContainerVersionRequestVersionOptions {
 
 		/** The name of the container version to be created. */
-		name?: string;
+		name?: string | null;
 
 		/** The notes of the container version to be created. */
-		notes?: string;
+		notes?: string | null;
 
 		/**
 		 * The creation of this version may be for quick preview and
 		 * shouldn't be saved.
 		 */
-		quickPreview?: boolean;
+		quickPreview?: boolean | null;
 	}
 
 
@@ -875,10 +875,10 @@ export namespace MyNS {
 	export interface CreateContainerVersionResponse {
 
 		/** Compiler errors or not. */
-		compilerError?: boolean;
+		compilerError?: boolean | null;
 
 		/** Represents a Google Tag Manager Container Version. */
-		containerVersion?: ContainerVersion;
+		containerVersion?: ContainerVersion | null;
 	}
 
 
@@ -890,17 +890,17 @@ export namespace MyNS {
 	export interface Environment {
 
 		/** GTM Account ID. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** The environment authorization code. */
-		authorizationCode?: string;
+		authorizationCode?: string | null;
 
 		/** The last update time-stamp for the authorization code. */
-		authorizationTimestampMs?: string;
+		authorizationTimestampMs?: string | null;
 
 		/** GTM Container ID. */
-		containerId?: string;
-		containerVersionId?: string;
+		containerId?: string | null;
+		containerVersionId?: string | null;
 
 		/**
 		 * The environment description. Can be set or changed only on USER type
@@ -908,23 +908,23 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.environments.create
 		 * @mutable tagmanager.accounts.containers.environments.update
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Whether or not to enable debug by default on for the environment.
 		 * @mutable tagmanager.accounts.containers.environments.create
 		 * @mutable tagmanager.accounts.containers.environments.update
 		 */
-		enableDebug?: boolean;
+		enableDebug?: boolean | null;
 
 		/** GTM Environment ID uniquely identifies the GTM Environment. */
-		environmentId?: string;
+		environmentId?: string | null;
 
 		/**
 		 * The fingerprint of the GTM environment as computed at storage time.
 		 * This value is recomputed whenever the environment is modified.
 		 */
-		fingerprint?: string;
+		fingerprint?: string | null;
 
 		/**
 		 * The environment display name. Can be set or changed only on USER type
@@ -932,17 +932,17 @@ export namespace MyNS {
 		 * @mutable tagmanager.accounts.containers.environments.create
 		 * @mutable tagmanager.accounts.containers.environments.update
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The type of this environment. */
-		type?: EnvironmentType;
+		type?: EnvironmentType | null;
 
 		/**
 		 * Default preview page url for the environment.
 		 * @mutable tagmanager.accounts.containers.environments.create
 		 * @mutable tagmanager.accounts.containers.environments.update
 		 */
-		url?: string;
+		url?: string | null;
 	}
 
 	export enum EnvironmentType { user = 0, live = 1, latest = 2, draft = 3 }
@@ -952,13 +952,13 @@ export namespace MyNS {
 	export interface FolderEntities {
 
 		/** The list of tags inside the folder. */
-		tag?: Array<Tag>;
+		tag?: Array<Tag> | null;
 
 		/** The list of triggers inside the folder. */
-		trigger?: Array<Trigger>;
+		trigger?: Array<Trigger> | null;
 
 		/** The list of variables inside the folder. */
-		variable?: Array<Variable>;
+		variable?: Array<Variable> | null;
 	}
 
 
@@ -966,7 +966,7 @@ export namespace MyNS {
 	export interface ListAccountUsersResponse {
 
 		/** All GTM AccountUsers of a GTM Account. */
-		userAccess?: Array<UserAccess>;
+		userAccess?: Array<UserAccess> | null;
 	}
 
 
@@ -974,26 +974,26 @@ export namespace MyNS {
 	export interface UserAccess {
 
 		/** Defines the Google Tag Manager Account access permissions. */
-		accountAccess?: AccountAccess;
+		accountAccess?: AccountAccess | null;
 
 		/** GTM Account ID. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/**
 		 * GTM Container access permissions.
 		 * @mutable tagmanager.accounts.permissions.create
 		 * @mutable tagmanager.accounts.permissions.update
 		 */
-		containerAccess?: Array<ContainerAccess>;
+		containerAccess?: Array<ContainerAccess> | null;
 
 		/**
 		 * User's email address.
 		 * @mutable tagmanager.accounts.permissions.create
 		 */
-		emailAddress?: string;
+		emailAddress?: string | null;
 
 		/** Account Permission ID. */
-		permissionId?: string;
+		permissionId?: string | null;
 	}
 
 
@@ -1001,7 +1001,7 @@ export namespace MyNS {
 	export interface ListAccountsResponse {
 
 		/** List of GTM Accounts that a user has access to. */
-		accounts?: Array<Account>;
+		accounts?: Array<Account> | null;
 	}
 
 
@@ -1009,10 +1009,10 @@ export namespace MyNS {
 	export interface ListContainerVersionsResponse {
 
 		/** All versions of a GTM Container. */
-		containerVersion?: Array<ContainerVersion>;
+		containerVersion?: Array<ContainerVersion> | null;
 
 		/** All container version headers of a GTM Container. */
-		containerVersionHeader?: Array<ContainerVersionHeader>;
+		containerVersionHeader?: Array<ContainerVersionHeader> | null;
 	}
 
 
@@ -1020,7 +1020,7 @@ export namespace MyNS {
 	export interface ListContainersResponse {
 
 		/** All Containers of a GTM Account. */
-		containers?: Array<Container>;
+		containers?: Array<Container> | null;
 	}
 
 
@@ -1028,7 +1028,7 @@ export namespace MyNS {
 	export interface ListEnvironmentsResponse {
 
 		/** All Environments of a GTM Container. */
-		environments?: Array<Environment>;
+		environments?: Array<Environment> | null;
 	}
 
 
@@ -1036,7 +1036,7 @@ export namespace MyNS {
 	export interface ListFoldersResponse {
 
 		/** All GTM Folders of a GTM Container. */
-		folders?: Array<Folder>;
+		folders?: Array<Folder> | null;
 	}
 
 
@@ -1044,7 +1044,7 @@ export namespace MyNS {
 	export interface ListTagsResponse {
 
 		/** All GTM Tags of a GTM Container. */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 
@@ -1052,7 +1052,7 @@ export namespace MyNS {
 	export interface ListTriggersResponse {
 
 		/** All GTM Triggers of a GTM Container. */
-		triggers?: Array<Trigger>;
+		triggers?: Array<Trigger> | null;
 	}
 
 
@@ -1060,7 +1060,7 @@ export namespace MyNS {
 	export interface ListVariablesResponse {
 
 		/** All GTM Variables of a GTM Container. */
-		variables?: Array<Variable>;
+		variables?: Array<Variable> | null;
 	}
 
 
@@ -1068,10 +1068,10 @@ export namespace MyNS {
 	export interface PublishContainerVersionResponse {
 
 		/** Compiler errors or not. */
-		compilerError?: boolean;
+		compilerError?: boolean | null;
 
 		/** Represents a Google Tag Manager Container Version. */
-		containerVersion?: ContainerVersion;
+		containerVersion?: ContainerVersion | null;
 	}
 
 	@Injectable()
@@ -1106,7 +1106,7 @@ export namespace MyNS {
 		 * in storage.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_update(accountId: string, fingerprint: string, requestBody: Account): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_update(accountId: string, fingerprint: string | null | undefined, requestBody: Account): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '&fingerprint=' + (fingerprint == null ? '' : encodeURIComponent(fingerprint)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1161,7 +1161,7 @@ export namespace MyNS {
 		 * container in storage.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_update(accountId: string, containerId: string, fingerprint: string, requestBody: Container): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_update(accountId: string, containerId: string, fingerprint: string | null | undefined, requestBody: Container): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '&fingerprint=' + (fingerprint == null ? '' : encodeURIComponent(fingerprint)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1221,7 +1221,7 @@ export namespace MyNS {
 		 * environment in storage.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_environments_update(accountId: string, containerId: string, environmentId: string, fingerprint: string, requestBody: Environment): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_environments_update(accountId: string, containerId: string, environmentId: string, fingerprint: string | null | undefined, requestBody: Environment): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '/environments/' + (environmentId == null ? '' : encodeURIComponent(environmentId)) + '&fingerprint=' + (fingerprint == null ? '' : encodeURIComponent(fingerprint)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1281,7 +1281,7 @@ export namespace MyNS {
 		 * storage.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_folders_update(accountId: string, containerId: string, folderId: string, fingerprint: string, requestBody: Folder): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_folders_update(accountId: string, containerId: string, folderId: string, fingerprint: string | null | undefined, requestBody: Folder): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '/folders/' + (folderId == null ? '' : encodeURIComponent(folderId)) + '&fingerprint=' + (fingerprint == null ? '' : encodeURIComponent(fingerprint)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1308,7 +1308,7 @@ export namespace MyNS {
 		 * @param {Array<string>} variableId The variables to be moved to the folder.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_move_folders_update(accountId: string, containerId: string, folderId: string, tagId: Array<string>, triggerId: Array<string>, variableId: Array<string>, requestBody: Folder): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_move_folders_update(accountId: string, containerId: string, folderId: string, tagId: Array<string> | null | undefined, triggerId: Array<string> | null | undefined, variableId: Array<string> | null | undefined, requestBody: Folder): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '/move_folders/' + (folderId == null ? '' : encodeURIComponent(folderId)) + '&' + tagId.map(z => `tagId=${encodeURIComponent(z)}`).join('&') + '&' + triggerId.map(z => `triggerId=${encodeURIComponent(z)}`).join('&') + '&' + variableId.map(z => `variableId=${encodeURIComponent(z)}`).join('&'), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1380,7 +1380,7 @@ export namespace MyNS {
 		 * storage.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_tags_update(accountId: string, containerId: string, tagId: string, fingerprint: string, requestBody: Tag): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_tags_update(accountId: string, containerId: string, tagId: string, fingerprint: string | null | undefined, requestBody: Tag): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '/tags/' + (tagId == null ? '' : encodeURIComponent(tagId)) + '&fingerprint=' + (fingerprint == null ? '' : encodeURIComponent(fingerprint)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1440,7 +1440,7 @@ export namespace MyNS {
 		 * in storage.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_triggers_update(accountId: string, containerId: string, triggerId: string, fingerprint: string, requestBody: Trigger): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_triggers_update(accountId: string, containerId: string, triggerId: string, fingerprint: string | null | undefined, requestBody: Trigger): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '/triggers/' + (triggerId == null ? '' : encodeURIComponent(triggerId)) + '&fingerprint=' + (fingerprint == null ? '' : encodeURIComponent(fingerprint)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1500,7 +1500,7 @@ export namespace MyNS {
 		 * in storage.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_variables_update(accountId: string, containerId: string, variableId: string, fingerprint: string, requestBody: Variable): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_variables_update(accountId: string, containerId: string, variableId: string, fingerprint: string | null | undefined, requestBody: Variable): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '/variables/' + (variableId == null ? '' : encodeURIComponent(variableId)) + '&fingerprint=' + (fingerprint == null ? '' : encodeURIComponent(fingerprint)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1513,7 +1513,7 @@ export namespace MyNS {
 		 * @param {boolean} includeDeleted Also retrieve deleted (archived) versions when true.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_versions_list(accountId: string, containerId: string, headers: boolean, includeDeleted: boolean): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_versions_list(accountId: string, containerId: string, headers: boolean | null | undefined, includeDeleted: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '/versions&headers=' + headers + '&includeDeleted=' + includeDeleted, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1563,7 +1563,7 @@ export namespace MyNS {
 		 * container version in storage.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_versions_update(accountId: string, containerId: string, containerVersionId: string, fingerprint: string, requestBody: ContainerVersion): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_versions_update(accountId: string, containerId: string, containerVersionId: string, fingerprint: string | null | undefined, requestBody: ContainerVersion): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '/versions/' + (containerVersionId == null ? '' : encodeURIComponent(containerVersionId)) + '&fingerprint=' + (fingerprint == null ? '' : encodeURIComponent(fingerprint)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1577,7 +1577,7 @@ export namespace MyNS {
 		 * container version in storage.
 		 * @return {void} Successful response
 		 */
-		Tagmanager_accounts_containers_versions_publish(accountId: string, containerId: string, containerVersionId: string, fingerprint: string): Observable<HttpResponse<string>> {
+		Tagmanager_accounts_containers_versions_publish(accountId: string, containerId: string, containerVersionId: string, fingerprint: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'tagmanager/v1/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/containers/' + (containerId == null ? '' : encodeURIComponent(containerId)) + '/versions/' + (containerVersionId == null ? '' : encodeURIComponent(containerVersionId)) + '/publish&fingerprint=' + (fingerprint == null ? '' : encodeURIComponent(fingerprint)), null, { observe: 'response', responseType: 'text' });
 		}
 

@@ -5,7 +5,7 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ContactIdResponse {
-		contactId?: string;
+		contactId?: string | null;
 	}
 
 	export interface InvalidParameterException {
@@ -20,9 +20,9 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ConfigIdResponse {
-		configArn?: string;
-		configId?: string;
-		configType?: ConfigIdResponseConfigType;
+		configArn?: string | null;
+		configId?: string | null;
+		configType?: ConfigIdResponseConfigType | null;
 	}
 
 	export enum ConfigIdResponseConfigType { antenna_downlink = 0, antenna_downlink_demod_decode = 1, antenna_uplink = 2, dataflow_endpoint = 3, tracking = 4, uplink_echo = 5 }
@@ -53,7 +53,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		centerFrequency: Frequency;
-		polarization?: SpectrumConfigPolarization;
+		polarization?: SpectrumConfigPolarization | null;
 	}
 
 
@@ -135,7 +135,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		centerFrequency: Frequency;
-		polarization?: SpectrumConfigPolarization;
+		polarization?: SpectrumConfigPolarization | null;
 	}
 
 
@@ -151,7 +151,7 @@ export namespace MyNS {
 	/** Information about the dataflow endpoint <code>Config</code>. */
 	export interface DataflowEndpointConfig {
 		dataflowEndpointName: string;
-		dataflowEndpointRegion?: string;
+		dataflowEndpointRegion?: string | null;
 	}
 
 
@@ -175,7 +175,7 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DataflowEndpointGroupIdResponse {
-		dataflowEndpointGroupId?: string;
+		dataflowEndpointGroupId?: string | null;
 	}
 
 
@@ -183,10 +183,10 @@ export namespace MyNS {
 	export interface EndpointDetails {
 
 		/** Information about a dataflow endpoint. */
-		endpoint?: DataflowEndpoint;
+		endpoint?: DataflowEndpoint | null;
 
 		/** Information about endpoints. */
-		securityDetails?: SecurityDetails;
+		securityDetails?: SecurityDetails | null;
 	}
 
 
@@ -194,9 +194,9 @@ export namespace MyNS {
 	export interface DataflowEndpoint {
 
 		/** Information about the socket address. */
-		address?: SocketAddress;
-		name?: string;
-		status?: DataflowEndpointStatus;
+		address?: SocketAddress | null;
+		name?: string | null;
+		status?: DataflowEndpointStatus | null;
 	}
 
 
@@ -219,27 +219,27 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface MissionProfileIdResponse {
-		missionProfileId?: string;
+		missionProfileId?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeContactResponse {
-		contactId?: string;
-		contactStatus?: DescribeContactResponseContactStatus;
-		endTime?: Date;
-		errorMessage?: string;
-		groundStation?: string;
+		contactId?: string | null;
+		contactStatus?: DescribeContactResponseContactStatus | null;
+		endTime?: Date | null;
+		errorMessage?: string | null;
+		groundStation?: string | null;
 
 		/** Elevation angle of the satellite in the sky during a contact. */
-		maximumElevation?: Elevation;
-		missionProfileArn?: string;
-		postPassEndTime?: Date;
-		prePassStartTime?: Date;
-		region?: string;
-		satelliteArn?: string;
-		startTime?: Date;
-		tags?: TagsMap;
+		maximumElevation?: Elevation | null;
+		missionProfileArn?: string | null;
+		postPassEndTime?: Date | null;
+		prePassStartTime?: Date | null;
+		region?: string | null;
+		satelliteArn?: string | null;
+		startTime?: Date | null;
+		tags?: TagsMap | null;
 	}
 
 	export enum DescribeContactResponseContactStatus { AVAILABLE = 0, AWS_CANCELLED = 1, CANCELLED = 2, CANCELLING = 3, COMPLETED = 4, FAILED = 5, FAILED_TO_SCHEDULE = 6, PASS = 7, POSTPASS = 8, PREPASS = 9, SCHEDULED = 10, SCHEDULING = 11 }
@@ -267,9 +267,9 @@ export namespace MyNS {
 		 */
 		configData: ConfigTypeData;
 		configId: string;
-		configType?: GetConfigResponseConfigType;
+		configType?: GetConfigResponseConfigType | null;
 		name: string;
-		tags?: TagsMap;
+		tags?: TagsMap | null;
 	}
 
 
@@ -277,22 +277,22 @@ export namespace MyNS {
 	export interface ConfigTypeData {
 
 		/** Information about how AWS Ground Station should configure an antenna for downlink during a contact. */
-		antennaDownlinkConfig?: AntennaDownlinkConfig;
+		antennaDownlinkConfig?: AntennaDownlinkConfig | null;
 
 		/** Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact. */
-		antennaDownlinkDemodDecodeConfig?: AntennaDownlinkDemodDecodeConfig;
+		antennaDownlinkDemodDecodeConfig?: AntennaDownlinkDemodDecodeConfig | null;
 
 		/** Information about the uplink <code>Config</code> of an antenna. */
-		antennaUplinkConfig?: AntennaUplinkConfig;
+		antennaUplinkConfig?: AntennaUplinkConfig | null;
 
 		/** Information about the dataflow endpoint <code>Config</code>. */
-		dataflowEndpointConfig?: DataflowEndpointConfig;
+		dataflowEndpointConfig?: DataflowEndpointConfig | null;
 
 		/** Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile. */
-		trackingConfig?: TrackingConfig;
+		trackingConfig?: TrackingConfig | null;
 
 		/** <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p> */
-		uplinkEchoConfig?: UplinkEchoConfig;
+		uplinkEchoConfig?: UplinkEchoConfig | null;
 	}
 
 	export enum GetConfigResponseConfigType { antenna_downlink = 0, antenna_downlink_demod_decode = 1, antenna_uplink = 2, dataflow_endpoint = 3, tracking = 4, uplink_echo = 5 }
@@ -300,60 +300,60 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface GetDataflowEndpointGroupResponse {
-		dataflowEndpointGroupArn?: string;
-		dataflowEndpointGroupId?: string;
-		endpointsDetails?: Array<EndpointDetails>;
-		tags?: TagsMap;
+		dataflowEndpointGroupArn?: string | null;
+		dataflowEndpointGroupId?: string | null;
+		endpointsDetails?: Array<EndpointDetails> | null;
+		tags?: TagsMap | null;
 	}
 
 
 	/** <p/> */
 	export interface GetMinuteUsageResponse {
-		estimatedMinutesRemaining?: number;
-		isReservedMinutesCustomer?: boolean;
-		totalReservedMinuteAllocation?: number;
-		totalScheduledMinutes?: number;
-		upcomingMinutesScheduled?: number;
+		estimatedMinutesRemaining?: number | null;
+		isReservedMinutesCustomer?: boolean | null;
+		totalReservedMinuteAllocation?: number | null;
+		totalScheduledMinutes?: number | null;
+		upcomingMinutesScheduled?: number | null;
 	}
 
 
 	/** <p/> */
 	export interface GetMissionProfileResponse {
-		contactPostPassDurationSeconds?: number;
-		contactPrePassDurationSeconds?: number;
-		dataflowEdges?: Array<Array<string>>;
-		minimumViableContactDurationSeconds?: number;
-		missionProfileArn?: string;
-		missionProfileId?: string;
-		name?: string;
-		region?: string;
-		tags?: TagsMap;
-		trackingConfigArn?: string;
+		contactPostPassDurationSeconds?: number | null;
+		contactPrePassDurationSeconds?: number | null;
+		dataflowEdges?: Array<Array<string>> | null;
+		minimumViableContactDurationSeconds?: number | null;
+		missionProfileArn?: string | null;
+		missionProfileId?: string | null;
+		name?: string | null;
+		region?: string | null;
+		tags?: TagsMap | null;
+		trackingConfigArn?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface GetSatelliteResponse {
-		groundStations?: Array<string>;
-		noradSatelliteID?: number;
-		satelliteArn?: string;
-		satelliteId?: string;
+		groundStations?: Array<string> | null;
+		noradSatelliteID?: number | null;
+		satelliteArn?: string | null;
+		satelliteId?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface ListConfigsResponse {
-		configList?: Array<ConfigListItem>;
-		nextToken?: string;
+		configList?: Array<ConfigListItem> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** An item in a list of <code>Config</code> objects. */
 	export interface ConfigListItem {
-		configArn?: string;
-		configId?: string;
-		configType?: ConfigListItemConfigType;
-		name?: string;
+		configArn?: string | null;
+		configId?: string | null;
+		configType?: ConfigListItemConfigType | null;
+		name?: string | null;
 	}
 
 	export enum ConfigListItemConfigType { antenna_downlink = 0, antenna_downlink_demod_decode = 1, antenna_uplink = 2, dataflow_endpoint = 3, tracking = 4, uplink_echo = 5 }
@@ -361,28 +361,28 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ListContactsResponse {
-		contactList?: Array<ContactData>;
-		nextToken?: string;
+		contactList?: Array<ContactData> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Data describing a contact. */
 	export interface ContactData {
-		contactId?: string;
-		contactStatus?: DescribeContactResponseContactStatus;
-		endTime?: Date;
-		errorMessage?: string;
-		groundStation?: string;
+		contactId?: string | null;
+		contactStatus?: DescribeContactResponseContactStatus | null;
+		endTime?: Date | null;
+		errorMessage?: string | null;
+		groundStation?: string | null;
 
 		/** Elevation angle of the satellite in the sky during a contact. */
-		maximumElevation?: Elevation;
-		missionProfileArn?: string;
-		postPassEndTime?: Date;
-		prePassStartTime?: Date;
-		region?: string;
-		satelliteArn?: string;
-		startTime?: Date;
-		tags?: TagsMap;
+		maximumElevation?: Elevation | null;
+		missionProfileArn?: string | null;
+		postPassEndTime?: Date | null;
+		prePassStartTime?: Date | null;
+		region?: string | null;
+		satelliteArn?: string | null;
+		startTime?: Date | null;
+		tags?: TagsMap | null;
 	}
 
 	export enum ContactStatus { AVAILABLE = 0, AWS_CANCELLED = 1, CANCELLED = 2, CANCELLING = 3, COMPLETED = 4, FAILED = 5, FAILED_TO_SCHEDULE = 6, PASS = 7, POSTPASS = 8, PREPASS = 9, SCHEDULED = 10, SCHEDULING = 11 }
@@ -390,68 +390,68 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ListDataflowEndpointGroupsResponse {
-		dataflowEndpointGroupList?: Array<DataflowEndpointListItem>;
-		nextToken?: string;
+		dataflowEndpointGroupList?: Array<DataflowEndpointListItem> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Item in a list of <code>DataflowEndpoint</code> groups. */
 	export interface DataflowEndpointListItem {
-		dataflowEndpointGroupArn?: string;
-		dataflowEndpointGroupId?: string;
+		dataflowEndpointGroupArn?: string | null;
+		dataflowEndpointGroupId?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface ListGroundStationsResponse {
-		groundStationList?: Array<GroundStationData>;
-		nextToken?: string;
+		groundStationList?: Array<GroundStationData> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about the ground station data. */
 	export interface GroundStationData {
-		groundStationId?: string;
-		groundStationName?: string;
-		region?: string;
+		groundStationId?: string | null;
+		groundStationName?: string | null;
+		region?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface ListMissionProfilesResponse {
-		missionProfileList?: Array<MissionProfileListItem>;
-		nextToken?: string;
+		missionProfileList?: Array<MissionProfileListItem> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Item in a list of mission profiles. */
 	export interface MissionProfileListItem {
-		missionProfileArn?: string;
-		missionProfileId?: string;
-		name?: string;
-		region?: string;
+		missionProfileArn?: string | null;
+		missionProfileId?: string | null;
+		name?: string | null;
+		region?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface ListSatellitesResponse {
-		nextToken?: string;
-		satellites?: Array<SatelliteListItem>;
+		nextToken?: string | null;
+		satellites?: Array<SatelliteListItem> | null;
 	}
 
 
 	/** Item in a list of satellites. */
 	export interface SatelliteListItem {
-		groundStations?: Array<string>;
-		noradSatelliteID?: number;
-		satelliteArn?: string;
-		satelliteId?: string;
+		groundStations?: Array<string> | null;
+		noradSatelliteID?: number | null;
+		satelliteArn?: string | null;
+		satelliteId?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface ListTagsForResourceResponse {
-		tags?: TagsMap;
+		tags?: TagsMap | null;
 	}
 
 
@@ -485,25 +485,25 @@ export namespace MyNS {
 		 */
 		configData: ConfigTypeData;
 		name: string;
-		tags?: TagsMap;
+		tags?: TagsMap | null;
 	}
 
 
 	/** <p/> */
 	export interface CreateDataflowEndpointGroupRequest {
 		endpointDetails: Array<EndpointDetails>;
-		tags?: TagsMap;
+		tags?: TagsMap | null;
 	}
 
 
 	/** <p/> */
 	export interface CreateMissionProfileRequest {
-		contactPostPassDurationSeconds?: number;
-		contactPrePassDurationSeconds?: number;
+		contactPostPassDurationSeconds?: number | null;
+		contactPrePassDurationSeconds?: number | null;
 		dataflowEdges: Array<Array<string>>;
 		minimumViableContactDurationSeconds: number;
 		name: string;
-		tags?: TagsMap;
+		tags?: TagsMap | null;
 		trackingConfigArn: string;
 	}
 
@@ -569,11 +569,11 @@ export namespace MyNS {
 	/** <p/> */
 	export interface ListContactsRequest {
 		endTime: Date;
-		groundStation?: string;
-		maxResults?: number;
-		missionProfileArn?: string;
-		nextToken?: string;
-		satelliteArn?: string;
+		groundStation?: string | null;
+		maxResults?: number | null;
+		missionProfileArn?: string | null;
+		nextToken?: string | null;
+		satelliteArn?: string | null;
 		startTime: Date;
 		statusList: Array<ContactStatus>;
 	}
@@ -613,7 +613,7 @@ export namespace MyNS {
 		missionProfileArn: string;
 		satelliteArn: string;
 		startTime: Date;
-		tags?: TagsMap;
+		tags?: TagsMap | null;
 	}
 
 
@@ -642,12 +642,12 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface UpdateMissionProfileRequest {
-		contactPostPassDurationSeconds?: number;
-		contactPrePassDurationSeconds?: number;
-		dataflowEdges?: Array<Array<string>>;
-		minimumViableContactDurationSeconds?: number;
-		name?: string;
-		trackingConfigArn?: string;
+		contactPostPassDurationSeconds?: number | null;
+		contactPrePassDurationSeconds?: number | null;
+		dataflowEdges?: Array<Array<string>> | null;
+		minimumViableContactDurationSeconds?: number | null;
+		name?: string | null;
+		trackingConfigArn?: string | null;
 	}
 
 	@Injectable()
@@ -691,7 +691,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.
 		 * @return {ListConfigsResponse} Success
 		 */
-		ListConfigs(maxResults: number, nextToken: string): Observable<ListConfigsResponse> {
+		ListConfigs(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListConfigsResponse> {
 			return this.http.get<ListConfigsResponse>(this.baseUri + 'config?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -711,7 +711,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.
 		 * @return {ListDataflowEndpointGroupsResponse} Success
 		 */
-		ListDataflowEndpointGroups(maxResults: number, nextToken: string): Observable<ListDataflowEndpointGroupsResponse> {
+		ListDataflowEndpointGroups(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListDataflowEndpointGroupsResponse> {
 			return this.http.get<ListDataflowEndpointGroupsResponse>(this.baseUri + 'dataflowEndpointGroup?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -731,7 +731,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.
 		 * @return {ListMissionProfilesResponse} Success
 		 */
-		ListMissionProfiles(maxResults: number, nextToken: string): Observable<ListMissionProfilesResponse> {
+		ListMissionProfiles(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListMissionProfilesResponse> {
 			return this.http.get<ListMissionProfilesResponse>(this.baseUri + 'missionprofile?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -844,7 +844,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListContactsResponse} Success
 		 */
-		ListContacts(maxResults: string, nextToken: string, requestBody: ListContactsPostBody): Observable<ListContactsResponse> {
+		ListContacts(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListContactsPostBody): Observable<ListContactsResponse> {
 			return this.http.post<ListContactsResponse>(this.baseUri + 'contacts?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -856,7 +856,7 @@ export namespace MyNS {
 		 * @param {string} satelliteId Satellite ID to retrieve on-boarded ground stations.
 		 * @return {ListGroundStationsResponse} Success
 		 */
-		ListGroundStations(maxResults: number, nextToken: string, satelliteId: string): Observable<ListGroundStationsResponse> {
+		ListGroundStations(maxResults: number | null | undefined, nextToken: string | null | undefined, satelliteId: string | null | undefined): Observable<ListGroundStationsResponse> {
 			return this.http.get<ListGroundStationsResponse>(this.baseUri + 'groundstation?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&satelliteId=' + (satelliteId == null ? '' : encodeURIComponent(satelliteId)), {});
 		}
 
@@ -867,7 +867,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Next token that can be supplied in the next call to get the next page of satellites.
 		 * @return {ListSatellitesResponse} Success
 		 */
-		ListSatellites(maxResults: number, nextToken: string): Observable<ListSatellitesResponse> {
+		ListSatellites(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListSatellitesResponse> {
 			return this.http.get<ListSatellitesResponse>(this.baseUri + 'satellite?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -930,28 +930,28 @@ export namespace MyNS {
 		name: string;
 
 		/** Tags assigned to a <code>Config</code>. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateConfigPostBodyConfigData {
 
 		/** Information about how AWS Ground Station should configure an antenna for downlink during a contact. */
-		antennaDownlinkConfig?: AntennaDownlinkConfig;
+		antennaDownlinkConfig?: AntennaDownlinkConfig | null;
 
 		/** Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact. */
-		antennaDownlinkDemodDecodeConfig?: AntennaDownlinkDemodDecodeConfig;
+		antennaDownlinkDemodDecodeConfig?: AntennaDownlinkDemodDecodeConfig | null;
 
 		/** Information about the uplink <code>Config</code> of an antenna. */
-		antennaUplinkConfig?: AntennaUplinkConfig;
+		antennaUplinkConfig?: AntennaUplinkConfig | null;
 
 		/** Information about the dataflow endpoint <code>Config</code>. */
-		dataflowEndpointConfig?: DataflowEndpointConfig;
+		dataflowEndpointConfig?: DataflowEndpointConfig | null;
 
 		/** Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile. */
-		trackingConfig?: TrackingConfig;
+		trackingConfig?: TrackingConfig | null;
 
 		/** <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p> */
-		uplinkEchoConfig?: UplinkEchoConfig;
+		uplinkEchoConfig?: UplinkEchoConfig | null;
 	}
 
 	export interface CreateDataflowEndpointGroupPostBody {
@@ -963,7 +963,7 @@ export namespace MyNS {
 		endpointDetails: Array<EndpointDetails>;
 
 		/** Tags of a dataflow endpoint group. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateMissionProfilePostBody {
@@ -973,14 +973,14 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 21600
 		 */
-		contactPostPassDurationSeconds?: number;
+		contactPostPassDurationSeconds?: number | null;
 
 		/**
 		 * Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.
 		 * Minimum: 1
 		 * Maximum: 21600
 		 */
-		contactPrePassDurationSeconds?: number;
+		contactPrePassDurationSeconds?: number | null;
 
 		/**
 		 * A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.
@@ -1006,7 +1006,7 @@ export namespace MyNS {
 		name: string;
 
 		/** Tags assigned to a mission profile. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/**
 		 * ARN of a tracking <code>Config</code>.
@@ -1042,22 +1042,22 @@ export namespace MyNS {
 	export interface UpdateConfigPutBodyConfigData {
 
 		/** Information about how AWS Ground Station should configure an antenna for downlink during a contact. */
-		antennaDownlinkConfig?: AntennaDownlinkConfig;
+		antennaDownlinkConfig?: AntennaDownlinkConfig | null;
 
 		/** Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact. */
-		antennaDownlinkDemodDecodeConfig?: AntennaDownlinkDemodDecodeConfig;
+		antennaDownlinkDemodDecodeConfig?: AntennaDownlinkDemodDecodeConfig | null;
 
 		/** Information about the uplink <code>Config</code> of an antenna. */
-		antennaUplinkConfig?: AntennaUplinkConfig;
+		antennaUplinkConfig?: AntennaUplinkConfig | null;
 
 		/** Information about the dataflow endpoint <code>Config</code>. */
-		dataflowEndpointConfig?: DataflowEndpointConfig;
+		dataflowEndpointConfig?: DataflowEndpointConfig | null;
 
 		/** Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile. */
-		trackingConfig?: TrackingConfig;
+		trackingConfig?: TrackingConfig | null;
 
 		/** <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p> */
-		uplinkEchoConfig?: UplinkEchoConfig;
+		uplinkEchoConfig?: UplinkEchoConfig | null;
 	}
 
 	export interface UpdateMissionProfilePutBody {
@@ -1067,24 +1067,24 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 21600
 		 */
-		contactPostPassDurationSeconds?: number;
+		contactPostPassDurationSeconds?: number | null;
 
 		/**
 		 * Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.
 		 * Minimum: 1
 		 * Maximum: 21600
 		 */
-		contactPrePassDurationSeconds?: number;
+		contactPrePassDurationSeconds?: number | null;
 
 		/** A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>. */
-		dataflowEdges?: Array<Array<string>>;
+		dataflowEdges?: Array<Array<string>> | null;
 
 		/**
 		 * Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.
 		 * Minimum: 1
 		 * Maximum: 21600
 		 */
-		minimumViableContactDurationSeconds?: number;
+		minimumViableContactDurationSeconds?: number | null;
 
 		/**
 		 * Name of a mission profile.
@@ -1092,10 +1092,10 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** ARN of a tracking <code>Config</code>. */
-		trackingConfigArn?: string;
+		trackingConfigArn?: string | null;
 	}
 
 	export interface GetMinuteUsagePostBody {
@@ -1122,19 +1122,19 @@ export namespace MyNS {
 		endTime: Date;
 
 		/** Name of a ground station. */
-		groundStation?: string;
+		groundStation?: string | null;
 
 		/** Maximum number of contacts returned. */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/** ARN of a mission profile. */
-		missionProfileArn?: string;
+		missionProfileArn?: string | null;
 
 		/** Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results. */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/** ARN of a satellite. */
-		satelliteArn?: string;
+		satelliteArn?: string | null;
 
 		/**
 		 * Start time of a contact.
@@ -1191,7 +1191,7 @@ export namespace MyNS {
 		startTime: Date;
 
 		/** Tags assigned to a contact. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 }

@@ -28,7 +28,7 @@ export namespace MyNS {
 		 * and [App Engine Flex request
 		 * routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
 		 */
-		appEngineRouting?: AppEngineRouting;
+		appEngineRouting?: AppEngineRouting | null;
 
 		/**
 		 * Body.
@@ -36,7 +36,7 @@ export namespace MyNS {
 		 * POST or PUT. It will result in invalid argument error to set a body on a
 		 * job with an incompatible HttpMethod.
 		 */
-		body?: string;
+		body?: string | null;
 
 		/**
 		 * HTTP request headers.
@@ -64,13 +64,13 @@ export namespace MyNS {
 		 * In addition, some App Engine headers, which contain
 		 * job-specific information, are also be sent to the job handler.
 		 */
-		headers?: {[id: string]: string };
+		headers?: {[id: string]: string } | null;
 
 		/**
 		 * The HTTP method to use for the request. PATCH and OPTIONS are not
 		 * permitted.
 		 */
-		httpMethod?: AppEngineHttpTargetHttpMethod;
+		httpMethod?: AppEngineHttpTargetHttpMethod | null;
 
 		/**
 		 * The relative URI.
@@ -79,7 +79,7 @@ export namespace MyNS {
 		 * If the relative URL is empty, then the root path "/" will be used.
 		 * No spaces are allowed, and the maximum length allowed is 2083 characters.
 		 */
-		relativeUri?: string;
+		relativeUri?: string | null;
 	}
 
 
@@ -140,7 +140,7 @@ export namespace MyNS {
 		 * instance is invalid, then the job will be sent
 		 * to the default version of the default service when the job is attempted.
 		 */
-		host?: string;
+		host?: string | null;
 
 		/**
 		 * App instance.
@@ -155,21 +155,21 @@ export namespace MyNS {
 		 * and [App Engine Flex request
 		 * routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed).
 		 */
-		instance?: string;
+		instance?: string | null;
 
 		/**
 		 * App service.
 		 * By default, the job is sent to the service which is the default
 		 * service when the job is attempted.
 		 */
-		service?: string;
+		service?: string | null;
 
 		/**
 		 * App version.
 		 * By default, the job is sent to the version which is the default
 		 * version when the job is attempted.
 		 */
-		version?: string;
+		version?: string | null;
 	}
 
 	export enum AppEngineHttpTargetHttpMethod { HTTP_METHOD_UNSPECIFIED = 0, POST = 1, GET = 2, HEAD = 3, PUT = 4, DELETE = 5, PATCH = 6, OPTIONS = 7 }
@@ -203,7 +203,7 @@ export namespace MyNS {
 		 * method is POST, PUT, or PATCH. It is an error to set body on a job with an
 		 * incompatible HttpMethod.
 		 */
-		body?: string;
+		body?: string | null;
 
 		/**
 		 * The user can specify HTTP request headers to send with the job's
@@ -221,10 +221,10 @@ export namespace MyNS {
 		 * * `X-AppEngine-*`: Google internal use only.
 		 * The total size of headers must be less than 80KB.
 		 */
-		headers?: {[id: string]: string };
+		headers?: {[id: string]: string } | null;
 
 		/** Which HTTP method to use for the request. */
-		httpMethod?: AppEngineHttpTargetHttpMethod;
+		httpMethod?: AppEngineHttpTargetHttpMethod | null;
 
 		/**
 		 * Contains information needed for generating an
@@ -232,7 +232,7 @@ export namespace MyNS {
 		 * This type of authorization should generally only be used when calling Google
 		 * APIs hosted on *.googleapis.com.
 		 */
-		oauthToken?: OAuthToken;
+		oauthToken?: OAuthToken | null;
 
 		/**
 		 * Contains information needed for generating an
@@ -242,7 +242,7 @@ export namespace MyNS {
 		 * calling Cloud Run, or endpoints where you intend to validate the token
 		 * yourself.
 		 */
-		oidcToken?: OidcToken;
+		oidcToken?: OidcToken | null;
 
 		/**
 		 * Required. The full URI path that the request will be sent to. This string
@@ -252,7 +252,7 @@ export namespace MyNS {
 		 * encode some characters for safety and compatibility. The maximum allowed
 		 * URL length is 2083 characters after encoding.
 		 */
-		uri?: string;
+		uri?: string | null;
 	}
 
 
@@ -269,7 +269,7 @@ export namespace MyNS {
 		 * If not specified, "https://www.googleapis.com/auth/cloud-platform"
 		 * will be used.
 		 */
-		scope?: string;
+		scope?: string | null;
 
 		/**
 		 * [Service account email](https://cloud.google.com/iam/docs/service-accounts)
@@ -277,7 +277,7 @@ export namespace MyNS {
 		 * The service account must be within the same project as the job. The caller
 		 * must have iam.serviceAccounts.actAs permission for the service account.
 		 */
-		serviceAccountEmail?: string;
+		serviceAccountEmail?: string | null;
 	}
 
 
@@ -295,7 +295,7 @@ export namespace MyNS {
 		 * Audience to be used when generating OIDC token. If not specified, the URI
 		 * specified in target will be used.
 		 */
-		audience?: string;
+		audience?: string | null;
 
 		/**
 		 * [Service account email](https://cloud.google.com/iam/docs/service-accounts)
@@ -303,7 +303,7 @@ export namespace MyNS {
 		 * The service account must be within the same project as the job. The caller
 		 * must have iam.serviceAccounts.actAs permission for the service account.
 		 */
-		serviceAccountEmail?: string;
+		serviceAccountEmail?: string | null;
 	}
 
 
@@ -324,7 +324,7 @@ export namespace MyNS {
 		 * response code, or a failure to receive a response before the
 		 * deadline, constitutes a failed attempt.
 		 */
-		appEngineHttpTarget?: AppEngineHttpTarget;
+		appEngineHttpTarget?: AppEngineHttpTarget | null;
 
 		/**
 		 * The deadline for job attempts. If the request handler does not respond by
@@ -337,7 +337,7 @@ export namespace MyNS {
 		 * * For App Engine HTTP targets, between 15
 		 * seconds and 24 hours.
 		 */
-		attemptDeadline?: string;
+		attemptDeadline?: string | null;
 
 		/**
 		 * Optionally caller-specified in CreateJob or
@@ -345,7 +345,7 @@ export namespace MyNS {
 		 * A human-readable description for the job. This string must not contain
 		 * more than 500 characters.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Http target. The job will be pushed to the job handler by means of
@@ -355,10 +355,10 @@ export namespace MyNS {
 		 * constitutes a failed execution. For a redirected request, the response
 		 * returned by the redirected request is considered.
 		 */
-		httpTarget?: HttpTarget;
+		httpTarget?: HttpTarget | null;
 
 		/** Output only. The time the last job attempt started. */
-		lastAttemptTime?: string;
+		lastAttemptTime?: string | null;
 
 		/**
 		 * Optionally caller-specified in CreateJob, after
@@ -377,13 +377,13 @@ export namespace MyNS {
 		 * * `JOB_ID` can contain only letters ([A-Za-z]), numbers ([0-9]),
 		 * hyphens (-), or underscores (_). The maximum length is 500 characters.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Pub/Sub target. The job will be delivered by publishing a message to
 		 * the given Pub/Sub topic.
 		 */
-		pubsubTarget?: PubsubTarget;
+		pubsubTarget?: PubsubTarget | null;
 
 		/**
 		 * Settings that determine the retry behavior.
@@ -391,7 +391,7 @@ export namespace MyNS {
 		 * an acknowledgement is not received from the handler, then it will be retried
 		 * with exponential backoff according to the settings in RetryConfig.
 		 */
-		retryConfig?: RetryConfig;
+		retryConfig?: RetryConfig | null;
 
 		/**
 		 * Required, except when used with UpdateJob.
@@ -413,17 +413,17 @@ export namespace MyNS {
 		 * times, with exponential backoff, until the next scheduled start
 		 * time.
 		 */
-		schedule?: string;
+		schedule?: string | null;
 
 		/**
 		 * Output only. The next time the job is scheduled. Note that this may be a
 		 * retry of a previously failed attempt or the next execution time
 		 * according to the schedule.
 		 */
-		scheduleTime?: string;
+		scheduleTime?: string | null;
 
 		/** Output only. State of the job. */
-		state?: JobState;
+		state?: JobState | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -433,7 +433,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		status?: Status;
+		status?: Status | null;
 
 		/**
 		 * Specifies the time zone to be used in interpreting
@@ -445,10 +445,10 @@ export namespace MyNS {
 		 * time zone is not specified, the default will be in UTC (also known
 		 * as GMT).
 		 */
-		timeZone?: string;
+		timeZone?: string | null;
 
 		/** Output only. The creation time of the job. */
-		userUpdateTime?: string;
+		userUpdateTime?: string | null;
 	}
 
 
@@ -463,14 +463,14 @@ export namespace MyNS {
 		 * Pubsub message must contain either non-empty data, or at least one
 		 * attribute.
 		 */
-		attributes?: {[id: string]: string };
+		attributes?: {[id: string]: string } | null;
 
 		/**
 		 * The message payload for PubsubMessage.
 		 * Pubsub message must contain either non-empty data, or at least one
 		 * attribute.
 		 */
-		data?: string;
+		data?: string | null;
 
 		/**
 		 * Required. The name of the Cloud Pub/Sub topic to which messages will
@@ -480,7 +480,7 @@ export namespace MyNS {
 		 * for example `projects/PROJECT_ID/topics/TOPIC_ID`.
 		 * The topic must be in the same project as the Cloud Scheduler job.
 		 */
-		topicName?: string;
+		topicName?: string | null;
 	}
 
 
@@ -497,7 +497,7 @@ export namespace MyNS {
 		 * it fails.
 		 * The default value of this field is 1 hour.
 		 */
-		maxBackoffDuration?: string;
+		maxBackoffDuration?: string | null;
 
 		/**
 		 * The time between retries will double `max_doublings` times.
@@ -517,7 +517,7 @@ export namespace MyNS {
 		 * requests will retry at 10s, 20s, 40s, 80s, 160s, 240s, 300s, 300s, ....
 		 * The default value of this field is 5.
 		 */
-		maxDoublings?: number;
+		maxDoublings?: number | null;
 
 		/**
 		 * The time limit for retrying a failed job, measured from time when an
@@ -527,14 +527,14 @@ export namespace MyNS {
 		 * The default value for max_retry_duration is zero, which means retry
 		 * duration is unlimited.
 		 */
-		maxRetryDuration?: string;
+		maxRetryDuration?: string | null;
 
 		/**
 		 * The minimum amount of time to wait before retrying a job after
 		 * it fails.
 		 * The default value of this field is 5 seconds.
 		 */
-		minBackoffDuration?: string;
+		minBackoffDuration?: string | null;
 
 		/**
 		 * The number of attempts that the system will make to run a job using the
@@ -550,7 +550,7 @@ export namespace MyNS {
 		 * whichever comes first.
 		 * Values greater than 5 and negative values are not allowed.
 		 */
-		retryCount?: number;
+		retryCount?: number | null;
 	}
 
 	export enum JobState { STATE_UNSPECIFIED = 0, ENABLED = 1, PAUSED = 2, DISABLED = 3, UPDATE_FAILED = 4 }
@@ -567,20 +567,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -588,7 +588,7 @@ export namespace MyNS {
 	export interface ListJobsResponse {
 
 		/** The list of jobs. */
-		jobs?: Array<Job>;
+		jobs?: Array<Job> | null;
 
 		/**
 		 * A token to retrieve next page of results. Pass this value in the
@@ -598,7 +598,7 @@ export namespace MyNS {
 		 * through which to paginate.
 		 * The page token is valid for only 2 hours.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -606,10 +606,10 @@ export namespace MyNS {
 	export interface ListLocationsResponse {
 
 		/** A list of locations that matches the specified filter in the request. */
-		locations?: Array<Location>;
+		locations?: Array<Location> | null;
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -620,28 +620,28 @@ export namespace MyNS {
 		 * The friendly name for this location, typically a nearby city name.
 		 * For example, "Tokyo".
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
-		locationId?: string;
+		locationId?: string | null;
 
 		/**
 		 * Service-specific metadata. For example the available capacity at the given
 		 * location.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * Resource name for the location, which may vary between implementations.
 		 * For example: `"projects/example-project/locations/us-east1"`
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -666,13 +666,13 @@ export namespace MyNS {
 		 * Attributes for this message. If this field is empty, the message must
 		 * contain non-empty data.
 		 */
-		attributes?: {[id: string]: string };
+		attributes?: {[id: string]: string } | null;
 
 		/**
 		 * The message data field. If this field is empty, the message must contain
 		 * at least one attribute.
 		 */
-		data?: string;
+		data?: string | null;
 
 		/**
 		 * ID of this message, assigned by the server when the message is published.
@@ -680,14 +680,14 @@ export namespace MyNS {
 		 * subscriber that receives a `PubsubMessage` via a `Pull` call or a push
 		 * delivery. It must not be populated by the publisher in a `Publish` call.
 		 */
-		messageId?: string;
+		messageId?: string | null;
 
 		/**
 		 * The time at which the message was published, populated by the server when
 		 * it receives the `Publish` call. It must not be populated by the
 		 * publisher in a `Publish` call.
 		 */
-		publishTime?: string;
+		publishTime?: string | null;
 	}
 
 
@@ -757,7 +757,7 @@ export namespace MyNS {
 		 * @param {string} updateMask A  mask used to specify which fields of the job are being updated.
 		 * @return {void} Successful response
 		 */
-		Cloudscheduler_projects_locations_jobs_patch(name: string, updateMask: string, requestBody: Job): Observable<HttpResponse<string>> {
+		Cloudscheduler_projects_locations_jobs_patch(name: string, updateMask: string | null | undefined, requestBody: Job): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -770,7 +770,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		Cloudscheduler_projects_locations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudscheduler_projects_locations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/locations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -837,7 +837,7 @@ export namespace MyNS {
 		 * order_by while iterating through pages.
 		 * @return {void} Successful response
 		 */
-		Cloudscheduler_projects_locations_jobs_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Cloudscheduler_projects_locations_jobs_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/jobs&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 

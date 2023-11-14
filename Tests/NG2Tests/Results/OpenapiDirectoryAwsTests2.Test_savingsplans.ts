@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateSavingsPlanResponse {
-		savingsPlanId?: string;
+		savingsPlanId?: string | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -19,22 +19,22 @@ export namespace MyNS {
 	}
 
 	export interface DescribeSavingsPlanRatesResponse {
-		savingsPlanId?: string;
-		searchResults?: Array<SavingsPlanRate>;
-		nextToken?: string;
+		savingsPlanId?: string | null;
+		searchResults?: Array<SavingsPlanRate> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about a Savings Plan rate. */
 	export interface SavingsPlanRate {
-		rate?: string;
-		currency?: SavingsPlanRateCurrency;
-		unit?: SavingsPlanRateUnit;
-		productType?: SavingsPlanRateProductType;
-		serviceCode?: SavingsPlanRateServiceCode;
-		usageType?: string;
-		operation?: string;
-		properties?: Array<SavingsPlanRateProperty>;
+		rate?: string | null;
+		currency?: SavingsPlanRateCurrency | null;
+		unit?: SavingsPlanRateUnit | null;
+		productType?: SavingsPlanRateProductType | null;
+		serviceCode?: SavingsPlanRateServiceCode | null;
+		usageType?: string | null;
+		operation?: string | null;
+		properties?: Array<SavingsPlanRateProperty> | null;
 	}
 
 	export enum SavingsPlanRateCurrency { CNY = 0, USD = 1 }
@@ -48,8 +48,8 @@ export namespace MyNS {
 
 	/** Information about a property. */
 	export interface SavingsPlanRateProperty {
-		name?: SavingsPlanRatePropertyName;
-		value?: string;
+		name?: SavingsPlanRatePropertyName | null;
+		value?: string | null;
 	}
 
 	export enum SavingsPlanRatePropertyName { region = 0, instanceType = 1, instanceFamily = 2, productDescription = 3, tenancy = 4 }
@@ -57,38 +57,38 @@ export namespace MyNS {
 
 	/** Information about a filter. */
 	export interface SavingsPlanRateFilter {
-		name?: SavingsPlanRateFilterName;
-		values?: Array<string>;
+		name?: SavingsPlanRateFilterName | null;
+		values?: Array<string> | null;
 	}
 
 	export enum SavingsPlanRateFilterName { region = 0, instanceType = 1, productDescription = 2, tenancy = 3, productType = 4, serviceCode = 5, usageType = 6, operation = 7 }
 
 	export interface DescribeSavingsPlansResponse {
-		savingsPlans?: Array<SavingsPlan>;
-		nextToken?: string;
+		savingsPlans?: Array<SavingsPlan> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about a Savings Plan. */
 	export interface SavingsPlan {
-		offeringId?: string;
-		savingsPlanId?: string;
-		savingsPlanArn?: string;
-		description?: string;
-		start?: string;
-		end?: string;
-		state?: SavingsPlanState;
-		region?: string;
-		ec2InstanceFamily?: string;
-		savingsPlanType?: SavingsPlanSavingsPlanType;
-		paymentOption?: SavingsPlanPaymentOption;
-		productTypes?: Array<SavingsPlanProductType>;
-		currency?: SavingsPlanRateCurrency;
-		commitment?: string;
-		upfrontPaymentAmount?: string;
-		recurringPaymentAmount?: string;
-		termDurationInSeconds?: number;
-		tags?: TagMap;
+		offeringId?: string | null;
+		savingsPlanId?: string | null;
+		savingsPlanArn?: string | null;
+		description?: string | null;
+		start?: string | null;
+		end?: string | null;
+		state?: SavingsPlanState | null;
+		region?: string | null;
+		ec2InstanceFamily?: string | null;
+		savingsPlanType?: SavingsPlanSavingsPlanType | null;
+		paymentOption?: SavingsPlanPaymentOption | null;
+		productTypes?: Array<SavingsPlanProductType> | null;
+		currency?: SavingsPlanRateCurrency | null;
+		commitment?: string | null;
+		upfrontPaymentAmount?: string | null;
+		recurringPaymentAmount?: string | null;
+		termDurationInSeconds?: number | null;
+		tags?: TagMap | null;
 	}
 
 	export enum SavingsPlanState { payment_pending = 0, payment_failed = 1, active = 2, retired = 3 }
@@ -105,15 +105,15 @@ export namespace MyNS {
 
 	/** Information about a filter. */
 	export interface SavingsPlanFilter {
-		name?: SavingsPlanFilterName;
-		values?: Array<string>;
+		name?: SavingsPlanFilterName | null;
+		values?: Array<string> | null;
 	}
 
 	export enum SavingsPlanFilterName { region = 0, ec2_instance_family = 1, commitment = 2, upfront = 3, term = 4, savings_plan_type = 5, payment_option = 6, start = 7, end = 8 }
 
 	export interface DescribeSavingsPlansOfferingRatesResponse {
-		searchResults?: Array<SavingsPlanOfferingRate>;
-		nextToken?: string;
+		searchResults?: Array<SavingsPlanOfferingRate> | null;
+		nextToken?: string | null;
 	}
 
 
@@ -121,25 +121,25 @@ export namespace MyNS {
 	export interface SavingsPlanOfferingRate {
 
 		/** Information about a Savings Plan offering. */
-		savingsPlanOffering?: ParentSavingsPlanOffering;
-		rate?: string;
-		unit?: SavingsPlanOfferingRateUnit;
-		productType?: SavingsPlanRateProductType;
-		serviceCode?: SavingsPlanRateServiceCode;
-		usageType?: string;
-		operation?: string;
-		properties?: Array<SavingsPlanOfferingRateProperty>;
+		savingsPlanOffering?: ParentSavingsPlanOffering | null;
+		rate?: string | null;
+		unit?: SavingsPlanOfferingRateUnit | null;
+		productType?: SavingsPlanRateProductType | null;
+		serviceCode?: SavingsPlanRateServiceCode | null;
+		usageType?: string | null;
+		operation?: string | null;
+		properties?: Array<SavingsPlanOfferingRateProperty> | null;
 	}
 
 
 	/** Information about a Savings Plan offering. */
 	export interface ParentSavingsPlanOffering {
-		offeringId?: string;
-		paymentOption?: ParentSavingsPlanOfferingPaymentOption;
-		planType?: SavingsPlanSavingsPlanType;
-		durationSeconds?: number;
-		currency?: SavingsPlanRateCurrency;
-		planDescription?: string;
+		offeringId?: string | null;
+		paymentOption?: ParentSavingsPlanOfferingPaymentOption | null;
+		planType?: SavingsPlanSavingsPlanType | null;
+		durationSeconds?: number | null;
+		currency?: SavingsPlanRateCurrency | null;
+		planDescription?: string | null;
 	}
 
 	export enum ParentSavingsPlanOfferingPaymentOption { All_Upfront = 0, Partial_Upfront = 1, No_Upfront = 2 }
@@ -149,8 +149,8 @@ export namespace MyNS {
 
 	/** Information about a property. */
 	export interface SavingsPlanOfferingRateProperty {
-		name?: string;
-		value?: string;
+		name?: string | null;
+		value?: string | null;
 	}
 
 	export enum SavingsPlanType { Compute = 0, EC2Instance = 1 }
@@ -158,31 +158,31 @@ export namespace MyNS {
 
 	/** Information about a filter. */
 	export interface SavingsPlanOfferingRateFilterElement {
-		name?: SavingsPlanOfferingRateFilterElementName;
-		values?: Array<string>;
+		name?: SavingsPlanOfferingRateFilterElementName | null;
+		values?: Array<string> | null;
 	}
 
 	export enum SavingsPlanOfferingRateFilterElementName { region = 0, instanceFamily = 1, instanceType = 2, productDescription = 3, tenancy = 4, productId = 5 }
 
 	export interface DescribeSavingsPlansOfferingsResponse {
-		searchResults?: Array<SavingsPlanOffering>;
-		nextToken?: string;
+		searchResults?: Array<SavingsPlanOffering> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about a Savings Plan offering. */
 	export interface SavingsPlanOffering {
-		offeringId?: string;
-		productTypes?: Array<SavingsPlanProductType>;
-		planType?: SavingsPlanSavingsPlanType;
-		description?: string;
-		paymentOption?: SavingsPlanOfferingPaymentOption;
-		durationSeconds?: number;
-		currency?: SavingsPlanRateCurrency;
-		serviceCode?: string;
-		usageType?: string;
-		operation?: string;
-		properties?: Array<SavingsPlanOfferingProperty>;
+		offeringId?: string | null;
+		productTypes?: Array<SavingsPlanProductType> | null;
+		planType?: SavingsPlanSavingsPlanType | null;
+		description?: string | null;
+		paymentOption?: SavingsPlanOfferingPaymentOption | null;
+		durationSeconds?: number | null;
+		currency?: SavingsPlanRateCurrency | null;
+		serviceCode?: string | null;
+		usageType?: string | null;
+		operation?: string | null;
+		properties?: Array<SavingsPlanOfferingProperty> | null;
 	}
 
 	export enum SavingsPlanOfferingPaymentOption { All_Upfront = 0, Partial_Upfront = 1, No_Upfront = 2 }
@@ -190,8 +190,8 @@ export namespace MyNS {
 
 	/** Information about a property. */
 	export interface SavingsPlanOfferingProperty {
-		name?: SavingsPlanOfferingPropertyName;
-		value?: string;
+		name?: SavingsPlanOfferingPropertyName | null;
+		value?: string | null;
 	}
 
 	export enum SavingsPlanOfferingPropertyName { region = 0, instanceFamily = 1 }
@@ -201,12 +201,12 @@ export namespace MyNS {
 
 	/** Information about a filter. */
 	export interface SavingsPlanOfferingFilterElement {
-		name?: SavingsPlanOfferingPropertyName;
-		values?: Array<string>;
+		name?: SavingsPlanOfferingPropertyName | null;
+		values?: Array<string> | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export interface TagResourceResponse {
@@ -218,54 +218,54 @@ export namespace MyNS {
 	export interface CreateSavingsPlanRequest {
 		savingsPlanOfferingId: string;
 		commitment: string;
-		upfrontPaymentAmount?: string;
-		clientToken?: string;
-		tags?: TagMap;
+		upfrontPaymentAmount?: string | null;
+		clientToken?: string | null;
+		tags?: TagMap | null;
 	}
 
 	export interface DescribeSavingsPlanRatesRequest {
 		savingsPlanId: string;
-		filters?: Array<SavingsPlanRateFilter>;
-		nextToken?: string;
-		maxResults?: number;
+		filters?: Array<SavingsPlanRateFilter> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface DescribeSavingsPlansOfferingRatesRequest {
-		savingsPlanOfferingIds?: Array<string>;
-		savingsPlanPaymentOptions?: Array<SavingsPlanPaymentOption>;
-		savingsPlanTypes?: Array<SavingsPlanType>;
-		products?: Array<SavingsPlanProductType>;
-		serviceCodes?: Array<SavingsPlanRateServiceCode>;
-		usageTypes?: Array<string>;
-		operations?: Array<string>;
-		filters?: Array<SavingsPlanOfferingRateFilterElement>;
-		nextToken?: string;
-		maxResults?: number;
+		savingsPlanOfferingIds?: Array<string> | null;
+		savingsPlanPaymentOptions?: Array<SavingsPlanPaymentOption> | null;
+		savingsPlanTypes?: Array<SavingsPlanType> | null;
+		products?: Array<SavingsPlanProductType> | null;
+		serviceCodes?: Array<SavingsPlanRateServiceCode> | null;
+		usageTypes?: Array<string> | null;
+		operations?: Array<string> | null;
+		filters?: Array<SavingsPlanOfferingRateFilterElement> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface DescribeSavingsPlansOfferingsRequest {
-		offeringIds?: Array<string>;
-		paymentOptions?: Array<SavingsPlanPaymentOption>;
-		productType?: SavingsPlanRateProductType;
-		planTypes?: Array<SavingsPlanType>;
-		durations?: Array<number>;
-		currencies?: Array<CurrencyCode>;
-		descriptions?: Array<string>;
-		serviceCodes?: Array<string>;
-		usageTypes?: Array<string>;
-		operations?: Array<string>;
-		filters?: Array<SavingsPlanOfferingFilterElement>;
-		nextToken?: string;
-		maxResults?: number;
+		offeringIds?: Array<string> | null;
+		paymentOptions?: Array<SavingsPlanPaymentOption> | null;
+		productType?: SavingsPlanRateProductType | null;
+		planTypes?: Array<SavingsPlanType> | null;
+		durations?: Array<number> | null;
+		currencies?: Array<CurrencyCode> | null;
+		descriptions?: Array<string> | null;
+		serviceCodes?: Array<string> | null;
+		usageTypes?: Array<string> | null;
+		operations?: Array<string> | null;
+		filters?: Array<SavingsPlanOfferingFilterElement> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface DescribeSavingsPlansRequest {
-		savingsPlanArns?: Array<string>;
-		savingsPlanIds?: Array<string>;
-		nextToken?: string;
-		maxResults?: number;
-		states?: Array<SavingsPlanState>;
-		filters?: Array<SavingsPlanFilter>;
+		savingsPlanArns?: Array<string> | null;
+		savingsPlanIds?: Array<string> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		states?: Array<SavingsPlanState> | null;
+		filters?: Array<SavingsPlanFilter> | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -385,13 +385,13 @@ export namespace MyNS {
 		commitment: string;
 
 		/** The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>. */
-		upfrontPaymentAmount?: string;
+		upfrontPaymentAmount?: string | null;
 
 		/** Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** One or more tags. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface DescribeSavingsPlanRatesPostBody {
@@ -403,21 +403,21 @@ export namespace MyNS {
 		savingsPlanId: string;
 
 		/** The filters. */
-		filters?: Array<SavingsPlanRateFilter>;
+		filters?: Array<SavingsPlanRateFilter> | null;
 
 		/**
 		 * The token for the next page of results.
 		 * Max length: 1024
 		 * Pattern: ^[A-Za-z0-9/=\+]+$
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/**
 		 * The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.
 		 * Minimum: 1
 		 * Maximum: 1000
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 	}
 
 	export interface DescribeSavingsPlansPostBody {
@@ -426,121 +426,121 @@ export namespace MyNS {
 		 * The Amazon Resource Names (ARN) of the Savings Plans.
 		 * Maximum items: 100
 		 */
-		savingsPlanArns?: Array<string>;
+		savingsPlanArns?: Array<string> | null;
 
 		/** The IDs of the Savings Plans. */
-		savingsPlanIds?: Array<string>;
+		savingsPlanIds?: Array<string> | null;
 
 		/**
 		 * The token for the next page of results.
 		 * Max length: 1024
 		 * Pattern: ^[A-Za-z0-9/=\+]+$
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/**
 		 * The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.
 		 * Minimum: 1
 		 * Maximum: 1000
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/** The states. */
-		states?: Array<SavingsPlanState>;
+		states?: Array<SavingsPlanState> | null;
 
 		/** The filters. */
-		filters?: Array<SavingsPlanFilter>;
+		filters?: Array<SavingsPlanFilter> | null;
 	}
 
 	export interface DescribeSavingsPlansOfferingRatesPostBody {
 
 		/** The IDs of the offerings. */
-		savingsPlanOfferingIds?: Array<string>;
+		savingsPlanOfferingIds?: Array<string> | null;
 
 		/** The payment options. */
-		savingsPlanPaymentOptions?: Array<SavingsPlanPaymentOption>;
+		savingsPlanPaymentOptions?: Array<SavingsPlanPaymentOption> | null;
 
 		/** The plan types. */
-		savingsPlanTypes?: Array<SavingsPlanType>;
+		savingsPlanTypes?: Array<SavingsPlanType> | null;
 
 		/** The AWS products. */
-		products?: Array<SavingsPlanProductType>;
+		products?: Array<SavingsPlanProductType> | null;
 
 		/** The services. */
-		serviceCodes?: Array<SavingsPlanRateServiceCode>;
+		serviceCodes?: Array<SavingsPlanRateServiceCode> | null;
 
 		/** The usage details of the line item in the billing report. */
-		usageTypes?: Array<string>;
+		usageTypes?: Array<string> | null;
 
 		/** The specific AWS operation for the line item in the billing report. */
-		operations?: Array<string>;
+		operations?: Array<string> | null;
 
 		/** The filters. */
-		filters?: Array<SavingsPlanOfferingRateFilterElement>;
+		filters?: Array<SavingsPlanOfferingRateFilterElement> | null;
 
 		/**
 		 * The token for the next page of results.
 		 * Max length: 1024
 		 * Pattern: ^[A-Za-z0-9/=\+]+$
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/**
 		 * The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.
 		 * Minimum: 0
 		 * Maximum: 1000
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 	}
 
 	export interface DescribeSavingsPlansOfferingsPostBody {
 
 		/** The IDs of the offerings. */
-		offeringIds?: Array<string>;
+		offeringIds?: Array<string> | null;
 
 		/** The payment options. */
-		paymentOptions?: Array<SavingsPlanPaymentOption>;
+		paymentOptions?: Array<SavingsPlanPaymentOption> | null;
 
 		/** The product type. */
-		productType?: SavingsPlanRateProductType;
+		productType?: SavingsPlanRateProductType | null;
 
 		/** The plan type. */
-		planTypes?: Array<SavingsPlanType>;
+		planTypes?: Array<SavingsPlanType> | null;
 
 		/** The durations, in seconds. */
-		durations?: Array<number>;
+		durations?: Array<number> | null;
 
 		/** The currencies. */
-		currencies?: Array<CurrencyCode>;
+		currencies?: Array<CurrencyCode> | null;
 
 		/** The descriptions. */
-		descriptions?: Array<string>;
+		descriptions?: Array<string> | null;
 
 		/** The services. */
-		serviceCodes?: Array<string>;
+		serviceCodes?: Array<string> | null;
 
 		/** The usage details of the line item in the billing report. */
-		usageTypes?: Array<string>;
+		usageTypes?: Array<string> | null;
 
 		/** The specific AWS operation for the line item in the billing report. */
-		operations?: Array<string>;
+		operations?: Array<string> | null;
 
 		/** The filters. */
-		filters?: Array<SavingsPlanOfferingFilterElement>;
+		filters?: Array<SavingsPlanOfferingFilterElement> | null;
 
 		/**
 		 * The token for the next page of results.
 		 * Max length: 1024
 		 * Pattern: ^[A-Za-z0-9/=\+]+$
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/**
 		 * The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.
 		 * Minimum: 0
 		 * Maximum: 1000
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 	}
 
 	export interface ListTagsForResourcePostBody {

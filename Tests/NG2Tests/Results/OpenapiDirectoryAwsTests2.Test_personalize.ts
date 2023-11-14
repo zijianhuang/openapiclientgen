@@ -3,14 +3,14 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateBatchInferenceJobResponse {
-		batchInferenceJobArn?: string;
+		batchInferenceJobArn?: string | null;
 	}
 
 	export interface CreateBatchInferenceJobRequest {
 		jobName: string;
 		solutionVersionArn: string;
-		filterArn?: string;
-		numResults?: number;
+		filterArn?: string | null;
+		numResults?: number | null;
 
 		/**
 		 * The input configuration of a batch inference job.
@@ -41,7 +41,7 @@ export namespace MyNS {
 	/** The configuration details of an Amazon S3 input or output bucket. */
 	export interface S3DataConfig {
 		path: string;
-		kmsKeyArn?: string;
+		kmsKeyArn?: string | null;
 	}
 
 
@@ -71,7 +71,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateCampaignResponse {
-		campaignArn?: string;
+		campaignArn?: string | null;
 	}
 
 	export interface CreateCampaignRequest {
@@ -81,7 +81,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateDatasetResponse {
-		datasetArn?: string;
+		datasetArn?: string | null;
 	}
 
 	export interface CreateDatasetRequest {
@@ -92,17 +92,17 @@ export namespace MyNS {
 	}
 
 	export interface CreateDatasetGroupResponse {
-		datasetGroupArn?: string;
+		datasetGroupArn?: string | null;
 	}
 
 	export interface CreateDatasetGroupRequest {
 		name: string;
-		roleArn?: string;
-		kmsKeyArn?: string;
+		roleArn?: string | null;
+		kmsKeyArn?: string | null;
 	}
 
 	export interface CreateDatasetImportJobResponse {
-		datasetImportJobArn?: string;
+		datasetImportJobArn?: string | null;
 	}
 
 	export interface CreateDatasetImportJobRequest {
@@ -120,12 +120,12 @@ export namespace MyNS {
 
 	/** Describes the data source that contains the data to upload to a dataset. */
 	export interface DataSource {
-		dataLocation?: string;
+		dataLocation?: string | null;
 	}
 
 	export interface CreateEventTrackerResponse {
-		eventTrackerArn?: string;
-		trackingId?: string;
+		eventTrackerArn?: string | null;
+		trackingId?: string | null;
 	}
 
 	export interface CreateEventTrackerRequest {
@@ -134,7 +134,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateFilterResponse {
-		filterArn?: string;
+		filterArn?: string | null;
 	}
 
 	export interface CreateFilterRequest {
@@ -144,7 +144,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateSchemaResponse {
-		schemaArn?: string;
+		schemaArn?: string | null;
 	}
 
 	export interface CreateSchemaRequest {
@@ -153,33 +153,33 @@ export namespace MyNS {
 	}
 
 	export interface CreateSolutionResponse {
-		solutionArn?: string;
+		solutionArn?: string | null;
 	}
 
 	export interface CreateSolutionRequest {
 		name: string;
-		performHPO?: boolean;
-		performAutoML?: boolean;
-		recipeArn?: string;
+		performHPO?: boolean | null;
+		performAutoML?: boolean | null;
+		recipeArn?: string | null;
 		datasetGroupArn: string;
-		eventType?: string;
+		eventType?: string | null;
 
 		/** Describes the configuration properties for the solution. */
-		solutionConfig?: SolutionConfig;
+		solutionConfig?: SolutionConfig | null;
 	}
 
 
 	/** Describes the configuration properties for the solution. */
 	export interface SolutionConfig {
-		eventValueThreshold?: string;
+		eventValueThreshold?: string | null;
 
 		/** Describes the properties for hyperparameter optimization (HPO). For use with the bring-your-own-recipe feature. Do not use for Amazon Personalize native recipes. */
-		hpoConfig?: HPOConfig;
-		algorithmHyperParameters?: HyperParameters;
-		featureTransformationParameters?: FeatureTransformationParameters;
+		hpoConfig?: HPOConfig | null;
+		algorithmHyperParameters?: HyperParameters | null;
+		featureTransformationParameters?: FeatureTransformationParameters | null;
 
 		/** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution. */
-		autoMLConfig?: AutoMLConfig;
+		autoMLConfig?: AutoMLConfig | null;
 	}
 
 
@@ -187,59 +187,59 @@ export namespace MyNS {
 	export interface HPOConfig {
 
 		/** The metric to optimize during hyperparameter optimization (HPO). */
-		hpoObjective?: HPOObjective;
+		hpoObjective?: HPOObjective | null;
 
 		/** Describes the resource configuration for hyperparameter optimization (HPO). */
-		hpoResourceConfig?: HPOResourceConfig;
+		hpoResourceConfig?: HPOResourceConfig | null;
 
 		/** Specifies the hyperparameters and their ranges. Hyperparameters can be categorical, continuous, or integer-valued. */
-		algorithmHyperParameterRanges?: HyperParameterRanges;
+		algorithmHyperParameterRanges?: HyperParameterRanges | null;
 	}
 
 
 	/** The metric to optimize during hyperparameter optimization (HPO). */
 	export interface HPOObjective {
-		type?: string;
-		metricName?: string;
-		metricRegex?: string;
+		type?: string | null;
+		metricName?: string | null;
+		metricRegex?: string | null;
 	}
 
 
 	/** Describes the resource configuration for hyperparameter optimization (HPO). */
 	export interface HPOResourceConfig {
-		maxNumberOfTrainingJobs?: string;
-		maxParallelTrainingJobs?: string;
+		maxNumberOfTrainingJobs?: string | null;
+		maxParallelTrainingJobs?: string | null;
 	}
 
 
 	/** Specifies the hyperparameters and their ranges. Hyperparameters can be categorical, continuous, or integer-valued. */
 	export interface HyperParameterRanges {
-		integerHyperParameterRanges?: Array<IntegerHyperParameterRange>;
-		continuousHyperParameterRanges?: Array<ContinuousHyperParameterRange>;
-		categoricalHyperParameterRanges?: Array<CategoricalHyperParameterRange>;
+		integerHyperParameterRanges?: Array<IntegerHyperParameterRange> | null;
+		continuousHyperParameterRanges?: Array<ContinuousHyperParameterRange> | null;
+		categoricalHyperParameterRanges?: Array<CategoricalHyperParameterRange> | null;
 	}
 
 
 	/** Provides the name and range of an integer-valued hyperparameter. */
 	export interface IntegerHyperParameterRange {
-		name?: string;
-		minValue?: number;
-		maxValue?: number;
+		name?: string | null;
+		minValue?: number | null;
+		maxValue?: number | null;
 	}
 
 
 	/** Provides the name and range of a continuous hyperparameter. */
 	export interface ContinuousHyperParameterRange {
-		name?: string;
-		minValue?: number;
-		maxValue?: number;
+		name?: string | null;
+		minValue?: number | null;
+		maxValue?: number | null;
 	}
 
 
 	/** Provides the name and range of a categorical hyperparameter. */
 	export interface CategoricalHyperParameterRange {
-		name?: string;
-		values?: Array<string>;
+		name?: string | null;
+		values?: Array<string> | null;
 	}
 
 	export interface HyperParameters {
@@ -251,17 +251,17 @@ export namespace MyNS {
 
 	/** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution. */
 	export interface AutoMLConfig {
-		metricName?: string;
-		recipeList?: Array<string>;
+		metricName?: string | null;
+		recipeList?: Array<string> | null;
 	}
 
 	export interface CreateSolutionVersionResponse {
-		solutionVersionArn?: string;
+		solutionVersionArn?: string | null;
 	}
 
 	export interface CreateSolutionVersionRequest {
 		solutionArn: string;
-		trainingMode?: CreateSolutionVersionRequestTrainingMode;
+		trainingMode?: CreateSolutionVersionRequestTrainingMode | null;
 	}
 
 	export enum CreateSolutionVersionRequestTrainingMode { FULL = 0, UPDATE = 1 }
@@ -297,67 +297,67 @@ export namespace MyNS {
 	export interface DescribeAlgorithmResponse {
 
 		/** Describes a custom algorithm. */
-		algorithm?: Algorithm;
+		algorithm?: Algorithm | null;
 	}
 
 
 	/** Describes a custom algorithm. */
 	export interface Algorithm {
-		name?: string;
-		algorithmArn?: string;
+		name?: string | null;
+		algorithmArn?: string | null;
 
 		/** Describes an algorithm image. */
-		algorithmImage?: AlgorithmImage;
-		defaultHyperParameters?: HyperParameters;
+		algorithmImage?: AlgorithmImage | null;
+		defaultHyperParameters?: HyperParameters | null;
 
 		/** Specifies the hyperparameters and their default ranges. Hyperparameters can be categorical, continuous, or integer-valued. */
-		defaultHyperParameterRanges?: DefaultHyperParameterRanges;
-		defaultResourceConfig?: ResourceConfig;
-		trainingInputMode?: string;
-		roleArn?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
+		defaultHyperParameterRanges?: DefaultHyperParameterRanges | null;
+		defaultResourceConfig?: ResourceConfig | null;
+		trainingInputMode?: string | null;
+		roleArn?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
 	}
 
 
 	/** Describes an algorithm image. */
 	export interface AlgorithmImage {
-		name?: string;
+		name?: string | null;
 		dockerURI: string;
 	}
 
 
 	/** Specifies the hyperparameters and their default ranges. Hyperparameters can be categorical, continuous, or integer-valued. */
 	export interface DefaultHyperParameterRanges {
-		integerHyperParameterRanges?: Array<DefaultIntegerHyperParameterRange>;
-		continuousHyperParameterRanges?: Array<DefaultContinuousHyperParameterRange>;
-		categoricalHyperParameterRanges?: Array<DefaultCategoricalHyperParameterRange>;
+		integerHyperParameterRanges?: Array<DefaultIntegerHyperParameterRange> | null;
+		continuousHyperParameterRanges?: Array<DefaultContinuousHyperParameterRange> | null;
+		categoricalHyperParameterRanges?: Array<DefaultCategoricalHyperParameterRange> | null;
 	}
 
 
 	/** Provides the name and default range of a integer-valued hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO). */
 	export interface DefaultIntegerHyperParameterRange {
-		name?: string;
-		minValue?: number;
-		maxValue?: number;
-		isTunable?: boolean;
+		name?: string | null;
+		minValue?: number | null;
+		maxValue?: number | null;
+		isTunable?: boolean | null;
 	}
 
 
 	/** Provides the name and default range of a continuous hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO). */
 	export interface DefaultContinuousHyperParameterRange {
-		name?: string;
-		minValue?: number;
-		maxValue?: number;
-		isTunable?: boolean;
+		name?: string | null;
+		minValue?: number | null;
+		maxValue?: number | null;
+		isTunable?: boolean | null;
 	}
 
 
 	/** Provides the name and default range of a categorical hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO). */
 	export interface DefaultCategoricalHyperParameterRange {
-		name?: string;
-		values?: Array<string>;
-		isTunable?: boolean;
+		name?: string | null;
+		values?: Array<string> | null;
+		isTunable?: boolean | null;
 	}
 
 	export interface ResourceConfig {
@@ -370,28 +370,28 @@ export namespace MyNS {
 	export interface DescribeBatchInferenceJobResponse {
 
 		/** Contains information on a batch inference job. */
-		batchInferenceJob?: BatchInferenceJob;
+		batchInferenceJob?: BatchInferenceJob | null;
 	}
 
 
 	/** Contains information on a batch inference job. */
 	export interface BatchInferenceJob {
-		jobName?: string;
-		batchInferenceJobArn?: string;
-		filterArn?: string;
-		failureReason?: string;
-		solutionVersionArn?: string;
-		numResults?: number;
+		jobName?: string | null;
+		batchInferenceJobArn?: string | null;
+		filterArn?: string | null;
+		failureReason?: string | null;
+		solutionVersionArn?: string | null;
+		numResults?: number | null;
 
 		/** The input configuration of a batch inference job. */
-		jobInput?: BatchInferenceJobInput;
+		jobInput?: BatchInferenceJobInput | null;
 
 		/** The output configuration parameters of a batch inference job. */
-		jobOutput?: BatchInferenceJobOutput;
-		roleArn?: string;
-		status?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
+		jobOutput?: BatchInferenceJobOutput | null;
+		roleArn?: string | null;
+		status?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
 	}
 
 	export interface DescribeBatchInferenceJobRequest {
@@ -401,34 +401,34 @@ export namespace MyNS {
 	export interface DescribeCampaignResponse {
 
 		/** Describes a deployed solution version, otherwise known as a campaign. For more information on campaigns, see <a>CreateCampaign</a>. */
-		campaign?: Campaign;
+		campaign?: Campaign | null;
 	}
 
 
 	/** Describes a deployed solution version, otherwise known as a campaign. For more information on campaigns, see <a>CreateCampaign</a>. */
 	export interface Campaign {
-		name?: string;
-		campaignArn?: string;
-		solutionVersionArn?: string;
-		minProvisionedTPS?: number;
-		status?: string;
-		failureReason?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
+		name?: string | null;
+		campaignArn?: string | null;
+		solutionVersionArn?: string | null;
+		minProvisionedTPS?: number | null;
+		status?: string | null;
+		failureReason?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
 
 		/** Provides a summary of the properties of a campaign update. For a complete listing, call the <a>DescribeCampaign</a> API. */
-		latestCampaignUpdate?: CampaignUpdateSummary;
+		latestCampaignUpdate?: CampaignUpdateSummary | null;
 	}
 
 
 	/** Provides a summary of the properties of a campaign update. For a complete listing, call the <a>DescribeCampaign</a> API. */
 	export interface CampaignUpdateSummary {
-		solutionVersionArn?: string;
-		minProvisionedTPS?: number;
-		status?: string;
-		failureReason?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
+		solutionVersionArn?: string | null;
+		minProvisionedTPS?: number | null;
+		status?: string | null;
+		failureReason?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
 	}
 
 	export interface DescribeCampaignRequest {
@@ -438,20 +438,20 @@ export namespace MyNS {
 	export interface DescribeDatasetResponse {
 
 		/** Provides metadata for a dataset. */
-		dataset?: Dataset;
+		dataset?: Dataset | null;
 	}
 
 
 	/** Provides metadata for a dataset. */
 	export interface Dataset {
-		name?: string;
-		datasetArn?: string;
-		datasetGroupArn?: string;
-		datasetType?: string;
-		schemaArn?: string;
-		status?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
+		name?: string | null;
+		datasetArn?: string | null;
+		datasetGroupArn?: string | null;
+		datasetType?: string | null;
+		schemaArn?: string | null;
+		status?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
 	}
 
 	export interface DescribeDatasetRequest {
@@ -461,20 +461,20 @@ export namespace MyNS {
 	export interface DescribeDatasetGroupResponse {
 
 		/** <p>A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a>CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a>CreateDataset</a>. The dataset group is used to create and train a solution by calling <a>CreateSolution</a>. A dataset group can contain only one of each type of dataset.</p> <p>You can specify an AWS Key Management Service (KMS) key to encrypt the datasets in the group.</p> */
-		datasetGroup?: DatasetGroup;
+		datasetGroup?: DatasetGroup | null;
 	}
 
 
 	/** <p>A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a>CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a>CreateDataset</a>. The dataset group is used to create and train a solution by calling <a>CreateSolution</a>. A dataset group can contain only one of each type of dataset.</p> <p>You can specify an AWS Key Management Service (KMS) key to encrypt the datasets in the group.</p> */
 	export interface DatasetGroup {
-		name?: string;
-		datasetGroupArn?: string;
-		status?: string;
-		roleArn?: string;
-		kmsKeyArn?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
-		failureReason?: string;
+		name?: string | null;
+		datasetGroupArn?: string | null;
+		status?: string | null;
+		roleArn?: string | null;
+		kmsKeyArn?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
+		failureReason?: string | null;
 	}
 
 	export interface DescribeDatasetGroupRequest {
@@ -484,23 +484,23 @@ export namespace MyNS {
 	export interface DescribeDatasetImportJobResponse {
 
 		/** <p>Describes a job that imports training data from a data source (Amazon S3 bucket) to an Amazon Personalize dataset. For more information, see <a>CreateDatasetImportJob</a>.</p> <p>A dataset import job can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> */
-		datasetImportJob?: DatasetImportJob;
+		datasetImportJob?: DatasetImportJob | null;
 	}
 
 
 	/** <p>Describes a job that imports training data from a data source (Amazon S3 bucket) to an Amazon Personalize dataset. For more information, see <a>CreateDatasetImportJob</a>.</p> <p>A dataset import job can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> */
 	export interface DatasetImportJob {
-		jobName?: string;
-		datasetImportJobArn?: string;
-		datasetArn?: string;
+		jobName?: string | null;
+		datasetImportJobArn?: string | null;
+		datasetArn?: string | null;
 
 		/** Describes the data source that contains the data to upload to a dataset. */
-		dataSource?: DataSource;
-		roleArn?: string;
-		status?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
-		failureReason?: string;
+		dataSource?: DataSource | null;
+		roleArn?: string | null;
+		status?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
+		failureReason?: string | null;
 	}
 
 	export interface DescribeDatasetImportJobRequest {
@@ -510,20 +510,20 @@ export namespace MyNS {
 	export interface DescribeEventTrackerResponse {
 
 		/** Provides information about an event tracker. */
-		eventTracker?: EventTracker;
+		eventTracker?: EventTracker | null;
 	}
 
 
 	/** Provides information about an event tracker. */
 	export interface EventTracker {
-		name?: string;
-		eventTrackerArn?: string;
-		accountId?: string;
-		trackingId?: string;
-		datasetGroupArn?: string;
-		status?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
+		name?: string | null;
+		eventTrackerArn?: string | null;
+		accountId?: string | null;
+		trackingId?: string | null;
+		datasetGroupArn?: string | null;
+		status?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
 	}
 
 	export interface DescribeEventTrackerRequest {
@@ -533,18 +533,18 @@ export namespace MyNS {
 	export interface DescribeFeatureTransformationResponse {
 
 		/** Provides feature transformation information. Feature transformation is the process of modifying raw input data into a form more suitable for model training. */
-		featureTransformation?: FeatureTransformation;
+		featureTransformation?: FeatureTransformation | null;
 	}
 
 
 	/** Provides feature transformation information. Feature transformation is the process of modifying raw input data into a form more suitable for model training. */
 	export interface FeatureTransformation {
-		name?: string;
-		featureTransformationArn?: string;
-		defaultParameters?: FeaturizationParameters;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
-		status?: string;
+		name?: string | null;
+		featureTransformationArn?: string | null;
+		defaultParameters?: FeaturizationParameters | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
+		status?: string | null;
 	}
 
 	export interface FeaturizationParameters {
@@ -557,20 +557,20 @@ export namespace MyNS {
 	export interface DescribeFilterResponse {
 
 		/** Contains information on a recommendation filter, including its ARN, status, and filter expression. */
-		filter?: Filter;
+		filter?: Filter | null;
 	}
 
 
 	/** Contains information on a recommendation filter, including its ARN, status, and filter expression. */
 	export interface Filter {
-		name?: string;
-		filterArn?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
-		datasetGroupArn?: string;
-		failureReason?: string;
-		filterExpression?: string;
-		status?: string;
+		name?: string | null;
+		filterArn?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
+		datasetGroupArn?: string | null;
+		failureReason?: string | null;
+		filterExpression?: string | null;
+		status?: string | null;
 	}
 
 	export interface DescribeFilterRequest {
@@ -580,21 +580,21 @@ export namespace MyNS {
 	export interface DescribeRecipeResponse {
 
 		/** Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the <a>CreateSolution</a> operation. */
-		recipe?: Recipe;
+		recipe?: Recipe | null;
 	}
 
 
 	/** Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the <a>CreateSolution</a> operation.  */
 	export interface Recipe {
-		name?: string;
-		recipeArn?: string;
-		algorithmArn?: string;
-		featureTransformationArn?: string;
-		status?: string;
-		description?: string;
-		creationDateTime?: Date;
-		recipeType?: string;
-		lastUpdatedDateTime?: Date;
+		name?: string | null;
+		recipeArn?: string | null;
+		algorithmArn?: string | null;
+		featureTransformationArn?: string | null;
+		status?: string | null;
+		description?: string | null;
+		creationDateTime?: Date | null;
+		recipeType?: string | null;
+		lastUpdatedDateTime?: Date | null;
 	}
 
 	export interface DescribeRecipeRequest {
@@ -604,17 +604,17 @@ export namespace MyNS {
 	export interface DescribeSchemaResponse {
 
 		/** Describes the schema for a dataset. For more information on schemas, see <a>CreateSchema</a>. */
-		schema?: DatasetSchema;
+		schema?: DatasetSchema | null;
 	}
 
 
 	/** Describes the schema for a dataset. For more information on schemas, see <a>CreateSchema</a>. */
 	export interface DatasetSchema {
-		name?: string;
-		schemaArn?: string;
-		schema?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
+		name?: string | null;
+		schemaArn?: string | null;
+		schema?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
 	}
 
 	export interface DescribeSchemaRequest {
@@ -624,47 +624,47 @@ export namespace MyNS {
 	export interface DescribeSolutionResponse {
 
 		/** An object that provides information about a solution. A solution is a trained model that can be deployed as a campaign. */
-		solution?: Solution;
+		solution?: Solution | null;
 	}
 
 
 	/** An object that provides information about a solution. A solution is a trained model that can be deployed as a campaign. */
 	export interface Solution {
-		name?: string;
-		solutionArn?: string;
-		performHPO?: boolean;
-		performAutoML?: boolean;
-		recipeArn?: string;
-		datasetGroupArn?: string;
-		eventType?: string;
+		name?: string | null;
+		solutionArn?: string | null;
+		performHPO?: boolean | null;
+		performAutoML?: boolean | null;
+		recipeArn?: string | null;
+		datasetGroupArn?: string | null;
+		eventType?: string | null;
 
 		/** Describes the configuration properties for the solution. */
-		solutionConfig?: SolutionConfig;
+		solutionConfig?: SolutionConfig | null;
 
 		/** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), specifies the recipe that best optimized the specified metric. */
-		autoMLResult?: AutoMLResult;
-		status?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
+		autoMLResult?: AutoMLResult | null;
+		status?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
 
 		/** Provides a summary of the properties of a solution version. For a complete listing, call the <a>DescribeSolutionVersion</a> API. */
-		latestSolutionVersion?: SolutionVersionSummary;
+		latestSolutionVersion?: SolutionVersionSummary | null;
 	}
 
 
 	/** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), specifies the recipe that best optimized the specified metric. */
 	export interface AutoMLResult {
-		bestRecipeArn?: string;
+		bestRecipeArn?: string | null;
 	}
 
 
 	/** Provides a summary of the properties of a solution version. For a complete listing, call the <a>DescribeSolutionVersion</a> API. */
 	export interface SolutionVersionSummary {
-		solutionVersionArn?: string;
-		status?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
-		failureReason?: string;
+		solutionVersionArn?: string | null;
+		status?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
+		failureReason?: string | null;
 	}
 
 	export interface DescribeSolutionRequest {
@@ -674,37 +674,37 @@ export namespace MyNS {
 	export interface DescribeSolutionVersionResponse {
 
 		/** An object that provides information about a specific version of a <a>Solution</a>. */
-		solutionVersion?: SolutionVersion;
+		solutionVersion?: SolutionVersion | null;
 	}
 
 
 	/** An object that provides information about a specific version of a <a>Solution</a>. */
 	export interface SolutionVersion {
-		solutionVersionArn?: string;
-		solutionArn?: string;
-		performHPO?: boolean;
-		performAutoML?: boolean;
-		recipeArn?: string;
-		eventType?: string;
-		datasetGroupArn?: string;
+		solutionVersionArn?: string | null;
+		solutionArn?: string | null;
+		performHPO?: boolean | null;
+		performAutoML?: boolean | null;
+		recipeArn?: string | null;
+		eventType?: string | null;
+		datasetGroupArn?: string | null;
 
 		/** Describes the configuration properties for the solution. */
-		solutionConfig?: SolutionConfig;
-		trainingHours?: number;
-		trainingMode?: CreateSolutionVersionRequestTrainingMode;
+		solutionConfig?: SolutionConfig | null;
+		trainingHours?: number | null;
+		trainingMode?: CreateSolutionVersionRequestTrainingMode | null;
 
 		/** If hyperparameter optimization (HPO) was performed, contains the hyperparameter values of the best performing model. */
-		tunedHPOParams?: TunedHPOParams;
-		status?: string;
-		failureReason?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
+		tunedHPOParams?: TunedHPOParams | null;
+		status?: string | null;
+		failureReason?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
 	}
 
 
 	/** If hyperparameter optimization (HPO) was performed, contains the hyperparameter values of the best performing model. */
 	export interface TunedHPOParams {
-		algorithmHyperParameters?: HyperParameters;
+		algorithmHyperParameters?: HyperParameters | null;
 	}
 
 	export interface DescribeSolutionVersionRequest {
@@ -712,8 +712,8 @@ export namespace MyNS {
 	}
 
 	export interface GetSolutionMetricsResponse {
-		solutionVersionArn?: string;
-		metrics?: Metrics;
+		solutionVersionArn?: string | null;
+		metrics?: Metrics | null;
 	}
 
 	export interface Metrics {
@@ -724,244 +724,244 @@ export namespace MyNS {
 	}
 
 	export interface ListBatchInferenceJobsResponse {
-		batchInferenceJobs?: Array<BatchInferenceJobSummary>;
-		nextToken?: string;
+		batchInferenceJobs?: Array<BatchInferenceJobSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** A truncated version of the <a>BatchInferenceJob</a> datatype. The <a>ListBatchInferenceJobs</a> operation returns a list of batch inference job summaries. */
 	export interface BatchInferenceJobSummary {
-		batchInferenceJobArn?: string;
-		jobName?: string;
-		status?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
-		failureReason?: string;
-		solutionVersionArn?: string;
+		batchInferenceJobArn?: string | null;
+		jobName?: string | null;
+		status?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
+		failureReason?: string | null;
+		solutionVersionArn?: string | null;
 	}
 
 	export interface ListBatchInferenceJobsRequest {
-		solutionVersionArn?: string;
-		nextToken?: string;
-		maxResults?: number;
+		solutionVersionArn?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface InvalidNextTokenException {
 	}
 
 	export interface ListCampaignsResponse {
-		campaigns?: Array<CampaignSummary>;
-		nextToken?: string;
+		campaigns?: Array<CampaignSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Provides a summary of the properties of a campaign. For a complete listing, call the <a>DescribeCampaign</a> API. */
 	export interface CampaignSummary {
-		name?: string;
-		campaignArn?: string;
-		status?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
-		failureReason?: string;
+		name?: string | null;
+		campaignArn?: string | null;
+		status?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
+		failureReason?: string | null;
 	}
 
 	export interface ListCampaignsRequest {
-		solutionArn?: string;
-		nextToken?: string;
-		maxResults?: number;
+		solutionArn?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListDatasetGroupsResponse {
-		datasetGroups?: Array<DatasetGroupSummary>;
-		nextToken?: string;
+		datasetGroups?: Array<DatasetGroupSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Provides a summary of the properties of a dataset group. For a complete listing, call the <a>DescribeDatasetGroup</a> API. */
 	export interface DatasetGroupSummary {
-		name?: string;
-		datasetGroupArn?: string;
-		status?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
-		failureReason?: string;
+		name?: string | null;
+		datasetGroupArn?: string | null;
+		status?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
+		failureReason?: string | null;
 	}
 
 	export interface ListDatasetGroupsRequest {
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListDatasetImportJobsResponse {
-		datasetImportJobs?: Array<DatasetImportJobSummary>;
-		nextToken?: string;
+		datasetImportJobs?: Array<DatasetImportJobSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Provides a summary of the properties of a dataset import job. For a complete listing, call the <a>DescribeDatasetImportJob</a> API. */
 	export interface DatasetImportJobSummary {
-		datasetImportJobArn?: string;
-		jobName?: string;
-		status?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
-		failureReason?: string;
+		datasetImportJobArn?: string | null;
+		jobName?: string | null;
+		status?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
+		failureReason?: string | null;
 	}
 
 	export interface ListDatasetImportJobsRequest {
-		datasetArn?: string;
-		nextToken?: string;
-		maxResults?: number;
+		datasetArn?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListDatasetsResponse {
-		datasets?: Array<DatasetSummary>;
-		nextToken?: string;
+		datasets?: Array<DatasetSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Provides a summary of the properties of a dataset. For a complete listing, call the <a>DescribeDataset</a> API. */
 	export interface DatasetSummary {
-		name?: string;
-		datasetArn?: string;
-		datasetType?: string;
-		status?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
+		name?: string | null;
+		datasetArn?: string | null;
+		datasetType?: string | null;
+		status?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
 	}
 
 	export interface ListDatasetsRequest {
-		datasetGroupArn?: string;
-		nextToken?: string;
-		maxResults?: number;
+		datasetGroupArn?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListEventTrackersResponse {
-		eventTrackers?: Array<EventTrackerSummary>;
-		nextToken?: string;
+		eventTrackers?: Array<EventTrackerSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Provides a summary of the properties of an event tracker. For a complete listing, call the <a>DescribeEventTracker</a> API. */
 	export interface EventTrackerSummary {
-		name?: string;
-		eventTrackerArn?: string;
-		status?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
+		name?: string | null;
+		eventTrackerArn?: string | null;
+		status?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
 	}
 
 	export interface ListEventTrackersRequest {
-		datasetGroupArn?: string;
-		nextToken?: string;
-		maxResults?: number;
+		datasetGroupArn?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListFiltersResponse {
-		Filters?: Array<FilterSummary>;
-		nextToken?: string;
+		Filters?: Array<FilterSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** A short summary of a filter's attributes. */
 	export interface FilterSummary {
-		name?: string;
-		filterArn?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
-		datasetGroupArn?: string;
-		failureReason?: string;
-		status?: string;
+		name?: string | null;
+		filterArn?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
+		datasetGroupArn?: string | null;
+		failureReason?: string | null;
+		status?: string | null;
 	}
 
 	export interface ListFiltersRequest {
-		datasetGroupArn?: string;
-		nextToken?: string;
-		maxResults?: number;
+		datasetGroupArn?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListRecipesResponse {
-		recipes?: Array<RecipeSummary>;
-		nextToken?: string;
+		recipes?: Array<RecipeSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Provides a summary of the properties of a recipe. For a complete listing, call the <a>DescribeRecipe</a> API. */
 	export interface RecipeSummary {
-		name?: string;
-		recipeArn?: string;
-		status?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
+		name?: string | null;
+		recipeArn?: string | null;
+		status?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
 	}
 
 	export interface ListRecipesRequest {
-		recipeProvider?: ListRecipesRequestRecipeProvider;
-		nextToken?: string;
-		maxResults?: number;
+		recipeProvider?: ListRecipesRequestRecipeProvider | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export enum ListRecipesRequestRecipeProvider { SERVICE = 0 }
 
 	export interface ListSchemasResponse {
-		schemas?: Array<DatasetSchemaSummary>;
-		nextToken?: string;
+		schemas?: Array<DatasetSchemaSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Provides a summary of the properties of a dataset schema. For a complete listing, call the <a>DescribeSchema</a> API. */
 	export interface DatasetSchemaSummary {
-		name?: string;
-		schemaArn?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
+		name?: string | null;
+		schemaArn?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
 	}
 
 	export interface ListSchemasRequest {
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListSolutionVersionsResponse {
-		solutionVersions?: Array<SolutionVersionSummary>;
-		nextToken?: string;
+		solutionVersions?: Array<SolutionVersionSummary> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListSolutionVersionsRequest {
-		solutionArn?: string;
-		nextToken?: string;
-		maxResults?: number;
+		solutionArn?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListSolutionsResponse {
-		solutions?: Array<SolutionSummary>;
-		nextToken?: string;
+		solutions?: Array<SolutionSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Provides a summary of the properties of a solution. For a complete listing, call the <a>DescribeSolution</a> API. */
 	export interface SolutionSummary {
-		name?: string;
-		solutionArn?: string;
-		status?: string;
-		creationDateTime?: Date;
-		lastUpdatedDateTime?: Date;
+		name?: string | null;
+		solutionArn?: string | null;
+		status?: string | null;
+		creationDateTime?: Date | null;
+		lastUpdatedDateTime?: Date | null;
 	}
 
 	export interface ListSolutionsRequest {
-		datasetGroupArn?: string;
-		nextToken?: string;
-		maxResults?: number;
+		datasetGroupArn?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface UpdateCampaignResponse {
-		campaignArn?: string;
+		campaignArn?: string | null;
 	}
 
 	export interface UpdateCampaignRequest {
 		campaignArn: string;
-		solutionVersionArn?: string;
-		minProvisionedTPS?: number;
+		solutionVersionArn?: string | null;
+		minProvisionedTPS?: number | null;
 	}
 
 	export enum TrainingMode { FULL = 0, UPDATE = 1 }
@@ -1259,7 +1259,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListBatchInferenceJobsResponse} Success
 		 */
-		ListBatchInferenceJobs(maxResults: string, nextToken: string, requestBody: ListBatchInferenceJobsRequest): Observable<ListBatchInferenceJobsResponse> {
+		ListBatchInferenceJobs(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListBatchInferenceJobsRequest): Observable<ListBatchInferenceJobsResponse> {
 			return this.http.post<ListBatchInferenceJobsResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListBatchInferenceJobs?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1270,7 +1270,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListCampaignsResponse} Success
 		 */
-		ListCampaigns(maxResults: string, nextToken: string, requestBody: ListCampaignsRequest): Observable<ListCampaignsResponse> {
+		ListCampaigns(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListCampaignsRequest): Observable<ListCampaignsResponse> {
 			return this.http.post<ListCampaignsResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListCampaigns?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1281,7 +1281,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDatasetGroupsResponse} Success
 		 */
-		ListDatasetGroups(maxResults: string, nextToken: string, requestBody: ListDatasetGroupsRequest): Observable<ListDatasetGroupsResponse> {
+		ListDatasetGroups(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListDatasetGroupsRequest): Observable<ListDatasetGroupsResponse> {
 			return this.http.post<ListDatasetGroupsResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListDatasetGroups?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1292,7 +1292,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDatasetImportJobsResponse} Success
 		 */
-		ListDatasetImportJobs(maxResults: string, nextToken: string, requestBody: ListDatasetImportJobsRequest): Observable<ListDatasetImportJobsResponse> {
+		ListDatasetImportJobs(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListDatasetImportJobsRequest): Observable<ListDatasetImportJobsResponse> {
 			return this.http.post<ListDatasetImportJobsResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListDatasetImportJobs?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1303,7 +1303,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDatasetsResponse} Success
 		 */
-		ListDatasets(maxResults: string, nextToken: string, requestBody: ListDatasetsRequest): Observable<ListDatasetsResponse> {
+		ListDatasets(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListDatasetsRequest): Observable<ListDatasetsResponse> {
 			return this.http.post<ListDatasetsResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListDatasets?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1314,7 +1314,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListEventTrackersResponse} Success
 		 */
-		ListEventTrackers(maxResults: string, nextToken: string, requestBody: ListEventTrackersRequest): Observable<ListEventTrackersResponse> {
+		ListEventTrackers(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListEventTrackersRequest): Observable<ListEventTrackersResponse> {
 			return this.http.post<ListEventTrackersResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListEventTrackers?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1334,7 +1334,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListRecipesResponse} Success
 		 */
-		ListRecipes(maxResults: string, nextToken: string, requestBody: ListRecipesRequest): Observable<ListRecipesResponse> {
+		ListRecipes(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListRecipesRequest): Observable<ListRecipesResponse> {
 			return this.http.post<ListRecipesResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListRecipes?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1345,7 +1345,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSchemasResponse} Success
 		 */
-		ListSchemas(maxResults: string, nextToken: string, requestBody: ListSchemasRequest): Observable<ListSchemasResponse> {
+		ListSchemas(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListSchemasRequest): Observable<ListSchemasResponse> {
 			return this.http.post<ListSchemasResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListSchemas?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1356,7 +1356,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSolutionVersionsResponse} Success
 		 */
-		ListSolutionVersions(maxResults: string, nextToken: string, requestBody: ListSolutionVersionsRequest): Observable<ListSolutionVersionsResponse> {
+		ListSolutionVersions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListSolutionVersionsRequest): Observable<ListSolutionVersionsResponse> {
 			return this.http.post<ListSolutionVersionsResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListSolutionVersions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1367,7 +1367,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSolutionsResponse} Success
 		 */
-		ListSolutions(maxResults: string, nextToken: string, requestBody: ListSolutionsRequest): Observable<ListSolutionsResponse> {
+		ListSolutions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListSolutionsRequest): Observable<ListSolutionsResponse> {
 			return this.http.post<ListSolutionsResponse>(this.baseUri + '#X-Amz-Target=AmazonPersonalize.ListSolutions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

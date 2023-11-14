@@ -19,15 +19,15 @@ export namespace MyNS {
 
 	export interface DescribeHumanLoopResponse {
 		CreationTime: Date;
-		FailureReason?: string;
-		FailureCode?: string;
+		FailureReason?: string | null;
+		FailureCode?: string | null;
 		HumanLoopStatus: DescribeHumanLoopResponseHumanLoopStatus;
 		HumanLoopName: string;
 		HumanLoopArn: string;
 		FlowDefinitionArn: string;
 
 		/** Information about where the human output will be stored. */
-		HumanLoopOutput?: HumanLoopOutput;
+		HumanLoopOutput?: HumanLoopOutput | null;
 	}
 
 	export enum DescribeHumanLoopResponseHumanLoopStatus { InProgress = 0, Failed = 1, Completed = 2, Stopped = 3, Stopping = 4 }
@@ -40,21 +40,21 @@ export namespace MyNS {
 
 	export interface ListHumanLoopsResponse {
 		HumanLoopSummaries: Array<HumanLoopSummary>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Summary information about the human loop. */
 	export interface HumanLoopSummary {
-		HumanLoopName?: string;
-		HumanLoopStatus?: DescribeHumanLoopResponseHumanLoopStatus;
-		CreationTime?: Date;
-		FailureReason?: string;
-		FlowDefinitionArn?: string;
+		HumanLoopName?: string | null;
+		HumanLoopStatus?: DescribeHumanLoopResponseHumanLoopStatus | null;
+		CreationTime?: Date | null;
+		FailureReason?: string | null;
+		FlowDefinitionArn?: string | null;
 	}
 
 	export interface StartHumanLoopResponse {
-		HumanLoopArn?: string;
+		HumanLoopArn?: string | null;
 	}
 
 	export enum ContentClassifier { FreeOfPersonallyIdentifiableInformation = 0, FreeOfAdultContent = 1 }
@@ -104,7 +104,7 @@ export namespace MyNS {
 		HumanLoopInput: HumanLoopInput;
 
 		/** Attributes of the data specified by the customer. Use these to describe the data to be labeled. */
-		DataAttributes?: HumanLoopDataAttributes;
+		DataAttributes?: HumanLoopDataAttributes | null;
 	}
 
 	export interface StopHumanLoopRequest {
@@ -147,7 +147,7 @@ export namespace MyNS {
 		 * @param {number} MaxResults The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. 
 		 * @return {ListHumanLoopsResponse} Success
 		 */
-		ListHumanLoops(CreationTimeAfter: Date, CreationTimeBefore: Date, FlowDefinitionArn: string, SortOrder: SortOrder, NextToken: string, MaxResults: number): Observable<ListHumanLoopsResponse> {
+		ListHumanLoops(CreationTimeAfter: Date | null | undefined, CreationTimeBefore: Date | null | undefined, FlowDefinitionArn: string, SortOrder: SortOrder | null | undefined, NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListHumanLoopsResponse> {
 			return this.http.get<ListHumanLoopsResponse>(this.baseUri + 'human-loops#FlowDefinitionArn?CreationTimeAfter=' + CreationTimeAfter.toISOString() + '&CreationTimeBefore=' + CreationTimeBefore.toISOString() + '&FlowDefinitionArn=' + (FlowDefinitionArn == null ? '' : encodeURIComponent(FlowDefinitionArn)) + '&SortOrder=' + SortOrder + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 
@@ -196,15 +196,15 @@ export namespace MyNS {
 		HumanLoopInput: StartHumanLoopPostBodyHumanLoopInput;
 
 		/** Attributes of the data specified by the customer. Use these to describe the data to be labeled. */
-		DataAttributes?: StartHumanLoopPostBodyDataAttributes;
+		DataAttributes?: StartHumanLoopPostBodyDataAttributes | null;
 	}
 
 	export interface StartHumanLoopPostBodyHumanLoopInput {
-		InputContent?: string;
+		InputContent?: string | null;
 	}
 
 	export interface StartHumanLoopPostBodyDataAttributes {
-		ContentClassifiers?: Array<ContentClassifier>;
+		ContentClassifiers?: Array<ContentClassifier> | null;
 	}
 
 	export interface StopHumanLoopPostBody {

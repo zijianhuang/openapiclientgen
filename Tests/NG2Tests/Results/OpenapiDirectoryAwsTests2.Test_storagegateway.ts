@@ -11,7 +11,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 
@@ -29,10 +29,10 @@ export namespace MyNS {
 		GatewayName: string;
 		GatewayTimezone: string;
 		GatewayRegion: string;
-		GatewayType?: string;
-		TapeDriveType?: string;
-		MediumChangerType?: string;
-		Tags?: Array<Tag>;
+		GatewayType?: string | null;
+		TapeDriveType?: string | null;
+		MediumChangerType?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -55,7 +55,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 	export interface AddCacheInput {
@@ -73,7 +73,7 @@ export namespace MyNS {
 
 	/** AddTagsToResourceOutput */
 	export interface AddTagsToResourceOutput {
-		ResourceARN?: string;
+		ResourceARN?: string | null;
 	}
 
 
@@ -90,7 +90,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 	export interface AddUploadBufferInput {
@@ -114,7 +114,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 
@@ -132,7 +132,7 @@ export namespace MyNS {
 	}
 
 	export interface AssignTapePoolOutput {
-		TapeARN?: string;
+		TapeARN?: string | null;
 	}
 
 	export interface AssignTapePoolInput {
@@ -143,8 +143,8 @@ export namespace MyNS {
 
 	/** AttachVolumeOutput */
 	export interface AttachVolumeOutput {
-		VolumeARN?: string;
-		TargetARN?: string;
+		VolumeARN?: string | null;
+		TargetARN?: string | null;
 	}
 
 
@@ -158,16 +158,16 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
-		TargetName?: string;
+		TargetName?: string | null;
 		VolumeARN: string;
 		NetworkInterfaceId: string;
-		DiskId?: string;
+		DiskId?: string | null;
 	}
 
 
 	/** CancelArchivalOutput */
 	export interface CancelArchivalOutput {
-		TapeARN?: string;
+		TapeARN?: string | null;
 	}
 
 
@@ -187,7 +187,7 @@ export namespace MyNS {
 
 	/** CancelRetrievalOutput */
 	export interface CancelRetrievalOutput {
-		TapeARN?: string;
+		TapeARN?: string | null;
 	}
 
 
@@ -205,8 +205,8 @@ export namespace MyNS {
 	}
 
 	export interface CreateCachediSCSIVolumeOutput {
-		VolumeARN?: string;
-		TargetARN?: string;
+		VolumeARN?: string | null;
+		TargetARN?: string | null;
 	}
 
 	export interface CreateCachediSCSIVolumeInput {
@@ -219,20 +219,20 @@ export namespace MyNS {
 		 */
 		GatewayARN: string;
 		VolumeSizeInBytes: number;
-		SnapshotId?: string;
+		SnapshotId?: string | null;
 		TargetName: string;
-		SourceVolumeARN?: string;
+		SourceVolumeARN?: string | null;
 		NetworkInterfaceId: string;
 		ClientToken: string;
-		KMSEncrypted?: boolean;
+		KMSEncrypted?: boolean | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
 		 * Max length: 2048
 		 * Min length: 7
 		 */
-		KMSKey?: string;
-		Tags?: Array<Tag>;
+		KMSKey?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -244,7 +244,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		FileShareARN?: string;
+		FileShareARN?: string | null;
 	}
 
 
@@ -253,7 +253,7 @@ export namespace MyNS {
 		ClientToken: string;
 
 		/** Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for file gateways. */
-		NFSFileShareDefaults?: NFSFileShareDefaults;
+		NFSFileShareDefaults?: NFSFileShareDefaults | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
@@ -262,14 +262,14 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
-		KMSEncrypted?: boolean;
+		KMSEncrypted?: boolean | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
 		 * Max length: 2048
 		 * Min length: 7
 		 */
-		KMSKey?: string;
+		KMSKey?: string | null;
 
 		/**
 		 * The ARN of the IAM role that file gateway assumes when it accesses the underlying storage.
@@ -292,37 +292,37 @@ export namespace MyNS {
 		 * Max length: 50
 		 * Min length: 5
 		 */
-		DefaultStorageClass?: string;
+		DefaultStorageClass?: string | null;
 
 		/** A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The default value is "private". */
-		ObjectACL?: CreateNFSFileShareInputObjectACL;
+		ObjectACL?: CreateNFSFileShareInputObjectACL | null;
 
 		/**
 		 * The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses or valid CIDR blocks.
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
-		ClientList?: Array<string>;
+		ClientList?: Array<string> | null;
 
 		/**
 		 * <p>The user mapped to anonymous user. Valid options are the following: </p> <ul> <li> <p> <code>RootSquash</code> - Only root is mapped to anonymous user.</p> </li> <li> <p> <code>NoSquash</code> - No one is mapped to anonymous user</p> </li> <li> <p> <code>AllSquash</code> - Everyone is mapped to anonymous user.</p> </li> </ul>
 		 * Max length: 15
 		 * Min length: 5
 		 */
-		Squash?: string;
-		ReadOnly?: boolean;
-		GuessMIMETypeEnabled?: boolean;
-		RequesterPays?: boolean;
-		Tags?: Array<Tag>;
+		Squash?: string | null;
+		ReadOnly?: boolean | null;
+		GuessMIMETypeEnabled?: boolean | null;
+		RequesterPays?: boolean | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for file gateways. */
 	export interface NFSFileShareDefaults {
-		FileMode?: string;
-		DirectoryMode?: string;
-		GroupId?: number;
-		OwnerId?: number;
+		FileMode?: string | null;
+		DirectoryMode?: string | null;
+		GroupId?: number | null;
+		OwnerId?: number | null;
 	}
 
 	export enum CreateNFSFileShareInputObjectACL { _private = 0, public_read = 1, public_read_write = 2, authenticated_read = 3, bucket_owner_read = 4, bucket_owner_full_control = 5, aws_exec_read = 6 }
@@ -336,7 +336,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		FileShareARN?: string;
+		FileShareARN?: string | null;
 	}
 
 
@@ -351,14 +351,14 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
-		KMSEncrypted?: boolean;
+		KMSEncrypted?: boolean | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
 		 * Max length: 2048
 		 * Min length: 7
 		 */
-		KMSKey?: string;
+		KMSKey?: string | null;
 
 		/**
 		 * The ARN of the IAM role that file gateway assumes when it accesses the underlying storage.
@@ -381,26 +381,26 @@ export namespace MyNS {
 		 * Max length: 50
 		 * Min length: 5
 		 */
-		DefaultStorageClass?: string;
+		DefaultStorageClass?: string | null;
 
 		/** A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The default value is "private". */
-		ObjectACL?: CreateSMBFileShareInputObjectACL;
-		ReadOnly?: boolean;
-		GuessMIMETypeEnabled?: boolean;
-		RequesterPays?: boolean;
-		SMBACLEnabled?: boolean;
-		AdminUserList?: Array<string>;
-		ValidUserList?: Array<string>;
-		InvalidUserList?: Array<string>;
-		AuditDestinationARN?: string;
+		ObjectACL?: CreateSMBFileShareInputObjectACL | null;
+		ReadOnly?: boolean | null;
+		GuessMIMETypeEnabled?: boolean | null;
+		RequesterPays?: boolean | null;
+		SMBACLEnabled?: boolean | null;
+		AdminUserList?: Array<string> | null;
+		ValidUserList?: Array<string> | null;
+		InvalidUserList?: Array<string> | null;
+		AuditDestinationARN?: string | null;
 
 		/**
 		 * <p>The authentication method of the file share.</p> <p>Valid values are <code>ActiveDirectory</code> or <code>GuestAccess</code>. The default is <code>ActiveDirectory</code>.</p>
 		 * Max length: 15
 		 * Min length: 5
 		 */
-		Authentication?: string;
-		Tags?: Array<Tag>;
+		Authentication?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum CreateSMBFileShareInputObjectACL { _private = 0, public_read = 1, public_read_write = 2, authenticated_read = 3, bucket_owner_read = 4, bucket_owner_full_control = 5, aws_exec_read = 6 }
@@ -408,8 +408,8 @@ export namespace MyNS {
 
 	/** A JSON object containing the following fields: */
 	export interface CreateSnapshotOutput {
-		VolumeARN?: string;
-		SnapshotId?: string;
+		VolumeARN?: string | null;
+		SnapshotId?: string | null;
 	}
 
 
@@ -417,30 +417,30 @@ export namespace MyNS {
 	export interface CreateSnapshotInput {
 		VolumeARN: string;
 		SnapshotDescription: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ServiceUnavailableError {
 	}
 
 	export interface CreateSnapshotFromVolumeRecoveryPointOutput {
-		SnapshotId?: string;
-		VolumeARN?: string;
-		VolumeRecoveryPointTime?: string;
+		SnapshotId?: string | null;
+		VolumeARN?: string | null;
+		VolumeRecoveryPointTime?: string | null;
 	}
 
 	export interface CreateSnapshotFromVolumeRecoveryPointInput {
 		VolumeARN: string;
 		SnapshotDescription: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** A JSON object containing the following fields: */
 	export interface CreateStorediSCSIVolumeOutput {
-		VolumeARN?: string;
-		VolumeSizeInBytes?: number;
-		TargetARN?: string;
+		VolumeARN?: string | null;
+		VolumeSizeInBytes?: number | null;
+		TargetARN?: string | null;
 	}
 
 
@@ -455,25 +455,25 @@ export namespace MyNS {
 		 */
 		GatewayARN: string;
 		DiskId: string;
-		SnapshotId?: string;
+		SnapshotId?: string | null;
 		PreserveExistingData: boolean;
 		TargetName: string;
 		NetworkInterfaceId: string;
-		KMSEncrypted?: boolean;
+		KMSEncrypted?: boolean | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
 		 * Max length: 2048
 		 * Min length: 7
 		 */
-		KMSKey?: string;
-		Tags?: Array<Tag>;
+		KMSKey?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** CreateTapeOutput */
 	export interface CreateTapeWithBarcodeOutput {
-		TapeARN?: string;
+		TapeARN?: string | null;
 	}
 
 
@@ -489,16 +489,16 @@ export namespace MyNS {
 		GatewayARN: string;
 		TapeSizeInBytes: number;
 		TapeBarcode: string;
-		KMSEncrypted?: boolean;
+		KMSEncrypted?: boolean | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
 		 * Max length: 2048
 		 * Min length: 7
 		 */
-		KMSKey?: string;
-		PoolId?: string;
-		Tags?: Array<Tag>;
+		KMSKey?: string | null;
+		PoolId?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -506,7 +506,7 @@ export namespace MyNS {
 	export interface CreateTapesOutput {
 
 		/** The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS. */
-		TapeARNs?: Array<string>;
+		TapeARNs?: Array<string> | null;
 	}
 
 
@@ -524,16 +524,16 @@ export namespace MyNS {
 		ClientToken: string;
 		NumTapesToCreate: number;
 		TapeBarcodePrefix: string;
-		KMSEncrypted?: boolean;
+		KMSEncrypted?: boolean | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
 		 * Max length: 2048
 		 * Min length: 7
 		 */
-		KMSKey?: string;
-		PoolId?: string;
-		Tags?: Array<Tag>;
+		KMSKey?: string | null;
+		PoolId?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface DeleteAutomaticTapeCreationPolicyOutput {
@@ -543,7 +543,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 	export interface DeleteAutomaticTapeCreationPolicyInput {
@@ -566,7 +566,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 
@@ -586,8 +586,8 @@ export namespace MyNS {
 
 	/** A JSON object containing the following fields: */
 	export interface DeleteChapCredentialsOutput {
-		TargetARN?: string;
-		InitiatorName?: string;
+		TargetARN?: string | null;
+		InitiatorName?: string | null;
 	}
 
 
@@ -606,7 +606,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		FileShareARN?: string;
+		FileShareARN?: string | null;
 	}
 
 
@@ -620,7 +620,7 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		FileShareARN: string;
-		ForceDelete?: boolean;
+		ForceDelete?: boolean | null;
 	}
 
 
@@ -632,7 +632,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 
@@ -649,7 +649,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteSnapshotScheduleOutput {
-		VolumeARN?: string;
+		VolumeARN?: string | null;
 	}
 
 	export interface DeleteSnapshotScheduleInput {
@@ -659,7 +659,7 @@ export namespace MyNS {
 
 	/** DeleteTapeOutput */
 	export interface DeleteTapeOutput {
-		TapeARN?: string;
+		TapeARN?: string | null;
 	}
 
 
@@ -679,7 +679,7 @@ export namespace MyNS {
 
 	/** DeleteTapeArchiveOutput */
 	export interface DeleteTapeArchiveOutput {
-		TapeARN?: string;
+		TapeARN?: string | null;
 	}
 
 
@@ -691,7 +691,7 @@ export namespace MyNS {
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the storage volume that was deleted */
 	export interface DeleteVolumeOutput {
-		VolumeARN?: string;
+		VolumeARN?: string | null;
 	}
 
 
@@ -707,9 +707,9 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		Status?: DescribeAvailabilityMonitorTestOutputStatus;
-		StartTime?: Date;
+		GatewayARN?: string | null;
+		Status?: DescribeAvailabilityMonitorTestOutputStatus | null;
+		StartTime?: Date | null;
 	}
 
 	export enum DescribeAvailabilityMonitorTestOutputStatus { COMPLETE = 0, FAILED = 1, PENDING = 2 }
@@ -734,9 +734,9 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		AverageUploadRateLimitInBitsPerSec?: number;
-		AverageDownloadRateLimitInBitsPerSec?: number;
+		GatewayARN?: string | null;
+		AverageUploadRateLimitInBitsPerSec?: number | null;
+		AverageDownloadRateLimitInBitsPerSec?: number | null;
 	}
 
 
@@ -759,13 +759,13 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		DiskIds?: Array<string>;
-		CacheAllocatedInBytes?: number;
-		CacheUsedPercentage?: number;
-		CacheDirtyPercentage?: number;
-		CacheHitPercentage?: number;
-		CacheMissPercentage?: number;
+		GatewayARN?: string | null;
+		DiskIds?: Array<string> | null;
+		CacheAllocatedInBytes?: number | null;
+		CacheUsedPercentage?: number | null;
+		CacheDirtyPercentage?: number | null;
+		CacheHitPercentage?: number | null;
+		CacheMissPercentage?: number | null;
 	}
 
 	export interface DescribeCacheInput {
@@ -782,43 +782,43 @@ export namespace MyNS {
 
 	/** A JSON object containing the following fields: */
 	export interface DescribeCachediSCSIVolumesOutput {
-		CachediSCSIVolumes?: Array<CachediSCSIVolume>;
+		CachediSCSIVolumes?: Array<CachediSCSIVolume> | null;
 	}
 
 
 	/** Describes an iSCSI cached volume. */
 	export interface CachediSCSIVolume {
-		VolumeARN?: string;
-		VolumeId?: string;
-		VolumeType?: string;
-		VolumeStatus?: string;
-		VolumeAttachmentStatus?: string;
-		VolumeSizeInBytes?: number;
-		VolumeProgress?: number;
-		SourceSnapshotId?: string;
+		VolumeARN?: string | null;
+		VolumeId?: string | null;
+		VolumeType?: string | null;
+		VolumeStatus?: string | null;
+		VolumeAttachmentStatus?: string | null;
+		VolumeSizeInBytes?: number | null;
+		VolumeProgress?: number | null;
+		SourceSnapshotId?: string | null;
 
 		/** Lists iSCSI information about a volume. */
-		VolumeiSCSIAttributes?: VolumeiSCSIAttributes;
-		CreatedDate?: Date;
-		VolumeUsedInBytes?: number;
+		VolumeiSCSIAttributes?: VolumeiSCSIAttributes | null;
+		CreatedDate?: Date | null;
+		VolumeUsedInBytes?: number | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
 		 * Max length: 2048
 		 * Min length: 7
 		 */
-		KMSKey?: string;
-		TargetName?: string;
+		KMSKey?: string | null;
+		TargetName?: string | null;
 	}
 
 
 	/** Lists iSCSI information about a volume. */
 	export interface VolumeiSCSIAttributes {
-		TargetARN?: string;
-		NetworkInterfaceId?: string;
-		NetworkInterfacePort?: number;
-		LunNumber?: number;
-		ChapEnabled?: boolean;
+		TargetARN?: string | null;
+		NetworkInterfaceId?: string | null;
+		NetworkInterfacePort?: number | null;
+		LunNumber?: number | null;
+		ChapEnabled?: boolean | null;
 	}
 
 	export interface DescribeCachediSCSIVolumesInput {
@@ -828,16 +828,16 @@ export namespace MyNS {
 
 	/** A JSON object containing a . */
 	export interface DescribeChapCredentialsOutput {
-		ChapCredentials?: Array<ChapInfo>;
+		ChapCredentials?: Array<ChapInfo> | null;
 	}
 
 
 	/** Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI initiators. */
 	export interface ChapInfo {
-		TargetARN?: string;
-		SecretToAuthenticateInitiator?: string;
-		InitiatorName?: string;
-		SecretToAuthenticateTarget?: string;
+		TargetARN?: string | null;
+		SecretToAuthenticateInitiator?: string | null;
+		InitiatorName?: string | null;
+		SecretToAuthenticateTarget?: string | null;
 	}
 
 
@@ -855,29 +855,29 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		GatewayId?: string;
-		GatewayName?: string;
-		GatewayTimezone?: string;
-		GatewayState?: string;
-		GatewayNetworkInterfaces?: Array<NetworkInterface>;
-		GatewayType?: string;
-		NextUpdateAvailabilityDate?: string;
-		LastSoftwareUpdate?: string;
-		Ec2InstanceId?: string;
-		Ec2InstanceRegion?: string;
-		Tags?: Array<Tag>;
-		VPCEndpoint?: string;
-		CloudWatchLogGroupARN?: string;
-		HostEnvironment?: DescribeGatewayInformationOutputHostEnvironment;
+		GatewayARN?: string | null;
+		GatewayId?: string | null;
+		GatewayName?: string | null;
+		GatewayTimezone?: string | null;
+		GatewayState?: string | null;
+		GatewayNetworkInterfaces?: Array<NetworkInterface> | null;
+		GatewayType?: string | null;
+		NextUpdateAvailabilityDate?: string | null;
+		LastSoftwareUpdate?: string | null;
+		Ec2InstanceId?: string | null;
+		Ec2InstanceRegion?: string | null;
+		Tags?: Array<Tag> | null;
+		VPCEndpoint?: string | null;
+		CloudWatchLogGroupARN?: string | null;
+		HostEnvironment?: DescribeGatewayInformationOutputHostEnvironment | null;
 	}
 
 
 	/** Describes a gateway's network interface. */
 	export interface NetworkInterface {
-		Ipv4Address?: string;
-		MacAddress?: string;
-		Ipv6Address?: string;
+		Ipv4Address?: string | null;
+		MacAddress?: string | null;
+		Ipv6Address?: string | null;
 	}
 
 	export enum DescribeGatewayInformationOutputHostEnvironment { VMWARE = 0, HYPER_V = 1, EC2 = 2, KVM = 3, OTHER = 4 }
@@ -904,12 +904,12 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		HourOfDay?: number;
-		MinuteOfHour?: number;
-		DayOfWeek?: number;
-		DayOfMonth?: number;
-		Timezone?: string;
+		GatewayARN?: string | null;
+		HourOfDay?: number | null;
+		MinuteOfHour?: number | null;
+		DayOfWeek?: number | null;
+		DayOfMonth?: number | null;
+		Timezone?: string | null;
 	}
 
 
@@ -928,7 +928,7 @@ export namespace MyNS {
 
 	/** DescribeNFSFileSharesOutput */
 	export interface DescribeNFSFileSharesOutput {
-		NFSFileShareInfoList?: Array<NFSFileShareInfo>;
+		NFSFileShareInfoList?: Array<NFSFileShareInfo> | null;
 	}
 
 
@@ -936,88 +936,88 @@ export namespace MyNS {
 	export interface NFSFileShareInfo {
 
 		/** Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for file gateways. */
-		NFSFileShareDefaults?: NFSFileShareDefaults;
+		NFSFileShareDefaults?: NFSFileShareDefaults | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		FileShareARN?: string;
+		FileShareARN?: string | null;
 
 		/**
 		 * The ID of the file share.
 		 * Max length: 30
 		 * Min length: 12
 		 */
-		FileShareId?: string;
+		FileShareId?: string | null;
 
 		/**
 		 * The status of the file share. Possible values are <code>CREATING</code>, <code>UPDATING</code>, <code>AVAILABLE</code> and <code>DELETING</code>.
 		 * Max length: 50
 		 * Min length: 3
 		 */
-		FileShareStatus?: string;
+		FileShareStatus?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		KMSEncrypted?: boolean;
+		GatewayARN?: string | null;
+		KMSEncrypted?: boolean | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
 		 * Max length: 2048
 		 * Min length: 7
 		 */
-		KMSKey?: string;
+		KMSKey?: string | null;
 
 		/** The file share path used by the NFS client to identify the mount point. */
-		Path?: string;
+		Path?: string | null;
 
 		/**
 		 * The ARN of the IAM role that file gateway assumes when it accesses the underlying storage.
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		Role?: string;
+		Role?: string | null;
 
 		/**
 		 * The ARN of the backend storage used for storing file data.
 		 * Max length: 310
 		 * Min length: 16
 		 */
-		LocationARN?: string;
+		LocationARN?: string | null;
 
 		/**
 		 * <p/>
 		 * Max length: 50
 		 * Min length: 5
 		 */
-		DefaultStorageClass?: string;
+		DefaultStorageClass?: string | null;
 
 		/** A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The default value is "private". */
-		ObjectACL?: NFSFileShareInfoObjectACL;
+		ObjectACL?: NFSFileShareInfoObjectACL | null;
 
 		/**
 		 * The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses or valid CIDR blocks.
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
-		ClientList?: Array<string>;
+		ClientList?: Array<string> | null;
 
 		/**
 		 * <p>The user mapped to anonymous user. Valid options are the following: </p> <ul> <li> <p> <code>RootSquash</code> - Only root is mapped to anonymous user.</p> </li> <li> <p> <code>NoSquash</code> - No one is mapped to anonymous user</p> </li> <li> <p> <code>AllSquash</code> - Everyone is mapped to anonymous user.</p> </li> </ul>
 		 * Max length: 15
 		 * Min length: 5
 		 */
-		Squash?: string;
-		ReadOnly?: boolean;
-		GuessMIMETypeEnabled?: boolean;
-		RequesterPays?: boolean;
-		Tags?: Array<Tag>;
+		Squash?: string | null;
+		ReadOnly?: boolean | null;
+		GuessMIMETypeEnabled?: boolean | null;
+		RequesterPays?: boolean | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum NFSFileShareInfoObjectACL { _private = 0, public_read = 1, public_read_write = 2, authenticated_read = 3, bucket_owner_read = 4, bucket_owner_full_control = 5, aws_exec_read = 6 }
@@ -1031,7 +1031,7 @@ export namespace MyNS {
 
 	/** DescribeSMBFileSharesOutput */
 	export interface DescribeSMBFileSharesOutput {
-		SMBFileShareInfoList?: Array<SMBFileShareInfo>;
+		SMBFileShareInfoList?: Array<SMBFileShareInfo> | null;
 	}
 
 
@@ -1043,79 +1043,79 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		FileShareARN?: string;
+		FileShareARN?: string | null;
 
 		/**
 		 * The ID of the file share.
 		 * Max length: 30
 		 * Min length: 12
 		 */
-		FileShareId?: string;
+		FileShareId?: string | null;
 
 		/**
 		 * The status of the file share. Possible values are <code>CREATING</code>, <code>UPDATING</code>, <code>AVAILABLE</code> and <code>DELETING</code>.
 		 * Max length: 50
 		 * Min length: 3
 		 */
-		FileShareStatus?: string;
+		FileShareStatus?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		KMSEncrypted?: boolean;
+		GatewayARN?: string | null;
+		KMSEncrypted?: boolean | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
 		 * Max length: 2048
 		 * Min length: 7
 		 */
-		KMSKey?: string;
+		KMSKey?: string | null;
 
 		/** The file share path used by the NFS client to identify the mount point. */
-		Path?: string;
+		Path?: string | null;
 
 		/**
 		 * The ARN of the IAM role that file gateway assumes when it accesses the underlying storage.
 		 * Max length: 2048
 		 * Min length: 20
 		 */
-		Role?: string;
+		Role?: string | null;
 
 		/**
 		 * The ARN of the backend storage used for storing file data.
 		 * Max length: 310
 		 * Min length: 16
 		 */
-		LocationARN?: string;
+		LocationARN?: string | null;
 
 		/**
 		 * <p/>
 		 * Max length: 50
 		 * Min length: 5
 		 */
-		DefaultStorageClass?: string;
+		DefaultStorageClass?: string | null;
 
 		/** A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The default value is "private". */
-		ObjectACL?: SMBFileShareInfoObjectACL;
-		ReadOnly?: boolean;
-		GuessMIMETypeEnabled?: boolean;
-		RequesterPays?: boolean;
-		SMBACLEnabled?: boolean;
-		AdminUserList?: Array<string>;
-		ValidUserList?: Array<string>;
-		InvalidUserList?: Array<string>;
-		AuditDestinationARN?: string;
+		ObjectACL?: SMBFileShareInfoObjectACL | null;
+		ReadOnly?: boolean | null;
+		GuessMIMETypeEnabled?: boolean | null;
+		RequesterPays?: boolean | null;
+		SMBACLEnabled?: boolean | null;
+		AdminUserList?: Array<string> | null;
+		ValidUserList?: Array<string> | null;
+		InvalidUserList?: Array<string> | null;
+		AuditDestinationARN?: string | null;
 
 		/**
 		 * <p>The authentication method of the file share.</p> <p>Valid values are <code>ActiveDirectory</code> or <code>GuestAccess</code>. The default is <code>ActiveDirectory</code>.</p>
 		 * Max length: 15
 		 * Min length: 5
 		 */
-		Authentication?: string;
-		Tags?: Array<Tag>;
+		Authentication?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum SMBFileShareInfoObjectACL { _private = 0, public_read = 1, public_read_write = 2, authenticated_read = 3, bucket_owner_read = 4, bucket_owner_full_control = 5, aws_exec_read = 6 }
@@ -1133,11 +1133,11 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		DomainName?: string;
-		ActiveDirectoryStatus?: DescribeSMBSettingsOutputActiveDirectoryStatus;
-		SMBGuestPasswordSet?: boolean;
-		SMBSecurityStrategy?: DescribeSMBSettingsOutputSMBSecurityStrategy;
+		GatewayARN?: string | null;
+		DomainName?: string | null;
+		ActiveDirectoryStatus?: DescribeSMBSettingsOutputActiveDirectoryStatus | null;
+		SMBGuestPasswordSet?: boolean | null;
+		SMBSecurityStrategy?: DescribeSMBSettingsOutputSMBSecurityStrategy | null;
 	}
 
 	export enum DescribeSMBSettingsOutputActiveDirectoryStatus { ACCESS_DENIED = 0, DETACHED = 1, JOINED = 2, JOINING = 3, NETWORK_ERROR = 4, TIMEOUT = 5, UNKNOWN_ERROR = 6 }
@@ -1156,12 +1156,12 @@ export namespace MyNS {
 	}
 
 	export interface DescribeSnapshotScheduleOutput {
-		VolumeARN?: string;
-		StartAt?: number;
-		RecurrenceInHours?: number;
-		Description?: string;
-		Timezone?: string;
-		Tags?: Array<Tag>;
+		VolumeARN?: string | null;
+		StartAt?: number | null;
+		RecurrenceInHours?: number | null;
+		Description?: string | null;
+		Timezone?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -1171,35 +1171,35 @@ export namespace MyNS {
 	}
 
 	export interface DescribeStorediSCSIVolumesOutput {
-		StorediSCSIVolumes?: Array<StorediSCSIVolume>;
+		StorediSCSIVolumes?: Array<StorediSCSIVolume> | null;
 	}
 
 
 	/** Describes an iSCSI stored volume. */
 	export interface StorediSCSIVolume {
-		VolumeARN?: string;
-		VolumeId?: string;
-		VolumeType?: string;
-		VolumeStatus?: string;
-		VolumeAttachmentStatus?: string;
-		VolumeSizeInBytes?: number;
-		VolumeProgress?: number;
-		VolumeDiskId?: string;
-		SourceSnapshotId?: string;
-		PreservedExistingData?: boolean;
+		VolumeARN?: string | null;
+		VolumeId?: string | null;
+		VolumeType?: string | null;
+		VolumeStatus?: string | null;
+		VolumeAttachmentStatus?: string | null;
+		VolumeSizeInBytes?: number | null;
+		VolumeProgress?: number | null;
+		VolumeDiskId?: string | null;
+		SourceSnapshotId?: string | null;
+		PreservedExistingData?: boolean | null;
 
 		/** Lists iSCSI information about a volume. */
-		VolumeiSCSIAttributes?: VolumeiSCSIAttributes;
-		CreatedDate?: Date;
-		VolumeUsedInBytes?: number;
+		VolumeiSCSIAttributes?: VolumeiSCSIAttributes | null;
+		CreatedDate?: Date | null;
+		VolumeUsedInBytes?: number | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
 		 * Max length: 2048
 		 * Min length: 7
 		 */
-		KMSKey?: string;
-		TargetName?: string;
+		KMSKey?: string | null;
+		TargetName?: string | null;
 	}
 
 
@@ -1211,35 +1211,35 @@ export namespace MyNS {
 
 	/** DescribeTapeArchivesOutput */
 	export interface DescribeTapeArchivesOutput {
-		TapeArchives?: Array<TapeArchive>;
-		Marker?: string;
+		TapeArchives?: Array<TapeArchive> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Represents a virtual tape that is archived in the virtual tape shelf (VTS). */
 	export interface TapeArchive {
-		TapeARN?: string;
-		TapeBarcode?: string;
-		TapeCreatedDate?: Date;
-		TapeSizeInBytes?: number;
-		CompletionTime?: Date;
+		TapeARN?: string | null;
+		TapeBarcode?: string | null;
+		TapeCreatedDate?: Date | null;
+		TapeSizeInBytes?: number | null;
+		CompletionTime?: Date | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		RetrievedTo?: string;
-		TapeStatus?: string;
-		TapeUsedInBytes?: number;
+		RetrievedTo?: string | null;
+		TapeStatus?: string | null;
+		TapeUsedInBytes?: number | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
 		 * Max length: 2048
 		 * Min length: 7
 		 */
-		KMSKey?: string;
-		PoolId?: string;
+		KMSKey?: string | null;
+		PoolId?: string | null;
 	}
 
 
@@ -1247,9 +1247,9 @@ export namespace MyNS {
 	export interface DescribeTapeArchivesInput {
 
 		/** The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS. */
-		TapeARNs?: Array<string>;
-		Marker?: string;
-		Limit?: number;
+		TapeARNs?: Array<string> | null;
+		Marker?: string | null;
+		Limit?: number | null;
 	}
 
 
@@ -1261,18 +1261,18 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		TapeRecoveryPointInfos?: Array<TapeRecoveryPointInfo>;
-		Marker?: string;
+		GatewayARN?: string | null;
+		TapeRecoveryPointInfos?: Array<TapeRecoveryPointInfo> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Describes a recovery point. */
 	export interface TapeRecoveryPointInfo {
-		TapeARN?: string;
-		TapeRecoveryPointTime?: Date;
-		TapeSizeInBytes?: number;
-		TapeStatus?: string;
+		TapeARN?: string | null;
+		TapeRecoveryPointTime?: Date | null;
+		TapeSizeInBytes?: number | null;
+		TapeStatus?: string | null;
 	}
 
 
@@ -1286,36 +1286,36 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
-		Marker?: string;
-		Limit?: number;
+		Marker?: string | null;
+		Limit?: number | null;
 	}
 
 
 	/** DescribeTapesOutput */
 	export interface DescribeTapesOutput {
-		Tapes?: Array<Tape>;
-		Marker?: string;
+		Tapes?: Array<Tape> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Describes a virtual tape object. */
 	export interface Tape {
-		TapeARN?: string;
-		TapeBarcode?: string;
-		TapeCreatedDate?: Date;
-		TapeSizeInBytes?: number;
-		TapeStatus?: string;
-		VTLDevice?: string;
-		Progress?: number;
-		TapeUsedInBytes?: number;
+		TapeARN?: string | null;
+		TapeBarcode?: string | null;
+		TapeCreatedDate?: Date | null;
+		TapeSizeInBytes?: number | null;
+		TapeStatus?: string | null;
+		VTLDevice?: string | null;
+		Progress?: number | null;
+		TapeUsedInBytes?: number | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
 		 * Max length: 2048
 		 * Min length: 7
 		 */
-		KMSKey?: string;
-		PoolId?: string;
+		KMSKey?: string | null;
+		PoolId?: string | null;
 	}
 
 
@@ -1331,9 +1331,9 @@ export namespace MyNS {
 		GatewayARN: string;
 
 		/** The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS. */
-		TapeARNs?: Array<string>;
-		Marker?: string;
-		Limit?: number;
+		TapeARNs?: Array<string> | null;
+		Marker?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface DescribeUploadBufferOutput {
@@ -1343,10 +1343,10 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		DiskIds?: Array<string>;
-		UploadBufferUsedInBytes?: number;
-		UploadBufferAllocatedInBytes?: number;
+		GatewayARN?: string | null;
+		DiskIds?: Array<string> | null;
+		UploadBufferUsedInBytes?: number | null;
+		UploadBufferAllocatedInBytes?: number | null;
 	}
 
 	export interface DescribeUploadBufferInput {
@@ -1369,30 +1369,30 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		VTLDevices?: Array<VTLDevice>;
-		Marker?: string;
+		GatewayARN?: string | null;
+		VTLDevices?: Array<VTLDevice> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Represents a device object associated with a tape gateway. */
 	export interface VTLDevice {
-		VTLDeviceARN?: string;
-		VTLDeviceType?: string;
-		VTLDeviceVendor?: string;
-		VTLDeviceProductIdentifier?: string;
+		VTLDeviceARN?: string | null;
+		VTLDeviceType?: string | null;
+		VTLDeviceVendor?: string | null;
+		VTLDeviceProductIdentifier?: string | null;
 
 		/** Lists iSCSI information about a VTL device. */
-		DeviceiSCSIAttributes?: DeviceiSCSIAttributes;
+		DeviceiSCSIAttributes?: DeviceiSCSIAttributes | null;
 	}
 
 
 	/** Lists iSCSI information about a VTL device. */
 	export interface DeviceiSCSIAttributes {
-		TargetARN?: string;
-		NetworkInterfaceId?: string;
-		NetworkInterfacePort?: number;
-		ChapEnabled?: boolean;
+		TargetARN?: string | null;
+		NetworkInterfaceId?: string | null;
+		NetworkInterfacePort?: number | null;
+		ChapEnabled?: boolean | null;
 	}
 
 
@@ -1406,9 +1406,9 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
-		VTLDeviceARNs?: Array<string>;
-		Marker?: string;
-		Limit?: number;
+		VTLDeviceARNs?: Array<string> | null;
+		Marker?: string | null;
+		Limit?: number | null;
 	}
 
 
@@ -1420,10 +1420,10 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		DiskIds?: Array<string>;
-		WorkingStorageUsedInBytes?: number;
-		WorkingStorageAllocatedInBytes?: number;
+		GatewayARN?: string | null;
+		DiskIds?: Array<string> | null;
+		WorkingStorageUsedInBytes?: number | null;
+		WorkingStorageAllocatedInBytes?: number | null;
 	}
 
 
@@ -1442,14 +1442,14 @@ export namespace MyNS {
 
 	/** AttachVolumeOutput */
 	export interface DetachVolumeOutput {
-		VolumeARN?: string;
+		VolumeARN?: string | null;
 	}
 
 
 	/** AttachVolumeInput */
 	export interface DetachVolumeInput {
 		VolumeARN: string;
-		ForceDetach?: boolean;
+		ForceDetach?: boolean | null;
 	}
 
 
@@ -1461,7 +1461,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 
@@ -1486,8 +1486,8 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		ActiveDirectoryStatus?: DescribeSMBSettingsOutputActiveDirectoryStatus;
+		GatewayARN?: string | null;
+		ActiveDirectoryStatus?: DescribeSMBSettingsOutputActiveDirectoryStatus | null;
 	}
 
 
@@ -1502,28 +1502,28 @@ export namespace MyNS {
 		 */
 		GatewayARN: string;
 		DomainName: string;
-		OrganizationalUnit?: string;
-		DomainControllers?: Array<string>;
-		TimeoutInSeconds?: number;
+		OrganizationalUnit?: string | null;
+		DomainControllers?: Array<string> | null;
+		TimeoutInSeconds?: number | null;
 		UserName: string;
 		Password: string;
 	}
 
 	export interface ListAutomaticTapeCreationPoliciesOutput {
-		AutomaticTapeCreationPolicyInfos?: Array<AutomaticTapeCreationPolicyInfo>;
+		AutomaticTapeCreationPolicyInfos?: Array<AutomaticTapeCreationPolicyInfo> | null;
 	}
 
 
 	/** Information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies. */
 	export interface AutomaticTapeCreationPolicyInfo {
-		AutomaticTapeCreationRules?: Array<AutomaticTapeCreationRule>;
+		AutomaticTapeCreationRules?: Array<AutomaticTapeCreationRule> | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 
@@ -1542,15 +1542,15 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 
 	/** ListFileShareOutput */
 	export interface ListFileSharesOutput {
-		Marker?: string;
-		NextMarker?: string;
-		FileShareInfoList?: Array<FileShareInfo>;
+		Marker?: string | null;
+		NextMarker?: string | null;
+		FileShareInfoList?: Array<FileShareInfo> | null;
 	}
 
 
@@ -1558,35 +1558,35 @@ export namespace MyNS {
 	export interface FileShareInfo {
 
 		/** The type of the file share. */
-		FileShareType?: FileShareInfoFileShareType;
+		FileShareType?: FileShareInfoFileShareType | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		FileShareARN?: string;
+		FileShareARN?: string | null;
 
 		/**
 		 * The ID of the file share.
 		 * Max length: 30
 		 * Min length: 12
 		 */
-		FileShareId?: string;
+		FileShareId?: string | null;
 
 		/**
 		 * The status of the file share. Possible values are <code>CREATING</code>, <code>UPDATING</code>, <code>AVAILABLE</code> and <code>DELETING</code>.
 		 * Max length: 50
 		 * Min length: 3
 		 */
-		FileShareStatus?: string;
+		FileShareStatus?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 	export enum FileShareInfoFileShareType { NFS = 0, SMB = 1 }
@@ -1600,39 +1600,39 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		Limit?: number;
-		Marker?: string;
+		GatewayARN?: string | null;
+		Limit?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface ListGatewaysOutput {
-		Gateways?: Array<GatewayInfo>;
-		Marker?: string;
+		Gateways?: Array<GatewayInfo> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Describes a gateway object. */
 	export interface GatewayInfo {
-		GatewayId?: string;
+		GatewayId?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		GatewayType?: string;
-		GatewayOperationalState?: string;
-		GatewayName?: string;
-		Ec2InstanceId?: string;
-		Ec2InstanceRegion?: string;
+		GatewayARN?: string | null;
+		GatewayType?: string | null;
+		GatewayOperationalState?: string | null;
+		GatewayName?: string | null;
+		Ec2InstanceId?: string | null;
+		Ec2InstanceRegion?: string | null;
 	}
 
 
 	/** <p>A JSON object containing zero or more of the following fields:</p> <ul> <li> <p> <a>ListGatewaysInput$Limit</a> </p> </li> <li> <p> <a>ListGatewaysInput$Marker</a> </p> </li> </ul> */
 	export interface ListGatewaysInput {
-		Marker?: string;
-		Limit?: number;
+		Marker?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListLocalDisksOutput {
@@ -1642,33 +1642,33 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		Disks?: Array<Disk>;
+		GatewayARN?: string | null;
+		Disks?: Array<Disk> | null;
 	}
 
 
 	/** Represents a gateway's local disk. */
 	export interface Disk {
-		DiskId?: string;
-		DiskPath?: string;
-		DiskNode?: string;
-		DiskStatus?: string;
-		DiskSizeInBytes?: number;
+		DiskId?: string | null;
+		DiskPath?: string | null;
+		DiskNode?: string | null;
+		DiskStatus?: string | null;
+		DiskSizeInBytes?: number | null;
 
 		/**
 		 * One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used. Valid values: <code>UPLOAD_BUFFER</code>, <code>CACHE_STORAGE</code>
 		 * Max length: 100
 		 * Min length: 3
 		 */
-		DiskAllocationType?: string;
-		DiskAllocationResource?: string;
+		DiskAllocationType?: string | null;
+		DiskAllocationResource?: string | null;
 
 		/**
 		 * A list of values that represents attributes of a local disk.
 		 * Minimum items: 0
 		 * Maximum items: 10
 		 */
-		DiskAttributeList?: Array<string>;
+		DiskAttributeList?: Array<string> | null;
 	}
 
 
@@ -1687,17 +1687,17 @@ export namespace MyNS {
 
 	/** ListTagsForResourceOutput */
 	export interface ListTagsForResourceOutput {
-		ResourceARN?: string;
-		Marker?: string;
-		Tags?: Array<Tag>;
+		ResourceARN?: string | null;
+		Marker?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** ListTagsForResourceInput */
 	export interface ListTagsForResourceInput {
 		ResourceARN: string;
-		Marker?: string;
-		Limit?: number;
+		Marker?: string | null;
+		Limit?: number | null;
 	}
 
 
@@ -1705,25 +1705,25 @@ export namespace MyNS {
 	export interface ListTapesOutput {
 
 		/** An array of <a>TapeInfo</a> objects, where each object describes a single tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is an empty array. */
-		TapeInfos?: Array<TapeInfo>;
-		Marker?: string;
+		TapeInfos?: Array<TapeInfo> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Describes a virtual tape. */
 	export interface TapeInfo {
-		TapeARN?: string;
-		TapeBarcode?: string;
-		TapeSizeInBytes?: number;
-		TapeStatus?: string;
+		TapeARN?: string | null;
+		TapeBarcode?: string | null;
+		TapeSizeInBytes?: number | null;
+		TapeStatus?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		PoolId?: string;
+		GatewayARN?: string | null;
+		PoolId?: string | null;
 	}
 
 
@@ -1731,15 +1731,15 @@ export namespace MyNS {
 	export interface ListTapesInput {
 
 		/** The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS. */
-		TapeARNs?: Array<string>;
-		Marker?: string;
-		Limit?: number;
+		TapeARNs?: Array<string> | null;
+		Marker?: string | null;
+		Limit?: number | null;
 	}
 
 
 	/** ListVolumeInitiatorsOutput */
 	export interface ListVolumeInitiatorsOutput {
-		Initiators?: Array<string>;
+		Initiators?: Array<string> | null;
 	}
 
 
@@ -1755,17 +1755,17 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		VolumeRecoveryPointInfos?: Array<VolumeRecoveryPointInfo>;
+		GatewayARN?: string | null;
+		VolumeRecoveryPointInfos?: Array<VolumeRecoveryPointInfo> | null;
 	}
 
 
 	/** Describes a storage volume recovery point object. */
 	export interface VolumeRecoveryPointInfo {
-		VolumeARN?: string;
-		VolumeSizeInBytes?: number;
-		VolumeUsageInBytes?: number;
-		VolumeRecoveryPointTime?: string;
+		VolumeARN?: string | null;
+		VolumeSizeInBytes?: number | null;
+		VolumeUsageInBytes?: number | null;
+		VolumeRecoveryPointTime?: string | null;
 	}
 
 	export interface ListVolumeRecoveryPointsInput {
@@ -1788,27 +1788,27 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		Marker?: string;
-		VolumeInfos?: Array<VolumeInfo>;
+		GatewayARN?: string | null;
+		Marker?: string | null;
+		VolumeInfos?: Array<VolumeInfo> | null;
 	}
 
 
 	/** Describes a storage volume object. */
 	export interface VolumeInfo {
-		VolumeARN?: string;
-		VolumeId?: string;
+		VolumeARN?: string | null;
+		VolumeId?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		GatewayId?: string;
-		VolumeType?: string;
-		VolumeSizeInBytes?: number;
-		VolumeAttachmentStatus?: string;
+		GatewayARN?: string | null;
+		GatewayId?: string | null;
+		VolumeType?: string | null;
+		VolumeSizeInBytes?: number | null;
+		VolumeAttachmentStatus?: string | null;
 	}
 
 
@@ -1820,9 +1820,9 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		Marker?: string;
-		Limit?: number;
+		GatewayARN?: string | null;
+		Marker?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface NotifyWhenUploadedOutput {
@@ -1832,14 +1832,14 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		FileShareARN?: string;
+		FileShareARN?: string | null;
 
 		/**
 		 * The randomly generated ID of the notification that was sent. This ID is in UUID format.
 		 * Max length: 2048
 		 * Min length: 1
 		 */
-		NotificationId?: string;
+		NotificationId?: string | null;
 	}
 
 	export interface NotifyWhenUploadedInput {
@@ -1862,14 +1862,14 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		FileShareARN?: string;
+		FileShareARN?: string | null;
 
 		/**
 		 * The randomly generated ID of the notification that was sent. This ID is in UUID format.
 		 * Max length: 2048
 		 * Min length: 1
 		 */
-		NotificationId?: string;
+		NotificationId?: string | null;
 	}
 
 
@@ -1883,14 +1883,14 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		FileShareARN: string;
-		FolderList?: Array<string>;
-		Recursive?: boolean;
+		FolderList?: Array<string> | null;
+		Recursive?: boolean | null;
 	}
 
 
 	/** RemoveTagsFromResourceOutput */
 	export interface RemoveTagsFromResourceOutput {
-		ResourceARN?: string;
+		ResourceARN?: string | null;
 	}
 
 
@@ -1907,7 +1907,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 	export interface ResetCacheInput {
@@ -1924,7 +1924,7 @@ export namespace MyNS {
 
 	/** RetrieveTapeArchiveOutput */
 	export interface RetrieveTapeArchiveOutput {
-		TapeARN?: string;
+		TapeARN?: string | null;
 	}
 
 
@@ -1944,7 +1944,7 @@ export namespace MyNS {
 
 	/** RetrieveTapeRecoveryPointOutput */
 	export interface RetrieveTapeRecoveryPointOutput {
-		TapeARN?: string;
+		TapeARN?: string | null;
 	}
 
 
@@ -1968,7 +1968,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 
@@ -1992,7 +1992,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 
@@ -2018,7 +2018,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 
@@ -2041,7 +2041,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 	export interface StartAvailabilityMonitorTestInput {
@@ -2064,7 +2064,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 
@@ -2087,7 +2087,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 	export interface UpdateAutomaticTapeCreationPolicyInput {
@@ -2111,7 +2111,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 
@@ -2125,15 +2125,15 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
-		AverageUploadRateLimitInBitsPerSec?: number;
-		AverageDownloadRateLimitInBitsPerSec?: number;
+		AverageUploadRateLimitInBitsPerSec?: number | null;
+		AverageDownloadRateLimitInBitsPerSec?: number | null;
 	}
 
 
 	/** A JSON object containing the following fields: */
 	export interface UpdateChapCredentialsOutput {
-		TargetARN?: string;
-		InitiatorName?: string;
+		TargetARN?: string | null;
+		InitiatorName?: string | null;
 	}
 
 
@@ -2142,7 +2142,7 @@ export namespace MyNS {
 		TargetARN: string;
 		SecretToAuthenticateInitiator: string;
 		InitiatorName: string;
-		SecretToAuthenticateTarget?: string;
+		SecretToAuthenticateTarget?: string | null;
 	}
 
 
@@ -2154,8 +2154,8 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
-		GatewayName?: string;
+		GatewayARN?: string | null;
+		GatewayName?: string | null;
 	}
 
 	export interface UpdateGatewayInformationInput {
@@ -2174,9 +2174,9 @@ export namespace MyNS {
 		 * Min length: 2
 		 * Pattern: ^[ -\.0-\[\]-~]*[!-\.0-\[\]-~][ -\.0-\[\]-~]*$
 		 */
-		GatewayName?: string;
-		GatewayTimezone?: string;
-		CloudWatchLogGroupARN?: string;
+		GatewayName?: string | null;
+		GatewayTimezone?: string | null;
+		CloudWatchLogGroupARN?: string | null;
 	}
 
 
@@ -2188,7 +2188,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 
@@ -2213,7 +2213,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 
@@ -2229,8 +2229,8 @@ export namespace MyNS {
 		GatewayARN: string;
 		HourOfDay: number;
 		MinuteOfHour: number;
-		DayOfWeek?: number;
-		DayOfMonth?: number;
+		DayOfWeek?: number | null;
+		DayOfMonth?: number | null;
 	}
 
 
@@ -2242,7 +2242,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		FileShareARN?: string;
+		FileShareARN?: string | null;
 	}
 
 
@@ -2256,44 +2256,44 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		FileShareARN: string;
-		KMSEncrypted?: boolean;
+		KMSEncrypted?: boolean | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
 		 * Max length: 2048
 		 * Min length: 7
 		 */
-		KMSKey?: string;
+		KMSKey?: string | null;
 
 		/** Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for file gateways. */
-		NFSFileShareDefaults?: NFSFileShareDefaults;
+		NFSFileShareDefaults?: NFSFileShareDefaults | null;
 
 		/**
 		 * <p/>
 		 * Max length: 50
 		 * Min length: 5
 		 */
-		DefaultStorageClass?: string;
+		DefaultStorageClass?: string | null;
 
 		/** A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The default value is "private". */
-		ObjectACL?: UpdateNFSFileShareInputObjectACL;
+		ObjectACL?: UpdateNFSFileShareInputObjectACL | null;
 
 		/**
 		 * The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses or valid CIDR blocks.
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
-		ClientList?: Array<string>;
+		ClientList?: Array<string> | null;
 
 		/**
 		 * <p>The user mapped to anonymous user. Valid options are the following: </p> <ul> <li> <p> <code>RootSquash</code> - Only root is mapped to anonymous user.</p> </li> <li> <p> <code>NoSquash</code> - No one is mapped to anonymous user</p> </li> <li> <p> <code>AllSquash</code> - Everyone is mapped to anonymous user.</p> </li> </ul>
 		 * Max length: 15
 		 * Min length: 5
 		 */
-		Squash?: string;
-		ReadOnly?: boolean;
-		GuessMIMETypeEnabled?: boolean;
-		RequesterPays?: boolean;
+		Squash?: string | null;
+		ReadOnly?: boolean | null;
+		GuessMIMETypeEnabled?: boolean | null;
+		RequesterPays?: boolean | null;
 	}
 
 	export enum UpdateNFSFileShareInputObjectACL { _private = 0, public_read = 1, public_read_write = 2, authenticated_read = 3, bucket_owner_read = 4, bucket_owner_full_control = 5, aws_exec_read = 6 }
@@ -2307,7 +2307,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		FileShareARN?: string;
+		FileShareARN?: string | null;
 	}
 
 
@@ -2321,32 +2321,32 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		FileShareARN: string;
-		KMSEncrypted?: boolean;
+		KMSEncrypted?: boolean | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
 		 * Max length: 2048
 		 * Min length: 7
 		 */
-		KMSKey?: string;
+		KMSKey?: string | null;
 
 		/**
 		 * <p/>
 		 * Max length: 50
 		 * Min length: 5
 		 */
-		DefaultStorageClass?: string;
+		DefaultStorageClass?: string | null;
 
 		/** A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The default value is "private". */
-		ObjectACL?: UpdateSMBFileShareInputObjectACL;
-		ReadOnly?: boolean;
-		GuessMIMETypeEnabled?: boolean;
-		RequesterPays?: boolean;
-		SMBACLEnabled?: boolean;
-		AdminUserList?: Array<string>;
-		ValidUserList?: Array<string>;
-		InvalidUserList?: Array<string>;
-		AuditDestinationARN?: string;
+		ObjectACL?: UpdateSMBFileShareInputObjectACL | null;
+		ReadOnly?: boolean | null;
+		GuessMIMETypeEnabled?: boolean | null;
+		RequesterPays?: boolean | null;
+		SMBACLEnabled?: boolean | null;
+		AdminUserList?: Array<string> | null;
+		ValidUserList?: Array<string> | null;
+		InvalidUserList?: Array<string> | null;
+		AuditDestinationARN?: string | null;
 	}
 
 	export enum UpdateSMBFileShareInputObjectACL { _private = 0, public_read = 1, public_read_write = 2, authenticated_read = 3, bucket_owner_read = 4, bucket_owner_full_control = 5, aws_exec_read = 6 }
@@ -2358,7 +2358,7 @@ export namespace MyNS {
 		 * Max length: 500
 		 * Min length: 50
 		 */
-		GatewayARN?: string;
+		GatewayARN?: string | null;
 	}
 
 	export interface UpdateSMBSecurityStrategyInput {
@@ -2376,7 +2376,7 @@ export namespace MyNS {
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the updated storage volume. */
 	export interface UpdateSnapshotScheduleOutput {
-		VolumeARN?: string;
+		VolumeARN?: string | null;
 	}
 
 
@@ -2385,14 +2385,14 @@ export namespace MyNS {
 		VolumeARN: string;
 		StartAt: number;
 		RecurrenceInHours: number;
-		Description?: string;
-		Tags?: Array<Tag>;
+		Description?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** UpdateVTLDeviceTypeOutput */
 	export interface UpdateVTLDeviceTypeOutput {
-		VTLDeviceARN?: string;
+		VTLDeviceARN?: string | null;
 	}
 
 	export interface UpdateVTLDeviceTypeInput {
@@ -2770,7 +2770,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeTapeArchivesOutput} Success
 		 */
-		DescribeTapeArchives(Limit: string, Marker: string, requestBody: DescribeTapeArchivesInput): Observable<DescribeTapeArchivesOutput> {
+		DescribeTapeArchives(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeTapeArchivesInput): Observable<DescribeTapeArchivesOutput> {
 			return this.http.post<DescribeTapeArchivesOutput>(this.baseUri + '#X-Amz-Target=StorageGateway_20130630.DescribeTapeArchives?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2781,7 +2781,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeTapeRecoveryPointsOutput} Success
 		 */
-		DescribeTapeRecoveryPoints(Limit: string, Marker: string, requestBody: DescribeTapeRecoveryPointsInput): Observable<DescribeTapeRecoveryPointsOutput> {
+		DescribeTapeRecoveryPoints(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeTapeRecoveryPointsInput): Observable<DescribeTapeRecoveryPointsOutput> {
 			return this.http.post<DescribeTapeRecoveryPointsOutput>(this.baseUri + '#X-Amz-Target=StorageGateway_20130630.DescribeTapeRecoveryPoints?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2792,7 +2792,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeTapesOutput} Success
 		 */
-		DescribeTapes(Limit: string, Marker: string, requestBody: DescribeTapesInput): Observable<DescribeTapesOutput> {
+		DescribeTapes(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeTapesInput): Observable<DescribeTapesOutput> {
 			return this.http.post<DescribeTapesOutput>(this.baseUri + '#X-Amz-Target=StorageGateway_20130630.DescribeTapes?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2812,7 +2812,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeVTLDevicesOutput} Success
 		 */
-		DescribeVTLDevices(Limit: string, Marker: string, requestBody: DescribeVTLDevicesInput): Observable<DescribeVTLDevicesOutput> {
+		DescribeVTLDevices(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: DescribeVTLDevicesInput): Observable<DescribeVTLDevicesOutput> {
 			return this.http.post<DescribeVTLDevicesOutput>(this.baseUri + '#X-Amz-Target=StorageGateway_20130630.DescribeVTLDevices?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2868,7 +2868,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListFileSharesOutput} Success
 		 */
-		ListFileShares(Limit: string, Marker: string, requestBody: ListFileSharesInput): Observable<ListFileSharesOutput> {
+		ListFileShares(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: ListFileSharesInput): Observable<ListFileSharesOutput> {
 			return this.http.post<ListFileSharesOutput>(this.baseUri + '#X-Amz-Target=StorageGateway_20130630.ListFileShares?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2879,7 +2879,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListGatewaysOutput} Success
 		 */
-		ListGateways(Limit: string, Marker: string, requestBody: ListGatewaysInput): Observable<ListGatewaysOutput> {
+		ListGateways(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: ListGatewaysInput): Observable<ListGatewaysOutput> {
 			return this.http.post<ListGatewaysOutput>(this.baseUri + '#X-Amz-Target=StorageGateway_20130630.ListGateways?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2899,7 +2899,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListTagsForResourceOutput} Success
 		 */
-		ListTagsForResource(Limit: string, Marker: string, requestBody: ListTagsForResourceInput): Observable<ListTagsForResourceOutput> {
+		ListTagsForResource(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: ListTagsForResourceInput): Observable<ListTagsForResourceOutput> {
 			return this.http.post<ListTagsForResourceOutput>(this.baseUri + '#X-Amz-Target=StorageGateway_20130630.ListTagsForResource?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2910,7 +2910,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListTapesOutput} Success
 		 */
-		ListTapes(Limit: string, Marker: string, requestBody: ListTapesInput): Observable<ListTapesOutput> {
+		ListTapes(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: ListTapesInput): Observable<ListTapesOutput> {
 			return this.http.post<ListTapesOutput>(this.baseUri + '#X-Amz-Target=StorageGateway_20130630.ListTapes?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2939,7 +2939,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {ListVolumesOutput} Success
 		 */
-		ListVolumes(Limit: string, Marker: string, requestBody: ListVolumesInput): Observable<ListVolumesOutput> {
+		ListVolumes(Limit: string | null | undefined, Marker: string | null | undefined, requestBody: ListVolumesInput): Observable<ListVolumesOutput> {
 			return this.http.post<ListVolumesOutput>(this.baseUri + '#X-Amz-Target=StorageGateway_20130630.ListVolumes?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

@@ -7,18 +7,18 @@ export namespace MyNS {
 	export interface CreateDevicePoolResult {
 
 		/** Represents a collection of device types. */
-		devicePool?: DevicePool;
+		devicePool?: DevicePool | null;
 	}
 
 
 	/** Represents a collection of device types. */
 	export interface DevicePool {
-		arn?: string;
-		name?: string;
-		description?: string;
-		type?: DevicePoolType;
-		rules?: Array<Rule>;
-		maxDevices?: number;
+		arn?: string | null;
+		name?: string | null;
+		description?: string | null;
+		type?: DevicePoolType | null;
+		rules?: Array<Rule> | null;
+		maxDevices?: number | null;
 	}
 
 	export enum DevicePoolType { CURATED = 0, PRIVATE = 1 }
@@ -26,9 +26,9 @@ export namespace MyNS {
 
 	/** Represents a condition for a device pool. */
 	export interface Rule {
-		attribute?: RuleAttribute;
-		operator?: RuleOperator;
-		value?: string;
+		attribute?: RuleAttribute | null;
+		operator?: RuleOperator | null;
+		value?: string | null;
 	}
 
 	export enum RuleAttribute { ARN = 0, PLATFORM = 1, FORM_FACTOR = 2, MANUFACTURER = 3, REMOTE_ACCESS_ENABLED = 4, REMOTE_DEBUG_ENABLED = 5, APPIUM_VERSION = 6, INSTANCE_ARN = 7, INSTANCE_LABELS = 8, FLEET_TYPE = 9, OS_VERSION = 10, MODEL = 11, AVAILABILITY = 12 }
@@ -40,9 +40,9 @@ export namespace MyNS {
 	export interface CreateDevicePoolRequest {
 		projectArn: string;
 		name: string;
-		description?: string;
+		description?: string | null;
 		rules: Array<Rule>;
-		maxDevices?: number;
+		maxDevices?: number | null;
 	}
 
 	export interface ArgumentException {
@@ -60,64 +60,64 @@ export namespace MyNS {
 	export interface CreateInstanceProfileResult {
 
 		/** Represents the instance profile. */
-		instanceProfile?: InstanceProfile;
+		instanceProfile?: InstanceProfile | null;
 	}
 
 
 	/** Represents the instance profile. */
 	export interface InstanceProfile {
-		arn?: string;
-		packageCleanup?: boolean;
-		excludeAppPackagesFromCleanup?: Array<string>;
-		rebootAfterUse?: boolean;
-		name?: string;
-		description?: string;
+		arn?: string | null;
+		packageCleanup?: boolean | null;
+		excludeAppPackagesFromCleanup?: Array<string> | null;
+		rebootAfterUse?: boolean | null;
+		name?: string | null;
+		description?: string | null;
 	}
 
 	export interface CreateInstanceProfileRequest {
 		name: string;
-		description?: string;
-		packageCleanup?: boolean;
-		excludeAppPackagesFromCleanup?: Array<string>;
-		rebootAfterUse?: boolean;
+		description?: string | null;
+		packageCleanup?: boolean | null;
+		excludeAppPackagesFromCleanup?: Array<string> | null;
+		rebootAfterUse?: boolean | null;
 	}
 
 	export interface CreateNetworkProfileResult {
 
 		/** An array of settings that describes characteristics of a network profile. */
-		networkProfile?: NetworkProfile;
+		networkProfile?: NetworkProfile | null;
 	}
 
 
 	/** An array of settings that describes characteristics of a network profile. */
 	export interface NetworkProfile {
-		arn?: string;
-		name?: string;
-		description?: string;
-		type?: DevicePoolType;
-		uplinkBandwidthBits?: number;
-		downlinkBandwidthBits?: number;
-		uplinkDelayMs?: number;
-		downlinkDelayMs?: number;
-		uplinkJitterMs?: number;
-		downlinkJitterMs?: number;
-		uplinkLossPercent?: number;
-		downlinkLossPercent?: number;
+		arn?: string | null;
+		name?: string | null;
+		description?: string | null;
+		type?: DevicePoolType | null;
+		uplinkBandwidthBits?: number | null;
+		downlinkBandwidthBits?: number | null;
+		uplinkDelayMs?: number | null;
+		downlinkDelayMs?: number | null;
+		uplinkJitterMs?: number | null;
+		downlinkJitterMs?: number | null;
+		uplinkLossPercent?: number | null;
+		downlinkLossPercent?: number | null;
 	}
 
 	export interface CreateNetworkProfileRequest {
 		projectArn: string;
 		name: string;
-		description?: string;
-		type?: DevicePoolType;
-		uplinkBandwidthBits?: number;
-		downlinkBandwidthBits?: number;
-		uplinkDelayMs?: number;
-		downlinkDelayMs?: number;
-		uplinkJitterMs?: number;
-		downlinkJitterMs?: number;
-		uplinkLossPercent?: number;
-		downlinkLossPercent?: number;
+		description?: string | null;
+		type?: DevicePoolType | null;
+		uplinkBandwidthBits?: number | null;
+		downlinkBandwidthBits?: number | null;
+		uplinkDelayMs?: number | null;
+		downlinkDelayMs?: number | null;
+		uplinkJitterMs?: number | null;
+		downlinkJitterMs?: number | null;
+		uplinkLossPercent?: number | null;
+		downlinkLossPercent?: number | null;
 	}
 
 
@@ -125,23 +125,23 @@ export namespace MyNS {
 	export interface CreateProjectResult {
 
 		/** Represents an operating-system neutral workspace for running and managing tests. */
-		project?: Project;
+		project?: Project | null;
 	}
 
 
 	/** Represents an operating-system neutral workspace for running and managing tests. */
 	export interface Project {
-		arn?: string;
-		name?: string;
-		defaultJobTimeoutMinutes?: number;
-		created?: Date;
+		arn?: string | null;
+		name?: string | null;
+		defaultJobTimeoutMinutes?: number | null;
+		created?: Date | null;
 	}
 
 
 	/** Represents a request to the create project operation. */
 	export interface CreateProjectRequest {
 		name: string;
-		defaultJobTimeoutMinutes?: number;
+		defaultJobTimeoutMinutes?: number | null;
 	}
 
 	export interface TagOperationException {
@@ -152,37 +152,37 @@ export namespace MyNS {
 	export interface CreateRemoteAccessSessionResult {
 
 		/** Represents information about the remote access session. */
-		remoteAccessSession?: RemoteAccessSession;
+		remoteAccessSession?: RemoteAccessSession | null;
 	}
 
 
 	/** Represents information about the remote access session. */
 	export interface RemoteAccessSession {
-		arn?: string;
-		name?: string;
-		created?: Date;
-		status?: RemoteAccessSessionStatus;
-		result?: RemoteAccessSessionResult;
-		message?: string;
-		started?: Date;
-		stopped?: Date;
+		arn?: string | null;
+		name?: string | null;
+		created?: Date | null;
+		status?: RemoteAccessSessionStatus | null;
+		result?: RemoteAccessSessionResult | null;
+		message?: string | null;
+		started?: Date | null;
+		stopped?: Date | null;
 
 		/** Represents a device type that an app is tested against. */
-		device?: Device;
-		instanceArn?: string;
-		remoteDebugEnabled?: boolean;
-		remoteRecordEnabled?: boolean;
-		remoteRecordAppArn?: string;
-		hostAddress?: string;
-		clientId?: string;
-		billingMethod?: RemoteAccessSessionBillingMethod;
+		device?: Device | null;
+		instanceArn?: string | null;
+		remoteDebugEnabled?: boolean | null;
+		remoteRecordEnabled?: boolean | null;
+		remoteRecordAppArn?: string | null;
+		hostAddress?: string | null;
+		clientId?: string | null;
+		billingMethod?: RemoteAccessSessionBillingMethod | null;
 
 		/** Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children. */
-		deviceMinutes?: DeviceMinutes;
-		endpoint?: string;
-		deviceUdid?: string;
-		interactionMode?: RemoteAccessSessionInteractionMode;
-		skipAppResign?: boolean;
+		deviceMinutes?: DeviceMinutes | null;
+		endpoint?: string | null;
+		deviceUdid?: string | null;
+		interactionMode?: RemoteAccessSessionInteractionMode | null;
+		skipAppResign?: boolean | null;
 	}
 
 	export enum RemoteAccessSessionStatus { PENDING = 0, PENDING_CONCURRENCY = 1, PENDING_DEVICE = 2, PROCESSING = 3, SCHEDULING = 4, PREPARING = 5, RUNNING = 6, COMPLETED = 7, STOPPING = 8 }
@@ -192,31 +192,31 @@ export namespace MyNS {
 
 	/** Represents a device type that an app is tested against. */
 	export interface Device {
-		arn?: string;
-		name?: string;
-		manufacturer?: string;
-		model?: string;
-		modelId?: string;
-		formFactor?: DeviceFormFactor;
-		platform?: DevicePlatform;
-		os?: string;
+		arn?: string | null;
+		name?: string | null;
+		manufacturer?: string | null;
+		model?: string | null;
+		modelId?: string | null;
+		formFactor?: DeviceFormFactor | null;
+		platform?: DevicePlatform | null;
+		os?: string | null;
 
 		/** Represents the amount of CPU that an app is using on a physical device. Does not represent system-wide CPU usage. */
-		cpu?: CPU;
+		cpu?: CPU | null;
 
 		/** Represents the screen resolution of a device in height and width, expressed in pixels. */
-		resolution?: Resolution;
-		heapSize?: number;
-		memory?: number;
-		image?: string;
-		carrier?: string;
-		radio?: string;
-		remoteAccessEnabled?: boolean;
-		remoteDebugEnabled?: boolean;
-		fleetType?: string;
-		fleetName?: string;
-		instances?: Array<DeviceInstance>;
-		availability?: DeviceAvailability;
+		resolution?: Resolution | null;
+		heapSize?: number | null;
+		memory?: number | null;
+		image?: string | null;
+		carrier?: string | null;
+		radio?: string | null;
+		remoteAccessEnabled?: boolean | null;
+		remoteDebugEnabled?: boolean | null;
+		fleetType?: string | null;
+		fleetName?: string | null;
+		instances?: Array<DeviceInstance> | null;
+		availability?: DeviceAvailability | null;
 	}
 
 	export enum DeviceFormFactor { PHONE = 0, TABLET = 1 }
@@ -226,29 +226,29 @@ export namespace MyNS {
 
 	/** Represents the amount of CPU that an app is using on a physical device. Does not represent system-wide CPU usage. */
 	export interface CPU {
-		frequency?: string;
-		architecture?: string;
-		clock?: number;
+		frequency?: string | null;
+		architecture?: string | null;
+		clock?: number | null;
 	}
 
 
 	/** Represents the screen resolution of a device in height and width, expressed in pixels. */
 	export interface Resolution {
-		width?: number;
-		height?: number;
+		width?: number | null;
+		height?: number | null;
 	}
 
 
 	/** Represents the device instance. */
 	export interface DeviceInstance {
-		arn?: string;
-		deviceArn?: string;
-		labels?: Array<string>;
-		status?: DeviceInstanceStatus;
-		udid?: string;
+		arn?: string | null;
+		deviceArn?: string | null;
+		labels?: Array<string> | null;
+		status?: DeviceInstanceStatus | null;
+		udid?: string | null;
 
 		/** Represents the instance profile. */
-		instanceProfile?: InstanceProfile;
+		instanceProfile?: InstanceProfile | null;
 	}
 
 	export enum DeviceInstanceStatus { IN_USE = 0, PREPARING = 1, AVAILABLE = 2, NOT_AVAILABLE = 3 }
@@ -260,9 +260,9 @@ export namespace MyNS {
 
 	/** Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children. */
 	export interface DeviceMinutes {
-		total?: number;
-		metered?: number;
-		unmetered?: number;
+		total?: number | null;
+		metered?: number | null;
+		unmetered?: number | null;
 	}
 
 	export enum RemoteAccessSessionInteractionMode { INTERACTIVE = 0, NO_VIDEO = 1, VIDEO_ONLY = 2 }
@@ -272,53 +272,53 @@ export namespace MyNS {
 	export interface CreateRemoteAccessSessionRequest {
 		projectArn: string;
 		deviceArn: string;
-		instanceArn?: string;
-		sshPublicKey?: string;
-		remoteDebugEnabled?: boolean;
-		remoteRecordEnabled?: boolean;
-		remoteRecordAppArn?: string;
-		name?: string;
-		clientId?: string;
+		instanceArn?: string | null;
+		sshPublicKey?: string | null;
+		remoteDebugEnabled?: boolean | null;
+		remoteRecordEnabled?: boolean | null;
+		remoteRecordAppArn?: string | null;
+		name?: string | null;
+		clientId?: string | null;
 
 		/** Configuration settings for a remote access session, including billing method. */
-		configuration?: CreateRemoteAccessSessionConfiguration;
-		interactionMode?: RemoteAccessSessionInteractionMode;
-		skipAppResign?: boolean;
+		configuration?: CreateRemoteAccessSessionConfiguration | null;
+		interactionMode?: RemoteAccessSessionInteractionMode | null;
+		skipAppResign?: boolean | null;
 	}
 
 
 	/** Configuration settings for a remote access session, including billing method. */
 	export interface CreateRemoteAccessSessionConfiguration {
-		billingMethod?: RemoteAccessSessionBillingMethod;
-		vpceConfigurationArns?: Array<string>;
+		billingMethod?: RemoteAccessSessionBillingMethod | null;
+		vpceConfigurationArns?: Array<string> | null;
 	}
 
 	export interface CreateTestGridProjectResult {
 
 		/** A Selenium testing project. Projects are used to collect and collate sessions. */
-		testGridProject?: TestGridProject;
+		testGridProject?: TestGridProject | null;
 	}
 
 
 	/** A Selenium testing project. Projects are used to collect and collate sessions. */
 	export interface TestGridProject {
-		arn?: string;
-		name?: string;
-		description?: string;
-		created?: Date;
+		arn?: string | null;
+		name?: string | null;
+		description?: string | null;
+		created?: Date | null;
 	}
 
 	export interface CreateTestGridProjectRequest {
 		name: string;
-		description?: string;
+		description?: string | null;
 	}
 
 	export interface InternalServiceException {
 	}
 
 	export interface CreateTestGridUrlResult {
-		url?: string;
-		expires?: Date;
+		url?: string | null;
+		expires?: Date | null;
 	}
 
 	export interface CreateTestGridUrlRequest {
@@ -331,22 +331,22 @@ export namespace MyNS {
 	export interface CreateUploadResult {
 
 		/** An app or a set of one or more tests to upload or that have been uploaded. */
-		upload?: Upload;
+		upload?: Upload | null;
 	}
 
 
 	/** An app or a set of one or more tests to upload or that have been uploaded. */
 	export interface Upload {
-		arn?: string;
-		name?: string;
-		created?: Date;
-		type?: UploadType;
-		status?: UploadStatus;
-		url?: string;
-		metadata?: string;
-		contentType?: string;
-		message?: string;
-		category?: DevicePoolType;
+		arn?: string | null;
+		name?: string | null;
+		created?: Date | null;
+		type?: UploadType | null;
+		status?: UploadStatus | null;
+		url?: string | null;
+		metadata?: string | null;
+		contentType?: string | null;
+		message?: string | null;
+		category?: DevicePoolType | null;
 	}
 
 	export enum UploadType { ANDROID_APP = 0, IOS_APP = 1, WEB_APP = 2, EXTERNAL_DATA = 3, APPIUM_JAVA_JUNIT_TEST_PACKAGE = 4, APPIUM_JAVA_TESTNG_TEST_PACKAGE = 5, APPIUM_PYTHON_TEST_PACKAGE = 6, APPIUM_NODE_TEST_PACKAGE = 7, APPIUM_RUBY_TEST_PACKAGE = 8, APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE = 9, APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE = 10, APPIUM_WEB_PYTHON_TEST_PACKAGE = 11, APPIUM_WEB_NODE_TEST_PACKAGE = 12, APPIUM_WEB_RUBY_TEST_PACKAGE = 13, CALABASH_TEST_PACKAGE = 14, INSTRUMENTATION_TEST_PACKAGE = 15, UIAUTOMATION_TEST_PACKAGE = 16, UIAUTOMATOR_TEST_PACKAGE = 17, XCTEST_TEST_PACKAGE = 18, XCTEST_UI_TEST_PACKAGE = 19, APPIUM_JAVA_JUNIT_TEST_SPEC = 20, APPIUM_JAVA_TESTNG_TEST_SPEC = 21, APPIUM_PYTHON_TEST_SPEC = 22, APPIUM_NODE_TEST_SPEC = 23, APPIUM_RUBY_TEST_SPEC = 24, APPIUM_WEB_JAVA_JUNIT_TEST_SPEC = 25, APPIUM_WEB_JAVA_TESTNG_TEST_SPEC = 26, APPIUM_WEB_PYTHON_TEST_SPEC = 27, APPIUM_WEB_NODE_TEST_SPEC = 28, APPIUM_WEB_RUBY_TEST_SPEC = 29, INSTRUMENTATION_TEST_SPEC = 30, XCTEST_UI_TEST_SPEC = 31 }
@@ -359,30 +359,30 @@ export namespace MyNS {
 		projectArn: string;
 		name: string;
 		type: UploadType;
-		contentType?: string;
+		contentType?: string | null;
 	}
 
 	export interface CreateVPCEConfigurationResult {
 
 		/** Represents an Amazon Virtual Private Cloud (VPC) endpoint configuration. */
-		vpceConfiguration?: VPCEConfiguration;
+		vpceConfiguration?: VPCEConfiguration | null;
 	}
 
 
 	/** Represents an Amazon Virtual Private Cloud (VPC) endpoint configuration. */
 	export interface VPCEConfiguration {
-		arn?: string;
-		vpceConfigurationName?: string;
-		vpceServiceName?: string;
-		serviceDnsName?: string;
-		vpceConfigurationDescription?: string;
+		arn?: string | null;
+		vpceConfigurationName?: string | null;
+		vpceServiceName?: string | null;
+		serviceDnsName?: string | null;
+		vpceConfigurationDescription?: string | null;
 	}
 
 	export interface CreateVPCEConfigurationRequest {
 		vpceConfigurationName: string;
 		vpceServiceName: string;
 		serviceDnsName: string;
-		vpceConfigurationDescription?: string;
+		vpceConfigurationDescription?: string | null;
 	}
 
 
@@ -479,22 +479,22 @@ export namespace MyNS {
 	export interface GetAccountSettingsResult {
 
 		/** A container for account-level settings in AWS Device Farm. */
-		accountSettings?: AccountSettings;
+		accountSettings?: AccountSettings | null;
 	}
 
 
 	/** A container for account-level settings in AWS Device Farm. */
 	export interface AccountSettings {
-		awsAccountNumber?: string;
-		unmeteredDevices?: PurchasedDevicesMap;
-		unmeteredRemoteAccessDevices?: PurchasedDevicesMap;
-		maxJobTimeoutMinutes?: number;
+		awsAccountNumber?: string | null;
+		unmeteredDevices?: PurchasedDevicesMap | null;
+		unmeteredRemoteAccessDevices?: PurchasedDevicesMap | null;
+		maxJobTimeoutMinutes?: number | null;
 
 		/** Represents information about free trial device minutes for an AWS account. */
-		trialMinutes?: TrialMinutes;
-		maxSlots?: MaxSlotMap;
-		defaultJobTimeoutMinutes?: number;
-		skipAppResign?: boolean;
+		trialMinutes?: TrialMinutes | null;
+		maxSlots?: MaxSlotMap | null;
+		defaultJobTimeoutMinutes?: number | null;
+		skipAppResign?: boolean | null;
 	}
 
 	export interface PurchasedDevicesMap {
@@ -503,8 +503,8 @@ export namespace MyNS {
 
 	/** Represents information about free trial device minutes for an AWS account. */
 	export interface TrialMinutes {
-		total?: number;
-		remaining?: number;
+		total?: number | null;
+		remaining?: number | null;
 	}
 
 	export interface MaxSlotMap {
@@ -520,7 +520,7 @@ export namespace MyNS {
 	export interface GetDeviceResult {
 
 		/** Represents a device type that an app is tested against. */
-		device?: Device;
+		device?: Device | null;
 	}
 
 
@@ -532,7 +532,7 @@ export namespace MyNS {
 	export interface GetDeviceInstanceResult {
 
 		/** Represents the device instance. */
-		deviceInstance?: DeviceInstance;
+		deviceInstance?: DeviceInstance | null;
 	}
 
 	export interface GetDeviceInstanceRequest {
@@ -544,7 +544,7 @@ export namespace MyNS {
 	export interface GetDevicePoolResult {
 
 		/** Represents a collection of device types. */
-		devicePool?: DevicePool;
+		devicePool?: DevicePool | null;
 	}
 
 
@@ -556,8 +556,8 @@ export namespace MyNS {
 
 	/** Represents the result of describe device pool compatibility request. */
 	export interface GetDevicePoolCompatibilityResult {
-		compatibleDevices?: Array<DevicePoolCompatibilityResult>;
-		incompatibleDevices?: Array<DevicePoolCompatibilityResult>;
+		compatibleDevices?: Array<DevicePoolCompatibilityResult> | null;
+		incompatibleDevices?: Array<DevicePoolCompatibilityResult> | null;
 	}
 
 
@@ -565,30 +565,30 @@ export namespace MyNS {
 	export interface DevicePoolCompatibilityResult {
 
 		/** Represents a device type that an app is tested against. */
-		device?: Device;
-		compatible?: boolean;
-		incompatibilityMessages?: Array<IncompatibilityMessage>;
+		device?: Device | null;
+		compatible?: boolean | null;
+		incompatibilityMessages?: Array<IncompatibilityMessage> | null;
 	}
 
 
 	/** Represents information about incompatibility. */
 	export interface IncompatibilityMessage {
-		message?: string;
-		type?: RuleAttribute;
+		message?: string | null;
+		type?: RuleAttribute | null;
 	}
 
 
 	/** Represents a request to the get device pool compatibility operation. */
 	export interface GetDevicePoolCompatibilityRequest {
 		devicePoolArn: string;
-		appArn?: string;
-		testType?: GetDevicePoolCompatibilityRequestTestType;
+		appArn?: string | null;
+		testType?: GetDevicePoolCompatibilityRequestTestType | null;
 
 		/** Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>. */
-		test?: ScheduleRunTest;
+		test?: ScheduleRunTest | null;
 
 		/** Represents the settings for a run. Includes things like location, radio states, auxiliary apps, and network profiles. */
-		configuration?: ScheduleRunConfiguration;
+		configuration?: ScheduleRunConfiguration | null;
 	}
 
 	export enum GetDevicePoolCompatibilityRequestTestType { BUILTIN_FUZZ = 0, BUILTIN_EXPLORER = 1, WEB_PERFORMANCE_PROFILE = 2, APPIUM_JAVA_JUNIT = 3, APPIUM_JAVA_TESTNG = 4, APPIUM_PYTHON = 5, APPIUM_NODE = 6, APPIUM_RUBY = 7, APPIUM_WEB_JAVA_JUNIT = 8, APPIUM_WEB_JAVA_TESTNG = 9, APPIUM_WEB_PYTHON = 10, APPIUM_WEB_NODE = 11, APPIUM_WEB_RUBY = 12, CALABASH = 13, INSTRUMENTATION = 14, UIAUTOMATION = 15, UIAUTOMATOR = 16, XCTEST = 17, XCTEST_UI = 18, REMOTE_ACCESS_RECORD = 19, REMOTE_ACCESS_REPLAY = 20 }
@@ -597,10 +597,10 @@ export namespace MyNS {
 	/** Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>. */
 	export interface ScheduleRunTest {
 		type: GetDevicePoolCompatibilityRequestTestType;
-		testPackageArn?: string;
-		testSpecArn?: string;
-		filter?: string;
-		parameters?: TestParameters;
+		testPackageArn?: string | null;
+		testSpecArn?: string | null;
+		filter?: string | null;
+		parameters?: TestParameters | null;
 	}
 
 	export interface TestParameters {
@@ -609,21 +609,21 @@ export namespace MyNS {
 
 	/** Represents the settings for a run. Includes things like location, radio states, auxiliary apps, and network profiles. */
 	export interface ScheduleRunConfiguration {
-		extraDataPackageArn?: string;
-		networkProfileArn?: string;
-		locale?: string;
+		extraDataPackageArn?: string | null;
+		networkProfileArn?: string | null;
+		locale?: string | null;
 
 		/** <p>Represents a latitude and longitude pair, expressed in geographic coordinate system degrees (for example, 47.6204, -122.3491).</p> <p>Elevation is currently not supported.</p> */
-		location?: Location;
-		vpceConfigurationArns?: Array<string>;
+		location?: Location | null;
+		vpceConfigurationArns?: Array<string> | null;
 
 		/** <p>A JSON object that specifies the paths where the artifacts generated by the customer's tests, on the device or in the test environment, are pulled from.</p> <p>Specify <code>deviceHostPaths</code> and optionally specify either <code>iosPaths</code> or <code>androidPaths</code>.</p> <p>For web app tests, you can specify both <code>iosPaths</code> and <code>androidPaths</code>.</p> */
-		customerArtifactPaths?: CustomerArtifactPaths;
+		customerArtifactPaths?: CustomerArtifactPaths | null;
 
 		/** Represents the set of radios and their states on a device. Examples of radios include Wi-Fi, GPS, Bluetooth, and NFC. */
-		radios?: Radios;
-		auxiliaryApps?: Array<string>;
-		billingMethod?: RemoteAccessSessionBillingMethod;
+		radios?: Radios | null;
+		auxiliaryApps?: Array<string> | null;
+		billingMethod?: RemoteAccessSessionBillingMethod | null;
 	}
 
 
@@ -636,24 +636,24 @@ export namespace MyNS {
 
 	/** <p>A JSON object that specifies the paths where the artifacts generated by the customer's tests, on the device or in the test environment, are pulled from.</p> <p>Specify <code>deviceHostPaths</code> and optionally specify either <code>iosPaths</code> or <code>androidPaths</code>.</p> <p>For web app tests, you can specify both <code>iosPaths</code> and <code>androidPaths</code>.</p> */
 	export interface CustomerArtifactPaths {
-		iosPaths?: Array<string>;
-		androidPaths?: Array<string>;
-		deviceHostPaths?: Array<string>;
+		iosPaths?: Array<string> | null;
+		androidPaths?: Array<string> | null;
+		deviceHostPaths?: Array<string> | null;
 	}
 
 
 	/** Represents the set of radios and their states on a device. Examples of radios include Wi-Fi, GPS, Bluetooth, and NFC. */
 	export interface Radios {
-		wifi?: boolean;
-		bluetooth?: boolean;
-		nfc?: boolean;
-		gps?: boolean;
+		wifi?: boolean | null;
+		bluetooth?: boolean | null;
+		nfc?: boolean | null;
+		gps?: boolean | null;
 	}
 
 	export interface GetInstanceProfileResult {
 
 		/** Represents the instance profile. */
-		instanceProfile?: InstanceProfile;
+		instanceProfile?: InstanceProfile | null;
 	}
 
 	export interface GetInstanceProfileRequest {
@@ -665,45 +665,45 @@ export namespace MyNS {
 	export interface GetJobResult {
 
 		/** Represents a device. */
-		job?: Job;
+		job?: Job | null;
 	}
 
 
 	/** Represents a device. */
 	export interface Job {
-		arn?: string;
-		name?: string;
-		type?: GetDevicePoolCompatibilityRequestTestType;
-		created?: Date;
-		status?: RemoteAccessSessionStatus;
-		result?: RemoteAccessSessionResult;
-		started?: Date;
-		stopped?: Date;
+		arn?: string | null;
+		name?: string | null;
+		type?: GetDevicePoolCompatibilityRequestTestType | null;
+		created?: Date | null;
+		status?: RemoteAccessSessionStatus | null;
+		result?: RemoteAccessSessionResult | null;
+		started?: Date | null;
+		stopped?: Date | null;
 
 		/** Represents entity counters. */
-		counters?: Counters;
-		message?: string;
+		counters?: Counters | null;
+		message?: string | null;
 
 		/** Represents a device type that an app is tested against. */
-		device?: Device;
-		instanceArn?: string;
+		device?: Device | null;
+		instanceArn?: string | null;
 
 		/** Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children. */
-		deviceMinutes?: DeviceMinutes;
-		videoEndpoint?: string;
-		videoCapture?: boolean;
+		deviceMinutes?: DeviceMinutes | null;
+		videoEndpoint?: string | null;
+		videoCapture?: boolean | null;
 	}
 
 
 	/** Represents entity counters. */
 	export interface Counters {
-		total?: number;
-		passed?: number;
-		failed?: number;
-		warned?: number;
-		errored?: number;
-		stopped?: number;
-		skipped?: number;
+		total?: number | null;
+		passed?: number | null;
+		failed?: number | null;
+		warned?: number | null;
+		errored?: number | null;
+		stopped?: number | null;
+		skipped?: number | null;
 	}
 
 
@@ -715,7 +715,7 @@ export namespace MyNS {
 	export interface GetNetworkProfileResult {
 
 		/** An array of settings that describes characteristics of a network profile. */
-		networkProfile?: NetworkProfile;
+		networkProfile?: NetworkProfile | null;
 	}
 
 	export interface GetNetworkProfileRequest {
@@ -725,9 +725,9 @@ export namespace MyNS {
 
 	/** Returns the status result for a device offering. */
 	export interface GetOfferingStatusResult {
-		current?: OfferingStatusMap;
-		nextPeriod?: OfferingStatusMap;
-		nextToken?: string;
+		current?: OfferingStatusMap | null;
+		nextPeriod?: OfferingStatusMap | null;
+		nextToken?: string | null;
 	}
 
 	export interface OfferingStatusMap {
@@ -736,7 +736,7 @@ export namespace MyNS {
 
 	/** Represents the request to retrieve the offering status for the specified customer or account. */
 	export interface GetOfferingStatusRequest {
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface NotEligibleException {
@@ -747,7 +747,7 @@ export namespace MyNS {
 	export interface GetProjectResult {
 
 		/** Represents an operating-system neutral workspace for running and managing tests. */
-		project?: Project;
+		project?: Project | null;
 	}
 
 
@@ -761,7 +761,7 @@ export namespace MyNS {
 	export interface GetRemoteAccessSessionResult {
 
 		/** Represents information about the remote access session. */
-		remoteAccessSession?: RemoteAccessSession;
+		remoteAccessSession?: RemoteAccessSession | null;
 	}
 
 
@@ -775,57 +775,57 @@ export namespace MyNS {
 	export interface GetRunResult {
 
 		/** Represents a test run on a set of devices with a given app package, test parameters, and so on. */
-		run?: Run;
+		run?: Run | null;
 	}
 
 
 	/** Represents a test run on a set of devices with a given app package, test parameters, and so on. */
 	export interface Run {
-		arn?: string;
-		name?: string;
-		type?: GetDevicePoolCompatibilityRequestTestType;
-		platform?: DevicePlatform;
-		created?: Date;
-		status?: RemoteAccessSessionStatus;
-		result?: RemoteAccessSessionResult;
-		started?: Date;
-		stopped?: Date;
+		arn?: string | null;
+		name?: string | null;
+		type?: GetDevicePoolCompatibilityRequestTestType | null;
+		platform?: DevicePlatform | null;
+		created?: Date | null;
+		status?: RemoteAccessSessionStatus | null;
+		result?: RemoteAccessSessionResult | null;
+		started?: Date | null;
+		stopped?: Date | null;
 
 		/** Represents entity counters. */
-		counters?: Counters;
-		message?: string;
-		totalJobs?: number;
-		completedJobs?: number;
-		billingMethod?: RemoteAccessSessionBillingMethod;
+		counters?: Counters | null;
+		message?: string | null;
+		totalJobs?: number | null;
+		completedJobs?: number | null;
+		billingMethod?: RemoteAccessSessionBillingMethod | null;
 
 		/** Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children. */
-		deviceMinutes?: DeviceMinutes;
+		deviceMinutes?: DeviceMinutes | null;
 
 		/** An array of settings that describes characteristics of a network profile. */
-		networkProfile?: NetworkProfile;
-		parsingResultUrl?: string;
-		resultCode?: RunResultCode;
-		seed?: number;
-		appUpload?: string;
-		eventCount?: number;
-		jobTimeoutMinutes?: number;
-		devicePoolArn?: string;
-		locale?: string;
+		networkProfile?: NetworkProfile | null;
+		parsingResultUrl?: string | null;
+		resultCode?: RunResultCode | null;
+		seed?: number | null;
+		appUpload?: string | null;
+		eventCount?: number | null;
+		jobTimeoutMinutes?: number | null;
+		devicePoolArn?: string | null;
+		locale?: string | null;
 
 		/** Represents the set of radios and their states on a device. Examples of radios include Wi-Fi, GPS, Bluetooth, and NFC. */
-		radios?: Radios;
+		radios?: Radios | null;
 
 		/** <p>Represents a latitude and longitude pair, expressed in geographic coordinate system degrees (for example, 47.6204, -122.3491).</p> <p>Elevation is currently not supported.</p> */
-		location?: Location;
+		location?: Location | null;
 
 		/** <p>A JSON object that specifies the paths where the artifacts generated by the customer's tests, on the device or in the test environment, are pulled from.</p> <p>Specify <code>deviceHostPaths</code> and optionally specify either <code>iosPaths</code> or <code>androidPaths</code>.</p> <p>For web app tests, you can specify both <code>iosPaths</code> and <code>androidPaths</code>.</p> */
-		customerArtifactPaths?: CustomerArtifactPaths;
-		webUrl?: string;
-		skipAppResign?: boolean;
-		testSpecArn?: string;
+		customerArtifactPaths?: CustomerArtifactPaths | null;
+		webUrl?: string | null;
+		skipAppResign?: boolean | null;
+		testSpecArn?: string | null;
 
 		/** Contains the run results requested by the device selection configuration and how many devices were returned. For an example of the JSON response syntax, see <a>ScheduleRun</a>. */
-		deviceSelectionResult?: DeviceSelectionResult;
+		deviceSelectionResult?: DeviceSelectionResult | null;
 	}
 
 	export enum RunResultCode { PARSING_FAILED = 0, VPC_ENDPOINT_SETUP_FAILED = 1 }
@@ -833,17 +833,17 @@ export namespace MyNS {
 
 	/** Contains the run results requested by the device selection configuration and how many devices were returned. For an example of the JSON response syntax, see <a>ScheduleRun</a>. */
 	export interface DeviceSelectionResult {
-		filters?: Array<DeviceFilter>;
-		matchedDevicesCount?: number;
-		maxDevices?: number;
+		filters?: Array<DeviceFilter> | null;
+		matchedDevicesCount?: number | null;
+		maxDevices?: number | null;
 	}
 
 
 	/** <p>Represents a device filter used to select a set of devices to be included in a test run. This data structure is passed in as the <code>deviceSelectionConfiguration</code> parameter to <code>ScheduleRun</code>. For an example of the JSON request syntax, see <a>ScheduleRun</a>.</p> <p>It is also passed in as the <code>filters</code> parameter to <code>ListDevices</code>. For an example of the JSON request syntax, see <a>ListDevices</a>.</p> */
 	export interface DeviceFilter {
-		attribute?: DeviceFilterAttribute;
-		operator?: RuleOperator;
-		values?: Array<string>;
+		attribute?: DeviceFilterAttribute | null;
+		operator?: RuleOperator | null;
+		values?: Array<string> | null;
 	}
 
 	export enum DeviceFilterAttribute { ARN = 0, PLATFORM = 1, OS_VERSION = 2, MODEL = 3, AVAILABILITY = 4, FORM_FACTOR = 5, MANUFACTURER = 6, REMOTE_ACCESS_ENABLED = 7, REMOTE_DEBUG_ENABLED = 8, INSTANCE_ARN = 9, INSTANCE_LABELS = 10, FLEET_TYPE = 11 }
@@ -859,27 +859,27 @@ export namespace MyNS {
 	export interface GetSuiteResult {
 
 		/** Represents a collection of one or more tests. */
-		suite?: Suite;
+		suite?: Suite | null;
 	}
 
 
 	/** Represents a collection of one or more tests. */
 	export interface Suite {
-		arn?: string;
-		name?: string;
-		type?: GetDevicePoolCompatibilityRequestTestType;
-		created?: Date;
-		status?: RemoteAccessSessionStatus;
-		result?: RemoteAccessSessionResult;
-		started?: Date;
-		stopped?: Date;
+		arn?: string | null;
+		name?: string | null;
+		type?: GetDevicePoolCompatibilityRequestTestType | null;
+		created?: Date | null;
+		status?: RemoteAccessSessionStatus | null;
+		result?: RemoteAccessSessionResult | null;
+		started?: Date | null;
+		stopped?: Date | null;
 
 		/** Represents entity counters. */
-		counters?: Counters;
-		message?: string;
+		counters?: Counters | null;
+		message?: string | null;
 
 		/** Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children. */
-		deviceMinutes?: DeviceMinutes;
+		deviceMinutes?: DeviceMinutes | null;
 	}
 
 
@@ -893,27 +893,27 @@ export namespace MyNS {
 	export interface GetTestResult {
 
 		/** Represents a condition that is evaluated. */
-		test?: Test;
+		test?: Test | null;
 	}
 
 
 	/** Represents a condition that is evaluated. */
 	export interface Test {
-		arn?: string;
-		name?: string;
-		type?: GetDevicePoolCompatibilityRequestTestType;
-		created?: Date;
-		status?: RemoteAccessSessionStatus;
-		result?: RemoteAccessSessionResult;
-		started?: Date;
-		stopped?: Date;
+		arn?: string | null;
+		name?: string | null;
+		type?: GetDevicePoolCompatibilityRequestTestType | null;
+		created?: Date | null;
+		status?: RemoteAccessSessionStatus | null;
+		result?: RemoteAccessSessionResult | null;
+		started?: Date | null;
+		stopped?: Date | null;
 
 		/** Represents entity counters. */
-		counters?: Counters;
-		message?: string;
+		counters?: Counters | null;
+		message?: string | null;
 
 		/** Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children. */
-		deviceMinutes?: DeviceMinutes;
+		deviceMinutes?: DeviceMinutes | null;
 	}
 
 
@@ -925,7 +925,7 @@ export namespace MyNS {
 	export interface GetTestGridProjectResult {
 
 		/** A Selenium testing project. Projects are used to collect and collate sessions. */
-		testGridProject?: TestGridProject;
+		testGridProject?: TestGridProject | null;
 	}
 
 	export interface GetTestGridProjectRequest {
@@ -935,26 +935,26 @@ export namespace MyNS {
 	export interface GetTestGridSessionResult {
 
 		/** A <a>TestGridSession</a> is a single instance of a browser launched from the URL provided by a call to <a>CreateTestGridUrl</a>. */
-		testGridSession?: TestGridSession;
+		testGridSession?: TestGridSession | null;
 	}
 
 
 	/** A <a>TestGridSession</a> is a single instance of a browser launched from the URL provided by a call to <a>CreateTestGridUrl</a>. */
 	export interface TestGridSession {
-		arn?: string;
-		status?: TestGridSessionStatus;
-		created?: Date;
-		ended?: Date;
-		billingMinutes?: number;
-		seleniumProperties?: string;
+		arn?: string | null;
+		status?: TestGridSessionStatus | null;
+		created?: Date | null;
+		ended?: Date | null;
+		billingMinutes?: number | null;
+		seleniumProperties?: string | null;
 	}
 
 	export enum TestGridSessionStatus { ACTIVE = 0, CLOSED = 1, ERRORED = 2 }
 
 	export interface GetTestGridSessionRequest {
-		projectArn?: string;
-		sessionId?: string;
-		sessionArn?: string;
+		projectArn?: string | null;
+		sessionId?: string | null;
+		sessionArn?: string | null;
 	}
 
 
@@ -962,7 +962,7 @@ export namespace MyNS {
 	export interface GetUploadResult {
 
 		/** An app or a set of one or more tests to upload or that have been uploaded. */
-		upload?: Upload;
+		upload?: Upload | null;
 	}
 
 
@@ -974,7 +974,7 @@ export namespace MyNS {
 	export interface GetVPCEConfigurationResult {
 
 		/** Represents an Amazon Virtual Private Cloud (VPC) endpoint configuration. */
-		vpceConfiguration?: VPCEConfiguration;
+		vpceConfiguration?: VPCEConfiguration | null;
 	}
 
 	export interface GetVPCEConfigurationRequest {
@@ -986,7 +986,7 @@ export namespace MyNS {
 	export interface InstallToRemoteAccessSessionResult {
 
 		/** An app or a set of one or more tests to upload or that have been uploaded. */
-		appUpload?: Upload;
+		appUpload?: Upload | null;
 	}
 
 
@@ -999,18 +999,18 @@ export namespace MyNS {
 
 	/** Represents the result of a list artifacts operation. */
 	export interface ListArtifactsResult {
-		artifacts?: Array<Artifact>;
-		nextToken?: string;
+		artifacts?: Array<Artifact> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the output of a test. Examples of artifacts include logs and screenshots. */
 	export interface Artifact {
-		arn?: string;
-		name?: string;
-		type?: ArtifactType;
-		extension?: string;
-		url?: string;
+		arn?: string | null;
+		name?: string | null;
+		type?: ArtifactType | null;
+		extension?: string | null;
+		url?: string | null;
 	}
 
 	export enum ArtifactType { UNKNOWN = 0, SCREENSHOT = 1, DEVICE_LOG = 2, MESSAGE_LOG = 3, VIDEO_LOG = 4, RESULT_LOG = 5, SERVICE_LOG = 6, WEBKIT_LOG = 7, INSTRUMENTATION_OUTPUT = 8, EXERCISER_MONKEY_OUTPUT = 9, CALABASH_JSON_OUTPUT = 10, CALABASH_PRETTY_OUTPUT = 11, CALABASH_STANDARD_OUTPUT = 12, CALABASH_JAVA_XML_OUTPUT = 13, AUTOMATION_OUTPUT = 14, APPIUM_SERVER_OUTPUT = 15, APPIUM_JAVA_OUTPUT = 16, APPIUM_JAVA_XML_OUTPUT = 17, APPIUM_PYTHON_OUTPUT = 18, APPIUM_PYTHON_XML_OUTPUT = 19, EXPLORER_EVENT_LOG = 20, EXPLORER_SUMMARY_LOG = 21, APPLICATION_CRASH_REPORT = 22, XCTEST_LOG = 23, VIDEO = 24, CUSTOMER_ARTIFACT = 25, CUSTOMER_ARTIFACT_LOG = 26, TESTSPEC_OUTPUT = 27 }
@@ -1020,107 +1020,107 @@ export namespace MyNS {
 	export interface ListArtifactsRequest {
 		arn: string;
 		type: ListArtifactsRequestType;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export enum ListArtifactsRequestType { SCREENSHOT = 0, FILE = 1, LOG = 2 }
 
 	export interface ListDeviceInstancesResult {
-		deviceInstances?: Array<DeviceInstance>;
-		nextToken?: string;
+		deviceInstances?: Array<DeviceInstance> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListDeviceInstancesRequest {
-		maxResults?: number;
-		nextToken?: string;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the result of a list device pools request. */
 	export interface ListDevicePoolsResult {
-		devicePools?: Array<DevicePool>;
-		nextToken?: string;
+		devicePools?: Array<DevicePool> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the result of a list device pools request. */
 	export interface ListDevicePoolsRequest {
 		arn: string;
-		type?: DevicePoolType;
-		nextToken?: string;
+		type?: DevicePoolType | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the result of a list devices operation. */
 	export interface ListDevicesResult {
-		devices?: Array<Device>;
-		nextToken?: string;
+		devices?: Array<Device> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the result of a list devices request. */
 	export interface ListDevicesRequest {
-		arn?: string;
-		nextToken?: string;
-		filters?: Array<DeviceFilter>;
+		arn?: string | null;
+		nextToken?: string | null;
+		filters?: Array<DeviceFilter> | null;
 	}
 
 	export interface ListInstanceProfilesResult {
-		instanceProfiles?: Array<InstanceProfile>;
-		nextToken?: string;
+		instanceProfiles?: Array<InstanceProfile> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListInstanceProfilesRequest {
-		maxResults?: number;
-		nextToken?: string;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the result of a list jobs request. */
 	export interface ListJobsResult {
-		jobs?: Array<Job>;
-		nextToken?: string;
+		jobs?: Array<Job> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents a request to the list jobs operation. */
 	export interface ListJobsRequest {
 		arn: string;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListNetworkProfilesResult {
-		networkProfiles?: Array<NetworkProfile>;
-		nextToken?: string;
+		networkProfiles?: Array<NetworkProfile> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListNetworkProfilesRequest {
 		arn: string;
-		type?: DevicePoolType;
-		nextToken?: string;
+		type?: DevicePoolType | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListOfferingPromotionsResult {
-		offeringPromotions?: Array<OfferingPromotion>;
-		nextToken?: string;
+		offeringPromotions?: Array<OfferingPromotion> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents information about an offering promotion. */
 	export interface OfferingPromotion {
-		id?: string;
-		description?: string;
+		id?: string | null;
+		description?: string | null;
 	}
 
 	export interface ListOfferingPromotionsRequest {
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Returns the transaction log of the specified offerings. */
 	export interface ListOfferingTransactionsResult {
-		offeringTransactions?: Array<OfferingTransaction>;
-		nextToken?: string;
+		offeringTransactions?: Array<OfferingTransaction> | null;
+		nextToken?: string | null;
 	}
 
 
@@ -1128,24 +1128,24 @@ export namespace MyNS {
 	export interface OfferingTransaction {
 
 		/** The status of the offering. */
-		offeringStatus?: OfferingStatus;
-		transactionId?: string;
-		offeringPromotionId?: string;
-		createdOn?: Date;
+		offeringStatus?: OfferingStatus | null;
+		transactionId?: string | null;
+		offeringPromotionId?: string | null;
+		createdOn?: Date | null;
 
 		/** A number that represents the monetary amount for an offering or transaction. */
-		cost?: MonetaryAmount;
+		cost?: MonetaryAmount | null;
 	}
 
 
 	/** The status of the offering. */
 	export interface OfferingStatus {
-		type?: OfferingStatusType;
+		type?: OfferingStatusType | null;
 
 		/** Represents the metadata of a device offering. */
-		offering?: Offering;
-		quantity?: number;
-		effectiveOn?: Date;
+		offering?: Offering | null;
+		quantity?: number | null;
+		effectiveOn?: Date | null;
 	}
 
 	export enum OfferingStatusType { PURCHASE = 0, RENEW = 1, SYSTEM = 2 }
@@ -1153,11 +1153,11 @@ export namespace MyNS {
 
 	/** Represents the metadata of a device offering. */
 	export interface Offering {
-		id?: string;
-		description?: string;
-		type?: OfferingType;
-		platform?: DevicePlatform;
-		recurringCharges?: Array<RecurringCharge>;
+		id?: string | null;
+		description?: string | null;
+		type?: OfferingType | null;
+		platform?: DevicePlatform | null;
+		recurringCharges?: Array<RecurringCharge> | null;
 	}
 
 	export enum OfferingType { RECURRING = 0 }
@@ -1167,15 +1167,15 @@ export namespace MyNS {
 	export interface RecurringCharge {
 
 		/** A number that represents the monetary amount for an offering or transaction. */
-		cost?: MonetaryAmount;
-		frequency?: RecurringChargeFrequency;
+		cost?: MonetaryAmount | null;
+		frequency?: RecurringChargeFrequency | null;
 	}
 
 
 	/** A number that represents the monetary amount for an offering or transaction. */
 	export interface MonetaryAmount {
-		amount?: number;
-		currencyCode?: MonetaryAmountCurrencyCode;
+		amount?: number | null;
+		currencyCode?: MonetaryAmountCurrencyCode | null;
 	}
 
 	export enum MonetaryAmountCurrencyCode { USD = 0 }
@@ -1185,77 +1185,77 @@ export namespace MyNS {
 
 	/** Represents the request to list the offering transaction history. */
 	export interface ListOfferingTransactionsRequest {
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the return values of the list of offerings. */
 	export interface ListOfferingsResult {
-		offerings?: Array<Offering>;
-		nextToken?: string;
+		offerings?: Array<Offering> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the request to list all offerings. */
 	export interface ListOfferingsRequest {
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the result of a list projects request. */
 	export interface ListProjectsResult {
-		projects?: Array<Project>;
-		nextToken?: string;
+		projects?: Array<Project> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents a request to the list projects operation. */
 	export interface ListProjectsRequest {
-		arn?: string;
-		nextToken?: string;
+		arn?: string | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the response from the server after AWS Device Farm makes a request to return information about the remote access session. */
 	export interface ListRemoteAccessSessionsResult {
-		remoteAccessSessions?: Array<RemoteAccessSession>;
-		nextToken?: string;
+		remoteAccessSessions?: Array<RemoteAccessSession> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the request to return information about the remote access session. */
 	export interface ListRemoteAccessSessionsRequest {
 		arn: string;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the result of a list runs request. */
 	export interface ListRunsResult {
-		runs?: Array<Run>;
-		nextToken?: string;
+		runs?: Array<Run> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents a request to the list runs operation. */
 	export interface ListRunsRequest {
 		arn: string;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the result of a list samples request. */
 	export interface ListSamplesResult {
-		samples?: Array<Sample>;
-		nextToken?: string;
+		samples?: Array<Sample> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents a sample of performance data. */
 	export interface Sample {
-		arn?: string;
-		type?: SampleType;
-		url?: string;
+		arn?: string | null;
+		type?: SampleType | null;
+		url?: string | null;
 	}
 
 	export enum SampleType { CPU = 0, MEMORY = 1, THREADS = 2, RX_RATE = 3, TX_RATE = 4, RX = 5, TX = 6, NATIVE_FRAMES = 7, NATIVE_FPS = 8, NATIVE_MIN_DRAWTIME = 9, NATIVE_AVG_DRAWTIME = 10, NATIVE_MAX_DRAWTIME = 11, OPENGL_FRAMES = 12, OPENGL_FPS = 13, OPENGL_MIN_DRAWTIME = 14, OPENGL_AVG_DRAWTIME = 15, OPENGL_MAX_DRAWTIME = 16 }
@@ -1264,25 +1264,25 @@ export namespace MyNS {
 	/** Represents a request to the list samples operation. */
 	export interface ListSamplesRequest {
 		arn: string;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the result of a list suites request. */
 	export interface ListSuitesResult {
-		suites?: Array<Suite>;
-		nextToken?: string;
+		suites?: Array<Suite> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents a request to the list suites operation. */
 	export interface ListSuitesRequest {
 		arn: string;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -1297,95 +1297,95 @@ export namespace MyNS {
 	}
 
 	export interface ListTestGridProjectsResult {
-		testGridProjects?: Array<TestGridProject>;
-		nextToken?: string;
+		testGridProjects?: Array<TestGridProject> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListTestGridProjectsRequest {
-		maxResult?: number;
-		nextToken?: string;
+		maxResult?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListTestGridSessionActionsResult {
-		actions?: Array<TestGridSessionAction>;
-		nextToken?: string;
+		actions?: Array<TestGridSessionAction> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** An action taken by a <a>TestGridSession</a> browser instance. */
 	export interface TestGridSessionAction {
-		action?: string;
-		started?: Date;
-		duration?: number;
-		statusCode?: string;
-		requestMethod?: string;
+		action?: string | null;
+		started?: Date | null;
+		duration?: number | null;
+		statusCode?: string | null;
+		requestMethod?: string | null;
 	}
 
 	export interface ListTestGridSessionActionsRequest {
 		sessionArn: string;
-		maxResult?: number;
-		nextToken?: string;
+		maxResult?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListTestGridSessionArtifactsResult {
-		artifacts?: Array<TestGridSessionArtifact>;
-		nextToken?: string;
+		artifacts?: Array<TestGridSessionArtifact> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** <p>Artifacts are video and other files that are produced in the process of running a browser in an automated context. </p> <note> <p>Video elements might be broken up into multiple artifacts as they grow in size during creation. </p> </note> */
 	export interface TestGridSessionArtifact {
-		filename?: string;
-		type?: TestGridSessionArtifactType;
-		url?: string;
+		filename?: string | null;
+		type?: TestGridSessionArtifactType | null;
+		url?: string | null;
 	}
 
 	export enum TestGridSessionArtifactType { UNKNOWN = 0, VIDEO = 1, SELENIUM_LOG = 2 }
 
 	export interface ListTestGridSessionArtifactsRequest {
 		sessionArn: string;
-		type?: ListTestGridSessionArtifactsRequestType;
-		maxResult?: number;
-		nextToken?: string;
+		type?: ListTestGridSessionArtifactsRequestType | null;
+		maxResult?: number | null;
+		nextToken?: string | null;
 	}
 
 	export enum ListTestGridSessionArtifactsRequestType { VIDEO = 0, LOG = 1 }
 
 	export interface ListTestGridSessionsResult {
-		testGridSessions?: Array<TestGridSession>;
-		nextToken?: string;
+		testGridSessions?: Array<TestGridSession> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListTestGridSessionsRequest {
 		projectArn: string;
-		status?: TestGridSessionStatus;
-		creationTimeAfter?: Date;
-		creationTimeBefore?: Date;
-		endTimeAfter?: Date;
-		endTimeBefore?: Date;
-		maxResult?: number;
-		nextToken?: string;
+		status?: TestGridSessionStatus | null;
+		creationTimeAfter?: Date | null;
+		creationTimeBefore?: Date | null;
+		endTimeAfter?: Date | null;
+		endTimeBefore?: Date | null;
+		maxResult?: number | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the result of a list tests request. */
 	export interface ListTestsResult {
-		tests?: Array<Test>;
-		nextToken?: string;
+		tests?: Array<Test> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents a request to the list tests operation. */
 	export interface ListTestsRequest {
 		arn: string;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the result of a list unique problems request. */
 	export interface ListUniqueProblemsResult {
-		uniqueProblems?: UniqueProblemsByExecutionResultMap;
-		nextToken?: string;
+		uniqueProblems?: UniqueProblemsByExecutionResultMap | null;
+		nextToken?: string | null;
 	}
 
 	export interface UniqueProblemsByExecutionResultMap {
@@ -1395,32 +1395,32 @@ export namespace MyNS {
 	/** Represents a request to the list unique problems operation. */
 	export interface ListUniqueProblemsRequest {
 		arn: string;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the result of a list uploads request. */
 	export interface ListUploadsResult {
-		uploads?: Array<Upload>;
-		nextToken?: string;
+		uploads?: Array<Upload> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents a request to the list uploads operation. */
 	export interface ListUploadsRequest {
 		arn: string;
-		type?: UploadType;
-		nextToken?: string;
+		type?: UploadType | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListVPCEConfigurationsResult {
-		vpceConfigurations?: Array<VPCEConfiguration>;
-		nextToken?: string;
+		vpceConfigurations?: Array<VPCEConfiguration> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListVPCEConfigurationsRequest {
-		maxResults?: number;
-		nextToken?: string;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 
@@ -1428,15 +1428,15 @@ export namespace MyNS {
 	export interface PurchaseOfferingResult {
 
 		/** Represents the metadata of an offering transaction. */
-		offeringTransaction?: OfferingTransaction;
+		offeringTransaction?: OfferingTransaction | null;
 	}
 
 
 	/** Represents a request for a purchase offering. */
 	export interface PurchaseOfferingRequest {
-		offeringId?: string;
-		quantity?: number;
-		offeringPromotionId?: string;
+		offeringId?: string | null;
+		quantity?: number | null;
+		offeringPromotionId?: string | null;
 	}
 
 
@@ -1444,14 +1444,14 @@ export namespace MyNS {
 	export interface RenewOfferingResult {
 
 		/** Represents the metadata of an offering transaction. */
-		offeringTransaction?: OfferingTransaction;
+		offeringTransaction?: OfferingTransaction | null;
 	}
 
 
 	/** A request that represents an offering renewal. */
 	export interface RenewOfferingRequest {
-		offeringId?: string;
-		quantity?: number;
+		offeringId?: string | null;
+		quantity?: number | null;
 	}
 
 
@@ -1459,19 +1459,19 @@ export namespace MyNS {
 	export interface ScheduleRunResult {
 
 		/** Represents a test run on a set of devices with a given app package, test parameters, and so on. */
-		run?: Run;
+		run?: Run | null;
 	}
 
 
 	/** Represents a request to the schedule run operation. */
 	export interface ScheduleRunRequest {
 		projectArn: string;
-		appArn?: string;
-		devicePoolArn?: string;
+		appArn?: string | null;
+		devicePoolArn?: string | null;
 
 		/** Represents the device filters used in a test run and the maximum number of devices to be included in the run. It is passed in as the <code>deviceSelectionConfiguration</code> request parameter in <a>ScheduleRun</a>. */
-		deviceSelectionConfiguration?: DeviceSelectionConfiguration;
-		name?: string;
+		deviceSelectionConfiguration?: DeviceSelectionConfiguration | null;
+		name?: string | null;
 
 		/**
 		 * Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
@@ -1480,10 +1480,10 @@ export namespace MyNS {
 		test: ScheduleRunTest;
 
 		/** Represents the settings for a run. Includes things like location, radio states, auxiliary apps, and network profiles. */
-		configuration?: ScheduleRunConfiguration;
+		configuration?: ScheduleRunConfiguration | null;
 
 		/** Represents configuration information about a test run, such as the execution timeout (in minutes). */
-		executionConfiguration?: ExecutionConfiguration;
+		executionConfiguration?: ExecutionConfiguration | null;
 	}
 
 
@@ -1496,11 +1496,11 @@ export namespace MyNS {
 
 	/** Represents configuration information about a test run, such as the execution timeout (in minutes). */
 	export interface ExecutionConfiguration {
-		jobTimeoutMinutes?: number;
-		accountsCleanup?: boolean;
-		appPackagesCleanup?: boolean;
-		videoCapture?: boolean;
-		skipAppResign?: boolean;
+		jobTimeoutMinutes?: number | null;
+		accountsCleanup?: boolean | null;
+		appPackagesCleanup?: boolean | null;
+		videoCapture?: boolean | null;
+		skipAppResign?: boolean | null;
 	}
 
 	export interface IdempotencyException {
@@ -1509,7 +1509,7 @@ export namespace MyNS {
 	export interface StopJobResult {
 
 		/** Represents a device. */
-		job?: Job;
+		job?: Job | null;
 	}
 
 	export interface StopJobRequest {
@@ -1521,7 +1521,7 @@ export namespace MyNS {
 	export interface StopRemoteAccessSessionResult {
 
 		/** Represents information about the remote access session. */
-		remoteAccessSession?: RemoteAccessSession;
+		remoteAccessSession?: RemoteAccessSession | null;
 	}
 
 
@@ -1535,7 +1535,7 @@ export namespace MyNS {
 	export interface StopRunResult {
 
 		/** Represents a test run on a set of devices with a given app package, test parameters, and so on. */
-		run?: Run;
+		run?: Run | null;
 	}
 
 
@@ -1569,13 +1569,13 @@ export namespace MyNS {
 	export interface UpdateDeviceInstanceResult {
 
 		/** Represents the device instance. */
-		deviceInstance?: DeviceInstance;
+		deviceInstance?: DeviceInstance | null;
 	}
 
 	export interface UpdateDeviceInstanceRequest {
 		arn: string;
-		profileArn?: string;
-		labels?: Array<string>;
+		profileArn?: string | null;
+		labels?: Array<string> | null;
 	}
 
 
@@ -1583,54 +1583,54 @@ export namespace MyNS {
 	export interface UpdateDevicePoolResult {
 
 		/** Represents a collection of device types. */
-		devicePool?: DevicePool;
+		devicePool?: DevicePool | null;
 	}
 
 
 	/** Represents a request to the update device pool operation. */
 	export interface UpdateDevicePoolRequest {
 		arn: string;
-		name?: string;
-		description?: string;
-		rules?: Array<Rule>;
-		maxDevices?: number;
-		clearMaxDevices?: boolean;
+		name?: string | null;
+		description?: string | null;
+		rules?: Array<Rule> | null;
+		maxDevices?: number | null;
+		clearMaxDevices?: boolean | null;
 	}
 
 	export interface UpdateInstanceProfileResult {
 
 		/** Represents the instance profile. */
-		instanceProfile?: InstanceProfile;
+		instanceProfile?: InstanceProfile | null;
 	}
 
 	export interface UpdateInstanceProfileRequest {
 		arn: string;
-		name?: string;
-		description?: string;
-		packageCleanup?: boolean;
-		excludeAppPackagesFromCleanup?: Array<string>;
-		rebootAfterUse?: boolean;
+		name?: string | null;
+		description?: string | null;
+		packageCleanup?: boolean | null;
+		excludeAppPackagesFromCleanup?: Array<string> | null;
+		rebootAfterUse?: boolean | null;
 	}
 
 	export interface UpdateNetworkProfileResult {
 
 		/** An array of settings that describes characteristics of a network profile. */
-		networkProfile?: NetworkProfile;
+		networkProfile?: NetworkProfile | null;
 	}
 
 	export interface UpdateNetworkProfileRequest {
 		arn: string;
-		name?: string;
-		description?: string;
-		type?: DevicePoolType;
-		uplinkBandwidthBits?: number;
-		downlinkBandwidthBits?: number;
-		uplinkDelayMs?: number;
-		downlinkDelayMs?: number;
-		uplinkJitterMs?: number;
-		downlinkJitterMs?: number;
-		uplinkLossPercent?: number;
-		downlinkLossPercent?: number;
+		name?: string | null;
+		description?: string | null;
+		type?: DevicePoolType | null;
+		uplinkBandwidthBits?: number | null;
+		downlinkBandwidthBits?: number | null;
+		uplinkDelayMs?: number | null;
+		downlinkDelayMs?: number | null;
+		uplinkJitterMs?: number | null;
+		downlinkJitterMs?: number | null;
+		uplinkLossPercent?: number | null;
+		downlinkLossPercent?: number | null;
 	}
 
 
@@ -1638,54 +1638,54 @@ export namespace MyNS {
 	export interface UpdateProjectResult {
 
 		/** Represents an operating-system neutral workspace for running and managing tests. */
-		project?: Project;
+		project?: Project | null;
 	}
 
 
 	/** Represents a request to the update project operation. */
 	export interface UpdateProjectRequest {
 		arn: string;
-		name?: string;
-		defaultJobTimeoutMinutes?: number;
+		name?: string | null;
+		defaultJobTimeoutMinutes?: number | null;
 	}
 
 	export interface UpdateTestGridProjectResult {
 
 		/** A Selenium testing project. Projects are used to collect and collate sessions. */
-		testGridProject?: TestGridProject;
+		testGridProject?: TestGridProject | null;
 	}
 
 	export interface UpdateTestGridProjectRequest {
 		projectArn: string;
-		name?: string;
-		description?: string;
+		name?: string | null;
+		description?: string | null;
 	}
 
 	export interface UpdateUploadResult {
 
 		/** An app or a set of one or more tests to upload or that have been uploaded. */
-		upload?: Upload;
+		upload?: Upload | null;
 	}
 
 	export interface UpdateUploadRequest {
 		arn: string;
-		name?: string;
-		contentType?: string;
-		editContent?: boolean;
+		name?: string | null;
+		contentType?: string | null;
+		editContent?: boolean | null;
 	}
 
 	export interface UpdateVPCEConfigurationResult {
 
 		/** Represents an Amazon Virtual Private Cloud (VPC) endpoint configuration. */
-		vpceConfiguration?: VPCEConfiguration;
+		vpceConfiguration?: VPCEConfiguration | null;
 	}
 
 	export interface UpdateVPCEConfigurationRequest {
 		arn: string;
-		vpceConfigurationName?: string;
-		vpceServiceName?: string;
-		serviceDnsName?: string;
-		vpceConfigurationDescription?: string;
+		vpceConfigurationName?: string | null;
+		vpceServiceName?: string | null;
+		serviceDnsName?: string | null;
+		vpceConfigurationDescription?: string | null;
 	}
 
 	export enum ArtifactCategory { SCREENSHOT = 0, FILE = 1, LOG = 2 }
@@ -1717,8 +1717,8 @@ export namespace MyNS {
 
 	/** Information about a problem detail. */
 	export interface ProblemDetail {
-		arn?: string;
-		name?: string;
+		arn?: string | null;
+		name?: string | null;
 	}
 
 
@@ -1726,28 +1726,28 @@ export namespace MyNS {
 	export interface Problem {
 
 		/** Information about a problem detail. */
-		run?: ProblemDetail;
+		run?: ProblemDetail | null;
 
 		/** Information about a problem detail. */
-		job?: ProblemDetail;
+		job?: ProblemDetail | null;
 
 		/** Information about a problem detail. */
-		suite?: ProblemDetail;
+		suite?: ProblemDetail | null;
 
 		/** Information about a problem detail. */
-		test?: ProblemDetail;
+		test?: ProblemDetail | null;
 
 		/** Represents a device type that an app is tested against. */
-		device?: Device;
-		result?: RemoteAccessSessionResult;
-		message?: string;
+		device?: Device | null;
+		result?: RemoteAccessSessionResult | null;
+		message?: string | null;
 	}
 
 
 	/** A collection of one or more problems, grouped by their result. */
 	export interface UniqueProblem {
-		message?: string;
-		problems?: Array<Problem>;
+		message?: string | null;
+		problems?: Array<Problem> | null;
 	}
 
 	export enum UploadCategory { CURATED = 0, PRIVATE = 1 }
@@ -1997,7 +1997,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetOfferingStatusResult} Success
 		 */
-		GetOfferingStatus(nextToken: string, requestBody: GetOfferingStatusRequest): Observable<GetOfferingStatusResult> {
+		GetOfferingStatus(nextToken: string | null | undefined, requestBody: GetOfferingStatusRequest): Observable<GetOfferingStatusResult> {
 			return this.http.post<GetOfferingStatusResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.GetOfferingStatus?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2097,7 +2097,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListArtifactsResult} Success
 		 */
-		ListArtifacts(nextToken: string, requestBody: ListArtifactsRequest): Observable<ListArtifactsResult> {
+		ListArtifacts(nextToken: string | null | undefined, requestBody: ListArtifactsRequest): Observable<ListArtifactsResult> {
 			return this.http.post<ListArtifactsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListArtifacts?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2116,7 +2116,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDevicePoolsResult} Success
 		 */
-		ListDevicePools(nextToken: string, requestBody: ListDevicePoolsRequest): Observable<ListDevicePoolsResult> {
+		ListDevicePools(nextToken: string | null | undefined, requestBody: ListDevicePoolsRequest): Observable<ListDevicePoolsResult> {
 			return this.http.post<ListDevicePoolsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListDevicePools?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2126,7 +2126,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDevicesResult} Success
 		 */
-		ListDevices(nextToken: string, requestBody: ListDevicesRequest): Observable<ListDevicesResult> {
+		ListDevices(nextToken: string | null | undefined, requestBody: ListDevicesRequest): Observable<ListDevicesResult> {
 			return this.http.post<ListDevicesResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListDevices?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2145,7 +2145,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListJobsResult} Success
 		 */
-		ListJobs(nextToken: string, requestBody: ListJobsRequest): Observable<ListJobsResult> {
+		ListJobs(nextToken: string | null | undefined, requestBody: ListJobsRequest): Observable<ListJobsResult> {
 			return this.http.post<ListJobsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListJobs?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2173,7 +2173,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListOfferingTransactionsResult} Success
 		 */
-		ListOfferingTransactions(nextToken: string, requestBody: ListOfferingTransactionsRequest): Observable<ListOfferingTransactionsResult> {
+		ListOfferingTransactions(nextToken: string | null | undefined, requestBody: ListOfferingTransactionsRequest): Observable<ListOfferingTransactionsResult> {
 			return this.http.post<ListOfferingTransactionsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListOfferingTransactions?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2183,7 +2183,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListOfferingsResult} Success
 		 */
-		ListOfferings(nextToken: string, requestBody: ListOfferingsRequest): Observable<ListOfferingsResult> {
+		ListOfferings(nextToken: string | null | undefined, requestBody: ListOfferingsRequest): Observable<ListOfferingsResult> {
 			return this.http.post<ListOfferingsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListOfferings?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2193,7 +2193,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListProjectsResult} Success
 		 */
-		ListProjects(nextToken: string, requestBody: ListProjectsRequest): Observable<ListProjectsResult> {
+		ListProjects(nextToken: string | null | undefined, requestBody: ListProjectsRequest): Observable<ListProjectsResult> {
 			return this.http.post<ListProjectsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListProjects?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2212,7 +2212,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListRunsResult} Success
 		 */
-		ListRuns(nextToken: string, requestBody: ListRunsRequest): Observable<ListRunsResult> {
+		ListRuns(nextToken: string | null | undefined, requestBody: ListRunsRequest): Observable<ListRunsResult> {
 			return this.http.post<ListRunsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListRuns?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2222,7 +2222,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSamplesResult} Success
 		 */
-		ListSamples(nextToken: string, requestBody: ListSamplesRequest): Observable<ListSamplesResult> {
+		ListSamples(nextToken: string | null | undefined, requestBody: ListSamplesRequest): Observable<ListSamplesResult> {
 			return this.http.post<ListSamplesResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListSamples?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2232,7 +2232,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListSuitesResult} Success
 		 */
-		ListSuites(nextToken: string, requestBody: ListSuitesRequest): Observable<ListSuitesResult> {
+		ListSuites(nextToken: string | null | undefined, requestBody: ListSuitesRequest): Observable<ListSuitesResult> {
 			return this.http.post<ListSuitesResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListSuites?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2252,7 +2252,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTestGridProjectsResult} Success
 		 */
-		ListTestGridProjects(maxResult: string, nextToken: string, requestBody: ListTestGridProjectsRequest): Observable<ListTestGridProjectsResult> {
+		ListTestGridProjects(maxResult: string | null | undefined, nextToken: string | null | undefined, requestBody: ListTestGridProjectsRequest): Observable<ListTestGridProjectsResult> {
 			return this.http.post<ListTestGridProjectsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListTestGridProjects?maxResult=' + (maxResult == null ? '' : encodeURIComponent(maxResult)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2263,7 +2263,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTestGridSessionActionsResult} Success
 		 */
-		ListTestGridSessionActions(maxResult: string, nextToken: string, requestBody: ListTestGridSessionActionsRequest): Observable<ListTestGridSessionActionsResult> {
+		ListTestGridSessionActions(maxResult: string | null | undefined, nextToken: string | null | undefined, requestBody: ListTestGridSessionActionsRequest): Observable<ListTestGridSessionActionsResult> {
 			return this.http.post<ListTestGridSessionActionsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListTestGridSessionActions?maxResult=' + (maxResult == null ? '' : encodeURIComponent(maxResult)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2274,7 +2274,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTestGridSessionArtifactsResult} Success
 		 */
-		ListTestGridSessionArtifacts(maxResult: string, nextToken: string, requestBody: ListTestGridSessionArtifactsRequest): Observable<ListTestGridSessionArtifactsResult> {
+		ListTestGridSessionArtifacts(maxResult: string | null | undefined, nextToken: string | null | undefined, requestBody: ListTestGridSessionArtifactsRequest): Observable<ListTestGridSessionArtifactsResult> {
 			return this.http.post<ListTestGridSessionArtifactsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListTestGridSessionArtifacts?maxResult=' + (maxResult == null ? '' : encodeURIComponent(maxResult)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2285,7 +2285,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTestGridSessionsResult} Success
 		 */
-		ListTestGridSessions(maxResult: string, nextToken: string, requestBody: ListTestGridSessionsRequest): Observable<ListTestGridSessionsResult> {
+		ListTestGridSessions(maxResult: string | null | undefined, nextToken: string | null | undefined, requestBody: ListTestGridSessionsRequest): Observable<ListTestGridSessionsResult> {
 			return this.http.post<ListTestGridSessionsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListTestGridSessions?maxResult=' + (maxResult == null ? '' : encodeURIComponent(maxResult)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2295,7 +2295,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTestsResult} Success
 		 */
-		ListTests(nextToken: string, requestBody: ListTestsRequest): Observable<ListTestsResult> {
+		ListTests(nextToken: string | null | undefined, requestBody: ListTestsRequest): Observable<ListTestsResult> {
 			return this.http.post<ListTestsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListTests?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2305,7 +2305,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListUniqueProblemsResult} Success
 		 */
-		ListUniqueProblems(nextToken: string, requestBody: ListUniqueProblemsRequest): Observable<ListUniqueProblemsResult> {
+		ListUniqueProblems(nextToken: string | null | undefined, requestBody: ListUniqueProblemsRequest): Observable<ListUniqueProblemsResult> {
 			return this.http.post<ListUniqueProblemsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListUniqueProblems?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2315,7 +2315,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListUploadsResult} Success
 		 */
-		ListUploads(nextToken: string, requestBody: ListUploadsRequest): Observable<ListUploadsResult> {
+		ListUploads(nextToken: string | null | undefined, requestBody: ListUploadsRequest): Observable<ListUploadsResult> {
 			return this.http.post<ListUploadsResult>(this.baseUri + '#X-Amz-Target=DeviceFarm_20150623.ListUploads?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

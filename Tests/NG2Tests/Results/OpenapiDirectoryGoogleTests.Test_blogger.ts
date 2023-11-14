@@ -5,182 +5,182 @@ export namespace MyNS {
 	export interface Blog {
 
 		/** The JSON custom meta-data for the Blog. */
-		customMetaData?: string;
+		customMetaData?: string | null;
 
 		/** The description of this blog. This is displayed underneath the title. */
-		description?: string;
+		description?: string | null;
 
 		/** The identifier for this resource. */
-		id?: string;
+		id?: string | null;
 
 		/** The kind of this entry. Always blogger#blog. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The locale this Blog is set to. */
-		locale?: BlogLocale;
+		locale?: BlogLocale | null;
 
 		/** The name of this blog. This is displayed as the title. */
-		name?: string;
+		name?: string | null;
 
 		/** The container of pages in this blog. */
-		pages?: BlogPages;
+		pages?: BlogPages | null;
 
 		/** The container of posts in this blog. */
-		posts?: BlogPosts;
+		posts?: BlogPosts | null;
 
 		/** RFC 3339 date-time when this blog was published. */
-		published?: string;
+		published?: string | null;
 
 		/** The API REST URL to fetch this resource from. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** The status of the blog. */
-		status?: BlogStatus;
+		status?: BlogStatus | null;
 
 		/** RFC 3339 date-time when this blog was last updated. */
-		updated?: string;
+		updated?: string | null;
 
 		/** The URL where this blog is published. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface BlogLocale {
 
 		/** The country this blog's locale is set to. */
-		country?: string;
+		country?: string | null;
 
 		/** The language this blog is authored in. */
-		language?: string;
+		language?: string | null;
 
 		/** The language variant this blog is authored in. */
-		variant?: string;
+		variant?: string | null;
 	}
 
 	export interface BlogPages {
 
 		/** The URL of the container for pages in this blog. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** The count of pages in this blog. */
-		totalItems?: number;
+		totalItems?: number | null;
 	}
 
 	export interface BlogPosts {
 
 		/** The List of Posts for this Blog. */
-		items?: Array<Post>;
+		items?: Array<Post> | null;
 
 		/** The URL of the container for posts in this blog. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** The count of posts in this blog. */
-		totalItems?: number;
+		totalItems?: number | null;
 	}
 
 	export interface Post {
 
 		/** The author of this Post. */
-		author?: PostAuthor;
+		author?: PostAuthor | null;
 
 		/** Data about the blog containing this Post. */
-		blog?: PostBlog;
+		blog?: PostBlog | null;
 
 		/** The content of the Post. May contain HTML markup. */
-		content?: string;
+		content?: string | null;
 
 		/** The JSON meta-data for the Post. */
-		customMetaData?: string;
+		customMetaData?: string | null;
 
 		/** Etag of the resource. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The identifier of this Post. */
-		id?: string;
+		id?: string | null;
 
 		/** Display image for the Post. */
-		PostImages?: Array<PostImages>;
+		PostImages?: Array<PostImages> | null;
 
 		/** The kind of this entity. Always blogger#post. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The list of labels this Post was tagged with. */
-		labels?: Array<string>;
+		labels?: Array<string> | null;
 
 		/** The location for geotagged posts. */
-		location?: PostLocation;
+		location?: PostLocation | null;
 
 		/** RFC 3339 date-time when this Post was published. */
-		published?: string;
+		published?: string | null;
 
 		/** Comment control and display setting for readers of this post. */
-		readerComments?: PostReaderComments;
+		readerComments?: PostReaderComments | null;
 
 		/** The container of comments on this Post. */
-		replies?: PostReplies;
+		replies?: PostReplies | null;
 
 		/** The API REST URL to fetch this resource from. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Status of the post. Only set for admin-level requests. */
-		status?: PostStatus;
+		status?: PostStatus | null;
 
 		/** The title of the Post. */
-		title?: string;
+		title?: string | null;
 
 		/** The title link URL, similar to atom's related link. */
-		titleLink?: string;
+		titleLink?: string | null;
 
 		/** RFC 3339 date-time when this Post was last updated. */
-		updated?: string;
+		updated?: string | null;
 
 		/** The URL where this Post is displayed. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface PostAuthor {
 
 		/** The display name. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** The identifier of the creator. */
-		id?: string;
+		id?: string | null;
 
 		/** The creator's avatar. */
-		image?: PostAuthorImage;
+		image?: PostAuthorImage | null;
 
 		/** The URL of the creator's Profile page. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface PostAuthorImage {
 
 		/** The creator's avatar URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface PostBlog {
 
 		/** The identifier of the Blog that contains this Post. */
-		id?: string;
+		id?: string | null;
 	}
 
 	export interface PostImages {
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface PostLocation {
 
 		/** Location's latitude. */
-		lat?: number;
+		lat?: number | null;
 
 		/** Location's longitude. */
-		lng?: number;
+		lng?: number | null;
 
 		/** Location name. */
-		name?: string;
+		name?: string | null;
 
 		/** Location's viewport span. Can be used when rendering a map preview. */
-		span?: string;
+		span?: string | null;
 	}
 
 	export enum PostReaderComments { ALLOW = 0, DONT_ALLOW_SHOW_EXISTING = 1, DONT_ALLOW_HIDE_EXISTING = 2 }
@@ -188,88 +188,88 @@ export namespace MyNS {
 	export interface PostReplies {
 
 		/** The List of Comments for this Post. */
-		items?: Array<Comment>;
+		items?: Array<Comment> | null;
 
 		/** The URL of the comments on this post. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** The count of comments on this post. */
-		totalItems?: string;
+		totalItems?: string | null;
 	}
 
 	export interface Comment {
 
 		/** The author of this Comment. */
-		author?: CommentAuthor;
+		author?: CommentAuthor | null;
 
 		/** Data about the blog containing this comment. */
-		blog?: CommentBlog;
+		blog?: CommentBlog | null;
 
 		/** The actual content of the comment. May include HTML markup. */
-		content?: string;
+		content?: string | null;
 
 		/** The identifier for this resource. */
-		id?: string;
+		id?: string | null;
 
 		/** Data about the comment this is in reply to. */
-		inReplyTo?: CommentInReplyTo;
+		inReplyTo?: CommentInReplyTo | null;
 
 		/** The kind of this entry. Always blogger#comment. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Data about the post containing this comment. */
-		post?: CommentPost;
+		post?: CommentPost | null;
 
 		/** RFC 3339 date-time when this comment was published. */
-		published?: string;
+		published?: string | null;
 
 		/** The API REST URL to fetch this resource from. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** The status of the comment (only populated for admin users). */
-		status?: CommentStatus;
+		status?: CommentStatus | null;
 
 		/** RFC 3339 date-time when this comment was last updated. */
-		updated?: string;
+		updated?: string | null;
 	}
 
 	export interface CommentAuthor {
 
 		/** The display name. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** The identifier of the creator. */
-		id?: string;
+		id?: string | null;
 
 		/** The creator's avatar. */
-		image?: CommentAuthorImage;
+		image?: CommentAuthorImage | null;
 
 		/** The URL of the creator's Profile page. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface CommentAuthorImage {
 
 		/** The creator's avatar URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface CommentBlog {
 
 		/** The identifier of the blog containing this comment. */
-		id?: string;
+		id?: string | null;
 	}
 
 	export interface CommentInReplyTo {
 
 		/** The identified of the parent of this comment. */
-		id?: string;
+		id?: string | null;
 	}
 
 	export interface CommentPost {
 
 		/** The identifier of the post containing this comment. */
-		id?: string;
+		id?: string | null;
 	}
 
 	export enum CommentStatus { LIVE = 0, EMPTIED = 1, PENDING = 2, SPAM = 3 }
@@ -281,45 +281,45 @@ export namespace MyNS {
 	export interface BlogList {
 
 		/** Admin level list of blog per-user information. */
-		blogUserInfos?: Array<BlogUserInfo>;
+		blogUserInfos?: Array<BlogUserInfo> | null;
 
 		/** The list of Blogs this user has Authorship or Admin rights over. */
-		items?: Array<Blog>;
+		items?: Array<Blog> | null;
 
 		/** The kind of this entity. Always blogger#blogList. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface BlogUserInfo {
-		blog?: Blog;
-		blog_user_info?: BlogPerUserInfo;
+		blog?: Blog | null;
+		blog_user_info?: BlogPerUserInfo | null;
 
 		/** The kind of this entity. Always blogger#blogUserInfo. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface BlogPerUserInfo {
 
 		/** ID of the Blog resource. */
-		blogId?: string;
+		blogId?: string | null;
 
 		/** True if the user has Admin level access to the blog. */
-		hasAdminAccess?: boolean;
+		hasAdminAccess?: boolean | null;
 
 		/** The kind of this entity. Always blogger#blogPerUserInfo. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The Photo Album Key for the user when adding photos to the blog. */
-		photosAlbumKey?: string;
+		photosAlbumKey?: string | null;
 
 		/**
 		 * Access permissions that the user has for the blog (ADMIN, AUTHOR, or
 		 * READER).
 		 */
-		role?: BlogPerUserInfoRole;
+		role?: BlogPerUserInfoRole | null;
 
 		/** ID of the User. */
-		userId?: string;
+		userId?: string | null;
 	}
 
 	export enum BlogPerUserInfoRole { VIEW_TYPE_UNSPECIFIED = 0, READER = 1, AUTHOR = 2, ADMIN = 3 }
@@ -327,88 +327,88 @@ export namespace MyNS {
 	export interface CommentList {
 
 		/** Etag of the response. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The List of Comments for a Post. */
-		items?: Array<Comment>;
+		items?: Array<Comment> | null;
 
 		/** The kind of this entry. Always blogger#commentList. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Pagination token to fetch the next page, if one exists. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Pagination token to fetch the previous page, if one exists. */
-		prevPageToken?: string;
+		prevPageToken?: string | null;
 	}
 
 	export interface Page {
 
 		/** The author of this Page. */
-		author?: PageAuthor;
+		author?: PageAuthor | null;
 
 		/** Data about the blog containing this Page. */
-		blog?: PageBlog;
+		blog?: PageBlog | null;
 
 		/** The body content of this Page, in HTML. */
-		content?: string;
+		content?: string | null;
 
 		/** Etag of the resource. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The identifier for this resource. */
-		id?: string;
+		id?: string | null;
 
 		/** The kind of this entity. Always blogger#page. */
-		kind?: string;
+		kind?: string | null;
 
 		/** RFC 3339 date-time when this Page was published. */
-		published?: string;
+		published?: string | null;
 
 		/** The API REST URL to fetch this resource from. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** The status of the page for admin resources (either LIVE or DRAFT). */
-		status?: PageStatus;
+		status?: PageStatus | null;
 
 		/**
 		 * The title of this entity. This is the name displayed in the Admin user
 		 * interface.
 		 */
-		title?: string;
+		title?: string | null;
 
 		/** RFC 3339 date-time when this Page was last updated. */
-		updated?: string;
+		updated?: string | null;
 
 		/** The URL that this Page is displayed at. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface PageAuthor {
 
 		/** The display name. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** The identifier of the creator. */
-		id?: string;
+		id?: string | null;
 
 		/** The creator's avatar. */
-		image?: PageAuthorImage;
+		image?: PageAuthorImage | null;
 
 		/** The URL of the creator's Profile page. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface PageAuthorImage {
 
 		/** The creator's avatar URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface PageBlog {
 
 		/** The identifier of the blog containing this page. */
-		id?: string;
+		id?: string | null;
 	}
 
 	export enum PageStatus { LIVE = 0, DRAFT = 1 }
@@ -416,37 +416,37 @@ export namespace MyNS {
 	export interface PageList {
 
 		/** Etag of the response. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The list of Pages for a Blog. */
-		items?: Array<Page>;
+		items?: Array<Page> | null;
 
 		/** The kind of this entity. Always blogger#pageList. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Pagination token to fetch the next page, if one exists. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	export interface Pageviews {
 
 		/** Blog Id. */
-		blogId?: string;
+		blogId?: string | null;
 
 		/** The container of posts in this blog. */
-		PageviewsCounts?: Array<PageviewsCounts>;
+		PageviewsCounts?: Array<PageviewsCounts> | null;
 
 		/** The kind of this entry. Always blogger#page_views. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface PageviewsCounts {
 
 		/** Count of page views for the given time range. */
-		count?: string;
+		count?: string | null;
 
 		/** Time range the given count applies to. */
-		timeRange?: PageviewsCountsTimeRange;
+		timeRange?: PageviewsCountsTimeRange | null;
 	}
 
 	export enum PageviewsCountsTimeRange { ALL_TIME = 0, THIRTY_DAYS = 1, SEVEN_DAYS = 2 }
@@ -454,105 +454,105 @@ export namespace MyNS {
 	export interface PostList {
 
 		/** Etag of the response. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The list of Posts for this Blog. */
-		items?: Array<Post>;
+		items?: Array<Post> | null;
 
 		/** The kind of this entity. Always blogger#postList. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Pagination token to fetch the next page, if one exists. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Pagination token to fetch the previous page, if one exists. */
-		prevPageToken?: string;
+		prevPageToken?: string | null;
 	}
 
 	export interface PostPerUserInfo {
 
 		/** ID of the Blog that the post resource belongs to. */
-		blogId?: string;
+		blogId?: string | null;
 
 		/** True if the user has Author level access to the post. */
-		hasEditAccess?: boolean;
+		hasEditAccess?: boolean | null;
 
 		/** The kind of this entity. Always blogger#postPerUserInfo. */
-		kind?: string;
+		kind?: string | null;
 
 		/** ID of the Post resource. */
-		postId?: string;
+		postId?: string | null;
 
 		/** ID of the User. */
-		userId?: string;
+		userId?: string | null;
 	}
 
 	export interface PostUserInfo {
 
 		/** The kind of this entity. Always blogger#postUserInfo. */
-		kind?: string;
-		post?: Post;
-		post_user_info?: PostPerUserInfo;
+		kind?: string | null;
+		post?: Post | null;
+		post_user_info?: PostPerUserInfo | null;
 	}
 
 	export interface PostUserInfosList {
 
 		/** The list of Posts with User information for the post, for this Blog. */
-		items?: Array<PostUserInfo>;
+		items?: Array<PostUserInfo> | null;
 
 		/** The kind of this entity. Always blogger#postList. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Pagination token to fetch the next page, if one exists. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	export interface User {
 
 		/** Profile summary information. */
-		about?: string;
+		about?: string | null;
 
 		/** The container of blogs for this user. */
-		blogs?: UserBlogs;
+		blogs?: UserBlogs | null;
 
 		/** The timestamp of when this profile was created, in seconds since epoch. */
-		created?: string;
+		created?: string | null;
 
 		/** The display name. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** The identifier for this User. */
-		id?: string;
+		id?: string | null;
 
 		/** The kind of this entity. Always blogger#user. */
-		kind?: string;
+		kind?: string | null;
 
 		/** This user's locale */
-		locale?: UserLocale;
+		locale?: UserLocale | null;
 
 		/** The API REST URL to fetch this resource from. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** The user's profile page. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface UserBlogs {
 
 		/** The URL of the Blogs for this user. */
-		selfLink?: string;
+		selfLink?: string | null;
 	}
 
 	export interface UserLocale {
 
 		/** The country this blog's locale is set to. */
-		country?: string;
+		country?: string | null;
 
 		/** The language this blog is authored in. */
-		language?: string;
+		language?: string | null;
 
 		/** The language variant this blog is authored in. */
-		variant?: string;
+		variant?: string | null;
 	}
 
 	@Injectable()
@@ -565,7 +565,7 @@ export namespace MyNS {
 		 * Get v3/blogs/byurl
 		 * @return {void} Successful response
 		 */
-		Blogger_blogs_getByUrl(url: string, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_blogs_getByUrl(url: string, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/byurl?url=' + (url == null ? '' : encodeURIComponent(url)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -574,7 +574,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}
 		 * @return {void} Successful response
 		 */
-		Blogger_blogs_get(blogId: string, maxPosts: number, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_blogs_get(blogId: string, maxPosts: number | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '&maxPosts=' + maxPosts + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -583,7 +583,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/comments
 		 * @return {void} Successful response
 		 */
-		Blogger_comments_listByBlog(blogId: string, endDate: string, fetchBodies: boolean, maxResults: number, pageToken: string, startDate: string, status: Array<CommentStatus>): Observable<HttpResponse<string>> {
+		Blogger_comments_listByBlog(blogId: string, endDate: string | null | undefined, fetchBodies: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, startDate: string | null | undefined, status: Array<CommentStatus> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/comments&endDate=' + (endDate == null ? '' : encodeURIComponent(endDate)) + '&fetchBodies=' + fetchBodies + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startDate=' + (startDate == null ? '' : encodeURIComponent(startDate)) + '&' + status.map(z => `status=${z}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -592,7 +592,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/pages
 		 * @return {void} Successful response
 		 */
-		Blogger_pages_list(blogId: string, fetchBodies: boolean, maxResults: number, pageToken: string, status: Array<PageStatus>, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_pages_list(blogId: string, fetchBodies: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, status: Array<PageStatus> | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/pages&fetchBodies=' + fetchBodies + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + status.map(z => `status=${z}`).join('&') + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -601,7 +601,7 @@ export namespace MyNS {
 		 * Post v3/blogs/{blogId}/pages
 		 * @return {void} Successful response
 		 */
-		Blogger_pages_insert(blogId: string, isDraft: boolean, requestBody: Page): Observable<HttpResponse<string>> {
+		Blogger_pages_insert(blogId: string, isDraft: boolean | null | undefined, requestBody: Page): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/pages&isDraft=' + isDraft, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -619,7 +619,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/pages/{pageId}
 		 * @return {void} Successful response
 		 */
-		Blogger_pages_get(blogId: string, pageId: string, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_pages_get(blogId: string, pageId: string, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/pages/' + (pageId == null ? '' : encodeURIComponent(pageId)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -628,7 +628,7 @@ export namespace MyNS {
 		 * Patch v3/blogs/{blogId}/pages/{pageId}
 		 * @return {void} Successful response
 		 */
-		Blogger_pages_patch(blogId: string, pageId: string, publish: boolean, revert: boolean, requestBody: Page): Observable<HttpResponse<string>> {
+		Blogger_pages_patch(blogId: string, pageId: string, publish: boolean | null | undefined, revert: boolean | null | undefined, requestBody: Page): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/pages/' + (pageId == null ? '' : encodeURIComponent(pageId)) + '&publish=' + publish + '&revert=' + revert, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -637,7 +637,7 @@ export namespace MyNS {
 		 * Put v3/blogs/{blogId}/pages/{pageId}
 		 * @return {void} Successful response
 		 */
-		Blogger_pages_update(blogId: string, pageId: string, publish: boolean, revert: boolean, requestBody: Page): Observable<HttpResponse<string>> {
+		Blogger_pages_update(blogId: string, pageId: string, publish: boolean | null | undefined, revert: boolean | null | undefined, requestBody: Page): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/pages/' + (pageId == null ? '' : encodeURIComponent(pageId)) + '&publish=' + publish + '&revert=' + revert, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -664,7 +664,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/pageviews
 		 * @return {void} Successful response
 		 */
-		Blogger_pageViews_get(blogId: string, range: Array<string>): Observable<HttpResponse<string>> {
+		Blogger_pageViews_get(blogId: string, range: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/pageviews&' + range.map(z => `range=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -673,7 +673,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/posts
 		 * @return {void} Successful response
 		 */
-		Blogger_posts_list(blogId: string, endDate: string, fetchBodies: boolean, fetchImages: boolean, labels: string, maxResults: number, orderBy: Blogger_posts_listOrderBy, pageToken: string, startDate: string, status: Array<PostStatus>, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_posts_list(blogId: string, endDate: string | null | undefined, fetchBodies: boolean | null | undefined, fetchImages: boolean | null | undefined, labels: string | null | undefined, maxResults: number | null | undefined, orderBy: Blogger_posts_listOrderBy | null | undefined, pageToken: string | null | undefined, startDate: string | null | undefined, status: Array<PostStatus> | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts&endDate=' + (endDate == null ? '' : encodeURIComponent(endDate)) + '&fetchBodies=' + fetchBodies + '&fetchImages=' + fetchImages + '&labels=' + (labels == null ? '' : encodeURIComponent(labels)) + '&maxResults=' + maxResults + '&orderBy=' + orderBy + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startDate=' + (startDate == null ? '' : encodeURIComponent(startDate)) + '&' + status.map(z => `status=${z}`).join('&') + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -682,7 +682,7 @@ export namespace MyNS {
 		 * Post v3/blogs/{blogId}/posts
 		 * @return {void} Successful response
 		 */
-		Blogger_posts_insert(blogId: string, fetchBody: boolean, fetchImages: boolean, isDraft: boolean, requestBody: Post): Observable<HttpResponse<string>> {
+		Blogger_posts_insert(blogId: string, fetchBody: boolean | null | undefined, fetchImages: boolean | null | undefined, isDraft: boolean | null | undefined, requestBody: Post): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts&fetchBody=' + fetchBody + '&fetchImages=' + fetchImages + '&isDraft=' + isDraft, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -691,7 +691,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/posts/bypath
 		 * @return {void} Successful response
 		 */
-		Blogger_posts_getByPath(blogId: string, path: string, maxComments: number, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_posts_getByPath(blogId: string, path: string, maxComments: number | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts/bypath&path=' + (path == null ? '' : encodeURIComponent(path)) + '&maxComments=' + maxComments + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -700,7 +700,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/posts/search
 		 * @return {void} Successful response
 		 */
-		Blogger_posts_search(blogId: string, q: string, fetchBodies: boolean, orderBy: Blogger_posts_listOrderBy): Observable<HttpResponse<string>> {
+		Blogger_posts_search(blogId: string, q: string, fetchBodies: boolean | null | undefined, orderBy: Blogger_posts_listOrderBy | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts/search&q=' + (q == null ? '' : encodeURIComponent(q)) + '&fetchBodies=' + fetchBodies + '&orderBy=' + orderBy, { observe: 'response', responseType: 'text' });
 		}
 
@@ -718,7 +718,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/posts/{postId}
 		 * @return {void} Successful response
 		 */
-		Blogger_posts_get(blogId: string, postId: string, fetchBody: boolean, fetchImages: boolean, maxComments: number, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_posts_get(blogId: string, postId: string, fetchBody: boolean | null | undefined, fetchImages: boolean | null | undefined, maxComments: number | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts/' + (postId == null ? '' : encodeURIComponent(postId)) + '&fetchBody=' + fetchBody + '&fetchImages=' + fetchImages + '&maxComments=' + maxComments + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -727,7 +727,7 @@ export namespace MyNS {
 		 * Patch v3/blogs/{blogId}/posts/{postId}
 		 * @return {void} Successful response
 		 */
-		Blogger_posts_patch(blogId: string, postId: string, fetchBody: boolean, fetchImages: boolean, maxComments: number, publish: boolean, revert: boolean, requestBody: Post): Observable<HttpResponse<string>> {
+		Blogger_posts_patch(blogId: string, postId: string, fetchBody: boolean | null | undefined, fetchImages: boolean | null | undefined, maxComments: number | null | undefined, publish: boolean | null | undefined, revert: boolean | null | undefined, requestBody: Post): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts/' + (postId == null ? '' : encodeURIComponent(postId)) + '&fetchBody=' + fetchBody + '&fetchImages=' + fetchImages + '&maxComments=' + maxComments + '&publish=' + publish + '&revert=' + revert, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -736,7 +736,7 @@ export namespace MyNS {
 		 * Put v3/blogs/{blogId}/posts/{postId}
 		 * @return {void} Successful response
 		 */
-		Blogger_posts_update(blogId: string, postId: string, fetchBody: boolean, fetchImages: boolean, maxComments: number, publish: boolean, revert: boolean, requestBody: Post): Observable<HttpResponse<string>> {
+		Blogger_posts_update(blogId: string, postId: string, fetchBody: boolean | null | undefined, fetchImages: boolean | null | undefined, maxComments: number | null | undefined, publish: boolean | null | undefined, revert: boolean | null | undefined, requestBody: Post): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts/' + (postId == null ? '' : encodeURIComponent(postId)) + '&fetchBody=' + fetchBody + '&fetchImages=' + fetchImages + '&maxComments=' + maxComments + '&publish=' + publish + '&revert=' + revert, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -745,7 +745,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/posts/{postId}/comments
 		 * @return {void} Successful response
 		 */
-		Blogger_comments_list(blogId: string, postId: string, endDate: string, fetchBodies: boolean, maxResults: number, pageToken: string, startDate: string, status: CommentStatus, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_comments_list(blogId: string, postId: string, endDate: string | null | undefined, fetchBodies: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, startDate: string | null | undefined, status: CommentStatus | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts/' + (postId == null ? '' : encodeURIComponent(postId)) + '/comments&endDate=' + (endDate == null ? '' : encodeURIComponent(endDate)) + '&fetchBodies=' + fetchBodies + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startDate=' + (startDate == null ? '' : encodeURIComponent(startDate)) + '&status=' + status + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -763,7 +763,7 @@ export namespace MyNS {
 		 * Get v3/blogs/{blogId}/posts/{postId}/comments/{commentId}
 		 * @return {void} Successful response
 		 */
-		Blogger_comments_get(blogId: string, postId: string, commentId: string, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_comments_get(blogId: string, postId: string, commentId: string, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts/' + (postId == null ? '' : encodeURIComponent(postId)) + '/comments/' + (commentId == null ? '' : encodeURIComponent(commentId)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -799,7 +799,7 @@ export namespace MyNS {
 		 * Post v3/blogs/{blogId}/posts/{postId}/publish
 		 * @return {void} Successful response
 		 */
-		Blogger_posts_publish(blogId: string, postId: string, publishDate: string): Observable<HttpResponse<string>> {
+		Blogger_posts_publish(blogId: string, postId: string, publishDate: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v3/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts/' + (postId == null ? '' : encodeURIComponent(postId)) + '/publish&publishDate=' + (publishDate == null ? '' : encodeURIComponent(publishDate)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -827,7 +827,7 @@ export namespace MyNS {
 		 * @param {Array<BlogStatus>} status Default value of status is LIVE.
 		 * @return {void} Successful response
 		 */
-		Blogger_blogs_listByUser(userId: string, fetchUserInfo: boolean, role: Array<BlogPerUserInfoRole>, status: Array<BlogStatus>, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_blogs_listByUser(userId: string, fetchUserInfo: boolean | null | undefined, role: Array<BlogPerUserInfoRole> | null | undefined, status: Array<BlogStatus> | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/blogs&fetchUserInfo=' + fetchUserInfo + '&' + role.map(z => `role=${z}`).join('&') + '&' + status.map(z => `status=${z}`).join('&') + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -836,7 +836,7 @@ export namespace MyNS {
 		 * Get v3/users/{userId}/blogs/{blogId}
 		 * @return {void} Successful response
 		 */
-		Blogger_blogUserInfos_get(userId: string, blogId: string, maxPosts: number): Observable<HttpResponse<string>> {
+		Blogger_blogUserInfos_get(userId: string, blogId: string, maxPosts: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '&maxPosts=' + maxPosts, { observe: 'response', responseType: 'text' });
 		}
 
@@ -845,7 +845,7 @@ export namespace MyNS {
 		 * Get v3/users/{userId}/blogs/{blogId}/posts
 		 * @return {void} Successful response
 		 */
-		Blogger_postUserInfos_list(userId: string, blogId: string, endDate: string, fetchBodies: boolean, labels: string, maxResults: number, orderBy: Blogger_posts_listOrderBy, pageToken: string, startDate: string, status: Array<PostStatus>, view: BlogPerUserInfoRole): Observable<HttpResponse<string>> {
+		Blogger_postUserInfos_list(userId: string, blogId: string, endDate: string | null | undefined, fetchBodies: boolean | null | undefined, labels: string | null | undefined, maxResults: number | null | undefined, orderBy: Blogger_posts_listOrderBy | null | undefined, pageToken: string | null | undefined, startDate: string | null | undefined, status: Array<PostStatus> | null | undefined, view: BlogPerUserInfoRole | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts&endDate=' + (endDate == null ? '' : encodeURIComponent(endDate)) + '&fetchBodies=' + fetchBodies + '&labels=' + (labels == null ? '' : encodeURIComponent(labels)) + '&maxResults=' + maxResults + '&orderBy=' + orderBy + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startDate=' + (startDate == null ? '' : encodeURIComponent(startDate)) + '&' + status.map(z => `status=${z}`).join('&') + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -854,7 +854,7 @@ export namespace MyNS {
 		 * Get v3/users/{userId}/blogs/{blogId}/posts/{postId}
 		 * @return {void} Successful response
 		 */
-		Blogger_postUserInfos_get(userId: string, blogId: string, postId: string, maxComments: number): Observable<HttpResponse<string>> {
+		Blogger_postUserInfos_get(userId: string, blogId: string, postId: string, maxComments: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v3/users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/blogs/' + (blogId == null ? '' : encodeURIComponent(blogId)) + '/posts/' + (postId == null ? '' : encodeURIComponent(postId)) + '&maxComments=' + maxComments, { observe: 'response', responseType: 'text' });
 		}
 	}

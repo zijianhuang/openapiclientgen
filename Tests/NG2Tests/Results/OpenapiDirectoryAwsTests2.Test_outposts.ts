@@ -5,7 +5,7 @@ export namespace MyNS {
 	export interface CreateOutpostOutput {
 
 		/** Information about an Outpost. */
-		Outpost?: Outpost;
+		Outpost?: Outpost | null;
 	}
 
 
@@ -18,7 +18,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$
 		 */
-		OutpostId?: string;
+		OutpostId?: string | null;
 
 		/**
 		 * The AWS account ID of the Outpost owner.
@@ -26,7 +26,7 @@ export namespace MyNS {
 		 * Min length: 12
 		 * Pattern: \d{12}
 		 */
-		OwnerId?: string;
+		OwnerId?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Outpost.
@@ -34,7 +34,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$
 		 */
-		OutpostArn?: string;
+		OutpostArn?: string | null;
 
 		/**
 		 * The ID of the site.
@@ -42,7 +42,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: os-[a-f0-9]{17}
 		 */
-		SiteId?: string;
+		SiteId?: string | null;
 
 		/**
 		 * The name of the Outpost.
@@ -50,7 +50,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[\S ]+$
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/**
 		 * The Outpost description.
@@ -58,10 +58,10 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[\S ]+$
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/** The life cycle status. */
-		LifeCycleStatus?: string;
+		LifeCycleStatus?: string | null;
 
 		/**
 		 * <p>The Availability Zone.</p> <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
@@ -69,7 +69,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-z\d-]+
 		 */
-		AvailabilityZone?: string;
+		AvailabilityZone?: string | null;
 
 		/**
 		 * <p>The ID of the Availability Zone.</p> <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
@@ -77,7 +77,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-z]+[0-9]+-az[0-9]+
 		 */
-		AvailabilityZoneId?: string;
+		AvailabilityZoneId?: string | null;
 	}
 
 	export interface ValidationException {
@@ -104,13 +104,13 @@ export namespace MyNS {
 	export interface GetOutpostOutput {
 
 		/** Information about an Outpost. */
-		Outpost?: Outpost;
+		Outpost?: Outpost | null;
 	}
 
 	export interface GetOutpostInstanceTypesOutput {
 
 		/** Information about the instance types. */
-		InstanceTypes?: Array<InstanceTypeItem>;
+		InstanceTypes?: Array<InstanceTypeItem> | null;
 
 		/**
 		 * The pagination token.
@@ -118,7 +118,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: .*\S.*
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The ID of the Outpost.
@@ -126,7 +126,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$
 		 */
-		OutpostId?: string;
+		OutpostId?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Outpost.
@@ -134,7 +134,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$
 		 */
-		OutpostArn?: string;
+		OutpostArn?: string | null;
 	}
 
 
@@ -142,13 +142,13 @@ export namespace MyNS {
 	export interface InstanceTypeItem {
 
 		/** The instance type. */
-		InstanceType?: string;
+		InstanceType?: string | null;
 	}
 
 	export interface ListOutpostsOutput {
 
 		/** Information about the Outposts. */
-		Outposts?: Array<Outpost>;
+		Outposts?: Array<Outpost> | null;
 
 		/**
 		 * The pagination token.
@@ -156,13 +156,13 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: .*\S.*
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListSitesOutput {
 
 		/** Information about the sites. */
-		Sites?: Array<Site>;
+		Sites?: Array<Site> | null;
 
 		/**
 		 * The pagination token.
@@ -170,7 +170,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: .*\S.*
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -183,14 +183,14 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: os-[a-f0-9]{17}
 		 */
-		SiteId?: string;
+		SiteId?: string | null;
 
 		/**
 		 * The ID of the AWS account.
 		 * Max length: 12
 		 * Min length: 12
 		 */
-		AccountId?: string;
+		AccountId?: string | null;
 
 		/**
 		 * The name of the site.
@@ -198,7 +198,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[\S ]+$
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/**
 		 * The description of the site.
@@ -206,7 +206,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[\S ]+$
 		 */
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface CreateOutpostInput {
@@ -217,7 +217,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[\S ]+$
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/**
 		 * The Outpost description.
@@ -225,7 +225,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[\S ]+$
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * The ID of the site.
@@ -242,7 +242,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-z\d-]+
 		 */
-		AvailabilityZone?: string;
+		AvailabilityZone?: string | null;
 
 		/**
 		 * <p>The ID of the Availability Zone.</p> <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
@@ -250,7 +250,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-z]+[0-9]+-az[0-9]+
 		 */
-		AvailabilityZoneId?: string;
+		AvailabilityZoneId?: string | null;
 	}
 
 	export interface DeleteOutpostInput {
@@ -290,7 +290,7 @@ export namespace MyNS {
 		 * Get outposts
 		 * @return {ListOutpostsOutput} Success
 		 */
-		ListOutposts(NextToken: string, MaxResults: number): Observable<ListOutpostsOutput> {
+		ListOutposts(NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListOutpostsOutput> {
 			return this.http.get<ListOutpostsOutput>(this.baseUri + 'outposts?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 
@@ -326,7 +326,7 @@ export namespace MyNS {
 		 * Get outposts/{OutpostId}/instanceTypes
 		 * @return {GetOutpostInstanceTypesOutput} Success
 		 */
-		GetOutpostInstanceTypes(OutpostId: string, NextToken: string, MaxResults: number): Observable<GetOutpostInstanceTypesOutput> {
+		GetOutpostInstanceTypes(OutpostId: string, NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<GetOutpostInstanceTypesOutput> {
 			return this.http.get<GetOutpostInstanceTypesOutput>(this.baseUri + 'outposts/' + (OutpostId == null ? '' : encodeURIComponent(OutpostId)) + '/instanceTypes&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 
@@ -335,7 +335,7 @@ export namespace MyNS {
 		 * Get sites
 		 * @return {ListSitesOutput} Success
 		 */
-		ListSites(NextToken: string, MaxResults: number): Observable<ListSitesOutput> {
+		ListSites(NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListSitesOutput> {
 			return this.http.get<ListSitesOutput>(this.baseUri + 'sites?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 	}
@@ -348,7 +348,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[\S ]+$
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/**
 		 * The Outpost description.
@@ -356,7 +356,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[\S ]+$
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * The ID of the site.
@@ -373,7 +373,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-z\d-]+
 		 */
-		AvailabilityZone?: string;
+		AvailabilityZone?: string | null;
 
 		/**
 		 * <p>The ID of the Availability Zone.</p> <p>You must specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.</p>
@@ -381,7 +381,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-z]+[0-9]+-az[0-9]+
 		 */
-		AvailabilityZoneId?: string;
+		AvailabilityZoneId?: string | null;
 	}
 
 }

@@ -11,7 +11,7 @@ export namespace MyNS {
 	/** A key-value pair that identifies or specifies metadata about an ACM resource. */
 	export interface Tag {
 		Key: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -42,55 +42,55 @@ export namespace MyNS {
 	export interface DescribeCertificateResponse {
 
 		/** Contains metadata about an ACM certificate. This structure is returned in the response to a <a>DescribeCertificate</a> request. */
-		Certificate?: CertificateDetail;
+		Certificate?: CertificateDetail | null;
 	}
 
 
 	/** Contains metadata about an ACM certificate. This structure is returned in the response to a <a>DescribeCertificate</a> request.  */
 	export interface CertificateDetail {
-		CertificateArn?: string;
-		DomainName?: string;
-		SubjectAlternativeNames?: Array<string>;
-		DomainValidationOptions?: Array<DomainValidation>;
-		Serial?: string;
-		Subject?: string;
-		Issuer?: string;
-		CreatedAt?: Date;
-		IssuedAt?: Date;
-		ImportedAt?: Date;
-		Status?: CertificateDetailStatus;
-		RevokedAt?: Date;
-		RevocationReason?: CertificateDetailRevocationReason;
-		NotBefore?: Date;
-		NotAfter?: Date;
-		KeyAlgorithm?: CertificateDetailKeyAlgorithm;
-		SignatureAlgorithm?: string;
-		InUseBy?: Array<string>;
-		FailureReason?: CertificateDetailFailureReason;
-		Type?: CertificateDetailType;
+		CertificateArn?: string | null;
+		DomainName?: string | null;
+		SubjectAlternativeNames?: Array<string> | null;
+		DomainValidationOptions?: Array<DomainValidation> | null;
+		Serial?: string | null;
+		Subject?: string | null;
+		Issuer?: string | null;
+		CreatedAt?: Date | null;
+		IssuedAt?: Date | null;
+		ImportedAt?: Date | null;
+		Status?: CertificateDetailStatus | null;
+		RevokedAt?: Date | null;
+		RevocationReason?: CertificateDetailRevocationReason | null;
+		NotBefore?: Date | null;
+		NotAfter?: Date | null;
+		KeyAlgorithm?: CertificateDetailKeyAlgorithm | null;
+		SignatureAlgorithm?: string | null;
+		InUseBy?: Array<string> | null;
+		FailureReason?: CertificateDetailFailureReason | null;
+		Type?: CertificateDetailType | null;
 
 		/** Contains information about the status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate. This structure exists only when the certificate type is <code>AMAZON_ISSUED</code>. */
-		RenewalSummary?: RenewalSummary;
-		KeyUsages?: Array<KeyUsage>;
-		ExtendedKeyUsages?: Array<ExtendedKeyUsage>;
-		CertificateAuthorityArn?: string;
-		RenewalEligibility?: CertificateDetailRenewalEligibility;
+		RenewalSummary?: RenewalSummary | null;
+		KeyUsages?: Array<KeyUsage> | null;
+		ExtendedKeyUsages?: Array<ExtendedKeyUsage> | null;
+		CertificateAuthorityArn?: string | null;
+		RenewalEligibility?: CertificateDetailRenewalEligibility | null;
 
 		/** Structure that contains options for your certificate. Currently, you can use this only to specify whether to opt in to or out of certificate transparency logging. Some browsers require that public certificates issued for your domain be recorded in a log. Certificates that are not logged typically generate a browser error. Transparency makes it possible for you to detect SSL/TLS certificates that have been mistakenly or maliciously issued for your domain. For general information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>. */
-		Options?: CertificateOptions;
+		Options?: CertificateOptions | null;
 	}
 
 
 	/** Contains information about the validation of each domain name in the certificate. */
 	export interface DomainValidation {
 		DomainName: string;
-		ValidationEmails?: Array<string>;
-		ValidationDomain?: string;
-		ValidationStatus?: DomainValidationValidationStatus;
+		ValidationEmails?: Array<string> | null;
+		ValidationDomain?: string | null;
+		ValidationStatus?: DomainValidationValidationStatus | null;
 
 		/** Contains a DNS record value that you can use to can use to validate ownership or control of a domain. This is used by the <a>DescribeCertificate</a> action. */
-		ResourceRecord?: ResourceRecord;
-		ValidationMethod?: DomainValidationValidationMethod;
+		ResourceRecord?: ResourceRecord | null;
+		ValidationMethod?: DomainValidationValidationMethod | null;
 	}
 
 	export enum DomainValidationValidationStatus { PENDING_VALIDATION = 0, SUCCESS = 1, FAILED = 2 }
@@ -122,7 +122,7 @@ export namespace MyNS {
 	export interface RenewalSummary {
 		RenewalStatus: RenewalSummaryRenewalStatus;
 		DomainValidationOptions: Array<DomainValidation>;
-		RenewalStatusReason?: CertificateDetailFailureReason;
+		RenewalStatusReason?: CertificateDetailFailureReason | null;
 		UpdatedAt: Date;
 	}
 
@@ -131,7 +131,7 @@ export namespace MyNS {
 
 	/** The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate. */
 	export interface KeyUsage {
-		Name?: KeyUsageName;
+		Name?: KeyUsageName | null;
 	}
 
 	export enum KeyUsageName { DIGITAL_SIGNATURE = 0, NON_REPUDIATION = 1, KEY_ENCIPHERMENT = 2, DATA_ENCIPHERMENT = 3, KEY_AGREEMENT = 4, CERTIFICATE_SIGNING = 5, CRL_SIGNING = 6, ENCIPHER_ONLY = 7, DECIPHER_ONLY = 8, ANY = 9, CUSTOM = 10 }
@@ -139,8 +139,8 @@ export namespace MyNS {
 
 	/** The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key can be used. This is in addition to or in place of the basic purposes specified by the Key Usage extension.  */
 	export interface ExtendedKeyUsage {
-		Name?: ExtendedKeyUsageName;
-		OID?: string;
+		Name?: ExtendedKeyUsageName | null;
+		OID?: string | null;
 	}
 
 	export enum ExtendedKeyUsageName { TLS_WEB_SERVER_AUTHENTICATION = 0, TLS_WEB_CLIENT_AUTHENTICATION = 1, CODE_SIGNING = 2, EMAIL_PROTECTION = 3, TIME_STAMPING = 4, OCSP_SIGNING = 5, IPSEC_END_SYSTEM = 6, IPSEC_TUNNEL = 7, IPSEC_USER = 8, ANY = 9, NONE = 10, CUSTOM = 11 }
@@ -150,7 +150,7 @@ export namespace MyNS {
 
 	/** Structure that contains options for your certificate. Currently, you can use this only to specify whether to opt in to or out of certificate transparency logging. Some browsers require that public certificates issued for your domain be recorded in a log. Certificates that are not logged typically generate a browser error. Transparency makes it possible for you to detect SSL/TLS certificates that have been mistakenly or maliciously issued for your domain. For general information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.  */
 	export interface CertificateOptions {
-		CertificateTransparencyLoggingPreference?: CertificateOptionsCertificateTransparencyLoggingPreference;
+		CertificateTransparencyLoggingPreference?: CertificateOptionsCertificateTransparencyLoggingPreference | null;
 	}
 
 	export enum CertificateOptionsCertificateTransparencyLoggingPreference { ENABLED = 0, DISABLED = 1 }
@@ -160,9 +160,9 @@ export namespace MyNS {
 	}
 
 	export interface ExportCertificateResponse {
-		Certificate?: string;
-		CertificateChain?: string;
-		PrivateKey?: string;
+		Certificate?: string | null;
+		CertificateChain?: string | null;
+		PrivateKey?: string | null;
 	}
 
 	export interface ExportCertificateRequest {
@@ -174,8 +174,8 @@ export namespace MyNS {
 	}
 
 	export interface GetCertificateResponse {
-		Certificate?: string;
-		CertificateChain?: string;
+		Certificate?: string | null;
+		CertificateChain?: string | null;
 	}
 
 	export interface GetCertificateRequest {
@@ -183,39 +183,39 @@ export namespace MyNS {
 	}
 
 	export interface ImportCertificateResponse {
-		CertificateArn?: string;
+		CertificateArn?: string | null;
 	}
 
 	export interface ImportCertificateRequest {
-		CertificateArn?: string;
+		CertificateArn?: string | null;
 		Certificate: string;
 		PrivateKey: string;
-		CertificateChain?: string;
-		Tags?: Array<Tag>;
+		CertificateChain?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface LimitExceededException {
 	}
 
 	export interface ListCertificatesResponse {
-		NextToken?: string;
-		CertificateSummaryList?: Array<CertificateSummary>;
+		NextToken?: string | null;
+		CertificateSummaryList?: Array<CertificateSummary> | null;
 	}
 
 
 	/** This structure is returned in the response object of <a>ListCertificates</a> action.  */
 	export interface CertificateSummary {
-		CertificateArn?: string;
-		DomainName?: string;
+		CertificateArn?: string | null;
+		DomainName?: string | null;
 	}
 
 	export interface ListCertificatesRequest {
-		CertificateStatuses?: Array<CertificateStatus>;
+		CertificateStatuses?: Array<CertificateStatus> | null;
 
 		/** This structure can be used in the <a>ListCertificates</a> action to filter the output of the certificate list. */
-		Includes?: Filters;
-		NextToken?: string;
-		MaxItems?: number;
+		Includes?: Filters | null;
+		NextToken?: string | null;
+		MaxItems?: number | null;
 	}
 
 	export enum CertificateStatus { PENDING_VALIDATION = 0, ISSUED = 1, INACTIVE = 2, EXPIRED = 3, VALIDATION_TIMED_OUT = 4, REVOKED = 5, FAILED = 6 }
@@ -223,9 +223,9 @@ export namespace MyNS {
 
 	/** This structure can be used in the <a>ListCertificates</a> action to filter the output of the certificate list.  */
 	export interface Filters {
-		extendedKeyUsage?: Array<ExtendedKeyUsageName>;
-		keyUsage?: Array<KeyUsageName>;
-		keyTypes?: Array<KeyAlgorithm>;
+		extendedKeyUsage?: Array<ExtendedKeyUsageName> | null;
+		keyUsage?: Array<KeyUsageName> | null;
+		keyTypes?: Array<KeyAlgorithm> | null;
 	}
 
 	export enum KeyAlgorithm { RSA_2048 = 0, RSA_1024 = 1, RSA_4096 = 2, EC_prime256v1 = 3, EC_secp384r1 = 4, EC_secp521r1 = 5 }
@@ -234,7 +234,7 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForCertificateResponse {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForCertificateRequest {
@@ -251,20 +251,20 @@ export namespace MyNS {
 	}
 
 	export interface RequestCertificateResponse {
-		CertificateArn?: string;
+		CertificateArn?: string | null;
 	}
 
 	export interface RequestCertificateRequest {
 		DomainName: string;
-		ValidationMethod?: DomainValidationValidationMethod;
-		SubjectAlternativeNames?: Array<string>;
-		IdempotencyToken?: string;
-		DomainValidationOptions?: Array<DomainValidationOption>;
+		ValidationMethod?: DomainValidationValidationMethod | null;
+		SubjectAlternativeNames?: Array<string> | null;
+		IdempotencyToken?: string | null;
+		DomainValidationOptions?: Array<DomainValidationOption> | null;
 
 		/** Structure that contains options for your certificate. Currently, you can use this only to specify whether to opt in to or out of certificate transparency logging. Some browsers require that public certificates issued for your domain be recorded in a log. Certificates that are not logged typically generate a browser error. Transparency makes it possible for you to detect SSL/TLS certificates that have been mistakenly or maliciously issued for your domain. For general information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>. */
-		Options?: CertificateOptions;
-		CertificateAuthorityArn?: string;
-		Tags?: Array<Tag>;
+		Options?: CertificateOptions | null;
+		CertificateAuthorityArn?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -380,7 +380,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCertificatesResponse} Success
 		 */
-		ListCertificates(MaxItems: string, NextToken: string, requestBody: ListCertificatesRequest): Observable<ListCertificatesResponse> {
+		ListCertificates(MaxItems: string | null | undefined, NextToken: string | null | undefined, requestBody: ListCertificatesRequest): Observable<ListCertificatesResponse> {
 			return this.http.post<ListCertificatesResponse>(this.baseUri + '#X-Amz-Target=CertificateManager.ListCertificates?MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

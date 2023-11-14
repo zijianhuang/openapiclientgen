@@ -5,11 +5,11 @@ export namespace MyNS {
 	export interface CompareFacesResponse {
 
 		/** Type that describes the face Amazon Rekognition chose to compare with the faces in the target. This contains a bounding box for the selected face and confidence level that the bounding box contains a face. Note that Amazon Rekognition selects the largest face in the source image for this comparison. */
-		SourceImageFace?: ComparedSourceImageFace;
-		FaceMatches?: Array<CompareFacesMatch>;
-		UnmatchedFaces?: Array<ComparedFace>;
-		SourceImageOrientationCorrection?: CompareFacesResponseSourceImageOrientationCorrection;
-		TargetImageOrientationCorrection?: CompareFacesResponseSourceImageOrientationCorrection;
+		SourceImageFace?: ComparedSourceImageFace | null;
+		FaceMatches?: Array<CompareFacesMatch> | null;
+		UnmatchedFaces?: Array<ComparedFace> | null;
+		SourceImageOrientationCorrection?: CompareFacesResponseSourceImageOrientationCorrection | null;
+		TargetImageOrientationCorrection?: CompareFacesResponseSourceImageOrientationCorrection | null;
 	}
 
 
@@ -17,26 +17,26 @@ export namespace MyNS {
 	export interface ComparedSourceImageFace {
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		BoundingBox?: BoundingBox;
-		Confidence?: number;
+		BoundingBox?: BoundingBox | null;
+		Confidence?: number | null;
 	}
 
 
 	/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
 	export interface BoundingBox {
-		Width?: number;
-		Height?: number;
-		Left?: number;
-		Top?: number;
+		Width?: number | null;
+		Height?: number | null;
+		Left?: number | null;
+		Top?: number | null;
 	}
 
 
 	/** Provides information about a face in a target image that matches the source image face analyzed by <code>CompareFaces</code>. The <code>Face</code> property contains the bounding box of the face in the target image. The <code>Similarity</code> property is the confidence that the source image face matches the face in the bounding box. */
 	export interface CompareFacesMatch {
-		Similarity?: number;
+		Similarity?: number | null;
 
 		/** Provides face metadata for target image faces that are analyzed by <code>CompareFaces</code> and <code>RecognizeCelebrities</code>. */
-		Face?: ComparedFace;
+		Face?: ComparedFace | null;
 	}
 
 
@@ -44,23 +44,23 @@ export namespace MyNS {
 	export interface ComparedFace {
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		BoundingBox?: BoundingBox;
-		Confidence?: number;
-		Landmarks?: Array<Landmark>;
+		BoundingBox?: BoundingBox | null;
+		Confidence?: number | null;
+		Landmarks?: Array<Landmark> | null;
 
 		/** Indicates the pose of the face as determined by its pitch, roll, and yaw. */
-		Pose?: Pose;
+		Pose?: Pose | null;
 
 		/** Identifies face image brightness and sharpness. */
-		Quality?: ImageQuality;
+		Quality?: ImageQuality | null;
 	}
 
 
 	/** Indicates the location of the landmark on the face. */
 	export interface Landmark {
-		Type?: LandmarkType;
-		X?: number;
-		Y?: number;
+		Type?: LandmarkType | null;
+		X?: number | null;
+		Y?: number | null;
 	}
 
 	export enum LandmarkType { eyeLeft = 0, eyeRight = 1, nose = 2, mouthLeft = 3, mouthRight = 4, leftEyeBrowLeft = 5, leftEyeBrowRight = 6, leftEyeBrowUp = 7, rightEyeBrowLeft = 8, rightEyeBrowRight = 9, rightEyeBrowUp = 10, leftEyeLeft = 11, leftEyeRight = 12, leftEyeUp = 13, leftEyeDown = 14, rightEyeLeft = 15, rightEyeRight = 16, rightEyeUp = 17, rightEyeDown = 18, noseLeft = 19, noseRight = 20, mouthUp = 21, mouthDown = 22, leftPupil = 23, rightPupil = 24, upperJawlineLeft = 25, midJawlineLeft = 26, chinBottom = 27, midJawlineRight = 28, upperJawlineRight = 29 }
@@ -68,16 +68,16 @@ export namespace MyNS {
 
 	/** Indicates the pose of the face as determined by its pitch, roll, and yaw. */
 	export interface Pose {
-		Roll?: number;
-		Yaw?: number;
-		Pitch?: number;
+		Roll?: number | null;
+		Yaw?: number | null;
+		Pitch?: number | null;
 	}
 
 
 	/** Identifies face image brightness and sharpness.  */
 	export interface ImageQuality {
-		Brightness?: number;
-		Sharpness?: number;
+		Brightness?: number | null;
+		Sharpness?: number | null;
 	}
 
 	export enum CompareFacesResponseSourceImageOrientationCorrection { ROTATE_0 = 0, ROTATE_90 = 1, ROTATE_180 = 2, ROTATE_270 = 3 }
@@ -95,25 +95,25 @@ export namespace MyNS {
 		 * Required
 		 */
 		TargetImage: Image;
-		SimilarityThreshold?: number;
-		QualityFilter?: CompareFacesRequestQualityFilter;
+		SimilarityThreshold?: number | null;
+		QualityFilter?: CompareFacesRequestQualityFilter | null;
 	}
 
 
 	/** <p>Provides the input image either as bytes or an S3 object.</p> <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p> <p>For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.</p> <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide. </p> */
 	export interface Image {
-		Bytes?: string;
+		Bytes?: string | null;
 
 		/** <p>Provides the S3 bucket name and object name.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide. </p> */
-		S3Object?: S3Object;
+		S3Object?: S3Object | null;
 	}
 
 
 	/** <p>Provides the S3 bucket name and object name.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide. </p> */
 	export interface S3Object {
-		Bucket?: string;
-		Name?: string;
-		Version?: string;
+		Bucket?: string | null;
+		Name?: string | null;
+		Version?: string | null;
 	}
 
 	export enum CompareFacesRequestQualityFilter { NONE = 0, AUTO = 1, LOW = 2, MEDIUM = 3, HIGH = 4 }
@@ -143,9 +143,9 @@ export namespace MyNS {
 	}
 
 	export interface CreateCollectionResponse {
-		StatusCode?: number;
-		CollectionArn?: string;
-		FaceModelVersion?: string;
+		StatusCode?: number | null;
+		CollectionArn?: string | null;
+		FaceModelVersion?: string | null;
 	}
 
 	export interface CreateCollectionRequest {
@@ -156,7 +156,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateProjectResponse {
-		ProjectArn?: string;
+		ProjectArn?: string | null;
 	}
 
 	export interface CreateProjectRequest {
@@ -170,7 +170,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateProjectVersionResponse {
-		ProjectVersionArn?: string;
+		ProjectVersionArn?: string | null;
 	}
 
 	export interface CreateProjectVersionRequest {
@@ -199,14 +199,14 @@ export namespace MyNS {
 
 	/** The S3 bucket and folder location where training output is placed. */
 	export interface OutputConfig {
-		S3Bucket?: string;
-		S3KeyPrefix?: string;
+		S3Bucket?: string | null;
+		S3KeyPrefix?: string | null;
 	}
 
 
 	/** The dataset used for training. */
 	export interface TrainingData {
-		Assets?: Array<Asset>;
+		Assets?: Array<Asset> | null;
 	}
 
 
@@ -214,7 +214,7 @@ export namespace MyNS {
 	export interface Asset {
 
 		/** The S3 bucket that contains the Ground Truth manifest file. */
-		GroundTruthManifest?: GroundTruthManifest;
+		GroundTruthManifest?: GroundTruthManifest | null;
 	}
 
 
@@ -222,21 +222,21 @@ export namespace MyNS {
 	export interface GroundTruthManifest {
 
 		/** <p>Provides the S3 bucket name and object name.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide. </p> */
-		S3Object?: S3Object;
+		S3Object?: S3Object | null;
 	}
 
 
 	/** The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels creates a testing dataset using an 80/20 split of the training dataset. */
 	export interface TestingData {
-		Assets?: Array<Asset>;
-		AutoCreate?: boolean;
+		Assets?: Array<Asset> | null;
+		AutoCreate?: boolean | null;
 	}
 
 	export interface ResourceNotFoundException {
 	}
 
 	export interface CreateStreamProcessorResponse {
-		StreamProcessorArn?: string;
+		StreamProcessorArn?: string | null;
 	}
 
 	export interface CreateStreamProcessorRequest {
@@ -267,13 +267,13 @@ export namespace MyNS {
 	export interface StreamProcessorInput {
 
 		/** Kinesis video stream stream that provides the source streaming video for a Amazon Rekognition Video stream processor. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide. */
-		KinesisVideoStream?: KinesisVideoStream;
+		KinesisVideoStream?: KinesisVideoStream | null;
 	}
 
 
 	/** Kinesis video stream stream that provides the source streaming video for a Amazon Rekognition Video stream processor. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide. */
 	export interface KinesisVideoStream {
-		Arn?: string;
+		Arn?: string | null;
 	}
 
 
@@ -281,13 +281,13 @@ export namespace MyNS {
 	export interface StreamProcessorOutput {
 
 		/** The Kinesis data stream Amazon Rekognition to which the analysis results of a Amazon Rekognition stream processor are streamed. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide. */
-		KinesisDataStream?: KinesisDataStream;
+		KinesisDataStream?: KinesisDataStream | null;
 	}
 
 
 	/** The Kinesis data stream Amazon Rekognition to which the analysis results of a Amazon Rekognition stream processor are streamed. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide. */
 	export interface KinesisDataStream {
-		Arn?: string;
+		Arn?: string | null;
 	}
 
 
@@ -295,18 +295,18 @@ export namespace MyNS {
 	export interface StreamProcessorSettings {
 
 		/** Input face recognition parameters for an Amazon Rekognition stream processor. <code>FaceRecognitionSettings</code> is a request parameter for <a>CreateStreamProcessor</a>. */
-		FaceSearch?: FaceSearchSettings;
+		FaceSearch?: FaceSearchSettings | null;
 	}
 
 
 	/** Input face recognition parameters for an Amazon Rekognition stream processor. <code>FaceRecognitionSettings</code> is a request parameter for <a>CreateStreamProcessor</a>. */
 	export interface FaceSearchSettings {
-		CollectionId?: string;
-		FaceMatchThreshold?: number;
+		CollectionId?: string | null;
+		FaceMatchThreshold?: number | null;
 	}
 
 	export interface DeleteCollectionResponse {
-		StatusCode?: number;
+		StatusCode?: number | null;
 	}
 
 	export interface DeleteCollectionRequest {
@@ -314,7 +314,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteFacesResponse {
-		DeletedFaces?: Array<string>;
+		DeletedFaces?: Array<string> | null;
 	}
 
 	export interface DeleteFacesRequest {
@@ -323,7 +323,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteProjectResponse {
-		Status?: DeleteProjectResponseStatus;
+		Status?: DeleteProjectResponseStatus | null;
 	}
 
 	export enum DeleteProjectResponseStatus { CREATING = 0, CREATED = 1, DELETING = 2 }
@@ -333,7 +333,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteProjectVersionResponse {
-		Status?: DeleteProjectVersionResponseStatus;
+		Status?: DeleteProjectVersionResponseStatus | null;
 	}
 
 	export enum DeleteProjectVersionResponseStatus { TRAINING_IN_PROGRESS = 0, TRAINING_COMPLETED = 1, TRAINING_FAILED = 2, STARTING = 3, RUNNING = 4, FAILED = 5, STOPPING = 6, STOPPED = 7, DELETING = 8 }
@@ -350,10 +350,10 @@ export namespace MyNS {
 	}
 
 	export interface DescribeCollectionResponse {
-		FaceCount?: number;
-		FaceModelVersion?: string;
-		CollectionARN?: string;
-		CreationTimestamp?: Date;
+		FaceCount?: number | null;
+		FaceModelVersion?: string | null;
+		CollectionARN?: string | null;
+		CreationTimestamp?: Date | null;
 	}
 
 	export interface DescribeCollectionRequest {
@@ -361,32 +361,32 @@ export namespace MyNS {
 	}
 
 	export interface DescribeProjectVersionsResponse {
-		ProjectVersionDescriptions?: Array<ProjectVersionDescription>;
-		NextToken?: string;
+		ProjectVersionDescriptions?: Array<ProjectVersionDescription> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The description of a version of a model. */
 	export interface ProjectVersionDescription {
-		ProjectVersionArn?: string;
-		CreationTimestamp?: Date;
-		MinInferenceUnits?: number;
-		Status?: DeleteProjectVersionResponseStatus;
-		StatusMessage?: string;
-		BillableTrainingTimeInSeconds?: number;
-		TrainingEndTimestamp?: Date;
+		ProjectVersionArn?: string | null;
+		CreationTimestamp?: Date | null;
+		MinInferenceUnits?: number | null;
+		Status?: DeleteProjectVersionResponseStatus | null;
+		StatusMessage?: string | null;
+		BillableTrainingTimeInSeconds?: number | null;
+		TrainingEndTimestamp?: Date | null;
 
 		/** The S3 bucket and folder location where training output is placed. */
-		OutputConfig?: OutputConfig;
+		OutputConfig?: OutputConfig | null;
 
 		/** A Sagemaker Groundtruth format manifest file that represents the dataset used for training. */
-		TrainingDataResult?: TrainingDataResult;
+		TrainingDataResult?: TrainingDataResult | null;
 
 		/** A Sagemaker Groundtruth format manifest file representing the dataset used for testing. */
-		TestingDataResult?: TestingDataResult;
+		TestingDataResult?: TestingDataResult | null;
 
 		/** The evaluation results for the training of a model. */
-		EvaluationResult?: EvaluationResult;
+		EvaluationResult?: EvaluationResult | null;
 	}
 
 
@@ -394,10 +394,10 @@ export namespace MyNS {
 	export interface TrainingDataResult {
 
 		/** The dataset used for training. */
-		Input?: TrainingData;
+		Input?: TrainingData | null;
 
 		/** The dataset used for training. */
-		Output?: TrainingData;
+		Output?: TrainingData | null;
 	}
 
 
@@ -405,19 +405,19 @@ export namespace MyNS {
 	export interface TestingDataResult {
 
 		/** The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels creates a testing dataset using an 80/20 split of the training dataset. */
-		Input?: TestingData;
+		Input?: TestingData | null;
 
 		/** The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels creates a testing dataset using an 80/20 split of the training dataset. */
-		Output?: TestingData;
+		Output?: TestingData | null;
 	}
 
 
 	/** The evaluation results for the training of a model. */
 	export interface EvaluationResult {
-		F1Score?: number;
+		F1Score?: number | null;
 
 		/** <p>The S3 bucket that contains the training summary. The training summary includes aggregated evaluation metrics for the entire testing dataset and metrics for each individual label. </p> <p>You get the training summary S3 bucket location by calling <a>DescribeProjectVersions</a>. </p> */
-		Summary?: Summary;
+		Summary?: Summary | null;
 	}
 
 
@@ -425,54 +425,54 @@ export namespace MyNS {
 	export interface Summary {
 
 		/** <p>Provides the S3 bucket name and object name.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide. </p> */
-		S3Object?: S3Object;
+		S3Object?: S3Object | null;
 	}
 
 	export interface DescribeProjectVersionsRequest {
 		ProjectArn: string;
-		VersionNames?: Array<string>;
-		NextToken?: string;
-		MaxResults?: number;
+		VersionNames?: Array<string> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface InvalidPaginationTokenException {
 	}
 
 	export interface DescribeProjectsResponse {
-		ProjectDescriptions?: Array<ProjectDescription>;
-		NextToken?: string;
+		ProjectDescriptions?: Array<ProjectDescription> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A description of a Amazon Rekognition Custom Labels project. */
 	export interface ProjectDescription {
-		ProjectArn?: string;
-		CreationTimestamp?: Date;
-		Status?: DeleteProjectResponseStatus;
+		ProjectArn?: string | null;
+		CreationTimestamp?: Date | null;
+		Status?: DeleteProjectResponseStatus | null;
 	}
 
 	export interface DescribeProjectsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface DescribeStreamProcessorResponse {
-		Name?: string;
-		StreamProcessorArn?: string;
-		Status?: DescribeStreamProcessorResponseStatus;
-		StatusMessage?: string;
-		CreationTimestamp?: Date;
-		LastUpdateTimestamp?: Date;
+		Name?: string | null;
+		StreamProcessorArn?: string | null;
+		Status?: DescribeStreamProcessorResponseStatus | null;
+		StatusMessage?: string | null;
+		CreationTimestamp?: Date | null;
+		LastUpdateTimestamp?: Date | null;
 
 		/** Information about the source streaming video. */
-		Input?: StreamProcessorInput;
+		Input?: StreamProcessorInput | null;
 
 		/** Information about the Amazon Kinesis Data Streams stream to which a Amazon Rekognition Video stream processor streams the results of a video analysis. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide. */
-		Output?: StreamProcessorOutput;
-		RoleArn?: string;
+		Output?: StreamProcessorOutput | null;
+		RoleArn?: string | null;
 
 		/** Input parameters used to recognize faces in a streaming video analyzed by a Amazon Rekognition stream processor. */
-		Settings?: StreamProcessorSettings;
+		Settings?: StreamProcessorSettings | null;
 	}
 
 	export enum DescribeStreamProcessorResponseStatus { STOPPED = 0, STARTING = 1, RUNNING = 2, FAILED = 3, STOPPING = 4 }
@@ -482,17 +482,17 @@ export namespace MyNS {
 	}
 
 	export interface DetectCustomLabelsResponse {
-		CustomLabels?: Array<CustomLabel>;
+		CustomLabels?: Array<CustomLabel> | null;
 	}
 
 
 	/** A custom label detected in an image by a call to <a>DetectCustomLabels</a>. */
 	export interface CustomLabel {
-		Name?: string;
-		Confidence?: number;
+		Name?: string | null;
+		Confidence?: number | null;
 
 		/** Information about where an object (<a>DetectCustomLabels</a>) or text (<a>DetectText</a>) is located on an image. */
-		Geometry?: Geometry;
+		Geometry?: Geometry | null;
 	}
 
 
@@ -500,15 +500,15 @@ export namespace MyNS {
 	export interface Geometry {
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		BoundingBox?: BoundingBox;
-		Polygon?: Array<Point>;
+		BoundingBox?: BoundingBox | null;
+		Polygon?: Array<Point> | null;
 	}
 
 
 	/** <p>The X and Y coordinates of a point on an image. The X and Y values returned are ratios of the overall image size. For example, if the input image is 700x200 and the operation returns X=0.5 and Y=0.25, then the point is at the (350,50) pixel coordinate on the image.</p> <p>An array of <code>Point</code> objects, <code>Polygon</code>, is returned by <a>DetectText</a> and by <a>DetectCustomLabels</a>. <code>Polygon</code> represents a fine-grained polygon around a detected item. For more information, see Geometry in the Amazon Rekognition Developer Guide. </p> */
 	export interface Point {
-		X?: number;
-		Y?: number;
+		X?: number | null;
+		Y?: number | null;
 	}
 
 	export interface DetectCustomLabelsRequest {
@@ -519,16 +519,16 @@ export namespace MyNS {
 		 * Required
 		 */
 		Image: Image;
-		MaxResults?: number;
-		MinConfidence?: number;
+		MaxResults?: number | null;
+		MinConfidence?: number | null;
 	}
 
 	export interface ResourceNotReadyException {
 	}
 
 	export interface DetectFacesResponse {
-		FaceDetails?: Array<FaceDetail>;
-		OrientationCorrection?: CompareFacesResponseSourceImageOrientationCorrection;
+		FaceDetails?: Array<FaceDetail> | null;
+		OrientationCorrection?: CompareFacesResponseSourceImageOrientationCorrection | null;
 	}
 
 
@@ -536,78 +536,78 @@ export namespace MyNS {
 	export interface FaceDetail {
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		BoundingBox?: BoundingBox;
+		BoundingBox?: BoundingBox | null;
 
 		/** <p>Structure containing the estimated age range, in years, for a face.</p> <p>Amazon Rekognition estimates an age range for faces detected in the input image. Estimated age ranges can overlap. A face of a 5-year-old might have an estimated range of 4-6, while the face of a 6-year-old might have an estimated range of 4-8.</p> */
-		AgeRange?: AgeRange;
+		AgeRange?: AgeRange | null;
 
 		/** Indicates whether or not the face is smiling, and the confidence level in the determination. */
-		Smile?: Smile;
+		Smile?: Smile | null;
 
 		/** Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination. */
-		Eyeglasses?: Eyeglasses;
+		Eyeglasses?: Eyeglasses | null;
 
 		/** Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination. */
-		Sunglasses?: Sunglasses;
+		Sunglasses?: Sunglasses | null;
 
 		/** <p>The predicted gender of a detected face. </p> <p>Amazon Rekognition makes gender binary (male/female) predictions based on the physical appearance of a face in a particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't use Amazon Rekognition to make such a determination. For example, a male actor wearing a long-haired wig and earrings for a role might be predicted as female.</p> <p>Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform. </p> <p>We don't recommend using gender binary predictions to make decisions that impact&#x2028; an individual's rights, privacy, or access to services.</p> */
-		Gender?: Gender;
+		Gender?: Gender | null;
 
 		/** Indicates whether or not the face has a beard, and the confidence level in the determination. */
-		Beard?: Beard;
+		Beard?: Beard | null;
 
 		/** Indicates whether or not the face has a mustache, and the confidence level in the determination. */
-		Mustache?: Mustache;
+		Mustache?: Mustache | null;
 
 		/** Indicates whether or not the eyes on the face are open, and the confidence level in the determination. */
-		EyesOpen?: EyeOpen;
+		EyesOpen?: EyeOpen | null;
 
 		/** Indicates whether or not the mouth on the face is open, and the confidence level in the determination. */
-		MouthOpen?: MouthOpen;
-		Emotions?: Array<Emotion>;
-		Landmarks?: Array<Landmark>;
+		MouthOpen?: MouthOpen | null;
+		Emotions?: Array<Emotion> | null;
+		Landmarks?: Array<Landmark> | null;
 
 		/** Indicates the pose of the face as determined by its pitch, roll, and yaw. */
-		Pose?: Pose;
+		Pose?: Pose | null;
 
 		/** Identifies face image brightness and sharpness. */
-		Quality?: ImageQuality;
-		Confidence?: number;
+		Quality?: ImageQuality | null;
+		Confidence?: number | null;
 	}
 
 
 	/** <p>Structure containing the estimated age range, in years, for a face.</p> <p>Amazon Rekognition estimates an age range for faces detected in the input image. Estimated age ranges can overlap. A face of a 5-year-old might have an estimated range of 4-6, while the face of a 6-year-old might have an estimated range of 4-8.</p> */
 	export interface AgeRange {
-		Low?: number;
-		High?: number;
+		Low?: number | null;
+		High?: number | null;
 	}
 
 
 	/** Indicates whether or not the face is smiling, and the confidence level in the determination. */
 	export interface Smile {
-		Value?: boolean;
-		Confidence?: number;
+		Value?: boolean | null;
+		Confidence?: number | null;
 	}
 
 
 	/** Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination. */
 	export interface Eyeglasses {
-		Value?: boolean;
-		Confidence?: number;
+		Value?: boolean | null;
+		Confidence?: number | null;
 	}
 
 
 	/** Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination. */
 	export interface Sunglasses {
-		Value?: boolean;
-		Confidence?: number;
+		Value?: boolean | null;
+		Confidence?: number | null;
 	}
 
 
 	/** <p>The predicted gender of a detected face. </p> <p>Amazon Rekognition makes gender binary (male/female) predictions based on the physical appearance of a face in a particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't use Amazon Rekognition to make such a determination. For example, a male actor wearing a long-haired wig and earrings for a role might be predicted as female.</p> <p>Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform. </p> <p>We don't recommend using gender binary predictions to make decisions that impact&#x2028; an individual's rights, privacy, or access to services.</p> */
 	export interface Gender {
-		Value?: GenderValue;
-		Confidence?: number;
+		Value?: GenderValue | null;
+		Confidence?: number | null;
 	}
 
 	export enum GenderValue { Male = 0, Female = 1 }
@@ -615,36 +615,36 @@ export namespace MyNS {
 
 	/** Indicates whether or not the face has a beard, and the confidence level in the determination. */
 	export interface Beard {
-		Value?: boolean;
-		Confidence?: number;
+		Value?: boolean | null;
+		Confidence?: number | null;
 	}
 
 
 	/** Indicates whether or not the face has a mustache, and the confidence level in the determination. */
 	export interface Mustache {
-		Value?: boolean;
-		Confidence?: number;
+		Value?: boolean | null;
+		Confidence?: number | null;
 	}
 
 
 	/** Indicates whether or not the eyes on the face are open, and the confidence level in the determination. */
 	export interface EyeOpen {
-		Value?: boolean;
-		Confidence?: number;
+		Value?: boolean | null;
+		Confidence?: number | null;
 	}
 
 
 	/** Indicates whether or not the mouth on the face is open, and the confidence level in the determination. */
 	export interface MouthOpen {
-		Value?: boolean;
-		Confidence?: number;
+		Value?: boolean | null;
+		Confidence?: number | null;
 	}
 
 
 	/** The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally. */
 	export interface Emotion {
-		Type?: EmotionType;
-		Confidence?: number;
+		Type?: EmotionType | null;
+		Confidence?: number | null;
 	}
 
 	export enum EmotionType { HAPPY = 0, SAD = 1, ANGRY = 2, CONFUSED = 3, DISGUSTED = 4, SURPRISED = 5, CALM = 6, UNKNOWN = 7, FEAR = 8 }
@@ -656,24 +656,24 @@ export namespace MyNS {
 		 * Required
 		 */
 		Image: Image;
-		Attributes?: Array<Attribute>;
+		Attributes?: Array<Attribute> | null;
 	}
 
 	export enum Attribute { DEFAULT = 0, ALL = 1 }
 
 	export interface DetectLabelsResponse {
-		Labels?: Array<Label>;
-		OrientationCorrection?: CompareFacesResponseSourceImageOrientationCorrection;
-		LabelModelVersion?: string;
+		Labels?: Array<Label> | null;
+		OrientationCorrection?: CompareFacesResponseSourceImageOrientationCorrection | null;
+		LabelModelVersion?: string | null;
 	}
 
 
 	/** <p>Structure containing details about the detected label, including the name, detected instances, parent labels, and level of confidence.</p> <p> </p> */
 	export interface Label {
-		Name?: string;
-		Confidence?: number;
-		Instances?: Array<Instance>;
-		Parents?: Array<Parent>;
+		Name?: string | null;
+		Confidence?: number | null;
+		Instances?: Array<Instance> | null;
+		Parents?: Array<Parent> | null;
 	}
 
 
@@ -681,14 +681,14 @@ export namespace MyNS {
 	export interface Instance {
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		BoundingBox?: BoundingBox;
-		Confidence?: number;
+		BoundingBox?: BoundingBox | null;
+		Confidence?: number | null;
 	}
 
 
 	/** A parent label for a label. A label can have 0, 1, or more parents.  */
 	export interface Parent {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface DetectLabelsRequest {
@@ -698,32 +698,32 @@ export namespace MyNS {
 		 * Required
 		 */
 		Image: Image;
-		MaxLabels?: number;
-		MinConfidence?: number;
+		MaxLabels?: number | null;
+		MinConfidence?: number | null;
 	}
 
 	export interface DetectModerationLabelsResponse {
-		ModerationLabels?: Array<ModerationLabel>;
-		ModerationModelVersion?: string;
+		ModerationLabels?: Array<ModerationLabel> | null;
+		ModerationModelVersion?: string | null;
 
 		/** Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review. */
-		HumanLoopActivationOutput?: HumanLoopActivationOutput;
+		HumanLoopActivationOutput?: HumanLoopActivationOutput | null;
 	}
 
 
 	/** Provides information about a single type of unsafe content found in an image or video. Each type of moderated content has a label within a hierarchical taxonomy. For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide. */
 	export interface ModerationLabel {
-		Confidence?: number;
-		Name?: string;
-		ParentName?: string;
+		Confidence?: number | null;
+		Name?: string | null;
+		ParentName?: string | null;
 	}
 
 
 	/** Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review. */
 	export interface HumanLoopActivationOutput {
-		HumanLoopArn?: string;
-		HumanLoopActivationReasons?: Array<string>;
-		HumanLoopActivationConditionsEvaluationResults?: string;
+		HumanLoopArn?: string | null;
+		HumanLoopActivationReasons?: Array<string> | null;
+		HumanLoopActivationConditionsEvaluationResults?: string | null;
 	}
 
 	export interface DetectModerationLabelsRequest {
@@ -733,10 +733,10 @@ export namespace MyNS {
 		 * Required
 		 */
 		Image: Image;
-		MinConfidence?: number;
+		MinConfidence?: number | null;
 
 		/** Sets up the flow definition the image will be sent to if one of the conditions is met. You can also set certain attributes of the image before review. */
-		HumanLoopConfig?: HumanLoopConfig;
+		HumanLoopConfig?: HumanLoopConfig | null;
 	}
 
 
@@ -746,13 +746,13 @@ export namespace MyNS {
 		FlowDefinitionArn: string;
 
 		/** Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information. */
-		DataAttributes?: HumanLoopDataAttributes;
+		DataAttributes?: HumanLoopDataAttributes | null;
 	}
 
 
 	/** Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information. */
 	export interface HumanLoopDataAttributes {
-		ContentClassifiers?: Array<ContentClassifier>;
+		ContentClassifiers?: Array<ContentClassifier> | null;
 	}
 
 	export enum ContentClassifier { FreeOfPersonallyIdentifiableInformation = 0, FreeOfAdultContent = 1 }
@@ -761,21 +761,21 @@ export namespace MyNS {
 	}
 
 	export interface DetectTextResponse {
-		TextDetections?: Array<TextDetection>;
-		TextModelVersion?: string;
+		TextDetections?: Array<TextDetection> | null;
+		TextModelVersion?: string | null;
 	}
 
 
 	/** <p>Information about a word or line of text detected by <a>DetectText</a>.</p> <p>The <code>DetectedText</code> field contains the text that Amazon Rekognition detected in the image. </p> <p>Every word and line has an identifier (<code>Id</code>). Each word belongs to a line and has a parent identifier (<code>ParentId</code>) that identifies the line of text in which the word appears. The word <code>Id</code> is also an index for the word within a line of words. </p> <p>For more information, see Detecting Text in the Amazon Rekognition Developer Guide.</p> */
 	export interface TextDetection {
-		DetectedText?: string;
-		Type?: TextDetectionType;
-		Id?: number;
-		ParentId?: number;
-		Confidence?: number;
+		DetectedText?: string | null;
+		Type?: TextDetectionType | null;
+		Id?: number | null;
+		ParentId?: number | null;
+		Confidence?: number | null;
 
 		/** Information about where an object (<a>DetectCustomLabels</a>) or text (<a>DetectText</a>) is located on an image. */
-		Geometry?: Geometry;
+		Geometry?: Geometry | null;
 	}
 
 	export enum TextDetectionType { LINE = 0, WORD = 1 }
@@ -789,7 +789,7 @@ export namespace MyNS {
 		Image: Image;
 
 		/** A set of optional parameters that you can use to set the criteria that the text must meet to be included in your response. <code>WordFilter</code> looks at a word’s height, width, and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the image to look for text in. */
-		Filters?: DetectTextFilters;
+		Filters?: DetectTextFilters | null;
 	}
 
 
@@ -797,16 +797,16 @@ export namespace MyNS {
 	export interface DetectTextFilters {
 
 		/** A set of parameters that allow you to filter out certain results from your returned results. */
-		WordFilter?: DetectionFilter;
-		RegionsOfInterest?: Array<RegionOfInterest>;
+		WordFilter?: DetectionFilter | null;
+		RegionsOfInterest?: Array<RegionOfInterest> | null;
 	}
 
 
 	/** A set of parameters that allow you to filter out certain results from your returned results. */
 	export interface DetectionFilter {
-		MinConfidence?: number;
-		MinBoundingBoxHeight?: number;
-		MinBoundingBoxWidth?: number;
+		MinConfidence?: number | null;
+		MinBoundingBoxHeight?: number | null;
+		MinBoundingBoxWidth?: number | null;
 	}
 
 
@@ -814,12 +814,12 @@ export namespace MyNS {
 	export interface RegionOfInterest {
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		BoundingBox?: BoundingBox;
+		BoundingBox?: BoundingBox | null;
 	}
 
 	export interface GetCelebrityInfoResponse {
-		Urls?: Array<string>;
-		Name?: string;
+		Urls?: Array<string> | null;
+		Name?: string | null;
 	}
 
 	export interface GetCelebrityInfoRequest {
@@ -827,13 +827,13 @@ export namespace MyNS {
 	}
 
 	export interface GetCelebrityRecognitionResponse {
-		JobStatus?: GetCelebrityRecognitionResponseJobStatus;
-		StatusMessage?: string;
+		JobStatus?: GetCelebrityRecognitionResponseJobStatus | null;
+		StatusMessage?: string | null;
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
-		VideoMetadata?: VideoMetadata;
-		NextToken?: string;
-		Celebrities?: Array<CelebrityRecognition>;
+		VideoMetadata?: VideoMetadata | null;
+		NextToken?: string | null;
+		Celebrities?: Array<CelebrityRecognition> | null;
 	}
 
 	export enum GetCelebrityRecognitionResponseJobStatus { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
@@ -841,247 +841,247 @@ export namespace MyNS {
 
 	/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
 	export interface VideoMetadata {
-		Codec?: string;
-		DurationMillis?: number;
-		Format?: string;
-		FrameRate?: number;
-		FrameHeight?: number;
-		FrameWidth?: number;
+		Codec?: string | null;
+		DurationMillis?: number | null;
+		Format?: string | null;
+		FrameRate?: number | null;
+		FrameHeight?: number | null;
+		FrameWidth?: number | null;
 	}
 
 
 	/** Information about a detected celebrity and the time the celebrity was detected in a stored video. For more information, see GetCelebrityRecognition in the Amazon Rekognition Developer Guide. */
 	export interface CelebrityRecognition {
-		Timestamp?: number;
+		Timestamp?: number | null;
 
 		/** Information about a recognized celebrity. */
-		Celebrity?: CelebrityDetail;
+		Celebrity?: CelebrityDetail | null;
 	}
 
 
 	/** Information about a recognized celebrity. */
 	export interface CelebrityDetail {
-		Urls?: Array<string>;
-		Name?: string;
-		Id?: string;
-		Confidence?: number;
+		Urls?: Array<string> | null;
+		Name?: string | null;
+		Id?: string | null;
+		Confidence?: number | null;
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		BoundingBox?: BoundingBox;
+		BoundingBox?: BoundingBox | null;
 
 		/** <p>Structure containing attributes of the face that the algorithm detected.</p> <p>A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.</p> <p> <a>GetFaceDetection</a> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter.</p> <ul> <li> <p>GetCelebrityRecognition</p> </li> <li> <p>GetPersonTracking</p> </li> <li> <p>GetFaceSearch</p> </li> </ul> <p>The Amazon Rekognition Image <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p> */
-		Face?: FaceDetail;
+		Face?: FaceDetail | null;
 	}
 
 	export interface GetCelebrityRecognitionRequest {
 		JobId: string;
-		MaxResults?: number;
-		NextToken?: string;
-		SortBy?: GetCelebrityRecognitionRequestSortBy;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		SortBy?: GetCelebrityRecognitionRequestSortBy | null;
 	}
 
 	export enum GetCelebrityRecognitionRequestSortBy { ID = 0, TIMESTAMP = 1 }
 
 	export interface GetContentModerationResponse {
-		JobStatus?: GetCelebrityRecognitionResponseJobStatus;
-		StatusMessage?: string;
+		JobStatus?: GetCelebrityRecognitionResponseJobStatus | null;
+		StatusMessage?: string | null;
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
-		VideoMetadata?: VideoMetadata;
-		ModerationLabels?: Array<ContentModerationDetection>;
-		NextToken?: string;
-		ModerationModelVersion?: string;
+		VideoMetadata?: VideoMetadata | null;
+		ModerationLabels?: Array<ContentModerationDetection> | null;
+		NextToken?: string | null;
+		ModerationModelVersion?: string | null;
 	}
 
 
 	/** Information about an unsafe content label detection in a stored video. */
 	export interface ContentModerationDetection {
-		Timestamp?: number;
+		Timestamp?: number | null;
 
 		/** Provides information about a single type of unsafe content found in an image or video. Each type of moderated content has a label within a hierarchical taxonomy. For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide. */
-		ModerationLabel?: ModerationLabel;
+		ModerationLabel?: ModerationLabel | null;
 	}
 
 	export interface GetContentModerationRequest {
 		JobId: string;
-		MaxResults?: number;
-		NextToken?: string;
-		SortBy?: GetContentModerationRequestSortBy;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		SortBy?: GetContentModerationRequestSortBy | null;
 	}
 
 	export enum GetContentModerationRequestSortBy { NAME = 0, TIMESTAMP = 1 }
 
 	export interface GetFaceDetectionResponse {
-		JobStatus?: GetCelebrityRecognitionResponseJobStatus;
-		StatusMessage?: string;
+		JobStatus?: GetCelebrityRecognitionResponseJobStatus | null;
+		StatusMessage?: string | null;
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
-		VideoMetadata?: VideoMetadata;
-		NextToken?: string;
-		Faces?: Array<FaceDetection>;
+		VideoMetadata?: VideoMetadata | null;
+		NextToken?: string | null;
+		Faces?: Array<FaceDetection> | null;
 	}
 
 
 	/** Information about a face detected in a video analysis request and the time the face was detected in the video.  */
 	export interface FaceDetection {
-		Timestamp?: number;
+		Timestamp?: number | null;
 
 		/** <p>Structure containing attributes of the face that the algorithm detected.</p> <p>A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.</p> <p> <a>GetFaceDetection</a> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter.</p> <ul> <li> <p>GetCelebrityRecognition</p> </li> <li> <p>GetPersonTracking</p> </li> <li> <p>GetFaceSearch</p> </li> </ul> <p>The Amazon Rekognition Image <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p> */
-		Face?: FaceDetail;
+		Face?: FaceDetail | null;
 	}
 
 	export interface GetFaceDetectionRequest {
 		JobId: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetFaceSearchResponse {
-		JobStatus?: GetCelebrityRecognitionResponseJobStatus;
-		StatusMessage?: string;
-		NextToken?: string;
+		JobStatus?: GetCelebrityRecognitionResponseJobStatus | null;
+		StatusMessage?: string | null;
+		NextToken?: string | null;
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
-		VideoMetadata?: VideoMetadata;
-		Persons?: Array<PersonMatch>;
+		VideoMetadata?: VideoMetadata | null;
+		Persons?: Array<PersonMatch> | null;
 	}
 
 
 	/** Information about a person whose face matches a face(s) in an Amazon Rekognition collection. Includes information about the faces in the Amazon Rekognition collection (<a>FaceMatch</a>), information about the person (<a>PersonDetail</a>), and the time stamp for when the person was detected in a video. An array of <code>PersonMatch</code> objects is returned by <a>GetFaceSearch</a>.  */
 	export interface PersonMatch {
-		Timestamp?: number;
+		Timestamp?: number | null;
 
 		/** Details about a person detected in a video analysis request. */
-		Person?: PersonDetail;
-		FaceMatches?: Array<FaceMatch>;
+		Person?: PersonDetail | null;
+		FaceMatches?: Array<FaceMatch> | null;
 	}
 
 
 	/** Details about a person detected in a video analysis request. */
 	export interface PersonDetail {
-		Index?: number;
+		Index?: number | null;
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		BoundingBox?: BoundingBox;
+		BoundingBox?: BoundingBox | null;
 
 		/** <p>Structure containing attributes of the face that the algorithm detected.</p> <p>A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.</p> <p> <a>GetFaceDetection</a> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter.</p> <ul> <li> <p>GetCelebrityRecognition</p> </li> <li> <p>GetPersonTracking</p> </li> <li> <p>GetFaceSearch</p> </li> </ul> <p>The Amazon Rekognition Image <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p> */
-		Face?: FaceDetail;
+		Face?: FaceDetail | null;
 	}
 
 
 	/** Provides face metadata. In addition, it also provides the confidence in the match of this face with the input face. */
 	export interface FaceMatch {
-		Similarity?: number;
+		Similarity?: number | null;
 
 		/** Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. */
-		Face?: Face;
+		Face?: Face | null;
 	}
 
 
 	/** Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned.  */
 	export interface Face {
-		FaceId?: string;
+		FaceId?: string | null;
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		BoundingBox?: BoundingBox;
-		ImageId?: string;
-		ExternalImageId?: string;
-		Confidence?: number;
+		BoundingBox?: BoundingBox | null;
+		ImageId?: string | null;
+		ExternalImageId?: string | null;
+		Confidence?: number | null;
 	}
 
 	export interface GetFaceSearchRequest {
 		JobId: string;
-		MaxResults?: number;
-		NextToken?: string;
-		SortBy?: GetFaceSearchRequestSortBy;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		SortBy?: GetFaceSearchRequestSortBy | null;
 	}
 
 	export enum GetFaceSearchRequestSortBy { INDEX = 0, TIMESTAMP = 1 }
 
 	export interface GetLabelDetectionResponse {
-		JobStatus?: GetCelebrityRecognitionResponseJobStatus;
-		StatusMessage?: string;
+		JobStatus?: GetCelebrityRecognitionResponseJobStatus | null;
+		StatusMessage?: string | null;
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
-		VideoMetadata?: VideoMetadata;
-		NextToken?: string;
-		Labels?: Array<LabelDetection>;
-		LabelModelVersion?: string;
+		VideoMetadata?: VideoMetadata | null;
+		NextToken?: string | null;
+		Labels?: Array<LabelDetection> | null;
+		LabelModelVersion?: string | null;
 	}
 
 
 	/** Information about a label detected in a video analysis request and the time the label was detected in the video.  */
 	export interface LabelDetection {
-		Timestamp?: number;
+		Timestamp?: number | null;
 
 		/** <p>Structure containing details about the detected label, including the name, detected instances, parent labels, and level of confidence.</p> <p> </p> */
-		Label?: Label;
+		Label?: Label | null;
 	}
 
 	export interface GetLabelDetectionRequest {
 		JobId: string;
-		MaxResults?: number;
-		NextToken?: string;
-		SortBy?: GetContentModerationRequestSortBy;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		SortBy?: GetContentModerationRequestSortBy | null;
 	}
 
 	export interface GetPersonTrackingResponse {
-		JobStatus?: GetCelebrityRecognitionResponseJobStatus;
-		StatusMessage?: string;
+		JobStatus?: GetCelebrityRecognitionResponseJobStatus | null;
+		StatusMessage?: string | null;
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
-		VideoMetadata?: VideoMetadata;
-		NextToken?: string;
-		Persons?: Array<PersonDetection>;
+		VideoMetadata?: VideoMetadata | null;
+		NextToken?: string | null;
+		Persons?: Array<PersonDetection> | null;
 	}
 
 
 	/** <p>Details and path tracking information for a single time a person's path is tracked in a video. Amazon Rekognition operations that track people's paths return an array of <code>PersonDetection</code> objects with elements for each time a person's path is tracked in a video. </p> <p>For more information, see GetPersonTracking in the Amazon Rekognition Developer Guide. </p> */
 	export interface PersonDetection {
-		Timestamp?: number;
+		Timestamp?: number | null;
 
 		/** Details about a person detected in a video analysis request. */
-		Person?: PersonDetail;
+		Person?: PersonDetail | null;
 	}
 
 	export interface GetPersonTrackingRequest {
 		JobId: string;
-		MaxResults?: number;
-		NextToken?: string;
-		SortBy?: GetFaceSearchRequestSortBy;
+		MaxResults?: number | null;
+		NextToken?: string | null;
+		SortBy?: GetFaceSearchRequestSortBy | null;
 	}
 
 	export interface GetTextDetectionResponse {
-		JobStatus?: GetCelebrityRecognitionResponseJobStatus;
-		StatusMessage?: string;
+		JobStatus?: GetCelebrityRecognitionResponseJobStatus | null;
+		StatusMessage?: string | null;
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
-		VideoMetadata?: VideoMetadata;
-		TextDetections?: Array<TextDetectionResult>;
-		NextToken?: string;
-		TextModelVersion?: string;
+		VideoMetadata?: VideoMetadata | null;
+		TextDetections?: Array<TextDetectionResult> | null;
+		NextToken?: string | null;
+		TextModelVersion?: string | null;
 	}
 
 
 	/** Information about text detected in a video. Incudes the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen. */
 	export interface TextDetectionResult {
-		Timestamp?: number;
+		Timestamp?: number | null;
 
 		/** <p>Information about a word or line of text detected by <a>DetectText</a>.</p> <p>The <code>DetectedText</code> field contains the text that Amazon Rekognition detected in the image. </p> <p>Every word and line has an identifier (<code>Id</code>). Each word belongs to a line and has a parent identifier (<code>ParentId</code>) that identifies the line of text in which the word appears. The word <code>Id</code> is also an index for the word within a line of words. </p> <p>For more information, see Detecting Text in the Amazon Rekognition Developer Guide.</p> */
-		TextDetection?: TextDetection;
+		TextDetection?: TextDetection | null;
 	}
 
 	export interface GetTextDetectionRequest {
 		JobId: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface IndexFacesResponse {
-		FaceRecords?: Array<FaceRecord>;
-		OrientationCorrection?: CompareFacesResponseSourceImageOrientationCorrection;
-		FaceModelVersion?: string;
-		UnindexedFaces?: Array<UnindexedFace>;
+		FaceRecords?: Array<FaceRecord> | null;
+		OrientationCorrection?: CompareFacesResponseSourceImageOrientationCorrection | null;
+		FaceModelVersion?: string | null;
+		UnindexedFaces?: Array<UnindexedFace> | null;
 	}
 
 
@@ -1089,19 +1089,19 @@ export namespace MyNS {
 	export interface FaceRecord {
 
 		/** Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. */
-		Face?: Face;
+		Face?: Face | null;
 
 		/** <p>Structure containing attributes of the face that the algorithm detected.</p> <p>A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.</p> <p> <a>GetFaceDetection</a> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter.</p> <ul> <li> <p>GetCelebrityRecognition</p> </li> <li> <p>GetPersonTracking</p> </li> <li> <p>GetFaceSearch</p> </li> </ul> <p>The Amazon Rekognition Image <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p> */
-		FaceDetail?: FaceDetail;
+		FaceDetail?: FaceDetail | null;
 	}
 
 
 	/** A face that <a>IndexFaces</a> detected, but didn't index. Use the <code>Reasons</code> response attribute to determine why a face wasn't indexed. */
 	export interface UnindexedFace {
-		Reasons?: Array<Reason>;
+		Reasons?: Array<Reason> | null;
 
 		/** <p>Structure containing attributes of the face that the algorithm detected.</p> <p>A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.</p> <p> <a>GetFaceDetection</a> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter.</p> <ul> <li> <p>GetCelebrityRecognition</p> </li> <li> <p>GetPersonTracking</p> </li> <li> <p>GetFaceSearch</p> </li> </ul> <p>The Amazon Rekognition Image <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p> */
-		FaceDetail?: FaceDetail;
+		FaceDetail?: FaceDetail | null;
 	}
 
 	export enum Reason { EXCEEDS_MAX_FACES = 0, EXTREME_POSE = 1, LOW_BRIGHTNESS = 2, LOW_SHARPNESS = 3, LOW_CONFIDENCE = 4, SMALL_BOUNDING_BOX = 5, LOW_FACE_QUALITY = 6 }
@@ -1114,68 +1114,68 @@ export namespace MyNS {
 		 * Required
 		 */
 		Image: Image;
-		ExternalImageId?: string;
-		DetectionAttributes?: Array<Attribute>;
-		MaxFaces?: number;
-		QualityFilter?: CompareFacesRequestQualityFilter;
+		ExternalImageId?: string | null;
+		DetectionAttributes?: Array<Attribute> | null;
+		MaxFaces?: number | null;
+		QualityFilter?: CompareFacesRequestQualityFilter | null;
 	}
 
 	export interface ListCollectionsResponse {
-		CollectionIds?: Array<string>;
-		NextToken?: string;
-		FaceModelVersions?: Array<string>;
+		CollectionIds?: Array<string> | null;
+		NextToken?: string | null;
+		FaceModelVersions?: Array<string> | null;
 	}
 
 	export interface ListCollectionsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListFacesResponse {
-		Faces?: Array<Face>;
-		NextToken?: string;
-		FaceModelVersion?: string;
+		Faces?: Array<Face> | null;
+		NextToken?: string | null;
+		FaceModelVersion?: string | null;
 	}
 
 	export interface ListFacesRequest {
 		CollectionId: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListStreamProcessorsResponse {
-		NextToken?: string;
-		StreamProcessors?: Array<StreamProcessor>;
+		NextToken?: string | null;
+		StreamProcessors?: Array<StreamProcessor> | null;
 	}
 
 
 	/** An object that recognizes faces in a streaming video. An Amazon Rekognition stream processor is created by a call to <a>CreateStreamProcessor</a>. The request parameters for <code>CreateStreamProcessor</code> describe the Kinesis video stream source for the streaming video, face recognition parameters, and where to stream the analysis resullts.  */
 	export interface StreamProcessor {
-		Name?: string;
-		Status?: DescribeStreamProcessorResponseStatus;
+		Name?: string | null;
+		Status?: DescribeStreamProcessorResponseStatus | null;
 	}
 
 	export interface ListStreamProcessorsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface RecognizeCelebritiesResponse {
-		CelebrityFaces?: Array<Celebrity>;
-		UnrecognizedFaces?: Array<ComparedFace>;
-		OrientationCorrection?: CompareFacesResponseSourceImageOrientationCorrection;
+		CelebrityFaces?: Array<Celebrity> | null;
+		UnrecognizedFaces?: Array<ComparedFace> | null;
+		OrientationCorrection?: CompareFacesResponseSourceImageOrientationCorrection | null;
 	}
 
 
 	/** Provides information about a celebrity recognized by the <a>RecognizeCelebrities</a> operation. */
 	export interface Celebrity {
-		Urls?: Array<string>;
-		Name?: string;
-		Id?: string;
+		Urls?: Array<string> | null;
+		Name?: string | null;
+		Id?: string | null;
 
 		/** Provides face metadata for target image faces that are analyzed by <code>CompareFaces</code> and <code>RecognizeCelebrities</code>. */
-		Face?: ComparedFace;
-		MatchConfidence?: number;
+		Face?: ComparedFace | null;
+		MatchConfidence?: number | null;
 	}
 
 	export interface RecognizeCelebritiesRequest {
@@ -1188,25 +1188,25 @@ export namespace MyNS {
 	}
 
 	export interface SearchFacesResponse {
-		SearchedFaceId?: string;
-		FaceMatches?: Array<FaceMatch>;
-		FaceModelVersion?: string;
+		SearchedFaceId?: string | null;
+		FaceMatches?: Array<FaceMatch> | null;
+		FaceModelVersion?: string | null;
 	}
 
 	export interface SearchFacesRequest {
 		CollectionId: string;
 		FaceId: string;
-		MaxFaces?: number;
-		FaceMatchThreshold?: number;
+		MaxFaces?: number | null;
+		FaceMatchThreshold?: number | null;
 	}
 
 	export interface SearchFacesByImageResponse {
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		SearchedFaceBoundingBox?: BoundingBox;
-		SearchedFaceConfidence?: number;
-		FaceMatches?: Array<FaceMatch>;
-		FaceModelVersion?: string;
+		SearchedFaceBoundingBox?: BoundingBox | null;
+		SearchedFaceConfidence?: number | null;
+		FaceMatches?: Array<FaceMatch> | null;
+		FaceModelVersion?: string | null;
 	}
 
 	export interface SearchFacesByImageRequest {
@@ -1217,13 +1217,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		Image: Image;
-		MaxFaces?: number;
-		FaceMatchThreshold?: number;
-		QualityFilter?: CompareFacesRequestQualityFilter;
+		MaxFaces?: number | null;
+		FaceMatchThreshold?: number | null;
+		QualityFilter?: CompareFacesRequestQualityFilter | null;
 	}
 
 	export interface StartCelebrityRecognitionResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 	export interface StartCelebrityRecognitionRequest {
@@ -1233,11 +1233,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		Video: Video;
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
-		NotificationChannel?: NotificationChannel;
-		JobTag?: string;
+		NotificationChannel?: NotificationChannel | null;
+		JobTag?: string | null;
 	}
 
 
@@ -1245,7 +1245,7 @@ export namespace MyNS {
 	export interface Video {
 
 		/** <p>Provides the S3 bucket name and object name.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide. </p> */
-		S3Object?: S3Object;
+		S3Object?: S3Object | null;
 	}
 
 
@@ -1262,7 +1262,7 @@ export namespace MyNS {
 	}
 
 	export interface StartContentModerationResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 	export interface StartContentModerationRequest {
@@ -1272,16 +1272,16 @@ export namespace MyNS {
 		 * Required
 		 */
 		Video: Video;
-		MinConfidence?: number;
-		ClientRequestToken?: string;
+		MinConfidence?: number | null;
+		ClientRequestToken?: string | null;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
-		NotificationChannel?: NotificationChannel;
-		JobTag?: string;
+		NotificationChannel?: NotificationChannel | null;
+		JobTag?: string | null;
 	}
 
 	export interface StartFaceDetectionResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 	export interface StartFaceDetectionRequest {
@@ -1291,16 +1291,16 @@ export namespace MyNS {
 		 * Required
 		 */
 		Video: Video;
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
-		NotificationChannel?: NotificationChannel;
-		FaceAttributes?: Attribute;
-		JobTag?: string;
+		NotificationChannel?: NotificationChannel | null;
+		FaceAttributes?: Attribute | null;
+		JobTag?: string | null;
 	}
 
 	export interface StartFaceSearchResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 	export interface StartFaceSearchRequest {
@@ -1310,17 +1310,17 @@ export namespace MyNS {
 		 * Required
 		 */
 		Video: Video;
-		ClientRequestToken?: string;
-		FaceMatchThreshold?: number;
+		ClientRequestToken?: string | null;
+		FaceMatchThreshold?: number | null;
 		CollectionId: string;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
-		NotificationChannel?: NotificationChannel;
-		JobTag?: string;
+		NotificationChannel?: NotificationChannel | null;
+		JobTag?: string | null;
 	}
 
 	export interface StartLabelDetectionResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 	export interface StartLabelDetectionRequest {
@@ -1330,16 +1330,16 @@ export namespace MyNS {
 		 * Required
 		 */
 		Video: Video;
-		ClientRequestToken?: string;
-		MinConfidence?: number;
+		ClientRequestToken?: string | null;
+		MinConfidence?: number | null;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
-		NotificationChannel?: NotificationChannel;
-		JobTag?: string;
+		NotificationChannel?: NotificationChannel | null;
+		JobTag?: string | null;
 	}
 
 	export interface StartPersonTrackingResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 	export interface StartPersonTrackingRequest {
@@ -1349,15 +1349,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		Video: Video;
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
-		NotificationChannel?: NotificationChannel;
-		JobTag?: string;
+		NotificationChannel?: NotificationChannel | null;
+		JobTag?: string | null;
 	}
 
 	export interface StartProjectVersionResponse {
-		Status?: DeleteProjectVersionResponseStatus;
+		Status?: DeleteProjectVersionResponseStatus | null;
 	}
 
 	export interface StartProjectVersionRequest {
@@ -1373,7 +1373,7 @@ export namespace MyNS {
 	}
 
 	export interface StartTextDetectionResponse {
-		JobId?: string;
+		JobId?: string | null;
 	}
 
 	export interface StartTextDetectionRequest {
@@ -1383,14 +1383,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		Video: Video;
-		ClientRequestToken?: string;
+		ClientRequestToken?: string | null;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
-		NotificationChannel?: NotificationChannel;
-		JobTag?: string;
+		NotificationChannel?: NotificationChannel | null;
+		JobTag?: string | null;
 
 		/** Set of optional parameters that let you set the criteria text must meet to be included in your response. <code>WordFilter</code> looks at a word's height, width and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the screen to look for text in. */
-		Filters?: StartTextDetectionFilters;
+		Filters?: StartTextDetectionFilters | null;
 	}
 
 
@@ -1398,12 +1398,12 @@ export namespace MyNS {
 	export interface StartTextDetectionFilters {
 
 		/** A set of parameters that allow you to filter out certain results from your returned results. */
-		WordFilter?: DetectionFilter;
-		RegionsOfInterest?: Array<RegionOfInterest>;
+		WordFilter?: DetectionFilter | null;
+		RegionsOfInterest?: Array<RegionOfInterest> | null;
 	}
 
 	export interface StopProjectVersionResponse {
-		Status?: DeleteProjectVersionResponseStatus;
+		Status?: DeleteProjectVersionResponseStatus | null;
 	}
 
 	export interface StopProjectVersionRequest {
@@ -1558,7 +1558,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeProjectVersionsResponse} Success
 		 */
-		DescribeProjectVersions(MaxResults: string, NextToken: string, requestBody: DescribeProjectVersionsRequest): Observable<DescribeProjectVersionsResponse> {
+		DescribeProjectVersions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeProjectVersionsRequest): Observable<DescribeProjectVersionsResponse> {
 			return this.http.post<DescribeProjectVersionsResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.DescribeProjectVersions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1569,7 +1569,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeProjectsResponse} Success
 		 */
-		DescribeProjects(MaxResults: string, NextToken: string, requestBody: DescribeProjectsRequest): Observable<DescribeProjectsResponse> {
+		DescribeProjects(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeProjectsRequest): Observable<DescribeProjectsResponse> {
 			return this.http.post<DescribeProjectsResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.DescribeProjects?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1643,7 +1643,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetCelebrityRecognitionResponse} Success
 		 */
-		GetCelebrityRecognition(MaxResults: string, NextToken: string, requestBody: GetCelebrityRecognitionRequest): Observable<GetCelebrityRecognitionResponse> {
+		GetCelebrityRecognition(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetCelebrityRecognitionRequest): Observable<GetCelebrityRecognitionResponse> {
 			return this.http.post<GetCelebrityRecognitionResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.GetCelebrityRecognition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1654,7 +1654,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetContentModerationResponse} Success
 		 */
-		GetContentModeration(MaxResults: string, NextToken: string, requestBody: GetContentModerationRequest): Observable<GetContentModerationResponse> {
+		GetContentModeration(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetContentModerationRequest): Observable<GetContentModerationResponse> {
 			return this.http.post<GetContentModerationResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.GetContentModeration?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1665,7 +1665,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetFaceDetectionResponse} Success
 		 */
-		GetFaceDetection(MaxResults: string, NextToken: string, requestBody: GetFaceDetectionRequest): Observable<GetFaceDetectionResponse> {
+		GetFaceDetection(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetFaceDetectionRequest): Observable<GetFaceDetectionResponse> {
 			return this.http.post<GetFaceDetectionResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.GetFaceDetection?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1676,7 +1676,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetFaceSearchResponse} Success
 		 */
-		GetFaceSearch(MaxResults: string, NextToken: string, requestBody: GetFaceSearchRequest): Observable<GetFaceSearchResponse> {
+		GetFaceSearch(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetFaceSearchRequest): Observable<GetFaceSearchResponse> {
 			return this.http.post<GetFaceSearchResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.GetFaceSearch?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1687,7 +1687,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetLabelDetectionResponse} Success
 		 */
-		GetLabelDetection(MaxResults: string, NextToken: string, requestBody: GetLabelDetectionRequest): Observable<GetLabelDetectionResponse> {
+		GetLabelDetection(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetLabelDetectionRequest): Observable<GetLabelDetectionResponse> {
 			return this.http.post<GetLabelDetectionResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.GetLabelDetection?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1698,7 +1698,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetPersonTrackingResponse} Success
 		 */
-		GetPersonTracking(MaxResults: string, NextToken: string, requestBody: GetPersonTrackingRequest): Observable<GetPersonTrackingResponse> {
+		GetPersonTracking(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetPersonTrackingRequest): Observable<GetPersonTrackingResponse> {
 			return this.http.post<GetPersonTrackingResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.GetPersonTracking?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1709,7 +1709,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetTextDetectionResponse} Success
 		 */
-		GetTextDetection(MaxResults: string, NextToken: string, requestBody: GetTextDetectionRequest): Observable<GetTextDetectionResponse> {
+		GetTextDetection(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetTextDetectionRequest): Observable<GetTextDetectionResponse> {
 			return this.http.post<GetTextDetectionResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.GetTextDetection?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1729,7 +1729,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCollectionsResponse} Success
 		 */
-		ListCollections(MaxResults: string, NextToken: string, requestBody: ListCollectionsRequest): Observable<ListCollectionsResponse> {
+		ListCollections(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListCollectionsRequest): Observable<ListCollectionsResponse> {
 			return this.http.post<ListCollectionsResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.ListCollections?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1740,7 +1740,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListFacesResponse} Success
 		 */
-		ListFaces(MaxResults: string, NextToken: string, requestBody: ListFacesRequest): Observable<ListFacesResponse> {
+		ListFaces(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListFacesRequest): Observable<ListFacesResponse> {
 			return this.http.post<ListFacesResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.ListFaces?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1751,7 +1751,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListStreamProcessorsResponse} Success
 		 */
-		ListStreamProcessors(MaxResults: string, NextToken: string, requestBody: ListStreamProcessorsRequest): Observable<ListStreamProcessorsResponse> {
+		ListStreamProcessors(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListStreamProcessorsRequest): Observable<ListStreamProcessorsResponse> {
 			return this.http.post<ListStreamProcessorsResponse>(this.baseUri + '#X-Amz-Target=RekognitionService.ListStreamProcessors?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

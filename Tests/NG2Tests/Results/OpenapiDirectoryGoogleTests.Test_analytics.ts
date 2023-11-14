@@ -7,46 +7,46 @@ export namespace MyNS {
 	export interface Account {
 
 		/** Child link for an account entry. Points to the list of web properties for this account. */
-		childLink?: AccountChildLink;
+		childLink?: AccountChildLink | null;
 
 		/** Time the account was created. */
-		created?: Date;
+		created?: Date | null;
 
 		/** Account ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Resource type for Analytics account. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Account name. */
-		name?: string;
+		name?: string | null;
 
 		/** Permissions the user has for this account. */
-		permissions?: AccountPermissions;
+		permissions?: AccountPermissions | null;
 
 		/** Link for this account. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Indicates whether this account is starred or not. */
-		starred?: boolean;
+		starred?: boolean | null;
 
 		/** Time the account was last modified. */
-		updated?: Date;
+		updated?: Date | null;
 	}
 
 	export interface AccountChildLink {
 
 		/** Link to the list of web properties for this account. */
-		href?: string;
+		href?: string | null;
 
 		/** Type of the child link. Its value is "analytics#webproperties". */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface AccountPermissions {
 
 		/** All the permissions that the user has for this account. These include any implied permissions (e.g., EDIT implies VIEW). */
-		effective?: Array<string>;
+		effective?: Array<string> | null;
 	}
 
 
@@ -54,16 +54,16 @@ export namespace MyNS {
 	export interface AccountRef {
 
 		/** Link for this account. */
-		href?: string;
+		href?: string | null;
 
 		/** Account ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Analytics account reference. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Account name. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -71,28 +71,28 @@ export namespace MyNS {
 	export interface AccountSummaries {
 
 		/** A list of AccountSummaries. */
-		items?: Array<AccountSummary>;
+		items?: Array<AccountSummary> | null;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Collection type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Link to next page for this AccountSummary collection. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Link to previous page for this AccountSummary collection. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The total number of results for the query, regardless of the number of results in the response. */
-		totalResults?: number;
+		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
-		username?: string;
+		username?: string | null;
 	}
 
 
@@ -100,19 +100,19 @@ export namespace MyNS {
 	export interface AccountSummary {
 
 		/** Account ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Resource type for Analytics AccountSummary. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Account name. */
-		name?: string;
+		name?: string | null;
 
 		/** Indicates whether this account is starred or not. */
-		starred?: boolean;
+		starred?: boolean | null;
 
 		/** List of web properties under this account. */
-		webProperties?: Array<WebPropertySummary>;
+		webProperties?: Array<WebPropertySummary> | null;
 	}
 
 
@@ -120,28 +120,28 @@ export namespace MyNS {
 	export interface WebPropertySummary {
 
 		/** Web property ID of the form UA-XXXXX-YY. */
-		id?: string;
+		id?: string | null;
 
 		/** Internal ID for this web property. */
-		internalWebPropertyId?: string;
+		internalWebPropertyId?: string | null;
 
 		/** Resource type for Analytics WebPropertySummary. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Level for this web property. Possible values are STANDARD or PREMIUM. */
-		level?: string;
+		level?: string | null;
 
 		/** Web property name. */
-		name?: string;
+		name?: string | null;
 
 		/** List of profiles under this web property. */
-		profiles?: Array<ProfileSummary>;
+		profiles?: Array<ProfileSummary> | null;
 
 		/** Indicates whether this web property is starred or not. */
-		starred?: boolean;
+		starred?: boolean | null;
 
 		/** Website url for this web property. */
-		websiteUrl?: string;
+		websiteUrl?: string | null;
 	}
 
 
@@ -149,19 +149,19 @@ export namespace MyNS {
 	export interface ProfileSummary {
 
 		/** View (profile) ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Resource type for Analytics ProfileSummary. */
-		kind?: string;
+		kind?: string | null;
 
 		/** View (profile) name. */
-		name?: string;
+		name?: string | null;
 
 		/** Indicates whether this view (profile) is starred or not. */
-		starred?: boolean;
+		starred?: boolean | null;
 
 		/** View (Profile) type. Supported types: WEB or APP. */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -169,22 +169,22 @@ export namespace MyNS {
 	export interface AccountTicket {
 
 		/** JSON template for Analytics account entry. */
-		account?: Account;
+		account?: Account | null;
 
 		/** Account ticket ID used to access the account ticket. */
-		id?: string;
+		id?: string | null;
 
 		/** Resource type for account ticket. */
-		kind?: string;
+		kind?: string | null;
 
 		/** JSON template for an Analytics view (profile). */
-		profile?: Profile;
+		profile?: Profile | null;
 
 		/** Redirect URI where the user will be sent after accepting Terms of Service. Must be configured in APIs console as a callback URL. */
-		redirectUri?: string;
+		redirectUri?: string | null;
 
 		/** JSON template for an Analytics web property. */
-		webproperty?: Webproperty;
+		webproperty?: Webproperty | null;
 	}
 
 
@@ -192,109 +192,109 @@ export namespace MyNS {
 	export interface Profile {
 
 		/** Account ID to which this view (profile) belongs. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Indicates whether bot filtering is enabled for this view (profile). */
-		botFilteringEnabled?: boolean;
+		botFilteringEnabled?: boolean | null;
 
 		/** Child link for this view (profile). Points to the list of goals for this view (profile). */
-		childLink?: ProfileChildLink;
+		childLink?: ProfileChildLink | null;
 
 		/** Time this view (profile) was created. */
-		created?: Date;
+		created?: Date | null;
 
 		/**
 		 * The currency type associated with this view (profile), defaults to USD. The supported values are:
 		 * USD, JPY, EUR, GBP, AUD, KRW, BRL, CNY, DKK, RUB, SEK, NOK, PLN, TRY, TWD, HKD, THB, IDR, ARS, MXN, VND, PHP, INR, CHF, CAD, CZK, NZD, HUF, BGN, LTL, ZAR, UAH, AED, BOB, CLP, COP, EGP, HRK, ILS, MAD, MYR, PEN, PKR, RON, RSD, SAR, SGD, VEF, LVL
 		 */
-		currency?: string;
+		currency?: string | null;
 
 		/** Default page for this view (profile). */
-		defaultPage?: string;
+		defaultPage?: string | null;
 
 		/** Indicates whether ecommerce tracking is enabled for this view (profile). */
-		eCommerceTracking?: boolean;
+		eCommerceTracking?: boolean | null;
 
 		/** Indicates whether enhanced ecommerce tracking is enabled for this view (profile). This property can only be enabled if ecommerce tracking is enabled. */
-		enhancedECommerceTracking?: boolean;
+		enhancedECommerceTracking?: boolean | null;
 
 		/** The query parameters that are excluded from this view (profile). */
-		excludeQueryParameters?: string;
+		excludeQueryParameters?: string | null;
 
 		/** View (Profile) ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Internal ID for the web property to which this view (profile) belongs. */
-		internalWebPropertyId?: string;
+		internalWebPropertyId?: string | null;
 
 		/** Resource type for Analytics view (profile). */
-		kind?: string;
+		kind?: string | null;
 
 		/** Name of this view (profile). */
-		name?: string;
+		name?: string | null;
 
 		/** Parent link for this view (profile). Points to the web property to which this view (profile) belongs. */
-		parentLink?: ProfileParentLink;
+		parentLink?: ProfileParentLink | null;
 
 		/** Permissions the user has for this view (profile). */
-		permissions?: ProfilePermissions;
+		permissions?: ProfilePermissions | null;
 
 		/** Link for this view (profile). */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Site search category parameters for this view (profile). */
-		siteSearchCategoryParameters?: string;
+		siteSearchCategoryParameters?: string | null;
 
 		/** The site search query parameters for this view (profile). */
-		siteSearchQueryParameters?: string;
+		siteSearchQueryParameters?: string | null;
 
 		/** Indicates whether this view (profile) is starred or not. */
-		starred?: boolean;
+		starred?: boolean | null;
 
 		/** Whether or not Analytics will strip search category parameters from the URLs in your reports. */
-		stripSiteSearchCategoryParameters?: boolean;
+		stripSiteSearchCategoryParameters?: boolean | null;
 
 		/** Whether or not Analytics will strip search query parameters from the URLs in your reports. */
-		stripSiteSearchQueryParameters?: boolean;
+		stripSiteSearchQueryParameters?: boolean | null;
 
 		/** Time zone for which this view (profile) has been configured. Time zones are identified by strings from the TZ database. */
-		timezone?: string;
+		timezone?: string | null;
 
 		/** View (Profile) type. Supported types: WEB or APP. */
-		type?: string;
+		type?: string | null;
 
 		/** Time this view (profile) was last modified. */
-		updated?: Date;
+		updated?: Date | null;
 
 		/** Web property ID of the form UA-XXXXX-YY to which this view (profile) belongs. */
-		webPropertyId?: string;
+		webPropertyId?: string | null;
 
 		/** Website URL for this view (profile). */
-		websiteUrl?: string;
+		websiteUrl?: string | null;
 	}
 
 	export interface ProfileChildLink {
 
 		/** Link to the list of goals for this view (profile). */
-		href?: string;
+		href?: string | null;
 
 		/** Value is "analytics#goals". */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface ProfileParentLink {
 
 		/** Link to the web property to which this view (profile) belongs. */
-		href?: string;
+		href?: string | null;
 
 		/** Value is "analytics#webproperty". */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface ProfilePermissions {
 
 		/** All the permissions that the user has for this view (profile). These include any implied permissions (e.g., EDIT implies VIEW) or inherited permissions from the parent web property. */
-		effective?: Array<string>;
+		effective?: Array<string> | null;
 	}
 
 
@@ -302,105 +302,105 @@ export namespace MyNS {
 	export interface Webproperty {
 
 		/** Account ID to which this web property belongs. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Child link for this web property. Points to the list of views (profiles) for this web property. */
-		childLink?: WebpropertyChildLink;
+		childLink?: WebpropertyChildLink | null;
 
 		/** Time this web property was created. */
-		created?: Date;
+		created?: Date | null;
 
 		/**
 		 * Set to true to reset the retention period of the user identifier with each new event from that user (thus setting the expiration date to current time plus retention period).
 		 * Set to false to delete data associated with the user identifier automatically after the rentention period.
 		 * This property cannot be set on insert.
 		 */
-		dataRetentionResetOnNewActivity?: boolean;
+		dataRetentionResetOnNewActivity?: boolean | null;
 
 		/**
 		 * The length of time for which user and event data is retained.
 		 * This property cannot be set on insert.
 		 */
-		dataRetentionTtl?: string;
+		dataRetentionTtl?: string | null;
 
 		/** Default view (profile) ID. */
-		defaultProfileId?: string;
+		defaultProfileId?: string | null;
 
 		/** Web property ID of the form UA-XXXXX-YY. */
-		id?: string;
+		id?: string | null;
 
 		/** The industry vertical/category selected for this web property. */
-		industryVertical?: string;
+		industryVertical?: string | null;
 
 		/** Internal ID for this web property. */
-		internalWebPropertyId?: string;
+		internalWebPropertyId?: string | null;
 
 		/** Resource type for Analytics WebProperty. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Level for this web property. Possible values are STANDARD or PREMIUM. */
-		level?: string;
+		level?: string | null;
 
 		/** Name of this web property. */
-		name?: string;
+		name?: string | null;
 
 		/** Parent link for this web property. Points to the account to which this web property belongs. */
-		parentLink?: WebpropertyParentLink;
+		parentLink?: WebpropertyParentLink | null;
 
 		/** Permissions the user has for this web property. */
-		permissions?: WebpropertyPermissions;
+		permissions?: WebpropertyPermissions | null;
 
 		/** View (Profile) count for this web property. */
-		profileCount?: number;
+		profileCount?: number | null;
 
 		/** Link for this web property. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Indicates whether this web property is starred or not. */
-		starred?: boolean;
+		starred?: boolean | null;
 
 		/** Time this web property was last modified. */
-		updated?: Date;
+		updated?: Date | null;
 
 		/** Website url for this web property. */
-		websiteUrl?: string;
+		websiteUrl?: string | null;
 	}
 
 	export interface WebpropertyChildLink {
 
 		/** Link to the list of views (profiles) for this web property. */
-		href?: string;
+		href?: string | null;
 
 		/** Type of the parent link. Its value is "analytics#profiles". */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface WebpropertyParentLink {
 
 		/** Link to the account for this web property. */
-		href?: string;
+		href?: string | null;
 
 		/** Type of the parent link. Its value is "analytics#account". */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface WebpropertyPermissions {
 
 		/** All the permissions that the user has for this web property. These include any implied permissions (e.g., EDIT implies VIEW) or inherited permissions from the parent account. */
-		effective?: Array<string>;
+		effective?: Array<string> | null;
 	}
 
 
 	/** JSON template for an Analytics account tree requests. The account tree request is used in the provisioning api to create an account, property, and view (profile). It contains the basic information required to make these fields. */
 	export interface AccountTreeRequest {
-		accountName?: string;
+		accountName?: string | null;
 
 		/** Resource type for account ticket. */
-		kind?: string;
-		profileName?: string;
-		timezone?: string;
-		webpropertyName?: string;
-		websiteUrl?: string;
+		kind?: string | null;
+		profileName?: string | null;
+		timezone?: string | null;
+		webpropertyName?: string | null;
+		websiteUrl?: string | null;
 	}
 
 
@@ -408,16 +408,16 @@ export namespace MyNS {
 	export interface AccountTreeResponse {
 
 		/** JSON template for Analytics account entry. */
-		account?: Account;
+		account?: Account | null;
 
 		/** Resource type for account ticket. */
-		kind?: string;
+		kind?: string | null;
 
 		/** JSON template for an Analytics view (profile). */
-		profile?: Profile;
+		profile?: Profile | null;
 
 		/** JSON template for an Analytics web property. */
-		webproperty?: Webproperty;
+		webproperty?: Webproperty | null;
 	}
 
 
@@ -425,28 +425,28 @@ export namespace MyNS {
 	export interface Accounts {
 
 		/** A list of accounts. */
-		items?: Array<Account>;
+		items?: Array<Account> | null;
 
 		/** The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Collection type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Next link for this account collection. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Previous link for this account collection. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The total number of results for the query, regardless of the number of results in the response. */
-		totalResults?: number;
+		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
-		username?: string;
+		username?: string | null;
 	}
 
 
@@ -454,13 +454,13 @@ export namespace MyNS {
 	export interface AdWordsAccount {
 
 		/** True if auto-tagging is enabled on the Google Ads account. Read-only after the insert operation. */
-		autoTaggingEnabled?: boolean;
+		autoTaggingEnabled?: boolean | null;
 
 		/** Customer ID. This field is required when creating a Google Ads link. */
-		customerId?: string;
+		customerId?: string | null;
 
 		/** Resource type for Google Ads account. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -468,7 +468,7 @@ export namespace MyNS {
 	export interface AnalyticsDataimportDeleteUploadDataRequest {
 
 		/** A list of upload UIDs. */
-		customDataImportUids?: Array<string>;
+		customDataImportUids?: Array<string> | null;
 	}
 
 
@@ -476,13 +476,13 @@ export namespace MyNS {
 	export interface Column {
 
 		/** Map of attribute name and value for this column. */
-		attributes?: {[id: string]: string };
+		attributes?: {[id: string]: string } | null;
 
 		/** Column id. */
-		id?: string;
+		id?: string | null;
 
 		/** Resource type for Analytics column. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 
@@ -490,19 +490,19 @@ export namespace MyNS {
 	export interface Columns {
 
 		/** List of attributes names returned by columns. */
-		attributeNames?: Array<string>;
+		attributeNames?: Array<string> | null;
 
 		/** Etag of collection. This etag can be compared with the last response etag to check if response has changed. */
-		etag?: string;
+		etag?: string | null;
 
 		/** List of columns for a report type. */
-		items?: Array<Column>;
+		items?: Array<Column> | null;
 
 		/** Collection type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Total number of columns returned in the response. */
-		totalResults?: number;
+		totalResults?: number | null;
 	}
 
 
@@ -510,66 +510,66 @@ export namespace MyNS {
 	export interface CustomDataSource {
 
 		/** Account ID to which this custom data source belongs. */
-		accountId?: string;
-		childLink?: CustomDataSourceChildLink;
+		accountId?: string | null;
+		childLink?: CustomDataSourceChildLink | null;
 
 		/** Time this custom data source was created. */
-		created?: Date;
+		created?: Date | null;
 
 		/** Description of custom data source. */
-		description?: string;
+		description?: string | null;
 
 		/** Custom data source ID. */
-		id?: string;
-		importBehavior?: string;
+		id?: string | null;
+		importBehavior?: string | null;
 
 		/** Resource type for Analytics custom data source. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Name of this custom data source. */
-		name?: string;
+		name?: string | null;
 
 		/** Parent link for this custom data source. Points to the web property to which this custom data source belongs. */
-		parentLink?: CustomDataSourceParentLink;
+		parentLink?: CustomDataSourceParentLink | null;
 
 		/** IDs of views (profiles) linked to the custom data source. */
-		profilesLinked?: Array<string>;
+		profilesLinked?: Array<string> | null;
 
 		/** Collection of schema headers of the custom data source. */
-		schema?: Array<string>;
+		schema?: Array<string> | null;
 
 		/** Link for this Analytics custom data source. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Type of the custom data source. */
-		type?: string;
+		type?: string | null;
 
 		/** Time this custom data source was last modified. */
-		updated?: Date;
+		updated?: Date | null;
 
 		/** Upload type of the custom data source. */
-		uploadType?: string;
+		uploadType?: string | null;
 
 		/** Web property ID of the form UA-XXXXX-YY to which this custom data source belongs. */
-		webPropertyId?: string;
+		webPropertyId?: string | null;
 	}
 
 	export interface CustomDataSourceChildLink {
 
 		/** Link to the list of daily uploads for this custom data source. Link to the list of uploads for this custom data source. */
-		href?: string;
+		href?: string | null;
 
 		/** Value is "analytics#dailyUploads". Value is "analytics#uploads". */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface CustomDataSourceParentLink {
 
 		/** Link to the web property to which this custom data source belongs. */
-		href?: string;
+		href?: string | null;
 
 		/** Value is "analytics#webproperty". */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -577,28 +577,28 @@ export namespace MyNS {
 	export interface CustomDataSources {
 
 		/** Collection of custom data sources. */
-		items?: Array<CustomDataSource>;
+		items?: Array<CustomDataSource> | null;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Collection type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Link to next page for this custom data source collection. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Link to previous page for this custom data source collection. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The total number of results for the query, regardless of the number of results in the response. */
-		totalResults?: number;
+		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
-		username?: string;
+		username?: string | null;
 	}
 
 
@@ -606,49 +606,49 @@ export namespace MyNS {
 	export interface CustomDimension {
 
 		/** Account ID. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Boolean indicating whether the custom dimension is active. */
-		active?: boolean;
+		active?: boolean | null;
 
 		/** Time the custom dimension was created. */
-		created?: Date;
+		created?: Date | null;
 
 		/** Custom dimension ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Index of the custom dimension. */
-		index?: number;
+		index?: number | null;
 
 		/** Kind value for a custom dimension. Set to "analytics#customDimension". It is a read-only field. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Name of the custom dimension. */
-		name?: string;
+		name?: string | null;
 
 		/** Parent link for the custom dimension. Points to the property to which the custom dimension belongs. */
-		parentLink?: CustomDimensionParentLink;
+		parentLink?: CustomDimensionParentLink | null;
 
 		/** Scope of the custom dimension: HIT, SESSION, USER or PRODUCT. */
-		scope?: string;
+		scope?: string | null;
 
 		/** Link for the custom dimension */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Time the custom dimension was last modified. */
-		updated?: Date;
+		updated?: Date | null;
 
 		/** Property ID. */
-		webPropertyId?: string;
+		webPropertyId?: string | null;
 	}
 
 	export interface CustomDimensionParentLink {
 
 		/** Link to the property to which the custom dimension belongs. */
-		href?: string;
+		href?: string | null;
 
 		/** Type of the parent link. Set to "analytics#webproperty". */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -656,28 +656,28 @@ export namespace MyNS {
 	export interface CustomDimensions {
 
 		/** Collection of custom dimensions. */
-		items?: Array<CustomDimension>;
+		items?: Array<CustomDimension> | null;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Collection type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Link to next page for this custom dimension collection. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Link to previous page for this custom dimension collection. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The total number of results for the query, regardless of the number of results in the response. */
-		totalResults?: number;
+		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
-		username?: string;
+		username?: string | null;
 	}
 
 
@@ -685,58 +685,58 @@ export namespace MyNS {
 	export interface CustomMetric {
 
 		/** Account ID. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Boolean indicating whether the custom metric is active. */
-		active?: boolean;
+		active?: boolean | null;
 
 		/** Time the custom metric was created. */
-		created?: Date;
+		created?: Date | null;
 
 		/** Custom metric ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Index of the custom metric. */
-		index?: number;
+		index?: number | null;
 
 		/** Kind value for a custom metric. Set to "analytics#customMetric". It is a read-only field. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Max value of custom metric. */
-		max_value?: string;
+		max_value?: string | null;
 
 		/** Min value of custom metric. */
-		min_value?: string;
+		min_value?: string | null;
 
 		/** Name of the custom metric. */
-		name?: string;
+		name?: string | null;
 
 		/** Parent link for the custom metric. Points to the property to which the custom metric belongs. */
-		parentLink?: CustomMetricParentLink;
+		parentLink?: CustomMetricParentLink | null;
 
 		/** Scope of the custom metric: HIT or PRODUCT. */
-		scope?: string;
+		scope?: string | null;
 
 		/** Link for the custom metric */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Data type of custom metric. */
-		type?: string;
+		type?: string | null;
 
 		/** Time the custom metric was last modified. */
-		updated?: Date;
+		updated?: Date | null;
 
 		/** Property ID. */
-		webPropertyId?: string;
+		webPropertyId?: string | null;
 	}
 
 	export interface CustomMetricParentLink {
 
 		/** Link to the property to which the custom metric belongs. */
-		href?: string;
+		href?: string | null;
 
 		/** Type of the parent link. Set to "analytics#webproperty". */
-		type?: string;
+		type?: string | null;
 	}
 
 
@@ -744,28 +744,28 @@ export namespace MyNS {
 	export interface CustomMetrics {
 
 		/** Collection of custom metrics. */
-		items?: Array<CustomMetric>;
+		items?: Array<CustomMetric> | null;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Collection type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Link to next page for this custom metric collection. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Link to previous page for this custom metric collection. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The total number of results for the query, regardless of the number of results in the response. */
-		totalResults?: number;
+		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
-		username?: string;
+		username?: string | null;
 	}
 
 
@@ -773,31 +773,31 @@ export namespace MyNS {
 	export interface EntityAdWordsLink {
 
 		/** A list of Google Ads client accounts. These cannot be MCC accounts. This field is required when creating a Google Ads link. It cannot be empty. */
-		adWordsAccounts?: Array<AdWordsAccount>;
+		adWordsAccounts?: Array<AdWordsAccount> | null;
 
 		/** Web property being linked. */
-		entity?: EntityAdWordsLinkEntity;
+		entity?: EntityAdWordsLinkEntity | null;
 
 		/** Entity Google Ads link ID */
-		id?: string;
+		id?: string | null;
 
 		/** Resource type for entity Google Ads link. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Name of the link. This field is required when creating a Google Ads link. */
-		name?: string;
+		name?: string | null;
 
 		/** IDs of linked Views (Profiles) represented as strings. */
-		profileIds?: Array<string>;
+		profileIds?: Array<string> | null;
 
 		/** URL link for this Google Analytics - Google Ads link. */
-		selfLink?: string;
+		selfLink?: string | null;
 	}
 
 	export interface EntityAdWordsLinkEntity {
 
 		/** JSON template for a web property reference. */
-		webPropertyRef?: WebPropertyRef;
+		webPropertyRef?: WebPropertyRef | null;
 	}
 
 
@@ -805,22 +805,22 @@ export namespace MyNS {
 	export interface WebPropertyRef {
 
 		/** Account ID to which this web property belongs. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Link for this web property. */
-		href?: string;
+		href?: string | null;
 
 		/** Web property ID of the form UA-XXXXX-YY. */
-		id?: string;
+		id?: string | null;
 
 		/** Internal ID for this web property. */
-		internalWebPropertyId?: string;
+		internalWebPropertyId?: string | null;
 
 		/** Analytics web property reference. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Name of this web property. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -828,25 +828,25 @@ export namespace MyNS {
 	export interface EntityAdWordsLinks {
 
 		/** A list of entity Google Ads links. */
-		items?: Array<EntityAdWordsLink>;
+		items?: Array<EntityAdWordsLink> | null;
 
 		/** The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Collection type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Next link for this Google Ads link collection. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Previous link for this Google Ads link collection. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The total number of results for the query, regardless of the number of results in the response. */
-		totalResults?: number;
+		totalResults?: number | null;
 	}
 
 
@@ -854,34 +854,34 @@ export namespace MyNS {
 	export interface EntityUserLink {
 
 		/** Entity for this link. It can be an account, a web property, or a view (profile). */
-		entity?: EntityUserLinkEntity;
+		entity?: EntityUserLinkEntity | null;
 
 		/** Entity user link ID */
-		id?: string;
+		id?: string | null;
 
 		/** Resource type for entity user link. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Permissions the user has for this entity. */
-		permissions?: EntityUserLinkPermissions;
+		permissions?: EntityUserLinkPermissions | null;
 
 		/** Self link for this resource. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** JSON template for a user reference. */
-		userRef?: UserRef;
+		userRef?: UserRef | null;
 	}
 
 	export interface EntityUserLinkEntity {
 
 		/** JSON template for a linked account. */
-		accountRef?: AccountRef;
+		accountRef?: AccountRef | null;
 
 		/** JSON template for a linked view (profile). */
-		profileRef?: ProfileRef;
+		profileRef?: ProfileRef | null;
 
 		/** JSON template for a web property reference. */
-		webPropertyRef?: WebPropertyRef;
+		webPropertyRef?: WebPropertyRef | null;
 	}
 
 
@@ -889,34 +889,34 @@ export namespace MyNS {
 	export interface ProfileRef {
 
 		/** Account ID to which this view (profile) belongs. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Link for this view (profile). */
-		href?: string;
+		href?: string | null;
 
 		/** View (Profile) ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Internal ID for the web property to which this view (profile) belongs. */
-		internalWebPropertyId?: string;
+		internalWebPropertyId?: string | null;
 
 		/** Analytics view (profile) reference. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Name of this view (profile). */
-		name?: string;
+		name?: string | null;
 
 		/** Web property ID of the form UA-XXXXX-YY to which this view (profile) belongs. */
-		webPropertyId?: string;
+		webPropertyId?: string | null;
 	}
 
 	export interface EntityUserLinkPermissions {
 
 		/** Effective permissions represent all the permissions that a user has for this entity. These include any implied permissions (e.g., EDIT implies VIEW) or inherited permissions from the parent entity. Effective permissions are read-only. */
-		effective?: Array<string>;
+		effective?: Array<string> | null;
 
 		/** Permissions that a user has been assigned at this very level. Does not include any implied or inherited permissions. Local permissions are modifiable. */
-		local?: Array<string>;
+		local?: Array<string> | null;
 	}
 
 
@@ -924,11 +924,11 @@ export namespace MyNS {
 	export interface UserRef {
 
 		/** Email ID of this user. */
-		email?: string;
+		email?: string | null;
 
 		/** User ID. */
-		id?: string;
-		kind?: string;
+		id?: string | null;
+		kind?: string | null;
 	}
 
 
@@ -936,25 +936,25 @@ export namespace MyNS {
 	export interface EntityUserLinks {
 
 		/** A list of entity user links. */
-		items?: Array<EntityUserLink>;
+		items?: Array<EntityUserLink> | null;
 
 		/** The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Collection type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Next link for this account collection. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Previous link for this account collection. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The total number of results for the query, regardless of the number of results in the response. */
-		totalResults?: number;
+		totalResults?: number | null;
 	}
 
 
@@ -962,58 +962,58 @@ export namespace MyNS {
 	export interface Experiment {
 
 		/** Account ID to which this experiment belongs. This field is read-only. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Time the experiment was created. This field is read-only. */
-		created?: Date;
+		created?: Date | null;
 
 		/** Notes about this experiment. */
-		description?: string;
+		description?: string | null;
 
 		/** If true, the end user will be able to edit the experiment via the Google Analytics user interface. */
-		editableInGaUi?: boolean;
+		editableInGaUi?: boolean | null;
 
 		/** The ending time of the experiment (the time the status changed from RUNNING to ENDED). This field is present only if the experiment has ended. This field is read-only. */
-		endTime?: Date;
+		endTime?: Date | null;
 
 		/** Boolean specifying whether to distribute traffic evenly across all variations. If the value is False, content experiments follows the default behavior of adjusting traffic dynamically based on variation performance. Optional -- defaults to False. This field may not be changed for an experiment whose status is ENDED. */
-		equalWeighting?: boolean;
+		equalWeighting?: boolean | null;
 
 		/** Experiment ID. Required for patch and update. Disallowed for create. */
-		id?: string;
+		id?: string | null;
 
 		/** Internal ID for the web property to which this experiment belongs. This field is read-only. */
-		internalWebPropertyId?: string;
+		internalWebPropertyId?: string | null;
 
 		/** Resource type for an Analytics experiment. This field is read-only. */
-		kind?: string;
+		kind?: string | null;
 
 		/** An integer number in [3, 90]. Specifies the minimum length of the experiment. Can be changed for a running experiment. This field may not be changed for an experiments whose status is ENDED. */
-		minimumExperimentLengthInDays?: number;
+		minimumExperimentLengthInDays?: number | null;
 
 		/** Experiment name. This field may not be changed for an experiment whose status is ENDED. This field is required when creating an experiment. */
-		name?: string;
+		name?: string | null;
 
 		/** The metric that the experiment is optimizing. Valid values: "ga:goal(n)Completions", "ga:adsenseAdsClicks", "ga:adsenseAdsViewed", "ga:adsenseRevenue", "ga:bounces", "ga:pageviews", "ga:sessionDuration", "ga:transactions", "ga:transactionRevenue". This field is required if status is "RUNNING" and servingFramework is one of "REDIRECT" or "API". */
-		objectiveMetric?: string;
+		objectiveMetric?: string | null;
 
 		/** Whether the objectiveMetric should be minimized or maximized. Possible values: "MAXIMUM", "MINIMUM". Optional--defaults to "MAXIMUM". Cannot be specified without objectiveMetric. Cannot be modified when status is "RUNNING" or "ENDED". */
-		optimizationType?: string;
+		optimizationType?: string | null;
 
 		/** Parent link for an experiment. Points to the view (profile) to which this experiment belongs. */
-		parentLink?: ExperimentParentLink;
+		parentLink?: ExperimentParentLink | null;
 
 		/** View (Profile) ID to which this experiment belongs. This field is read-only. */
-		profileId?: string;
+		profileId?: string | null;
 
 		/** Why the experiment ended. Possible values: "STOPPED_BY_USER", "WINNER_FOUND", "EXPERIMENT_EXPIRED", "ENDED_WITH_NO_WINNER", "GOAL_OBJECTIVE_CHANGED". "ENDED_WITH_NO_WINNER" means that the experiment didn't expire but no winner was projected to be found. If the experiment status is changed via the API to ENDED this field is set to STOPPED_BY_USER. This field is read-only. */
-		reasonExperimentEnded?: string;
+		reasonExperimentEnded?: string | null;
 
 		/** Boolean specifying whether variations URLS are rewritten to match those of the original. This field may not be changed for an experiments whose status is ENDED. */
-		rewriteVariationUrlsAsOriginal?: boolean;
+		rewriteVariationUrlsAsOriginal?: boolean | null;
 
 		/** Link for this experiment. This field is read-only. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/**
 		 * The framework used to serve the experiment variations and evaluate the results. One of:
@@ -1021,61 +1021,61 @@ export namespace MyNS {
 		 * - API: Google Analytics chooses and reports the variation to serve and evaluates the results; the caller is responsible for serving the selected variation.
 		 * - EXTERNAL: The variations will be served externally and the chosen variation reported to Google Analytics. The caller is responsible for serving the selected variation and evaluating the results.
 		 */
-		servingFramework?: string;
+		servingFramework?: string | null;
 
 		/** The snippet of code to include on the control page(s). This field is read-only. */
-		snippet?: string;
+		snippet?: string | null;
 
 		/** The starting time of the experiment (the time the status changed from READY_TO_RUN to RUNNING). This field is present only if the experiment has started. This field is read-only. */
-		startTime?: Date;
+		startTime?: Date | null;
 
 		/** Experiment status. Possible values: "DRAFT", "READY_TO_RUN", "RUNNING", "ENDED". Experiments can be created in the "DRAFT", "READY_TO_RUN" or "RUNNING" state. This field is required when creating an experiment. */
-		status?: string;
+		status?: string | null;
 
 		/** A floating-point number in (0, 1]. Specifies the fraction of the traffic that participates in the experiment. Can be changed for a running experiment. This field may not be changed for an experiments whose status is ENDED. */
-		trafficCoverage?: number;
+		trafficCoverage?: number | null;
 
 		/** Time the experiment was last modified. This field is read-only. */
-		updated?: Date;
+		updated?: Date | null;
 
 		/** Array of variations. The first variation in the array is the original. The number of variations may not change once an experiment is in the RUNNING state. At least two variations are required before status can be set to RUNNING. */
-		ExperimentVariations?: Array<ExperimentVariations>;
+		ExperimentVariations?: Array<ExperimentVariations> | null;
 
 		/** Web property ID to which this experiment belongs. The web property ID is of the form UA-XXXXX-YY. This field is read-only. */
-		webPropertyId?: string;
+		webPropertyId?: string | null;
 
 		/** A floating-point number in (0, 1). Specifies the necessary confidence level to choose a winner. This field may not be changed for an experiments whose status is ENDED. */
-		winnerConfidenceLevel?: number;
+		winnerConfidenceLevel?: number | null;
 
 		/** Boolean specifying whether a winner has been found for this experiment. This field is read-only. */
-		winnerFound?: boolean;
+		winnerFound?: boolean | null;
 	}
 
 	export interface ExperimentParentLink {
 
 		/** Link to the view (profile) to which this experiment belongs. This field is read-only. */
-		href?: string;
+		href?: string | null;
 
 		/** Value is "analytics#profile". This field is read-only. */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface ExperimentVariations {
 
 		/** The name of the variation. This field is required when creating an experiment. This field may not be changed for an experiment whose status is ENDED. */
-		name?: string;
+		name?: string | null;
 
 		/** Status of the variation. Possible values: "ACTIVE", "INACTIVE". INACTIVE variations are not served. This field may not be changed for an experiment whose status is ENDED. */
-		status?: string;
+		status?: string | null;
 
 		/** The URL of the variation. This field may not be changed for an experiment whose status is RUNNING or ENDED. */
-		url?: string;
+		url?: string | null;
 
 		/** Weight that this variation should receive. Only present if the experiment is running. This field is read-only. */
-		weight?: number;
+		weight?: number | null;
 
 		/** True if the experiment has ended and this variation performed (statistically) significantly better than the original. This field is read-only. */
-		won?: boolean;
+		won?: boolean | null;
 	}
 
 
@@ -1083,28 +1083,28 @@ export namespace MyNS {
 	export interface Experiments {
 
 		/** A list of experiments. */
-		items?: Array<Experiment>;
+		items?: Array<Experiment> | null;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Collection type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Link to next page for this experiment collection. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Link to previous page for this experiment collection. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The total number of results for the query, regardless of the number of resources in the result. */
-		totalResults?: number;
+		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
-		username?: string;
+		username?: string | null;
 	}
 
 
@@ -1112,91 +1112,91 @@ export namespace MyNS {
 	export interface Filter {
 
 		/** Account ID to which this filter belongs. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Details for the filter of the type ADVANCED. */
-		advancedDetails?: FilterAdvancedDetails;
+		advancedDetails?: FilterAdvancedDetails | null;
 
 		/** Time this filter was created. */
-		created?: Date;
+		created?: Date | null;
 
 		/** JSON template for an Analytics filter expression. */
-		excludeDetails?: FilterExpression;
+		excludeDetails?: FilterExpression | null;
 
 		/** Filter ID. */
-		id?: string;
+		id?: string | null;
 
 		/** JSON template for an Analytics filter expression. */
-		includeDetails?: FilterExpression;
+		includeDetails?: FilterExpression | null;
 
 		/** Resource type for Analytics filter. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Details for the filter of the type LOWER. */
-		lowercaseDetails?: FilterLowercaseDetails;
+		lowercaseDetails?: FilterLowercaseDetails | null;
 
 		/** Name of this filter. */
-		name?: string;
+		name?: string | null;
 
 		/** Parent link for this filter. Points to the account to which this filter belongs. */
-		parentLink?: FilterParentLink;
+		parentLink?: FilterParentLink | null;
 
 		/** Details for the filter of the type SEARCH_AND_REPLACE. */
-		searchAndReplaceDetails?: FilterSearchAndReplaceDetails;
+		searchAndReplaceDetails?: FilterSearchAndReplaceDetails | null;
 
 		/** Link for this filter. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Type of this filter. Possible values are INCLUDE, EXCLUDE, LOWERCASE, UPPERCASE, SEARCH_AND_REPLACE and ADVANCED. */
-		type?: string;
+		type?: string | null;
 
 		/** Time this filter was last modified. */
-		updated?: Date;
+		updated?: Date | null;
 
 		/** Details for the filter of the type UPPER. */
-		uppercaseDetails?: FilterUppercaseDetails;
+		uppercaseDetails?: FilterUppercaseDetails | null;
 	}
 
 	export interface FilterAdvancedDetails {
 
 		/** Indicates if the filter expressions are case sensitive. */
-		caseSensitive?: boolean;
+		caseSensitive?: boolean | null;
 
 		/** Expression to extract from field A. */
-		extractA?: string;
+		extractA?: string | null;
 
 		/** Expression to extract from field B. */
-		extractB?: string;
+		extractB?: string | null;
 
 		/** Field A. */
-		fieldA?: string;
+		fieldA?: string | null;
 
 		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
-		fieldAIndex?: number;
+		fieldAIndex?: number | null;
 
 		/** Indicates if field A is required to match. */
-		fieldARequired?: boolean;
+		fieldARequired?: boolean | null;
 
 		/** Field B. */
-		fieldB?: string;
+		fieldB?: string | null;
 
 		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
-		fieldBIndex?: number;
+		fieldBIndex?: number | null;
 
 		/** Indicates if field B is required to match. */
-		fieldBRequired?: boolean;
+		fieldBRequired?: boolean | null;
 
 		/** Expression used to construct the output value. */
-		outputConstructor?: string;
+		outputConstructor?: string | null;
 
 		/** Output field. */
-		outputToField?: string;
+		outputToField?: string | null;
 
 		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
-		outputToFieldIndex?: number;
+		outputToFieldIndex?: number | null;
 
 		/** Indicates if the existing value of the output field, if any, should be overridden by the output expression. */
-		overrideOutputField?: boolean;
+		overrideOutputField?: boolean | null;
 	}
 
 
@@ -1204,10 +1204,10 @@ export namespace MyNS {
 	export interface FilterExpression {
 
 		/** Determines if the filter is case sensitive. */
-		caseSensitive?: boolean;
+		caseSensitive?: boolean | null;
 
 		/** Filter expression value */
-		expressionValue?: string;
+		expressionValue?: string | null;
 
 		/**
 		 * Field to filter. Possible values:
@@ -1298,61 +1298,61 @@ export namespace MyNS {
 		 * - Custom dimension
 		 * - CUSTOM_DIMENSION (See accompanying field index),
 		 */
-		field?: string;
+		field?: string | null;
 
 		/** The Index of the custom dimension. Set only if the field is a is CUSTOM_DIMENSION. */
-		fieldIndex?: number;
+		fieldIndex?: number | null;
 
 		/** Kind value for filter expression */
-		kind?: string;
+		kind?: string | null;
 
 		/** Match type for this filter. Possible values are BEGINS_WITH, EQUAL, ENDS_WITH, CONTAINS, or MATCHES. GEO_DOMAIN, GEO_IP_ADDRESS, PAGE_REQUEST_URI, or PAGE_HOSTNAME filters can use any match type; all other filters must use MATCHES. */
-		matchType?: string;
+		matchType?: string | null;
 	}
 
 	export interface FilterLowercaseDetails {
 
 		/** Field to use in the filter. */
-		field?: string;
+		field?: string | null;
 
 		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
-		fieldIndex?: number;
+		fieldIndex?: number | null;
 	}
 
 	export interface FilterParentLink {
 
 		/** Link to the account to which this filter belongs. */
-		href?: string;
+		href?: string | null;
 
 		/** Value is "analytics#account". */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface FilterSearchAndReplaceDetails {
 
 		/** Determines if the filter is case sensitive. */
-		caseSensitive?: boolean;
+		caseSensitive?: boolean | null;
 
 		/** Field to use in the filter. */
-		field?: string;
+		field?: string | null;
 
 		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
-		fieldIndex?: number;
+		fieldIndex?: number | null;
 
 		/** Term to replace the search term with. */
-		replaceString?: string;
+		replaceString?: string | null;
 
 		/** Term to search. */
-		searchString?: string;
+		searchString?: string | null;
 	}
 
 	export interface FilterUppercaseDetails {
 
 		/** Field to use in the filter. */
-		field?: string;
+		field?: string | null;
 
 		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
-		fieldIndex?: number;
+		fieldIndex?: number | null;
 	}
 
 
@@ -1360,19 +1360,19 @@ export namespace MyNS {
 	export interface FilterRef {
 
 		/** Account ID to which this filter belongs. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Link for this filter. */
-		href?: string;
+		href?: string | null;
 
 		/** Filter ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Kind value for filter reference. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Name of this filter. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -1380,28 +1380,28 @@ export namespace MyNS {
 	export interface Filters {
 
 		/** A list of filters. */
-		items?: Array<Filter>;
+		items?: Array<Filter> | null;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Collection type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Link to next page for this filter collection. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Link to previous page for this filter collection. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The total number of results for the query, regardless of the number of results in the response. */
-		totalResults?: number;
+		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
-		username?: string;
+		username?: string | null;
 	}
 
 
@@ -1409,141 +1409,141 @@ export namespace MyNS {
 	export interface GaData {
 
 		/** Column headers that list dimension names followed by the metric names. The order of dimensions and metrics is same as specified in the request. */
-		GaDataColumnHeaders?: Array<GaDataColumnHeaders>;
+		GaDataColumnHeaders?: Array<GaDataColumnHeaders> | null;
 
 		/** Determines if Analytics data contains samples. */
-		containsSampledData?: boolean;
+		containsSampledData?: boolean | null;
 
 		/** The last refreshed time in seconds for Analytics data. */
-		dataLastRefreshed?: string;
-		dataTable?: GaDataDataTable;
+		dataLastRefreshed?: string | null;
+		dataTable?: GaDataDataTable | null;
 
 		/** Unique ID for this data response. */
-		id?: string;
+		id?: string | null;
 
 		/** The maximum number of rows the response can contain, regardless of the actual number of rows returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Link to next page for this Analytics data query. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Link to previous page for this Analytics data query. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** Information for the view (profile), for which the Analytics data was requested. */
-		profileInfo?: GaDataProfileInfo;
+		profileInfo?: GaDataProfileInfo | null;
 
 		/** Analytics data request query parameters. */
-		query?: GaDataQuery;
+		query?: GaDataQuery | null;
 
 		/** Analytics data rows, where each row contains a list of dimension values followed by the metric values. The order of dimensions and metrics is same as specified in the request. */
-		rows?: Array<string>;
+		rows?: Array<string> | null;
 
 		/** The number of samples used to calculate the result. */
-		sampleSize?: string;
+		sampleSize?: string | null;
 
 		/** Total size of the sample space from which the samples were selected. */
-		sampleSpace?: string;
+		sampleSpace?: string | null;
 
 		/** Link to this page. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** The total number of rows for the query, regardless of the number of rows in the response. */
-		totalResults?: number;
+		totalResults?: number | null;
 
 		/** Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. */
-		totalsForAllResults?: {[id: string]: string };
+		totalsForAllResults?: {[id: string]: string } | null;
 	}
 
 	export interface GaDataColumnHeaders {
 
 		/** Column Type. Either DIMENSION or METRIC. */
-		columnType?: string;
+		columnType?: string | null;
 
 		/** Data type. Dimension column headers have only STRING as the data type. Metric column headers have data types for metric values such as INTEGER, DOUBLE, CURRENCY etc. */
-		dataType?: string;
+		dataType?: string | null;
 
 		/** Column name. */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface GaDataDataTable {
-		GaDataDataTableCols?: Array<GaDataDataTableCols>;
-		GaDataDataTableRows?: Array<GaDataDataTableRows>;
+		GaDataDataTableCols?: Array<GaDataDataTableCols> | null;
+		GaDataDataTableRows?: Array<GaDataDataTableRows> | null;
 	}
 
 	export interface GaDataDataTableCols {
-		id?: string;
-		label?: string;
-		type?: string;
+		id?: string | null;
+		label?: string | null;
+		type?: string | null;
 	}
 
 	export interface GaDataDataTableRows {
-		GaDataDataTableRowsC?: Array<GaDataDataTableRowsC>;
+		GaDataDataTableRowsC?: Array<GaDataDataTableRowsC> | null;
 	}
 
 	export interface GaDataDataTableRowsC {
-		v?: string;
+		v?: string | null;
 	}
 
 	export interface GaDataProfileInfo {
 
 		/** Account ID to which this view (profile) belongs. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Internal ID for the web property to which this view (profile) belongs. */
-		internalWebPropertyId?: string;
+		internalWebPropertyId?: string | null;
 
 		/** View (Profile) ID. */
-		profileId?: string;
+		profileId?: string | null;
 
 		/** View (Profile) name. */
-		profileName?: string;
+		profileName?: string | null;
 
 		/** Table ID for view (profile). */
-		tableId?: string;
+		tableId?: string | null;
 
 		/** Web Property ID to which this view (profile) belongs. */
-		webPropertyId?: string;
+		webPropertyId?: string | null;
 	}
 
 	export interface GaDataQuery {
 
 		/** List of analytics dimensions. */
-		dimensions?: string;
+		dimensions?: string | null;
 
 		/** End date. */
-		end_date?: string;
+		end_date?: string | null;
 
 		/** Comma-separated list of dimension or metric filters. */
-		filters?: string;
+		filters?: string | null;
 
 		/** Unique table ID. */
-		ids?: string;
+		ids?: string | null;
 
 		/** Maximum results per page. */
-		max_results?: number;
+		max_results?: number | null;
 
 		/** List of analytics metrics. */
-		metrics?: Array<string>;
+		metrics?: Array<string> | null;
 
 		/** Desired sampling level */
-		samplingLevel?: string;
+		samplingLevel?: string | null;
 
 		/** Analytics advanced segment. */
-		segment?: string;
+		segment?: string | null;
 
 		/** List of dimensions or metrics based on which Analytics data is sorted. */
-		sort?: Array<string>;
+		sort?: Array<string> | null;
 
 		/** Start date. */
-		start_date?: string;
+		start_date?: string | null;
 
 		/** Start index. */
-		start_index?: number;
+		start_index?: number | null;
 	}
 
 
@@ -1551,142 +1551,142 @@ export namespace MyNS {
 	export interface Goal {
 
 		/** Account ID to which this goal belongs. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Determines whether this goal is active. */
-		active?: boolean;
+		active?: boolean | null;
 
 		/** Time this goal was created. */
-		created?: Date;
+		created?: Date | null;
 
 		/** Details for the goal of the type EVENT. */
-		eventDetails?: GoalEventDetails;
+		eventDetails?: GoalEventDetails | null;
 
 		/** Goal ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Internal ID for the web property to which this goal belongs. */
-		internalWebPropertyId?: string;
+		internalWebPropertyId?: string | null;
 
 		/** Resource type for an Analytics goal. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Goal name. */
-		name?: string;
+		name?: string | null;
 
 		/** Parent link for a goal. Points to the view (profile) to which this goal belongs. */
-		parentLink?: GoalParentLink;
+		parentLink?: GoalParentLink | null;
 
 		/** View (Profile) ID to which this goal belongs. */
-		profileId?: string;
+		profileId?: string | null;
 
 		/** Link for this goal. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Goal type. Possible values are URL_DESTINATION, VISIT_TIME_ON_SITE, VISIT_NUM_PAGES, AND EVENT. */
-		type?: string;
+		type?: string | null;
 
 		/** Time this goal was last modified. */
-		updated?: Date;
+		updated?: Date | null;
 
 		/** Details for the goal of the type URL_DESTINATION. */
-		urlDestinationDetails?: GoalUrlDestinationDetails;
+		urlDestinationDetails?: GoalUrlDestinationDetails | null;
 
 		/** Goal value. */
-		value?: number;
+		value?: number | null;
 
 		/** Details for the goal of the type VISIT_NUM_PAGES. */
-		visitNumPagesDetails?: GoalVisitNumPagesDetails;
+		visitNumPagesDetails?: GoalVisitNumPagesDetails | null;
 
 		/** Details for the goal of the type VISIT_TIME_ON_SITE. */
-		visitTimeOnSiteDetails?: GoalVisitTimeOnSiteDetails;
+		visitTimeOnSiteDetails?: GoalVisitTimeOnSiteDetails | null;
 
 		/** Web property ID to which this goal belongs. The web property ID is of the form UA-XXXXX-YY. */
-		webPropertyId?: string;
+		webPropertyId?: string | null;
 	}
 
 	export interface GoalEventDetails {
 
 		/** List of event conditions. */
-		GoalEventDetailsEventConditions?: Array<GoalEventDetailsEventConditions>;
+		GoalEventDetailsEventConditions?: Array<GoalEventDetailsEventConditions> | null;
 
 		/** Determines if the event value should be used as the value for this goal. */
-		useEventValue?: boolean;
+		useEventValue?: boolean | null;
 	}
 
 	export interface GoalEventDetailsEventConditions {
 
 		/** Type of comparison. Possible values are LESS_THAN, GREATER_THAN or EQUAL. */
-		comparisonType?: string;
+		comparisonType?: string | null;
 
 		/** Value used for this comparison. */
-		comparisonValue?: string;
+		comparisonValue?: string | null;
 
 		/** Expression used for this match. */
-		expression?: string;
+		expression?: string | null;
 
 		/** Type of the match to be performed. Possible values are REGEXP, BEGINS_WITH, or EXACT. */
-		matchType?: string;
+		matchType?: string | null;
 
 		/** Type of this event condition. Possible values are CATEGORY, ACTION, LABEL, or VALUE. */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface GoalParentLink {
 
 		/** Link to the view (profile) to which this goal belongs. */
-		href?: string;
+		href?: string | null;
 
 		/** Value is "analytics#profile". */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface GoalUrlDestinationDetails {
 
 		/** Determines if the goal URL must exactly match the capitalization of visited URLs. */
-		caseSensitive?: boolean;
+		caseSensitive?: boolean | null;
 
 		/** Determines if the first step in this goal is required. */
-		firstStepRequired?: boolean;
+		firstStepRequired?: boolean | null;
 
 		/** Match type for the goal URL. Possible values are HEAD, EXACT, or REGEX. */
-		matchType?: string;
+		matchType?: string | null;
 
 		/** List of steps configured for this goal funnel. */
-		GoalUrlDestinationDetailsSteps?: Array<GoalUrlDestinationDetailsSteps>;
+		GoalUrlDestinationDetailsSteps?: Array<GoalUrlDestinationDetailsSteps> | null;
 
 		/** URL for this goal. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface GoalUrlDestinationDetailsSteps {
 
 		/** Step name. */
-		name?: string;
+		name?: string | null;
 
 		/** Step number. */
-		number?: number;
+		number?: number | null;
 
 		/** URL for this step. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface GoalVisitNumPagesDetails {
 
 		/** Type of comparison. Possible values are LESS_THAN, GREATER_THAN, or EQUAL. */
-		comparisonType?: string;
+		comparisonType?: string | null;
 
 		/** Value used for this comparison. */
-		comparisonValue?: string;
+		comparisonValue?: string | null;
 	}
 
 	export interface GoalVisitTimeOnSiteDetails {
 
 		/** Type of comparison. Possible values are LESS_THAN or GREATER_THAN. */
-		comparisonType?: string;
+		comparisonType?: string | null;
 
 		/** Value used for this comparison. */
-		comparisonValue?: string;
+		comparisonValue?: string | null;
 	}
 
 
@@ -1694,45 +1694,45 @@ export namespace MyNS {
 	export interface Goals {
 
 		/** A list of goals. */
-		items?: Array<Goal>;
+		items?: Array<Goal> | null;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Collection type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Link to next page for this goal collection. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Link to previous page for this goal collection. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The total number of results for the query, regardless of the number of resources in the result. */
-		totalResults?: number;
+		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
-		username?: string;
+		username?: string | null;
 	}
 
 
 	/** JSON template for a hash Client Id request resource. */
 	export interface HashClientIdRequest {
-		clientId?: string;
-		kind?: string;
-		webPropertyId?: string;
+		clientId?: string | null;
+		kind?: string | null;
+		webPropertyId?: string | null;
 	}
 
 
 	/** JSON template for a hash Client Id response resource. */
 	export interface HashClientIdResponse {
-		clientId?: string;
-		hashedClientId?: string;
-		kind?: string;
-		webPropertyId?: string;
+		clientId?: string | null;
+		hashedClientId?: string | null;
+		kind?: string | null;
+		webPropertyId?: string | null;
 	}
 
 
@@ -1740,19 +1740,19 @@ export namespace MyNS {
 	export interface IncludeConditions {
 
 		/** The look-back window lets you specify a time frame for evaluating the behavior that qualifies users for your audience. For example, if your filters include users from Central Asia, and Transactions Greater than 2, and you set the look-back window to 14 days, then any user from Central Asia whose cumulative transactions exceed 2 during the last 14 days is added to the audience. */
-		daysToLookBack?: number;
+		daysToLookBack?: number | null;
 
 		/** Boolean indicating whether this segment is a smart list. https://support.google.com/analytics/answer/4628577 */
-		isSmartList?: boolean;
+		isSmartList?: boolean | null;
 
 		/** Resource type for include conditions. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Number of days (in the range 1 to 540) a user remains in the audience. */
-		membershipDurationDays?: number;
+		membershipDurationDays?: number | null;
 
 		/** The segment condition that will cause a user to be added to an audience. */
-		segment?: string;
+		segment?: string | null;
 	}
 
 
@@ -1760,34 +1760,34 @@ export namespace MyNS {
 	export interface LinkedForeignAccount {
 
 		/** Account ID to which this linked foreign account belongs. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Boolean indicating whether this is eligible for search. */
-		eligibleForSearch?: boolean;
+		eligibleForSearch?: boolean | null;
 
 		/** Entity ad account link ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Internal ID for the web property to which this linked foreign account belongs. */
-		internalWebPropertyId?: string;
+		internalWebPropertyId?: string | null;
 
 		/** Resource type for linked foreign account. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The foreign account ID. For example the an Google Ads `linkedAccountId` has the following format XXX-XXX-XXXX. */
-		linkedAccountId?: string;
+		linkedAccountId?: string | null;
 
 		/** Remarketing audience ID to which this linked foreign account belongs. */
-		remarketingAudienceId?: string;
+		remarketingAudienceId?: string | null;
 
 		/** The status of this foreign account link. */
-		status?: string;
+		status?: string | null;
 
 		/** The type of the foreign account. For example, `ADWORDS_LINKS`, `DBM_LINKS`, `MCC_LINKS` or `OPTIMIZE`. */
-		type?: string;
+		type?: string | null;
 
 		/** Web property ID of the form UA-XXXXX-YY to which this linked foreign account belongs. */
-		webPropertyId?: string;
+		webPropertyId?: string | null;
 	}
 
 
@@ -1795,118 +1795,118 @@ export namespace MyNS {
 	export interface McfData {
 
 		/** Column headers that list dimension names followed by the metric names. The order of dimensions and metrics is same as specified in the request. */
-		McfDataColumnHeaders?: Array<McfDataColumnHeaders>;
+		McfDataColumnHeaders?: Array<McfDataColumnHeaders> | null;
 
 		/** Determines if the Analytics data contains sampled data. */
-		containsSampledData?: boolean;
+		containsSampledData?: boolean | null;
 
 		/** Unique ID for this data response. */
-		id?: string;
+		id?: string | null;
 
 		/** The maximum number of rows the response can contain, regardless of the actual number of rows returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Link to next page for this Analytics data query. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Link to previous page for this Analytics data query. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** Information for the view (profile), for which the Analytics data was requested. */
-		profileInfo?: McfDataProfileInfo;
+		profileInfo?: McfDataProfileInfo | null;
 
 		/** Analytics data request query parameters. */
-		query?: McfDataQuery;
+		query?: McfDataQuery | null;
 
 		/** Analytics data rows, where each row contains a list of dimension values followed by the metric values. The order of dimensions and metrics is same as specified in the request. */
-		rows?: Array<string>;
+		rows?: Array<string> | null;
 
 		/** The number of samples used to calculate the result. */
-		sampleSize?: string;
+		sampleSize?: string | null;
 
 		/** Total size of the sample space from which the samples were selected. */
-		sampleSpace?: string;
+		sampleSpace?: string | null;
 
 		/** Link to this page. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** The total number of rows for the query, regardless of the number of rows in the response. */
-		totalResults?: number;
+		totalResults?: number | null;
 
 		/** Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. */
-		totalsForAllResults?: {[id: string]: string };
+		totalsForAllResults?: {[id: string]: string } | null;
 	}
 
 	export interface McfDataColumnHeaders {
 
 		/** Column Type. Either DIMENSION or METRIC. */
-		columnType?: string;
+		columnType?: string | null;
 
 		/** Data type. Dimension and metric values data types such as INTEGER, DOUBLE, CURRENCY, MCF_SEQUENCE etc. */
-		dataType?: string;
+		dataType?: string | null;
 
 		/** Column name. */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface McfDataProfileInfo {
 
 		/** Account ID to which this view (profile) belongs. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Internal ID for the web property to which this view (profile) belongs. */
-		internalWebPropertyId?: string;
+		internalWebPropertyId?: string | null;
 
 		/** View (Profile) ID. */
-		profileId?: string;
+		profileId?: string | null;
 
 		/** View (Profile) name. */
-		profileName?: string;
+		profileName?: string | null;
 
 		/** Table ID for view (profile). */
-		tableId?: string;
+		tableId?: string | null;
 
 		/** Web Property ID to which this view (profile) belongs. */
-		webPropertyId?: string;
+		webPropertyId?: string | null;
 	}
 
 	export interface McfDataQuery {
 
 		/** List of analytics dimensions. */
-		dimensions?: string;
+		dimensions?: string | null;
 
 		/** End date. */
-		end_date?: string;
+		end_date?: string | null;
 
 		/** Comma-separated list of dimension or metric filters. */
-		filters?: string;
+		filters?: string | null;
 
 		/** Unique table ID. */
-		ids?: string;
+		ids?: string | null;
 
 		/** Maximum results per page. */
-		max_results?: number;
+		max_results?: number | null;
 
 		/** List of analytics metrics. */
-		metrics?: Array<string>;
+		metrics?: Array<string> | null;
 
 		/** Desired sampling level */
-		samplingLevel?: string;
+		samplingLevel?: string | null;
 
 		/** Analytics advanced segment. */
-		segment?: string;
+		segment?: string | null;
 
 		/** List of dimensions or metrics based on which Analytics data is sorted. */
-		sort?: Array<string>;
+		sort?: Array<string> | null;
 
 		/** Start date. */
-		start_date?: string;
+		start_date?: string | null;
 
 		/** Start index. */
-		start_index?: number;
+		start_index?: number | null;
 	}
 
 
@@ -1914,26 +1914,26 @@ export namespace MyNS {
 	export interface ProfileFilterLink {
 
 		/** JSON template for a profile filter link. */
-		filterRef?: FilterRef;
+		filterRef?: FilterRef | null;
 
 		/** Profile filter link ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Resource type for Analytics filter. */
-		kind?: string;
+		kind?: string | null;
 
 		/** JSON template for a linked view (profile). */
-		profileRef?: ProfileRef;
+		profileRef?: ProfileRef | null;
 
 		/**
 		 * The rank of this profile filter link relative to the other filters linked to the same profile.
 		 * For readonly (i.e., list and get) operations, the rank always starts at 1.
 		 * For write (i.e., create, update, or delete) operations, you may specify a value between 0 and 255 inclusively, [0, 255]. In order to insert a link at the end of the list, either don't specify a rank or set a rank to a number greater than the largest rank in the list. In order to insert a link to the beginning of the list specify a rank that is less than or equal to 1. The new link will move all existing filters with the same or lower rank down the list. After the link is inserted/updated/deleted all profile filter links will be renumbered starting at 1.
 		 */
-		rank?: number;
+		rank?: number | null;
 
 		/** Link for this profile filter link. */
-		selfLink?: string;
+		selfLink?: string | null;
 	}
 
 
@@ -1941,28 +1941,28 @@ export namespace MyNS {
 	export interface ProfileFilterLinks {
 
 		/** A list of profile filter links. */
-		items?: Array<ProfileFilterLink>;
+		items?: Array<ProfileFilterLink> | null;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Collection type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Link to next page for this profile filter link collection. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Link to previous page for this profile filter link collection. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The total number of results for the query, regardless of the number of results in the response. */
-		totalResults?: number;
+		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
-		username?: string;
+		username?: string | null;
 	}
 
 
@@ -1970,28 +1970,28 @@ export namespace MyNS {
 	export interface Profiles {
 
 		/** A list of views (profiles). */
-		items?: Array<Profile>;
+		items?: Array<Profile> | null;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Collection type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Link to next page for this view (profile) collection. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Link to previous page for this view (profile) collection. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The total number of results for the query, regardless of the number of results in the response. */
-		totalResults?: number;
+		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
-		username?: string;
+		username?: string | null;
 	}
 
 
@@ -1999,85 +1999,85 @@ export namespace MyNS {
 	export interface RealtimeData {
 
 		/** Column headers that list dimension names followed by the metric names. The order of dimensions and metrics is same as specified in the request. */
-		RealtimeDataColumnHeaders?: Array<RealtimeDataColumnHeaders>;
+		RealtimeDataColumnHeaders?: Array<RealtimeDataColumnHeaders> | null;
 
 		/** Unique ID for this data response. */
-		id?: string;
+		id?: string | null;
 
 		/** Resource type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Information for the view (profile), for which the real time data was requested. */
-		profileInfo?: RealtimeDataProfileInfo;
+		profileInfo?: RealtimeDataProfileInfo | null;
 
 		/** Real time data request query parameters. */
-		query?: RealtimeDataQuery;
+		query?: RealtimeDataQuery | null;
 
 		/** Real time data rows, where each row contains a list of dimension values followed by the metric values. The order of dimensions and metrics is same as specified in the request. */
-		rows?: Array<string>;
+		rows?: Array<string> | null;
 
 		/** Link to this page. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** The total number of rows for the query, regardless of the number of rows in the response. */
-		totalResults?: number;
+		totalResults?: number | null;
 
 		/** Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. */
-		totalsForAllResults?: {[id: string]: string };
+		totalsForAllResults?: {[id: string]: string } | null;
 	}
 
 	export interface RealtimeDataColumnHeaders {
 
 		/** Column Type. Either DIMENSION or METRIC. */
-		columnType?: string;
+		columnType?: string | null;
 
 		/** Data type. Dimension column headers have only STRING as the data type. Metric column headers have data types for metric values such as INTEGER, DOUBLE, CURRENCY etc. */
-		dataType?: string;
+		dataType?: string | null;
 
 		/** Column name. */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface RealtimeDataProfileInfo {
 
 		/** Account ID to which this view (profile) belongs. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Internal ID for the web property to which this view (profile) belongs. */
-		internalWebPropertyId?: string;
+		internalWebPropertyId?: string | null;
 
 		/** View (Profile) ID. */
-		profileId?: string;
+		profileId?: string | null;
 
 		/** View (Profile) name. */
-		profileName?: string;
+		profileName?: string | null;
 
 		/** Table ID for view (profile). */
-		tableId?: string;
+		tableId?: string | null;
 
 		/** Web Property ID to which this view (profile) belongs. */
-		webPropertyId?: string;
+		webPropertyId?: string | null;
 	}
 
 	export interface RealtimeDataQuery {
 
 		/** List of real time dimensions. */
-		dimensions?: string;
+		dimensions?: string | null;
 
 		/** Comma-separated list of dimension or metric filters. */
-		filters?: string;
+		filters?: string | null;
 
 		/** Unique table ID. */
-		ids?: string;
+		ids?: string | null;
 
 		/** Maximum results per page. */
-		max_results?: number;
+		max_results?: number | null;
 
 		/** List of real time metrics. */
-		metrics?: Array<string>;
+		metrics?: Array<string> | null;
 
 		/** List of dimensions or metrics based on which real time data is sorted. */
-		sort?: Array<string>;
+		sort?: Array<string> | null;
 	}
 
 
@@ -2085,70 +2085,70 @@ export namespace MyNS {
 	export interface RemarketingAudience {
 
 		/** Account ID to which this remarketing audience belongs. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** The simple audience definition that will cause a user to be added to an audience. */
-		audienceDefinition?: RemarketingAudienceAudienceDefinition;
+		audienceDefinition?: RemarketingAudienceAudienceDefinition | null;
 
 		/** The type of audience, either SIMPLE or STATE_BASED. */
-		audienceType?: string;
+		audienceType?: string | null;
 
 		/** Time this remarketing audience was created. */
-		created?: Date;
+		created?: Date | null;
 
 		/** The description of this remarketing audience. */
-		description?: string;
+		description?: string | null;
 
 		/** Remarketing Audience ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Internal ID for the web property to which this remarketing audience belongs. */
-		internalWebPropertyId?: string;
+		internalWebPropertyId?: string | null;
 
 		/** Collection type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The linked ad accounts associated with this remarketing audience. A remarketing audience can have only one linkedAdAccount currently. */
-		linkedAdAccounts?: Array<LinkedForeignAccount>;
+		linkedAdAccounts?: Array<LinkedForeignAccount> | null;
 
 		/** The views (profiles) that this remarketing audience is linked to. */
-		linkedViews?: Array<string>;
+		linkedViews?: Array<string> | null;
 
 		/** The name of this remarketing audience. */
-		name?: string;
+		name?: string | null;
 
 		/** A state based audience definition that will cause a user to be added or removed from an audience. */
-		stateBasedAudienceDefinition?: RemarketingAudienceStateBasedAudienceDefinition;
+		stateBasedAudienceDefinition?: RemarketingAudienceStateBasedAudienceDefinition | null;
 
 		/** Time this remarketing audience was last modified. */
-		updated?: Date;
+		updated?: Date | null;
 
 		/** Web property ID of the form UA-XXXXX-YY to which this remarketing audience belongs. */
-		webPropertyId?: string;
+		webPropertyId?: string | null;
 	}
 
 	export interface RemarketingAudienceAudienceDefinition {
 
 		/** JSON template for an Analytics Remarketing Include Conditions. */
-		includeConditions?: IncludeConditions;
+		includeConditions?: IncludeConditions | null;
 	}
 
 	export interface RemarketingAudienceStateBasedAudienceDefinition {
 
 		/** Defines the conditions to exclude users from the audience. */
-		excludeConditions?: RemarketingAudienceStateBasedAudienceDefinitionExcludeConditions;
+		excludeConditions?: RemarketingAudienceStateBasedAudienceDefinitionExcludeConditions | null;
 
 		/** JSON template for an Analytics Remarketing Include Conditions. */
-		includeConditions?: IncludeConditions;
+		includeConditions?: IncludeConditions | null;
 	}
 
 	export interface RemarketingAudienceStateBasedAudienceDefinitionExcludeConditions {
 
 		/** Whether to make the exclusion TEMPORARY or PERMANENT. */
-		exclusionDuration?: string;
+		exclusionDuration?: string | null;
 
 		/** The segment condition that will cause a user to be removed from an audience. */
-		segment?: string;
+		segment?: string | null;
 	}
 
 
@@ -2156,28 +2156,28 @@ export namespace MyNS {
 	export interface RemarketingAudiences {
 
 		/** A list of remarketing audiences. */
-		items?: Array<RemarketingAudience>;
+		items?: Array<RemarketingAudience> | null;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Collection type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Link to next page for this remarketing audience collection. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Link to previous page for this view (profile) collection. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The total number of results for the query, regardless of the number of results in the response. */
-		totalResults?: number;
+		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
-		username?: string;
+		username?: string | null;
 	}
 
 
@@ -2185,31 +2185,31 @@ export namespace MyNS {
 	export interface Segment {
 
 		/** Time the segment was created. */
-		created?: Date;
+		created?: Date | null;
 
 		/** Segment definition. */
-		definition?: string;
+		definition?: string | null;
 
 		/** Segment ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Resource type for Analytics segment. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Segment name. */
-		name?: string;
+		name?: string | null;
 
 		/** Segment ID. Can be used with the 'segment' parameter in Core Reporting API. */
-		segmentId?: string;
+		segmentId?: string | null;
 
 		/** Link for this segment. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** Type for a segment. Possible values are "BUILT_IN" or "CUSTOM". */
-		type?: string;
+		type?: string | null;
 
 		/** Time the segment was last modified. */
-		updated?: Date;
+		updated?: Date | null;
 	}
 
 
@@ -2217,28 +2217,28 @@ export namespace MyNS {
 	export interface Segments {
 
 		/** A list of segments. */
-		items?: Array<Segment>;
+		items?: Array<Segment> | null;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Collection type for segments. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Link to next page for this segment collection. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Link to previous page for this segment collection. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The total number of results for the query, regardless of the number of results in the response. */
-		totalResults?: number;
+		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
-		username?: string;
+		username?: string | null;
 	}
 
 
@@ -2246,76 +2246,76 @@ export namespace MyNS {
 	export interface UnsampledReport {
 
 		/** Account ID to which this unsampled report belongs. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Download details for a file stored in Google Cloud Storage. */
-		cloudStorageDownloadDetails?: UnsampledReportCloudStorageDownloadDetails;
+		cloudStorageDownloadDetails?: UnsampledReportCloudStorageDownloadDetails | null;
 
 		/** Time this unsampled report was created. */
-		created?: Date;
+		created?: Date | null;
 
 		/** The dimensions for the unsampled report. */
-		dimensions?: string;
+		dimensions?: string | null;
 
 		/** The type of download you need to use for the report data file. Possible values include `GOOGLE_DRIVE` and `GOOGLE_CLOUD_STORAGE`. If the value is `GOOGLE_DRIVE`, see the `driveDownloadDetails` field. If the value is `GOOGLE_CLOUD_STORAGE`, see the `cloudStorageDownloadDetails` field. */
-		downloadType?: string;
+		downloadType?: string | null;
 
 		/** Download details for a file stored in Google Drive. */
-		driveDownloadDetails?: UnsampledReportDriveDownloadDetails;
+		driveDownloadDetails?: UnsampledReportDriveDownloadDetails | null;
 
 		/** The end date for the unsampled report. */
-		end_date?: string;
+		end_date?: string | null;
 
 		/** The filters for the unsampled report. */
-		filters?: string;
+		filters?: string | null;
 
 		/** Unsampled report ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Resource type for an Analytics unsampled report. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The metrics for the unsampled report. */
-		metrics?: string;
+		metrics?: string | null;
 
 		/** View (Profile) ID to which this unsampled report belongs. */
-		profileId?: string;
+		profileId?: string | null;
 
 		/** The segment for the unsampled report. */
-		segment?: string;
+		segment?: string | null;
 
 		/** Link for this unsampled report. */
-		selfLink?: string;
+		selfLink?: string | null;
 
 		/** The start date for the unsampled report. */
-		start_date?: string;
+		start_date?: string | null;
 
 		/** Status of this unsampled report. Possible values are PENDING, COMPLETED, or FAILED. */
-		status?: string;
+		status?: string | null;
 
 		/** Title of the unsampled report. */
-		title?: string;
+		title?: string | null;
 
 		/** Time this unsampled report was last modified. */
-		updated?: Date;
+		updated?: Date | null;
 
 		/** Web property ID to which this unsampled report belongs. The web property ID is of the form UA-XXXXX-YY. */
-		webPropertyId?: string;
+		webPropertyId?: string | null;
 	}
 
 	export interface UnsampledReportCloudStorageDownloadDetails {
 
 		/** Id of the bucket the file object is stored in. */
-		bucketId?: string;
+		bucketId?: string | null;
 
 		/** Id of the file object containing the report data. */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 	export interface UnsampledReportDriveDownloadDetails {
 
 		/** Id of the document/file containing the report data. */
-		documentId?: string;
+		documentId?: string | null;
 	}
 
 
@@ -2323,28 +2323,28 @@ export namespace MyNS {
 	export interface UnsampledReports {
 
 		/** A list of unsampled reports. */
-		items?: Array<UnsampledReport>;
+		items?: Array<UnsampledReport> | null;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Collection type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Link to next page for this unsampled report collection. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Link to previous page for this unsampled report collection. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The total number of results for the query, regardless of the number of resources in the result. */
-		totalResults?: number;
+		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
-		username?: string;
+		username?: string | null;
 	}
 
 
@@ -2352,25 +2352,25 @@ export namespace MyNS {
 	export interface Upload {
 
 		/** Account Id to which this upload belongs. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Custom data source Id to which this data import belongs. */
-		customDataSourceId?: string;
+		customDataSourceId?: string | null;
 
 		/** Data import errors collection. */
-		errors?: Array<string>;
+		errors?: Array<string> | null;
 
 		/** A unique ID for this upload. */
-		id?: string;
+		id?: string | null;
 
 		/** Resource type for Analytics upload. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Upload status. Possible values: PENDING, COMPLETED, FAILED, DELETING, DELETED. */
-		status?: string;
+		status?: string | null;
 
 		/** Time this file is uploaded. */
-		uploadTime?: Date;
+		uploadTime?: Date | null;
 	}
 
 
@@ -2378,25 +2378,25 @@ export namespace MyNS {
 	export interface Uploads {
 
 		/** A list of uploads. */
-		items?: Array<Upload>;
+		items?: Array<Upload> | null;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Collection type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Link to next page for this upload collection. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Link to previous page for this upload collection. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The total number of results for the query, regardless of the number of resources in the result. */
-		totalResults?: number;
+		totalResults?: number | null;
 	}
 
 
@@ -2404,31 +2404,31 @@ export namespace MyNS {
 	export interface UserDeletionRequest {
 
 		/** This marks the point in time for which all user data before should be deleted */
-		deletionRequestTime?: Date;
+		deletionRequestTime?: Date | null;
 
 		/** Firebase Project Id */
-		firebaseProjectId?: string;
+		firebaseProjectId?: string | null;
 
 		/** User ID. */
-		id?: UserDeletionRequestId;
+		id?: UserDeletionRequestId | null;
 
 		/** Value is "analytics#userDeletionRequest". */
-		kind?: string;
+		kind?: string | null;
 
 		/** Property ID */
-		propertyId?: string;
+		propertyId?: string | null;
 
 		/** Web property ID of the form UA-XXXXX-YY. */
-		webPropertyId?: string;
+		webPropertyId?: string | null;
 	}
 
 	export interface UserDeletionRequestId {
 
 		/** Type of user */
-		type?: string;
+		type?: string | null;
 
 		/** The User's id */
-		userId?: string;
+		userId?: string | null;
 	}
 
 
@@ -2436,28 +2436,28 @@ export namespace MyNS {
 	export interface Webproperties {
 
 		/** A list of web properties. */
-		items?: Array<Webproperty>;
+		items?: Array<Webproperty> | null;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
-		itemsPerPage?: number;
+		itemsPerPage?: number | null;
 
 		/** Collection type. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Link to next page for this web property collection. */
-		nextLink?: string;
+		nextLink?: string | null;
 
 		/** Link to previous page for this web property collection. */
-		previousLink?: string;
+		previousLink?: string | null;
 
 		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The total number of results for the query, regardless of the number of results in the response. */
-		totalResults?: number;
+		totalResults?: number | null;
 
 		/** Email ID of the authenticated user */
-		username?: string;
+		username?: string | null;
 	}
 
 	@Injectable()
@@ -2483,7 +2483,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_data_ga_get(ids: string, start_date: string, end_date: string, metrics: string, dimensions: string, filters: string, include_empty_rows: boolean, max_results: number, output: Analytics_data_ga_getOutput, samplingLevel: Analytics_data_ga_getSamplingLevel, segment: string, sort: string, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_data_ga_get(ids: string, start_date: string, end_date: string, metrics: string, dimensions: string | null | undefined, filters: string | null | undefined, include_empty_rows: boolean | null | undefined, max_results: number | null | undefined, output: Analytics_data_ga_getOutput | null | undefined, samplingLevel: Analytics_data_ga_getSamplingLevel | null | undefined, segment: string | null | undefined, sort: string | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'data/ga?ids=' + (ids == null ? '' : encodeURIComponent(ids)) + '&start_date=' + (start_date == null ? '' : encodeURIComponent(start_date)) + '&end_date=' + (end_date == null ? '' : encodeURIComponent(end_date)) + '&metrics=' + (metrics == null ? '' : encodeURIComponent(metrics)) + '&dimensions=' + (dimensions == null ? '' : encodeURIComponent(dimensions)) + '&filters=' + (filters == null ? '' : encodeURIComponent(filters)) + '&include_empty_rows=' + include_empty_rows + '&max_results=' + max_results + '&output=' + output + '&samplingLevel=' + samplingLevel + '&segment=' + (segment == null ? '' : encodeURIComponent(segment)) + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2502,7 +2502,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_data_mcf_get(ids: string, start_date: string, end_date: string, metrics: string, dimensions: string, filters: string, max_results: number, samplingLevel: Analytics_data_ga_getSamplingLevel, sort: string, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_data_mcf_get(ids: string, start_date: string, end_date: string, metrics: string, dimensions: string | null | undefined, filters: string | null | undefined, max_results: number | null | undefined, samplingLevel: Analytics_data_ga_getSamplingLevel | null | undefined, sort: string | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'data/mcf?ids=' + (ids == null ? '' : encodeURIComponent(ids)) + '&start_date=' + (start_date == null ? '' : encodeURIComponent(start_date)) + '&end_date=' + (end_date == null ? '' : encodeURIComponent(end_date)) + '&metrics=' + (metrics == null ? '' : encodeURIComponent(metrics)) + '&dimensions=' + (dimensions == null ? '' : encodeURIComponent(dimensions)) + '&filters=' + (filters == null ? '' : encodeURIComponent(filters)) + '&max_results=' + max_results + '&samplingLevel=' + samplingLevel + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2517,7 +2517,7 @@ export namespace MyNS {
 		 * @param {string} sort A comma-separated list of dimensions or metrics that determine the sort order for real time data.
 		 * @return {void} Successful response
 		 */
-		Analytics_data_realtime_get(ids: string, metrics: string, dimensions: string, filters: string, max_results: number, sort: string): Observable<HttpResponse<string>> {
+		Analytics_data_realtime_get(ids: string, metrics: string, dimensions: string | null | undefined, filters: string | null | undefined, max_results: number | null | undefined, sort: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'data/realtime?ids=' + (ids == null ? '' : encodeURIComponent(ids)) + '&metrics=' + (metrics == null ? '' : encodeURIComponent(metrics)) + '&dimensions=' + (dimensions == null ? '' : encodeURIComponent(dimensions)) + '&filters=' + (filters == null ? '' : encodeURIComponent(filters)) + '&max_results=' + max_results + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2528,7 +2528,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_accountSummaries_list(max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_accountSummaries_list(max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accountSummaries?max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2539,7 +2539,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first account to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_accounts_list(max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_accounts_list(max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts?max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2551,7 +2551,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first account-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_accountUserLinks_list(accountId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_accountUserLinks_list(accountId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/entityUserLinks&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2595,7 +2595,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_filters_list(accountId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_filters_list(accountId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/filters&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2661,7 +2661,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_webproperties_list(accountId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_webproperties_list(accountId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2717,7 +2717,7 @@ export namespace MyNS {
 		 * @param {number} start_index A 1-based index of the first custom data source to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_customDataSources_list(accountId: string, webPropertyId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_customDataSources_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/customDataSources&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2743,7 +2743,7 @@ export namespace MyNS {
 		 * @param {number} start_index A 1-based index of the first upload to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_uploads_list(accountId: string, webPropertyId: string, customDataSourceId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_uploads_list(accountId: string, webPropertyId: string, customDataSourceId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/customDataSources/' + (customDataSourceId == null ? '' : encodeURIComponent(customDataSourceId)) + '/uploads&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2781,7 +2781,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_customDimensions_list(accountId: string, webPropertyId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_customDimensions_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/customDimensions&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2817,7 +2817,7 @@ export namespace MyNS {
 		 * @param {boolean} ignoreCustomDataSourceLinks Force the update and ignore any warnings related to the custom dimension being linked to a custom data source / data set.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_customDimensions_patch(accountId: string, webPropertyId: string, customDimensionId: string, ignoreCustomDataSourceLinks: boolean, requestBody: CustomDimension): Observable<HttpResponse<string>> {
+		Analytics_management_customDimensions_patch(accountId: string, webPropertyId: string, customDimensionId: string, ignoreCustomDataSourceLinks: boolean | null | undefined, requestBody: CustomDimension): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/customDimensions/' + (customDimensionId == null ? '' : encodeURIComponent(customDimensionId)) + '&ignoreCustomDataSourceLinks=' + ignoreCustomDataSourceLinks, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2830,7 +2830,7 @@ export namespace MyNS {
 		 * @param {boolean} ignoreCustomDataSourceLinks Force the update and ignore any warnings related to the custom dimension being linked to a custom data source / data set.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_customDimensions_update(accountId: string, webPropertyId: string, customDimensionId: string, ignoreCustomDataSourceLinks: boolean, requestBody: CustomDimension): Observable<HttpResponse<string>> {
+		Analytics_management_customDimensions_update(accountId: string, webPropertyId: string, customDimensionId: string, ignoreCustomDataSourceLinks: boolean | null | undefined, requestBody: CustomDimension): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/customDimensions/' + (customDimensionId == null ? '' : encodeURIComponent(customDimensionId)) + '&ignoreCustomDataSourceLinks=' + ignoreCustomDataSourceLinks, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2843,7 +2843,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_customMetrics_list(accountId: string, webPropertyId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_customMetrics_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/customMetrics&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2879,7 +2879,7 @@ export namespace MyNS {
 		 * @param {boolean} ignoreCustomDataSourceLinks Force the update and ignore any warnings related to the custom metric being linked to a custom data source / data set.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_customMetrics_patch(accountId: string, webPropertyId: string, customMetricId: string, ignoreCustomDataSourceLinks: boolean, requestBody: CustomMetric): Observable<HttpResponse<string>> {
+		Analytics_management_customMetrics_patch(accountId: string, webPropertyId: string, customMetricId: string, ignoreCustomDataSourceLinks: boolean | null | undefined, requestBody: CustomMetric): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/customMetrics/' + (customMetricId == null ? '' : encodeURIComponent(customMetricId)) + '&ignoreCustomDataSourceLinks=' + ignoreCustomDataSourceLinks, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2892,7 +2892,7 @@ export namespace MyNS {
 		 * @param {boolean} ignoreCustomDataSourceLinks Force the update and ignore any warnings related to the custom metric being linked to a custom data source / data set.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_customMetrics_update(accountId: string, webPropertyId: string, customMetricId: string, ignoreCustomDataSourceLinks: boolean, requestBody: CustomMetric): Observable<HttpResponse<string>> {
+		Analytics_management_customMetrics_update(accountId: string, webPropertyId: string, customMetricId: string, ignoreCustomDataSourceLinks: boolean | null | undefined, requestBody: CustomMetric): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/customMetrics/' + (customMetricId == null ? '' : encodeURIComponent(customMetricId)) + '&ignoreCustomDataSourceLinks=' + ignoreCustomDataSourceLinks, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -2905,7 +2905,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first webProperty-Google Ads link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_webPropertyAdWordsLinks_list(accountId: string, webPropertyId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_webPropertyAdWordsLinks_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/entityAdWordsLinks&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2977,7 +2977,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first webProperty-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_webpropertyUserLinks_list(accountId: string, webPropertyId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_webpropertyUserLinks_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/entityUserLinks&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3025,7 +3025,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_profiles_list(accountId: string, webPropertyId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_profiles_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/profiles&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3098,7 +3098,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first profile-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_profileUserLinks_list(accountId: string, webPropertyId: string, profileId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_profileUserLinks_list(accountId: string, webPropertyId: string, profileId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/profiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/entityUserLinks&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3150,7 +3150,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first experiment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_experiments_list(accountId: string, webPropertyId: string, profileId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_experiments_list(accountId: string, webPropertyId: string, profileId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/profiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/experiments&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3228,7 +3228,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first goal to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_goals_list(accountId: string, webPropertyId: string, profileId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_goals_list(accountId: string, webPropertyId: string, profileId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/profiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/goals&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3293,7 +3293,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_profileFilterLinks_list(accountId: string, webPropertyId: string, profileId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_profileFilterLinks_list(accountId: string, webPropertyId: string, profileId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/profiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/profileFilterLinks&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3371,7 +3371,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first unsampled report to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_unsampledReports_list(accountId: string, webPropertyId: string, profileId: string, max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_unsampledReports_list(accountId: string, webPropertyId: string, profileId: string, max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/profiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/unsampledReports&max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3422,7 +3422,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_remarketingAudience_list(accountId: string, webPropertyId: string, max_results: number, start_index: number, type: string): Observable<HttpResponse<string>> {
+		Analytics_management_remarketingAudience_list(accountId: string, webPropertyId: string, max_results: number | null | undefined, start_index: number | null | undefined, type: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/webproperties/' + (webPropertyId == null ? '' : encodeURIComponent(webPropertyId)) + '/remarketingAudiences&max_results=' + max_results + '&start_index=' + start_index + '&type=' + (type == null ? '' : encodeURIComponent(type)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -3501,7 +3501,7 @@ export namespace MyNS {
 		 * @param {number} start_index An index of the first segment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
 		 * @return {void} Successful response
 		 */
-		Analytics_management_segments_list(max_results: number, start_index: number): Observable<HttpResponse<string>> {
+		Analytics_management_segments_list(max_results: number | null | undefined, start_index: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'management/segments?max_results=' + max_results + '&start_index=' + start_index, { observe: 'response', responseType: 'text' });
 		}
 

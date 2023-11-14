@@ -192,8 +192,4 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 	}
 
-	public class ParameterDescriptionEx : ParameterDescription
-	{
-		public CodeTypeReference ParameterTypeReference { get; set; }
-	}
 }

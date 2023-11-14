@@ -5,20 +5,20 @@ export namespace MyNS {
 
 	/** The ID and expiry time of the attachment set returned by the <a>AddAttachmentsToSet</a> operation. */
 	export interface AddAttachmentsToSetResponse {
-		attachmentSetId?: string;
-		expiryTime?: string;
+		attachmentSetId?: string | null;
+		expiryTime?: string | null;
 	}
 
 	export interface AddAttachmentsToSetRequest {
-		attachmentSetId?: string;
+		attachmentSetId?: string | null;
 		attachments: Array<Attachment>;
 	}
 
 
 	/** An attachment to a case communication. The attachment consists of the file name and the content of the file. */
 	export interface Attachment {
-		fileName?: string;
-		data?: string;
+		fileName?: string | null;
+		data?: string | null;
 	}
 
 	export interface InternalServerError {
@@ -39,16 +39,16 @@ export namespace MyNS {
 
 	/** The result of the <a>AddCommunicationToCase</a> operation. */
 	export interface AddCommunicationToCaseResponse {
-		result?: boolean;
+		result?: boolean | null;
 	}
 
 
 	/** To be written. */
 	export interface AddCommunicationToCaseRequest {
-		caseId?: string;
+		caseId?: string | null;
 		communicationBody: string;
-		ccEmailAddresses?: Array<string>;
-		attachmentSetId?: string;
+		ccEmailAddresses?: Array<string> | null;
+		attachmentSetId?: string | null;
 	}
 
 	export interface CaseIdNotFound {
@@ -57,19 +57,19 @@ export namespace MyNS {
 
 	/** The AWS Support case ID returned by a successful completion of the <a>CreateCase</a> operation. */
 	export interface CreateCaseResponse {
-		caseId?: string;
+		caseId?: string | null;
 	}
 
 	export interface CreateCaseRequest {
 		subject: string;
-		serviceCode?: string;
-		severityCode?: string;
-		categoryCode?: string;
+		serviceCode?: string | null;
+		severityCode?: string | null;
+		categoryCode?: string | null;
 		communicationBody: string;
-		ccEmailAddresses?: Array<string>;
-		language?: string;
-		issueType?: string;
-		attachmentSetId?: string;
+		ccEmailAddresses?: Array<string> | null;
+		language?: string | null;
+		issueType?: string | null;
+		attachmentSetId?: string | null;
 	}
 
 	export interface CaseCreationLimitExceeded {
@@ -80,7 +80,7 @@ export namespace MyNS {
 	export interface DescribeAttachmentResponse {
 
 		/** An attachment to a case communication. The attachment consists of the file name and the content of the file. */
-		attachment?: Attachment;
+		attachment?: Attachment | null;
 	}
 
 	export interface DescribeAttachmentRequest {
@@ -96,121 +96,121 @@ export namespace MyNS {
 
 	/** Returns an array of <a>CaseDetails</a> objects and a <code>nextToken</code> that defines a point for pagination in the result set. */
 	export interface DescribeCasesResponse {
-		cases?: Array<CaseDetails>;
-		nextToken?: string;
+		cases?: Array<CaseDetails> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** <p>A JSON-formatted object that contains the metadata for a support case. It is contained the response from a <a>DescribeCases</a> request. <b>CaseDetails</b> contains the following fields:</p> <ul> <li> <p> <b>caseId.</b> The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.</p> </li> <li> <p> <b>categoryCode.</b> The category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a call to <a>DescribeServices</a>.</p> </li> <li> <p> <b>displayId.</b> The identifier for the case on pages in the AWS Support Center.</p> </li> <li> <p> <b>language.</b> The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p> </li> <li> <p> <b>recentCommunications.</b> One or more <a>Communication</a> objects. Fields of these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.</p> </li> <li> <p> <b>nextToken.</b> A resumption point for pagination.</p> </li> <li> <p> <b>serviceCode.</b> The identifier for the AWS service that corresponds to the service code defined in the call to <a>DescribeServices</a>.</p> </li> <li> <p> <b>severityCode.</b> The severity code assigned to the case. Contains one of the values returned by the call to <a>DescribeSeverityLevels</a>. The possible values are: <code>low</code>, <code>normal</code>, <code>high</code>, <code>urgent</code>, and <code>critical</code>.</p> </li> <li> <p> <b>status.</b> The status of the case in the AWS Support Center. Valid values:</p> <ul> <li> <p> <code>opened</code> </p> </li> <li> <p> <code>pending-customer-action</code> </p> </li> <li> <p> <code>reopened</code> </p> </li> <li> <p> <code>resolved</code> </p> </li> <li> <p> <code>unassigned</code> </p> </li> <li> <p> <code>work-in-progress</code> </p> </li> </ul> </li> <li> <p> <b>subject.</b> The subject line of the case.</p> </li> <li> <p> <b>submittedBy.</b> The email address of the account that submitted the case.</p> </li> <li> <p> <b>timeCreated.</b> The time the case was created, in ISO-8601 format.</p> </li> </ul> */
 	export interface CaseDetails {
-		caseId?: string;
-		displayId?: string;
-		subject?: string;
-		status?: string;
-		serviceCode?: string;
-		categoryCode?: string;
-		severityCode?: string;
-		submittedBy?: string;
-		timeCreated?: string;
+		caseId?: string | null;
+		displayId?: string | null;
+		subject?: string | null;
+		status?: string | null;
+		serviceCode?: string | null;
+		categoryCode?: string | null;
+		severityCode?: string | null;
+		submittedBy?: string | null;
+		timeCreated?: string | null;
 
 		/** The five most recent communications associated with the case. */
-		recentCommunications?: RecentCaseCommunications;
-		ccEmailAddresses?: Array<string>;
-		language?: string;
+		recentCommunications?: RecentCaseCommunications | null;
+		ccEmailAddresses?: Array<string> | null;
+		language?: string | null;
 	}
 
 
 	/** The five most recent communications associated with the case. */
 	export interface RecentCaseCommunications {
-		communications?: Array<Communication>;
-		nextToken?: string;
+		communications?: Array<Communication> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** A communication associated with an AWS Support case. The communication consists of the case ID, the message body, attachment information, the submitter of the communication, and the date and time of the communication. */
 	export interface Communication {
-		caseId?: string;
-		body?: string;
-		submittedBy?: string;
-		timeCreated?: string;
-		attachmentSet?: Array<AttachmentDetails>;
+		caseId?: string | null;
+		body?: string | null;
+		submittedBy?: string | null;
+		timeCreated?: string | null;
+		attachmentSet?: Array<AttachmentDetails> | null;
 	}
 
 
 	/** The file name and ID of an attachment to a case communication. You can use the ID to retrieve the attachment with the <a>DescribeAttachment</a> operation. */
 	export interface AttachmentDetails {
-		attachmentId?: string;
-		fileName?: string;
+		attachmentId?: string | null;
+		fileName?: string | null;
 	}
 
 	export interface DescribeCasesRequest {
-		caseIdList?: Array<string>;
-		displayId?: string;
-		afterTime?: string;
-		beforeTime?: string;
-		includeResolvedCases?: boolean;
-		nextToken?: string;
-		maxResults?: number;
-		language?: string;
-		includeCommunications?: boolean;
+		caseIdList?: Array<string> | null;
+		displayId?: string | null;
+		afterTime?: string | null;
+		beforeTime?: string | null;
+		includeResolvedCases?: boolean | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
+		language?: string | null;
+		includeCommunications?: boolean | null;
 	}
 
 
 	/** The communications returned by the <a>DescribeCommunications</a> operation. */
 	export interface DescribeCommunicationsResponse {
-		communications?: Array<Communication>;
-		nextToken?: string;
+		communications?: Array<Communication> | null;
+		nextToken?: string | null;
 	}
 
 	export interface DescribeCommunicationsRequest {
 		caseId: string;
-		beforeTime?: string;
-		afterTime?: string;
-		nextToken?: string;
-		maxResults?: number;
+		beforeTime?: string | null;
+		afterTime?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 
 	/** The list of AWS services returned by the <a>DescribeServices</a> operation. */
 	export interface DescribeServicesResponse {
-		services?: Array<Service>;
+		services?: Array<Service> | null;
 	}
 
 
 	/** Information about an AWS service returned by the <a>DescribeServices</a> operation. */
 	export interface Service {
-		code?: string;
-		name?: string;
-		categories?: Array<Category>;
+		code?: string | null;
+		name?: string | null;
+		categories?: Array<Category> | null;
 	}
 
 
 	/** A JSON-formatted name/value pair that represents the category name and category code of the problem, selected from the <a>DescribeServices</a> response for each AWS service. */
 	export interface Category {
-		code?: string;
-		name?: string;
+		code?: string | null;
+		name?: string | null;
 	}
 
 	export interface DescribeServicesRequest {
-		serviceCodeList?: Array<string>;
-		language?: string;
+		serviceCodeList?: Array<string> | null;
+		language?: string | null;
 	}
 
 
 	/** The list of severity levels returned by the <a>DescribeSeverityLevels</a> operation. */
 	export interface DescribeSeverityLevelsResponse {
-		severityLevels?: Array<SeverityLevel>;
+		severityLevels?: Array<SeverityLevel> | null;
 	}
 
 
 	/** A code and name pair that represents the severity level of a support case. The available values depend on the support plan for the account. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a>. */
 	export interface SeverityLevel {
-		code?: string;
-		name?: string;
+		code?: string | null;
+		name?: string | null;
 	}
 
 	export interface DescribeSeverityLevelsRequest {
-		language?: string;
+		language?: string | null;
 	}
 
 
@@ -238,7 +238,7 @@ export namespace MyNS {
 	export interface DescribeTrustedAdvisorCheckResultResponse {
 
 		/** The results of a Trusted Advisor check returned by <a>DescribeTrustedAdvisorCheckResult</a>. */
-		result?: TrustedAdvisorCheckResult;
+		result?: TrustedAdvisorCheckResult | null;
 	}
 
 
@@ -276,7 +276,7 @@ export namespace MyNS {
 	export interface TrustedAdvisorCategorySpecificSummary {
 
 		/** The estimated cost savings that might be realized if the recommended operations are taken. */
-		costOptimizing?: TrustedAdvisorCostOptimizingSummary;
+		costOptimizing?: TrustedAdvisorCostOptimizingSummary | null;
 	}
 
 
@@ -290,9 +290,9 @@ export namespace MyNS {
 	/** Contains information about a resource identified by a Trusted Advisor check. */
 	export interface TrustedAdvisorResourceDetail {
 		status: string;
-		region?: string;
+		region?: string | null;
 		resourceId: string;
-		isSuppressed?: boolean;
+		isSuppressed?: boolean | null;
 		metadata: Array<string>;
 	}
 
@@ -300,7 +300,7 @@ export namespace MyNS {
 	/** <p/> */
 	export interface DescribeTrustedAdvisorCheckResultRequest {
 		checkId: string;
-		language?: string;
+		language?: string | null;
 	}
 
 
@@ -315,7 +315,7 @@ export namespace MyNS {
 		checkId: string;
 		timestamp: string;
 		status: string;
-		hasFlaggedResources?: boolean;
+		hasFlaggedResources?: boolean | null;
 
 		/**
 		 * Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
@@ -376,12 +376,12 @@ export namespace MyNS {
 
 	/** The status of the case returned by the <a>ResolveCase</a> operation. */
 	export interface ResolveCaseResponse {
-		initialCaseStatus?: string;
-		finalCaseStatus?: string;
+		initialCaseStatus?: string | null;
+		finalCaseStatus?: string | null;
 	}
 
 	export interface ResolveCaseRequest {
-		caseId?: string;
+		caseId?: string | null;
 	}
 
 	@Injectable()
@@ -432,7 +432,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeCasesResponse} Success
 		 */
-		DescribeCases(maxResults: string, nextToken: string, requestBody: DescribeCasesRequest): Observable<DescribeCasesResponse> {
+		DescribeCases(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeCasesRequest): Observable<DescribeCasesResponse> {
 			return this.http.post<DescribeCasesResponse>(this.baseUri + '#X-Amz-Target=AWSSupport_20130415.DescribeCases?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -443,7 +443,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeCommunicationsResponse} Success
 		 */
-		DescribeCommunications(maxResults: string, nextToken: string, requestBody: DescribeCommunicationsRequest): Observable<DescribeCommunicationsResponse> {
+		DescribeCommunications(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeCommunicationsRequest): Observable<DescribeCommunicationsResponse> {
 			return this.http.post<DescribeCommunicationsResponse>(this.baseUri + '#X-Amz-Target=AWSSupport_20130415.DescribeCommunications?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

@@ -7,10 +7,10 @@ export namespace MyNS {
 	export interface Annotation {
 
 		/** A set of attributes, each in the format `[KEY]:[VALUE]`. */
-		attributes?: Attributes;
+		attributes?: Attributes | null;
 
 		/** Represents a string that might be shortened to a specified length. */
-		description?: TruncatableString;
+		description?: TruncatableString | null;
 	}
 
 
@@ -26,14 +26,14 @@ export namespace MyNS {
 		 * "/http/request_bytes": 300
 		 * "abc.com/myattribute": true
 		 */
-		attributeMap?: {[id: string]: AttributeValue };
+		attributeMap?: {[id: string]: AttributeValue } | null;
 
 		/**
 		 * The number of attributes that were discarded. Attributes can be discarded
 		 * because their keys are too long or because there are too many attributes.
 		 * If this value is 0 then all attributes are valid.
 		 */
-		droppedAttributesCount?: number;
+		droppedAttributesCount?: number | null;
 	}
 
 
@@ -41,13 +41,13 @@ export namespace MyNS {
 	export interface AttributeValue {
 
 		/** A Boolean value represented by `true` or `false`. */
-		boolValue?: boolean;
+		boolValue?: boolean | null;
 
 		/** A 64-bit signed integer. */
-		intValue?: string;
+		intValue?: string | null;
 
 		/** Represents a string that might be shortened to a specified length. */
-		stringValue?: TruncatableString;
+		stringValue?: TruncatableString | null;
 	}
 
 
@@ -58,7 +58,7 @@ export namespace MyNS {
 		 * The number of bytes removed from the original string. If this
 		 * value is 0, then the string was not shortened.
 		 */
-		truncatedByteCount?: number;
+		truncatedByteCount?: number | null;
 
 		/**
 		 * The shortened string. For example, if the original string is 500
@@ -68,7 +68,7 @@ export namespace MyNS {
 		 * are multi-byte characters in the string, then the length of the
 		 * shortened string might be less than the size limit.
 		 */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -79,7 +79,7 @@ export namespace MyNS {
 		 * Required. A list of new spans. The span names must not match existing
 		 * spans, or the results are undefined.
 		 */
-		spans?: Array<Span>;
+		spans?: Array<Span> | null;
 	}
 
 
@@ -94,29 +94,29 @@ export namespace MyNS {
 	export interface Span {
 
 		/** A set of attributes, each in the format `[KEY]:[VALUE]`. */
-		attributes?: Attributes;
+		attributes?: Attributes | null;
 
 		/**
 		 * Optional. The number of child spans that were generated while this span
 		 * was active. If set, allows implementation to detect missing child spans.
 		 */
-		childSpanCount?: number;
+		childSpanCount?: number | null;
 
 		/** Represents a string that might be shortened to a specified length. */
-		displayName?: TruncatableString;
+		displayName?: TruncatableString | null;
 
 		/**
 		 * Required. The end time of the span. On the client side, this is the time kept by
 		 * the local machine where the span execution ends. On the server side, this
 		 * is the time when the server application handler stops running.
 		 */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * A collection of links, which are references from this span to a span
 		 * in the same or different trace.
 		 */
-		links?: Links;
+		links?: Links | null;
 
 		/**
 		 * The resource name of the span in the following format:
@@ -125,13 +125,13 @@ export namespace MyNS {
 		 * [SPAN_ID] is a unique identifier for a span within a trace; it
 		 * is a 16-character hexadecimal encoding of an 8-byte array.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The [SPAN_ID] of this span's parent span. If this is a root span,
 		 * then this field must be empty.
 		 */
-		parentSpanId?: string;
+		parentSpanId?: string | null;
 
 		/**
 		 * Optional. Set this parameter to indicate whether this span is in
@@ -139,27 +139,27 @@ export namespace MyNS {
 		 * Stackdriver Trace is unable to take advantage of this helpful
 		 * information.
 		 */
-		sameProcessAsParentSpan?: boolean;
+		sameProcessAsParentSpan?: boolean | null;
 
 		/** Required. The [SPAN_ID] portion of the span's resource name. */
-		spanId?: string;
+		spanId?: string | null;
 
 		/**
 		 * Distinguishes between spans generated in a particular context. For example,
 		 * two spans with the same name may be distinguished using `CLIENT` (caller)
 		 * and `SERVER` (callee) to identify an RPC call.
 		 */
-		spanKind?: SpanSpanKind;
+		spanKind?: SpanSpanKind | null;
 
 		/** A call stack appearing in a trace. */
-		stackTrace?: StackTrace;
+		stackTrace?: StackTrace | null;
 
 		/**
 		 * Required. The start time of the span. On the client side, this is the time kept by
 		 * the local machine where the span execution starts. On the server side, this
 		 * is the time when the server's application handler starts running.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -169,14 +169,14 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		status?: Status;
+		status?: Status | null;
 
 		/**
 		 * A collection of `TimeEvent`s. A `TimeEvent` is a time-stamped annotation
 		 * on the span, consisting of either user-supplied key:value pairs, or
 		 * details of a message sent/received between Spans.
 		 */
-		timeEvents?: TimeEvents;
+		timeEvents?: TimeEvents | null;
 	}
 
 
@@ -190,10 +190,10 @@ export namespace MyNS {
 		 * The number of dropped links after the maximum size was enforced. If
 		 * this value is 0, then no links were dropped.
 		 */
-		droppedLinksCount?: number;
+		droppedLinksCount?: number | null;
 
 		/** A collection of links. */
-		link?: Array<Link>;
+		link?: Array<Link> | null;
 	}
 
 
@@ -206,16 +206,16 @@ export namespace MyNS {
 	export interface Link {
 
 		/** A set of attributes, each in the format `[KEY]:[VALUE]`. */
-		attributes?: Attributes;
+		attributes?: Attributes | null;
 
 		/** The [SPAN_ID] for a span within a trace. */
-		spanId?: string;
+		spanId?: string | null;
 
 		/** The [TRACE_ID] for a trace within a project. */
-		traceId?: string;
+		traceId?: string | null;
 
 		/** The relationship of the current span relative to the linked span. */
-		type?: LinkType;
+		type?: LinkType | null;
 	}
 
 	export enum LinkType { TYPE_UNSPECIFIED = 0, CHILD_LINKED_SPAN = 1, PARENT_LINKED_SPAN = 2 }
@@ -227,7 +227,7 @@ export namespace MyNS {
 	export interface StackTrace {
 
 		/** A collection of stack frames, which can be truncated. */
-		stackFrames?: StackFrames;
+		stackFrames?: StackFrames | null;
 
 		/**
 		 * The hash ID is used to conserve network bandwidth for duplicate
@@ -238,7 +238,7 @@ export namespace MyNS {
 		 * Subsequent spans within the same request can refer
 		 * to that stack trace by only setting `stackTraceHashId`.
 		 */
-		stackTraceHashId?: string;
+		stackTraceHashId?: string | null;
 	}
 
 
@@ -250,10 +250,10 @@ export namespace MyNS {
 		 * were too many stack frames.
 		 * If this value is 0, then no stack frames were dropped.
 		 */
-		droppedFramesCount?: number;
+		droppedFramesCount?: number | null;
 
 		/** Stack frames in this call stack. */
-		frame?: Array<StackFrame>;
+		frame?: Array<StackFrame> | null;
 	}
 
 
@@ -264,25 +264,25 @@ export namespace MyNS {
 		 * The column number where the function call appears, if available.
 		 * This is important in JavaScript because of its anonymous functions.
 		 */
-		columnNumber?: string;
+		columnNumber?: string | null;
 
 		/** Represents a string that might be shortened to a specified length. */
-		fileName?: TruncatableString;
+		fileName?: TruncatableString | null;
 
 		/** Represents a string that might be shortened to a specified length. */
-		functionName?: TruncatableString;
+		functionName?: TruncatableString | null;
 
 		/** The line number in `file_name` where the function call appears. */
-		lineNumber?: string;
+		lineNumber?: string | null;
 
 		/** Binary module. */
-		loadModule?: Module;
+		loadModule?: Module | null;
 
 		/** Represents a string that might be shortened to a specified length. */
-		originalFunctionName?: TruncatableString;
+		originalFunctionName?: TruncatableString | null;
 
 		/** Represents a string that might be shortened to a specified length. */
-		sourceVersion?: TruncatableString;
+		sourceVersion?: TruncatableString | null;
 	}
 
 
@@ -290,10 +290,10 @@ export namespace MyNS {
 	export interface Module {
 
 		/** Represents a string that might be shortened to a specified length. */
-		buildId?: TruncatableString;
+		buildId?: TruncatableString | null;
 
 		/** Represents a string that might be shortened to a specified length. */
-		module?: TruncatableString;
+		module?: TruncatableString | null;
 	}
 
 
@@ -308,20 +308,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -336,16 +336,16 @@ export namespace MyNS {
 		 * The number of dropped annotations in all the included time events.
 		 * If the value is 0, then no annotations were dropped.
 		 */
-		droppedAnnotationsCount?: number;
+		droppedAnnotationsCount?: number | null;
 
 		/**
 		 * The number of dropped message events in all the included time events.
 		 * If the value is 0, then no message events were dropped.
 		 */
-		droppedMessageEventsCount?: number;
+		droppedMessageEventsCount?: number | null;
 
 		/** A collection of `TimeEvent`s. */
-		timeEvent?: Array<TimeEvent>;
+		timeEvent?: Array<TimeEvent> | null;
 	}
 
 
@@ -353,13 +353,13 @@ export namespace MyNS {
 	export interface TimeEvent {
 
 		/** Text annotation with a set of attributes. */
-		annotation?: Annotation;
+		annotation?: Annotation | null;
 
 		/** An event describing a message sent/received between Spans. */
-		messageEvent?: MessageEvent;
+		messageEvent?: MessageEvent | null;
 
 		/** The timestamp indicating the time the event occurred. */
-		time?: string;
+		time?: string | null;
 	}
 
 
@@ -370,23 +370,23 @@ export namespace MyNS {
 		 * The number of compressed bytes sent or received. If missing assumed to
 		 * be the same size as uncompressed.
 		 */
-		compressedSizeBytes?: string;
+		compressedSizeBytes?: string | null;
 
 		/**
 		 * An identifier for the MessageEvent's message that can be used to match
 		 * SENT and RECEIVED MessageEvents. It is recommended to be unique within
 		 * a Span.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Type of MessageEvent. Indicates whether the message was sent or
 		 * received.
 		 */
-		type?: MessageEventType;
+		type?: MessageEventType | null;
 
 		/** The number of uncompressed bytes sent or received. */
-		uncompressedSizeBytes?: string;
+		uncompressedSizeBytes?: string | null;
 	}
 
 	export enum MessageEventType { TYPE_UNSPECIFIED = 0, SENT = 1, RECEIVED = 2 }

@@ -3,26 +3,26 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface AllocateStaticIpResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
 	/** Describes the API operation. */
 	export interface Operation {
-		id?: string;
-		resourceName?: string;
-		resourceType?: OperationResourceType;
-		createdAt?: Date;
+		id?: string | null;
+		resourceName?: string | null;
+		resourceType?: OperationResourceType | null;
+		createdAt?: Date | null;
 
 		/** Describes the resource location. */
-		location?: ResourceLocation;
-		isTerminal?: boolean;
-		operationDetails?: string;
-		operationType?: OperationOperationType;
-		status?: OperationStatus;
-		statusChangedAt?: Date;
-		errorCode?: string;
-		errorDetails?: string;
+		location?: ResourceLocation | null;
+		isTerminal?: boolean | null;
+		operationDetails?: string | null;
+		operationType?: OperationOperationType | null;
+		status?: OperationStatus | null;
+		statusChangedAt?: Date | null;
+		errorCode?: string | null;
+		errorDetails?: string | null;
 	}
 
 	export enum OperationResourceType { Instance = 0, StaticIp = 1, KeyPair = 2, InstanceSnapshot = 3, Domain = 4, PeeredVpc = 5, LoadBalancer = 6, LoadBalancerTlsCertificate = 7, Disk = 8, DiskSnapshot = 9, RelationalDatabase = 10, RelationalDatabaseSnapshot = 11, ExportSnapshotRecord = 12, CloudFormationStackRecord = 13, Alarm = 14, ContactMethod = 15 }
@@ -30,8 +30,8 @@ export namespace MyNS {
 
 	/** Describes the resource location. */
 	export interface ResourceLocation {
-		availabilityZone?: string;
-		regionName?: ResourceLocationRegionName;
+		availabilityZone?: string | null;
+		regionName?: ResourceLocationRegionName | null;
 	}
 
 	export enum ResourceLocationRegionName { us_east_1 = 0, us_east_2 = 1, us_west_1 = 2, us_west_2 = 3, eu_west_1 = 4, eu_west_2 = 5, eu_west_3 = 6, eu_central_1 = 7, ca_central_1 = 8, ap_south_1 = 9, ap_southeast_1 = 10, ap_southeast_2 = 11, ap_northeast_1 = 12, ap_northeast_2 = 13 }
@@ -66,7 +66,7 @@ export namespace MyNS {
 	}
 
 	export interface AttachDiskResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface AttachDiskRequest {
@@ -76,7 +76,7 @@ export namespace MyNS {
 	}
 
 	export interface AttachInstancesToLoadBalancerResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface AttachInstancesToLoadBalancerRequest {
@@ -85,7 +85,7 @@ export namespace MyNS {
 	}
 
 	export interface AttachLoadBalancerTlsCertificateResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface AttachLoadBalancerTlsCertificateRequest {
@@ -94,7 +94,7 @@ export namespace MyNS {
 	}
 
 	export interface AttachStaticIpResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface AttachStaticIpRequest {
@@ -105,7 +105,7 @@ export namespace MyNS {
 	export interface CloseInstancePublicPortsResult {
 
 		/** Describes the API operation. */
-		operation?: Operation;
+		operation?: Operation | null;
 	}
 
 	export interface CloseInstancePublicPortsRequest {
@@ -121,24 +121,24 @@ export namespace MyNS {
 
 	/** Describes ports to open on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol. */
 	export interface PortInfo {
-		fromPort?: number;
-		toPort?: number;
-		protocol?: PortInfoProtocol;
-		cidrs?: Array<string>;
-		cidrListAliases?: Array<string>;
+		fromPort?: number | null;
+		toPort?: number | null;
+		protocol?: PortInfoProtocol | null;
+		cidrs?: Array<string> | null;
+		cidrListAliases?: Array<string> | null;
 	}
 
 	export enum PortInfoProtocol { tcp = 0, all = 1, udp = 2, icmp = 3 }
 
 	export interface CopySnapshotResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface CopySnapshotRequest {
-		sourceSnapshotName?: string;
-		sourceResourceName?: string;
-		restoreDate?: string;
-		useLatestRestorableAutoSnapshot?: boolean;
+		sourceSnapshotName?: string | null;
+		sourceResourceName?: string | null;
+		restoreDate?: string | null;
+		useLatestRestorableAutoSnapshot?: boolean | null;
 		targetSnapshotName: string;
 		sourceRegion: CopySnapshotRequestSourceRegion;
 	}
@@ -146,7 +146,7 @@ export namespace MyNS {
 	export enum CopySnapshotRequestSourceRegion { us_east_1 = 0, us_east_2 = 1, us_west_1 = 2, us_west_2 = 3, eu_west_1 = 4, eu_west_2 = 5, eu_west_3 = 6, eu_central_1 = 7, ca_central_1 = 8, ap_south_1 = 9, ap_southeast_1 = 10, ap_southeast_2 = 11, ap_northeast_1 = 12, ap_northeast_2 = 13 }
 
 	export interface CreateCloudFormationStackResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface CreateCloudFormationStackRequest {
@@ -159,14 +159,14 @@ export namespace MyNS {
 		sourceName: string;
 		instanceType: string;
 		portInfoSource: InstanceEntryPortInfoSource;
-		userData?: string;
+		userData?: string | null;
 		availabilityZone: string;
 	}
 
 	export enum InstanceEntryPortInfoSource { DEFAULT = 0, INSTANCE = 1, NONE = 2, CLOSED = 3 }
 
 	export interface CreateContactMethodResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface CreateContactMethodRequest {
@@ -177,22 +177,22 @@ export namespace MyNS {
 	export enum CreateContactMethodRequestProtocol { Email = 0, SMS = 1 }
 
 	export interface CreateDiskResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface CreateDiskRequest {
 		diskName: string;
 		availabilityZone: string;
 		sizeInGb: number;
-		tags?: Array<Tag>;
-		addOns?: Array<AddOnRequest>;
+		tags?: Array<Tag> | null;
+		addOns?: Array<AddOnRequest> | null;
 	}
 
 
 	/** <p>Describes a tag key and optional value assigned to an Amazon Lightsail resource.</p> <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.</p> */
 	export interface Tag {
-		key?: string;
-		value?: string;
+		key?: string | null;
+		value?: string | null;
 	}
 
 
@@ -201,7 +201,7 @@ export namespace MyNS {
 		addOnType: AddOnRequestAddOnType;
 
 		/** <p>Describes a request to enable or modify the automatic snapshot add-on for an Amazon Lightsail instance or disk.</p> <p>When you modify the automatic snapshot time for a resource, it is typically effective immediately except under the following conditions:</p> <ul> <li> <p>If an automatic snapshot has been created for the current day, and you change the snapshot time to a later time of day, then the new snapshot time will be effective the following day. This ensures that two snapshots are not created for the current day.</p> </li> <li> <p>If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to an earlier time of day, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day.</p> </li> <li> <p>If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to a time that is within 30 minutes from your current time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.</p> </li> <li> <p>If an automatic snapshot is scheduled to be created within 30 minutes from your current time and you change the snapshot time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.</p> </li> </ul> */
-		autoSnapshotAddOnRequest?: AutoSnapshotAddOnRequest;
+		autoSnapshotAddOnRequest?: AutoSnapshotAddOnRequest | null;
 	}
 
 	export enum AddOnRequestAddOnType { AutoSnapshot = 0 }
@@ -209,51 +209,51 @@ export namespace MyNS {
 
 	/** <p>Describes a request to enable or modify the automatic snapshot add-on for an Amazon Lightsail instance or disk.</p> <p>When you modify the automatic snapshot time for a resource, it is typically effective immediately except under the following conditions:</p> <ul> <li> <p>If an automatic snapshot has been created for the current day, and you change the snapshot time to a later time of day, then the new snapshot time will be effective the following day. This ensures that two snapshots are not created for the current day.</p> </li> <li> <p>If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to an earlier time of day, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day.</p> </li> <li> <p>If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to a time that is within 30 minutes from your current time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.</p> </li> <li> <p>If an automatic snapshot is scheduled to be created within 30 minutes from your current time and you change the snapshot time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.</p> </li> </ul> */
 	export interface AutoSnapshotAddOnRequest {
-		snapshotTimeOfDay?: string;
+		snapshotTimeOfDay?: string | null;
 	}
 
 	export interface CreateDiskFromSnapshotResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface CreateDiskFromSnapshotRequest {
 		diskName: string;
-		diskSnapshotName?: string;
+		diskSnapshotName?: string | null;
 		availabilityZone: string;
 		sizeInGb: number;
-		tags?: Array<Tag>;
-		addOns?: Array<AddOnRequest>;
-		sourceDiskName?: string;
-		restoreDate?: string;
-		useLatestRestorableAutoSnapshot?: boolean;
+		tags?: Array<Tag> | null;
+		addOns?: Array<AddOnRequest> | null;
+		sourceDiskName?: string | null;
+		restoreDate?: string | null;
+		useLatestRestorableAutoSnapshot?: boolean | null;
 	}
 
 	export interface CreateDiskSnapshotResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface CreateDiskSnapshotRequest {
-		diskName?: string;
+		diskName?: string | null;
 		diskSnapshotName: string;
-		instanceName?: string;
-		tags?: Array<Tag>;
+		instanceName?: string | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateDomainResult {
 
 		/** Describes the API operation. */
-		operation?: Operation;
+		operation?: Operation | null;
 	}
 
 	export interface CreateDomainRequest {
 		domainName: string;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateDomainEntryResult {
 
 		/** Describes the API operation. */
-		operation?: Operation;
+		operation?: Operation | null;
 	}
 
 	export interface CreateDomainEntryRequest {
@@ -269,60 +269,60 @@ export namespace MyNS {
 
 	/** Describes a domain recordset entry. */
 	export interface DomainEntry {
-		id?: string;
-		name?: string;
-		target?: string;
-		isAlias?: boolean;
-		type?: string;
-		options?: DomainEntryOptions;
+		id?: string | null;
+		name?: string | null;
+		target?: string | null;
+		isAlias?: boolean | null;
+		type?: string | null;
+		options?: DomainEntryOptions | null;
 	}
 
 	export interface DomainEntryOptions {
 	}
 
 	export interface CreateInstanceSnapshotResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface CreateInstanceSnapshotRequest {
 		instanceSnapshotName: string;
 		instanceName: string;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateInstancesResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface CreateInstancesRequest {
 		instanceNames: Array<string>;
 		availabilityZone: string;
-		customImageName?: string;
+		customImageName?: string | null;
 		blueprintId: string;
 		bundleId: string;
-		userData?: string;
-		keyPairName?: string;
-		tags?: Array<Tag>;
-		addOns?: Array<AddOnRequest>;
+		userData?: string | null;
+		keyPairName?: string | null;
+		tags?: Array<Tag> | null;
+		addOns?: Array<AddOnRequest> | null;
 	}
 
 	export interface CreateInstancesFromSnapshotResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface CreateInstancesFromSnapshotRequest {
 		instanceNames: Array<string>;
-		attachedDiskMapping?: AttachedDiskMap;
+		attachedDiskMapping?: AttachedDiskMap | null;
 		availabilityZone: string;
-		instanceSnapshotName?: string;
+		instanceSnapshotName?: string | null;
 		bundleId: string;
-		userData?: string;
-		keyPairName?: string;
-		tags?: Array<Tag>;
-		addOns?: Array<AddOnRequest>;
-		sourceInstanceName?: string;
-		restoreDate?: string;
-		useLatestRestorableAutoSnapshot?: boolean;
+		userData?: string | null;
+		keyPairName?: string | null;
+		tags?: Array<Tag> | null;
+		addOns?: Array<AddOnRequest> | null;
+		sourceInstanceName?: string | null;
+		restoreDate?: string | null;
+		useLatestRestorableAutoSnapshot?: boolean | null;
 	}
 
 	export interface AttachedDiskMap {
@@ -331,106 +331,106 @@ export namespace MyNS {
 	export interface CreateKeyPairResult {
 
 		/** Describes the SSH key pair. */
-		keyPair?: KeyPair;
-		publicKeyBase64?: string;
-		privateKeyBase64?: string;
+		keyPair?: KeyPair | null;
+		publicKeyBase64?: string | null;
+		privateKeyBase64?: string | null;
 
 		/** Describes the API operation. */
-		operation?: Operation;
+		operation?: Operation | null;
 	}
 
 
 	/** Describes the SSH key pair. */
 	export interface KeyPair {
-		name?: string;
-		arn?: string;
-		supportCode?: string;
-		createdAt?: Date;
+		name?: string | null;
+		arn?: string | null;
+		supportCode?: string | null;
+		createdAt?: Date | null;
 
 		/** Describes the resource location. */
-		location?: ResourceLocation;
-		resourceType?: OperationResourceType;
-		tags?: Array<Tag>;
-		fingerprint?: string;
+		location?: ResourceLocation | null;
+		resourceType?: OperationResourceType | null;
+		tags?: Array<Tag> | null;
+		fingerprint?: string | null;
 	}
 
 	export interface CreateKeyPairRequest {
 		keyPairName: string;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateLoadBalancerResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface CreateLoadBalancerRequest {
 		loadBalancerName: string;
 		instancePort: number;
-		healthCheckPath?: string;
-		certificateName?: string;
-		certificateDomainName?: string;
-		certificateAlternativeNames?: Array<string>;
-		tags?: Array<Tag>;
+		healthCheckPath?: string | null;
+		certificateName?: string | null;
+		certificateDomainName?: string | null;
+		certificateAlternativeNames?: Array<string> | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateLoadBalancerTlsCertificateResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface CreateLoadBalancerTlsCertificateRequest {
 		loadBalancerName: string;
 		certificateName: string;
 		certificateDomainName: string;
-		certificateAlternativeNames?: Array<string>;
-		tags?: Array<Tag>;
+		certificateAlternativeNames?: Array<string> | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateRelationalDatabaseResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface CreateRelationalDatabaseRequest {
 		relationalDatabaseName: string;
-		availabilityZone?: string;
+		availabilityZone?: string | null;
 		relationalDatabaseBlueprintId: string;
 		relationalDatabaseBundleId: string;
 		masterDatabaseName: string;
 		masterUsername: string;
-		masterUserPassword?: string;
-		preferredBackupWindow?: string;
-		preferredMaintenanceWindow?: string;
-		publiclyAccessible?: boolean;
-		tags?: Array<Tag>;
+		masterUserPassword?: string | null;
+		preferredBackupWindow?: string | null;
+		preferredMaintenanceWindow?: string | null;
+		publiclyAccessible?: boolean | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateRelationalDatabaseFromSnapshotResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface CreateRelationalDatabaseFromSnapshotRequest {
 		relationalDatabaseName: string;
-		availabilityZone?: string;
-		publiclyAccessible?: boolean;
-		relationalDatabaseSnapshotName?: string;
-		relationalDatabaseBundleId?: string;
-		sourceRelationalDatabaseName?: string;
-		restoreTime?: Date;
-		useLatestRestorableTime?: boolean;
-		tags?: Array<Tag>;
+		availabilityZone?: string | null;
+		publiclyAccessible?: boolean | null;
+		relationalDatabaseSnapshotName?: string | null;
+		relationalDatabaseBundleId?: string | null;
+		sourceRelationalDatabaseName?: string | null;
+		restoreTime?: Date | null;
+		useLatestRestorableTime?: boolean | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface CreateRelationalDatabaseSnapshotResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface CreateRelationalDatabaseSnapshotRequest {
 		relationalDatabaseName: string;
 		relationalDatabaseSnapshotName: string;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface DeleteAlarmResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface DeleteAlarmRequest {
@@ -438,7 +438,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteAutoSnapshotResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface DeleteAutoSnapshotRequest {
@@ -447,7 +447,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteContactMethodResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface DeleteContactMethodRequest {
@@ -455,16 +455,16 @@ export namespace MyNS {
 	}
 
 	export interface DeleteDiskResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface DeleteDiskRequest {
 		diskName: string;
-		forceDeleteAddOns?: boolean;
+		forceDeleteAddOns?: boolean | null;
 	}
 
 	export interface DeleteDiskSnapshotResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface DeleteDiskSnapshotRequest {
@@ -474,7 +474,7 @@ export namespace MyNS {
 	export interface DeleteDomainResult {
 
 		/** Describes the API operation. */
-		operation?: Operation;
+		operation?: Operation | null;
 	}
 
 	export interface DeleteDomainRequest {
@@ -484,7 +484,7 @@ export namespace MyNS {
 	export interface DeleteDomainEntryResult {
 
 		/** Describes the API operation. */
-		operation?: Operation;
+		operation?: Operation | null;
 	}
 
 	export interface DeleteDomainEntryRequest {
@@ -498,16 +498,16 @@ export namespace MyNS {
 	}
 
 	export interface DeleteInstanceResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface DeleteInstanceRequest {
 		instanceName: string;
-		forceDeleteAddOns?: boolean;
+		forceDeleteAddOns?: boolean | null;
 	}
 
 	export interface DeleteInstanceSnapshotResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface DeleteInstanceSnapshotRequest {
@@ -517,7 +517,7 @@ export namespace MyNS {
 	export interface DeleteKeyPairResult {
 
 		/** Describes the API operation. */
-		operation?: Operation;
+		operation?: Operation | null;
 	}
 
 	export interface DeleteKeyPairRequest {
@@ -525,7 +525,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteKnownHostKeysResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface DeleteKnownHostKeysRequest {
@@ -533,7 +533,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteLoadBalancerResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface DeleteLoadBalancerRequest {
@@ -541,27 +541,27 @@ export namespace MyNS {
 	}
 
 	export interface DeleteLoadBalancerTlsCertificateResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface DeleteLoadBalancerTlsCertificateRequest {
 		loadBalancerName: string;
 		certificateName: string;
-		force?: boolean;
+		force?: boolean | null;
 	}
 
 	export interface DeleteRelationalDatabaseResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface DeleteRelationalDatabaseRequest {
 		relationalDatabaseName: string;
-		skipFinalSnapshot?: boolean;
-		finalRelationalDatabaseSnapshotName?: string;
+		skipFinalSnapshot?: boolean | null;
+		finalRelationalDatabaseSnapshotName?: string | null;
 	}
 
 	export interface DeleteRelationalDatabaseSnapshotResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface DeleteRelationalDatabaseSnapshotRequest {
@@ -569,7 +569,7 @@ export namespace MyNS {
 	}
 
 	export interface DetachDiskResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface DetachDiskRequest {
@@ -577,7 +577,7 @@ export namespace MyNS {
 	}
 
 	export interface DetachInstancesFromLoadBalancerResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface DetachInstancesFromLoadBalancerRequest {
@@ -586,7 +586,7 @@ export namespace MyNS {
 	}
 
 	export interface DetachStaticIpResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface DetachStaticIpRequest {
@@ -594,7 +594,7 @@ export namespace MyNS {
 	}
 
 	export interface DisableAddOnResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface DisableAddOnRequest {
@@ -603,15 +603,15 @@ export namespace MyNS {
 	}
 
 	export interface DownloadDefaultKeyPairResult {
-		publicKeyBase64?: string;
-		privateKeyBase64?: string;
+		publicKeyBase64?: string | null;
+		privateKeyBase64?: string | null;
 	}
 
 	export interface DownloadDefaultKeyPairRequest {
 	}
 
 	export interface EnableAddOnResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface EnableAddOnRequest {
@@ -625,7 +625,7 @@ export namespace MyNS {
 	}
 
 	export interface ExportSnapshotResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface ExportSnapshotRequest {
@@ -633,54 +633,54 @@ export namespace MyNS {
 	}
 
 	export interface GetActiveNamesResult {
-		activeNames?: Array<string>;
-		nextPageToken?: string;
+		activeNames?: Array<string> | null;
+		nextPageToken?: string | null;
 	}
 
 	export interface GetActiveNamesRequest {
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 	export interface GetAlarmsResult {
-		alarms?: Array<Alarm>;
-		nextPageToken?: string;
+		alarms?: Array<Alarm> | null;
+		nextPageToken?: string | null;
 	}
 
 
 	/** <p>Describes an alarm.</p> <p>An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p> */
 	export interface Alarm {
-		name?: string;
-		arn?: string;
-		createdAt?: Date;
+		name?: string | null;
+		arn?: string | null;
+		createdAt?: Date | null;
 
 		/** Describes the resource location. */
-		location?: ResourceLocation;
-		resourceType?: OperationResourceType;
-		supportCode?: string;
+		location?: ResourceLocation | null;
+		resourceType?: OperationResourceType | null;
+		supportCode?: string | null;
 
 		/** <p>Describes resource being monitored by an alarm.</p> <p>An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p> */
-		monitoredResourceInfo?: MonitoredResourceInfo;
-		comparisonOperator?: AlarmComparisonOperator;
-		evaluationPeriods?: number;
-		period?: number;
-		threshold?: number;
-		datapointsToAlarm?: number;
-		treatMissingData?: AlarmTreatMissingData;
-		statistic?: AlarmStatistic;
-		metricName?: AlarmMetricName;
-		state?: AlarmState;
-		unit?: AlarmUnit;
-		contactProtocols?: Array<ContactProtocol>;
-		notificationTriggers?: Array<AlarmState>;
-		notificationEnabled?: boolean;
+		monitoredResourceInfo?: MonitoredResourceInfo | null;
+		comparisonOperator?: AlarmComparisonOperator | null;
+		evaluationPeriods?: number | null;
+		period?: number | null;
+		threshold?: number | null;
+		datapointsToAlarm?: number | null;
+		treatMissingData?: AlarmTreatMissingData | null;
+		statistic?: AlarmStatistic | null;
+		metricName?: AlarmMetricName | null;
+		state?: AlarmState | null;
+		unit?: AlarmUnit | null;
+		contactProtocols?: Array<ContactProtocol> | null;
+		notificationTriggers?: Array<AlarmState> | null;
+		notificationEnabled?: boolean | null;
 	}
 
 
 	/** <p>Describes resource being monitored by an alarm.</p> <p>An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p> */
 	export interface MonitoredResourceInfo {
-		arn?: string;
-		name?: string;
-		resourceType?: OperationResourceType;
+		arn?: string | null;
+		name?: string | null;
+		resourceType?: OperationResourceType | null;
 	}
 
 	export enum AlarmComparisonOperator { GreaterThanOrEqualToThreshold = 0, GreaterThanThreshold = 1, LessThanThreshold = 2, LessThanOrEqualToThreshold = 3 }
@@ -698,24 +698,24 @@ export namespace MyNS {
 	export enum ContactProtocol { Email = 0, SMS = 1 }
 
 	export interface GetAlarmsRequest {
-		alarmName?: string;
-		pageToken?: string;
-		monitoredResourceName?: string;
+		alarmName?: string | null;
+		pageToken?: string | null;
+		monitoredResourceName?: string | null;
 	}
 
 	export interface GetAutoSnapshotsResult {
-		resourceName?: string;
-		resourceType?: OperationResourceType;
-		autoSnapshots?: Array<AutoSnapshotDetails>;
+		resourceName?: string | null;
+		resourceType?: OperationResourceType | null;
+		autoSnapshots?: Array<AutoSnapshotDetails> | null;
 	}
 
 
 	/** Describes an automatic snapshot. */
 	export interface AutoSnapshotDetails {
-		date?: string;
-		createdAt?: Date;
-		status?: AutoSnapshotDetailsStatus;
-		fromAttachedDisks?: Array<AttachedDisk>;
+		date?: string | null;
+		createdAt?: Date | null;
+		status?: AutoSnapshotDetailsStatus | null;
+		fromAttachedDisks?: Array<AttachedDisk> | null;
 	}
 
 	export enum AutoSnapshotDetailsStatus { Success = 0, Failed = 1, InProgress = 2, NotFound = 3 }
@@ -723,8 +723,8 @@ export namespace MyNS {
 
 	/** Describes a block storage disk that is attached to an instance, and is included in an automatic snapshot. */
 	export interface AttachedDisk {
-		path?: string;
-		sizeInGb?: number;
+		path?: string | null;
+		sizeInGb?: number | null;
 	}
 
 	export interface GetAutoSnapshotsRequest {
@@ -732,25 +732,25 @@ export namespace MyNS {
 	}
 
 	export interface GetBlueprintsResult {
-		blueprints?: Array<Blueprint>;
-		nextPageToken?: string;
+		blueprints?: Array<Blueprint> | null;
+		nextPageToken?: string | null;
 	}
 
 
 	/** Describes a blueprint (a virtual private server image). */
 	export interface Blueprint {
-		blueprintId?: string;
-		name?: string;
-		group?: string;
-		type?: BlueprintType;
-		description?: string;
-		isActive?: boolean;
-		minPower?: number;
-		version?: string;
-		versionCode?: string;
-		productUrl?: string;
-		licenseUrl?: string;
-		platform?: BlueprintPlatform;
+		blueprintId?: string | null;
+		name?: string | null;
+		group?: string | null;
+		type?: BlueprintType | null;
+		description?: string | null;
+		isActive?: boolean | null;
+		minPower?: number | null;
+		version?: string | null;
+		versionCode?: string | null;
+		productUrl?: string | null;
+		licenseUrl?: string | null;
+		platform?: BlueprintPlatform | null;
 	}
 
 	export enum BlueprintType { os = 0, app = 1 }
@@ -758,58 +758,58 @@ export namespace MyNS {
 	export enum BlueprintPlatform { LINUX_UNIX = 0, WINDOWS = 1 }
 
 	export interface GetBlueprintsRequest {
-		includeInactive?: boolean;
-		pageToken?: string;
+		includeInactive?: boolean | null;
+		pageToken?: string | null;
 	}
 
 	export interface GetBundlesResult {
-		bundles?: Array<Bundle>;
-		nextPageToken?: string;
+		bundles?: Array<Bundle> | null;
+		nextPageToken?: string | null;
 	}
 
 
 	/** Describes a bundle, which is a set of specs describing your virtual private server (or <i>instance</i>). */
 	export interface Bundle {
-		price?: number;
-		cpuCount?: number;
-		diskSizeInGb?: number;
-		bundleId?: string;
-		instanceType?: string;
-		isActive?: boolean;
-		name?: string;
-		power?: number;
-		ramSizeInGb?: number;
-		transferPerMonthInGb?: number;
-		supportedPlatforms?: Array<InstancePlatform>;
+		price?: number | null;
+		cpuCount?: number | null;
+		diskSizeInGb?: number | null;
+		bundleId?: string | null;
+		instanceType?: string | null;
+		isActive?: boolean | null;
+		name?: string | null;
+		power?: number | null;
+		ramSizeInGb?: number | null;
+		transferPerMonthInGb?: number | null;
+		supportedPlatforms?: Array<InstancePlatform> | null;
 	}
 
 	export enum InstancePlatform { LINUX_UNIX = 0, WINDOWS = 1 }
 
 	export interface GetBundlesRequest {
-		includeInactive?: boolean;
-		pageToken?: string;
+		includeInactive?: boolean | null;
+		pageToken?: string | null;
 	}
 
 	export interface GetCloudFormationStackRecordsResult {
-		cloudFormationStackRecords?: Array<CloudFormationStackRecord>;
-		nextPageToken?: string;
+		cloudFormationStackRecords?: Array<CloudFormationStackRecord> | null;
+		nextPageToken?: string | null;
 	}
 
 
 	/** <p>Describes a CloudFormation stack record created as a result of the <code>create cloud formation stack</code> operation.</p> <p>A CloudFormation stack record provides information about the AWS CloudFormation stack used to create a new Amazon Elastic Compute Cloud instance from an exported Lightsail instance snapshot.</p> */
 	export interface CloudFormationStackRecord {
-		name?: string;
-		arn?: string;
-		createdAt?: Date;
+		name?: string | null;
+		arn?: string | null;
+		createdAt?: Date | null;
 
 		/** Describes the resource location. */
-		location?: ResourceLocation;
-		resourceType?: OperationResourceType;
-		state?: CloudFormationStackRecordState;
-		sourceInfo?: Array<CloudFormationStackRecordSourceInfo>;
+		location?: ResourceLocation | null;
+		resourceType?: OperationResourceType | null;
+		state?: CloudFormationStackRecordState | null;
+		sourceInfo?: Array<CloudFormationStackRecordSourceInfo> | null;
 
 		/** Describes the destination of a record. */
-		destinationInfo?: DestinationInfo;
+		destinationInfo?: DestinationInfo | null;
 	}
 
 	export enum CloudFormationStackRecordState { Started = 0, Succeeded = 1, Failed = 2 }
@@ -817,9 +817,9 @@ export namespace MyNS {
 
 	/** Describes the source of a CloudFormation stack record (i.e., the export snapshot record). */
 	export interface CloudFormationStackRecordSourceInfo {
-		resourceType?: CloudFormationStackRecordSourceInfoResourceType;
-		name?: string;
-		arn?: string;
+		resourceType?: CloudFormationStackRecordSourceInfoResourceType | null;
+		name?: string | null;
+		arn?: string | null;
 	}
 
 	export enum CloudFormationStackRecordSourceInfoResourceType { ExportSnapshotRecord = 0 }
@@ -827,77 +827,77 @@ export namespace MyNS {
 
 	/** Describes the destination of a record. */
 	export interface DestinationInfo {
-		id?: string;
-		service?: string;
+		id?: string | null;
+		service?: string | null;
 	}
 
 	export interface GetCloudFormationStackRecordsRequest {
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 	export interface GetContactMethodsResult {
-		contactMethods?: Array<ContactMethod>;
+		contactMethods?: Array<ContactMethod> | null;
 	}
 
 
 	/** <p>Describes a contact method.</p> <p>A contact method is a way to send you notifications. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p> */
 	export interface ContactMethod {
-		contactEndpoint?: string;
-		status?: ContactMethodStatus;
-		protocol?: CreateContactMethodRequestProtocol;
-		name?: string;
-		arn?: string;
-		createdAt?: Date;
+		contactEndpoint?: string | null;
+		status?: ContactMethodStatus | null;
+		protocol?: CreateContactMethodRequestProtocol | null;
+		name?: string | null;
+		arn?: string | null;
+		createdAt?: Date | null;
 
 		/** Describes the resource location. */
-		location?: ResourceLocation;
-		resourceType?: OperationResourceType;
-		supportCode?: string;
+		location?: ResourceLocation | null;
+		resourceType?: OperationResourceType | null;
+		supportCode?: string | null;
 	}
 
 	export enum ContactMethodStatus { PendingVerification = 0, Valid = 1, Invalid = 2 }
 
 	export interface GetContactMethodsRequest {
-		protocols?: Array<ContactProtocol>;
+		protocols?: Array<ContactProtocol> | null;
 	}
 
 	export interface GetDiskResult {
 
 		/** Describes a system disk or a block storage disk. */
-		disk?: Disk;
+		disk?: Disk | null;
 	}
 
 
 	/** Describes a system disk or a block storage disk. */
 	export interface Disk {
-		name?: string;
-		arn?: string;
-		supportCode?: string;
-		createdAt?: Date;
+		name?: string | null;
+		arn?: string | null;
+		supportCode?: string | null;
+		createdAt?: Date | null;
 
 		/** Describes the resource location. */
-		location?: ResourceLocation;
-		resourceType?: OperationResourceType;
-		tags?: Array<Tag>;
-		addOns?: Array<AddOn>;
-		sizeInGb?: number;
-		isSystemDisk?: boolean;
-		iops?: number;
-		path?: string;
-		state?: DiskState;
-		attachedTo?: string;
-		isAttached?: boolean;
-		attachmentState?: string;
-		gbInUse?: number;
+		location?: ResourceLocation | null;
+		resourceType?: OperationResourceType | null;
+		tags?: Array<Tag> | null;
+		addOns?: Array<AddOn> | null;
+		sizeInGb?: number | null;
+		isSystemDisk?: boolean | null;
+		iops?: number | null;
+		path?: string | null;
+		state?: DiskState | null;
+		attachedTo?: string | null;
+		isAttached?: boolean | null;
+		attachmentState?: string | null;
+		gbInUse?: number | null;
 	}
 
 
 	/** Describes an add-on that is enabled for an Amazon Lightsail resource. */
 	export interface AddOn {
-		name?: string;
-		status?: string;
-		snapshotTimeOfDay?: string;
-		nextSnapshotTimeOfDay?: string;
+		name?: string | null;
+		status?: string | null;
+		snapshotTimeOfDay?: string | null;
+		nextSnapshotTimeOfDay?: string | null;
 	}
 
 	export enum DiskState { pending = 0, error = 1, available = 2, in_use = 3, unknown = 4 }
@@ -909,29 +909,29 @@ export namespace MyNS {
 	export interface GetDiskSnapshotResult {
 
 		/** Describes a block storage disk snapshot. */
-		diskSnapshot?: DiskSnapshot;
+		diskSnapshot?: DiskSnapshot | null;
 	}
 
 
 	/** Describes a block storage disk snapshot. */
 	export interface DiskSnapshot {
-		name?: string;
-		arn?: string;
-		supportCode?: string;
-		createdAt?: Date;
+		name?: string | null;
+		arn?: string | null;
+		supportCode?: string | null;
+		createdAt?: Date | null;
 
 		/** Describes the resource location. */
-		location?: ResourceLocation;
-		resourceType?: OperationResourceType;
-		tags?: Array<Tag>;
-		sizeInGb?: number;
-		state?: DiskSnapshotState;
-		progress?: string;
-		fromDiskName?: string;
-		fromDiskArn?: string;
-		fromInstanceName?: string;
-		fromInstanceArn?: string;
-		isFromAutoSnapshot?: boolean;
+		location?: ResourceLocation | null;
+		resourceType?: OperationResourceType | null;
+		tags?: Array<Tag> | null;
+		sizeInGb?: number | null;
+		state?: DiskSnapshotState | null;
+		progress?: string | null;
+		fromDiskName?: string | null;
+		fromDiskArn?: string | null;
+		fromInstanceName?: string | null;
+		fromInstanceArn?: string | null;
+		isFromAutoSnapshot?: boolean | null;
 	}
 
 	export enum DiskSnapshotState { pending = 0, completed = 1, error = 2, unknown = 3 }
@@ -941,42 +941,42 @@ export namespace MyNS {
 	}
 
 	export interface GetDiskSnapshotsResult {
-		diskSnapshots?: Array<DiskSnapshot>;
-		nextPageToken?: string;
+		diskSnapshots?: Array<DiskSnapshot> | null;
+		nextPageToken?: string | null;
 	}
 
 	export interface GetDiskSnapshotsRequest {
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 	export interface GetDisksResult {
-		disks?: Array<Disk>;
-		nextPageToken?: string;
+		disks?: Array<Disk> | null;
+		nextPageToken?: string | null;
 	}
 
 	export interface GetDisksRequest {
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 	export interface GetDomainResult {
 
 		/** Describes a domain where you are storing recordsets in Lightsail. */
-		domain?: Domain;
+		domain?: Domain | null;
 	}
 
 
 	/** Describes a domain where you are storing recordsets in Lightsail. */
 	export interface Domain {
-		name?: string;
-		arn?: string;
-		supportCode?: string;
-		createdAt?: Date;
+		name?: string | null;
+		arn?: string | null;
+		supportCode?: string | null;
+		createdAt?: Date | null;
 
 		/** Describes the resource location. */
-		location?: ResourceLocation;
-		resourceType?: OperationResourceType;
-		tags?: Array<Tag>;
-		domainEntries?: Array<DomainEntry>;
+		location?: ResourceLocation | null;
+		resourceType?: OperationResourceType | null;
+		tags?: Array<Tag> | null;
+		domainEntries?: Array<DomainEntry> | null;
 	}
 
 	export interface GetDomainRequest {
@@ -984,53 +984,53 @@ export namespace MyNS {
 	}
 
 	export interface GetDomainsResult {
-		domains?: Array<Domain>;
-		nextPageToken?: string;
+		domains?: Array<Domain> | null;
+		nextPageToken?: string | null;
 	}
 
 	export interface GetDomainsRequest {
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 	export interface GetExportSnapshotRecordsResult {
-		exportSnapshotRecords?: Array<ExportSnapshotRecord>;
-		nextPageToken?: string;
+		exportSnapshotRecords?: Array<ExportSnapshotRecord> | null;
+		nextPageToken?: string | null;
 	}
 
 
 	/** Describes an export snapshot record. */
 	export interface ExportSnapshotRecord {
-		name?: string;
-		arn?: string;
-		createdAt?: Date;
+		name?: string | null;
+		arn?: string | null;
+		createdAt?: Date | null;
 
 		/** Describes the resource location. */
-		location?: ResourceLocation;
-		resourceType?: OperationResourceType;
-		state?: CloudFormationStackRecordState;
+		location?: ResourceLocation | null;
+		resourceType?: OperationResourceType | null;
+		state?: CloudFormationStackRecordState | null;
 
 		/** Describes the source of an export snapshot record. */
-		sourceInfo?: ExportSnapshotRecordSourceInfo;
+		sourceInfo?: ExportSnapshotRecordSourceInfo | null;
 
 		/** Describes the destination of a record. */
-		destinationInfo?: DestinationInfo;
+		destinationInfo?: DestinationInfo | null;
 	}
 
 
 	/** Describes the source of an export snapshot record. */
 	export interface ExportSnapshotRecordSourceInfo {
-		resourceType?: ExportSnapshotRecordSourceInfoResourceType;
-		createdAt?: Date;
-		name?: string;
-		arn?: string;
-		fromResourceName?: string;
-		fromResourceArn?: string;
+		resourceType?: ExportSnapshotRecordSourceInfoResourceType | null;
+		createdAt?: Date | null;
+		name?: string | null;
+		arn?: string | null;
+		fromResourceName?: string | null;
+		fromResourceArn?: string | null;
 
 		/** Describes an instance snapshot. */
-		instanceSnapshotInfo?: InstanceSnapshotInfo;
+		instanceSnapshotInfo?: InstanceSnapshotInfo | null;
 
 		/** Describes a disk snapshot. */
-		diskSnapshotInfo?: DiskSnapshotInfo;
+		diskSnapshotInfo?: DiskSnapshotInfo | null;
 	}
 
 	export enum ExportSnapshotRecordSourceInfoResourceType { InstanceSnapshot = 0, DiskSnapshot = 1 }
@@ -1038,75 +1038,75 @@ export namespace MyNS {
 
 	/** Describes an instance snapshot. */
 	export interface InstanceSnapshotInfo {
-		fromBundleId?: string;
-		fromBlueprintId?: string;
-		fromDiskInfo?: Array<DiskInfo>;
+		fromBundleId?: string | null;
+		fromBlueprintId?: string | null;
+		fromDiskInfo?: Array<DiskInfo> | null;
 	}
 
 
 	/** Describes a disk. */
 	export interface DiskInfo {
-		name?: string;
-		path?: string;
-		sizeInGb?: number;
-		isSystemDisk?: boolean;
+		name?: string | null;
+		path?: string | null;
+		sizeInGb?: number | null;
+		isSystemDisk?: boolean | null;
 	}
 
 
 	/** Describes a disk snapshot. */
 	export interface DiskSnapshotInfo {
-		sizeInGb?: number;
+		sizeInGb?: number | null;
 	}
 
 	export interface GetExportSnapshotRecordsRequest {
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 	export interface GetInstanceResult {
 
 		/** Describes an instance (a virtual private server). */
-		instance?: Instance;
+		instance?: Instance | null;
 	}
 
 
 	/** Describes an instance (a virtual private server). */
 	export interface Instance {
-		name?: string;
-		arn?: string;
-		supportCode?: string;
-		createdAt?: Date;
+		name?: string | null;
+		arn?: string | null;
+		supportCode?: string | null;
+		createdAt?: Date | null;
 
 		/** Describes the resource location. */
-		location?: ResourceLocation;
-		resourceType?: OperationResourceType;
-		tags?: Array<Tag>;
-		blueprintId?: string;
-		blueprintName?: string;
-		bundleId?: string;
-		addOns?: Array<AddOn>;
-		isStaticIp?: boolean;
-		privateIpAddress?: string;
-		publicIpAddress?: string;
-		ipv6Address?: string;
+		location?: ResourceLocation | null;
+		resourceType?: OperationResourceType | null;
+		tags?: Array<Tag> | null;
+		blueprintId?: string | null;
+		blueprintName?: string | null;
+		bundleId?: string | null;
+		addOns?: Array<AddOn> | null;
+		isStaticIp?: boolean | null;
+		privateIpAddress?: string | null;
+		publicIpAddress?: string | null;
+		ipv6Address?: string | null;
 
 		/** Describes the hardware for the instance. */
-		hardware?: InstanceHardware;
+		hardware?: InstanceHardware | null;
 
 		/** Describes monthly data transfer rates and port information for an instance. */
-		networking?: InstanceNetworking;
+		networking?: InstanceNetworking | null;
 
 		/** Describes the virtual private server (or <i>instance</i>) status. */
-		state?: InstanceState;
-		username?: string;
-		sshKeyName?: string;
+		state?: InstanceState | null;
+		username?: string | null;
+		sshKeyName?: string | null;
 	}
 
 
 	/** Describes the hardware for the instance. */
 	export interface InstanceHardware {
-		cpuCount?: number;
-		disks?: Array<Disk>;
-		ramSizeInGb?: number;
+		cpuCount?: number | null;
+		disks?: Array<Disk> | null;
+		ramSizeInGb?: number | null;
 	}
 
 
@@ -1114,28 +1114,28 @@ export namespace MyNS {
 	export interface InstanceNetworking {
 
 		/** Describes the monthly data transfer in and out of your virtual private server (or <i>instance</i>). */
-		monthlyTransfer?: MonthlyTransfer;
-		ports?: Array<InstancePortInfo>;
+		monthlyTransfer?: MonthlyTransfer | null;
+		ports?: Array<InstancePortInfo> | null;
 	}
 
 
 	/** Describes the monthly data transfer in and out of your virtual private server (or <i>instance</i>). */
 	export interface MonthlyTransfer {
-		gbPerMonthAllocated?: number;
+		gbPerMonthAllocated?: number | null;
 	}
 
 
 	/** Describes information about ports for an Amazon Lightsail instance. */
 	export interface InstancePortInfo {
-		fromPort?: number;
-		toPort?: number;
-		protocol?: PortInfoProtocol;
-		accessFrom?: string;
-		accessType?: InstancePortInfoAccessType;
-		commonName?: string;
-		accessDirection?: InstancePortInfoAccessDirection;
-		cidrs?: Array<string>;
-		cidrListAliases?: Array<string>;
+		fromPort?: number | null;
+		toPort?: number | null;
+		protocol?: PortInfoProtocol | null;
+		accessFrom?: string | null;
+		accessType?: InstancePortInfoAccessType | null;
+		commonName?: string | null;
+		accessDirection?: InstancePortInfoAccessDirection | null;
+		cidrs?: Array<string> | null;
+		cidrListAliases?: Array<string> | null;
 	}
 
 	export enum InstancePortInfoAccessType { Public = 0, Private = 1 }
@@ -1145,8 +1145,8 @@ export namespace MyNS {
 
 	/** Describes the virtual private server (or <i>instance</i>) status. */
 	export interface InstanceState {
-		code?: number;
-		name?: string;
+		code?: number | null;
+		name?: string | null;
 	}
 
 	export interface GetInstanceRequest {
@@ -1156,31 +1156,31 @@ export namespace MyNS {
 	export interface GetInstanceAccessDetailsResult {
 
 		/** The parameters for gaining temporary access to one of your Amazon Lightsail instances. */
-		accessDetails?: InstanceAccessDetails;
+		accessDetails?: InstanceAccessDetails | null;
 	}
 
 
 	/** The parameters for gaining temporary access to one of your Amazon Lightsail instances. */
 	export interface InstanceAccessDetails {
-		certKey?: string;
-		expiresAt?: Date;
-		ipAddress?: string;
-		password?: string;
+		certKey?: string | null;
+		expiresAt?: Date | null;
+		ipAddress?: string | null;
+		password?: string | null;
 
 		/** The password data for the Windows Server-based instance, including the ciphertext and the key pair name. */
-		passwordData?: PasswordData;
-		privateKey?: string;
-		protocol?: InstanceAccessDetailsProtocol;
-		instanceName?: string;
-		username?: string;
-		hostKeys?: Array<HostKeyAttributes>;
+		passwordData?: PasswordData | null;
+		privateKey?: string | null;
+		protocol?: InstanceAccessDetailsProtocol | null;
+		instanceName?: string | null;
+		username?: string | null;
+		hostKeys?: Array<HostKeyAttributes> | null;
 	}
 
 
 	/** The password data for the Windows Server-based instance, including the ciphertext and the key pair name. */
 	export interface PasswordData {
-		ciphertext?: string;
-		keyPairName?: string;
+		ciphertext?: string | null;
+		keyPairName?: string | null;
 	}
 
 	export enum InstanceAccessDetailsProtocol { ssh = 0, rdp = 1 }
@@ -1188,23 +1188,23 @@ export namespace MyNS {
 
 	/** Describes the public SSH host keys or the RDP certificate. */
 	export interface HostKeyAttributes {
-		algorithm?: string;
-		publicKey?: string;
-		witnessedAt?: Date;
-		fingerprintSHA1?: string;
-		fingerprintSHA256?: string;
-		notValidBefore?: Date;
-		notValidAfter?: Date;
+		algorithm?: string | null;
+		publicKey?: string | null;
+		witnessedAt?: Date | null;
+		fingerprintSHA1?: string | null;
+		fingerprintSHA256?: string | null;
+		notValidBefore?: Date | null;
+		notValidAfter?: Date | null;
 	}
 
 	export interface GetInstanceAccessDetailsRequest {
 		instanceName: string;
-		protocol?: InstanceAccessDetailsProtocol;
+		protocol?: InstanceAccessDetailsProtocol | null;
 	}
 
 	export interface GetInstanceMetricDataResult {
-		metricName?: GetInstanceMetricDataResultMetricName;
-		metricData?: Array<MetricDatapoint>;
+		metricName?: GetInstanceMetricDataResultMetricName | null;
+		metricData?: Array<MetricDatapoint> | null;
 	}
 
 	export enum GetInstanceMetricDataResultMetricName { CPUUtilization = 0, NetworkIn = 1, NetworkOut = 2, StatusCheckFailed = 3, StatusCheckFailed_Instance = 4, StatusCheckFailed_System = 5, BurstCapacityTime = 6, BurstCapacityPercentage = 7 }
@@ -1212,13 +1212,13 @@ export namespace MyNS {
 
 	/** Describes the metric data point. */
 	export interface MetricDatapoint {
-		average?: number;
-		maximum?: number;
-		minimum?: number;
-		sampleCount?: number;
-		sum?: number;
-		timestamp?: Date;
-		unit?: MetricDatapointUnit;
+		average?: number | null;
+		maximum?: number | null;
+		minimum?: number | null;
+		sampleCount?: number | null;
+		sum?: number | null;
+		timestamp?: Date | null;
+		unit?: MetricDatapointUnit | null;
 	}
 
 	export enum MetricDatapointUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
@@ -1238,18 +1238,18 @@ export namespace MyNS {
 	export enum MetricStatistic { Minimum = 0, Maximum = 1, Sum = 2, Average = 3, SampleCount = 4 }
 
 	export interface GetInstancePortStatesResult {
-		portStates?: Array<InstancePortState>;
+		portStates?: Array<InstancePortState> | null;
 	}
 
 
 	/** Describes open ports on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol. */
 	export interface InstancePortState {
-		fromPort?: number;
-		toPort?: number;
-		protocol?: PortInfoProtocol;
-		state?: InstancePortStateState;
-		cidrs?: Array<string>;
-		cidrListAliases?: Array<string>;
+		fromPort?: number | null;
+		toPort?: number | null;
+		protocol?: PortInfoProtocol | null;
+		state?: InstancePortStateState | null;
+		cidrs?: Array<string> | null;
+		cidrListAliases?: Array<string> | null;
 	}
 
 	export enum InstancePortStateState { open = 0, closed = 1 }
@@ -1261,30 +1261,30 @@ export namespace MyNS {
 	export interface GetInstanceSnapshotResult {
 
 		/** Describes an instance snapshot. */
-		instanceSnapshot?: InstanceSnapshot;
+		instanceSnapshot?: InstanceSnapshot | null;
 	}
 
 
 	/** Describes an instance snapshot. */
 	export interface InstanceSnapshot {
-		name?: string;
-		arn?: string;
-		supportCode?: string;
-		createdAt?: Date;
+		name?: string | null;
+		arn?: string | null;
+		supportCode?: string | null;
+		createdAt?: Date | null;
 
 		/** Describes the resource location. */
-		location?: ResourceLocation;
-		resourceType?: OperationResourceType;
-		tags?: Array<Tag>;
-		state?: InstanceSnapshotState;
-		progress?: string;
-		fromAttachedDisks?: Array<Disk>;
-		fromInstanceName?: string;
-		fromInstanceArn?: string;
-		fromBlueprintId?: string;
-		fromBundleId?: string;
-		isFromAutoSnapshot?: boolean;
-		sizeInGb?: number;
+		location?: ResourceLocation | null;
+		resourceType?: OperationResourceType | null;
+		tags?: Array<Tag> | null;
+		state?: InstanceSnapshotState | null;
+		progress?: string | null;
+		fromAttachedDisks?: Array<Disk> | null;
+		fromInstanceName?: string | null;
+		fromInstanceArn?: string | null;
+		fromBlueprintId?: string | null;
+		fromBundleId?: string | null;
+		isFromAutoSnapshot?: boolean | null;
+		sizeInGb?: number | null;
 	}
 
 	export enum InstanceSnapshotState { pending = 0, error = 1, available = 2 }
@@ -1294,18 +1294,18 @@ export namespace MyNS {
 	}
 
 	export interface GetInstanceSnapshotsResult {
-		instanceSnapshots?: Array<InstanceSnapshot>;
-		nextPageToken?: string;
+		instanceSnapshots?: Array<InstanceSnapshot> | null;
+		nextPageToken?: string | null;
 	}
 
 	export interface GetInstanceSnapshotsRequest {
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 	export interface GetInstanceStateResult {
 
 		/** Describes the virtual private server (or <i>instance</i>) status. */
-		state?: InstanceState;
+		state?: InstanceState | null;
 	}
 
 	export interface GetInstanceStateRequest {
@@ -1313,18 +1313,18 @@ export namespace MyNS {
 	}
 
 	export interface GetInstancesResult {
-		instances?: Array<Instance>;
-		nextPageToken?: string;
+		instances?: Array<Instance> | null;
+		nextPageToken?: string | null;
 	}
 
 	export interface GetInstancesRequest {
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 	export interface GetKeyPairResult {
 
 		/** Describes the SSH key pair. */
-		keyPair?: KeyPair;
+		keyPair?: KeyPair | null;
 	}
 
 	export interface GetKeyPairRequest {
@@ -1332,41 +1332,41 @@ export namespace MyNS {
 	}
 
 	export interface GetKeyPairsResult {
-		keyPairs?: Array<KeyPair>;
-		nextPageToken?: string;
+		keyPairs?: Array<KeyPair> | null;
+		nextPageToken?: string | null;
 	}
 
 	export interface GetKeyPairsRequest {
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 	export interface GetLoadBalancerResult {
 
 		/** Describes the Lightsail load balancer. */
-		loadBalancer?: LoadBalancer;
+		loadBalancer?: LoadBalancer | null;
 	}
 
 
 	/** Describes the Lightsail load balancer. */
 	export interface LoadBalancer {
-		name?: string;
-		arn?: string;
-		supportCode?: string;
-		createdAt?: Date;
+		name?: string | null;
+		arn?: string | null;
+		supportCode?: string | null;
+		createdAt?: Date | null;
 
 		/** Describes the resource location. */
-		location?: ResourceLocation;
-		resourceType?: OperationResourceType;
-		tags?: Array<Tag>;
-		dnsName?: string;
-		state?: LoadBalancerState;
-		protocol?: LoadBalancerProtocol;
-		publicPorts?: Array<number>;
-		healthCheckPath?: string;
-		instancePort?: number;
-		instanceHealthSummary?: Array<InstanceHealthSummary>;
-		tlsCertificateSummaries?: Array<LoadBalancerTlsCertificateSummary>;
-		configurationOptions?: LoadBalancerConfigurationOptions;
+		location?: ResourceLocation | null;
+		resourceType?: OperationResourceType | null;
+		tags?: Array<Tag> | null;
+		dnsName?: string | null;
+		state?: LoadBalancerState | null;
+		protocol?: LoadBalancerProtocol | null;
+		publicPorts?: Array<number> | null;
+		healthCheckPath?: string | null;
+		instancePort?: number | null;
+		instanceHealthSummary?: Array<InstanceHealthSummary> | null;
+		tlsCertificateSummaries?: Array<LoadBalancerTlsCertificateSummary> | null;
+		configurationOptions?: LoadBalancerConfigurationOptions | null;
 	}
 
 	export enum LoadBalancerState { active = 0, provisioning = 1, active_impaired = 2, failed = 3, unknown = 4 }
@@ -1376,9 +1376,9 @@ export namespace MyNS {
 
 	/** Describes information about the health of the instance. */
 	export interface InstanceHealthSummary {
-		instanceName?: string;
-		instanceHealth?: InstanceHealthSummaryInstanceHealth;
-		instanceHealthReason?: InstanceHealthSummaryInstanceHealthReason;
+		instanceName?: string | null;
+		instanceHealth?: InstanceHealthSummaryInstanceHealth | null;
+		instanceHealthReason?: InstanceHealthSummaryInstanceHealthReason | null;
 	}
 
 	export enum InstanceHealthSummaryInstanceHealth { initial = 0, healthy = 1, unhealthy = 2, unused = 3, draining = 4, unavailable = 5 }
@@ -1388,8 +1388,8 @@ export namespace MyNS {
 
 	/** Provides a summary of SSL/TLS certificate metadata. */
 	export interface LoadBalancerTlsCertificateSummary {
-		name?: string;
-		isAttached?: boolean;
+		name?: string | null;
+		isAttached?: boolean | null;
 	}
 
 	export interface LoadBalancerConfigurationOptions {
@@ -1400,8 +1400,8 @@ export namespace MyNS {
 	}
 
 	export interface GetLoadBalancerMetricDataResult {
-		metricName?: GetLoadBalancerMetricDataResultMetricName;
-		metricData?: Array<MetricDatapoint>;
+		metricName?: GetLoadBalancerMetricDataResultMetricName | null;
+		metricData?: Array<MetricDatapoint> | null;
 	}
 
 	export enum GetLoadBalancerMetricDataResultMetricName { ClientTLSNegotiationErrorCount = 0, HealthyHostCount = 1, UnhealthyHostCount = 2, HTTPCode_LB_4XX_Count = 3, HTTPCode_LB_5XX_Count = 4, HTTPCode_Instance_2XX_Count = 5, HTTPCode_Instance_3XX_Count = 6, HTTPCode_Instance_4XX_Count = 7, HTTPCode_Instance_5XX_Count = 8, InstanceResponseTime = 9, RejectedConnectionCount = 10, RequestCount = 11 }
@@ -1419,41 +1419,41 @@ export namespace MyNS {
 	export enum GetLoadBalancerMetricDataRequestUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface GetLoadBalancerTlsCertificatesResult {
-		tlsCertificates?: Array<LoadBalancerTlsCertificate>;
+		tlsCertificates?: Array<LoadBalancerTlsCertificate> | null;
 	}
 
 
 	/** <p>Describes a load balancer SSL/TLS certificate.</p> <p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p> */
 	export interface LoadBalancerTlsCertificate {
-		name?: string;
-		arn?: string;
-		supportCode?: string;
-		createdAt?: Date;
+		name?: string | null;
+		arn?: string | null;
+		supportCode?: string | null;
+		createdAt?: Date | null;
 
 		/** Describes the resource location. */
-		location?: ResourceLocation;
-		resourceType?: OperationResourceType;
-		tags?: Array<Tag>;
-		loadBalancerName?: string;
-		isAttached?: boolean;
-		status?: LoadBalancerTlsCertificateStatus;
-		domainName?: string;
-		domainValidationRecords?: Array<LoadBalancerTlsCertificateDomainValidationRecord>;
-		failureReason?: LoadBalancerTlsCertificateFailureReason;
-		issuedAt?: Date;
-		issuer?: string;
-		keyAlgorithm?: string;
-		notAfter?: Date;
-		notBefore?: Date;
+		location?: ResourceLocation | null;
+		resourceType?: OperationResourceType | null;
+		tags?: Array<Tag> | null;
+		loadBalancerName?: string | null;
+		isAttached?: boolean | null;
+		status?: LoadBalancerTlsCertificateStatus | null;
+		domainName?: string | null;
+		domainValidationRecords?: Array<LoadBalancerTlsCertificateDomainValidationRecord> | null;
+		failureReason?: LoadBalancerTlsCertificateFailureReason | null;
+		issuedAt?: Date | null;
+		issuer?: string | null;
+		keyAlgorithm?: string | null;
+		notAfter?: Date | null;
+		notBefore?: Date | null;
 
 		/** Contains information about the status of Lightsail's managed renewal for the certificate. */
-		renewalSummary?: LoadBalancerTlsCertificateRenewalSummary;
-		revocationReason?: LoadBalancerTlsCertificateRevocationReason;
-		revokedAt?: Date;
-		serial?: string;
-		signatureAlgorithm?: string;
-		subject?: string;
-		subjectAlternativeNames?: Array<string>;
+		renewalSummary?: LoadBalancerTlsCertificateRenewalSummary | null;
+		revocationReason?: LoadBalancerTlsCertificateRevocationReason | null;
+		revokedAt?: Date | null;
+		serial?: string | null;
+		signatureAlgorithm?: string | null;
+		subject?: string | null;
+		subjectAlternativeNames?: Array<string> | null;
 	}
 
 	export enum LoadBalancerTlsCertificateStatus { PENDING_VALIDATION = 0, ISSUED = 1, INACTIVE = 2, EXPIRED = 3, VALIDATION_TIMED_OUT = 4, REVOKED = 5, FAILED = 6, UNKNOWN = 7 }
@@ -1461,11 +1461,11 @@ export namespace MyNS {
 
 	/** Describes the validation record of each domain name in the SSL/TLS certificate. */
 	export interface LoadBalancerTlsCertificateDomainValidationRecord {
-		name?: string;
-		type?: string;
-		value?: string;
-		validationStatus?: LoadBalancerTlsCertificateDomainValidationRecordValidationStatus;
-		domainName?: string;
+		name?: string | null;
+		type?: string | null;
+		value?: string | null;
+		validationStatus?: LoadBalancerTlsCertificateDomainValidationRecordValidationStatus | null;
+		domainName?: string | null;
 	}
 
 	export enum LoadBalancerTlsCertificateDomainValidationRecordValidationStatus { PENDING_VALIDATION = 0, FAILED = 1, SUCCESS = 2 }
@@ -1475,8 +1475,8 @@ export namespace MyNS {
 
 	/** Contains information about the status of Lightsail's managed renewal for the certificate. */
 	export interface LoadBalancerTlsCertificateRenewalSummary {
-		renewalStatus?: LoadBalancerTlsCertificateRenewalSummaryRenewalStatus;
-		domainValidationOptions?: Array<LoadBalancerTlsCertificateDomainValidationOption>;
+		renewalStatus?: LoadBalancerTlsCertificateRenewalSummaryRenewalStatus | null;
+		domainValidationOptions?: Array<LoadBalancerTlsCertificateDomainValidationOption> | null;
 	}
 
 	export enum LoadBalancerTlsCertificateRenewalSummaryRenewalStatus { PENDING_AUTO_RENEWAL = 0, PENDING_VALIDATION = 1, SUCCESS = 2, FAILED = 3 }
@@ -1484,8 +1484,8 @@ export namespace MyNS {
 
 	/** Contains information about the domain names on an SSL/TLS certificate that you will use to validate domain ownership. */
 	export interface LoadBalancerTlsCertificateDomainValidationOption {
-		domainName?: string;
-		validationStatus?: LoadBalancerTlsCertificateDomainValidationRecordValidationStatus;
+		domainName?: string | null;
+		validationStatus?: LoadBalancerTlsCertificateDomainValidationRecordValidationStatus | null;
 	}
 
 	export enum LoadBalancerTlsCertificateRevocationReason { UNSPECIFIED = 0, KEY_COMPROMISE = 1, CA_COMPROMISE = 2, AFFILIATION_CHANGED = 3, SUPERCEDED = 4, CESSATION_OF_OPERATION = 5, CERTIFICATE_HOLD = 6, REMOVE_FROM_CRL = 7, PRIVILEGE_WITHDRAWN = 8, A_A_COMPROMISE = 9 }
@@ -1495,18 +1495,18 @@ export namespace MyNS {
 	}
 
 	export interface GetLoadBalancersResult {
-		loadBalancers?: Array<LoadBalancer>;
-		nextPageToken?: string;
+		loadBalancers?: Array<LoadBalancer> | null;
+		nextPageToken?: string | null;
 	}
 
 	export interface GetLoadBalancersRequest {
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 	export interface GetOperationResult {
 
 		/** Describes the API operation. */
-		operation?: Operation;
+		operation?: Operation | null;
 	}
 
 	export interface GetOperationRequest {
@@ -1514,38 +1514,38 @@ export namespace MyNS {
 	}
 
 	export interface GetOperationsResult {
-		operations?: Array<Operation>;
-		nextPageToken?: string;
+		operations?: Array<Operation> | null;
+		nextPageToken?: string | null;
 	}
 
 	export interface GetOperationsRequest {
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 	export interface GetOperationsForResourceResult {
-		operations?: Array<Operation>;
-		nextPageCount?: string;
-		nextPageToken?: string;
+		operations?: Array<Operation> | null;
+		nextPageCount?: string | null;
+		nextPageToken?: string | null;
 	}
 
 	export interface GetOperationsForResourceRequest {
 		resourceName: string;
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 	export interface GetRegionsResult {
-		regions?: Array<Region>;
+		regions?: Array<Region> | null;
 	}
 
 
 	/** Describes the AWS Region. */
 	export interface Region {
-		continentCode?: string;
-		description?: string;
-		displayName?: string;
-		name?: RegionName;
-		availabilityZones?: Array<AvailabilityZone>;
-		relationalDatabaseAvailabilityZones?: Array<AvailabilityZone>;
+		continentCode?: string | null;
+		description?: string | null;
+		displayName?: string | null;
+		name?: RegionName | null;
+		availabilityZones?: Array<AvailabilityZone> | null;
+		relationalDatabaseAvailabilityZones?: Array<AvailabilityZone> | null;
 	}
 
 	export enum RegionName { us_east_1 = 0, us_east_2 = 1, us_west_1 = 2, us_west_2 = 3, eu_west_1 = 4, eu_west_2 = 5, eu_west_3 = 6, eu_central_1 = 7, ca_central_1 = 8, ap_south_1 = 9, ap_southeast_1 = 10, ap_southeast_2 = 11, ap_northeast_1 = 12, ap_northeast_2 = 13 }
@@ -1553,89 +1553,89 @@ export namespace MyNS {
 
 	/** Describes an Availability Zone. */
 	export interface AvailabilityZone {
-		zoneName?: string;
-		state?: string;
+		zoneName?: string | null;
+		state?: string | null;
 	}
 
 	export interface GetRegionsRequest {
-		includeAvailabilityZones?: boolean;
-		includeRelationalDatabaseAvailabilityZones?: boolean;
+		includeAvailabilityZones?: boolean | null;
+		includeRelationalDatabaseAvailabilityZones?: boolean | null;
 	}
 
 	export interface GetRelationalDatabaseResult {
 
 		/** Describes a database. */
-		relationalDatabase?: RelationalDatabase;
+		relationalDatabase?: RelationalDatabase | null;
 	}
 
 
 	/** Describes a database. */
 	export interface RelationalDatabase {
-		name?: string;
-		arn?: string;
-		supportCode?: string;
-		createdAt?: Date;
+		name?: string | null;
+		arn?: string | null;
+		supportCode?: string | null;
+		createdAt?: Date | null;
 
 		/** Describes the resource location. */
-		location?: ResourceLocation;
-		resourceType?: OperationResourceType;
-		tags?: Array<Tag>;
-		relationalDatabaseBlueprintId?: string;
-		relationalDatabaseBundleId?: string;
-		masterDatabaseName?: string;
+		location?: ResourceLocation | null;
+		resourceType?: OperationResourceType | null;
+		tags?: Array<Tag> | null;
+		relationalDatabaseBlueprintId?: string | null;
+		relationalDatabaseBundleId?: string | null;
+		masterDatabaseName?: string | null;
 
 		/** Describes the hardware of a database. */
-		hardware?: RelationalDatabaseHardware;
-		state?: string;
-		secondaryAvailabilityZone?: string;
-		backupRetentionEnabled?: boolean;
+		hardware?: RelationalDatabaseHardware | null;
+		state?: string | null;
+		secondaryAvailabilityZone?: string | null;
+		backupRetentionEnabled?: boolean | null;
 
 		/** Describes a pending database value modification. */
-		pendingModifiedValues?: PendingModifiedRelationalDatabaseValues;
-		engine?: string;
-		engineVersion?: string;
-		latestRestorableTime?: Date;
-		masterUsername?: string;
-		parameterApplyStatus?: string;
-		preferredBackupWindow?: string;
-		preferredMaintenanceWindow?: string;
-		publiclyAccessible?: boolean;
+		pendingModifiedValues?: PendingModifiedRelationalDatabaseValues | null;
+		engine?: string | null;
+		engineVersion?: string | null;
+		latestRestorableTime?: Date | null;
+		masterUsername?: string | null;
+		parameterApplyStatus?: string | null;
+		preferredBackupWindow?: string | null;
+		preferredMaintenanceWindow?: string | null;
+		publiclyAccessible?: boolean | null;
 
 		/** Describes an endpoint for a database. */
-		masterEndpoint?: RelationalDatabaseEndpoint;
-		pendingMaintenanceActions?: Array<PendingMaintenanceAction>;
-		caCertificateIdentifier?: string;
+		masterEndpoint?: RelationalDatabaseEndpoint | null;
+		pendingMaintenanceActions?: Array<PendingMaintenanceAction> | null;
+		caCertificateIdentifier?: string | null;
 	}
 
 
 	/** Describes the hardware of a database. */
 	export interface RelationalDatabaseHardware {
-		cpuCount?: number;
-		diskSizeInGb?: number;
-		ramSizeInGb?: number;
+		cpuCount?: number | null;
+		diskSizeInGb?: number | null;
+		ramSizeInGb?: number | null;
 	}
 
 
 	/** Describes a pending database value modification. */
 	export interface PendingModifiedRelationalDatabaseValues {
-		masterUserPassword?: string;
-		engineVersion?: string;
-		backupRetentionEnabled?: boolean;
+		masterUserPassword?: string | null;
+		engineVersion?: string | null;
+		backupRetentionEnabled?: boolean | null;
 	}
 
 
 	/** Describes an endpoint for a database. */
 	export interface RelationalDatabaseEndpoint {
-		port?: number;
-		address?: string;
+		port?: number | null;
+		address?: string | null;
 	}
 
 
 	/** Describes a pending database maintenance action. */
 	export interface PendingMaintenanceAction {
-		action?: string;
-		description?: string;
-		currentApplyDate?: Date;
+		action?: string | null;
+		description?: string | null;
+		currentApplyDate?: Date | null;
 	}
 
 	export interface GetRelationalDatabaseRequest {
@@ -1643,94 +1643,94 @@ export namespace MyNS {
 	}
 
 	export interface GetRelationalDatabaseBlueprintsResult {
-		blueprints?: Array<RelationalDatabaseBlueprint>;
-		nextPageToken?: string;
+		blueprints?: Array<RelationalDatabaseBlueprint> | null;
+		nextPageToken?: string | null;
 	}
 
 
 	/** Describes a database image, or blueprint. A blueprint describes the major engine version of a database. */
 	export interface RelationalDatabaseBlueprint {
-		blueprintId?: string;
-		engine?: RelationalDatabaseBlueprintEngine;
-		engineVersion?: string;
-		engineDescription?: string;
-		engineVersionDescription?: string;
-		isEngineDefault?: boolean;
+		blueprintId?: string | null;
+		engine?: RelationalDatabaseBlueprintEngine | null;
+		engineVersion?: string | null;
+		engineDescription?: string | null;
+		engineVersionDescription?: string | null;
+		isEngineDefault?: boolean | null;
 	}
 
 	export enum RelationalDatabaseBlueprintEngine { mysql = 0 }
 
 	export interface GetRelationalDatabaseBlueprintsRequest {
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 	export interface GetRelationalDatabaseBundlesResult {
-		bundles?: Array<RelationalDatabaseBundle>;
-		nextPageToken?: string;
+		bundles?: Array<RelationalDatabaseBundle> | null;
+		nextPageToken?: string | null;
 	}
 
 
 	/** Describes a database bundle. A bundle describes the performance specifications of the database. */
 	export interface RelationalDatabaseBundle {
-		bundleId?: string;
-		name?: string;
-		price?: number;
-		ramSizeInGb?: number;
-		diskSizeInGb?: number;
-		transferPerMonthInGb?: number;
-		cpuCount?: number;
-		isEncrypted?: boolean;
-		isActive?: boolean;
+		bundleId?: string | null;
+		name?: string | null;
+		price?: number | null;
+		ramSizeInGb?: number | null;
+		diskSizeInGb?: number | null;
+		transferPerMonthInGb?: number | null;
+		cpuCount?: number | null;
+		isEncrypted?: boolean | null;
+		isActive?: boolean | null;
 	}
 
 	export interface GetRelationalDatabaseBundlesRequest {
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 	export interface GetRelationalDatabaseEventsResult {
-		relationalDatabaseEvents?: Array<RelationalDatabaseEvent>;
-		nextPageToken?: string;
+		relationalDatabaseEvents?: Array<RelationalDatabaseEvent> | null;
+		nextPageToken?: string | null;
 	}
 
 
 	/** Describes an event for a database. */
 	export interface RelationalDatabaseEvent {
-		resource?: string;
-		createdAt?: Date;
-		message?: string;
-		eventCategories?: Array<string>;
+		resource?: string | null;
+		createdAt?: Date | null;
+		message?: string | null;
+		eventCategories?: Array<string> | null;
 	}
 
 	export interface GetRelationalDatabaseEventsRequest {
 		relationalDatabaseName: string;
-		durationInMinutes?: number;
-		pageToken?: string;
+		durationInMinutes?: number | null;
+		pageToken?: string | null;
 	}
 
 	export interface GetRelationalDatabaseLogEventsResult {
-		resourceLogEvents?: Array<LogEvent>;
-		nextBackwardToken?: string;
-		nextForwardToken?: string;
+		resourceLogEvents?: Array<LogEvent> | null;
+		nextBackwardToken?: string | null;
+		nextForwardToken?: string | null;
 	}
 
 
 	/** Describes a database log event. */
 	export interface LogEvent {
-		createdAt?: Date;
-		message?: string;
+		createdAt?: Date | null;
+		message?: string | null;
 	}
 
 	export interface GetRelationalDatabaseLogEventsRequest {
 		relationalDatabaseName: string;
 		logStreamName: string;
-		startTime?: Date;
-		endTime?: Date;
-		startFromHead?: boolean;
-		pageToken?: string;
+		startTime?: Date | null;
+		endTime?: Date | null;
+		startFromHead?: boolean | null;
+		pageToken?: string | null;
 	}
 
 	export interface GetRelationalDatabaseLogStreamsResult {
-		logStreams?: Array<string>;
+		logStreams?: Array<string> | null;
 	}
 
 	export interface GetRelationalDatabaseLogStreamsRequest {
@@ -1738,20 +1738,20 @@ export namespace MyNS {
 	}
 
 	export interface GetRelationalDatabaseMasterUserPasswordResult {
-		masterUserPassword?: string;
-		createdAt?: Date;
+		masterUserPassword?: string | null;
+		createdAt?: Date | null;
 	}
 
 	export interface GetRelationalDatabaseMasterUserPasswordRequest {
 		relationalDatabaseName: string;
-		passwordVersion?: GetRelationalDatabaseMasterUserPasswordRequestPasswordVersion;
+		passwordVersion?: GetRelationalDatabaseMasterUserPasswordRequestPasswordVersion | null;
 	}
 
 	export enum GetRelationalDatabaseMasterUserPasswordRequestPasswordVersion { CURRENT = 0, PREVIOUS = 1, PENDING = 2 }
 
 	export interface GetRelationalDatabaseMetricDataResult {
-		metricName?: GetRelationalDatabaseMetricDataResultMetricName;
-		metricData?: Array<MetricDatapoint>;
+		metricName?: GetRelationalDatabaseMetricDataResultMetricName | null;
+		metricData?: Array<MetricDatapoint> | null;
 	}
 
 	export enum GetRelationalDatabaseMetricDataResultMetricName { CPUUtilization = 0, DatabaseConnections = 1, DiskQueueDepth = 2, FreeStorageSpace = 3, NetworkReceiveThroughput = 4, NetworkTransmitThroughput = 5 }
@@ -1769,54 +1769,54 @@ export namespace MyNS {
 	export enum GetRelationalDatabaseMetricDataRequestUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface GetRelationalDatabaseParametersResult {
-		parameters?: Array<RelationalDatabaseParameter>;
-		nextPageToken?: string;
+		parameters?: Array<RelationalDatabaseParameter> | null;
+		nextPageToken?: string | null;
 	}
 
 
 	/** Describes the parameters of a database. */
 	export interface RelationalDatabaseParameter {
-		allowedValues?: string;
-		applyMethod?: string;
-		applyType?: string;
-		dataType?: string;
-		description?: string;
-		isModifiable?: boolean;
-		parameterName?: string;
-		parameterValue?: string;
+		allowedValues?: string | null;
+		applyMethod?: string | null;
+		applyType?: string | null;
+		dataType?: string | null;
+		description?: string | null;
+		isModifiable?: boolean | null;
+		parameterName?: string | null;
+		parameterValue?: string | null;
 	}
 
 	export interface GetRelationalDatabaseParametersRequest {
 		relationalDatabaseName: string;
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 	export interface GetRelationalDatabaseSnapshotResult {
 
 		/** Describes a database snapshot. */
-		relationalDatabaseSnapshot?: RelationalDatabaseSnapshot;
+		relationalDatabaseSnapshot?: RelationalDatabaseSnapshot | null;
 	}
 
 
 	/** Describes a database snapshot. */
 	export interface RelationalDatabaseSnapshot {
-		name?: string;
-		arn?: string;
-		supportCode?: string;
-		createdAt?: Date;
+		name?: string | null;
+		arn?: string | null;
+		supportCode?: string | null;
+		createdAt?: Date | null;
 
 		/** Describes the resource location. */
-		location?: ResourceLocation;
-		resourceType?: OperationResourceType;
-		tags?: Array<Tag>;
-		engine?: string;
-		engineVersion?: string;
-		sizeInGb?: number;
-		state?: string;
-		fromRelationalDatabaseName?: string;
-		fromRelationalDatabaseArn?: string;
-		fromRelationalDatabaseBundleId?: string;
-		fromRelationalDatabaseBlueprintId?: string;
+		location?: ResourceLocation | null;
+		resourceType?: OperationResourceType | null;
+		tags?: Array<Tag> | null;
+		engine?: string | null;
+		engineVersion?: string | null;
+		sizeInGb?: number | null;
+		state?: string | null;
+		fromRelationalDatabaseName?: string | null;
+		fromRelationalDatabaseArn?: string | null;
+		fromRelationalDatabaseBundleId?: string | null;
+		fromRelationalDatabaseBlueprintId?: string | null;
 	}
 
 	export interface GetRelationalDatabaseSnapshotRequest {
@@ -1824,43 +1824,43 @@ export namespace MyNS {
 	}
 
 	export interface GetRelationalDatabaseSnapshotsResult {
-		relationalDatabaseSnapshots?: Array<RelationalDatabaseSnapshot>;
-		nextPageToken?: string;
+		relationalDatabaseSnapshots?: Array<RelationalDatabaseSnapshot> | null;
+		nextPageToken?: string | null;
 	}
 
 	export interface GetRelationalDatabaseSnapshotsRequest {
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 	export interface GetRelationalDatabasesResult {
-		relationalDatabases?: Array<RelationalDatabase>;
-		nextPageToken?: string;
+		relationalDatabases?: Array<RelationalDatabase> | null;
+		nextPageToken?: string | null;
 	}
 
 	export interface GetRelationalDatabasesRequest {
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 	export interface GetStaticIpResult {
 
 		/** Describes the static IP. */
-		staticIp?: StaticIp;
+		staticIp?: StaticIp | null;
 	}
 
 
 	/** Describes the static IP. */
 	export interface StaticIp {
-		name?: string;
-		arn?: string;
-		supportCode?: string;
-		createdAt?: Date;
+		name?: string | null;
+		arn?: string | null;
+		supportCode?: string | null;
+		createdAt?: Date | null;
 
 		/** Describes the resource location. */
-		location?: ResourceLocation;
-		resourceType?: OperationResourceType;
-		ipAddress?: string;
-		attachedTo?: string;
-		isAttached?: boolean;
+		location?: ResourceLocation | null;
+		resourceType?: OperationResourceType | null;
+		ipAddress?: string | null;
+		attachedTo?: string | null;
+		isAttached?: boolean | null;
 	}
 
 	export interface GetStaticIpRequest {
@@ -1868,18 +1868,18 @@ export namespace MyNS {
 	}
 
 	export interface GetStaticIpsResult {
-		staticIps?: Array<StaticIp>;
-		nextPageToken?: string;
+		staticIps?: Array<StaticIp> | null;
+		nextPageToken?: string | null;
 	}
 
 	export interface GetStaticIpsRequest {
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 	export interface ImportKeyPairResult {
 
 		/** Describes the API operation. */
-		operation?: Operation;
+		operation?: Operation | null;
 	}
 
 	export interface ImportKeyPairRequest {
@@ -1888,7 +1888,7 @@ export namespace MyNS {
 	}
 
 	export interface IsVpcPeeredResult {
-		isPeered?: boolean;
+		isPeered?: boolean | null;
 	}
 
 	export interface IsVpcPeeredRequest {
@@ -1897,7 +1897,7 @@ export namespace MyNS {
 	export interface OpenInstancePublicPortsResult {
 
 		/** Describes the API operation. */
-		operation?: Operation;
+		operation?: Operation | null;
 	}
 
 	export interface OpenInstancePublicPortsRequest {
@@ -1913,14 +1913,14 @@ export namespace MyNS {
 	export interface PeerVpcResult {
 
 		/** Describes the API operation. */
-		operation?: Operation;
+		operation?: Operation | null;
 	}
 
 	export interface PeerVpcRequest {
 	}
 
 	export interface PutAlarmResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface PutAlarmRequest {
@@ -1930,17 +1930,17 @@ export namespace MyNS {
 		comparisonOperator: AlarmComparisonOperator;
 		threshold: number;
 		evaluationPeriods: number;
-		datapointsToAlarm?: number;
-		treatMissingData?: AlarmTreatMissingData;
-		contactProtocols?: Array<ContactProtocol>;
-		notificationTriggers?: Array<AlarmState>;
-		notificationEnabled?: boolean;
+		datapointsToAlarm?: number | null;
+		treatMissingData?: AlarmTreatMissingData | null;
+		contactProtocols?: Array<ContactProtocol> | null;
+		notificationTriggers?: Array<AlarmState> | null;
+		notificationEnabled?: boolean | null;
 	}
 
 	export interface PutInstancePublicPortsResult {
 
 		/** Describes the API operation. */
-		operation?: Operation;
+		operation?: Operation | null;
 	}
 
 	export interface PutInstancePublicPortsRequest {
@@ -1949,7 +1949,7 @@ export namespace MyNS {
 	}
 
 	export interface RebootInstanceResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface RebootInstanceRequest {
@@ -1957,7 +1957,7 @@ export namespace MyNS {
 	}
 
 	export interface RebootRelationalDatabaseResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface RebootRelationalDatabaseRequest {
@@ -1965,7 +1965,7 @@ export namespace MyNS {
 	}
 
 	export interface ReleaseStaticIpResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface ReleaseStaticIpRequest {
@@ -1973,7 +1973,7 @@ export namespace MyNS {
 	}
 
 	export interface SendContactMethodVerificationResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface SendContactMethodVerificationRequest {
@@ -1983,7 +1983,7 @@ export namespace MyNS {
 	export enum SendContactMethodVerificationRequestProtocol { Email = 0 }
 
 	export interface StartInstanceResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface StartInstanceRequest {
@@ -1991,7 +1991,7 @@ export namespace MyNS {
 	}
 
 	export interface StartRelationalDatabaseResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface StartRelationalDatabaseRequest {
@@ -1999,35 +1999,35 @@ export namespace MyNS {
 	}
 
 	export interface StopInstanceResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface StopInstanceRequest {
 		instanceName: string;
-		force?: boolean;
+		force?: boolean | null;
 	}
 
 	export interface StopRelationalDatabaseResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface StopRelationalDatabaseRequest {
 		relationalDatabaseName: string;
-		relationalDatabaseSnapshotName?: string;
+		relationalDatabaseSnapshotName?: string | null;
 	}
 
 	export interface TagResourceResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface TagResourceRequest {
 		resourceName: string;
-		resourceArn?: string;
+		resourceArn?: string | null;
 		tags: Array<Tag>;
 	}
 
 	export interface TestAlarmResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface TestAlarmRequest {
@@ -2038,24 +2038,24 @@ export namespace MyNS {
 	export interface UnpeerVpcResult {
 
 		/** Describes the API operation. */
-		operation?: Operation;
+		operation?: Operation | null;
 	}
 
 	export interface UnpeerVpcRequest {
 	}
 
 	export interface UntagResourceResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface UntagResourceRequest {
 		resourceName: string;
-		resourceArn?: string;
+		resourceArn?: string | null;
 		tagKeys: Array<string>;
 	}
 
 	export interface UpdateDomainEntryResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface UpdateDomainEntryRequest {
@@ -2069,7 +2069,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateLoadBalancerAttributeResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface UpdateLoadBalancerAttributeRequest {
@@ -2081,24 +2081,24 @@ export namespace MyNS {
 	export enum UpdateLoadBalancerAttributeRequestAttributeName { HealthCheckPath = 0, SessionStickinessEnabled = 1, SessionStickiness_LB_CookieDurationSeconds = 2 }
 
 	export interface UpdateRelationalDatabaseResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface UpdateRelationalDatabaseRequest {
 		relationalDatabaseName: string;
-		masterUserPassword?: string;
-		rotateMasterUserPassword?: boolean;
-		preferredBackupWindow?: string;
-		preferredMaintenanceWindow?: string;
-		enableBackupRetention?: boolean;
-		disableBackupRetention?: boolean;
-		publiclyAccessible?: boolean;
-		applyImmediately?: boolean;
-		caCertificateIdentifier?: string;
+		masterUserPassword?: string | null;
+		rotateMasterUserPassword?: boolean | null;
+		preferredBackupWindow?: string | null;
+		preferredMaintenanceWindow?: string | null;
+		enableBackupRetention?: boolean | null;
+		disableBackupRetention?: boolean | null;
+		publiclyAccessible?: boolean | null;
+		applyImmediately?: boolean | null;
+		caCertificateIdentifier?: string | null;
 	}
 
 	export interface UpdateRelationalDatabaseParametersResult {
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 	export interface UpdateRelationalDatabaseParametersRequest {
@@ -2123,8 +2123,8 @@ export namespace MyNS {
 
 	/** Describes a block storage disk mapping. */
 	export interface DiskMap {
-		originalDiskPath?: string;
-		newDiskName?: string;
+		originalDiskPath?: string | null;
+		newDiskName?: string | null;
 	}
 
 	export enum AutoSnapshotStatus { Success = 0, Failed = 1, InProgress = 2, NotFound = 3 }

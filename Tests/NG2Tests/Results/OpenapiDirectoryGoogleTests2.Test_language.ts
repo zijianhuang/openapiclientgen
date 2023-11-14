@@ -10,10 +10,10 @@ export namespace MyNS {
 		 * ################################################################ #
 		 * Represents the input to API methods.
 		 */
-		document?: Document;
+		document?: Document | null;
 
 		/** The encoding type used by the API to calculate offsets. */
-		encodingType?: AnalyzeEntitiesRequestEncodingType;
+		encodingType?: AnalyzeEntitiesRequestEncodingType | null;
 	}
 
 
@@ -27,7 +27,7 @@ export namespace MyNS {
 		 * The content of the input in string format.
 		 * Cloud audit logging exempt since it is based on user data.
 		 */
-		content?: string;
+		content?: string | null;
 
 		/**
 		 * The Google Cloud Storage URI where the file content is located.
@@ -35,7 +35,7 @@ export namespace MyNS {
 		 * details, see https://cloud.google.com/storage/docs/reference-uris.
 		 * NOTE: Cloud Storage object versioning is not supported.
 		 */
-		gcsContentUri?: string;
+		gcsContentUri?: string | null;
 
 		/**
 		 * The language of the document (if not specified, the language is
@@ -47,13 +47,13 @@ export namespace MyNS {
 		 * specified by the caller or automatically detected) is not supported by the
 		 * called API method, an `INVALID_ARGUMENT` error is returned.
 		 */
-		language?: string;
+		language?: string | null;
 
 		/**
 		 * Required. If the type is not set or is `TYPE_UNSPECIFIED`,
 		 * returns an `INVALID_ARGUMENT` error.
 		 */
-		type?: DocumentType;
+		type?: DocumentType | null;
 	}
 
 	export enum DocumentType { TYPE_UNSPECIFIED = 0, PLAIN_TEXT = 1, HTML = 2 }
@@ -65,14 +65,14 @@ export namespace MyNS {
 	export interface AnalyzeEntitiesResponse {
 
 		/** The recognized entities in the input document. */
-		entities?: Array<Entity>;
+		entities?: Array<Entity> | null;
 
 		/**
 		 * The language of the text, which will be the same as the language specified
 		 * in the request or, if not specified, the automatically-detected language.
 		 * See Document.language field for more details.
 		 */
-		language?: string;
+		language?: string | null;
 	}
 
 
@@ -87,7 +87,7 @@ export namespace MyNS {
 		 * The mentions of this entity in the input document. The API currently
 		 * supports proper noun mentions.
 		 */
-		mentions?: Array<EntityMention>;
+		mentions?: Array<EntityMention> | null;
 
 		/**
 		 * Metadata associated with the entity.
@@ -95,10 +95,10 @@ export namespace MyNS {
 		 * and Knowledge Graph MID (`mid`), if they are available. For the metadata
 		 * associated with other entity types, see the Type table below.
 		 */
-		metadata?: {[id: string]: string };
+		metadata?: {[id: string]: string } | null;
 
 		/** The representative name for the entity. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The salience score associated with the entity in the [0, 1.0] range.
@@ -107,16 +107,16 @@ export namespace MyNS {
 		 * Scores closer to 0 are less salient, while scores closer to 1.0 are highly
 		 * salient.
 		 */
-		salience?: number;
+		salience?: number | null;
 
 		/**
 		 * Represents the feeling associated with the entire text or entities in
 		 * the text.
 		 */
-		sentiment?: Sentiment;
+		sentiment?: Sentiment | null;
 
 		/** The entity type. */
-		type?: EntityType;
+		type?: EntityType | null;
 	}
 
 
@@ -130,13 +130,13 @@ export namespace MyNS {
 		 * Represents the feeling associated with the entire text or entities in
 		 * the text.
 		 */
-		sentiment?: Sentiment;
+		sentiment?: Sentiment | null;
 
 		/** Represents an output piece of text. */
-		text?: TextSpan;
+		text?: TextSpan | null;
 
 		/** The type of the entity mention. */
-		type?: EntityMentionType;
+		type?: EntityMentionType | null;
 	}
 
 
@@ -151,13 +151,13 @@ export namespace MyNS {
 		 * the absolute magnitude of sentiment regardless of score (positive or
 		 * negative).
 		 */
-		magnitude?: number;
+		magnitude?: number | null;
 
 		/**
 		 * Sentiment score between -1.0 (negative sentiment) and 1.0
 		 * (positive sentiment).
 		 */
-		score?: number;
+		score?: number | null;
 	}
 
 
@@ -168,10 +168,10 @@ export namespace MyNS {
 		 * The API calculates the beginning offset of the content in the original
 		 * document according to the EncodingType specified in the API request.
 		 */
-		beginOffset?: number;
+		beginOffset?: number | null;
 
 		/** The content of the output text. */
-		content?: string;
+		content?: string | null;
 	}
 
 	export enum EntityMentionType { TYPE_UNKNOWN = 0, PROPER = 1, COMMON = 2 }
@@ -186,10 +186,10 @@ export namespace MyNS {
 		 * ################################################################ #
 		 * Represents the input to API methods.
 		 */
-		document?: Document;
+		document?: Document | null;
 
 		/** The encoding type used by the API to calculate offsets. */
-		encodingType?: AnalyzeEntitiesRequestEncodingType;
+		encodingType?: AnalyzeEntitiesRequestEncodingType | null;
 	}
 
 
@@ -197,14 +197,14 @@ export namespace MyNS {
 	export interface AnalyzeEntitySentimentResponse {
 
 		/** The recognized entities in the input document with associated sentiments. */
-		entities?: Array<Entity>;
+		entities?: Array<Entity> | null;
 
 		/**
 		 * The language of the text, which will be the same as the language specified
 		 * in the request or, if not specified, the automatically-detected language.
 		 * See Document.language field for more details.
 		 */
-		language?: string;
+		language?: string | null;
 	}
 
 
@@ -215,10 +215,10 @@ export namespace MyNS {
 		 * ################################################################ #
 		 * Represents the input to API methods.
 		 */
-		document?: Document;
+		document?: Document | null;
 
 		/** The encoding type used by the API to calculate sentence offsets. */
-		encodingType?: AnalyzeEntitiesRequestEncodingType;
+		encodingType?: AnalyzeEntitiesRequestEncodingType | null;
 	}
 
 
@@ -229,17 +229,17 @@ export namespace MyNS {
 		 * Represents the feeling associated with the entire text or entities in
 		 * the text.
 		 */
-		documentSentiment?: Sentiment;
+		documentSentiment?: Sentiment | null;
 
 		/**
 		 * The language of the text, which will be the same as the language specified
 		 * in the request or, if not specified, the automatically-detected language.
 		 * See Document.language field for more details.
 		 */
-		language?: string;
+		language?: string | null;
 
 		/** The sentiment for all the sentences in the document. */
-		sentences?: Array<Sentence>;
+		sentences?: Array<Sentence> | null;
 	}
 
 
@@ -250,10 +250,10 @@ export namespace MyNS {
 		 * Represents the feeling associated with the entire text or entities in
 		 * the text.
 		 */
-		sentiment?: Sentiment;
+		sentiment?: Sentiment | null;
 
 		/** Represents an output piece of text. */
-		text?: TextSpan;
+		text?: TextSpan | null;
 	}
 
 
@@ -264,10 +264,10 @@ export namespace MyNS {
 		 * ################################################################ #
 		 * Represents the input to API methods.
 		 */
-		document?: Document;
+		document?: Document | null;
 
 		/** The encoding type used by the API to calculate offsets. */
-		encodingType?: AnalyzeEntitiesRequestEncodingType;
+		encodingType?: AnalyzeEntitiesRequestEncodingType | null;
 	}
 
 
@@ -279,13 +279,13 @@ export namespace MyNS {
 		 * in the request or, if not specified, the automatically-detected language.
 		 * See Document.language field for more details.
 		 */
-		language?: string;
+		language?: string | null;
 
 		/** Sentences in the input document. */
-		sentences?: Array<Sentence>;
+		sentences?: Array<Sentence> | null;
 
 		/** Tokens, along with their syntactic information, in the input document. */
-		tokens?: Array<Token>;
+		tokens?: Array<Token> | null;
 	}
 
 
@@ -297,20 +297,20 @@ export namespace MyNS {
 		 * information on dependency labels, see
 		 * http://www.aclweb.org/anthology/P13-2017
 		 */
-		dependencyEdge?: DependencyEdge;
+		dependencyEdge?: DependencyEdge | null;
 
 		/** [Lemma](https://en.wikipedia.org/wiki/Lemma_%28morphology%29) of the token. */
-		lemma?: string;
+		lemma?: string | null;
 
 		/**
 		 * Represents part of speech information for a token. Parts of speech
 		 * are as defined in
 		 * http://www.lrec-conf.org/proceedings/lrec2012/pdf/274_Paper.pdf
 		 */
-		partOfSpeech?: PartOfSpeech;
+		partOfSpeech?: PartOfSpeech | null;
 
 		/** Represents an output piece of text. */
-		text?: TextSpan;
+		text?: TextSpan | null;
 	}
 
 
@@ -328,10 +328,10 @@ export namespace MyNS {
 		 * by the API method. If this token is a root token, then the
 		 * `head_token_index` is its own index.
 		 */
-		headTokenIndex?: number;
+		headTokenIndex?: number | null;
 
 		/** The parse label for the token. */
-		label?: DependencyEdgeLabel;
+		label?: DependencyEdgeLabel | null;
 	}
 
 	export enum DependencyEdgeLabel { UNKNOWN = 0, ABBREV = 1, ACOMP = 2, ADVCL = 3, ADVMOD = 4, AMOD = 5, APPOS = 6, ATTR = 7, AUX = 8, AUXPASS = 9, CC = 10, CCOMP = 11, CONJ = 12, CSUBJ = 13, CSUBJPASS = 14, DEP = 15, DET = 16, DISCOURSE = 17, DOBJ = 18, EXPL = 19, GOESWITH = 20, IOBJ = 21, MARK = 22, MWE = 23, MWV = 24, NEG = 25, NN = 26, NPADVMOD = 27, NSUBJ = 28, NSUBJPASS = 29, NUM = 30, NUMBER = 31, P = 32, PARATAXIS = 33, PARTMOD = 34, PCOMP = 35, POBJ = 36, POSS = 37, POSTNEG = 38, PRECOMP = 39, PRECONJ = 40, PREDET = 41, PREF = 42, PREP = 43, PRONL = 44, PRT = 45, PS = 46, QUANTMOD = 47, RCMOD = 48, RCMODREL = 49, RDROP = 50, REF = 51, REMNANT = 52, REPARANDUM = 53, ROOT = 54, SNUM = 55, SUFF = 56, TMOD = 57, TOPIC = 58, VMOD = 59, VOCATIVE = 60, XCOMP = 61, SUFFIX = 62, TITLE = 63, ADVPHMOD = 64, AUXCAUS = 65, AUXVV = 66, DTMOD = 67, FOREIGN = 68, KW = 69, LIST = 70, NOMC = 71, NOMCSUBJ = 72, NOMCSUBJPASS = 73, NUMC = 74, COP = 75, DISLOCATED = 76, ASP = 77, GMOD = 78, GOBJ = 79, INFMOD = 80, MES = 81, NCOMP = 82 }
@@ -345,40 +345,40 @@ export namespace MyNS {
 	export interface PartOfSpeech {
 
 		/** The grammatical aspect. */
-		aspect?: PartOfSpeechAspect;
+		aspect?: PartOfSpeechAspect | null;
 
 		/** The grammatical case. */
-		case?: PartOfSpeechCase;
+		case?: PartOfSpeechCase | null;
 
 		/** The grammatical form. */
-		form?: PartOfSpeechForm;
+		form?: PartOfSpeechForm | null;
 
 		/** The grammatical gender. */
-		gender?: PartOfSpeechGender;
+		gender?: PartOfSpeechGender | null;
 
 		/** The grammatical mood. */
-		mood?: PartOfSpeechMood;
+		mood?: PartOfSpeechMood | null;
 
 		/** The grammatical number. */
-		number?: PartOfSpeechNumber;
+		number?: PartOfSpeechNumber | null;
 
 		/** The grammatical person. */
-		person?: PartOfSpeechPerson;
+		person?: PartOfSpeechPerson | null;
 
 		/** The grammatical properness. */
-		proper?: PartOfSpeechProper;
+		proper?: PartOfSpeechProper | null;
 
 		/** The grammatical reciprocity. */
-		reciprocity?: PartOfSpeechReciprocity;
+		reciprocity?: PartOfSpeechReciprocity | null;
 
 		/** The part of speech tag. */
-		tag?: PartOfSpeechTag;
+		tag?: PartOfSpeechTag | null;
 
 		/** The grammatical tense. */
-		tense?: PartOfSpeechTense;
+		tense?: PartOfSpeechTense | null;
 
 		/** The grammatical voice. */
-		voice?: PartOfSpeechVoice;
+		voice?: PartOfSpeechVoice | null;
 	}
 
 	export enum PartOfSpeechAspect { ASPECT_UNKNOWN = 0, PERFECTIVE = 1, IMPERFECTIVE = 2, PROGRESSIVE = 3 }
@@ -416,16 +416,16 @@ export namespace MyNS {
 		 * ################################################################ #
 		 * Represents the input to API methods.
 		 */
-		document?: Document;
+		document?: Document | null;
 
 		/** The encoding type used by the API to calculate offsets. */
-		encodingType?: AnalyzeEntitiesRequestEncodingType;
+		encodingType?: AnalyzeEntitiesRequestEncodingType | null;
 
 		/**
 		 * All available features for sentiment, syntax, and semantic analysis.
 		 * Setting each one to true will enable that specific analysis for the input.
 		 */
-		features?: Features;
+		features?: Features | null;
 	}
 
 
@@ -436,19 +436,19 @@ export namespace MyNS {
 	export interface Features {
 
 		/** Classify the full document into categories. */
-		classifyText?: boolean;
+		classifyText?: boolean | null;
 
 		/** Extract document-level sentiment. */
-		extractDocumentSentiment?: boolean;
+		extractDocumentSentiment?: boolean | null;
 
 		/** Extract entities. */
-		extractEntities?: boolean;
+		extractEntities?: boolean | null;
 
 		/** Extract entities and their associated sentiment. */
-		extractEntitySentiment?: boolean;
+		extractEntitySentiment?: boolean | null;
 
 		/** Extract syntax information. */
-		extractSyntax?: boolean;
+		extractSyntax?: boolean | null;
 	}
 
 
@@ -456,40 +456,40 @@ export namespace MyNS {
 	export interface AnnotateTextResponse {
 
 		/** Categories identified in the input document. */
-		categories?: Array<ClassificationCategory>;
+		categories?: Array<ClassificationCategory> | null;
 
 		/**
 		 * Represents the feeling associated with the entire text or entities in
 		 * the text.
 		 */
-		documentSentiment?: Sentiment;
+		documentSentiment?: Sentiment | null;
 
 		/**
 		 * Entities, along with their semantic information, in the input document.
 		 * Populated if the user enables
 		 * AnnotateTextRequest.Features.extract_entities.
 		 */
-		entities?: Array<Entity>;
+		entities?: Array<Entity> | null;
 
 		/**
 		 * The language of the text, which will be the same as the language specified
 		 * in the request or, if not specified, the automatically-detected language.
 		 * See Document.language field for more details.
 		 */
-		language?: string;
+		language?: string | null;
 
 		/**
 		 * Sentences in the input document. Populated if the user enables
 		 * AnnotateTextRequest.Features.extract_syntax.
 		 */
-		sentences?: Array<Sentence>;
+		sentences?: Array<Sentence> | null;
 
 		/**
 		 * Tokens, along with their syntactic information, in the input document.
 		 * Populated if the user enables
 		 * AnnotateTextRequest.Features.extract_syntax.
 		 */
-		tokens?: Array<Token>;
+		tokens?: Array<Token> | null;
 	}
 
 
@@ -500,13 +500,13 @@ export namespace MyNS {
 		 * The classifier's confidence of the category. Number represents how certain
 		 * the classifier is that this category represents the given text.
 		 */
-		confidence?: number;
+		confidence?: number | null;
 
 		/**
 		 * The name of the category representing the document, from the [predefined
 		 * taxonomy](https://cloud.google.com/natural-language/docs/categories).
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -517,7 +517,7 @@ export namespace MyNS {
 		 * ################################################################ #
 		 * Represents the input to API methods.
 		 */
-		document?: Document;
+		document?: Document | null;
 	}
 
 
@@ -525,7 +525,7 @@ export namespace MyNS {
 	export interface ClassifyTextResponse {
 
 		/** Categories representing the input document. */
-		categories?: Array<ClassificationCategory>;
+		categories?: Array<ClassificationCategory> | null;
 	}
 
 
@@ -540,20 +540,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 	@Injectable()

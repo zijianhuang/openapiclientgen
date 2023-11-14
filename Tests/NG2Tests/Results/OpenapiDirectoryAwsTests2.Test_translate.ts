@@ -18,31 +18,31 @@ export namespace MyNS {
 	export interface DescribeTextTranslationJobResponse {
 
 		/** Provides information about a translation job. */
-		TextTranslationJobProperties?: TextTranslationJobProperties;
+		TextTranslationJobProperties?: TextTranslationJobProperties | null;
 	}
 
 
 	/** Provides information about a translation job. */
 	export interface TextTranslationJobProperties {
-		JobId?: string;
-		JobName?: string;
-		JobStatus?: TextTranslationJobPropertiesJobStatus;
+		JobId?: string | null;
+		JobName?: string | null;
+		JobStatus?: TextTranslationJobPropertiesJobStatus | null;
 
 		/** The number of documents successfully and unsuccessfully processed during a translation job. */
-		JobDetails?: JobDetails;
-		SourceLanguageCode?: string;
-		TargetLanguageCodes?: Array<string>;
-		TerminologyNames?: Array<string>;
-		Message?: string;
-		SubmittedTime?: Date;
-		EndTime?: Date;
+		JobDetails?: JobDetails | null;
+		SourceLanguageCode?: string | null;
+		TargetLanguageCodes?: Array<string> | null;
+		TerminologyNames?: Array<string> | null;
+		Message?: string | null;
+		SubmittedTime?: Date | null;
+		EndTime?: Date | null;
 
 		/** The input configuration properties for requesting a batch translation job. */
-		InputDataConfig?: InputDataConfig;
+		InputDataConfig?: InputDataConfig | null;
 
 		/** The output configuration properties for a batch translation job. */
-		OutputDataConfig?: OutputDataConfig;
-		DataAccessRoleArn?: string;
+		OutputDataConfig?: OutputDataConfig | null;
+		DataAccessRoleArn?: string | null;
 	}
 
 	export enum TextTranslationJobPropertiesJobStatus { SUBMITTED = 0, IN_PROGRESS = 1, COMPLETED = 2, COMPLETED_WITH_ERROR = 3, FAILED = 4, STOP_REQUESTED = 5, STOPPED = 6 }
@@ -50,9 +50,9 @@ export namespace MyNS {
 
 	/** The number of documents successfully and unsuccessfully processed during a translation job. */
 	export interface JobDetails {
-		TranslatedDocumentsCount?: number;
-		DocumentsWithErrorsCount?: number;
-		InputDocumentsCount?: number;
+		TranslatedDocumentsCount?: number | null;
+		DocumentsWithErrorsCount?: number | null;
+		InputDocumentsCount?: number | null;
 	}
 
 
@@ -75,27 +75,27 @@ export namespace MyNS {
 	export interface GetTerminologyResponse {
 
 		/** The properties of the custom terminology. */
-		TerminologyProperties?: TerminologyProperties;
+		TerminologyProperties?: TerminologyProperties | null;
 
 		/** The location of the custom terminology data. */
-		TerminologyDataLocation?: TerminologyDataLocation;
+		TerminologyDataLocation?: TerminologyDataLocation | null;
 	}
 
 
 	/** The properties of the custom terminology. */
 	export interface TerminologyProperties {
-		Name?: string;
-		Description?: string;
-		Arn?: string;
-		SourceLanguageCode?: string;
-		TargetLanguageCodes?: Array<string>;
+		Name?: string | null;
+		Description?: string | null;
+		Arn?: string | null;
+		SourceLanguageCode?: string | null;
+		TargetLanguageCodes?: Array<string> | null;
 
 		/** The encryption key used to encrypt the custom terminologies used by Amazon Translate. */
-		EncryptionKey?: EncryptionKey;
-		SizeBytes?: number;
-		TermCount?: number;
-		CreatedAt?: Date;
-		LastUpdatedAt?: Date;
+		EncryptionKey?: EncryptionKey | null;
+		SizeBytes?: number | null;
+		TermCount?: number | null;
+		CreatedAt?: Date | null;
+		LastUpdatedAt?: Date | null;
 	}
 
 
@@ -127,13 +127,13 @@ export namespace MyNS {
 	export interface ImportTerminologyResponse {
 
 		/** The properties of the custom terminology. */
-		TerminologyProperties?: TerminologyProperties;
+		TerminologyProperties?: TerminologyProperties | null;
 	}
 
 	export interface ImportTerminologyRequest {
 		Name: string;
 		MergeStrategy: ImportTerminologyRequestMergeStrategy;
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * The data associated with the custom terminology.
@@ -142,7 +142,7 @@ export namespace MyNS {
 		TerminologyData: TerminologyData;
 
 		/** The encryption key used to encrypt the custom terminologies used by Amazon Translate. */
-		EncryptionKey?: EncryptionKey;
+		EncryptionKey?: EncryptionKey | null;
 	}
 
 	export enum ImportTerminologyRequestMergeStrategy { OVERWRITE = 0 }
@@ -158,35 +158,35 @@ export namespace MyNS {
 	}
 
 	export interface ListTerminologiesResponse {
-		TerminologyPropertiesList?: Array<TerminologyProperties>;
-		NextToken?: string;
+		TerminologyPropertiesList?: Array<TerminologyProperties> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTerminologiesRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTextTranslationJobsResponse {
-		TextTranslationJobPropertiesList?: Array<TextTranslationJobProperties>;
-		NextToken?: string;
+		TextTranslationJobPropertiesList?: Array<TextTranslationJobProperties> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTextTranslationJobsRequest {
 
 		/** Provides information for filtering a list of translation jobs. For more information, see <a>ListTextTranslationJobs</a>. */
-		Filter?: TextTranslationJobFilter;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: TextTranslationJobFilter | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** Provides information for filtering a list of translation jobs. For more information, see <a>ListTextTranslationJobs</a>. */
 	export interface TextTranslationJobFilter {
-		JobName?: string;
-		JobStatus?: TextTranslationJobPropertiesJobStatus;
-		SubmittedBeforeTime?: Date;
-		SubmittedAfterTime?: Date;
+		JobName?: string | null;
+		JobStatus?: TextTranslationJobPropertiesJobStatus | null;
+		SubmittedBeforeTime?: Date | null;
+		SubmittedAfterTime?: Date | null;
 	}
 
 	export interface InvalidRequestException {
@@ -196,12 +196,12 @@ export namespace MyNS {
 	}
 
 	export interface StartTextTranslationJobResponse {
-		JobId?: string;
-		JobStatus?: TextTranslationJobPropertiesJobStatus;
+		JobId?: string | null;
+		JobStatus?: TextTranslationJobPropertiesJobStatus | null;
 	}
 
 	export interface StartTextTranslationJobRequest {
-		JobName?: string;
+		JobName?: string | null;
 
 		/**
 		 * The input configuration properties for requesting a batch translation job.
@@ -217,7 +217,7 @@ export namespace MyNS {
 		DataAccessRoleArn: string;
 		SourceLanguageCode: string;
 		TargetLanguageCodes: Array<string>;
-		TerminologyNames?: Array<string>;
+		TerminologyNames?: Array<string> | null;
 		ClientToken: string;
 	}
 
@@ -225,8 +225,8 @@ export namespace MyNS {
 	}
 
 	export interface StopTextTranslationJobResponse {
-		JobId?: string;
-		JobStatus?: TextTranslationJobPropertiesJobStatus;
+		JobId?: string | null;
+		JobStatus?: TextTranslationJobPropertiesJobStatus | null;
 	}
 
 	export interface StopTextTranslationJobRequest {
@@ -237,26 +237,26 @@ export namespace MyNS {
 		TranslatedText: string;
 		SourceLanguageCode: string;
 		TargetLanguageCode: string;
-		AppliedTerminologies?: Array<AppliedTerminology>;
+		AppliedTerminologies?: Array<AppliedTerminology> | null;
 	}
 
 
 	/** The custom terminology applied to the input text by Amazon Translate for the translated text response. This is optional in the response and will only be present if you specified terminology input in the request. Currently, only one terminology can be applied per TranslateText request. */
 	export interface AppliedTerminology {
-		Name?: string;
-		Terms?: Array<Term>;
+		Name?: string | null;
+		Terms?: Array<Term> | null;
 	}
 
 
 	/** The term being translated by the custom terminology. */
 	export interface Term {
-		SourceText?: string;
-		TargetText?: string;
+		SourceText?: string | null;
+		TargetText?: string | null;
 	}
 
 	export interface TranslateTextRequest {
 		Text: string;
-		TerminologyNames?: Array<string>;
+		TerminologyNames?: Array<string> | null;
 		SourceLanguageCode: string;
 		TargetLanguageCode: string;
 	}
@@ -324,7 +324,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTerminologiesResponse} Success
 		 */
-		ListTerminologies(MaxResults: string, NextToken: string, requestBody: ListTerminologiesRequest): Observable<ListTerminologiesResponse> {
+		ListTerminologies(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTerminologiesRequest): Observable<ListTerminologiesResponse> {
 			return this.http.post<ListTerminologiesResponse>(this.baseUri + '#X-Amz-Target=AWSShineFrontendService_20170701.ListTerminologies?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -335,7 +335,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTextTranslationJobsResponse} Success
 		 */
-		ListTextTranslationJobs(MaxResults: string, NextToken: string, requestBody: ListTextTranslationJobsRequest): Observable<ListTextTranslationJobsResponse> {
+		ListTextTranslationJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTextTranslationJobsRequest): Observable<ListTextTranslationJobsResponse> {
 			return this.http.post<ListTextTranslationJobsResponse>(this.baseUri + '#X-Amz-Target=AWSShineFrontendService_20170701.ListTextTranslationJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

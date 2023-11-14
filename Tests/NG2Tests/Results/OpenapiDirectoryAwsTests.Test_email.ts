@@ -124,42 +124,42 @@ export namespace MyNS {
 	export interface ReceiptAction {
 
 		/** <p>When included in a receipt rule, this action saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>To enable Amazon SES to write emails to your Amazon S3 bucket, use an AWS KMS key to encrypt your emails, or publish to an Amazon SNS topic of another account, Amazon SES must have permission to access those resources. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p> <note> <p>When you save your emails to an Amazon S3 bucket, the maximum email size (including headers) is 30 MB. Emails larger than that will bounce.</p> </note> <p>For information about specifying Amazon S3 actions in receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-s3.html">Amazon SES Developer Guide</a>.</p> */
-		S3Action?: S3Action;
+		S3Action?: S3Action | null;
 
 		/** <p>When included in a receipt rule, this action rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>For information about sending a bounce message in response to a received email, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-bounce.html">Amazon SES Developer Guide</a>.</p> */
-		BounceAction?: BounceAction;
+		BounceAction?: BounceAction | null;
 
 		/** <p>When included in a receipt rule, this action calls Amazon WorkMail and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS). You will typically not use this action directly because Amazon WorkMail adds the rule automatically during its setup procedure.</p> <p>For information using a receipt rule to call Amazon WorkMail, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-workmail.html">Amazon SES Developer Guide</a>.</p> */
-		WorkmailAction?: WorkmailAction;
+		WorkmailAction?: WorkmailAction | null;
 
 		/** <p>When included in a receipt rule, this action calls an AWS Lambda function and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>To enable Amazon SES to call your AWS Lambda function or to publish to an Amazon SNS topic of another account, Amazon SES must have permission to access those resources. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p> <p>For information about using AWS Lambda actions in receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-lambda.html">Amazon SES Developer Guide</a>.</p> */
-		LambdaAction?: LambdaAction;
+		LambdaAction?: LambdaAction | null;
 
 		/** <p>When included in a receipt rule, this action terminates the evaluation of the receipt rule set and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>For information about setting a stop action in a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html">Amazon SES Developer Guide</a>.</p> */
-		StopAction?: StopAction;
+		StopAction?: StopAction | null;
 
 		/** <p>When included in a receipt rule, this action adds a header to the received email.</p> <p>For information about adding a header using a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-add-header.html">Amazon SES Developer Guide</a>.</p> */
-		AddHeaderAction?: AddHeaderAction;
+		AddHeaderAction?: AddHeaderAction | null;
 
 		/** <p>When included in a receipt rule, this action publishes a notification to Amazon Simple Notification Service (Amazon SNS). This action includes a complete copy of the email content in the Amazon SNS notifications. Amazon SNS notifications for all other actions simply provide information about the email. They do not include the email content itself.</p> <p>If you own the Amazon SNS topic, you don't need to do anything to give Amazon SES permission to publish emails to it. However, if you don't own the Amazon SNS topic, you need to attach a policy to the topic to give Amazon SES permissions to access it. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p> <important> <p>You can only publish emails that are 150 KB or less (including the header) to Amazon SNS. Larger emails will bounce. If you anticipate emails larger than 150 KB, use the S3 action instead.</p> </important> <p>For information about using a receipt rule to publish an Amazon SNS notification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-sns.html">Amazon SES Developer Guide</a>.</p> */
-		SNSAction?: SNSAction;
+		SNSAction?: SNSAction | null;
 	}
 
 
 	/** <p>When included in a receipt rule, this action saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>To enable Amazon SES to write emails to your Amazon S3 bucket, use an AWS KMS key to encrypt your emails, or publish to an Amazon SNS topic of another account, Amazon SES must have permission to access those resources. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p> <note> <p>When you save your emails to an Amazon S3 bucket, the maximum email size (including headers) is 30 MB. Emails larger than that will bounce.</p> </note> <p>For information about specifying Amazon S3 actions in receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-s3.html">Amazon SES Developer Guide</a>.</p> */
 	export interface S3Action {
-		TopicArn?: string;
+		TopicArn?: string | null;
 		BucketName: string;
-		ObjectKeyPrefix?: string;
-		KmsKeyArn?: string;
+		ObjectKeyPrefix?: string | null;
+		KmsKeyArn?: string | null;
 	}
 
 
 	/** <p>When included in a receipt rule, this action rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>For information about sending a bounce message in response to a received email, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-bounce.html">Amazon SES Developer Guide</a>.</p> */
 	export interface BounceAction {
-		TopicArn?: string;
+		TopicArn?: string | null;
 		SmtpReplyCode: string;
-		StatusCode?: string;
+		StatusCode?: string | null;
 		Message: string;
 		Sender: string;
 	}
@@ -167,16 +167,16 @@ export namespace MyNS {
 
 	/** <p>When included in a receipt rule, this action calls Amazon WorkMail and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS). You will typically not use this action directly because Amazon WorkMail adds the rule automatically during its setup procedure.</p> <p>For information using a receipt rule to call Amazon WorkMail, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-workmail.html">Amazon SES Developer Guide</a>.</p> */
 	export interface WorkmailAction {
-		TopicArn?: string;
+		TopicArn?: string | null;
 		OrganizationArn: string;
 	}
 
 
 	/** <p>When included in a receipt rule, this action calls an AWS Lambda function and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>To enable Amazon SES to call your AWS Lambda function or to publish to an Amazon SNS topic of another account, Amazon SES must have permission to access those resources. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p> <p>For information about using AWS Lambda actions in receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-lambda.html">Amazon SES Developer Guide</a>.</p> */
 	export interface LambdaAction {
-		TopicArn?: string;
+		TopicArn?: string | null;
 		FunctionArn: string;
-		InvocationType?: LambdaActionInvocationType;
+		InvocationType?: LambdaActionInvocationType | null;
 	}
 
 	export enum LambdaActionInvocationType { Event = 0, RequestResponse = 1 }
@@ -185,7 +185,7 @@ export namespace MyNS {
 	/** <p>When included in a receipt rule, this action terminates the evaluation of the receipt rule set and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> <p>For information about setting a stop action in a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html">Amazon SES Developer Guide</a>.</p> */
 	export interface StopAction {
 		Scope: StopActionScope;
-		TopicArn?: string;
+		TopicArn?: string | null;
 	}
 
 	export enum StopActionScope { RuleSet = 0 }
@@ -201,7 +201,7 @@ export namespace MyNS {
 	/** <p>When included in a receipt rule, this action publishes a notification to Amazon Simple Notification Service (Amazon SNS). This action includes a complete copy of the email content in the Amazon SNS notifications. Amazon SNS notifications for all other actions simply provide information about the email. They do not include the email content itself.</p> <p>If you own the Amazon SNS topic, you don't need to do anything to give Amazon SES permission to publish emails to it. However, if you don't own the Amazon SNS topic, you need to attach a policy to the topic to give Amazon SES permissions to access it. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p> <important> <p>You can only publish emails that are 150 KB or less (including the header) to Amazon SNS. Larger emails will bounce. If you anticipate emails larger than 150 KB, use the S3 action instead.</p> </important> <p>For information about using a receipt rule to publish an Amazon SNS notification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-sns.html">Amazon SES Developer Guide</a>.</p> */
 	export interface SNSAction {
 		TopicArn: string;
-		Encoding?: SNSActionEncoding;
+		Encoding?: SNSActionEncoding | null;
 	}
 
 	export enum SNSActionEncoding { UTF_8 = 0, Base64 = 1 }
@@ -286,26 +286,26 @@ export namespace MyNS {
 	export interface DescribeActiveReceiptRuleSetResponse {
 
 		/** <p>Information about a receipt rule set.</p> <p>A receipt rule set is a collection of rules that specify what Amazon SES should do with mail it receives on behalf of your account's verified domains.</p> <p>For information about setting up receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES Developer Guide</a>.</p> */
-		Metadata?: ReceiptRuleSetMetadata;
-		Rules?: Array<ReceiptRule>;
+		Metadata?: ReceiptRuleSetMetadata | null;
+		Rules?: Array<ReceiptRule> | null;
 	}
 
 
 	/** <p>Information about a receipt rule set.</p> <p>A receipt rule set is a collection of rules that specify what Amazon SES should do with mail it receives on behalf of your account's verified domains.</p> <p>For information about setting up receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES Developer Guide</a>.</p> */
 	export interface ReceiptRuleSetMetadata {
-		Name?: string;
-		CreatedTimestamp?: Date;
+		Name?: string | null;
+		CreatedTimestamp?: Date | null;
 	}
 
 
 	/** <p>Receipt rules enable you to specify which actions Amazon SES should take when it receives mail on behalf of one or more email addresses or domains that you own.</p> <p>Each receipt rule defines a set of email addresses or domains that it applies to. If the email addresses or domains match at least one recipient address of the message, Amazon SES executes all of the receipt rule's actions on the message.</p> <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES Developer Guide</a>.</p> */
 	export interface ReceiptRule {
 		Name: string;
-		Enabled?: boolean;
-		TlsPolicy?: TlsPolicy;
-		Recipients?: Array<string>;
-		Actions?: Array<ReceiptAction>;
-		ScanEnabled?: boolean;
+		Enabled?: boolean | null;
+		TlsPolicy?: TlsPolicy | null;
+		Recipients?: Array<string> | null;
+		Actions?: Array<ReceiptAction> | null;
+		ScanEnabled?: boolean | null;
 	}
 
 
@@ -313,17 +313,17 @@ export namespace MyNS {
 	export interface DescribeConfigurationSetResponse {
 
 		/** <p>The name of the configuration set.</p> <p>Configuration sets let you create groups of rules that you can apply to the emails you send using Amazon SES. For more information about using configuration sets, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/using-configuration-sets.html">Using Amazon SES Configuration Sets</a> in the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/">Amazon SES Developer Guide</a>.</p> */
-		ConfigurationSet?: ConfigurationSet;
-		EventDestinations?: Array<EventDestination>;
+		ConfigurationSet?: ConfigurationSet | null;
+		EventDestinations?: Array<EventDestination> | null;
 
 		/** <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This domain captures open and click events generated by Amazon SES emails.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES Developer Guide</i>.</p> */
-		TrackingOptions?: TrackingOptions;
+		TrackingOptions?: TrackingOptions | null;
 
 		/** Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). */
-		DeliveryOptions?: DeliveryOptions;
+		DeliveryOptions?: DeliveryOptions | null;
 
 		/** Contains information about the reputation settings for a configuration set. */
-		ReputationOptions?: ReputationOptions;
+		ReputationOptions?: ReputationOptions | null;
 	}
 
 
@@ -336,37 +336,37 @@ export namespace MyNS {
 	/** <p>Contains information about the event destination that the specified email sending events will be published to.</p> <note> <p>When you create or update an event destination, you must provide one, and only one, destination. The destination can be Amazon CloudWatch, Amazon Kinesis Firehose or Amazon Simple Notification Service (Amazon SNS).</p> </note> <p>Event destinations are associated with configuration sets, which enable you to publish email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS). For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
 	export interface EventDestination {
 		Name: string;
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 		MatchingEventTypes: Array<EventType>;
 
 		/** <p>Contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p> <p>Event destinations, such as Amazon Kinesis Firehose, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
-		KinesisFirehoseDestination?: KinesisFirehoseDestination;
+		KinesisFirehoseDestination?: KinesisFirehoseDestination | null;
 
 		/** <p>Contains information associated with an Amazon CloudWatch event destination to which email sending events are published.</p> <p>Event destinations, such as Amazon CloudWatch, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
-		CloudWatchDestination?: CloudWatchDestination;
+		CloudWatchDestination?: CloudWatchDestination | null;
 
 		/** <p>Contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p> <p>Event destinations, such as Amazon SNS, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
-		SNSDestination?: SNSDestination;
+		SNSDestination?: SNSDestination | null;
 	}
 
 
 	/** <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This domain captures open and click events generated by Amazon SES emails.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES Developer Guide</i>.</p> */
 	export interface TrackingOptions {
-		CustomRedirectDomain?: string;
+		CustomRedirectDomain?: string | null;
 	}
 
 
 	/** Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). */
 	export interface DeliveryOptions {
-		TlsPolicy?: TlsPolicy;
+		TlsPolicy?: TlsPolicy | null;
 	}
 
 
 	/** Contains information about the reputation settings for a configuration set. */
 	export interface ReputationOptions {
-		SendingEnabled?: boolean;
-		ReputationMetricsEnabled?: boolean;
-		LastFreshStart?: Date;
+		SendingEnabled?: boolean | null;
+		ReputationMetricsEnabled?: boolean | null;
+		LastFreshStart?: Date | null;
 	}
 
 	export enum ConfigurationSetAttribute { eventDestinations = 0, trackingOptions = 1, deliveryOptions = 2, reputationOptions = 3 }
@@ -376,7 +376,7 @@ export namespace MyNS {
 	export interface DescribeReceiptRuleResponse {
 
 		/** <p>Receipt rules enable you to specify which actions Amazon SES should take when it receives mail on behalf of one or more email addresses or domains that you own.</p> <p>Each receipt rule defines a set of email addresses or domains that it applies to. If the email addresses or domains match at least one recipient address of the message, Amazon SES executes all of the receipt rule's actions on the message.</p> <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES Developer Guide</a>.</p> */
-		Rule?: ReceiptRule;
+		Rule?: ReceiptRule | null;
 	}
 
 
@@ -384,25 +384,25 @@ export namespace MyNS {
 	export interface DescribeReceiptRuleSetResponse {
 
 		/** <p>Information about a receipt rule set.</p> <p>A receipt rule set is a collection of rules that specify what Amazon SES should do with mail it receives on behalf of your account's verified domains.</p> <p>For information about setting up receipt rule sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES Developer Guide</a>.</p> */
-		Metadata?: ReceiptRuleSetMetadata;
-		Rules?: Array<ReceiptRule>;
+		Metadata?: ReceiptRuleSetMetadata | null;
+		Rules?: Array<ReceiptRule> | null;
 	}
 
 
 	/** Represents a request to return the email sending status for your Amazon SES account in the current AWS Region. */
 	export interface GetAccountSendingEnabledResponse {
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 	}
 
 
 	/** The content of the custom verification email template. */
 	export interface GetCustomVerificationEmailTemplateResponse {
-		TemplateName?: string;
-		FromEmailAddress?: string;
-		TemplateSubject?: string;
-		TemplateContent?: string;
-		SuccessRedirectionURL?: string;
-		FailureRedirectionURL?: string;
+		TemplateName?: string | null;
+		FromEmailAddress?: string | null;
+		TemplateSubject?: string | null;
+		TemplateContent?: string | null;
+		SuccessRedirectionURL?: string | null;
+		FailureRedirectionURL?: string | null;
 	}
 
 	export interface CustomVerificationEmailTemplateDoesNotExistException {
@@ -456,40 +456,40 @@ export namespace MyNS {
 
 	/** Represents your Amazon SES daily sending quota, maximum send rate, and the number of emails you have sent in the last 24 hours. */
 	export interface GetSendQuotaResponse {
-		Max24HourSend?: number;
-		MaxSendRate?: number;
-		SentLast24Hours?: number;
+		Max24HourSend?: number | null;
+		MaxSendRate?: number | null;
+		SentLast24Hours?: number | null;
 	}
 
 
 	/** Represents a list of data points. This list contains aggregated data from the previous two weeks of your sending activity with Amazon SES. */
 	export interface GetSendStatisticsResponse {
-		SendDataPoints?: Array<SendDataPoint>;
+		SendDataPoints?: Array<SendDataPoint> | null;
 	}
 
 
 	/** Represents sending statistics data. Each <code>SendDataPoint</code> contains statistics for a 15-minute period of sending activity.  */
 	export interface SendDataPoint {
-		Timestamp?: Date;
-		DeliveryAttempts?: number;
-		Bounces?: number;
-		Complaints?: number;
-		Rejects?: number;
+		Timestamp?: Date | null;
+		DeliveryAttempts?: number | null;
+		Bounces?: number | null;
+		Complaints?: number | null;
+		Rejects?: number | null;
 	}
 
 	export interface GetTemplateResponse {
 
 		/** The content of the email, composed of a subject line, an HTML part, and a text-only part. */
-		Template?: Template;
+		Template?: Template | null;
 	}
 
 
 	/** The content of the email, composed of a subject line, an HTML part, and a text-only part. */
 	export interface Template {
 		TemplateName: string;
-		SubjectPart?: string;
-		TextPart?: string;
-		HtmlPart?: string;
+		SubjectPart?: string | null;
+		TextPart?: string | null;
+		HtmlPart?: string | null;
 	}
 
 	export interface TemplateDoesNotExistException {
@@ -498,32 +498,32 @@ export namespace MyNS {
 
 	/** A list of configuration sets associated with your AWS account. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>. */
 	export interface ListConfigurationSetsResponse {
-		ConfigurationSets?: Array<ConfigurationSet>;
-		NextToken?: string;
+		ConfigurationSets?: Array<ConfigurationSet> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A paginated list of custom verification email templates. */
 	export interface ListCustomVerificationEmailTemplatesResponse {
-		CustomVerificationEmailTemplates?: Array<CustomVerificationEmailTemplate>;
-		NextToken?: string;
+		CustomVerificationEmailTemplates?: Array<CustomVerificationEmailTemplate> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains information about a custom verification email template. */
 	export interface CustomVerificationEmailTemplate {
-		TemplateName?: string;
-		FromEmailAddress?: string;
-		TemplateSubject?: string;
-		SuccessRedirectionURL?: string;
-		FailureRedirectionURL?: string;
+		TemplateName?: string | null;
+		FromEmailAddress?: string | null;
+		TemplateSubject?: string | null;
+		SuccessRedirectionURL?: string | null;
+		FailureRedirectionURL?: string | null;
 	}
 
 
 	/** A list of all identities that you have attempted to verify under your AWS account, regardless of verification status. */
 	export interface ListIdentitiesResponse {
 		Identities: Array<string>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -535,7 +535,7 @@ export namespace MyNS {
 
 	/** A list of IP address filters that exist under your AWS account. */
 	export interface ListReceiptFiltersResponse {
-		Filters?: Array<ReceiptFilter>;
+		Filters?: Array<ReceiptFilter> | null;
 	}
 
 
@@ -553,26 +553,26 @@ export namespace MyNS {
 
 	/** A list of receipt rule sets that exist under your AWS account. */
 	export interface ListReceiptRuleSetsResponse {
-		RuleSets?: Array<ReceiptRuleSetMetadata>;
-		NextToken?: string;
+		RuleSets?: Array<ReceiptRuleSetMetadata> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTemplatesResponse {
-		TemplatesMetadata?: Array<TemplateMetadata>;
-		NextToken?: string;
+		TemplatesMetadata?: Array<TemplateMetadata> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains information about an email template. */
 	export interface TemplateMetadata {
-		Name?: string;
-		CreatedTimestamp?: Date;
+		Name?: string | null;
+		CreatedTimestamp?: Date | null;
 	}
 
 
 	/** A list of email addresses that you have verified with Amazon SES under your AWS account. */
 	export interface ListVerifiedEmailAddressesResponse {
-		VerifiedEmailAddresses?: Array<string>;
+		VerifiedEmailAddresses?: Array<string> | null;
 	}
 
 
@@ -599,7 +599,7 @@ export namespace MyNS {
 
 	/** Represents a unique message ID. */
 	export interface SendBounceResponse {
-		MessageId?: string;
+		MessageId?: string | null;
 	}
 
 
@@ -613,11 +613,11 @@ export namespace MyNS {
 	/** <p>Recipient-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p> */
 	export interface BouncedRecipientInfo {
 		Recipient: string;
-		RecipientArn?: string;
-		BounceType?: BouncedRecipientInfoBounceType;
+		RecipientArn?: string | null;
+		BounceType?: BouncedRecipientInfoBounceType | null;
 
 		/** <p>Recipient-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p> */
-		RecipientDsnFields?: RecipientDsnFields;
+		RecipientDsnFields?: RecipientDsnFields | null;
 	}
 
 	export enum BouncedRecipientInfoBounceType { DoesNotExist = 0, MessageTooLarge = 1, ExceededQuota = 2, ContentRejected = 3, Undefined = 4, TemporaryFailure = 5 }
@@ -625,13 +625,13 @@ export namespace MyNS {
 
 	/** <p>Recipient-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p> */
 	export interface RecipientDsnFields {
-		FinalRecipient?: string;
+		FinalRecipient?: string | null;
 		Action: RecipientDsnFieldsAction;
-		RemoteMta?: string;
+		RemoteMta?: string | null;
 		Status: string;
-		DiagnosticCode?: string;
-		LastAttemptDate?: Date;
-		ExtensionFields?: Array<ExtensionField>;
+		DiagnosticCode?: string | null;
+		LastAttemptDate?: Date | null;
+		ExtensionFields?: Array<ExtensionField> | null;
 	}
 
 	export enum RecipientDsnFieldsAction { failed = 0, delayed = 1, delivered = 2, relayed = 3, expanded = 4 }
@@ -646,9 +646,9 @@ export namespace MyNS {
 
 	/** An object that contains the response from the <code>SendBulkTemplatedEmail</code> operation. */
 	export interface BulkEmailDestinationStatus {
-		Status?: BulkEmailDestinationStatusStatus;
-		Error?: string;
-		MessageId?: string;
+		Status?: BulkEmailDestinationStatusStatus | null;
+		Error?: string | null;
+		MessageId?: string | null;
 	}
 
 	export enum BulkEmailDestinationStatusStatus { Success = 0, MessageRejected = 1, MailFromDomainNotVerified = 2, ConfigurationSetDoesNotExist = 3, TemplateDoesNotExist = 4, AccountSuspended = 5, AccountThrottled = 6, AccountDailyQuotaExceeded = 7, InvalidSendingPoolName = 8, AccountSendingPaused = 9, ConfigurationSetSendingPaused = 10, InvalidParameterValue = 11, TransientFailure = 12, Failed = 13 }
@@ -669,16 +669,16 @@ export namespace MyNS {
 		 * Required
 		 */
 		Destination: Destination;
-		ReplacementTags?: Array<MessageTag>;
-		ReplacementTemplateData?: string;
+		ReplacementTags?: Array<MessageTag> | null;
+		ReplacementTemplateData?: string | null;
 	}
 
 
 	/** <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p> <note> <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p> </note> */
 	export interface Destination {
-		ToAddresses?: Array<string>;
-		CcAddresses?: Array<string>;
-		BccAddresses?: Array<string>;
+		ToAddresses?: Array<string> | null;
+		CcAddresses?: Array<string> | null;
+		BccAddresses?: Array<string> | null;
 	}
 
 	export interface MailFromDomainNotVerifiedException {
@@ -693,7 +693,7 @@ export namespace MyNS {
 
 	/** The response received when attempting to send the custom verification email. */
 	export interface SendCustomVerificationEmailResponse {
-		MessageId?: string;
+		MessageId?: string | null;
 	}
 
 	export interface ProductionAccessNotGrantedException {
@@ -709,7 +709,7 @@ export namespace MyNS {
 	/** <p>Represents textual data, plus an optional character set specification.</p> <p>By default, the text must be 7-bit ASCII, due to the constraints of the SMTP protocol. If the text must contain any other characters, then you must also specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS.</p> */
 	export interface Content {
 		Data: string;
-		Charset?: string;
+		Charset?: string | null;
 	}
 
 
@@ -717,10 +717,10 @@ export namespace MyNS {
 	export interface Body {
 
 		/** <p>Represents textual data, plus an optional character set specification.</p> <p>By default, the text must be 7-bit ASCII, due to the constraints of the SMTP protocol. If the text must contain any other characters, then you must also specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS.</p> */
-		Text?: Content;
+		Text?: Content | null;
 
 		/** <p>Represents textual data, plus an optional character set specification.</p> <p>By default, the text must be 7-bit ASCII, due to the constraints of the SMTP protocol. If the text must contain any other characters, then you must also specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS.</p> */
-		Html?: Content;
+		Html?: Content | null;
 	}
 
 
@@ -769,7 +769,7 @@ export namespace MyNS {
 	}
 
 	export interface TestRenderTemplateResponse {
-		RenderedTemplate?: string;
+		RenderedTemplate?: string | null;
 	}
 
 	export interface InvalidRenderingParameterException {
@@ -889,7 +889,7 @@ export namespace MyNS {
 	/** Represents a request to create a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface CreateReceiptRuleRequest {
 		RuleSetName: string;
-		After?: string;
+		After?: string | null;
 
 		/**
 		 * <p>Receipt rules enable you to specify which actions Amazon SES should take when it receives mail on behalf of one or more email addresses or domains that you own.</p> <p>Each receipt rule defines a set of email addresses or domains that it applies to. If the email addresses or domains match at least one recipient address of the message, Amazon SES executes all of the receipt rule's actions on the message.</p> <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES Developer Guide</a>.</p>
@@ -995,7 +995,7 @@ export namespace MyNS {
 	/** Represents a request to return the details of a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>. */
 	export interface DescribeConfigurationSetRequest {
 		ConfigurationSetName: string;
-		ConfigurationSetAttributeNames?: Array<ConfigurationSetAttribute>;
+		ConfigurationSetAttributeNames?: Array<ConfigurationSetAttribute> | null;
 	}
 
 
@@ -1016,7 +1016,7 @@ export namespace MyNS {
 	export interface IdentityDkimAttributes {
 		DkimEnabled: boolean;
 		DkimVerificationStatus: IdentityDkimAttributesDkimVerificationStatus;
-		DkimTokens?: Array<string>;
+		DkimTokens?: Array<string> | null;
 	}
 
 	export enum IdentityDkimAttributesDkimVerificationStatus { Pending = 0, Success = 1, Failed = 2, TemporaryFailure = 3, NotStarted = 4 }
@@ -1081,9 +1081,9 @@ export namespace MyNS {
 		ComplaintTopic: string;
 		DeliveryTopic: string;
 		ForwardingEnabled: boolean;
-		HeadersInBounceNotificationsEnabled?: boolean;
-		HeadersInComplaintNotificationsEnabled?: boolean;
-		HeadersInDeliveryNotificationsEnabled?: boolean;
+		HeadersInBounceNotificationsEnabled?: boolean | null;
+		HeadersInComplaintNotificationsEnabled?: boolean | null;
+		HeadersInDeliveryNotificationsEnabled?: boolean | null;
 	}
 
 	export enum IdentityType { EmailAddress = 0, Domain = 1 }
@@ -1092,7 +1092,7 @@ export namespace MyNS {
 	/** Represents the verification attributes of a single identity. */
 	export interface IdentityVerificationAttributes {
 		VerificationStatus: IdentityDkimAttributesDkimVerificationStatus;
-		VerificationToken?: string;
+		VerificationToken?: string | null;
 	}
 
 	export enum InvocationType { Event = 0, RequestResponse = 1 }
@@ -1100,23 +1100,23 @@ export namespace MyNS {
 
 	/** Represents a request to list the configuration sets associated with your AWS account. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>. */
 	export interface ListConfigurationSetsRequest {
-		NextToken?: string;
-		MaxItems?: number;
+		NextToken?: string | null;
+		MaxItems?: number | null;
 	}
 
 
 	/** <p>Represents a request to list the existing custom verification email templates for your account.</p> <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p> */
 	export interface ListCustomVerificationEmailTemplatesRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** Represents a request to return a list of all identities (email addresses and domains) that you have attempted to verify under your AWS account, regardless of verification status. */
 	export interface ListIdentitiesRequest {
-		IdentityType?: IdentityType;
-		NextToken?: string;
-		MaxItems?: number;
+		IdentityType?: IdentityType | null;
+		NextToken?: string | null;
+		MaxItems?: number | null;
 	}
 
 
@@ -1133,12 +1133,12 @@ export namespace MyNS {
 
 	/** Represents a request to list the receipt rule sets that exist under your AWS account. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface ListReceiptRuleSetsRequest {
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListTemplatesRequest {
-		NextToken?: string;
-		MaxItems?: number;
+		NextToken?: string | null;
+		MaxItems?: number | null;
 	}
 
 
@@ -1162,8 +1162,8 @@ export namespace MyNS {
 	/** <p>Message-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p> */
 	export interface MessageDsn {
 		ReportingMta: string;
-		ArrivalDate?: Date;
-		ExtensionFields?: Array<ExtensionField>;
+		ArrivalDate?: Date | null;
+		ExtensionFields?: Array<ExtensionField> | null;
 	}
 
 	export enum NotificationType { Bounce = 0, Complaint = 1, Delivery = 2 }
@@ -1174,7 +1174,7 @@ export namespace MyNS {
 		ConfigurationSetName: string;
 
 		/** Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). */
-		DeliveryOptions?: DeliveryOptions;
+		DeliveryOptions?: DeliveryOptions | null;
 	}
 
 
@@ -1205,27 +1205,27 @@ export namespace MyNS {
 	export interface SendBounceRequest {
 		OriginalMessageId: string;
 		BounceSender: string;
-		Explanation?: string;
+		Explanation?: string | null;
 
 		/** <p>Message-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p> */
-		MessageDsn?: MessageDsn;
+		MessageDsn?: MessageDsn | null;
 		BouncedRecipientInfoList: Array<BouncedRecipientInfo>;
-		BounceSenderArn?: string;
+		BounceSenderArn?: string | null;
 	}
 
 
 	/** Represents a request to send a templated email to multiple destinations using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>. */
 	export interface SendBulkTemplatedEmailRequest {
 		Source: string;
-		SourceArn?: string;
-		ReplyToAddresses?: Array<string>;
-		ReturnPath?: string;
-		ReturnPathArn?: string;
-		ConfigurationSetName?: string;
-		DefaultTags?: Array<MessageTag>;
+		SourceArn?: string | null;
+		ReplyToAddresses?: Array<string> | null;
+		ReturnPath?: string | null;
+		ReturnPathArn?: string | null;
+		ConfigurationSetName?: string | null;
+		DefaultTags?: Array<MessageTag> | null;
 		Template: string;
-		TemplateArn?: string;
-		DefaultTemplateData?: string;
+		TemplateArn?: string | null;
+		DefaultTemplateData?: string | null;
 		Destinations: Array<BulkEmailDestination>;
 	}
 
@@ -1234,7 +1234,7 @@ export namespace MyNS {
 	export interface SendCustomVerificationEmailRequest {
 		EmailAddress: string;
 		TemplateName: string;
-		ConfigurationSetName?: string;
+		ConfigurationSetName?: string | null;
 	}
 
 
@@ -1253,30 +1253,30 @@ export namespace MyNS {
 		 * Required
 		 */
 		Message: Message;
-		ReplyToAddresses?: Array<string>;
-		ReturnPath?: string;
-		SourceArn?: string;
-		ReturnPathArn?: string;
-		Tags?: Array<MessageTag>;
-		ConfigurationSetName?: string;
+		ReplyToAddresses?: Array<string> | null;
+		ReturnPath?: string | null;
+		SourceArn?: string | null;
+		ReturnPathArn?: string | null;
+		Tags?: Array<MessageTag> | null;
+		ConfigurationSetName?: string | null;
 	}
 
 
 	/** Represents a request to send a single raw email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>. */
 	export interface SendRawEmailRequest {
-		Source?: string;
-		Destinations?: Array<string>;
+		Source?: string | null;
+		Destinations?: Array<string> | null;
 
 		/**
 		 * Represents the raw data of the message.
 		 * Required
 		 */
 		RawMessage: RawMessage;
-		FromArn?: string;
-		SourceArn?: string;
-		ReturnPathArn?: string;
-		Tags?: Array<MessageTag>;
-		ConfigurationSetName?: string;
+		FromArn?: string | null;
+		SourceArn?: string | null;
+		ReturnPathArn?: string | null;
+		Tags?: Array<MessageTag> | null;
+		ConfigurationSetName?: string | null;
 	}
 
 
@@ -1289,21 +1289,21 @@ export namespace MyNS {
 		 * Required
 		 */
 		Destination: Destination;
-		ReplyToAddresses?: Array<string>;
-		ReturnPath?: string;
-		SourceArn?: string;
-		ReturnPathArn?: string;
-		Tags?: Array<MessageTag>;
-		ConfigurationSetName?: string;
+		ReplyToAddresses?: Array<string> | null;
+		ReturnPath?: string | null;
+		SourceArn?: string | null;
+		ReturnPathArn?: string | null;
+		Tags?: Array<MessageTag> | null;
+		ConfigurationSetName?: string | null;
 		Template: string;
-		TemplateArn?: string;
+		TemplateArn?: string | null;
 		TemplateData: string;
 	}
 
 
 	/** Represents a request to set a receipt rule set as the active receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>. */
 	export interface SetActiveReceiptRuleSetRequest {
-		RuleSetName?: string;
+		RuleSetName?: string | null;
 	}
 
 
@@ -1332,8 +1332,8 @@ export namespace MyNS {
 	/** Represents a request to enable or disable the Amazon SES custom MAIL FROM domain setup for a verified identity. For information about using a custom MAIL FROM domain, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>. */
 	export interface SetIdentityMailFromDomainRequest {
 		Identity: string;
-		MailFromDomain?: string;
-		BehaviorOnMXFailure?: BehaviorOnMXFailure;
+		MailFromDomain?: string | null;
+		BehaviorOnMXFailure?: BehaviorOnMXFailure | null;
 	}
 
 
@@ -1341,7 +1341,7 @@ export namespace MyNS {
 	export interface SetIdentityNotificationTopicRequest {
 		Identity: string;
 		NotificationType: NotificationType;
-		SnsTopic?: string;
+		SnsTopic?: string | null;
 	}
 
 
@@ -1349,7 +1349,7 @@ export namespace MyNS {
 	export interface SetReceiptRulePositionRequest {
 		RuleSetName: string;
 		RuleName: string;
-		After?: string;
+		After?: string | null;
 	}
 
 	export enum StopScope { RuleSet = 0 }
@@ -1362,7 +1362,7 @@ export namespace MyNS {
 
 	/** Represents a request to enable or disable the email sending capabilities for your entire Amazon SES account. */
 	export interface UpdateAccountSendingEnabledRequest {
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 	}
 
 
@@ -1407,11 +1407,11 @@ export namespace MyNS {
 	/** Represents a request to update an existing custom verification email template. */
 	export interface UpdateCustomVerificationEmailTemplateRequest {
 		TemplateName: string;
-		FromEmailAddress?: string;
-		TemplateSubject?: string;
-		TemplateContent?: string;
-		SuccessRedirectionURL?: string;
-		FailureRedirectionURL?: string;
+		FromEmailAddress?: string | null;
+		TemplateSubject?: string | null;
+		TemplateContent?: string | null;
+		SuccessRedirectionURL?: string | null;
+		FailureRedirectionURL?: string | null;
 	}
 
 
@@ -1539,7 +1539,7 @@ export namespace MyNS {
 		 * @param {GET_CreateReceiptRuleRule} Rule A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.
 		 * @return {void} Success
 		 */
-		GET_CreateReceiptRule(RuleSetName: string, After: string, Rule: GET_CreateReceiptRuleRule, Action: GET_CreateReceiptRuleAction, Version: GET_CreateReceiptRuleVersion): Observable<HttpResponse<string>> {
+		GET_CreateReceiptRule(RuleSetName: string, After: string | null | undefined, Rule: GET_CreateReceiptRuleRule, Action: GET_CreateReceiptRuleAction, Version: GET_CreateReceiptRuleVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateReceiptRule?RuleSetName=' + (RuleSetName == null ? '' : encodeURIComponent(RuleSetName)) + '&After=' + (After == null ? '' : encodeURIComponent(After)) + '&Rule=' + Rule + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1692,7 +1692,7 @@ export namespace MyNS {
 		 * @param {Array<ConfigurationSetAttribute>} ConfigurationSetAttributeNames A list of configuration set attributes to return.
 		 * @return {void} Success
 		 */
-		GET_DescribeConfigurationSet(ConfigurationSetName: string, ConfigurationSetAttributeNames: Array<ConfigurationSetAttribute>, Action: GET_DescribeConfigurationSetAction, Version: GET_DescribeConfigurationSetVersion): Observable<HttpResponse<string>> {
+		GET_DescribeConfigurationSet(ConfigurationSetName: string, ConfigurationSetAttributeNames: Array<ConfigurationSetAttribute> | null | undefined, Action: GET_DescribeConfigurationSetAction, Version: GET_DescribeConfigurationSetVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeConfigurationSet?ConfigurationSetName=' + (ConfigurationSetName == null ? '' : encodeURIComponent(ConfigurationSetName)) + '&' + ConfigurationSetAttributeNames.map(z => `ConfigurationSetAttributeNames=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1849,7 +1849,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems The number of configuration sets to return.
 		 * @return {void} Success
 		 */
-		GET_ListConfigurationSets(NextToken: string, MaxItems: number, Action: GET_ListConfigurationSetsAction, Version: GET_ListConfigurationSetsVersion): Observable<HttpResponse<string>> {
+		GET_ListConfigurationSets(NextToken: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListConfigurationSetsAction, Version: GET_ListConfigurationSetsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListConfigurationSets?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1860,7 +1860,7 @@ export namespace MyNS {
 		 * @param {number} MaxResults The maximum number of custom verification email templates to return. This value must be at least 1 and less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the operation will return up to 50 results.
 		 * @return {void} Success
 		 */
-		GET_ListCustomVerificationEmailTemplates(NextToken: string, MaxResults: number, Action: GET_ListCustomVerificationEmailTemplatesAction, Version: GET_ListCustomVerificationEmailTemplatesVersion): Observable<HttpResponse<string>> {
+		GET_ListCustomVerificationEmailTemplates(NextToken: string | null | undefined, MaxResults: number | null | undefined, Action: GET_ListCustomVerificationEmailTemplatesAction, Version: GET_ListCustomVerificationEmailTemplatesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListCustomVerificationEmailTemplates?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1872,7 +1872,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems The maximum number of identities per page. Possible values are 1-1000 inclusive.
 		 * @return {void} Success
 		 */
-		GET_ListIdentities(IdentityType: IdentityType, NextToken: string, MaxItems: number, Action: GET_ListIdentitiesAction, Version: GET_ListIdentitiesVersion): Observable<HttpResponse<string>> {
+		GET_ListIdentities(IdentityType: IdentityType | null | undefined, NextToken: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListIdentitiesAction, Version: GET_ListIdentitiesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListIdentities?IdentityType=' + IdentityType + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1901,7 +1901,7 @@ export namespace MyNS {
 		 * @param {string} NextToken A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate the position in the receipt rule set list.
 		 * @return {void} Success
 		 */
-		GET_ListReceiptRuleSets(NextToken: string, Action: GET_ListReceiptRuleSetsAction, Version: GET_ListReceiptRuleSetsVersion): Observable<HttpResponse<string>> {
+		GET_ListReceiptRuleSets(NextToken: string | null | undefined, Action: GET_ListReceiptRuleSetsAction, Version: GET_ListReceiptRuleSetsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListReceiptRuleSets?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1912,7 +1912,7 @@ export namespace MyNS {
 		 * @param {number} MaxItems The maximum number of templates to return. This value must be at least 1 and less than or equal to 10. If you do not specify a value, or if you specify a value less than 1 or greater than 10, the operation will return up to 10 results.
 		 * @return {void} Success
 		 */
-		GET_ListTemplates(NextToken: string, MaxItems: number, Action: GET_ListTemplatesAction, Version: GET_ListTemplatesVersion): Observable<HttpResponse<string>> {
+		GET_ListTemplates(NextToken: string | null | undefined, MaxItems: number | null | undefined, Action: GET_ListTemplatesAction, Version: GET_ListTemplatesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListTemplates?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxItems=' + MaxItems + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1941,7 +1941,7 @@ export namespace MyNS {
 		 * @param {GET_PutConfigurationSetDeliveryOptionsDeliveryOptions} DeliveryOptions Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).
 		 * @return {void} Success
 		 */
-		GET_PutConfigurationSetDeliveryOptions(ConfigurationSetName: string, DeliveryOptions: GET_PutConfigurationSetDeliveryOptionsDeliveryOptions, Action: GET_PutConfigurationSetDeliveryOptionsAction, Version: GET_PutConfigurationSetDeliveryOptionsVersion): Observable<HttpResponse<string>> {
+		GET_PutConfigurationSetDeliveryOptions(ConfigurationSetName: string, DeliveryOptions: GET_PutConfigurationSetDeliveryOptionsDeliveryOptions | null | undefined, Action: GET_PutConfigurationSetDeliveryOptionsAction, Version: GET_PutConfigurationSetDeliveryOptionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=PutConfigurationSetDeliveryOptions?ConfigurationSetName=' + (ConfigurationSetName == null ? '' : encodeURIComponent(ConfigurationSetName)) + '&DeliveryOptions=' + DeliveryOptions + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1979,7 +1979,7 @@ export namespace MyNS {
 		 * @param {string} BounceSenderArn This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.
 		 * @return {void} Success
 		 */
-		GET_SendBounce(OriginalMessageId: string, BounceSender: string, Explanation: string, MessageDsn: GET_SendBounceMessageDsn, BouncedRecipientInfoList: Array<BouncedRecipientInfo>, BounceSenderArn: string, Action: GET_SendBounceAction, Version: GET_SendBounceVersion): Observable<HttpResponse<string>> {
+		GET_SendBounce(OriginalMessageId: string, BounceSender: string, Explanation: string | null | undefined, MessageDsn: GET_SendBounceMessageDsn | null | undefined, BouncedRecipientInfoList: Array<BouncedRecipientInfo>, BounceSenderArn: string | null | undefined, Action: GET_SendBounceAction, Version: GET_SendBounceVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SendBounce?OriginalMessageId=' + (OriginalMessageId == null ? '' : encodeURIComponent(OriginalMessageId)) + '&BounceSender=' + (BounceSender == null ? '' : encodeURIComponent(BounceSender)) + '&Explanation=' + (Explanation == null ? '' : encodeURIComponent(Explanation)) + '&MessageDsn=' + MessageDsn + '&' + BouncedRecipientInfoList.map(z => `BouncedRecipientInfoList=${z}`).join('&') + '&BounceSenderArn=' + (BounceSenderArn == null ? '' : encodeURIComponent(BounceSenderArn)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1999,7 +1999,7 @@ export namespace MyNS {
 		 * @param {Array<BulkEmailDestination>} Destinations One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will receive the same version of the email. You can specify up to 50 <code>Destination</code> objects within a <code>Destinations</code> array.
 		 * @return {void} Success
 		 */
-		GET_SendBulkTemplatedEmail(Source: string, SourceArn: string, ReplyToAddresses: Array<string>, ReturnPath: string, ReturnPathArn: string, ConfigurationSetName: string, DefaultTags: Array<MessageTag>, Template: string, TemplateArn: string, DefaultTemplateData: string, Destinations: Array<BulkEmailDestination>, Action: GET_SendBulkTemplatedEmailAction, Version: GET_SendBulkTemplatedEmailVersion): Observable<HttpResponse<string>> {
+		GET_SendBulkTemplatedEmail(Source: string, SourceArn: string | null | undefined, ReplyToAddresses: Array<string> | null | undefined, ReturnPath: string | null | undefined, ReturnPathArn: string | null | undefined, ConfigurationSetName: string | null | undefined, DefaultTags: Array<MessageTag> | null | undefined, Template: string, TemplateArn: string | null | undefined, DefaultTemplateData: string | null | undefined, Destinations: Array<BulkEmailDestination>, Action: GET_SendBulkTemplatedEmailAction, Version: GET_SendBulkTemplatedEmailVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SendBulkTemplatedEmail?Source=' + (Source == null ? '' : encodeURIComponent(Source)) + '&SourceArn=' + (SourceArn == null ? '' : encodeURIComponent(SourceArn)) + '&' + ReplyToAddresses.map(z => `ReplyToAddresses=${encodeURIComponent(z)}`).join('&') + '&ReturnPath=' + (ReturnPath == null ? '' : encodeURIComponent(ReturnPath)) + '&ReturnPathArn=' + (ReturnPathArn == null ? '' : encodeURIComponent(ReturnPathArn)) + '&ConfigurationSetName=' + (ConfigurationSetName == null ? '' : encodeURIComponent(ConfigurationSetName)) + '&' + DefaultTags.map(z => `DefaultTags=${z}`).join('&') + '&Template=' + (Template == null ? '' : encodeURIComponent(Template)) + '&TemplateArn=' + (TemplateArn == null ? '' : encodeURIComponent(TemplateArn)) + '&DefaultTemplateData=' + (DefaultTemplateData == null ? '' : encodeURIComponent(DefaultTemplateData)) + '&' + Destinations.map(z => `Destinations=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2011,7 +2011,7 @@ export namespace MyNS {
 		 * @param {string} ConfigurationSetName Name of a configuration set to use when sending the verification email.
 		 * @return {void} Success
 		 */
-		GET_SendCustomVerificationEmail(EmailAddress: string, TemplateName: string, ConfigurationSetName: string, Action: GET_SendCustomVerificationEmailAction, Version: GET_SendCustomVerificationEmailVersion): Observable<HttpResponse<string>> {
+		GET_SendCustomVerificationEmail(EmailAddress: string, TemplateName: string, ConfigurationSetName: string | null | undefined, Action: GET_SendCustomVerificationEmailAction, Version: GET_SendCustomVerificationEmailVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SendCustomVerificationEmail?EmailAddress=' + (EmailAddress == null ? '' : encodeURIComponent(EmailAddress)) + '&TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&ConfigurationSetName=' + (ConfigurationSetName == null ? '' : encodeURIComponent(ConfigurationSetName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2029,7 +2029,7 @@ export namespace MyNS {
 		 * @param {string} ConfigurationSetName The name of the configuration set to use when you send an email using <code>SendEmail</code>.
 		 * @return {void} Success
 		 */
-		GET_SendEmail(Source: string, Destination: GET_SendEmailDestination, Message: GET_SendEmailMessage, ReplyToAddresses: Array<string>, ReturnPath: string, SourceArn: string, ReturnPathArn: string, Tags: Array<MessageTag>, ConfigurationSetName: string, Action: GET_SendEmailAction, Version: GET_SendEmailVersion): Observable<HttpResponse<string>> {
+		GET_SendEmail(Source: string, Destination: GET_SendEmailDestination, Message: GET_SendEmailMessage, ReplyToAddresses: Array<string> | null | undefined, ReturnPath: string | null | undefined, SourceArn: string | null | undefined, ReturnPathArn: string | null | undefined, Tags: Array<MessageTag> | null | undefined, ConfigurationSetName: string | null | undefined, Action: GET_SendEmailAction, Version: GET_SendEmailVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SendEmail?Source=' + (Source == null ? '' : encodeURIComponent(Source)) + '&Destination=' + Destination + '&Message=' + Message + '&' + ReplyToAddresses.map(z => `ReplyToAddresses=${encodeURIComponent(z)}`).join('&') + '&ReturnPath=' + (ReturnPath == null ? '' : encodeURIComponent(ReturnPath)) + '&SourceArn=' + (SourceArn == null ? '' : encodeURIComponent(SourceArn)) + '&ReturnPathArn=' + (ReturnPathArn == null ? '' : encodeURIComponent(ReturnPathArn)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&ConfigurationSetName=' + (ConfigurationSetName == null ? '' : encodeURIComponent(ConfigurationSetName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2046,7 +2046,7 @@ export namespace MyNS {
 		 * @param {string} ConfigurationSetName The name of the configuration set to use when you send an email using <code>SendRawEmail</code>.
 		 * @return {void} Success
 		 */
-		GET_SendRawEmail(Source: string, Destinations: Array<string>, RawMessage: GET_SendRawEmailRawMessage, FromArn: string, SourceArn: string, ReturnPathArn: string, Tags: Array<MessageTag>, ConfigurationSetName: string, Action: GET_SendRawEmailAction, Version: GET_SendRawEmailVersion): Observable<HttpResponse<string>> {
+		GET_SendRawEmail(Source: string | null | undefined, Destinations: Array<string> | null | undefined, RawMessage: GET_SendRawEmailRawMessage, FromArn: string | null | undefined, SourceArn: string | null | undefined, ReturnPathArn: string | null | undefined, Tags: Array<MessageTag> | null | undefined, ConfigurationSetName: string | null | undefined, Action: GET_SendRawEmailAction, Version: GET_SendRawEmailVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SendRawEmail?Source=' + (Source == null ? '' : encodeURIComponent(Source)) + '&' + Destinations.map(z => `Destinations=${encodeURIComponent(z)}`).join('&') + '&RawMessage=' + RawMessage + '&FromArn=' + (FromArn == null ? '' : encodeURIComponent(FromArn)) + '&SourceArn=' + (SourceArn == null ? '' : encodeURIComponent(SourceArn)) + '&ReturnPathArn=' + (ReturnPathArn == null ? '' : encodeURIComponent(ReturnPathArn)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&ConfigurationSetName=' + (ConfigurationSetName == null ? '' : encodeURIComponent(ConfigurationSetName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2066,7 +2066,7 @@ export namespace MyNS {
 		 * @param {string} TemplateData A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.
 		 * @return {void} Success
 		 */
-		GET_SendTemplatedEmail(Source: string, Destination: GET_SendTemplatedEmailDestination, ReplyToAddresses: Array<string>, ReturnPath: string, SourceArn: string, ReturnPathArn: string, Tags: Array<MessageTag>, ConfigurationSetName: string, Template: string, TemplateArn: string, TemplateData: string, Action: GET_SendTemplatedEmailAction, Version: GET_SendTemplatedEmailVersion): Observable<HttpResponse<string>> {
+		GET_SendTemplatedEmail(Source: string, Destination: GET_SendTemplatedEmailDestination, ReplyToAddresses: Array<string> | null | undefined, ReturnPath: string | null | undefined, SourceArn: string | null | undefined, ReturnPathArn: string | null | undefined, Tags: Array<MessageTag> | null | undefined, ConfigurationSetName: string | null | undefined, Template: string, TemplateArn: string | null | undefined, TemplateData: string, Action: GET_SendTemplatedEmailAction, Version: GET_SendTemplatedEmailVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SendTemplatedEmail?Source=' + (Source == null ? '' : encodeURIComponent(Source)) + '&Destination=' + Destination + '&' + ReplyToAddresses.map(z => `ReplyToAddresses=${encodeURIComponent(z)}`).join('&') + '&ReturnPath=' + (ReturnPath == null ? '' : encodeURIComponent(ReturnPath)) + '&SourceArn=' + (SourceArn == null ? '' : encodeURIComponent(SourceArn)) + '&ReturnPathArn=' + (ReturnPathArn == null ? '' : encodeURIComponent(ReturnPathArn)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&ConfigurationSetName=' + (ConfigurationSetName == null ? '' : encodeURIComponent(ConfigurationSetName)) + '&Template=' + (Template == null ? '' : encodeURIComponent(Template)) + '&TemplateArn=' + (TemplateArn == null ? '' : encodeURIComponent(TemplateArn)) + '&TemplateData=' + (TemplateData == null ? '' : encodeURIComponent(TemplateData)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2076,7 +2076,7 @@ export namespace MyNS {
 		 * @param {string} RuleSetName The name of the receipt rule set to make active. Setting this value to null disables all email receiving.
 		 * @return {void} Success
 		 */
-		GET_SetActiveReceiptRuleSet(RuleSetName: string, Action: GET_SetActiveReceiptRuleSetAction, Version: GET_SetActiveReceiptRuleSetVersion): Observable<HttpResponse<string>> {
+		GET_SetActiveReceiptRuleSet(RuleSetName: string | null | undefined, Action: GET_SetActiveReceiptRuleSetAction, Version: GET_SetActiveReceiptRuleSetVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SetActiveReceiptRuleSet?RuleSetName=' + (RuleSetName == null ? '' : encodeURIComponent(RuleSetName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2122,7 +2122,7 @@ export namespace MyNS {
 		 * @param {BehaviorOnMXFailure} BehaviorOnMXFailure <p>The action that you want Amazon SES to take if it cannot successfully read the required MX record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES will use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose <code>RejectMessage</code>, Amazon SES will return a <code>MailFromDomainNotVerified</code> error and not send the email.</p> <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
 		 * @return {void} Success
 		 */
-		GET_SetIdentityMailFromDomain(Identity: string, MailFromDomain: string, BehaviorOnMXFailure: BehaviorOnMXFailure, Action: GET_SetIdentityMailFromDomainAction, Version: GET_SetIdentityMailFromDomainVersion): Observable<HttpResponse<string>> {
+		GET_SetIdentityMailFromDomain(Identity: string, MailFromDomain: string | null | undefined, BehaviorOnMXFailure: BehaviorOnMXFailure | null | undefined, Action: GET_SetIdentityMailFromDomainAction, Version: GET_SetIdentityMailFromDomainVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SetIdentityMailFromDomain?Identity=' + (Identity == null ? '' : encodeURIComponent(Identity)) + '&MailFromDomain=' + (MailFromDomain == null ? '' : encodeURIComponent(MailFromDomain)) + '&BehaviorOnMXFailure=' + BehaviorOnMXFailure + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2134,7 +2134,7 @@ export namespace MyNS {
 		 * @param {string} SnsTopic The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing is disabled.
 		 * @return {void} Success
 		 */
-		GET_SetIdentityNotificationTopic(Identity: string, NotificationType: NotificationType, SnsTopic: string, Action: GET_SetIdentityNotificationTopicAction, Version: GET_SetIdentityNotificationTopicVersion): Observable<HttpResponse<string>> {
+		GET_SetIdentityNotificationTopic(Identity: string, NotificationType: NotificationType, SnsTopic: string | null | undefined, Action: GET_SetIdentityNotificationTopicAction, Version: GET_SetIdentityNotificationTopicVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SetIdentityNotificationTopic?Identity=' + (Identity == null ? '' : encodeURIComponent(Identity)) + '&NotificationType=' + NotificationType + '&SnsTopic=' + (SnsTopic == null ? '' : encodeURIComponent(SnsTopic)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2146,7 +2146,7 @@ export namespace MyNS {
 		 * @param {string} After The name of the receipt rule after which to place the specified receipt rule.
 		 * @return {void} Success
 		 */
-		GET_SetReceiptRulePosition(RuleSetName: string, RuleName: string, After: string, Action: GET_SetReceiptRulePositionAction, Version: GET_SetReceiptRulePositionVersion): Observable<HttpResponse<string>> {
+		GET_SetReceiptRulePosition(RuleSetName: string, RuleName: string, After: string | null | undefined, Action: GET_SetReceiptRulePositionAction, Version: GET_SetReceiptRulePositionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SetReceiptRulePosition?RuleSetName=' + (RuleSetName == null ? '' : encodeURIComponent(RuleSetName)) + '&RuleName=' + (RuleName == null ? '' : encodeURIComponent(RuleName)) + '&After=' + (After == null ? '' : encodeURIComponent(After)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2167,7 +2167,7 @@ export namespace MyNS {
 		 * @param {boolean} Enabled Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.
 		 * @return {void} Success
 		 */
-		GET_UpdateAccountSendingEnabled(Enabled: boolean, Action: GET_UpdateAccountSendingEnabledAction, Version: GET_UpdateAccountSendingEnabledVersion): Observable<HttpResponse<string>> {
+		GET_UpdateAccountSendingEnabled(Enabled: boolean | null | undefined, Action: GET_UpdateAccountSendingEnabledAction, Version: GET_UpdateAccountSendingEnabledVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateAccountSendingEnabled?Enabled=' + Enabled + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2225,7 +2225,7 @@ export namespace MyNS {
 		 * @param {string} FailureRedirectionURL The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.
 		 * @return {void} Success
 		 */
-		GET_UpdateCustomVerificationEmailTemplate(TemplateName: string, FromEmailAddress: string, TemplateSubject: string, TemplateContent: string, SuccessRedirectionURL: string, FailureRedirectionURL: string, Action: GET_UpdateCustomVerificationEmailTemplateAction, Version: GET_UpdateCustomVerificationEmailTemplateVersion): Observable<HttpResponse<string>> {
+		GET_UpdateCustomVerificationEmailTemplate(TemplateName: string, FromEmailAddress: string | null | undefined, TemplateSubject: string | null | undefined, TemplateContent: string | null | undefined, SuccessRedirectionURL: string | null | undefined, FailureRedirectionURL: string | null | undefined, Action: GET_UpdateCustomVerificationEmailTemplateAction, Version: GET_UpdateCustomVerificationEmailTemplateVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateCustomVerificationEmailTemplate?TemplateName=' + (TemplateName == null ? '' : encodeURIComponent(TemplateName)) + '&FromEmailAddress=' + (FromEmailAddress == null ? '' : encodeURIComponent(FromEmailAddress)) + '&TemplateSubject=' + (TemplateSubject == null ? '' : encodeURIComponent(TemplateSubject)) + '&TemplateContent=' + (TemplateContent == null ? '' : encodeURIComponent(TemplateContent)) + '&SuccessRedirectionURL=' + (SuccessRedirectionURL == null ? '' : encodeURIComponent(SuccessRedirectionURL)) + '&FailureRedirectionURL=' + (FailureRedirectionURL == null ? '' : encodeURIComponent(FailureRedirectionURL)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -2308,17 +2308,17 @@ export namespace MyNS {
 
 	export interface GET_CreateConfigurationSetEventDestinationEventDestination {
 		Name: string;
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 		MatchingEventTypes: Array<EventType>;
 
 		/** <p>Contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p> <p>Event destinations, such as Amazon Kinesis Firehose, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
-		KinesisFirehoseDestination?: KinesisFirehoseDestination;
+		KinesisFirehoseDestination?: KinesisFirehoseDestination | null;
 
 		/** <p>Contains information associated with an Amazon CloudWatch event destination to which email sending events are published.</p> <p>Event destinations, such as Amazon CloudWatch, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
-		CloudWatchDestination?: CloudWatchDestination;
+		CloudWatchDestination?: CloudWatchDestination | null;
 
 		/** <p>Contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p> <p>Event destinations, such as Amazon SNS, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
-		SNSDestination?: SNSDestination;
+		SNSDestination?: SNSDestination | null;
 	}
 
 	export enum GET_CreateConfigurationSetEventDestinationAction { CreateConfigurationSetEventDestination = 0 }
@@ -2328,7 +2328,7 @@ export namespace MyNS {
 	export enum POST_CreateConfigurationSetEventDestinationVersion { _2010_12_01 = 0 }
 
 	export interface GET_CreateConfigurationSetTrackingOptionsTrackingOptions {
-		CustomRedirectDomain?: string;
+		CustomRedirectDomain?: string | null;
 	}
 
 	export enum GET_CreateConfigurationSetTrackingOptionsAction { CreateConfigurationSetTrackingOptions = 0 }
@@ -2361,11 +2361,11 @@ export namespace MyNS {
 
 	export interface GET_CreateReceiptRuleRule {
 		Name: string;
-		Enabled?: boolean;
-		TlsPolicy?: TlsPolicy;
-		Recipients?: Array<string>;
-		Actions?: Array<ReceiptAction>;
-		ScanEnabled?: boolean;
+		Enabled?: boolean | null;
+		TlsPolicy?: TlsPolicy | null;
+		Recipients?: Array<string> | null;
+		Actions?: Array<ReceiptAction> | null;
+		ScanEnabled?: boolean | null;
 	}
 
 	export enum GET_CreateReceiptRuleAction { CreateReceiptRule = 0 }
@@ -2382,9 +2382,9 @@ export namespace MyNS {
 
 	export interface GET_CreateTemplateTemplate {
 		TemplateName: string;
-		SubjectPart?: string;
-		TextPart?: string;
-		HtmlPart?: string;
+		SubjectPart?: string | null;
+		TextPart?: string | null;
+		HtmlPart?: string | null;
 	}
 
 	export enum GET_CreateTemplateAction { CreateTemplate = 0 }
@@ -2592,7 +2592,7 @@ export namespace MyNS {
 	export enum POST_ListVerifiedEmailAddressesVersion { _2010_12_01 = 0 }
 
 	export interface GET_PutConfigurationSetDeliveryOptionsDeliveryOptions {
-		TlsPolicy?: TlsPolicy;
+		TlsPolicy?: TlsPolicy | null;
 	}
 
 	export enum GET_PutConfigurationSetDeliveryOptionsAction { PutConfigurationSetDeliveryOptions = 0 }
@@ -2615,8 +2615,8 @@ export namespace MyNS {
 
 	export interface GET_SendBounceMessageDsn {
 		ReportingMta: string;
-		ArrivalDate?: Date;
-		ExtensionFields?: Array<ExtensionField>;
+		ArrivalDate?: Date | null;
+		ExtensionFields?: Array<ExtensionField> | null;
 	}
 
 	export enum GET_SendBounceAction { SendBounce = 0 }
@@ -2638,9 +2638,9 @@ export namespace MyNS {
 	export enum POST_SendCustomVerificationEmailVersion { _2010_12_01 = 0 }
 
 	export interface GET_SendEmailDestination {
-		ToAddresses?: Array<string>;
-		CcAddresses?: Array<string>;
-		BccAddresses?: Array<string>;
+		ToAddresses?: Array<string> | null;
+		CcAddresses?: Array<string> | null;
+		BccAddresses?: Array<string> | null;
 	}
 
 	export interface GET_SendEmailMessage {
@@ -2675,9 +2675,9 @@ export namespace MyNS {
 	export enum POST_SendRawEmailVersion { _2010_12_01 = 0 }
 
 	export interface GET_SendTemplatedEmailDestination {
-		ToAddresses?: Array<string>;
-		CcAddresses?: Array<string>;
-		BccAddresses?: Array<string>;
+		ToAddresses?: Array<string> | null;
+		CcAddresses?: Array<string> | null;
+		BccAddresses?: Array<string> | null;
 	}
 
 	export enum GET_SendTemplatedEmailAction { SendTemplatedEmail = 0 }
@@ -2742,17 +2742,17 @@ export namespace MyNS {
 
 	export interface GET_UpdateConfigurationSetEventDestinationEventDestination {
 		Name: string;
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 		MatchingEventTypes: Array<EventType>;
 
 		/** <p>Contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p> <p>Event destinations, such as Amazon Kinesis Firehose, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
-		KinesisFirehoseDestination?: KinesisFirehoseDestination;
+		KinesisFirehoseDestination?: KinesisFirehoseDestination | null;
 
 		/** <p>Contains information associated with an Amazon CloudWatch event destination to which email sending events are published.</p> <p>Event destinations, such as Amazon CloudWatch, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
-		CloudWatchDestination?: CloudWatchDestination;
+		CloudWatchDestination?: CloudWatchDestination | null;
 
 		/** <p>Contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p> <p>Event destinations, such as Amazon SNS, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p> */
-		SNSDestination?: SNSDestination;
+		SNSDestination?: SNSDestination | null;
 	}
 
 	export enum GET_UpdateConfigurationSetEventDestinationAction { UpdateConfigurationSetEventDestination = 0 }
@@ -2774,7 +2774,7 @@ export namespace MyNS {
 	export enum POST_UpdateConfigurationSetSendingEnabledVersion { _2010_12_01 = 0 }
 
 	export interface GET_UpdateConfigurationSetTrackingOptionsTrackingOptions {
-		CustomRedirectDomain?: string;
+		CustomRedirectDomain?: string | null;
 	}
 
 	export enum GET_UpdateConfigurationSetTrackingOptionsAction { UpdateConfigurationSetTrackingOptions = 0 }
@@ -2791,11 +2791,11 @@ export namespace MyNS {
 
 	export interface GET_UpdateReceiptRuleRule {
 		Name: string;
-		Enabled?: boolean;
-		TlsPolicy?: TlsPolicy;
-		Recipients?: Array<string>;
-		Actions?: Array<ReceiptAction>;
-		ScanEnabled?: boolean;
+		Enabled?: boolean | null;
+		TlsPolicy?: TlsPolicy | null;
+		Recipients?: Array<string> | null;
+		Actions?: Array<ReceiptAction> | null;
+		ScanEnabled?: boolean | null;
 	}
 
 	export enum GET_UpdateReceiptRuleAction { UpdateReceiptRule = 0 }
@@ -2806,9 +2806,9 @@ export namespace MyNS {
 
 	export interface GET_UpdateTemplateTemplate {
 		TemplateName: string;
-		SubjectPart?: string;
-		TextPart?: string;
-		HtmlPart?: string;
+		SubjectPart?: string | null;
+		TextPart?: string | null;
+		HtmlPart?: string | null;
 	}
 
 	export enum GET_UpdateTemplateAction { UpdateTemplate = 0 }

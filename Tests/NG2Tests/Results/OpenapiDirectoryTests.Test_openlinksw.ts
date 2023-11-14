@@ -11,7 +11,7 @@ export namespace MyNS {
 		action_id: string;
 
 		/** A short description of the action. */
-		description?: string;
+		description?: string | null;
 		entry_point: EntryPoint;
 	}
 
@@ -188,7 +188,7 @@ export namespace MyNS {
 	export interface ServiceDescription {
 
 		/** A short description of the service. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The URI of the source service description document used to load the service into OSDB.
@@ -212,14 +212,14 @@ export namespace MyNS {
 	export interface ErrorModel {
 
 		/** The path of the REST API method reporting the error */
-		api?: string;
+		api?: string | null;
 
 		/** The name of the REST API method reporting the error */
-		method?: string;
+		method?: string | null;
 
 		/** A message describing the error */
-		response?: string;
-		status?: ErrorModelStatus;
+		response?: string | null;
+		status?: ErrorModelStatus | null;
 	}
 
 	export enum ErrorModelStatus { error = 0 }
@@ -227,25 +227,25 @@ export namespace MyNS {
 	export interface ExecBody {
 
 		/** An example action specific property. There may be 0, 1 or more action specific properties, each holding an action specific parameter value. */
-		action_specific_property1?: string;
+		action_specific_property1?: string | null;
 
 		/** An example action specific property. There may be 0, 1 or more action specific properties, each holding an action specific parameter value. */
-		action_specific_property2?: string;
+		action_specific_property2?: string | null;
 
 		/** The media type of the data associated with osdb:body_data_raw or osdb:body_data_src_url. In the case of osdb:body_data_raw, this is the media type before base64 encoding. */
-		osdb_body_data_encoding?: string;
+		osdb_body_data_encoding?: string | null;
 
 		/** Input data for the action (e.g. CSV data). The data must be base64 encoded by the client. Alternatively, clients can use osdb:body_data_src_url to supply the input data via a web-accessible document. */
-		osdb_body_data_raw?: string;
+		osdb_body_data_raw?: string | null;
 
 		/** URL of a resource containing input data for the action (e.g. CSV data). Clients can instead use osdb:body_data_raw to supply the input data directly. */
-		osdb_body_data_src_url?: string;
+		osdb_body_data_src_url?: string | null;
 
 		/** An OSDB-specific parameter controlling the action output type. If omitted, the native action output is returned. */
-		osdb_output_type?: ExecBodyOsdb_output_type;
+		osdb_output_type?: ExecBodyOsdb_output_type | null;
 
 		/** Preferred response MIME type. This must be an output MIME type supported natively by the action or, if 'osdb:output_type' is set to 'generate_rdf', a Virtuoso Sponger output format. i.e. 'application/ld+json', 'text/turtle' or 'application/rdf+xml'. */
-		osdb_response_format?: string;
+		osdb_response_format?: string | null;
 	}
 
 	export enum ExecBodyOsdb_output_type { url_only = 0, generate_rdf = 1, display_rdf = 2 }
@@ -475,7 +475,7 @@ export namespace MyNS {
 		service_description_url: string;
 
 		/** Service ID to be used to uniquely identify the service. (Optional: Required for anonymous services or to override the service name in the service description.) */
-		service_moniker?: string;
+		service_moniker?: string | null;
 	}
 
 	export interface LoadServiceReturn {

@@ -3,11 +3,11 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface DescribeDimensionKeysResponse {
-		AlignedStartTime?: Date;
-		AlignedEndTime?: Date;
-		PartitionKeys?: Array<ResponsePartitionKey>;
-		Keys?: Array<DimensionKeyDescription>;
-		NextToken?: string;
+		AlignedStartTime?: Date | null;
+		AlignedEndTime?: Date | null;
+		PartitionKeys?: Array<ResponsePartitionKey> | null;
+		Keys?: Array<DimensionKeyDescription> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -22,9 +22,9 @@ export namespace MyNS {
 
 	/** An array of descriptions and aggregated values for each dimension within a dimension group. */
 	export interface DimensionKeyDescription {
-		Dimensions?: DimensionMap;
-		Total?: number;
-		Partitions?: Array<number>;
+		Dimensions?: DimensionMap | null;
+		Total?: number | null;
+		Partitions?: Array<number> | null;
 	}
 
 	export interface DescribeDimensionKeysRequest {
@@ -33,7 +33,7 @@ export namespace MyNS {
 		StartTime: Date;
 		EndTime: Date;
 		Metric: string;
-		PeriodInSeconds?: number;
+		PeriodInSeconds?: number | null;
 
 		/**
 		 * A logical grouping of Performance Insights metrics for a related subject area. For example, the <code>db.sql</code> dimension group consists of the following dimensions: <code>db.sql.id</code>, <code>db.sql.db_id</code>, <code>db.sql.statement</code>, and <code>db.sql.tokenized_id</code>.
@@ -42,10 +42,10 @@ export namespace MyNS {
 		GroupBy: DimensionGroup;
 
 		/** A logical grouping of Performance Insights metrics for a related subject area. For example, the <code>db.sql</code> dimension group consists of the following dimensions: <code>db.sql.id</code>, <code>db.sql.db_id</code>, <code>db.sql.statement</code>, and <code>db.sql.tokenized_id</code>. */
-		PartitionBy?: DimensionGroup;
-		Filter?: MetricQueryFilterMap;
-		MaxResults?: number;
-		NextToken?: string;
+		PartitionBy?: DimensionGroup | null;
+		Filter?: MetricQueryFilterMap | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export enum DescribeDimensionKeysRequestServiceType { RDS = 0 }
@@ -54,8 +54,8 @@ export namespace MyNS {
 	/** A logical grouping of Performance Insights metrics for a related subject area. For example, the <code>db.sql</code> dimension group consists of the following dimensions: <code>db.sql.id</code>, <code>db.sql.db_id</code>, <code>db.sql.statement</code>, and <code>db.sql.tokenized_id</code>. */
 	export interface DimensionGroup {
 		Group: string;
-		Dimensions?: Array<string>;
-		Limit?: number;
+		Dimensions?: Array<string> | null;
+		Limit?: number | null;
 	}
 
 	export interface MetricQueryFilterMap {
@@ -64,27 +64,27 @@ export namespace MyNS {
 
 	/** One of the arguments provided is invalid for this request. */
 	export interface InvalidArgumentException {
-		Message?: string;
+		Message?: string | null;
 	}
 
 
 	/** The request failed due to an unknown error. */
 	export interface InternalServiceError {
-		Message?: string;
+		Message?: string | null;
 	}
 
 
 	/** The user is not authorized to perform this request. */
 	export interface NotAuthorizedException {
-		Message?: string;
+		Message?: string | null;
 	}
 
 	export interface GetResourceMetricsResponse {
-		AlignedStartTime?: Date;
-		AlignedEndTime?: Date;
-		Identifier?: string;
-		MetricList?: Array<MetricKeyDataPoints>;
-		NextToken?: string;
+		AlignedStartTime?: Date | null;
+		AlignedEndTime?: Date | null;
+		Identifier?: string | null;
+		MetricList?: Array<MetricKeyDataPoints> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -92,15 +92,15 @@ export namespace MyNS {
 	export interface MetricKeyDataPoints {
 
 		/** An object describing a Performance Insights metric and one or more dimensions for that metric. */
-		Key?: ResponseResourceMetricKey;
-		DataPoints?: Array<DataPoint>;
+		Key?: ResponseResourceMetricKey | null;
+		DataPoints?: Array<DataPoint> | null;
 	}
 
 
 	/** An object describing a Performance Insights metric and one or more dimensions for that metric. */
 	export interface ResponseResourceMetricKey {
 		Metric: string;
-		Dimensions?: DimensionMap;
+		Dimensions?: DimensionMap | null;
 	}
 
 
@@ -116,9 +116,9 @@ export namespace MyNS {
 		MetricQueries: Array<MetricQuery>;
 		StartTime: Date;
 		EndTime: Date;
-		PeriodInSeconds?: number;
-		MaxResults?: number;
-		NextToken?: string;
+		PeriodInSeconds?: number | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
@@ -127,8 +127,8 @@ export namespace MyNS {
 		Metric: string;
 
 		/** A logical grouping of Performance Insights metrics for a related subject area. For example, the <code>db.sql</code> dimension group consists of the following dimensions: <code>db.sql.id</code>, <code>db.sql.db_id</code>, <code>db.sql.statement</code>, and <code>db.sql.tokenized_id</code>. */
-		GroupBy?: DimensionGroup;
-		Filter?: MetricQueryFilterMap;
+		GroupBy?: DimensionGroup | null;
+		Filter?: MetricQueryFilterMap | null;
 	}
 
 	export enum ServiceType { RDS = 0 }

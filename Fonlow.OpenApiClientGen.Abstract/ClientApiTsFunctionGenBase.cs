@@ -9,7 +9,7 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		}
 
-		protected override string CreateUriQueryForTs(string uriText, ParameterDescriptionEx[] parameterDescriptions)
+		protected override string CreateUriQueryForTs(string uriText, ParameterDescription[] parameterDescriptions)
 		{
 			return UriQueryHelper.CreateUriQueryForTs(uriText, parameterDescriptions);
 		}

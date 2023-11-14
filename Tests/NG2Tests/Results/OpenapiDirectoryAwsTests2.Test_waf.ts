@@ -5,15 +5,15 @@ export namespace MyNS {
 	export interface CreateByteMatchSetResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>In a <a>GetByteMatchSet</a> request, <code>ByteMatchSet</code> is a complex type that contains the <code>ByteMatchSetId</code> and <code>Name</code> of a <code>ByteMatchSet</code>, and the values that you specified when you updated the <code>ByteMatchSet</code>. </p> <p>A complex type that contains <code>ByteMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>ByteMatchSet</code> contains more than one <code>ByteMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.</p> */
-		ByteMatchSet?: ByteMatchSet;
-		ChangeToken?: string;
+		ByteMatchSet?: ByteMatchSet | null;
+		ChangeToken?: string | null;
 	}
 
 
 	/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>In a <a>GetByteMatchSet</a> request, <code>ByteMatchSet</code> is a complex type that contains the <code>ByteMatchSetId</code> and <code>Name</code> of a <code>ByteMatchSet</code>, and the values that you specified when you updated the <code>ByteMatchSet</code>. </p> <p>A complex type that contains <code>ByteMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>ByteMatchSet</code> contains more than one <code>ByteMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.</p> */
 	export interface ByteMatchSet {
 		ByteMatchSetId: string;
-		Name?: string;
+		Name?: string | null;
 		ByteMatchTuples: Array<ByteMatchTuple>;
 	}
 
@@ -35,7 +35,7 @@ export namespace MyNS {
 	/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>Specifies where in a web request to look for <code>TargetString</code>.</p> */
 	export interface FieldToMatch {
 		Type: FieldToMatchType;
-		Data?: string;
+		Data?: string | null;
 	}
 
 	export enum FieldToMatchType { URI = 0, QUERY_STRING = 1, HEADER = 2, METHOD = 3, BODY = 4, SINGLE_QUERY_ARG = 5, ALL_QUERY_ARGS = 6 }
@@ -70,15 +70,15 @@ export namespace MyNS {
 	export interface CreateGeoMatchSetResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>Contains one or more countries that AWS WAF will search for.</p> */
-		GeoMatchSet?: GeoMatchSet;
-		ChangeToken?: string;
+		GeoMatchSet?: GeoMatchSet | null;
+		ChangeToken?: string | null;
 	}
 
 
 	/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>Contains one or more countries that AWS WAF will search for.</p> */
 	export interface GeoMatchSet {
 		GeoMatchSetId: string;
-		Name?: string;
+		Name?: string | null;
 		GeoMatchConstraints: Array<GeoMatchConstraint>;
 	}
 
@@ -101,15 +101,15 @@ export namespace MyNS {
 	export interface CreateIPSetResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128.</p> <p>To specify an individual IP address, you specify the four-part IP address followed by a <code>/32</code>, for example, 192.0.2.0/32. To block a range of IP addresses, you can specify /8 or any range between /16 through /32 (for IPv4) or /24, /32, /48, /56, /64, or /128 (for IPv6). For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>. </p> */
-		IPSet?: IPSet;
-		ChangeToken?: string;
+		IPSet?: IPSet | null;
+		ChangeToken?: string | null;
 	}
 
 
 	/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128.</p> <p>To specify an individual IP address, you specify the four-part IP address followed by a <code>/32</code>, for example, 192.0.2.0/32. To block a range of IP addresses, you can specify /8 or any range between /16 through /32 (for IPv4) or /24, /32, /48, /56, /64, or /128 (for IPv6). For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>. </p> */
 	export interface IPSet {
 		IPSetId: string;
-		Name?: string;
+		Name?: string | null;
 		IPSetDescriptors: Array<IPSetDescriptor>;
 	}
 
@@ -130,16 +130,16 @@ export namespace MyNS {
 	export interface CreateRateBasedRuleResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>A <code>RateBasedRule</code> is identical to a regular <a>Rule</a>, with one addition: a <code>RateBasedRule</code> counts the number of requests that arrive from a specified IP address every five minutes. For example, based on recent requests that you've seen from an attacker, you might create a <code>RateBasedRule</code> that includes the following conditions: </p> <ul> <li> <p>The requests come from 192.0.2.44.</p> </li> <li> <p>They contain the value <code>BadBot</code> in the <code>User-Agent</code> header.</p> </li> </ul> <p>In the rule, you also define the rate limit as 1,000.</p> <p>Requests that meet both of these conditions and exceed 1,000 requests every five minutes trigger the rule's action (block or count), which is defined in the web ACL.</p> */
-		Rule?: RateBasedRule;
-		ChangeToken?: string;
+		Rule?: RateBasedRule | null;
+		ChangeToken?: string | null;
 	}
 
 
 	/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>A <code>RateBasedRule</code> is identical to a regular <a>Rule</a>, with one addition: a <code>RateBasedRule</code> counts the number of requests that arrive from a specified IP address every five minutes. For example, based on recent requests that you've seen from an attacker, you might create a <code>RateBasedRule</code> that includes the following conditions: </p> <ul> <li> <p>The requests come from 192.0.2.44.</p> </li> <li> <p>They contain the value <code>BadBot</code> in the <code>User-Agent</code> header.</p> </li> </ul> <p>In the rule, you also define the rate limit as 1,000.</p> <p>Requests that meet both of these conditions and exceed 1,000 requests every five minutes trigger the rule's action (block or count), which is defined in the web ACL.</p> */
 	export interface RateBasedRule {
 		RuleId: string;
-		Name?: string;
-		MetricName?: string;
+		Name?: string | null;
+		MetricName?: string | null;
 		MatchPredicates: Array<Predicate>;
 		RateKey: RateBasedRuleRateKey;
 		RateLimit: number;
@@ -163,7 +163,7 @@ export namespace MyNS {
 		RateKey: RateBasedRuleRateKey;
 		RateLimit: number;
 		ChangeToken: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -185,16 +185,16 @@ export namespace MyNS {
 	export interface CreateRegexMatchSetResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>In a <a>GetRegexMatchSet</a> request, <code>RegexMatchSet</code> is a complex type that contains the <code>RegexMatchSetId</code> and <code>Name</code> of a <code>RegexMatchSet</code>, and the values that you specified when you updated the <code>RegexMatchSet</code>.</p> <p> The values are contained in a <code>RegexMatchTuple</code> object, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>RegexMatchSet</code> contains more than one <code>RegexMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.</p> */
-		RegexMatchSet?: RegexMatchSet;
-		ChangeToken?: string;
+		RegexMatchSet?: RegexMatchSet | null;
+		ChangeToken?: string | null;
 	}
 
 
 	/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>In a <a>GetRegexMatchSet</a> request, <code>RegexMatchSet</code> is a complex type that contains the <code>RegexMatchSetId</code> and <code>Name</code> of a <code>RegexMatchSet</code>, and the values that you specified when you updated the <code>RegexMatchSet</code>.</p> <p> The values are contained in a <code>RegexMatchTuple</code> object, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>RegexMatchSet</code> contains more than one <code>RegexMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.</p> */
 	export interface RegexMatchSet {
-		RegexMatchSetId?: string;
-		Name?: string;
-		RegexMatchTuples?: Array<RegexMatchTuple>;
+		RegexMatchSetId?: string | null;
+		Name?: string | null;
+		RegexMatchTuples?: Array<RegexMatchTuple> | null;
 	}
 
 
@@ -218,15 +218,15 @@ export namespace MyNS {
 	export interface CreateRegexPatternSetResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>The <code>RegexPatternSet</code> specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those requests.</p> */
-		RegexPatternSet?: RegexPatternSet;
-		ChangeToken?: string;
+		RegexPatternSet?: RegexPatternSet | null;
+		ChangeToken?: string | null;
 	}
 
 
 	/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>The <code>RegexPatternSet</code> specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those requests.</p> */
 	export interface RegexPatternSet {
 		RegexPatternSetId: string;
-		Name?: string;
+		Name?: string | null;
 		RegexPatternStrings: Array<string>;
 	}
 
@@ -238,16 +238,16 @@ export namespace MyNS {
 	export interface CreateRuleResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>A combination of <a>ByteMatchSet</a>, <a>IPSet</a>, and/or <a>SqlInjectionMatchSet</a> objects that identify the web requests that you want to allow, block, or count. For example, you might create a <code>Rule</code> that includes the following predicates:</p> <ul> <li> <p>An <code>IPSet</code> that causes AWS WAF to search for web requests that originate from the IP address <code>192.0.2.44</code> </p> </li> <li> <p>A <code>ByteMatchSet</code> that causes AWS WAF to search for web requests for which the value of the <code>User-Agent</code> header is <code>BadBot</code>.</p> </li> </ul> <p>To match the settings in this <code>Rule</code>, a request must originate from <code>192.0.2.44</code> AND include a <code>User-Agent</code> header for which the value is <code>BadBot</code>.</p> */
-		Rule?: Rule;
-		ChangeToken?: string;
+		Rule?: Rule | null;
+		ChangeToken?: string | null;
 	}
 
 
 	/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>A combination of <a>ByteMatchSet</a>, <a>IPSet</a>, and/or <a>SqlInjectionMatchSet</a> objects that identify the web requests that you want to allow, block, or count. For example, you might create a <code>Rule</code> that includes the following predicates:</p> <ul> <li> <p>An <code>IPSet</code> that causes AWS WAF to search for web requests that originate from the IP address <code>192.0.2.44</code> </p> </li> <li> <p>A <code>ByteMatchSet</code> that causes AWS WAF to search for web requests for which the value of the <code>User-Agent</code> header is <code>BadBot</code>.</p> </li> </ul> <p>To match the settings in this <code>Rule</code>, a request must originate from <code>192.0.2.44</code> AND include a <code>User-Agent</code> header for which the value is <code>BadBot</code>.</p> */
 	export interface Rule {
 		RuleId: string;
-		Name?: string;
-		MetricName?: string;
+		Name?: string | null;
+		MetricName?: string | null;
 		Predicates: Array<Predicate>;
 	}
 
@@ -255,43 +255,43 @@ export namespace MyNS {
 		Name: string;
 		MetricName: string;
 		ChangeToken: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateRuleGroupResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>A collection of predefined rules that you can add to a web ACL.</p> <p>Rule groups are subject to the following limits:</p> <ul> <li> <p>Three rule groups per account. You can request an increase to this limit by contacting customer support.</p> </li> <li> <p>One rule group per web ACL.</p> </li> <li> <p>Ten rules per rule group.</p> </li> </ul> */
-		RuleGroup?: RuleGroup;
-		ChangeToken?: string;
+		RuleGroup?: RuleGroup | null;
+		ChangeToken?: string | null;
 	}
 
 
 	/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>A collection of predefined rules that you can add to a web ACL.</p> <p>Rule groups are subject to the following limits:</p> <ul> <li> <p>Three rule groups per account. You can request an increase to this limit by contacting customer support.</p> </li> <li> <p>One rule group per web ACL.</p> </li> <li> <p>Ten rules per rule group.</p> </li> </ul> */
 	export interface RuleGroup {
 		RuleGroupId: string;
-		Name?: string;
-		MetricName?: string;
+		Name?: string | null;
+		MetricName?: string | null;
 	}
 
 	export interface CreateRuleGroupRequest {
 		Name: string;
 		MetricName: string;
 		ChangeToken: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateSizeConstraintSetResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>A complex type that contains <code>SizeConstraint</code> objects, which specify the parts of web requests that you want AWS WAF to inspect the size of. If a <code>SizeConstraintSet</code> contains more than one <code>SizeConstraint</code> object, a request only needs to match one constraint to be considered a match.</p> */
-		SizeConstraintSet?: SizeConstraintSet;
-		ChangeToken?: string;
+		SizeConstraintSet?: SizeConstraintSet | null;
+		ChangeToken?: string | null;
 	}
 
 
 	/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>A complex type that contains <code>SizeConstraint</code> objects, which specify the parts of web requests that you want AWS WAF to inspect the size of. If a <code>SizeConstraintSet</code> contains more than one <code>SizeConstraint</code> object, a request only needs to match one constraint to be considered a match.</p> */
 	export interface SizeConstraintSet {
 		SizeConstraintSetId: string;
-		Name?: string;
+		Name?: string | null;
 		SizeConstraints: Array<SizeConstraint>;
 	}
 
@@ -321,15 +321,15 @@ export namespace MyNS {
 	export interface CreateSqlInjectionMatchSetResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>A complex type that contains <code>SqlInjectionMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header. If a <code>SqlInjectionMatchSet</code> contains more than one <code>SqlInjectionMatchTuple</code> object, a request needs to include snippets of SQL code in only one of the specified parts of the request to be considered a match.</p> */
-		SqlInjectionMatchSet?: SqlInjectionMatchSet;
-		ChangeToken?: string;
+		SqlInjectionMatchSet?: SqlInjectionMatchSet | null;
+		ChangeToken?: string | null;
 	}
 
 
 	/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>A complex type that contains <code>SqlInjectionMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header. If a <code>SqlInjectionMatchSet</code> contains more than one <code>SqlInjectionMatchTuple</code> object, a request needs to include snippets of SQL code in only one of the specified parts of the request to be considered a match.</p> */
 	export interface SqlInjectionMatchSet {
 		SqlInjectionMatchSetId: string;
-		Name?: string;
+		Name?: string | null;
 		SqlInjectionMatchTuples: Array<SqlInjectionMatchTuple>;
 	}
 
@@ -355,16 +355,16 @@ export namespace MyNS {
 	export interface CreateWebACLResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>Contains the <code>Rules</code> that identify the requests that you want to allow, block, or count. In a <code>WebACL</code>, you also specify a default action (<code>ALLOW</code> or <code>BLOCK</code>), and the action for each <code>Rule</code> that you add to a <code>WebACL</code>, for example, block requests from specified IP addresses or block requests from specified referrers. You also associate the <code>WebACL</code> with a CloudFront distribution to identify the requests that you want AWS WAF to filter. If you add more than one <code>Rule</code> to a <code>WebACL</code>, a request needs to match only one of the specifications to be allowed, blocked, or counted. For more information, see <a>UpdateWebACL</a>.</p> */
-		WebACL?: WebACL;
-		ChangeToken?: string;
+		WebACL?: WebACL | null;
+		ChangeToken?: string | null;
 	}
 
 
 	/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>Contains the <code>Rules</code> that identify the requests that you want to allow, block, or count. In a <code>WebACL</code>, you also specify a default action (<code>ALLOW</code> or <code>BLOCK</code>), and the action for each <code>Rule</code> that you add to a <code>WebACL</code>, for example, block requests from specified IP addresses or block requests from specified referrers. You also associate the <code>WebACL</code> with a CloudFront distribution to identify the requests that you want AWS WAF to filter. If you add more than one <code>Rule</code> to a <code>WebACL</code>, a request needs to match only one of the specifications to be allowed, blocked, or counted. For more information, see <a>UpdateWebACL</a>.</p> */
 	export interface WebACL {
 		WebACLId: string;
-		Name?: string;
-		MetricName?: string;
+		Name?: string | null;
+		MetricName?: string | null;
 
 		/**
 		 * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>For the action that is associated with a rule in a <code>WebACL</code>, specifies the action that you want AWS WAF to perform when a web request matches all of the conditions in a rule. For the default action in a <code>WebACL</code>, specifies the action that you want AWS WAF to take when a web request doesn't match all of the conditions in any of the rules in a <code>WebACL</code>. </p>
@@ -372,7 +372,7 @@ export namespace MyNS {
 		 */
 		DefaultAction: WafAction;
 		Rules: Array<ActivatedRule>;
-		WebACLArn?: string;
+		WebACLArn?: string | null;
 	}
 
 
@@ -390,12 +390,12 @@ export namespace MyNS {
 		RuleId: string;
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>For the action that is associated with a rule in a <code>WebACL</code>, specifies the action that you want AWS WAF to perform when a web request matches all of the conditions in a rule. For the default action in a <code>WebACL</code>, specifies the action that you want AWS WAF to take when a web request doesn't match all of the conditions in any of the rules in a <code>WebACL</code>. </p> */
-		Action?: WafAction;
+		Action?: WafAction | null;
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>The action to take if any rule within the <code>RuleGroup</code> matches a request. </p> */
-		OverrideAction?: WafOverrideAction;
-		Type?: ActivatedRuleType;
-		ExcludedRules?: Array<ExcludedRule>;
+		OverrideAction?: WafOverrideAction | null;
+		Type?: ActivatedRuleType | null;
+		ExcludedRules?: Array<ExcludedRule> | null;
 	}
 
 
@@ -424,7 +424,7 @@ export namespace MyNS {
 		 */
 		DefaultAction: WafAction;
 		ChangeToken: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateWebACLMigrationStackResponse {
@@ -451,15 +451,15 @@ export namespace MyNS {
 	export interface CreateXssMatchSetResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>A complex type that contains <code>XssMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header. If a <code>XssMatchSet</code> contains more than one <code>XssMatchTuple</code> object, a request needs to include cross-site scripting attacks in only one of the specified parts of the request to be considered a match.</p> */
-		XssMatchSet?: XssMatchSet;
-		ChangeToken?: string;
+		XssMatchSet?: XssMatchSet | null;
+		ChangeToken?: string | null;
 	}
 
 
 	/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>A complex type that contains <code>XssMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header. If a <code>XssMatchSet</code> contains more than one <code>XssMatchTuple</code> object, a request needs to include cross-site scripting attacks in only one of the specified parts of the request to be considered a match.</p> */
 	export interface XssMatchSet {
 		XssMatchSetId: string;
-		Name?: string;
+		Name?: string | null;
 		XssMatchTuples: Array<XssMatchTuple>;
 	}
 
@@ -483,7 +483,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteByteMatchSetResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface DeleteByteMatchSetRequest {
@@ -498,7 +498,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteGeoMatchSetResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface DeleteGeoMatchSetRequest {
@@ -507,7 +507,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteIPSetResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface DeleteIPSetRequest {
@@ -530,7 +530,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteRateBasedRuleResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface DeleteRateBasedRuleRequest {
@@ -539,7 +539,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteRegexMatchSetResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface DeleteRegexMatchSetRequest {
@@ -548,7 +548,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteRegexPatternSetResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface DeleteRegexPatternSetRequest {
@@ -557,7 +557,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteRuleResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface DeleteRuleRequest {
@@ -566,7 +566,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteRuleGroupResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface DeleteRuleGroupRequest {
@@ -575,7 +575,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteSizeConstraintSetResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface DeleteSizeConstraintSetRequest {
@@ -586,7 +586,7 @@ export namespace MyNS {
 
 	/** The response to a request to delete a <a>SqlInjectionMatchSet</a> from AWS WAF. */
 	export interface DeleteSqlInjectionMatchSetResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 
@@ -597,7 +597,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteWebACLResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface DeleteWebACLRequest {
@@ -608,7 +608,7 @@ export namespace MyNS {
 
 	/** The response to a request to delete an <a>XssMatchSet</a> from AWS WAF. */
 	export interface DeleteXssMatchSetResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 
@@ -621,7 +621,7 @@ export namespace MyNS {
 	export interface GetByteMatchSetResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>In a <a>GetByteMatchSet</a> request, <code>ByteMatchSet</code> is a complex type that contains the <code>ByteMatchSetId</code> and <code>Name</code> of a <code>ByteMatchSet</code>, and the values that you specified when you updated the <code>ByteMatchSet</code>. </p> <p>A complex type that contains <code>ByteMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>ByteMatchSet</code> contains more than one <code>ByteMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.</p> */
-		ByteMatchSet?: ByteMatchSet;
+		ByteMatchSet?: ByteMatchSet | null;
 	}
 
 	export interface GetByteMatchSetRequest {
@@ -629,14 +629,14 @@ export namespace MyNS {
 	}
 
 	export interface GetChangeTokenResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface GetChangeTokenRequest {
 	}
 
 	export interface GetChangeTokenStatusResponse {
-		ChangeTokenStatus?: GetChangeTokenStatusResponseChangeTokenStatus;
+		ChangeTokenStatus?: GetChangeTokenStatusResponseChangeTokenStatus | null;
 	}
 
 	export enum GetChangeTokenStatusResponseChangeTokenStatus { PROVISIONED = 0, PENDING = 1, INSYNC = 2 }
@@ -648,7 +648,7 @@ export namespace MyNS {
 	export interface GetGeoMatchSetResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>Contains one or more countries that AWS WAF will search for.</p> */
-		GeoMatchSet?: GeoMatchSet;
+		GeoMatchSet?: GeoMatchSet | null;
 	}
 
 	export interface GetGeoMatchSetRequest {
@@ -658,7 +658,7 @@ export namespace MyNS {
 	export interface GetIPSetResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128.</p> <p>To specify an individual IP address, you specify the four-part IP address followed by a <code>/32</code>, for example, 192.0.2.0/32. To block a range of IP addresses, you can specify /8 or any range between /16 through /32 (for IPv4) or /24, /32, /48, /56, /64, or /128 (for IPv6). For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>. </p> */
-		IPSet?: IPSet;
+		IPSet?: IPSet | null;
 	}
 
 	export interface GetIPSetRequest {
@@ -668,7 +668,7 @@ export namespace MyNS {
 	export interface GetLoggingConfigurationResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>The Amazon Kinesis Data Firehose, <code>RedactedFields</code> information, and the web ACL Amazon Resource Name (ARN).</p> */
-		LoggingConfiguration?: LoggingConfiguration;
+		LoggingConfiguration?: LoggingConfiguration | null;
 	}
 
 
@@ -676,7 +676,7 @@ export namespace MyNS {
 	export interface LoggingConfiguration {
 		ResourceArn: string;
 		LogDestinationConfigs: Array<string>;
-		RedactedFields?: Array<FieldToMatch>;
+		RedactedFields?: Array<FieldToMatch> | null;
 	}
 
 	export interface GetLoggingConfigurationRequest {
@@ -684,7 +684,7 @@ export namespace MyNS {
 	}
 
 	export interface GetPermissionPolicyResponse {
-		Policy?: string;
+		Policy?: string | null;
 	}
 
 	export interface GetPermissionPolicyRequest {
@@ -694,7 +694,7 @@ export namespace MyNS {
 	export interface GetRateBasedRuleResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>A <code>RateBasedRule</code> is identical to a regular <a>Rule</a>, with one addition: a <code>RateBasedRule</code> counts the number of requests that arrive from a specified IP address every five minutes. For example, based on recent requests that you've seen from an attacker, you might create a <code>RateBasedRule</code> that includes the following conditions: </p> <ul> <li> <p>The requests come from 192.0.2.44.</p> </li> <li> <p>They contain the value <code>BadBot</code> in the <code>User-Agent</code> header.</p> </li> </ul> <p>In the rule, you also define the rate limit as 1,000.</p> <p>Requests that meet both of these conditions and exceed 1,000 requests every five minutes trigger the rule's action (block or count), which is defined in the web ACL.</p> */
-		Rule?: RateBasedRule;
+		Rule?: RateBasedRule | null;
 	}
 
 	export interface GetRateBasedRuleRequest {
@@ -702,19 +702,19 @@ export namespace MyNS {
 	}
 
 	export interface GetRateBasedRuleManagedKeysResponse {
-		ManagedKeys?: Array<string>;
-		NextMarker?: string;
+		ManagedKeys?: Array<string> | null;
+		NextMarker?: string | null;
 	}
 
 	export interface GetRateBasedRuleManagedKeysRequest {
 		RuleId: string;
-		NextMarker?: string;
+		NextMarker?: string | null;
 	}
 
 	export interface GetRegexMatchSetResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>In a <a>GetRegexMatchSet</a> request, <code>RegexMatchSet</code> is a complex type that contains the <code>RegexMatchSetId</code> and <code>Name</code> of a <code>RegexMatchSet</code>, and the values that you specified when you updated the <code>RegexMatchSet</code>.</p> <p> The values are contained in a <code>RegexMatchTuple</code> object, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>RegexMatchSet</code> contains more than one <code>RegexMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.</p> */
-		RegexMatchSet?: RegexMatchSet;
+		RegexMatchSet?: RegexMatchSet | null;
 	}
 
 	export interface GetRegexMatchSetRequest {
@@ -724,7 +724,7 @@ export namespace MyNS {
 	export interface GetRegexPatternSetResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>The <code>RegexPatternSet</code> specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those requests.</p> */
-		RegexPatternSet?: RegexPatternSet;
+		RegexPatternSet?: RegexPatternSet | null;
 	}
 
 	export interface GetRegexPatternSetRequest {
@@ -734,7 +734,7 @@ export namespace MyNS {
 	export interface GetRuleResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>A combination of <a>ByteMatchSet</a>, <a>IPSet</a>, and/or <a>SqlInjectionMatchSet</a> objects that identify the web requests that you want to allow, block, or count. For example, you might create a <code>Rule</code> that includes the following predicates:</p> <ul> <li> <p>An <code>IPSet</code> that causes AWS WAF to search for web requests that originate from the IP address <code>192.0.2.44</code> </p> </li> <li> <p>A <code>ByteMatchSet</code> that causes AWS WAF to search for web requests for which the value of the <code>User-Agent</code> header is <code>BadBot</code>.</p> </li> </ul> <p>To match the settings in this <code>Rule</code>, a request must originate from <code>192.0.2.44</code> AND include a <code>User-Agent</code> header for which the value is <code>BadBot</code>.</p> */
-		Rule?: Rule;
+		Rule?: Rule | null;
 	}
 
 	export interface GetRuleRequest {
@@ -744,7 +744,7 @@ export namespace MyNS {
 	export interface GetRuleGroupResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>A collection of predefined rules that you can add to a web ACL.</p> <p>Rule groups are subject to the following limits:</p> <ul> <li> <p>Three rule groups per account. You can request an increase to this limit by contacting customer support.</p> </li> <li> <p>One rule group per web ACL.</p> </li> <li> <p>Ten rules per rule group.</p> </li> </ul> */
-		RuleGroup?: RuleGroup;
+		RuleGroup?: RuleGroup | null;
 	}
 
 	export interface GetRuleGroupRequest {
@@ -752,11 +752,11 @@ export namespace MyNS {
 	}
 
 	export interface GetSampledRequestsResponse {
-		SampledRequests?: Array<SampledHTTPRequest>;
-		PopulationSize?: number;
+		SampledRequests?: Array<SampledHTTPRequest> | null;
+		PopulationSize?: number | null;
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want AWS WAF to return a sample of web requests.</p> <p>You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. </p> <p>In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which AWS WAF actually returned a sample of web requests. AWS WAF gets the specified number of requests from among the first 5,000 requests that your AWS resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, AWS WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that AWS WAF received the 5,000th request. </p> */
-		TimeWindow?: TimeWindow;
+		TimeWindow?: TimeWindow | null;
 	}
 
 
@@ -769,27 +769,27 @@ export namespace MyNS {
 		 */
 		Request: HTTPRequest;
 		Weight: number;
-		Timestamp?: Date;
-		Action?: string;
-		RuleWithinRuleGroup?: string;
+		Timestamp?: Date | null;
+		Action?: string | null;
+		RuleWithinRuleGroup?: string | null;
 	}
 
 
 	/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>The response from a <a>GetSampledRequests</a> request includes an <code>HTTPRequest</code> complex type that appears as <code>Request</code> in the response syntax. <code>HTTPRequest</code> contains information about one of the web requests that were returned by <code>GetSampledRequests</code>. </p> */
 	export interface HTTPRequest {
-		ClientIP?: string;
-		Country?: string;
-		URI?: string;
-		Method?: string;
-		HTTPVersion?: string;
-		Headers?: Array<HTTPHeader>;
+		ClientIP?: string | null;
+		Country?: string | null;
+		URI?: string | null;
+		Method?: string | null;
+		HTTPVersion?: string | null;
+		Headers?: Array<HTTPHeader> | null;
 	}
 
 
 	/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>The response from a <a>GetSampledRequests</a> request includes an <code>HTTPHeader</code> complex type that appears as <code>Headers</code> in the response syntax. <code>HTTPHeader</code> contains the names and values of all of the headers that appear in one of the web requests that were returned by <code>GetSampledRequests</code>. </p> */
 	export interface HTTPHeader {
-		Name?: string;
-		Value?: string;
+		Name?: string | null;
+		Value?: string | null;
 	}
 
 
@@ -814,7 +814,7 @@ export namespace MyNS {
 	export interface GetSizeConstraintSetResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>A complex type that contains <code>SizeConstraint</code> objects, which specify the parts of web requests that you want AWS WAF to inspect the size of. If a <code>SizeConstraintSet</code> contains more than one <code>SizeConstraint</code> object, a request only needs to match one constraint to be considered a match.</p> */
-		SizeConstraintSet?: SizeConstraintSet;
+		SizeConstraintSet?: SizeConstraintSet | null;
 	}
 
 	export interface GetSizeConstraintSetRequest {
@@ -826,7 +826,7 @@ export namespace MyNS {
 	export interface GetSqlInjectionMatchSetResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>A complex type that contains <code>SqlInjectionMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header. If a <code>SqlInjectionMatchSet</code> contains more than one <code>SqlInjectionMatchTuple</code> object, a request needs to include snippets of SQL code in only one of the specified parts of the request to be considered a match.</p> */
-		SqlInjectionMatchSet?: SqlInjectionMatchSet;
+		SqlInjectionMatchSet?: SqlInjectionMatchSet | null;
 	}
 
 
@@ -838,7 +838,7 @@ export namespace MyNS {
 	export interface GetWebACLResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>Contains the <code>Rules</code> that identify the requests that you want to allow, block, or count. In a <code>WebACL</code>, you also specify a default action (<code>ALLOW</code> or <code>BLOCK</code>), and the action for each <code>Rule</code> that you add to a <code>WebACL</code>, for example, block requests from specified IP addresses or block requests from specified referrers. You also associate the <code>WebACL</code> with a CloudFront distribution to identify the requests that you want AWS WAF to filter. If you add more than one <code>Rule</code> to a <code>WebACL</code>, a request needs to match only one of the specifications to be allowed, blocked, or counted. For more information, see <a>UpdateWebACL</a>.</p> */
-		WebACL?: WebACL;
+		WebACL?: WebACL | null;
 	}
 
 	export interface GetWebACLRequest {
@@ -850,7 +850,7 @@ export namespace MyNS {
 	export interface GetXssMatchSetResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>A complex type that contains <code>XssMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header. If a <code>XssMatchSet</code> contains more than one <code>XssMatchTuple</code> object, a request needs to include cross-site scripting attacks in only one of the specified parts of the request to be considered a match.</p> */
-		XssMatchSet?: XssMatchSet;
+		XssMatchSet?: XssMatchSet | null;
 	}
 
 
@@ -860,19 +860,19 @@ export namespace MyNS {
 	}
 
 	export interface ListActivatedRulesInRuleGroupResponse {
-		NextMarker?: string;
-		ActivatedRules?: Array<ActivatedRule>;
+		NextMarker?: string | null;
+		ActivatedRules?: Array<ActivatedRule> | null;
 	}
 
 	export interface ListActivatedRulesInRuleGroupRequest {
-		RuleGroupId?: string;
-		NextMarker?: string;
-		Limit?: number;
+		RuleGroupId?: string | null;
+		NextMarker?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListByteMatchSetsResponse {
-		NextMarker?: string;
-		ByteMatchSets?: Array<ByteMatchSetSummary>;
+		NextMarker?: string | null;
+		ByteMatchSets?: Array<ByteMatchSetSummary> | null;
 	}
 
 
@@ -883,13 +883,13 @@ export namespace MyNS {
 	}
 
 	export interface ListByteMatchSetsRequest {
-		NextMarker?: string;
-		Limit?: number;
+		NextMarker?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListGeoMatchSetsResponse {
-		NextMarker?: string;
-		GeoMatchSets?: Array<GeoMatchSetSummary>;
+		NextMarker?: string | null;
+		GeoMatchSets?: Array<GeoMatchSetSummary> | null;
 	}
 
 
@@ -900,13 +900,13 @@ export namespace MyNS {
 	}
 
 	export interface ListGeoMatchSetsRequest {
-		NextMarker?: string;
-		Limit?: number;
+		NextMarker?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListIPSetsResponse {
-		NextMarker?: string;
-		IPSets?: Array<IPSetSummary>;
+		NextMarker?: string | null;
+		IPSets?: Array<IPSetSummary> | null;
 	}
 
 
@@ -917,23 +917,23 @@ export namespace MyNS {
 	}
 
 	export interface ListIPSetsRequest {
-		NextMarker?: string;
-		Limit?: number;
+		NextMarker?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListLoggingConfigurationsResponse {
-		LoggingConfigurations?: Array<LoggingConfiguration>;
-		NextMarker?: string;
+		LoggingConfigurations?: Array<LoggingConfiguration> | null;
+		NextMarker?: string | null;
 	}
 
 	export interface ListLoggingConfigurationsRequest {
-		NextMarker?: string;
-		Limit?: number;
+		NextMarker?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListRateBasedRulesResponse {
-		NextMarker?: string;
-		Rules?: Array<RuleSummary>;
+		NextMarker?: string | null;
+		Rules?: Array<RuleSummary> | null;
 	}
 
 
@@ -944,13 +944,13 @@ export namespace MyNS {
 	}
 
 	export interface ListRateBasedRulesRequest {
-		NextMarker?: string;
-		Limit?: number;
+		NextMarker?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListRegexMatchSetsResponse {
-		NextMarker?: string;
-		RegexMatchSets?: Array<RegexMatchSetSummary>;
+		NextMarker?: string | null;
+		RegexMatchSets?: Array<RegexMatchSetSummary> | null;
 	}
 
 
@@ -961,13 +961,13 @@ export namespace MyNS {
 	}
 
 	export interface ListRegexMatchSetsRequest {
-		NextMarker?: string;
-		Limit?: number;
+		NextMarker?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListRegexPatternSetsResponse {
-		NextMarker?: string;
-		RegexPatternSets?: Array<RegexPatternSetSummary>;
+		NextMarker?: string | null;
+		RegexPatternSets?: Array<RegexPatternSetSummary> | null;
 	}
 
 
@@ -978,13 +978,13 @@ export namespace MyNS {
 	}
 
 	export interface ListRegexPatternSetsRequest {
-		NextMarker?: string;
-		Limit?: number;
+		NextMarker?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListRuleGroupsResponse {
-		NextMarker?: string;
-		RuleGroups?: Array<RuleGroupSummary>;
+		NextMarker?: string | null;
+		RuleGroups?: Array<RuleGroupSummary> | null;
 	}
 
 
@@ -995,23 +995,23 @@ export namespace MyNS {
 	}
 
 	export interface ListRuleGroupsRequest {
-		NextMarker?: string;
-		Limit?: number;
+		NextMarker?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListRulesResponse {
-		NextMarker?: string;
-		Rules?: Array<RuleSummary>;
+		NextMarker?: string | null;
+		Rules?: Array<RuleSummary> | null;
 	}
 
 	export interface ListRulesRequest {
-		NextMarker?: string;
-		Limit?: number;
+		NextMarker?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListSizeConstraintSetsResponse {
-		NextMarker?: string;
-		SizeConstraintSets?: Array<SizeConstraintSetSummary>;
+		NextMarker?: string | null;
+		SizeConstraintSets?: Array<SizeConstraintSetSummary> | null;
 	}
 
 
@@ -1022,15 +1022,15 @@ export namespace MyNS {
 	}
 
 	export interface ListSizeConstraintSetsRequest {
-		NextMarker?: string;
-		Limit?: number;
+		NextMarker?: string | null;
+		Limit?: number | null;
 	}
 
 
 	/** The response to a <a>ListSqlInjectionMatchSets</a> request. */
 	export interface ListSqlInjectionMatchSetsResponse {
-		NextMarker?: string;
-		SqlInjectionMatchSets?: Array<SqlInjectionMatchSetSummary>;
+		NextMarker?: string | null;
+		SqlInjectionMatchSets?: Array<SqlInjectionMatchSetSummary> | null;
 	}
 
 
@@ -1043,13 +1043,13 @@ export namespace MyNS {
 
 	/** A request to list the <a>SqlInjectionMatchSet</a> objects created by the current AWS account. */
 	export interface ListSqlInjectionMatchSetsRequest {
-		NextMarker?: string;
-		Limit?: number;
+		NextMarker?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListSubscribedRuleGroupsResponse {
-		NextMarker?: string;
-		RuleGroups?: Array<SubscribedRuleGroupSummary>;
+		NextMarker?: string | null;
+		RuleGroups?: Array<SubscribedRuleGroupSummary> | null;
 	}
 
 
@@ -1061,33 +1061,33 @@ export namespace MyNS {
 	}
 
 	export interface ListSubscribedRuleGroupsRequest {
-		NextMarker?: string;
-		Limit?: number;
+		NextMarker?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		NextMarker?: string;
+		NextMarker?: string | null;
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>Information for a tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.</p> <p>Tagging is only available through the API, SDKs, and CLI. You can't manage or view tags through the AWS WAF Classic console. You can tag the AWS resources that you manage through AWS WAF Classic: web ACLs, rule groups, and rules. </p> */
-		TagInfoForResource?: TagInfoForResource;
+		TagInfoForResource?: TagInfoForResource | null;
 	}
 
 
 	/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>Information for a tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.</p> <p>Tagging is only available through the API, SDKs, and CLI. You can't manage or view tags through the AWS WAF Classic console. You can tag the AWS resources that you manage through AWS WAF Classic: web ACLs, rule groups, and rules. </p> */
 	export interface TagInfoForResource {
-		ResourceARN?: string;
-		TagList?: Array<Tag>;
+		ResourceARN?: string | null;
+		TagList?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForResourceRequest {
-		NextMarker?: string;
-		Limit?: number;
+		NextMarker?: string | null;
+		Limit?: number | null;
 		ResourceARN: string;
 	}
 
 	export interface ListWebACLsResponse {
-		NextMarker?: string;
-		WebACLs?: Array<WebACLSummary>;
+		NextMarker?: string | null;
+		WebACLs?: Array<WebACLSummary> | null;
 	}
 
 
@@ -1098,15 +1098,15 @@ export namespace MyNS {
 	}
 
 	export interface ListWebACLsRequest {
-		NextMarker?: string;
-		Limit?: number;
+		NextMarker?: string | null;
+		Limit?: number | null;
 	}
 
 
 	/** The response to a <a>ListXssMatchSets</a> request. */
 	export interface ListXssMatchSetsResponse {
-		NextMarker?: string;
-		XssMatchSets?: Array<XssMatchSetSummary>;
+		NextMarker?: string | null;
+		XssMatchSets?: Array<XssMatchSetSummary> | null;
 	}
 
 
@@ -1119,14 +1119,14 @@ export namespace MyNS {
 
 	/** A request to list the <a>XssMatchSet</a> objects created by the current AWS account. */
 	export interface ListXssMatchSetsRequest {
-		NextMarker?: string;
-		Limit?: number;
+		NextMarker?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface PutLoggingConfigurationResponse {
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>The Amazon Kinesis Data Firehose, <code>RedactedFields</code> information, and the web ACL Amazon Resource Name (ARN).</p> */
-		LoggingConfiguration?: LoggingConfiguration;
+		LoggingConfiguration?: LoggingConfiguration | null;
 	}
 
 	export interface PutLoggingConfigurationRequest {
@@ -1169,7 +1169,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateByteMatchSetResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface UpdateByteMatchSetRequest {
@@ -1196,7 +1196,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateGeoMatchSetResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface UpdateGeoMatchSetRequest {
@@ -1218,7 +1218,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateIPSetResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface UpdateIPSetRequest {
@@ -1240,7 +1240,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateRateBasedRuleResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface UpdateRateBasedRuleRequest {
@@ -1263,7 +1263,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateRegexMatchSetResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface UpdateRegexMatchSetRequest {
@@ -1285,7 +1285,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateRegexPatternSetResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface UpdateRegexPatternSetRequest {
@@ -1305,7 +1305,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateRuleResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface UpdateRuleRequest {
@@ -1315,7 +1315,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateRuleGroupResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface UpdateRuleGroupRequest {
@@ -1337,7 +1337,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateSizeConstraintSetResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface UpdateSizeConstraintSetRequest {
@@ -1361,7 +1361,7 @@ export namespace MyNS {
 
 	/** The response to an <a>UpdateSqlInjectionMatchSets</a> request. */
 	export interface UpdateSqlInjectionMatchSetResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 
@@ -1385,16 +1385,16 @@ export namespace MyNS {
 	}
 
 	export interface UpdateWebACLResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 	export interface UpdateWebACLRequest {
 		WebACLId: string;
 		ChangeToken: string;
-		Updates?: Array<WebACLUpdate>;
+		Updates?: Array<WebACLUpdate> | null;
 
 		/** <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> </note> <p>For the action that is associated with a rule in a <code>WebACL</code>, specifies the action that you want AWS WAF to perform when a web request matches all of the conditions in a rule. For the default action in a <code>WebACL</code>, specifies the action that you want AWS WAF to take when a web request doesn't match all of the conditions in any of the rules in a <code>WebACL</code>. </p> */
-		DefaultAction?: WafAction;
+		DefaultAction?: WafAction | null;
 	}
 
 
@@ -1415,7 +1415,7 @@ export namespace MyNS {
 
 	/** The response to an <a>UpdateXssMatchSets</a> request. */
 	export interface UpdateXssMatchSetResponse {
-		ChangeToken?: string;
+		ChangeToken?: string | null;
 	}
 
 

@@ -7,19 +7,19 @@ export namespace MyNS {
 	export interface Action {
 
 		/** The actor of a Drive activity. */
-		actor?: Actor;
+		actor?: Actor | null;
 
 		/** Data describing the type and additional information of an action. */
-		detail?: ActionDetail;
+		detail?: ActionDetail | null;
 
 		/** Information about the target of activity. */
-		target?: Target;
+		target?: Target | null;
 
 		/** Information about time ranges. */
-		timeRange?: TimeRange;
+		timeRange?: TimeRange | null;
 
 		/** The action occurred at this specific time. */
-		timestamp?: string;
+		timestamp?: string | null;
 	}
 
 
@@ -27,25 +27,25 @@ export namespace MyNS {
 	export interface Actor {
 
 		/** Empty message representing an administrator. */
-		administrator?: Administrator;
+		administrator?: Administrator | null;
 
 		/**
 		 * Empty message representing an anonymous user or indicating the authenticated
 		 * user should be anonymized.
 		 */
-		anonymous?: AnonymousUser;
+		anonymous?: AnonymousUser | null;
 
 		/**
 		 * Information about an impersonation, where an admin acts on behalf of an end
 		 * user. Information about the acting admin is not currently available.
 		 */
-		impersonation?: Impersonation;
+		impersonation?: Impersonation | null;
 
 		/** Event triggered by system operations instead of end users. */
-		system?: SystemEvent;
+		system?: SystemEvent | null;
 
 		/** Information about an end user. */
-		user?: User;
+		user?: User | null;
 	}
 
 
@@ -69,7 +69,7 @@ export namespace MyNS {
 	export interface Impersonation {
 
 		/** Information about an end user. */
-		impersonatedUser?: User;
+		impersonatedUser?: User | null;
 	}
 
 
@@ -77,13 +77,13 @@ export namespace MyNS {
 	export interface User {
 
 		/** A user whose account has since been deleted. */
-		deletedUser?: DeletedUser;
+		deletedUser?: DeletedUser | null;
 
 		/** A known user. */
-		knownUser?: KnownUser;
+		knownUser?: KnownUser | null;
 
 		/** A user about whom nothing is currently known. */
-		unknownUser?: UnknownUser;
+		unknownUser?: UnknownUser | null;
 	}
 
 
@@ -96,14 +96,14 @@ export namespace MyNS {
 	export interface KnownUser {
 
 		/** True if this is the user making the request. */
-		isCurrentUser?: boolean;
+		isCurrentUser?: boolean | null;
 
 		/**
 		 * The identifier for this user that can be used with the People API to get
 		 * more information. The format is "people/ACCOUNT_ID". See
 		 * https://developers.google.com/people/.
 		 */
-		personName?: string;
+		personName?: string | null;
 	}
 
 
@@ -116,7 +116,7 @@ export namespace MyNS {
 	export interface SystemEvent {
 
 		/** The type of the system event that may triggered activity. */
-		type?: SystemEventType;
+		type?: SystemEventType | null;
 	}
 
 	export enum SystemEventType { TYPE_UNSPECIFIED = 0, USER_DELETION = 1, TRASH_AUTO_PURGE = 2 }
@@ -126,37 +126,37 @@ export namespace MyNS {
 	export interface ActionDetail {
 
 		/** A change about comments on an object. */
-		comment?: Comment;
+		comment?: Comment | null;
 
 		/** An object was created. */
-		create?: Create;
+		create?: Create | null;
 
 		/** An object was deleted. */
-		delete?: Delete;
+		delete?: Delete | null;
 
 		/** A change in the object's data leak prevention status. */
-		dlpChange?: DataLeakPreventionChange;
+		dlpChange?: DataLeakPreventionChange | null;
 
 		/** An empty message indicating an object was edited. */
-		edit?: Edit;
+		edit?: Edit | null;
 
 		/** An object was moved. */
-		move?: Move;
+		move?: Move | null;
 
 		/** A change of the permission setting on an item. */
-		permissionChange?: PermissionChange;
+		permissionChange?: PermissionChange | null;
 
 		/** Activity in applications other than Drive. */
-		reference?: ApplicationReference;
+		reference?: ApplicationReference | null;
 
 		/** An object was renamed. */
-		rename?: Rename;
+		rename?: Rename | null;
 
 		/** A deleted object was restored. */
-		restore?: Restore;
+		restore?: Restore | null;
 
 		/** Information about settings changes. */
-		settingsChange?: SettingsChange;
+		settingsChange?: SettingsChange | null;
 	}
 
 
@@ -164,16 +164,16 @@ export namespace MyNS {
 	export interface Comment {
 
 		/** A comment with an assignment. */
-		assignment?: Assignment;
+		assignment?: Assignment | null;
 
 		/** Users who are mentioned in this comment. */
-		mentionedUsers?: Array<User>;
+		mentionedUsers?: Array<User> | null;
 
 		/** A regular posted comment. */
-		post?: Post;
+		post?: Post | null;
 
 		/** A suggestion. */
-		suggestion?: Suggestion;
+		suggestion?: Suggestion | null;
 	}
 
 
@@ -181,10 +181,10 @@ export namespace MyNS {
 	export interface Assignment {
 
 		/** Information about an end user. */
-		assignedUser?: User;
+		assignedUser?: User | null;
 
 		/** The sub-type of this event. */
-		subtype?: AssignmentSubtype;
+		subtype?: AssignmentSubtype | null;
 	}
 
 	export enum AssignmentSubtype { SUBTYPE_UNSPECIFIED = 0, ADDED = 1, DELETED = 2, REPLY_ADDED = 3, REPLY_DELETED = 4, RESOLVED = 5, REOPENED = 6, REASSIGNED = 7 }
@@ -194,7 +194,7 @@ export namespace MyNS {
 	export interface Post {
 
 		/** The sub-type of this event. */
-		subtype?: PostSubtype;
+		subtype?: PostSubtype | null;
 	}
 
 	export enum PostSubtype { SUBTYPE_UNSPECIFIED = 0, ADDED = 1, DELETED = 2, REPLY_ADDED = 3, REPLY_DELETED = 4, RESOLVED = 5, REOPENED = 6 }
@@ -204,7 +204,7 @@ export namespace MyNS {
 	export interface Suggestion {
 
 		/** The sub-type of this event. */
-		subtype?: SuggestionSubtype;
+		subtype?: SuggestionSubtype | null;
 	}
 
 	export enum SuggestionSubtype { SUBTYPE_UNSPECIFIED = 0, ADDED = 1, DELETED = 2, REPLY_ADDED = 3, REPLY_DELETED = 4, ACCEPTED = 5, REJECTED = 6, ACCEPT_DELETED = 7, REJECT_DELETED = 8 }
@@ -214,13 +214,13 @@ export namespace MyNS {
 	export interface Create {
 
 		/** An object was created by copying an existing object. */
-		copy?: Copy;
+		copy?: Copy | null;
 
 		/** An object was created from scratch. */
-		new?: New;
+		new?: New | null;
 
 		/** An object was uploaded into Drive. */
-		upload?: Upload;
+		upload?: Upload | null;
 	}
 
 
@@ -228,7 +228,7 @@ export namespace MyNS {
 	export interface Copy {
 
 		/** A lightweight reference to the target of activity. */
-		originalObject?: TargetReference;
+		originalObject?: TargetReference | null;
 	}
 
 
@@ -236,13 +236,13 @@ export namespace MyNS {
 	export interface TargetReference {
 
 		/** A lightweight reference to a shared drive. */
-		drive?: DriveReference;
+		drive?: DriveReference | null;
 
 		/** A lightweight reference to a Drive item, such as a file or folder. */
-		driveItem?: DriveItemReference;
+		driveItem?: DriveItemReference | null;
 
 		/** This item is deprecated; please see `DriveReference` instead. */
-		teamDrive?: TeamDriveReference;
+		teamDrive?: TeamDriveReference | null;
 	}
 
 
@@ -254,10 +254,10 @@ export namespace MyNS {
 		 * "COLLECTION_ID/DRIVE_ID". Clients should not assume a specific collection
 		 * ID for this resource name.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** The title of the shared drive. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -265,22 +265,22 @@ export namespace MyNS {
 	export interface DriveItemReference {
 
 		/** A Drive item which is a file. */
-		driveFile?: DriveFile;
+		driveFile?: DriveFile | null;
 
 		/** A Drive item which is a folder. */
-		driveFolder?: DriveFolder;
+		driveFolder?: DriveFolder | null;
 
 		/** This item is deprecated; please see `DriveFile` instead. */
-		file?: File;
+		file?: File | null;
 
 		/** This item is deprecated; please see `DriveFolder` instead. */
-		folder?: Folder;
+		folder?: Folder | null;
 
 		/** The target Drive item. The format is "items/ITEM_ID". */
-		name?: string;
+		name?: string | null;
 
 		/** The title of the Drive item. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -293,7 +293,7 @@ export namespace MyNS {
 	export interface DriveFolder {
 
 		/** The type of Drive folder. */
-		type?: DriveFolderType;
+		type?: DriveFolderType | null;
 	}
 
 	export enum DriveFolderType { TYPE_UNSPECIFIED = 0, MY_DRIVE_ROOT = 1, SHARED_DRIVE_ROOT = 2, STANDARD_FOLDER = 3 }
@@ -308,7 +308,7 @@ export namespace MyNS {
 	export interface Folder {
 
 		/** This field is deprecated; please see `DriveFolder.type` instead. */
-		type?: FolderType;
+		type?: FolderType | null;
 	}
 
 	export enum FolderType { TYPE_UNSPECIFIED = 0, MY_DRIVE_ROOT = 1, TEAM_DRIVE_ROOT = 2, STANDARD_FOLDER = 3 }
@@ -318,10 +318,10 @@ export namespace MyNS {
 	export interface TeamDriveReference {
 
 		/** This field is deprecated; please see `DriveReference.name` instead. */
-		name?: string;
+		name?: string | null;
 
 		/** This field is deprecated; please see `DriveReference.title` instead. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -339,7 +339,7 @@ export namespace MyNS {
 	export interface Delete {
 
 		/** The type of delete action taken. */
-		type?: DeleteType;
+		type?: DeleteType | null;
 	}
 
 	export enum DeleteType { TYPE_UNSPECIFIED = 0, TRASH = 1, PERMANENT_DELETE = 2 }
@@ -349,7 +349,7 @@ export namespace MyNS {
 	export interface DataLeakPreventionChange {
 
 		/** The type of Data Leak Prevention (DLP) change. */
-		type?: DataLeakPreventionChangeType;
+		type?: DataLeakPreventionChangeType | null;
 	}
 
 	export enum DataLeakPreventionChangeType { TYPE_UNSPECIFIED = 0, FLAGGED = 1, CLEARED = 2 }
@@ -364,10 +364,10 @@ export namespace MyNS {
 	export interface Move {
 
 		/** The added parent object(s). */
-		addedParents?: Array<TargetReference>;
+		addedParents?: Array<TargetReference> | null;
 
 		/** The removed parent object(s). */
-		removedParents?: Array<TargetReference>;
+		removedParents?: Array<TargetReference> | null;
 	}
 
 
@@ -375,10 +375,10 @@ export namespace MyNS {
 	export interface PermissionChange {
 
 		/** The set of permissions added by this change. */
-		addedPermissions?: Array<Permission>;
+		addedPermissions?: Array<Permission> | null;
 
 		/** The set of permissions removed by this change. */
-		removedPermissions?: Array<Permission>;
+		removedPermissions?: Array<Permission> | null;
 	}
 
 
@@ -389,16 +389,16 @@ export namespace MyNS {
 		 * If true, the item can be discovered (e.g. in the user's "Shared with me"
 		 * collection) without needing a link to the item.
 		 */
-		allowDiscovery?: boolean;
+		allowDiscovery?: boolean | null;
 
 		/** Represents any user (including a logged out user). */
-		anyone?: Anyone;
+		anyone?: Anyone | null;
 
 		/** Information about a domain. */
-		domain?: Domain;
+		domain?: Domain | null;
 
 		/** Information about a group. */
-		group?: Group;
+		group?: Group | null;
 
 		/**
 		 * Indicates the
@@ -406,10 +406,10 @@ export namespace MyNS {
 		 * role</a>. The role determines a user's ability to read, write, and
 		 * comment on items.
 		 */
-		role?: PermissionRole;
+		role?: PermissionRole | null;
 
 		/** Information about an end user. */
-		user?: User;
+		user?: User | null;
 	}
 
 
@@ -422,10 +422,10 @@ export namespace MyNS {
 	export interface Domain {
 
 		/** An opaque string used to identify this domain. */
-		legacyId?: string;
+		legacyId?: string | null;
 
 		/** The name of the domain, e.g. "google.com". */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -433,10 +433,10 @@ export namespace MyNS {
 	export interface Group {
 
 		/** The email address of the group. */
-		email?: string;
+		email?: string | null;
 
 		/** The title of the group. */
-		title?: string;
+		title?: string | null;
 	}
 
 	export enum PermissionRole { ROLE_UNSPECIFIED = 0, OWNER = 1, ORGANIZER = 2, FILE_ORGANIZER = 3, EDITOR = 4, COMMENTER = 5, VIEWER = 6, PUBLISHED_VIEWER = 7 }
@@ -446,7 +446,7 @@ export namespace MyNS {
 	export interface ApplicationReference {
 
 		/** The reference type corresponding to this event. */
-		type?: ApplicationReferenceType;
+		type?: ApplicationReferenceType | null;
 	}
 
 	export enum ApplicationReferenceType { UNSPECIFIED_REFERENCE_TYPE = 0, LINK = 1, DISCUSS = 2 }
@@ -456,10 +456,10 @@ export namespace MyNS {
 	export interface Rename {
 
 		/** The new title of the drive object. */
-		newTitle?: string;
+		newTitle?: string | null;
 
 		/** The previous title of the drive object. */
-		oldTitle?: string;
+		oldTitle?: string | null;
 	}
 
 
@@ -467,7 +467,7 @@ export namespace MyNS {
 	export interface Restore {
 
 		/** The type of restore action taken. */
-		type?: RestoreType;
+		type?: RestoreType | null;
 	}
 
 	export enum RestoreType { TYPE_UNSPECIFIED = 0, UNTRASH = 1 }
@@ -477,7 +477,7 @@ export namespace MyNS {
 	export interface SettingsChange {
 
 		/** The set of changes made to restrictions. */
-		restrictionChanges?: Array<RestrictionChange>;
+		restrictionChanges?: Array<RestrictionChange> | null;
 	}
 
 
@@ -485,10 +485,10 @@ export namespace MyNS {
 	export interface RestrictionChange {
 
 		/** The feature which had a change in restriction policy. */
-		feature?: RestrictionChangeFeature;
+		feature?: RestrictionChangeFeature | null;
 
 		/** The restriction in place after the change. */
-		newRestriction?: RestrictionChangeNewRestriction;
+		newRestriction?: RestrictionChangeNewRestriction | null;
 	}
 
 	export enum RestrictionChangeFeature { FEATURE_UNSPECIFIED = 0, SHARING_OUTSIDE_DOMAIN = 1, DIRECT_SHARING = 2, ITEM_DUPLICATION = 3, DRIVE_FILE_STREAM = 4 }
@@ -500,16 +500,16 @@ export namespace MyNS {
 	export interface Target {
 
 		/** Information about a shared drive. */
-		drive?: Drive;
+		drive?: Drive | null;
 
 		/** A Drive item, such as a file or folder. */
-		driveItem?: DriveItem;
+		driveItem?: DriveItem | null;
 
 		/** A comment on a file. */
-		fileComment?: FileComment;
+		fileComment?: FileComment | null;
 
 		/** This item is deprecated; please see `Drive` instead. */
-		teamDrive?: TeamDrive;
+		teamDrive?: TeamDrive | null;
 	}
 
 
@@ -521,13 +521,13 @@ export namespace MyNS {
 		 * "COLLECTION_ID/DRIVE_ID". Clients should not assume a specific collection
 		 * ID for this resource name.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** A Drive item, such as a file or folder. */
-		root?: DriveItem;
+		root?: DriveItem | null;
 
 		/** The title of the shared drive. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -535,31 +535,31 @@ export namespace MyNS {
 	export interface DriveItem {
 
 		/** A Drive item which is a file. */
-		driveFile?: DriveFile;
+		driveFile?: DriveFile | null;
 
 		/** A Drive item which is a folder. */
-		driveFolder?: DriveFolder;
+		driveFolder?: DriveFolder | null;
 
 		/** This item is deprecated; please see `DriveFile` instead. */
-		file?: File;
+		file?: File | null;
 
 		/** This item is deprecated; please see `DriveFolder` instead. */
-		folder?: Folder;
+		folder?: Folder | null;
 
 		/**
 		 * The MIME type of the Drive item.  See
 		 * https://developers.google.com/drive/v3/web/mime-types.
 		 */
-		mimeType?: string;
+		mimeType?: string | null;
 
 		/** The target Drive item. The format is "items/ITEM_ID". */
-		name?: string;
+		name?: string | null;
 
 		/** Information about the owner of a Drive item. */
-		owner?: Owner;
+		owner?: Owner | null;
 
 		/** The title of the Drive item. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -567,16 +567,16 @@ export namespace MyNS {
 	export interface Owner {
 
 		/** Information about a domain. */
-		domain?: Domain;
+		domain?: Domain | null;
 
 		/** A lightweight reference to a shared drive. */
-		drive?: DriveReference;
+		drive?: DriveReference | null;
 
 		/** This item is deprecated; please see `DriveReference` instead. */
-		teamDrive?: TeamDriveReference;
+		teamDrive?: TeamDriveReference | null;
 
 		/** Information about an end user. */
-		user?: User;
+		user?: User | null;
 	}
 
 
@@ -588,7 +588,7 @@ export namespace MyNS {
 		 * compatible with the Drive API; see
 		 * https://developers.google.com/drive/v3/reference/comments/get
 		 */
-		legacyCommentId?: string;
+		legacyCommentId?: string | null;
 
 		/**
 		 * The discussion thread to which the comment was added. This identifier is an
@@ -596,16 +596,16 @@ export namespace MyNS {
 		 * comment in a discussion; see
 		 * https://developers.google.com/drive/v3/reference/comments/get
 		 */
-		legacyDiscussionId?: string;
+		legacyDiscussionId?: string | null;
 
 		/**
 		 * The link to the discussion thread containing this comment, for example,
 		 * "https://docs.google.com/DOCUMENT_ID/edit?disco=THREAD_ID".
 		 */
-		linkToDiscussion?: string;
+		linkToDiscussion?: string | null;
 
 		/** A Drive item, such as a file or folder. */
-		parent?: DriveItem;
+		parent?: DriveItem | null;
 	}
 
 
@@ -613,13 +613,13 @@ export namespace MyNS {
 	export interface TeamDrive {
 
 		/** This field is deprecated; please see `Drive.name` instead. */
-		name?: string;
+		name?: string | null;
 
 		/** A Drive item, such as a file or folder. */
-		root?: DriveItem;
+		root?: DriveItem | null;
 
 		/** This field is deprecated; please see `Drive.title` instead. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -627,10 +627,10 @@ export namespace MyNS {
 	export interface TimeRange {
 
 		/** The end of the time range. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** The start of the time range. */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 
@@ -650,10 +650,10 @@ export namespace MyNS {
 		 * once) or multiple actors (such as several users editing the same item).
 		 * Grouping rules for this strategy are specific to each type of action.
 		 */
-		legacy?: Legacy;
+		legacy?: Legacy | null;
 
 		/** A strategy which does no consolidation of individual activities. */
-		none?: NoConsolidation;
+		none?: NoConsolidation | null;
 	}
 
 
@@ -684,26 +684,26 @@ export namespace MyNS {
 	export interface DriveActivity {
 
 		/** Details on all actions in this activity. */
-		actions?: Array<Action>;
+		actions?: Array<Action> | null;
 
 		/** All actor(s) responsible for the activity. */
-		actors?: Array<Actor>;
+		actors?: Array<Actor> | null;
 
 		/** Data describing the type and additional information of an action. */
-		primaryActionDetail?: ActionDetail;
+		primaryActionDetail?: ActionDetail | null;
 
 		/**
 		 * All Google Drive objects this activity is about (e.g. file, folder, drive).
 		 * This represents the state of the target immediately after the actions
 		 * occurred.
 		 */
-		targets?: Array<Target>;
+		targets?: Array<Target> | null;
 
 		/** Information about time ranges. */
-		timeRange?: TimeRange;
+		timeRange?: TimeRange | null;
 
 		/** The activity occurred at this specific time. */
-		timestamp?: string;
+		timestamp?: string | null;
 	}
 
 
@@ -714,7 +714,7 @@ export namespace MyNS {
 		 * Return activities for this Drive folder and all children and descendants.
 		 * The format is "items/ITEM_ID".
 		 */
-		ancestorName?: string;
+		ancestorName?: string | null;
 
 		/**
 		 * How the individual activities are consolidated. A set of activities may be
@@ -723,7 +723,7 @@ export namespace MyNS {
 		 * actors performing the same action on a single target. The strategy defines
 		 * the rules for which activities are related.
 		 */
-		consolidationStrategy?: ConsolidationStrategy;
+		consolidationStrategy?: ConsolidationStrategy | null;
 
 		/**
 		 * The filtering for items returned from this query request. The format of the
@@ -743,25 +743,25 @@ export namespace MyNS {
 		 * - <tt>detail.action_detail_case:(CREATE UPLOAD)</tt>
 		 * - <tt>-detail.action_detail_case:MOVE</tt>
 		 */
-		filter?: string;
+		filter?: string | null;
 
 		/**
 		 * Return activities for this Drive item. The format is
 		 * "items/ITEM_ID".
 		 */
-		itemName?: string;
+		itemName?: string | null;
 
 		/**
 		 * The requested number of activities to return. If not set, a default value
 		 * is used.
 		 */
-		pageSize?: number;
+		pageSize?: number | null;
 
 		/**
 		 * The next_page_token value returned from a previous QueryDriveActivity
 		 * request, if any.
 		 */
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 
@@ -769,13 +769,13 @@ export namespace MyNS {
 	export interface QueryDriveActivityResponse {
 
 		/** List of activity requested. */
-		activities?: Array<DriveActivity>;
+		activities?: Array<DriveActivity> | null;
 
 		/**
 		 * Token to retrieve the next page of results, or
 		 * empty if there are no more results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	@Injectable()

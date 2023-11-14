@@ -6,10 +6,10 @@ export namespace MyNS {
 	export interface Amount {
 
 		/** The three-letter ISO 4217 code representing the currency of the amount in the value field. Restriction: Only the currency of the marketplace is supported. For example, on the US marketplace the only currency supported is USD. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/listing/types/CurrencyCodeEnum.html'>eBay API documentation</a> */
-		currency?: string;
+		currency?: string | null;
 
 		/** The monetary amount, in the currency specified by the currency field. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -17,10 +17,10 @@ export namespace MyNS {
 	export interface Aspect {
 
 		/** The name of an aspect, such and Brand. */
-		name?: string;
+		name?: string | null;
 
 		/** A list of potential values for this aspect. */
-		values?: Array<string>;
+		values?: Array<string> | null;
 	}
 
 
@@ -28,10 +28,10 @@ export namespace MyNS {
 	export interface Charity {
 
 		/** This field sets the percentage of the purchase price that the charitable organization (identified in the charityId field) will receive for each sale that the listing generates. This field is conditionally required if a seller is planning on donating a percentage of the sale proceeds to a charitable organization. This numeric value can range from 10 to 100, and in any 5 (percent) increments in between this range (e.g. 10, 15, 20...95,... 100). The seller would pass in 10 for 10 percent, 15 for 15 percent, 20 for 20 percent, and so on, all the way to 100 for 100 percent. Note: For this field, createItemDraft will only validate that a positive integer value is supplied, so the listing draft will still be successfully created (with no error or warning message) if a non-supported value is specified. However, if the seller attempted to publish this listing draft with an unsupported value, the charity information would just be dropped from the listing. */
-		donationPercentage?: string;
+		donationPercentage?: string | null;
 
 		/** The eBay-assigned unique identifier of the charitable organization that will receive a percentage of the sales proceeds. The charitable organization must be reqistered with the PayPal Giving Fund in order to receive sales proceeds through eBay listings. This field is conditionally required if a seller is planning on donating a percentage of the sale proceeds to a charitable organization. The eBay-assigned unique identifier of a charitable organization can be found using the GetCharities call of the Trading API. In the GetCharities call response, this unique identifier is shown in the id attribute of the Charity container. */
-		charityId?: string;
+		charityId?: string | null;
 	}
 
 
@@ -39,40 +39,40 @@ export namespace MyNS {
 	export interface Error {
 
 		/** Identifies the type of erro. */
-		category?: string;
+		category?: string | null;
 
 		/** Name for the primary system where the error occurred. This is relevant for application errors. */
-		domain?: string;
+		domain?: string | null;
 
 		/** A unique number to identify the error. */
-		errorId?: number;
+		errorId?: number | null;
 
 		/** An array of request elements most closely associated to the error. */
-		inputRefIds?: Array<string>;
+		inputRefIds?: Array<string> | null;
 
 		/** A more detailed explanation of the error. */
-		longMessage?: string;
+		longMessage?: string | null;
 
 		/** Information on how to correct the problem, in the end user's terms and language where applicable. */
-		message?: string;
+		message?: string | null;
 
 		/** An array of request elements most closely associated to the error. */
-		outputRefIds?: Array<string>;
+		outputRefIds?: Array<string> | null;
 
 		/** An array of name/value pairs that describe details the error condition. These are useful when multiple errors are returned. */
-		parameters?: Array<ErrorParameter>;
+		parameters?: Array<ErrorParameter> | null;
 
 		/** Further helps indicate which subsystem the error is coming from. System subcategories include: Initialization, Serialization, Security, Monitoring, Rate Limiting, etc. */
-		subdomain?: string;
+		subdomain?: string | null;
 	}
 
 	export interface ErrorParameter {
 
 		/** The object of the error. */
-		name?: string;
+		name?: string | null;
 
 		/** The value of the object. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -80,22 +80,22 @@ export namespace MyNS {
 	export interface ItemDraft {
 
 		/** The ID of the leaf category associated with this item. A leaf category is the lowest level in that category and has no children. Note: If you submit both a category ID and an EPID, eBay determines the best category based on the EPID and uses that. The category ID will be ignored. */
-		categoryId?: string;
+		categoryId?: string | null;
 
 		/** An enumeration value representing the condition of the item, such as NEW. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/listing/types/ConditionEnum.html'>eBay API documentation</a> */
-		condition?: string;
+		condition?: string | null;
 
 		/** The format of the listing. Valid Values: FIXED_PRICE and AUCTION For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/listing/types/ListingFormatEnum.html'>eBay API documentation</a> */
-		format?: string;
+		format?: string | null;
 
 		/** The type that defines the fields for the price details for an item. */
-		pricingSummary?: PricingSummary;
+		pricingSummary?: PricingSummary | null;
 
 		/** The type that defines the fields for the aspects of a product. */
-		product?: Product;
+		product?: Product | null;
 
 		/** This type is used to identify the charitable organization that will receive a percentage of sale proceeds for each sale generated by the listing. This container also includes the donation percentage, which is the percentage of the sale proceeds that the charitable organization will get. In order to receive a percentage of the sales proceeds, the non-profit organization must be registered with the PayPal Giving Fund, which is a partner of eBay for Charity. */
-		charity?: Charity;
+		charity?: Charity | null;
 	}
 
 
@@ -103,13 +103,13 @@ export namespace MyNS {
 	export interface PricingSummary {
 
 		/** The type that defines the fields for the currency and a monetary amount. */
-		auctionReservePrice?: Amount;
+		auctionReservePrice?: Amount | null;
 
 		/** The type that defines the fields for the currency and a monetary amount. */
-		auctionStartPrice?: Amount;
+		auctionStartPrice?: Amount | null;
 
 		/** The type that defines the fields for the currency and a monetary amount. */
-		price?: Amount;
+		price?: Amount | null;
 	}
 
 
@@ -117,22 +117,22 @@ export namespace MyNS {
 	export interface Product {
 
 		/** The list of item aspects that describe the item (such as size, color, capacity, model, brand, etc.) */
-		aspects?: Array<Aspect>;
+		aspects?: Array<Aspect> | null;
 
 		/** The name brand of the item, such as Nike, Apple, etc. */
-		brand?: string;
+		brand?: string | null;
 
 		/** The description of the item that was created by the seller. This can be plain text or rich content. */
-		description?: string;
+		description?: string | null;
 
 		/** An EPID is the eBay product identifier of a product from the eBay product catalog. Note: If you submit both a category ID and an EPID, eBay determines the best category based on the EPID and uses that. The category ID will be ignored. */
-		epid?: string;
+		epid?: string | null;
 
 		/** The image URLs of the item. The first URL will be the primary image, which appears on the View Item page in the eBay listing. The URL can be from the following: The eBay Picture Services (images previously uploaded). A server outside of eBay (self-hosted). For more details, see PictureURL and Introduction to Pictures in Listings. Maximum: 12 URLs (for most categories and marketplaces) Restrictions: You cannot mix self-hosted and EPS-hosted URLs in the same listing. All image URLs must be 'https'. */
-		imageUrls?: Array<string>;
+		imageUrls?: Array<string> | null;
 
 		/** The seller-created title of the item. This should include unique characteristics of the item, such as brand, model, color, size, capacity, etc. For example: Levi's 501 size 10 black jeans */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -140,13 +140,13 @@ export namespace MyNS {
 	export interface ItemDraftResponse {
 
 		/** The eBay generated ID of the listing draft. */
-		itemDraftId?: string;
+		itemDraftId?: string | null;
 
 		/** The URI the Partner uses to send the seller to their listing draft that was created on the eBay site. From there the seller can change, update, and publish the item on eBay. This is returned when the seller is using a mobile app. */
-		sellFlowNativeUri?: string;
+		sellFlowNativeUri?: string | null;
 
 		/** The web URL the Partner uses to send the seller to the listing draft that was created on the eBay site. From there the seller can change, update, and publish the item on eBay. This is returned when the seller is using mobile web (mweb) or the desktop web. Note: You must construct the URL using the URL returned in this field and a session token. For example: sellFlowUrl?id_token=session_token */
-		sellFlowUrl?: string;
+		sellFlowUrl?: string | null;
 	}
 
 	@autoinject()

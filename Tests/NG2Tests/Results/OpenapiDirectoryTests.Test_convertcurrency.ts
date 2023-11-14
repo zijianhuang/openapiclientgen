@@ -23,10 +23,10 @@ export namespace MyNS {
 	}
 
 	export interface ConvertcurrencyGetByLicenseAndFromAndToAndAmountReturn {
-		Code?: string;
-		Converted?: string;
-		Credits?: string;
-		Currency?: string;
+		Code?: string | null;
+		Converted?: string | null;
+		Credits?: string | null;
+		Currency?: string | null;
 	}
 
 }

@@ -5,7 +5,7 @@ using System.CodeDom;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
-	public static class CodeNamespaceExtensions
+	public static class CodeTypeDeclarationExtensions
 	{
 		/// <summary>
 		/// Find existing enum type according to enum members in literal string.

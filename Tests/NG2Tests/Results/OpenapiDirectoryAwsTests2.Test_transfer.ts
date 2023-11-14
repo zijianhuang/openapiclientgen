@@ -7,30 +7,30 @@ export namespace MyNS {
 	}
 
 	export interface CreateServerRequest {
-		Certificate?: string;
+		Certificate?: string | null;
 
 		/** The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled server. With a VPC endpoint, you can restrict access to your server and resources only within your VPC. To control incoming internet traffic, invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's endpoint. */
-		EndpointDetails?: EndpointDetails;
-		EndpointType?: CreateServerRequestEndpointType;
-		HostKey?: string;
+		EndpointDetails?: EndpointDetails | null;
+		EndpointType?: CreateServerRequestEndpointType | null;
+		HostKey?: string | null;
 
 		/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. A server can have only one method of authentication. */
-		IdentityProviderDetails?: IdentityProviderDetails;
+		IdentityProviderDetails?: IdentityProviderDetails | null;
 
 		/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on the server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. The server can have only one method of authentication. */
-		IdentityProviderType?: CreateServerRequestIdentityProviderType;
-		LoggingRole?: string;
-		Protocols?: Array<Protocol>;
-		Tags?: Array<Tag>;
+		IdentityProviderType?: CreateServerRequestIdentityProviderType | null;
+		LoggingRole?: string | null;
+		Protocols?: Array<Protocol> | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled server. With a VPC endpoint, you can restrict access to your server and resources only within your VPC. To control incoming internet traffic, invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's endpoint. */
 	export interface EndpointDetails {
-		AddressAllocationIds?: Array<string>;
-		SubnetIds?: Array<string>;
-		VpcEndpointId?: string;
-		VpcId?: string;
+		AddressAllocationIds?: Array<string> | null;
+		SubnetIds?: Array<string> | null;
+		VpcEndpointId?: string | null;
+		VpcId?: string | null;
 	}
 
 	export enum CreateServerRequestEndpointType { PUBLIC = 0, VPC = 1, VPC_ENDPOINT = 2 }
@@ -38,8 +38,8 @@ export namespace MyNS {
 
 	/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. A server can have only one method of authentication. */
 	export interface IdentityProviderDetails {
-		Url?: string;
-		InvocationRole?: string;
+		Url?: string | null;
+		InvocationRole?: string | null;
 	}
 
 	export enum CreateServerRequestIdentityProviderType { SERVICE_MANAGED = 0, API_GATEWAY = 1 }
@@ -77,14 +77,14 @@ export namespace MyNS {
 	}
 
 	export interface CreateUserRequest {
-		HomeDirectory?: string;
-		HomeDirectoryType?: CreateUserRequestHomeDirectoryType;
-		HomeDirectoryMappings?: Array<HomeDirectoryMapEntry>;
-		Policy?: string;
+		HomeDirectory?: string | null;
+		HomeDirectoryType?: CreateUserRequestHomeDirectoryType | null;
+		HomeDirectoryMappings?: Array<HomeDirectoryMapEntry> | null;
+		Policy?: string | null;
 		Role: string;
 		ServerId: string;
-		SshPublicKeyBody?: string;
-		Tags?: Array<Tag>;
+		SshPublicKeyBody?: string | null;
+		Tags?: Array<Tag> | null;
 		UserName: string;
 	}
 
@@ -128,26 +128,26 @@ export namespace MyNS {
 	/** Describes the properties of a file transfer protocol-enabled server that was specified. Information returned includes the following: the server Amazon Resource Name (ARN), the certificate ARN (if the FTPS protocol was selected), the endpoint type and details, the authentication configuration and type, the logging role, the file transfer protocol or protocols, the server ID and state, and assigned tags or metadata. */
 	export interface DescribedServer {
 		Arn: string;
-		Certificate?: string;
+		Certificate?: string | null;
 
 		/** The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled server. With a VPC endpoint, you can restrict access to your server and resources only within your VPC. To control incoming internet traffic, invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's endpoint. */
-		EndpointDetails?: EndpointDetails;
-		EndpointType?: CreateServerRequestEndpointType;
-		HostKeyFingerprint?: string;
+		EndpointDetails?: EndpointDetails | null;
+		EndpointType?: CreateServerRequestEndpointType | null;
+		HostKeyFingerprint?: string | null;
 
 		/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. A server can have only one method of authentication. */
-		IdentityProviderDetails?: IdentityProviderDetails;
+		IdentityProviderDetails?: IdentityProviderDetails | null;
 
 		/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on the server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. The server can have only one method of authentication. */
-		IdentityProviderType?: CreateServerRequestIdentityProviderType;
-		LoggingRole?: string;
-		Protocols?: Array<Protocol>;
-		ServerId?: string;
+		IdentityProviderType?: CreateServerRequestIdentityProviderType | null;
+		LoggingRole?: string | null;
+		Protocols?: Array<Protocol> | null;
+		ServerId?: string | null;
 
 		/** <p>Describes the condition of a file transfer protocol-enabled server with respect to its ability to perform file operations. There are six possible states: <code>OFFLINE</code>, <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>, <code>START_FAILED</code>, and <code>STOP_FAILED</code>.</p> <p> <code>OFFLINE</code> indicates that the server exists, but that it is not available for file operations. <code>ONLINE</code> indicates that the server is available to perform file operations. <code>STARTING</code> indicates that the server's was instantiated, but the server is not yet available to perform file operations. Under normal conditions, it can take a couple of minutes for the server to be completely operational. Both <code>START_FAILED</code> and <code>STOP_FAILED</code> are error conditions.</p> */
-		State?: DescribedServerState;
-		Tags?: Array<Tag>;
-		UserCount?: number;
+		State?: DescribedServerState | null;
+		Tags?: Array<Tag> | null;
+		UserCount?: number | null;
 	}
 
 	export enum DescribedServerState { OFFLINE = 0, ONLINE = 1, STARTING = 2, STOPPING = 3, START_FAILED = 4, STOP_FAILED = 5 }
@@ -170,14 +170,14 @@ export namespace MyNS {
 	/** Returns properties of the user that you want to describe. */
 	export interface DescribedUser {
 		Arn: string;
-		HomeDirectory?: string;
-		HomeDirectoryMappings?: Array<HomeDirectoryMapEntry>;
-		HomeDirectoryType?: CreateUserRequestHomeDirectoryType;
-		Policy?: string;
-		Role?: string;
-		SshPublicKeys?: Array<SshPublicKey>;
-		Tags?: Array<Tag>;
-		UserName?: string;
+		HomeDirectory?: string | null;
+		HomeDirectoryMappings?: Array<HomeDirectoryMapEntry> | null;
+		HomeDirectoryType?: CreateUserRequestHomeDirectoryType | null;
+		Policy?: string | null;
+		Role?: string | null;
+		SshPublicKeys?: Array<SshPublicKey> | null;
+		Tags?: Array<Tag> | null;
+		UserName?: string | null;
 	}
 
 
@@ -208,7 +208,7 @@ export namespace MyNS {
 	}
 
 	export interface ListServersResponse {
-		NextToken?: string;
+		NextToken?: string | null;
 		Servers: Array<ListedServer>;
 	}
 
@@ -218,38 +218,38 @@ export namespace MyNS {
 		Arn: string;
 
 		/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on the server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. The server can have only one method of authentication. */
-		IdentityProviderType?: CreateServerRequestIdentityProviderType;
-		EndpointType?: CreateServerRequestEndpointType;
-		LoggingRole?: string;
-		ServerId?: string;
+		IdentityProviderType?: CreateServerRequestIdentityProviderType | null;
+		EndpointType?: CreateServerRequestEndpointType | null;
+		LoggingRole?: string | null;
+		ServerId?: string | null;
 
 		/** <p>Describes the condition of a file transfer protocol-enabled server with respect to its ability to perform file operations. There are six possible states: <code>OFFLINE</code>, <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>, <code>START_FAILED</code>, and <code>STOP_FAILED</code>.</p> <p> <code>OFFLINE</code> indicates that the server exists, but that it is not available for file operations. <code>ONLINE</code> indicates that the server is available to perform file operations. <code>STARTING</code> indicates that the server's was instantiated, but the server is not yet available to perform file operations. Under normal conditions, it can take a couple of minutes for the server to be completely operational. Both <code>START_FAILED</code> and <code>STOP_FAILED</code> are error conditions.</p> */
-		State?: DescribedServerState;
-		UserCount?: number;
+		State?: DescribedServerState | null;
+		UserCount?: number | null;
 	}
 
 	export interface ListServersRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface InvalidNextTokenException {
 	}
 
 	export interface ListTagsForResourceResponse {
-		Arn?: string;
-		NextToken?: string;
-		Tags?: Array<Tag>;
+		Arn?: string | null;
+		NextToken?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForResourceRequest {
 		Arn: string;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListUsersResponse {
-		NextToken?: string;
+		NextToken?: string | null;
 		ServerId: string;
 		Users: Array<ListedUser>;
 	}
@@ -258,16 +258,16 @@ export namespace MyNS {
 	/** Returns properties of the user that you specify. */
 	export interface ListedUser {
 		Arn: string;
-		HomeDirectory?: string;
-		HomeDirectoryType?: CreateUserRequestHomeDirectoryType;
-		Role?: string;
-		SshPublicKeyCount?: number;
-		UserName?: string;
+		HomeDirectory?: string | null;
+		HomeDirectoryType?: CreateUserRequestHomeDirectoryType | null;
+		Role?: string | null;
+		SshPublicKeyCount?: number | null;
+		UserName?: string | null;
 	}
 
 	export interface ListUsersRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 		ServerId: string;
 	}
 
@@ -285,18 +285,18 @@ export namespace MyNS {
 	}
 
 	export interface TestIdentityProviderResponse {
-		Response?: string;
+		Response?: string | null;
 		StatusCode: number;
-		Message?: string;
+		Message?: string | null;
 		Url: string;
 	}
 
 	export interface TestIdentityProviderRequest {
 		ServerId: string;
-		ServerProtocol?: Protocol;
-		SourceIp?: string;
+		ServerProtocol?: Protocol | null;
+		SourceIp?: string | null;
 		UserName: string;
-		UserPassword?: string;
+		UserPassword?: string | null;
 	}
 
 	export interface UntagResourceRequest {
@@ -309,17 +309,17 @@ export namespace MyNS {
 	}
 
 	export interface UpdateServerRequest {
-		Certificate?: string;
+		Certificate?: string | null;
 
 		/** The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled server. With a VPC endpoint, you can restrict access to your server and resources only within your VPC. To control incoming internet traffic, invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's endpoint. */
-		EndpointDetails?: EndpointDetails;
-		EndpointType?: CreateServerRequestEndpointType;
-		HostKey?: string;
+		EndpointDetails?: EndpointDetails | null;
+		EndpointType?: CreateServerRequestEndpointType | null;
+		HostKey?: string | null;
 
 		/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. A server can have only one method of authentication. */
-		IdentityProviderDetails?: IdentityProviderDetails;
-		LoggingRole?: string;
-		Protocols?: Array<Protocol>;
+		IdentityProviderDetails?: IdentityProviderDetails | null;
+		LoggingRole?: string | null;
+		Protocols?: Array<Protocol> | null;
 		ServerId: string;
 	}
 
@@ -334,11 +334,11 @@ export namespace MyNS {
 	}
 
 	export interface UpdateUserRequest {
-		HomeDirectory?: string;
-		HomeDirectoryType?: CreateUserRequestHomeDirectoryType;
-		HomeDirectoryMappings?: Array<HomeDirectoryMapEntry>;
-		Policy?: string;
-		Role?: string;
+		HomeDirectory?: string | null;
+		HomeDirectoryType?: CreateUserRequestHomeDirectoryType | null;
+		HomeDirectoryMappings?: Array<HomeDirectoryMapEntry> | null;
+		Policy?: string | null;
+		Role?: string | null;
 		ServerId: string;
 		UserName: string;
 	}
@@ -439,7 +439,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListServersResponse} Success
 		 */
-		ListServers(MaxResults: string, NextToken: string, requestBody: ListServersRequest): Observable<ListServersResponse> {
+		ListServers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListServersRequest): Observable<ListServersResponse> {
 			return this.http.post<ListServersResponse>(this.baseUri + '#X-Amz-Target=TransferService.ListServers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -450,7 +450,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsForResourceResponse} Success
 		 */
-		ListTagsForResource(MaxResults: string, NextToken: string, requestBody: ListTagsForResourceRequest): Observable<ListTagsForResourceResponse> {
+		ListTagsForResource(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTagsForResourceRequest): Observable<ListTagsForResourceResponse> {
 			return this.http.post<ListTagsForResourceResponse>(this.baseUri + '#X-Amz-Target=TransferService.ListTagsForResource?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -461,7 +461,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListUsersResponse} Success
 		 */
-		ListUsers(MaxResults: string, NextToken: string, requestBody: ListUsersRequest): Observable<ListUsersResponse> {
+		ListUsers(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListUsersRequest): Observable<ListUsersResponse> {
 			return this.http.post<ListUsersResponse>(this.baseUri + '#X-Amz-Target=TransferService.ListUsers?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

@@ -21,7 +21,7 @@ export namespace MyNS {
 	}
 
 	export interface BatchDisableStandardsResponse {
-		StandardsSubscriptions?: Array<StandardsSubscription>;
+		StandardsSubscriptions?: Array<StandardsSubscription> | null;
 	}
 
 
@@ -39,20 +39,20 @@ export namespace MyNS {
 	export enum StandardsSubscriptionStandardsStatus { PENDING = 0, READY = 1, FAILED = 2, DELETING = 3, INCOMPLETE = 4 }
 
 	export interface BatchEnableStandardsResponse {
-		StandardsSubscriptions?: Array<StandardsSubscription>;
+		StandardsSubscriptions?: Array<StandardsSubscription> | null;
 	}
 
 
 	/** The standard that you want to enable. */
 	export interface StandardsSubscriptionRequest {
 		StandardsArn: string;
-		StandardsInput?: StandardsInputParameterMap;
+		StandardsInput?: StandardsInputParameterMap | null;
 	}
 
 	export interface BatchImportFindingsResponse {
 		FailedCount: number;
 		SuccessCount: number;
-		FailedFindings?: Array<ImportFindingsError>;
+		FailedFindings?: Array<ImportFindingsError> | null;
 	}
 
 
@@ -72,8 +72,8 @@ export namespace MyNS {
 		GeneratorId: string;
 		AwsAccountId: string;
 		Types: Array<string>;
-		FirstObservedAt?: string;
-		LastObservedAt?: string;
+		FirstObservedAt?: string | null;
+		LastObservedAt?: string | null;
 		CreatedAt: string;
 		UpdatedAt: string;
 
@@ -82,49 +82,49 @@ export namespace MyNS {
 		 * Required
 		 */
 		Severity: Severity;
-		Confidence?: number;
-		Criticality?: number;
+		Confidence?: number | null;
+		Criticality?: number | null;
 		Title: string;
 		Description: string;
 
 		/** Details about the remediation steps for a finding. */
-		Remediation?: Remediation;
-		SourceUrl?: string;
-		ProductFields?: FieldMap;
-		UserDefinedFields?: FieldMap;
-		Malware?: Array<Malware>;
+		Remediation?: Remediation | null;
+		SourceUrl?: string | null;
+		ProductFields?: FieldMap | null;
+		UserDefinedFields?: FieldMap | null;
+		Malware?: Array<Malware> | null;
 
 		/** The details of network-related information about a finding. */
-		Network?: Network;
+		Network?: Network | null;
 
 		/** The details of process-related information about a finding. */
-		Process?: ProcessDetails;
-		ThreatIntelIndicators?: Array<ThreatIntelIndicator>;
+		Process?: ProcessDetails | null;
+		ThreatIntelIndicators?: Array<ThreatIntelIndicator> | null;
 		Resources: Array<Resource>;
 
 		/** Contains finding details that are specific to control-based findings. Only returned for findings generated from controls. */
-		Compliance?: Compliance;
-		VerificationState?: AwsSecurityFindingVerificationState;
+		Compliance?: Compliance | null;
+		VerificationState?: AwsSecurityFindingVerificationState | null;
 
 		/** This field is deprecated, use Workflow.Status instead. */
-		WorkflowState?: AwsSecurityFindingWorkflowState;
+		WorkflowState?: AwsSecurityFindingWorkflowState | null;
 
 		/** Provides information about the status of the investigation into a finding. */
-		Workflow?: Workflow;
-		RecordState?: AwsSecurityFindingRecordState;
-		RelatedFindings?: Array<RelatedFinding>;
+		Workflow?: Workflow | null;
+		RecordState?: AwsSecurityFindingRecordState | null;
+		RelatedFindings?: Array<RelatedFinding> | null;
 
 		/** A user-defined note added to a finding. */
-		Note?: Note;
+		Note?: Note | null;
 	}
 
 
 	/** The severity of the finding. */
 	export interface Severity {
-		Product?: number;
-		Label?: SeverityLabel;
-		Normalized?: number;
-		Original?: string;
+		Product?: number | null;
+		Label?: SeverityLabel | null;
+		Normalized?: number | null;
+		Original?: string | null;
 	}
 
 	export enum SeverityLabel { INFORMATIONAL = 0, LOW = 1, MEDIUM = 2, HIGH = 3, CRITICAL = 4 }
@@ -134,14 +134,14 @@ export namespace MyNS {
 	export interface Remediation {
 
 		/** A recommendation on how to remediate the issue identified in a finding. */
-		Recommendation?: Recommendation;
+		Recommendation?: Recommendation | null;
 	}
 
 
 	/** A recommendation on how to remediate the issue identified in a finding. */
 	export interface Recommendation {
-		Text?: string;
-		Url?: string;
+		Text?: string | null;
+		Url?: string | null;
 	}
 
 	export interface FieldMap {
@@ -151,9 +151,9 @@ export namespace MyNS {
 	/** A list of malware related to a finding. */
 	export interface Malware {
 		Name: string;
-		Type?: MalwareType;
-		Path?: string;
-		State?: MalwareState;
+		Type?: MalwareType | null;
+		Path?: string | null;
+		State?: MalwareState | null;
 	}
 
 	export enum MalwareType { ADWARE = 0, BLENDED_THREAT = 1, BOTNET_AGENT = 2, COIN_MINER = 3, EXPLOIT_KIT = 4, KEYLOGGER = 5, MACRO = 6, POTENTIALLY_UNWANTED = 7, SPYWARE = 8, RANSOMWARE = 9, REMOTE_ACCESS = 10, ROOTKIT = 11, TROJAN = 12, VIRUS = 13, WORM = 14 }
@@ -163,17 +163,17 @@ export namespace MyNS {
 
 	/** The details of network-related information about a finding. */
 	export interface Network {
-		Direction?: NetworkDirection;
-		Protocol?: string;
-		SourceIpV4?: string;
-		SourceIpV6?: string;
-		SourcePort?: number;
-		SourceDomain?: string;
-		SourceMac?: string;
-		DestinationIpV4?: string;
-		DestinationIpV6?: string;
-		DestinationPort?: number;
-		DestinationDomain?: string;
+		Direction?: NetworkDirection | null;
+		Protocol?: string | null;
+		SourceIpV4?: string | null;
+		SourceIpV6?: string | null;
+		SourcePort?: number | null;
+		SourceDomain?: string | null;
+		SourceMac?: string | null;
+		DestinationIpV4?: string | null;
+		DestinationIpV6?: string | null;
+		DestinationPort?: number | null;
+		DestinationDomain?: string | null;
 	}
 
 	export enum NetworkDirection { IN = 0, OUT = 1 }
@@ -181,23 +181,23 @@ export namespace MyNS {
 
 	/** The details of process-related information about a finding. */
 	export interface ProcessDetails {
-		Name?: string;
-		Path?: string;
-		Pid?: number;
-		ParentPid?: number;
-		LaunchedAt?: string;
-		TerminatedAt?: string;
+		Name?: string | null;
+		Path?: string | null;
+		Pid?: number | null;
+		ParentPid?: number | null;
+		LaunchedAt?: string | null;
+		TerminatedAt?: string | null;
 	}
 
 
 	/** Details about the threat intelligence related to a finding. */
 	export interface ThreatIntelIndicator {
-		Type?: ThreatIntelIndicatorType;
-		Value?: string;
-		Category?: ThreatIntelIndicatorCategory;
-		LastObservedAt?: string;
-		Source?: string;
-		SourceUrl?: string;
+		Type?: ThreatIntelIndicatorType | null;
+		Value?: string | null;
+		Category?: ThreatIntelIndicatorCategory | null;
+		LastObservedAt?: string | null;
+		Source?: string | null;
+		SourceUrl?: string | null;
 	}
 
 	export enum ThreatIntelIndicatorType { DOMAIN = 0, EMAIL_ADDRESS = 1, HASH_MD5 = 2, HASH_SHA1 = 3, HASH_SHA256 = 4, HASH_SHA512 = 5, IPV4_ADDRESS = 6, IPV6_ADDRESS = 7, MUTEX = 8, PROCESS = 9, URL = 10 }
@@ -209,12 +209,12 @@ export namespace MyNS {
 	export interface Resource {
 		Type: string;
 		Id: string;
-		Partition?: ResourcePartition;
-		Region?: string;
-		Tags?: FieldMap;
+		Partition?: ResourcePartition | null;
+		Region?: string | null;
+		Tags?: FieldMap | null;
 
 		/** <p>Additional details about a resource related to a finding.</p> <p>To provide the details, use the object that corresponds to the resource type. For example, if the resource type is <code>AwsEc2Instance</code>, then you use the <code>AwsEc2Instance</code> object to provide the details.</p> <p>If the type-specific object does not contain all of the fields you want to populate, then you use the <code>Other</code> object to populate those additional fields.</p> <p>You also use the <code>Other</code> object to populate the details when the selected type does not have a corresponding object.</p> */
-		Details?: ResourceDetails;
+		Details?: ResourceDetails | null;
 	}
 
 	export enum ResourcePartition { aws = 0, aws_cn = 1, aws_us_gov = 2 }
@@ -224,167 +224,167 @@ export namespace MyNS {
 	export interface ResourceDetails {
 
 		/** Information about an AWS CodeBuild project. */
-		AwsCodeBuildProject?: AwsCodeBuildProjectDetails;
+		AwsCodeBuildProject?: AwsCodeBuildProjectDetails | null;
 
 		/** A distribution configuration. */
-		AwsCloudFrontDistribution?: AwsCloudFrontDistributionDetails;
+		AwsCloudFrontDistribution?: AwsCloudFrontDistributionDetails | null;
 
 		/** The details of an Amazon EC2 instance. */
-		AwsEc2Instance?: AwsEc2InstanceDetails;
+		AwsEc2Instance?: AwsEc2InstanceDetails | null;
 
 		/** Details about the network interface */
-		AwsEc2NetworkInterface?: AwsEc2NetworkInterfaceDetails;
+		AwsEc2NetworkInterface?: AwsEc2NetworkInterfaceDetails | null;
 
 		/** Details about an EC2 security group. */
-		AwsEc2SecurityGroup?: AwsEc2SecurityGroupDetails;
+		AwsEc2SecurityGroup?: AwsEc2SecurityGroupDetails | null;
 
 		/** Information about a load balancer. */
-		AwsElbv2LoadBalancer?: AwsElbv2LoadBalancerDetails;
+		AwsElbv2LoadBalancer?: AwsElbv2LoadBalancerDetails | null;
 
 		/** Information about an Elasticsearch domain. */
-		AwsElasticsearchDomain?: AwsElasticsearchDomainDetails;
+		AwsElasticsearchDomain?: AwsElasticsearchDomainDetails | null;
 
 		/** The details of an Amazon S3 bucket. */
-		AwsS3Bucket?: AwsS3BucketDetails;
+		AwsS3Bucket?: AwsS3BucketDetails | null;
 
 		/** Details about an Amazon S3 object. */
-		AwsS3Object?: AwsS3ObjectDetails;
+		AwsS3Object?: AwsS3ObjectDetails | null;
 
 		/** IAM access key details related to a finding. */
-		AwsIamAccessKey?: AwsIamAccessKeyDetails;
+		AwsIamAccessKey?: AwsIamAccessKeyDetails | null;
 
 		/** Contains information about an IAM role, including all of the role's policies. */
-		AwsIamRole?: AwsIamRoleDetails;
+		AwsIamRole?: AwsIamRoleDetails | null;
 
 		/** Contains metadata about a customer master key (CMK). */
-		AwsKmsKey?: AwsKmsKeyDetails;
+		AwsKmsKey?: AwsKmsKeyDetails | null;
 
 		/** Details about a function's configuration. */
-		AwsLambdaFunction?: AwsLambdaFunctionDetails;
+		AwsLambdaFunction?: AwsLambdaFunctionDetails | null;
 
 		/** Details about a Lambda layer version. */
-		AwsLambdaLayerVersion?: AwsLambdaLayerVersionDetails;
+		AwsLambdaLayerVersion?: AwsLambdaLayerVersionDetails | null;
 
 		/** Contains the details of an Amazon RDS DB instance. */
-		AwsRdsDbInstance?: AwsRdsDbInstanceDetails;
+		AwsRdsDbInstance?: AwsRdsDbInstanceDetails | null;
 
 		/** A wrapper type for the topic's Amazon Resource Name (ARN). */
-		AwsSnsTopic?: AwsSnsTopicDetails;
+		AwsSnsTopic?: AwsSnsTopicDetails | null;
 
 		/** Data about a queue. */
-		AwsSqsQueue?: AwsSqsQueueDetails;
+		AwsSqsQueue?: AwsSqsQueueDetails | null;
 
 		/** Details about a WAF WebACL. */
-		AwsWafWebAcl?: AwsWafWebAclDetails;
+		AwsWafWebAcl?: AwsWafWebAclDetails | null;
 
 		/** Container details related to a finding. */
-		Container?: ContainerDetails;
-		Other?: FieldMap;
+		Container?: ContainerDetails | null;
+		Other?: FieldMap | null;
 	}
 
 
 	/** Information about an AWS CodeBuild project. */
 	export interface AwsCodeBuildProjectDetails {
-		EncryptionKey?: string;
+		EncryptionKey?: string | null;
 
 		/** Information about the build environment for this build project. */
-		Environment?: AwsCodeBuildProjectEnvironment;
-		Name?: string;
+		Environment?: AwsCodeBuildProjectEnvironment | null;
+		Name?: string | null;
 
 		/** Information about the build input source code for this build project. */
-		Source?: AwsCodeBuildProjectSource;
-		ServiceRole?: string;
+		Source?: AwsCodeBuildProjectSource | null;
+		ServiceRole?: string | null;
 
 		/** Information about the VPC configuration that AWS CodeBuild accesses. */
-		VpcConfig?: AwsCodeBuildProjectVpcConfig;
+		VpcConfig?: AwsCodeBuildProjectVpcConfig | null;
 	}
 
 
 	/** Information about the build environment for this build project. */
 	export interface AwsCodeBuildProjectEnvironment {
-		Certificate?: string;
-		ImagePullCredentialsType?: string;
+		Certificate?: string | null;
+		ImagePullCredentialsType?: string | null;
 
 		/** The credentials for access to a private registry. */
-		RegistryCredential?: AwsCodeBuildProjectEnvironmentRegistryCredential;
-		Type?: string;
+		RegistryCredential?: AwsCodeBuildProjectEnvironmentRegistryCredential | null;
+		Type?: string | null;
 	}
 
 
 	/** The credentials for access to a private registry. */
 	export interface AwsCodeBuildProjectEnvironmentRegistryCredential {
-		Credential?: string;
-		CredentialProvider?: string;
+		Credential?: string | null;
+		CredentialProvider?: string | null;
 	}
 
 
 	/** Information about the build input source code for this build project. */
 	export interface AwsCodeBuildProjectSource {
-		Type?: string;
-		Location?: string;
-		GitCloneDepth?: number;
-		InsecureSsl?: boolean;
+		Type?: string | null;
+		Location?: string | null;
+		GitCloneDepth?: number | null;
+		InsecureSsl?: boolean | null;
 	}
 
 
 	/** Information about the VPC configuration that AWS CodeBuild accesses. */
 	export interface AwsCodeBuildProjectVpcConfig {
-		VpcId?: string;
-		Subnets?: Array<string>;
-		SecurityGroupIds?: Array<string>;
+		VpcId?: string | null;
+		Subnets?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
 	}
 
 
 	/** A distribution configuration. */
 	export interface AwsCloudFrontDistributionDetails {
-		DomainName?: string;
-		ETag?: string;
-		LastModifiedTime?: string;
+		DomainName?: string | null;
+		ETag?: string | null;
+		LastModifiedTime?: string | null;
 
 		/** A complex type that controls whether access logs are written for the distribution. */
-		Logging?: AwsCloudFrontDistributionLogging;
+		Logging?: AwsCloudFrontDistributionLogging | null;
 
 		/** A complex type that contains information about origins and origin groups for this distribution. */
-		Origins?: AwsCloudFrontDistributionOrigins;
-		Status?: string;
-		WebAclId?: string;
+		Origins?: AwsCloudFrontDistributionOrigins | null;
+		Status?: string | null;
+		WebAclId?: string | null;
 	}
 
 
 	/** A complex type that controls whether access logs are written for the distribution. */
 	export interface AwsCloudFrontDistributionLogging {
-		Bucket?: string;
-		Enabled?: boolean;
-		IncludeCookies?: boolean;
-		Prefix?: string;
+		Bucket?: string | null;
+		Enabled?: boolean | null;
+		IncludeCookies?: boolean | null;
+		Prefix?: string | null;
 	}
 
 
 	/** A complex type that contains information about origins and origin groups for this distribution. */
 	export interface AwsCloudFrontDistributionOrigins {
-		Items?: Array<AwsCloudFrontDistributionOriginItem>;
+		Items?: Array<AwsCloudFrontDistributionOriginItem> | null;
 	}
 
 
 	/** A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web server), Amazon Elemental MediaStore, or other server from which CloudFront gets your files. */
 	export interface AwsCloudFrontDistributionOriginItem {
-		DomainName?: string;
-		Id?: string;
-		OriginPath?: string;
+		DomainName?: string | null;
+		Id?: string | null;
+		OriginPath?: string | null;
 	}
 
 
 	/** The details of an Amazon EC2 instance. */
 	export interface AwsEc2InstanceDetails {
-		Type?: string;
-		ImageId?: string;
-		IpV4Addresses?: Array<string>;
-		IpV6Addresses?: Array<string>;
-		KeyName?: string;
-		IamInstanceProfileArn?: string;
-		VpcId?: string;
-		SubnetId?: string;
-		LaunchedAt?: string;
+		Type?: string | null;
+		ImageId?: string | null;
+		IpV4Addresses?: Array<string> | null;
+		IpV6Addresses?: Array<string> | null;
+		KeyName?: string | null;
+		IamInstanceProfileArn?: string | null;
+		VpcId?: string | null;
+		SubnetId?: string | null;
+		LaunchedAt?: string | null;
 	}
 
 
@@ -392,181 +392,181 @@ export namespace MyNS {
 	export interface AwsEc2NetworkInterfaceDetails {
 
 		/** Information about the network interface attachment. */
-		Attachment?: AwsEc2NetworkInterfaceAttachment;
-		NetworkInterfaceId?: string;
-		SecurityGroups?: Array<AwsEc2NetworkInterfaceSecurityGroup>;
-		SourceDestCheck?: boolean;
+		Attachment?: AwsEc2NetworkInterfaceAttachment | null;
+		NetworkInterfaceId?: string | null;
+		SecurityGroups?: Array<AwsEc2NetworkInterfaceSecurityGroup> | null;
+		SourceDestCheck?: boolean | null;
 	}
 
 
 	/** Information about the network interface attachment. */
 	export interface AwsEc2NetworkInterfaceAttachment {
-		AttachTime?: string;
-		AttachmentId?: string;
-		DeleteOnTermination?: boolean;
-		DeviceIndex?: number;
-		InstanceId?: string;
-		InstanceOwnerId?: string;
-		Status?: string;
+		AttachTime?: string | null;
+		AttachmentId?: string | null;
+		DeleteOnTermination?: boolean | null;
+		DeviceIndex?: number | null;
+		InstanceId?: string | null;
+		InstanceOwnerId?: string | null;
+		Status?: string | null;
 	}
 
 
 	/** A security group associated with the network interface. */
 	export interface AwsEc2NetworkInterfaceSecurityGroup {
-		GroupName?: string;
-		GroupId?: string;
+		GroupName?: string | null;
+		GroupId?: string | null;
 	}
 
 
 	/** Details about an EC2 security group. */
 	export interface AwsEc2SecurityGroupDetails {
-		GroupName?: string;
-		GroupId?: string;
-		OwnerId?: string;
-		VpcId?: string;
-		IpPermissions?: Array<AwsEc2SecurityGroupIpPermission>;
-		IpPermissionsEgress?: Array<AwsEc2SecurityGroupIpPermission>;
+		GroupName?: string | null;
+		GroupId?: string | null;
+		OwnerId?: string | null;
+		VpcId?: string | null;
+		IpPermissions?: Array<AwsEc2SecurityGroupIpPermission> | null;
+		IpPermissionsEgress?: Array<AwsEc2SecurityGroupIpPermission> | null;
 	}
 
 
 	/** An IP permission for an EC2 security group. */
 	export interface AwsEc2SecurityGroupIpPermission {
-		IpProtocol?: string;
-		FromPort?: number;
-		ToPort?: number;
-		UserIdGroupPairs?: Array<AwsEc2SecurityGroupUserIdGroupPair>;
-		IpRanges?: Array<AwsEc2SecurityGroupIpRange>;
-		Ipv6Ranges?: Array<AwsEc2SecurityGroupIpv6Range>;
-		PrefixListIds?: Array<AwsEc2SecurityGroupPrefixListId>;
+		IpProtocol?: string | null;
+		FromPort?: number | null;
+		ToPort?: number | null;
+		UserIdGroupPairs?: Array<AwsEc2SecurityGroupUserIdGroupPair> | null;
+		IpRanges?: Array<AwsEc2SecurityGroupIpRange> | null;
+		Ipv6Ranges?: Array<AwsEc2SecurityGroupIpv6Range> | null;
+		PrefixListIds?: Array<AwsEc2SecurityGroupPrefixListId> | null;
 	}
 
 
 	/** A relationship between a security group and a user. */
 	export interface AwsEc2SecurityGroupUserIdGroupPair {
-		GroupId?: string;
-		GroupName?: string;
-		PeeringStatus?: string;
-		UserId?: string;
-		VpcId?: string;
-		VpcPeeringConnectionId?: string;
+		GroupId?: string | null;
+		GroupName?: string | null;
+		PeeringStatus?: string | null;
+		UserId?: string | null;
+		VpcId?: string | null;
+		VpcPeeringConnectionId?: string | null;
 	}
 
 
 	/** A range of IPv4 addresses. */
 	export interface AwsEc2SecurityGroupIpRange {
-		CidrIp?: string;
+		CidrIp?: string | null;
 	}
 
 
 	/** A range of IPv6 addresses. */
 	export interface AwsEc2SecurityGroupIpv6Range {
-		CidrIpv6?: string;
+		CidrIpv6?: string | null;
 	}
 
 
 	/** A prefix list ID. */
 	export interface AwsEc2SecurityGroupPrefixListId {
-		PrefixListId?: string;
+		PrefixListId?: string | null;
 	}
 
 
 	/** Information about a load balancer. */
 	export interface AwsElbv2LoadBalancerDetails {
-		AvailabilityZones?: Array<AvailabilityZone>;
-		CanonicalHostedZoneId?: string;
-		CreatedTime?: string;
-		DNSName?: string;
-		IpAddressType?: string;
-		Scheme?: string;
-		SecurityGroups?: Array<string>;
+		AvailabilityZones?: Array<AvailabilityZone> | null;
+		CanonicalHostedZoneId?: string | null;
+		CreatedTime?: string | null;
+		DNSName?: string | null;
+		IpAddressType?: string | null;
+		Scheme?: string | null;
+		SecurityGroups?: Array<string> | null;
 
 		/** Information about the state of the load balancer. */
-		State?: LoadBalancerState;
-		Type?: string;
-		VpcId?: string;
+		State?: LoadBalancerState | null;
+		Type?: string | null;
+		VpcId?: string | null;
 	}
 
 
 	/** Information about an Availability Zone. */
 	export interface AvailabilityZone {
-		ZoneName?: string;
-		SubnetId?: string;
+		ZoneName?: string | null;
+		SubnetId?: string | null;
 	}
 
 
 	/** Information about the state of the load balancer. */
 	export interface LoadBalancerState {
-		Code?: string;
-		Reason?: string;
+		Code?: string | null;
+		Reason?: string | null;
 	}
 
 
 	/** Information about an Elasticsearch domain. */
 	export interface AwsElasticsearchDomainDetails {
-		AccessPolicies?: string;
+		AccessPolicies?: string | null;
 
 		/** Additional options for the domain endpoint, such as whether to require HTTPS for all traffic. */
-		DomainEndpointOptions?: AwsElasticsearchDomainDomainEndpointOptions;
-		DomainId?: string;
-		DomainName?: string;
-		Endpoint?: string;
-		Endpoints?: FieldMap;
-		ElasticsearchVersion?: string;
+		DomainEndpointOptions?: AwsElasticsearchDomainDomainEndpointOptions | null;
+		DomainId?: string | null;
+		DomainName?: string | null;
+		Endpoint?: string | null;
+		Endpoints?: FieldMap | null;
+		ElasticsearchVersion?: string | null;
 
 		/** Details about the configuration for encryption at rest. */
-		EncryptionAtRestOptions?: AwsElasticsearchDomainEncryptionAtRestOptions;
+		EncryptionAtRestOptions?: AwsElasticsearchDomainEncryptionAtRestOptions | null;
 
 		/** Details about the configuration for node-to-node encryption. */
-		NodeToNodeEncryptionOptions?: AwsElasticsearchDomainNodeToNodeEncryptionOptions;
+		NodeToNodeEncryptionOptions?: AwsElasticsearchDomainNodeToNodeEncryptionOptions | null;
 
 		/** Information that Amazon ES derives based on <code>VPCOptions</code> for the domain. */
-		VPCOptions?: AwsElasticsearchDomainVPCOptions;
+		VPCOptions?: AwsElasticsearchDomainVPCOptions | null;
 	}
 
 
 	/** Additional options for the domain endpoint, such as whether to require HTTPS for all traffic. */
 	export interface AwsElasticsearchDomainDomainEndpointOptions {
-		EnforceHTTPS?: boolean;
-		TLSSecurityPolicy?: string;
+		EnforceHTTPS?: boolean | null;
+		TLSSecurityPolicy?: string | null;
 	}
 
 
 	/** Details about the configuration for encryption at rest. */
 	export interface AwsElasticsearchDomainEncryptionAtRestOptions {
-		Enabled?: boolean;
-		KmsKeyId?: string;
+		Enabled?: boolean | null;
+		KmsKeyId?: string | null;
 	}
 
 
 	/** Details about the configuration for node-to-node encryption. */
 	export interface AwsElasticsearchDomainNodeToNodeEncryptionOptions {
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 	}
 
 
 	/** Information that Amazon ES derives based on <code>VPCOptions</code> for the domain. */
 	export interface AwsElasticsearchDomainVPCOptions {
-		AvailabilityZones?: Array<string>;
-		SecurityGroupIds?: Array<string>;
-		SubnetIds?: Array<string>;
-		VPCId?: string;
+		AvailabilityZones?: Array<string> | null;
+		SecurityGroupIds?: Array<string> | null;
+		SubnetIds?: Array<string> | null;
+		VPCId?: string | null;
 	}
 
 
 	/** The details of an Amazon S3 bucket. */
 	export interface AwsS3BucketDetails {
-		OwnerId?: string;
-		OwnerName?: string;
-		CreatedAt?: string;
+		OwnerId?: string | null;
+		OwnerName?: string | null;
+		CreatedAt?: string | null;
 
 		/** The encryption configuration for the S3 bucket. */
-		ServerSideEncryptionConfiguration?: AwsS3BucketServerSideEncryptionConfiguration;
+		ServerSideEncryptionConfiguration?: AwsS3BucketServerSideEncryptionConfiguration | null;
 	}
 
 
 	/** The encryption configuration for the S3 bucket. */
 	export interface AwsS3BucketServerSideEncryptionConfiguration {
-		Rules?: Array<AwsS3BucketServerSideEncryptionRule>;
+		Rules?: Array<AwsS3BucketServerSideEncryptionRule> | null;
 	}
 
 
@@ -574,36 +574,36 @@ export namespace MyNS {
 	export interface AwsS3BucketServerSideEncryptionRule {
 
 		/** Specifies the default server-side encryption to apply to new objects in the bucket. */
-		ApplyServerSideEncryptionByDefault?: AwsS3BucketServerSideEncryptionByDefault;
+		ApplyServerSideEncryptionByDefault?: AwsS3BucketServerSideEncryptionByDefault | null;
 	}
 
 
 	/** Specifies the default server-side encryption to apply to new objects in the bucket. */
 	export interface AwsS3BucketServerSideEncryptionByDefault {
-		SSEAlgorithm?: string;
-		KMSMasterKeyID?: string;
+		SSEAlgorithm?: string | null;
+		KMSMasterKeyID?: string | null;
 	}
 
 
 	/** Details about an Amazon S3 object. */
 	export interface AwsS3ObjectDetails {
-		LastModified?: string;
-		ETag?: string;
-		VersionId?: string;
-		ContentType?: string;
-		ServerSideEncryption?: string;
-		SSEKMSKeyId?: string;
+		LastModified?: string | null;
+		ETag?: string | null;
+		VersionId?: string | null;
+		ContentType?: string | null;
+		ServerSideEncryption?: string | null;
+		SSEKMSKeyId?: string | null;
 	}
 
 
 	/** IAM access key details related to a finding. */
 	export interface AwsIamAccessKeyDetails {
-		UserName?: string;
-		Status?: AwsIamAccessKeyDetailsStatus;
-		CreatedAt?: string;
-		PrincipalId?: string;
-		PrincipalType?: string;
-		PrincipalName?: string;
+		UserName?: string | null;
+		Status?: AwsIamAccessKeyDetailsStatus | null;
+		CreatedAt?: string | null;
+		PrincipalId?: string | null;
+		PrincipalType?: string | null;
+		PrincipalName?: string | null;
 	}
 
 	export enum AwsIamAccessKeyDetailsStatus { Active = 0, Inactive = 1 }
@@ -611,23 +611,23 @@ export namespace MyNS {
 
 	/** Contains information about an IAM role, including all of the role's policies. */
 	export interface AwsIamRoleDetails {
-		AssumeRolePolicyDocument?: string;
-		CreateDate?: string;
-		RoleId?: string;
-		RoleName?: string;
-		MaxSessionDuration?: number;
-		Path?: string;
+		AssumeRolePolicyDocument?: string | null;
+		CreateDate?: string | null;
+		RoleId?: string | null;
+		RoleName?: string | null;
+		MaxSessionDuration?: number | null;
+		Path?: string | null;
 	}
 
 
 	/** Contains metadata about a customer master key (CMK). */
 	export interface AwsKmsKeyDetails {
-		AWSAccountId?: string;
-		CreationDate?: number;
-		KeyId?: string;
-		KeyManager?: string;
-		KeyState?: string;
-		Origin?: string;
+		AWSAccountId?: string | null;
+		CreationDate?: number | null;
+		KeyId?: string | null;
+		KeyManager?: string | null;
+		KeyState?: string | null;
+		Origin?: string | null;
 	}
 
 
@@ -635,175 +635,175 @@ export namespace MyNS {
 	export interface AwsLambdaFunctionDetails {
 
 		/** The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly. */
-		Code?: AwsLambdaFunctionCode;
-		CodeSha256?: string;
+		Code?: AwsLambdaFunctionCode | null;
+		CodeSha256?: string | null;
 
 		/** The dead-letter queue for failed asynchronous invocations. */
-		DeadLetterConfig?: AwsLambdaFunctionDeadLetterConfig;
+		DeadLetterConfig?: AwsLambdaFunctionDeadLetterConfig | null;
 
 		/** A function's environment variable settings. */
-		Environment?: AwsLambdaFunctionEnvironment;
-		FunctionName?: string;
-		Handler?: string;
-		KmsKeyArn?: string;
-		LastModified?: string;
-		Layers?: Array<AwsLambdaFunctionLayer>;
-		MasterArn?: string;
-		MemorySize?: number;
-		RevisionId?: string;
-		Role?: string;
-		Runtime?: string;
-		Timeout?: number;
+		Environment?: AwsLambdaFunctionEnvironment | null;
+		FunctionName?: string | null;
+		Handler?: string | null;
+		KmsKeyArn?: string | null;
+		LastModified?: string | null;
+		Layers?: Array<AwsLambdaFunctionLayer> | null;
+		MasterArn?: string | null;
+		MemorySize?: number | null;
+		RevisionId?: string | null;
+		Role?: string | null;
+		Runtime?: string | null;
+		Timeout?: number | null;
 
 		/** The function's AWS X-Ray tracing configuration. */
-		TracingConfig?: AwsLambdaFunctionTracingConfig;
+		TracingConfig?: AwsLambdaFunctionTracingConfig | null;
 
 		/** The VPC security groups and subnets that are attached to a Lambda function. For more information, see VPC Settings. */
-		VpcConfig?: AwsLambdaFunctionVpcConfig;
-		Version?: string;
+		VpcConfig?: AwsLambdaFunctionVpcConfig | null;
+		Version?: string | null;
 	}
 
 
 	/** The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly. */
 	export interface AwsLambdaFunctionCode {
-		S3Bucket?: string;
-		S3Key?: string;
-		S3ObjectVersion?: string;
-		ZipFile?: string;
+		S3Bucket?: string | null;
+		S3Key?: string | null;
+		S3ObjectVersion?: string | null;
+		ZipFile?: string | null;
 	}
 
 
 	/** The dead-letter queue for failed asynchronous invocations. */
 	export interface AwsLambdaFunctionDeadLetterConfig {
-		TargetArn?: string;
+		TargetArn?: string | null;
 	}
 
 
 	/** A function's environment variable settings. */
 	export interface AwsLambdaFunctionEnvironment {
-		Variables?: FieldMap;
+		Variables?: FieldMap | null;
 
 		/** Error messages for environment variables that couldn't be applied. */
-		Error?: AwsLambdaFunctionEnvironmentError;
+		Error?: AwsLambdaFunctionEnvironmentError | null;
 	}
 
 
 	/** Error messages for environment variables that couldn't be applied. */
 	export interface AwsLambdaFunctionEnvironmentError {
-		ErrorCode?: string;
-		Message?: string;
+		ErrorCode?: string | null;
+		Message?: string | null;
 	}
 
 
 	/** An AWS Lambda layer. */
 	export interface AwsLambdaFunctionLayer {
-		Arn?: string;
-		CodeSize?: number;
+		Arn?: string | null;
+		CodeSize?: number | null;
 	}
 
 
 	/** The function's AWS X-Ray tracing configuration. */
 	export interface AwsLambdaFunctionTracingConfig {
-		Mode?: string;
+		Mode?: string | null;
 	}
 
 
 	/** The VPC security groups and subnets that are attached to a Lambda function. For more information, see VPC Settings. */
 	export interface AwsLambdaFunctionVpcConfig {
-		SecurityGroupIds?: Array<string>;
-		SubnetIds?: Array<string>;
-		VpcId?: string;
+		SecurityGroupIds?: Array<string> | null;
+		SubnetIds?: Array<string> | null;
+		VpcId?: string | null;
 	}
 
 
 	/** Details about a Lambda layer version. */
 	export interface AwsLambdaLayerVersionDetails {
-		Version?: number;
-		CompatibleRuntimes?: Array<string>;
-		CreatedDate?: string;
+		Version?: number | null;
+		CompatibleRuntimes?: Array<string> | null;
+		CreatedDate?: string | null;
 	}
 
 
 	/** Contains the details of an Amazon RDS DB instance. */
 	export interface AwsRdsDbInstanceDetails {
-		AssociatedRoles?: Array<AwsRdsDbInstanceAssociatedRole>;
-		CACertificateIdentifier?: string;
-		DBClusterIdentifier?: string;
-		DBInstanceIdentifier?: string;
-		DBInstanceClass?: string;
-		DbInstancePort?: number;
-		DbiResourceId?: string;
-		DBName?: string;
-		DeletionProtection?: boolean;
+		AssociatedRoles?: Array<AwsRdsDbInstanceAssociatedRole> | null;
+		CACertificateIdentifier?: string | null;
+		DBClusterIdentifier?: string | null;
+		DBInstanceIdentifier?: string | null;
+		DBInstanceClass?: string | null;
+		DbInstancePort?: number | null;
+		DbiResourceId?: string | null;
+		DBName?: string | null;
+		DeletionProtection?: boolean | null;
 
 		/** Specifies the connection endpoint. */
-		Endpoint?: AwsRdsDbInstanceEndpoint;
-		Engine?: string;
-		EngineVersion?: string;
-		IAMDatabaseAuthenticationEnabled?: boolean;
-		InstanceCreateTime?: string;
-		KmsKeyId?: string;
-		PubliclyAccessible?: boolean;
-		StorageEncrypted?: boolean;
-		TdeCredentialArn?: string;
-		VpcSecurityGroups?: Array<AwsRdsDbInstanceVpcSecurityGroup>;
+		Endpoint?: AwsRdsDbInstanceEndpoint | null;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		IAMDatabaseAuthenticationEnabled?: boolean | null;
+		InstanceCreateTime?: string | null;
+		KmsKeyId?: string | null;
+		PubliclyAccessible?: boolean | null;
+		StorageEncrypted?: boolean | null;
+		TdeCredentialArn?: string | null;
+		VpcSecurityGroups?: Array<AwsRdsDbInstanceVpcSecurityGroup> | null;
 	}
 
 
 	/** An AWS Identity and Access Management (IAM) role associated with the DB instance. */
 	export interface AwsRdsDbInstanceAssociatedRole {
-		RoleArn?: string;
-		FeatureName?: string;
-		Status?: string;
+		RoleArn?: string | null;
+		FeatureName?: string | null;
+		Status?: string | null;
 	}
 
 
 	/** Specifies the connection endpoint. */
 	export interface AwsRdsDbInstanceEndpoint {
-		Address?: string;
-		Port?: number;
-		HostedZoneId?: string;
+		Address?: string | null;
+		Port?: number | null;
+		HostedZoneId?: string | null;
 	}
 
 
 	/** A VPC security groups that the DB instance belongs to. */
 	export interface AwsRdsDbInstanceVpcSecurityGroup {
-		VpcSecurityGroupId?: string;
-		Status?: string;
+		VpcSecurityGroupId?: string | null;
+		Status?: string | null;
 	}
 
 
 	/** A wrapper type for the topic's Amazon Resource Name (ARN). */
 	export interface AwsSnsTopicDetails {
-		KmsMasterKeyId?: string;
-		Subscription?: Array<AwsSnsTopicSubscription>;
-		TopicName?: string;
-		Owner?: string;
+		KmsMasterKeyId?: string | null;
+		Subscription?: Array<AwsSnsTopicSubscription> | null;
+		TopicName?: string | null;
+		Owner?: string | null;
 	}
 
 
 	/** A wrapper type for the attributes of an Amazon SNS subscription. */
 	export interface AwsSnsTopicSubscription {
-		Endpoint?: string;
-		Protocol?: string;
+		Endpoint?: string | null;
+		Protocol?: string | null;
 	}
 
 
 	/** Data about a queue. */
 	export interface AwsSqsQueueDetails {
-		KmsDataKeyReusePeriodSeconds?: number;
-		KmsMasterKeyId?: string;
-		QueueName?: string;
-		DeadLetterTargetArn?: string;
+		KmsDataKeyReusePeriodSeconds?: number | null;
+		KmsMasterKeyId?: string | null;
+		QueueName?: string | null;
+		DeadLetterTargetArn?: string | null;
 	}
 
 
 	/** Details about a WAF WebACL. */
 	export interface AwsWafWebAclDetails {
-		Name?: string;
-		DefaultAction?: string;
-		Rules?: Array<AwsWafWebAclRule>;
-		WebAclId?: string;
+		Name?: string | null;
+		DefaultAction?: string | null;
+		Rules?: Array<AwsWafWebAclRule> | null;
+		WebAclId?: string | null;
 	}
 
 
@@ -811,49 +811,49 @@ export namespace MyNS {
 	export interface AwsWafWebAclRule {
 
 		/** Details about the action that CloudFront or AWS WAF takes when a web request matches the conditions in the rule. */
-		Action?: WafAction;
-		ExcludedRules?: Array<WafExcludedRule>;
+		Action?: WafAction | null;
+		ExcludedRules?: Array<WafExcludedRule> | null;
 
 		/** Details about an override action for a rule. */
-		OverrideAction?: WafOverrideAction;
-		Priority?: number;
-		RuleId?: string;
-		Type?: string;
+		OverrideAction?: WafOverrideAction | null;
+		Priority?: number | null;
+		RuleId?: string | null;
+		Type?: string | null;
 	}
 
 
 	/** Details about the action that CloudFront or AWS WAF takes when a web request matches the conditions in the rule.  */
 	export interface WafAction {
-		Type?: string;
+		Type?: string | null;
 	}
 
 
 	/** Details about a rule to exclude from a rule group. */
 	export interface WafExcludedRule {
-		RuleId?: string;
+		RuleId?: string | null;
 	}
 
 
 	/** Details about an override action for a rule. */
 	export interface WafOverrideAction {
-		Type?: string;
+		Type?: string | null;
 	}
 
 
 	/** Container details related to a finding. */
 	export interface ContainerDetails {
-		Name?: string;
-		ImageId?: string;
-		ImageName?: string;
-		LaunchedAt?: string;
+		Name?: string | null;
+		ImageId?: string | null;
+		ImageName?: string | null;
+		LaunchedAt?: string | null;
 	}
 
 
 	/** Contains finding details that are specific to control-based findings. Only returned for findings generated from controls. */
 	export interface Compliance {
-		Status?: ComplianceStatus;
-		RelatedRequirements?: Array<string>;
-		StatusReasons?: Array<StatusReason>;
+		Status?: ComplianceStatus | null;
+		RelatedRequirements?: Array<string> | null;
+		StatusReasons?: Array<StatusReason> | null;
 	}
 
 	export enum ComplianceStatus { PASSED = 0, WARNING = 1, FAILED = 2, NOT_AVAILABLE = 3 }
@@ -862,7 +862,7 @@ export namespace MyNS {
 	/** Provides additional context for the value of <code>Compliance.Status</code>. */
 	export interface StatusReason {
 		ReasonCode: string;
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export enum AwsSecurityFindingVerificationState { UNKNOWN = 0, TRUE_POSITIVE = 1, FALSE_POSITIVE = 2, BENIGN_POSITIVE = 3 }
@@ -872,7 +872,7 @@ export namespace MyNS {
 
 	/** Provides information about the status of the investigation into a finding. */
 	export interface Workflow {
-		Status?: WorkflowStatus;
+		Status?: WorkflowStatus | null;
 	}
 
 	export enum WorkflowStatus { NEW = 0, NOTIFIED = 1, RESOLVED = 2, SUPPRESSED = 3 }
@@ -933,8 +933,8 @@ export namespace MyNS {
 
 	/** A string filter for querying findings. */
 	export interface StringFilter {
-		Value?: string;
-		Comparison?: StringFilterComparison;
+		Value?: string | null;
+		Comparison?: StringFilterComparison | null;
 	}
 
 	export enum StringFilterComparison { EQUALS = 0, PREFIX = 1 }
@@ -942,18 +942,18 @@ export namespace MyNS {
 
 	/** A date filter for querying findings. */
 	export interface DateFilter {
-		Start?: string;
-		End?: string;
+		Start?: string | null;
+		End?: string | null;
 
 		/** A date range for the date filter. */
-		DateRange?: DateRange;
+		DateRange?: DateRange | null;
 	}
 
 
 	/** A date range for the date filter. */
 	export interface DateRange {
-		Value?: number;
-		Unit?: DateRangeUnit;
+		Value?: number | null;
+		Unit?: DateRangeUnit | null;
 	}
 
 	export enum DateRangeUnit { DAYS = 0 }
@@ -961,17 +961,17 @@ export namespace MyNS {
 
 	/** A number filter for querying findings. */
 	export interface NumberFilter {
-		Gte?: number;
-		Lte?: number;
-		Eq?: number;
+		Gte?: number | null;
+		Lte?: number | null;
+		Eq?: number | null;
 	}
 
 
 	/** The map filter for querying findings. */
 	export interface MapFilter {
-		Key?: string;
-		Value?: string;
-		Comparison?: MapFilterComparison;
+		Key?: string | null;
+		Value?: string | null;
+		Comparison?: MapFilterComparison | null;
 	}
 
 	export enum MapFilterComparison { EQUALS = 0 }
@@ -979,35 +979,35 @@ export namespace MyNS {
 
 	/** The IP filter for querying findings. */
 	export interface IpFilter {
-		Cidr?: string;
+		Cidr?: string | null;
 	}
 
 
 	/** A keyword filter for querying findings. */
 	export interface KeywordFilter {
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export interface CreateMembersResponse {
-		UnprocessedAccounts?: Array<Result>;
+		UnprocessedAccounts?: Array<Result> | null;
 	}
 
 
 	/** Details about the account that was not processed. */
 	export interface Result {
-		AccountId?: string;
-		ProcessingResult?: string;
+		AccountId?: string | null;
+		ProcessingResult?: string | null;
 	}
 
 
 	/** The details of an AWS account. */
 	export interface AccountDetails {
-		AccountId?: string;
-		Email?: string;
+		AccountId?: string | null;
+		Email?: string | null;
 	}
 
 	export interface DeclineInvitationsResponse {
-		UnprocessedAccounts?: Array<Result>;
+		UnprocessedAccounts?: Array<Result> | null;
 	}
 
 	export interface DeleteActionTargetResponse {
@@ -1019,16 +1019,16 @@ export namespace MyNS {
 	}
 
 	export interface DeleteInvitationsResponse {
-		UnprocessedAccounts?: Array<Result>;
+		UnprocessedAccounts?: Array<Result> | null;
 	}
 
 	export interface DeleteMembersResponse {
-		UnprocessedAccounts?: Array<Result>;
+		UnprocessedAccounts?: Array<Result> | null;
 	}
 
 	export interface DescribeActionTargetsResponse {
 		ActionTargets: Array<ActionTarget>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -1040,63 +1040,63 @@ export namespace MyNS {
 	}
 
 	export interface DescribeHubResponse {
-		HubArn?: string;
-		SubscribedAt?: string;
+		HubArn?: string | null;
+		SubscribedAt?: string | null;
 	}
 
 	export interface DescribeProductsResponse {
 		Products: Array<Product>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains details about a product. */
 	export interface Product {
 		ProductArn: string;
-		ProductName?: string;
-		CompanyName?: string;
-		Description?: string;
-		Categories?: Array<string>;
-		IntegrationTypes?: Array<IntegrationType>;
-		MarketplaceUrl?: string;
-		ActivationUrl?: string;
-		ProductSubscriptionResourcePolicy?: string;
+		ProductName?: string | null;
+		CompanyName?: string | null;
+		Description?: string | null;
+		Categories?: Array<string> | null;
+		IntegrationTypes?: Array<IntegrationType> | null;
+		MarketplaceUrl?: string | null;
+		ActivationUrl?: string | null;
+		ProductSubscriptionResourcePolicy?: string | null;
 	}
 
 	export enum IntegrationType { SEND_FINDINGS_TO_SECURITY_HUB = 0, RECEIVE_FINDINGS_FROM_SECURITY_HUB = 1 }
 
 	export interface DescribeStandardsResponse {
-		Standards?: Array<Standard>;
-		NextToken?: string;
+		Standards?: Array<Standard> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Provides information about a specific standard. */
 	export interface Standard {
-		StandardsArn?: string;
-		Name?: string;
-		Description?: string;
-		EnabledByDefault?: boolean;
+		StandardsArn?: string | null;
+		Name?: string | null;
+		Description?: string | null;
+		EnabledByDefault?: boolean | null;
 	}
 
 	export interface DescribeStandardsControlsResponse {
-		Controls?: Array<StandardsControl>;
-		NextToken?: string;
+		Controls?: Array<StandardsControl> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Details for an individual security standard control. */
 	export interface StandardsControl {
-		StandardsControlArn?: string;
-		ControlStatus?: StandardsControlControlStatus;
-		DisabledReason?: string;
-		ControlStatusUpdatedAt?: Date;
-		ControlId?: string;
-		Title?: string;
-		Description?: string;
-		RemediationUrl?: string;
-		SeverityRating?: StandardsControlSeverityRating;
-		RelatedRequirements?: Array<string>;
+		StandardsControlArn?: string | null;
+		ControlStatus?: StandardsControlControlStatus | null;
+		DisabledReason?: string | null;
+		ControlStatusUpdatedAt?: Date | null;
+		ControlId?: string | null;
+		Title?: string | null;
+		Description?: string | null;
+		RemediationUrl?: string | null;
+		SeverityRating?: StandardsControlSeverityRating | null;
+		RelatedRequirements?: Array<string> | null;
 	}
 
 	export enum StandardsControlControlStatus { ENABLED = 0, DISABLED = 1 }
@@ -1116,7 +1116,7 @@ export namespace MyNS {
 	}
 
 	export interface EnableImportFindingsForProductResponse {
-		ProductSubscriptionArn?: string;
+		ProductSubscriptionArn?: string | null;
 	}
 
 	export interface EnableSecurityHubResponse {
@@ -1126,20 +1126,20 @@ export namespace MyNS {
 	}
 
 	export interface GetEnabledStandardsResponse {
-		StandardsSubscriptions?: Array<StandardsSubscription>;
-		NextToken?: string;
+		StandardsSubscriptions?: Array<StandardsSubscription> | null;
+		NextToken?: string | null;
 	}
 
 	export interface GetFindingsResponse {
 		Findings: Array<AwsSecurityFinding>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** A collection of finding attributes used to sort findings. */
 	export interface SortCriterion {
-		Field?: string;
-		SortOrder?: SortCriterionSortOrder;
+		Field?: string | null;
+		SortOrder?: SortCriterionSortOrder | null;
 	}
 
 	export enum SortCriterionSortOrder { asc = 0, desc = 1 }
@@ -1170,7 +1170,7 @@ export namespace MyNS {
 
 	export interface GetInsightsResponse {
 		Insights: Array<Insight>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -1190,148 +1190,148 @@ export namespace MyNS {
 
 	/** A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight. */
 	export interface AwsSecurityFindingFilters {
-		ProductArn?: Array<StringFilter>;
-		AwsAccountId?: Array<StringFilter>;
-		Id?: Array<StringFilter>;
-		GeneratorId?: Array<StringFilter>;
-		Type?: Array<StringFilter>;
-		FirstObservedAt?: Array<DateFilter>;
-		LastObservedAt?: Array<DateFilter>;
-		CreatedAt?: Array<DateFilter>;
-		UpdatedAt?: Array<DateFilter>;
-		SeverityProduct?: Array<NumberFilter>;
-		SeverityNormalized?: Array<NumberFilter>;
-		SeverityLabel?: Array<StringFilter>;
-		Confidence?: Array<NumberFilter>;
-		Criticality?: Array<NumberFilter>;
-		Title?: Array<StringFilter>;
-		Description?: Array<StringFilter>;
-		RecommendationText?: Array<StringFilter>;
-		SourceUrl?: Array<StringFilter>;
-		ProductFields?: Array<MapFilter>;
-		ProductName?: Array<StringFilter>;
-		CompanyName?: Array<StringFilter>;
-		UserDefinedFields?: Array<MapFilter>;
-		MalwareName?: Array<StringFilter>;
-		MalwareType?: Array<StringFilter>;
-		MalwarePath?: Array<StringFilter>;
-		MalwareState?: Array<StringFilter>;
-		NetworkDirection?: Array<StringFilter>;
-		NetworkProtocol?: Array<StringFilter>;
-		NetworkSourceIpV4?: Array<IpFilter>;
-		NetworkSourceIpV6?: Array<IpFilter>;
-		NetworkSourcePort?: Array<NumberFilter>;
-		NetworkSourceDomain?: Array<StringFilter>;
-		NetworkSourceMac?: Array<StringFilter>;
-		NetworkDestinationIpV4?: Array<IpFilter>;
-		NetworkDestinationIpV6?: Array<IpFilter>;
-		NetworkDestinationPort?: Array<NumberFilter>;
-		NetworkDestinationDomain?: Array<StringFilter>;
-		ProcessName?: Array<StringFilter>;
-		ProcessPath?: Array<StringFilter>;
-		ProcessPid?: Array<NumberFilter>;
-		ProcessParentPid?: Array<NumberFilter>;
-		ProcessLaunchedAt?: Array<DateFilter>;
-		ProcessTerminatedAt?: Array<DateFilter>;
-		ThreatIntelIndicatorType?: Array<StringFilter>;
-		ThreatIntelIndicatorValue?: Array<StringFilter>;
-		ThreatIntelIndicatorCategory?: Array<StringFilter>;
-		ThreatIntelIndicatorLastObservedAt?: Array<DateFilter>;
-		ThreatIntelIndicatorSource?: Array<StringFilter>;
-		ThreatIntelIndicatorSourceUrl?: Array<StringFilter>;
-		ResourceType?: Array<StringFilter>;
-		ResourceId?: Array<StringFilter>;
-		ResourcePartition?: Array<StringFilter>;
-		ResourceRegion?: Array<StringFilter>;
-		ResourceTags?: Array<MapFilter>;
-		ResourceAwsEc2InstanceType?: Array<StringFilter>;
-		ResourceAwsEc2InstanceImageId?: Array<StringFilter>;
-		ResourceAwsEc2InstanceIpV4Addresses?: Array<IpFilter>;
-		ResourceAwsEc2InstanceIpV6Addresses?: Array<IpFilter>;
-		ResourceAwsEc2InstanceKeyName?: Array<StringFilter>;
-		ResourceAwsEc2InstanceIamInstanceProfileArn?: Array<StringFilter>;
-		ResourceAwsEc2InstanceVpcId?: Array<StringFilter>;
-		ResourceAwsEc2InstanceSubnetId?: Array<StringFilter>;
-		ResourceAwsEc2InstanceLaunchedAt?: Array<DateFilter>;
-		ResourceAwsS3BucketOwnerId?: Array<StringFilter>;
-		ResourceAwsS3BucketOwnerName?: Array<StringFilter>;
-		ResourceAwsIamAccessKeyUserName?: Array<StringFilter>;
-		ResourceAwsIamAccessKeyStatus?: Array<StringFilter>;
-		ResourceAwsIamAccessKeyCreatedAt?: Array<DateFilter>;
-		ResourceContainerName?: Array<StringFilter>;
-		ResourceContainerImageId?: Array<StringFilter>;
-		ResourceContainerImageName?: Array<StringFilter>;
-		ResourceContainerLaunchedAt?: Array<DateFilter>;
-		ResourceDetailsOther?: Array<MapFilter>;
-		ComplianceStatus?: Array<StringFilter>;
-		VerificationState?: Array<StringFilter>;
-		WorkflowState?: Array<StringFilter>;
-		WorkflowStatus?: Array<StringFilter>;
-		RecordState?: Array<StringFilter>;
-		RelatedFindingsProductArn?: Array<StringFilter>;
-		RelatedFindingsId?: Array<StringFilter>;
-		NoteText?: Array<StringFilter>;
-		NoteUpdatedAt?: Array<DateFilter>;
-		NoteUpdatedBy?: Array<StringFilter>;
-		Keyword?: Array<KeywordFilter>;
+		ProductArn?: Array<StringFilter> | null;
+		AwsAccountId?: Array<StringFilter> | null;
+		Id?: Array<StringFilter> | null;
+		GeneratorId?: Array<StringFilter> | null;
+		Type?: Array<StringFilter> | null;
+		FirstObservedAt?: Array<DateFilter> | null;
+		LastObservedAt?: Array<DateFilter> | null;
+		CreatedAt?: Array<DateFilter> | null;
+		UpdatedAt?: Array<DateFilter> | null;
+		SeverityProduct?: Array<NumberFilter> | null;
+		SeverityNormalized?: Array<NumberFilter> | null;
+		SeverityLabel?: Array<StringFilter> | null;
+		Confidence?: Array<NumberFilter> | null;
+		Criticality?: Array<NumberFilter> | null;
+		Title?: Array<StringFilter> | null;
+		Description?: Array<StringFilter> | null;
+		RecommendationText?: Array<StringFilter> | null;
+		SourceUrl?: Array<StringFilter> | null;
+		ProductFields?: Array<MapFilter> | null;
+		ProductName?: Array<StringFilter> | null;
+		CompanyName?: Array<StringFilter> | null;
+		UserDefinedFields?: Array<MapFilter> | null;
+		MalwareName?: Array<StringFilter> | null;
+		MalwareType?: Array<StringFilter> | null;
+		MalwarePath?: Array<StringFilter> | null;
+		MalwareState?: Array<StringFilter> | null;
+		NetworkDirection?: Array<StringFilter> | null;
+		NetworkProtocol?: Array<StringFilter> | null;
+		NetworkSourceIpV4?: Array<IpFilter> | null;
+		NetworkSourceIpV6?: Array<IpFilter> | null;
+		NetworkSourcePort?: Array<NumberFilter> | null;
+		NetworkSourceDomain?: Array<StringFilter> | null;
+		NetworkSourceMac?: Array<StringFilter> | null;
+		NetworkDestinationIpV4?: Array<IpFilter> | null;
+		NetworkDestinationIpV6?: Array<IpFilter> | null;
+		NetworkDestinationPort?: Array<NumberFilter> | null;
+		NetworkDestinationDomain?: Array<StringFilter> | null;
+		ProcessName?: Array<StringFilter> | null;
+		ProcessPath?: Array<StringFilter> | null;
+		ProcessPid?: Array<NumberFilter> | null;
+		ProcessParentPid?: Array<NumberFilter> | null;
+		ProcessLaunchedAt?: Array<DateFilter> | null;
+		ProcessTerminatedAt?: Array<DateFilter> | null;
+		ThreatIntelIndicatorType?: Array<StringFilter> | null;
+		ThreatIntelIndicatorValue?: Array<StringFilter> | null;
+		ThreatIntelIndicatorCategory?: Array<StringFilter> | null;
+		ThreatIntelIndicatorLastObservedAt?: Array<DateFilter> | null;
+		ThreatIntelIndicatorSource?: Array<StringFilter> | null;
+		ThreatIntelIndicatorSourceUrl?: Array<StringFilter> | null;
+		ResourceType?: Array<StringFilter> | null;
+		ResourceId?: Array<StringFilter> | null;
+		ResourcePartition?: Array<StringFilter> | null;
+		ResourceRegion?: Array<StringFilter> | null;
+		ResourceTags?: Array<MapFilter> | null;
+		ResourceAwsEc2InstanceType?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceImageId?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceIpV4Addresses?: Array<IpFilter> | null;
+		ResourceAwsEc2InstanceIpV6Addresses?: Array<IpFilter> | null;
+		ResourceAwsEc2InstanceKeyName?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceIamInstanceProfileArn?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceVpcId?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceSubnetId?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceLaunchedAt?: Array<DateFilter> | null;
+		ResourceAwsS3BucketOwnerId?: Array<StringFilter> | null;
+		ResourceAwsS3BucketOwnerName?: Array<StringFilter> | null;
+		ResourceAwsIamAccessKeyUserName?: Array<StringFilter> | null;
+		ResourceAwsIamAccessKeyStatus?: Array<StringFilter> | null;
+		ResourceAwsIamAccessKeyCreatedAt?: Array<DateFilter> | null;
+		ResourceContainerName?: Array<StringFilter> | null;
+		ResourceContainerImageId?: Array<StringFilter> | null;
+		ResourceContainerImageName?: Array<StringFilter> | null;
+		ResourceContainerLaunchedAt?: Array<DateFilter> | null;
+		ResourceDetailsOther?: Array<MapFilter> | null;
+		ComplianceStatus?: Array<StringFilter> | null;
+		VerificationState?: Array<StringFilter> | null;
+		WorkflowState?: Array<StringFilter> | null;
+		WorkflowStatus?: Array<StringFilter> | null;
+		RecordState?: Array<StringFilter> | null;
+		RelatedFindingsProductArn?: Array<StringFilter> | null;
+		RelatedFindingsId?: Array<StringFilter> | null;
+		NoteText?: Array<StringFilter> | null;
+		NoteUpdatedAt?: Array<DateFilter> | null;
+		NoteUpdatedBy?: Array<StringFilter> | null;
+		Keyword?: Array<KeywordFilter> | null;
 	}
 
 	export interface GetInvitationsCountResponse {
-		InvitationsCount?: number;
+		InvitationsCount?: number | null;
 	}
 
 	export interface GetMasterAccountResponse {
 
 		/** Details about an invitation. */
-		Master?: Invitation;
+		Master?: Invitation | null;
 	}
 
 
 	/** Details about an invitation. */
 	export interface Invitation {
-		AccountId?: string;
-		InvitationId?: string;
-		InvitedAt?: Date;
-		MemberStatus?: string;
+		AccountId?: string | null;
+		InvitationId?: string | null;
+		InvitedAt?: Date | null;
+		MemberStatus?: string | null;
 	}
 
 	export interface GetMembersResponse {
-		Members?: Array<Member>;
-		UnprocessedAccounts?: Array<Result>;
+		Members?: Array<Member> | null;
+		UnprocessedAccounts?: Array<Result> | null;
 	}
 
 
 	/** The details about a member account. */
 	export interface Member {
-		AccountId?: string;
-		Email?: string;
-		MasterId?: string;
-		MemberStatus?: string;
-		InvitedAt?: Date;
-		UpdatedAt?: Date;
+		AccountId?: string | null;
+		Email?: string | null;
+		MasterId?: string | null;
+		MemberStatus?: string | null;
+		InvitedAt?: Date | null;
+		UpdatedAt?: Date | null;
 	}
 
 	export interface InviteMembersResponse {
-		UnprocessedAccounts?: Array<Result>;
+		UnprocessedAccounts?: Array<Result> | null;
 	}
 
 	export interface ListEnabledProductsForImportResponse {
-		ProductSubscriptions?: Array<string>;
-		NextToken?: string;
+		ProductSubscriptions?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListInvitationsResponse {
-		Invitations?: Array<Invitation>;
-		NextToken?: string;
+		Invitations?: Array<Invitation> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListMembersResponse {
-		Members?: Array<Member>;
-		NextToken?: string;
+		Members?: Array<Member> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: TagMap;
+		Tags?: TagMap | null;
 	}
 
 	export interface TagMap {
@@ -1392,34 +1392,34 @@ export namespace MyNS {
 
 	/** Updates to the severity information for a finding. */
 	export interface SeverityUpdate {
-		Normalized?: number;
-		Product?: number;
-		Label?: SeverityLabel;
+		Normalized?: number | null;
+		Product?: number | null;
+		Label?: SeverityLabel | null;
 	}
 
 
 	/** Used to update information about the investigation into the finding. */
 	export interface WorkflowUpdate {
-		Status?: WorkflowStatus;
+		Status?: WorkflowStatus | null;
 	}
 
 	export interface BatchUpdateFindingsRequest {
 		FindingIdentifiers: Array<AwsSecurityFindingIdentifier>;
 
 		/** The updated note. */
-		Note?: NoteUpdate;
+		Note?: NoteUpdate | null;
 
 		/** Updates to the severity information for a finding. */
-		Severity?: SeverityUpdate;
-		VerificationState?: AwsSecurityFindingVerificationState;
-		Confidence?: number;
-		Criticality?: number;
-		Types?: Array<string>;
-		UserDefinedFields?: FieldMap;
+		Severity?: SeverityUpdate | null;
+		VerificationState?: AwsSecurityFindingVerificationState | null;
+		Confidence?: number | null;
+		Criticality?: number | null;
+		Types?: Array<string> | null;
+		UserDefinedFields?: FieldMap | null;
 
 		/** Used to update information about the investigation into the finding. */
-		Workflow?: WorkflowUpdate;
-		RelatedFindings?: Array<RelatedFinding>;
+		Workflow?: WorkflowUpdate | null;
+		RelatedFindings?: Array<RelatedFinding> | null;
 	}
 
 	export enum ControlStatus { ENABLED = 0, DISABLED = 1 }
@@ -1442,7 +1442,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateMembersRequest {
-		AccountDetails?: Array<AccountDetails>;
+		AccountDetails?: Array<AccountDetails> | null;
 	}
 
 	export interface DeclineInvitationsRequest {
@@ -1460,13 +1460,13 @@ export namespace MyNS {
 	}
 
 	export interface DeleteMembersRequest {
-		AccountIds?: Array<string>;
+		AccountIds?: Array<string> | null;
 	}
 
 	export interface DescribeActionTargetsRequest {
-		ActionTargetArns?: Array<string>;
-		NextToken?: string;
-		MaxResults?: number;
+		ActionTargetArns?: Array<string> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface DescribeHubRequest {
@@ -1491,7 +1491,7 @@ export namespace MyNS {
 	}
 
 	export interface DisassociateMembersRequest {
-		AccountIds?: Array<string>;
+		AccountIds?: Array<string> | null;
 	}
 
 	export interface EnableImportFindingsForProductRequest {
@@ -1499,32 +1499,32 @@ export namespace MyNS {
 	}
 
 	export interface EnableSecurityHubRequest {
-		Tags?: TagMap;
-		EnableDefaultStandards?: boolean;
+		Tags?: TagMap | null;
+		EnableDefaultStandards?: boolean | null;
 	}
 
 	export interface GetEnabledStandardsRequest {
-		StandardsSubscriptionArns?: Array<string>;
-		NextToken?: string;
-		MaxResults?: number;
+		StandardsSubscriptionArns?: Array<string> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface GetFindingsRequest {
 
 		/** A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight. */
-		Filters?: AwsSecurityFindingFilters;
-		SortCriteria?: Array<SortCriterion>;
-		NextToken?: string;
-		MaxResults?: number;
+		Filters?: AwsSecurityFindingFilters | null;
+		SortCriteria?: Array<SortCriterion> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface GetInsightResultsRequest {
 	}
 
 	export interface GetInsightsRequest {
-		InsightArns?: Array<string>;
-		NextToken?: string;
-		MaxResults?: number;
+		InsightArns?: Array<string> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface GetInvitationsCountRequest {
@@ -1538,7 +1538,7 @@ export namespace MyNS {
 	}
 
 	export interface InviteMembersRequest {
-		AccountIds?: Array<string>;
+		AccountIds?: Array<string> | null;
 	}
 
 	export interface ListEnabledProductsForImportRequest {
@@ -1569,8 +1569,8 @@ export namespace MyNS {
 	}
 
 	export interface UpdateActionTargetRequest {
-		Name?: string;
-		Description?: string;
+		Name?: string | null;
+		Description?: string | null;
 	}
 
 	export interface UpdateFindingsRequest {
@@ -1582,21 +1582,21 @@ export namespace MyNS {
 		Filters: AwsSecurityFindingFilters;
 
 		/** The updated note. */
-		Note?: NoteUpdate;
-		RecordState?: AwsSecurityFindingRecordState;
+		Note?: NoteUpdate | null;
+		RecordState?: AwsSecurityFindingRecordState | null;
 	}
 
 	export interface UpdateInsightRequest {
-		Name?: string;
+		Name?: string | null;
 
 		/** A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight. */
-		Filters?: AwsSecurityFindingFilters;
-		GroupByAttribute?: string;
+		Filters?: AwsSecurityFindingFilters | null;
+		GroupByAttribute?: string | null;
 	}
 
 	export interface UpdateStandardsControlRequest {
-		ControlStatus?: StandardsControlControlStatus;
-		DisabledReason?: string;
+		ControlStatus?: StandardsControlControlStatus | null;
+		DisabledReason?: string | null;
 	}
 
 	@Injectable()
@@ -1693,7 +1693,7 @@ export namespace MyNS {
 		 * @param {string} NextToken <p>The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the value of this parameter to <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
 		 * @return {ListMembersResponse} Success
 		 */
-		ListMembers(OnlyAssociated: boolean, MaxResults: number, NextToken: string): Observable<ListMembersResponse> {
+		ListMembers(OnlyAssociated: boolean | null | undefined, MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListMembersResponse> {
 			return this.http.get<ListMembersResponse>(this.baseUri + 'members?OnlyAssociated=' + OnlyAssociated + '&MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -1771,7 +1771,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeActionTargetsResponse} Success
 		 */
-		DescribeActionTargets(MaxResults: string, NextToken: string, requestBody: DescribeActionTargetsPostBody): Observable<DescribeActionTargetsResponse> {
+		DescribeActionTargets(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeActionTargetsPostBody): Observable<DescribeActionTargetsResponse> {
 			return this.http.post<DescribeActionTargetsResponse>(this.baseUri + 'actionTargets/get?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1781,7 +1781,7 @@ export namespace MyNS {
 		 * @param {string} HubArn The ARN of the Hub resource to retrieve.
 		 * @return {DescribeHubResponse} Success
 		 */
-		DescribeHub(HubArn: string): Observable<DescribeHubResponse> {
+		DescribeHub(HubArn: string | null | undefined): Observable<DescribeHubResponse> {
 			return this.http.get<DescribeHubResponse>(this.baseUri + 'accounts?HubArn=' + (HubArn == null ? '' : encodeURIComponent(HubArn)), {});
 		}
 
@@ -1810,7 +1810,7 @@ export namespace MyNS {
 		 * @param {number} MaxResults The maximum number of results to return.
 		 * @return {DescribeProductsResponse} Success
 		 */
-		DescribeProducts(NextToken: string, MaxResults: number): Observable<DescribeProductsResponse> {
+		DescribeProducts(NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<DescribeProductsResponse> {
 			return this.http.get<DescribeProductsResponse>(this.baseUri + 'products?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 
@@ -1821,7 +1821,7 @@ export namespace MyNS {
 		 * @param {number} MaxResults The maximum number of standards to return.
 		 * @return {DescribeStandardsResponse} Success
 		 */
-		DescribeStandards(NextToken: string, MaxResults: number): Observable<DescribeStandardsResponse> {
+		DescribeStandards(NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<DescribeStandardsResponse> {
 			return this.http.get<DescribeStandardsResponse>(this.baseUri + 'standards?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 
@@ -1833,7 +1833,7 @@ export namespace MyNS {
 		 * @param {number} MaxResults The maximum number of security standard controls to return.
 		 * @return {DescribeStandardsControlsResponse} Success
 		 */
-		DescribeStandardsControls(StandardsSubscriptionArn: string, NextToken: string, MaxResults: number): Observable<DescribeStandardsControlsResponse> {
+		DescribeStandardsControls(StandardsSubscriptionArn: string, NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<DescribeStandardsControlsResponse> {
 			return this.http.get<DescribeStandardsControlsResponse>(this.baseUri + 'standards/controls/' + (StandardsSubscriptionArn == null ? '' : encodeURIComponent(StandardsSubscriptionArn)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 
@@ -1881,7 +1881,7 @@ export namespace MyNS {
 		 * @param {number} MaxResults The maximum number of items to return in the response.
 		 * @return {ListEnabledProductsForImportResponse} Success
 		 */
-		ListEnabledProductsForImport(NextToken: string, MaxResults: number): Observable<ListEnabledProductsForImportResponse> {
+		ListEnabledProductsForImport(NextToken: string | null | undefined, MaxResults: number | null | undefined): Observable<ListEnabledProductsForImportResponse> {
 			return this.http.get<ListEnabledProductsForImportResponse>(this.baseUri + 'productSubscriptions?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults, {});
 		}
 
@@ -1892,7 +1892,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetEnabledStandardsResponse} Success
 		 */
-		GetEnabledStandards(MaxResults: string, NextToken: string, requestBody: GetEnabledStandardsPostBody): Observable<GetEnabledStandardsResponse> {
+		GetEnabledStandards(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetEnabledStandardsPostBody): Observable<GetEnabledStandardsResponse> {
 			return this.http.post<GetEnabledStandardsResponse>(this.baseUri + 'standards/get?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1903,7 +1903,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetFindingsResponse} Success
 		 */
-		GetFindings(MaxResults: string, NextToken: string, requestBody: GetFindingsPostBody): Observable<GetFindingsResponse> {
+		GetFindings(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetFindingsPostBody): Observable<GetFindingsResponse> {
 			return this.http.post<GetFindingsResponse>(this.baseUri + 'findings?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1933,7 +1933,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetInsightsResponse} Success
 		 */
-		GetInsights(MaxResults: string, NextToken: string, requestBody: GetInsightsPostBody): Observable<GetInsightsResponse> {
+		GetInsights(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetInsightsPostBody): Observable<GetInsightsResponse> {
 			return this.http.post<GetInsightsResponse>(this.baseUri + 'insights/get?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1971,7 +1971,7 @@ export namespace MyNS {
 		 * @param {string} NextToken <p>The token that is required for pagination. On your first call to the <code>ListInvitations</code> operation, set the value of this parameter to <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
 		 * @return {ListInvitationsResponse} Success
 		 */
-		ListInvitations(MaxResults: number, NextToken: string): Observable<ListInvitationsResponse> {
+		ListInvitations(MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListInvitationsResponse> {
 			return this.http.get<ListInvitationsResponse>(this.baseUri + 'invitations?MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -2074,54 +2074,54 @@ export namespace MyNS {
 		FindingIdentifiers: Array<AwsSecurityFindingIdentifier>;
 
 		/** The updated note. */
-		Note?: BatchUpdateFindingsPatchBodyNote;
+		Note?: BatchUpdateFindingsPatchBodyNote | null;
 
 		/** Updates to the severity information for a finding. */
-		Severity?: BatchUpdateFindingsPatchBodySeverity;
+		Severity?: BatchUpdateFindingsPatchBodySeverity | null;
 
 		/** <p>Indicates the veracity of a finding.</p> <p>The available values for <code>VerificationState</code> are as follows.</p> <ul> <li> <p> <code>UNKNOWN</code> – The default disposition of a security finding</p> </li> <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p> </li> <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li> <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li> </ul> */
-		VerificationState?: AwsSecurityFindingVerificationState;
+		VerificationState?: AwsSecurityFindingVerificationState | null;
 
 		/**
 		 * <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p> <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
 		 * Minimum: 0
 		 * Maximum: 100
 		 */
-		Confidence?: number;
+		Confidence?: number | null;
 
 		/**
 		 * <p>The updated value for the level of importance assigned to the resources associated with the findings.</p> <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
 		 * Minimum: 0
 		 * Maximum: 100
 		 */
-		Criticality?: number;
+		Criticality?: number | null;
 
 		/** <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p> <p>Valid namespace values are as follows.</p> <ul> <li> <p>Software and Configuration Checks</p> </li> <li> <p>TTPs</p> </li> <li> <p>Effects</p> </li> <li> <p>Unusual Behaviors</p> </li> <li> <p>Sensitive Data Identifications </p> </li> </ul> */
-		Types?: Array<string>;
+		Types?: Array<string> | null;
 
 		/** A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding. */
-		UserDefinedFields?: {[id: string]: string };
+		UserDefinedFields?: {[id: string]: string } | null;
 
 		/** Used to update information about the investigation into the finding. */
-		Workflow?: BatchUpdateFindingsPatchBodyWorkflow;
+		Workflow?: BatchUpdateFindingsPatchBodyWorkflow | null;
 
 		/** A list of findings that are related to the updated findings. */
-		RelatedFindings?: Array<RelatedFinding>;
+		RelatedFindings?: Array<RelatedFinding> | null;
 	}
 
 	export interface BatchUpdateFindingsPatchBodyNote {
-		Text?: string;
-		UpdatedBy?: string;
+		Text?: string | null;
+		UpdatedBy?: string | null;
 	}
 
 	export interface BatchUpdateFindingsPatchBodySeverity {
-		Normalized?: number;
-		Product?: number;
-		Label?: SeverityLabel;
+		Normalized?: number | null;
+		Product?: number | null;
+		Label?: SeverityLabel | null;
 	}
 
 	export interface BatchUpdateFindingsPatchBodyWorkflow {
-		Status?: WorkflowStatus;
+		Status?: WorkflowStatus | null;
 	}
 
 	export interface CreateActionTargetPostBody {
@@ -2172,96 +2172,96 @@ export namespace MyNS {
 	}
 
 	export interface CreateInsightPostBodyFilters {
-		ProductArn?: Array<StringFilter>;
-		AwsAccountId?: Array<StringFilter>;
-		Id?: Array<StringFilter>;
-		GeneratorId?: Array<StringFilter>;
-		Type?: Array<StringFilter>;
-		FirstObservedAt?: Array<DateFilter>;
-		LastObservedAt?: Array<DateFilter>;
-		CreatedAt?: Array<DateFilter>;
-		UpdatedAt?: Array<DateFilter>;
-		SeverityProduct?: Array<NumberFilter>;
-		SeverityNormalized?: Array<NumberFilter>;
-		SeverityLabel?: Array<StringFilter>;
-		Confidence?: Array<NumberFilter>;
-		Criticality?: Array<NumberFilter>;
-		Title?: Array<StringFilter>;
-		Description?: Array<StringFilter>;
-		RecommendationText?: Array<StringFilter>;
-		SourceUrl?: Array<StringFilter>;
-		ProductFields?: Array<MapFilter>;
-		ProductName?: Array<StringFilter>;
-		CompanyName?: Array<StringFilter>;
-		UserDefinedFields?: Array<MapFilter>;
-		MalwareName?: Array<StringFilter>;
-		MalwareType?: Array<StringFilter>;
-		MalwarePath?: Array<StringFilter>;
-		MalwareState?: Array<StringFilter>;
-		NetworkDirection?: Array<StringFilter>;
-		NetworkProtocol?: Array<StringFilter>;
-		NetworkSourceIpV4?: Array<IpFilter>;
-		NetworkSourceIpV6?: Array<IpFilter>;
-		NetworkSourcePort?: Array<NumberFilter>;
-		NetworkSourceDomain?: Array<StringFilter>;
-		NetworkSourceMac?: Array<StringFilter>;
-		NetworkDestinationIpV4?: Array<IpFilter>;
-		NetworkDestinationIpV6?: Array<IpFilter>;
-		NetworkDestinationPort?: Array<NumberFilter>;
-		NetworkDestinationDomain?: Array<StringFilter>;
-		ProcessName?: Array<StringFilter>;
-		ProcessPath?: Array<StringFilter>;
-		ProcessPid?: Array<NumberFilter>;
-		ProcessParentPid?: Array<NumberFilter>;
-		ProcessLaunchedAt?: Array<DateFilter>;
-		ProcessTerminatedAt?: Array<DateFilter>;
-		ThreatIntelIndicatorType?: Array<StringFilter>;
-		ThreatIntelIndicatorValue?: Array<StringFilter>;
-		ThreatIntelIndicatorCategory?: Array<StringFilter>;
-		ThreatIntelIndicatorLastObservedAt?: Array<DateFilter>;
-		ThreatIntelIndicatorSource?: Array<StringFilter>;
-		ThreatIntelIndicatorSourceUrl?: Array<StringFilter>;
-		ResourceType?: Array<StringFilter>;
-		ResourceId?: Array<StringFilter>;
-		ResourcePartition?: Array<StringFilter>;
-		ResourceRegion?: Array<StringFilter>;
-		ResourceTags?: Array<MapFilter>;
-		ResourceAwsEc2InstanceType?: Array<StringFilter>;
-		ResourceAwsEc2InstanceImageId?: Array<StringFilter>;
-		ResourceAwsEc2InstanceIpV4Addresses?: Array<IpFilter>;
-		ResourceAwsEc2InstanceIpV6Addresses?: Array<IpFilter>;
-		ResourceAwsEc2InstanceKeyName?: Array<StringFilter>;
-		ResourceAwsEc2InstanceIamInstanceProfileArn?: Array<StringFilter>;
-		ResourceAwsEc2InstanceVpcId?: Array<StringFilter>;
-		ResourceAwsEc2InstanceSubnetId?: Array<StringFilter>;
-		ResourceAwsEc2InstanceLaunchedAt?: Array<DateFilter>;
-		ResourceAwsS3BucketOwnerId?: Array<StringFilter>;
-		ResourceAwsS3BucketOwnerName?: Array<StringFilter>;
-		ResourceAwsIamAccessKeyUserName?: Array<StringFilter>;
-		ResourceAwsIamAccessKeyStatus?: Array<StringFilter>;
-		ResourceAwsIamAccessKeyCreatedAt?: Array<DateFilter>;
-		ResourceContainerName?: Array<StringFilter>;
-		ResourceContainerImageId?: Array<StringFilter>;
-		ResourceContainerImageName?: Array<StringFilter>;
-		ResourceContainerLaunchedAt?: Array<DateFilter>;
-		ResourceDetailsOther?: Array<MapFilter>;
-		ComplianceStatus?: Array<StringFilter>;
-		VerificationState?: Array<StringFilter>;
-		WorkflowState?: Array<StringFilter>;
-		WorkflowStatus?: Array<StringFilter>;
-		RecordState?: Array<StringFilter>;
-		RelatedFindingsProductArn?: Array<StringFilter>;
-		RelatedFindingsId?: Array<StringFilter>;
-		NoteText?: Array<StringFilter>;
-		NoteUpdatedAt?: Array<DateFilter>;
-		NoteUpdatedBy?: Array<StringFilter>;
-		Keyword?: Array<KeywordFilter>;
+		ProductArn?: Array<StringFilter> | null;
+		AwsAccountId?: Array<StringFilter> | null;
+		Id?: Array<StringFilter> | null;
+		GeneratorId?: Array<StringFilter> | null;
+		Type?: Array<StringFilter> | null;
+		FirstObservedAt?: Array<DateFilter> | null;
+		LastObservedAt?: Array<DateFilter> | null;
+		CreatedAt?: Array<DateFilter> | null;
+		UpdatedAt?: Array<DateFilter> | null;
+		SeverityProduct?: Array<NumberFilter> | null;
+		SeverityNormalized?: Array<NumberFilter> | null;
+		SeverityLabel?: Array<StringFilter> | null;
+		Confidence?: Array<NumberFilter> | null;
+		Criticality?: Array<NumberFilter> | null;
+		Title?: Array<StringFilter> | null;
+		Description?: Array<StringFilter> | null;
+		RecommendationText?: Array<StringFilter> | null;
+		SourceUrl?: Array<StringFilter> | null;
+		ProductFields?: Array<MapFilter> | null;
+		ProductName?: Array<StringFilter> | null;
+		CompanyName?: Array<StringFilter> | null;
+		UserDefinedFields?: Array<MapFilter> | null;
+		MalwareName?: Array<StringFilter> | null;
+		MalwareType?: Array<StringFilter> | null;
+		MalwarePath?: Array<StringFilter> | null;
+		MalwareState?: Array<StringFilter> | null;
+		NetworkDirection?: Array<StringFilter> | null;
+		NetworkProtocol?: Array<StringFilter> | null;
+		NetworkSourceIpV4?: Array<IpFilter> | null;
+		NetworkSourceIpV6?: Array<IpFilter> | null;
+		NetworkSourcePort?: Array<NumberFilter> | null;
+		NetworkSourceDomain?: Array<StringFilter> | null;
+		NetworkSourceMac?: Array<StringFilter> | null;
+		NetworkDestinationIpV4?: Array<IpFilter> | null;
+		NetworkDestinationIpV6?: Array<IpFilter> | null;
+		NetworkDestinationPort?: Array<NumberFilter> | null;
+		NetworkDestinationDomain?: Array<StringFilter> | null;
+		ProcessName?: Array<StringFilter> | null;
+		ProcessPath?: Array<StringFilter> | null;
+		ProcessPid?: Array<NumberFilter> | null;
+		ProcessParentPid?: Array<NumberFilter> | null;
+		ProcessLaunchedAt?: Array<DateFilter> | null;
+		ProcessTerminatedAt?: Array<DateFilter> | null;
+		ThreatIntelIndicatorType?: Array<StringFilter> | null;
+		ThreatIntelIndicatorValue?: Array<StringFilter> | null;
+		ThreatIntelIndicatorCategory?: Array<StringFilter> | null;
+		ThreatIntelIndicatorLastObservedAt?: Array<DateFilter> | null;
+		ThreatIntelIndicatorSource?: Array<StringFilter> | null;
+		ThreatIntelIndicatorSourceUrl?: Array<StringFilter> | null;
+		ResourceType?: Array<StringFilter> | null;
+		ResourceId?: Array<StringFilter> | null;
+		ResourcePartition?: Array<StringFilter> | null;
+		ResourceRegion?: Array<StringFilter> | null;
+		ResourceTags?: Array<MapFilter> | null;
+		ResourceAwsEc2InstanceType?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceImageId?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceIpV4Addresses?: Array<IpFilter> | null;
+		ResourceAwsEc2InstanceIpV6Addresses?: Array<IpFilter> | null;
+		ResourceAwsEc2InstanceKeyName?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceIamInstanceProfileArn?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceVpcId?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceSubnetId?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceLaunchedAt?: Array<DateFilter> | null;
+		ResourceAwsS3BucketOwnerId?: Array<StringFilter> | null;
+		ResourceAwsS3BucketOwnerName?: Array<StringFilter> | null;
+		ResourceAwsIamAccessKeyUserName?: Array<StringFilter> | null;
+		ResourceAwsIamAccessKeyStatus?: Array<StringFilter> | null;
+		ResourceAwsIamAccessKeyCreatedAt?: Array<DateFilter> | null;
+		ResourceContainerName?: Array<StringFilter> | null;
+		ResourceContainerImageId?: Array<StringFilter> | null;
+		ResourceContainerImageName?: Array<StringFilter> | null;
+		ResourceContainerLaunchedAt?: Array<DateFilter> | null;
+		ResourceDetailsOther?: Array<MapFilter> | null;
+		ComplianceStatus?: Array<StringFilter> | null;
+		VerificationState?: Array<StringFilter> | null;
+		WorkflowState?: Array<StringFilter> | null;
+		WorkflowStatus?: Array<StringFilter> | null;
+		RecordState?: Array<StringFilter> | null;
+		RelatedFindingsProductArn?: Array<StringFilter> | null;
+		RelatedFindingsId?: Array<StringFilter> | null;
+		NoteText?: Array<StringFilter> | null;
+		NoteUpdatedAt?: Array<DateFilter> | null;
+		NoteUpdatedBy?: Array<StringFilter> | null;
+		Keyword?: Array<KeywordFilter> | null;
 	}
 
 	export interface CreateMembersPostBody {
 
 		/** The list of accounts to associate with the Security Hub master account. For each account, the list includes the account ID and the email address. */
-		AccountDetails?: Array<AccountDetails>;
+		AccountDetails?: Array<AccountDetails> | null;
 	}
 
 	export interface DeclineInvitationsPostBody {
@@ -2279,13 +2279,13 @@ export namespace MyNS {
 		 * The updated name of the custom action target.
 		 * Pattern: .*\S.*
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/**
 		 * The updated description for the custom action target.
 		 * Pattern: .*\S.*
 		 */
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface UpdateInsightPatchBody {
@@ -2294,103 +2294,103 @@ export namespace MyNS {
 		 * The updated name for the insight.
 		 * Pattern: .*\S.*
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/** A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight. */
-		Filters?: UpdateInsightPatchBodyFilters;
+		Filters?: UpdateInsightPatchBodyFilters | null;
 
 		/**
 		 * The updated <code>GroupBy</code> attribute that defines this insight.
 		 * Pattern: .*\S.*
 		 */
-		GroupByAttribute?: string;
+		GroupByAttribute?: string | null;
 	}
 
 	export interface UpdateInsightPatchBodyFilters {
-		ProductArn?: Array<StringFilter>;
-		AwsAccountId?: Array<StringFilter>;
-		Id?: Array<StringFilter>;
-		GeneratorId?: Array<StringFilter>;
-		Type?: Array<StringFilter>;
-		FirstObservedAt?: Array<DateFilter>;
-		LastObservedAt?: Array<DateFilter>;
-		CreatedAt?: Array<DateFilter>;
-		UpdatedAt?: Array<DateFilter>;
-		SeverityProduct?: Array<NumberFilter>;
-		SeverityNormalized?: Array<NumberFilter>;
-		SeverityLabel?: Array<StringFilter>;
-		Confidence?: Array<NumberFilter>;
-		Criticality?: Array<NumberFilter>;
-		Title?: Array<StringFilter>;
-		Description?: Array<StringFilter>;
-		RecommendationText?: Array<StringFilter>;
-		SourceUrl?: Array<StringFilter>;
-		ProductFields?: Array<MapFilter>;
-		ProductName?: Array<StringFilter>;
-		CompanyName?: Array<StringFilter>;
-		UserDefinedFields?: Array<MapFilter>;
-		MalwareName?: Array<StringFilter>;
-		MalwareType?: Array<StringFilter>;
-		MalwarePath?: Array<StringFilter>;
-		MalwareState?: Array<StringFilter>;
-		NetworkDirection?: Array<StringFilter>;
-		NetworkProtocol?: Array<StringFilter>;
-		NetworkSourceIpV4?: Array<IpFilter>;
-		NetworkSourceIpV6?: Array<IpFilter>;
-		NetworkSourcePort?: Array<NumberFilter>;
-		NetworkSourceDomain?: Array<StringFilter>;
-		NetworkSourceMac?: Array<StringFilter>;
-		NetworkDestinationIpV4?: Array<IpFilter>;
-		NetworkDestinationIpV6?: Array<IpFilter>;
-		NetworkDestinationPort?: Array<NumberFilter>;
-		NetworkDestinationDomain?: Array<StringFilter>;
-		ProcessName?: Array<StringFilter>;
-		ProcessPath?: Array<StringFilter>;
-		ProcessPid?: Array<NumberFilter>;
-		ProcessParentPid?: Array<NumberFilter>;
-		ProcessLaunchedAt?: Array<DateFilter>;
-		ProcessTerminatedAt?: Array<DateFilter>;
-		ThreatIntelIndicatorType?: Array<StringFilter>;
-		ThreatIntelIndicatorValue?: Array<StringFilter>;
-		ThreatIntelIndicatorCategory?: Array<StringFilter>;
-		ThreatIntelIndicatorLastObservedAt?: Array<DateFilter>;
-		ThreatIntelIndicatorSource?: Array<StringFilter>;
-		ThreatIntelIndicatorSourceUrl?: Array<StringFilter>;
-		ResourceType?: Array<StringFilter>;
-		ResourceId?: Array<StringFilter>;
-		ResourcePartition?: Array<StringFilter>;
-		ResourceRegion?: Array<StringFilter>;
-		ResourceTags?: Array<MapFilter>;
-		ResourceAwsEc2InstanceType?: Array<StringFilter>;
-		ResourceAwsEc2InstanceImageId?: Array<StringFilter>;
-		ResourceAwsEc2InstanceIpV4Addresses?: Array<IpFilter>;
-		ResourceAwsEc2InstanceIpV6Addresses?: Array<IpFilter>;
-		ResourceAwsEc2InstanceKeyName?: Array<StringFilter>;
-		ResourceAwsEc2InstanceIamInstanceProfileArn?: Array<StringFilter>;
-		ResourceAwsEc2InstanceVpcId?: Array<StringFilter>;
-		ResourceAwsEc2InstanceSubnetId?: Array<StringFilter>;
-		ResourceAwsEc2InstanceLaunchedAt?: Array<DateFilter>;
-		ResourceAwsS3BucketOwnerId?: Array<StringFilter>;
-		ResourceAwsS3BucketOwnerName?: Array<StringFilter>;
-		ResourceAwsIamAccessKeyUserName?: Array<StringFilter>;
-		ResourceAwsIamAccessKeyStatus?: Array<StringFilter>;
-		ResourceAwsIamAccessKeyCreatedAt?: Array<DateFilter>;
-		ResourceContainerName?: Array<StringFilter>;
-		ResourceContainerImageId?: Array<StringFilter>;
-		ResourceContainerImageName?: Array<StringFilter>;
-		ResourceContainerLaunchedAt?: Array<DateFilter>;
-		ResourceDetailsOther?: Array<MapFilter>;
-		ComplianceStatus?: Array<StringFilter>;
-		VerificationState?: Array<StringFilter>;
-		WorkflowState?: Array<StringFilter>;
-		WorkflowStatus?: Array<StringFilter>;
-		RecordState?: Array<StringFilter>;
-		RelatedFindingsProductArn?: Array<StringFilter>;
-		RelatedFindingsId?: Array<StringFilter>;
-		NoteText?: Array<StringFilter>;
-		NoteUpdatedAt?: Array<DateFilter>;
-		NoteUpdatedBy?: Array<StringFilter>;
-		Keyword?: Array<KeywordFilter>;
+		ProductArn?: Array<StringFilter> | null;
+		AwsAccountId?: Array<StringFilter> | null;
+		Id?: Array<StringFilter> | null;
+		GeneratorId?: Array<StringFilter> | null;
+		Type?: Array<StringFilter> | null;
+		FirstObservedAt?: Array<DateFilter> | null;
+		LastObservedAt?: Array<DateFilter> | null;
+		CreatedAt?: Array<DateFilter> | null;
+		UpdatedAt?: Array<DateFilter> | null;
+		SeverityProduct?: Array<NumberFilter> | null;
+		SeverityNormalized?: Array<NumberFilter> | null;
+		SeverityLabel?: Array<StringFilter> | null;
+		Confidence?: Array<NumberFilter> | null;
+		Criticality?: Array<NumberFilter> | null;
+		Title?: Array<StringFilter> | null;
+		Description?: Array<StringFilter> | null;
+		RecommendationText?: Array<StringFilter> | null;
+		SourceUrl?: Array<StringFilter> | null;
+		ProductFields?: Array<MapFilter> | null;
+		ProductName?: Array<StringFilter> | null;
+		CompanyName?: Array<StringFilter> | null;
+		UserDefinedFields?: Array<MapFilter> | null;
+		MalwareName?: Array<StringFilter> | null;
+		MalwareType?: Array<StringFilter> | null;
+		MalwarePath?: Array<StringFilter> | null;
+		MalwareState?: Array<StringFilter> | null;
+		NetworkDirection?: Array<StringFilter> | null;
+		NetworkProtocol?: Array<StringFilter> | null;
+		NetworkSourceIpV4?: Array<IpFilter> | null;
+		NetworkSourceIpV6?: Array<IpFilter> | null;
+		NetworkSourcePort?: Array<NumberFilter> | null;
+		NetworkSourceDomain?: Array<StringFilter> | null;
+		NetworkSourceMac?: Array<StringFilter> | null;
+		NetworkDestinationIpV4?: Array<IpFilter> | null;
+		NetworkDestinationIpV6?: Array<IpFilter> | null;
+		NetworkDestinationPort?: Array<NumberFilter> | null;
+		NetworkDestinationDomain?: Array<StringFilter> | null;
+		ProcessName?: Array<StringFilter> | null;
+		ProcessPath?: Array<StringFilter> | null;
+		ProcessPid?: Array<NumberFilter> | null;
+		ProcessParentPid?: Array<NumberFilter> | null;
+		ProcessLaunchedAt?: Array<DateFilter> | null;
+		ProcessTerminatedAt?: Array<DateFilter> | null;
+		ThreatIntelIndicatorType?: Array<StringFilter> | null;
+		ThreatIntelIndicatorValue?: Array<StringFilter> | null;
+		ThreatIntelIndicatorCategory?: Array<StringFilter> | null;
+		ThreatIntelIndicatorLastObservedAt?: Array<DateFilter> | null;
+		ThreatIntelIndicatorSource?: Array<StringFilter> | null;
+		ThreatIntelIndicatorSourceUrl?: Array<StringFilter> | null;
+		ResourceType?: Array<StringFilter> | null;
+		ResourceId?: Array<StringFilter> | null;
+		ResourcePartition?: Array<StringFilter> | null;
+		ResourceRegion?: Array<StringFilter> | null;
+		ResourceTags?: Array<MapFilter> | null;
+		ResourceAwsEc2InstanceType?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceImageId?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceIpV4Addresses?: Array<IpFilter> | null;
+		ResourceAwsEc2InstanceIpV6Addresses?: Array<IpFilter> | null;
+		ResourceAwsEc2InstanceKeyName?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceIamInstanceProfileArn?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceVpcId?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceSubnetId?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceLaunchedAt?: Array<DateFilter> | null;
+		ResourceAwsS3BucketOwnerId?: Array<StringFilter> | null;
+		ResourceAwsS3BucketOwnerName?: Array<StringFilter> | null;
+		ResourceAwsIamAccessKeyUserName?: Array<StringFilter> | null;
+		ResourceAwsIamAccessKeyStatus?: Array<StringFilter> | null;
+		ResourceAwsIamAccessKeyCreatedAt?: Array<DateFilter> | null;
+		ResourceContainerName?: Array<StringFilter> | null;
+		ResourceContainerImageId?: Array<StringFilter> | null;
+		ResourceContainerImageName?: Array<StringFilter> | null;
+		ResourceContainerLaunchedAt?: Array<DateFilter> | null;
+		ResourceDetailsOther?: Array<MapFilter> | null;
+		ComplianceStatus?: Array<StringFilter> | null;
+		VerificationState?: Array<StringFilter> | null;
+		WorkflowState?: Array<StringFilter> | null;
+		WorkflowStatus?: Array<StringFilter> | null;
+		RecordState?: Array<StringFilter> | null;
+		RelatedFindingsProductArn?: Array<StringFilter> | null;
+		RelatedFindingsId?: Array<StringFilter> | null;
+		NoteText?: Array<StringFilter> | null;
+		NoteUpdatedAt?: Array<DateFilter> | null;
+		NoteUpdatedBy?: Array<StringFilter> | null;
+		Keyword?: Array<KeywordFilter> | null;
 	}
 
 	export interface DeleteInvitationsPostBody {
@@ -2405,38 +2405,38 @@ export namespace MyNS {
 	export interface DeleteMembersPostBody {
 
 		/** The list of account IDs for the member accounts to delete. */
-		AccountIds?: Array<string>;
+		AccountIds?: Array<string> | null;
 	}
 
 	export interface DescribeActionTargetsPostBody {
 
 		/** A list of custom action target ARNs for the custom action targets to retrieve. */
-		ActionTargetArns?: Array<string>;
+		ActionTargetArns?: Array<string> | null;
 
 		/** <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p> */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to return.
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface EnableSecurityHubPostBody {
 
 		/** The tags to add to the hub resource when you enable Security Hub. */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 
 		/** Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>. */
-		EnableDefaultStandards?: boolean;
+		EnableDefaultStandards?: boolean | null;
 	}
 
 	export interface DisassociateMembersPostBody {
 
 		/** The account IDs of the member accounts to disassociate from the master account. */
-		AccountIds?: Array<string>;
+		AccountIds?: Array<string> | null;
 	}
 
 	export interface EnableImportFindingsForProductPostBody {
@@ -2456,123 +2456,123 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 25
 		 */
-		StandardsSubscriptionArns?: Array<string>;
+		StandardsSubscriptionArns?: Array<string> | null;
 
 		/** <p>The token that is required for pagination. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p> */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to return in the response.
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface GetFindingsPostBody {
 
 		/** A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight. */
-		Filters?: GetFindingsPostBodyFilters;
+		Filters?: GetFindingsPostBodyFilters | null;
 
 		/** The finding attributes used to sort the list of returned findings. */
-		SortCriteria?: Array<SortCriterion>;
+		SortCriteria?: Array<SortCriterion> | null;
 
 		/** <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p> */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of findings to return.
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface GetFindingsPostBodyFilters {
-		ProductArn?: Array<StringFilter>;
-		AwsAccountId?: Array<StringFilter>;
-		Id?: Array<StringFilter>;
-		GeneratorId?: Array<StringFilter>;
-		Type?: Array<StringFilter>;
-		FirstObservedAt?: Array<DateFilter>;
-		LastObservedAt?: Array<DateFilter>;
-		CreatedAt?: Array<DateFilter>;
-		UpdatedAt?: Array<DateFilter>;
-		SeverityProduct?: Array<NumberFilter>;
-		SeverityNormalized?: Array<NumberFilter>;
-		SeverityLabel?: Array<StringFilter>;
-		Confidence?: Array<NumberFilter>;
-		Criticality?: Array<NumberFilter>;
-		Title?: Array<StringFilter>;
-		Description?: Array<StringFilter>;
-		RecommendationText?: Array<StringFilter>;
-		SourceUrl?: Array<StringFilter>;
-		ProductFields?: Array<MapFilter>;
-		ProductName?: Array<StringFilter>;
-		CompanyName?: Array<StringFilter>;
-		UserDefinedFields?: Array<MapFilter>;
-		MalwareName?: Array<StringFilter>;
-		MalwareType?: Array<StringFilter>;
-		MalwarePath?: Array<StringFilter>;
-		MalwareState?: Array<StringFilter>;
-		NetworkDirection?: Array<StringFilter>;
-		NetworkProtocol?: Array<StringFilter>;
-		NetworkSourceIpV4?: Array<IpFilter>;
-		NetworkSourceIpV6?: Array<IpFilter>;
-		NetworkSourcePort?: Array<NumberFilter>;
-		NetworkSourceDomain?: Array<StringFilter>;
-		NetworkSourceMac?: Array<StringFilter>;
-		NetworkDestinationIpV4?: Array<IpFilter>;
-		NetworkDestinationIpV6?: Array<IpFilter>;
-		NetworkDestinationPort?: Array<NumberFilter>;
-		NetworkDestinationDomain?: Array<StringFilter>;
-		ProcessName?: Array<StringFilter>;
-		ProcessPath?: Array<StringFilter>;
-		ProcessPid?: Array<NumberFilter>;
-		ProcessParentPid?: Array<NumberFilter>;
-		ProcessLaunchedAt?: Array<DateFilter>;
-		ProcessTerminatedAt?: Array<DateFilter>;
-		ThreatIntelIndicatorType?: Array<StringFilter>;
-		ThreatIntelIndicatorValue?: Array<StringFilter>;
-		ThreatIntelIndicatorCategory?: Array<StringFilter>;
-		ThreatIntelIndicatorLastObservedAt?: Array<DateFilter>;
-		ThreatIntelIndicatorSource?: Array<StringFilter>;
-		ThreatIntelIndicatorSourceUrl?: Array<StringFilter>;
-		ResourceType?: Array<StringFilter>;
-		ResourceId?: Array<StringFilter>;
-		ResourcePartition?: Array<StringFilter>;
-		ResourceRegion?: Array<StringFilter>;
-		ResourceTags?: Array<MapFilter>;
-		ResourceAwsEc2InstanceType?: Array<StringFilter>;
-		ResourceAwsEc2InstanceImageId?: Array<StringFilter>;
-		ResourceAwsEc2InstanceIpV4Addresses?: Array<IpFilter>;
-		ResourceAwsEc2InstanceIpV6Addresses?: Array<IpFilter>;
-		ResourceAwsEc2InstanceKeyName?: Array<StringFilter>;
-		ResourceAwsEc2InstanceIamInstanceProfileArn?: Array<StringFilter>;
-		ResourceAwsEc2InstanceVpcId?: Array<StringFilter>;
-		ResourceAwsEc2InstanceSubnetId?: Array<StringFilter>;
-		ResourceAwsEc2InstanceLaunchedAt?: Array<DateFilter>;
-		ResourceAwsS3BucketOwnerId?: Array<StringFilter>;
-		ResourceAwsS3BucketOwnerName?: Array<StringFilter>;
-		ResourceAwsIamAccessKeyUserName?: Array<StringFilter>;
-		ResourceAwsIamAccessKeyStatus?: Array<StringFilter>;
-		ResourceAwsIamAccessKeyCreatedAt?: Array<DateFilter>;
-		ResourceContainerName?: Array<StringFilter>;
-		ResourceContainerImageId?: Array<StringFilter>;
-		ResourceContainerImageName?: Array<StringFilter>;
-		ResourceContainerLaunchedAt?: Array<DateFilter>;
-		ResourceDetailsOther?: Array<MapFilter>;
-		ComplianceStatus?: Array<StringFilter>;
-		VerificationState?: Array<StringFilter>;
-		WorkflowState?: Array<StringFilter>;
-		WorkflowStatus?: Array<StringFilter>;
-		RecordState?: Array<StringFilter>;
-		RelatedFindingsProductArn?: Array<StringFilter>;
-		RelatedFindingsId?: Array<StringFilter>;
-		NoteText?: Array<StringFilter>;
-		NoteUpdatedAt?: Array<DateFilter>;
-		NoteUpdatedBy?: Array<StringFilter>;
-		Keyword?: Array<KeywordFilter>;
+		ProductArn?: Array<StringFilter> | null;
+		AwsAccountId?: Array<StringFilter> | null;
+		Id?: Array<StringFilter> | null;
+		GeneratorId?: Array<StringFilter> | null;
+		Type?: Array<StringFilter> | null;
+		FirstObservedAt?: Array<DateFilter> | null;
+		LastObservedAt?: Array<DateFilter> | null;
+		CreatedAt?: Array<DateFilter> | null;
+		UpdatedAt?: Array<DateFilter> | null;
+		SeverityProduct?: Array<NumberFilter> | null;
+		SeverityNormalized?: Array<NumberFilter> | null;
+		SeverityLabel?: Array<StringFilter> | null;
+		Confidence?: Array<NumberFilter> | null;
+		Criticality?: Array<NumberFilter> | null;
+		Title?: Array<StringFilter> | null;
+		Description?: Array<StringFilter> | null;
+		RecommendationText?: Array<StringFilter> | null;
+		SourceUrl?: Array<StringFilter> | null;
+		ProductFields?: Array<MapFilter> | null;
+		ProductName?: Array<StringFilter> | null;
+		CompanyName?: Array<StringFilter> | null;
+		UserDefinedFields?: Array<MapFilter> | null;
+		MalwareName?: Array<StringFilter> | null;
+		MalwareType?: Array<StringFilter> | null;
+		MalwarePath?: Array<StringFilter> | null;
+		MalwareState?: Array<StringFilter> | null;
+		NetworkDirection?: Array<StringFilter> | null;
+		NetworkProtocol?: Array<StringFilter> | null;
+		NetworkSourceIpV4?: Array<IpFilter> | null;
+		NetworkSourceIpV6?: Array<IpFilter> | null;
+		NetworkSourcePort?: Array<NumberFilter> | null;
+		NetworkSourceDomain?: Array<StringFilter> | null;
+		NetworkSourceMac?: Array<StringFilter> | null;
+		NetworkDestinationIpV4?: Array<IpFilter> | null;
+		NetworkDestinationIpV6?: Array<IpFilter> | null;
+		NetworkDestinationPort?: Array<NumberFilter> | null;
+		NetworkDestinationDomain?: Array<StringFilter> | null;
+		ProcessName?: Array<StringFilter> | null;
+		ProcessPath?: Array<StringFilter> | null;
+		ProcessPid?: Array<NumberFilter> | null;
+		ProcessParentPid?: Array<NumberFilter> | null;
+		ProcessLaunchedAt?: Array<DateFilter> | null;
+		ProcessTerminatedAt?: Array<DateFilter> | null;
+		ThreatIntelIndicatorType?: Array<StringFilter> | null;
+		ThreatIntelIndicatorValue?: Array<StringFilter> | null;
+		ThreatIntelIndicatorCategory?: Array<StringFilter> | null;
+		ThreatIntelIndicatorLastObservedAt?: Array<DateFilter> | null;
+		ThreatIntelIndicatorSource?: Array<StringFilter> | null;
+		ThreatIntelIndicatorSourceUrl?: Array<StringFilter> | null;
+		ResourceType?: Array<StringFilter> | null;
+		ResourceId?: Array<StringFilter> | null;
+		ResourcePartition?: Array<StringFilter> | null;
+		ResourceRegion?: Array<StringFilter> | null;
+		ResourceTags?: Array<MapFilter> | null;
+		ResourceAwsEc2InstanceType?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceImageId?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceIpV4Addresses?: Array<IpFilter> | null;
+		ResourceAwsEc2InstanceIpV6Addresses?: Array<IpFilter> | null;
+		ResourceAwsEc2InstanceKeyName?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceIamInstanceProfileArn?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceVpcId?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceSubnetId?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceLaunchedAt?: Array<DateFilter> | null;
+		ResourceAwsS3BucketOwnerId?: Array<StringFilter> | null;
+		ResourceAwsS3BucketOwnerName?: Array<StringFilter> | null;
+		ResourceAwsIamAccessKeyUserName?: Array<StringFilter> | null;
+		ResourceAwsIamAccessKeyStatus?: Array<StringFilter> | null;
+		ResourceAwsIamAccessKeyCreatedAt?: Array<DateFilter> | null;
+		ResourceContainerName?: Array<StringFilter> | null;
+		ResourceContainerImageId?: Array<StringFilter> | null;
+		ResourceContainerImageName?: Array<StringFilter> | null;
+		ResourceContainerLaunchedAt?: Array<DateFilter> | null;
+		ResourceDetailsOther?: Array<MapFilter> | null;
+		ComplianceStatus?: Array<StringFilter> | null;
+		VerificationState?: Array<StringFilter> | null;
+		WorkflowState?: Array<StringFilter> | null;
+		WorkflowStatus?: Array<StringFilter> | null;
+		RecordState?: Array<StringFilter> | null;
+		RelatedFindingsProductArn?: Array<StringFilter> | null;
+		RelatedFindingsId?: Array<StringFilter> | null;
+		NoteText?: Array<StringFilter> | null;
+		NoteUpdatedAt?: Array<DateFilter> | null;
+		NoteUpdatedBy?: Array<StringFilter> | null;
+		Keyword?: Array<KeywordFilter> | null;
 	}
 
 	export interface UpdateFindingsPatchBody {
@@ -2584,118 +2584,118 @@ export namespace MyNS {
 		Filters: UpdateFindingsPatchBodyFilters;
 
 		/** The updated note. */
-		Note?: UpdateFindingsPatchBodyNote;
+		Note?: UpdateFindingsPatchBodyNote | null;
 
 		/** The updated record state for the finding. */
-		RecordState?: AwsSecurityFindingRecordState;
+		RecordState?: AwsSecurityFindingRecordState | null;
 	}
 
 	export interface UpdateFindingsPatchBodyFilters {
-		ProductArn?: Array<StringFilter>;
-		AwsAccountId?: Array<StringFilter>;
-		Id?: Array<StringFilter>;
-		GeneratorId?: Array<StringFilter>;
-		Type?: Array<StringFilter>;
-		FirstObservedAt?: Array<DateFilter>;
-		LastObservedAt?: Array<DateFilter>;
-		CreatedAt?: Array<DateFilter>;
-		UpdatedAt?: Array<DateFilter>;
-		SeverityProduct?: Array<NumberFilter>;
-		SeverityNormalized?: Array<NumberFilter>;
-		SeverityLabel?: Array<StringFilter>;
-		Confidence?: Array<NumberFilter>;
-		Criticality?: Array<NumberFilter>;
-		Title?: Array<StringFilter>;
-		Description?: Array<StringFilter>;
-		RecommendationText?: Array<StringFilter>;
-		SourceUrl?: Array<StringFilter>;
-		ProductFields?: Array<MapFilter>;
-		ProductName?: Array<StringFilter>;
-		CompanyName?: Array<StringFilter>;
-		UserDefinedFields?: Array<MapFilter>;
-		MalwareName?: Array<StringFilter>;
-		MalwareType?: Array<StringFilter>;
-		MalwarePath?: Array<StringFilter>;
-		MalwareState?: Array<StringFilter>;
-		NetworkDirection?: Array<StringFilter>;
-		NetworkProtocol?: Array<StringFilter>;
-		NetworkSourceIpV4?: Array<IpFilter>;
-		NetworkSourceIpV6?: Array<IpFilter>;
-		NetworkSourcePort?: Array<NumberFilter>;
-		NetworkSourceDomain?: Array<StringFilter>;
-		NetworkSourceMac?: Array<StringFilter>;
-		NetworkDestinationIpV4?: Array<IpFilter>;
-		NetworkDestinationIpV6?: Array<IpFilter>;
-		NetworkDestinationPort?: Array<NumberFilter>;
-		NetworkDestinationDomain?: Array<StringFilter>;
-		ProcessName?: Array<StringFilter>;
-		ProcessPath?: Array<StringFilter>;
-		ProcessPid?: Array<NumberFilter>;
-		ProcessParentPid?: Array<NumberFilter>;
-		ProcessLaunchedAt?: Array<DateFilter>;
-		ProcessTerminatedAt?: Array<DateFilter>;
-		ThreatIntelIndicatorType?: Array<StringFilter>;
-		ThreatIntelIndicatorValue?: Array<StringFilter>;
-		ThreatIntelIndicatorCategory?: Array<StringFilter>;
-		ThreatIntelIndicatorLastObservedAt?: Array<DateFilter>;
-		ThreatIntelIndicatorSource?: Array<StringFilter>;
-		ThreatIntelIndicatorSourceUrl?: Array<StringFilter>;
-		ResourceType?: Array<StringFilter>;
-		ResourceId?: Array<StringFilter>;
-		ResourcePartition?: Array<StringFilter>;
-		ResourceRegion?: Array<StringFilter>;
-		ResourceTags?: Array<MapFilter>;
-		ResourceAwsEc2InstanceType?: Array<StringFilter>;
-		ResourceAwsEc2InstanceImageId?: Array<StringFilter>;
-		ResourceAwsEc2InstanceIpV4Addresses?: Array<IpFilter>;
-		ResourceAwsEc2InstanceIpV6Addresses?: Array<IpFilter>;
-		ResourceAwsEc2InstanceKeyName?: Array<StringFilter>;
-		ResourceAwsEc2InstanceIamInstanceProfileArn?: Array<StringFilter>;
-		ResourceAwsEc2InstanceVpcId?: Array<StringFilter>;
-		ResourceAwsEc2InstanceSubnetId?: Array<StringFilter>;
-		ResourceAwsEc2InstanceLaunchedAt?: Array<DateFilter>;
-		ResourceAwsS3BucketOwnerId?: Array<StringFilter>;
-		ResourceAwsS3BucketOwnerName?: Array<StringFilter>;
-		ResourceAwsIamAccessKeyUserName?: Array<StringFilter>;
-		ResourceAwsIamAccessKeyStatus?: Array<StringFilter>;
-		ResourceAwsIamAccessKeyCreatedAt?: Array<DateFilter>;
-		ResourceContainerName?: Array<StringFilter>;
-		ResourceContainerImageId?: Array<StringFilter>;
-		ResourceContainerImageName?: Array<StringFilter>;
-		ResourceContainerLaunchedAt?: Array<DateFilter>;
-		ResourceDetailsOther?: Array<MapFilter>;
-		ComplianceStatus?: Array<StringFilter>;
-		VerificationState?: Array<StringFilter>;
-		WorkflowState?: Array<StringFilter>;
-		WorkflowStatus?: Array<StringFilter>;
-		RecordState?: Array<StringFilter>;
-		RelatedFindingsProductArn?: Array<StringFilter>;
-		RelatedFindingsId?: Array<StringFilter>;
-		NoteText?: Array<StringFilter>;
-		NoteUpdatedAt?: Array<DateFilter>;
-		NoteUpdatedBy?: Array<StringFilter>;
-		Keyword?: Array<KeywordFilter>;
+		ProductArn?: Array<StringFilter> | null;
+		AwsAccountId?: Array<StringFilter> | null;
+		Id?: Array<StringFilter> | null;
+		GeneratorId?: Array<StringFilter> | null;
+		Type?: Array<StringFilter> | null;
+		FirstObservedAt?: Array<DateFilter> | null;
+		LastObservedAt?: Array<DateFilter> | null;
+		CreatedAt?: Array<DateFilter> | null;
+		UpdatedAt?: Array<DateFilter> | null;
+		SeverityProduct?: Array<NumberFilter> | null;
+		SeverityNormalized?: Array<NumberFilter> | null;
+		SeverityLabel?: Array<StringFilter> | null;
+		Confidence?: Array<NumberFilter> | null;
+		Criticality?: Array<NumberFilter> | null;
+		Title?: Array<StringFilter> | null;
+		Description?: Array<StringFilter> | null;
+		RecommendationText?: Array<StringFilter> | null;
+		SourceUrl?: Array<StringFilter> | null;
+		ProductFields?: Array<MapFilter> | null;
+		ProductName?: Array<StringFilter> | null;
+		CompanyName?: Array<StringFilter> | null;
+		UserDefinedFields?: Array<MapFilter> | null;
+		MalwareName?: Array<StringFilter> | null;
+		MalwareType?: Array<StringFilter> | null;
+		MalwarePath?: Array<StringFilter> | null;
+		MalwareState?: Array<StringFilter> | null;
+		NetworkDirection?: Array<StringFilter> | null;
+		NetworkProtocol?: Array<StringFilter> | null;
+		NetworkSourceIpV4?: Array<IpFilter> | null;
+		NetworkSourceIpV6?: Array<IpFilter> | null;
+		NetworkSourcePort?: Array<NumberFilter> | null;
+		NetworkSourceDomain?: Array<StringFilter> | null;
+		NetworkSourceMac?: Array<StringFilter> | null;
+		NetworkDestinationIpV4?: Array<IpFilter> | null;
+		NetworkDestinationIpV6?: Array<IpFilter> | null;
+		NetworkDestinationPort?: Array<NumberFilter> | null;
+		NetworkDestinationDomain?: Array<StringFilter> | null;
+		ProcessName?: Array<StringFilter> | null;
+		ProcessPath?: Array<StringFilter> | null;
+		ProcessPid?: Array<NumberFilter> | null;
+		ProcessParentPid?: Array<NumberFilter> | null;
+		ProcessLaunchedAt?: Array<DateFilter> | null;
+		ProcessTerminatedAt?: Array<DateFilter> | null;
+		ThreatIntelIndicatorType?: Array<StringFilter> | null;
+		ThreatIntelIndicatorValue?: Array<StringFilter> | null;
+		ThreatIntelIndicatorCategory?: Array<StringFilter> | null;
+		ThreatIntelIndicatorLastObservedAt?: Array<DateFilter> | null;
+		ThreatIntelIndicatorSource?: Array<StringFilter> | null;
+		ThreatIntelIndicatorSourceUrl?: Array<StringFilter> | null;
+		ResourceType?: Array<StringFilter> | null;
+		ResourceId?: Array<StringFilter> | null;
+		ResourcePartition?: Array<StringFilter> | null;
+		ResourceRegion?: Array<StringFilter> | null;
+		ResourceTags?: Array<MapFilter> | null;
+		ResourceAwsEc2InstanceType?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceImageId?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceIpV4Addresses?: Array<IpFilter> | null;
+		ResourceAwsEc2InstanceIpV6Addresses?: Array<IpFilter> | null;
+		ResourceAwsEc2InstanceKeyName?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceIamInstanceProfileArn?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceVpcId?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceSubnetId?: Array<StringFilter> | null;
+		ResourceAwsEc2InstanceLaunchedAt?: Array<DateFilter> | null;
+		ResourceAwsS3BucketOwnerId?: Array<StringFilter> | null;
+		ResourceAwsS3BucketOwnerName?: Array<StringFilter> | null;
+		ResourceAwsIamAccessKeyUserName?: Array<StringFilter> | null;
+		ResourceAwsIamAccessKeyStatus?: Array<StringFilter> | null;
+		ResourceAwsIamAccessKeyCreatedAt?: Array<DateFilter> | null;
+		ResourceContainerName?: Array<StringFilter> | null;
+		ResourceContainerImageId?: Array<StringFilter> | null;
+		ResourceContainerImageName?: Array<StringFilter> | null;
+		ResourceContainerLaunchedAt?: Array<DateFilter> | null;
+		ResourceDetailsOther?: Array<MapFilter> | null;
+		ComplianceStatus?: Array<StringFilter> | null;
+		VerificationState?: Array<StringFilter> | null;
+		WorkflowState?: Array<StringFilter> | null;
+		WorkflowStatus?: Array<StringFilter> | null;
+		RecordState?: Array<StringFilter> | null;
+		RelatedFindingsProductArn?: Array<StringFilter> | null;
+		RelatedFindingsId?: Array<StringFilter> | null;
+		NoteText?: Array<StringFilter> | null;
+		NoteUpdatedAt?: Array<DateFilter> | null;
+		NoteUpdatedBy?: Array<StringFilter> | null;
+		Keyword?: Array<KeywordFilter> | null;
 	}
 
 	export interface UpdateFindingsPatchBodyNote {
-		Text?: string;
-		UpdatedBy?: string;
+		Text?: string | null;
+		UpdatedBy?: string | null;
 	}
 
 	export interface GetInsightsPostBody {
 
 		/** The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights. */
-		InsightArns?: Array<string>;
+		InsightArns?: Array<string> | null;
 
 		/** <p>The token that is required for pagination. On your first call to the <code>GetInsights</code> operation, set the value of this parameter to <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p> */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of items to return in the response.
 		 * Minimum: 1
 		 * Maximum: 100
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface GetMembersPostBody {
@@ -2710,7 +2710,7 @@ export namespace MyNS {
 	export interface InviteMembersPostBody {
 
 		/** The list of account IDs of the AWS accounts to invite to Security Hub as members. */
-		AccountIds?: Array<string>;
+		AccountIds?: Array<string> | null;
 	}
 
 	export interface TagResourcePostBody {
@@ -2725,13 +2725,13 @@ export namespace MyNS {
 	export interface UpdateStandardsControlPatchBody {
 
 		/** The updated status of the security standard control. */
-		ControlStatus?: StandardsControlControlStatus;
+		ControlStatus?: StandardsControlControlStatus | null;
 
 		/**
 		 * A description of the reason why you are disabling a security standard control.
 		 * Pattern: .*\S.*
 		 */
-		DisabledReason?: string;
+		DisabledReason?: string | null;
 	}
 
 }

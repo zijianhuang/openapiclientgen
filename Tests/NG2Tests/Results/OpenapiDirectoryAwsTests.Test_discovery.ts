@@ -26,15 +26,15 @@ export namespace MyNS {
 	}
 
 	export interface BatchDeleteImportDataResponse {
-		errors?: Array<BatchDeleteImportDataError>;
+		errors?: Array<BatchDeleteImportDataError> | null;
 	}
 
 
 	/** Error messages returned for each import task that you deleted as a response for this command. */
 	export interface BatchDeleteImportDataError {
-		importTaskId?: string;
-		errorCode?: BatchDeleteImportDataErrorErrorCode;
-		errorDescription?: string;
+		importTaskId?: string | null;
+		errorCode?: BatchDeleteImportDataErrorErrorCode | null;
+		errorDescription?: string | null;
 	}
 
 	export enum BatchDeleteImportDataErrorErrorCode { NOT_FOUND = 0, INTERNAL_SERVER_ERROR = 1, OVER_LIMIT = 2 }
@@ -44,12 +44,12 @@ export namespace MyNS {
 	}
 
 	export interface CreateApplicationResponse {
-		configurationId?: string;
+		configurationId?: string | null;
 	}
 
 	export interface CreateApplicationRequest {
 		name: string;
-		description?: string;
+		description?: string | null;
 	}
 
 	export interface CreateTagsResponse {
@@ -82,43 +82,43 @@ export namespace MyNS {
 
 	export interface DeleteTagsRequest {
 		configurationIds: Array<string>;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface DescribeAgentsResponse {
-		agentsInfo?: Array<AgentInfo>;
-		nextToken?: string;
+		agentsInfo?: Array<AgentInfo> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about agents or connectors associated with the user’s AWS account. Information includes agent or connector IDs, IP addresses, media access control (MAC) addresses, agent or connector health, hostname where the agent or connector resides, and agent version for each agent. */
 	export interface AgentInfo {
-		agentId?: string;
-		hostName?: string;
-		agentNetworkInfoList?: Array<AgentNetworkInfo>;
-		connectorId?: string;
-		version?: string;
-		health?: AgentInfoHealth;
-		lastHealthPingTime?: string;
-		collectionStatus?: string;
-		agentType?: string;
-		registeredTime?: string;
+		agentId?: string | null;
+		hostName?: string | null;
+		agentNetworkInfoList?: Array<AgentNetworkInfo> | null;
+		connectorId?: string | null;
+		version?: string | null;
+		health?: AgentInfoHealth | null;
+		lastHealthPingTime?: string | null;
+		collectionStatus?: string | null;
+		agentType?: string | null;
+		registeredTime?: string | null;
 	}
 
 
 	/** Network details about the host where the agent/connector resides. */
 	export interface AgentNetworkInfo {
-		ipAddress?: string;
-		macAddress?: string;
+		ipAddress?: string | null;
+		macAddress?: string | null;
 	}
 
 	export enum AgentInfoHealth { HEALTHY = 0, UNHEALTHY = 1, RUNNING = 2, UNKNOWN = 3, BLACKLISTED = 4, SHUTDOWN = 5 }
 
 	export interface DescribeAgentsRequest {
-		agentIds?: Array<string>;
-		filters?: Array<Filter>;
-		maxResults?: number;
-		nextToken?: string;
+		agentIds?: Array<string> | null;
+		filters?: Array<Filter> | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 
@@ -130,7 +130,7 @@ export namespace MyNS {
 	}
 
 	export interface DescribeConfigurationsResponse {
-		configurations?: Array<DescribeConfigurationsAttribute>;
+		configurations?: Array<DescribeConfigurationsAttribute> | null;
 	}
 
 	export interface DescribeConfigurationsAttribute {
@@ -141,21 +141,21 @@ export namespace MyNS {
 	}
 
 	export interface DescribeContinuousExportsResponse {
-		descriptions?: Array<ContinuousExportDescription>;
-		nextToken?: string;
+		descriptions?: Array<ContinuousExportDescription> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** A list of continuous export descriptions. */
 	export interface ContinuousExportDescription {
-		exportId?: string;
-		status?: ContinuousExportDescriptionStatus;
-		statusDetail?: string;
-		s3Bucket?: string;
-		startTime?: Date;
-		stopTime?: Date;
-		dataSource?: ContinuousExportDescriptionDataSource;
-		schemaStorageConfig?: SchemaStorageConfig;
+		exportId?: string | null;
+		status?: ContinuousExportDescriptionStatus | null;
+		statusDetail?: string | null;
+		s3Bucket?: string | null;
+		startTime?: Date | null;
+		stopTime?: Date | null;
+		dataSource?: ContinuousExportDescriptionDataSource | null;
+		schemaStorageConfig?: SchemaStorageConfig | null;
 	}
 
 	export enum ContinuousExportDescriptionStatus { START_IN_PROGRESS = 0, START_FAILED = 1, ACTIVE = 2, ERROR = 3, STOP_IN_PROGRESS = 4, STOP_FAILED = 5, INACTIVE = 6 }
@@ -166,17 +166,17 @@ export namespace MyNS {
 	}
 
 	export interface DescribeContinuousExportsRequest {
-		exportIds?: Array<string>;
-		maxResults?: number;
-		nextToken?: string;
+		exportIds?: Array<string> | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface OperationNotPermittedException {
 	}
 
 	export interface DescribeExportConfigurationsResponse {
-		exportsInfo?: Array<ExportInfo>;
-		nextToken?: string;
+		exportsInfo?: Array<ExportInfo> | null;
+		nextToken?: string | null;
 	}
 
 
@@ -185,31 +185,31 @@ export namespace MyNS {
 		exportId: string;
 		exportStatus: ExportInfoExportStatus;
 		statusMessage: string;
-		configurationsDownloadUrl?: string;
+		configurationsDownloadUrl?: string | null;
 		exportRequestTime: Date;
-		isTruncated?: boolean;
-		requestedStartTime?: Date;
-		requestedEndTime?: Date;
+		isTruncated?: boolean | null;
+		requestedStartTime?: Date | null;
+		requestedEndTime?: Date | null;
 	}
 
 	export enum ExportInfoExportStatus { FAILED = 0, SUCCEEDED = 1, IN_PROGRESS = 2 }
 
 	export interface DescribeExportConfigurationsRequest {
-		exportIds?: Array<string>;
-		maxResults?: number;
-		nextToken?: string;
+		exportIds?: Array<string> | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface DescribeExportTasksResponse {
-		exportsInfo?: Array<ExportInfo>;
-		nextToken?: string;
+		exportsInfo?: Array<ExportInfo> | null;
+		nextToken?: string | null;
 	}
 
 	export interface DescribeExportTasksRequest {
-		exportIds?: Array<string>;
-		filters?: Array<ExportFilter>;
-		maxResults?: number;
-		nextToken?: string;
+		exportIds?: Array<string> | null;
+		filters?: Array<ExportFilter> | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 
@@ -221,66 +221,66 @@ export namespace MyNS {
 	}
 
 	export interface DescribeImportTasksResponse {
-		nextToken?: string;
-		tasks?: Array<ImportTask>;
+		nextToken?: string | null;
+		tasks?: Array<ImportTask> | null;
 	}
 
 
 	/** An array of information related to the import task request that includes status information, times, IDs, the Amazon S3 Object URL for the import file, and more. */
 	export interface ImportTask {
-		importTaskId?: string;
-		clientRequestToken?: string;
-		name?: string;
-		importUrl?: string;
-		status?: ImportTaskStatus;
-		importRequestTime?: Date;
-		importCompletionTime?: Date;
-		importDeletedTime?: Date;
-		serverImportSuccess?: number;
-		serverImportFailure?: number;
-		applicationImportSuccess?: number;
-		applicationImportFailure?: number;
-		errorsAndFailedEntriesZip?: string;
+		importTaskId?: string | null;
+		clientRequestToken?: string | null;
+		name?: string | null;
+		importUrl?: string | null;
+		status?: ImportTaskStatus | null;
+		importRequestTime?: Date | null;
+		importCompletionTime?: Date | null;
+		importDeletedTime?: Date | null;
+		serverImportSuccess?: number | null;
+		serverImportFailure?: number | null;
+		applicationImportSuccess?: number | null;
+		applicationImportFailure?: number | null;
+		errorsAndFailedEntriesZip?: string | null;
 	}
 
 	export enum ImportTaskStatus { IMPORT_IN_PROGRESS = 0, IMPORT_COMPLETE = 1, IMPORT_COMPLETE_WITH_ERRORS = 2, IMPORT_FAILED = 3, IMPORT_FAILED_SERVER_LIMIT_EXCEEDED = 4, IMPORT_FAILED_RECORD_LIMIT_EXCEEDED = 5, DELETE_IN_PROGRESS = 6, DELETE_COMPLETE = 7, DELETE_FAILED = 8, DELETE_FAILED_LIMIT_EXCEEDED = 9, INTERNAL_ERROR = 10 }
 
 	export interface DescribeImportTasksRequest {
-		filters?: Array<ImportTaskFilter>;
-		maxResults?: number;
-		nextToken?: string;
+		filters?: Array<ImportTaskFilter> | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 
 	/** <p>A name-values pair of elements you can use to filter the results when querying your import tasks. Currently, wildcards are not supported for filters.</p> <note> <p>When filtering by import status, all other filter values are ignored.</p> </note> */
 	export interface ImportTaskFilter {
-		name?: ImportTaskFilterName;
-		values?: Array<string>;
+		name?: ImportTaskFilterName | null;
+		values?: Array<string> | null;
 	}
 
 	export enum ImportTaskFilterName { IMPORT_TASK_ID = 0, STATUS = 1, NAME = 2 }
 
 	export interface DescribeTagsResponse {
-		tags?: Array<ConfigurationTag>;
-		nextToken?: string;
+		tags?: Array<ConfigurationTag> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Tags for a configuration item. Tags are metadata that help you categorize IT assets. */
 	export interface ConfigurationTag {
-		configurationType?: ConfigurationTagConfigurationType;
-		configurationId?: string;
-		key?: string;
-		value?: string;
-		timeOfCreation?: Date;
+		configurationType?: ConfigurationTagConfigurationType | null;
+		configurationId?: string | null;
+		key?: string | null;
+		value?: string | null;
+		timeOfCreation?: Date | null;
 	}
 
 	export enum ConfigurationTagConfigurationType { SERVER = 0, PROCESS = 1, CONNECTION = 2, APPLICATION = 3 }
 
 	export interface DescribeTagsRequest {
-		filters?: Array<TagFilter>;
-		maxResults?: number;
-		nextToken?: string;
+		filters?: Array<TagFilter> | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 
@@ -299,20 +299,20 @@ export namespace MyNS {
 	}
 
 	export interface ExportConfigurationsResponse {
-		exportId?: string;
+		exportId?: string | null;
 	}
 
 	export interface GetDiscoverySummaryResponse {
-		servers?: number;
-		applications?: number;
-		serversMappedToApplications?: number;
-		serversMappedtoTags?: number;
+		servers?: number | null;
+		applications?: number | null;
+		serversMappedToApplications?: number | null;
+		serversMappedtoTags?: number | null;
 
 		/** Inventory data for installed discovery agents. */
-		agentSummary?: CustomerAgentInfo;
+		agentSummary?: CustomerAgentInfo | null;
 
 		/** Inventory data for installed discovery connectors. */
-		connectorSummary?: CustomerConnectorInfo;
+		connectorSummary?: CustomerConnectorInfo | null;
 	}
 
 
@@ -343,8 +343,8 @@ export namespace MyNS {
 	}
 
 	export interface ListConfigurationsResponse {
-		configurations?: Array<Configuration>;
-		nextToken?: string;
+		configurations?: Array<Configuration> | null;
+		nextToken?: string | null;
 	}
 
 	export interface Configuration {
@@ -352,25 +352,25 @@ export namespace MyNS {
 
 	export interface ListConfigurationsRequest {
 		configurationType: ConfigurationTagConfigurationType;
-		filters?: Array<Filter>;
-		maxResults?: number;
-		nextToken?: string;
-		orderBy?: Array<OrderByElement>;
+		filters?: Array<Filter> | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
+		orderBy?: Array<OrderByElement> | null;
 	}
 
 
 	/** A field and direction for ordered output. */
 	export interface OrderByElement {
 		fieldName: string;
-		sortOrder?: OrderByElementSortOrder;
+		sortOrder?: OrderByElementSortOrder | null;
 	}
 
 	export enum OrderByElementSortOrder { ASC = 0, DESC = 1 }
 
 	export interface ListServerNeighborsResponse {
 		neighbors: Array<NeighborConnectionDetail>;
-		nextToken?: string;
-		knownDependencyCount?: number;
+		nextToken?: string | null;
+		knownDependencyCount?: number | null;
 	}
 
 
@@ -378,25 +378,25 @@ export namespace MyNS {
 	export interface NeighborConnectionDetail {
 		sourceServerId: string;
 		destinationServerId: string;
-		destinationPort?: number;
-		transportProtocol?: string;
+		destinationPort?: number | null;
+		transportProtocol?: string | null;
 		connectionsCount: number;
 	}
 
 	export interface ListServerNeighborsRequest {
 		configurationId: string;
-		portInformationNeeded?: boolean;
-		neighborConfigurationIds?: Array<string>;
-		maxResults?: number;
-		nextToken?: string;
+		portInformationNeeded?: boolean | null;
+		neighborConfigurationIds?: Array<string> | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface StartContinuousExportResponse {
-		exportId?: string;
-		s3Bucket?: string;
-		startTime?: Date;
-		dataSource?: ContinuousExportDescriptionDataSource;
-		schemaStorageConfig?: SchemaStorageConfig;
+		exportId?: string | null;
+		s3Bucket?: string | null;
+		startTime?: Date | null;
+		dataSource?: ContinuousExportDescriptionDataSource | null;
+		schemaStorageConfig?: SchemaStorageConfig | null;
 	}
 
 	export interface StartContinuousExportRequest {
@@ -409,15 +409,15 @@ export namespace MyNS {
 	}
 
 	export interface StartDataCollectionByAgentIdsResponse {
-		agentsConfigurationStatus?: Array<AgentConfigurationStatus>;
+		agentsConfigurationStatus?: Array<AgentConfigurationStatus> | null;
 	}
 
 
 	/** Information about agents or connectors that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation, and whether the agent/connector configuration was updated. */
 	export interface AgentConfigurationStatus {
-		agentId?: string;
-		operationSucceeded?: boolean;
-		description?: string;
+		agentId?: string | null;
+		operationSucceeded?: boolean | null;
+		description?: string | null;
 	}
 
 	export interface StartDataCollectionByAgentIdsRequest {
@@ -425,14 +425,14 @@ export namespace MyNS {
 	}
 
 	export interface StartExportTaskResponse {
-		exportId?: string;
+		exportId?: string | null;
 	}
 
 	export interface StartExportTaskRequest {
-		exportDataFormat?: Array<ExportDataFormat>;
-		filters?: Array<ExportFilter>;
-		startTime?: Date;
-		endTime?: Date;
+		exportDataFormat?: Array<ExportDataFormat> | null;
+		filters?: Array<ExportFilter> | null;
+		startTime?: Date | null;
+		endTime?: Date | null;
 	}
 
 	export enum ExportDataFormat { CSV = 0, GRAPHML = 1 }
@@ -440,18 +440,18 @@ export namespace MyNS {
 	export interface StartImportTaskResponse {
 
 		/** An array of information related to the import task request that includes status information, times, IDs, the Amazon S3 Object URL for the import file, and more. */
-		task?: ImportTask;
+		task?: ImportTask | null;
 	}
 
 	export interface StartImportTaskRequest {
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 		name: string;
 		importUrl: string;
 	}
 
 	export interface StopContinuousExportResponse {
-		startTime?: Date;
-		stopTime?: Date;
+		startTime?: Date | null;
+		stopTime?: Date | null;
 	}
 
 	export interface StopContinuousExportRequest {
@@ -459,7 +459,7 @@ export namespace MyNS {
 	}
 
 	export interface StopDataCollectionByAgentIdsResponse {
-		agentsConfigurationStatus?: Array<AgentConfigurationStatus>;
+		agentsConfigurationStatus?: Array<AgentConfigurationStatus> | null;
 	}
 
 	export interface StopDataCollectionByAgentIdsRequest {
@@ -471,8 +471,8 @@ export namespace MyNS {
 
 	export interface UpdateApplicationRequest {
 		configurationId: string;
-		name?: string;
-		description?: string;
+		name?: string | null;
+		description?: string | null;
 	}
 
 	export enum AgentStatus { HEALTHY = 0, UNHEALTHY = 1, RUNNING = 2, UNKNOWN = 3, BLACKLISTED = 4, SHUTDOWN = 5 }
@@ -575,7 +575,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeContinuousExportsResponse} Success
 		 */
-		DescribeContinuousExports(maxResults: string, nextToken: string, requestBody: DescribeContinuousExportsRequest): Observable<DescribeContinuousExportsResponse> {
+		DescribeContinuousExports(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeContinuousExportsRequest): Observable<DescribeContinuousExportsResponse> {
 			return this.http.post<DescribeContinuousExportsResponse>(this.baseUri + '#X-Amz-Target=AWSPoseidonService_V2015_11_01.DescribeContinuousExports?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -604,7 +604,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeImportTasksResponse} Success
 		 */
-		DescribeImportTasks(maxResults: string, nextToken: string, requestBody: DescribeImportTasksRequest): Observable<DescribeImportTasksResponse> {
+		DescribeImportTasks(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeImportTasksRequest): Observable<DescribeImportTasksResponse> {
 			return this.http.post<DescribeImportTasksResponse>(this.baseUri + '#X-Amz-Target=AWSPoseidonService_V2015_11_01.DescribeImportTasks?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

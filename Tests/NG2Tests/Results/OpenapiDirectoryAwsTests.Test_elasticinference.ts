@@ -3,15 +3,15 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface DescribeAcceleratorOfferingsResponse {
-		acceleratorTypeOfferings?: Array<AcceleratorTypeOffering>;
+		acceleratorTypeOfferings?: Array<AcceleratorTypeOffering> | null;
 	}
 
 
 	/**  The offering for an Elastic Inference Accelerator type.  */
 	export interface AcceleratorTypeOffering {
-		acceleratorType?: string;
-		locationType?: AcceleratorTypeOfferingLocationType;
-		location?: string;
+		acceleratorType?: string | null;
+		locationType?: AcceleratorTypeOfferingLocationType | null;
+		location?: string | null;
 	}
 
 	export enum AcceleratorTypeOfferingLocationType { region = 0, availability_zone = 1, availability_zone_id = 2 }
@@ -26,35 +26,35 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAcceleratorTypesResponse {
-		acceleratorTypes?: Array<AcceleratorType>;
+		acceleratorTypes?: Array<AcceleratorType> | null;
 	}
 
 
 	/**  The details of an Elastic Inference Accelerator type.  */
 	export interface AcceleratorType {
-		acceleratorTypeName?: string;
+		acceleratorTypeName?: string | null;
 
 		/** The memory information of an Elastic Inference Accelerator type. */
-		memoryInfo?: MemoryInfo;
-		throughputInfo?: Array<KeyValuePair>;
+		memoryInfo?: MemoryInfo | null;
+		throughputInfo?: Array<KeyValuePair> | null;
 	}
 
 
 	/**  The memory information of an Elastic Inference Accelerator type.  */
 	export interface MemoryInfo {
-		sizeInMiB?: number;
+		sizeInMiB?: number | null;
 	}
 
 
 	/**  A throughput entry for an Elastic Inference Accelerator type.  */
 	export interface KeyValuePair {
-		key?: string;
-		value?: number;
+		key?: string | null;
+		value?: number | null;
 	}
 
 	export interface DescribeAcceleratorsResponse {
-		acceleratorSet?: Array<ElasticInferenceAccelerator>;
-		nextToken?: string;
+		acceleratorSet?: Array<ElasticInferenceAccelerator> | null;
+		nextToken?: string | null;
 	}
 
 
@@ -62,28 +62,28 @@ export namespace MyNS {
 	export interface ElasticInferenceAccelerator {
 
 		/** The health details of an Elastic Inference Accelerator. */
-		acceleratorHealth?: ElasticInferenceAcceleratorHealth;
-		acceleratorType?: string;
-		acceleratorId?: string;
-		availabilityZone?: string;
-		attachedResource?: string;
+		acceleratorHealth?: ElasticInferenceAcceleratorHealth | null;
+		acceleratorType?: string | null;
+		acceleratorId?: string | null;
+		availabilityZone?: string | null;
+		attachedResource?: string | null;
 	}
 
 
 	/**  The health details of an Elastic Inference Accelerator.  */
 	export interface ElasticInferenceAcceleratorHealth {
-		status?: string;
+		status?: string | null;
 	}
 
 
 	/**  A filter expression for the Elastic Inference Accelerator list.  */
 	export interface Filter {
-		name?: string;
-		values?: Array<string>;
+		name?: string | null;
+		values?: Array<string> | null;
 	}
 
 	export interface ListTagsForResourceResult {
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export interface TagMap {
@@ -99,7 +99,7 @@ export namespace MyNS {
 
 	export interface DescribeAcceleratorOfferingsRequest {
 		locationType: DescribeAcceleratorOfferingsRequestLocationType;
-		acceleratorTypes?: Array<string>;
+		acceleratorTypes?: Array<string> | null;
 	}
 
 	export enum DescribeAcceleratorOfferingsRequestLocationType { region = 0, availability_zone = 1, availability_zone_id = 2 }
@@ -108,10 +108,10 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAcceleratorsRequest {
-		acceleratorIds?: Array<string>;
-		filters?: Array<Filter>;
-		maxResults?: number;
-		nextToken?: string;
+		acceleratorIds?: Array<string> | null;
+		filters?: Array<Filter> | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -154,7 +154,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeAcceleratorsResponse} Success
 		 */
-		DescribeAccelerators(maxResults: string, nextToken: string, requestBody: DescribeAcceleratorsPostBody): Observable<DescribeAcceleratorsResponse> {
+		DescribeAccelerators(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeAcceleratorsPostBody): Observable<DescribeAcceleratorsResponse> {
 			return this.http.post<DescribeAcceleratorsResponse>(this.baseUri + 'describe-accelerators?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -205,7 +205,7 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 100
 		 */
-		acceleratorTypes?: Array<string>;
+		acceleratorTypes?: Array<string> | null;
 	}
 
 	export enum DescribeAcceleratorOfferingsPostBodyLocationType { region = 0, availability_zone = 1, availability_zone_id = 2 }
@@ -217,21 +217,21 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 1000
 		 */
-		acceleratorIds?: Array<string>;
+		acceleratorIds?: Array<string> | null;
 
 		/**
 		 * One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for.
 		 * Minimum items: 0
 		 * Maximum items: 100
 		 */
-		filters?: Array<Filter>;
+		filters?: Array<Filter> | null;
 
 		/**
 		 * The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI.
 		 * Minimum: 0
 		 * Maximum: 100
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/**
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
@@ -239,7 +239,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[A-Za-z0-9+/]+={0,2}$
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface TagResourcePostBody {

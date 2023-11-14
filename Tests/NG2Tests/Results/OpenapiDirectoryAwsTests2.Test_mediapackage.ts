@@ -3,30 +3,30 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateChannelResponse {
-		Arn?: string;
-		Description?: string;
+		Arn?: string | null;
+		Description?: string | null;
 
 		/** An HTTP Live Streaming (HLS) ingest resource configuration. */
-		HlsIngest?: HlsIngest;
-		Id?: string;
+		HlsIngest?: HlsIngest | null;
+		Id?: string | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
 	/** An HTTP Live Streaming (HLS) ingest resource configuration. */
 	export interface HlsIngest {
-		IngestEndpoints?: Array<IngestEndpoint>;
+		IngestEndpoints?: Array<IngestEndpoint> | null;
 	}
 
 
 	/** An endpoint for ingesting source content for a Channel. */
 	export interface IngestEndpoint {
-		Id?: string;
-		Password?: string;
-		Url?: string;
-		Username?: string;
+		Id?: string | null;
+		Password?: string | null;
+		Url?: string | null;
+		Username?: string | null;
 	}
 
 
@@ -53,19 +53,19 @@ export namespace MyNS {
 	}
 
 	export interface CreateHarvestJobResponse {
-		Arn?: string;
-		ChannelId?: string;
-		CreatedAt?: string;
-		EndTime?: string;
-		Id?: string;
-		OriginEndpointId?: string;
+		Arn?: string | null;
+		ChannelId?: string | null;
+		CreatedAt?: string | null;
+		EndTime?: string | null;
+		Id?: string | null;
+		OriginEndpointId?: string | null;
 
 		/**
 		 * Configuration parameters for where in an S3 bucket to place the harvested content
 		 */
-		S3Destination?: S3Destination;
-		StartTime?: string;
-		Status?: CreateHarvestJobResponseStatus;
+		S3Destination?: S3Destination | null;
+		StartTime?: string | null;
+		Status?: CreateHarvestJobResponseStatus | null;
 	}
 
 
@@ -81,34 +81,34 @@ export namespace MyNS {
 	export enum CreateHarvestJobResponseStatus { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
 
 	export interface CreateOriginEndpointResponse {
-		Arn?: string;
+		Arn?: string | null;
 
 		/** CDN Authorization credentials */
-		Authorization?: Authorization;
-		ChannelId?: string;
+		Authorization?: Authorization | null;
+		ChannelId?: string | null;
 
 		/** A Common Media Application Format (CMAF) packaging configuration. */
-		CmafPackage?: CmafPackage;
+		CmafPackage?: CmafPackage | null;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration. */
-		DashPackage?: DashPackage;
-		Description?: string;
+		DashPackage?: DashPackage | null;
+		Description?: string | null;
 
 		/** An HTTP Live Streaming (HLS) packaging configuration. */
-		HlsPackage?: HlsPackage;
-		Id?: string;
-		ManifestName?: string;
+		HlsPackage?: HlsPackage | null;
+		Id?: string | null;
+		ManifestName?: string | null;
 
 		/** A Microsoft Smooth Streaming (MSS) packaging configuration. */
-		MssPackage?: MssPackage;
-		Origination?: CreateOriginEndpointResponseOrigination;
-		StartoverWindowSeconds?: number;
+		MssPackage?: MssPackage | null;
+		Origination?: CreateOriginEndpointResponseOrigination | null;
+		StartoverWindowSeconds?: number | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
-		TimeDelaySeconds?: number;
-		Url?: string;
-		Whitelist?: Array<string>;
+		Tags?: Tags | null;
+		TimeDelaySeconds?: number | null;
+		Url?: string | null;
+		Whitelist?: Array<string> | null;
 	}
 
 
@@ -123,19 +123,19 @@ export namespace MyNS {
 	export interface CmafPackage {
 
 		/** A Common Media Application Format (CMAF) encryption configuration. */
-		Encryption?: CmafEncryption;
-		HlsManifests?: Array<HlsManifest>;
-		SegmentDurationSeconds?: number;
-		SegmentPrefix?: string;
+		Encryption?: CmafEncryption | null;
+		HlsManifests?: Array<HlsManifest> | null;
+		SegmentDurationSeconds?: number | null;
+		SegmentPrefix?: string | null;
 
 		/** A StreamSelection configuration. */
-		StreamSelection?: StreamSelection;
+		StreamSelection?: StreamSelection | null;
 	}
 
 
 	/** A Common Media Application Format (CMAF) encryption configuration. */
 	export interface CmafEncryption {
-		KeyRotationIntervalSeconds?: number;
+		KeyRotationIntervalSeconds?: number | null;
 
 		/**
 		 * A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
@@ -147,7 +147,7 @@ export namespace MyNS {
 
 	/** A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys. */
 	export interface SpekeKeyProvider {
-		CertificateArn?: string;
+		CertificateArn?: string | null;
 		ResourceId: string;
 		RoleArn: string;
 		SystemIds: Array<string>;
@@ -157,14 +157,14 @@ export namespace MyNS {
 
 	/** A HTTP Live Streaming (HLS) manifest configuration. */
 	export interface HlsManifest {
-		AdMarkers?: HlsManifestAdMarkers;
+		AdMarkers?: HlsManifestAdMarkers | null;
 		Id: string;
-		IncludeIframeOnlyStream?: boolean;
-		ManifestName?: string;
-		PlaylistType?: HlsManifestPlaylistType;
-		PlaylistWindowSeconds?: number;
-		ProgramDateTimeIntervalSeconds?: number;
-		Url?: string;
+		IncludeIframeOnlyStream?: boolean | null;
+		ManifestName?: string | null;
+		PlaylistType?: HlsManifestPlaylistType | null;
+		PlaylistWindowSeconds?: number | null;
+		ProgramDateTimeIntervalSeconds?: number | null;
+		Url?: string | null;
 	}
 
 	export enum HlsManifestAdMarkers { NONE = 0, SCTE35_ENHANCED = 1, PASSTHROUGH = 2 }
@@ -174,9 +174,9 @@ export namespace MyNS {
 
 	/** A StreamSelection configuration. */
 	export interface StreamSelection {
-		MaxVideoBitsPerSecond?: number;
-		MinVideoBitsPerSecond?: number;
-		StreamOrder?: StreamSelectionStreamOrder;
+		MaxVideoBitsPerSecond?: number | null;
+		MinVideoBitsPerSecond?: number | null;
+		StreamOrder?: StreamSelectionStreamOrder | null;
 	}
 
 	export enum StreamSelectionStreamOrder { ORIGINAL = 0, VIDEO_BITRATE_ASCENDING = 1, VIDEO_BITRATE_DESCENDING = 2 }
@@ -190,7 +190,7 @@ export namespace MyNS {
 		 * ad markers are output.  Specify multiple items to create ad markers for all of the included
 		 * message types.
 		 */
-		AdTriggers?: Array<__AdTriggersElement>;
+		AdTriggers?: Array<__AdTriggersElement> | null;
 
 		/**
 		 * This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
@@ -202,22 +202,22 @@ export namespace MyNS {
 		 * AdTriggers will be treated as ads.  Note that Splice Insert messages do not have these flags
 		 * and are always treated as ads if specified in AdTriggers.
 		 */
-		AdsOnDeliveryRestrictions?: DashPackageAdsOnDeliveryRestrictions;
+		AdsOnDeliveryRestrictions?: DashPackageAdsOnDeliveryRestrictions | null;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration. */
-		Encryption?: DashEncryption;
-		ManifestLayout?: DashPackageManifestLayout;
-		ManifestWindowSeconds?: number;
-		MinBufferTimeSeconds?: number;
-		MinUpdatePeriodSeconds?: number;
-		PeriodTriggers?: Array<__PeriodTriggersElement>;
-		Profile?: DashPackageProfile;
-		SegmentDurationSeconds?: number;
-		SegmentTemplateFormat?: DashPackageSegmentTemplateFormat;
+		Encryption?: DashEncryption | null;
+		ManifestLayout?: DashPackageManifestLayout | null;
+		ManifestWindowSeconds?: number | null;
+		MinBufferTimeSeconds?: number | null;
+		MinUpdatePeriodSeconds?: number | null;
+		PeriodTriggers?: Array<__PeriodTriggersElement> | null;
+		Profile?: DashPackageProfile | null;
+		SegmentDurationSeconds?: number | null;
+		SegmentTemplateFormat?: DashPackageSegmentTemplateFormat | null;
 
 		/** A StreamSelection configuration. */
-		StreamSelection?: StreamSelection;
-		SuggestedPresentationDelaySeconds?: number;
+		StreamSelection?: StreamSelection | null;
+		SuggestedPresentationDelaySeconds?: number | null;
 	}
 
 	export enum __AdTriggersElement { SPLICE_INSERT = 0, BREAK = 1, PROVIDER_ADVERTISEMENT = 2, DISTRIBUTOR_ADVERTISEMENT = 3, PROVIDER_PLACEMENT_OPPORTUNITY = 4, DISTRIBUTOR_PLACEMENT_OPPORTUNITY = 5, PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY = 6, DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY = 7 }
@@ -227,7 +227,7 @@ export namespace MyNS {
 
 	/** A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration. */
 	export interface DashEncryption {
-		KeyRotationIntervalSeconds?: number;
+		KeyRotationIntervalSeconds?: number | null;
 
 		/**
 		 * A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
@@ -247,14 +247,14 @@ export namespace MyNS {
 
 	/** An HTTP Live Streaming (HLS) packaging configuration. */
 	export interface HlsPackage {
-		AdMarkers?: HlsManifestAdMarkers;
+		AdMarkers?: HlsManifestAdMarkers | null;
 
 		/**
 		 * A list of SCTE-35 message types that are treated as ad markers in the output.  If empty, no
 		 * ad markers are output.  Specify multiple items to create ad markers for all of the included
 		 * message types.
 		 */
-		AdTriggers?: Array<__AdTriggersElement>;
+		AdTriggers?: Array<__AdTriggersElement> | null;
 
 		/**
 		 * This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
@@ -266,28 +266,28 @@ export namespace MyNS {
 		 * AdTriggers will be treated as ads.  Note that Splice Insert messages do not have these flags
 		 * and are always treated as ads if specified in AdTriggers.
 		 */
-		AdsOnDeliveryRestrictions?: DashPackageAdsOnDeliveryRestrictions;
+		AdsOnDeliveryRestrictions?: DashPackageAdsOnDeliveryRestrictions | null;
 
 		/** An HTTP Live Streaming (HLS) encryption configuration. */
-		Encryption?: HlsEncryption;
-		IncludeIframeOnlyStream?: boolean;
-		PlaylistType?: HlsManifestPlaylistType;
-		PlaylistWindowSeconds?: number;
-		ProgramDateTimeIntervalSeconds?: number;
-		SegmentDurationSeconds?: number;
+		Encryption?: HlsEncryption | null;
+		IncludeIframeOnlyStream?: boolean | null;
+		PlaylistType?: HlsManifestPlaylistType | null;
+		PlaylistWindowSeconds?: number | null;
+		ProgramDateTimeIntervalSeconds?: number | null;
+		SegmentDurationSeconds?: number | null;
 
 		/** A StreamSelection configuration. */
-		StreamSelection?: StreamSelection;
-		UseAudioRenditionGroup?: boolean;
+		StreamSelection?: StreamSelection | null;
+		UseAudioRenditionGroup?: boolean | null;
 	}
 
 
 	/** An HTTP Live Streaming (HLS) encryption configuration. */
 	export interface HlsEncryption {
-		ConstantInitializationVector?: string;
-		EncryptionMethod?: HlsEncryptionEncryptionMethod;
-		KeyRotationIntervalSeconds?: number;
-		RepeatExtXKey?: boolean;
+		ConstantInitializationVector?: string | null;
+		EncryptionMethod?: HlsEncryptionEncryptionMethod | null;
+		KeyRotationIntervalSeconds?: number | null;
+		RepeatExtXKey?: boolean | null;
 
 		/**
 		 * A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
@@ -303,12 +303,12 @@ export namespace MyNS {
 	export interface MssPackage {
 
 		/** A Microsoft Smooth Streaming (MSS) encryption configuration. */
-		Encryption?: MssEncryption;
-		ManifestWindowSeconds?: number;
-		SegmentDurationSeconds?: number;
+		Encryption?: MssEncryption | null;
+		ManifestWindowSeconds?: number | null;
+		SegmentDurationSeconds?: number | null;
 
 		/** A StreamSelection configuration. */
-		StreamSelection?: StreamSelection;
+		StreamSelection?: StreamSelection | null;
 	}
 
 
@@ -327,14 +327,14 @@ export namespace MyNS {
 
 	/** A HTTP Live Streaming (HLS) manifest configuration. */
 	export interface HlsManifestCreateOrUpdateParameters {
-		AdMarkers?: HlsManifestAdMarkers;
+		AdMarkers?: HlsManifestAdMarkers | null;
 
 		/**
 		 * A list of SCTE-35 message types that are treated as ad markers in the output.  If empty, no
 		 * ad markers are output.  Specify multiple items to create ad markers for all of the included
 		 * message types.
 		 */
-		AdTriggers?: Array<__AdTriggersElement>;
+		AdTriggers?: Array<__AdTriggersElement> | null;
 
 		/**
 		 * This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
@@ -346,13 +346,13 @@ export namespace MyNS {
 		 * AdTriggers will be treated as ads.  Note that Splice Insert messages do not have these flags
 		 * and are always treated as ads if specified in AdTriggers.
 		 */
-		AdsOnDeliveryRestrictions?: DashPackageAdsOnDeliveryRestrictions;
+		AdsOnDeliveryRestrictions?: DashPackageAdsOnDeliveryRestrictions | null;
 		Id: string;
-		IncludeIframeOnlyStream?: boolean;
-		ManifestName?: string;
-		PlaylistType?: HlsManifestPlaylistType;
-		PlaylistWindowSeconds?: number;
-		ProgramDateTimeIntervalSeconds?: number;
+		IncludeIframeOnlyStream?: boolean | null;
+		ManifestName?: string | null;
+		PlaylistType?: HlsManifestPlaylistType | null;
+		PlaylistWindowSeconds?: number | null;
+		ProgramDateTimeIntervalSeconds?: number | null;
 	}
 
 
@@ -385,216 +385,216 @@ export namespace MyNS {
 	}
 
 	export interface DescribeChannelResponse {
-		Arn?: string;
-		Description?: string;
+		Arn?: string | null;
+		Description?: string | null;
 
 		/** An HTTP Live Streaming (HLS) ingest resource configuration. */
-		HlsIngest?: HlsIngest;
-		Id?: string;
+		HlsIngest?: HlsIngest | null;
+		Id?: string | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface DescribeHarvestJobResponse {
-		Arn?: string;
-		ChannelId?: string;
-		CreatedAt?: string;
-		EndTime?: string;
-		Id?: string;
-		OriginEndpointId?: string;
+		Arn?: string | null;
+		ChannelId?: string | null;
+		CreatedAt?: string | null;
+		EndTime?: string | null;
+		Id?: string | null;
+		OriginEndpointId?: string | null;
 
 		/**
 		 * Configuration parameters for where in an S3 bucket to place the harvested content
 		 */
-		S3Destination?: S3Destination;
-		StartTime?: string;
-		Status?: CreateHarvestJobResponseStatus;
+		S3Destination?: S3Destination | null;
+		StartTime?: string | null;
+		Status?: CreateHarvestJobResponseStatus | null;
 	}
 
 	export interface DescribeOriginEndpointResponse {
-		Arn?: string;
+		Arn?: string | null;
 
 		/** CDN Authorization credentials */
-		Authorization?: Authorization;
-		ChannelId?: string;
+		Authorization?: Authorization | null;
+		ChannelId?: string | null;
 
 		/** A Common Media Application Format (CMAF) packaging configuration. */
-		CmafPackage?: CmafPackage;
+		CmafPackage?: CmafPackage | null;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration. */
-		DashPackage?: DashPackage;
-		Description?: string;
+		DashPackage?: DashPackage | null;
+		Description?: string | null;
 
 		/** An HTTP Live Streaming (HLS) packaging configuration. */
-		HlsPackage?: HlsPackage;
-		Id?: string;
-		ManifestName?: string;
+		HlsPackage?: HlsPackage | null;
+		Id?: string | null;
+		ManifestName?: string | null;
 
 		/** A Microsoft Smooth Streaming (MSS) packaging configuration. */
-		MssPackage?: MssPackage;
-		Origination?: CreateOriginEndpointResponseOrigination;
-		StartoverWindowSeconds?: number;
+		MssPackage?: MssPackage | null;
+		Origination?: CreateOriginEndpointResponseOrigination | null;
+		StartoverWindowSeconds?: number | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
-		TimeDelaySeconds?: number;
-		Url?: string;
-		Whitelist?: Array<string>;
+		Tags?: Tags | null;
+		TimeDelaySeconds?: number | null;
+		Url?: string | null;
+		Whitelist?: Array<string> | null;
 	}
 
 	export interface ListChannelsResponse {
-		Channels?: Array<Channel>;
-		NextToken?: string;
+		Channels?: Array<Channel> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A Channel resource configuration. */
 	export interface Channel {
-		Arn?: string;
-		Description?: string;
+		Arn?: string | null;
+		Description?: string | null;
 
 		/** An HTTP Live Streaming (HLS) ingest resource configuration. */
-		HlsIngest?: HlsIngest;
-		Id?: string;
+		HlsIngest?: HlsIngest | null;
+		Id?: string | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface ListHarvestJobsResponse {
-		HarvestJobs?: Array<HarvestJob>;
-		NextToken?: string;
+		HarvestJobs?: Array<HarvestJob> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A HarvestJob resource configuration */
 	export interface HarvestJob {
-		Arn?: string;
-		ChannelId?: string;
-		CreatedAt?: string;
-		EndTime?: string;
-		Id?: string;
-		OriginEndpointId?: string;
+		Arn?: string | null;
+		ChannelId?: string | null;
+		CreatedAt?: string | null;
+		EndTime?: string | null;
+		Id?: string | null;
+		OriginEndpointId?: string | null;
 
 		/**
 		 * Configuration parameters for where in an S3 bucket to place the harvested content
 		 */
-		S3Destination?: S3Destination;
-		StartTime?: string;
-		Status?: CreateHarvestJobResponseStatus;
+		S3Destination?: S3Destination | null;
+		StartTime?: string | null;
+		Status?: CreateHarvestJobResponseStatus | null;
 	}
 
 	export interface ListOriginEndpointsResponse {
-		NextToken?: string;
-		OriginEndpoints?: Array<OriginEndpoint>;
+		NextToken?: string | null;
+		OriginEndpoints?: Array<OriginEndpoint> | null;
 	}
 
 
 	/** An OriginEndpoint resource configuration. */
 	export interface OriginEndpoint {
-		Arn?: string;
+		Arn?: string | null;
 
 		/** CDN Authorization credentials */
-		Authorization?: Authorization;
-		ChannelId?: string;
+		Authorization?: Authorization | null;
+		ChannelId?: string | null;
 
 		/** A Common Media Application Format (CMAF) packaging configuration. */
-		CmafPackage?: CmafPackage;
+		CmafPackage?: CmafPackage | null;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration. */
-		DashPackage?: DashPackage;
-		Description?: string;
+		DashPackage?: DashPackage | null;
+		Description?: string | null;
 
 		/** An HTTP Live Streaming (HLS) packaging configuration. */
-		HlsPackage?: HlsPackage;
-		Id?: string;
-		ManifestName?: string;
+		HlsPackage?: HlsPackage | null;
+		Id?: string | null;
+		ManifestName?: string | null;
 
 		/** A Microsoft Smooth Streaming (MSS) packaging configuration. */
-		MssPackage?: MssPackage;
-		Origination?: CreateOriginEndpointResponseOrigination;
-		StartoverWindowSeconds?: number;
+		MssPackage?: MssPackage | null;
+		Origination?: CreateOriginEndpointResponseOrigination | null;
+		StartoverWindowSeconds?: number | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
-		TimeDelaySeconds?: number;
-		Url?: string;
-		Whitelist?: Array<string>;
+		Tags?: Tags | null;
+		TimeDelaySeconds?: number | null;
+		Url?: string | null;
+		Whitelist?: Array<string> | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: __mapOf__string;
+		Tags?: __mapOf__string | null;
 	}
 
 	export interface __mapOf__string {
 	}
 
 	export interface RotateChannelCredentialsResponse {
-		Arn?: string;
-		Description?: string;
+		Arn?: string | null;
+		Description?: string | null;
 
 		/** An HTTP Live Streaming (HLS) ingest resource configuration. */
-		HlsIngest?: HlsIngest;
-		Id?: string;
+		HlsIngest?: HlsIngest | null;
+		Id?: string | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface RotateIngestEndpointCredentialsResponse {
-		Arn?: string;
-		Description?: string;
+		Arn?: string | null;
+		Description?: string | null;
 
 		/** An HTTP Live Streaming (HLS) ingest resource configuration. */
-		HlsIngest?: HlsIngest;
-		Id?: string;
+		HlsIngest?: HlsIngest | null;
+		Id?: string | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface UpdateChannelResponse {
-		Arn?: string;
-		Description?: string;
+		Arn?: string | null;
+		Description?: string | null;
 
 		/** An HTTP Live Streaming (HLS) ingest resource configuration. */
-		HlsIngest?: HlsIngest;
-		Id?: string;
+		HlsIngest?: HlsIngest | null;
+		Id?: string | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface UpdateOriginEndpointResponse {
-		Arn?: string;
+		Arn?: string | null;
 
 		/** CDN Authorization credentials */
-		Authorization?: Authorization;
-		ChannelId?: string;
+		Authorization?: Authorization | null;
+		ChannelId?: string | null;
 
 		/** A Common Media Application Format (CMAF) packaging configuration. */
-		CmafPackage?: CmafPackage;
+		CmafPackage?: CmafPackage | null;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration. */
-		DashPackage?: DashPackage;
-		Description?: string;
+		DashPackage?: DashPackage | null;
+		Description?: string | null;
 
 		/** An HTTP Live Streaming (HLS) packaging configuration. */
-		HlsPackage?: HlsPackage;
-		Id?: string;
-		ManifestName?: string;
+		HlsPackage?: HlsPackage | null;
+		Id?: string | null;
+		ManifestName?: string | null;
 
 		/** A Microsoft Smooth Streaming (MSS) packaging configuration. */
-		MssPackage?: MssPackage;
-		Origination?: CreateOriginEndpointResponseOrigination;
-		StartoverWindowSeconds?: number;
+		MssPackage?: MssPackage | null;
+		Origination?: CreateOriginEndpointResponseOrigination | null;
+		StartoverWindowSeconds?: number | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
-		TimeDelaySeconds?: number;
-		Url?: string;
-		Whitelist?: Array<string>;
+		Tags?: Tags | null;
+		TimeDelaySeconds?: number | null;
+		Url?: string | null;
+		Whitelist?: Array<string> | null;
 	}
 
 
@@ -602,23 +602,23 @@ export namespace MyNS {
 	export interface CmafPackageCreateOrUpdateParameters {
 
 		/** A Common Media Application Format (CMAF) encryption configuration. */
-		Encryption?: CmafEncryption;
-		HlsManifests?: Array<HlsManifestCreateOrUpdateParameters>;
-		SegmentDurationSeconds?: number;
-		SegmentPrefix?: string;
+		Encryption?: CmafEncryption | null;
+		HlsManifests?: Array<HlsManifestCreateOrUpdateParameters> | null;
+		SegmentDurationSeconds?: number | null;
+		SegmentPrefix?: string | null;
 
 		/** A StreamSelection configuration. */
-		StreamSelection?: StreamSelection;
+		StreamSelection?: StreamSelection | null;
 	}
 
 
 	/** A new Channel configuration. */
 	export interface CreateChannelRequest {
-		Description?: string;
+		Description?: string | null;
 		Id: string;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 
@@ -645,30 +645,30 @@ export namespace MyNS {
 	export interface CreateOriginEndpointRequest {
 
 		/** CDN Authorization credentials */
-		Authorization?: Authorization;
+		Authorization?: Authorization | null;
 		ChannelId: string;
 
 		/** A Common Media Application Format (CMAF) packaging configuration. */
-		CmafPackage?: CmafPackageCreateOrUpdateParameters;
+		CmafPackage?: CmafPackageCreateOrUpdateParameters | null;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration. */
-		DashPackage?: DashPackage;
-		Description?: string;
+		DashPackage?: DashPackage | null;
+		Description?: string | null;
 
 		/** An HTTP Live Streaming (HLS) packaging configuration. */
-		HlsPackage?: HlsPackage;
+		HlsPackage?: HlsPackage | null;
 		Id: string;
-		ManifestName?: string;
+		ManifestName?: string | null;
 
 		/** A Microsoft Smooth Streaming (MSS) packaging configuration. */
-		MssPackage?: MssPackage;
-		Origination?: CreateOriginEndpointResponseOrigination;
-		StartoverWindowSeconds?: number;
+		MssPackage?: MssPackage | null;
+		Origination?: CreateOriginEndpointResponseOrigination | null;
+		StartoverWindowSeconds?: number | null;
 
 		/** A collection of tags associated with a resource */
-		Tags?: Tags;
-		TimeDelaySeconds?: number;
-		Whitelist?: Array<string>;
+		Tags?: Tags | null;
+		TimeDelaySeconds?: number | null;
+		Whitelist?: Array<string> | null;
 	}
 
 	export interface DeleteChannelRequest {
@@ -718,7 +718,7 @@ export namespace MyNS {
 
 	/** Configuration parameters used to update the Channel. */
 	export interface UpdateChannelRequest {
-		Description?: string;
+		Description?: string | null;
 	}
 
 
@@ -726,25 +726,25 @@ export namespace MyNS {
 	export interface UpdateOriginEndpointRequest {
 
 		/** CDN Authorization credentials */
-		Authorization?: Authorization;
+		Authorization?: Authorization | null;
 
 		/** A Common Media Application Format (CMAF) packaging configuration. */
-		CmafPackage?: CmafPackageCreateOrUpdateParameters;
+		CmafPackage?: CmafPackageCreateOrUpdateParameters | null;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration. */
-		DashPackage?: DashPackage;
-		Description?: string;
+		DashPackage?: DashPackage | null;
+		Description?: string | null;
 
 		/** An HTTP Live Streaming (HLS) packaging configuration. */
-		HlsPackage?: HlsPackage;
-		ManifestName?: string;
+		HlsPackage?: HlsPackage | null;
+		ManifestName?: string | null;
 
 		/** A Microsoft Smooth Streaming (MSS) packaging configuration. */
-		MssPackage?: MssPackage;
-		Origination?: CreateOriginEndpointResponseOrigination;
-		StartoverWindowSeconds?: number;
-		TimeDelaySeconds?: number;
-		Whitelist?: Array<string>;
+		MssPackage?: MssPackage | null;
+		Origination?: CreateOriginEndpointResponseOrigination | null;
+		StartoverWindowSeconds?: number | null;
+		TimeDelaySeconds?: number | null;
+		Whitelist?: Array<string> | null;
 	}
 
 	@Injectable()
@@ -770,7 +770,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelsResponse} Success
 		 */
-		ListChannels(maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListChannelsResponse> {
+		ListChannels(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListChannelsResponse> {
 			return this.http.get<ListChannelsResponse>(this.baseUri + 'channels?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -794,7 +794,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListHarvestJobsResponse} Success
 		 */
-		ListHarvestJobs(includeChannelId: string, includeStatus: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListHarvestJobsResponse> {
+		ListHarvestJobs(includeChannelId: string | null | undefined, includeStatus: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListHarvestJobsResponse> {
 			return this.http.get<ListHarvestJobsResponse>(this.baseUri + 'harvest_jobs?includeChannelId=' + (includeChannelId == null ? '' : encodeURIComponent(includeChannelId)) + '&includeStatus=' + (includeStatus == null ? '' : encodeURIComponent(includeStatus)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -817,7 +817,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListOriginEndpointsResponse} Success
 		 */
-		ListOriginEndpoints(channelId: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string): Observable<ListOriginEndpointsResponse> {
+		ListOriginEndpoints(channelId: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListOriginEndpointsResponse> {
 			return this.http.get<ListOriginEndpointsResponse>(this.baseUri + 'origin_endpoints?channelId=' + (channelId == null ? '' : encodeURIComponent(channelId)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -941,7 +941,7 @@ export namespace MyNS {
 	export interface CreateChannelPostBody {
 
 		/** A short text description of the Channel. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The ID of the Channel. The ID must be unique within the region and it
@@ -951,7 +951,7 @@ export namespace MyNS {
 		id: string;
 
 		/** A collection of tags associated with a resource */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateHarvestJobPostBody {
@@ -990,15 +990,15 @@ export namespace MyNS {
 	}
 
 	export interface CreateHarvestJobPostBodyS3Destination {
-		BucketName?: string;
-		ManifestKey?: string;
-		RoleArn?: string;
+		BucketName?: string | null;
+		ManifestKey?: string | null;
+		RoleArn?: string | null;
 	}
 
 	export interface CreateOriginEndpointPostBody {
 
 		/** CDN Authorization credentials */
-		authorization?: CreateOriginEndpointPostBodyAuthorization;
+		authorization?: CreateOriginEndpointPostBodyAuthorization | null;
 
 		/**
 		 * The ID of the Channel that the OriginEndpoint will be associated with.
@@ -1008,16 +1008,16 @@ export namespace MyNS {
 		channelId: string;
 
 		/** A Common Media Application Format (CMAF) packaging configuration. */
-		cmafPackage?: CreateOriginEndpointPostBodyCmafPackage;
+		cmafPackage?: CreateOriginEndpointPostBodyCmafPackage | null;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration. */
-		dashPackage?: CreateOriginEndpointPostBodyDashPackage;
+		dashPackage?: CreateOriginEndpointPostBodyDashPackage | null;
 
 		/** A short text description of the OriginEndpoint. */
-		description?: string;
+		description?: string | null;
 
 		/** An HTTP Live Streaming (HLS) packaging configuration. */
-		hlsPackage?: CreateOriginEndpointPostBodyHlsPackage;
+		hlsPackage?: CreateOriginEndpointPostBodyHlsPackage | null;
 
 		/**
 		 * The ID of the OriginEndpoint.  The ID must be unique within the region
@@ -1027,52 +1027,52 @@ export namespace MyNS {
 		id: string;
 
 		/** A short string that will be used as the filename of the OriginEndpoint URL (defaults to "index"). */
-		manifestName?: string;
+		manifestName?: string | null;
 
 		/** A Microsoft Smooth Streaming (MSS) packaging configuration. */
-		mssPackage?: CreateOriginEndpointPostBodyMssPackage;
+		mssPackage?: CreateOriginEndpointPostBodyMssPackage | null;
 
 		/**
 		 * Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
 		 * may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
 		 * requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
 		 */
-		origination?: CreateOriginEndpointResponseOrigination;
+		origination?: CreateOriginEndpointResponseOrigination | null;
 
 		/**
 		 * Maximum duration (seconds) of content to retain for startover playback.
 		 * If not specified, startover playback will be disabled for the OriginEndpoint.
 		 */
-		startoverWindowSeconds?: number;
+		startoverWindowSeconds?: number | null;
 
 		/** A collection of tags associated with a resource */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/**
 		 * Amount of delay (seconds) to enforce on the playback of live content.
 		 * If not specified, there will be no time delay in effect for the OriginEndpoint.
 		 */
-		timeDelaySeconds?: number;
+		timeDelaySeconds?: number | null;
 
 		/** A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint. */
-		whitelist?: Array<string>;
+		whitelist?: Array<string> | null;
 	}
 
 	export interface CreateOriginEndpointPostBodyAuthorization {
-		CdnIdentifierSecret?: string;
-		SecretsRoleArn?: string;
+		CdnIdentifierSecret?: string | null;
+		SecretsRoleArn?: string | null;
 	}
 
 	export interface CreateOriginEndpointPostBodyCmafPackage {
 
 		/** A Common Media Application Format (CMAF) encryption configuration. */
-		Encryption?: CmafEncryption;
-		HlsManifests?: Array<HlsManifestCreateOrUpdateParameters>;
-		SegmentDurationSeconds?: number;
-		SegmentPrefix?: string;
+		Encryption?: CmafEncryption | null;
+		HlsManifests?: Array<HlsManifestCreateOrUpdateParameters> | null;
+		SegmentDurationSeconds?: number | null;
+		SegmentPrefix?: string | null;
 
 		/** A StreamSelection configuration. */
-		StreamSelection?: StreamSelection;
+		StreamSelection?: StreamSelection | null;
 	}
 
 	export interface CreateOriginEndpointPostBodyDashPackage {
@@ -1082,7 +1082,7 @@ export namespace MyNS {
 		 * ad markers are output.  Specify multiple items to create ad markers for all of the included
 		 * message types.
 		 */
-		AdTriggers?: Array<__AdTriggersElement>;
+		AdTriggers?: Array<__AdTriggersElement> | null;
 
 		/**
 		 * This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
@@ -1094,33 +1094,33 @@ export namespace MyNS {
 		 * AdTriggers will be treated as ads.  Note that Splice Insert messages do not have these flags
 		 * and are always treated as ads if specified in AdTriggers.
 		 */
-		AdsOnDeliveryRestrictions?: DashPackageAdsOnDeliveryRestrictions;
+		AdsOnDeliveryRestrictions?: DashPackageAdsOnDeliveryRestrictions | null;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration. */
-		Encryption?: DashEncryption;
-		ManifestLayout?: DashPackageManifestLayout;
-		ManifestWindowSeconds?: number;
-		MinBufferTimeSeconds?: number;
-		MinUpdatePeriodSeconds?: number;
-		PeriodTriggers?: Array<__PeriodTriggersElement>;
-		Profile?: DashPackageProfile;
-		SegmentDurationSeconds?: number;
-		SegmentTemplateFormat?: DashPackageSegmentTemplateFormat;
+		Encryption?: DashEncryption | null;
+		ManifestLayout?: DashPackageManifestLayout | null;
+		ManifestWindowSeconds?: number | null;
+		MinBufferTimeSeconds?: number | null;
+		MinUpdatePeriodSeconds?: number | null;
+		PeriodTriggers?: Array<__PeriodTriggersElement> | null;
+		Profile?: DashPackageProfile | null;
+		SegmentDurationSeconds?: number | null;
+		SegmentTemplateFormat?: DashPackageSegmentTemplateFormat | null;
 
 		/** A StreamSelection configuration. */
-		StreamSelection?: StreamSelection;
-		SuggestedPresentationDelaySeconds?: number;
+		StreamSelection?: StreamSelection | null;
+		SuggestedPresentationDelaySeconds?: number | null;
 	}
 
 	export interface CreateOriginEndpointPostBodyHlsPackage {
-		AdMarkers?: HlsManifestAdMarkers;
+		AdMarkers?: HlsManifestAdMarkers | null;
 
 		/**
 		 * A list of SCTE-35 message types that are treated as ad markers in the output.  If empty, no
 		 * ad markers are output.  Specify multiple items to create ad markers for all of the included
 		 * message types.
 		 */
-		AdTriggers?: Array<__AdTriggersElement>;
+		AdTriggers?: Array<__AdTriggersElement> | null;
 
 		/**
 		 * This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
@@ -1132,99 +1132,99 @@ export namespace MyNS {
 		 * AdTriggers will be treated as ads.  Note that Splice Insert messages do not have these flags
 		 * and are always treated as ads if specified in AdTriggers.
 		 */
-		AdsOnDeliveryRestrictions?: DashPackageAdsOnDeliveryRestrictions;
+		AdsOnDeliveryRestrictions?: DashPackageAdsOnDeliveryRestrictions | null;
 
 		/** An HTTP Live Streaming (HLS) encryption configuration. */
-		Encryption?: HlsEncryption;
-		IncludeIframeOnlyStream?: boolean;
-		PlaylistType?: HlsManifestPlaylistType;
-		PlaylistWindowSeconds?: number;
-		ProgramDateTimeIntervalSeconds?: number;
-		SegmentDurationSeconds?: number;
+		Encryption?: HlsEncryption | null;
+		IncludeIframeOnlyStream?: boolean | null;
+		PlaylistType?: HlsManifestPlaylistType | null;
+		PlaylistWindowSeconds?: number | null;
+		ProgramDateTimeIntervalSeconds?: number | null;
+		SegmentDurationSeconds?: number | null;
 
 		/** A StreamSelection configuration. */
-		StreamSelection?: StreamSelection;
-		UseAudioRenditionGroup?: boolean;
+		StreamSelection?: StreamSelection | null;
+		UseAudioRenditionGroup?: boolean | null;
 	}
 
 	export interface CreateOriginEndpointPostBodyMssPackage {
 
 		/** A Microsoft Smooth Streaming (MSS) encryption configuration. */
-		Encryption?: MssEncryption;
-		ManifestWindowSeconds?: number;
-		SegmentDurationSeconds?: number;
+		Encryption?: MssEncryption | null;
+		ManifestWindowSeconds?: number | null;
+		SegmentDurationSeconds?: number | null;
 
 		/** A StreamSelection configuration. */
-		StreamSelection?: StreamSelection;
+		StreamSelection?: StreamSelection | null;
 	}
 
 	export interface UpdateChannelPutBody {
 
 		/** A short text description of the Channel. */
-		description?: string;
+		description?: string | null;
 	}
 
 	export interface UpdateOriginEndpointPutBody {
 
 		/** CDN Authorization credentials */
-		authorization?: UpdateOriginEndpointPutBodyAuthorization;
+		authorization?: UpdateOriginEndpointPutBodyAuthorization | null;
 
 		/** A Common Media Application Format (CMAF) packaging configuration. */
-		cmafPackage?: UpdateOriginEndpointPutBodyCmafPackage;
+		cmafPackage?: UpdateOriginEndpointPutBodyCmafPackage | null;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration. */
-		dashPackage?: UpdateOriginEndpointPutBodyDashPackage;
+		dashPackage?: UpdateOriginEndpointPutBodyDashPackage | null;
 
 		/** A short text description of the OriginEndpoint. */
-		description?: string;
+		description?: string | null;
 
 		/** An HTTP Live Streaming (HLS) packaging configuration. */
-		hlsPackage?: UpdateOriginEndpointPutBodyHlsPackage;
+		hlsPackage?: UpdateOriginEndpointPutBodyHlsPackage | null;
 
 		/** A short string that will be appended to the end of the Endpoint URL. */
-		manifestName?: string;
+		manifestName?: string | null;
 
 		/** A Microsoft Smooth Streaming (MSS) packaging configuration. */
-		mssPackage?: UpdateOriginEndpointPutBodyMssPackage;
+		mssPackage?: UpdateOriginEndpointPutBodyMssPackage | null;
 
 		/**
 		 * Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
 		 * may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
 		 * requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
 		 */
-		origination?: CreateOriginEndpointResponseOrigination;
+		origination?: CreateOriginEndpointResponseOrigination | null;
 
 		/**
 		 * Maximum duration (in seconds) of content to retain for startover playback.
 		 * If not specified, startover playback will be disabled for the OriginEndpoint.
 		 */
-		startoverWindowSeconds?: number;
+		startoverWindowSeconds?: number | null;
 
 		/**
 		 * Amount of delay (in seconds) to enforce on the playback of live content.
 		 * If not specified, there will be no time delay in effect for the OriginEndpoint.
 		 */
-		timeDelaySeconds?: number;
+		timeDelaySeconds?: number | null;
 
 		/** A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint. */
-		whitelist?: Array<string>;
+		whitelist?: Array<string> | null;
 	}
 
 	export interface UpdateOriginEndpointPutBodyAuthorization {
-		CdnIdentifierSecret?: string;
-		SecretsRoleArn?: string;
+		CdnIdentifierSecret?: string | null;
+		SecretsRoleArn?: string | null;
 	}
 
 	export interface UpdateOriginEndpointPutBodyCmafPackage {
 
 		/** A Common Media Application Format (CMAF) encryption configuration. */
-		Encryption?: CmafEncryption;
-		HlsManifests?: Array<HlsManifestCreateOrUpdateParameters>;
-		SegmentDurationSeconds?: number;
-		SegmentPrefix?: string;
+		Encryption?: CmafEncryption | null;
+		HlsManifests?: Array<HlsManifestCreateOrUpdateParameters> | null;
+		SegmentDurationSeconds?: number | null;
+		SegmentPrefix?: string | null;
 
 		/** A StreamSelection configuration. */
-		StreamSelection?: StreamSelection;
+		StreamSelection?: StreamSelection | null;
 	}
 
 	export interface UpdateOriginEndpointPutBodyDashPackage {
@@ -1234,7 +1234,7 @@ export namespace MyNS {
 		 * ad markers are output.  Specify multiple items to create ad markers for all of the included
 		 * message types.
 		 */
-		AdTriggers?: Array<__AdTriggersElement>;
+		AdTriggers?: Array<__AdTriggersElement> | null;
 
 		/**
 		 * This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
@@ -1246,33 +1246,33 @@ export namespace MyNS {
 		 * AdTriggers will be treated as ads.  Note that Splice Insert messages do not have these flags
 		 * and are always treated as ads if specified in AdTriggers.
 		 */
-		AdsOnDeliveryRestrictions?: DashPackageAdsOnDeliveryRestrictions;
+		AdsOnDeliveryRestrictions?: DashPackageAdsOnDeliveryRestrictions | null;
 
 		/** A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration. */
-		Encryption?: DashEncryption;
-		ManifestLayout?: DashPackageManifestLayout;
-		ManifestWindowSeconds?: number;
-		MinBufferTimeSeconds?: number;
-		MinUpdatePeriodSeconds?: number;
-		PeriodTriggers?: Array<__PeriodTriggersElement>;
-		Profile?: DashPackageProfile;
-		SegmentDurationSeconds?: number;
-		SegmentTemplateFormat?: DashPackageSegmentTemplateFormat;
+		Encryption?: DashEncryption | null;
+		ManifestLayout?: DashPackageManifestLayout | null;
+		ManifestWindowSeconds?: number | null;
+		MinBufferTimeSeconds?: number | null;
+		MinUpdatePeriodSeconds?: number | null;
+		PeriodTriggers?: Array<__PeriodTriggersElement> | null;
+		Profile?: DashPackageProfile | null;
+		SegmentDurationSeconds?: number | null;
+		SegmentTemplateFormat?: DashPackageSegmentTemplateFormat | null;
 
 		/** A StreamSelection configuration. */
-		StreamSelection?: StreamSelection;
-		SuggestedPresentationDelaySeconds?: number;
+		StreamSelection?: StreamSelection | null;
+		SuggestedPresentationDelaySeconds?: number | null;
 	}
 
 	export interface UpdateOriginEndpointPutBodyHlsPackage {
-		AdMarkers?: HlsManifestAdMarkers;
+		AdMarkers?: HlsManifestAdMarkers | null;
 
 		/**
 		 * A list of SCTE-35 message types that are treated as ad markers in the output.  If empty, no
 		 * ad markers are output.  Specify multiple items to create ad markers for all of the included
 		 * message types.
 		 */
-		AdTriggers?: Array<__AdTriggersElement>;
+		AdTriggers?: Array<__AdTriggersElement> | null;
 
 		/**
 		 * This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
@@ -1284,30 +1284,30 @@ export namespace MyNS {
 		 * AdTriggers will be treated as ads.  Note that Splice Insert messages do not have these flags
 		 * and are always treated as ads if specified in AdTriggers.
 		 */
-		AdsOnDeliveryRestrictions?: DashPackageAdsOnDeliveryRestrictions;
+		AdsOnDeliveryRestrictions?: DashPackageAdsOnDeliveryRestrictions | null;
 
 		/** An HTTP Live Streaming (HLS) encryption configuration. */
-		Encryption?: HlsEncryption;
-		IncludeIframeOnlyStream?: boolean;
-		PlaylistType?: HlsManifestPlaylistType;
-		PlaylistWindowSeconds?: number;
-		ProgramDateTimeIntervalSeconds?: number;
-		SegmentDurationSeconds?: number;
+		Encryption?: HlsEncryption | null;
+		IncludeIframeOnlyStream?: boolean | null;
+		PlaylistType?: HlsManifestPlaylistType | null;
+		PlaylistWindowSeconds?: number | null;
+		ProgramDateTimeIntervalSeconds?: number | null;
+		SegmentDurationSeconds?: number | null;
 
 		/** A StreamSelection configuration. */
-		StreamSelection?: StreamSelection;
-		UseAudioRenditionGroup?: boolean;
+		StreamSelection?: StreamSelection | null;
+		UseAudioRenditionGroup?: boolean | null;
 	}
 
 	export interface UpdateOriginEndpointPutBodyMssPackage {
 
 		/** A Microsoft Smooth Streaming (MSS) encryption configuration. */
-		Encryption?: MssEncryption;
-		ManifestWindowSeconds?: number;
-		SegmentDurationSeconds?: number;
+		Encryption?: MssEncryption | null;
+		ManifestWindowSeconds?: number | null;
+		SegmentDurationSeconds?: number | null;
 
 		/** A StreamSelection configuration. */
-		StreamSelection?: StreamSelection;
+		StreamSelection?: StreamSelection | null;
 	}
 
 	export interface TagResourcePostBody {

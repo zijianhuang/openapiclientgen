@@ -3,18 +3,18 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateEnvironmentEC2Result {
-		environmentId?: string;
+		environmentId?: string | null;
 	}
 
 	export interface CreateEnvironmentEC2Request {
 		name: string;
-		description?: string;
-		clientRequestToken?: string;
+		description?: string | null;
+		clientRequestToken?: string | null;
 		instanceType: string;
-		subnetId?: string;
-		automaticStopTimeMinutes?: number;
-		ownerArn?: string;
-		tags?: Array<Tag>;
+		subnetId?: string | null;
+		automaticStopTimeMinutes?: number | null;
+		ownerArn?: string | null;
+		tags?: Array<Tag> | null;
 	}
 
 
@@ -48,17 +48,17 @@ export namespace MyNS {
 	export interface CreateEnvironmentMembershipResult {
 
 		/** Information about an environment member for an AWS Cloud9 development environment. */
-		membership?: EnvironmentMember;
+		membership?: EnvironmentMember | null;
 	}
 
 
 	/** Information about an environment member for an AWS Cloud9 development environment. */
 	export interface EnvironmentMember {
-		permissions?: EnvironmentMemberPermissions;
-		userId?: string;
-		userArn?: string;
-		environmentId?: string;
-		lastAccess?: Date;
+		permissions?: EnvironmentMemberPermissions | null;
+		userId?: string | null;
+		userArn?: string | null;
+		environmentId?: string | null;
+		lastAccess?: Date | null;
 	}
 
 	export enum EnvironmentMemberPermissions { owner = 0, read_write = 1, read_only = 2 }
@@ -87,23 +87,23 @@ export namespace MyNS {
 	}
 
 	export interface DescribeEnvironmentMembershipsResult {
-		memberships?: Array<EnvironmentMember>;
-		nextToken?: string;
+		memberships?: Array<EnvironmentMember> | null;
+		nextToken?: string | null;
 	}
 
 	export interface DescribeEnvironmentMembershipsRequest {
-		userArn?: string;
-		environmentId?: string;
-		permissions?: Array<Permissions>;
-		nextToken?: string;
-		maxResults?: number;
+		userArn?: string | null;
+		environmentId?: string | null;
+		permissions?: Array<Permissions> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export enum Permissions { owner = 0, read_write = 1, read_only = 2 }
 
 	export interface DescribeEnvironmentStatusResult {
-		status?: DescribeEnvironmentStatusResultStatus;
-		message?: string;
+		status?: DescribeEnvironmentStatusResultStatus | null;
+		message?: string | null;
 	}
 
 	export enum DescribeEnvironmentStatusResultStatus { error = 0, creating = 1, connecting = 2, ready = 3, stopping = 4, stopped = 5, deleting = 6 }
@@ -113,21 +113,21 @@ export namespace MyNS {
 	}
 
 	export interface DescribeEnvironmentsResult {
-		environments?: Array<Environment>;
+		environments?: Array<Environment> | null;
 	}
 
 
 	/** Information about an AWS Cloud9 development environment. */
 	export interface Environment {
-		id?: string;
-		name?: string;
-		description?: string;
-		type?: EnvironmentType;
-		arn?: string;
-		ownerArn?: string;
+		id?: string | null;
+		name?: string | null;
+		description?: string | null;
+		type?: EnvironmentType | null;
+		arn?: string | null;
+		ownerArn?: string | null;
 
 		/** Information about the current creation or deletion lifecycle state of an AWS Cloud9 development environment. */
-		lifecycle?: EnvironmentLifecycle;
+		lifecycle?: EnvironmentLifecycle | null;
 	}
 
 	export enum EnvironmentType { ssh = 0, ec2 = 1 }
@@ -135,9 +135,9 @@ export namespace MyNS {
 
 	/** Information about the current creation or deletion lifecycle state of an AWS Cloud9 development environment. */
 	export interface EnvironmentLifecycle {
-		status?: EnvironmentLifecycleStatus;
-		reason?: string;
-		failureResource?: string;
+		status?: EnvironmentLifecycleStatus | null;
+		reason?: string | null;
+		failureResource?: string | null;
 	}
 
 	export enum EnvironmentLifecycleStatus { CREATING = 0, CREATED = 1, CREATE_FAILED = 2, DELETING = 3, DELETE_FAILED = 4 }
@@ -147,17 +147,17 @@ export namespace MyNS {
 	}
 
 	export interface ListEnvironmentsResult {
-		nextToken?: string;
-		environmentIds?: Array<string>;
+		nextToken?: string | null;
+		environmentIds?: Array<string> | null;
 	}
 
 	export interface ListEnvironmentsRequest {
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -185,14 +185,14 @@ export namespace MyNS {
 
 	export interface UpdateEnvironmentRequest {
 		environmentId: string;
-		name?: string;
-		description?: string;
+		name?: string | null;
+		description?: string | null;
 	}
 
 	export interface UpdateEnvironmentMembershipResult {
 
 		/** Information about an environment member for an AWS Cloud9 development environment. */
-		membership?: EnvironmentMember;
+		membership?: EnvironmentMember | null;
 	}
 
 	export interface UpdateEnvironmentMembershipRequest {
@@ -255,7 +255,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeEnvironmentMembershipsResult} Success
 		 */
-		DescribeEnvironmentMemberships(maxResults: string, nextToken: string, requestBody: DescribeEnvironmentMembershipsRequest): Observable<DescribeEnvironmentMembershipsResult> {
+		DescribeEnvironmentMemberships(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeEnvironmentMembershipsRequest): Observable<DescribeEnvironmentMembershipsResult> {
 			return this.http.post<DescribeEnvironmentMembershipsResult>(this.baseUri + '#X-Amz-Target=AWSCloud9WorkspaceManagementService.DescribeEnvironmentMemberships?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -284,7 +284,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListEnvironmentsResult} Success
 		 */
-		ListEnvironments(maxResults: string, nextToken: string, requestBody: ListEnvironmentsRequest): Observable<ListEnvironmentsResult> {
+		ListEnvironments(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListEnvironmentsRequest): Observable<ListEnvironmentsResult> {
 			return this.http.post<ListEnvironmentsResult>(this.baseUri + '#X-Amz-Target=AWSCloud9WorkspaceManagementService.ListEnvironments?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

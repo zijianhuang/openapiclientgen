@@ -12,9 +12,9 @@ using System.Linq;
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	/// <summary>
-	/// Create CS Types CodeDOM from OpenApiComponents
+	/// Create Types CodeDOM from OpenApiComponents. This is the major entry point to interact with OpenApiComponents.
 	/// </summary>
-	public abstract class ComponentsToTypesBase
+	public abstract class ComponentsToTypesBase : IComponentToCodeDom
 	{
 		public ComponentsToTypesBase(Settings settings, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace)
 		{

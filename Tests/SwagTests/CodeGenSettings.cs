@@ -11,7 +11,7 @@ namespace SwagTests
 			return new Settings()
 			{
 				ClientNamespace = "MyNS",
-				ContainerClassName = "Misc",
+				ContainerClassName = "MyClient",
 				ContainerNameStrategy = ContainerNameStrategy.None,
 				ActionNameStrategy = ans,
 				GenerateBothAsyncAndSync = true,

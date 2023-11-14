@@ -526,14 +526,14 @@ namespace MyNS
 		public WidgetMetadata[] WidgetTypes { get; set; }
 	}
 	
-	public partial class Misc
+	public partial class MyClient
 	{
 		
 		private System.Net.Http.HttpClient client;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public MyClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -667,86 +667,6 @@ namespace MyNS
 			finally
 			{
 				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Create the supplied dashboard.
-		/// Dashboards_Create {organization}/{project}/{team}/_apis/dashboard/dashboards
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <param name="requestBody">The initial state of the dashboard</param>
-		/// <returns>successful operation</returns>
-		public async Task<Dashboard> Dashboards_CreateAsync(string organization, string project, string team, string api_version, Dashboard requestBody)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Dashboard>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Create the supplied dashboard.
-		/// Dashboards_Create {organization}/{project}/{team}/_apis/dashboard/dashboards
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
-		/// <param name="requestBody">The initial state of the dashboard</param>
-		/// <returns>successful operation</returns>
-		public Dashboard Dashboards_Create(string organization, string project, string team, string api_version, Dashboard requestBody)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Dashboard>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -894,55 +814,81 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Delete a dashboard given its ID. This also deletes the widgets associated with this dashboard.
-		/// Dashboards_Delete {organization}/{project}/{team}/_apis/dashboard/dashboards/{dashboardId}
+		/// Create the supplied dashboard.
+		/// Dashboards_Create {organization}/{project}/{team}/_apis/dashboard/dashboards
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
 		/// <param name="project">Project ID or project name</param>
-		/// <param name="dashboardId">ID of the dashboard to delete.</param>
 		/// <param name="team">Team ID or team name</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <param name="requestBody">The initial state of the dashboard</param>
 		/// <returns>successful operation</returns>
-		public async Task Dashboards_DeleteAsync(string organization, string project, string dashboardId, string team, string api_version)
+		public async Task<Dashboard> Dashboards_CreateAsync(string organization, string project, string team, string api_version, Dashboard requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
 			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Dashboard>(jsonReader);
+				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
 		
 		/// <summary>
-		/// Delete a dashboard given its ID. This also deletes the widgets associated with this dashboard.
-		/// Dashboards_Delete {organization}/{project}/{team}/_apis/dashboard/dashboards/{dashboardId}
+		/// Create the supplied dashboard.
+		/// Dashboards_Create {organization}/{project}/{team}/_apis/dashboard/dashboards
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
 		/// <param name="project">Project ID or project name</param>
-		/// <param name="dashboardId">ID of the dashboard to delete.</param>
 		/// <param name="team">Team ID or team name</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
+		/// <param name="requestBody">The initial state of the dashboard</param>
 		/// <returns>successful operation</returns>
-		public void Dashboards_Delete(string organization, string project, string dashboardId, string team, string api_version)
+		public Dashboard Dashboards_Create(string organization, string project, string team, string api_version, Dashboard requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Dashboard>(jsonReader);
+				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
+			}
 			}
 			}
 		}
@@ -1094,83 +1040,55 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Create a widget on the specified dashboard.
-		/// Widgets_Create {organization}/{project}/{team}/_apis/dashboard/dashboards/{dashboardId}/widgets
+		/// Delete a dashboard given its ID. This also deletes the widgets associated with this dashboard.
+		/// Dashboards_Delete {organization}/{project}/{team}/_apis/dashboard/dashboards/{dashboardId}
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
 		/// <param name="project">Project ID or project name</param>
-		/// <param name="dashboardId">ID of dashboard the widget will be added to.</param>
+		/// <param name="dashboardId">ID of the dashboard to delete.</param>
 		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <param name="requestBody">State of the widget to add</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<Widget> Widgets_CreateAsync(string organization, string project, string dashboardId, string team, string api_version, Widget requestBody)
+		public async Task Dashboards_DeleteAsync(string organization, string project, string dashboardId, string team, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
 			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Widget>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
 		
 		/// <summary>
-		/// Create a widget on the specified dashboard.
-		/// Widgets_Create {organization}/{project}/{team}/_apis/dashboard/dashboards/{dashboardId}/widgets
+		/// Delete a dashboard given its ID. This also deletes the widgets associated with this dashboard.
+		/// Dashboards_Delete {organization}/{project}/{team}/_apis/dashboard/dashboards/{dashboardId}
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
 		/// <param name="project">Project ID or project name</param>
-		/// <param name="dashboardId">ID of dashboard the widget will be added to.</param>
+		/// <param name="dashboardId">ID of the dashboard to delete.</param>
 		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <param name="requestBody">State of the widget to add</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.3' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public Widget Widgets_Create(string organization, string project, string dashboardId, string team, string api_version, Widget requestBody)
+		public void Dashboards_Delete(string organization, string project, string dashboardId, string team, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Widget>(jsonReader);
-				}
 			}
 			finally
 			{
 				responseMessage.Dispose();
-			}
 			}
 			}
 		}
@@ -1324,6 +1242,88 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Create a widget on the specified dashboard.
+		/// Widgets_Create {organization}/{project}/{team}/_apis/dashboard/dashboards/{dashboardId}/widgets
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="dashboardId">ID of dashboard the widget will be added to.</param>
+		/// <param name="team">Team ID or team name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <param name="requestBody">State of the widget to add</param>
+		/// <returns>successful operation</returns>
+		public async Task<Widget> Widgets_CreateAsync(string organization, string project, string dashboardId, string team, string api_version, Widget requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Widget>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Create a widget on the specified dashboard.
+		/// Widgets_Create {organization}/{project}/{team}/_apis/dashboard/dashboards/{dashboardId}/widgets
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="dashboardId">ID of dashboard the widget will be added to.</param>
+		/// <param name="team">Team ID or team name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <param name="requestBody">State of the widget to add</param>
+		/// <returns>successful operation</returns>
+		public Widget Widgets_Create(string organization, string project, string dashboardId, string team, string api_version, Widget requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Widget>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Update the supplied widgets on the dashboard using supplied state. State of existing Widgets not passed in the widget list is preserved.
 		/// Widgets_Update_Widgets {organization}/{project}/{team}/_apis/dashboard/dashboards/{dashboardId}/widgets
 		/// </summary>
@@ -1401,74 +1401,6 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete the specified widget.
-		/// Widgets_Delete {organization}/{project}/{team}/_apis/dashboard/dashboards/{dashboardId}/widgets/{widgetId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="dashboardId">ID of the dashboard containing the widget.</param>
-		/// <param name="widgetId">ID of the widget to update.</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<Dashboard> Widgets_DeleteAsync(string organization, string project, string dashboardId, string widgetId, string team, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Dashboard>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete the specified widget.
-		/// Widgets_Delete {organization}/{project}/{team}/_apis/dashboard/dashboards/{dashboardId}/widgets/{widgetId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="dashboardId">ID of the dashboard containing the widget.</param>
-		/// <param name="widgetId">ID of the widget to update.</param>
-		/// <param name="team">Team ID or team name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public Dashboard Widgets_Delete(string organization, string project, string dashboardId, string widgetId, string team, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Dashboard>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
 			}
 			}
 		}
@@ -1621,6 +1553,74 @@ namespace MyNS
 			{
 				responseMessage.Dispose();
 			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete the specified widget.
+		/// Widgets_Delete {organization}/{project}/{team}/_apis/dashboard/dashboards/{dashboardId}/widgets/{widgetId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="dashboardId">ID of the dashboard containing the widget.</param>
+		/// <param name="widgetId">ID of the widget to update.</param>
+		/// <param name="team">Team ID or team name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<Dashboard> Widgets_DeleteAsync(string organization, string project, string dashboardId, string widgetId, string team, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Dashboard>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete the specified widget.
+		/// Widgets_Delete {organization}/{project}/{team}/_apis/dashboard/dashboards/{dashboardId}/widgets/{widgetId}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="dashboardId">ID of the dashboard containing the widget.</param>
+		/// <param name="widgetId">ID of the widget to update.</param>
+		/// <param name="team">Team ID or team name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public Dashboard Widgets_Delete(string organization, string project, string dashboardId, string widgetId, string team, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<Dashboard>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
 			}
 			}
 		}

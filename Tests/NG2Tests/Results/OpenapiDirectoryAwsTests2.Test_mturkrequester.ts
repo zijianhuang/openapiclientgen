@@ -7,21 +7,21 @@ export namespace MyNS {
 
 	export interface AcceptQualificationRequestRequest {
 		QualificationRequestId: string;
-		IntegerValue?: number;
+		IntegerValue?: number | null;
 	}
 
 
 	/** Amazon Mechanical Turk is temporarily unable to process your request. Try your call again. */
 	export interface ServiceFault {
-		Message?: string;
-		TurkErrorCode?: string;
+		Message?: string | null;
+		TurkErrorCode?: string | null;
 	}
 
 
 	/** Your request is invalid. */
 	export interface RequestError {
-		Message?: string;
-		TurkErrorCode?: string;
+		Message?: string | null;
+		TurkErrorCode?: string | null;
 	}
 
 	export interface ApproveAssignmentResponse {
@@ -29,8 +29,8 @@ export namespace MyNS {
 
 	export interface ApproveAssignmentRequest {
 		AssignmentId: string;
-		RequesterFeedback?: string;
-		OverrideRejection?: boolean;
+		RequesterFeedback?: string | null;
+		OverrideRejection?: boolean | null;
 	}
 
 	export interface AssociateQualificationWithWorkerResponse {
@@ -39,8 +39,8 @@ export namespace MyNS {
 	export interface AssociateQualificationWithWorkerRequest {
 		QualificationTypeId: string;
 		WorkerId: string;
-		IntegerValue?: number;
-		SendNotification?: boolean;
+		IntegerValue?: number | null;
+		SendNotification?: boolean | null;
 	}
 
 	export interface CreateAdditionalAssignmentsForHITResponse {
@@ -49,44 +49,44 @@ export namespace MyNS {
 	export interface CreateAdditionalAssignmentsForHITRequest {
 		HITId: string;
 		NumberOfAdditionalAssignments: number;
-		UniqueRequestToken?: string;
+		UniqueRequestToken?: string | null;
 	}
 
 	export interface CreateHITResponse {
 
 		/** The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT. */
-		HIT?: HIT;
+		HIT?: HIT | null;
 	}
 
 
 	/**  The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT. */
 	export interface HIT {
-		HITId?: string;
-		HITTypeId?: string;
-		HITGroupId?: string;
-		HITLayoutId?: string;
-		CreationTime?: Date;
-		Title?: string;
-		Description?: string;
-		Question?: string;
-		Keywords?: string;
-		HITStatus?: HITHITStatus;
-		MaxAssignments?: number;
+		HITId?: string | null;
+		HITTypeId?: string | null;
+		HITGroupId?: string | null;
+		HITLayoutId?: string | null;
+		CreationTime?: Date | null;
+		Title?: string | null;
+		Description?: string | null;
+		Question?: string | null;
+		Keywords?: string | null;
+		HITStatus?: HITHITStatus | null;
+		MaxAssignments?: number | null;
 
 		/**
 		 * A string representing a currency amount.
 		 * Pattern: ^[0-9]+(\.)?[0-9]{0,2}$
 		 */
-		Reward?: string;
-		AutoApprovalDelayInSeconds?: number;
-		Expiration?: Date;
-		AssignmentDurationInSeconds?: number;
-		RequesterAnnotation?: string;
-		QualificationRequirements?: Array<QualificationRequirement>;
-		HITReviewStatus?: HITHITReviewStatus;
-		NumberOfAssignmentsPending?: number;
-		NumberOfAssignmentsAvailable?: number;
-		NumberOfAssignmentsCompleted?: number;
+		Reward?: string | null;
+		AutoApprovalDelayInSeconds?: number | null;
+		Expiration?: Date | null;
+		AssignmentDurationInSeconds?: number | null;
+		RequesterAnnotation?: string | null;
+		QualificationRequirements?: Array<QualificationRequirement> | null;
+		HITReviewStatus?: HITHITReviewStatus | null;
+		NumberOfAssignmentsPending?: number | null;
+		NumberOfAssignmentsAvailable?: number | null;
+		NumberOfAssignmentsCompleted?: number | null;
 	}
 
 	export enum HITHITStatus { Assignable = 0, Unassignable = 1, Reviewable = 2, Reviewing = 3, Disposed = 4 }
@@ -96,10 +96,10 @@ export namespace MyNS {
 	export interface QualificationRequirement {
 		QualificationTypeId: string;
 		Comparator: QualificationRequirementComparator;
-		IntegerValues?: Array<number>;
-		LocaleValues?: Array<Locale>;
-		RequiredToPreview?: boolean;
-		ActionsGuarded?: QualificationRequirementActionsGuarded;
+		IntegerValues?: Array<number> | null;
+		LocaleValues?: Array<Locale> | null;
+		RequiredToPreview?: boolean | null;
+		ActionsGuarded?: QualificationRequirementActionsGuarded | null;
 	}
 
 	export enum QualificationRequirementComparator { LessThan = 0, LessThanOrEqualTo = 1, GreaterThan = 2, GreaterThanOrEqualTo = 3, EqualTo = 4, NotEqualTo = 5, Exists = 6, DoesNotExist = 7, In = 8, NotIn = 9 }
@@ -108,7 +108,7 @@ export namespace MyNS {
 	/** The Locale data structure represents a geographical region or location. */
 	export interface Locale {
 		Country: string;
-		Subdivision?: string;
+		Subdivision?: string | null;
 	}
 
 	export enum QualificationRequirementActionsGuarded { Accept = 0, PreviewAndAccept = 1, DiscoverPreviewAndAccept = 2 }
@@ -116,8 +116,8 @@ export namespace MyNS {
 	export enum HITHITReviewStatus { NotReviewed = 0, MarkedForReview = 1, ReviewedAppropriate = 2, ReviewedInappropriate = 3 }
 
 	export interface CreateHITRequest {
-		MaxAssignments?: number;
-		AutoApprovalDelayInSeconds?: number;
+		MaxAssignments?: number | null;
+		AutoApprovalDelayInSeconds?: number | null;
 		LifetimeInSeconds: number;
 		AssignmentDurationInSeconds: number;
 
@@ -128,42 +128,42 @@ export namespace MyNS {
 		 */
 		Reward: string;
 		Title: string;
-		Keywords?: string;
+		Keywords?: string | null;
 		Description: string;
-		Question?: string;
-		RequesterAnnotation?: string;
-		QualificationRequirements?: Array<QualificationRequirement>;
-		UniqueRequestToken?: string;
+		Question?: string | null;
+		RequesterAnnotation?: string | null;
+		QualificationRequirements?: Array<QualificationRequirement> | null;
+		UniqueRequestToken?: string | null;
 
 		/** HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT. */
-		AssignmentReviewPolicy?: ReviewPolicy;
+		AssignmentReviewPolicy?: ReviewPolicy | null;
 
 		/** HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT. */
-		HITReviewPolicy?: ReviewPolicy;
-		HITLayoutId?: string;
-		HITLayoutParameters?: Array<HITLayoutParameter>;
+		HITReviewPolicy?: ReviewPolicy | null;
+		HITLayoutId?: string | null;
+		HITLayoutParameters?: Array<HITLayoutParameter> | null;
 	}
 
 
 	/**  HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT.  */
 	export interface ReviewPolicy {
 		PolicyName: string;
-		Parameters?: Array<PolicyParameter>;
+		Parameters?: Array<PolicyParameter> | null;
 	}
 
 
 	/**  Name of the parameter from the Review policy.  */
 	export interface PolicyParameter {
-		Key?: string;
-		Values?: Array<string>;
-		MapEntries?: Array<ParameterMapEntry>;
+		Key?: string | null;
+		Values?: Array<string> | null;
+		MapEntries?: Array<ParameterMapEntry> | null;
 	}
 
 
 	/**  This data structure is the data type for the AnswerKey parameter of the ScoreMyKnownAnswers/2011-09-01 Review Policy.  */
 	export interface ParameterMapEntry {
-		Key?: string;
-		Values?: Array<string>;
+		Key?: string | null;
+		Values?: Array<string> | null;
 	}
 
 
@@ -174,11 +174,11 @@ export namespace MyNS {
 	}
 
 	export interface CreateHITTypeResponse {
-		HITTypeId?: string;
+		HITTypeId?: string | null;
 	}
 
 	export interface CreateHITTypeRequest {
-		AutoApprovalDelayInSeconds?: number;
+		AutoApprovalDelayInSeconds?: number | null;
 		AssignmentDurationInSeconds: number;
 
 		/**
@@ -188,71 +188,71 @@ export namespace MyNS {
 		 */
 		Reward: string;
 		Title: string;
-		Keywords?: string;
+		Keywords?: string | null;
 		Description: string;
-		QualificationRequirements?: Array<QualificationRequirement>;
+		QualificationRequirements?: Array<QualificationRequirement> | null;
 	}
 
 	export interface CreateHITWithHITTypeResponse {
 
 		/** The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT. */
-		HIT?: HIT;
+		HIT?: HIT | null;
 	}
 
 	export interface CreateHITWithHITTypeRequest {
 		HITTypeId: string;
-		MaxAssignments?: number;
+		MaxAssignments?: number | null;
 		LifetimeInSeconds: number;
-		Question?: string;
-		RequesterAnnotation?: string;
-		UniqueRequestToken?: string;
+		Question?: string | null;
+		RequesterAnnotation?: string | null;
+		UniqueRequestToken?: string | null;
 
 		/** HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT. */
-		AssignmentReviewPolicy?: ReviewPolicy;
+		AssignmentReviewPolicy?: ReviewPolicy | null;
 
 		/** HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT. */
-		HITReviewPolicy?: ReviewPolicy;
-		HITLayoutId?: string;
-		HITLayoutParameters?: Array<HITLayoutParameter>;
+		HITReviewPolicy?: ReviewPolicy | null;
+		HITLayoutId?: string | null;
+		HITLayoutParameters?: Array<HITLayoutParameter> | null;
 	}
 
 	export interface CreateQualificationTypeResponse {
 
 		/** The QualificationType data structure represents a Qualification type, a description of a property of a Worker that must match the requirements of a HIT for the Worker to be able to accept the HIT. The type also describes how a Worker can obtain a Qualification of that type, such as through a Qualification test. */
-		QualificationType?: QualificationType;
+		QualificationType?: QualificationType | null;
 	}
 
 
 	/**  The QualificationType data structure represents a Qualification type, a description of a property of a Worker that must match the requirements of a HIT for the Worker to be able to accept the HIT. The type also describes how a Worker can obtain a Qualification of that type, such as through a Qualification test.  */
 	export interface QualificationType {
-		QualificationTypeId?: string;
-		CreationTime?: Date;
-		Name?: string;
-		Description?: string;
-		Keywords?: string;
-		QualificationTypeStatus?: QualificationTypeQualificationTypeStatus;
-		Test?: string;
-		TestDurationInSeconds?: number;
-		AnswerKey?: string;
-		RetryDelayInSeconds?: number;
-		IsRequestable?: boolean;
-		AutoGranted?: boolean;
-		AutoGrantedValue?: number;
+		QualificationTypeId?: string | null;
+		CreationTime?: Date | null;
+		Name?: string | null;
+		Description?: string | null;
+		Keywords?: string | null;
+		QualificationTypeStatus?: QualificationTypeQualificationTypeStatus | null;
+		Test?: string | null;
+		TestDurationInSeconds?: number | null;
+		AnswerKey?: string | null;
+		RetryDelayInSeconds?: number | null;
+		IsRequestable?: boolean | null;
+		AutoGranted?: boolean | null;
+		AutoGrantedValue?: number | null;
 	}
 
 	export enum QualificationTypeQualificationTypeStatus { Active = 0, Inactive = 1 }
 
 	export interface CreateQualificationTypeRequest {
 		Name: string;
-		Keywords?: string;
+		Keywords?: string | null;
 		Description: string;
 		QualificationTypeStatus: QualificationTypeQualificationTypeStatus;
-		RetryDelayInSeconds?: number;
-		Test?: string;
-		AnswerKey?: string;
-		TestDurationInSeconds?: number;
-		AutoGranted?: boolean;
-		AutoGrantedValue?: number;
+		RetryDelayInSeconds?: number | null;
+		Test?: string | null;
+		AnswerKey?: string | null;
+		TestDurationInSeconds?: number | null;
+		AutoGranted?: boolean | null;
+		AutoGrantedValue?: number | null;
 	}
 
 	export interface CreateWorkerBlockResponse {
@@ -282,7 +282,7 @@ export namespace MyNS {
 
 	export interface DeleteWorkerBlockRequest {
 		WorkerId: string;
-		Reason?: string;
+		Reason?: string | null;
 	}
 
 	export interface DisassociateQualificationFromWorkerResponse {
@@ -291,7 +291,7 @@ export namespace MyNS {
 	export interface DisassociateQualificationFromWorkerRequest {
 		WorkerId: string;
 		QualificationTypeId: string;
-		Reason?: string;
+		Reason?: string | null;
 	}
 
 	export interface GetAccountBalanceResponse {
@@ -300,13 +300,13 @@ export namespace MyNS {
 		 * A string representing a currency amount.
 		 * Pattern: ^[0-9]+(\.)?[0-9]{0,2}$
 		 */
-		AvailableBalance?: string;
+		AvailableBalance?: string | null;
 
 		/**
 		 * A string representing a currency amount.
 		 * Pattern: ^[0-9]+(\.)?[0-9]{0,2}$
 		 */
-		OnHoldBalance?: string;
+		OnHoldBalance?: string | null;
 	}
 
 	export interface GetAccountBalanceRequest {
@@ -315,27 +315,27 @@ export namespace MyNS {
 	export interface GetAssignmentResponse {
 
 		/** The Assignment data structure represents a single assignment of a HIT to a Worker. The assignment tracks the Worker's efforts to complete the HIT, and contains the results for later retrieval. */
-		Assignment?: Assignment;
+		Assignment?: Assignment | null;
 
 		/** The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT. */
-		HIT?: HIT;
+		HIT?: HIT | null;
 	}
 
 
 	/**  The Assignment data structure represents a single assignment of a HIT to a Worker. The assignment tracks the Worker's efforts to complete the HIT, and contains the results for later retrieval.  */
 	export interface Assignment {
-		AssignmentId?: string;
-		WorkerId?: string;
-		HITId?: string;
-		AssignmentStatus?: AssignmentAssignmentStatus;
-		AutoApprovalTime?: Date;
-		AcceptTime?: Date;
-		SubmitTime?: Date;
-		ApprovalTime?: Date;
-		RejectionTime?: Date;
-		Deadline?: Date;
-		Answer?: string;
-		RequesterFeedback?: string;
+		AssignmentId?: string | null;
+		WorkerId?: string | null;
+		HITId?: string | null;
+		AssignmentStatus?: AssignmentAssignmentStatus | null;
+		AutoApprovalTime?: Date | null;
+		AcceptTime?: Date | null;
+		SubmitTime?: Date | null;
+		ApprovalTime?: Date | null;
+		RejectionTime?: Date | null;
+		Deadline?: Date | null;
+		Answer?: string | null;
+		RequesterFeedback?: string | null;
 	}
 
 	export enum AssignmentAssignmentStatus { Submitted = 0, Approved = 1, Rejected = 2 }
@@ -345,7 +345,7 @@ export namespace MyNS {
 	}
 
 	export interface GetFileUploadURLResponse {
-		FileUploadURL?: string;
+		FileUploadURL?: string | null;
 	}
 
 	export interface GetFileUploadURLRequest {
@@ -356,7 +356,7 @@ export namespace MyNS {
 	export interface GetHITResponse {
 
 		/** The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT. */
-		HIT?: HIT;
+		HIT?: HIT | null;
 	}
 
 	export interface GetHITRequest {
@@ -366,20 +366,20 @@ export namespace MyNS {
 	export interface GetQualificationScoreResponse {
 
 		/** The Qualification data structure represents a Qualification assigned to a user, including the Qualification type and the value (score). */
-		Qualification?: Qualification;
+		Qualification?: Qualification | null;
 	}
 
 
 	/** The Qualification data structure represents a Qualification assigned to a user, including the Qualification type and the value (score). */
 	export interface Qualification {
-		QualificationTypeId?: string;
-		WorkerId?: string;
-		GrantTime?: Date;
-		IntegerValue?: number;
+		QualificationTypeId?: string | null;
+		WorkerId?: string | null;
+		GrantTime?: Date | null;
+		IntegerValue?: number | null;
 
 		/** The Locale data structure represents a geographical region or location. */
-		LocaleValue?: Locale;
-		Status?: QualificationStatus;
+		LocaleValue?: Locale | null;
+		Status?: QualificationStatus | null;
 	}
 
 	export enum QualificationStatus { Granted = 0, Revoked = 1 }
@@ -392,7 +392,7 @@ export namespace MyNS {
 	export interface GetQualificationTypeResponse {
 
 		/** The QualificationType data structure represents a Qualification type, a description of a property of a Worker that must match the requirements of a HIT for the Worker to be able to accept the HIT. The type also describes how a Worker can obtain a Qualification of that type, such as through a Qualification test. */
-		QualificationType?: QualificationType;
+		QualificationType?: QualificationType | null;
 	}
 
 	export interface GetQualificationTypeRequest {
@@ -406,9 +406,9 @@ export namespace MyNS {
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		NumResults?: number;
-		Assignments?: Array<Assignment>;
+		NextToken?: string | null;
+		NumResults?: number | null;
+		Assignments?: Array<Assignment> | null;
 	}
 
 	export interface ListAssignmentsForHITRequest {
@@ -419,51 +419,51 @@ export namespace MyNS {
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		MaxResults?: number;
-		AssignmentStatuses?: Array<AssignmentStatus>;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		AssignmentStatuses?: Array<AssignmentStatus> | null;
 	}
 
 	export enum AssignmentStatus { Submitted = 0, Approved = 1, Rejected = 2 }
 
 	export interface ListBonusPaymentsResponse {
-		NumResults?: number;
+		NumResults?: number | null;
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		BonusPayments?: Array<BonusPayment>;
+		NextToken?: string | null;
+		BonusPayments?: Array<BonusPayment> | null;
 	}
 
 
 	/** An object representing a Bonus payment paid to a Worker. */
 	export interface BonusPayment {
-		WorkerId?: string;
+		WorkerId?: string | null;
 
 		/**
 		 * A string representing a currency amount.
 		 * Pattern: ^[0-9]+(\.)?[0-9]{0,2}$
 		 */
-		BonusAmount?: string;
-		AssignmentId?: string;
-		Reason?: string;
-		GrantTime?: Date;
+		BonusAmount?: string | null;
+		AssignmentId?: string | null;
+		Reason?: string | null;
+		GrantTime?: Date | null;
 	}
 
 	export interface ListBonusPaymentsRequest {
-		HITId?: string;
-		AssignmentId?: string;
+		HITId?: string | null;
+		AssignmentId?: string | null;
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListHITsResponse {
@@ -473,9 +473,9 @@ export namespace MyNS {
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		NumResults?: number;
-		HITs?: Array<HIT>;
+		NextToken?: string | null;
+		NumResults?: number | null;
+		HITs?: Array<HIT> | null;
 	}
 
 	export interface ListHITsRequest {
@@ -485,8 +485,8 @@ export namespace MyNS {
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListHITsForQualificationTypeResponse {
@@ -496,9 +496,9 @@ export namespace MyNS {
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		NumResults?: number;
-		HITs?: Array<HIT>;
+		NextToken?: string | null;
+		NumResults?: number | null;
+		HITs?: Array<HIT> | null;
 	}
 
 	export interface ListHITsForQualificationTypeRequest {
@@ -509,140 +509,140 @@ export namespace MyNS {
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListQualificationRequestsResponse {
-		NumResults?: number;
+		NumResults?: number | null;
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		QualificationRequests?: Array<QualificationRequest>;
+		NextToken?: string | null;
+		QualificationRequests?: Array<QualificationRequest> | null;
 	}
 
 
 	/**  The QualificationRequest data structure represents a request a Worker has made for a Qualification.  */
 	export interface QualificationRequest {
-		QualificationRequestId?: string;
-		QualificationTypeId?: string;
-		WorkerId?: string;
-		Test?: string;
-		Answer?: string;
-		SubmitTime?: Date;
+		QualificationRequestId?: string | null;
+		QualificationTypeId?: string | null;
+		WorkerId?: string | null;
+		Test?: string | null;
+		Answer?: string | null;
+		SubmitTime?: Date | null;
 	}
 
 	export interface ListQualificationRequestsRequest {
-		QualificationTypeId?: string;
+		QualificationTypeId?: string | null;
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListQualificationTypesResponse {
-		NumResults?: number;
+		NumResults?: number | null;
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		QualificationTypes?: Array<QualificationType>;
+		NextToken?: string | null;
+		QualificationTypes?: Array<QualificationType> | null;
 	}
 
 	export interface ListQualificationTypesRequest {
-		Query?: string;
+		Query?: string | null;
 		MustBeRequestable: boolean;
-		MustBeOwnedByCaller?: boolean;
+		MustBeOwnedByCaller?: boolean | null;
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListReviewPolicyResultsForHITResponse {
-		HITId?: string;
+		HITId?: string | null;
 
 		/** HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT. */
-		AssignmentReviewPolicy?: ReviewPolicy;
+		AssignmentReviewPolicy?: ReviewPolicy | null;
 
 		/** HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT. */
-		HITReviewPolicy?: ReviewPolicy;
+		HITReviewPolicy?: ReviewPolicy | null;
 
 		/** Contains both ReviewResult and ReviewAction elements for a particular HIT. */
-		AssignmentReviewReport?: ReviewReport;
+		AssignmentReviewReport?: ReviewReport | null;
 
 		/** Contains both ReviewResult and ReviewAction elements for a particular HIT. */
-		HITReviewReport?: ReviewReport;
+		HITReviewReport?: ReviewReport | null;
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/**  Contains both ReviewResult and ReviewAction elements for a particular HIT.  */
 	export interface ReviewReport {
-		ReviewResults?: Array<ReviewResultDetail>;
-		ReviewActions?: Array<ReviewActionDetail>;
+		ReviewResults?: Array<ReviewResultDetail> | null;
+		ReviewActions?: Array<ReviewActionDetail> | null;
 	}
 
 
 	/**  This data structure is returned multiple times for each result specified in the Review Policy.  */
 	export interface ReviewResultDetail {
-		ActionId?: string;
-		SubjectId?: string;
-		SubjectType?: string;
-		QuestionId?: string;
-		Key?: string;
-		Value?: string;
+		ActionId?: string | null;
+		SubjectId?: string | null;
+		SubjectType?: string | null;
+		QuestionId?: string | null;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 
 	/**  Both the AssignmentReviewReport and the HITReviewReport elements contains the ReviewActionDetail data structure. This structure is returned multiple times for each action specified in the Review Policy.  */
 	export interface ReviewActionDetail {
-		ActionId?: string;
-		ActionName?: string;
-		TargetId?: string;
-		TargetType?: string;
-		Status?: ReviewActionDetailStatus;
-		CompleteTime?: Date;
-		Result?: string;
-		ErrorCode?: string;
+		ActionId?: string | null;
+		ActionName?: string | null;
+		TargetId?: string | null;
+		TargetType?: string | null;
+		Status?: ReviewActionDetailStatus | null;
+		CompleteTime?: Date | null;
+		Result?: string | null;
+		ErrorCode?: string | null;
 	}
 
 	export enum ReviewActionDetailStatus { Intended = 0, Succeeded = 1, Failed = 2, Cancelled = 3 }
 
 	export interface ListReviewPolicyResultsForHITRequest {
 		HITId: string;
-		PolicyLevels?: Array<ReviewPolicyLevel>;
-		RetrieveActions?: boolean;
-		RetrieveResults?: boolean;
+		PolicyLevels?: Array<ReviewPolicyLevel> | null;
+		RetrieveActions?: boolean | null;
+		RetrieveResults?: boolean | null;
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export enum ReviewPolicyLevel { Assignment = 0, HIT = 1 }
@@ -654,22 +654,22 @@ export namespace MyNS {
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		NumResults?: number;
-		HITs?: Array<HIT>;
+		NextToken?: string | null;
+		NumResults?: number | null;
+		HITs?: Array<HIT> | null;
 	}
 
 	export interface ListReviewableHITsRequest {
-		HITTypeId?: string;
-		Status?: ListReviewableHITsRequestStatus;
+		HITTypeId?: string | null;
+		Status?: ListReviewableHITsRequestStatus | null;
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export enum ListReviewableHITsRequestStatus { Reviewable = 0, Reviewing = 1 }
@@ -681,16 +681,16 @@ export namespace MyNS {
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		NumResults?: number;
-		WorkerBlocks?: Array<WorkerBlock>;
+		NextToken?: string | null;
+		NumResults?: number | null;
+		WorkerBlocks?: Array<WorkerBlock> | null;
 	}
 
 
 	/**  The WorkerBlock data structure represents a Worker who has been blocked. It has two elements: the WorkerId and the Reason for the block.  */
 	export interface WorkerBlock {
-		WorkerId?: string;
-		Reason?: string;
+		WorkerId?: string | null;
+		Reason?: string | null;
 	}
 
 	export interface ListWorkerBlocksRequest {
@@ -700,8 +700,8 @@ export namespace MyNS {
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListWorkersWithQualificationTypeResponse {
@@ -711,34 +711,34 @@ export namespace MyNS {
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		NumResults?: number;
-		Qualifications?: Array<Qualification>;
+		NextToken?: string | null;
+		NumResults?: number | null;
+		Qualifications?: Array<Qualification> | null;
 	}
 
 	export interface ListWorkersWithQualificationTypeRequest {
 		QualificationTypeId: string;
-		Status?: QualificationStatus;
+		Status?: QualificationStatus | null;
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface NotifyWorkersResponse {
-		NotifyWorkersFailureStatuses?: Array<NotifyWorkersFailureStatus>;
+		NotifyWorkersFailureStatuses?: Array<NotifyWorkersFailureStatus> | null;
 	}
 
 
 	/**  When MTurk encounters an issue with notifying the Workers you specified, it returns back this object with failure details.  */
 	export interface NotifyWorkersFailureStatus {
-		NotifyWorkersFailureCode?: NotifyWorkersFailureStatusNotifyWorkersFailureCode;
-		NotifyWorkersFailureMessage?: string;
-		WorkerId?: string;
+		NotifyWorkersFailureCode?: NotifyWorkersFailureStatusNotifyWorkersFailureCode | null;
+		NotifyWorkersFailureMessage?: string | null;
+		WorkerId?: string | null;
 	}
 
 	export enum NotifyWorkersFailureStatusNotifyWorkersFailureCode { SoftFailure = 0, HardFailure = 1 }
@@ -762,7 +762,7 @@ export namespace MyNS {
 
 	export interface RejectQualificationRequestRequest {
 		QualificationRequestId: string;
-		Reason?: string;
+		Reason?: string | null;
 	}
 
 	export interface SendBonusResponse {
@@ -779,7 +779,7 @@ export namespace MyNS {
 		BonusAmount: string;
 		AssignmentId: string;
 		Reason: string;
-		UniqueRequestToken?: string;
+		UniqueRequestToken?: string | null;
 	}
 
 	export interface SendTestEventNotificationResponse {
@@ -821,7 +821,7 @@ export namespace MyNS {
 
 	export interface UpdateHITReviewStatusRequest {
 		HITId: string;
-		Revert?: boolean;
+		Revert?: boolean | null;
 	}
 
 	export interface UpdateHITTypeOfHITResponse {
@@ -839,26 +839,26 @@ export namespace MyNS {
 		HITTypeId: string;
 
 		/** The NotificationSpecification data structure describes a HIT event notification for a HIT type. */
-		Notification?: NotificationSpecification;
-		Active?: boolean;
+		Notification?: NotificationSpecification | null;
+		Active?: boolean | null;
 	}
 
 	export interface UpdateQualificationTypeResponse {
 
 		/** The QualificationType data structure represents a Qualification type, a description of a property of a Worker that must match the requirements of a HIT for the Worker to be able to accept the HIT. The type also describes how a Worker can obtain a Qualification of that type, such as through a Qualification test. */
-		QualificationType?: QualificationType;
+		QualificationType?: QualificationType | null;
 	}
 
 	export interface UpdateQualificationTypeRequest {
 		QualificationTypeId: string;
-		Description?: string;
-		QualificationTypeStatus?: QualificationTypeQualificationTypeStatus;
-		Test?: string;
-		AnswerKey?: string;
-		TestDurationInSeconds?: number;
-		RetryDelayInSeconds?: number;
-		AutoGranted?: boolean;
-		AutoGrantedValue?: number;
+		Description?: string | null;
+		QualificationTypeStatus?: QualificationTypeQualificationTypeStatus | null;
+		Test?: string | null;
+		AnswerKey?: string | null;
+		TestDurationInSeconds?: number | null;
+		RetryDelayInSeconds?: number | null;
+		AutoGranted?: boolean | null;
+		AutoGrantedValue?: number | null;
 	}
 
 	export enum Comparator { LessThan = 0, LessThanOrEqualTo = 1, GreaterThan = 2, GreaterThanOrEqualTo = 3, EqualTo = 4, NotEqualTo = 5, Exists = 6, DoesNotExist = 7, In = 8, NotIn = 9 }
@@ -1062,7 +1062,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAssignmentsForHITResponse} Success
 		 */
-		ListAssignmentsForHIT(MaxResults: string, NextToken: string, requestBody: ListAssignmentsForHITRequest): Observable<ListAssignmentsForHITResponse> {
+		ListAssignmentsForHIT(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAssignmentsForHITRequest): Observable<ListAssignmentsForHITResponse> {
 			return this.http.post<ListAssignmentsForHITResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListAssignmentsForHIT?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1073,7 +1073,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListBonusPaymentsResponse} Success
 		 */
-		ListBonusPayments(MaxResults: string, NextToken: string, requestBody: ListBonusPaymentsRequest): Observable<ListBonusPaymentsResponse> {
+		ListBonusPayments(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListBonusPaymentsRequest): Observable<ListBonusPaymentsResponse> {
 			return this.http.post<ListBonusPaymentsResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListBonusPayments?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1084,7 +1084,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListHITsResponse} Success
 		 */
-		ListHITs(MaxResults: string, NextToken: string, requestBody: ListHITsRequest): Observable<ListHITsResponse> {
+		ListHITs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListHITsRequest): Observable<ListHITsResponse> {
 			return this.http.post<ListHITsResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListHITs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1095,7 +1095,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListHITsForQualificationTypeResponse} Success
 		 */
-		ListHITsForQualificationType(MaxResults: string, NextToken: string, requestBody: ListHITsForQualificationTypeRequest): Observable<ListHITsForQualificationTypeResponse> {
+		ListHITsForQualificationType(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListHITsForQualificationTypeRequest): Observable<ListHITsForQualificationTypeResponse> {
 			return this.http.post<ListHITsForQualificationTypeResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListHITsForQualificationType?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1106,7 +1106,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListQualificationRequestsResponse} Success
 		 */
-		ListQualificationRequests(MaxResults: string, NextToken: string, requestBody: ListQualificationRequestsRequest): Observable<ListQualificationRequestsResponse> {
+		ListQualificationRequests(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListQualificationRequestsRequest): Observable<ListQualificationRequestsResponse> {
 			return this.http.post<ListQualificationRequestsResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListQualificationRequests?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1117,7 +1117,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListQualificationTypesResponse} Success
 		 */
-		ListQualificationTypes(MaxResults: string, NextToken: string, requestBody: ListQualificationTypesRequest): Observable<ListQualificationTypesResponse> {
+		ListQualificationTypes(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListQualificationTypesRequest): Observable<ListQualificationTypesResponse> {
 			return this.http.post<ListQualificationTypesResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListQualificationTypes?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1128,7 +1128,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListReviewPolicyResultsForHITResponse} Success
 		 */
-		ListReviewPolicyResultsForHIT(MaxResults: string, NextToken: string, requestBody: ListReviewPolicyResultsForHITRequest): Observable<ListReviewPolicyResultsForHITResponse> {
+		ListReviewPolicyResultsForHIT(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListReviewPolicyResultsForHITRequest): Observable<ListReviewPolicyResultsForHITResponse> {
 			return this.http.post<ListReviewPolicyResultsForHITResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListReviewPolicyResultsForHIT?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1139,7 +1139,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListReviewableHITsResponse} Success
 		 */
-		ListReviewableHITs(MaxResults: string, NextToken: string, requestBody: ListReviewableHITsRequest): Observable<ListReviewableHITsResponse> {
+		ListReviewableHITs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListReviewableHITsRequest): Observable<ListReviewableHITsResponse> {
 			return this.http.post<ListReviewableHITsResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListReviewableHITs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1150,7 +1150,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListWorkerBlocksResponse} Success
 		 */
-		ListWorkerBlocks(MaxResults: string, NextToken: string, requestBody: ListWorkerBlocksRequest): Observable<ListWorkerBlocksResponse> {
+		ListWorkerBlocks(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListWorkerBlocksRequest): Observable<ListWorkerBlocksResponse> {
 			return this.http.post<ListWorkerBlocksResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListWorkerBlocks?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1161,7 +1161,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListWorkersWithQualificationTypeResponse} Success
 		 */
-		ListWorkersWithQualificationType(MaxResults: string, NextToken: string, requestBody: ListWorkersWithQualificationTypeRequest): Observable<ListWorkersWithQualificationTypeResponse> {
+		ListWorkersWithQualificationType(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListWorkersWithQualificationTypeRequest): Observable<ListWorkersWithQualificationTypeResponse> {
 			return this.http.post<ListWorkersWithQualificationTypeResponse>(this.baseUri + '#X-Amz-Target=MTurkRequesterServiceV20170117.ListWorkersWithQualificationType?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

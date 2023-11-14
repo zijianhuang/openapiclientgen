@@ -10,13 +10,13 @@ export namespace MyNS {
 	export interface ActingUser {
 
 		/** The email address of the user when the user performed the action. */
-		email?: string;
+		email?: string | null;
 
 		/**
 		 * A profile image URL for the user. May not be present if the user has
 		 * changed their email address or deleted their account.
 		 */
-		imageUrl?: string;
+		imageUrl?: string | null;
 	}
 
 
@@ -24,13 +24,13 @@ export namespace MyNS {
 	export interface CertDnsChallenge {
 
 		/** The domain name upon which the DNS challenge must be satisfied. */
-		domainName?: string;
+		domainName?: string | null;
 
 		/**
 		 * The value that must be present as a TXT record on the domain name to
 		 * satisfy the challenge.
 		 */
-		token?: string;
+		token?: string | null;
 	}
 
 
@@ -41,13 +41,13 @@ export namespace MyNS {
 		 * The URL path on which to serve the specified token to satisfy the
 		 * certificate challenge.
 		 */
-		path?: string;
+		path?: string | null;
 
 		/**
 		 * The token to serve at the specified URL path to satisfy the certificate
 		 * challenge.
 		 */
-		token?: string;
+		token?: string | null;
 	}
 
 
@@ -55,19 +55,19 @@ export namespace MyNS {
 	export interface CloneVersionRequest {
 
 		/** A representation of filter path. */
-		exclude?: PathFilter;
+		exclude?: PathFilter | null;
 
 		/** If true, immediately finalize the version after cloning is complete. */
-		finalize?: boolean;
+		finalize?: boolean | null;
 
 		/** A representation of filter path. */
-		include?: PathFilter;
+		include?: PathFilter | null;
 
 		/**
 		 * Required. The name of the version to be cloned, in the format:
 		 * `sites/{site}/versions/{version}`
 		 */
-		sourceVersion?: string;
+		sourceVersion?: string | null;
 	}
 
 
@@ -75,7 +75,7 @@ export namespace MyNS {
 	export interface PathFilter {
 
 		/** An array of regexes to filter by. */
-		regexes?: Array<string>;
+		regexes?: Array<string> | null;
 	}
 
 
@@ -92,10 +92,10 @@ export namespace MyNS {
 		 * Optional. User-provided region where the Cloud Run service is hosted.<br>
 		 * Defaults to `us-central1` if not supplied.
 		 */
-		region?: string;
+		region?: string | null;
 
 		/** Required. User-defined ID of the Cloud Run service. */
-		serviceId?: string;
+		serviceId?: string | null;
 	}
 
 
@@ -103,26 +103,26 @@ export namespace MyNS {
 	export interface Domain {
 
 		/** Required. The domain name of the association. */
-		domainName?: string;
+		domainName?: string | null;
 
 		/**
 		 * Defines the behavior of a domain-level redirect. Domain redirects preserve
 		 * the path of the redirect but replace the requested domain with the one
 		 * specified in the redirect configuration.
 		 */
-		domainRedirect?: DomainRedirect;
+		domainRedirect?: DomainRedirect | null;
 
 		/** The current certificate provisioning status information for a domain. */
-		provisioning?: DomainProvisioning;
+		provisioning?: DomainProvisioning | null;
 
 		/** Required. The site name of the association. */
-		site?: string;
+		site?: string | null;
 
 		/** Output only. Additional status of the domain association. */
-		status?: DomainStatus;
+		status?: DomainStatus | null;
 
 		/** Output only. The time at which the domain was last updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -134,10 +134,10 @@ export namespace MyNS {
 	export interface DomainRedirect {
 
 		/** Required. The domain name to redirect to. */
-		domainName?: string;
+		domainName?: string | null;
 
 		/** Required. The redirect status code. */
-		type?: DomainRedirectType;
+		type?: DomainRedirectType | null;
 	}
 
 	export enum DomainRedirectType { REDIRECT_TYPE_UNSPECIFIED = 0, MOVED_PERMANENTLY = 1 }
@@ -150,31 +150,31 @@ export namespace MyNS {
 		 * The TXT records (for the certificate challenge) that were found at the last
 		 * DNS fetch.
 		 */
-		certChallengeDiscoveredTxt?: Array<string>;
+		certChallengeDiscoveredTxt?: Array<string> | null;
 
 		/** Represents a DNS certificate challenge. */
-		certChallengeDns?: CertDnsChallenge;
+		certChallengeDns?: CertDnsChallenge | null;
 
 		/** Represents an HTTP certificate challenge. */
-		certChallengeHttp?: CertHttpChallenge;
+		certChallengeHttp?: CertHttpChallenge | null;
 
 		/**
 		 * The certificate provisioning status; updated when Firebase Hosting
 		 * provisions an SSL certificate for the domain.
 		 */
-		certStatus?: DomainProvisioningCertStatus;
+		certStatus?: DomainProvisioningCertStatus | null;
 
 		/** The IPs found at the last DNS fetch. */
-		discoveredIps?: Array<string>;
+		discoveredIps?: Array<string> | null;
 
 		/** The time at which the last DNS fetch occurred. */
-		dnsFetchTime?: string;
+		dnsFetchTime?: string | null;
 
 		/** The DNS record match status as of the last DNS fetch. */
-		dnsStatus?: DomainProvisioningDnsStatus;
+		dnsStatus?: DomainProvisioningDnsStatus | null;
 
 		/** The list of IPs to which the domain is expected to resolve. */
-		expectedIps?: Array<string>;
+		expectedIps?: Array<string> | null;
 	}
 
 	export enum DomainProvisioningCertStatus { CERT_STATUS_UNSPECIFIED = 0, CERT_PENDING = 1, CERT_MISSING = 2, CERT_PROCESSING = 3, CERT_PROPAGATING = 4, CERT_ACTIVE = 5, CERT_ERROR = 6 }
@@ -208,16 +208,16 @@ export namespace MyNS {
 		 * pattern](/docs/hosting/full-config#glob_pattern_matching) to match
 		 * against the request URL path.
 		 */
-		glob?: string;
+		glob?: string | null;
 
 		/** Required. The additional headers to add to the response. */
-		headers?: {[id: string]: string };
+		headers?: {[id: string]: string } | null;
 
 		/**
 		 * The user-supplied RE2 regular expression to match against the request
 		 * URL path.
 		 */
-		regex?: string;
+		regex?: string | null;
 	}
 
 
@@ -225,10 +225,10 @@ export namespace MyNS {
 	export interface ListDomainsResponse {
 
 		/** The list of domains, if any exist. */
-		domains?: Array<Domain>;
+		domains?: Array<Domain> | null;
 
 		/** The pagination token, if more results exist. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -241,10 +241,10 @@ export namespace MyNS {
 		 * [`list`](../sites.versions.files/list) call to continue with the next set
 		 * of releases.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The list of hashes of files that still need to be uploaded, if any exist. */
-		releases?: Array<Release>;
+		releases?: Array<Release> | null;
 	}
 
 
@@ -259,7 +259,7 @@ export namespace MyNS {
 		 * The deploy description when the release was created. The value can be up to
 		 * 512&nbsp;characters.
 		 */
-		message?: string;
+		message?: string | null;
 
 		/**
 		 * Output only. The unique identifier for the release, in the format:
@@ -267,29 +267,29 @@ export namespace MyNS {
 		 * This name is provided in the response body when you call the
 		 * [`CreateRelease`](sites.releases/create) endpoint.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Output only. The time at which the version is set to be public. */
-		releaseTime?: string;
+		releaseTime?: string | null;
 
 		/**
 		 * Contains metadata about the user who performed an action, such as creating
 		 * a release or finalizing a version.
 		 */
-		releaseUser?: ActingUser;
+		releaseUser?: ActingUser | null;
 
 		/**
 		 * Explains the reason for the release.
 		 * <br>Specify a value for this field only when creating a `SITE_DISABLE`
 		 * type release.
 		 */
-		type?: ReleaseType;
+		type?: ReleaseType | null;
 
 		/**
 		 * A `Version` is the collection of configuration and
 		 * [static files](sites.versions.files) that determine how a site is displayed.
 		 */
-		version?: Version;
+		version?: Version | null;
 	}
 
 	export enum ReleaseType { TYPE_UNSPECIFIED = 0, DEPLOY = 1, ROLLBACK = 2, SITE_DISABLE = 3 }
@@ -307,43 +307,43 @@ export namespace MyNS {
 		 * according to a specific
 		 * [priority order](/docs/hosting/full-config#hosting_priority_order).
 		 */
-		config?: ServingConfig;
+		config?: ServingConfig | null;
 
 		/** Output only. The time at which the version was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Contains metadata about the user who performed an action, such as creating
 		 * a release or finalizing a version.
 		 */
-		createUser?: ActingUser;
+		createUser?: ActingUser | null;
 
 		/** Output only. The time at which the version was `DELETED`. */
-		deleteTime?: string;
+		deleteTime?: string | null;
 
 		/**
 		 * Contains metadata about the user who performed an action, such as creating
 		 * a release or finalizing a version.
 		 */
-		deleteUser?: ActingUser;
+		deleteUser?: ActingUser | null;
 
 		/**
 		 * Output only. The total number of files associated with the version.
 		 * <br>This value is calculated after a version is `FINALIZED`.
 		 */
-		fileCount?: string;
+		fileCount?: string | null;
 
 		/** Output only. The time at which the version was `FINALIZED`. */
-		finalizeTime?: string;
+		finalizeTime?: string | null;
 
 		/**
 		 * Contains metadata about the user who performed an action, such as creating
 		 * a release or finalizing a version.
 		 */
-		finalizeUser?: ActingUser;
+		finalizeUser?: ActingUser | null;
 
 		/** The labels used for extra metadata and/or filtering. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * The unique identifier for a version, in the format:
@@ -351,14 +351,14 @@ export namespace MyNS {
 		 * This name is provided in the response body when you call the
 		 * [`CreateVersion`](../sites.versions/create) endpoint.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Version preview configuration. If active and unexpired,
 		 * this version will be accessible via a custom URL even
 		 * if it is not the currently released version.
 		 */
-		preview?: PreviewConfig;
+		preview?: PreviewConfig | null;
 
 		/**
 		 * The deploy status of a version.
@@ -376,13 +376,13 @@ export namespace MyNS {
 		 * <br>You can also change the status of a version to `DELETED` by calling the
 		 * [`DeleteVersion`](sites.versions/delete) endpoint.
 		 */
-		status?: VersionStatus;
+		status?: VersionStatus | null;
 
 		/**
 		 * Output only. The total stored bytesize of the version.
 		 * <br>This value is calculated after a version is `FINALIZED`.
 		 */
-		versionBytes?: string;
+		versionBytes?: string | null;
 	}
 
 
@@ -395,31 +395,31 @@ export namespace MyNS {
 	export interface ServingConfig {
 
 		/** How to handle well known App Association files. */
-		appAssociation?: ServingConfigAppAssociation;
+		appAssociation?: ServingConfigAppAssociation | null;
 
 		/** Defines whether to drop the file extension from uploaded files. */
-		cleanUrls?: boolean;
+		cleanUrls?: boolean | null;
 
 		/**
 		 * A list of custom response headers that are added to the content if the
 		 * request URL path matches the glob.
 		 */
-		headers?: Array<Header>;
+		headers?: Array<Header> | null;
 
 		/**
 		 * A list of globs that will cause the response to redirect to another
 		 * location.
 		 */
-		redirects?: Array<Redirect>;
+		redirects?: Array<Redirect> | null;
 
 		/**
 		 * A list of rewrites that will act as if the service were given the
 		 * destination URL.
 		 */
-		rewrites?: Array<Rewrite>;
+		rewrites?: Array<Rewrite> | null;
 
 		/** Defines how to handle a trailing slash in the URL path. */
-		trailingSlashBehavior?: ServingConfigTrailingSlashBehavior;
+		trailingSlashBehavior?: ServingConfigTrailingSlashBehavior | null;
 	}
 
 	export enum ServingConfigAppAssociation { AUTO = 0, NONE = 1 }
@@ -437,7 +437,7 @@ export namespace MyNS {
 		 * pattern](/docs/hosting/full-config#glob_pattern_matching) to match
 		 * against the request URL path.
 		 */
-		glob?: string;
+		glob?: string | null;
 
 		/**
 		 * Required. The value to put in the HTTP location header of the response.
@@ -449,19 +449,19 @@ export namespace MyNS {
 		 * <br>"statusCode": 301,
 		 * <br>"location": "https://example.com/foo/:capture"</code>
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * The user-supplied RE2 regular expression to match against the request
 		 * URL path.
 		 */
-		regex?: string;
+		regex?: string | null;
 
 		/**
 		 * Required. The status HTTP code to return in the response. It must be a
 		 * valid 3xx status code.
 		 */
-		statusCode?: number;
+		statusCode?: number | null;
 	}
 
 
@@ -474,29 +474,29 @@ export namespace MyNS {
 	export interface Rewrite {
 
 		/** The request will be forwarded to Firebase Dynamic Links. */
-		dynamicLinks?: boolean;
+		dynamicLinks?: boolean | null;
 
 		/**
 		 * The function to proxy requests to. Must match the exported function
 		 * name exactly.
 		 */
-		function?: string;
+		function?: string | null;
 
 		/**
 		 * The user-supplied [glob
 		 * pattern](/docs/hosting/full-config#glob_pattern_matching) to match
 		 * against the request URL path.
 		 */
-		glob?: string;
+		glob?: string | null;
 
 		/** The URL path to rewrite the request to. */
-		path?: string;
+		path?: string | null;
 
 		/**
 		 * The user-supplied RE2 regular expression to match against the request
 		 * URL path.
 		 */
-		regex?: string;
+		regex?: string | null;
 
 		/**
 		 * A configured rewrite that directs requests to a Cloud Run service. If the
@@ -505,7 +505,7 @@ export namespace MyNS {
 		 * service are passed to the end user (for example, if you delete a service, any
 		 * requests directed to that service receive a `404` error).
 		 */
-		run?: CloudRunRewrite;
+		run?: CloudRunRewrite | null;
 	}
 
 	export enum ServingConfigTrailingSlashBehavior { TRAILING_SLASH_BEHAVIOR_UNSPECIFIED = 0, ADD = 1, REMOVE = 2 }
@@ -519,13 +519,13 @@ export namespace MyNS {
 	export interface PreviewConfig {
 
 		/** If true, preview URLs are enabled for this version. */
-		active?: boolean;
+		active?: boolean | null;
 
 		/**
 		 * Indicates the expiration time for previewing this
 		 * version; preview URL requests received after this time will 404.
 		 */
-		expireTime?: string;
+		expireTime?: string | null;
 	}
 
 	export enum VersionStatus { VERSION_STATUS_UNSPECIFIED = 0, CREATED = 1, FINALIZED = 2, DELETED = 3, ABANDONED = 4, EXPIRED = 5, CLONING = 6 }
@@ -535,10 +535,10 @@ export namespace MyNS {
 	export interface ListVersionFilesResponse {
 
 		/** The list path/hashes in the specified version. */
-		files?: Array<VersionFile>;
+		files?: Array<VersionFile> | null;
 
 		/** The pagination token, if more results exist. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -546,17 +546,17 @@ export namespace MyNS {
 	export interface VersionFile {
 
 		/** The SHA256 content hash of the file. */
-		hash?: string;
+		hash?: string | null;
 
 		/** The URI at which the file's content should display. */
-		path?: string;
+		path?: string | null;
 
 		/**
 		 * Output only. The current status of a particular file in the specified
 		 * version.
 		 * <br>The value will be either `pending upload` or `uploaded`.
 		 */
-		status?: VersionFileStatus;
+		status?: VersionFileStatus | null;
 	}
 
 	export enum VersionFileStatus { STATUS_UNSPECIFIED = 0, EXPECTED = 1, ACTIVE = 2 }
@@ -566,10 +566,10 @@ export namespace MyNS {
 	export interface ListVersionsResponse {
 
 		/** The pagination token, if more results exist */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The list of versions, if any exist. */
-		versions?: Array<Version>;
+		versions?: Array<Version> | null;
 	}
 
 
@@ -584,7 +584,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -594,7 +594,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -602,14 +602,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -621,7 +621,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -636,20 +636,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -662,7 +662,7 @@ export namespace MyNS {
 		 * the path from the version. Calculate a hash by Gzipping the file then
 		 * taking the SHA256 hash of the newly compressed file.
 		 */
-		files?: {[id: string]: string };
+		files?: {[id: string]: string } | null;
 	}
 
 
@@ -673,7 +673,7 @@ export namespace MyNS {
 		 * The content hashes of the specified files that need to be uploaded to the
 		 * specified endpoint.
 		 */
-		uploadRequiredHashes?: Array<string>;
+		uploadRequiredHashes?: Array<string> | null;
 
 		/**
 		 * The URL to which the files should be uploaded, in the format:
@@ -681,7 +681,7 @@ export namespace MyNS {
 		 * <br>Perform a multipart `POST` of the Gzipped file contents to the URL
 		 * using a forward slash and the hash of the file appended to the end.
 		 */
-		uploadUrl?: string;
+		uploadUrl?: string | null;
 	}
 
 
@@ -698,7 +698,7 @@ export namespace MyNS {
 		 * billed for storage usage. Oldest versions will be deleted first; sites are
 		 * created with an unlimited number of max_versions by default.
 		 */
-		maxVersions?: string;
+		maxVersions?: string | null;
 	}
 
 	@Injectable()
@@ -746,7 +746,7 @@ export namespace MyNS {
 		 * [`status`](../sites.versions#Version.FIELDS.status) will be used.
 		 * @return {void} Successful response
 		 */
-		Firebasehosting_sites_versions_patch(name: string, updateMask: string, requestBody: Version): Observable<HttpResponse<string>> {
+		Firebasehosting_sites_versions_patch(name: string, updateMask: string | null | undefined, requestBody: Version): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1beta1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -771,7 +771,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token from a previous request, if provided.
 		 * @return {void} Successful response
 		 */
-		Firebasehosting_sites_domains_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Firebasehosting_sites_domains_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/domains&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -797,7 +797,7 @@ export namespace MyNS {
 		 * @param {VersionFileStatus} status The type of files in the version that should be listed.
 		 * @return {void} Successful response
 		 */
-		Firebasehosting_sites_versions_files_list(parent: string, pageSize: number, pageToken: string, status: VersionFileStatus): Observable<HttpResponse<string>> {
+		Firebasehosting_sites_versions_files_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined, status: VersionFileStatus | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/files&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&status=' + status, { observe: 'response', responseType: 'text' });
 		}
 
@@ -810,7 +810,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token from a previous request, if provided.
 		 * @return {void} Successful response
 		 */
-		Firebasehosting_sites_releases_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Firebasehosting_sites_releases_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/releases&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -829,7 +829,7 @@ export namespace MyNS {
 		 * request body is `SITE_DISABLE`.
 		 * @return {void} Successful response
 		 */
-		Firebasehosting_sites_releases_create(parent: string, versionName: string, requestBody: Release): Observable<HttpResponse<string>> {
+		Firebasehosting_sites_releases_create(parent: string, versionName: string | null | undefined, requestBody: Release): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/releases&versionName=' + (versionName == null ? '' : encodeURIComponent(versionName)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -850,7 +850,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The next_page_token from a previous request, if provided.
 		 * @return {void} Successful response
 		 */
-		Firebasehosting_sites_versions_list(parent: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Firebasehosting_sites_versions_list(parent: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/versions&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -865,7 +865,7 @@ export namespace MyNS {
 		 * creations.
 		 * @return {void} Successful response
 		 */
-		Firebasehosting_sites_versions_create(parent: string, sizeBytes: string, versionId: string, requestBody: Version): Observable<HttpResponse<string>> {
+		Firebasehosting_sites_versions_create(parent: string, sizeBytes: string | null | undefined, versionId: string | null | undefined, requestBody: Version): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1beta1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/versions&sizeBytes=' + (sizeBytes == null ? '' : encodeURIComponent(sizeBytes)) + '&versionId=' + (versionId == null ? '' : encodeURIComponent(versionId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 

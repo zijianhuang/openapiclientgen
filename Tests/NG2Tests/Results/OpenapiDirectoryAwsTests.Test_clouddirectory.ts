@@ -33,11 +33,11 @@ export namespace MyNS {
 
 	/** Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value. */
 	export interface TypedAttributeValue {
-		StringValue?: string;
-		BinaryValue?: string;
-		BooleanValue?: boolean;
-		NumberValue?: string;
-		DatetimeValue?: Date;
+		StringValue?: string | null;
+		BinaryValue?: string | null;
+		BooleanValue?: boolean | null;
+		NumberValue?: string | null;
+		DatetimeValue?: Date | null;
 	}
 
 	export interface InternalServiceException {
@@ -68,8 +68,8 @@ export namespace MyNS {
 	}
 
 	export interface ApplySchemaResponse {
-		AppliedSchemaArn?: string;
-		DirectoryArn?: string;
+		AppliedSchemaArn?: string | null;
+		DirectoryArn?: string | null;
 	}
 
 	export interface SchemaAlreadyExistsException {
@@ -79,7 +79,7 @@ export namespace MyNS {
 	}
 
 	export interface AttachObjectResponse {
-		AttachedObjectIdentifier?: string;
+		AttachedObjectIdentifier?: string | null;
 	}
 
 	export interface LinkNameAlreadyInUseException {
@@ -92,7 +92,7 @@ export namespace MyNS {
 	}
 
 	export interface AttachToIndexResponse {
-		AttachedObjectIdentifier?: string;
+		AttachedObjectIdentifier?: string | null;
 	}
 
 	export interface IndexedAttributeMissingException {
@@ -104,7 +104,7 @@ export namespace MyNS {
 	export interface AttachTypedLinkResponse {
 
 		/** Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch. */
-		TypedLinkSpecifier?: TypedLinkSpecifier;
+		TypedLinkSpecifier?: TypedLinkSpecifier | null;
 	}
 
 
@@ -141,7 +141,7 @@ export namespace MyNS {
 
 	/** The reference that identifies an object. */
 	export interface ObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 
@@ -157,7 +157,7 @@ export namespace MyNS {
 	}
 
 	export interface BatchReadResponse {
-		Responses?: Array<BatchReadOperationResponse>;
+		Responses?: Array<BatchReadOperationResponse> | null;
 	}
 
 
@@ -165,10 +165,10 @@ export namespace MyNS {
 	export interface BatchReadOperationResponse {
 
 		/** Represents the output of a <code>BatchRead</code> success response operation. */
-		SuccessfulResponse?: BatchReadSuccessfulResponse;
+		SuccessfulResponse?: BatchReadSuccessfulResponse | null;
 
 		/** The batch read exception structure, which contains the exception type and message. */
-		ExceptionResponse?: BatchReadException;
+		ExceptionResponse?: BatchReadException | null;
 	}
 
 
@@ -176,58 +176,58 @@ export namespace MyNS {
 	export interface BatchReadSuccessfulResponse {
 
 		/** Represents the output of a <a>ListObjectAttributes</a> response operation. */
-		ListObjectAttributes?: BatchListObjectAttributesResponse;
+		ListObjectAttributes?: BatchListObjectAttributesResponse | null;
 
 		/** Represents the output of a <a>ListObjectChildren</a> response operation. */
-		ListObjectChildren?: BatchListObjectChildrenResponse;
+		ListObjectChildren?: BatchListObjectChildrenResponse | null;
 
 		/** Represents the output of a <a>GetObjectInformation</a> response operation. */
-		GetObjectInformation?: BatchGetObjectInformationResponse;
+		GetObjectInformation?: BatchGetObjectInformationResponse | null;
 
 		/** Represents the output of a <a>GetObjectAttributes</a> response operation. */
-		GetObjectAttributes?: BatchGetObjectAttributesResponse;
+		GetObjectAttributes?: BatchGetObjectAttributesResponse | null;
 
 		/** Represents the output of a <a>ListAttachedIndices</a> response operation. */
-		ListAttachedIndices?: BatchListAttachedIndicesResponse;
+		ListAttachedIndices?: BatchListAttachedIndicesResponse | null;
 
 		/** Represents the output of a <a>ListObjectParentPaths</a> response operation. */
-		ListObjectParentPaths?: BatchListObjectParentPathsResponse;
+		ListObjectParentPaths?: BatchListObjectParentPathsResponse | null;
 
 		/** Represents the output of a <a>ListObjectPolicies</a> response operation. */
-		ListObjectPolicies?: BatchListObjectPoliciesResponse;
+		ListObjectPolicies?: BatchListObjectPoliciesResponse | null;
 
 		/** Represents the output of a <a>ListPolicyAttachments</a> response operation. */
-		ListPolicyAttachments?: BatchListPolicyAttachmentsResponse;
+		ListPolicyAttachments?: BatchListPolicyAttachmentsResponse | null;
 
 		/** Represents the output of a <a>LookupPolicy</a> response operation. */
-		LookupPolicy?: BatchLookupPolicyResponse;
+		LookupPolicy?: BatchLookupPolicyResponse | null;
 
 		/** Represents the output of a <a>ListIndex</a> response operation. */
-		ListIndex?: BatchListIndexResponse;
+		ListIndex?: BatchListIndexResponse | null;
 
 		/** Represents the output of a <a>ListOutgoingTypedLinks</a> response operation. */
-		ListOutgoingTypedLinks?: BatchListOutgoingTypedLinksResponse;
+		ListOutgoingTypedLinks?: BatchListOutgoingTypedLinksResponse | null;
 
 		/** Represents the output of a <a>ListIncomingTypedLinks</a> response operation. */
-		ListIncomingTypedLinks?: BatchListIncomingTypedLinksResponse;
+		ListIncomingTypedLinks?: BatchListIncomingTypedLinksResponse | null;
 
 		/** Represents the output of a <a>GetLinkAttributes</a> response operation. */
-		GetLinkAttributes?: BatchGetLinkAttributesResponse;
-		ListObjectParents?: BatchListObjectParentsResponse;
+		GetLinkAttributes?: BatchGetLinkAttributesResponse | null;
+		ListObjectParents?: BatchListObjectParentsResponse | null;
 	}
 
 
 	/** Represents the output of a <a>ListObjectAttributes</a> response operation. */
 	export interface BatchListObjectAttributesResponse {
-		Attributes?: Array<AttributeKeyAndValue>;
-		NextToken?: string;
+		Attributes?: Array<AttributeKeyAndValue> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents the output of a <a>ListObjectChildren</a> response operation. */
 	export interface BatchListObjectChildrenResponse {
-		Children?: LinkNameToObjectIdentifierMap;
-		NextToken?: string;
+		Children?: LinkNameToObjectIdentifierMap | null;
+		NextToken?: string | null;
 	}
 
 	export interface LinkNameToObjectIdentifierMap {
@@ -236,131 +236,131 @@ export namespace MyNS {
 
 	/** Represents the output of a <a>GetObjectInformation</a> response operation. */
 	export interface BatchGetObjectInformationResponse {
-		SchemaFacets?: Array<SchemaFacet>;
-		ObjectIdentifier?: string;
+		SchemaFacets?: Array<SchemaFacet> | null;
+		ObjectIdentifier?: string | null;
 	}
 
 
 	/** A facet. */
 	export interface SchemaFacet {
-		SchemaArn?: string;
-		FacetName?: string;
+		SchemaArn?: string | null;
+		FacetName?: string | null;
 	}
 
 
 	/** Represents the output of a <a>GetObjectAttributes</a> response operation. */
 	export interface BatchGetObjectAttributesResponse {
-		Attributes?: Array<AttributeKeyAndValue>;
+		Attributes?: Array<AttributeKeyAndValue> | null;
 	}
 
 
 	/** Represents the output of a <a>ListAttachedIndices</a> response operation. */
 	export interface BatchListAttachedIndicesResponse {
-		IndexAttachments?: Array<IndexAttachment>;
-		NextToken?: string;
+		IndexAttachments?: Array<IndexAttachment> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents an index and an attached object. */
 	export interface IndexAttachment {
-		IndexedAttributes?: Array<AttributeKeyAndValue>;
-		ObjectIdentifier?: string;
+		IndexedAttributes?: Array<AttributeKeyAndValue> | null;
+		ObjectIdentifier?: string | null;
 	}
 
 
 	/** Represents the output of a <a>ListObjectParentPaths</a> response operation. */
 	export interface BatchListObjectParentPathsResponse {
-		PathToObjectIdentifiersList?: Array<PathToObjectIdentifiers>;
-		NextToken?: string;
+		PathToObjectIdentifiersList?: Array<PathToObjectIdentifiers> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Returns the path to the <code>ObjectIdentifiers</code> that is associated with the directory. */
 	export interface PathToObjectIdentifiers {
-		Path?: string;
-		ObjectIdentifiers?: Array<string>;
+		Path?: string | null;
+		ObjectIdentifiers?: Array<string> | null;
 	}
 
 
 	/** Represents the output of a <a>ListObjectPolicies</a> response operation. */
 	export interface BatchListObjectPoliciesResponse {
-		AttachedPolicyIds?: Array<string>;
-		NextToken?: string;
+		AttachedPolicyIds?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents the output of a <a>ListPolicyAttachments</a> response operation. */
 	export interface BatchListPolicyAttachmentsResponse {
-		ObjectIdentifiers?: Array<string>;
-		NextToken?: string;
+		ObjectIdentifiers?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents the output of a <a>LookupPolicy</a> response operation. */
 	export interface BatchLookupPolicyResponse {
-		PolicyToPathList?: Array<PolicyToPath>;
-		NextToken?: string;
+		PolicyToPathList?: Array<PolicyToPath> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Used when a regular object exists in a <a>Directory</a> and you want to find all of the policies that are associated with that object and the parent to that object. */
 	export interface PolicyToPath {
-		Path?: string;
-		Policies?: Array<PolicyAttachment>;
+		Path?: string | null;
+		Policies?: Array<PolicyAttachment> | null;
 	}
 
 
 	/** Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is attached. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>. */
 	export interface PolicyAttachment {
-		PolicyId?: string;
-		ObjectIdentifier?: string;
-		PolicyType?: string;
+		PolicyId?: string | null;
+		ObjectIdentifier?: string | null;
+		PolicyType?: string | null;
 	}
 
 
 	/** Represents the output of a <a>ListIndex</a> response operation. */
 	export interface BatchListIndexResponse {
-		IndexAttachments?: Array<IndexAttachment>;
-		NextToken?: string;
+		IndexAttachments?: Array<IndexAttachment> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents the output of a <a>ListOutgoingTypedLinks</a> response operation. */
 	export interface BatchListOutgoingTypedLinksResponse {
-		TypedLinkSpecifiers?: Array<TypedLinkSpecifier>;
-		NextToken?: string;
+		TypedLinkSpecifiers?: Array<TypedLinkSpecifier> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents the output of a <a>ListIncomingTypedLinks</a> response operation. */
 	export interface BatchListIncomingTypedLinksResponse {
-		LinkSpecifiers?: Array<TypedLinkSpecifier>;
-		NextToken?: string;
+		LinkSpecifiers?: Array<TypedLinkSpecifier> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Represents the output of a <a>GetLinkAttributes</a> response operation. */
 	export interface BatchGetLinkAttributesResponse {
-		Attributes?: Array<AttributeKeyAndValue>;
+		Attributes?: Array<AttributeKeyAndValue> | null;
 	}
 
 	export interface BatchListObjectParentsResponse {
-		ParentLinks?: Array<ObjectIdentifierAndLinkNameTuple>;
-		NextToken?: string;
+		ParentLinks?: Array<ObjectIdentifierAndLinkNameTuple> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A pair of ObjectIdentifier and LinkName. */
 	export interface ObjectIdentifierAndLinkNameTuple {
-		ObjectIdentifier?: string;
-		LinkName?: string;
+		ObjectIdentifier?: string | null;
+		LinkName?: string | null;
 	}
 
 
 	/** The batch read exception structure, which contains the exception type and message. */
 	export interface BatchReadException {
-		Type?: BatchReadExceptionType;
-		Message?: string;
+		Type?: BatchReadExceptionType | null;
+		Message?: string | null;
 	}
 
 	export enum BatchReadExceptionType { ValidationException = 0, InvalidArnException = 1, ResourceNotFoundException = 2, InvalidNextTokenException = 3, AccessDeniedException = 4, NotNodeException = 5, FacetValidationException = 6, CannotListParentOfRootException = 7, NotIndexException = 8, NotPolicyException = 9, DirectoryNotEnabledException = 10, LimitExceededException = 11, InternalServiceException = 12 }
@@ -370,44 +370,44 @@ export namespace MyNS {
 	export interface BatchReadOperation {
 
 		/** Represents the output of a <a>ListObjectAttributes</a> operation. */
-		ListObjectAttributes?: BatchListObjectAttributes;
+		ListObjectAttributes?: BatchListObjectAttributes | null;
 
 		/** Represents the output of a <a>ListObjectChildren</a> operation. */
-		ListObjectChildren?: BatchListObjectChildren;
+		ListObjectChildren?: BatchListObjectChildren | null;
 
 		/** Lists indices attached to an object inside a <a>BatchRead</a> operation. For more information, see <a>ListAttachedIndices</a> and <a>BatchReadRequest$Operations</a>. */
-		ListAttachedIndices?: BatchListAttachedIndices;
+		ListAttachedIndices?: BatchListAttachedIndices | null;
 
 		/** Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects inside a <a>BatchRead</a> operation. For more information, see <a>ListObjectParentPaths</a> and <a>BatchReadRequest$Operations</a>. */
-		ListObjectParentPaths?: BatchListObjectParentPaths;
+		ListObjectParentPaths?: BatchListObjectParentPaths | null;
 
 		/** Retrieves metadata about an object inside a <a>BatchRead</a> operation. For more information, see <a>GetObjectInformation</a> and <a>BatchReadRequest$Operations</a>. */
-		GetObjectInformation?: BatchGetObjectInformation;
+		GetObjectInformation?: BatchGetObjectInformation | null;
 
 		/** Retrieves attributes within a facet that are associated with an object inside an <a>BatchRead</a> operation. For more information, see <a>GetObjectAttributes</a> and <a>BatchReadRequest$Operations</a>. */
-		GetObjectAttributes?: BatchGetObjectAttributes;
-		ListObjectParents?: BatchListObjectParents;
+		GetObjectAttributes?: BatchGetObjectAttributes | null;
+		ListObjectParents?: BatchListObjectParents | null;
 
 		/** Returns policies attached to an object in pagination fashion inside a <a>BatchRead</a> operation. For more information, see <a>ListObjectPolicies</a> and <a>BatchReadRequest$Operations</a>. */
-		ListObjectPolicies?: BatchListObjectPolicies;
+		ListObjectPolicies?: BatchListObjectPolicies | null;
 
 		/** Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached inside a <a>BatchRead</a> operation. For more information, see <a>ListPolicyAttachments</a> and <a>BatchReadRequest$Operations</a>. */
-		ListPolicyAttachments?: BatchListPolicyAttachments;
+		ListPolicyAttachments?: BatchListPolicyAttachments | null;
 
 		/** Lists all policies from the root of the Directory to the object specified inside a <a>BatchRead</a> operation. For more information, see <a>LookupPolicy</a> and <a>BatchReadRequest$Operations</a>. */
-		LookupPolicy?: BatchLookupPolicy;
+		LookupPolicy?: BatchLookupPolicy | null;
 
 		/** Lists objects attached to the specified index inside a <a>BatchRead</a> operation. For more information, see <a>ListIndex</a> and <a>BatchReadRequest$Operations</a>. */
-		ListIndex?: BatchListIndex;
+		ListIndex?: BatchListIndex | null;
 
 		/** Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListOutgoingTypedLinks</a> and <a>BatchReadRequest$Operations</a>. */
-		ListOutgoingTypedLinks?: BatchListOutgoingTypedLinks;
+		ListOutgoingTypedLinks?: BatchListOutgoingTypedLinks | null;
 
 		/** Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListIncomingTypedLinks</a> and <a>BatchReadRequest$Operations</a>. */
-		ListIncomingTypedLinks?: BatchListIncomingTypedLinks;
+		ListIncomingTypedLinks?: BatchListIncomingTypedLinks | null;
 
 		/** Retrieves attributes that are associated with a typed link inside a <a>BatchRead</a> operation. For more information, see <a>GetLinkAttributes</a> and <a>BatchReadRequest$Operations</a>. */
-		GetLinkAttributes?: BatchGetLinkAttributes;
+		GetLinkAttributes?: BatchGetLinkAttributes | null;
 	}
 
 
@@ -419,11 +419,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		ObjectReference: ObjectReference;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 
 		/** A facet. */
-		FacetFilter?: SchemaFacet;
+		FacetFilter?: SchemaFacet | null;
 	}
 
 
@@ -435,8 +435,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		ObjectReference: ObjectReference;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
@@ -448,8 +448,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		TargetReference: ObjectReference;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
@@ -461,8 +461,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		ObjectReference: ObjectReference;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
@@ -501,8 +501,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		ObjectReference: ObjectReference;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
@@ -514,8 +514,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		ObjectReference: ObjectReference;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
@@ -527,8 +527,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		PolicyReference: ObjectReference;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
@@ -540,22 +540,22 @@ export namespace MyNS {
 		 * Required
 		 */
 		ObjectReference: ObjectReference;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** Lists objects attached to the specified index inside a <a>BatchRead</a> operation. For more information, see <a>ListIndex</a> and <a>BatchReadRequest$Operations</a>. */
 	export interface BatchListIndex {
-		RangesOnIndexedValues?: Array<ObjectAttributeRange>;
+		RangesOnIndexedValues?: Array<ObjectAttributeRange> | null;
 
 		/**
 		 * The reference that identifies an object.
 		 * Required
 		 */
 		IndexReference: ObjectReference;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
@@ -563,10 +563,10 @@ export namespace MyNS {
 	export interface ObjectAttributeRange {
 
 		/** A unique identifier for an attribute. */
-		AttributeKey?: AttributeKey;
+		AttributeKey?: AttributeKey | null;
 
 		/** A range of attribute values. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_range_filters.html">Range Filters</a>. */
-		Range?: TypedAttributeValueRange;
+		Range?: TypedAttributeValueRange | null;
 	}
 
 
@@ -575,11 +575,11 @@ export namespace MyNS {
 		StartMode: TypedAttributeValueRangeStartMode;
 
 		/** Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value. */
-		StartValue?: TypedAttributeValue;
+		StartValue?: TypedAttributeValue | null;
 		EndMode: TypedAttributeValueRangeStartMode;
 
 		/** Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value. */
-		EndValue?: TypedAttributeValue;
+		EndValue?: TypedAttributeValue | null;
 	}
 
 	export enum TypedAttributeValueRangeStartMode { FIRST = 0, LAST = 1, LAST_BEFORE_MISSING_VALUES = 2, INCLUSIVE = 3, EXCLUSIVE = 4 }
@@ -593,18 +593,18 @@ export namespace MyNS {
 		 * Required
 		 */
 		ObjectReference: ObjectReference;
-		FilterAttributeRanges?: Array<TypedLinkAttributeRange>;
+		FilterAttributeRanges?: Array<TypedLinkAttributeRange> | null;
 
 		/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
-		FilterTypedLink?: TypedLinkSchemaAndFacetName;
-		NextToken?: string;
-		MaxResults?: number;
+		FilterTypedLink?: TypedLinkSchemaAndFacetName | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** Identifies the range of attributes that are used by a specified filter. */
 	export interface TypedLinkAttributeRange {
-		AttributeName?: string;
+		AttributeName?: string | null;
 
 		/**
 		 * A range of attribute values. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_range_filters.html">Range Filters</a>.
@@ -622,12 +622,12 @@ export namespace MyNS {
 		 * Required
 		 */
 		ObjectReference: ObjectReference;
-		FilterAttributeRanges?: Array<TypedLinkAttributeRange>;
+		FilterAttributeRanges?: Array<TypedLinkAttributeRange> | null;
 
 		/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
-		FilterTypedLink?: TypedLinkSchemaAndFacetName;
-		NextToken?: string;
-		MaxResults?: number;
+		FilterTypedLink?: TypedLinkSchemaAndFacetName | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
@@ -643,7 +643,7 @@ export namespace MyNS {
 	}
 
 	export interface BatchWriteResponse {
-		Responses?: Array<BatchWriteOperationResponse>;
+		Responses?: Array<BatchWriteOperationResponse> | null;
 	}
 
 
@@ -651,73 +651,73 @@ export namespace MyNS {
 	export interface BatchWriteOperationResponse {
 
 		/** Represents the output of a <a>CreateObject</a> response operation. */
-		CreateObject?: BatchCreateObjectResponse;
+		CreateObject?: BatchCreateObjectResponse | null;
 
 		/** Represents the output batch <a>AttachObject</a> response operation. */
-		AttachObject?: BatchAttachObjectResponse;
+		AttachObject?: BatchAttachObjectResponse | null;
 
 		/** Represents the output of a <a>DetachObject</a> response operation. */
-		DetachObject?: BatchDetachObjectResponse;
+		DetachObject?: BatchDetachObjectResponse | null;
 
 		/** Represents the output of a <code>BatchUpdate</code> response operation. */
-		UpdateObjectAttributes?: BatchUpdateObjectAttributesResponse;
+		UpdateObjectAttributes?: BatchUpdateObjectAttributesResponse | null;
 
 		/** Represents the output of a <a>DeleteObject</a> response operation. */
-		DeleteObject?: BatchDeleteObjectResponse;
+		DeleteObject?: BatchDeleteObjectResponse | null;
 
 		/** The result of a batch add facet to object operation. */
-		AddFacetToObject?: BatchAddFacetToObjectResponse;
+		AddFacetToObject?: BatchAddFacetToObjectResponse | null;
 
 		/** An empty result that represents success. */
-		RemoveFacetFromObject?: BatchRemoveFacetFromObjectResponse;
+		RemoveFacetFromObject?: BatchRemoveFacetFromObjectResponse | null;
 
 		/** Represents the output of an <a>AttachPolicy</a> response operation. */
-		AttachPolicy?: BatchAttachPolicyResponse;
+		AttachPolicy?: BatchAttachPolicyResponse | null;
 
 		/** Represents the output of a <a>DetachPolicy</a> response operation. */
-		DetachPolicy?: BatchDetachPolicyResponse;
+		DetachPolicy?: BatchDetachPolicyResponse | null;
 
 		/** Represents the output of a <a>CreateIndex</a> response operation. */
-		CreateIndex?: BatchCreateIndexResponse;
+		CreateIndex?: BatchCreateIndexResponse | null;
 
 		/** Represents the output of a <a>AttachToIndex</a> response operation. */
-		AttachToIndex?: BatchAttachToIndexResponse;
+		AttachToIndex?: BatchAttachToIndexResponse | null;
 
 		/** Represents the output of a <a>DetachFromIndex</a> response operation. */
-		DetachFromIndex?: BatchDetachFromIndexResponse;
+		DetachFromIndex?: BatchDetachFromIndexResponse | null;
 
 		/** Represents the output of a <a>AttachTypedLink</a> response operation. */
-		AttachTypedLink?: BatchAttachTypedLinkResponse;
+		AttachTypedLink?: BatchAttachTypedLinkResponse | null;
 
 		/** Represents the output of a <a>DetachTypedLink</a> response operation. */
-		DetachTypedLink?: BatchDetachTypedLinkResponse;
+		DetachTypedLink?: BatchDetachTypedLinkResponse | null;
 
 		/** Represents the output of a <a>UpdateLinkAttributes</a> response operation. */
-		UpdateLinkAttributes?: BatchUpdateLinkAttributesResponse;
+		UpdateLinkAttributes?: BatchUpdateLinkAttributesResponse | null;
 	}
 
 
 	/** Represents the output of a <a>CreateObject</a> response operation. */
 	export interface BatchCreateObjectResponse {
-		ObjectIdentifier?: string;
+		ObjectIdentifier?: string | null;
 	}
 
 
 	/** Represents the output batch <a>AttachObject</a> response operation. */
 	export interface BatchAttachObjectResponse {
-		attachedObjectIdentifier?: string;
+		attachedObjectIdentifier?: string | null;
 	}
 
 
 	/** Represents the output of a <a>DetachObject</a> response operation. */
 	export interface BatchDetachObjectResponse {
-		detachedObjectIdentifier?: string;
+		detachedObjectIdentifier?: string | null;
 	}
 
 
 	/** Represents the output of a <code>BatchUpdate</code> response operation. */
 	export interface BatchUpdateObjectAttributesResponse {
-		ObjectIdentifier?: string;
+		ObjectIdentifier?: string | null;
 	}
 
 
@@ -748,19 +748,19 @@ export namespace MyNS {
 
 	/** Represents the output of a <a>CreateIndex</a> response operation. */
 	export interface BatchCreateIndexResponse {
-		ObjectIdentifier?: string;
+		ObjectIdentifier?: string | null;
 	}
 
 
 	/** Represents the output of a <a>AttachToIndex</a> response operation. */
 	export interface BatchAttachToIndexResponse {
-		AttachedObjectIdentifier?: string;
+		AttachedObjectIdentifier?: string | null;
 	}
 
 
 	/** Represents the output of a <a>DetachFromIndex</a> response operation. */
 	export interface BatchDetachFromIndexResponse {
-		DetachedObjectIdentifier?: string;
+		DetachedObjectIdentifier?: string | null;
 	}
 
 
@@ -768,7 +768,7 @@ export namespace MyNS {
 	export interface BatchAttachTypedLinkResponse {
 
 		/** Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch. */
-		TypedLinkSpecifier?: TypedLinkSpecifier;
+		TypedLinkSpecifier?: TypedLinkSpecifier | null;
 	}
 
 
@@ -786,49 +786,49 @@ export namespace MyNS {
 	export interface BatchWriteOperation {
 
 		/** Represents the output of a <a>CreateObject</a> operation. */
-		CreateObject?: BatchCreateObject;
+		CreateObject?: BatchCreateObject | null;
 
 		/** Represents the output of an <a>AttachObject</a> operation. */
-		AttachObject?: BatchAttachObject;
+		AttachObject?: BatchAttachObject | null;
 
 		/** Represents the output of a <a>DetachObject</a> operation. */
-		DetachObject?: BatchDetachObject;
+		DetachObject?: BatchDetachObject | null;
 
 		/** Represents the output of a <code>BatchUpdate</code> operation. */
-		UpdateObjectAttributes?: BatchUpdateObjectAttributes;
+		UpdateObjectAttributes?: BatchUpdateObjectAttributes | null;
 
 		/** Represents the output of a <a>DeleteObject</a> operation. */
-		DeleteObject?: BatchDeleteObject;
+		DeleteObject?: BatchDeleteObject | null;
 
 		/** Represents the output of a batch add facet to object operation. */
-		AddFacetToObject?: BatchAddFacetToObject;
+		AddFacetToObject?: BatchAddFacetToObject | null;
 
 		/** A batch operation to remove a facet from an object. */
-		RemoveFacetFromObject?: BatchRemoveFacetFromObject;
+		RemoveFacetFromObject?: BatchRemoveFacetFromObject | null;
 
 		/** Attaches a policy object to a regular object inside a <a>BatchRead</a> operation. For more information, see <a>AttachPolicy</a> and <a>BatchReadRequest$Operations</a>. */
-		AttachPolicy?: BatchAttachPolicy;
+		AttachPolicy?: BatchAttachPolicy | null;
 
 		/** Detaches the specified policy from the specified directory inside a <a>BatchWrite</a> operation. For more information, see <a>DetachPolicy</a> and <a>BatchWriteRequest$Operations</a>. */
-		DetachPolicy?: BatchDetachPolicy;
+		DetachPolicy?: BatchDetachPolicy | null;
 
 		/** Creates an index object inside of a <a>BatchRead</a> operation. For more information, see <a>CreateIndex</a> and <a>BatchReadRequest$Operations</a>. */
-		CreateIndex?: BatchCreateIndex;
+		CreateIndex?: BatchCreateIndex | null;
 
 		/** Attaches the specified object to the specified index inside a <a>BatchRead</a> operation. For more information, see <a>AttachToIndex</a> and <a>BatchReadRequest$Operations</a>. */
-		AttachToIndex?: BatchAttachToIndex;
+		AttachToIndex?: BatchAttachToIndex | null;
 
 		/** Detaches the specified object from the specified index inside a <a>BatchRead</a> operation. For more information, see <a>DetachFromIndex</a> and <a>BatchReadRequest$Operations</a>. */
-		DetachFromIndex?: BatchDetachFromIndex;
+		DetachFromIndex?: BatchDetachFromIndex | null;
 
 		/** Attaches a typed link to a specified source and target object inside a <a>BatchRead</a> operation. For more information, see <a>AttachTypedLink</a> and <a>BatchReadRequest$Operations</a>. */
-		AttachTypedLink?: BatchAttachTypedLink;
+		AttachTypedLink?: BatchAttachTypedLink | null;
 
 		/** Detaches a typed link from a specified source and target object inside a <a>BatchRead</a> operation. For more information, see <a>DetachTypedLink</a> and <a>BatchReadRequest$Operations</a>. */
-		DetachTypedLink?: BatchDetachTypedLink;
+		DetachTypedLink?: BatchDetachTypedLink | null;
 
 		/** Updates a given typed link’s attributes inside a <a>BatchRead</a> operation. Attributes to be updated must not contribute to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>. For more information, see <a>UpdateLinkAttributes</a> and <a>BatchReadRequest$Operations</a>. */
-		UpdateLinkAttributes?: BatchUpdateLinkAttributes;
+		UpdateLinkAttributes?: BatchUpdateLinkAttributes | null;
 	}
 
 
@@ -838,9 +838,9 @@ export namespace MyNS {
 		ObjectAttributeList: Array<AttributeKeyAndValue>;
 
 		/** The reference that identifies an object. */
-		ParentReference?: ObjectReference;
-		LinkName?: string;
-		BatchReferenceName?: string;
+		ParentReference?: ObjectReference | null;
+		LinkName?: string | null;
+		BatchReferenceName?: string | null;
 	}
 
 
@@ -871,7 +871,7 @@ export namespace MyNS {
 		 */
 		ParentReference: ObjectReference;
 		LinkName: string;
-		BatchReferenceName?: string;
+		BatchReferenceName?: string | null;
 	}
 
 
@@ -891,19 +891,19 @@ export namespace MyNS {
 	export interface ObjectAttributeUpdate {
 
 		/** A unique identifier for an attribute. */
-		ObjectAttributeKey?: AttributeKey;
+		ObjectAttributeKey?: AttributeKey | null;
 
 		/** The action to take on the object attribute. */
-		ObjectAttributeAction?: ObjectAttributeAction;
+		ObjectAttributeAction?: ObjectAttributeAction | null;
 	}
 
 
 	/** The action to take on the object attribute. */
 	export interface ObjectAttributeAction {
-		ObjectAttributeActionType?: ObjectAttributeActionObjectAttributeActionType;
+		ObjectAttributeActionType?: ObjectAttributeActionObjectAttributeActionType | null;
 
 		/** Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value. */
-		ObjectAttributeUpdateValue?: TypedAttributeValue;
+		ObjectAttributeUpdateValue?: TypedAttributeValue | null;
 	}
 
 	export enum ObjectAttributeActionObjectAttributeActionType { CREATE_OR_UPDATE = 0, DELETE = 1 }
@@ -995,9 +995,9 @@ export namespace MyNS {
 		IsUnique: boolean;
 
 		/** The reference that identifies an object. */
-		ParentReference?: ObjectReference;
-		LinkName?: string;
-		BatchReferenceName?: string;
+		ParentReference?: ObjectReference | null;
+		LinkName?: string | null;
+		BatchReferenceName?: string | null;
 	}
 
 
@@ -1086,19 +1086,19 @@ export namespace MyNS {
 	export interface LinkAttributeUpdate {
 
 		/** A unique identifier for an attribute. */
-		AttributeKey?: AttributeKey;
+		AttributeKey?: AttributeKey | null;
 
 		/** The action to take on a typed link attribute value. Updates are only supported for attributes which don’t contribute to link identity. */
-		AttributeAction?: LinkAttributeAction;
+		AttributeAction?: LinkAttributeAction | null;
 	}
 
 
 	/** The action to take on a typed link attribute value. Updates are only supported for attributes which don’t contribute to link identity. */
 	export interface LinkAttributeAction {
-		AttributeActionType?: ObjectAttributeActionObjectAttributeActionType;
+		AttributeActionType?: ObjectAttributeActionObjectAttributeActionType | null;
 
 		/** Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value. */
-		AttributeUpdateValue?: TypedAttributeValue;
+		AttributeUpdateValue?: TypedAttributeValue | null;
 	}
 
 	export interface BatchWriteException {
@@ -1123,11 +1123,11 @@ export namespace MyNS {
 		Name: string;
 
 		/** A facet attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information. */
-		AttributeDefinition?: FacetAttributeDefinition;
+		AttributeDefinition?: FacetAttributeDefinition | null;
 
 		/** The facet attribute reference that specifies the attribute definition that contains the attribute facet name and attribute name. */
-		AttributeReference?: FacetAttributeReference;
-		RequiredBehavior?: FacetAttributeRequiredBehavior;
+		AttributeReference?: FacetAttributeReference | null;
+		RequiredBehavior?: FacetAttributeRequiredBehavior | null;
 	}
 
 
@@ -1136,9 +1136,9 @@ export namespace MyNS {
 		Type: FacetAttributeDefinitionType;
 
 		/** Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value. */
-		DefaultValue?: TypedAttributeValue;
-		IsImmutable?: boolean;
-		Rules?: RuleMap;
+		DefaultValue?: TypedAttributeValue | null;
+		IsImmutable?: boolean | null;
+		Rules?: RuleMap | null;
 	}
 
 	export enum FacetAttributeDefinitionType { STRING = 0, BINARY = 1, BOOLEAN = 2, NUMBER = 3, DATETIME = 4, VARIANT = 5 }
@@ -1162,18 +1162,18 @@ export namespace MyNS {
 	}
 
 	export interface CreateIndexResponse {
-		ObjectIdentifier?: string;
+		ObjectIdentifier?: string | null;
 	}
 
 	export interface UnsupportedIndexTypeException {
 	}
 
 	export interface CreateObjectResponse {
-		ObjectIdentifier?: string;
+		ObjectIdentifier?: string | null;
 	}
 
 	export interface CreateSchemaResponse {
-		SchemaArn?: string;
+		SchemaArn?: string | null;
 	}
 
 	export interface CreateTypedLinkFacetResponse {
@@ -1186,9 +1186,9 @@ export namespace MyNS {
 		Type: FacetAttributeDefinitionType;
 
 		/** Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value. */
-		DefaultValue?: TypedAttributeValue;
-		IsImmutable?: boolean;
-		Rules?: RuleMap;
+		DefaultValue?: TypedAttributeValue | null;
+		IsImmutable?: boolean | null;
+		Rules?: RuleMap | null;
 		RequiredBehavior: FacetAttributeRequiredBehavior;
 	}
 
@@ -1218,7 +1218,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteSchemaResponse {
-		SchemaArn?: string;
+		SchemaArn?: string | null;
 	}
 
 	export interface StillContainsLinksException {
@@ -1228,14 +1228,14 @@ export namespace MyNS {
 	}
 
 	export interface DetachFromIndexResponse {
-		DetachedObjectIdentifier?: string;
+		DetachedObjectIdentifier?: string | null;
 	}
 
 	export interface ObjectAlreadyDetachedException {
 	}
 
 	export interface DetachObjectResponse {
-		DetachedObjectIdentifier?: string;
+		DetachedObjectIdentifier?: string | null;
 	}
 
 	export interface NotNodeException {
@@ -1253,7 +1253,7 @@ export namespace MyNS {
 	}
 
 	export interface GetAppliedSchemaVersionResponse {
-		AppliedSchemaArn?: string;
+		AppliedSchemaArn?: string | null;
 	}
 
 	export interface GetDirectoryResponse {
@@ -1268,10 +1268,10 @@ export namespace MyNS {
 
 	/** Directory structure that includes the directory name and directory ARN. */
 	export interface Directory {
-		Name?: string;
-		DirectoryArn?: string;
-		State?: DirectoryState;
-		CreationDateTime?: Date;
+		Name?: string | null;
+		DirectoryArn?: string | null;
+		State?: DirectoryState | null;
+		CreationDateTime?: Date | null;
 	}
 
 	export enum DirectoryState { ENABLED = 0, DISABLED = 1, DELETED = 2 }
@@ -1279,15 +1279,15 @@ export namespace MyNS {
 	export interface GetFacetResponse {
 
 		/** A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <code> <a>Rule</a>s</code>, and <code>ObjectTypes</code>. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_whatarefacets.html">Facets</a> for more information. */
-		Facet?: Facet;
+		Facet?: Facet | null;
 	}
 
 
 	/** A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <code> <a>Rule</a>s</code>, and <code>ObjectTypes</code>. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_whatarefacets.html">Facets</a> for more information. */
 	export interface Facet {
-		Name?: string;
-		ObjectType?: FacetObjectType;
-		FacetStyle?: FacetFacetStyle;
+		Name?: string | null;
+		ObjectType?: FacetObjectType | null;
+		FacetStyle?: FacetFacetStyle | null;
 	}
 
 	export enum FacetObjectType { NODE = 0, LEAF_NODE = 1, POLICY = 2, INDEX = 3 }
@@ -1295,94 +1295,94 @@ export namespace MyNS {
 	export enum FacetFacetStyle { STATIC = 0, DYNAMIC = 1 }
 
 	export interface GetLinkAttributesResponse {
-		Attributes?: Array<AttributeKeyAndValue>;
+		Attributes?: Array<AttributeKeyAndValue> | null;
 	}
 
 	export interface GetObjectAttributesResponse {
-		Attributes?: Array<AttributeKeyAndValue>;
+		Attributes?: Array<AttributeKeyAndValue> | null;
 	}
 
 	export interface GetObjectInformationResponse {
-		SchemaFacets?: Array<SchemaFacet>;
-		ObjectIdentifier?: string;
+		SchemaFacets?: Array<SchemaFacet> | null;
+		ObjectIdentifier?: string | null;
 	}
 
 	export interface GetSchemaAsJsonResponse {
-		Name?: string;
-		Document?: string;
+		Name?: string | null;
+		Document?: string | null;
 	}
 
 	export interface GetTypedLinkFacetInformationResponse {
-		IdentityAttributeOrder?: Array<string>;
+		IdentityAttributeOrder?: Array<string> | null;
 	}
 
 	export interface InvalidNextTokenException {
 	}
 
 	export interface ListAppliedSchemaArnsResponse {
-		SchemaArns?: Array<string>;
-		NextToken?: string;
+		SchemaArns?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListAttachedIndicesResponse {
-		IndexAttachments?: Array<IndexAttachment>;
-		NextToken?: string;
+		IndexAttachments?: Array<IndexAttachment> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListDevelopmentSchemaArnsResponse {
-		SchemaArns?: Array<string>;
-		NextToken?: string;
+		SchemaArns?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListDirectoriesResponse {
 		Directories: Array<Directory>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListFacetAttributesResponse {
-		Attributes?: Array<FacetAttribute>;
-		NextToken?: string;
+		Attributes?: Array<FacetAttribute> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListFacetNamesResponse {
-		FacetNames?: Array<string>;
-		NextToken?: string;
+		FacetNames?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListIncomingTypedLinksResponse {
-		LinkSpecifiers?: Array<TypedLinkSpecifier>;
-		NextToken?: string;
+		LinkSpecifiers?: Array<TypedLinkSpecifier> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListIndexResponse {
-		IndexAttachments?: Array<IndexAttachment>;
-		NextToken?: string;
+		IndexAttachments?: Array<IndexAttachment> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListManagedSchemaArnsResponse {
-		SchemaArns?: Array<string>;
-		NextToken?: string;
+		SchemaArns?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListObjectAttributesResponse {
-		Attributes?: Array<AttributeKeyAndValue>;
-		NextToken?: string;
+		Attributes?: Array<AttributeKeyAndValue> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListObjectChildrenResponse {
-		Children?: LinkNameToObjectIdentifierMap;
-		NextToken?: string;
+		Children?: LinkNameToObjectIdentifierMap | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListObjectParentPathsResponse {
-		PathToObjectIdentifiersList?: Array<PathToObjectIdentifiers>;
-		NextToken?: string;
+		PathToObjectIdentifiersList?: Array<PathToObjectIdentifiers> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListObjectParentsResponse {
-		Parents?: ObjectIdentifierToLinkNameMap;
-		NextToken?: string;
-		ParentLinks?: Array<ObjectIdentifierAndLinkNameTuple>;
+		Parents?: ObjectIdentifierToLinkNameMap | null;
+		NextToken?: string | null;
+		ParentLinks?: Array<ObjectIdentifierAndLinkNameTuple> | null;
 	}
 
 	export interface ObjectIdentifierToLinkNameMap {
@@ -1392,64 +1392,64 @@ export namespace MyNS {
 	}
 
 	export interface ListObjectPoliciesResponse {
-		AttachedPolicyIds?: Array<string>;
-		NextToken?: string;
+		AttachedPolicyIds?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListOutgoingTypedLinksResponse {
-		TypedLinkSpecifiers?: Array<TypedLinkSpecifier>;
-		NextToken?: string;
+		TypedLinkSpecifiers?: Array<TypedLinkSpecifier> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListPolicyAttachmentsResponse {
-		ObjectIdentifiers?: Array<string>;
-		NextToken?: string;
+		ObjectIdentifiers?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListPublishedSchemaArnsResponse {
-		SchemaArns?: Array<string>;
-		NextToken?: string;
+		SchemaArns?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
-		NextToken?: string;
+		Tags?: Array<Tag> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The tag structure that contains a tag key and value. */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface InvalidTaggingRequestException {
 	}
 
 	export interface ListTypedLinkFacetAttributesResponse {
-		Attributes?: Array<TypedLinkAttributeDefinition>;
-		NextToken?: string;
+		Attributes?: Array<TypedLinkAttributeDefinition> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTypedLinkFacetNamesResponse {
-		FacetNames?: Array<string>;
-		NextToken?: string;
+		FacetNames?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface LookupPolicyResponse {
-		PolicyToPathList?: Array<PolicyToPath>;
-		NextToken?: string;
+		PolicyToPathList?: Array<PolicyToPath> | null;
+		NextToken?: string | null;
 	}
 
 	export interface PublishSchemaResponse {
-		PublishedSchemaArn?: string;
+		PublishedSchemaArn?: string | null;
 	}
 
 	export interface SchemaAlreadyPublishedException {
 	}
 
 	export interface PutSchemaFromJsonResponse {
-		Arn?: string;
+		Arn?: string | null;
 	}
 
 	export interface InvalidSchemaDocException {
@@ -1472,8 +1472,8 @@ export namespace MyNS {
 	export interface FacetAttributeUpdate {
 
 		/** An attribute that is associated with the <a>Facet</a>. */
-		Attribute?: FacetAttribute;
-		Action?: ObjectAttributeActionObjectAttributeActionType;
+		Attribute?: FacetAttribute | null;
+		Action?: ObjectAttributeActionObjectAttributeActionType | null;
 	}
 
 	export interface InvalidFacetUpdateException {
@@ -1483,11 +1483,11 @@ export namespace MyNS {
 	}
 
 	export interface UpdateObjectAttributesResponse {
-		ObjectIdentifier?: string;
+		ObjectIdentifier?: string | null;
 	}
 
 	export interface UpdateSchemaResponse {
-		SchemaArn?: string;
+		SchemaArn?: string | null;
 	}
 
 	export interface UpdateTypedLinkFacetResponse {
@@ -1506,15 +1506,15 @@ export namespace MyNS {
 	}
 
 	export interface UpgradeAppliedSchemaResponse {
-		UpgradedSchemaArn?: string;
-		DirectoryArn?: string;
+		UpgradedSchemaArn?: string | null;
+		DirectoryArn?: string | null;
 	}
 
 	export interface IncompatibleSchemaException {
 	}
 
 	export interface UpgradePublishedSchemaResponse {
-		UpgradedSchemaArn?: string;
+		UpgradedSchemaArn?: string | null;
 	}
 
 	export interface AddFacetToObjectRequest {
@@ -1524,7 +1524,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		SchemaFacet: SchemaFacet;
-		ObjectAttributeList?: Array<AttributeKeyAndValue>;
+		ObjectAttributeList?: Array<AttributeKeyAndValue> | null;
 
 		/**
 		 * The reference that identifies an object.
@@ -1625,9 +1625,9 @@ export namespace MyNS {
 
 	export interface CreateFacetRequest {
 		Name: string;
-		Attributes?: Array<FacetAttribute>;
-		ObjectType?: FacetObjectType;
-		FacetStyle?: FacetFacetStyle;
+		Attributes?: Array<FacetAttribute> | null;
+		ObjectType?: FacetObjectType | null;
+		FacetStyle?: FacetFacetStyle | null;
 	}
 
 	export interface CreateIndexRequest {
@@ -1635,17 +1635,17 @@ export namespace MyNS {
 		IsUnique: boolean;
 
 		/** The reference that identifies an object. */
-		ParentReference?: ObjectReference;
-		LinkName?: string;
+		ParentReference?: ObjectReference | null;
+		LinkName?: string | null;
 	}
 
 	export interface CreateObjectRequest {
 		SchemaFacets: Array<SchemaFacet>;
-		ObjectAttributeList?: Array<AttributeKeyAndValue>;
+		ObjectAttributeList?: Array<AttributeKeyAndValue> | null;
 
 		/** The reference that identifies an object. */
-		ParentReference?: ObjectReference;
-		LinkName?: string;
+		ParentReference?: ObjectReference | null;
+		LinkName?: string | null;
 	}
 
 	export interface CreateSchemaRequest {
@@ -1772,7 +1772,7 @@ export namespace MyNS {
 		 */
 		TypedLinkSpecifier: TypedLinkSpecifier;
 		AttributeNames: Array<string>;
-		ConsistencyLevel?: ConsistencyLevel;
+		ConsistencyLevel?: ConsistencyLevel | null;
 	}
 
 	export interface GetObjectAttributesRequest {
@@ -1809,9 +1809,9 @@ export namespace MyNS {
 
 	export interface ListAppliedSchemaArnsRequest {
 		DirectoryArn: string;
-		SchemaArn?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		SchemaArn?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListAttachedIndicesRequest {
@@ -1821,30 +1821,30 @@ export namespace MyNS {
 		 * Required
 		 */
 		TargetReference: ObjectReference;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListDevelopmentSchemaArnsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListDirectoriesRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		state?: DirectoryState;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		state?: DirectoryState | null;
 	}
 
 	export interface ListFacetAttributesRequest {
 		Name: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListFacetNamesRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListIncomingTypedLinksRequest {
@@ -1854,31 +1854,31 @@ export namespace MyNS {
 		 * Required
 		 */
 		ObjectReference: ObjectReference;
-		FilterAttributeRanges?: Array<TypedLinkAttributeRange>;
+		FilterAttributeRanges?: Array<TypedLinkAttributeRange> | null;
 
 		/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
-		FilterTypedLink?: TypedLinkSchemaAndFacetName;
-		NextToken?: string;
-		MaxResults?: number;
-		ConsistencyLevel?: ConsistencyLevel;
+		FilterTypedLink?: TypedLinkSchemaAndFacetName | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		ConsistencyLevel?: ConsistencyLevel | null;
 	}
 
 	export interface ListIndexRequest {
-		RangesOnIndexedValues?: Array<ObjectAttributeRange>;
+		RangesOnIndexedValues?: Array<ObjectAttributeRange> | null;
 
 		/**
 		 * The reference that identifies an object.
 		 * Required
 		 */
 		IndexReference: ObjectReference;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListManagedSchemaArnsRequest {
-		SchemaArn?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		SchemaArn?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListObjectAttributesRequest {
@@ -1888,11 +1888,11 @@ export namespace MyNS {
 		 * Required
 		 */
 		ObjectReference: ObjectReference;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 
 		/** A facet. */
-		FacetFilter?: SchemaFacet;
+		FacetFilter?: SchemaFacet | null;
 	}
 
 	export interface ListObjectChildrenRequest {
@@ -1902,8 +1902,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		ObjectReference: ObjectReference;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListObjectParentPathsRequest {
@@ -1913,8 +1913,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		ObjectReference: ObjectReference;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListObjectParentsRequest {
@@ -1924,9 +1924,9 @@ export namespace MyNS {
 		 * Required
 		 */
 		ObjectReference: ObjectReference;
-		NextToken?: string;
-		MaxResults?: number;
-		IncludeAllLinksToEachParent?: boolean;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		IncludeAllLinksToEachParent?: boolean | null;
 	}
 
 	export interface ListObjectPoliciesRequest {
@@ -1936,8 +1936,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		ObjectReference: ObjectReference;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListOutgoingTypedLinksRequest {
@@ -1947,13 +1947,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		ObjectReference: ObjectReference;
-		FilterAttributeRanges?: Array<TypedLinkAttributeRange>;
+		FilterAttributeRanges?: Array<TypedLinkAttributeRange> | null;
 
 		/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
-		FilterTypedLink?: TypedLinkSchemaAndFacetName;
-		NextToken?: string;
-		MaxResults?: number;
-		ConsistencyLevel?: ConsistencyLevel;
+		FilterTypedLink?: TypedLinkSchemaAndFacetName | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		ConsistencyLevel?: ConsistencyLevel | null;
 	}
 
 	export interface ListPolicyAttachmentsRequest {
@@ -1963,31 +1963,31 @@ export namespace MyNS {
 		 * Required
 		 */
 		PolicyReference: ObjectReference;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListPublishedSchemaArnsRequest {
-		SchemaArn?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		SchemaArn?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTagsForResourceRequest {
 		ResourceArn: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTypedLinkFacetAttributesRequest {
 		Name: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTypedLinkFacetNamesRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface LookupPolicyRequest {
@@ -1997,14 +1997,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		ObjectReference: ObjectReference;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface PublishSchemaRequest {
 		Version: string;
-		MinorVersion?: string;
-		Name?: string;
+		MinorVersion?: string | null;
+		Name?: string | null;
 	}
 
 	export interface PutSchemaFromJsonRequest {
@@ -2036,8 +2036,8 @@ export namespace MyNS {
 
 	/** Contains an Amazon Resource Name (ARN) and parameters that are associated with the rule. */
 	export interface Rule {
-		Type?: RuleType;
-		Parameters?: RuleParameterMap;
+		Type?: RuleType | null;
+		Parameters?: RuleParameterMap | null;
 	}
 
 	export interface TagResourceRequest {
@@ -2052,8 +2052,8 @@ export namespace MyNS {
 
 	export interface UpdateFacetRequest {
 		Name: string;
-		AttributeUpdates?: Array<FacetAttributeUpdate>;
-		ObjectType?: FacetObjectType;
+		AttributeUpdates?: Array<FacetAttributeUpdate> | null;
+		ObjectType?: FacetObjectType | null;
 	}
 
 	export interface UpdateLinkAttributesRequest {
@@ -2089,14 +2089,14 @@ export namespace MyNS {
 	export interface UpgradeAppliedSchemaRequest {
 		PublishedSchemaArn: string;
 		DirectoryArn: string;
-		DryRun?: boolean;
+		DryRun?: boolean | null;
 	}
 
 	export interface UpgradePublishedSchemaRequest {
 		DevelopmentSchemaArn: string;
 		PublishedSchemaArn: string;
 		MinorVersion: string;
-		DryRun?: boolean;
+		DryRun?: boolean | null;
 	}
 
 	@Injectable()
@@ -2426,7 +2426,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAppliedSchemaArnsResponse} Success
 		 */
-		ListAppliedSchemaArns(MaxResults: string, NextToken: string, requestBody: ListAppliedSchemaArnsPostBody): Observable<ListAppliedSchemaArnsResponse> {
+		ListAppliedSchemaArns(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAppliedSchemaArnsPostBody): Observable<ListAppliedSchemaArnsResponse> {
 			return this.http.post<ListAppliedSchemaArnsResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/schema/applied?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2437,7 +2437,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAttachedIndicesResponse} Success
 		 */
-		ListAttachedIndices(MaxResults: string, NextToken: string, requestBody: ListAttachedIndicesPostBody): Observable<ListAttachedIndicesResponse> {
+		ListAttachedIndices(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListAttachedIndicesPostBody): Observable<ListAttachedIndicesResponse> {
 			return this.http.post<ListAttachedIndicesResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/object/indices#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2448,7 +2448,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDevelopmentSchemaArnsResponse} Success
 		 */
-		ListDevelopmentSchemaArns(MaxResults: string, NextToken: string, requestBody: ListDevelopmentSchemaArnsPostBody): Observable<ListDevelopmentSchemaArnsResponse> {
+		ListDevelopmentSchemaArns(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDevelopmentSchemaArnsPostBody): Observable<ListDevelopmentSchemaArnsResponse> {
 			return this.http.post<ListDevelopmentSchemaArnsResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/schema/development?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2459,7 +2459,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDirectoriesResponse} Success
 		 */
-		ListDirectories(MaxResults: string, NextToken: string, requestBody: ListDirectoriesPostBody): Observable<ListDirectoriesResponse> {
+		ListDirectories(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDirectoriesPostBody): Observable<ListDirectoriesResponse> {
 			return this.http.post<ListDirectoriesResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/directory/list?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2470,7 +2470,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListFacetAttributesResponse} Success
 		 */
-		ListFacetAttributes(MaxResults: string, NextToken: string, requestBody: ListFacetAttributesPostBody): Observable<ListFacetAttributesResponse> {
+		ListFacetAttributes(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListFacetAttributesPostBody): Observable<ListFacetAttributesResponse> {
 			return this.http.post<ListFacetAttributesResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/facet/attributes#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2481,7 +2481,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListFacetNamesResponse} Success
 		 */
-		ListFacetNames(MaxResults: string, NextToken: string, requestBody: ListFacetNamesPostBody): Observable<ListFacetNamesResponse> {
+		ListFacetNames(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListFacetNamesPostBody): Observable<ListFacetNamesResponse> {
 			return this.http.post<ListFacetNamesResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/facet/list#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2501,7 +2501,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListIndexResponse} Success
 		 */
-		ListIndex(MaxResults: string, NextToken: string, requestBody: ListIndexPostBody): Observable<ListIndexResponse> {
+		ListIndex(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListIndexPostBody): Observable<ListIndexResponse> {
 			return this.http.post<ListIndexResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/index/targets#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2512,7 +2512,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListManagedSchemaArnsResponse} Success
 		 */
-		ListManagedSchemaArns(MaxResults: string, NextToken: string, requestBody: ListManagedSchemaArnsPostBody): Observable<ListManagedSchemaArnsResponse> {
+		ListManagedSchemaArns(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListManagedSchemaArnsPostBody): Observable<ListManagedSchemaArnsResponse> {
 			return this.http.post<ListManagedSchemaArnsResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/schema/managed?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2523,7 +2523,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListObjectAttributesResponse} Success
 		 */
-		ListObjectAttributes(MaxResults: string, NextToken: string, requestBody: ListObjectAttributesPostBody): Observable<ListObjectAttributesResponse> {
+		ListObjectAttributes(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListObjectAttributesPostBody): Observable<ListObjectAttributesResponse> {
 			return this.http.post<ListObjectAttributesResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/object/attributes#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2534,7 +2534,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListObjectChildrenResponse} Success
 		 */
-		ListObjectChildren(MaxResults: string, NextToken: string, requestBody: ListObjectChildrenPostBody): Observable<ListObjectChildrenResponse> {
+		ListObjectChildren(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListObjectChildrenPostBody): Observable<ListObjectChildrenResponse> {
 			return this.http.post<ListObjectChildrenResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/object/children#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2545,7 +2545,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListObjectParentPathsResponse} Success
 		 */
-		ListObjectParentPaths(MaxResults: string, NextToken: string, requestBody: ListObjectParentPathsPostBody): Observable<ListObjectParentPathsResponse> {
+		ListObjectParentPaths(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListObjectParentPathsPostBody): Observable<ListObjectParentPathsResponse> {
 			return this.http.post<ListObjectParentPathsResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/object/parentpaths#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2556,7 +2556,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListObjectParentsResponse} Success
 		 */
-		ListObjectParents(MaxResults: string, NextToken: string, requestBody: ListObjectParentsPostBody): Observable<ListObjectParentsResponse> {
+		ListObjectParents(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListObjectParentsPostBody): Observable<ListObjectParentsResponse> {
 			return this.http.post<ListObjectParentsResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/object/parent#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2567,7 +2567,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListObjectPoliciesResponse} Success
 		 */
-		ListObjectPolicies(MaxResults: string, NextToken: string, requestBody: ListObjectPoliciesPostBody): Observable<ListObjectPoliciesResponse> {
+		ListObjectPolicies(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListObjectPoliciesPostBody): Observable<ListObjectPoliciesResponse> {
 			return this.http.post<ListObjectPoliciesResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/object/policy#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2587,7 +2587,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPolicyAttachmentsResponse} Success
 		 */
-		ListPolicyAttachments(MaxResults: string, NextToken: string, requestBody: ListPolicyAttachmentsPostBody): Observable<ListPolicyAttachmentsResponse> {
+		ListPolicyAttachments(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListPolicyAttachmentsPostBody): Observable<ListPolicyAttachmentsResponse> {
 			return this.http.post<ListPolicyAttachmentsResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/policy/attachment#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2598,7 +2598,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPublishedSchemaArnsResponse} Success
 		 */
-		ListPublishedSchemaArns(MaxResults: string, NextToken: string, requestBody: ListPublishedSchemaArnsPostBody): Observable<ListPublishedSchemaArnsResponse> {
+		ListPublishedSchemaArns(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListPublishedSchemaArnsPostBody): Observable<ListPublishedSchemaArnsResponse> {
 			return this.http.post<ListPublishedSchemaArnsResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/schema/published?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2609,7 +2609,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsForResourceResponse} Success
 		 */
-		ListTagsForResource(MaxResults: string, NextToken: string, requestBody: ListTagsForResourcePostBody): Observable<ListTagsForResourceResponse> {
+		ListTagsForResource(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTagsForResourcePostBody): Observable<ListTagsForResourceResponse> {
 			return this.http.post<ListTagsForResourceResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/tags?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2620,7 +2620,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTypedLinkFacetAttributesResponse} Success
 		 */
-		ListTypedLinkFacetAttributes(MaxResults: string, NextToken: string, requestBody: ListTypedLinkFacetAttributesPostBody): Observable<ListTypedLinkFacetAttributesResponse> {
+		ListTypedLinkFacetAttributes(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTypedLinkFacetAttributesPostBody): Observable<ListTypedLinkFacetAttributesResponse> {
 			return this.http.post<ListTypedLinkFacetAttributesResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/typedlink/facet/attributes#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2631,7 +2631,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTypedLinkFacetNamesResponse} Success
 		 */
-		ListTypedLinkFacetNames(MaxResults: string, NextToken: string, requestBody: ListTypedLinkFacetNamesPostBody): Observable<ListTypedLinkFacetNamesResponse> {
+		ListTypedLinkFacetNames(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTypedLinkFacetNamesPostBody): Observable<ListTypedLinkFacetNamesResponse> {
 			return this.http.post<ListTypedLinkFacetNamesResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/typedlink/facet/list#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2642,7 +2642,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {LookupPolicyResponse} Success
 		 */
-		LookupPolicy(MaxResults: string, NextToken: string, requestBody: LookupPolicyPostBody): Observable<LookupPolicyResponse> {
+		LookupPolicy(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: LookupPolicyPostBody): Observable<LookupPolicyResponse> {
 			return this.http.post<LookupPolicyResponse>(this.baseUri + 'amazonclouddirectory/2017-01-11/policy/lookup#x-amz-data-partition?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -2746,7 +2746,7 @@ export namespace MyNS {
 		SchemaFacet: AddFacetToObjectPutBodySchemaFacet;
 
 		/** Attributes on the facet that you are adding to the object. */
-		ObjectAttributeList?: Array<AttributeKeyAndValue>;
+		ObjectAttributeList?: Array<AttributeKeyAndValue> | null;
 
 		/**
 		 * The reference that identifies an object.
@@ -2756,12 +2756,12 @@ export namespace MyNS {
 	}
 
 	export interface AddFacetToObjectPutBodySchemaFacet {
-		SchemaArn?: string;
-		FacetName?: string;
+		SchemaArn?: string | null;
+		FacetName?: string | null;
 	}
 
 	export interface AddFacetToObjectPutBodyObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface ApplySchemaPutBody {
@@ -2798,11 +2798,11 @@ export namespace MyNS {
 	}
 
 	export interface AttachObjectPutBodyParentReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface AttachObjectPutBodyChildReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface AttachPolicyPutBody {
@@ -2821,11 +2821,11 @@ export namespace MyNS {
 	}
 
 	export interface AttachPolicyPutBodyPolicyReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface AttachPolicyPutBodyObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface AttachToIndexPutBody {
@@ -2844,11 +2844,11 @@ export namespace MyNS {
 	}
 
 	export interface AttachToIndexPutBodyIndexReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface AttachToIndexPutBodyTargetReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface AttachTypedLinkPutBody {
@@ -2879,16 +2879,16 @@ export namespace MyNS {
 	}
 
 	export interface AttachTypedLinkPutBodySourceObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface AttachTypedLinkPutBodyTargetObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface AttachTypedLinkPutBodyTypedLinkFacet {
-		SchemaArn?: string;
-		TypedLinkName?: string;
+		SchemaArn?: string | null;
+		TypedLinkName?: string | null;
 	}
 
 	export interface BatchReadPostBody {
@@ -2933,13 +2933,13 @@ export namespace MyNS {
 		Name: string;
 
 		/** The attributes that are associated with the <a>Facet</a>. */
-		Attributes?: Array<FacetAttribute>;
+		Attributes?: Array<FacetAttribute> | null;
 
 		/** <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p> <ul> <li> <p>Node: Can have multiple children but one parent.</p> </li> </ul> <ul> <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li> </ul> <ul> <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li> </ul> <ul> <li> <p>Index: Can be created with the Index API.</p> </li> </ul> */
-		ObjectType?: FacetObjectType;
+		ObjectType?: FacetObjectType | null;
 
 		/** There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations. */
-		FacetStyle?: FacetFacetStyle;
+		FacetStyle?: FacetFacetStyle | null;
 	}
 
 	export interface CreateIndexPutBody {
@@ -2957,7 +2957,7 @@ export namespace MyNS {
 		IsUnique: boolean;
 
 		/** The reference that identifies an object. */
-		ParentReference?: CreateIndexPutBodyParentReference;
+		ParentReference?: CreateIndexPutBodyParentReference | null;
 
 		/**
 		 * The name of the link between the parent object and the index object.
@@ -2965,11 +2965,11 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
-		LinkName?: string;
+		LinkName?: string | null;
 	}
 
 	export interface CreateIndexPutBodyParentReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface CreateObjectPutBody {
@@ -2981,10 +2981,10 @@ export namespace MyNS {
 		SchemaFacets: Array<SchemaFacet>;
 
 		/** The attribute map whose attribute ARN contains the key and attribute value as the map value. */
-		ObjectAttributeList?: Array<AttributeKeyAndValue>;
+		ObjectAttributeList?: Array<AttributeKeyAndValue> | null;
 
 		/** The reference that identifies an object. */
-		ParentReference?: CreateObjectPutBodyParentReference;
+		ParentReference?: CreateObjectPutBodyParentReference | null;
 
 		/**
 		 * The name of link that is used to attach this object to a parent.
@@ -2992,11 +2992,11 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
-		LinkName?: string;
+		LinkName?: string | null;
 	}
 
 	export interface CreateObjectPutBodyParentReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface CreateSchemaPutBody {
@@ -3021,9 +3021,9 @@ export namespace MyNS {
 	}
 
 	export interface CreateTypedLinkFacetPutBodyFacet {
-		Name?: string;
-		Attributes?: Array<TypedLinkAttributeDefinition>;
-		IdentityAttributeOrder?: Array<string>;
+		Name?: string | null;
+		Attributes?: Array<TypedLinkAttributeDefinition> | null;
+		IdentityAttributeOrder?: Array<string> | null;
 	}
 
 	export interface DeleteFacetPutBody {
@@ -3048,7 +3048,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteObjectPutBodyObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface DeleteTypedLinkFacetPutBody {
@@ -3077,11 +3077,11 @@ export namespace MyNS {
 	}
 
 	export interface DetachFromIndexPutBodyIndexReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface DetachFromIndexPutBodyTargetReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface DetachObjectPutBody {
@@ -3103,7 +3103,7 @@ export namespace MyNS {
 	}
 
 	export interface DetachObjectPutBodyParentReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface DetachPolicyPutBody {
@@ -3122,11 +3122,11 @@ export namespace MyNS {
 	}
 
 	export interface DetachPolicyPutBodyPolicyReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface DetachPolicyPutBodyObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface DetachTypedLinkPutBody {
@@ -3141,14 +3141,14 @@ export namespace MyNS {
 	export interface DetachTypedLinkPutBodyTypedLinkSpecifier {
 
 		/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
-		TypedLinkFacet?: TypedLinkSchemaAndFacetName;
+		TypedLinkFacet?: TypedLinkSchemaAndFacetName | null;
 
 		/** The reference that identifies an object. */
-		SourceObjectReference?: ObjectReference;
+		SourceObjectReference?: ObjectReference | null;
 
 		/** The reference that identifies an object. */
-		TargetObjectReference?: ObjectReference;
-		IdentityAttributeValues?: Array<AttributeNameAndValue>;
+		TargetObjectReference?: ObjectReference | null;
+		IdentityAttributeValues?: Array<AttributeNameAndValue> | null;
 	}
 
 	export interface GetAppliedSchemaVersionPostBody {
@@ -3184,10 +3184,10 @@ export namespace MyNS {
 		Name: string;
 
 		/** List of attributes that need to be updated in a given schema <a>Facet</a>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. */
-		AttributeUpdates?: Array<FacetAttributeUpdate>;
+		AttributeUpdates?: Array<FacetAttributeUpdate> | null;
 
 		/** The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details. */
-		ObjectType?: FacetObjectType;
+		ObjectType?: FacetObjectType | null;
 	}
 
 	export interface GetLinkAttributesPostBody {
@@ -3205,20 +3205,20 @@ export namespace MyNS {
 		AttributeNames: Array<string>;
 
 		/** The consistency level at which to retrieve the attributes on a typed link. */
-		ConsistencyLevel?: ConsistencyLevel;
+		ConsistencyLevel?: ConsistencyLevel | null;
 	}
 
 	export interface GetLinkAttributesPostBodyTypedLinkSpecifier {
 
 		/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
-		TypedLinkFacet?: TypedLinkSchemaAndFacetName;
+		TypedLinkFacet?: TypedLinkSchemaAndFacetName | null;
 
 		/** The reference that identifies an object. */
-		SourceObjectReference?: ObjectReference;
+		SourceObjectReference?: ObjectReference | null;
 
 		/** The reference that identifies an object. */
-		TargetObjectReference?: ObjectReference;
-		IdentityAttributeValues?: Array<AttributeNameAndValue>;
+		TargetObjectReference?: ObjectReference | null;
+		IdentityAttributeValues?: Array<AttributeNameAndValue> | null;
 	}
 
 	export interface GetObjectAttributesPostBody {
@@ -3243,12 +3243,12 @@ export namespace MyNS {
 	}
 
 	export interface GetObjectAttributesPostBodyObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface GetObjectAttributesPostBodySchemaFacet {
-		SchemaArn?: string;
-		FacetName?: string;
+		SchemaArn?: string | null;
+		FacetName?: string | null;
 	}
 
 	export interface GetObjectInformationPostBody {
@@ -3261,7 +3261,7 @@ export namespace MyNS {
 	}
 
 	export interface GetObjectInformationPostBodyObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface PutSchemaFromJsonPutBody {
@@ -3292,16 +3292,16 @@ export namespace MyNS {
 		DirectoryArn: string;
 
 		/** The response for <code>ListAppliedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version. */
-		SchemaArn?: string;
+		SchemaArn?: string | null;
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to retrieve.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListAttachedIndicesPostBody {
@@ -3313,44 +3313,44 @@ export namespace MyNS {
 		TargetReference: ListAttachedIndicesPostBodyTargetReference;
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to retrieve.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListAttachedIndicesPostBodyTargetReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface ListDevelopmentSchemaArnsPostBody {
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to retrieve.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListDirectoriesPostBody {
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to retrieve.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/** The state of the directories in the list. Can be either Enabled, Disabled, or Deleted. */
-		state?: DirectoryState;
+		state?: DirectoryState | null;
 	}
 
 	export interface ListFacetAttributesPostBody {
@@ -3365,25 +3365,25 @@ export namespace MyNS {
 		Name: string;
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to retrieve.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListFacetNamesPostBody {
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to retrieve.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListIncomingTypedLinksPostBody {
@@ -3395,37 +3395,37 @@ export namespace MyNS {
 		ObjectReference: ListIncomingTypedLinksPostBodyObjectReference;
 
 		/** Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. */
-		FilterAttributeRanges?: Array<TypedLinkAttributeRange>;
+		FilterAttributeRanges?: Array<TypedLinkAttributeRange> | null;
 
 		/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
-		FilterTypedLink?: ListIncomingTypedLinksPostBodyFilterTypedLink;
+		FilterTypedLink?: ListIncomingTypedLinksPostBodyFilterTypedLink | null;
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to retrieve.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/** The consistency level to execute the request at. */
-		ConsistencyLevel?: ConsistencyLevel;
+		ConsistencyLevel?: ConsistencyLevel | null;
 	}
 
 	export interface ListIncomingTypedLinksPostBodyObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface ListIncomingTypedLinksPostBodyFilterTypedLink {
-		SchemaArn?: string;
-		TypedLinkName?: string;
+		SchemaArn?: string | null;
+		TypedLinkName?: string | null;
 	}
 
 	export interface ListIndexPostBody {
 
 		/** Specifies the ranges of indexed values that you want to query. */
-		RangesOnIndexedValues?: Array<ObjectAttributeRange>;
+		RangesOnIndexedValues?: Array<ObjectAttributeRange> | null;
 
 		/**
 		 * The reference that identifies an object.
@@ -3437,29 +3437,29 @@ export namespace MyNS {
 		 * The maximum number of objects in a single page to retrieve from the index during a request. For more information, see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListIndexPostBodyIndexReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface ListManagedSchemaArnsPostBody {
 
 		/** The response for ListManagedSchemaArns. When this parameter is used, all minor version ARNs for a major version are listed. */
-		SchemaArn?: string;
+		SchemaArn?: string | null;
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to retrieve.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListObjectAttributesPostBody {
@@ -3471,25 +3471,25 @@ export namespace MyNS {
 		ObjectReference: ListObjectAttributesPostBodyObjectReference;
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of items to be retrieved in a single call. This is an approximate number.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/** A facet. */
-		FacetFilter?: ListObjectAttributesPostBodyFacetFilter;
+		FacetFilter?: ListObjectAttributesPostBodyFacetFilter | null;
 	}
 
 	export interface ListObjectAttributesPostBodyObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface ListObjectAttributesPostBodyFacetFilter {
-		SchemaArn?: string;
-		FacetName?: string;
+		SchemaArn?: string | null;
+		FacetName?: string | null;
 	}
 
 	export interface ListObjectChildrenPostBody {
@@ -3501,17 +3501,17 @@ export namespace MyNS {
 		ObjectReference: ListObjectChildrenPostBodyObjectReference;
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of items to be retrieved in a single call. This is an approximate number.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListObjectChildrenPostBodyObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface ListObjectParentPathsPostBody {
@@ -3523,17 +3523,17 @@ export namespace MyNS {
 		ObjectReference: ListObjectParentPathsPostBodyObjectReference;
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of items to be retrieved in a single call. This is an approximate number.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListObjectParentPathsPostBodyObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface ListObjectParentsPostBody {
@@ -3545,20 +3545,20 @@ export namespace MyNS {
 		ObjectReference: ListObjectParentsPostBodyObjectReference;
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of items to be retrieved in a single call. This is an approximate number.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/** When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links between a parent-child pair. */
-		IncludeAllLinksToEachParent?: boolean;
+		IncludeAllLinksToEachParent?: boolean | null;
 	}
 
 	export interface ListObjectParentsPostBodyObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface ListObjectPoliciesPostBody {
@@ -3570,17 +3570,17 @@ export namespace MyNS {
 		ObjectReference: ListObjectPoliciesPostBodyObjectReference;
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of items to be retrieved in a single call. This is an approximate number.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListObjectPoliciesPostBodyObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface ListOutgoingTypedLinksPostBody {
@@ -3592,31 +3592,31 @@ export namespace MyNS {
 		ObjectReference: ListOutgoingTypedLinksPostBodyObjectReference;
 
 		/** Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. */
-		FilterAttributeRanges?: Array<TypedLinkAttributeRange>;
+		FilterAttributeRanges?: Array<TypedLinkAttributeRange> | null;
 
 		/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
-		FilterTypedLink?: ListOutgoingTypedLinksPostBodyFilterTypedLink;
+		FilterTypedLink?: ListOutgoingTypedLinksPostBodyFilterTypedLink | null;
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to retrieve.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/** The consistency level to execute the request at. */
-		ConsistencyLevel?: ConsistencyLevel;
+		ConsistencyLevel?: ConsistencyLevel | null;
 	}
 
 	export interface ListOutgoingTypedLinksPostBodyObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface ListOutgoingTypedLinksPostBodyFilterTypedLink {
-		SchemaArn?: string;
-		TypedLinkName?: string;
+		SchemaArn?: string | null;
+		TypedLinkName?: string | null;
 	}
 
 	export interface ListPolicyAttachmentsPostBody {
@@ -3628,32 +3628,32 @@ export namespace MyNS {
 		PolicyReference: ListPolicyAttachmentsPostBodyPolicyReference;
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of items to be retrieved in a single call. This is an approximate number.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListPolicyAttachmentsPostBodyPolicyReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface ListPublishedSchemaArnsPostBody {
 
 		/** The response for <code>ListPublishedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version. */
-		SchemaArn?: string;
+		SchemaArn?: string | null;
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to retrieve.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTagsForResourcePostBody {
@@ -3665,13 +3665,13 @@ export namespace MyNS {
 		ResourceArn: string;
 
 		/** The pagination token. This is for future use. Currently pagination is not supported for tagging. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This is for future use and is not supported currently.
 		 * Minimum: 50
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTypedLinkFacetAttributesPostBody {
@@ -3684,25 +3684,25 @@ export namespace MyNS {
 		Name: string;
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to retrieve.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTypedLinkFacetNamesPostBody {
 
 		/** The pagination token. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of results to retrieve.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface LookupPolicyPostBody {
@@ -3714,17 +3714,17 @@ export namespace MyNS {
 		ObjectReference: LookupPolicyPostBodyObjectReference;
 
 		/** The token to request the next page of results. */
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * The maximum number of items to be retrieved in a single call. This is an approximate number.
 		 * Minimum: 1
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 	}
 
 	export interface LookupPolicyPostBodyObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface PublishSchemaPutBody {
@@ -3744,7 +3744,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
-		MinorVersion?: string;
+		MinorVersion?: string | null;
 
 		/**
 		 * The new name under which the schema will be published. If this is not provided, the development schema is considered.
@@ -3752,7 +3752,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface RemoveFacetFromObjectPutBody {
@@ -3771,12 +3771,12 @@ export namespace MyNS {
 	}
 
 	export interface RemoveFacetFromObjectPutBodySchemaFacet {
-		SchemaArn?: string;
-		FacetName?: string;
+		SchemaArn?: string | null;
+		FacetName?: string | null;
 	}
 
 	export interface RemoveFacetFromObjectPutBodyObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface TagResourcePutBody {
@@ -3827,14 +3827,14 @@ export namespace MyNS {
 	export interface UpdateLinkAttributesPostBodyTypedLinkSpecifier {
 
 		/** Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link. */
-		TypedLinkFacet?: TypedLinkSchemaAndFacetName;
+		TypedLinkFacet?: TypedLinkSchemaAndFacetName | null;
 
 		/** The reference that identifies an object. */
-		SourceObjectReference?: ObjectReference;
+		SourceObjectReference?: ObjectReference | null;
 
 		/** The reference that identifies an object. */
-		TargetObjectReference?: ObjectReference;
-		IdentityAttributeValues?: Array<AttributeNameAndValue>;
+		TargetObjectReference?: ObjectReference | null;
+		IdentityAttributeValues?: Array<AttributeNameAndValue> | null;
 	}
 
 	export interface UpdateObjectAttributesPutBody {
@@ -3853,7 +3853,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateObjectAttributesPutBodyObjectReference {
-		Selector?: string;
+		Selector?: string | null;
 	}
 
 	export interface UpdateSchemaPutBody {
@@ -3905,7 +3905,7 @@ export namespace MyNS {
 		DirectoryArn: string;
 
 		/** Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional. */
-		DryRun?: boolean;
+		DryRun?: boolean | null;
 	}
 
 	export interface UpgradePublishedSchemaPutBody {
@@ -3932,7 +3932,7 @@ export namespace MyNS {
 		MinorVersion: string;
 
 		/** Used for testing whether the Development schema provided is backwards compatible, or not, with the publish schema provided by the user to be upgraded. If schema compatibility fails, an exception would be thrown else the call would succeed. This parameter is optional and defaults to false. */
-		DryRun?: boolean;
+		DryRun?: boolean | null;
 	}
 
 }

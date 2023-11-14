@@ -14,7 +14,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	/// <summary>
 	/// Create CS Types CodeDOM from OpenApiComponents
 	/// </summary>
-	public class ComponentsToCsTypes : ComponentsToTypesBase, IComponentToCodeDom
+	public class ComponentsToCsTypes : ComponentsToTypesBase
 	{
 		public ComponentsToCsTypes(Settings settings, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace) : base(settings, codeCompileUnit, clientNamespace)
 		{

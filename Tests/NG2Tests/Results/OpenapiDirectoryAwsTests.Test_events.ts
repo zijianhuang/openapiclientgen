@@ -19,13 +19,13 @@ export namespace MyNS {
 	}
 
 	export interface CreateEventBusResponse {
-		EventBusArn?: string;
+		EventBusArn?: string | null;
 	}
 
 	export interface CreateEventBusRequest {
 		Name: string;
-		EventSourceName?: string;
-		Tags?: Array<Tag>;
+		EventSourceName?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -42,7 +42,7 @@ export namespace MyNS {
 	}
 
 	export interface CreatePartnerEventSourceResponse {
-		EventSourceArn?: string;
+		EventSourceArn?: string | null;
 	}
 
 	export interface CreatePartnerEventSourceRequest {
@@ -65,30 +65,30 @@ export namespace MyNS {
 
 	export interface DeleteRuleRequest {
 		Name: string;
-		EventBusName?: string;
-		Force?: boolean;
+		EventBusName?: string | null;
+		Force?: boolean | null;
 	}
 
 	export interface ManagedRuleException {
 	}
 
 	export interface DescribeEventBusResponse {
-		Name?: string;
-		Arn?: string;
-		Policy?: string;
+		Name?: string | null;
+		Arn?: string | null;
+		Policy?: string | null;
 	}
 
 	export interface DescribeEventBusRequest {
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export interface DescribeEventSourceResponse {
-		Arn?: string;
-		CreatedBy?: string;
-		CreationTime?: Date;
-		ExpirationTime?: Date;
-		Name?: string;
-		State?: DescribeEventSourceResponseState;
+		Arn?: string | null;
+		CreatedBy?: string | null;
+		CreationTime?: Date | null;
+		ExpirationTime?: Date | null;
+		Name?: string | null;
+		State?: DescribeEventSourceResponseState | null;
 	}
 
 	export enum DescribeEventSourceResponseState { PENDING = 0, ACTIVE = 1, DELETED = 2 }
@@ -98,8 +98,8 @@ export namespace MyNS {
 	}
 
 	export interface DescribePartnerEventSourceResponse {
-		Arn?: string;
-		Name?: string;
+		Arn?: string | null;
+		Name?: string | null;
 	}
 
 	export interface DescribePartnerEventSourceRequest {
@@ -107,153 +107,153 @@ export namespace MyNS {
 	}
 
 	export interface DescribeRuleResponse {
-		Name?: string;
-		Arn?: string;
-		EventPattern?: string;
-		ScheduleExpression?: string;
-		State?: DescribeRuleResponseState;
-		Description?: string;
-		RoleArn?: string;
-		ManagedBy?: string;
-		EventBusName?: string;
+		Name?: string | null;
+		Arn?: string | null;
+		EventPattern?: string | null;
+		ScheduleExpression?: string | null;
+		State?: DescribeRuleResponseState | null;
+		Description?: string | null;
+		RoleArn?: string | null;
+		ManagedBy?: string | null;
+		EventBusName?: string | null;
 	}
 
 	export enum DescribeRuleResponseState { ENABLED = 0, DISABLED = 1 }
 
 	export interface DescribeRuleRequest {
 		Name: string;
-		EventBusName?: string;
+		EventBusName?: string | null;
 	}
 
 	export interface DisableRuleRequest {
 		Name: string;
-		EventBusName?: string;
+		EventBusName?: string | null;
 	}
 
 	export interface EnableRuleRequest {
 		Name: string;
-		EventBusName?: string;
+		EventBusName?: string | null;
 	}
 
 	export interface ListEventBusesResponse {
-		EventBuses?: Array<EventBus>;
-		NextToken?: string;
+		EventBuses?: Array<EventBus> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** An event bus receives events from a source and routes them to rules associated with that event bus. Your account's default event bus receives rules from AWS services. A custom event bus can receive rules from AWS services as well as your custom applications and services. A partner event bus receives events from an event source created by an SaaS partner. These events come from the partners services or applications. */
 	export interface EventBus {
-		Name?: string;
-		Arn?: string;
-		Policy?: string;
+		Name?: string | null;
+		Arn?: string | null;
+		Policy?: string | null;
 	}
 
 	export interface ListEventBusesRequest {
-		NamePrefix?: string;
-		NextToken?: string;
-		Limit?: number;
+		NamePrefix?: string | null;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListEventSourcesResponse {
-		EventSources?: Array<EventSource>;
-		NextToken?: string;
+		EventSources?: Array<EventSource> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that AWS account can receive events from the partner's applications or services. */
 	export interface EventSource {
-		Arn?: string;
-		CreatedBy?: string;
-		CreationTime?: Date;
-		ExpirationTime?: Date;
-		Name?: string;
-		State?: DescribeEventSourceResponseState;
+		Arn?: string | null;
+		CreatedBy?: string | null;
+		CreationTime?: Date | null;
+		ExpirationTime?: Date | null;
+		Name?: string | null;
+		State?: DescribeEventSourceResponseState | null;
 	}
 
 	export interface ListEventSourcesRequest {
-		NamePrefix?: string;
-		NextToken?: string;
-		Limit?: number;
+		NamePrefix?: string | null;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListPartnerEventSourceAccountsResponse {
-		PartnerEventSourceAccounts?: Array<PartnerEventSourceAccount>;
-		NextToken?: string;
+		PartnerEventSourceAccounts?: Array<PartnerEventSourceAccount> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The AWS account that a partner event source has been offered to. */
 	export interface PartnerEventSourceAccount {
-		Account?: string;
-		CreationTime?: Date;
-		ExpirationTime?: Date;
-		State?: DescribeEventSourceResponseState;
+		Account?: string | null;
+		CreationTime?: Date | null;
+		ExpirationTime?: Date | null;
+		State?: DescribeEventSourceResponseState | null;
 	}
 
 	export interface ListPartnerEventSourceAccountsRequest {
 		EventSourceName: string;
-		NextToken?: string;
-		Limit?: number;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListPartnerEventSourcesResponse {
-		PartnerEventSources?: Array<PartnerEventSource>;
-		NextToken?: string;
+		PartnerEventSources?: Array<PartnerEventSource> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that AWS account can receive events from the partner's applications or services. */
 	export interface PartnerEventSource {
-		Arn?: string;
-		Name?: string;
+		Arn?: string | null;
+		Name?: string | null;
 	}
 
 	export interface ListPartnerEventSourcesRequest {
 		NamePrefix: string;
-		NextToken?: string;
-		Limit?: number;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListRuleNamesByTargetResponse {
-		RuleNames?: Array<string>;
-		NextToken?: string;
+		RuleNames?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListRuleNamesByTargetRequest {
 		TargetArn: string;
-		EventBusName?: string;
-		NextToken?: string;
-		Limit?: number;
+		EventBusName?: string | null;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListRulesResponse {
-		Rules?: Array<Rule>;
-		NextToken?: string;
+		Rules?: Array<Rule> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains information about a rule in Amazon EventBridge. */
 	export interface Rule {
-		Name?: string;
-		Arn?: string;
-		EventPattern?: string;
-		State?: DescribeRuleResponseState;
-		Description?: string;
-		ScheduleExpression?: string;
-		RoleArn?: string;
-		ManagedBy?: string;
-		EventBusName?: string;
+		Name?: string | null;
+		Arn?: string | null;
+		EventPattern?: string | null;
+		State?: DescribeRuleResponseState | null;
+		Description?: string | null;
+		ScheduleExpression?: string | null;
+		RoleArn?: string | null;
+		ManagedBy?: string | null;
+		EventBusName?: string | null;
 	}
 
 	export interface ListRulesRequest {
-		NamePrefix?: string;
-		EventBusName?: string;
-		NextToken?: string;
-		Limit?: number;
+		NamePrefix?: string | null;
+		EventBusName?: string | null;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -261,8 +261,8 @@ export namespace MyNS {
 	}
 
 	export interface ListTargetsByRuleResponse {
-		Targets?: Array<Target>;
-		NextToken?: string;
+		Targets?: Array<Target> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -270,33 +270,33 @@ export namespace MyNS {
 	export interface Target {
 		Id: string;
 		Arn: string;
-		RoleArn?: string;
-		Input?: string;
-		InputPath?: string;
+		RoleArn?: string | null;
+		Input?: string | null;
+		InputPath?: string | null;
 
 		/** Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event. */
-		InputTransformer?: InputTransformer;
+		InputTransformer?: InputTransformer | null;
 
 		/** This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis data stream, so that you can control the shard to which the event goes. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key. */
-		KinesisParameters?: KinesisParameters;
+		KinesisParameters?: KinesisParameters | null;
 
 		/** This parameter contains the criteria (either InstanceIds or a tag) used to specify which EC2 instances are to be sent the command. */
-		RunCommandParameters?: RunCommandParameters;
+		RunCommandParameters?: RunCommandParameters | null;
 
 		/** The custom parameters to be used when the target is an Amazon ECS task. */
-		EcsParameters?: EcsParameters;
+		EcsParameters?: EcsParameters | null;
 
 		/** The custom parameters to be used when the target is an AWS Batch job. */
-		BatchParameters?: BatchParameters;
+		BatchParameters?: BatchParameters | null;
 
 		/** This structure includes the custom parameter to be used when the target is an SQS FIFO queue. */
-		SqsParameters?: SqsParameters;
+		SqsParameters?: SqsParameters | null;
 	}
 
 
 	/** Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event. */
 	export interface InputTransformer {
-		InputPathsMap?: TransformerPaths;
+		InputPathsMap?: TransformerPaths | null;
 		InputTemplate: string;
 	}
 
@@ -326,13 +326,13 @@ export namespace MyNS {
 	/** The custom parameters to be used when the target is an Amazon ECS task. */
 	export interface EcsParameters {
 		TaskDefinitionArn: string;
-		TaskCount?: number;
-		LaunchType?: EcsParametersLaunchType;
+		TaskCount?: number | null;
+		LaunchType?: EcsParametersLaunchType | null;
 
 		/** This structure specifies the network configuration for an ECS task. */
-		NetworkConfiguration?: NetworkConfiguration;
-		PlatformVersion?: string;
-		Group?: string;
+		NetworkConfiguration?: NetworkConfiguration | null;
+		PlatformVersion?: string | null;
+		Group?: string | null;
 	}
 
 	export enum EcsParametersLaunchType { EC2 = 0, FARGATE = 1 }
@@ -342,15 +342,15 @@ export namespace MyNS {
 	export interface NetworkConfiguration {
 
 		/** This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode. */
-		awsvpcConfiguration?: AwsVpcConfiguration;
+		awsvpcConfiguration?: AwsVpcConfiguration | null;
 	}
 
 
 	/** This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode. */
 	export interface AwsVpcConfiguration {
 		Subnets: Array<string>;
-		SecurityGroups?: Array<string>;
-		AssignPublicIp?: DescribeRuleResponseState;
+		SecurityGroups?: Array<string> | null;
+		AssignPublicIp?: DescribeRuleResponseState | null;
 	}
 
 
@@ -360,48 +360,48 @@ export namespace MyNS {
 		JobName: string;
 
 		/** The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job. */
-		ArrayProperties?: BatchArrayProperties;
+		ArrayProperties?: BatchArrayProperties | null;
 
 		/** The retry strategy to use for failed jobs, if the target is an AWS Batch job. If you specify a retry strategy here, it overrides the retry strategy defined in the job definition. */
-		RetryStrategy?: BatchRetryStrategy;
+		RetryStrategy?: BatchRetryStrategy | null;
 	}
 
 
 	/** The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job. */
 	export interface BatchArrayProperties {
-		Size?: number;
+		Size?: number | null;
 	}
 
 
 	/** The retry strategy to use for failed jobs, if the target is an AWS Batch job. If you specify a retry strategy here, it overrides the retry strategy defined in the job definition. */
 	export interface BatchRetryStrategy {
-		Attempts?: number;
+		Attempts?: number | null;
 	}
 
 
 	/** This structure includes the custom parameter to be used when the target is an SQS FIFO queue. */
 	export interface SqsParameters {
-		MessageGroupId?: string;
+		MessageGroupId?: string | null;
 	}
 
 	export interface ListTargetsByRuleRequest {
 		Rule: string;
-		EventBusName?: string;
-		NextToken?: string;
-		Limit?: number;
+		EventBusName?: string | null;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export interface PutEventsResponse {
-		FailedEntryCount?: number;
-		Entries?: Array<PutEventsResultEntry>;
+		FailedEntryCount?: number | null;
+		Entries?: Array<PutEventsResultEntry> | null;
 	}
 
 
 	/** Represents an event that failed to be submitted. */
 	export interface PutEventsResultEntry {
-		EventId?: string;
-		ErrorCode?: string;
-		ErrorMessage?: string;
+		EventId?: string | null;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export interface PutEventsRequest {
@@ -411,25 +411,25 @@ export namespace MyNS {
 
 	/** Represents an event to be submitted. */
 	export interface PutEventsRequestEntry {
-		Time?: Date;
-		Source?: string;
-		Resources?: Array<string>;
-		DetailType?: string;
-		Detail?: string;
-		EventBusName?: string;
+		Time?: Date | null;
+		Source?: string | null;
+		Resources?: Array<string> | null;
+		DetailType?: string | null;
+		Detail?: string | null;
+		EventBusName?: string | null;
 	}
 
 	export interface PutPartnerEventsResponse {
-		FailedEntryCount?: number;
-		Entries?: Array<PutPartnerEventsResultEntry>;
+		FailedEntryCount?: number | null;
+		Entries?: Array<PutPartnerEventsResultEntry> | null;
 	}
 
 
 	/** Represents an event that a partner tried to generate, but failed. */
 	export interface PutPartnerEventsResultEntry {
-		EventId?: string;
-		ErrorCode?: string;
-		ErrorMessage?: string;
+		EventId?: string | null;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export interface PutPartnerEventsRequest {
@@ -439,21 +439,21 @@ export namespace MyNS {
 
 	/** The details about an event generated by an SaaS partner. */
 	export interface PutPartnerEventsRequestEntry {
-		Time?: Date;
-		Source?: string;
-		Resources?: Array<string>;
-		DetailType?: string;
-		Detail?: string;
+		Time?: Date | null;
+		Source?: string | null;
+		Resources?: Array<string> | null;
+		DetailType?: string | null;
+		Detail?: string | null;
 	}
 
 	export interface PutPermissionRequest {
-		EventBusName?: string;
+		EventBusName?: string | null;
 		Action: string;
 		Principal: string;
 		StatementId: string;
 
 		/** <p>A JSON string which you can use to limit the event bus permissions you are granting to only accounts that fulfill the condition. Currently, the only supported condition is membership in a certain AWS organization. The string must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies the ID of the AWS organization. Following is an example value for <code>Condition</code>:</p> <p> <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code> </p> */
-		Condition?: Condition;
+		Condition?: Condition | null;
 	}
 
 
@@ -468,65 +468,65 @@ export namespace MyNS {
 	}
 
 	export interface PutRuleResponse {
-		RuleArn?: string;
+		RuleArn?: string | null;
 	}
 
 	export interface PutRuleRequest {
 		Name: string;
-		ScheduleExpression?: string;
-		EventPattern?: string;
-		State?: DescribeRuleResponseState;
-		Description?: string;
-		RoleArn?: string;
-		Tags?: Array<Tag>;
-		EventBusName?: string;
+		ScheduleExpression?: string | null;
+		EventPattern?: string | null;
+		State?: DescribeRuleResponseState | null;
+		Description?: string | null;
+		RoleArn?: string | null;
+		Tags?: Array<Tag> | null;
+		EventBusName?: string | null;
 	}
 
 	export interface InvalidEventPatternException {
 	}
 
 	export interface PutTargetsResponse {
-		FailedEntryCount?: number;
-		FailedEntries?: Array<PutTargetsResultEntry>;
+		FailedEntryCount?: number | null;
+		FailedEntries?: Array<PutTargetsResultEntry> | null;
 	}
 
 
 	/** Represents a target that failed to be added to a rule. */
 	export interface PutTargetsResultEntry {
-		TargetId?: string;
-		ErrorCode?: string;
-		ErrorMessage?: string;
+		TargetId?: string | null;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export interface PutTargetsRequest {
 		Rule: string;
-		EventBusName?: string;
+		EventBusName?: string | null;
 		Targets: Array<Target>;
 	}
 
 	export interface RemovePermissionRequest {
 		StatementId: string;
-		EventBusName?: string;
+		EventBusName?: string | null;
 	}
 
 	export interface RemoveTargetsResponse {
-		FailedEntryCount?: number;
-		FailedEntries?: Array<RemoveTargetsResultEntry>;
+		FailedEntryCount?: number | null;
+		FailedEntries?: Array<RemoveTargetsResultEntry> | null;
 	}
 
 
 	/** Represents a target that failed to be removed from a rule. */
 	export interface RemoveTargetsResultEntry {
-		TargetId?: string;
-		ErrorCode?: string;
-		ErrorMessage?: string;
+		TargetId?: string | null;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export interface RemoveTargetsRequest {
 		Rule: string;
-		EventBusName?: string;
+		EventBusName?: string | null;
 		Ids: Array<string>;
-		Force?: boolean;
+		Force?: boolean | null;
 	}
 
 	export interface TagResourceResponse {
@@ -538,7 +538,7 @@ export namespace MyNS {
 	}
 
 	export interface TestEventPatternResponse {
-		Result?: boolean;
+		Result?: boolean | null;
 	}
 
 	export interface TestEventPatternRequest {

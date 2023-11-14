@@ -7,10 +7,10 @@ export namespace MyNS {
 	export interface Ad {
 
 		/** This field returns information that you can use to configure the bidPercentage field in a Promoted Listings campaign. While this field returns an array, TRENDING is currently the only supported bid percentage type, so the array is populated with just a single element. The TRENDING bid percentage is calculated by reviewing the average ad rates of other similar promoted listings in the marketplace. Setting the bidPercentage of your ad campaign to this rate will help the items in the campaign be competitive with other items in the marketplace by improving their chances of being displayed more often in the marketplace. */
-		bidPercentages?: Array<BidPercentages>;
+		bidPercentages?: Array<BidPercentages> | null;
 
 		/** An enum that describes whether or not eBay recommends placing the associated listing in a Promoted Listings ad campaign. */
-		promoteWithAd?: PromoteWithAd;
+		promoteWithAd?: PromoteWithAd | null;
 	}
 
 
@@ -18,10 +18,10 @@ export namespace MyNS {
 	export interface BidPercentages {
 
 		/** An enum that describes the different ways, or the basis, by which the bid percentage value is calculated. Currently, TRENDING is the only valid basis. */
-		basis?: Basis;
+		basis?: Basis | null;
 
 		/** The bid percentage data is a single precision value, as calculated by the associated basis. A TRENDING value is calculated by taking into account the average bid percentages of similar promoted listings in the associated marketplace. In Promoted listings ad campaigns, the bid percentage (also known as the ad rate) is a user-defined value that sets the level that eBay raises the visibility of the listing in the marketplace. It is also the rate that is used to calculate the Promoted Listings fee. Minimum value: 1.0 &nbsp; Maximum value: 100.0 */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -37,40 +37,40 @@ export namespace MyNS {
 	export interface Error {
 
 		/** Identifies the type of erro. */
-		category?: string;
+		category?: string | null;
 
 		/** Name for the primary system where the error occurred. This is relevant for application errors. */
-		domain?: string;
+		domain?: string | null;
 
 		/** A unique number to identify the error. */
-		errorId?: number;
+		errorId?: number | null;
 
 		/** An array of request elements most closely associated to the error. */
-		inputRefIds?: Array<string>;
+		inputRefIds?: Array<string> | null;
 
 		/** A more detailed explanation of the error. */
-		longMessage?: string;
+		longMessage?: string | null;
 
 		/** Information on how to correct the problem, in the end user's terms and language where applicable. */
-		message?: string;
+		message?: string | null;
 
 		/** An array of request elements most closely associated to the error. */
-		outputRefIds?: Array<string>;
+		outputRefIds?: Array<string> | null;
 
 		/** An array of name/value pairs that describe details the error condition. These are useful when multiple errors are returned. */
-		parameters?: Array<ErrorParameter>;
+		parameters?: Array<ErrorParameter> | null;
 
 		/** Further helps indicate which subsystem the error is coming from. System subcategories include: Initialization, Serialization, Security, Monitoring, Rate Limiting, etc. */
-		subdomain?: string;
+		subdomain?: string | null;
 	}
 
 	export interface ErrorParameter {
 
 		/** The object of the error. */
-		name?: string;
+		name?: string | null;
 
 		/** The value of the object. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -78,7 +78,7 @@ export namespace MyNS {
 	export interface FindListingRecommendationRequest {
 
 		/** A comma-separated list of listing IDs for which you want Promoted Listings ad configuration information. Currently, this method accepts only listingId values from the Trading API. Max: 500 listing IDs */
-		listingIds?: Array<string>;
+		listingIds?: Array<string> | null;
 	}
 
 
@@ -86,10 +86,10 @@ export namespace MyNS {
 	export interface ListingRecommendation {
 
 		/** An ID that identifies the active listing associated with the eBay recommendations. */
-		listingId?: string;
+		listingId?: string | null;
 
 		/** A complex type that contains information about how a seller can improve their listing configurations. The AD object contains Promoted Listings recommendations and information, which the seller can use to improve buyer conversions. The response can also contain an optional message about the returned data. */
-		marketing?: MarketingRecommendation;
+		marketing?: MarketingRecommendation | null;
 	}
 
 
@@ -97,10 +97,10 @@ export namespace MyNS {
 	export interface MarketingRecommendation {
 
 		/** A complex type that contains recommendations and information on how to configure Promoted Listings ad campaigns. */
-		ad?: Ad;
+		ad?: Ad | null;
 
 		/** A message that can conditionally accompany the listing information. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -108,25 +108,25 @@ export namespace MyNS {
 	export interface PagedListingRecommendationCollection {
 
 		/** The URI of the current page of results from the result set. */
-		href?: string;
+		href?: string | null;
 
 		/** The number of items returned on a single page from the result set. This value can be set with the limit request parameter. */
-		limit?: number;
+		limit?: number | null;
 
 		/** Returns a list of listingRecommendations, where each element in the list offers recommendations for the associated listing ID. */
-		listingRecommendations?: Array<ListingRecommendation>;
+		listingRecommendations?: Array<ListingRecommendation> | null;
 
 		/** The URI for the next page of results. This value is returned only if there is an additional page of results in the result set. Max length: 2048 */
-		next?: string;
+		next?: string | null;
 
 		/** The number of results skipped in the result set before listing the first returned result. This value can be set with the offset request parameter. */
-		offset?: number;
+		offset?: number | null;
 
 		/** The URI for the previous page of results. This value is returned only if there is a previous page of results in the result set. Max length: 2048 */
-		prev?: string;
+		prev?: string | null;
 
 		/** The total number of items in the result set. */
-		total?: number;
+		total?: number | null;
 	}
 
 	@Injectable()
@@ -142,7 +142,7 @@ export namespace MyNS {
 		 * @param {string} offset Specifies the number of ads to skip in the result set before returning the first ad in the paginated response. Combine offset with the limit query parameter to control the items returned in the response. For example, if you supply an offset of 0 and a limit of 10, the first page of the response contains the first 10 items from the complete list of items retrieved by the call. If offset is 10 and limit is 20, the first page of the response contains items 11-30 from the complete result set. Default: 0
 		 * @return {void} Success
 		 */
-		FindListingRecommendations(filter: string, limit: string, offset: string, requestBody: FindListingRecommendationRequest): Observable<HttpResponse<string>> {
+		FindListingRecommendations(filter: string | null | undefined, limit: string | null | undefined, offset: string | null | undefined, requestBody: FindListingRecommendationRequest): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'find?filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&offset=' + (offset == null ? '' : encodeURIComponent(offset)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}

@@ -12,10 +12,10 @@ export namespace MyNS {
 	export interface ActionParameter {
 
 		/** The name of the parameter for the action script. */
-		key?: string;
+		key?: string | null;
 
 		/** The value of the parameter. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -23,10 +23,10 @@ export namespace MyNS {
 	export interface ActionResponse {
 
 		/** The type of bot response. */
-		type?: ActionResponseType;
+		type?: ActionResponseType | null;
 
 		/** URL for users to auth or config. (Only for REQUEST_CONFIG response types.) */
-		url?: string;
+		url?: string | null;
 	}
 
 	export enum ActionResponseType { TYPE_UNSPECIFIED = 0, NEW_MESSAGE = 1, UPDATE_MESSAGE = 2, REQUEST_CONFIG = 3 }
@@ -62,19 +62,19 @@ export namespace MyNS {
 		 * Length of the substring in the plain-text message body this annotation
 		 * corresponds to.
 		 */
-		length?: number;
+		length?: number | null;
 
 		/**
 		 * Start index (0-based, inclusive) in the plain-text message body this
 		 * annotation corresponds to.
 		 */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The type of this annotation. */
-		type?: AnnotationType;
+		type?: AnnotationType | null;
 
 		/** Annotation metadata for user mentions (@). */
-		userMention?: UserMentionMetadata;
+		userMention?: UserMentionMetadata | null;
 	}
 
 	export enum AnnotationType { ANNOTATION_TYPE_UNSPECIFIED = 0, USER_MENTION = 1 }
@@ -84,10 +84,10 @@ export namespace MyNS {
 	export interface UserMentionMetadata {
 
 		/** The type of user mention. */
-		type?: UserMentionMetadataType;
+		type?: UserMentionMetadataType | null;
 
 		/** A user in Hangouts Chat. */
-		user?: User;
+		user?: User | null;
 	}
 
 	export enum UserMentionMetadataType { TYPE_UNSPECIFIED = 0, ADD = 1, MENTION = 2 }
@@ -97,16 +97,16 @@ export namespace MyNS {
 	export interface User {
 
 		/** The user's display name. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Obfuscated domain information. */
-		domainId?: string;
+		domainId?: string | null;
 
 		/** Resource name, in the format "users/*". */
-		name?: string;
+		name?: string | null;
 
 		/** User type. */
-		type?: UserType;
+		type?: UserType | null;
 	}
 
 	export enum UserType { TYPE_UNSPECIFIED = 0, HUMAN = 1, BOT = 2 }
@@ -116,10 +116,10 @@ export namespace MyNS {
 	export interface Button {
 
 		/** An image button with an onclick action. */
-		imageButton?: ImageButton;
+		imageButton?: ImageButton | null;
 
 		/** A button with text and onclick action. */
-		textButton?: TextButton;
+		textButton?: TextButton | null;
 	}
 
 
@@ -130,19 +130,19 @@ export namespace MyNS {
 		 * The icon specified by an enum that indices to an icon provided by Chat
 		 * API.
 		 */
-		icon?: ImageButtonIcon;
+		icon?: ImageButtonIcon | null;
 
 		/** The icon specified by a URL. */
-		iconUrl?: string;
+		iconUrl?: string | null;
 
 		/**
 		 * The name of this image_button which will be used for accessibility.
 		 * Default value will be provided if developers don't specify.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** An onclick action (e.g. open a link). */
-		onClick?: OnClick;
+		onClick?: OnClick | null;
 	}
 
 	export enum ImageButtonIcon { ICON_UNSPECIFIED = 0, AIRPLANE = 1, BOOKMARK = 2, BUS = 3, CAR = 4, CLOCK = 5, CONFIRMATION_NUMBER_ICON = 6, DOLLAR = 7, DESCRIPTION = 8, EMAIL = 9, EVENT_PERFORMER = 10, EVENT_SEAT = 11, FLIGHT_ARRIVAL = 12, FLIGHT_DEPARTURE = 13, HOTEL = 14, HOTEL_ROOM_TYPE = 15, INVITE = 16, MAP_PIN = 17, MEMBERSHIP = 18, MULTIPLE_PEOPLE = 19, OFFER = 20, PERSON = 21, PHONE = 22, RESTAURANT_ICON = 23, SHOPPING_CART = 24, STAR = 25, STORE = 26, TICKET = 27, TRAIN = 28, VIDEO_CAMERA = 29, VIDEO_PLAY = 30 }
@@ -155,10 +155,10 @@ export namespace MyNS {
 		 * A form action describes the behavior when the form is submitted.
 		 * For example, an Apps Script can be invoked to handle the form.
 		 */
-		action?: FormAction;
+		action?: FormAction | null;
 
 		/** A link that opens a new window. */
-		openLink?: OpenLink;
+		openLink?: OpenLink | null;
 	}
 
 
@@ -174,10 +174,10 @@ export namespace MyNS {
 		 * the card click event. The same method name can be used for several
 		 * elements that trigger a common behavior if desired.
 		 */
-		actionMethodName?: string;
+		actionMethodName?: string | null;
 
 		/** List of action parameters. */
-		parameters?: Array<ActionParameter>;
+		parameters?: Array<ActionParameter> | null;
 	}
 
 
@@ -185,7 +185,7 @@ export namespace MyNS {
 	export interface OpenLink {
 
 		/** The URL to open. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -193,10 +193,10 @@ export namespace MyNS {
 	export interface TextButton {
 
 		/** An onclick action (e.g. open a link). */
-		onClick?: OnClick;
+		onClick?: OnClick | null;
 
 		/** The text of the button. */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -204,14 +204,14 @@ export namespace MyNS {
 	export interface Card {
 
 		/** The actions of this card. */
-		cardActions?: Array<CardAction>;
-		header?: CardHeader;
+		cardActions?: Array<CardAction> | null;
+		header?: CardHeader | null;
 
 		/** Name of the card. */
-		name?: string;
+		name?: string | null;
 
 		/** Sections are separated by a line divider. */
-		sections?: Array<Section>;
+		sections?: Array<Section> | null;
 	}
 
 
@@ -224,29 +224,29 @@ export namespace MyNS {
 	export interface CardAction {
 
 		/** The label used to be displayed in the action menu item. */
-		actionLabel?: string;
+		actionLabel?: string | null;
 
 		/** An onclick action (e.g. open a link). */
-		onClick?: OnClick;
+		onClick?: OnClick | null;
 	}
 
 	export interface CardHeader {
 
 		/** The image's type (e.g. square border or circular border). */
-		imageStyle?: CardHeaderImageStyle;
+		imageStyle?: CardHeaderImageStyle | null;
 
 		/** The URL of the image in the card header. */
-		imageUrl?: string;
+		imageUrl?: string | null;
 
 		/** The subtitle of the card header. */
-		subtitle?: string;
+		subtitle?: string | null;
 
 		/**
 		 * The title must be specified. The header has a fixed height: if both a
 		 * title and subtitle is specified, each will take up 1 line. If only the
 		 * title is specified, it will take up both lines.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 	export enum CardHeaderImageStyle { IMAGE_STYLE_UNSPECIFIED = 0, IMAGE = 1, AVATAR = 2 }
@@ -261,10 +261,10 @@ export namespace MyNS {
 	export interface Section {
 
 		/** The header of the section, text formatted supported. */
-		header?: string;
+		header?: string | null;
 
 		/** A section must contain at least 1 widget. */
-		widgets?: Array<WidgetMarkup>;
+		widgets?: Array<WidgetMarkup> | null;
 	}
 
 
@@ -275,19 +275,19 @@ export namespace MyNS {
 		 * A list of buttons. Buttons is also oneof data and only one of these
 		 * fields should be set.
 		 */
-		buttons?: Array<Button>;
+		buttons?: Array<Button> | null;
 
 		/** An image that is specified by a URL and can have an onclick action. */
-		image?: Image;
+		image?: Image | null;
 
 		/**
 		 * A UI element contains a key (label) and a value (content). And this
 		 * element may also contain some actions such as onclick button.
 		 */
-		keyValue?: KeyValue;
+		keyValue?: KeyValue | null;
 
 		/** A paragraph of text. Formatted text supported. */
-		textParagraph?: TextParagraph;
+		textParagraph?: TextParagraph | null;
 	}
 
 
@@ -300,13 +300,13 @@ export namespace MyNS {
 		 * It's not meant to override the native aspect ratio of the image.
 		 * If unset, the server fills it by prefetching the image.
 		 */
-		aspectRatio?: number;
+		aspectRatio?: number | null;
 
 		/** The URL of the image. */
-		imageUrl?: string;
+		imageUrl?: string | null;
 
 		/** An onclick action (e.g. open a link). */
-		onClick?: OnClick;
+		onClick?: OnClick | null;
 	}
 
 
@@ -317,37 +317,37 @@ export namespace MyNS {
 	export interface KeyValue {
 
 		/** The text of the bottom label. Formatted text supported. */
-		bottomLabel?: string;
+		bottomLabel?: string | null;
 
 		/** A button. Can be a text button or an image button. */
-		button?: Button;
+		button?: Button | null;
 
 		/** The text of the content. Formatted text supported and always required. */
-		content?: string;
+		content?: string | null;
 
 		/** If the content should be multiline. */
-		contentMultiline?: boolean;
+		contentMultiline?: boolean | null;
 
 		/**
 		 * An enum value that will be replaced by the Chat API with the
 		 * corresponding icon image.
 		 */
-		icon?: ImageButtonIcon;
+		icon?: ImageButtonIcon | null;
 
 		/** The icon specified by a URL. */
-		iconUrl?: string;
+		iconUrl?: string | null;
 
 		/** An onclick action (e.g. open a link). */
-		onClick?: OnClick;
+		onClick?: OnClick | null;
 
 		/** The text of the top label. Formatted text supported. */
-		topLabel?: string;
+		topLabel?: string | null;
 	}
 
 
 	/** A paragraph of text. Formatted text supported. */
 	export interface TextParagraph {
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -358,7 +358,7 @@ export namespace MyNS {
 		 * A form action describes the behavior when the form is submitted.
 		 * For example, an Apps Script can be invoked to handle the form.
 		 */
-		action?: FormAction;
+		action?: FormAction | null;
 
 		/**
 		 * The URL the bot should redirect the user to after they have completed an
@@ -366,23 +366,23 @@ export namespace MyNS {
 		 * [Authorizing access to 3p services guide](/hangouts/chat/how-tos/auth-3p)
 		 * for more information.
 		 */
-		configCompleteRedirectUrl?: string;
+		configCompleteRedirectUrl?: string | null;
 
 		/** The timestamp indicating when the event was dispatched. */
-		eventTime?: string;
+		eventTime?: string | null;
 
 		/** A message in Hangouts Chat. */
-		message?: Message;
+		message?: Message | null;
 
 		/** A room or DM in Hangouts Chat. */
-		space?: Space;
+		space?: Space | null;
 
 		/**
 		 * The bot-defined key for the thread related to the event. See the
 		 * thread_key field of the
 		 * `spaces.message.create` request for more information.
 		 */
-		threadKey?: string;
+		threadKey?: string | null;
 
 		/**
 		 * A secret value that bots can use to verify if a request is from Google. The
@@ -390,13 +390,13 @@ export namespace MyNS {
 		 * from the Hangouts Chat API configuration page in the Cloud Console.
 		 * Developers can revoke/regenerate it if needed from the same page.
 		 */
-		token?: string;
+		token?: string | null;
 
 		/** The type of the event. */
-		type?: DeprecatedEventType;
+		type?: DeprecatedEventType | null;
 
 		/** A user in Hangouts Chat. */
-		user?: User;
+		user?: User | null;
 	}
 
 
@@ -404,57 +404,57 @@ export namespace MyNS {
 	export interface Message {
 
 		/** Parameters that a bot can use to configure how it's response is posted. */
-		actionResponse?: ActionResponse;
+		actionResponse?: ActionResponse | null;
 
 		/** Output only. Annotations associated with the text in this message. */
-		annotations?: Array<Annotation>;
+		annotations?: Array<Annotation> | null;
 
 		/** Plain-text body of the message with all bot mentions stripped out. */
-		argumentText?: string;
+		argumentText?: string | null;
 
 		/**
 		 * Rich, formatted and interactive cards that can be used to display UI
 		 * elements such as: formatted texts, buttons, clickable images. Cards are
 		 * normally displayed below the plain-text body of the message.
 		 */
-		cards?: Array<Card>;
+		cards?: Array<Card> | null;
 
 		/**
 		 * Output only. The time at which the message was created in Hangouts Chat
 		 * server.
 		 */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * A plain-text description of the message's cards, used when the actual cards
 		 * cannot be displayed (e.g. mobile notifications).
 		 */
-		fallbackText?: string;
+		fallbackText?: string | null;
 
 		/**
 		 * Resource name, in the form "spaces/messages/*".
 		 * Example: spaces/AAAAMpdlehY/messages/UMxbHmzDlr4.UMxbHmzDlr4
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Text for generating preview chips. This text will not be displayed to the
 		 * user, but any links to images, web pages, videos, etc. included here will
 		 * generate preview chips.
 		 */
-		previewText?: string;
+		previewText?: string | null;
 
 		/** A user in Hangouts Chat. */
-		sender?: User;
+		sender?: User | null;
 
 		/** A room or DM in Hangouts Chat. */
-		space?: Space;
+		space?: Space | null;
 
 		/** Plain-text body of the message. */
-		text?: string;
+		text?: string | null;
 
 		/** A thread in Hangouts Chat. */
-		thread?: Thread;
+		thread?: Thread | null;
 	}
 
 
@@ -462,16 +462,16 @@ export namespace MyNS {
 	export interface Space {
 
 		/** Output only. The display name (only if the space is a room). */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Resource name of the space, in the form "spaces/*".
 		 * Example: spaces/AAAAMpdlehYs
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Output only. The type of a space. */
-		type?: SpaceType;
+		type?: SpaceType | null;
 	}
 
 	export enum SpaceType { TYPE_UNSPECIFIED = 0, ROOM = 1, DM = 2 }
@@ -484,7 +484,7 @@ export namespace MyNS {
 		 * Resource name, in the form "spaces/threads/*".
 		 * Example: spaces/AAAAMpdlehY/threads/UMxbHmzDlr4
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 	export enum DeprecatedEventType { UNSPECIFIED = 0, MESSAGE = 1, ADDED_TO_SPACE = 2, REMOVED_FROM_SPACE = 3, CARD_CLICKED = 4 }
@@ -505,13 +505,13 @@ export namespace MyNS {
 	export interface ListMembershipsResponse {
 
 		/** List of memberships in the requested (or first) page. */
-		memberships?: Array<Membership>;
+		memberships?: Array<Membership> | null;
 
 		/**
 		 * Continuation token to retrieve the next page of results. It will be empty
 		 * for the last page of results.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -522,19 +522,19 @@ export namespace MyNS {
 		 * The creation time of the membership a.k.a the time at which the member
 		 * joined the space, if applicable.
 		 */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** A user in Hangouts Chat. */
-		member?: User;
+		member?: User | null;
 
 		/**
 		 * Resource name of the membership, in the form "spaces/members/*".
 		 * Example: spaces/AAAAMpdlehY/members/105115627578887013105
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** State of the membership. */
-		state?: MembershipState;
+		state?: MembershipState | null;
 	}
 
 	export enum MembershipState { MEMBERSHIP_STATE_UNSPECIFIED = 0, JOINED = 1, INVITED = 2, NOT_A_MEMBER = 3 }
@@ -546,10 +546,10 @@ export namespace MyNS {
 		 * for the last page of results. Tokens expire in an hour. An error is thrown
 		 * if an expired token is passed.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** List of spaces in the requested (or first) page. */
-		spaces?: Array<Space>;
+		spaces?: Array<Space> | null;
 	}
 
 	@Injectable()
@@ -566,7 +566,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A token identifying a page of results the server should return.
 		 * @return {void} Successful response
 		 */
-		Chat_spaces_list(pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Chat_spaces_list(pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/spaces?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -606,7 +606,7 @@ export namespace MyNS {
 		 * * cards
 		 * @return {void} Successful response
 		 */
-		Chat_spaces_messages_update(name: string, updateMask: string, requestBody: Message): Observable<HttpResponse<string>> {
+		Chat_spaces_messages_update(name: string, updateMask: string | null | undefined, requestBody: Message): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -622,7 +622,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A token identifying a page of results the server should return.
 		 * @return {void} Successful response
 		 */
-		Chat_spaces_members_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Chat_spaces_members_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/members&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -641,7 +641,7 @@ export namespace MyNS {
 		 * corresponding to an existing thread, is set in message.
 		 * @return {void} Successful response
 		 */
-		Chat_spaces_messages_create(parent: string, threadKey: string, requestBody: Message): Observable<HttpResponse<string>> {
+		Chat_spaces_messages_create(parent: string, threadKey: string | null | undefined, requestBody: Message): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/messages&threadKey=' + (threadKey == null ? '' : encodeURIComponent(threadKey)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}

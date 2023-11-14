@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateCertificateAuthorityResponse {
-		CertificateAuthorityArn?: string;
+		CertificateAuthorityArn?: string | null;
 	}
 
 	export interface CreateCertificateAuthorityRequest {
@@ -15,10 +15,10 @@ export namespace MyNS {
 		CertificateAuthorityConfiguration: CertificateAuthorityConfiguration;
 
 		/** Certificate revocation information used by the <a>CreateCertificateAuthority</a> and <a>UpdateCertificateAuthority</a> actions. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see <a>RevokeCertificate</a>. */
-		RevocationConfiguration?: RevocationConfiguration;
+		RevocationConfiguration?: RevocationConfiguration | null;
 		CertificateAuthorityType: CreateCertificateAuthorityRequestCertificateAuthorityType;
-		IdempotencyToken?: string;
-		Tags?: Array<Tag>;
+		IdempotencyToken?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -41,20 +41,20 @@ export namespace MyNS {
 
 	/** Contains information about the certificate subject. The certificate can be one issued by your private certificate authority (CA) or it can be your private CA certificate. The <b>Subject</b> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <b>Subject</b> must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate. The DN must be unique for each entity, but your private CA can issue more than one certificate with the same DN to the same entity.  */
 	export interface ASN1Subject {
-		Country?: string;
-		Organization?: string;
-		OrganizationalUnit?: string;
-		DistinguishedNameQualifier?: string;
-		State?: string;
-		CommonName?: string;
-		SerialNumber?: string;
-		Locality?: string;
-		Title?: string;
-		Surname?: string;
-		GivenName?: string;
-		Initials?: string;
-		Pseudonym?: string;
-		GenerationQualifier?: string;
+		Country?: string | null;
+		Organization?: string | null;
+		OrganizationalUnit?: string | null;
+		DistinguishedNameQualifier?: string | null;
+		State?: string | null;
+		CommonName?: string | null;
+		SerialNumber?: string | null;
+		Locality?: string | null;
+		Title?: string | null;
+		Surname?: string | null;
+		GivenName?: string | null;
+		Initials?: string | null;
+		Pseudonym?: string | null;
+		GenerationQualifier?: string | null;
 	}
 
 
@@ -62,16 +62,16 @@ export namespace MyNS {
 	export interface RevocationConfiguration {
 
 		/** <p>Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the <b>Enabled</b> parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying a value for the <b>CustomCname</b> parameter. Your private CA copies the CNAME or the S3 bucket name to the <b>CRL Distribution Points</b> extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM Private CA. </p> <p>Your private CA uses the value in the <b>ExpirationInDays</b> parameter to calculate the <b>nextUpdate</b> field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included. </p> <p>CRLs contain the following fields:</p> <ul> <li> <p> <b>Version</b>: The current version number defined in RFC 5280 is V2. The integer value is 0x1. </p> </li> <li> <p> <b>Signature Algorithm</b>: The name of the algorithm used to sign the CRL.</p> </li> <li> <p> <b>Issuer</b>: The X.500 distinguished name of your private CA that issued the CRL.</p> </li> <li> <p> <b>Last Update</b>: The issue date and time of this CRL.</p> </li> <li> <p> <b>Next Update</b>: The day and time by which the next CRL will be issued.</p> </li> <li> <p> <b>Revoked Certificates</b>: List of revoked certificates. Each list item contains the following information.</p> <ul> <li> <p> <b>Serial Number</b>: The serial number, in hexadecimal format, of the revoked certificate.</p> </li> <li> <p> <b>Revocation Date</b>: Date and time the certificate was revoked.</p> </li> <li> <p> <b>CRL Entry Extensions</b>: Optional extensions for the CRL entry.</p> <ul> <li> <p> <b>X509v3 CRL Reason Code</b>: Reason the certificate was revoked.</p> </li> </ul> </li> </ul> </li> <li> <p> <b>CRL Extensions</b>: Optional extensions for the CRL.</p> <ul> <li> <p> <b>X509v3 Authority Key Identifier</b>: Identifies the public key associated with the private key used to sign the certificate.</p> </li> <li> <p> <b>X509v3 CRL Number:</b>: Decimal sequence number for the CRL.</p> </li> </ul> </li> <li> <p> <b>Signature Algorithm</b>: Algorithm used by your private CA to sign the CRL.</p> </li> <li> <p> <b>Signature Value</b>: Signature computed over the CRL.</p> </li> </ul> <p>Certificate revocation lists created by ACM Private CA are DER-encoded. You can use the following OpenSSL command to list a CRL.</p> <p> <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code> </p> */
-		CrlConfiguration?: CrlConfiguration;
+		CrlConfiguration?: CrlConfiguration | null;
 	}
 
 
 	/** <p>Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the <b>Enabled</b> parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying a value for the <b>CustomCname</b> parameter. Your private CA copies the CNAME or the S3 bucket name to the <b>CRL Distribution Points</b> extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM Private CA. </p> <p>Your private CA uses the value in the <b>ExpirationInDays</b> parameter to calculate the <b>nextUpdate</b> field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included. </p> <p>CRLs contain the following fields:</p> <ul> <li> <p> <b>Version</b>: The current version number defined in RFC 5280 is V2. The integer value is 0x1. </p> </li> <li> <p> <b>Signature Algorithm</b>: The name of the algorithm used to sign the CRL.</p> </li> <li> <p> <b>Issuer</b>: The X.500 distinguished name of your private CA that issued the CRL.</p> </li> <li> <p> <b>Last Update</b>: The issue date and time of this CRL.</p> </li> <li> <p> <b>Next Update</b>: The day and time by which the next CRL will be issued.</p> </li> <li> <p> <b>Revoked Certificates</b>: List of revoked certificates. Each list item contains the following information.</p> <ul> <li> <p> <b>Serial Number</b>: The serial number, in hexadecimal format, of the revoked certificate.</p> </li> <li> <p> <b>Revocation Date</b>: Date and time the certificate was revoked.</p> </li> <li> <p> <b>CRL Entry Extensions</b>: Optional extensions for the CRL entry.</p> <ul> <li> <p> <b>X509v3 CRL Reason Code</b>: Reason the certificate was revoked.</p> </li> </ul> </li> </ul> </li> <li> <p> <b>CRL Extensions</b>: Optional extensions for the CRL.</p> <ul> <li> <p> <b>X509v3 Authority Key Identifier</b>: Identifies the public key associated with the private key used to sign the certificate.</p> </li> <li> <p> <b>X509v3 CRL Number:</b>: Decimal sequence number for the CRL.</p> </li> </ul> </li> <li> <p> <b>Signature Algorithm</b>: Algorithm used by your private CA to sign the CRL.</p> </li> <li> <p> <b>Signature Value</b>: Signature computed over the CRL.</p> </li> </ul> <p>Certificate revocation lists created by ACM Private CA are DER-encoded. You can use the following OpenSSL command to list a CRL.</p> <p> <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code> </p> */
 	export interface CrlConfiguration {
 		Enabled: boolean;
-		ExpirationInDays?: number;
-		CustomCname?: string;
-		S3BucketName?: string;
+		ExpirationInDays?: number | null;
+		CustomCname?: string | null;
+		S3BucketName?: string | null;
 	}
 
 	export enum CreateCertificateAuthorityRequestCertificateAuthorityType { ROOT = 0, SUBORDINATE = 1 }
@@ -80,7 +80,7 @@ export namespace MyNS {
 	/** Tags are labels that you can use to identify and organize your private CAs. Each tag consists of a key and an optional value. You can associate up to 50 tags with a private CA. To add one or more tags to a private CA, call the <a>TagCertificateAuthority</a> action. To remove a tag, call the <a>UntagCertificateAuthority</a> action.  */
 	export interface Tag {
 		Key: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export interface InvalidArgsException {
@@ -96,8 +96,8 @@ export namespace MyNS {
 	}
 
 	export interface CreateCertificateAuthorityAuditReportResponse {
-		AuditReportId?: string;
-		S3Key?: string;
+		AuditReportId?: string | null;
+		S3Key?: string | null;
 	}
 
 	export interface CreateCertificateAuthorityAuditReportRequest {
@@ -126,7 +126,7 @@ export namespace MyNS {
 	export interface CreatePermissionRequest {
 		CertificateAuthorityArn: string;
 		Principal: string;
-		SourceAccount?: string;
+		SourceAccount?: string | null;
 		Actions: Array<ActionType>;
 	}
 
@@ -137,7 +137,7 @@ export namespace MyNS {
 
 	export interface DeleteCertificateAuthorityRequest {
 		CertificateAuthorityArn: string;
-		PermanentDeletionTimeInDays?: number;
+		PermanentDeletionTimeInDays?: number | null;
 	}
 
 	export interface ConcurrentModificationException {
@@ -146,34 +146,34 @@ export namespace MyNS {
 	export interface DeletePermissionRequest {
 		CertificateAuthorityArn: string;
 		Principal: string;
-		SourceAccount?: string;
+		SourceAccount?: string | null;
 	}
 
 	export interface DescribeCertificateAuthorityResponse {
 
 		/** Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate <b>Subject</b> field owns or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the <a>CreateCertificateAuthority</a> action to create your private CA. You must then call the <a>GetCertificateAuthorityCertificate</a> action to retrieve a private CA certificate signing request (CSR). Sign the CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the <a>ImportCertificateAuthorityCertificate</a> action to import the signed certificate into AWS Certificate Manager (ACM). */
-		CertificateAuthority?: CertificateAuthority;
+		CertificateAuthority?: CertificateAuthority | null;
 	}
 
 
 	/** Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate <b>Subject</b> field owns or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the <a>CreateCertificateAuthority</a> action to create your private CA. You must then call the <a>GetCertificateAuthorityCertificate</a> action to retrieve a private CA certificate signing request (CSR). Sign the CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the <a>ImportCertificateAuthorityCertificate</a> action to import the signed certificate into AWS Certificate Manager (ACM).  */
 	export interface CertificateAuthority {
-		Arn?: string;
-		CreatedAt?: Date;
-		LastStateChangeAt?: Date;
-		Type?: CreateCertificateAuthorityRequestCertificateAuthorityType;
-		Serial?: string;
-		Status?: CertificateAuthorityStatus;
-		NotBefore?: Date;
-		NotAfter?: Date;
-		FailureReason?: CertificateAuthorityFailureReason;
+		Arn?: string | null;
+		CreatedAt?: Date | null;
+		LastStateChangeAt?: Date | null;
+		Type?: CreateCertificateAuthorityRequestCertificateAuthorityType | null;
+		Serial?: string | null;
+		Status?: CertificateAuthorityStatus | null;
+		NotBefore?: Date | null;
+		NotAfter?: Date | null;
+		FailureReason?: CertificateAuthorityFailureReason | null;
 
 		/** Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate. It also includes the signature algorithm that it uses when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the <a>CreateCertificateAuthority</a> action. */
-		CertificateAuthorityConfiguration?: CertificateAuthorityConfiguration;
+		CertificateAuthorityConfiguration?: CertificateAuthorityConfiguration | null;
 
 		/** Certificate revocation information used by the <a>CreateCertificateAuthority</a> and <a>UpdateCertificateAuthority</a> actions. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see <a>RevokeCertificate</a>. */
-		RevocationConfiguration?: RevocationConfiguration;
-		RestorableUntil?: Date;
+		RevocationConfiguration?: RevocationConfiguration | null;
+		RestorableUntil?: Date | null;
 	}
 
 	export enum CertificateAuthorityStatus { CREATING = 0, PENDING_CERTIFICATE = 1, ACTIVE = 2, DELETED = 3, DISABLED = 4, EXPIRED = 5, FAILED = 6 }
@@ -185,10 +185,10 @@ export namespace MyNS {
 	}
 
 	export interface DescribeCertificateAuthorityAuditReportResponse {
-		AuditReportStatus?: DescribeCertificateAuthorityAuditReportResponseAuditReportStatus;
-		S3BucketName?: string;
-		S3Key?: string;
-		CreatedAt?: Date;
+		AuditReportStatus?: DescribeCertificateAuthorityAuditReportResponseAuditReportStatus | null;
+		S3BucketName?: string | null;
+		S3Key?: string | null;
+		CreatedAt?: Date | null;
 	}
 
 	export enum DescribeCertificateAuthorityAuditReportResponseAuditReportStatus { CREATING = 0, SUCCESS = 1, FAILED = 2 }
@@ -199,8 +199,8 @@ export namespace MyNS {
 	}
 
 	export interface GetCertificateResponse {
-		Certificate?: string;
-		CertificateChain?: string;
+		Certificate?: string | null;
+		CertificateChain?: string | null;
 	}
 
 	export interface GetCertificateRequest {
@@ -209,8 +209,8 @@ export namespace MyNS {
 	}
 
 	export interface GetCertificateAuthorityCertificateResponse {
-		Certificate?: string;
-		CertificateChain?: string;
+		Certificate?: string | null;
+		CertificateChain?: string | null;
 	}
 
 	export interface GetCertificateAuthorityCertificateRequest {
@@ -218,7 +218,7 @@ export namespace MyNS {
 	}
 
 	export interface GetCertificateAuthorityCsrResponse {
-		Csr?: string;
+		Csr?: string | null;
 	}
 
 	export interface GetCertificateAuthorityCsrRequest {
@@ -228,7 +228,7 @@ export namespace MyNS {
 	export interface ImportCertificateAuthorityCertificateRequest {
 		CertificateAuthorityArn: string;
 		Certificate: string;
-		CertificateChain?: string;
+		CertificateChain?: string | null;
 	}
 
 	export interface InvalidRequestException {
@@ -241,21 +241,21 @@ export namespace MyNS {
 	}
 
 	export interface IssueCertificateResponse {
-		CertificateArn?: string;
+		CertificateArn?: string | null;
 	}
 
 	export interface IssueCertificateRequest {
 		CertificateAuthorityArn: string;
 		Csr: string;
 		SigningAlgorithm: CertificateAuthorityConfigurationSigningAlgorithm;
-		TemplateArn?: string;
+		TemplateArn?: string | null;
 
 		/**
 		 * Length of time for which the certificate issued by your private certificate authority (CA), or by the private CA itself, is valid in days, months, or years. You can issue a certificate by calling the <a>IssueCertificate</a> action.
 		 * Required
 		 */
 		Validity: Validity;
-		IdempotencyToken?: string;
+		IdempotencyToken?: string | null;
 	}
 
 
@@ -271,49 +271,49 @@ export namespace MyNS {
 	}
 
 	export interface ListCertificateAuthoritiesResponse {
-		CertificateAuthorities?: Array<CertificateAuthority>;
-		NextToken?: string;
+		CertificateAuthorities?: Array<CertificateAuthority> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListCertificateAuthoritiesRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface InvalidNextTokenException {
 	}
 
 	export interface ListPermissionsResponse {
-		Permissions?: Array<Permission>;
-		NextToken?: string;
+		Permissions?: Array<Permission> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Permissions designate which private CA actions can be performed by an AWS service or entity. In order for ACM to automatically renew private certificates, you must give the ACM service principal all available permissions (<code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>). Permissions can be assigned with the <a>CreatePermission</a> action, removed with the <a>DeletePermission</a> action, and listed with the <a>ListPermissions</a> action. */
 	export interface Permission {
-		CertificateAuthorityArn?: string;
-		CreatedAt?: Date;
-		Principal?: string;
-		SourceAccount?: string;
-		Actions?: Array<ActionType>;
-		Policy?: string;
+		CertificateAuthorityArn?: string | null;
+		CreatedAt?: Date | null;
+		Principal?: string | null;
+		SourceAccount?: string | null;
+		Actions?: Array<ActionType> | null;
+		Policy?: string | null;
 	}
 
 	export interface ListPermissionsRequest {
 		CertificateAuthorityArn: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListTagsResponse {
-		Tags?: Array<Tag>;
-		NextToken?: string;
+		Tags?: Array<Tag> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsRequest {
 		CertificateAuthorityArn: string;
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface RestoreCertificateAuthorityRequest {
@@ -348,8 +348,8 @@ export namespace MyNS {
 		CertificateAuthorityArn: string;
 
 		/** Certificate revocation information used by the <a>CreateCertificateAuthority</a> and <a>UpdateCertificateAuthority</a> actions. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see <a>RevokeCertificate</a>. */
-		RevocationConfiguration?: RevocationConfiguration;
-		Status?: CertificateAuthorityStatus;
+		RevocationConfiguration?: RevocationConfiguration | null;
+		Status?: CertificateAuthorityStatus | null;
 	}
 
 	export enum AuditReportResponseFormat { JSON = 0, CSV = 1 }
@@ -488,7 +488,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCertificateAuthoritiesResponse} Success
 		 */
-		ListCertificateAuthorities(MaxResults: string, NextToken: string, requestBody: ListCertificateAuthoritiesRequest): Observable<ListCertificateAuthoritiesResponse> {
+		ListCertificateAuthorities(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListCertificateAuthoritiesRequest): Observable<ListCertificateAuthoritiesResponse> {
 			return this.http.post<ListCertificateAuthoritiesResponse>(this.baseUri + '#X-Amz-Target=ACMPrivateCA.ListCertificateAuthorities?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -499,7 +499,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPermissionsResponse} Success
 		 */
-		ListPermissions(MaxResults: string, NextToken: string, requestBody: ListPermissionsRequest): Observable<ListPermissionsResponse> {
+		ListPermissions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListPermissionsRequest): Observable<ListPermissionsResponse> {
 			return this.http.post<ListPermissionsResponse>(this.baseUri + '#X-Amz-Target=ACMPrivateCA.ListPermissions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -510,7 +510,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsResponse} Success
 		 */
-		ListTags(MaxResults: string, NextToken: string, requestBody: ListTagsRequest): Observable<ListTagsResponse> {
+		ListTags(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListTagsRequest): Observable<ListTagsResponse> {
 			return this.http.post<ListTagsResponse>(this.baseUri + '#X-Amz-Target=ACMPrivateCA.ListTags?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

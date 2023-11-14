@@ -1,5 +1,6 @@
 ﻿using Fonlow.Poco2Client;
 using Fonlow.Reflection;
+using Fonlow.TypeScriptCodeDom;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using System;
@@ -15,10 +16,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	/// <summary>
 	/// POCO to TypeScript interfaces generator. Create CodeDOM and output TS codes, with TypeScript CodeDOM provider
 	/// </summary>
-	public class ComponentsToTsTypes : ComponentsToTypesBase, IComponentToCodeDom
+	public class ComponentsToTsTypes : ComponentsToTypesBase
 	{
-		public ComponentsToTsTypes(Settings settings, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace) : base(settings, codeCompileUnit, clientNamespace)
+		readonly JSOutput jsOutput;
+		public ComponentsToTsTypes(Settings settings, JSOutput jsOutput, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace) : base(settings, codeCompileUnit, clientNamespace)
 		{
+			this.jsOutput = jsOutput;
 		}
 
 		/// <summary>
@@ -55,12 +58,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="writer"></param>
 		protected override void WriteCode(TextWriter writer)
 		{
-			//if (writer == null)
-			//	throw new ArgumentNullException("writer", "No TextWriter instance is defined.");
-
-			using CodeDomProvider provider = new Fonlow.TypeScriptCodeDom.TypeScriptCodeProvider(true);
+			var provider = new TypeScriptCodeProvider(new Fonlow.TypeScriptCodeDom.TsCodeGenerator(CreateCodeObjectHelper(jsOutput.AsModule)));
 			CodeGeneratorOptions options = new() { BracingStyle = "JS", IndentString = "\t" };
 			provider.GenerateCodeFromCompileUnit(codeCompileUnit, writer, options);
+		}
+
+		protected virtual CodeObjectHelper CreateCodeObjectHelper(bool asModule)
+		{
+			return new CodeObjectHelper(asModule);
 		}
 
 		public override void AddTypeToCodeDom(KeyValuePair<string, OpenApiSchema> item)

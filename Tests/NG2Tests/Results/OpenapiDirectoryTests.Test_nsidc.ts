@@ -22,7 +22,7 @@ export namespace MyNS {
 		 * @param {FacetsSource} source Custom parameter for selecting which source to use; the Arctic Data Explorer (ADE) uses data aggregated from many sources, including, but not limited to, NSIDC
 		 * @return {void} OK
 		 */
-		Facets(searchTerms: string, count: number, startIndex: number, spatial: string, sortKeys: FacetsSortKeys, startDate: Date, endDate: Date, facetFilters: string, source: FacetsSource): Observable<HttpResponse<string>> {
+		Facets(searchTerms: string | null | undefined, count: number | null | undefined, startIndex: number | null | undefined, spatial: string | null | undefined, sortKeys: FacetsSortKeys | null | undefined, startDate: Date | null | undefined, endDate: Date | null | undefined, facetFilters: string | null | undefined, source: FacetsSource | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'Facets?searchTerms=' + (searchTerms == null ? '' : encodeURIComponent(searchTerms)) + '&count=' + count + '&startIndex=' + startIndex + '&spatial=' + (spatial == null ? '' : encodeURIComponent(spatial)) + '&sortKeys=' + sortKeys + '&startDate=' + startDate.toISOString() + '&endDate=' + endDate.toISOString() + '&facetFilters=' + (facetFilters == null ? '' : encodeURIComponent(facetFilters)) + '&source=' + source, { observe: 'response', responseType: 'text' });
 		}
 
@@ -41,7 +41,7 @@ export namespace MyNS {
 		 * @param {FacetsSource} source Custom parameter for selecting which source to use; the Arctic Data Explorer (ADE) uses data aggregated from many sources, including, but not limited to, NSIDC
 		 * @return {void} OK
 		 */
-		Open_search(searchTerms: string, count: number, startIndex: number, spatial: string, sortKeys: Open_searchSortKeys, startDate: Date, endDate: Date, facetFilters: string, source: FacetsSource): Observable<HttpResponse<string>> {
+		Open_search(searchTerms: string | null | undefined, count: number | null | undefined, startIndex: number | null | undefined, spatial: string | null | undefined, sortKeys: Open_searchSortKeys | null | undefined, startDate: Date | null | undefined, endDate: Date | null | undefined, facetFilters: string | null | undefined, source: FacetsSource | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'OpenSearch?searchTerms=' + (searchTerms == null ? '' : encodeURIComponent(searchTerms)) + '&count=' + count + '&startIndex=' + startIndex + '&spatial=' + (spatial == null ? '' : encodeURIComponent(spatial)) + '&sortKeys=' + sortKeys + '&startDate=' + startDate.toISOString() + '&endDate=' + endDate.toISOString() + '&facetFilters=' + (facetFilters == null ? '' : encodeURIComponent(facetFilters)) + '&source=' + source, { observe: 'response', responseType: 'text' });
 		}
 

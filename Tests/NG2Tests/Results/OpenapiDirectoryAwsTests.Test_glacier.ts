@@ -30,33 +30,33 @@ export namespace MyNS {
 
 	/** Contains the description of an Amazon S3 Glacier job. */
 	export interface GlacierJobDescription {
-		JobId?: string;
-		JobDescription?: string;
-		Action?: GlacierJobDescriptionAction;
-		ArchiveId?: string;
-		VaultARN?: string;
-		CreationDate?: string;
-		Completed?: boolean;
-		StatusCode?: GlacierJobDescriptionStatusCode;
-		StatusMessage?: string;
-		ArchiveSizeInBytes?: number;
-		InventorySizeInBytes?: number;
-		SNSTopic?: string;
-		CompletionDate?: string;
-		SHA256TreeHash?: string;
-		ArchiveSHA256TreeHash?: string;
-		RetrievalByteRange?: string;
-		Tier?: string;
+		JobId?: string | null;
+		JobDescription?: string | null;
+		Action?: GlacierJobDescriptionAction | null;
+		ArchiveId?: string | null;
+		VaultARN?: string | null;
+		CreationDate?: string | null;
+		Completed?: boolean | null;
+		StatusCode?: GlacierJobDescriptionStatusCode | null;
+		StatusMessage?: string | null;
+		ArchiveSizeInBytes?: number | null;
+		InventorySizeInBytes?: number | null;
+		SNSTopic?: string | null;
+		CompletionDate?: string | null;
+		SHA256TreeHash?: string | null;
+		ArchiveSHA256TreeHash?: string | null;
+		RetrievalByteRange?: string | null;
+		Tier?: string | null;
 
 		/** Describes the options for a range inventory retrieval job. */
-		InventoryRetrievalParameters?: InventoryRetrievalJobDescription;
-		JobOutputPath?: string;
+		InventoryRetrievalParameters?: InventoryRetrievalJobDescription | null;
+		JobOutputPath?: string | null;
 
 		/** Contains information about the parameters used for a select. */
-		SelectParameters?: SelectParameters;
+		SelectParameters?: SelectParameters | null;
 
 		/** Contains information about the location where the select job results are stored. */
-		OutputLocation?: OutputLocation;
+		OutputLocation?: OutputLocation | null;
 	}
 
 	export enum GlacierJobDescriptionAction { ArchiveRetrieval = 0, InventoryRetrieval = 1, Select = 2 }
@@ -66,11 +66,11 @@ export namespace MyNS {
 
 	/** Describes the options for a range inventory retrieval job. */
 	export interface InventoryRetrievalJobDescription {
-		Format?: string;
-		StartDate?: string;
-		EndDate?: string;
-		Limit?: string;
-		Marker?: string;
+		Format?: string | null;
+		StartDate?: string | null;
+		EndDate?: string | null;
+		Limit?: string | null;
+		Marker?: string | null;
 	}
 
 
@@ -78,12 +78,12 @@ export namespace MyNS {
 	export interface SelectParameters {
 
 		/** Describes how the archive is serialized. */
-		InputSerialization?: InputSerialization;
-		ExpressionType?: SelectParametersExpressionType;
-		Expression?: string;
+		InputSerialization?: InputSerialization | null;
+		ExpressionType?: SelectParametersExpressionType | null;
+		Expression?: string | null;
 
 		/** Describes how the select output is serialized. */
-		OutputSerialization?: OutputSerialization;
+		OutputSerialization?: OutputSerialization | null;
 	}
 
 
@@ -91,18 +91,18 @@ export namespace MyNS {
 	export interface InputSerialization {
 
 		/** Contains information about the comma-separated value (CSV) file to select from. */
-		csv?: CSVInput;
+		csv?: CSVInput | null;
 	}
 
 
 	/** Contains information about the comma-separated value (CSV) file to select from. */
 	export interface CSVInput {
-		FileHeaderInfo?: CSVInputFileHeaderInfo;
-		Comments?: string;
-		QuoteEscapeCharacter?: string;
-		RecordDelimiter?: string;
-		FieldDelimiter?: string;
-		QuoteCharacter?: string;
+		FileHeaderInfo?: CSVInputFileHeaderInfo | null;
+		Comments?: string | null;
+		QuoteEscapeCharacter?: string | null;
+		RecordDelimiter?: string | null;
+		FieldDelimiter?: string | null;
+		QuoteCharacter?: string | null;
 	}
 
 	export enum CSVInputFileHeaderInfo { USE = 0, IGNORE = 1, NONE = 2 }
@@ -114,17 +114,17 @@ export namespace MyNS {
 	export interface OutputSerialization {
 
 		/** Contains information about the comma-separated value (CSV) file that the job results are stored in. */
-		csv?: CSVOutput;
+		csv?: CSVOutput | null;
 	}
 
 
 	/** Contains information about the comma-separated value (CSV) file that the job results are stored in. */
 	export interface CSVOutput {
-		QuoteFields?: CSVOutputQuoteFields;
-		QuoteEscapeCharacter?: string;
-		RecordDelimiter?: string;
-		FieldDelimiter?: string;
-		QuoteCharacter?: string;
+		QuoteFields?: CSVOutputQuoteFields | null;
+		QuoteEscapeCharacter?: string | null;
+		RecordDelimiter?: string | null;
+		FieldDelimiter?: string | null;
+		QuoteCharacter?: string | null;
 	}
 
 	export enum CSVOutputQuoteFields { ALWAYS = 0, ASNEEDED = 1 }
@@ -134,30 +134,30 @@ export namespace MyNS {
 	export interface OutputLocation {
 
 		/** Contains information about the location in Amazon S3 where the select job results are stored. */
-		S3?: S3Location;
+		S3?: S3Location | null;
 	}
 
 
 	/** Contains information about the location in Amazon S3 where the select job results are stored. */
 	export interface S3Location {
-		BucketName?: string;
-		Prefix?: string;
+		BucketName?: string | null;
+		Prefix?: string | null;
 
 		/** Contains information about the encryption used to store the job results in Amazon S3. */
-		Encryption?: Encryption;
-		CannedACL?: S3LocationCannedACL;
-		AccessControlList?: Array<Grant>;
-		Tagging?: Hashmap;
-		UserMetadata?: Hashmap;
-		StorageClass?: S3LocationStorageClass;
+		Encryption?: Encryption | null;
+		CannedACL?: S3LocationCannedACL | null;
+		AccessControlList?: Array<Grant> | null;
+		Tagging?: Hashmap | null;
+		UserMetadata?: Hashmap | null;
+		StorageClass?: S3LocationStorageClass | null;
 	}
 
 
 	/** Contains information about the encryption used to store the job results in Amazon S3.  */
 	export interface Encryption {
-		EncryptionType?: EncryptionEncryptionType;
-		KMSKeyId?: string;
-		KMSContext?: string;
+		EncryptionType?: EncryptionEncryptionType | null;
+		KMSKeyId?: string | null;
+		KMSContext?: string | null;
 	}
 
 	export enum EncryptionEncryptionType { awskms = 0, AES256 = 1 }
@@ -169,18 +169,18 @@ export namespace MyNS {
 	export interface Grant {
 
 		/** Contains information about the grantee. */
-		Grantee?: Grantee;
-		Permission?: GrantPermission;
+		Grantee?: Grantee | null;
+		Permission?: GrantPermission | null;
 	}
 
 
 	/** Contains information about the grantee. */
 	export interface Grantee {
 		Type: GranteeType;
-		DisplayName?: string;
-		URI?: string;
-		ID?: string;
-		EmailAddress?: string;
+		DisplayName?: string | null;
+		URI?: string | null;
+		ID?: string | null;
+		EmailAddress?: string | null;
 	}
 
 	export enum GranteeType { AmazonCustomerByEmail = 0, CanonicalUser = 1, Group = 2 }
@@ -195,12 +195,12 @@ export namespace MyNS {
 
 	/** Contains the Amazon S3 Glacier response to your request. */
 	export interface DescribeVaultOutput {
-		VaultARN?: string;
-		VaultName?: string;
-		CreationDate?: string;
-		LastInventoryDate?: string;
-		NumberOfArchives?: number;
-		SizeInBytes?: number;
+		VaultARN?: string | null;
+		VaultName?: string | null;
+		CreationDate?: string | null;
+		LastInventoryDate?: string | null;
+		NumberOfArchives?: number | null;
+		SizeInBytes?: number | null;
 	}
 
 
@@ -208,27 +208,27 @@ export namespace MyNS {
 	export interface GetDataRetrievalPolicyOutput {
 
 		/** Data retrieval policy. */
-		Policy?: DataRetrievalPolicy;
+		Policy?: DataRetrievalPolicy | null;
 	}
 
 
 	/** Data retrieval policy. */
 	export interface DataRetrievalPolicy {
-		Rules?: Array<DataRetrievalRule>;
+		Rules?: Array<DataRetrievalRule> | null;
 	}
 
 
 	/** Data retrieval policy rule. */
 	export interface DataRetrievalRule {
-		Strategy?: string;
-		BytesPerHour?: number;
+		Strategy?: string | null;
+		BytesPerHour?: number | null;
 	}
 
 
 	/** Contains the Amazon S3 Glacier response to your request. */
 	export interface GetJobOutputOutput {
-		body?: string;
-		status?: number;
+		body?: string | null;
+		status?: number | null;
 	}
 
 
@@ -236,22 +236,22 @@ export namespace MyNS {
 	export interface GetVaultAccessPolicyOutput {
 
 		/** Contains the vault access policy. */
-		policy?: VaultAccessPolicy;
+		policy?: VaultAccessPolicy | null;
 	}
 
 
 	/** Contains the vault access policy. */
 	export interface VaultAccessPolicy {
-		Policy?: string;
+		Policy?: string | null;
 	}
 
 
 	/** Contains the Amazon S3 Glacier response to your request. */
 	export interface GetVaultLockOutput {
-		Policy?: string;
-		State?: string;
-		ExpirationDate?: string;
-		CreationDate?: string;
+		Policy?: string | null;
+		State?: string | null;
+		ExpirationDate?: string | null;
+		CreationDate?: string | null;
 	}
 
 
@@ -259,14 +259,14 @@ export namespace MyNS {
 	export interface GetVaultNotificationsOutput {
 
 		/** Represents a vault's notification configuration. */
-		vaultNotificationConfig?: VaultNotificationConfig;
+		vaultNotificationConfig?: VaultNotificationConfig | null;
 	}
 
 
 	/** Represents a vault's notification configuration. */
 	export interface VaultNotificationConfig {
-		SNSTopic?: string;
-		Events?: Array<string>;
+		SNSTopic?: string | null;
+		Events?: Array<string> | null;
 	}
 
 
@@ -277,10 +277,10 @@ export namespace MyNS {
 
 	/** Provides options for specifying a range inventory retrieval job. */
 	export interface InventoryRetrievalJobInput {
-		StartDate?: string;
-		EndDate?: string;
-		Limit?: string;
-		Marker?: string;
+		StartDate?: string | null;
+		EndDate?: string | null;
+		Limit?: string | null;
+		Marker?: string | null;
 	}
 
 	export interface PolicyEnforcedException {
@@ -302,62 +302,62 @@ export namespace MyNS {
 
 	/** Contains the Amazon S3 Glacier response to your request. */
 	export interface ListJobsOutput {
-		JobList?: Array<GlacierJobDescription>;
-		Marker?: string;
+		JobList?: Array<GlacierJobDescription> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Contains the Amazon S3 Glacier response to your request. */
 	export interface ListMultipartUploadsOutput {
-		UploadsList?: Array<UploadListElement>;
-		Marker?: string;
+		UploadsList?: Array<UploadListElement> | null;
+		Marker?: string | null;
 	}
 
 
 	/** A list of in-progress multipart uploads for a vault. */
 	export interface UploadListElement {
-		MultipartUploadId?: string;
-		VaultARN?: string;
-		ArchiveDescription?: string;
-		PartSizeInBytes?: number;
-		CreationDate?: string;
+		MultipartUploadId?: string | null;
+		VaultARN?: string | null;
+		ArchiveDescription?: string | null;
+		PartSizeInBytes?: number | null;
+		CreationDate?: string | null;
 	}
 
 
 	/** Contains the Amazon S3 Glacier response to your request. */
 	export interface ListPartsOutput {
-		MultipartUploadId?: string;
-		VaultARN?: string;
-		ArchiveDescription?: string;
-		PartSizeInBytes?: number;
-		CreationDate?: string;
-		Parts?: Array<PartListElement>;
-		Marker?: string;
+		MultipartUploadId?: string | null;
+		VaultARN?: string | null;
+		ArchiveDescription?: string | null;
+		PartSizeInBytes?: number | null;
+		CreationDate?: string | null;
+		Parts?: Array<PartListElement> | null;
+		Marker?: string | null;
 	}
 
 
 	/** A list of the part sizes of the multipart upload. */
 	export interface PartListElement {
-		RangeInBytes?: string;
-		SHA256TreeHash?: string;
+		RangeInBytes?: string | null;
+		SHA256TreeHash?: string | null;
 	}
 
 	export interface ListProvisionedCapacityOutput {
-		ProvisionedCapacityList?: Array<ProvisionedCapacityDescription>;
+		ProvisionedCapacityList?: Array<ProvisionedCapacityDescription> | null;
 	}
 
 
 	/** The definition for a provisioned capacity unit. */
 	export interface ProvisionedCapacityDescription {
-		CapacityId?: string;
-		StartDate?: string;
-		ExpirationDate?: string;
+		CapacityId?: string | null;
+		StartDate?: string | null;
+		ExpirationDate?: string | null;
 	}
 
 
 	/** Contains the Amazon S3 Glacier response to your request. */
 	export interface ListTagsForVaultOutput {
-		Tags?: TagMap;
+		Tags?: TagMap | null;
 	}
 
 	export interface TagMap {
@@ -366,8 +366,8 @@ export namespace MyNS {
 
 	/** Contains the Amazon S3 Glacier response to your request. */
 	export interface ListVaultsOutput {
-		VaultList?: Array<DescribeVaultOutput>;
-		Marker?: string;
+		VaultList?: Array<DescribeVaultOutput> | null;
+		Marker?: string | null;
 	}
 
 	export interface PurchaseProvisionedCapacityOutput {
@@ -396,7 +396,7 @@ export namespace MyNS {
 
 	/** The input values for <code>AddTagsToVault</code>. */
 	export interface AddTagsToVaultInput {
-		Tags?: TagMap;
+		Tags?: TagMap | null;
 	}
 
 	export enum FileHeaderInfo { USE = 0, IGNORE = 1, NONE = 2 }
@@ -488,22 +488,22 @@ export namespace MyNS {
 
 	/** Provides options for defining a job. */
 	export interface JobParameters {
-		Format?: string;
-		Type?: string;
-		ArchiveId?: string;
-		Description?: string;
-		SNSTopic?: string;
-		RetrievalByteRange?: string;
-		Tier?: string;
+		Format?: string | null;
+		Type?: string | null;
+		ArchiveId?: string | null;
+		Description?: string | null;
+		SNSTopic?: string | null;
+		RetrievalByteRange?: string | null;
+		Tier?: string | null;
 
 		/** Provides options for specifying a range inventory retrieval job. */
-		InventoryRetrievalParameters?: InventoryRetrievalJobInput;
+		InventoryRetrievalParameters?: InventoryRetrievalJobInput | null;
 
 		/** Contains information about the parameters used for a select. */
-		SelectParameters?: SelectParameters;
+		SelectParameters?: SelectParameters | null;
 
 		/** Contains information about the location where the select job results are stored. */
-		OutputLocation?: OutputLocation;
+		OutputLocation?: OutputLocation | null;
 	}
 
 
@@ -511,7 +511,7 @@ export namespace MyNS {
 	export interface InitiateJobInput {
 
 		/** Provides options for defining a job. */
-		jobParameters?: JobParameters;
+		jobParameters?: JobParameters | null;
 	}
 
 
@@ -522,7 +522,7 @@ export namespace MyNS {
 
 	/** Contains the vault lock policy. */
 	export interface VaultLockPolicy {
-		Policy?: string;
+		Policy?: string | null;
 	}
 
 
@@ -530,7 +530,7 @@ export namespace MyNS {
 	export interface InitiateVaultLockInput {
 
 		/** Contains the vault lock policy. */
-		policy?: VaultLockPolicy;
+		policy?: VaultLockPolicy | null;
 	}
 
 
@@ -567,7 +567,7 @@ export namespace MyNS {
 
 	/** The input value for <code>RemoveTagsFromVaultInput</code>. */
 	export interface RemoveTagsFromVaultInput {
-		TagKeys?: Array<string>;
+		TagKeys?: Array<string> | null;
 	}
 
 	export enum StorageClass { STANDARD = 0, REDUCED_REDUNDANCY = 1, STANDARD_IA = 2 }
@@ -577,7 +577,7 @@ export namespace MyNS {
 	export interface SetDataRetrievalPolicyInput {
 
 		/** Data retrieval policy. */
-		Policy?: DataRetrievalPolicy;
+		Policy?: DataRetrievalPolicy | null;
 	}
 
 
@@ -585,7 +585,7 @@ export namespace MyNS {
 	export interface SetVaultAccessPolicyInput {
 
 		/** Contains the vault access policy. */
-		policy?: VaultAccessPolicy;
+		policy?: VaultAccessPolicy | null;
 	}
 
 
@@ -593,19 +593,19 @@ export namespace MyNS {
 	export interface SetVaultNotificationsInput {
 
 		/** Represents a vault's notification configuration. */
-		vaultNotificationConfig?: VaultNotificationConfig;
+		vaultNotificationConfig?: VaultNotificationConfig | null;
 	}
 
 
 	/** Provides options to add an archive to a vault. */
 	export interface UploadArchiveInput {
-		body?: string;
+		body?: string | null;
 	}
 
 
 	/** Provides options to upload a part of an archive in a multipart upload operation. */
 	export interface UploadMultipartPartInput {
-		body?: string;
+		body?: string | null;
 	}
 
 	@Injectable()
@@ -647,7 +647,7 @@ export namespace MyNS {
 		 * @param {string} limit The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be fewer than the specified limit, but the number of returned parts never exceeds the limit.
 		 * @return {ListPartsOutput} Success
 		 */
-		ListParts(accountId: string, vaultName: string, uploadId: string, marker: string, limit: string): Observable<ListPartsOutput> {
+		ListParts(accountId: string, vaultName: string, uploadId: string, marker: string | null | undefined, limit: string | null | undefined): Observable<ListPartsOutput> {
 			return this.http.get<ListPartsOutput>(this.baseUri + (accountId == null ? '' : encodeURIComponent(accountId)) + '/vaults/' + (vaultName == null ? '' : encodeURIComponent(vaultName)) + '/multipart-uploads/' + (uploadId == null ? '' : encodeURIComponent(uploadId)) + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '', {});
 		}
 
@@ -896,7 +896,7 @@ export namespace MyNS {
 		 * @param {string} completed The state of the jobs to return. You can specify <code>true</code> or <code>false</code>.
 		 * @return {ListJobsOutput} Success
 		 */
-		ListJobs(accountId: string, vaultName: string, limit: string, marker: string, statuscode: string, completed: string): Observable<ListJobsOutput> {
+		ListJobs(accountId: string, vaultName: string, limit: string | null | undefined, marker: string | null | undefined, statuscode: string | null | undefined, completed: string | null | undefined): Observable<ListJobsOutput> {
 			return this.http.get<ListJobsOutput>(this.baseUri + (accountId == null ? '' : encodeURIComponent(accountId)) + '/vaults/' + (vaultName == null ? '' : encodeURIComponent(vaultName)) + '/jobs&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&statuscode=' + (statuscode == null ? '' : encodeURIComponent(statuscode)) + '&completed=' + (completed == null ? '' : encodeURIComponent(completed)) + '', {});
 		}
 
@@ -920,7 +920,7 @@ export namespace MyNS {
 		 * @param {string} limit Specifies the maximum number of uploads returned in the response body. If this value is not specified, the List Uploads operation returns up to 50 uploads.
 		 * @return {ListMultipartUploadsOutput} Success
 		 */
-		ListMultipartUploads(accountId: string, vaultName: string, marker: string, limit: string): Observable<ListMultipartUploadsOutput> {
+		ListMultipartUploads(accountId: string, vaultName: string, marker: string | null | undefined, limit: string | null | undefined): Observable<ListMultipartUploadsOutput> {
 			return this.http.get<ListMultipartUploadsOutput>(this.baseUri + (accountId == null ? '' : encodeURIComponent(accountId)) + '/vaults/' + (vaultName == null ? '' : encodeURIComponent(vaultName)) + '/multipart-uploads&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '', {});
 		}
 
@@ -963,7 +963,7 @@ export namespace MyNS {
 		 * @param {string} limit The maximum number of vaults to be returned. The default limit is 10. The number of vaults returned might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.
 		 * @return {ListVaultsOutput} Success
 		 */
-		ListVaults(accountId: string, marker: string, limit: string): Observable<ListVaultsOutput> {
+		ListVaults(accountId: string, marker: string | null | undefined, limit: string | null | undefined): Observable<ListVaultsOutput> {
 			return this.http.get<ListVaultsOutput>(this.baseUri + (accountId == null ? '' : encodeURIComponent(accountId)) + '/vaults&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '', {});
 		}
 
@@ -993,17 +993,17 @@ export namespace MyNS {
 	export interface UploadMultipartPartPutBody {
 
 		/** The data to upload. */
-		body?: string;
+		body?: string | null;
 	}
 
 	export interface InitiateVaultLockPostBody {
 
 		/** Contains the vault lock policy. */
-		policy?: InitiateVaultLockPostBodyPolicy;
+		policy?: InitiateVaultLockPostBodyPolicy | null;
 	}
 
 	export interface InitiateVaultLockPostBodyPolicy {
-		Policy?: string;
+		Policy?: string | null;
 	}
 
 	export enum AddTagsToVaultOperation { add = 0 }
@@ -1011,63 +1011,63 @@ export namespace MyNS {
 	export interface AddTagsToVaultPostBody {
 
 		/** The tags to add to the vault. Each tag is composed of a key and a value. The value can be an empty string. */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 	}
 
 	export interface SetVaultAccessPolicyPutBody {
 
 		/** Contains the vault access policy. */
-		policy?: SetVaultAccessPolicyPutBodyPolicy;
+		policy?: SetVaultAccessPolicyPutBodyPolicy | null;
 	}
 
 	export interface SetVaultAccessPolicyPutBodyPolicy {
-		Policy?: string;
+		Policy?: string | null;
 	}
 
 	export interface SetVaultNotificationsPutBody {
 
 		/** Represents a vault's notification configuration. */
-		vaultNotificationConfig?: SetVaultNotificationsPutBodyVaultNotificationConfig;
+		vaultNotificationConfig?: SetVaultNotificationsPutBodyVaultNotificationConfig | null;
 	}
 
 	export interface SetVaultNotificationsPutBodyVaultNotificationConfig {
-		SNSTopic?: string;
-		Events?: Array<string>;
+		SNSTopic?: string | null;
+		Events?: Array<string> | null;
 	}
 
 	export interface SetDataRetrievalPolicyPutBody {
 
 		/** Data retrieval policy. */
-		Policy?: SetDataRetrievalPolicyPutBodyPolicy;
+		Policy?: SetDataRetrievalPolicyPutBodyPolicy | null;
 	}
 
 	export interface SetDataRetrievalPolicyPutBodyPolicy {
-		Rules?: Array<DataRetrievalRule>;
+		Rules?: Array<DataRetrievalRule> | null;
 	}
 
 	export interface InitiateJobPostBody {
 
 		/** Provides options for defining a job. */
-		jobParameters?: InitiateJobPostBodyJobParameters;
+		jobParameters?: InitiateJobPostBodyJobParameters | null;
 	}
 
 	export interface InitiateJobPostBodyJobParameters {
-		Format?: string;
-		Type?: string;
-		ArchiveId?: string;
-		Description?: string;
-		SNSTopic?: string;
-		RetrievalByteRange?: string;
-		Tier?: string;
+		Format?: string | null;
+		Type?: string | null;
+		ArchiveId?: string | null;
+		Description?: string | null;
+		SNSTopic?: string | null;
+		RetrievalByteRange?: string | null;
+		Tier?: string | null;
 
 		/** Provides options for specifying a range inventory retrieval job. */
-		InventoryRetrievalParameters?: InventoryRetrievalJobInput;
+		InventoryRetrievalParameters?: InventoryRetrievalJobInput | null;
 
 		/** Contains information about the parameters used for a select. */
-		SelectParameters?: SelectParameters;
+		SelectParameters?: SelectParameters | null;
 
 		/** Contains information about the location where the select job results are stored. */
-		OutputLocation?: OutputLocation;
+		OutputLocation?: OutputLocation | null;
 	}
 
 	export enum RemoveTagsFromVaultOperation { remove = 0 }
@@ -1075,13 +1075,13 @@ export namespace MyNS {
 	export interface RemoveTagsFromVaultPostBody {
 
 		/** A list of tag keys. Each corresponding tag is removed from the vault. */
-		TagKeys?: Array<string>;
+		TagKeys?: Array<string> | null;
 	}
 
 	export interface UploadArchivePostBody {
 
 		/** The data to upload. */
-		body?: string;
+		body?: string | null;
 	}
 
 }

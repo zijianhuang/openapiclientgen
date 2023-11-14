@@ -10,22 +10,22 @@ export namespace MyNS {
 	export interface GoogleCloudPrivatecatalogV1beta1Catalog {
 
 		/** Output only. The time when the catalog was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** Output only. The description of the catalog. */
-		description?: string;
+		description?: string | null;
 
 		/** Output only. The descriptive name of the catalog as it appears in UIs. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Output only. The resource name of the target catalog, in the format of
 		 * `catalogs/{catalog_id}'.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Output only. The time when the catalog was last updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -41,10 +41,10 @@ export namespace MyNS {
 		 * * `google.deploymentmanager.Template`
 		 * * `google.cloudprivatecatalog.ListingOnly`
 		 */
-		assetType?: string;
+		assetType?: string | null;
 
 		/** Output only. The time when the product was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Output only. The display metadata to describe the product.
@@ -151,20 +151,20 @@ export namespace MyNS {
 		 * additionalProperties: false
 		 * ```
 		 */
-		displayMetadata?: {[id: string]: any };
+		displayMetadata?: {[id: string]: any } | null;
 
 		/** Output only. The icon URI of the product. */
-		iconUri?: string;
+		iconUri?: string | null;
 
 		/**
 		 * Output only. The resource name of the target product, in the format of
 		 * `products/a-z*[a-z0-9]'.
 		 * A unique identifier for the product under a catalog.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Output only. The time when the product was last updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -172,14 +172,14 @@ export namespace MyNS {
 	export interface GoogleCloudPrivatecatalogV1beta1SearchCatalogsResponse {
 
 		/** The `Catalog`s computed from the resource context. */
-		catalogs?: Array<GoogleCloudPrivatecatalogV1beta1Catalog>;
+		catalogs?: Array<GoogleCloudPrivatecatalogV1beta1Catalog> | null;
 
 		/**
 		 * A pagination token returned from a previous call to SearchCatalogs that
 		 * indicates from where listing should continue.
 		 * This field is optional.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -191,10 +191,10 @@ export namespace MyNS {
 		 * indicates from where listing should continue.
 		 * This field is optional.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The `Product` resources computed from the resource context. */
-		products?: Array<GoogleCloudPrivatecatalogV1beta1Product>;
+		products?: Array<GoogleCloudPrivatecatalogV1beta1Product> | null;
 	}
 
 
@@ -206,10 +206,10 @@ export namespace MyNS {
 		 * indicates from where the listing should continue.
 		 * This field is optional.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The `Version` resources computed from the resource context. */
-		versions?: Array<GoogleCloudPrivatecatalogV1beta1Version>;
+		versions?: Array<GoogleCloudPrivatecatalogV1beta1Version> | null;
 	}
 
 
@@ -224,26 +224,26 @@ export namespace MyNS {
 		 * provisioned. See
 		 * google.cloud.privatecatalogproducer.v1beta.Version.asset for details.
 		 */
-		asset?: {[id: string]: any };
+		asset?: {[id: string]: any } | null;
 
 		/** Output only. The time when the version was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Output only. The user-supplied description of the version. Maximum of 256
 		 * characters.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Output only. The resource name of the version, in the format
 		 * `catalogs/{catalog_id}/products/{product_id}/versions/a-z*[a-z0-9]'.
 		 * A unique identifier for the version under a product.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** Output only. The time when the version was last updated. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 	@Injectable()
@@ -267,7 +267,7 @@ export namespace MyNS {
 		 * * Get a single catalog: `name=catalogs/{catalog_id}`
 		 * @return {void} Successful response
 		 */
-		Cloudprivatecatalog_organizations_catalogs_search(resource: string, pageSize: number, pageToken: string, query: string): Observable<HttpResponse<string>> {
+		Cloudprivatecatalog_organizations_catalogs_search(resource: string, pageSize: number | null | undefined, pageToken: string | null | undefined, query: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (resource == null ? '' : encodeURIComponent(resource)) + '/catalogs:search&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&query=' + (query == null ? '' : encodeURIComponent(query)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -289,7 +289,7 @@ export namespace MyNS {
 		 * `name=catalogs/{catalog_id}/products/{product_id}`
 		 * @return {void} Successful response
 		 */
-		Cloudprivatecatalog_organizations_products_search(resource: string, pageSize: number, pageToken: string, query: string): Observable<HttpResponse<string>> {
+		Cloudprivatecatalog_organizations_products_search(resource: string, pageSize: number | null | undefined, pageToken: string | null | undefined, query: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (resource == null ? '' : encodeURIComponent(resource)) + '/products:search&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&query=' + (query == null ? '' : encodeURIComponent(query)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -311,7 +311,7 @@ export namespace MyNS {
 		 * `name=catalogs/{catalog_id}/products/{product_id}/versions/{version_id}`
 		 * @return {void} Successful response
 		 */
-		Cloudprivatecatalog_organizations_versions_search(resource: string, pageSize: number, pageToken: string, query: string): Observable<HttpResponse<string>> {
+		Cloudprivatecatalog_organizations_versions_search(resource: string, pageSize: number | null | undefined, pageToken: string | null | undefined, query: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1beta1/' + (resource == null ? '' : encodeURIComponent(resource)) + '/versions:search&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&query=' + (query == null ? '' : encodeURIComponent(query)), { observe: 'response', responseType: 'text' });
 		}
 	}

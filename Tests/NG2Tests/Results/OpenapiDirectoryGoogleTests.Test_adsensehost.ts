@@ -5,134 +5,134 @@ export namespace MyNS {
 	export interface Account {
 
 		/** Unique identifier of this account. */
-		id?: string;
+		id?: string | null;
 
 		/** Kind of resource this is, in this case adsensehost#account. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Name of this account. */
-		name?: string;
+		name?: string | null;
 
 		/** Approval status of this account. One of: PENDING, APPROVED, DISABLED. */
-		status?: string;
+		status?: string | null;
 	}
 
 	export interface Accounts {
 
 		/** ETag of this response for caching purposes. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The accounts returned in this list response. */
-		items?: Array<Account>;
+		items?: Array<Account> | null;
 
 		/** Kind of list this is, in this case adsensehost#accounts. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface AdClient {
 
 		/** Whether this ad client is opted in to ARC. */
-		arcOptIn?: boolean;
+		arcOptIn?: boolean | null;
 
 		/** Unique identifier of this ad client. */
-		id?: string;
+		id?: string | null;
 
 		/** Kind of resource this is, in this case adsensehost#adClient. */
-		kind?: string;
+		kind?: string | null;
 
 		/** This ad client's product code, which corresponds to the PRODUCT_CODE report dimension. */
-		productCode?: string;
+		productCode?: string | null;
 
 		/** Whether this ad client supports being reported on. */
-		supportsReporting?: boolean;
+		supportsReporting?: boolean | null;
 	}
 
 	export interface AdClients {
 
 		/** ETag of this response for caching purposes. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The ad clients returned in this list response. */
-		items?: Array<AdClient>;
+		items?: Array<AdClient> | null;
 
 		/** Kind of list this is, in this case adsensehost#adClients. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Continuation token used to page through ad clients. To retrieve the next page of results, set the next request's "pageToken" value to this. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	export interface AdCode {
 
 		/** The ad code snippet. */
-		adCode?: string;
+		adCode?: string | null;
 
 		/** Kind this is, in this case adsensehost#adCode. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface AdStyle {
 
 		/** The colors included in the style. These are represented as six hexadecimal characters, similar to HTML color codes, but without the leading hash. */
-		colors?: AdStyleColors;
+		colors?: AdStyleColors | null;
 
 		/** The style of the corners in the ad (deprecated: never populated, ignored). */
-		corners?: string;
+		corners?: string | null;
 
 		/** The font which is included in the style. */
-		font?: AdStyleFont;
+		font?: AdStyleFont | null;
 
 		/** Kind this is, in this case adsensehost#adStyle. */
-		kind?: string;
+		kind?: string | null;
 	}
 
 	export interface AdStyleColors {
 
 		/** The color of the ad background. */
-		background?: string;
+		background?: string | null;
 
 		/** The color of the ad border. */
-		border?: string;
+		border?: string | null;
 
 		/** The color of the ad text. */
-		text?: string;
+		text?: string | null;
 
 		/** The color of the ad title. */
-		title?: string;
+		title?: string | null;
 
 		/** The color of the ad url. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface AdStyleFont {
 
 		/** The family of the font. Possible values are: ACCOUNT_DEFAULT_FAMILY, ADSENSE_DEFAULT_FAMILY, ARIAL, TIMES and VERDANA. */
-		family?: string;
+		family?: string | null;
 
 		/** The size of the font. Possible values are: ACCOUNT_DEFAULT_SIZE, ADSENSE_DEFAULT_SIZE, SMALL, MEDIUM and LARGE. */
-		size?: string;
+		size?: string | null;
 	}
 
 	export interface AdUnit {
 
 		/** Identity code of this ad unit, not necessarily unique across ad clients. */
-		code?: string;
+		code?: string | null;
 
 		/** Settings specific to content ads (AFC) and highend mobile content ads (AFMC - deprecated). */
-		contentAdsSettings?: AdUnitContentAdsSettings;
-		customStyle?: AdStyle;
+		contentAdsSettings?: AdUnitContentAdsSettings | null;
+		customStyle?: AdStyle | null;
 
 		/** Unique identifier of this ad unit. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. */
-		id?: string;
+		id?: string | null;
 
 		/** Kind of resource this is, in this case adsensehost#adUnit. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Settings specific to WAP mobile content ads (AFMC - deprecated). */
-		mobileContentAdsSettings?: AdUnitMobileContentAdsSettings;
+		mobileContentAdsSettings?: AdUnitMobileContentAdsSettings | null;
 
 		/** Name of this ad unit. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Status of this ad unit. Possible values are:
@@ -140,184 +140,184 @@ export namespace MyNS {
 		 * ACTIVE: Indicates that there has been activity on this ad unit in the last seven days.
 		 * INACTIVE: Indicates that there has been no activity on this ad unit in the last seven days.
 		 */
-		status?: string;
+		status?: string | null;
 	}
 
 	export interface AdUnitContentAdsSettings {
 
 		/** The backup option to be used in instances where no ad is available. */
-		backupOption?: AdUnitContentAdsSettingsBackupOption;
+		backupOption?: AdUnitContentAdsSettingsBackupOption | null;
 
 		/** Size of this ad unit. Size values are in the form SIZE_{width}_{height}. */
-		size?: string;
+		size?: string | null;
 
 		/** Type of this ad unit. Possible values are TEXT, TEXT_IMAGE, IMAGE and LINK. */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface AdUnitContentAdsSettingsBackupOption {
 
 		/** Color to use when type is set to COLOR. These are represented as six hexadecimal characters, similar to HTML color codes, but without the leading hash. */
-		color?: string;
+		color?: string | null;
 
 		/** Type of the backup option. Possible values are BLANK, COLOR and URL. */
-		type?: string;
+		type?: string | null;
 
 		/** URL to use when type is set to URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface AdUnitMobileContentAdsSettings {
 
 		/** The markup language to use for this ad unit. */
-		markupLanguage?: string;
+		markupLanguage?: string | null;
 
 		/** The scripting language to use for this ad unit. */
-		scriptingLanguage?: string;
+		scriptingLanguage?: string | null;
 
 		/** Size of this ad unit. */
-		size?: string;
+		size?: string | null;
 
 		/** Type of this ad unit. */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface AdUnits {
 
 		/** ETag of this response for caching purposes. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The ad units returned in this list response. */
-		items?: Array<AdUnit>;
+		items?: Array<AdUnit> | null;
 
 		/** Kind of list this is, in this case adsensehost#adUnits. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Continuation token used to page through ad units. To retrieve the next page of results, set the next request's "pageToken" value to this. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	export interface AssociationSession {
 
 		/** Hosted account id of the associated publisher after association. Present if status is ACCEPTED. */
-		accountId?: string;
+		accountId?: string | null;
 
 		/** Unique identifier of this association session. */
-		id?: string;
+		id?: string | null;
 
 		/** Kind of resource this is, in this case adsensehost#associationSession. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The products to associate with the user. Options: AFC, AFG, AFV, AFS (deprecated), AFMC (deprecated) */
-		productCodes?: Array<string>;
+		productCodes?: Array<string> | null;
 
 		/** Redirect URL of this association session. Used to redirect users into the AdSense association flow. */
-		redirectUrl?: string;
+		redirectUrl?: string | null;
 
 		/** Status of the completed association, available once the association callback token has been verified. One of ACCEPTED, REJECTED, or ERROR. */
-		status?: string;
+		status?: string | null;
 
 		/** The preferred locale of the user themselves when going through the AdSense association flow. */
-		userLocale?: string;
+		userLocale?: string | null;
 
 		/** The locale of the user's hosted website. */
-		websiteLocale?: string;
+		websiteLocale?: string | null;
 
 		/** The URL of the user's hosted website. */
-		websiteUrl?: string;
+		websiteUrl?: string | null;
 	}
 
 	export interface CustomChannel {
 
 		/** Code of this custom channel, not necessarily unique across ad clients. */
-		code?: string;
+		code?: string | null;
 
 		/** Unique identifier of this custom channel. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. */
-		id?: string;
+		id?: string | null;
 
 		/** Kind of resource this is, in this case adsensehost#customChannel. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Name of this custom channel. */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface CustomChannels {
 
 		/** ETag of this response for caching purposes. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The custom channels returned in this list response. */
-		items?: Array<CustomChannel>;
+		items?: Array<CustomChannel> | null;
 
 		/** Kind of list this is, in this case adsensehost#customChannels. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Continuation token used to page through custom channels. To retrieve the next page of results, set the next request's "pageToken" value to this. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	export interface Report {
 
 		/** The averages of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty. */
-		averages?: Array<string>;
+		averages?: Array<string> | null;
 
 		/** The header information of the columns requested in the report. This is a list of headers; one for each dimension in the request, followed by one for each metric in the request. */
-		ReportHeaders?: Array<ReportHeaders>;
+		ReportHeaders?: Array<ReportHeaders> | null;
 
 		/** Kind this is, in this case adsensehost#report. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The output rows of the report. Each row is a list of cells; one for each dimension in the request, followed by one for each metric in the request. The dimension cells contain strings, and the metric cells contain numbers. */
-		rows?: Array<string>;
+		rows?: Array<string> | null;
 
 		/** The total number of rows matched by the report request. Fewer rows may be returned in the response due to being limited by the row count requested or the report row limit. */
-		totalMatchedRows?: string;
+		totalMatchedRows?: string | null;
 
 		/** The totals of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty. */
-		totals?: Array<string>;
+		totals?: Array<string> | null;
 
 		/** Any warnings associated with generation of the report. */
-		warnings?: Array<string>;
+		warnings?: Array<string> | null;
 	}
 
 	export interface ReportHeaders {
 
 		/** The currency of this column. Only present if the header type is METRIC_CURRENCY. */
-		currency?: string;
+		currency?: string | null;
 
 		/** The name of the header. */
-		name?: string;
+		name?: string | null;
 
 		/** The type of the header; one of DIMENSION, METRIC_TALLY, METRIC_RATIO, or METRIC_CURRENCY. */
-		type?: string;
+		type?: string | null;
 	}
 
 	export interface UrlChannel {
 
 		/** Unique identifier of this URL channel. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format. */
-		id?: string;
+		id?: string | null;
 
 		/** Kind of resource this is, in this case adsensehost#urlChannel. */
-		kind?: string;
+		kind?: string | null;
 
 		/** URL Pattern of this URL channel. Does not include "http://" or "https://". Example: www.example.com/home */
-		urlPattern?: string;
+		urlPattern?: string | null;
 	}
 
 	export interface UrlChannels {
 
 		/** ETag of this response for caching purposes. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The URL channels returned in this list response. */
-		items?: Array<UrlChannel>;
+		items?: Array<UrlChannel> | null;
 
 		/** Kind of list this is, in this case adsensehost#urlChannels. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Continuation token used to page through URL channels. To retrieve the next page of results, set the next request's "pageToken" value to this. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	@Injectable()
@@ -353,7 +353,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsensehost_accounts_adclients_list(accountId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsensehost_accounts_adclients_list(accountId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/adclients&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -378,7 +378,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsensehost_accounts_adunits_list(accountId: string, adClientId: string, includeInactive: boolean, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsensehost_accounts_adunits_list(accountId: string, adClientId: string, includeInactive: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/adclients/' + (adClientId == null ? '' : encodeURIComponent(adClientId)) + '/adunits&includeInactive=' + includeInactive + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -449,7 +449,7 @@ export namespace MyNS {
 		 * @param {Array<string>} hostCustomChannelId Host custom channel to attach to the ad code.
 		 * @return {void} Successful response
 		 */
-		Adsensehost_accounts_adunits_getAdCode(accountId: string, adClientId: string, adUnitId: string, hostCustomChannelId: Array<string>): Observable<HttpResponse<string>> {
+		Adsensehost_accounts_adunits_getAdCode(accountId: string, adClientId: string, adUnitId: string, hostCustomChannelId: Array<string> | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/adclients/' + (adClientId == null ? '' : encodeURIComponent(adClientId)) + '/adunits/' + (adUnitId == null ? '' : encodeURIComponent(adUnitId)) + '/adcode&' + hostCustomChannelId.map(z => `hostCustomChannelId=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
@@ -468,7 +468,7 @@ export namespace MyNS {
 		 * @param {number} startIndex Index of the first row of report data to return.
 		 * @return {void} Successful response
 		 */
-		Adsensehost_accounts_reports_generate(accountId: string, startDate: string, endDate: string, dimension: Array<string>, filter: Array<string>, locale: string, maxResults: number, metric: Array<string>, sort: Array<string>, startIndex: number): Observable<HttpResponse<string>> {
+		Adsensehost_accounts_reports_generate(accountId: string, startDate: string, endDate: string, dimension: Array<string> | null | undefined, filter: Array<string> | null | undefined, locale: string | null | undefined, maxResults: number | null | undefined, metric: Array<string> | null | undefined, sort: Array<string> | null | undefined, startIndex: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'accounts/' + (accountId == null ? '' : encodeURIComponent(accountId)) + '/reports&startDate=' + (startDate == null ? '' : encodeURIComponent(startDate)) + '&endDate=' + (endDate == null ? '' : encodeURIComponent(endDate)) + '&' + dimension.map(z => `dimension=${encodeURIComponent(z)}`).join('&') + '&' + filter.map(z => `filter=${encodeURIComponent(z)}`).join('&') + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxResults=' + maxResults + '&' + metric.map(z => `metric=${encodeURIComponent(z)}`).join('&') + '&' + sort.map(z => `sort=${encodeURIComponent(z)}`).join('&') + '&startIndex=' + startIndex, { observe: 'response', responseType: 'text' });
 		}
 
@@ -479,7 +479,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsensehost_adclients_list(maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsensehost_adclients_list(maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'adclients?maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -501,7 +501,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsensehost_customchannels_list(adClientId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsensehost_customchannels_list(adClientId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'adclients/' + (adClientId == null ? '' : encodeURIComponent(adClientId)) + '/customchannels&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -566,7 +566,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {void} Successful response
 		 */
-		Adsensehost_urlchannels_list(adClientId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Adsensehost_urlchannels_list(adClientId: string, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'adclients/' + (adClientId == null ? '' : encodeURIComponent(adClientId)) + '/urlchannels&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -601,7 +601,7 @@ export namespace MyNS {
 		 * @param {string} websiteLocale The locale of the user's hosted website.
 		 * @return {void} Successful response
 		 */
-		Adsensehost_associationsessions_start(productCode: Array<string>, websiteUrl: string, callbackUrl: string, userLocale: string, websiteLocale: string): Observable<HttpResponse<string>> {
+		Adsensehost_associationsessions_start(productCode: Array<string>, websiteUrl: string, callbackUrl: string | null | undefined, userLocale: string | null | undefined, websiteLocale: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'associationsessions/start?' + productCode.map(z => `productCode=${encodeURIComponent(z)}`).join('&') + '&websiteUrl=' + (websiteUrl == null ? '' : encodeURIComponent(websiteUrl)) + '&callbackUrl=' + (callbackUrl == null ? '' : encodeURIComponent(callbackUrl)) + '&userLocale=' + (userLocale == null ? '' : encodeURIComponent(userLocale)) + '&websiteLocale=' + (websiteLocale == null ? '' : encodeURIComponent(websiteLocale)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -629,7 +629,7 @@ export namespace MyNS {
 		 * @param {number} startIndex Index of the first row of report data to return.
 		 * @return {void} Successful response
 		 */
-		Adsensehost_reports_generate(startDate: string, endDate: string, dimension: Array<string>, filter: Array<string>, locale: string, maxResults: number, metric: Array<string>, sort: Array<string>, startIndex: number): Observable<HttpResponse<string>> {
+		Adsensehost_reports_generate(startDate: string, endDate: string, dimension: Array<string> | null | undefined, filter: Array<string> | null | undefined, locale: string | null | undefined, maxResults: number | null | undefined, metric: Array<string> | null | undefined, sort: Array<string> | null | undefined, startIndex: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'reports?startDate=' + (startDate == null ? '' : encodeURIComponent(startDate)) + '&endDate=' + (endDate == null ? '' : encodeURIComponent(endDate)) + '&' + dimension.map(z => `dimension=${encodeURIComponent(z)}`).join('&') + '&' + filter.map(z => `filter=${encodeURIComponent(z)}`).join('&') + '&locale=' + (locale == null ? '' : encodeURIComponent(locale)) + '&maxResults=' + maxResults + '&' + metric.map(z => `metric=${encodeURIComponent(z)}`).join('&') + '&' + sort.map(z => `sort=${encodeURIComponent(z)}`).join('&') + '&startIndex=' + startIndex, { observe: 'response', responseType: 'text' });
 		}
 	}

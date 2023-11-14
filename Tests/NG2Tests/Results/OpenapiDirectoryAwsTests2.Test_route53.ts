@@ -19,7 +19,7 @@ export namespace MyNS {
 		Id: string;
 		Status: ChangeInfoStatus;
 		SubmittedAt: Date;
-		Comment?: string;
+		Comment?: string | null;
 	}
 
 	export enum ChangeInfoStatus { PENDING = 0, INSYNC = 1 }
@@ -77,21 +77,21 @@ export namespace MyNS {
 	export interface ResourceRecordSet {
 		Name: string;
 		Type: ResourceRecordSetType;
-		SetIdentifier?: string;
-		Weight?: number;
-		Region?: ResourceRecordSetRegion;
+		SetIdentifier?: string | null;
+		Weight?: number | null;
+		Region?: ResourceRecordSetRegion | null;
 
 		/** A complex type that contains information about a geographic location. */
-		GeoLocation?: GeoLocation;
-		Failover?: ResourceRecordSetFailover;
-		MultiValueAnswer?: boolean;
-		TTL?: number;
-		ResourceRecords?: Array<ResourceRecord>;
+		GeoLocation?: GeoLocation | null;
+		Failover?: ResourceRecordSetFailover | null;
+		MultiValueAnswer?: boolean | null;
+		TTL?: number | null;
+		ResourceRecords?: Array<ResourceRecord> | null;
 
 		/** <p> <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.</p> <p>When creating resource record sets for a private hosted zone, note the following:</p> <ul> <li> <p>Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported.</p> </li> <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a>.</p> </li> </ul> */
-		AliasTarget?: AliasTarget;
-		HealthCheckId?: string;
-		TrafficPolicyInstanceId?: string;
+		AliasTarget?: AliasTarget | null;
+		HealthCheckId?: string | null;
+		TrafficPolicyInstanceId?: string | null;
 	}
 
 	export enum ResourceRecordSetType { SOA = 0, A = 1, TXT = 2, NS = 3, CNAME = 4, MX = 5, NAPTR = 6, PTR = 7, SRV = 8, SPF = 9, AAAA = 10, CAA = 11 }
@@ -101,9 +101,9 @@ export namespace MyNS {
 
 	/** A complex type that contains information about a geographic location. */
 	export interface GeoLocation {
-		ContinentCode?: string;
-		CountryCode?: string;
-		SubdivisionCode?: string;
+		ContinentCode?: string | null;
+		CountryCode?: string | null;
+		SubdivisionCode?: string | null;
 	}
 
 	export enum ResourceRecordSetFailover { PRIMARY = 0, SECONDARY = 1 }
@@ -139,8 +139,8 @@ export namespace MyNS {
 
 	/** A complex type that contains information about a tag that you want to add or edit for the specified health check or hosted zone. */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface ThrottlingException {
@@ -164,7 +164,7 @@ export namespace MyNS {
 		CallerReference: string;
 
 		/** If a health check or hosted zone was created by another service, <code>LinkedService</code> is a complex type that describes the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. */
-		LinkedService?: LinkedService;
+		LinkedService?: LinkedService | null;
 
 		/**
 		 * A complex type that contains information about the health check.
@@ -174,38 +174,38 @@ export namespace MyNS {
 		HealthCheckVersion: number;
 
 		/** A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check. */
-		CloudWatchAlarmConfiguration?: CloudWatchAlarmConfiguration;
+		CloudWatchAlarmConfiguration?: CloudWatchAlarmConfiguration | null;
 	}
 
 
 	/** If a health check or hosted zone was created by another service, <code>LinkedService</code> is a complex type that describes the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53.  */
 	export interface LinkedService {
-		ServicePrincipal?: string;
-		Description?: string;
+		ServicePrincipal?: string | null;
+		Description?: string | null;
 	}
 
 
 	/** A complex type that contains information about the health check. */
 	export interface HealthCheckConfig {
-		IPAddress?: string;
-		Port?: number;
+		IPAddress?: string | null;
+		Port?: number | null;
 		Type: HealthCheckConfigType;
-		ResourcePath?: string;
-		FullyQualifiedDomainName?: string;
-		SearchString?: string;
-		RequestInterval?: number;
-		FailureThreshold?: number;
-		MeasureLatency?: boolean;
-		Inverted?: boolean;
-		Disabled?: boolean;
-		HealthThreshold?: number;
-		ChildHealthChecks?: Array<string>;
-		EnableSNI?: boolean;
-		Regions?: Array<HealthCheckRegion>;
+		ResourcePath?: string | null;
+		FullyQualifiedDomainName?: string | null;
+		SearchString?: string | null;
+		RequestInterval?: number | null;
+		FailureThreshold?: number | null;
+		MeasureLatency?: boolean | null;
+		Inverted?: boolean | null;
+		Disabled?: boolean | null;
+		HealthThreshold?: number | null;
+		ChildHealthChecks?: Array<string> | null;
+		EnableSNI?: boolean | null;
+		Regions?: Array<HealthCheckRegion> | null;
 
 		/** A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy. */
-		AlarmIdentifier?: AlarmIdentifier;
-		InsufficientDataHealthStatus?: HealthCheckConfigInsufficientDataHealthStatus;
+		AlarmIdentifier?: AlarmIdentifier | null;
+		InsufficientDataHealthStatus?: HealthCheckConfigInsufficientDataHealthStatus | null;
 	}
 
 	export enum HealthCheckConfigType { HTTP = 0, HTTPS = 1, HTTP_STR_MATCH = 2, HTTPS_STR_MATCH = 3, TCP = 4, CALCULATED = 5, CLOUDWATCH_METRIC = 6 }
@@ -233,7 +233,7 @@ export namespace MyNS {
 		MetricName: string;
 		Namespace: string;
 		Statistic: CloudWatchAlarmConfigurationStatistic;
-		Dimensions?: Array<Dimension>;
+		Dimensions?: Array<Dimension> | null;
 	}
 
 	export enum CloudWatchAlarmConfigurationComparisonOperator { GreaterThanOrEqualToThreshold = 0, GreaterThanThreshold = 1, LessThanThreshold = 2, LessThanOrEqualToThreshold = 3 }
@@ -280,7 +280,7 @@ export namespace MyNS {
 		DelegationSet: DelegationSet;
 
 		/** (Private hosted zones only) A complex type that contains information about an Amazon VPC. */
-		VPC?: VPC;
+		VPC?: VPC | null;
 	}
 
 
@@ -291,38 +291,38 @@ export namespace MyNS {
 		CallerReference: string;
 
 		/** A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements. */
-		Config?: HostedZoneConfig;
-		ResourceRecordSetCount?: number;
+		Config?: HostedZoneConfig | null;
+		ResourceRecordSetCount?: number | null;
 
 		/** If a health check or hosted zone was created by another service, <code>LinkedService</code> is a complex type that describes the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. */
-		LinkedService?: LinkedService;
+		LinkedService?: LinkedService | null;
 	}
 
 
 	/** A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements. */
 	export interface HostedZoneConfig {
-		Comment?: string;
-		PrivateZone?: boolean;
+		Comment?: string | null;
+		PrivateZone?: boolean | null;
 	}
 
 
 	/** A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set. */
 	export interface DelegationSet {
-		Id?: string;
-		CallerReference?: string;
+		Id?: string | null;
+		CallerReference?: string | null;
 		NameServers: Array<string>;
 	}
 
 
 	/** (Private hosted zones only) A complex type that contains information about an Amazon VPC. */
 	export interface VPC {
-		VPCRegion?: VPCVPCRegion;
+		VPCRegion?: VPCVPCRegion | null;
 
 		/**
 		 * (Private hosted zones only) The ID of an Amazon VPC.
 		 * Max length: 1024
 		 */
-		VPCId?: string;
+		VPCId?: string | null;
 	}
 
 	export enum VPCVPCRegion { us_east_1 = 0, us_east_2 = 1, us_west_1 = 2, us_west_2 = 3, eu_west_1 = 4, eu_west_2 = 5, eu_west_3 = 6, eu_central_1 = 7, ap_east_1 = 8, me_south_1 = 9, us_gov_west_1 = 10, us_gov_east_1 = 11, us_iso_east_1 = 12, us_isob_east_1 = 13, ap_southeast_1 = 14, ap_southeast_2 = 15, ap_south_1 = 16, ap_northeast_1 = 17, ap_northeast_2 = 18, ap_northeast_3 = 19, eu_north_1 = 20, sa_east_1 = 21, ca_central_1 = 22, cn_north_1 = 23, af_south_1 = 24, eu_south_1 = 25 }
@@ -414,7 +414,7 @@ export namespace MyNS {
 		Name: string;
 		Type: ResourceRecordSetType;
 		Document: string;
-		Comment?: string;
+		Comment?: string | null;
 	}
 
 	export interface TooManyTrafficPolicies {
@@ -621,12 +621,12 @@ export namespace MyNS {
 
 	/** A complex type that contains the codes and full continent, country, and subdivision names for the specified <code>geolocation</code> code. */
 	export interface GeoLocationDetails {
-		ContinentCode?: string;
-		ContinentName?: string;
-		CountryCode?: string;
-		CountryName?: string;
-		SubdivisionCode?: string;
-		SubdivisionName?: string;
+		ContinentCode?: string | null;
+		ContinentName?: string | null;
+		CountryCode?: string | null;
+		CountryName?: string | null;
+		SubdivisionCode?: string | null;
+		SubdivisionName?: string | null;
 	}
 
 	export interface NoSuchGeoLocation {
@@ -661,11 +661,11 @@ export namespace MyNS {
 
 	/** A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker. */
 	export interface HealthCheckObservation {
-		Region?: HealthCheckObservationRegion;
-		IPAddress?: string;
+		Region?: HealthCheckObservationRegion | null;
+		IPAddress?: string | null;
 
 		/** A complex type that contains the status that one Amazon Route 53 health checker reports and the time of the health check. */
-		StatusReport?: StatusReport;
+		StatusReport?: StatusReport | null;
 	}
 
 	export enum HealthCheckObservationRegion { us_east_1 = 0, us_west_1 = 1, us_west_2 = 2, eu_west_1 = 3, ap_southeast_1 = 4, ap_southeast_2 = 5, ap_northeast_1 = 6, sa_east_1 = 7 }
@@ -673,8 +673,8 @@ export namespace MyNS {
 
 	/** A complex type that contains the status that one Amazon Route 53 health checker reports and the time of the health check. */
 	export interface StatusReport {
-		Status?: string;
-		CheckedTime?: Date;
+		Status?: string | null;
+		CheckedTime?: Date | null;
 	}
 
 
@@ -694,13 +694,13 @@ export namespace MyNS {
 		HostedZone: HostedZone;
 
 		/** A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set. */
-		DelegationSet?: DelegationSet;
+		DelegationSet?: DelegationSet | null;
 
 		/**
 		 * (Private hosted zones only) A list of <code>VPC</code> elements.
 		 * Minimum items: 1
 		 */
-		VPCs?: Array<VPC>;
+		VPCs?: Array<VPC> | null;
 	}
 
 
@@ -807,9 +807,9 @@ export namespace MyNS {
 	export interface ListGeoLocationsResponse {
 		GeoLocationDetailsList: Array<GeoLocationDetails>;
 		IsTruncated: boolean;
-		NextContinentCode?: string;
-		NextCountryCode?: string;
-		NextSubdivisionCode?: string;
+		NextContinentCode?: string | null;
+		NextCountryCode?: string | null;
+		NextSubdivisionCode?: string | null;
 		MaxItems: string;
 	}
 
@@ -819,7 +819,7 @@ export namespace MyNS {
 		HealthChecks: Array<HealthCheck>;
 		Marker: string;
 		IsTruncated: boolean;
-		NextMarker?: string;
+		NextMarker?: string | null;
 		MaxItems: string;
 	}
 
@@ -827,7 +827,7 @@ export namespace MyNS {
 		HostedZones: Array<HostedZone>;
 		Marker: string;
 		IsTruncated: boolean;
-		NextMarker?: string;
+		NextMarker?: string | null;
 		MaxItems: string;
 	}
 
@@ -835,17 +835,17 @@ export namespace MyNS {
 	/** A complex type that contains the response information for the request. */
 	export interface ListHostedZonesByNameResponse {
 		HostedZones: Array<HostedZone>;
-		DNSName?: string;
-		HostedZoneId?: string;
+		DNSName?: string | null;
+		HostedZoneId?: string | null;
 		IsTruncated: boolean;
-		NextDNSName?: string;
-		NextHostedZoneId?: string;
+		NextDNSName?: string | null;
+		NextHostedZoneId?: string | null;
 		MaxItems: string;
 	}
 
 	export interface ListQueryLoggingConfigsResponse {
 		QueryLoggingConfigs: Array<QueryLoggingConfig>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface InvalidPaginationToken {
@@ -856,9 +856,9 @@ export namespace MyNS {
 	export interface ListResourceRecordSetsResponse {
 		ResourceRecordSets: Array<ResourceRecordSet>;
 		IsTruncated: boolean;
-		NextRecordName?: string;
-		NextRecordType?: ResourceRecordSetType;
-		NextRecordIdentifier?: string;
+		NextRecordName?: string | null;
+		NextRecordType?: ResourceRecordSetType | null;
+		NextRecordIdentifier?: string | null;
 		MaxItems: string;
 	}
 
@@ -868,7 +868,7 @@ export namespace MyNS {
 		DelegationSets: Array<DelegationSet>;
 		Marker: string;
 		IsTruncated: boolean;
-		NextMarker?: string;
+		NextMarker?: string | null;
 		MaxItems: string;
 	}
 
@@ -886,9 +886,9 @@ export namespace MyNS {
 
 	/** A complex type containing a resource and its associated tags. */
 	export interface ResourceTagSet {
-		ResourceType?: ResourceTagSetResourceType;
-		ResourceId?: string;
-		Tags?: Array<Tag>;
+		ResourceType?: ResourceTagSetResourceType | null;
+		ResourceId?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum ResourceTagSetResourceType { healthcheck = 0, hostedzone = 1 }
@@ -922,9 +922,9 @@ export namespace MyNS {
 	/** A complex type that contains the response information for the request. */
 	export interface ListTrafficPolicyInstancesResponse {
 		TrafficPolicyInstances: Array<TrafficPolicyInstance>;
-		HostedZoneIdMarker?: string;
-		TrafficPolicyInstanceNameMarker?: string;
-		TrafficPolicyInstanceTypeMarker?: ResourceRecordSetType;
+		HostedZoneIdMarker?: string | null;
+		TrafficPolicyInstanceNameMarker?: string | null;
+		TrafficPolicyInstanceTypeMarker?: ResourceRecordSetType | null;
 		IsTruncated: boolean;
 		MaxItems: string;
 	}
@@ -933,8 +933,8 @@ export namespace MyNS {
 	/** A complex type that contains the response information for the request. */
 	export interface ListTrafficPolicyInstancesByHostedZoneResponse {
 		TrafficPolicyInstances: Array<TrafficPolicyInstance>;
-		TrafficPolicyInstanceNameMarker?: string;
-		TrafficPolicyInstanceTypeMarker?: ResourceRecordSetType;
+		TrafficPolicyInstanceNameMarker?: string | null;
+		TrafficPolicyInstanceTypeMarker?: ResourceRecordSetType | null;
 		IsTruncated: boolean;
 		MaxItems: string;
 	}
@@ -943,9 +943,9 @@ export namespace MyNS {
 	/** A complex type that contains the response information for the request. */
 	export interface ListTrafficPolicyInstancesByPolicyResponse {
 		TrafficPolicyInstances: Array<TrafficPolicyInstance>;
-		HostedZoneIdMarker?: string;
-		TrafficPolicyInstanceNameMarker?: string;
-		TrafficPolicyInstanceTypeMarker?: ResourceRecordSetType;
+		HostedZoneIdMarker?: string | null;
+		TrafficPolicyInstanceNameMarker?: string | null;
+		TrafficPolicyInstanceTypeMarker?: ResourceRecordSetType | null;
 		IsTruncated: boolean;
 		MaxItems: string;
 	}
@@ -963,7 +963,7 @@ export namespace MyNS {
 	/** A complex type that contains the response information for the request. */
 	export interface ListVPCAssociationAuthorizationsResponse {
 		HostedZoneId: string;
-		NextToken?: string;
+		NextToken?: string | null;
 
 		/**
 		 * (Private hosted zones only) A list of <code>VPC</code> elements.
@@ -1047,13 +1047,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		VPC: VPC;
-		Comment?: string;
+		Comment?: string | null;
 	}
 
 
 	/** The information for a change request. */
 	export interface ChangeBatch {
-		Comment?: string;
+		Comment?: string | null;
 		Changes: Array<Change>;
 	}
 
@@ -1075,8 +1075,8 @@ export namespace MyNS {
 
 	/** A complex type that contains information about the tags that you want to add, edit, or delete. */
 	export interface ChangeTagsForResourceRequest {
-		AddTags?: Array<Tag>;
-		RemoveTagKeys?: Array<string>;
+		AddTags?: Array<Tag> | null;
+		RemoveTagKeys?: Array<string> | null;
 	}
 
 	export enum ComparisonOperator { GreaterThanOrEqualToThreshold = 0, GreaterThanThreshold = 1, LessThanThreshold = 2, LessThanOrEqualToThreshold = 3 }
@@ -1101,12 +1101,12 @@ export namespace MyNS {
 		Name: string;
 
 		/** (Private hosted zones only) A complex type that contains information about an Amazon VPC. */
-		VPC?: VPC;
+		VPC?: VPC | null;
 		CallerReference: string;
 
 		/** A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements. */
-		HostedZoneConfig?: HostedZoneConfig;
-		DelegationSetId?: string;
+		HostedZoneConfig?: HostedZoneConfig | null;
+		DelegationSetId?: string | null;
 	}
 
 	export interface CreateQueryLoggingConfigRequest {
@@ -1116,7 +1116,7 @@ export namespace MyNS {
 
 	export interface CreateReusableDelegationSetRequest {
 		CallerReference: string;
-		HostedZoneId?: string;
+		HostedZoneId?: string | null;
 	}
 
 
@@ -1134,14 +1134,14 @@ export namespace MyNS {
 	export interface CreateTrafficPolicyRequest {
 		Name: string;
 		Document: string;
-		Comment?: string;
+		Comment?: string | null;
 	}
 
 
 	/** A complex type that contains information about the traffic policy that you want to create a new version for. */
 	export interface CreateTrafficPolicyVersionRequest {
 		Document: string;
-		Comment?: string;
+		Comment?: string | null;
 	}
 
 
@@ -1203,7 +1203,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		VPC: VPC;
-		Comment?: string;
+		Comment?: string | null;
 	}
 
 
@@ -1373,30 +1373,30 @@ export namespace MyNS {
 
 	/** A complex type that contains information about a request to update a health check. */
 	export interface UpdateHealthCheckRequest {
-		HealthCheckVersion?: number;
-		IPAddress?: string;
-		Port?: number;
-		ResourcePath?: string;
-		FullyQualifiedDomainName?: string;
-		SearchString?: string;
-		FailureThreshold?: number;
-		Inverted?: boolean;
-		Disabled?: boolean;
-		HealthThreshold?: number;
-		ChildHealthChecks?: Array<string>;
-		EnableSNI?: boolean;
-		Regions?: Array<HealthCheckRegion>;
+		HealthCheckVersion?: number | null;
+		IPAddress?: string | null;
+		Port?: number | null;
+		ResourcePath?: string | null;
+		FullyQualifiedDomainName?: string | null;
+		SearchString?: string | null;
+		FailureThreshold?: number | null;
+		Inverted?: boolean | null;
+		Disabled?: boolean | null;
+		HealthThreshold?: number | null;
+		ChildHealthChecks?: Array<string> | null;
+		EnableSNI?: boolean | null;
+		Regions?: Array<HealthCheckRegion> | null;
 
 		/** A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy. */
-		AlarmIdentifier?: AlarmIdentifier;
-		InsufficientDataHealthStatus?: HealthCheckConfigInsufficientDataHealthStatus;
-		ResetElements?: Array<ResettableElementName>;
+		AlarmIdentifier?: AlarmIdentifier | null;
+		InsufficientDataHealthStatus?: HealthCheckConfigInsufficientDataHealthStatus | null;
+		ResetElements?: Array<ResettableElementName> | null;
 	}
 
 
 	/** A request to update the comment for a hosted zone. */
 	export interface UpdateHostedZoneCommentRequest {
-		Comment?: string;
+		Comment?: string | null;
 	}
 
 
@@ -1438,7 +1438,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {void} Success
 		 */
-		ListHealthChecks(marker: string, maxitems: string, MaxItems: string, Marker: string): Observable<HttpResponse<string>> {
+		ListHealthChecks(marker: string | null | undefined, maxitems: string | null | undefined, MaxItems: string | null | undefined, Marker: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/healthcheck?marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1452,7 +1452,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {void} Success
 		 */
-		ListHostedZones(marker: string, maxitems: string, delegationsetid: string, MaxItems: string, Marker: string): Observable<HttpResponse<string>> {
+		ListHostedZones(marker: string | null | undefined, maxitems: string | null | undefined, delegationsetid: string | null | undefined, MaxItems: string | null | undefined, Marker: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/hostedzone?marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)) + '&delegationsetid=' + (delegationsetid == null ? '' : encodeURIComponent(delegationsetid)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1466,7 +1466,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {void} Success
 		 */
-		ListQueryLoggingConfigs(hostedzoneid: string, nexttoken: string, maxresults: string, MaxResults: string, NextToken: string): Observable<HttpResponse<string>> {
+		ListQueryLoggingConfigs(hostedzoneid: string | null | undefined, nexttoken: string | null | undefined, maxresults: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/queryloggingconfig?hostedzoneid=' + (hostedzoneid == null ? '' : encodeURIComponent(hostedzoneid)) + '&nexttoken=' + (nexttoken == null ? '' : encodeURIComponent(nexttoken)) + '&maxresults=' + (maxresults == null ? '' : encodeURIComponent(maxresults)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1477,7 +1477,7 @@ export namespace MyNS {
 		 * @param {string} maxitems The number of reusable delegation sets that you want Amazon Route 53 to return in the response to this request. If you specify a value greater than 100, Route 53 returns only the first 100 reusable delegation sets.
 		 * @return {void} Success
 		 */
-		ListReusableDelegationSets(marker: string, maxitems: string): Observable<HttpResponse<string>> {
+		ListReusableDelegationSets(marker: string | null | undefined, maxitems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/delegationset?marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1489,7 +1489,7 @@ export namespace MyNS {
 		 * @param {string} maxresults  <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return. If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.
 		 * @return {void} Success
 		 */
-		ListVPCAssociationAuthorizations(Id: string, nexttoken: string, maxresults: string): Observable<HttpResponse<string>> {
+		ListVPCAssociationAuthorizations(Id: string, nexttoken: string | null | undefined, maxresults: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/hostedzone/' + (Id == null ? '' : encodeURIComponent(Id)) + '/authorizevpcassociation&nexttoken=' + (nexttoken == null ? '' : encodeURIComponent(nexttoken)) + '&maxresults=' + (maxresults == null ? '' : encodeURIComponent(maxresults)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1652,7 +1652,7 @@ export namespace MyNS {
 		 * @param {string} subdivisioncode <p>For <code>SubdivisionCode</code>, Amazon Route 53 supports only states of the United States. For a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. </p> <p>If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for <code>CountryCode</code>. </p>
 		 * @return {void} Success
 		 */
-		GetGeoLocation(continentcode: string, countrycode: string, subdivisioncode: string): Observable<HttpResponse<string>> {
+		GetGeoLocation(continentcode: string | null | undefined, countrycode: string | null | undefined, subdivisioncode: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/geolocation?continentcode=' + (continentcode == null ? '' : encodeURIComponent(continentcode)) + '&countrycode=' + (countrycode == null ? '' : encodeURIComponent(countrycode)) + '&subdivisioncode=' + (subdivisioncode == null ? '' : encodeURIComponent(subdivisioncode)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1734,7 +1734,7 @@ export namespace MyNS {
 		 * @param {string} maxitems (Optional) The maximum number of geolocations to be included in the response body for this request. If more than <code>maxitems</code> geolocations remain to be listed, then the value of the <code>IsTruncated</code> element in the response is <code>true</code>.
 		 * @return {void} Success
 		 */
-		ListGeoLocations(startcontinentcode: string, startcountrycode: string, startsubdivisioncode: string, maxitems: string): Observable<HttpResponse<string>> {
+		ListGeoLocations(startcontinentcode: string | null | undefined, startcountrycode: string | null | undefined, startsubdivisioncode: string | null | undefined, maxitems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/geolocations?startcontinentcode=' + (startcontinentcode == null ? '' : encodeURIComponent(startcontinentcode)) + '&startcountrycode=' + (startcountrycode == null ? '' : encodeURIComponent(startcountrycode)) + '&startsubdivisioncode=' + (startsubdivisioncode == null ? '' : encodeURIComponent(startsubdivisioncode)) + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1746,7 +1746,7 @@ export namespace MyNS {
 		 * @param {string} maxitems The maximum number of hosted zones to be included in the response body for this request. If you have more than <code>maxitems</code> hosted zones, then the value of the <code>IsTruncated</code> element in the response is true, and the values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> specify the first hosted zone in the next group of <code>maxitems</code> hosted zones. 
 		 * @return {void} Success
 		 */
-		ListHostedZonesByName(dnsname: string, hostedzoneid: string, maxitems: string): Observable<HttpResponse<string>> {
+		ListHostedZonesByName(dnsname: string | null | undefined, hostedzoneid: string | null | undefined, maxitems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/hostedzonesbyname?dnsname=' + (dnsname == null ? '' : encodeURIComponent(dnsname)) + '&hostedzoneid=' + (hostedzoneid == null ? '' : encodeURIComponent(hostedzoneid)) + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1764,7 +1764,7 @@ export namespace MyNS {
 		 * @param {string} StartRecordIdentifier Pagination token
 		 * @return {void} Success
 		 */
-		ListResourceRecordSets(Id: string, name: string, type: ResourceRecordSetType, identifier: string, maxitems: string, MaxItems: string, StartRecordName: string, StartRecordType: string, StartRecordIdentifier: string): Observable<HttpResponse<string>> {
+		ListResourceRecordSets(Id: string, name: string | null | undefined, type: ResourceRecordSetType | null | undefined, identifier: string | null | undefined, maxitems: string | null | undefined, MaxItems: string | null | undefined, StartRecordName: string | null | undefined, StartRecordType: string | null | undefined, StartRecordIdentifier: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/hostedzone/' + (Id == null ? '' : encodeURIComponent(Id)) + '/rrset&name=' + (name == null ? '' : encodeURIComponent(name)) + '&type=' + type + '&identifier=' + (identifier == null ? '' : encodeURIComponent(identifier)) + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)) + '&StartRecordName=' + (StartRecordName == null ? '' : encodeURIComponent(StartRecordName)) + '&StartRecordType=' + (StartRecordType == null ? '' : encodeURIComponent(StartRecordType)) + '&StartRecordIdentifier=' + (StartRecordIdentifier == null ? '' : encodeURIComponent(StartRecordIdentifier)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1775,7 +1775,7 @@ export namespace MyNS {
 		 * @param {string} maxitems (Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to this request. If you have more than <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that Route 53 will return if you submit another request.
 		 * @return {void} Success
 		 */
-		ListTrafficPolicies(trafficpolicyid: string, maxitems: string): Observable<HttpResponse<string>> {
+		ListTrafficPolicies(trafficpolicyid: string | null | undefined, maxitems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/trafficpolicies?trafficpolicyid=' + (trafficpolicyid == null ? '' : encodeURIComponent(trafficpolicyid)) + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1788,7 +1788,7 @@ export namespace MyNS {
 		 * @param {string} maxitems The maximum number of traffic policy instances that you want Amazon Route 53 to return in response to a <code>ListTrafficPolicyInstances</code> request. If you have more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
 		 * @return {void} Success
 		 */
-		ListTrafficPolicyInstances(hostedzoneid: string, trafficpolicyinstancename: string, trafficpolicyinstancetype: ResourceRecordSetType, maxitems: string): Observable<HttpResponse<string>> {
+		ListTrafficPolicyInstances(hostedzoneid: string | null | undefined, trafficpolicyinstancename: string | null | undefined, trafficpolicyinstancetype: ResourceRecordSetType | null | undefined, maxitems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/trafficpolicyinstances?hostedzoneid=' + (hostedzoneid == null ? '' : encodeURIComponent(hostedzoneid)) + '&trafficpolicyinstancename=' + (trafficpolicyinstancename == null ? '' : encodeURIComponent(trafficpolicyinstancename)) + '&trafficpolicyinstancetype=' + trafficpolicyinstancetype + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1801,7 +1801,7 @@ export namespace MyNS {
 		 * @param {string} maxitems The maximum number of traffic policy instances to be included in the response body for this request. If you have more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance that Amazon Route 53 will return if you submit another request.
 		 * @return {void} Success
 		 */
-		ListTrafficPolicyInstancesByHostedZone(id: string, trafficpolicyinstancename: string, trafficpolicyinstancetype: ResourceRecordSetType, maxitems: string): Observable<HttpResponse<string>> {
+		ListTrafficPolicyInstancesByHostedZone(id: string, trafficpolicyinstancename: string | null | undefined, trafficpolicyinstancetype: ResourceRecordSetType | null | undefined, maxitems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/trafficpolicyinstances/hostedzone#id?id=' + (id == null ? '' : encodeURIComponent(id)) + '&trafficpolicyinstancename=' + (trafficpolicyinstancename == null ? '' : encodeURIComponent(trafficpolicyinstancename)) + '&trafficpolicyinstancetype=' + trafficpolicyinstancetype + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1816,7 +1816,7 @@ export namespace MyNS {
 		 * @param {string} maxitems The maximum number of traffic policy instances to be included in the response body for this request. If you have more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance that Amazon Route 53 will return if you submit another request.
 		 * @return {void} Success
 		 */
-		ListTrafficPolicyInstancesByPolicy(id: string, version: number, hostedzoneid: string, trafficpolicyinstancename: string, trafficpolicyinstancetype: ResourceRecordSetType, maxitems: string): Observable<HttpResponse<string>> {
+		ListTrafficPolicyInstancesByPolicy(id: string, version: number, hostedzoneid: string | null | undefined, trafficpolicyinstancename: string | null | undefined, trafficpolicyinstancetype: ResourceRecordSetType | null | undefined, maxitems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/trafficpolicyinstances/trafficpolicy#id&version?id=' + (id == null ? '' : encodeURIComponent(id)) + '&version=' + version + '&hostedzoneid=' + (hostedzoneid == null ? '' : encodeURIComponent(hostedzoneid)) + '&trafficpolicyinstancename=' + (trafficpolicyinstancename == null ? '' : encodeURIComponent(trafficpolicyinstancename)) + '&trafficpolicyinstancetype=' + trafficpolicyinstancetype + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1828,7 +1828,7 @@ export namespace MyNS {
 		 * @param {string} maxitems The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response body for this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of the <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return if you submit another request.
 		 * @return {void} Success
 		 */
-		ListTrafficPolicyVersions(Id: string, trafficpolicyversion: string, maxitems: string): Observable<HttpResponse<string>> {
+		ListTrafficPolicyVersions(Id: string, trafficpolicyversion: string | null | undefined, maxitems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/trafficpolicies/' + (Id == null ? '' : encodeURIComponent(Id)) + '/versions&trafficpolicyversion=' + (trafficpolicyversion == null ? '' : encodeURIComponent(trafficpolicyversion)) + '&maxitems=' + (maxitems == null ? '' : encodeURIComponent(maxitems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1843,7 +1843,7 @@ export namespace MyNS {
 		 * @param {string} edns0clientsubnetmask <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.</p> <p>The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6 address:</p> <ul> <li> <p> <b>IPv4</b>: Specify a value between 0 and 32</p> </li> <li> <p> <b>IPv6</b>: Specify a value between 0 and 128</p> </li> </ul>
 		 * @return {void} Success
 		 */
-		TestDNSAnswer(hostedzoneid: string, recordname: string, recordtype: ResourceRecordSetType, resolverip: string, edns0clientsubnetip: string, edns0clientsubnetmask: string): Observable<HttpResponse<string>> {
+		TestDNSAnswer(hostedzoneid: string, recordname: string, recordtype: ResourceRecordSetType, resolverip: string | null | undefined, edns0clientsubnetip: string | null | undefined, edns0clientsubnetmask: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2013-04-01/testdnsanswer#hostedzoneid&recordname&recordtype?hostedzoneid=' + (hostedzoneid == null ? '' : encodeURIComponent(hostedzoneid)) + '&recordname=' + (recordname == null ? '' : encodeURIComponent(recordname)) + '&recordtype=' + recordtype + '&resolverip=' + (resolverip == null ? '' : encodeURIComponent(resolverip)) + '&edns0clientsubnetip=' + (edns0clientsubnetip == null ? '' : encodeURIComponent(edns0clientsubnetip)) + '&edns0clientsubnetmask=' + (edns0clientsubnetmask == null ? '' : encodeURIComponent(edns0clientsubnetmask)), { observe: 'response', responseType: 'text' });
 		}
 	}

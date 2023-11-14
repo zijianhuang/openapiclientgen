@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface Employees {
-		Employees1?: Array<Employee>;
+		Employees1?: Array<Employee> | null;
 	}
 
 	export interface Employee {
@@ -25,74 +25,74 @@ export namespace MyNS {
 		 * Required
 		 */
 		DateOfBirth: string;
-		HomeAddress?: HomeAddress;
+		HomeAddress?: HomeAddress | null;
 
 		/** Start date for an employee (YYYY-MM-DD) */
-		StartDate?: string;
+		StartDate?: string | null;
 
 		/** Title of the employee */
-		Title?: string;
+		Title?: string | null;
 
 		/** Middle name(s) of the employee */
-		MiddleNames?: string;
+		MiddleNames?: string | null;
 
 		/** The email address for the employee */
-		Email?: string;
+		Email?: string | null;
 
 		/** The employee’s gender. See Employee Gender */
-		Gender?: EmployeeGender;
+		Gender?: EmployeeGender | null;
 
 		/** Employee phone number */
-		Phone?: string;
+		Phone?: string | null;
 
 		/** Employee mobile number */
-		Mobile?: string;
+		Mobile?: string | null;
 
 		/** Employee’s twitter name */
-		TwitterUserName?: string;
+		TwitterUserName?: string | null;
 
 		/** Authorised to approve other employees' leave requests */
-		IsAuthorisedToApproveLeave?: boolean;
+		IsAuthorisedToApproveLeave?: boolean | null;
 
 		/** Authorised to approve timesheets */
-		IsAuthorisedToApproveTimesheets?: boolean;
+		IsAuthorisedToApproveTimesheets?: boolean | null;
 
 		/** JobTitle of the employee */
-		JobTitle?: string;
+		JobTitle?: string | null;
 
 		/** Employees classification */
-		Classification?: string;
+		Classification?: string | null;
 
 		/** Xero unique identifier for earnings rate */
-		OrdinaryEarningsRateID?: string;
+		OrdinaryEarningsRateID?: string | null;
 
 		/** Xero unique identifier for payroll calendar for the employee */
-		PayrollCalendarID?: string;
+		PayrollCalendarID?: string | null;
 
 		/** The Employee Group allows you to report on payroll expenses and liabilities for each group of employees */
-		EmployeeGroupName?: string;
+		EmployeeGroupName?: string | null;
 
 		/** Xero unique identifier for an Employee */
-		EmployeeID?: string;
+		EmployeeID?: string | null;
 
 		/** Employee Termination Date (YYYY-MM-DD) */
-		TerminationDate?: string;
-		BankAccounts?: Array<BankAccount>;
-		PayTemplate?: PayTemplate;
-		OpeningBalances?: OpeningBalances;
-		TaxDeclaration?: TaxDeclaration;
-		LeaveBalances?: Array<LeaveBalance>;
-		LeaveLines?: Array<LeaveLine>;
-		SuperMemberships?: Array<SuperMembership>;
+		TerminationDate?: string | null;
+		BankAccounts?: Array<BankAccount> | null;
+		PayTemplate?: PayTemplate | null;
+		OpeningBalances?: OpeningBalances | null;
+		TaxDeclaration?: TaxDeclaration | null;
+		LeaveBalances?: Array<LeaveBalance> | null;
+		LeaveLines?: Array<LeaveLine> | null;
+		SuperMemberships?: Array<SuperMembership> | null;
 
 		/** Employee Status Types */
-		Status?: EmployeeStatus;
+		Status?: EmployeeStatus | null;
 
 		/** Last modified timestamp */
-		UpdatedDateUTC?: string;
+		UpdatedDateUTC?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError>;
+		ValidationErrors?: Array<ValidationError> | null;
 	}
 
 	export interface HomeAddress {
@@ -104,19 +104,19 @@ export namespace MyNS {
 		AddressLine1: string;
 
 		/** Address line 2 for employee home address */
-		AddressLine2?: string;
+		AddressLine2?: string | null;
 
 		/** Suburb for employee home address */
-		City?: string;
+		City?: string | null;
 
 		/** State abbreviation for employee home address */
-		Region?: HomeAddressRegion;
+		Region?: HomeAddressRegion | null;
 
 		/** PostCode for employee home address */
-		PostalCode?: string;
+		PostalCode?: string | null;
 
 		/** Country of HomeAddress */
-		Country?: string;
+		Country?: string | null;
 	}
 
 	export enum HomeAddressRegion { ACT = 0, NSW = 1, NT = 2, QLD = 3, SA = 4, TAS = 5, VIC = 6, WA = 7 }
@@ -126,30 +126,30 @@ export namespace MyNS {
 	export interface BankAccount {
 
 		/** The text that will appear on your employee's bank statement when they receive payment */
-		StatementText?: string;
+		StatementText?: string | null;
 
 		/** The name of the account */
-		AccountName?: string;
+		AccountName?: string | null;
 
 		/** The BSB number of the account */
-		BSB?: string;
+		BSB?: string | null;
 
 		/** The account number */
-		AccountNumber?: string;
+		AccountNumber?: string | null;
 
 		/** If this account is the Remaining bank account */
-		Remainder?: boolean;
+		Remainder?: boolean | null;
 
 		/** Fixed amounts (for example, if an employee wants to have $100 of their salary transferred to one account, and the remaining amount to another) */
-		Amount?: number;
+		Amount?: number | null;
 	}
 
 	export interface PayTemplate {
-		EarningsLines?: Array<EarningsLine>;
-		DeductionLines?: Array<DeductionLine>;
-		SuperLines?: Array<SuperLine>;
-		ReimbursementLines?: Array<ReimbursementLine>;
-		LeaveLines?: Array<LeaveLine>;
+		EarningsLines?: Array<EarningsLine> | null;
+		DeductionLines?: Array<DeductionLine> | null;
+		SuperLines?: Array<SuperLine> | null;
+		ReimbursementLines?: Array<ReimbursementLine> | null;
+		LeaveLines?: Array<LeaveLine> | null;
 	}
 
 	export interface EarningsLine {
@@ -162,25 +162,25 @@ export namespace MyNS {
 		CalculationType: EarningsLineCalculationType;
 
 		/** Annual salary for earnings line */
-		AnnualSalary?: number;
+		AnnualSalary?: number | null;
 
 		/** number of units for earning line */
-		NumberOfUnitsPerWeek?: number;
+		NumberOfUnitsPerWeek?: number | null;
 
 		/** Rate per unit of the EarningsLine. */
-		RatePerUnit?: number;
+		RatePerUnit?: number | null;
 
 		/** Normal number of units for EarningsLine. Applicable when RateType is "MULTIPLE" */
-		NormalNumberOfUnits?: number;
+		NormalNumberOfUnits?: number | null;
 
 		/** Earnings rate amount */
-		Amount?: number;
+		Amount?: number | null;
 
 		/** Earnings rate number of units. */
-		NumberOfUnits?: number;
+		NumberOfUnits?: number | null;
 
 		/** Earnings rate amount. Only applicable if the EarningsRate RateType is Fixed */
-		FixedAmount?: number;
+		FixedAmount?: number | null;
 	}
 
 	export enum EarningsLineCalculationType { USEEARNINGSRATE = 0, ENTEREARNINGSRATE = 1, ANNUALSALARY = 2 }
@@ -195,13 +195,13 @@ export namespace MyNS {
 		CalculationType: DeductionLineCalculationType;
 
 		/** Deduction type amount */
-		Amount?: number;
+		Amount?: number | null;
 
 		/** The Percentage of the Deduction */
-		Percentage?: number;
+		Percentage?: number | null;
 
 		/** Deduction number of units */
-		NumberOfUnits?: number;
+		NumberOfUnits?: number | null;
 	}
 
 	export enum DeductionLineCalculationType { FIXEDAMOUNT = 0, PRETAX = 1, POSTTAX = 2 }
@@ -209,24 +209,24 @@ export namespace MyNS {
 	export interface SuperLine {
 
 		/** Xero super membership ID */
-		SuperMembershipID?: string;
-		ContributionType?: SuperLineContributionType;
-		CalculationType?: SuperLineCalculationType;
+		SuperMembershipID?: string | null;
+		ContributionType?: SuperLineContributionType | null;
+		CalculationType?: SuperLineCalculationType | null;
 
 		/** amount of mimimum earnings */
-		MinimumMonthlyEarnings?: number;
+		MinimumMonthlyEarnings?: number | null;
 
 		/** expense account code */
-		ExpenseAccountCode?: string;
+		ExpenseAccountCode?: string | null;
 
 		/** liabilty account code */
-		LiabilityAccountCode?: string;
+		LiabilityAccountCode?: string | null;
 
 		/** percentage for super line */
-		Percentage?: number;
+		Percentage?: number | null;
 
 		/** Super membership amount */
-		Amount?: number;
+		Amount?: number | null;
 	}
 
 	export enum SuperLineContributionType { SGC = 0, SALARYSACRIFICE = 1, EMPLOYERADDITIONAL = 2, EMPLOYEE = 3 }
@@ -236,36 +236,36 @@ export namespace MyNS {
 	export interface ReimbursementLine {
 
 		/** Xero reimbursement type identifier */
-		ReimbursementTypeID?: string;
+		ReimbursementTypeID?: string | null;
 
 		/** Reimbursement type amount */
-		Amount?: number;
+		Amount?: number | null;
 
 		/**
 		 * Reimbursement lines description (max length 50)
 		 * Max length: 50
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/** Reimbursement expense account. For posted pay run you should be able to see expense account code. */
-		ExpenseAccount?: string;
+		ExpenseAccount?: string | null;
 	}
 
 	export interface LeaveLine {
 
 		/** Xero leave type identifier */
-		LeaveTypeID?: string;
+		LeaveTypeID?: string | null;
 
 		/** Calculation type for leave line for Opening Balance on Employee */
-		CalculationType?: LeaveLineCalculationType;
-		EntitlementFinalPayPayoutType?: LeaveLineEntitlementFinalPayPayoutType;
-		EmploymentTerminationPaymentType?: LeaveLineEmploymentTerminationPaymentType;
+		CalculationType?: LeaveLineCalculationType | null;
+		EntitlementFinalPayPayoutType?: LeaveLineEntitlementFinalPayPayoutType | null;
+		EmploymentTerminationPaymentType?: LeaveLineEmploymentTerminationPaymentType | null;
 
 		/** amount of leave line */
-		IncludeSuperannuationGuaranteeContribution?: boolean;
+		IncludeSuperannuationGuaranteeContribution?: boolean | null;
 
 		/** Leave number of units */
-		NumberOfUnits?: number;
+		NumberOfUnits?: number | null;
 	}
 
 	export enum LeaveLineCalculationType { NOCALCULATIONREQUIRED = 0, FIXEDAMOUNTEACHPERIOD = 1, ENTERRATEINPAYTEMPLATE = 2, BASEDONORDINARYEARNINGS = 3, _ = 4 }
@@ -277,15 +277,15 @@ export namespace MyNS {
 	export interface OpeningBalances {
 
 		/** Opening Balance Date. (YYYY-MM-DD) */
-		OpeningBalanceDate?: string;
+		OpeningBalanceDate?: string | null;
 
 		/** Opening Balance tax */
-		Tax?: string;
-		EarningsLines?: Array<EarningsLine>;
-		DeductionLines?: Array<DeductionLine>;
-		SuperLines?: Array<SuperLine>;
-		ReimbursementLines?: Array<ReimbursementLine>;
-		LeaveLines?: Array<LeaveLine>;
+		Tax?: string | null;
+		EarningsLines?: Array<EarningsLine> | null;
+		DeductionLines?: Array<DeductionLine> | null;
+		SuperLines?: Array<SuperLine> | null;
+		ReimbursementLines?: Array<ReimbursementLine> | null;
+		LeaveLines?: Array<LeaveLine> | null;
 	}
 
 	export interface TaxDeclaration {
@@ -296,44 +296,44 @@ export namespace MyNS {
 		 */
 		EmployeeID: string;
 		EmploymentBasis: TaxDeclarationEmploymentBasis;
-		TFNExemptionType?: TaxDeclarationTFNExemptionType;
+		TFNExemptionType?: TaxDeclarationTFNExemptionType | null;
 
 		/** The tax file number e.g 123123123. */
-		TaxFileNumber?: string;
+		TaxFileNumber?: string | null;
 
 		/** If the employee is Australian resident for tax purposes. e.g true or false */
-		AustralianResidentForTaxPurposes?: boolean;
-		ResidencyStatus?: TaxDeclarationResidencyStatus;
+		AustralianResidentForTaxPurposes?: boolean | null;
+		ResidencyStatus?: TaxDeclarationResidencyStatus | null;
 
 		/** If tax free threshold claimed. e.g true or false */
-		TaxFreeThresholdClaimed?: boolean;
+		TaxFreeThresholdClaimed?: boolean | null;
 
 		/** If has tax offset estimated then the tax offset estimated amount. e.g 100 */
-		TaxOffsetEstimatedAmount?: string;
+		TaxOffsetEstimatedAmount?: string | null;
 
 		/** If employee has HECS or HELP debt. e.g true or false */
-		HasHELPDebt?: boolean;
+		HasHELPDebt?: boolean | null;
 
 		/** If employee has financial supplement debt. e.g true or false */
-		HasSFSSDebt?: boolean;
+		HasSFSSDebt?: boolean | null;
 
 		/** If employee has trade support loan. e.g true or false */
-		HasTradeSupportLoanDebt?: boolean;
+		HasTradeSupportLoanDebt?: boolean | null;
 
 		/** If the employee has requested that additional tax be withheld each pay run. e.g 50 */
-		UpwardVariationTaxWithholdingAmount?: string;
+		UpwardVariationTaxWithholdingAmount?: string | null;
 
 		/** If the employee is eligible to receive an additional percentage on top of ordinary earnings when they take leave (typically 17.5%). e.g true or false */
-		EligibleToReceiveLeaveLoading?: boolean;
+		EligibleToReceiveLeaveLoading?: boolean | null;
 
 		/** If the employee has approved withholding variation. e.g (0 - 100) */
-		ApprovedWithholdingVariationPercentage?: string;
+		ApprovedWithholdingVariationPercentage?: string | null;
 
 		/** If the employee is eligible for student startup loan rules */
-		HasStudentStartupLoan?: boolean;
+		HasStudentStartupLoan?: boolean | null;
 
 		/** Last modified timestamp */
-		UpdatedDateUTC?: string;
+		UpdatedDateUTC?: string | null;
 	}
 
 	export enum TaxDeclarationEmploymentBasis { FULLTIME = 0, PARTTIME = 1, CASUAL = 2, LABOURHIRE = 3, SUPERINCOMESTREAM = 4 }
@@ -345,22 +345,22 @@ export namespace MyNS {
 	export interface LeaveBalance {
 
 		/** The name of the leave type */
-		LeaveName?: string;
+		LeaveName?: string | null;
 
 		/** Identifier of the leave type (see PayItems) */
-		LeaveTypeID?: string;
+		LeaveTypeID?: string | null;
 
 		/** The balance of the leave available */
-		NumberOfUnits?: number;
+		NumberOfUnits?: number | null;
 
 		/** The type of units as specified by the LeaveType (see PayItems) */
-		TypeOfUnits?: string;
+		TypeOfUnits?: string | null;
 	}
 
 	export interface SuperMembership {
 
 		/** Xero unique identifier for Super membership */
-		SuperMembershipID?: string;
+		SuperMembershipID?: string | null;
 
 		/**
 		 * Xero identifier for super fund
@@ -380,55 +380,55 @@ export namespace MyNS {
 	export interface ValidationError {
 
 		/** Validation error message */
-		Message?: string;
+		Message?: string | null;
 	}
 
 	export interface LeaveApplications {
-		LeaveApplications1?: Array<LeaveApplication>;
+		LeaveApplications1?: Array<LeaveApplication> | null;
 	}
 
 	export interface LeaveApplication {
 
 		/** The Xero identifier for Payroll Employee */
-		LeaveApplicationID?: string;
+		LeaveApplicationID?: string | null;
 
 		/** The Xero identifier for Payroll Employee */
-		EmployeeID?: string;
+		EmployeeID?: string | null;
 
 		/** The Xero identifier for Leave Type */
-		LeaveTypeID?: string;
+		LeaveTypeID?: string | null;
 
 		/** The title of the leave */
-		Title?: string;
+		Title?: string | null;
 
 		/** Start date of the leave (YYYY-MM-DD) */
-		StartDate?: string;
+		StartDate?: string | null;
 
 		/** End date of the leave (YYYY-MM-DD) */
-		EndDate?: string;
+		EndDate?: string | null;
 
 		/** The Description of the Leave */
-		Description?: string;
-		LeavePeriods?: Array<LeavePeriod>;
+		Description?: string | null;
+		LeavePeriods?: Array<LeavePeriod> | null;
 
 		/** Last modified timestamp */
-		UpdatedDateUTC?: string;
+		UpdatedDateUTC?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError>;
+		ValidationErrors?: Array<ValidationError> | null;
 	}
 
 	export interface LeavePeriod {
 
 		/** The Number of Units for the leave */
-		NumberOfUnits?: number;
+		NumberOfUnits?: number | null;
 
 		/** The Pay Period End Date (YYYY-MM-DD) */
-		PayPeriodEndDate?: string;
+		PayPeriodEndDate?: string | null;
 
 		/** The Pay Period Start Date (YYYY-MM-DD) */
-		PayPeriodStartDate?: string;
-		LeavePeriodStatus?: LeavePeriodLeavePeriodStatus;
+		PayPeriodStartDate?: string | null;
+		LeavePeriodStatus?: LeavePeriodLeavePeriodStatus | null;
 	}
 
 	export enum LeavePeriodLeavePeriodStatus { SCHEDULED = 0, PROCESSED = 1 }
@@ -436,14 +436,14 @@ export namespace MyNS {
 	export enum LeavePeriodStatus { SCHEDULED = 0, PROCESSED = 1 }
 
 	export interface PayItems {
-		PayItems1?: PayItem;
+		PayItems1?: PayItem | null;
 	}
 
 	export interface PayItem {
-		EarningsRates?: Array<EarningsRate>;
-		DeductionTypes?: Array<DeductionType>;
-		LeaveTypes?: Array<LeaveType>;
-		ReimbursementTypes?: Array<ReimbursementType>;
+		EarningsRates?: Array<EarningsRate> | null;
+		DeductionTypes?: Array<DeductionType> | null;
+		LeaveTypes?: Array<LeaveType> | null;
+		ReimbursementTypes?: Array<ReimbursementType> | null;
 	}
 
 	export interface EarningsRate {
@@ -452,50 +452,50 @@ export namespace MyNS {
 		 * Name of the earnings rate (max length = 100)
 		 * Max length: 100
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/** See Accounts */
-		AccountCode?: string;
+		AccountCode?: string | null;
 
 		/**
 		 * Type of units used to record earnings (max length = 50). Only When RateType is RATEPERUNIT
 		 * Max length: 50
 		 */
-		TypeOfUnits?: string;
+		TypeOfUnits?: string | null;
 
 		/** Most payments are subject to tax, so you should only set this value if you are sure that a payment is exempt from PAYG withholding */
-		IsExemptFromTax?: boolean;
+		IsExemptFromTax?: boolean | null;
 
 		/** See the ATO website for details of which payments are exempt from SGC */
-		IsExemptFromSuper?: boolean;
+		IsExemptFromSuper?: boolean | null;
 
 		/** Boolean to determine if the earnings rate is reportable or exempt from W1 */
-		IsReportableAsW1?: boolean;
-		EarningsType?: EarningsRateEarningsType;
+		IsReportableAsW1?: boolean | null;
+		EarningsType?: EarningsRateEarningsType | null;
 
 		/** Xero identifier */
-		EarningsRateID?: string;
-		RateType?: EarningsRateRateType;
+		EarningsRateID?: string | null;
+		RateType?: EarningsRateRateType | null;
 
 		/** Default rate per unit (optional). Only applicable if RateType is RATEPERUNIT. */
-		RatePerUnit?: string;
+		RatePerUnit?: string | null;
 
 		/** This is the multiplier used to calculate the rate per unit, based on the employee’s ordinary earnings rate. For example, for time and a half enter 1.5. Only applicable if RateType is MULTIPLE */
-		Multiplier?: number;
+		Multiplier?: number | null;
 
 		/** Indicates that this earnings rate should accrue leave. Only applicable if RateType is MULTIPLE */
-		AccrueLeave?: boolean;
+		AccrueLeave?: boolean | null;
 
 		/** Optional Amount for FIXEDAMOUNT RateType EarningsRate */
-		Amount?: number;
-		EmploymentTerminationPaymentType?: LeaveLineEmploymentTerminationPaymentType;
+		Amount?: number | null;
+		EmploymentTerminationPaymentType?: LeaveLineEmploymentTerminationPaymentType | null;
 
 		/** Last modified timestamp */
-		UpdatedDateUTC?: string;
+		UpdatedDateUTC?: string | null;
 
 		/** Is the current record */
-		CurrentRecord?: boolean;
-		AllowanceType?: EarningsRateAllowanceType;
+		CurrentRecord?: boolean | null;
+		AllowanceType?: EarningsRateAllowanceType | null;
 	}
 
 	export enum EarningsRateEarningsType { FIXED = 0, ORDINARYTIMEEARNINGS = 1, OVERTIMEEARNINGS = 2, ALLOWANCE = 3, LUMPSUMD = 4, EMPLOYMENTTERMINATIONPAYMENT = 5, LUMPSUMA = 6, LUMPSUMB = 7 }
@@ -510,29 +510,29 @@ export namespace MyNS {
 		 * Name of the earnings rate (max length = 100)
 		 * Max length: 100
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/** See Accounts */
-		AccountCode?: string;
+		AccountCode?: string | null;
 
 		/** Indicates that this is a pre-tax deduction that will reduce the amount of tax you withhold from an employee. */
-		ReducesTax?: boolean;
+		ReducesTax?: boolean | null;
 
 		/** Most deductions don’t reduce your superannuation guarantee contribution liability, so typically you will not set any value for this. */
-		ReducesSuper?: boolean;
+		ReducesSuper?: boolean | null;
 
 		/** Boolean to determine if the deduction type is reportable or exempt from W1 */
-		IsExemptFromW1?: boolean;
+		IsExemptFromW1?: boolean | null;
 
 		/** Xero identifier */
-		DeductionTypeID?: string;
+		DeductionTypeID?: string | null;
 
 		/** Last modified timestamp */
-		UpdatedDateUTC?: string;
-		DeductionCategory?: DeductionTypeDeductionCategory;
+		UpdatedDateUTC?: string | null;
+		DeductionCategory?: DeductionTypeDeductionCategory | null;
 
 		/** Is the current record */
-		CurrentRecord?: boolean;
+		CurrentRecord?: boolean | null;
 	}
 
 	export enum DeductionTypeDeductionCategory { NONE = 0, UNIONFEES = 1, WORKPLACEGIVING = 2 }
@@ -543,31 +543,31 @@ export namespace MyNS {
 		 * Name of the earnings rate (max length = 100)
 		 * Max length: 100
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/** The type of units by which leave entitlements are normally tracked. These are typically the same as the type of units used for the employee’s ordinary earnings rate */
-		TypeOfUnits?: string;
+		TypeOfUnits?: string | null;
 
 		/** Xero identifier */
-		LeaveTypeID?: string;
+		LeaveTypeID?: string | null;
 
 		/** The number of units the employee is entitled to each year */
-		NormalEntitlement?: number;
+		NormalEntitlement?: number | null;
 
 		/** Enter an amount here if your organisation pays an additional percentage on top of ordinary earnings when your employees take leave (typically 17.5%) */
-		LeaveLoadingRate?: number;
+		LeaveLoadingRate?: number | null;
 
 		/** Last modified timestamp */
-		UpdatedDateUTC?: string;
+		UpdatedDateUTC?: string | null;
 
 		/** Set this to indicate that an employee will be paid when taking this type of leave */
-		IsPaidLeave?: boolean;
+		IsPaidLeave?: boolean | null;
 
 		/** Set this if you want a balance for this leave type to be shown on your employee’s payslips */
-		ShowOnPayslip?: boolean;
+		ShowOnPayslip?: boolean | null;
 
 		/** Is the current record */
-		CurrentRecord?: boolean;
+		CurrentRecord?: boolean | null;
 	}
 
 	export interface ReimbursementType {
@@ -576,51 +576,51 @@ export namespace MyNS {
 		 * Name of the earnings rate (max length = 100)
 		 * Max length: 100
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/** See Accounts */
-		AccountCode?: string;
+		AccountCode?: string | null;
 
 		/** Xero identifier */
-		ReimbursementTypeID?: string;
+		ReimbursementTypeID?: string | null;
 
 		/** Last modified timestamp */
-		UpdatedDateUTC?: string;
+		UpdatedDateUTC?: string | null;
 
 		/** Is the current record */
-		CurrentRecord?: boolean;
+		CurrentRecord?: boolean | null;
 	}
 
 	export interface PayrollCalendars {
-		PayrollCalendars1?: Array<PayrollCalendar>;
+		PayrollCalendars1?: Array<PayrollCalendar> | null;
 	}
 
 	export interface PayrollCalendar {
 
 		/** Name of the Payroll Calendar */
-		Name?: string;
-		CalendarType?: PayrollCalendarCalendarType;
+		Name?: string | null;
+		CalendarType?: PayrollCalendarCalendarType | null;
 
 		/** The start date of the upcoming pay period. The end date will be calculated based upon this date, and the calendar type selected (YYYY-MM-DD) */
-		StartDate?: string;
+		StartDate?: string | null;
 
 		/** The date on which employees will be paid for the upcoming pay period (YYYY-MM-DD) */
-		PaymentDate?: string;
+		PaymentDate?: string | null;
 
 		/** Xero identifier */
-		PayrollCalendarID?: string;
+		PayrollCalendarID?: string | null;
 
 		/** Last modified timestamp */
-		UpdatedDateUTC?: string;
+		UpdatedDateUTC?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError>;
+		ValidationErrors?: Array<ValidationError> | null;
 	}
 
 	export enum PayrollCalendarCalendarType { WEEKLY = 0, FORTNIGHTLY = 1, FOURWEEKLY = 2, MONTHLY = 3, TWICEMONTHLY = 4, QUARTERLY = 5 }
 
 	export interface Timesheets {
-		Timesheets1?: Array<Timesheet>;
+		Timesheets1?: Array<Timesheet> | null;
 	}
 
 	export interface Timesheet {
@@ -642,20 +642,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		EndDate: string;
-		Status?: TimesheetStatus;
+		Status?: TimesheetStatus | null;
 
 		/** Timesheet total hours */
-		Hours?: number;
+		Hours?: number | null;
 
 		/** The Xero identifier for a Payroll Timesheet */
-		TimesheetID?: string;
-		TimesheetLines?: Array<TimesheetLine>;
+		TimesheetID?: string | null;
+		TimesheetLines?: Array<TimesheetLine> | null;
 
 		/** Last modified timestamp */
-		UpdatedDateUTC?: string;
+		UpdatedDateUTC?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError>;
+		ValidationErrors?: Array<ValidationError> | null;
 	}
 
 	export enum TimesheetStatus { DRAFT = 0, PROCESSED = 1, APPROVED = 2 }
@@ -663,24 +663,24 @@ export namespace MyNS {
 	export interface TimesheetLine {
 
 		/** The Xero identifier for an Earnings Rate */
-		EarningsRateID?: string;
+		EarningsRateID?: string | null;
 
 		/** The Xero identifier for a Tracking Category. The TrackingOptionID must belong to the TrackingCategory selected as TimesheetCategories under Payroll Settings. */
-		TrackingItemID?: string;
+		TrackingItemID?: string | null;
 
 		/** The number of units on a timesheet line */
-		NumberOfUnits?: Array<number>;
+		NumberOfUnits?: Array<number> | null;
 
 		/** Last modified timestamp */
-		UpdatedDateUTC?: string;
+		UpdatedDateUTC?: string | null;
 	}
 
 	export interface TimesheetObject {
-		Timesheet?: Timesheet;
+		Timesheet?: Timesheet | null;
 	}
 
 	export interface PayRuns {
-		PayRuns1?: Array<PayRun>;
+		PayRuns1?: Array<PayRun> | null;
 	}
 
 	export interface PayRun {
@@ -692,47 +692,47 @@ export namespace MyNS {
 		PayrollCalendarID: string;
 
 		/** Xero identifier for pay run */
-		PayRunID?: string;
+		PayRunID?: string | null;
 
 		/** Period Start Date for the PayRun (YYYY-MM-DD) */
-		PayRunPeriodStartDate?: string;
+		PayRunPeriodStartDate?: string | null;
 
 		/** Period End Date for the PayRun (YYYY-MM-DD) */
-		PayRunPeriodEndDate?: string;
-		PayRunStatus?: PayRunPayRunStatus;
+		PayRunPeriodEndDate?: string | null;
+		PayRunStatus?: PayRunPayRunStatus | null;
 
 		/** Payment Date for the PayRun (YYYY-MM-DD) */
-		PaymentDate?: string;
+		PaymentDate?: string | null;
 
 		/** Payslip message for the PayRun */
-		PayslipMessage?: string;
+		PayslipMessage?: string | null;
 
 		/** Last modified timestamp */
-		UpdatedDateUTC?: string;
+		UpdatedDateUTC?: string | null;
 
 		/** The payslips in the payrun */
-		Payslips?: Array<PayslipSummary>;
+		Payslips?: Array<PayslipSummary> | null;
 
 		/** The total Wages for the Payrun */
-		Wages?: number;
+		Wages?: number | null;
 
 		/** The total Deductions for the Payrun */
-		Deductions?: number;
+		Deductions?: number | null;
 
 		/** The total Tax for the Payrun */
-		Tax?: number;
+		Tax?: number | null;
 
 		/** The total Super for the Payrun */
-		Super?: number;
+		Super?: number | null;
 
 		/** The total Reimbursements for the Payrun */
-		Reimbursement?: number;
+		Reimbursement?: number | null;
 
 		/** The total NetPay for the Payrun */
-		NetPay?: number;
+		NetPay?: number | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError>;
+		ValidationErrors?: Array<ValidationError> | null;
 	}
 
 	export enum PayRunPayRunStatus { DRAFT = 0, POSTED = 1 }
@@ -740,205 +740,205 @@ export namespace MyNS {
 	export interface PayslipSummary {
 
 		/** The Xero identifier for an employee */
-		EmployeeID?: string;
+		EmployeeID?: string | null;
 
 		/** Xero identifier for the payslip */
-		PayslipID?: string;
+		PayslipID?: string | null;
 
 		/** First name of employee */
-		FirstName?: string;
+		FirstName?: string | null;
 
 		/** Last name of employee */
-		LastName?: string;
+		LastName?: string | null;
 
 		/** Employee group name */
-		EmployeeGroup?: string;
+		EmployeeGroup?: string | null;
 
 		/** The Wages for the Payslip */
-		Wages?: number;
+		Wages?: number | null;
 
 		/** The Deductions for the Payslip */
-		Deductions?: number;
+		Deductions?: number | null;
 
 		/** The Tax for the Payslip */
-		Tax?: number;
+		Tax?: number | null;
 
 		/** The Super for the Payslip */
-		Super?: number;
+		Super?: number | null;
 
 		/** The Reimbursements for the Payslip */
-		Reimbursements?: number;
+		Reimbursements?: number | null;
 
 		/** The NetPay for the Payslip */
-		NetPay?: number;
+		NetPay?: number | null;
 
 		/** Last modified timestamp */
-		UpdatedDateUTC?: string;
+		UpdatedDateUTC?: string | null;
 	}
 
 	export interface PayslipLines {
-		EarningsLines?: Array<EarningsLine>;
-		LeaveEarningsLines?: Array<LeaveEarningsLine>;
-		TimesheetEarningsLines?: Array<EarningsLine>;
-		DeductionLines?: Array<DeductionLine>;
-		LeaveAccrualLines?: Array<LeaveAccrualLine>;
-		ReimbursementLines?: Array<ReimbursementLine>;
-		SuperannuationLines?: Array<SuperannuationLine>;
-		TaxLines?: Array<TaxLine>;
+		EarningsLines?: Array<EarningsLine> | null;
+		LeaveEarningsLines?: Array<LeaveEarningsLine> | null;
+		TimesheetEarningsLines?: Array<EarningsLine> | null;
+		DeductionLines?: Array<DeductionLine> | null;
+		LeaveAccrualLines?: Array<LeaveAccrualLine> | null;
+		ReimbursementLines?: Array<ReimbursementLine> | null;
+		SuperannuationLines?: Array<SuperannuationLine> | null;
+		TaxLines?: Array<TaxLine> | null;
 	}
 
 	export interface LeaveEarningsLine {
 
 		/** Xero identifier */
-		EarningsRateID?: string;
+		EarningsRateID?: string | null;
 
 		/** Rate per unit of the EarningsLine. */
-		RatePerUnit?: number;
+		RatePerUnit?: number | null;
 
 		/** Earnings rate number of units. */
-		NumberOfUnits?: number;
+		NumberOfUnits?: number | null;
 	}
 
 	export interface LeaveAccrualLine {
 
 		/** Xero identifier for the Leave type. */
-		LeaveTypeID?: string;
+		LeaveTypeID?: string | null;
 
 		/** Leave Accrual number of units */
-		NumberOfUnits?: number;
+		NumberOfUnits?: number | null;
 
 		/** If you want to auto calculate leave. */
-		AutoCalculate?: boolean;
+		AutoCalculate?: boolean | null;
 	}
 
 	export interface SuperannuationLine {
 
 		/** Xero identifier for payroll super fund membership ID. */
-		SuperMembershipID?: string;
-		ContributionType?: SuperLineContributionType;
-		CalculationType?: SuperLineCalculationType;
+		SuperMembershipID?: string | null;
+		ContributionType?: SuperLineContributionType | null;
+		CalculationType?: SuperLineCalculationType | null;
 
 		/** Superannuation minimum monthly earnings. */
-		MinimumMonthlyEarnings?: number;
+		MinimumMonthlyEarnings?: number | null;
 
 		/** Superannuation expense account code. */
-		ExpenseAccountCode?: string;
+		ExpenseAccountCode?: string | null;
 
 		/** Superannuation liability account code */
-		LiabilityAccountCode?: string;
+		LiabilityAccountCode?: string | null;
 
 		/** Superannuation payment date for the current period (YYYY-MM-DD) */
-		PaymentDateForThisPeriod?: string;
+		PaymentDateForThisPeriod?: string | null;
 
 		/** Superannuation percentage */
-		Percentage?: number;
+		Percentage?: number | null;
 
 		/** Superannuation amount */
-		Amount?: number;
+		Amount?: number | null;
 	}
 
 	export interface TaxLine {
 
 		/** Xero identifier for payslip tax line ID. */
-		PayslipTaxLineID?: string;
+		PayslipTaxLineID?: string | null;
 
 		/** The tax line amount */
-		Amount?: number;
+		Amount?: number | null;
 
 		/** Name of the tax type. */
-		TaxTypeName?: string;
+		TaxTypeName?: string | null;
 
 		/** Description of the tax line. */
-		Description?: string;
-		ManualTaxType?: TaxLineManualTaxType;
+		Description?: string | null;
+		ManualTaxType?: TaxLineManualTaxType | null;
 
 		/** The tax line liability account code. For posted pay run you should be able to see liability account code */
-		LiabilityAccount?: string;
+		LiabilityAccount?: string | null;
 	}
 
 	export enum TaxLineManualTaxType { PAYGMANUAL = 0, ETPOMANUAL = 1, ETPRMANUAL = 2 }
 
 	export interface PayslipObject {
-		Payslip?: Payslip;
+		Payslip?: Payslip | null;
 	}
 
 	export interface Payslip {
 
 		/** The Xero identifier for an employee */
-		EmployeeID?: string;
+		EmployeeID?: string | null;
 
 		/** Xero identifier for the payslip */
-		PayslipID?: string;
+		PayslipID?: string | null;
 
 		/** First name of employee */
-		FirstName?: string;
+		FirstName?: string | null;
 
 		/** Last name of employee */
-		LastName?: string;
+		LastName?: string | null;
 
 		/** The Wages for the Payslip */
-		Wages?: number;
+		Wages?: number | null;
 
 		/** The Deductions for the Payslip */
-		Deductions?: number;
+		Deductions?: number | null;
 
 		/** The Tax for the Payslip */
-		Tax?: number;
+		Tax?: number | null;
 
 		/** The Super for the Payslip */
-		Super?: number;
+		Super?: number | null;
 
 		/** The Reimbursements for the Payslip */
-		Reimbursements?: number;
+		Reimbursements?: number | null;
 
 		/** The NetPay for the Payslip */
-		NetPay?: number;
-		EarningsLines?: Array<EarningsLine>;
-		LeaveEarningsLines?: Array<LeaveEarningsLine>;
-		TimesheetEarningsLines?: Array<EarningsLine>;
-		DeductionLines?: Array<DeductionLine>;
-		LeaveAccrualLines?: Array<LeaveAccrualLine>;
-		ReimbursementLines?: Array<ReimbursementLine>;
-		SuperannuationLines?: Array<SuperannuationLine>;
-		TaxLines?: Array<TaxLine>;
+		NetPay?: number | null;
+		EarningsLines?: Array<EarningsLine> | null;
+		LeaveEarningsLines?: Array<LeaveEarningsLine> | null;
+		TimesheetEarningsLines?: Array<EarningsLine> | null;
+		DeductionLines?: Array<DeductionLine> | null;
+		LeaveAccrualLines?: Array<LeaveAccrualLine> | null;
+		ReimbursementLines?: Array<ReimbursementLine> | null;
+		SuperannuationLines?: Array<SuperannuationLine> | null;
+		TaxLines?: Array<TaxLine> | null;
 
 		/** Last modified timestamp */
-		UpdatedDateUTC?: string;
+		UpdatedDateUTC?: string | null;
 	}
 
 	export interface Payslips {
-		Payslips1?: Array<Payslip>;
+		Payslips1?: Array<Payslip> | null;
 	}
 
 	export interface SettingsObject {
-		Settings?: Settings;
+		Settings?: Settings | null;
 	}
 
 	export interface Settings {
 
 		/** Payroll Account details for SuperExpense, SuperLiabilty, WagesExpense, PAYGLiability & WagesPayable. */
-		Accounts?: Array<Account>;
+		Accounts?: Array<Account> | null;
 
 		/** Tracking categories for Employees and Timesheets */
-		TrackingCategories?: SettingsTrackingCategories;
+		TrackingCategories?: SettingsTrackingCategories | null;
 
 		/** Number of days in the Payroll year */
-		DaysInPayrollYear?: number;
+		DaysInPayrollYear?: number | null;
 	}
 
 	export interface Account {
 
 		/** Xero identifier for accounts */
-		AccountID?: string;
+		AccountID?: string | null;
 
 		/** See Account Types */
-		Type?: AccountType;
+		Type?: AccountType | null;
 
 		/** Customer defined account code */
-		Code?: string;
+		Code?: string | null;
 
 		/** Name of account */
-		Name?: string;
+		Name?: string | null;
 	}
 
 	export enum AccountType { BANK = 0, CURRENT = 1, CURRLIAB = 2, DEPRECIATN = 3, DIRECTCOSTS = 4, EQUITY = 5, EXPENSE = 6, FIXED = 7, INVENTORY = 8, LIABILITY = 9, NONCURRENT = 10, OTHERINCOME = 11, OVERHEADS = 12, PREPAYMENT = 13, REVENUE = 14, SALES = 15, TERMLIAB = 16, PAYGLIABILITY = 17, PAYG = 18, SUPERANNUATIONEXPENSE = 19, SUPERANNUATIONLIABILITY = 20, WAGESEXPENSE = 21, WAGESPAYABLELIABILITY = 22 }
@@ -946,105 +946,105 @@ export namespace MyNS {
 	export interface SettingsTrackingCategories {
 
 		/** The tracking category used for employees */
-		EmployeeGroups?: SettingsTrackingCategoriesEmployeeGroups;
+		EmployeeGroups?: SettingsTrackingCategoriesEmployeeGroups | null;
 
 		/** The tracking category used for timesheets */
-		TimesheetCategories?: SettingsTrackingCategoriesTimesheetCategories;
+		TimesheetCategories?: SettingsTrackingCategoriesTimesheetCategories | null;
 	}
 
 	export interface SettingsTrackingCategoriesEmployeeGroups {
 
 		/** The identifier for the tracking category */
-		TrackingCategoryID?: string;
+		TrackingCategoryID?: string | null;
 
 		/** Name of the tracking category */
-		TrackingCategoryName?: string;
+		TrackingCategoryName?: string | null;
 	}
 
 	export interface SettingsTrackingCategoriesTimesheetCategories {
 
 		/** The identifier for the tracking category */
-		TrackingCategoryID?: string;
+		TrackingCategoryID?: string | null;
 
 		/** Name of the tracking category */
-		TrackingCategoryName?: string;
+		TrackingCategoryName?: string | null;
 	}
 
 	export interface SuperFunds {
-		SuperFunds1?: Array<SuperFund>;
+		SuperFunds1?: Array<SuperFund> | null;
 	}
 
 	export interface SuperFund {
 
 		/** Xero identifier for a super fund */
-		SuperFundID?: string;
+		SuperFundID?: string | null;
 		Type: SuperFundType;
 
 		/** Name of the super fund */
-		Name?: string;
+		Name?: string | null;
 
 		/** ABN of the self managed super fund */
-		ABN?: string;
+		ABN?: string | null;
 
 		/** BSB of the self managed super fund */
-		BSB?: string;
+		BSB?: string | null;
 
 		/** The account number for the self managed super fund. */
-		AccountNumber?: string;
+		AccountNumber?: string | null;
 
 		/** The account name for the self managed super fund. */
-		AccountName?: string;
+		AccountName?: string | null;
 
 		/** The electronic service address for the self managed super fund. */
-		ElectronicServiceAddress?: string;
+		ElectronicServiceAddress?: string | null;
 
 		/** Some funds assign a unique number to each employer */
-		EmployerNumber?: string;
+		EmployerNumber?: string | null;
 
 		/** The SPIN of the Regulated SuperFund. This field has been deprecated. It will only be present for legacy superfunds. New superfunds will not have a SPIN value. The USI field should be used instead of SPIN. */
-		SPIN?: string;
+		SPIN?: string | null;
 
 		/** The USI of the Regulated SuperFund */
-		USI?: string;
+		USI?: string | null;
 
 		/** Last modified timestamp */
-		UpdatedDateUTC?: string;
+		UpdatedDateUTC?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError>;
+		ValidationErrors?: Array<ValidationError> | null;
 	}
 
 	export enum SuperFundType { REGULATED = 0, SMSF = 1 }
 
 	export interface SuperFundProducts {
-		SuperFundProducts1?: Array<SuperFundProduct>;
+		SuperFundProducts1?: Array<SuperFundProduct> | null;
 	}
 
 	export interface SuperFundProduct {
 
 		/** The ABN of the Regulated SuperFund */
-		ABN?: string;
+		ABN?: string | null;
 
 		/** The USI of the Regulated SuperFund */
-		USI?: string;
+		USI?: string | null;
 
 		/** The SPIN of the Regulated SuperFund. This field has been deprecated. New superfunds will not have a SPIN value. The USI field should be used instead of SPIN */
-		SPIN?: string;
+		SPIN?: string | null;
 
 		/** The name of the Regulated SuperFund */
-		ProductName?: string;
+		ProductName?: string | null;
 	}
 
 
 	/** The reimbursement type lines */
 	export interface ReimbursementLines {
-		ReimbursementLines1?: Array<ReimbursementLine>;
+		ReimbursementLines1?: Array<ReimbursementLine> | null;
 	}
 
 
 	/** The leave type lines */
 	export interface LeaveLines {
-		Employee?: Array<LeaveLine>;
+		Employee?: Array<LeaveLine> | null;
 	}
 
 	export enum RateType { FIXEDAMOUNT = 0, MULTIPLE = 1, RATEPERUNIT = 2 }
@@ -1090,13 +1090,13 @@ export namespace MyNS {
 	export interface APIException {
 
 		/** The error number */
-		ErrorNumber?: string;
+		ErrorNumber?: string | null;
 
 		/** The type of error */
-		Type?: string;
+		Type?: string | null;
 
 		/** The message describing the error */
-		Message?: string;
+		Message?: string | null;
 	}
 
 	@Injectable()
@@ -1112,7 +1112,7 @@ export namespace MyNS {
 		 * @param {number} page e.g. page=1 – Up to 100 employees will be returned in a single API call
 		 * @return {Employees} search results matching criteria
 		 */
-		GetEmployees(where: string, order: string, page: number): Observable<Employees> {
+		GetEmployees(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<Employees> {
 			return this.http.get<Employees>(this.baseUri + 'Employees?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page, {});
 		}
 
@@ -1154,7 +1154,7 @@ export namespace MyNS {
 		 * @param {number} page e.g. page=1 – Up to 100 objects will be returned in a single API call
 		 * @return {LeaveApplications} search results matching criteria
 		 */
-		GetLeaveApplications(where: string, order: string, page: number): Observable<LeaveApplications> {
+		GetLeaveApplications(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<LeaveApplications> {
 			return this.http.get<LeaveApplications>(this.baseUri + 'LeaveApplications?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page, {});
 		}
 
@@ -1195,7 +1195,7 @@ export namespace MyNS {
 		 * @param {number} page e.g. page=1 – Up to 100 objects will be returned in a single API call
 		 * @return {PayItems} search results matching criteria
 		 */
-		GetPayItems(where: string, order: string, page: number): Observable<PayItems> {
+		GetPayItems(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<PayItems> {
 			return this.http.get<PayItems>(this.baseUri + 'PayItems?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page, {});
 		}
 
@@ -1216,7 +1216,7 @@ export namespace MyNS {
 		 * @param {number} page e.g. page=1 – Up to 100 objects will be returned in a single API call
 		 * @return {PayrollCalendars} search results matching criteria
 		 */
-		GetPayrollCalendars(where: string, order: string, page: number): Observable<PayrollCalendars> {
+		GetPayrollCalendars(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<PayrollCalendars> {
 			return this.http.get<PayrollCalendars>(this.baseUri + 'PayrollCalendars?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page, {});
 		}
 
@@ -1247,7 +1247,7 @@ export namespace MyNS {
 		 * @param {number} page e.g. page=1 – Up to 100 PayRuns will be returned in a single API call
 		 * @return {PayRuns} search results matching criteria
 		 */
-		GetPayRuns(where: string, order: string, page: number): Observable<PayRuns> {
+		GetPayRuns(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<PayRuns> {
 			return this.http.get<PayRuns>(this.baseUri + 'PayRuns?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page, {});
 		}
 
@@ -1319,7 +1319,7 @@ export namespace MyNS {
 		 * @param {number} page e.g. page=1 – Up to 100 SuperFunds will be returned in a single API call
 		 * @return {SuperFunds} search results matching criteria
 		 */
-		GetSuperfunds(where: string, order: string, page: number): Observable<SuperFunds> {
+		GetSuperfunds(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<SuperFunds> {
 			return this.http.get<SuperFunds>(this.baseUri + 'Superfunds?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page, {});
 		}
 
@@ -1360,7 +1360,7 @@ export namespace MyNS {
 		 * @param {string} USI The USI of the Regulated SuperFund
 		 * @return {SuperFundProducts} search results matching criteria
 		 */
-		GetSuperfundProducts(ABN: string, USI: string): Observable<SuperFundProducts> {
+		GetSuperfundProducts(ABN: string | null | undefined, USI: string | null | undefined): Observable<SuperFundProducts> {
 			return this.http.get<SuperFundProducts>(this.baseUri + 'SuperfundProducts?ABN=' + (ABN == null ? '' : encodeURIComponent(ABN)) + '&USI=' + (USI == null ? '' : encodeURIComponent(USI)), {});
 		}
 
@@ -1372,7 +1372,7 @@ export namespace MyNS {
 		 * @param {number} page e.g. page=1 – Up to 100 timesheets will be returned in a single API call
 		 * @return {Timesheets} search results matching criteria
 		 */
-		GetTimesheets(where: string, order: string, page: number): Observable<Timesheets> {
+		GetTimesheets(where: string | null | undefined, order: string | null | undefined, page: number | null | undefined): Observable<Timesheets> {
 			return this.http.get<Timesheets>(this.baseUri + 'Timesheets?where=' + (where == null ? '' : encodeURIComponent(where)) + '&order=' + (order == null ? '' : encodeURIComponent(order)) + '&page=' + page, {});
 		}
 

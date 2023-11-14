@@ -27,17 +27,17 @@ export namespace MyNS {
 	}
 
 	export interface CreateExportTaskResponse {
-		taskId?: string;
+		taskId?: string | null;
 	}
 
 	export interface CreateExportTaskRequest {
-		taskName?: string;
+		taskName?: string | null;
 		logGroupName: string;
-		logStreamNamePrefix?: string;
+		logStreamNamePrefix?: string | null;
 		from: number;
 		to: number;
 		destination: string;
-		destinationPrefix?: string;
+		destinationPrefix?: string | null;
 	}
 
 	export interface LimitExceededException {
@@ -48,8 +48,8 @@ export namespace MyNS {
 
 	export interface CreateLogGroupRequest {
 		logGroupName: string;
-		kmsKeyId?: string;
-		tags?: Tags;
+		kmsKeyId?: string | null;
+		tags?: Tags | null;
 	}
 
 	export interface Tags {
@@ -79,7 +79,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteQueryDefinitionResponse {
-		success?: boolean;
+		success?: boolean | null;
 	}
 
 	export interface DeleteQueryDefinitionRequest {
@@ -87,7 +87,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteResourcePolicyRequest {
-		policyName?: string;
+		policyName?: string | null;
 	}
 
 	export interface DeleteRetentionPolicyRequest {
@@ -100,70 +100,70 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDestinationsResponse {
-		destinations?: Array<Destination>;
+		destinations?: Array<Destination> | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents a cross-account destination that receives subscription log events. */
 	export interface Destination {
-		destinationName?: string;
-		targetArn?: string;
-		roleArn?: string;
-		accessPolicy?: string;
-		arn?: string;
-		creationTime?: number;
+		destinationName?: string | null;
+		targetArn?: string | null;
+		roleArn?: string | null;
+		accessPolicy?: string | null;
+		arn?: string | null;
+		creationTime?: number | null;
 	}
 
 	export interface DescribeDestinationsRequest {
-		DestinationNamePrefix?: string;
+		DestinationNamePrefix?: string | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
-		limit?: number;
+		nextToken?: string | null;
+		limit?: number | null;
 	}
 
 	export interface DescribeExportTasksResponse {
-		exportTasks?: Array<ExportTask>;
+		exportTasks?: Array<ExportTask> | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents an export task. */
 	export interface ExportTask {
-		taskId?: string;
-		taskName?: string;
-		logGroupName?: string;
-		from?: number;
-		to?: number;
-		destination?: string;
-		destinationPrefix?: string;
+		taskId?: string | null;
+		taskName?: string | null;
+		logGroupName?: string | null;
+		from?: number | null;
+		to?: number | null;
+		destination?: string | null;
+		destinationPrefix?: string | null;
 
 		/** Represents the status of an export task. */
-		status?: ExportTaskStatus;
+		status?: ExportTaskStatus | null;
 
 		/** Represents the status of an export task. */
-		executionInfo?: ExportTaskExecutionInfo;
+		executionInfo?: ExportTaskExecutionInfo | null;
 	}
 
 
 	/** Represents the status of an export task. */
 	export interface ExportTaskStatus {
-		code?: ExportTaskStatusCode;
-		message?: string;
+		code?: ExportTaskStatusCode | null;
+		message?: string | null;
 	}
 
 	export enum ExportTaskStatusCode { CANCELLED = 0, COMPLETED = 1, FAILED = 2, PENDING = 3, PENDING_CANCEL = 4, RUNNING = 5 }
@@ -171,120 +171,120 @@ export namespace MyNS {
 
 	/** Represents the status of an export task. */
 	export interface ExportTaskExecutionInfo {
-		creationTime?: number;
-		completionTime?: number;
+		creationTime?: number | null;
+		completionTime?: number | null;
 	}
 
 	export interface DescribeExportTasksRequest {
-		taskId?: string;
-		statusCode?: ExportTaskStatusCode;
+		taskId?: string | null;
+		statusCode?: ExportTaskStatusCode | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
-		limit?: number;
+		nextToken?: string | null;
+		limit?: number | null;
 	}
 
 	export interface DescribeLogGroupsResponse {
-		logGroups?: Array<LogGroup>;
+		logGroups?: Array<LogGroup> | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents a log group. */
 	export interface LogGroup {
-		logGroupName?: string;
-		creationTime?: number;
+		logGroupName?: string | null;
+		creationTime?: number | null;
 
 		/** The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653. */
-		retentionInDays?: number;
-		metricFilterCount?: number;
-		arn?: string;
-		storedBytes?: number;
-		kmsKeyId?: string;
+		retentionInDays?: number | null;
+		metricFilterCount?: number | null;
+		arn?: string | null;
+		storedBytes?: number | null;
+		kmsKeyId?: string | null;
 	}
 
 	export interface DescribeLogGroupsRequest {
-		logGroupNamePrefix?: string;
+		logGroupNamePrefix?: string | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
-		limit?: number;
+		nextToken?: string | null;
+		limit?: number | null;
 	}
 
 	export interface DescribeLogStreamsResponse {
-		logStreams?: Array<LogStream>;
+		logStreams?: Array<LogStream> | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents a log stream, which is a sequence of log events from a single emitter of logs. */
 	export interface LogStream {
-		logStreamName?: string;
-		creationTime?: number;
-		firstEventTimestamp?: number;
-		lastEventTimestamp?: number;
-		lastIngestionTime?: number;
-		uploadSequenceToken?: string;
-		arn?: string;
-		storedBytes?: number;
+		logStreamName?: string | null;
+		creationTime?: number | null;
+		firstEventTimestamp?: number | null;
+		lastEventTimestamp?: number | null;
+		lastIngestionTime?: number | null;
+		uploadSequenceToken?: string | null;
+		arn?: string | null;
+		storedBytes?: number | null;
 	}
 
 	export interface DescribeLogStreamsRequest {
 		logGroupName: string;
-		logStreamNamePrefix?: string;
-		orderBy?: DescribeLogStreamsRequestOrderBy;
-		descending?: boolean;
+		logStreamNamePrefix?: string | null;
+		orderBy?: DescribeLogStreamsRequestOrderBy | null;
+		descending?: boolean | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
-		limit?: number;
+		nextToken?: string | null;
+		limit?: number | null;
 	}
 
 	export enum DescribeLogStreamsRequestOrderBy { LogStreamName = 0, LastEventTime = 1 }
 
 	export interface DescribeMetricFiltersResponse {
-		metricFilters?: Array<MetricFilter>;
+		metricFilters?: Array<MetricFilter> | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Metric filters express how CloudWatch Logs would extract metric observations from ingested log events and transform them into metric data in a CloudWatch metric. */
 	export interface MetricFilter {
-		filterName?: string;
+		filterName?: string | null;
 
 		/**
 		 * A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event may contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		filterPattern?: string;
-		metricTransformations?: Array<MetricTransformation>;
-		creationTime?: number;
-		logGroupName?: string;
+		filterPattern?: string | null;
+		metricTransformations?: Array<MetricTransformation> | null;
+		creationTime?: number | null;
+		logGroupName?: string | null;
 	}
 
 
@@ -306,108 +306,108 @@ export namespace MyNS {
 		 * Max length: 100
 		 */
 		metricValue: string;
-		defaultValue?: number;
+		defaultValue?: number | null;
 	}
 
 	export interface DescribeMetricFiltersRequest {
-		logGroupName?: string;
-		filterNamePrefix?: string;
+		logGroupName?: string | null;
+		filterNamePrefix?: string | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
-		limit?: number;
+		nextToken?: string | null;
+		limit?: number | null;
 
 		/**
 		 * The name of the CloudWatch metric to which the monitored log information should be published. For example, you may publish to a metric called ErrorCount.
 		 * Max length: 255
 		 * Pattern: [^:*$]*
 		 */
-		metricName?: string;
-		metricNamespace?: string;
+		metricName?: string | null;
+		metricNamespace?: string | null;
 	}
 
 	export interface DescribeQueriesResponse {
-		queries?: Array<QueryInfo>;
+		queries?: Array<QueryInfo> | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about one CloudWatch Logs Insights query that matches the request in a <code>DescribeQueries</code> operation.  */
 	export interface QueryInfo {
-		queryId?: string;
-		queryString?: string;
-		status?: QueryInfoStatus;
-		createTime?: number;
-		logGroupName?: string;
+		queryId?: string | null;
+		queryString?: string | null;
+		status?: QueryInfoStatus | null;
+		createTime?: number | null;
+		logGroupName?: string | null;
 	}
 
 	export enum QueryInfoStatus { Scheduled = 0, Running = 1, Complete = 2, Failed = 3, Cancelled = 4 }
 
 	export interface DescribeQueriesRequest {
-		logGroupName?: string;
-		status?: QueryInfoStatus;
-		maxResults?: number;
+		logGroupName?: string | null;
+		status?: QueryInfoStatus | null;
+		maxResults?: number | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface DescribeQueryDefinitionsResponse {
-		queryDefinitions?: Array<QueryDefinition>;
+		queryDefinitions?: Array<QueryDefinition> | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface QueryDefinition {
-		queryDefinitionId?: string;
-		name?: string;
-		queryString?: string;
-		lastModified?: number;
-		logGroupNames?: Array<string>;
+		queryDefinitionId?: string | null;
+		name?: string | null;
+		queryString?: string | null;
+		lastModified?: number | null;
+		logGroupNames?: Array<string> | null;
 	}
 
 	export interface DescribeQueryDefinitionsRequest {
-		queryDefinitionNamePrefix?: string;
-		maxResults?: number;
+		queryDefinitionNamePrefix?: string | null;
+		maxResults?: number | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface DescribeResourcePoliciesResponse {
-		resourcePolicies?: Array<ResourcePolicy>;
+		resourcePolicies?: Array<ResourcePolicy> | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** A policy enabling one or more entities to put logs to a log group in this account. */
 	export interface ResourcePolicy {
-		policyName?: string;
-		policyDocument?: string;
-		lastUpdatedTime?: number;
+		policyName?: string | null;
+		policyDocument?: string | null;
+		lastUpdatedTime?: number | null;
 	}
 
 	export interface DescribeResourcePoliciesRequest {
@@ -416,52 +416,52 @@ export namespace MyNS {
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
-		limit?: number;
+		nextToken?: string | null;
+		limit?: number | null;
 	}
 
 	export interface DescribeSubscriptionFiltersResponse {
-		subscriptionFilters?: Array<SubscriptionFilter>;
+		subscriptionFilters?: Array<SubscriptionFilter> | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents a subscription filter. */
 	export interface SubscriptionFilter {
-		filterName?: string;
-		logGroupName?: string;
+		filterName?: string | null;
+		logGroupName?: string | null;
 
 		/**
 		 * A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event may contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		filterPattern?: string;
-		destinationArn?: string;
-		roleArn?: string;
+		filterPattern?: string | null;
+		destinationArn?: string | null;
+		roleArn?: string | null;
 
 		/** The method used to distribute log data to the destination, which can be either random or grouped by log stream. */
-		distribution?: SubscriptionFilterDistribution;
-		creationTime?: number;
+		distribution?: SubscriptionFilterDistribution | null;
+		creationTime?: number | null;
 	}
 
 	export enum SubscriptionFilterDistribution { Random = 0, ByLogStream = 1 }
 
 	export interface DescribeSubscriptionFiltersRequest {
 		logGroupName: string;
-		filterNamePrefix?: string;
+		filterNamePrefix?: string | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
-		limit?: number;
+		nextToken?: string | null;
+		limit?: number | null;
 	}
 
 	export interface DisassociateKmsKeyRequest {
@@ -469,113 +469,113 @@ export namespace MyNS {
 	}
 
 	export interface FilterLogEventsResponse {
-		events?: Array<FilteredLogEvent>;
-		searchedLogStreams?: Array<SearchedLogStream>;
+		events?: Array<FilteredLogEvent> | null;
+		searchedLogStreams?: Array<SearchedLogStream> | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents a matched event. */
 	export interface FilteredLogEvent {
-		logStreamName?: string;
-		timestamp?: number;
-		message?: string;
-		ingestionTime?: number;
-		eventId?: string;
+		logStreamName?: string | null;
+		timestamp?: number | null;
+		message?: string | null;
+		ingestionTime?: number | null;
+		eventId?: string | null;
 	}
 
 
 	/** Represents the search status of a log stream. */
 	export interface SearchedLogStream {
-		logStreamName?: string;
-		searchedCompletely?: boolean;
+		logStreamName?: string | null;
+		searchedCompletely?: boolean | null;
 	}
 
 	export interface FilterLogEventsRequest {
 		logGroupName: string;
-		logStreamNames?: Array<string>;
-		logStreamNamePrefix?: string;
-		startTime?: number;
-		endTime?: number;
+		logStreamNames?: Array<string> | null;
+		logStreamNamePrefix?: string | null;
+		startTime?: number | null;
+		endTime?: number | null;
 
 		/**
 		 * A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event may contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		filterPattern?: string;
+		filterPattern?: string | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
-		limit?: number;
-		interleaved?: boolean;
+		nextToken?: string | null;
+		limit?: number | null;
+		interleaved?: boolean | null;
 	}
 
 	export interface GetLogEventsResponse {
-		events?: Array<OutputLogEvent>;
+		events?: Array<OutputLogEvent> | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextForwardToken?: string;
+		nextForwardToken?: string | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextBackwardToken?: string;
+		nextBackwardToken?: string | null;
 	}
 
 
 	/** Represents a log event. */
 	export interface OutputLogEvent {
-		timestamp?: number;
-		message?: string;
-		ingestionTime?: number;
+		timestamp?: number | null;
+		message?: string | null;
+		ingestionTime?: number | null;
 	}
 
 	export interface GetLogEventsRequest {
 		logGroupName: string;
 		logStreamName: string;
-		startTime?: number;
-		endTime?: number;
+		startTime?: number | null;
+		endTime?: number | null;
 
 		/**
 		 * The token for the next set of items to return. The token expires after 24 hours.
 		 * Min length: 1
 		 */
-		nextToken?: string;
-		limit?: number;
-		startFromHead?: boolean;
+		nextToken?: string | null;
+		limit?: number | null;
+		startFromHead?: boolean | null;
 	}
 
 	export interface GetLogGroupFieldsResponse {
-		logGroupFields?: Array<LogGroupField>;
+		logGroupFields?: Array<LogGroupField> | null;
 	}
 
 
 	/** The fields contained in log events found by a <code>GetLogGroupFields</code> operation, along with the percentage of queried log events in which each field appears. */
 	export interface LogGroupField {
-		name?: string;
-		percent?: number;
+		name?: string | null;
+		percent?: number | null;
 	}
 
 	export interface GetLogGroupFieldsRequest {
 		logGroupName: string;
-		time?: number;
+		time?: number | null;
 	}
 
 	export interface GetLogRecordResponse {
-		logRecord?: LogRecord;
+		logRecord?: LogRecord | null;
 	}
 
 	export interface LogRecord {
@@ -586,26 +586,26 @@ export namespace MyNS {
 	}
 
 	export interface GetQueryResultsResponse {
-		results?: Array<Array<ResultField>>;
+		results?: Array<Array<ResultField>> | null;
 
 		/** Contains the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned. */
-		statistics?: QueryStatistics;
-		status?: QueryInfoStatus;
+		statistics?: QueryStatistics | null;
+		status?: QueryInfoStatus | null;
 	}
 
 
 	/** <p>Contains one field from one log event returned by a CloudWatch Logs Insights query, along with the value of that field.</p> <p>For more information about the fields that are generated by CloudWatch logs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported Logs and Discovered Fields</a>.</p> */
 	export interface ResultField {
-		field?: string;
-		value?: string;
+		field?: string | null;
+		value?: string | null;
 	}
 
 
 	/** Contains the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned. */
 	export interface QueryStatistics {
-		recordsMatched?: number;
-		recordsScanned?: number;
-		bytesScanned?: number;
+		recordsMatched?: number | null;
+		recordsScanned?: number | null;
+		bytesScanned?: number | null;
 	}
 
 	export interface GetQueryResultsRequest {
@@ -613,7 +613,7 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsLogGroupResponse {
-		tags?: Tags;
+		tags?: Tags | null;
 	}
 
 	export interface ListTagsLogGroupRequest {
@@ -623,7 +623,7 @@ export namespace MyNS {
 	export interface PutDestinationResponse {
 
 		/** Represents a cross-account destination that receives subscription log events. */
-		destination?: Destination;
+		destination?: Destination | null;
 	}
 
 	export interface PutDestinationRequest {
@@ -638,25 +638,25 @@ export namespace MyNS {
 	}
 
 	export interface PutLogEventsResponse {
-		nextSequenceToken?: string;
+		nextSequenceToken?: string | null;
 
 		/** Represents the rejected events. */
-		rejectedLogEventsInfo?: RejectedLogEventsInfo;
+		rejectedLogEventsInfo?: RejectedLogEventsInfo | null;
 	}
 
 
 	/** Represents the rejected events. */
 	export interface RejectedLogEventsInfo {
-		tooNewLogEventStartIndex?: number;
-		tooOldLogEventEndIndex?: number;
-		expiredLogEventEndIndex?: number;
+		tooNewLogEventStartIndex?: number | null;
+		tooOldLogEventEndIndex?: number | null;
+		expiredLogEventEndIndex?: number | null;
 	}
 
 	export interface PutLogEventsRequest {
 		logGroupName: string;
 		logStreamName: string;
 		logEvents: Array<InputLogEvent>;
-		sequenceToken?: string;
+		sequenceToken?: string | null;
 	}
 
 
@@ -690,25 +690,25 @@ export namespace MyNS {
 	}
 
 	export interface PutQueryDefinitionResponse {
-		queryDefinitionId?: string;
+		queryDefinitionId?: string | null;
 	}
 
 	export interface PutQueryDefinitionRequest {
 		name: string;
-		queryDefinitionId?: string;
-		logGroupNames?: Array<string>;
+		queryDefinitionId?: string | null;
+		logGroupNames?: Array<string> | null;
 		queryString: string;
 	}
 
 	export interface PutResourcePolicyResponse {
 
 		/** A policy enabling one or more entities to put logs to a log group in this account. */
-		resourcePolicy?: ResourcePolicy;
+		resourcePolicy?: ResourcePolicy | null;
 	}
 
 	export interface PutResourcePolicyRequest {
-		policyName?: string;
-		policyDocument?: string;
+		policyName?: string | null;
+		policyDocument?: string | null;
 	}
 
 	export interface PutRetentionPolicyRequest {
@@ -733,30 +733,30 @@ export namespace MyNS {
 		 */
 		filterPattern: string;
 		destinationArn: string;
-		roleArn?: string;
+		roleArn?: string | null;
 
 		/** The method used to distribute log data to the destination, which can be either random or grouped by log stream. */
-		distribution?: SubscriptionFilterDistribution;
+		distribution?: SubscriptionFilterDistribution | null;
 	}
 
 	export interface StartQueryResponse {
-		queryId?: string;
+		queryId?: string | null;
 	}
 
 	export interface StartQueryRequest {
-		logGroupName?: string;
-		logGroupNames?: Array<string>;
+		logGroupName?: string | null;
+		logGroupNames?: Array<string> | null;
 		startTime: number;
 		endTime: number;
 		queryString: string;
-		limit?: number;
+		limit?: number | null;
 	}
 
 	export interface MalformedQueryException {
 	}
 
 	export interface StopQueryResponse {
-		success?: boolean;
+		success?: boolean | null;
 	}
 
 	export interface StopQueryRequest {
@@ -769,15 +769,15 @@ export namespace MyNS {
 	}
 
 	export interface TestMetricFilterResponse {
-		matches?: Array<MetricFilterMatchRecord>;
+		matches?: Array<MetricFilterMatchRecord> | null;
 	}
 
 
 	/** Represents a matched event. */
 	export interface MetricFilterMatchRecord {
-		eventNumber?: number;
-		eventMessage?: string;
-		extractedValues?: ExtractedValues;
+		eventNumber?: number | null;
+		eventMessage?: string | null;
+		extractedValues?: ExtractedValues | null;
 	}
 
 	export interface ExtractedValues {
@@ -936,7 +936,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeDestinationsResponse} Success
 		 */
-		DescribeDestinations(limit: string, nextToken: string, requestBody: DescribeDestinationsRequest): Observable<DescribeDestinationsResponse> {
+		DescribeDestinations(limit: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeDestinationsRequest): Observable<DescribeDestinationsResponse> {
 			return this.http.post<DescribeDestinationsResponse>(this.baseUri + '#X-Amz-Target=Logs_20140328.DescribeDestinations?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -956,7 +956,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeLogGroupsResponse} Success
 		 */
-		DescribeLogGroups(limit: string, nextToken: string, requestBody: DescribeLogGroupsRequest): Observable<DescribeLogGroupsResponse> {
+		DescribeLogGroups(limit: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeLogGroupsRequest): Observable<DescribeLogGroupsResponse> {
 			return this.http.post<DescribeLogGroupsResponse>(this.baseUri + '#X-Amz-Target=Logs_20140328.DescribeLogGroups?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -967,7 +967,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeLogStreamsResponse} Success
 		 */
-		DescribeLogStreams(limit: string, nextToken: string, requestBody: DescribeLogStreamsRequest): Observable<DescribeLogStreamsResponse> {
+		DescribeLogStreams(limit: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeLogStreamsRequest): Observable<DescribeLogStreamsResponse> {
 			return this.http.post<DescribeLogStreamsResponse>(this.baseUri + '#X-Amz-Target=Logs_20140328.DescribeLogStreams?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -978,7 +978,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeMetricFiltersResponse} Success
 		 */
-		DescribeMetricFilters(limit: string, nextToken: string, requestBody: DescribeMetricFiltersRequest): Observable<DescribeMetricFiltersResponse> {
+		DescribeMetricFilters(limit: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeMetricFiltersRequest): Observable<DescribeMetricFiltersResponse> {
 			return this.http.post<DescribeMetricFiltersResponse>(this.baseUri + '#X-Amz-Target=Logs_20140328.DescribeMetricFilters?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1015,7 +1015,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {DescribeSubscriptionFiltersResponse} Success
 		 */
-		DescribeSubscriptionFilters(limit: string, nextToken: string, requestBody: DescribeSubscriptionFiltersRequest): Observable<DescribeSubscriptionFiltersResponse> {
+		DescribeSubscriptionFilters(limit: string | null | undefined, nextToken: string | null | undefined, requestBody: DescribeSubscriptionFiltersRequest): Observable<DescribeSubscriptionFiltersResponse> {
 			return this.http.post<DescribeSubscriptionFiltersResponse>(this.baseUri + '#X-Amz-Target=Logs_20140328.DescribeSubscriptionFilters?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1035,7 +1035,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {FilterLogEventsResponse} Success
 		 */
-		FilterLogEvents(limit: string, nextToken: string, requestBody: FilterLogEventsRequest): Observable<FilterLogEventsResponse> {
+		FilterLogEvents(limit: string | null | undefined, nextToken: string | null | undefined, requestBody: FilterLogEventsRequest): Observable<FilterLogEventsResponse> {
 			return this.http.post<FilterLogEventsResponse>(this.baseUri + '#X-Amz-Target=Logs_20140328.FilterLogEvents?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1046,7 +1046,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetLogEventsResponse} Success
 		 */
-		GetLogEvents(limit: string, nextToken: string, requestBody: GetLogEventsRequest): Observable<GetLogEventsResponse> {
+		GetLogEvents(limit: string | null | undefined, nextToken: string | null | undefined, requestBody: GetLogEventsRequest): Observable<GetLogEventsResponse> {
 			return this.http.post<GetLogEventsResponse>(this.baseUri + '#X-Amz-Target=Logs_20140328.GetLogEvents?limit=' + (limit == null ? '' : encodeURIComponent(limit)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

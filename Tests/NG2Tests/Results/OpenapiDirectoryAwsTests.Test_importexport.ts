@@ -7,7 +7,7 @@ export namespace MyNS {
 	export interface CancelJobOutput {
 
 		/** Specifies whether (true) or not (false) AWS Import/Export updated your job. */
-		Success?: boolean;
+		Success?: boolean | null;
 	}
 
 
@@ -15,7 +15,7 @@ export namespace MyNS {
 	export interface InvalidJobIdException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -23,7 +23,7 @@ export namespace MyNS {
 	export interface ExpiredJobIdException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -31,7 +31,7 @@ export namespace MyNS {
 	export interface CanceledJobIdException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -39,7 +39,7 @@ export namespace MyNS {
 	export interface UnableToCancelJobIdException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -47,7 +47,7 @@ export namespace MyNS {
 	export interface InvalidAccessKeyIdException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -55,7 +55,7 @@ export namespace MyNS {
 	export interface InvalidVersionException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -63,22 +63,22 @@ export namespace MyNS {
 	export interface CreateJobOutput {
 
 		/** A unique identifier which refers to a particular job. */
-		JobId?: string;
+		JobId?: string | null;
 
 		/** Specifies whether the job to initiate is an import or export job. */
-		JobType?: CreateJobOutputJobType;
+		JobType?: CreateJobOutputJobType | null;
 
 		/** An encrypted code used to authenticate the request and response, for example, "DV+TpDfx1/TdSE9ktyK9k/bDTVI=". Only use this value is you want to create the signature file yourself. Generally you should use the SignatureFileContents value. */
-		Signature?: string;
+		Signature?: string | null;
 
 		/** The actual text of the SIGNATURE file to be written to disk. */
-		SignatureFileContents?: string;
+		SignatureFileContents?: string | null;
 
 		/** An optional message notifying you of non-fatal issues with the job, such as use of an incompatible Amazon S3 bucket name. */
-		WarningMessage?: string;
+		WarningMessage?: string | null;
 
 		/** A collection of artifacts. */
-		ArtifactList?: Array<Artifact>;
+		ArtifactList?: Array<Artifact> | null;
 	}
 
 	export enum CreateJobOutputJobType { Import = 0, Export = 1 }
@@ -88,10 +88,10 @@ export namespace MyNS {
 	export interface Artifact {
 
 		/** The associated description for this object. */
-		Description?: string;
+		Description?: string | null;
 
 		/** The URL for a given Artifact. */
-		URL?: string;
+		URL?: string | null;
 	}
 
 
@@ -99,7 +99,7 @@ export namespace MyNS {
 	export interface MissingParameterException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -107,7 +107,7 @@ export namespace MyNS {
 	export interface InvalidParameterException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -115,7 +115,7 @@ export namespace MyNS {
 	export interface InvalidAddressException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -123,7 +123,7 @@ export namespace MyNS {
 	export interface InvalidManifestFieldException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -131,7 +131,7 @@ export namespace MyNS {
 	export interface MissingManifestFieldException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -139,7 +139,7 @@ export namespace MyNS {
 	export interface NoSuchBucketException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -147,7 +147,7 @@ export namespace MyNS {
 	export interface MissingCustomsException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -155,7 +155,7 @@ export namespace MyNS {
 	export interface InvalidCustomsException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -163,7 +163,7 @@ export namespace MyNS {
 	export interface InvalidFileSystemException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -171,7 +171,7 @@ export namespace MyNS {
 	export interface MultipleRegionsException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -179,7 +179,7 @@ export namespace MyNS {
 	export interface BucketPermissionException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -187,7 +187,7 @@ export namespace MyNS {
 	export interface MalformedManifestException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -195,12 +195,12 @@ export namespace MyNS {
 	export interface CreateJobQuotaExceededException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 	export interface GetShippingLabelOutput {
-		ShippingLabelURL?: string;
-		Warning?: string;
+		ShippingLabelURL?: string | null;
+		Warning?: string | null;
 	}
 
 
@@ -208,52 +208,52 @@ export namespace MyNS {
 	export interface GetStatusOutput {
 
 		/** A unique identifier which refers to a particular job. */
-		JobId?: string;
+		JobId?: string | null;
 
 		/** Specifies whether the job to initiate is an import or export job. */
-		JobType?: CreateJobOutputJobType;
+		JobType?: CreateJobOutputJobType | null;
 
 		/** A token representing the location of the storage device, such as "AtAWS". */
-		LocationCode?: string;
+		LocationCode?: string | null;
 
 		/** A more human readable form of the physical location of the storage device. */
-		LocationMessage?: string;
+		LocationMessage?: string | null;
 
 		/** A token representing the state of the job, such as "Started". */
-		ProgressCode?: string;
+		ProgressCode?: string | null;
 
 		/** A more human readable form of the job status. */
-		ProgressMessage?: string;
+		ProgressMessage?: string | null;
 
 		/** Name of the shipping company. This value is included when the LocationCode is "Returned". */
-		Carrier?: string;
+		Carrier?: string | null;
 
 		/** The shipping tracking number assigned by AWS Import/Export to the storage device when it's returned to you. We return this value when the LocationCode is "Returned". */
-		TrackingNumber?: string;
+		TrackingNumber?: string | null;
 
 		/** Amazon S3 bucket for user logs. */
-		LogBucket?: string;
+		LogBucket?: string | null;
 
 		/** The key where the user logs were stored. */
-		LogKey?: string;
+		LogKey?: string | null;
 
 		/** Number of errors. We return this value when the ProgressCode is Success or SuccessWithErrors. */
-		ErrorCount?: number;
+		ErrorCount?: number | null;
 
 		/** An encrypted code used to authenticate the request and response, for example, "DV+TpDfx1/TdSE9ktyK9k/bDTVI=". Only use this value is you want to create the signature file yourself. Generally you should use the SignatureFileContents value. */
-		Signature?: string;
+		Signature?: string | null;
 
 		/** An encrypted code used to authenticate the request and response, for example, "DV+TpDfx1/TdSE9ktyK9k/bDTVI=". Only use this value is you want to create the signature file yourself. Generally you should use the SignatureFileContents value. */
-		SignatureFileContents?: string;
+		SignatureFileContents?: string | null;
 
 		/** The last manifest submitted, which will be used to process the job. */
-		CurrentManifest?: string;
+		CurrentManifest?: string | null;
 
 		/** Timestamp of the CreateJob request in ISO8601 date format. For example "2010-03-28T20:27:35Z". */
-		CreationDate?: Date;
+		CreationDate?: Date | null;
 
 		/** A collection of artifacts. */
-		ArtifactList?: Array<Artifact>;
+		ArtifactList?: Array<Artifact> | null;
 	}
 
 
@@ -261,10 +261,10 @@ export namespace MyNS {
 	export interface ListJobsOutput {
 
 		/** A list container for Jobs returned by the ListJobs operation. */
-		Jobs?: Array<Job>;
+		Jobs?: Array<Job> | null;
 
 		/** Indicates whether the list of jobs was truncated. If true, then call ListJobs again using the last JobId element as the marker. */
-		IsTruncated?: boolean;
+		IsTruncated?: boolean | null;
 	}
 
 
@@ -272,16 +272,16 @@ export namespace MyNS {
 	export interface Job {
 
 		/** A unique identifier which refers to a particular job. */
-		JobId?: string;
+		JobId?: string | null;
 
 		/** Timestamp of the CreateJob request in ISO8601 date format. For example "2010-03-28T20:27:35Z". */
-		CreationDate?: Date;
+		CreationDate?: Date | null;
 
 		/** Indicates whether the job was canceled. */
-		IsCanceled?: boolean;
+		IsCanceled?: boolean | null;
 
 		/** Specifies whether the job to initiate is an import or export job. */
-		JobType?: CreateJobOutputJobType;
+		JobType?: CreateJobOutputJobType | null;
 	}
 
 
@@ -289,13 +289,13 @@ export namespace MyNS {
 	export interface UpdateJobOutput {
 
 		/** Specifies whether (true) or not (false) AWS Import/Export updated your job. */
-		Success?: boolean;
+		Success?: boolean | null;
 
 		/** An optional message notifying you of non-fatal issues with the job, such as use of an incompatible Amazon S3 bucket name. */
-		WarningMessage?: string;
+		WarningMessage?: string | null;
 
 		/** A collection of artifacts. */
-		ArtifactList?: Array<Artifact>;
+		ArtifactList?: Array<Artifact> | null;
 	}
 
 
@@ -303,7 +303,7 @@ export namespace MyNS {
 	export interface UnableToUpdateJobIdException {
 
 		/** The human-readable description of a particular error. */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -317,7 +317,7 @@ export namespace MyNS {
 		JobId: string;
 
 		/** Specifies the version of the client tool. */
-		APIVersion?: string;
+		APIVersion?: string | null;
 	}
 
 
@@ -341,7 +341,7 @@ export namespace MyNS {
 		Manifest: string;
 
 		/** For internal use only. */
-		ManifestAddendum?: string;
+		ManifestAddendum?: string | null;
 
 		/**
 		 * Validate the manifest and parameter values in the request but do not actually create a job.
@@ -350,44 +350,44 @@ export namespace MyNS {
 		ValidateOnly: boolean;
 
 		/** Specifies the version of the client tool. */
-		APIVersion?: string;
+		APIVersion?: string | null;
 	}
 
 	export interface GetShippingLabelInput {
 		jobIds: Array<string>;
 
 		/** Specifies the name of the person responsible for shipping this package. */
-		name?: string;
+		name?: string | null;
 
 		/** Specifies the name of the company that will ship this package. */
-		company?: string;
+		company?: string | null;
 
 		/** Specifies the phone number of the person responsible for shipping this package. */
-		phoneNumber?: string;
+		phoneNumber?: string | null;
 
 		/** Specifies the name of your country for the return address. */
-		country?: string;
+		country?: string | null;
 
 		/** Specifies the name of your state or your province for the return address. */
-		stateOrProvince?: string;
+		stateOrProvince?: string | null;
 
 		/** Specifies the name of your city for the return address. */
-		city?: string;
+		city?: string | null;
 
 		/** Specifies the postal code for the return address. */
-		postalCode?: string;
+		postalCode?: string | null;
 
 		/** Specifies the first part of the street address for the return address, for example 1234 Main Street. */
-		street1?: string;
+		street1?: string | null;
 
 		/** Specifies the optional second part of the street address for the return address, for example Suite 100. */
-		street2?: string;
+		street2?: string | null;
 
 		/** Specifies the optional third part of the street address for the return address, for example c/o Jane Doe. */
-		street3?: string;
+		street3?: string | null;
 
 		/** Specifies the version of the client tool. */
-		APIVersion?: string;
+		APIVersion?: string | null;
 	}
 
 
@@ -401,7 +401,7 @@ export namespace MyNS {
 		JobId: string;
 
 		/** Specifies the version of the client tool. */
-		APIVersion?: string;
+		APIVersion?: string | null;
 	}
 
 
@@ -409,13 +409,13 @@ export namespace MyNS {
 	export interface ListJobsInput {
 
 		/** Sets the maximum number of jobs returned in the response. If there are additional jobs that were not returned because MaxJobs was exceeded, the response contains &lt;IsTruncated&gt;true&lt;/IsTruncated&gt;. To return the additional jobs, see Marker. */
-		MaxJobs?: number;
+		MaxJobs?: number | null;
 
 		/** Specifies the JOBID to start after when listing the jobs created with your account. AWS Import/Export lists your jobs in reverse chronological order. See MaxJobs. */
-		Marker?: string;
+		Marker?: string | null;
 
 		/** Specifies the version of the client tool. */
-		APIVersion?: string;
+		APIVersion?: string | null;
 	}
 
 
@@ -447,7 +447,7 @@ export namespace MyNS {
 		ValidateOnly: boolean;
 
 		/** Specifies the version of the client tool. */
-		APIVersion?: string;
+		APIVersion?: string | null;
 	}
 
 	@Injectable()
@@ -460,7 +460,7 @@ export namespace MyNS {
 		 * Get #Operation=CancelJob&Action=CancelJob
 		 * @return {void} Success
 		 */
-		GET_CancelJob(JobId: string, APIVersion: string, Operation: GET_CancelJobOperation, Action: GET_CancelJobOperation, Version: GET_CancelJobVersion): Observable<HttpResponse<string>> {
+		GET_CancelJob(JobId: string, APIVersion: string | null | undefined, Operation: GET_CancelJobOperation, Action: GET_CancelJobOperation, Version: GET_CancelJobVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Operation=CancelJob&Action=CancelJob?JobId=' + (JobId == null ? '' : encodeURIComponent(JobId)) + '&APIVersion=' + (APIVersion == null ? '' : encodeURIComponent(APIVersion)) + '&Operation=' + Operation + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -469,7 +469,7 @@ export namespace MyNS {
 		 * Get #Operation=CreateJob&Action=CreateJob
 		 * @return {void} Success
 		 */
-		GET_CreateJob(JobType: CreateJobOutputJobType, Manifest: string, ManifestAddendum: string, ValidateOnly: boolean, APIVersion: string, Operation: GET_CreateJobOperation, Action: GET_CreateJobOperation, Version: GET_CreateJobVersion): Observable<HttpResponse<string>> {
+		GET_CreateJob(JobType: CreateJobOutputJobType, Manifest: string, ManifestAddendum: string | null | undefined, ValidateOnly: boolean, APIVersion: string | null | undefined, Operation: GET_CreateJobOperation, Action: GET_CreateJobOperation, Version: GET_CreateJobVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Operation=CreateJob&Action=CreateJob?JobType=' + JobType + '&Manifest=' + (Manifest == null ? '' : encodeURIComponent(Manifest)) + '&ManifestAddendum=' + (ManifestAddendum == null ? '' : encodeURIComponent(ManifestAddendum)) + '&ValidateOnly=' + ValidateOnly + '&APIVersion=' + (APIVersion == null ? '' : encodeURIComponent(APIVersion)) + '&Operation=' + Operation + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -478,7 +478,7 @@ export namespace MyNS {
 		 * Get #Operation=GetShippingLabel&Action=GetShippingLabel
 		 * @return {void} Success
 		 */
-		GET_GetShippingLabel(jobIds: Array<string>, name: string, company: string, phoneNumber: string, country: string, stateOrProvince: string, city: string, postalCode: string, street1: string, street2: string, street3: string, APIVersion: string, Operation: GET_GetShippingLabelOperation, Action: GET_GetShippingLabelOperation, Version: GET_GetShippingLabelVersion): Observable<HttpResponse<string>> {
+		GET_GetShippingLabel(jobIds: Array<string>, name: string | null | undefined, company: string | null | undefined, phoneNumber: string | null | undefined, country: string | null | undefined, stateOrProvince: string | null | undefined, city: string | null | undefined, postalCode: string | null | undefined, street1: string | null | undefined, street2: string | null | undefined, street3: string | null | undefined, APIVersion: string | null | undefined, Operation: GET_GetShippingLabelOperation, Action: GET_GetShippingLabelOperation, Version: GET_GetShippingLabelVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Operation=GetShippingLabel&Action=GetShippingLabel?' + jobIds.map(z => `jobIds=${encodeURIComponent(z)}`).join('&') + '&name=' + (name == null ? '' : encodeURIComponent(name)) + '&company=' + (company == null ? '' : encodeURIComponent(company)) + '&phoneNumber=' + (phoneNumber == null ? '' : encodeURIComponent(phoneNumber)) + '&country=' + (country == null ? '' : encodeURIComponent(country)) + '&stateOrProvince=' + (stateOrProvince == null ? '' : encodeURIComponent(stateOrProvince)) + '&city=' + (city == null ? '' : encodeURIComponent(city)) + '&postalCode=' + (postalCode == null ? '' : encodeURIComponent(postalCode)) + '&street1=' + (street1 == null ? '' : encodeURIComponent(street1)) + '&street2=' + (street2 == null ? '' : encodeURIComponent(street2)) + '&street3=' + (street3 == null ? '' : encodeURIComponent(street3)) + '&APIVersion=' + (APIVersion == null ? '' : encodeURIComponent(APIVersion)) + '&Operation=' + Operation + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -487,7 +487,7 @@ export namespace MyNS {
 		 * Get #Operation=GetStatus&Action=GetStatus
 		 * @return {void} Success
 		 */
-		GET_GetStatus(JobId: string, APIVersion: string, Operation: GET_GetStatusOperation, Action: GET_GetStatusOperation, Version: GET_GetStatusVersion): Observable<HttpResponse<string>> {
+		GET_GetStatus(JobId: string, APIVersion: string | null | undefined, Operation: GET_GetStatusOperation, Action: GET_GetStatusOperation, Version: GET_GetStatusVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Operation=GetStatus&Action=GetStatus?JobId=' + (JobId == null ? '' : encodeURIComponent(JobId)) + '&APIVersion=' + (APIVersion == null ? '' : encodeURIComponent(APIVersion)) + '&Operation=' + Operation + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -496,7 +496,7 @@ export namespace MyNS {
 		 * Get #Operation=ListJobs&Action=ListJobs
 		 * @return {void} Success
 		 */
-		GET_ListJobs(MaxJobs: number, Marker: string, APIVersion: string, Operation: GET_ListJobsOperation, Action: GET_ListJobsOperation, Version: GET_ListJobsVersion): Observable<HttpResponse<string>> {
+		GET_ListJobs(MaxJobs: number | null | undefined, Marker: string | null | undefined, APIVersion: string | null | undefined, Operation: GET_ListJobsOperation, Action: GET_ListJobsOperation, Version: GET_ListJobsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Operation=ListJobs&Action=ListJobs?MaxJobs=' + MaxJobs + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&APIVersion=' + (APIVersion == null ? '' : encodeURIComponent(APIVersion)) + '&Operation=' + Operation + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -505,7 +505,7 @@ export namespace MyNS {
 		 * Get #Operation=UpdateJob&Action=UpdateJob
 		 * @return {void} Success
 		 */
-		GET_UpdateJob(JobId: string, Manifest: string, JobType: CreateJobOutputJobType, ValidateOnly: boolean, APIVersion: string, Operation: GET_UpdateJobOperation, Action: GET_UpdateJobOperation, Version: GET_UpdateJobVersion): Observable<HttpResponse<string>> {
+		GET_UpdateJob(JobId: string, Manifest: string, JobType: CreateJobOutputJobType, ValidateOnly: boolean, APIVersion: string | null | undefined, Operation: GET_UpdateJobOperation, Action: GET_UpdateJobOperation, Version: GET_UpdateJobVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Operation=UpdateJob&Action=UpdateJob?JobId=' + (JobId == null ? '' : encodeURIComponent(JobId)) + '&Manifest=' + (Manifest == null ? '' : encodeURIComponent(Manifest)) + '&JobType=' + JobType + '&ValidateOnly=' + ValidateOnly + '&APIVersion=' + (APIVersion == null ? '' : encodeURIComponent(APIVersion)) + '&Operation=' + Operation + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 	}

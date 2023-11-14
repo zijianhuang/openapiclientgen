@@ -5,8 +5,8 @@ export namespace MyNS {
 
 	/** Contains the UsageRecords processed by BatchMeterUsage and any records that have failed due to transient error. */
 	export interface BatchMeterUsageResult {
-		Results?: Array<UsageRecordResult>;
-		UnprocessedRecords?: Array<UsageRecord>;
+		Results?: Array<UsageRecordResult> | null;
+		UnprocessedRecords?: Array<UsageRecord> | null;
 	}
 
 
@@ -14,9 +14,9 @@ export namespace MyNS {
 	export interface UsageRecordResult {
 
 		/** <p>A UsageRecord indicates a quantity of usage for a given product, customer, dimension and time.</p> <p>Multiple requests with the same UsageRecords as input will be deduplicated to prevent double charges.</p> */
-		UsageRecord?: UsageRecord;
-		MeteringRecordId?: string;
-		Status?: UsageRecordResultStatus;
+		UsageRecord?: UsageRecord | null;
+		MeteringRecordId?: string | null;
+		Status?: UsageRecordResultStatus | null;
 	}
 
 
@@ -25,7 +25,7 @@ export namespace MyNS {
 		Timestamp: Date;
 		CustomerIdentifier: string;
 		Dimension: string;
-		Quantity?: number;
+		Quantity?: number | null;
 	}
 
 	export enum UsageRecordResultStatus { Success = 0, CustomerNotSubscribed = 1, DuplicateRecord = 2 }
@@ -59,15 +59,15 @@ export namespace MyNS {
 	}
 
 	export interface MeterUsageResult {
-		MeteringRecordId?: string;
+		MeteringRecordId?: string | null;
 	}
 
 	export interface MeterUsageRequest {
 		ProductCode: string;
 		Timestamp: Date;
 		UsageDimension: string;
-		UsageQuantity?: number;
-		DryRun?: boolean;
+		UsageQuantity?: number | null;
+		DryRun?: boolean | null;
 	}
 
 	export interface InvalidEndpointRegionException {
@@ -80,14 +80,14 @@ export namespace MyNS {
 	}
 
 	export interface RegisterUsageResult {
-		PublicKeyRotationTimestamp?: Date;
-		Signature?: string;
+		PublicKeyRotationTimestamp?: Date | null;
+		Signature?: string | null;
 	}
 
 	export interface RegisterUsageRequest {
 		ProductCode: string;
 		PublicKeyVersion: number;
-		Nonce?: string;
+		Nonce?: string | null;
 	}
 
 	export interface InvalidRegionException {
@@ -102,8 +102,8 @@ export namespace MyNS {
 
 	/** The result of the ResolveCustomer operation. Contains the CustomerIdentifier and product code. */
 	export interface ResolveCustomerResult {
-		CustomerIdentifier?: string;
-		ProductCode?: string;
+		CustomerIdentifier?: string | null;
+		ProductCode?: string | null;
 	}
 
 

@@ -7,17 +7,17 @@ export namespace MyNS {
 	export interface ApproximateProgress {
 
 		/** Obsolete. */
-		percentComplete?: number;
+		percentComplete?: number | null;
 
 		/**
 		 * Position defines a position within a collection of data.  The value
 		 * can be either the end position, a key (used with ordered
 		 * collections), a byte offset, or a record index.
 		 */
-		position?: Position;
+		position?: Position | null;
 
 		/** Obsolete. */
-		remainingTime?: string;
+		remainingTime?: string | null;
 	}
 
 
@@ -29,32 +29,32 @@ export namespace MyNS {
 	export interface Position {
 
 		/** Position is a byte offset. */
-		byteOffset?: string;
+		byteOffset?: string | null;
 
 		/**
 		 * A position that encapsulates an inner position and an index for the inner
 		 * position. A ConcatPosition can be used by a reader of a source that
 		 * encapsulates a set of other sources.
 		 */
-		concatPosition?: ConcatPosition;
+		concatPosition?: ConcatPosition | null;
 
 		/**
 		 * Position is past all other positions. Also useful for the end
 		 * position of an unbounded range.
 		 */
-		end?: boolean;
+		end?: boolean | null;
 
 		/** Position is a string key, ordered lexicographically. */
-		key?: string;
+		key?: string | null;
 
 		/** Position is a record index. */
-		recordIndex?: string;
+		recordIndex?: string | null;
 
 		/**
 		 * CloudPosition is a base64 encoded BatchShufflePosition (with FIXED
 		 * sharding).
 		 */
-		shufflePosition?: string;
+		shufflePosition?: string | null;
 	}
 
 
@@ -66,14 +66,14 @@ export namespace MyNS {
 	export interface ConcatPosition {
 
 		/** Index of the inner source. */
-		index?: number;
+		index?: number | null;
 
 		/**
 		 * Position defines a position within a collection of data.  The value
 		 * can be either the end position, a key (used with ordered
 		 * collections), a byte offset, or a record index.
 		 */
-		position?: Position;
+		position?: Position | null;
 	}
 
 
@@ -84,26 +84,26 @@ export namespace MyNS {
 		 * Represents the level of parallelism in a WorkItem's input,
 		 * reported by the worker.
 		 */
-		consumedParallelism?: ReportedParallelism;
+		consumedParallelism?: ReportedParallelism | null;
 
 		/**
 		 * Completion as fraction of the input consumed, from 0.0 (beginning, nothing
 		 * consumed), to 1.0 (end of the input, entire input consumed).
 		 */
-		fractionConsumed?: number;
+		fractionConsumed?: number | null;
 
 		/**
 		 * Position defines a position within a collection of data.  The value
 		 * can be either the end position, a key (used with ordered
 		 * collections), a byte offset, or a record index.
 		 */
-		position?: Position;
+		position?: Position | null;
 
 		/**
 		 * Represents the level of parallelism in a WorkItem's input,
 		 * reported by the worker.
 		 */
-		remainingParallelism?: ReportedParallelism;
+		remainingParallelism?: ReportedParallelism | null;
 	}
 
 
@@ -121,10 +121,10 @@ export namespace MyNS {
 		 * This is a work-around for lack of support for infinity by the current
 		 * JSON-based Java RPC stack.
 		 */
-		isInfinite?: boolean;
+		isInfinite?: boolean | null;
 
 		/** Specifies the level of parallelism in case it is finite. */
-		value?: number;
+		value?: number | null;
 	}
 
 
@@ -135,20 +135,20 @@ export namespace MyNS {
 		 * A fraction at which to split the work item, from 0.0 (beginning of the
 		 * input) to 1.0 (end of the input).
 		 */
-		fractionConsumed?: number;
+		fractionConsumed?: number | null;
 
 		/**
 		 * The fraction of the remainder of work to split the work item at, from 0.0
 		 * (split at the current position) to 1.0 (end of the input).
 		 */
-		fractionOfRemainder?: number;
+		fractionOfRemainder?: number | null;
 
 		/**
 		 * Position defines a position within a collection of data.  The value
 		 * can be either the end position, a key (used with ordered
 		 * collections), a byte offset, or a record index.
 		 */
-		position?: Position;
+		position?: Position | null;
 	}
 
 
@@ -159,32 +159,32 @@ export namespace MyNS {
 	export interface AutoscalingEvent {
 
 		/** The current number of workers the job has. */
-		currentNumWorkers?: string;
+		currentNumWorkers?: string | null;
 
 		/**
 		 * A rich message format, including a human readable string, a key for
 		 * identifying the message, and structured data associated with the message for
 		 * programmatic consumption.
 		 */
-		description?: StructuredMessage;
+		description?: StructuredMessage | null;
 
 		/** The type of autoscaling event to report. */
-		eventType?: AutoscalingEventEventType;
+		eventType?: AutoscalingEventEventType | null;
 
 		/** The target number of workers the worker pool wants to resize to use. */
-		targetNumWorkers?: string;
+		targetNumWorkers?: string | null;
 
 		/**
 		 * The time this event was emitted to indicate a new target or current
 		 * num_workers value.
 		 */
-		time?: string;
+		time?: string | null;
 
 		/**
 		 * A short and friendly name for the worker pool this event refers to,
 		 * populated from the value of PoolStageRelation::user_pool_name.
 		 */
-		workerPool?: string;
+		workerPool?: string | null;
 	}
 
 
@@ -199,13 +199,13 @@ export namespace MyNS {
 		 * Identifier for this message type.  Used by external systems to
 		 * internationalize or personalize message.
 		 */
-		messageKey?: string;
+		messageKey?: string | null;
 
 		/** Human-readable version of message. */
-		messageText?: string;
+		messageText?: string | null;
 
 		/** The structured data associated with this message. */
-		parameters?: Array<Parameter>;
+		parameters?: Array<Parameter> | null;
 	}
 
 
@@ -213,10 +213,10 @@ export namespace MyNS {
 	export interface Parameter {
 
 		/** Key or name for this parameter. */
-		key?: string;
+		key?: string | null;
 
 		/** Value for this parameter. */
-		value?: any;
+		value?: any | null;
 	}
 
 	export enum AutoscalingEventEventType { TYPE_UNKNOWN = 0, TARGET_NUM_WORKERS_CHANGED = 1, CURRENT_NUM_WORKERS_CHANGED = 2, ACTUATION_FAILURE = 3, NO_CHANGE = 4 }
@@ -226,10 +226,10 @@ export namespace MyNS {
 	export interface AutoscalingSettings {
 
 		/** The algorithm to use for autoscaling. */
-		algorithm?: AutoscalingSettingsAlgorithm;
+		algorithm?: AutoscalingSettingsAlgorithm | null;
 
 		/** The maximum number of workers to cap scaling at. */
-		maxNumWorkers?: number;
+		maxNumWorkers?: number | null;
 	}
 
 	export enum AutoscalingSettingsAlgorithm { AUTOSCALING_ALGORITHM_UNKNOWN = 0, AUTOSCALING_ALGORITHM_NONE = 1, AUTOSCALING_ALGORITHM_BASIC = 2 }
@@ -239,16 +239,16 @@ export namespace MyNS {
 	export interface BigQueryIODetails {
 
 		/** Dataset accessed in the connection. */
-		dataset?: string;
+		dataset?: string | null;
 
 		/** Project accessed in the connection. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** Query used to access data in the connection. */
-		query?: string;
+		query?: string | null;
 
 		/** Table accessed in the connection. */
-		table?: string;
+		table?: string | null;
 	}
 
 
@@ -256,13 +256,13 @@ export namespace MyNS {
 	export interface BigTableIODetails {
 
 		/** InstanceId accessed in the connection. */
-		instanceId?: string;
+		instanceId?: string | null;
 
 		/** ProjectId accessed in the connection. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** TableId accessed in the connection. */
-		tableId?: string;
+		tableId?: string | null;
 	}
 
 
@@ -273,16 +273,16 @@ export namespace MyNS {
 		 * Average CPU utilization rate (% non-idle cpu / second) since previous
 		 * sample.
 		 */
-		rate?: number;
+		rate?: number | null;
 
 		/** Timestamp of the measurement. */
-		timestamp?: string;
+		timestamp?: string | null;
 
 		/**
 		 * Total active CPU time across all cores (ie., non-idle) in milliseconds
 		 * since start-up.
 		 */
-		totalMs?: string;
+		totalMs?: string | null;
 	}
 
 
@@ -293,16 +293,16 @@ export namespace MyNS {
 	export interface ComponentSource {
 
 		/** Dataflow service generated name for this source. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * User name for the original user transform or collection with which this
 		 * source is most closely associated.
 		 */
-		originalTransformOrCollection?: string;
+		originalTransformOrCollection?: string | null;
 
 		/** Human-readable name for this transform; may be user or system generated. */
-		userName?: string;
+		userName?: string | null;
 	}
 
 
@@ -310,16 +310,16 @@ export namespace MyNS {
 	export interface ComponentTransform {
 
 		/** Dataflow service generated name for this source. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * User name for the original user transform with which this transform is
 		 * most closely associated.
 		 */
-		originalTransform?: string;
+		originalTransform?: string | null;
 
 		/** Human-readable name for this transform; may be user or system generated. */
-		userName?: string;
+		userName?: string | null;
 	}
 
 
@@ -327,22 +327,22 @@ export namespace MyNS {
 	export interface ComputationTopology {
 
 		/** The ID of the computation. */
-		computationId?: string;
+		computationId?: string | null;
 
 		/** The inputs to the computation. */
-		inputs?: Array<StreamLocation>;
+		inputs?: Array<StreamLocation> | null;
 
 		/** The key ranges processed by the computation. */
-		keyRanges?: Array<KeyRangeLocation>;
+		keyRanges?: Array<KeyRangeLocation> | null;
 
 		/** The outputs from the computation. */
-		outputs?: Array<StreamLocation>;
+		outputs?: Array<StreamLocation> | null;
 
 		/** The state family values. */
-		stateFamilies?: Array<StateFamilyConfig>;
+		stateFamilies?: Array<StateFamilyConfig> | null;
 
 		/** The system stage name. */
-		systemStageName?: string;
+		systemStageName?: string | null;
 	}
 
 
@@ -353,22 +353,22 @@ export namespace MyNS {
 	export interface StreamLocation {
 
 		/** Identifies the location of a custom souce. */
-		customSourceLocation?: CustomSourceLocation;
+		customSourceLocation?: CustomSourceLocation | null;
 
 		/**
 		 * Identifies a pubsub location to use for transferring data into or
 		 * out of a streaming Dataflow job.
 		 */
-		pubsubLocation?: PubsubLocation;
+		pubsubLocation?: PubsubLocation | null;
 
 		/** Identifies the location of a streaming side input. */
-		sideInputLocation?: StreamingSideInputLocation;
+		sideInputLocation?: StreamingSideInputLocation | null;
 
 		/**
 		 * Identifies the location of a streaming computation stage, for
 		 * stage-to-stage communication.
 		 */
-		streamingStageLocation?: StreamingStageLocation;
+		streamingStageLocation?: StreamingStageLocation | null;
 	}
 
 
@@ -376,7 +376,7 @@ export namespace MyNS {
 	export interface CustomSourceLocation {
 
 		/** Whether this source is stateful. */
-		stateful?: boolean;
+		stateful?: boolean | null;
 	}
 
 
@@ -387,40 +387,40 @@ export namespace MyNS {
 	export interface PubsubLocation {
 
 		/** Indicates whether the pipeline allows late-arriving data. */
-		dropLateData?: boolean;
+		dropLateData?: boolean | null;
 
 		/**
 		 * If set, contains a pubsub label from which to extract record ids.
 		 * If left empty, record deduplication will be strictly best effort.
 		 */
-		idLabel?: string;
+		idLabel?: string | null;
 
 		/**
 		 * A pubsub subscription, in the form of
 		 * "pubsub.googleapis.com/subscriptions/<project-id>/<subscription-name>"
 		 */
-		subscription?: string;
+		subscription?: string | null;
 
 		/**
 		 * If set, contains a pubsub label from which to extract record timestamps.
 		 * If left empty, record timestamps will be generated upon arrival.
 		 */
-		timestampLabel?: string;
+		timestampLabel?: string | null;
 
 		/**
 		 * A pubsub topic, in the form of
 		 * "pubsub.googleapis.com/topics/<project-id>/<topic-name>"
 		 */
-		topic?: string;
+		topic?: string | null;
 
 		/**
 		 * If set, specifies the pubsub subscription that will be used for tracking
 		 * custom time timestamps for watermark estimation.
 		 */
-		trackingSubscription?: string;
+		trackingSubscription?: string | null;
 
 		/** If true, then the client has requested to get pubsub attributes. */
-		withAttributes?: boolean;
+		withAttributes?: boolean | null;
 	}
 
 
@@ -428,10 +428,10 @@ export namespace MyNS {
 	export interface StreamingSideInputLocation {
 
 		/** Identifies the state family where this side input is stored. */
-		stateFamily?: string;
+		stateFamily?: string | null;
 
 		/** Identifies the particular side input within the streaming Dataflow job. */
-		tag?: string;
+		tag?: string | null;
 	}
 
 
@@ -445,7 +445,7 @@ export namespace MyNS {
 		 * Identifies the particular stream within the streaming Dataflow
 		 * job.
 		 */
-		streamId?: string;
+		streamId?: string | null;
 	}
 
 
@@ -462,25 +462,25 @@ export namespace MyNS {
 		 * identifies the disk within that project, for example
 		 * "myproject-1014-104817-4c2-harness-0-disk-1".
 		 */
-		dataDisk?: string;
+		dataDisk?: string | null;
 
 		/**
 		 * The physical location of this range assignment to be used for
 		 * streaming computation cross-worker message delivery.
 		 */
-		deliveryEndpoint?: string;
+		deliveryEndpoint?: string | null;
 
 		/**
 		 * DEPRECATED. The location of the persistent state for this range, as a
 		 * persistent directory in the worker local filesystem.
 		 */
-		deprecatedPersistentDirectory?: string;
+		deprecatedPersistentDirectory?: string | null;
 
 		/** The end (exclusive) of the key range. */
-		end?: string;
+		end?: string | null;
 
 		/** The start (inclusive) of the key range. */
-		start?: string;
+		start?: string | null;
 	}
 
 
@@ -488,10 +488,10 @@ export namespace MyNS {
 	export interface StateFamilyConfig {
 
 		/** If true, this family corresponds to a read operation. */
-		isRead?: boolean;
+		isRead?: boolean | null;
 
 		/** The state family value. */
-		stateFamily?: string;
+		stateFamily?: string | null;
 	}
 
 
@@ -499,13 +499,13 @@ export namespace MyNS {
 	export interface ContainerSpec {
 
 		/** Name of the docker container image. E.g., gcr.io/project/some-image */
-		image?: string;
+		image?: string | null;
 
 		/** Metadata describing a template. */
-		metadata?: TemplateMetadata;
+		metadata?: TemplateMetadata | null;
 
 		/** SDK Information. */
-		sdkInfo?: SDKInfo;
+		sdkInfo?: SDKInfo | null;
 	}
 
 
@@ -513,13 +513,13 @@ export namespace MyNS {
 	export interface TemplateMetadata {
 
 		/** Optional. A description of the template. */
-		description?: string;
+		description?: string | null;
 
 		/** Required. The name of the template. */
-		name?: string;
+		name?: string | null;
 
 		/** The parameters for the template. */
-		parameters?: Array<ParameterMetadata>;
+		parameters?: Array<ParameterMetadata> | null;
 	}
 
 
@@ -527,25 +527,25 @@ export namespace MyNS {
 	export interface ParameterMetadata {
 
 		/** Required. The help text to display for the parameter. */
-		helpText?: string;
+		helpText?: string | null;
 
 		/** Optional. Whether the parameter is optional. Defaults to false. */
-		isOptional?: boolean;
+		isOptional?: boolean | null;
 
 		/** Required. The label to display for the parameter. */
-		label?: string;
+		label?: string | null;
 
 		/** Required. The name of the parameter. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Optional. The type of the parameter.
 		 * Used for selecting input picker.
 		 */
-		paramType?: ParameterMetadataParamType;
+		paramType?: ParameterMetadataParamType | null;
 
 		/** Optional. Regexes that the parameter must match. */
-		regexes?: Array<string>;
+		regexes?: Array<string> | null;
 	}
 
 	export enum ParameterMetadataParamType { DEFAULT = 0, TEXT = 1, GCS_READ_BUCKET = 2, GCS_WRITE_BUCKET = 3, GCS_READ_FILE = 4, GCS_WRITE_FILE = 5, GCS_READ_FOLDER = 6, GCS_WRITE_FOLDER = 7, PUBSUB_TOPIC = 8, PUBSUB_SUBSCRIPTION = 9 }
@@ -555,10 +555,10 @@ export namespace MyNS {
 	export interface SDKInfo {
 
 		/** Required. The SDK Language. */
-		language?: SDKInfoLanguage;
+		language?: SDKInfoLanguage | null;
 
 		/** Optional. The SDK version. */
-		version?: string;
+		version?: string | null;
 	}
 
 	export enum SDKInfoLanguage { UNKNOWN = 0, JAVA = 1, PYTHON = 2 }
@@ -568,16 +568,16 @@ export namespace MyNS {
 	export interface CounterMetadata {
 
 		/** Human-readable description of the counter semantics. */
-		description?: string;
+		description?: string | null;
 
 		/** Counter aggregation kind. */
-		kind?: CounterMetadataKind;
+		kind?: CounterMetadataKind | null;
 
 		/** A string referring to the unit type. */
-		otherUnits?: string;
+		otherUnits?: string | null;
 
 		/** System defined Units, see above enum. */
-		standardUnits?: CounterMetadataStandardUnits;
+		standardUnits?: CounterMetadataStandardUnits | null;
 	}
 
 	export enum CounterMetadataKind { INVALID = 0, SUM = 1, MAX = 2, MIN = 3, MEAN = 4, OR = 5, AND = 6, SET = 7, DISTRIBUTION = 8, LATEST_VALUE = 9 }
@@ -592,10 +592,10 @@ export namespace MyNS {
 	export interface CounterStructuredName {
 
 		/** Name of the optimized step being executed by the workers. */
-		componentStepName?: string;
+		componentStepName?: string | null;
 
 		/** Name of the stage. An execution step contains multiple component steps. */
-		executionStepName?: string;
+		executionStepName?: string | null;
 
 		/**
 		 * Index of an input collection that's being read from/written to as a side
@@ -605,39 +605,39 @@ export namespace MyNS {
 		 * Side inputs are identified by a pair of (original_step_name, input_index).
 		 * This field helps uniquely identify them.
 		 */
-		inputIndex?: number;
+		inputIndex?: number | null;
 
 		/**
 		 * Counter name. Not necessarily globally-unique, but unique within the
 		 * context of the other fields.
 		 * Required.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** One of the standard Origins defined above. */
-		origin?: CounterStructuredNameOrigin;
+		origin?: CounterStructuredNameOrigin | null;
 
 		/** A string containing a more specific namespace of the counter's origin. */
-		originNamespace?: string;
+		originNamespace?: string | null;
 
 		/**
 		 * The step name requesting an operation, such as GBK.
 		 * I.e. the ParDo causing a read/write from shuffle to occur, or a
 		 * read from side inputs.
 		 */
-		originalRequestingStepName?: string;
+		originalRequestingStepName?: string | null;
 
 		/**
 		 * System generated name of the original step in the user's graph, before
 		 * optimization.
 		 */
-		originalStepName?: string;
+		originalStepName?: string | null;
 
 		/** Portion of this counter, either key or value. */
-		portion?: CounterStructuredNamePortion;
+		portion?: CounterStructuredNamePortion | null;
 
 		/** ID of a particular worker. */
-		workerId?: string;
+		workerId?: string | null;
 	}
 
 	export enum CounterStructuredNameOrigin { SYSTEM = 0, USER = 1 }
@@ -652,13 +652,13 @@ export namespace MyNS {
 	export interface CounterStructuredNameAndMetadata {
 
 		/** CounterMetadata includes all static non-name non-value counter attributes. */
-		metadata?: CounterMetadata;
+		metadata?: CounterMetadata | null;
 
 		/**
 		 * Identifies a counter within a per-job namespace. Counters whose structured
 		 * names are the same get merged into a single value for the job.
 		 */
-		name?: CounterStructuredName;
+		name?: CounterStructuredName | null;
 	}
 
 
@@ -666,7 +666,7 @@ export namespace MyNS {
 	export interface CounterUpdate {
 
 		/** Boolean value for And, Or. */
-		boolean?: boolean;
+		boolean?: boolean | null;
 
 		/**
 		 * True if this counter is reported as the total cumulative aggregate
@@ -674,56 +674,56 @@ export namespace MyNS {
 		 * By default this is false, indicating that this counter is reported
 		 * as a delta.
 		 */
-		cumulative?: boolean;
+		cumulative?: boolean | null;
 
 		/** A metric value representing a distribution. */
-		distribution?: DistributionUpdate;
+		distribution?: DistributionUpdate | null;
 
 		/** Floating point value for Sum, Max, Min. */
-		floatingPoint?: number;
+		floatingPoint?: number | null;
 
 		/** A metric value representing a list of floating point numbers. */
-		floatingPointList?: FloatingPointList;
+		floatingPointList?: FloatingPointList | null;
 
 		/** A representation of a floating point mean metric contribution. */
-		floatingPointMean?: FloatingPointMean;
+		floatingPointMean?: FloatingPointMean | null;
 
 		/**
 		 * A representation of an int64, n, that is immune to precision loss when
 		 * encoded in JSON.
 		 */
-		integer?: SplitInt64;
+		integer?: SplitInt64 | null;
 
 		/** A metric value representing temporal values of a variable. */
-		integerGauge?: IntegerGauge;
+		integerGauge?: IntegerGauge | null;
 
 		/** A metric value representing a list of integers. */
-		integerList?: IntegerList;
+		integerList?: IntegerList | null;
 
 		/** A representation of an integer mean metric contribution. */
-		integerMean?: IntegerMean;
+		integerMean?: IntegerMean | null;
 
 		/** Value for internally-defined counters used by the Dataflow service. */
-		internal?: any;
+		internal?: any | null;
 
 		/** Basic metadata about a counter. */
-		nameAndKind?: NameAndKind;
+		nameAndKind?: NameAndKind | null;
 
 		/**
 		 * The service-generated short identifier for this counter.
 		 * The short_id -> (name, metadata) mapping is constant for the lifetime of
 		 * a job.
 		 */
-		shortId?: string;
+		shortId?: string | null;
 
 		/** A metric value representing a list of strings. */
-		stringList?: StringList;
+		stringList?: StringList | null;
 
 		/**
 		 * A single message which encapsulates structured name and metadata for a given
 		 * counter.
 		 */
-		structuredNameAndMetadata?: CounterStructuredNameAndMetadata;
+		structuredNameAndMetadata?: CounterStructuredNameAndMetadata | null;
 	}
 
 
@@ -734,7 +734,7 @@ export namespace MyNS {
 		 * A representation of an int64, n, that is immune to precision loss when
 		 * encoded in JSON.
 		 */
-		count?: SplitInt64;
+		count?: SplitInt64 | null;
 
 		/**
 		 * Histogram of value counts for a distribution.
@@ -744,28 +744,28 @@ export namespace MyNS {
 		 * boundaries are 0, 1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, ...
 		 * Negative values are not supported.
 		 */
-		histogram?: Histogram;
+		histogram?: Histogram | null;
 
 		/**
 		 * A representation of an int64, n, that is immune to precision loss when
 		 * encoded in JSON.
 		 */
-		max?: SplitInt64;
+		max?: SplitInt64 | null;
 
 		/**
 		 * A representation of an int64, n, that is immune to precision loss when
 		 * encoded in JSON.
 		 */
-		min?: SplitInt64;
+		min?: SplitInt64 | null;
 
 		/**
 		 * A representation of an int64, n, that is immune to precision loss when
 		 * encoded in JSON.
 		 */
-		sum?: SplitInt64;
+		sum?: SplitInt64 | null;
 
 		/** Use a double since the sum of squares is likely to overflow int64. */
-		sumOfSquares?: number;
+		sumOfSquares?: number | null;
 	}
 
 
@@ -776,10 +776,10 @@ export namespace MyNS {
 	export interface SplitInt64 {
 
 		/** The high order bits, including the sign: n >> 32. */
-		highBits?: number;
+		highBits?: number | null;
 
 		/** The low order bits: n & 0xffffffff. */
-		lowBits?: string;
+		lowBits?: string | null;
 	}
 
 
@@ -799,14 +799,14 @@ export namespace MyNS {
 		 * values of an unsigned long, with ULLONG_MAX falling into the 59th bucket
 		 * with range [1e19, 2e19).
 		 */
-		bucketCounts?: Array<string>;
+		bucketCounts?: Array<string> | null;
 
 		/**
 		 * Starting index of first stored bucket. The non-inclusive upper-bound of
 		 * the ith bucket is given by:
 		 * pow(10,(i-first_bucket_offset)/3) * (1,2,5)[(i-first_bucket_offset)%3]
 		 */
-		firstBucketOffset?: number;
+		firstBucketOffset?: number | null;
 	}
 
 
@@ -814,7 +814,7 @@ export namespace MyNS {
 	export interface FloatingPointList {
 
 		/** Elements of the list. */
-		elements?: Array<number>;
+		elements?: Array<number> | null;
 	}
 
 
@@ -825,10 +825,10 @@ export namespace MyNS {
 		 * A representation of an int64, n, that is immune to precision loss when
 		 * encoded in JSON.
 		 */
-		count?: SplitInt64;
+		count?: SplitInt64 | null;
 
 		/** The sum of all values being aggregated. */
-		sum?: number;
+		sum?: number | null;
 	}
 
 
@@ -836,13 +836,13 @@ export namespace MyNS {
 	export interface IntegerGauge {
 
 		/** The time at which this value was measured. Measured as msecs from epoch. */
-		timestamp?: string;
+		timestamp?: string | null;
 
 		/**
 		 * A representation of an int64, n, that is immune to precision loss when
 		 * encoded in JSON.
 		 */
-		value?: SplitInt64;
+		value?: SplitInt64 | null;
 	}
 
 
@@ -850,7 +850,7 @@ export namespace MyNS {
 	export interface IntegerList {
 
 		/** Elements of the list. */
-		elements?: Array<SplitInt64>;
+		elements?: Array<SplitInt64> | null;
 	}
 
 
@@ -861,13 +861,13 @@ export namespace MyNS {
 		 * A representation of an int64, n, that is immune to precision loss when
 		 * encoded in JSON.
 		 */
-		count?: SplitInt64;
+		count?: SplitInt64 | null;
 
 		/**
 		 * A representation of an int64, n, that is immune to precision loss when
 		 * encoded in JSON.
 		 */
-		sum?: SplitInt64;
+		sum?: SplitInt64 | null;
 	}
 
 
@@ -875,10 +875,10 @@ export namespace MyNS {
 	export interface NameAndKind {
 
 		/** Counter aggregation kind. */
-		kind?: CounterMetadataKind;
+		kind?: CounterMetadataKind | null;
 
 		/** Name of the counter. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -886,7 +886,7 @@ export namespace MyNS {
 	export interface StringList {
 
 		/** Elements of the list. */
-		elements?: Array<string>;
+		elements?: Array<string> | null;
 	}
 
 
@@ -894,27 +894,27 @@ export namespace MyNS {
 	export interface CreateJobFromTemplateRequest {
 
 		/** The environment values to set at runtime. */
-		environment?: RuntimeEnvironment;
+		environment?: RuntimeEnvironment | null;
 
 		/**
 		 * Required. A Cloud Storage path to the template from which to
 		 * create the job.
 		 * Must be a valid Cloud Storage URL, beginning with `gs://`.
 		 */
-		gcsPath?: string;
+		gcsPath?: string | null;
 
 		/** Required. The job name to use for the created job. */
-		jobName?: string;
+		jobName?: string | null;
 
 		/**
 		 * The [regional endpoint]
 		 * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
 		 * which to direct the request.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/** The runtime parameters to pass to the job. */
-		parameters?: {[id: string]: string };
+		parameters?: {[id: string]: string } | null;
 	}
 
 
@@ -922,7 +922,7 @@ export namespace MyNS {
 	export interface RuntimeEnvironment {
 
 		/** Additional experiment flags for the job. */
-		additionalExperiments?: Array<string>;
+		additionalExperiments?: Array<string> | null;
 
 		/**
 		 * Additional user labels to be specified for the job.
@@ -930,59 +930,59 @@ export namespace MyNS {
 		 * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
 		 * page.
 		 */
-		additionalUserLabels?: {[id: string]: string };
+		additionalUserLabels?: {[id: string]: string } | null;
 
 		/**
 		 * Whether to bypass the safety checks for the job's temporary directory.
 		 * Use with caution.
 		 */
-		bypassTempDirValidation?: boolean;
+		bypassTempDirValidation?: boolean | null;
 
 		/** Configuration for VM IPs. */
-		ipConfiguration?: RuntimeEnvironmentIpConfiguration;
+		ipConfiguration?: RuntimeEnvironmentIpConfiguration | null;
 
 		/**
 		 * Optional. Name for the Cloud KMS key for the job.
 		 * Key format is:
 		 * projects/<project>/locations/<location>/keyRings/<keyring>/cryptoKeys/<key>
 		 */
-		kmsKeyName?: string;
+		kmsKeyName?: string | null;
 
 		/**
 		 * The machine type to use for the job. Defaults to the value from the
 		 * template if not specified.
 		 */
-		machineType?: string;
+		machineType?: string | null;
 
 		/**
 		 * The maximum number of Google Compute Engine instances to be made
 		 * available to your pipeline during execution, from 1 to 1000.
 		 */
-		maxWorkers?: number;
+		maxWorkers?: number | null;
 
 		/**
 		 * Network to which VMs will be assigned.  If empty or unspecified,
 		 * the service will use the network "default".
 		 */
-		network?: string;
+		network?: string | null;
 
 		/** The initial number of Google Compute Engine instnaces for the job. */
-		numWorkers?: number;
+		numWorkers?: number | null;
 
 		/** The email address of the service account to run the job as. */
-		serviceAccountEmail?: string;
+		serviceAccountEmail?: string | null;
 
 		/**
 		 * Subnetwork to which VMs will be assigned, if desired.  Expected to be of
 		 * the form "regions/REGION/subnetworks/SUBNETWORK".
 		 */
-		subnetwork?: string;
+		subnetwork?: string | null;
 
 		/**
 		 * The Cloud Storage path to use for temporary files.
 		 * Must be a valid Cloud Storage URL, beginning with `gs://`.
 		 */
-		tempLocation?: string;
+		tempLocation?: string | null;
 
 		/**
 		 * The Compute Engine region
@@ -991,7 +991,7 @@ export namespace MyNS {
 		 * with worker_zone. If neither worker_region nor worker_zone is specified,
 		 * default to the control plane's region.
 		 */
-		workerRegion?: string;
+		workerRegion?: string | null;
 
 		/**
 		 * The Compute Engine zone
@@ -1001,7 +1001,7 @@ export namespace MyNS {
 		 * a zone in the control plane's region is chosen based on available capacity.
 		 * If both `worker_zone` and `zone` are set, `worker_zone` takes precedence.
 		 */
-		workerZone?: string;
+		workerZone?: string | null;
 
 		/**
 		 * The Compute Engine [availability
@@ -1009,7 +1009,7 @@ export namespace MyNS {
 		 * for launching worker instances to run your pipeline.
 		 * In the future, worker_zone will take precedence.
 		 */
-		zone?: string;
+		zone?: string | null;
 	}
 
 	export enum RuntimeEnvironmentIpConfiguration { WORKER_IP_UNSPECIFIED = 0, WORKER_IP_PUBLIC = 1, WORKER_IP_PRIVATE = 2 }
@@ -1024,13 +1024,13 @@ export namespace MyNS {
 		 * example the list of { "myproject-1014-104817-4c2-harness-0-disk-0" },
 		 * { "myproject-1014-104817-4c2-harness-0-disk-1" }.
 		 */
-		dataDisks?: Array<string>;
+		dataDisks?: Array<string> | null;
 
 		/**
 		 * VM instance name the data disks mounted to, for example
 		 * "myproject-1014-104817-4c2-harness-0".
 		 */
-		vmInstance?: string;
+		vmInstance?: string | null;
 	}
 
 
@@ -1038,10 +1038,10 @@ export namespace MyNS {
 	export interface DatastoreIODetails {
 
 		/** Namespace used in the connection. */
-		namespace?: string;
+		namespace?: string | null;
 
 		/** ProjectId accessed in the connection. */
-		projectId?: string;
+		projectId?: string | null;
 	}
 
 
@@ -1059,10 +1059,10 @@ export namespace MyNS {
 	export interface DerivedSource {
 
 		/** What source to base the produced source on (if any). */
-		derivationMode?: DerivedSourceDerivationMode;
+		derivationMode?: DerivedSourceDerivationMode | null;
 
 		/** A source that records can be read and decoded from. */
-		source?: Source;
+		source?: Source | null;
 	}
 
 	export enum DerivedSourceDerivationMode { SOURCE_DERIVATION_MODE_UNKNOWN = 0, SOURCE_DERIVATION_MODE_INDEPENDENT = 1, SOURCE_DERIVATION_MODE_CHILD_OF_CURRENT = 2, SOURCE_DERIVATION_MODE_SIBLING_OF_CURRENT = 3 }
@@ -1080,10 +1080,10 @@ export namespace MyNS {
 		 * of each parameter in the order:
 		 * base_specs (later items win), spec (overrides anything in base_specs).
 		 */
-		baseSpecs?: Array<string>;
+		baseSpecs?: Array<string> | null;
 
 		/** The codec to use to decode data read from the source. */
-		codec?: {[id: string]: any };
+		codec?: {[id: string]: any } | null;
 
 		/**
 		 * Setting this value to true hints to the framework that the source
@@ -1101,16 +1101,16 @@ export namespace MyNS {
 		 * Source objects supplied by the framework to the user don't have
 		 * this field populated.
 		 */
-		doesNotNeedSplitting?: boolean;
+		doesNotNeedSplitting?: boolean | null;
 
 		/**
 		 * Metadata about a Source useful for automatically optimizing
 		 * and tuning the pipeline, etc.
 		 */
-		metadata?: SourceMetadata;
+		metadata?: SourceMetadata | null;
 
 		/** The source to read from, plus its parameters. */
-		spec?: {[id: string]: any };
+		spec?: {[id: string]: any } | null;
 	}
 
 
@@ -1125,19 +1125,19 @@ export namespace MyNS {
 		 * read from this source.  This estimate is in terms of external storage
 		 * size, before any decompression or other processing done by the reader.
 		 */
-		estimatedSizeBytes?: string;
+		estimatedSizeBytes?: string | null;
 
 		/**
 		 * Specifies that the size of this source is known to be infinite
 		 * (this is a streaming source).
 		 */
-		infinite?: boolean;
+		infinite?: boolean | null;
 
 		/**
 		 * Whether this source is known to produce key/value pairs with
 		 * the (encoded) keys in lexicographically sorted order.
 		 */
-		producesSortedKeys?: boolean;
+		producesSortedKeys?: boolean | null;
 	}
 
 
@@ -1161,16 +1161,16 @@ export namespace MyNS {
 		 * typically look something like this:
 		 * compute.googleapis.com/projects/project-id/zones/zone/diskTypes/pd-standard
 		 */
-		diskType?: string;
+		diskType?: string | null;
 
 		/** Directory in a VM where disk is mounted. */
-		mountPoint?: string;
+		mountPoint?: string | null;
 
 		/**
 		 * Size of disk in GB.  If zero or unspecified, the service will
 		 * attempt to choose a reasonable default.
 		 */
-		sizeGb?: number;
+		sizeGb?: number | null;
 	}
 
 
@@ -1178,29 +1178,29 @@ export namespace MyNS {
 	export interface DisplayData {
 
 		/** Contains value if the data is of a boolean type. */
-		boolValue?: boolean;
+		boolValue?: boolean | null;
 
 		/** Contains value if the data is of duration type. */
-		durationValue?: string;
+		durationValue?: string | null;
 
 		/** Contains value if the data is of float type. */
-		floatValue?: number;
+		floatValue?: number | null;
 
 		/** Contains value if the data is of int64 type. */
-		int64Value?: string;
+		int64Value?: string | null;
 
 		/** Contains value if the data is of java class type. */
-		javaClassValue?: string;
+		javaClassValue?: string | null;
 
 		/**
 		 * The key identifying the display data.
 		 * This is intended to be used as a label for the display data
 		 * when viewed in a dax monitoring system.
 		 */
-		key?: string;
+		key?: string | null;
 
 		/** An optional label to display in a dax UI for the element. */
-		label?: string;
+		label?: string | null;
 
 		/**
 		 * The namespace for the key. This is usually a class name or programming
@@ -1208,7 +1208,7 @@ export namespace MyNS {
 		 * This allows a dax monitoring system to specially handle the data
 		 * and perform custom rendering.
 		 */
-		namespace?: string;
+		namespace?: string | null;
 
 		/**
 		 * A possible additional shorter value to display.
@@ -1218,16 +1218,16 @@ export namespace MyNS {
 		 * short_str_value can be displayed and java_class_name_value
 		 * will be displayed as a tooltip.
 		 */
-		shortStrValue?: string;
+		shortStrValue?: string | null;
 
 		/** Contains value if the data is of string type. */
-		strValue?: string;
+		strValue?: string | null;
 
 		/** Contains value if the data is of timestamp type. */
-		timestampValue?: string;
+		timestampValue?: string | null;
 
 		/** An optional full URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -1244,7 +1244,7 @@ export namespace MyNS {
 		 * splitting an active task using WorkItemStatus.dynamic_source_split),
 		 * relative to the source being split.
 		 */
-		primary?: DerivedSource;
+		primary?: DerivedSource | null;
 
 		/**
 		 * Specification of one of the bundles produced as a result of splitting
@@ -1252,7 +1252,7 @@ export namespace MyNS {
 		 * splitting an active task using WorkItemStatus.dynamic_source_split),
 		 * relative to the source being split.
 		 */
-		residual?: DerivedSource;
+		residual?: DerivedSource | null;
 	}
 
 
@@ -1265,7 +1265,7 @@ export namespace MyNS {
 		 * default.  This should be in the form of the API service name,
 		 * e.g. "compute.googleapis.com".
 		 */
-		clusterManagerApiService?: string;
+		clusterManagerApiService?: string | null;
 
 		/**
 		 * The dataset for the current project where various workflow
@@ -1274,16 +1274,16 @@ export namespace MyNS {
 		 * Google BigQuery:
 		 * bigquery.googleapis.com/{dataset}
 		 */
-		dataset?: string;
+		dataset?: string | null;
 
 		/** The list of experiments to enable. */
-		experiments?: Array<string>;
+		experiments?: Array<string> | null;
 
 		/** Which Flexible Resource Scheduling mode to run in. */
-		flexResourceSchedulingGoal?: EnvironmentFlexResourceSchedulingGoal;
+		flexResourceSchedulingGoal?: EnvironmentFlexResourceSchedulingGoal | null;
 
 		/** Experimental settings. */
-		internalExperiments?: {[id: string]: any };
+		internalExperiments?: {[id: string]: any } | null;
 
 		/**
 		 * The Cloud Dataflow SDK pipeline options specified by the user. These
@@ -1291,10 +1291,10 @@ export namespace MyNS {
 		 * SDK pipeline options on the worker in a language agnostic and platform
 		 * independent way.
 		 */
-		sdkPipelineOptions?: {[id: string]: any };
+		sdkPipelineOptions?: {[id: string]: any } | null;
 
 		/** Identity to run virtual machines as. Defaults to the default account. */
-		serviceAccountEmail?: string;
+		serviceAccountEmail?: string | null;
 
 		/**
 		 * If set, contains the Cloud KMS key identifier used to encrypt data
@@ -1302,7 +1302,7 @@ export namespace MyNS {
 		 * Format:
 		 * projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
 		 */
-		serviceKmsKeyName?: string;
+		serviceKmsKeyName?: string | null;
 
 		/**
 		 * The prefix of the resources the system should use for temporary
@@ -1317,22 +1317,22 @@ export namespace MyNS {
 		 * storage.googleapis.com/{bucket}/{object}
 		 * bucket.storage.googleapis.com/{object}
 		 */
-		tempStoragePrefix?: string;
+		tempStoragePrefix?: string | null;
 
 		/** A description of the process that generated the request. */
-		userAgent?: {[id: string]: any };
+		userAgent?: {[id: string]: any } | null;
 
 		/**
 		 * A structure describing which components and their versions of the service
 		 * are required in order to run the job.
 		 */
-		version?: {[id: string]: any };
+		version?: {[id: string]: any } | null;
 
 		/**
 		 * The worker pools. At least one "harness" worker pool must be
 		 * specified in order for the job to have workers.
 		 */
-		workerPools?: Array<WorkerPool>;
+		workerPools?: Array<WorkerPool> | null;
 
 		/**
 		 * The Compute Engine region
@@ -1341,7 +1341,7 @@ export namespace MyNS {
 		 * with worker_zone. If neither worker_region nor worker_zone is specified,
 		 * default to the control plane's region.
 		 */
-		workerRegion?: string;
+		workerRegion?: string | null;
 
 		/**
 		 * The Compute Engine zone
@@ -1350,7 +1350,7 @@ export namespace MyNS {
 		 * with worker_region. If neither worker_region nor worker_zone is specified,
 		 * a zone in the control plane's region is chosen based on available capacity.
 		 */
-		workerZone?: string;
+		workerZone?: string | null;
 	}
 
 	export enum EnvironmentFlexResourceSchedulingGoal { FLEXRS_UNSPECIFIED = 0, FLEXRS_SPEED_OPTIMIZED = 1, FLEXRS_COST_OPTIMIZED = 2 }
@@ -1366,82 +1366,82 @@ export namespace MyNS {
 	export interface WorkerPool {
 
 		/** Settings for WorkerPool autoscaling. */
-		autoscalingSettings?: AutoscalingSettings;
+		autoscalingSettings?: AutoscalingSettings | null;
 
 		/** Data disks that are used by a VM in this workflow. */
-		dataDisks?: Array<Disk>;
+		dataDisks?: Array<Disk> | null;
 
 		/**
 		 * The default package set to install.  This allows the service to
 		 * select a default set of packages which are useful to worker
 		 * harnesses written in a particular language.
 		 */
-		defaultPackageSet?: WorkerPoolDefaultPackageSet;
+		defaultPackageSet?: WorkerPoolDefaultPackageSet | null;
 
 		/**
 		 * Size of root disk for VMs, in GB.  If zero or unspecified, the service will
 		 * attempt to choose a reasonable default.
 		 */
-		diskSizeGb?: number;
+		diskSizeGb?: number | null;
 
 		/** Fully qualified source image for disks. */
-		diskSourceImage?: string;
+		diskSourceImage?: string | null;
 
 		/**
 		 * Type of root disk for VMs.  If empty or unspecified, the service will
 		 * attempt to choose a reasonable default.
 		 */
-		diskType?: string;
+		diskType?: string | null;
 
 		/** Configuration for VM IPs. */
-		ipConfiguration?: RuntimeEnvironmentIpConfiguration;
+		ipConfiguration?: RuntimeEnvironmentIpConfiguration | null;
 
 		/**
 		 * The kind of the worker pool; currently only `harness` and `shuffle`
 		 * are supported.
 		 */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * Machine type (e.g. "n1-standard-1").  If empty or unspecified, the
 		 * service will attempt to choose a reasonable default.
 		 */
-		machineType?: string;
+		machineType?: string | null;
 
 		/** Metadata to set on the Google Compute Engine VMs. */
-		metadata?: {[id: string]: string };
+		metadata?: {[id: string]: string } | null;
 
 		/**
 		 * Network to which VMs will be assigned.  If empty or unspecified,
 		 * the service will use the network "default".
 		 */
-		network?: string;
+		network?: string | null;
 
 		/**
 		 * The number of threads per worker harness. If empty or unspecified, the
 		 * service will choose a number of threads (according to the number of cores
 		 * on the selected machine type for batch, or 1 by convention for streaming).
 		 */
-		numThreadsPerWorker?: number;
+		numThreadsPerWorker?: number | null;
 
 		/**
 		 * Number of Google Compute Engine workers in this pool needed to
 		 * execute the job.  If zero or unspecified, the service will
 		 * attempt to choose a reasonable default.
 		 */
-		numWorkers?: number;
+		numWorkers?: number | null;
 
 		/**
 		 * The action to take on host maintenance, as defined by the Google
 		 * Compute Engine API.
 		 */
-		onHostMaintenance?: string;
+		onHostMaintenance?: string | null;
 
 		/** Packages to be installed on workers. */
-		packages?: Array<Package>;
+		packages?: Array<Package> | null;
 
 		/** Extra arguments for this worker pool. */
-		poolArgs?: {[id: string]: any };
+		poolArgs?: {[id: string]: any } | null;
 
 		/**
 		 * Set of SDK harness containers needed to execute this pipeline. This will
@@ -1449,16 +1449,16 @@ export namespace MyNS {
 		 * should have only one entry. Cross-language pipelines will have two or more
 		 * entries.
 		 */
-		sdkHarnessContainerImages?: Array<SdkHarnessContainerImage>;
+		sdkHarnessContainerImages?: Array<SdkHarnessContainerImage> | null;
 
 		/**
 		 * Subnetwork to which VMs will be assigned, if desired.  Expected to be of
 		 * the form "regions/REGION/subnetworks/SUBNETWORK".
 		 */
-		subnetwork?: string;
+		subnetwork?: string | null;
 
 		/** Taskrunner configuration settings. */
-		taskrunnerSettings?: TaskRunnerSettings;
+		taskrunnerSettings?: TaskRunnerSettings | null;
 
 		/**
 		 * Sets the policy for determining when to turndown worker pool.
@@ -1476,20 +1476,20 @@ export namespace MyNS {
 		 * If unknown or unspecified, the service will attempt to choose a reasonable
 		 * default.
 		 */
-		teardownPolicy?: WorkerPoolTeardownPolicy;
+		teardownPolicy?: WorkerPoolTeardownPolicy | null;
 
 		/**
 		 * Required. Docker container image that executes the Cloud Dataflow worker
 		 * harness, residing in Google Container Registry.
 		 * Deprecated for the Fn API path. Use sdk_harness_container_images instead.
 		 */
-		workerHarnessContainerImage?: string;
+		workerHarnessContainerImage?: string | null;
 
 		/**
 		 * Zone to run the worker pools in.  If empty or unspecified, the service
 		 * will attempt to choose a reasonable default.
 		 */
-		zone?: string;
+		zone?: string | null;
 	}
 
 	export enum WorkerPoolDefaultPackageSet { DEFAULT_PACKAGE_SET_UNKNOWN = 0, DEFAULT_PACKAGE_SET_NONE = 1, DEFAULT_PACKAGE_SET_JAVA = 2, DEFAULT_PACKAGE_SET_PYTHON = 3 }
@@ -1513,10 +1513,10 @@ export namespace MyNS {
 		 * storage.googleapis.com/{bucket}
 		 * bucket.storage.googleapis.com/
 		 */
-		location?: string;
+		location?: string | null;
 
 		/** The name of the package. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -1524,7 +1524,7 @@ export namespace MyNS {
 	export interface SdkHarnessContainerImage {
 
 		/** A docker container image that resides in Google Container Registry. */
-		containerImage?: string;
+		containerImage?: string | null;
 
 		/**
 		 * If true, recommends the Dataflow service to use only one core per SDK
@@ -1533,7 +1533,7 @@ export namespace MyNS {
 		 * efficiency. Note that Dataflow service may choose to override this property
 		 * if needed.
 		 */
-		useSingleCorePerContainer?: boolean;
+		useSingleCorePerContainer?: boolean | null;
 	}
 
 
@@ -1541,10 +1541,10 @@ export namespace MyNS {
 	export interface TaskRunnerSettings {
 
 		/** Whether to also send taskrunner log info to stderr. */
-		alsologtostderr?: boolean;
+		alsologtostderr?: boolean | null;
 
 		/** The location on the worker for task-specific subdirectories. */
-		baseTaskDir?: string;
+		baseTaskDir?: string | null;
 
 		/**
 		 * The base URL for the taskrunner to use when accessing Google Cloud APIs.
@@ -1555,31 +1555,31 @@ export namespace MyNS {
 		 * Locators".
 		 * If not specified, the default value is "http://www.googleapis.com/"
 		 */
-		baseUrl?: string;
+		baseUrl?: string | null;
 
 		/** The file to store preprocessing commands in. */
-		commandlinesFileName?: string;
+		commandlinesFileName?: string | null;
 
 		/** Whether to continue taskrunner if an exception is hit. */
-		continueOnException?: boolean;
+		continueOnException?: boolean | null;
 
 		/** The API version of endpoint, e.g. "v1b3" */
-		dataflowApiVersion?: string;
+		dataflowApiVersion?: string | null;
 
 		/** The command to launch the worker harness. */
-		harnessCommand?: string;
+		harnessCommand?: string | null;
 
 		/** The suggested backend language. */
-		languageHint?: string;
+		languageHint?: string | null;
 
 		/** The directory on the VM to store logs. */
-		logDir?: string;
+		logDir?: string | null;
 
 		/**
 		 * Whether to send taskrunner log info to Google Compute Engine VM serial
 		 * console.
 		 */
-		logToSerialconsole?: boolean;
+		logToSerialconsole?: boolean | null;
 
 		/**
 		 * Indicates where to put logs.  If this is not specified, the logs
@@ -1589,31 +1589,31 @@ export namespace MyNS {
 		 * storage.googleapis.com/{bucket}/{object}
 		 * bucket.storage.googleapis.com/{object}
 		 */
-		logUploadLocation?: string;
+		logUploadLocation?: string | null;
 
 		/**
 		 * The OAuth2 scopes to be requested by the taskrunner in order to
 		 * access the Cloud Dataflow API.
 		 */
-		oauthScopes?: Array<string>;
+		oauthScopes?: Array<string> | null;
 
 		/** Provides data to pass through to the worker harness. */
-		parallelWorkerSettings?: WorkerSettings;
+		parallelWorkerSettings?: WorkerSettings | null;
 
 		/** The streaming worker main class name. */
-		streamingWorkerMainClass?: string;
+		streamingWorkerMainClass?: string | null;
 
 		/**
 		 * The UNIX group ID on the worker VM to use for tasks launched by
 		 * taskrunner; e.g. "wheel".
 		 */
-		taskGroup?: string;
+		taskGroup?: string | null;
 
 		/**
 		 * The UNIX user ID on the worker VM to use for tasks launched by
 		 * taskrunner; e.g. "root".
 		 */
-		taskUser?: string;
+		taskUser?: string | null;
 
 		/**
 		 * The prefix of the resources the taskrunner should use for
@@ -1623,13 +1623,13 @@ export namespace MyNS {
 		 * storage.googleapis.com/{bucket}/{object}
 		 * bucket.storage.googleapis.com/{object}
 		 */
-		tempStoragePrefix?: string;
+		tempStoragePrefix?: string | null;
 
 		/** The ID string of the VM. */
-		vmId?: string;
+		vmId?: string | null;
 
 		/** The file to store the workflow in. */
-		workflowFileName?: string;
+		workflowFileName?: string | null;
 	}
 
 
@@ -1645,22 +1645,22 @@ export namespace MyNS {
 		 * Locators".
 		 * If not specified, the default value is "http://www.googleapis.com/"
 		 */
-		baseUrl?: string;
+		baseUrl?: string | null;
 
 		/** Whether to send work progress updates to the service. */
-		reportingEnabled?: boolean;
+		reportingEnabled?: boolean | null;
 
 		/**
 		 * The Cloud Dataflow service path relative to the root URL, for example,
 		 * "dataflow/v1b3/projects".
 		 */
-		servicePath?: string;
+		servicePath?: string | null;
 
 		/**
 		 * The Shuffle service path relative to the root URL, for example,
 		 * "shuffle/v1beta1".
 		 */
-		shuffleServicePath?: string;
+		shuffleServicePath?: string | null;
 
 		/**
 		 * The prefix of the resources the system should use for temporary
@@ -1670,10 +1670,10 @@ export namespace MyNS {
 		 * storage.googleapis.com/{bucket}/{object}
 		 * bucket.storage.googleapis.com/{object}
 		 */
-		tempStoragePrefix?: string;
+		tempStoragePrefix?: string | null;
 
 		/** The ID of the worker running this pipeline. */
-		workerId?: string;
+		workerId?: string | null;
 	}
 
 	export enum WorkerPoolTeardownPolicy { TEARDOWN_POLICY_UNKNOWN = 0, TEARDOWN_ALWAYS = 1, TEARDOWN_ON_SUCCESS = 2, TEARDOWN_NEVER = 3 }
@@ -1683,13 +1683,13 @@ export namespace MyNS {
 	export interface ExecutionStageState {
 
 		/** The time at which the stage transitioned to this state. */
-		currentStateTime?: string;
+		currentStateTime?: string | null;
 
 		/** The name of the execution stage. */
-		executionStageName?: string;
+		executionStageName?: string | null;
 
 		/** Executions stage states allow the same set of values as JobState. */
-		executionStageState?: ExecutionStageStateExecutionStageState;
+		executionStageState?: ExecutionStageStateExecutionStageState | null;
 	}
 
 	export enum ExecutionStageStateExecutionStageState { JOB_STATE_UNKNOWN = 0, JOB_STATE_STOPPED = 1, JOB_STATE_RUNNING = 2, JOB_STATE_DONE = 3, JOB_STATE_FAILED = 4, JOB_STATE_CANCELLED = 5, JOB_STATE_UPDATED = 6, JOB_STATE_DRAINING = 7, JOB_STATE_DRAINED = 8, JOB_STATE_PENDING = 9, JOB_STATE_CANCELLING = 10, JOB_STATE_QUEUED = 11 }
@@ -1703,25 +1703,25 @@ export namespace MyNS {
 	export interface ExecutionStageSummary {
 
 		/** Collections produced and consumed by component transforms of this stage. */
-		componentSource?: Array<ComponentSource>;
+		componentSource?: Array<ComponentSource> | null;
 
 		/** Transforms that comprise this execution stage. */
-		componentTransform?: Array<ComponentTransform>;
+		componentTransform?: Array<ComponentTransform> | null;
 
 		/** Dataflow service generated id for this stage. */
-		id?: string;
+		id?: string | null;
 
 		/** Input sources for this stage. */
-		inputSource?: Array<StageSource>;
+		inputSource?: Array<StageSource> | null;
 
 		/** Type of tranform this stage is executing. */
-		kind?: ExecutionStageSummaryKind;
+		kind?: ExecutionStageSummaryKind | null;
 
 		/** Dataflow service generated name for this stage. */
-		name?: string;
+		name?: string | null;
 
 		/** Output sources for this stage. */
-		outputSource?: Array<StageSource>;
+		outputSource?: Array<StageSource> | null;
 	}
 
 
@@ -1729,19 +1729,19 @@ export namespace MyNS {
 	export interface StageSource {
 
 		/** Dataflow service generated name for this source. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * User name for the original user transform or collection with which this
 		 * source is most closely associated.
 		 */
-		originalTransformOrCollection?: string;
+		originalTransformOrCollection?: string | null;
 
 		/** Size of the source, if measurable. */
-		sizeBytes?: string;
+		sizeBytes?: string | null;
 
 		/** Human-readable name for this source; may be user or system generated. */
-		userName?: string;
+		userName?: string | null;
 	}
 
 	export enum ExecutionStageSummaryKind { UNKNOWN_KIND = 0, PAR_DO_KIND = 1, GROUP_BY_KEY_KIND = 2, FLATTEN_KIND = 3, READ_KIND = 4, WRITE_KIND = 5, CONSTANT_KIND = 6, SINGLETON_KIND = 7, SHUFFLE_KIND = 8 }
@@ -1759,7 +1759,7 @@ export namespace MyNS {
 		 * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
 		 * failed to respond.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -1767,7 +1767,7 @@ export namespace MyNS {
 	export interface FileIODetails {
 
 		/** File Pattern used to access files by the connector. */
-		filePattern?: string;
+		filePattern?: string | null;
 	}
 
 
@@ -1775,7 +1775,7 @@ export namespace MyNS {
 	export interface FlattenInstruction {
 
 		/** Describes the inputs to the flatten instruction. */
-		inputs?: Array<InstructionInput>;
+		inputs?: Array<InstructionInput> | null;
 	}
 
 
@@ -1786,7 +1786,7 @@ export namespace MyNS {
 	export interface InstructionInput {
 
 		/** The output index (origin zero) within the producer. */
-		outputNum?: number;
+		outputNum?: number | null;
 
 		/**
 		 * The index (origin zero) of the parallel instruction that produces
@@ -1794,7 +1794,7 @@ export namespace MyNS {
 		 * to the list of instructions in this input's instruction's
 		 * containing MapTask.
 		 */
-		producerInstructionIndex?: number;
+		producerInstructionIndex?: number | null;
 	}
 
 
@@ -1805,17 +1805,17 @@ export namespace MyNS {
 		 * The internal component id for which debug configuration is
 		 * requested.
 		 */
-		componentId?: string;
+		componentId?: string | null;
 
 		/**
 		 * The [regional endpoint]
 		 * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
 		 * contains the job specified by job_id.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/** The worker id, i.e., VM hostname. */
-		workerId?: string;
+		workerId?: string | null;
 	}
 
 
@@ -1823,7 +1823,7 @@ export namespace MyNS {
 	export interface GetDebugConfigResponse {
 
 		/** The encoded debug configuration for the requested component. */
-		config?: string;
+		config?: string | null;
 	}
 
 
@@ -1831,10 +1831,10 @@ export namespace MyNS {
 	export interface GetTemplateResponse {
 
 		/** Metadata describing a template. */
-		metadata?: TemplateMetadata;
+		metadata?: TemplateMetadata | null;
 
 		/** RuntimeMetadata describing a runtime environment. */
-		runtimeMetadata?: RuntimeMetadata;
+		runtimeMetadata?: RuntimeMetadata | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -1844,10 +1844,10 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		status?: Status;
+		status?: Status | null;
 
 		/** Template Type. */
-		templateType?: GetTemplateResponseTemplateType;
+		templateType?: GetTemplateResponseTemplateType | null;
 	}
 
 
@@ -1855,10 +1855,10 @@ export namespace MyNS {
 	export interface RuntimeMetadata {
 
 		/** The parameters for the template. */
-		parameters?: Array<ParameterMetadata>;
+		parameters?: Array<ParameterMetadata> | null;
 
 		/** SDK Information. */
-		sdkInfo?: SDKInfo;
+		sdkInfo?: SDKInfo | null;
 	}
 
 
@@ -1873,20 +1873,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 	export enum GetTemplateResponseTemplateType { UNKNOWN = 0, LEGACY = 1, FLEX = 2 }
@@ -1896,16 +1896,16 @@ export namespace MyNS {
 	export interface HotKeyDetection {
 
 		/** The age of the hot key measured from when it was first detected. */
-		hotKeyAge?: string;
+		hotKeyAge?: string | null;
 
 		/**
 		 * System-defined name of the step containing this hot key.
 		 * Unique across the workflow.
 		 */
-		systemName?: string;
+		systemName?: string | null;
 
 		/** User-provided name of the step that contains this hot key. */
-		userStepName?: string;
+		userStepName?: string | null;
 	}
 
 
@@ -1913,34 +1913,34 @@ export namespace MyNS {
 	export interface InstructionOutput {
 
 		/** The codec to use to encode data being written via this output. */
-		codec?: {[id: string]: any };
+		codec?: {[id: string]: any } | null;
 
 		/** The user-provided name of this output. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * For system-generated byte and mean byte metrics, certain instructions
 		 * should only report the key size.
 		 */
-		onlyCountKeyBytes?: boolean;
+		onlyCountKeyBytes?: boolean | null;
 
 		/**
 		 * For system-generated byte and mean byte metrics, certain instructions
 		 * should only report the value size.
 		 */
-		onlyCountValueBytes?: boolean;
+		onlyCountValueBytes?: boolean | null;
 
 		/**
 		 * System-defined name for this output in the original workflow graph.
 		 * Outputs that do not contribute to an original instruction do not set this.
 		 */
-		originalName?: string;
+		originalName?: string | null;
 
 		/**
 		 * System-defined name of this output.
 		 * Unique across the workflow.
 		 */
-		systemName?: string;
+		systemName?: string | null;
 	}
 
 
@@ -1956,19 +1956,19 @@ export namespace MyNS {
 		 * creation across retried attempts to create a job.
 		 * By default, the field is empty and, in that case, the service ignores it.
 		 */
-		clientRequestId?: string;
+		clientRequestId?: string | null;
 
 		/**
 		 * The timestamp when the job was initially created. Immutable and set by the
 		 * Cloud Dataflow service.
 		 */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * If this is specified, the job's initial state is populated from the given
 		 * snapshot.
 		 */
-		createdFromSnapshotId?: string;
+		createdFromSnapshotId?: string | null;
 
 		/**
 		 * The current state of the job.
@@ -1980,32 +1980,32 @@ export namespace MyNS {
 		 * This field may be mutated by the Cloud Dataflow service;
 		 * callers cannot mutate it.
 		 */
-		currentState?: ExecutionStageStateExecutionStageState;
+		currentState?: ExecutionStageStateExecutionStageState | null;
 
 		/** The timestamp associated with the current state. */
-		currentStateTime?: string;
+		currentStateTime?: string | null;
 
 		/** Describes the environment in which a Dataflow Job runs. */
-		environment?: Environment;
+		environment?: Environment | null;
 
 		/**
 		 * Additional information about how a Cloud Dataflow job will be executed that
 		 * isn't contained in the submitted job.
 		 */
-		executionInfo?: JobExecutionInfo;
+		executionInfo?: JobExecutionInfo | null;
 
 		/**
 		 * The unique ID of this job.
 		 * This field is set by the Cloud Dataflow service when the Job is
 		 * created, and is immutable for the life of the job.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Metadata available primarily for filtering jobs. Will be included in the
 		 * ListJob response and Job SUMMARY view.
 		 */
-		jobMetadata?: JobMetadata;
+		jobMetadata?: JobMetadata | null;
 
 		/**
 		 * User-defined labels for this job.
@@ -2016,14 +2016,14 @@ export namespace MyNS {
 		 * * Both keys and values are additionally constrained to be <= 128 bytes in
 		 * size.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * The [regional endpoint]
 		 * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
 		 * contains this job.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * The user-specified Cloud Dataflow job name.
@@ -2034,17 +2034,17 @@ export namespace MyNS {
 		 * The name must match the regular expression
 		 * `[a-z]([-a-z0-9]{0,38}[a-z0-9])?`
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * A descriptive representation of submitted pipeline as well as the executed
 		 * form.  This data is provided by the Dataflow service for ease of visualizing
 		 * the pipeline and interpreting Dataflow provided metrics.
 		 */
-		pipelineDescription?: PipelineDescription;
+		pipelineDescription?: PipelineDescription | null;
 
 		/** The ID of the Cloud Platform project that the job belongs to. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/**
 		 * If this job is an update of an existing job, this field is the job ID
@@ -2053,13 +2053,13 @@ export namespace MyNS {
 		 * here. The job named here is stopped, and its intermediate state is
 		 * transferred to this job.
 		 */
-		replaceJobId?: string;
+		replaceJobId?: string | null;
 
 		/**
 		 * If another job is an update of this job (and thus, this job is in
 		 * `JOB_STATE_UPDATED`), this field contains the ID of that job.
 		 */
-		replacedByJobId?: string;
+		replacedByJobId?: string | null;
 
 		/**
 		 * The job's requested state.
@@ -2069,13 +2069,13 @@ export namespace MyNS {
 		 * `JOB_STATE_CANCELLED` or `JOB_STATE_DONE`, irrevocably terminating the
 		 * job if it has not already reached a terminal state.
 		 */
-		requestedState?: ExecutionStageStateExecutionStageState;
+		requestedState?: ExecutionStageStateExecutionStageState | null;
 
 		/**
 		 * This field may be mutated by the Cloud Dataflow service;
 		 * callers cannot mutate it.
 		 */
-		stageStates?: Array<ExecutionStageState>;
+		stageStates?: Array<ExecutionStageState> | null;
 
 		/**
 		 * The timestamp when the job was started (transitioned to JOB_STATE_PENDING).
@@ -2085,16 +2085,16 @@ export namespace MyNS {
 		 * always equals to create_time and is immutable and set by the Cloud Dataflow
 		 * service.
 		 */
-		startTime?: string;
+		startTime?: string | null;
 
 		/**
 		 * Exactly one of step or steps_location should be specified.
 		 * The top-level steps that constitute the entire job.
 		 */
-		steps?: Array<Step>;
+		steps?: Array<Step> | null;
 
 		/** The GCS location where the steps are stored. */
-		stepsLocation?: string;
+		stepsLocation?: string | null;
 
 		/**
 		 * A set of files the system should be aware of that are used
@@ -2107,16 +2107,16 @@ export namespace MyNS {
 		 * storage.googleapis.com/{bucket}/{object}
 		 * bucket.storage.googleapis.com/{object}
 		 */
-		tempFiles?: Array<string>;
+		tempFiles?: Array<string> | null;
 
 		/**
 		 * The map of transform name prefixes of the job to be replaced to the
 		 * corresponding name prefixes of the new job.
 		 */
-		transformNameMapping?: {[id: string]: string };
+		transformNameMapping?: {[id: string]: string } | null;
 
 		/** The type of Cloud Dataflow job. */
-		type?: JobType;
+		type?: JobType | null;
 	}
 
 
@@ -2127,7 +2127,7 @@ export namespace MyNS {
 	export interface JobExecutionInfo {
 
 		/** A mapping from each stage to the information about that stage. */
-		stages?: {[id: string]: JobExecutionStageInfo };
+		stages?: {[id: string]: JobExecutionStageInfo } | null;
 	}
 
 
@@ -2142,7 +2142,7 @@ export namespace MyNS {
 		 * Note that stages may have several steps, and that a given step
 		 * might be run by more than one stage.
 		 */
-		stepName?: Array<string>;
+		stepName?: Array<string> | null;
 	}
 
 
@@ -2153,25 +2153,25 @@ export namespace MyNS {
 	export interface JobMetadata {
 
 		/** Identification of a BigTable source used in the Dataflow job. */
-		bigTableDetails?: Array<BigTableIODetails>;
+		bigTableDetails?: Array<BigTableIODetails> | null;
 
 		/** Identification of a BigQuery source used in the Dataflow job. */
-		bigqueryDetails?: Array<BigQueryIODetails>;
+		bigqueryDetails?: Array<BigQueryIODetails> | null;
 
 		/** Identification of a Datastore source used in the Dataflow job. */
-		datastoreDetails?: Array<DatastoreIODetails>;
+		datastoreDetails?: Array<DatastoreIODetails> | null;
 
 		/** Identification of a File source used in the Dataflow job. */
-		fileDetails?: Array<FileIODetails>;
+		fileDetails?: Array<FileIODetails> | null;
 
 		/** Identification of a PubSub source used in the Dataflow job. */
-		pubsubDetails?: Array<PubSubIODetails>;
+		pubsubDetails?: Array<PubSubIODetails> | null;
 
 		/** The version of the SDK used to run the job. */
-		sdkVersion?: SdkVersion;
+		sdkVersion?: SdkVersion | null;
 
 		/** Identification of a Spanner source used in the Dataflow job. */
-		spannerDetails?: Array<SpannerIODetails>;
+		spannerDetails?: Array<SpannerIODetails> | null;
 	}
 
 
@@ -2179,10 +2179,10 @@ export namespace MyNS {
 	export interface PubSubIODetails {
 
 		/** Subscription used in the connection. */
-		subscription?: string;
+		subscription?: string | null;
 
 		/** Topic accessed in the connection. */
-		topic?: string;
+		topic?: string | null;
 	}
 
 
@@ -2190,13 +2190,13 @@ export namespace MyNS {
 	export interface SdkVersion {
 
 		/** The support status for this SDK version. */
-		sdkSupportStatus?: SdkVersionSdkSupportStatus;
+		sdkSupportStatus?: SdkVersionSdkSupportStatus | null;
 
 		/** The version of the SDK used to run the job. */
-		version?: string;
+		version?: string | null;
 
 		/** A readable string describing the version of the SDK. */
-		versionDisplayName?: string;
+		versionDisplayName?: string | null;
 	}
 
 	export enum SdkVersionSdkSupportStatus { UNKNOWN = 0, SUPPORTED = 1, STALE = 2, DEPRECATED = 3, UNSUPPORTED = 4 }
@@ -2206,13 +2206,13 @@ export namespace MyNS {
 	export interface SpannerIODetails {
 
 		/** DatabaseId accessed in the connection. */
-		databaseId?: string;
+		databaseId?: string | null;
 
 		/** InstanceId accessed in the connection. */
-		instanceId?: string;
+		instanceId?: string | null;
 
 		/** ProjectId accessed in the connection. */
-		projectId?: string;
+		projectId?: string | null;
 	}
 
 
@@ -2224,13 +2224,13 @@ export namespace MyNS {
 	export interface PipelineDescription {
 
 		/** Pipeline level display data. */
-		displayData?: Array<DisplayData>;
+		displayData?: Array<DisplayData> | null;
 
 		/** Description of each stage of execution of the pipeline. */
-		executionPipelineStage?: Array<ExecutionStageSummary>;
+		executionPipelineStage?: Array<ExecutionStageSummary> | null;
 
 		/** Description of each transform in the pipeline and collections between them. */
-		originalPipelineTransform?: Array<TransformSummary>;
+		originalPipelineTransform?: Array<TransformSummary> | null;
 	}
 
 
@@ -2238,22 +2238,22 @@ export namespace MyNS {
 	export interface TransformSummary {
 
 		/** Transform-specific display data. */
-		displayData?: Array<DisplayData>;
+		displayData?: Array<DisplayData> | null;
 
 		/** SDK generated id of this transform instance. */
-		id?: string;
+		id?: string | null;
 
 		/** User names for all collection inputs to this transform. */
-		inputCollectionName?: Array<string>;
+		inputCollectionName?: Array<string> | null;
 
 		/** Type of transform. */
-		kind?: ExecutionStageSummaryKind;
+		kind?: ExecutionStageSummaryKind | null;
 
 		/** User provided name for this transform instance. */
-		name?: string;
+		name?: string | null;
 
 		/** User  names for all collection outputs to this transform. */
-		outputCollectionName?: Array<string>;
+		outputCollectionName?: Array<string> | null;
 	}
 
 
@@ -2279,20 +2279,20 @@ export namespace MyNS {
 	export interface Step {
 
 		/** The kind of step in the Cloud Dataflow job. */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * The name that identifies the step. This must be unique for each
 		 * step with respect to all other steps in the Cloud Dataflow job.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Named properties associated with the step. Each kind of
 		 * predefined step has its own required set of properties.
 		 * Must be provided on Create.  Only retrieved with JOB_VIEW_ALL.
 		 */
-		properties?: {[id: string]: any };
+		properties?: {[id: string]: any } | null;
 	}
 
 	export enum JobType { JOB_TYPE_UNKNOWN = 0, JOB_TYPE_BATCH = 1, JOB_TYPE_STREAMING = 2 }
@@ -2302,16 +2302,16 @@ export namespace MyNS {
 	export interface JobMessage {
 
 		/** Deprecated. */
-		id?: string;
+		id?: string | null;
 
 		/** Importance level of the message. */
-		messageImportance?: JobMessageMessageImportance;
+		messageImportance?: JobMessageMessageImportance | null;
 
 		/** The text of the message. */
-		messageText?: string;
+		messageText?: string | null;
 
 		/** The timestamp of the message. */
-		time?: string;
+		time?: string | null;
 	}
 
 	export enum JobMessageMessageImportance { JOB_MESSAGE_IMPORTANCE_UNKNOWN = 0, JOB_MESSAGE_DEBUG = 1, JOB_MESSAGE_DETAILED = 2, JOB_MESSAGE_BASIC = 3, JOB_MESSAGE_WARNING = 4, JOB_MESSAGE_ERROR = 5 }
@@ -2328,10 +2328,10 @@ export namespace MyNS {
 	export interface JobMetrics {
 
 		/** Timestamp as of which metric values are current. */
-		metricTime?: string;
+		metricTime?: string | null;
 
 		/** All metrics for this job. */
-		metrics?: Array<MetricUpdate>;
+		metrics?: Array<MetricUpdate> | null;
 	}
 
 
@@ -2344,23 +2344,23 @@ export namespace MyNS {
 		 * By default this is false, indicating that this metric is reported
 		 * as a delta that is not associated with any WorkItem.
 		 */
-		cumulative?: boolean;
+		cumulative?: boolean | null;
 
 		/** A struct value describing properties of a distribution of numeric values. */
-		distribution?: any;
+		distribution?: any | null;
 
 		/**
 		 * A struct value describing properties of a Gauge.
 		 * Metrics of gauge type show the value of a metric across time, and is
 		 * aggregated based on the newest value.
 		 */
-		gauge?: any;
+		gauge?: any | null;
 
 		/**
 		 * Worker-computed aggregate value for internal use by the Dataflow
 		 * service.
 		 */
-		internal?: any;
+		internal?: any | null;
 
 		/**
 		 * Metric aggregation kind.  The possible metric aggregation kinds are
@@ -2369,7 +2369,7 @@ export namespace MyNS {
 		 * If omitted, this is not an aggregated value but instead
 		 * a single metric sample value.
 		 */
-		kind?: string;
+		kind?: string | null;
 
 		/**
 		 * Worker-computed aggregate value for the "Mean" aggregation kind.
@@ -2377,7 +2377,7 @@ export namespace MyNS {
 		 * with mean_sum above to obtain the actual mean aggregate value.
 		 * The only possible value type is Long.
 		 */
-		meanCount?: any;
+		meanCount?: any | null;
 
 		/**
 		 * Worker-computed aggregate value for the "Mean" aggregation kind.
@@ -2385,19 +2385,19 @@ export namespace MyNS {
 		 * with mean_count below to obtain the actual mean aggregate value.
 		 * The only possible value types are Long and Double.
 		 */
-		meanSum?: any;
+		meanSum?: any | null;
 
 		/**
 		 * Identifies a metric, by describing the source which generated the
 		 * metric.
 		 */
-		name?: MetricStructuredName;
+		name?: MetricStructuredName | null;
 
 		/**
 		 * Worker-computed aggregate value for aggregation kinds "Sum", "Max", "Min",
 		 * "And", and "Or".  The possible value types are Long, Double, and Boolean.
 		 */
-		scalar?: any;
+		scalar?: any | null;
 
 		/**
 		 * Worker-computed aggregate value for the "Set" aggregation kind.  The only
@@ -2405,14 +2405,14 @@ export namespace MyNS {
 		 * or String, according to the metric's type.  All Values in the list must
 		 * be of the same type.
 		 */
-		set?: any;
+		set?: any | null;
 
 		/**
 		 * Timestamp associated with the metric value. Optional when workers are
 		 * reporting work progress; it will be filled in responses from the
 		 * metrics API.
 		 */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -2429,16 +2429,16 @@ export namespace MyNS {
 		 * context['step'] = <step-name>. Counters associated with PCollections
 		 * in the SDK will have context['pcollection'] = <pcollection-name>.
 		 */
-		context?: {[id: string]: string };
+		context?: {[id: string]: string } | null;
 
 		/** Worker-defined metric name. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Origin (namespace) of metric name. May be blank for user-define metrics;
 		 * will be "dataflow" for metrics defined by the Dataflow service or SDK.
 		 */
-		origin?: string;
+		origin?: string | null;
 	}
 
 
@@ -2456,13 +2456,13 @@ export namespace MyNS {
 		 * identifies the disk within that project, for example
 		 * "myproject-1014-104817-4c2-harness-0-disk-1".
 		 */
-		dataDisk?: string;
+		dataDisk?: string | null;
 
 		/** The end (exclusive) of the key range. */
-		end?: string;
+		end?: string | null;
 
 		/** The start (inclusive) of the key range. */
-		start?: string;
+		start?: string | null;
 	}
 
 
@@ -2470,19 +2470,19 @@ export namespace MyNS {
 	export interface LaunchFlexTemplateParameter {
 
 		/** Container Spec. */
-		containerSpec?: ContainerSpec;
+		containerSpec?: ContainerSpec | null;
 
 		/** Gcs path to a file with json serialized ContainerSpec as content. */
-		containerSpecGcsPath?: string;
+		containerSpecGcsPath?: string | null;
 
 		/** Required. The job name to use for the created job. */
-		jobName?: string;
+		jobName?: string | null;
 
 		/**
 		 * The parameters for FlexTemplate.
 		 * Ex. {"num_workers":"5"}
 		 */
-		parameters?: {[id: string]: string };
+		parameters?: {[id: string]: string } | null;
 	}
 
 
@@ -2490,13 +2490,13 @@ export namespace MyNS {
 	export interface LaunchFlexTemplateRequest {
 
 		/** Launch FlexTemplate Parameter. */
-		launchParameter?: LaunchFlexTemplateParameter;
+		launchParameter?: LaunchFlexTemplateParameter | null;
 
 		/**
 		 * If true, the request is validated but not actually executed.
 		 * Defaults to false.
 		 */
-		validateOnly?: boolean;
+		validateOnly?: boolean | null;
 	}
 
 
@@ -2504,7 +2504,7 @@ export namespace MyNS {
 	export interface LaunchFlexTemplateResponse {
 
 		/** Defines a job to be run by the Cloud Dataflow service. */
-		job?: Job;
+		job?: Job | null;
 	}
 
 
@@ -2512,25 +2512,25 @@ export namespace MyNS {
 	export interface LaunchTemplateParameters {
 
 		/** The environment values to set at runtime. */
-		environment?: RuntimeEnvironment;
+		environment?: RuntimeEnvironment | null;
 
 		/** Required. The job name to use for the created job. */
-		jobName?: string;
+		jobName?: string | null;
 
 		/** The runtime parameters to pass to the job. */
-		parameters?: {[id: string]: string };
+		parameters?: {[id: string]: string } | null;
 
 		/**
 		 * Only applicable when updating a pipeline. Map of transform name prefixes of
 		 * the job to be replaced to the corresponding name prefixes of the new job.
 		 */
-		transformNameMapping?: {[id: string]: string };
+		transformNameMapping?: {[id: string]: string } | null;
 
 		/**
 		 * If set, replace the existing pipeline with the name specified by jobName
 		 * with this pipeline, preserving state.
 		 */
-		update?: boolean;
+		update?: boolean | null;
 	}
 
 
@@ -2538,7 +2538,7 @@ export namespace MyNS {
 	export interface LaunchTemplateResponse {
 
 		/** Defines a job to be run by the Cloud Dataflow service. */
-		job?: Job;
+		job?: Job | null;
 	}
 
 
@@ -2546,35 +2546,35 @@ export namespace MyNS {
 	export interface LeaseWorkItemRequest {
 
 		/** The current timestamp at the worker. */
-		currentWorkerTime?: string;
+		currentWorkerTime?: string | null;
 
 		/**
 		 * The [regional endpoint]
 		 * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
 		 * contains the WorkItem's job.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/** The initial lease period. */
-		requestedLeaseDuration?: string;
+		requestedLeaseDuration?: string | null;
 
 		/** Untranslated bag-of-bytes WorkRequest from UnifiedWorker. */
-		unifiedWorkerRequest?: {[id: string]: any };
+		unifiedWorkerRequest?: {[id: string]: any } | null;
 
 		/** Filter for WorkItem type. */
-		workItemTypes?: Array<string>;
+		workItemTypes?: Array<string> | null;
 
 		/**
 		 * Worker capabilities. WorkItems might be limited to workers with specific
 		 * capabilities.
 		 */
-		workerCapabilities?: Array<string>;
+		workerCapabilities?: Array<string> | null;
 
 		/**
 		 * Identifies the worker leasing work -- typically the ID of the
 		 * virtual machine running the worker.
 		 */
-		workerId?: string;
+		workerId?: string | null;
 	}
 
 
@@ -2582,10 +2582,10 @@ export namespace MyNS {
 	export interface LeaseWorkItemResponse {
 
 		/** Untranslated bag-of-bytes WorkResponse for UnifiedWorker. */
-		unifiedWorkerResponse?: {[id: string]: any };
+		unifiedWorkerResponse?: {[id: string]: any } | null;
 
 		/** A list of the leased WorkItems. */
-		workItems?: Array<WorkItem>;
+		workItems?: Array<WorkItem> | null;
 	}
 
 
@@ -2596,19 +2596,19 @@ export namespace MyNS {
 	export interface WorkItem {
 
 		/** Work item-specific configuration as an opaque blob. */
-		configuration?: string;
+		configuration?: string | null;
 
 		/** Identifies this WorkItem. */
-		id?: string;
+		id?: string | null;
 
 		/** The initial index to use when reporting the status of the WorkItem. */
-		initialReportIndex?: string;
+		initialReportIndex?: string | null;
 
 		/** Identifies the workflow job this WorkItem belongs to. */
-		jobId?: string;
+		jobId?: string | null;
 
 		/** Time when the lease on this Work will expire. */
-		leaseExpireTime?: string;
+		leaseExpireTime?: string | null;
 
 		/**
 		 * MapTask consists of an ordered set of instructions, each of which
@@ -2617,43 +2617,43 @@ export namespace MyNS {
 		 * Each instruction must appear in the list before any instructions which
 		 * depends on its output.
 		 */
-		mapTask?: MapTask;
+		mapTask?: MapTask | null;
 
 		/**
 		 * Any required packages that need to be fetched in order to execute
 		 * this WorkItem.
 		 */
-		packages?: Array<Package>;
+		packages?: Array<Package> | null;
 
 		/** Identifies the cloud project this WorkItem belongs to. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** Recommended reporting interval. */
-		reportStatusInterval?: string;
+		reportStatusInterval?: string | null;
 
 		/** Describes a particular function to invoke. */
-		seqMapTask?: SeqMapTask;
+		seqMapTask?: SeqMapTask | null;
 
 		/** A task which consists of a shell command for the worker to execute. */
-		shellTask?: ShellTask;
+		shellTask?: ShellTask | null;
 
 		/**
 		 * A work item that represents the different operations that can be
 		 * performed on a user-defined Source specification.
 		 */
-		sourceOperationTask?: SourceOperationRequest;
+		sourceOperationTask?: SourceOperationRequest | null;
 
 		/**
 		 * A task which describes what action should be performed for the specified
 		 * streaming computation ranges.
 		 */
-		streamingComputationTask?: StreamingComputationTask;
+		streamingComputationTask?: StreamingComputationTask | null;
 
 		/** A task that carries configuration information for streaming computations. */
-		streamingConfigTask?: StreamingConfigTask;
+		streamingConfigTask?: StreamingConfigTask | null;
 
 		/** A task which initializes part of a streaming Dataflow job. */
-		streamingSetupTask?: StreamingSetupTask;
+		streamingSetupTask?: StreamingSetupTask | null;
 	}
 
 
@@ -2670,22 +2670,22 @@ export namespace MyNS {
 		 * Counter prefix that can be used to prefix counters. Not currently used in
 		 * Dataflow.
 		 */
-		counterPrefix?: string;
+		counterPrefix?: string | null;
 
 		/** The instructions in the MapTask. */
-		instructions?: Array<ParallelInstruction>;
+		instructions?: Array<ParallelInstruction> | null;
 
 		/**
 		 * System-defined name of the stage containing this MapTask.
 		 * Unique across the workflow.
 		 */
-		stageName?: string;
+		stageName?: string | null;
 
 		/**
 		 * System-defined name of this MapTask.
 		 * Unique across the workflow.
 		 */
-		systemName?: string;
+		systemName?: string | null;
 	}
 
 
@@ -2693,16 +2693,16 @@ export namespace MyNS {
 	export interface ParallelInstruction {
 
 		/** An instruction that copies its inputs (zero or more) to its (single) output. */
-		flatten?: FlattenInstruction;
+		flatten?: FlattenInstruction | null;
 
 		/** User-provided name of this operation. */
-		name?: string;
+		name?: string | null;
 
 		/** System-defined name for the operation in the original workflow graph. */
-		originalName?: string;
+		originalName?: string | null;
 
 		/** Describes the outputs of the instruction. */
-		outputs?: Array<InstructionOutput>;
+		outputs?: Array<InstructionOutput> | null;
 
 		/**
 		 * An instruction that does a ParDo operation.
@@ -2710,31 +2710,31 @@ export namespace MyNS {
 		 * zero or more outputs.
 		 * Runs user code.
 		 */
-		parDo?: ParDoInstruction;
+		parDo?: ParDoInstruction | null;
 
 		/**
 		 * An instruction that does a partial group-by-key.
 		 * One input and one output.
 		 */
-		partialGroupByKey?: PartialGroupByKeyInstruction;
+		partialGroupByKey?: PartialGroupByKeyInstruction | null;
 
 		/**
 		 * An instruction that reads records.
 		 * Takes no inputs, produces one output.
 		 */
-		read?: ReadInstruction;
+		read?: ReadInstruction | null;
 
 		/**
 		 * System-defined name of this operation.
 		 * Unique across the workflow.
 		 */
-		systemName?: string;
+		systemName?: string | null;
 
 		/**
 		 * An instruction that writes records.
 		 * Takes one input, produces no outputs.
 		 */
-		write?: WriteInstruction;
+		write?: WriteInstruction | null;
 	}
 
 
@@ -2750,19 +2750,19 @@ export namespace MyNS {
 		 * An input of an instruction, as a reference to an output of a
 		 * producer instruction.
 		 */
-		input?: InstructionInput;
+		input?: InstructionInput | null;
 
 		/** Information about each of the outputs, if user_fn is a  MultiDoFn. */
-		multiOutputInfos?: Array<MultiOutputInfo>;
+		multiOutputInfos?: Array<MultiOutputInfo> | null;
 
 		/** The number of outputs. */
-		numOutputs?: number;
+		numOutputs?: number | null;
 
 		/** Zero or more side inputs. */
-		sideInputs?: Array<SideInputInfo>;
+		sideInputs?: Array<SideInputInfo> | null;
 
 		/** The user function to invoke. */
-		userFn?: {[id: string]: any };
+		userFn?: {[id: string]: any } | null;
 	}
 
 
@@ -2773,7 +2773,7 @@ export namespace MyNS {
 		 * The id of the tag the user code will emit to this output by; this
 		 * should correspond to the tag of some SideInputInfo.
 		 */
-		tag?: string;
+		tag?: string | null;
 	}
 
 
@@ -2781,7 +2781,7 @@ export namespace MyNS {
 	export interface SideInputInfo {
 
 		/** How to interpret the source element(s) as a side input value. */
-		kind?: {[id: string]: any };
+		kind?: {[id: string]: any } | null;
 
 		/**
 		 * The source(s) to read element(s) from to get the value of this side input.
@@ -2789,13 +2789,13 @@ export namespace MyNS {
 		 * sources, in the specified order if order matters.
 		 * At least one source is required.
 		 */
-		sources?: Array<Source>;
+		sources?: Array<Source> | null;
 
 		/**
 		 * The id of the tag the user code will access this side input by;
 		 * this should correspond to the tag of some MultiOutputInfo.
 		 */
-		tag?: string;
+		tag?: string | null;
 	}
 
 
@@ -2809,28 +2809,28 @@ export namespace MyNS {
 		 * An input of an instruction, as a reference to an output of a
 		 * producer instruction.
 		 */
-		input?: InstructionInput;
+		input?: InstructionInput | null;
 
 		/** The codec to use for interpreting an element in the input PTable. */
-		inputElementCodec?: {[id: string]: any };
+		inputElementCodec?: {[id: string]: any } | null;
 
 		/**
 		 * If this instruction includes a combining function this is the name of the
 		 * intermediate store between the GBK and the CombineValues.
 		 */
-		originalCombineValuesInputStoreName?: string;
+		originalCombineValuesInputStoreName?: string | null;
 
 		/**
 		 * If this instruction includes a combining function, this is the name of the
 		 * CombineValues instruction lifted into this instruction.
 		 */
-		originalCombineValuesStepName?: string;
+		originalCombineValuesStepName?: string | null;
 
 		/** Zero or more side inputs. */
-		sideInputs?: Array<SideInputInfo>;
+		sideInputs?: Array<SideInputInfo> | null;
 
 		/** The value combining function to invoke. */
-		valueCombiningFn?: {[id: string]: any };
+		valueCombiningFn?: {[id: string]: any } | null;
 	}
 
 
@@ -2841,7 +2841,7 @@ export namespace MyNS {
 	export interface ReadInstruction {
 
 		/** A source that records can be read and decoded from. */
-		source?: Source;
+		source?: Source | null;
 	}
 
 
@@ -2855,10 +2855,10 @@ export namespace MyNS {
 		 * An input of an instruction, as a reference to an output of a
 		 * producer instruction.
 		 */
-		input?: InstructionInput;
+		input?: InstructionInput | null;
 
 		/** A sink that records can be encoded and written to. */
-		sink?: Sink;
+		sink?: Sink | null;
 	}
 
 
@@ -2866,10 +2866,10 @@ export namespace MyNS {
 	export interface Sink {
 
 		/** The codec to use to encode data written to the sink. */
-		codec?: {[id: string]: any };
+		codec?: {[id: string]: any } | null;
 
 		/** The sink to write to, plus its parameters. */
-		spec?: {[id: string]: any };
+		spec?: {[id: string]: any } | null;
 	}
 
 
@@ -2877,28 +2877,28 @@ export namespace MyNS {
 	export interface SeqMapTask {
 
 		/** Information about each of the inputs. */
-		inputs?: Array<SideInputInfo>;
+		inputs?: Array<SideInputInfo> | null;
 
 		/** The user-provided name of the SeqDo operation. */
-		name?: string;
+		name?: string | null;
 
 		/** Information about each of the outputs. */
-		outputInfos?: Array<SeqMapTaskOutputInfo>;
+		outputInfos?: Array<SeqMapTaskOutputInfo> | null;
 
 		/**
 		 * System-defined name of the stage containing the SeqDo operation.
 		 * Unique across the workflow.
 		 */
-		stageName?: string;
+		stageName?: string | null;
 
 		/**
 		 * System-defined name of the SeqDo operation.
 		 * Unique across the workflow.
 		 */
-		systemName?: string;
+		systemName?: string | null;
 
 		/** The user function to invoke. */
-		userFn?: {[id: string]: any };
+		userFn?: {[id: string]: any } | null;
 	}
 
 
@@ -2906,10 +2906,10 @@ export namespace MyNS {
 	export interface SeqMapTaskOutputInfo {
 
 		/** A sink that records can be encoded and written to. */
-		sink?: Sink;
+		sink?: Sink | null;
 
 		/** The id of the TupleTag the user code will tag the output value by. */
-		tag?: string;
+		tag?: string | null;
 	}
 
 
@@ -2917,10 +2917,10 @@ export namespace MyNS {
 	export interface ShellTask {
 
 		/** The shell command to run. */
-		command?: string;
+		command?: string | null;
 
 		/** Exit code for the task. */
-		exitCode?: number;
+		exitCode?: number | null;
 	}
 
 
@@ -2931,16 +2931,16 @@ export namespace MyNS {
 	export interface SourceOperationRequest {
 
 		/** A request to compute the SourceMetadata of a Source. */
-		getMetadata?: SourceGetMetadataRequest;
+		getMetadata?: SourceGetMetadataRequest | null;
 
 		/** User-provided name of the Read instruction for this source. */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * System-defined name for the Read instruction for this source
 		 * in the original workflow graph.
 		 */
-		originalName?: string;
+		originalName?: string | null;
 
 		/**
 		 * Represents the operation to split a high-level Source specification
@@ -2956,19 +2956,19 @@ export namespace MyNS {
 		 * This applies both to the initial source being split and to bundles
 		 * produced from it.
 		 */
-		split?: SourceSplitRequest;
+		split?: SourceSplitRequest | null;
 
 		/**
 		 * System-defined name of the stage containing the source operation.
 		 * Unique across the workflow.
 		 */
-		stageName?: string;
+		stageName?: string | null;
 
 		/**
 		 * System-defined name of the Read instruction for this source.
 		 * Unique across the workflow.
 		 */
-		systemName?: string;
+		systemName?: string | null;
 	}
 
 
@@ -2976,7 +2976,7 @@ export namespace MyNS {
 	export interface SourceGetMetadataRequest {
 
 		/** A source that records can be read and decoded from. */
-		source?: Source;
+		source?: Source | null;
 	}
 
 
@@ -3000,10 +3000,10 @@ export namespace MyNS {
 		 * Hints for splitting a Source into bundles (parts for parallel
 		 * processing) using SourceSplitRequest.
 		 */
-		options?: SourceSplitOptions;
+		options?: SourceSplitOptions | null;
 
 		/** A source that records can be read and decoded from. */
-		source?: Source;
+		source?: Source | null;
 	}
 
 
@@ -3017,10 +3017,10 @@ export namespace MyNS {
 		 * The source should be split into a set of bundles where the estimated size
 		 * of each is approximately this many bytes.
 		 */
-		desiredBundleSizeBytes?: string;
+		desiredBundleSizeBytes?: string | null;
 
 		/** DEPRECATED in favor of desired_bundle_size_bytes. */
-		desiredShardSizeBytes?: string;
+		desiredShardSizeBytes?: string | null;
 	}
 
 
@@ -3031,13 +3031,13 @@ export namespace MyNS {
 	export interface StreamingComputationTask {
 
 		/** Contains ranges of a streaming computation this task should apply to. */
-		computationRanges?: Array<StreamingComputationRanges>;
+		computationRanges?: Array<StreamingComputationRanges> | null;
 
 		/** Describes the set of data disks this task should apply to. */
-		dataDisks?: Array<MountedDataDisk>;
+		dataDisks?: Array<MountedDataDisk> | null;
 
 		/** A type of streaming computation task. */
-		taskType?: StreamingComputationTaskTaskType;
+		taskType?: StreamingComputationTaskTaskType | null;
 	}
 
 
@@ -3048,10 +3048,10 @@ export namespace MyNS {
 	export interface StreamingComputationRanges {
 
 		/** The ID of the computation. */
-		computationId?: string;
+		computationId?: string | null;
 
 		/** Data disk assignments for ranges from this computation. */
-		rangeAssignments?: Array<KeyRangeDataDiskAssignment>;
+		rangeAssignments?: Array<KeyRangeDataDiskAssignment> | null;
 	}
 
 
@@ -3064,7 +3064,7 @@ export namespace MyNS {
 		 * identifies the disk within that project, for example
 		 * "myproject-1014-104817-4c2-harness-0-disk-1".
 		 */
-		dataDisk?: string;
+		dataDisk?: string | null;
 	}
 
 	export enum StreamingComputationTaskTaskType { STREAMING_COMPUTATION_TASK_UNKNOWN = 0, STREAMING_COMPUTATION_TASK_STOP = 1, STREAMING_COMPUTATION_TASK_START = 2 }
@@ -3074,33 +3074,33 @@ export namespace MyNS {
 	export interface StreamingConfigTask {
 
 		/** Chunk size for commit streams from the harness to windmill. */
-		commitStreamChunkSizeBytes?: string;
+		commitStreamChunkSizeBytes?: string | null;
 
 		/** Chunk size for get data streams from the harness to windmill. */
-		getDataStreamChunkSizeBytes?: string;
+		getDataStreamChunkSizeBytes?: string | null;
 
 		/** Maximum size for work item commit supported windmill storage layer. */
-		maxWorkItemCommitBytes?: string;
+		maxWorkItemCommitBytes?: string | null;
 
 		/** Set of computation configuration information. */
-		streamingComputationConfigs?: Array<StreamingComputationConfig>;
+		streamingComputationConfigs?: Array<StreamingComputationConfig> | null;
 
 		/** Map from user step names to state families. */
-		userStepToStateFamilyNameMap?: {[id: string]: string };
+		userStepToStateFamilyNameMap?: {[id: string]: string } | null;
 
 		/**
 		 * If present, the worker must use this endpoint to communicate with Windmill
 		 * Service dispatchers, otherwise the worker must continue to use whatever
 		 * endpoint it had been using.
 		 */
-		windmillServiceEndpoint?: string;
+		windmillServiceEndpoint?: string | null;
 
 		/**
 		 * If present, the worker must use this port to communicate with Windmill
 		 * Service dispatchers. Only applicable when windmill_service_endpoint is
 		 * specified.
 		 */
-		windmillServicePort?: string;
+		windmillServicePort?: string | null;
 	}
 
 
@@ -3108,22 +3108,22 @@ export namespace MyNS {
 	export interface StreamingComputationConfig {
 
 		/** Unique identifier for this computation. */
-		computationId?: string;
+		computationId?: string | null;
 
 		/** Instructions that comprise the computation. */
-		instructions?: Array<ParallelInstruction>;
+		instructions?: Array<ParallelInstruction> | null;
 
 		/** Stage name of this computation. */
-		stageName?: string;
+		stageName?: string | null;
 
 		/** System defined name for this computation. */
-		systemName?: string;
+		systemName?: string | null;
 
 		/**
 		 * Map from user name of stateful transforms in this stage to their state
 		 * family.
 		 */
-		transformUserNameToStateFamily?: {[id: string]: string };
+		transformUserNameToStateFamily?: {[id: string]: string } | null;
 	}
 
 
@@ -3131,28 +3131,28 @@ export namespace MyNS {
 	export interface StreamingSetupTask {
 
 		/** The user has requested drain. */
-		drain?: boolean;
+		drain?: boolean | null;
 
 		/**
 		 * The TCP port on which the worker should listen for messages from
 		 * other streaming computation workers.
 		 */
-		receiveWorkPort?: number;
+		receiveWorkPort?: number | null;
 
 		/** Streaming appliance snapshot configuration. */
-		snapshotConfig?: StreamingApplianceSnapshotConfig;
+		snapshotConfig?: StreamingApplianceSnapshotConfig | null;
 
 		/**
 		 * Global topology of the streaming Dataflow job, including all
 		 * computations and their sharded locations.
 		 */
-		streamingComputationTopology?: TopologyConfig;
+		streamingComputationTopology?: TopologyConfig | null;
 
 		/**
 		 * The TCP port used by the worker to communicate with the Dataflow
 		 * worker harness.
 		 */
-		workerHarnessPort?: number;
+		workerHarnessPort?: number | null;
 	}
 
 
@@ -3160,10 +3160,10 @@ export namespace MyNS {
 	export interface StreamingApplianceSnapshotConfig {
 
 		/** Indicates which endpoint is used to import appliance state. */
-		importStateEndpoint?: string;
+		importStateEndpoint?: string | null;
 
 		/** If set, indicates the snapshot id for the snapshot being performed. */
-		snapshotId?: string;
+		snapshotId?: string | null;
 	}
 
 
@@ -3174,19 +3174,19 @@ export namespace MyNS {
 	export interface TopologyConfig {
 
 		/** The computations associated with a streaming Dataflow job. */
-		computations?: Array<ComputationTopology>;
+		computations?: Array<ComputationTopology> | null;
 
 		/** The disks assigned to a streaming Dataflow job. */
-		dataDiskAssignments?: Array<DataDiskAssignment>;
+		dataDiskAssignments?: Array<DataDiskAssignment> | null;
 
 		/** The size (in bits) of keys that will be assigned to source messages. */
-		forwardingKeyBits?: number;
+		forwardingKeyBits?: number | null;
 
 		/** Version number for persistent state. */
-		persistentStateVersion?: number;
+		persistentStateVersion?: number | null;
 
 		/** Maps user stage names to stable computation names. */
-		userStageToComputationNameMap?: {[id: string]: string };
+		userStageToComputationNameMap?: {[id: string]: string } | null;
 	}
 
 
@@ -3194,13 +3194,13 @@ export namespace MyNS {
 	export interface ListJobMessagesResponse {
 
 		/** Autoscaling events in ascending timestamp order. */
-		autoscalingEvents?: Array<AutoscalingEvent>;
+		autoscalingEvents?: Array<AutoscalingEvent> | null;
 
 		/** Messages in ascending timestamp order. */
-		jobMessages?: Array<JobMessage>;
+		jobMessages?: Array<JobMessage> | null;
 
 		/** The token to obtain the next page of results if there are more. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -3218,13 +3218,13 @@ export namespace MyNS {
 		 * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
 		 * failed to respond.
 		 */
-		failedLocation?: Array<FailedLocation>;
+		failedLocation?: Array<FailedLocation> | null;
 
 		/** A subset of the requested job information. */
-		jobs?: Array<Job>;
+		jobs?: Array<Job> | null;
 
 		/** Set if there may be more results than fit in this response. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -3232,7 +3232,7 @@ export namespace MyNS {
 	export interface ListSnapshotsResponse {
 
 		/** Returned snapshots. */
-		snapshots?: Array<Snapshot>;
+		snapshots?: Array<Snapshot> | null;
 	}
 
 
@@ -3240,34 +3240,34 @@ export namespace MyNS {
 	export interface Snapshot {
 
 		/** The time this snapshot was created. */
-		creationTime?: string;
+		creationTime?: string | null;
 
 		/** User specified description of the snapshot. Maybe empty. */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * The disk byte size of the snapshot. Only available for snapshots in READY
 		 * state.
 		 */
-		diskSizeBytes?: string;
+		diskSizeBytes?: string | null;
 
 		/** The unique ID of this snapshot. */
-		id?: string;
+		id?: string | null;
 
 		/** The project this snapshot belongs to. */
-		projectId?: string;
+		projectId?: string | null;
 
 		/** PubSub snapshot metadata. */
-		pubsubMetadata?: Array<PubsubSnapshotMetadata>;
+		pubsubMetadata?: Array<PubsubSnapshotMetadata> | null;
 
 		/** The job this snapshot was created from. */
-		sourceJobId?: string;
+		sourceJobId?: string | null;
 
 		/** State of the snapshot. */
-		state?: SnapshotState;
+		state?: SnapshotState | null;
 
 		/** The time after which this snapshot will be automatically deleted. */
-		ttl?: string;
+		ttl?: string | null;
 	}
 
 
@@ -3275,13 +3275,13 @@ export namespace MyNS {
 	export interface PubsubSnapshotMetadata {
 
 		/** The expire time of the Pubsub snapshot. */
-		expireTime?: string;
+		expireTime?: string | null;
 
 		/** The name of the Pubsub snapshot. */
-		snapshotName?: string;
+		snapshotName?: string | null;
 
 		/** The name of the Pubsub topic. */
-		topicName?: string;
+		topicName?: string | null;
 	}
 
 	export enum SnapshotState { UNKNOWN_SNAPSHOT_STATE = 0, PENDING = 1, RUNNING = 2, READY = 3, FAILED = 4, DELETED = 5 }
@@ -3294,16 +3294,16 @@ export namespace MyNS {
 	export interface MemInfo {
 
 		/** Instantenous memory limit in bytes. */
-		currentLimitBytes?: string;
+		currentLimitBytes?: string | null;
 
 		/** Instantenous memory (RSS) size in bytes. */
-		currentRssBytes?: string;
+		currentRssBytes?: string | null;
 
 		/** Timestamp of the measurement. */
-		timestamp?: string;
+		timestamp?: string | null;
 
 		/** Total memory (RSS) usage since start up in GB * ms. */
-		totalGbMs?: string;
+		totalGbMs?: string | null;
 	}
 
 
@@ -3317,10 +3317,10 @@ export namespace MyNS {
 		 * The index of the corresponding metric in
 		 * the ReportWorkItemStatusRequest. Required.
 		 */
-		metricIndex?: number;
+		metricIndex?: number | null;
 
 		/** The service-generated short identifier for the metric. */
-		shortId?: string;
+		shortId?: string | null;
 	}
 
 
@@ -3328,24 +3328,24 @@ export namespace MyNS {
 	export interface ReportWorkItemStatusRequest {
 
 		/** The current timestamp at the worker. */
-		currentWorkerTime?: string;
+		currentWorkerTime?: string | null;
 
 		/**
 		 * The [regional endpoint]
 		 * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
 		 * contains the WorkItem's job.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/** Untranslated bag-of-bytes WorkProgressUpdateRequest from UnifiedWorker. */
-		unifiedWorkerRequest?: {[id: string]: any };
+		unifiedWorkerRequest?: {[id: string]: any } | null;
 
 		/**
 		 * The order is unimportant, except that the order of the
 		 * WorkItemServiceState messages in the ReportWorkItemStatusResponse
 		 * corresponds to the order of WorkItemStatus messages here.
 		 */
-		workItemStatuses?: Array<WorkItemStatus>;
+		workItemStatuses?: Array<WorkItemStatus> | null;
 
 		/**
 		 * The ID of the worker reporting the WorkItem status.  If this
@@ -3353,7 +3353,7 @@ export namespace MyNS {
 		 * believes currently has the lease on the WorkItem, the report
 		 * will be dropped (with an error response).
 		 */
-		workerId?: string;
+		workerId?: string | null;
 	}
 
 
@@ -3361,30 +3361,30 @@ export namespace MyNS {
 	export interface WorkItemStatus {
 
 		/** True if the WorkItem was completed (successfully or unsuccessfully). */
-		completed?: boolean;
+		completed?: boolean | null;
 
 		/** Worker output counters for this WorkItem. */
-		counterUpdates?: Array<CounterUpdate>;
+		counterUpdates?: Array<CounterUpdate> | null;
 
 		/**
 		 * When a task splits using WorkItemStatus.dynamic_source_split, this
 		 * message describes the two parts of the split relative to the
 		 * description of the current task's input.
 		 */
-		dynamicSourceSplit?: DynamicSourceSplit;
+		dynamicSourceSplit?: DynamicSourceSplit | null;
 
 		/**
 		 * Specifies errors which occurred during processing.  If errors are
 		 * provided, and completed = true, then the WorkItem is considered
 		 * to have failed.
 		 */
-		errors?: Array<Status>;
+		errors?: Array<Status> | null;
 
 		/** DEPRECATED in favor of counter_updates. */
-		metricUpdates?: Array<MetricUpdate>;
+		metricUpdates?: Array<MetricUpdate> | null;
 
 		/** Obsolete in favor of ApproximateReportedProgress and ApproximateSplitRequest. */
-		progress?: ApproximateProgress;
+		progress?: ApproximateProgress | null;
 
 		/**
 		 * The report index.  When a WorkItem is leased, the lease will
@@ -3399,36 +3399,36 @@ export namespace MyNS {
 		 * should not submit a subsequent report until the response for the
 		 * previous report had been received from the service.
 		 */
-		reportIndex?: string;
+		reportIndex?: string | null;
 
 		/** A progress measurement of a WorkItem by a worker. */
-		reportedProgress?: ApproximateReportedProgress;
+		reportedProgress?: ApproximateReportedProgress | null;
 
 		/** Amount of time the worker requests for its lease. */
-		requestedLeaseDuration?: string;
+		requestedLeaseDuration?: string | null;
 
 		/** DEPRECATED in favor of DynamicSourceSplit. */
-		sourceFork?: SourceFork;
+		sourceFork?: SourceFork | null;
 
 		/**
 		 * The result of a SourceOperationRequest, specified in
 		 * ReportWorkItemStatusRequest.source_operation when the work item
 		 * is completed.
 		 */
-		sourceOperationResponse?: SourceOperationResponse;
+		sourceOperationResponse?: SourceOperationResponse | null;
 
 		/**
 		 * Position defines a position within a collection of data.  The value
 		 * can be either the end position, a key (used with ordered
 		 * collections), a byte offset, or a record index.
 		 */
-		stopPosition?: Position;
+		stopPosition?: Position | null;
 
 		/** Total time the worker spent being throttled by external systems. */
-		totalThrottlerWaitTimeSeconds?: number;
+		totalThrottlerWaitTimeSeconds?: number | null;
 
 		/** Identifies the WorkItem. */
-		workItemId?: string;
+		workItemId?: string | null;
 	}
 
 
@@ -3436,7 +3436,7 @@ export namespace MyNS {
 	export interface SourceFork {
 
 		/** DEPRECATED in favor of DerivedSource. */
-		primary?: SourceSplitShard;
+		primary?: SourceSplitShard | null;
 
 		/**
 		 * Specification of one of the bundles produced as a result of splitting
@@ -3444,10 +3444,10 @@ export namespace MyNS {
 		 * splitting an active task using WorkItemStatus.dynamic_source_split),
 		 * relative to the source being split.
 		 */
-		primarySource?: DerivedSource;
+		primarySource?: DerivedSource | null;
 
 		/** DEPRECATED in favor of DerivedSource. */
-		residual?: SourceSplitShard;
+		residual?: SourceSplitShard | null;
 
 		/**
 		 * Specification of one of the bundles produced as a result of splitting
@@ -3455,7 +3455,7 @@ export namespace MyNS {
 		 * splitting an active task using WorkItemStatus.dynamic_source_split),
 		 * relative to the source being split.
 		 */
-		residualSource?: DerivedSource;
+		residualSource?: DerivedSource | null;
 	}
 
 
@@ -3463,10 +3463,10 @@ export namespace MyNS {
 	export interface SourceSplitShard {
 
 		/** DEPRECATED */
-		derivationMode?: DerivedSourceDerivationMode;
+		derivationMode?: DerivedSourceDerivationMode | null;
 
 		/** A source that records can be read and decoded from. */
-		source?: Source;
+		source?: Source | null;
 	}
 
 
@@ -3478,10 +3478,10 @@ export namespace MyNS {
 	export interface SourceOperationResponse {
 
 		/** The result of a SourceGetMetadataOperation. */
-		getMetadata?: SourceGetMetadataResponse;
+		getMetadata?: SourceGetMetadataResponse | null;
 
 		/** The response to a SourceSplitRequest. */
-		split?: SourceSplitResponse;
+		split?: SourceSplitResponse | null;
 	}
 
 
@@ -3492,7 +3492,7 @@ export namespace MyNS {
 		 * Metadata about a Source useful for automatically optimizing
 		 * and tuning the pipeline, etc.
 		 */
-		metadata?: SourceMetadata;
+		metadata?: SourceMetadata | null;
 	}
 
 
@@ -3504,7 +3504,7 @@ export namespace MyNS {
 		 * into which the source was split. Otherwise this field is ignored.
 		 * This list can be empty, which means the source represents an empty input.
 		 */
-		bundles?: Array<DerivedSource>;
+		bundles?: Array<DerivedSource> | null;
 
 		/**
 		 * Indicates whether splitting happened and produced a list of bundles.
@@ -3513,10 +3513,10 @@ export namespace MyNS {
 		 * If this is SPLITTING_HAPPENED, then "bundles" contains a list of
 		 * bundles into which the source was split.
 		 */
-		outcome?: SourceSplitResponseOutcome;
+		outcome?: SourceSplitResponseOutcome | null;
 
 		/** DEPRECATED in favor of bundles. */
-		shards?: Array<SourceSplitShard>;
+		shards?: Array<SourceSplitShard> | null;
 	}
 
 	export enum SourceSplitResponseOutcome { SOURCE_SPLIT_OUTCOME_UNKNOWN = 0, SOURCE_SPLIT_OUTCOME_USE_CURRENT = 1, SOURCE_SPLIT_OUTCOME_SPLITTING_HAPPENED = 2 }
@@ -3526,7 +3526,7 @@ export namespace MyNS {
 	export interface ReportWorkItemStatusResponse {
 
 		/** Untranslated bag-of-bytes WorkProgressUpdateResponse for UnifiedWorker. */
-		unifiedWorkerResponse?: {[id: string]: any };
+		unifiedWorkerResponse?: {[id: string]: any } | null;
 
 		/**
 		 * A set of messages indicating the service-side state for each
@@ -3534,7 +3534,7 @@ export namespace MyNS {
 		 * WorkItemStatus messages in the ReportWorkItemStatusRequest which
 		 * resulting in this response.
 		 */
-		workItemServiceStates?: Array<WorkItemServiceState>;
+		workItemServiceStates?: Array<WorkItemServiceState> | null;
 	}
 
 
@@ -3548,13 +3548,13 @@ export namespace MyNS {
 		 * Other data returned by the service, specific to the particular
 		 * worker harness.
 		 */
-		harnessData?: {[id: string]: any };
+		harnessData?: {[id: string]: any } | null;
 
 		/** Proto describing a hot key detected on a given WorkItem. */
-		hotKeyDetection?: HotKeyDetection;
+		hotKeyDetection?: HotKeyDetection | null;
 
 		/** Time at which the current lease will expire. */
-		leaseExpireTime?: string;
+		leaseExpireTime?: string | null;
 
 		/**
 		 * The short ids that workers should use in subsequent metric updates.
@@ -3564,30 +3564,30 @@ export namespace MyNS {
 		 * NOTE: it is possible that the response may have short ids for a subset
 		 * of the metrics.
 		 */
-		metricShortId?: Array<MetricShortId>;
+		metricShortId?: Array<MetricShortId> | null;
 
 		/**
 		 * The index value to use for the next report sent by the worker.
 		 * Note: If the report call fails for whatever reason, the worker should
 		 * reuse this index for subsequent report attempts.
 		 */
-		nextReportIndex?: string;
+		nextReportIndex?: string | null;
 
 		/** New recommended reporting interval. */
-		reportStatusInterval?: string;
+		reportStatusInterval?: string | null;
 
 		/** A suggestion by the service to the worker to dynamically split the WorkItem. */
-		splitRequest?: ApproximateSplitRequest;
+		splitRequest?: ApproximateSplitRequest | null;
 
 		/** Obsolete in favor of ApproximateReportedProgress and ApproximateSplitRequest. */
-		suggestedStopPoint?: ApproximateProgress;
+		suggestedStopPoint?: ApproximateProgress | null;
 
 		/**
 		 * Position defines a position within a collection of data.  The value
 		 * can be either the end position, a key (used with ordered
 		 * collections), a byte offset, or a record index.
 		 */
-		suggestedStopPosition?: Position;
+		suggestedStopPosition?: Position | null;
 	}
 
 
@@ -3602,13 +3602,13 @@ export namespace MyNS {
 		 * Per container information.
 		 * Key: container name.
 		 */
-		containers?: {[id: string]: ResourceUtilizationReport };
+		containers?: {[id: string]: ResourceUtilizationReport } | null;
 
 		/** CPU utilization samples. */
-		cpuTime?: Array<CPUTime>;
+		cpuTime?: Array<CPUTime> | null;
 
 		/** Memory utilization samples. */
-		memoryInfo?: Array<MemInfo>;
+		memoryInfo?: Array<MemInfo> | null;
 	}
 
 
@@ -3621,20 +3621,20 @@ export namespace MyNS {
 	export interface SendDebugCaptureRequest {
 
 		/** The internal component id for which debug information is sent. */
-		componentId?: string;
+		componentId?: string | null;
 
 		/** The encoded debug information. */
-		data?: string;
+		data?: string | null;
 
 		/**
 		 * The [regional endpoint]
 		 * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
 		 * contains the job specified by job_id.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/** The worker id, i.e., VM hostname. */
-		workerId?: string;
+		workerId?: string | null;
 	}
 
 
@@ -3654,10 +3654,10 @@ export namespace MyNS {
 		 * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
 		 * contains the job.
 		 */
-		location?: string;
+		location?: string | null;
 
 		/** The WorkerMessages to send. */
-		workerMessages?: Array<WorkerMessage>;
+		workerMessages?: Array<WorkerMessage> | null;
 	}
 
 
@@ -3676,17 +3676,17 @@ export namespace MyNS {
 		 * of development other strings can be used as tags. LABEL_UNSPECIFIED should
 		 * not be used here.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The timestamp of the worker_message. */
-		time?: string;
+		time?: string | null;
 
 		/**
 		 * WorkerHealthReport contains information about the health of a worker.
 		 * The VM should be identified by the labels attached to the WorkerMessage that
 		 * this health ping belongs to.
 		 */
-		workerHealthReport?: WorkerHealthReport;
+		workerHealthReport?: WorkerHealthReport | null;
 
 		/**
 		 * A report of an event in a worker's lifecycle.
@@ -3696,7 +3696,7 @@ export namespace MyNS {
 		 * is up to the consumer to interpret.
 		 * The timestamp of the event is in the enclosing WorkerMessage proto.
 		 */
-		workerLifecycleEvent?: WorkerLifecycleEvent;
+		workerLifecycleEvent?: WorkerLifecycleEvent | null;
 
 		/**
 		 * A message code is used to report status and error messages to the service.
@@ -3708,21 +3708,21 @@ export namespace MyNS {
 		 * 2. Worker processes reporting specific errors (e.g. package staging
 		 * failure).
 		 */
-		workerMessageCode?: WorkerMessageCode;
+		workerMessageCode?: WorkerMessageCode | null;
 
 		/**
 		 * Worker metrics exported from workers. This contains resource utilization
 		 * metrics accumulated from a variety of sources. For more information, see
 		 * go/df-resource-signals.
 		 */
-		workerMetrics?: ResourceUtilizationReport;
+		workerMetrics?: ResourceUtilizationReport | null;
 
 		/**
 		 * Shutdown notification from workers. This is to be sent by the shutdown
 		 * script of the worker VM so that the backend knows that the VM is being
 		 * shut down.
 		 */
-		workerShutdownNotice?: WorkerShutdownNotice;
+		workerShutdownNotice?: WorkerShutdownNotice | null;
 	}
 
 
@@ -3734,7 +3734,7 @@ export namespace MyNS {
 	export interface WorkerHealthReport {
 
 		/** A message describing any unusual health reports. */
-		msg?: string;
+		msg?: string | null;
 
 		/**
 		 * The pods running on the worker. See:
@@ -3742,27 +3742,27 @@ export namespace MyNS {
 		 * This field is used by the worker to send the status of the indvidual
 		 * containers running on each worker.
 		 */
-		pods?: Array<string>;
+		pods?: Array<string> | null;
 
 		/**
 		 * The interval at which the worker is sending health reports.
 		 * The default value of 0 should be interpreted as the field is not being
 		 * explicitly set by the worker.
 		 */
-		reportInterval?: string;
+		reportInterval?: string | null;
 
 		/**
 		 * Whether the VM is in a permanently broken state.
 		 * Broken VMs should be abandoned or deleted ASAP to avoid assigning or
 		 * completing any work.
 		 */
-		vmIsBroken?: boolean;
+		vmIsBroken?: boolean | null;
 
 		/** Whether the VM is currently healthy. */
-		vmIsHealthy?: boolean;
+		vmIsHealthy?: boolean | null;
 
 		/** The time the VM was booted. */
-		vmStartupTime?: string;
+		vmStartupTime?: string | null;
 	}
 
 
@@ -3780,16 +3780,16 @@ export namespace MyNS {
 		 * The start time of this container. All events will report this so that
 		 * events can be grouped together across container/VM restarts.
 		 */
-		containerStartTime?: string;
+		containerStartTime?: string | null;
 
 		/** The event being reported. */
-		event?: WorkerLifecycleEventEvent;
+		event?: WorkerLifecycleEventEvent | null;
 
 		/**
 		 * Other stats that can accompany an event. E.g.
 		 * { "downloaded_bytes" : "123456" }
 		 */
-		metadata?: {[id: string]: string };
+		metadata?: {[id: string]: string } | null;
 	}
 
 	export enum WorkerLifecycleEventEvent { UNKNOWN_EVENT = 0, OS_START = 1, CONTAINER_START = 2, NETWORK_UP = 3, STAGING_FILES_DOWNLOAD_START = 4, STAGING_FILES_DOWNLOAD_FINISH = 5, SDK_INSTALL_START = 6, SDK_INSTALL_FINISH = 7 }
@@ -3818,7 +3818,7 @@ export namespace MyNS {
 		 * This is a string and not an enum to make it easy to add new codes without
 		 * waiting for an API change.
 		 */
-		code?: string;
+		code?: string | null;
 
 		/**
 		 * Parameters contains specific information about the code.
@@ -3838,7 +3838,7 @@ export namespace MyNS {
 		 * hostname and other worker identifiers should almost always be passed
 		 * as labels since they will be included on most messages.
 		 */
-		parameters?: {[id: string]: any };
+		parameters?: {[id: string]: any } | null;
 	}
 
 
@@ -3856,7 +3856,7 @@ export namespace MyNS {
 		 * "PREEMPTION": shutdown reason is preemption.
 		 * Other possible reasons may be added in the future.
 		 */
-		reason?: string;
+		reason?: string | null;
 	}
 
 
@@ -3864,7 +3864,7 @@ export namespace MyNS {
 	export interface SendWorkerMessagesResponse {
 
 		/** The servers response to the worker messages. */
-		workerMessageResponses?: Array<WorkerMessageResponse>;
+		workerMessageResponses?: Array<WorkerMessageResponse> | null;
 	}
 
 
@@ -3878,13 +3878,13 @@ export namespace MyNS {
 		 * WorkerHealthReportResponse contains information returned to the worker
 		 * in response to a health ping.
 		 */
-		workerHealthReportResponse?: WorkerHealthReportResponse;
+		workerHealthReportResponse?: WorkerHealthReportResponse | null;
 
 		/** Service-side response to WorkerMessage reporting resource utilization. */
-		workerMetricsResponse?: ResourceUtilizationReportResponse;
+		workerMetricsResponse?: ResourceUtilizationReportResponse | null;
 
 		/** Service-side response to WorkerMessage issuing shutdown notice. */
-		workerShutdownNoticeResponse?: WorkerShutdownNoticeResponse;
+		workerShutdownNoticeResponse?: WorkerShutdownNoticeResponse | null;
 	}
 
 
@@ -3900,7 +3900,7 @@ export namespace MyNS {
 		 * The default value of zero means no change in report rate is requested by
 		 * the server.
 		 */
-		reportInterval?: string;
+		reportInterval?: string | null;
 	}
 
 
@@ -3913,16 +3913,16 @@ export namespace MyNS {
 	export interface SnapshotJobRequest {
 
 		/** User specified description of the snapshot. Maybe empty. */
-		description?: string;
+		description?: string | null;
 
 		/** The location that contains this job. */
-		location?: string;
+		location?: string | null;
 
 		/** If true, perform snapshots for sources which support this. */
-		snapshotSources?: boolean;
+		snapshotSources?: boolean | null;
 
 		/** TTL for the snapshot. */
-		ttl?: string;
+		ttl?: string | null;
 	}
 
 
@@ -3930,7 +3930,7 @@ export namespace MyNS {
 	export interface ValidateResponse {
 
 		/** Will be empty if validation succeeds. */
-		errorMessage?: string;
+		errorMessage?: string | null;
 	}
 
 	@Injectable()
@@ -3970,7 +3970,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_jobs_listView} view Level of information requested in response. Default is `JOB_VIEW_SUMMARY`.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_jobs_list(projectId: string, filter: Dataflow_projects_jobs_listFilter, location: string, pageSize: number, pageToken: string, view: Dataflow_projects_jobs_listView): Observable<HttpResponse<string>> {
+		Dataflow_projects_jobs_list(projectId: string, filter: Dataflow_projects_jobs_listFilter | null | undefined, location: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Dataflow_projects_jobs_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/jobs&filter=' + filter + '&location=' + (location == null ? '' : encodeURIComponent(location)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3990,7 +3990,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_jobs_listView} view The level of information requested in response.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_jobs_create(projectId: string, location: string, replaceJobId: string, view: Dataflow_projects_jobs_listView, requestBody: Job): Observable<HttpResponse<string>> {
+		Dataflow_projects_jobs_create(projectId: string, location: string | null | undefined, replaceJobId: string | null | undefined, view: Dataflow_projects_jobs_listView | null | undefined, requestBody: Job): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/jobs&location=' + (location == null ? '' : encodeURIComponent(location)) + '&replaceJobId=' + (replaceJobId == null ? '' : encodeURIComponent(replaceJobId)) + '&view=' + view, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4010,7 +4010,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_jobs_listView} view The level of information requested in response.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_jobs_get(projectId: string, jobId: string, location: string, view: Dataflow_projects_jobs_listView): Observable<HttpResponse<string>> {
+		Dataflow_projects_jobs_get(projectId: string, jobId: string, location: string | null | undefined, view: Dataflow_projects_jobs_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&location=' + (location == null ? '' : encodeURIComponent(location)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4029,7 +4029,7 @@ export namespace MyNS {
 		 * contains this job.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_jobs_update(projectId: string, jobId: string, location: string, requestBody: Job): Observable<HttpResponse<string>> {
+		Dataflow_projects_jobs_update(projectId: string, jobId: string, location: string | null | undefined, requestBody: Job): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&location=' + (location == null ? '' : encodeURIComponent(location)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4081,7 +4081,7 @@ export namespace MyNS {
 		 * The default is the job creation time (i.e. beginning of messages).
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_jobs_messages_list(projectId: string, jobId: string, endTime: string, location: string, minimumImportance: JobMessageMessageImportance, pageSize: number, pageToken: string, startTime: string): Observable<HttpResponse<string>> {
+		Dataflow_projects_jobs_messages_list(projectId: string, jobId: string, endTime: string | null | undefined, location: string | null | undefined, minimumImportance: JobMessageMessageImportance | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, startTime: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/messages&endTime=' + (endTime == null ? '' : encodeURIComponent(endTime)) + '&location=' + (location == null ? '' : encodeURIComponent(location)) + '&minimumImportance=' + minimumImportance + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startTime=' + (startTime == null ? '' : encodeURIComponent(startTime)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4102,7 +4102,7 @@ export namespace MyNS {
 		 * Default is to return all information about all metrics for the job.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_jobs_getMetrics(projectId: string, jobId: string, location: string, startTime: string): Observable<HttpResponse<string>> {
+		Dataflow_projects_jobs_getMetrics(projectId: string, jobId: string, location: string | null | undefined, startTime: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/metrics&location=' + (location == null ? '' : encodeURIComponent(location)) + '&startTime=' + (startTime == null ? '' : encodeURIComponent(startTime)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4155,7 +4155,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_jobs_listView} view Level of information requested in response. Default is `JOB_VIEW_SUMMARY`.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_jobs_aggregated(projectId: string, filter: Dataflow_projects_jobs_listFilter, location: string, pageSize: number, pageToken: string, view: Dataflow_projects_jobs_listView): Observable<HttpResponse<string>> {
+		Dataflow_projects_jobs_aggregated(projectId: string, filter: Dataflow_projects_jobs_listFilter | null | undefined, location: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Dataflow_projects_jobs_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/jobs:aggregated&filter=' + filter + '&location=' + (location == null ? '' : encodeURIComponent(location)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4207,7 +4207,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_jobs_listView} view Level of information requested in response. Default is `JOB_VIEW_SUMMARY`.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_locations_jobs_list(projectId: string, location: string, filter: Dataflow_projects_jobs_listFilter, pageSize: number, pageToken: string, view: Dataflow_projects_jobs_listView): Observable<HttpResponse<string>> {
+		Dataflow_projects_locations_jobs_list(projectId: string, location: string, filter: Dataflow_projects_jobs_listFilter | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, view: Dataflow_projects_jobs_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/jobs&filter=' + filter + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4227,7 +4227,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_jobs_listView} view The level of information requested in response.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_locations_jobs_create(projectId: string, location: string, replaceJobId: string, view: Dataflow_projects_jobs_listView, requestBody: Job): Observable<HttpResponse<string>> {
+		Dataflow_projects_locations_jobs_create(projectId: string, location: string, replaceJobId: string | null | undefined, view: Dataflow_projects_jobs_listView | null | undefined, requestBody: Job): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/jobs&replaceJobId=' + (replaceJobId == null ? '' : encodeURIComponent(replaceJobId)) + '&view=' + view, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4247,7 +4247,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_jobs_listView} view The level of information requested in response.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_locations_jobs_get(projectId: string, location: string, jobId: string, view: Dataflow_projects_jobs_listView): Observable<HttpResponse<string>> {
+		Dataflow_projects_locations_jobs_get(projectId: string, location: string, jobId: string, view: Dataflow_projects_jobs_listView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4324,7 +4324,7 @@ export namespace MyNS {
 		 * The default is the job creation time (i.e. beginning of messages).
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_locations_jobs_messages_list(projectId: string, location: string, jobId: string, endTime: string, minimumImportance: JobMessageMessageImportance, pageSize: number, pageToken: string, startTime: string): Observable<HttpResponse<string>> {
+		Dataflow_projects_locations_jobs_messages_list(projectId: string, location: string, jobId: string, endTime: string | null | undefined, minimumImportance: JobMessageMessageImportance | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, startTime: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/messages&endTime=' + (endTime == null ? '' : encodeURIComponent(endTime)) + '&minimumImportance=' + minimumImportance + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&startTime=' + (startTime == null ? '' : encodeURIComponent(startTime)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4345,7 +4345,7 @@ export namespace MyNS {
 		 * Default is to return all information about all metrics for the job.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_locations_jobs_getMetrics(projectId: string, location: string, jobId: string, startTime: string): Observable<HttpResponse<string>> {
+		Dataflow_projects_locations_jobs_getMetrics(projectId: string, location: string, jobId: string, startTime: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/jobs/' + (jobId == null ? '' : encodeURIComponent(jobId)) + '/metrics&startTime=' + (startTime == null ? '' : encodeURIComponent(startTime)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4409,7 +4409,7 @@ export namespace MyNS {
 		 * @param {string} jobId If specified, list snapshots created from this job.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_locations_snapshots_list(projectId: string, location: string, jobId: string): Observable<HttpResponse<string>> {
+		Dataflow_projects_locations_snapshots_list(projectId: string, location: string, jobId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/snapshots&jobId=' + (jobId == null ? '' : encodeURIComponent(jobId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4450,7 +4450,7 @@ export namespace MyNS {
 		 * @param {string} query The sql query to validate.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_locations_sql_validate(projectId: string, location: string, query: string): Observable<HttpResponse<string>> {
+		Dataflow_projects_locations_sql_validate(projectId: string, location: string, query: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/sql:validate&query=' + (query == null ? '' : encodeURIComponent(query)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4480,7 +4480,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_locations_templates_getView} view The view to retrieve. Defaults to METADATA_ONLY.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_locations_templates_get(projectId: string, location: string, gcsPath: string, view: Dataflow_projects_locations_templates_getView): Observable<HttpResponse<string>> {
+		Dataflow_projects_locations_templates_get(projectId: string, location: string, gcsPath: string | null | undefined, view: Dataflow_projects_locations_templates_getView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/templates:get&gcsPath=' + (gcsPath == null ? '' : encodeURIComponent(gcsPath)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4502,7 +4502,7 @@ export namespace MyNS {
 		 * Defaults to false.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_locations_templates_launch(projectId: string, location: string, dynamicTemplate_gcsPath: string, dynamicTemplate_stagingLocation: string, gcsPath: string, validateOnly: boolean, requestBody: LaunchTemplateParameters): Observable<HttpResponse<string>> {
+		Dataflow_projects_locations_templates_launch(projectId: string, location: string, dynamicTemplate_gcsPath: string | null | undefined, dynamicTemplate_stagingLocation: string | null | undefined, gcsPath: string | null | undefined, validateOnly: boolean | null | undefined, requestBody: LaunchTemplateParameters): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/templates:launch&dynamicTemplate_gcsPath=' + (dynamicTemplate_gcsPath == null ? '' : encodeURIComponent(dynamicTemplate_gcsPath)) + '&dynamicTemplate_stagingLocation=' + (dynamicTemplate_stagingLocation == null ? '' : encodeURIComponent(dynamicTemplate_stagingLocation)) + '&gcsPath=' + (gcsPath == null ? '' : encodeURIComponent(gcsPath)) + '&validateOnly=' + validateOnly, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -4514,7 +4514,7 @@ export namespace MyNS {
 		 * @param {string} snapshotId The ID of the snapshot.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_deleteSnapshots(projectId: string, location: string, snapshotId: string): Observable<HttpResponse<string>> {
+		Dataflow_projects_deleteSnapshots(projectId: string, location: string | null | undefined, snapshotId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/snapshots&location=' + (location == null ? '' : encodeURIComponent(location)) + '&snapshotId=' + (snapshotId == null ? '' : encodeURIComponent(snapshotId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4526,7 +4526,7 @@ export namespace MyNS {
 		 * @param {string} location The location to list snapshots in.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_snapshots_list(projectId: string, jobId: string, location: string): Observable<HttpResponse<string>> {
+		Dataflow_projects_snapshots_list(projectId: string, jobId: string | null | undefined, location: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/snapshots&jobId=' + (jobId == null ? '' : encodeURIComponent(jobId)) + '&location=' + (location == null ? '' : encodeURIComponent(location)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4538,7 +4538,7 @@ export namespace MyNS {
 		 * @param {string} location The location that contains this snapshot.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_snapshots_get(projectId: string, snapshotId: string, location: string): Observable<HttpResponse<string>> {
+		Dataflow_projects_snapshots_get(projectId: string, snapshotId: string, location: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/snapshots/' + (snapshotId == null ? '' : encodeURIComponent(snapshotId)) + '&location=' + (location == null ? '' : encodeURIComponent(location)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -4565,7 +4565,7 @@ export namespace MyNS {
 		 * @param {Dataflow_projects_locations_templates_getView} view The view to retrieve. Defaults to METADATA_ONLY.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_templates_get(projectId: string, gcsPath: string, location: string, view: Dataflow_projects_locations_templates_getView): Observable<HttpResponse<string>> {
+		Dataflow_projects_templates_get(projectId: string, gcsPath: string | null | undefined, location: string | null | undefined, view: Dataflow_projects_locations_templates_getView | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/templates:get&gcsPath=' + (gcsPath == null ? '' : encodeURIComponent(gcsPath)) + '&location=' + (location == null ? '' : encodeURIComponent(location)) + '&view=' + view, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4587,7 +4587,7 @@ export namespace MyNS {
 		 * Defaults to false.
 		 * @return {void} Successful response
 		 */
-		Dataflow_projects_templates_launch(projectId: string, dynamicTemplate_gcsPath: string, dynamicTemplate_stagingLocation: string, gcsPath: string, location: string, validateOnly: boolean, requestBody: LaunchTemplateParameters): Observable<HttpResponse<string>> {
+		Dataflow_projects_templates_launch(projectId: string, dynamicTemplate_gcsPath: string | null | undefined, dynamicTemplate_stagingLocation: string | null | undefined, gcsPath: string | null | undefined, location: string | null | undefined, validateOnly: boolean | null | undefined, requestBody: LaunchTemplateParameters): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1b3/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/templates:launch&dynamicTemplate_gcsPath=' + (dynamicTemplate_gcsPath == null ? '' : encodeURIComponent(dynamicTemplate_gcsPath)) + '&dynamicTemplate_stagingLocation=' + (dynamicTemplate_stagingLocation == null ? '' : encodeURIComponent(dynamicTemplate_stagingLocation)) + '&gcsPath=' + (gcsPath == null ? '' : encodeURIComponent(gcsPath)) + '&location=' + (location == null ? '' : encodeURIComponent(location)) + '&validateOnly=' + validateOnly, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}

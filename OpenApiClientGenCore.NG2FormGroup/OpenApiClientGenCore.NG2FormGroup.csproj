@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<AssemblyName>Fonlow.OpenApiClientGen.NG2FormGroup</AssemblyName>
+		<Copyright>Copyright © Zijian Huang 2021-2023</Copyright>
+		<Authors>Zijian Huang</Authors>
+		<RootNamespace>Fonlow.OpenApiClientGen.NG2FormGroup</RootNamespace>
+		<Version>1.6</Version>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\OpenApiClientGenCore.NG2\OpenApiClientGenCore.NG2.csproj" />
+	</ItemGroup>
+	
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="copy $(TargetPath) $(SolutionDir)Fonlow.OpenApiClientGen\$(OutDir) /Y" Condition="$([MSBuild]::IsOSPlatform('Windows'))"/>
+		<Exec Command="cp $(TargetPath) $(SolutionDir)Fonlow.OpenApiClientGen/$(OutDir)" Condition="!$([MSBuild]::IsOSPlatform('Windows'))"/>
+	</Target>
+</Project>

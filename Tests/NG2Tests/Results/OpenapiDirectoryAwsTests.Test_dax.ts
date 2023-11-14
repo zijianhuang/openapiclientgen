@@ -5,85 +5,85 @@ export namespace MyNS {
 	export interface CreateClusterResponse {
 
 		/** Contains all of the attributes of a specific DAX cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 
 	/** Contains all of the attributes of a specific DAX cluster. */
 	export interface Cluster {
-		ClusterName?: string;
-		Description?: string;
-		ClusterArn?: string;
-		TotalNodes?: number;
-		ActiveNodes?: number;
-		NodeType?: string;
-		Status?: string;
+		ClusterName?: string | null;
+		Description?: string | null;
+		ClusterArn?: string | null;
+		TotalNodes?: number | null;
+		ActiveNodes?: number | null;
+		NodeType?: string | null;
+		Status?: string | null;
 
 		/** Represents the information required for client programs to connect to the configuration endpoint for a DAX cluster, or to an individual node within the cluster. */
-		ClusterDiscoveryEndpoint?: Endpoint;
-		NodeIdsToRemove?: Array<string>;
-		Nodes?: Array<Node>;
-		PreferredMaintenanceWindow?: string;
+		ClusterDiscoveryEndpoint?: Endpoint | null;
+		NodeIdsToRemove?: Array<string> | null;
+		Nodes?: Array<Node> | null;
+		PreferredMaintenanceWindow?: string | null;
 
 		/** Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS). */
-		NotificationConfiguration?: NotificationConfiguration;
-		SubnetGroup?: string;
-		SecurityGroups?: Array<SecurityGroupMembership>;
-		IamRoleArn?: string;
+		NotificationConfiguration?: NotificationConfiguration | null;
+		SubnetGroup?: string | null;
+		SecurityGroups?: Array<SecurityGroupMembership> | null;
+		IamRoleArn?: string | null;
 
 		/** The status of a parameter group. */
-		ParameterGroup?: ParameterGroupStatus;
+		ParameterGroup?: ParameterGroupStatus | null;
 
 		/** The description of the server-side encryption status on the specified DAX cluster. */
-		SSEDescription?: SSEDescription;
+		SSEDescription?: SSEDescription | null;
 	}
 
 
 	/** Represents the information required for client programs to connect to the configuration endpoint for a DAX cluster, or to an individual node within the cluster. */
 	export interface Endpoint {
-		Address?: string;
-		Port?: number;
+		Address?: string | null;
+		Port?: number | null;
 	}
 
 
 	/** Represents an individual node within a DAX cluster. */
 	export interface Node {
-		NodeId?: string;
+		NodeId?: string | null;
 
 		/** Represents the information required for client programs to connect to the configuration endpoint for a DAX cluster, or to an individual node within the cluster. */
-		Endpoint?: Endpoint;
-		NodeCreateTime?: Date;
-		AvailabilityZone?: string;
-		NodeStatus?: string;
-		ParameterGroupStatus?: string;
+		Endpoint?: Endpoint | null;
+		NodeCreateTime?: Date | null;
+		AvailabilityZone?: string | null;
+		NodeStatus?: string | null;
+		ParameterGroupStatus?: string | null;
 	}
 
 
 	/** Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS). */
 	export interface NotificationConfiguration {
-		TopicArn?: string;
-		TopicStatus?: string;
+		TopicArn?: string | null;
+		TopicStatus?: string | null;
 	}
 
 
 	/** An individual VPC security group and its status. */
 	export interface SecurityGroupMembership {
-		SecurityGroupIdentifier?: string;
-		Status?: string;
+		SecurityGroupIdentifier?: string | null;
+		Status?: string | null;
 	}
 
 
 	/** The status of a parameter group. */
 	export interface ParameterGroupStatus {
-		ParameterGroupName?: string;
-		ParameterApplyStatus?: string;
-		NodeIdsToReboot?: Array<string>;
+		ParameterGroupName?: string | null;
+		ParameterApplyStatus?: string | null;
+		NodeIdsToReboot?: Array<string> | null;
 	}
 
 
 	/** The description of the server-side encryption status on the specified DAX cluster. */
 	export interface SSEDescription {
-		Status?: SSEDescriptionStatus;
+		Status?: SSEDescriptionStatus | null;
 	}
 
 	export enum SSEDescriptionStatus { ENABLING = 0, ENABLED = 1, DISABLING = 2, DISABLED = 3 }
@@ -91,26 +91,26 @@ export namespace MyNS {
 	export interface CreateClusterRequest {
 		ClusterName: string;
 		NodeType: string;
-		Description?: string;
+		Description?: string | null;
 		ReplicationFactor: number;
-		AvailabilityZones?: Array<string>;
-		SubnetGroupName?: string;
-		SecurityGroupIds?: Array<string>;
-		PreferredMaintenanceWindow?: string;
-		NotificationTopicArn?: string;
+		AvailabilityZones?: Array<string> | null;
+		SubnetGroupName?: string | null;
+		SecurityGroupIds?: Array<string> | null;
+		PreferredMaintenanceWindow?: string | null;
+		NotificationTopicArn?: string | null;
 		IamRoleArn: string;
-		ParameterGroupName?: string;
-		Tags?: Array<Tag>;
+		ParameterGroupName?: string | null;
+		Tags?: Array<Tag> | null;
 
 		/** Represents the settings used to enable server-side encryption. */
-		SSESpecification?: SSESpecification;
+		SSESpecification?: SSESpecification | null;
 	}
 
 
 	/** <p>A description of a tag. Every tag is a key-value pair. You can add up to 50 tags to a single DAX cluster.</p> <p>AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code>.</p> <p>You cannot backdate the application of a tag.</p> */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 
@@ -164,19 +164,19 @@ export namespace MyNS {
 	export interface CreateParameterGroupResponse {
 
 		/** A named set of parameters that are applied to all of the nodes in a DAX cluster. */
-		ParameterGroup?: ParameterGroup;
+		ParameterGroup?: ParameterGroup | null;
 	}
 
 
 	/** A named set of parameters that are applied to all of the nodes in a DAX cluster. */
 	export interface ParameterGroup {
-		ParameterGroupName?: string;
-		Description?: string;
+		ParameterGroupName?: string | null;
+		Description?: string | null;
 	}
 
 	export interface CreateParameterGroupRequest {
 		ParameterGroupName: string;
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface ParameterGroupQuotaExceededFault {
@@ -188,28 +188,28 @@ export namespace MyNS {
 	export interface CreateSubnetGroupResponse {
 
 		/** <p>Represents the output of one of the following actions:</p> <ul> <li> <p> <i>CreateSubnetGroup</i> </p> </li> <li> <p> <i>ModifySubnetGroup</i> </p> </li> </ul> */
-		SubnetGroup?: SubnetGroup;
+		SubnetGroup?: SubnetGroup | null;
 	}
 
 
 	/** <p>Represents the output of one of the following actions:</p> <ul> <li> <p> <i>CreateSubnetGroup</i> </p> </li> <li> <p> <i>ModifySubnetGroup</i> </p> </li> </ul> */
 	export interface SubnetGroup {
-		SubnetGroupName?: string;
-		Description?: string;
-		VpcId?: string;
-		Subnets?: Array<Subnet>;
+		SubnetGroupName?: string | null;
+		Description?: string | null;
+		VpcId?: string | null;
+		Subnets?: Array<Subnet> | null;
 	}
 
 
 	/** Represents the subnet associated with a DAX cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with DAX. */
 	export interface Subnet {
-		SubnetIdentifier?: string;
-		SubnetAvailabilityZone?: string;
+		SubnetIdentifier?: string | null;
+		SubnetAvailabilityZone?: string | null;
 	}
 
 	export interface CreateSubnetGroupRequest {
 		SubnetGroupName: string;
-		Description?: string;
+		Description?: string | null;
 		SubnetIds: Array<string>;
 	}
 
@@ -228,14 +228,14 @@ export namespace MyNS {
 	export interface DecreaseReplicationFactorResponse {
 
 		/** Contains all of the attributes of a specific DAX cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface DecreaseReplicationFactorRequest {
 		ClusterName: string;
 		NewReplicationFactor: number;
-		AvailabilityZones?: Array<string>;
-		NodeIdsToRemove?: Array<string>;
+		AvailabilityZones?: Array<string> | null;
+		NodeIdsToRemove?: Array<string> | null;
 	}
 
 	export interface ClusterNotFoundFault {
@@ -247,7 +247,7 @@ export namespace MyNS {
 	export interface DeleteClusterResponse {
 
 		/** Contains all of the attributes of a specific DAX cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface DeleteClusterRequest {
@@ -255,7 +255,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteParameterGroupResponse {
-		DeletionMessage?: string;
+		DeletionMessage?: string | null;
 	}
 
 	export interface DeleteParameterGroupRequest {
@@ -263,7 +263,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteSubnetGroupResponse {
-		DeletionMessage?: string;
+		DeletionMessage?: string | null;
 	}
 
 	export interface DeleteSubnetGroupRequest {
@@ -274,34 +274,34 @@ export namespace MyNS {
 	}
 
 	export interface DescribeClustersResponse {
-		NextToken?: string;
-		Clusters?: Array<Cluster>;
+		NextToken?: string | null;
+		Clusters?: Array<Cluster> | null;
 	}
 
 	export interface DescribeClustersRequest {
-		ClusterNames?: Array<string>;
-		MaxResults?: number;
-		NextToken?: string;
+		ClusterNames?: Array<string> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeDefaultParametersResponse {
-		NextToken?: string;
-		Parameters?: Array<Parameter>;
+		NextToken?: string | null;
+		Parameters?: Array<Parameter> | null;
 	}
 
 
 	/** Describes an individual setting that controls some aspect of DAX behavior. */
 	export interface Parameter {
-		ParameterName?: string;
-		ParameterType?: ParameterParameterType;
-		ParameterValue?: string;
-		NodeTypeSpecificValues?: Array<NodeTypeSpecificValue>;
-		Description?: string;
-		Source?: string;
-		DataType?: string;
-		AllowedValues?: string;
-		IsModifiable?: ParameterIsModifiable;
-		ChangeType?: ParameterChangeType;
+		ParameterName?: string | null;
+		ParameterType?: ParameterParameterType | null;
+		ParameterValue?: string | null;
+		NodeTypeSpecificValues?: Array<NodeTypeSpecificValue> | null;
+		Description?: string | null;
+		Source?: string | null;
+		DataType?: string | null;
+		AllowedValues?: string | null;
+		IsModifiable?: ParameterIsModifiable | null;
+		ChangeType?: ParameterChangeType | null;
 	}
 
 	export enum ParameterParameterType { DEFAULT = 0, NODE_TYPE_SPECIFIC = 1 }
@@ -309,8 +309,8 @@ export namespace MyNS {
 
 	/** Represents a parameter value that is applicable to a particular node type. */
 	export interface NodeTypeSpecificValue {
-		NodeType?: string;
-		Value?: string;
+		NodeType?: string | null;
+		Value?: string | null;
 	}
 
 	export enum ParameterIsModifiable { TRUE = 0, FALSE = 1, CONDITIONAL = 2 }
@@ -318,90 +318,90 @@ export namespace MyNS {
 	export enum ParameterChangeType { IMMEDIATE = 0, REQUIRES_REBOOT = 1 }
 
 	export interface DescribeDefaultParametersRequest {
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeEventsResponse {
-		NextToken?: string;
-		Events?: Array<Event>;
+		NextToken?: string | null;
+		Events?: Array<Event> | null;
 	}
 
 
 	/** Represents a single occurrence of something interesting within the system. Some examples of events are creating a DAX cluster, adding or removing a node, or rebooting a node. */
 	export interface Event {
-		SourceName?: string;
-		SourceType?: EventSourceType;
-		Message?: string;
-		Date?: Date;
+		SourceName?: string | null;
+		SourceType?: EventSourceType | null;
+		Message?: string | null;
+		Date?: Date | null;
 	}
 
 	export enum EventSourceType { CLUSTER = 0, PARAMETER_GROUP = 1, SUBNET_GROUP = 2 }
 
 	export interface DescribeEventsRequest {
-		SourceName?: string;
-		SourceType?: EventSourceType;
-		StartTime?: Date;
-		EndTime?: Date;
-		Duration?: number;
-		MaxResults?: number;
-		NextToken?: string;
+		SourceName?: string | null;
+		SourceType?: EventSourceType | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		Duration?: number | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeParameterGroupsResponse {
-		NextToken?: string;
-		ParameterGroups?: Array<ParameterGroup>;
+		NextToken?: string | null;
+		ParameterGroups?: Array<ParameterGroup> | null;
 	}
 
 	export interface DescribeParameterGroupsRequest {
-		ParameterGroupNames?: Array<string>;
-		MaxResults?: number;
-		NextToken?: string;
+		ParameterGroupNames?: Array<string> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeParametersResponse {
-		NextToken?: string;
-		Parameters?: Array<Parameter>;
+		NextToken?: string | null;
+		Parameters?: Array<Parameter> | null;
 	}
 
 	export interface DescribeParametersRequest {
 		ParameterGroupName: string;
-		Source?: string;
-		MaxResults?: number;
-		NextToken?: string;
+		Source?: string | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeSubnetGroupsResponse {
-		NextToken?: string;
-		SubnetGroups?: Array<SubnetGroup>;
+		NextToken?: string | null;
+		SubnetGroups?: Array<SubnetGroup> | null;
 	}
 
 	export interface DescribeSubnetGroupsRequest {
-		SubnetGroupNames?: Array<string>;
-		MaxResults?: number;
-		NextToken?: string;
+		SubnetGroupNames?: Array<string> | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface IncreaseReplicationFactorResponse {
 
 		/** Contains all of the attributes of a specific DAX cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface IncreaseReplicationFactorRequest {
 		ClusterName: string;
 		NewReplicationFactor: number;
-		AvailabilityZones?: Array<string>;
+		AvailabilityZones?: Array<string> | null;
 	}
 
 	export interface ListTagsResponse {
-		Tags?: Array<Tag>;
-		NextToken?: string;
+		Tags?: Array<Tag> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsRequest {
 		ResourceName: string;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface InvalidARNFault {
@@ -410,7 +410,7 @@ export namespace MyNS {
 	export interface RebootNodeResponse {
 
 		/** Contains all of the attributes of a specific DAX cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface RebootNodeRequest {
@@ -419,7 +419,7 @@ export namespace MyNS {
 	}
 
 	export interface TagResourceResponse {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface TagResourceRequest {
@@ -428,7 +428,7 @@ export namespace MyNS {
 	}
 
 	export interface UntagResourceResponse {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface UntagResourceRequest {
@@ -442,23 +442,23 @@ export namespace MyNS {
 	export interface UpdateClusterResponse {
 
 		/** Contains all of the attributes of a specific DAX cluster. */
-		Cluster?: Cluster;
+		Cluster?: Cluster | null;
 	}
 
 	export interface UpdateClusterRequest {
 		ClusterName: string;
-		Description?: string;
-		PreferredMaintenanceWindow?: string;
-		NotificationTopicArn?: string;
-		NotificationTopicStatus?: string;
-		ParameterGroupName?: string;
-		SecurityGroupIds?: Array<string>;
+		Description?: string | null;
+		PreferredMaintenanceWindow?: string | null;
+		NotificationTopicArn?: string | null;
+		NotificationTopicStatus?: string | null;
+		ParameterGroupName?: string | null;
+		SecurityGroupIds?: Array<string> | null;
 	}
 
 	export interface UpdateParameterGroupResponse {
 
 		/** A named set of parameters that are applied to all of the nodes in a DAX cluster. */
-		ParameterGroup?: ParameterGroup;
+		ParameterGroup?: ParameterGroup | null;
 	}
 
 	export interface UpdateParameterGroupRequest {
@@ -469,20 +469,20 @@ export namespace MyNS {
 
 	/** An individual DAX parameter. */
 	export interface ParameterNameValue {
-		ParameterName?: string;
-		ParameterValue?: string;
+		ParameterName?: string | null;
+		ParameterValue?: string | null;
 	}
 
 	export interface UpdateSubnetGroupResponse {
 
 		/** <p>Represents the output of one of the following actions:</p> <ul> <li> <p> <i>CreateSubnetGroup</i> </p> </li> <li> <p> <i>ModifySubnetGroup</i> </p> </li> </ul> */
-		SubnetGroup?: SubnetGroup;
+		SubnetGroup?: SubnetGroup | null;
 	}
 
 	export interface UpdateSubnetGroupRequest {
 		SubnetGroupName: string;
-		Description?: string;
-		SubnetIds?: Array<string>;
+		Description?: string | null;
+		SubnetIds?: Array<string> | null;
 	}
 
 	export interface SubnetInUse {

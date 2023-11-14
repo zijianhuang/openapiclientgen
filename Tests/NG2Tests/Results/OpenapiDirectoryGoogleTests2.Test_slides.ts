@@ -17,25 +17,25 @@ export namespace MyNS {
 	export interface AffineTransform {
 
 		/** The X coordinate scaling element. */
-		scaleX?: number;
+		scaleX?: number | null;
 
 		/** The Y coordinate scaling element. */
-		scaleY?: number;
+		scaleY?: number | null;
 
 		/** The X coordinate shearing element. */
-		shearX?: number;
+		shearX?: number | null;
 
 		/** The Y coordinate shearing element. */
-		shearY?: number;
+		shearY?: number | null;
 
 		/** The X coordinate translation element. */
-		translateX?: number;
+		translateX?: number | null;
 
 		/** The Y coordinate translation element. */
-		translateY?: number;
+		translateY?: number | null;
 
 		/** The units for translate elements. */
-		unit?: AffineTransformUnit;
+		unit?: AffineTransformUnit | null;
 	}
 
 	export enum AffineTransformUnit { UNIT_UNSPECIFIED = 0, EMU = 1, PT = 2 }
@@ -45,7 +45,7 @@ export namespace MyNS {
 	export interface AutoText {
 
 		/** The rendered content of this auto text, if available. */
-		content?: string;
+		content?: string | null;
 
 		/**
 		 * Represents the styling that can be applied to a TextRun.
@@ -63,10 +63,10 @@ export namespace MyNS {
 		 * fields will revert the style to a value matching the defaults in the Slides
 		 * editor.
 		 */
-		style?: TextStyle;
+		style?: TextStyle | null;
 
 		/** The type of this auto text. */
-		type?: AutoTextType;
+		type?: AutoTextType | null;
 	}
 
 
@@ -89,7 +89,7 @@ export namespace MyNS {
 	export interface TextStyle {
 
 		/** A color that can either be fully opaque or fully transparent. */
-		backgroundColor?: OptionalColor;
+		backgroundColor?: OptionalColor | null;
 
 		/**
 		 * The text's vertical offset from its normal position.
@@ -97,10 +97,10 @@ export namespace MyNS {
 		 * rendered in a smaller font size, computed based on the `font_size` field.
 		 * The `font_size` itself is not affected by changes in this field.
 		 */
-		baselineOffset?: TextStyleBaselineOffset;
+		baselineOffset?: TextStyleBaselineOffset | null;
 
 		/** Whether or not the text is rendered as bold. */
-		bold?: boolean;
+		bold?: boolean | null;
 
 		/**
 		 * The font family of the text.
@@ -111,31 +111,31 @@ export namespace MyNS {
 		 * specifies values for both `font_family` and `bold`, the explicitly-set
 		 * `bold` value is used.
 		 */
-		fontFamily?: string;
+		fontFamily?: string | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		fontSize?: Dimension;
+		fontSize?: Dimension | null;
 
 		/** A color that can either be fully opaque or fully transparent. */
-		foregroundColor?: OptionalColor;
+		foregroundColor?: OptionalColor | null;
 
 		/** Whether or not the text is italicized. */
-		italic?: boolean;
+		italic?: boolean | null;
 
 		/** A hypertext link. */
-		link?: Link;
+		link?: Link | null;
 
 		/** Whether or not the text is in small capital letters. */
-		smallCaps?: boolean;
+		smallCaps?: boolean | null;
 
 		/** Whether or not the text is struck through. */
-		strikethrough?: boolean;
+		strikethrough?: boolean | null;
 
 		/** Whether or not the text is underlined. */
-		underline?: boolean;
+		underline?: boolean | null;
 
 		/** Represents a font family and weight used to style a TextRun. */
-		weightedFontFamily?: WeightedFontFamily;
+		weightedFontFamily?: WeightedFontFamily | null;
 	}
 
 
@@ -143,7 +143,7 @@ export namespace MyNS {
 	export interface OptionalColor {
 
 		/** A themeable solid color value. */
-		opaqueColor?: OpaqueColor;
+		opaqueColor?: OpaqueColor | null;
 	}
 
 
@@ -151,10 +151,10 @@ export namespace MyNS {
 	export interface OpaqueColor {
 
 		/** An RGB color. */
-		rgbColor?: RgbColor;
+		rgbColor?: RgbColor | null;
 
 		/** An opaque theme color. */
-		themeColor?: OpaqueColorThemeColor;
+		themeColor?: OpaqueColorThemeColor | null;
 	}
 
 
@@ -162,13 +162,13 @@ export namespace MyNS {
 	export interface RgbColor {
 
 		/** The blue component of the color, from 0.0 to 1.0. */
-		blue?: number;
+		blue?: number | null;
 
 		/** The green component of the color, from 0.0 to 1.0. */
-		green?: number;
+		green?: number | null;
 
 		/** The red component of the color, from 0.0 to 1.0. */
-		red?: number;
+		red?: number | null;
 	}
 
 	export enum OpaqueColorThemeColor { THEME_COLOR_TYPE_UNSPECIFIED = 0, DARK1 = 1, LIGHT1 = 2, DARK2 = 3, LIGHT2 = 4, ACCENT1 = 5, ACCENT2 = 6, ACCENT3 = 7, ACCENT4 = 8, ACCENT5 = 9, ACCENT6 = 10, HYPERLINK = 11, FOLLOWED_HYPERLINK = 12, TEXT1 = 13, BACKGROUND1 = 14, TEXT2 = 15, BACKGROUND2 = 16 }
@@ -180,10 +180,10 @@ export namespace MyNS {
 	export interface Dimension {
 
 		/** The magnitude. */
-		magnitude?: number;
+		magnitude?: number | null;
 
 		/** The units for magnitude. */
-		unit?: AffineTransformUnit;
+		unit?: AffineTransformUnit | null;
 	}
 
 
@@ -194,22 +194,22 @@ export namespace MyNS {
 		 * If set, indicates this is a link to the specific page in this
 		 * presentation with this ID. A page with this ID may not exist.
 		 */
-		pageObjectId?: string;
+		pageObjectId?: string | null;
 
 		/**
 		 * If set, indicates this is a link to a slide in this presentation,
 		 * addressed by its position.
 		 */
-		relativeLink?: LinkRelativeLink;
+		relativeLink?: LinkRelativeLink | null;
 
 		/**
 		 * If set, indicates this is a link to the slide at this zero-based index
 		 * in the presentation. There may not be a slide at this index.
 		 */
-		slideIndex?: number;
+		slideIndex?: number | null;
 
 		/** If set, indicates this is a link to the external web page at this URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export enum LinkRelativeLink { RELATIVE_SLIDE_LINK_UNSPECIFIED = 0, NEXT_SLIDE = 1, PREVIOUS_SLIDE = 2, FIRST_SLIDE = 3, LAST_SLIDE = 4 }
@@ -224,7 +224,7 @@ export namespace MyNS {
 		 * [Google Fonts] (https://fonts.google.com/). If the font name is
 		 * unrecognized, the text is rendered in `Arial`.
 		 */
-		fontFamily?: string;
+		fontFamily?: string | null;
 
 		/**
 		 * The rendered weight of the text. This field can have any value that is a
@@ -236,7 +236,7 @@ export namespace MyNS {
 		 * `700` are considered bold, and weights less than `700`are not bold. The
 		 * default value is `400` ("normal").
 		 */
-		weight?: number;
+		weight?: number | null;
 	}
 
 	export enum AutoTextType { TYPE_UNSPECIFIED = 0, SLIDE_NUMBER = 1 }
@@ -246,10 +246,10 @@ export namespace MyNS {
 	export interface BatchUpdatePresentationRequest {
 
 		/** A list of updates to apply to the presentation. */
-		requests?: Array<Request>;
+		requests?: Array<Request> | null;
 
 		/** Provides control over how write requests are executed. */
-		writeControl?: WriteControl;
+		writeControl?: WriteControl | null;
 	}
 
 
@@ -257,10 +257,10 @@ export namespace MyNS {
 	export interface Request {
 
 		/** Creates an image. */
-		createImage?: CreateImageRequest;
+		createImage?: CreateImageRequest | null;
 
 		/** Creates a line. */
-		createLine?: CreateLineRequest;
+		createLine?: CreateLineRequest | null;
 
 		/**
 		 * Creates bullets for all of the paragraphs that overlap with the given
@@ -273,37 +273,37 @@ export namespace MyNS {
 		 * with a matching preset, the paragraphs being updated are added to that
 		 * preceding list.
 		 */
-		createParagraphBullets?: CreateParagraphBulletsRequest;
+		createParagraphBullets?: CreateParagraphBulletsRequest | null;
 
 		/** Creates a new shape. */
-		createShape?: CreateShapeRequest;
+		createShape?: CreateShapeRequest | null;
 
 		/**
 		 * Creates an embedded Google Sheets chart.
 		 * NOTE: Chart creation requires at least one of the spreadsheets.readonly,
 		 * spreadsheets, drive.readonly, drive.file, or drive OAuth scopes.
 		 */
-		createSheetsChart?: CreateSheetsChartRequest;
+		createSheetsChart?: CreateSheetsChartRequest | null;
 
 		/** Creates a new slide. */
-		createSlide?: CreateSlideRequest;
+		createSlide?: CreateSlideRequest | null;
 
 		/** Creates a new table. */
-		createTable?: CreateTableRequest;
+		createTable?: CreateTableRequest | null;
 
 		/**
 		 * Creates a video.
 		 * NOTE: Creating a video from Google Drive requires that the requesting app
 		 * have at least one of the drive, drive.readonly, or drive.file OAuth scopes.
 		 */
-		createVideo?: CreateVideoRequest;
+		createVideo?: CreateVideoRequest | null;
 
 		/**
 		 * Deletes an object, either pages or
 		 * page elements, from the
 		 * presentation.
 		 */
-		deleteObject?: DeleteObjectRequest;
+		deleteObject?: DeleteObjectRequest | null;
 
 		/**
 		 * Deletes bullets from all of the paragraphs that overlap with the given text
@@ -311,16 +311,16 @@ export namespace MyNS {
 		 * The nesting level of each paragraph will be visually preserved by adding
 		 * indent to the start of the corresponding paragraph.
 		 */
-		deleteParagraphBullets?: DeleteParagraphBulletsRequest;
+		deleteParagraphBullets?: DeleteParagraphBulletsRequest | null;
 
 		/** Deletes a column from a table. */
-		deleteTableColumn?: DeleteTableColumnRequest;
+		deleteTableColumn?: DeleteTableColumnRequest | null;
 
 		/** Deletes a row from a table. */
-		deleteTableRow?: DeleteTableRowRequest;
+		deleteTableRow?: DeleteTableRowRequest | null;
 
 		/** Deletes text from a shape or a table cell. */
-		deleteText?: DeleteTextRequest;
+		deleteText?: DeleteTextRequest | null;
 
 		/**
 		 * Duplicates a slide or page element.
@@ -328,25 +328,25 @@ export namespace MyNS {
 		 * following the specified slide. When duplicating a page element, the duplicate
 		 * will be placed on the same page at the same position as the original.
 		 */
-		duplicateObject?: DuplicateObjectRequest;
+		duplicateObject?: DuplicateObjectRequest | null;
 
 		/** Groups objects to create an object group. For example, groups PageElements to create a Group on the same page as all the children. */
-		groupObjects?: GroupObjectsRequest;
+		groupObjects?: GroupObjectsRequest | null;
 
 		/**
 		 * Inserts columns into a table.
 		 * Other columns in the table will be resized to fit the new column.
 		 */
-		insertTableColumns?: InsertTableColumnsRequest;
+		insertTableColumns?: InsertTableColumnsRequest | null;
 
 		/** Inserts rows into a table. */
-		insertTableRows?: InsertTableRowsRequest;
+		insertTableRows?: InsertTableRowsRequest | null;
 
 		/** Inserts text into a shape or a table cell. */
-		insertText?: InsertTextRequest;
+		insertText?: InsertTextRequest | null;
 
 		/** Merges cells in a Table. */
-		mergeTableCells?: MergeTableCellsRequest;
+		mergeTableCells?: MergeTableCellsRequest | null;
 
 		/**
 		 * Refreshes an embedded Google Sheets chart by replacing it with the latest
@@ -354,14 +354,14 @@ export namespace MyNS {
 		 * NOTE: Refreshing charts requires  at least one of the spreadsheets.readonly,
 		 * spreadsheets, drive.readonly, or drive OAuth scopes.
 		 */
-		refreshSheetsChart?: RefreshSheetsChartRequest;
+		refreshSheetsChart?: RefreshSheetsChartRequest | null;
 
 		/**
 		 * Replaces all shapes that match the given criteria with the provided image.
 		 * The images replacing the shapes are rectangular after being inserted into
 		 * the presentation and do not take on the forms of the shapes.
 		 */
-		replaceAllShapesWithImage?: ReplaceAllShapesWithImageRequest;
+		replaceAllShapesWithImage?: ReplaceAllShapesWithImageRequest | null;
 
 		/**
 		 * Replaces all shapes that match the given criteria with the provided Google
@@ -370,43 +370,43 @@ export namespace MyNS {
 		 * NOTE: Replacing shapes with a chart requires at least one of the
 		 * spreadsheets.readonly, spreadsheets, drive.readonly, or drive OAuth scopes.
 		 */
-		replaceAllShapesWithSheetsChart?: ReplaceAllShapesWithSheetsChartRequest;
+		replaceAllShapesWithSheetsChart?: ReplaceAllShapesWithSheetsChartRequest | null;
 
 		/** Replaces all instances of text matching a criteria with replace text. */
-		replaceAllText?: ReplaceAllTextRequest;
+		replaceAllText?: ReplaceAllTextRequest | null;
 
 		/**
 		 * Replaces an existing image with a new image.
 		 * Replacing an image removes some image effects from the existing image.
 		 */
-		replaceImage?: ReplaceImageRequest;
+		replaceImage?: ReplaceImageRequest | null;
 
 		/**
 		 * Reroutes a line such that it's connected at the
 		 * two closest connection sites on the connected page elements.
 		 */
-		rerouteLine?: RerouteLineRequest;
+		rerouteLine?: RerouteLineRequest | null;
 
 		/** Ungroups objects, such as groups. */
-		ungroupObjects?: UngroupObjectsRequest;
+		ungroupObjects?: UngroupObjectsRequest | null;
 
 		/** Unmerges cells in a Table. */
-		unmergeTableCells?: UnmergeTableCellsRequest;
+		unmergeTableCells?: UnmergeTableCellsRequest | null;
 
 		/** Update the properties of an Image. */
-		updateImageProperties?: UpdateImagePropertiesRequest;
+		updateImageProperties?: UpdateImagePropertiesRequest | null;
 
 		/** Updates the category of a line. */
-		updateLineCategory?: UpdateLineCategoryRequest;
+		updateLineCategory?: UpdateLineCategoryRequest | null;
 
 		/** Updates the properties of a Line. */
-		updateLineProperties?: UpdateLinePropertiesRequest;
+		updateLineProperties?: UpdateLinePropertiesRequest | null;
 
 		/**
 		 * Updates the alt text title and/or description of a
 		 * page element.
 		 */
-		updatePageElementAltText?: UpdatePageElementAltTextRequest;
+		updatePageElementAltText?: UpdatePageElementAltTextRequest | null;
 
 		/**
 		 * Updates the transform of a page element.
@@ -414,50 +414,50 @@ export namespace MyNS {
 		 * page elements in that group, which can change their visual appearance. See
 		 * the documentation for PageElement.transform for more details.
 		 */
-		updatePageElementTransform?: UpdatePageElementTransformRequest;
+		updatePageElementTransform?: UpdatePageElementTransformRequest | null;
 
 		/**
 		 * Updates the Z-order of page elements. Z-order is an ordering of the elements
 		 * on the page from back to front. The page element in the front may cover the
 		 * elements that are behind it.
 		 */
-		updatePageElementsZOrder?: UpdatePageElementsZOrderRequest;
+		updatePageElementsZOrder?: UpdatePageElementsZOrderRequest | null;
 
 		/** Updates the properties of a Page. */
-		updatePageProperties?: UpdatePagePropertiesRequest;
+		updatePageProperties?: UpdatePagePropertiesRequest | null;
 
 		/**
 		 * Updates the styling for all of the paragraphs within a Shape or Table that
 		 * overlap with the given text index range.
 		 */
-		updateParagraphStyle?: UpdateParagraphStyleRequest;
+		updateParagraphStyle?: UpdateParagraphStyleRequest | null;
 
 		/** Update the properties of a Shape. */
-		updateShapeProperties?: UpdateShapePropertiesRequest;
+		updateShapeProperties?: UpdateShapePropertiesRequest | null;
 
 		/** Updates the position of slides in the presentation. */
-		updateSlidesPosition?: UpdateSlidesPositionRequest;
+		updateSlidesPosition?: UpdateSlidesPositionRequest | null;
 
 		/** Updates the properties of the table borders in a Table. */
-		updateTableBorderProperties?: UpdateTableBorderPropertiesRequest;
+		updateTableBorderProperties?: UpdateTableBorderPropertiesRequest | null;
 
 		/** Update the properties of a TableCell. */
-		updateTableCellProperties?: UpdateTableCellPropertiesRequest;
+		updateTableCellProperties?: UpdateTableCellPropertiesRequest | null;
 
 		/** Updates the properties of a Table column. */
-		updateTableColumnProperties?: UpdateTableColumnPropertiesRequest;
+		updateTableColumnProperties?: UpdateTableColumnPropertiesRequest | null;
 
 		/** Updates the properties of a Table row. */
-		updateTableRowProperties?: UpdateTableRowPropertiesRequest;
+		updateTableRowProperties?: UpdateTableRowPropertiesRequest | null;
 
 		/**
 		 * Update the styling of text in a Shape or
 		 * Table.
 		 */
-		updateTextStyle?: UpdateTextStyleRequest;
+		updateTextStyle?: UpdateTextStyleRequest | null;
 
 		/** Update the properties of a Video. */
-		updateVideoProperties?: UpdateVideoPropertiesRequest;
+		updateVideoProperties?: UpdateVideoPropertiesRequest | null;
 	}
 
 
@@ -471,7 +471,7 @@ export namespace MyNS {
 		 * the values of both `size` and `transform`, but the
 		 * visual size will be unchanged.
 		 */
-		elementProperties?: PageElementProperties;
+		elementProperties?: PageElementProperties | null;
 
 		/**
 		 * A user-supplied object ID.
@@ -483,7 +483,7 @@ export namespace MyNS {
 		 * The length of the ID must not be less than 5 or greater than 50.
 		 * If you don't specify an ID, a unique one is generated.
 		 */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * The image URL.
@@ -494,7 +494,7 @@ export namespace MyNS {
 		 * The provided URL can be at most 2 kB in length. The URL itself is saved
 		 * with the image, and exposed via the Image.source_url field.
 		 */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -508,10 +508,10 @@ export namespace MyNS {
 	export interface PageElementProperties {
 
 		/** The object ID of the page where the element is located. */
-		pageObjectId?: string;
+		pageObjectId?: string | null;
 
 		/** A width and height. */
-		size?: Size;
+		size?: Size | null;
 
 		/**
 		 * AffineTransform uses a 3x3 matrix with an implied last row of [ 0 0 1 ]
@@ -524,7 +524,7 @@ export namespace MyNS {
 		 * y' = scale_y * y + shear_y * x + translate_y;
 		 * This message is therefore composed of these six matrix elements.
 		 */
-		transform?: AffineTransform;
+		transform?: AffineTransform | null;
 	}
 
 
@@ -532,10 +532,10 @@ export namespace MyNS {
 	export interface Size {
 
 		/** A magnitude in a single direction in the specified units. */
-		height?: Dimension;
+		height?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		width?: Dimension;
+		width?: Dimension | null;
 	}
 
 
@@ -553,7 +553,7 @@ export namespace MyNS {
 		 * `line_category`, then the specified `line_category` value is used.
 		 * If you do not specify either, then STRAIGHT is used.
 		 */
-		category?: CreateLineRequestCategory;
+		category?: CreateLineRequestCategory | null;
 
 		/**
 		 * Common properties for a page element.
@@ -562,7 +562,7 @@ export namespace MyNS {
 		 * the values of both `size` and `transform`, but the
 		 * visual size will be unchanged.
 		 */
-		elementProperties?: PageElementProperties;
+		elementProperties?: PageElementProperties | null;
 
 		/**
 		 * The category of the line to be created.
@@ -573,7 +573,7 @@ export namespace MyNS {
 		 * If you specify both a `category` and a `line_category`, the `category`
 		 * takes precedence.
 		 */
-		lineCategory?: CreateLineRequestLineCategory;
+		lineCategory?: CreateLineRequestLineCategory | null;
 
 		/**
 		 * A user-supplied object ID.
@@ -585,7 +585,7 @@ export namespace MyNS {
 		 * The length of the ID must not be less than 5 or greater than 50.
 		 * If you don't specify an ID, a unique one is generated.
 		 */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 	export enum CreateLineRequestCategory { LINE_CATEGORY_UNSPECIFIED = 0, STRAIGHT = 1, BENT = 2, CURVED = 3 }
@@ -610,19 +610,19 @@ export namespace MyNS {
 		 * The kinds of bullet glyphs to be used. Defaults to the
 		 * `BULLET_DISC_CIRCLE_SQUARE` preset.
 		 */
-		bulletPreset?: CreateParagraphBulletsRequestBulletPreset;
+		bulletPreset?: CreateParagraphBulletsRequestBulletPreset | null;
 
 		/** A location of a single table cell within a table. */
-		cellLocation?: TableCellLocation;
+		cellLocation?: TableCellLocation | null;
 
 		/** The object ID of the shape or table containing the text to add bullets to. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * Specifies a contiguous range of an indexed collection, such as characters in
 		 * text.
 		 */
-		textRange?: Range;
+		textRange?: Range | null;
 	}
 
 	export enum CreateParagraphBulletsRequestBulletPreset { BULLET_DISC_CIRCLE_SQUARE = 0, BULLET_DIAMONDX_ARROW3D_SQUARE = 1, BULLET_CHECKBOX = 2, BULLET_ARROW_DIAMOND_DISC = 3, BULLET_STAR_CIRCLE_SQUARE = 4, BULLET_ARROW3D_CIRCLE_SQUARE = 5, BULLET_LEFTTRIANGLE_DIAMOND_DISC = 6, BULLET_DIAMONDX_HOLLOWDIAMOND_SQUARE = 7, BULLET_DIAMOND_CIRCLE_SQUARE = 8, NUMBERED_DIGIT_ALPHA_ROMAN = 9, NUMBERED_DIGIT_ALPHA_ROMAN_PARENS = 10, NUMBERED_DIGIT_NESTED = 11, NUMBERED_UPPERALPHA_ALPHA_ROMAN = 12, NUMBERED_UPPERROMAN_UPPERALPHA_DIGIT = 13, NUMBERED_ZERODIGIT_ALPHA_ROMAN = 14 }
@@ -632,10 +632,10 @@ export namespace MyNS {
 	export interface TableCellLocation {
 
 		/** The 0-based column index. */
-		columnIndex?: number;
+		columnIndex?: number | null;
 
 		/** The 0-based row index. */
-		rowIndex?: number;
+		rowIndex?: number | null;
 	}
 
 
@@ -649,16 +649,16 @@ export namespace MyNS {
 		 * The optional zero-based index of the end of the collection.
 		 * Required for `FIXED_RANGE` ranges.
 		 */
-		endIndex?: number;
+		endIndex?: number | null;
 
 		/**
 		 * The optional zero-based index of the beginning of the collection.
 		 * Required for `FIXED_RANGE` and `FROM_START_INDEX` ranges.
 		 */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/** The type of range. */
-		type?: RangeType;
+		type?: RangeType | null;
 	}
 
 	export enum RangeType { RANGE_TYPE_UNSPECIFIED = 0, FIXED_RANGE = 1, FROM_START_INDEX = 2, ALL = 3 }
@@ -674,7 +674,7 @@ export namespace MyNS {
 		 * the values of both `size` and `transform`, but the
 		 * visual size will be unchanged.
 		 */
-		elementProperties?: PageElementProperties;
+		elementProperties?: PageElementProperties | null;
 
 		/**
 		 * A user-supplied object ID.
@@ -686,10 +686,10 @@ export namespace MyNS {
 		 * The length of the ID must not be less than 5 or greater than 50.
 		 * If empty, a unique identifier will be generated.
 		 */
-		objectId?: string;
+		objectId?: string | null;
 
 		/** The shape type. */
-		shapeType?: CreateShapeRequestShapeType;
+		shapeType?: CreateShapeRequestShapeType | null;
 	}
 
 	export enum CreateShapeRequestShapeType { TYPE_UNSPECIFIED = 0, TEXT_BOX = 1, RECTANGLE = 2, ROUND_RECTANGLE = 3, ELLIPSE = 4, ARC = 5, BENT_ARROW = 6, BENT_UP_ARROW = 7, BEVEL = 8, BLOCK_ARC = 9, BRACE_PAIR = 10, BRACKET_PAIR = 11, CAN = 12, CHEVRON = 13, CHORD = 14, CLOUD = 15, CORNER = 16, CUBE = 17, CURVED_DOWN_ARROW = 18, CURVED_LEFT_ARROW = 19, CURVED_RIGHT_ARROW = 20, CURVED_UP_ARROW = 21, DECAGON = 22, DIAGONAL_STRIPE = 23, DIAMOND = 24, DODECAGON = 25, DONUT = 26, DOUBLE_WAVE = 27, DOWN_ARROW = 28, DOWN_ARROW_CALLOUT = 29, FOLDED_CORNER = 30, FRAME = 31, HALF_FRAME = 32, HEART = 33, HEPTAGON = 34, HEXAGON = 35, HOME_PLATE = 36, HORIZONTAL_SCROLL = 37, IRREGULAR_SEAL_1 = 38, IRREGULAR_SEAL_2 = 39, LEFT_ARROW = 40, LEFT_ARROW_CALLOUT = 41, LEFT_BRACE = 42, LEFT_BRACKET = 43, LEFT_RIGHT_ARROW = 44, LEFT_RIGHT_ARROW_CALLOUT = 45, LEFT_RIGHT_UP_ARROW = 46, LEFT_UP_ARROW = 47, LIGHTNING_BOLT = 48, MATH_DIVIDE = 49, MATH_EQUAL = 50, MATH_MINUS = 51, MATH_MULTIPLY = 52, MATH_NOT_EQUAL = 53, MATH_PLUS = 54, MOON = 55, NO_SMOKING = 56, NOTCHED_RIGHT_ARROW = 57, OCTAGON = 58, PARALLELOGRAM = 59, PENTAGON = 60, PIE = 61, PLAQUE = 62, PLUS = 63, QUAD_ARROW = 64, QUAD_ARROW_CALLOUT = 65, RIBBON = 66, RIBBON_2 = 67, RIGHT_ARROW = 68, RIGHT_ARROW_CALLOUT = 69, RIGHT_BRACE = 70, RIGHT_BRACKET = 71, ROUND_1_RECTANGLE = 72, ROUND_2_DIAGONAL_RECTANGLE = 73, ROUND_2_SAME_RECTANGLE = 74, RIGHT_TRIANGLE = 75, SMILEY_FACE = 76, SNIP_1_RECTANGLE = 77, SNIP_2_DIAGONAL_RECTANGLE = 78, SNIP_2_SAME_RECTANGLE = 79, SNIP_ROUND_RECTANGLE = 80, STAR_10 = 81, STAR_12 = 82, STAR_16 = 83, STAR_24 = 84, STAR_32 = 85, STAR_4 = 86, STAR_5 = 87, STAR_6 = 88, STAR_7 = 89, STAR_8 = 90, STRIPED_RIGHT_ARROW = 91, SUN = 92, TRAPEZOID = 93, TRIANGLE = 94, UP_ARROW = 95, UP_ARROW_CALLOUT = 96, UP_DOWN_ARROW = 97, UTURN_ARROW = 98, VERTICAL_SCROLL = 99, WAVE = 100, WEDGE_ELLIPSE_CALLOUT = 101, WEDGE_RECTANGLE_CALLOUT = 102, WEDGE_ROUND_RECTANGLE_CALLOUT = 103, FLOW_CHART_ALTERNATE_PROCESS = 104, FLOW_CHART_COLLATE = 105, FLOW_CHART_CONNECTOR = 106, FLOW_CHART_DECISION = 107, FLOW_CHART_DELAY = 108, FLOW_CHART_DISPLAY = 109, FLOW_CHART_DOCUMENT = 110, FLOW_CHART_EXTRACT = 111, FLOW_CHART_INPUT_OUTPUT = 112, FLOW_CHART_INTERNAL_STORAGE = 113, FLOW_CHART_MAGNETIC_DISK = 114, FLOW_CHART_MAGNETIC_DRUM = 115, FLOW_CHART_MAGNETIC_TAPE = 116, FLOW_CHART_MANUAL_INPUT = 117, FLOW_CHART_MANUAL_OPERATION = 118, FLOW_CHART_MERGE = 119, FLOW_CHART_MULTIDOCUMENT = 120, FLOW_CHART_OFFLINE_STORAGE = 121, FLOW_CHART_OFFPAGE_CONNECTOR = 122, FLOW_CHART_ONLINE_STORAGE = 123, FLOW_CHART_OR = 124, FLOW_CHART_PREDEFINED_PROCESS = 125, FLOW_CHART_PREPARATION = 126, FLOW_CHART_PROCESS = 127, FLOW_CHART_PUNCHED_CARD = 128, FLOW_CHART_PUNCHED_TAPE = 129, FLOW_CHART_SORT = 130, FLOW_CHART_SUMMING_JUNCTION = 131, FLOW_CHART_TERMINATOR = 132, ARROW_EAST = 133, ARROW_NORTH_EAST = 134, ARROW_NORTH = 135, SPEECH = 136, STARBURST = 137, TEARDROP = 138, ELLIPSE_RIBBON = 139, ELLIPSE_RIBBON_2 = 140, CLOUD_CALLOUT = 141, CUSTOM = 142 }
@@ -703,7 +703,7 @@ export namespace MyNS {
 	export interface CreateSheetsChartRequest {
 
 		/** The ID of the specific chart in the Google Sheets spreadsheet. */
-		chartId?: number;
+		chartId?: number | null;
 
 		/**
 		 * Common properties for a page element.
@@ -712,13 +712,13 @@ export namespace MyNS {
 		 * the values of both `size` and `transform`, but the
 		 * visual size will be unchanged.
 		 */
-		elementProperties?: PageElementProperties;
+		elementProperties?: PageElementProperties | null;
 
 		/**
 		 * The mode with which the chart is linked to the source spreadsheet. When
 		 * not specified, the chart will be an image that is not linked.
 		 */
-		linkingMode?: CreateSheetsChartRequestLinkingMode;
+		linkingMode?: CreateSheetsChartRequestLinkingMode | null;
 
 		/**
 		 * A user-supplied object ID.
@@ -728,10 +728,10 @@ export namespace MyNS {
 		 * The length of the ID should not be less than 5 or greater than 50.
 		 * If empty, a unique identifier will be generated.
 		 */
-		objectId?: string;
+		objectId?: string | null;
 
 		/** The ID of the Google Sheets spreadsheet that contains the chart. */
-		spreadsheetId?: string;
+		spreadsheetId?: string | null;
 	}
 
 	export enum CreateSheetsChartRequestLinkingMode { NOT_LINKED_IMAGE = 0, LINKED = 1 }
@@ -744,7 +744,7 @@ export namespace MyNS {
 		 * The optional zero-based index indicating where to insert the slides.
 		 * If you don't specify an index, the new slide is created at the end.
 		 */
-		insertionIndex?: number;
+		insertionIndex?: number | null;
 
 		/**
 		 * A user-supplied object ID.
@@ -756,21 +756,21 @@ export namespace MyNS {
 		 * The length of the ID must not be less than 5 or greater than 50.
 		 * If you don't specify an ID, a unique one is generated.
 		 */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * An optional list of object ID mappings from the placeholder(s) on the layout to the placeholder(s)
 		 * that will be created on the new slide from that specified layout. Can only
 		 * be used when `slide_layout_reference` is specified.
 		 */
-		placeholderIdMappings?: Array<LayoutPlaceholderIdMapping>;
+		placeholderIdMappings?: Array<LayoutPlaceholderIdMapping> | null;
 
 		/**
 		 * Slide layout reference. This may reference either:
 		 * - A predefined layout
 		 * - One of the layouts in the presentation.
 		 */
-		slideLayoutReference?: LayoutReference;
+		slideLayoutReference?: LayoutReference | null;
 	}
 
 
@@ -781,13 +781,13 @@ export namespace MyNS {
 	export interface LayoutPlaceholderIdMapping {
 
 		/** The placeholder information that uniquely identifies a placeholder shape. */
-		layoutPlaceholder?: Placeholder;
+		layoutPlaceholder?: Placeholder | null;
 
 		/**
 		 * The object ID of the placeholder on a layout that will be applied
 		 * to a slide.
 		 */
-		layoutPlaceholderObjectId?: string;
+		layoutPlaceholderObjectId?: string | null;
 
 		/**
 		 * A user-supplied object ID for the placeholder identified above that to be
@@ -800,7 +800,7 @@ export namespace MyNS {
 		 * The length of the ID must not be less than 5 or greater than 50.
 		 * If you don't specify an ID, a unique one is generated.
 		 */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -811,17 +811,17 @@ export namespace MyNS {
 		 * The index of the placeholder. If the same placeholder types are present in
 		 * the same page, they would have different index values.
 		 */
-		index?: number;
+		index?: number | null;
 
 		/**
 		 * The object ID of this shape's parent placeholder.
 		 * If unset, the parent placeholder shape does not exist, so the shape does
 		 * not inherit properties from any other shape.
 		 */
-		parentObjectId?: string;
+		parentObjectId?: string | null;
 
 		/** The type of the placeholder. */
-		type?: PlaceholderType;
+		type?: PlaceholderType | null;
 	}
 
 	export enum PlaceholderType { NONE = 0, BODY = 1, CHART = 2, CLIP_ART = 3, CENTERED_TITLE = 4, DIAGRAM = 5, DATE_AND_TIME = 6, FOOTER = 7, HEADER = 8, MEDIA = 9, OBJECT = 10, PICTURE = 11, SLIDE_NUMBER = 12, SUBTITLE = 13, TABLE = 14, TITLE = 15, SLIDE_IMAGE = 16 }
@@ -835,10 +835,10 @@ export namespace MyNS {
 	export interface LayoutReference {
 
 		/** Layout ID: the object ID of one of the layouts in the presentation. */
-		layoutId?: string;
+		layoutId?: string | null;
 
 		/** Predefined layout. */
-		predefinedLayout?: LayoutReferencePredefinedLayout;
+		predefinedLayout?: LayoutReferencePredefinedLayout | null;
 	}
 
 	export enum LayoutReferencePredefinedLayout { PREDEFINED_LAYOUT_UNSPECIFIED = 0, BLANK = 1, CAPTION_ONLY = 2, TITLE = 3, TITLE_AND_BODY = 4, TITLE_AND_TWO_COLUMNS = 5, TITLE_ONLY = 6, SECTION_HEADER = 7, SECTION_TITLE_AND_DESCRIPTION = 8, ONE_COLUMN_TEXT = 9, MAIN_POINT = 10, BIG_NUMBER = 11 }
@@ -848,7 +848,7 @@ export namespace MyNS {
 	export interface CreateTableRequest {
 
 		/** Number of columns in the table. */
-		columns?: number;
+		columns?: number | null;
 
 		/**
 		 * Common properties for a page element.
@@ -857,7 +857,7 @@ export namespace MyNS {
 		 * the values of both `size` and `transform`, but the
 		 * visual size will be unchanged.
 		 */
-		elementProperties?: PageElementProperties;
+		elementProperties?: PageElementProperties | null;
 
 		/**
 		 * A user-supplied object ID.
@@ -869,10 +869,10 @@ export namespace MyNS {
 		 * The length of the ID must not be less than 5 or greater than 50.
 		 * If you don't specify an ID, a unique one is generated.
 		 */
-		objectId?: string;
+		objectId?: string | null;
 
 		/** Number of rows in the table. */
-		rows?: number;
+		rows?: number | null;
 	}
 
 
@@ -890,7 +890,7 @@ export namespace MyNS {
 		 * the values of both `size` and `transform`, but the
 		 * visual size will be unchanged.
 		 */
-		elementProperties?: PageElementProperties;
+		elementProperties?: PageElementProperties | null;
 
 		/**
 		 * The video source's unique identifier for this video.
@@ -899,7 +899,7 @@ export namespace MyNS {
 		 * https://drive.google.com/file/d/1xCgQLFTJi5_Xl8DgW_lcUYq5e-q6Hi5Q the ID
 		 * is 1xCgQLFTJi5_Xl8DgW_lcUYq5e-q6Hi5Q.
 		 */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * A user-supplied object ID.
@@ -911,10 +911,10 @@ export namespace MyNS {
 		 * The length of the ID must not be less than 5 or greater than 50.
 		 * If you don't specify an ID, a unique one is generated.
 		 */
-		objectId?: string;
+		objectId?: string | null;
 
 		/** The video source. */
-		source?: CreateVideoRequestSource;
+		source?: CreateVideoRequestSource | null;
 	}
 
 	export enum CreateVideoRequestSource { SOURCE_UNSPECIFIED = 0, YOUTUBE = 1, DRIVE = 2 }
@@ -934,7 +934,7 @@ export namespace MyNS {
 		 * If a placeholder is deleted on a layout, any empty inheriting shapes are
 		 * also deleted.
 		 */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -947,19 +947,19 @@ export namespace MyNS {
 	export interface DeleteParagraphBulletsRequest {
 
 		/** A location of a single table cell within a table. */
-		cellLocation?: TableCellLocation;
+		cellLocation?: TableCellLocation | null;
 
 		/**
 		 * The object ID of the shape or table containing the text to delete bullets
 		 * from.
 		 */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * Specifies a contiguous range of an indexed collection, such as characters in
 		 * text.
 		 */
-		textRange?: Range;
+		textRange?: Range | null;
 	}
 
 
@@ -967,10 +967,10 @@ export namespace MyNS {
 	export interface DeleteTableColumnRequest {
 
 		/** A location of a single table cell within a table. */
-		cellLocation?: TableCellLocation;
+		cellLocation?: TableCellLocation | null;
 
 		/** The table to delete columns from. */
-		tableObjectId?: string;
+		tableObjectId?: string | null;
 	}
 
 
@@ -978,10 +978,10 @@ export namespace MyNS {
 	export interface DeleteTableRowRequest {
 
 		/** A location of a single table cell within a table. */
-		cellLocation?: TableCellLocation;
+		cellLocation?: TableCellLocation | null;
 
 		/** The table to delete rows from. */
-		tableObjectId?: string;
+		tableObjectId?: string | null;
 	}
 
 
@@ -989,16 +989,16 @@ export namespace MyNS {
 	export interface DeleteTextRequest {
 
 		/** A location of a single table cell within a table. */
-		cellLocation?: TableCellLocation;
+		cellLocation?: TableCellLocation | null;
 
 		/** The object ID of the shape or table from which the text will be deleted. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * Specifies a contiguous range of an indexed collection, such as characters in
 		 * text.
 		 */
-		textRange?: Range;
+		textRange?: Range | null;
 	}
 
 
@@ -1011,7 +1011,7 @@ export namespace MyNS {
 	export interface DuplicateObjectRequest {
 
 		/** The ID of the object to duplicate. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * The object being duplicated may contain other objects, for example when
@@ -1031,7 +1031,7 @@ export namespace MyNS {
 		 * be assigned. If the map is empty or unset, all duplicate objects will
 		 * receive a new random ID.
 		 */
-		objectIds?: {[id: string]: string };
+		objectIds?: {[id: string]: string } | null;
 	}
 
 
@@ -1044,7 +1044,7 @@ export namespace MyNS {
 		 * elements on the same page that are not already in another group. Some page
 		 * elements, such as videos, tables and placeholder shapes cannot be grouped.
 		 */
-		childrenObjectIds?: Array<string>;
+		childrenObjectIds?: Array<string> | null;
 
 		/**
 		 * A user-supplied object ID for the group to be created.
@@ -1056,7 +1056,7 @@ export namespace MyNS {
 		 * The length of the ID must not be less than 5 or greater than 50.
 		 * If you don't specify an ID, a unique one is generated.
 		 */
-		groupObjectId?: string;
+		groupObjectId?: string | null;
 	}
 
 
@@ -1067,20 +1067,20 @@ export namespace MyNS {
 	export interface InsertTableColumnsRequest {
 
 		/** A location of a single table cell within a table. */
-		cellLocation?: TableCellLocation;
+		cellLocation?: TableCellLocation | null;
 
 		/**
 		 * Whether to insert new columns to the right of the reference cell location.
 		 * - `True`: insert to the right.
 		 * - `False`: insert to the left.
 		 */
-		insertRight?: boolean;
+		insertRight?: boolean | null;
 
 		/** The number of columns to be inserted. Maximum 20 per request. */
-		number?: number;
+		number?: number | null;
 
 		/** The table to insert columns into. */
-		tableObjectId?: string;
+		tableObjectId?: string | null;
 	}
 
 
@@ -1088,20 +1088,20 @@ export namespace MyNS {
 	export interface InsertTableRowsRequest {
 
 		/** A location of a single table cell within a table. */
-		cellLocation?: TableCellLocation;
+		cellLocation?: TableCellLocation | null;
 
 		/**
 		 * Whether to insert new rows below the reference cell location.
 		 * - `True`: insert below the cell.
 		 * - `False`: insert above the cell.
 		 */
-		insertBelow?: boolean;
+		insertBelow?: boolean | null;
 
 		/** The number of rows to be inserted. Maximum 20 per request. */
-		number?: number;
+		number?: number | null;
 
 		/** The table to insert rows into. */
-		tableObjectId?: string;
+		tableObjectId?: string | null;
 	}
 
 
@@ -1109,7 +1109,7 @@ export namespace MyNS {
 	export interface InsertTextRequest {
 
 		/** A location of a single table cell within a table. */
-		cellLocation?: TableCellLocation;
+		cellLocation?: TableCellLocation | null;
 
 		/**
 		 * The index where the text will be inserted, in Unicode code units, based
@@ -1119,10 +1119,10 @@ export namespace MyNS {
 		 * clusters. In these cases, the text will be inserted immediately after the
 		 * grapheme cluster.
 		 */
-		insertionIndex?: number;
+		insertionIndex?: number | null;
 
 		/** The object ID of the shape or table where the text will be inserted. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * The text to be inserted.
@@ -1138,7 +1138,7 @@ export namespace MyNS {
 		 * from the Unicode Basic Multilingual Plane Private Use Area (U+E000-U+F8FF)
 		 * will be stripped out of the inserted text.
 		 */
-		text?: string;
+		text?: string | null;
 	}
 
 
@@ -1146,7 +1146,7 @@ export namespace MyNS {
 	export interface MergeTableCellsRequest {
 
 		/** The object ID of the table. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * A table range represents a reference to a subset of a table.
@@ -1160,7 +1160,7 @@ export namespace MyNS {
 		 * x     x
 		 * [ x    x    x ]
 		 */
-		tableRange?: TableRange;
+		tableRange?: TableRange | null;
 	}
 
 
@@ -1180,13 +1180,13 @@ export namespace MyNS {
 	export interface TableRange {
 
 		/** The column span of the table range. */
-		columnSpan?: number;
+		columnSpan?: number | null;
 
 		/** A location of a single table cell within a table. */
-		location?: TableCellLocation;
+		location?: TableCellLocation | null;
 
 		/** The row span of the table range. */
-		rowSpan?: number;
+		rowSpan?: number | null;
 	}
 
 
@@ -1199,7 +1199,7 @@ export namespace MyNS {
 	export interface RefreshSheetsChartRequest {
 
 		/** The object ID of the chart to refresh. */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -1211,7 +1211,7 @@ export namespace MyNS {
 	export interface ReplaceAllShapesWithImageRequest {
 
 		/** A criteria that matches a specific string of text in a shape or table. */
-		containsText?: SubstringMatchCriteria;
+		containsText?: SubstringMatchCriteria | null;
 
 		/**
 		 * The image replace method.
@@ -1222,7 +1222,7 @@ export namespace MyNS {
 		 * used.
 		 * If you do not specify either, then CENTER_INSIDE is used.
 		 */
-		imageReplaceMethod?: ReplaceAllShapesWithImageRequestImageReplaceMethod;
+		imageReplaceMethod?: ReplaceAllShapesWithImageRequestImageReplaceMethod | null;
 
 		/**
 		 * The image URL.
@@ -1233,7 +1233,7 @@ export namespace MyNS {
 		 * The provided URL can be at most 2 kB in length. The URL itself is saved
 		 * with the image, and exposed via the Image.source_url field.
 		 */
-		imageUrl?: string;
+		imageUrl?: string | null;
 
 		/**
 		 * If non-empty, limits the matches to page elements only on the given pages.
@@ -1242,7 +1242,7 @@ export namespace MyNS {
 		 * notes master, or if a
 		 * page with that object ID doesn't exist in the presentation.
 		 */
-		pageObjectIds?: Array<string>;
+		pageObjectIds?: Array<string> | null;
 
 		/**
 		 * The replace method.
@@ -1250,7 +1250,7 @@ export namespace MyNS {
 		 * If you specify both a `replace_method` and an `image_replace_method`, the
 		 * `image_replace_method` takes precedence.
 		 */
-		replaceMethod?: ReplaceAllShapesWithImageRequestReplaceMethod;
+		replaceMethod?: ReplaceAllShapesWithImageRequestReplaceMethod | null;
 	}
 
 
@@ -1262,10 +1262,10 @@ export namespace MyNS {
 		 * - `True`: the search is case sensitive.
 		 * - `False`: the search is case insensitive.
 		 */
-		matchCase?: boolean;
+		matchCase?: boolean | null;
 
 		/** The text to search for in the shape or table. */
-		text?: string;
+		text?: string | null;
 	}
 
 	export enum ReplaceAllShapesWithImageRequestImageReplaceMethod { IMAGE_REPLACE_METHOD_UNSPECIFIED = 0, CENTER_INSIDE = 1, CENTER_CROP = 2 }
@@ -1283,16 +1283,16 @@ export namespace MyNS {
 	export interface ReplaceAllShapesWithSheetsChartRequest {
 
 		/** The ID of the specific chart in the Google Sheets spreadsheet. */
-		chartId?: number;
+		chartId?: number | null;
 
 		/** A criteria that matches a specific string of text in a shape or table. */
-		containsText?: SubstringMatchCriteria;
+		containsText?: SubstringMatchCriteria | null;
 
 		/**
 		 * The mode with which the chart is linked to the source spreadsheet. When
 		 * not specified, the chart will be an image that is not linked.
 		 */
-		linkingMode?: CreateSheetsChartRequestLinkingMode;
+		linkingMode?: CreateSheetsChartRequestLinkingMode | null;
 
 		/**
 		 * If non-empty, limits the matches to page elements only on the given pages.
@@ -1301,10 +1301,10 @@ export namespace MyNS {
 		 * notes master, or if a
 		 * page with that object ID doesn't exist in the presentation.
 		 */
-		pageObjectIds?: Array<string>;
+		pageObjectIds?: Array<string> | null;
 
 		/** The ID of the Google Sheets spreadsheet that contains the chart. */
-		spreadsheetId?: string;
+		spreadsheetId?: string | null;
 	}
 
 
@@ -1312,7 +1312,7 @@ export namespace MyNS {
 	export interface ReplaceAllTextRequest {
 
 		/** A criteria that matches a specific string of text in a shape or table. */
-		containsText?: SubstringMatchCriteria;
+		containsText?: SubstringMatchCriteria | null;
 
 		/**
 		 * If non-empty, limits the matches to page elements only on the given pages.
@@ -1320,10 +1320,10 @@ export namespace MyNS {
 		 * notes master,
 		 * or if a page with that object ID doesn't exist in the presentation.
 		 */
-		pageObjectIds?: Array<string>;
+		pageObjectIds?: Array<string> | null;
 
 		/** The text that will replace the matched text. */
-		replaceText?: string;
+		replaceText?: string | null;
 	}
 
 
@@ -1334,10 +1334,10 @@ export namespace MyNS {
 	export interface ReplaceImageRequest {
 
 		/** The ID of the existing image that will be replaced. */
-		imageObjectId?: string;
+		imageObjectId?: string | null;
 
 		/** The replacement method. */
-		imageReplaceMethod?: ReplaceAllShapesWithImageRequestImageReplaceMethod;
+		imageReplaceMethod?: ReplaceAllShapesWithImageRequestImageReplaceMethod | null;
 
 		/**
 		 * The image URL.
@@ -1348,7 +1348,7 @@ export namespace MyNS {
 		 * The provided URL can be at most 2 kB in length. The URL itself is saved
 		 * with the image, and exposed via the Image.source_url field.
 		 */
-		url?: string;
+		url?: string | null;
 	}
 
 
@@ -1364,7 +1364,7 @@ export namespace MyNS {
 		 * indicating it is a "connector" can be rerouted. The start and end
 		 * connections of the line must be on different page elements.
 		 */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -1378,7 +1378,7 @@ export namespace MyNS {
 		 * should be on the same page. The group itself is deleted. The visual sizes
 		 * and positions of all the children are preserved.
 		 */
-		objectIds?: Array<string>;
+		objectIds?: Array<string> | null;
 	}
 
 
@@ -1386,7 +1386,7 @@ export namespace MyNS {
 	export interface UnmergeTableCellsRequest {
 
 		/** The object ID of the table. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * A table range represents a reference to a subset of a table.
@@ -1400,7 +1400,7 @@ export namespace MyNS {
 		 * x     x
 		 * [ x    x    x ]
 		 */
-		tableRange?: TableRange;
+		tableRange?: TableRange | null;
 	}
 
 
@@ -1417,13 +1417,13 @@ export namespace MyNS {
 		 * To reset a property to its default value, include its field name in the
 		 * field mask but leave the field itself unset.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** The properties of the Image. */
-		imageProperties?: ImageProperties;
+		imageProperties?: ImageProperties | null;
 
 		/** The object ID of the image the updates are applied to. */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -1434,13 +1434,13 @@ export namespace MyNS {
 		 * The brightness effect of the image. The value should be in the interval
 		 * [-1.0, 1.0], where 0 means no effect. This property is read-only.
 		 */
-		brightness?: number;
+		brightness?: number | null;
 
 		/**
 		 * The contrast effect of the image. The value should be in the interval
 		 * [-1.0, 1.0], where 0 means no effect. This property is read-only.
 		 */
-		contrast?: number;
+		contrast?: number | null;
 
 		/**
 		 * The crop properties of an object enclosed in a container. For example, an
@@ -1461,10 +1461,10 @@ export namespace MyNS {
 		 * After cropping, the content in the crop rectangle will be stretched to fit
 		 * its container.
 		 */
-		cropProperties?: CropProperties;
+		cropProperties?: CropProperties | null;
 
 		/** A hypertext link. */
-		link?: Link;
+		link?: Link | null;
 
 		/**
 		 * The outline of a PageElement.
@@ -1473,10 +1473,10 @@ export namespace MyNS {
 		 * used for new page elements created in the Slides editor, which may depend on
 		 * the page element kind.
 		 */
-		outline?: Outline;
+		outline?: Outline | null;
 
 		/** A recolor effect applied on an image. */
-		recolor?: Recolor;
+		recolor?: Recolor | null;
 
 		/**
 		 * The shadow properties of a page element.
@@ -1485,14 +1485,14 @@ export namespace MyNS {
 		 * used for new page elements created in the Slides editor, which may depend on
 		 * the page element kind.
 		 */
-		shadow?: Shadow;
+		shadow?: Shadow | null;
 
 		/**
 		 * The transparency effect of the image. The value should be in the interval
 		 * [0.0, 1.0], where 0 means no effect and 1 means completely transparent.
 		 * This property is read-only.
 		 */
-		transparency?: number;
+		transparency?: number | null;
 	}
 
 
@@ -1521,35 +1521,35 @@ export namespace MyNS {
 		 * The rotation angle of the crop window around its center, in radians.
 		 * Rotation angle is applied after the offset.
 		 */
-		angle?: number;
+		angle?: number | null;
 
 		/**
 		 * The offset specifies the bottom edge of the crop rectangle that is located
 		 * above the original bounding rectangle bottom edge, relative to the object's
 		 * original height.
 		 */
-		bottomOffset?: number;
+		bottomOffset?: number | null;
 
 		/**
 		 * The offset specifies the left edge of the crop rectangle that is located to
 		 * the right of the original bounding rectangle left edge, relative to the
 		 * object's original width.
 		 */
-		leftOffset?: number;
+		leftOffset?: number | null;
 
 		/**
 		 * The offset specifies the right edge of the crop rectangle that is located
 		 * to the left of the original bounding rectangle right edge, relative to the
 		 * object's original width.
 		 */
-		rightOffset?: number;
+		rightOffset?: number | null;
 
 		/**
 		 * The offset specifies the top edge of the crop rectangle that is located
 		 * below the original bounding rectangle top edge, relative to the object's
 		 * original height.
 		 */
-		topOffset?: number;
+		topOffset?: number | null;
 	}
 
 
@@ -1563,10 +1563,10 @@ export namespace MyNS {
 	export interface Outline {
 
 		/** The dash style of the outline. */
-		dashStyle?: OutlineDashStyle;
+		dashStyle?: OutlineDashStyle | null;
 
 		/** The fill of the outline. */
-		outlineFill?: OutlineFill;
+		outlineFill?: OutlineFill | null;
 
 		/**
 		 * The outline property state.
@@ -1576,10 +1576,10 @@ export namespace MyNS {
 		 * this case, any other outline fields set in the same request will be
 		 * ignored.
 		 */
-		propertyState?: OutlinePropertyState;
+		propertyState?: OutlinePropertyState | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		weight?: Dimension;
+		weight?: Dimension | null;
 	}
 
 	export enum OutlineDashStyle { DASH_STYLE_UNSPECIFIED = 0, SOLID = 1, DOT = 2, DASH = 3, DASH_DOT = 4, LONG_DASH = 5, LONG_DASH_DOT = 6 }
@@ -1594,7 +1594,7 @@ export namespace MyNS {
 		 * If any field is unset, its value may be inherited from a parent placeholder
 		 * if it exists.
 		 */
-		solidFill?: SolidFill;
+		solidFill?: SolidFill | null;
 	}
 
 
@@ -1613,10 +1613,10 @@ export namespace MyNS {
 		 * This means that a value of 1.0 corresponds to a solid color, whereas
 		 * a value of 0.0 corresponds to a completely transparent color.
 		 */
-		alpha?: number;
+		alpha?: number | null;
 
 		/** A themeable solid color value. */
-		color?: OpaqueColor;
+		color?: OpaqueColor | null;
 	}
 
 	export enum OutlinePropertyState { RENDERED = 0, NOT_RENDERED = 1, INHERIT = 2 }
@@ -1631,7 +1631,7 @@ export namespace MyNS {
 		 * against the colors in the page's current color scheme. This property is
 		 * read-only.
 		 */
-		name?: RecolorName;
+		name?: RecolorName | null;
 
 		/**
 		 * The recolor effect is represented by a gradient, which is a list of color
@@ -1640,7 +1640,7 @@ export namespace MyNS {
 		 * the same position in the color palette and apply to the image. This
 		 * property is read-only.
 		 */
-		recolorStops?: Array<ColorStop>;
+		recolorStops?: Array<ColorStop> | null;
 	}
 
 	export enum RecolorName { NONE = 0, LIGHT1 = 1, LIGHT2 = 2, LIGHT3 = 3, LIGHT4 = 4, LIGHT5 = 5, LIGHT6 = 6, LIGHT7 = 7, LIGHT8 = 8, LIGHT9 = 9, LIGHT10 = 10, DARK1 = 11, DARK2 = 12, DARK3 = 13, DARK4 = 14, DARK5 = 15, DARK6 = 16, DARK7 = 17, DARK8 = 18, DARK9 = 19, DARK10 = 20, GRAYSCALE = 21, NEGATIVE = 22, SEPIA = 23, CUSTOM = 24 }
@@ -1653,16 +1653,16 @@ export namespace MyNS {
 		 * The alpha value of this color in the gradient band. Defaults to 1.0,
 		 * fully opaque.
 		 */
-		alpha?: number;
+		alpha?: number | null;
 
 		/** A themeable solid color value. */
-		color?: OpaqueColor;
+		color?: OpaqueColor | null;
 
 		/**
 		 * The relative position of the color stop in the gradient band measured
 		 * in percentage. The value should be in the interval [0.0, 1.0].
 		 */
-		position?: number;
+		position?: number | null;
 	}
 
 
@@ -1679,16 +1679,16 @@ export namespace MyNS {
 		 * The alignment point of the shadow, that sets the origin for translate,
 		 * scale and skew of the shadow. This property is read-only.
 		 */
-		alignment?: ShadowAlignment;
+		alignment?: ShadowAlignment | null;
 
 		/** The alpha of the shadow's color, from 0.0 to 1.0. */
-		alpha?: number;
+		alpha?: number | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		blurRadius?: Dimension;
+		blurRadius?: Dimension | null;
 
 		/** A themeable solid color value. */
-		color?: OpaqueColor;
+		color?: OpaqueColor | null;
 
 		/**
 		 * The shadow property state.
@@ -1697,13 +1697,13 @@ export namespace MyNS {
 		 * no shadow on a page element, set this field to `NOT_RENDERED`. In this
 		 * case, any other shadow fields set in the same request will be ignored.
 		 */
-		propertyState?: OutlinePropertyState;
+		propertyState?: OutlinePropertyState | null;
 
 		/**
 		 * Whether the shadow should rotate with the shape. This property is
 		 * read-only.
 		 */
-		rotateWithShape?: boolean;
+		rotateWithShape?: boolean | null;
 
 		/**
 		 * AffineTransform uses a 3x3 matrix with an implied last row of [ 0 0 1 ]
@@ -1716,10 +1716,10 @@ export namespace MyNS {
 		 * y' = scale_y * y + shear_y * x + translate_y;
 		 * This message is therefore composed of these six matrix elements.
 		 */
-		transform?: AffineTransform;
+		transform?: AffineTransform | null;
 
 		/** The type of the shadow. This property is read-only. */
-		type?: ShadowType;
+		type?: ShadowType | null;
 	}
 
 	export enum ShadowAlignment { RECTANGLE_POSITION_UNSPECIFIED = 0, TOP_LEFT = 1, TOP_CENTER = 2, TOP_RIGHT = 3, LEFT_CENTER = 4, CENTER = 5, RIGHT_CENTER = 6, BOTTOM_LEFT = 7, BOTTOM_CENTER = 8, BOTTOM_RIGHT = 9 }
@@ -1736,7 +1736,7 @@ export namespace MyNS {
 		 * on the category to update to and how it's routed to connect to other page
 		 * elements.
 		 */
-		lineCategory?: CreateLineRequestCategory;
+		lineCategory?: CreateLineRequestCategory | null;
 
 		/**
 		 * The object ID of the line the update is applied to.
@@ -1744,7 +1744,7 @@ export namespace MyNS {
 		 * indicating it is a "connector" can be updated.
 		 * The line may be rerouted after updating its category.
 		 */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -1761,17 +1761,17 @@ export namespace MyNS {
 		 * To reset a property to its default value, include its field name in the
 		 * field mask but leave the field itself unset.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/**
 		 * The properties of the Line.
 		 * When unset, these fields default to values that match the appearance of
 		 * new lines created in the Slides editor.
 		 */
-		lineProperties?: LineProperties;
+		lineProperties?: LineProperties | null;
 
 		/** The object ID of the line the update is applied to. */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -1783,34 +1783,34 @@ export namespace MyNS {
 	export interface LineProperties {
 
 		/** The dash style of the line. */
-		dashStyle?: OutlineDashStyle;
+		dashStyle?: OutlineDashStyle | null;
 
 		/** The style of the arrow at the end of the line. */
-		endArrow?: LinePropertiesEndArrow;
+		endArrow?: LinePropertiesEndArrow | null;
 
 		/**
 		 * The properties for one end of a Line
 		 * connection.
 		 */
-		endConnection?: LineConnection;
+		endConnection?: LineConnection | null;
 
 		/** The fill of the line. */
-		lineFill?: LineFill;
+		lineFill?: LineFill | null;
 
 		/** A hypertext link. */
-		link?: Link;
+		link?: Link | null;
 
 		/** The style of the arrow at the beginning of the line. */
-		startArrow?: LinePropertiesEndArrow;
+		startArrow?: LinePropertiesEndArrow | null;
 
 		/**
 		 * The properties for one end of a Line
 		 * connection.
 		 */
-		startConnection?: LineConnection;
+		startConnection?: LineConnection | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		weight?: Dimension;
+		weight?: Dimension | null;
 	}
 
 	export enum LinePropertiesEndArrow { ARROW_STYLE_UNSPECIFIED = 0, NONE = 1, STEALTH_ARROW = 2, FILL_ARROW = 3, FILL_CIRCLE = 4, FILL_SQUARE = 5, FILL_DIAMOND = 6, OPEN_ARROW = 7, OPEN_CIRCLE = 8, OPEN_SQUARE = 9, OPEN_DIAMOND = 10 }
@@ -1828,7 +1828,7 @@ export namespace MyNS {
 		 * do not have connection sites and therefore cannot be connected to a
 		 * connector line.
 		 */
-		connectedObjectId?: string;
+		connectedObjectId?: string | null;
 
 		/**
 		 * The index of the connection site on the connected page element.
@@ -1841,7 +1841,7 @@ export namespace MyNS {
 		 * (http://www.ecma-international.org/publications/standards/Ecma-376.htm).
 		 * The position of each connection site can also be viewed from Slides editor.
 		 */
-		connectionSiteIndex?: number;
+		connectionSiteIndex?: number | null;
 	}
 
 
@@ -1854,7 +1854,7 @@ export namespace MyNS {
 		 * If any field is unset, its value may be inherited from a parent placeholder
 		 * if it exists.
 		 */
-		solidFill?: SolidFill;
+		solidFill?: SolidFill | null;
 	}
 
 
@@ -1870,10 +1870,10 @@ export namespace MyNS {
 		 * and other accessibility interfaces. Only use human readable values related
 		 * to the content of the page element.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/** The object ID of the page element the updates are applied to. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * The updated alt text title of the page element. If unset the
@@ -1881,7 +1881,7 @@ export namespace MyNS {
 		 * and other accessibility interfaces. Only use human readable values related
 		 * to the content of the page element.
 		 */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -1894,10 +1894,10 @@ export namespace MyNS {
 	export interface UpdatePageElementTransformRequest {
 
 		/** The apply mode of the transform update. */
-		applyMode?: UpdatePageElementTransformRequestApplyMode;
+		applyMode?: UpdatePageElementTransformRequestApplyMode | null;
 
 		/** The object ID of the page element to update. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * AffineTransform uses a 3x3 matrix with an implied last row of [ 0 0 1 ]
@@ -1910,7 +1910,7 @@ export namespace MyNS {
 		 * y' = scale_y * y + shear_y * x + translate_y;
 		 * This message is therefore composed of these six matrix elements.
 		 */
-		transform?: AffineTransform;
+		transform?: AffineTransform | null;
 	}
 
 	export enum UpdatePageElementTransformRequestApplyMode { APPLY_MODE_UNSPECIFIED = 0, RELATIVE = 1, ABSOLUTE = 2 }
@@ -1928,13 +1928,13 @@ export namespace MyNS {
 		 * When applying the operation on multiple page elements, the relative
 		 * Z-orders within these page elements before the operation is maintained.
 		 */
-		operation?: UpdatePageElementsZOrderRequestOperation;
+		operation?: UpdatePageElementsZOrderRequestOperation | null;
 
 		/**
 		 * The object IDs of the page elements to update.
 		 * All the page elements must be on the same page and must not be grouped.
 		 */
-		pageElementObjectIds?: Array<string>;
+		pageElementObjectIds?: Array<string> | null;
 	}
 
 	export enum UpdatePageElementsZOrderRequestOperation { Z_ORDER_OPERATION_UNSPECIFIED = 0, BRING_TO_FRONT = 1, BRING_FORWARD = 2, SEND_BACKWARD = 3, SEND_TO_BACK = 4 }
@@ -1953,10 +1953,10 @@ export namespace MyNS {
 		 * To reset a property to its default value, include its field name in the
 		 * field mask but leave the field itself unset.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** The object ID of the page the update is applied to. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * The properties of the Page.
@@ -1965,7 +1965,7 @@ export namespace MyNS {
 		 * SlideProperties or
 		 * LayoutProperties.
 		 */
-		pageProperties?: PageProperties;
+		pageProperties?: PageProperties | null;
 	}
 
 
@@ -1979,10 +1979,10 @@ export namespace MyNS {
 	export interface PageProperties {
 
 		/** The palette of predefined colors for a page. */
-		colorScheme?: ColorScheme;
+		colorScheme?: ColorScheme | null;
 
 		/** The page background fill. */
-		pageBackgroundFill?: PageBackgroundFill;
+		pageBackgroundFill?: PageBackgroundFill | null;
 	}
 
 
@@ -1990,7 +1990,7 @@ export namespace MyNS {
 	export interface ColorScheme {
 
 		/** The ThemeColorType and corresponding concrete color pairs. */
-		colors?: Array<ThemeColorPair>;
+		colors?: Array<ThemeColorPair> | null;
 	}
 
 
@@ -1998,10 +1998,10 @@ export namespace MyNS {
 	export interface ThemeColorPair {
 
 		/** An RGB color. */
-		color?: RgbColor;
+		color?: RgbColor | null;
 
 		/** The type of the theme color. */
-		type?: OpaqueColorThemeColor;
+		type?: OpaqueColorThemeColor | null;
 	}
 
 
@@ -2015,7 +2015,7 @@ export namespace MyNS {
 		 * have no fill on a page, set this field to `NOT_RENDERED`. In this case,
 		 * any other fill fields set in the same request will be ignored.
 		 */
-		propertyState?: OutlinePropertyState;
+		propertyState?: OutlinePropertyState | null;
 
 		/**
 		 * A solid color fill. The page or page element is filled entirely with the
@@ -2023,13 +2023,13 @@ export namespace MyNS {
 		 * If any field is unset, its value may be inherited from a parent placeholder
 		 * if it exists.
 		 */
-		solidFill?: SolidFill;
+		solidFill?: SolidFill | null;
 
 		/**
 		 * The stretched picture fill. The page or page element is filled entirely with
 		 * the specified picture. The picture is stretched to fit its container.
 		 */
-		stretchedPictureFill?: StretchedPictureFill;
+		stretchedPictureFill?: StretchedPictureFill | null;
 	}
 
 
@@ -2052,10 +2052,10 @@ export namespace MyNS {
 		 * format.
 		 * The provided URL can be at most 2 kB in length.
 		 */
-		contentUrl?: string;
+		contentUrl?: string | null;
 
 		/** A width and height. */
-		size?: Size;
+		size?: Size | null;
 	}
 
 
@@ -2066,7 +2066,7 @@ export namespace MyNS {
 	export interface UpdateParagraphStyleRequest {
 
 		/** A location of a single table cell within a table. */
-		cellLocation?: TableCellLocation;
+		cellLocation?: TableCellLocation | null;
 
 		/**
 		 * The fields that should be updated.
@@ -2078,10 +2078,10 @@ export namespace MyNS {
 		 * To reset a property to its default value, include its field name in the
 		 * field mask but leave the field itself unset.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** The object ID of the shape or table with the text to be styled. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * Styles that apply to a whole paragraph.
@@ -2095,13 +2095,13 @@ export namespace MyNS {
 		 * placeholder.
 		 * Inherited paragraph styles are represented as unset fields in this message.
 		 */
-		style?: ParagraphStyle;
+		style?: ParagraphStyle | null;
 
 		/**
 		 * Specifies a contiguous range of an indexed collection, such as characters in
 		 * text.
 		 */
-		textRange?: Range;
+		textRange?: Range | null;
 	}
 
 
@@ -2120,38 +2120,38 @@ export namespace MyNS {
 	export interface ParagraphStyle {
 
 		/** The text alignment for this paragraph. */
-		alignment?: ParagraphStyleAlignment;
+		alignment?: ParagraphStyleAlignment | null;
 
 		/**
 		 * The text direction of this paragraph. If unset, the value defaults to
 		 * LEFT_TO_RIGHT since
 		 * text direction is not inherited.
 		 */
-		direction?: ParagraphStyleDirection;
+		direction?: ParagraphStyleDirection | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		indentEnd?: Dimension;
+		indentEnd?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		indentFirstLine?: Dimension;
+		indentFirstLine?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		indentStart?: Dimension;
+		indentStart?: Dimension | null;
 
 		/**
 		 * The amount of space between lines, as a percentage of normal, where normal
 		 * is represented as 100.0. If unset, the value is inherited from the parent.
 		 */
-		lineSpacing?: number;
+		lineSpacing?: number | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		spaceAbove?: Dimension;
+		spaceAbove?: Dimension | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		spaceBelow?: Dimension;
+		spaceBelow?: Dimension | null;
 
 		/** The spacing mode for the paragraph. */
-		spacingMode?: ParagraphStyleSpacingMode;
+		spacingMode?: ParagraphStyleSpacingMode | null;
 	}
 
 	export enum ParagraphStyleAlignment { ALIGNMENT_UNSPECIFIED = 0, START = 1, CENTER = 2, END = 3, JUSTIFIED = 4 }
@@ -2174,10 +2174,10 @@ export namespace MyNS {
 		 * To reset a property to its default value, include its field name in the
 		 * field mask but leave the field itself unset.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** The object ID of the shape the updates are applied to. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * The properties of a Shape.
@@ -2187,7 +2187,7 @@ export namespace MyNS {
 		 * Determining the rendered value of the property depends on the corresponding
 		 * property_state field value.
 		 */
-		shapeProperties?: ShapeProperties;
+		shapeProperties?: ShapeProperties | null;
 	}
 
 
@@ -2207,10 +2207,10 @@ export namespace MyNS {
 		 * shape has no parent, the default alignment matches the alignment for new
 		 * shapes created in the Slides editor.
 		 */
-		contentAlignment?: ShapePropertiesContentAlignment;
+		contentAlignment?: ShapePropertiesContentAlignment | null;
 
 		/** A hypertext link. */
-		link?: Link;
+		link?: Link | null;
 
 		/**
 		 * The outline of a PageElement.
@@ -2219,7 +2219,7 @@ export namespace MyNS {
 		 * used for new page elements created in the Slides editor, which may depend on
 		 * the page element kind.
 		 */
-		outline?: Outline;
+		outline?: Outline | null;
 
 		/**
 		 * The shadow properties of a page element.
@@ -2228,10 +2228,10 @@ export namespace MyNS {
 		 * used for new page elements created in the Slides editor, which may depend on
 		 * the page element kind.
 		 */
-		shadow?: Shadow;
+		shadow?: Shadow | null;
 
 		/** The shape background fill. */
-		shapeBackgroundFill?: ShapeBackgroundFill;
+		shapeBackgroundFill?: ShapeBackgroundFill | null;
 	}
 
 	export enum ShapePropertiesContentAlignment { CONTENT_ALIGNMENT_UNSPECIFIED = 0, CONTENT_ALIGNMENT_UNSUPPORTED = 1, TOP = 2, MIDDLE = 3, BOTTOM = 4 }
@@ -2247,7 +2247,7 @@ export namespace MyNS {
 		 * have no fill on a shape, set this field to `NOT_RENDERED`. In this case,
 		 * any other fill fields set in the same request will be ignored.
 		 */
-		propertyState?: OutlinePropertyState;
+		propertyState?: OutlinePropertyState | null;
 
 		/**
 		 * A solid color fill. The page or page element is filled entirely with the
@@ -2255,7 +2255,7 @@ export namespace MyNS {
 		 * If any field is unset, its value may be inherited from a parent placeholder
 		 * if it exists.
 		 */
-		solidFill?: SolidFill;
+		solidFill?: SolidFill | null;
 	}
 
 
@@ -2267,14 +2267,14 @@ export namespace MyNS {
 		 * arrangement before the move takes place. Must be between zero and the
 		 * number of slides in the presentation, inclusive.
 		 */
-		insertionIndex?: number;
+		insertionIndex?: number | null;
 
 		/**
 		 * The IDs of the slides in the presentation that should be moved.
 		 * The slides in this list must be in existing presentation order, without
 		 * duplicates.
 		 */
-		slideObjectIds?: Array<string>;
+		slideObjectIds?: Array<string> | null;
 	}
 
 
@@ -2286,7 +2286,7 @@ export namespace MyNS {
 		 * border position is not specified, the updates will apply to all borders in
 		 * the table range.
 		 */
-		borderPosition?: UpdateTableBorderPropertiesRequestBorderPosition;
+		borderPosition?: UpdateTableBorderPropertiesRequestBorderPosition | null;
 
 		/**
 		 * The fields that should be updated.
@@ -2298,16 +2298,16 @@ export namespace MyNS {
 		 * To reset a property to its default value, include its field name in the
 		 * field mask but leave the field itself unset.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** The object ID of the table. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * The border styling properties of the
 		 * TableBorderCell.
 		 */
-		tableBorderProperties?: TableBorderProperties;
+		tableBorderProperties?: TableBorderProperties | null;
 
 		/**
 		 * A table range represents a reference to a subset of a table.
@@ -2321,7 +2321,7 @@ export namespace MyNS {
 		 * x     x
 		 * [ x    x    x ]
 		 */
-		tableRange?: TableRange;
+		tableRange?: TableRange | null;
 	}
 
 	export enum UpdateTableBorderPropertiesRequestBorderPosition { ALL = 0, BOTTOM = 1, INNER = 2, INNER_HORIZONTAL = 3, INNER_VERTICAL = 4, LEFT = 5, OUTER = 6, RIGHT = 7, TOP = 8 }
@@ -2334,13 +2334,13 @@ export namespace MyNS {
 	export interface TableBorderProperties {
 
 		/** The dash style of the border. */
-		dashStyle?: OutlineDashStyle;
+		dashStyle?: OutlineDashStyle | null;
 
 		/** The fill of the border. */
-		tableBorderFill?: TableBorderFill;
+		tableBorderFill?: TableBorderFill | null;
 
 		/** A magnitude in a single direction in the specified units. */
-		weight?: Dimension;
+		weight?: Dimension | null;
 	}
 
 
@@ -2353,7 +2353,7 @@ export namespace MyNS {
 		 * If any field is unset, its value may be inherited from a parent placeholder
 		 * if it exists.
 		 */
-		solidFill?: SolidFill;
+		solidFill?: SolidFill | null;
 	}
 
 
@@ -2370,13 +2370,13 @@ export namespace MyNS {
 		 * To reset a property to its default value, include its field name in the
 		 * field mask but leave the field itself unset.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** The object ID of the table. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/** The properties of the TableCell. */
-		tableCellProperties?: TableCellProperties;
+		tableCellProperties?: TableCellProperties | null;
 
 		/**
 		 * A table range represents a reference to a subset of a table.
@@ -2390,7 +2390,7 @@ export namespace MyNS {
 		 * x     x
 		 * [ x    x    x ]
 		 */
-		tableRange?: TableRange;
+		tableRange?: TableRange | null;
 	}
 
 
@@ -2401,10 +2401,10 @@ export namespace MyNS {
 		 * The alignment of the content in the table cell. The default alignment
 		 * matches the alignment for newly created table cells in the Slides editor.
 		 */
-		contentAlignment?: ShapePropertiesContentAlignment;
+		contentAlignment?: ShapePropertiesContentAlignment | null;
 
 		/** The table cell background fill. */
-		tableCellBackgroundFill?: TableCellBackgroundFill;
+		tableCellBackgroundFill?: TableCellBackgroundFill | null;
 	}
 
 
@@ -2418,7 +2418,7 @@ export namespace MyNS {
 		 * have no fill on a table cell, set this field to `NOT_RENDERED`. In this
 		 * case, any other fill fields set in the same request will be ignored.
 		 */
-		propertyState?: OutlinePropertyState;
+		propertyState?: OutlinePropertyState | null;
 
 		/**
 		 * A solid color fill. The page or page element is filled entirely with the
@@ -2426,7 +2426,7 @@ export namespace MyNS {
 		 * If any field is unset, its value may be inherited from a parent placeholder
 		 * if it exists.
 		 */
-		solidFill?: SolidFill;
+		solidFill?: SolidFill | null;
 	}
 
 
@@ -2437,7 +2437,7 @@ export namespace MyNS {
 		 * The list of zero-based indices specifying which columns to update. If no
 		 * indices are provided, all columns in the table will be updated.
 		 */
-		columnIndices?: Array<number>;
+		columnIndices?: Array<number> | null;
 
 		/**
 		 * The fields that should be updated.
@@ -2448,13 +2448,13 @@ export namespace MyNS {
 		 * If '"column_width"' is included in the field mask but the property is left
 		 * unset, the column width will default to 406,400 EMU (32 points).
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** The object ID of the table. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/** Properties of each column in a table. */
-		tableColumnProperties?: TableColumnProperties;
+		tableColumnProperties?: TableColumnProperties | null;
 	}
 
 
@@ -2462,7 +2462,7 @@ export namespace MyNS {
 	export interface TableColumnProperties {
 
 		/** A magnitude in a single direction in the specified units. */
-		columnWidth?: Dimension;
+		columnWidth?: Dimension | null;
 	}
 
 
@@ -2479,19 +2479,19 @@ export namespace MyNS {
 		 * If '"min_row_height"' is included in the field mask but the property is
 		 * left unset, the minimum row height will default to 0.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** The object ID of the table. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * The list of zero-based indices specifying which rows to update. If no
 		 * indices are provided, all rows in the table will be updated.
 		 */
-		rowIndices?: Array<number>;
+		rowIndices?: Array<number> | null;
 
 		/** Properties of each row in a table. */
-		tableRowProperties?: TableRowProperties;
+		tableRowProperties?: TableRowProperties | null;
 	}
 
 
@@ -2499,7 +2499,7 @@ export namespace MyNS {
 	export interface TableRowProperties {
 
 		/** A magnitude in a single direction in the specified units. */
-		minRowHeight?: Dimension;
+		minRowHeight?: Dimension | null;
 	}
 
 
@@ -2510,7 +2510,7 @@ export namespace MyNS {
 	export interface UpdateTextStyleRequest {
 
 		/** A location of a single table cell within a table. */
-		cellLocation?: TableCellLocation;
+		cellLocation?: TableCellLocation | null;
 
 		/**
 		 * The fields that should be updated.
@@ -2521,10 +2521,10 @@ export namespace MyNS {
 		 * To reset a property to its default value, include its field name in the
 		 * field mask but leave the field itself unset.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** The object ID of the shape or table with the text to be styled. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * Represents the styling that can be applied to a TextRun.
@@ -2542,13 +2542,13 @@ export namespace MyNS {
 		 * fields will revert the style to a value matching the defaults in the Slides
 		 * editor.
 		 */
-		style?: TextStyle;
+		style?: TextStyle | null;
 
 		/**
 		 * Specifies a contiguous range of an indexed collection, such as characters in
 		 * text.
 		 */
-		textRange?: Range;
+		textRange?: Range | null;
 	}
 
 
@@ -2565,13 +2565,13 @@ export namespace MyNS {
 		 * To reset a property to its default value, include its field name in the
 		 * field mask but leave the field itself unset.
 		 */
-		fields?: string;
+		fields?: string | null;
 
 		/** The object ID of the video the updates are applied to. */
-		objectId?: string;
+		objectId?: string | null;
 
 		/** The properties of the Video. */
-		videoProperties?: VideoProperties;
+		videoProperties?: VideoProperties | null;
 	}
 
 
@@ -2582,7 +2582,7 @@ export namespace MyNS {
 		 * Whether to enable video autoplay when the page is displayed in present
 		 * mode. Defaults to false.
 		 */
-		autoPlay?: boolean;
+		autoPlay?: boolean | null;
 
 		/**
 		 * The time at which to end playback, measured in seconds from the beginning
@@ -2591,10 +2591,10 @@ export namespace MyNS {
 		 * If not set or if you set this to a value that exceeds the video's length,
 		 * the video will be played until its end.
 		 */
-		end?: string;
+		end?: string | null;
 
 		/** Whether to mute the audio during video playback. Defaults to false. */
-		mute?: boolean;
+		mute?: boolean | null;
 
 		/**
 		 * The outline of a PageElement.
@@ -2603,7 +2603,7 @@ export namespace MyNS {
 		 * used for new page elements created in the Slides editor, which may depend on
 		 * the page element kind.
 		 */
-		outline?: Outline;
+		outline?: Outline | null;
 
 		/**
 		 * The time at which to start playback, measured in seconds from the beginning
@@ -2613,7 +2613,7 @@ export namespace MyNS {
 		 * video will be played from the last second.
 		 * If not set, the video will be played from the beginning.
 		 */
-		start?: string;
+		start?: string | null;
 	}
 
 
@@ -2626,7 +2626,7 @@ export namespace MyNS {
 		 * presentation's current `revision_id`, the request will not be processed and
 		 * will return a 400 bad request error.
 		 */
-		requiredRevisionId?: string;
+		requiredRevisionId?: string | null;
 	}
 
 
@@ -2634,16 +2634,16 @@ export namespace MyNS {
 	export interface BatchUpdatePresentationResponse {
 
 		/** The presentation the updates were applied to. */
-		presentationId?: string;
+		presentationId?: string | null;
 
 		/**
 		 * The reply of the updates.  This maps 1:1 with the updates, although
 		 * replies to some requests may be empty.
 		 */
-		replies?: Array<Response>;
+		replies?: Array<Response> | null;
 
 		/** Provides control over how write requests are executed. */
-		writeControl?: WriteControl;
+		writeControl?: WriteControl | null;
 	}
 
 
@@ -2651,40 +2651,40 @@ export namespace MyNS {
 	export interface Response {
 
 		/** The result of creating an image. */
-		createImage?: CreateImageResponse;
+		createImage?: CreateImageResponse | null;
 
 		/** The result of creating a line. */
-		createLine?: CreateLineResponse;
+		createLine?: CreateLineResponse | null;
 
 		/** The result of creating a shape. */
-		createShape?: CreateShapeResponse;
+		createShape?: CreateShapeResponse | null;
 
 		/** The result of creating an embedded Google Sheets chart. */
-		createSheetsChart?: CreateSheetsChartResponse;
+		createSheetsChart?: CreateSheetsChartResponse | null;
 
 		/** The result of creating a slide. */
-		createSlide?: CreateSlideResponse;
+		createSlide?: CreateSlideResponse | null;
 
 		/** The result of creating a table. */
-		createTable?: CreateTableResponse;
+		createTable?: CreateTableResponse | null;
 
 		/** The result of creating a video. */
-		createVideo?: CreateVideoResponse;
+		createVideo?: CreateVideoResponse | null;
 
 		/** The response of duplicating an object. */
-		duplicateObject?: DuplicateObjectResponse;
+		duplicateObject?: DuplicateObjectResponse | null;
 
 		/** The result of grouping objects. */
-		groupObjects?: GroupObjectsResponse;
+		groupObjects?: GroupObjectsResponse | null;
 
 		/** The result of replacing shapes with an image. */
-		replaceAllShapesWithImage?: ReplaceAllShapesWithImageResponse;
+		replaceAllShapesWithImage?: ReplaceAllShapesWithImageResponse | null;
 
 		/** The result of replacing shapes with a Google Sheets chart. */
-		replaceAllShapesWithSheetsChart?: ReplaceAllShapesWithSheetsChartResponse;
+		replaceAllShapesWithSheetsChart?: ReplaceAllShapesWithSheetsChartResponse | null;
 
 		/** The result of replacing text. */
-		replaceAllText?: ReplaceAllTextResponse;
+		replaceAllText?: ReplaceAllTextResponse | null;
 	}
 
 
@@ -2692,7 +2692,7 @@ export namespace MyNS {
 	export interface CreateImageResponse {
 
 		/** The object ID of the created image. */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -2700,7 +2700,7 @@ export namespace MyNS {
 	export interface CreateLineResponse {
 
 		/** The object ID of the created line. */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -2708,7 +2708,7 @@ export namespace MyNS {
 	export interface CreateShapeResponse {
 
 		/** The object ID of the created shape. */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -2716,7 +2716,7 @@ export namespace MyNS {
 	export interface CreateSheetsChartResponse {
 
 		/** The object ID of the created chart. */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -2724,7 +2724,7 @@ export namespace MyNS {
 	export interface CreateSlideResponse {
 
 		/** The object ID of the created slide. */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -2732,7 +2732,7 @@ export namespace MyNS {
 	export interface CreateTableResponse {
 
 		/** The object ID of the created table. */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -2740,7 +2740,7 @@ export namespace MyNS {
 	export interface CreateVideoResponse {
 
 		/** The object ID of the created video. */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -2748,7 +2748,7 @@ export namespace MyNS {
 	export interface DuplicateObjectResponse {
 
 		/** The ID of the new duplicate object. */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -2756,7 +2756,7 @@ export namespace MyNS {
 	export interface GroupObjectsResponse {
 
 		/** The object ID of the created group. */
-		objectId?: string;
+		objectId?: string | null;
 	}
 
 
@@ -2764,7 +2764,7 @@ export namespace MyNS {
 	export interface ReplaceAllShapesWithImageResponse {
 
 		/** The number of shapes replaced with images. */
-		occurrencesChanged?: number;
+		occurrencesChanged?: number | null;
 	}
 
 
@@ -2772,7 +2772,7 @@ export namespace MyNS {
 	export interface ReplaceAllShapesWithSheetsChartResponse {
 
 		/** The number of shapes replaced with charts. */
-		occurrencesChanged?: number;
+		occurrencesChanged?: number | null;
 	}
 
 
@@ -2780,7 +2780,7 @@ export namespace MyNS {
 	export interface ReplaceAllTextResponse {
 
 		/** The number of occurrences changed by replacing all text. */
-		occurrencesChanged?: number;
+		occurrencesChanged?: number | null;
 	}
 
 
@@ -2803,16 +2803,16 @@ export namespace MyNS {
 		 * fields will revert the style to a value matching the defaults in the Slides
 		 * editor.
 		 */
-		bulletStyle?: TextStyle;
+		bulletStyle?: TextStyle | null;
 
 		/** The rendered bullet glyph for this paragraph. */
-		glyph?: string;
+		glyph?: string | null;
 
 		/** The ID of the list this paragraph belongs to. */
-		listId?: string;
+		listId?: string | null;
 
 		/** The nesting level of this paragraph in the list. */
-		nestingLevel?: number;
+		nestingLevel?: number | null;
 	}
 
 
@@ -2823,7 +2823,7 @@ export namespace MyNS {
 	export interface Group {
 
 		/** The collection of elements in the group. The minimum size of a group is 2. */
-		children?: Array<PageElement>;
+		children?: Array<PageElement> | null;
 	}
 
 
@@ -2834,59 +2834,59 @@ export namespace MyNS {
 		 * The description of the page element. Combined with title to display alt
 		 * text.
 		 */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * A PageElement kind representing a
 		 * joined collection of PageElements.
 		 */
-		elementGroup?: Group;
+		elementGroup?: Group | null;
 
 		/**
 		 * A PageElement kind representing an
 		 * image.
 		 */
-		image?: Image;
+		image?: Image | null;
 
 		/**
 		 * A PageElement kind representing a
 		 * non-connector line, straight connector, curved connector, or bent connector.
 		 */
-		line?: Line;
+		line?: Line | null;
 
 		/**
 		 * The object ID for this page element. Object IDs used by
 		 * google.apps.slides.v1.Page and
 		 * google.apps.slides.v1.PageElement share the same namespace.
 		 */
-		objectId?: string;
+		objectId?: string | null;
 
 		/**
 		 * A PageElement kind representing a
 		 * generic shape that does not have a more specific classification.
 		 */
-		shape?: Shape;
+		shape?: Shape | null;
 
 		/**
 		 * A PageElement kind representing
 		 * a linked chart embedded from Google Sheets.
 		 */
-		sheetsChart?: SheetsChart;
+		sheetsChart?: SheetsChart | null;
 
 		/** A width and height. */
-		size?: Size;
+		size?: Size | null;
 
 		/**
 		 * A PageElement kind representing a
 		 * table.
 		 */
-		table?: Table;
+		table?: Table | null;
 
 		/**
 		 * The title of the page element. Combined with description to display alt
 		 * text.
 		 */
-		title?: string;
+		title?: string | null;
 
 		/**
 		 * AffineTransform uses a 3x3 matrix with an implied last row of [ 0 0 1 ]
@@ -2899,19 +2899,19 @@ export namespace MyNS {
 		 * y' = scale_y * y + shear_y * x + translate_y;
 		 * This message is therefore composed of these six matrix elements.
 		 */
-		transform?: AffineTransform;
+		transform?: AffineTransform | null;
 
 		/**
 		 * A PageElement kind representing a
 		 * video.
 		 */
-		video?: Video;
+		video?: Video | null;
 
 		/**
 		 * A PageElement kind representing
 		 * word art.
 		 */
-		wordArt?: WordArt;
+		wordArt?: WordArt | null;
 	}
 
 
@@ -2927,16 +2927,16 @@ export namespace MyNS {
 		 * effectively accesses the image as the original requester. Access to the
 		 * image may be lost if the presentation's sharing settings change.
 		 */
-		contentUrl?: string;
+		contentUrl?: string | null;
 
 		/** The properties of the Image. */
-		imageProperties?: ImageProperties;
+		imageProperties?: ImageProperties | null;
 
 		/**
 		 * The source URL is the URL used to insert the image. The source URL can be
 		 * empty.
 		 */
-		sourceUrl?: string;
+		sourceUrl?: string | null;
 	}
 
 
@@ -2951,17 +2951,17 @@ export namespace MyNS {
 		 * It matches the `category` specified in CreateLineRequest, and can be updated with
 		 * UpdateLineCategoryRequest.
 		 */
-		lineCategory?: CreateLineRequestCategory;
+		lineCategory?: CreateLineRequestCategory | null;
 
 		/**
 		 * The properties of the Line.
 		 * When unset, these fields default to values that match the appearance of
 		 * new lines created in the Slides editor.
 		 */
-		lineProperties?: LineProperties;
+		lineProperties?: LineProperties | null;
 
 		/** The type of the line. */
-		lineType?: LineLineType;
+		lineType?: LineLineType | null;
 	}
 
 	export enum LineLineType { TYPE_UNSPECIFIED = 0, STRAIGHT_CONNECTOR_1 = 1, BENT_CONNECTOR_2 = 2, BENT_CONNECTOR_3 = 3, BENT_CONNECTOR_4 = 4, BENT_CONNECTOR_5 = 5, CURVED_CONNECTOR_2 = 6, CURVED_CONNECTOR_3 = 7, CURVED_CONNECTOR_4 = 8, CURVED_CONNECTOR_5 = 9, STRAIGHT_LINE = 10 }
@@ -2974,7 +2974,7 @@ export namespace MyNS {
 	export interface Shape {
 
 		/** The placeholder information that uniquely identifies a placeholder shape. */
-		placeholder?: Placeholder;
+		placeholder?: Placeholder | null;
 
 		/**
 		 * The properties of a Shape.
@@ -2984,16 +2984,16 @@ export namespace MyNS {
 		 * Determining the rendered value of the property depends on the corresponding
 		 * property_state field value.
 		 */
-		shapeProperties?: ShapeProperties;
+		shapeProperties?: ShapeProperties | null;
 
 		/** The type of the shape. */
-		shapeType?: CreateShapeRequestShapeType;
+		shapeType?: CreateShapeRequestShapeType | null;
 
 		/**
 		 * The general text content. The text must reside in a compatible shape (e.g.
 		 * text box or rectangle) or a table cell in a page.
 		 */
-		text?: TextContent;
+		text?: TextContent | null;
 	}
 
 
@@ -3004,13 +3004,13 @@ export namespace MyNS {
 	export interface TextContent {
 
 		/** The bulleted lists contained in this text, keyed by list ID. */
-		lists?: {[id: string]: List };
+		lists?: {[id: string]: List } | null;
 
 		/**
 		 * The text contents broken down into its component parts, including styling
 		 * information. This property is read-only.
 		 */
-		textElements?: Array<TextElement>;
+		textElements?: Array<TextElement> | null;
 	}
 
 
@@ -3022,14 +3022,14 @@ export namespace MyNS {
 	export interface List {
 
 		/** The ID of the list. */
-		listId?: string;
+		listId?: string | null;
 
 		/**
 		 * A map of nesting levels to the properties of bullets at the associated
 		 * level. A list has at most nine levels of nesting, so the possible values
 		 * for the keys of this map are 0 through 8, inclusive.
 		 */
-		nestingLevel?: {[id: string]: NestingLevel };
+		nestingLevel?: {[id: string]: NestingLevel } | null;
 	}
 
 
@@ -3055,7 +3055,7 @@ export namespace MyNS {
 		 * fields will revert the style to a value matching the defaults in the Slides
 		 * editor.
 		 */
-		bulletStyle?: TextStyle;
+		bulletStyle?: TextStyle | null;
 	}
 
 
@@ -3066,25 +3066,25 @@ export namespace MyNS {
 	export interface TextElement {
 
 		/** A TextElement kind that represents auto text. */
-		autoText?: AutoText;
+		autoText?: AutoText | null;
 
 		/**
 		 * The zero-based end index of this text element, exclusive, in Unicode code
 		 * units.
 		 */
-		endIndex?: number;
+		endIndex?: number | null;
 
 		/** A TextElement kind that represents the beginning of a new paragraph. */
-		paragraphMarker?: ParagraphMarker;
+		paragraphMarker?: ParagraphMarker | null;
 
 		/** The zero-based start index of this text element, in Unicode code units. */
-		startIndex?: number;
+		startIndex?: number | null;
 
 		/**
 		 * A TextElement kind that represents a run of text that all has the same
 		 * styling.
 		 */
-		textRun?: TextRun;
+		textRun?: TextRun | null;
 	}
 
 
@@ -3092,7 +3092,7 @@ export namespace MyNS {
 	export interface ParagraphMarker {
 
 		/** Describes the bullet of a paragraph. */
-		bullet?: Bullet;
+		bullet?: Bullet | null;
 
 		/**
 		 * Styles that apply to a whole paragraph.
@@ -3106,7 +3106,7 @@ export namespace MyNS {
 		 * placeholder.
 		 * Inherited paragraph styles are represented as unset fields in this message.
 		 */
-		style?: ParagraphStyle;
+		style?: ParagraphStyle | null;
 	}
 
 
@@ -3117,7 +3117,7 @@ export namespace MyNS {
 	export interface TextRun {
 
 		/** The text of this run. */
-		content?: string;
+		content?: string | null;
 
 		/**
 		 * Represents the styling that can be applied to a TextRun.
@@ -3135,7 +3135,7 @@ export namespace MyNS {
 		 * fields will revert the style to a value matching the defaults in the Slides
 		 * editor.
 		 */
-		style?: TextStyle;
+		style?: TextStyle | null;
 	}
 
 
@@ -3149,7 +3149,7 @@ export namespace MyNS {
 		 * The ID of the specific chart in the Google Sheets spreadsheet that is
 		 * embedded.
 		 */
-		chartId?: number;
+		chartId?: number | null;
 
 		/**
 		 * The URL of an image of the embedded chart, with a default lifetime of 30
@@ -3157,13 +3157,13 @@ export namespace MyNS {
 		 * the URL effectively accesses the image as the original requester. Access to
 		 * the image may be lost if the presentation's sharing settings change.
 		 */
-		contentUrl?: string;
+		contentUrl?: string | null;
 
 		/** The properties of the SheetsChart. */
-		sheetsChartProperties?: SheetsChartProperties;
+		sheetsChartProperties?: SheetsChartProperties | null;
 
 		/** The ID of the Google Sheets spreadsheet that contains the source chart. */
-		spreadsheetId?: string;
+		spreadsheetId?: string | null;
 	}
 
 
@@ -3171,7 +3171,7 @@ export namespace MyNS {
 	export interface SheetsChartProperties {
 
 		/** The properties of the Image. */
-		chartImageProperties?: ImageProperties;
+		chartImageProperties?: ImageProperties | null;
 	}
 
 
@@ -3182,7 +3182,7 @@ export namespace MyNS {
 	export interface Table {
 
 		/** Number of columns in the table. */
-		columns?: number;
+		columns?: number | null;
 
 		/**
 		 * Properties of horizontal cell borders.
@@ -3191,13 +3191,13 @@ export namespace MyNS {
 		 * columns as the table. For example, if the table is 3 x 3, its horizontal
 		 * borders will be represented as a grid with 4 rows and 3 columns.
 		 */
-		horizontalBorderRows?: Array<TableBorderRow>;
+		horizontalBorderRows?: Array<TableBorderRow> | null;
 
 		/** Number of rows in the table. */
-		rows?: number;
+		rows?: number | null;
 
 		/** Properties of each column. */
-		tableColumns?: Array<TableColumnProperties>;
+		tableColumns?: Array<TableColumnProperties> | null;
 
 		/**
 		 * Properties and contents of each row.
@@ -3205,7 +3205,7 @@ export namespace MyNS {
 		 * have a row_span greater
 		 * than 1.
 		 */
-		tableRows?: Array<TableRow>;
+		tableRows?: Array<TableRow> | null;
 
 		/**
 		 * Properties of vertical cell borders.
@@ -3214,7 +3214,7 @@ export namespace MyNS {
 		 * columns in the table. For example, if the table is 3 x 3, its vertical
 		 * borders will be represented as a grid with 3 rows and 4 columns.
 		 */
-		verticalBorderRows?: Array<TableBorderRow>;
+		verticalBorderRows?: Array<TableBorderRow> | null;
 	}
 
 
@@ -3225,7 +3225,7 @@ export namespace MyNS {
 		 * Properties of each border cell. When a border's adjacent table cells are
 		 * merged, it is not included in the response.
 		 */
-		tableBorderCells?: Array<TableBorderCell>;
+		tableBorderCells?: Array<TableBorderCell> | null;
 	}
 
 
@@ -3233,13 +3233,13 @@ export namespace MyNS {
 	export interface TableBorderCell {
 
 		/** A location of a single table cell within a table. */
-		location?: TableCellLocation;
+		location?: TableCellLocation | null;
 
 		/**
 		 * The border styling properties of the
 		 * TableBorderCell.
 		 */
-		tableBorderProperties?: TableBorderProperties;
+		tableBorderProperties?: TableBorderProperties | null;
 	}
 
 
@@ -3247,7 +3247,7 @@ export namespace MyNS {
 	export interface TableRow {
 
 		/** A magnitude in a single direction in the specified units. */
-		rowHeight?: Dimension;
+		rowHeight?: Dimension | null;
 
 		/**
 		 * Properties and contents of each cell.
@@ -3256,10 +3256,10 @@ export namespace MyNS {
 		 * than 1. As a result, the length of this collection does not always match
 		 * the number of columns of the entire table.
 		 */
-		tableCells?: Array<TableCell>;
+		tableCells?: Array<TableCell> | null;
 
 		/** Properties of each row in a table. */
-		tableRowProperties?: TableRowProperties;
+		tableRowProperties?: TableRowProperties | null;
 	}
 
 
@@ -3267,22 +3267,22 @@ export namespace MyNS {
 	export interface TableCell {
 
 		/** Column span of the cell. */
-		columnSpan?: number;
+		columnSpan?: number | null;
 
 		/** A location of a single table cell within a table. */
-		location?: TableCellLocation;
+		location?: TableCellLocation | null;
 
 		/** Row span of the cell. */
-		rowSpan?: number;
+		rowSpan?: number | null;
 
 		/** The properties of the TableCell. */
-		tableCellProperties?: TableCellProperties;
+		tableCellProperties?: TableCellProperties | null;
 
 		/**
 		 * The general text content. The text must reside in a compatible shape (e.g.
 		 * text box or rectangle) or a table cell in a page.
 		 */
-		text?: TextContent;
+		text?: TextContent | null;
 	}
 
 
@@ -3293,19 +3293,19 @@ export namespace MyNS {
 	export interface Video {
 
 		/** The video source's unique identifier for this video. */
-		id?: string;
+		id?: string | null;
 
 		/** The video source. */
-		source?: CreateVideoRequestSource;
+		source?: CreateVideoRequestSource | null;
 
 		/**
 		 * An URL to a video. The URL is valid as long as the source video exists and
 		 * sharing settings do not change.
 		 */
-		url?: string;
+		url?: string | null;
 
 		/** The properties of the Video. */
-		videoProperties?: VideoProperties;
+		videoProperties?: VideoProperties | null;
 	}
 
 
@@ -3316,7 +3316,7 @@ export namespace MyNS {
 	export interface WordArt {
 
 		/** The text rendered as word art. */
-		renderedText?: string;
+		renderedText?: string | null;
 	}
 
 
@@ -3327,13 +3327,13 @@ export namespace MyNS {
 	export interface LayoutProperties {
 
 		/** The human-readable name of the layout. */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** The object ID of the master that this layout is based on. */
-		masterObjectId?: string;
+		masterObjectId?: string | null;
 
 		/** The name of the layout. */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -3344,7 +3344,7 @@ export namespace MyNS {
 	export interface MasterProperties {
 
 		/** The human-readable name of the master. */
-		displayName?: string;
+		displayName?: string | null;
 	}
 
 
@@ -3362,7 +3362,7 @@ export namespace MyNS {
 		 * actual shape may have different object ID. The `GetPresentation` or
 		 * `GetPage` action will always return the latest object ID.
 		 */
-		speakerNotesObjectId?: string;
+		speakerNotesObjectId?: string | null;
 	}
 
 
@@ -3373,29 +3373,29 @@ export namespace MyNS {
 		 * The properties of Page are only
 		 * relevant for pages with page_type LAYOUT.
 		 */
-		layoutProperties?: LayoutProperties;
+		layoutProperties?: LayoutProperties | null;
 
 		/**
 		 * The properties of Page that are only
 		 * relevant for pages with page_type MASTER.
 		 */
-		masterProperties?: MasterProperties;
+		masterProperties?: MasterProperties | null;
 
 		/**
 		 * The properties of Page that are only
 		 * relevant for pages with page_type NOTES.
 		 */
-		notesProperties?: NotesProperties;
+		notesProperties?: NotesProperties | null;
 
 		/**
 		 * The object ID for this page. Object IDs used by
 		 * Page and
 		 * PageElement share the same namespace.
 		 */
-		objectId?: string;
+		objectId?: string | null;
 
 		/** The page elements rendered on the page. */
-		pageElements?: Array<PageElement>;
+		pageElements?: Array<PageElement> | null;
 
 		/**
 		 * The properties of the Page.
@@ -3404,10 +3404,10 @@ export namespace MyNS {
 		 * SlideProperties or
 		 * LayoutProperties.
 		 */
-		pageProperties?: PageProperties;
+		pageProperties?: PageProperties | null;
 
 		/** The type of the page. */
-		pageType?: PagePageType;
+		pageType?: PagePageType | null;
 
 		/**
 		 * The revision ID of the presentation containing this page. Can be used in
@@ -3422,13 +3422,13 @@ export namespace MyNS {
 		 * usually means the presentation has been updated; however, a changed ID can
 		 * also be due to internal factors such as ID format changes.
 		 */
-		revisionId?: string;
+		revisionId?: string | null;
 
 		/**
 		 * The properties of Page that are only
 		 * relevant for pages with page_type SLIDE.
 		 */
-		slideProperties?: SlideProperties;
+		slideProperties?: SlideProperties | null;
 	}
 
 	export enum PagePageType { SLIDE = 0, MASTER = 1, LAYOUT = 2, NOTES = 3, NOTES_MASTER = 4 }
@@ -3444,16 +3444,16 @@ export namespace MyNS {
 		 * The object ID of the layout that this slide is based on. This property is
 		 * read-only.
 		 */
-		layoutObjectId?: string;
+		layoutObjectId?: string | null;
 
 		/**
 		 * The object ID of the master that this slide is based on. This property is
 		 * read-only.
 		 */
-		masterObjectId?: string;
+		masterObjectId?: string | null;
 
 		/** A page in a presentation. */
-		notesPage?: Page;
+		notesPage?: Page | null;
 	}
 
 
@@ -3465,10 +3465,10 @@ export namespace MyNS {
 		 * how content is arranged and styled on the slides that inherit from that
 		 * layout.
 		 */
-		layouts?: Array<Page>;
+		layouts?: Array<Page> | null;
 
 		/** The locale of the presentation, as an IETF BCP 47 language tag. */
-		locale?: string;
+		locale?: string | null;
 
 		/**
 		 * The slide masters in the presentation. A slide master contains all common
@@ -3481,16 +3481,16 @@ export namespace MyNS {
 		 * - Any other shapes on the master slide appear on all slides using that
 		 * master, regardless of their layout.
 		 */
-		masters?: Array<Page>;
+		masters?: Array<Page> | null;
 
 		/** A page in a presentation. */
-		notesMaster?: Page;
+		notesMaster?: Page | null;
 
 		/** A width and height. */
-		pageSize?: Size;
+		pageSize?: Size | null;
 
 		/** The ID of the presentation. */
-		presentationId?: string;
+		presentationId?: string | null;
 
 		/**
 		 * The revision ID of the presentation. Can be used in update requests
@@ -3505,16 +3505,16 @@ export namespace MyNS {
 		 * usually means the presentation has been updated; however, a changed ID can
 		 * also be due to internal factors such as ID format changes.
 		 */
-		revisionId?: string;
+		revisionId?: string | null;
 
 		/**
 		 * The slides in the presentation.
 		 * A slide inherits properties from a slide layout.
 		 */
-		slides?: Array<Page>;
+		slides?: Array<Page> | null;
 
 		/** The title of the presentation. */
-		title?: string;
+		title?: string | null;
 	}
 
 
@@ -3530,13 +3530,13 @@ export namespace MyNS {
 		 * The mime type of the thumbnail image is the same as specified in the
 		 * `GetPageThumbnailRequest`.
 		 */
-		contentUrl?: string;
+		contentUrl?: string | null;
 
 		/** The positive height in pixels of the thumbnail image. */
-		height?: number;
+		height?: number | null;
 
 		/** The positive width in pixels of the thumbnail image. */
-		width?: number;
+		width?: number | null;
 	}
 
 	@Injectable()
@@ -3593,7 +3593,7 @@ export namespace MyNS {
 		 * image.
 		 * @return {void} Successful response
 		 */
-		Slides_presentations_pages_getThumbnail(presentationId: string, pageObjectId: string, thumbnailProperties_mimeType: Slides_presentations_pages_getThumbnailThumbnailProperties_mimeType, thumbnailProperties_thumbnailSize: Slides_presentations_pages_getThumbnailThumbnailProperties_thumbnailSize): Observable<HttpResponse<string>> {
+		Slides_presentations_pages_getThumbnail(presentationId: string, pageObjectId: string, thumbnailProperties_mimeType: Slides_presentations_pages_getThumbnailThumbnailProperties_mimeType | null | undefined, thumbnailProperties_thumbnailSize: Slides_presentations_pages_getThumbnailThumbnailProperties_thumbnailSize | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/presentations/' + (presentationId == null ? '' : encodeURIComponent(presentationId)) + '/pages/' + (pageObjectId == null ? '' : encodeURIComponent(pageObjectId)) + '/thumbnail&thumbnailProperties_mimeType=' + thumbnailProperties_mimeType + '&thumbnailProperties_thumbnailSize=' + thumbnailProperties_thumbnailSize, { observe: 'response', responseType: 'text' });
 		}
 

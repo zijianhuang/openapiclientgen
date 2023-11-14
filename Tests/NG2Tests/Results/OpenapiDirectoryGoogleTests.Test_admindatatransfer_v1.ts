@@ -7,19 +7,19 @@ export namespace MyNS {
 	export interface Application {
 
 		/** Etag of the resource. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The application's ID. */
-		id?: string;
+		id?: string | null;
 
 		/** Identifies the resource as a DataTransfer Application Resource. */
-		kind?: string;
+		kind?: string | null;
 
 		/** The application's name. */
-		name?: string;
+		name?: string | null;
 
 		/** The list of all possible transfer parameters for this application. These parameters can be used to select the data of the user in this application to be transferred. */
-		transferParams?: Array<ApplicationTransferParam>;
+		transferParams?: Array<ApplicationTransferParam> | null;
 	}
 
 
@@ -27,10 +27,10 @@ export namespace MyNS {
 	export interface ApplicationTransferParam {
 
 		/** The type of the transfer parameter. eg: 'PRIVACY_LEVEL' */
-		key?: string;
+		key?: string | null;
 
 		/** The value of the corresponding transfer parameter. eg: 'PRIVATE' or 'SHARED' */
-		value?: Array<string>;
+		value?: Array<string> | null;
 	}
 
 
@@ -38,13 +38,13 @@ export namespace MyNS {
 	export interface ApplicationDataTransfer {
 
 		/** The application's ID. */
-		applicationId?: string;
+		applicationId?: string | null;
 
 		/** The transfer parameters for the application. These parameters are used to select the data which will get transferred in context of this application. */
-		applicationTransferParams?: Array<ApplicationTransferParam>;
+		applicationTransferParams?: Array<ApplicationTransferParam> | null;
 
 		/** Current status of transfer for this application. (Read-only) */
-		applicationTransferStatus?: string;
+		applicationTransferStatus?: string | null;
 	}
 
 
@@ -52,16 +52,16 @@ export namespace MyNS {
 	export interface ApplicationsListResponse {
 
 		/** List of applications that support data transfer and are also installed for the customer. */
-		applications?: Array<Application>;
+		applications?: Array<Application> | null;
 
 		/** ETag of the resource. */
-		etag?: string;
+		etag?: string | null;
 
 		/** Identifies the resource as a collection of Applications. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Continuation token which will be used to specify next page in list API. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -69,28 +69,28 @@ export namespace MyNS {
 	export interface DataTransfer {
 
 		/** List of per application data transfer resources. It contains data transfer details of the applications associated with this transfer resource. Note that this list is also used to specify the applications for which data transfer has to be done at the time of the transfer resource creation. */
-		applicationDataTransfers?: Array<ApplicationDataTransfer>;
+		applicationDataTransfers?: Array<ApplicationDataTransfer> | null;
 
 		/** ETag of the resource. */
-		etag?: string;
+		etag?: string | null;
 
 		/** The transfer's ID (Read-only). */
-		id?: string;
+		id?: string | null;
 
 		/** Identifies the resource as a DataTransfer request. */
-		kind?: string;
+		kind?: string | null;
 
 		/** ID of the user to whom the data is being transferred. */
-		newOwnerUserId?: string;
+		newOwnerUserId?: string | null;
 
 		/** ID of the user whose data is being transferred. */
-		oldOwnerUserId?: string;
+		oldOwnerUserId?: string | null;
 
 		/** Overall transfer status (Read-only). */
-		overallTransferStatusCode?: string;
+		overallTransferStatusCode?: string | null;
 
 		/** The time at which the data transfer was requested (Read-only). */
-		requestTime?: Date;
+		requestTime?: Date | null;
 	}
 
 
@@ -98,16 +98,16 @@ export namespace MyNS {
 	export interface DataTransfersListResponse {
 
 		/** List of data transfer requests. */
-		dataTransfers?: Array<DataTransfer>;
+		dataTransfers?: Array<DataTransfer> | null;
 
 		/** ETag of the resource. */
-		etag?: string;
+		etag?: string | null;
 
 		/** Identifies the resource as a collection of data transfer requests. */
-		kind?: string;
+		kind?: string | null;
 
 		/** Continuation token which will be used to specify next page in list API. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 	@Injectable()
@@ -123,7 +123,7 @@ export namespace MyNS {
 		 * @param {string} pageToken Token to specify next page in the list.
 		 * @return {void} Successful response
 		 */
-		Datatransfer_applications_list(customerId: string, maxResults: number, pageToken: string): Observable<HttpResponse<string>> {
+		Datatransfer_applications_list(customerId: string | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'applications?customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)) + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -148,7 +148,7 @@ export namespace MyNS {
 		 * @param {string} status Status of the transfer.
 		 * @return {void} Successful response
 		 */
-		Datatransfer_transfers_list(customerId: string, maxResults: number, newOwnerUserId: string, oldOwnerUserId: string, pageToken: string, status: string): Observable<HttpResponse<string>> {
+		Datatransfer_transfers_list(customerId: string | null | undefined, maxResults: number | null | undefined, newOwnerUserId: string | null | undefined, oldOwnerUserId: string | null | undefined, pageToken: string | null | undefined, status: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'transfers?customerId=' + (customerId == null ? '' : encodeURIComponent(customerId)) + '&maxResults=' + maxResults + '&newOwnerUserId=' + (newOwnerUserId == null ? '' : encodeURIComponent(newOwnerUserId)) + '&oldOwnerUserId=' + (oldOwnerUserId == null ? '' : encodeURIComponent(oldOwnerUserId)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&status=' + (status == null ? '' : encodeURIComponent(status)), { observe: 'response', responseType: 'text' });
 		}
 

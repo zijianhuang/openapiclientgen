@@ -7,23 +7,23 @@ export namespace MyNS {
 	export interface ClaimDeviceRequest {
 
 		/** Required. The ID of the customer for whom the device is being claimed. */
-		customerId?: string;
+		customerId?: string | null;
 
 		/**
 		 * Encapsulates hardware and product IDs to identify a manufactured device.
 		 * To understand requirements on identifier sets, read
 		 * [Identifiers](/zero-touch/guides/identifiers).
 		 */
-		deviceIdentifier?: DeviceIdentifier;
+		deviceIdentifier?: DeviceIdentifier | null;
 
 		/**
 		 * Metadata entries that can be attached to a `Device`. To learn more, read
 		 * [Device metadata](/zero-touch/guides/metadata).
 		 */
-		deviceMetadata?: DeviceMetadata;
+		deviceMetadata?: DeviceMetadata | null;
 
 		/** Required. The section type of the device's provisioning record. */
-		sectionType?: ClaimDeviceRequestSectionType;
+		sectionType?: ClaimDeviceRequestSectionType | null;
 	}
 
 
@@ -35,7 +35,7 @@ export namespace MyNS {
 	export interface DeviceIdentifier {
 
 		/** The device’s IMEI number. Validated on input. */
-		imei?: string;
+		imei?: string | null;
 
 		/**
 		 * The device manufacturer’s name. Matches the device's built-in
@@ -43,23 +43,23 @@ export namespace MyNS {
 		 * listed in
 		 * [manufacturers](/zero-touch/resources/manufacturer-names#manufacturers-names).
 		 */
-		manufacturer?: string;
+		manufacturer?: string | null;
 
 		/** The device’s MEID number. */
-		meid?: string;
+		meid?: string | null;
 
 		/**
 		 * The device model's name. Matches the device's built-in value returned from
 		 * `android.os.Build.MODEL`. Allowed values are listed in
 		 * [models](/zero-touch/resources/manufacturer-names#model-names).
 		 */
-		model?: string;
+		model?: string | null;
 
 		/**
 		 * The manufacturer's serial number for the device. This value might not be
 		 * unique across different device models.
 		 */
-		serialNumber?: string;
+		serialNumber?: string | null;
 	}
 
 
@@ -70,7 +70,7 @@ export namespace MyNS {
 	export interface DeviceMetadata {
 
 		/** Metadata entries recorded as key-value pairs. */
-		entries?: {[id: string]: string };
+		entries?: {[id: string]: string } | null;
 	}
 
 	export enum ClaimDeviceRequestSectionType { SECTION_TYPE_UNSPECIFIED = 0, SECTION_TYPE_SIM_LOCK = 1, SECTION_TYPE_ZERO_TOUCH = 2 }
@@ -80,13 +80,13 @@ export namespace MyNS {
 	export interface ClaimDeviceResponse {
 
 		/** The device ID of the claimed device. */
-		deviceId?: string;
+		deviceId?: string | null;
 
 		/**
 		 * The resource name of the device in the format
 		 * `partners/[PARTNER_ID]/devices/[DEVICE_ID]`.
 		 */
-		deviceName?: string;
+		deviceName?: string | null;
 	}
 
 
@@ -98,7 +98,7 @@ export namespace MyNS {
 	export interface ClaimDevicesRequest {
 
 		/** Required. A list of device claims. */
-		claims?: Array<PartnerClaim>;
+		claims?: Array<PartnerClaim> | null;
 	}
 
 
@@ -106,23 +106,23 @@ export namespace MyNS {
 	export interface PartnerClaim {
 
 		/** Required. The ID of the customer for whom the device is being claimed. */
-		customerId?: string;
+		customerId?: string | null;
 
 		/**
 		 * Encapsulates hardware and product IDs to identify a manufactured device.
 		 * To understand requirements on identifier sets, read
 		 * [Identifiers](/zero-touch/guides/identifiers).
 		 */
-		deviceIdentifier?: DeviceIdentifier;
+		deviceIdentifier?: DeviceIdentifier | null;
 
 		/**
 		 * Metadata entries that can be attached to a `Device`. To learn more, read
 		 * [Device metadata](/zero-touch/guides/metadata).
 		 */
-		deviceMetadata?: DeviceMetadata;
+		deviceMetadata?: DeviceMetadata | null;
 
 		/** Required. The section type of the device's provisioning record. */
-		sectionType?: ClaimDeviceRequestSectionType;
+		sectionType?: ClaimDeviceRequestSectionType | null;
 	}
 
 
@@ -133,16 +133,16 @@ export namespace MyNS {
 		 * Optional. Input only. Email address of customer's users in the admin role.
 		 * Each email address must be associated with a Google Account.
 		 */
-		adminEmails?: Array<string>;
+		adminEmails?: Array<string> | null;
 
 		/** Output only. The ID of the company. Assigned by the server. */
-		companyId?: string;
+		companyId?: string | null;
 
 		/**
 		 * Required. The name of the company. For example _XYZ Corp_. Displayed to the
 		 * company's employees in the zero-touch enrollment portal.
 		 */
-		companyName?: string;
+		companyName?: string | null;
 
 		/**
 		 * Output only. The API resource name of the company. The resource name is one
@@ -152,7 +152,7 @@ export namespace MyNS {
 		 * * `partners/[PARTNER_ID]/vendors/[VENDOR_ID]/customers/[CUSTOMER_ID]`
 		 * Assigned by the server.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Input only. Email address of customer's users in the owner role. At least
@@ -160,14 +160,14 @@ export namespace MyNS {
 		 * Google Account. Owners share the same access as admins but can also add,
 		 * delete, and edit your organization's portal users.
 		 */
-		ownerEmails?: Array<string>;
+		ownerEmails?: Array<string> | null;
 
 		/**
 		 * Output only. Whether any user from the company has accepted the latest
 		 * Terms of Service (ToS). See
 		 * TermsStatus.
 		 */
-		termsStatus?: CompanyTermsStatus;
+		termsStatus?: CompanyTermsStatus | null;
 	}
 
 	export enum CompanyTermsStatus { TERMS_STATUS_UNSPECIFIED = 0, TERMS_STATUS_NOT_ACCEPTED = 1, TERMS_STATUS_ACCEPTED = 2, TERMS_STATUS_STALE = 3 }
@@ -189,24 +189,24 @@ export namespace MyNS {
 		 * Required. The name of the organization. Zero-touch enrollment shows this
 		 * organization name to device users during device provisioning.
 		 */
-		companyName?: string;
+		companyName?: string | null;
 
 		/** Output only. The ID of the configuration. Assigned by the server. */
-		configurationId?: string;
+		configurationId?: string | null;
 
 		/**
 		 * Required. A short name that describes the configuration's purpose. For
 		 * example, _Sales team_ or _Temporary employees_. The zero-touch enrollment
 		 * portal displays this name to IT admins.
 		 */
-		configurationName?: string;
+		configurationName?: string | null;
 
 		/**
 		 * Required. The email address that device users can contact to get help.
 		 * Zero-touch enrollment shows this email address to device users before
 		 * device provisioning. The value is validated on input.
 		 */
-		contactEmail?: string;
+		contactEmail?: string | null;
 
 		/**
 		 * Required. The telephone number that device users can call, using another
@@ -214,17 +214,17 @@ export namespace MyNS {
 		 * users before device provisioning. Accepts numerals, spaces, the plus sign,
 		 * hyphens, and parentheses.
 		 */
-		contactPhone?: string;
+		contactPhone?: string | null;
 
 		/**
 		 * A message, containing one or two sentences, to help device users get help
 		 * or give them more details about what’s happening to their device.
 		 * Zero-touch enrollment shows this message before the device is provisioned.
 		 */
-		customMessage?: string;
+		customMessage?: string | null;
 
 		/** The JSON-formatted EMM provisioning extras that are passed to the DPC. */
-		dpcExtras?: string;
+		dpcExtras?: string | null;
 
 		/**
 		 * Required. The resource name of the selected DPC (device policy controller)
@@ -232,7 +232,7 @@ export namespace MyNS {
 		 * call
 		 * `customers.dpcs.list`.
 		 */
-		dpcResourcePath?: string;
+		dpcResourcePath?: string | null;
 
 		/**
 		 * Required. Whether this is the default configuration that zero-touch
@@ -241,14 +241,14 @@ export namespace MyNS {
 		 * value to `true`, changes the previous default configuration's `isDefault`
 		 * value to `false`.
 		 */
-		isDefault?: boolean;
+		isDefault?: boolean | null;
 
 		/**
 		 * Output only. The API resource name in the format
 		 * `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`. Assigned by
 		 * the server.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -256,7 +256,7 @@ export namespace MyNS {
 	export interface CreateCustomerRequest {
 
 		/** A reseller, vendor, or customer in the zero-touch reseller and customer APIs. */
-		customer?: Company;
+		customer?: Company | null;
 	}
 
 
@@ -267,7 +267,7 @@ export namespace MyNS {
 		 * Required. The configuration applied to the device in the format
 		 * `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`.
 		 */
-		configuration?: string;
+		configuration?: string | null;
 
 		/**
 		 * A `DeviceReference` is an API abstraction that lets you supply a _device_
@@ -279,7 +279,7 @@ export namespace MyNS {
 		 * because it's more flexible for the caller. To learn more about device
 		 * identifiers, read [Identifiers](/zero-touch/guides/identifiers).
 		 */
-		device?: DeviceReference;
+		device?: DeviceReference | null;
 	}
 
 
@@ -296,14 +296,14 @@ export namespace MyNS {
 	export interface DeviceReference {
 
 		/** The ID of the device. */
-		deviceId?: string;
+		deviceId?: string | null;
 
 		/**
 		 * Encapsulates hardware and product IDs to identify a manufactured device.
 		 * To understand requirements on identifier sets, read
 		 * [Identifiers](/zero-touch/guides/identifiers).
 		 */
-		deviceIdentifier?: DeviceIdentifier;
+		deviceIdentifier?: DeviceIdentifier | null;
 	}
 
 
@@ -311,7 +311,7 @@ export namespace MyNS {
 	export interface CustomerListConfigurationsResponse {
 
 		/** The configurations. */
-		configurations?: Array<Configuration>;
+		configurations?: Array<Configuration> | null;
 	}
 
 
@@ -319,13 +319,13 @@ export namespace MyNS {
 	export interface CustomerListCustomersResponse {
 
 		/** The customer accounts the calling user is a member of. */
-		customers?: Array<Company>;
+		customers?: Array<Company> | null;
 
 		/**
 		 * A token used to access the next page of results. Omitted if no further
 		 * results are available.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -333,13 +333,13 @@ export namespace MyNS {
 	export interface CustomerListDevicesResponse {
 
 		/** The customer's devices. */
-		devices?: Array<Device>;
+		devices?: Array<Device> | null;
 
 		/**
 		 * A token used to access the next page of results. Omitted if no further
 		 * results are available.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -355,32 +355,32 @@ export namespace MyNS {
 		 * `partners.devices.unclaimAsync`
 		 * to remove the device from zero-touch enrollment.
 		 */
-		claims?: Array<DeviceClaim>;
+		claims?: Array<DeviceClaim> | null;
 
 		/** Not available to resellers. */
-		configuration?: string;
+		configuration?: string | null;
 
 		/** Output only. The ID of the device. Assigned by the server. */
-		deviceId?: string;
+		deviceId?: string | null;
 
 		/**
 		 * Encapsulates hardware and product IDs to identify a manufactured device.
 		 * To understand requirements on identifier sets, read
 		 * [Identifiers](/zero-touch/guides/identifiers).
 		 */
-		deviceIdentifier?: DeviceIdentifier;
+		deviceIdentifier?: DeviceIdentifier | null;
 
 		/**
 		 * Metadata entries that can be attached to a `Device`. To learn more, read
 		 * [Device metadata](/zero-touch/guides/metadata).
 		 */
-		deviceMetadata?: DeviceMetadata;
+		deviceMetadata?: DeviceMetadata | null;
 
 		/**
 		 * Output only. The API resource name in the format
 		 * `partners/[PARTNER_ID]/devices/[DEVICE_ID]`. Assigned by the server.
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -393,25 +393,25 @@ export namespace MyNS {
 	export interface DeviceClaim {
 
 		/** The ID of the Customer that purchased the device. */
-		ownerCompanyId?: string;
+		ownerCompanyId?: string | null;
 
 		/** The ID of the reseller that claimed the device. */
-		resellerId?: string;
+		resellerId?: string | null;
 
 		/** Output only. The type of claim made on the device. */
-		sectionType?: ClaimDeviceRequestSectionType;
+		sectionType?: ClaimDeviceRequestSectionType | null;
 
 		/**
 		 * The timestamp when the device will exit ‘vacation mode’. This value is
 		 * present iff the device is in 'vacation mode'.
 		 */
-		vacationModeExpireTime?: string;
+		vacationModeExpireTime?: string | null;
 
 		/**
 		 * The timestamp when the device was put into ‘vacation mode’. This value is
 		 * present iff the device is in 'vacation mode'.
 		 */
-		vacationModeStartTime?: string;
+		vacationModeStartTime?: string | null;
 	}
 
 
@@ -422,7 +422,7 @@ export namespace MyNS {
 		 * The list of DPCs available to the customer that support zero-touch
 		 * enrollment.
 		 */
-		dpcs?: Array<Dpc>;
+		dpcs?: Array<Dpc> | null;
 	}
 
 
@@ -439,7 +439,7 @@ export namespace MyNS {
 		 * Output only. The title of the DPC app in Google Play. For example, _Google
 		 * Apps Device Policy_. Useful in an application's user interface.
 		 */
-		dpcName?: string;
+		dpcName?: string | null;
 
 		/**
 		 * Output only. The API resource name in the format
@@ -447,14 +447,14 @@ export namespace MyNS {
 		 * the server. To maintain a reference to a DPC across customer accounts,
 		 * persist and match the last path component (`DPC_ID`).
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Output only. The DPC's Android application ID that looks like a Java
 		 * package name. Zero-touch enrollment installs the DPC app onto a device
 		 * using this identifier.
 		 */
-		packageName?: string;
+		packageName?: string | null;
 	}
 
 
@@ -471,7 +471,7 @@ export namespace MyNS {
 		 * because it's more flexible for the caller. To learn more about device
 		 * identifiers, read [Identifiers](/zero-touch/guides/identifiers).
 		 */
-		device?: DeviceReference;
+		device?: DeviceReference | null;
 	}
 
 
@@ -488,7 +488,7 @@ export namespace MyNS {
 		 * because it's more flexible for the caller. To learn more about device
 		 * identifiers, read [Identifiers](/zero-touch/guides/identifiers).
 		 */
-		device?: DeviceReference;
+		device?: DeviceReference | null;
 	}
 
 
@@ -504,17 +504,17 @@ export namespace MyNS {
 		 * from the number of updates in the request if the API can't parse some of
 		 * the updates.
 		 */
-		devicesCount?: number;
+		devicesCount?: number | null;
 
 		/** The processing status of the operation. */
-		processingStatus?: DevicesLongRunningOperationMetadataProcessingStatus;
+		processingStatus?: DevicesLongRunningOperationMetadataProcessingStatus | null;
 
 		/**
 		 * The processing progress of the operation. Measured as a number from 0 to
 		 * 100. A value of 10O doesnt always mean the operation completed—check for
 		 * the inclusion of a `done` field.
 		 */
-		progress?: number;
+		progress?: number | null;
 	}
 
 	export enum DevicesLongRunningOperationMetadataProcessingStatus { BATCH_PROCESS_STATUS_UNSPECIFIED = 0, BATCH_PROCESS_PENDING = 1, BATCH_PROCESS_IN_PROGRESS = 2, BATCH_PROCESS_PROCESSED = 3 }
@@ -532,13 +532,13 @@ export namespace MyNS {
 		 * One `PerDeviceStatus` per device. The list order matches the items in the
 		 * original request.
 		 */
-		perDeviceStatus?: Array<OperationPerDevice>;
+		perDeviceStatus?: Array<OperationPerDevice> | null;
 
 		/**
 		 * A summary of how many items in the operation the server processed
 		 * successfully. Updated as the operation progresses.
 		 */
-		successCount?: number;
+		successCount?: number | null;
 	}
 
 
@@ -549,16 +549,16 @@ export namespace MyNS {
 	export interface OperationPerDevice {
 
 		/** Identifies one claim request. */
-		claim?: PartnerClaim;
+		claim?: PartnerClaim | null;
 
 		/** Captures the processing status for each device in the operation. */
-		result?: PerDeviceStatusInBatch;
+		result?: PerDeviceStatusInBatch | null;
 
 		/** Identifies one unclaim request. */
-		unclaim?: PartnerUnclaim;
+		unclaim?: PartnerUnclaim | null;
 
 		/** Identifies metadata updates to one device. */
-		updateMetadata?: UpdateMetadataArguments;
+		updateMetadata?: UpdateMetadataArguments | null;
 	}
 
 
@@ -566,16 +566,16 @@ export namespace MyNS {
 	export interface PerDeviceStatusInBatch {
 
 		/** If processing succeeds, the device ID of the device. */
-		deviceId?: string;
+		deviceId?: string | null;
 
 		/** If processing fails, the error type. */
-		errorIdentifier?: string;
+		errorIdentifier?: string | null;
 
 		/** If processing fails, a developer message explaining what went wrong. */
-		errorMessage?: string;
+		errorMessage?: string | null;
 
 		/** The result status of the device after processing. */
-		status?: PerDeviceStatusInBatchStatus;
+		status?: PerDeviceStatusInBatchStatus | null;
 	}
 
 	export enum PerDeviceStatusInBatchStatus { SINGLE_DEVICE_STATUS_UNSPECIFIED = 0, SINGLE_DEVICE_STATUS_UNKNOWN_ERROR = 1, SINGLE_DEVICE_STATUS_OTHER_ERROR = 2, SINGLE_DEVICE_STATUS_SUCCESS = 3, SINGLE_DEVICE_STATUS_PERMISSION_DENIED = 4, SINGLE_DEVICE_STATUS_INVALID_DEVICE_IDENTIFIER = 5, SINGLE_DEVICE_STATUS_INVALID_SECTION_TYPE = 6, SINGLE_DEVICE_STATUS_SECTION_NOT_YOURS = 7 }
@@ -585,26 +585,26 @@ export namespace MyNS {
 	export interface PartnerUnclaim {
 
 		/** Device ID of the device. */
-		deviceId?: string;
+		deviceId?: string | null;
 
 		/**
 		 * Encapsulates hardware and product IDs to identify a manufactured device.
 		 * To understand requirements on identifier sets, read
 		 * [Identifiers](/zero-touch/guides/identifiers).
 		 */
-		deviceIdentifier?: DeviceIdentifier;
+		deviceIdentifier?: DeviceIdentifier | null;
 
 		/** Required. The section type of the device's provisioning record. */
-		sectionType?: ClaimDeviceRequestSectionType;
+		sectionType?: ClaimDeviceRequestSectionType | null;
 
 		/**
 		 * The duration of the vacation unlock starting from when the request is
 		 * processed. (1 day is treated as 24 hours)
 		 */
-		vacationModeDays?: number;
+		vacationModeDays?: number | null;
 
 		/** The expiration time of the vacation unlock. */
-		vacationModeExpireTime?: string;
+		vacationModeExpireTime?: string | null;
 	}
 
 
@@ -612,20 +612,20 @@ export namespace MyNS {
 	export interface UpdateMetadataArguments {
 
 		/** Device ID of the device. */
-		deviceId?: string;
+		deviceId?: string | null;
 
 		/**
 		 * Encapsulates hardware and product IDs to identify a manufactured device.
 		 * To understand requirements on identifier sets, read
 		 * [Identifiers](/zero-touch/guides/identifiers).
 		 */
-		deviceIdentifier?: DeviceIdentifier;
+		deviceIdentifier?: DeviceIdentifier | null;
 
 		/**
 		 * Metadata entries that can be attached to a `Device`. To learn more, read
 		 * [Device metadata](/zero-touch/guides/metadata).
 		 */
-		deviceMetadata?: DeviceMetadata;
+		deviceMetadata?: DeviceMetadata | null;
 	}
 
 
@@ -650,16 +650,16 @@ export namespace MyNS {
 		 * To understand requirements on identifier sets, read
 		 * [Identifiers](/zero-touch/guides/identifiers).
 		 */
-		deviceIdentifier?: DeviceIdentifier;
+		deviceIdentifier?: DeviceIdentifier | null;
 
 		/**
 		 * Required. The maximum number of devices to show in a page of results. Must
 		 * be between 1 and 100 inclusive.
 		 */
-		limit?: string;
+		limit?: string | null;
 
 		/** A token specifying which result page to return. */
-		pageToken?: string;
+		pageToken?: string | null;
 	}
 
 
@@ -667,16 +667,16 @@ export namespace MyNS {
 	export interface FindDevicesByDeviceIdentifierResponse {
 
 		/** Found devices. */
-		devices?: Array<Device>;
+		devices?: Array<Device> | null;
 
 		/**
 		 * A token used to access the next page of results. Omitted if no further
 		 * results are available.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The total count of items in the list irrespective of pagination. */
-		totalSize?: number;
+		totalSize?: number | null;
 	}
 
 
@@ -684,19 +684,19 @@ export namespace MyNS {
 	export interface FindDevicesByOwnerRequest {
 
 		/** Required. The list of customer IDs to search for. */
-		customerId?: Array<string>;
+		customerId?: Array<string> | null;
 
 		/**
 		 * Required. The maximum number of devices to show in a page of results. Must
 		 * be between 1 and 100 inclusive.
 		 */
-		limit?: string;
+		limit?: string | null;
 
 		/** A token specifying which result page to return. */
-		pageToken?: string;
+		pageToken?: string | null;
 
 		/** Required. The section type of the device's provisioning record. */
-		sectionType?: ClaimDeviceRequestSectionType;
+		sectionType?: ClaimDeviceRequestSectionType | null;
 	}
 
 
@@ -704,16 +704,16 @@ export namespace MyNS {
 	export interface FindDevicesByOwnerResponse {
 
 		/** The customer's devices. */
-		devices?: Array<Device>;
+		devices?: Array<Device> | null;
 
 		/**
 		 * A token used to access the next page of results.
 		 * Omitted if no further results are available.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The total count of items in the list irrespective of pagination. */
-		totalSize?: number;
+		totalSize?: number | null;
 	}
 
 
@@ -721,16 +721,16 @@ export namespace MyNS {
 	export interface ListCustomersResponse {
 
 		/** List of customers related to this reseller partner. */
-		customers?: Array<Company>;
+		customers?: Array<Company> | null;
 
 		/**
 		 * A token to retrieve the next page of results. Omitted if no further results
 		 * are available.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The total count of items in the list irrespective of pagination. */
-		totalSize?: number;
+		totalSize?: number | null;
 	}
 
 
@@ -738,16 +738,16 @@ export namespace MyNS {
 	export interface ListVendorCustomersResponse {
 
 		/** List of customers of the vendor. */
-		customers?: Array<Company>;
+		customers?: Array<Company> | null;
 
 		/**
 		 * A token to retrieve the next page of results. Omitted if no further results
 		 * are available.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The total count of items in the list irrespective of pagination. */
-		totalSize?: number;
+		totalSize?: number | null;
 	}
 
 
@@ -758,16 +758,16 @@ export namespace MyNS {
 		 * A token to retrieve the next page of results. Omitted if no further results
 		 * are available.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** The total count of items in the list irrespective of pagination. */
-		totalSize?: number;
+		totalSize?: number | null;
 
 		/**
 		 * List of vendors of the reseller partner. Fields `name`, `companyId` and
 		 * `companyName` are populated to the Company object.
 		 */
-		vendors?: Array<Company>;
+		vendors?: Array<Company> | null;
 	}
 
 
@@ -782,7 +782,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -792,20 +792,20 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/** This field will contain a `DevicesLongRunningOperationMetadata` object if the operation is created by `claimAsync`, `unclaimAsync`, or `updateMetadataAsync`. */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/** This field will contain a `DevicesLongRunningOperationResponse` object if the operation is created by `claimAsync`, `unclaimAsync`, or `updateMetadataAsync`. */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -820,20 +820,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -841,26 +841,26 @@ export namespace MyNS {
 	export interface UnclaimDeviceRequest {
 
 		/** The device ID returned by `ClaimDevice`. */
-		deviceId?: string;
+		deviceId?: string | null;
 
 		/**
 		 * Encapsulates hardware and product IDs to identify a manufactured device.
 		 * To understand requirements on identifier sets, read
 		 * [Identifiers](/zero-touch/guides/identifiers).
 		 */
-		deviceIdentifier?: DeviceIdentifier;
+		deviceIdentifier?: DeviceIdentifier | null;
 
 		/** Required. The section type of the device's provisioning record. */
-		sectionType?: ClaimDeviceRequestSectionType;
+		sectionType?: ClaimDeviceRequestSectionType | null;
 
 		/**
 		 * The duration of the vacation unlock starting from when the request is
 		 * processed. (1 day is treated as 24 hours)
 		 */
-		vacationModeDays?: number;
+		vacationModeDays?: number | null;
 
 		/** The expiration time of the vacation unlock. */
-		vacationModeExpireTime?: string;
+		vacationModeExpireTime?: string | null;
 	}
 
 
@@ -868,7 +868,7 @@ export namespace MyNS {
 	export interface UnclaimDevicesRequest {
 
 		/** Required. The list of devices to unclaim. */
-		unclaims?: Array<PartnerUnclaim>;
+		unclaims?: Array<PartnerUnclaim> | null;
 	}
 
 
@@ -876,7 +876,7 @@ export namespace MyNS {
 	export interface UpdateDeviceMetadataInBatchRequest {
 
 		/** Required. The list of metadata updates. */
-		updates?: Array<UpdateMetadataArguments>;
+		updates?: Array<UpdateMetadataArguments> | null;
 	}
 
 
@@ -887,7 +887,7 @@ export namespace MyNS {
 		 * Metadata entries that can be attached to a `Device`. To learn more, read
 		 * [Device metadata](/zero-touch/guides/metadata).
 		 */
-		deviceMetadata?: DeviceMetadata;
+		deviceMetadata?: DeviceMetadata | null;
 	}
 
 	@Injectable()
@@ -903,7 +903,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A token specifying which result page to return.
 		 * @return {void} Successful response
 		 */
-		Androiddeviceprovisioning_customers_list(pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Androiddeviceprovisioning_customers_list(pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/customers?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -929,7 +929,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A token identifying a page of results returned by the server.
 		 * @return {void} Successful response
 		 */
-		Androiddeviceprovisioning_partners_customers_list(partnerId: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Androiddeviceprovisioning_partners_customers_list(partnerId: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/partners/' + (partnerId == null ? '' : encodeURIComponent(partnerId)) + '/customers&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1052,7 +1052,7 @@ export namespace MyNS {
 		 * the Protocol Buffers documentation.
 		 * @return {void} Successful response
 		 */
-		Androiddeviceprovisioning_customers_configurations_patch(name: string, updateMask: string, requestBody: Configuration): Observable<HttpResponse<string>> {
+		Androiddeviceprovisioning_customers_configurations_patch(name: string, updateMask: string | null | undefined, requestBody: Configuration): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1088,7 +1088,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A token identifying a page of results returned by the server.
 		 * @return {void} Successful response
 		 */
-		Androiddeviceprovisioning_partners_vendors_customers_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Androiddeviceprovisioning_partners_vendors_customers_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/customers&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1117,7 +1117,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A token specifying which result page to return.
 		 * @return {void} Successful response
 		 */
-		Androiddeviceprovisioning_customers_devices_list(parent: string, pageSize: string, pageToken: string): Observable<HttpResponse<string>> {
+		Androiddeviceprovisioning_customers_devices_list(parent: string, pageSize: string | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/devices&pageSize=' + (pageSize == null ? '' : encodeURIComponent(pageSize)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1179,7 +1179,7 @@ export namespace MyNS {
 		 * @param {string} pageToken A token identifying a page of results returned by the server.
 		 * @return {void} Successful response
 		 */
-		Androiddeviceprovisioning_partners_vendors_list(parent: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		Androiddeviceprovisioning_partners_vendors_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/vendors&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 	}

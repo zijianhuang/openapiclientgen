@@ -23,29 +23,29 @@ export namespace MyNS {
 	export interface ActivateUserResponse {
 
 		/** Describes a user. */
-		User?: User;
+		User?: User | null;
 	}
 
 
 	/** Describes a user. */
 	export interface User {
-		Id?: string;
-		Username?: string;
-		EmailAddress?: string;
-		GivenName?: string;
-		Surname?: string;
-		OrganizationId?: string;
-		RootFolderId?: string;
-		RecycleBinFolderId?: string;
-		Status?: UserStatus;
-		Type?: UserType;
-		CreatedTimestamp?: Date;
-		ModifiedTimestamp?: Date;
-		TimeZoneId?: string;
-		Locale?: UserLocale;
+		Id?: string | null;
+		Username?: string | null;
+		EmailAddress?: string | null;
+		GivenName?: string | null;
+		Surname?: string | null;
+		OrganizationId?: string | null;
+		RootFolderId?: string | null;
+		RecycleBinFolderId?: string | null;
+		Status?: UserStatus | null;
+		Type?: UserType | null;
+		CreatedTimestamp?: Date | null;
+		ModifiedTimestamp?: Date | null;
+		TimeZoneId?: string | null;
+		Locale?: UserLocale | null;
 
 		/** Describes the storage for a user. */
-		Storage?: UserStorageMetadata;
+		Storage?: UserStorageMetadata | null;
 	}
 
 	export enum UserStatus { ACTIVE = 0, INACTIVE = 1, PENDING = 2 }
@@ -57,34 +57,34 @@ export namespace MyNS {
 
 	/** Describes the storage for a user. */
 	export interface UserStorageMetadata {
-		StorageUtilizedInBytes?: number;
+		StorageUtilizedInBytes?: number | null;
 
 		/** Describes the storage for a user. */
-		StorageRule?: StorageRuleType;
+		StorageRule?: StorageRuleType | null;
 	}
 
 
 	/** Describes the storage for a user. */
 	export interface StorageRuleType {
-		StorageAllocatedInBytes?: number;
-		StorageType?: StorageRuleTypeStorageType;
+		StorageAllocatedInBytes?: number | null;
+		StorageType?: StorageRuleTypeStorageType | null;
 	}
 
 	export enum StorageRuleTypeStorageType { UNLIMITED = 0, QUOTA = 1 }
 
 	export interface AddResourcePermissionsResponse {
-		ShareResults?: Array<ShareResult>;
+		ShareResults?: Array<ShareResult> | null;
 	}
 
 
 	/** Describes the share results of a resource. */
 	export interface ShareResult {
-		PrincipalId?: string;
-		InviteePrincipalId?: string;
-		Role?: ShareResultRole;
-		Status?: ShareResultStatus;
-		ShareId?: string;
-		StatusMessage?: string;
+		PrincipalId?: string | null;
+		InviteePrincipalId?: string | null;
+		Role?: ShareResultRole | null;
+		Status?: ShareResultStatus | null;
+		ShareId?: string | null;
+		StatusMessage?: string | null;
 	}
 
 	export enum ShareResultRole { VIEWER = 0, CONTRIBUTOR = 1, OWNER = 2, COOWNER = 3 }
@@ -104,23 +104,23 @@ export namespace MyNS {
 	export interface CreateCommentResponse {
 
 		/** Describes a comment. */
-		Comment?: Comment;
+		Comment?: Comment | null;
 	}
 
 
 	/** Describes a comment. */
 	export interface Comment {
 		CommentId: string;
-		ParentId?: string;
-		ThreadId?: string;
-		Text?: string;
+		ParentId?: string | null;
+		ThreadId?: string | null;
+		Text?: string | null;
 
 		/** Describes a user. */
-		Contributor?: User;
-		CreatedTimestamp?: Date;
-		Status?: CommentStatus;
-		Visibility?: CommentVisibility;
-		RecipientId?: string;
+		Contributor?: User | null;
+		CreatedTimestamp?: Date | null;
+		Status?: CommentStatus | null;
+		Visibility?: CommentVisibility | null;
+		RecipientId?: string | null;
 	}
 
 	export enum CommentStatus { DRAFT = 0, PUBLISHED = 1, DELETED = 2 }
@@ -142,23 +142,23 @@ export namespace MyNS {
 	export interface CreateFolderResponse {
 
 		/** Describes a folder. */
-		Metadata?: FolderMetadata;
+		Metadata?: FolderMetadata | null;
 	}
 
 
 	/** Describes a folder. */
 	export interface FolderMetadata {
-		Id?: string;
-		Name?: string;
-		CreatorId?: string;
-		ParentFolderId?: string;
-		CreatedTimestamp?: Date;
-		ModifiedTimestamp?: Date;
-		ResourceState?: FolderMetadataResourceState;
-		Signature?: string;
-		Labels?: Array<string>;
-		Size?: number;
-		LatestVersionSize?: number;
+		Id?: string | null;
+		Name?: string | null;
+		CreatorId?: string | null;
+		ParentFolderId?: string | null;
+		CreatedTimestamp?: Date | null;
+		ModifiedTimestamp?: Date | null;
+		ResourceState?: FolderMetadataResourceState | null;
+		Signature?: string | null;
+		Labels?: Array<string> | null;
+		Size?: number | null;
+		LatestVersionSize?: number | null;
 	}
 
 	export enum FolderMetadataResourceState { ACTIVE = 0, RESTORING = 1, RECYCLING = 2, RECYCLED = 3 }
@@ -181,15 +181,15 @@ export namespace MyNS {
 	export interface CreateNotificationSubscriptionResponse {
 
 		/** Describes a subscription. */
-		Subscription?: Subscription;
+		Subscription?: Subscription | null;
 	}
 
 
 	/** Describes a subscription. */
 	export interface Subscription {
-		SubscriptionId?: string;
-		EndPoint?: string;
-		Protocol?: SubscriptionProtocol;
+		SubscriptionId?: string | null;
+		EndPoint?: string | null;
+		Protocol?: SubscriptionProtocol | null;
 	}
 
 	export enum SubscriptionProtocol { HTTPS = 0 }
@@ -200,7 +200,7 @@ export namespace MyNS {
 	export interface CreateUserResponse {
 
 		/** Describes a user. */
-		User?: User;
+		User?: User | null;
 	}
 
 	export enum StorageType { UNLIMITED = 0, QUOTA = 1 }
@@ -215,32 +215,32 @@ export namespace MyNS {
 	}
 
 	export interface DescribeActivitiesResponse {
-		UserActivities?: Array<Activity>;
-		Marker?: string;
+		UserActivities?: Array<Activity> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Describes the activity information. */
 	export interface Activity {
-		Type?: ActivityType;
-		TimeStamp?: Date;
-		IsIndirectActivity?: boolean;
-		OrganizationId?: string;
+		Type?: ActivityType | null;
+		TimeStamp?: Date | null;
+		IsIndirectActivity?: boolean | null;
+		OrganizationId?: string | null;
 
 		/** Describes the metadata of the user. */
-		Initiator?: UserMetadata;
+		Initiator?: UserMetadata | null;
 
 		/** Describes the users or user groups. */
-		Participants?: Participants;
+		Participants?: Participants | null;
 
 		/** Describes the metadata of a resource. */
-		ResourceMetadata?: ResourceMetadata;
+		ResourceMetadata?: ResourceMetadata | null;
 
 		/** Describes the metadata of a resource. */
-		OriginalParent?: ResourceMetadata;
+		OriginalParent?: ResourceMetadata | null;
 
 		/** Describes the metadata of a comment. */
-		CommentMetadata?: CommentMetadata;
+		CommentMetadata?: CommentMetadata | null;
 	}
 
 	export enum ActivityType { DOCUMENT_CHECKED_IN = 0, DOCUMENT_CHECKED_OUT = 1, DOCUMENT_RENAMED = 2, DOCUMENT_VERSION_UPLOADED = 3, DOCUMENT_VERSION_DELETED = 4, DOCUMENT_VERSION_VIEWED = 5, DOCUMENT_VERSION_DOWNLOADED = 6, DOCUMENT_RECYCLED = 7, DOCUMENT_RESTORED = 8, DOCUMENT_REVERTED = 9, DOCUMENT_SHARED = 10, DOCUMENT_UNSHARED = 11, DOCUMENT_SHARE_PERMISSION_CHANGED = 12, DOCUMENT_SHAREABLE_LINK_CREATED = 13, DOCUMENT_SHAREABLE_LINK_REMOVED = 14, DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED = 15, DOCUMENT_MOVED = 16, DOCUMENT_COMMENT_ADDED = 17, DOCUMENT_COMMENT_DELETED = 18, DOCUMENT_ANNOTATION_ADDED = 19, DOCUMENT_ANNOTATION_DELETED = 20, FOLDER_CREATED = 21, FOLDER_DELETED = 22, FOLDER_RENAMED = 23, FOLDER_RECYCLED = 24, FOLDER_RESTORED = 25, FOLDER_SHARED = 26, FOLDER_UNSHARED = 27, FOLDER_SHARE_PERMISSION_CHANGED = 28, FOLDER_SHAREABLE_LINK_CREATED = 29, FOLDER_SHAREABLE_LINK_REMOVED = 30, FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED = 31, FOLDER_MOVED = 32 }
@@ -248,39 +248,39 @@ export namespace MyNS {
 
 	/** Describes the metadata of the user. */
 	export interface UserMetadata {
-		Id?: string;
-		Username?: string;
-		GivenName?: string;
-		Surname?: string;
-		EmailAddress?: string;
+		Id?: string | null;
+		Username?: string | null;
+		GivenName?: string | null;
+		Surname?: string | null;
+		EmailAddress?: string | null;
 	}
 
 
 	/** Describes the users or user groups. */
 	export interface Participants {
-		Users?: Array<UserMetadata>;
-		Groups?: Array<GroupMetadata>;
+		Users?: Array<UserMetadata> | null;
+		Groups?: Array<GroupMetadata> | null;
 	}
 
 
 	/** Describes the metadata of a user group. */
 	export interface GroupMetadata {
-		Id?: string;
-		Name?: string;
+		Id?: string | null;
+		Name?: string | null;
 	}
 
 
 	/** Describes the metadata of a resource. */
 	export interface ResourceMetadata {
-		Type?: ResourceMetadataType;
-		Name?: string;
-		OriginalName?: string;
-		Id?: string;
-		VersionId?: string;
+		Type?: ResourceMetadataType | null;
+		Name?: string | null;
+		OriginalName?: string | null;
+		Id?: string | null;
+		VersionId?: string | null;
 
 		/** Describes the metadata of the user. */
-		Owner?: UserMetadata;
-		ParentId?: string;
+		Owner?: UserMetadata | null;
+		ParentId?: string | null;
 	}
 
 	export enum ResourceMetadataType { FOLDER = 0, DOCUMENT = 1 }
@@ -288,44 +288,44 @@ export namespace MyNS {
 
 	/** Describes the metadata of a comment. */
 	export interface CommentMetadata {
-		CommentId?: string;
+		CommentId?: string | null;
 
 		/** Describes a user. */
-		Contributor?: User;
-		CreatedTimestamp?: Date;
-		CommentStatus?: CommentStatus;
-		RecipientId?: string;
+		Contributor?: User | null;
+		CreatedTimestamp?: Date | null;
+		CommentStatus?: CommentStatus | null;
+		RecipientId?: string | null;
 	}
 
 	export interface InvalidArgumentException {
 	}
 
 	export interface DescribeCommentsResponse {
-		Comments?: Array<Comment>;
-		Marker?: string;
+		Comments?: Array<Comment> | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeDocumentVersionsResponse {
-		DocumentVersions?: Array<DocumentVersionMetadata>;
-		Marker?: string;
+		DocumentVersions?: Array<DocumentVersionMetadata> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Describes a version of a document. */
 	export interface DocumentVersionMetadata {
-		Id?: string;
-		Name?: string;
-		ContentType?: string;
-		Size?: number;
-		Signature?: string;
-		Status?: DocumentVersionMetadataStatus;
-		CreatedTimestamp?: Date;
-		ModifiedTimestamp?: Date;
-		ContentCreatedTimestamp?: Date;
-		ContentModifiedTimestamp?: Date;
-		CreatorId?: string;
-		Thumbnail?: DocumentThumbnailUrlMap;
-		Source?: DocumentSourceUrlMap;
+		Id?: string | null;
+		Name?: string | null;
+		ContentType?: string | null;
+		Size?: number | null;
+		Signature?: string | null;
+		Status?: DocumentVersionMetadataStatus | null;
+		CreatedTimestamp?: Date | null;
+		ModifiedTimestamp?: Date | null;
+		ContentCreatedTimestamp?: Date | null;
+		ContentModifiedTimestamp?: Date | null;
+		CreatorId?: string | null;
+		Thumbnail?: DocumentThumbnailUrlMap | null;
+		Source?: DocumentSourceUrlMap | null;
 	}
 
 	export enum DocumentVersionMetadataStatus { INITIALIZED = 0, ACTIVE = 1 }
@@ -337,67 +337,67 @@ export namespace MyNS {
 	}
 
 	export interface DescribeFolderContentsResponse {
-		Folders?: Array<FolderMetadata>;
-		Documents?: Array<DocumentMetadata>;
-		Marker?: string;
+		Folders?: Array<FolderMetadata> | null;
+		Documents?: Array<DocumentMetadata> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Describes the document. */
 	export interface DocumentMetadata {
-		Id?: string;
-		CreatorId?: string;
-		ParentFolderId?: string;
-		CreatedTimestamp?: Date;
-		ModifiedTimestamp?: Date;
+		Id?: string | null;
+		CreatorId?: string | null;
+		ParentFolderId?: string | null;
+		CreatedTimestamp?: Date | null;
+		ModifiedTimestamp?: Date | null;
 
 		/** Describes a version of a document. */
-		LatestVersionMetadata?: DocumentVersionMetadata;
-		ResourceState?: FolderMetadataResourceState;
-		Labels?: Array<string>;
+		LatestVersionMetadata?: DocumentVersionMetadata | null;
+		ResourceState?: FolderMetadataResourceState | null;
+		Labels?: Array<string> | null;
 	}
 
 	export interface DescribeGroupsResponse {
-		Groups?: Array<GroupMetadata>;
-		Marker?: string;
+		Groups?: Array<GroupMetadata> | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeNotificationSubscriptionsResponse {
-		Subscriptions?: Array<Subscription>;
-		Marker?: string;
+		Subscriptions?: Array<Subscription> | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeResourcePermissionsResponse {
-		Principals?: Array<Principal>;
-		Marker?: string;
+		Principals?: Array<Principal> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Describes a resource. */
 	export interface Principal {
-		Id?: string;
-		Type?: SharePrincipalType;
-		Roles?: Array<PermissionInfo>;
+		Id?: string | null;
+		Type?: SharePrincipalType | null;
+		Roles?: Array<PermissionInfo> | null;
 	}
 
 
 	/** Describes the permissions. */
 	export interface PermissionInfo {
-		Role?: ShareResultRole;
-		Type?: PermissionInfoType;
+		Role?: ShareResultRole | null;
+		Type?: PermissionInfoType | null;
 	}
 
 	export enum PermissionInfoType { DIRECT = 0, INHERITED = 1 }
 
 	export interface DescribeRootFoldersResponse {
-		Folders?: Array<FolderMetadata>;
-		Marker?: string;
+		Folders?: Array<FolderMetadata> | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeUsersResponse {
-		Users?: Array<User>;
-		TotalNumberOfUsers?: number;
-		Marker?: string;
+		Users?: Array<User> | null;
+		TotalNumberOfUsers?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface RequestedEntityTooLargeException {
@@ -406,14 +406,14 @@ export namespace MyNS {
 	export interface GetCurrentUserResponse {
 
 		/** Describes a user. */
-		User?: User;
+		User?: User | null;
 	}
 
 	export interface GetDocumentResponse {
 
 		/** Describes the document. */
-		Metadata?: DocumentMetadata;
-		CustomMetadata?: CustomMetadataMap;
+		Metadata?: DocumentMetadata | null;
+		CustomMetadata?: CustomMetadataMap | null;
 	}
 
 	export interface CustomMetadataMap {
@@ -425,62 +425,62 @@ export namespace MyNS {
 	export interface GetDocumentPathResponse {
 
 		/** Describes the path information of a resource. */
-		Path?: ResourcePath;
+		Path?: ResourcePath | null;
 	}
 
 
 	/** Describes the path information of a resource. */
 	export interface ResourcePath {
-		Components?: Array<ResourcePathComponent>;
+		Components?: Array<ResourcePathComponent> | null;
 	}
 
 
 	/** Describes the resource path. */
 	export interface ResourcePathComponent {
-		Id?: string;
-		Name?: string;
+		Id?: string | null;
+		Name?: string | null;
 	}
 
 	export interface GetDocumentVersionResponse {
 
 		/** Describes a version of a document. */
-		Metadata?: DocumentVersionMetadata;
-		CustomMetadata?: CustomMetadataMap;
+		Metadata?: DocumentVersionMetadata | null;
+		CustomMetadata?: CustomMetadataMap | null;
 	}
 
 	export interface GetFolderResponse {
 
 		/** Describes a folder. */
-		Metadata?: FolderMetadata;
-		CustomMetadata?: CustomMetadataMap;
+		Metadata?: FolderMetadata | null;
+		CustomMetadata?: CustomMetadataMap | null;
 	}
 
 	export interface GetFolderPathResponse {
 
 		/** Describes the path information of a resource. */
-		Path?: ResourcePath;
+		Path?: ResourcePath | null;
 	}
 
 	export interface GetResourcesResponse {
-		Folders?: Array<FolderMetadata>;
-		Documents?: Array<DocumentMetadata>;
-		Marker?: string;
+		Folders?: Array<FolderMetadata> | null;
+		Documents?: Array<DocumentMetadata> | null;
+		Marker?: string | null;
 	}
 
 	export interface InitiateDocumentVersionUploadResponse {
 
 		/** Describes the document. */
-		Metadata?: DocumentMetadata;
+		Metadata?: DocumentMetadata | null;
 
 		/** Describes the upload. */
-		UploadMetadata?: UploadMetadata;
+		UploadMetadata?: UploadMetadata | null;
 	}
 
 
 	/** Describes the upload. */
 	export interface UploadMetadata {
-		UploadUrl?: string;
-		SignedHeaders?: SignedHeaderMap;
+		UploadUrl?: string | null;
+		SignedHeaders?: SignedHeaderMap | null;
 	}
 
 	export interface SignedHeaderMap {
@@ -504,7 +504,7 @@ export namespace MyNS {
 	export interface UpdateUserResponse {
 
 		/** Describes a user. */
-		User?: User;
+		User?: User | null;
 	}
 
 	export interface IllegalUserStateException {
@@ -522,15 +522,15 @@ export namespace MyNS {
 
 	/** Set of options which defines notification preferences of given action. */
 	export interface NotificationOptions {
-		SendEmail?: boolean;
-		EmailMessage?: string;
+		SendEmail?: boolean | null;
+		EmailMessage?: string | null;
 	}
 
 	export interface AddResourcePermissionsRequest {
 		Principals: Array<SharePrincipal>;
 
 		/** Set of options which defines notification preferences of given action. */
-		NotificationOptions?: NotificationOptions;
+		NotificationOptions?: NotificationOptions | null;
 	}
 
 	export enum BooleanEnumType { TRUE = 0, FALSE = 1 }
@@ -540,11 +540,11 @@ export namespace MyNS {
 	export enum CommentVisibilityType { PUBLIC = 0, PRIVATE = 1 }
 
 	export interface CreateCommentRequest {
-		ParentId?: string;
-		ThreadId?: string;
+		ParentId?: string | null;
+		ThreadId?: string | null;
 		Text: string;
-		Visibility?: CommentVisibility;
-		NotifyCollaborators?: boolean;
+		Visibility?: CommentVisibility | null;
+		NotifyCollaborators?: boolean | null;
 	}
 
 	export interface CreateCustomMetadataRequest {
@@ -552,7 +552,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateFolderRequest {
-		Name?: string;
+		Name?: string | null;
 		ParentFolderId: string;
 	}
 
@@ -571,16 +571,16 @@ export namespace MyNS {
 	}
 
 	export interface CreateUserRequest {
-		OrganizationId?: string;
+		OrganizationId?: string | null;
 		Username: string;
-		EmailAddress?: string;
+		EmailAddress?: string | null;
 		GivenName: string;
 		Surname: string;
 		Password: string;
-		TimeZoneId?: string;
+		TimeZoneId?: string | null;
 
 		/** Describes the storage for a user. */
-		StorageRule?: StorageRuleType;
+		StorageRule?: StorageRuleType | null;
 	}
 
 	export interface DeactivateUserRequest {
@@ -681,12 +681,12 @@ export namespace MyNS {
 	}
 
 	export interface InitiateDocumentVersionUploadRequest {
-		Id?: string;
-		Name?: string;
-		ContentCreatedTimestamp?: Date;
-		ContentModifiedTimestamp?: Date;
-		ContentType?: string;
-		DocumentSizeInBytes?: number;
+		Id?: string | null;
+		Name?: string | null;
+		ContentCreatedTimestamp?: Date | null;
+		ContentModifiedTimestamp?: Date | null;
+		ContentType?: string | null;
+		DocumentSizeInBytes?: number | null;
 		ParentFolderId: string;
 	}
 
@@ -709,31 +709,31 @@ export namespace MyNS {
 	export enum ShareStatusType { SUCCESS = 0, FAILURE = 1 }
 
 	export interface UpdateDocumentRequest {
-		Name?: string;
-		ParentFolderId?: string;
-		ResourceState?: FolderMetadataResourceState;
+		Name?: string | null;
+		ParentFolderId?: string | null;
+		ResourceState?: FolderMetadataResourceState | null;
 	}
 
 	export interface UpdateDocumentVersionRequest {
-		VersionStatus?: DocumentVersionStatus;
+		VersionStatus?: DocumentVersionStatus | null;
 	}
 
 	export interface UpdateFolderRequest {
-		Name?: string;
-		ParentFolderId?: string;
-		ResourceState?: FolderMetadataResourceState;
+		Name?: string | null;
+		ParentFolderId?: string | null;
+		ResourceState?: FolderMetadataResourceState | null;
 	}
 
 	export interface UpdateUserRequest {
-		GivenName?: string;
-		Surname?: string;
-		Type?: UserType;
+		GivenName?: string | null;
+		Surname?: string | null;
+		Type?: UserType | null;
 
 		/** Describes the storage for a user. */
-		StorageRule?: StorageRuleType;
-		TimeZoneId?: string;
-		Locale?: UpdateUserRequestLocale;
-		GrantPoweruserPrivileges?: BooleanEnumType;
+		StorageRule?: StorageRuleType | null;
+		TimeZoneId?: string | null;
+		Locale?: UpdateUserRequestLocale | null;
+		GrantPoweruserPrivileges?: BooleanEnumType | null;
 	}
 
 	export enum UpdateUserRequestLocale { en = 0, fr = 1, ko = 2, de = 3, es = 4, ja = 5, ru = 6, zh_CN = 7, zh_TW = 8, pt_BR = 9, _default = 10 }
@@ -765,7 +765,7 @@ export namespace MyNS {
 		 * @param {boolean} includeCustomMetadata Set this to TRUE to include custom metadata in the response.
 		 * @return {GetDocumentVersionResponse} Success
 		 */
-		GetDocumentVersion(DocumentId: string, VersionId: string, fields: string, includeCustomMetadata: boolean): Observable<GetDocumentVersionResponse> {
+		GetDocumentVersion(DocumentId: string, VersionId: string, fields: string | null | undefined, includeCustomMetadata: boolean | null | undefined): Observable<GetDocumentVersionResponse> {
 			return this.http.get<GetDocumentVersionResponse>(this.baseUri + 'api/v1/documents/' + (DocumentId == null ? '' : encodeURIComponent(DocumentId)) + '/versions/' + (VersionId == null ? '' : encodeURIComponent(VersionId)) + '&fields=' + (fields == null ? '' : encodeURIComponent(fields)) + '&includeCustomMetadata=' + includeCustomMetadata, {});
 		}
 
@@ -819,7 +819,7 @@ export namespace MyNS {
 		 * @param {string} marker The marker for the next set of results. (You received this marker from a previous call)
 		 * @return {DescribeResourcePermissionsResponse} Success
 		 */
-		DescribeResourcePermissions(ResourceId: string, principalId: string, limit: number, marker: string): Observable<DescribeResourcePermissionsResponse> {
+		DescribeResourcePermissions(ResourceId: string, principalId: string | null | undefined, limit: number | null | undefined, marker: string | null | undefined): Observable<DescribeResourcePermissionsResponse> {
 			return this.http.get<DescribeResourcePermissionsResponse>(this.baseUri + 'api/v1/resources/' + (ResourceId == null ? '' : encodeURIComponent(ResourceId)) + '/permissions&principalId=' + (principalId == null ? '' : encodeURIComponent(principalId)) + '&limit=' + limit + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)), {});
 		}
 
@@ -851,7 +851,7 @@ export namespace MyNS {
 		 * @param {string} versionid The ID of the version, if the custom metadata is being added to a document version.
 		 * @return {CreateCustomMetadataResponse} Success
 		 */
-		CreateCustomMetadata(ResourceId: string, versionid: string, requestBody: CreateCustomMetadataPutBody): Observable<CreateCustomMetadataResponse> {
+		CreateCustomMetadata(ResourceId: string, versionid: string | null | undefined, requestBody: CreateCustomMetadataPutBody): Observable<CreateCustomMetadataResponse> {
 			return this.http.put<CreateCustomMetadataResponse>(this.baseUri + 'api/v1/resources/' + (ResourceId == null ? '' : encodeURIComponent(ResourceId)) + '/customMetadata&versionid=' + (versionid == null ? '' : encodeURIComponent(versionid)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -864,7 +864,7 @@ export namespace MyNS {
 		 * @param {boolean} deleteAll Flag to indicate removal of all custom metadata properties from the specified resource.
 		 * @return {DeleteCustomMetadataResponse} Success
 		 */
-		DeleteCustomMetadata(ResourceId: string, versionId: string, keys: Array<string>, deleteAll: boolean): Observable<DeleteCustomMetadataResponse> {
+		DeleteCustomMetadata(ResourceId: string, versionId: string | null | undefined, keys: Array<string> | null | undefined, deleteAll: boolean | null | undefined): Observable<DeleteCustomMetadataResponse> {
 			return this.http.delete<DeleteCustomMetadataResponse>(this.baseUri + 'api/v1/resources/' + (ResourceId == null ? '' : encodeURIComponent(ResourceId)) + '/customMetadata&versionId=' + (versionId == null ? '' : encodeURIComponent(versionId)) + '&' + keys.map(z => `keys=${encodeURIComponent(z)}`).join('&') + '&deleteAll=' + deleteAll, {});
 		}
 
@@ -895,7 +895,7 @@ export namespace MyNS {
 		 * @param {boolean} deleteAll Flag to request removal of all labels from the specified resource.
 		 * @return {DeleteLabelsResponse} Success
 		 */
-		DeleteLabels(ResourceId: string, labels: Array<string>, deleteAll: boolean): Observable<DeleteLabelsResponse> {
+		DeleteLabels(ResourceId: string, labels: Array<string> | null | undefined, deleteAll: boolean | null | undefined): Observable<DeleteLabelsResponse> {
 			return this.http.delete<DeleteLabelsResponse>(this.baseUri + 'api/v1/resources/' + (ResourceId == null ? '' : encodeURIComponent(ResourceId)) + '/labels&' + labels.map(z => `labels=${encodeURIComponent(z)}`).join('&') + '&deleteAll=' + deleteAll, {});
 		}
 
@@ -917,7 +917,7 @@ export namespace MyNS {
 		 * @param {number} limit The maximum number of items to return with this call.
 		 * @return {DescribeNotificationSubscriptionsResponse} Success
 		 */
-		DescribeNotificationSubscriptions(OrganizationId: string, marker: string, limit: number): Observable<DescribeNotificationSubscriptionsResponse> {
+		DescribeNotificationSubscriptions(OrganizationId: string, marker: string | null | undefined, limit: number | null | undefined): Observable<DescribeNotificationSubscriptionsResponse> {
 			return this.http.get<DescribeNotificationSubscriptionsResponse>(this.baseUri + 'api/v1/organizations/' + (OrganizationId == null ? '' : encodeURIComponent(OrganizationId)) + '/subscriptions&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&limit=' + limit, {});
 		}
 
@@ -946,7 +946,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeUsersResponse} Success
 		 */
-		DescribeUsers(organizationId: string, userIds: string, query: string, include: UserFilterType, order: OrderType, sort: UserSortType, marker: string, limit: number, fields: string, Limit: string, Marker: string): Observable<DescribeUsersResponse> {
+		DescribeUsers(organizationId: string | null | undefined, userIds: string | null | undefined, query: string | null | undefined, include: UserFilterType | null | undefined, order: OrderType | null | undefined, sort: UserSortType | null | undefined, marker: string | null | undefined, limit: number | null | undefined, fields: string | null | undefined, Limit: string | null | undefined, Marker: string | null | undefined): Observable<DescribeUsersResponse> {
 			return this.http.get<DescribeUsersResponse>(this.baseUri + 'api/v1/users?organizationId=' + (organizationId == null ? '' : encodeURIComponent(organizationId)) + '&userIds=' + (userIds == null ? '' : encodeURIComponent(userIds)) + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&include=' + include + '&order=' + order + '&sort=' + sort + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&limit=' + limit + '&fields=' + (fields == null ? '' : encodeURIComponent(fields)) + '&Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), {});
 		}
 
@@ -979,7 +979,7 @@ export namespace MyNS {
 		 * @param {boolean} includeCustomMetadata Set this to <code>TRUE</code> to include custom metadata in the response.
 		 * @return {GetDocumentResponse} Success
 		 */
-		GetDocument(DocumentId: string, includeCustomMetadata: boolean): Observable<GetDocumentResponse> {
+		GetDocument(DocumentId: string, includeCustomMetadata: boolean | null | undefined): Observable<GetDocumentResponse> {
 			return this.http.get<GetDocumentResponse>(this.baseUri + 'api/v1/documents/' + (DocumentId == null ? '' : encodeURIComponent(DocumentId)) + '&includeCustomMetadata=' + includeCustomMetadata, {});
 		}
 
@@ -1010,7 +1010,7 @@ export namespace MyNS {
 		 * @param {boolean} includeCustomMetadata Set to TRUE to include custom metadata in the response.
 		 * @return {GetFolderResponse} Success
 		 */
-		GetFolder(FolderId: string, includeCustomMetadata: boolean): Observable<GetFolderResponse> {
+		GetFolder(FolderId: string, includeCustomMetadata: boolean | null | undefined): Observable<GetFolderResponse> {
 			return this.http.get<GetFolderResponse>(this.baseUri + 'api/v1/folders/' + (FolderId == null ? '' : encodeURIComponent(FolderId)) + '&includeCustomMetadata=' + includeCustomMetadata, {});
 		}
 
@@ -1048,7 +1048,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeFolderContentsResponse} Success
 		 */
-		DescribeFolderContents(FolderId: string, sort: ResourceSortType, order: OrderType, limit: number, marker: string, type: FolderContentType, include: string, Limit: string, Marker: string): Observable<DescribeFolderContentsResponse> {
+		DescribeFolderContents(FolderId: string, sort: ResourceSortType | null | undefined, order: OrderType | null | undefined, limit: number | null | undefined, marker: string | null | undefined, type: FolderContentType | null | undefined, include: string | null | undefined, Limit: string | null | undefined, Marker: string | null | undefined): Observable<DescribeFolderContentsResponse> {
 			return this.http.get<DescribeFolderContentsResponse>(this.baseUri + 'api/v1/folders/' + (FolderId == null ? '' : encodeURIComponent(FolderId)) + '/contents&sort=' + sort + '&order=' + order + '&limit=' + limit + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&type=' + type + '&include=' + (include == null ? '' : encodeURIComponent(include)) + '&Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), {});
 		}
 
@@ -1097,7 +1097,7 @@ export namespace MyNS {
 		 * @param {string} marker The marker for the next set of results.
 		 * @return {DescribeActivitiesResponse} Success
 		 */
-		DescribeActivities(startTime: Date, endTime: Date, organizationId: string, activityTypes: string, resourceId: string, userId: string, includeIndirectActivities: boolean, limit: number, marker: string): Observable<DescribeActivitiesResponse> {
+		DescribeActivities(startTime: Date | null | undefined, endTime: Date | null | undefined, organizationId: string | null | undefined, activityTypes: string | null | undefined, resourceId: string | null | undefined, userId: string | null | undefined, includeIndirectActivities: boolean | null | undefined, limit: number | null | undefined, marker: string | null | undefined): Observable<DescribeActivitiesResponse> {
 			return this.http.get<DescribeActivitiesResponse>(this.baseUri + 'api/v1/activities?startTime=' + startTime.toISOString() + '&endTime=' + endTime.toISOString() + '&organizationId=' + (organizationId == null ? '' : encodeURIComponent(organizationId)) + '&activityTypes=' + (activityTypes == null ? '' : encodeURIComponent(activityTypes)) + '&resourceId=' + (resourceId == null ? '' : encodeURIComponent(resourceId)) + '&userId=' + (userId == null ? '' : encodeURIComponent(userId)) + '&includeIndirectActivities=' + includeIndirectActivities + '&limit=' + limit + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)), {});
 		}
 
@@ -1110,7 +1110,7 @@ export namespace MyNS {
 		 * @param {string} marker The marker for the next set of results. This marker was received from a previous call.
 		 * @return {DescribeCommentsResponse} Success
 		 */
-		DescribeComments(DocumentId: string, VersionId: string, limit: number, marker: string): Observable<DescribeCommentsResponse> {
+		DescribeComments(DocumentId: string, VersionId: string, limit: number | null | undefined, marker: string | null | undefined): Observable<DescribeCommentsResponse> {
 			return this.http.get<DescribeCommentsResponse>(this.baseUri + 'api/v1/documents/' + (DocumentId == null ? '' : encodeURIComponent(DocumentId)) + '/versions/' + (VersionId == null ? '' : encodeURIComponent(VersionId)) + '/comments&limit=' + limit + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)), {});
 		}
 
@@ -1126,7 +1126,7 @@ export namespace MyNS {
 		 * @param {string} Marker Pagination token
 		 * @return {DescribeDocumentVersionsResponse} Success
 		 */
-		DescribeDocumentVersions(DocumentId: string, marker: string, limit: number, include: string, fields: string, Limit: string, Marker: string): Observable<DescribeDocumentVersionsResponse> {
+		DescribeDocumentVersions(DocumentId: string, marker: string | null | undefined, limit: number | null | undefined, include: string | null | undefined, fields: string | null | undefined, Limit: string | null | undefined, Marker: string | null | undefined): Observable<DescribeDocumentVersionsResponse> {
 			return this.http.get<DescribeDocumentVersionsResponse>(this.baseUri + 'api/v1/documents/' + (DocumentId == null ? '' : encodeURIComponent(DocumentId)) + '/versions&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&limit=' + limit + '&include=' + (include == null ? '' : encodeURIComponent(include)) + '&fields=' + (fields == null ? '' : encodeURIComponent(fields)) + '&Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)), {});
 		}
 
@@ -1139,7 +1139,7 @@ export namespace MyNS {
 		 * @param {number} limit The maximum number of items to return with this call.
 		 * @return {DescribeGroupsResponse} Success
 		 */
-		DescribeGroups(searchQuery: string, organizationId: string, marker: string, limit: number): Observable<DescribeGroupsResponse> {
+		DescribeGroups(searchQuery: string, organizationId: string | null | undefined, marker: string | null | undefined, limit: number | null | undefined): Observable<DescribeGroupsResponse> {
 			return this.http.get<DescribeGroupsResponse>(this.baseUri + 'api/v1/groups#searchQuery?searchQuery=' + (searchQuery == null ? '' : encodeURIComponent(searchQuery)) + '&organizationId=' + (organizationId == null ? '' : encodeURIComponent(organizationId)) + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)) + '&limit=' + limit, {});
 		}
 
@@ -1150,7 +1150,7 @@ export namespace MyNS {
 		 * @param {string} marker The marker for the next set of results. (You received this marker from a previous call.)
 		 * @return {DescribeRootFoldersResponse} Success
 		 */
-		DescribeRootFolders(limit: number, marker: string): Observable<DescribeRootFoldersResponse> {
+		DescribeRootFolders(limit: number | null | undefined, marker: string | null | undefined): Observable<DescribeRootFoldersResponse> {
 			return this.http.get<DescribeRootFoldersResponse>(this.baseUri + 'api/v1/me/root#Authentication?limit=' + limit + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)), {});
 		}
 
@@ -1172,7 +1172,7 @@ export namespace MyNS {
 		 * @param {string} marker This value is not supported.
 		 * @return {GetDocumentPathResponse} Success
 		 */
-		GetDocumentPath(DocumentId: string, limit: number, fields: string, marker: string): Observable<GetDocumentPathResponse> {
+		GetDocumentPath(DocumentId: string, limit: number | null | undefined, fields: string | null | undefined, marker: string | null | undefined): Observable<GetDocumentPathResponse> {
 			return this.http.get<GetDocumentPathResponse>(this.baseUri + 'api/v1/documents/' + (DocumentId == null ? '' : encodeURIComponent(DocumentId)) + '/path&limit=' + limit + '&fields=' + (fields == null ? '' : encodeURIComponent(fields)) + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)), {});
 		}
 
@@ -1185,7 +1185,7 @@ export namespace MyNS {
 		 * @param {string} marker This value is not supported.
 		 * @return {GetFolderPathResponse} Success
 		 */
-		GetFolderPath(FolderId: string, limit: number, fields: string, marker: string): Observable<GetFolderPathResponse> {
+		GetFolderPath(FolderId: string, limit: number | null | undefined, fields: string | null | undefined, marker: string | null | undefined): Observable<GetFolderPathResponse> {
 			return this.http.get<GetFolderPathResponse>(this.baseUri + 'api/v1/folders/' + (FolderId == null ? '' : encodeURIComponent(FolderId)) + '/path&limit=' + limit + '&fields=' + (fields == null ? '' : encodeURIComponent(fields)) + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)), {});
 		}
 
@@ -1198,7 +1198,7 @@ export namespace MyNS {
 		 * @param {string} marker The marker for the next set of results. This marker was received from a previous call.
 		 * @return {GetResourcesResponse} Success
 		 */
-		GetResources(userId: string, collectionType: ResourceCollectionType, limit: number, marker: string): Observable<GetResourcesResponse> {
+		GetResources(userId: string | null | undefined, collectionType: ResourceCollectionType | null | undefined, limit: number | null | undefined, marker: string | null | undefined): Observable<GetResourcesResponse> {
 			return this.http.get<GetResourcesResponse>(this.baseUri + 'api/v1/resources?userId=' + (userId == null ? '' : encodeURIComponent(userId)) + '&collectionType=' + collectionType + '&limit=' + limit + '&marker=' + (marker == null ? '' : encodeURIComponent(marker)), {});
 		}
 
@@ -1219,7 +1219,7 @@ export namespace MyNS {
 		 * @param {SharePrincipalType} type The principal type of the resource.
 		 * @return {void} 
 		 */
-		RemoveResourcePermission(ResourceId: string, PrincipalId: string, type: SharePrincipalType): Observable<HttpResponse<string>> {
+		RemoveResourcePermission(ResourceId: string, PrincipalId: string, type: SharePrincipalType | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'api/v1/resources/' + (ResourceId == null ? '' : encodeURIComponent(ResourceId)) + '/permissions/' + (PrincipalId == null ? '' : encodeURIComponent(PrincipalId)) + '&type=' + type, { observe: 'response', responseType: 'text' });
 		}
 	}
@@ -1227,7 +1227,7 @@ export namespace MyNS {
 	export interface UpdateDocumentVersionPatchBody {
 
 		/** The status of the version. */
-		VersionStatus?: DocumentVersionStatus;
+		VersionStatus?: DocumentVersionStatus | null;
 	}
 
 	export interface AddResourcePermissionsPostBody {
@@ -1239,12 +1239,12 @@ export namespace MyNS {
 		Principals: Array<SharePrincipal>;
 
 		/** Set of options which defines notification preferences of given action. */
-		NotificationOptions?: AddResourcePermissionsPostBodyNotificationOptions;
+		NotificationOptions?: AddResourcePermissionsPostBodyNotificationOptions | null;
 	}
 
 	export interface AddResourcePermissionsPostBodyNotificationOptions {
-		SendEmail?: boolean;
-		EmailMessage?: string;
+		SendEmail?: boolean | null;
+		EmailMessage?: string | null;
 	}
 
 	export interface CreateCommentPostBody {
@@ -1255,7 +1255,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [\w+-.@]+
 		 */
-		ParentId?: string;
+		ParentId?: string | null;
 
 		/**
 		 * The ID of the root comment in the thread.
@@ -1263,7 +1263,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [\w+-.@]+
 		 */
-		ThreadId?: string;
+		ThreadId?: string | null;
 
 		/**
 		 * The text of the comment.
@@ -1274,10 +1274,10 @@ export namespace MyNS {
 		Text: string;
 
 		/** The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors. */
-		Visibility?: CommentVisibility;
+		Visibility?: CommentVisibility | null;
 
 		/** Set this parameter to TRUE to send an email out to the document collaborators after the comment is created. */
-		NotifyCollaborators?: boolean;
+		NotifyCollaborators?: boolean | null;
 	}
 
 	export interface CreateCustomMetadataPutBody {
@@ -1297,7 +1297,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [\u0020-\u202D\u202F-\uFFFF]+
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/**
 		 * The ID of the parent folder.
@@ -1350,7 +1350,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [&\w+-.@]+
 		 */
-		OrganizationId?: string;
+		OrganizationId?: string | null;
 
 		/**
 		 * The login name of the user.
@@ -1367,7 +1367,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
-		EmailAddress?: string;
+		EmailAddress?: string | null;
 
 		/**
 		 * The given name of the user.
@@ -1399,15 +1399,15 @@ export namespace MyNS {
 		 * Max length: 256
 		 * Min length: 1
 		 */
-		TimeZoneId?: string;
+		TimeZoneId?: string | null;
 
 		/** Describes the storage for a user. */
-		StorageRule?: CreateUserPostBodyStorageRule;
+		StorageRule?: CreateUserPostBodyStorageRule | null;
 	}
 
 	export interface CreateUserPostBodyStorageRule {
-		StorageAllocatedInBytes?: number;
-		StorageType?: StorageRuleTypeStorageType;
+		StorageAllocatedInBytes?: number | null;
+		StorageType?: StorageRuleTypeStorageType | null;
 	}
 
 	export interface UpdateDocumentPatchBody {
@@ -1418,7 +1418,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [\u0020-\u202D\u202F-\uFFFF]+
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/**
 		 * The ID of the parent folder.
@@ -1426,10 +1426,10 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [\w+-.@]+
 		 */
-		ParentFolderId?: string;
+		ParentFolderId?: string | null;
 
 		/** The resource state of the document. Only ACTIVE and RECYCLED are supported. */
-		ResourceState?: FolderMetadataResourceState;
+		ResourceState?: FolderMetadataResourceState | null;
 	}
 
 	export interface UpdateFolderPatchBody {
@@ -1440,7 +1440,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [\u0020-\u202D\u202F-\uFFFF]+
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/**
 		 * The ID of the parent folder.
@@ -1448,10 +1448,10 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [\w+-.@]+
 		 */
-		ParentFolderId?: string;
+		ParentFolderId?: string | null;
 
 		/** The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API. */
-		ResourceState?: FolderMetadataResourceState;
+		ResourceState?: FolderMetadataResourceState | null;
 	}
 
 	export interface UpdateUserPatchBody {
@@ -1461,38 +1461,38 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 1
 		 */
-		GivenName?: string;
+		GivenName?: string | null;
 
 		/**
 		 * The surname of the user.
 		 * Max length: 64
 		 * Min length: 1
 		 */
-		Surname?: string;
+		Surname?: string | null;
 
 		/** The type of the user. */
-		Type?: UserType;
+		Type?: UserType | null;
 
 		/** Describes the storage for a user. */
-		StorageRule?: UpdateUserPatchBodyStorageRule;
+		StorageRule?: UpdateUserPatchBodyStorageRule | null;
 
 		/**
 		 * The time zone ID of the user.
 		 * Max length: 256
 		 * Min length: 1
 		 */
-		TimeZoneId?: string;
+		TimeZoneId?: string | null;
 
 		/** The locale of the user. */
-		Locale?: UpdateUserPatchBodyLocale;
+		Locale?: UpdateUserPatchBodyLocale | null;
 
 		/** Boolean value to determine whether the user is granted Poweruser privileges. */
-		GrantPoweruserPrivileges?: BooleanEnumType;
+		GrantPoweruserPrivileges?: BooleanEnumType | null;
 	}
 
 	export interface UpdateUserPatchBodyStorageRule {
-		StorageAllocatedInBytes?: number;
-		StorageType?: StorageRuleTypeStorageType;
+		StorageAllocatedInBytes?: number | null;
+		StorageType?: StorageRuleTypeStorageType | null;
 	}
 
 	export enum UpdateUserPatchBodyLocale { en = 0, fr = 1, ko = 2, de = 3, es = 4, ja = 5, ru = 6, zh_CN = 7, zh_TW = 8, pt_BR = 9, _default = 10 }
@@ -1505,7 +1505,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [\w+-.@]+
 		 */
-		Id?: string;
+		Id?: string | null;
 
 		/**
 		 * The name of the document.
@@ -1513,23 +1513,23 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [\u0020-\u202D\u202F-\uFFFF]+
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/** The timestamp when the content of the document was originally created. */
-		ContentCreatedTimestamp?: Date;
+		ContentCreatedTimestamp?: Date | null;
 
 		/** The timestamp when the content of the document was modified. */
-		ContentModifiedTimestamp?: Date;
+		ContentModifiedTimestamp?: Date | null;
 
 		/**
 		 * The content type of the document.
 		 * Max length: 128
 		 * Min length: 1
 		 */
-		ContentType?: string;
+		ContentType?: string | null;
 
 		/** The size of the document, in bytes. */
-		DocumentSizeInBytes?: number;
+		DocumentSizeInBytes?: number | null;
 
 		/**
 		 * The ID of the parent folder.

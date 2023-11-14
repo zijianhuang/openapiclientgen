@@ -85,9 +85,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			string optionsWithHeadersHandler = $"{{ method: '{httpMethodName}', headers: headersHandler ? headersHandler() : undefined }}";
 			var Options = settings.HandleHttpRequestHeaders ? optionsWithHeadersHandler : $"{{ method: '{httpMethodName}' }}";
 
-			CodeParameterDeclarationExpression[] parameters = ParameterDescriptions.Select(d =>
-				new CodeParameterDeclarationExpression(TypeMapper.MapCodeTypeReferenceToTsText(d.ParameterTypeReference), d.Name))
-				.ToArray();
+			var parameters = CreateCodeParameterDeclarationExpressions();
 
 			Method.Parameters.AddRange(parameters);
 

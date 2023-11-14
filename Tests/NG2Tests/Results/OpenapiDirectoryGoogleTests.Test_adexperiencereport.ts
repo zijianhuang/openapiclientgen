@@ -7,7 +7,7 @@ export namespace MyNS {
 	export interface PlatformSummary {
 
 		/** The site's Ad Experience Report status on this platform. */
-		betterAdsStatus?: PlatformSummaryBetterAdsStatus;
+		betterAdsStatus?: PlatformSummaryBetterAdsStatus | null;
 
 		/**
 		 * The time at which
@@ -17,24 +17,24 @@ export namespace MyNS {
 		 * filter_status
 		 * is OFF.
 		 */
-		enforcementTime?: string;
+		enforcementTime?: string | null;
 
 		/**
 		 * The site's [enforcement
 		 * status](https://support.google.com/webtools/answer/7308033) on this
 		 * platform.
 		 */
-		filterStatus?: PlatformSummaryFilterStatus;
+		filterStatus?: PlatformSummaryFilterStatus | null;
 
 		/** The time at which the site's status last changed on this platform. */
-		lastChangeTime?: string;
+		lastChangeTime?: string | null;
 
 		/**
 		 * The site's regions on this platform.
 		 * No longer populated, because there is no longer any semantic difference
 		 * between sites in different regions.
 		 */
-		region?: Array<string>;
+		region?: Array<string> | null;
 
 		/**
 		 * A link to the full Ad Experience Report for the site on this platform..
@@ -44,10 +44,10 @@ export namespace MyNS {
 		 * process](https://support.google.com/webmasters/answer/9008080) for the site
 		 * before you can access the full report.
 		 */
-		reportUrl?: string;
+		reportUrl?: string | null;
 
 		/** Whether the site is currently under review on this platform. */
-		underReview?: boolean;
+		underReview?: boolean | null;
 	}
 
 	export enum PlatformSummaryBetterAdsStatus { UNKNOWN = 0, PASSING = 1, WARNING = 2, FAILING = 3 }
@@ -59,13 +59,13 @@ export namespace MyNS {
 	export interface SiteSummaryResponse {
 
 		/** A site's Ad Experience Report summary on a single platform. */
-		desktopSummary?: PlatformSummary;
+		desktopSummary?: PlatformSummary | null;
 
 		/** A site's Ad Experience Report summary on a single platform. */
-		mobileSummary?: PlatformSummary;
+		mobileSummary?: PlatformSummary | null;
 
 		/** The name of the reviewed site, e.g. `google.com`. */
-		reviewedSite?: string;
+		reviewedSite?: string | null;
 	}
 
 
@@ -73,7 +73,7 @@ export namespace MyNS {
 	export interface ViolatingSitesResponse {
 
 		/** The list of violating sites. */
-		violatingSites?: Array<SiteSummaryResponse>;
+		violatingSites?: Array<SiteSummaryResponse> | null;
 	}
 
 	@Injectable()

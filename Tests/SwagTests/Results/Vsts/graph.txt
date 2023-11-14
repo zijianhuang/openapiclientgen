@@ -746,14 +746,14 @@ namespace MyNS
 		public System.Nullable<System.Int32> Count { get; set; }
 	}
 	
-	public partial class Misc
+	public partial class MyClient
 	{
 		
 		private System.Net.Http.HttpClient client;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public MyClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -818,6 +818,84 @@ namespace MyNS
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphDescriptorResult>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Gets a list of all groups in the current scope (usually organization or account).
+		/// 
+		/// The optional parameters are used to filter down the returned results. Returned results are in no guaranteed order.
+		/// 
+		/// Since the list of groups may be large, results are returned in pages of groups.  If there are more results
+		/// than can be returned in a single page, the result set will contain a continuation token for retrieval of the
+		/// next set of results.
+		/// Groups_List {organization}/_apis/graph/groups
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="scopeDescriptor">Specify a non-default scope (collection, project) to search for groups.</param>
+		/// <param name="subjectTypes">A comma separated list of user subject subtypes to reduce the retrieved results, e.g. Microsoft.IdentityModel.Claims.ClaimsIdentity</param>
+		/// <param name="continuationToken">An opaque data blob that allows the next page of data to resume immediately after where the previous page ended. The only reliable way to know if there is more data left is the presence of a continuation token.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<GraphGroup[]> Groups_ListAsync(string organization, string scopeDescriptor, string subjectTypes, string continuationToken, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/groups&scopeDescriptor=" + (scopeDescriptor==null? "" : Uri.EscapeDataString(scopeDescriptor))+"&subjectTypes=" + (subjectTypes==null? "" : Uri.EscapeDataString(subjectTypes))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<GraphGroup[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Gets a list of all groups in the current scope (usually organization or account).
+		/// 
+		/// The optional parameters are used to filter down the returned results. Returned results are in no guaranteed order.
+		/// 
+		/// Since the list of groups may be large, results are returned in pages of groups.  If there are more results
+		/// than can be returned in a single page, the result set will contain a continuation token for retrieval of the
+		/// next set of results.
+		/// Groups_List {organization}/_apis/graph/groups
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="scopeDescriptor">Specify a non-default scope (collection, project) to search for groups.</param>
+		/// <param name="subjectTypes">A comma separated list of user subject subtypes to reduce the retrieved results, e.g. Microsoft.IdentityModel.Claims.ClaimsIdentity</param>
+		/// <param name="continuationToken">An opaque data blob that allows the next page of data to resume immediately after where the previous page ended. The only reliable way to know if there is more data left is the presence of a continuation token.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public GraphGroup[] Groups_List(string organization, string scopeDescriptor, string subjectTypes, string continuationToken, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/groups&scopeDescriptor=" + (scopeDescriptor==null? "" : Uri.EscapeDataString(scopeDescriptor))+"&subjectTypes=" + (subjectTypes==null? "" : Uri.EscapeDataString(subjectTypes))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<GraphGroup[]>(jsonReader);
 				}
 			}
 			finally
@@ -922,140 +1000,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Gets a list of all groups in the current scope (usually organization or account).
-		/// 
-		/// The optional parameters are used to filter down the returned results. Returned results are in no guaranteed order.
-		/// 
-		/// Since the list of groups may be large, results are returned in pages of groups.  If there are more results
-		/// than can be returned in a single page, the result set will contain a continuation token for retrieval of the
-		/// next set of results.
-		/// Groups_List {organization}/_apis/graph/groups
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="scopeDescriptor">Specify a non-default scope (collection, project) to search for groups.</param>
-		/// <param name="subjectTypes">A comma separated list of user subject subtypes to reduce the retrieved results, e.g. Microsoft.IdentityModel.Claims.ClaimsIdentity</param>
-		/// <param name="continuationToken">An opaque data blob that allows the next page of data to resume immediately after where the previous page ended. The only reliable way to know if there is more data left is the presence of a continuation token.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<GraphGroup[]> Groups_ListAsync(string organization, string scopeDescriptor, string subjectTypes, string continuationToken, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/groups&scopeDescriptor=" + (scopeDescriptor==null? "" : Uri.EscapeDataString(scopeDescriptor))+"&subjectTypes=" + (subjectTypes==null? "" : Uri.EscapeDataString(subjectTypes))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GraphGroup[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Gets a list of all groups in the current scope (usually organization or account).
-		/// 
-		/// The optional parameters are used to filter down the returned results. Returned results are in no guaranteed order.
-		/// 
-		/// Since the list of groups may be large, results are returned in pages of groups.  If there are more results
-		/// than can be returned in a single page, the result set will contain a continuation token for retrieval of the
-		/// next set of results.
-		/// Groups_List {organization}/_apis/graph/groups
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="scopeDescriptor">Specify a non-default scope (collection, project) to search for groups.</param>
-		/// <param name="subjectTypes">A comma separated list of user subject subtypes to reduce the retrieved results, e.g. Microsoft.IdentityModel.Claims.ClaimsIdentity</param>
-		/// <param name="continuationToken">An opaque data blob that allows the next page of data to resume immediately after where the previous page ended. The only reliable way to know if there is more data left is the presence of a continuation token.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public GraphGroup[] Groups_List(string organization, string scopeDescriptor, string subjectTypes, string continuationToken, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/groups&scopeDescriptor=" + (scopeDescriptor==null? "" : Uri.EscapeDataString(scopeDescriptor))+"&subjectTypes=" + (subjectTypes==null? "" : Uri.EscapeDataString(subjectTypes))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GraphGroup[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Removes an Azure DevOps group from all of its parent groups.
-		/// 
-		/// The group will still be visible, but membership
-		/// checks for the group, and all descendants which derive membership through it, will return false.”
-		/// Groups_Delete {organization}/_apis/graph/groups/{groupDescriptor}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="groupDescriptor">The descriptor of the group to delete.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Groups_DeleteAsync(string organization, string groupDescriptor, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/groups/"+ (groupDescriptor==null? "" : Uri.EscapeDataString(groupDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Removes an Azure DevOps group from all of its parent groups.
-		/// 
-		/// The group will still be visible, but membership
-		/// checks for the group, and all descendants which derive membership through it, will return false.”
-		/// Groups_Delete {organization}/_apis/graph/groups/{groupDescriptor}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="groupDescriptor">The descriptor of the group to delete.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Groups_Delete(string organization, string groupDescriptor, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/groups/"+ (groupDescriptor==null? "" : Uri.EscapeDataString(groupDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Get a group by its descriptor.
 		/// 
 		/// The group will be returned even if it has been deleted from the account or has had all its memberships
@@ -1115,6 +1059,62 @@ namespace MyNS
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<GraphGroup>(jsonReader);
 				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Removes an Azure DevOps group from all of its parent groups.
+		/// 
+		/// The group will still be visible, but membership
+		/// checks for the group, and all descendants which derive membership through it, will return false.”
+		/// Groups_Delete {organization}/_apis/graph/groups/{groupDescriptor}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="groupDescriptor">The descriptor of the group to delete.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Groups_DeleteAsync(string organization, string groupDescriptor, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/groups/"+ (groupDescriptor==null? "" : Uri.EscapeDataString(groupDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Removes an Azure DevOps group from all of its parent groups.
+		/// 
+		/// The group will still be visible, but membership
+		/// checks for the group, and all descendants which derive membership through it, will return false.”
+		/// Groups_Delete {organization}/_apis/graph/groups/{groupDescriptor}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="groupDescriptor">The descriptor of the group to delete.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Groups_Delete(string organization, string groupDescriptor, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/groups/"+ (groupDescriptor==null? "" : Uri.EscapeDataString(groupDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
 			}
 			finally
 			{
@@ -1196,70 +1196,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Create a new membership between a container and subject.
-		/// Memberships_Add {organization}/_apis/graph/memberships/{subjectDescriptor}/{containerDescriptor}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="subjectDescriptor">A descriptor to a group or user that can be the child subject in the relationship.</param>
-		/// <param name="containerDescriptor">A descriptor to a group that can be the container in the relationship.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<GraphMembership> Memberships_AddAsync(string organization, string subjectDescriptor, string containerDescriptor, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GraphMembership>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Create a new membership between a container and subject.
-		/// Memberships_Add {organization}/_apis/graph/memberships/{subjectDescriptor}/{containerDescriptor}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="subjectDescriptor">A descriptor to a group or user that can be the child subject in the relationship.</param>
-		/// <param name="containerDescriptor">A descriptor to a group that can be the container in the relationship.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public GraphMembership Memberships_Add(string organization, string subjectDescriptor, string containerDescriptor, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GraphMembership>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Get a membership relationship between a container and subject.
 		/// Memberships_Get {organization}/_apis/graph/memberships/{subjectDescriptor}/{containerDescriptor}
 		/// </summary>
@@ -1304,6 +1240,70 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<GraphMembership>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Create a new membership between a container and subject.
+		/// Memberships_Add {organization}/_apis/graph/memberships/{subjectDescriptor}/{containerDescriptor}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="subjectDescriptor">A descriptor to a group or user that can be the child subject in the relationship.</param>
+		/// <param name="containerDescriptor">A descriptor to a group that can be the container in the relationship.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<GraphMembership> Memberships_AddAsync(string organization, string subjectDescriptor, string containerDescriptor, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<GraphMembership>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Create a new membership between a container and subject.
+		/// Memberships_Add {organization}/_apis/graph/memberships/{subjectDescriptor}/{containerDescriptor}
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="subjectDescriptor">A descriptor to a group or user that can be the child subject in the relationship.</param>
+		/// <param name="containerDescriptor">A descriptor to a group that can be the container in the relationship.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public GraphMembership Memberships_Add(string organization, string subjectDescriptor, string containerDescriptor, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
@@ -1710,52 +1710,6 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Avatars_Delete {organization}/_apis/graph/Subjects/{subjectDescriptor}/avatars
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task Avatars_DeleteAsync(string subjectDescriptor, string organization, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/Subjects/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/avatars&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Avatars_Delete {organization}/_apis/graph/Subjects/{subjectDescriptor}/avatars
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public void Avatars_Delete(string subjectDescriptor, string organization, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/Subjects/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/avatars&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
 		/// Avatars_Get {organization}/_apis/graph/Subjects/{subjectDescriptor}/avatars
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
@@ -1874,6 +1828,126 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Avatars_Delete {organization}/_apis/graph/Subjects/{subjectDescriptor}/avatars
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task Avatars_DeleteAsync(string subjectDescriptor, string organization, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/Subjects/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/avatars&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Avatars_Delete {organization}/_apis/graph/Subjects/{subjectDescriptor}/avatars
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public void Avatars_Delete(string subjectDescriptor, string organization, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/Subjects/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/avatars&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get a list of all users in a given scope.
+		/// 
+		/// Since the list of users may be large, results are returned in pages of users.  If there are more results
+		/// than can be returned in a single page, the result set will contain a continuation token for retrieval of the
+		/// next set of results.
+		/// Users_List {organization}/_apis/graph/users
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="subjectTypes">A comma separated list of user subject subtypes to reduce the retrieved results, e.g. msa’, ‘aad’, ‘svc’ (service identity), ‘imp’ (imported identity), etc.</param>
+		/// <param name="continuationToken">An opaque data blob that allows the next page of data to resume immediately after where the previous page ended. The only reliable way to know if there is more data left is the presence of a continuation token.</param>
+		/// <param name="scopeDescriptor">Specify a non-default scope (collection, project) to search for users.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<GraphUser[]> Users_ListAsync(string organization, string subjectTypes, string continuationToken, string scopeDescriptor, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/users&subjectTypes=" + (subjectTypes==null? "" : Uri.EscapeDataString(subjectTypes))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&scopeDescriptor=" + (scopeDescriptor==null? "" : Uri.EscapeDataString(scopeDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<GraphUser[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Get a list of all users in a given scope.
+		/// 
+		/// Since the list of users may be large, results are returned in pages of users.  If there are more results
+		/// than can be returned in a single page, the result set will contain a continuation token for retrieval of the
+		/// next set of results.
+		/// Users_List {organization}/_apis/graph/users
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="subjectTypes">A comma separated list of user subject subtypes to reduce the retrieved results, e.g. msa’, ‘aad’, ‘svc’ (service identity), ‘imp’ (imported identity), etc.</param>
+		/// <param name="continuationToken">An opaque data blob that allows the next page of data to resume immediately after where the previous page ended. The only reliable way to know if there is more data left is the presence of a continuation token.</param>
+		/// <param name="scopeDescriptor">Specify a non-default scope (collection, project) to search for users.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public GraphUser[] Users_List(string organization, string subjectTypes, string continuationToken, string scopeDescriptor, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/users&subjectTypes=" + (subjectTypes==null? "" : Uri.EscapeDataString(subjectTypes))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&scopeDescriptor=" + (scopeDescriptor==null? "" : Uri.EscapeDataString(scopeDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<GraphUser[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Materialize an existing AAD or MSA user into the VSTS account.
 		/// 
 		/// NOTE: Created users are not active in an account unless they have been explicitly assigned a parent group at creation time or have signed in
@@ -1980,22 +2054,16 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Get a list of all users in a given scope.
-		/// 
-		/// Since the list of users may be large, results are returned in pages of users.  If there are more results
-		/// than can be returned in a single page, the result set will contain a continuation token for retrieval of the
-		/// next set of results.
-		/// Users_List {organization}/_apis/graph/users
+		/// Get a user by its descriptor.
+		/// Users_Get {organization}/_apis/graph/users/{userDescriptor}
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="subjectTypes">A comma separated list of user subject subtypes to reduce the retrieved results, e.g. msa’, ‘aad’, ‘svc’ (service identity), ‘imp’ (imported identity), etc.</param>
-		/// <param name="continuationToken">An opaque data blob that allows the next page of data to resume immediately after where the previous page ended. The only reliable way to know if there is more data left is the presence of a continuation token.</param>
-		/// <param name="scopeDescriptor">Specify a non-default scope (collection, project) to search for users.</param>
+		/// <param name="userDescriptor">The descriptor of the desired user.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<GraphUser[]> Users_ListAsync(string organization, string subjectTypes, string continuationToken, string scopeDescriptor, string api_version)
+		public async Task<GraphUser> Users_GetAsync(string organization, string userDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/users&subjectTypes=" + (subjectTypes==null? "" : Uri.EscapeDataString(subjectTypes))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&scopeDescriptor=" + (scopeDescriptor==null? "" : Uri.EscapeDataString(scopeDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/users/"+ (userDescriptor==null? "" : Uri.EscapeDataString(userDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2006,7 +2074,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GraphUser[]>(jsonReader);
+				return serializer.Deserialize<GraphUser>(jsonReader);
 				}
 			}
 			finally
@@ -2017,22 +2085,16 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Get a list of all users in a given scope.
-		/// 
-		/// Since the list of users may be large, results are returned in pages of users.  If there are more results
-		/// than can be returned in a single page, the result set will contain a continuation token for retrieval of the
-		/// next set of results.
-		/// Users_List {organization}/_apis/graph/users
+		/// Get a user by its descriptor.
+		/// Users_Get {organization}/_apis/graph/users/{userDescriptor}
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="subjectTypes">A comma separated list of user subject subtypes to reduce the retrieved results, e.g. msa’, ‘aad’, ‘svc’ (service identity), ‘imp’ (imported identity), etc.</param>
-		/// <param name="continuationToken">An opaque data blob that allows the next page of data to resume immediately after where the previous page ended. The only reliable way to know if there is more data left is the presence of a continuation token.</param>
-		/// <param name="scopeDescriptor">Specify a non-default scope (collection, project) to search for users.</param>
+		/// <param name="userDescriptor">The descriptor of the desired user.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public GraphUser[] Users_List(string organization, string subjectTypes, string continuationToken, string scopeDescriptor, string api_version)
+		public GraphUser Users_Get(string organization, string userDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/users&subjectTypes=" + (subjectTypes==null? "" : Uri.EscapeDataString(subjectTypes))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&scopeDescriptor=" + (scopeDescriptor==null? "" : Uri.EscapeDataString(scopeDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/users/"+ (userDescriptor==null? "" : Uri.EscapeDataString(userDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2043,7 +2105,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GraphUser[]>(jsonReader);
+				return serializer.Deserialize<GraphUser>(jsonReader);
 				}
 			}
 			finally
@@ -2099,68 +2161,6 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get a user by its descriptor.
-		/// Users_Get {organization}/_apis/graph/users/{userDescriptor}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="userDescriptor">The descriptor of the desired user.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<GraphUser> Users_GetAsync(string organization, string userDescriptor, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/users/"+ (userDescriptor==null? "" : Uri.EscapeDataString(userDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GraphUser>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get a user by its descriptor.
-		/// Users_Get {organization}/_apis/graph/users/{userDescriptor}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="userDescriptor">The descriptor of the desired user.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public GraphUser Users_Get(string organization, string userDescriptor, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/users/"+ (userDescriptor==null? "" : Uri.EscapeDataString(userDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<GraphUser>(jsonReader);
-				}
 			}
 			finally
 			{

@@ -5,7 +5,7 @@ export namespace MyNS {
 
 	/** Represents the output of an AcknowledgeJob action. */
 	export interface AcknowledgeJobOutput {
-		status?: AcknowledgeJobOutputStatus;
+		status?: AcknowledgeJobOutputStatus | null;
 	}
 
 	export enum AcknowledgeJobOutputStatus { Created = 0, Queued = 1, Dispatched = 2, InProgress = 3, TimedOut = 4, Succeeded = 5, Failed = 6 }
@@ -29,7 +29,7 @@ export namespace MyNS {
 
 	/** Represents the output of an AcknowledgeThirdPartyJob action. */
 	export interface AcknowledgeThirdPartyJobOutput {
-		status?: AcknowledgeJobOutputStatus;
+		status?: AcknowledgeJobOutputStatus | null;
 	}
 
 
@@ -52,7 +52,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		actionType: ActionType;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 
@@ -66,8 +66,8 @@ export namespace MyNS {
 		id: ActionTypeId;
 
 		/** Returns information about the settings for an action type. */
-		settings?: ActionTypeSettings;
-		actionConfigurationProperties?: Array<ActionConfigurationProperty>;
+		settings?: ActionTypeSettings | null;
+		actionConfigurationProperties?: Array<ActionConfigurationProperty> | null;
 
 		/**
 		 * Returns information about the details of an artifact.
@@ -98,10 +98,10 @@ export namespace MyNS {
 
 	/** Returns information about the settings for an action type. */
 	export interface ActionTypeSettings {
-		thirdPartyConfigurationUrl?: string;
-		entityUrlTemplate?: string;
-		executionUrlTemplate?: string;
-		revisionUrlTemplate?: string;
+		thirdPartyConfigurationUrl?: string | null;
+		entityUrlTemplate?: string | null;
+		executionUrlTemplate?: string | null;
+		revisionUrlTemplate?: string | null;
 	}
 
 
@@ -111,9 +111,9 @@ export namespace MyNS {
 		required: boolean;
 		key: boolean;
 		secret: boolean;
-		queryable?: boolean;
-		description?: string;
-		type?: ActionConfigurationPropertyType;
+		queryable?: boolean | null;
+		description?: string | null;
+		type?: ActionConfigurationPropertyType | null;
 	}
 
 	export enum ActionConfigurationPropertyType { String = 0, Number = 1, Boolean = 2 }
@@ -140,8 +140,8 @@ export namespace MyNS {
 		version: string;
 
 		/** Returns information about the settings for an action type. */
-		settings?: ActionTypeSettings;
-		configurationProperties?: Array<ActionConfigurationProperty>;
+		settings?: ActionTypeSettings | null;
+		configurationProperties?: Array<ActionConfigurationProperty> | null;
 
 		/**
 		 * Returns information about the details of an artifact.
@@ -154,7 +154,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		outputArtifactDetails: ArtifactDetails;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface LimitExceededException {
@@ -174,8 +174,8 @@ export namespace MyNS {
 	export interface CreatePipelineOutput {
 
 		/** Represents the structure of actions and stages to be performed in the pipeline. */
-		pipeline?: PipelineDeclaration;
-		tags?: Array<Tag>;
+		pipeline?: PipelineDeclaration | null;
+		tags?: Array<Tag> | null;
 	}
 
 
@@ -185,10 +185,10 @@ export namespace MyNS {
 		roleArn: string;
 
 		/** <p>The S3 bucket where artifacts for the pipeline are stored.</p> <note> <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p> </note> */
-		artifactStore?: ArtifactStore;
-		artifactStores?: ArtifactStoreMap;
+		artifactStore?: ArtifactStore | null;
+		artifactStores?: ArtifactStoreMap | null;
 		stages: Array<StageDeclaration>;
-		version?: number;
+		version?: number | null;
 	}
 
 
@@ -198,7 +198,7 @@ export namespace MyNS {
 		location: string;
 
 		/** Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. */
-		encryptionKey?: EncryptionKey;
+		encryptionKey?: EncryptionKey | null;
 	}
 
 	export enum ArtifactStoreType { S3 = 0 }
@@ -219,7 +219,7 @@ export namespace MyNS {
 	/** Represents information about a stage and its definition. */
 	export interface StageDeclaration {
 		name: string;
-		blockers?: Array<BlockerDeclaration>;
+		blockers?: Array<BlockerDeclaration> | null;
 		actions: Array<ActionDeclaration>;
 	}
 
@@ -242,13 +242,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		actionTypeId: ActionTypeId;
-		runOrder?: number;
-		configuration?: ActionConfigurationMap;
-		outputArtifacts?: Array<OutputArtifact>;
-		inputArtifacts?: Array<InputArtifact>;
-		roleArn?: string;
-		region?: string;
-		namespace?: string;
+		runOrder?: number | null;
+		configuration?: ActionConfigurationMap | null;
+		outputArtifacts?: Array<OutputArtifact> | null;
+		inputArtifacts?: Array<InputArtifact> | null;
+		roleArn?: string | null;
+		region?: string | null;
+		namespace?: string | null;
 	}
 
 	export interface ActionConfigurationMap {
@@ -275,7 +275,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		pipeline: PipelineDeclaration;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface PipelineNameInUseException {
@@ -318,7 +318,7 @@ export namespace MyNS {
 	}
 
 	export interface DeregisterWebhookWithThirdPartyInput {
-		webhookName?: string;
+		webhookName?: string | null;
 	}
 
 	export interface WebhookNotFoundException {
@@ -354,17 +354,17 @@ export namespace MyNS {
 	export interface GetJobDetailsOutput {
 
 		/** Represents information about the details of a job. */
-		jobDetails?: JobDetails;
+		jobDetails?: JobDetails | null;
 	}
 
 
 	/** Represents information about the details of a job. */
 	export interface JobDetails {
-		id?: string;
+		id?: string | null;
 
 		/** Represents other information about a job required for a job worker to complete the job. */
-		data?: JobData;
-		accountId?: string;
+		data?: JobData | null;
+		accountId?: string | null;
 	}
 
 
@@ -372,74 +372,74 @@ export namespace MyNS {
 	export interface JobData {
 
 		/** Represents information about an action type. */
-		actionTypeId?: ActionTypeId;
+		actionTypeId?: ActionTypeId | null;
 
 		/** Represents information about an action configuration. */
-		actionConfiguration?: ActionConfiguration;
+		actionConfiguration?: ActionConfiguration | null;
 
 		/** <p>Represents information about a pipeline to a job worker.</p> <note> <p>PipelineContext contains <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom action jobs. The <code>pipelineArn</code> and <code>pipelineExecutionId</code> fields are not populated for ThirdParty action jobs.</p> </note> */
-		pipelineContext?: PipelineContext;
-		inputArtifacts?: Array<Artifact>;
-		outputArtifacts?: Array<Artifact>;
+		pipelineContext?: PipelineContext | null;
+		inputArtifacts?: Array<Artifact> | null;
+		outputArtifacts?: Array<Artifact> | null;
 
 		/** Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline. */
-		artifactCredentials?: AWSSessionCredentials;
-		continuationToken?: string;
+		artifactCredentials?: AWSSessionCredentials | null;
+		continuationToken?: string | null;
 
 		/** Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. */
-		encryptionKey?: EncryptionKey;
+		encryptionKey?: EncryptionKey | null;
 	}
 
 
 	/** Represents information about an action configuration. */
 	export interface ActionConfiguration {
-		configuration?: ActionConfigurationMap;
+		configuration?: ActionConfigurationMap | null;
 	}
 
 
 	/** <p>Represents information about a pipeline to a job worker.</p> <note> <p>PipelineContext contains <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom action jobs. The <code>pipelineArn</code> and <code>pipelineExecutionId</code> fields are not populated for ThirdParty action jobs.</p> </note> */
 	export interface PipelineContext {
-		pipelineName?: string;
+		pipelineName?: string | null;
 
 		/** Represents information about a stage to a job worker. */
-		stage?: StageContext;
+		stage?: StageContext | null;
 
 		/** Represents the context of an action in the stage of a pipeline to a job worker. */
-		action?: ActionContext;
-		pipelineArn?: string;
-		pipelineExecutionId?: string;
+		action?: ActionContext | null;
+		pipelineArn?: string | null;
+		pipelineExecutionId?: string | null;
 	}
 
 
 	/** Represents information about a stage to a job worker. */
 	export interface StageContext {
-		name?: string;
+		name?: string | null;
 	}
 
 
 	/** Represents the context of an action in the stage of a pipeline to a job worker. */
 	export interface ActionContext {
-		name?: string;
-		actionExecutionId?: string;
+		name?: string | null;
+		actionExecutionId?: string | null;
 	}
 
 
 	/** Represents information about an artifact that is worked on by actions in the pipeline. */
 	export interface Artifact {
-		name?: string;
-		revision?: string;
+		name?: string | null;
+		revision?: string | null;
 
 		/** Represents information about the location of an artifact. */
-		location?: ArtifactLocation;
+		location?: ArtifactLocation | null;
 	}
 
 
 	/** Represents information about the location of an artifact. */
 	export interface ArtifactLocation {
-		type?: ArtifactStoreType;
+		type?: ArtifactStoreType | null;
 
 		/** The location of the S3 bucket that contains a revision. */
-		s3Location?: S3ArtifactLocation;
+		s3Location?: S3ArtifactLocation | null;
 	}
 
 
@@ -468,25 +468,25 @@ export namespace MyNS {
 	export interface GetPipelineOutput {
 
 		/** Represents the structure of actions and stages to be performed in the pipeline. */
-		pipeline?: PipelineDeclaration;
+		pipeline?: PipelineDeclaration | null;
 
 		/** Information about a pipeline. */
-		metadata?: PipelineMetadata;
+		metadata?: PipelineMetadata | null;
 	}
 
 
 	/** Information about a pipeline. */
 	export interface PipelineMetadata {
-		pipelineArn?: string;
-		created?: Date;
-		updated?: Date;
+		pipelineArn?: string | null;
+		created?: Date | null;
+		updated?: Date | null;
 	}
 
 
 	/** Represents the input of a <code>GetPipeline</code> action. */
 	export interface GetPipelineInput {
 		name: string;
-		version?: number;
+		version?: number | null;
 	}
 
 	export interface PipelineVersionNotFoundException {
@@ -497,17 +497,17 @@ export namespace MyNS {
 	export interface GetPipelineExecutionOutput {
 
 		/** Represents information about an execution of a pipeline. */
-		pipelineExecution?: PipelineExecution;
+		pipelineExecution?: PipelineExecution | null;
 	}
 
 
 	/** Represents information about an execution of a pipeline. */
 	export interface PipelineExecution {
-		pipelineName?: string;
-		pipelineVersion?: number;
-		pipelineExecutionId?: string;
-		status?: PipelineExecutionStatus;
-		artifactRevisions?: Array<ArtifactRevision>;
+		pipelineName?: string | null;
+		pipelineVersion?: number | null;
+		pipelineExecutionId?: string | null;
+		status?: PipelineExecutionStatus | null;
+		artifactRevisions?: Array<ArtifactRevision> | null;
 	}
 
 	export enum PipelineExecutionStatus { InProgress = 0, Stopped = 1, Stopping = 2, Succeeded = 3, Superseded = 4, Failed = 5 }
@@ -515,12 +515,12 @@ export namespace MyNS {
 
 	/** Represents revision details of an artifact.  */
 	export interface ArtifactRevision {
-		name?: string;
-		revisionId?: string;
-		revisionChangeIdentifier?: string;
-		revisionSummary?: string;
-		created?: Date;
-		revisionUrl?: string;
+		name?: string | null;
+		revisionId?: string | null;
+		revisionChangeIdentifier?: string | null;
+		revisionSummary?: string | null;
+		created?: Date | null;
+		revisionUrl?: string | null;
 	}
 
 
@@ -536,47 +536,47 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>GetPipelineState</code> action. */
 	export interface GetPipelineStateOutput {
-		pipelineName?: string;
-		pipelineVersion?: number;
-		stageStates?: Array<StageState>;
-		created?: Date;
-		updated?: Date;
+		pipelineName?: string | null;
+		pipelineVersion?: number | null;
+		stageStates?: Array<StageState> | null;
+		created?: Date | null;
+		updated?: Date | null;
 	}
 
 
 	/** Represents information about the state of the stage. */
 	export interface StageState {
-		stageName?: string;
+		stageName?: string | null;
 
 		/** Represents information about the state of transitions between one stage and another stage. */
-		inboundTransitionState?: TransitionState;
-		actionStates?: Array<ActionState>;
+		inboundTransitionState?: TransitionState | null;
+		actionStates?: Array<ActionState> | null;
 
 		/** Represents information about the run of a stage. */
-		latestExecution?: StageExecution;
+		latestExecution?: StageExecution | null;
 	}
 
 
 	/** Represents information about the state of transitions between one stage and another stage. */
 	export interface TransitionState {
-		enabled?: boolean;
-		lastChangedBy?: string;
-		lastChangedAt?: Date;
-		disabledReason?: string;
+		enabled?: boolean | null;
+		lastChangedBy?: string | null;
+		lastChangedAt?: Date | null;
+		disabledReason?: string | null;
 	}
 
 
 	/** Represents information about the state of an action. */
 	export interface ActionState {
-		actionName?: string;
+		actionName?: string | null;
 
 		/** Represents information about the version (or revision) of an action. */
-		currentRevision?: ActionRevision;
+		currentRevision?: ActionRevision | null;
 
 		/** Represents information about the run of an action. */
-		latestExecution?: ActionExecution;
-		entityUrl?: string;
-		revisionUrl?: string;
+		latestExecution?: ActionExecution | null;
+		entityUrl?: string | null;
+		revisionUrl?: string | null;
 	}
 
 
@@ -590,17 +590,17 @@ export namespace MyNS {
 
 	/** Represents information about the run of an action. */
 	export interface ActionExecution {
-		status?: ActionExecutionStatus;
-		summary?: string;
-		lastStatusChange?: Date;
-		token?: string;
-		lastUpdatedBy?: string;
-		externalExecutionId?: string;
-		externalExecutionUrl?: string;
-		percentComplete?: number;
+		status?: ActionExecutionStatus | null;
+		summary?: string | null;
+		lastStatusChange?: Date | null;
+		token?: string | null;
+		lastUpdatedBy?: string | null;
+		externalExecutionId?: string | null;
+		externalExecutionUrl?: string | null;
+		percentComplete?: number | null;
 
 		/** Represents information about an error in AWS CodePipeline. */
-		errorDetails?: ErrorDetails;
+		errorDetails?: ErrorDetails | null;
 	}
 
 	export enum ActionExecutionStatus { InProgress = 0, Abandoned = 1, Succeeded = 2, Failed = 3 }
@@ -608,8 +608,8 @@ export namespace MyNS {
 
 	/** Represents information about an error in AWS CodePipeline. */
 	export interface ErrorDetails {
-		code?: string;
-		message?: string;
+		code?: string | null;
+		message?: string | null;
 	}
 
 
@@ -632,17 +632,17 @@ export namespace MyNS {
 	export interface GetThirdPartyJobDetailsOutput {
 
 		/** The details of a job sent in response to a <code>GetThirdPartyJobDetails</code> request. */
-		jobDetails?: ThirdPartyJobDetails;
+		jobDetails?: ThirdPartyJobDetails | null;
 	}
 
 
 	/** The details of a job sent in response to a <code>GetThirdPartyJobDetails</code> request. */
 	export interface ThirdPartyJobDetails {
-		id?: string;
+		id?: string | null;
 
 		/** Represents information about the job data for a partner action. */
-		data?: ThirdPartyJobData;
-		nonce?: string;
+		data?: ThirdPartyJobData | null;
+		nonce?: string | null;
 	}
 
 
@@ -650,22 +650,22 @@ export namespace MyNS {
 	export interface ThirdPartyJobData {
 
 		/** Represents information about an action type. */
-		actionTypeId?: ActionTypeId;
+		actionTypeId?: ActionTypeId | null;
 
 		/** Represents information about an action configuration. */
-		actionConfiguration?: ActionConfiguration;
+		actionConfiguration?: ActionConfiguration | null;
 
 		/** <p>Represents information about a pipeline to a job worker.</p> <note> <p>PipelineContext contains <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom action jobs. The <code>pipelineArn</code> and <code>pipelineExecutionId</code> fields are not populated for ThirdParty action jobs.</p> </note> */
-		pipelineContext?: PipelineContext;
-		inputArtifacts?: Array<Artifact>;
-		outputArtifacts?: Array<Artifact>;
+		pipelineContext?: PipelineContext | null;
+		inputArtifacts?: Array<Artifact> | null;
+		outputArtifacts?: Array<Artifact> | null;
 
 		/** Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline. */
-		artifactCredentials?: AWSSessionCredentials;
-		continuationToken?: string;
+		artifactCredentials?: AWSSessionCredentials | null;
+		continuationToken?: string | null;
 
 		/** Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. */
-		encryptionKey?: EncryptionKey;
+		encryptionKey?: EncryptionKey | null;
 	}
 
 
@@ -679,27 +679,27 @@ export namespace MyNS {
 	}
 
 	export interface ListActionExecutionsOutput {
-		actionExecutionDetails?: Array<ActionExecutionDetail>;
-		nextToken?: string;
+		actionExecutionDetails?: Array<ActionExecutionDetail> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Returns information about an execution of an action, including the action execution ID, and the name, version, and timing of the action.  */
 	export interface ActionExecutionDetail {
-		pipelineExecutionId?: string;
-		actionExecutionId?: string;
-		pipelineVersion?: number;
-		stageName?: string;
-		actionName?: string;
-		startTime?: Date;
-		lastUpdateTime?: Date;
-		status?: ActionExecutionStatus;
+		pipelineExecutionId?: string | null;
+		actionExecutionId?: string | null;
+		pipelineVersion?: number | null;
+		stageName?: string | null;
+		actionName?: string | null;
+		startTime?: Date | null;
+		lastUpdateTime?: Date | null;
+		status?: ActionExecutionStatus | null;
 
 		/** Input information used for an action execution. */
-		input?: ActionExecutionInput;
+		input?: ActionExecutionInput | null;
 
 		/** Output details listed for an action execution, such as the action execution result. */
-		output?: ActionExecutionOutput;
+		output?: ActionExecutionOutput | null;
 	}
 
 
@@ -707,13 +707,13 @@ export namespace MyNS {
 	export interface ActionExecutionInput {
 
 		/** Represents information about an action type. */
-		actionTypeId?: ActionTypeId;
-		configuration?: ActionConfigurationMap;
-		resolvedConfiguration?: ResolvedActionConfigurationMap;
-		roleArn?: string;
-		region?: string;
-		inputArtifacts?: Array<ArtifactDetail>;
-		namespace?: string;
+		actionTypeId?: ActionTypeId | null;
+		configuration?: ActionConfigurationMap | null;
+		resolvedConfiguration?: ResolvedActionConfigurationMap | null;
+		roleArn?: string | null;
+		region?: string | null;
+		inputArtifacts?: Array<ArtifactDetail> | null;
+		namespace?: string | null;
 	}
 
 	export interface ResolvedActionConfigurationMap {
@@ -722,35 +722,35 @@ export namespace MyNS {
 
 	/** Artifact details for the action execution, such as the artifact location. */
 	export interface ArtifactDetail {
-		name?: string;
+		name?: string | null;
 
 		/** The Amazon S3 artifact location for an action's artifacts. */
-		s3location?: S3Location;
+		s3location?: S3Location | null;
 	}
 
 
 	/** The Amazon S3 artifact location for an action's artifacts. */
 	export interface S3Location {
-		bucket?: string;
-		key?: string;
+		bucket?: string | null;
+		key?: string | null;
 	}
 
 
 	/** Output details listed for an action execution, such as the action execution result. */
 	export interface ActionExecutionOutput {
-		outputArtifacts?: Array<ArtifactDetail>;
+		outputArtifacts?: Array<ArtifactDetail> | null;
 
 		/** Execution result information, such as the external execution ID. */
-		executionResult?: ActionExecutionResult;
-		outputVariables?: OutputVariablesMap;
+		executionResult?: ActionExecutionResult | null;
+		outputVariables?: OutputVariablesMap | null;
 	}
 
 
 	/** Execution result information, such as the external execution ID. */
 	export interface ActionExecutionResult {
-		externalExecutionId?: string;
-		externalExecutionSummary?: string;
-		externalExecutionUrl?: string;
+		externalExecutionId?: string | null;
+		externalExecutionSummary?: string | null;
+		externalExecutionUrl?: string | null;
 	}
 
 	export interface OutputVariablesMap {
@@ -760,15 +760,15 @@ export namespace MyNS {
 		pipelineName: string;
 
 		/** Filter values for the action execution. */
-		filter?: ActionExecutionFilter;
-		maxResults?: number;
-		nextToken?: string;
+		filter?: ActionExecutionFilter | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Filter values for the action execution. */
 	export interface ActionExecutionFilter {
-		pipelineExecutionId?: string;
+		pipelineExecutionId?: string | null;
 	}
 
 	export interface InvalidNextTokenException {
@@ -778,53 +778,53 @@ export namespace MyNS {
 	/** Represents the output of a <code>ListActionTypes</code> action. */
 	export interface ListActionTypesOutput {
 		actionTypes: Array<ActionType>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the input of a <code>ListActionTypes</code> action. */
 	export interface ListActionTypesInput {
-		actionOwnerFilter?: ActionTypeIdOwner;
-		nextToken?: string;
+		actionOwnerFilter?: ActionTypeIdOwner | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the output of a <code>ListPipelineExecutions</code> action. */
 	export interface ListPipelineExecutionsOutput {
-		pipelineExecutionSummaries?: Array<PipelineExecutionSummary>;
-		nextToken?: string;
+		pipelineExecutionSummaries?: Array<PipelineExecutionSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Summary information about a pipeline execution. */
 	export interface PipelineExecutionSummary {
-		pipelineExecutionId?: string;
-		status?: PipelineExecutionStatus;
-		startTime?: Date;
-		lastUpdateTime?: Date;
-		sourceRevisions?: Array<SourceRevision>;
+		pipelineExecutionId?: string | null;
+		status?: PipelineExecutionStatus | null;
+		startTime?: Date | null;
+		lastUpdateTime?: Date | null;
+		sourceRevisions?: Array<SourceRevision> | null;
 
 		/** The interaction or event that started a pipeline execution. */
-		trigger?: ExecutionTrigger;
+		trigger?: ExecutionTrigger | null;
 
 		/** The interaction that stopped a pipeline execution. */
-		stopTrigger?: StopExecutionTrigger;
+		stopTrigger?: StopExecutionTrigger | null;
 	}
 
 
 	/** Information about the version (or revision) of a source artifact that initiated a pipeline execution. */
 	export interface SourceRevision {
 		actionName: string;
-		revisionId?: string;
-		revisionSummary?: string;
-		revisionUrl?: string;
+		revisionId?: string | null;
+		revisionSummary?: string | null;
+		revisionUrl?: string | null;
 	}
 
 
 	/** The interaction or event that started a pipeline execution. */
 	export interface ExecutionTrigger {
-		triggerType?: ExecutionTriggerTriggerType;
-		triggerDetail?: string;
+		triggerType?: ExecutionTriggerTriggerType | null;
+		triggerDetail?: string | null;
 	}
 
 	export enum ExecutionTriggerTriggerType { CreatePipeline = 0, StartPipelineExecution = 1, PollForSourceChanges = 2, Webhook = 3, CloudWatchEvent = 4, PutActionRevision = 5 }
@@ -832,48 +832,48 @@ export namespace MyNS {
 
 	/** The interaction that stopped a pipeline execution. */
 	export interface StopExecutionTrigger {
-		reason?: string;
+		reason?: string | null;
 	}
 
 
 	/** Represents the input of a <code>ListPipelineExecutions</code> action. */
 	export interface ListPipelineExecutionsInput {
 		pipelineName: string;
-		maxResults?: number;
-		nextToken?: string;
+		maxResults?: number | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the output of a <code>ListPipelines</code> action. */
 	export interface ListPipelinesOutput {
-		pipelines?: Array<PipelineSummary>;
-		nextToken?: string;
+		pipelines?: Array<PipelineSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Returns a summary of a pipeline. */
 	export interface PipelineSummary {
-		name?: string;
-		version?: number;
-		created?: Date;
-		updated?: Date;
+		name?: string | null;
+		version?: number | null;
+		created?: Date | null;
+		updated?: Date | null;
 	}
 
 
 	/** Represents the input of a <code>ListPipelines</code> action. */
 	export interface ListPipelinesInput {
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceOutput {
-		tags?: Array<Tag>;
-		nextToken?: string;
+		tags?: Array<Tag> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceInput {
 		resourceArn: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -883,8 +883,8 @@ export namespace MyNS {
 	}
 
 	export interface ListWebhooksOutput {
-		webhooks?: Array<ListWebhookItem>;
-		NextToken?: string;
+		webhooks?: Array<ListWebhookItem> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -897,11 +897,11 @@ export namespace MyNS {
 		 */
 		definition: WebhookDefinition;
 		url: string;
-		errorMessage?: string;
-		errorCode?: string;
-		lastTriggered?: Date;
-		arn?: string;
-		tags?: Array<Tag>;
+		errorMessage?: string | null;
+		errorCode?: string | null;
+		lastTriggered?: Date | null;
+		arn?: string | null;
+		tags?: Array<Tag> | null;
 	}
 
 
@@ -924,7 +924,7 @@ export namespace MyNS {
 	/** The event criteria that specify when a webhook notification is sent to your URL. */
 	export interface WebhookFilterRule {
 		jsonPath: string;
-		matchEquals?: string;
+		matchEquals?: string | null;
 	}
 
 	export enum WebhookDefinitionAuthentication { GITHUB_HMAC = 0, IP = 1, UNAUTHENTICATED = 2 }
@@ -932,30 +932,30 @@ export namespace MyNS {
 
 	/** The authentication applied to incoming webhook trigger requests. */
 	export interface WebhookAuthConfiguration {
-		AllowedIPRange?: string;
-		SecretToken?: string;
+		AllowedIPRange?: string | null;
+		SecretToken?: string | null;
 	}
 
 	export interface ListWebhooksInput {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 
 	/** Represents the output of a <code>PollForJobs</code> action. */
 	export interface PollForJobsOutput {
-		jobs?: Array<Job>;
+		jobs?: Array<Job> | null;
 	}
 
 
 	/** Represents information about a job. */
 	export interface Job {
-		id?: string;
+		id?: string | null;
 
 		/** Represents other information about a job required for a job worker to complete the job. */
-		data?: JobData;
-		nonce?: string;
-		accountId?: string;
+		data?: JobData | null;
+		nonce?: string | null;
+		accountId?: string | null;
 	}
 
 
@@ -967,8 +967,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		actionTypeId: ActionTypeId;
-		maxBatchSize?: number;
-		queryParam?: QueryParamMap;
+		maxBatchSize?: number | null;
+		queryParam?: QueryParamMap | null;
 	}
 
 	export interface QueryParamMap {
@@ -980,14 +980,14 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>PollForThirdPartyJobs</code> action. */
 	export interface PollForThirdPartyJobsOutput {
-		jobs?: Array<ThirdPartyJob>;
+		jobs?: Array<ThirdPartyJob> | null;
 	}
 
 
 	/** A response to a <code>PollForThirdPartyJobs</code> request returned by AWS CodePipeline when there is a job to be worked on by a partner action. */
 	export interface ThirdPartyJob {
-		clientId?: string;
-		jobId?: string;
+		clientId?: string | null;
+		jobId?: string | null;
 	}
 
 
@@ -999,14 +999,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		actionTypeId: ActionTypeId;
-		maxBatchSize?: number;
+		maxBatchSize?: number | null;
 	}
 
 
 	/** Represents the output of a <code>PutActionRevision</code> action. */
 	export interface PutActionRevisionOutput {
-		newRevision?: boolean;
-		pipelineExecutionId?: string;
+		newRevision?: boolean | null;
+		pipelineExecutionId?: string | null;
 	}
 
 
@@ -1029,7 +1029,7 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>PutApprovalResult</code> action. */
 	export interface PutApprovalResultOutput {
-		approvedAt?: Date;
+		approvedAt?: Date | null;
 	}
 
 
@@ -1079,7 +1079,7 @@ export namespace MyNS {
 	export interface FailureDetails {
 		type: FailureDetailsType;
 		message: string;
-		externalExecutionId?: string;
+		externalExecutionId?: string | null;
 	}
 
 	export enum FailureDetailsType { JobFailed = 0, ConfigurationError = 1, PermissionError = 2, RevisionOutOfSync = 3, RevisionUnavailable = 4, SystemUnavailable = 5 }
@@ -1093,12 +1093,12 @@ export namespace MyNS {
 		jobId: string;
 
 		/** Represents information about a current revision. */
-		currentRevision?: CurrentRevision;
-		continuationToken?: string;
+		currentRevision?: CurrentRevision | null;
+		continuationToken?: string | null;
 
 		/** The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. */
-		executionDetails?: ExecutionDetails;
-		outputVariables?: OutputVariablesMap;
+		executionDetails?: ExecutionDetails | null;
+		outputVariables?: OutputVariablesMap | null;
 	}
 
 
@@ -1106,16 +1106,16 @@ export namespace MyNS {
 	export interface CurrentRevision {
 		revision: string;
 		changeIdentifier: string;
-		created?: Date;
-		revisionSummary?: string;
+		created?: Date | null;
+		revisionSummary?: string | null;
 	}
 
 
 	/** The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. */
 	export interface ExecutionDetails {
-		summary?: string;
-		externalExecutionId?: string;
-		percentComplete?: number;
+		summary?: string | null;
+		externalExecutionId?: string | null;
+		percentComplete?: number | null;
 	}
 
 	export interface OutputVariablesSizeExceededException {
@@ -1141,17 +1141,17 @@ export namespace MyNS {
 		clientToken: string;
 
 		/** Represents information about a current revision. */
-		currentRevision?: CurrentRevision;
-		continuationToken?: string;
+		currentRevision?: CurrentRevision | null;
+		continuationToken?: string | null;
 
 		/** The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. */
-		executionDetails?: ExecutionDetails;
+		executionDetails?: ExecutionDetails | null;
 	}
 
 	export interface PutWebhookOutput {
 
 		/** The detail returned for each webhook after listing webhooks, such as the webhook URL, the webhook name, and the webhook ARN. */
-		webhook?: ListWebhookItem;
+		webhook?: ListWebhookItem | null;
 	}
 
 	export interface PutWebhookInput {
@@ -1161,7 +1161,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		webhook: WebhookDefinition;
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface InvalidWebhookFilterPatternException {
@@ -1174,13 +1174,13 @@ export namespace MyNS {
 	}
 
 	export interface RegisterWebhookWithThirdPartyInput {
-		webhookName?: string;
+		webhookName?: string | null;
 	}
 
 
 	/** Represents the output of a <code>RetryStageExecution</code> action. */
 	export interface RetryStageExecutionOutput {
-		pipelineExecutionId?: string;
+		pipelineExecutionId?: string | null;
 	}
 
 
@@ -1203,25 +1203,25 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>StartPipelineExecution</code> action. */
 	export interface StartPipelineExecutionOutput {
-		pipelineExecutionId?: string;
+		pipelineExecutionId?: string | null;
 	}
 
 
 	/** Represents the input of a <code>StartPipelineExecution</code> action. */
 	export interface StartPipelineExecutionInput {
 		name: string;
-		clientRequestToken?: string;
+		clientRequestToken?: string | null;
 	}
 
 	export interface StopPipelineExecutionOutput {
-		pipelineExecutionId?: string;
+		pipelineExecutionId?: string | null;
 	}
 
 	export interface StopPipelineExecutionInput {
 		pipelineName: string;
 		pipelineExecutionId: string;
-		abandon?: boolean;
-		reason?: string;
+		abandon?: boolean | null;
+		reason?: string | null;
 	}
 
 	export interface PipelineExecutionNotStoppableException {
@@ -1251,7 +1251,7 @@ export namespace MyNS {
 	export interface UpdatePipelineOutput {
 
 		/** Represents the structure of actions and stages to be performed in the pipeline. */
-		pipeline?: PipelineDeclaration;
+		pipeline?: PipelineDeclaration | null;
 	}
 
 
@@ -1434,7 +1434,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListActionExecutionsOutput} Success
 		 */
-		ListActionExecutions(maxResults: string, nextToken: string, requestBody: ListActionExecutionsInput): Observable<ListActionExecutionsOutput> {
+		ListActionExecutions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListActionExecutionsInput): Observable<ListActionExecutionsOutput> {
 			return this.http.post<ListActionExecutionsOutput>(this.baseUri + '#X-Amz-Target=CodePipeline_20150709.ListActionExecutions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1444,7 +1444,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListActionTypesOutput} Success
 		 */
-		ListActionTypes(nextToken: string, requestBody: ListActionTypesInput): Observable<ListActionTypesOutput> {
+		ListActionTypes(nextToken: string | null | undefined, requestBody: ListActionTypesInput): Observable<ListActionTypesOutput> {
 			return this.http.post<ListActionTypesOutput>(this.baseUri + '#X-Amz-Target=CodePipeline_20150709.ListActionTypes?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1455,7 +1455,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListPipelineExecutionsOutput} Success
 		 */
-		ListPipelineExecutions(maxResults: string, nextToken: string, requestBody: ListPipelineExecutionsInput): Observable<ListPipelineExecutionsOutput> {
+		ListPipelineExecutions(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListPipelineExecutionsInput): Observable<ListPipelineExecutionsOutput> {
 			return this.http.post<ListPipelineExecutionsOutput>(this.baseUri + '#X-Amz-Target=CodePipeline_20150709.ListPipelineExecutions?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1465,7 +1465,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListPipelinesOutput} Success
 		 */
-		ListPipelines(nextToken: string, requestBody: ListPipelinesInput): Observable<ListPipelinesOutput> {
+		ListPipelines(nextToken: string | null | undefined, requestBody: ListPipelinesInput): Observable<ListPipelinesOutput> {
 			return this.http.post<ListPipelinesOutput>(this.baseUri + '#X-Amz-Target=CodePipeline_20150709.ListPipelines?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1476,7 +1476,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListTagsForResourceOutput} Success
 		 */
-		ListTagsForResource(maxResults: string, nextToken: string, requestBody: ListTagsForResourceInput): Observable<ListTagsForResourceOutput> {
+		ListTagsForResource(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListTagsForResourceInput): Observable<ListTagsForResourceOutput> {
 			return this.http.post<ListTagsForResourceOutput>(this.baseUri + '#X-Amz-Target=CodePipeline_20150709.ListTagsForResource?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1487,7 +1487,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListWebhooksOutput} Success
 		 */
-		ListWebhooks(MaxResults: string, NextToken: string, requestBody: ListWebhooksInput): Observable<ListWebhooksOutput> {
+		ListWebhooks(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListWebhooksInput): Observable<ListWebhooksOutput> {
 			return this.http.post<ListWebhooksOutput>(this.baseUri + '#X-Amz-Target=CodePipeline_20150709.ListWebhooks?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

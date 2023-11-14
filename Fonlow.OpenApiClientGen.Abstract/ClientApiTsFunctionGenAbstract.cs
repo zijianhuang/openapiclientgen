@@ -6,16 +6,17 @@ using System.CodeDom;
 using System.Diagnostics;
 using System.Text;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Fonlow.CodeDom.Web.Ts
 {
 	/// <summary>
-	/// Generate a client function upon ApiDescription
+	/// Generate a client function in CodeDOM upon ApiDescription
 	/// </summary>
 	public abstract class ClientApiTsFunctionGenAbstract
 	{
 		OpenApiOperation apiOperation;
-		protected ParameterDescriptionEx[] ParameterDescriptions { get; private set; }
+		protected ParameterDescription[] ParameterDescriptions { get; private set; }
 		protected CodeTypeReference RequestBodyCodeTypeReference { get; private set; }
 		string requestBodyComment;
 
@@ -138,9 +139,9 @@ namespace Fonlow.CodeDom.Web.Ts
 			}
 
 			builder.AppendLine(HttpMethod + " " + RelativePath);
-			foreach (ParameterDescriptionEx item in ParameterDescriptions)
+			foreach (ParameterDescription item in this.ParameterDescriptions)
 			{
-				CodeTypeReference tsParameterType = item.ParameterTypeReference;// Poco2TsGen.TranslateToClientTypeReference(item.ParameterDescriptor.ParameterType);
+				CodeTypeReference tsParameterType = item.ParameterTypeReference;
 				if (!String.IsNullOrEmpty(item.Documentation))
 				{
 					var funky = item.Documentation.Contains("*/");
@@ -189,11 +190,21 @@ namespace Fonlow.CodeDom.Web.Ts
 			return s;
 		}
 
+		protected CodeParameterDeclarationExpression[] CreateCodeParameterDeclarationExpressions()
+		{
+			return this.ParameterDescriptions.Select(d =>
+			{
+				var optionalNullTypeText = d.ParameterDescriptor.IsRequired ? String.Empty : " | null | undefined";
+				//var optionalParamText = d.ParameterDescriptor.IsRequired ? String.Empty : "?";
+				return new CodeParameterDeclarationExpression(TypeMapper.MapCodeTypeReferenceToTsText(d.ParameterTypeReference) + optionalNullTypeText, d.Name);
+			}).ToArray();
+		}
+
 		protected abstract CodeMemberMethod CreateMethodName();
 
 		protected abstract void RenderImplementation();
 
-		protected abstract string CreateUriQueryForTs(string uriText, ParameterDescriptionEx[] parameterDescriptions);
+		protected abstract string CreateUriQueryForTs(string uriText, ParameterDescription[] parameterDescriptions);
 	}
 
 }

@@ -7,7 +7,7 @@ export namespace MyNS {
 	export interface SiteSummaryResponse {
 
 		/** The site's Abusive Experience Report status. */
-		abusiveStatus?: SiteSummaryResponseAbusiveStatus;
+		abusiveStatus?: SiteSummaryResponseAbusiveStatus | null;
 
 		/**
 		 * The time at which
@@ -17,16 +17,16 @@ export namespace MyNS {
 		 * filter_status
 		 * is OFF.
 		 */
-		enforcementTime?: string;
+		enforcementTime?: string | null;
 
 		/**
 		 * The site's [enforcement
 		 * status](https://support.google.com/webtools/answer/7538608).
 		 */
-		filterStatus?: SiteSummaryResponseFilterStatus;
+		filterStatus?: SiteSummaryResponseFilterStatus | null;
 
 		/** The time at which the site's status last changed. */
-		lastChangeTime?: string;
+		lastChangeTime?: string | null;
 
 		/**
 		 * A link to the full Abusive Experience Report for the site.
@@ -36,13 +36,13 @@ export namespace MyNS {
 		 * process](https://support.google.com/webmasters/answer/9008080) for the site
 		 * before you can access the full report.
 		 */
-		reportUrl?: string;
+		reportUrl?: string | null;
 
 		/** The name of the reviewed site, e.g. `google.com`. */
-		reviewedSite?: string;
+		reviewedSite?: string | null;
 
 		/** Whether the site is currently under review. */
-		underReview?: boolean;
+		underReview?: boolean | null;
 	}
 
 	export enum SiteSummaryResponseAbusiveStatus { UNKNOWN = 0, PASSING = 1, FAILING = 2 }
@@ -54,7 +54,7 @@ export namespace MyNS {
 	export interface ViolatingSitesResponse {
 
 		/** The list of violating sites. */
-		violatingSites?: Array<SiteSummaryResponse>;
+		violatingSites?: Array<SiteSummaryResponse> | null;
 	}
 
 	@Injectable()

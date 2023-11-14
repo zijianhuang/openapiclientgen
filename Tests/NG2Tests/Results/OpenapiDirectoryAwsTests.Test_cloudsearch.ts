@@ -7,7 +7,7 @@ export namespace MyNS {
 	export interface BuildSuggestersResponse {
 
 		/** A list of field names. */
-		FieldNames?: Array<string>;
+		FieldNames?: Array<string> | null;
 	}
 
 	export interface BaseException {
@@ -24,7 +24,7 @@ export namespace MyNS {
 	export interface CreateDomainResponse {
 
 		/** The current status of the search domain. */
-		DomainStatus?: DomainStatus;
+		DomainStatus?: DomainStatus | null;
 	}
 
 
@@ -49,28 +49,28 @@ export namespace MyNS {
 		DomainName: string;
 
 		/** The Amazon Resource Name (ARN) of the search domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information. */
-		ARN?: string;
-		Created?: boolean;
-		Deleted?: boolean;
+		ARN?: string | null;
+		Created?: boolean | null;
+		Deleted?: boolean | null;
 
 		/** The endpoint to which service requests can be submitted. */
-		DocService?: ServiceEndpoint;
+		DocService?: ServiceEndpoint | null;
 
 		/** The endpoint to which service requests can be submitted. */
-		SearchService?: ServiceEndpoint;
+		SearchService?: ServiceEndpoint | null;
 		RequiresIndexDocuments: boolean;
-		Processing?: boolean;
+		Processing?: boolean | null;
 
 		/** The instance type (such as <code>search.m1.small</code>) that is being used to process search requests. */
-		SearchInstanceType?: string;
+		SearchInstanceType?: string | null;
 
 		/**
 		 * The number of partitions used to hold the domain's index.
 		 * Minimum: 1
 		 */
-		SearchPartitionCount?: number;
-		SearchInstanceCount?: number;
-		Limits?: Limits;
+		SearchPartitionCount?: number | null;
+		SearchInstanceCount?: number | null;
+		Limits?: Limits | null;
 	}
 
 
@@ -78,7 +78,7 @@ export namespace MyNS {
 	export interface ServiceEndpoint {
 
 		/** The endpoint to which service requests can be submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>. */
-		Endpoint?: string;
+		Endpoint?: string | null;
 	}
 
 	export interface Limits {
@@ -137,7 +137,7 @@ export namespace MyNS {
 		AnalysisSchemeLanguage: AnalysisSchemeAnalysisSchemeLanguage;
 
 		/** Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese. */
-		AnalysisOptions?: AnalysisOptions;
+		AnalysisOptions?: AnalysisOptions | null;
 	}
 
 	export enum AnalysisSchemeAnalysisSchemeLanguage { ar = 0, bg = 1, ca = 2, cs = 3, da = 4, de = 5, el = 6, en = 7, es = 8, eu = 9, fa = 10, fi = 11, fr = 12, ga = 13, gl = 14, he = 15, hi = 16, hu = 17, hy = 18, id = 19, it = 20, ja = 21, ko = 22, lv = 23, mul = 24, nl = 25, no = 26, pt = 27, ro = 28, ru = 29, sv = 30, th = 31, tr = 32, zh_Hans = 33, zh_Hant = 34 }
@@ -145,11 +145,11 @@ export namespace MyNS {
 
 	/** Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese. */
 	export interface AnalysisOptions {
-		Synonyms?: string;
-		Stopwords?: string;
-		StemmingDictionary?: string;
-		JapaneseTokenizationDictionary?: string;
-		AlgorithmicStemming?: AnalysisOptionsAlgorithmicStemming;
+		Synonyms?: string | null;
+		Stopwords?: string | null;
+		StemmingDictionary?: string | null;
+		JapaneseTokenizationDictionary?: string | null;
+		AlgorithmicStemming?: AnalysisOptionsAlgorithmicStemming | null;
 	}
 
 	export enum AnalysisOptionsAlgorithmicStemming { none = 0, minimal = 1, light = 2, full = 3 }
@@ -159,14 +159,14 @@ export namespace MyNS {
 	export interface OptionStatus {
 		CreationDate: Date;
 		UpdateDate: Date;
-		UpdateVersion?: number;
+		UpdateVersion?: number | null;
 
 		/**
 		 * <p>The state of processing a change to an option. One of:</p> <ul> <li>RequiresIndexDocuments: The option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li>Processing: The option's latest value is in the process of being activated.</li> <li>Active: The option's latest value is fully deployed. </li> <li>FailedToValidate: The option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> </ul>
 		 * Required
 		 */
 		State: OptionStatusState;
-		PendingDeletion?: boolean;
+		PendingDeletion?: boolean | null;
 	}
 
 	export enum OptionStatusState { RequiresIndexDocuments = 0, Processing = 1, Active = 2, FailedToValidate = 3 }
@@ -268,37 +268,37 @@ export namespace MyNS {
 		IndexFieldType: IndexFieldIndexFieldType;
 
 		/** Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default. */
-		IntOptions?: IntOptions;
+		IntOptions?: IntOptions | null;
 
 		/** Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default. */
-		DoubleOptions?: DoubleOptions;
+		DoubleOptions?: DoubleOptions | null;
 
 		/** Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default. */
-		LiteralOptions?: LiteralOptions;
+		LiteralOptions?: LiteralOptions | null;
 
 		/** Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default. */
-		TextOptions?: TextOptions;
+		TextOptions?: TextOptions | null;
 
 		/** Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default. */
-		DateOptions?: DateOptions;
+		DateOptions?: DateOptions | null;
 
 		/** Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default. */
-		LatLonOptions?: LatLonOptions;
+		LatLonOptions?: LatLonOptions | null;
 
 		/** Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default. */
-		IntArrayOptions?: IntArrayOptions;
+		IntArrayOptions?: IntArrayOptions | null;
 
 		/** Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default. */
-		DoubleArrayOptions?: DoubleArrayOptions;
+		DoubleArrayOptions?: DoubleArrayOptions | null;
 
 		/** Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default. */
-		LiteralArrayOptions?: LiteralArrayOptions;
+		LiteralArrayOptions?: LiteralArrayOptions | null;
 
 		/** Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default. */
-		TextArrayOptions?: TextArrayOptions;
+		TextArrayOptions?: TextArrayOptions | null;
 
 		/** Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default. */
-		DateArrayOptions?: DateArrayOptions;
+		DateArrayOptions?: DateArrayOptions | null;
 	}
 
 	export enum IndexFieldIndexFieldType { _int = 0, _double = 1, literal = 2, text = 3, date = 4, latlon = 5, int_array = 6, double_array = 7, literal_array = 8, text_array = 9, date_array = 10 }
@@ -306,7 +306,7 @@ export namespace MyNS {
 
 	/** Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default. */
 	export interface IntOptions {
-		DefaultValue?: number;
+		DefaultValue?: number | null;
 
 		/**
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
@@ -314,17 +314,17 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-z][a-z0-9_]*
 		 */
-		SourceField?: string;
-		FacetEnabled?: boolean;
-		SearchEnabled?: boolean;
-		ReturnEnabled?: boolean;
-		SortEnabled?: boolean;
+		SourceField?: string | null;
+		FacetEnabled?: boolean | null;
+		SearchEnabled?: boolean | null;
+		ReturnEnabled?: boolean | null;
+		SortEnabled?: boolean | null;
 	}
 
 
 	/** Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default. */
 	export interface DoubleOptions {
-		DefaultValue?: number;
+		DefaultValue?: number | null;
 
 		/**
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
@@ -332,11 +332,11 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-z][a-z0-9_]*
 		 */
-		SourceField?: string;
-		FacetEnabled?: boolean;
-		SearchEnabled?: boolean;
-		ReturnEnabled?: boolean;
-		SortEnabled?: boolean;
+		SourceField?: string | null;
+		FacetEnabled?: boolean | null;
+		SearchEnabled?: boolean | null;
+		ReturnEnabled?: boolean | null;
+		SortEnabled?: boolean | null;
 	}
 
 
@@ -348,7 +348,7 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		DefaultValue?: string;
+		DefaultValue?: string | null;
 
 		/**
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
@@ -356,11 +356,11 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-z][a-z0-9_]*
 		 */
-		SourceField?: string;
-		FacetEnabled?: boolean;
-		SearchEnabled?: boolean;
-		ReturnEnabled?: boolean;
-		SortEnabled?: boolean;
+		SourceField?: string | null;
+		FacetEnabled?: boolean | null;
+		SearchEnabled?: boolean | null;
+		ReturnEnabled?: boolean | null;
+		SortEnabled?: boolean | null;
 	}
 
 
@@ -372,7 +372,7 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		DefaultValue?: string;
+		DefaultValue?: string | null;
 
 		/**
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
@@ -380,11 +380,11 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-z][a-z0-9_]*
 		 */
-		SourceField?: string;
-		ReturnEnabled?: boolean;
-		SortEnabled?: boolean;
-		HighlightEnabled?: boolean;
-		AnalysisScheme?: string;
+		SourceField?: string | null;
+		ReturnEnabled?: boolean | null;
+		SortEnabled?: boolean | null;
+		HighlightEnabled?: boolean | null;
+		AnalysisScheme?: string | null;
 	}
 
 
@@ -396,7 +396,7 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		DefaultValue?: string;
+		DefaultValue?: string | null;
 
 		/**
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
@@ -404,11 +404,11 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-z][a-z0-9_]*
 		 */
-		SourceField?: string;
-		FacetEnabled?: boolean;
-		SearchEnabled?: boolean;
-		ReturnEnabled?: boolean;
-		SortEnabled?: boolean;
+		SourceField?: string | null;
+		FacetEnabled?: boolean | null;
+		SearchEnabled?: boolean | null;
+		ReturnEnabled?: boolean | null;
+		SortEnabled?: boolean | null;
 	}
 
 
@@ -420,7 +420,7 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		DefaultValue?: string;
+		DefaultValue?: string | null;
 
 		/**
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
@@ -428,31 +428,31 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [a-z][a-z0-9_]*
 		 */
-		SourceField?: string;
-		FacetEnabled?: boolean;
-		SearchEnabled?: boolean;
-		ReturnEnabled?: boolean;
-		SortEnabled?: boolean;
+		SourceField?: string | null;
+		FacetEnabled?: boolean | null;
+		SearchEnabled?: boolean | null;
+		ReturnEnabled?: boolean | null;
+		SortEnabled?: boolean | null;
 	}
 
 
 	/** Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default. */
 	export interface IntArrayOptions {
-		DefaultValue?: number;
-		SourceFields?: string;
-		FacetEnabled?: boolean;
-		SearchEnabled?: boolean;
-		ReturnEnabled?: boolean;
+		DefaultValue?: number | null;
+		SourceFields?: string | null;
+		FacetEnabled?: boolean | null;
+		SearchEnabled?: boolean | null;
+		ReturnEnabled?: boolean | null;
 	}
 
 
 	/** Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default. */
 	export interface DoubleArrayOptions {
-		DefaultValue?: number;
-		SourceFields?: string;
-		FacetEnabled?: boolean;
-		SearchEnabled?: boolean;
-		ReturnEnabled?: boolean;
+		DefaultValue?: number | null;
+		SourceFields?: string | null;
+		FacetEnabled?: boolean | null;
+		SearchEnabled?: boolean | null;
+		ReturnEnabled?: boolean | null;
 	}
 
 
@@ -464,11 +464,11 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		DefaultValue?: string;
-		SourceFields?: string;
-		FacetEnabled?: boolean;
-		SearchEnabled?: boolean;
-		ReturnEnabled?: boolean;
+		DefaultValue?: string | null;
+		SourceFields?: string | null;
+		FacetEnabled?: boolean | null;
+		SearchEnabled?: boolean | null;
+		ReturnEnabled?: boolean | null;
 	}
 
 
@@ -480,11 +480,11 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		DefaultValue?: string;
-		SourceFields?: string;
-		ReturnEnabled?: boolean;
-		HighlightEnabled?: boolean;
-		AnalysisScheme?: string;
+		DefaultValue?: string | null;
+		SourceFields?: string | null;
+		ReturnEnabled?: boolean | null;
+		HighlightEnabled?: boolean | null;
+		AnalysisScheme?: string | null;
 	}
 
 
@@ -496,11 +496,11 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Min length: 0
 		 */
-		DefaultValue?: string;
-		SourceFields?: string;
-		FacetEnabled?: boolean;
-		SearchEnabled?: boolean;
-		ReturnEnabled?: boolean;
+		DefaultValue?: string | null;
+		SourceFields?: string | null;
+		FacetEnabled?: boolean | null;
+		SearchEnabled?: boolean | null;
+		ReturnEnabled?: boolean | null;
 	}
 
 
@@ -567,8 +567,8 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SourceField: string;
-		FuzzyMatching?: DocumentSuggesterOptionsFuzzyMatching;
-		SortExpression?: string;
+		FuzzyMatching?: DocumentSuggesterOptionsFuzzyMatching | null;
+		SortExpression?: string | null;
 	}
 
 	export enum DocumentSuggesterOptionsFuzzyMatching { none = 0, low = 1, high = 2 }
@@ -589,7 +589,7 @@ export namespace MyNS {
 	export interface DeleteDomainResponse {
 
 		/** The current status of the search domain. */
-		DomainStatus?: DomainStatus;
+		DomainStatus?: DomainStatus | null;
 	}
 
 
@@ -641,7 +641,7 @@ export namespace MyNS {
 	export interface DescribeAvailabilityOptionsResponse {
 
 		/** The status and configuration of the domain's availability options. */
-		AvailabilityOptions?: AvailabilityOptionsStatus;
+		AvailabilityOptions?: AvailabilityOptionsStatus | null;
 	}
 
 
@@ -664,7 +664,7 @@ export namespace MyNS {
 	export interface DescribeDomainEndpointOptionsResponse {
 
 		/** The configuration and status of the domain's endpoint options. */
-		DomainEndpointOptions?: DomainEndpointOptionsStatus;
+		DomainEndpointOptions?: DomainEndpointOptionsStatus | null;
 	}
 
 
@@ -687,10 +687,10 @@ export namespace MyNS {
 
 	/** The domain's endpoint options. */
 	export interface DomainEndpointOptions {
-		EnforceHTTPS?: boolean;
+		EnforceHTTPS?: boolean | null;
 
 		/** The minimum required TLS version. */
-		TLSSecurityPolicy?: DomainEndpointOptionsTLSSecurityPolicy;
+		TLSSecurityPolicy?: DomainEndpointOptionsTLSSecurityPolicy | null;
 	}
 
 	export enum DomainEndpointOptionsTLSSecurityPolicy { Policy_Min_TLS_1_0_2019_07 = 0, Policy_Min_TLS_1_2_2019_07 = 1 }
@@ -761,9 +761,9 @@ export namespace MyNS {
 	export interface ScalingParameters {
 
 		/** The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted. */
-		DesiredInstanceType?: ScalingParametersDesiredInstanceType;
-		DesiredReplicationCount?: number;
-		DesiredPartitionCount?: number;
+		DesiredInstanceType?: ScalingParametersDesiredInstanceType | null;
+		DesiredReplicationCount?: number | null;
+		DesiredPartitionCount?: number | null;
 	}
 
 	export enum ScalingParametersDesiredInstanceType { search_m1_small = 0, search_m1_large = 1, search_m2_xlarge = 2, search_m2_2xlarge = 3, search_m3_medium = 4, search_m3_large = 5, search_m3_xlarge = 6, search_m3_2xlarge = 7 }
@@ -812,7 +812,7 @@ export namespace MyNS {
 	export interface IndexDocumentsResponse {
 
 		/** A list of field names. */
-		FieldNames?: Array<string>;
+		FieldNames?: Array<string> | null;
 	}
 
 
@@ -820,7 +820,7 @@ export namespace MyNS {
 	export interface ListDomainNamesResponse {
 
 		/** A collection of domain names. */
-		DomainNames?: DomainNameMap;
+		DomainNames?: DomainNameMap | null;
 	}
 
 
@@ -833,7 +833,7 @@ export namespace MyNS {
 	export interface UpdateAvailabilityOptionsResponse {
 
 		/** The status and configuration of the domain's availability options. */
-		AvailabilityOptions?: AvailabilityOptionsStatus;
+		AvailabilityOptions?: AvailabilityOptionsStatus | null;
 	}
 
 	export interface ValidationException {
@@ -844,7 +844,7 @@ export namespace MyNS {
 	export interface UpdateDomainEndpointOptionsResponse {
 
 		/** The configuration and status of the domain's endpoint options. */
-		DomainEndpointOptions?: DomainEndpointOptionsStatus;
+		DomainEndpointOptions?: DomainEndpointOptionsStatus | null;
 	}
 
 
@@ -1097,8 +1097,8 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
-		AnalysisSchemeNames?: Array<string>;
-		Deployed?: boolean;
+		AnalysisSchemeNames?: Array<string> | null;
+		Deployed?: boolean | null;
 	}
 
 
@@ -1113,7 +1113,7 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
-		Deployed?: boolean;
+		Deployed?: boolean | null;
 	}
 
 
@@ -1128,7 +1128,7 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
-		Deployed?: boolean;
+		Deployed?: boolean | null;
 	}
 
 
@@ -1136,7 +1136,7 @@ export namespace MyNS {
 	export interface DescribeDomainsRequest {
 
 		/** A list of domain names. */
-		DomainNames?: Array<string>;
+		DomainNames?: Array<string> | null;
 	}
 
 
@@ -1151,8 +1151,8 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
-		ExpressionNames?: Array<string>;
-		Deployed?: boolean;
+		ExpressionNames?: Array<string> | null;
+		Deployed?: boolean | null;
 	}
 
 
@@ -1167,8 +1167,8 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
-		FieldNames?: Array<string>;
-		Deployed?: boolean;
+		FieldNames?: Array<string> | null;
+		Deployed?: boolean | null;
 	}
 
 
@@ -1197,7 +1197,7 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
-		Deployed?: boolean;
+		Deployed?: boolean | null;
 	}
 
 
@@ -1212,8 +1212,8 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
-		SuggesterNames?: Array<string>;
-		Deployed?: boolean;
+		SuggesterNames?: Array<string> | null;
+		Deployed?: boolean | null;
 	}
 
 	export enum SuggesterFuzzyMatching { none = 0, low = 1, high = 2 }
@@ -1430,7 +1430,7 @@ export namespace MyNS {
 		 * @param {boolean} Deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeAnalysisSchemes(DomainName: string, AnalysisSchemeNames: Array<string>, Deployed: boolean, Action: GET_DescribeAnalysisSchemesAction, Version: GET_DescribeAnalysisSchemesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeAnalysisSchemes(DomainName: string, AnalysisSchemeNames: Array<string> | null | undefined, Deployed: boolean | null | undefined, Action: GET_DescribeAnalysisSchemesAction, Version: GET_DescribeAnalysisSchemesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeAnalysisSchemes?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&' + AnalysisSchemeNames.map(z => `AnalysisSchemeNames=${encodeURIComponent(z)}`).join('&') + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1441,7 +1441,7 @@ export namespace MyNS {
 		 * @param {boolean} Deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeAvailabilityOptions(DomainName: string, Deployed: boolean, Action: GET_DescribeAvailabilityOptionsAction, Version: GET_DescribeAvailabilityOptionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeAvailabilityOptions(DomainName: string, Deployed: boolean | null | undefined, Action: GET_DescribeAvailabilityOptionsAction, Version: GET_DescribeAvailabilityOptionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeAvailabilityOptions?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1452,7 +1452,7 @@ export namespace MyNS {
 		 * @param {boolean} Deployed Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeDomainEndpointOptions(DomainName: string, Deployed: boolean, Action: GET_DescribeDomainEndpointOptionsAction, Version: GET_DescribeDomainEndpointOptionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDomainEndpointOptions(DomainName: string, Deployed: boolean | null | undefined, Action: GET_DescribeDomainEndpointOptionsAction, Version: GET_DescribeDomainEndpointOptionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDomainEndpointOptions?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1462,7 +1462,7 @@ export namespace MyNS {
 		 * @param {Array<string>} DomainNames The names of the domains you want to include in the response.
 		 * @return {void} Success
 		 */
-		GET_DescribeDomains(DomainNames: Array<string>, Action: GET_DescribeDomainsAction, Version: GET_DescribeDomainsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDomains(DomainNames: Array<string> | null | undefined, Action: GET_DescribeDomainsAction, Version: GET_DescribeDomainsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDomains?' + DomainNames.map(z => `DomainNames=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1474,7 +1474,7 @@ export namespace MyNS {
 		 * @param {boolean} Deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeExpressions(DomainName: string, ExpressionNames: Array<string>, Deployed: boolean, Action: GET_DescribeExpressionsAction, Version: GET_DescribeExpressionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeExpressions(DomainName: string, ExpressionNames: Array<string> | null | undefined, Deployed: boolean | null | undefined, Action: GET_DescribeExpressionsAction, Version: GET_DescribeExpressionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeExpressions?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&' + ExpressionNames.map(z => `ExpressionNames=${encodeURIComponent(z)}`).join('&') + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1486,7 +1486,7 @@ export namespace MyNS {
 		 * @param {boolean} Deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeIndexFields(DomainName: string, FieldNames: Array<string>, Deployed: boolean, Action: GET_DescribeIndexFieldsAction, Version: GET_DescribeIndexFieldsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeIndexFields(DomainName: string, FieldNames: Array<string> | null | undefined, Deployed: boolean | null | undefined, Action: GET_DescribeIndexFieldsAction, Version: GET_DescribeIndexFieldsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeIndexFields?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&' + FieldNames.map(z => `FieldNames=${encodeURIComponent(z)}`).join('&') + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1506,7 +1506,7 @@ export namespace MyNS {
 		 * @param {boolean} Deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeServiceAccessPolicies(DomainName: string, Deployed: boolean, Action: GET_DescribeServiceAccessPoliciesAction, Version: GET_DescribeServiceAccessPoliciesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeServiceAccessPolicies(DomainName: string, Deployed: boolean | null | undefined, Action: GET_DescribeServiceAccessPoliciesAction, Version: GET_DescribeServiceAccessPoliciesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeServiceAccessPolicies?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1518,7 +1518,7 @@ export namespace MyNS {
 		 * @param {boolean} Deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeSuggesters(DomainName: string, SuggesterNames: Array<string>, Deployed: boolean, Action: GET_DescribeSuggestersAction, Version: GET_DescribeSuggestersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeSuggesters(DomainName: string, SuggesterNames: Array<string> | null | undefined, Deployed: boolean | null | undefined, Action: GET_DescribeSuggestersAction, Version: GET_DescribeSuggestersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeSuggesters?DomainName=' + (DomainName == null ? '' : encodeURIComponent(DomainName)) + '&' + SuggesterNames.map(z => `SuggesterNames=${encodeURIComponent(z)}`).join('&') + '&Deployed=' + Deployed + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1620,7 +1620,7 @@ export namespace MyNS {
 		AnalysisSchemeLanguage: GET_DefineAnalysisSchemeAnalysisSchemeAnalysisSchemeLanguage;
 
 		/** Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese. */
-		AnalysisOptions?: AnalysisOptions;
+		AnalysisOptions?: AnalysisOptions | null;
 	}
 
 	export enum GET_DefineAnalysisSchemeAnalysisSchemeAnalysisSchemeLanguage { ar = 0, bg = 1, ca = 2, cs = 3, da = 4, de = 5, el = 6, en = 7, es = 8, eu = 9, fa = 10, fi = 11, fr = 12, ga = 13, gl = 14, he = 15, hi = 16, hu = 17, hy = 18, id = 19, it = 20, ja = 21, ko = 22, lv = 23, mul = 24, nl = 25, no = 26, pt = 27, ro = 28, ru = 29, sv = 30, th = 31, tr = 32, zh_Hans = 33, zh_Hant = 34 }
@@ -1667,37 +1667,37 @@ export namespace MyNS {
 		IndexFieldType: GET_DefineIndexFieldIndexFieldIndexFieldType;
 
 		/** Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default. */
-		IntOptions?: IntOptions;
+		IntOptions?: IntOptions | null;
 
 		/** Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default. */
-		DoubleOptions?: DoubleOptions;
+		DoubleOptions?: DoubleOptions | null;
 
 		/** Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default. */
-		LiteralOptions?: LiteralOptions;
+		LiteralOptions?: LiteralOptions | null;
 
 		/** Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default. */
-		TextOptions?: TextOptions;
+		TextOptions?: TextOptions | null;
 
 		/** Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default. */
-		DateOptions?: DateOptions;
+		DateOptions?: DateOptions | null;
 
 		/** Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default. */
-		LatLonOptions?: LatLonOptions;
+		LatLonOptions?: LatLonOptions | null;
 
 		/** Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default. */
-		IntArrayOptions?: IntArrayOptions;
+		IntArrayOptions?: IntArrayOptions | null;
 
 		/** Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default. */
-		DoubleArrayOptions?: DoubleArrayOptions;
+		DoubleArrayOptions?: DoubleArrayOptions | null;
 
 		/** Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default. */
-		LiteralArrayOptions?: LiteralArrayOptions;
+		LiteralArrayOptions?: LiteralArrayOptions | null;
 
 		/** Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default. */
-		TextArrayOptions?: TextArrayOptions;
+		TextArrayOptions?: TextArrayOptions | null;
 
 		/** Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default. */
-		DateArrayOptions?: DateArrayOptions;
+		DateArrayOptions?: DateArrayOptions | null;
 	}
 
 	export enum GET_DefineIndexFieldIndexFieldIndexFieldType { _int = 0, _double = 1, literal = 2, text = 3, date = 4, latlon = 5, int_array = 6, double_array = 7, literal_array = 8, text_array = 9, date_array = 10 }
@@ -1835,10 +1835,10 @@ export namespace MyNS {
 	export enum POST_UpdateAvailabilityOptionsVersion { _2013_01_01 = 0 }
 
 	export interface GET_UpdateDomainEndpointOptionsDomainEndpointOptions {
-		EnforceHTTPS?: boolean;
+		EnforceHTTPS?: boolean | null;
 
 		/** The minimum required TLS version. */
-		TLSSecurityPolicy?: GET_UpdateDomainEndpointOptionsDomainEndpointOptionsTLSSecurityPolicy;
+		TLSSecurityPolicy?: GET_UpdateDomainEndpointOptionsDomainEndpointOptionsTLSSecurityPolicy | null;
 	}
 
 	export enum GET_UpdateDomainEndpointOptionsDomainEndpointOptionsTLSSecurityPolicy { Policy_Min_TLS_1_0_2019_07 = 0, Policy_Min_TLS_1_2_2019_07 = 1 }
@@ -1852,9 +1852,9 @@ export namespace MyNS {
 	export interface GET_UpdateScalingParametersScalingParameters {
 
 		/** The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted. */
-		DesiredInstanceType?: GET_UpdateScalingParametersScalingParametersDesiredInstanceType;
-		DesiredReplicationCount?: number;
-		DesiredPartitionCount?: number;
+		DesiredInstanceType?: GET_UpdateScalingParametersScalingParametersDesiredInstanceType | null;
+		DesiredReplicationCount?: number | null;
+		DesiredPartitionCount?: number | null;
 	}
 
 	export enum GET_UpdateScalingParametersScalingParametersDesiredInstanceType { search_m1_small = 0, search_m1_large = 1, search_m2_xlarge = 2, search_m2_2xlarge = 3, search_m3_medium = 4, search_m3_large = 5, search_m3_xlarge = 6, search_m3_2xlarge = 7 }

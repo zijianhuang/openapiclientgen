@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateCostCategoryDefinitionResponse {
-		CostCategoryArn?: string;
+		CostCategoryArn?: string | null;
 
 		/**
 		 * The time period that you want the usage and costs for.
@@ -11,7 +11,7 @@ export namespace MyNS {
 		 * Min length: 20
 		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
-		EffectiveStart?: string;
+		EffectiveStart?: string | null;
 	}
 
 	export interface CreateCostCategoryDefinitionRequest {
@@ -56,28 +56,28 @@ export namespace MyNS {
 
 	/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
 	export interface Expression {
-		Or?: Array<Expression>;
-		And?: Array<Expression>;
+		Or?: Array<Expression> | null;
+		And?: Array<Expression> | null;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Not?: Expression;
+		Not?: Expression | null;
 
 		/** The metadata that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values. */
-		Dimensions?: DimensionValues;
+		Dimensions?: DimensionValues | null;
 
 		/** The values that are available for a tag. */
-		Tags?: TagValues;
+		Tags?: TagValues | null;
 
 		/** The Cost Categories values used for filtering the costs. */
-		CostCategories?: CostCategoryValues;
+		CostCategories?: CostCategoryValues | null;
 	}
 
 
 	/** The metadata that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values. */
 	export interface DimensionValues {
-		Key?: DimensionValuesKey;
-		Values?: Array<string>;
-		MatchOptions?: Array<MatchOption>;
+		Key?: DimensionValuesKey | null;
+		Values?: Array<string> | null;
+		MatchOptions?: Array<MatchOption> | null;
 	}
 
 	export enum DimensionValuesKey { AZ = 0, INSTANCE_TYPE = 1, LINKED_ACCOUNT = 2, LINKED_ACCOUNT_NAME = 3, OPERATION = 4, PURCHASE_TYPE = 5, REGION = 6, SERVICE = 7, SERVICE_CODE = 8, USAGE_TYPE = 9, USAGE_TYPE_GROUP = 10, RECORD_TYPE = 11, OPERATING_SYSTEM = 12, TENANCY = 13, SCOPE = 14, PLATFORM = 15, SUBSCRIPTION_ID = 16, LEGAL_ENTITY_NAME = 17, DEPLOYMENT_OPTION = 18, DATABASE_ENGINE = 19, CACHE_ENGINE = 20, INSTANCE_TYPE_FAMILY = 21, BILLING_ENTITY = 22, RESERVATION_ID = 23, RESOURCE_ID = 24, RIGHTSIZING_TYPE = 25, SAVINGS_PLANS_TYPE = 26, SAVINGS_PLAN_ARN = 27, PAYMENT_OPTION = 28 }
@@ -87,9 +87,9 @@ export namespace MyNS {
 
 	/** The values that are available for a tag. */
 	export interface TagValues {
-		Key?: string;
-		Values?: Array<string>;
-		MatchOptions?: Array<MatchOption>;
+		Key?: string | null;
+		Values?: Array<string> | null;
+		MatchOptions?: Array<MatchOption> | null;
 	}
 
 
@@ -101,8 +101,8 @@ export namespace MyNS {
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		Key?: string;
-		Values?: Array<string>;
+		Key?: string | null;
+		Values?: Array<string> | null;
 	}
 
 	export interface ServiceQuotaExceededException {
@@ -112,7 +112,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteCostCategoryDefinitionResponse {
-		CostCategoryArn?: string;
+		CostCategoryArn?: string | null;
 
 		/**
 		 * The time period that you want the usage and costs for.
@@ -120,7 +120,7 @@ export namespace MyNS {
 		 * Min length: 20
 		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
-		EffectiveEnd?: string;
+		EffectiveEnd?: string | null;
 	}
 
 	export interface DeleteCostCategoryDefinitionRequest {
@@ -133,7 +133,7 @@ export namespace MyNS {
 	export interface DescribeCostCategoryDefinitionResponse {
 
 		/** The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object. */
-		CostCategory?: CostCategory;
+		CostCategory?: CostCategory | null;
 	}
 
 
@@ -156,7 +156,7 @@ export namespace MyNS {
 		 * Min length: 20
 		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
-		EffectiveEnd?: string;
+		EffectiveEnd?: string | null;
 
 		/**
 		 * The unique name of the Cost Category.
@@ -185,20 +185,20 @@ export namespace MyNS {
 		 * Min length: 20
 		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
-		EffectiveOn?: string;
+		EffectiveOn?: string | null;
 	}
 
 	export interface GetCostAndUsageResponse {
-		NextPageToken?: string;
-		GroupDefinitions?: Array<GroupDefinition>;
-		ResultsByTime?: Array<ResultByTime>;
+		NextPageToken?: string | null;
+		GroupDefinitions?: Array<GroupDefinition> | null;
+		ResultsByTime?: Array<ResultByTime> | null;
 	}
 
 
 	/** Represents a group when you specify a group by criteria or in the response to a query with a specific grouping. */
 	export interface GroupDefinition {
-		Type?: GroupDefinitionType;
-		Key?: string;
+		Type?: GroupDefinitionType | null;
+		Key?: string | null;
 	}
 
 	export enum GroupDefinitionType { DIMENSION = 0, TAG = 1, COST_CATEGORY = 2 }
@@ -208,10 +208,10 @@ export namespace MyNS {
 	export interface ResultByTime {
 
 		/** The time period that you want the usage and costs for. */
-		TimePeriod?: DateInterval;
-		Total?: Metrics;
-		Groups?: Array<Group>;
-		Estimated?: boolean;
+		TimePeriod?: DateInterval | null;
+		Total?: Metrics | null;
+		Groups?: Array<Group> | null;
+		Estimated?: boolean | null;
 	}
 
 
@@ -227,8 +227,8 @@ export namespace MyNS {
 
 	/** One level of grouped data in the results. */
 	export interface Group {
-		Keys?: Array<string>;
-		Metrics?: Metrics;
+		Keys?: Array<string> | null;
+		Metrics?: Metrics | null;
 	}
 
 	export interface GetCostAndUsageRequest {
@@ -238,13 +238,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		TimePeriod: DateInterval;
-		Granularity?: GetCostAndUsageRequestGranularity;
+		Granularity?: GetCostAndUsageRequestGranularity | null;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression;
-		Metrics?: Array<string>;
-		GroupBy?: Array<GroupDefinition>;
-		NextPageToken?: string;
+		Filter?: Expression | null;
+		Metrics?: Array<string> | null;
+		GroupBy?: Array<GroupDefinition> | null;
+		NextPageToken?: string | null;
 	}
 
 	export enum GetCostAndUsageRequestGranularity { DAILY = 0, MONTHLY = 1, HOURLY = 2 }
@@ -262,9 +262,9 @@ export namespace MyNS {
 	}
 
 	export interface GetCostAndUsageWithResourcesResponse {
-		NextPageToken?: string;
-		GroupDefinitions?: Array<GroupDefinition>;
-		ResultsByTime?: Array<ResultByTime>;
+		NextPageToken?: string | null;
+		GroupDefinitions?: Array<GroupDefinition> | null;
+		ResultsByTime?: Array<ResultByTime> | null;
 	}
 
 	export interface GetCostAndUsageWithResourcesRequest {
@@ -274,27 +274,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		TimePeriod: DateInterval;
-		Granularity?: GetCostAndUsageRequestGranularity;
+		Granularity?: GetCostAndUsageRequestGranularity | null;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression;
-		Metrics?: Array<string>;
-		GroupBy?: Array<GroupDefinition>;
-		NextPageToken?: string;
+		Filter?: Expression | null;
+		Metrics?: Array<string> | null;
+		GroupBy?: Array<GroupDefinition> | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface GetCostForecastResponse {
 
 		/** The aggregated value for a metric. */
-		Total?: MetricValue;
-		ForecastResultsByTime?: Array<ForecastResult>;
+		Total?: MetricValue | null;
+		ForecastResultsByTime?: Array<ForecastResult> | null;
 	}
 
 
 	/** The aggregated value for a metric. */
 	export interface MetricValue {
-		Amount?: string;
-		Unit?: string;
+		Amount?: string | null;
+		Unit?: string | null;
 	}
 
 
@@ -302,10 +302,10 @@ export namespace MyNS {
 	export interface ForecastResult {
 
 		/** The time period that you want the usage and costs for. */
-		TimePeriod?: DateInterval;
-		MeanValue?: string;
-		PredictionIntervalLowerBound?: string;
-		PredictionIntervalUpperBound?: string;
+		TimePeriod?: DateInterval | null;
+		MeanValue?: string | null;
+		PredictionIntervalLowerBound?: string | null;
+		PredictionIntervalUpperBound?: string | null;
 	}
 
 	export interface GetCostForecastRequest {
@@ -319,8 +319,8 @@ export namespace MyNS {
 		Granularity: GetCostAndUsageRequestGranularity;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression;
-		PredictionIntervalLevel?: number;
+		Filter?: Expression | null;
+		PredictionIntervalLevel?: number | null;
 	}
 
 	export enum GetCostForecastRequestMetric { BLENDED_COST = 0, UNBLENDED_COST = 1, AMORTIZED_COST = 2, NET_UNBLENDED_COST = 3, NET_AMORTIZED_COST = 4, USAGE_QUANTITY = 5, NORMALIZED_USAGE_AMOUNT = 6 }
@@ -329,21 +329,21 @@ export namespace MyNS {
 		DimensionValues: Array<DimensionValuesWithAttributes>;
 		ReturnSize: number;
 		TotalSize: number;
-		NextPageToken?: string;
+		NextPageToken?: string | null;
 	}
 
 
 	/** The metadata of a specific type that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values. */
 	export interface DimensionValuesWithAttributes {
-		Value?: string;
-		Attributes?: Attributes;
+		Value?: string | null;
+		Attributes?: Attributes | null;
 	}
 
 	export interface Attributes {
 	}
 
 	export interface GetDimensionValuesRequest {
-		SearchString?: string;
+		SearchString?: string | null;
 
 		/**
 		 * The time period that you want the usage and costs for.
@@ -351,8 +351,8 @@ export namespace MyNS {
 		 */
 		TimePeriod: DateInterval;
 		Dimension: DimensionValuesKey;
-		Context?: GetDimensionValuesRequestContext;
-		NextPageToken?: string;
+		Context?: GetDimensionValuesRequestContext | null;
+		NextPageToken?: string | null;
 	}
 
 	export enum GetDimensionValuesRequestContext { COST_AND_USAGE = 0, RESERVATIONS = 1, SAVINGS_PLANS = 2 }
@@ -361,8 +361,8 @@ export namespace MyNS {
 		CoveragesByTime: Array<CoverageByTime>;
 
 		/** The amount of instance usage that a reservation covered. */
-		Total?: Coverage;
-		NextPageToken?: string;
+		Total?: Coverage | null;
+		NextPageToken?: string | null;
 	}
 
 
@@ -370,20 +370,20 @@ export namespace MyNS {
 	export interface CoverageByTime {
 
 		/** The time period that you want the usage and costs for. */
-		TimePeriod?: DateInterval;
-		Groups?: Array<ReservationCoverageGroup>;
+		TimePeriod?: DateInterval | null;
+		Groups?: Array<ReservationCoverageGroup> | null;
 
 		/** The amount of instance usage that a reservation covered. */
-		Total?: Coverage;
+		Total?: Coverage | null;
 	}
 
 
 	/** A group of reservations that share a set of attributes. */
 	export interface ReservationCoverageGroup {
-		Attributes?: Attributes;
+		Attributes?: Attributes | null;
 
 		/** The amount of instance usage that a reservation covered. */
-		Coverage?: Coverage;
+		Coverage?: Coverage | null;
 	}
 
 
@@ -391,37 +391,37 @@ export namespace MyNS {
 	export interface Coverage {
 
 		/** How long a running instance either used a reservation or was On-Demand. */
-		CoverageHours?: CoverageHours;
+		CoverageHours?: CoverageHours | null;
 
 		/** <p>The amount of instance usage, in normalized units. Normalized units enable you to see your EC2 usage for multiple sizes of instances in a uniform way. For example, suppose you run an xlarge instance and a 2xlarge instance. If you run both instances for the same amount of time, the 2xlarge instance uses twice as much of your reservation as the xlarge instance, even though both instances show only one instance-hour. Using normalized units instead of instance-hours, the xlarge instance used 8 normalized units, and the 2xlarge instance used 16 normalized units.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p> */
-		CoverageNormalizedUnits?: CoverageNormalizedUnits;
+		CoverageNormalizedUnits?: CoverageNormalizedUnits | null;
 
 		/** How much it costs to run an instance. */
-		CoverageCost?: CoverageCost;
+		CoverageCost?: CoverageCost | null;
 	}
 
 
 	/** How long a running instance either used a reservation or was On-Demand. */
 	export interface CoverageHours {
-		OnDemandHours?: string;
-		ReservedHours?: string;
-		TotalRunningHours?: string;
-		CoverageHoursPercentage?: string;
+		OnDemandHours?: string | null;
+		ReservedHours?: string | null;
+		TotalRunningHours?: string | null;
+		CoverageHoursPercentage?: string | null;
 	}
 
 
 	/** <p>The amount of instance usage, in normalized units. Normalized units enable you to see your EC2 usage for multiple sizes of instances in a uniform way. For example, suppose you run an xlarge instance and a 2xlarge instance. If you run both instances for the same amount of time, the 2xlarge instance uses twice as much of your reservation as the xlarge instance, even though both instances show only one instance-hour. Using normalized units instead of instance-hours, the xlarge instance used 8 normalized units, and the 2xlarge instance used 16 normalized units.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p> */
 	export interface CoverageNormalizedUnits {
-		OnDemandNormalizedUnits?: string;
-		ReservedNormalizedUnits?: string;
-		TotalRunningNormalizedUnits?: string;
-		CoverageNormalizedUnitsPercentage?: string;
+		OnDemandNormalizedUnits?: string | null;
+		ReservedNormalizedUnits?: string | null;
+		TotalRunningNormalizedUnits?: string | null;
+		CoverageNormalizedUnitsPercentage?: string | null;
 	}
 
 
 	/** How much it costs to run an instance. */
 	export interface CoverageCost {
-		OnDemandCost?: string;
+		OnDemandCost?: string | null;
 	}
 
 
@@ -433,44 +433,44 @@ export namespace MyNS {
 		 * Required
 		 */
 		TimePeriod: DateInterval;
-		GroupBy?: Array<GroupDefinition>;
-		Granularity?: GetCostAndUsageRequestGranularity;
+		GroupBy?: Array<GroupDefinition> | null;
+		Granularity?: GetCostAndUsageRequestGranularity | null;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression;
-		Metrics?: Array<string>;
-		NextPageToken?: string;
+		Filter?: Expression | null;
+		Metrics?: Array<string> | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface GetReservationPurchaseRecommendationResponse {
 
 		/** Information about this specific recommendation, such as the timestamp for when AWS made a specific recommendation. */
-		Metadata?: ReservationPurchaseRecommendationMetadata;
-		Recommendations?: Array<ReservationPurchaseRecommendation>;
-		NextPageToken?: string;
+		Metadata?: ReservationPurchaseRecommendationMetadata | null;
+		Recommendations?: Array<ReservationPurchaseRecommendation> | null;
+		NextPageToken?: string | null;
 	}
 
 
 	/** Information about this specific recommendation, such as the timestamp for when AWS made a specific recommendation. */
 	export interface ReservationPurchaseRecommendationMetadata {
-		RecommendationId?: string;
-		GenerationTimestamp?: string;
+		RecommendationId?: string | null;
+		GenerationTimestamp?: string | null;
 	}
 
 
 	/** A specific reservation that AWS recommends for purchase. */
 	export interface ReservationPurchaseRecommendation {
-		AccountScope?: ReservationPurchaseRecommendationAccountScope;
-		LookbackPeriodInDays?: ReservationPurchaseRecommendationLookbackPeriodInDays;
-		TermInYears?: ReservationPurchaseRecommendationTermInYears;
-		PaymentOption?: ReservationPurchaseRecommendationPaymentOption;
+		AccountScope?: ReservationPurchaseRecommendationAccountScope | null;
+		LookbackPeriodInDays?: ReservationPurchaseRecommendationLookbackPeriodInDays | null;
+		TermInYears?: ReservationPurchaseRecommendationTermInYears | null;
+		PaymentOption?: ReservationPurchaseRecommendationPaymentOption | null;
 
 		/** Hardware specifications for the service that you want recommendations for. */
-		ServiceSpecification?: ServiceSpecification;
-		RecommendationDetails?: Array<ReservationPurchaseRecommendationDetail>;
+		ServiceSpecification?: ServiceSpecification | null;
+		RecommendationDetails?: Array<ReservationPurchaseRecommendationDetail> | null;
 
 		/** A summary about this recommendation, such as the currency code, the amount that AWS estimates that you could save, and the total amount of reservation to purchase. */
-		RecommendationSummary?: ReservationPurchaseRecommendationSummary;
+		RecommendationSummary?: ReservationPurchaseRecommendationSummary | null;
 	}
 
 	export enum ReservationPurchaseRecommendationAccountScope { PAYER = 0, LINKED = 1 }
@@ -486,13 +486,13 @@ export namespace MyNS {
 	export interface ServiceSpecification {
 
 		/** The Amazon EC2 hardware specifications that you want AWS to provide recommendations for. */
-		EC2Specification?: EC2Specification;
+		EC2Specification?: EC2Specification | null;
 	}
 
 
 	/** The Amazon EC2 hardware specifications that you want AWS to provide recommendations for. */
 	export interface EC2Specification {
-		OfferingClass?: EC2SpecificationOfferingClass;
+		OfferingClass?: EC2SpecificationOfferingClass | null;
 	}
 
 	export enum EC2SpecificationOfferingClass { STANDARD = 0, CONVERTIBLE = 1 }
@@ -500,27 +500,27 @@ export namespace MyNS {
 
 	/** Details about your recommended reservation purchase. */
 	export interface ReservationPurchaseRecommendationDetail {
-		AccountId?: string;
+		AccountId?: string | null;
 
 		/** Details about the instances that AWS recommends that you purchase. */
-		InstanceDetails?: InstanceDetails;
-		RecommendedNumberOfInstancesToPurchase?: string;
-		RecommendedNormalizedUnitsToPurchase?: string;
-		MinimumNumberOfInstancesUsedPerHour?: string;
-		MinimumNormalizedUnitsUsedPerHour?: string;
-		MaximumNumberOfInstancesUsedPerHour?: string;
-		MaximumNormalizedUnitsUsedPerHour?: string;
-		AverageNumberOfInstancesUsedPerHour?: string;
-		AverageNormalizedUnitsUsedPerHour?: string;
-		AverageUtilization?: string;
-		EstimatedBreakEvenInMonths?: string;
-		CurrencyCode?: string;
-		EstimatedMonthlySavingsAmount?: string;
-		EstimatedMonthlySavingsPercentage?: string;
-		EstimatedMonthlyOnDemandCost?: string;
-		EstimatedReservationCostForLookbackPeriod?: string;
-		UpfrontCost?: string;
-		RecurringStandardMonthlyCost?: string;
+		InstanceDetails?: InstanceDetails | null;
+		RecommendedNumberOfInstancesToPurchase?: string | null;
+		RecommendedNormalizedUnitsToPurchase?: string | null;
+		MinimumNumberOfInstancesUsedPerHour?: string | null;
+		MinimumNormalizedUnitsUsedPerHour?: string | null;
+		MaximumNumberOfInstancesUsedPerHour?: string | null;
+		MaximumNormalizedUnitsUsedPerHour?: string | null;
+		AverageNumberOfInstancesUsedPerHour?: string | null;
+		AverageNormalizedUnitsUsedPerHour?: string | null;
+		AverageUtilization?: string | null;
+		EstimatedBreakEvenInMonths?: string | null;
+		CurrencyCode?: string | null;
+		EstimatedMonthlySavingsAmount?: string | null;
+		EstimatedMonthlySavingsPercentage?: string | null;
+		EstimatedMonthlyOnDemandCost?: string | null;
+		EstimatedReservationCostForLookbackPeriod?: string | null;
+		UpfrontCost?: string | null;
+		RecurringStandardMonthlyCost?: string | null;
 	}
 
 
@@ -528,107 +528,107 @@ export namespace MyNS {
 	export interface InstanceDetails {
 
 		/** Details about the Amazon EC2 instances that AWS recommends that you purchase. */
-		EC2InstanceDetails?: EC2InstanceDetails;
+		EC2InstanceDetails?: EC2InstanceDetails | null;
 
 		/** Details about the Amazon RDS instances that AWS recommends that you purchase. */
-		RDSInstanceDetails?: RDSInstanceDetails;
+		RDSInstanceDetails?: RDSInstanceDetails | null;
 
 		/** Details about the Amazon Redshift instances that AWS recommends that you purchase. */
-		RedshiftInstanceDetails?: RedshiftInstanceDetails;
+		RedshiftInstanceDetails?: RedshiftInstanceDetails | null;
 
 		/** Details about the Amazon ElastiCache instances that AWS recommends that you purchase. */
-		ElastiCacheInstanceDetails?: ElastiCacheInstanceDetails;
+		ElastiCacheInstanceDetails?: ElastiCacheInstanceDetails | null;
 
 		/** Details about the Amazon ES instances that AWS recommends that you purchase. */
-		ESInstanceDetails?: ESInstanceDetails;
+		ESInstanceDetails?: ESInstanceDetails | null;
 	}
 
 
 	/** Details about the Amazon EC2 instances that AWS recommends that you purchase. */
 	export interface EC2InstanceDetails {
-		Family?: string;
-		InstanceType?: string;
-		Region?: string;
-		AvailabilityZone?: string;
-		Platform?: string;
-		Tenancy?: string;
-		CurrentGeneration?: boolean;
-		SizeFlexEligible?: boolean;
+		Family?: string | null;
+		InstanceType?: string | null;
+		Region?: string | null;
+		AvailabilityZone?: string | null;
+		Platform?: string | null;
+		Tenancy?: string | null;
+		CurrentGeneration?: boolean | null;
+		SizeFlexEligible?: boolean | null;
 	}
 
 
 	/** Details about the Amazon RDS instances that AWS recommends that you purchase. */
 	export interface RDSInstanceDetails {
-		Family?: string;
-		InstanceType?: string;
-		Region?: string;
-		DatabaseEngine?: string;
-		DatabaseEdition?: string;
-		DeploymentOption?: string;
-		LicenseModel?: string;
-		CurrentGeneration?: boolean;
-		SizeFlexEligible?: boolean;
+		Family?: string | null;
+		InstanceType?: string | null;
+		Region?: string | null;
+		DatabaseEngine?: string | null;
+		DatabaseEdition?: string | null;
+		DeploymentOption?: string | null;
+		LicenseModel?: string | null;
+		CurrentGeneration?: boolean | null;
+		SizeFlexEligible?: boolean | null;
 	}
 
 
 	/** Details about the Amazon Redshift instances that AWS recommends that you purchase. */
 	export interface RedshiftInstanceDetails {
-		Family?: string;
-		NodeType?: string;
-		Region?: string;
-		CurrentGeneration?: boolean;
-		SizeFlexEligible?: boolean;
+		Family?: string | null;
+		NodeType?: string | null;
+		Region?: string | null;
+		CurrentGeneration?: boolean | null;
+		SizeFlexEligible?: boolean | null;
 	}
 
 
 	/** Details about the Amazon ElastiCache instances that AWS recommends that you purchase. */
 	export interface ElastiCacheInstanceDetails {
-		Family?: string;
-		NodeType?: string;
-		Region?: string;
-		ProductDescription?: string;
-		CurrentGeneration?: boolean;
-		SizeFlexEligible?: boolean;
+		Family?: string | null;
+		NodeType?: string | null;
+		Region?: string | null;
+		ProductDescription?: string | null;
+		CurrentGeneration?: boolean | null;
+		SizeFlexEligible?: boolean | null;
 	}
 
 
 	/** Details about the Amazon ES instances that AWS recommends that you purchase. */
 	export interface ESInstanceDetails {
-		InstanceClass?: string;
-		InstanceSize?: string;
-		Region?: string;
-		CurrentGeneration?: boolean;
-		SizeFlexEligible?: boolean;
+		InstanceClass?: string | null;
+		InstanceSize?: string | null;
+		Region?: string | null;
+		CurrentGeneration?: boolean | null;
+		SizeFlexEligible?: boolean | null;
 	}
 
 
 	/** A summary about this recommendation, such as the currency code, the amount that AWS estimates that you could save, and the total amount of reservation to purchase. */
 	export interface ReservationPurchaseRecommendationSummary {
-		TotalEstimatedMonthlySavingsAmount?: string;
-		TotalEstimatedMonthlySavingsPercentage?: string;
-		CurrencyCode?: string;
+		TotalEstimatedMonthlySavingsAmount?: string | null;
+		TotalEstimatedMonthlySavingsPercentage?: string | null;
+		CurrencyCode?: string | null;
 	}
 
 	export interface GetReservationPurchaseRecommendationRequest {
-		AccountId?: string;
+		AccountId?: string | null;
 		Service: string;
-		AccountScope?: ReservationPurchaseRecommendationAccountScope;
-		LookbackPeriodInDays?: ReservationPurchaseRecommendationLookbackPeriodInDays;
-		TermInYears?: ReservationPurchaseRecommendationTermInYears;
-		PaymentOption?: ReservationPurchaseRecommendationPaymentOption;
+		AccountScope?: ReservationPurchaseRecommendationAccountScope | null;
+		LookbackPeriodInDays?: ReservationPurchaseRecommendationLookbackPeriodInDays | null;
+		TermInYears?: ReservationPurchaseRecommendationTermInYears | null;
+		PaymentOption?: ReservationPurchaseRecommendationPaymentOption | null;
 
 		/** Hardware specifications for the service that you want recommendations for. */
-		ServiceSpecification?: ServiceSpecification;
-		PageSize?: number;
-		NextPageToken?: string;
+		ServiceSpecification?: ServiceSpecification | null;
+		PageSize?: number | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface GetReservationUtilizationResponse {
 		UtilizationsByTime: Array<UtilizationByTime>;
 
 		/** The aggregated numbers for your reservation usage. */
-		Total?: ReservationAggregates;
-		NextPageToken?: string;
+		Total?: ReservationAggregates | null;
+		NextPageToken?: string | null;
 	}
 
 
@@ -636,41 +636,41 @@ export namespace MyNS {
 	export interface UtilizationByTime {
 
 		/** The time period that you want the usage and costs for. */
-		TimePeriod?: DateInterval;
-		Groups?: Array<ReservationUtilizationGroup>;
+		TimePeriod?: DateInterval | null;
+		Groups?: Array<ReservationUtilizationGroup> | null;
 
 		/** The aggregated numbers for your reservation usage. */
-		Total?: ReservationAggregates;
+		Total?: ReservationAggregates | null;
 	}
 
 
 	/** A group of reservations that share a set of attributes. */
 	export interface ReservationUtilizationGroup {
-		Key?: string;
-		Value?: string;
-		Attributes?: Attributes;
+		Key?: string | null;
+		Value?: string | null;
+		Attributes?: Attributes | null;
 
 		/** The aggregated numbers for your reservation usage. */
-		Utilization?: ReservationAggregates;
+		Utilization?: ReservationAggregates | null;
 	}
 
 
 	/** The aggregated numbers for your reservation usage. */
 	export interface ReservationAggregates {
-		UtilizationPercentage?: string;
-		UtilizationPercentageInUnits?: string;
-		PurchasedHours?: string;
-		PurchasedUnits?: string;
-		TotalActualHours?: string;
-		TotalActualUnits?: string;
-		UnusedHours?: string;
-		UnusedUnits?: string;
-		OnDemandCostOfRIHoursUsed?: string;
-		NetRISavings?: string;
-		TotalPotentialRISavings?: string;
-		AmortizedUpfrontFee?: string;
-		AmortizedRecurringFee?: string;
-		TotalAmortizedFee?: string;
+		UtilizationPercentage?: string | null;
+		UtilizationPercentageInUnits?: string | null;
+		PurchasedHours?: string | null;
+		PurchasedUnits?: string | null;
+		TotalActualHours?: string | null;
+		TotalActualUnits?: string | null;
+		UnusedHours?: string | null;
+		UnusedUnits?: string | null;
+		OnDemandCostOfRIHoursUsed?: string | null;
+		NetRISavings?: string | null;
+		TotalPotentialRISavings?: string | null;
+		AmortizedUpfrontFee?: string | null;
+		AmortizedRecurringFee?: string | null;
+		TotalAmortizedFee?: string | null;
 	}
 
 	export interface GetReservationUtilizationRequest {
@@ -680,78 +680,78 @@ export namespace MyNS {
 		 * Required
 		 */
 		TimePeriod: DateInterval;
-		GroupBy?: Array<GroupDefinition>;
-		Granularity?: GetCostAndUsageRequestGranularity;
+		GroupBy?: Array<GroupDefinition> | null;
+		Granularity?: GetCostAndUsageRequestGranularity | null;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression;
-		NextPageToken?: string;
+		Filter?: Expression | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface GetRightsizingRecommendationResponse {
 
 		/** Metadata for this recommendation set. */
-		Metadata?: RightsizingRecommendationMetadata;
+		Metadata?: RightsizingRecommendationMetadata | null;
 
 		/** Summary of rightsizing recommendations */
-		Summary?: RightsizingRecommendationSummary;
-		RightsizingRecommendations?: Array<RightsizingRecommendation>;
-		NextPageToken?: string;
+		Summary?: RightsizingRecommendationSummary | null;
+		RightsizingRecommendations?: Array<RightsizingRecommendation> | null;
+		NextPageToken?: string | null;
 
 		/** Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or niether. */
-		Configuration?: RightsizingRecommendationConfiguration;
+		Configuration?: RightsizingRecommendationConfiguration | null;
 	}
 
 
 	/** Metadata for this recommendation set. */
 	export interface RightsizingRecommendationMetadata {
-		RecommendationId?: string;
-		GenerationTimestamp?: string;
-		LookbackPeriodInDays?: ReservationPurchaseRecommendationLookbackPeriodInDays;
+		RecommendationId?: string | null;
+		GenerationTimestamp?: string | null;
+		LookbackPeriodInDays?: ReservationPurchaseRecommendationLookbackPeriodInDays | null;
 	}
 
 
 	/**  Summary of rightsizing recommendations  */
 	export interface RightsizingRecommendationSummary {
-		TotalRecommendationCount?: string;
-		EstimatedTotalMonthlySavingsAmount?: string;
-		SavingsCurrencyCode?: string;
-		SavingsPercentage?: string;
+		TotalRecommendationCount?: string | null;
+		EstimatedTotalMonthlySavingsAmount?: string | null;
+		SavingsCurrencyCode?: string | null;
+		SavingsPercentage?: string | null;
 	}
 
 
 	/** Recommendations to rightsize resources. */
 	export interface RightsizingRecommendation {
-		AccountId?: string;
+		AccountId?: string | null;
 
 		/** Context about the current instance. */
-		CurrentInstance?: CurrentInstance;
-		RightsizingType?: RightsizingRecommendationRightsizingType;
+		CurrentInstance?: CurrentInstance | null;
+		RightsizingType?: RightsizingRecommendationRightsizingType | null;
 
 		/** Details on the modification recommendation. */
-		ModifyRecommendationDetail?: ModifyRecommendationDetail;
+		ModifyRecommendationDetail?: ModifyRecommendationDetail | null;
 
 		/** Details on termination recommendation. */
-		TerminateRecommendationDetail?: TerminateRecommendationDetail;
+		TerminateRecommendationDetail?: TerminateRecommendationDetail | null;
 	}
 
 
 	/** Context about the current instance. */
 	export interface CurrentInstance {
-		ResourceId?: string;
-		Tags?: Array<TagValues>;
+		ResourceId?: string | null;
+		Tags?: Array<TagValues> | null;
 
 		/** Details on the resource. */
-		ResourceDetails?: ResourceDetails;
+		ResourceDetails?: ResourceDetails | null;
 
 		/** Resource utilization of current resource. */
-		ResourceUtilization?: ResourceUtilization;
-		ReservationCoveredHoursInLookbackPeriod?: string;
-		SavingsPlansCoveredHoursInLookbackPeriod?: string;
-		OnDemandHoursInLookbackPeriod?: string;
-		TotalRunningHoursInLookbackPeriod?: string;
-		MonthlyCost?: string;
-		CurrencyCode?: string;
+		ResourceUtilization?: ResourceUtilization | null;
+		ReservationCoveredHoursInLookbackPeriod?: string | null;
+		SavingsPlansCoveredHoursInLookbackPeriod?: string | null;
+		OnDemandHoursInLookbackPeriod?: string | null;
+		TotalRunningHoursInLookbackPeriod?: string | null;
+		MonthlyCost?: string | null;
+		CurrencyCode?: string | null;
 	}
 
 
@@ -759,21 +759,21 @@ export namespace MyNS {
 	export interface ResourceDetails {
 
 		/** Details on the Amazon EC2 Resource. */
-		EC2ResourceDetails?: EC2ResourceDetails;
+		EC2ResourceDetails?: EC2ResourceDetails | null;
 	}
 
 
 	/**  Details on the Amazon EC2 Resource. */
 	export interface EC2ResourceDetails {
-		HourlyOnDemandRate?: string;
-		InstanceType?: string;
-		Platform?: string;
-		Region?: string;
-		Sku?: string;
-		Memory?: string;
-		NetworkPerformance?: string;
-		Storage?: string;
-		Vcpu?: string;
+		HourlyOnDemandRate?: string | null;
+		InstanceType?: string | null;
+		Platform?: string | null;
+		Region?: string | null;
+		Sku?: string | null;
+		Memory?: string | null;
+		NetworkPerformance?: string | null;
+		Storage?: string | null;
+		Vcpu?: string | null;
 	}
 
 
@@ -781,15 +781,15 @@ export namespace MyNS {
 	export interface ResourceUtilization {
 
 		/** Utilization metrics of the instance. */
-		EC2ResourceUtilization?: EC2ResourceUtilization;
+		EC2ResourceUtilization?: EC2ResourceUtilization | null;
 	}
 
 
 	/**  Utilization metrics of the instance.  */
 	export interface EC2ResourceUtilization {
-		MaxCpuUtilizationPercentage?: string;
-		MaxMemoryUtilizationPercentage?: string;
-		MaxStorageUtilizationPercentage?: string;
+		MaxCpuUtilizationPercentage?: string | null;
+		MaxMemoryUtilizationPercentage?: string | null;
+		MaxStorageUtilizationPercentage?: string | null;
 	}
 
 	export enum RightsizingRecommendationRightsizingType { TERMINATE = 0, MODIFY = 1 }
@@ -797,29 +797,29 @@ export namespace MyNS {
 
 	/**  Details on the modification recommendation. */
 	export interface ModifyRecommendationDetail {
-		TargetInstances?: Array<TargetInstance>;
+		TargetInstances?: Array<TargetInstance> | null;
 	}
 
 
 	/**  Details on recommended instance. */
 	export interface TargetInstance {
-		EstimatedMonthlyCost?: string;
-		EstimatedMonthlySavings?: string;
-		CurrencyCode?: string;
-		DefaultTargetInstance?: boolean;
+		EstimatedMonthlyCost?: string | null;
+		EstimatedMonthlySavings?: string | null;
+		CurrencyCode?: string | null;
+		DefaultTargetInstance?: boolean | null;
 
 		/** Details on the resource. */
-		ResourceDetails?: ResourceDetails;
+		ResourceDetails?: ResourceDetails | null;
 
 		/** Resource utilization of current resource. */
-		ExpectedResourceUtilization?: ResourceUtilization;
+		ExpectedResourceUtilization?: ResourceUtilization | null;
 	}
 
 
 	/**  Details on termination recommendation.  */
 	export interface TerminateRecommendationDetail {
-		EstimatedMonthlySavings?: string;
-		CurrencyCode?: string;
+		EstimatedMonthlySavings?: string | null;
+		CurrencyCode?: string | null;
 	}
 
 
@@ -834,39 +834,39 @@ export namespace MyNS {
 	export interface GetRightsizingRecommendationRequest {
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression;
+		Filter?: Expression | null;
 
 		/** Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or niether. */
-		Configuration?: RightsizingRecommendationConfiguration;
+		Configuration?: RightsizingRecommendationConfiguration | null;
 		Service: string;
-		PageSize?: number;
-		NextPageToken?: string;
+		PageSize?: number | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface GetSavingsPlansCoverageResponse {
 		SavingsPlansCoverages: Array<SavingsPlansCoverage>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** The amount of Savings Plans eligible usage that is covered by Savings Plans. All calculations consider the On-Demand equivalent of your Savings Plans usage. */
 	export interface SavingsPlansCoverage {
-		Attributes?: Attributes;
+		Attributes?: Attributes | null;
 
 		/** Specific coverage percentage, On-Demand costs, and spend covered by Savings Plans, and total Savings Plans costs for an account. */
-		Coverage?: SavingsPlansCoverageData;
+		Coverage?: SavingsPlansCoverageData | null;
 
 		/** The time period that you want the usage and costs for. */
-		TimePeriod?: DateInterval;
+		TimePeriod?: DateInterval | null;
 	}
 
 
 	/** Specific coverage percentage, On-Demand costs, and spend covered by Savings Plans, and total Savings Plans costs for an account. */
 	export interface SavingsPlansCoverageData {
-		SpendCoveredBySavingsPlans?: string;
-		OnDemandCost?: string;
-		TotalCost?: string;
-		CoveragePercentage?: string;
+		SpendCoveredBySavingsPlans?: string | null;
+		OnDemandCost?: string | null;
+		TotalCost?: string | null;
+		CoveragePercentage?: string | null;
 	}
 
 	export interface GetSavingsPlansCoverageRequest {
@@ -876,45 +876,45 @@ export namespace MyNS {
 		 * Required
 		 */
 		TimePeriod: DateInterval;
-		GroupBy?: Array<GroupDefinition>;
-		Granularity?: GetCostAndUsageRequestGranularity;
+		GroupBy?: Array<GroupDefinition> | null;
+		Granularity?: GetCostAndUsageRequestGranularity | null;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression;
-		Metrics?: Array<string>;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: Expression | null;
+		Metrics?: Array<string> | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface GetSavingsPlansPurchaseRecommendationResponse {
 
 		/** Metadata about your Savings Plans Purchase Recommendations. */
-		Metadata?: SavingsPlansPurchaseRecommendationMetadata;
+		Metadata?: SavingsPlansPurchaseRecommendationMetadata | null;
 
 		/** Contains your request parameters, Savings Plan Recommendations Summary, and Details. */
-		SavingsPlansPurchaseRecommendation?: SavingsPlansPurchaseRecommendation;
-		NextPageToken?: string;
+		SavingsPlansPurchaseRecommendation?: SavingsPlansPurchaseRecommendation | null;
+		NextPageToken?: string | null;
 	}
 
 
 	/** Metadata about your Savings Plans Purchase Recommendations. */
 	export interface SavingsPlansPurchaseRecommendationMetadata {
-		RecommendationId?: string;
-		GenerationTimestamp?: string;
+		RecommendationId?: string | null;
+		GenerationTimestamp?: string | null;
 	}
 
 
 	/** Contains your request parameters, Savings Plan Recommendations Summary, and Details. */
 	export interface SavingsPlansPurchaseRecommendation {
-		AccountScope?: ReservationPurchaseRecommendationAccountScope;
-		SavingsPlansType?: SavingsPlansPurchaseRecommendationSavingsPlansType;
-		TermInYears?: ReservationPurchaseRecommendationTermInYears;
-		PaymentOption?: ReservationPurchaseRecommendationPaymentOption;
-		LookbackPeriodInDays?: ReservationPurchaseRecommendationLookbackPeriodInDays;
-		SavingsPlansPurchaseRecommendationDetails?: Array<SavingsPlansPurchaseRecommendationDetail>;
+		AccountScope?: ReservationPurchaseRecommendationAccountScope | null;
+		SavingsPlansType?: SavingsPlansPurchaseRecommendationSavingsPlansType | null;
+		TermInYears?: ReservationPurchaseRecommendationTermInYears | null;
+		PaymentOption?: ReservationPurchaseRecommendationPaymentOption | null;
+		LookbackPeriodInDays?: ReservationPurchaseRecommendationLookbackPeriodInDays | null;
+		SavingsPlansPurchaseRecommendationDetails?: Array<SavingsPlansPurchaseRecommendationDetail> | null;
 
 		/** Summary metrics for your Savings Plans Purchase Recommendations. */
-		SavingsPlansPurchaseRecommendationSummary?: SavingsPlansPurchaseRecommendationSummary;
+		SavingsPlansPurchaseRecommendationSummary?: SavingsPlansPurchaseRecommendationSummary | null;
 	}
 
 	export enum SavingsPlansPurchaseRecommendationSavingsPlansType { COMPUTE_SP = 0, EC2_INSTANCE_SP = 1 }
@@ -924,63 +924,63 @@ export namespace MyNS {
 	export interface SavingsPlansPurchaseRecommendationDetail {
 
 		/** Attribute details on a specific Savings Plan. */
-		SavingsPlansDetails?: SavingsPlansDetails;
-		AccountId?: string;
-		UpfrontCost?: string;
-		EstimatedROI?: string;
-		CurrencyCode?: string;
-		EstimatedSPCost?: string;
-		EstimatedOnDemandCost?: string;
-		EstimatedOnDemandCostWithCurrentCommitment?: string;
-		EstimatedSavingsAmount?: string;
-		EstimatedSavingsPercentage?: string;
-		HourlyCommitmentToPurchase?: string;
-		EstimatedAverageUtilization?: string;
-		EstimatedMonthlySavingsAmount?: string;
-		CurrentMinimumHourlyOnDemandSpend?: string;
-		CurrentMaximumHourlyOnDemandSpend?: string;
-		CurrentAverageHourlyOnDemandSpend?: string;
+		SavingsPlansDetails?: SavingsPlansDetails | null;
+		AccountId?: string | null;
+		UpfrontCost?: string | null;
+		EstimatedROI?: string | null;
+		CurrencyCode?: string | null;
+		EstimatedSPCost?: string | null;
+		EstimatedOnDemandCost?: string | null;
+		EstimatedOnDemandCostWithCurrentCommitment?: string | null;
+		EstimatedSavingsAmount?: string | null;
+		EstimatedSavingsPercentage?: string | null;
+		HourlyCommitmentToPurchase?: string | null;
+		EstimatedAverageUtilization?: string | null;
+		EstimatedMonthlySavingsAmount?: string | null;
+		CurrentMinimumHourlyOnDemandSpend?: string | null;
+		CurrentMaximumHourlyOnDemandSpend?: string | null;
+		CurrentAverageHourlyOnDemandSpend?: string | null;
 	}
 
 
 	/** Attribute details on a specific Savings Plan. */
 	export interface SavingsPlansDetails {
-		Region?: string;
-		InstanceFamily?: string;
-		OfferingId?: string;
+		Region?: string | null;
+		InstanceFamily?: string | null;
+		OfferingId?: string | null;
 	}
 
 
 	/** Summary metrics for your Savings Plans Purchase Recommendations. */
 	export interface SavingsPlansPurchaseRecommendationSummary {
-		EstimatedROI?: string;
-		CurrencyCode?: string;
-		EstimatedTotalCost?: string;
-		CurrentOnDemandSpend?: string;
-		EstimatedSavingsAmount?: string;
-		TotalRecommendationCount?: string;
-		DailyCommitmentToPurchase?: string;
-		HourlyCommitmentToPurchase?: string;
-		EstimatedSavingsPercentage?: string;
-		EstimatedMonthlySavingsAmount?: string;
-		EstimatedOnDemandCostWithCurrentCommitment?: string;
+		EstimatedROI?: string | null;
+		CurrencyCode?: string | null;
+		EstimatedTotalCost?: string | null;
+		CurrentOnDemandSpend?: string | null;
+		EstimatedSavingsAmount?: string | null;
+		TotalRecommendationCount?: string | null;
+		DailyCommitmentToPurchase?: string | null;
+		HourlyCommitmentToPurchase?: string | null;
+		EstimatedSavingsPercentage?: string | null;
+		EstimatedMonthlySavingsAmount?: string | null;
+		EstimatedOnDemandCostWithCurrentCommitment?: string | null;
 	}
 
 	export interface GetSavingsPlansPurchaseRecommendationRequest {
 		SavingsPlansType: SavingsPlansPurchaseRecommendationSavingsPlansType;
 		TermInYears: ReservationPurchaseRecommendationTermInYears;
 		PaymentOption: ReservationPurchaseRecommendationPaymentOption;
-		AccountScope?: ReservationPurchaseRecommendationAccountScope;
-		NextPageToken?: string;
-		PageSize?: number;
+		AccountScope?: ReservationPurchaseRecommendationAccountScope | null;
+		NextPageToken?: string | null;
+		PageSize?: number | null;
 		LookbackPeriodInDays: ReservationPurchaseRecommendationLookbackPeriodInDays;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression;
+		Filter?: Expression | null;
 	}
 
 	export interface GetSavingsPlansUtilizationResponse {
-		SavingsPlansUtilizationsByTime?: Array<SavingsPlansUtilizationByTime>;
+		SavingsPlansUtilizationsByTime?: Array<SavingsPlansUtilizationByTime> | null;
 
 		/**
 		 * The aggregated utilization metrics for your Savings Plans usage.
@@ -1006,34 +1006,34 @@ export namespace MyNS {
 		Utilization: SavingsPlansUtilization;
 
 		/** The amount of savings you're accumulating, against the public On-Demand rate of the usage accrued in an account. */
-		Savings?: SavingsPlansSavings;
+		Savings?: SavingsPlansSavings | null;
 
 		/** The amortized amount of Savings Plans purchased in a specific account during a specific time interval. */
-		AmortizedCommitment?: SavingsPlansAmortizedCommitment;
+		AmortizedCommitment?: SavingsPlansAmortizedCommitment | null;
 	}
 
 
 	/** The measurement of how well you are using your existing Savings Plans. */
 	export interface SavingsPlansUtilization {
-		TotalCommitment?: string;
-		UsedCommitment?: string;
-		UnusedCommitment?: string;
-		UtilizationPercentage?: string;
+		TotalCommitment?: string | null;
+		UsedCommitment?: string | null;
+		UnusedCommitment?: string | null;
+		UtilizationPercentage?: string | null;
 	}
 
 
 	/** The amount of savings you're accumulating, against the public On-Demand rate of the usage accrued in an account. */
 	export interface SavingsPlansSavings {
-		NetSavings?: string;
-		OnDemandCostEquivalent?: string;
+		NetSavings?: string | null;
+		OnDemandCostEquivalent?: string | null;
 	}
 
 
 	/** The amortized amount of Savings Plans purchased in a specific account during a specific time interval. */
 	export interface SavingsPlansAmortizedCommitment {
-		AmortizedRecurringCommitment?: string;
-		AmortizedUpfrontCommitment?: string;
-		TotalAmortizedCommitment?: string;
+		AmortizedRecurringCommitment?: string | null;
+		AmortizedUpfrontCommitment?: string | null;
+		TotalAmortizedCommitment?: string | null;
 	}
 
 
@@ -1047,10 +1047,10 @@ export namespace MyNS {
 		Utilization: SavingsPlansUtilization;
 
 		/** The amount of savings you're accumulating, against the public On-Demand rate of the usage accrued in an account. */
-		Savings?: SavingsPlansSavings;
+		Savings?: SavingsPlansSavings | null;
 
 		/** The amortized amount of Savings Plans purchased in a specific account during a specific time interval. */
-		AmortizedCommitment?: SavingsPlansAmortizedCommitment;
+		AmortizedCommitment?: SavingsPlansAmortizedCommitment | null;
 	}
 
 	export interface GetSavingsPlansUtilizationRequest {
@@ -1060,40 +1060,40 @@ export namespace MyNS {
 		 * Required
 		 */
 		TimePeriod: DateInterval;
-		Granularity?: GetCostAndUsageRequestGranularity;
+		Granularity?: GetCostAndUsageRequestGranularity | null;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression;
+		Filter?: Expression | null;
 	}
 
 	export interface GetSavingsPlansUtilizationDetailsResponse {
 		SavingsPlansUtilizationDetails: Array<SavingsPlansUtilizationDetail>;
 
 		/** The aggregated utilization metrics for your Savings Plans usage. */
-		Total?: SavingsPlansUtilizationAggregates;
+		Total?: SavingsPlansUtilizationAggregates | null;
 
 		/**
 		 * The time period that you want the usage and costs for.
 		 * Required
 		 */
 		TimePeriod: DateInterval;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** A single daily or monthly Savings Plans utilization rate, and details for your account. Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the possible dimension values.  */
 	export interface SavingsPlansUtilizationDetail {
-		SavingsPlanArn?: string;
-		Attributes?: Attributes;
+		SavingsPlanArn?: string | null;
+		Attributes?: Attributes | null;
 
 		/** The measurement of how well you are using your existing Savings Plans. */
-		Utilization?: SavingsPlansUtilization;
+		Utilization?: SavingsPlansUtilization | null;
 
 		/** The amount of savings you're accumulating, against the public On-Demand rate of the usage accrued in an account. */
-		Savings?: SavingsPlansSavings;
+		Savings?: SavingsPlansSavings | null;
 
 		/** The amortized amount of Savings Plans purchased in a specific account during a specific time interval. */
-		AmortizedCommitment?: SavingsPlansAmortizedCommitment;
+		AmortizedCommitment?: SavingsPlansAmortizedCommitment | null;
 	}
 
 	export interface GetSavingsPlansUtilizationDetailsRequest {
@@ -1105,35 +1105,35 @@ export namespace MyNS {
 		TimePeriod: DateInterval;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression;
-		NextToken?: string;
-		MaxResults?: number;
+		Filter?: Expression | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface GetTagsResponse {
-		NextPageToken?: string;
+		NextPageToken?: string | null;
 		Tags: Array<string>;
 		ReturnSize: number;
 		TotalSize: number;
 	}
 
 	export interface GetTagsRequest {
-		SearchString?: string;
+		SearchString?: string | null;
 
 		/**
 		 * The time period that you want the usage and costs for.
 		 * Required
 		 */
 		TimePeriod: DateInterval;
-		TagKey?: string;
-		NextPageToken?: string;
+		TagKey?: string | null;
+		NextPageToken?: string | null;
 	}
 
 	export interface GetUsageForecastResponse {
 
 		/** The aggregated value for a metric. */
-		Total?: MetricValue;
-		ForecastResultsByTime?: Array<ForecastResult>;
+		Total?: MetricValue | null;
+		ForecastResultsByTime?: Array<ForecastResult> | null;
 	}
 
 	export interface GetUsageForecastRequest {
@@ -1147,29 +1147,29 @@ export namespace MyNS {
 		Granularity: GetCostAndUsageRequestGranularity;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression;
-		PredictionIntervalLevel?: number;
+		Filter?: Expression | null;
+		PredictionIntervalLevel?: number | null;
 	}
 
 	export interface UnresolvableUsageUnitException {
 	}
 
 	export interface ListCostCategoryDefinitionsResponse {
-		CostCategoryReferences?: Array<CostCategoryReference>;
-		NextToken?: string;
+		CostCategoryReferences?: Array<CostCategoryReference> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** <p>A reference to a Cost Category containing only enough information to identify the Cost Category.</p> <p>You can use this information to retrieve the full Cost Category information using <code>DescribeCostCategory</code>.</p> */
 	export interface CostCategoryReference {
-		CostCategoryArn?: string;
+		CostCategoryArn?: string | null;
 
 		/**
 		 * The unique name of the Cost Category.
 		 * Max length: 255
 		 * Min length: 1
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/**
 		 * The time period that you want the usage and costs for.
@@ -1177,7 +1177,7 @@ export namespace MyNS {
 		 * Min length: 20
 		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
-		EffectiveStart?: string;
+		EffectiveStart?: string | null;
 
 		/**
 		 * The time period that you want the usage and costs for.
@@ -1185,8 +1185,8 @@ export namespace MyNS {
 		 * Min length: 20
 		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
-		EffectiveEnd?: string;
-		NumberOfRules?: number;
+		EffectiveEnd?: string | null;
+		NumberOfRules?: number | null;
 	}
 
 	export interface ListCostCategoryDefinitionsRequest {
@@ -1197,13 +1197,13 @@ export namespace MyNS {
 		 * Min length: 20
 		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
-		EffectiveOn?: string;
-		NextToken?: string;
-		MaxResults?: number;
+		EffectiveOn?: string | null;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface UpdateCostCategoryDefinitionResponse {
-		CostCategoryArn?: string;
+		CostCategoryArn?: string | null;
 
 		/**
 		 * The time period that you want the usage and costs for.
@@ -1211,7 +1211,7 @@ export namespace MyNS {
 		 * Min length: 20
 		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
-		EffectiveStart?: string;
+		EffectiveStart?: string | null;
 	}
 
 	export interface UpdateCostCategoryDefinitionRequest {
@@ -1362,7 +1362,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetSavingsPlansCoverageResponse} Success
 		 */
-		GetSavingsPlansCoverage(MaxResults: string, NextToken: string, requestBody: GetSavingsPlansCoverageRequest): Observable<GetSavingsPlansCoverageResponse> {
+		GetSavingsPlansCoverage(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetSavingsPlansCoverageRequest): Observable<GetSavingsPlansCoverageResponse> {
 			return this.http.post<GetSavingsPlansCoverageResponse>(this.baseUri + '#X-Amz-Target=AWSInsightsIndexService.GetSavingsPlansCoverage?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1391,7 +1391,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {GetSavingsPlansUtilizationDetailsResponse} Success
 		 */
-		GetSavingsPlansUtilizationDetails(MaxResults: string, NextToken: string, requestBody: GetSavingsPlansUtilizationDetailsRequest): Observable<GetSavingsPlansUtilizationDetailsResponse> {
+		GetSavingsPlansUtilizationDetails(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: GetSavingsPlansUtilizationDetailsRequest): Observable<GetSavingsPlansUtilizationDetailsResponse> {
 			return this.http.post<GetSavingsPlansUtilizationDetailsResponse>(this.baseUri + '#X-Amz-Target=AWSInsightsIndexService.GetSavingsPlansUtilizationDetails?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1420,7 +1420,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCostCategoryDefinitionsResponse} Success
 		 */
-		ListCostCategoryDefinitions(MaxResults: string, NextToken: string, requestBody: ListCostCategoryDefinitionsRequest): Observable<ListCostCategoryDefinitionsResponse> {
+		ListCostCategoryDefinitions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListCostCategoryDefinitionsRequest): Observable<ListCostCategoryDefinitionsResponse> {
 			return this.http.post<ListCostCategoryDefinitionsResponse>(this.baseUri + '#X-Amz-Target=AWSInsightsIndexService.ListCostCategoryDefinitions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

@@ -5,11 +5,11 @@ export namespace MyNS {
 	export interface CreateGroupOutput {
 
 		/** A resource group. */
-		Group?: Group;
+		Group?: Group | null;
 
 		/** The query that is used to define a resource group or a search for resources. */
-		ResourceQuery?: ResourceQuery;
-		Tags?: Tags;
+		ResourceQuery?: ResourceQuery | null;
+		Tags?: Tags | null;
 	}
 
 
@@ -17,7 +17,7 @@ export namespace MyNS {
 	export interface Group {
 		GroupArn: string;
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 	}
 
 
@@ -52,7 +52,7 @@ export namespace MyNS {
 	export interface DeleteGroupOutput {
 
 		/** A resource group. */
-		Group?: Group;
+		Group?: Group | null;
 	}
 
 	export interface NotFoundException {
@@ -61,13 +61,13 @@ export namespace MyNS {
 	export interface GetGroupOutput {
 
 		/** A resource group. */
-		Group?: Group;
+		Group?: Group | null;
 	}
 
 	export interface GetGroupQueryOutput {
 
 		/** The underlying resource query of a resource group. Resources that match query results are part of the group. */
-		GroupQuery?: GroupQuery;
+		GroupQuery?: GroupQuery | null;
 	}
 
 
@@ -83,28 +83,28 @@ export namespace MyNS {
 	}
 
 	export interface GetTagsOutput {
-		Arn?: string;
-		Tags?: Tags;
+		Arn?: string | null;
+		Tags?: Tags | null;
 	}
 
 	export interface ListGroupResourcesOutput {
-		ResourceIdentifiers?: Array<ResourceIdentifier>;
-		NextToken?: string;
-		QueryErrors?: Array<QueryError>;
+		ResourceIdentifiers?: Array<ResourceIdentifier> | null;
+		NextToken?: string | null;
+		QueryErrors?: Array<QueryError> | null;
 	}
 
 
 	/** The ARN of a resource, and its resource type. */
 	export interface ResourceIdentifier {
-		ResourceArn?: string;
-		ResourceType?: string;
+		ResourceArn?: string | null;
+		ResourceType?: string | null;
 	}
 
 
 	/** A two-part error structure that can occur in <code>ListGroupResources</code> or <code>SearchResources</code> operations on CloudFormation stack-based queries. The error occurs if the CloudFormation stack on which the query is based either does not exist, or has a status that renders the stack inactive. A <code>QueryError</code> occurrence does not necessarily mean that AWS Resource Groups could not complete the operation, but the resulting group might have no member resources. */
 	export interface QueryError {
-		ErrorCode?: QueryErrorErrorCode;
-		Message?: string;
+		ErrorCode?: QueryErrorErrorCode | null;
+		Message?: string | null;
 	}
 
 	export enum QueryErrorErrorCode { CLOUDFORMATION_STACK_INACTIVE = 0, CLOUDFORMATION_STACK_NOT_EXISTING = 1 }
@@ -122,16 +122,16 @@ export namespace MyNS {
 	}
 
 	export interface ListGroupsOutput {
-		GroupIdentifiers?: Array<GroupIdentifier>;
-		Groups?: Array<Group>;
-		NextToken?: string;
+		GroupIdentifiers?: Array<GroupIdentifier> | null;
+		Groups?: Array<Group> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The ARN and group name of a group. */
 	export interface GroupIdentifier {
-		GroupName?: string;
-		GroupArn?: string;
+		GroupName?: string | null;
+		GroupArn?: string | null;
 	}
 
 
@@ -144,43 +144,43 @@ export namespace MyNS {
 	export enum GroupFilterName { resource_type = 0 }
 
 	export interface SearchResourcesOutput {
-		ResourceIdentifiers?: Array<ResourceIdentifier>;
-		NextToken?: string;
-		QueryErrors?: Array<QueryError>;
+		ResourceIdentifiers?: Array<ResourceIdentifier> | null;
+		NextToken?: string | null;
+		QueryErrors?: Array<QueryError> | null;
 	}
 
 	export interface TagOutput {
-		Arn?: string;
-		Tags?: Tags;
+		Arn?: string | null;
+		Tags?: Tags | null;
 	}
 
 	export interface UntagOutput {
-		Arn?: string;
-		Keys?: Array<string>;
+		Arn?: string | null;
+		Keys?: Array<string> | null;
 	}
 
 	export interface UpdateGroupOutput {
 
 		/** A resource group. */
-		Group?: Group;
+		Group?: Group | null;
 	}
 
 	export interface UpdateGroupQueryOutput {
 
 		/** The underlying resource query of a resource group. Resources that match query results are part of the group. */
-		GroupQuery?: GroupQuery;
+		GroupQuery?: GroupQuery | null;
 	}
 
 	export interface CreateGroupInput {
 		Name: string;
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * The query that is used to define a resource group or a search for resources.
 		 * Required
 		 */
 		ResourceQuery: ResourceQuery;
-		Tags?: Tags;
+		Tags?: Tags | null;
 	}
 
 	export interface DeleteGroupInput {
@@ -196,11 +196,11 @@ export namespace MyNS {
 	}
 
 	export interface ListGroupResourcesInput {
-		Filters?: Array<ResourceFilter>;
+		Filters?: Array<ResourceFilter> | null;
 	}
 
 	export interface ListGroupsInput {
-		Filters?: Array<GroupFilter>;
+		Filters?: Array<GroupFilter> | null;
 	}
 
 	export enum QueryErrorCode { CLOUDFORMATION_STACK_INACTIVE = 0, CLOUDFORMATION_STACK_NOT_EXISTING = 1 }
@@ -212,8 +212,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		ResourceQuery: ResourceQuery;
-		MaxResults?: number;
-		NextToken?: string;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface TagInput {
@@ -225,7 +225,7 @@ export namespace MyNS {
 	}
 
 	export interface UpdateGroupInput {
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface UpdateGroupQueryInput {
@@ -341,7 +341,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListGroupResourcesOutput} Success
 		 */
-		ListGroupResources(GroupName: string, maxResults: number, nextToken: string, MaxResults: string, NextToken: string, requestBody: ListGroupResourcesPostBody): Observable<ListGroupResourcesOutput> {
+		ListGroupResources(GroupName: string, maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListGroupResourcesPostBody): Observable<ListGroupResourcesOutput> {
 			return this.http.post<ListGroupResourcesOutput>(this.baseUri + 'groups/' + (GroupName == null ? '' : encodeURIComponent(GroupName)) + '/resource-identifiers-list&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -354,7 +354,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListGroupsOutput} Success
 		 */
-		ListGroups(maxResults: number, nextToken: string, MaxResults: string, NextToken: string, requestBody: ListGroupsPostBody): Observable<ListGroupsOutput> {
+		ListGroups(maxResults: number | null | undefined, nextToken: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListGroupsPostBody): Observable<ListGroupsOutput> {
 			return this.http.post<ListGroupsOutput>(this.baseUri + 'groups-list?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -365,7 +365,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {SearchResourcesOutput} Success
 		 */
-		SearchResources(MaxResults: string, NextToken: string, requestBody: SearchResourcesPostBody): Observable<SearchResourcesOutput> {
+		SearchResources(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: SearchResourcesPostBody): Observable<SearchResourcesOutput> {
 			return this.http.post<SearchResourcesOutput>(this.baseUri + 'resources/search?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 	}
@@ -386,7 +386,7 @@ export namespace MyNS {
 		 * Max length: 512
 		 * Pattern: [\sa-zA-Z0-9_\.-]*
 		 */
-		Description?: string;
+		Description?: string | null;
 
 		/**
 		 * The query that is used to define a resource group or a search for resources.
@@ -395,12 +395,12 @@ export namespace MyNS {
 		ResourceQuery: CreateGroupPostBodyResourceQuery;
 
 		/** The tags to add to the group. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. */
-		Tags?: {[id: string]: string };
+		Tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateGroupPostBodyResourceQuery {
-		Type?: ResourceQueryType;
-		Query?: string;
+		Type?: ResourceQueryType | null;
+		Query?: string | null;
 	}
 
 	export interface UpdateGroupPutBody {
@@ -410,7 +410,7 @@ export namespace MyNS {
 		 * Max length: 512
 		 * Pattern: [\sa-zA-Z0-9_\.-]*
 		 */
-		Description?: string;
+		Description?: string | null;
 	}
 
 	export interface UpdateGroupQueryPutBody {
@@ -423,8 +423,8 @@ export namespace MyNS {
 	}
 
 	export interface UpdateGroupQueryPutBodyResourceQuery {
-		Type?: ResourceQueryType;
-		Query?: string;
+		Type?: ResourceQueryType | null;
+		Query?: string | null;
 	}
 
 	export interface TagPutBody {
@@ -448,13 +448,13 @@ export namespace MyNS {
 	export interface ListGroupResourcesPostBody {
 
 		/** <p>Filters, formatted as ResourceFilter objects, that you want to apply to a ListGroupResources operation.</p> <ul> <li> <p> <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.</p> </li> </ul> */
-		Filters?: Array<ResourceFilter>;
+		Filters?: Array<ResourceFilter> | null;
 	}
 
 	export interface ListGroupsPostBody {
 
 		/** <p>Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.</p> <ul> <li> <p> <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.</p> </li> </ul> */
-		Filters?: Array<GroupFilter>;
+		Filters?: Array<GroupFilter> | null;
 	}
 
 	export interface SearchResourcesPostBody {
@@ -470,7 +470,7 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 50
 		 */
-		MaxResults?: number;
+		MaxResults?: number | null;
 
 		/**
 		 * The NextToken value that is returned in a paginated <code>SearchResources</code> request. To get the next page of results, run the call again, add the NextToken parameter, and specify the NextToken value.
@@ -478,12 +478,12 @@ export namespace MyNS {
 		 * Min length: 0
 		 * Pattern: ^[a-zA-Z0-9+/]*={0,2}$
 		 */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface SearchResourcesPostBodyResourceQuery {
-		Type?: ResourceQueryType;
-		Query?: string;
+		Type?: ResourceQueryType | null;
+		Query?: string | null;
 	}
 
 }

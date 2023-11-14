@@ -96,7 +96,7 @@ export namespace MyNS {
 
 	/** An object that defines an Amazon Pinpoint project destination for email events. You can send email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>. */
 	export interface PinpointDestination {
-		ApplicationArn?: string;
+		ApplicationArn?: string | null;
 	}
 
 
@@ -144,7 +144,7 @@ export namespace MyNS {
 	/** An object that represents the content of the email, and optionally a character set specification. */
 	export interface Content {
 		Data: string;
-		Charset?: string;
+		Charset?: string | null;
 	}
 
 
@@ -152,10 +152,10 @@ export namespace MyNS {
 	export interface Body {
 
 		/** An object that represents the content of the email, and optionally a character set specification. */
-		Text?: Content;
+		Text?: Content | null;
 
 		/** An object that represents the content of the email, and optionally a character set specification. */
-		Html?: Content;
+		Html?: Content | null;
 	}
 
 
@@ -172,8 +172,8 @@ export namespace MyNS {
 
 	/** An object that defines the email template to use for an email message, and the values to use for any message variables in that template. An <i>email template</i> is a type of message template that contains content that you want to define, save, and reuse in email messages that you send. */
 	export interface Template {
-		TemplateArn?: string;
-		TemplateData?: string;
+		TemplateArn?: string | null;
+		TemplateData?: string | null;
 	}
 
 	export interface AccountSuspendedException {
@@ -193,11 +193,11 @@ export namespace MyNS {
 	export interface CreateEmailIdentityResponse {
 
 		/** <p>The email identity type. The identity type can be one of the following:</p> <ul> <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li> <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> </ul> */
-		IdentityType?: CreateEmailIdentityResponseIdentityType;
-		VerifiedForSendingStatus?: boolean;
+		IdentityType?: CreateEmailIdentityResponseIdentityType | null;
+		VerifiedForSendingStatus?: boolean | null;
 
 		/** <p>An object that contains information about the DKIM authentication status for an email identity.</p> <p>Amazon SES determines the authentication status by searching for specific records in the DNS configuration for the domain. If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain. If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity</p> */
-		DkimAttributes?: DkimAttributes;
+		DkimAttributes?: DkimAttributes | null;
 	}
 
 	export enum CreateEmailIdentityResponseIdentityType { EMAIL_ADDRESS = 0, DOMAIN = 1, MANAGED_DOMAIN = 2 }
@@ -205,12 +205,12 @@ export namespace MyNS {
 
 	/** <p>An object that contains information about the DKIM authentication status for an email identity.</p> <p>Amazon SES determines the authentication status by searching for specific records in the DNS configuration for the domain. If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain. If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity</p> */
 	export interface DkimAttributes {
-		SigningEnabled?: boolean;
+		SigningEnabled?: boolean | null;
 
 		/** <p>The DKIM authentication status of the identity. The status can be one of the following:</p> <ul> <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li> <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li> <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li> <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li> </ul> */
-		Status?: DkimAttributesStatus;
-		Tokens?: Array<string>;
-		SigningAttributesOrigin?: DkimAttributesSigningAttributesOrigin;
+		Status?: DkimAttributesStatus | null;
+		Tokens?: Array<string> | null;
+		SigningAttributesOrigin?: DkimAttributesSigningAttributesOrigin | null;
 	}
 
 	export enum DkimAttributesStatus { PENDING = 0, SUCCESS = 1, FAILED = 2, TEMPORARY_FAILURE = 3, NOT_STARTED = 4 }
@@ -245,30 +245,30 @@ export namespace MyNS {
 
 	/** A list of details about the email-sending capabilities of your Amazon SES account in the current AWS Region. */
 	export interface GetAccountResponse {
-		DedicatedIpAutoWarmupEnabled?: boolean;
-		EnforcementStatus?: string;
-		ProductionAccessEnabled?: boolean;
+		DedicatedIpAutoWarmupEnabled?: boolean | null;
+		EnforcementStatus?: string | null;
+		ProductionAccessEnabled?: boolean | null;
 
 		/** An object that contains information about the per-day and per-second sending limits for your Amazon SES account in the current AWS Region. */
-		SendQuota?: SendQuota;
-		SendingEnabled?: boolean;
+		SendQuota?: SendQuota | null;
+		SendingEnabled?: boolean | null;
 
 		/** An object that contains information about the email address suppression preferences for your account in the current AWS Region. */
-		SuppressionAttributes?: SuppressionAttributes;
+		SuppressionAttributes?: SuppressionAttributes | null;
 	}
 
 
 	/** An object that contains information about the per-day and per-second sending limits for your Amazon SES account in the current AWS Region. */
 	export interface SendQuota {
-		Max24HourSend?: number;
-		MaxSendRate?: number;
-		SentLast24Hours?: number;
+		Max24HourSend?: number | null;
+		MaxSendRate?: number | null;
+		SentLast24Hours?: number | null;
 	}
 
 
 	/** An object that contains information about the email address suppression preferences for your account in the current AWS Region. */
 	export interface SuppressionAttributes {
-		SuppressedReasons?: Array<SuppressionListReason>;
+		SuppressedReasons?: Array<SuppressionListReason> | null;
 	}
 
 
@@ -285,23 +285,23 @@ export namespace MyNS {
 	export interface GetConfigurationSetResponse {
 
 		/** <p>The name of a configuration set.</p> <p> <i>Configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p> */
-		ConfigurationSetName?: string;
+		ConfigurationSetName?: string | null;
 
 		/** <p>An object that defines the tracking options for a configuration set. When you use the Amazon SES API v2 to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.</p> <p>These images and links include references to a domain operated by AWS. You can optionally configure the Amazon SES to use a domain that you operate for these images and links.</p> */
-		TrackingOptions?: TrackingOptions;
+		TrackingOptions?: TrackingOptions | null;
 
 		/** Used to associate a configuration set with a dedicated IP pool. */
-		DeliveryOptions?: DeliveryOptions;
+		DeliveryOptions?: DeliveryOptions | null;
 
 		/** Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current AWS Region. */
-		ReputationOptions?: ReputationOptions;
+		ReputationOptions?: ReputationOptions | null;
 
 		/** Used to enable or disable email sending for messages that use this configuration set in the current AWS Region. */
-		SendingOptions?: SendingOptions;
-		Tags?: Array<Tag>;
+		SendingOptions?: SendingOptions | null;
+		Tags?: Array<Tag> | null;
 
 		/** An object that contains information about the suppression list preferences for your account. */
-		SuppressionOptions?: SuppressionOptions;
+		SuppressionOptions?: SuppressionOptions | null;
 	}
 
 
@@ -320,37 +320,37 @@ export namespace MyNS {
 	export interface DeliveryOptions {
 
 		/** Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established. */
-		TlsPolicy?: TlsPolicy;
+		TlsPolicy?: TlsPolicy | null;
 
 		/** The name of a dedicated IP pool. */
-		SendingPoolName?: string;
+		SendingPoolName?: string | null;
 	}
 
 
 	/** Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current AWS Region.  */
 	export interface ReputationOptions {
-		ReputationMetricsEnabled?: boolean;
+		ReputationMetricsEnabled?: boolean | null;
 
 		/** The date and time (in Unix time) when the reputation metrics were last given a fresh start. When your account is given a fresh start, your reputation metrics are calculated starting from the date of the fresh start. */
-		LastFreshStart?: Date;
+		LastFreshStart?: Date | null;
 	}
 
 
 	/** Used to enable or disable email sending for messages that use this configuration set in the current AWS Region. */
 	export interface SendingOptions {
-		SendingEnabled?: boolean;
+		SendingEnabled?: boolean | null;
 	}
 
 
 	/** An object that contains information about the suppression list preferences for your account. */
 	export interface SuppressionOptions {
-		SuppressedReasons?: Array<SuppressionListReason>;
+		SuppressedReasons?: Array<SuppressionListReason> | null;
 	}
 
 
 	/** Information about an event destination for a configuration set. */
 	export interface GetConfigurationSetEventDestinationsResponse {
-		EventDestinations?: Array<EventDestination>;
+		EventDestinations?: Array<EventDestination> | null;
 	}
 
 
@@ -362,20 +362,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		Name: string;
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 		MatchingEventTypes: Array<EventType>;
 
 		/** An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift. */
-		KinesisFirehoseDestination?: KinesisFirehoseDestination;
+		KinesisFirehoseDestination?: KinesisFirehoseDestination | null;
 
 		/** An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics. */
-		CloudWatchDestination?: CloudWatchDestination;
+		CloudWatchDestination?: CloudWatchDestination | null;
 
 		/** An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur. */
-		SnsDestination?: SnsDestination;
+		SnsDestination?: SnsDestination | null;
 
 		/** An object that defines an Amazon Pinpoint project destination for email events. You can send email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>. */
-		PinpointDestination?: PinpointDestination;
+		PinpointDestination?: PinpointDestination | null;
 	}
 
 
@@ -383,7 +383,7 @@ export namespace MyNS {
 	export interface GetDedicatedIpResponse {
 
 		/** <p>Contains information about a dedicated IP address that is associated with your Amazon SES account.</p> <p>To learn more about requesting dedicated IP addresses, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/dedicated-ip-case.html">Requesting and Relinquishing Dedicated IP Addresses</a> in the <i>Amazon SES Developer Guide</i>.</p> */
-		DedicatedIp?: DedicatedIp;
+		DedicatedIp?: DedicatedIp | null;
 	}
 
 
@@ -404,7 +404,7 @@ export namespace MyNS {
 		WarmupPercentage: number;
 
 		/** The name of a dedicated IP pool. */
-		PoolName?: string;
+		PoolName?: string | null;
 	}
 
 	export enum DedicatedIpWarmupStatus { IN_PROGRESS = 0, DONE = 1 }
@@ -414,24 +414,24 @@ export namespace MyNS {
 	export interface GetDedicatedIpsResponse {
 
 		/** A list of dedicated IP addresses that are associated with your AWS account. */
-		DedicatedIps?: Array<DedicatedIp>;
-		NextToken?: string;
+		DedicatedIps?: Array<DedicatedIp> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** An object that shows the status of the Deliverability dashboard. */
 	export interface GetDeliverabilityDashboardOptionsResponse {
 		DashboardEnabled: boolean;
-		SubscriptionExpiryDate?: Date;
+		SubscriptionExpiryDate?: Date | null;
 
 		/** The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month. */
-		AccountStatus?: GetDeliverabilityDashboardOptionsResponseAccountStatus;
+		AccountStatus?: GetDeliverabilityDashboardOptionsResponseAccountStatus | null;
 
 		/** An object that contains information about the Deliverability dashboard subscription for a verified domain that you use to send email and currently has an active Deliverability dashboard subscription. If a Deliverability dashboard subscription is active for a domain, you gain access to reputation, inbox placement, and other metrics for the domain. */
-		ActiveSubscribedDomains?: Array<DomainDeliverabilityTrackingOption>;
+		ActiveSubscribedDomains?: Array<DomainDeliverabilityTrackingOption> | null;
 
 		/** An object that contains information about the Deliverability dashboard subscription for a verified domain that you use to send email and currently has an active Deliverability dashboard subscription. If a Deliverability dashboard subscription is active for a domain, you gain access to reputation, inbox placement, and other metrics for the domain. */
-		PendingExpirationSubscribedDomains?: Array<DomainDeliverabilityTrackingOption>;
+		PendingExpirationSubscribedDomains?: Array<DomainDeliverabilityTrackingOption> | null;
 	}
 
 	export enum GetDeliverabilityDashboardOptionsResponseAccountStatus { ACTIVE = 0, PENDING_EXPIRATION = 1, DISABLED = 2 }
@@ -439,18 +439,18 @@ export namespace MyNS {
 
 	/** An object that contains information about the Deliverability dashboard subscription for a verified domain that you use to send email and currently has an active Deliverability dashboard subscription. If a Deliverability dashboard subscription is active for a domain, you gain access to reputation, inbox placement, and other metrics for the domain. */
 	export interface DomainDeliverabilityTrackingOption {
-		Domain?: string;
-		SubscriptionStartDate?: Date;
+		Domain?: string | null;
+		SubscriptionStartDate?: Date | null;
 
 		/** An object that contains information about the inbox placement data settings for a verified domain that’s associated with your AWS account. This data is available only if you enabled the Deliverability dashboard for the domain. */
-		InboxPlacementTrackingOption?: InboxPlacementTrackingOption;
+		InboxPlacementTrackingOption?: InboxPlacementTrackingOption | null;
 	}
 
 
 	/** An object that contains information about the inbox placement data settings for a verified domain that’s associated with your AWS account. This data is available only if you enabled the Deliverability dashboard for the domain. */
 	export interface InboxPlacementTrackingOption {
-		Global?: boolean;
-		TrackedIsps?: Array<string>;
+		Global?: boolean | null;
+		TrackedIsps?: Array<string> | null;
 	}
 
 
@@ -471,8 +471,8 @@ export namespace MyNS {
 		IspPlacements: Array<IspPlacement>;
 
 		/** The body of an email message. */
-		Message?: string;
-		Tags?: Array<Tag>;
+		Message?: string | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -480,18 +480,18 @@ export namespace MyNS {
 	export interface DeliverabilityTestReport {
 
 		/** A unique string that identifies a Deliverability dashboard report. */
-		ReportId?: string;
+		ReportId?: string | null;
 
 		/** A name that helps you identify a report generated by the Deliverability dashboard. */
-		ReportName?: string;
+		ReportName?: string | null;
 
 		/** The subject line for an email that you submitted in a predictive inbox placement test. */
-		Subject?: string;
-		FromEmailAddress?: string;
-		CreateDate?: Date;
+		Subject?: string | null;
+		FromEmailAddress?: string | null;
+		CreateDate?: Date | null;
 
 		/** The status of a predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test. */
-		DeliverabilityTestStatus?: CreateDeliverabilityTestReportResponseDeliverabilityTestStatus;
+		DeliverabilityTestStatus?: CreateDeliverabilityTestReportResponseDeliverabilityTestStatus | null;
 	}
 
 
@@ -499,19 +499,19 @@ export namespace MyNS {
 	export interface PlacementStatistics {
 
 		/** An object that contains information about inbox placement percentages. */
-		InboxPercentage?: number;
+		InboxPercentage?: number | null;
 
 		/** An object that contains information about inbox placement percentages. */
-		SpamPercentage?: number;
+		SpamPercentage?: number | null;
 
 		/** An object that contains information about inbox placement percentages. */
-		MissingPercentage?: number;
+		MissingPercentage?: number | null;
 
 		/** An object that contains information about inbox placement percentages. */
-		SpfPercentage?: number;
+		SpfPercentage?: number | null;
 
 		/** An object that contains information about inbox placement percentages. */
-		DkimPercentage?: number;
+		DkimPercentage?: number | null;
 	}
 
 
@@ -519,10 +519,10 @@ export namespace MyNS {
 	export interface IspPlacement {
 
 		/** The name of an email provider. */
-		IspName?: string;
+		IspName?: string | null;
 
 		/** An object that contains inbox placement data for an email provider. */
-		PlacementStatistics?: PlacementStatistics;
+		PlacementStatistics?: PlacementStatistics | null;
 	}
 
 
@@ -539,32 +539,32 @@ export namespace MyNS {
 
 	/** An object that contains the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation). */
 	export interface DomainDeliverabilityCampaign {
-		CampaignId?: string;
-		ImageUrl?: string;
-		Subject?: string;
-		FromAddress?: string;
-		SendingIps?: Array<string>;
-		FirstSeenDateTime?: Date;
-		LastSeenDateTime?: Date;
+		CampaignId?: string | null;
+		ImageUrl?: string | null;
+		Subject?: string | null;
+		FromAddress?: string | null;
+		SendingIps?: Array<string> | null;
+		FirstSeenDateTime?: Date | null;
+		LastSeenDateTime?: Date | null;
 
 		/** An object that contains information about inbox placement volume. */
-		InboxCount?: number;
+		InboxCount?: number | null;
 
 		/** An object that contains information about inbox placement volume. */
-		SpamCount?: number;
+		SpamCount?: number | null;
 
 		/** An object that contains information about inbox placement percentages. */
-		ReadRate?: number;
+		ReadRate?: number | null;
 
 		/** An object that contains information about inbox placement percentages. */
-		DeleteRate?: number;
+		DeleteRate?: number | null;
 
 		/** An object that contains information about inbox placement percentages. */
-		ReadDeleteRate?: number;
+		ReadDeleteRate?: number | null;
 
 		/** An object that contains information about inbox placement volume. */
-		ProjectedVolume?: number;
-		Esps?: Array<string>;
+		ProjectedVolume?: number | null;
+		Esps?: Array<string> | null;
 	}
 
 
@@ -584,11 +584,11 @@ export namespace MyNS {
 	export interface OverallVolume {
 
 		/** An object that contains information about the amount of email that was delivered to recipients. */
-		VolumeStatistics?: VolumeStatistics;
+		VolumeStatistics?: VolumeStatistics | null;
 
 		/** An object that contains information about inbox placement percentages. */
-		ReadRatePercent?: number;
-		DomainIspPlacements?: Array<DomainIspPlacement>;
+		ReadRatePercent?: number | null;
+		DomainIspPlacements?: Array<DomainIspPlacement> | null;
 	}
 
 
@@ -596,16 +596,16 @@ export namespace MyNS {
 	export interface VolumeStatistics {
 
 		/** An object that contains information about inbox placement volume. */
-		InboxRawCount?: number;
+		InboxRawCount?: number | null;
 
 		/** An object that contains information about inbox placement volume. */
-		SpamRawCount?: number;
+		SpamRawCount?: number | null;
 
 		/** An object that contains information about inbox placement volume. */
-		ProjectedInbox?: number;
+		ProjectedInbox?: number | null;
 
 		/** An object that contains information about inbox placement volume. */
-		ProjectedSpam?: number;
+		ProjectedSpam?: number | null;
 	}
 
 
@@ -613,29 +613,29 @@ export namespace MyNS {
 	export interface DomainIspPlacement {
 
 		/** The name of an email provider. */
-		IspName?: string;
+		IspName?: string | null;
 
 		/** An object that contains information about inbox placement volume. */
-		InboxRawCount?: number;
+		InboxRawCount?: number | null;
 
 		/** An object that contains information about inbox placement volume. */
-		SpamRawCount?: number;
+		SpamRawCount?: number | null;
 
 		/** An object that contains information about inbox placement percentages. */
-		InboxPercentage?: number;
+		InboxPercentage?: number | null;
 
 		/** An object that contains information about inbox placement percentages. */
-		SpamPercentage?: number;
+		SpamPercentage?: number | null;
 	}
 
 
 	/** An object that contains information about the volume of email sent on each day of the analysis period. */
 	export interface DailyVolume {
-		StartDate?: Date;
+		StartDate?: Date | null;
 
 		/** An object that contains information about the amount of email that was delivered to recipients. */
-		VolumeStatistics?: VolumeStatistics;
-		DomainIspPlacements?: Array<DomainIspPlacement>;
+		VolumeStatistics?: VolumeStatistics | null;
+		DomainIspPlacements?: Array<DomainIspPlacement> | null;
 	}
 
 
@@ -643,16 +643,16 @@ export namespace MyNS {
 	export interface GetEmailIdentityResponse {
 
 		/** <p>The email identity type. The identity type can be one of the following:</p> <ul> <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li> <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> </ul> */
-		IdentityType?: CreateEmailIdentityResponseIdentityType;
-		FeedbackForwardingStatus?: boolean;
-		VerifiedForSendingStatus?: boolean;
+		IdentityType?: CreateEmailIdentityResponseIdentityType | null;
+		FeedbackForwardingStatus?: boolean | null;
+		VerifiedForSendingStatus?: boolean | null;
 
 		/** <p>An object that contains information about the DKIM authentication status for an email identity.</p> <p>Amazon SES determines the authentication status by searching for specific records in the DNS configuration for the domain. If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain. If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity</p> */
-		DkimAttributes?: DkimAttributes;
+		DkimAttributes?: DkimAttributes | null;
 
 		/** A list of attributes that are associated with a MAIL FROM domain. */
-		MailFromAttributes?: MailFromAttributes;
-		Tags?: Array<Tag>;
+		MailFromAttributes?: MailFromAttributes | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -706,21 +706,21 @@ export namespace MyNS {
 		LastUpdateTime: Date;
 
 		/** An object that contains additional attributes that are related an email address that is on the suppression list for your account. */
-		Attributes?: SuppressedDestinationAttributes;
+		Attributes?: SuppressedDestinationAttributes | null;
 	}
 
 
 	/** An object that contains additional attributes that are related an email address that is on the suppression list for your account. */
 	export interface SuppressedDestinationAttributes {
-		MessageId?: string;
-		FeedbackId?: string;
+		MessageId?: string | null;
+		FeedbackId?: string | null;
 	}
 
 
 	/** A list of configuration sets in your Amazon SES account in the current AWS Region. */
 	export interface ListConfigurationSetsResponse {
-		ConfigurationSets?: Array<string>;
-		NextToken?: string;
+		ConfigurationSets?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -728,15 +728,15 @@ export namespace MyNS {
 	export interface ListDedicatedIpPoolsResponse {
 
 		/** A list of dedicated IP pools that are associated with your AWS account. */
-		DedicatedIpPools?: Array<string>;
-		NextToken?: string;
+		DedicatedIpPools?: Array<string> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A list of the predictive inbox placement test reports that are available for your account, regardless of whether or not those tests are complete. */
 	export interface ListDeliverabilityTestReportsResponse {
 		DeliverabilityTestReports: Array<DeliverabilityTestReport>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -748,14 +748,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		DomainDeliverabilityCampaigns: Array<DomainDeliverabilityCampaign>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** A list of all of the identities that you've attempted to verify, regardless of whether or not those identities were successfully verified. */
 	export interface ListEmailIdentitiesResponse {
-		EmailIdentities?: Array<IdentityInfo>;
-		NextToken?: string;
+		EmailIdentities?: Array<IdentityInfo> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -763,16 +763,16 @@ export namespace MyNS {
 	export interface IdentityInfo {
 
 		/** <p>The email identity type. The identity type can be one of the following:</p> <ul> <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li> <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> </ul> */
-		IdentityType?: CreateEmailIdentityResponseIdentityType;
-		IdentityName?: string;
-		SendingEnabled?: boolean;
+		IdentityType?: CreateEmailIdentityResponseIdentityType | null;
+		IdentityName?: string | null;
+		SendingEnabled?: boolean | null;
 	}
 
 
 	/** A list of suppressed email addresses. */
 	export interface ListSuppressedDestinationsResponse {
-		SuppressedDestinationSummaries?: Array<SuppressedDestinationSummary>;
-		NextToken?: string;
+		SuppressedDestinationSummaries?: Array<SuppressedDestinationSummary> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -860,8 +860,8 @@ export namespace MyNS {
 	export interface PutEmailIdentityDkimSigningAttributesResponse {
 
 		/** <p>The DKIM authentication status of the identity. The status can be one of the following:</p> <ul> <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.</p> </li> <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li> <li> <p> <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li> <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li> </ul> */
-		DkimStatus?: DkimAttributesStatus;
-		DkimTokens?: Array<string>;
+		DkimStatus?: DkimAttributesStatus | null;
+		DkimTokens?: Array<string> | null;
 	}
 
 
@@ -882,7 +882,7 @@ export namespace MyNS {
 
 	/** A unique message ID that you receive when an email is accepted for sending. */
 	export interface SendEmailResponse {
-		MessageId?: string;
+		MessageId?: string | null;
 	}
 
 
@@ -922,11 +922,11 @@ export namespace MyNS {
 	export interface BlacklistEntry {
 
 		/** The name of a blacklist that an IP address was found on. */
-		RblName?: string;
-		ListingTime?: Date;
+		RblName?: string | null;
+		ListingTime?: Date | null;
 
 		/** A description of the blacklisting event. */
-		Description?: string;
+		Description?: string | null;
 	}
 
 
@@ -936,20 +936,20 @@ export namespace MyNS {
 
 	/** An object that defines the event destination. Specifically, it defines which services receive events from emails sent using the configuration set that the event destination is associated with. Also defines the types of events that are sent to the event destination. */
 	export interface EventDestinationDefinition {
-		Enabled?: boolean;
-		MatchingEventTypes?: Array<EventType>;
+		Enabled?: boolean | null;
+		MatchingEventTypes?: Array<EventType> | null;
 
 		/** An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift. */
-		KinesisFirehoseDestination?: KinesisFirehoseDestination;
+		KinesisFirehoseDestination?: KinesisFirehoseDestination | null;
 
 		/** An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics. */
-		CloudWatchDestination?: CloudWatchDestination;
+		CloudWatchDestination?: CloudWatchDestination | null;
 
 		/** An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur. */
-		SnsDestination?: SnsDestination;
+		SnsDestination?: SnsDestination | null;
 
 		/** An object that defines an Amazon Pinpoint project destination for email events. You can send email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>. */
-		PinpointDestination?: PinpointDestination;
+		PinpointDestination?: PinpointDestination | null;
 	}
 
 
@@ -980,20 +980,20 @@ export namespace MyNS {
 		ConfigurationSetName: string;
 
 		/** <p>An object that defines the tracking options for a configuration set. When you use the Amazon SES API v2 to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.</p> <p>These images and links include references to a domain operated by AWS. You can optionally configure the Amazon SES to use a domain that you operate for these images and links.</p> */
-		TrackingOptions?: TrackingOptions;
+		TrackingOptions?: TrackingOptions | null;
 
 		/** Used to associate a configuration set with a dedicated IP pool. */
-		DeliveryOptions?: DeliveryOptions;
+		DeliveryOptions?: DeliveryOptions | null;
 
 		/** Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current AWS Region. */
-		ReputationOptions?: ReputationOptions;
+		ReputationOptions?: ReputationOptions | null;
 
 		/** Used to enable or disable email sending for messages that use this configuration set in the current AWS Region. */
-		SendingOptions?: SendingOptions;
-		Tags?: Array<Tag>;
+		SendingOptions?: SendingOptions | null;
+		Tags?: Array<Tag> | null;
 
 		/** An object that contains information about the suppression list preferences for your account. */
-		SuppressionOptions?: SuppressionOptions;
+		SuppressionOptions?: SuppressionOptions | null;
 	}
 
 
@@ -1005,7 +1005,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		PoolName: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -1013,13 +1013,13 @@ export namespace MyNS {
 	export interface EmailContent {
 
 		/** Represents the email message that you're sending. The <code>Message</code> object consists of a subject line and a message body. */
-		Simple?: Message;
+		Simple?: Message | null;
 
 		/** Represents the raw content of an email message. */
-		Raw?: RawMessage;
+		Raw?: RawMessage | null;
 
 		/** An object that defines the email template to use for an email message, and the values to use for any message variables in that template. An <i>email template</i> is a type of message template that contains content that you want to define, save, and reuse in email messages that you send. */
-		Template?: Template;
+		Template?: Template | null;
 	}
 
 
@@ -1027,7 +1027,7 @@ export namespace MyNS {
 	export interface CreateDeliverabilityTestReportRequest {
 
 		/** A name that helps you identify a report generated by the Deliverability dashboard. */
-		ReportName?: string;
+		ReportName?: string | null;
 		FromEmailAddress: string;
 
 		/**
@@ -1035,7 +1035,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		Content: EmailContent;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -1053,10 +1053,10 @@ export namespace MyNS {
 	/** A request to begin the verification process for an email identity (an email address or domain). */
 	export interface CreateEmailIdentityRequest {
 		EmailIdentity: string;
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/** An object that contains information about the tokens used for setting up Bring Your Own DKIM (BYODKIM). */
-		DkimSigningAttributes?: DkimSigningAttributes;
+		DkimSigningAttributes?: DkimSigningAttributes | null;
 	}
 
 
@@ -1099,9 +1099,9 @@ export namespace MyNS {
 
 	/** An object that describes the recipients for an email. */
 	export interface Destination {
-		ToAddresses?: Array<string>;
-		CcAddresses?: Array<string>;
-		BccAddresses?: Array<string>;
+		ToAddresses?: Array<string> | null;
+		CcAddresses?: Array<string> | null;
+		BccAddresses?: Array<string> | null;
 	}
 
 
@@ -1210,19 +1210,19 @@ export namespace MyNS {
 
 	/** A request to enable or disable the automatic IP address warm-up feature. */
 	export interface PutAccountDedicatedIpWarmupAttributesRequest {
-		AutoWarmupEnabled?: boolean;
+		AutoWarmupEnabled?: boolean | null;
 	}
 
 
 	/** A request to change the ability of your account to send email. */
 	export interface PutAccountSendingAttributesRequest {
-		SendingEnabled?: boolean;
+		SendingEnabled?: boolean | null;
 	}
 
 
 	/** A request to change your account's suppression preferences. */
 	export interface PutAccountSuppressionAttributesRequest {
-		SuppressedReasons?: Array<SuppressionListReason>;
+		SuppressedReasons?: Array<SuppressionListReason> | null;
 	}
 
 
@@ -1230,28 +1230,28 @@ export namespace MyNS {
 	export interface PutConfigurationSetDeliveryOptionsRequest {
 
 		/** Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established. */
-		TlsPolicy?: TlsPolicy;
+		TlsPolicy?: TlsPolicy | null;
 
 		/** The name of the dedicated IP pool that you want to associate with the configuration set. */
-		SendingPoolName?: string;
+		SendingPoolName?: string | null;
 	}
 
 
 	/** A request to enable or disable tracking of reputation metrics for a configuration set. */
 	export interface PutConfigurationSetReputationOptionsRequest {
-		ReputationMetricsEnabled?: boolean;
+		ReputationMetricsEnabled?: boolean | null;
 	}
 
 
 	/** A request to enable or disable the ability of Amazon SES to send emails that use a specific configuration set. */
 	export interface PutConfigurationSetSendingOptionsRequest {
-		SendingEnabled?: boolean;
+		SendingEnabled?: boolean | null;
 	}
 
 
 	/** A request to change the account suppression list preferences for a specific configuration set. */
 	export interface PutConfigurationSetSuppressionOptionsRequest {
-		SuppressedReasons?: Array<SuppressionListReason>;
+		SuppressedReasons?: Array<SuppressionListReason> | null;
 	}
 
 
@@ -1259,7 +1259,7 @@ export namespace MyNS {
 	export interface PutConfigurationSetTrackingOptionsRequest {
 
 		/** The domain that you want to use for tracking open and click events. */
-		CustomRedirectDomain?: string;
+		CustomRedirectDomain?: string | null;
 	}
 
 
@@ -1285,13 +1285,13 @@ export namespace MyNS {
 		DashboardEnabled: boolean;
 
 		/** An object that contains information about the Deliverability dashboard subscription for a verified domain that you use to send email and currently has an active Deliverability dashboard subscription. If a Deliverability dashboard subscription is active for a domain, you gain access to reputation, inbox placement, and other metrics for the domain. */
-		SubscribedDomains?: Array<DomainDeliverabilityTrackingOption>;
+		SubscribedDomains?: Array<DomainDeliverabilityTrackingOption> | null;
 	}
 
 
 	/** A request to enable or disable DKIM signing of email that you send from an email identity. */
 	export interface PutEmailIdentityDkimAttributesRequest {
-		SigningEnabled?: boolean;
+		SigningEnabled?: boolean | null;
 	}
 
 
@@ -1300,13 +1300,13 @@ export namespace MyNS {
 		SigningAttributesOrigin: DkimAttributesSigningAttributesOrigin;
 
 		/** An object that contains information about the tokens used for setting up Bring Your Own DKIM (BYODKIM). */
-		SigningAttributes?: DkimSigningAttributes;
+		SigningAttributes?: DkimSigningAttributes | null;
 	}
 
 
 	/** A request to set the attributes that control how bounce and complaint events are processed. */
 	export interface PutEmailIdentityFeedbackAttributesRequest {
-		EmailForwardingEnabled?: boolean;
+		EmailForwardingEnabled?: boolean | null;
 	}
 
 
@@ -1314,10 +1314,10 @@ export namespace MyNS {
 	export interface PutEmailIdentityMailFromAttributesRequest {
 
 		/** The domain that you want to use as a MAIL FROM domain. */
-		MailFromDomain?: string;
+		MailFromDomain?: string | null;
 
 		/** <p>The action that you want to take if the required MX record can't be found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p> <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p> */
-		BehaviorOnMxFailure?: MailFromAttributesBehaviorOnMxFailure;
+		BehaviorOnMxFailure?: MailFromAttributesBehaviorOnMxFailure | null;
 	}
 
 
@@ -1335,15 +1335,15 @@ export namespace MyNS {
 
 	/** A request to send an email message. */
 	export interface SendEmailRequest {
-		FromEmailAddress?: string;
+		FromEmailAddress?: string | null;
 
 		/**
 		 * An object that describes the recipients for an email.
 		 * Required
 		 */
 		Destination: Destination;
-		ReplyToAddresses?: Array<string>;
-		FeedbackForwardingEmailAddress?: string;
+		ReplyToAddresses?: Array<string> | null;
+		FeedbackForwardingEmailAddress?: string | null;
 
 		/**
 		 * An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers.
@@ -1352,10 +1352,10 @@ export namespace MyNS {
 		Content: EmailContent;
 
 		/** A list of message tags. */
-		EmailTags?: Array<MessageTag>;
+		EmailTags?: Array<MessageTag> | null;
 
 		/** <p>The name of a configuration set.</p> <p> <i>Configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p> */
-		ConfigurationSetName?: string;
+		ConfigurationSetName?: string | null;
 	}
 
 	export interface TagResourceRequest {
@@ -1398,7 +1398,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
 		 * @return {ListConfigurationSetsResponse} Success
 		 */
-		ListConfigurationSets(NextToken: string, PageSize: number): Observable<ListConfigurationSetsResponse> {
+		ListConfigurationSets(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListConfigurationSetsResponse> {
 			return this.http.get<ListConfigurationSetsResponse>(this.baseUri + 'v2/email/configuration-sets?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&PageSize=' + PageSize, {});
 		}
 
@@ -1438,7 +1438,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
 		 * @return {ListDedicatedIpPoolsResponse} Success
 		 */
-		ListDedicatedIpPools(NextToken: string, PageSize: number): Observable<ListDedicatedIpPoolsResponse> {
+		ListDedicatedIpPools(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListDedicatedIpPoolsResponse> {
 			return this.http.get<ListDedicatedIpPoolsResponse>(this.baseUri + 'v2/email/dedicated-ip-pools?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&PageSize=' + PageSize, {});
 		}
 
@@ -1467,7 +1467,7 @@ export namespace MyNS {
 		 * @param {number} PageSize <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
 		 * @return {ListEmailIdentitiesResponse} Success
 		 */
-		ListEmailIdentities(NextToken: string, PageSize: number): Observable<ListEmailIdentitiesResponse> {
+		ListEmailIdentities(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListEmailIdentitiesResponse> {
 			return this.http.get<ListEmailIdentitiesResponse>(this.baseUri + 'v2/email/identities?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&PageSize=' + PageSize, {});
 		}
 
@@ -1600,7 +1600,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
 		 * @return {GetDedicatedIpsResponse} Success
 		 */
-		GetDedicatedIps(PoolName: string, NextToken: string, PageSize: number): Observable<GetDedicatedIpsResponse> {
+		GetDedicatedIps(PoolName: string | null | undefined, NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<GetDedicatedIpsResponse> {
 			return this.http.get<GetDedicatedIpsResponse>(this.baseUri + 'v2/email/dedicated-ips?PoolName=' + (PoolName == null ? '' : encodeURIComponent(PoolName)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&PageSize=' + PageSize, {});
 		}
 
@@ -1661,7 +1661,7 @@ export namespace MyNS {
 		 * @param {number} PageSize <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
 		 * @return {ListDeliverabilityTestReportsResponse} Success
 		 */
-		ListDeliverabilityTestReports(NextToken: string, PageSize: number): Observable<ListDeliverabilityTestReportsResponse> {
+		ListDeliverabilityTestReports(NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListDeliverabilityTestReportsResponse> {
 			return this.http.get<ListDeliverabilityTestReportsResponse>(this.baseUri + 'v2/email/deliverability-dashboard/test-reports?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&PageSize=' + PageSize, {});
 		}
 
@@ -1675,7 +1675,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
 		 * @return {ListDomainDeliverabilityCampaignsResponse} Success
 		 */
-		ListDomainDeliverabilityCampaigns(StartDate: Date, EndDate: Date, SubscribedDomain: string, NextToken: string, PageSize: number): Observable<ListDomainDeliverabilityCampaignsResponse> {
+		ListDomainDeliverabilityCampaigns(StartDate: Date, EndDate: Date, SubscribedDomain: string, NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListDomainDeliverabilityCampaignsResponse> {
 			return this.http.get<ListDomainDeliverabilityCampaignsResponse>(this.baseUri + 'v2/email/deliverability-dashboard/domains/' + (SubscribedDomain == null ? '' : encodeURIComponent(SubscribedDomain)) + '/campaigns#StartDate&EndDate?StartDate=' + StartDate.toISOString() + '&EndDate=' + EndDate.toISOString() + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&PageSize=' + PageSize, {});
 		}
 
@@ -1689,7 +1689,7 @@ export namespace MyNS {
 		 * @param {number} PageSize The number of results to show in a single call to <code>ListSuppressedDestinations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.
 		 * @return {ListSuppressedDestinationsResponse} Success
 		 */
-		ListSuppressedDestinations(Reason: Array<SuppressionListReason>, StartDate: Date, EndDate: Date, NextToken: string, PageSize: number): Observable<ListSuppressedDestinationsResponse> {
+		ListSuppressedDestinations(Reason: Array<SuppressionListReason> | null | undefined, StartDate: Date | null | undefined, EndDate: Date | null | undefined, NextToken: string | null | undefined, PageSize: number | null | undefined): Observable<ListSuppressedDestinationsResponse> {
 			return this.http.get<ListSuppressedDestinationsResponse>(this.baseUri + 'v2/email/suppression/addresses?' + Reason.map(z => `Reason=${z}`).join('&') + '&StartDate=' + StartDate.toISOString() + '&EndDate=' + EndDate.toISOString() + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&PageSize=' + PageSize, {});
 		}
 
@@ -1888,52 +1888,52 @@ export namespace MyNS {
 		ConfigurationSetName: string;
 
 		/** <p>An object that defines the tracking options for a configuration set. When you use the Amazon SES API v2 to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.</p> <p>These images and links include references to a domain operated by AWS. You can optionally configure the Amazon SES to use a domain that you operate for these images and links.</p> */
-		TrackingOptions?: CreateConfigurationSetPostBodyTrackingOptions;
+		TrackingOptions?: CreateConfigurationSetPostBodyTrackingOptions | null;
 
 		/** Used to associate a configuration set with a dedicated IP pool. */
-		DeliveryOptions?: CreateConfigurationSetPostBodyDeliveryOptions;
+		DeliveryOptions?: CreateConfigurationSetPostBodyDeliveryOptions | null;
 
 		/** Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current AWS Region. */
-		ReputationOptions?: CreateConfigurationSetPostBodyReputationOptions;
+		ReputationOptions?: CreateConfigurationSetPostBodyReputationOptions | null;
 
 		/** Used to enable or disable email sending for messages that use this configuration set in the current AWS Region. */
-		SendingOptions?: CreateConfigurationSetPostBodySendingOptions;
+		SendingOptions?: CreateConfigurationSetPostBodySendingOptions | null;
 
 		/** An array of objects that define the tags (keys and values) that you want to associate with the configuration set. */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/** An object that contains information about the suppression list preferences for your account. */
-		SuppressionOptions?: CreateConfigurationSetPostBodySuppressionOptions;
+		SuppressionOptions?: CreateConfigurationSetPostBodySuppressionOptions | null;
 	}
 
 	export interface CreateConfigurationSetPostBodyTrackingOptions {
 
 		/** The domain that you want to use for tracking open and click events. */
-		CustomRedirectDomain?: string;
+		CustomRedirectDomain?: string | null;
 	}
 
 	export interface CreateConfigurationSetPostBodyDeliveryOptions {
 
 		/** Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established. */
-		TlsPolicy?: TlsPolicy;
+		TlsPolicy?: TlsPolicy | null;
 
 		/** The name of a dedicated IP pool. */
-		SendingPoolName?: string;
+		SendingPoolName?: string | null;
 	}
 
 	export interface CreateConfigurationSetPostBodyReputationOptions {
-		ReputationMetricsEnabled?: boolean;
+		ReputationMetricsEnabled?: boolean | null;
 
 		/** The date and time (in Unix time) when the reputation metrics were last given a fresh start. When your account is given a fresh start, your reputation metrics are calculated starting from the date of the fresh start. */
-		LastFreshStart?: Date;
+		LastFreshStart?: Date | null;
 	}
 
 	export interface CreateConfigurationSetPostBodySendingOptions {
-		SendingEnabled?: boolean;
+		SendingEnabled?: boolean | null;
 	}
 
 	export interface CreateConfigurationSetPostBodySuppressionOptions {
-		SuppressedReasons?: Array<SuppressionListReason>;
+		SuppressedReasons?: Array<SuppressionListReason> | null;
 	}
 
 	export interface CreateConfigurationSetEventDestinationPostBody {
@@ -1952,20 +1952,20 @@ export namespace MyNS {
 	}
 
 	export interface CreateConfigurationSetEventDestinationPostBodyEventDestination {
-		Enabled?: boolean;
-		MatchingEventTypes?: Array<EventType>;
+		Enabled?: boolean | null;
+		MatchingEventTypes?: Array<EventType> | null;
 
 		/** An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift. */
-		KinesisFirehoseDestination?: KinesisFirehoseDestination;
+		KinesisFirehoseDestination?: KinesisFirehoseDestination | null;
 
 		/** An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics. */
-		CloudWatchDestination?: CloudWatchDestination;
+		CloudWatchDestination?: CloudWatchDestination | null;
 
 		/** An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur. */
-		SnsDestination?: SnsDestination;
+		SnsDestination?: SnsDestination | null;
 
 		/** An object that defines an Amazon Pinpoint project destination for email events. You can send email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>. */
-		PinpointDestination?: PinpointDestination;
+		PinpointDestination?: PinpointDestination | null;
 	}
 
 	export interface CreateDedicatedIpPoolPostBody {
@@ -1977,13 +1977,13 @@ export namespace MyNS {
 		PoolName: string;
 
 		/** An object that defines the tags (keys and values) that you want to associate with the pool. */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateDeliverabilityTestReportPostBody {
 
 		/** A name that helps you identify a report generated by the Deliverability dashboard. */
-		ReportName?: string;
+		ReportName?: string | null;
 
 		/**
 		 * The email address that the predictive inbox placement test email was sent from.
@@ -1998,19 +1998,19 @@ export namespace MyNS {
 		Content: CreateDeliverabilityTestReportPostBodyContent;
 
 		/** An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test. */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateDeliverabilityTestReportPostBodyContent {
 
 		/** Represents the email message that you're sending. The <code>Message</code> object consists of a subject line and a message body. */
-		Simple?: Message;
+		Simple?: Message | null;
 
 		/** Represents the raw content of an email message. */
-		Raw?: RawMessage;
+		Raw?: RawMessage | null;
 
 		/** An object that defines the email template to use for an email message, and the values to use for any message variables in that template. An <i>email template</i> is a type of message template that contains content that you want to define, save, and reuse in email messages that you send. */
-		Template?: Template;
+		Template?: Template | null;
 	}
 
 	export interface CreateEmailIdentityPostBody {
@@ -2022,15 +2022,15 @@ export namespace MyNS {
 		EmailIdentity: string;
 
 		/** An array of objects that define the tags (keys and values) that you want to associate with the email identity. */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 
 		/** An object that contains information about the tokens used for setting up Bring Your Own DKIM (BYODKIM). */
-		DkimSigningAttributes?: CreateEmailIdentityPostBodyDkimSigningAttributes;
+		DkimSigningAttributes?: CreateEmailIdentityPostBodyDkimSigningAttributes | null;
 	}
 
 	export interface CreateEmailIdentityPostBodyDkimSigningAttributes {
-		DomainSigningSelector?: string;
-		DomainSigningPrivateKey?: string;
+		DomainSigningSelector?: string | null;
+		DomainSigningPrivateKey?: string | null;
 	}
 
 	export interface UpdateConfigurationSetEventDestinationPutBody {
@@ -2043,20 +2043,20 @@ export namespace MyNS {
 	}
 
 	export interface UpdateConfigurationSetEventDestinationPutBodyEventDestination {
-		Enabled?: boolean;
-		MatchingEventTypes?: Array<EventType>;
+		Enabled?: boolean | null;
+		MatchingEventTypes?: Array<EventType> | null;
 
 		/** An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift. */
-		KinesisFirehoseDestination?: KinesisFirehoseDestination;
+		KinesisFirehoseDestination?: KinesisFirehoseDestination | null;
 
 		/** An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics. */
-		CloudWatchDestination?: CloudWatchDestination;
+		CloudWatchDestination?: CloudWatchDestination | null;
 
 		/** An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur. */
-		SnsDestination?: SnsDestination;
+		SnsDestination?: SnsDestination | null;
 
 		/** An object that defines an Amazon Pinpoint project destination for email events. You can send email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>. */
-		PinpointDestination?: PinpointDestination;
+		PinpointDestination?: PinpointDestination | null;
 	}
 
 	export interface PutDeliverabilityDashboardOptionPutBody {
@@ -2068,7 +2068,7 @@ export namespace MyNS {
 		DashboardEnabled: boolean;
 
 		/** An object that contains information about the Deliverability dashboard subscription for a verified domain that you use to send email and currently has an active Deliverability dashboard subscription. If a Deliverability dashboard subscription is active for a domain, you gain access to reputation, inbox placement, and other metrics for the domain. */
-		SubscribedDomains?: Array<DomainDeliverabilityTrackingOption>;
+		SubscribedDomains?: Array<DomainDeliverabilityTrackingOption> | null;
 	}
 
 	export interface PutSuppressedDestinationPutBody {
@@ -2089,52 +2089,52 @@ export namespace MyNS {
 	export interface PutAccountDedicatedIpWarmupAttributesPutBody {
 
 		/** Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon SES account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it. */
-		AutoWarmupEnabled?: boolean;
+		AutoWarmupEnabled?: boolean | null;
 	}
 
 	export interface PutAccountSendingAttributesPutBody {
 
 		/** <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note> <p>If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p> </note> */
-		SendingEnabled?: boolean;
+		SendingEnabled?: boolean | null;
 	}
 
 	export interface PutAccountSuppressionAttributesPutBody {
 
 		/** <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li> <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li> </ul> */
-		SuppressedReasons?: Array<SuppressionListReason>;
+		SuppressedReasons?: Array<SuppressionListReason> | null;
 	}
 
 	export interface PutConfigurationSetDeliveryOptionsPutBody {
 
 		/** Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established. */
-		TlsPolicy?: TlsPolicy;
+		TlsPolicy?: TlsPolicy | null;
 
 		/** The name of the dedicated IP pool that you want to associate with the configuration set. */
-		SendingPoolName?: string;
+		SendingPoolName?: string | null;
 	}
 
 	export interface PutConfigurationSetReputationOptionsPutBody {
 
 		/** If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set. */
-		ReputationMetricsEnabled?: boolean;
+		ReputationMetricsEnabled?: boolean | null;
 	}
 
 	export interface PutConfigurationSetSendingOptionsPutBody {
 
 		/** If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set. */
-		SendingEnabled?: boolean;
+		SendingEnabled?: boolean | null;
 	}
 
 	export interface PutConfigurationSetSuppressionOptionsPutBody {
 
 		/** <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li> <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li> </ul> */
-		SuppressedReasons?: Array<SuppressionListReason>;
+		SuppressedReasons?: Array<SuppressionListReason> | null;
 	}
 
 	export interface PutConfigurationSetTrackingOptionsPutBody {
 
 		/** The domain that you want to use for tracking open and click events. */
-		CustomRedirectDomain?: string;
+		CustomRedirectDomain?: string | null;
 	}
 
 	export interface PutDedicatedIpInPoolPutBody {
@@ -2158,7 +2158,7 @@ export namespace MyNS {
 	export interface PutEmailIdentityDkimAttributesPutBody {
 
 		/** <p>Sets the DKIM signing configuration for the identity.</p> <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p> */
-		SigningEnabled?: boolean;
+		SigningEnabled?: boolean | null;
 	}
 
 	export interface PutEmailIdentityDkimSigningAttributesPutBody {
@@ -2170,33 +2170,33 @@ export namespace MyNS {
 		SigningAttributesOrigin: DkimAttributesSigningAttributesOrigin;
 
 		/** An object that contains information about the tokens used for setting up Bring Your Own DKIM (BYODKIM). */
-		SigningAttributes?: PutEmailIdentityDkimSigningAttributesPutBodySigningAttributes;
+		SigningAttributes?: PutEmailIdentityDkimSigningAttributesPutBodySigningAttributes | null;
 	}
 
 	export interface PutEmailIdentityDkimSigningAttributesPutBodySigningAttributes {
-		DomainSigningSelector?: string;
-		DomainSigningPrivateKey?: string;
+		DomainSigningSelector?: string | null;
+		DomainSigningPrivateKey?: string | null;
 	}
 
 	export interface PutEmailIdentityFeedbackAttributesPutBody {
 
 		/** <p>Sets the feedback forwarding configuration for the identity.</p> <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p> <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p> */
-		EmailForwardingEnabled?: boolean;
+		EmailForwardingEnabled?: boolean | null;
 	}
 
 	export interface PutEmailIdentityMailFromAttributesPutBody {
 
 		/** The domain that you want to use as a MAIL FROM domain. */
-		MailFromDomain?: string;
+		MailFromDomain?: string | null;
 
 		/** <p>The action that you want to take if the required MX record can't be found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p> <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p> */
-		BehaviorOnMxFailure?: MailFromAttributesBehaviorOnMxFailure;
+		BehaviorOnMxFailure?: MailFromAttributesBehaviorOnMxFailure | null;
 	}
 
 	export interface SendEmailPostBody {
 
 		/** The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. */
-		FromEmailAddress?: string;
+		FromEmailAddress?: string | null;
 
 		/**
 		 * An object that describes the recipients for an email.
@@ -2205,10 +2205,10 @@ export namespace MyNS {
 		Destination: SendEmailPostBodyDestination;
 
 		/** The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply. */
-		ReplyToAddresses?: Array<string>;
+		ReplyToAddresses?: Array<string> | null;
 
 		/** The address that you want bounce and complaint notifications to be sent to. */
-		FeedbackForwardingEmailAddress?: string;
+		FeedbackForwardingEmailAddress?: string | null;
 
 		/**
 		 * An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers.
@@ -2217,28 +2217,28 @@ export namespace MyNS {
 		Content: SendEmailPostBodyContent;
 
 		/** A list of message tags. */
-		EmailTags?: Array<MessageTag>;
+		EmailTags?: Array<MessageTag> | null;
 
 		/** <p>The name of a configuration set.</p> <p> <i>Configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p> */
-		ConfigurationSetName?: string;
+		ConfigurationSetName?: string | null;
 	}
 
 	export interface SendEmailPostBodyDestination {
-		ToAddresses?: Array<string>;
-		CcAddresses?: Array<string>;
-		BccAddresses?: Array<string>;
+		ToAddresses?: Array<string> | null;
+		CcAddresses?: Array<string> | null;
+		BccAddresses?: Array<string> | null;
 	}
 
 	export interface SendEmailPostBodyContent {
 
 		/** Represents the email message that you're sending. The <code>Message</code> object consists of a subject line and a message body. */
-		Simple?: Message;
+		Simple?: Message | null;
 
 		/** Represents the raw content of an email message. */
-		Raw?: RawMessage;
+		Raw?: RawMessage | null;
 
 		/** An object that defines the email template to use for an email message, and the values to use for any message variables in that template. An <i>email template</i> is a type of message template that contains content that you want to define, save, and reuse in email messages that you send. */
-		Template?: Template;
+		Template?: Template | null;
 	}
 
 	export interface TagResourcePostBody {

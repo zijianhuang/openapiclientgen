@@ -15,27 +15,27 @@ export namespace MyNS {
 	}
 
 	export interface DescribeSigningJobResponse {
-		jobId?: string;
+		jobId?: string | null;
 
 		/** An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code. */
-		source?: Source;
+		source?: Source | null;
 
 		/** The ACM certificate that is used to sign your code. */
-		signingMaterial?: SigningMaterial;
-		platformId?: string;
-		profileName?: string;
+		signingMaterial?: SigningMaterial | null;
+		platformId?: string | null;
+		profileName?: string | null;
 
 		/** Any overrides that are applied to the signing configuration of a code signing platform. */
-		overrides?: SigningPlatformOverrides;
-		signingParameters?: SigningParameters;
-		createdAt?: Date;
-		completedAt?: Date;
-		requestedBy?: string;
-		status?: DescribeSigningJobResponseStatus;
-		statusReason?: string;
+		overrides?: SigningPlatformOverrides | null;
+		signingParameters?: SigningParameters | null;
+		createdAt?: Date | null;
+		completedAt?: Date | null;
+		requestedBy?: string | null;
+		status?: DescribeSigningJobResponseStatus | null;
+		statusReason?: string | null;
 
 		/** Points to an <code>S3SignedObject</code> object that contains information about your signed code image. */
-		signedObject?: SignedObject;
+		signedObject?: SignedObject | null;
 	}
 
 
@@ -43,7 +43,7 @@ export namespace MyNS {
 	export interface Source {
 
 		/** Information about the S3 bucket where you saved your unsigned code. */
-		s3?: S3Source;
+		s3?: S3Source | null;
 	}
 
 
@@ -65,15 +65,15 @@ export namespace MyNS {
 	export interface SigningPlatformOverrides {
 
 		/** A signing configuration that overrides the default encryption or hash algorithm of a signing job. */
-		signingConfiguration?: SigningConfigurationOverrides;
-		signingImageFormat?: SigningPlatformOverridesSigningImageFormat;
+		signingConfiguration?: SigningConfigurationOverrides | null;
+		signingImageFormat?: SigningPlatformOverridesSigningImageFormat | null;
 	}
 
 
 	/** A signing configuration that overrides the default encryption or hash algorithm of a signing job. */
 	export interface SigningConfigurationOverrides {
-		encryptionAlgorithm?: SigningConfigurationOverridesEncryptionAlgorithm;
-		hashAlgorithm?: SigningConfigurationOverridesHashAlgorithm;
+		encryptionAlgorithm?: SigningConfigurationOverridesEncryptionAlgorithm | null;
+		hashAlgorithm?: SigningConfigurationOverridesHashAlgorithm | null;
 	}
 
 	export enum SigningConfigurationOverridesEncryptionAlgorithm { RSA = 0, ECDSA = 1 }
@@ -92,29 +92,29 @@ export namespace MyNS {
 	export interface SignedObject {
 
 		/** The S3 bucket name and key where code signing saved your signed code image. */
-		s3?: S3SignedObject;
+		s3?: S3SignedObject | null;
 	}
 
 
 	/** The S3 bucket name and key where code signing saved your signed code image. */
 	export interface S3SignedObject {
-		bucketName?: string;
-		key?: string;
+		bucketName?: string | null;
+		key?: string | null;
 	}
 
 	export interface GetSigningPlatformResponse {
-		platformId?: string;
-		displayName?: string;
-		partner?: string;
-		target?: string;
-		category?: GetSigningPlatformResponseCategory;
+		platformId?: string | null;
+		displayName?: string | null;
+		partner?: string | null;
+		target?: string | null;
+		category?: GetSigningPlatformResponseCategory | null;
 
 		/** The configuration of a code signing operation. */
-		signingConfiguration?: SigningConfiguration;
+		signingConfiguration?: SigningConfiguration | null;
 
 		/** The image format of a code signing platform or profile. */
-		signingImageFormat?: SigningImageFormat;
-		maxSizeInMB?: number;
+		signingImageFormat?: SigningImageFormat | null;
+		maxSizeInMB?: number | null;
 	}
 
 	export enum GetSigningPlatformResponseCategory { AWSIoT = 0 }
@@ -164,18 +164,18 @@ export namespace MyNS {
 	export enum ImageFormat { JSON = 0, JSONEmbedded = 1, JSONDetached = 2 }
 
 	export interface GetSigningProfileResponse {
-		profileName?: string;
+		profileName?: string | null;
 
 		/** The ACM certificate that is used to sign your code. */
-		signingMaterial?: SigningMaterial;
-		platformId?: string;
+		signingMaterial?: SigningMaterial | null;
+		platformId?: string | null;
 
 		/** Any overrides that are applied to the signing configuration of a code signing platform. */
-		overrides?: SigningPlatformOverrides;
-		signingParameters?: SigningParameters;
-		status?: GetSigningProfileResponseStatus;
-		arn?: string;
-		tags?: TagMap;
+		overrides?: SigningPlatformOverrides | null;
+		signingParameters?: SigningParameters | null;
+		status?: GetSigningProfileResponseStatus | null;
+		arn?: string | null;
+		tags?: TagMap | null;
 	}
 
 	export enum GetSigningProfileResponseStatus { Active = 0, Canceled = 1 }
@@ -184,73 +184,73 @@ export namespace MyNS {
 	}
 
 	export interface ListSigningJobsResponse {
-		jobs?: Array<SigningJob>;
-		nextToken?: string;
+		jobs?: Array<SigningJob> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Contains information about a signing job. */
 	export interface SigningJob {
-		jobId?: string;
+		jobId?: string | null;
 
 		/** An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code. */
-		source?: Source;
+		source?: Source | null;
 
 		/** Points to an <code>S3SignedObject</code> object that contains information about your signed code image. */
-		signedObject?: SignedObject;
+		signedObject?: SignedObject | null;
 
 		/** The ACM certificate that is used to sign your code. */
-		signingMaterial?: SigningMaterial;
-		createdAt?: Date;
-		status?: DescribeSigningJobResponseStatus;
+		signingMaterial?: SigningMaterial | null;
+		createdAt?: Date | null;
+		status?: DescribeSigningJobResponseStatus | null;
 	}
 
 	export interface ValidationException {
 	}
 
 	export interface ListSigningPlatformsResponse {
-		platforms?: Array<SigningPlatform>;
-		nextToken?: string;
+		platforms?: Array<SigningPlatform> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Contains information about the signing configurations and parameters that are used to perform a code signing job. */
 	export interface SigningPlatform {
-		platformId?: string;
-		displayName?: string;
-		partner?: string;
-		target?: string;
-		category?: GetSigningPlatformResponseCategory;
+		platformId?: string | null;
+		displayName?: string | null;
+		partner?: string | null;
+		target?: string | null;
+		category?: GetSigningPlatformResponseCategory | null;
 
 		/** The configuration of a code signing operation. */
-		signingConfiguration?: SigningConfiguration;
+		signingConfiguration?: SigningConfiguration | null;
 
 		/** The image format of a code signing platform or profile. */
-		signingImageFormat?: SigningImageFormat;
-		maxSizeInMB?: number;
+		signingImageFormat?: SigningImageFormat | null;
+		maxSizeInMB?: number | null;
 	}
 
 	export interface ListSigningProfilesResponse {
-		profiles?: Array<SigningProfile>;
-		nextToken?: string;
+		profiles?: Array<SigningProfile> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Contains information about the ACM certificates and code signing configuration parameters that can be used by a given code signing user. */
 	export interface SigningProfile {
-		profileName?: string;
+		profileName?: string | null;
 
 		/** The ACM certificate that is used to sign your code. */
-		signingMaterial?: SigningMaterial;
-		platformId?: string;
-		signingParameters?: SigningParameters;
-		status?: GetSigningProfileResponseStatus;
-		arn?: string;
-		tags?: TagMap;
+		signingMaterial?: SigningMaterial | null;
+		platformId?: string | null;
+		signingParameters?: SigningParameters | null;
+		status?: GetSigningProfileResponseStatus | null;
+		arn?: string | null;
+		tags?: TagMap | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export interface BadRequestException {
@@ -260,18 +260,18 @@ export namespace MyNS {
 	}
 
 	export interface PutSigningProfileResponse {
-		arn?: string;
+		arn?: string | null;
 	}
 
 	export interface StartSigningJobResponse {
-		jobId?: string;
+		jobId?: string | null;
 	}
 
 
 	/** The name and prefix of the S3 bucket where code signing saves your signed objects. */
 	export interface S3Destination {
-		bucketName?: string;
-		prefix?: string;
+		bucketName?: string | null;
+		prefix?: string | null;
 	}
 
 	export interface TagResourceResponse {
@@ -295,7 +295,7 @@ export namespace MyNS {
 	export interface Destination {
 
 		/** The name and prefix of the S3 bucket where code signing saves your signed objects. */
-		s3?: S3Destination;
+		s3?: S3Destination | null;
 	}
 
 	export interface GetSigningPlatformRequest {
@@ -328,9 +328,9 @@ export namespace MyNS {
 		platformId: string;
 
 		/** Any overrides that are applied to the signing configuration of a code signing platform. */
-		overrides?: SigningPlatformOverrides;
-		signingParameters?: SigningParameters;
-		tags?: TagMap;
+		overrides?: SigningPlatformOverrides | null;
+		signingParameters?: SigningParameters | null;
+		tags?: TagMap | null;
 	}
 
 	export interface StartSigningJobRequest {
@@ -346,7 +346,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		destination: Destination;
-		profileName?: string;
+		profileName?: string | null;
 		clientRequestToken: string;
 	}
 
@@ -422,7 +422,7 @@ export namespace MyNS {
 		 * @param {string} nextToken String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.
 		 * @return {ListSigningJobsResponse} Success
 		 */
-		ListSigningJobs(status: DescribeSigningJobResponseStatus, platformId: string, requestedBy: string, maxResults: number, nextToken: string): Observable<ListSigningJobsResponse> {
+		ListSigningJobs(status: DescribeSigningJobResponseStatus | null | undefined, platformId: string | null | undefined, requestedBy: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListSigningJobsResponse> {
 			return this.http.get<ListSigningJobsResponse>(this.baseUri + 'signing-jobs?status=' + status + '&platformId=' + (platformId == null ? '' : encodeURIComponent(platformId)) + '&requestedBy=' + (requestedBy == null ? '' : encodeURIComponent(requestedBy)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -445,7 +445,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.
 		 * @return {ListSigningPlatformsResponse} Success
 		 */
-		ListSigningPlatforms(category: string, partner: string, target: string, maxResults: number, nextToken: string): Observable<ListSigningPlatformsResponse> {
+		ListSigningPlatforms(category: string | null | undefined, partner: string | null | undefined, target: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListSigningPlatformsResponse> {
 			return this.http.get<ListSigningPlatformsResponse>(this.baseUri + 'signing-platforms?category=' + (category == null ? '' : encodeURIComponent(category)) + '&partner=' + (partner == null ? '' : encodeURIComponent(partner)) + '&target=' + (target == null ? '' : encodeURIComponent(target)) + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -457,7 +457,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.
 		 * @return {ListSigningProfilesResponse} Success
 		 */
-		ListSigningProfiles(includeCanceled: boolean, maxResults: number, nextToken: string): Observable<ListSigningProfilesResponse> {
+		ListSigningProfiles(includeCanceled: boolean | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListSigningProfilesResponse> {
 			return this.http.get<ListSigningProfilesResponse>(this.baseUri + 'signing-profiles?includeCanceled=' + includeCanceled + '&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -508,24 +508,24 @@ export namespace MyNS {
 		platformId: string;
 
 		/** Any overrides that are applied to the signing configuration of a code signing platform. */
-		overrides?: PutSigningProfilePutBodyOverrides;
+		overrides?: PutSigningProfilePutBodyOverrides | null;
 
 		/** Map of key-value pairs for signing. These can include any information that you want to use during signing. */
-		signingParameters?: {[id: string]: string };
+		signingParameters?: {[id: string]: string } | null;
 
 		/** Tags to be associated with the signing profile that is being created. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface PutSigningProfilePutBodySigningMaterial {
-		certificateArn?: string;
+		certificateArn?: string | null;
 	}
 
 	export interface PutSigningProfilePutBodyOverrides {
 
 		/** A signing configuration that overrides the default encryption or hash algorithm of a signing job. */
-		signingConfiguration?: SigningConfigurationOverrides;
-		signingImageFormat?: SigningPlatformOverridesSigningImageFormat;
+		signingConfiguration?: SigningConfigurationOverrides | null;
+		signingImageFormat?: SigningPlatformOverridesSigningImageFormat | null;
 	}
 
 	export interface StartSigningJobPostBody {
@@ -548,7 +548,7 @@ export namespace MyNS {
 		 * Min length: 2
 		 * Pattern: ^[a-zA-Z0-9_]{2,}
 		 */
-		profileName?: string;
+		profileName?: string | null;
 
 		/**
 		 * String that identifies the signing request. All calls after the first that use this token return the same response as the first call.
@@ -560,13 +560,13 @@ export namespace MyNS {
 	export interface StartSigningJobPostBodySource {
 
 		/** Information about the S3 bucket where you saved your unsigned code. */
-		s3?: S3Source;
+		s3?: S3Source | null;
 	}
 
 	export interface StartSigningJobPostBodyDestination {
 
 		/** The name and prefix of the S3 bucket where code signing saves your signed objects. */
-		s3?: S3Destination;
+		s3?: S3Destination | null;
 	}
 
 	export interface TagResourcePostBody {

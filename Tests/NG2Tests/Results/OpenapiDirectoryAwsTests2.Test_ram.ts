@@ -5,21 +5,21 @@ export namespace MyNS {
 	export interface AcceptResourceShareInvitationResponse {
 
 		/** Describes an invitation to join a resource share. */
-		resourceShareInvitation?: ResourceShareInvitation;
-		clientToken?: string;
+		resourceShareInvitation?: ResourceShareInvitation | null;
+		clientToken?: string | null;
 	}
 
 
 	/** Describes an invitation to join a resource share. */
 	export interface ResourceShareInvitation {
-		resourceShareInvitationArn?: string;
-		resourceShareName?: string;
-		resourceShareArn?: string;
-		senderAccountId?: string;
-		receiverAccountId?: string;
-		invitationTimestamp?: Date;
-		status?: ResourceShareInvitationStatus;
-		resourceShareAssociations?: Array<ResourceShareAssociation>;
+		resourceShareInvitationArn?: string | null;
+		resourceShareName?: string | null;
+		resourceShareArn?: string | null;
+		senderAccountId?: string | null;
+		receiverAccountId?: string | null;
+		invitationTimestamp?: Date | null;
+		status?: ResourceShareInvitationStatus | null;
+		resourceShareAssociations?: Array<ResourceShareAssociation> | null;
 	}
 
 	export enum ResourceShareInvitationStatus { PENDING = 0, ACCEPTED = 1, REJECTED = 2, EXPIRED = 3 }
@@ -27,15 +27,15 @@ export namespace MyNS {
 
 	/** Describes an association with a resource share. */
 	export interface ResourceShareAssociation {
-		resourceShareArn?: string;
-		resourceShareName?: string;
-		associatedEntity?: string;
-		associationType?: ResourceShareAssociationAssociationType;
-		status?: ResourceShareAssociationStatus;
-		statusMessage?: string;
-		creationTime?: Date;
-		lastUpdatedTime?: Date;
-		external?: boolean;
+		resourceShareArn?: string | null;
+		resourceShareName?: string | null;
+		associatedEntity?: string | null;
+		associationType?: ResourceShareAssociationAssociationType | null;
+		status?: ResourceShareAssociationStatus | null;
+		statusMessage?: string | null;
+		creationTime?: Date | null;
+		lastUpdatedTime?: Date | null;
+		external?: boolean | null;
 	}
 
 	export enum ResourceShareAssociationAssociationType { PRINCIPAL = 0, RESOURCE = 1 }
@@ -73,8 +73,8 @@ export namespace MyNS {
 	}
 
 	export interface AssociateResourceShareResponse {
-		resourceShareAssociations?: Array<ResourceShareAssociation>;
-		clientToken?: string;
+		resourceShareAssociations?: Array<ResourceShareAssociation> | null;
+		clientToken?: string | null;
 	}
 
 	export interface UnknownResourceException {
@@ -90,30 +90,30 @@ export namespace MyNS {
 	}
 
 	export interface AssociateResourceSharePermissionResponse {
-		returnValue?: boolean;
-		clientToken?: string;
+		returnValue?: boolean | null;
+		clientToken?: string | null;
 	}
 
 	export interface CreateResourceShareResponse {
 
 		/** Describes a resource share. */
-		resourceShare?: ResourceShare;
-		clientToken?: string;
+		resourceShare?: ResourceShare | null;
+		clientToken?: string | null;
 	}
 
 
 	/** Describes a resource share. */
 	export interface ResourceShare {
-		resourceShareArn?: string;
-		name?: string;
-		owningAccountId?: string;
-		allowExternalPrincipals?: boolean;
-		status?: ResourceShareStatus;
-		statusMessage?: string;
-		tags?: Array<Tag>;
-		creationTime?: Date;
-		lastUpdatedTime?: Date;
-		featureSet?: ResourceShareFeatureSet;
+		resourceShareArn?: string | null;
+		name?: string | null;
+		owningAccountId?: string | null;
+		allowExternalPrincipals?: boolean | null;
+		status?: ResourceShareStatus | null;
+		statusMessage?: string | null;
+		tags?: Array<Tag> | null;
+		creationTime?: Date | null;
+		lastUpdatedTime?: Date | null;
+		featureSet?: ResourceShareFeatureSet | null;
 	}
 
 	export enum ResourceShareStatus { PENDING = 0, ACTIVE = 1, FAILED = 2, DELETING = 3, DELETED = 4 }
@@ -121,8 +121,8 @@ export namespace MyNS {
 
 	/** Information about a tag. */
 	export interface Tag {
-		key?: string;
-		value?: string;
+		key?: string | null;
+		value?: string | null;
 	}
 
 	export enum ResourceShareFeatureSet { CREATED_FROM_POLICY = 0, PROMOTING_TO_STANDARD = 1, STANDARD = 2 }
@@ -131,46 +131,46 @@ export namespace MyNS {
 	}
 
 	export interface DeleteResourceShareResponse {
-		returnValue?: boolean;
-		clientToken?: string;
+		returnValue?: boolean | null;
+		clientToken?: string | null;
 	}
 
 	export interface DisassociateResourceShareResponse {
-		resourceShareAssociations?: Array<ResourceShareAssociation>;
-		clientToken?: string;
+		resourceShareAssociations?: Array<ResourceShareAssociation> | null;
+		clientToken?: string | null;
 	}
 
 	export interface DisassociateResourceSharePermissionResponse {
-		returnValue?: boolean;
-		clientToken?: string;
+		returnValue?: boolean | null;
+		clientToken?: string | null;
 	}
 
 	export interface EnableSharingWithAwsOrganizationResponse {
-		returnValue?: boolean;
+		returnValue?: boolean | null;
 	}
 
 	export interface GetPermissionResponse {
 
 		/** Information about an AWS RAM permission. */
-		permission?: ResourceSharePermissionDetail;
+		permission?: ResourceSharePermissionDetail | null;
 	}
 
 
 	/** Information about an AWS RAM permission. */
 	export interface ResourceSharePermissionDetail {
-		arn?: string;
-		version?: string;
-		defaultVersion?: boolean;
-		name?: string;
-		resourceType?: string;
-		permission?: string;
-		creationTime?: Date;
-		lastUpdatedTime?: Date;
+		arn?: string | null;
+		version?: string | null;
+		defaultVersion?: boolean | null;
+		name?: string | null;
+		resourceType?: string | null;
+		permission?: string | null;
+		creationTime?: Date | null;
+		lastUpdatedTime?: Date | null;
 	}
 
 	export interface GetResourcePoliciesResponse {
-		policies?: Array<string>;
-		nextToken?: string;
+		policies?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface InvalidNextTokenException {
@@ -180,46 +180,46 @@ export namespace MyNS {
 	}
 
 	export interface GetResourceShareAssociationsResponse {
-		resourceShareAssociations?: Array<ResourceShareAssociation>;
-		nextToken?: string;
+		resourceShareAssociations?: Array<ResourceShareAssociation> | null;
+		nextToken?: string | null;
 	}
 
 	export interface GetResourceShareInvitationsResponse {
-		resourceShareInvitations?: Array<ResourceShareInvitation>;
-		nextToken?: string;
+		resourceShareInvitations?: Array<ResourceShareInvitation> | null;
+		nextToken?: string | null;
 	}
 
 	export interface InvalidMaxResultsException {
 	}
 
 	export interface GetResourceSharesResponse {
-		resourceShares?: Array<ResourceShare>;
-		nextToken?: string;
+		resourceShares?: Array<ResourceShare> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Used to filter information based on tags. */
 	export interface TagFilter {
-		tagKey?: string;
-		tagValues?: Array<string>;
+		tagKey?: string | null;
+		tagValues?: Array<string> | null;
 	}
 
 	export interface ListPendingInvitationResourcesResponse {
-		resources?: Array<Resource>;
-		nextToken?: string;
+		resources?: Array<Resource> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Describes a resource associated with a resource share. */
 	export interface Resource {
-		arn?: string;
-		type?: string;
-		resourceShareArn?: string;
-		resourceGroupArn?: string;
-		status?: ResourceStatus;
-		statusMessage?: string;
-		creationTime?: Date;
-		lastUpdatedTime?: Date;
+		arn?: string | null;
+		type?: string | null;
+		resourceShareArn?: string | null;
+		resourceGroupArn?: string | null;
+		status?: ResourceStatus | null;
+		statusMessage?: string | null;
+		creationTime?: Date | null;
+		lastUpdatedTime?: Date | null;
 	}
 
 	export enum ResourceStatus { AVAILABLE = 0, ZONAL_RESOURCE_INACCESSIBLE = 1, LIMIT_EXCEEDED = 2, UNAVAILABLE = 3, PENDING = 4 }
@@ -228,72 +228,72 @@ export namespace MyNS {
 	}
 
 	export interface ListPermissionsResponse {
-		permissions?: Array<ResourceSharePermissionSummary>;
-		nextToken?: string;
+		permissions?: Array<ResourceSharePermissionSummary> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about a permission that is associated with a resource share. */
 	export interface ResourceSharePermissionSummary {
-		arn?: string;
-		version?: string;
-		defaultVersion?: boolean;
-		name?: string;
-		resourceType?: string;
-		status?: string;
-		creationTime?: Date;
-		lastUpdatedTime?: Date;
+		arn?: string | null;
+		version?: string | null;
+		defaultVersion?: boolean | null;
+		name?: string | null;
+		resourceType?: string | null;
+		status?: string | null;
+		creationTime?: Date | null;
+		lastUpdatedTime?: Date | null;
 	}
 
 	export interface ListPrincipalsResponse {
-		principals?: Array<Principal>;
-		nextToken?: string;
+		principals?: Array<Principal> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Describes a principal for use with AWS Resource Access Manager. */
 	export interface Principal {
-		id?: string;
-		resourceShareArn?: string;
-		creationTime?: Date;
-		lastUpdatedTime?: Date;
-		external?: boolean;
+		id?: string | null;
+		resourceShareArn?: string | null;
+		creationTime?: Date | null;
+		lastUpdatedTime?: Date | null;
+		external?: boolean | null;
 	}
 
 	export interface ListResourceSharePermissionsResponse {
-		permissions?: Array<ResourceSharePermissionSummary>;
-		nextToken?: string;
+		permissions?: Array<ResourceSharePermissionSummary> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListResourceTypesResponse {
-		resourceTypes?: Array<ServiceNameAndResourceType>;
-		nextToken?: string;
+		resourceTypes?: Array<ServiceNameAndResourceType> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Information about the shareable resource types and the AWS services to which they belong. */
 	export interface ServiceNameAndResourceType {
-		resourceType?: string;
-		serviceName?: string;
+		resourceType?: string | null;
+		serviceName?: string | null;
 	}
 
 	export interface ListResourcesResponse {
-		resources?: Array<Resource>;
-		nextToken?: string;
+		resources?: Array<Resource> | null;
+		nextToken?: string | null;
 	}
 
 	export interface InvalidResourceTypeException {
 	}
 
 	export interface PromoteResourceShareCreatedFromPolicyResponse {
-		returnValue?: boolean;
+		returnValue?: boolean | null;
 	}
 
 	export interface RejectResourceShareInvitationResponse {
 
 		/** Describes an invitation to join a resource share. */
-		resourceShareInvitation?: ResourceShareInvitation;
-		clientToken?: string;
+		resourceShareInvitation?: ResourceShareInvitation | null;
+		clientToken?: string | null;
 	}
 
 	export interface TagResourceResponse {
@@ -308,37 +308,37 @@ export namespace MyNS {
 	export interface UpdateResourceShareResponse {
 
 		/** Describes a resource share. */
-		resourceShare?: ResourceShare;
-		clientToken?: string;
+		resourceShare?: ResourceShare | null;
+		clientToken?: string | null;
 	}
 
 	export interface AcceptResourceShareInvitationRequest {
 		resourceShareInvitationArn: string;
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface AssociateResourceSharePermissionRequest {
 		resourceShareArn: string;
 		permissionArn: string;
-		replace?: boolean;
-		clientToken?: string;
+		replace?: boolean | null;
+		clientToken?: string | null;
 	}
 
 	export interface AssociateResourceShareRequest {
 		resourceShareArn: string;
-		resourceArns?: Array<string>;
-		principals?: Array<string>;
-		clientToken?: string;
+		resourceArns?: Array<string> | null;
+		principals?: Array<string> | null;
+		clientToken?: string | null;
 	}
 
 	export interface CreateResourceShareRequest {
 		name: string;
-		resourceArns?: Array<string>;
-		principals?: Array<string>;
-		tags?: Array<Tag>;
-		allowExternalPrincipals?: boolean;
-		clientToken?: string;
-		permissionArns?: Array<string>;
+		resourceArns?: Array<string> | null;
+		principals?: Array<string> | null;
+		tags?: Array<Tag> | null;
+		allowExternalPrincipals?: boolean | null;
+		clientToken?: string | null;
+		permissionArns?: Array<string> | null;
 	}
 
 	export interface DeleteResourceShareRequest {
@@ -347,14 +347,14 @@ export namespace MyNS {
 	export interface DisassociateResourceSharePermissionRequest {
 		resourceShareArn: string;
 		permissionArn: string;
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface DisassociateResourceShareRequest {
 		resourceShareArn: string;
-		resourceArns?: Array<string>;
-		principals?: Array<string>;
-		clientToken?: string;
+		resourceArns?: Array<string> | null;
+		principals?: Array<string> | null;
+		clientToken?: string | null;
 	}
 
 	export interface EnableSharingWithAwsOrganizationRequest {
@@ -362,92 +362,92 @@ export namespace MyNS {
 
 	export interface GetPermissionRequest {
 		permissionArn: string;
-		permissionVersion?: number;
+		permissionVersion?: number | null;
 	}
 
 	export interface GetResourcePoliciesRequest {
 		resourceArns: Array<string>;
-		principal?: string;
-		nextToken?: string;
-		maxResults?: number;
+		principal?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export enum ResourceShareAssociationType { PRINCIPAL = 0, RESOURCE = 1 }
 
 	export interface GetResourceShareAssociationsRequest {
 		associationType: ResourceShareAssociationAssociationType;
-		resourceShareArns?: Array<string>;
-		resourceArn?: string;
-		principal?: string;
-		associationStatus?: ResourceShareAssociationStatus;
-		nextToken?: string;
-		maxResults?: number;
+		resourceShareArns?: Array<string> | null;
+		resourceArn?: string | null;
+		principal?: string | null;
+		associationStatus?: ResourceShareAssociationStatus | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface GetResourceShareInvitationsRequest {
-		resourceShareInvitationArns?: Array<string>;
-		resourceShareArns?: Array<string>;
-		nextToken?: string;
-		maxResults?: number;
+		resourceShareInvitationArns?: Array<string> | null;
+		resourceShareArns?: Array<string> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export enum ResourceOwner { SELF = 0, OTHER_ACCOUNTS = 1 }
 
 	export interface GetResourceSharesRequest {
-		resourceShareArns?: Array<string>;
-		resourceShareStatus?: ResourceShareStatus;
+		resourceShareArns?: Array<string> | null;
+		resourceShareStatus?: ResourceShareStatus | null;
 		resourceOwner: GetResourceSharesRequestResourceOwner;
-		name?: string;
-		tagFilters?: Array<TagFilter>;
-		nextToken?: string;
-		maxResults?: number;
+		name?: string | null;
+		tagFilters?: Array<TagFilter> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export enum GetResourceSharesRequestResourceOwner { SELF = 0, OTHER_ACCOUNTS = 1 }
 
 	export interface ListPendingInvitationResourcesRequest {
 		resourceShareInvitationArn: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListPermissionsRequest {
-		resourceType?: string;
-		nextToken?: string;
-		maxResults?: number;
+		resourceType?: string | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListPrincipalsRequest {
 		resourceOwner: ListPrincipalsRequestResourceOwner;
-		resourceArn?: string;
-		principals?: Array<string>;
-		resourceType?: string;
-		resourceShareArns?: Array<string>;
-		nextToken?: string;
-		maxResults?: number;
+		resourceArn?: string | null;
+		principals?: Array<string> | null;
+		resourceType?: string | null;
+		resourceShareArns?: Array<string> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export enum ListPrincipalsRequestResourceOwner { SELF = 0, OTHER_ACCOUNTS = 1 }
 
 	export interface ListResourceSharePermissionsRequest {
 		resourceShareArn: string;
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListResourceTypesRequest {
-		nextToken?: string;
-		maxResults?: number;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export interface ListResourcesRequest {
 		resourceOwner: ListResourcesRequestResourceOwner;
-		principal?: string;
-		resourceType?: string;
-		resourceArns?: Array<string>;
-		resourceShareArns?: Array<string>;
-		nextToken?: string;
-		maxResults?: number;
+		principal?: string | null;
+		resourceType?: string | null;
+		resourceArns?: Array<string> | null;
+		resourceShareArns?: Array<string> | null;
+		nextToken?: string | null;
+		maxResults?: number | null;
 	}
 
 	export enum ListResourcesRequestResourceOwner { SELF = 0, OTHER_ACCOUNTS = 1 }
@@ -457,7 +457,7 @@ export namespace MyNS {
 
 	export interface RejectResourceShareInvitationRequest {
 		resourceShareInvitationArn: string;
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface TagResourceRequest {
@@ -472,9 +472,9 @@ export namespace MyNS {
 
 	export interface UpdateResourceShareRequest {
 		resourceShareArn: string;
-		name?: string;
-		allowExternalPrincipals?: boolean;
-		clientToken?: string;
+		name?: string | null;
+		allowExternalPrincipals?: boolean | null;
+		clientToken?: string | null;
 	}
 
 	@Injectable()
@@ -525,7 +525,7 @@ export namespace MyNS {
 		 * @param {string} clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 		 * @return {DeleteResourceShareResponse} Success
 		 */
-		DeleteResourceShare(resourceShareArn: string, clientToken: string): Observable<DeleteResourceShareResponse> {
+		DeleteResourceShare(resourceShareArn: string, clientToken: string | null | undefined): Observable<DeleteResourceShareResponse> {
 			return this.http.delete<DeleteResourceShareResponse>(this.baseUri + 'deleteresourceshare#resourceShareArn?resourceShareArn=' + (resourceShareArn == null ? '' : encodeURIComponent(resourceShareArn)) + '&clientToken=' + (clientToken == null ? '' : encodeURIComponent(clientToken)), {});
 		}
 
@@ -572,7 +572,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetResourcePoliciesResponse} Success
 		 */
-		GetResourcePolicies(maxResults: string, nextToken: string, requestBody: GetResourcePoliciesPostBody): Observable<GetResourcePoliciesResponse> {
+		GetResourcePolicies(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetResourcePoliciesPostBody): Observable<GetResourcePoliciesResponse> {
 			return this.http.post<GetResourcePoliciesResponse>(this.baseUri + 'getresourcepolicies?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -583,7 +583,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetResourceShareAssociationsResponse} Success
 		 */
-		GetResourceShareAssociations(maxResults: string, nextToken: string, requestBody: GetResourceShareAssociationsPostBody): Observable<GetResourceShareAssociationsResponse> {
+		GetResourceShareAssociations(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetResourceShareAssociationsPostBody): Observable<GetResourceShareAssociationsResponse> {
 			return this.http.post<GetResourceShareAssociationsResponse>(this.baseUri + 'getresourceshareassociations?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -594,7 +594,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetResourceShareInvitationsResponse} Success
 		 */
-		GetResourceShareInvitations(maxResults: string, nextToken: string, requestBody: GetResourceShareInvitationsPostBody): Observable<GetResourceShareInvitationsResponse> {
+		GetResourceShareInvitations(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetResourceShareInvitationsPostBody): Observable<GetResourceShareInvitationsResponse> {
 			return this.http.post<GetResourceShareInvitationsResponse>(this.baseUri + 'getresourceshareinvitations?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -605,7 +605,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {GetResourceSharesResponse} Success
 		 */
-		GetResourceShares(maxResults: string, nextToken: string, requestBody: GetResourceSharesPostBody): Observable<GetResourceSharesResponse> {
+		GetResourceShares(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: GetResourceSharesPostBody): Observable<GetResourceSharesResponse> {
 			return this.http.post<GetResourceSharesResponse>(this.baseUri + 'getresourceshares?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -616,7 +616,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListPendingInvitationResourcesResponse} Success
 		 */
-		ListPendingInvitationResources(maxResults: string, nextToken: string, requestBody: ListPendingInvitationResourcesPostBody): Observable<ListPendingInvitationResourcesResponse> {
+		ListPendingInvitationResources(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListPendingInvitationResourcesPostBody): Observable<ListPendingInvitationResourcesResponse> {
 			return this.http.post<ListPendingInvitationResourcesResponse>(this.baseUri + 'listpendinginvitationresources?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -636,7 +636,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListPrincipalsResponse} Success
 		 */
-		ListPrincipals(maxResults: string, nextToken: string, requestBody: ListPrincipalsPostBody): Observable<ListPrincipalsResponse> {
+		ListPrincipals(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListPrincipalsPostBody): Observable<ListPrincipalsResponse> {
 			return this.http.post<ListPrincipalsResponse>(this.baseUri + 'listprincipals?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -665,7 +665,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListResourcesResponse} Success
 		 */
-		ListResources(maxResults: string, nextToken: string, requestBody: ListResourcesPostBody): Observable<ListResourcesResponse> {
+		ListResources(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListResourcesPostBody): Observable<ListResourcesResponse> {
 			return this.http.post<ListResourcesResponse>(this.baseUri + 'listresources?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -725,7 +725,7 @@ export namespace MyNS {
 		resourceShareInvitationArn: string;
 
 		/** A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface AssociateResourceSharePostBody {
@@ -737,13 +737,13 @@ export namespace MyNS {
 		resourceShareArn: string;
 
 		/** The Amazon Resource Names (ARN) of the resources. */
-		resourceArns?: Array<string>;
+		resourceArns?: Array<string> | null;
 
 		/** The principals. */
-		principals?: Array<string>;
+		principals?: Array<string> | null;
 
 		/** A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface AssociateResourceSharePermissionPostBody {
@@ -761,10 +761,10 @@ export namespace MyNS {
 		permissionArn: string;
 
 		/** Indicates whether the permission should replace the permissions that are currently associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to the current permission. */
-		replace?: boolean;
+		replace?: boolean | null;
 
 		/** A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface CreateResourceSharePostBody {
@@ -776,22 +776,22 @@ export namespace MyNS {
 		name: string;
 
 		/** The Amazon Resource Names (ARN) of the resources to associate with the resource share. */
-		resourceArns?: Array<string>;
+		resourceArns?: Array<string> | null;
 
 		/** The principals to associate with the resource share. The possible values are IDs of AWS accounts, the ARN of an OU or organization from AWS Organizations. */
-		principals?: Array<string>;
+		principals?: Array<string> | null;
 
 		/** One or more tags. */
-		tags?: Array<Tag>;
+		tags?: Array<Tag> | null;
 
 		/** Indicates whether principals outside your AWS organization can be associated with a resource share. */
-		allowExternalPrincipals?: boolean;
+		allowExternalPrincipals?: boolean | null;
 
 		/** A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** The ARNs of the permissions to associate with the resource share. If you do not specify an ARN for the permission, AWS RAM automatically attaches the default version of the permission for each resource type. */
-		permissionArns?: Array<string>;
+		permissionArns?: Array<string> | null;
 	}
 
 	export interface DisassociateResourceSharePostBody {
@@ -803,13 +803,13 @@ export namespace MyNS {
 		resourceShareArn: string;
 
 		/** The Amazon Resource Names (ARNs) of the resources. */
-		resourceArns?: Array<string>;
+		resourceArns?: Array<string> | null;
 
 		/** The principals. */
-		principals?: Array<string>;
+		principals?: Array<string> | null;
 
 		/** A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface DisassociateResourceSharePermissionPostBody {
@@ -827,7 +827,7 @@ export namespace MyNS {
 		permissionArn: string;
 
 		/** A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface GetPermissionPostBody {
@@ -839,7 +839,7 @@ export namespace MyNS {
 		permissionArn: string;
 
 		/** The identifier for the version of the permission. */
-		permissionVersion?: number;
+		permissionVersion?: number | null;
 	}
 
 	export interface GetResourcePoliciesPostBody {
@@ -851,17 +851,17 @@ export namespace MyNS {
 		resourceArns: Array<string>;
 
 		/** The principal. */
-		principal?: string;
+		principal?: string | null;
 
 		/** The token for the next page of results. */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/**
 		 * The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
 		 * Minimum: 1
 		 * Maximum: 500
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 	}
 
 	export interface GetResourceShareAssociationsPostBody {
@@ -873,54 +873,54 @@ export namespace MyNS {
 		associationType: ResourceShareAssociationAssociationType;
 
 		/** The Amazon Resource Names (ARN) of the resource shares. */
-		resourceShareArns?: Array<string>;
+		resourceShareArns?: Array<string> | null;
 
 		/** The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type is <code>PRINCIPAL</code>. */
-		resourceArn?: string;
+		resourceArn?: string | null;
 
 		/** The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>. */
-		principal?: string;
+		principal?: string | null;
 
 		/** The association status. */
-		associationStatus?: ResourceShareAssociationStatus;
+		associationStatus?: ResourceShareAssociationStatus | null;
 
 		/** The token for the next page of results. */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/**
 		 * The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
 		 * Minimum: 1
 		 * Maximum: 500
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 	}
 
 	export interface GetResourceShareInvitationsPostBody {
 
 		/** The Amazon Resource Names (ARN) of the invitations. */
-		resourceShareInvitationArns?: Array<string>;
+		resourceShareInvitationArns?: Array<string> | null;
 
 		/** The Amazon Resource Names (ARN) of the resource shares. */
-		resourceShareArns?: Array<string>;
+		resourceShareArns?: Array<string> | null;
 
 		/** The token for the next page of results. */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/**
 		 * The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
 		 * Minimum: 1
 		 * Maximum: 500
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 	}
 
 	export interface GetResourceSharesPostBody {
 
 		/** The Amazon Resource Names (ARN) of the resource shares. */
-		resourceShareArns?: Array<string>;
+		resourceShareArns?: Array<string> | null;
 
 		/** The status of the resource share. */
-		resourceShareStatus?: ResourceShareStatus;
+		resourceShareStatus?: ResourceShareStatus | null;
 
 		/**
 		 * The type of owner.
@@ -929,20 +929,20 @@ export namespace MyNS {
 		resourceOwner: GetResourceSharesPostBodyResourceOwner;
 
 		/** The name of the resource share. */
-		name?: string;
+		name?: string | null;
 
 		/** One or more tag filters. */
-		tagFilters?: Array<TagFilter>;
+		tagFilters?: Array<TagFilter> | null;
 
 		/** The token for the next page of results. */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/**
 		 * The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
 		 * Minimum: 1
 		 * Maximum: 500
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 	}
 
 	export enum GetResourceSharesPostBodyResourceOwner { SELF = 0, OTHER_ACCOUNTS = 1 }
@@ -956,30 +956,30 @@ export namespace MyNS {
 		resourceShareInvitationArn: string;
 
 		/** The token for the next page of results. */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/**
 		 * The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
 		 * Minimum: 1
 		 * Maximum: 500
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 	}
 
 	export interface ListPermissionsPostBody {
 
 		/** Specifies the resource type for which to list permissions. For example, to list only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. */
-		resourceType?: string;
+		resourceType?: string | null;
 
 		/** The token for the next page of results. */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/**
 		 * The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
 		 * Minimum: 1
 		 * Maximum: 500
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 	}
 
 	export interface ListPrincipalsPostBody {
@@ -991,26 +991,26 @@ export namespace MyNS {
 		resourceOwner: ListPrincipalsPostBodyResourceOwner;
 
 		/** The Amazon Resource Name (ARN) of the resource. */
-		resourceArn?: string;
+		resourceArn?: string | null;
 
 		/** The principals. */
-		principals?: Array<string>;
+		principals?: Array<string> | null;
 
 		/** <p>The resource type.</p> <p>Valid values: <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>license-manager:LicenseConfiguration</code> I <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:ResolverRule</code> </p> */
-		resourceType?: string;
+		resourceType?: string | null;
 
 		/** The Amazon Resource Names (ARN) of the resource shares. */
-		resourceShareArns?: Array<string>;
+		resourceShareArns?: Array<string> | null;
 
 		/** The token for the next page of results. */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/**
 		 * The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
 		 * Minimum: 1
 		 * Maximum: 500
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 	}
 
 	export enum ListPrincipalsPostBodyResourceOwner { SELF = 0, OTHER_ACCOUNTS = 1 }
@@ -1024,27 +1024,27 @@ export namespace MyNS {
 		resourceShareArn: string;
 
 		/** The token for the next page of results. */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/**
 		 * The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
 		 * Minimum: 1
 		 * Maximum: 500
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 	}
 
 	export interface ListResourceTypesPostBody {
 
 		/** The token for the next page of results. */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/**
 		 * The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
 		 * Minimum: 1
 		 * Maximum: 500
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 	}
 
 	export interface ListResourcesPostBody {
@@ -1056,26 +1056,26 @@ export namespace MyNS {
 		resourceOwner: ListResourcesPostBodyResourceOwner;
 
 		/** The principal. */
-		principal?: string;
+		principal?: string | null;
 
 		/** <p>The resource type.</p> <p>Valid values: <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>license-manager:LicenseConfiguration</code> I <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:ResolverRule</code> </p> */
-		resourceType?: string;
+		resourceType?: string | null;
 
 		/** The Amazon Resource Names (ARN) of the resources. */
-		resourceArns?: Array<string>;
+		resourceArns?: Array<string> | null;
 
 		/** The Amazon Resource Names (ARN) of the resource shares. */
-		resourceShareArns?: Array<string>;
+		resourceShareArns?: Array<string> | null;
 
 		/** The token for the next page of results. */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/**
 		 * The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
 		 * Minimum: 1
 		 * Maximum: 500
 		 */
-		maxResults?: number;
+		maxResults?: number | null;
 	}
 
 	export enum ListResourcesPostBodyResourceOwner { SELF = 0, OTHER_ACCOUNTS = 1 }
@@ -1089,7 +1089,7 @@ export namespace MyNS {
 		resourceShareInvitationArn: string;
 
 		/** A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface TagResourcePostBody {
@@ -1131,13 +1131,13 @@ export namespace MyNS {
 		resourceShareArn: string;
 
 		/** The name of the resource share. */
-		name?: string;
+		name?: string | null;
 
 		/** Indicates whether principals outside your AWS organization can be associated with a resource share. */
-		allowExternalPrincipals?: boolean;
+		allowExternalPrincipals?: boolean | null;
 
 		/** A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 }

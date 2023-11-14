@@ -56,8 +56,8 @@ export namespace MyNS {
 	export enum DeregisterScalableTargetRequestScalableDimension { ecsserviceDesiredCount = 0, ec2spot_fleet_requestTargetCapacity = 1, elasticmapreduceinstancegroupInstanceCount = 2, appstreamfleetDesiredCapacity = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7, rdsclusterReadReplicaCount = 8, sagemakervariantDesiredInstanceCount = 9, custom_resourceResourceTypeProperty = 10, comprehenddocument_classifier_endpointDesiredInferenceUnits = 11, lambdafunctionProvisionedConcurrency = 12, cassandratableReadCapacityUnits = 13, cassandratableWriteCapacityUnits = 14 }
 
 	export interface DescribeScalableTargetsResponse {
-		ScalableTargets?: Array<ScalableTarget>;
-		NextToken?: string;
+		ScalableTargets?: Array<ScalableTarget> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -72,7 +72,7 @@ export namespace MyNS {
 		CreationTime: Date;
 
 		/** Specifies whether the scaling activities for a scalable target are in a suspended state. */
-		SuspendedState?: SuspendedState;
+		SuspendedState?: SuspendedState | null;
 	}
 
 	export enum ScalableTargetServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
@@ -82,17 +82,17 @@ export namespace MyNS {
 
 	/** Specifies whether the scaling activities for a scalable target are in a suspended state.  */
 	export interface SuspendedState {
-		DynamicScalingInSuspended?: boolean;
-		DynamicScalingOutSuspended?: boolean;
-		ScheduledScalingSuspended?: boolean;
+		DynamicScalingInSuspended?: boolean | null;
+		DynamicScalingOutSuspended?: boolean | null;
+		ScheduledScalingSuspended?: boolean | null;
 	}
 
 	export interface DescribeScalableTargetsRequest {
 		ServiceNamespace: DescribeScalableTargetsRequestServiceNamespace;
-		ResourceIds?: Array<string>;
-		ScalableDimension?: DescribeScalableTargetsRequestScalableDimension;
-		MaxResults?: number;
-		NextToken?: string;
+		ResourceIds?: Array<string> | null;
+		ScalableDimension?: DescribeScalableTargetsRequestScalableDimension | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export enum DescribeScalableTargetsRequestServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
@@ -103,8 +103,8 @@ export namespace MyNS {
 	}
 
 	export interface DescribeScalingActivitiesResponse {
-		ScalingActivities?: Array<ScalingActivity>;
-		NextToken?: string;
+		ScalingActivities?: Array<ScalingActivity> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -117,10 +117,10 @@ export namespace MyNS {
 		Description: string;
 		Cause: string;
 		StartTime: Date;
-		EndTime?: Date;
+		EndTime?: Date | null;
 		StatusCode: ScalingActivityStatusCode;
-		StatusMessage?: string;
-		Details?: string;
+		StatusMessage?: string | null;
+		Details?: string | null;
 	}
 
 	export enum ScalingActivityServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
@@ -131,10 +131,10 @@ export namespace MyNS {
 
 	export interface DescribeScalingActivitiesRequest {
 		ServiceNamespace: DescribeScalingActivitiesRequestServiceNamespace;
-		ResourceId?: string;
-		ScalableDimension?: DescribeScalingActivitiesRequestScalableDimension;
-		MaxResults?: number;
-		NextToken?: string;
+		ResourceId?: string | null;
+		ScalableDimension?: DescribeScalingActivitiesRequestScalableDimension | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export enum DescribeScalingActivitiesRequestServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
@@ -142,8 +142,8 @@ export namespace MyNS {
 	export enum DescribeScalingActivitiesRequestScalableDimension { ecsserviceDesiredCount = 0, ec2spot_fleet_requestTargetCapacity = 1, elasticmapreduceinstancegroupInstanceCount = 2, appstreamfleetDesiredCapacity = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7, rdsclusterReadReplicaCount = 8, sagemakervariantDesiredInstanceCount = 9, custom_resourceResourceTypeProperty = 10, comprehenddocument_classifier_endpointDesiredInferenceUnits = 11, lambdafunctionProvisionedConcurrency = 12, cassandratableReadCapacityUnits = 13, cassandratableWriteCapacityUnits = 14 }
 
 	export interface DescribeScalingPoliciesResponse {
-		ScalingPolicies?: Array<ScalingPolicy>;
-		NextToken?: string;
+		ScalingPolicies?: Array<ScalingPolicy> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -157,11 +157,11 @@ export namespace MyNS {
 		PolicyType: ScalingPolicyPolicyType;
 
 		/** Represents a step scaling policy configuration to use with Application Auto Scaling. */
-		StepScalingPolicyConfiguration?: StepScalingPolicyConfiguration;
+		StepScalingPolicyConfiguration?: StepScalingPolicyConfiguration | null;
 
 		/** Represents a target tracking scaling policy configuration to use with Application Auto Scaling. */
-		TargetTrackingScalingPolicyConfiguration?: TargetTrackingScalingPolicyConfiguration;
-		Alarms?: Array<Alarm>;
+		TargetTrackingScalingPolicyConfiguration?: TargetTrackingScalingPolicyConfiguration | null;
+		Alarms?: Array<Alarm> | null;
 		CreationTime: Date;
 	}
 
@@ -174,11 +174,11 @@ export namespace MyNS {
 
 	/** Represents a step scaling policy configuration to use with Application Auto Scaling. */
 	export interface StepScalingPolicyConfiguration {
-		AdjustmentType?: StepScalingPolicyConfigurationAdjustmentType;
-		StepAdjustments?: Array<StepAdjustment>;
-		MinAdjustmentMagnitude?: number;
-		Cooldown?: number;
-		MetricAggregationType?: StepScalingPolicyConfigurationMetricAggregationType;
+		AdjustmentType?: StepScalingPolicyConfigurationAdjustmentType | null;
+		StepAdjustments?: Array<StepAdjustment> | null;
+		MinAdjustmentMagnitude?: number | null;
+		Cooldown?: number | null;
+		MetricAggregationType?: StepScalingPolicyConfigurationMetricAggregationType | null;
 	}
 
 	export enum StepScalingPolicyConfigurationAdjustmentType { ChangeInCapacity = 0, PercentChangeInCapacity = 1, ExactCapacity = 2 }
@@ -186,8 +186,8 @@ export namespace MyNS {
 
 	/** <p>Represents a step adjustment for a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>. Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm. </p> <p>For the following examples, suppose that you have an alarm with a breach threshold of 50:</p> <ul> <li> <p>To trigger the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.</p> </li> <li> <p>To trigger the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.</p> </li> </ul> <p>There are a few rules for the step adjustments for your step policy:</p> <ul> <li> <p>The ranges of your step adjustments can't overlap or have a gap.</p> </li> <li> <p>At most one step adjustment can have a null lower bound. If one step adjustment has a negative lower bound, then there must be a step adjustment with a null lower bound.</p> </li> <li> <p>At most one step adjustment can have a null upper bound. If one step adjustment has a positive upper bound, then there must be a step adjustment with a null upper bound.</p> </li> <li> <p>The upper and lower bound can't be null in the same step adjustment.</p> </li> </ul> */
 	export interface StepAdjustment {
-		MetricIntervalLowerBound?: number;
-		MetricIntervalUpperBound?: number;
+		MetricIntervalLowerBound?: number | null;
+		MetricIntervalUpperBound?: number | null;
 		ScalingAdjustment: number;
 	}
 
@@ -199,20 +199,20 @@ export namespace MyNS {
 		TargetValue: number;
 
 		/** <p>Represents a predefined metric for a target tracking scaling policy to use with Application Auto Scaling.</p> <p>Only the AWS services that you're using send metrics to Amazon CloudWatch. To determine whether a desired metric already exists by looking up its namespace and dimension using the CloudWatch metrics dashboard in the console, follow the procedure in <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html">Building Dashboards with CloudWatch</a> in the <i>Application Auto Scaling User Guide</i>.</p> */
-		PredefinedMetricSpecification?: PredefinedMetricSpecification;
+		PredefinedMetricSpecification?: PredefinedMetricSpecification | null;
 
 		/** <p>Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Application Auto Scaling.</p> <p>For information about the available metrics for a service, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">AWS Services That Publish CloudWatch Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>To create your customized metric specification:</p> <ul> <li> <p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish Custom Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases, and increase when capacity decreases. </p> </li> </ul> <p>For more information about CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a>. </p> */
-		CustomizedMetricSpecification?: CustomizedMetricSpecification;
-		ScaleOutCooldown?: number;
-		ScaleInCooldown?: number;
-		DisableScaleIn?: boolean;
+		CustomizedMetricSpecification?: CustomizedMetricSpecification | null;
+		ScaleOutCooldown?: number | null;
+		ScaleInCooldown?: number | null;
+		DisableScaleIn?: boolean | null;
 	}
 
 
 	/** <p>Represents a predefined metric for a target tracking scaling policy to use with Application Auto Scaling.</p> <p>Only the AWS services that you're using send metrics to Amazon CloudWatch. To determine whether a desired metric already exists by looking up its namespace and dimension using the CloudWatch metrics dashboard in the console, follow the procedure in <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html">Building Dashboards with CloudWatch</a> in the <i>Application Auto Scaling User Guide</i>.</p> */
 	export interface PredefinedMetricSpecification {
 		PredefinedMetricType: PredefinedMetricSpecificationPredefinedMetricType;
-		ResourceLabel?: string;
+		ResourceLabel?: string | null;
 	}
 
 	export enum PredefinedMetricSpecificationPredefinedMetricType { DynamoDBReadCapacityUtilization = 0, DynamoDBWriteCapacityUtilization = 1, ALBRequestCountPerTarget = 2, RDSReaderAverageCPUUtilization = 3, RDSReaderAverageDatabaseConnections = 4, EC2SpotFleetRequestAverageCPUUtilization = 5, EC2SpotFleetRequestAverageNetworkIn = 6, EC2SpotFleetRequestAverageNetworkOut = 7, SageMakerVariantInvocationsPerInstance = 8, ECSServiceAverageCPUUtilization = 9, ECSServiceAverageMemoryUtilization = 10, AppStreamAverageCapacityUtilization = 11, ComprehendInferenceUtilization = 12, LambdaProvisionedConcurrencyUtilization = 13, CassandraReadCapacityUtilization = 14, CassandraWriteCapacityUtilization = 15 }
@@ -222,9 +222,9 @@ export namespace MyNS {
 	export interface CustomizedMetricSpecification {
 		MetricName: string;
 		Namespace: string;
-		Dimensions?: Array<MetricDimension>;
+		Dimensions?: Array<MetricDimension> | null;
 		Statistic: CustomizedMetricSpecificationStatistic;
-		Unit?: string;
+		Unit?: string | null;
 	}
 
 
@@ -244,12 +244,12 @@ export namespace MyNS {
 	}
 
 	export interface DescribeScalingPoliciesRequest {
-		PolicyNames?: Array<string>;
+		PolicyNames?: Array<string> | null;
 		ServiceNamespace: DescribeScalingPoliciesRequestServiceNamespace;
-		ResourceId?: string;
-		ScalableDimension?: DescribeScalingPoliciesRequestScalableDimension;
-		MaxResults?: number;
-		NextToken?: string;
+		ResourceId?: string | null;
+		ScalableDimension?: DescribeScalingPoliciesRequestScalableDimension | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export enum DescribeScalingPoliciesRequestServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
@@ -260,8 +260,8 @@ export namespace MyNS {
 	}
 
 	export interface DescribeScheduledActionsResponse {
-		ScheduledActions?: Array<ScheduledAction>;
-		NextToken?: string;
+		ScheduledActions?: Array<ScheduledAction> | null;
+		NextToken?: string | null;
 	}
 
 
@@ -272,12 +272,12 @@ export namespace MyNS {
 		ServiceNamespace: ScheduledActionServiceNamespace;
 		Schedule: string;
 		ResourceId: string;
-		ScalableDimension?: ScheduledActionScalableDimension;
-		StartTime?: Date;
-		EndTime?: Date;
+		ScalableDimension?: ScheduledActionScalableDimension | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
 
 		/** Represents the minimum and maximum capacity for a scheduled action. */
-		ScalableTargetAction?: ScalableTargetAction;
+		ScalableTargetAction?: ScalableTargetAction | null;
 		CreationTime: Date;
 	}
 
@@ -288,17 +288,17 @@ export namespace MyNS {
 
 	/** Represents the minimum and maximum capacity for a scheduled action. */
 	export interface ScalableTargetAction {
-		MinCapacity?: number;
-		MaxCapacity?: number;
+		MinCapacity?: number | null;
+		MaxCapacity?: number | null;
 	}
 
 	export interface DescribeScheduledActionsRequest {
-		ScheduledActionNames?: Array<string>;
+		ScheduledActionNames?: Array<string> | null;
 		ServiceNamespace: DescribeScheduledActionsRequestServiceNamespace;
-		ResourceId?: string;
-		ScalableDimension?: DescribeScheduledActionsRequestScalableDimension;
-		MaxResults?: number;
-		NextToken?: string;
+		ResourceId?: string | null;
+		ScalableDimension?: DescribeScheduledActionsRequestScalableDimension | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 	export enum DescribeScheduledActionsRequestServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
@@ -307,7 +307,7 @@ export namespace MyNS {
 
 	export interface PutScalingPolicyResponse {
 		PolicyARN: string;
-		Alarms?: Array<Alarm>;
+		Alarms?: Array<Alarm> | null;
 	}
 
 	export interface PutScalingPolicyRequest {
@@ -315,13 +315,13 @@ export namespace MyNS {
 		ServiceNamespace: PutScalingPolicyRequestServiceNamespace;
 		ResourceId: string;
 		ScalableDimension: PutScalingPolicyRequestScalableDimension;
-		PolicyType?: ScalingPolicyPolicyType;
+		PolicyType?: ScalingPolicyPolicyType | null;
 
 		/** Represents a step scaling policy configuration to use with Application Auto Scaling. */
-		StepScalingPolicyConfiguration?: StepScalingPolicyConfiguration;
+		StepScalingPolicyConfiguration?: StepScalingPolicyConfiguration | null;
 
 		/** Represents a target tracking scaling policy configuration to use with Application Auto Scaling. */
-		TargetTrackingScalingPolicyConfiguration?: TargetTrackingScalingPolicyConfiguration;
+		TargetTrackingScalingPolicyConfiguration?: TargetTrackingScalingPolicyConfiguration | null;
 	}
 
 	export enum PutScalingPolicyRequestServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
@@ -336,15 +336,15 @@ export namespace MyNS {
 
 	export interface PutScheduledActionRequest {
 		ServiceNamespace: PutScheduledActionRequestServiceNamespace;
-		Schedule?: string;
+		Schedule?: string | null;
 		ScheduledActionName: string;
 		ResourceId: string;
 		ScalableDimension: PutScheduledActionRequestScalableDimension;
-		StartTime?: Date;
-		EndTime?: Date;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
 
 		/** Represents the minimum and maximum capacity for a scheduled action. */
-		ScalableTargetAction?: ScalableTargetAction;
+		ScalableTargetAction?: ScalableTargetAction | null;
 	}
 
 	export enum PutScheduledActionRequestServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
@@ -358,12 +358,12 @@ export namespace MyNS {
 		ServiceNamespace: RegisterScalableTargetRequestServiceNamespace;
 		ResourceId: string;
 		ScalableDimension: RegisterScalableTargetRequestScalableDimension;
-		MinCapacity?: number;
-		MaxCapacity?: number;
-		RoleARN?: string;
+		MinCapacity?: number | null;
+		MaxCapacity?: number | null;
+		RoleARN?: string | null;
 
 		/** Specifies whether the scaling activities for a scalable target are in a suspended state. */
-		SuspendedState?: SuspendedState;
+		SuspendedState?: SuspendedState | null;
 	}
 
 	export enum RegisterScalableTargetRequestServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
@@ -423,7 +423,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeScalableTargetsResponse} Success
 		 */
-		DescribeScalableTargets(MaxResults: string, NextToken: string, requestBody: DescribeScalableTargetsRequest): Observable<DescribeScalableTargetsResponse> {
+		DescribeScalableTargets(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeScalableTargetsRequest): Observable<DescribeScalableTargetsResponse> {
 			return this.http.post<DescribeScalableTargetsResponse>(this.baseUri + '#X-Amz-Target=AnyScaleFrontendService.DescribeScalableTargets?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -434,7 +434,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeScalingActivitiesResponse} Success
 		 */
-		DescribeScalingActivities(MaxResults: string, NextToken: string, requestBody: DescribeScalingActivitiesRequest): Observable<DescribeScalingActivitiesResponse> {
+		DescribeScalingActivities(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeScalingActivitiesRequest): Observable<DescribeScalingActivitiesResponse> {
 			return this.http.post<DescribeScalingActivitiesResponse>(this.baseUri + '#X-Amz-Target=AnyScaleFrontendService.DescribeScalingActivities?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -445,7 +445,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeScalingPoliciesResponse} Success
 		 */
-		DescribeScalingPolicies(MaxResults: string, NextToken: string, requestBody: DescribeScalingPoliciesRequest): Observable<DescribeScalingPoliciesResponse> {
+		DescribeScalingPolicies(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeScalingPoliciesRequest): Observable<DescribeScalingPoliciesResponse> {
 			return this.http.post<DescribeScalingPoliciesResponse>(this.baseUri + '#X-Amz-Target=AnyScaleFrontendService.DescribeScalingPolicies?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -456,7 +456,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeScheduledActionsResponse} Success
 		 */
-		DescribeScheduledActions(MaxResults: string, NextToken: string, requestBody: DescribeScheduledActionsRequest): Observable<DescribeScheduledActionsResponse> {
+		DescribeScheduledActions(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeScheduledActionsRequest): Observable<DescribeScheduledActionsResponse> {
 			return this.http.post<DescribeScheduledActionsResponse>(this.baseUri + '#X-Amz-Target=AnyScaleFrontendService.DescribeScheduledActions?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

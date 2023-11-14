@@ -5,7 +5,7 @@ export namespace MyNS {
 
 	/** The response to the request to create an analyzer. */
 	export interface CreateAnalyzerResponse {
-		arn?: string;
+		arn?: string | null;
 	}
 
 
@@ -39,10 +39,10 @@ export namespace MyNS {
 
 	/** The criteria to use in the filter that defines the archive rule. */
 	export interface Criterion {
-		contains?: Array<string>;
-		eq?: Array<string>;
-		exists?: boolean;
-		neq?: Array<string>;
+		contains?: Array<string> | null;
+		eq?: Array<string> | null;
+		exists?: boolean | null;
+		neq?: Array<string> | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -53,22 +53,22 @@ export namespace MyNS {
 	export interface GetAnalyzedResourceResponse {
 
 		/** Contains details about the analyzed resource. */
-		resource?: AnalyzedResource;
+		resource?: AnalyzedResource | null;
 	}
 
 
 	/** Contains details about the analyzed resource. */
 	export interface AnalyzedResource {
-		actions?: Array<string>;
+		actions?: Array<string> | null;
 		analyzedAt: Date;
 		createdAt: Date;
-		error?: string;
+		error?: string | null;
 		isPublic: boolean;
 		resourceArn: string;
 		resourceOwnerAccount: string;
 		resourceType: AnalyzedResourceResourceType;
-		sharedVia?: Array<string>;
-		status?: AnalyzedResourceStatus;
+		sharedVia?: Array<string> | null;
+		status?: AnalyzedResourceStatus | null;
 		updatedAt: Date;
 	}
 
@@ -92,14 +92,14 @@ export namespace MyNS {
 	export interface AnalyzerSummary {
 		arn: string;
 		createdAt: Date;
-		lastResourceAnalyzed?: string;
-		lastResourceAnalyzedAt?: Date;
+		lastResourceAnalyzed?: string | null;
+		lastResourceAnalyzedAt?: Date | null;
 		name: string;
 		status: AnalyzerSummaryStatus;
 
 		/** Provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the AWS organization. */
-		statusReason?: StatusReason;
-		tags?: TagsMap;
+		statusReason?: StatusReason | null;
+		tags?: TagsMap | null;
 		type: AnalyzerSummaryType;
 	}
 
@@ -143,24 +143,24 @@ export namespace MyNS {
 	export interface GetFindingResponse {
 
 		/** Contains information about a finding. */
-		finding?: Finding;
+		finding?: Finding | null;
 	}
 
 
 	/** Contains information about a finding. */
 	export interface Finding {
-		action?: Array<string>;
+		action?: Array<string> | null;
 		analyzedAt: Date;
 		condition: ConditionKeyMap;
 		createdAt: Date;
-		error?: string;
+		error?: string | null;
 		id: string;
-		isPublic?: boolean;
-		principal?: PrincipalMap;
-		resource?: string;
+		isPublic?: boolean | null;
+		principal?: PrincipalMap | null;
+		resource?: string | null;
 		resourceOwnerAccount: string;
 		resourceType: FindingResourceType;
-		sources?: Array<FindingSource>;
+		sources?: Array<FindingSource> | null;
 		status: AnalyzedResourceStatus;
 		updatedAt: Date;
 	}
@@ -178,14 +178,14 @@ export namespace MyNS {
 	export interface FindingSource {
 
 		/** Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings. */
-		detail?: FindingSourceDetail;
+		detail?: FindingSourceDetail | null;
 		type: FindingSourceType;
 	}
 
 
 	/** Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings. */
 	export interface FindingSourceDetail {
-		accessPointArn?: string;
+		accessPointArn?: string | null;
 	}
 
 	export enum FindingSourceType { BUCKET_ACL = 0, POLICY = 1, S3_ACCESS_POINT = 2 }
@@ -194,7 +194,7 @@ export namespace MyNS {
 	/** The response to the request. */
 	export interface ListAnalyzedResourcesResponse {
 		analyzedResources: Array<AnalyzedResourceSummary>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -211,38 +211,38 @@ export namespace MyNS {
 	/** The response to the request. */
 	export interface ListAnalyzersResponse {
 		analyzers: Array<AnalyzerSummary>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** The response to the request. */
 	export interface ListArchiveRulesResponse {
 		archiveRules: Array<ArchiveRuleSummary>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** The response to the request. */
 	export interface ListFindingsResponse {
 		findings: Array<FindingSummary>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Contains information about a finding. */
 	export interface FindingSummary {
-		action?: Array<string>;
+		action?: Array<string> | null;
 		analyzedAt: Date;
 		condition: ConditionKeyMap;
 		createdAt: Date;
-		error?: string;
+		error?: string | null;
 		id: string;
-		isPublic?: boolean;
-		principal?: PrincipalMap;
-		resource?: string;
+		isPublic?: boolean | null;
+		principal?: PrincipalMap | null;
+		resource?: string | null;
 		resourceOwnerAccount: string;
 		resourceType: FindingSummaryResourceType;
-		sources?: Array<FindingSource>;
+		sources?: Array<FindingSource> | null;
 		status: AnalyzedResourceStatus;
 		updatedAt: Date;
 	}
@@ -254,7 +254,7 @@ export namespace MyNS {
 
 	/** The response to the request. */
 	export interface ListTagsForResourceResponse {
-		tags?: TagsMap;
+		tags?: TagsMap | null;
 	}
 
 
@@ -279,16 +279,16 @@ export namespace MyNS {
 	/** Creates an analyzer. */
 	export interface CreateAnalyzerRequest {
 		analyzerName: string;
-		archiveRules?: Array<InlineArchiveRule>;
-		clientToken?: string;
-		tags?: TagsMap;
+		archiveRules?: Array<InlineArchiveRule> | null;
+		clientToken?: string | null;
+		tags?: TagsMap | null;
 		type: AnalyzerSummaryType;
 	}
 
 
 	/** Creates an archive rule. */
 	export interface CreateArchiveRuleRequest {
-		clientToken?: string;
+		clientToken?: string | null;
 		filter: FilterCriteriaMap;
 		ruleName: string;
 	}
@@ -329,9 +329,9 @@ export namespace MyNS {
 	/** Retrieves a list of resources that have been analyzed. */
 	export interface ListAnalyzedResourcesRequest {
 		analyzerArn: string;
-		maxResults?: number;
-		nextToken?: string;
-		resourceType?: ListAnalyzedResourcesRequestResourceType;
+		maxResults?: number | null;
+		nextToken?: string | null;
+		resourceType?: ListAnalyzedResourcesRequestResourceType | null;
 	}
 
 	export enum ListAnalyzedResourcesRequestResourceType { AWSIAMRole = 0, AWSKMSKey = 1, AWSLambdaFunction = 2, AWSLambdaLayerVersion = 3, AWSS3Bucket = 4, AWSSQSQueue = 5 }
@@ -349,20 +349,20 @@ export namespace MyNS {
 
 	/** The criteria used to sort. */
 	export interface SortCriteria {
-		attributeName?: string;
-		orderBy?: OrderBy;
+		attributeName?: string | null;
+		orderBy?: OrderBy | null;
 	}
 
 
 	/** Retrieves a list of findings generated by the specified analyzer. */
 	export interface ListFindingsRequest {
 		analyzerArn: string;
-		filter?: FilterCriteriaMap;
-		maxResults?: number;
-		nextToken?: string;
+		filter?: FilterCriteriaMap | null;
+		maxResults?: number | null;
+		nextToken?: string | null;
 
 		/** The criteria used to sort. */
-		sort?: SortCriteria;
+		sort?: SortCriteria | null;
 	}
 
 
@@ -393,7 +393,7 @@ export namespace MyNS {
 
 	/** Updates the specified archive rule. */
 	export interface UpdateArchiveRuleRequest {
-		clientToken?: string;
+		clientToken?: string | null;
 		filter: FilterCriteriaMap;
 	}
 
@@ -401,9 +401,9 @@ export namespace MyNS {
 	/** Updates findings with the new values provided in the request. */
 	export interface UpdateFindingsRequest {
 		analyzerArn: string;
-		clientToken?: string;
-		ids?: Array<string>;
-		resourceArn?: string;
+		clientToken?: string | null;
+		ids?: Array<string> | null;
+		resourceArn?: string | null;
 		status: FindingStatusUpdate;
 	}
 
@@ -429,7 +429,7 @@ export namespace MyNS {
 		 * @param {AnalyzerSummaryType} type The type of analyzer.
 		 * @return {ListAnalyzersResponse} Success
 		 */
-		ListAnalyzers(maxResults: number, nextToken: string, type: AnalyzerSummaryType): Observable<ListAnalyzersResponse> {
+		ListAnalyzers(maxResults: number | null | undefined, nextToken: string | null | undefined, type: AnalyzerSummaryType | null | undefined): Observable<ListAnalyzersResponse> {
 			return this.http.get<ListAnalyzersResponse>(this.baseUri + 'analyzer?maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&type=' + type, {});
 		}
 
@@ -451,7 +451,7 @@ export namespace MyNS {
 		 * @param {string} nextToken A token used for pagination of results returned.
 		 * @return {ListArchiveRulesResponse} Success
 		 */
-		ListArchiveRules(analyzerName: string, maxResults: number, nextToken: string): Observable<ListArchiveRulesResponse> {
+		ListArchiveRules(analyzerName: string, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListArchiveRulesResponse> {
 			return this.http.get<ListArchiveRulesResponse>(this.baseUri + 'analyzer/' + (analyzerName == null ? '' : encodeURIComponent(analyzerName)) + '/archive-rule&maxResults=' + maxResults + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), {});
 		}
 
@@ -462,7 +462,7 @@ export namespace MyNS {
 		 * @param {string} clientToken A client token.
 		 * @return {void} Success
 		 */
-		DeleteAnalyzer(analyzerName: string, clientToken: string): Observable<HttpResponse<string>> {
+		DeleteAnalyzer(analyzerName: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'analyzer/' + (analyzerName == null ? '' : encodeURIComponent(analyzerName)) + '&clientToken=' + (clientToken == null ? '' : encodeURIComponent(clientToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -484,7 +484,7 @@ export namespace MyNS {
 		 * @param {string} ruleName The name of the rule to delete.
 		 * @return {void} Success
 		 */
-		DeleteArchiveRule(analyzerName: string, clientToken: string, ruleName: string): Observable<HttpResponse<string>> {
+		DeleteArchiveRule(analyzerName: string, clientToken: string | null | undefined, ruleName: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'analyzer/' + (analyzerName == null ? '' : encodeURIComponent(analyzerName)) + '/archive-rule/' + (ruleName == null ? '' : encodeURIComponent(ruleName)) + '&clientToken=' + (clientToken == null ? '' : encodeURIComponent(clientToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -539,7 +539,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListAnalyzedResourcesResponse} Success
 		 */
-		ListAnalyzedResources(maxResults: string, nextToken: string, requestBody: ListAnalyzedResourcesPostBody): Observable<ListAnalyzedResourcesResponse> {
+		ListAnalyzedResources(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListAnalyzedResourcesPostBody): Observable<ListAnalyzedResourcesResponse> {
 			return this.http.post<ListAnalyzedResourcesResponse>(this.baseUri + 'analyzed-resource?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -550,7 +550,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListFindingsResponse} Success
 		 */
-		ListFindings(maxResults: string, nextToken: string, requestBody: ListFindingsPostBody): Observable<ListFindingsResponse> {
+		ListFindings(maxResults: string | null | undefined, nextToken: string | null | undefined, requestBody: ListFindingsPostBody): Observable<ListFindingsResponse> {
 			return this.http.post<ListFindingsResponse>(this.baseUri + 'finding?maxResults=' + (maxResults == null ? '' : encodeURIComponent(maxResults)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -616,13 +616,13 @@ export namespace MyNS {
 		analyzerName: string;
 
 		/** Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule. */
-		archiveRules?: Array<InlineArchiveRule>;
+		archiveRules?: Array<InlineArchiveRule> | null;
 
 		/** A client token. */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** The tags to apply to the analyzer. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/**
 		 * The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.
@@ -634,7 +634,7 @@ export namespace MyNS {
 	export interface CreateArchiveRulePutBody {
 
 		/** A client token. */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * The criteria for the rule.
@@ -655,7 +655,7 @@ export namespace MyNS {
 	export interface UpdateArchiveRulePutBody {
 
 		/** A client token. */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/**
 		 * A filter to match for the rules to update. Only rules that match the filter are updated.
@@ -674,13 +674,13 @@ export namespace MyNS {
 		analyzerArn: string;
 
 		/** The maximum number of results to return in the response. */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/** A token used for pagination of results returned. */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/** The type of resource. */
-		resourceType?: ListAnalyzedResourcesPostBodyResourceType;
+		resourceType?: ListAnalyzedResourcesPostBodyResourceType | null;
 	}
 
 	export enum ListAnalyzedResourcesPostBodyResourceType { AWSIAMRole = 0, AWSKMSKey = 1, AWSLambdaFunction = 2, AWSLambdaLayerVersion = 3, AWSS3Bucket = 4, AWSSQSQueue = 5 }
@@ -695,21 +695,21 @@ export namespace MyNS {
 		analyzerArn: string;
 
 		/** A filter to match for the findings to return. */
-		filter?: {[id: string]: Criterion };
+		filter?: {[id: string]: Criterion } | null;
 
 		/** The maximum number of results to return in the response. */
-		maxResults?: number;
+		maxResults?: number | null;
 
 		/** A token used for pagination of results returned. */
-		nextToken?: string;
+		nextToken?: string | null;
 
 		/** The criteria used to sort. */
-		sort?: ListFindingsPostBodySort;
+		sort?: ListFindingsPostBodySort | null;
 	}
 
 	export interface ListFindingsPostBodySort {
-		attributeName?: string;
-		orderBy?: OrderBy;
+		attributeName?: string | null;
+		orderBy?: OrderBy | null;
 	}
 
 	export interface UpdateFindingsPutBody {
@@ -722,16 +722,16 @@ export namespace MyNS {
 		analyzerArn: string;
 
 		/** A client token. */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** The IDs of the findings to update. */
-		ids?: Array<string>;
+		ids?: Array<string> | null;
 
 		/**
 		 * The ARN of the resource identified in the finding.
 		 * Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$
 		 */
-		resourceArn?: string;
+		resourceArn?: string | null;
 
 		/**
 		 * The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.

@@ -15,31 +15,31 @@ export namespace MyNS {
 	}
 
 	export interface BatchDeleteScheduledActionAnswer {
-		FailedScheduledActions?: Array<FailedScheduledUpdateGroupActionRequest>;
+		FailedScheduledActions?: Array<FailedScheduledUpdateGroupActionRequest> | null;
 	}
 
 
 	/** Describes a scheduled action that could not be created, updated, or deleted. */
 	export interface FailedScheduledUpdateGroupActionRequest {
 		ScheduledActionName: string;
-		ErrorCode?: string;
-		ErrorMessage?: string;
+		ErrorCode?: string | null;
+		ErrorMessage?: string | null;
 	}
 
 	export interface BatchPutScheduledUpdateGroupActionAnswer {
-		FailedScheduledUpdateGroupActions?: Array<FailedScheduledUpdateGroupActionRequest>;
+		FailedScheduledUpdateGroupActions?: Array<FailedScheduledUpdateGroupActionRequest> | null;
 	}
 
 
 	/** <p>Describes information used for one or more scheduled scaling action updates in a <a>BatchPutScheduledUpdateGroupAction</a> operation.</p> <p>When updating a scheduled scaling action, all optional parameters are left unchanged if not specified.</p> */
 	export interface ScheduledUpdateGroupActionRequest {
 		ScheduledActionName: string;
-		StartTime?: Date;
-		EndTime?: Date;
-		Recurrence?: string;
-		MinSize?: number;
-		MaxSize?: number;
-		DesiredCapacity?: number;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		Recurrence?: string | null;
+		MinSize?: number | null;
+		MaxSize?: number | null;
+		DesiredCapacity?: number | null;
 	}
 
 	export interface AlreadyExistsFault {
@@ -56,34 +56,34 @@ export namespace MyNS {
 	export interface LaunchTemplate {
 
 		/** <p>Describes the Amazon EC2 launch template and the launch template version that can be used by an Auto Scaling group to configure Amazon EC2 instances.</p> <p>The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> */
-		LaunchTemplateSpecification?: LaunchTemplateSpecification;
-		Overrides?: Array<LaunchTemplateOverrides>;
+		LaunchTemplateSpecification?: LaunchTemplateSpecification | null;
+		Overrides?: Array<LaunchTemplateOverrides> | null;
 	}
 
 
 	/** <p>Describes the Amazon EC2 launch template and the launch template version that can be used by an Auto Scaling group to configure Amazon EC2 instances.</p> <p>The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> */
 	export interface LaunchTemplateSpecification {
-		LaunchTemplateId?: string;
-		LaunchTemplateName?: string;
-		Version?: string;
+		LaunchTemplateId?: string | null;
+		LaunchTemplateName?: string | null;
+		Version?: string | null;
 	}
 
 
 	/** <p>Describes an override for a launch template. Currently, the only supported override is instance type.</p> <p>The maximum number of instance type overrides that can be associated with an Auto Scaling group is 20.</p> */
 	export interface LaunchTemplateOverrides {
-		InstanceType?: string;
-		WeightedCapacity?: string;
+		InstanceType?: string | null;
+		WeightedCapacity?: string | null;
 	}
 
 
 	/** <p>Describes an instances distribution for an Auto Scaling group with <a>MixedInstancesPolicy</a>.</p> <p>The instances distribution specifies the distribution of On-Demand Instances and Spot Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group allocates instance types to fulfill On-Demand and Spot capacity.</p> <p>When you update <code>SpotAllocationStrategy</code>, <code>SpotInstancePools</code>, or <code>SpotMaxPrice</code>, this update action does not deploy any changes across the running Amazon EC2 instances in the group. Your existing Spot Instances continue to run as long as the maximum price for those instances is higher than the current Spot price. When scale out occurs, Amazon EC2 Auto Scaling launches instances based on the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.</p> */
 	export interface InstancesDistribution {
-		OnDemandAllocationStrategy?: string;
-		OnDemandBaseCapacity?: number;
-		OnDemandPercentageAboveBaseCapacity?: number;
-		SpotAllocationStrategy?: string;
-		SpotInstancePools?: number;
-		SpotMaxPrice?: string;
+		OnDemandAllocationStrategy?: string | null;
+		OnDemandBaseCapacity?: number | null;
+		OnDemandPercentageAboveBaseCapacity?: number | null;
+		SpotAllocationStrategy?: string | null;
+		SpotInstancePools?: number | null;
+		SpotMaxPrice?: string | null;
 	}
 
 
@@ -91,43 +91,43 @@ export namespace MyNS {
 	export interface LifecycleHookSpecification {
 		LifecycleHookName: string;
 		LifecycleTransition: string;
-		NotificationMetadata?: string;
-		HeartbeatTimeout?: number;
-		DefaultResult?: string;
-		NotificationTargetARN?: string;
-		RoleARN?: string;
+		NotificationMetadata?: string | null;
+		HeartbeatTimeout?: number | null;
+		DefaultResult?: string | null;
+		NotificationTargetARN?: string | null;
+		RoleARN?: string | null;
 	}
 
 
 	/** Describes a tag for an Auto Scaling group. */
 	export interface Tag {
-		ResourceId?: string;
-		ResourceType?: string;
+		ResourceId?: string | null;
+		ResourceType?: string | null;
 		Key: string;
-		Value?: string;
-		PropagateAtLaunch?: boolean;
+		Value?: string | null;
+		PropagateAtLaunch?: boolean | null;
 	}
 
 
 	/** Describes a block device mapping. */
 	export interface BlockDeviceMapping {
-		VirtualName?: string;
+		VirtualName?: string | null;
 		DeviceName: string;
 
 		/** Describes information used to set up an Amazon EBS volume specified in a block device mapping. */
-		Ebs?: Ebs;
-		NoDevice?: boolean;
+		Ebs?: Ebs | null;
+		NoDevice?: boolean | null;
 	}
 
 
 	/** Describes information used to set up an Amazon EBS volume specified in a block device mapping. */
 	export interface Ebs {
-		SnapshotId?: string;
-		VolumeSize?: number;
-		VolumeType?: string;
-		DeleteOnTermination?: boolean;
-		Iops?: number;
-		Encrypted?: boolean;
+		SnapshotId?: string | null;
+		VolumeSize?: number | null;
+		VolumeType?: string | null;
+		DeleteOnTermination?: boolean | null;
+		Iops?: number | null;
+		Encrypted?: boolean | null;
 	}
 
 	export interface ResourceInUseFault {
@@ -140,60 +140,60 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAccountLimitsAnswer {
-		MaxNumberOfAutoScalingGroups?: number;
-		MaxNumberOfLaunchConfigurations?: number;
-		NumberOfAutoScalingGroups?: number;
-		NumberOfLaunchConfigurations?: number;
+		MaxNumberOfAutoScalingGroups?: number | null;
+		MaxNumberOfLaunchConfigurations?: number | null;
+		NumberOfAutoScalingGroups?: number | null;
+		NumberOfLaunchConfigurations?: number | null;
 	}
 
 	export interface DescribeAdjustmentTypesAnswer {
-		AdjustmentTypes?: Array<AdjustmentType>;
+		AdjustmentTypes?: Array<AdjustmentType> | null;
 	}
 
 
 	/** Describes a policy adjustment type. */
 	export interface AdjustmentType {
-		AdjustmentType1?: string;
+		AdjustmentType1?: string | null;
 	}
 
 	export interface AutoScalingGroupsType {
 		AutoScalingGroups: Array<AutoScalingGroup>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes an Auto Scaling group. */
 	export interface AutoScalingGroup {
 		AutoScalingGroupName: string;
-		AutoScalingGroupARN?: string;
-		LaunchConfigurationName?: string;
+		AutoScalingGroupARN?: string | null;
+		LaunchConfigurationName?: string | null;
 
 		/** <p>Describes the Amazon EC2 launch template and the launch template version that can be used by an Auto Scaling group to configure Amazon EC2 instances.</p> <p>The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> */
-		LaunchTemplate?: LaunchTemplateSpecification;
+		LaunchTemplate?: LaunchTemplateSpecification | null;
 
 		/** <p>Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling Groups with Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You can create a mixed instances policy for a new Auto Scaling group, or you can create it for an existing group by updating the group to specify <code>MixedInstancesPolicy</code> as the top-level parameter instead of a launch configuration or template. For more information, see <a>CreateAutoScalingGroup</a> and <a>UpdateAutoScalingGroup</a>.</p> */
-		MixedInstancesPolicy?: MixedInstancesPolicy;
+		MixedInstancesPolicy?: MixedInstancesPolicy | null;
 		MinSize: number;
 		MaxSize: number;
 		DesiredCapacity: number;
 		DefaultCooldown: number;
 		AvailabilityZones: Array<string>;
-		LoadBalancerNames?: Array<string>;
-		TargetGroupARNs?: Array<string>;
+		LoadBalancerNames?: Array<string> | null;
+		TargetGroupARNs?: Array<string> | null;
 		HealthCheckType: string;
-		HealthCheckGracePeriod?: number;
-		Instances?: Array<Instance>;
+		HealthCheckGracePeriod?: number | null;
+		Instances?: Array<Instance> | null;
 		CreatedTime: Date;
-		SuspendedProcesses?: Array<SuspendedProcess>;
-		PlacementGroup?: string;
-		VPCZoneIdentifier?: string;
-		EnabledMetrics?: Array<EnabledMetric>;
-		Status?: string;
-		Tags?: Array<TagDescription>;
-		TerminationPolicies?: Array<string>;
-		NewInstancesProtectedFromScaleIn?: boolean;
-		ServiceLinkedRoleARN?: string;
-		MaxInstanceLifetime?: number;
+		SuspendedProcesses?: Array<SuspendedProcess> | null;
+		PlacementGroup?: string | null;
+		VPCZoneIdentifier?: string | null;
+		EnabledMetrics?: Array<EnabledMetric> | null;
+		Status?: string | null;
+		Tags?: Array<TagDescription> | null;
+		TerminationPolicies?: Array<string> | null;
+		NewInstancesProtectedFromScaleIn?: boolean | null;
+		ServiceLinkedRoleARN?: string | null;
+		MaxInstanceLifetime?: number | null;
 	}
 
 
@@ -201,26 +201,26 @@ export namespace MyNS {
 	export interface MixedInstancesPolicy {
 
 		/** <p>Describes a launch template and overrides.</p> <p>The overrides are used to override the instance type specified by the launch template with multiple instance types that can be used to launch On-Demand Instances and Spot Instances.</p> <p>When you update the launch template or overrides, existing Amazon EC2 instances continue to run. When scale out occurs, Amazon EC2 Auto Scaling launches instances to match the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.</p> */
-		LaunchTemplate?: LaunchTemplate;
+		LaunchTemplate?: LaunchTemplate | null;
 
 		/** <p>Describes an instances distribution for an Auto Scaling group with <a>MixedInstancesPolicy</a>.</p> <p>The instances distribution specifies the distribution of On-Demand Instances and Spot Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group allocates instance types to fulfill On-Demand and Spot capacity.</p> <p>When you update <code>SpotAllocationStrategy</code>, <code>SpotInstancePools</code>, or <code>SpotMaxPrice</code>, this update action does not deploy any changes across the running Amazon EC2 instances in the group. Your existing Spot Instances continue to run as long as the maximum price for those instances is higher than the current Spot price. When scale out occurs, Amazon EC2 Auto Scaling launches instances based on the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.</p> */
-		InstancesDistribution?: InstancesDistribution;
+		InstancesDistribution?: InstancesDistribution | null;
 	}
 
 
 	/** Describes an EC2 instance. */
 	export interface Instance {
 		InstanceId: string;
-		InstanceType?: string;
+		InstanceType?: string | null;
 		AvailabilityZone: string;
 		LifecycleState: InstanceLifecycleState;
 		HealthStatus: string;
-		LaunchConfigurationName?: string;
+		LaunchConfigurationName?: string | null;
 
 		/** <p>Describes the Amazon EC2 launch template and the launch template version that can be used by an Auto Scaling group to configure Amazon EC2 instances.</p> <p>The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> */
-		LaunchTemplate?: LaunchTemplateSpecification;
+		LaunchTemplate?: LaunchTemplateSpecification | null;
 		ProtectedFromScaleIn: boolean;
-		WeightedCapacity?: string;
+		WeightedCapacity?: string | null;
 	}
 
 	export enum InstanceLifecycleState { Pending = 0, PendingWait = 1, PendingProceed = 2, Quarantined = 3, InService = 4, Terminating = 5, TerminatingWait = 6, TerminatingProceed = 7, Terminated = 8, Detaching = 9, Detached = 10, EnteringStandby = 11, Standby = 12 }
@@ -228,209 +228,209 @@ export namespace MyNS {
 
 	/** <p>Describes an automatic scaling process that has been suspended.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> */
 	export interface SuspendedProcess {
-		ProcessName?: string;
-		SuspensionReason?: string;
+		ProcessName?: string | null;
+		SuspensionReason?: string | null;
 	}
 
 
 	/** Describes an enabled metric. */
 	export interface EnabledMetric {
-		Metric?: string;
-		Granularity?: string;
+		Metric?: string | null;
+		Granularity?: string | null;
 	}
 
 
 	/** Describes a tag for an Auto Scaling group. */
 	export interface TagDescription {
-		ResourceId?: string;
-		ResourceType?: string;
-		Key?: string;
-		Value?: string;
-		PropagateAtLaunch?: boolean;
+		ResourceId?: string | null;
+		ResourceType?: string | null;
+		Key?: string | null;
+		Value?: string | null;
+		PropagateAtLaunch?: boolean | null;
 	}
 
 	export interface InvalidNextToken {
 	}
 
 	export interface AutoScalingInstancesType {
-		AutoScalingInstances?: Array<AutoScalingInstanceDetails>;
-		NextToken?: string;
+		AutoScalingInstances?: Array<AutoScalingInstanceDetails> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes an EC2 instance associated with an Auto Scaling group. */
 	export interface AutoScalingInstanceDetails {
 		InstanceId: string;
-		InstanceType?: string;
+		InstanceType?: string | null;
 		AutoScalingGroupName: string;
 		AvailabilityZone: string;
 		LifecycleState: string;
 		HealthStatus: string;
-		LaunchConfigurationName?: string;
+		LaunchConfigurationName?: string | null;
 
 		/** <p>Describes the Amazon EC2 launch template and the launch template version that can be used by an Auto Scaling group to configure Amazon EC2 instances.</p> <p>The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> */
-		LaunchTemplate?: LaunchTemplateSpecification;
+		LaunchTemplate?: LaunchTemplateSpecification | null;
 		ProtectedFromScaleIn: boolean;
-		WeightedCapacity?: string;
+		WeightedCapacity?: string | null;
 	}
 
 	export interface DescribeAutoScalingNotificationTypesAnswer {
-		AutoScalingNotificationTypes?: Array<string>;
+		AutoScalingNotificationTypes?: Array<string> | null;
 	}
 
 	export interface LaunchConfigurationsType {
 		LaunchConfigurations: Array<LaunchConfiguration>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes a launch configuration. */
 	export interface LaunchConfiguration {
 		LaunchConfigurationName: string;
-		LaunchConfigurationARN?: string;
+		LaunchConfigurationARN?: string | null;
 		ImageId: string;
-		KeyName?: string;
-		SecurityGroups?: Array<string>;
-		ClassicLinkVPCId?: string;
-		ClassicLinkVPCSecurityGroups?: Array<string>;
-		UserData?: string;
+		KeyName?: string | null;
+		SecurityGroups?: Array<string> | null;
+		ClassicLinkVPCId?: string | null;
+		ClassicLinkVPCSecurityGroups?: Array<string> | null;
+		UserData?: string | null;
 		InstanceType: string;
-		KernelId?: string;
-		RamdiskId?: string;
-		BlockDeviceMappings?: Array<BlockDeviceMapping>;
+		KernelId?: string | null;
+		RamdiskId?: string | null;
+		BlockDeviceMappings?: Array<BlockDeviceMapping> | null;
 
 		/** Describes whether detailed monitoring is enabled for the Auto Scaling instances. */
-		InstanceMonitoring?: InstanceMonitoring;
-		SpotPrice?: string;
-		IamInstanceProfile?: string;
+		InstanceMonitoring?: InstanceMonitoring | null;
+		SpotPrice?: string | null;
+		IamInstanceProfile?: string | null;
 		CreatedTime: Date;
-		EbsOptimized?: boolean;
-		AssociatePublicIpAddress?: boolean;
-		PlacementTenancy?: string;
+		EbsOptimized?: boolean | null;
+		AssociatePublicIpAddress?: boolean | null;
+		PlacementTenancy?: string | null;
 	}
 
 
 	/** Describes whether detailed monitoring is enabled for the Auto Scaling instances. */
 	export interface InstanceMonitoring {
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 	}
 
 	export interface DescribeLifecycleHookTypesAnswer {
-		LifecycleHookTypes?: Array<string>;
+		LifecycleHookTypes?: Array<string> | null;
 	}
 
 	export interface DescribeLifecycleHooksAnswer {
-		LifecycleHooks?: Array<LifecycleHook>;
+		LifecycleHooks?: Array<LifecycleHook> | null;
 	}
 
 
 	/** Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want to perform an action whenever it launches instances or terminates instances. */
 	export interface LifecycleHook {
-		LifecycleHookName?: string;
-		AutoScalingGroupName?: string;
-		LifecycleTransition?: string;
-		NotificationTargetARN?: string;
-		RoleARN?: string;
-		NotificationMetadata?: string;
-		HeartbeatTimeout?: number;
-		GlobalTimeout?: number;
-		DefaultResult?: string;
+		LifecycleHookName?: string | null;
+		AutoScalingGroupName?: string | null;
+		LifecycleTransition?: string | null;
+		NotificationTargetARN?: string | null;
+		RoleARN?: string | null;
+		NotificationMetadata?: string | null;
+		HeartbeatTimeout?: number | null;
+		GlobalTimeout?: number | null;
+		DefaultResult?: string | null;
 	}
 
 	export interface DescribeLoadBalancerTargetGroupsResponse {
-		LoadBalancerTargetGroups?: Array<LoadBalancerTargetGroupState>;
-		NextToken?: string;
+		LoadBalancerTargetGroups?: Array<LoadBalancerTargetGroupState> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** <p>Describes the state of a target group.</p> <p>If you attach a target group to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state transitions to <code>Added</code> after all Auto Scaling instances are registered with the target group. If Elastic Load Balancing health checks are enabled, the state transitions to <code>InService</code> after at least one Auto Scaling instance passes the health check. If EC2 health checks are enabled instead, the target group remains in the <code>Added</code> state.</p> */
 	export interface LoadBalancerTargetGroupState {
-		LoadBalancerTargetGroupARN?: string;
-		State?: string;
+		LoadBalancerTargetGroupARN?: string | null;
+		State?: string | null;
 	}
 
 	export interface DescribeLoadBalancersResponse {
-		LoadBalancers?: Array<LoadBalancerState>;
-		NextToken?: string;
+		LoadBalancers?: Array<LoadBalancerState> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** <p>Describes the state of a Classic Load Balancer.</p> <p>If you specify a load balancer when creating the Auto Scaling group, the state of the load balancer is <code>InService</code>.</p> <p>If you attach a load balancer to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state transitions to <code>Added</code> after all instances in the group are registered with the load balancer. If Elastic Load Balancing health checks are enabled for the load balancer, the state transitions to <code>InService</code> after at least one instance in the group passes the health check. If EC2 health checks are enabled instead, the load balancer remains in the <code>Added</code> state.</p> */
 	export interface LoadBalancerState {
-		LoadBalancerName?: string;
-		State?: string;
+		LoadBalancerName?: string | null;
+		State?: string | null;
 	}
 
 	export interface DescribeMetricCollectionTypesAnswer {
-		Metrics?: Array<MetricCollectionType>;
-		Granularities?: Array<MetricGranularityType>;
+		Metrics?: Array<MetricCollectionType> | null;
+		Granularities?: Array<MetricGranularityType> | null;
 	}
 
 
 	/** Describes a metric. */
 	export interface MetricCollectionType {
-		Metric?: string;
+		Metric?: string | null;
 	}
 
 
 	/** Describes a granularity of a metric. */
 	export interface MetricGranularityType {
-		Granularity?: string;
+		Granularity?: string | null;
 	}
 
 	export interface DescribeNotificationConfigurationsAnswer {
 		NotificationConfigurations: Array<NotificationConfiguration>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes a notification. */
 	export interface NotificationConfiguration {
-		AutoScalingGroupName?: string;
-		TopicARN?: string;
-		NotificationType?: string;
+		AutoScalingGroupName?: string | null;
+		TopicARN?: string | null;
+		NotificationType?: string | null;
 	}
 
 	export interface PoliciesType {
-		ScalingPolicies?: Array<ScalingPolicy>;
-		NextToken?: string;
+		ScalingPolicies?: Array<ScalingPolicy> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes a scaling policy. */
 	export interface ScalingPolicy {
-		AutoScalingGroupName?: string;
-		PolicyName?: string;
-		PolicyARN?: string;
-		PolicyType?: string;
-		AdjustmentType?: string;
-		MinAdjustmentStep?: number;
-		MinAdjustmentMagnitude?: number;
-		ScalingAdjustment?: number;
-		Cooldown?: number;
-		StepAdjustments?: Array<StepAdjustment>;
-		MetricAggregationType?: string;
-		EstimatedInstanceWarmup?: number;
-		Alarms?: Array<Alarm>;
+		AutoScalingGroupName?: string | null;
+		PolicyName?: string | null;
+		PolicyARN?: string | null;
+		PolicyType?: string | null;
+		AdjustmentType?: string | null;
+		MinAdjustmentStep?: number | null;
+		MinAdjustmentMagnitude?: number | null;
+		ScalingAdjustment?: number | null;
+		Cooldown?: number | null;
+		StepAdjustments?: Array<StepAdjustment> | null;
+		MetricAggregationType?: string | null;
+		EstimatedInstanceWarmup?: number | null;
+		Alarms?: Array<Alarm> | null;
 
 		/** Represents a target tracking scaling policy configuration to use with Amazon EC2 Auto Scaling. */
-		TargetTrackingConfiguration?: TargetTrackingConfiguration;
-		Enabled?: boolean;
+		TargetTrackingConfiguration?: TargetTrackingConfiguration | null;
+		Enabled?: boolean | null;
 	}
 
 
 	/** <p>Describes information used to create a step adjustment for a step scaling policy.</p> <p>For the following examples, suppose that you have an alarm with a breach threshold of 50:</p> <ul> <li> <p>To trigger the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.</p> </li> <li> <p>To trigger the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.</p> </li> </ul> <p>There are a few rules for the step adjustments for your step policy:</p> <ul> <li> <p>The ranges of your step adjustments can't overlap or have a gap.</p> </li> <li> <p>At most, one step adjustment can have a null lower bound. If one step adjustment has a negative lower bound, then there must be a step adjustment with a null lower bound.</p> </li> <li> <p>At most, one step adjustment can have a null upper bound. If one step adjustment has a positive upper bound, then there must be a step adjustment with a null upper bound.</p> </li> <li> <p>The upper and lower bound can't be null in the same step adjustment.</p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-steps">Step Adjustments</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> */
 	export interface StepAdjustment {
-		MetricIntervalLowerBound?: number;
-		MetricIntervalUpperBound?: number;
+		MetricIntervalLowerBound?: number | null;
+		MetricIntervalUpperBound?: number | null;
 		ScalingAdjustment: number;
 	}
 
 
 	/** Describes an alarm. */
 	export interface Alarm {
-		AlarmName?: string;
-		AlarmARN?: string;
+		AlarmName?: string | null;
+		AlarmARN?: string | null;
 	}
 
 
@@ -438,19 +438,19 @@ export namespace MyNS {
 	export interface TargetTrackingConfiguration {
 
 		/** Represents a predefined metric for a target tracking scaling policy to use with Amazon EC2 Auto Scaling. */
-		PredefinedMetricSpecification?: PredefinedMetricSpecification;
+		PredefinedMetricSpecification?: PredefinedMetricSpecification | null;
 
 		/** <p>Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Amazon EC2 Auto Scaling.</p> <p>To create your customized metric specification:</p> <ul> <li> <p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish Custom Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases.</p> </li> </ul> <p>For more information about CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a>.</p> */
-		CustomizedMetricSpecification?: CustomizedMetricSpecification;
+		CustomizedMetricSpecification?: CustomizedMetricSpecification | null;
 		TargetValue: number;
-		DisableScaleIn?: boolean;
+		DisableScaleIn?: boolean | null;
 	}
 
 
 	/** Represents a predefined metric for a target tracking scaling policy to use with Amazon EC2 Auto Scaling. */
 	export interface PredefinedMetricSpecification {
 		PredefinedMetricType: PredefinedMetricSpecificationPredefinedMetricType;
-		ResourceLabel?: string;
+		ResourceLabel?: string | null;
 	}
 
 	export enum PredefinedMetricSpecificationPredefinedMetricType { ASGAverageCPUUtilization = 0, ASGAverageNetworkIn = 1, ASGAverageNetworkOut = 2, ALBRequestCountPerTarget = 3 }
@@ -460,9 +460,9 @@ export namespace MyNS {
 	export interface CustomizedMetricSpecification {
 		MetricName: string;
 		Namespace: string;
-		Dimensions?: Array<MetricDimension>;
+		Dimensions?: Array<MetricDimension> | null;
 		Statistic: CustomizedMetricSpecificationStatistic;
-		Unit?: string;
+		Unit?: string | null;
 	}
 
 
@@ -476,7 +476,7 @@ export namespace MyNS {
 
 	export interface ActivitiesType {
 		Activities: Array<Activity>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
@@ -484,20 +484,20 @@ export namespace MyNS {
 	export interface Activity {
 		ActivityId: string;
 		AutoScalingGroupName: string;
-		Description?: string;
+		Description?: string | null;
 		Cause: string;
 		StartTime: Date;
-		EndTime?: Date;
+		EndTime?: Date | null;
 		StatusCode: ActivityStatusCode;
-		StatusMessage?: string;
-		Progress?: number;
-		Details?: string;
+		StatusMessage?: string | null;
+		Progress?: number | null;
+		Details?: string | null;
 	}
 
 	export enum ActivityStatusCode { PendingSpotBidPlacement = 0, WaitingForSpotInstanceRequestId = 1, WaitingForSpotInstanceId = 2, WaitingForInstanceId = 3, PreInService = 4, InProgress = 5, WaitingForELBConnectionDraining = 6, MidLifecycleAction = 7, WaitingForInstanceWarmup = 8, Successful = 9, Failed = 10, Cancelled = 11 }
 
 	export interface ProcessesType {
-		Processes?: Array<ProcessType>;
+		Processes?: Array<ProcessType> | null;
 	}
 
 
@@ -507,43 +507,43 @@ export namespace MyNS {
 	}
 
 	export interface ScheduledActionsType {
-		ScheduledUpdateGroupActions?: Array<ScheduledUpdateGroupAction>;
-		NextToken?: string;
+		ScheduledUpdateGroupActions?: Array<ScheduledUpdateGroupAction> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Describes a scheduled scaling action. */
 	export interface ScheduledUpdateGroupAction {
-		AutoScalingGroupName?: string;
-		ScheduledActionName?: string;
-		ScheduledActionARN?: string;
-		Time?: Date;
-		StartTime?: Date;
-		EndTime?: Date;
-		Recurrence?: string;
-		MinSize?: number;
-		MaxSize?: number;
-		DesiredCapacity?: number;
+		AutoScalingGroupName?: string | null;
+		ScheduledActionName?: string | null;
+		ScheduledActionARN?: string | null;
+		Time?: Date | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		Recurrence?: string | null;
+		MinSize?: number | null;
+		MaxSize?: number | null;
+		DesiredCapacity?: number | null;
 	}
 
 	export interface TagsType {
-		Tags?: Array<TagDescription>;
-		NextToken?: string;
+		Tags?: Array<TagDescription> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** <p>Describes a filter that is used to return a more specific list of results when describing tags.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> */
 	export interface Filter {
-		Name?: string;
-		Values?: Array<string>;
+		Name?: string | null;
+		Values?: Array<string> | null;
 	}
 
 	export interface DescribeTerminationPolicyTypesAnswer {
-		TerminationPolicyTypes?: Array<string>;
+		TerminationPolicyTypes?: Array<string> | null;
 	}
 
 	export interface DetachInstancesAnswer {
-		Activities?: Array<Activity>;
+		Activities?: Array<Activity> | null;
 	}
 
 	export interface DetachLoadBalancerTargetGroupsResultType {
@@ -553,11 +553,11 @@ export namespace MyNS {
 	}
 
 	export interface EnterStandbyAnswer {
-		Activities?: Array<Activity>;
+		Activities?: Array<Activity> | null;
 	}
 
 	export interface ExitStandbyAnswer {
-		Activities?: Array<Activity>;
+		Activities?: Array<Activity> | null;
 	}
 
 	export interface PutLifecycleHookAnswer {
@@ -566,8 +566,8 @@ export namespace MyNS {
 
 	/** Contains the output of PutScalingPolicy. */
 	export interface PolicyARNType {
-		PolicyARN?: string;
-		Alarms?: Array<Alarm>;
+		PolicyARN?: string | null;
+		Alarms?: Array<Alarm> | null;
 	}
 
 	export interface RecordLifecycleActionHeartbeatAnswer {
@@ -579,13 +579,13 @@ export namespace MyNS {
 	export interface ActivityType {
 
 		/** Describes scaling activity, which is a long-running process that represents a change to your Auto Scaling group, such as changing its size or replacing an instance. */
-		Activity?: Activity;
+		Activity?: Activity | null;
 	}
 
 	export enum ScalingActivityStatusCode { PendingSpotBidPlacement = 0, WaitingForSpotInstanceRequestId = 1, WaitingForSpotInstanceId = 2, WaitingForInstanceId = 3, PreInService = 4, InProgress = 5, WaitingForELBConnectionDraining = 6, MidLifecycleAction = 7, WaitingForInstanceWarmup = 8, Successful = 9, Failed = 10, Cancelled = 11 }
 
 	export interface AttachInstancesQuery {
-		InstanceIds?: Array<string>;
+		InstanceIds?: Array<string> | null;
 		AutoScalingGroupName: string;
 	}
 
@@ -600,9 +600,9 @@ export namespace MyNS {
 	}
 
 	export interface AutoScalingGroupNamesType {
-		AutoScalingGroupNames?: Array<string>;
-		NextToken?: string;
-		MaxRecords?: number;
+		AutoScalingGroupNames?: Array<string> | null;
+		NextToken?: string | null;
+		MaxRecords?: number | null;
 	}
 
 	export interface BatchDeleteScheduledActionType {
@@ -618,61 +618,61 @@ export namespace MyNS {
 	export interface CompleteLifecycleActionType {
 		LifecycleHookName: string;
 		AutoScalingGroupName: string;
-		LifecycleActionToken?: string;
+		LifecycleActionToken?: string | null;
 		LifecycleActionResult: string;
-		InstanceId?: string;
+		InstanceId?: string | null;
 	}
 
 	export interface CreateAutoScalingGroupType {
 		AutoScalingGroupName: string;
-		LaunchConfigurationName?: string;
+		LaunchConfigurationName?: string | null;
 
 		/** <p>Describes the Amazon EC2 launch template and the launch template version that can be used by an Auto Scaling group to configure Amazon EC2 instances.</p> <p>The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> */
-		LaunchTemplate?: LaunchTemplateSpecification;
+		LaunchTemplate?: LaunchTemplateSpecification | null;
 
 		/** <p>Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling Groups with Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You can create a mixed instances policy for a new Auto Scaling group, or you can create it for an existing group by updating the group to specify <code>MixedInstancesPolicy</code> as the top-level parameter instead of a launch configuration or template. For more information, see <a>CreateAutoScalingGroup</a> and <a>UpdateAutoScalingGroup</a>.</p> */
-		MixedInstancesPolicy?: MixedInstancesPolicy;
-		InstanceId?: string;
+		MixedInstancesPolicy?: MixedInstancesPolicy | null;
+		InstanceId?: string | null;
 		MinSize: number;
 		MaxSize: number;
-		DesiredCapacity?: number;
-		DefaultCooldown?: number;
-		AvailabilityZones?: Array<string>;
-		LoadBalancerNames?: Array<string>;
-		TargetGroupARNs?: Array<string>;
-		HealthCheckType?: string;
-		HealthCheckGracePeriod?: number;
-		PlacementGroup?: string;
-		VPCZoneIdentifier?: string;
-		TerminationPolicies?: Array<string>;
-		NewInstancesProtectedFromScaleIn?: boolean;
-		LifecycleHookSpecificationList?: Array<LifecycleHookSpecification>;
-		Tags?: Array<Tag>;
-		ServiceLinkedRoleARN?: string;
-		MaxInstanceLifetime?: number;
+		DesiredCapacity?: number | null;
+		DefaultCooldown?: number | null;
+		AvailabilityZones?: Array<string> | null;
+		LoadBalancerNames?: Array<string> | null;
+		TargetGroupARNs?: Array<string> | null;
+		HealthCheckType?: string | null;
+		HealthCheckGracePeriod?: number | null;
+		PlacementGroup?: string | null;
+		VPCZoneIdentifier?: string | null;
+		TerminationPolicies?: Array<string> | null;
+		NewInstancesProtectedFromScaleIn?: boolean | null;
+		LifecycleHookSpecificationList?: Array<LifecycleHookSpecification> | null;
+		Tags?: Array<Tag> | null;
+		ServiceLinkedRoleARN?: string | null;
+		MaxInstanceLifetime?: number | null;
 	}
 
 	export interface CreateLaunchConfigurationType {
 		LaunchConfigurationName: string;
-		ImageId?: string;
-		KeyName?: string;
-		SecurityGroups?: Array<string>;
-		ClassicLinkVPCId?: string;
-		ClassicLinkVPCSecurityGroups?: Array<string>;
-		UserData?: string;
-		InstanceId?: string;
-		InstanceType?: string;
-		KernelId?: string;
-		RamdiskId?: string;
-		BlockDeviceMappings?: Array<BlockDeviceMapping>;
+		ImageId?: string | null;
+		KeyName?: string | null;
+		SecurityGroups?: Array<string> | null;
+		ClassicLinkVPCId?: string | null;
+		ClassicLinkVPCSecurityGroups?: Array<string> | null;
+		UserData?: string | null;
+		InstanceId?: string | null;
+		InstanceType?: string | null;
+		KernelId?: string | null;
+		RamdiskId?: string | null;
+		BlockDeviceMappings?: Array<BlockDeviceMapping> | null;
 
 		/** Describes whether detailed monitoring is enabled for the Auto Scaling instances. */
-		InstanceMonitoring?: InstanceMonitoring;
-		SpotPrice?: string;
-		IamInstanceProfile?: string;
-		EbsOptimized?: boolean;
-		AssociatePublicIpAddress?: boolean;
-		PlacementTenancy?: string;
+		InstanceMonitoring?: InstanceMonitoring | null;
+		SpotPrice?: string | null;
+		IamInstanceProfile?: string | null;
+		EbsOptimized?: boolean | null;
+		AssociatePublicIpAddress?: boolean | null;
+		PlacementTenancy?: string | null;
 	}
 
 	export interface CreateOrUpdateTagsType {
@@ -683,7 +683,7 @@ export namespace MyNS {
 
 	export interface DeleteAutoScalingGroupType {
 		AutoScalingGroupName: string;
-		ForceDelete?: boolean;
+		ForceDelete?: boolean | null;
 	}
 
 	export interface DeleteLifecycleHookType {
@@ -697,7 +697,7 @@ export namespace MyNS {
 	}
 
 	export interface DeletePolicyType {
-		AutoScalingGroupName?: string;
+		AutoScalingGroupName?: string | null;
 		PolicyName: string;
 	}
 
@@ -711,66 +711,66 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAutoScalingInstancesType {
-		InstanceIds?: Array<string>;
-		MaxRecords?: number;
-		NextToken?: string;
+		InstanceIds?: Array<string> | null;
+		MaxRecords?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeLifecycleHooksType {
 		AutoScalingGroupName: string;
-		LifecycleHookNames?: Array<string>;
+		LifecycleHookNames?: Array<string> | null;
 	}
 
 	export interface DescribeLoadBalancerTargetGroupsRequest {
 		AutoScalingGroupName: string;
-		NextToken?: string;
-		MaxRecords?: number;
+		NextToken?: string | null;
+		MaxRecords?: number | null;
 	}
 
 	export interface DescribeLoadBalancersRequest {
 		AutoScalingGroupName: string;
-		NextToken?: string;
-		MaxRecords?: number;
+		NextToken?: string | null;
+		MaxRecords?: number | null;
 	}
 
 	export interface DescribeNotificationConfigurationsType {
-		AutoScalingGroupNames?: Array<string>;
-		NextToken?: string;
-		MaxRecords?: number;
+		AutoScalingGroupNames?: Array<string> | null;
+		NextToken?: string | null;
+		MaxRecords?: number | null;
 	}
 
 	export interface DescribePoliciesType {
-		AutoScalingGroupName?: string;
-		PolicyNames?: Array<string>;
-		PolicyTypes?: Array<string>;
-		NextToken?: string;
-		MaxRecords?: number;
+		AutoScalingGroupName?: string | null;
+		PolicyNames?: Array<string> | null;
+		PolicyTypes?: Array<string> | null;
+		NextToken?: string | null;
+		MaxRecords?: number | null;
 	}
 
 	export interface DescribeScalingActivitiesType {
-		ActivityIds?: Array<string>;
-		AutoScalingGroupName?: string;
-		MaxRecords?: number;
-		NextToken?: string;
+		ActivityIds?: Array<string> | null;
+		AutoScalingGroupName?: string | null;
+		MaxRecords?: number | null;
+		NextToken?: string | null;
 	}
 
 	export interface DescribeScheduledActionsType {
-		AutoScalingGroupName?: string;
-		ScheduledActionNames?: Array<string>;
-		StartTime?: Date;
-		EndTime?: Date;
-		NextToken?: string;
-		MaxRecords?: number;
+		AutoScalingGroupName?: string | null;
+		ScheduledActionNames?: Array<string> | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		NextToken?: string | null;
+		MaxRecords?: number | null;
 	}
 
 	export interface DescribeTagsType {
-		Filters?: Array<Filter>;
-		NextToken?: string;
-		MaxRecords?: number;
+		Filters?: Array<Filter> | null;
+		NextToken?: string | null;
+		MaxRecords?: number | null;
 	}
 
 	export interface DetachInstancesQuery {
-		InstanceIds?: Array<string>;
+		InstanceIds?: Array<string> | null;
 		AutoScalingGroupName: string;
 		ShouldDecrementDesiredCapacity: boolean;
 	}
@@ -787,31 +787,31 @@ export namespace MyNS {
 
 	export interface DisableMetricsCollectionQuery {
 		AutoScalingGroupName: string;
-		Metrics?: Array<string>;
+		Metrics?: Array<string> | null;
 	}
 
 	export interface EnableMetricsCollectionQuery {
 		AutoScalingGroupName: string;
-		Metrics?: Array<string>;
+		Metrics?: Array<string> | null;
 		Granularity: string;
 	}
 
 	export interface EnterStandbyQuery {
-		InstanceIds?: Array<string>;
+		InstanceIds?: Array<string> | null;
 		AutoScalingGroupName: string;
 		ShouldDecrementDesiredCapacity: boolean;
 	}
 
 	export interface ExecutePolicyType {
-		AutoScalingGroupName?: string;
+		AutoScalingGroupName?: string | null;
 		PolicyName: string;
-		HonorCooldown?: boolean;
-		MetricValue?: number;
-		BreachThreshold?: number;
+		HonorCooldown?: boolean | null;
+		MetricValue?: number | null;
+		BreachThreshold?: number | null;
 	}
 
 	export interface ExitStandbyQuery {
-		InstanceIds?: Array<string>;
+		InstanceIds?: Array<string> | null;
 		AutoScalingGroupName: string;
 	}
 
@@ -822,9 +822,9 @@ export namespace MyNS {
 	}
 
 	export interface LaunchConfigurationNamesType {
-		LaunchConfigurationNames?: Array<string>;
-		NextToken?: string;
-		MaxRecords?: number;
+		LaunchConfigurationNames?: Array<string> | null;
+		NextToken?: string | null;
+		MaxRecords?: number | null;
 	}
 
 	export enum MetricType { ASGAverageCPUUtilization = 0, ASGAverageNetworkIn = 1, ASGAverageNetworkOut = 2, ALBRequestCountPerTarget = 3 }
@@ -832,12 +832,12 @@ export namespace MyNS {
 	export interface PutLifecycleHookType {
 		LifecycleHookName: string;
 		AutoScalingGroupName: string;
-		LifecycleTransition?: string;
-		RoleARN?: string;
-		NotificationTargetARN?: string;
-		NotificationMetadata?: string;
-		HeartbeatTimeout?: number;
-		DefaultResult?: string;
+		LifecycleTransition?: string | null;
+		RoleARN?: string | null;
+		NotificationTargetARN?: string | null;
+		NotificationMetadata?: string | null;
+		HeartbeatTimeout?: number | null;
+		DefaultResult?: string | null;
 	}
 
 	export interface PutNotificationConfigurationType {
@@ -849,55 +849,55 @@ export namespace MyNS {
 	export interface PutScalingPolicyType {
 		AutoScalingGroupName: string;
 		PolicyName: string;
-		PolicyType?: string;
-		AdjustmentType?: string;
-		MinAdjustmentStep?: number;
-		MinAdjustmentMagnitude?: number;
-		ScalingAdjustment?: number;
-		Cooldown?: number;
-		MetricAggregationType?: string;
-		StepAdjustments?: Array<StepAdjustment>;
-		EstimatedInstanceWarmup?: number;
+		PolicyType?: string | null;
+		AdjustmentType?: string | null;
+		MinAdjustmentStep?: number | null;
+		MinAdjustmentMagnitude?: number | null;
+		ScalingAdjustment?: number | null;
+		Cooldown?: number | null;
+		MetricAggregationType?: string | null;
+		StepAdjustments?: Array<StepAdjustment> | null;
+		EstimatedInstanceWarmup?: number | null;
 
 		/** Represents a target tracking scaling policy configuration to use with Amazon EC2 Auto Scaling. */
-		TargetTrackingConfiguration?: TargetTrackingConfiguration;
-		Enabled?: boolean;
+		TargetTrackingConfiguration?: TargetTrackingConfiguration | null;
+		Enabled?: boolean | null;
 	}
 
 	export interface PutScheduledUpdateGroupActionType {
 		AutoScalingGroupName: string;
 		ScheduledActionName: string;
-		Time?: Date;
-		StartTime?: Date;
-		EndTime?: Date;
-		Recurrence?: string;
-		MinSize?: number;
-		MaxSize?: number;
-		DesiredCapacity?: number;
+		Time?: Date | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		Recurrence?: string | null;
+		MinSize?: number | null;
+		MaxSize?: number | null;
+		DesiredCapacity?: number | null;
 	}
 
 	export interface RecordLifecycleActionHeartbeatType {
 		LifecycleHookName: string;
 		AutoScalingGroupName: string;
-		LifecycleActionToken?: string;
-		InstanceId?: string;
+		LifecycleActionToken?: string | null;
+		InstanceId?: string | null;
 	}
 
 	export interface ScalingProcessQuery {
 		AutoScalingGroupName: string;
-		ScalingProcesses?: Array<string>;
+		ScalingProcesses?: Array<string> | null;
 	}
 
 	export interface SetDesiredCapacityType {
 		AutoScalingGroupName: string;
 		DesiredCapacity: number;
-		HonorCooldown?: boolean;
+		HonorCooldown?: boolean | null;
 	}
 
 	export interface SetInstanceHealthQuery {
 		InstanceId: string;
 		HealthStatus: string;
-		ShouldRespectGracePeriod?: boolean;
+		ShouldRespectGracePeriod?: boolean | null;
 	}
 
 	export interface SetInstanceProtectionQuery {
@@ -913,26 +913,26 @@ export namespace MyNS {
 
 	export interface UpdateAutoScalingGroupType {
 		AutoScalingGroupName: string;
-		LaunchConfigurationName?: string;
+		LaunchConfigurationName?: string | null;
 
 		/** <p>Describes the Amazon EC2 launch template and the launch template version that can be used by an Auto Scaling group to configure Amazon EC2 instances.</p> <p>The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> */
-		LaunchTemplate?: LaunchTemplateSpecification;
+		LaunchTemplate?: LaunchTemplateSpecification | null;
 
 		/** <p>Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling Groups with Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You can create a mixed instances policy for a new Auto Scaling group, or you can create it for an existing group by updating the group to specify <code>MixedInstancesPolicy</code> as the top-level parameter instead of a launch configuration or template. For more information, see <a>CreateAutoScalingGroup</a> and <a>UpdateAutoScalingGroup</a>.</p> */
-		MixedInstancesPolicy?: MixedInstancesPolicy;
-		MinSize?: number;
-		MaxSize?: number;
-		DesiredCapacity?: number;
-		DefaultCooldown?: number;
-		AvailabilityZones?: Array<string>;
-		HealthCheckType?: string;
-		HealthCheckGracePeriod?: number;
-		PlacementGroup?: string;
-		VPCZoneIdentifier?: string;
-		TerminationPolicies?: Array<string>;
-		NewInstancesProtectedFromScaleIn?: boolean;
-		ServiceLinkedRoleARN?: string;
-		MaxInstanceLifetime?: number;
+		MixedInstancesPolicy?: MixedInstancesPolicy | null;
+		MinSize?: number | null;
+		MaxSize?: number | null;
+		DesiredCapacity?: number | null;
+		DefaultCooldown?: number | null;
+		AvailabilityZones?: Array<string> | null;
+		HealthCheckType?: string | null;
+		HealthCheckGracePeriod?: number | null;
+		PlacementGroup?: string | null;
+		VPCZoneIdentifier?: string | null;
+		TerminationPolicies?: Array<string> | null;
+		NewInstancesProtectedFromScaleIn?: boolean | null;
+		ServiceLinkedRoleARN?: string | null;
+		MaxInstanceLifetime?: number | null;
 	}
 
 	@Injectable()
@@ -947,7 +947,7 @@ export namespace MyNS {
 		 * @param {string} AutoScalingGroupName The name of the Auto Scaling group.
 		 * @return {void} Success
 		 */
-		GET_AttachInstances(InstanceIds: Array<string>, AutoScalingGroupName: string, Action: GET_AttachInstancesAction, Version: GET_AttachInstancesVersion): Observable<HttpResponse<string>> {
+		GET_AttachInstances(InstanceIds: Array<string> | null | undefined, AutoScalingGroupName: string, Action: GET_AttachInstancesAction, Version: GET_AttachInstancesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=AttachInstances?' + InstanceIds.map(z => `InstanceIds=${encodeURIComponent(z)}`).join('&') + '&AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1005,7 +1005,7 @@ export namespace MyNS {
 		 * @param {string} InstanceId The ID of the instance.
 		 * @return {void} Success
 		 */
-		GET_CompleteLifecycleAction(LifecycleHookName: string, AutoScalingGroupName: string, LifecycleActionToken: string, LifecycleActionResult: string, InstanceId: string, Action: GET_CompleteLifecycleActionAction, Version: GET_CompleteLifecycleActionVersion): Observable<HttpResponse<string>> {
+		GET_CompleteLifecycleAction(LifecycleHookName: string, AutoScalingGroupName: string, LifecycleActionToken: string | null | undefined, LifecycleActionResult: string, InstanceId: string | null | undefined, Action: GET_CompleteLifecycleActionAction, Version: GET_CompleteLifecycleActionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CompleteLifecycleAction?LifecycleHookName=' + (LifecycleHookName == null ? '' : encodeURIComponent(LifecycleHookName)) + '&AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&LifecycleActionToken=' + (LifecycleActionToken == null ? '' : encodeURIComponent(LifecycleActionToken)) + '&LifecycleActionResult=' + (LifecycleActionResult == null ? '' : encodeURIComponent(LifecycleActionResult)) + '&InstanceId=' + (InstanceId == null ? '' : encodeURIComponent(InstanceId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1036,7 +1036,7 @@ export namespace MyNS {
 		 * @param {number} MaxInstanceLifetime <p>The maximum amount of time, in seconds, that an instance can be in service. The default is null.</p> <p>This parameter is optional, but if you specify a value for it, you must specify a value of at least 604,800 seconds (7 days). To clear a previously set value, specify a new value of 0.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of 0.</p>
 		 * @return {void} Success
 		 */
-		GET_CreateAutoScalingGroup(AutoScalingGroupName: string, LaunchConfigurationName: string, LaunchTemplate: GET_CreateAutoScalingGroupLaunchTemplate, MixedInstancesPolicy: GET_CreateAutoScalingGroupMixedInstancesPolicy, InstanceId: string, MinSize: number, MaxSize: number, DesiredCapacity: number, DefaultCooldown: number, AvailabilityZones: Array<string>, LoadBalancerNames: Array<string>, TargetGroupARNs: Array<string>, HealthCheckType: string, HealthCheckGracePeriod: number, PlacementGroup: string, VPCZoneIdentifier: string, TerminationPolicies: Array<string>, NewInstancesProtectedFromScaleIn: boolean, LifecycleHookSpecificationList: Array<LifecycleHookSpecification>, Tags: Array<Tag>, ServiceLinkedRoleARN: string, MaxInstanceLifetime: number, Action: GET_CreateAutoScalingGroupAction, Version: GET_CreateAutoScalingGroupVersion): Observable<HttpResponse<string>> {
+		GET_CreateAutoScalingGroup(AutoScalingGroupName: string, LaunchConfigurationName: string | null | undefined, LaunchTemplate: GET_CreateAutoScalingGroupLaunchTemplate | null | undefined, MixedInstancesPolicy: GET_CreateAutoScalingGroupMixedInstancesPolicy | null | undefined, InstanceId: string | null | undefined, MinSize: number, MaxSize: number, DesiredCapacity: number | null | undefined, DefaultCooldown: number | null | undefined, AvailabilityZones: Array<string> | null | undefined, LoadBalancerNames: Array<string> | null | undefined, TargetGroupARNs: Array<string> | null | undefined, HealthCheckType: string | null | undefined, HealthCheckGracePeriod: number | null | undefined, PlacementGroup: string | null | undefined, VPCZoneIdentifier: string | null | undefined, TerminationPolicies: Array<string> | null | undefined, NewInstancesProtectedFromScaleIn: boolean | null | undefined, LifecycleHookSpecificationList: Array<LifecycleHookSpecification> | null | undefined, Tags: Array<Tag> | null | undefined, ServiceLinkedRoleARN: string | null | undefined, MaxInstanceLifetime: number | null | undefined, Action: GET_CreateAutoScalingGroupAction, Version: GET_CreateAutoScalingGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateAutoScalingGroup?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&LaunchConfigurationName=' + (LaunchConfigurationName == null ? '' : encodeURIComponent(LaunchConfigurationName)) + '&LaunchTemplate=' + LaunchTemplate + '&MixedInstancesPolicy=' + MixedInstancesPolicy + '&InstanceId=' + (InstanceId == null ? '' : encodeURIComponent(InstanceId)) + '&MinSize=' + MinSize + '&MaxSize=' + MaxSize + '&DesiredCapacity=' + DesiredCapacity + '&DefaultCooldown=' + DefaultCooldown + '&' + AvailabilityZones.map(z => `AvailabilityZones=${encodeURIComponent(z)}`).join('&') + '&' + LoadBalancerNames.map(z => `LoadBalancerNames=${encodeURIComponent(z)}`).join('&') + '&' + TargetGroupARNs.map(z => `TargetGroupARNs=${encodeURIComponent(z)}`).join('&') + '&HealthCheckType=' + (HealthCheckType == null ? '' : encodeURIComponent(HealthCheckType)) + '&HealthCheckGracePeriod=' + HealthCheckGracePeriod + '&PlacementGroup=' + (PlacementGroup == null ? '' : encodeURIComponent(PlacementGroup)) + '&VPCZoneIdentifier=' + (VPCZoneIdentifier == null ? '' : encodeURIComponent(VPCZoneIdentifier)) + '&' + TerminationPolicies.map(z => `TerminationPolicies=${encodeURIComponent(z)}`).join('&') + '&NewInstancesProtectedFromScaleIn=' + NewInstancesProtectedFromScaleIn + '&' + LifecycleHookSpecificationList.map(z => `LifecycleHookSpecificationList=${z}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&ServiceLinkedRoleARN=' + (ServiceLinkedRoleARN == null ? '' : encodeURIComponent(ServiceLinkedRoleARN)) + '&MaxInstanceLifetime=' + MaxInstanceLifetime + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1063,7 +1063,7 @@ export namespace MyNS {
 		 * @param {string} PlacementTenancy <p>The tenancy of the instance. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC.</p> <p>To launch dedicated instances into a shared tenancy VPC (a VPC with the instance placement tenancy attribute set to <code>default</code>), you must set the value of this parameter to <code>dedicated</code>.</p> <p>If you specify <code>PlacementTenancy</code>, you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
 		 * @return {void} Success
 		 */
-		GET_CreateLaunchConfiguration(LaunchConfigurationName: string, ImageId: string, KeyName: string, SecurityGroups: Array<string>, ClassicLinkVPCId: string, ClassicLinkVPCSecurityGroups: Array<string>, UserData: string, InstanceId: string, InstanceType: string, KernelId: string, RamdiskId: string, BlockDeviceMappings: Array<BlockDeviceMapping>, InstanceMonitoring: GET_CreateLaunchConfigurationInstanceMonitoring, SpotPrice: string, IamInstanceProfile: string, EbsOptimized: boolean, AssociatePublicIpAddress: boolean, PlacementTenancy: string, Action: GET_CreateLaunchConfigurationAction, Version: GET_CreateLaunchConfigurationVersion): Observable<HttpResponse<string>> {
+		GET_CreateLaunchConfiguration(LaunchConfigurationName: string, ImageId: string | null | undefined, KeyName: string | null | undefined, SecurityGroups: Array<string> | null | undefined, ClassicLinkVPCId: string | null | undefined, ClassicLinkVPCSecurityGroups: Array<string> | null | undefined, UserData: string | null | undefined, InstanceId: string | null | undefined, InstanceType: string | null | undefined, KernelId: string | null | undefined, RamdiskId: string | null | undefined, BlockDeviceMappings: Array<BlockDeviceMapping> | null | undefined, InstanceMonitoring: GET_CreateLaunchConfigurationInstanceMonitoring | null | undefined, SpotPrice: string | null | undefined, IamInstanceProfile: string | null | undefined, EbsOptimized: boolean | null | undefined, AssociatePublicIpAddress: boolean | null | undefined, PlacementTenancy: string | null | undefined, Action: GET_CreateLaunchConfigurationAction, Version: GET_CreateLaunchConfigurationVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateLaunchConfiguration?LaunchConfigurationName=' + (LaunchConfigurationName == null ? '' : encodeURIComponent(LaunchConfigurationName)) + '&ImageId=' + (ImageId == null ? '' : encodeURIComponent(ImageId)) + '&KeyName=' + (KeyName == null ? '' : encodeURIComponent(KeyName)) + '&' + SecurityGroups.map(z => `SecurityGroups=${encodeURIComponent(z)}`).join('&') + '&ClassicLinkVPCId=' + (ClassicLinkVPCId == null ? '' : encodeURIComponent(ClassicLinkVPCId)) + '&' + ClassicLinkVPCSecurityGroups.map(z => `ClassicLinkVPCSecurityGroups=${encodeURIComponent(z)}`).join('&') + '&UserData=' + (UserData == null ? '' : encodeURIComponent(UserData)) + '&InstanceId=' + (InstanceId == null ? '' : encodeURIComponent(InstanceId)) + '&InstanceType=' + (InstanceType == null ? '' : encodeURIComponent(InstanceType)) + '&KernelId=' + (KernelId == null ? '' : encodeURIComponent(KernelId)) + '&RamdiskId=' + (RamdiskId == null ? '' : encodeURIComponent(RamdiskId)) + '&' + BlockDeviceMappings.map(z => `BlockDeviceMappings=${z}`).join('&') + '&InstanceMonitoring=' + InstanceMonitoring + '&SpotPrice=' + (SpotPrice == null ? '' : encodeURIComponent(SpotPrice)) + '&IamInstanceProfile=' + (IamInstanceProfile == null ? '' : encodeURIComponent(IamInstanceProfile)) + '&EbsOptimized=' + EbsOptimized + '&AssociatePublicIpAddress=' + AssociatePublicIpAddress + '&PlacementTenancy=' + (PlacementTenancy == null ? '' : encodeURIComponent(PlacementTenancy)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1084,7 +1084,7 @@ export namespace MyNS {
 		 * @param {boolean} ForceDelete Specifies that the group is to be deleted along with all instances associated with the group, without waiting for all instances to be terminated. This parameter also deletes any lifecycle actions associated with the group.
 		 * @return {void} Success
 		 */
-		GET_DeleteAutoScalingGroup(AutoScalingGroupName: string, ForceDelete: boolean, Action: GET_DeleteAutoScalingGroupAction, Version: GET_DeleteAutoScalingGroupVersion): Observable<HttpResponse<string>> {
+		GET_DeleteAutoScalingGroup(AutoScalingGroupName: string, ForceDelete: boolean | null | undefined, Action: GET_DeleteAutoScalingGroupAction, Version: GET_DeleteAutoScalingGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeleteAutoScalingGroup?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&ForceDelete=' + ForceDelete + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1127,7 +1127,7 @@ export namespace MyNS {
 		 * @param {string} PolicyName The name or Amazon Resource Name (ARN) of the policy.
 		 * @return {void} Success
 		 */
-		GET_DeletePolicy(AutoScalingGroupName: string, PolicyName: string, Action: GET_DeletePolicyAction, Version: GET_DeletePolicyVersion): Observable<HttpResponse<string>> {
+		GET_DeletePolicy(AutoScalingGroupName: string | null | undefined, PolicyName: string, Action: GET_DeletePolicyAction, Version: GET_DeletePolicyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeletePolicy?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&PolicyName=' + (PolicyName == null ? '' : encodeURIComponent(PolicyName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1196,7 +1196,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeAutoScalingGroups(AutoScalingGroupNames: Array<string>, NextToken: string, MaxRecords: number, Action: GET_DescribeAutoScalingGroupsAction, Version: GET_DescribeAutoScalingGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeAutoScalingGroups(AutoScalingGroupNames: Array<string> | null | undefined, NextToken: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeAutoScalingGroupsAction, Version: GET_DescribeAutoScalingGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeAutoScalingGroups?' + AutoScalingGroupNames.map(z => `AutoScalingGroupNames=${encodeURIComponent(z)}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1208,7 +1208,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of items to return. (You received this token from a previous call.)
 		 * @return {void} Success
 		 */
-		GET_DescribeAutoScalingInstances(InstanceIds: Array<string>, MaxRecords: number, NextToken: string, Action: GET_DescribeAutoScalingInstancesAction, Version: GET_DescribeAutoScalingInstancesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeAutoScalingInstances(InstanceIds: Array<string> | null | undefined, MaxRecords: number | null | undefined, NextToken: string | null | undefined, Action: GET_DescribeAutoScalingInstancesAction, Version: GET_DescribeAutoScalingInstancesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeAutoScalingInstances?' + InstanceIds.map(z => `InstanceIds=${encodeURIComponent(z)}`).join('&') + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1238,7 +1238,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeLaunchConfigurations(LaunchConfigurationNames: Array<string>, NextToken: string, MaxRecords: number, Action: GET_DescribeLaunchConfigurationsAction, Version: GET_DescribeLaunchConfigurationsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeLaunchConfigurations(LaunchConfigurationNames: Array<string> | null | undefined, NextToken: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeLaunchConfigurationsAction, Version: GET_DescribeLaunchConfigurationsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeLaunchConfigurations?' + LaunchConfigurationNames.map(z => `LaunchConfigurationNames=${encodeURIComponent(z)}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1267,7 +1267,7 @@ export namespace MyNS {
 		 * @param {Array<string>} LifecycleHookNames The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle hooks are described.
 		 * @return {void} Success
 		 */
-		GET_DescribeLifecycleHooks(AutoScalingGroupName: string, LifecycleHookNames: Array<string>, Action: GET_DescribeLifecycleHooksAction, Version: GET_DescribeLifecycleHooksVersion): Observable<HttpResponse<string>> {
+		GET_DescribeLifecycleHooks(AutoScalingGroupName: string, LifecycleHookNames: Array<string> | null | undefined, Action: GET_DescribeLifecycleHooksAction, Version: GET_DescribeLifecycleHooksVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeLifecycleHooks?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&' + LifecycleHookNames.map(z => `LifecycleHookNames=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1279,7 +1279,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeLoadBalancerTargetGroups(AutoScalingGroupName: string, NextToken: string, MaxRecords: number, Action: GET_DescribeLoadBalancerTargetGroupsAction, Version: GET_DescribeLoadBalancerTargetGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeLoadBalancerTargetGroups(AutoScalingGroupName: string, NextToken: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeLoadBalancerTargetGroupsAction, Version: GET_DescribeLoadBalancerTargetGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeLoadBalancerTargetGroups?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1291,7 +1291,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeLoadBalancers(AutoScalingGroupName: string, NextToken: string, MaxRecords: number, Action: GET_DescribeLoadBalancersAction, Version: GET_DescribeLoadBalancersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeLoadBalancers(AutoScalingGroupName: string, NextToken: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeLoadBalancersAction, Version: GET_DescribeLoadBalancersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeLoadBalancers?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1321,7 +1321,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeNotificationConfigurations(AutoScalingGroupNames: Array<string>, NextToken: string, MaxRecords: number, Action: GET_DescribeNotificationConfigurationsAction, Version: GET_DescribeNotificationConfigurationsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeNotificationConfigurations(AutoScalingGroupNames: Array<string> | null | undefined, NextToken: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeNotificationConfigurationsAction, Version: GET_DescribeNotificationConfigurationsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeNotificationConfigurations?' + AutoScalingGroupNames.map(z => `AutoScalingGroupNames=${encodeURIComponent(z)}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1335,7 +1335,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords The maximum number of items to be returned with each call. The default value is <code>50</code> and the maximum value is <code>100</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribePolicies(AutoScalingGroupName: string, PolicyNames: Array<string>, PolicyTypes: Array<string>, NextToken: string, MaxRecords: number, Action: GET_DescribePoliciesAction, Version: GET_DescribePoliciesVersion): Observable<HttpResponse<string>> {
+		GET_DescribePolicies(AutoScalingGroupName: string | null | undefined, PolicyNames: Array<string> | null | undefined, PolicyTypes: Array<string> | null | undefined, NextToken: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribePoliciesAction, Version: GET_DescribePoliciesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribePolicies?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&' + PolicyNames.map(z => `PolicyNames=${encodeURIComponent(z)}`).join('&') + '&' + PolicyTypes.map(z => `PolicyTypes=${encodeURIComponent(z)}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1348,7 +1348,7 @@ export namespace MyNS {
 		 * @param {string} NextToken The token for the next set of items to return. (You received this token from a previous call.)
 		 * @return {void} Success
 		 */
-		GET_DescribeScalingActivities(ActivityIds: Array<string>, AutoScalingGroupName: string, MaxRecords: number, NextToken: string, Action: GET_DescribeScalingActivitiesAction, Version: GET_DescribeScalingActivitiesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeScalingActivities(ActivityIds: Array<string> | null | undefined, AutoScalingGroupName: string | null | undefined, MaxRecords: number | null | undefined, NextToken: string | null | undefined, Action: GET_DescribeScalingActivitiesAction, Version: GET_DescribeScalingActivitiesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeScalingActivities?' + ActivityIds.map(z => `ActivityIds=${encodeURIComponent(z)}`).join('&') + '&AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1381,7 +1381,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeScheduledActions(AutoScalingGroupName: string, ScheduledActionNames: Array<string>, StartTime: Date, EndTime: Date, NextToken: string, MaxRecords: number, Action: GET_DescribeScheduledActionsAction, Version: GET_DescribeScheduledActionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeScheduledActions(AutoScalingGroupName: string | null | undefined, ScheduledActionNames: Array<string> | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, NextToken: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeScheduledActionsAction, Version: GET_DescribeScheduledActionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeScheduledActions?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&' + ScheduledActionNames.map(z => `ScheduledActionNames=${encodeURIComponent(z)}`).join('&') + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1393,7 +1393,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeTags(Filters: Array<Filter>, NextToken: string, MaxRecords: number, Action: GET_DescribeTagsAction, Version: GET_DescribeTagsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeTags(Filters: Array<Filter> | null | undefined, NextToken: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeTagsAction, Version: GET_DescribeTagsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeTags?' + Filters.map(z => `Filters=${z}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1423,7 +1423,7 @@ export namespace MyNS {
 		 * @param {boolean} ShouldDecrementDesiredCapacity Indicates whether the Auto Scaling group decrements the desired capacity value by the number of instances detached.
 		 * @return {void} Success
 		 */
-		GET_DetachInstances(InstanceIds: Array<string>, AutoScalingGroupName: string, ShouldDecrementDesiredCapacity: boolean, Action: GET_DetachInstancesAction, Version: GET_DetachInstancesVersion): Observable<HttpResponse<string>> {
+		GET_DetachInstances(InstanceIds: Array<string> | null | undefined, AutoScalingGroupName: string, ShouldDecrementDesiredCapacity: boolean, Action: GET_DetachInstancesAction, Version: GET_DetachInstancesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DetachInstances?' + InstanceIds.map(z => `InstanceIds=${encodeURIComponent(z)}`).join('&') + '&AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&ShouldDecrementDesiredCapacity=' + ShouldDecrementDesiredCapacity + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1456,7 +1456,7 @@ export namespace MyNS {
 		 * @param {Array<string>} Metrics <p>Specifies one or more of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code> </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p> <code>GroupPendingInstances</code> </p> </li> <li> <p> <code>GroupStandbyInstances</code> </p> </li> <li> <p> <code>GroupTerminatingInstances</code> </p> </li> <li> <p> <code>GroupTotalInstances</code> </p> </li> <li> <p> <code>GroupInServiceCapacity</code> </p> </li> <li> <p> <code>GroupPendingCapacity</code> </p> </li> <li> <p> <code>GroupStandbyCapacity</code> </p> </li> <li> <p> <code>GroupTerminatingCapacity</code> </p> </li> <li> <p> <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter, all metrics are disabled. </p>
 		 * @return {void} Success
 		 */
-		GET_DisableMetricsCollection(AutoScalingGroupName: string, Metrics: Array<string>, Action: GET_DisableMetricsCollectionAction, Version: GET_DisableMetricsCollectionVersion): Observable<HttpResponse<string>> {
+		GET_DisableMetricsCollection(AutoScalingGroupName: string, Metrics: Array<string> | null | undefined, Action: GET_DisableMetricsCollectionAction, Version: GET_DisableMetricsCollectionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DisableMetricsCollection?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&' + Metrics.map(z => `Metrics=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1468,7 +1468,7 @@ export namespace MyNS {
 		 * @param {string} Granularity The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.
 		 * @return {void} Success
 		 */
-		GET_EnableMetricsCollection(AutoScalingGroupName: string, Metrics: Array<string>, Granularity: string, Action: GET_EnableMetricsCollectionAction, Version: GET_EnableMetricsCollectionVersion): Observable<HttpResponse<string>> {
+		GET_EnableMetricsCollection(AutoScalingGroupName: string, Metrics: Array<string> | null | undefined, Granularity: string, Action: GET_EnableMetricsCollectionAction, Version: GET_EnableMetricsCollectionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=EnableMetricsCollection?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&' + Metrics.map(z => `Metrics=${encodeURIComponent(z)}`).join('&') + '&Granularity=' + (Granularity == null ? '' : encodeURIComponent(Granularity)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1480,7 +1480,7 @@ export namespace MyNS {
 		 * @param {boolean} ShouldDecrementDesiredCapacity Indicates whether to decrement the desired capacity of the Auto Scaling group by the number of instances moved to <code>Standby</code> mode.
 		 * @return {void} Success
 		 */
-		GET_EnterStandby(InstanceIds: Array<string>, AutoScalingGroupName: string, ShouldDecrementDesiredCapacity: boolean, Action: GET_EnterStandbyAction, Version: GET_EnterStandbyVersion): Observable<HttpResponse<string>> {
+		GET_EnterStandby(InstanceIds: Array<string> | null | undefined, AutoScalingGroupName: string, ShouldDecrementDesiredCapacity: boolean, Action: GET_EnterStandbyAction, Version: GET_EnterStandbyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=EnterStandby?' + InstanceIds.map(z => `InstanceIds=${encodeURIComponent(z)}`).join('&') + '&AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&ShouldDecrementDesiredCapacity=' + ShouldDecrementDesiredCapacity + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1494,7 +1494,7 @@ export namespace MyNS {
 		 * @param {number} BreachThreshold <p>The breach threshold for the alarm.</p> <p>Conditional: This parameter is required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
 		 * @return {void} Success
 		 */
-		GET_ExecutePolicy(AutoScalingGroupName: string, PolicyName: string, HonorCooldown: boolean, MetricValue: number, BreachThreshold: number, Action: GET_ExecutePolicyAction, Version: GET_ExecutePolicyVersion): Observable<HttpResponse<string>> {
+		GET_ExecutePolicy(AutoScalingGroupName: string | null | undefined, PolicyName: string, HonorCooldown: boolean | null | undefined, MetricValue: number | null | undefined, BreachThreshold: number | null | undefined, Action: GET_ExecutePolicyAction, Version: GET_ExecutePolicyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ExecutePolicy?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&PolicyName=' + (PolicyName == null ? '' : encodeURIComponent(PolicyName)) + '&HonorCooldown=' + HonorCooldown + '&MetricValue=' + MetricValue + '&BreachThreshold=' + BreachThreshold + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1505,7 +1505,7 @@ export namespace MyNS {
 		 * @param {string} AutoScalingGroupName The name of the Auto Scaling group.
 		 * @return {void} Success
 		 */
-		GET_ExitStandby(InstanceIds: Array<string>, AutoScalingGroupName: string, Action: GET_ExitStandbyAction, Version: GET_ExitStandbyVersion): Observable<HttpResponse<string>> {
+		GET_ExitStandby(InstanceIds: Array<string> | null | undefined, AutoScalingGroupName: string, Action: GET_ExitStandbyAction, Version: GET_ExitStandbyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ExitStandby?' + InstanceIds.map(z => `InstanceIds=${encodeURIComponent(z)}`).join('&') + '&AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1522,7 +1522,7 @@ export namespace MyNS {
 		 * @param {string} DefaultResult Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected failure occurs. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value is <code>ABANDON</code>.
 		 * @return {void} Success
 		 */
-		GET_PutLifecycleHook(LifecycleHookName: string, AutoScalingGroupName: string, LifecycleTransition: string, RoleARN: string, NotificationTargetARN: string, NotificationMetadata: string, HeartbeatTimeout: number, DefaultResult: string, Action: GET_PutLifecycleHookAction, Version: GET_PutLifecycleHookVersion): Observable<HttpResponse<string>> {
+		GET_PutLifecycleHook(LifecycleHookName: string, AutoScalingGroupName: string, LifecycleTransition: string | null | undefined, RoleARN: string | null | undefined, NotificationTargetARN: string | null | undefined, NotificationMetadata: string | null | undefined, HeartbeatTimeout: number | null | undefined, DefaultResult: string | null | undefined, Action: GET_PutLifecycleHookAction, Version: GET_PutLifecycleHookVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=PutLifecycleHook?LifecycleHookName=' + (LifecycleHookName == null ? '' : encodeURIComponent(LifecycleHookName)) + '&AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&LifecycleTransition=' + (LifecycleTransition == null ? '' : encodeURIComponent(LifecycleTransition)) + '&RoleARN=' + (RoleARN == null ? '' : encodeURIComponent(RoleARN)) + '&NotificationTargetARN=' + (NotificationTargetARN == null ? '' : encodeURIComponent(NotificationTargetARN)) + '&NotificationMetadata=' + (NotificationMetadata == null ? '' : encodeURIComponent(NotificationMetadata)) + '&HeartbeatTimeout=' + HeartbeatTimeout + '&DefaultResult=' + (DefaultResult == null ? '' : encodeURIComponent(DefaultResult)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1556,7 +1556,7 @@ export namespace MyNS {
 		 * @param {boolean} Enabled Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
 		 * @return {void} Success
 		 */
-		GET_PutScalingPolicy(AutoScalingGroupName: string, PolicyName: string, PolicyType: string, AdjustmentType: string, MinAdjustmentStep: number, MinAdjustmentMagnitude: number, ScalingAdjustment: number, Cooldown: number, MetricAggregationType: string, StepAdjustments: Array<StepAdjustment>, EstimatedInstanceWarmup: number, TargetTrackingConfiguration: GET_PutScalingPolicyTargetTrackingConfiguration, Enabled: boolean, Action: GET_PutScalingPolicyAction, Version: GET_PutScalingPolicyVersion): Observable<HttpResponse<string>> {
+		GET_PutScalingPolicy(AutoScalingGroupName: string, PolicyName: string, PolicyType: string | null | undefined, AdjustmentType: string | null | undefined, MinAdjustmentStep: number | null | undefined, MinAdjustmentMagnitude: number | null | undefined, ScalingAdjustment: number | null | undefined, Cooldown: number | null | undefined, MetricAggregationType: string | null | undefined, StepAdjustments: Array<StepAdjustment> | null | undefined, EstimatedInstanceWarmup: number | null | undefined, TargetTrackingConfiguration: GET_PutScalingPolicyTargetTrackingConfiguration | null | undefined, Enabled: boolean | null | undefined, Action: GET_PutScalingPolicyAction, Version: GET_PutScalingPolicyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=PutScalingPolicy?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&PolicyName=' + (PolicyName == null ? '' : encodeURIComponent(PolicyName)) + '&PolicyType=' + (PolicyType == null ? '' : encodeURIComponent(PolicyType)) + '&AdjustmentType=' + (AdjustmentType == null ? '' : encodeURIComponent(AdjustmentType)) + '&MinAdjustmentStep=' + MinAdjustmentStep + '&MinAdjustmentMagnitude=' + MinAdjustmentMagnitude + '&ScalingAdjustment=' + ScalingAdjustment + '&Cooldown=' + Cooldown + '&MetricAggregationType=' + (MetricAggregationType == null ? '' : encodeURIComponent(MetricAggregationType)) + '&' + StepAdjustments.map(z => `StepAdjustments=${z}`).join('&') + '&EstimatedInstanceWarmup=' + EstimatedInstanceWarmup + '&TargetTrackingConfiguration=' + TargetTrackingConfiguration + '&Enabled=' + Enabled + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1574,7 +1574,7 @@ export namespace MyNS {
 		 * @param {number} DesiredCapacity The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling conditions. 
 		 * @return {void} Success
 		 */
-		GET_PutScheduledUpdateGroupAction(AutoScalingGroupName: string, ScheduledActionName: string, Time: Date, StartTime: Date, EndTime: Date, Recurrence: string, MinSize: number, MaxSize: number, DesiredCapacity: number, Action: GET_PutScheduledUpdateGroupActionAction, Version: GET_PutScheduledUpdateGroupActionVersion): Observable<HttpResponse<string>> {
+		GET_PutScheduledUpdateGroupAction(AutoScalingGroupName: string, ScheduledActionName: string, Time: Date | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, Recurrence: string | null | undefined, MinSize: number | null | undefined, MaxSize: number | null | undefined, DesiredCapacity: number | null | undefined, Action: GET_PutScheduledUpdateGroupActionAction, Version: GET_PutScheduledUpdateGroupActionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=PutScheduledUpdateGroupAction?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&ScheduledActionName=' + (ScheduledActionName == null ? '' : encodeURIComponent(ScheduledActionName)) + '&Time=' + Time.toISOString() + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Recurrence=' + (Recurrence == null ? '' : encodeURIComponent(Recurrence)) + '&MinSize=' + MinSize + '&MaxSize=' + MaxSize + '&DesiredCapacity=' + DesiredCapacity + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1587,7 +1587,7 @@ export namespace MyNS {
 		 * @param {string} InstanceId The ID of the instance.
 		 * @return {void} Success
 		 */
-		GET_RecordLifecycleActionHeartbeat(LifecycleHookName: string, AutoScalingGroupName: string, LifecycleActionToken: string, InstanceId: string, Action: GET_RecordLifecycleActionHeartbeatAction, Version: GET_RecordLifecycleActionHeartbeatVersion): Observable<HttpResponse<string>> {
+		GET_RecordLifecycleActionHeartbeat(LifecycleHookName: string, AutoScalingGroupName: string, LifecycleActionToken: string | null | undefined, InstanceId: string | null | undefined, Action: GET_RecordLifecycleActionHeartbeatAction, Version: GET_RecordLifecycleActionHeartbeatVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RecordLifecycleActionHeartbeat?LifecycleHookName=' + (LifecycleHookName == null ? '' : encodeURIComponent(LifecycleHookName)) + '&AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&LifecycleActionToken=' + (LifecycleActionToken == null ? '' : encodeURIComponent(LifecycleActionToken)) + '&InstanceId=' + (InstanceId == null ? '' : encodeURIComponent(InstanceId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1598,7 +1598,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ScalingProcesses <p>One or more of the following processes. If you omit this parameter, all processes are specified.</p> <ul> <li> <p> <code>Launch</code> </p> </li> <li> <p> <code>Terminate</code> </p> </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code> </p> </li> <li> <p> <code>AZRebalance</code> </p> </li> <li> <p> <code>AlarmNotification</code> </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> <li> <p> <code>AddToLoadBalancer</code> </p> </li> </ul>
 		 * @return {void} Success
 		 */
-		GET_ResumeProcesses(AutoScalingGroupName: string, ScalingProcesses: Array<string>, Action: GET_ResumeProcessesAction, Version: GET_ResumeProcessesVersion): Observable<HttpResponse<string>> {
+		GET_ResumeProcesses(AutoScalingGroupName: string, ScalingProcesses: Array<string> | null | undefined, Action: GET_ResumeProcessesAction, Version: GET_ResumeProcessesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ResumeProcesses?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&' + ScalingProcesses.map(z => `ScalingProcesses=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1610,7 +1610,7 @@ export namespace MyNS {
 		 * @param {boolean} HonorCooldown Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor the cooldown period during manual scaling activities.
 		 * @return {void} Success
 		 */
-		GET_SetDesiredCapacity(AutoScalingGroupName: string, DesiredCapacity: number, HonorCooldown: boolean, Action: GET_SetDesiredCapacityAction, Version: GET_SetDesiredCapacityVersion): Observable<HttpResponse<string>> {
+		GET_SetDesiredCapacity(AutoScalingGroupName: string, DesiredCapacity: number, HonorCooldown: boolean | null | undefined, Action: GET_SetDesiredCapacityAction, Version: GET_SetDesiredCapacityVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SetDesiredCapacity?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&DesiredCapacity=' + DesiredCapacity + '&HonorCooldown=' + HonorCooldown + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1622,7 +1622,7 @@ export namespace MyNS {
 		 * @param {boolean} ShouldRespectGracePeriod <p>If the Auto Scaling group of the specified instance has a <code>HealthCheckGracePeriod</code> specified for the group, by default, this call respects the grace period. Set this to <code>False</code>, to have the call not respect the grace period associated with the group.</p> <p>For more information about the health check grace period, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
 		 * @return {void} Success
 		 */
-		GET_SetInstanceHealth(InstanceId: string, HealthStatus: string, ShouldRespectGracePeriod: boolean, Action: GET_SetInstanceHealthAction, Version: GET_SetInstanceHealthVersion): Observable<HttpResponse<string>> {
+		GET_SetInstanceHealth(InstanceId: string, HealthStatus: string, ShouldRespectGracePeriod: boolean | null | undefined, Action: GET_SetInstanceHealthAction, Version: GET_SetInstanceHealthVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SetInstanceHealth?InstanceId=' + (InstanceId == null ? '' : encodeURIComponent(InstanceId)) + '&HealthStatus=' + (HealthStatus == null ? '' : encodeURIComponent(HealthStatus)) + '&ShouldRespectGracePeriod=' + ShouldRespectGracePeriod + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1645,7 +1645,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ScalingProcesses <p>One or more of the following processes. If you omit this parameter, all processes are specified.</p> <ul> <li> <p> <code>Launch</code> </p> </li> <li> <p> <code>Terminate</code> </p> </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code> </p> </li> <li> <p> <code>AZRebalance</code> </p> </li> <li> <p> <code>AlarmNotification</code> </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> <li> <p> <code>AddToLoadBalancer</code> </p> </li> </ul>
 		 * @return {void} Success
 		 */
-		GET_SuspendProcesses(AutoScalingGroupName: string, ScalingProcesses: Array<string>, Action: GET_SuspendProcessesAction, Version: GET_SuspendProcessesVersion): Observable<HttpResponse<string>> {
+		GET_SuspendProcesses(AutoScalingGroupName: string, ScalingProcesses: Array<string> | null | undefined, Action: GET_SuspendProcessesAction, Version: GET_SuspendProcessesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SuspendProcesses?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&' + ScalingProcesses.map(z => `ScalingProcesses=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1682,7 +1682,7 @@ export namespace MyNS {
 		 * @param {number} MaxInstanceLifetime <p>The maximum amount of time, in seconds, that an instance can be in service. The default is null.</p> <p>This parameter is optional, but if you specify a value for it, you must specify a value of at least 604,800 seconds (7 days). To clear a previously set value, specify a new value of 0.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of 0.</p>
 		 * @return {void} Success
 		 */
-		GET_UpdateAutoScalingGroup(AutoScalingGroupName: string, LaunchConfigurationName: string, LaunchTemplate: GET_UpdateAutoScalingGroupLaunchTemplate, MixedInstancesPolicy: GET_UpdateAutoScalingGroupMixedInstancesPolicy, MinSize: number, MaxSize: number, DesiredCapacity: number, DefaultCooldown: number, AvailabilityZones: Array<string>, HealthCheckType: string, HealthCheckGracePeriod: number, PlacementGroup: string, VPCZoneIdentifier: string, TerminationPolicies: Array<string>, NewInstancesProtectedFromScaleIn: boolean, ServiceLinkedRoleARN: string, MaxInstanceLifetime: number, Action: GET_UpdateAutoScalingGroupAction, Version: GET_UpdateAutoScalingGroupVersion): Observable<HttpResponse<string>> {
+		GET_UpdateAutoScalingGroup(AutoScalingGroupName: string, LaunchConfigurationName: string | null | undefined, LaunchTemplate: GET_UpdateAutoScalingGroupLaunchTemplate | null | undefined, MixedInstancesPolicy: GET_UpdateAutoScalingGroupMixedInstancesPolicy | null | undefined, MinSize: number | null | undefined, MaxSize: number | null | undefined, DesiredCapacity: number | null | undefined, DefaultCooldown: number | null | undefined, AvailabilityZones: Array<string> | null | undefined, HealthCheckType: string | null | undefined, HealthCheckGracePeriod: number | null | undefined, PlacementGroup: string | null | undefined, VPCZoneIdentifier: string | null | undefined, TerminationPolicies: Array<string> | null | undefined, NewInstancesProtectedFromScaleIn: boolean | null | undefined, ServiceLinkedRoleARN: string | null | undefined, MaxInstanceLifetime: number | null | undefined, Action: GET_UpdateAutoScalingGroupAction, Version: GET_UpdateAutoScalingGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=UpdateAutoScalingGroup?AutoScalingGroupName=' + (AutoScalingGroupName == null ? '' : encodeURIComponent(AutoScalingGroupName)) + '&LaunchConfigurationName=' + (LaunchConfigurationName == null ? '' : encodeURIComponent(LaunchConfigurationName)) + '&LaunchTemplate=' + LaunchTemplate + '&MixedInstancesPolicy=' + MixedInstancesPolicy + '&MinSize=' + MinSize + '&MaxSize=' + MaxSize + '&DesiredCapacity=' + DesiredCapacity + '&DefaultCooldown=' + DefaultCooldown + '&' + AvailabilityZones.map(z => `AvailabilityZones=${encodeURIComponent(z)}`).join('&') + '&HealthCheckType=' + (HealthCheckType == null ? '' : encodeURIComponent(HealthCheckType)) + '&HealthCheckGracePeriod=' + HealthCheckGracePeriod + '&PlacementGroup=' + (PlacementGroup == null ? '' : encodeURIComponent(PlacementGroup)) + '&VPCZoneIdentifier=' + (VPCZoneIdentifier == null ? '' : encodeURIComponent(VPCZoneIdentifier)) + '&' + TerminationPolicies.map(z => `TerminationPolicies=${encodeURIComponent(z)}`).join('&') + '&NewInstancesProtectedFromScaleIn=' + NewInstancesProtectedFromScaleIn + '&ServiceLinkedRoleARN=' + (ServiceLinkedRoleARN == null ? '' : encodeURIComponent(ServiceLinkedRoleARN)) + '&MaxInstanceLifetime=' + MaxInstanceLifetime + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 	}
@@ -1724,18 +1724,18 @@ export namespace MyNS {
 	export enum POST_CompleteLifecycleActionVersion { _2011_01_01 = 0 }
 
 	export interface GET_CreateAutoScalingGroupLaunchTemplate {
-		LaunchTemplateId?: string;
-		LaunchTemplateName?: string;
-		Version?: string;
+		LaunchTemplateId?: string | null;
+		LaunchTemplateName?: string | null;
+		Version?: string | null;
 	}
 
 	export interface GET_CreateAutoScalingGroupMixedInstancesPolicy {
 
 		/** <p>Describes a launch template and overrides.</p> <p>The overrides are used to override the instance type specified by the launch template with multiple instance types that can be used to launch On-Demand Instances and Spot Instances.</p> <p>When you update the launch template or overrides, existing Amazon EC2 instances continue to run. When scale out occurs, Amazon EC2 Auto Scaling launches instances to match the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.</p> */
-		LaunchTemplate?: LaunchTemplate;
+		LaunchTemplate?: LaunchTemplate | null;
 
 		/** <p>Describes an instances distribution for an Auto Scaling group with <a>MixedInstancesPolicy</a>.</p> <p>The instances distribution specifies the distribution of On-Demand Instances and Spot Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group allocates instance types to fulfill On-Demand and Spot capacity.</p> <p>When you update <code>SpotAllocationStrategy</code>, <code>SpotInstancePools</code>, or <code>SpotMaxPrice</code>, this update action does not deploy any changes across the running Amazon EC2 instances in the group. Your existing Spot Instances continue to run as long as the maximum price for those instances is higher than the current Spot price. When scale out occurs, Amazon EC2 Auto Scaling launches instances based on the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.</p> */
-		InstancesDistribution?: InstancesDistribution;
+		InstancesDistribution?: InstancesDistribution | null;
 	}
 
 	export enum GET_CreateAutoScalingGroupAction { CreateAutoScalingGroup = 0 }
@@ -1745,7 +1745,7 @@ export namespace MyNS {
 	export enum POST_CreateAutoScalingGroupVersion { _2011_01_01 = 0 }
 
 	export interface GET_CreateLaunchConfigurationInstanceMonitoring {
-		Enabled?: boolean;
+		Enabled?: boolean | null;
 	}
 
 	export enum GET_CreateLaunchConfigurationAction { CreateLaunchConfiguration = 0 }
@@ -1973,12 +1973,12 @@ export namespace MyNS {
 	export interface GET_PutScalingPolicyTargetTrackingConfiguration {
 
 		/** Represents a predefined metric for a target tracking scaling policy to use with Amazon EC2 Auto Scaling. */
-		PredefinedMetricSpecification?: PredefinedMetricSpecification;
+		PredefinedMetricSpecification?: PredefinedMetricSpecification | null;
 
 		/** <p>Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Amazon EC2 Auto Scaling.</p> <p>To create your customized metric specification:</p> <ul> <li> <p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish Custom Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases.</p> </li> </ul> <p>For more information about CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a>.</p> */
-		CustomizedMetricSpecification?: CustomizedMetricSpecification;
+		CustomizedMetricSpecification?: CustomizedMetricSpecification | null;
 		TargetValue: number;
-		DisableScaleIn?: boolean;
+		DisableScaleIn?: boolean | null;
 	}
 
 	export enum GET_PutScalingPolicyAction { PutScalingPolicy = 0 }
@@ -2036,18 +2036,18 @@ export namespace MyNS {
 	export enum POST_TerminateInstanceInAutoScalingGroupVersion { _2011_01_01 = 0 }
 
 	export interface GET_UpdateAutoScalingGroupLaunchTemplate {
-		LaunchTemplateId?: string;
-		LaunchTemplateName?: string;
-		Version?: string;
+		LaunchTemplateId?: string | null;
+		LaunchTemplateName?: string | null;
+		Version?: string | null;
 	}
 
 	export interface GET_UpdateAutoScalingGroupMixedInstancesPolicy {
 
 		/** <p>Describes a launch template and overrides.</p> <p>The overrides are used to override the instance type specified by the launch template with multiple instance types that can be used to launch On-Demand Instances and Spot Instances.</p> <p>When you update the launch template or overrides, existing Amazon EC2 instances continue to run. When scale out occurs, Amazon EC2 Auto Scaling launches instances to match the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.</p> */
-		LaunchTemplate?: LaunchTemplate;
+		LaunchTemplate?: LaunchTemplate | null;
 
 		/** <p>Describes an instances distribution for an Auto Scaling group with <a>MixedInstancesPolicy</a>.</p> <p>The instances distribution specifies the distribution of On-Demand Instances and Spot Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group allocates instance types to fulfill On-Demand and Spot capacity.</p> <p>When you update <code>SpotAllocationStrategy</code>, <code>SpotInstancePools</code>, or <code>SpotMaxPrice</code>, this update action does not deploy any changes across the running Amazon EC2 instances in the group. Your existing Spot Instances continue to run as long as the maximum price for those instances is higher than the current Spot price. When scale out occurs, Amazon EC2 Auto Scaling launches instances based on the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.</p> */
-		InstancesDistribution?: InstancesDistribution;
+		InstancesDistribution?: InstancesDistribution | null;
 	}
 
 	export enum GET_UpdateAutoScalingGroupAction { UpdateAutoScalingGroup = 0 }

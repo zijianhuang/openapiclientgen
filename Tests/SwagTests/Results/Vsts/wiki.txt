@@ -942,14 +942,14 @@ namespace MyNS
 		public GitVersionDescriptor[] Versions { get; set; }
 	}
 	
-	public partial class Misc
+	public partial class MyClient
 	{
 		
 		private System.Net.Http.HttpClient client;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public MyClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -959,6 +959,68 @@ namespace MyNS
 
 			this.client = client;
 			this.jsonSerializerSettings = jsonSerializerSettings;
+		}
+		
+		/// <summary>
+		/// Gets all wikis in a project or collection.
+		/// Wikis_List {organization}/{project}/_apis/wiki/wikis
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<WikiV2[]> Wikis_ListAsync(string organization, string project, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<WikiV2[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Gets all wikis in a project or collection.
+		/// Wikis_List {organization}/{project}/_apis/wiki/wikis
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public WikiV2[] Wikis_List(string organization, string project, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<WikiV2[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
 		}
 		
 		/// <summary>
@@ -1026,16 +1088,17 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Gets all wikis in a project or collection.
-		/// Wikis_List {organization}/{project}/_apis/wiki/wikis
+		/// Gets the wiki corresponding to the wiki ID or wiki name provided.
+		/// Wikis_Get {organization}/{project}/_apis/wiki/wikis/{wikiIdentifier}
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="wikiIdentifier">Wiki ID or wiki name.</param>
 		/// <param name="project">Project ID or project name</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<WikiV2[]> Wikis_ListAsync(string organization, string project, string api_version)
+		public async Task<WikiV2> Wikis_GetAsync(string organization, string wikiIdentifier, string project, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1046,7 +1109,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WikiV2[]>(jsonReader);
+				return serializer.Deserialize<WikiV2>(jsonReader);
 				}
 			}
 			finally
@@ -1057,16 +1120,17 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Gets all wikis in a project or collection.
-		/// Wikis_List {organization}/{project}/_apis/wiki/wikis
+		/// Gets the wiki corresponding to the wiki ID or wiki name provided.
+		/// Wikis_Get {organization}/{project}/_apis/wiki/wikis/{wikiIdentifier}
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="wikiIdentifier">Wiki ID or wiki name.</param>
 		/// <param name="project">Project ID or project name</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public WikiV2[] Wikis_List(string organization, string project, string api_version)
+		public WikiV2 Wikis_Get(string organization, string wikiIdentifier, string project, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1077,7 +1141,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WikiV2[]>(jsonReader);
+				return serializer.Deserialize<WikiV2>(jsonReader);
 				}
 			}
 			finally
@@ -1132,70 +1196,6 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WikiV2>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Gets the wiki corresponding to the wiki ID or wiki name provided.
-		/// Wikis_Get {organization}/{project}/_apis/wiki/wikis/{wikiIdentifier}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="wikiIdentifier">Wiki ID or wiki name.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<WikiV2> Wikis_GetAsync(string organization, string wikiIdentifier, string project, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WikiV2>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Gets the wiki corresponding to the wiki ID or wiki name provided.
-		/// Wikis_Get {organization}/{project}/_apis/wiki/wikis/{wikiIdentifier}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="wikiIdentifier">Wiki ID or wiki name.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.2' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public WikiV2 Wikis_Get(string organization, string wikiIdentifier, string project, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
@@ -1370,6 +1370,82 @@ namespace MyNS
 		}
 		
 		/// <summary>
+		/// Gets metadata or content of the wiki page for the provided path. Content negotiation is done based on the `Accept` header sent in the request.
+		/// Pages_Get_Page {organization}/{project}/_apis/wiki/wikis/{wikiIdentifier}/pages
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="wikiIdentifier">Wiki ID or wiki name.</param>
+		/// <param name="path">Wiki page path.</param>
+		/// <param name="recursionLevel">Recursion level for subpages retrieval. Defaults to `None` (Optional).</param>
+		/// <param name="versionDescriptor_version">Version string identifier (name of tag/branch, SHA1 of commit)</param>
+		/// <param name="versionDescriptor_versionOptions">Version options - Specify additional modifiers to version (e.g Previous)</param>
+		/// <param name="versionDescriptor_versionType">Version type (branch, tag, or commit). Determines how Id is interpreted</param>
+		/// <param name="includeContent">True to include the content of the page in the response for Json content type. Defaults to false (Optional)</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public async Task<WikiPage> Pages_Get_PageAsync(string organization, string project, string wikiIdentifier, string path, Pages_Get_PageRecursionLevel recursionLevel, string versionDescriptor_version, GitVersionDescriptorVersionOptions versionDescriptor_versionOptions, GitVersionDescriptorVersionType versionDescriptor_versionType, bool includeContent, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages&path=" + (path==null? "" : Uri.EscapeDataString(path))+"&recursionLevel=" + recursionLevel+"&versionDescriptor.version=" + (versionDescriptor_version==null? "" : Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOptions=" + versionDescriptor_versionOptions+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<WikiPage>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Gets metadata or content of the wiki page for the provided path. Content negotiation is done based on the `Accept` header sent in the request.
+		/// Pages_Get_Page {organization}/{project}/_apis/wiki/wikis/{wikiIdentifier}/pages
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="project">Project ID or project name</param>
+		/// <param name="wikiIdentifier">Wiki ID or wiki name.</param>
+		/// <param name="path">Wiki page path.</param>
+		/// <param name="recursionLevel">Recursion level for subpages retrieval. Defaults to `None` (Optional).</param>
+		/// <param name="versionDescriptor_version">Version string identifier (name of tag/branch, SHA1 of commit)</param>
+		/// <param name="versionDescriptor_versionOptions">Version options - Specify additional modifiers to version (e.g Previous)</param>
+		/// <param name="versionDescriptor_versionType">Version type (branch, tag, or commit). Determines how Id is interpreted</param>
+		/// <param name="includeContent">True to include the content of the page in the response for Json content type. Defaults to false (Optional)</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
+		/// <returns>successful operation</returns>
+		public WikiPage Pages_Get_Page(string organization, string project, string wikiIdentifier, string path, Pages_Get_PageRecursionLevel recursionLevel, string versionDescriptor_version, GitVersionDescriptorVersionOptions versionDescriptor_versionOptions, GitVersionDescriptorVersionType versionDescriptor_versionType, bool includeContent, string api_version)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages&path=" + (path==null? "" : Uri.EscapeDataString(path))+"&recursionLevel=" + recursionLevel+"&versionDescriptor.version=" + (versionDescriptor_version==null? "" : Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOptions=" + versionDescriptor_versionOptions+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<WikiPage>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
 		/// Creates or edits a wiki page.
 		/// Pages_Create_Or_Update {organization}/{project}/_apis/wiki/wikis/{wikiIdentifier}/pages
 		/// </summary>
@@ -1534,23 +1610,20 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Gets metadata or content of the wiki page for the provided path. Content negotiation is done based on the `Accept` header sent in the request.
-		/// Pages_Get_Page {organization}/{project}/_apis/wiki/wikis/{wikiIdentifier}/pages
+		/// Gets metadata or content of the wiki page for the provided page id. Content negotiation is done based on the `Accept` header sent in the request.
+		/// Pages_Get_Page_By_Id {organization}/{project}/_apis/wiki/wikis/{wikiIdentifier}/pages/{id}
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
 		/// <param name="project">Project ID or project name</param>
-		/// <param name="wikiIdentifier">Wiki ID or wiki name.</param>
-		/// <param name="path">Wiki page path.</param>
+		/// <param name="wikiIdentifier">Wiki ID or wiki name..</param>
+		/// <param name="id">Wiki page ID.</param>
 		/// <param name="recursionLevel">Recursion level for subpages retrieval. Defaults to `None` (Optional).</param>
-		/// <param name="versionDescriptor_version">Version string identifier (name of tag/branch, SHA1 of commit)</param>
-		/// <param name="versionDescriptor_versionOptions">Version options - Specify additional modifiers to version (e.g Previous)</param>
-		/// <param name="versionDescriptor_versionType">Version type (branch, tag, or commit). Determines how Id is interpreted</param>
 		/// <param name="includeContent">True to include the content of the page in the response for Json content type. Defaults to false (Optional)</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public async Task<WikiPage> Pages_Get_PageAsync(string organization, string project, string wikiIdentifier, string path, Pages_Get_PageRecursionLevel recursionLevel, string versionDescriptor_version, GitVersionDescriptorVersionOptions versionDescriptor_versionOptions, GitVersionDescriptorVersionType versionDescriptor_versionType, bool includeContent, string api_version)
+		public async Task<WikiPage> Pages_Get_Page_By_IdAsync(string organization, string project, string wikiIdentifier, int id, Pages_Get_PageRecursionLevel recursionLevel, bool includeContent, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages&path=" + (path==null? "" : Uri.EscapeDataString(path))+"&recursionLevel=" + recursionLevel+"&versionDescriptor.version=" + (versionDescriptor_version==null? "" : Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOptions=" + versionDescriptor_versionOptions+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages/"+id+"&recursionLevel=" + recursionLevel+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1572,23 +1645,20 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Gets metadata or content of the wiki page for the provided path. Content negotiation is done based on the `Accept` header sent in the request.
-		/// Pages_Get_Page {organization}/{project}/_apis/wiki/wikis/{wikiIdentifier}/pages
+		/// Gets metadata or content of the wiki page for the provided page id. Content negotiation is done based on the `Accept` header sent in the request.
+		/// Pages_Get_Page_By_Id {organization}/{project}/_apis/wiki/wikis/{wikiIdentifier}/pages/{id}
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
 		/// <param name="project">Project ID or project name</param>
-		/// <param name="wikiIdentifier">Wiki ID or wiki name.</param>
-		/// <param name="path">Wiki page path.</param>
+		/// <param name="wikiIdentifier">Wiki ID or wiki name..</param>
+		/// <param name="id">Wiki page ID.</param>
 		/// <param name="recursionLevel">Recursion level for subpages retrieval. Defaults to `None` (Optional).</param>
-		/// <param name="versionDescriptor_version">Version string identifier (name of tag/branch, SHA1 of commit)</param>
-		/// <param name="versionDescriptor_versionOptions">Version options - Specify additional modifiers to version (e.g Previous)</param>
-		/// <param name="versionDescriptor_versionType">Version type (branch, tag, or commit). Determines how Id is interpreted</param>
 		/// <param name="includeContent">True to include the content of the page in the response for Json content type. Defaults to false (Optional)</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		/// <returns>successful operation</returns>
-		public WikiPage Pages_Get_Page(string organization, string project, string wikiIdentifier, string path, Pages_Get_PageRecursionLevel recursionLevel, string versionDescriptor_version, GitVersionDescriptorVersionOptions versionDescriptor_versionOptions, GitVersionDescriptorVersionType versionDescriptor_versionType, bool includeContent, string api_version)
+		public WikiPage Pages_Get_Page_By_Id(string organization, string project, string wikiIdentifier, int id, Pages_Get_PageRecursionLevel recursionLevel, bool includeContent, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages&path=" + (path==null? "" : Uri.EscapeDataString(path))+"&recursionLevel=" + recursionLevel+"&versionDescriptor.version=" + (versionDescriptor_version==null? "" : Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOptions=" + versionDescriptor_versionOptions+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages/"+id+"&recursionLevel=" + recursionLevel+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1658,76 +1728,6 @@ namespace MyNS
 		{
 			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages/"+id+"&comment=" + (comment==null? "" : Uri.EscapeDataString(comment))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WikiPage>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Gets metadata or content of the wiki page for the provided page id. Content negotiation is done based on the `Accept` header sent in the request.
-		/// Pages_Get_Page_By_Id {organization}/{project}/_apis/wiki/wikis/{wikiIdentifier}/pages/{id}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="wikiIdentifier">Wiki ID or wiki name..</param>
-		/// <param name="id">Wiki page ID.</param>
-		/// <param name="recursionLevel">Recursion level for subpages retrieval. Defaults to `None` (Optional).</param>
-		/// <param name="includeContent">True to include the content of the page in the response for Json content type. Defaults to false (Optional)</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<WikiPage> Pages_Get_Page_By_IdAsync(string organization, string project, string wikiIdentifier, int id, Pages_Get_PageRecursionLevel recursionLevel, bool includeContent, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages/"+id+"&recursionLevel=" + recursionLevel+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<WikiPage>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Gets metadata or content of the wiki page for the provided page id. Content negotiation is done based on the `Accept` header sent in the request.
-		/// Pages_Get_Page_By_Id {organization}/{project}/_apis/wiki/wikis/{wikiIdentifier}/pages/{id}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="project">Project ID or project name</param>
-		/// <param name="wikiIdentifier">Wiki ID or wiki name..</param>
-		/// <param name="id">Wiki page ID.</param>
-		/// <param name="recursionLevel">Recursion level for subpages retrieval. Defaults to `None` (Optional).</param>
-		/// <param name="includeContent">True to include the content of the page in the response for Json content type. Defaults to false (Optional)</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public WikiPage Pages_Get_Page_By_Id(string organization, string project, string wikiIdentifier, int id, Pages_Get_PageRecursionLevel recursionLevel, bool includeContent, string api_version)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : Uri.EscapeDataString(wikiIdentifier))+"/pages/"+id+"&recursionLevel=" + recursionLevel+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try

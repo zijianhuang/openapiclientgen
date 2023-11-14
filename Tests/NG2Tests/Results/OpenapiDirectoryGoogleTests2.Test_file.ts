@@ -28,10 +28,10 @@ export namespace MyNS {
 		 * File share capacity in gigabytes (GB).
 		 * Cloud Filestore defines 1 GB as 1024^3 bytes.
 		 */
-		capacityGb?: string;
+		capacityGb?: string | null;
 
 		/** The name of the file share (must be 16 characters or less). */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface GoogleCloudSaasacceleratorManagementProvidersV1Instance {
@@ -43,17 +43,17 @@ export namespace MyNS {
 		 * consumer_defined_name is used for notification/UI purposes for consumer to
 		 * recognize their instances.
 		 */
-		consumerDefinedName?: string;
+		consumerDefinedName?: string | null;
 
 		/** Output only. Timestamp when the resource was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/**
 		 * Optional. Resource labels to represent user provided metadata. Each label
 		 * is a key-value pair, where both the key and the value are arbitrary strings
 		 * provided by the user.
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * The MaintenancePolicies that have been attached to the instance.
@@ -62,32 +62,32 @@ export namespace MyNS {
 		 * type. For complete details of MaintenancePolicy, please refer to
 		 * go/cloud-saas-mw-ug.
 		 */
-		maintenancePolicyNames?: {[id: string]: string };
+		maintenancePolicyNames?: {[id: string]: string } | null;
 
 		/**
 		 * The MaintenanceSchedule contains the scheduling information of published
 		 * maintenance schedule.
 		 */
-		maintenanceSchedules?: {[id: string]: GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSchedule };
+		maintenanceSchedules?: {[id: string]: GoogleCloudSaasacceleratorManagementProvidersV1MaintenanceSchedule } | null;
 
 		/**
 		 * Unique name of the resource. It uses the form:
 		 * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * Output only. Custom string attributes used primarily to expose
 		 * producer-specific information in monitoring dashboards.
 		 * See go/get-instance-metadata.
 		 */
-		producerMetadata?: {[id: string]: string };
+		producerMetadata?: {[id: string]: string } | null;
 
 		/**
 		 * Output only. The list of data plane resources provisioned for this
 		 * instance, e.g. compute VMs. See go/get-instance-metadata.
 		 */
-		provisionedResources?: Array<GoogleCloudSaasacceleratorManagementProvidersV1ProvisionedResource>;
+		provisionedResources?: Array<GoogleCloudSaasacceleratorManagementProvidersV1ProvisionedResource> | null;
 
 		/**
 		 * Link to the SLM instance template. Only populated when updating SLM
@@ -95,34 +95,34 @@ export namespace MyNS {
 		 * Service producers with custom control plane (e.g. Cloud SQL) doesn't
 		 * need to populate this field. Instead they should use software_versions.
 		 */
-		slmInstanceTemplate?: string;
+		slmInstanceTemplate?: string | null;
 
 		/**
 		 * SloMetadata contains resources required for proper SLO classification of the
 		 * instance.
 		 */
-		sloMetadata?: GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata;
+		sloMetadata?: GoogleCloudSaasacceleratorManagementProvidersV1SloMetadata | null;
 
 		/**
 		 * Software versions that are used to deploy this instance. This can be
 		 * mutated by rollout services.
 		 */
-		softwareVersions?: {[id: string]: string };
+		softwareVersions?: {[id: string]: string } | null;
 
 		/**
 		 * Output only. Current lifecycle state of the resource (e.g. if it's being
 		 * created or ready to use).
 		 */
-		state?: GoogleCloudSaasacceleratorManagementProvidersV1InstanceState;
+		state?: GoogleCloudSaasacceleratorManagementProvidersV1InstanceState | null;
 
 		/**
 		 * Output only. ID of the associated GCP tenant project.
 		 * See go/get-instance-metadata.
 		 */
-		tenantProjectId?: string;
+		tenantProjectId?: string | null;
 
 		/** Output only. Timestamp when the resource was last modified. */
-		updateTime?: string;
+		updateTime?: string | null;
 	}
 
 
@@ -137,20 +137,20 @@ export namespace MyNS {
 		 * By default, it's true and API needs to do explicitly check whether it's
 		 * set, if it's set as false explicitly, it's false
 		 */
-		canReschedule?: boolean;
+		canReschedule?: boolean | null;
 
 		/** The scheduled end time for the maintenance. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/**
 		 * The rollout management policy this maintenance schedule is associated
 		 * with. When doing reschedule update request, the reschedule should be
 		 * against this given policy.
 		 */
-		rolloutManagementPolicy?: string;
+		rolloutManagementPolicy?: string | null;
 
 		/** The scheduled start time for the maintenance. */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 
@@ -165,13 +165,13 @@ export namespace MyNS {
 		 * 'compute-', for example: 'compute-instance', 'compute-disk',
 		 * 'compute-autoscaler'.
 		 */
-		resourceType?: string;
+		resourceType?: string | null;
 
 		/**
 		 * URL identifying the resource, e.g.
 		 * "https://www.googleapis.com/compute/v1/projects/...)".
 		 */
-		resourceUrl?: string;
+		resourceUrl?: string | null;
 	}
 
 
@@ -186,7 +186,7 @@ export namespace MyNS {
 		 * is eligible for SLO calculation or false if it should be excluded from all
 		 * SLO-related calculations along with a user-defined reason.
 		 */
-		eligibility?: GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility;
+		eligibility?: GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility | null;
 
 		/**
 		 * List of SLO exclusion windows. When multiple entries in the list match
@@ -201,7 +201,7 @@ export namespace MyNS {
 		 * use of custom instance eligibility is recommended. See 'eligibility' field
 		 * below.
 		 */
-		exclusions?: Array<GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion>;
+		exclusions?: Array<GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion> | null;
 
 		/**
 		 * Optional. List of nodes.
@@ -210,14 +210,14 @@ export namespace MyNS {
 		 * which will be consumed by SSA Eligibility Exporter and published in the
 		 * form of per node metric to Monarch.
 		 */
-		nodes?: Array<GoogleCloudSaasacceleratorManagementProvidersV1NodeSloMetadata>;
+		nodes?: Array<GoogleCloudSaasacceleratorManagementProvidersV1NodeSloMetadata> | null;
 
 		/**
 		 * Name of the SLO tier the Instance belongs to. This name will be expected to
 		 * match the tiers specified in the service SLO configuration.
 		 * Field is mandatory and must not be empty.
 		 */
-		tier?: string;
+		tier?: string | null;
 	}
 
 
@@ -229,14 +229,14 @@ export namespace MyNS {
 	export interface GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility {
 
 		/** Whether an instance is eligible or ineligible. */
-		eligible?: boolean;
+		eligible?: boolean | null;
 
 		/**
 		 * User-defined reason for the current value of instance eligibility. Usually,
 		 * this can be directly mapped to the internal state. An empty reason is
 		 * allowed.
 		 */
-		reason?: string;
+		reason?: string | null;
 	}
 
 
@@ -252,7 +252,7 @@ export namespace MyNS {
 		 * original exclusion expiration - otherwise it is possible that there will
 		 * be "gaps" in the exclusion application in the exported timeseries.
 		 */
-		duration?: string;
+		duration?: string | null;
 
 		/**
 		 * Human-readable reason for the exclusion.
@@ -260,17 +260,17 @@ export namespace MyNS {
 		 * and should not contain dynamically generated data (e.g. instance name).
 		 * Can be left empty.
 		 */
-		reason?: string;
+		reason?: string | null;
 
 		/**
 		 * Name of an SLI that this exclusion applies to. Can be left empty,
 		 * signaling that the instance should be excluded from all SLIs defined
 		 * in the service SLO configuration.
 		 */
-		sliName?: string;
+		sliName?: string | null;
 
 		/** Start time of the exclusion. No alignment (e.g. to a full minute) needed. */
-		startTime?: string;
+		startTime?: string | null;
 	}
 
 
@@ -289,16 +289,16 @@ export namespace MyNS {
 		 * If both instance and node level exclusions are present for time period,
 		 * the node level's reason will be reported by Eligibility Exporter.
 		 */
-		exclusions?: Array<GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion>;
+		exclusions?: Array<GoogleCloudSaasacceleratorManagementProvidersV1SloExclusion> | null;
 
 		/** The location of the node, if different from instance location. */
-		location?: string;
+		location?: string | null;
 
 		/**
 		 * The id of the node.
 		 * This should be equal to SaasInstanceNode.node_id.
 		 */
-		nodeId?: string;
+		nodeId?: string | null;
 	}
 
 	export enum GoogleCloudSaasacceleratorManagementProvidersV1InstanceState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, UPDATING = 3, REPAIRING = 4, DELETING = 5, ERROR = 6 }
@@ -308,46 +308,46 @@ export namespace MyNS {
 	export interface Instance {
 
 		/** Output only. The time when the instance was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** The description of the instance (2048 characters or less). */
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Server-specified ETag for the instance resource to prevent simultaneous
 		 * updates from overwriting each other.
 		 */
-		etag?: string;
+		etag?: string | null;
 
 		/**
 		 * File system shares on the instance.
 		 * For this version, only a single file share is supported.
 		 */
-		fileShares?: Array<FileShareConfig>;
+		fileShares?: Array<FileShareConfig> | null;
 
 		/** Resource labels to represent user provided metadata. */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/**
 		 * Output only. The resource name of the instance, in the format
 		 * projects/{project}/locations/{location}/instances/{instance}.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * VPC networks to which the instance is connected.
 		 * For this version, only a single network is supported.
 		 */
-		networks?: Array<NetworkConfig>;
+		networks?: Array<NetworkConfig> | null;
 
 		/** Output only. The instance state. */
-		state?: InstanceState;
+		state?: InstanceState | null;
 
 		/** Output only. Additional information about the instance state, if available. */
-		statusMessage?: string;
+		statusMessage?: string | null;
 
 		/** The service tier of the instance. */
-		tier?: InstanceTier;
+		tier?: InstanceTier | null;
 	}
 
 
@@ -360,20 +360,20 @@ export namespace MyNS {
 		 * {block 1}:{block 2}:{block 3}:{block 4}:{block 5}:{block 6}:{block
 		 * 7}:{block 8}.
 		 */
-		ipAddresses?: Array<string>;
+		ipAddresses?: Array<string> | null;
 
 		/**
 		 * Internet protocol versions for which the instance has IP addresses
 		 * assigned. For this version, only MODE_IPV4 is supported.
 		 */
-		modes?: Array<string>;
+		modes?: Array<string> | null;
 
 		/**
 		 * The name of the Google Compute Engine
 		 * [VPC network](/compute/docs/networks-and-firewalls#networks) to which the
 		 * instance is connected.
 		 */
-		network?: string;
+		network?: string | null;
 
 		/**
 		 * A /29 CIDR block in one of the
@@ -384,7 +384,7 @@ export namespace MyNS {
 		 * with either existing subnets or assigned IP address ranges for other Cloud
 		 * Filestore instances in the selected VPC network.
 		 */
-		reservedIpRange?: string;
+		reservedIpRange?: string | null;
 	}
 
 	export enum InstanceState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, REPAIRING = 3, DELETING = 4, ERROR = 5 }
@@ -402,16 +402,16 @@ export namespace MyNS {
 		 * response will only return instances in reachable locations and the
 		 * "unreachable" field will be populated with a list of unreachable locations.
 		 */
-		instances?: Array<Instance>;
+		instances?: Array<Instance> | null;
 
 		/**
 		 * The token you can use to retrieve the next page of results. Not returned
 		 * if there are no more results in the list.
 		 */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** Locations that could not be reached. */
-		unreachable?: Array<string>;
+		unreachable?: Array<string> | null;
 	}
 
 
@@ -419,10 +419,10 @@ export namespace MyNS {
 	export interface ListLocationsResponse {
 
 		/** A list of locations that matches the specified filter in the request. */
-		locations?: Array<Location>;
+		locations?: Array<Location> | null;
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 	}
 
 
@@ -433,28 +433,28 @@ export namespace MyNS {
 		 * The friendly name for this location, typically a nearby city name.
 		 * For example, "Tokyo".
 		 */
-		displayName?: string;
+		displayName?: string | null;
 
 		/**
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: string };
+		labels?: {[id: string]: string } | null;
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
-		locationId?: string;
+		locationId?: string | null;
 
 		/**
 		 * Service-specific metadata. For example the available capacity at the given
 		 * location.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * Resource name for the location, which may vary between implementations.
 		 * For example: `"projects/example-project/locations/us-east1"`
 		 */
-		name?: string;
+		name?: string | null;
 	}
 
 
@@ -462,10 +462,10 @@ export namespace MyNS {
 	export interface ListOperationsResponse {
 
 		/** The standard List next-page token. */
-		nextPageToken?: string;
+		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation>;
+		operations?: Array<Operation> | null;
 	}
 
 
@@ -480,7 +480,7 @@ export namespace MyNS {
 		 * If `true`, the operation is completed, and either `error` or `response` is
 		 * available.
 		 */
-		done?: boolean;
+		done?: boolean | null;
 
 		/**
 		 * The `Status` type defines a logical error model that is suitable for
@@ -490,7 +490,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status;
+		error?: Status | null;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -498,14 +498,14 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any };
+		metadata?: {[id: string]: any } | null;
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
 		 * originally returns it. If you use the default HTTP mapping, the
 		 * `name` should be a resource name ending with `operations/{unique_id}`.
 		 */
-		name?: string;
+		name?: string | null;
 
 		/**
 		 * The normal response of the operation in case of success.  If the original
@@ -517,7 +517,7 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any };
+		response?: {[id: string]: any } | null;
 	}
 
 
@@ -532,20 +532,20 @@ export namespace MyNS {
 	export interface Status {
 
 		/** The status code, which should be an enum value of google.rpc.Code. */
-		code?: number;
+		code?: number | null;
 
 		/**
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string>;
+		details?: Array<string> | null;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
 		 * user-facing error message should be localized and sent in the
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
-		message?: string;
+		message?: string | null;
 	}
 
 
@@ -553,7 +553,7 @@ export namespace MyNS {
 	export interface OperationMetadata {
 
 		/** [Output only] API version used to start the operation. */
-		apiVersion?: string;
+		apiVersion?: string | null;
 
 		/**
 		 * [Output only] Identifies whether the user has requested cancellation
@@ -561,22 +561,22 @@ export namespace MyNS {
 		 * have Operation.error value with a google.rpc.Status.code of 1,
 		 * corresponding to `Code.CANCELLED`.
 		 */
-		cancelRequested?: boolean;
+		cancelRequested?: boolean | null;
 
 		/** [Output only] The time the operation was created. */
-		createTime?: string;
+		createTime?: string | null;
 
 		/** [Output only] The time the operation finished running. */
-		endTime?: string;
+		endTime?: string | null;
 
 		/** [Output only] Human-readable status of the operation, if any. */
-		statusDetail?: string;
+		statusDetail?: string | null;
 
 		/** [Output only] Server-defined resource path for the target of the operation. */
-		target?: string;
+		target?: string | null;
 
 		/** [Output only] Name of the verb executed by the operation. */
-		verb?: string;
+		verb?: string | null;
 	}
 
 	@Injectable()
@@ -619,7 +619,7 @@ export namespace MyNS {
 		 * * "labels"
 		 * @return {void} Successful response
 		 */
-		File_projects_locations_instances_patch(name: string, updateMask: string, requestBody: Instance): Observable<HttpResponse<string>> {
+		File_projects_locations_instances_patch(name: string, updateMask: string | null | undefined, requestBody: Instance): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&updateMask=' + (updateMask == null ? '' : encodeURIComponent(updateMask)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -634,7 +634,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		File_projects_locations_list(name: string, filter: string, includeUnrevealedLocations: boolean, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		File_projects_locations_list(name: string, filter: string | null | undefined, includeUnrevealedLocations: boolean | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/locations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&includeUnrevealedLocations=' + includeUnrevealedLocations + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -655,7 +655,7 @@ export namespace MyNS {
 		 * @param {string} pageToken The standard list page token.
 		 * @return {void} Successful response
 		 */
-		File_projects_locations_operations_list(name: string, filter: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		File_projects_locations_operations_list(name: string, filter: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '/operations&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -694,7 +694,7 @@ export namespace MyNS {
 		 * results to retrieve for this list request.
 		 * @return {void} Successful response
 		 */
-		File_projects_locations_instances_list(parent: string, filter: string, orderBy: string, pageSize: number, pageToken: string): Observable<HttpResponse<string>> {
+		File_projects_locations_instances_list(parent: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/instances&filter=' + (filter == null ? '' : encodeURIComponent(filter)) + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -708,7 +708,7 @@ export namespace MyNS {
 		 * The name must be unique for the specified project and location.
 		 * @return {void} Successful response
 		 */
-		File_projects_locations_instances_create(parent: string, instanceId: string, requestBody: Instance): Observable<HttpResponse<string>> {
+		File_projects_locations_instances_create(parent: string, instanceId: string | null | undefined, requestBody: Instance): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/instances&instanceId=' + (instanceId == null ? '' : encodeURIComponent(instanceId)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}

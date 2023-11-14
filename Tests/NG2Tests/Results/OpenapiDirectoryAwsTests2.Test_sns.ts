@@ -17,7 +17,7 @@ export namespace MyNS {
 
 	/** The response from the <code>CheckIfPhoneNumberIsOptedOut</code> action. */
 	export interface CheckIfPhoneNumberIsOptedOutResponse {
-		isOptedOut?: boolean;
+		isOptedOut?: boolean | null;
 	}
 
 	export interface ThrottledException {
@@ -26,7 +26,7 @@ export namespace MyNS {
 
 	/** Response for ConfirmSubscriptions action. */
 	export interface ConfirmSubscriptionResponse {
-		SubscriptionArn?: string;
+		SubscriptionArn?: string | null;
 	}
 
 	export interface SubscriptionLimitExceededException {
@@ -38,19 +38,19 @@ export namespace MyNS {
 
 	/** Response from CreatePlatformApplication action. */
 	export interface CreatePlatformApplicationResponse {
-		PlatformApplicationArn?: string;
+		PlatformApplicationArn?: string | null;
 	}
 
 
 	/** Response from CreateEndpoint action. */
 	export interface CreateEndpointResponse {
-		EndpointArn?: string;
+		EndpointArn?: string | null;
 	}
 
 
 	/** Response from CreateTopic action. */
 	export interface CreateTopicResponse {
-		TopicArn?: string;
+		TopicArn?: string | null;
 	}
 
 
@@ -81,7 +81,7 @@ export namespace MyNS {
 
 	/** Response from GetEndpointAttributes of the EndpointArn. */
 	export interface GetEndpointAttributesResponse {
-		Attributes?: MapStringToString;
+		Attributes?: MapStringToString | null;
 	}
 
 	export interface MapStringToString {
@@ -90,19 +90,19 @@ export namespace MyNS {
 
 	/** Response for GetPlatformApplicationAttributes action. */
 	export interface GetPlatformApplicationAttributesResponse {
-		Attributes?: MapStringToString;
+		Attributes?: MapStringToString | null;
 	}
 
 
 	/** The response from the <code>GetSMSAttributes</code> request. */
 	export interface GetSMSAttributesResponse {
-		attributes?: MapStringToString;
+		attributes?: MapStringToString | null;
 	}
 
 
 	/** Response for GetSubscriptionAttributes action. */
 	export interface GetSubscriptionAttributesResponse {
-		Attributes?: SubscriptionAttributesMap;
+		Attributes?: SubscriptionAttributesMap | null;
 	}
 
 	export interface SubscriptionAttributesMap {
@@ -111,7 +111,7 @@ export namespace MyNS {
 
 	/** Response for GetTopicAttributes action. */
 	export interface GetTopicAttributesResponse {
-		Attributes?: TopicAttributesMap;
+		Attributes?: TopicAttributesMap | null;
 	}
 
 	export interface TopicAttributesMap {
@@ -120,64 +120,64 @@ export namespace MyNS {
 
 	/** Response for ListEndpointsByPlatformApplication action. */
 	export interface ListEndpointsByPlatformApplicationResponse {
-		Endpoints?: Array<Endpoint>;
-		NextToken?: string;
+		Endpoints?: Array<Endpoint> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Endpoint for mobile app and device. */
 	export interface Endpoint {
-		EndpointArn?: string;
-		Attributes?: MapStringToString;
+		EndpointArn?: string | null;
+		Attributes?: MapStringToString | null;
 	}
 
 
 	/** The response from the <code>ListPhoneNumbersOptedOut</code> action. */
 	export interface ListPhoneNumbersOptedOutResponse {
-		phoneNumbers?: Array<string>;
-		nextToken?: string;
+		phoneNumbers?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Response for ListPlatformApplications action. */
 	export interface ListPlatformApplicationsResponse {
-		PlatformApplications?: Array<PlatformApplication>;
-		NextToken?: string;
+		PlatformApplications?: Array<PlatformApplication> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Platform application object. */
 	export interface PlatformApplication {
-		PlatformApplicationArn?: string;
-		Attributes?: MapStringToString;
+		PlatformApplicationArn?: string | null;
+		Attributes?: MapStringToString | null;
 	}
 
 
 	/** Response for ListSubscriptions action */
 	export interface ListSubscriptionsResponse {
-		Subscriptions?: Array<Subscription>;
-		NextToken?: string;
+		Subscriptions?: Array<Subscription> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A wrapper type for the attributes of an Amazon SNS subscription. */
 	export interface Subscription {
-		SubscriptionArn?: string;
-		Owner?: string;
-		Protocol?: string;
-		Endpoint?: string;
-		TopicArn?: string;
+		SubscriptionArn?: string | null;
+		Owner?: string | null;
+		Protocol?: string | null;
+		Endpoint?: string | null;
+		TopicArn?: string | null;
 	}
 
 
 	/** Response for ListSubscriptionsByTopic action. */
 	export interface ListSubscriptionsByTopicResponse {
-		Subscriptions?: Array<Subscription>;
-		NextToken?: string;
+		Subscriptions?: Array<Subscription> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -186,14 +186,14 @@ export namespace MyNS {
 
 	/** Response for ListTopics action. */
 	export interface ListTopicsResponse {
-		Topics?: Array<Topic>;
-		NextToken?: string;
+		Topics?: Array<Topic> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes, use <code>GetTopicAttributes</code>. */
 	export interface Topic {
-		TopicArn?: string;
+		TopicArn?: string | null;
 	}
 
 
@@ -204,15 +204,15 @@ export namespace MyNS {
 
 	/** Response for Publish action. */
 	export interface PublishResponse {
-		MessageId?: string;
+		MessageId?: string | null;
 	}
 
 
 	/** <p>The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.</p> <p>Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Using Amazon SNS Message Attributes</a>.</p> */
 	export interface MessageAttributeValue {
 		DataType: string;
-		StringValue?: string;
-		BinaryValue?: string;
+		StringValue?: string | null;
+		BinaryValue?: string | null;
 	}
 
 	export interface InvalidParameterValueException {
@@ -250,7 +250,7 @@ export namespace MyNS {
 
 	/** Response for Subscribe action. */
 	export interface SubscribeResponse {
-		SubscriptionArn?: string;
+		SubscriptionArn?: string | null;
 	}
 
 	export interface TagResourceResponse {
@@ -277,7 +277,7 @@ export namespace MyNS {
 	export interface ConfirmSubscriptionInput {
 		TopicArn: string;
 		Token: string;
-		AuthenticateOnUnsubscribe?: string;
+		AuthenticateOnUnsubscribe?: string | null;
 	}
 
 
@@ -293,16 +293,16 @@ export namespace MyNS {
 	export interface CreatePlatformEndpointInput {
 		PlatformApplicationArn: string;
 		Token: string;
-		CustomUserData?: string;
-		Attributes?: MapStringToString;
+		CustomUserData?: string | null;
+		Attributes?: MapStringToString | null;
 	}
 
 
 	/** Input for CreateTopic action. */
 	export interface CreateTopicInput {
 		Name: string;
-		Attributes?: TopicAttributesMap;
-		Tags?: Array<Tag>;
+		Attributes?: TopicAttributesMap | null;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -336,7 +336,7 @@ export namespace MyNS {
 
 	/** The input for the <code>GetSMSAttributes</code> request. */
 	export interface GetSMSAttributesInput {
-		attributes?: Array<string>;
+		attributes?: Array<string> | null;
 	}
 
 
@@ -355,32 +355,32 @@ export namespace MyNS {
 	/** Input for ListEndpointsByPlatformApplication action. */
 	export interface ListEndpointsByPlatformApplicationInput {
 		PlatformApplicationArn: string;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** The input for the <code>ListPhoneNumbersOptedOut</code> action. */
 	export interface ListPhoneNumbersOptedOutInput {
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Input for ListPlatformApplications action. */
 	export interface ListPlatformApplicationsInput {
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Input for ListSubscriptionsByTopic action. */
 	export interface ListSubscriptionsByTopicInput {
 		TopicArn: string;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Input for ListSubscriptions action. */
 	export interface ListSubscriptionsInput {
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -388,7 +388,7 @@ export namespace MyNS {
 	}
 
 	export interface ListTopicsInput {
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface MessageAttributeMap {
@@ -403,13 +403,13 @@ export namespace MyNS {
 
 	/** Input for Publish action. */
 	export interface PublishInput {
-		TopicArn?: string;
-		TargetArn?: string;
-		PhoneNumber?: string;
+		TopicArn?: string | null;
+		TargetArn?: string | null;
+		PhoneNumber?: string | null;
 		Message: string;
-		Subject?: string;
-		MessageStructure?: string;
-		MessageAttributes?: MessageAttributeMap;
+		Subject?: string | null;
+		MessageStructure?: string | null;
+		MessageAttributes?: MessageAttributeMap | null;
 	}
 
 
@@ -444,7 +444,7 @@ export namespace MyNS {
 	export interface SetSubscriptionAttributesInput {
 		SubscriptionArn: string;
 		AttributeName: string;
-		AttributeValue?: string;
+		AttributeValue?: string | null;
 	}
 
 
@@ -452,7 +452,7 @@ export namespace MyNS {
 	export interface SetTopicAttributesInput {
 		TopicArn: string;
 		AttributeName: string;
-		AttributeValue?: string;
+		AttributeValue?: string | null;
 	}
 
 
@@ -460,9 +460,9 @@ export namespace MyNS {
 	export interface SubscribeInput {
 		TopicArn: string;
 		Protocol: string;
-		Endpoint?: string;
-		Attributes?: SubscriptionAttributesMap;
-		ReturnSubscriptionArn?: boolean;
+		Endpoint?: string | null;
+		Attributes?: SubscriptionAttributesMap | null;
+		ReturnSubscriptionArn?: boolean | null;
 	}
 
 	export interface TagResourceRequest {
@@ -517,7 +517,7 @@ export namespace MyNS {
 		 * @param {string} AuthenticateOnUnsubscribe Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an AWS signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires AWS authentication. 
 		 * @return {void} Success
 		 */
-		GET_ConfirmSubscription(TopicArn: string, Token: string, AuthenticateOnUnsubscribe: string, Action: GET_ConfirmSubscriptionAction, Version: GET_ConfirmSubscriptionVersion): Observable<HttpResponse<string>> {
+		GET_ConfirmSubscription(TopicArn: string, Token: string, AuthenticateOnUnsubscribe: string | null | undefined, Action: GET_ConfirmSubscriptionAction, Version: GET_ConfirmSubscriptionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ConfirmSubscription?TopicArn=' + (TopicArn == null ? '' : encodeURIComponent(TopicArn)) + '&Token=' + (Token == null ? '' : encodeURIComponent(Token)) + '&AuthenticateOnUnsubscribe=' + (AuthenticateOnUnsubscribe == null ? '' : encodeURIComponent(AuthenticateOnUnsubscribe)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -542,7 +542,7 @@ export namespace MyNS {
 		 * @param {{[id: string]: string }} Attributes For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
 		 * @return {void} Success
 		 */
-		GET_CreatePlatformEndpoint(PlatformApplicationArn: string, Token: string, CustomUserData: string, Attributes: {[id: string]: string }, Action: GET_CreatePlatformEndpointAction, Version: GET_CreatePlatformEndpointVersion): Observable<HttpResponse<string>> {
+		GET_CreatePlatformEndpoint(PlatformApplicationArn: string, Token: string, CustomUserData: string | null | undefined, Attributes: {[id: string]: string } | null | undefined, Action: GET_CreatePlatformEndpointAction, Version: GET_CreatePlatformEndpointVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreatePlatformEndpoint?PlatformApplicationArn=' + (PlatformApplicationArn == null ? '' : encodeURIComponent(PlatformApplicationArn)) + '&Token=' + (Token == null ? '' : encodeURIComponent(Token)) + '&CustomUserData=' + (CustomUserData == null ? '' : encodeURIComponent(CustomUserData)) + '&Attributes=' + Attributes + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -554,7 +554,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags <p>The list of tags to add to a new topic.</p> <note> <p>To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and <code>sns:TagResource</code> permissions.</p> </note>
 		 * @return {void} Success
 		 */
-		GET_CreateTopic(Name: string, Attributes: {[id: string]: string }, Tags: Array<Tag>, Action: GET_CreateTopicAction, Version: GET_CreateTopicVersion): Observable<HttpResponse<string>> {
+		GET_CreateTopic(Name: string, Attributes: {[id: string]: string } | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateTopicAction, Version: GET_CreateTopicVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateTopic?Name=' + (Name == null ? '' : encodeURIComponent(Name)) + '&Attributes=' + Attributes + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -614,7 +614,7 @@ export namespace MyNS {
 		 * @param {Array<string>} attributes <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p> <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p> <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
 		 * @return {void} Success
 		 */
-		GET_GetSMSAttributes(attributes: Array<string>, Action: GET_GetSMSAttributesAction, Version: GET_GetSMSAttributesVersion): Observable<HttpResponse<string>> {
+		GET_GetSMSAttributes(attributes: Array<string> | null | undefined, Action: GET_GetSMSAttributesAction, Version: GET_GetSMSAttributesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=GetSMSAttributes?' + attributes.map(z => `attributes=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -645,7 +645,7 @@ export namespace MyNS {
 		 * @param {string} NextToken NextToken string is used when calling ListEndpointsByPlatformApplication action to retrieve additional records that are available after the first page results.
 		 * @return {void} Success
 		 */
-		GET_ListEndpointsByPlatformApplication(PlatformApplicationArn: string, NextToken: string, Action: GET_ListEndpointsByPlatformApplicationAction, Version: GET_ListEndpointsByPlatformApplicationVersion): Observable<HttpResponse<string>> {
+		GET_ListEndpointsByPlatformApplication(PlatformApplicationArn: string, NextToken: string | null | undefined, Action: GET_ListEndpointsByPlatformApplicationAction, Version: GET_ListEndpointsByPlatformApplicationVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListEndpointsByPlatformApplication?PlatformApplicationArn=' + (PlatformApplicationArn == null ? '' : encodeURIComponent(PlatformApplicationArn)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -655,7 +655,7 @@ export namespace MyNS {
 		 * @param {string} nextToken A <code>NextToken</code> string is used when you call the <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are available after the first page of results.
 		 * @return {void} Success
 		 */
-		GET_ListPhoneNumbersOptedOut(nextToken: string, Action: GET_ListPhoneNumbersOptedOutAction, Version: GET_ListPhoneNumbersOptedOutVersion): Observable<HttpResponse<string>> {
+		GET_ListPhoneNumbersOptedOut(nextToken: string | null | undefined, Action: GET_ListPhoneNumbersOptedOutAction, Version: GET_ListPhoneNumbersOptedOutVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListPhoneNumbersOptedOut?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -665,7 +665,7 @@ export namespace MyNS {
 		 * @param {string} NextToken NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are available after the first page results.
 		 * @return {void} Success
 		 */
-		GET_ListPlatformApplications(NextToken: string, Action: GET_ListPlatformApplicationsAction, Version: GET_ListPlatformApplicationsVersion): Observable<HttpResponse<string>> {
+		GET_ListPlatformApplications(NextToken: string | null | undefined, Action: GET_ListPlatformApplicationsAction, Version: GET_ListPlatformApplicationsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListPlatformApplications?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -675,7 +675,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Token returned by the previous <code>ListSubscriptions</code> request.
 		 * @return {void} Success
 		 */
-		GET_ListSubscriptions(NextToken: string, Action: GET_ListSubscriptionsAction, Version: GET_ListSubscriptionsVersion): Observable<HttpResponse<string>> {
+		GET_ListSubscriptions(NextToken: string | null | undefined, Action: GET_ListSubscriptionsAction, Version: GET_ListSubscriptionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListSubscriptions?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -686,7 +686,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Token returned by the previous <code>ListSubscriptionsByTopic</code> request.
 		 * @return {void} Success
 		 */
-		GET_ListSubscriptionsByTopic(TopicArn: string, NextToken: string, Action: GET_ListSubscriptionsByTopicAction, Version: GET_ListSubscriptionsByTopicVersion): Observable<HttpResponse<string>> {
+		GET_ListSubscriptionsByTopic(TopicArn: string, NextToken: string | null | undefined, Action: GET_ListSubscriptionsByTopicAction, Version: GET_ListSubscriptionsByTopicVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListSubscriptionsByTopic?TopicArn=' + (TopicArn == null ? '' : encodeURIComponent(TopicArn)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -706,7 +706,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Token returned by the previous <code>ListTopics</code> request.
 		 * @return {void} Success
 		 */
-		GET_ListTopics(NextToken: string, Action: GET_ListTopicsAction, Version: GET_ListTopicsVersion): Observable<HttpResponse<string>> {
+		GET_ListTopics(NextToken: string | null | undefined, Action: GET_ListTopicsAction, Version: GET_ListTopicsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListTopics?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -732,7 +732,7 @@ export namespace MyNS {
 		 * @param {{[id: string]: MessageAttributeValue }} MessageAttributes Message attributes for Publish action.
 		 * @return {void} Success
 		 */
-		GET_Publish(TopicArn: string, TargetArn: string, PhoneNumber: string, Message: string, Subject: string, MessageStructure: string, MessageAttributes: {[id: string]: MessageAttributeValue }, Action: GET_PublishAction, Version: GET_PublishVersion): Observable<HttpResponse<string>> {
+		GET_Publish(TopicArn: string | null | undefined, TargetArn: string | null | undefined, PhoneNumber: string | null | undefined, Message: string, Subject: string | null | undefined, MessageStructure: string | null | undefined, MessageAttributes: {[id: string]: MessageAttributeValue } | null | undefined, Action: GET_PublishAction, Version: GET_PublishVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=Publish?TopicArn=' + (TopicArn == null ? '' : encodeURIComponent(TopicArn)) + '&TargetArn=' + (TargetArn == null ? '' : encodeURIComponent(TargetArn)) + '&PhoneNumber=' + (PhoneNumber == null ? '' : encodeURIComponent(PhoneNumber)) + '&Message=' + (Message == null ? '' : encodeURIComponent(Message)) + '&Subject=' + (Subject == null ? '' : encodeURIComponent(Subject)) + '&MessageStructure=' + (MessageStructure == null ? '' : encodeURIComponent(MessageStructure)) + '&MessageAttributes=' + MessageAttributes + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -787,7 +787,7 @@ export namespace MyNS {
 		 * @param {string} AttributeValue The new value for the attribute in JSON format.
 		 * @return {void} Success
 		 */
-		GET_SetSubscriptionAttributes(SubscriptionArn: string, AttributeName: string, AttributeValue: string, Action: GET_SetSubscriptionAttributesAction, Version: GET_SetSubscriptionAttributesVersion): Observable<HttpResponse<string>> {
+		GET_SetSubscriptionAttributes(SubscriptionArn: string, AttributeName: string, AttributeValue: string | null | undefined, Action: GET_SetSubscriptionAttributesAction, Version: GET_SetSubscriptionAttributesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SetSubscriptionAttributes?SubscriptionArn=' + (SubscriptionArn == null ? '' : encodeURIComponent(SubscriptionArn)) + '&AttributeName=' + (AttributeName == null ? '' : encodeURIComponent(AttributeName)) + '&AttributeValue=' + (AttributeValue == null ? '' : encodeURIComponent(AttributeValue)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -799,7 +799,7 @@ export namespace MyNS {
 		 * @param {string} AttributeValue The new value for the attribute.
 		 * @return {void} Success
 		 */
-		GET_SetTopicAttributes(TopicArn: string, AttributeName: string, AttributeValue: string, Action: GET_SetTopicAttributesAction, Version: GET_SetTopicAttributesVersion): Observable<HttpResponse<string>> {
+		GET_SetTopicAttributes(TopicArn: string, AttributeName: string, AttributeValue: string | null | undefined, Action: GET_SetTopicAttributesAction, Version: GET_SetTopicAttributesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=SetTopicAttributes?TopicArn=' + (TopicArn == null ? '' : encodeURIComponent(TopicArn)) + '&AttributeName=' + (AttributeName == null ? '' : encodeURIComponent(AttributeName)) + '&AttributeValue=' + (AttributeValue == null ? '' : encodeURIComponent(AttributeValue)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -813,7 +813,7 @@ export namespace MyNS {
 		 * @param {boolean} ReturnSubscriptionArn <p>Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the subscription is not yet confirmed.</p> <ul> <li> <p>If you have the subscription ARN returned, the response includes the ARN in all cases, even if the subscription is not yet confirmed.</p> </li> <li> <p>If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the response also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation token.</p> </li> </ul> <p>If you set this parameter to <code>true</code>, .</p> <p>The default value is <code>false</code>.</p>
 		 * @return {void} Success
 		 */
-		GET_Subscribe(TopicArn: string, Protocol: string, Endpoint: string, Attributes: {[id: string]: string }, ReturnSubscriptionArn: boolean, Action: GET_SubscribeAction, Version: GET_SubscribeVersion): Observable<HttpResponse<string>> {
+		GET_Subscribe(TopicArn: string, Protocol: string, Endpoint: string | null | undefined, Attributes: {[id: string]: string } | null | undefined, ReturnSubscriptionArn: boolean | null | undefined, Action: GET_SubscribeAction, Version: GET_SubscribeVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=Subscribe?TopicArn=' + (TopicArn == null ? '' : encodeURIComponent(TopicArn)) + '&Protocol=' + (Protocol == null ? '' : encodeURIComponent(Protocol)) + '&Endpoint=' + (Endpoint == null ? '' : encodeURIComponent(Endpoint)) + '&Attributes=' + Attributes + '&ReturnSubscriptionArn=' + ReturnSubscriptionArn + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 

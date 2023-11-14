@@ -6,38 +6,38 @@ export namespace MyNS {
 	}
 
 	export interface GetPlaybackConfigurationResponse {
-		AdDecisionServerUrl?: string;
+		AdDecisionServerUrl?: string | null;
 
 		/** The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long manifest, or if a viewer joins mid-break. */
-		AvailSuppression?: AvailSuppression;
+		AvailSuppression?: AvailSuppression | null;
 
 		/** The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. */
-		CdnConfiguration?: CdnConfiguration;
+		CdnConfiguration?: CdnConfiguration | null;
 
 		/** The configuration for DASH content. */
-		DashConfiguration?: DashConfiguration;
+		DashConfiguration?: DashConfiguration | null;
 
 		/** The configuration for HLS content. */
-		HlsConfiguration?: HlsConfiguration;
+		HlsConfiguration?: HlsConfiguration | null;
 
 		/** The configuration for pre-roll ad insertion. */
-		LivePreRollConfiguration?: LivePreRollConfiguration;
-		Name?: string;
-		PersonalizationThresholdSeconds?: number;
-		PlaybackConfigurationArn?: string;
-		PlaybackEndpointPrefix?: string;
-		SessionInitializationEndpointPrefix?: string;
-		SlateAdUrl?: string;
-		Tags?: __mapOf__string;
-		TranscodeProfileName?: string;
-		VideoContentSourceUrl?: string;
+		LivePreRollConfiguration?: LivePreRollConfiguration | null;
+		Name?: string | null;
+		PersonalizationThresholdSeconds?: number | null;
+		PlaybackConfigurationArn?: string | null;
+		PlaybackEndpointPrefix?: string | null;
+		SessionInitializationEndpointPrefix?: string | null;
+		SlateAdUrl?: string | null;
+		Tags?: __mapOf__string | null;
+		TranscodeProfileName?: string | null;
+		VideoContentSourceUrl?: string | null;
 	}
 
 
 	/** The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long manifest, or if a viewer joins mid-break. */
 	export interface AvailSuppression {
-		Mode?: AvailSuppressionMode;
-		Value?: string;
+		Mode?: AvailSuppressionMode | null;
+		Value?: string | null;
 	}
 
 	export enum AvailSuppressionMode { OFF = 0, BEHIND_LIVE_EDGE = 1 }
@@ -45,16 +45,16 @@ export namespace MyNS {
 
 	/** The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.  */
 	export interface CdnConfiguration {
-		AdSegmentUrlPrefix?: string;
-		ContentSegmentUrlPrefix?: string;
+		AdSegmentUrlPrefix?: string | null;
+		ContentSegmentUrlPrefix?: string | null;
 	}
 
 
 	/** The configuration for DASH content.  */
 	export interface DashConfiguration {
-		ManifestEndpointPrefix?: string;
-		MpdLocation?: string;
-		OriginManifestType?: DashConfigurationOriginManifestType;
+		ManifestEndpointPrefix?: string | null;
+		MpdLocation?: string | null;
+		OriginManifestType?: DashConfigurationOriginManifestType | null;
 	}
 
 	export enum DashConfigurationOriginManifestType { SINGLE_PERIOD = 0, MULTI_PERIOD = 1 }
@@ -62,84 +62,84 @@ export namespace MyNS {
 
 	/** The configuration for HLS content.  */
 	export interface HlsConfiguration {
-		ManifestEndpointPrefix?: string;
+		ManifestEndpointPrefix?: string | null;
 	}
 
 
 	/** The configuration for pre-roll ad insertion. */
 	export interface LivePreRollConfiguration {
-		AdDecisionServerUrl?: string;
-		MaxDurationSeconds?: number;
+		AdDecisionServerUrl?: string | null;
+		MaxDurationSeconds?: number | null;
 	}
 
 	export interface __mapOf__string {
 	}
 
 	export interface ListPlaybackConfigurationsResponse {
-		Items?: Array<PlaybackConfiguration>;
-		NextToken?: string;
+		Items?: Array<PlaybackConfiguration> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** The AWSMediaTailor configuration. */
 	export interface PlaybackConfiguration {
-		AdDecisionServerUrl?: string;
+		AdDecisionServerUrl?: string | null;
 
 		/** The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long manifest, or if a viewer joins mid-break. */
-		AvailSuppression?: AvailSuppression;
+		AvailSuppression?: AvailSuppression | null;
 
 		/** The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. */
-		CdnConfiguration?: CdnConfiguration;
+		CdnConfiguration?: CdnConfiguration | null;
 
 		/** The configuration for DASH content. */
-		DashConfiguration?: DashConfiguration;
+		DashConfiguration?: DashConfiguration | null;
 
 		/** The configuration for HLS content. */
-		HlsConfiguration?: HlsConfiguration;
-		Name?: string;
-		PlaybackConfigurationArn?: string;
-		PlaybackEndpointPrefix?: string;
-		SessionInitializationEndpointPrefix?: string;
-		SlateAdUrl?: string;
-		Tags?: __mapOf__string;
-		TranscodeProfileName?: string;
-		PersonalizationThresholdSeconds?: number;
-		VideoContentSourceUrl?: string;
+		HlsConfiguration?: HlsConfiguration | null;
+		Name?: string | null;
+		PlaybackConfigurationArn?: string | null;
+		PlaybackEndpointPrefix?: string | null;
+		SessionInitializationEndpointPrefix?: string | null;
+		SlateAdUrl?: string | null;
+		Tags?: __mapOf__string | null;
+		TranscodeProfileName?: string | null;
+		PersonalizationThresholdSeconds?: number | null;
+		VideoContentSourceUrl?: string | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: __mapOf__string;
+		Tags?: __mapOf__string | null;
 	}
 
 	export interface BadRequestException {
 	}
 
 	export interface PutPlaybackConfigurationResponse {
-		AdDecisionServerUrl?: string;
+		AdDecisionServerUrl?: string | null;
 
 		/** The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long manifest, or if a viewer joins mid-break. */
-		AvailSuppression?: AvailSuppression;
+		AvailSuppression?: AvailSuppression | null;
 
 		/** The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. */
-		CdnConfiguration?: CdnConfiguration;
+		CdnConfiguration?: CdnConfiguration | null;
 
 		/** The configuration for DASH content. */
-		DashConfiguration?: DashConfiguration;
+		DashConfiguration?: DashConfiguration | null;
 
 		/** The configuration for HLS content. */
-		HlsConfiguration?: HlsConfiguration;
+		HlsConfiguration?: HlsConfiguration | null;
 
 		/** The configuration for pre-roll ad insertion. */
-		LivePreRollConfiguration?: LivePreRollConfiguration;
-		Name?: string;
-		PersonalizationThresholdSeconds?: number;
-		PlaybackConfigurationArn?: string;
-		PlaybackEndpointPrefix?: string;
-		SessionInitializationEndpointPrefix?: string;
-		SlateAdUrl?: string;
-		Tags?: __mapOf__string;
-		TranscodeProfileName?: string;
-		VideoContentSourceUrl?: string;
+		LivePreRollConfiguration?: LivePreRollConfiguration | null;
+		Name?: string | null;
+		PersonalizationThresholdSeconds?: number | null;
+		PlaybackConfigurationArn?: string | null;
+		PlaybackEndpointPrefix?: string | null;
+		SessionInitializationEndpointPrefix?: string | null;
+		SlateAdUrl?: string | null;
+		Tags?: __mapOf__string | null;
+		TranscodeProfileName?: string | null;
+		VideoContentSourceUrl?: string | null;
 	}
 
 	export enum Mode { OFF = 0, BEHIND_LIVE_EDGE = 1 }
@@ -149,8 +149,8 @@ export namespace MyNS {
 
 	/** The configuration for DASH PUT operations.  */
 	export interface DashConfigurationForPut {
-		MpdLocation?: string;
-		OriginManifestType?: DashConfigurationOriginManifestType;
+		MpdLocation?: string | null;
+		OriginManifestType?: DashConfigurationOriginManifestType | null;
 	}
 
 	export interface DeletePlaybackConfigurationRequest {
@@ -166,25 +166,25 @@ export namespace MyNS {
 	}
 
 	export interface PutPlaybackConfigurationRequest {
-		AdDecisionServerUrl?: string;
+		AdDecisionServerUrl?: string | null;
 
 		/** The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long manifest, or if a viewer joins mid-break. */
-		AvailSuppression?: AvailSuppression;
+		AvailSuppression?: AvailSuppression | null;
 
 		/** The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. */
-		CdnConfiguration?: CdnConfiguration;
+		CdnConfiguration?: CdnConfiguration | null;
 
 		/** The configuration for DASH PUT operations. */
-		DashConfiguration?: DashConfigurationForPut;
+		DashConfiguration?: DashConfigurationForPut | null;
 
 		/** The configuration for pre-roll ad insertion. */
-		LivePreRollConfiguration?: LivePreRollConfiguration;
-		Name?: string;
-		PersonalizationThresholdSeconds?: number;
-		SlateAdUrl?: string;
-		Tags?: __mapOf__string;
-		TranscodeProfileName?: string;
-		VideoContentSourceUrl?: string;
+		LivePreRollConfiguration?: LivePreRollConfiguration | null;
+		Name?: string | null;
+		PersonalizationThresholdSeconds?: number | null;
+		SlateAdUrl?: string | null;
+		Tags?: __mapOf__string | null;
+		TranscodeProfileName?: string | null;
+		VideoContentSourceUrl?: string | null;
 	}
 
 	export interface TagResourceRequest {
@@ -226,7 +226,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.
 		 * @return {ListPlaybackConfigurationsResponse} Success
 		 */
-		ListPlaybackConfigurations(MaxResults: number, NextToken: string): Observable<ListPlaybackConfigurationsResponse> {
+		ListPlaybackConfigurations(MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListPlaybackConfigurationsResponse> {
 			return this.http.get<ListPlaybackConfigurationsResponse>(this.baseUri + 'playbackConfigurations?MaxResults=' + MaxResults + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -287,60 +287,60 @@ export namespace MyNS {
 	export interface PutPlaybackConfigurationPutBody {
 
 		/** The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters. */
-		AdDecisionServerUrl?: string;
+		AdDecisionServerUrl?: string | null;
 
 		/** The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long manifest, or if a viewer joins mid-break. */
-		AvailSuppression?: PutPlaybackConfigurationPutBodyAvailSuppression;
+		AvailSuppression?: PutPlaybackConfigurationPutBodyAvailSuppression | null;
 
 		/** The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. */
-		CdnConfiguration?: PutPlaybackConfigurationPutBodyCdnConfiguration;
+		CdnConfiguration?: PutPlaybackConfigurationPutBodyCdnConfiguration | null;
 
 		/** The configuration for DASH PUT operations. */
-		DashConfiguration?: PutPlaybackConfigurationPutBodyDashConfiguration;
+		DashConfiguration?: PutPlaybackConfigurationPutBodyDashConfiguration | null;
 
 		/** The configuration for pre-roll ad insertion. */
-		LivePreRollConfiguration?: PutPlaybackConfigurationPutBodyLivePreRollConfiguration;
+		LivePreRollConfiguration?: PutPlaybackConfigurationPutBodyLivePreRollConfiguration | null;
 
 		/** The identifier for the playback configuration. */
-		Name?: string;
+		Name?: string | null;
 
 		/**
 		 * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
 		 * Minimum: 1
 		 */
-		PersonalizationThresholdSeconds?: number;
+		PersonalizationThresholdSeconds?: number | null;
 
 		/** The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. */
-		SlateAdUrl?: string;
+		SlateAdUrl?: string | null;
 
 		/** The tags to assign to the playback configuration. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 
 		/** The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support. */
-		TranscodeProfileName?: string;
+		TranscodeProfileName?: string | null;
 
 		/** The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters. */
-		VideoContentSourceUrl?: string;
+		VideoContentSourceUrl?: string | null;
 	}
 
 	export interface PutPlaybackConfigurationPutBodyAvailSuppression {
-		Mode?: AvailSuppressionMode;
-		Value?: string;
+		Mode?: AvailSuppressionMode | null;
+		Value?: string | null;
 	}
 
 	export interface PutPlaybackConfigurationPutBodyCdnConfiguration {
-		AdSegmentUrlPrefix?: string;
-		ContentSegmentUrlPrefix?: string;
+		AdSegmentUrlPrefix?: string | null;
+		ContentSegmentUrlPrefix?: string | null;
 	}
 
 	export interface PutPlaybackConfigurationPutBodyDashConfiguration {
-		MpdLocation?: string;
-		OriginManifestType?: DashConfigurationOriginManifestType;
+		MpdLocation?: string | null;
+		OriginManifestType?: DashConfigurationOriginManifestType | null;
 	}
 
 	export interface PutPlaybackConfigurationPutBodyLivePreRollConfiguration {
-		AdDecisionServerUrl?: string;
-		MaxDurationSeconds?: number;
+		AdDecisionServerUrl?: string | null;
+		MaxDurationSeconds?: number | null;
 	}
 
 }

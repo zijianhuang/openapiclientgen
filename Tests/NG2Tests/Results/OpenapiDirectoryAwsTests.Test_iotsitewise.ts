@@ -21,7 +21,7 @@ export namespace MyNS {
 	}
 
 	export interface BatchAssociateProjectAssetsResponse {
-		errors?: Array<AssetErrorDetails>;
+		errors?: Array<AssetErrorDetails> | null;
 	}
 
 
@@ -35,7 +35,7 @@ export namespace MyNS {
 	export enum AssetErrorDetailsCode { INTERNAL_FAILURE = 0 }
 
 	export interface BatchDisassociateProjectAssetsResponse {
-		errors?: Array<AssetErrorDetails>;
+		errors?: Array<AssetErrorDetails> | null;
 	}
 
 	export interface BatchPutAssetPropertyValueResponse {
@@ -63,16 +63,16 @@ export namespace MyNS {
 	/** Contains a timestamp with optional nanosecond granularity. */
 	export interface TimeInNanos {
 		timeInSeconds: number;
-		offsetInNanos?: number;
+		offsetInNanos?: number | null;
 	}
 
 
 	/** Contains a list of value updates for an asset property in the list of asset entries consumed by the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API. */
 	export interface PutAssetPropertyValueEntry {
 		entryId: string;
-		assetId?: string;
-		propertyId?: string;
-		propertyAlias?: string;
+		assetId?: string | null;
+		propertyId?: string | null;
+		propertyAlias?: string | null;
 		propertyValues: Array<AssetPropertyValue>;
 	}
 
@@ -91,16 +91,16 @@ export namespace MyNS {
 		 * Required
 		 */
 		timestamp: TimeInNanos;
-		quality?: AssetPropertyValueQuality;
+		quality?: AssetPropertyValueQuality | null;
 	}
 
 
 	/** Contains an asset property value (of a single type only). */
 	export interface Variant {
-		stringValue?: string;
-		integerValue?: number;
-		doubleValue?: number;
-		booleanValue?: boolean;
+		stringValue?: string | null;
+		integerValue?: number | null;
+		doubleValue?: number | null;
+		booleanValue?: boolean | null;
 	}
 
 	export enum AssetPropertyValueQuality { GOOD = 0, BAD = 1, UNCERTAIN = 2 }
@@ -154,7 +154,7 @@ export namespace MyNS {
 		state: AssetStatusState;
 
 		/** Contains the details of an AWS IoT SiteWise error. */
-		error?: ErrorDetails;
+		error?: ErrorDetails | null;
 	}
 
 	export enum AssetStatusState { CREATING = 0, ACTIVE = 1, UPDATING = 2, DELETING = 3, FAILED = 4 }
@@ -188,7 +188,7 @@ export namespace MyNS {
 		state: AssetModelStatusState;
 
 		/** Contains the details of an AWS IoT SiteWise error. */
-		error?: ErrorDetails;
+		error?: ErrorDetails | null;
 	}
 
 	export enum AssetModelStatusState { CREATING = 0, ACTIVE = 1, UPDATING = 2, PROPAGATING = 3, DELETING = 4, FAILED = 5 }
@@ -198,7 +198,7 @@ export namespace MyNS {
 	export interface AssetModelPropertyDefinition {
 		name: string;
 		dataType: AssetModelPropertyDefinitionDataType;
-		unit?: string;
+		unit?: string | null;
 
 		/**
 		 * Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.
@@ -214,22 +214,22 @@ export namespace MyNS {
 	export interface PropertyType {
 
 		/** Contains an asset attribute property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#attributes">Attributes</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		attribute?: Attribute;
+		attribute?: Attribute | null;
 
 		/** Contains an asset measurement property. This structure is empty. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements">Measurements</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		measurement?: Measurement;
+		measurement?: Measurement | null;
 
 		/** <p>Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms">Transforms</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> */
-		transform?: Transform;
+		transform?: Transform | null;
 
 		/** <p>Contains an asset metric property. With metrics, you can calculate aggregate functions, such as an average, maximum, or minimum, as specified through an expression. A metric maps several values to a single value (such as a sum).</p> <p>The maximum number of dependent/cascading variables used in any one metric calculation is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its computational dependency tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics">Metrics</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> */
-		metric?: Metric;
+		metric?: Metric | null;
 	}
 
 
 	/** Contains an asset attribute property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#attributes">Attributes</a> in the <i>AWS IoT SiteWise User Guide</i>. */
 	export interface Attribute {
-		defaultValue?: string;
+		defaultValue?: string | null;
 	}
 
 
@@ -260,7 +260,7 @@ export namespace MyNS {
 	/** Identifies a property value used in an expression. */
 	export interface VariableValue {
 		propertyId: string;
-		hierarchyId?: string;
+		hierarchyId?: string | null;
 	}
 
 
@@ -281,7 +281,7 @@ export namespace MyNS {
 	export interface MetricWindow {
 
 		/** Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and contiguous time interval. This window is used in metric and aggregation computations. */
-		tumbling?: TumblingWindow;
+		tumbling?: TumblingWindow | null;
 	}
 
 
@@ -332,7 +332,7 @@ export namespace MyNS {
 		state: PortalStatusState;
 
 		/** Contains AWS IoT SiteWise Monitor error details. */
-		error?: MonitorErrorDetails;
+		error?: MonitorErrorDetails | null;
 	}
 
 	export enum PortalStatusState { CREATING = 0, UPDATING = 1, DELETING = 2, ACTIVE = 3, FAILED = 4 }
@@ -340,8 +340,8 @@ export namespace MyNS {
 
 	/** Contains AWS IoT SiteWise Monitor error details. */
 	export interface MonitorErrorDetails {
-		code?: AssetErrorDetailsCode;
-		message?: string;
+		code?: AssetErrorDetailsCode | null;
+		message?: string | null;
 	}
 
 	export enum ImageFileType { PNG = 0 }
@@ -412,10 +412,10 @@ export namespace MyNS {
 	export interface Identity {
 
 		/** Contains information for a user identity in an access policy. */
-		user?: UserIdentity;
+		user?: UserIdentity | null;
 
 		/** Contains information for a group identity in an access policy. */
-		group?: GroupIdentity;
+		group?: GroupIdentity | null;
 	}
 
 
@@ -423,10 +423,10 @@ export namespace MyNS {
 	export interface Resource {
 
 		/** Identifies an AWS IoT SiteWise Monitor portal. */
-		portal?: PortalResource;
+		portal?: PortalResource | null;
 
 		/** Identifies a specific AWS IoT SiteWise Monitor project. */
-		project?: ProjectResource;
+		project?: ProjectResource | null;
 	}
 
 	export enum DescribeAccessPolicyResponseAccessPolicyPermission { ADMINISTRATOR = 0, VIEWER = 1 }
@@ -453,12 +453,12 @@ export namespace MyNS {
 	export interface AssetProperty {
 		id: string;
 		name: string;
-		alias?: string;
+		alias?: string | null;
 
 		/** Contains asset property value notification information. When the notification state is enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		notification?: PropertyNotification;
+		notification?: PropertyNotification | null;
 		dataType: AssetModelPropertyDefinitionDataType;
-		unit?: string;
+		unit?: string | null;
 	}
 
 
@@ -473,7 +473,7 @@ export namespace MyNS {
 
 	/** Describes an asset hierarchy that contains a hierarchy's name and ID. */
 	export interface AssetHierarchy {
-		id?: string;
+		id?: string | null;
 		name: string;
 	}
 
@@ -497,10 +497,10 @@ export namespace MyNS {
 
 	/** Contains information about an asset model property. */
 	export interface AssetModelProperty {
-		id?: string;
+		id?: string | null;
 		name: string;
 		dataType: AssetModelPropertyDefinitionDataType;
-		unit?: string;
+		unit?: string | null;
 
 		/**
 		 * Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.
@@ -512,7 +512,7 @@ export namespace MyNS {
 
 	/** Describes an asset hierarchy that contains a hierarchy's name, ID, and child asset model ID that specifies the type of asset that can be in this hierarchy. */
 	export interface AssetModelHierarchy {
-		id?: string;
+		id?: string | null;
 		name: string;
 		childAssetModelId: string;
 	}
@@ -534,15 +534,15 @@ export namespace MyNS {
 	export interface Property {
 		id: string;
 		name: string;
-		alias?: string;
+		alias?: string | null;
 
 		/** Contains asset property value notification information. When the notification state is enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		notification?: PropertyNotification;
+		notification?: PropertyNotification | null;
 		dataType: AssetModelPropertyDefinitionDataType;
-		unit?: string;
+		unit?: string | null;
 
 		/** Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>. */
-		type?: PropertyType;
+		type?: PropertyType | null;
 	}
 
 	export interface DescribeDashboardResponse {
@@ -550,7 +550,7 @@ export namespace MyNS {
 		dashboardArn: string;
 		dashboardName: string;
 		projectId: string;
-		dashboardDescription?: string;
+		dashboardDescription?: string | null;
 		dashboardDefinition: string;
 		dashboardCreationDate: Date;
 		dashboardLastUpdateDate: Date;
@@ -562,7 +562,7 @@ export namespace MyNS {
 		gatewayArn: string;
 
 		/** Contains a gateway's platform information. */
-		gatewayPlatform?: GatewayPlatform;
+		gatewayPlatform?: GatewayPlatform | null;
 		gatewayCapabilitySummaries: Array<GatewayCapabilitySummary>;
 		creationDate: Date;
 		lastUpdateDate: Date;
@@ -616,7 +616,7 @@ export namespace MyNS {
 		portalId: string;
 		portalArn: string;
 		portalName: string;
-		portalDescription?: string;
+		portalDescription?: string | null;
 		portalClientId: string;
 		portalStartUrl: string;
 		portalContactEmail: string;
@@ -630,8 +630,8 @@ export namespace MyNS {
 		portalLastUpdateDate: Date;
 
 		/** Contains an image that is uploaded to AWS IoT SiteWise and available at a URL. */
-		portalLogoImageLocation?: ImageLocation;
-		roleArn?: string;
+		portalLogoImageLocation?: ImageLocation | null;
+		roleArn?: string | null;
 	}
 
 
@@ -646,21 +646,21 @@ export namespace MyNS {
 		projectArn: string;
 		projectName: string;
 		portalId: string;
-		projectDescription?: string;
+		projectDescription?: string | null;
 		projectCreationDate: Date;
 		projectLastUpdateDate: Date;
 	}
 
 	export interface GetAssetPropertyAggregatesResponse {
 		aggregatedValues: Array<AggregatedValue>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Contains aggregated asset property values (for example, average, minimum, and maximum). */
 	export interface AggregatedValue {
 		timestamp: Date;
-		quality?: AssetPropertyValueQuality;
+		quality?: AssetPropertyValueQuality | null;
 
 		/**
 		 * Contains the (pre-calculated) aggregate values for an asset property.
@@ -672,12 +672,12 @@ export namespace MyNS {
 
 	/** Contains the (pre-calculated) aggregate values for an asset property. */
 	export interface Aggregates {
-		average?: number;
-		count?: number;
-		maximum?: number;
-		minimum?: number;
-		sum?: number;
-		standardDeviation?: number;
+		average?: number | null;
+		count?: number | null;
+		maximum?: number | null;
+		minimum?: number | null;
+		sum?: number | null;
+		standardDeviation?: number | null;
 	}
 
 	export enum AggregateType { AVERAGE = 0, COUNT = 1, MAXIMUM = 2, MINIMUM = 3, SUM = 4, STANDARD_DEVIATION = 5 }
@@ -687,17 +687,17 @@ export namespace MyNS {
 	export interface GetAssetPropertyValueResponse {
 
 		/** Contains asset property value information. */
-		propertyValue?: AssetPropertyValue;
+		propertyValue?: AssetPropertyValue | null;
 	}
 
 	export interface GetAssetPropertyValueHistoryResponse {
 		assetPropertyValueHistory: Array<AssetPropertyValue>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListAccessPoliciesResponse {
 		accessPolicySummaries: Array<AccessPolicySummary>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -717,13 +717,13 @@ export namespace MyNS {
 		 */
 		resource: Resource;
 		permission: DescribeAccessPolicyResponseAccessPolicyPermission;
-		creationDate?: Date;
-		lastUpdateDate?: Date;
+		creationDate?: Date | null;
+		lastUpdateDate?: Date | null;
 	}
 
 	export interface ListAssetModelsResponse {
 		assetModelSummaries: Array<AssetModelSummary>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -745,7 +745,7 @@ export namespace MyNS {
 
 	export interface ListAssetsResponse {
 		assetSummaries: Array<AssetSummary>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -768,7 +768,7 @@ export namespace MyNS {
 
 	export interface ListAssociatedAssetsResponse {
 		assetSummaries: Array<AssociatedAssetsSummary>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -791,7 +791,7 @@ export namespace MyNS {
 
 	export interface ListDashboardsResponse {
 		dashboardSummaries: Array<DashboardSummary>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -799,14 +799,14 @@ export namespace MyNS {
 	export interface DashboardSummary {
 		id: string;
 		name: string;
-		description?: string;
-		creationDate?: Date;
-		lastUpdateDate?: Date;
+		description?: string | null;
+		creationDate?: Date | null;
+		lastUpdateDate?: Date | null;
 	}
 
 	export interface ListGatewaysResponse {
 		gatewaySummaries: Array<GatewaySummary>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -814,14 +814,14 @@ export namespace MyNS {
 	export interface GatewaySummary {
 		gatewayId: string;
 		gatewayName: string;
-		gatewayCapabilitySummaries?: Array<GatewayCapabilitySummary>;
+		gatewayCapabilitySummaries?: Array<GatewayCapabilitySummary> | null;
 		creationDate: Date;
 		lastUpdateDate: Date;
 	}
 
 	export interface ListPortalsResponse {
-		portalSummaries?: Array<PortalSummary>;
-		nextToken?: string;
+		portalSummaries?: Array<PortalSummary> | null;
+		nextToken?: string | null;
 	}
 
 
@@ -829,21 +829,21 @@ export namespace MyNS {
 	export interface PortalSummary {
 		id: string;
 		name: string;
-		description?: string;
+		description?: string | null;
 		startUrl: string;
-		creationDate?: Date;
-		lastUpdateDate?: Date;
-		roleArn?: string;
+		creationDate?: Date | null;
+		lastUpdateDate?: Date | null;
+		roleArn?: string | null;
 	}
 
 	export interface ListProjectAssetsResponse {
 		assetIds: Array<string>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 	export interface ListProjectsResponse {
 		projectSummaries: Array<ProjectSummary>;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
@@ -851,13 +851,13 @@ export namespace MyNS {
 	export interface ProjectSummary {
 		id: string;
 		name: string;
-		description?: string;
-		creationDate?: Date;
-		lastUpdateDate?: Date;
+		description?: string | null;
+		creationDate?: Date | null;
+		lastUpdateDate?: Date | null;
 	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export interface TagMap {
@@ -938,17 +938,17 @@ export namespace MyNS {
 	export interface AssociateAssetsRequest {
 		hierarchyId: string;
 		childAssetId: string;
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface BatchAssociateProjectAssetsRequest {
 		assetIds: Array<string>;
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface BatchDisassociateProjectAssetsRequest {
 		assetIds: Array<string>;
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export enum BatchPutAssetPropertyValueErrorCode { ResourceNotFoundException = 0, InvalidRequestException = 1, InternalFailureException = 2, ServiceUnavailableException = 3, ThrottlingException = 4, LimitExceededException = 5, ConflictingOperationException = 6, TimestampOutOfRangeException = 7, AccessDeniedException = 8 }
@@ -973,33 +973,33 @@ export namespace MyNS {
 		 */
 		accessPolicyResource: Resource;
 		accessPolicyPermission: DescribeAccessPolicyResponseAccessPolicyPermission;
-		clientToken?: string;
-		tags?: TagMap;
+		clientToken?: string | null;
+		tags?: TagMap | null;
 	}
 
 	export interface CreateAssetModelRequest {
 		assetModelName: string;
-		assetModelDescription?: string;
-		assetModelProperties?: Array<AssetModelPropertyDefinition>;
-		assetModelHierarchies?: Array<AssetModelHierarchyDefinition>;
-		clientToken?: string;
-		tags?: TagMap;
+		assetModelDescription?: string | null;
+		assetModelProperties?: Array<AssetModelPropertyDefinition> | null;
+		assetModelHierarchies?: Array<AssetModelHierarchyDefinition> | null;
+		clientToken?: string | null;
+		tags?: TagMap | null;
 	}
 
 	export interface CreateAssetRequest {
 		assetName: string;
 		assetModelId: string;
-		clientToken?: string;
-		tags?: TagMap;
+		clientToken?: string | null;
+		tags?: TagMap | null;
 	}
 
 	export interface CreateDashboardRequest {
 		projectId: string;
 		dashboardName: string;
-		dashboardDescription?: string;
+		dashboardDescription?: string | null;
 		dashboardDefinition: string;
-		clientToken?: string;
-		tags?: TagMap;
+		clientToken?: string | null;
+		tags?: TagMap | null;
 	}
 
 	export interface CreateGatewayRequest {
@@ -1010,27 +1010,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		gatewayPlatform: GatewayPlatform;
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export interface CreatePortalRequest {
 		portalName: string;
-		portalDescription?: string;
+		portalDescription?: string | null;
 		portalContactEmail: string;
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** Contains an image file. */
-		portalLogoImageFile?: ImageFile;
+		portalLogoImageFile?: ImageFile | null;
 		roleArn: string;
-		tags?: TagMap;
+		tags?: TagMap | null;
 	}
 
 	export interface CreateProjectRequest {
 		portalId: string;
 		projectName: string;
-		projectDescription?: string;
-		clientToken?: string;
-		tags?: TagMap;
+		projectDescription?: string | null;
+		clientToken?: string | null;
+		tags?: TagMap | null;
 	}
 
 	export interface DeleteAccessPolicyRequest {
@@ -1087,7 +1087,7 @@ export namespace MyNS {
 	export interface DisassociateAssetsRequest {
 		hierarchyId: string;
 		childAssetId: string;
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export enum ErrorCode { VALIDATION_ERROR = 0, INTERNAL_FAILURE = 1 }
@@ -1108,10 +1108,10 @@ export namespace MyNS {
 
 	/** <p>Contains an image that is one of the following:</p> <ul> <li> <p>An image file. Choose this option to upload a new image.</p> </li> <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li> </ul> */
 	export interface Image {
-		id?: string;
+		id?: string | null;
 
 		/** Contains an image file. */
-		file?: ImageFile;
+		file?: ImageFile | null;
 	}
 
 	export enum ResourceType { PORTAL = 0, PROJECT = 1 }
@@ -1182,33 +1182,33 @@ export namespace MyNS {
 		 */
 		accessPolicyResource: Resource;
 		accessPolicyPermission: DescribeAccessPolicyResponseAccessPolicyPermission;
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface UpdateAssetModelRequest {
 		assetModelName: string;
-		assetModelDescription?: string;
-		assetModelProperties?: Array<AssetModelProperty>;
-		assetModelHierarchies?: Array<AssetModelHierarchy>;
-		clientToken?: string;
+		assetModelDescription?: string | null;
+		assetModelProperties?: Array<AssetModelProperty> | null;
+		assetModelHierarchies?: Array<AssetModelHierarchy> | null;
+		clientToken?: string | null;
 	}
 
 	export interface UpdateAssetPropertyRequest {
-		propertyAlias?: string;
-		propertyNotificationState?: PropertyNotificationState;
-		clientToken?: string;
+		propertyAlias?: string | null;
+		propertyNotificationState?: PropertyNotificationState | null;
+		clientToken?: string | null;
 	}
 
 	export interface UpdateAssetRequest {
 		assetName: string;
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface UpdateDashboardRequest {
 		dashboardName: string;
-		dashboardDescription?: string;
+		dashboardDescription?: string | null;
 		dashboardDefinition: string;
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface UpdateGatewayCapabilityConfigurationRequest {
@@ -1222,19 +1222,19 @@ export namespace MyNS {
 
 	export interface UpdatePortalRequest {
 		portalName: string;
-		portalDescription?: string;
+		portalDescription?: string | null;
 		portalContactEmail: string;
 
 		/** <p>Contains an image that is one of the following:</p> <ul> <li> <p>An image file. Choose this option to upload a new image.</p> </li> <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li> </ul> */
-		portalLogoImage?: Image;
+		portalLogoImage?: Image | null;
 		roleArn: string;
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface UpdateProjectRequest {
 		projectName: string;
-		projectDescription?: string;
-		clientToken?: string;
+		projectDescription?: string | null;
+		clientToken?: string | null;
 	}
 
 	@Injectable()
@@ -1301,7 +1301,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {ListAccessPoliciesResponse} Success
 		 */
-		ListAccessPolicies(identityType: IdentityType, identityId: string, resourceType: ResourceType, resourceId: string, nextToken: string, maxResults: number): Observable<ListAccessPoliciesResponse> {
+		ListAccessPolicies(identityType: IdentityType | null | undefined, identityId: string | null | undefined, resourceType: ResourceType | null | undefined, resourceId: string | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAccessPoliciesResponse> {
 			return this.http.get<ListAccessPoliciesResponse>(this.baseUri + 'access-policies?identityType=' + identityType + '&identityId=' + (identityId == null ? '' : encodeURIComponent(identityId)) + '&resourceType=' + resourceType + '&resourceId=' + (resourceId == null ? '' : encodeURIComponent(resourceId)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1323,7 +1323,7 @@ export namespace MyNS {
 		 * @param {ListAssetsFilter} filter <p>The filter for the requested list of assets. Choose one of the following options. Defaults to <code>ALL</code>.</p> <ul> <li> <p> <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p> </li> <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li> </ul>
 		 * @return {ListAssetsResponse} Success
 		 */
-		ListAssets(nextToken: string, maxResults: number, assetModelId: string, filter: ListAssetsFilter): Observable<ListAssetsResponse> {
+		ListAssets(nextToken: string | null | undefined, maxResults: number | null | undefined, assetModelId: string | null | undefined, filter: ListAssetsFilter | null | undefined): Observable<ListAssetsResponse> {
 			return this.http.get<ListAssetsResponse>(this.baseUri + 'assets?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&assetModelId=' + (assetModelId == null ? '' : encodeURIComponent(assetModelId)) + '&filter=' + filter, {});
 		}
 
@@ -1343,7 +1343,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {ListAssetModelsResponse} Success
 		 */
-		ListAssetModels(nextToken: string, maxResults: number): Observable<ListAssetModelsResponse> {
+		ListAssetModels(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAssetModelsResponse> {
 			return this.http.get<ListAssetModelsResponse>(this.baseUri + 'asset-models?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1372,7 +1372,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {ListGatewaysResponse} Success
 		 */
-		ListGateways(nextToken: string, maxResults: number): Observable<ListGatewaysResponse> {
+		ListGateways(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListGatewaysResponse> {
 			return this.http.get<ListGatewaysResponse>(this.baseUri + '20200301/gateways?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1392,7 +1392,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {ListPortalsResponse} Success
 		 */
-		ListPortals(nextToken: string, maxResults: number): Observable<ListPortalsResponse> {
+		ListPortals(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListPortalsResponse> {
 			return this.http.get<ListPortalsResponse>(this.baseUri + 'portals?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1412,7 +1412,7 @@ export namespace MyNS {
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
 		 * @return {void} 
 		 */
-		DeleteAccessPolicy(accessPolicyId: string, clientToken: string): Observable<HttpResponse<string>> {
+		DeleteAccessPolicy(accessPolicyId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'access-policies/' + (accessPolicyId == null ? '' : encodeURIComponent(accessPolicyId)) + '&clientToken=' + (clientToken == null ? '' : encodeURIComponent(clientToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1443,7 +1443,7 @@ export namespace MyNS {
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
 		 * @return {void} 
 		 */
-		DeleteAsset(assetId: string, clientToken: string): Observable<HttpResponse<string>> {
+		DeleteAsset(assetId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'assets/' + (assetId == null ? '' : encodeURIComponent(assetId)) + '&clientToken=' + (clientToken == null ? '' : encodeURIComponent(clientToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1474,7 +1474,7 @@ export namespace MyNS {
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
 		 * @return {void} 
 		 */
-		DeleteAssetModel(assetModelId: string, clientToken: string): Observable<HttpResponse<string>> {
+		DeleteAssetModel(assetModelId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'asset-models/' + (assetModelId == null ? '' : encodeURIComponent(assetModelId)) + '&clientToken=' + (clientToken == null ? '' : encodeURIComponent(clientToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1505,7 +1505,7 @@ export namespace MyNS {
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
 		 * @return {void} 
 		 */
-		DeleteDashboard(dashboardId: string, clientToken: string): Observable<HttpResponse<string>> {
+		DeleteDashboard(dashboardId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'dashboards/' + (dashboardId == null ? '' : encodeURIComponent(dashboardId)) + '&clientToken=' + (clientToken == null ? '' : encodeURIComponent(clientToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1566,7 +1566,7 @@ export namespace MyNS {
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
 		 * @return {void} 
 		 */
-		DeletePortal(portalId: string, clientToken: string): Observable<HttpResponse<string>> {
+		DeletePortal(portalId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'portals/' + (portalId == null ? '' : encodeURIComponent(portalId)) + '&clientToken=' + (clientToken == null ? '' : encodeURIComponent(clientToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1597,7 +1597,7 @@ export namespace MyNS {
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
 		 * @return {void} 
 		 */
-		DeleteProject(projectId: string, clientToken: string): Observable<HttpResponse<string>> {
+		DeleteProject(projectId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '&clientToken=' + (clientToken == null ? '' : encodeURIComponent(clientToken)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1698,7 +1698,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {GetAssetPropertyAggregatesResponse} Success
 		 */
-		GetAssetPropertyAggregates(assetId: string, propertyId: string, propertyAlias: string, aggregateTypes: Array<AggregateType>, resolution: string, qualities: Array<Quality>, startDate: Date, endDate: Date, timeOrdering: TimeOrdering, nextToken: string, maxResults: number): Observable<GetAssetPropertyAggregatesResponse> {
+		GetAssetPropertyAggregates(assetId: string | null | undefined, propertyId: string | null | undefined, propertyAlias: string | null | undefined, aggregateTypes: Array<AggregateType>, resolution: string, qualities: Array<Quality> | null | undefined, startDate: Date, endDate: Date, timeOrdering: TimeOrdering | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetAssetPropertyAggregatesResponse> {
 			return this.http.get<GetAssetPropertyAggregatesResponse>(this.baseUri + 'properties/aggregates#aggregateTypes&resolution&startDate&endDate?assetId=' + (assetId == null ? '' : encodeURIComponent(assetId)) + '&propertyId=' + (propertyId == null ? '' : encodeURIComponent(propertyId)) + '&propertyAlias=' + (propertyAlias == null ? '' : encodeURIComponent(propertyAlias)) + '&' + aggregateTypes.map(z => `aggregateTypes=${z}`).join('&') + '&resolution=' + (resolution == null ? '' : encodeURIComponent(resolution)) + '&' + qualities.map(z => `qualities=${z}`).join('&') + '&startDate=' + startDate.toISOString() + '&endDate=' + endDate.toISOString() + '&timeOrdering=' + timeOrdering + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1710,7 +1710,7 @@ export namespace MyNS {
 		 * @param {string} propertyAlias The property alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
 		 * @return {GetAssetPropertyValueResponse} Success
 		 */
-		GetAssetPropertyValue(assetId: string, propertyId: string, propertyAlias: string): Observable<GetAssetPropertyValueResponse> {
+		GetAssetPropertyValue(assetId: string | null | undefined, propertyId: string | null | undefined, propertyAlias: string | null | undefined): Observable<GetAssetPropertyValueResponse> {
 			return this.http.get<GetAssetPropertyValueResponse>(this.baseUri + 'properties/latest?assetId=' + (assetId == null ? '' : encodeURIComponent(assetId)) + '&propertyId=' + (propertyId == null ? '' : encodeURIComponent(propertyId)) + '&propertyAlias=' + (propertyAlias == null ? '' : encodeURIComponent(propertyAlias)), {});
 		}
 
@@ -1728,7 +1728,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {GetAssetPropertyValueHistoryResponse} Success
 		 */
-		GetAssetPropertyValueHistory(assetId: string, propertyId: string, propertyAlias: string, startDate: Date, endDate: Date, qualities: Array<Quality>, timeOrdering: TimeOrdering, nextToken: string, maxResults: number): Observable<GetAssetPropertyValueHistoryResponse> {
+		GetAssetPropertyValueHistory(assetId: string | null | undefined, propertyId: string | null | undefined, propertyAlias: string | null | undefined, startDate: Date, endDate: Date, qualities: Array<Quality> | null | undefined, timeOrdering: TimeOrdering | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetAssetPropertyValueHistoryResponse> {
 			return this.http.get<GetAssetPropertyValueHistoryResponse>(this.baseUri + 'properties/history#startDate&endDate?assetId=' + (assetId == null ? '' : encodeURIComponent(assetId)) + '&propertyId=' + (propertyId == null ? '' : encodeURIComponent(propertyId)) + '&propertyAlias=' + (propertyAlias == null ? '' : encodeURIComponent(propertyAlias)) + '&startDate=' + startDate.toISOString() + '&endDate=' + endDate.toISOString() + '&' + qualities.map(z => `qualities=${z}`).join('&') + '&timeOrdering=' + timeOrdering + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1741,7 +1741,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {ListAssociatedAssetsResponse} Success
 		 */
-		ListAssociatedAssets(assetId: string, hierarchyId: string, nextToken: string, maxResults: number): Observable<ListAssociatedAssetsResponse> {
+		ListAssociatedAssets(assetId: string, hierarchyId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAssociatedAssetsResponse> {
 			return this.http.get<ListAssociatedAssetsResponse>(this.baseUri + 'assets/' + (assetId == null ? '' : encodeURIComponent(assetId)) + '/hierarchies#hierarchyId&hierarchyId=' + (hierarchyId == null ? '' : encodeURIComponent(hierarchyId)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1753,7 +1753,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {ListDashboardsResponse} Success
 		 */
-		ListDashboards(projectId: string, nextToken: string, maxResults: number): Observable<ListDashboardsResponse> {
+		ListDashboards(projectId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDashboardsResponse> {
 			return this.http.get<ListDashboardsResponse>(this.baseUri + 'dashboards#projectId?projectId=' + (projectId == null ? '' : encodeURIComponent(projectId)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1765,7 +1765,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {ListProjectAssetsResponse} Success
 		 */
-		ListProjectAssets(projectId: string, nextToken: string, maxResults: number): Observable<ListProjectAssetsResponse> {
+		ListProjectAssets(projectId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListProjectAssetsResponse> {
 			return this.http.get<ListProjectAssetsResponse>(this.baseUri + 'projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/assets&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1777,7 +1777,7 @@ export namespace MyNS {
 		 * @param {number} maxResults The maximum number of results to be returned per paginated request.
 		 * @return {ListProjectsResponse} Success
 		 */
-		ListProjects(portalId: string, nextToken: string, maxResults: number): Observable<ListProjectsResponse> {
+		ListProjects(portalId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListProjectsResponse> {
 			return this.http.get<ListProjectsResponse>(this.baseUri + 'projects#portalId?portalId=' + (portalId == null ? '' : encodeURIComponent(portalId)) + '&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults, {});
 		}
 
@@ -1849,7 +1849,7 @@ export namespace MyNS {
 		 * Min length: 36
 		 * Pattern: \S{36,64}
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface BatchAssociateProjectAssetsPostBody {
@@ -1868,7 +1868,7 @@ export namespace MyNS {
 		 * Min length: 36
 		 * Pattern: \S{36,64}
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface BatchDisassociateProjectAssetsPostBody {
@@ -1887,7 +1887,7 @@ export namespace MyNS {
 		 * Min length: 36
 		 * Pattern: \S{36,64}
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface BatchPutAssetPropertyValuePostBody {
@@ -1925,28 +1925,28 @@ export namespace MyNS {
 		 * Min length: 36
 		 * Pattern: \S{36,64}
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** A list of key-value pairs that contain metadata for the access policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateAccessPolicyPostBodyAccessPolicyIdentity {
 
 		/** Contains information for a user identity in an access policy. */
-		user?: UserIdentity;
+		user?: UserIdentity | null;
 
 		/** Contains information for a group identity in an access policy. */
-		group?: GroupIdentity;
+		group?: GroupIdentity | null;
 	}
 
 	export interface CreateAccessPolicyPostBodyAccessPolicyResource {
 
 		/** Identifies an AWS IoT SiteWise Monitor portal. */
-		portal?: PortalResource;
+		portal?: PortalResource | null;
 
 		/** Identifies a specific AWS IoT SiteWise Monitor project. */
-		project?: ProjectResource;
+		project?: ProjectResource | null;
 	}
 
 	export interface CreateAssetPostBody {
@@ -1975,10 +1975,10 @@ export namespace MyNS {
 		 * Min length: 36
 		 * Pattern: \S{36,64}
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** A list of key-value pairs that contain metadata for the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateAssetModelPostBody {
@@ -1998,13 +1998,13 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
 		 */
-		assetModelDescription?: string;
+		assetModelDescription?: string | null;
 
 		/** <p>The property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> */
-		assetModelProperties?: Array<AssetModelPropertyDefinition>;
+		assetModelProperties?: Array<AssetModelPropertyDefinition> | null;
 
 		/** <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> */
-		assetModelHierarchies?: Array<AssetModelHierarchyDefinition>;
+		assetModelHierarchies?: Array<AssetModelHierarchyDefinition> | null;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
@@ -2012,10 +2012,10 @@ export namespace MyNS {
 		 * Min length: 36
 		 * Pattern: \S{36,64}
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** A list of key-value pairs that contain metadata for the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateDashboardPostBody {
@@ -2044,7 +2044,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
 		 */
-		dashboardDescription?: string;
+		dashboardDescription?: string | null;
 
 		/**
 		 * The dashboard definition specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating Dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
@@ -2061,10 +2061,10 @@ export namespace MyNS {
 		 * Min length: 36
 		 * Pattern: \S{36,64}
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** A list of key-value pairs that contain metadata for the dashboard. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateGatewayPostBody {
@@ -2085,13 +2085,13 @@ export namespace MyNS {
 		gatewayPlatform: CreateGatewayPostBodyGatewayPlatform;
 
 		/** A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreateGatewayPostBodyGatewayPlatform {
 
 		/** Contains details for a gateway that runs on AWS IoT Greengrass. To create a gateway that runs on AWS IoT Greengrass, you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass group must also have permissions to upload data to AWS IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		greengrass?: Greengrass;
+		greengrass?: Greengrass | null;
 	}
 
 	export interface CreatePortalPostBody {
@@ -2111,7 +2111,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
 		 */
-		portalDescription?: string;
+		portalDescription?: string | null;
 
 		/**
 		 * The AWS administrator's contact email address.
@@ -2128,10 +2128,10 @@ export namespace MyNS {
 		 * Min length: 36
 		 * Pattern: \S{36,64}
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** Contains an image file. */
-		portalLogoImageFile?: CreatePortalPostBodyPortalLogoImageFile;
+		portalLogoImageFile?: CreatePortalPostBodyPortalLogoImageFile | null;
 
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
@@ -2143,12 +2143,12 @@ export namespace MyNS {
 		roleArn: string;
 
 		/** A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface CreatePortalPostBodyPortalLogoImageFile {
-		data?: string;
-		type?: ImageFileType;
+		data?: string | null;
+		type?: ImageFileType | null;
 	}
 
 	export interface CreateProjectPostBody {
@@ -2177,7 +2177,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
 		 */
-		projectDescription?: string;
+		projectDescription?: string | null;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
@@ -2185,10 +2185,10 @@ export namespace MyNS {
 		 * Min length: 36
 		 * Pattern: \S{36,64}
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 
 		/** A list of key-value pairs that contain metadata for the project. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>. */
-		tags?: {[id: string]: string };
+		tags?: {[id: string]: string } | null;
 	}
 
 	export interface UpdateAccessPolicyPutBody {
@@ -2217,25 +2217,25 @@ export namespace MyNS {
 		 * Min length: 36
 		 * Pattern: \S{36,64}
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface UpdateAccessPolicyPutBodyAccessPolicyIdentity {
 
 		/** Contains information for a user identity in an access policy. */
-		user?: UserIdentity;
+		user?: UserIdentity | null;
 
 		/** Contains information for a group identity in an access policy. */
-		group?: GroupIdentity;
+		group?: GroupIdentity | null;
 	}
 
 	export interface UpdateAccessPolicyPutBodyAccessPolicyResource {
 
 		/** Identifies an AWS IoT SiteWise Monitor portal. */
-		portal?: PortalResource;
+		portal?: PortalResource | null;
 
 		/** Identifies a specific AWS IoT SiteWise Monitor project. */
-		project?: ProjectResource;
+		project?: ProjectResource | null;
 	}
 
 	export interface UpdateAssetPutBody {
@@ -2255,7 +2255,7 @@ export namespace MyNS {
 		 * Min length: 36
 		 * Pattern: \S{36,64}
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface UpdateAssetModelPutBody {
@@ -2275,13 +2275,13 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
 		 */
-		assetModelDescription?: string;
+		assetModelDescription?: string | null;
 
 		/** <p>The updated property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> */
-		assetModelProperties?: Array<AssetModelProperty>;
+		assetModelProperties?: Array<AssetModelProperty> | null;
 
 		/** <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> */
-		assetModelHierarchies?: Array<AssetModelHierarchy>;
+		assetModelHierarchies?: Array<AssetModelHierarchy> | null;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
@@ -2289,7 +2289,7 @@ export namespace MyNS {
 		 * Min length: 36
 		 * Pattern: \S{36,64}
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface UpdateDashboardPutBody {
@@ -2309,7 +2309,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
 		 */
-		dashboardDescription?: string;
+		dashboardDescription?: string | null;
 
 		/**
 		 * The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating Dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
@@ -2326,7 +2326,7 @@ export namespace MyNS {
 		 * Min length: 36
 		 * Pattern: \S{36,64}
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface UpdateGatewayPutBody {
@@ -2358,7 +2358,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
 		 */
-		portalDescription?: string;
+		portalDescription?: string | null;
 
 		/**
 		 * The AWS administrator's contact email address.
@@ -2370,7 +2370,7 @@ export namespace MyNS {
 		portalContactEmail: string;
 
 		/** <p>Contains an image that is one of the following:</p> <ul> <li> <p>An image file. Choose this option to upload a new image.</p> </li> <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li> </ul> */
-		portalLogoImage?: UpdatePortalPutBodyPortalLogoImage;
+		portalLogoImage?: UpdatePortalPutBodyPortalLogoImage | null;
 
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for AWS IoT SiteWise Monitor</a> in the <i>AWS IoT SiteWise User Guide</i>.
@@ -2387,14 +2387,14 @@ export namespace MyNS {
 		 * Min length: 36
 		 * Pattern: \S{36,64}
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface UpdatePortalPutBodyPortalLogoImage {
-		id?: string;
+		id?: string | null;
 
 		/** Contains an image file. */
-		file?: ImageFile;
+		file?: ImageFile | null;
 	}
 
 	export interface UpdateProjectPutBody {
@@ -2414,7 +2414,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
 		 */
-		projectDescription?: string;
+		projectDescription?: string | null;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
@@ -2422,7 +2422,7 @@ export namespace MyNS {
 		 * Min length: 36
 		 * Pattern: \S{36,64}
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface UpdateAssetPropertyPutBody {
@@ -2433,10 +2433,10 @@ export namespace MyNS {
 		 * Min length: 1
 		 * Pattern: [^\u0000-\u001F\u007F]+
 		 */
-		propertyAlias?: string;
+		propertyAlias?: string | null;
 
 		/** <p>The MQTT notification state (enabled or disabled) for this asset property. When the notification state is enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p> */
-		propertyNotificationState?: PropertyNotificationState;
+		propertyNotificationState?: PropertyNotificationState | null;
 
 		/**
 		 * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
@@ -2444,7 +2444,7 @@ export namespace MyNS {
 		 * Min length: 36
 		 * Pattern: \S{36,64}
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface PutLoggingOptionsPutBody {
@@ -2457,7 +2457,7 @@ export namespace MyNS {
 	}
 
 	export interface PutLoggingOptionsPutBodyLoggingOptions {
-		level?: LoggingOptionsLevel;
+		level?: LoggingOptionsLevel | null;
 	}
 
 	export interface DisassociateAssetsPostBody {
@@ -2486,7 +2486,7 @@ export namespace MyNS {
 		 * Min length: 36
 		 * Pattern: \S{36,64}
 		 */
-		clientToken?: string;
+		clientToken?: string | null;
 	}
 
 	export interface TagResourcePostBody {

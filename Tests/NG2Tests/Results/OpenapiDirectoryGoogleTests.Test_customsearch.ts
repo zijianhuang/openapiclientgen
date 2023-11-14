@@ -3,131 +3,131 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface Context {
-		facets?: Array<string>;
-		title?: string;
+		facets?: Array<string> | null;
+		title?: string | null;
 	}
 
 	export interface Promotion {
-		PromotionBodyLines?: Array<PromotionBodyLines>;
-		displayLink?: string;
-		htmlTitle?: string;
-		image?: PromotionImage;
-		link?: string;
-		title?: string;
+		PromotionBodyLines?: Array<PromotionBodyLines> | null;
+		displayLink?: string | null;
+		htmlTitle?: string | null;
+		image?: PromotionImage | null;
+		link?: string | null;
+		title?: string | null;
 	}
 
 	export interface PromotionBodyLines {
-		htmlTitle?: string;
-		link?: string;
-		title?: string;
-		url?: string;
+		htmlTitle?: string | null;
+		link?: string | null;
+		title?: string | null;
+		url?: string | null;
 	}
 
 	export interface PromotionImage {
-		height?: number;
-		source?: string;
-		width?: number;
+		height?: number | null;
+		source?: string | null;
+		width?: number | null;
 	}
 
 	export interface Query {
-		count?: number;
-		cr?: string;
-		cx?: string;
-		dateRestrict?: string;
-		disableCnTwTranslation?: string;
-		exactTerms?: string;
-		excludeTerms?: string;
-		fileType?: string;
-		filter?: string;
-		gl?: string;
-		googleHost?: string;
-		highRange?: string;
-		hl?: string;
-		hq?: string;
-		imgColorType?: string;
-		imgDominantColor?: string;
-		imgSize?: string;
-		imgType?: string;
-		inputEncoding?: string;
-		language?: string;
-		linkSite?: string;
-		lowRange?: string;
-		orTerms?: string;
-		outputEncoding?: string;
-		relatedSite?: string;
-		rights?: string;
-		safe?: string;
-		searchTerms?: string;
-		searchType?: string;
-		siteSearch?: string;
-		siteSearchFilter?: string;
-		sort?: string;
-		startIndex?: number;
-		startPage?: number;
-		title?: string;
-		totalResults?: string;
+		count?: number | null;
+		cr?: string | null;
+		cx?: string | null;
+		dateRestrict?: string | null;
+		disableCnTwTranslation?: string | null;
+		exactTerms?: string | null;
+		excludeTerms?: string | null;
+		fileType?: string | null;
+		filter?: string | null;
+		gl?: string | null;
+		googleHost?: string | null;
+		highRange?: string | null;
+		hl?: string | null;
+		hq?: string | null;
+		imgColorType?: string | null;
+		imgDominantColor?: string | null;
+		imgSize?: string | null;
+		imgType?: string | null;
+		inputEncoding?: string | null;
+		language?: string | null;
+		linkSite?: string | null;
+		lowRange?: string | null;
+		orTerms?: string | null;
+		outputEncoding?: string | null;
+		relatedSite?: string | null;
+		rights?: string | null;
+		safe?: string | null;
+		searchTerms?: string | null;
+		searchType?: string | null;
+		siteSearch?: string | null;
+		siteSearchFilter?: string | null;
+		sort?: string | null;
+		startIndex?: number | null;
+		startPage?: number | null;
+		title?: string | null;
+		totalResults?: string | null;
 	}
 
 	export interface Result {
-		cacheId?: string;
-		displayLink?: string;
-		fileFormat?: string;
-		formattedUrl?: string;
-		htmlFormattedUrl?: string;
-		htmlSnippet?: string;
-		htmlTitle?: string;
-		image?: ResultImage;
-		kind?: string;
-		ResultLabels?: Array<ResultLabels>;
-		link?: string;
-		mime?: string;
-		pagemap?: {[id: string]: Array<string> };
-		snippet?: string;
-		title?: string;
+		cacheId?: string | null;
+		displayLink?: string | null;
+		fileFormat?: string | null;
+		formattedUrl?: string | null;
+		htmlFormattedUrl?: string | null;
+		htmlSnippet?: string | null;
+		htmlTitle?: string | null;
+		image?: ResultImage | null;
+		kind?: string | null;
+		ResultLabels?: Array<ResultLabels> | null;
+		link?: string | null;
+		mime?: string | null;
+		pagemap?: {[id: string]: Array<string> } | null;
+		snippet?: string | null;
+		title?: string | null;
 	}
 
 	export interface ResultImage {
-		byteSize?: number;
-		contextLink?: string;
-		height?: number;
-		thumbnailHeight?: number;
-		thumbnailLink?: string;
-		thumbnailWidth?: number;
-		width?: number;
+		byteSize?: number | null;
+		contextLink?: string | null;
+		height?: number | null;
+		thumbnailHeight?: number | null;
+		thumbnailLink?: string | null;
+		thumbnailWidth?: number | null;
+		width?: number | null;
 	}
 
 	export interface ResultLabels {
-		displayName?: string;
-		label_with_op?: string;
-		name?: string;
+		displayName?: string | null;
+		label_with_op?: string | null;
+		name?: string | null;
 	}
 
 	export interface Search {
-		context?: Context;
-		items?: Array<Result>;
-		kind?: string;
-		promotions?: Array<Promotion>;
-		queries?: {[id: string]: Array<Query> };
-		searchInformation?: SearchSearchInformation;
-		spelling?: SearchSpelling;
-		url?: SearchUrl;
+		context?: Context | null;
+		items?: Array<Result> | null;
+		kind?: string | null;
+		promotions?: Array<Promotion> | null;
+		queries?: {[id: string]: Array<Query> } | null;
+		searchInformation?: SearchSearchInformation | null;
+		spelling?: SearchSpelling | null;
+		url?: SearchUrl | null;
 	}
 
 	export interface SearchSearchInformation {
-		formattedSearchTime?: string;
-		formattedTotalResults?: string;
-		searchTime?: number;
-		totalResults?: string;
+		formattedSearchTime?: string | null;
+		formattedTotalResults?: string | null;
+		searchTime?: number | null;
+		totalResults?: string | null;
 	}
 
 	export interface SearchSpelling {
-		correctedQuery?: string;
-		htmlCorrectedQuery?: string;
+		correctedQuery?: string | null;
+		htmlCorrectedQuery?: string | null;
 	}
 
 	export interface SearchUrl {
-		template?: string;
-		type?: string;
+		template?: string | null;
+		type?: string | null;
 	}
 
 	@Injectable()
@@ -171,7 +171,7 @@ export namespace MyNS {
 		 * @param {number} start The index of the first result to return
 		 * @return {void} Successful response
 		 */
-		Search_cse_list(q: string, c2coff: string, cr: string, cx: string, dateRestrict: string, exactTerms: string, excludeTerms: string, fileType: string, filter: Search_cse_listFilter, gl: string, googlehost: string, highRange: string, hl: string, hq: string, imgColorType: Search_cse_listImgColorType, imgDominantColor: Search_cse_listImgDominantColor, imgSize: Search_cse_listImgSize, imgType: Search_cse_listImgType, linkSite: string, lowRange: string, lr: Search_cse_listLr, num: number, orTerms: string, relatedSite: string, rights: string, safe: Search_cse_listSafe, searchType: Search_cse_listSearchType, siteSearch: string, siteSearchFilter: Search_cse_listSiteSearchFilter, sort: string, start: number): Observable<HttpResponse<string>> {
+		Search_cse_list(q: string, c2coff: string | null | undefined, cr: string | null | undefined, cx: string | null | undefined, dateRestrict: string | null | undefined, exactTerms: string | null | undefined, excludeTerms: string | null | undefined, fileType: string | null | undefined, filter: Search_cse_listFilter | null | undefined, gl: string | null | undefined, googlehost: string | null | undefined, highRange: string | null | undefined, hl: string | null | undefined, hq: string | null | undefined, imgColorType: Search_cse_listImgColorType | null | undefined, imgDominantColor: Search_cse_listImgDominantColor | null | undefined, imgSize: Search_cse_listImgSize | null | undefined, imgType: Search_cse_listImgType | null | undefined, linkSite: string | null | undefined, lowRange: string | null | undefined, lr: Search_cse_listLr | null | undefined, num: number | null | undefined, orTerms: string | null | undefined, relatedSite: string | null | undefined, rights: string | null | undefined, safe: Search_cse_listSafe | null | undefined, searchType: Search_cse_listSearchType | null | undefined, siteSearch: string | null | undefined, siteSearchFilter: Search_cse_listSiteSearchFilter | null | undefined, sort: string | null | undefined, start: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1?q=' + (q == null ? '' : encodeURIComponent(q)) + '&c2coff=' + (c2coff == null ? '' : encodeURIComponent(c2coff)) + '&cr=' + (cr == null ? '' : encodeURIComponent(cr)) + '&cx=' + (cx == null ? '' : encodeURIComponent(cx)) + '&dateRestrict=' + (dateRestrict == null ? '' : encodeURIComponent(dateRestrict)) + '&exactTerms=' + (exactTerms == null ? '' : encodeURIComponent(exactTerms)) + '&excludeTerms=' + (excludeTerms == null ? '' : encodeURIComponent(excludeTerms)) + '&fileType=' + (fileType == null ? '' : encodeURIComponent(fileType)) + '&filter=' + filter + '&gl=' + (gl == null ? '' : encodeURIComponent(gl)) + '&googlehost=' + (googlehost == null ? '' : encodeURIComponent(googlehost)) + '&highRange=' + (highRange == null ? '' : encodeURIComponent(highRange)) + '&hl=' + (hl == null ? '' : encodeURIComponent(hl)) + '&hq=' + (hq == null ? '' : encodeURIComponent(hq)) + '&imgColorType=' + imgColorType + '&imgDominantColor=' + imgDominantColor + '&imgSize=' + imgSize + '&imgType=' + imgType + '&linkSite=' + (linkSite == null ? '' : encodeURIComponent(linkSite)) + '&lowRange=' + (lowRange == null ? '' : encodeURIComponent(lowRange)) + '&lr=' + lr + '&num=' + num + '&orTerms=' + (orTerms == null ? '' : encodeURIComponent(orTerms)) + '&relatedSite=' + (relatedSite == null ? '' : encodeURIComponent(relatedSite)) + '&rights=' + (rights == null ? '' : encodeURIComponent(rights)) + '&safe=' + safe + '&searchType=' + searchType + '&siteSearch=' + (siteSearch == null ? '' : encodeURIComponent(siteSearch)) + '&siteSearchFilter=' + siteSearchFilter + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&start=' + start, { observe: 'response', responseType: 'text' });
 		}
 
@@ -211,7 +211,7 @@ export namespace MyNS {
 		 * @param {number} start The index of the first result to return
 		 * @return {void} Successful response
 		 */
-		Search_cse_siterestrict_list(q: string, c2coff: string, cr: string, cx: string, dateRestrict: string, exactTerms: string, excludeTerms: string, fileType: string, filter: Search_cse_siterestrict_listFilter, gl: string, googlehost: string, highRange: string, hl: string, hq: string, imgColorType: Search_cse_listImgColorType, imgDominantColor: Search_cse_listImgDominantColor, imgSize: Search_cse_listImgSize, imgType: Search_cse_listImgType, linkSite: string, lowRange: string, lr: Search_cse_siterestrict_listLr, num: number, orTerms: string, relatedSite: string, rights: string, safe: Search_cse_siterestrict_listSafe, searchType: Search_cse_listSearchType, siteSearch: string, siteSearchFilter: Search_cse_listSiteSearchFilter, sort: string, start: number): Observable<HttpResponse<string>> {
+		Search_cse_siterestrict_list(q: string, c2coff: string | null | undefined, cr: string | null | undefined, cx: string | null | undefined, dateRestrict: string | null | undefined, exactTerms: string | null | undefined, excludeTerms: string | null | undefined, fileType: string | null | undefined, filter: Search_cse_siterestrict_listFilter | null | undefined, gl: string | null | undefined, googlehost: string | null | undefined, highRange: string | null | undefined, hl: string | null | undefined, hq: string | null | undefined, imgColorType: Search_cse_listImgColorType | null | undefined, imgDominantColor: Search_cse_listImgDominantColor | null | undefined, imgSize: Search_cse_listImgSize | null | undefined, imgType: Search_cse_listImgType | null | undefined, linkSite: string | null | undefined, lowRange: string | null | undefined, lr: Search_cse_siterestrict_listLr | null | undefined, num: number | null | undefined, orTerms: string | null | undefined, relatedSite: string | null | undefined, rights: string | null | undefined, safe: Search_cse_siterestrict_listSafe | null | undefined, searchType: Search_cse_listSearchType | null | undefined, siteSearch: string | null | undefined, siteSearchFilter: Search_cse_listSiteSearchFilter | null | undefined, sort: string | null | undefined, start: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v1/siterestrict?q=' + (q == null ? '' : encodeURIComponent(q)) + '&c2coff=' + (c2coff == null ? '' : encodeURIComponent(c2coff)) + '&cr=' + (cr == null ? '' : encodeURIComponent(cr)) + '&cx=' + (cx == null ? '' : encodeURIComponent(cx)) + '&dateRestrict=' + (dateRestrict == null ? '' : encodeURIComponent(dateRestrict)) + '&exactTerms=' + (exactTerms == null ? '' : encodeURIComponent(exactTerms)) + '&excludeTerms=' + (excludeTerms == null ? '' : encodeURIComponent(excludeTerms)) + '&fileType=' + (fileType == null ? '' : encodeURIComponent(fileType)) + '&filter=' + filter + '&gl=' + (gl == null ? '' : encodeURIComponent(gl)) + '&googlehost=' + (googlehost == null ? '' : encodeURIComponent(googlehost)) + '&highRange=' + (highRange == null ? '' : encodeURIComponent(highRange)) + '&hl=' + (hl == null ? '' : encodeURIComponent(hl)) + '&hq=' + (hq == null ? '' : encodeURIComponent(hq)) + '&imgColorType=' + imgColorType + '&imgDominantColor=' + imgDominantColor + '&imgSize=' + imgSize + '&imgType=' + imgType + '&linkSite=' + (linkSite == null ? '' : encodeURIComponent(linkSite)) + '&lowRange=' + (lowRange == null ? '' : encodeURIComponent(lowRange)) + '&lr=' + lr + '&num=' + num + '&orTerms=' + (orTerms == null ? '' : encodeURIComponent(orTerms)) + '&relatedSite=' + (relatedSite == null ? '' : encodeURIComponent(relatedSite)) + '&rights=' + (rights == null ? '' : encodeURIComponent(rights)) + '&safe=' + safe + '&searchType=' + searchType + '&siteSearch=' + (siteSearch == null ? '' : encodeURIComponent(siteSearch)) + '&siteSearchFilter=' + siteSearchFilter + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)) + '&start=' + start, { observe: 'response', responseType: 'text' });
 		}
 	}

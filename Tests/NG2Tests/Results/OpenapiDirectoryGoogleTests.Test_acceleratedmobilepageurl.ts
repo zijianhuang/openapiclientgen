@@ -7,16 +7,16 @@ export namespace MyNS {
 	export interface AmpUrl {
 
 		/** The AMP URL pointing to the publisher's web server. */
-		ampUrl?: string;
+		ampUrl?: string | null;
 
 		/**
 		 * The [AMP Cache URL](/amp/cache/overview#amp-cache-url-format) pointing to
 		 * the cached document in the Google AMP Cache.
 		 */
-		cdnAmpUrl?: string;
+		cdnAmpUrl?: string | null;
 
 		/** The original non-AMP URL. */
-		originalUrl?: string;
+		originalUrl?: string | null;
 	}
 
 
@@ -24,13 +24,13 @@ export namespace MyNS {
 	export interface AmpUrlError {
 
 		/** The error code of an API call. */
-		errorCode?: AmpUrlErrorErrorCode;
+		errorCode?: AmpUrlErrorErrorCode | null;
 
 		/** An optional descriptive error message. */
-		errorMessage?: string;
+		errorMessage?: string | null;
 
 		/** The original non-AMP URL. */
-		originalUrl?: string;
+		originalUrl?: string | null;
 	}
 
 	export enum AmpUrlErrorErrorCode { ERROR_CODE_UNSPECIFIED = 0, INPUT_URL_NOT_FOUND = 1, NO_AMP_URL = 2, APPLICATION_ERROR = 3, URL_IS_VALID_AMP = 4, URL_IS_INVALID_AMP = 5 }
@@ -40,14 +40,14 @@ export namespace MyNS {
 	export interface BatchGetAmpUrlsRequest {
 
 		/** The lookup_strategy being requested. */
-		lookupStrategy?: BatchGetAmpUrlsRequestLookupStrategy;
+		lookupStrategy?: BatchGetAmpUrlsRequestLookupStrategy | null;
 
 		/**
 		 * List of URLs to look up for the paired AMP URLs.
 		 * The URLs are case-sensitive. Up to 50 URLs per lookup
 		 * (see [Usage Limits](/amp/cache/reference/limits)).
 		 */
-		urls?: Array<string>;
+		urls?: Array<string> | null;
 	}
 
 	export enum BatchGetAmpUrlsRequestLookupStrategy { FETCH_LIVE_DOC = 0, IN_INDEX_DOC = 1 }
@@ -62,10 +62,10 @@ export namespace MyNS {
 		 * If BatchAmpUrlsRequest contains duplicate URLs, AmpUrl is generated
 		 * only once.
 		 */
-		ampUrls?: Array<AmpUrl>;
+		ampUrls?: Array<AmpUrl> | null;
 
 		/** The errors for requested URLs that have no AMP URL. */
-		urlErrors?: Array<AmpUrlError>;
+		urlErrors?: Array<AmpUrlError> | null;
 	}
 
 	@Injectable()

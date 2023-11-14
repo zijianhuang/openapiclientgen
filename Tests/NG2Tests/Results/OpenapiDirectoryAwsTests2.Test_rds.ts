@@ -29,22 +29,22 @@ export namespace MyNS {
 	export interface AddSourceIdentifierToSubscriptionResult {
 
 		/** Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action. */
-		EventSubscription?: EventSubscription;
+		EventSubscription?: EventSubscription | null;
 	}
 
 
 	/** Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action. */
 	export interface EventSubscription {
-		CustomerAwsId?: string;
-		CustSubscriptionId?: string;
-		SnsTopicArn?: string;
-		Status?: string;
-		SubscriptionCreationTime?: string;
-		SourceType?: string;
-		SourceIdsList?: Array<string>;
-		EventCategoriesList?: Array<string>;
-		Enabled?: boolean;
-		EventSubscriptionArn?: string;
+		CustomerAwsId?: string | null;
+		CustSubscriptionId?: string | null;
+		SnsTopicArn?: string | null;
+		Status?: string | null;
+		SubscriptionCreationTime?: string | null;
+		SourceType?: string | null;
+		SourceIdsList?: Array<string> | null;
+		EventCategoriesList?: Array<string> | null;
+		Enabled?: boolean | null;
+		EventSubscriptionArn?: string | null;
 	}
 
 	export interface SubscriptionNotFoundFault {
@@ -56,8 +56,8 @@ export namespace MyNS {
 
 	/** Metadata assigned to an Amazon RDS resource consisting of a key-value pair. */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface DBSnapshotNotFoundFault {
@@ -72,25 +72,25 @@ export namespace MyNS {
 	export interface ApplyPendingMaintenanceActionResult {
 
 		/** Describes the pending maintenance actions for a resource. */
-		ResourcePendingMaintenanceActions?: ResourcePendingMaintenanceActions;
+		ResourcePendingMaintenanceActions?: ResourcePendingMaintenanceActions | null;
 	}
 
 
 	/** Describes the pending maintenance actions for a resource. */
 	export interface ResourcePendingMaintenanceActions {
-		ResourceIdentifier?: string;
-		PendingMaintenanceActionDetails?: Array<PendingMaintenanceAction>;
+		ResourceIdentifier?: string | null;
+		PendingMaintenanceActionDetails?: Array<PendingMaintenanceAction> | null;
 	}
 
 
 	/** Provides information about a pending maintenance action for a resource. */
 	export interface PendingMaintenanceAction {
-		Action?: string;
-		AutoAppliedAfterDate?: Date;
-		ForcedApplyDate?: Date;
-		OptInStatus?: string;
-		CurrentApplyDate?: Date;
-		Description?: string;
+		Action?: string | null;
+		AutoAppliedAfterDate?: Date | null;
+		ForcedApplyDate?: Date | null;
+		OptInStatus?: string | null;
+		CurrentApplyDate?: Date | null;
+		Description?: string | null;
 	}
 
 	export interface ResourceNotFoundFault {
@@ -99,35 +99,35 @@ export namespace MyNS {
 	export interface AuthorizeDBSecurityGroupIngressResult {
 
 		/** <p>Contains the details for an Amazon RDS DB security group. </p> <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action. </p> */
-		DBSecurityGroup?: DBSecurityGroup;
+		DBSecurityGroup?: DBSecurityGroup | null;
 	}
 
 
 	/** <p>Contains the details for an Amazon RDS DB security group. </p> <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action. </p> */
 	export interface DBSecurityGroup {
-		OwnerId?: string;
-		DBSecurityGroupName?: string;
-		DBSecurityGroupDescription?: string;
-		VpcId?: string;
-		EC2SecurityGroups?: Array<EC2SecurityGroup>;
-		IPRanges?: Array<IPRange>;
-		DBSecurityGroupArn?: string;
+		OwnerId?: string | null;
+		DBSecurityGroupName?: string | null;
+		DBSecurityGroupDescription?: string | null;
+		VpcId?: string | null;
+		EC2SecurityGroups?: Array<EC2SecurityGroup> | null;
+		IPRanges?: Array<IPRange> | null;
+		DBSecurityGroupArn?: string | null;
 	}
 
 
 	/** <p>This data type is used as a response element in the following actions:</p> <ul> <li> <p> <code>AuthorizeDBSecurityGroupIngress</code> </p> </li> <li> <p> <code>DescribeDBSecurityGroups</code> </p> </li> <li> <p> <code>RevokeDBSecurityGroupIngress</code> </p> </li> </ul> */
 	export interface EC2SecurityGroup {
-		Status?: string;
-		EC2SecurityGroupName?: string;
-		EC2SecurityGroupId?: string;
-		EC2SecurityGroupOwnerId?: string;
+		Status?: string | null;
+		EC2SecurityGroupName?: string | null;
+		EC2SecurityGroupId?: string | null;
+		EC2SecurityGroupOwnerId?: string | null;
 	}
 
 
 	/**  This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.  */
 	export interface IPRange {
-		Status?: string;
-		CIDRIP?: string;
+		Status?: string | null;
+		CIDRIP?: string | null;
 	}
 
 	export interface DBSecurityGroupNotFoundFault {
@@ -145,32 +145,32 @@ export namespace MyNS {
 
 	/** This data type is used as a response element in the <code>DescribeDBClusterBacktracks</code> action. */
 	export interface DBClusterBacktrack {
-		DBClusterIdentifier?: string;
-		BacktrackIdentifier?: string;
-		BacktrackTo?: Date;
-		BacktrackedFrom?: Date;
-		BacktrackRequestCreationTime?: Date;
-		Status?: string;
+		DBClusterIdentifier?: string | null;
+		BacktrackIdentifier?: string | null;
+		BacktrackTo?: Date | null;
+		BacktrackedFrom?: Date | null;
+		BacktrackRequestCreationTime?: Date | null;
+		Status?: string | null;
 	}
 
 
 	/** <p>Contains the details of a snapshot export to Amazon S3. </p> <p>This data type is used as a response element in the <code>DescribeExportTasks</code> action. </p> */
 	export interface ExportTask {
-		ExportTaskIdentifier?: string;
-		SourceArn?: string;
-		ExportOnly?: Array<string>;
-		SnapshotTime?: Date;
-		TaskStartTime?: Date;
-		TaskEndTime?: Date;
-		S3Bucket?: string;
-		S3Prefix?: string;
-		IamRoleArn?: string;
-		KmsKeyId?: string;
-		Status?: string;
-		PercentProgress?: number;
-		TotalExtractedDataInGB?: number;
-		FailureCause?: string;
-		WarningMessage?: string;
+		ExportTaskIdentifier?: string | null;
+		SourceArn?: string | null;
+		ExportOnly?: Array<string> | null;
+		SnapshotTime?: Date | null;
+		TaskStartTime?: Date | null;
+		TaskEndTime?: Date | null;
+		S3Bucket?: string | null;
+		S3Prefix?: string | null;
+		IamRoleArn?: string | null;
+		KmsKeyId?: string | null;
+		Status?: string | null;
+		PercentProgress?: number | null;
+		TotalExtractedDataInGB?: number | null;
+		FailureCause?: string | null;
+		WarningMessage?: string | null;
 	}
 
 	export interface ExportTaskNotFoundFault {
@@ -182,16 +182,16 @@ export namespace MyNS {
 	export interface CopyDBClusterParameterGroupResult {
 
 		/** <p>Contains the details of an Amazon RDS DB cluster parameter group. </p> <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action. </p> */
-		DBClusterParameterGroup?: DBClusterParameterGroup;
+		DBClusterParameterGroup?: DBClusterParameterGroup | null;
 	}
 
 
 	/** <p>Contains the details of an Amazon RDS DB cluster parameter group. </p> <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action. </p> */
 	export interface DBClusterParameterGroup {
-		DBClusterParameterGroupName?: string;
-		DBParameterGroupFamily?: string;
-		Description?: string;
-		DBClusterParameterGroupArn?: string;
+		DBClusterParameterGroupName?: string | null;
+		DBParameterGroupFamily?: string | null;
+		Description?: string | null;
+		DBClusterParameterGroupArn?: string | null;
 	}
 
 	export interface DBParameterGroupNotFoundFault {
@@ -206,32 +206,32 @@ export namespace MyNS {
 	export interface CopyDBClusterSnapshotResult {
 
 		/** <p>Contains the details for an Amazon RDS DB cluster snapshot </p> <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action. </p> */
-		DBClusterSnapshot?: DBClusterSnapshot;
+		DBClusterSnapshot?: DBClusterSnapshot | null;
 	}
 
 
 	/** <p>Contains the details for an Amazon RDS DB cluster snapshot </p> <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action. </p> */
 	export interface DBClusterSnapshot {
-		AvailabilityZones?: Array<string>;
-		DBClusterSnapshotIdentifier?: string;
-		DBClusterIdentifier?: string;
-		SnapshotCreateTime?: Date;
-		Engine?: string;
-		AllocatedStorage?: number;
-		Status?: string;
-		Port?: number;
-		VpcId?: string;
-		ClusterCreateTime?: Date;
-		MasterUsername?: string;
-		EngineVersion?: string;
-		LicenseModel?: string;
-		SnapshotType?: string;
-		PercentProgress?: number;
-		StorageEncrypted?: boolean;
-		KmsKeyId?: string;
-		DBClusterSnapshotArn?: string;
-		SourceDBClusterSnapshotArn?: string;
-		IAMDatabaseAuthenticationEnabled?: boolean;
+		AvailabilityZones?: Array<string> | null;
+		DBClusterSnapshotIdentifier?: string | null;
+		DBClusterIdentifier?: string | null;
+		SnapshotCreateTime?: Date | null;
+		Engine?: string | null;
+		AllocatedStorage?: number | null;
+		Status?: string | null;
+		Port?: number | null;
+		VpcId?: string | null;
+		ClusterCreateTime?: Date | null;
+		MasterUsername?: string | null;
+		EngineVersion?: string | null;
+		LicenseModel?: string | null;
+		SnapshotType?: string | null;
+		PercentProgress?: number | null;
+		StorageEncrypted?: boolean | null;
+		KmsKeyId?: string | null;
+		DBClusterSnapshotArn?: string | null;
+		SourceDBClusterSnapshotArn?: string | null;
+		IAMDatabaseAuthenticationEnabled?: boolean | null;
 	}
 
 	export interface DBClusterSnapshotAlreadyExistsFault {
@@ -252,62 +252,62 @@ export namespace MyNS {
 	export interface CopyDBParameterGroupResult {
 
 		/** <p>Contains the details of an Amazon RDS DB parameter group. </p> <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action. </p> */
-		DBParameterGroup?: DBParameterGroup;
+		DBParameterGroup?: DBParameterGroup | null;
 	}
 
 
 	/** <p>Contains the details of an Amazon RDS DB parameter group. </p> <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action. </p> */
 	export interface DBParameterGroup {
-		DBParameterGroupName?: string;
-		DBParameterGroupFamily?: string;
-		Description?: string;
-		DBParameterGroupArn?: string;
+		DBParameterGroupName?: string | null;
+		DBParameterGroupFamily?: string | null;
+		Description?: string | null;
+		DBParameterGroupArn?: string | null;
 	}
 
 	export interface CopyDBSnapshotResult {
 
 		/** <p>Contains the details of an Amazon RDS DB snapshot. </p> <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action. </p> */
-		DBSnapshot?: DBSnapshot;
+		DBSnapshot?: DBSnapshot | null;
 	}
 
 
 	/** <p>Contains the details of an Amazon RDS DB snapshot. </p> <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action. </p> */
 	export interface DBSnapshot {
-		DBSnapshotIdentifier?: string;
-		DBInstanceIdentifier?: string;
-		SnapshotCreateTime?: Date;
-		Engine?: string;
-		AllocatedStorage?: number;
-		Status?: string;
-		Port?: number;
-		AvailabilityZone?: string;
-		VpcId?: string;
-		InstanceCreateTime?: Date;
-		MasterUsername?: string;
-		EngineVersion?: string;
-		LicenseModel?: string;
-		SnapshotType?: string;
-		Iops?: number;
-		OptionGroupName?: string;
-		PercentProgress?: number;
-		SourceRegion?: string;
-		SourceDBSnapshotIdentifier?: string;
-		StorageType?: string;
-		TdeCredentialArn?: string;
-		Encrypted?: boolean;
-		KmsKeyId?: string;
-		DBSnapshotArn?: string;
-		Timezone?: string;
-		IAMDatabaseAuthenticationEnabled?: boolean;
-		ProcessorFeatures?: Array<ProcessorFeature>;
-		DbiResourceId?: string;
+		DBSnapshotIdentifier?: string | null;
+		DBInstanceIdentifier?: string | null;
+		SnapshotCreateTime?: Date | null;
+		Engine?: string | null;
+		AllocatedStorage?: number | null;
+		Status?: string | null;
+		Port?: number | null;
+		AvailabilityZone?: string | null;
+		VpcId?: string | null;
+		InstanceCreateTime?: Date | null;
+		MasterUsername?: string | null;
+		EngineVersion?: string | null;
+		LicenseModel?: string | null;
+		SnapshotType?: string | null;
+		Iops?: number | null;
+		OptionGroupName?: string | null;
+		PercentProgress?: number | null;
+		SourceRegion?: string | null;
+		SourceDBSnapshotIdentifier?: string | null;
+		StorageType?: string | null;
+		TdeCredentialArn?: string | null;
+		Encrypted?: boolean | null;
+		KmsKeyId?: string | null;
+		DBSnapshotArn?: string | null;
+		Timezone?: string | null;
+		IAMDatabaseAuthenticationEnabled?: boolean | null;
+		ProcessorFeatures?: Array<ProcessorFeature> | null;
+		DbiResourceId?: string | null;
 	}
 
 
 	/** <p>Contains the processor features of a DB instance class.</p> <p>To specify the number of CPU cores, use the <code>coreCount</code> feature name for the <code>Name</code> parameter. To specify the number of threads per core, use the <code>threadsPerCore</code> feature name for the <code>Name</code> parameter.</p> <p>You can set the processor features of the DB instance class for a DB instance when you call one of the following actions:</p> <ul> <li> <p> <code>CreateDBInstance</code> </p> </li> <li> <p> <code>ModifyDBInstance</code> </p> </li> <li> <p> <code>RestoreDBInstanceFromDBSnapshot</code> </p> </li> <li> <p> <code>RestoreDBInstanceFromS3</code> </p> </li> <li> <p> <code>RestoreDBInstanceToPointInTime</code> </p> </li> </ul> <p>You can view the valid processor values for a particular instance class by calling the <code>DescribeOrderableDBInstanceOptions</code> action and specifying the instance class for the <code>DBInstanceClass</code> parameter.</p> <p>In addition, you can use the following actions for DB instance class processor information:</p> <ul> <li> <p> <code>DescribeDBInstances</code> </p> </li> <li> <p> <code>DescribeDBSnapshots</code> </p> </li> <li> <p> <code>DescribeValidDBInstanceModifications</code> </p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i> </p> */
 	export interface ProcessorFeature {
-		Name?: string;
-		Value?: string;
+		Name?: string | null;
+		Value?: string | null;
 	}
 
 	export interface DBSnapshotAlreadyExistsFault {
@@ -319,62 +319,62 @@ export namespace MyNS {
 	export interface CopyOptionGroupResult {
 
 		/** <p/> */
-		OptionGroup?: OptionGroup;
+		OptionGroup?: OptionGroup | null;
 	}
 
 
 	/** <p/> */
 	export interface OptionGroup {
-		OptionGroupName?: string;
-		OptionGroupDescription?: string;
-		EngineName?: string;
-		MajorEngineVersion?: string;
-		Options?: Array<Option>;
-		AllowsVpcAndNonVpcInstanceMemberships?: boolean;
-		VpcId?: string;
-		OptionGroupArn?: string;
+		OptionGroupName?: string | null;
+		OptionGroupDescription?: string | null;
+		EngineName?: string | null;
+		MajorEngineVersion?: string | null;
+		Options?: Array<Option> | null;
+		AllowsVpcAndNonVpcInstanceMemberships?: boolean | null;
+		VpcId?: string | null;
+		OptionGroupArn?: string | null;
 	}
 
 
 	/** Option details. */
 	export interface Option {
-		OptionName?: string;
-		OptionDescription?: string;
-		Persistent?: boolean;
-		Permanent?: boolean;
-		Port?: number;
-		OptionVersion?: string;
-		OptionSettings?: Array<OptionSetting>;
-		DBSecurityGroupMemberships?: Array<DBSecurityGroupMembership>;
-		VpcSecurityGroupMemberships?: Array<VpcSecurityGroupMembership>;
+		OptionName?: string | null;
+		OptionDescription?: string | null;
+		Persistent?: boolean | null;
+		Permanent?: boolean | null;
+		Port?: number | null;
+		OptionVersion?: string | null;
+		OptionSettings?: Array<OptionSetting> | null;
+		DBSecurityGroupMemberships?: Array<DBSecurityGroupMembership> | null;
+		VpcSecurityGroupMemberships?: Array<VpcSecurityGroupMembership> | null;
 	}
 
 
 	/** Option settings are the actual settings being applied or configured for that option. It is used when you modify an option group or describe option groups. For example, the NATIVE_NETWORK_ENCRYPTION option has a setting called SQLNET.ENCRYPTION_SERVER that can have several different values. */
 	export interface OptionSetting {
-		Name?: string;
-		Value?: string;
-		DefaultValue?: string;
-		Description?: string;
-		ApplyType?: string;
-		DataType?: string;
-		AllowedValues?: string;
-		IsModifiable?: boolean;
-		IsCollection?: boolean;
+		Name?: string | null;
+		Value?: string | null;
+		DefaultValue?: string | null;
+		Description?: string | null;
+		ApplyType?: string | null;
+		DataType?: string | null;
+		AllowedValues?: string | null;
+		IsModifiable?: boolean | null;
+		IsCollection?: boolean | null;
 	}
 
 
 	/** <p>This data type is used as a response element in the following actions:</p> <ul> <li> <p> <code>ModifyDBInstance</code> </p> </li> <li> <p> <code>RebootDBInstance</code> </p> </li> <li> <p> <code>RestoreDBInstanceFromDBSnapshot</code> </p> </li> <li> <p> <code>RestoreDBInstanceToPointInTime</code> </p> </li> </ul> */
 	export interface DBSecurityGroupMembership {
-		DBSecurityGroupName?: string;
-		Status?: string;
+		DBSecurityGroupName?: string | null;
+		Status?: string | null;
 	}
 
 
 	/** This data type is used as a response element for queries on VPC security group membership. */
 	export interface VpcSecurityGroupMembership {
-		VpcSecurityGroupId?: string;
-		Status?: string;
+		VpcSecurityGroupId?: string | null;
+		Status?: string | null;
 	}
 
 	export interface OptionGroupAlreadyExistsFault {
@@ -389,29 +389,29 @@ export namespace MyNS {
 	export interface CreateCustomAvailabilityZoneResult {
 
 		/** <p>A custom Availability Zone (AZ) is an on-premises AZ that is integrated with a VMware vSphere cluster.</p> <p>For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware User Guide.</i> </a> </p> */
-		CustomAvailabilityZone?: CustomAvailabilityZone;
+		CustomAvailabilityZone?: CustomAvailabilityZone | null;
 	}
 
 
 	/** <p>A custom Availability Zone (AZ) is an on-premises AZ that is integrated with a VMware vSphere cluster.</p> <p>For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware User Guide.</i> </a> </p> */
 	export interface CustomAvailabilityZone {
-		CustomAvailabilityZoneId?: string;
-		CustomAvailabilityZoneName?: string;
-		CustomAvailabilityZoneStatus?: string;
+		CustomAvailabilityZoneId?: string | null;
+		CustomAvailabilityZoneName?: string | null;
+		CustomAvailabilityZoneStatus?: string | null;
 
 		/** <p>Information about the virtual private network (VPN) between the VMware vSphere cluster and the AWS website.</p> <p>For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware User Guide.</i> </a> </p> */
-		VpnDetails?: VpnDetails;
+		VpnDetails?: VpnDetails | null;
 	}
 
 
 	/** <p>Information about the virtual private network (VPN) between the VMware vSphere cluster and the AWS website.</p> <p>For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware User Guide.</i> </a> </p> */
 	export interface VpnDetails {
-		VpnId?: string;
-		VpnTunnelOriginatorIP?: string;
-		VpnGatewayIp?: string;
-		VpnPSK?: string;
-		VpnName?: string;
-		VpnState?: string;
+		VpnId?: string | null;
+		VpnTunnelOriginatorIP?: string | null;
+		VpnGatewayIp?: string | null;
+		VpnPSK?: string | null;
+		VpnName?: string | null;
+		VpnState?: string | null;
 	}
 
 	export interface CustomAvailabilityZoneAlreadyExistsFault {
@@ -423,102 +423,102 @@ export namespace MyNS {
 	export interface CreateDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Aurora DB cluster. </p> <p>This data type is used as a response element in the <code>DescribeDBClusters</code>, <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions. </p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 
 	/** <p>Contains the details of an Amazon Aurora DB cluster. </p> <p>This data type is used as a response element in the <code>DescribeDBClusters</code>, <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions. </p> */
 	export interface DBCluster {
-		AllocatedStorage?: number;
-		AvailabilityZones?: Array<string>;
-		BackupRetentionPeriod?: number;
-		CharacterSetName?: string;
-		DatabaseName?: string;
-		DBClusterIdentifier?: string;
-		DBClusterParameterGroup?: string;
-		DBSubnetGroup?: string;
-		Status?: string;
-		PercentProgress?: string;
-		EarliestRestorableTime?: Date;
-		Endpoint?: string;
-		ReaderEndpoint?: string;
-		CustomEndpoints?: Array<string>;
-		MultiAZ?: boolean;
-		Engine?: string;
-		EngineVersion?: string;
-		LatestRestorableTime?: Date;
-		Port?: number;
-		MasterUsername?: string;
-		DBClusterOptionGroupMemberships?: Array<DBClusterOptionGroupStatus>;
-		PreferredBackupWindow?: string;
-		PreferredMaintenanceWindow?: string;
-		ReplicationSourceIdentifier?: string;
-		ReadReplicaIdentifiers?: Array<string>;
-		DBClusterMembers?: Array<DBClusterMember>;
-		VpcSecurityGroups?: Array<VpcSecurityGroupMembership>;
-		HostedZoneId?: string;
-		StorageEncrypted?: boolean;
-		KmsKeyId?: string;
-		DbClusterResourceId?: string;
-		DBClusterArn?: string;
-		AssociatedRoles?: Array<DBClusterRole>;
-		IAMDatabaseAuthenticationEnabled?: boolean;
-		CloneGroupId?: string;
-		ClusterCreateTime?: Date;
-		EarliestBacktrackTime?: Date;
-		BacktrackWindow?: number;
-		BacktrackConsumedChangeRecords?: number;
-		EnabledCloudwatchLogsExports?: Array<string>;
-		Capacity?: number;
-		EngineMode?: string;
+		AllocatedStorage?: number | null;
+		AvailabilityZones?: Array<string> | null;
+		BackupRetentionPeriod?: number | null;
+		CharacterSetName?: string | null;
+		DatabaseName?: string | null;
+		DBClusterIdentifier?: string | null;
+		DBClusterParameterGroup?: string | null;
+		DBSubnetGroup?: string | null;
+		Status?: string | null;
+		PercentProgress?: string | null;
+		EarliestRestorableTime?: Date | null;
+		Endpoint?: string | null;
+		ReaderEndpoint?: string | null;
+		CustomEndpoints?: Array<string> | null;
+		MultiAZ?: boolean | null;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		LatestRestorableTime?: Date | null;
+		Port?: number | null;
+		MasterUsername?: string | null;
+		DBClusterOptionGroupMemberships?: Array<DBClusterOptionGroupStatus> | null;
+		PreferredBackupWindow?: string | null;
+		PreferredMaintenanceWindow?: string | null;
+		ReplicationSourceIdentifier?: string | null;
+		ReadReplicaIdentifiers?: Array<string> | null;
+		DBClusterMembers?: Array<DBClusterMember> | null;
+		VpcSecurityGroups?: Array<VpcSecurityGroupMembership> | null;
+		HostedZoneId?: string | null;
+		StorageEncrypted?: boolean | null;
+		KmsKeyId?: string | null;
+		DbClusterResourceId?: string | null;
+		DBClusterArn?: string | null;
+		AssociatedRoles?: Array<DBClusterRole> | null;
+		IAMDatabaseAuthenticationEnabled?: boolean | null;
+		CloneGroupId?: string | null;
+		ClusterCreateTime?: Date | null;
+		EarliestBacktrackTime?: Date | null;
+		BacktrackWindow?: number | null;
+		BacktrackConsumedChangeRecords?: number | null;
+		EnabledCloudwatchLogsExports?: Array<string> | null;
+		Capacity?: number | null;
+		EngineMode?: string | null;
 
 		/** <p>Shows the scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p> */
-		ScalingConfigurationInfo?: ScalingConfigurationInfo;
-		DeletionProtection?: boolean;
-		HttpEndpointEnabled?: boolean;
-		ActivityStreamMode?: DBClusterActivityStreamMode;
-		ActivityStreamStatus?: DBClusterActivityStreamStatus;
-		ActivityStreamKmsKeyId?: string;
-		ActivityStreamKinesisStreamName?: string;
-		CopyTagsToSnapshot?: boolean;
-		CrossAccountClone?: boolean;
+		ScalingConfigurationInfo?: ScalingConfigurationInfo | null;
+		DeletionProtection?: boolean | null;
+		HttpEndpointEnabled?: boolean | null;
+		ActivityStreamMode?: DBClusterActivityStreamMode | null;
+		ActivityStreamStatus?: DBClusterActivityStreamStatus | null;
+		ActivityStreamKmsKeyId?: string | null;
+		ActivityStreamKinesisStreamName?: string | null;
+		CopyTagsToSnapshot?: boolean | null;
+		CrossAccountClone?: boolean | null;
 
 		/** List of Active Directory Domain membership records associated with a DB instance or cluster. */
-		DomainMemberships?: Array<DomainMembership>;
+		DomainMemberships?: Array<DomainMembership> | null;
 	}
 
 
 	/** Contains status information for a DB cluster option group. */
 	export interface DBClusterOptionGroupStatus {
-		DBClusterOptionGroupName?: string;
-		Status?: string;
+		DBClusterOptionGroupName?: string | null;
+		Status?: string | null;
 	}
 
 
 	/** Contains information about an instance that is part of a DB cluster. */
 	export interface DBClusterMember {
-		DBInstanceIdentifier?: string;
-		IsClusterWriter?: boolean;
-		DBClusterParameterGroupStatus?: string;
-		PromotionTier?: number;
+		DBInstanceIdentifier?: string | null;
+		IsClusterWriter?: boolean | null;
+		DBClusterParameterGroupStatus?: string | null;
+		PromotionTier?: number | null;
 	}
 
 
 	/** Describes an AWS Identity and Access Management (IAM) role that is associated with a DB cluster. */
 	export interface DBClusterRole {
-		RoleArn?: string;
-		Status?: string;
-		FeatureName?: string;
+		RoleArn?: string | null;
+		Status?: string | null;
+		FeatureName?: string | null;
 	}
 
 
 	/** <p>Shows the scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p> */
 	export interface ScalingConfigurationInfo {
-		MinCapacity?: number;
-		MaxCapacity?: number;
-		AutoPause?: boolean;
-		SecondsUntilAutoPause?: number;
-		TimeoutAction?: string;
+		MinCapacity?: number | null;
+		MaxCapacity?: number | null;
+		AutoPause?: boolean | null;
+		SecondsUntilAutoPause?: number | null;
+		TimeoutAction?: string | null;
 	}
 
 	export enum DBClusterActivityStreamMode { sync = 0, async = 1 }
@@ -528,10 +528,10 @@ export namespace MyNS {
 
 	/** An Active Directory Domain membership record associated with the DB instance or cluster. */
 	export interface DomainMembership {
-		Domain?: string;
-		Status?: string;
-		FQDN?: string;
-		IAMRoleName?: string;
+		Domain?: string | null;
+		Status?: string | null;
+		FQDN?: string | null;
+		IAMRoleName?: string | null;
 	}
 
 	export interface DBClusterAlreadyExistsFault {
@@ -576,16 +576,16 @@ export namespace MyNS {
 
 	/** <p>This data type represents the information you need to connect to an Amazon Aurora DB cluster. This data type is used as a response element in the following actions:</p> <ul> <li> <p> <code>CreateDBClusterEndpoint</code> </p> </li> <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li> <li> <p> <code>ModifyDBClusterEndpoint</code> </p> </li> <li> <p> <code>DeleteDBClusterEndpoint</code> </p> </li> </ul> <p>For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.</p> */
 	export interface DBClusterEndpoint {
-		DBClusterEndpointIdentifier?: string;
-		DBClusterIdentifier?: string;
-		DBClusterEndpointResourceIdentifier?: string;
-		Endpoint?: string;
-		Status?: string;
-		EndpointType?: string;
-		CustomEndpointType?: string;
-		StaticMembers?: Array<string>;
-		ExcludedMembers?: Array<string>;
-		DBClusterEndpointArn?: string;
+		DBClusterEndpointIdentifier?: string | null;
+		DBClusterIdentifier?: string | null;
+		DBClusterEndpointResourceIdentifier?: string | null;
+		Endpoint?: string | null;
+		Status?: string | null;
+		EndpointType?: string | null;
+		CustomEndpointType?: string | null;
+		StaticMembers?: Array<string> | null;
+		ExcludedMembers?: Array<string> | null;
+		DBClusterEndpointArn?: string | null;
 	}
 
 	export interface DBClusterEndpointQuotaExceededFault {
@@ -597,187 +597,187 @@ export namespace MyNS {
 	export interface CreateDBClusterParameterGroupResult {
 
 		/** <p>Contains the details of an Amazon RDS DB cluster parameter group. </p> <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action. </p> */
-		DBClusterParameterGroup?: DBClusterParameterGroup;
+		DBClusterParameterGroup?: DBClusterParameterGroup | null;
 	}
 
 	export interface CreateDBClusterSnapshotResult {
 
 		/** <p>Contains the details for an Amazon RDS DB cluster snapshot </p> <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action. </p> */
-		DBClusterSnapshot?: DBClusterSnapshot;
+		DBClusterSnapshot?: DBClusterSnapshot | null;
 	}
 
 	export interface CreateDBInstanceResult {
 
 		/** <p>Contains the details of an Amazon RDS DB instance. </p> <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action. </p> */
-		DBInstance?: DBInstance;
+		DBInstance?: DBInstance | null;
 	}
 
 
 	/** <p>Contains the details of an Amazon RDS DB instance. </p> <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action. </p> */
 	export interface DBInstance {
-		DBInstanceIdentifier?: string;
-		DBInstanceClass?: string;
-		Engine?: string;
-		DBInstanceStatus?: string;
-		MasterUsername?: string;
-		DBName?: string;
+		DBInstanceIdentifier?: string | null;
+		DBInstanceClass?: string | null;
+		Engine?: string | null;
+		DBInstanceStatus?: string | null;
+		MasterUsername?: string | null;
+		DBName?: string | null;
 
 		/** <p>This data type represents the information you need to connect to an Amazon RDS DB instance. This data type is used as a response element in the following actions:</p> <ul> <li> <p> <code>CreateDBInstance</code> </p> </li> <li> <p> <code>DescribeDBInstances</code> </p> </li> <li> <p> <code>DeleteDBInstance</code> </p> </li> </ul> <p>For the data structure that represents Amazon Aurora DB cluster endpoints, see <code>DBClusterEndpoint</code>.</p> */
-		Endpoint?: Endpoint;
-		AllocatedStorage?: number;
-		InstanceCreateTime?: Date;
-		PreferredBackupWindow?: string;
-		BackupRetentionPeriod?: number;
-		DBSecurityGroups?: Array<DBSecurityGroupMembership>;
-		VpcSecurityGroups?: Array<VpcSecurityGroupMembership>;
-		DBParameterGroups?: Array<DBParameterGroupStatus>;
-		AvailabilityZone?: string;
+		Endpoint?: Endpoint | null;
+		AllocatedStorage?: number | null;
+		InstanceCreateTime?: Date | null;
+		PreferredBackupWindow?: string | null;
+		BackupRetentionPeriod?: number | null;
+		DBSecurityGroups?: Array<DBSecurityGroupMembership> | null;
+		VpcSecurityGroups?: Array<VpcSecurityGroupMembership> | null;
+		DBParameterGroups?: Array<DBParameterGroupStatus> | null;
+		AvailabilityZone?: string | null;
 
 		/** <p>Contains the details of an Amazon RDS DB subnet group. </p> <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action. </p> */
-		DBSubnetGroup?: DBSubnetGroup;
-		PreferredMaintenanceWindow?: string;
+		DBSubnetGroup?: DBSubnetGroup | null;
+		PreferredMaintenanceWindow?: string | null;
 
 		/** This data type is used as a response element in the <code>ModifyDBInstance</code> action. */
-		PendingModifiedValues?: PendingModifiedValues;
-		LatestRestorableTime?: Date;
-		MultiAZ?: boolean;
-		EngineVersion?: string;
-		AutoMinorVersionUpgrade?: boolean;
-		ReadReplicaSourceDBInstanceIdentifier?: string;
-		ReadReplicaDBInstanceIdentifiers?: Array<string>;
-		ReadReplicaDBClusterIdentifiers?: Array<string>;
-		LicenseModel?: string;
-		Iops?: number;
-		OptionGroupMemberships?: Array<OptionGroupMembership>;
-		CharacterSetName?: string;
-		SecondaryAvailabilityZone?: string;
-		PubliclyAccessible?: boolean;
-		StatusInfos?: Array<DBInstanceStatusInfo>;
-		StorageType?: string;
-		TdeCredentialArn?: string;
-		DbInstancePort?: number;
-		DBClusterIdentifier?: string;
-		StorageEncrypted?: boolean;
-		KmsKeyId?: string;
-		DbiResourceId?: string;
-		CACertificateIdentifier?: string;
+		PendingModifiedValues?: PendingModifiedValues | null;
+		LatestRestorableTime?: Date | null;
+		MultiAZ?: boolean | null;
+		EngineVersion?: string | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		ReadReplicaSourceDBInstanceIdentifier?: string | null;
+		ReadReplicaDBInstanceIdentifiers?: Array<string> | null;
+		ReadReplicaDBClusterIdentifiers?: Array<string> | null;
+		LicenseModel?: string | null;
+		Iops?: number | null;
+		OptionGroupMemberships?: Array<OptionGroupMembership> | null;
+		CharacterSetName?: string | null;
+		SecondaryAvailabilityZone?: string | null;
+		PubliclyAccessible?: boolean | null;
+		StatusInfos?: Array<DBInstanceStatusInfo> | null;
+		StorageType?: string | null;
+		TdeCredentialArn?: string | null;
+		DbInstancePort?: number | null;
+		DBClusterIdentifier?: string | null;
+		StorageEncrypted?: boolean | null;
+		KmsKeyId?: string | null;
+		DbiResourceId?: string | null;
+		CACertificateIdentifier?: string | null;
 
 		/** List of Active Directory Domain membership records associated with a DB instance or cluster. */
-		DomainMemberships?: Array<DomainMembership>;
-		CopyTagsToSnapshot?: boolean;
-		MonitoringInterval?: number;
-		EnhancedMonitoringResourceArn?: string;
-		MonitoringRoleArn?: string;
-		PromotionTier?: number;
-		DBInstanceArn?: string;
-		Timezone?: string;
-		IAMDatabaseAuthenticationEnabled?: boolean;
-		PerformanceInsightsEnabled?: boolean;
-		PerformanceInsightsKMSKeyId?: string;
-		PerformanceInsightsRetentionPeriod?: number;
-		EnabledCloudwatchLogsExports?: Array<string>;
-		ProcessorFeatures?: Array<ProcessorFeature>;
-		DeletionProtection?: boolean;
-		AssociatedRoles?: Array<DBInstanceRole>;
+		DomainMemberships?: Array<DomainMembership> | null;
+		CopyTagsToSnapshot?: boolean | null;
+		MonitoringInterval?: number | null;
+		EnhancedMonitoringResourceArn?: string | null;
+		MonitoringRoleArn?: string | null;
+		PromotionTier?: number | null;
+		DBInstanceArn?: string | null;
+		Timezone?: string | null;
+		IAMDatabaseAuthenticationEnabled?: boolean | null;
+		PerformanceInsightsEnabled?: boolean | null;
+		PerformanceInsightsKMSKeyId?: string | null;
+		PerformanceInsightsRetentionPeriod?: number | null;
+		EnabledCloudwatchLogsExports?: Array<string> | null;
+		ProcessorFeatures?: Array<ProcessorFeature> | null;
+		DeletionProtection?: boolean | null;
+		AssociatedRoles?: Array<DBInstanceRole> | null;
 
 		/** <p>This data type represents the information you need to connect to an Amazon RDS DB instance. This data type is used as a response element in the following actions:</p> <ul> <li> <p> <code>CreateDBInstance</code> </p> </li> <li> <p> <code>DescribeDBInstances</code> </p> </li> <li> <p> <code>DeleteDBInstance</code> </p> </li> </ul> <p>For the data structure that represents Amazon Aurora DB cluster endpoints, see <code>DBClusterEndpoint</code>.</p> */
-		ListenerEndpoint?: Endpoint;
-		MaxAllocatedStorage?: number;
+		ListenerEndpoint?: Endpoint | null;
+		MaxAllocatedStorage?: number | null;
 	}
 
 
 	/** <p>This data type represents the information you need to connect to an Amazon RDS DB instance. This data type is used as a response element in the following actions:</p> <ul> <li> <p> <code>CreateDBInstance</code> </p> </li> <li> <p> <code>DescribeDBInstances</code> </p> </li> <li> <p> <code>DeleteDBInstance</code> </p> </li> </ul> <p>For the data structure that represents Amazon Aurora DB cluster endpoints, see <code>DBClusterEndpoint</code>.</p> */
 	export interface Endpoint {
-		Address?: string;
-		Port?: number;
-		HostedZoneId?: string;
+		Address?: string | null;
+		Port?: number | null;
+		HostedZoneId?: string | null;
 	}
 
 
 	/** <p>The status of the DB parameter group.</p> <p>This data type is used as a response element in the following actions:</p> <ul> <li> <p> <code>CreateDBInstance</code> </p> </li> <li> <p> <code>CreateDBInstanceReadReplica</code> </p> </li> <li> <p> <code>DeleteDBInstance</code> </p> </li> <li> <p> <code>ModifyDBInstance</code> </p> </li> <li> <p> <code>RebootDBInstance</code> </p> </li> <li> <p> <code>RestoreDBInstanceFromDBSnapshot</code> </p> </li> </ul> */
 	export interface DBParameterGroupStatus {
-		DBParameterGroupName?: string;
-		ParameterApplyStatus?: string;
+		DBParameterGroupName?: string | null;
+		ParameterApplyStatus?: string | null;
 	}
 
 
 	/** <p>Contains the details of an Amazon RDS DB subnet group. </p> <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action. </p> */
 	export interface DBSubnetGroup {
-		DBSubnetGroupName?: string;
-		DBSubnetGroupDescription?: string;
-		VpcId?: string;
-		SubnetGroupStatus?: string;
-		Subnets?: Array<Subnet>;
-		DBSubnetGroupArn?: string;
+		DBSubnetGroupName?: string | null;
+		DBSubnetGroupDescription?: string | null;
+		VpcId?: string | null;
+		SubnetGroupStatus?: string | null;
+		Subnets?: Array<Subnet> | null;
+		DBSubnetGroupArn?: string | null;
 	}
 
 
 	/**  This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.  */
 	export interface Subnet {
-		SubnetIdentifier?: string;
+		SubnetIdentifier?: string | null;
 
 		/** <p>Contains Availability Zone information.</p> <p> This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p> */
-		SubnetAvailabilityZone?: AvailabilityZone;
-		SubnetStatus?: string;
+		SubnetAvailabilityZone?: AvailabilityZone | null;
+		SubnetStatus?: string | null;
 	}
 
 
 	/** <p>Contains Availability Zone information.</p> <p> This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p> */
 	export interface AvailabilityZone {
-		Name?: string;
+		Name?: string | null;
 	}
 
 
 	/**  This data type is used as a response element in the <code>ModifyDBInstance</code> action.  */
 	export interface PendingModifiedValues {
-		DBInstanceClass?: string;
-		AllocatedStorage?: number;
-		MasterUserPassword?: string;
-		Port?: number;
-		BackupRetentionPeriod?: number;
-		MultiAZ?: boolean;
-		EngineVersion?: string;
-		LicenseModel?: string;
-		Iops?: number;
-		DBInstanceIdentifier?: string;
-		StorageType?: string;
-		CACertificateIdentifier?: string;
-		DBSubnetGroupName?: string;
+		DBInstanceClass?: string | null;
+		AllocatedStorage?: number | null;
+		MasterUserPassword?: string | null;
+		Port?: number | null;
+		BackupRetentionPeriod?: number | null;
+		MultiAZ?: boolean | null;
+		EngineVersion?: string | null;
+		LicenseModel?: string | null;
+		Iops?: number | null;
+		DBInstanceIdentifier?: string | null;
+		StorageType?: string | null;
+		CACertificateIdentifier?: string | null;
+		DBSubnetGroupName?: string | null;
 
 		/** A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated. */
-		PendingCloudwatchLogsExports?: PendingCloudwatchLogsExports;
-		ProcessorFeatures?: Array<ProcessorFeature>;
+		PendingCloudwatchLogsExports?: PendingCloudwatchLogsExports | null;
+		ProcessorFeatures?: Array<ProcessorFeature> | null;
 	}
 
 
 	/** A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated. */
 	export interface PendingCloudwatchLogsExports {
-		LogTypesToEnable?: Array<string>;
-		LogTypesToDisable?: Array<string>;
+		LogTypesToEnable?: Array<string> | null;
+		LogTypesToDisable?: Array<string> | null;
 	}
 
 
 	/** Provides information on the option groups the DB instance is a member of. */
 	export interface OptionGroupMembership {
-		OptionGroupName?: string;
-		Status?: string;
+		OptionGroupName?: string | null;
+		Status?: string | null;
 	}
 
 
 	/** Provides a list of status information for a DB instance. */
 	export interface DBInstanceStatusInfo {
-		StatusType?: string;
-		Normal?: boolean;
-		Status?: string;
-		Message?: string;
+		StatusType?: string | null;
+		Normal?: boolean | null;
+		Status?: string | null;
+		Message?: string | null;
 	}
 
 
 	/** Describes an AWS Identity and Access Management (IAM) role that is associated with a DB instance. */
 	export interface DBInstanceRole {
-		RoleArn?: string;
-		FeatureName?: string;
-		Status?: string;
+		RoleArn?: string | null;
+		FeatureName?: string | null;
+		Status?: string | null;
 	}
 
 	export interface DBInstanceAlreadyExistsFault {
@@ -804,7 +804,7 @@ export namespace MyNS {
 	export interface CreateDBInstanceReadReplicaResult {
 
 		/** <p>Contains the details of an Amazon RDS DB instance. </p> <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action. </p> */
-		DBInstance?: DBInstance;
+		DBInstance?: DBInstance | null;
 	}
 
 	export interface DBSubnetGroupNotAllowedFault {
@@ -816,32 +816,32 @@ export namespace MyNS {
 	export interface CreateDBParameterGroupResult {
 
 		/** <p>Contains the details of an Amazon RDS DB parameter group. </p> <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action. </p> */
-		DBParameterGroup?: DBParameterGroup;
+		DBParameterGroup?: DBParameterGroup | null;
 	}
 
 	export interface CreateDBProxyResponse {
 
 		/** <note> <p>This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.</p> </note> <p>The data structure representing a proxy managed by the RDS Proxy.</p> <p>This data type is used as a response element in the <code>DescribeDBProxies</code> action.</p> */
-		DBProxy?: DBProxy;
+		DBProxy?: DBProxy | null;
 	}
 
 
 	/** <note> <p>This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.</p> </note> <p>The data structure representing a proxy managed by the RDS Proxy.</p> <p>This data type is used as a response element in the <code>DescribeDBProxies</code> action.</p> */
 	export interface DBProxy {
-		DBProxyName?: string;
-		DBProxyArn?: string;
-		Status?: DBProxyStatus;
-		EngineFamily?: string;
-		VpcSecurityGroupIds?: Array<string>;
-		VpcSubnetIds?: Array<string>;
-		Auth?: Array<UserAuthConfigInfo>;
-		RoleArn?: string;
-		Endpoint?: string;
-		RequireTLS?: boolean;
-		IdleClientTimeout?: number;
-		DebugLogging?: boolean;
-		CreatedDate?: Date;
-		UpdatedDate?: Date;
+		DBProxyName?: string | null;
+		DBProxyArn?: string | null;
+		Status?: DBProxyStatus | null;
+		EngineFamily?: string | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		VpcSubnetIds?: Array<string> | null;
+		Auth?: Array<UserAuthConfigInfo> | null;
+		RoleArn?: string | null;
+		Endpoint?: string | null;
+		RequireTLS?: boolean | null;
+		IdleClientTimeout?: number | null;
+		DebugLogging?: boolean | null;
+		CreatedDate?: Date | null;
+		UpdatedDate?: Date | null;
 	}
 
 	export enum DBProxyStatus { available = 0, modifying = 1, incompatible_network = 2, insufficient_resource_limits = 3, creating = 4, deleting = 5, suspended = 6, suspending = 7, reactivating = 8 }
@@ -849,11 +849,11 @@ export namespace MyNS {
 
 	/** <note> <p>This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.</p> </note> <p>Returns the details of authentication used by a proxy to log in as a specific database user.</p> */
 	export interface UserAuthConfigInfo {
-		Description?: string;
-		UserName?: string;
-		AuthScheme?: UserAuthConfigInfoAuthScheme;
-		SecretArn?: string;
-		IAMAuth?: UserAuthConfigInfoIAMAuth;
+		Description?: string | null;
+		UserName?: string | null;
+		AuthScheme?: UserAuthConfigInfoAuthScheme | null;
+		SecretArn?: string | null;
+		IAMAuth?: UserAuthConfigInfoIAMAuth | null;
 	}
 
 	export enum UserAuthConfigInfoAuthScheme { SECRETS = 0 }
@@ -863,11 +863,11 @@ export namespace MyNS {
 
 	/** <note> <p>This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.</p> </note> <p>Specifies the details of authentication used by a proxy to log in as a specific database user.</p> */
 	export interface UserAuthConfig {
-		Description?: string;
-		UserName?: string;
-		AuthScheme?: UserAuthConfigInfoAuthScheme;
-		SecretArn?: string;
-		IAMAuth?: UserAuthConfigInfoIAMAuth;
+		Description?: string | null;
+		UserName?: string | null;
+		AuthScheme?: UserAuthConfigInfoAuthScheme | null;
+		SecretArn?: string | null;
+		IAMAuth?: UserAuthConfigInfoIAMAuth | null;
 	}
 
 	export interface DBProxyAlreadyExistsFault {
@@ -879,7 +879,7 @@ export namespace MyNS {
 	export interface CreateDBSecurityGroupResult {
 
 		/** <p>Contains the details for an Amazon RDS DB security group. </p> <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action. </p> */
-		DBSecurityGroup?: DBSecurityGroup;
+		DBSecurityGroup?: DBSecurityGroup | null;
 	}
 
 	export interface DBSecurityGroupAlreadyExistsFault {
@@ -894,13 +894,13 @@ export namespace MyNS {
 	export interface CreateDBSnapshotResult {
 
 		/** <p>Contains the details of an Amazon RDS DB snapshot. </p> <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action. </p> */
-		DBSnapshot?: DBSnapshot;
+		DBSnapshot?: DBSnapshot | null;
 	}
 
 	export interface CreateDBSubnetGroupResult {
 
 		/** <p>Contains the details of an Amazon RDS DB subnet group. </p> <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action. </p> */
-		DBSubnetGroup?: DBSubnetGroup;
+		DBSubnetGroup?: DBSubnetGroup | null;
 	}
 
 	export interface DBSubnetGroupAlreadyExistsFault {
@@ -915,7 +915,7 @@ export namespace MyNS {
 	export interface CreateEventSubscriptionResult {
 
 		/** Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action. */
-		EventSubscription?: EventSubscription;
+		EventSubscription?: EventSubscription | null;
 	}
 
 	export interface EventSubscriptionQuotaExceededFault {
@@ -939,30 +939,30 @@ export namespace MyNS {
 	export interface CreateGlobalClusterResult {
 
 		/** A data type representing an Aurora global database. */
-		GlobalCluster?: GlobalCluster;
+		GlobalCluster?: GlobalCluster | null;
 	}
 
 
 	/** A data type representing an Aurora global database. */
 	export interface GlobalCluster {
-		GlobalClusterIdentifier?: string;
-		GlobalClusterResourceId?: string;
-		GlobalClusterArn?: string;
-		Status?: string;
-		Engine?: string;
-		EngineVersion?: string;
-		DatabaseName?: string;
-		StorageEncrypted?: boolean;
-		DeletionProtection?: boolean;
-		GlobalClusterMembers?: Array<GlobalClusterMember>;
+		GlobalClusterIdentifier?: string | null;
+		GlobalClusterResourceId?: string | null;
+		GlobalClusterArn?: string | null;
+		Status?: string | null;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		DatabaseName?: string | null;
+		StorageEncrypted?: boolean | null;
+		DeletionProtection?: boolean | null;
+		GlobalClusterMembers?: Array<GlobalClusterMember> | null;
 	}
 
 
 	/**  A data structure with information about any primary and secondary clusters associated with an Aurora global database.  */
 	export interface GlobalClusterMember {
-		DBClusterArn?: string;
-		Readers?: Array<string>;
-		IsWriter?: boolean;
+		DBClusterArn?: string | null;
+		Readers?: Array<string> | null;
+		IsWriter?: boolean | null;
 	}
 
 	export interface GlobalClusterAlreadyExistsFault {
@@ -974,13 +974,13 @@ export namespace MyNS {
 	export interface CreateOptionGroupResult {
 
 		/** <p/> */
-		OptionGroup?: OptionGroup;
+		OptionGroup?: OptionGroup | null;
 	}
 
 	export interface DeleteCustomAvailabilityZoneResult {
 
 		/** <p>A custom Availability Zone (AZ) is an on-premises AZ that is integrated with a VMware vSphere cluster.</p> <p>For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware User Guide.</i> </a> </p> */
-		CustomAvailabilityZone?: CustomAvailabilityZone;
+		CustomAvailabilityZone?: CustomAvailabilityZone | null;
 	}
 
 	export interface CustomAvailabilityZoneNotFoundFault {
@@ -989,7 +989,7 @@ export namespace MyNS {
 	export interface DeleteDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Aurora DB cluster. </p> <p>This data type is used as a response element in the <code>DescribeDBClusters</code>, <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions. </p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 	export interface InvalidDBClusterEndpointStateFault {
@@ -1004,13 +1004,13 @@ export namespace MyNS {
 	export interface DeleteDBClusterSnapshotResult {
 
 		/** <p>Contains the details for an Amazon RDS DB cluster snapshot </p> <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action. </p> */
-		DBClusterSnapshot?: DBClusterSnapshot;
+		DBClusterSnapshot?: DBClusterSnapshot | null;
 	}
 
 	export interface DeleteDBInstanceResult {
 
 		/** <p>Contains the details of an Amazon RDS DB instance. </p> <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action. </p> */
-		DBInstance?: DBInstance;
+		DBInstance?: DBInstance | null;
 	}
 
 	export interface DBInstanceAutomatedBackupQuotaExceededFault {
@@ -1019,44 +1019,44 @@ export namespace MyNS {
 	export interface DeleteDBInstanceAutomatedBackupResult {
 
 		/** An automated backup of a DB instance. It it consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance. */
-		DBInstanceAutomatedBackup?: DBInstanceAutomatedBackup;
+		DBInstanceAutomatedBackup?: DBInstanceAutomatedBackup | null;
 	}
 
 
 	/** An automated backup of a DB instance. It it consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.  */
 	export interface DBInstanceAutomatedBackup {
-		DBInstanceArn?: string;
-		DbiResourceId?: string;
-		Region?: string;
-		DBInstanceIdentifier?: string;
+		DBInstanceArn?: string | null;
+		DbiResourceId?: string | null;
+		Region?: string | null;
+		DBInstanceIdentifier?: string | null;
 
 		/** Earliest and latest time an instance can be restored to: */
-		RestoreWindow?: RestoreWindow;
-		AllocatedStorage?: number;
-		Status?: string;
-		Port?: number;
-		AvailabilityZone?: string;
-		VpcId?: string;
-		InstanceCreateTime?: Date;
-		MasterUsername?: string;
-		Engine?: string;
-		EngineVersion?: string;
-		LicenseModel?: string;
-		Iops?: number;
-		OptionGroupName?: string;
-		TdeCredentialArn?: string;
-		Encrypted?: boolean;
-		StorageType?: string;
-		KmsKeyId?: string;
-		Timezone?: string;
-		IAMDatabaseAuthenticationEnabled?: boolean;
+		RestoreWindow?: RestoreWindow | null;
+		AllocatedStorage?: number | null;
+		Status?: string | null;
+		Port?: number | null;
+		AvailabilityZone?: string | null;
+		VpcId?: string | null;
+		InstanceCreateTime?: Date | null;
+		MasterUsername?: string | null;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		LicenseModel?: string | null;
+		Iops?: number | null;
+		OptionGroupName?: string | null;
+		TdeCredentialArn?: string | null;
+		Encrypted?: boolean | null;
+		StorageType?: string | null;
+		KmsKeyId?: string | null;
+		Timezone?: string | null;
+		IAMDatabaseAuthenticationEnabled?: boolean | null;
 	}
 
 
 	/** Earliest and latest time an instance can be restored to: */
 	export interface RestoreWindow {
-		EarliestTime?: Date;
-		LatestTime?: Date;
+		EarliestTime?: Date | null;
+		LatestTime?: Date | null;
 	}
 
 	export interface InvalidDBInstanceAutomatedBackupStateFault {
@@ -1068,7 +1068,7 @@ export namespace MyNS {
 	export interface DeleteDBProxyResponse {
 
 		/** <note> <p>This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.</p> </note> <p>The data structure representing a proxy managed by the RDS Proxy.</p> <p>This data type is used as a response element in the <code>DescribeDBProxies</code> action.</p> */
-		DBProxy?: DBProxy;
+		DBProxy?: DBProxy | null;
 	}
 
 	export interface InvalidDBProxyStateFault {
@@ -1077,7 +1077,7 @@ export namespace MyNS {
 	export interface DeleteDBSnapshotResult {
 
 		/** <p>Contains the details of an Amazon RDS DB snapshot. </p> <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action. </p> */
-		DBSnapshot?: DBSnapshot;
+		DBSnapshot?: DBSnapshot | null;
 	}
 
 	export interface InvalidDBSubnetStateFault {
@@ -1086,7 +1086,7 @@ export namespace MyNS {
 	export interface DeleteEventSubscriptionResult {
 
 		/** Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action. */
-		EventSubscription?: EventSubscription;
+		EventSubscription?: EventSubscription | null;
 	}
 
 	export interface InvalidEventSubscriptionStateFault {
@@ -1095,28 +1095,28 @@ export namespace MyNS {
 	export interface DeleteGlobalClusterResult {
 
 		/** A data type representing an Aurora global database. */
-		GlobalCluster?: GlobalCluster;
+		GlobalCluster?: GlobalCluster | null;
 	}
 
 
 	/** Contains the installation media for a DB engine that requires an on-premises customer provided license, such as Microsoft SQL Server. */
 	export interface InstallationMedia {
-		InstallationMediaId?: string;
-		CustomAvailabilityZoneId?: string;
-		Engine?: string;
-		EngineVersion?: string;
-		EngineInstallationMediaPath?: string;
-		OSInstallationMediaPath?: string;
-		Status?: string;
+		InstallationMediaId?: string | null;
+		CustomAvailabilityZoneId?: string | null;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		EngineInstallationMediaPath?: string | null;
+		OSInstallationMediaPath?: string | null;
+		Status?: string | null;
 
 		/** Contains the cause of an installation media failure. Installation media is used for a DB engine that requires an on-premises customer provided license, such as Microsoft SQL Server. */
-		FailureCause?: InstallationMediaFailureCause;
+		FailureCause?: InstallationMediaFailureCause | null;
 	}
 
 
 	/** Contains the cause of an installation media failure. Installation media is used for a DB engine that requires an on-premises customer provided license, such as Microsoft SQL Server. */
 	export interface InstallationMediaFailureCause {
-		Message?: string;
+		Message?: string | null;
 	}
 
 	export interface InstallationMediaNotFoundFault {
@@ -1134,35 +1134,35 @@ export namespace MyNS {
 
 	/** Data returned by the <b>DescribeAccountAttributes</b> action. */
 	export interface AccountAttributesMessage {
-		AccountQuotas?: Array<AccountQuota>;
+		AccountQuotas?: Array<AccountQuota> | null;
 	}
 
 
 	/** <p>Describes a quota for an AWS account.</p> <p>The following are account quotas:</p> <ul> <li> <p> <code>AllocatedStorage</code> - The total allocated storage per account, in GiB. The used value is the total allocated storage in the account, in GiB.</p> </li> <li> <p> <code>AuthorizationsPerDBSecurityGroup</code> - The number of ingress rules per DB security group. The used value is the highest number of ingress rules in a DB security group in the account. Other DB security groups in the account might have a lower number of ingress rules.</p> </li> <li> <p> <code>CustomEndpointsPerDBCluster</code> - The number of custom endpoints per DB cluster. The used value is the highest number of custom endpoints in a DB clusters in the account. Other DB clusters in the account might have a lower number of custom endpoints.</p> </li> <li> <p> <code>DBClusterParameterGroups</code> - The number of DB cluster parameter groups per account, excluding default parameter groups. The used value is the count of nondefault DB cluster parameter groups in the account.</p> </li> <li> <p> <code>DBClusterRoles</code> - The number of associated AWS Identity and Access Management (IAM) roles per DB cluster. The used value is the highest number of associated IAM roles for a DB cluster in the account. Other DB clusters in the account might have a lower number of associated IAM roles.</p> </li> <li> <p> <code>DBClusters</code> - The number of DB clusters per account. The used value is the count of DB clusters in the account.</p> </li> <li> <p> <code>DBInstanceRoles</code> - The number of associated IAM roles per DB instance. The used value is the highest number of associated IAM roles for a DB instance in the account. Other DB instances in the account might have a lower number of associated IAM roles.</p> </li> <li> <p> <code>DBInstances</code> - The number of DB instances per account. The used value is the count of the DB instances in the account.</p> <p>Amazon RDS DB instances, Amazon Aurora DB instances, Amazon Neptune instances, and Amazon DocumentDB instances apply to this quota.</p> </li> <li> <p> <code>DBParameterGroups</code> - The number of DB parameter groups per account, excluding default parameter groups. The used value is the count of nondefault DB parameter groups in the account.</p> </li> <li> <p> <code>DBSecurityGroups</code> - The number of DB security groups (not VPC security groups) per account, excluding the default security group. The used value is the count of nondefault DB security groups in the account.</p> </li> <li> <p> <code>DBSubnetGroups</code> - The number of DB subnet groups per account. The used value is the count of the DB subnet groups in the account.</p> </li> <li> <p> <code>EventSubscriptions</code> - The number of event subscriptions per account. The used value is the count of the event subscriptions in the account.</p> </li> <li> <p> <code>ManualSnapshots</code> - The number of manual DB snapshots per account. The used value is the count of the manual DB snapshots in the account.</p> </li> <li> <p> <code>OptionGroups</code> - The number of DB option groups per account, excluding default option groups. The used value is the count of nondefault DB option groups in the account.</p> </li> <li> <p> <code>ReadReplicasPerMaster</code> - The number of read replicas per DB instance. The used value is the highest number of read replicas for a DB instance in the account. Other DB instances in the account might have a lower number of read replicas.</p> </li> <li> <p> <code>ReservedDBInstances</code> - The number of reserved DB instances per account. The used value is the count of the active reserved DB instances in the account.</p> </li> <li> <p> <code>SubnetsPerDBSubnetGroup</code> - The number of subnets per DB subnet group. The used value is highest number of subnets for a DB subnet group in the account. Other DB subnet groups in the account might have a lower number of subnets.</p> </li> </ul> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html">Quotas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Limits.html">Quotas for Amazon Aurora</a> in the <i>Amazon Aurora User Guide</i>.</p> */
 	export interface AccountQuota {
-		AccountQuotaName?: string;
-		Used?: number;
-		Max?: number;
+		AccountQuotaName?: string | null;
+		Used?: number | null;
+		Max?: number | null;
 	}
 
 
 	/** Data returned by the <b>DescribeCertificates</b> action. */
 	export interface CertificateMessage {
-		Certificates?: Array<Certificate>;
-		Marker?: string;
+		Certificates?: Array<Certificate> | null;
+		Marker?: string | null;
 	}
 
 
 	/** A CA certificate for an AWS account. */
 	export interface Certificate {
-		CertificateIdentifier?: string;
-		CertificateType?: string;
-		Thumbprint?: string;
-		ValidFrom?: Date;
-		ValidTill?: Date;
-		CertificateArn?: string;
-		CustomerOverride?: boolean;
-		CustomerOverrideValidTill?: Date;
+		CertificateIdentifier?: string | null;
+		CertificateType?: string | null;
+		Thumbprint?: string | null;
+		ValidFrom?: Date | null;
+		ValidTill?: Date | null;
+		CertificateArn?: string | null;
+		CustomerOverride?: boolean | null;
+		CustomerOverrideValidTill?: Date | null;
 	}
 
 
@@ -1176,53 +1176,53 @@ export namespace MyNS {
 	}
 
 	export interface CustomAvailabilityZoneMessage {
-		Marker?: string;
-		CustomAvailabilityZones?: Array<CustomAvailabilityZone>;
+		Marker?: string | null;
+		CustomAvailabilityZones?: Array<CustomAvailabilityZone> | null;
 	}
 
 
 	/** Contains the result of a successful invocation of the <code>DescribeDBClusterBacktracks</code> action. */
 	export interface DBClusterBacktrackMessage {
-		Marker?: string;
-		DBClusterBacktracks?: Array<DBClusterBacktrack>;
+		Marker?: string | null;
+		DBClusterBacktracks?: Array<DBClusterBacktrack> | null;
 	}
 
 	export interface DBClusterBacktrackNotFoundFault {
 	}
 
 	export interface DBClusterEndpointMessage {
-		Marker?: string;
-		DBClusterEndpoints?: Array<DBClusterEndpoint>;
+		Marker?: string | null;
+		DBClusterEndpoints?: Array<DBClusterEndpoint> | null;
 	}
 
 
 	/** <p/> */
 	export interface DBClusterParameterGroupsMessage {
-		Marker?: string;
-		DBClusterParameterGroups?: Array<DBClusterParameterGroup>;
+		Marker?: string | null;
+		DBClusterParameterGroups?: Array<DBClusterParameterGroup> | null;
 	}
 
 
 	/** Provides details about a DB cluster parameter group including the parameters in the DB cluster parameter group. */
 	export interface DBClusterParameterGroupDetails {
-		Parameters?: Array<Parameter>;
-		Marker?: string;
+		Parameters?: Array<Parameter> | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p> This data type is used as a request parameter in the <code>ModifyDBParameterGroup</code> and <code>ResetDBParameterGroup</code> actions. </p> <p>This data type is used as a response element in the <code>DescribeEngineDefaultParameters</code> and <code>DescribeDBParameters</code> actions.</p> */
 	export interface Parameter {
-		ParameterName?: string;
-		ParameterValue?: string;
-		Description?: string;
-		Source?: string;
-		ApplyType?: string;
-		DataType?: string;
-		AllowedValues?: string;
-		IsModifiable?: boolean;
-		MinimumEngineVersion?: string;
-		ApplyMethod?: ParameterApplyMethod;
-		SupportedEngineModes?: Array<string>;
+		ParameterName?: string | null;
+		ParameterValue?: string | null;
+		Description?: string | null;
+		Source?: string | null;
+		ApplyType?: string | null;
+		DataType?: string | null;
+		AllowedValues?: string | null;
+		IsModifiable?: boolean | null;
+		MinimumEngineVersion?: string | null;
+		ApplyMethod?: ParameterApplyMethod | null;
+		SupportedEngineModes?: Array<string> | null;
 	}
 
 	export enum ParameterApplyMethod { immediate = 0, pending_reboot = 1 }
@@ -1230,184 +1230,184 @@ export namespace MyNS {
 	export interface DescribeDBClusterSnapshotAttributesResult {
 
 		/** <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p> */
-		DBClusterSnapshotAttributesResult?: DBClusterSnapshotAttributesResult;
+		DBClusterSnapshotAttributesResult?: DBClusterSnapshotAttributesResult | null;
 	}
 
 
 	/** <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p> */
 	export interface DBClusterSnapshotAttributesResult {
-		DBClusterSnapshotIdentifier?: string;
-		DBClusterSnapshotAttributes?: Array<DBClusterSnapshotAttribute>;
+		DBClusterSnapshotIdentifier?: string | null;
+		DBClusterSnapshotAttributes?: Array<DBClusterSnapshotAttribute> | null;
 	}
 
 
 	/** <p>Contains the name and values of a manual DB cluster snapshot attribute.</p> <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts to restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p> */
 	export interface DBClusterSnapshotAttribute {
-		AttributeName?: string;
-		AttributeValues?: Array<string>;
+		AttributeName?: string | null;
+		AttributeValues?: Array<string> | null;
 	}
 
 
 	/**  Provides a list of DB cluster snapshots for the user as the result of a call to the <code>DescribeDBClusterSnapshots</code> action.  */
 	export interface DBClusterSnapshotMessage {
-		Marker?: string;
-		DBClusterSnapshots?: Array<DBClusterSnapshot>;
+		Marker?: string | null;
+		DBClusterSnapshots?: Array<DBClusterSnapshot> | null;
 	}
 
 
 	/** Contains the result of a successful invocation of the <code>DescribeDBClusters</code> action. */
 	export interface DBClusterMessage {
-		Marker?: string;
-		DBClusters?: Array<DBCluster>;
+		Marker?: string | null;
+		DBClusters?: Array<DBCluster> | null;
 	}
 
 
 	/**  Contains the result of a successful invocation of the <code>DescribeDBEngineVersions</code> action.  */
 	export interface DBEngineVersionMessage {
-		Marker?: string;
-		DBEngineVersions?: Array<DBEngineVersion>;
+		Marker?: string | null;
+		DBEngineVersions?: Array<DBEngineVersion> | null;
 	}
 
 
 	/**  This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>.  */
 	export interface DBEngineVersion {
-		Engine?: string;
-		EngineVersion?: string;
-		DBParameterGroupFamily?: string;
-		DBEngineDescription?: string;
-		DBEngineVersionDescription?: string;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		DBParameterGroupFamily?: string | null;
+		DBEngineDescription?: string | null;
+		DBEngineVersionDescription?: string | null;
 
 		/** This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>. */
-		DefaultCharacterSet?: CharacterSet;
-		SupportedCharacterSets?: Array<CharacterSet>;
-		ValidUpgradeTarget?: Array<UpgradeTarget>;
-		SupportedTimezones?: Array<Timezone>;
-		ExportableLogTypes?: Array<string>;
-		SupportsLogExportsToCloudwatchLogs?: boolean;
-		SupportsReadReplica?: boolean;
-		SupportedEngineModes?: Array<string>;
-		SupportedFeatureNames?: Array<string>;
-		Status?: string;
+		DefaultCharacterSet?: CharacterSet | null;
+		SupportedCharacterSets?: Array<CharacterSet> | null;
+		ValidUpgradeTarget?: Array<UpgradeTarget> | null;
+		SupportedTimezones?: Array<Timezone> | null;
+		ExportableLogTypes?: Array<string> | null;
+		SupportsLogExportsToCloudwatchLogs?: boolean | null;
+		SupportsReadReplica?: boolean | null;
+		SupportedEngineModes?: Array<string> | null;
+		SupportedFeatureNames?: Array<string> | null;
+		Status?: string | null;
 	}
 
 
 	/**  This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>.  */
 	export interface CharacterSet {
-		CharacterSetName?: string;
-		CharacterSetDescription?: string;
+		CharacterSetName?: string | null;
+		CharacterSetDescription?: string | null;
 	}
 
 
 	/** The version of the database engine that a DB instance can be upgraded to. */
 	export interface UpgradeTarget {
-		Engine?: string;
-		EngineVersion?: string;
-		Description?: string;
-		AutoUpgrade?: boolean;
-		IsMajorVersionUpgrade?: boolean;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		Description?: string | null;
+		AutoUpgrade?: boolean | null;
+		IsMajorVersionUpgrade?: boolean | null;
 	}
 
 
 	/** A time zone associated with a <code>DBInstance</code> or a <code>DBSnapshot</code>. This data type is an element in the response to the <code>DescribeDBInstances</code>, the <code>DescribeDBSnapshots</code>, and the <code>DescribeDBEngineVersions</code> actions.  */
 	export interface Timezone {
-		TimezoneName?: string;
+		TimezoneName?: string | null;
 	}
 
 
 	/**  Contains the result of a successful invocation of the <code>DescribeDBInstanceAutomatedBackups</code> action.  */
 	export interface DBInstanceAutomatedBackupMessage {
-		Marker?: string;
-		DBInstanceAutomatedBackups?: Array<DBInstanceAutomatedBackup>;
+		Marker?: string | null;
+		DBInstanceAutomatedBackups?: Array<DBInstanceAutomatedBackup> | null;
 	}
 
 
 	/**  Contains the result of a successful invocation of the <code>DescribeDBInstances</code> action.  */
 	export interface DBInstanceMessage {
-		Marker?: string;
-		DBInstances?: Array<DBInstance>;
+		Marker?: string | null;
+		DBInstances?: Array<DBInstance> | null;
 	}
 
 
 	/**  The response from a call to <code>DescribeDBLogFiles</code>.  */
 	export interface DescribeDBLogFilesResponse {
-		DescribeDBLogFiles?: Array<DescribeDBLogFilesDetails>;
-		Marker?: string;
+		DescribeDBLogFiles?: Array<DescribeDBLogFilesDetails> | null;
+		Marker?: string | null;
 	}
 
 
 	/** This data type is used as a response element to <code>DescribeDBLogFiles</code>. */
 	export interface DescribeDBLogFilesDetails {
-		LogFileName?: string;
-		LastWritten?: number;
-		Size?: number;
+		LogFileName?: string | null;
+		LastWritten?: number | null;
+		Size?: number | null;
 	}
 
 
 	/**  Contains the result of a successful invocation of the <code>DescribeDBParameterGroups</code> action.  */
 	export interface DBParameterGroupsMessage {
-		Marker?: string;
-		DBParameterGroups?: Array<DBParameterGroup>;
+		Marker?: string | null;
+		DBParameterGroups?: Array<DBParameterGroup> | null;
 	}
 
 
 	/**  Contains the result of a successful invocation of the <code>DescribeDBParameters</code> action.  */
 	export interface DBParameterGroupDetails {
-		Parameters?: Array<Parameter>;
-		Marker?: string;
+		Parameters?: Array<Parameter> | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeDBProxiesResponse {
-		DBProxies?: Array<DBProxy>;
-		Marker?: string;
+		DBProxies?: Array<DBProxy> | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeDBProxyTargetGroupsResponse {
-		TargetGroups?: Array<DBProxyTargetGroup>;
-		Marker?: string;
+		TargetGroups?: Array<DBProxyTargetGroup> | null;
+		Marker?: string | null;
 	}
 
 
 	/** <note> <p>This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.</p> </note> <p>Represents a set of RDS DB instances, Aurora DB clusters, or both that a proxy can connect to. Currently, each target group is associated with exactly one RDS DB instance or Aurora DB cluster.</p> <p>This data type is used as a response element in the <code>DescribeDBProxyTargetGroups</code> action.</p> */
 	export interface DBProxyTargetGroup {
-		DBProxyName?: string;
-		TargetGroupName?: string;
-		TargetGroupArn?: string;
-		IsDefault?: boolean;
-		Status?: string;
+		DBProxyName?: string | null;
+		TargetGroupName?: string | null;
+		TargetGroupArn?: string | null;
+		IsDefault?: boolean | null;
+		Status?: string | null;
 
 		/** <note> <p>This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.</p> </note> <p>Displays the settings that control the size and behavior of the connection pool associated with a <code>DBProxyTarget</code>.</p> */
-		ConnectionPoolConfig?: ConnectionPoolConfigurationInfo;
-		CreatedDate?: Date;
-		UpdatedDate?: Date;
+		ConnectionPoolConfig?: ConnectionPoolConfigurationInfo | null;
+		CreatedDate?: Date | null;
+		UpdatedDate?: Date | null;
 	}
 
 
 	/** <note> <p>This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.</p> </note> <p>Displays the settings that control the size and behavior of the connection pool associated with a <code>DBProxyTarget</code>.</p> */
 	export interface ConnectionPoolConfigurationInfo {
-		MaxConnectionsPercent?: number;
-		MaxIdleConnectionsPercent?: number;
-		ConnectionBorrowTimeout?: number;
-		SessionPinningFilters?: Array<string>;
-		InitQuery?: string;
+		MaxConnectionsPercent?: number | null;
+		MaxIdleConnectionsPercent?: number | null;
+		ConnectionBorrowTimeout?: number | null;
+		SessionPinningFilters?: Array<string> | null;
+		InitQuery?: string | null;
 	}
 
 	export interface DescribeDBProxyTargetsResponse {
-		Targets?: Array<DBProxyTarget>;
-		Marker?: string;
+		Targets?: Array<DBProxyTarget> | null;
+		Marker?: string | null;
 	}
 
 
 	/** <note> <p>This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.</p> </note> <p>Contains the details for an RDS Proxy target. It represents an RDS DB instance or Aurora DB cluster that the proxy can connect to. One or more targets are associated with an RDS Proxy target group.</p> <p>This data type is used as a response element in the <code>DescribeDBProxyTargets</code> action.</p> */
 	export interface DBProxyTarget {
-		TargetArn?: string;
-		Endpoint?: string;
-		TrackedClusterId?: string;
-		RdsResourceId?: string;
-		Port?: number;
-		Type?: DBProxyTargetType;
+		TargetArn?: string | null;
+		Endpoint?: string | null;
+		TrackedClusterId?: string | null;
+		RdsResourceId?: string | null;
+		Port?: number | null;
+		Type?: DBProxyTargetType | null;
 
 		/** <note> <p>This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.</p> </note> <p>Information about the connection health of an RDS Proxy target.</p> */
-		TargetHealth?: TargetHealth;
+		TargetHealth?: TargetHealth | null;
 	}
 
 	export enum DBProxyTargetType { RDS_INSTANCE = 0, RDS_SERVERLESS_ENDPOINT = 1, TRACKED_CLUSTER = 2 }
@@ -1415,9 +1415,9 @@ export namespace MyNS {
 
 	/** <note> <p>This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.</p> </note> <p>Information about the connection health of an RDS Proxy target.</p> */
 	export interface TargetHealth {
-		State?: TargetHealthState;
-		Reason?: TargetHealthReason;
-		Description?: string;
+		State?: TargetHealthState | null;
+		Reason?: TargetHealthReason | null;
+		Description?: string | null;
 	}
 
 	export enum TargetHealthState { REGISTERING = 0, AVAILABLE = 1, UNAVAILABLE = 2 }
@@ -1427,117 +1427,117 @@ export namespace MyNS {
 
 	/**  Contains the result of a successful invocation of the <code>DescribeDBSecurityGroups</code> action.  */
 	export interface DBSecurityGroupMessage {
-		Marker?: string;
-		DBSecurityGroups?: Array<DBSecurityGroup>;
+		Marker?: string | null;
+		DBSecurityGroups?: Array<DBSecurityGroup> | null;
 	}
 
 	export interface DescribeDBSnapshotAttributesResult {
 
 		/** <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p> <p>Manual DB snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p> */
-		DBSnapshotAttributesResult?: DBSnapshotAttributesResult;
+		DBSnapshotAttributesResult?: DBSnapshotAttributesResult | null;
 	}
 
 
 	/** <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p> <p>Manual DB snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p> */
 	export interface DBSnapshotAttributesResult {
-		DBSnapshotIdentifier?: string;
-		DBSnapshotAttributes?: Array<DBSnapshotAttribute>;
+		DBSnapshotIdentifier?: string | null;
+		DBSnapshotAttributes?: Array<DBSnapshotAttribute> | null;
 	}
 
 
 	/** <p>Contains the name and values of a manual DB snapshot attribute</p> <p>Manual DB snapshot attributes are used to authorize other AWS accounts to restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API.</p> */
 	export interface DBSnapshotAttribute {
-		AttributeName?: string;
-		AttributeValues?: Array<string>;
+		AttributeName?: string | null;
+		AttributeValues?: Array<string> | null;
 	}
 
 
 	/**  Contains the result of a successful invocation of the <code>DescribeDBSnapshots</code> action.  */
 	export interface DBSnapshotMessage {
-		Marker?: string;
-		DBSnapshots?: Array<DBSnapshot>;
+		Marker?: string | null;
+		DBSnapshots?: Array<DBSnapshot> | null;
 	}
 
 
 	/**  Contains the result of a successful invocation of the <code>DescribeDBSubnetGroups</code> action.  */
 	export interface DBSubnetGroupMessage {
-		Marker?: string;
-		DBSubnetGroups?: Array<DBSubnetGroup>;
+		Marker?: string | null;
+		DBSubnetGroups?: Array<DBSubnetGroup> | null;
 	}
 
 	export interface DescribeEngineDefaultClusterParametersResult {
 
 		/** Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action. */
-		EngineDefaults?: EngineDefaults;
+		EngineDefaults?: EngineDefaults | null;
 	}
 
 
 	/**  Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.  */
 	export interface EngineDefaults {
-		DBParameterGroupFamily?: string;
-		Marker?: string;
-		Parameters?: Array<Parameter>;
+		DBParameterGroupFamily?: string | null;
+		Marker?: string | null;
+		Parameters?: Array<Parameter> | null;
 	}
 
 	export interface DescribeEngineDefaultParametersResult {
 
 		/** Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action. */
-		EngineDefaults?: EngineDefaults;
+		EngineDefaults?: EngineDefaults | null;
 	}
 
 
 	/** Data returned from the <b>DescribeEventCategories</b> action. */
 	export interface EventCategoriesMessage {
-		EventCategoriesMapList?: Array<EventCategoriesMap>;
+		EventCategoriesMapList?: Array<EventCategoriesMap> | null;
 	}
 
 
 	/** Contains the results of a successful invocation of the <code>DescribeEventCategories</code> action. */
 	export interface EventCategoriesMap {
-		SourceType?: string;
-		EventCategories?: Array<string>;
+		SourceType?: string | null;
+		EventCategories?: Array<string> | null;
 	}
 
 
 	/** Data returned by the <b>DescribeEventSubscriptions</b> action. */
 	export interface EventSubscriptionsMessage {
-		Marker?: string;
-		EventSubscriptionsList?: Array<EventSubscription>;
+		Marker?: string | null;
+		EventSubscriptionsList?: Array<EventSubscription> | null;
 	}
 
 
 	/**  Contains the result of a successful invocation of the <code>DescribeEvents</code> action.  */
 	export interface EventsMessage {
-		Marker?: string;
-		Events?: Array<Event>;
+		Marker?: string | null;
+		Events?: Array<Event> | null;
 	}
 
 
 	/**  This data type is used as a response element in the <code>DescribeEvents</code> action.  */
 	export interface Event {
-		SourceIdentifier?: string;
-		SourceType?: EventSourceType;
-		Message?: string;
-		EventCategories?: Array<string>;
-		Date?: Date;
-		SourceArn?: string;
+		SourceIdentifier?: string | null;
+		SourceType?: EventSourceType | null;
+		Message?: string | null;
+		EventCategories?: Array<string> | null;
+		Date?: Date | null;
+		SourceArn?: string | null;
 	}
 
 	export enum EventSourceType { db_instance = 0, db_parameter_group = 1, db_security_group = 2, db_snapshot = 3, db_cluster = 4, db_cluster_snapshot = 5 }
 
 	export interface ExportTasksMessage {
-		Marker?: string;
-		ExportTasks?: Array<ExportTask>;
+		Marker?: string | null;
+		ExportTasks?: Array<ExportTask> | null;
 	}
 
 	export interface GlobalClustersMessage {
-		Marker?: string;
-		GlobalClusters?: Array<GlobalCluster>;
+		Marker?: string | null;
+		GlobalClusters?: Array<GlobalCluster> | null;
 	}
 
 	export interface InstallationMediaMessage {
-		Marker?: string;
-		InstallationMedia?: Array<InstallationMedia>;
+		Marker?: string | null;
+		InstallationMedia?: Array<InstallationMedia> | null;
 	}
 
 
@@ -1545,150 +1545,150 @@ export namespace MyNS {
 	export interface OptionGroupOptionsMessage {
 
 		/** List of available option group options. */
-		OptionGroupOptions?: Array<OptionGroupOption>;
-		Marker?: string;
+		OptionGroupOptions?: Array<OptionGroupOption> | null;
+		Marker?: string | null;
 	}
 
 
 	/** Available option. */
 	export interface OptionGroupOption {
-		Name?: string;
-		Description?: string;
-		EngineName?: string;
-		MajorEngineVersion?: string;
-		MinimumRequiredMinorEngineVersion?: string;
-		PortRequired?: boolean;
-		DefaultPort?: number;
-		OptionsDependedOn?: Array<string>;
-		OptionsConflictsWith?: Array<string>;
-		Persistent?: boolean;
-		Permanent?: boolean;
-		RequiresAutoMinorEngineVersionUpgrade?: boolean;
-		VpcOnly?: boolean;
-		SupportsOptionVersionDowngrade?: boolean;
-		OptionGroupOptionSettings?: Array<OptionGroupOptionSetting>;
-		OptionGroupOptionVersions?: Array<OptionVersion>;
+		Name?: string | null;
+		Description?: string | null;
+		EngineName?: string | null;
+		MajorEngineVersion?: string | null;
+		MinimumRequiredMinorEngineVersion?: string | null;
+		PortRequired?: boolean | null;
+		DefaultPort?: number | null;
+		OptionsDependedOn?: Array<string> | null;
+		OptionsConflictsWith?: Array<string> | null;
+		Persistent?: boolean | null;
+		Permanent?: boolean | null;
+		RequiresAutoMinorEngineVersionUpgrade?: boolean | null;
+		VpcOnly?: boolean | null;
+		SupportsOptionVersionDowngrade?: boolean | null;
+		OptionGroupOptionSettings?: Array<OptionGroupOptionSetting> | null;
+		OptionGroupOptionVersions?: Array<OptionVersion> | null;
 	}
 
 
 	/** Option group option settings are used to display settings available for each option with their default values and other information. These values are used with the DescribeOptionGroupOptions action. */
 	export interface OptionGroupOptionSetting {
-		SettingName?: string;
-		SettingDescription?: string;
-		DefaultValue?: string;
-		ApplyType?: string;
-		AllowedValues?: string;
-		IsModifiable?: boolean;
-		IsRequired?: boolean;
-		MinimumEngineVersionPerAllowedValue?: Array<MinimumEngineVersionPerAllowedValue>;
+		SettingName?: string | null;
+		SettingDescription?: string | null;
+		DefaultValue?: string | null;
+		ApplyType?: string | null;
+		AllowedValues?: string | null;
+		IsModifiable?: boolean | null;
+		IsRequired?: boolean | null;
+		MinimumEngineVersionPerAllowedValue?: Array<MinimumEngineVersionPerAllowedValue> | null;
 	}
 
 
 	/** The minimum DB engine version required for each corresponding allowed value for an option setting. */
 	export interface MinimumEngineVersionPerAllowedValue {
-		AllowedValue?: string;
-		MinimumEngineVersion?: string;
+		AllowedValue?: string | null;
+		MinimumEngineVersion?: string | null;
 	}
 
 
 	/** The version for an option. Option group option versions are returned by the <code>DescribeOptionGroupOptions</code> action. */
 	export interface OptionVersion {
-		Version?: string;
-		IsDefault?: boolean;
+		Version?: string | null;
+		IsDefault?: boolean | null;
 	}
 
 
 	/** List of option groups. */
 	export interface OptionGroups {
-		OptionGroupsList?: Array<OptionGroup>;
-		Marker?: string;
+		OptionGroupsList?: Array<OptionGroup> | null;
+		Marker?: string | null;
 	}
 
 
 	/**  Contains the result of a successful invocation of the <code>DescribeOrderableDBInstanceOptions</code> action.  */
 	export interface OrderableDBInstanceOptionsMessage {
-		OrderableDBInstanceOptions?: Array<OrderableDBInstanceOption>;
-		Marker?: string;
+		OrderableDBInstanceOptions?: Array<OrderableDBInstanceOption> | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p>Contains a list of available options for a DB instance.</p> <p> This data type is used as a response element in the <code>DescribeOrderableDBInstanceOptions</code> action. </p> */
 	export interface OrderableDBInstanceOption {
-		Engine?: string;
-		EngineVersion?: string;
-		DBInstanceClass?: string;
-		LicenseModel?: string;
-		AvailabilityZoneGroup?: string;
-		AvailabilityZones?: Array<AvailabilityZone>;
-		MultiAZCapable?: boolean;
-		ReadReplicaCapable?: boolean;
-		Vpc?: boolean;
-		SupportsStorageEncryption?: boolean;
-		StorageType?: string;
-		SupportsIops?: boolean;
-		SupportsEnhancedMonitoring?: boolean;
-		SupportsIAMDatabaseAuthentication?: boolean;
-		SupportsPerformanceInsights?: boolean;
-		MinStorageSize?: number;
-		MaxStorageSize?: number;
-		MinIopsPerDbInstance?: number;
-		MaxIopsPerDbInstance?: number;
-		MinIopsPerGib?: number;
-		MaxIopsPerGib?: number;
-		AvailableProcessorFeatures?: Array<AvailableProcessorFeature>;
-		SupportedEngineModes?: Array<string>;
-		SupportsStorageAutoscaling?: boolean;
-		SupportsKerberosAuthentication?: boolean;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		DBInstanceClass?: string | null;
+		LicenseModel?: string | null;
+		AvailabilityZoneGroup?: string | null;
+		AvailabilityZones?: Array<AvailabilityZone> | null;
+		MultiAZCapable?: boolean | null;
+		ReadReplicaCapable?: boolean | null;
+		Vpc?: boolean | null;
+		SupportsStorageEncryption?: boolean | null;
+		StorageType?: string | null;
+		SupportsIops?: boolean | null;
+		SupportsEnhancedMonitoring?: boolean | null;
+		SupportsIAMDatabaseAuthentication?: boolean | null;
+		SupportsPerformanceInsights?: boolean | null;
+		MinStorageSize?: number | null;
+		MaxStorageSize?: number | null;
+		MinIopsPerDbInstance?: number | null;
+		MaxIopsPerDbInstance?: number | null;
+		MinIopsPerGib?: number | null;
+		MaxIopsPerGib?: number | null;
+		AvailableProcessorFeatures?: Array<AvailableProcessorFeature> | null;
+		SupportedEngineModes?: Array<string> | null;
+		SupportsStorageAutoscaling?: boolean | null;
+		SupportsKerberosAuthentication?: boolean | null;
 	}
 
 
 	/** <p>Contains the available processor feature information for the DB instance class of a DB instance.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i> </p> */
 	export interface AvailableProcessorFeature {
-		Name?: string;
-		DefaultValue?: string;
-		AllowedValues?: string;
+		Name?: string | null;
+		DefaultValue?: string | null;
+		AllowedValues?: string | null;
 	}
 
 
 	/** Data returned from the <b>DescribePendingMaintenanceActions</b> action. */
 	export interface PendingMaintenanceActionsMessage {
-		PendingMaintenanceActions?: Array<ResourcePendingMaintenanceActions>;
-		Marker?: string;
+		PendingMaintenanceActions?: Array<ResourcePendingMaintenanceActions> | null;
+		Marker?: string | null;
 	}
 
 
 	/**  Contains the result of a successful invocation of the <code>DescribeReservedDBInstances</code> action.  */
 	export interface ReservedDBInstanceMessage {
-		Marker?: string;
-		ReservedDBInstances?: Array<ReservedDBInstance>;
+		Marker?: string | null;
+		ReservedDBInstances?: Array<ReservedDBInstance> | null;
 	}
 
 
 	/**  This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>PurchaseReservedDBInstancesOffering</code> actions.  */
 	export interface ReservedDBInstance {
-		ReservedDBInstanceId?: string;
-		ReservedDBInstancesOfferingId?: string;
-		DBInstanceClass?: string;
-		StartTime?: Date;
-		Duration?: number;
-		FixedPrice?: number;
-		UsagePrice?: number;
-		CurrencyCode?: string;
-		DBInstanceCount?: number;
-		ProductDescription?: string;
-		OfferingType?: string;
-		MultiAZ?: boolean;
-		State?: string;
-		RecurringCharges?: Array<RecurringCharge>;
-		ReservedDBInstanceArn?: string;
-		LeaseId?: string;
+		ReservedDBInstanceId?: string | null;
+		ReservedDBInstancesOfferingId?: string | null;
+		DBInstanceClass?: string | null;
+		StartTime?: Date | null;
+		Duration?: number | null;
+		FixedPrice?: number | null;
+		UsagePrice?: number | null;
+		CurrencyCode?: string | null;
+		DBInstanceCount?: number | null;
+		ProductDescription?: string | null;
+		OfferingType?: string | null;
+		MultiAZ?: boolean | null;
+		State?: string | null;
+		RecurringCharges?: Array<RecurringCharge> | null;
+		ReservedDBInstanceArn?: string | null;
+		LeaseId?: string | null;
 	}
 
 
 	/**  This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>DescribeReservedDBInstancesOfferings</code> actions.  */
 	export interface RecurringCharge {
-		RecurringChargeAmount?: number;
-		RecurringChargeFrequency?: string;
+		RecurringChargeAmount?: number | null;
+		RecurringChargeFrequency?: string | null;
 	}
 
 	export interface ReservedDBInstanceNotFoundFault {
@@ -1697,23 +1697,23 @@ export namespace MyNS {
 
 	/**  Contains the result of a successful invocation of the <code>DescribeReservedDBInstancesOfferings</code> action.  */
 	export interface ReservedDBInstancesOfferingMessage {
-		Marker?: string;
-		ReservedDBInstancesOfferings?: Array<ReservedDBInstancesOffering>;
+		Marker?: string | null;
+		ReservedDBInstancesOfferings?: Array<ReservedDBInstancesOffering> | null;
 	}
 
 
 	/**  This data type is used as a response element in the <code>DescribeReservedDBInstancesOfferings</code> action.  */
 	export interface ReservedDBInstancesOffering {
-		ReservedDBInstancesOfferingId?: string;
-		DBInstanceClass?: string;
-		Duration?: number;
-		FixedPrice?: number;
-		UsagePrice?: number;
-		CurrencyCode?: string;
-		ProductDescription?: string;
-		OfferingType?: string;
-		MultiAZ?: boolean;
-		RecurringCharges?: Array<RecurringCharge>;
+		ReservedDBInstancesOfferingId?: string | null;
+		DBInstanceClass?: string | null;
+		Duration?: number | null;
+		FixedPrice?: number | null;
+		UsagePrice?: number | null;
+		CurrencyCode?: string | null;
+		ProductDescription?: string | null;
+		OfferingType?: string | null;
+		MultiAZ?: boolean | null;
+		RecurringCharges?: Array<RecurringCharge> | null;
 	}
 
 	export interface ReservedDBInstancesOfferingNotFoundFault {
@@ -1722,62 +1722,62 @@ export namespace MyNS {
 
 	/** Contains the result of a successful invocation of the <code>DescribeSourceRegions</code> action. */
 	export interface SourceRegionMessage {
-		Marker?: string;
-		SourceRegions?: Array<SourceRegion>;
+		Marker?: string | null;
+		SourceRegions?: Array<SourceRegion> | null;
 	}
 
 
 	/** Contains an AWS Region name as the result of a successful call to the <code>DescribeSourceRegions</code> action. */
 	export interface SourceRegion {
-		RegionName?: string;
-		Endpoint?: string;
-		Status?: string;
+		RegionName?: string | null;
+		Endpoint?: string | null;
+		Status?: string | null;
 	}
 
 	export interface DescribeValidDBInstanceModificationsResult {
 
 		/** Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. */
-		ValidDBInstanceModificationsMessage?: ValidDBInstanceModificationsMessage;
+		ValidDBInstanceModificationsMessage?: ValidDBInstanceModificationsMessage | null;
 	}
 
 
 	/** Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>.  */
 	export interface ValidDBInstanceModificationsMessage {
-		Storage?: Array<ValidStorageOptions>;
-		ValidProcessorFeatures?: Array<AvailableProcessorFeature>;
+		Storage?: Array<ValidStorageOptions> | null;
+		ValidProcessorFeatures?: Array<AvailableProcessorFeature> | null;
 	}
 
 
 	/** Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action.  */
 	export interface ValidStorageOptions {
-		StorageType?: string;
-		StorageSize?: Array<Range>;
-		ProvisionedIops?: Array<Range>;
-		IopsToStorageRatio?: Array<DoubleRange>;
-		SupportsStorageAutoscaling?: boolean;
+		StorageType?: string | null;
+		StorageSize?: Array<Range> | null;
+		ProvisionedIops?: Array<Range> | null;
+		IopsToStorageRatio?: Array<DoubleRange> | null;
+		SupportsStorageAutoscaling?: boolean | null;
 	}
 
 
 	/** A range of integer values. */
 	export interface Range {
-		From?: number;
-		To?: number;
-		Step?: number;
+		From?: number | null;
+		To?: number | null;
+		Step?: number | null;
 	}
 
 
 	/** A range of double values. */
 	export interface DoubleRange {
-		From?: number;
-		To?: number;
+		From?: number | null;
+		To?: number | null;
 	}
 
 
 	/** This data type is used as a response element to <code>DownloadDBLogFilePortion</code>. */
 	export interface DownloadDBLogFilePortionDetails {
-		LogFileData?: string;
-		Marker?: string;
-		AdditionalDataPending?: boolean;
+		LogFileData?: string | null;
+		Marker?: string | null;
+		AdditionalDataPending?: boolean | null;
 	}
 
 	export interface DBLogFileNotFoundFault {
@@ -1786,7 +1786,7 @@ export namespace MyNS {
 	export interface FailoverDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Aurora DB cluster. </p> <p>This data type is used as a response element in the <code>DescribeDBClusters</code>, <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions. </p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 	export interface InstallationMediaAlreadyExistsFault {
@@ -1797,21 +1797,21 @@ export namespace MyNS {
 	export interface TagListMessage {
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		TagList?: Array<Tag>;
+		TagList?: Array<Tag> | null;
 	}
 
 	export interface ModifyCertificatesResult {
 
 		/** A CA certificate for an AWS account. */
-		Certificate?: Certificate;
+		Certificate?: Certificate | null;
 	}
 
 	export interface DBClusterCapacityInfo {
-		DBClusterIdentifier?: string;
-		PendingCapacity?: number;
-		CurrentCapacity?: number;
-		SecondsBeforeTimeout?: number;
-		TimeoutAction?: string;
+		DBClusterIdentifier?: string | null;
+		PendingCapacity?: number | null;
+		CurrentCapacity?: number | null;
+		SecondsBeforeTimeout?: number | null;
+		TimeoutAction?: string | null;
 	}
 
 	export interface InvalidDBClusterCapacityFault {
@@ -1820,19 +1820,19 @@ export namespace MyNS {
 	export interface ModifyDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Aurora DB cluster. </p> <p>This data type is used as a response element in the <code>DescribeDBClusters</code>, <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions. </p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 
 	/** <p/> */
 	export interface DBClusterParameterGroupNameMessage {
-		DBClusterParameterGroupName?: string;
+		DBClusterParameterGroupName?: string | null;
 	}
 
 	export interface ModifyDBClusterSnapshotAttributeResult {
 
 		/** <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p> */
-		DBClusterSnapshotAttributesResult?: DBClusterSnapshotAttributesResult;
+		DBClusterSnapshotAttributesResult?: DBClusterSnapshotAttributesResult | null;
 	}
 
 	export interface SharedSnapshotQuotaExceededFault {
@@ -1841,7 +1841,7 @@ export namespace MyNS {
 	export interface ModifyDBInstanceResult {
 
 		/** <p>Contains the details of an Amazon RDS DB instance. </p> <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action. </p> */
-		DBInstance?: DBInstance;
+		DBInstance?: DBInstance | null;
 	}
 
 	export interface DBUpgradeDependencyFailureFault {
@@ -1850,37 +1850,37 @@ export namespace MyNS {
 
 	/**  Contains the result of a successful invocation of the <code>ModifyDBParameterGroup</code> or <code>ResetDBParameterGroup</code> action.  */
 	export interface DBParameterGroupNameMessage {
-		DBParameterGroupName?: string;
+		DBParameterGroupName?: string | null;
 	}
 
 	export interface ModifyDBProxyResponse {
 
 		/** <note> <p>This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.</p> </note> <p>The data structure representing a proxy managed by the RDS Proxy.</p> <p>This data type is used as a response element in the <code>DescribeDBProxies</code> action.</p> */
-		DBProxy?: DBProxy;
+		DBProxy?: DBProxy | null;
 	}
 
 	export interface ModifyDBProxyTargetGroupResponse {
 
 		/** <note> <p>This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.</p> </note> <p>Represents a set of RDS DB instances, Aurora DB clusters, or both that a proxy can connect to. Currently, each target group is associated with exactly one RDS DB instance or Aurora DB cluster.</p> <p>This data type is used as a response element in the <code>DescribeDBProxyTargetGroups</code> action.</p> */
-		DBProxyTargetGroup?: DBProxyTargetGroup;
+		DBProxyTargetGroup?: DBProxyTargetGroup | null;
 	}
 
 	export interface ModifyDBSnapshotResult {
 
 		/** <p>Contains the details of an Amazon RDS DB snapshot. </p> <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action. </p> */
-		DBSnapshot?: DBSnapshot;
+		DBSnapshot?: DBSnapshot | null;
 	}
 
 	export interface ModifyDBSnapshotAttributeResult {
 
 		/** <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p> <p>Manual DB snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p> */
-		DBSnapshotAttributesResult?: DBSnapshotAttributesResult;
+		DBSnapshotAttributesResult?: DBSnapshotAttributesResult | null;
 	}
 
 	export interface ModifyDBSubnetGroupResult {
 
 		/** <p>Contains the details of an Amazon RDS DB subnet group. </p> <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action. </p> */
-		DBSubnetGroup?: DBSubnetGroup;
+		DBSubnetGroup?: DBSubnetGroup | null;
 	}
 
 	export interface SubnetAlreadyInUse {
@@ -1889,48 +1889,48 @@ export namespace MyNS {
 	export interface ModifyEventSubscriptionResult {
 
 		/** Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action. */
-		EventSubscription?: EventSubscription;
+		EventSubscription?: EventSubscription | null;
 	}
 
 	export interface ModifyGlobalClusterResult {
 
 		/** A data type representing an Aurora global database. */
-		GlobalCluster?: GlobalCluster;
+		GlobalCluster?: GlobalCluster | null;
 	}
 
 	export interface ModifyOptionGroupResult {
 
 		/** <p/> */
-		OptionGroup?: OptionGroup;
+		OptionGroup?: OptionGroup | null;
 	}
 
 
 	/** A list of all available options */
 	export interface OptionConfiguration {
 		OptionName: string;
-		Port?: number;
-		OptionVersion?: string;
-		DBSecurityGroupMemberships?: Array<string>;
-		VpcSecurityGroupMemberships?: Array<string>;
-		OptionSettings?: Array<OptionSetting>;
+		Port?: number | null;
+		OptionVersion?: string | null;
+		DBSecurityGroupMemberships?: Array<string> | null;
+		VpcSecurityGroupMemberships?: Array<string> | null;
+		OptionSettings?: Array<OptionSetting> | null;
 	}
 
 	export interface PromoteReadReplicaResult {
 
 		/** <p>Contains the details of an Amazon RDS DB instance. </p> <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action. </p> */
-		DBInstance?: DBInstance;
+		DBInstance?: DBInstance | null;
 	}
 
 	export interface PromoteReadReplicaDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Aurora DB cluster. </p> <p>This data type is used as a response element in the <code>DescribeDBClusters</code>, <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions. </p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 	export interface PurchaseReservedDBInstancesOfferingResult {
 
 		/** This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>PurchaseReservedDBInstancesOffering</code> actions. */
-		ReservedDBInstance?: ReservedDBInstance;
+		ReservedDBInstance?: ReservedDBInstance | null;
 	}
 
 	export interface ReservedDBInstanceAlreadyExistsFault {
@@ -1942,11 +1942,11 @@ export namespace MyNS {
 	export interface RebootDBInstanceResult {
 
 		/** <p>Contains the details of an Amazon RDS DB instance. </p> <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action. </p> */
-		DBInstance?: DBInstance;
+		DBInstance?: DBInstance | null;
 	}
 
 	export interface RegisterDBProxyTargetsResponse {
-		DBProxyTargets?: Array<DBProxyTarget>;
+		DBProxyTargets?: Array<DBProxyTarget> | null;
 	}
 
 	export interface DBProxyTargetAlreadyRegisteredFault {
@@ -1955,7 +1955,7 @@ export namespace MyNS {
 	export interface RemoveFromGlobalClusterResult {
 
 		/** A data type representing an Aurora global database. */
-		GlobalCluster?: GlobalCluster;
+		GlobalCluster?: GlobalCluster | null;
 	}
 
 	export interface DBClusterRoleNotFoundFault {
@@ -1967,13 +1967,13 @@ export namespace MyNS {
 	export interface RemoveSourceIdentifierFromSubscriptionResult {
 
 		/** Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action. */
-		EventSubscription?: EventSubscription;
+		EventSubscription?: EventSubscription | null;
 	}
 
 	export interface RestoreDBClusterFromS3Result {
 
 		/** <p>Contains the details of an Amazon Aurora DB cluster. </p> <p>This data type is used as a response element in the <code>DescribeDBClusters</code>, <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions. </p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 	export interface InvalidS3BucketFault {
@@ -1982,7 +1982,7 @@ export namespace MyNS {
 	export interface RestoreDBClusterFromSnapshotResult {
 
 		/** <p>Contains the details of an Amazon Aurora DB cluster. </p> <p>This data type is used as a response element in the <code>DescribeDBClusters</code>, <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions. </p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 	export interface InsufficientDBClusterCapacityFault {
@@ -1994,25 +1994,25 @@ export namespace MyNS {
 	export interface RestoreDBClusterToPointInTimeResult {
 
 		/** <p>Contains the details of an Amazon Aurora DB cluster. </p> <p>This data type is used as a response element in the <code>DescribeDBClusters</code>, <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions. </p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 	export interface RestoreDBInstanceFromDBSnapshotResult {
 
 		/** <p>Contains the details of an Amazon RDS DB instance. </p> <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action. </p> */
-		DBInstance?: DBInstance;
+		DBInstance?: DBInstance | null;
 	}
 
 	export interface RestoreDBInstanceFromS3Result {
 
 		/** <p>Contains the details of an Amazon RDS DB instance. </p> <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action. </p> */
-		DBInstance?: DBInstance;
+		DBInstance?: DBInstance | null;
 	}
 
 	export interface RestoreDBInstanceToPointInTimeResult {
 
 		/** <p>Contains the details of an Amazon RDS DB instance. </p> <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action. </p> */
-		DBInstance?: DBInstance;
+		DBInstance?: DBInstance | null;
 	}
 
 	export interface PointInTimeRestoreNotEnabledFault {
@@ -2021,27 +2021,27 @@ export namespace MyNS {
 	export interface RevokeDBSecurityGroupIngressResult {
 
 		/** <p>Contains the details for an Amazon RDS DB security group. </p> <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action. </p> */
-		DBSecurityGroup?: DBSecurityGroup;
+		DBSecurityGroup?: DBSecurityGroup | null;
 	}
 
 	export interface StartActivityStreamResponse {
-		KmsKeyId?: string;
-		KinesisStreamName?: string;
-		Status?: DBClusterActivityStreamStatus;
-		Mode?: DBClusterActivityStreamMode;
-		ApplyImmediately?: boolean;
+		KmsKeyId?: string | null;
+		KinesisStreamName?: string | null;
+		Status?: DBClusterActivityStreamStatus | null;
+		Mode?: DBClusterActivityStreamMode | null;
+		ApplyImmediately?: boolean | null;
 	}
 
 	export interface StartDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Aurora DB cluster. </p> <p>This data type is used as a response element in the <code>DescribeDBClusters</code>, <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions. </p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 	export interface StartDBInstanceResult {
 
 		/** <p>Contains the details of an Amazon RDS DB instance. </p> <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action. </p> */
-		DBInstance?: DBInstance;
+		DBInstance?: DBInstance | null;
 	}
 
 	export interface ExportTaskAlreadyExistsFault {
@@ -2060,21 +2060,21 @@ export namespace MyNS {
 	}
 
 	export interface StopActivityStreamResponse {
-		KmsKeyId?: string;
-		KinesisStreamName?: string;
-		Status?: DBClusterActivityStreamStatus;
+		KmsKeyId?: string | null;
+		KinesisStreamName?: string | null;
+		Status?: DBClusterActivityStreamStatus | null;
 	}
 
 	export interface StopDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Aurora DB cluster. </p> <p>This data type is used as a response element in the <code>DescribeDBClusters</code>, <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions. </p> */
-		DBCluster?: DBCluster;
+		DBCluster?: DBCluster | null;
 	}
 
 	export interface StopDBInstanceResult {
 
 		/** <p>Contains the details of an Amazon RDS DB instance. </p> <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action. </p> */
-		DBInstance?: DBInstance;
+		DBInstance?: DBInstance | null;
 	}
 
 	export enum ActivityStreamMode { sync = 0, async = 1 }
@@ -2084,7 +2084,7 @@ export namespace MyNS {
 	export interface AddRoleToDBClusterMessage {
 		DBClusterIdentifier: string;
 		RoleArn: string;
-		FeatureName?: string;
+		FeatureName?: string | null;
 	}
 
 	export interface AddRoleToDBInstanceMessage {
@@ -2128,10 +2128,10 @@ export namespace MyNS {
 	/** <p/> */
 	export interface AuthorizeDBSecurityGroupIngressMessage {
 		DBSecurityGroupName: string;
-		CIDRIP?: string;
-		EC2SecurityGroupName?: string;
-		EC2SecurityGroupId?: string;
-		EC2SecurityGroupOwnerId?: string;
+		CIDRIP?: string | null;
+		EC2SecurityGroupName?: string | null;
+		EC2SecurityGroupId?: string | null;
+		EC2SecurityGroupOwnerId?: string | null;
 	}
 
 
@@ -2139,8 +2139,8 @@ export namespace MyNS {
 	export interface BacktrackDBClusterMessage {
 		DBClusterIdentifier: string;
 		BacktrackTo: Date;
-		Force?: boolean;
-		UseEarliestTimeOnPointInTimeUnavailable?: boolean;
+		Force?: boolean | null;
+		UseEarliestTimeOnPointInTimeUnavailable?: boolean | null;
 	}
 
 	export interface CancelExportTaskMessage {
@@ -2150,18 +2150,18 @@ export namespace MyNS {
 
 	/** <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p> <p>The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.</p> */
 	export interface CloudwatchLogsExportConfiguration {
-		EnableLogTypes?: Array<string>;
-		DisableLogTypes?: Array<string>;
+		EnableLogTypes?: Array<string> | null;
+		DisableLogTypes?: Array<string> | null;
 	}
 
 
 	/** <note> <p>This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.</p> </note> <p>Specifies the settings that control the size and behavior of the connection pool associated with a <code>DBProxyTargetGroup</code>.</p> */
 	export interface ConnectionPoolConfiguration {
-		MaxConnectionsPercent?: number;
-		MaxIdleConnectionsPercent?: number;
-		ConnectionBorrowTimeout?: number;
-		SessionPinningFilters?: Array<string>;
-		InitQuery?: string;
+		MaxConnectionsPercent?: number | null;
+		MaxIdleConnectionsPercent?: number | null;
+		ConnectionBorrowTimeout?: number | null;
+		SessionPinningFilters?: Array<string> | null;
+		InitQuery?: string | null;
 	}
 
 	export interface CopyDBClusterParameterGroupMessage {
@@ -2170,7 +2170,7 @@ export namespace MyNS {
 		TargetDBClusterParameterGroupDescription: string;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -2178,13 +2178,13 @@ export namespace MyNS {
 	export interface CopyDBClusterSnapshotMessage {
 		SourceDBClusterSnapshotIdentifier: string;
 		TargetDBClusterSnapshotIdentifier: string;
-		KmsKeyId?: string;
-		PreSignedUrl?: string;
-		CopyTags?: boolean;
+		KmsKeyId?: string | null;
+		PreSignedUrl?: string | null;
+		CopyTags?: boolean | null;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
-		SourceRegion?: string;
+		Tags?: Array<Tag> | null;
+		SourceRegion?: string | null;
 	}
 
 
@@ -2195,7 +2195,7 @@ export namespace MyNS {
 		TargetDBParameterGroupDescription: string;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -2203,14 +2203,14 @@ export namespace MyNS {
 	export interface CopyDBSnapshotMessage {
 		SourceDBSnapshotIdentifier: string;
 		TargetDBSnapshotIdentifier: string;
-		KmsKeyId?: string;
+		KmsKeyId?: string | null;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
-		CopyTags?: boolean;
-		PreSignedUrl?: string;
-		OptionGroupName?: string;
-		SourceRegion?: string;
+		Tags?: Array<Tag> | null;
+		CopyTags?: boolean | null;
+		PreSignedUrl?: string | null;
+		OptionGroupName?: string | null;
+		SourceRegion?: string | null;
 	}
 
 
@@ -2221,79 +2221,79 @@ export namespace MyNS {
 		TargetOptionGroupDescription: string;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** <p/> */
 	export interface CreateCustomAvailabilityZoneMessage {
 		CustomAvailabilityZoneName: string;
-		ExistingVpnId?: string;
-		NewVpnTunnelName?: string;
-		VpnTunnelOriginatorIP?: string;
+		ExistingVpnId?: string | null;
+		NewVpnTunnelName?: string | null;
+		VpnTunnelOriginatorIP?: string | null;
 	}
 
 	export interface CreateDBClusterEndpointMessage {
 		DBClusterIdentifier: string;
 		DBClusterEndpointIdentifier: string;
 		EndpointType: string;
-		StaticMembers?: Array<string>;
-		ExcludedMembers?: Array<string>;
+		StaticMembers?: Array<string> | null;
+		ExcludedMembers?: Array<string> | null;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** <p>Contains the scaling configuration of an Aurora Serverless DB cluster.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p> */
 	export interface ScalingConfiguration {
-		MinCapacity?: number;
-		MaxCapacity?: number;
-		AutoPause?: boolean;
-		SecondsUntilAutoPause?: number;
-		TimeoutAction?: string;
+		MinCapacity?: number | null;
+		MaxCapacity?: number | null;
+		AutoPause?: boolean | null;
+		SecondsUntilAutoPause?: number | null;
+		TimeoutAction?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface CreateDBClusterMessage {
-		AvailabilityZones?: Array<string>;
-		BackupRetentionPeriod?: number;
-		CharacterSetName?: string;
-		DatabaseName?: string;
+		AvailabilityZones?: Array<string> | null;
+		BackupRetentionPeriod?: number | null;
+		CharacterSetName?: string | null;
+		DatabaseName?: string | null;
 		DBClusterIdentifier: string;
-		DBClusterParameterGroupName?: string;
-		VpcSecurityGroupIds?: Array<string>;
-		DBSubnetGroupName?: string;
+		DBClusterParameterGroupName?: string | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		DBSubnetGroupName?: string | null;
 		Engine: string;
-		EngineVersion?: string;
-		Port?: number;
-		MasterUsername?: string;
-		MasterUserPassword?: string;
-		OptionGroupName?: string;
-		PreferredBackupWindow?: string;
-		PreferredMaintenanceWindow?: string;
-		ReplicationSourceIdentifier?: string;
+		EngineVersion?: string | null;
+		Port?: number | null;
+		MasterUsername?: string | null;
+		MasterUserPassword?: string | null;
+		OptionGroupName?: string | null;
+		PreferredBackupWindow?: string | null;
+		PreferredMaintenanceWindow?: string | null;
+		ReplicationSourceIdentifier?: string | null;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
-		StorageEncrypted?: boolean;
-		KmsKeyId?: string;
-		PreSignedUrl?: string;
-		EnableIAMDatabaseAuthentication?: boolean;
-		BacktrackWindow?: number;
-		EnableCloudwatchLogsExports?: Array<string>;
-		EngineMode?: string;
+		Tags?: Array<Tag> | null;
+		StorageEncrypted?: boolean | null;
+		KmsKeyId?: string | null;
+		PreSignedUrl?: string | null;
+		EnableIAMDatabaseAuthentication?: boolean | null;
+		BacktrackWindow?: number | null;
+		EnableCloudwatchLogsExports?: Array<string> | null;
+		EngineMode?: string | null;
 
 		/** <p>Contains the scaling configuration of an Aurora Serverless DB cluster.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p> */
-		ScalingConfiguration?: ScalingConfiguration;
-		DeletionProtection?: boolean;
-		GlobalClusterIdentifier?: string;
-		EnableHttpEndpoint?: boolean;
-		CopyTagsToSnapshot?: boolean;
-		Domain?: string;
-		DomainIAMRoleName?: string;
-		SourceRegion?: string;
+		ScalingConfiguration?: ScalingConfiguration | null;
+		DeletionProtection?: boolean | null;
+		GlobalClusterIdentifier?: string | null;
+		EnableHttpEndpoint?: boolean | null;
+		CopyTagsToSnapshot?: boolean | null;
+		Domain?: string | null;
+		DomainIAMRoleName?: string | null;
+		SourceRegion?: string | null;
 	}
 
 
@@ -2304,7 +2304,7 @@ export namespace MyNS {
 		Description: string;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -2314,96 +2314,96 @@ export namespace MyNS {
 		DBClusterIdentifier: string;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** <p/> */
 	export interface CreateDBInstanceMessage {
-		DBName?: string;
+		DBName?: string | null;
 		DBInstanceIdentifier: string;
-		AllocatedStorage?: number;
+		AllocatedStorage?: number | null;
 		DBInstanceClass: string;
 		Engine: string;
-		MasterUsername?: string;
-		MasterUserPassword?: string;
-		DBSecurityGroups?: Array<string>;
-		VpcSecurityGroupIds?: Array<string>;
-		AvailabilityZone?: string;
-		DBSubnetGroupName?: string;
-		PreferredMaintenanceWindow?: string;
-		DBParameterGroupName?: string;
-		BackupRetentionPeriod?: number;
-		PreferredBackupWindow?: string;
-		Port?: number;
-		MultiAZ?: boolean;
-		EngineVersion?: string;
-		AutoMinorVersionUpgrade?: boolean;
-		LicenseModel?: string;
-		Iops?: number;
-		OptionGroupName?: string;
-		CharacterSetName?: string;
-		PubliclyAccessible?: boolean;
+		MasterUsername?: string | null;
+		MasterUserPassword?: string | null;
+		DBSecurityGroups?: Array<string> | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		AvailabilityZone?: string | null;
+		DBSubnetGroupName?: string | null;
+		PreferredMaintenanceWindow?: string | null;
+		DBParameterGroupName?: string | null;
+		BackupRetentionPeriod?: number | null;
+		PreferredBackupWindow?: string | null;
+		Port?: number | null;
+		MultiAZ?: boolean | null;
+		EngineVersion?: string | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		LicenseModel?: string | null;
+		Iops?: number | null;
+		OptionGroupName?: string | null;
+		CharacterSetName?: string | null;
+		PubliclyAccessible?: boolean | null;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
-		DBClusterIdentifier?: string;
-		StorageType?: string;
-		TdeCredentialArn?: string;
-		TdeCredentialPassword?: string;
-		StorageEncrypted?: boolean;
-		KmsKeyId?: string;
-		Domain?: string;
-		CopyTagsToSnapshot?: boolean;
-		MonitoringInterval?: number;
-		MonitoringRoleArn?: string;
-		DomainIAMRoleName?: string;
-		PromotionTier?: number;
-		Timezone?: string;
-		EnableIAMDatabaseAuthentication?: boolean;
-		EnablePerformanceInsights?: boolean;
-		PerformanceInsightsKMSKeyId?: string;
-		PerformanceInsightsRetentionPeriod?: number;
-		EnableCloudwatchLogsExports?: Array<string>;
-		ProcessorFeatures?: Array<ProcessorFeature>;
-		DeletionProtection?: boolean;
-		MaxAllocatedStorage?: number;
+		Tags?: Array<Tag> | null;
+		DBClusterIdentifier?: string | null;
+		StorageType?: string | null;
+		TdeCredentialArn?: string | null;
+		TdeCredentialPassword?: string | null;
+		StorageEncrypted?: boolean | null;
+		KmsKeyId?: string | null;
+		Domain?: string | null;
+		CopyTagsToSnapshot?: boolean | null;
+		MonitoringInterval?: number | null;
+		MonitoringRoleArn?: string | null;
+		DomainIAMRoleName?: string | null;
+		PromotionTier?: number | null;
+		Timezone?: string | null;
+		EnableIAMDatabaseAuthentication?: boolean | null;
+		EnablePerformanceInsights?: boolean | null;
+		PerformanceInsightsKMSKeyId?: string | null;
+		PerformanceInsightsRetentionPeriod?: number | null;
+		EnableCloudwatchLogsExports?: Array<string> | null;
+		ProcessorFeatures?: Array<ProcessorFeature> | null;
+		DeletionProtection?: boolean | null;
+		MaxAllocatedStorage?: number | null;
 	}
 
 	export interface CreateDBInstanceReadReplicaMessage {
 		DBInstanceIdentifier: string;
 		SourceDBInstanceIdentifier: string;
-		DBInstanceClass?: string;
-		AvailabilityZone?: string;
-		Port?: number;
-		MultiAZ?: boolean;
-		AutoMinorVersionUpgrade?: boolean;
-		Iops?: number;
-		OptionGroupName?: string;
-		DBParameterGroupName?: string;
-		PubliclyAccessible?: boolean;
+		DBInstanceClass?: string | null;
+		AvailabilityZone?: string | null;
+		Port?: number | null;
+		MultiAZ?: boolean | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		Iops?: number | null;
+		OptionGroupName?: string | null;
+		DBParameterGroupName?: string | null;
+		PubliclyAccessible?: boolean | null;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
-		DBSubnetGroupName?: string;
-		VpcSecurityGroupIds?: Array<string>;
-		StorageType?: string;
-		CopyTagsToSnapshot?: boolean;
-		MonitoringInterval?: number;
-		MonitoringRoleArn?: string;
-		KmsKeyId?: string;
-		PreSignedUrl?: string;
-		EnableIAMDatabaseAuthentication?: boolean;
-		EnablePerformanceInsights?: boolean;
-		PerformanceInsightsKMSKeyId?: string;
-		PerformanceInsightsRetentionPeriod?: number;
-		EnableCloudwatchLogsExports?: Array<string>;
-		ProcessorFeatures?: Array<ProcessorFeature>;
-		UseDefaultProcessorFeatures?: boolean;
-		DeletionProtection?: boolean;
-		Domain?: string;
-		DomainIAMRoleName?: string;
-		SourceRegion?: string;
+		Tags?: Array<Tag> | null;
+		DBSubnetGroupName?: string | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		StorageType?: string | null;
+		CopyTagsToSnapshot?: boolean | null;
+		MonitoringInterval?: number | null;
+		MonitoringRoleArn?: string | null;
+		KmsKeyId?: string | null;
+		PreSignedUrl?: string | null;
+		EnableIAMDatabaseAuthentication?: boolean | null;
+		EnablePerformanceInsights?: boolean | null;
+		PerformanceInsightsKMSKeyId?: string | null;
+		PerformanceInsightsRetentionPeriod?: number | null;
+		EnableCloudwatchLogsExports?: Array<string> | null;
+		ProcessorFeatures?: Array<ProcessorFeature> | null;
+		UseDefaultProcessorFeatures?: boolean | null;
+		DeletionProtection?: boolean | null;
+		Domain?: string | null;
+		DomainIAMRoleName?: string | null;
+		SourceRegion?: string | null;
 	}
 
 
@@ -2414,7 +2414,7 @@ export namespace MyNS {
 		Description: string;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum EngineFamily { MYSQL = 0, POSTGRESQL = 1 }
@@ -2425,13 +2425,13 @@ export namespace MyNS {
 		Auth: Array<UserAuthConfig>;
 		RoleArn: string;
 		VpcSubnetIds: Array<string>;
-		VpcSecurityGroupIds?: Array<string>;
-		RequireTLS?: boolean;
-		IdleClientTimeout?: number;
-		DebugLogging?: boolean;
+		VpcSecurityGroupIds?: Array<string> | null;
+		RequireTLS?: boolean | null;
+		IdleClientTimeout?: number | null;
+		DebugLogging?: boolean | null;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -2441,7 +2441,7 @@ export namespace MyNS {
 		DBSecurityGroupDescription: string;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -2451,7 +2451,7 @@ export namespace MyNS {
 		DBInstanceIdentifier: string;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -2462,7 +2462,7 @@ export namespace MyNS {
 		SubnetIds: Array<string>;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
@@ -2470,23 +2470,23 @@ export namespace MyNS {
 	export interface CreateEventSubscriptionMessage {
 		SubscriptionName: string;
 		SnsTopicArn: string;
-		SourceType?: string;
-		EventCategories?: Array<string>;
-		SourceIds?: Array<string>;
-		Enabled?: boolean;
+		SourceType?: string | null;
+		EventCategories?: Array<string> | null;
+		SourceIds?: Array<string> | null;
+		Enabled?: boolean | null;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface CreateGlobalClusterMessage {
-		GlobalClusterIdentifier?: string;
-		SourceDBClusterIdentifier?: string;
-		Engine?: string;
-		EngineVersion?: string;
-		DeletionProtection?: boolean;
-		DatabaseName?: string;
-		StorageEncrypted?: boolean;
+		GlobalClusterIdentifier?: string | null;
+		SourceDBClusterIdentifier?: string | null;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		DeletionProtection?: boolean | null;
+		DatabaseName?: string | null;
+		StorageEncrypted?: boolean | null;
 	}
 
 
@@ -2498,7 +2498,7 @@ export namespace MyNS {
 		OptionGroupDescription: string;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 	export enum TargetType { RDS_INSTANCE = 0, RDS_SERVERLESS_ENDPOINT = 1, TRACKED_CLUSTER = 2 }
@@ -2515,8 +2515,8 @@ export namespace MyNS {
 	/** <p/> */
 	export interface DeleteDBClusterMessage {
 		DBClusterIdentifier: string;
-		SkipFinalSnapshot?: boolean;
-		FinalDBSnapshotIdentifier?: string;
+		SkipFinalSnapshot?: boolean | null;
+		FinalDBSnapshotIdentifier?: string | null;
 	}
 
 
@@ -2541,9 +2541,9 @@ export namespace MyNS {
 	/** <p/> */
 	export interface DeleteDBInstanceMessage {
 		DBInstanceIdentifier: string;
-		SkipFinalSnapshot?: boolean;
-		FinalDBSnapshotIdentifier?: string;
-		DeleteAutomatedBackups?: boolean;
+		SkipFinalSnapshot?: boolean | null;
+		FinalDBSnapshotIdentifier?: string | null;
+		DeleteAutomatedBackups?: boolean | null;
 	}
 
 
@@ -2596,9 +2596,9 @@ export namespace MyNS {
 
 	export interface DeregisterDBProxyTargetsRequest {
 		DBProxyName: string;
-		TargetGroupName?: string;
-		DBInstanceIdentifiers?: Array<string>;
-		DBClusterIdentifiers?: Array<string>;
+		TargetGroupName?: string | null;
+		DBInstanceIdentifiers?: Array<string> | null;
+		DBClusterIdentifiers?: Array<string> | null;
 	}
 
 
@@ -2609,54 +2609,54 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeCertificatesMessage {
-		CertificateIdentifier?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		CertificateIdentifier?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeCustomAvailabilityZonesMessage {
-		CustomAvailabilityZoneId?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		CustomAvailabilityZoneId?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeDBClusterBacktracksMessage {
 		DBClusterIdentifier: string;
-		BacktrackIdentifier?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		BacktrackIdentifier?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeDBClusterEndpointsMessage {
-		DBClusterIdentifier?: string;
-		DBClusterEndpointIdentifier?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		DBClusterIdentifier?: string | null;
+		DBClusterEndpointIdentifier?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeDBClusterParameterGroupsMessage {
-		DBClusterParameterGroupName?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		DBClusterParameterGroupName?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeDBClusterParametersMessage {
 		DBClusterParameterGroupName: string;
-		Source?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		Source?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
@@ -2668,117 +2668,117 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeDBClusterSnapshotsMessage {
-		DBClusterIdentifier?: string;
-		DBClusterSnapshotIdentifier?: string;
-		SnapshotType?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
-		IncludeShared?: boolean;
-		IncludePublic?: boolean;
+		DBClusterIdentifier?: string | null;
+		DBClusterSnapshotIdentifier?: string | null;
+		SnapshotType?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		IncludeShared?: boolean | null;
+		IncludePublic?: boolean | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeDBClustersMessage {
-		DBClusterIdentifier?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
-		IncludeShared?: boolean;
+		DBClusterIdentifier?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		IncludeShared?: boolean | null;
 	}
 
 	export interface DescribeDBEngineVersionsMessage {
-		Engine?: string;
-		EngineVersion?: string;
-		DBParameterGroupFamily?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
-		DefaultOnly?: boolean;
-		ListSupportedCharacterSets?: boolean;
-		ListSupportedTimezones?: boolean;
-		IncludeAll?: boolean;
+		Engine?: string | null;
+		EngineVersion?: string | null;
+		DBParameterGroupFamily?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		DefaultOnly?: boolean | null;
+		ListSupportedCharacterSets?: boolean | null;
+		ListSupportedTimezones?: boolean | null;
+		IncludeAll?: boolean | null;
 	}
 
 
 	/** Parameter input for DescribeDBInstanceAutomatedBackups.  */
 	export interface DescribeDBInstanceAutomatedBackupsMessage {
-		DbiResourceId?: string;
-		DBInstanceIdentifier?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		DbiResourceId?: string | null;
+		DBInstanceIdentifier?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeDBInstancesMessage {
-		DBInstanceIdentifier?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		DBInstanceIdentifier?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeDBLogFilesMessage {
 		DBInstanceIdentifier: string;
-		FilenameContains?: string;
-		FileLastWritten?: number;
-		FileSize?: number;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		FilenameContains?: string | null;
+		FileLastWritten?: number | null;
+		FileSize?: number | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeDBParameterGroupsMessage {
-		DBParameterGroupName?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		DBParameterGroupName?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeDBParametersMessage {
 		DBParameterGroupName: string;
-		Source?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		Source?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeDBProxiesRequest {
-		DBProxyName?: string;
-		Filters?: Array<Filter>;
-		Marker?: string;
-		MaxRecords?: number;
+		DBProxyName?: string | null;
+		Filters?: Array<Filter> | null;
+		Marker?: string | null;
+		MaxRecords?: number | null;
 	}
 
 	export interface DescribeDBProxyTargetGroupsRequest {
 		DBProxyName: string;
-		TargetGroupName?: string;
-		Filters?: Array<Filter>;
-		Marker?: string;
-		MaxRecords?: number;
+		TargetGroupName?: string | null;
+		Filters?: Array<Filter> | null;
+		Marker?: string | null;
+		MaxRecords?: number | null;
 	}
 
 	export interface DescribeDBProxyTargetsRequest {
 		DBProxyName: string;
-		TargetGroupName?: string;
-		Filters?: Array<Filter>;
-		Marker?: string;
-		MaxRecords?: number;
+		TargetGroupName?: string | null;
+		Filters?: Array<Filter> | null;
+		Marker?: string | null;
+		MaxRecords?: number | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeDBSecurityGroupsMessage {
-		DBSecurityGroupName?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		DBSecurityGroupName?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
@@ -2790,58 +2790,58 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeDBSnapshotsMessage {
-		DBInstanceIdentifier?: string;
-		DBSnapshotIdentifier?: string;
-		SnapshotType?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
-		IncludeShared?: boolean;
-		IncludePublic?: boolean;
-		DbiResourceId?: string;
+		DBInstanceIdentifier?: string | null;
+		DBSnapshotIdentifier?: string | null;
+		SnapshotType?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		IncludeShared?: boolean | null;
+		IncludePublic?: boolean | null;
+		DbiResourceId?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeDBSubnetGroupsMessage {
-		DBSubnetGroupName?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		DBSubnetGroupName?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeEngineDefaultClusterParametersMessage {
 		DBParameterGroupFamily: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeEngineDefaultParametersMessage {
 		DBParameterGroupFamily: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeEventCategoriesMessage {
-		SourceType?: string;
-		Filters?: Array<Filter>;
+		SourceType?: string | null;
+		Filters?: Array<Filter> | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeEventSubscriptionsMessage {
-		SubscriptionName?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		SubscriptionName?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export enum SourceType { db_instance = 0, db_parameter_group = 1, db_security_group = 2, db_snapshot = 3, db_cluster = 4, db_cluster_snapshot = 5 }
@@ -2849,122 +2849,122 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface DescribeEventsMessage {
-		SourceIdentifier?: string;
-		SourceType?: DescribeEventsMessageSourceType;
-		StartTime?: Date;
-		EndTime?: Date;
-		Duration?: number;
-		EventCategories?: Array<string>;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		SourceIdentifier?: string | null;
+		SourceType?: DescribeEventsMessageSourceType | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		Duration?: number | null;
+		EventCategories?: Array<string> | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export enum DescribeEventsMessageSourceType { db_instance = 0, db_parameter_group = 1, db_security_group = 2, db_snapshot = 3, db_cluster = 4, db_cluster_snapshot = 5 }
 
 	export interface DescribeExportTasksMessage {
-		ExportTaskIdentifier?: string;
-		SourceArn?: string;
-		Filters?: Array<Filter>;
-		Marker?: string;
-		MaxRecords?: number;
+		ExportTaskIdentifier?: string | null;
+		SourceArn?: string | null;
+		Filters?: Array<Filter> | null;
+		Marker?: string | null;
+		MaxRecords?: number | null;
 	}
 
 	export interface DescribeGlobalClustersMessage {
-		GlobalClusterIdentifier?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		GlobalClusterIdentifier?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 	export interface DescribeInstallationMediaMessage {
-		InstallationMediaId?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		InstallationMediaId?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeOptionGroupOptionsMessage {
 		EngineName: string;
-		MajorEngineVersion?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		MajorEngineVersion?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeOptionGroupsMessage {
-		OptionGroupName?: string;
-		Filters?: Array<Filter>;
-		Marker?: string;
-		MaxRecords?: number;
-		EngineName?: string;
-		MajorEngineVersion?: string;
+		OptionGroupName?: string | null;
+		Filters?: Array<Filter> | null;
+		Marker?: string | null;
+		MaxRecords?: number | null;
+		EngineName?: string | null;
+		MajorEngineVersion?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeOrderableDBInstanceOptionsMessage {
 		Engine: string;
-		EngineVersion?: string;
-		DBInstanceClass?: string;
-		LicenseModel?: string;
-		AvailabilityZoneGroup?: string;
-		Vpc?: boolean;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		EngineVersion?: string | null;
+		DBInstanceClass?: string | null;
+		LicenseModel?: string | null;
+		AvailabilityZoneGroup?: string | null;
+		Vpc?: boolean | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribePendingMaintenanceActionsMessage {
-		ResourceIdentifier?: string;
-		Filters?: Array<Filter>;
-		Marker?: string;
-		MaxRecords?: number;
+		ResourceIdentifier?: string | null;
+		Filters?: Array<Filter> | null;
+		Marker?: string | null;
+		MaxRecords?: number | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeReservedDBInstancesMessage {
-		ReservedDBInstanceId?: string;
-		ReservedDBInstancesOfferingId?: string;
-		DBInstanceClass?: string;
-		Duration?: string;
-		ProductDescription?: string;
-		OfferingType?: string;
-		MultiAZ?: boolean;
-		LeaseId?: string;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		ReservedDBInstanceId?: string | null;
+		ReservedDBInstancesOfferingId?: string | null;
+		DBInstanceClass?: string | null;
+		Duration?: string | null;
+		ProductDescription?: string | null;
+		OfferingType?: string | null;
+		MultiAZ?: boolean | null;
+		LeaseId?: string | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeReservedDBInstancesOfferingsMessage {
-		ReservedDBInstancesOfferingId?: string;
-		DBInstanceClass?: string;
-		Duration?: string;
-		ProductDescription?: string;
-		OfferingType?: string;
-		MultiAZ?: boolean;
-		Filters?: Array<Filter>;
-		MaxRecords?: number;
-		Marker?: string;
+		ReservedDBInstancesOfferingId?: string | null;
+		DBInstanceClass?: string | null;
+		Duration?: string | null;
+		ProductDescription?: string | null;
+		OfferingType?: string | null;
+		MultiAZ?: boolean | null;
+		Filters?: Array<Filter> | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface DescribeSourceRegionsMessage {
-		RegionName?: string;
-		MaxRecords?: number;
-		Marker?: string;
-		Filters?: Array<Filter>;
+		RegionName?: string | null;
+		MaxRecords?: number | null;
+		Marker?: string | null;
+		Filters?: Array<Filter> | null;
 	}
 
 
@@ -2978,15 +2978,15 @@ export namespace MyNS {
 	export interface DownloadDBLogFilePortionMessage {
 		DBInstanceIdentifier: string;
 		LogFileName: string;
-		Marker?: string;
-		NumberOfLines?: number;
+		Marker?: string | null;
+		NumberOfLines?: number | null;
 	}
 
 
 	/** <p/> */
 	export interface FailoverDBClusterMessage {
 		DBClusterIdentifier: string;
-		TargetDBInstanceIdentifier?: string;
+		TargetDBInstanceIdentifier?: string | null;
 	}
 
 	export enum IAMAuthMode { DISABLED = 0, REQUIRED = 1 }
@@ -3003,58 +3003,58 @@ export namespace MyNS {
 	/** <p/> */
 	export interface ListTagsForResourceMessage {
 		ResourceName: string;
-		Filters?: Array<Filter>;
+		Filters?: Array<Filter> | null;
 	}
 
 	export interface ModifyCertificatesMessage {
-		CertificateIdentifier?: string;
-		RemoveCustomerOverride?: boolean;
+		CertificateIdentifier?: string | null;
+		RemoveCustomerOverride?: boolean | null;
 	}
 
 	export interface ModifyCurrentDBClusterCapacityMessage {
 		DBClusterIdentifier: string;
-		Capacity?: number;
-		SecondsBeforeTimeout?: number;
-		TimeoutAction?: string;
+		Capacity?: number | null;
+		SecondsBeforeTimeout?: number | null;
+		TimeoutAction?: string | null;
 	}
 
 	export interface ModifyDBClusterEndpointMessage {
 		DBClusterEndpointIdentifier: string;
-		EndpointType?: string;
-		StaticMembers?: Array<string>;
-		ExcludedMembers?: Array<string>;
+		EndpointType?: string | null;
+		StaticMembers?: Array<string> | null;
+		ExcludedMembers?: Array<string> | null;
 	}
 
 
 	/** <p/> */
 	export interface ModifyDBClusterMessage {
 		DBClusterIdentifier: string;
-		NewDBClusterIdentifier?: string;
-		ApplyImmediately?: boolean;
-		BackupRetentionPeriod?: number;
-		DBClusterParameterGroupName?: string;
-		VpcSecurityGroupIds?: Array<string>;
-		Port?: number;
-		MasterUserPassword?: string;
-		OptionGroupName?: string;
-		PreferredBackupWindow?: string;
-		PreferredMaintenanceWindow?: string;
-		EnableIAMDatabaseAuthentication?: boolean;
-		BacktrackWindow?: number;
+		NewDBClusterIdentifier?: string | null;
+		ApplyImmediately?: boolean | null;
+		BackupRetentionPeriod?: number | null;
+		DBClusterParameterGroupName?: string | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		Port?: number | null;
+		MasterUserPassword?: string | null;
+		OptionGroupName?: string | null;
+		PreferredBackupWindow?: string | null;
+		PreferredMaintenanceWindow?: string | null;
+		EnableIAMDatabaseAuthentication?: boolean | null;
+		BacktrackWindow?: number | null;
 
 		/** <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p> <p>The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.</p> */
-		CloudwatchLogsExportConfiguration?: CloudwatchLogsExportConfiguration;
-		EngineVersion?: string;
-		AllowMajorVersionUpgrade?: boolean;
-		DBInstanceParameterGroupName?: string;
-		Domain?: string;
-		DomainIAMRoleName?: string;
+		CloudwatchLogsExportConfiguration?: CloudwatchLogsExportConfiguration | null;
+		EngineVersion?: string | null;
+		AllowMajorVersionUpgrade?: boolean | null;
+		DBInstanceParameterGroupName?: string | null;
+		Domain?: string | null;
+		DomainIAMRoleName?: string | null;
 
 		/** <p>Contains the scaling configuration of an Aurora Serverless DB cluster.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p> */
-		ScalingConfiguration?: ScalingConfiguration;
-		DeletionProtection?: boolean;
-		EnableHttpEndpoint?: boolean;
-		CopyTagsToSnapshot?: boolean;
+		ScalingConfiguration?: ScalingConfiguration | null;
+		DeletionProtection?: boolean | null;
+		EnableHttpEndpoint?: boolean | null;
+		CopyTagsToSnapshot?: boolean | null;
 	}
 
 
@@ -3069,57 +3069,57 @@ export namespace MyNS {
 	export interface ModifyDBClusterSnapshotAttributeMessage {
 		DBClusterSnapshotIdentifier: string;
 		AttributeName: string;
-		ValuesToAdd?: Array<string>;
-		ValuesToRemove?: Array<string>;
+		ValuesToAdd?: Array<string> | null;
+		ValuesToRemove?: Array<string> | null;
 	}
 
 
 	/** <p/> */
 	export interface ModifyDBInstanceMessage {
 		DBInstanceIdentifier: string;
-		AllocatedStorage?: number;
-		DBInstanceClass?: string;
-		DBSubnetGroupName?: string;
-		DBSecurityGroups?: Array<string>;
-		VpcSecurityGroupIds?: Array<string>;
-		ApplyImmediately?: boolean;
-		MasterUserPassword?: string;
-		DBParameterGroupName?: string;
-		BackupRetentionPeriod?: number;
-		PreferredBackupWindow?: string;
-		PreferredMaintenanceWindow?: string;
-		MultiAZ?: boolean;
-		EngineVersion?: string;
-		AllowMajorVersionUpgrade?: boolean;
-		AutoMinorVersionUpgrade?: boolean;
-		LicenseModel?: string;
-		Iops?: number;
-		OptionGroupName?: string;
-		NewDBInstanceIdentifier?: string;
-		StorageType?: string;
-		TdeCredentialArn?: string;
-		TdeCredentialPassword?: string;
-		CACertificateIdentifier?: string;
-		Domain?: string;
-		CopyTagsToSnapshot?: boolean;
-		MonitoringInterval?: number;
-		DBPortNumber?: number;
-		PubliclyAccessible?: boolean;
-		MonitoringRoleArn?: string;
-		DomainIAMRoleName?: string;
-		PromotionTier?: number;
-		EnableIAMDatabaseAuthentication?: boolean;
-		EnablePerformanceInsights?: boolean;
-		PerformanceInsightsKMSKeyId?: string;
-		PerformanceInsightsRetentionPeriod?: number;
+		AllocatedStorage?: number | null;
+		DBInstanceClass?: string | null;
+		DBSubnetGroupName?: string | null;
+		DBSecurityGroups?: Array<string> | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		ApplyImmediately?: boolean | null;
+		MasterUserPassword?: string | null;
+		DBParameterGroupName?: string | null;
+		BackupRetentionPeriod?: number | null;
+		PreferredBackupWindow?: string | null;
+		PreferredMaintenanceWindow?: string | null;
+		MultiAZ?: boolean | null;
+		EngineVersion?: string | null;
+		AllowMajorVersionUpgrade?: boolean | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		LicenseModel?: string | null;
+		Iops?: number | null;
+		OptionGroupName?: string | null;
+		NewDBInstanceIdentifier?: string | null;
+		StorageType?: string | null;
+		TdeCredentialArn?: string | null;
+		TdeCredentialPassword?: string | null;
+		CACertificateIdentifier?: string | null;
+		Domain?: string | null;
+		CopyTagsToSnapshot?: boolean | null;
+		MonitoringInterval?: number | null;
+		DBPortNumber?: number | null;
+		PubliclyAccessible?: boolean | null;
+		MonitoringRoleArn?: string | null;
+		DomainIAMRoleName?: string | null;
+		PromotionTier?: number | null;
+		EnableIAMDatabaseAuthentication?: boolean | null;
+		EnablePerformanceInsights?: boolean | null;
+		PerformanceInsightsKMSKeyId?: string | null;
+		PerformanceInsightsRetentionPeriod?: number | null;
 
 		/** <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p> <p>The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.</p> */
-		CloudwatchLogsExportConfiguration?: CloudwatchLogsExportConfiguration;
-		ProcessorFeatures?: Array<ProcessorFeature>;
-		UseDefaultProcessorFeatures?: boolean;
-		DeletionProtection?: boolean;
-		MaxAllocatedStorage?: number;
-		CertificateRotationRestart?: boolean;
+		CloudwatchLogsExportConfiguration?: CloudwatchLogsExportConfiguration | null;
+		ProcessorFeatures?: Array<ProcessorFeature> | null;
+		UseDefaultProcessorFeatures?: boolean | null;
+		DeletionProtection?: boolean | null;
+		MaxAllocatedStorage?: number | null;
+		CertificateRotationRestart?: boolean | null;
 	}
 
 
@@ -3131,13 +3131,13 @@ export namespace MyNS {
 
 	export interface ModifyDBProxyRequest {
 		DBProxyName: string;
-		NewDBProxyName?: string;
-		Auth?: Array<UserAuthConfig>;
-		RequireTLS?: boolean;
-		IdleClientTimeout?: number;
-		DebugLogging?: boolean;
-		RoleArn?: string;
-		SecurityGroups?: Array<string>;
+		NewDBProxyName?: string | null;
+		Auth?: Array<UserAuthConfig> | null;
+		RequireTLS?: boolean | null;
+		IdleClientTimeout?: number | null;
+		DebugLogging?: boolean | null;
+		RoleArn?: string | null;
+		SecurityGroups?: Array<string> | null;
 	}
 
 	export interface ModifyDBProxyTargetGroupRequest {
@@ -3145,8 +3145,8 @@ export namespace MyNS {
 		DBProxyName: string;
 
 		/** <note> <p>This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.</p> </note> <p>Specifies the settings that control the size and behavior of the connection pool associated with a <code>DBProxyTargetGroup</code>.</p> */
-		ConnectionPoolConfig?: ConnectionPoolConfiguration;
-		NewName?: string;
+		ConnectionPoolConfig?: ConnectionPoolConfiguration | null;
+		NewName?: string | null;
 	}
 
 
@@ -3154,21 +3154,21 @@ export namespace MyNS {
 	export interface ModifyDBSnapshotAttributeMessage {
 		DBSnapshotIdentifier: string;
 		AttributeName: string;
-		ValuesToAdd?: Array<string>;
-		ValuesToRemove?: Array<string>;
+		ValuesToAdd?: Array<string> | null;
+		ValuesToRemove?: Array<string> | null;
 	}
 
 	export interface ModifyDBSnapshotMessage {
 		DBSnapshotIdentifier: string;
-		EngineVersion?: string;
-		OptionGroupName?: string;
+		EngineVersion?: string | null;
+		OptionGroupName?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface ModifyDBSubnetGroupMessage {
 		DBSubnetGroupName: string;
-		DBSubnetGroupDescription?: string;
+		DBSubnetGroupDescription?: string | null;
 		SubnetIds: Array<string>;
 	}
 
@@ -3176,25 +3176,25 @@ export namespace MyNS {
 	/** <p/> */
 	export interface ModifyEventSubscriptionMessage {
 		SubscriptionName: string;
-		SnsTopicArn?: string;
-		SourceType?: string;
-		EventCategories?: Array<string>;
-		Enabled?: boolean;
+		SnsTopicArn?: string | null;
+		SourceType?: string | null;
+		EventCategories?: Array<string> | null;
+		Enabled?: boolean | null;
 	}
 
 	export interface ModifyGlobalClusterMessage {
-		GlobalClusterIdentifier?: string;
-		NewGlobalClusterIdentifier?: string;
-		DeletionProtection?: boolean;
+		GlobalClusterIdentifier?: string | null;
+		NewGlobalClusterIdentifier?: string | null;
+		DeletionProtection?: boolean | null;
 	}
 
 
 	/** <p/> */
 	export interface ModifyOptionGroupMessage {
 		OptionGroupName: string;
-		OptionsToInclude?: Array<OptionConfiguration>;
-		OptionsToRemove?: Array<string>;
-		ApplyImmediately?: boolean;
+		OptionsToInclude?: Array<OptionConfiguration> | null;
+		OptionsToRemove?: Array<string> | null;
+		ApplyImmediately?: boolean | null;
 	}
 
 
@@ -3207,44 +3207,44 @@ export namespace MyNS {
 	/** <p/> */
 	export interface PromoteReadReplicaMessage {
 		DBInstanceIdentifier: string;
-		BackupRetentionPeriod?: number;
-		PreferredBackupWindow?: string;
+		BackupRetentionPeriod?: number | null;
+		PreferredBackupWindow?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface PurchaseReservedDBInstancesOfferingMessage {
 		ReservedDBInstancesOfferingId: string;
-		ReservedDBInstanceId?: string;
-		DBInstanceCount?: number;
+		ReservedDBInstanceId?: string | null;
+		DBInstanceCount?: number | null;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
+		Tags?: Array<Tag> | null;
 	}
 
 
 	/** <p/> */
 	export interface RebootDBInstanceMessage {
 		DBInstanceIdentifier: string;
-		ForceFailover?: boolean;
+		ForceFailover?: boolean | null;
 	}
 
 	export interface RegisterDBProxyTargetsRequest {
 		DBProxyName: string;
-		TargetGroupName?: string;
-		DBInstanceIdentifiers?: Array<string>;
-		DBClusterIdentifiers?: Array<string>;
+		TargetGroupName?: string | null;
+		DBInstanceIdentifiers?: Array<string> | null;
+		DBClusterIdentifiers?: Array<string> | null;
 	}
 
 	export interface RemoveFromGlobalClusterMessage {
-		GlobalClusterIdentifier?: string;
-		DbClusterIdentifier?: string;
+		GlobalClusterIdentifier?: string | null;
+		DbClusterIdentifier?: string | null;
 	}
 
 	export interface RemoveRoleFromDBClusterMessage {
 		DBClusterIdentifier: string;
 		RoleArn: string;
-		FeatureName?: string;
+		FeatureName?: string | null;
 	}
 
 	export interface RemoveRoleFromDBInstanceMessage {
@@ -3271,109 +3271,109 @@ export namespace MyNS {
 	/** <p/> */
 	export interface ResetDBClusterParameterGroupMessage {
 		DBClusterParameterGroupName: string;
-		ResetAllParameters?: boolean;
-		Parameters?: Array<Parameter>;
+		ResetAllParameters?: boolean | null;
+		Parameters?: Array<Parameter> | null;
 	}
 
 
 	/** <p/> */
 	export interface ResetDBParameterGroupMessage {
 		DBParameterGroupName: string;
-		ResetAllParameters?: boolean;
-		Parameters?: Array<Parameter>;
+		ResetAllParameters?: boolean | null;
+		Parameters?: Array<Parameter> | null;
 	}
 
 	export interface RestoreDBClusterFromS3Message {
-		AvailabilityZones?: Array<string>;
-		BackupRetentionPeriod?: number;
-		CharacterSetName?: string;
-		DatabaseName?: string;
+		AvailabilityZones?: Array<string> | null;
+		BackupRetentionPeriod?: number | null;
+		CharacterSetName?: string | null;
+		DatabaseName?: string | null;
 		DBClusterIdentifier: string;
-		DBClusterParameterGroupName?: string;
-		VpcSecurityGroupIds?: Array<string>;
-		DBSubnetGroupName?: string;
+		DBClusterParameterGroupName?: string | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		DBSubnetGroupName?: string | null;
 		Engine: string;
-		EngineVersion?: string;
-		Port?: number;
+		EngineVersion?: string | null;
+		Port?: number | null;
 		MasterUsername: string;
 		MasterUserPassword: string;
-		OptionGroupName?: string;
-		PreferredBackupWindow?: string;
-		PreferredMaintenanceWindow?: string;
+		OptionGroupName?: string | null;
+		PreferredBackupWindow?: string | null;
+		PreferredMaintenanceWindow?: string | null;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
-		StorageEncrypted?: boolean;
-		KmsKeyId?: string;
-		EnableIAMDatabaseAuthentication?: boolean;
+		Tags?: Array<Tag> | null;
+		StorageEncrypted?: boolean | null;
+		KmsKeyId?: string | null;
+		EnableIAMDatabaseAuthentication?: boolean | null;
 		SourceEngine: string;
 		SourceEngineVersion: string;
 		S3BucketName: string;
-		S3Prefix?: string;
+		S3Prefix?: string | null;
 		S3IngestionRoleArn: string;
-		BacktrackWindow?: number;
-		EnableCloudwatchLogsExports?: Array<string>;
-		DeletionProtection?: boolean;
-		CopyTagsToSnapshot?: boolean;
-		Domain?: string;
-		DomainIAMRoleName?: string;
+		BacktrackWindow?: number | null;
+		EnableCloudwatchLogsExports?: Array<string> | null;
+		DeletionProtection?: boolean | null;
+		CopyTagsToSnapshot?: boolean | null;
+		Domain?: string | null;
+		DomainIAMRoleName?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface RestoreDBClusterFromSnapshotMessage {
-		AvailabilityZones?: Array<string>;
+		AvailabilityZones?: Array<string> | null;
 		DBClusterIdentifier: string;
 		SnapshotIdentifier: string;
 		Engine: string;
-		EngineVersion?: string;
-		Port?: number;
-		DBSubnetGroupName?: string;
-		DatabaseName?: string;
-		OptionGroupName?: string;
-		VpcSecurityGroupIds?: Array<string>;
+		EngineVersion?: string | null;
+		Port?: number | null;
+		DBSubnetGroupName?: string | null;
+		DatabaseName?: string | null;
+		OptionGroupName?: string | null;
+		VpcSecurityGroupIds?: Array<string> | null;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
-		KmsKeyId?: string;
-		EnableIAMDatabaseAuthentication?: boolean;
-		BacktrackWindow?: number;
-		EnableCloudwatchLogsExports?: Array<string>;
-		EngineMode?: string;
+		Tags?: Array<Tag> | null;
+		KmsKeyId?: string | null;
+		EnableIAMDatabaseAuthentication?: boolean | null;
+		BacktrackWindow?: number | null;
+		EnableCloudwatchLogsExports?: Array<string> | null;
+		EngineMode?: string | null;
 
 		/** <p>Contains the scaling configuration of an Aurora Serverless DB cluster.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p> */
-		ScalingConfiguration?: ScalingConfiguration;
-		DBClusterParameterGroupName?: string;
-		DeletionProtection?: boolean;
-		CopyTagsToSnapshot?: boolean;
-		Domain?: string;
-		DomainIAMRoleName?: string;
+		ScalingConfiguration?: ScalingConfiguration | null;
+		DBClusterParameterGroupName?: string | null;
+		DeletionProtection?: boolean | null;
+		CopyTagsToSnapshot?: boolean | null;
+		Domain?: string | null;
+		DomainIAMRoleName?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface RestoreDBClusterToPointInTimeMessage {
 		DBClusterIdentifier: string;
-		RestoreType?: string;
+		RestoreType?: string | null;
 		SourceDBClusterIdentifier: string;
-		RestoreToTime?: Date;
-		UseLatestRestorableTime?: boolean;
-		Port?: number;
-		DBSubnetGroupName?: string;
-		OptionGroupName?: string;
-		VpcSecurityGroupIds?: Array<string>;
+		RestoreToTime?: Date | null;
+		UseLatestRestorableTime?: boolean | null;
+		Port?: number | null;
+		DBSubnetGroupName?: string | null;
+		OptionGroupName?: string | null;
+		VpcSecurityGroupIds?: Array<string> | null;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
-		KmsKeyId?: string;
-		EnableIAMDatabaseAuthentication?: boolean;
-		BacktrackWindow?: number;
-		EnableCloudwatchLogsExports?: Array<string>;
-		DBClusterParameterGroupName?: string;
-		DeletionProtection?: boolean;
-		CopyTagsToSnapshot?: boolean;
-		Domain?: string;
-		DomainIAMRoleName?: string;
+		Tags?: Array<Tag> | null;
+		KmsKeyId?: string | null;
+		EnableIAMDatabaseAuthentication?: boolean | null;
+		BacktrackWindow?: number | null;
+		EnableCloudwatchLogsExports?: Array<string> | null;
+		DBClusterParameterGroupName?: string | null;
+		DeletionProtection?: boolean | null;
+		CopyTagsToSnapshot?: boolean | null;
+		Domain?: string | null;
+		DomainIAMRoleName?: string | null;
 	}
 
 
@@ -3381,137 +3381,137 @@ export namespace MyNS {
 	export interface RestoreDBInstanceFromDBSnapshotMessage {
 		DBInstanceIdentifier: string;
 		DBSnapshotIdentifier: string;
-		DBInstanceClass?: string;
-		Port?: number;
-		AvailabilityZone?: string;
-		DBSubnetGroupName?: string;
-		MultiAZ?: boolean;
-		PubliclyAccessible?: boolean;
-		AutoMinorVersionUpgrade?: boolean;
-		LicenseModel?: string;
-		DBName?: string;
-		Engine?: string;
-		Iops?: number;
-		OptionGroupName?: string;
+		DBInstanceClass?: string | null;
+		Port?: number | null;
+		AvailabilityZone?: string | null;
+		DBSubnetGroupName?: string | null;
+		MultiAZ?: boolean | null;
+		PubliclyAccessible?: boolean | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		LicenseModel?: string | null;
+		DBName?: string | null;
+		Engine?: string | null;
+		Iops?: number | null;
+		OptionGroupName?: string | null;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
-		StorageType?: string;
-		TdeCredentialArn?: string;
-		TdeCredentialPassword?: string;
-		VpcSecurityGroupIds?: Array<string>;
-		Domain?: string;
-		CopyTagsToSnapshot?: boolean;
-		DomainIAMRoleName?: string;
-		EnableIAMDatabaseAuthentication?: boolean;
-		EnableCloudwatchLogsExports?: Array<string>;
-		ProcessorFeatures?: Array<ProcessorFeature>;
-		UseDefaultProcessorFeatures?: boolean;
-		DBParameterGroupName?: string;
-		DeletionProtection?: boolean;
+		Tags?: Array<Tag> | null;
+		StorageType?: string | null;
+		TdeCredentialArn?: string | null;
+		TdeCredentialPassword?: string | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		Domain?: string | null;
+		CopyTagsToSnapshot?: boolean | null;
+		DomainIAMRoleName?: string | null;
+		EnableIAMDatabaseAuthentication?: boolean | null;
+		EnableCloudwatchLogsExports?: Array<string> | null;
+		ProcessorFeatures?: Array<ProcessorFeature> | null;
+		UseDefaultProcessorFeatures?: boolean | null;
+		DBParameterGroupName?: string | null;
+		DeletionProtection?: boolean | null;
 	}
 
 	export interface RestoreDBInstanceFromS3Message {
-		DBName?: string;
+		DBName?: string | null;
 		DBInstanceIdentifier: string;
-		AllocatedStorage?: number;
+		AllocatedStorage?: number | null;
 		DBInstanceClass: string;
 		Engine: string;
-		MasterUsername?: string;
-		MasterUserPassword?: string;
-		DBSecurityGroups?: Array<string>;
-		VpcSecurityGroupIds?: Array<string>;
-		AvailabilityZone?: string;
-		DBSubnetGroupName?: string;
-		PreferredMaintenanceWindow?: string;
-		DBParameterGroupName?: string;
-		BackupRetentionPeriod?: number;
-		PreferredBackupWindow?: string;
-		Port?: number;
-		MultiAZ?: boolean;
-		EngineVersion?: string;
-		AutoMinorVersionUpgrade?: boolean;
-		LicenseModel?: string;
-		Iops?: number;
-		OptionGroupName?: string;
-		PubliclyAccessible?: boolean;
+		MasterUsername?: string | null;
+		MasterUserPassword?: string | null;
+		DBSecurityGroups?: Array<string> | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		AvailabilityZone?: string | null;
+		DBSubnetGroupName?: string | null;
+		PreferredMaintenanceWindow?: string | null;
+		DBParameterGroupName?: string | null;
+		BackupRetentionPeriod?: number | null;
+		PreferredBackupWindow?: string | null;
+		Port?: number | null;
+		MultiAZ?: boolean | null;
+		EngineVersion?: string | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		LicenseModel?: string | null;
+		Iops?: number | null;
+		OptionGroupName?: string | null;
+		PubliclyAccessible?: boolean | null;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
-		StorageType?: string;
-		StorageEncrypted?: boolean;
-		KmsKeyId?: string;
-		CopyTagsToSnapshot?: boolean;
-		MonitoringInterval?: number;
-		MonitoringRoleArn?: string;
-		EnableIAMDatabaseAuthentication?: boolean;
+		Tags?: Array<Tag> | null;
+		StorageType?: string | null;
+		StorageEncrypted?: boolean | null;
+		KmsKeyId?: string | null;
+		CopyTagsToSnapshot?: boolean | null;
+		MonitoringInterval?: number | null;
+		MonitoringRoleArn?: string | null;
+		EnableIAMDatabaseAuthentication?: boolean | null;
 		SourceEngine: string;
 		SourceEngineVersion: string;
 		S3BucketName: string;
-		S3Prefix?: string;
+		S3Prefix?: string | null;
 		S3IngestionRoleArn: string;
-		EnablePerformanceInsights?: boolean;
-		PerformanceInsightsKMSKeyId?: string;
-		PerformanceInsightsRetentionPeriod?: number;
-		EnableCloudwatchLogsExports?: Array<string>;
-		ProcessorFeatures?: Array<ProcessorFeature>;
-		UseDefaultProcessorFeatures?: boolean;
-		DeletionProtection?: boolean;
+		EnablePerformanceInsights?: boolean | null;
+		PerformanceInsightsKMSKeyId?: string | null;
+		PerformanceInsightsRetentionPeriod?: number | null;
+		EnableCloudwatchLogsExports?: Array<string> | null;
+		ProcessorFeatures?: Array<ProcessorFeature> | null;
+		UseDefaultProcessorFeatures?: boolean | null;
+		DeletionProtection?: boolean | null;
 	}
 
 
 	/** <p/> */
 	export interface RestoreDBInstanceToPointInTimeMessage {
-		SourceDBInstanceIdentifier?: string;
+		SourceDBInstanceIdentifier?: string | null;
 		TargetDBInstanceIdentifier: string;
-		RestoreTime?: Date;
-		UseLatestRestorableTime?: boolean;
-		DBInstanceClass?: string;
-		Port?: number;
-		AvailabilityZone?: string;
-		DBSubnetGroupName?: string;
-		MultiAZ?: boolean;
-		PubliclyAccessible?: boolean;
-		AutoMinorVersionUpgrade?: boolean;
-		LicenseModel?: string;
-		DBName?: string;
-		Engine?: string;
-		Iops?: number;
-		OptionGroupName?: string;
-		CopyTagsToSnapshot?: boolean;
+		RestoreTime?: Date | null;
+		UseLatestRestorableTime?: boolean | null;
+		DBInstanceClass?: string | null;
+		Port?: number | null;
+		AvailabilityZone?: string | null;
+		DBSubnetGroupName?: string | null;
+		MultiAZ?: boolean | null;
+		PubliclyAccessible?: boolean | null;
+		AutoMinorVersionUpgrade?: boolean | null;
+		LicenseModel?: string | null;
+		DBName?: string | null;
+		Engine?: string | null;
+		Iops?: number | null;
+		OptionGroupName?: string | null;
+		CopyTagsToSnapshot?: boolean | null;
 
 		/** A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> */
-		Tags?: Array<Tag>;
-		StorageType?: string;
-		TdeCredentialArn?: string;
-		TdeCredentialPassword?: string;
-		VpcSecurityGroupIds?: Array<string>;
-		Domain?: string;
-		DomainIAMRoleName?: string;
-		EnableIAMDatabaseAuthentication?: boolean;
-		EnableCloudwatchLogsExports?: Array<string>;
-		ProcessorFeatures?: Array<ProcessorFeature>;
-		UseDefaultProcessorFeatures?: boolean;
-		DBParameterGroupName?: string;
-		DeletionProtection?: boolean;
-		SourceDbiResourceId?: string;
+		Tags?: Array<Tag> | null;
+		StorageType?: string | null;
+		TdeCredentialArn?: string | null;
+		TdeCredentialPassword?: string | null;
+		VpcSecurityGroupIds?: Array<string> | null;
+		Domain?: string | null;
+		DomainIAMRoleName?: string | null;
+		EnableIAMDatabaseAuthentication?: boolean | null;
+		EnableCloudwatchLogsExports?: Array<string> | null;
+		ProcessorFeatures?: Array<ProcessorFeature> | null;
+		UseDefaultProcessorFeatures?: boolean | null;
+		DBParameterGroupName?: string | null;
+		DeletionProtection?: boolean | null;
+		SourceDbiResourceId?: string | null;
 	}
 
 
 	/** <p/> */
 	export interface RevokeDBSecurityGroupIngressMessage {
 		DBSecurityGroupName: string;
-		CIDRIP?: string;
-		EC2SecurityGroupName?: string;
-		EC2SecurityGroupId?: string;
-		EC2SecurityGroupOwnerId?: string;
+		CIDRIP?: string | null;
+		EC2SecurityGroupName?: string | null;
+		EC2SecurityGroupId?: string | null;
+		EC2SecurityGroupOwnerId?: string | null;
 	}
 
 	export interface StartActivityStreamRequest {
 		ResourceArn: string;
 		Mode: DBClusterActivityStreamMode;
 		KmsKeyId: string;
-		ApplyImmediately?: boolean;
+		ApplyImmediately?: boolean | null;
 	}
 
 	export interface StartDBClusterMessage {
@@ -3528,13 +3528,13 @@ export namespace MyNS {
 		S3BucketName: string;
 		IamRoleArn: string;
 		KmsKeyId: string;
-		S3Prefix?: string;
-		ExportOnly?: Array<string>;
+		S3Prefix?: string | null;
+		ExportOnly?: Array<string> | null;
 	}
 
 	export interface StopActivityStreamRequest {
 		ResourceArn: string;
-		ApplyImmediately?: boolean;
+		ApplyImmediately?: boolean | null;
 	}
 
 	export interface StopDBClusterMessage {
@@ -3543,7 +3543,7 @@ export namespace MyNS {
 
 	export interface StopDBInstanceMessage {
 		DBInstanceIdentifier: string;
-		DBSnapshotIdentifier?: string;
+		DBSnapshotIdentifier?: string | null;
 	}
 
 	export enum TargetState { REGISTERING = 0, AVAILABLE = 1, UNAVAILABLE = 2 }
@@ -3561,7 +3561,7 @@ export namespace MyNS {
 		 * @param {string} FeatureName The name of the feature for the DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <a>DBEngineVersion</a>.
 		 * @return {void} Success
 		 */
-		GET_AddRoleToDBCluster(DBClusterIdentifier: string, RoleArn: string, FeatureName: string, Action: GET_AddRoleToDBClusterAction, Version: GET_AddRoleToDBClusterVersion): Observable<HttpResponse<string>> {
+		GET_AddRoleToDBCluster(DBClusterIdentifier: string, RoleArn: string, FeatureName: string | null | undefined, Action: GET_AddRoleToDBClusterAction, Version: GET_AddRoleToDBClusterVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=AddRoleToDBCluster?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&RoleArn=' + (RoleArn == null ? '' : encodeURIComponent(RoleArn)) + '&FeatureName=' + (FeatureName == null ? '' : encodeURIComponent(FeatureName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3621,7 +3621,7 @@ export namespace MyNS {
 		 * @param {string} EC2SecurityGroupOwnerId  AWS account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> parameter. The AWS access key ID isn't an acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided. 
 		 * @return {void} Success
 		 */
-		GET_AuthorizeDBSecurityGroupIngress(DBSecurityGroupName: string, CIDRIP: string, EC2SecurityGroupName: string, EC2SecurityGroupId: string, EC2SecurityGroupOwnerId: string, Action: GET_AuthorizeDBSecurityGroupIngressAction, Version: GET_AuthorizeDBSecurityGroupIngressVersion): Observable<HttpResponse<string>> {
+		GET_AuthorizeDBSecurityGroupIngress(DBSecurityGroupName: string, CIDRIP: string | null | undefined, EC2SecurityGroupName: string | null | undefined, EC2SecurityGroupId: string | null | undefined, EC2SecurityGroupOwnerId: string | null | undefined, Action: GET_AuthorizeDBSecurityGroupIngressAction, Version: GET_AuthorizeDBSecurityGroupIngressVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=AuthorizeDBSecurityGroupIngress?DBSecurityGroupName=' + (DBSecurityGroupName == null ? '' : encodeURIComponent(DBSecurityGroupName)) + '&CIDRIP=' + (CIDRIP == null ? '' : encodeURIComponent(CIDRIP)) + '&EC2SecurityGroupName=' + (EC2SecurityGroupName == null ? '' : encodeURIComponent(EC2SecurityGroupName)) + '&EC2SecurityGroupId=' + (EC2SecurityGroupId == null ? '' : encodeURIComponent(EC2SecurityGroupId)) + '&EC2SecurityGroupOwnerId=' + (EC2SecurityGroupOwnerId == null ? '' : encodeURIComponent(EC2SecurityGroupOwnerId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3634,7 +3634,7 @@ export namespace MyNS {
 		 * @param {boolean} UseEarliestTimeOnPointInTimeUnavailable A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.
 		 * @return {void} Success
 		 */
-		GET_BacktrackDBCluster(DBClusterIdentifier: string, BacktrackTo: Date, Force: boolean, UseEarliestTimeOnPointInTimeUnavailable: boolean, Action: GET_BacktrackDBClusterAction, Version: GET_BacktrackDBClusterVersion): Observable<HttpResponse<string>> {
+		GET_BacktrackDBCluster(DBClusterIdentifier: string, BacktrackTo: Date, Force: boolean | null | undefined, UseEarliestTimeOnPointInTimeUnavailable: boolean | null | undefined, Action: GET_BacktrackDBClusterAction, Version: GET_BacktrackDBClusterVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=BacktrackDBCluster?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&BacktrackTo=' + BacktrackTo.toISOString() + '&Force=' + Force + '&UseEarliestTimeOnPointInTimeUnavailable=' + UseEarliestTimeOnPointInTimeUnavailable + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3656,7 +3656,7 @@ export namespace MyNS {
 		 * @param {string} TargetDBClusterParameterGroupDescription A description for the copied DB cluster parameter group.
 		 * @return {void} Success
 		 */
-		GET_CopyDBClusterParameterGroup(SourceDBClusterParameterGroupIdentifier: string, TargetDBClusterParameterGroupIdentifier: string, TargetDBClusterParameterGroupDescription: string, Tags: Array<Tag>, Action: GET_CopyDBClusterParameterGroupAction, Version: GET_CopyDBClusterParameterGroupVersion): Observable<HttpResponse<string>> {
+		GET_CopyDBClusterParameterGroup(SourceDBClusterParameterGroupIdentifier: string, TargetDBClusterParameterGroupIdentifier: string, TargetDBClusterParameterGroupDescription: string, Tags: Array<Tag> | null | undefined, Action: GET_CopyDBClusterParameterGroupAction, Version: GET_CopyDBClusterParameterGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CopyDBClusterParameterGroup?SourceDBClusterParameterGroupIdentifier=' + (SourceDBClusterParameterGroupIdentifier == null ? '' : encodeURIComponent(SourceDBClusterParameterGroupIdentifier)) + '&TargetDBClusterParameterGroupIdentifier=' + (TargetDBClusterParameterGroupIdentifier == null ? '' : encodeURIComponent(TargetDBClusterParameterGroupIdentifier)) + '&TargetDBClusterParameterGroupDescription=' + (TargetDBClusterParameterGroupDescription == null ? '' : encodeURIComponent(TargetDBClusterParameterGroupDescription)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3671,7 +3671,7 @@ export namespace MyNS {
 		 * @param {string} SourceRegion The ID of the region that contains the snapshot to be copied.
 		 * @return {void} Success
 		 */
-		GET_CopyDBClusterSnapshot(SourceDBClusterSnapshotIdentifier: string, TargetDBClusterSnapshotIdentifier: string, KmsKeyId: string, PreSignedUrl: string, CopyTags: boolean, Tags: Array<Tag>, SourceRegion: string, Action: GET_CopyDBClusterSnapshotAction, Version: GET_CopyDBClusterSnapshotVersion): Observable<HttpResponse<string>> {
+		GET_CopyDBClusterSnapshot(SourceDBClusterSnapshotIdentifier: string, TargetDBClusterSnapshotIdentifier: string, KmsKeyId: string | null | undefined, PreSignedUrl: string | null | undefined, CopyTags: boolean | null | undefined, Tags: Array<Tag> | null | undefined, SourceRegion: string | null | undefined, Action: GET_CopyDBClusterSnapshotAction, Version: GET_CopyDBClusterSnapshotVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CopyDBClusterSnapshot?SourceDBClusterSnapshotIdentifier=' + (SourceDBClusterSnapshotIdentifier == null ? '' : encodeURIComponent(SourceDBClusterSnapshotIdentifier)) + '&TargetDBClusterSnapshotIdentifier=' + (TargetDBClusterSnapshotIdentifier == null ? '' : encodeURIComponent(TargetDBClusterSnapshotIdentifier)) + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&PreSignedUrl=' + (PreSignedUrl == null ? '' : encodeURIComponent(PreSignedUrl)) + '&CopyTags=' + CopyTags + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&SourceRegion=' + (SourceRegion == null ? '' : encodeURIComponent(SourceRegion)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3683,7 +3683,7 @@ export namespace MyNS {
 		 * @param {string} TargetDBParameterGroupDescription A description for the copied DB parameter group.
 		 * @return {void} Success
 		 */
-		GET_CopyDBParameterGroup(SourceDBParameterGroupIdentifier: string, TargetDBParameterGroupIdentifier: string, TargetDBParameterGroupDescription: string, Tags: Array<Tag>, Action: GET_CopyDBParameterGroupAction, Version: GET_CopyDBParameterGroupVersion): Observable<HttpResponse<string>> {
+		GET_CopyDBParameterGroup(SourceDBParameterGroupIdentifier: string, TargetDBParameterGroupIdentifier: string, TargetDBParameterGroupDescription: string, Tags: Array<Tag> | null | undefined, Action: GET_CopyDBParameterGroupAction, Version: GET_CopyDBParameterGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CopyDBParameterGroup?SourceDBParameterGroupIdentifier=' + (SourceDBParameterGroupIdentifier == null ? '' : encodeURIComponent(SourceDBParameterGroupIdentifier)) + '&TargetDBParameterGroupIdentifier=' + (TargetDBParameterGroupIdentifier == null ? '' : encodeURIComponent(TargetDBParameterGroupIdentifier)) + '&TargetDBParameterGroupDescription=' + (TargetDBParameterGroupDescription == null ? '' : encodeURIComponent(TargetDBParameterGroupDescription)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3699,7 +3699,7 @@ export namespace MyNS {
 		 * @param {string} SourceRegion The ID of the region that contains the snapshot to be copied.
 		 * @return {void} Success
 		 */
-		GET_CopyDBSnapshot(SourceDBSnapshotIdentifier: string, TargetDBSnapshotIdentifier: string, KmsKeyId: string, Tags: Array<Tag>, CopyTags: boolean, PreSignedUrl: string, OptionGroupName: string, SourceRegion: string, Action: GET_CopyDBSnapshotAction, Version: GET_CopyDBSnapshotVersion): Observable<HttpResponse<string>> {
+		GET_CopyDBSnapshot(SourceDBSnapshotIdentifier: string, TargetDBSnapshotIdentifier: string, KmsKeyId: string | null | undefined, Tags: Array<Tag> | null | undefined, CopyTags: boolean | null | undefined, PreSignedUrl: string | null | undefined, OptionGroupName: string | null | undefined, SourceRegion: string | null | undefined, Action: GET_CopyDBSnapshotAction, Version: GET_CopyDBSnapshotVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CopyDBSnapshot?SourceDBSnapshotIdentifier=' + (SourceDBSnapshotIdentifier == null ? '' : encodeURIComponent(SourceDBSnapshotIdentifier)) + '&TargetDBSnapshotIdentifier=' + (TargetDBSnapshotIdentifier == null ? '' : encodeURIComponent(TargetDBSnapshotIdentifier)) + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&CopyTags=' + CopyTags + '&PreSignedUrl=' + (PreSignedUrl == null ? '' : encodeURIComponent(PreSignedUrl)) + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&SourceRegion=' + (SourceRegion == null ? '' : encodeURIComponent(SourceRegion)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3711,7 +3711,7 @@ export namespace MyNS {
 		 * @param {string} TargetOptionGroupDescription The description for the copied option group.
 		 * @return {void} Success
 		 */
-		GET_CopyOptionGroup(SourceOptionGroupIdentifier: string, TargetOptionGroupIdentifier: string, TargetOptionGroupDescription: string, Tags: Array<Tag>, Action: GET_CopyOptionGroupAction, Version: GET_CopyOptionGroupVersion): Observable<HttpResponse<string>> {
+		GET_CopyOptionGroup(SourceOptionGroupIdentifier: string, TargetOptionGroupIdentifier: string, TargetOptionGroupDescription: string, Tags: Array<Tag> | null | undefined, Action: GET_CopyOptionGroupAction, Version: GET_CopyOptionGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CopyOptionGroup?SourceOptionGroupIdentifier=' + (SourceOptionGroupIdentifier == null ? '' : encodeURIComponent(SourceOptionGroupIdentifier)) + '&TargetOptionGroupIdentifier=' + (TargetOptionGroupIdentifier == null ? '' : encodeURIComponent(TargetOptionGroupIdentifier)) + '&TargetOptionGroupDescription=' + (TargetOptionGroupDescription == null ? '' : encodeURIComponent(TargetOptionGroupDescription)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3724,7 +3724,7 @@ export namespace MyNS {
 		 * @param {string} VpnTunnelOriginatorIP <p>The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.</p> <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
 		 * @return {void} Success
 		 */
-		GET_CreateCustomAvailabilityZone(CustomAvailabilityZoneName: string, ExistingVpnId: string, NewVpnTunnelName: string, VpnTunnelOriginatorIP: string, Action: GET_CreateCustomAvailabilityZoneAction, Version: GET_CreateCustomAvailabilityZoneVersion): Observable<HttpResponse<string>> {
+		GET_CreateCustomAvailabilityZone(CustomAvailabilityZoneName: string, ExistingVpnId: string | null | undefined, NewVpnTunnelName: string | null | undefined, VpnTunnelOriginatorIP: string | null | undefined, Action: GET_CreateCustomAvailabilityZoneAction, Version: GET_CreateCustomAvailabilityZoneVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateCustomAvailabilityZone?CustomAvailabilityZoneName=' + (CustomAvailabilityZoneName == null ? '' : encodeURIComponent(CustomAvailabilityZoneName)) + '&ExistingVpnId=' + (ExistingVpnId == null ? '' : encodeURIComponent(ExistingVpnId)) + '&NewVpnTunnelName=' + (NewVpnTunnelName == null ? '' : encodeURIComponent(NewVpnTunnelName)) + '&VpnTunnelOriginatorIP=' + (VpnTunnelOriginatorIP == null ? '' : encodeURIComponent(VpnTunnelOriginatorIP)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3766,7 +3766,7 @@ export namespace MyNS {
 		 * @param {string} SourceRegion The ID of the region that contains the source for the read replica.
 		 * @return {void} Success
 		 */
-		GET_CreateDBCluster(AvailabilityZones: Array<string>, BackupRetentionPeriod: number, CharacterSetName: string, DatabaseName: string, DBClusterIdentifier: string, DBClusterParameterGroupName: string, VpcSecurityGroupIds: Array<string>, DBSubnetGroupName: string, Engine: string, EngineVersion: string, Port: number, MasterUsername: string, MasterUserPassword: string, OptionGroupName: string, PreferredBackupWindow: string, PreferredMaintenanceWindow: string, ReplicationSourceIdentifier: string, Tags: Array<Tag>, StorageEncrypted: boolean, KmsKeyId: string, PreSignedUrl: string, EnableIAMDatabaseAuthentication: boolean, BacktrackWindow: number, EnableCloudwatchLogsExports: Array<string>, EngineMode: string, ScalingConfiguration: GET_CreateDBClusterScalingConfiguration, DeletionProtection: boolean, GlobalClusterIdentifier: string, EnableHttpEndpoint: boolean, CopyTagsToSnapshot: boolean, Domain: string, DomainIAMRoleName: string, SourceRegion: string, Action: GET_CreateDBClusterAction, Version: GET_CreateDBClusterVersion): Observable<HttpResponse<string>> {
+		GET_CreateDBCluster(AvailabilityZones: Array<string> | null | undefined, BackupRetentionPeriod: number | null | undefined, CharacterSetName: string | null | undefined, DatabaseName: string | null | undefined, DBClusterIdentifier: string, DBClusterParameterGroupName: string | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, DBSubnetGroupName: string | null | undefined, Engine: string, EngineVersion: string | null | undefined, Port: number | null | undefined, MasterUsername: string | null | undefined, MasterUserPassword: string | null | undefined, OptionGroupName: string | null | undefined, PreferredBackupWindow: string | null | undefined, PreferredMaintenanceWindow: string | null | undefined, ReplicationSourceIdentifier: string | null | undefined, Tags: Array<Tag> | null | undefined, StorageEncrypted: boolean | null | undefined, KmsKeyId: string | null | undefined, PreSignedUrl: string | null | undefined, EnableIAMDatabaseAuthentication: boolean | null | undefined, BacktrackWindow: number | null | undefined, EnableCloudwatchLogsExports: Array<string> | null | undefined, EngineMode: string | null | undefined, ScalingConfiguration: GET_CreateDBClusterScalingConfiguration | null | undefined, DeletionProtection: boolean | null | undefined, GlobalClusterIdentifier: string | null | undefined, EnableHttpEndpoint: boolean | null | undefined, CopyTagsToSnapshot: boolean | null | undefined, Domain: string | null | undefined, DomainIAMRoleName: string | null | undefined, SourceRegion: string | null | undefined, Action: GET_CreateDBClusterAction, Version: GET_CreateDBClusterVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateDBCluster?' + AvailabilityZones.map(z => `AvailabilityZones=${encodeURIComponent(z)}`).join('&') + '&BackupRetentionPeriod=' + BackupRetentionPeriod + '&CharacterSetName=' + (CharacterSetName == null ? '' : encodeURIComponent(CharacterSetName)) + '&DatabaseName=' + (DatabaseName == null ? '' : encodeURIComponent(DatabaseName)) + '&DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&Port=' + Port + '&MasterUsername=' + (MasterUsername == null ? '' : encodeURIComponent(MasterUsername)) + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&PreferredBackupWindow=' + (PreferredBackupWindow == null ? '' : encodeURIComponent(PreferredBackupWindow)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&ReplicationSourceIdentifier=' + (ReplicationSourceIdentifier == null ? '' : encodeURIComponent(ReplicationSourceIdentifier)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&StorageEncrypted=' + StorageEncrypted + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&PreSignedUrl=' + (PreSignedUrl == null ? '' : encodeURIComponent(PreSignedUrl)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&BacktrackWindow=' + BacktrackWindow + '&' + EnableCloudwatchLogsExports.map(z => `EnableCloudwatchLogsExports=${encodeURIComponent(z)}`).join('&') + '&EngineMode=' + (EngineMode == null ? '' : encodeURIComponent(EngineMode)) + '&ScalingConfiguration=' + ScalingConfiguration + '&DeletionProtection=' + DeletionProtection + '&GlobalClusterIdentifier=' + (GlobalClusterIdentifier == null ? '' : encodeURIComponent(GlobalClusterIdentifier)) + '&EnableHttpEndpoint=' + EnableHttpEndpoint + '&CopyTagsToSnapshot=' + CopyTagsToSnapshot + '&Domain=' + (Domain == null ? '' : encodeURIComponent(Domain)) + '&DomainIAMRoleName=' + (DomainIAMRoleName == null ? '' : encodeURIComponent(DomainIAMRoleName)) + '&SourceRegion=' + (SourceRegion == null ? '' : encodeURIComponent(SourceRegion)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3781,7 +3781,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags The tags to be assigned to the Amazon RDS resource.
 		 * @return {void} Success
 		 */
-		GET_CreateDBClusterEndpoint(DBClusterIdentifier: string, DBClusterEndpointIdentifier: string, EndpointType: string, StaticMembers: Array<string>, ExcludedMembers: Array<string>, Tags: Array<Tag>, Action: GET_CreateDBClusterEndpointAction, Version: GET_CreateDBClusterEndpointVersion): Observable<HttpResponse<string>> {
+		GET_CreateDBClusterEndpoint(DBClusterIdentifier: string, DBClusterEndpointIdentifier: string, EndpointType: string, StaticMembers: Array<string> | null | undefined, ExcludedMembers: Array<string> | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateDBClusterEndpointAction, Version: GET_CreateDBClusterEndpointVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateDBClusterEndpoint?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&DBClusterEndpointIdentifier=' + (DBClusterEndpointIdentifier == null ? '' : encodeURIComponent(DBClusterEndpointIdentifier)) + '&EndpointType=' + (EndpointType == null ? '' : encodeURIComponent(EndpointType)) + '&' + StaticMembers.map(z => `StaticMembers=${encodeURIComponent(z)}`).join('&') + '&' + ExcludedMembers.map(z => `ExcludedMembers=${encodeURIComponent(z)}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3794,7 +3794,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags Tags to assign to the DB cluster parameter group.
 		 * @return {void} Success
 		 */
-		GET_CreateDBClusterParameterGroup(DBClusterParameterGroupName: string, DBParameterGroupFamily: string, Description: string, Tags: Array<Tag>, Action: GET_CreateDBClusterParameterGroupAction, Version: GET_CreateDBClusterParameterGroupVersion): Observable<HttpResponse<string>> {
+		GET_CreateDBClusterParameterGroup(DBClusterParameterGroupName: string, DBParameterGroupFamily: string, Description: string, Tags: Array<Tag> | null | undefined, Action: GET_CreateDBClusterParameterGroupAction, Version: GET_CreateDBClusterParameterGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateDBClusterParameterGroup?DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&DBParameterGroupFamily=' + (DBParameterGroupFamily == null ? '' : encodeURIComponent(DBParameterGroupFamily)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3806,7 +3806,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags The tags to be assigned to the DB cluster snapshot.
 		 * @return {void} Success
 		 */
-		GET_CreateDBClusterSnapshot(DBClusterSnapshotIdentifier: string, DBClusterIdentifier: string, Tags: Array<Tag>, Action: GET_CreateDBClusterSnapshotAction, Version: GET_CreateDBClusterSnapshotVersion): Observable<HttpResponse<string>> {
+		GET_CreateDBClusterSnapshot(DBClusterSnapshotIdentifier: string, DBClusterIdentifier: string, Tags: Array<Tag> | null | undefined, Action: GET_CreateDBClusterSnapshotAction, Version: GET_CreateDBClusterSnapshotVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateDBClusterSnapshot?DBClusterSnapshotIdentifier=' + (DBClusterSnapshotIdentifier == null ? '' : encodeURIComponent(DBClusterSnapshotIdentifier)) + '&DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3861,7 +3861,7 @@ export namespace MyNS {
 		 * @param {number} MaxAllocatedStorage The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
 		 * @return {void} Success
 		 */
-		GET_CreateDBInstance(DBName: string, DBInstanceIdentifier: string, AllocatedStorage: number, DBInstanceClass: string, Engine: string, MasterUsername: string, MasterUserPassword: string, DBSecurityGroups: Array<string>, VpcSecurityGroupIds: Array<string>, AvailabilityZone: string, DBSubnetGroupName: string, PreferredMaintenanceWindow: string, DBParameterGroupName: string, BackupRetentionPeriod: number, PreferredBackupWindow: string, Port: number, MultiAZ: boolean, EngineVersion: string, AutoMinorVersionUpgrade: boolean, LicenseModel: string, Iops: number, OptionGroupName: string, CharacterSetName: string, PubliclyAccessible: boolean, Tags: Array<Tag>, DBClusterIdentifier: string, StorageType: string, TdeCredentialArn: string, TdeCredentialPassword: string, StorageEncrypted: boolean, KmsKeyId: string, Domain: string, CopyTagsToSnapshot: boolean, MonitoringInterval: number, MonitoringRoleArn: string, DomainIAMRoleName: string, PromotionTier: number, Timezone: string, EnableIAMDatabaseAuthentication: boolean, EnablePerformanceInsights: boolean, PerformanceInsightsKMSKeyId: string, PerformanceInsightsRetentionPeriod: number, EnableCloudwatchLogsExports: Array<string>, ProcessorFeatures: Array<ProcessorFeature>, DeletionProtection: boolean, MaxAllocatedStorage: number, Action: GET_CreateDBInstanceAction, Version: GET_CreateDBInstanceVersion): Observable<HttpResponse<string>> {
+		GET_CreateDBInstance(DBName: string | null | undefined, DBInstanceIdentifier: string, AllocatedStorage: number | null | undefined, DBInstanceClass: string, Engine: string, MasterUsername: string | null | undefined, MasterUserPassword: string | null | undefined, DBSecurityGroups: Array<string> | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, AvailabilityZone: string | null | undefined, DBSubnetGroupName: string | null | undefined, PreferredMaintenanceWindow: string | null | undefined, DBParameterGroupName: string | null | undefined, BackupRetentionPeriod: number | null | undefined, PreferredBackupWindow: string | null | undefined, Port: number | null | undefined, MultiAZ: boolean | null | undefined, EngineVersion: string | null | undefined, AutoMinorVersionUpgrade: boolean | null | undefined, LicenseModel: string | null | undefined, Iops: number | null | undefined, OptionGroupName: string | null | undefined, CharacterSetName: string | null | undefined, PubliclyAccessible: boolean | null | undefined, Tags: Array<Tag> | null | undefined, DBClusterIdentifier: string | null | undefined, StorageType: string | null | undefined, TdeCredentialArn: string | null | undefined, TdeCredentialPassword: string | null | undefined, StorageEncrypted: boolean | null | undefined, KmsKeyId: string | null | undefined, Domain: string | null | undefined, CopyTagsToSnapshot: boolean | null | undefined, MonitoringInterval: number | null | undefined, MonitoringRoleArn: string | null | undefined, DomainIAMRoleName: string | null | undefined, PromotionTier: number | null | undefined, Timezone: string | null | undefined, EnableIAMDatabaseAuthentication: boolean | null | undefined, EnablePerformanceInsights: boolean | null | undefined, PerformanceInsightsKMSKeyId: string | null | undefined, PerformanceInsightsRetentionPeriod: number | null | undefined, EnableCloudwatchLogsExports: Array<string> | null | undefined, ProcessorFeatures: Array<ProcessorFeature> | null | undefined, DeletionProtection: boolean | null | undefined, MaxAllocatedStorage: number | null | undefined, Action: GET_CreateDBInstanceAction, Version: GET_CreateDBInstanceVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateDBInstance?DBName=' + (DBName == null ? '' : encodeURIComponent(DBName)) + '&DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&AllocatedStorage=' + AllocatedStorage + '&DBInstanceClass=' + (DBInstanceClass == null ? '' : encodeURIComponent(DBInstanceClass)) + '&Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&MasterUsername=' + (MasterUsername == null ? '' : encodeURIComponent(MasterUsername)) + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&' + DBSecurityGroups.map(z => `DBSecurityGroups=${encodeURIComponent(z)}`).join('&') + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&AvailabilityZone=' + (AvailabilityZone == null ? '' : encodeURIComponent(AvailabilityZone)) + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&BackupRetentionPeriod=' + BackupRetentionPeriod + '&PreferredBackupWindow=' + (PreferredBackupWindow == null ? '' : encodeURIComponent(PreferredBackupWindow)) + '&Port=' + Port + '&MultiAZ=' + MultiAZ + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&AutoMinorVersionUpgrade=' + AutoMinorVersionUpgrade + '&LicenseModel=' + (LicenseModel == null ? '' : encodeURIComponent(LicenseModel)) + '&Iops=' + Iops + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&CharacterSetName=' + (CharacterSetName == null ? '' : encodeURIComponent(CharacterSetName)) + '&PubliclyAccessible=' + PubliclyAccessible + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&StorageType=' + (StorageType == null ? '' : encodeURIComponent(StorageType)) + '&TdeCredentialArn=' + (TdeCredentialArn == null ? '' : encodeURIComponent(TdeCredentialArn)) + '&TdeCredentialPassword=' + (TdeCredentialPassword == null ? '' : encodeURIComponent(TdeCredentialPassword)) + '&StorageEncrypted=' + StorageEncrypted + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&Domain=' + (Domain == null ? '' : encodeURIComponent(Domain)) + '&CopyTagsToSnapshot=' + CopyTagsToSnapshot + '&MonitoringInterval=' + MonitoringInterval + '&MonitoringRoleArn=' + (MonitoringRoleArn == null ? '' : encodeURIComponent(MonitoringRoleArn)) + '&DomainIAMRoleName=' + (DomainIAMRoleName == null ? '' : encodeURIComponent(DomainIAMRoleName)) + '&PromotionTier=' + PromotionTier + '&Timezone=' + (Timezone == null ? '' : encodeURIComponent(Timezone)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&EnablePerformanceInsights=' + EnablePerformanceInsights + '&PerformanceInsightsKMSKeyId=' + (PerformanceInsightsKMSKeyId == null ? '' : encodeURIComponent(PerformanceInsightsKMSKeyId)) + '&PerformanceInsightsRetentionPeriod=' + PerformanceInsightsRetentionPeriod + '&' + EnableCloudwatchLogsExports.map(z => `EnableCloudwatchLogsExports=${encodeURIComponent(z)}`).join('&') + '&' + ProcessorFeatures.map(z => `ProcessorFeatures=${z}`).join('&') + '&DeletionProtection=' + DeletionProtection + '&MaxAllocatedStorage=' + MaxAllocatedStorage + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3900,7 +3900,7 @@ export namespace MyNS {
 		 * @param {string} SourceRegion The ID of the region that contains the source for the read replica.
 		 * @return {void} Success
 		 */
-		GET_CreateDBInstanceReadReplica(DBInstanceIdentifier: string, SourceDBInstanceIdentifier: string, DBInstanceClass: string, AvailabilityZone: string, Port: number, MultiAZ: boolean, AutoMinorVersionUpgrade: boolean, Iops: number, OptionGroupName: string, DBParameterGroupName: string, PubliclyAccessible: boolean, Tags: Array<Tag>, DBSubnetGroupName: string, VpcSecurityGroupIds: Array<string>, StorageType: string, CopyTagsToSnapshot: boolean, MonitoringInterval: number, MonitoringRoleArn: string, KmsKeyId: string, PreSignedUrl: string, EnableIAMDatabaseAuthentication: boolean, EnablePerformanceInsights: boolean, PerformanceInsightsKMSKeyId: string, PerformanceInsightsRetentionPeriod: number, EnableCloudwatchLogsExports: Array<string>, ProcessorFeatures: Array<ProcessorFeature>, UseDefaultProcessorFeatures: boolean, DeletionProtection: boolean, Domain: string, DomainIAMRoleName: string, SourceRegion: string, Action: GET_CreateDBInstanceReadReplicaAction, Version: GET_CreateDBInstanceReadReplicaVersion): Observable<HttpResponse<string>> {
+		GET_CreateDBInstanceReadReplica(DBInstanceIdentifier: string, SourceDBInstanceIdentifier: string, DBInstanceClass: string | null | undefined, AvailabilityZone: string | null | undefined, Port: number | null | undefined, MultiAZ: boolean | null | undefined, AutoMinorVersionUpgrade: boolean | null | undefined, Iops: number | null | undefined, OptionGroupName: string | null | undefined, DBParameterGroupName: string | null | undefined, PubliclyAccessible: boolean | null | undefined, Tags: Array<Tag> | null | undefined, DBSubnetGroupName: string | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, StorageType: string | null | undefined, CopyTagsToSnapshot: boolean | null | undefined, MonitoringInterval: number | null | undefined, MonitoringRoleArn: string | null | undefined, KmsKeyId: string | null | undefined, PreSignedUrl: string | null | undefined, EnableIAMDatabaseAuthentication: boolean | null | undefined, EnablePerformanceInsights: boolean | null | undefined, PerformanceInsightsKMSKeyId: string | null | undefined, PerformanceInsightsRetentionPeriod: number | null | undefined, EnableCloudwatchLogsExports: Array<string> | null | undefined, ProcessorFeatures: Array<ProcessorFeature> | null | undefined, UseDefaultProcessorFeatures: boolean | null | undefined, DeletionProtection: boolean | null | undefined, Domain: string | null | undefined, DomainIAMRoleName: string | null | undefined, SourceRegion: string | null | undefined, Action: GET_CreateDBInstanceReadReplicaAction, Version: GET_CreateDBInstanceReadReplicaVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateDBInstanceReadReplica?DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&SourceDBInstanceIdentifier=' + (SourceDBInstanceIdentifier == null ? '' : encodeURIComponent(SourceDBInstanceIdentifier)) + '&DBInstanceClass=' + (DBInstanceClass == null ? '' : encodeURIComponent(DBInstanceClass)) + '&AvailabilityZone=' + (AvailabilityZone == null ? '' : encodeURIComponent(AvailabilityZone)) + '&Port=' + Port + '&MultiAZ=' + MultiAZ + '&AutoMinorVersionUpgrade=' + AutoMinorVersionUpgrade + '&Iops=' + Iops + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&PubliclyAccessible=' + PubliclyAccessible + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&StorageType=' + (StorageType == null ? '' : encodeURIComponent(StorageType)) + '&CopyTagsToSnapshot=' + CopyTagsToSnapshot + '&MonitoringInterval=' + MonitoringInterval + '&MonitoringRoleArn=' + (MonitoringRoleArn == null ? '' : encodeURIComponent(MonitoringRoleArn)) + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&PreSignedUrl=' + (PreSignedUrl == null ? '' : encodeURIComponent(PreSignedUrl)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&EnablePerformanceInsights=' + EnablePerformanceInsights + '&PerformanceInsightsKMSKeyId=' + (PerformanceInsightsKMSKeyId == null ? '' : encodeURIComponent(PerformanceInsightsKMSKeyId)) + '&PerformanceInsightsRetentionPeriod=' + PerformanceInsightsRetentionPeriod + '&' + EnableCloudwatchLogsExports.map(z => `EnableCloudwatchLogsExports=${encodeURIComponent(z)}`).join('&') + '&' + ProcessorFeatures.map(z => `ProcessorFeatures=${z}`).join('&') + '&UseDefaultProcessorFeatures=' + UseDefaultProcessorFeatures + '&DeletionProtection=' + DeletionProtection + '&Domain=' + (Domain == null ? '' : encodeURIComponent(Domain)) + '&DomainIAMRoleName=' + (DomainIAMRoleName == null ? '' : encodeURIComponent(DomainIAMRoleName)) + '&SourceRegion=' + (SourceRegion == null ? '' : encodeURIComponent(SourceRegion)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3913,7 +3913,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags Tags to assign to the DB parameter group.
 		 * @return {void} Success
 		 */
-		GET_CreateDBParameterGroup(DBParameterGroupName: string, DBParameterGroupFamily: string, Description: string, Tags: Array<Tag>, Action: GET_CreateDBParameterGroupAction, Version: GET_CreateDBParameterGroupVersion): Observable<HttpResponse<string>> {
+		GET_CreateDBParameterGroup(DBParameterGroupName: string, DBParameterGroupFamily: string, Description: string, Tags: Array<Tag> | null | undefined, Action: GET_CreateDBParameterGroupAction, Version: GET_CreateDBParameterGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateDBParameterGroup?DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&DBParameterGroupFamily=' + (DBParameterGroupFamily == null ? '' : encodeURIComponent(DBParameterGroupFamily)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3932,7 +3932,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags An optional set of key-value pairs to associate arbitrary data of your choosing with the proxy.
 		 * @return {void} Success
 		 */
-		GET_CreateDBProxy(DBProxyName: string, EngineFamily: EngineFamily, Auth: Array<UserAuthConfig>, RoleArn: string, VpcSubnetIds: Array<string>, VpcSecurityGroupIds: Array<string>, RequireTLS: boolean, IdleClientTimeout: number, DebugLogging: boolean, Tags: Array<Tag>, Action: GET_CreateDBProxyAction, Version: GET_CreateDBProxyVersion): Observable<HttpResponse<string>> {
+		GET_CreateDBProxy(DBProxyName: string, EngineFamily: EngineFamily, Auth: Array<UserAuthConfig>, RoleArn: string, VpcSubnetIds: Array<string>, VpcSecurityGroupIds: Array<string> | null | undefined, RequireTLS: boolean | null | undefined, IdleClientTimeout: number | null | undefined, DebugLogging: boolean | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateDBProxyAction, Version: GET_CreateDBProxyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateDBProxy?DBProxyName=' + (DBProxyName == null ? '' : encodeURIComponent(DBProxyName)) + '&EngineFamily=' + EngineFamily + '&' + Auth.map(z => `Auth=${z}`).join('&') + '&RoleArn=' + (RoleArn == null ? '' : encodeURIComponent(RoleArn)) + '&' + VpcSubnetIds.map(z => `VpcSubnetIds=${encodeURIComponent(z)}`).join('&') + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&RequireTLS=' + RequireTLS + '&IdleClientTimeout=' + IdleClientTimeout + '&DebugLogging=' + DebugLogging + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3944,7 +3944,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags Tags to assign to the DB security group.
 		 * @return {void} Success
 		 */
-		GET_CreateDBSecurityGroup(DBSecurityGroupName: string, DBSecurityGroupDescription: string, Tags: Array<Tag>, Action: GET_CreateDBSecurityGroupAction, Version: GET_CreateDBSecurityGroupVersion): Observable<HttpResponse<string>> {
+		GET_CreateDBSecurityGroup(DBSecurityGroupName: string, DBSecurityGroupDescription: string, Tags: Array<Tag> | null | undefined, Action: GET_CreateDBSecurityGroupAction, Version: GET_CreateDBSecurityGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateDBSecurityGroup?DBSecurityGroupName=' + (DBSecurityGroupName == null ? '' : encodeURIComponent(DBSecurityGroupName)) + '&DBSecurityGroupDescription=' + (DBSecurityGroupDescription == null ? '' : encodeURIComponent(DBSecurityGroupDescription)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3955,7 +3955,7 @@ export namespace MyNS {
 		 * @param {string} DBInstanceIdentifier <p>The identifier of the DB instance that you want to create the snapshot of.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing DBInstance.</p> </li> </ul>
 		 * @return {void} Success
 		 */
-		GET_CreateDBSnapshot(DBSnapshotIdentifier: string, DBInstanceIdentifier: string, Tags: Array<Tag>, Action: GET_CreateDBSnapshotAction, Version: GET_CreateDBSnapshotVersion): Observable<HttpResponse<string>> {
+		GET_CreateDBSnapshot(DBSnapshotIdentifier: string, DBInstanceIdentifier: string, Tags: Array<Tag> | null | undefined, Action: GET_CreateDBSnapshotAction, Version: GET_CreateDBSnapshotVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateDBSnapshot?DBSnapshotIdentifier=' + (DBSnapshotIdentifier == null ? '' : encodeURIComponent(DBSnapshotIdentifier)) + '&DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3968,7 +3968,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags Tags to assign to the DB subnet group.
 		 * @return {void} Success
 		 */
-		GET_CreateDBSubnetGroup(DBSubnetGroupName: string, DBSubnetGroupDescription: string, SubnetIds: Array<string>, Tags: Array<Tag>, Action: GET_CreateDBSubnetGroupAction, Version: GET_CreateDBSubnetGroupVersion): Observable<HttpResponse<string>> {
+		GET_CreateDBSubnetGroup(DBSubnetGroupName: string, DBSubnetGroupDescription: string, SubnetIds: Array<string>, Tags: Array<Tag> | null | undefined, Action: GET_CreateDBSubnetGroupAction, Version: GET_CreateDBSubnetGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateDBSubnetGroup?DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&DBSubnetGroupDescription=' + (DBSubnetGroupDescription == null ? '' : encodeURIComponent(DBSubnetGroupDescription)) + '&' + SubnetIds.map(z => `SubnetIds=${encodeURIComponent(z)}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3983,7 +3983,7 @@ export namespace MyNS {
 		 * @param {boolean} Enabled  A value that indicates whether to activate the subscription. If the event notification subscription isn't activated, the subscription is created but not active. 
 		 * @return {void} Success
 		 */
-		GET_CreateEventSubscription(SubscriptionName: string, SnsTopicArn: string, SourceType: string, EventCategories: Array<string>, SourceIds: Array<string>, Enabled: boolean, Tags: Array<Tag>, Action: GET_CreateEventSubscriptionAction, Version: GET_CreateEventSubscriptionVersion): Observable<HttpResponse<string>> {
+		GET_CreateEventSubscription(SubscriptionName: string, SnsTopicArn: string, SourceType: string | null | undefined, EventCategories: Array<string> | null | undefined, SourceIds: Array<string> | null | undefined, Enabled: boolean | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateEventSubscriptionAction, Version: GET_CreateEventSubscriptionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateEventSubscription?SubscriptionName=' + (SubscriptionName == null ? '' : encodeURIComponent(SubscriptionName)) + '&SnsTopicArn=' + (SnsTopicArn == null ? '' : encodeURIComponent(SnsTopicArn)) + '&SourceType=' + (SourceType == null ? '' : encodeURIComponent(SourceType)) + '&' + EventCategories.map(z => `EventCategories=${encodeURIComponent(z)}`).join('&') + '&' + SourceIds.map(z => `SourceIds=${encodeURIComponent(z)}`).join('&') + '&Enabled=' + Enabled + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -3999,7 +3999,7 @@ export namespace MyNS {
 		 * @param {boolean} StorageEncrypted  The storage encryption setting for the new global database cluster. 
 		 * @return {void} Success
 		 */
-		GET_CreateGlobalCluster(GlobalClusterIdentifier: string, SourceDBClusterIdentifier: string, Engine: string, EngineVersion: string, DeletionProtection: boolean, DatabaseName: string, StorageEncrypted: boolean, Action: GET_CreateGlobalClusterAction, Version: GET_CreateGlobalClusterVersion): Observable<HttpResponse<string>> {
+		GET_CreateGlobalCluster(GlobalClusterIdentifier: string | null | undefined, SourceDBClusterIdentifier: string | null | undefined, Engine: string | null | undefined, EngineVersion: string | null | undefined, DeletionProtection: boolean | null | undefined, DatabaseName: string | null | undefined, StorageEncrypted: boolean | null | undefined, Action: GET_CreateGlobalClusterAction, Version: GET_CreateGlobalClusterVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateGlobalCluster?GlobalClusterIdentifier=' + (GlobalClusterIdentifier == null ? '' : encodeURIComponent(GlobalClusterIdentifier)) + '&SourceDBClusterIdentifier=' + (SourceDBClusterIdentifier == null ? '' : encodeURIComponent(SourceDBClusterIdentifier)) + '&Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&DeletionProtection=' + DeletionProtection + '&DatabaseName=' + (DatabaseName == null ? '' : encodeURIComponent(DatabaseName)) + '&StorageEncrypted=' + StorageEncrypted + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4013,7 +4013,7 @@ export namespace MyNS {
 		 * @param {Array<Tag>} Tags Tags to assign to the option group.
 		 * @return {void} Success
 		 */
-		GET_CreateOptionGroup(OptionGroupName: string, EngineName: string, MajorEngineVersion: string, OptionGroupDescription: string, Tags: Array<Tag>, Action: GET_CreateOptionGroupAction, Version: GET_CreateOptionGroupVersion): Observable<HttpResponse<string>> {
+		GET_CreateOptionGroup(OptionGroupName: string, EngineName: string, MajorEngineVersion: string, OptionGroupDescription: string, Tags: Array<Tag> | null | undefined, Action: GET_CreateOptionGroupAction, Version: GET_CreateOptionGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=CreateOptionGroup?OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&EngineName=' + (EngineName == null ? '' : encodeURIComponent(EngineName)) + '&MajorEngineVersion=' + (MajorEngineVersion == null ? '' : encodeURIComponent(MajorEngineVersion)) + '&OptionGroupDescription=' + (OptionGroupDescription == null ? '' : encodeURIComponent(OptionGroupDescription)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4035,7 +4035,7 @@ export namespace MyNS {
 		 * @param {string} FinalDBSnapshotIdentifier <p> The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is disabled. </p> <note> <p> Specifying this parameter and also skipping the creation of a final DB cluster snapshot with the <code>SkipFinalShapshot</code> parameter results in an error.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
 		 * @return {void} Success
 		 */
-		GET_DeleteDBCluster(DBClusterIdentifier: string, SkipFinalSnapshot: boolean, FinalDBSnapshotIdentifier: string, Action: GET_DeleteDBClusterAction, Version: GET_DeleteDBClusterVersion): Observable<HttpResponse<string>> {
+		GET_DeleteDBCluster(DBClusterIdentifier: string, SkipFinalSnapshot: boolean | null | undefined, FinalDBSnapshotIdentifier: string | null | undefined, Action: GET_DeleteDBClusterAction, Version: GET_DeleteDBClusterVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeleteDBCluster?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&SkipFinalSnapshot=' + SkipFinalSnapshot + '&FinalDBSnapshotIdentifier=' + (FinalDBSnapshotIdentifier == null ? '' : encodeURIComponent(FinalDBSnapshotIdentifier)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4078,7 +4078,7 @@ export namespace MyNS {
 		 * @param {boolean} DeleteAutomatedBackups A value that indicates whether to remove automated backups immediately after the DB instance is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is deleted.
 		 * @return {void} Success
 		 */
-		GET_DeleteDBInstance(DBInstanceIdentifier: string, SkipFinalSnapshot: boolean, FinalDBSnapshotIdentifier: string, DeleteAutomatedBackups: boolean, Action: GET_DeleteDBInstanceAction, Version: GET_DeleteDBInstanceVersion): Observable<HttpResponse<string>> {
+		GET_DeleteDBInstance(DBInstanceIdentifier: string, SkipFinalSnapshot: boolean | null | undefined, FinalDBSnapshotIdentifier: string | null | undefined, DeleteAutomatedBackups: boolean | null | undefined, Action: GET_DeleteDBInstanceAction, Version: GET_DeleteDBInstanceVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeleteDBInstance?DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&SkipFinalSnapshot=' + SkipFinalSnapshot + '&FinalDBSnapshotIdentifier=' + (FinalDBSnapshotIdentifier == null ? '' : encodeURIComponent(FinalDBSnapshotIdentifier)) + '&DeleteAutomatedBackups=' + DeleteAutomatedBackups + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4191,7 +4191,7 @@ export namespace MyNS {
 		 * @param {Array<string>} DBClusterIdentifiers One or more DB cluster identifiers.
 		 * @return {void} Success
 		 */
-		GET_DeregisterDBProxyTargets(DBProxyName: string, TargetGroupName: string, DBInstanceIdentifiers: Array<string>, DBClusterIdentifiers: Array<string>, Action: GET_DeregisterDBProxyTargetsAction, Version: GET_DeregisterDBProxyTargetsVersion): Observable<HttpResponse<string>> {
+		GET_DeregisterDBProxyTargets(DBProxyName: string, TargetGroupName: string | null | undefined, DBInstanceIdentifiers: Array<string> | null | undefined, DBClusterIdentifiers: Array<string> | null | undefined, Action: GET_DeregisterDBProxyTargetsAction, Version: GET_DeregisterDBProxyTargetsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DeregisterDBProxyTargets?DBProxyName=' + (DBProxyName == null ? '' : encodeURIComponent(DBProxyName)) + '&TargetGroupName=' + (TargetGroupName == null ? '' : encodeURIComponent(TargetGroupName)) + '&' + DBInstanceIdentifiers.map(z => `DBInstanceIdentifiers=${encodeURIComponent(z)}`).join('&') + '&' + DBClusterIdentifiers.map(z => `DBClusterIdentifiers=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4213,7 +4213,7 @@ export namespace MyNS {
 		 * @param {string} Marker  An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. 
 		 * @return {void} Success
 		 */
-		GET_DescribeCertificates(CertificateIdentifier: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeCertificatesAction, Version: GET_DescribeCertificatesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeCertificates(CertificateIdentifier: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeCertificatesAction, Version: GET_DescribeCertificatesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeCertificates?CertificateIdentifier=' + (CertificateIdentifier == null ? '' : encodeURIComponent(CertificateIdentifier)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4226,7 +4226,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional pagination token provided by a previous <code>DescribeCustomAvailabilityZones</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeCustomAvailabilityZones(CustomAvailabilityZoneId: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeCustomAvailabilityZonesAction, Version: GET_DescribeCustomAvailabilityZonesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeCustomAvailabilityZones(CustomAvailabilityZoneId: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeCustomAvailabilityZonesAction, Version: GET_DescribeCustomAvailabilityZonesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeCustomAvailabilityZones?CustomAvailabilityZoneId=' + (CustomAvailabilityZoneId == null ? '' : encodeURIComponent(CustomAvailabilityZoneId)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4240,7 +4240,7 @@ export namespace MyNS {
 		 * @param {string} Marker  An optional pagination token provided by a previous <code>DescribeDBClusterBacktracks</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. 
 		 * @return {void} Success
 		 */
-		GET_DescribeDBClusterBacktracks(DBClusterIdentifier: string, BacktrackIdentifier: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeDBClusterBacktracksAction, Version: GET_DescribeDBClusterBacktracksVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDBClusterBacktracks(DBClusterIdentifier: string, BacktrackIdentifier: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBClusterBacktracksAction, Version: GET_DescribeDBClusterBacktracksVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDBClusterBacktracks?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&BacktrackIdentifier=' + (BacktrackIdentifier == null ? '' : encodeURIComponent(BacktrackIdentifier)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4254,7 +4254,7 @@ export namespace MyNS {
 		 * @param {string} Marker  An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. 
 		 * @return {void} Success
 		 */
-		GET_DescribeDBClusterEndpoints(DBClusterIdentifier: string, DBClusterEndpointIdentifier: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeDBClusterEndpointsAction, Version: GET_DescribeDBClusterEndpointsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDBClusterEndpoints(DBClusterIdentifier: string | null | undefined, DBClusterEndpointIdentifier: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBClusterEndpointsAction, Version: GET_DescribeDBClusterEndpointsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDBClusterEndpoints?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&DBClusterEndpointIdentifier=' + (DBClusterEndpointIdentifier == null ? '' : encodeURIComponent(DBClusterEndpointIdentifier)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4267,7 +4267,7 @@ export namespace MyNS {
 		 * @param {string} Marker  An optional pagination token provided by a previous <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. 
 		 * @return {void} Success
 		 */
-		GET_DescribeDBClusterParameterGroups(DBClusterParameterGroupName: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeDBClusterParameterGroupsAction, Version: GET_DescribeDBClusterParameterGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDBClusterParameterGroups(DBClusterParameterGroupName: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBClusterParameterGroupsAction, Version: GET_DescribeDBClusterParameterGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDBClusterParameterGroups?DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4281,7 +4281,7 @@ export namespace MyNS {
 		 * @param {string} Marker  An optional pagination token provided by a previous <code>DescribeDBClusterParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. 
 		 * @return {void} Success
 		 */
-		GET_DescribeDBClusterParameters(DBClusterParameterGroupName: string, Source: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeDBClusterParametersAction, Version: GET_DescribeDBClusterParametersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDBClusterParameters(DBClusterParameterGroupName: string, Source: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBClusterParametersAction, Version: GET_DescribeDBClusterParametersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDBClusterParameters?DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&Source=' + (Source == null ? '' : encodeURIComponent(Source)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4308,7 +4308,7 @@ export namespace MyNS {
 		 * @param {boolean} IncludePublic <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or restored by any AWS account. By default, the public snapshots are not included.</p> <p>You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
 		 * @return {void} Success
 		 */
-		GET_DescribeDBClusterSnapshots(DBClusterIdentifier: string, DBClusterSnapshotIdentifier: string, SnapshotType: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, IncludeShared: boolean, IncludePublic: boolean, Action: GET_DescribeDBClusterSnapshotsAction, Version: GET_DescribeDBClusterSnapshotsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDBClusterSnapshots(DBClusterIdentifier: string | null | undefined, DBClusterSnapshotIdentifier: string | null | undefined, SnapshotType: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, IncludeShared: boolean | null | undefined, IncludePublic: boolean | null | undefined, Action: GET_DescribeDBClusterSnapshotsAction, Version: GET_DescribeDBClusterSnapshotsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDBClusterSnapshots?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&DBClusterSnapshotIdentifier=' + (DBClusterSnapshotIdentifier == null ? '' : encodeURIComponent(DBClusterSnapshotIdentifier)) + '&SnapshotType=' + (SnapshotType == null ? '' : encodeURIComponent(SnapshotType)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&IncludeShared=' + IncludeShared + '&IncludePublic=' + IncludePublic + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4322,7 +4322,7 @@ export namespace MyNS {
 		 * @param {boolean} IncludeShared Optional Boolean parameter that specifies whether the output includes information about clusters shared from other AWS accounts.
 		 * @return {void} Success
 		 */
-		GET_DescribeDBClusters(DBClusterIdentifier: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, IncludeShared: boolean, Action: GET_DescribeDBClustersAction, Version: GET_DescribeDBClustersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDBClusters(DBClusterIdentifier: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, IncludeShared: boolean | null | undefined, Action: GET_DescribeDBClustersAction, Version: GET_DescribeDBClustersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDBClusters?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&IncludeShared=' + IncludeShared + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4341,7 +4341,7 @@ export namespace MyNS {
 		 * @param {boolean} IncludeAll A value that indicates whether to include engine versions that aren't available in the list. The default is to list only available engine versions.
 		 * @return {void} Success
 		 */
-		GET_DescribeDBEngineVersions(Engine: string, EngineVersion: string, DBParameterGroupFamily: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, DefaultOnly: boolean, ListSupportedCharacterSets: boolean, ListSupportedTimezones: boolean, IncludeAll: boolean, Action: GET_DescribeDBEngineVersionsAction, Version: GET_DescribeDBEngineVersionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDBEngineVersions(Engine: string | null | undefined, EngineVersion: string | null | undefined, DBParameterGroupFamily: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, DefaultOnly: boolean | null | undefined, ListSupportedCharacterSets: boolean | null | undefined, ListSupportedTimezones: boolean | null | undefined, IncludeAll: boolean | null | undefined, Action: GET_DescribeDBEngineVersionsAction, Version: GET_DescribeDBEngineVersionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDBEngineVersions?Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&DBParameterGroupFamily=' + (DBParameterGroupFamily == null ? '' : encodeURIComponent(DBParameterGroupFamily)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&DefaultOnly=' + DefaultOnly + '&ListSupportedCharacterSets=' + ListSupportedCharacterSets + '&ListSupportedTimezones=' + ListSupportedTimezones + '&IncludeAll=' + IncludeAll + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4355,7 +4355,7 @@ export namespace MyNS {
 		 * @param {string} Marker The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to <code>MaxRecords</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeDBInstanceAutomatedBackups(DbiResourceId: string, DBInstanceIdentifier: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeDBInstanceAutomatedBackupsAction, Version: GET_DescribeDBInstanceAutomatedBackupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDBInstanceAutomatedBackups(DbiResourceId: string | null | undefined, DBInstanceIdentifier: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBInstanceAutomatedBackupsAction, Version: GET_DescribeDBInstanceAutomatedBackupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDBInstanceAutomatedBackups?DbiResourceId=' + (DbiResourceId == null ? '' : encodeURIComponent(DbiResourceId)) + '&DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4368,7 +4368,7 @@ export namespace MyNS {
 		 * @param {string} Marker  An optional pagination token provided by a previous <code>DescribeDBInstances</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. 
 		 * @return {void} Success
 		 */
-		GET_DescribeDBInstances(DBInstanceIdentifier: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeDBInstancesAction, Version: GET_DescribeDBInstancesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDBInstances(DBInstanceIdentifier: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBInstancesAction, Version: GET_DescribeDBInstancesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDBInstances?DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4384,7 +4384,7 @@ export namespace MyNS {
 		 * @param {string} Marker The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords.
 		 * @return {void} Success
 		 */
-		GET_DescribeDBLogFiles(DBInstanceIdentifier: string, FilenameContains: string, FileLastWritten: number, FileSize: number, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeDBLogFilesAction, Version: GET_DescribeDBLogFilesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDBLogFiles(DBInstanceIdentifier: string, FilenameContains: string | null | undefined, FileLastWritten: number | null | undefined, FileSize: number | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBLogFilesAction, Version: GET_DescribeDBLogFilesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDBLogFiles?DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&FilenameContains=' + (FilenameContains == null ? '' : encodeURIComponent(FilenameContains)) + '&FileLastWritten=' + FileLastWritten + '&FileSize=' + FileSize + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4397,7 +4397,7 @@ export namespace MyNS {
 		 * @param {string} Marker  An optional pagination token provided by a previous <code>DescribeDBParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. 
 		 * @return {void} Success
 		 */
-		GET_DescribeDBParameterGroups(DBParameterGroupName: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeDBParameterGroupsAction, Version: GET_DescribeDBParameterGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDBParameterGroups(DBParameterGroupName: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBParameterGroupsAction, Version: GET_DescribeDBParameterGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDBParameterGroups?DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4411,7 +4411,7 @@ export namespace MyNS {
 		 * @param {string} Marker  An optional pagination token provided by a previous <code>DescribeDBParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. 
 		 * @return {void} Success
 		 */
-		GET_DescribeDBParameters(DBParameterGroupName: string, Source: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeDBParametersAction, Version: GET_DescribeDBParametersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDBParameters(DBParameterGroupName: string, Source: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBParametersAction, Version: GET_DescribeDBParametersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDBParameters?DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&Source=' + (Source == null ? '' : encodeURIComponent(Source)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4424,7 +4424,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
 		 * @return {void} Success
 		 */
-		GET_DescribeDBProxies(DBProxyName: string, Filters: Array<Filter>, Marker: string, MaxRecords: number, Action: GET_DescribeDBProxiesAction, Version: GET_DescribeDBProxiesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDBProxies(DBProxyName: string | null | undefined, Filters: Array<Filter> | null | undefined, Marker: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeDBProxiesAction, Version: GET_DescribeDBProxiesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDBProxies?DBProxyName=' + (DBProxyName == null ? '' : encodeURIComponent(DBProxyName)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4438,7 +4438,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
 		 * @return {void} Success
 		 */
-		GET_DescribeDBProxyTargetGroups(DBProxyName: string, TargetGroupName: string, Filters: Array<Filter>, Marker: string, MaxRecords: number, Action: GET_DescribeDBProxyTargetGroupsAction, Version: GET_DescribeDBProxyTargetGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDBProxyTargetGroups(DBProxyName: string, TargetGroupName: string | null | undefined, Filters: Array<Filter> | null | undefined, Marker: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeDBProxyTargetGroupsAction, Version: GET_DescribeDBProxyTargetGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDBProxyTargetGroups?DBProxyName=' + (DBProxyName == null ? '' : encodeURIComponent(DBProxyName)) + '&TargetGroupName=' + (TargetGroupName == null ? '' : encodeURIComponent(TargetGroupName)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4452,7 +4452,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
 		 * @return {void} Success
 		 */
-		GET_DescribeDBProxyTargets(DBProxyName: string, TargetGroupName: string, Filters: Array<Filter>, Marker: string, MaxRecords: number, Action: GET_DescribeDBProxyTargetsAction, Version: GET_DescribeDBProxyTargetsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDBProxyTargets(DBProxyName: string, TargetGroupName: string | null | undefined, Filters: Array<Filter> | null | undefined, Marker: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeDBProxyTargetsAction, Version: GET_DescribeDBProxyTargetsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDBProxyTargets?DBProxyName=' + (DBProxyName == null ? '' : encodeURIComponent(DBProxyName)) + '&TargetGroupName=' + (TargetGroupName == null ? '' : encodeURIComponent(TargetGroupName)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4465,7 +4465,7 @@ export namespace MyNS {
 		 * @param {string} Marker  An optional pagination token provided by a previous <code>DescribeDBSecurityGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. 
 		 * @return {void} Success
 		 */
-		GET_DescribeDBSecurityGroups(DBSecurityGroupName: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeDBSecurityGroupsAction, Version: GET_DescribeDBSecurityGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDBSecurityGroups(DBSecurityGroupName: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBSecurityGroupsAction, Version: GET_DescribeDBSecurityGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDBSecurityGroups?DBSecurityGroupName=' + (DBSecurityGroupName == null ? '' : encodeURIComponent(DBSecurityGroupName)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4493,7 +4493,7 @@ export namespace MyNS {
 		 * @param {string} DbiResourceId A specific DB resource ID to describe.
 		 * @return {void} Success
 		 */
-		GET_DescribeDBSnapshots(DBInstanceIdentifier: string, DBSnapshotIdentifier: string, SnapshotType: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, IncludeShared: boolean, IncludePublic: boolean, DbiResourceId: string, Action: GET_DescribeDBSnapshotsAction, Version: GET_DescribeDBSnapshotsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDBSnapshots(DBInstanceIdentifier: string | null | undefined, DBSnapshotIdentifier: string | null | undefined, SnapshotType: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, IncludeShared: boolean | null | undefined, IncludePublic: boolean | null | undefined, DbiResourceId: string | null | undefined, Action: GET_DescribeDBSnapshotsAction, Version: GET_DescribeDBSnapshotsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDBSnapshots?DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&DBSnapshotIdentifier=' + (DBSnapshotIdentifier == null ? '' : encodeURIComponent(DBSnapshotIdentifier)) + '&SnapshotType=' + (SnapshotType == null ? '' : encodeURIComponent(SnapshotType)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&IncludeShared=' + IncludeShared + '&IncludePublic=' + IncludePublic + '&DbiResourceId=' + (DbiResourceId == null ? '' : encodeURIComponent(DbiResourceId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4506,7 +4506,7 @@ export namespace MyNS {
 		 * @param {string} Marker  An optional pagination token provided by a previous DescribeDBSubnetGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. 
 		 * @return {void} Success
 		 */
-		GET_DescribeDBSubnetGroups(DBSubnetGroupName: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeDBSubnetGroupsAction, Version: GET_DescribeDBSubnetGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeDBSubnetGroups(DBSubnetGroupName: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBSubnetGroupsAction, Version: GET_DescribeDBSubnetGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeDBSubnetGroups?DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4519,7 +4519,7 @@ export namespace MyNS {
 		 * @param {string} Marker  An optional pagination token provided by a previous <code>DescribeEngineDefaultClusterParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. 
 		 * @return {void} Success
 		 */
-		GET_DescribeEngineDefaultClusterParameters(DBParameterGroupFamily: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeEngineDefaultClusterParametersAction, Version: GET_DescribeEngineDefaultClusterParametersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeEngineDefaultClusterParameters(DBParameterGroupFamily: string, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeEngineDefaultClusterParametersAction, Version: GET_DescribeEngineDefaultClusterParametersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeEngineDefaultClusterParameters?DBParameterGroupFamily=' + (DBParameterGroupFamily == null ? '' : encodeURIComponent(DBParameterGroupFamily)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4532,7 +4532,7 @@ export namespace MyNS {
 		 * @param {string} Marker  An optional pagination token provided by a previous <code>DescribeEngineDefaultParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. 
 		 * @return {void} Success
 		 */
-		GET_DescribeEngineDefaultParameters(DBParameterGroupFamily: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeEngineDefaultParametersAction, Version: GET_DescribeEngineDefaultParametersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeEngineDefaultParameters(DBParameterGroupFamily: string, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeEngineDefaultParametersAction, Version: GET_DescribeEngineDefaultParametersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeEngineDefaultParameters?DBParameterGroupFamily=' + (DBParameterGroupFamily == null ? '' : encodeURIComponent(DBParameterGroupFamily)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4543,7 +4543,7 @@ export namespace MyNS {
 		 * @param {Array<Filter>} Filters This parameter isn't currently supported.
 		 * @return {void} Success
 		 */
-		GET_DescribeEventCategories(SourceType: string, Filters: Array<Filter>, Action: GET_DescribeEventCategoriesAction, Version: GET_DescribeEventCategoriesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeEventCategories(SourceType: string | null | undefined, Filters: Array<Filter> | null | undefined, Action: GET_DescribeEventCategoriesAction, Version: GET_DescribeEventCategoriesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeEventCategories?SourceType=' + (SourceType == null ? '' : encodeURIComponent(SourceType)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4556,7 +4556,7 @@ export namespace MyNS {
 		 * @param {string} Marker  An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . 
 		 * @return {void} Success
 		 */
-		GET_DescribeEventSubscriptions(SubscriptionName: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeEventSubscriptionsAction, Version: GET_DescribeEventSubscriptionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeEventSubscriptions(SubscriptionName: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeEventSubscriptionsAction, Version: GET_DescribeEventSubscriptionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeEventSubscriptions?SubscriptionName=' + (SubscriptionName == null ? '' : encodeURIComponent(SubscriptionName)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4574,7 +4574,7 @@ export namespace MyNS {
 		 * @param {string} Marker  An optional pagination token provided by a previous DescribeEvents request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. 
 		 * @return {void} Success
 		 */
-		GET_DescribeEvents(SourceIdentifier: string, SourceType: GET_DescribeEventsSourceType, StartTime: Date, EndTime: Date, Duration: number, EventCategories: Array<string>, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeEventsAction, Version: GET_DescribeEventsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeEvents(SourceIdentifier: string | null | undefined, SourceType: GET_DescribeEventsSourceType | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, Duration: number | null | undefined, EventCategories: Array<string> | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeEventsAction, Version: GET_DescribeEventsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeEvents?SourceIdentifier=' + (SourceIdentifier == null ? '' : encodeURIComponent(SourceIdentifier)) + '&SourceType=' + SourceType + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Duration=' + Duration + '&' + EventCategories.map(z => `EventCategories=${encodeURIComponent(z)}`).join('&') + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4588,7 +4588,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords <p> The maximum number of records to include in the response. If more records exist than the specified value, a pagination token called a marker is included in the response. You can use the marker in a later <code>DescribeExportTasks</code> request to retrieve the remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
 		 * @return {void} Success
 		 */
-		GET_DescribeExportTasks(ExportTaskIdentifier: string, SourceArn: string, Filters: Array<Filter>, Marker: string, MaxRecords: number, Action: GET_DescribeExportTasksAction, Version: GET_DescribeExportTasksVersion): Observable<HttpResponse<string>> {
+		GET_DescribeExportTasks(ExportTaskIdentifier: string | null | undefined, SourceArn: string | null | undefined, Filters: Array<Filter> | null | undefined, Marker: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeExportTasksAction, Version: GET_DescribeExportTasksVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeExportTasks?ExportTaskIdentifier=' + (ExportTaskIdentifier == null ? '' : encodeURIComponent(ExportTaskIdentifier)) + '&SourceArn=' + (SourceArn == null ? '' : encodeURIComponent(SourceArn)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4601,7 +4601,7 @@ export namespace MyNS {
 		 * @param {string} Marker  An optional pagination token provided by a previous <code>DescribeGlobalClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. 
 		 * @return {void} Success
 		 */
-		GET_DescribeGlobalClusters(GlobalClusterIdentifier: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeGlobalClustersAction, Version: GET_DescribeGlobalClustersVersion): Observable<HttpResponse<string>> {
+		GET_DescribeGlobalClusters(GlobalClusterIdentifier: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeGlobalClustersAction, Version: GET_DescribeGlobalClustersVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeGlobalClusters?GlobalClusterIdentifier=' + (GlobalClusterIdentifier == null ? '' : encodeURIComponent(GlobalClusterIdentifier)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4614,7 +4614,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeInstallationMedia(InstallationMediaId: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeInstallationMediaAction, Version: GET_DescribeInstallationMediaVersion): Observable<HttpResponse<string>> {
+		GET_DescribeInstallationMedia(InstallationMediaId: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeInstallationMediaAction, Version: GET_DescribeInstallationMediaVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeInstallationMedia?InstallationMediaId=' + (InstallationMediaId == null ? '' : encodeURIComponent(InstallationMediaId)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4628,7 +4628,7 @@ export namespace MyNS {
 		 * @param {string} Marker An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
 		 * @return {void} Success
 		 */
-		GET_DescribeOptionGroupOptions(EngineName: string, MajorEngineVersion: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeOptionGroupOptionsAction, Version: GET_DescribeOptionGroupOptionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeOptionGroupOptions(EngineName: string, MajorEngineVersion: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeOptionGroupOptionsAction, Version: GET_DescribeOptionGroupOptionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeOptionGroupOptions?EngineName=' + (EngineName == null ? '' : encodeURIComponent(EngineName)) + '&MajorEngineVersion=' + (MajorEngineVersion == null ? '' : encodeURIComponent(MajorEngineVersion)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4643,7 +4643,7 @@ export namespace MyNS {
 		 * @param {string} MajorEngineVersion Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified.
 		 * @return {void} Success
 		 */
-		GET_DescribeOptionGroups(OptionGroupName: string, Filters: Array<Filter>, Marker: string, MaxRecords: number, EngineName: string, MajorEngineVersion: string, Action: GET_DescribeOptionGroupsAction, Version: GET_DescribeOptionGroupsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeOptionGroups(OptionGroupName: string | null | undefined, Filters: Array<Filter> | null | undefined, Marker: string | null | undefined, MaxRecords: number | null | undefined, EngineName: string | null | undefined, MajorEngineVersion: string | null | undefined, Action: GET_DescribeOptionGroupsAction, Version: GET_DescribeOptionGroupsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeOptionGroups?OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxRecords=' + MaxRecords + '&EngineName=' + (EngineName == null ? '' : encodeURIComponent(EngineName)) + '&MajorEngineVersion=' + (MajorEngineVersion == null ? '' : encodeURIComponent(MajorEngineVersion)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4661,7 +4661,7 @@ export namespace MyNS {
 		 * @param {string} Marker  An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> . 
 		 * @return {void} Success
 		 */
-		GET_DescribeOrderableDBInstanceOptions(Engine: string, EngineVersion: string, DBInstanceClass: string, LicenseModel: string, AvailabilityZoneGroup: string, Vpc: boolean, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeOrderableDBInstanceOptionsAction, Version: GET_DescribeOrderableDBInstanceOptionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeOrderableDBInstanceOptions(Engine: string, EngineVersion: string | null | undefined, DBInstanceClass: string | null | undefined, LicenseModel: string | null | undefined, AvailabilityZoneGroup: string | null | undefined, Vpc: boolean | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeOrderableDBInstanceOptionsAction, Version: GET_DescribeOrderableDBInstanceOptionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeOrderableDBInstanceOptions?Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&DBInstanceClass=' + (DBInstanceClass == null ? '' : encodeURIComponent(DBInstanceClass)) + '&LicenseModel=' + (LicenseModel == null ? '' : encodeURIComponent(LicenseModel)) + '&AvailabilityZoneGroup=' + (AvailabilityZoneGroup == null ? '' : encodeURIComponent(AvailabilityZoneGroup)) + '&Vpc=' + Vpc + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4674,7 +4674,7 @@ export namespace MyNS {
 		 * @param {number} MaxRecords <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
 		 * @return {void} Success
 		 */
-		GET_DescribePendingMaintenanceActions(ResourceIdentifier: string, Filters: Array<Filter>, Marker: string, MaxRecords: number, Action: GET_DescribePendingMaintenanceActionsAction, Version: GET_DescribePendingMaintenanceActionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribePendingMaintenanceActions(ResourceIdentifier: string | null | undefined, Filters: Array<Filter> | null | undefined, Marker: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribePendingMaintenanceActionsAction, Version: GET_DescribePendingMaintenanceActionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribePendingMaintenanceActions?ResourceIdentifier=' + (ResourceIdentifier == null ? '' : encodeURIComponent(ResourceIdentifier)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4694,7 +4694,7 @@ export namespace MyNS {
 		 * @param {string} Marker  An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. 
 		 * @return {void} Success
 		 */
-		GET_DescribeReservedDBInstances(ReservedDBInstanceId: string, ReservedDBInstancesOfferingId: string, DBInstanceClass: string, Duration: string, ProductDescription: string, OfferingType: string, MultiAZ: boolean, LeaseId: string, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeReservedDBInstancesAction, Version: GET_DescribeReservedDBInstancesVersion): Observable<HttpResponse<string>> {
+		GET_DescribeReservedDBInstances(ReservedDBInstanceId: string | null | undefined, ReservedDBInstancesOfferingId: string | null | undefined, DBInstanceClass: string | null | undefined, Duration: string | null | undefined, ProductDescription: string | null | undefined, OfferingType: string | null | undefined, MultiAZ: boolean | null | undefined, LeaseId: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeReservedDBInstancesAction, Version: GET_DescribeReservedDBInstancesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeReservedDBInstances?ReservedDBInstanceId=' + (ReservedDBInstanceId == null ? '' : encodeURIComponent(ReservedDBInstanceId)) + '&ReservedDBInstancesOfferingId=' + (ReservedDBInstancesOfferingId == null ? '' : encodeURIComponent(ReservedDBInstancesOfferingId)) + '&DBInstanceClass=' + (DBInstanceClass == null ? '' : encodeURIComponent(DBInstanceClass)) + '&Duration=' + (Duration == null ? '' : encodeURIComponent(Duration)) + '&ProductDescription=' + (ProductDescription == null ? '' : encodeURIComponent(ProductDescription)) + '&OfferingType=' + (OfferingType == null ? '' : encodeURIComponent(OfferingType)) + '&MultiAZ=' + MultiAZ + '&LeaseId=' + (LeaseId == null ? '' : encodeURIComponent(LeaseId)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4712,7 +4712,7 @@ export namespace MyNS {
 		 * @param {string} Marker  An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. 
 		 * @return {void} Success
 		 */
-		GET_DescribeReservedDBInstancesOfferings(ReservedDBInstancesOfferingId: string, DBInstanceClass: string, Duration: string, ProductDescription: string, OfferingType: string, MultiAZ: boolean, Filters: Array<Filter>, MaxRecords: number, Marker: string, Action: GET_DescribeReservedDBInstancesOfferingsAction, Version: GET_DescribeReservedDBInstancesOfferingsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeReservedDBInstancesOfferings(ReservedDBInstancesOfferingId: string | null | undefined, DBInstanceClass: string | null | undefined, Duration: string | null | undefined, ProductDescription: string | null | undefined, OfferingType: string | null | undefined, MultiAZ: boolean | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeReservedDBInstancesOfferingsAction, Version: GET_DescribeReservedDBInstancesOfferingsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeReservedDBInstancesOfferings?ReservedDBInstancesOfferingId=' + (ReservedDBInstancesOfferingId == null ? '' : encodeURIComponent(ReservedDBInstancesOfferingId)) + '&DBInstanceClass=' + (DBInstanceClass == null ? '' : encodeURIComponent(DBInstanceClass)) + '&Duration=' + (Duration == null ? '' : encodeURIComponent(Duration)) + '&ProductDescription=' + (ProductDescription == null ? '' : encodeURIComponent(ProductDescription)) + '&OfferingType=' + (OfferingType == null ? '' : encodeURIComponent(OfferingType)) + '&MultiAZ=' + MultiAZ + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4725,7 +4725,7 @@ export namespace MyNS {
 		 * @param {Array<Filter>} Filters This parameter isn't currently supported.
 		 * @return {void} Success
 		 */
-		GET_DescribeSourceRegions(RegionName: string, MaxRecords: number, Marker: string, Filters: Array<Filter>, Action: GET_DescribeSourceRegionsAction, Version: GET_DescribeSourceRegionsVersion): Observable<HttpResponse<string>> {
+		GET_DescribeSourceRegions(RegionName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Filters: Array<Filter> | null | undefined, Action: GET_DescribeSourceRegionsAction, Version: GET_DescribeSourceRegionsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DescribeSourceRegions?RegionName=' + (RegionName == null ? '' : encodeURIComponent(RegionName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4748,7 +4748,7 @@ export namespace MyNS {
 		 * @param {number} NumberOfLines <p>The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the file is truncated at 1 MB in size.</p> <p>If the NumberOfLines parameter is specified, then the block of lines returned can be from the beginning or the end of the log file, depending on the value of the Marker parameter.</p> <ul> <li> <p>If neither Marker or NumberOfLines are specified, the entire log file is returned up to a maximum of 10000 lines, starting with the most recent log entries first.</p> </li> <li> <p>If NumberOfLines is specified and Marker isn't specified, then the most recent lines from the end of the log file are returned.</p> </li> <li> <p>If Marker is specified as "0", then the specified number of lines from the beginning of the log file are returned.</p> </li> <li> <p>You can download the log file in blocks of lines by specifying the size of the block using the NumberOfLines parameter, and by specifying a value of "0" for the Marker parameter in your first request. Include the Marker value returned in the response as the Marker value for the next request, continuing until the AdditionalDataPending response element returns false.</p> </li> </ul>
 		 * @return {void} Success
 		 */
-		GET_DownloadDBLogFilePortion(DBInstanceIdentifier: string, LogFileName: string, Marker: string, NumberOfLines: number, Action: GET_DownloadDBLogFilePortionAction, Version: GET_DownloadDBLogFilePortionVersion): Observable<HttpResponse<string>> {
+		GET_DownloadDBLogFilePortion(DBInstanceIdentifier: string, LogFileName: string, Marker: string | null | undefined, NumberOfLines: number | null | undefined, Action: GET_DownloadDBLogFilePortionAction, Version: GET_DownloadDBLogFilePortionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=DownloadDBLogFilePortion?DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&LogFileName=' + (LogFileName == null ? '' : encodeURIComponent(LogFileName)) + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&NumberOfLines=' + NumberOfLines + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4759,7 +4759,7 @@ export namespace MyNS {
 		 * @param {string} TargetDBInstanceIdentifier <p>The name of the instance to promote to the primary instance.</p> <p>You must specify the instance identifier for an Aurora Replica in the DB cluster. For example, <code>mydbcluster-replica1</code>.</p>
 		 * @return {void} Success
 		 */
-		GET_FailoverDBCluster(DBClusterIdentifier: string, TargetDBInstanceIdentifier: string, Action: GET_FailoverDBClusterAction, Version: GET_FailoverDBClusterVersion): Observable<HttpResponse<string>> {
+		GET_FailoverDBCluster(DBClusterIdentifier: string, TargetDBInstanceIdentifier: string | null | undefined, Action: GET_FailoverDBClusterAction, Version: GET_FailoverDBClusterVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=FailoverDBCluster?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&TargetDBInstanceIdentifier=' + (TargetDBInstanceIdentifier == null ? '' : encodeURIComponent(TargetDBInstanceIdentifier)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4784,7 +4784,7 @@ export namespace MyNS {
 		 * @param {Array<Filter>} Filters This parameter isn't currently supported.
 		 * @return {void} Success
 		 */
-		GET_ListTagsForResource(ResourceName: string, Filters: Array<Filter>, Action: GET_ListTagsForResourceAction, Version: GET_ListTagsForResourceVersion): Observable<HttpResponse<string>> {
+		GET_ListTagsForResource(ResourceName: string, Filters: Array<Filter> | null | undefined, Action: GET_ListTagsForResourceAction, Version: GET_ListTagsForResourceVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ListTagsForResource?ResourceName=' + (ResourceName == null ? '' : encodeURIComponent(ResourceName)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4795,7 +4795,7 @@ export namespace MyNS {
 		 * @param {boolean} RemoveCustomerOverride A value that indicates whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.
 		 * @return {void} Success
 		 */
-		GET_ModifyCertificates(CertificateIdentifier: string, RemoveCustomerOverride: boolean, Action: GET_ModifyCertificatesAction, Version: GET_ModifyCertificatesVersion): Observable<HttpResponse<string>> {
+		GET_ModifyCertificates(CertificateIdentifier: string | null | undefined, RemoveCustomerOverride: boolean | null | undefined, Action: GET_ModifyCertificatesAction, Version: GET_ModifyCertificatesVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyCertificates?CertificateIdentifier=' + (CertificateIdentifier == null ? '' : encodeURIComponent(CertificateIdentifier)) + '&RemoveCustomerOverride=' + RemoveCustomerOverride + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4808,7 +4808,7 @@ export namespace MyNS {
 		 * @param {string} TimeoutAction <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p> <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p> <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
 		 * @return {void} Success
 		 */
-		GET_ModifyCurrentDBClusterCapacity(DBClusterIdentifier: string, Capacity: number, SecondsBeforeTimeout: number, TimeoutAction: string, Action: GET_ModifyCurrentDBClusterCapacityAction, Version: GET_ModifyCurrentDBClusterCapacityVersion): Observable<HttpResponse<string>> {
+		GET_ModifyCurrentDBClusterCapacity(DBClusterIdentifier: string, Capacity: number | null | undefined, SecondsBeforeTimeout: number | null | undefined, TimeoutAction: string | null | undefined, Action: GET_ModifyCurrentDBClusterCapacityAction, Version: GET_ModifyCurrentDBClusterCapacityVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyCurrentDBClusterCapacity?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&Capacity=' + Capacity + '&SecondsBeforeTimeout=' + SecondsBeforeTimeout + '&TimeoutAction=' + (TimeoutAction == null ? '' : encodeURIComponent(TimeoutAction)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4840,7 +4840,7 @@ export namespace MyNS {
 		 * @param {boolean} CopyTagsToSnapshot A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.
 		 * @return {void} Success
 		 */
-		GET_ModifyDBCluster(DBClusterIdentifier: string, NewDBClusterIdentifier: string, ApplyImmediately: boolean, BackupRetentionPeriod: number, DBClusterParameterGroupName: string, VpcSecurityGroupIds: Array<string>, Port: number, MasterUserPassword: string, OptionGroupName: string, PreferredBackupWindow: string, PreferredMaintenanceWindow: string, EnableIAMDatabaseAuthentication: boolean, BacktrackWindow: number, CloudwatchLogsExportConfiguration: GET_ModifyDBClusterCloudwatchLogsExportConfiguration, EngineVersion: string, AllowMajorVersionUpgrade: boolean, DBInstanceParameterGroupName: string, Domain: string, DomainIAMRoleName: string, ScalingConfiguration: GET_ModifyDBClusterScalingConfiguration, DeletionProtection: boolean, EnableHttpEndpoint: boolean, CopyTagsToSnapshot: boolean, Action: GET_ModifyDBClusterAction, Version: GET_ModifyDBClusterVersion): Observable<HttpResponse<string>> {
+		GET_ModifyDBCluster(DBClusterIdentifier: string, NewDBClusterIdentifier: string | null | undefined, ApplyImmediately: boolean | null | undefined, BackupRetentionPeriod: number | null | undefined, DBClusterParameterGroupName: string | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, Port: number | null | undefined, MasterUserPassword: string | null | undefined, OptionGroupName: string | null | undefined, PreferredBackupWindow: string | null | undefined, PreferredMaintenanceWindow: string | null | undefined, EnableIAMDatabaseAuthentication: boolean | null | undefined, BacktrackWindow: number | null | undefined, CloudwatchLogsExportConfiguration: GET_ModifyDBClusterCloudwatchLogsExportConfiguration | null | undefined, EngineVersion: string | null | undefined, AllowMajorVersionUpgrade: boolean | null | undefined, DBInstanceParameterGroupName: string | null | undefined, Domain: string | null | undefined, DomainIAMRoleName: string | null | undefined, ScalingConfiguration: GET_ModifyDBClusterScalingConfiguration | null | undefined, DeletionProtection: boolean | null | undefined, EnableHttpEndpoint: boolean | null | undefined, CopyTagsToSnapshot: boolean | null | undefined, Action: GET_ModifyDBClusterAction, Version: GET_ModifyDBClusterVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyDBCluster?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&NewDBClusterIdentifier=' + (NewDBClusterIdentifier == null ? '' : encodeURIComponent(NewDBClusterIdentifier)) + '&ApplyImmediately=' + ApplyImmediately + '&BackupRetentionPeriod=' + BackupRetentionPeriod + '&DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&Port=' + Port + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&PreferredBackupWindow=' + (PreferredBackupWindow == null ? '' : encodeURIComponent(PreferredBackupWindow)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&BacktrackWindow=' + BacktrackWindow + '&CloudwatchLogsExportConfiguration=' + CloudwatchLogsExportConfiguration + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&AllowMajorVersionUpgrade=' + AllowMajorVersionUpgrade + '&DBInstanceParameterGroupName=' + (DBInstanceParameterGroupName == null ? '' : encodeURIComponent(DBInstanceParameterGroupName)) + '&Domain=' + (Domain == null ? '' : encodeURIComponent(Domain)) + '&DomainIAMRoleName=' + (DomainIAMRoleName == null ? '' : encodeURIComponent(DomainIAMRoleName)) + '&ScalingConfiguration=' + ScalingConfiguration + '&DeletionProtection=' + DeletionProtection + '&EnableHttpEndpoint=' + EnableHttpEndpoint + '&CopyTagsToSnapshot=' + CopyTagsToSnapshot + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4853,7 +4853,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ExcludedMembers List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.
 		 * @return {void} Success
 		 */
-		GET_ModifyDBClusterEndpoint(DBClusterEndpointIdentifier: string, EndpointType: string, StaticMembers: Array<string>, ExcludedMembers: Array<string>, Action: GET_ModifyDBClusterEndpointAction, Version: GET_ModifyDBClusterEndpointVersion): Observable<HttpResponse<string>> {
+		GET_ModifyDBClusterEndpoint(DBClusterEndpointIdentifier: string, EndpointType: string | null | undefined, StaticMembers: Array<string> | null | undefined, ExcludedMembers: Array<string> | null | undefined, Action: GET_ModifyDBClusterEndpointAction, Version: GET_ModifyDBClusterEndpointVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyDBClusterEndpoint?DBClusterEndpointIdentifier=' + (DBClusterEndpointIdentifier == null ? '' : encodeURIComponent(DBClusterEndpointIdentifier)) + '&EndpointType=' + (EndpointType == null ? '' : encodeURIComponent(EndpointType)) + '&' + StaticMembers.map(z => `StaticMembers=${encodeURIComponent(z)}`).join('&') + '&' + ExcludedMembers.map(z => `ExcludedMembers=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4877,7 +4877,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ValuesToRemove <p>A list of DB cluster snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.</p> <p>To remove authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this list to include one or more AWS account identifiers, or <code>all</code> to remove authorization for any AWS account to copy or restore the DB cluster snapshot. If you specify <code>all</code>, an AWS account whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a manual DB cluster snapshot.</p>
 		 * @return {void} Success
 		 */
-		GET_ModifyDBClusterSnapshotAttribute(DBClusterSnapshotIdentifier: string, AttributeName: string, ValuesToAdd: Array<string>, ValuesToRemove: Array<string>, Action: GET_ModifyDBClusterSnapshotAttributeAction, Version: GET_ModifyDBClusterSnapshotAttributeVersion): Observable<HttpResponse<string>> {
+		GET_ModifyDBClusterSnapshotAttribute(DBClusterSnapshotIdentifier: string, AttributeName: string, ValuesToAdd: Array<string> | null | undefined, ValuesToRemove: Array<string> | null | undefined, Action: GET_ModifyDBClusterSnapshotAttributeAction, Version: GET_ModifyDBClusterSnapshotAttributeVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyDBClusterSnapshotAttribute?DBClusterSnapshotIdentifier=' + (DBClusterSnapshotIdentifier == null ? '' : encodeURIComponent(DBClusterSnapshotIdentifier)) + '&AttributeName=' + (AttributeName == null ? '' : encodeURIComponent(AttributeName)) + '&' + ValuesToAdd.map(z => `ValuesToAdd=${encodeURIComponent(z)}`).join('&') + '&' + ValuesToRemove.map(z => `ValuesToRemove=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4928,7 +4928,7 @@ export namespace MyNS {
 		 * @param {boolean} CertificateRotationRestart <p>A value that indicates whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p> <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p> <important> <p>Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.</p> </important> <p>If you are using SSL/TLS to connect to the DB instance, follow the appropriate instructions for your DB engine to rotate your SSL/TLS certificate:</p> <ul> <li> <p>For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i> </p> </li> <li> <p>For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide.</i> </p> </li> </ul>
 		 * @return {void} Success
 		 */
-		GET_ModifyDBInstance(DBInstanceIdentifier: string, AllocatedStorage: number, DBInstanceClass: string, DBSubnetGroupName: string, DBSecurityGroups: Array<string>, VpcSecurityGroupIds: Array<string>, ApplyImmediately: boolean, MasterUserPassword: string, DBParameterGroupName: string, BackupRetentionPeriod: number, PreferredBackupWindow: string, PreferredMaintenanceWindow: string, MultiAZ: boolean, EngineVersion: string, AllowMajorVersionUpgrade: boolean, AutoMinorVersionUpgrade: boolean, LicenseModel: string, Iops: number, OptionGroupName: string, NewDBInstanceIdentifier: string, StorageType: string, TdeCredentialArn: string, TdeCredentialPassword: string, CACertificateIdentifier: string, Domain: string, CopyTagsToSnapshot: boolean, MonitoringInterval: number, DBPortNumber: number, PubliclyAccessible: boolean, MonitoringRoleArn: string, DomainIAMRoleName: string, PromotionTier: number, EnableIAMDatabaseAuthentication: boolean, EnablePerformanceInsights: boolean, PerformanceInsightsKMSKeyId: string, PerformanceInsightsRetentionPeriod: number, CloudwatchLogsExportConfiguration: GET_ModifyDBInstanceCloudwatchLogsExportConfiguration, ProcessorFeatures: Array<ProcessorFeature>, UseDefaultProcessorFeatures: boolean, DeletionProtection: boolean, MaxAllocatedStorage: number, CertificateRotationRestart: boolean, Action: GET_ModifyDBInstanceAction, Version: GET_ModifyDBInstanceVersion): Observable<HttpResponse<string>> {
+		GET_ModifyDBInstance(DBInstanceIdentifier: string, AllocatedStorage: number | null | undefined, DBInstanceClass: string | null | undefined, DBSubnetGroupName: string | null | undefined, DBSecurityGroups: Array<string> | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, ApplyImmediately: boolean | null | undefined, MasterUserPassword: string | null | undefined, DBParameterGroupName: string | null | undefined, BackupRetentionPeriod: number | null | undefined, PreferredBackupWindow: string | null | undefined, PreferredMaintenanceWindow: string | null | undefined, MultiAZ: boolean | null | undefined, EngineVersion: string | null | undefined, AllowMajorVersionUpgrade: boolean | null | undefined, AutoMinorVersionUpgrade: boolean | null | undefined, LicenseModel: string | null | undefined, Iops: number | null | undefined, OptionGroupName: string | null | undefined, NewDBInstanceIdentifier: string | null | undefined, StorageType: string | null | undefined, TdeCredentialArn: string | null | undefined, TdeCredentialPassword: string | null | undefined, CACertificateIdentifier: string | null | undefined, Domain: string | null | undefined, CopyTagsToSnapshot: boolean | null | undefined, MonitoringInterval: number | null | undefined, DBPortNumber: number | null | undefined, PubliclyAccessible: boolean | null | undefined, MonitoringRoleArn: string | null | undefined, DomainIAMRoleName: string | null | undefined, PromotionTier: number | null | undefined, EnableIAMDatabaseAuthentication: boolean | null | undefined, EnablePerformanceInsights: boolean | null | undefined, PerformanceInsightsKMSKeyId: string | null | undefined, PerformanceInsightsRetentionPeriod: number | null | undefined, CloudwatchLogsExportConfiguration: GET_ModifyDBInstanceCloudwatchLogsExportConfiguration | null | undefined, ProcessorFeatures: Array<ProcessorFeature> | null | undefined, UseDefaultProcessorFeatures: boolean | null | undefined, DeletionProtection: boolean | null | undefined, MaxAllocatedStorage: number | null | undefined, CertificateRotationRestart: boolean | null | undefined, Action: GET_ModifyDBInstanceAction, Version: GET_ModifyDBInstanceVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyDBInstance?DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&AllocatedStorage=' + AllocatedStorage + '&DBInstanceClass=' + (DBInstanceClass == null ? '' : encodeURIComponent(DBInstanceClass)) + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&' + DBSecurityGroups.map(z => `DBSecurityGroups=${encodeURIComponent(z)}`).join('&') + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&ApplyImmediately=' + ApplyImmediately + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&BackupRetentionPeriod=' + BackupRetentionPeriod + '&PreferredBackupWindow=' + (PreferredBackupWindow == null ? '' : encodeURIComponent(PreferredBackupWindow)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&MultiAZ=' + MultiAZ + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&AllowMajorVersionUpgrade=' + AllowMajorVersionUpgrade + '&AutoMinorVersionUpgrade=' + AutoMinorVersionUpgrade + '&LicenseModel=' + (LicenseModel == null ? '' : encodeURIComponent(LicenseModel)) + '&Iops=' + Iops + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&NewDBInstanceIdentifier=' + (NewDBInstanceIdentifier == null ? '' : encodeURIComponent(NewDBInstanceIdentifier)) + '&StorageType=' + (StorageType == null ? '' : encodeURIComponent(StorageType)) + '&TdeCredentialArn=' + (TdeCredentialArn == null ? '' : encodeURIComponent(TdeCredentialArn)) + '&TdeCredentialPassword=' + (TdeCredentialPassword == null ? '' : encodeURIComponent(TdeCredentialPassword)) + '&CACertificateIdentifier=' + (CACertificateIdentifier == null ? '' : encodeURIComponent(CACertificateIdentifier)) + '&Domain=' + (Domain == null ? '' : encodeURIComponent(Domain)) + '&CopyTagsToSnapshot=' + CopyTagsToSnapshot + '&MonitoringInterval=' + MonitoringInterval + '&DBPortNumber=' + DBPortNumber + '&PubliclyAccessible=' + PubliclyAccessible + '&MonitoringRoleArn=' + (MonitoringRoleArn == null ? '' : encodeURIComponent(MonitoringRoleArn)) + '&DomainIAMRoleName=' + (DomainIAMRoleName == null ? '' : encodeURIComponent(DomainIAMRoleName)) + '&PromotionTier=' + PromotionTier + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&EnablePerformanceInsights=' + EnablePerformanceInsights + '&PerformanceInsightsKMSKeyId=' + (PerformanceInsightsKMSKeyId == null ? '' : encodeURIComponent(PerformanceInsightsKMSKeyId)) + '&PerformanceInsightsRetentionPeriod=' + PerformanceInsightsRetentionPeriod + '&CloudwatchLogsExportConfiguration=' + CloudwatchLogsExportConfiguration + '&' + ProcessorFeatures.map(z => `ProcessorFeatures=${z}`).join('&') + '&UseDefaultProcessorFeatures=' + UseDefaultProcessorFeatures + '&DeletionProtection=' + DeletionProtection + '&MaxAllocatedStorage=' + MaxAllocatedStorage + '&CertificateRotationRestart=' + CertificateRotationRestart + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4956,7 +4956,7 @@ export namespace MyNS {
 		 * @param {Array<string>} SecurityGroups The new list of security groups for the <code>DBProxy</code>.
 		 * @return {void} Success
 		 */
-		GET_ModifyDBProxy(DBProxyName: string, NewDBProxyName: string, Auth: Array<UserAuthConfig>, RequireTLS: boolean, IdleClientTimeout: number, DebugLogging: boolean, RoleArn: string, SecurityGroups: Array<string>, Action: GET_ModifyDBProxyAction, Version: GET_ModifyDBProxyVersion): Observable<HttpResponse<string>> {
+		GET_ModifyDBProxy(DBProxyName: string, NewDBProxyName: string | null | undefined, Auth: Array<UserAuthConfig> | null | undefined, RequireTLS: boolean | null | undefined, IdleClientTimeout: number | null | undefined, DebugLogging: boolean | null | undefined, RoleArn: string | null | undefined, SecurityGroups: Array<string> | null | undefined, Action: GET_ModifyDBProxyAction, Version: GET_ModifyDBProxyVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyDBProxy?DBProxyName=' + (DBProxyName == null ? '' : encodeURIComponent(DBProxyName)) + '&NewDBProxyName=' + (NewDBProxyName == null ? '' : encodeURIComponent(NewDBProxyName)) + '&' + Auth.map(z => `Auth=${z}`).join('&') + '&RequireTLS=' + RequireTLS + '&IdleClientTimeout=' + IdleClientTimeout + '&DebugLogging=' + DebugLogging + '&RoleArn=' + (RoleArn == null ? '' : encodeURIComponent(RoleArn)) + '&' + SecurityGroups.map(z => `SecurityGroups=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4969,7 +4969,7 @@ export namespace MyNS {
 		 * @param {string} NewName The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
 		 * @return {void} Success
 		 */
-		GET_ModifyDBProxyTargetGroup(TargetGroupName: string, DBProxyName: string, ConnectionPoolConfig: GET_ModifyDBProxyTargetGroupConnectionPoolConfig, NewName: string, Action: GET_ModifyDBProxyTargetGroupAction, Version: GET_ModifyDBProxyTargetGroupVersion): Observable<HttpResponse<string>> {
+		GET_ModifyDBProxyTargetGroup(TargetGroupName: string, DBProxyName: string, ConnectionPoolConfig: GET_ModifyDBProxyTargetGroupConnectionPoolConfig | null | undefined, NewName: string | null | undefined, Action: GET_ModifyDBProxyTargetGroupAction, Version: GET_ModifyDBProxyTargetGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyDBProxyTargetGroup?TargetGroupName=' + (TargetGroupName == null ? '' : encodeURIComponent(TargetGroupName)) + '&DBProxyName=' + (DBProxyName == null ? '' : encodeURIComponent(DBProxyName)) + '&ConnectionPoolConfig=' + ConnectionPoolConfig + '&NewName=' + (NewName == null ? '' : encodeURIComponent(NewName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4981,7 +4981,7 @@ export namespace MyNS {
 		 * @param {string} OptionGroupName <p>The option group to identify with the upgraded DB snapshot. </p> <p>You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group considerations apply when upgrading a DB snapshot as when upgrading a DB instance. For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
 		 * @return {void} Success
 		 */
-		GET_ModifyDBSnapshot(DBSnapshotIdentifier: string, EngineVersion: string, OptionGroupName: string, Action: GET_ModifyDBSnapshotAction, Version: GET_ModifyDBSnapshotVersion): Observable<HttpResponse<string>> {
+		GET_ModifyDBSnapshot(DBSnapshotIdentifier: string, EngineVersion: string | null | undefined, OptionGroupName: string | null | undefined, Action: GET_ModifyDBSnapshotAction, Version: GET_ModifyDBSnapshotVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyDBSnapshot?DBSnapshotIdentifier=' + (DBSnapshotIdentifier == null ? '' : encodeURIComponent(DBSnapshotIdentifier)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -4994,7 +4994,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ValuesToRemove <p>A list of DB snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.</p> <p>To remove authorization for other AWS accounts to copy or restore a manual snapshot, set this list to include one or more AWS account identifiers, or <code>all</code> to remove authorization for any AWS account to copy or restore the DB snapshot. If you specify <code>all</code>, an AWS account whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore the manual DB snapshot.</p>
 		 * @return {void} Success
 		 */
-		GET_ModifyDBSnapshotAttribute(DBSnapshotIdentifier: string, AttributeName: string, ValuesToAdd: Array<string>, ValuesToRemove: Array<string>, Action: GET_ModifyDBSnapshotAttributeAction, Version: GET_ModifyDBSnapshotAttributeVersion): Observable<HttpResponse<string>> {
+		GET_ModifyDBSnapshotAttribute(DBSnapshotIdentifier: string, AttributeName: string, ValuesToAdd: Array<string> | null | undefined, ValuesToRemove: Array<string> | null | undefined, Action: GET_ModifyDBSnapshotAttributeAction, Version: GET_ModifyDBSnapshotAttributeVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyDBSnapshotAttribute?DBSnapshotIdentifier=' + (DBSnapshotIdentifier == null ? '' : encodeURIComponent(DBSnapshotIdentifier)) + '&AttributeName=' + (AttributeName == null ? '' : encodeURIComponent(AttributeName)) + '&' + ValuesToAdd.map(z => `ValuesToAdd=${encodeURIComponent(z)}`).join('&') + '&' + ValuesToRemove.map(z => `ValuesToRemove=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5006,7 +5006,7 @@ export namespace MyNS {
 		 * @param {Array<string>} SubnetIds The EC2 subnet IDs for the DB subnet group.
 		 * @return {void} Success
 		 */
-		GET_ModifyDBSubnetGroup(DBSubnetGroupName: string, DBSubnetGroupDescription: string, SubnetIds: Array<string>, Action: GET_ModifyDBSubnetGroupAction, Version: GET_ModifyDBSubnetGroupVersion): Observable<HttpResponse<string>> {
+		GET_ModifyDBSubnetGroup(DBSubnetGroupName: string, DBSubnetGroupDescription: string | null | undefined, SubnetIds: Array<string>, Action: GET_ModifyDBSubnetGroupAction, Version: GET_ModifyDBSubnetGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyDBSubnetGroup?DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&DBSubnetGroupDescription=' + (DBSubnetGroupDescription == null ? '' : encodeURIComponent(DBSubnetGroupDescription)) + '&' + SubnetIds.map(z => `SubnetIds=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5020,7 +5020,7 @@ export namespace MyNS {
 		 * @param {boolean} Enabled  A value that indicates whether to activate the subscription. 
 		 * @return {void} Success
 		 */
-		GET_ModifyEventSubscription(SubscriptionName: string, SnsTopicArn: string, SourceType: string, EventCategories: Array<string>, Enabled: boolean, Action: GET_ModifyEventSubscriptionAction, Version: GET_ModifyEventSubscriptionVersion): Observable<HttpResponse<string>> {
+		GET_ModifyEventSubscription(SubscriptionName: string, SnsTopicArn: string | null | undefined, SourceType: string | null | undefined, EventCategories: Array<string> | null | undefined, Enabled: boolean | null | undefined, Action: GET_ModifyEventSubscriptionAction, Version: GET_ModifyEventSubscriptionVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyEventSubscription?SubscriptionName=' + (SubscriptionName == null ? '' : encodeURIComponent(SubscriptionName)) + '&SnsTopicArn=' + (SnsTopicArn == null ? '' : encodeURIComponent(SnsTopicArn)) + '&SourceType=' + (SourceType == null ? '' : encodeURIComponent(SourceType)) + '&' + EventCategories.map(z => `EventCategories=${encodeURIComponent(z)}`).join('&') + '&Enabled=' + Enabled + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5032,7 +5032,7 @@ export namespace MyNS {
 		 * @param {boolean} DeletionProtection  Indicates if the global database cluster has deletion protection enabled. The global database cluster can't be deleted when deletion protection is enabled. 
 		 * @return {void} Success
 		 */
-		GET_ModifyGlobalCluster(GlobalClusterIdentifier: string, NewGlobalClusterIdentifier: string, DeletionProtection: boolean, Action: GET_ModifyGlobalClusterAction, Version: GET_ModifyGlobalClusterVersion): Observable<HttpResponse<string>> {
+		GET_ModifyGlobalCluster(GlobalClusterIdentifier: string | null | undefined, NewGlobalClusterIdentifier: string | null | undefined, DeletionProtection: boolean | null | undefined, Action: GET_ModifyGlobalClusterAction, Version: GET_ModifyGlobalClusterVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyGlobalCluster?GlobalClusterIdentifier=' + (GlobalClusterIdentifier == null ? '' : encodeURIComponent(GlobalClusterIdentifier)) + '&NewGlobalClusterIdentifier=' + (NewGlobalClusterIdentifier == null ? '' : encodeURIComponent(NewGlobalClusterIdentifier)) + '&DeletionProtection=' + DeletionProtection + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5045,7 +5045,7 @@ export namespace MyNS {
 		 * @param {boolean} ApplyImmediately A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.
 		 * @return {void} Success
 		 */
-		GET_ModifyOptionGroup(OptionGroupName: string, OptionsToInclude: Array<OptionConfiguration>, OptionsToRemove: Array<string>, ApplyImmediately: boolean, Action: GET_ModifyOptionGroupAction, Version: GET_ModifyOptionGroupVersion): Observable<HttpResponse<string>> {
+		GET_ModifyOptionGroup(OptionGroupName: string, OptionsToInclude: Array<OptionConfiguration> | null | undefined, OptionsToRemove: Array<string> | null | undefined, ApplyImmediately: boolean | null | undefined, Action: GET_ModifyOptionGroupAction, Version: GET_ModifyOptionGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ModifyOptionGroup?OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&' + OptionsToInclude.map(z => `OptionsToInclude=${z}`).join('&') + '&' + OptionsToRemove.map(z => `OptionsToRemove=${encodeURIComponent(z)}`).join('&') + '&ApplyImmediately=' + ApplyImmediately + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5057,7 +5057,7 @@ export namespace MyNS {
 		 * @param {string} PreferredBackupWindow <p> The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. </p> <p> The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
 		 * @return {void} Success
 		 */
-		GET_PromoteReadReplica(DBInstanceIdentifier: string, BackupRetentionPeriod: number, PreferredBackupWindow: string, Action: GET_PromoteReadReplicaAction, Version: GET_PromoteReadReplicaVersion): Observable<HttpResponse<string>> {
+		GET_PromoteReadReplica(DBInstanceIdentifier: string, BackupRetentionPeriod: number | null | undefined, PreferredBackupWindow: string | null | undefined, Action: GET_PromoteReadReplicaAction, Version: GET_PromoteReadReplicaVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=PromoteReadReplica?DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&BackupRetentionPeriod=' + BackupRetentionPeriod + '&PreferredBackupWindow=' + (PreferredBackupWindow == null ? '' : encodeURIComponent(PreferredBackupWindow)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5079,7 +5079,7 @@ export namespace MyNS {
 		 * @param {number} DBInstanceCount <p>The number of instances to reserve.</p> <p>Default: <code>1</code> </p>
 		 * @return {void} Success
 		 */
-		GET_PurchaseReservedDBInstancesOffering(ReservedDBInstancesOfferingId: string, ReservedDBInstanceId: string, DBInstanceCount: number, Tags: Array<Tag>, Action: GET_PurchaseReservedDBInstancesOfferingAction, Version: GET_PurchaseReservedDBInstancesOfferingVersion): Observable<HttpResponse<string>> {
+		GET_PurchaseReservedDBInstancesOffering(ReservedDBInstancesOfferingId: string, ReservedDBInstanceId: string | null | undefined, DBInstanceCount: number | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_PurchaseReservedDBInstancesOfferingAction, Version: GET_PurchaseReservedDBInstancesOfferingVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=PurchaseReservedDBInstancesOffering?ReservedDBInstancesOfferingId=' + (ReservedDBInstancesOfferingId == null ? '' : encodeURIComponent(ReservedDBInstancesOfferingId)) + '&ReservedDBInstanceId=' + (ReservedDBInstanceId == null ? '' : encodeURIComponent(ReservedDBInstanceId)) + '&DBInstanceCount=' + DBInstanceCount + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5090,7 +5090,7 @@ export namespace MyNS {
 		 * @param {boolean} ForceFailover <p> A value that indicates whether the reboot is conducted through a Multi-AZ failover. </p> <p>Constraint: You can't enable force failover if the instance isn't configured for Multi-AZ.</p>
 		 * @return {void} Success
 		 */
-		GET_RebootDBInstance(DBInstanceIdentifier: string, ForceFailover: boolean, Action: GET_RebootDBInstanceAction, Version: GET_RebootDBInstanceVersion): Observable<HttpResponse<string>> {
+		GET_RebootDBInstance(DBInstanceIdentifier: string, ForceFailover: boolean | null | undefined, Action: GET_RebootDBInstanceAction, Version: GET_RebootDBInstanceVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RebootDBInstance?DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&ForceFailover=' + ForceFailover + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5103,7 +5103,7 @@ export namespace MyNS {
 		 * @param {Array<string>} DBClusterIdentifiers One or more DB cluster identifiers.
 		 * @return {void} Success
 		 */
-		GET_RegisterDBProxyTargets(DBProxyName: string, TargetGroupName: string, DBInstanceIdentifiers: Array<string>, DBClusterIdentifiers: Array<string>, Action: GET_RegisterDBProxyTargetsAction, Version: GET_RegisterDBProxyTargetsVersion): Observable<HttpResponse<string>> {
+		GET_RegisterDBProxyTargets(DBProxyName: string, TargetGroupName: string | null | undefined, DBInstanceIdentifiers: Array<string> | null | undefined, DBClusterIdentifiers: Array<string> | null | undefined, Action: GET_RegisterDBProxyTargetsAction, Version: GET_RegisterDBProxyTargetsVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RegisterDBProxyTargets?DBProxyName=' + (DBProxyName == null ? '' : encodeURIComponent(DBProxyName)) + '&TargetGroupName=' + (TargetGroupName == null ? '' : encodeURIComponent(TargetGroupName)) + '&' + DBInstanceIdentifiers.map(z => `DBInstanceIdentifiers=${encodeURIComponent(z)}`).join('&') + '&' + DBClusterIdentifiers.map(z => `DBClusterIdentifiers=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5114,7 +5114,7 @@ export namespace MyNS {
 		 * @param {string} DbClusterIdentifier  The Amazon Resource Name (ARN) identifying the cluster that was detached from the Aurora global database cluster. 
 		 * @return {void} Success
 		 */
-		GET_RemoveFromGlobalCluster(GlobalClusterIdentifier: string, DbClusterIdentifier: string, Action: GET_RemoveFromGlobalClusterAction, Version: GET_RemoveFromGlobalClusterVersion): Observable<HttpResponse<string>> {
+		GET_RemoveFromGlobalCluster(GlobalClusterIdentifier: string | null | undefined, DbClusterIdentifier: string | null | undefined, Action: GET_RemoveFromGlobalClusterAction, Version: GET_RemoveFromGlobalClusterVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RemoveFromGlobalCluster?GlobalClusterIdentifier=' + (GlobalClusterIdentifier == null ? '' : encodeURIComponent(GlobalClusterIdentifier)) + '&DbClusterIdentifier=' + (DbClusterIdentifier == null ? '' : encodeURIComponent(DbClusterIdentifier)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5126,7 +5126,7 @@ export namespace MyNS {
 		 * @param {string} FeatureName The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of supported feature names, see <a>DBEngineVersion</a>.
 		 * @return {void} Success
 		 */
-		GET_RemoveRoleFromDBCluster(DBClusterIdentifier: string, RoleArn: string, FeatureName: string, Action: GET_RemoveRoleFromDBClusterAction, Version: GET_RemoveRoleFromDBClusterVersion): Observable<HttpResponse<string>> {
+		GET_RemoveRoleFromDBCluster(DBClusterIdentifier: string, RoleArn: string, FeatureName: string | null | undefined, Action: GET_RemoveRoleFromDBClusterAction, Version: GET_RemoveRoleFromDBClusterVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RemoveRoleFromDBCluster?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&RoleArn=' + (RoleArn == null ? '' : encodeURIComponent(RoleArn)) + '&FeatureName=' + (FeatureName == null ? '' : encodeURIComponent(FeatureName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5172,7 +5172,7 @@ export namespace MyNS {
 		 * @param {Array<Parameter>} Parameters A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this parameter if the <code>ResetAllParameters</code> parameter is enabled.
 		 * @return {void} Success
 		 */
-		GET_ResetDBClusterParameterGroup(DBClusterParameterGroupName: string, ResetAllParameters: boolean, Parameters: Array<Parameter>, Action: GET_ResetDBClusterParameterGroupAction, Version: GET_ResetDBClusterParameterGroupVersion): Observable<HttpResponse<string>> {
+		GET_ResetDBClusterParameterGroup(DBClusterParameterGroupName: string, ResetAllParameters: boolean | null | undefined, Parameters: Array<Parameter> | null | undefined, Action: GET_ResetDBClusterParameterGroupAction, Version: GET_ResetDBClusterParameterGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ResetDBClusterParameterGroup?DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&ResetAllParameters=' + ResetAllParameters + '&' + Parameters.map(z => `Parameters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5184,7 +5184,7 @@ export namespace MyNS {
 		 * @param {Array<Parameter>} Parameters <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p> <p> <b>MySQL</b> </p> <p>Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code> </p> <p>You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB instance reboots.</p> <p> <b>MariaDB</b> </p> <p>Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code> </p> <p>You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB instance reboots.</p> <p> <b>Oracle</b> </p> <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
 		 * @return {void} Success
 		 */
-		GET_ResetDBParameterGroup(DBParameterGroupName: string, ResetAllParameters: boolean, Parameters: Array<Parameter>, Action: GET_ResetDBParameterGroupAction, Version: GET_ResetDBParameterGroupVersion): Observable<HttpResponse<string>> {
+		GET_ResetDBParameterGroup(DBParameterGroupName: string, ResetAllParameters: boolean | null | undefined, Parameters: Array<Parameter> | null | undefined, Action: GET_ResetDBParameterGroupAction, Version: GET_ResetDBParameterGroupVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=ResetDBParameterGroup?DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&ResetAllParameters=' + ResetAllParameters + '&' + Parameters.map(z => `Parameters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5223,7 +5223,7 @@ export namespace MyNS {
 		 * @param {string} DomainIAMRoleName Specify the name of the IAM role to be used when making API calls to the Directory Service.
 		 * @return {void} Success
 		 */
-		GET_RestoreDBClusterFromS3(AvailabilityZones: Array<string>, BackupRetentionPeriod: number, CharacterSetName: string, DatabaseName: string, DBClusterIdentifier: string, DBClusterParameterGroupName: string, VpcSecurityGroupIds: Array<string>, DBSubnetGroupName: string, Engine: string, EngineVersion: string, Port: number, MasterUsername: string, MasterUserPassword: string, OptionGroupName: string, PreferredBackupWindow: string, PreferredMaintenanceWindow: string, Tags: Array<Tag>, StorageEncrypted: boolean, KmsKeyId: string, EnableIAMDatabaseAuthentication: boolean, SourceEngine: string, SourceEngineVersion: string, S3BucketName: string, S3Prefix: string, S3IngestionRoleArn: string, BacktrackWindow: number, EnableCloudwatchLogsExports: Array<string>, DeletionProtection: boolean, CopyTagsToSnapshot: boolean, Domain: string, DomainIAMRoleName: string, Action: GET_RestoreDBClusterFromS3Action, Version: GET_RestoreDBClusterFromS3Version): Observable<HttpResponse<string>> {
+		GET_RestoreDBClusterFromS3(AvailabilityZones: Array<string> | null | undefined, BackupRetentionPeriod: number | null | undefined, CharacterSetName: string | null | undefined, DatabaseName: string | null | undefined, DBClusterIdentifier: string, DBClusterParameterGroupName: string | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, DBSubnetGroupName: string | null | undefined, Engine: string, EngineVersion: string | null | undefined, Port: number | null | undefined, MasterUsername: string, MasterUserPassword: string, OptionGroupName: string | null | undefined, PreferredBackupWindow: string | null | undefined, PreferredMaintenanceWindow: string | null | undefined, Tags: Array<Tag> | null | undefined, StorageEncrypted: boolean | null | undefined, KmsKeyId: string | null | undefined, EnableIAMDatabaseAuthentication: boolean | null | undefined, SourceEngine: string, SourceEngineVersion: string, S3BucketName: string, S3Prefix: string | null | undefined, S3IngestionRoleArn: string, BacktrackWindow: number | null | undefined, EnableCloudwatchLogsExports: Array<string> | null | undefined, DeletionProtection: boolean | null | undefined, CopyTagsToSnapshot: boolean | null | undefined, Domain: string | null | undefined, DomainIAMRoleName: string | null | undefined, Action: GET_RestoreDBClusterFromS3Action, Version: GET_RestoreDBClusterFromS3Version): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RestoreDBClusterFromS3?' + AvailabilityZones.map(z => `AvailabilityZones=${encodeURIComponent(z)}`).join('&') + '&BackupRetentionPeriod=' + BackupRetentionPeriod + '&CharacterSetName=' + (CharacterSetName == null ? '' : encodeURIComponent(CharacterSetName)) + '&DatabaseName=' + (DatabaseName == null ? '' : encodeURIComponent(DatabaseName)) + '&DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&Port=' + Port + '&MasterUsername=' + (MasterUsername == null ? '' : encodeURIComponent(MasterUsername)) + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&PreferredBackupWindow=' + (PreferredBackupWindow == null ? '' : encodeURIComponent(PreferredBackupWindow)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&StorageEncrypted=' + StorageEncrypted + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&SourceEngine=' + (SourceEngine == null ? '' : encodeURIComponent(SourceEngine)) + '&SourceEngineVersion=' + (SourceEngineVersion == null ? '' : encodeURIComponent(SourceEngineVersion)) + '&S3BucketName=' + (S3BucketName == null ? '' : encodeURIComponent(S3BucketName)) + '&S3Prefix=' + (S3Prefix == null ? '' : encodeURIComponent(S3Prefix)) + '&S3IngestionRoleArn=' + (S3IngestionRoleArn == null ? '' : encodeURIComponent(S3IngestionRoleArn)) + '&BacktrackWindow=' + BacktrackWindow + '&' + EnableCloudwatchLogsExports.map(z => `EnableCloudwatchLogsExports=${encodeURIComponent(z)}`).join('&') + '&DeletionProtection=' + DeletionProtection + '&CopyTagsToSnapshot=' + CopyTagsToSnapshot + '&Domain=' + (Domain == null ? '' : encodeURIComponent(Domain)) + '&DomainIAMRoleName=' + (DomainIAMRoleName == null ? '' : encodeURIComponent(DomainIAMRoleName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5254,7 +5254,7 @@ export namespace MyNS {
 		 * @param {string} DomainIAMRoleName Specify the name of the IAM role to be used when making API calls to the Directory Service.
 		 * @return {void} Success
 		 */
-		GET_RestoreDBClusterFromSnapshot(AvailabilityZones: Array<string>, DBClusterIdentifier: string, SnapshotIdentifier: string, Engine: string, EngineVersion: string, Port: number, DBSubnetGroupName: string, DatabaseName: string, OptionGroupName: string, VpcSecurityGroupIds: Array<string>, Tags: Array<Tag>, KmsKeyId: string, EnableIAMDatabaseAuthentication: boolean, BacktrackWindow: number, EnableCloudwatchLogsExports: Array<string>, EngineMode: string, ScalingConfiguration: GET_RestoreDBClusterFromSnapshotScalingConfiguration, DBClusterParameterGroupName: string, DeletionProtection: boolean, CopyTagsToSnapshot: boolean, Domain: string, DomainIAMRoleName: string, Action: GET_RestoreDBClusterFromSnapshotAction, Version: GET_RestoreDBClusterFromSnapshotVersion): Observable<HttpResponse<string>> {
+		GET_RestoreDBClusterFromSnapshot(AvailabilityZones: Array<string> | null | undefined, DBClusterIdentifier: string, SnapshotIdentifier: string, Engine: string, EngineVersion: string | null | undefined, Port: number | null | undefined, DBSubnetGroupName: string | null | undefined, DatabaseName: string | null | undefined, OptionGroupName: string | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, Tags: Array<Tag> | null | undefined, KmsKeyId: string | null | undefined, EnableIAMDatabaseAuthentication: boolean | null | undefined, BacktrackWindow: number | null | undefined, EnableCloudwatchLogsExports: Array<string> | null | undefined, EngineMode: string | null | undefined, ScalingConfiguration: GET_RestoreDBClusterFromSnapshotScalingConfiguration | null | undefined, DBClusterParameterGroupName: string | null | undefined, DeletionProtection: boolean | null | undefined, CopyTagsToSnapshot: boolean | null | undefined, Domain: string | null | undefined, DomainIAMRoleName: string | null | undefined, Action: GET_RestoreDBClusterFromSnapshotAction, Version: GET_RestoreDBClusterFromSnapshotVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RestoreDBClusterFromSnapshot?' + AvailabilityZones.map(z => `AvailabilityZones=${encodeURIComponent(z)}`).join('&') + '&DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&Port=' + Port + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&DatabaseName=' + (DatabaseName == null ? '' : encodeURIComponent(DatabaseName)) + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&BacktrackWindow=' + BacktrackWindow + '&' + EnableCloudwatchLogsExports.map(z => `EnableCloudwatchLogsExports=${encodeURIComponent(z)}`).join('&') + '&EngineMode=' + (EngineMode == null ? '' : encodeURIComponent(EngineMode)) + '&ScalingConfiguration=' + ScalingConfiguration + '&DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&DeletionProtection=' + DeletionProtection + '&CopyTagsToSnapshot=' + CopyTagsToSnapshot + '&Domain=' + (Domain == null ? '' : encodeURIComponent(Domain)) + '&DomainIAMRoleName=' + (DomainIAMRoleName == null ? '' : encodeURIComponent(DomainIAMRoleName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5281,7 +5281,7 @@ export namespace MyNS {
 		 * @param {string} DomainIAMRoleName Specify the name of the IAM role to be used when making API calls to the Directory Service.
 		 * @return {void} Success
 		 */
-		GET_RestoreDBClusterToPointInTime(DBClusterIdentifier: string, RestoreType: string, SourceDBClusterIdentifier: string, RestoreToTime: Date, UseLatestRestorableTime: boolean, Port: number, DBSubnetGroupName: string, OptionGroupName: string, VpcSecurityGroupIds: Array<string>, Tags: Array<Tag>, KmsKeyId: string, EnableIAMDatabaseAuthentication: boolean, BacktrackWindow: number, EnableCloudwatchLogsExports: Array<string>, DBClusterParameterGroupName: string, DeletionProtection: boolean, CopyTagsToSnapshot: boolean, Domain: string, DomainIAMRoleName: string, Action: GET_RestoreDBClusterToPointInTimeAction, Version: GET_RestoreDBClusterToPointInTimeVersion): Observable<HttpResponse<string>> {
+		GET_RestoreDBClusterToPointInTime(DBClusterIdentifier: string, RestoreType: string | null | undefined, SourceDBClusterIdentifier: string, RestoreToTime: Date | null | undefined, UseLatestRestorableTime: boolean | null | undefined, Port: number | null | undefined, DBSubnetGroupName: string | null | undefined, OptionGroupName: string | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, Tags: Array<Tag> | null | undefined, KmsKeyId: string | null | undefined, EnableIAMDatabaseAuthentication: boolean | null | undefined, BacktrackWindow: number | null | undefined, EnableCloudwatchLogsExports: Array<string> | null | undefined, DBClusterParameterGroupName: string | null | undefined, DeletionProtection: boolean | null | undefined, CopyTagsToSnapshot: boolean | null | undefined, Domain: string | null | undefined, DomainIAMRoleName: string | null | undefined, Action: GET_RestoreDBClusterToPointInTimeAction, Version: GET_RestoreDBClusterToPointInTimeVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RestoreDBClusterToPointInTime?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&RestoreType=' + (RestoreType == null ? '' : encodeURIComponent(RestoreType)) + '&SourceDBClusterIdentifier=' + (SourceDBClusterIdentifier == null ? '' : encodeURIComponent(SourceDBClusterIdentifier)) + '&RestoreToTime=' + RestoreToTime.toISOString() + '&UseLatestRestorableTime=' + UseLatestRestorableTime + '&Port=' + Port + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&BacktrackWindow=' + BacktrackWindow + '&' + EnableCloudwatchLogsExports.map(z => `EnableCloudwatchLogsExports=${encodeURIComponent(z)}`).join('&') + '&DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&DeletionProtection=' + DeletionProtection + '&CopyTagsToSnapshot=' + CopyTagsToSnapshot + '&Domain=' + (Domain == null ? '' : encodeURIComponent(Domain)) + '&DomainIAMRoleName=' + (DomainIAMRoleName == null ? '' : encodeURIComponent(DomainIAMRoleName)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5317,7 +5317,7 @@ export namespace MyNS {
 		 * @param {boolean} DeletionProtection A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>. 
 		 * @return {void} Success
 		 */
-		GET_RestoreDBInstanceFromDBSnapshot(DBInstanceIdentifier: string, DBSnapshotIdentifier: string, DBInstanceClass: string, Port: number, AvailabilityZone: string, DBSubnetGroupName: string, MultiAZ: boolean, PubliclyAccessible: boolean, AutoMinorVersionUpgrade: boolean, LicenseModel: string, DBName: string, Engine: string, Iops: number, OptionGroupName: string, Tags: Array<Tag>, StorageType: string, TdeCredentialArn: string, TdeCredentialPassword: string, VpcSecurityGroupIds: Array<string>, Domain: string, CopyTagsToSnapshot: boolean, DomainIAMRoleName: string, EnableIAMDatabaseAuthentication: boolean, EnableCloudwatchLogsExports: Array<string>, ProcessorFeatures: Array<ProcessorFeature>, UseDefaultProcessorFeatures: boolean, DBParameterGroupName: string, DeletionProtection: boolean, Action: GET_RestoreDBInstanceFromDBSnapshotAction, Version: GET_RestoreDBInstanceFromDBSnapshotVersion): Observable<HttpResponse<string>> {
+		GET_RestoreDBInstanceFromDBSnapshot(DBInstanceIdentifier: string, DBSnapshotIdentifier: string, DBInstanceClass: string | null | undefined, Port: number | null | undefined, AvailabilityZone: string | null | undefined, DBSubnetGroupName: string | null | undefined, MultiAZ: boolean | null | undefined, PubliclyAccessible: boolean | null | undefined, AutoMinorVersionUpgrade: boolean | null | undefined, LicenseModel: string | null | undefined, DBName: string | null | undefined, Engine: string | null | undefined, Iops: number | null | undefined, OptionGroupName: string | null | undefined, Tags: Array<Tag> | null | undefined, StorageType: string | null | undefined, TdeCredentialArn: string | null | undefined, TdeCredentialPassword: string | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, Domain: string | null | undefined, CopyTagsToSnapshot: boolean | null | undefined, DomainIAMRoleName: string | null | undefined, EnableIAMDatabaseAuthentication: boolean | null | undefined, EnableCloudwatchLogsExports: Array<string> | null | undefined, ProcessorFeatures: Array<ProcessorFeature> | null | undefined, UseDefaultProcessorFeatures: boolean | null | undefined, DBParameterGroupName: string | null | undefined, DeletionProtection: boolean | null | undefined, Action: GET_RestoreDBInstanceFromDBSnapshotAction, Version: GET_RestoreDBInstanceFromDBSnapshotVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RestoreDBInstanceFromDBSnapshot?DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&DBSnapshotIdentifier=' + (DBSnapshotIdentifier == null ? '' : encodeURIComponent(DBSnapshotIdentifier)) + '&DBInstanceClass=' + (DBInstanceClass == null ? '' : encodeURIComponent(DBInstanceClass)) + '&Port=' + Port + '&AvailabilityZone=' + (AvailabilityZone == null ? '' : encodeURIComponent(AvailabilityZone)) + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&MultiAZ=' + MultiAZ + '&PubliclyAccessible=' + PubliclyAccessible + '&AutoMinorVersionUpgrade=' + AutoMinorVersionUpgrade + '&LicenseModel=' + (LicenseModel == null ? '' : encodeURIComponent(LicenseModel)) + '&DBName=' + (DBName == null ? '' : encodeURIComponent(DBName)) + '&Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&Iops=' + Iops + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&StorageType=' + (StorageType == null ? '' : encodeURIComponent(StorageType)) + '&TdeCredentialArn=' + (TdeCredentialArn == null ? '' : encodeURIComponent(TdeCredentialArn)) + '&TdeCredentialPassword=' + (TdeCredentialPassword == null ? '' : encodeURIComponent(TdeCredentialPassword)) + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&Domain=' + (Domain == null ? '' : encodeURIComponent(Domain)) + '&CopyTagsToSnapshot=' + CopyTagsToSnapshot + '&DomainIAMRoleName=' + (DomainIAMRoleName == null ? '' : encodeURIComponent(DomainIAMRoleName)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&' + EnableCloudwatchLogsExports.map(z => `EnableCloudwatchLogsExports=${encodeURIComponent(z)}`).join('&') + '&' + ProcessorFeatures.map(z => `ProcessorFeatures=${z}`).join('&') + '&UseDefaultProcessorFeatures=' + UseDefaultProcessorFeatures + '&DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&DeletionProtection=' + DeletionProtection + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5369,7 +5369,7 @@ export namespace MyNS {
 		 * @param {boolean} DeletionProtection A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>. 
 		 * @return {void} Success
 		 */
-		GET_RestoreDBInstanceFromS3(DBName: string, DBInstanceIdentifier: string, AllocatedStorage: number, DBInstanceClass: string, Engine: string, MasterUsername: string, MasterUserPassword: string, DBSecurityGroups: Array<string>, VpcSecurityGroupIds: Array<string>, AvailabilityZone: string, DBSubnetGroupName: string, PreferredMaintenanceWindow: string, DBParameterGroupName: string, BackupRetentionPeriod: number, PreferredBackupWindow: string, Port: number, MultiAZ: boolean, EngineVersion: string, AutoMinorVersionUpgrade: boolean, LicenseModel: string, Iops: number, OptionGroupName: string, PubliclyAccessible: boolean, Tags: Array<Tag>, StorageType: string, StorageEncrypted: boolean, KmsKeyId: string, CopyTagsToSnapshot: boolean, MonitoringInterval: number, MonitoringRoleArn: string, EnableIAMDatabaseAuthentication: boolean, SourceEngine: string, SourceEngineVersion: string, S3BucketName: string, S3Prefix: string, S3IngestionRoleArn: string, EnablePerformanceInsights: boolean, PerformanceInsightsKMSKeyId: string, PerformanceInsightsRetentionPeriod: number, EnableCloudwatchLogsExports: Array<string>, ProcessorFeatures: Array<ProcessorFeature>, UseDefaultProcessorFeatures: boolean, DeletionProtection: boolean, Action: GET_RestoreDBInstanceFromS3Action, Version: GET_RestoreDBInstanceFromS3Version): Observable<HttpResponse<string>> {
+		GET_RestoreDBInstanceFromS3(DBName: string | null | undefined, DBInstanceIdentifier: string, AllocatedStorage: number | null | undefined, DBInstanceClass: string, Engine: string, MasterUsername: string | null | undefined, MasterUserPassword: string | null | undefined, DBSecurityGroups: Array<string> | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, AvailabilityZone: string | null | undefined, DBSubnetGroupName: string | null | undefined, PreferredMaintenanceWindow: string | null | undefined, DBParameterGroupName: string | null | undefined, BackupRetentionPeriod: number | null | undefined, PreferredBackupWindow: string | null | undefined, Port: number | null | undefined, MultiAZ: boolean | null | undefined, EngineVersion: string | null | undefined, AutoMinorVersionUpgrade: boolean | null | undefined, LicenseModel: string | null | undefined, Iops: number | null | undefined, OptionGroupName: string | null | undefined, PubliclyAccessible: boolean | null | undefined, Tags: Array<Tag> | null | undefined, StorageType: string | null | undefined, StorageEncrypted: boolean | null | undefined, KmsKeyId: string | null | undefined, CopyTagsToSnapshot: boolean | null | undefined, MonitoringInterval: number | null | undefined, MonitoringRoleArn: string | null | undefined, EnableIAMDatabaseAuthentication: boolean | null | undefined, SourceEngine: string, SourceEngineVersion: string, S3BucketName: string, S3Prefix: string | null | undefined, S3IngestionRoleArn: string, EnablePerformanceInsights: boolean | null | undefined, PerformanceInsightsKMSKeyId: string | null | undefined, PerformanceInsightsRetentionPeriod: number | null | undefined, EnableCloudwatchLogsExports: Array<string> | null | undefined, ProcessorFeatures: Array<ProcessorFeature> | null | undefined, UseDefaultProcessorFeatures: boolean | null | undefined, DeletionProtection: boolean | null | undefined, Action: GET_RestoreDBInstanceFromS3Action, Version: GET_RestoreDBInstanceFromS3Version): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RestoreDBInstanceFromS3?DBName=' + (DBName == null ? '' : encodeURIComponent(DBName)) + '&DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&AllocatedStorage=' + AllocatedStorage + '&DBInstanceClass=' + (DBInstanceClass == null ? '' : encodeURIComponent(DBInstanceClass)) + '&Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&MasterUsername=' + (MasterUsername == null ? '' : encodeURIComponent(MasterUsername)) + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&' + DBSecurityGroups.map(z => `DBSecurityGroups=${encodeURIComponent(z)}`).join('&') + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&AvailabilityZone=' + (AvailabilityZone == null ? '' : encodeURIComponent(AvailabilityZone)) + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&BackupRetentionPeriod=' + BackupRetentionPeriod + '&PreferredBackupWindow=' + (PreferredBackupWindow == null ? '' : encodeURIComponent(PreferredBackupWindow)) + '&Port=' + Port + '&MultiAZ=' + MultiAZ + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&AutoMinorVersionUpgrade=' + AutoMinorVersionUpgrade + '&LicenseModel=' + (LicenseModel == null ? '' : encodeURIComponent(LicenseModel)) + '&Iops=' + Iops + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&PubliclyAccessible=' + PubliclyAccessible + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&StorageType=' + (StorageType == null ? '' : encodeURIComponent(StorageType)) + '&StorageEncrypted=' + StorageEncrypted + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&CopyTagsToSnapshot=' + CopyTagsToSnapshot + '&MonitoringInterval=' + MonitoringInterval + '&MonitoringRoleArn=' + (MonitoringRoleArn == null ? '' : encodeURIComponent(MonitoringRoleArn)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&SourceEngine=' + (SourceEngine == null ? '' : encodeURIComponent(SourceEngine)) + '&SourceEngineVersion=' + (SourceEngineVersion == null ? '' : encodeURIComponent(SourceEngineVersion)) + '&S3BucketName=' + (S3BucketName == null ? '' : encodeURIComponent(S3BucketName)) + '&S3Prefix=' + (S3Prefix == null ? '' : encodeURIComponent(S3Prefix)) + '&S3IngestionRoleArn=' + (S3IngestionRoleArn == null ? '' : encodeURIComponent(S3IngestionRoleArn)) + '&EnablePerformanceInsights=' + EnablePerformanceInsights + '&PerformanceInsightsKMSKeyId=' + (PerformanceInsightsKMSKeyId == null ? '' : encodeURIComponent(PerformanceInsightsKMSKeyId)) + '&PerformanceInsightsRetentionPeriod=' + PerformanceInsightsRetentionPeriod + '&' + EnableCloudwatchLogsExports.map(z => `EnableCloudwatchLogsExports=${encodeURIComponent(z)}`).join('&') + '&' + ProcessorFeatures.map(z => `ProcessorFeatures=${z}`).join('&') + '&UseDefaultProcessorFeatures=' + UseDefaultProcessorFeatures + '&DeletionProtection=' + DeletionProtection + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5408,7 +5408,7 @@ export namespace MyNS {
 		 * @param {string} SourceDbiResourceId The resource ID of the source DB instance from which to restore.
 		 * @return {void} Success
 		 */
-		GET_RestoreDBInstanceToPointInTime(SourceDBInstanceIdentifier: string, TargetDBInstanceIdentifier: string, RestoreTime: Date, UseLatestRestorableTime: boolean, DBInstanceClass: string, Port: number, AvailabilityZone: string, DBSubnetGroupName: string, MultiAZ: boolean, PubliclyAccessible: boolean, AutoMinorVersionUpgrade: boolean, LicenseModel: string, DBName: string, Engine: string, Iops: number, OptionGroupName: string, CopyTagsToSnapshot: boolean, Tags: Array<Tag>, StorageType: string, TdeCredentialArn: string, TdeCredentialPassword: string, VpcSecurityGroupIds: Array<string>, Domain: string, DomainIAMRoleName: string, EnableIAMDatabaseAuthentication: boolean, EnableCloudwatchLogsExports: Array<string>, ProcessorFeatures: Array<ProcessorFeature>, UseDefaultProcessorFeatures: boolean, DBParameterGroupName: string, DeletionProtection: boolean, SourceDbiResourceId: string, Action: GET_RestoreDBInstanceToPointInTimeAction, Version: GET_RestoreDBInstanceToPointInTimeVersion): Observable<HttpResponse<string>> {
+		GET_RestoreDBInstanceToPointInTime(SourceDBInstanceIdentifier: string | null | undefined, TargetDBInstanceIdentifier: string, RestoreTime: Date | null | undefined, UseLatestRestorableTime: boolean | null | undefined, DBInstanceClass: string | null | undefined, Port: number | null | undefined, AvailabilityZone: string | null | undefined, DBSubnetGroupName: string | null | undefined, MultiAZ: boolean | null | undefined, PubliclyAccessible: boolean | null | undefined, AutoMinorVersionUpgrade: boolean | null | undefined, LicenseModel: string | null | undefined, DBName: string | null | undefined, Engine: string | null | undefined, Iops: number | null | undefined, OptionGroupName: string | null | undefined, CopyTagsToSnapshot: boolean | null | undefined, Tags: Array<Tag> | null | undefined, StorageType: string | null | undefined, TdeCredentialArn: string | null | undefined, TdeCredentialPassword: string | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, Domain: string | null | undefined, DomainIAMRoleName: string | null | undefined, EnableIAMDatabaseAuthentication: boolean | null | undefined, EnableCloudwatchLogsExports: Array<string> | null | undefined, ProcessorFeatures: Array<ProcessorFeature> | null | undefined, UseDefaultProcessorFeatures: boolean | null | undefined, DBParameterGroupName: string | null | undefined, DeletionProtection: boolean | null | undefined, SourceDbiResourceId: string | null | undefined, Action: GET_RestoreDBInstanceToPointInTimeAction, Version: GET_RestoreDBInstanceToPointInTimeVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RestoreDBInstanceToPointInTime?SourceDBInstanceIdentifier=' + (SourceDBInstanceIdentifier == null ? '' : encodeURIComponent(SourceDBInstanceIdentifier)) + '&TargetDBInstanceIdentifier=' + (TargetDBInstanceIdentifier == null ? '' : encodeURIComponent(TargetDBInstanceIdentifier)) + '&RestoreTime=' + RestoreTime.toISOString() + '&UseLatestRestorableTime=' + UseLatestRestorableTime + '&DBInstanceClass=' + (DBInstanceClass == null ? '' : encodeURIComponent(DBInstanceClass)) + '&Port=' + Port + '&AvailabilityZone=' + (AvailabilityZone == null ? '' : encodeURIComponent(AvailabilityZone)) + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&MultiAZ=' + MultiAZ + '&PubliclyAccessible=' + PubliclyAccessible + '&AutoMinorVersionUpgrade=' + AutoMinorVersionUpgrade + '&LicenseModel=' + (LicenseModel == null ? '' : encodeURIComponent(LicenseModel)) + '&DBName=' + (DBName == null ? '' : encodeURIComponent(DBName)) + '&Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&Iops=' + Iops + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&CopyTagsToSnapshot=' + CopyTagsToSnapshot + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&StorageType=' + (StorageType == null ? '' : encodeURIComponent(StorageType)) + '&TdeCredentialArn=' + (TdeCredentialArn == null ? '' : encodeURIComponent(TdeCredentialArn)) + '&TdeCredentialPassword=' + (TdeCredentialPassword == null ? '' : encodeURIComponent(TdeCredentialPassword)) + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&Domain=' + (Domain == null ? '' : encodeURIComponent(Domain)) + '&DomainIAMRoleName=' + (DomainIAMRoleName == null ? '' : encodeURIComponent(DomainIAMRoleName)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&' + EnableCloudwatchLogsExports.map(z => `EnableCloudwatchLogsExports=${encodeURIComponent(z)}`).join('&') + '&' + ProcessorFeatures.map(z => `ProcessorFeatures=${z}`).join('&') + '&UseDefaultProcessorFeatures=' + UseDefaultProcessorFeatures + '&DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&DeletionProtection=' + DeletionProtection + '&SourceDbiResourceId=' + (SourceDbiResourceId == null ? '' : encodeURIComponent(SourceDbiResourceId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5422,7 +5422,7 @@ export namespace MyNS {
 		 * @param {string} EC2SecurityGroupOwnerId  The AWS account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> parameter. The AWS access key ID isn't an acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided. 
 		 * @return {void} Success
 		 */
-		GET_RevokeDBSecurityGroupIngress(DBSecurityGroupName: string, CIDRIP: string, EC2SecurityGroupName: string, EC2SecurityGroupId: string, EC2SecurityGroupOwnerId: string, Action: GET_RevokeDBSecurityGroupIngressAction, Version: GET_RevokeDBSecurityGroupIngressVersion): Observable<HttpResponse<string>> {
+		GET_RevokeDBSecurityGroupIngress(DBSecurityGroupName: string, CIDRIP: string | null | undefined, EC2SecurityGroupName: string | null | undefined, EC2SecurityGroupId: string | null | undefined, EC2SecurityGroupOwnerId: string | null | undefined, Action: GET_RevokeDBSecurityGroupIngressAction, Version: GET_RevokeDBSecurityGroupIngressVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=RevokeDBSecurityGroupIngress?DBSecurityGroupName=' + (DBSecurityGroupName == null ? '' : encodeURIComponent(DBSecurityGroupName)) + '&CIDRIP=' + (CIDRIP == null ? '' : encodeURIComponent(CIDRIP)) + '&EC2SecurityGroupName=' + (EC2SecurityGroupName == null ? '' : encodeURIComponent(EC2SecurityGroupName)) + '&EC2SecurityGroupId=' + (EC2SecurityGroupId == null ? '' : encodeURIComponent(EC2SecurityGroupId)) + '&EC2SecurityGroupOwnerId=' + (EC2SecurityGroupOwnerId == null ? '' : encodeURIComponent(EC2SecurityGroupOwnerId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5435,7 +5435,7 @@ export namespace MyNS {
 		 * @param {boolean} ApplyImmediately Specifies whether or not the database activity stream is to start as soon as possible, regardless of the maintenance window for the database.
 		 * @return {void} Success
 		 */
-		GET_StartActivityStream(ResourceArn: string, Mode: DBClusterActivityStreamMode, KmsKeyId: string, ApplyImmediately: boolean, Action: GET_StartActivityStreamAction, Version: GET_StartActivityStreamVersion): Observable<HttpResponse<string>> {
+		GET_StartActivityStream(ResourceArn: string, Mode: DBClusterActivityStreamMode, KmsKeyId: string, ApplyImmediately: boolean | null | undefined, Action: GET_StartActivityStreamAction, Version: GET_StartActivityStreamVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=StartActivityStream?ResourceArn=' + (ResourceArn == null ? '' : encodeURIComponent(ResourceArn)) + '&Mode=' + Mode + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&ApplyImmediately=' + ApplyImmediately + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5471,7 +5471,7 @@ export namespace MyNS {
 		 * @param {Array<string>} ExportOnly <p>The data to be exported from the snapshot. If this parameter is not provided, all the snapshot data is exported. Valid values are the following:</p> <ul> <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
 		 * @return {void} Success
 		 */
-		GET_StartExportTask(ExportTaskIdentifier: string, SourceArn: string, S3BucketName: string, IamRoleArn: string, KmsKeyId: string, S3Prefix: string, ExportOnly: Array<string>, Action: GET_StartExportTaskAction, Version: GET_StartExportTaskVersion): Observable<HttpResponse<string>> {
+		GET_StartExportTask(ExportTaskIdentifier: string, SourceArn: string, S3BucketName: string, IamRoleArn: string, KmsKeyId: string, S3Prefix: string | null | undefined, ExportOnly: Array<string> | null | undefined, Action: GET_StartExportTaskAction, Version: GET_StartExportTaskVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=StartExportTask?ExportTaskIdentifier=' + (ExportTaskIdentifier == null ? '' : encodeURIComponent(ExportTaskIdentifier)) + '&SourceArn=' + (SourceArn == null ? '' : encodeURIComponent(SourceArn)) + '&S3BucketName=' + (S3BucketName == null ? '' : encodeURIComponent(S3BucketName)) + '&IamRoleArn=' + (IamRoleArn == null ? '' : encodeURIComponent(IamRoleArn)) + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&S3Prefix=' + (S3Prefix == null ? '' : encodeURIComponent(S3Prefix)) + '&' + ExportOnly.map(z => `ExportOnly=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5482,7 +5482,7 @@ export namespace MyNS {
 		 * @param {boolean} ApplyImmediately Specifies whether or not the database activity stream is to stop as soon as possible, regardless of the maintenance window for the database.
 		 * @return {void} Success
 		 */
-		GET_StopActivityStream(ResourceArn: string, ApplyImmediately: boolean, Action: GET_StopActivityStreamAction, Version: GET_StopActivityStreamVersion): Observable<HttpResponse<string>> {
+		GET_StopActivityStream(ResourceArn: string, ApplyImmediately: boolean | null | undefined, Action: GET_StopActivityStreamAction, Version: GET_StopActivityStreamVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=StopActivityStream?ResourceArn=' + (ResourceArn == null ? '' : encodeURIComponent(ResourceArn)) + '&ApplyImmediately=' + ApplyImmediately + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5503,7 +5503,7 @@ export namespace MyNS {
 		 * @param {string} DBSnapshotIdentifier  The user-supplied instance identifier of the DB Snapshot created immediately before the DB instance is stopped. 
 		 * @return {void} Success
 		 */
-		GET_StopDBInstance(DBInstanceIdentifier: string, DBSnapshotIdentifier: string, Action: GET_StopDBInstanceAction, Version: GET_StopDBInstanceVersion): Observable<HttpResponse<string>> {
+		GET_StopDBInstance(DBInstanceIdentifier: string, DBSnapshotIdentifier: string | null | undefined, Action: GET_StopDBInstanceAction, Version: GET_StopDBInstanceVersion): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '#Action=StopDBInstance?DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&DBSnapshotIdentifier=' + (DBSnapshotIdentifier == null ? '' : encodeURIComponent(DBSnapshotIdentifier)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 	}
@@ -5593,11 +5593,11 @@ export namespace MyNS {
 	export enum POST_CreateCustomAvailabilityZoneVersion { _2014_10_31 = 0 }
 
 	export interface GET_CreateDBClusterScalingConfiguration {
-		MinCapacity?: number;
-		MaxCapacity?: number;
-		AutoPause?: boolean;
-		SecondsUntilAutoPause?: number;
-		TimeoutAction?: string;
+		MinCapacity?: number | null;
+		MaxCapacity?: number | null;
+		AutoPause?: boolean | null;
+		SecondsUntilAutoPause?: number | null;
+		TimeoutAction?: string | null;
 	}
 
 	export enum GET_CreateDBClusterAction { CreateDBCluster = 0 }
@@ -6059,16 +6059,16 @@ export namespace MyNS {
 	export enum POST_ModifyCurrentDBClusterCapacityVersion { _2014_10_31 = 0 }
 
 	export interface GET_ModifyDBClusterCloudwatchLogsExportConfiguration {
-		EnableLogTypes?: Array<string>;
-		DisableLogTypes?: Array<string>;
+		EnableLogTypes?: Array<string> | null;
+		DisableLogTypes?: Array<string> | null;
 	}
 
 	export interface GET_ModifyDBClusterScalingConfiguration {
-		MinCapacity?: number;
-		MaxCapacity?: number;
-		AutoPause?: boolean;
-		SecondsUntilAutoPause?: number;
-		TimeoutAction?: string;
+		MinCapacity?: number | null;
+		MaxCapacity?: number | null;
+		AutoPause?: boolean | null;
+		SecondsUntilAutoPause?: number | null;
+		TimeoutAction?: string | null;
 	}
 
 	export enum GET_ModifyDBClusterAction { ModifyDBCluster = 0 }
@@ -6096,8 +6096,8 @@ export namespace MyNS {
 	export enum POST_ModifyDBClusterSnapshotAttributeVersion { _2014_10_31 = 0 }
 
 	export interface GET_ModifyDBInstanceCloudwatchLogsExportConfiguration {
-		EnableLogTypes?: Array<string>;
-		DisableLogTypes?: Array<string>;
+		EnableLogTypes?: Array<string> | null;
+		DisableLogTypes?: Array<string> | null;
 	}
 
 	export enum GET_ModifyDBInstanceAction { ModifyDBInstance = 0 }
@@ -6119,11 +6119,11 @@ export namespace MyNS {
 	export enum POST_ModifyDBProxyVersion { _2014_10_31 = 0 }
 
 	export interface GET_ModifyDBProxyTargetGroupConnectionPoolConfig {
-		MaxConnectionsPercent?: number;
-		MaxIdleConnectionsPercent?: number;
-		ConnectionBorrowTimeout?: number;
-		SessionPinningFilters?: Array<string>;
-		InitQuery?: string;
+		MaxConnectionsPercent?: number | null;
+		MaxIdleConnectionsPercent?: number | null;
+		ConnectionBorrowTimeout?: number | null;
+		SessionPinningFilters?: Array<string> | null;
+		InitQuery?: string | null;
 	}
 
 	export enum GET_ModifyDBProxyTargetGroupAction { ModifyDBProxyTargetGroup = 0 }
@@ -6247,11 +6247,11 @@ export namespace MyNS {
 	export enum POST_RestoreDBClusterFromS3Version { _2014_10_31 = 0 }
 
 	export interface GET_RestoreDBClusterFromSnapshotScalingConfiguration {
-		MinCapacity?: number;
-		MaxCapacity?: number;
-		AutoPause?: boolean;
-		SecondsUntilAutoPause?: number;
-		TimeoutAction?: string;
+		MinCapacity?: number | null;
+		MaxCapacity?: number | null;
+		AutoPause?: boolean | null;
+		SecondsUntilAutoPause?: number | null;
+		TimeoutAction?: string | null;
 	}
 
 	export enum GET_RestoreDBClusterFromSnapshotAction { RestoreDBClusterFromSnapshot = 0 }

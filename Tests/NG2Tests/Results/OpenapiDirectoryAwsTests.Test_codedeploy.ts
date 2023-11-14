@@ -12,8 +12,8 @@ export namespace MyNS {
 
 	/** Information about a tag. */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 	export interface InstanceNameRequiredException {
@@ -40,9 +40,9 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>BatchGetApplicationRevisions</code> operation. */
 	export interface BatchGetApplicationRevisionsOutput {
-		applicationName?: string;
-		errorMessage?: string;
-		revisions?: Array<RevisionInfo>;
+		applicationName?: string | null;
+		errorMessage?: string | null;
+		revisions?: Array<RevisionInfo> | null;
 	}
 
 
@@ -50,28 +50,28 @@ export namespace MyNS {
 	export interface RevisionInfo {
 
 		/** Information about the location of an application revision. */
-		revisionLocation?: RevisionLocation;
+		revisionLocation?: RevisionLocation | null;
 
 		/** Information about an application revision. */
-		genericRevisionInfo?: GenericRevisionInfo;
+		genericRevisionInfo?: GenericRevisionInfo | null;
 	}
 
 
 	/** Information about the location of an application revision. */
 	export interface RevisionLocation {
-		revisionType?: RevisionLocationRevisionType;
+		revisionType?: RevisionLocationRevisionType | null;
 
 		/** Information about the location of application artifacts stored in Amazon S3. */
-		s3Location?: S3Location;
+		s3Location?: S3Location | null;
 
 		/** Information about the location of application artifacts stored in GitHub. */
-		gitHubLocation?: GitHubLocation;
+		gitHubLocation?: GitHubLocation | null;
 
 		/** A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda deployments, the revision is the same as the AppSpec file.RawString and String revision type are deprecated, use AppSpecContent type instead. */
-		string?: RawString;
+		string?: RawString | null;
 
 		/** A revision for an AWS Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type. */
-		appSpecContent?: AppSpecContent;
+		appSpecContent?: AppSpecContent | null;
 	}
 
 	export enum RevisionLocationRevisionType { S3 = 0, GitHub = 1, String = 2, AppSpecContent = 3 }
@@ -79,11 +79,11 @@ export namespace MyNS {
 
 	/** Information about the location of application artifacts stored in Amazon S3. */
 	export interface S3Location {
-		bucket?: string;
-		key?: string;
-		bundleType?: S3LocationBundleType;
-		version?: string;
-		eTag?: string;
+		bucket?: string | null;
+		key?: string | null;
+		bundleType?: S3LocationBundleType | null;
+		version?: string | null;
+		eTag?: string | null;
 	}
 
 	export enum S3LocationBundleType { tar = 0, tgz = 1, zip = 2, YAML = 3, JSON = 4 }
@@ -91,32 +91,32 @@ export namespace MyNS {
 
 	/** Information about the location of application artifacts stored in GitHub. */
 	export interface GitHubLocation {
-		repository?: string;
-		commitId?: string;
+		repository?: string | null;
+		commitId?: string | null;
 	}
 
 
 	/** A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda deployments, the revision is the same as the AppSpec file.RawString and String revision type are deprecated, use AppSpecContent type instead. */
 	export interface RawString {
-		content?: string;
-		sha256?: string;
+		content?: string | null;
+		sha256?: string | null;
 	}
 
 
 	/**  A revision for an AWS Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type.  */
 	export interface AppSpecContent {
-		content?: string;
-		sha256?: string;
+		content?: string | null;
+		sha256?: string | null;
 	}
 
 
 	/** Information about an application revision. */
 	export interface GenericRevisionInfo {
-		description?: string;
-		deploymentGroups?: Array<string>;
-		firstUsedTime?: Date;
-		lastUsedTime?: Date;
-		registerTime?: Date;
+		description?: string | null;
+		deploymentGroups?: Array<string> | null;
+		firstUsedTime?: Date | null;
+		lastUsedTime?: Date | null;
+		registerTime?: Date | null;
 	}
 
 
@@ -147,18 +147,18 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>BatchGetApplications</code> operation. */
 	export interface BatchGetApplicationsOutput {
-		applicationsInfo?: Array<ApplicationInfo>;
+		applicationsInfo?: Array<ApplicationInfo> | null;
 	}
 
 
 	/** Information about an application. */
 	export interface ApplicationInfo {
-		applicationId?: string;
-		applicationName?: string;
-		createTime?: Date;
-		linkedToGitHub?: boolean;
-		gitHubAccountName?: string;
-		computePlatform?: ApplicationInfoComputePlatform;
+		applicationId?: string | null;
+		applicationName?: string | null;
+		createTime?: Date | null;
+		linkedToGitHub?: boolean | null;
+		gitHubAccountName?: string | null;
+		computePlatform?: ApplicationInfoComputePlatform | null;
 	}
 
 	export enum ApplicationInfoComputePlatform { Server = 0, Lambda = 1, ECS = 2 }
@@ -172,62 +172,62 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>BatchGetDeploymentGroups</code> operation. */
 	export interface BatchGetDeploymentGroupsOutput {
-		deploymentGroupsInfo?: Array<DeploymentGroupInfo>;
-		errorMessage?: string;
+		deploymentGroupsInfo?: Array<DeploymentGroupInfo> | null;
+		errorMessage?: string | null;
 	}
 
 
 	/** Information about a deployment group. */
 	export interface DeploymentGroupInfo {
-		applicationName?: string;
-		deploymentGroupId?: string;
-		deploymentGroupName?: string;
-		deploymentConfigName?: string;
-		ec2TagFilters?: Array<EC2TagFilter>;
-		onPremisesInstanceTagFilters?: Array<TagFilter>;
-		autoScalingGroups?: Array<AutoScalingGroup>;
-		serviceRoleArn?: string;
+		applicationName?: string | null;
+		deploymentGroupId?: string | null;
+		deploymentGroupName?: string | null;
+		deploymentConfigName?: string | null;
+		ec2TagFilters?: Array<EC2TagFilter> | null;
+		onPremisesInstanceTagFilters?: Array<TagFilter> | null;
+		autoScalingGroups?: Array<AutoScalingGroup> | null;
+		serviceRoleArn?: string | null;
 
 		/** Information about the location of an application revision. */
-		targetRevision?: RevisionLocation;
-		triggerConfigurations?: Array<TriggerConfig>;
+		targetRevision?: RevisionLocation | null;
+		triggerConfigurations?: Array<TriggerConfig> | null;
 
 		/** Information about alarms associated with the deployment group. */
-		alarmConfiguration?: AlarmConfiguration;
+		alarmConfiguration?: AlarmConfiguration | null;
 
 		/** Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully. */
-		autoRollbackConfiguration?: AutoRollbackConfiguration;
+		autoRollbackConfiguration?: AutoRollbackConfiguration | null;
 
 		/** Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer. */
-		deploymentStyle?: DeploymentStyle;
+		deploymentStyle?: DeploymentStyle | null;
 
 		/** Information about blue/green deployment options for a deployment group. */
-		blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration;
+		blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration | null;
 
 		/** Information about the Elastic Load Balancing load balancer or target group used in a deployment. */
-		loadBalancerInfo?: LoadBalancerInfo;
+		loadBalancerInfo?: LoadBalancerInfo | null;
 
 		/** Information about the most recent attempted or successful deployment to a deployment group. */
-		lastSuccessfulDeployment?: LastDeploymentInfo;
+		lastSuccessfulDeployment?: LastDeploymentInfo | null;
 
 		/** Information about the most recent attempted or successful deployment to a deployment group. */
-		lastAttemptedDeployment?: LastDeploymentInfo;
+		lastAttemptedDeployment?: LastDeploymentInfo | null;
 
 		/** Information about groups of EC2 instance tags. */
-		ec2TagSet?: EC2TagSet;
+		ec2TagSet?: EC2TagSet | null;
 
 		/** Information about groups of on-premises instance tags. */
-		onPremisesTagSet?: OnPremisesTagSet;
-		computePlatform?: ApplicationInfoComputePlatform;
-		ecsServices?: Array<ECSService>;
+		onPremisesTagSet?: OnPremisesTagSet | null;
+		computePlatform?: ApplicationInfoComputePlatform | null;
+		ecsServices?: Array<ECSService> | null;
 	}
 
 
 	/** Information about an EC2 tag filter. */
 	export interface EC2TagFilter {
-		Key?: string;
-		Value?: string;
-		Type?: EC2TagFilterType;
+		Key?: string | null;
+		Value?: string | null;
+		Type?: EC2TagFilterType | null;
 	}
 
 	export enum EC2TagFilterType { KEY_ONLY = 0, VALUE_ONLY = 1, KEY_AND_VALUE = 2 }
@@ -235,24 +235,24 @@ export namespace MyNS {
 
 	/** Information about an on-premises instance tag filter. */
 	export interface TagFilter {
-		Key?: string;
-		Value?: string;
-		Type?: EC2TagFilterType;
+		Key?: string | null;
+		Value?: string | null;
+		Type?: EC2TagFilterType | null;
 	}
 
 
 	/** Information about an Auto Scaling group. */
 	export interface AutoScalingGroup {
-		name?: string;
-		hook?: string;
+		name?: string | null;
+		hook?: string | null;
 	}
 
 
 	/** Information about notification triggers for the deployment group. */
 	export interface TriggerConfig {
-		triggerName?: string;
-		triggerTargetArn?: string;
-		triggerEvents?: Array<TriggerEventType>;
+		triggerName?: string | null;
+		triggerTargetArn?: string | null;
+		triggerEvents?: Array<TriggerEventType> | null;
 	}
 
 	export enum TriggerEventType { DeploymentStart = 0, DeploymentSuccess = 1, DeploymentFailure = 2, DeploymentStop = 3, DeploymentRollback = 4, DeploymentReady = 5, InstanceStart = 6, InstanceSuccess = 7, InstanceFailure = 8, InstanceReady = 9 }
@@ -260,22 +260,22 @@ export namespace MyNS {
 
 	/** Information about alarms associated with the deployment group. */
 	export interface AlarmConfiguration {
-		enabled?: boolean;
-		ignorePollAlarmFailure?: boolean;
-		alarms?: Array<Alarm>;
+		enabled?: boolean | null;
+		ignorePollAlarmFailure?: boolean | null;
+		alarms?: Array<Alarm> | null;
 	}
 
 
 	/** Information about an alarm. */
 	export interface Alarm {
-		name?: string;
+		name?: string | null;
 	}
 
 
 	/** Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully. */
 	export interface AutoRollbackConfiguration {
-		enabled?: boolean;
-		events?: Array<AutoRollbackEvent>;
+		enabled?: boolean | null;
+		events?: Array<AutoRollbackEvent> | null;
 	}
 
 	export enum AutoRollbackEvent { DEPLOYMENT_FAILURE = 0, DEPLOYMENT_STOP_ON_ALARM = 1, DEPLOYMENT_STOP_ON_REQUEST = 2 }
@@ -283,8 +283,8 @@ export namespace MyNS {
 
 	/** Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer. */
 	export interface DeploymentStyle {
-		deploymentType?: DeploymentStyleDeploymentType;
-		deploymentOption?: DeploymentStyleDeploymentOption;
+		deploymentType?: DeploymentStyleDeploymentType | null;
+		deploymentOption?: DeploymentStyleDeploymentOption | null;
 	}
 
 	export enum DeploymentStyleDeploymentType { IN_PLACE = 0, BLUE_GREEN = 1 }
@@ -296,20 +296,20 @@ export namespace MyNS {
 	export interface BlueGreenDeploymentConfiguration {
 
 		/** Information about whether instances in the original environment are terminated when a blue/green deployment is successful. <code>BlueInstanceTerminationOption</code> does not apply to Lambda deployments. */
-		terminateBlueInstancesOnDeploymentSuccess?: BlueInstanceTerminationOption;
+		terminateBlueInstancesOnDeploymentSuccess?: BlueInstanceTerminationOption | null;
 
 		/** Information about how traffic is rerouted to instances in a replacement environment in a blue/green deployment. */
-		deploymentReadyOption?: DeploymentReadyOption;
+		deploymentReadyOption?: DeploymentReadyOption | null;
 
 		/** Information about the instances that belong to the replacement environment in a blue/green deployment. */
-		greenFleetProvisioningOption?: GreenFleetProvisioningOption;
+		greenFleetProvisioningOption?: GreenFleetProvisioningOption | null;
 	}
 
 
 	/** Information about whether instances in the original environment are terminated when a blue/green deployment is successful. <code>BlueInstanceTerminationOption</code> does not apply to Lambda deployments.  */
 	export interface BlueInstanceTerminationOption {
-		action?: BlueInstanceTerminationOptionAction;
-		terminationWaitTimeInMinutes?: number;
+		action?: BlueInstanceTerminationOptionAction | null;
+		terminationWaitTimeInMinutes?: number | null;
 	}
 
 	export enum BlueInstanceTerminationOptionAction { TERMINATE = 0, KEEP_ALIVE = 1 }
@@ -317,8 +317,8 @@ export namespace MyNS {
 
 	/** Information about how traffic is rerouted to instances in a replacement environment in a blue/green deployment. */
 	export interface DeploymentReadyOption {
-		actionOnTimeout?: DeploymentReadyOptionActionOnTimeout;
-		waitTimeInMinutes?: number;
+		actionOnTimeout?: DeploymentReadyOptionActionOnTimeout | null;
+		waitTimeInMinutes?: number | null;
 	}
 
 	export enum DeploymentReadyOptionActionOnTimeout { CONTINUE_DEPLOYMENT = 0, STOP_DEPLOYMENT = 1 }
@@ -326,7 +326,7 @@ export namespace MyNS {
 
 	/** Information about the instances that belong to the replacement environment in a blue/green deployment. */
 	export interface GreenFleetProvisioningOption {
-		action?: GreenFleetProvisioningOptionAction;
+		action?: GreenFleetProvisioningOptionAction | null;
 	}
 
 	export enum GreenFleetProvisioningOptionAction { DISCOVER_EXISTING = 0, COPY_AUTO_SCALING_GROUP = 1 }
@@ -334,48 +334,48 @@ export namespace MyNS {
 
 	/** Information about the Elastic Load Balancing load balancer or target group used in a deployment. */
 	export interface LoadBalancerInfo {
-		elbInfoList?: Array<ELBInfo>;
-		targetGroupInfoList?: Array<TargetGroupInfo>;
-		targetGroupPairInfoList?: Array<TargetGroupPairInfo>;
+		elbInfoList?: Array<ELBInfo> | null;
+		targetGroupInfoList?: Array<TargetGroupInfo> | null;
+		targetGroupPairInfoList?: Array<TargetGroupPairInfo> | null;
 	}
 
 
 	/** Information about a load balancer in Elastic Load Balancing to use in a deployment. Instances are registered directly with a load balancer, and traffic is routed to the load balancer. */
 	export interface ELBInfo {
-		name?: string;
+		name?: string | null;
 	}
 
 
 	/** Information about a target group in Elastic Load Balancing to use in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target group. */
 	export interface TargetGroupInfo {
-		name?: string;
+		name?: string | null;
 	}
 
 
 	/**  Information about two target groups and how traffic is routed during an Amazon ECS deployment. An optional test traffic route can be specified.  */
 	export interface TargetGroupPairInfo {
-		targetGroups?: Array<TargetGroupInfo>;
+		targetGroups?: Array<TargetGroupInfo> | null;
 
 		/** Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group. */
-		prodTrafficRoute?: TrafficRoute;
+		prodTrafficRoute?: TrafficRoute | null;
 
 		/** Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group. */
-		testTrafficRoute?: TrafficRoute;
+		testTrafficRoute?: TrafficRoute | null;
 	}
 
 
 	/**  Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group.  */
 	export interface TrafficRoute {
-		listenerArns?: Array<string>;
+		listenerArns?: Array<string> | null;
 	}
 
 
 	/** Information about the most recent attempted or successful deployment to a deployment group. */
 	export interface LastDeploymentInfo {
-		deploymentId?: string;
-		status?: LastDeploymentInfoStatus;
-		endTime?: Date;
-		createTime?: Date;
+		deploymentId?: string | null;
+		status?: LastDeploymentInfoStatus | null;
+		endTime?: Date | null;
+		createTime?: Date | null;
 	}
 
 	export enum LastDeploymentInfoStatus { Created = 0, Queued = 1, InProgress = 2, Baking = 3, Succeeded = 4, Failed = 5, Stopped = 6, Ready = 7 }
@@ -383,20 +383,20 @@ export namespace MyNS {
 
 	/** Information about groups of EC2 instance tags. */
 	export interface EC2TagSet {
-		ec2TagSetList?: Array<Array<EC2TagFilter>>;
+		ec2TagSetList?: Array<Array<EC2TagFilter>> | null;
 	}
 
 
 	/** Information about groups of on-premises instance tags. */
 	export interface OnPremisesTagSet {
-		onPremisesTagSetList?: Array<Array<TagFilter>>;
+		onPremisesTagSetList?: Array<Array<TagFilter>> | null;
 	}
 
 
 	/**  Contains the service and cluster names used to identify an Amazon ECS deployment's target.  */
 	export interface ECSService {
-		serviceName?: string;
-		clusterName?: string;
+		serviceName?: string | null;
+		clusterName?: string | null;
 	}
 
 
@@ -418,21 +418,21 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>BatchGetDeploymentInstances</code> operation. */
 	export interface BatchGetDeploymentInstancesOutput {
-		instancesSummary?: Array<InstanceSummary>;
-		errorMessage?: string;
+		instancesSummary?: Array<InstanceSummary> | null;
+		errorMessage?: string | null;
 	}
 
 
 	/** Information about an instance in a deployment.InstanceSummary is deprecated, use DeploymentTarget instead. */
 	export interface InstanceSummary {
-		deploymentId?: string;
-		instanceId?: string;
+		deploymentId?: string | null;
+		instanceId?: string | null;
 
 		/** InstanceStatus is deprecated, use TargetStatus instead. */
-		status?: InstanceSummaryStatus;
-		lastUpdatedAt?: Date;
-		lifecycleEvents?: Array<LifecycleEvent>;
-		instanceType?: InstanceSummaryInstanceType;
+		status?: InstanceSummaryStatus | null;
+		lastUpdatedAt?: Date | null;
+		lifecycleEvents?: Array<LifecycleEvent> | null;
+		instanceType?: InstanceSummaryInstanceType | null;
 	}
 
 	export enum InstanceSummaryStatus { Pending = 0, InProgress = 1, Succeeded = 2, Failed = 3, Skipped = 4, Unknown = 5, Ready = 6 }
@@ -440,22 +440,22 @@ export namespace MyNS {
 
 	/** Information about a deployment lifecycle event. */
 	export interface LifecycleEvent {
-		lifecycleEventName?: string;
+		lifecycleEventName?: string | null;
 
 		/** Diagnostic information about executable scripts that are part of a deployment. */
-		diagnostics?: Diagnostics;
-		startTime?: Date;
-		endTime?: Date;
-		status?: LifecycleEventStatus;
+		diagnostics?: Diagnostics | null;
+		startTime?: Date | null;
+		endTime?: Date | null;
+		status?: LifecycleEventStatus | null;
 	}
 
 
 	/** Diagnostic information about executable scripts that are part of a deployment. */
 	export interface Diagnostics {
-		errorCode?: DiagnosticsErrorCode;
-		scriptName?: string;
-		message?: string;
-		logTail?: string;
+		errorCode?: DiagnosticsErrorCode | null;
+		scriptName?: string | null;
+		message?: string | null;
+		logTail?: string | null;
 	}
 
 	export enum DiagnosticsErrorCode { Success = 0, ScriptMissing = 1, ScriptNotExecutable = 2, ScriptTimedOut = 3, ScriptFailed = 4, UnknownError = 5 }
@@ -487,25 +487,25 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetDeploymentTargetsOutput {
-		deploymentTargets?: Array<DeploymentTarget>;
+		deploymentTargets?: Array<DeploymentTarget> | null;
 	}
 
 
 	/**  Information about the deployment target.  */
 	export interface DeploymentTarget {
-		deploymentTargetType?: DeploymentTargetDeploymentTargetType;
+		deploymentTargetType?: DeploymentTargetDeploymentTargetType | null;
 
 		/** A target Amazon EC2 or on-premises instance during a deployment that uses the EC2/On-premises compute platform. */
-		instanceTarget?: InstanceTarget;
+		instanceTarget?: InstanceTarget | null;
 
 		/** Information about the target AWS Lambda function during an AWS Lambda deployment. */
-		lambdaTarget?: LambdaTarget;
+		lambdaTarget?: LambdaTarget | null;
 
 		/** Information about the target of an Amazon ECS deployment. */
-		ecsTarget?: ECSTarget;
+		ecsTarget?: ECSTarget | null;
 
 		/** Information about the target to be updated by an AWS CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update. */
-		cloudFormationTarget?: CloudFormationTarget;
+		cloudFormationTarget?: CloudFormationTarget | null;
 	}
 
 	export enum DeploymentTargetDeploymentTargetType { InstanceTarget = 0, LambdaTarget = 1, ECSTarget = 2, CloudFormationTarget = 3 }
@@ -513,81 +513,81 @@ export namespace MyNS {
 
 	/**  A target Amazon EC2 or on-premises instance during a deployment that uses the EC2/On-premises compute platform.  */
 	export interface InstanceTarget {
-		deploymentId?: string;
-		targetId?: string;
-		targetArn?: string;
-		status?: InstanceSummaryStatus;
-		lastUpdatedAt?: Date;
-		lifecycleEvents?: Array<LifecycleEvent>;
-		instanceLabel?: InstanceSummaryInstanceType;
+		deploymentId?: string | null;
+		targetId?: string | null;
+		targetArn?: string | null;
+		status?: InstanceSummaryStatus | null;
+		lastUpdatedAt?: Date | null;
+		lifecycleEvents?: Array<LifecycleEvent> | null;
+		instanceLabel?: InstanceSummaryInstanceType | null;
 	}
 
 
 	/**  Information about the target AWS Lambda function during an AWS Lambda deployment.  */
 	export interface LambdaTarget {
-		deploymentId?: string;
-		targetId?: string;
-		targetArn?: string;
-		status?: InstanceSummaryStatus;
-		lastUpdatedAt?: Date;
-		lifecycleEvents?: Array<LifecycleEvent>;
+		deploymentId?: string | null;
+		targetId?: string | null;
+		targetArn?: string | null;
+		status?: InstanceSummaryStatus | null;
+		lastUpdatedAt?: Date | null;
+		lifecycleEvents?: Array<LifecycleEvent> | null;
 
 		/** Information about a Lambda function specified in a deployment. */
-		lambdaFunctionInfo?: LambdaFunctionInfo;
+		lambdaFunctionInfo?: LambdaFunctionInfo | null;
 	}
 
 
 	/**  Information about a Lambda function specified in a deployment.  */
 	export interface LambdaFunctionInfo {
-		functionName?: string;
-		functionAlias?: string;
-		currentVersion?: string;
-		targetVersion?: string;
-		targetVersionWeight?: number;
+		functionName?: string | null;
+		functionAlias?: string | null;
+		currentVersion?: string | null;
+		targetVersion?: string | null;
+		targetVersionWeight?: number | null;
 	}
 
 
 	/**  Information about the target of an Amazon ECS deployment.  */
 	export interface ECSTarget {
-		deploymentId?: string;
-		targetId?: string;
-		targetArn?: string;
-		lastUpdatedAt?: Date;
-		lifecycleEvents?: Array<LifecycleEvent>;
-		status?: InstanceSummaryStatus;
-		taskSetsInfo?: Array<ECSTaskSet>;
+		deploymentId?: string | null;
+		targetId?: string | null;
+		targetArn?: string | null;
+		lastUpdatedAt?: Date | null;
+		lifecycleEvents?: Array<LifecycleEvent> | null;
+		status?: InstanceSummaryStatus | null;
+		taskSetsInfo?: Array<ECSTaskSet> | null;
 	}
 
 
 	/**  Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. An AWS CodeDeploy application that uses the Amazon ECS compute platform deploys a containerized application in an Amazon ECS service as a task set.  */
 	export interface ECSTaskSet {
-		identifer?: string;
-		desiredCount?: number;
-		pendingCount?: number;
-		runningCount?: number;
-		status?: string;
-		trafficWeight?: number;
+		identifer?: string | null;
+		desiredCount?: number | null;
+		pendingCount?: number | null;
+		runningCount?: number | null;
+		status?: string | null;
+		trafficWeight?: number | null;
 
 		/** Information about a target group in Elastic Load Balancing to use in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target group. */
-		targetGroup?: TargetGroupInfo;
-		taskSetLabel?: InstanceSummaryInstanceType;
+		targetGroup?: TargetGroupInfo | null;
+		taskSetLabel?: InstanceSummaryInstanceType | null;
 	}
 
 
 	/**  Information about the target to be updated by an AWS CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update. */
 	export interface CloudFormationTarget {
-		deploymentId?: string;
-		targetId?: string;
-		lastUpdatedAt?: Date;
-		lifecycleEvents?: Array<LifecycleEvent>;
-		status?: InstanceSummaryStatus;
-		resourceType?: string;
-		targetVersionWeight?: number;
+		deploymentId?: string | null;
+		targetId?: string | null;
+		lastUpdatedAt?: Date | null;
+		lifecycleEvents?: Array<LifecycleEvent> | null;
+		status?: InstanceSummaryStatus | null;
+		resourceType?: string | null;
+		targetVersionWeight?: number | null;
 	}
 
 	export interface BatchGetDeploymentTargetsInput {
-		deploymentId?: string;
-		targetIds?: Array<string>;
+		deploymentId?: string | null;
+		targetIds?: Array<string> | null;
 	}
 
 	export interface DeploymentNotStartedException {
@@ -611,69 +611,69 @@ export namespace MyNS {
 
 	/**  Represents the output of a <code>BatchGetDeployments</code> operation.  */
 	export interface BatchGetDeploymentsOutput {
-		deploymentsInfo?: Array<DeploymentInfo>;
+		deploymentsInfo?: Array<DeploymentInfo> | null;
 	}
 
 
 	/** Information about a deployment. */
 	export interface DeploymentInfo {
-		applicationName?: string;
-		deploymentGroupName?: string;
-		deploymentConfigName?: string;
-		deploymentId?: string;
+		applicationName?: string | null;
+		deploymentGroupName?: string | null;
+		deploymentConfigName?: string | null;
+		deploymentId?: string | null;
 
 		/** Information about the location of an application revision. */
-		previousRevision?: RevisionLocation;
+		previousRevision?: RevisionLocation | null;
 
 		/** Information about the location of an application revision. */
-		revision?: RevisionLocation;
-		status?: LastDeploymentInfoStatus;
+		revision?: RevisionLocation | null;
+		status?: LastDeploymentInfoStatus | null;
 
 		/** Information about a deployment error. */
-		errorInformation?: ErrorInformation;
-		createTime?: Date;
-		startTime?: Date;
-		completeTime?: Date;
+		errorInformation?: ErrorInformation | null;
+		createTime?: Date | null;
+		startTime?: Date | null;
+		completeTime?: Date | null;
 
 		/** Information about the deployment status of the instances in the deployment. */
-		deploymentOverview?: DeploymentOverview;
-		description?: string;
-		creator?: DeploymentInfoCreator;
-		ignoreApplicationStopFailures?: boolean;
+		deploymentOverview?: DeploymentOverview | null;
+		description?: string | null;
+		creator?: DeploymentInfoCreator | null;
+		ignoreApplicationStopFailures?: boolean | null;
 
 		/** Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully. */
-		autoRollbackConfiguration?: AutoRollbackConfiguration;
-		updateOutdatedInstancesOnly?: boolean;
+		autoRollbackConfiguration?: AutoRollbackConfiguration | null;
+		updateOutdatedInstancesOnly?: boolean | null;
 
 		/** Information about a deployment rollback. */
-		rollbackInfo?: RollbackInfo;
+		rollbackInfo?: RollbackInfo | null;
 
 		/** Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer. */
-		deploymentStyle?: DeploymentStyle;
+		deploymentStyle?: DeploymentStyle | null;
 
 		/** Information about the instances to be used in the replacement environment in a blue/green deployment. */
-		targetInstances?: TargetInstances;
-		instanceTerminationWaitTimeStarted?: boolean;
+		targetInstances?: TargetInstances | null;
+		instanceTerminationWaitTimeStarted?: boolean | null;
 
 		/** Information about blue/green deployment options for a deployment group. */
-		blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration;
+		blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration | null;
 
 		/** Information about the Elastic Load Balancing load balancer or target group used in a deployment. */
-		loadBalancerInfo?: LoadBalancerInfo;
+		loadBalancerInfo?: LoadBalancerInfo | null;
 
 		/** AdditionalDeploymentStatusInfo is deprecated, use DeploymentStatusMessageList instead. */
-		additionalDeploymentStatusInfo?: string;
-		fileExistsBehavior?: DeploymentInfoFileExistsBehavior;
-		deploymentStatusMessages?: Array<string>;
-		computePlatform?: ApplicationInfoComputePlatform;
-		externalId?: string;
+		additionalDeploymentStatusInfo?: string | null;
+		fileExistsBehavior?: DeploymentInfoFileExistsBehavior | null;
+		deploymentStatusMessages?: Array<string> | null;
+		computePlatform?: ApplicationInfoComputePlatform | null;
+		externalId?: string | null;
 	}
 
 
 	/** Information about a deployment error. */
 	export interface ErrorInformation {
-		code?: ErrorInformationCode;
-		message?: string;
+		code?: ErrorInformationCode | null;
+		message?: string | null;
 	}
 
 	export enum ErrorInformationCode { AGENT_ISSUE = 0, ALARM_ACTIVE = 1, APPLICATION_MISSING = 2, AUTOSCALING_VALIDATION_ERROR = 3, AUTO_SCALING_CONFIGURATION = 4, AUTO_SCALING_IAM_ROLE_PERMISSIONS = 5, CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND = 6, CUSTOMER_APPLICATION_UNHEALTHY = 7, DEPLOYMENT_GROUP_MISSING = 8, ECS_UPDATE_ERROR = 9, ELASTIC_LOAD_BALANCING_INVALID = 10, ELB_INVALID_INSTANCE = 11, HEALTH_CONSTRAINTS = 12, HEALTH_CONSTRAINTS_INVALID = 13, HOOK_EXECUTION_FAILURE = 14, IAM_ROLE_MISSING = 15, IAM_ROLE_PERMISSIONS = 16, INTERNAL_ERROR = 17, INVALID_ECS_SERVICE = 18, INVALID_LAMBDA_CONFIGURATION = 19, INVALID_LAMBDA_FUNCTION = 20, INVALID_REVISION = 21, MANUAL_STOP = 22, MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION = 23, MISSING_ELB_INFORMATION = 24, MISSING_GITHUB_TOKEN = 25, NO_EC2_SUBSCRIPTION = 26, NO_INSTANCES = 27, OVER_MAX_INSTANCES = 28, RESOURCE_LIMIT_EXCEEDED = 29, REVISION_MISSING = 30, THROTTLED = 31, TIMEOUT = 32, CLOUDFORMATION_STACK_FAILURE = 33 }
@@ -681,12 +681,12 @@ export namespace MyNS {
 
 	/** Information about the deployment status of the instances in the deployment. */
 	export interface DeploymentOverview {
-		Pending?: number;
-		InProgress?: number;
-		Succeeded?: number;
-		Failed?: number;
-		Skipped?: number;
-		Ready?: number;
+		Pending?: number | null;
+		InProgress?: number | null;
+		Succeeded?: number | null;
+		Failed?: number | null;
+		Skipped?: number | null;
+		Ready?: number | null;
 	}
 
 	export enum DeploymentInfoCreator { user = 0, autoscaling = 1, codeDeployRollback = 2, CodeDeploy = 3, CloudFormation = 4, CloudFormationRollback = 5 }
@@ -694,19 +694,19 @@ export namespace MyNS {
 
 	/** Information about a deployment rollback. */
 	export interface RollbackInfo {
-		rollbackDeploymentId?: string;
-		rollbackTriggeringDeploymentId?: string;
-		rollbackMessage?: string;
+		rollbackDeploymentId?: string | null;
+		rollbackTriggeringDeploymentId?: string | null;
+		rollbackMessage?: string | null;
 	}
 
 
 	/** Information about the instances to be used in the replacement environment in a blue/green deployment. */
 	export interface TargetInstances {
-		tagFilters?: Array<EC2TagFilter>;
-		autoScalingGroups?: Array<string>;
+		tagFilters?: Array<EC2TagFilter> | null;
+		autoScalingGroups?: Array<string> | null;
 
 		/** Information about groups of EC2 instance tags. */
-		ec2TagSet?: EC2TagSet;
+		ec2TagSet?: EC2TagSet | null;
 	}
 
 	export enum DeploymentInfoFileExistsBehavior { DISALLOW = 0, OVERWRITE = 1, RETAIN = 2 }
@@ -720,19 +720,19 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>BatchGetOnPremisesInstances</code> operation. */
 	export interface BatchGetOnPremisesInstancesOutput {
-		instanceInfos?: Array<InstanceInfo>;
+		instanceInfos?: Array<InstanceInfo> | null;
 	}
 
 
 	/** Information about an on-premises instance. */
 	export interface InstanceInfo {
-		instanceName?: string;
-		iamSessionArn?: string;
-		iamUserArn?: string;
-		instanceArn?: string;
-		registerTime?: Date;
-		deregisterTime?: Date;
-		tags?: Array<Tag>;
+		instanceName?: string | null;
+		iamSessionArn?: string | null;
+		iamUserArn?: string | null;
+		instanceArn?: string | null;
+		registerTime?: Date | null;
+		deregisterTime?: Date | null;
+		tags?: Array<Tag> | null;
 	}
 
 
@@ -742,8 +742,8 @@ export namespace MyNS {
 	}
 
 	export interface ContinueDeploymentInput {
-		deploymentId?: string;
-		deploymentWaitType?: ContinueDeploymentInputDeploymentWaitType;
+		deploymentId?: string | null;
+		deploymentWaitType?: ContinueDeploymentInputDeploymentWaitType | null;
 	}
 
 	export enum ContinueDeploymentInputDeploymentWaitType { READY_WAIT = 0, TERMINATION_WAIT = 1 }
@@ -766,15 +766,15 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>CreateApplication</code> operation. */
 	export interface CreateApplicationOutput {
-		applicationId?: string;
+		applicationId?: string | null;
 	}
 
 
 	/** Represents the input of a <code>CreateApplication</code> operation. */
 	export interface CreateApplicationInput {
 		applicationName: string;
-		computePlatform?: ApplicationInfoComputePlatform;
-		tags?: Array<Tag>;
+		computePlatform?: ApplicationInfoComputePlatform | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface ApplicationAlreadyExistsException {
@@ -789,28 +789,28 @@ export namespace MyNS {
 
 	/**  Represents the output of a <code>CreateDeployment</code> operation.  */
 	export interface CreateDeploymentOutput {
-		deploymentId?: string;
+		deploymentId?: string | null;
 	}
 
 
 	/** Represents the input of a <code>CreateDeployment</code> operation. */
 	export interface CreateDeploymentInput {
 		applicationName: string;
-		deploymentGroupName?: string;
+		deploymentGroupName?: string | null;
 
 		/** Information about the location of an application revision. */
-		revision?: RevisionLocation;
-		deploymentConfigName?: string;
-		description?: string;
-		ignoreApplicationStopFailures?: boolean;
+		revision?: RevisionLocation | null;
+		deploymentConfigName?: string | null;
+		description?: string | null;
+		ignoreApplicationStopFailures?: boolean | null;
 
 		/** Information about the instances to be used in the replacement environment in a blue/green deployment. */
-		targetInstances?: TargetInstances;
+		targetInstances?: TargetInstances | null;
 
 		/** Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully. */
-		autoRollbackConfiguration?: AutoRollbackConfiguration;
-		updateOutdatedInstancesOnly?: boolean;
-		fileExistsBehavior?: DeploymentInfoFileExistsBehavior;
+		autoRollbackConfiguration?: AutoRollbackConfiguration | null;
+		updateOutdatedInstancesOnly?: boolean | null;
+		fileExistsBehavior?: DeploymentInfoFileExistsBehavior | null;
 	}
 
 	export interface DeploymentGroupDoesNotExistException {
@@ -864,7 +864,7 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>CreateDeploymentConfig</code> operation. */
 	export interface CreateDeploymentConfigOutput {
-		deploymentConfigId?: string;
+		deploymentConfigId?: string | null;
 	}
 
 
@@ -873,18 +873,18 @@ export namespace MyNS {
 		deploymentConfigName: string;
 
 		/** Information about minimum healthy instance. */
-		minimumHealthyHosts?: MinimumHealthyHosts;
+		minimumHealthyHosts?: MinimumHealthyHosts | null;
 
 		/** The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an AWS Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment. */
-		trafficRoutingConfig?: TrafficRoutingConfig;
-		computePlatform?: ApplicationInfoComputePlatform;
+		trafficRoutingConfig?: TrafficRoutingConfig | null;
+		computePlatform?: ApplicationInfoComputePlatform | null;
 	}
 
 
 	/** Information about minimum healthy instance. */
 	export interface MinimumHealthyHosts {
-		value?: number;
-		type?: MinimumHealthyHostsType;
+		value?: number | null;
+		type?: MinimumHealthyHostsType | null;
 	}
 
 	export enum MinimumHealthyHostsType { HOST_COUNT = 0, FLEET_PERCENT = 1 }
@@ -892,13 +892,13 @@ export namespace MyNS {
 
 	/** The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an AWS Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment. */
 	export interface TrafficRoutingConfig {
-		type?: TrafficRoutingConfigType;
+		type?: TrafficRoutingConfigType | null;
 
 		/** A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file. */
-		timeBasedCanary?: TimeBasedCanary;
+		timeBasedCanary?: TimeBasedCanary | null;
 
 		/** A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file. */
-		timeBasedLinear?: TimeBasedLinear;
+		timeBasedLinear?: TimeBasedLinear | null;
 	}
 
 	export enum TrafficRoutingConfigType { TimeBasedCanary = 0, TimeBasedLinear = 1, AllAtOnce = 2 }
@@ -906,15 +906,15 @@ export namespace MyNS {
 
 	/** A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file. */
 	export interface TimeBasedCanary {
-		canaryPercentage?: number;
-		canaryInterval?: number;
+		canaryPercentage?: number | null;
+		canaryInterval?: number | null;
 	}
 
 
 	/** A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file. */
 	export interface TimeBasedLinear {
-		linearPercentage?: number;
-		linearInterval?: number;
+		linearPercentage?: number | null;
+		linearInterval?: number | null;
 	}
 
 	export interface DeploymentConfigNameRequiredException {
@@ -932,7 +932,7 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>CreateDeploymentGroup</code> operation. */
 	export interface CreateDeploymentGroupOutput {
-		deploymentGroupId?: string;
+		deploymentGroupId?: string | null;
 	}
 
 
@@ -940,35 +940,35 @@ export namespace MyNS {
 	export interface CreateDeploymentGroupInput {
 		applicationName: string;
 		deploymentGroupName: string;
-		deploymentConfigName?: string;
-		ec2TagFilters?: Array<EC2TagFilter>;
-		onPremisesInstanceTagFilters?: Array<TagFilter>;
-		autoScalingGroups?: Array<string>;
+		deploymentConfigName?: string | null;
+		ec2TagFilters?: Array<EC2TagFilter> | null;
+		onPremisesInstanceTagFilters?: Array<TagFilter> | null;
+		autoScalingGroups?: Array<string> | null;
 		serviceRoleArn: string;
-		triggerConfigurations?: Array<TriggerConfig>;
+		triggerConfigurations?: Array<TriggerConfig> | null;
 
 		/** Information about alarms associated with the deployment group. */
-		alarmConfiguration?: AlarmConfiguration;
+		alarmConfiguration?: AlarmConfiguration | null;
 
 		/** Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully. */
-		autoRollbackConfiguration?: AutoRollbackConfiguration;
+		autoRollbackConfiguration?: AutoRollbackConfiguration | null;
 
 		/** Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer. */
-		deploymentStyle?: DeploymentStyle;
+		deploymentStyle?: DeploymentStyle | null;
 
 		/** Information about blue/green deployment options for a deployment group. */
-		blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration;
+		blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration | null;
 
 		/** Information about the Elastic Load Balancing load balancer or target group used in a deployment. */
-		loadBalancerInfo?: LoadBalancerInfo;
+		loadBalancerInfo?: LoadBalancerInfo | null;
 
 		/** Information about groups of EC2 instance tags. */
-		ec2TagSet?: EC2TagSet;
-		ecsServices?: Array<ECSService>;
+		ec2TagSet?: EC2TagSet | null;
+		ecsServices?: Array<ECSService> | null;
 
 		/** Information about groups of on-premises instance tags. */
-		onPremisesTagSet?: OnPremisesTagSet;
-		tags?: Array<Tag>;
+		onPremisesTagSet?: OnPremisesTagSet | null;
+		tags?: Array<Tag> | null;
 	}
 
 	export interface DeploymentGroupAlreadyExistsException {
@@ -1046,7 +1046,7 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>DeleteDeploymentGroup</code> operation. */
 	export interface DeleteDeploymentGroupOutput {
-		hooksNotCleanedUp?: Array<AutoScalingGroup>;
+		hooksNotCleanedUp?: Array<AutoScalingGroup> | null;
 	}
 
 
@@ -1059,13 +1059,13 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>DeleteGitHubAccountToken</code> operation. */
 	export interface DeleteGitHubAccountTokenOutput {
-		tokenName?: string;
+		tokenName?: string | null;
 	}
 
 
 	/** Represents the input of a <code>DeleteGitHubAccount</code> operation. */
 	export interface DeleteGitHubAccountTokenInput {
-		tokenName?: string;
+		tokenName?: string | null;
 	}
 
 	export interface GitHubAccountTokenNameRequiredException {
@@ -1087,7 +1087,7 @@ export namespace MyNS {
 	}
 
 	export interface DeleteResourcesByExternalIdInput {
-		externalId?: string;
+		externalId?: string | null;
 	}
 
 
@@ -1101,7 +1101,7 @@ export namespace MyNS {
 	export interface GetApplicationOutput {
 
 		/** Information about an application. */
-		application?: ApplicationInfo;
+		application?: ApplicationInfo | null;
 	}
 
 
@@ -1113,13 +1113,13 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>GetApplicationRevision</code> operation. */
 	export interface GetApplicationRevisionOutput {
-		applicationName?: string;
+		applicationName?: string | null;
 
 		/** Information about the location of an application revision. */
-		revision?: RevisionLocation;
+		revision?: RevisionLocation | null;
 
 		/** Information about an application revision. */
-		revisionInfo?: GenericRevisionInfo;
+		revisionInfo?: GenericRevisionInfo | null;
 	}
 
 
@@ -1139,7 +1139,7 @@ export namespace MyNS {
 	export interface GetDeploymentOutput {
 
 		/** Information about a deployment. */
-		deploymentInfo?: DeploymentInfo;
+		deploymentInfo?: DeploymentInfo | null;
 	}
 
 
@@ -1153,22 +1153,22 @@ export namespace MyNS {
 	export interface GetDeploymentConfigOutput {
 
 		/** Information about a deployment configuration. */
-		deploymentConfigInfo?: DeploymentConfigInfo;
+		deploymentConfigInfo?: DeploymentConfigInfo | null;
 	}
 
 
 	/** Information about a deployment configuration. */
 	export interface DeploymentConfigInfo {
-		deploymentConfigId?: string;
-		deploymentConfigName?: string;
+		deploymentConfigId?: string | null;
+		deploymentConfigName?: string | null;
 
 		/** Information about minimum healthy instance. */
-		minimumHealthyHosts?: MinimumHealthyHosts;
-		createTime?: Date;
-		computePlatform?: ApplicationInfoComputePlatform;
+		minimumHealthyHosts?: MinimumHealthyHosts | null;
+		createTime?: Date | null;
+		computePlatform?: ApplicationInfoComputePlatform | null;
 
 		/** The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an AWS Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment. */
-		trafficRoutingConfig?: TrafficRoutingConfig;
+		trafficRoutingConfig?: TrafficRoutingConfig | null;
 	}
 
 
@@ -1182,7 +1182,7 @@ export namespace MyNS {
 	export interface GetDeploymentGroupOutput {
 
 		/** Information about a deployment group. */
-		deploymentGroupInfo?: DeploymentGroupInfo;
+		deploymentGroupInfo?: DeploymentGroupInfo | null;
 	}
 
 
@@ -1197,7 +1197,7 @@ export namespace MyNS {
 	export interface GetDeploymentInstanceOutput {
 
 		/** Information about an instance in a deployment.InstanceSummary is deprecated, use DeploymentTarget instead. */
-		instanceSummary?: InstanceSummary;
+		instanceSummary?: InstanceSummary | null;
 	}
 
 
@@ -1210,12 +1210,12 @@ export namespace MyNS {
 	export interface GetDeploymentTargetOutput {
 
 		/** Information about the deployment target. */
-		deploymentTarget?: DeploymentTarget;
+		deploymentTarget?: DeploymentTarget | null;
 	}
 
 	export interface GetDeploymentTargetInput {
-		deploymentId?: string;
-		targetId?: string;
+		deploymentId?: string | null;
+		targetId?: string | null;
 	}
 
 
@@ -1223,7 +1223,7 @@ export namespace MyNS {
 	export interface GetOnPremisesInstanceOutput {
 
 		/** Information about an on-premises instance. */
-		instanceInfo?: InstanceInfo;
+		instanceInfo?: InstanceInfo | null;
 	}
 
 
@@ -1235,20 +1235,20 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>ListApplicationRevisions</code> operation. */
 	export interface ListApplicationRevisionsOutput {
-		revisions?: Array<RevisionLocation>;
-		nextToken?: string;
+		revisions?: Array<RevisionLocation> | null;
+		nextToken?: string | null;
 	}
 
 
 	/**  Represents the input of a <code>ListApplicationRevisions</code> operation.  */
 	export interface ListApplicationRevisionsInput {
 		applicationName: string;
-		sortBy?: ListApplicationRevisionsInputSortBy;
-		sortOrder?: ListApplicationRevisionsInputSortOrder;
-		s3Bucket?: string;
-		s3KeyPrefix?: string;
-		deployed?: ListApplicationRevisionsInputDeployed;
-		nextToken?: string;
+		sortBy?: ListApplicationRevisionsInputSortBy | null;
+		sortOrder?: ListApplicationRevisionsInputSortOrder | null;
+		s3Bucket?: string | null;
+		s3KeyPrefix?: string | null;
+		deployed?: ListApplicationRevisionsInputDeployed | null;
+		nextToken?: string | null;
 	}
 
 	export enum ListApplicationRevisionsInputSortBy { registerTime = 0, firstUsedTime = 1, lastUsedTime = 2 }
@@ -1281,58 +1281,58 @@ export namespace MyNS {
 
 	/** Represents the output of a ListApplications operation. */
 	export interface ListApplicationsOutput {
-		applications?: Array<string>;
-		nextToken?: string;
+		applications?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the input of a <code>ListApplications</code> operation. */
 	export interface ListApplicationsInput {
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the output of a <code>ListDeploymentConfigs</code> operation. */
 	export interface ListDeploymentConfigsOutput {
-		deploymentConfigsList?: Array<string>;
-		nextToken?: string;
+		deploymentConfigsList?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the input of a <code>ListDeploymentConfigs</code> operation. */
 	export interface ListDeploymentConfigsInput {
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the output of a <code>ListDeploymentGroups</code> operation. */
 	export interface ListDeploymentGroupsOutput {
-		applicationName?: string;
-		deploymentGroups?: Array<string>;
-		nextToken?: string;
+		applicationName?: string | null;
+		deploymentGroups?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the input of a <code>ListDeploymentGroups</code> operation. */
 	export interface ListDeploymentGroupsInput {
 		applicationName: string;
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the output of a <code>ListDeploymentInstances</code> operation. */
 	export interface ListDeploymentInstancesOutput {
-		instancesList?: Array<string>;
-		nextToken?: string;
+		instancesList?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 
 	/**  Represents the input of a <code>ListDeploymentInstances</code> operation.  */
 	export interface ListDeploymentInstancesInput {
 		deploymentId: string;
-		nextToken?: string;
-		instanceStatusFilter?: Array<InstanceStatus>;
-		instanceTypeFilter?: Array<InstanceType>;
+		nextToken?: string | null;
+		instanceStatusFilter?: Array<InstanceStatus> | null;
+		instanceTypeFilter?: Array<InstanceType> | null;
 	}
 
 
@@ -1354,14 +1354,14 @@ export namespace MyNS {
 	}
 
 	export interface ListDeploymentTargetsOutput {
-		targetIds?: Array<string>;
-		nextToken?: string;
+		targetIds?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 	export interface ListDeploymentTargetsInput {
-		deploymentId?: string;
-		nextToken?: string;
-		targetFilters?: TargetFilters;
+		deploymentId?: string | null;
+		nextToken?: string | null;
+		targetFilters?: TargetFilters | null;
 	}
 
 	export interface TargetFilters {
@@ -1370,21 +1370,21 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>ListDeployments</code> operation. */
 	export interface ListDeploymentsOutput {
-		deployments?: Array<string>;
-		nextToken?: string;
+		deployments?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the input of a <code>ListDeployments</code> operation. */
 	export interface ListDeploymentsInput {
-		applicationName?: string;
-		deploymentGroupName?: string;
-		externalId?: string;
-		includeOnlyStatuses?: Array<DeploymentStatus>;
+		applicationName?: string | null;
+		deploymentGroupName?: string | null;
+		externalId?: string | null;
+		includeOnlyStatuses?: Array<DeploymentStatus> | null;
 
 		/** Information about a time range. */
-		createTimeRange?: TimeRange;
-		nextToken?: string;
+		createTimeRange?: TimeRange | null;
+		nextToken?: string | null;
 	}
 
 	export enum DeploymentStatus { Created = 0, Queued = 1, InProgress = 2, Baking = 3, Succeeded = 4, Failed = 5, Stopped = 6, Ready = 7 }
@@ -1392,8 +1392,8 @@ export namespace MyNS {
 
 	/** Information about a time range. */
 	export interface TimeRange {
-		start?: Date;
-		end?: Date;
+		start?: Date | null;
+		end?: Date | null;
 	}
 
 	export interface InvalidTimeRangeException {
@@ -1405,29 +1405,29 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>ListGitHubAccountTokenNames</code> operation. */
 	export interface ListGitHubAccountTokenNamesOutput {
-		tokenNameList?: Array<string>;
-		nextToken?: string;
+		tokenNameList?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the input of a <code>ListGitHubAccountTokenNames</code> operation. */
 	export interface ListGitHubAccountTokenNamesInput {
-		nextToken?: string;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the output of the list on-premises instances operation. */
 	export interface ListOnPremisesInstancesOutput {
-		instanceNames?: Array<string>;
-		nextToken?: string;
+		instanceNames?: Array<string> | null;
+		nextToken?: string | null;
 	}
 
 
 	/** Represents the input of a <code>ListOnPremisesInstances</code> operation. */
 	export interface ListOnPremisesInstancesInput {
-		registrationStatus?: ListOnPremisesInstancesInputRegistrationStatus;
-		tagFilters?: Array<TagFilter>;
-		nextToken?: string;
+		registrationStatus?: ListOnPremisesInstancesInputRegistrationStatus | null;
+		tagFilters?: Array<TagFilter> | null;
+		nextToken?: string | null;
 	}
 
 	export enum ListOnPremisesInstancesInputRegistrationStatus { Registered = 0, Deregistered = 1 }
@@ -1439,13 +1439,13 @@ export namespace MyNS {
 	}
 
 	export interface ListTagsForResourceOutput {
-		Tags?: Array<Tag>;
-		NextToken?: string;
+		Tags?: Array<Tag> | null;
+		NextToken?: string | null;
 	}
 
 	export interface ListTagsForResourceInput {
 		ResourceArn: string;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ArnNotSupportedException {
@@ -1458,13 +1458,13 @@ export namespace MyNS {
 	}
 
 	export interface PutLifecycleEventHookExecutionStatusOutput {
-		lifecycleEventHookExecutionId?: string;
+		lifecycleEventHookExecutionId?: string | null;
 	}
 
 	export interface PutLifecycleEventHookExecutionStatusInput {
-		deploymentId?: string;
-		lifecycleEventHookExecutionId?: string;
-		status?: LifecycleEventStatus;
+		deploymentId?: string | null;
+		lifecycleEventHookExecutionId?: string | null;
+		status?: LifecycleEventStatus | null;
 	}
 
 	export interface InvalidLifecycleEventHookExecutionStatusException {
@@ -1480,7 +1480,7 @@ export namespace MyNS {
 	/** Represents the input of a RegisterApplicationRevision operation. */
 	export interface RegisterApplicationRevisionInput {
 		applicationName: string;
-		description?: string;
+		description?: string | null;
 
 		/**
 		 * Information about the location of an application revision.
@@ -1493,8 +1493,8 @@ export namespace MyNS {
 	/** Represents the input of the register on-premises instance operation. */
 	export interface RegisterOnPremisesInstanceInput {
 		instanceName: string;
-		iamSessionArn?: string;
-		iamUserArn?: string;
+		iamSessionArn?: string | null;
+		iamUserArn?: string | null;
 	}
 
 	export interface InstanceNameAlreadyRegisteredException {
@@ -1529,14 +1529,14 @@ export namespace MyNS {
 	}
 
 	export interface SkipWaitTimeForInstanceTerminationInput {
-		deploymentId?: string;
+		deploymentId?: string | null;
 	}
 
 
 	/**  Represents the output of a <code>StopDeployment</code> operation.  */
 	export interface StopDeploymentOutput {
-		status?: StopDeploymentOutputStatus;
-		statusMessage?: string;
+		status?: StopDeploymentOutputStatus | null;
+		statusMessage?: string | null;
 	}
 
 	export enum StopDeploymentOutputStatus { Pending = 0, Succeeded = 1 }
@@ -1545,7 +1545,7 @@ export namespace MyNS {
 	/**  Represents the input of a <code>StopDeployment</code> operation.  */
 	export interface StopDeploymentInput {
 		deploymentId: string;
-		autoRollbackEnabled?: boolean;
+		autoRollbackEnabled?: boolean | null;
 	}
 
 	export interface TagResourceOutput {
@@ -1567,14 +1567,14 @@ export namespace MyNS {
 
 	/** Represents the input of an <code>UpdateApplication</code> operation. */
 	export interface UpdateApplicationInput {
-		applicationName?: string;
-		newApplicationName?: string;
+		applicationName?: string | null;
+		newApplicationName?: string | null;
 	}
 
 
 	/** Represents the output of an <code>UpdateDeploymentGroup</code> operation. */
 	export interface UpdateDeploymentGroupOutput {
-		hooksNotCleanedUp?: Array<AutoScalingGroup>;
+		hooksNotCleanedUp?: Array<AutoScalingGroup> | null;
 	}
 
 
@@ -1582,35 +1582,35 @@ export namespace MyNS {
 	export interface UpdateDeploymentGroupInput {
 		applicationName: string;
 		currentDeploymentGroupName: string;
-		newDeploymentGroupName?: string;
-		deploymentConfigName?: string;
-		ec2TagFilters?: Array<EC2TagFilter>;
-		onPremisesInstanceTagFilters?: Array<TagFilter>;
-		autoScalingGroups?: Array<string>;
-		serviceRoleArn?: string;
-		triggerConfigurations?: Array<TriggerConfig>;
+		newDeploymentGroupName?: string | null;
+		deploymentConfigName?: string | null;
+		ec2TagFilters?: Array<EC2TagFilter> | null;
+		onPremisesInstanceTagFilters?: Array<TagFilter> | null;
+		autoScalingGroups?: Array<string> | null;
+		serviceRoleArn?: string | null;
+		triggerConfigurations?: Array<TriggerConfig> | null;
 
 		/** Information about alarms associated with the deployment group. */
-		alarmConfiguration?: AlarmConfiguration;
+		alarmConfiguration?: AlarmConfiguration | null;
 
 		/** Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully. */
-		autoRollbackConfiguration?: AutoRollbackConfiguration;
+		autoRollbackConfiguration?: AutoRollbackConfiguration | null;
 
 		/** Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer. */
-		deploymentStyle?: DeploymentStyle;
+		deploymentStyle?: DeploymentStyle | null;
 
 		/** Information about blue/green deployment options for a deployment group. */
-		blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration;
+		blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration | null;
 
 		/** Information about the Elastic Load Balancing load balancer or target group used in a deployment. */
-		loadBalancerInfo?: LoadBalancerInfo;
+		loadBalancerInfo?: LoadBalancerInfo | null;
 
 		/** Information about groups of EC2 instance tags. */
-		ec2TagSet?: EC2TagSet;
-		ecsServices?: Array<ECSService>;
+		ec2TagSet?: EC2TagSet | null;
+		ecsServices?: Array<ECSService> | null;
 
 		/** Information about groups of on-premises instance tags. */
-		onPremisesTagSet?: OnPremisesTagSet;
+		onPremisesTagSet?: OnPremisesTagSet | null;
 	}
 
 	export enum ComputePlatform { Server = 0, Lambda = 1, ECS = 2 }
@@ -1915,7 +1915,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListApplicationRevisionsOutput} Success
 		 */
-		ListApplicationRevisions(nextToken: string, requestBody: ListApplicationRevisionsInput): Observable<ListApplicationRevisionsOutput> {
+		ListApplicationRevisions(nextToken: string | null | undefined, requestBody: ListApplicationRevisionsInput): Observable<ListApplicationRevisionsOutput> {
 			return this.http.post<ListApplicationRevisionsOutput>(this.baseUri + '#X-Amz-Target=CodeDeploy_20141006.ListApplicationRevisions?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1925,7 +1925,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListApplicationsOutput} Success
 		 */
-		ListApplications(nextToken: string, requestBody: ListApplicationsInput): Observable<ListApplicationsOutput> {
+		ListApplications(nextToken: string | null | undefined, requestBody: ListApplicationsInput): Observable<ListApplicationsOutput> {
 			return this.http.post<ListApplicationsOutput>(this.baseUri + '#X-Amz-Target=CodeDeploy_20141006.ListApplications?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1935,7 +1935,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDeploymentConfigsOutput} Success
 		 */
-		ListDeploymentConfigs(nextToken: string, requestBody: ListDeploymentConfigsInput): Observable<ListDeploymentConfigsOutput> {
+		ListDeploymentConfigs(nextToken: string | null | undefined, requestBody: ListDeploymentConfigsInput): Observable<ListDeploymentConfigsOutput> {
 			return this.http.post<ListDeploymentConfigsOutput>(this.baseUri + '#X-Amz-Target=CodeDeploy_20141006.ListDeploymentConfigs?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1945,7 +1945,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDeploymentGroupsOutput} Success
 		 */
-		ListDeploymentGroups(nextToken: string, requestBody: ListDeploymentGroupsInput): Observable<ListDeploymentGroupsOutput> {
+		ListDeploymentGroups(nextToken: string | null | undefined, requestBody: ListDeploymentGroupsInput): Observable<ListDeploymentGroupsOutput> {
 			return this.http.post<ListDeploymentGroupsOutput>(this.baseUri + '#X-Amz-Target=CodeDeploy_20141006.ListDeploymentGroups?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1955,7 +1955,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDeploymentInstancesOutput} Success
 		 */
-		ListDeploymentInstances(nextToken: string, requestBody: ListDeploymentInstancesInput): Observable<ListDeploymentInstancesOutput> {
+		ListDeploymentInstances(nextToken: string | null | undefined, requestBody: ListDeploymentInstancesInput): Observable<ListDeploymentInstancesOutput> {
 			return this.http.post<ListDeploymentInstancesOutput>(this.baseUri + '#X-Amz-Target=CodeDeploy_20141006.ListDeploymentInstances?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1974,7 +1974,7 @@ export namespace MyNS {
 		 * @param {string} nextToken Pagination token
 		 * @return {ListDeploymentsOutput} Success
 		 */
-		ListDeployments(nextToken: string, requestBody: ListDeploymentsInput): Observable<ListDeploymentsOutput> {
+		ListDeployments(nextToken: string | null | undefined, requestBody: ListDeploymentsInput): Observable<ListDeploymentsOutput> {
 			return this.http.post<ListDeploymentsOutput>(this.baseUri + '#X-Amz-Target=CodeDeploy_20141006.ListDeployments?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

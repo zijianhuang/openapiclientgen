@@ -7,7 +7,7 @@ export namespace MyNS {
 	export interface CreateCloudFrontOriginAccessIdentityResult {
 
 		/** CloudFront origin access identity. */
-		CloudFrontOriginAccessIdentity?: CloudFrontOriginAccessIdentity;
+		CloudFrontOriginAccessIdentity?: CloudFrontOriginAccessIdentity | null;
 	}
 
 
@@ -17,7 +17,7 @@ export namespace MyNS {
 		S3CanonicalUserId: string;
 
 		/** Origin access identity configuration. Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource. */
-		CloudFrontOriginAccessIdentityConfig?: CloudFrontOriginAccessIdentityConfig;
+		CloudFrontOriginAccessIdentityConfig?: CloudFrontOriginAccessIdentityConfig | null;
 	}
 
 
@@ -47,7 +47,7 @@ export namespace MyNS {
 	export interface CreateDistributionResult {
 
 		/** A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery. */
-		Distribution?: Distribution;
+		Distribution?: Distribution | null;
 	}
 
 
@@ -71,7 +71,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		DistributionConfig: DistributionConfig;
-		AliasICPRecordals?: Array<AliasICPRecordal>;
+		AliasICPRecordals?: Array<AliasICPRecordal> | null;
 	}
 
 
@@ -79,23 +79,23 @@ export namespace MyNS {
 	export interface ActiveTrustedSigners {
 		Enabled: boolean;
 		Quantity: number;
-		Items?: Array<Signer>;
+		Items?: Array<Signer> | null;
 	}
 
 
 	/** A complex type that lists the AWS accounts that were included in the <code>TrustedSigners</code> complex type, as well as their active CloudFront key pair IDs, if any.  */
 	export interface Signer {
-		AwsAccountNumber?: string;
+		AwsAccountNumber?: string | null;
 
 		/** <p>A complex type that lists the active CloudFront key pairs, if any, that are associated with <code>AwsAccountNumber</code>. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p> */
-		KeyPairIds?: KeyPairIds;
+		KeyPairIds?: KeyPairIds | null;
 	}
 
 
 	/** <p>A complex type that lists the active CloudFront key pairs, if any, that are associated with <code>AwsAccountNumber</code>. </p> <p>For more information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p> */
 	export interface KeyPairIds {
 		Quantity: number;
-		Items?: Array<string>;
+		Items?: Array<string> | null;
 	}
 
 
@@ -104,8 +104,8 @@ export namespace MyNS {
 		CallerReference: string;
 
 		/** A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution. */
-		Aliases?: Aliases;
-		DefaultRootObject?: string;
+		Aliases?: Aliases | null;
+		DefaultRootObject?: string | null;
 
 		/**
 		 * A complex type that contains information about origins and origin groups for this distribution.
@@ -114,7 +114,7 @@ export namespace MyNS {
 		Origins: Origins;
 
 		/** A complex data type for the origin groups specified for a distribution. */
-		OriginGroups?: OriginGroups;
+		OriginGroups?: OriginGroups | null;
 
 		/**
 		 * A complex type that describes the default cache behavior if you don’t specify a <code>CacheBehavior</code> element or if request URLs don’t match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
@@ -123,32 +123,32 @@ export namespace MyNS {
 		DefaultCacheBehavior: DefaultCacheBehavior;
 
 		/** A complex type that contains zero or more <code>CacheBehavior</code> elements. */
-		CacheBehaviors?: CacheBehaviors;
+		CacheBehaviors?: CacheBehaviors | null;
 
 		/** <p>A complex type that controls:</p> <ul> <li> <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p> </li> <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul> <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
-		CustomErrorResponses?: CustomErrorResponses;
+		CustomErrorResponses?: CustomErrorResponses | null;
 		Comment: string;
 
 		/** A complex type that controls whether access logs are written for the distribution. */
-		Logging?: LoggingConfig;
-		PriceClass?: DistributionConfigPriceClass;
+		Logging?: LoggingConfig | null;
+		PriceClass?: DistributionConfigPriceClass | null;
 		Enabled: boolean;
 
 		/** <p>A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.</p> <p>If the distribution doesn’t use <code>Aliases</code> (also known as alternate domain names or CNAMEs)—that is, if the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>—set <code>CloudFrontDefaultCertificate</code> to <code>true</code> and leave all other fields empty.</p> <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), use the fields in this type to specify the following settings:</p> <ul> <li> <p>Which viewers the distribution accepts HTTPS connections from: only viewers that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a> (recommended), or all viewers including those that don’t support SNI.</p> <ul> <li> <p>To accept HTTPS connections from only viewers that support SNI, set <code>SSLSupportMethod</code> to <code>sni-only</code>. This is recommended. Most browsers and clients released after 2010 support SNI. </p> </li> <li> <p>To accept HTTPS connections from all viewers, including those that don’t support SNI, set <code>SSLSupportMethod</code> to <code>vip</code>. This is not recommended, and results in additional monthly charges from CloudFront. </p> </li> </ul> </li> <li> <p>The minimum SSL/TLS protocol version that the distribution can use to communicate with viewers. To specify a minimum version, choose a value for <code>MinimumProtocolVersion</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> </li> <li> <p>The location of the SSL/TLS certificate, <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS Certificate Manager (ACM)</a> (recommended) or <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS Identity and Access Management (AWS IAM)</a>. You specify the location by setting a value in one of the following fields (not both):</p> <ul> <li> <p> <code>ACMCertificateArn</code> </p> </li> <li> <p> <code>IAMCertificateId</code> </p> </li> </ul> </li> </ul> <p>All distributions support HTTPS connections from viewers. To require viewers to use HTTPS only, or to redirect them from HTTP to HTTPS, use <code>ViewerProtocolPolicy</code> in the <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>. To specify how CloudFront should use SSL/TLS to communicate with your custom origin, use <code>CustomOriginConfig</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https.html">Using HTTPS with CloudFront</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-alternate-domain-names.html"> Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
-		ViewerCertificate?: ViewerCertificate;
+		ViewerCertificate?: ViewerCertificate | null;
 
 		/** A complex type that identifies ways in which you want to restrict distribution of your content. */
-		Restrictions?: Restrictions;
-		WebACLId?: string;
-		HttpVersion?: DistributionConfigHttpVersion;
-		IsIPV6Enabled?: boolean;
+		Restrictions?: Restrictions | null;
+		WebACLId?: string | null;
+		HttpVersion?: DistributionConfigHttpVersion | null;
+		IsIPV6Enabled?: boolean | null;
 	}
 
 
 	/** A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.  */
 	export interface Aliases {
 		Quantity: number;
-		Items?: Array<string>;
+		Items?: Array<string> | null;
 	}
 
 
@@ -163,25 +163,25 @@ export namespace MyNS {
 	export interface Origin {
 		Id: string;
 		DomainName: string;
-		OriginPath?: string;
+		OriginPath?: string | null;
 
 		/** A complex type that contains the list of Custom Headers for each origin. */
-		CustomHeaders?: CustomHeaders;
+		CustomHeaders?: CustomHeaders | null;
 
 		/** A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin or an S3 bucket that is configured as a website endpoint, use the <code>CustomOriginConfig</code> element instead. */
-		S3OriginConfig?: S3OriginConfig;
+		S3OriginConfig?: S3OriginConfig | null;
 
 		/** A custom origin. A custom origin is any origin that is <i>not</i> an Amazon S3 bucket, with one exception. An Amazon S3 bucket that is <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">configured with static website hosting</a> <i>is</i> a custom origin. */
-		CustomOriginConfig?: CustomOriginConfig;
-		ConnectionAttempts?: number;
-		ConnectionTimeout?: number;
+		CustomOriginConfig?: CustomOriginConfig | null;
+		ConnectionAttempts?: number | null;
+		ConnectionTimeout?: number | null;
 	}
 
 
 	/** A complex type that contains the list of Custom Headers for each origin.  */
 	export interface CustomHeaders {
 		Quantity: number;
-		Items?: Array<OriginCustomHeader>;
+		Items?: Array<OriginCustomHeader> | null;
 	}
 
 
@@ -205,9 +205,9 @@ export namespace MyNS {
 		OriginProtocolPolicy: CustomOriginConfigOriginProtocolPolicy;
 
 		/** A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin. */
-		OriginSslProtocols?: OriginSslProtocols;
-		OriginReadTimeout?: number;
-		OriginKeepaliveTimeout?: number;
+		OriginSslProtocols?: OriginSslProtocols | null;
+		OriginReadTimeout?: number | null;
+		OriginKeepaliveTimeout?: number | null;
 	}
 
 	export enum CustomOriginConfigOriginProtocolPolicy { http_only = 0, match_viewer = 1, https_only = 2 }
@@ -227,7 +227,7 @@ export namespace MyNS {
 		Quantity: number;
 
 		/** List of origin groups for a distribution. */
-		Items?: Array<OriginGroup>;
+		Items?: Array<OriginGroup> | null;
 	}
 
 
@@ -312,15 +312,15 @@ export namespace MyNS {
 		MinTTL: number;
 
 		/** <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:</p> <ul> <li> <p>CloudFront forwards only <code>GET</code> and <code>HEAD</code> requests.</p> </li> <li> <p>CloudFront forwards only <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li> <li> <p>CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests.</p> </li> </ul> <p>If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you might not want users to have permissions to delete objects from your origin.</p> */
-		AllowedMethods?: AllowedMethods;
-		SmoothStreaming?: boolean;
-		DefaultTTL?: number;
-		MaxTTL?: number;
-		Compress?: boolean;
+		AllowedMethods?: AllowedMethods | null;
+		SmoothStreaming?: boolean | null;
+		DefaultTTL?: number | null;
+		MaxTTL?: number | null;
+		Compress?: boolean | null;
 
 		/** <p>A complex type that specifies a list of Lambda functions associations for a cache behavior.</p> <p>If you want to invoke one or more Lambda functions triggered by requests that match the <code>PathPattern</code> of the cache behavior, specify the applicable values for <code>Quantity</code> and <code>Items</code>. Note that there can be up to 4 <code>LambdaFunctionAssociation</code> items in this list (one for each possible value of <code>EventType</code>) and each <code>EventType</code> can be associated with the Lambda function only once.</p> <p>If you don't want to invoke any Lambda functions for the requests that match <code>PathPattern</code>, specify <code>0</code> for <code>Quantity</code> and omit <code>Items</code>. </p> */
-		LambdaFunctionAssociations?: LambdaFunctionAssociations;
-		FieldLevelEncryptionId?: string;
+		LambdaFunctionAssociations?: LambdaFunctionAssociations | null;
+		FieldLevelEncryptionId?: string | null;
 	}
 
 
@@ -335,10 +335,10 @@ export namespace MyNS {
 		Cookies: CookiePreference;
 
 		/** <p>A complex type that specifies the request headers, if any, that you want CloudFront to base caching on for this cache behavior. </p> <p>For the headers that you specify, CloudFront caches separate versions of a specified object based on the header values in viewer requests. For example, suppose viewer requests for <code>logo.jpg</code> contain a custom <code>product</code> header that has a value of either <code>acme</code> or <code>apex</code>, and you configure CloudFront to cache your content based on values in the <code>product</code> header. CloudFront forwards the <code>product</code> header to the origin and caches the response from the origin once for each header value. For more information about caching based on header values, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">How CloudFront Forwards and Caches Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
-		Headers?: Headers;
+		Headers?: Headers | null;
 
 		/** A complex type that contains information about the query string parameters that you want CloudFront to use for caching for a cache behavior. */
-		QueryStringCacheKeys?: QueryStringCacheKeys;
+		QueryStringCacheKeys?: QueryStringCacheKeys | null;
 	}
 
 
@@ -347,7 +347,7 @@ export namespace MyNS {
 		Forward: CookiePreferenceForward;
 
 		/** A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>. */
-		WhitelistedNames?: CookieNames;
+		WhitelistedNames?: CookieNames | null;
 	}
 
 	export enum CookiePreferenceForward { none = 0, whitelist = 1, all = 2 }
@@ -356,21 +356,21 @@ export namespace MyNS {
 	/** A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>. */
 	export interface CookieNames {
 		Quantity: number;
-		Items?: Array<string>;
+		Items?: Array<string> | null;
 	}
 
 
 	/** <p>A complex type that specifies the request headers, if any, that you want CloudFront to base caching on for this cache behavior. </p> <p>For the headers that you specify, CloudFront caches separate versions of a specified object based on the header values in viewer requests. For example, suppose viewer requests for <code>logo.jpg</code> contain a custom <code>product</code> header that has a value of either <code>acme</code> or <code>apex</code>, and you configure CloudFront to cache your content based on values in the <code>product</code> header. CloudFront forwards the <code>product</code> header to the origin and caches the response from the origin once for each header value. For more information about caching based on header values, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">How CloudFront Forwards and Caches Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
 	export interface Headers {
 		Quantity: number;
-		Items?: Array<string>;
+		Items?: Array<string> | null;
 	}
 
 
 	/** A complex type that contains information about the query string parameters that you want CloudFront to use for caching for a cache behavior.  */
 	export interface QueryStringCacheKeys {
 		Quantity: number;
-		Items?: Array<string>;
+		Items?: Array<string> | null;
 	}
 
 
@@ -378,7 +378,7 @@ export namespace MyNS {
 	export interface TrustedSigners {
 		Enabled: boolean;
 		Quantity: number;
-		Items?: Array<string>;
+		Items?: Array<string> | null;
 	}
 
 	export enum DefaultCacheBehaviorViewerProtocolPolicy { allow_all = 0, https_only = 1, redirect_to_https = 2 }
@@ -390,7 +390,7 @@ export namespace MyNS {
 		Items: Array<Method>;
 
 		/** <p>A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices:</p> <ul> <li> <p>CloudFront caches responses to <code>GET</code> and <code>HEAD</code> requests.</p> </li> <li> <p>CloudFront caches responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li> </ul> <p>If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers, and Origin headers for the responses to be cached correctly. </p> */
-		CachedMethods?: CachedMethods;
+		CachedMethods?: CachedMethods | null;
 	}
 
 	export enum Method { GET = 0, HEAD = 1, POST = 2, PUT = 3, PATCH = 4, OPTIONS = 5, DELETE = 6 }
@@ -406,7 +406,7 @@ export namespace MyNS {
 	/** <p>A complex type that specifies a list of Lambda functions associations for a cache behavior.</p> <p>If you want to invoke one or more Lambda functions triggered by requests that match the <code>PathPattern</code> of the cache behavior, specify the applicable values for <code>Quantity</code> and <code>Items</code>. Note that there can be up to 4 <code>LambdaFunctionAssociation</code> items in this list (one for each possible value of <code>EventType</code>) and each <code>EventType</code> can be associated with the Lambda function only once.</p> <p>If you don't want to invoke any Lambda functions for the requests that match <code>PathPattern</code>, specify <code>0</code> for <code>Quantity</code> and omit <code>Items</code>. </p> */
 	export interface LambdaFunctionAssociations {
 		Quantity: number;
-		Items?: Array<LambdaFunctionAssociation>;
+		Items?: Array<LambdaFunctionAssociation> | null;
 	}
 
 
@@ -414,7 +414,7 @@ export namespace MyNS {
 	export interface LambdaFunctionAssociation {
 		LambdaFunctionARN: string;
 		EventType: LambdaFunctionAssociationEventType;
-		IncludeBody?: boolean;
+		IncludeBody?: boolean | null;
 	}
 
 	export enum LambdaFunctionAssociationEventType { viewer_request = 0, viewer_response = 1, origin_request = 2, origin_response = 3 }
@@ -423,7 +423,7 @@ export namespace MyNS {
 	/** A complex type that contains zero or more <code>CacheBehavior</code> elements.  */
 	export interface CacheBehaviors {
 		Quantity: number;
-		Items?: Array<CacheBehavior>;
+		Items?: Array<CacheBehavior> | null;
 	}
 
 
@@ -447,15 +447,15 @@ export namespace MyNS {
 		MinTTL: number;
 
 		/** <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:</p> <ul> <li> <p>CloudFront forwards only <code>GET</code> and <code>HEAD</code> requests.</p> </li> <li> <p>CloudFront forwards only <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li> <li> <p>CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests.</p> </li> </ul> <p>If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you might not want users to have permissions to delete objects from your origin.</p> */
-		AllowedMethods?: AllowedMethods;
-		SmoothStreaming?: boolean;
-		DefaultTTL?: number;
-		MaxTTL?: number;
-		Compress?: boolean;
+		AllowedMethods?: AllowedMethods | null;
+		SmoothStreaming?: boolean | null;
+		DefaultTTL?: number | null;
+		MaxTTL?: number | null;
+		Compress?: boolean | null;
 
 		/** <p>A complex type that specifies a list of Lambda functions associations for a cache behavior.</p> <p>If you want to invoke one or more Lambda functions triggered by requests that match the <code>PathPattern</code> of the cache behavior, specify the applicable values for <code>Quantity</code> and <code>Items</code>. Note that there can be up to 4 <code>LambdaFunctionAssociation</code> items in this list (one for each possible value of <code>EventType</code>) and each <code>EventType</code> can be associated with the Lambda function only once.</p> <p>If you don't want to invoke any Lambda functions for the requests that match <code>PathPattern</code>, specify <code>0</code> for <code>Quantity</code> and omit <code>Items</code>. </p> */
-		LambdaFunctionAssociations?: LambdaFunctionAssociations;
-		FieldLevelEncryptionId?: string;
+		LambdaFunctionAssociations?: LambdaFunctionAssociations | null;
+		FieldLevelEncryptionId?: string | null;
 	}
 
 	export enum CacheBehaviorViewerProtocolPolicy { allow_all = 0, https_only = 1, redirect_to_https = 2 }
@@ -464,16 +464,16 @@ export namespace MyNS {
 	/** <p>A complex type that controls:</p> <ul> <li> <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p> </li> <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul> <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
 	export interface CustomErrorResponses {
 		Quantity: number;
-		Items?: Array<CustomErrorResponse>;
+		Items?: Array<CustomErrorResponse> | null;
 	}
 
 
 	/** <p>A complex type that controls:</p> <ul> <li> <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer. </p> </li> <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul> <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
 	export interface CustomErrorResponse {
 		ErrorCode: number;
-		ResponsePagePath?: string;
-		ResponseCode?: string;
-		ErrorCachingMinTTL?: number;
+		ResponsePagePath?: string | null;
+		ResponseCode?: string | null;
+		ErrorCachingMinTTL?: number | null;
 	}
 
 
@@ -490,13 +490,13 @@ export namespace MyNS {
 
 	/** <p>A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.</p> <p>If the distribution doesn’t use <code>Aliases</code> (also known as alternate domain names or CNAMEs)—that is, if the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>—set <code>CloudFrontDefaultCertificate</code> to <code>true</code> and leave all other fields empty.</p> <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), use the fields in this type to specify the following settings:</p> <ul> <li> <p>Which viewers the distribution accepts HTTPS connections from: only viewers that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a> (recommended), or all viewers including those that don’t support SNI.</p> <ul> <li> <p>To accept HTTPS connections from only viewers that support SNI, set <code>SSLSupportMethod</code> to <code>sni-only</code>. This is recommended. Most browsers and clients released after 2010 support SNI. </p> </li> <li> <p>To accept HTTPS connections from all viewers, including those that don’t support SNI, set <code>SSLSupportMethod</code> to <code>vip</code>. This is not recommended, and results in additional monthly charges from CloudFront. </p> </li> </ul> </li> <li> <p>The minimum SSL/TLS protocol version that the distribution can use to communicate with viewers. To specify a minimum version, choose a value for <code>MinimumProtocolVersion</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> </li> <li> <p>The location of the SSL/TLS certificate, <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS Certificate Manager (ACM)</a> (recommended) or <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS Identity and Access Management (AWS IAM)</a>. You specify the location by setting a value in one of the following fields (not both):</p> <ul> <li> <p> <code>ACMCertificateArn</code> </p> </li> <li> <p> <code>IAMCertificateId</code> </p> </li> </ul> </li> </ul> <p>All distributions support HTTPS connections from viewers. To require viewers to use HTTPS only, or to redirect them from HTTP to HTTPS, use <code>ViewerProtocolPolicy</code> in the <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>. To specify how CloudFront should use SSL/TLS to communicate with your custom origin, use <code>CustomOriginConfig</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https.html">Using HTTPS with CloudFront</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-alternate-domain-names.html"> Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
 	export interface ViewerCertificate {
-		CloudFrontDefaultCertificate?: boolean;
-		IAMCertificateId?: string;
-		ACMCertificateArn?: string;
-		SSLSupportMethod?: ViewerCertificateSSLSupportMethod;
-		MinimumProtocolVersion?: ViewerCertificateMinimumProtocolVersion;
-		Certificate?: string;
-		CertificateSource?: ViewerCertificateCertificateSource;
+		CloudFrontDefaultCertificate?: boolean | null;
+		IAMCertificateId?: string | null;
+		ACMCertificateArn?: string | null;
+		SSLSupportMethod?: ViewerCertificateSSLSupportMethod | null;
+		MinimumProtocolVersion?: ViewerCertificateMinimumProtocolVersion | null;
+		Certificate?: string | null;
+		CertificateSource?: ViewerCertificateCertificateSource | null;
 	}
 
 	export enum ViewerCertificateSSLSupportMethod { sni_only = 0, vip = 1 }
@@ -521,7 +521,7 @@ export namespace MyNS {
 	export interface GeoRestriction {
 		RestrictionType: GeoRestrictionRestrictionType;
 		Quantity: number;
-		Items?: Array<string>;
+		Items?: Array<string> | null;
 	}
 
 	export enum GeoRestrictionRestrictionType { blacklist = 0, whitelist = 1, none = 2 }
@@ -531,8 +531,8 @@ export namespace MyNS {
 
 	/** <p>AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions. The status is returned in the CloudFront response; you can't configure it yourself.</p> <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in China</i>.</p> */
 	export interface AliasICPRecordal {
-		CNAME?: string;
-		ICPRecordalStatus?: AliasICPRecordalICPRecordalStatus;
+		CNAME?: string | null;
+		ICPRecordalStatus?: AliasICPRecordalICPRecordalStatus | null;
 	}
 
 	export enum AliasICPRecordalICPRecordalStatus { APPROVED = 0, SUSPENDED = 1, PENDING = 2 }
@@ -669,13 +669,13 @@ export namespace MyNS {
 	export interface CreateDistributionWithTagsResult {
 
 		/** A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery. */
-		Distribution?: Distribution;
+		Distribution?: Distribution | null;
 	}
 
 
 	/**  A complex type that contains zero or more <code>Tag</code> elements. */
 	export interface Tags {
-		Items?: Array<Tag>;
+		Items?: Array<Tag> | null;
 	}
 
 
@@ -690,7 +690,7 @@ export namespace MyNS {
 		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Key: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export interface InvalidTagging {
@@ -699,7 +699,7 @@ export namespace MyNS {
 	export interface CreateFieldLevelEncryptionConfigResult {
 
 		/** A complex data type that includes the profile configurations and other options specified for field-level encryption. */
-		FieldLevelEncryption?: FieldLevelEncryption;
+		FieldLevelEncryption?: FieldLevelEncryption | null;
 	}
 
 
@@ -719,13 +719,13 @@ export namespace MyNS {
 	/** A complex data type that includes the profile configurations specified for field-level encryption.  */
 	export interface FieldLevelEncryptionConfig {
 		CallerReference: string;
-		Comment?: string;
+		Comment?: string | null;
 
 		/** Configuration for query argument-profile mapping for field-level encryption. */
-		QueryArgProfileConfig?: QueryArgProfileConfig;
+		QueryArgProfileConfig?: QueryArgProfileConfig | null;
 
 		/** The configuration for a field-level encryption content type-profile mapping. */
-		ContentTypeProfileConfig?: ContentTypeProfileConfig;
+		ContentTypeProfileConfig?: ContentTypeProfileConfig | null;
 	}
 
 
@@ -734,14 +734,14 @@ export namespace MyNS {
 		ForwardWhenQueryArgProfileIsUnknown: boolean;
 
 		/** Query argument-profile mapping for field-level encryption. */
-		QueryArgProfiles?: QueryArgProfiles;
+		QueryArgProfiles?: QueryArgProfiles | null;
 	}
 
 
 	/** Query argument-profile mapping for field-level encryption. */
 	export interface QueryArgProfiles {
 		Quantity: number;
-		Items?: Array<QueryArgProfile>;
+		Items?: Array<QueryArgProfile> | null;
 	}
 
 
@@ -757,21 +757,21 @@ export namespace MyNS {
 		ForwardWhenContentTypeIsUnknown: boolean;
 
 		/** Field-level encryption content type-profile. */
-		ContentTypeProfiles?: ContentTypeProfiles;
+		ContentTypeProfiles?: ContentTypeProfiles | null;
 	}
 
 
 	/** Field-level encryption content type-profile.  */
 	export interface ContentTypeProfiles {
 		Quantity: number;
-		Items?: Array<ContentTypeProfile>;
+		Items?: Array<ContentTypeProfile> | null;
 	}
 
 
 	/** A field-level encryption content type profile.  */
 	export interface ContentTypeProfile {
 		Format: ContentTypeProfileFormat;
-		ProfileId?: string;
+		ProfileId?: string | null;
 		ContentType: string;
 	}
 
@@ -798,7 +798,7 @@ export namespace MyNS {
 	export interface CreateFieldLevelEncryptionProfileResult {
 
 		/** A complex data type for field-level encryption profiles. */
-		FieldLevelEncryptionProfile?: FieldLevelEncryptionProfile;
+		FieldLevelEncryptionProfile?: FieldLevelEncryptionProfile | null;
 	}
 
 
@@ -819,7 +819,7 @@ export namespace MyNS {
 	export interface FieldLevelEncryptionProfileConfig {
 		Name: string;
 		CallerReference: string;
-		Comment?: string;
+		Comment?: string | null;
 
 		/**
 		 * Complex data type for field-level encryption profiles that includes all of the encryption entities.
@@ -832,7 +832,7 @@ export namespace MyNS {
 	/** Complex data type for field-level encryption profiles that includes all of the encryption entities.  */
 	export interface EncryptionEntities {
 		Quantity: number;
-		Items?: Array<EncryptionEntity>;
+		Items?: Array<EncryptionEntity> | null;
 	}
 
 
@@ -852,7 +852,7 @@ export namespace MyNS {
 	/** A complex data type that includes the field patterns to match for field-level encryption. */
 	export interface FieldPatterns {
 		Quantity: number;
-		Items?: Array<string>;
+		Items?: Array<string> | null;
 	}
 
 	export interface NoSuchPublicKey {
@@ -878,7 +878,7 @@ export namespace MyNS {
 	export interface CreateInvalidationResult {
 
 		/** An invalidation. */
-		Invalidation?: Invalidation;
+		Invalidation?: Invalidation | null;
 	}
 
 
@@ -911,7 +911,7 @@ export namespace MyNS {
 	/** A complex type that contains information about the objects that you want to invalidate. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.  */
 	export interface Paths {
 		Quantity: number;
-		Items?: Array<string>;
+		Items?: Array<string> | null;
 	}
 
 	export interface NoSuchDistribution {
@@ -926,7 +926,7 @@ export namespace MyNS {
 	export interface CreatePublicKeyResult {
 
 		/** A complex data type of public keys you add to CloudFront to use with features like field-level encryption. */
-		PublicKey?: PublicKey;
+		PublicKey?: PublicKey | null;
 	}
 
 
@@ -948,7 +948,7 @@ export namespace MyNS {
 		CallerReference: string;
 		Name: string;
 		EncodedKey: string;
-		Comment?: string;
+		Comment?: string | null;
 	}
 
 	export interface PublicKeyAlreadyExists {
@@ -962,7 +962,7 @@ export namespace MyNS {
 	export interface CreateStreamingDistributionResult {
 
 		/** A streaming distribution tells CloudFront where you want RTMP content to be delivered from, and the details about how to track and manage content delivery. */
-		StreamingDistribution?: StreamingDistribution;
+		StreamingDistribution?: StreamingDistribution | null;
 	}
 
 
@@ -971,7 +971,7 @@ export namespace MyNS {
 		Id: string;
 		ARN: string;
 		Status: string;
-		LastModifiedTime?: Date;
+		LastModifiedTime?: Date | null;
 		DomainName: string;
 
 		/**
@@ -999,18 +999,18 @@ export namespace MyNS {
 		S3Origin: S3Origin;
 
 		/** A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution. */
-		Aliases?: Aliases;
+		Aliases?: Aliases | null;
 		Comment: string;
 
 		/** A complex type that controls whether access logs are written for this streaming distribution. */
-		Logging?: StreamingLoggingConfig;
+		Logging?: StreamingLoggingConfig | null;
 
 		/**
 		 * <p>A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.</p> <p>If you want to require signed URLs in requests for objects in the target origin that match the <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.</p> <p>If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>.</p> <p>To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the updated distribution.</p> <p>For more information about updating the distribution configuration, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/DistributionConfig.html">DistributionConfig</a> in the <i>Amazon CloudFront API Reference</i>.</p>
 		 * Required
 		 */
 		TrustedSigners: TrustedSigners;
-		PriceClass?: DistributionConfigPriceClass;
+		PriceClass?: DistributionConfigPriceClass | null;
 		Enabled: boolean;
 	}
 
@@ -1043,7 +1043,7 @@ export namespace MyNS {
 	export interface CreateStreamingDistributionWithTagsResult {
 
 		/** A streaming distribution tells CloudFront where you want RTMP content to be delivered from, and the details about how to track and manage content delivery. */
-		StreamingDistribution?: StreamingDistribution;
+		StreamingDistribution?: StreamingDistribution | null;
 	}
 
 	export interface InvalidIfMatchVersion {
@@ -1081,7 +1081,7 @@ export namespace MyNS {
 	export interface GetCloudFrontOriginAccessIdentityResult {
 
 		/** CloudFront origin access identity. */
-		CloudFrontOriginAccessIdentity?: CloudFrontOriginAccessIdentity;
+		CloudFrontOriginAccessIdentity?: CloudFrontOriginAccessIdentity | null;
 	}
 
 
@@ -1089,7 +1089,7 @@ export namespace MyNS {
 	export interface GetCloudFrontOriginAccessIdentityConfigResult {
 
 		/** Origin access identity configuration. Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource. */
-		CloudFrontOriginAccessIdentityConfig?: CloudFrontOriginAccessIdentityConfig;
+		CloudFrontOriginAccessIdentityConfig?: CloudFrontOriginAccessIdentityConfig | null;
 	}
 
 
@@ -1097,7 +1097,7 @@ export namespace MyNS {
 	export interface GetDistributionResult {
 
 		/** A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery. */
-		Distribution?: Distribution;
+		Distribution?: Distribution | null;
 	}
 
 
@@ -1105,31 +1105,31 @@ export namespace MyNS {
 	export interface GetDistributionConfigResult {
 
 		/** A distribution configuration. */
-		DistributionConfig?: DistributionConfig;
+		DistributionConfig?: DistributionConfig | null;
 	}
 
 	export interface GetFieldLevelEncryptionResult {
 
 		/** A complex data type that includes the profile configurations and other options specified for field-level encryption. */
-		FieldLevelEncryption?: FieldLevelEncryption;
+		FieldLevelEncryption?: FieldLevelEncryption | null;
 	}
 
 	export interface GetFieldLevelEncryptionConfigResult {
 
 		/** A complex data type that includes the profile configurations specified for field-level encryption. */
-		FieldLevelEncryptionConfig?: FieldLevelEncryptionConfig;
+		FieldLevelEncryptionConfig?: FieldLevelEncryptionConfig | null;
 	}
 
 	export interface GetFieldLevelEncryptionProfileResult {
 
 		/** A complex data type for field-level encryption profiles. */
-		FieldLevelEncryptionProfile?: FieldLevelEncryptionProfile;
+		FieldLevelEncryptionProfile?: FieldLevelEncryptionProfile | null;
 	}
 
 	export interface GetFieldLevelEncryptionProfileConfigResult {
 
 		/** A complex data type of profiles for the field-level encryption. */
-		FieldLevelEncryptionProfileConfig?: FieldLevelEncryptionProfileConfig;
+		FieldLevelEncryptionProfileConfig?: FieldLevelEncryptionProfileConfig | null;
 	}
 
 
@@ -1137,7 +1137,7 @@ export namespace MyNS {
 	export interface GetInvalidationResult {
 
 		/** An invalidation. */
-		Invalidation?: Invalidation;
+		Invalidation?: Invalidation | null;
 	}
 
 	export interface NoSuchInvalidation {
@@ -1146,13 +1146,13 @@ export namespace MyNS {
 	export interface GetPublicKeyResult {
 
 		/** A complex data type of public keys you add to CloudFront to use with features like field-level encryption. */
-		PublicKey?: PublicKey;
+		PublicKey?: PublicKey | null;
 	}
 
 	export interface GetPublicKeyConfigResult {
 
 		/** Information about a public key you add to CloudFront to use with features like field-level encryption. */
-		PublicKeyConfig?: PublicKeyConfig;
+		PublicKeyConfig?: PublicKeyConfig | null;
 	}
 
 
@@ -1160,7 +1160,7 @@ export namespace MyNS {
 	export interface GetStreamingDistributionResult {
 
 		/** A streaming distribution tells CloudFront where you want RTMP content to be delivered from, and the details about how to track and manage content delivery. */
-		StreamingDistribution?: StreamingDistribution;
+		StreamingDistribution?: StreamingDistribution | null;
 	}
 
 
@@ -1168,7 +1168,7 @@ export namespace MyNS {
 	export interface GetStreamingDistributionConfigResult {
 
 		/** The RTMP distribution's configuration information. */
-		StreamingDistributionConfig?: StreamingDistributionConfig;
+		StreamingDistributionConfig?: StreamingDistributionConfig | null;
 	}
 
 
@@ -1176,18 +1176,18 @@ export namespace MyNS {
 	export interface ListCloudFrontOriginAccessIdentitiesResult {
 
 		/** Lists the origin access identities for CloudFront.Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/origin-access-identity/cloudfront</code> resource. The response includes a <code>CloudFrontOriginAccessIdentityList</code> element with zero or more <code>CloudFrontOriginAccessIdentitySummary</code> child elements. By default, your entire list of origin access identities is returned in one single page. If the list is long, you can paginate it using the <code>MaxItems</code> and <code>Marker</code> parameters. */
-		CloudFrontOriginAccessIdentityList?: CloudFrontOriginAccessIdentityList;
+		CloudFrontOriginAccessIdentityList?: CloudFrontOriginAccessIdentityList | null;
 	}
 
 
 	/** Lists the origin access identities for CloudFront.Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/origin-access-identity/cloudfront</code> resource. The response includes a <code>CloudFrontOriginAccessIdentityList</code> element with zero or more <code>CloudFrontOriginAccessIdentitySummary</code> child elements. By default, your entire list of origin access identities is returned in one single page. If the list is long, you can paginate it using the <code>MaxItems</code> and <code>Marker</code> parameters. */
 	export interface CloudFrontOriginAccessIdentityList {
 		Marker: string;
-		NextMarker?: string;
+		NextMarker?: string | null;
 		MaxItems: number;
 		IsTruncated: boolean;
 		Quantity: number;
-		Items?: Array<CloudFrontOriginAccessIdentitySummary>;
+		Items?: Array<CloudFrontOriginAccessIdentitySummary> | null;
 	}
 
 
@@ -1203,18 +1203,18 @@ export namespace MyNS {
 	export interface ListDistributionsResult {
 
 		/** A distribution list. */
-		DistributionList?: DistributionList;
+		DistributionList?: DistributionList | null;
 	}
 
 
 	/** A distribution list. */
 	export interface DistributionList {
 		Marker: string;
-		NextMarker?: string;
+		NextMarker?: string | null;
 		MaxItems: number;
 		IsTruncated: boolean;
 		Quantity: number;
-		Items?: Array<DistributionSummary>;
+		Items?: Array<DistributionSummary> | null;
 	}
 
 
@@ -1239,7 +1239,7 @@ export namespace MyNS {
 		Origins: Origins;
 
 		/** A complex data type for the origin groups specified for a distribution. */
-		OriginGroups?: OriginGroups;
+		OriginGroups?: OriginGroups | null;
 
 		/**
 		 * A complex type that describes the default cache behavior if you don’t specify a <code>CacheBehavior</code> element or if request URLs don’t match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
@@ -1276,7 +1276,7 @@ export namespace MyNS {
 		WebACLId: string;
 		HttpVersion: DistributionSummaryHttpVersion;
 		IsIPV6Enabled: boolean;
-		AliasICPRecordals?: Array<AliasICPRecordal>;
+		AliasICPRecordals?: Array<AliasICPRecordal> | null;
 	}
 
 	export enum DistributionSummaryHttpVersion { http1_1 = 0, http2 = 1 }
@@ -1286,22 +1286,22 @@ export namespace MyNS {
 	export interface ListDistributionsByWebACLIdResult {
 
 		/** A distribution list. */
-		DistributionList?: DistributionList;
+		DistributionList?: DistributionList | null;
 	}
 
 	export interface ListFieldLevelEncryptionConfigsResult {
 
 		/** List of field-level encrpytion configurations. */
-		FieldLevelEncryptionList?: FieldLevelEncryptionList;
+		FieldLevelEncryptionList?: FieldLevelEncryptionList | null;
 	}
 
 
 	/** List of field-level encrpytion configurations. */
 	export interface FieldLevelEncryptionList {
-		NextMarker?: string;
+		NextMarker?: string | null;
 		MaxItems: number;
 		Quantity: number;
-		Items?: Array<FieldLevelEncryptionSummary>;
+		Items?: Array<FieldLevelEncryptionSummary> | null;
 	}
 
 
@@ -1309,28 +1309,28 @@ export namespace MyNS {
 	export interface FieldLevelEncryptionSummary {
 		Id: string;
 		LastModifiedTime: Date;
-		Comment?: string;
+		Comment?: string | null;
 
 		/** Configuration for query argument-profile mapping for field-level encryption. */
-		QueryArgProfileConfig?: QueryArgProfileConfig;
+		QueryArgProfileConfig?: QueryArgProfileConfig | null;
 
 		/** The configuration for a field-level encryption content type-profile mapping. */
-		ContentTypeProfileConfig?: ContentTypeProfileConfig;
+		ContentTypeProfileConfig?: ContentTypeProfileConfig | null;
 	}
 
 	export interface ListFieldLevelEncryptionProfilesResult {
 
 		/** List of field-level encryption profiles. */
-		FieldLevelEncryptionProfileList?: FieldLevelEncryptionProfileList;
+		FieldLevelEncryptionProfileList?: FieldLevelEncryptionProfileList | null;
 	}
 
 
 	/** List of field-level encryption profiles. */
 	export interface FieldLevelEncryptionProfileList {
-		NextMarker?: string;
+		NextMarker?: string | null;
 		MaxItems: number;
 		Quantity: number;
-		Items?: Array<FieldLevelEncryptionProfileSummary>;
+		Items?: Array<FieldLevelEncryptionProfileSummary> | null;
 	}
 
 
@@ -1345,7 +1345,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		EncryptionEntities: EncryptionEntities;
-		Comment?: string;
+		Comment?: string | null;
 	}
 
 
@@ -1353,18 +1353,18 @@ export namespace MyNS {
 	export interface ListInvalidationsResult {
 
 		/** The <code>InvalidationList</code> complex type describes the list of invalidation objects. For more information about invalidation, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating Objects (Web Distributions Only)</a> in the <i>Amazon CloudFront Developer Guide</i>. */
-		InvalidationList?: InvalidationList;
+		InvalidationList?: InvalidationList | null;
 	}
 
 
 	/** The <code>InvalidationList</code> complex type describes the list of invalidation objects. For more information about invalidation, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating Objects (Web Distributions Only)</a> in the <i>Amazon CloudFront Developer Guide</i>. */
 	export interface InvalidationList {
 		Marker: string;
-		NextMarker?: string;
+		NextMarker?: string | null;
 		MaxItems: number;
 		IsTruncated: boolean;
 		Quantity: number;
-		Items?: Array<InvalidationSummary>;
+		Items?: Array<InvalidationSummary> | null;
 	}
 
 
@@ -1378,16 +1378,16 @@ export namespace MyNS {
 	export interface ListPublicKeysResult {
 
 		/** A list of public keys you've added to CloudFront to use with features like field-level encryption. */
-		PublicKeyList?: PublicKeyList;
+		PublicKeyList?: PublicKeyList | null;
 	}
 
 
 	/** A list of public keys you've added to CloudFront to use with features like field-level encryption. */
 	export interface PublicKeyList {
-		NextMarker?: string;
+		NextMarker?: string | null;
 		MaxItems: number;
 		Quantity: number;
-		Items?: Array<PublicKeySummary>;
+		Items?: Array<PublicKeySummary> | null;
 	}
 
 
@@ -1397,7 +1397,7 @@ export namespace MyNS {
 		Name: string;
 		CreatedTime: Date;
 		EncodedKey: string;
-		Comment?: string;
+		Comment?: string | null;
 	}
 
 
@@ -1405,18 +1405,18 @@ export namespace MyNS {
 	export interface ListStreamingDistributionsResult {
 
 		/** A streaming distribution list. */
-		StreamingDistributionList?: StreamingDistributionList;
+		StreamingDistributionList?: StreamingDistributionList | null;
 	}
 
 
 	/** A streaming distribution list.  */
 	export interface StreamingDistributionList {
 		Marker: string;
-		NextMarker?: string;
+		NextMarker?: string | null;
 		MaxItems: number;
 		IsTruncated: boolean;
 		Quantity: number;
-		Items?: Array<StreamingDistributionSummary>;
+		Items?: Array<StreamingDistributionSummary> | null;
 	}
 
 
@@ -1469,7 +1469,7 @@ export namespace MyNS {
 	export interface UpdateCloudFrontOriginAccessIdentityResult {
 
 		/** CloudFront origin access identity. */
-		CloudFrontOriginAccessIdentity?: CloudFrontOriginAccessIdentity;
+		CloudFrontOriginAccessIdentity?: CloudFrontOriginAccessIdentity | null;
 	}
 
 	export interface IllegalUpdate {
@@ -1480,25 +1480,25 @@ export namespace MyNS {
 	export interface UpdateDistributionResult {
 
 		/** A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery. */
-		Distribution?: Distribution;
+		Distribution?: Distribution | null;
 	}
 
 	export interface UpdateFieldLevelEncryptionConfigResult {
 
 		/** A complex data type that includes the profile configurations and other options specified for field-level encryption. */
-		FieldLevelEncryption?: FieldLevelEncryption;
+		FieldLevelEncryption?: FieldLevelEncryption | null;
 	}
 
 	export interface UpdateFieldLevelEncryptionProfileResult {
 
 		/** A complex data type for field-level encryption profiles. */
-		FieldLevelEncryptionProfile?: FieldLevelEncryptionProfile;
+		FieldLevelEncryptionProfile?: FieldLevelEncryptionProfile | null;
 	}
 
 	export interface UpdatePublicKeyResult {
 
 		/** A complex data type of public keys you add to CloudFront to use with features like field-level encryption. */
-		PublicKey?: PublicKey;
+		PublicKey?: PublicKey | null;
 	}
 
 	export interface CannotChangeImmutablePublicKeyFields {
@@ -1509,7 +1509,7 @@ export namespace MyNS {
 	export interface UpdateStreamingDistributionResult {
 
 		/** A streaming distribution tells CloudFront where you want RTMP content to be delivered from, and the details about how to track and manage content delivery. */
-		StreamingDistribution?: StreamingDistribution;
+		StreamingDistribution?: StreamingDistribution | null;
 	}
 
 	export enum ICPRecordalStatus { APPROVED = 0, SUSPENDED = 1, PENDING = 2 }
@@ -1778,7 +1778,7 @@ export namespace MyNS {
 
 	/**  A complex type that contains zero or more <code>Tag</code> elements. */
 	export interface TagKeys {
-		Items?: Array<string>;
+		Items?: Array<string> | null;
 	}
 
 
@@ -1875,7 +1875,7 @@ export namespace MyNS {
 		 * @param {string} MaxItems The maximum number of origin access identities you want in the response body. 
 		 * @return {void} Success
 		 */
-		ListCloudFrontOriginAccessIdentities2019_03_26(Marker: string, MaxItems: string): Observable<HttpResponse<string>> {
+		ListCloudFrontOriginAccessIdentities2019_03_26(Marker: string | null | undefined, MaxItems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2019-03-26/origin-access-identity/cloudfront?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1886,7 +1886,7 @@ export namespace MyNS {
 		 * @param {string} MaxItems The maximum number of distributions you want in the response body.
 		 * @return {void} Success
 		 */
-		ListDistributions2019_03_26(Marker: string, MaxItems: string): Observable<HttpResponse<string>> {
+		ListDistributions2019_03_26(Marker: string | null | undefined, MaxItems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2019-03-26/distribution?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1897,7 +1897,7 @@ export namespace MyNS {
 		 * @param {string} MaxItems The maximum number of field-level encryption configurations you want in the response body. 
 		 * @return {void} Success
 		 */
-		ListFieldLevelEncryptionConfigs2019_03_26(Marker: string, MaxItems: string): Observable<HttpResponse<string>> {
+		ListFieldLevelEncryptionConfigs2019_03_26(Marker: string | null | undefined, MaxItems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2019-03-26/field-level-encryption?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1908,7 +1908,7 @@ export namespace MyNS {
 		 * @param {string} MaxItems The maximum number of field-level encryption profiles you want in the response body. 
 		 * @return {void} Success
 		 */
-		ListFieldLevelEncryptionProfiles2019_03_26(Marker: string, MaxItems: string): Observable<HttpResponse<string>> {
+		ListFieldLevelEncryptionProfiles2019_03_26(Marker: string | null | undefined, MaxItems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2019-03-26/field-level-encryption-profile?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1920,7 +1920,7 @@ export namespace MyNS {
 		 * @param {string} MaxItems The maximum number of invalidation batches that you want in the response body.
 		 * @return {void} Success
 		 */
-		ListInvalidations2019_03_26(DistributionId: string, Marker: string, MaxItems: string): Observable<HttpResponse<string>> {
+		ListInvalidations2019_03_26(DistributionId: string, Marker: string | null | undefined, MaxItems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2019-03-26/distribution/' + (DistributionId == null ? '' : encodeURIComponent(DistributionId)) + '/invalidation&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1931,7 +1931,7 @@ export namespace MyNS {
 		 * @param {string} MaxItems The maximum number of public keys you want in the response body. 
 		 * @return {void} Success
 		 */
-		ListPublicKeys2019_03_26(Marker: string, MaxItems: string): Observable<HttpResponse<string>> {
+		ListPublicKeys2019_03_26(Marker: string | null | undefined, MaxItems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2019-03-26/public-key?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1942,7 +1942,7 @@ export namespace MyNS {
 		 * @param {string} MaxItems The value that you provided for the <code>MaxItems</code> request parameter.
 		 * @return {void} Success
 		 */
-		ListStreamingDistributions2019_03_26(Marker: string, MaxItems: string): Observable<HttpResponse<string>> {
+		ListStreamingDistributions2019_03_26(Marker: string | null | undefined, MaxItems: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2019-03-26/streaming-distribution?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -2145,7 +2145,7 @@ export namespace MyNS {
 		 * @param {string} WebACLId The ID of the AWS WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL. 
 		 * @return {void} Success
 		 */
-		ListDistributionsByWebACLId2019_03_26(Marker: string, MaxItems: string, WebACLId: string): Observable<HttpResponse<string>> {
+		ListDistributionsByWebACLId2019_03_26(Marker: string | null | undefined, MaxItems: string | null | undefined, WebACLId: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + '2019-03-26/distributionsByWebACLId/' + (WebACLId == null ? '' : encodeURIComponent(WebACLId)) + '?Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxItems=' + (MaxItems == null ? '' : encodeURIComponent(MaxItems)), { observe: 'response', responseType: 'text' });
 		}
 

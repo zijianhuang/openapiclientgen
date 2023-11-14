@@ -5,7 +5,7 @@ export namespace MyNS {
 	export interface Pet {
 		id: number;
 		name: string;
-		tag?: string;
+		tag?: string | null;
 	}
 
 	export interface Error {
@@ -24,7 +24,7 @@ export namespace MyNS {
 		 * @param {number} limit How many items to return at one time (max 100)
 		 * @return {Array<Pet>} A paged array of pets
 		 */
-		ListPets(limit: number): Observable<Array<Pet>> {
+		ListPets(limit: number | null | undefined): Observable<Array<Pet>> {
 			return this.http.get<Array<Pet>>(this.baseUri + 'pets?limit=' + limit, {});
 		}
 

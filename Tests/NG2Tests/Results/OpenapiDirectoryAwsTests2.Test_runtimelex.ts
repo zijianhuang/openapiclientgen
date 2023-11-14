@@ -3,10 +3,10 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface DeleteSessionResponse {
-		botName?: string;
-		botAlias?: string;
-		userId?: string;
-		sessionId?: string;
+		botName?: string | null;
+		botAlias?: string | null;
+		userId?: string | null;
+		sessionId?: string | null;
 	}
 
 	export interface NotFoundException {
@@ -25,24 +25,24 @@ export namespace MyNS {
 	}
 
 	export interface GetSessionResponse {
-		recentIntentSummaryView?: Array<IntentSummary>;
-		sessionAttributes?: StringMap;
-		sessionId?: string;
+		recentIntentSummaryView?: Array<IntentSummary> | null;
+		sessionAttributes?: StringMap | null;
+		sessionId?: string | null;
 
 		/** Describes the next action that the bot should take in its interaction with the user and provides information about the context in which the action takes place. Use the <code>DialogAction</code> data type to set the interaction to a specific state, or to return the interaction to a previous state. */
-		dialogAction?: DialogAction;
+		dialogAction?: DialogAction | null;
 	}
 
 
 	/** Provides information about the state of an intent. You can use this information to get the current state of an intent so that you can process the intent, or so that you can return the intent to its previous state. */
 	export interface IntentSummary {
-		intentName?: string;
-		checkpointLabel?: string;
-		slots?: StringMap;
-		confirmationStatus?: IntentSummaryConfirmationStatus;
+		intentName?: string | null;
+		checkpointLabel?: string | null;
+		slots?: StringMap | null;
+		confirmationStatus?: IntentSummaryConfirmationStatus | null;
 		dialogActionType: IntentSummaryDialogActionType;
-		fulfillmentState?: IntentSummaryFulfillmentState;
-		slotToElicit?: string;
+		fulfillmentState?: IntentSummaryFulfillmentState | null;
+		slotToElicit?: string | null;
 	}
 
 	export interface StringMap {
@@ -58,18 +58,18 @@ export namespace MyNS {
 	/** Describes the next action that the bot should take in its interaction with the user and provides information about the context in which the action takes place. Use the <code>DialogAction</code> data type to set the interaction to a specific state, or to return the interaction to a previous state. */
 	export interface DialogAction {
 		type: IntentSummaryDialogActionType;
-		intentName?: string;
-		slots?: StringMap;
-		slotToElicit?: string;
-		fulfillmentState?: IntentSummaryFulfillmentState;
-		message?: string;
-		messageFormat?: DialogActionMessageFormat;
+		intentName?: string | null;
+		slots?: StringMap | null;
+		slotToElicit?: string | null;
+		fulfillmentState?: IntentSummaryFulfillmentState | null;
+		message?: string | null;
+		messageFormat?: DialogActionMessageFormat | null;
 	}
 
 	export enum DialogActionMessageFormat { PlainText = 0, CustomPayload = 1, SSML = 2, Composite = 3 }
 
 	export interface PostContentResponse {
-		audioStream?: string;
+		audioStream?: string | null;
 	}
 
 	export interface UnsupportedMediaTypeException {
@@ -91,27 +91,27 @@ export namespace MyNS {
 	}
 
 	export interface PostTextResponse {
-		intentName?: string;
-		slots?: StringMap;
-		sessionAttributes?: StringMap;
-		message?: string;
+		intentName?: string | null;
+		slots?: StringMap | null;
+		sessionAttributes?: StringMap | null;
+		message?: string | null;
 
 		/** <p>The sentiment expressed in an utterance.</p> <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field structure contains the result of the analysis.</p> */
-		sentimentResponse?: SentimentResponse;
-		messageFormat?: DialogActionMessageFormat;
-		dialogState?: PostTextResponseDialogState;
-		slotToElicit?: string;
+		sentimentResponse?: SentimentResponse | null;
+		messageFormat?: DialogActionMessageFormat | null;
+		dialogState?: PostTextResponseDialogState | null;
+		slotToElicit?: string | null;
 
 		/** If you configure a response card when creating your bots, Amazon Lex substitutes the session attributes and slot values that are available, and then returns it. The response card can also come from a Lambda function ( <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an intent). */
-		responseCard?: ResponseCard;
-		sessionId?: string;
+		responseCard?: ResponseCard | null;
+		sessionId?: string | null;
 	}
 
 
 	/** <p>The sentiment expressed in an utterance.</p> <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field structure contains the result of the analysis.</p> */
 	export interface SentimentResponse {
-		sentimentLabel?: string;
-		sentimentScore?: string;
+		sentimentLabel?: string | null;
+		sentimentScore?: string | null;
 	}
 
 	export enum PostTextResponseDialogState { ElicitIntent = 0, ConfirmIntent = 1, ElicitSlot = 2, Fulfilled = 3, ReadyForFulfillment = 4, Failed = 5 }
@@ -119,9 +119,9 @@ export namespace MyNS {
 
 	/** If you configure a response card when creating your bots, Amazon Lex substitutes the session attributes and slot values that are available, and then returns it. The response card can also come from a Lambda function ( <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an intent). */
 	export interface ResponseCard {
-		version?: string;
-		contentType?: ResponseCardContentType;
-		genericAttachments?: Array<GenericAttachment>;
+		version?: string | null;
+		contentType?: ResponseCardContentType | null;
+		genericAttachments?: Array<GenericAttachment> | null;
 	}
 
 	export enum ResponseCardContentType { application_vnd_amazonaws_card_generic = 0 }
@@ -129,11 +129,11 @@ export namespace MyNS {
 
 	/** Represents an option rendered to the user when a prompt is shown. It could be an image, a button, a link, or text.  */
 	export interface GenericAttachment {
-		title?: string;
-		subTitle?: string;
-		attachmentLinkUrl?: string;
-		imageUrl?: string;
-		buttons?: Array<Button>;
+		title?: string | null;
+		subTitle?: string | null;
+		attachmentLinkUrl?: string | null;
+		imageUrl?: string | null;
+		buttons?: Array<Button> | null;
 	}
 
 
@@ -144,7 +144,7 @@ export namespace MyNS {
 	}
 
 	export interface PutSessionResponse {
-		audioStream?: string;
+		audioStream?: string | null;
 	}
 
 	export enum DialogActionType { ElicitIntent = 0, ConfirmIntent = 1, ElicitSlot = 2, Close = 3, Delegate = 4 }
@@ -170,17 +170,17 @@ export namespace MyNS {
 	}
 
 	export interface PostTextRequest {
-		sessionAttributes?: StringMap;
-		requestAttributes?: StringMap;
+		sessionAttributes?: StringMap | null;
+		requestAttributes?: StringMap | null;
 		inputText: string;
 	}
 
 	export interface PutSessionRequest {
-		sessionAttributes?: StringMap;
+		sessionAttributes?: StringMap | null;
 
 		/** Describes the next action that the bot should take in its interaction with the user and provides information about the context in which the action takes place. Use the <code>DialogAction</code> data type to set the interaction to a specific state, or to return the interaction to a previous state. */
-		dialogAction?: DialogAction;
-		recentIntentSummaryView?: Array<IntentSummary>;
+		dialogAction?: DialogAction | null;
+		recentIntentSummaryView?: Array<IntentSummary> | null;
 	}
 
 	@Injectable()
@@ -221,7 +221,7 @@ export namespace MyNS {
 		 * @param {string} checkpointLabelFilter <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p> <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
 		 * @return {GetSessionResponse} Success
 		 */
-		GetSession(botName: string, botAlias: string, userId: string, checkpointLabelFilter: string): Observable<GetSessionResponse> {
+		GetSession(botName: string, botAlias: string, userId: string, checkpointLabelFilter: string | null | undefined): Observable<GetSessionResponse> {
 			return this.http.get<GetSessionResponse>(this.baseUri + 'bot/' + (botName == null ? '' : encodeURIComponent(botName)) + '/alias/' + (botAlias == null ? '' : encodeURIComponent(botAlias)) + '/user/' + (userId == null ? '' : encodeURIComponent(userId)) + '/session/&checkpointLabelFilter=' + (checkpointLabelFilter == null ? '' : encodeURIComponent(checkpointLabelFilter)), {});
 		}
 
@@ -253,27 +253,27 @@ export namespace MyNS {
 	export interface PutSessionPostBody {
 
 		/** Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application. */
-		sessionAttributes?: {[id: string]: string };
+		sessionAttributes?: {[id: string]: string } | null;
 
 		/** Describes the next action that the bot should take in its interaction with the user and provides information about the context in which the action takes place. Use the <code>DialogAction</code> data type to set the interaction to a specific state, or to return the interaction to a previous state. */
-		dialogAction?: PutSessionPostBodyDialogAction;
+		dialogAction?: PutSessionPostBodyDialogAction | null;
 
 		/**
 		 * <p>A summary of the recent intents for the bot. You can use the intent summary view to set a checkpoint label on an intent and modify attributes of intents. You can also use it to remove or add intent summary objects to the list.</p> <p>An intent that you modify or add to the list must make sense for the bot. For example, the intent name must be valid for the bot. You must provide valid values for:</p> <ul> <li> <p> <code>intentName</code> </p> </li> <li> <p>slot names</p> </li> <li> <p> <code>slotToElict</code> </p> </li> </ul> <p>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code> request, the contents of the new summary view replaces the old summary view. For example, if a <code>GetSession</code> request returns three intents in the summary view and you call <code>PutSession</code> with one intent in the summary view, the next call to <code>GetSession</code> will only return one intent.</p>
 		 * Minimum items: 0
 		 * Maximum items: 3
 		 */
-		recentIntentSummaryView?: Array<IntentSummary>;
+		recentIntentSummaryView?: Array<IntentSummary> | null;
 	}
 
 	export interface PutSessionPostBodyDialogAction {
-		type?: IntentSummaryDialogActionType;
-		intentName?: string;
-		slots?: StringMap;
-		slotToElicit?: string;
-		fulfillmentState?: IntentSummaryFulfillmentState;
-		message?: string;
-		messageFormat?: DialogActionMessageFormat;
+		type?: IntentSummaryDialogActionType | null;
+		intentName?: string | null;
+		slots?: StringMap | null;
+		slotToElicit?: string | null;
+		fulfillmentState?: IntentSummaryFulfillmentState | null;
+		message?: string | null;
+		messageFormat?: DialogActionMessageFormat | null;
 	}
 
 	export interface PostContentPostBody {
@@ -288,10 +288,10 @@ export namespace MyNS {
 	export interface PostTextPostBody {
 
 		/** <p>Application-specific information passed between Amazon Lex and a client application.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p> */
-		sessionAttributes?: {[id: string]: string };
+		sessionAttributes?: {[id: string]: string } | null;
 
 		/** <p>Request-specific information passed between Amazon Lex and a client application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p> */
-		requestAttributes?: {[id: string]: string };
+		requestAttributes?: {[id: string]: string } | null;
 
 		/**
 		 * The text that the user entered (Amazon Lex interprets this text).

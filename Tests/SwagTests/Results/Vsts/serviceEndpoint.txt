@@ -1606,14 +1606,14 @@ namespace MyNS
 		public System.Nullable<System.Int32> Count { get; set; }
 	}
 	
-	public partial class Misc
+	public partial class MyClient
 	{
 		
 		private System.Net.Http.HttpClient client;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public MyClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -1623,6 +1623,82 @@ namespace MyNS
 
 			this.client = client;
 			this.jsonSerializerSettings = jsonSerializerSettings;
+		}
+		
+		/// <summary>
+		/// Update the service endpoints.
+		/// Endpoints_Update_Service_Endpoints {organization}/_apis/serviceendpoint/endpoints
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.4' to use this version of the api.</param>
+		/// <param name="requestBody">Names of the service endpoints to update.</param>
+		/// <returns>successful operation</returns>
+		public async Task<ServiceEndpoint[]> Endpoints_Update_Service_EndpointsAsync(string organization, string api_version, ServiceEndpoint[] requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ServiceEndpoint[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Update the service endpoints.
+		/// Endpoints_Update_Service_Endpoints {organization}/_apis/serviceendpoint/endpoints
+		/// </summary>
+		/// <param name="organization">The name of the Azure DevOps organization.</param>
+		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.4' to use this version of the api.</param>
+		/// <param name="requestBody">Names of the service endpoints to update.</param>
+		/// <returns>successful operation</returns>
+		public ServiceEndpoint[] Endpoints_Update_Service_Endpoints(string organization, string api_version, ServiceEndpoint[] requestBody)
+		{
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ServiceEndpoint[]>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
 		}
 		
 		/// <summary>
@@ -1698,16 +1774,14 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Update the service endpoints.
-		/// Endpoints_Update_Service_Endpoints {organization}/_apis/serviceendpoint/endpoints
+		/// Endpoints_Update_Service_Endpoint {organization}/_apis/serviceendpoint/endpoints/{endpointId}
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.4' to use this version of the api.</param>
-		/// <param name="requestBody">Names of the service endpoints to update.</param>
 		/// <returns>successful operation</returns>
-		public async Task<ServiceEndpoint[]> Endpoints_Update_Service_EndpointsAsync(string organization, string api_version, ServiceEndpoint[] requestBody)
+		public async Task<ServiceEndpoint> Endpoints_Update_Service_EndpointAsync(string organization, string endpointId, string operation, string api_version, ServiceEndpoint requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints/"+ (endpointId==null? "" : Uri.EscapeDataString(endpointId))+"&operation=" + (operation==null? "" : Uri.EscapeDataString(operation))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1724,7 +1798,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ServiceEndpoint[]>(jsonReader);
+				return serializer.Deserialize<ServiceEndpoint>(jsonReader);
 				}
 			}
 			finally
@@ -1736,16 +1810,14 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Update the service endpoints.
-		/// Endpoints_Update_Service_Endpoints {organization}/_apis/serviceendpoint/endpoints
+		/// Endpoints_Update_Service_Endpoint {organization}/_apis/serviceendpoint/endpoints/{endpointId}
 		/// </summary>
 		/// <param name="organization">The name of the Azure DevOps organization.</param>
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.4' to use this version of the api.</param>
-		/// <param name="requestBody">Names of the service endpoints to update.</param>
 		/// <returns>successful operation</returns>
-		public ServiceEndpoint[] Endpoints_Update_Service_Endpoints(string organization, string api_version, ServiceEndpoint[] requestBody)
+		public ServiceEndpoint Endpoints_Update_Service_Endpoint(string organization, string endpointId, string operation, string api_version, ServiceEndpoint requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints/"+ (endpointId==null? "" : Uri.EscapeDataString(endpointId))+"&operation=" + (operation==null? "" : Uri.EscapeDataString(operation))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1762,7 +1834,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ServiceEndpoint[]>(jsonReader);
+				return serializer.Deserialize<ServiceEndpoint>(jsonReader);
 				}
 			}
 			finally
@@ -1870,78 +1942,6 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Endpoints_Update_Service_Endpoint {organization}/_apis/serviceendpoint/endpoints/{endpointId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.4' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public async Task<ServiceEndpoint> Endpoints_Update_Service_EndpointAsync(string organization, string endpointId, string operation, string api_version, ServiceEndpoint requestBody)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints/"+ (endpointId==null? "" : Uri.EscapeDataString(endpointId))+"&operation=" + (operation==null? "" : Uri.EscapeDataString(operation))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ServiceEndpoint>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Endpoints_Update_Service_Endpoint {organization}/_apis/serviceendpoint/endpoints/{endpointId}
-		/// </summary>
-		/// <param name="organization">The name of the Azure DevOps organization.</param>
-		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.4' to use this version of the api.</param>
-		/// <returns>successful operation</returns>
-		public ServiceEndpoint Endpoints_Update_Service_Endpoint(string organization, string endpointId, string operation, string api_version, ServiceEndpoint requestBody)
-		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints/"+ (endpointId==null? "" : Uri.EscapeDataString(endpointId))+"&operation=" + (operation==null? "" : Uri.EscapeDataString(operation))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<ServiceEndpoint>(jsonReader);
-				}
 			}
 			finally
 			{

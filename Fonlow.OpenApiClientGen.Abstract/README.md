@@ -1,0 +1,1 @@
+Abstract classes for generating TypeScript codes through plugins.

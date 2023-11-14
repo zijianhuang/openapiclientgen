@@ -13,14 +13,14 @@ export namespace MyNS {
 		ResourceId: string;
 
 		/** A list of tags. */
-		TagsList?: Array<Tag>;
+		TagsList?: Array<Tag> | null;
 	}
 
 
 	/** A custom key-value pair associated with a resource such as a CloudTrail trail. */
 	export interface Tag {
 		Key: string;
-		Value?: string;
+		Value?: string | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -53,19 +53,19 @@ export namespace MyNS {
 
 	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
 	export interface CreateTrailResponse {
-		Name?: string;
-		S3BucketName?: string;
-		S3KeyPrefix?: string;
-		SnsTopicName?: string;
-		SnsTopicARN?: string;
-		IncludeGlobalServiceEvents?: boolean;
-		IsMultiRegionTrail?: boolean;
-		TrailARN?: string;
-		LogFileValidationEnabled?: boolean;
-		CloudWatchLogsLogGroupArn?: string;
-		CloudWatchLogsRoleArn?: string;
-		KmsKeyId?: string;
-		IsOrganizationTrail?: boolean;
+		Name?: string | null;
+		S3BucketName?: string | null;
+		S3KeyPrefix?: string | null;
+		SnsTopicName?: string | null;
+		SnsTopicARN?: string | null;
+		IncludeGlobalServiceEvents?: boolean | null;
+		IsMultiRegionTrail?: boolean | null;
+		TrailARN?: string | null;
+		LogFileValidationEnabled?: boolean | null;
+		CloudWatchLogsLogGroupArn?: string | null;
+		CloudWatchLogsRoleArn?: string | null;
+		KmsKeyId?: string | null;
+		IsOrganizationTrail?: boolean | null;
 	}
 
 
@@ -73,18 +73,18 @@ export namespace MyNS {
 	export interface CreateTrailRequest {
 		Name: string;
 		S3BucketName: string;
-		S3KeyPrefix?: string;
-		SnsTopicName?: string;
-		IncludeGlobalServiceEvents?: boolean;
-		IsMultiRegionTrail?: boolean;
-		EnableLogFileValidation?: boolean;
-		CloudWatchLogsLogGroupArn?: string;
-		CloudWatchLogsRoleArn?: string;
-		KmsKeyId?: string;
-		IsOrganizationTrail?: boolean;
+		S3KeyPrefix?: string | null;
+		SnsTopicName?: string | null;
+		IncludeGlobalServiceEvents?: boolean | null;
+		IsMultiRegionTrail?: boolean | null;
+		EnableLogFileValidation?: boolean | null;
+		CloudWatchLogsLogGroupArn?: string | null;
+		CloudWatchLogsRoleArn?: string | null;
+		KmsKeyId?: string | null;
+		IsOrganizationTrail?: boolean | null;
 
 		/** A list of tags. */
-		TagsList?: Array<Tag>;
+		TagsList?: Array<Tag> | null;
 	}
 
 	export interface MaximumNumberOfTrailsExceededException {
@@ -173,49 +173,49 @@ export namespace MyNS {
 
 	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
 	export interface DescribeTrailsResponse {
-		trailList?: Array<Trail>;
+		trailList?: Array<Trail> | null;
 	}
 
 
 	/** The settings for a trail. */
 	export interface Trail {
-		Name?: string;
-		S3BucketName?: string;
-		S3KeyPrefix?: string;
-		SnsTopicName?: string;
-		SnsTopicARN?: string;
-		IncludeGlobalServiceEvents?: boolean;
-		IsMultiRegionTrail?: boolean;
-		HomeRegion?: string;
-		TrailARN?: string;
-		LogFileValidationEnabled?: boolean;
-		CloudWatchLogsLogGroupArn?: string;
-		CloudWatchLogsRoleArn?: string;
-		KmsKeyId?: string;
-		HasCustomEventSelectors?: boolean;
-		HasInsightSelectors?: boolean;
-		IsOrganizationTrail?: boolean;
+		Name?: string | null;
+		S3BucketName?: string | null;
+		S3KeyPrefix?: string | null;
+		SnsTopicName?: string | null;
+		SnsTopicARN?: string | null;
+		IncludeGlobalServiceEvents?: boolean | null;
+		IsMultiRegionTrail?: boolean | null;
+		HomeRegion?: string | null;
+		TrailARN?: string | null;
+		LogFileValidationEnabled?: boolean | null;
+		CloudWatchLogsLogGroupArn?: string | null;
+		CloudWatchLogsRoleArn?: string | null;
+		KmsKeyId?: string | null;
+		HasCustomEventSelectors?: boolean | null;
+		HasInsightSelectors?: boolean | null;
+		IsOrganizationTrail?: boolean | null;
 	}
 
 
 	/** Returns information about the trail. */
 	export interface DescribeTrailsRequest {
-		trailNameList?: Array<string>;
-		includeShadowTrails?: boolean;
+		trailNameList?: Array<string> | null;
+		includeShadowTrails?: boolean | null;
 	}
 
 	export interface GetEventSelectorsResponse {
-		TrailARN?: string;
-		EventSelectors?: Array<EventSelector>;
+		TrailARN?: string | null;
+		EventSelectors?: Array<EventSelector> | null;
 	}
 
 
 	/** <p>Use event selectors to further specify the management and data event settings for your trail. By default, trails created without specific event selectors will be configured to log all read and write management events, and no data events. When an event occurs in your account, CloudTrail evaluates the event selector for all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail doesn't log the event.</p> <p>You can configure up to five event selectors for a trail.</p> */
 	export interface EventSelector {
-		ReadWriteType?: EventSelectorReadWriteType;
-		IncludeManagementEvents?: boolean;
-		DataResources?: Array<DataResource>;
-		ExcludeManagementEventSources?: Array<string>;
+		ReadWriteType?: EventSelectorReadWriteType | null;
+		IncludeManagementEvents?: boolean | null;
+		DataResources?: Array<DataResource> | null;
+		ExcludeManagementEventSources?: Array<string> | null;
 	}
 
 	export enum EventSelectorReadWriteType { ReadOnly = 0, WriteOnly = 1, All = 2 }
@@ -223,8 +223,8 @@ export namespace MyNS {
 
 	/** <p>The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors for your trail to log data events. Data events provide information about the resource operations performed on or within a resource itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.</p> <note> <p>The total number of allowed data resources is 250. This number can be distributed between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors.</p> </note> <p>The following example demonstrates how logging works when you configure logging of all data events for an S3 bucket named <code>bucket-1</code>. In this example, the CloudTrail user specified an empty prefix, and the option to log both <code>Read</code> and <code>Write</code> data events.</p> <ol> <li> <p>A user uploads an image file to <code>bucket-1</code>.</p> </li> <li> <p>The <code>PutObject</code> API operation is an Amazon S3 object-level API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified an S3 bucket with an empty prefix, events that occur on any object in that bucket are logged. The trail processes and logs the event.</p> </li> <li> <p>A user uploads an object to an Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.</p> </li> <li> <p>The <code>PutObject</code> API operation occurred for an object in an S3 bucket that the CloudTrail user didn't specify for the trail. The trail doesn’t log the event.</p> </li> </ol> <p>The following example demonstrates how logging works when you configure logging of AWS Lambda data events for a Lambda function named <i>MyLambdaFunction</i>, but not for all AWS Lambda functions.</p> <ol> <li> <p>A user runs a script that includes a call to the <i>MyLambdaFunction</i> function and the <i>MyOtherLambdaFunction</i> function.</p> </li> <li> <p>The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an AWS Lambda API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified logging data events for <i>MyLambdaFunction</i>, any invocations of that function are logged. The trail processes and logs the event. </p> </li> <li> <p>The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an AWS Lambda API. Because the CloudTrail user did not specify logging data events for all Lambda functions, the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does not match the function specified for the trail. The trail doesn’t log the event. </p> </li> </ol> */
 	export interface DataResource {
-		Type?: string;
-		Values?: Array<string>;
+		Type?: string | null;
+		Values?: Array<string> | null;
 	}
 
 	export interface GetEventSelectorsRequest {
@@ -232,14 +232,14 @@ export namespace MyNS {
 	}
 
 	export interface GetInsightSelectorsResponse {
-		TrailARN?: string;
-		InsightSelectors?: Array<InsightSelector>;
+		TrailARN?: string | null;
+		InsightSelectors?: Array<InsightSelector> | null;
 	}
 
 
 	/** A JSON string that contains a list of insight types that are logged on a trail. */
 	export interface InsightSelector {
-		InsightType?: InsightSelectorInsightType;
+		InsightType?: InsightSelectorInsightType | null;
 	}
 
 	export enum InsightSelectorInsightType { ApiCallRateInsight = 0 }
@@ -254,7 +254,7 @@ export namespace MyNS {
 	export interface GetTrailResponse {
 
 		/** The settings for a trail. */
-		Trail?: Trail;
+		Trail?: Trail | null;
 	}
 
 	export interface GetTrailRequest {
@@ -264,23 +264,23 @@ export namespace MyNS {
 
 	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
 	export interface GetTrailStatusResponse {
-		IsLogging?: boolean;
-		LatestDeliveryError?: string;
-		LatestNotificationError?: string;
-		LatestDeliveryTime?: Date;
-		LatestNotificationTime?: Date;
-		StartLoggingTime?: Date;
-		StopLoggingTime?: Date;
-		LatestCloudWatchLogsDeliveryError?: string;
-		LatestCloudWatchLogsDeliveryTime?: Date;
-		LatestDigestDeliveryTime?: Date;
-		LatestDigestDeliveryError?: string;
-		LatestDeliveryAttemptTime?: string;
-		LatestNotificationAttemptTime?: string;
-		LatestNotificationAttemptSucceeded?: string;
-		LatestDeliveryAttemptSucceeded?: string;
-		TimeLoggingStarted?: string;
-		TimeLoggingStopped?: string;
+		IsLogging?: boolean | null;
+		LatestDeliveryError?: string | null;
+		LatestNotificationError?: string | null;
+		LatestDeliveryTime?: Date | null;
+		LatestNotificationTime?: Date | null;
+		StartLoggingTime?: Date | null;
+		StopLoggingTime?: Date | null;
+		LatestCloudWatchLogsDeliveryError?: string | null;
+		LatestCloudWatchLogsDeliveryTime?: Date | null;
+		LatestDigestDeliveryTime?: Date | null;
+		LatestDigestDeliveryError?: string | null;
+		LatestDeliveryAttemptTime?: string | null;
+		LatestNotificationAttemptTime?: string | null;
+		LatestNotificationAttemptSucceeded?: string | null;
+		LatestDeliveryAttemptSucceeded?: string | null;
+		TimeLoggingStarted?: string | null;
+		TimeLoggingStopped?: string | null;
 	}
 
 
@@ -292,25 +292,25 @@ export namespace MyNS {
 
 	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
 	export interface ListPublicKeysResponse {
-		PublicKeyList?: Array<PublicKey>;
-		NextToken?: string;
+		PublicKeyList?: Array<PublicKey> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains information about a returned public key. */
 	export interface PublicKey {
-		Value?: string;
-		ValidityStartTime?: Date;
-		ValidityEndTime?: Date;
-		Fingerprint?: string;
+		Value?: string | null;
+		ValidityStartTime?: Date | null;
+		ValidityEndTime?: Date | null;
+		Fingerprint?: string | null;
 	}
 
 
 	/** Requests the public keys for a specified time range. */
 	export interface ListPublicKeysRequest {
-		StartTime?: Date;
-		EndTime?: Date;
-		NextToken?: string;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		NextToken?: string | null;
 	}
 
 	export interface InvalidTimeRangeException {
@@ -322,82 +322,82 @@ export namespace MyNS {
 
 	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
 	export interface ListTagsResponse {
-		ResourceTagList?: Array<ResourceTag>;
-		NextToken?: string;
+		ResourceTagList?: Array<ResourceTag> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A resource tag. */
 	export interface ResourceTag {
-		ResourceId?: string;
+		ResourceId?: string | null;
 
 		/** A list of tags. */
-		TagsList?: Array<Tag>;
+		TagsList?: Array<Tag> | null;
 	}
 
 
 	/** Specifies a list of trail tags to return. */
 	export interface ListTagsRequest {
 		ResourceIdList: Array<string>;
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 	export interface ListTrailsResponse {
-		Trails?: Array<TrailInfo>;
-		NextToken?: string;
+		Trails?: Array<TrailInfo> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Information about a CloudTrail trail, including the trail's name, home region, and Amazon Resource Name (ARN). */
 	export interface TrailInfo {
-		TrailARN?: string;
-		Name?: string;
-		HomeRegion?: string;
+		TrailARN?: string | null;
+		Name?: string | null;
+		HomeRegion?: string | null;
 	}
 
 	export interface ListTrailsRequest {
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains a response to a LookupEvents action. */
 	export interface LookupEventsResponse {
-		Events?: Array<Event>;
-		NextToken?: string;
+		Events?: Array<Event> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Contains information about an event that was returned by a lookup request. The result includes a representation of a CloudTrail event. */
 	export interface Event {
-		EventId?: string;
-		EventName?: string;
-		ReadOnly?: string;
-		AccessKeyId?: string;
-		EventTime?: Date;
-		EventSource?: string;
-		Username?: string;
+		EventId?: string | null;
+		EventName?: string | null;
+		ReadOnly?: string | null;
+		AccessKeyId?: string | null;
+		EventTime?: Date | null;
+		EventSource?: string | null;
+		Username?: string | null;
 
 		/** A list of resources referenced by the event returned. */
-		Resources?: Array<Resource>;
-		CloudTrailEvent?: string;
+		Resources?: Array<Resource> | null;
+		CloudTrailEvent?: string | null;
 	}
 
 
 	/** Specifies the type and name of a resource referenced by an event. */
 	export interface Resource {
-		ResourceType?: string;
-		ResourceName?: string;
+		ResourceType?: string | null;
+		ResourceName?: string | null;
 	}
 
 
 	/** Contains a request for LookupEvents. */
 	export interface LookupEventsRequest {
-		LookupAttributes?: Array<LookupAttribute>;
-		StartTime?: Date;
-		EndTime?: Date;
-		EventCategory?: LookupEventsRequestEventCategory;
-		MaxResults?: number;
-		NextToken?: string;
+		LookupAttributes?: Array<LookupAttribute> | null;
+		StartTime?: Date | null;
+		EndTime?: Date | null;
+		EventCategory?: LookupEventsRequestEventCategory | null;
+		MaxResults?: number | null;
+		NextToken?: string | null;
 	}
 
 
@@ -424,8 +424,8 @@ export namespace MyNS {
 	}
 
 	export interface PutEventSelectorsResponse {
-		TrailARN?: string;
-		EventSelectors?: Array<EventSelector>;
+		TrailARN?: string | null;
+		EventSelectors?: Array<EventSelector> | null;
 	}
 
 	export interface PutEventSelectorsRequest {
@@ -437,8 +437,8 @@ export namespace MyNS {
 	}
 
 	export interface PutInsightSelectorsResponse {
-		TrailARN?: string;
-		InsightSelectors?: Array<InsightSelector>;
+		TrailARN?: string | null;
+		InsightSelectors?: Array<InsightSelector> | null;
 	}
 
 	export interface PutInsightSelectorsRequest {
@@ -460,7 +460,7 @@ export namespace MyNS {
 		ResourceId: string;
 
 		/** A list of tags. */
-		TagsList?: Array<Tag>;
+		TagsList?: Array<Tag> | null;
 	}
 
 
@@ -488,35 +488,35 @@ export namespace MyNS {
 
 	/** Returns the objects or data listed below if successful. Otherwise, returns an error. */
 	export interface UpdateTrailResponse {
-		Name?: string;
-		S3BucketName?: string;
-		S3KeyPrefix?: string;
-		SnsTopicName?: string;
-		SnsTopicARN?: string;
-		IncludeGlobalServiceEvents?: boolean;
-		IsMultiRegionTrail?: boolean;
-		TrailARN?: string;
-		LogFileValidationEnabled?: boolean;
-		CloudWatchLogsLogGroupArn?: string;
-		CloudWatchLogsRoleArn?: string;
-		KmsKeyId?: string;
-		IsOrganizationTrail?: boolean;
+		Name?: string | null;
+		S3BucketName?: string | null;
+		S3KeyPrefix?: string | null;
+		SnsTopicName?: string | null;
+		SnsTopicARN?: string | null;
+		IncludeGlobalServiceEvents?: boolean | null;
+		IsMultiRegionTrail?: boolean | null;
+		TrailARN?: string | null;
+		LogFileValidationEnabled?: boolean | null;
+		CloudWatchLogsLogGroupArn?: string | null;
+		CloudWatchLogsRoleArn?: string | null;
+		KmsKeyId?: string | null;
+		IsOrganizationTrail?: boolean | null;
 	}
 
 
 	/** Specifies settings to update for the trail. */
 	export interface UpdateTrailRequest {
 		Name: string;
-		S3BucketName?: string;
-		S3KeyPrefix?: string;
-		SnsTopicName?: string;
-		IncludeGlobalServiceEvents?: boolean;
-		IsMultiRegionTrail?: boolean;
-		EnableLogFileValidation?: boolean;
-		CloudWatchLogsLogGroupArn?: string;
-		CloudWatchLogsRoleArn?: string;
-		KmsKeyId?: string;
-		IsOrganizationTrail?: boolean;
+		S3BucketName?: string | null;
+		S3KeyPrefix?: string | null;
+		SnsTopicName?: string | null;
+		IncludeGlobalServiceEvents?: boolean | null;
+		IsMultiRegionTrail?: boolean | null;
+		EnableLogFileValidation?: boolean | null;
+		CloudWatchLogsLogGroupArn?: string | null;
+		CloudWatchLogsRoleArn?: string | null;
+		KmsKeyId?: string | null;
+		IsOrganizationTrail?: boolean | null;
 	}
 
 	export enum EventCategory { insight = 0 }
@@ -610,7 +610,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPublicKeysResponse} Success
 		 */
-		ListPublicKeys(NextToken: string, requestBody: ListPublicKeysRequest): Observable<ListPublicKeysResponse> {
+		ListPublicKeys(NextToken: string | null | undefined, requestBody: ListPublicKeysRequest): Observable<ListPublicKeysResponse> {
 			return this.http.post<ListPublicKeysResponse>(this.baseUri + '#X-Amz-Target=com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListPublicKeys?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -620,7 +620,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTagsResponse} Success
 		 */
-		ListTags(NextToken: string, requestBody: ListTagsRequest): Observable<ListTagsResponse> {
+		ListTags(NextToken: string | null | undefined, requestBody: ListTagsRequest): Observable<ListTagsResponse> {
 			return this.http.post<ListTagsResponse>(this.baseUri + '#X-Amz-Target=com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListTags?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -630,7 +630,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTrailsResponse} Success
 		 */
-		ListTrails(NextToken: string, requestBody: ListTrailsRequest): Observable<ListTrailsResponse> {
+		ListTrails(NextToken: string | null | undefined, requestBody: ListTrailsRequest): Observable<ListTrailsResponse> {
 			return this.http.post<ListTrailsResponse>(this.baseUri + '#X-Amz-Target=com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListTrails?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -641,7 +641,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {LookupEventsResponse} Success
 		 */
-		LookupEvents(MaxResults: string, NextToken: string, requestBody: LookupEventsRequest): Observable<LookupEventsResponse> {
+		LookupEvents(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: LookupEventsRequest): Observable<LookupEventsResponse> {
 			return this.http.post<LookupEventsResponse>(this.baseUri + '#X-Amz-Target=com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.LookupEvents?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

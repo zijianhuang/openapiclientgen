@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface GetSnapshotBlockResponse {
-		BlockData?: string;
+		BlockData?: string | null;
 	}
 
 	export interface ValidationException {
@@ -13,34 +13,34 @@ export namespace MyNS {
 	}
 
 	export interface ListChangedBlocksResponse {
-		ChangedBlocks?: Array<ChangedBlock>;
-		ExpiryTime?: Date;
-		VolumeSize?: number;
-		BlockSize?: number;
-		NextToken?: string;
+		ChangedBlocks?: Array<ChangedBlock> | null;
+		ExpiryTime?: Date | null;
+		VolumeSize?: number | null;
+		BlockSize?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A block of data in an Amazon Elastic Block Store snapshot that is different from another snapshot of the same volume/snapshot lineage. */
 	export interface ChangedBlock {
-		BlockIndex?: number;
-		FirstBlockToken?: string;
-		SecondBlockToken?: string;
+		BlockIndex?: number | null;
+		FirstBlockToken?: string | null;
+		SecondBlockToken?: string | null;
 	}
 
 	export interface ListSnapshotBlocksResponse {
-		Blocks?: Array<Block>;
-		ExpiryTime?: Date;
-		VolumeSize?: number;
-		BlockSize?: number;
-		NextToken?: string;
+		Blocks?: Array<Block> | null;
+		ExpiryTime?: Date | null;
+		VolumeSize?: number | null;
+		BlockSize?: number | null;
+		NextToken?: string | null;
 	}
 
 
 	/** A block of data in an Amazon Elastic Block Store snapshot. */
 	export interface Block {
-		BlockIndex?: number;
-		BlockToken?: string;
+		BlockIndex?: number | null;
+		BlockToken?: string | null;
 	}
 
 	export enum ChecksumAlgorithm { SHA256 = 0 }
@@ -83,7 +83,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChangedBlocksResponse} Success
 		 */
-		ListChangedBlocks(firstSnapshotId: string, secondSnapshotId: string, pageToken: string, maxResults: number, startingBlockIndex: number, MaxResults: string, NextToken: string): Observable<ListChangedBlocksResponse> {
+		ListChangedBlocks(firstSnapshotId: string | null | undefined, secondSnapshotId: string, pageToken: string | null | undefined, maxResults: number | null | undefined, startingBlockIndex: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListChangedBlocksResponse> {
 			return this.http.get<ListChangedBlocksResponse>(this.baseUri + 'snapshots/' + (secondSnapshotId == null ? '' : encodeURIComponent(secondSnapshotId)) + '/changedblocks?firstSnapshotId=' + (firstSnapshotId == null ? '' : encodeURIComponent(firstSnapshotId)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&maxResults=' + maxResults + '&startingBlockIndex=' + startingBlockIndex + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
@@ -98,7 +98,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSnapshotBlocksResponse} Success
 		 */
-		ListSnapshotBlocks(snapshotId: string, pageToken: string, maxResults: number, startingBlockIndex: number, MaxResults: string, NextToken: string): Observable<ListSnapshotBlocksResponse> {
+		ListSnapshotBlocks(snapshotId: string, pageToken: string | null | undefined, maxResults: number | null | undefined, startingBlockIndex: number | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListSnapshotBlocksResponse> {
 			return this.http.get<ListSnapshotBlocksResponse>(this.baseUri + 'snapshots/' + (snapshotId == null ? '' : encodeURIComponent(snapshotId)) + '/blocks&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&maxResults=' + maxResults + '&startingBlockIndex=' + startingBlockIndex + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 	}

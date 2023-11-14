@@ -3,14 +3,14 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface CreateDatasetResponse {
-		DatasetArn?: string;
+		DatasetArn?: string | null;
 	}
 
 	export interface CreateDatasetRequest {
 		DatasetName: string;
 		Domain: CreateDatasetRequestDomain;
 		DatasetType: CreateDatasetRequestDatasetType;
-		DataFrequency?: string;
+		DataFrequency?: string | null;
 
 		/**
 		 * Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.
@@ -19,7 +19,7 @@ export namespace MyNS {
 		Schema: Schema;
 
 		/** An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <a>CreateDataset</a> and <a>CreatePredictor</a> requests. */
-		EncryptionConfig?: EncryptionConfig;
+		EncryptionConfig?: EncryptionConfig | null;
 	}
 
 	export enum CreateDatasetRequestDomain { RETAIL = 0, CUSTOM = 1, INVENTORY_PLANNING = 2, EC2_CAPACITY = 3, WORK_FORCE = 4, WEB_TRAFFIC = 5, METRICS = 6 }
@@ -29,14 +29,14 @@ export namespace MyNS {
 
 	/** Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request. */
 	export interface Schema {
-		Attributes?: Array<SchemaAttribute>;
+		Attributes?: Array<SchemaAttribute> | null;
 	}
 
 
 	/** An attribute of a schema, which defines a dataset field. A schema attribute is required for every field in a dataset. The <a>Schema</a> object contains an array of <code>SchemaAttribute</code> objects. */
 	export interface SchemaAttribute {
-		AttributeName?: string;
-		AttributeType?: SchemaAttributeAttributeType;
+		AttributeName?: string | null;
+		AttributeType?: SchemaAttributeAttributeType | null;
 	}
 
 	export enum SchemaAttributeAttributeType { _string = 0, integer = 1, _float = 2, timestamp = 3 }
@@ -58,13 +58,13 @@ export namespace MyNS {
 	}
 
 	export interface CreateDatasetGroupResponse {
-		DatasetGroupArn?: string;
+		DatasetGroupArn?: string | null;
 	}
 
 	export interface CreateDatasetGroupRequest {
 		DatasetGroupName: string;
 		Domain: CreateDatasetRequestDomain;
-		DatasetArns?: Array<string>;
+		DatasetArns?: Array<string> | null;
 	}
 
 	export interface ResourceNotFoundException {
@@ -74,7 +74,7 @@ export namespace MyNS {
 	}
 
 	export interface CreateDatasetImportJobResponse {
-		DatasetImportJobArn?: string;
+		DatasetImportJobArn?: string | null;
 	}
 
 	export interface CreateDatasetImportJobRequest {
@@ -86,7 +86,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		DataSource: DataSource;
-		TimestampFormat?: string;
+		TimestampFormat?: string | null;
 	}
 
 
@@ -105,21 +105,21 @@ export namespace MyNS {
 	export interface S3Config {
 		Path: string;
 		RoleArn: string;
-		KMSKeyArn?: string;
+		KMSKeyArn?: string | null;
 	}
 
 	export interface CreateForecastResponse {
-		ForecastArn?: string;
+		ForecastArn?: string | null;
 	}
 
 	export interface CreateForecastRequest {
 		ForecastName: string;
 		PredictorArn: string;
-		ForecastTypes?: Array<string>;
+		ForecastTypes?: Array<string> | null;
 	}
 
 	export interface CreateForecastExportJobResponse {
-		ForecastExportJobArn?: string;
+		ForecastExportJobArn?: string | null;
 	}
 
 	export interface CreateForecastExportJobRequest {
@@ -145,22 +145,22 @@ export namespace MyNS {
 	}
 
 	export interface CreatePredictorResponse {
-		PredictorArn?: string;
+		PredictorArn?: string | null;
 	}
 
 	export interface CreatePredictorRequest {
 		PredictorName: string;
-		AlgorithmArn?: string;
+		AlgorithmArn?: string | null;
 		ForecastHorizon: number;
-		PerformAutoML?: boolean;
-		PerformHPO?: boolean;
-		TrainingParameters?: TrainingParameters;
+		PerformAutoML?: boolean | null;
+		PerformHPO?: boolean | null;
+		TrainingParameters?: TrainingParameters | null;
 
 		/** Parameters that define how to split a dataset into training data and testing data, and the number of iterations to perform. These parameters are specified in the predefined algorithms but you can override them in the <a>CreatePredictor</a> request. */
-		EvaluationParameters?: EvaluationParameters;
+		EvaluationParameters?: EvaluationParameters | null;
 
 		/** <p>Configuration information for a hyperparameter tuning job. You specify this object in the <a>CreatePredictor</a> request.</p> <p>A <i>hyperparameter</i> is a parameter that governs the model training process. You set hyperparameters before training starts, unlike model parameters, which are determined during training. The values of the hyperparameters effect which values are chosen for the model parameters.</p> <p>In a <i>hyperparameter tuning job</i>, Amazon Forecast chooses the set of hyperparameter values that optimize a specified metric. Forecast accomplishes this by running many training jobs over a range of hyperparameter values. The optimum set of values depends on the algorithm, the training data, and the specified metric objective.</p> */
-		HPOConfig?: HyperParameterTuningJobConfig;
+		HPOConfig?: HyperParameterTuningJobConfig | null;
 
 		/**
 		 * The data used to train a predictor. The data includes a dataset group and any supplementary features. You specify this object in the <a>CreatePredictor</a> request.
@@ -175,7 +175,7 @@ export namespace MyNS {
 		FeaturizationConfig: FeaturizationConfig;
 
 		/** An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <a>CreateDataset</a> and <a>CreatePredictor</a> requests. */
-		EncryptionConfig?: EncryptionConfig;
+		EncryptionConfig?: EncryptionConfig | null;
 	}
 
 	export interface TrainingParameters {
@@ -184,8 +184,8 @@ export namespace MyNS {
 
 	/** Parameters that define how to split a dataset into training data and testing data, and the number of iterations to perform. These parameters are specified in the predefined algorithms but you can override them in the <a>CreatePredictor</a> request. */
 	export interface EvaluationParameters {
-		NumberOfBacktestWindows?: number;
-		BackTestWindowOffset?: number;
+		NumberOfBacktestWindows?: number | null;
+		BackTestWindowOffset?: number | null;
 	}
 
 
@@ -193,15 +193,15 @@ export namespace MyNS {
 	export interface HyperParameterTuningJobConfig {
 
 		/** Specifies the categorical, continuous, and integer hyperparameters, and their ranges of tunable values. The range of tunable values determines which values that a hyperparameter tuning job can choose for the specified hyperparameter. This object is part of the <a>HyperParameterTuningJobConfig</a> object. */
-		ParameterRanges?: ParameterRanges;
+		ParameterRanges?: ParameterRanges | null;
 	}
 
 
 	/** Specifies the categorical, continuous, and integer hyperparameters, and their ranges of tunable values. The range of tunable values determines which values that a hyperparameter tuning job can choose for the specified hyperparameter. This object is part of the <a>HyperParameterTuningJobConfig</a> object. */
 	export interface ParameterRanges {
-		CategoricalParameterRanges?: Array<CategoricalParameterRange>;
-		ContinuousParameterRanges?: Array<ContinuousParameterRange>;
-		IntegerParameterRanges?: Array<IntegerParameterRange>;
+		CategoricalParameterRanges?: Array<CategoricalParameterRange> | null;
+		ContinuousParameterRanges?: Array<ContinuousParameterRange> | null;
+		IntegerParameterRanges?: Array<IntegerParameterRange> | null;
 	}
 
 
@@ -217,7 +217,7 @@ export namespace MyNS {
 		Name: string;
 		MaxValue: number;
 		MinValue: number;
-		ScalingType?: ContinuousParameterRangeScalingType;
+		ScalingType?: ContinuousParameterRangeScalingType | null;
 	}
 
 	export enum ContinuousParameterRangeScalingType { Auto = 0, Linear = 1, Logarithmic = 2, ReverseLogarithmic = 3 }
@@ -228,14 +228,14 @@ export namespace MyNS {
 		Name: string;
 		MaxValue: number;
 		MinValue: number;
-		ScalingType?: ContinuousParameterRangeScalingType;
+		ScalingType?: ContinuousParameterRangeScalingType | null;
 	}
 
 
 	/** The data used to train a predictor. The data includes a dataset group and any supplementary features. You specify this object in the <a>CreatePredictor</a> request. */
 	export interface InputDataConfig {
 		DatasetGroupArn: string;
-		SupplementaryFeatures?: Array<SupplementaryFeature>;
+		SupplementaryFeatures?: Array<SupplementaryFeature> | null;
 	}
 
 
@@ -249,22 +249,22 @@ export namespace MyNS {
 	/** <p>In a <a>CreatePredictor</a> operation, the specified algorithm trains a model using the specified dataset group. You can optionally tell the operation to modify data fields prior to training a model. These modifications are referred to as <i>featurization</i>.</p> <p>You define featurization using the <code>FeaturizationConfig</code> object. You specify an array of transformations, one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the <code>TARGET_TIME_SERIES</code> dataset before model training.</p> <p>You can create multiple featurization configurations. For example, you might call the <code>CreatePredictor</code> operation twice by specifying different featurization configurations.</p> */
 	export interface FeaturizationConfig {
 		ForecastFrequency: string;
-		ForecastDimensions?: Array<string>;
-		Featurizations?: Array<Featurization>;
+		ForecastDimensions?: Array<string> | null;
+		Featurizations?: Array<Featurization> | null;
 	}
 
 
 	/** <p>Provides featurization (transformation) information for a dataset field. This object is part of the <a>FeaturizationConfig</a> object.</p> <p>For example:</p> <p> <code>{</code> </p> <p> <code>"AttributeName": "demand",</code> </p> <p> <code>FeaturizationPipeline [ {</code> </p> <p> <code>"FeaturizationMethodName": "filling",</code> </p> <p> <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code> </p> <p> <code>} ]</code> </p> <p> <code>}</code> </p> */
 	export interface Featurization {
 		AttributeName: string;
-		FeaturizationPipeline?: Array<FeaturizationMethod>;
+		FeaturizationPipeline?: Array<FeaturizationMethod> | null;
 	}
 
 
 	/** <p>Provides information about the method that featurizes (transforms) a dataset field. The method is part of the <code>FeaturizationPipeline</code> of the <a>Featurization</a> object. If you don't specify <code>FeaturizationMethodParameters</code>, Amazon Forecast uses default parameters.</p> <p>The following is an example of how you specify a <code>FeaturizationMethod</code> object.</p> <p> <code>{</code> </p> <p> <code>"FeaturizationMethodName": "filling",</code> </p> <p> <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code> </p> <p> <code>}</code> </p> */
 	export interface FeaturizationMethod {
 		FeaturizationMethodName: FeaturizationMethodFeaturizationMethodName;
-		FeaturizationMethodParameters?: FeaturizationMethodParameters;
+		FeaturizationMethodParameters?: FeaturizationMethodParameters | null;
 	}
 
 	export enum FeaturizationMethodFeaturizationMethodName { filling = 0 }
@@ -297,20 +297,20 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDatasetResponse {
-		DatasetArn?: string;
-		DatasetName?: string;
-		Domain?: CreateDatasetRequestDomain;
-		DatasetType?: CreateDatasetRequestDatasetType;
-		DataFrequency?: string;
+		DatasetArn?: string | null;
+		DatasetName?: string | null;
+		Domain?: CreateDatasetRequestDomain | null;
+		DatasetType?: CreateDatasetRequestDatasetType | null;
+		DataFrequency?: string | null;
 
 		/** Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request. */
-		Schema?: Schema;
+		Schema?: Schema | null;
 
 		/** An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <a>CreateDataset</a> and <a>CreatePredictor</a> requests. */
-		EncryptionConfig?: EncryptionConfig;
-		Status?: string;
-		CreationTime?: Date;
-		LastModificationTime?: Date;
+		EncryptionConfig?: EncryptionConfig | null;
+		Status?: string | null;
+		CreationTime?: Date | null;
+		LastModificationTime?: Date | null;
 	}
 
 	export interface DescribeDatasetRequest {
@@ -318,13 +318,13 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDatasetGroupResponse {
-		DatasetGroupName?: string;
-		DatasetGroupArn?: string;
-		DatasetArns?: Array<string>;
-		Domain?: CreateDatasetRequestDomain;
-		Status?: string;
-		CreationTime?: Date;
-		LastModificationTime?: Date;
+		DatasetGroupName?: string | null;
+		DatasetGroupArn?: string | null;
+		DatasetArns?: Array<string> | null;
+		Domain?: CreateDatasetRequestDomain | null;
+		Status?: string | null;
+		CreationTime?: Date | null;
+		LastModificationTime?: Date | null;
 	}
 
 	export interface DescribeDatasetGroupRequest {
@@ -332,19 +332,19 @@ export namespace MyNS {
 	}
 
 	export interface DescribeDatasetImportJobResponse {
-		DatasetImportJobName?: string;
-		DatasetImportJobArn?: string;
-		DatasetArn?: string;
-		TimestampFormat?: string;
+		DatasetImportJobName?: string | null;
+		DatasetImportJobArn?: string | null;
+		DatasetArn?: string | null;
+		TimestampFormat?: string | null;
 
 		/** The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <a>CreateDatasetImportJob</a> request. */
-		DataSource?: DataSource;
-		FieldStatistics?: FieldStatistics;
-		DataSize?: number;
-		Status?: string;
-		Message?: string;
-		CreationTime?: Date;
-		LastModificationTime?: Date;
+		DataSource?: DataSource | null;
+		FieldStatistics?: FieldStatistics | null;
+		DataSize?: number | null;
+		Status?: string | null;
+		Message?: string | null;
+		CreationTime?: Date | null;
+		LastModificationTime?: Date | null;
 	}
 
 	export interface FieldStatistics {
@@ -355,15 +355,15 @@ export namespace MyNS {
 	}
 
 	export interface DescribeForecastResponse {
-		ForecastArn?: string;
-		ForecastName?: string;
-		ForecastTypes?: Array<string>;
-		PredictorArn?: string;
-		DatasetGroupArn?: string;
-		Status?: string;
-		Message?: string;
-		CreationTime?: Date;
-		LastModificationTime?: Date;
+		ForecastArn?: string | null;
+		ForecastName?: string | null;
+		ForecastTypes?: Array<string> | null;
+		PredictorArn?: string | null;
+		DatasetGroupArn?: string | null;
+		Status?: string | null;
+		Message?: string | null;
+		CreationTime?: Date | null;
+		LastModificationTime?: Date | null;
 	}
 
 	export interface DescribeForecastRequest {
@@ -371,16 +371,16 @@ export namespace MyNS {
 	}
 
 	export interface DescribeForecastExportJobResponse {
-		ForecastExportJobArn?: string;
-		ForecastExportJobName?: string;
-		ForecastArn?: string;
+		ForecastExportJobArn?: string | null;
+		ForecastExportJobName?: string | null;
+		ForecastArn?: string | null;
 
 		/** The destination for an exported forecast, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <a>CreateForecastExportJob</a> request. */
-		Destination?: DataDestination;
-		Message?: string;
-		Status?: string;
-		CreationTime?: Date;
-		LastModificationTime?: Date;
+		Destination?: DataDestination | null;
+		Message?: string | null;
+		Status?: string | null;
+		CreationTime?: Date | null;
+		LastModificationTime?: Date | null;
 	}
 
 	export interface DescribeForecastExportJobRequest {
@@ -388,59 +388,59 @@ export namespace MyNS {
 	}
 
 	export interface DescribePredictorResponse {
-		PredictorArn?: string;
-		PredictorName?: string;
-		AlgorithmArn?: string;
-		ForecastHorizon?: number;
-		PerformAutoML?: boolean;
-		PerformHPO?: boolean;
-		TrainingParameters?: TrainingParameters;
+		PredictorArn?: string | null;
+		PredictorName?: string | null;
+		AlgorithmArn?: string | null;
+		ForecastHorizon?: number | null;
+		PerformAutoML?: boolean | null;
+		PerformHPO?: boolean | null;
+		TrainingParameters?: TrainingParameters | null;
 
 		/** Parameters that define how to split a dataset into training data and testing data, and the number of iterations to perform. These parameters are specified in the predefined algorithms but you can override them in the <a>CreatePredictor</a> request. */
-		EvaluationParameters?: EvaluationParameters;
+		EvaluationParameters?: EvaluationParameters | null;
 
 		/** <p>Configuration information for a hyperparameter tuning job. You specify this object in the <a>CreatePredictor</a> request.</p> <p>A <i>hyperparameter</i> is a parameter that governs the model training process. You set hyperparameters before training starts, unlike model parameters, which are determined during training. The values of the hyperparameters effect which values are chosen for the model parameters.</p> <p>In a <i>hyperparameter tuning job</i>, Amazon Forecast chooses the set of hyperparameter values that optimize a specified metric. Forecast accomplishes this by running many training jobs over a range of hyperparameter values. The optimum set of values depends on the algorithm, the training data, and the specified metric objective.</p> */
-		HPOConfig?: HyperParameterTuningJobConfig;
+		HPOConfig?: HyperParameterTuningJobConfig | null;
 
 		/** The data used to train a predictor. The data includes a dataset group and any supplementary features. You specify this object in the <a>CreatePredictor</a> request. */
-		InputDataConfig?: InputDataConfig;
+		InputDataConfig?: InputDataConfig | null;
 
 		/** <p>In a <a>CreatePredictor</a> operation, the specified algorithm trains a model using the specified dataset group. You can optionally tell the operation to modify data fields prior to training a model. These modifications are referred to as <i>featurization</i>.</p> <p>You define featurization using the <code>FeaturizationConfig</code> object. You specify an array of transformations, one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the <code>TARGET_TIME_SERIES</code> dataset before model training.</p> <p>You can create multiple featurization configurations. For example, you might call the <code>CreatePredictor</code> operation twice by specifying different featurization configurations.</p> */
-		FeaturizationConfig?: FeaturizationConfig;
+		FeaturizationConfig?: FeaturizationConfig | null;
 
 		/** An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <a>CreateDataset</a> and <a>CreatePredictor</a> requests. */
-		EncryptionConfig?: EncryptionConfig;
+		EncryptionConfig?: EncryptionConfig | null;
 
 		/** Contains details on the backtests performed to evaluate the accuracy of the predictor. The tests are returned in descending order of accuracy, with the most accurate backtest appearing first. You specify the number of backtests to perform when you call the operation. */
-		PredictorExecutionDetails?: PredictorExecutionDetails;
-		DatasetImportJobArns?: Array<string>;
-		AutoMLAlgorithmArns?: Array<string>;
-		Status?: string;
-		Message?: string;
-		CreationTime?: Date;
-		LastModificationTime?: Date;
+		PredictorExecutionDetails?: PredictorExecutionDetails | null;
+		DatasetImportJobArns?: Array<string> | null;
+		AutoMLAlgorithmArns?: Array<string> | null;
+		Status?: string | null;
+		Message?: string | null;
+		CreationTime?: Date | null;
+		LastModificationTime?: Date | null;
 	}
 
 
 	/** Contains details on the backtests performed to evaluate the accuracy of the predictor. The tests are returned in descending order of accuracy, with the most accurate backtest appearing first. You specify the number of backtests to perform when you call the operation. */
 	export interface PredictorExecutionDetails {
-		PredictorExecutions?: Array<PredictorExecution>;
+		PredictorExecutions?: Array<PredictorExecution> | null;
 	}
 
 
 	/** The algorithm used to perform a backtest and the status of those tests. */
 	export interface PredictorExecution {
-		AlgorithmArn?: string;
-		TestWindows?: Array<TestWindowSummary>;
+		AlgorithmArn?: string | null;
+		TestWindows?: Array<TestWindowSummary> | null;
 	}
 
 
 	/** The status, start time, and end time of a backtest, as well as a failure reason if applicable. */
 	export interface TestWindowSummary {
-		TestWindowStart?: Date;
-		TestWindowEnd?: Date;
-		Status?: string;
-		Message?: string;
+		TestWindowStart?: Date | null;
+		TestWindowEnd?: Date | null;
+		Status?: string | null;
+		Message?: string | null;
 	}
 
 	export interface DescribePredictorRequest {
@@ -448,26 +448,26 @@ export namespace MyNS {
 	}
 
 	export interface GetAccuracyMetricsResponse {
-		PredictorEvaluationResults?: Array<EvaluationResult>;
+		PredictorEvaluationResults?: Array<EvaluationResult> | null;
 	}
 
 
 	/** The results of evaluating an algorithm. Returned as part of the <a>GetAccuracyMetrics</a> response. */
 	export interface EvaluationResult {
-		AlgorithmArn?: string;
-		TestWindows?: Array<WindowSummary>;
+		AlgorithmArn?: string | null;
+		TestWindows?: Array<WindowSummary> | null;
 	}
 
 
 	/** <p>The metrics for a time range within the evaluation portion of a dataset. This object is part of the <a>EvaluationResult</a> object.</p> <p>The <code>TestWindowStart</code> and <code>TestWindowEnd</code> parameters are determined by the <code>BackTestWindowOffset</code> parameter of the <a>EvaluationParameters</a> object.</p> */
 	export interface WindowSummary {
-		TestWindowStart?: Date;
-		TestWindowEnd?: Date;
-		ItemCount?: number;
-		EvaluationType?: WindowSummaryEvaluationType;
+		TestWindowStart?: Date | null;
+		TestWindowEnd?: Date | null;
+		ItemCount?: number | null;
+		EvaluationType?: WindowSummaryEvaluationType | null;
 
 		/** Provides metrics that are used to evaluate the performance of a predictor. This object is part of the <a>WindowSummary</a> object. */
-		Metrics?: Metrics;
+		Metrics?: Metrics | null;
 	}
 
 	export enum WindowSummaryEvaluationType { SUMMARY = 0, COMPUTED = 1 }
@@ -475,15 +475,15 @@ export namespace MyNS {
 
 	/** Provides metrics that are used to evaluate the performance of a predictor. This object is part of the <a>WindowSummary</a> object. */
 	export interface Metrics {
-		RMSE?: number;
-		WeightedQuantileLosses?: Array<WeightedQuantileLoss>;
+		RMSE?: number | null;
+		WeightedQuantileLosses?: Array<WeightedQuantileLoss> | null;
 	}
 
 
 	/** The weighted loss value for a quantile. This object is part of the <a>Metrics</a> object. */
 	export interface WeightedQuantileLoss {
-		Quantile?: number;
-		LossValue?: number;
+		Quantile?: number | null;
+		LossValue?: number | null;
 	}
 
 	export interface GetAccuracyMetricsRequest {
@@ -491,50 +491,50 @@ export namespace MyNS {
 	}
 
 	export interface ListDatasetGroupsResponse {
-		DatasetGroups?: Array<DatasetGroupSummary>;
-		NextToken?: string;
+		DatasetGroups?: Array<DatasetGroupSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Provides a summary of the dataset group properties used in the <a>ListDatasetGroups</a> operation. To get the complete set of properties, call the <a>DescribeDatasetGroup</a> operation, and provide the <code>DatasetGroupArn</code>. */
 	export interface DatasetGroupSummary {
-		DatasetGroupArn?: string;
-		DatasetGroupName?: string;
-		CreationTime?: Date;
-		LastModificationTime?: Date;
+		DatasetGroupArn?: string | null;
+		DatasetGroupName?: string | null;
+		CreationTime?: Date | null;
+		LastModificationTime?: Date | null;
 	}
 
 	export interface ListDatasetGroupsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface InvalidNextTokenException {
 	}
 
 	export interface ListDatasetImportJobsResponse {
-		DatasetImportJobs?: Array<DatasetImportJobSummary>;
-		NextToken?: string;
+		DatasetImportJobs?: Array<DatasetImportJobSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Provides a summary of the dataset import job properties used in the <a>ListDatasetImportJobs</a> operation. To get the complete set of properties, call the <a>DescribeDatasetImportJob</a> operation, and provide the <code>DatasetImportJobArn</code>. */
 	export interface DatasetImportJobSummary {
-		DatasetImportJobArn?: string;
-		DatasetImportJobName?: string;
+		DatasetImportJobArn?: string | null;
+		DatasetImportJobName?: string | null;
 
 		/** The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <a>CreateDatasetImportJob</a> request. */
-		DataSource?: DataSource;
-		Status?: string;
-		Message?: string;
-		CreationTime?: Date;
-		LastModificationTime?: Date;
+		DataSource?: DataSource | null;
+		Status?: string | null;
+		Message?: string | null;
+		CreationTime?: Date | null;
+		LastModificationTime?: Date | null;
 	}
 
 	export interface ListDatasetImportJobsRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		Filters?: Array<Filter>;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		Filters?: Array<Filter> | null;
 	}
 
 
@@ -548,96 +548,96 @@ export namespace MyNS {
 	export enum FilterCondition { IS = 0, IS_NOT = 1 }
 
 	export interface ListDatasetsResponse {
-		Datasets?: Array<DatasetSummary>;
-		NextToken?: string;
+		Datasets?: Array<DatasetSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Provides a summary of the dataset properties used in the <a>ListDatasets</a> operation. To get the complete set of properties, call the <a>DescribeDataset</a> operation, and provide the <code>DatasetArn</code>. */
 	export interface DatasetSummary {
-		DatasetArn?: string;
-		DatasetName?: string;
-		DatasetType?: CreateDatasetRequestDatasetType;
-		Domain?: CreateDatasetRequestDomain;
-		CreationTime?: Date;
-		LastModificationTime?: Date;
+		DatasetArn?: string | null;
+		DatasetName?: string | null;
+		DatasetType?: CreateDatasetRequestDatasetType | null;
+		Domain?: CreateDatasetRequestDomain | null;
+		CreationTime?: Date | null;
+		LastModificationTime?: Date | null;
 	}
 
 	export interface ListDatasetsRequest {
-		NextToken?: string;
-		MaxResults?: number;
+		NextToken?: string | null;
+		MaxResults?: number | null;
 	}
 
 	export interface ListForecastExportJobsResponse {
-		ForecastExportJobs?: Array<ForecastExportJobSummary>;
-		NextToken?: string;
+		ForecastExportJobs?: Array<ForecastExportJobSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Provides a summary of the forecast export job properties used in the <a>ListForecastExportJobs</a> operation. To get the complete set of properties, call the <a>DescribeForecastExportJob</a> operation, and provide the listed <code>ForecastExportJobArn</code>. */
 	export interface ForecastExportJobSummary {
-		ForecastExportJobArn?: string;
-		ForecastExportJobName?: string;
+		ForecastExportJobArn?: string | null;
+		ForecastExportJobName?: string | null;
 
 		/** The destination for an exported forecast, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <a>CreateForecastExportJob</a> request. */
-		Destination?: DataDestination;
-		Status?: string;
-		Message?: string;
-		CreationTime?: Date;
-		LastModificationTime?: Date;
+		Destination?: DataDestination | null;
+		Status?: string | null;
+		Message?: string | null;
+		CreationTime?: Date | null;
+		LastModificationTime?: Date | null;
 	}
 
 	export interface ListForecastExportJobsRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		Filters?: Array<Filter>;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		Filters?: Array<Filter> | null;
 	}
 
 	export interface ListForecastsResponse {
-		Forecasts?: Array<ForecastSummary>;
-		NextToken?: string;
+		Forecasts?: Array<ForecastSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Provides a summary of the forecast properties used in the <a>ListForecasts</a> operation. To get the complete set of properties, call the <a>DescribeForecast</a> operation, and provide the <code>ForecastArn</code> that is listed in the summary. */
 	export interface ForecastSummary {
-		ForecastArn?: string;
-		ForecastName?: string;
-		PredictorArn?: string;
-		DatasetGroupArn?: string;
-		Status?: string;
-		Message?: string;
-		CreationTime?: Date;
-		LastModificationTime?: Date;
+		ForecastArn?: string | null;
+		ForecastName?: string | null;
+		PredictorArn?: string | null;
+		DatasetGroupArn?: string | null;
+		Status?: string | null;
+		Message?: string | null;
+		CreationTime?: Date | null;
+		LastModificationTime?: Date | null;
 	}
 
 	export interface ListForecastsRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		Filters?: Array<Filter>;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		Filters?: Array<Filter> | null;
 	}
 
 	export interface ListPredictorsResponse {
-		Predictors?: Array<PredictorSummary>;
-		NextToken?: string;
+		Predictors?: Array<PredictorSummary> | null;
+		NextToken?: string | null;
 	}
 
 
 	/** Provides a summary of the predictor properties that are used in the <a>ListPredictors</a> operation. To get the complete set of properties, call the <a>DescribePredictor</a> operation, and provide the listed <code>PredictorArn</code>. */
 	export interface PredictorSummary {
-		PredictorArn?: string;
-		PredictorName?: string;
-		DatasetGroupArn?: string;
-		Status?: string;
-		Message?: string;
-		CreationTime?: Date;
-		LastModificationTime?: Date;
+		PredictorArn?: string | null;
+		PredictorName?: string | null;
+		DatasetGroupArn?: string | null;
+		Status?: string | null;
+		Message?: string | null;
+		CreationTime?: Date | null;
+		LastModificationTime?: Date | null;
 	}
 
 	export interface ListPredictorsRequest {
-		NextToken?: string;
-		MaxResults?: number;
-		Filters?: Array<Filter>;
+		NextToken?: string | null;
+		MaxResults?: number | null;
+		Filters?: Array<Filter> | null;
 	}
 
 	export interface UpdateDatasetGroupResponse {
@@ -663,14 +663,14 @@ export namespace MyNS {
 
 	/** Provides statistics for each data field imported into to an Amazon Forecast dataset with the <a>CreateDatasetImportJob</a> operation. */
 	export interface Statistics {
-		Count?: number;
-		CountDistinct?: number;
-		CountNull?: number;
-		CountNan?: number;
-		Min?: string;
-		Max?: string;
-		Avg?: number;
-		Stddev?: number;
+		Count?: number | null;
+		CountDistinct?: number | null;
+		CountNull?: number | null;
+		CountNan?: number | null;
+		Min?: string | null;
+		Max?: string | null;
+		Avg?: number | null;
+		Stddev?: number | null;
 	}
 
 	export enum FilterConditionString { IS = 0, IS_NOT = 1 }
@@ -858,7 +858,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDatasetGroupsResponse} Success
 		 */
-		ListDatasetGroups(MaxResults: string, NextToken: string, requestBody: ListDatasetGroupsRequest): Observable<ListDatasetGroupsResponse> {
+		ListDatasetGroups(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDatasetGroupsRequest): Observable<ListDatasetGroupsResponse> {
 			return this.http.post<ListDatasetGroupsResponse>(this.baseUri + '#X-Amz-Target=AmazonForecast.ListDatasetGroups?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -869,7 +869,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDatasetImportJobsResponse} Success
 		 */
-		ListDatasetImportJobs(MaxResults: string, NextToken: string, requestBody: ListDatasetImportJobsRequest): Observable<ListDatasetImportJobsResponse> {
+		ListDatasetImportJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDatasetImportJobsRequest): Observable<ListDatasetImportJobsResponse> {
 			return this.http.post<ListDatasetImportJobsResponse>(this.baseUri + '#X-Amz-Target=AmazonForecast.ListDatasetImportJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -880,7 +880,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDatasetsResponse} Success
 		 */
-		ListDatasets(MaxResults: string, NextToken: string, requestBody: ListDatasetsRequest): Observable<ListDatasetsResponse> {
+		ListDatasets(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListDatasetsRequest): Observable<ListDatasetsResponse> {
 			return this.http.post<ListDatasetsResponse>(this.baseUri + '#X-Amz-Target=AmazonForecast.ListDatasets?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -891,7 +891,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListForecastExportJobsResponse} Success
 		 */
-		ListForecastExportJobs(MaxResults: string, NextToken: string, requestBody: ListForecastExportJobsRequest): Observable<ListForecastExportJobsResponse> {
+		ListForecastExportJobs(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListForecastExportJobsRequest): Observable<ListForecastExportJobsResponse> {
 			return this.http.post<ListForecastExportJobsResponse>(this.baseUri + '#X-Amz-Target=AmazonForecast.ListForecastExportJobs?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -902,7 +902,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListForecastsResponse} Success
 		 */
-		ListForecasts(MaxResults: string, NextToken: string, requestBody: ListForecastsRequest): Observable<ListForecastsResponse> {
+		ListForecasts(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListForecastsRequest): Observable<ListForecastsResponse> {
 			return this.http.post<ListForecastsResponse>(this.baseUri + '#X-Amz-Target=AmazonForecast.ListForecasts?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -913,7 +913,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPredictorsResponse} Success
 		 */
-		ListPredictors(MaxResults: string, NextToken: string, requestBody: ListPredictorsRequest): Observable<ListPredictorsResponse> {
+		ListPredictors(MaxResults: string | null | undefined, NextToken: string | null | undefined, requestBody: ListPredictorsRequest): Observable<ListPredictorsResponse> {
 			return this.http.post<ListPredictorsResponse>(this.baseUri + '#X-Amz-Target=AmazonForecast.ListPredictors?MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

@@ -5,37 +5,37 @@ export namespace MyNS {
 	export interface SendCommandResult {
 
 		/** Contains the details of the started session. */
-		StartSession?: StartSessionResult;
+		StartSession?: StartSessionResult | null;
 
 		/** Contains the details of the started transaction. */
-		StartTransaction?: StartTransactionResult;
+		StartTransaction?: StartTransactionResult | null;
 
 		/** Contains the details of the ended session. */
-		EndSession?: EndSessionResult;
+		EndSession?: EndSessionResult | null;
 
 		/** Contains the details of the committed transaction. */
-		CommitTransaction?: CommitTransactionResult;
+		CommitTransaction?: CommitTransactionResult | null;
 
 		/** Contains the details of the aborted transaction. */
-		AbortTransaction?: AbortTransactionResult;
+		AbortTransaction?: AbortTransactionResult | null;
 
 		/** Contains the details of the executed statement. */
-		ExecuteStatement?: ExecuteStatementResult;
+		ExecuteStatement?: ExecuteStatementResult | null;
 
 		/** Contains the page that was fetched. */
-		FetchPage?: FetchPageResult;
+		FetchPage?: FetchPageResult | null;
 	}
 
 
 	/** Contains the details of the started session. */
 	export interface StartSessionResult {
-		SessionToken?: string;
+		SessionToken?: string | null;
 	}
 
 
 	/** Contains the details of the started transaction. */
 	export interface StartTransactionResult {
-		TransactionId?: string;
+		TransactionId?: string | null;
 	}
 
 
@@ -46,8 +46,8 @@ export namespace MyNS {
 
 	/** Contains the details of the committed transaction. */
 	export interface CommitTransactionResult {
-		TransactionId?: string;
-		CommitDigest?: string;
+		TransactionId?: string | null;
+		CommitDigest?: string | null;
 	}
 
 
@@ -60,21 +60,21 @@ export namespace MyNS {
 	export interface ExecuteStatementResult {
 
 		/** Contains details of the fetched page. */
-		FirstPage?: Page;
+		FirstPage?: Page | null;
 	}
 
 
 	/** Contains details of the fetched page. */
 	export interface Page {
-		Values?: Array<ValueHolder>;
-		NextPageToken?: string;
+		Values?: Array<ValueHolder> | null;
+		NextPageToken?: string | null;
 	}
 
 
 	/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
 	export interface ValueHolder {
-		IonBinary?: string;
-		IonText?: string;
+		IonBinary?: string | null;
+		IonText?: string | null;
 	}
 
 
@@ -82,32 +82,32 @@ export namespace MyNS {
 	export interface FetchPageResult {
 
 		/** Contains details of the fetched page. */
-		Page?: Page;
+		Page?: Page | null;
 	}
 
 	export interface SendCommandRequest {
-		SessionToken?: string;
+		SessionToken?: string | null;
 
 		/** Specifies a request to start a new session. */
-		StartSession?: StartSessionRequest;
+		StartSession?: StartSessionRequest | null;
 
 		/** Specifies a request to start a transaction. */
-		StartTransaction?: StartTransactionRequest;
+		StartTransaction?: StartTransactionRequest | null;
 
 		/** Specifies a request to end the session. */
-		EndSession?: EndSessionRequest;
+		EndSession?: EndSessionRequest | null;
 
 		/** Contains the details of the transaction to commit. */
-		CommitTransaction?: CommitTransactionRequest;
+		CommitTransaction?: CommitTransactionRequest | null;
 
 		/** Contains the details of the transaction to abort. */
-		AbortTransaction?: AbortTransactionRequest;
+		AbortTransaction?: AbortTransactionRequest | null;
 
 		/** Specifies a request to execute a statement. */
-		ExecuteStatement?: ExecuteStatementRequest;
+		ExecuteStatement?: ExecuteStatementRequest | null;
 
 		/** Specifies the details of the page to be fetched. */
-		FetchPage?: FetchPageRequest;
+		FetchPage?: FetchPageRequest | null;
 	}
 
 
@@ -143,7 +143,7 @@ export namespace MyNS {
 	export interface ExecuteStatementRequest {
 		TransactionId: string;
 		Statement: string;
-		Parameters?: Array<ValueHolder>;
+		Parameters?: Array<ValueHolder> | null;
 	}
 
 

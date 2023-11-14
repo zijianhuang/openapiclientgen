@@ -3,10 +3,10 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface Pagination {
-		page?: number;
-		pageSize?: number;
-		pageCount?: number;
-		itemCount?: number;
+		page?: number | null;
+		pageSize?: number | null;
+		pageCount?: number | null;
+		itemCount?: number | null;
 	}
 
 
@@ -14,81 +14,81 @@ export namespace MyNS {
 	export interface Problem {
 
 		/** The type of error format */
-		type?: string;
+		type?: string | null;
 
 		/** The type of the error */
-		title?: string;
+		title?: string | null;
 
 		/** The error status code */
-		status?: string;
+		status?: string | null;
 
 		/** A description of the error */
-		detail?: string;
-		instance?: string;
-		invalidFields?: Array<InvalidField>;
+		detail?: string | null;
+		instance?: string | null;
+		invalidFields?: Array<InvalidField> | null;
 	}
 
 	export interface InvalidField {
 
 		/** The name of the field that caused the error */
-		name?: string;
+		name?: string | null;
 
 		/** The reason the error occurred */
-		reason?: string;
+		reason?: string | null;
 	}
 
 	export interface Employees {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		employees?: Array<Employee>;
+		problem?: Problem | null;
+		employees?: Array<Employee> | null;
 	}
 
 	export interface Employee {
 
 		/** Xero unique identifier for the employee */
-		employeeID?: string;
+		employeeID?: string | null;
 
 		/** Title of the employee */
-		title?: string;
+		title?: string | null;
 
 		/** First name of employee */
-		firstName?: string;
+		firstName?: string | null;
 
 		/** Last name of employee */
-		lastName?: string;
+		lastName?: string | null;
 
 		/** Date of birth of the employee (YYYY-MM-DD) */
-		dateOfBirth?: Date;
-		address?: Address;
+		dateOfBirth?: Date | null;
+		address?: Address | null;
 
 		/** The email address for the employee */
-		email?: string;
+		email?: string | null;
 
 		/** The employee’s gender */
-		gender?: EmployeeGender;
+		gender?: EmployeeGender | null;
 
 		/** Employee phone number */
-		phoneNumber?: string;
+		phoneNumber?: string | null;
 
 		/** Employment start date of the employee at the time it was requested */
-		startDate?: Date;
+		startDate?: Date | null;
 
 		/** Employment end date of the employee at the time it was requested */
-		endDate?: Date;
+		endDate?: Date | null;
 
 		/** Xero unique identifier for the payroll calendar of the employee */
-		payrollCalendarID?: string;
+		payrollCalendarID?: string | null;
 
 		/** UTC timestamp of last update to the employee */
-		updatedDateUTC?: Date;
+		updatedDateUTC?: Date | null;
 
 		/** UTC timestamp when the employee was created in Xero */
-		createdDateUTC?: Date;
+		createdDateUTC?: Date | null;
 
 		/** National insurance number of the employee */
-		nationalInsuranceNumber?: string;
+		nationalInsuranceNumber?: string | null;
 	}
 
 	export interface Address {
@@ -100,7 +100,7 @@ export namespace MyNS {
 		addressLine1: string;
 
 		/** Address line 2 for employee home address */
-		addressLine2?: string;
+		addressLine2?: string | null;
 
 		/**
 		 * Suburb for employee home address
@@ -115,129 +115,129 @@ export namespace MyNS {
 		postCode: string;
 
 		/** Country of HomeAddress */
-		countryName?: string;
+		countryName?: string | null;
 	}
 
 	export enum EmployeeGender { M = 0, F = 1 }
 
 	export interface EmployeeObject {
-		pagination?: Pagination;
-		employee?: Employee;
+		pagination?: Pagination | null;
+		employee?: Employee | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
+		problem?: Problem | null;
 	}
 
 	export interface EmploymentObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		employment?: Employment;
+		problem?: Problem | null;
+		employment?: Employment | null;
 	}
 
 	export interface Employment {
 
 		/** Xero unique identifier for the payroll calendar of the employee */
-		payrollCalendarID?: string;
+		payrollCalendarID?: string | null;
 
 		/** Start date of the employment (YYYY-MM-DD) */
-		startDate?: Date;
+		startDate?: Date | null;
 
 		/** The employment number of the employee */
-		employeeNumber?: string;
+		employeeNumber?: string | null;
 
 		/** The NI Category of the employee */
-		niCategory?: EmploymentNiCategory;
+		niCategory?: EmploymentNiCategory | null;
 	}
 
 	export enum EmploymentNiCategory { A = 0, B = 1, C = 2, H = 3, J = 4, M = 5, Z = 6, X = 7 }
 
 	export interface EmployeeTaxObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		employeeTax?: EmployeeTax;
+		problem?: Problem | null;
+		employeeTax?: EmployeeTax | null;
 	}
 
 	export interface EmployeeTax {
 
 		/** The Starter type. */
-		starterType?: string;
+		starterType?: string | null;
 
 		/** Starter declaration. */
-		starterDeclaration?: string;
+		starterDeclaration?: string | null;
 
 		/** The Tax code. */
-		taxCode?: string;
+		taxCode?: string | null;
 
 		/** Describes whether the tax settings is W1M1 */
-		w1M1?: boolean;
+		w1M1?: boolean | null;
 
 		/** The previous taxable pay */
-		previousTaxablePay?: number;
+		previousTaxablePay?: number | null;
 
 		/** The tax amount previously paid */
-		previousTaxPaid?: number;
+		previousTaxPaid?: number | null;
 
 		/** The employee's student loan deduction type */
-		studentLoanDeduction?: string;
+		studentLoanDeduction?: string | null;
 
 		/** Describes whether the employee has post graduate loans */
-		hasPostGraduateLoans?: boolean;
+		hasPostGraduateLoans?: boolean | null;
 
 		/** Describes whether the employee is director */
-		isDirector?: boolean;
+		isDirector?: boolean | null;
 
 		/** The directorship start date */
-		directorshipStartDate?: Date;
+		directorshipStartDate?: Date | null;
 
 		/** NICs calculation method */
-		nicCalculationMethod?: string;
+		nicCalculationMethod?: string | null;
 	}
 
 	export interface EmployeeOpeningBalancesObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		openingBalances?: EmployeeOpeningBalances;
+		problem?: Problem | null;
+		openingBalances?: EmployeeOpeningBalances | null;
 	}
 
 	export interface EmployeeOpeningBalances {
 
 		/** The total accumulated statutory adoption pay amount received by the employee for current fiscal year to date */
-		statutoryAdoptionPay?: number;
+		statutoryAdoptionPay?: number | null;
 
 		/** The total accumulated statutory maternity pay amount received by the employee for current fiscal year to date */
-		statutoryMaternityPay?: number;
+		statutoryMaternityPay?: number | null;
 
 		/** The total accumulated statutory paternity pay amount received by the employee for current fiscal year to date */
-		statutoryPaternityPay?: number;
+		statutoryPaternityPay?: number | null;
 
 		/** The total accumulated statutory shared parental pay amount received by the employee for current fiscal year to date */
-		statutorySharedParentalPay?: number;
+		statutorySharedParentalPay?: number | null;
 
 		/** The total accumulated statutory sick pay amount received by the employee for current fiscal year to date */
-		statutorySickPay?: number;
+		statutorySickPay?: number | null;
 
 		/** The unique employee number issued by the employee's former employer */
-		priorEmployeeNumber?: number;
+		priorEmployeeNumber?: number | null;
 	}
 
 	export interface EmployeeLeaves {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		leave?: Array<EmployeeLeave>;
+		problem?: Problem | null;
+		leave?: Array<EmployeeLeave> | null;
 	}
 
 	export interface EmployeeLeave {
 
 		/** The Xero identifier for LeaveType */
-		leaveID?: string;
+		leaveID?: string | null;
 
 		/**
 		 * The Xero identifier for LeaveType
@@ -264,86 +264,86 @@ export namespace MyNS {
 		endDate: Date;
 
 		/** The leave period information. The StartDate, EndDate and NumberOfUnits needs to be specified when you do not want to calculate NumberOfUnits automatically. Using incorrect period StartDate and EndDate will result in automatic computation of the NumberOfUnits. */
-		periods?: Array<LeavePeriod>;
+		periods?: Array<LeavePeriod> | null;
 
 		/** UTC timestamp of last update to the leave type note */
-		updatedDateUTC?: Date;
+		updatedDateUTC?: Date | null;
 	}
 
 	export interface LeavePeriod {
 
 		/** The Pay Period Start Date (YYYY-MM-DD) */
-		periodStartDate?: Date;
+		periodStartDate?: Date | null;
 
 		/** The Pay Period End Date (YYYY-MM-DD) */
-		periodEndDate?: Date;
+		periodEndDate?: Date | null;
 
 		/** The Number of Units for the leave */
-		numberOfUnits?: number;
+		numberOfUnits?: number | null;
 
 		/** Period Status */
-		periodStatus?: LeavePeriodPeriodStatus;
+		periodStatus?: LeavePeriodPeriodStatus | null;
 	}
 
 	export enum LeavePeriodPeriodStatus { Approved = 0, Completed = 1 }
 
 	export interface EmployeeLeaveObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		leave?: EmployeeLeave;
+		problem?: Problem | null;
+		leave?: EmployeeLeave | null;
 	}
 
 	export interface LeavePeriods {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		periods?: Array<LeavePeriod>;
+		problem?: Problem | null;
+		periods?: Array<LeavePeriod> | null;
 	}
 
 	export interface EmployeeLeaveBalances {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		leaveBalances?: Array<EmployeeLeaveBalance>;
+		problem?: Problem | null;
+		leaveBalances?: Array<EmployeeLeaveBalance> | null;
 	}
 
 	export interface EmployeeLeaveBalance {
 
 		/** Name of the leave type. */
-		name?: string;
+		name?: string | null;
 
 		/** The Xero identifier for leave type */
-		leaveTypeID?: string;
+		leaveTypeID?: string | null;
 
 		/** The employees current balance for the corresponding leave type. */
-		balance?: number;
+		balance?: number | null;
 
 		/** The type of the units of the leave. */
-		typeOfUnits?: string;
+		typeOfUnits?: string | null;
 	}
 
 	export interface EmployeeStatutoryLeaveBalanceObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		leaveBalance?: EmployeeStatutoryLeaveBalance;
+		problem?: Problem | null;
+		leaveBalance?: EmployeeStatutoryLeaveBalance | null;
 	}
 
 	export interface EmployeeStatutoryLeaveBalance {
 
 		/** The type of statutory leave */
-		leaveType?: EmployeeStatutoryLeaveBalanceLeaveType;
+		leaveType?: EmployeeStatutoryLeaveBalanceLeaveType | null;
 
 		/** The balance remaining for the corresponding leave type as of specified date. */
-		balanceRemaining?: number;
+		balanceRemaining?: number | null;
 
 		/** The units will be "Hours" */
-		units?: EmployeeStatutoryLeaveBalanceUnits;
+		units?: EmployeeStatutoryLeaveBalanceUnits | null;
 	}
 
 	export enum EmployeeStatutoryLeaveBalanceLeaveType { Sick = 0, Adoption = 1, Maternity = 2, Paternity = 3, Sharedparental = 4 }
@@ -351,51 +351,51 @@ export namespace MyNS {
 	export enum EmployeeStatutoryLeaveBalanceUnits { Hours = 0 }
 
 	export interface EmployeeStatutoryLeavesSummaries {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		statutoryLeaves?: Array<EmployeeStatutoryLeaveSummary>;
+		problem?: Problem | null;
+		statutoryLeaves?: Array<EmployeeStatutoryLeaveSummary> | null;
 	}
 
 	export interface EmployeeStatutoryLeaveSummary {
 
 		/** The unique identifier (guid) of a statutory leave. */
-		statutoryLeaveID?: string;
+		statutoryLeaveID?: string | null;
 
 		/** The unique identifier (guid) of the employee */
-		employeeID?: string;
+		employeeID?: string | null;
 
 		/** The category of statutory leave */
-		type?: EmployeeStatutoryLeaveBalanceLeaveType;
+		type?: EmployeeStatutoryLeaveBalanceLeaveType | null;
 
 		/** The date when the leave starts */
-		startDate?: Date;
+		startDate?: Date | null;
 
 		/** The date when the leave ends */
-		endDate?: Date;
+		endDate?: Date | null;
 
 		/** Whether the leave was entitled to receive payment */
-		isEntitled?: boolean;
+		isEntitled?: boolean | null;
 
 		/** The status of the leave */
-		status?: EmployeeStatutoryLeaveSummaryStatus;
+		status?: EmployeeStatutoryLeaveSummaryStatus | null;
 	}
 
 	export enum EmployeeStatutoryLeaveSummaryStatus { Pending = 0, In_Progress = 1, Completed = 2 }
 
 	export interface EmployeeStatutorySickLeaves {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		statutorySickLeave?: Array<EmployeeStatutorySickLeave>;
+		problem?: Problem | null;
+		statutorySickLeave?: Array<EmployeeStatutorySickLeave> | null;
 	}
 
 	export interface EmployeeStatutorySickLeave {
 
 		/** The unique identifier (guid) of a statutory leave */
-		statutoryLeaveID?: string;
+		statutoryLeaveID?: string | null;
 
 		/**
 		 * The unique identifier (guid) of the employee
@@ -422,10 +422,10 @@ export namespace MyNS {
 		endDate: Date;
 
 		/** the type of statutory leave */
-		type?: string;
+		type?: string | null;
 
 		/** the type of statutory leave */
-		status?: string;
+		status?: string | null;
 
 		/**
 		 * The days of the work week the employee is scheduled to work at the time the leave is taken
@@ -446,38 +446,38 @@ export namespace MyNS {
 		sufficientNotice: boolean;
 
 		/** Whether the leave was entitled to receive payment */
-		isEntitled?: boolean;
+		isEntitled?: boolean | null;
 
 		/** The amount of requested time (in weeks) */
-		entitlementWeeksRequested?: number;
+		entitlementWeeksRequested?: number | null;
 
 		/** The amount of statutory sick leave time off (in weeks) that is available to take at the time the leave was requested */
-		entitlementWeeksQualified?: number;
+		entitlementWeeksQualified?: number | null;
 
 		/** A calculated amount of time (in weeks) that remains for the statutory sick leave period */
-		entitlementWeeksRemaining?: number;
+		entitlementWeeksRemaining?: number | null;
 
 		/** Whether another leave (Paternity, Shared Parental specifically) occurs during the requested leave's period. While this is allowed it could affect payment amounts */
-		overlapsWithOtherLeave?: boolean;
+		overlapsWithOtherLeave?: boolean | null;
 
 		/** If the leave requested was considered "not entitled", the reasons why are listed here. */
-		entitlementFailureReasons?: Array<string>;
+		entitlementFailureReasons?: Array<string> | null;
 	}
 
 	export interface EmployeeStatutorySickLeaveObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		statutorySickLeave?: EmployeeStatutorySickLeave;
+		problem?: Problem | null;
+		statutorySickLeave?: EmployeeStatutorySickLeave | null;
 	}
 
 	export interface EmployeeLeaveTypes {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		leaveTypes?: Array<EmployeeLeaveType>;
+		problem?: Problem | null;
+		leaveTypes?: Array<EmployeeLeaveType> | null;
 	}
 
 	export interface EmployeeLeaveType {
@@ -495,92 +495,92 @@ export namespace MyNS {
 		scheduleOfAccrual: EmployeeLeaveTypeScheduleOfAccrual;
 
 		/** The number of hours accrued for the leave annually. This is 0 when the scheduleOfAccrual chosen is "OnHourWorked" */
-		hoursAccruedAnnually?: number;
+		hoursAccruedAnnually?: number | null;
 
 		/** The maximum number of hours that can be accrued for the leave */
-		maximumToAccrue?: number;
+		maximumToAccrue?: number | null;
 
 		/** The initial number of hours assigned when the leave was added to the employee */
-		openingBalance?: number;
+		openingBalance?: number | null;
 
 		/** The number of hours added to the leave balance for every hour worked by the employee. This is normally 0, unless the scheduleOfAccrual chosen is "OnHourWorked" */
-		rateAccruedHourly?: number;
+		rateAccruedHourly?: number | null;
 	}
 
 	export enum EmployeeLeaveTypeScheduleOfAccrual { BeginningOfCalendarYear = 0, OnAnniversaryDate = 1, EachPayPeriod = 2, OnHourWorked = 3 }
 
 	export interface EmployeeLeaveTypeObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		leaveType?: EmployeeLeaveType;
+		problem?: Problem | null;
+		leaveType?: EmployeeLeaveType | null;
 	}
 
 	export interface EmployeePayTemplateObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		payTemplate?: EmployeePayTemplate;
+		problem?: Problem | null;
+		payTemplate?: EmployeePayTemplate | null;
 	}
 
 	export interface EmployeePayTemplate {
 
 		/** Unique identifier for the employee */
-		employeeID?: string;
-		earningTemplates?: Array<EarningsTemplate>;
+		employeeID?: string | null;
+		earningTemplates?: Array<EarningsTemplate> | null;
 	}
 
 	export interface EarningsTemplate {
 
 		/** The Xero identifier for the earnings template */
-		payTemplateEarningID?: string;
+		payTemplateEarningID?: string | null;
 
 		/** The rate per unit */
-		ratePerUnit?: number;
+		ratePerUnit?: number | null;
 
 		/** The rate per unit */
-		numberOfUnits?: number;
+		numberOfUnits?: number | null;
 
 		/** The fixed amount per period */
-		fixedAmount?: number;
+		fixedAmount?: number | null;
 
 		/** The corresponding earnings rate identifier */
-		earningsRateID?: string;
+		earningsRateID?: string | null;
 
 		/** The read-only name of the Earning Template. */
-		name?: string;
+		name?: string | null;
 	}
 
 	export interface EmployeePayTemplates {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		earningTemplates?: Array<EarningsTemplate>;
+		problem?: Problem | null;
+		earningTemplates?: Array<EarningsTemplate> | null;
 	}
 
 	export interface EarningsTemplateObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		earningTemplate?: EarningsTemplate;
+		problem?: Problem | null;
+		earningTemplate?: EarningsTemplate | null;
 	}
 
 	export interface Benefits {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		benefits?: Array<Benefit>;
+		problem?: Problem | null;
+		benefits?: Array<Benefit> | null;
 	}
 
 	export interface Benefit {
 
 		/** unique identifier in Xero */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Name of the employer pension
@@ -625,22 +625,22 @@ export namespace MyNS {
 		calculationType: BenefitCalculationType;
 
 		/** Identifier of a record is active or not. */
-		currentRecord?: boolean;
+		currentRecord?: boolean | null;
 
 		/** Identifier of subject To NIC */
-		subjectToNIC?: boolean;
+		subjectToNIC?: boolean | null;
 
 		/** Identifier of subject To pension */
-		subjectToPension?: boolean;
+		subjectToPension?: boolean | null;
 
 		/** Identifier of subject To Tax */
-		subjectToTax?: boolean;
+		subjectToTax?: boolean | null;
 
 		/** Identifier of calculating on qualifying earnings */
-		isCalculatingOnQualifyingEarnings?: boolean;
+		isCalculatingOnQualifyingEarnings?: boolean | null;
 
 		/** display the balance to employee */
-		showBalanceToEmployee?: boolean;
+		showBalanceToEmployee?: boolean | null;
 	}
 
 	export enum BenefitCategory { StakeholderPension = 0, Other = 1 }
@@ -648,25 +648,25 @@ export namespace MyNS {
 	export enum BenefitCalculationType { FixedAmount = 0, PercentageOfGross = 1 }
 
 	export interface BenefitObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		benefit?: Benefit;
+		problem?: Problem | null;
+		benefit?: Benefit | null;
 	}
 
 	export interface Deductions {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		deductions?: Array<Deduction>;
+		problem?: Problem | null;
+		deductions?: Array<Deduction> | null;
 	}
 
 	export interface Deduction {
 
 		/** The Xero identifier for Deduction */
-		deductionId?: string;
+		deductionId?: string | null;
 
 		/**
 		 * Name of the deduction
@@ -687,16 +687,16 @@ export namespace MyNS {
 		liabilityAccountId: string;
 
 		/** Identifier of a record is active or not. */
-		currentRecord?: boolean;
+		currentRecord?: boolean | null;
 
 		/** Standard amount of the deduction */
-		standardAmount?: number;
+		standardAmount?: number | null;
 
 		/** Identifier of reduces super liability */
-		reducesSuperLiability?: boolean;
+		reducesSuperLiability?: boolean | null;
 
 		/** Identifier of reduces tax liability */
-		reducesTaxLiability?: boolean;
+		reducesTaxLiability?: boolean | null;
 
 		/**
 		 * determine the calculation type whether fixed amount or percentage of gross
@@ -705,53 +705,53 @@ export namespace MyNS {
 		calculationType: BenefitCalculationType;
 
 		/** Percentage of gross */
-		percentage?: number;
+		percentage?: number | null;
 
 		/** Identifier of subject To NIC */
-		subjectToNIC?: boolean;
+		subjectToNIC?: boolean | null;
 
 		/** Identifier of subject To Tax */
-		subjectToTax?: boolean;
+		subjectToTax?: boolean | null;
 
 		/** Identifier of reduced by basic rate applicable or not */
-		isReducedByBasicRate?: boolean;
+		isReducedByBasicRate?: boolean | null;
 
 		/** Identifier for apply to pension calculations */
-		applyToPensionCalculations?: boolean;
+		applyToPensionCalculations?: boolean | null;
 
 		/** Identifier of calculating on qualifying earnings */
-		isCalculatingOnQualifyingEarnings?: boolean;
+		isCalculatingOnQualifyingEarnings?: boolean | null;
 
 		/** Identifier of applicable for pension or not */
-		isPension?: boolean;
+		isPension?: boolean | null;
 	}
 
 	export enum DeductionDeductionCategory { StakeholderPension = 0, StakeholderPensionPostTax = 1, ChildCareVoucher = 2, SalarySacrifice = 3, UkOther = 4 }
 
 	export interface DeductionObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		deduction?: Deduction;
+		problem?: Problem | null;
+		deduction?: Deduction | null;
 	}
 
 	export interface StatutoryDeduction {
 
 		/** The Xero identifier for earnings order */
-		id?: string;
+		id?: string | null;
 
 		/** Name of the earnings order */
-		name?: string;
+		name?: string | null;
 
 		/** Statutory Deduction Category */
-		statutoryDeductionCategory?: StatutoryDeductionStatutoryDeductionCategory;
+		statutoryDeductionCategory?: StatutoryDeductionStatutoryDeductionCategory | null;
 
 		/** Xero identifier for Liability Account */
-		liabilityAccountId?: string;
+		liabilityAccountId?: string | null;
 
 		/** Identifier of a record is active or not. */
-		currentRecord?: boolean;
+		currentRecord?: boolean | null;
 	}
 
 	export enum StatutoryDeductionStatutoryDeductionCategory { AdditionalStudentLoan = 0, ChildSupport = 1, CourtFines = 2, Creditor = 3, FederalLevy = 4, InlandRevenueArrears = 5, KiwiSaver = 6, MsdRepayments = 7, NonPriorityOrder = 8, PriorityOrder = 9, TableBased = 10, StudentLoan = 11, VoluntaryStudentLoan = 12, USChildSupport = 13 }
@@ -761,17 +761,17 @@ export namespace MyNS {
 	export enum StatutoryDeductionCategory { AdditionalStudentLoan = 0, ChildSupport = 1, CourtFines = 2, Creditor = 3, FederalLevy = 4, InlandRevenueArrears = 5, KiwiSaver = 6, MsdRepayments = 7, NonPriorityOrder = 8, PriorityOrder = 9, TableBased = 10, StudentLoan = 11, VoluntaryStudentLoan = 12, USChildSupport = 13 }
 
 	export interface EarningsOrders {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		statutoryDeductions?: Array<EarningsOrder>;
+		problem?: Problem | null;
+		statutoryDeductions?: Array<EarningsOrder> | null;
 	}
 
 	export interface EarningsOrder {
 
 		/** Xero unique identifier for an earning rate */
-		id?: string;
+		id?: string | null;
 
 		/**
 		 * Name of the earning order
@@ -780,35 +780,35 @@ export namespace MyNS {
 		name: string;
 
 		/** Statutory Deduction Category */
-		statutoryDeductionCategory?: StatutoryDeductionStatutoryDeductionCategory;
+		statutoryDeductionCategory?: StatutoryDeductionStatutoryDeductionCategory | null;
 
 		/** Xero identifier for Liability Account */
-		liabilityAccountId?: string;
+		liabilityAccountId?: string | null;
 
 		/** Identifier of a record is active or not. */
-		currentRecord?: boolean;
+		currentRecord?: boolean | null;
 	}
 
 	export interface EarningsOrderObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		statutoryDeduction?: EarningsOrder;
+		problem?: Problem | null;
+		statutoryDeduction?: EarningsOrder | null;
 	}
 
 	export interface EarningsRates {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		earningsRates?: Array<EarningsRate>;
+		problem?: Problem | null;
+		earningsRates?: Array<EarningsRate> | null;
 	}
 
 	export interface EarningsRate {
 
 		/** Xero unique identifier for an earning rate */
-		earningsRateID?: string;
+		earningsRateID?: string | null;
 
 		/**
 		 * Name of the earning rate
@@ -835,7 +835,7 @@ export namespace MyNS {
 		typeOfUnits: string;
 
 		/** Indicates whether an earning type is active */
-		currentRecord?: boolean;
+		currentRecord?: boolean | null;
 
 		/**
 		 * The account that will be used for the earnings rate
@@ -844,13 +844,13 @@ export namespace MyNS {
 		expenseAccountID: string;
 
 		/** Default rate per unit (optional). Only applicable if RateType is RatePerUnit */
-		ratePerUnit?: number;
+		ratePerUnit?: number | null;
 
 		/** This is the multiplier used to calculate the rate per unit, based on the employee’s ordinary earnings rate. For example, for time and a half enter 1.5. Only applicable if RateType is MultipleOfOrdinaryEarningsRate */
-		multipleOfOrdinaryEarningsRate?: number;
+		multipleOfOrdinaryEarningsRate?: number | null;
 
 		/** Optional Fixed Rate Amount. Applicable for FixedAmount Rate */
-		fixedAmount?: number;
+		fixedAmount?: number | null;
 	}
 
 	export enum EarningsRateEarningsType { OvertimeEarnings = 0, Allowance = 1, RegularEarnings = 2, Commission = 3, Bonus = 4, TipsDirect = 5, TipsNon_Direct = 6, Backpay = 7, OtherEarnings = 8, LumpSum = 9 }
@@ -858,28 +858,28 @@ export namespace MyNS {
 	export enum EarningsRateRateType { RatePerUnit = 0, MultipleOfOrdinaryEarningsRate = 1, FixedAmount = 2 }
 
 	export interface EarningsRateObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		earningsRate?: EarningsRate;
+		problem?: Problem | null;
+		earningsRate?: EarningsRate | null;
 	}
 
 	export interface LeaveTypes {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		leaveTypes?: Array<LeaveType>;
+		problem?: Problem | null;
+		leaveTypes?: Array<LeaveType> | null;
 	}
 
 	export interface LeaveType {
 
 		/** Xero unique identifier for the leave */
-		leaveID?: string;
+		leaveID?: string | null;
 
 		/** Xero unique identifier for the leave type */
-		leaveTypeID?: string;
+		leaveTypeID?: string | null;
 
 		/**
 		 * Name of the leave type
@@ -900,35 +900,35 @@ export namespace MyNS {
 		showOnPayslip: boolean;
 
 		/** UTC timestamp of last update to the leave type note */
-		updatedDateUTC?: Date;
+		updatedDateUTC?: Date | null;
 
 		/** Shows whether the leave type is active or not */
-		isActive?: boolean;
+		isActive?: boolean | null;
 
 		/** Shows whether the leave type is a statutory leave type or not */
-		isStatutoryLeave?: boolean;
+		isStatutoryLeave?: boolean | null;
 	}
 
 	export interface LeaveTypeObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		leaveType?: LeaveType;
+		problem?: Problem | null;
+		leaveType?: LeaveType | null;
 	}
 
 	export interface Reimbursements {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		reimbursements?: Array<Reimbursement>;
+		problem?: Problem | null;
+		reimbursements?: Array<Reimbursement> | null;
 	}
 
 	export interface Reimbursement {
 
 		/** Xero unique identifier for a reimbursement */
-		reimbursementID?: string;
+		reimbursementID?: string | null;
 
 		/**
 		 * Name of the reimbursement
@@ -943,29 +943,29 @@ export namespace MyNS {
 		accountID: string;
 
 		/** Indicates that whether the reimbursement is active */
-		currentRecord?: boolean;
+		currentRecord?: boolean | null;
 	}
 
 	export interface ReimbursementObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		reimbursement?: Reimbursement;
+		problem?: Problem | null;
+		reimbursement?: Reimbursement | null;
 	}
 
 	export interface Timesheets {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		timesheets?: Array<Timesheet>;
+		problem?: Problem | null;
+		timesheets?: Array<Timesheet> | null;
 	}
 
 	export interface Timesheet {
 
 		/** The Xero identifier for a Timesheet */
-		timesheetID?: string;
+		timesheetID?: string | null;
 
 		/**
 		 * The Xero identifier for the Payroll Calandar that the Timesheet applies to
@@ -992,14 +992,14 @@ export namespace MyNS {
 		endDate: Date;
 
 		/** Status of the timesheet */
-		status?: TimesheetStatus;
+		status?: TimesheetStatus | null;
 
 		/** The Total Hours of the Timesheet */
-		totalHours?: number;
+		totalHours?: number | null;
 
 		/** The UTC date time that the Timesheet was last updated */
-		updatedDateUTC?: Date;
-		timesheetLines?: Array<TimesheetLine>;
+		updatedDateUTC?: Date | null;
+		timesheetLines?: Array<TimesheetLine> | null;
 	}
 
 	export enum TimesheetStatus { Draft = 0, Approved = 1, Completed = 2 }
@@ -1007,7 +1007,7 @@ export namespace MyNS {
 	export interface TimesheetLine {
 
 		/** The Xero identifier for a Timesheet Line */
-		timesheetLineID?: string;
+		timesheetLineID?: string | null;
 
 		/**
 		 * The Date that this Timesheet Line is for (YYYY-MM-DD)
@@ -1022,7 +1022,7 @@ export namespace MyNS {
 		earningsRateID: string;
 
 		/** The Xero identifier for the Tracking Item that the Timesheet is for */
-		trackingItemID?: string;
+		trackingItemID?: string | null;
 
 		/**
 		 * The Number of Units of the Timesheet Line
@@ -1032,33 +1032,33 @@ export namespace MyNS {
 	}
 
 	export interface TimesheetObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		timesheet?: Timesheet;
+		problem?: Problem | null;
+		timesheet?: Timesheet | null;
 	}
 
 	export interface TimesheetLineObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		timesheetLine?: TimesheetLine;
+		problem?: Problem | null;
+		timesheetLine?: TimesheetLine | null;
 	}
 
 	export interface PayRunCalendars {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		payRunCalendars?: Array<PayRunCalendar>;
+		problem?: Problem | null;
+		payRunCalendars?: Array<PayRunCalendar> | null;
 	}
 
 	export interface PayRunCalendar {
 
 		/** Xero unique identifier for the payroll calendar */
-		payrollCalendarID?: string;
+		payrollCalendarID?: string | null;
 
 		/**
 		 * Name of the calendar
@@ -1079,7 +1079,7 @@ export namespace MyNS {
 		periodStartDate: Date;
 
 		/** Period end date of the calendar */
-		periodEndDate?: Date;
+		periodEndDate?: Date | null;
 
 		/**
 		 * Payment date of the calendar
@@ -1088,25 +1088,25 @@ export namespace MyNS {
 		paymentDate: Date;
 
 		/** UTC timestamp of the last update to the pay run calendar */
-		updatedDateUTC?: Date;
+		updatedDateUTC?: Date | null;
 	}
 
 	export enum PayRunCalendarCalendarType { Weekly = 0, Fortnightly = 1, FourWeekly = 2, Monthly = 3, Annual = 4, Quarterly = 5 }
 
 	export interface PayRunCalendarObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		payRunCalendar?: PayRunCalendar;
+		problem?: Problem | null;
+		payRunCalendar?: PayRunCalendar | null;
 	}
 
 	export interface PaymentMethodObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		paymentMethod?: PaymentMethod;
+		problem?: Problem | null;
+		paymentMethod?: PaymentMethod | null;
 	}
 
 	export interface PaymentMethod {
@@ -1116,7 +1116,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		paymentMethod: PaymentMethodPaymentMethod;
-		bankAccounts?: Array<BankAccount>;
+		bankAccounts?: Array<BankAccount> | null;
 	}
 
 	export enum PaymentMethodPaymentMethod { Cheque = 0, Electronically = 1, Manual = 2 }
@@ -1143,17 +1143,17 @@ export namespace MyNS {
 	}
 
 	export interface SalaryAndWages {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		salaryAndWages?: Array<SalaryAndWage>;
+		problem?: Problem | null;
+		salaryAndWages?: Array<SalaryAndWage> | null;
 	}
 
 	export interface SalaryAndWage {
 
 		/** Xero unique identifier for a salary and wages record */
-		salaryAndWagesID?: string;
+		salaryAndWagesID?: string | null;
 
 		/**
 		 * Xero unique identifier for an earnings rate
@@ -1209,56 +1209,56 @@ export namespace MyNS {
 	export enum SalaryAndWagePaymentType { Salary = 0 }
 
 	export interface SalaryAndWageObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		salaryAndWages?: SalaryAndWage;
+		problem?: Problem | null;
+		salaryAndWages?: SalaryAndWage | null;
 	}
 
 	export interface PayRuns {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		payRuns?: Array<PayRun>;
+		problem?: Problem | null;
+		payRuns?: Array<PayRun> | null;
 	}
 
 	export interface PayRun {
 
 		/** Xero unique identifier for the pay run */
-		payRunID?: string;
+		payRunID?: string | null;
 
 		/** Xero unique identifier for the payroll calendar */
-		payrollCalendarID?: string;
+		payrollCalendarID?: string | null;
 
 		/** Period start date of the payroll calendar */
-		periodStartDate?: Date;
+		periodStartDate?: Date | null;
 
 		/** Period end date of the payroll calendar */
-		periodEndDate?: Date;
+		periodEndDate?: Date | null;
 
 		/** Payment date of the pay run */
-		paymentDate?: Date;
+		paymentDate?: Date | null;
 
 		/** Total cost of the pay run */
-		totalCost?: number;
+		totalCost?: number | null;
 
 		/** Total pay of the pay run */
-		totalPay?: number;
+		totalPay?: number | null;
 
 		/** Pay run status */
-		payRunStatus?: PayRunPayRunStatus;
+		payRunStatus?: PayRunPayRunStatus | null;
 
 		/** Pay run type */
-		payRunType?: PayRunPayRunType;
+		payRunType?: PayRunPayRunType | null;
 
 		/** Calendar type of the pay run */
-		calendarType?: PayRunCalendarCalendarType;
+		calendarType?: PayRunCalendarCalendarType | null;
 
 		/** Posted date time of the pay run */
-		postedDateTime?: Date;
-		paySlips?: Array<Payslip>;
+		postedDateTime?: Date | null;
+		paySlips?: Array<Payslip> | null;
 	}
 
 	export enum PayRunPayRunStatus { Draft = 0, Posted = 1 }
@@ -1268,309 +1268,309 @@ export namespace MyNS {
 	export interface Payslip {
 
 		/** The Xero identifier for a Payslip */
-		paySlipID?: string;
+		paySlipID?: string | null;
 
 		/** The Xero identifier for payroll employee */
-		employeeID?: string;
+		employeeID?: string | null;
 
 		/** The Xero identifier for the associated payrun */
-		payRunID?: string;
+		payRunID?: string | null;
 
 		/** The date payslip was last updated */
-		lastEdited?: Date;
+		lastEdited?: Date | null;
 
 		/** Employee first name */
-		firstName?: string;
+		firstName?: string | null;
 
 		/** Employee last name */
-		lastName?: string;
+		lastName?: string | null;
 
 		/** Total earnings before any deductions. Same as gross earnings for UK. */
-		totalEarnings?: number;
+		totalEarnings?: number | null;
 
 		/** Total earnings before any deductions. Same as total earnings for UK. */
-		grossEarnings?: number;
+		grossEarnings?: number | null;
 
 		/** The employee net pay */
-		totalPay?: number;
+		totalPay?: number | null;
 
 		/** The employer's tax obligation */
-		totalEmployerTaxes?: number;
+		totalEmployerTaxes?: number | null;
 
 		/** The part of an employee's earnings that is deducted for tax purposes */
-		totalEmployeeTaxes?: number;
+		totalEmployeeTaxes?: number | null;
 
 		/** Total amount subtracted from an employee's earnings to reach total pay */
-		totalDeductions?: number;
+		totalDeductions?: number | null;
 
 		/** Total reimbursements are nontaxable payments to an employee used to repay out-of-pocket expenses when the person incurs those expenses through employment */
-		totalReimbursements?: number;
+		totalReimbursements?: number | null;
 
 		/** Total amounts required by law to subtract from the employee's earnings */
-		totalCourtOrders?: number;
+		totalCourtOrders?: number | null;
 
 		/** Benefits (also called fringe benefits, perquisites or perks) are various non-earnings compensations provided to employees in addition to their normal earnings or salaries */
-		totalBenefits?: number;
+		totalBenefits?: number | null;
 
 		/** BACS Service User Number */
-		bacsHash?: string;
+		bacsHash?: string | null;
 
 		/** The payment method code */
-		paymentMethod?: PaymentMethodPaymentMethod;
-		earningsLines?: Array<EarningsLine>;
-		leaveEarningsLines?: Array<LeaveEarningsLine>;
-		timesheetEarningsLines?: Array<TimesheetEarningsLine>;
-		deductionLines?: Array<DeductionLine>;
-		reimbursementLines?: Array<ReimbursementLine>;
-		leaveAccrualLines?: Array<LeaveAccrualLine>;
-		benefitLines?: Array<BenefitLine>;
-		paymentLines?: Array<PaymentLine>;
-		employeeTaxLines?: Array<TaxLine>;
-		courtOrderLines?: Array<CourtOrderLine>;
+		paymentMethod?: PaymentMethodPaymentMethod | null;
+		earningsLines?: Array<EarningsLine> | null;
+		leaveEarningsLines?: Array<LeaveEarningsLine> | null;
+		timesheetEarningsLines?: Array<TimesheetEarningsLine> | null;
+		deductionLines?: Array<DeductionLine> | null;
+		reimbursementLines?: Array<ReimbursementLine> | null;
+		leaveAccrualLines?: Array<LeaveAccrualLine> | null;
+		benefitLines?: Array<BenefitLine> | null;
+		paymentLines?: Array<PaymentLine> | null;
+		employeeTaxLines?: Array<TaxLine> | null;
+		courtOrderLines?: Array<CourtOrderLine> | null;
 	}
 
 	export interface EarningsLine {
 
 		/** Xero identifier for payroll earnings line */
-		earningsLineID?: string;
+		earningsLineID?: string | null;
 
 		/** Xero identifier for payroll earnings rate */
-		earningsRateID?: string;
+		earningsRateID?: string | null;
 
 		/** name of earnings rate for display in UI */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** Rate per unit for earnings line */
-		ratePerUnit?: number;
+		ratePerUnit?: number | null;
 
 		/** Earnings number of units */
-		numberOfUnits?: number;
+		numberOfUnits?: number | null;
 
 		/** Earnings fixed amount. Only applicable if the EarningsRate RateType is Fixed */
-		fixedAmount?: number;
+		fixedAmount?: number | null;
 
 		/** The amount of the earnings line. */
-		amount?: number;
+		amount?: number | null;
 
 		/** Identifies if the earnings is taken from the timesheet. False for earnings line */
-		isLinkedToTimesheet?: boolean;
+		isLinkedToTimesheet?: boolean | null;
 
 		/** Identifies if the earnings is using an average daily pay rate */
-		isAverageDailyPayRate?: boolean;
+		isAverageDailyPayRate?: boolean | null;
 	}
 
 	export interface LeaveEarningsLine {
 
 		/** Xero identifier for payroll leave earnings rate */
-		earningsRateID?: string;
+		earningsRateID?: string | null;
 
 		/** Rate per unit for leave earnings line */
-		ratePerUnit?: number;
+		ratePerUnit?: number | null;
 
 		/** Leave earnings number of units */
-		numberOfUnits?: number;
+		numberOfUnits?: number | null;
 
 		/** Leave earnings fixed amount. Only applicable if the EarningsRate RateType is Fixed */
-		fixedAmount?: number;
+		fixedAmount?: number | null;
 
 		/** The amount of the earnings line. */
-		amount?: number;
+		amount?: number | null;
 
 		/** Identifies if the leave earnings is taken from the timesheet. False for leave earnings line */
-		isLinkedToTimesheet?: boolean;
+		isLinkedToTimesheet?: boolean | null;
 	}
 
 	export interface TimesheetEarningsLine {
 
 		/** Xero identifier for payroll timesheet earnings rate */
-		earningsRateID?: string;
+		earningsRateID?: string | null;
 
 		/** Rate per unit for timesheet earnings line */
-		ratePerUnit?: number;
+		ratePerUnit?: number | null;
 
 		/** Timesheet earnings number of units */
-		numberOfUnits?: number;
+		numberOfUnits?: number | null;
 
 		/** Timesheet earnings fixed amount. Only applicable if the EarningsRate RateType is Fixed */
-		fixedAmount?: number;
+		fixedAmount?: number | null;
 
 		/** The amount of the timesheet earnings line. */
-		amount?: number;
+		amount?: number | null;
 
 		/** Identifies if the timesheet earnings is taken from the timesheet. False for leave earnings line */
-		isLinkedToTimesheet?: boolean;
+		isLinkedToTimesheet?: boolean | null;
 	}
 
 	export interface DeductionLine {
 
 		/** Xero identifier for payroll deduction */
-		deductionTypeID?: string;
+		deductionTypeID?: string | null;
 
 		/** The amount of the deduction line */
-		amount?: number;
+		amount?: number | null;
 
 		/** Identifies if the deduction is subject to tax */
-		subjectToTax?: boolean;
+		subjectToTax?: boolean | null;
 
 		/** Deduction rate percentage */
-		percentage?: number;
+		percentage?: number | null;
 	}
 
 	export interface ReimbursementLine {
 
 		/** Xero identifier for payroll reimbursement */
-		reimbursementTypeID?: string;
+		reimbursementTypeID?: string | null;
 
 		/** Reimbursement line description */
-		description?: string;
+		description?: string | null;
 
 		/** Reimbursement amount */
-		amount?: number;
+		amount?: number | null;
 	}
 
 	export interface LeaveAccrualLine {
 
 		/** Xero identifier for the Leave type */
-		leaveTypeID?: string;
+		leaveTypeID?: string | null;
 
 		/** Leave accrual number of units */
-		numberOfUnits?: number;
+		numberOfUnits?: number | null;
 	}
 
 	export interface BenefitLine {
 
 		/** Xero identifier for payroll benefit type */
-		benefitTypeID?: string;
+		benefitTypeID?: string | null;
 
 		/** Benefit display name */
-		displayName?: string;
+		displayName?: string | null;
 
 		/** The amount of the benefit line. */
-		amount?: number;
+		amount?: number | null;
 
 		/** Benefit fixed amount */
-		fixedAmount?: number;
+		fixedAmount?: number | null;
 
 		/** Benefit rate percentage */
-		percentage?: number;
+		percentage?: number | null;
 	}
 
 	export interface PaymentLine {
 
 		/** Xero identifier for payroll payment line */
-		paymentLineID?: string;
+		paymentLineID?: string | null;
 
 		/** The amount of the payment line */
-		amount?: number;
+		amount?: number | null;
 
 		/** The account number */
-		accountNumber?: string;
+		accountNumber?: string | null;
 
 		/** The account sort code */
-		sortCode?: string;
+		sortCode?: string | null;
 
 		/** The account name */
-		accountName?: string;
+		accountName?: string | null;
 	}
 
 	export interface TaxLine {
 
 		/** Xero identifier for payroll tax line */
-		taxLineID?: string;
+		taxLineID?: string | null;
 
 		/** Tax line description */
-		description?: string;
+		description?: string | null;
 
 		/** Identifies if the amount is paid for by the employee or employer. True if employer pays the tax */
-		isEmployerTax?: boolean;
+		isEmployerTax?: boolean | null;
 
 		/** The amount of the tax line */
-		amount?: number;
+		amount?: number | null;
 
 		/** Tax type ID */
-		globalTaxTypeID?: string;
+		globalTaxTypeID?: string | null;
 
 		/** Identifies if the tax line is a manual adjustment */
-		manualAdjustment?: boolean;
+		manualAdjustment?: boolean | null;
 	}
 
 	export interface CourtOrderLine {
 
 		/** Xero identifier for payroll court order type */
-		courtOrderTypeID?: string;
+		courtOrderTypeID?: string | null;
 
 		/** Amount */
-		amount?: number;
+		amount?: number | null;
 	}
 
 	export interface PayRunObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		payRun?: PayRun;
+		problem?: Problem | null;
+		payRun?: PayRun | null;
 	}
 
 	export interface PayslipObject {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		paySlip?: Payslip;
+		problem?: Problem | null;
+		paySlip?: Payslip | null;
 	}
 
 	export interface Payslips {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		paySlips?: Array<Payslip>;
+		problem?: Problem | null;
+		paySlips?: Array<Payslip> | null;
 	}
 
 	export interface Settings {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		settings?: Accounts;
+		problem?: Problem | null;
+		settings?: Accounts | null;
 	}
 
 	export interface Accounts {
-		accounts?: Array<Account>;
+		accounts?: Array<Account> | null;
 	}
 
 	export interface Account {
 
 		/** The Xero identifier for Settings. */
-		accountID?: string;
+		accountID?: string | null;
 
 		/** The assigned AccountType */
-		type?: AccountType;
+		type?: AccountType | null;
 
 		/** A unique 3 digit number for each Account */
-		code?: string;
+		code?: string | null;
 
 		/** Name of the Account. */
-		name?: string;
+		name?: string | null;
 	}
 
 	export enum AccountType { BANK = 0, EMPLOYERSNIC = 1, NICLIABILITY = 2, PAYEECONTRIBUTION = 3, PAYELIABILITY = 4, WAGESPAYABLE = 5, WAGESEXPENSE = 6 }
 
 	export interface TrackingCategories {
-		pagination?: Pagination;
+		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem;
-		trackingCategories?: TrackingCategory;
+		problem?: Problem | null;
+		trackingCategories?: TrackingCategory | null;
 	}
 
 	export interface TrackingCategory {
 
 		/** The Xero identifier for Employee groups tracking category. */
-		employeeGroupsTrackingCategoryID?: string;
+		employeeGroupsTrackingCategoryID?: string | null;
 
 		/** The Xero identifier for Timesheet tracking category. */
-		timesheetTrackingCategoryID?: string;
+		timesheetTrackingCategoryID?: string | null;
 	}
 
 	@Injectable()
@@ -1586,7 +1586,7 @@ export namespace MyNS {
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
 		 * @return {Employees} search results matching criteria
 		 */
-		GetEmployees(firstName: string, lastName: string, page: number): Observable<Employees> {
+		GetEmployees(firstName: string | null | undefined, lastName: string | null | undefined, page: number | null | undefined): Observable<Employees> {
 			return this.http.get<Employees>(this.baseUri + 'Employees?firstName=' + (firstName == null ? '' : encodeURIComponent(firstName)) + '&lastName=' + (lastName == null ? '' : encodeURIComponent(lastName)) + '&page=' + page, {});
 		}
 
@@ -1740,8 +1740,8 @@ export namespace MyNS {
 		 * @param {Date} AsOfDate The date from which to calculate balance remaining. If not specified, current date UTC is used.
 		 * @return {EmployeeStatutoryLeaveBalanceObject} search results matching criteria
 		 */
-		GetEmployeeStatutoryLeaveBalances(EmployeeId: string, LeaveType: string, AsOfDate: Date): Observable<EmployeeStatutoryLeaveBalanceObject> {
-			return this.http.get<EmployeeStatutoryLeaveBalanceObject>(this.baseUri + 'Employees/' + (EmployeeId == null ? '' : encodeURIComponent(EmployeeId)) + '/StatutoryLeaveBalance&LeaveType=' + (LeaveType == null ? '' : encodeURIComponent(LeaveType)) + '&AsOfDate=' + AsOfDate.toISOString(), {});
+		GetEmployeeStatutoryLeaveBalances(EmployeeId: string, LeaveType: string | null | undefined, AsOfDate: Date | null | undefined): Observable<EmployeeStatutoryLeaveBalanceObject> {
+			return this.http.get<EmployeeStatutoryLeaveBalanceObject>(this.baseUri + 'Employees/' + (EmployeeId == null ? '' : encodeURIComponent(EmployeeId)) + '/StatutoryLeaveBalance&LeaveType=' + (LeaveType == null ? '' : encodeURIComponent(LeaveType)) + '&AsOfDate=' + AsOfDate?.toISOString(), {});
 		}
 
 		/**
@@ -1751,7 +1751,7 @@ export namespace MyNS {
 		 * @param {boolean} activeOnly Filter response with leaves that are currently active or yet to be taken. If not specified, all leaves (past, current, and future scheduled) are returned
 		 * @return {EmployeeStatutoryLeavesSummaries} search results matching criteria
 		 */
-		GetStatutoryLeaveSummary(EmployeeId: string, activeOnly: boolean): Observable<EmployeeStatutoryLeavesSummaries> {
+		GetStatutoryLeaveSummary(EmployeeId: string, activeOnly: boolean | null | undefined): Observable<EmployeeStatutoryLeavesSummaries> {
 			return this.http.get<EmployeeStatutoryLeavesSummaries>(this.baseUri + 'statutoryleaves/summary/' + (EmployeeId == null ? '' : encodeURIComponent(EmployeeId)) + '&activeOnly=' + activeOnly, {});
 		}
 
@@ -1782,8 +1782,8 @@ export namespace MyNS {
 		 * @param {Date} endDate Filter by end date
 		 * @return {LeavePeriods} search results matching criteria
 		 */
-		GetEmployeeLeavePeriods(EmployeeId: string, startDate: Date, endDate: Date): Observable<LeavePeriods> {
-			return this.http.get<LeavePeriods>(this.baseUri + 'Employees/' + (EmployeeId == null ? '' : encodeURIComponent(EmployeeId)) + '/LeavePeriods&startDate=' + startDate.toISOString() + '&endDate=' + endDate.toISOString(), {});
+		GetEmployeeLeavePeriods(EmployeeId: string, startDate: Date | null | undefined, endDate: Date | null | undefined): Observable<LeavePeriods> {
+			return this.http.get<LeavePeriods>(this.baseUri + 'Employees/' + (EmployeeId == null ? '' : encodeURIComponent(EmployeeId)) + '/LeavePeriods&startDate=' + startDate?.toISOString() + '&endDate=' + endDate?.toISOString(), {});
 		}
 
 		/**
@@ -1884,7 +1884,7 @@ export namespace MyNS {
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
 		 * @return {Benefits} search results matching criteria
 		 */
-		GetBenefits(page: number): Observable<Benefits> {
+		GetBenefits(page: number | null | undefined): Observable<Benefits> {
 			return this.http.get<Benefits>(this.baseUri + 'Benefits?page=' + page, {});
 		}
 
@@ -1913,7 +1913,7 @@ export namespace MyNS {
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
 		 * @return {Deductions} search results matching criteria
 		 */
-		GetDeductions(page: number): Observable<Deductions> {
+		GetDeductions(page: number | null | undefined): Observable<Deductions> {
 			return this.http.get<Deductions>(this.baseUri + 'Deductions?page=' + page, {});
 		}
 
@@ -1942,7 +1942,7 @@ export namespace MyNS {
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
 		 * @return {EarningsOrders} search results matching criteria
 		 */
-		GetEarningsOrders(page: number): Observable<EarningsOrders> {
+		GetEarningsOrders(page: number | null | undefined): Observable<EarningsOrders> {
 			return this.http.get<EarningsOrders>(this.baseUri + 'EarningsOrders?page=' + page, {});
 		}
 
@@ -1962,7 +1962,7 @@ export namespace MyNS {
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
 		 * @return {EarningsRates} search results matching criteria
 		 */
-		GetEarningsRates(page: number): Observable<EarningsRates> {
+		GetEarningsRates(page: number | null | undefined): Observable<EarningsRates> {
 			return this.http.get<EarningsRates>(this.baseUri + 'EarningsRates?page=' + page, {});
 		}
 
@@ -1992,7 +1992,7 @@ export namespace MyNS {
 		 * @param {boolean} ActiveOnly Filters leave types by active status. By default the API returns all leave types.
 		 * @return {LeaveTypes} search results matching criteria
 		 */
-		GetLeaveTypes(page: number, ActiveOnly: boolean): Observable<LeaveTypes> {
+		GetLeaveTypes(page: number | null | undefined, ActiveOnly: boolean | null | undefined): Observable<LeaveTypes> {
 			return this.http.get<LeaveTypes>(this.baseUri + 'LeaveTypes?page=' + page + '&ActiveOnly=' + ActiveOnly, {});
 		}
 
@@ -2021,7 +2021,7 @@ export namespace MyNS {
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
 		 * @return {Reimbursements} search results matching criteria
 		 */
-		GetReimbursements(page: number): Observable<Reimbursements> {
+		GetReimbursements(page: number | null | undefined): Observable<Reimbursements> {
 			return this.http.get<Reimbursements>(this.baseUri + 'Reimbursements?page=' + page, {});
 		}
 
@@ -2052,7 +2052,7 @@ export namespace MyNS {
 		 * @param {string} payrollCalendarId By default get Timesheets will return all the timesheets for an organization. You can add GET https://…/timesheets?filter=payrollCalendarId=={PayrollCalendarID} to filter the timesheets by payroll calendar id
 		 * @return {Timesheets} search results matching criteria
 		 */
-		GetTimesheets(page: number, employeeId: string, payrollCalendarId: string): Observable<Timesheets> {
+		GetTimesheets(page: number | null | undefined, employeeId: string | null | undefined, payrollCalendarId: string | null | undefined): Observable<Timesheets> {
 			return this.http.get<Timesheets>(this.baseUri + 'Timesheets?page=' + page + '&employeeId=' + (employeeId == null ? '' : encodeURIComponent(employeeId)) + '&payrollCalendarId=' + (payrollCalendarId == null ? '' : encodeURIComponent(payrollCalendarId)), {});
 		}
 
@@ -2143,7 +2143,7 @@ export namespace MyNS {
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
 		 * @return {PayRunCalendars} search results matching criteria
 		 */
-		GetPayRunCalendars(page: number): Observable<PayRunCalendars> {
+		GetPayRunCalendars(page: number | null | undefined): Observable<PayRunCalendars> {
 			return this.http.get<PayRunCalendars>(this.baseUri + 'PayRunCalendars?page=' + page, {});
 		}
 
@@ -2173,7 +2173,7 @@ export namespace MyNS {
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
 		 * @return {SalaryAndWages} search results matching criteria
 		 */
-		GetEmployeeSalaryAndWages(EmployeeId: string, page: number): Observable<SalaryAndWages> {
+		GetEmployeeSalaryAndWages(EmployeeId: string, page: number | null | undefined): Observable<SalaryAndWages> {
 			return this.http.get<SalaryAndWages>(this.baseUri + 'Employees/' + (EmployeeId == null ? '' : encodeURIComponent(EmployeeId)) + '/SalaryAndWages&page=' + page, {});
 		}
 
@@ -2227,7 +2227,7 @@ export namespace MyNS {
 		 * @param {PayRunPayRunStatus} status By default get payruns will return all the payruns for an organization. You can add GET https://api.xero.com/payroll.xro/2.0/payRuns?statu={PayRunStatus} to filter the payruns by status.
 		 * @return {PayRuns} search results matching criteria
 		 */
-		GetPayRuns(page: number, status: PayRunPayRunStatus): Observable<PayRuns> {
+		GetPayRuns(page: number | null | undefined, status: PayRunPayRunStatus | null | undefined): Observable<PayRuns> {
 			return this.http.get<PayRuns>(this.baseUri + 'PayRuns?page=' + page + '&status=' + status, {});
 		}
 
@@ -2258,7 +2258,7 @@ export namespace MyNS {
 		 * @param {string} PayRunID PayrunID which specifies the containing payrun of payslips to retrieve. By default, the API does not group payslips by payrun.
 		 * @return {Payslips} search results matching criteria
 		 */
-		GetPayslips(page: number, PayRunID: string): Observable<Payslips> {
+		GetPayslips(page: number | null | undefined, PayRunID: string): Observable<Payslips> {
 			return this.http.get<Payslips>(this.baseUri + 'Payslips?page=' + page + '&PayRunID=' + (PayRunID == null ? '' : encodeURIComponent(PayRunID)), {});
 		}
 

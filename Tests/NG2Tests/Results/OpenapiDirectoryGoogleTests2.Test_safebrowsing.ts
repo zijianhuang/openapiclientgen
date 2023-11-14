@@ -10,7 +10,7 @@ export namespace MyNS {
 		 * The SHA256 hash of the client state; that is, of the sorted list of all
 		 * hashes present in the database.
 		 */
-		sha256?: string;
+		sha256?: string | null;
 	}
 
 
@@ -21,10 +21,10 @@ export namespace MyNS {
 		 * A client ID that (hopefully) uniquely identifies the client implementation
 		 * of the Safe Browsing API.
 		 */
-		clientId?: string;
+		clientId?: string | null;
 
 		/** The version of the client implementation. */
-		clientVersion?: string;
+		clientVersion?: string | null;
 	}
 
 
@@ -35,37 +35,37 @@ export namespace MyNS {
 		 * A client's physical location, expressed as a ISO 31166-1 alpha-2
 		 * region code.
 		 */
-		deviceLocation?: string;
+		deviceLocation?: string | null;
 
 		/**
 		 * Requests the lists for a specific language. Expects ISO 639 alpha-2
 		 * format.
 		 */
-		language?: string;
+		language?: string | null;
 
 		/**
 		 * Sets the maximum number of entries that the client is willing to have
 		 * in the local database for the specified list. This should be a power of
 		 * 2 between 2**10 and 2**20. If zero, no database size limit is set.
 		 */
-		maxDatabaseEntries?: number;
+		maxDatabaseEntries?: number | null;
 
 		/**
 		 * The maximum size in number of entries. The update will not contain more
 		 * entries than this value.  This should be a power of 2 between 2**10 and
 		 * 2**20.  If zero, no update size limit is set.
 		 */
-		maxUpdateEntries?: number;
+		maxUpdateEntries?: number | null;
 
 		/**
 		 * Requests the list for a specific geographic location. If not set the
 		 * server may pick that value based on the user's IP address. Expects ISO
 		 * 3166-1 alpha-2 format.
 		 */
-		region?: string;
+		region?: string | null;
 
 		/** The compression types supported by the client. */
-		supportedCompressions?: Array<string>;
+		supportedCompressions?: Array<string> | null;
 	}
 
 
@@ -91,10 +91,10 @@ export namespace MyNS {
 	export interface FetchThreatListUpdatesRequest {
 
 		/** The client metadata associated with Safe Browsing API requests. */
-		client?: ClientInfo;
+		client?: ClientInfo | null;
 
 		/** The requested threat list updates. */
-		listUpdateRequests?: Array<ListUpdateRequest>;
+		listUpdateRequests?: Array<ListUpdateRequest> | null;
 	}
 
 
@@ -102,22 +102,22 @@ export namespace MyNS {
 	export interface ListUpdateRequest {
 
 		/** The constraints for this update. */
-		constraints?: Constraints;
+		constraints?: Constraints | null;
 
 		/** The type of platform at risk by entries present in the list. */
-		platformType?: ListUpdateRequestPlatformType;
+		platformType?: ListUpdateRequestPlatformType | null;
 
 		/**
 		 * The current state of the client for the requested list (the encrypted
 		 * client state that was received from the last successful list update).
 		 */
-		state?: string;
+		state?: string | null;
 
 		/** The types of entries present in the list. */
-		threatEntryType?: ListUpdateRequestThreatEntryType;
+		threatEntryType?: ListUpdateRequestThreatEntryType | null;
 
 		/** The type of threat posed by entries present in the list. */
-		threatType?: ListUpdateRequestThreatType;
+		threatType?: ListUpdateRequestThreatType | null;
 	}
 
 	export enum ListUpdateRequestPlatformType { PLATFORM_TYPE_UNSPECIFIED = 0, WINDOWS = 1, LINUX = 2, ANDROID = 3, OSX = 4, IOS = 5, ANY_PLATFORM = 6, ALL_PLATFORMS = 7, CHROME = 8 }
@@ -129,13 +129,13 @@ export namespace MyNS {
 	export interface FetchThreatListUpdatesResponse {
 
 		/** The list updates requested by the clients. */
-		listUpdateResponses?: Array<ListUpdateResponse>;
+		listUpdateResponses?: Array<ListUpdateResponse> | null;
 
 		/**
 		 * The minimum duration the client must wait before issuing any update
 		 * request. If this field is not set clients may update as soon as they want.
 		 */
-		minimumWaitDuration?: string;
+		minimumWaitDuration?: string | null;
 	}
 
 
@@ -147,34 +147,34 @@ export namespace MyNS {
 		 * for a combination of compressed and raw data to be sent in a single
 		 * response.
 		 */
-		additions?: Array<ThreatEntrySet>;
+		additions?: Array<ThreatEntrySet> | null;
 
 		/** The expected state of a client's local database. */
-		checksum?: Checksum;
+		checksum?: Checksum | null;
 
 		/** The new client state, in encrypted format. Opaque to clients. */
-		newClientState?: string;
+		newClientState?: string | null;
 
 		/** The platform type for which data is returned. */
-		platformType?: ListUpdateRequestPlatformType;
+		platformType?: ListUpdateRequestPlatformType | null;
 
 		/**
 		 * A set of entries to remove from a local threat type's list. In practice,
 		 * this field is empty or contains exactly one ThreatEntrySet.
 		 */
-		removals?: Array<ThreatEntrySet>;
+		removals?: Array<ThreatEntrySet> | null;
 
 		/**
 		 * The type of response. This may indicate that an action is required by the
 		 * client when the response is received.
 		 */
-		responseType?: ListUpdateResponseResponseType;
+		responseType?: ListUpdateResponseResponseType | null;
 
 		/** The format of the threats. */
-		threatEntryType?: ListUpdateRequestThreatEntryType;
+		threatEntryType?: ListUpdateRequestThreatEntryType | null;
 
 		/** The threat type for which data is returned. */
-		threatType?: ListUpdateRequestThreatType;
+		threatType?: ListUpdateRequestThreatType | null;
 	}
 
 
@@ -185,7 +185,7 @@ export namespace MyNS {
 	export interface ThreatEntrySet {
 
 		/** The compression type for the entries in this set. */
-		compressionType?: ThreatEntrySetCompressionType;
+		compressionType?: ThreatEntrySetCompressionType | null;
 
 		/**
 		 * The uncompressed threat entries in hash format of a particular prefix length.
@@ -195,22 +195,22 @@ export namespace MyNS {
 		 * Used for sending ThreatEntrySet to clients that do not support compression,
 		 * or when sending non-4-byte hashes to clients that do support compression.
 		 */
-		rawHashes?: RawHashes;
+		rawHashes?: RawHashes | null;
 
 		/** A set of raw indices to remove from a local list. */
-		rawIndices?: RawIndices;
+		rawIndices?: RawIndices | null;
 
 		/**
 		 * The Rice-Golomb encoded data. Used for sending compressed 4-byte hashes or
 		 * compressed removal indices.
 		 */
-		riceHashes?: RiceDeltaEncoding;
+		riceHashes?: RiceDeltaEncoding | null;
 
 		/**
 		 * The Rice-Golomb encoded data. Used for sending compressed 4-byte hashes or
 		 * compressed removal indices.
 		 */
-		riceIndices?: RiceDeltaEncoding;
+		riceIndices?: RiceDeltaEncoding | null;
 	}
 
 	export enum ThreatEntrySetCompressionType { COMPRESSION_TYPE_UNSPECIFIED = 0, RAW = 1, RICE = 2 }
@@ -230,14 +230,14 @@ export namespace MyNS {
 		 * The number of bytes for each prefix encoded below.  This field can be
 		 * anywhere from 4 (shortest prefix) to 32 (full SHA256 hash).
 		 */
-		prefixSize?: number;
+		prefixSize?: number | null;
 
 		/**
 		 * The hashes, in binary format, concatenated into one long string. Hashes are
 		 * sorted in lexicographic order. For JSON API users, hashes are
 		 * base64-encoded.
 		 */
-		rawHashes?: string;
+		rawHashes?: string | null;
 	}
 
 
@@ -245,7 +245,7 @@ export namespace MyNS {
 	export interface RawIndices {
 
 		/** The indices to remove from a lexicographically-sorted local list. */
-		indices?: Array<number>;
+		indices?: Array<number> | null;
 	}
 
 
@@ -256,27 +256,27 @@ export namespace MyNS {
 	export interface RiceDeltaEncoding {
 
 		/** The encoded deltas that are encoded using the Golomb-Rice coder. */
-		encodedData?: string;
+		encodedData?: string | null;
 
 		/**
 		 * The offset of the first entry in the encoded data, or, if only a single
 		 * integer was encoded, that single integer's value. If the field is empty or
 		 * missing, assume zero.
 		 */
-		firstValue?: string;
+		firstValue?: string | null;
 
 		/**
 		 * The number of entries that are delta encoded in the encoded data. If only a
 		 * single integer was encoded, this will be zero and the single value will be
 		 * stored in `first_value`.
 		 */
-		numEntries?: number;
+		numEntries?: number | null;
 
 		/**
 		 * The Golomb-Rice parameter, which is a number between 2 and 28. This field
 		 * is missing (that is, zero) if `num_entries` is zero.
 		 */
-		riceParameter?: number;
+		riceParameter?: number | null;
 	}
 
 	export enum ListUpdateResponseResponseType { RESPONSE_TYPE_UNSPECIFIED = 0, PARTIAL_UPDATE = 1, FULL_UPDATE = 2 }
@@ -286,19 +286,19 @@ export namespace MyNS {
 	export interface FindFullHashesRequest {
 
 		/** The client metadata associated with Safe Browsing API requests. */
-		apiClient?: ClientInfo;
+		apiClient?: ClientInfo | null;
 
 		/** The client metadata associated with Safe Browsing API requests. */
-		client?: ClientInfo;
+		client?: ClientInfo | null;
 
 		/** The current client states for each of the client's local threat lists. */
-		clientStates?: Array<string>;
+		clientStates?: Array<string> | null;
 
 		/**
 		 * The information regarding one or more threats that a client submits when
 		 * checking for matches in threat lists.
 		 */
-		threatInfo?: ThreatInfo;
+		threatInfo?: ThreatInfo | null;
 	}
 
 
@@ -309,16 +309,16 @@ export namespace MyNS {
 	export interface ThreatInfo {
 
 		/** The platform types to be checked. */
-		platformTypes?: Array<ListUpdateRequestPlatformType>;
+		platformTypes?: Array<ListUpdateRequestPlatformType> | null;
 
 		/** The threat entries to be checked. */
-		threatEntries?: Array<ThreatEntry>;
+		threatEntries?: Array<ThreatEntry> | null;
 
 		/** The entry types to be checked. */
-		threatEntryTypes?: Array<ListUpdateRequestThreatEntryType>;
+		threatEntryTypes?: Array<ListUpdateRequestThreatEntryType> | null;
 
 		/** The threat types to be checked. */
-		threatTypes?: Array<ListUpdateRequestThreatType>;
+		threatTypes?: Array<ListUpdateRequestThreatType> | null;
 	}
 
 
@@ -332,36 +332,36 @@ export namespace MyNS {
 		 * The digest of an executable in SHA256 format. The API supports both
 		 * binary and hex digests. For JSON requests, digests are base64-encoded.
 		 */
-		digest?: string;
+		digest?: string | null;
 
 		/**
 		 * A hash prefix, consisting of the most significant 4-32 bytes of a SHA256
 		 * hash. This field is in binary format. For JSON requests, hashes are
 		 * base64-encoded.
 		 */
-		hash?: string;
+		hash?: string | null;
 
 		/** A URL. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export interface FindFullHashesResponse {
 
 		/** The full hashes that matched the requested prefixes. */
-		matches?: Array<ThreatMatch>;
+		matches?: Array<ThreatMatch> | null;
 
 		/**
 		 * The minimum duration the client must wait before issuing any find hashes
 		 * request. If this field is not set, clients can issue a request as soon as
 		 * they want.
 		 */
-		minimumWaitDuration?: string;
+		minimumWaitDuration?: string | null;
 
 		/**
 		 * For requested entities that did not match the threat list, how long to
 		 * cache the response.
 		 */
-		negativeCacheDuration?: string;
+		negativeCacheDuration?: string | null;
 	}
 
 
@@ -372,28 +372,28 @@ export namespace MyNS {
 		 * The cache lifetime for the returned match. Clients must not cache this
 		 * response for more than this duration to avoid false positives.
 		 */
-		cacheDuration?: string;
+		cacheDuration?: string | null;
 
 		/** The platform type matching this threat. */
-		platformType?: ListUpdateRequestPlatformType;
+		platformType?: ListUpdateRequestPlatformType | null;
 
 		/**
 		 * An individual threat; for example, a malicious URL or its hash
 		 * representation. Only one of these fields should be set.
 		 */
-		threat?: ThreatEntry;
+		threat?: ThreatEntry | null;
 
 		/**
 		 * The metadata associated with a specific threat entry. The client is expected
 		 * to know the metadata key/value pairs associated with each threat type.
 		 */
-		threatEntryMetadata?: ThreatEntryMetadata;
+		threatEntryMetadata?: ThreatEntryMetadata | null;
 
 		/** The threat entry type matching this threat. */
-		threatEntryType?: ListUpdateRequestThreatEntryType;
+		threatEntryType?: ListUpdateRequestThreatEntryType | null;
 
 		/** The threat type matching this threat. */
-		threatType?: ListUpdateRequestThreatType;
+		threatType?: ListUpdateRequestThreatType | null;
 	}
 
 
@@ -404,7 +404,7 @@ export namespace MyNS {
 	export interface ThreatEntryMetadata {
 
 		/** The metadata entries. */
-		entries?: Array<MetadataEntry>;
+		entries?: Array<MetadataEntry> | null;
 	}
 
 
@@ -412,10 +412,10 @@ export namespace MyNS {
 	export interface MetadataEntry {
 
 		/** The metadata entry key. For JSON requests, the key is base64-encoded. */
-		key?: string;
+		key?: string | null;
 
 		/** The metadata entry value. For JSON requests, the value is base64-encoded. */
-		value?: string;
+		value?: string | null;
 	}
 
 
@@ -423,25 +423,25 @@ export namespace MyNS {
 	export interface FindThreatMatchesRequest {
 
 		/** The client metadata associated with Safe Browsing API requests. */
-		client?: ClientInfo;
+		client?: ClientInfo | null;
 
 		/**
 		 * The information regarding one or more threats that a client submits when
 		 * checking for matches in threat lists.
 		 */
-		threatInfo?: ThreatInfo;
+		threatInfo?: ThreatInfo | null;
 	}
 
 	export interface FindThreatMatchesResponse {
 
 		/** The threat list matches. */
-		matches?: Array<ThreatMatch>;
+		matches?: Array<ThreatMatch> | null;
 	}
 
 	export interface ListThreatListsResponse {
 
 		/** The lists available for download by the client. */
-		threatLists?: Array<ThreatListDescriptor>;
+		threatLists?: Array<ThreatListDescriptor> | null;
 	}
 
 
@@ -453,37 +453,37 @@ export namespace MyNS {
 	export interface ThreatListDescriptor {
 
 		/** The platform type targeted by the list's entries. */
-		platformType?: ListUpdateRequestPlatformType;
+		platformType?: ListUpdateRequestPlatformType | null;
 
 		/** The entry types contained in the list. */
-		threatEntryType?: ListUpdateRequestThreatEntryType;
+		threatEntryType?: ListUpdateRequestThreatEntryType | null;
 
 		/** The threat type posed by the list's entries. */
-		threatType?: ListUpdateRequestThreatType;
+		threatType?: ListUpdateRequestThreatType | null;
 	}
 
 	export interface ThreatHit {
 
 		/** The client metadata associated with Safe Browsing API requests. */
-		clientInfo?: ClientInfo;
+		clientInfo?: ClientInfo | null;
 
 		/**
 		 * An individual threat; for example, a malicious URL or its hash
 		 * representation. Only one of these fields should be set.
 		 */
-		entry?: ThreatEntry;
+		entry?: ThreatEntry | null;
 
 		/** The platform type reported. */
-		platformType?: ListUpdateRequestPlatformType;
+		platformType?: ListUpdateRequestPlatformType | null;
 
 		/** The resources related to the threat hit. */
-		resources?: Array<ThreatSource>;
+		resources?: Array<ThreatSource> | null;
 
 		/** The threat type reported. */
-		threatType?: ListUpdateRequestThreatType;
+		threatType?: ListUpdateRequestThreatType | null;
 
 		/** Details about the user that encountered the threat. */
-		userInfo?: UserInfo;
+		userInfo?: UserInfo | null;
 	}
 
 
@@ -491,16 +491,16 @@ export namespace MyNS {
 	export interface ThreatSource {
 
 		/** Referrer of the resource. Only set if the referrer is available. */
-		referrer?: string;
+		referrer?: string | null;
 
 		/** The remote IP of the resource in ASCII format. Either IPv4 or IPv6. */
-		remoteIp?: string;
+		remoteIp?: string | null;
 
 		/** The type of source reported. */
-		type?: ThreatSourceType;
+		type?: ThreatSourceType | null;
 
 		/** The URL of the resource. */
-		url?: string;
+		url?: string | null;
 	}
 
 	export enum ThreatSourceType { THREAT_SOURCE_TYPE_UNSPECIFIED = 0, MATCHING_URL = 1, TAB_URL = 2, TAB_REDIRECT = 3, TAB_RESOURCE = 4 }
@@ -510,10 +510,10 @@ export namespace MyNS {
 	export interface UserInfo {
 
 		/** The UN M.49 region code associated with the user's location. */
-		regionCode?: string;
+		regionCode?: string | null;
 
 		/** Unique user identifier defined by the client. */
-		userId?: string;
+		userId?: string | null;
 	}
 
 	@Injectable()
@@ -529,7 +529,7 @@ export namespace MyNS {
 		 * @param {string} clientVersion The version of the client implementation.
 		 * @return {void} Successful response
 		 */
-		Safebrowsing_encodedFullHashes_get(encodedRequest: string, clientId: string, clientVersion: string): Observable<HttpResponse<string>> {
+		Safebrowsing_encodedFullHashes_get(encodedRequest: string, clientId: string | null | undefined, clientVersion: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v4/encodedFullHashes/' + (encodedRequest == null ? '' : encodeURIComponent(encodedRequest)) + '&clientId=' + (clientId == null ? '' : encodeURIComponent(clientId)) + '&clientVersion=' + (clientVersion == null ? '' : encodeURIComponent(clientVersion)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -541,7 +541,7 @@ export namespace MyNS {
 		 * @param {string} clientVersion The version of the client implementation.
 		 * @return {void} Successful response
 		 */
-		Safebrowsing_encodedUpdates_get(encodedRequest: string, clientId: string, clientVersion: string): Observable<HttpResponse<string>> {
+		Safebrowsing_encodedUpdates_get(encodedRequest: string, clientId: string | null | undefined, clientVersion: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'v4/encodedUpdates/' + (encodedRequest == null ? '' : encodeURIComponent(encodedRequest)) + '&clientId=' + (clientId == null ? '' : encodeURIComponent(clientId)) + '&clientVersion=' + (clientVersion == null ? '' : encodeURIComponent(clientVersion)), { observe: 'response', responseType: 'text' });
 		}
 

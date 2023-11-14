@@ -5,8 +5,8 @@ export namespace MyNS {
 
 	/** Amazon ML returns the following elements.  */
 	export interface AddTagsOutput {
-		ResourceId?: string;
-		ResourceType?: AddTagsOutputResourceType;
+		ResourceId?: string | null;
+		ResourceType?: AddTagsOutputResourceType | null;
 	}
 
 	export enum AddTagsOutputResourceType { BatchPrediction = 0, DataSource = 1, Evaluation = 2, MLModel = 3 }
@@ -20,43 +20,43 @@ export namespace MyNS {
 
 	/** A custom key-value pair associated with an ML object, such as an ML model. */
 	export interface Tag {
-		Key?: string;
-		Value?: string;
+		Key?: string | null;
+		Value?: string | null;
 	}
 
 
 	/** An error on the client occurred. Typically, the cause is an invalid input value. */
 	export interface InvalidInputException {
-		message?: string;
-		code?: number;
+		message?: string | null;
+		code?: number | null;
 	}
 
 	export interface InvalidTagException {
-		message?: string;
+		message?: string | null;
 	}
 
 	export interface TagLimitExceededException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** A specified resource cannot be located. */
 	export interface ResourceNotFoundException {
-		message?: string;
-		code?: number;
+		message?: string | null;
+		code?: number | null;
 	}
 
 
 	/** An error on the server occurred when trying to process a request. */
 	export interface InternalServerException {
-		message?: string;
-		code?: number;
+		message?: string | null;
+		code?: number | null;
 	}
 
 
 	/** <p> Represents the output of a <code>CreateBatchPrediction</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateBatchPrediction</code> operation is asynchronous. You can poll for status updates by using the <code>&gt;GetBatchPrediction</code> operation and checking the <code>Status</code> parameter of the result. </p> */
 	export interface CreateBatchPredictionOutput {
-		BatchPredictionId?: string;
+		BatchPredictionId?: string | null;
 	}
 
 	export interface CreateBatchPredictionInput {
@@ -67,7 +67,7 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		BatchPredictionName?: string;
+		BatchPredictionName?: string | null;
 		MLModelId: string;
 		BatchPredictionDataSourceId: string;
 
@@ -83,14 +83,14 @@ export namespace MyNS {
 
 	/** A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request. */
 	export interface IdempotentParameterMismatchException {
-		message?: string;
-		code?: number;
+		message?: string | null;
+		code?: number | null;
 	}
 
 
 	/** <p> Represents the output of a <code>CreateDataSourceFromRDS</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromRDS</code>&gt; operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. You can inspect the <code>Message</code> when <code>Status</code> shows up as <code>FAILED</code>. You can also check the progress of the copy operation by going to the <code>DataPipeline</code> console and looking up the pipeline using the <code>pipelineId </code> from the describe call.</p> */
 	export interface CreateDataSourceFromRDSOutput {
-		DataSourceId?: string;
+		DataSourceId?: string | null;
 	}
 
 	export interface CreateDataSourceFromRDSInput {
@@ -101,7 +101,7 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		DataSourceName?: string;
+		DataSourceName?: string | null;
 
 		/**
 		 * The data specification of an Amazon Relational Database Service (Amazon RDS) <code>DataSource</code>.
@@ -116,7 +116,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		RoleARN: string;
-		ComputeStatistics?: boolean;
+		ComputeStatistics?: boolean | null;
 	}
 
 
@@ -150,20 +150,20 @@ export namespace MyNS {
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		S3StagingLocation: string;
-		DataRearrangement?: string;
+		DataRearrangement?: string | null;
 
 		/**
 		 * <p>The schema of a <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>. The DataSource schema is expressed in JSON format.</p> <p><code>DataSchema</code> is not required if you specify a <code>DataSchemaUri</code></p> <p>{ "version": "1.0", "recordAnnotationFieldName": "F1", "recordWeightFieldName": "F2", "targetFieldName": "F3", "dataFormat": "CSV", "dataFileContainsHeader": true, "variables": [ { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ], "excludedVariableNames": [ "F6" ] } </p>
 		 * Max length: 131071
 		 */
-		DataSchema?: string;
+		DataSchema?: string | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
-		DataSchemaUri?: string;
+		DataSchemaUri?: string | null;
 		ResourceRole: string;
 		ServiceRole: string;
 		SubnetId: string;
@@ -216,7 +216,7 @@ export namespace MyNS {
 
 	/** <p> Represents the output of a <code>CreateDataSourceFromRedshift</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromRedshift</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p> */
 	export interface CreateDataSourceFromRedshiftOutput {
-		DataSourceId?: string;
+		DataSourceId?: string | null;
 	}
 
 	export interface CreateDataSourceFromRedshiftInput {
@@ -227,7 +227,7 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		DataSourceName?: string;
+		DataSourceName?: string | null;
 
 		/**
 		 * Describes the data specification of an Amazon Redshift <code>DataSource</code>.
@@ -242,7 +242,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		RoleARN: string;
-		ComputeStatistics?: boolean;
+		ComputeStatistics?: boolean | null;
 	}
 
 
@@ -276,20 +276,20 @@ export namespace MyNS {
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		S3StagingLocation: string;
-		DataRearrangement?: string;
+		DataRearrangement?: string | null;
 
 		/**
 		 * <p>The schema of a <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>. The DataSource schema is expressed in JSON format.</p> <p><code>DataSchema</code> is not required if you specify a <code>DataSchemaUri</code></p> <p>{ "version": "1.0", "recordAnnotationFieldName": "F1", "recordWeightFieldName": "F2", "targetFieldName": "F3", "dataFormat": "CSV", "dataFileContainsHeader": true, "variables": [ { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ], "excludedVariableNames": [ "F6" ] } </p>
 		 * Max length: 131071
 		 */
-		DataSchema?: string;
+		DataSchema?: string | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
-		DataSchemaUri?: string;
+		DataSchemaUri?: string | null;
 	}
 
 
@@ -339,7 +339,7 @@ export namespace MyNS {
 
 	/** <p> Represents the output of a <code>CreateDataSourceFromS3</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromS3</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p> */
 	export interface CreateDataSourceFromS3Output {
-		DataSourceId?: string;
+		DataSourceId?: string | null;
 	}
 
 	export interface CreateDataSourceFromS3Input {
@@ -350,14 +350,14 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		DataSourceName?: string;
+		DataSourceName?: string | null;
 
 		/**
 		 * Describes the data specification of a <code>DataSource</code>.
 		 * Required
 		 */
 		DataSpec: S3DataSpec;
-		ComputeStatistics?: boolean;
+		ComputeStatistics?: boolean | null;
 	}
 
 
@@ -371,26 +371,26 @@ export namespace MyNS {
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		DataLocationS3: string;
-		DataRearrangement?: string;
+		DataRearrangement?: string | null;
 
 		/**
 		 * <p>The schema of a <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>. The DataSource schema is expressed in JSON format.</p> <p><code>DataSchema</code> is not required if you specify a <code>DataSchemaUri</code></p> <p>{ "version": "1.0", "recordAnnotationFieldName": "F1", "recordWeightFieldName": "F2", "targetFieldName": "F3", "dataFormat": "CSV", "dataFileContainsHeader": true, "variables": [ { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ], "excludedVariableNames": [ "F6" ] } </p>
 		 * Max length: 131071
 		 */
-		DataSchema?: string;
+		DataSchema?: string | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
-		DataSchemaLocationS3?: string;
+		DataSchemaLocationS3?: string | null;
 	}
 
 
 	/** <p> Represents the output of a <code>CreateEvaluation</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p><code>CreateEvaluation</code> operation is asynchronous. You can poll for status updates by using the <code>GetEvcaluation</code> operation and checking the <code>Status</code> parameter. </p> */
 	export interface CreateEvaluationOutput {
-		EvaluationId?: string;
+		EvaluationId?: string | null;
 	}
 
 	export interface CreateEvaluationInput {
@@ -401,7 +401,7 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		EvaluationName?: string;
+		EvaluationName?: string | null;
 		MLModelId: string;
 		EvaluationDataSourceId: string;
 	}
@@ -409,7 +409,7 @@ export namespace MyNS {
 
 	/** <p> Represents the output of a <code>CreateMLModel</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateMLModel</code> operation is asynchronous. You can poll for status updates by using the <code>GetMLModel</code> operation and checking the <code>Status</code> parameter. </p> */
 	export interface CreateMLModelOutput {
-		MLModelId?: string;
+		MLModelId?: string | null;
 	}
 
 	export interface CreateMLModelInput {
@@ -420,18 +420,18 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		MLModelName?: string;
+		MLModelName?: string | null;
 		MLModelType: CreateMLModelInputMLModelType;
-		Parameters?: TrainingParameters;
+		Parameters?: TrainingParameters | null;
 		TrainingDataSourceId: string;
-		Recipe?: string;
+		Recipe?: string | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
-		RecipeUri?: string;
+		RecipeUri?: string | null;
 	}
 
 	export enum CreateMLModelInputMLModelType { REGRESSION = 0, BINARY = 1, MULTICLASS = 2 }
@@ -442,10 +442,10 @@ export namespace MyNS {
 
 	/** <p>Represents the output of an <code>CreateRealtimeEndpoint</code> operation.</p> <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.</p> <note> <p>The endpoint information includes the URI of the <code>MLModel</code>; that is, the location to send online prediction requests for the specified <code>MLModel</code>.</p> </note> */
 	export interface CreateRealtimeEndpointOutput {
-		MLModelId?: string;
+		MLModelId?: string | null;
 
 		/** Describes the real-time endpoint information for an <code>MLModel</code>. */
-		RealtimeEndpointInfo?: RealtimeEndpointInfo;
+		RealtimeEndpointInfo?: RealtimeEndpointInfo | null;
 	}
 
 
@@ -453,12 +453,12 @@ export namespace MyNS {
 	export interface RealtimeEndpointInfo {
 
 		/** Integer type that is a 32-bit signed number. */
-		PeakRequestsPerSecond?: number;
+		PeakRequestsPerSecond?: number | null;
 
 		/** A timestamp represented in epoch time. */
-		CreatedAt?: Date;
-		EndpointUrl?: string;
-		EndpointStatus?: RealtimeEndpointInfoEndpointStatus;
+		CreatedAt?: Date | null;
+		EndpointUrl?: string | null;
+		EndpointStatus?: RealtimeEndpointInfoEndpointStatus | null;
 	}
 
 	export enum RealtimeEndpointInfoEndpointStatus { NONE = 0, READY = 1, UPDATING = 2, FAILED = 3 }
@@ -470,7 +470,7 @@ export namespace MyNS {
 
 	/** <p> Represents the output of a <code>DeleteBatchPrediction</code> operation.</p> <p>You can use the <code>GetBatchPrediction</code> operation and check the value of the <code>Status</code> parameter to see whether a <code>BatchPrediction</code> is marked as <code>DELETED</code>.</p> */
 	export interface DeleteBatchPredictionOutput {
-		BatchPredictionId?: string;
+		BatchPredictionId?: string | null;
 	}
 
 	export interface DeleteBatchPredictionInput {
@@ -480,7 +480,7 @@ export namespace MyNS {
 
 	/**  Represents the output of a <code>DeleteDataSource</code> operation. */
 	export interface DeleteDataSourceOutput {
-		DataSourceId?: string;
+		DataSourceId?: string | null;
 	}
 
 	export interface DeleteDataSourceInput {
@@ -490,7 +490,7 @@ export namespace MyNS {
 
 	/** <p> Represents the output of a <code>DeleteEvaluation</code> operation. The output indicates that Amazon Machine Learning (Amazon ML) received the request.</p> <p>You can use the <code>GetEvaluation</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>Evaluation</code> is marked as <code>DELETED</code>.</p> */
 	export interface DeleteEvaluationOutput {
-		EvaluationId?: string;
+		EvaluationId?: string | null;
 	}
 
 	export interface DeleteEvaluationInput {
@@ -500,7 +500,7 @@ export namespace MyNS {
 
 	/** <p>Represents the output of a <code>DeleteMLModel</code> operation.</p> <p>You can use the <code>GetMLModel</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>MLModel</code> is marked as <code>DELETED</code>.</p> */
 	export interface DeleteMLModelOutput {
-		MLModelId?: string;
+		MLModelId?: string | null;
 	}
 
 	export interface DeleteMLModelInput {
@@ -510,10 +510,10 @@ export namespace MyNS {
 
 	/** <p>Represents the output of an <code>DeleteRealtimeEndpoint</code> operation.</p> <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>. </p> */
 	export interface DeleteRealtimeEndpointOutput {
-		MLModelId?: string;
+		MLModelId?: string | null;
 
 		/** Describes the real-time endpoint information for an <code>MLModel</code>. */
-		RealtimeEndpointInfo?: RealtimeEndpointInfo;
+		RealtimeEndpointInfo?: RealtimeEndpointInfo | null;
 	}
 
 	export interface DeleteRealtimeEndpointInput {
@@ -523,8 +523,8 @@ export namespace MyNS {
 
 	/** Amazon ML returns the following elements.  */
 	export interface DeleteTagsOutput {
-		ResourceId?: string;
-		ResourceType?: AddTagsOutputResourceType;
+		ResourceId?: string | null;
+		ResourceType?: AddTagsOutputResourceType | null;
 	}
 
 	export interface DeleteTagsInput {
@@ -536,75 +536,75 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>DescribeBatchPredictions</code> operation. The content is essentially a list of <code>BatchPrediction</code>s. */
 	export interface DescribeBatchPredictionsOutput {
-		Results?: Array<BatchPrediction>;
+		Results?: Array<BatchPrediction> | null;
 
 		/** String type. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** <p> Represents the output of a <code>GetBatchPrediction</code> operation.</p> <p> The content consists of the detailed metadata, the status, and the data file information of a <code>Batch Prediction</code>.</p> */
 	export interface BatchPrediction {
-		BatchPredictionId?: string;
-		MLModelId?: string;
-		BatchPredictionDataSourceId?: string;
+		BatchPredictionId?: string | null;
+		MLModelId?: string | null;
+		BatchPredictionDataSourceId?: string | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
-		InputDataLocationS3?: string;
+		InputDataLocationS3?: string | null;
 
 		/**
 		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
 		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
 		 */
-		CreatedByIamUser?: string;
+		CreatedByIamUser?: string | null;
 
 		/** A timestamp represented in epoch time. */
-		CreatedAt?: Date;
+		CreatedAt?: Date | null;
 
 		/** A timestamp represented in epoch time. */
-		LastUpdatedAt?: Date;
+		LastUpdatedAt?: Date | null;
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
-		Status?: BatchPredictionStatus;
+		Status?: BatchPredictionStatus | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
-		OutputUri?: string;
+		OutputUri?: string | null;
 
 		/**
 		 * Description of the most recent details about an object.
 		 * Max length: 10240
 		 */
-		Message?: string;
+		Message?: string | null;
 
 		/** Long integer type that is a 64-bit signed number. */
-		ComputeTime?: number;
+		ComputeTime?: number | null;
 
 		/** A timestamp represented in epoch time. */
-		FinishedAt?: Date;
+		FinishedAt?: Date | null;
 
 		/** A timestamp represented in epoch time. */
-		StartedAt?: Date;
+		StartedAt?: Date | null;
 
 		/** Long integer type that is a 64-bit signed number. */
-		TotalRecordCount?: number;
+		TotalRecordCount?: number | null;
 
 		/** Long integer type that is a 64-bit signed number. */
-		InvalidRecordCount?: number;
+		InvalidRecordCount?: number | null;
 	}
 
 	export enum BatchPredictionStatus { PENDING = 0, INPROGRESS = 1, FAILED = 2, COMPLETED = 3, DELETED = 4 }
@@ -612,63 +612,63 @@ export namespace MyNS {
 	export interface DescribeBatchPredictionsInput {
 
 		/** <p>A list of the variables to use in searching or filtering <code>BatchPrediction</code>.</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to <code>BatchPrediction</code> creation date.</li> <li> <code>Status</code> - Sets the search criteria to <code>BatchPrediction</code> status.</li> <li> <code>Name</code> - Sets the search criteria to the contents of <code>BatchPrediction</code><b> </b> <code>Name</code>.</li> <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</li> <li> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</li> <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</li> <li> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</li> </ul> */
-		FilterVariable?: DescribeBatchPredictionsInputFilterVariable;
+		FilterVariable?: DescribeBatchPredictionsInputFilterVariable | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		EQ?: string;
+		EQ?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		GT?: string;
+		GT?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		LT?: string;
+		LT?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		GE?: string;
+		GE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		LE?: string;
+		LE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		NE?: string;
+		NE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		Prefix?: string;
+		Prefix?: string | null;
 
 		/** <p>The sort order specified in a listing condition. Possible values include the following:</p> <ul> <li> <code>asc</code> - Present the information in ascending order (from A-Z).</li> <li> <code>dsc</code> - Present the information in descending order (from Z-A).</li> </ul> */
-		SortOrder?: DescribeBatchPredictionsInputSortOrder;
+		SortOrder?: DescribeBatchPredictionsInputSortOrder | null;
 
 		/** String type. */
-		NextToken?: string;
-		Limit?: number;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export enum DescribeBatchPredictionsInputFilterVariable { CreatedAt = 0, LastUpdatedAt = 1, Status = 2, Name = 3, IAMUser = 4, MLModelId = 5, DataSourceId = 6, DataURI = 7 }
@@ -678,81 +678,81 @@ export namespace MyNS {
 
 	/** Represents the query results from a <a>DescribeDataSources</a> operation. The content is essentially a list of <code>DataSource</code>. */
 	export interface DescribeDataSourcesOutput {
-		Results?: Array<DataSource>;
+		Results?: Array<DataSource> | null;
 
 		/** String type. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** <p> Represents the output of the <code>GetDataSource</code> operation. </p> <p> The content consists of the detailed metadata and data file information and the current status of the <code>DataSource</code>. </p> */
 	export interface DataSource {
-		DataSourceId?: string;
+		DataSourceId?: string | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
-		DataLocationS3?: string;
-		DataRearrangement?: string;
+		DataLocationS3?: string | null;
+		DataRearrangement?: string | null;
 
 		/**
 		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
 		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
 		 */
-		CreatedByIamUser?: string;
+		CreatedByIamUser?: string | null;
 
 		/** A timestamp represented in epoch time. */
-		CreatedAt?: Date;
+		CreatedAt?: Date | null;
 
 		/** A timestamp represented in epoch time. */
-		LastUpdatedAt?: Date;
+		LastUpdatedAt?: Date | null;
 
 		/** Long integer type that is a 64-bit signed number. */
-		DataSizeInBytes?: number;
+		DataSizeInBytes?: number | null;
 
 		/** Long integer type that is a 64-bit signed number. */
-		NumberOfFiles?: number;
+		NumberOfFiles?: number | null;
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
-		Status?: BatchPredictionStatus;
+		Status?: BatchPredictionStatus | null;
 
 		/**
 		 * Description of the most recent details about an object.
 		 * Max length: 10240
 		 */
-		Message?: string;
+		Message?: string | null;
 
 		/** Describes the <code>DataSource</code> details specific to Amazon Redshift. */
-		RedshiftMetadata?: RedshiftMetadata;
+		RedshiftMetadata?: RedshiftMetadata | null;
 
 		/** The datasource details that are specific to Amazon RDS. */
-		RDSMetadata?: RDSMetadata;
+		RDSMetadata?: RDSMetadata | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of an <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.
 		 * Max length: 110
 		 * Min length: 1
 		 */
-		RoleARN?: string;
-		ComputeStatistics?: boolean;
+		RoleARN?: string | null;
+		ComputeStatistics?: boolean | null;
 
 		/** Long integer type that is a 64-bit signed number. */
-		ComputeTime?: number;
+		ComputeTime?: number | null;
 
 		/** A timestamp represented in epoch time. */
-		FinishedAt?: Date;
+		FinishedAt?: Date | null;
 
 		/** A timestamp represented in epoch time. */
-		StartedAt?: Date;
+		StartedAt?: Date | null;
 	}
 
 
@@ -760,21 +760,21 @@ export namespace MyNS {
 	export interface RedshiftMetadata {
 
 		/** Describes the database details required to connect to an Amazon Redshift database. */
-		RedshiftDatabase?: RedshiftDatabase;
+		RedshiftDatabase?: RedshiftDatabase | null;
 
 		/**
 		 * A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.
 		 * Max length: 128
 		 * Min length: 1
 		 */
-		DatabaseUserName?: string;
+		DatabaseUserName?: string | null;
 
 		/**
 		 * Describes the SQL query to execute on the Amazon Redshift database. The SQL query should be valid for an Amazon Redshift <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_SELECT_synopsis.html">SELECT</a>.
 		 * Max length: 16777216
 		 * Min length: 1
 		 */
-		SelectSqlQuery?: string;
+		SelectSqlQuery?: string | null;
 	}
 
 
@@ -782,86 +782,86 @@ export namespace MyNS {
 	export interface RDSMetadata {
 
 		/** The database details of an Amazon RDS database. */
-		Database?: RDSDatabase;
+		Database?: RDSDatabase | null;
 
 		/**
 		 * The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.
 		 * Max length: 128
 		 * Min length: 1
 		 */
-		DatabaseUserName?: string;
+		DatabaseUserName?: string | null;
 
 		/**
 		 * The SQL query to be executed against the Amazon RDS database. The SQL query should be valid for the Amazon RDS type being used.
 		 * Max length: 16777216
 		 * Min length: 1
 		 */
-		SelectSqlQuery?: string;
-		ResourceRole?: string;
-		ServiceRole?: string;
-		DataPipelineId?: string;
+		SelectSqlQuery?: string | null;
+		ResourceRole?: string | null;
+		ServiceRole?: string | null;
+		DataPipelineId?: string | null;
 	}
 
 	export interface DescribeDataSourcesInput {
 
 		/** <p>A list of the variables to use in searching or filtering <code>DataSource</code>.</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation date.</li> <li> <code>Status</code> - Sets the search criteria to <code>DataSource</code> status.</li> <li> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <b> </b> <code>Name</code>.</li> <li> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</li> <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</li> </ul> <note><title>Note</title> <p>The variable names should match the variable names in the <code>DataSource</code>.</p> </note> */
-		FilterVariable?: DescribeDataSourcesInputFilterVariable;
+		FilterVariable?: DescribeDataSourcesInputFilterVariable | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		EQ?: string;
+		EQ?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		GT?: string;
+		GT?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		LT?: string;
+		LT?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		GE?: string;
+		GE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		LE?: string;
+		LE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		NE?: string;
+		NE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		Prefix?: string;
+		Prefix?: string | null;
 
 		/** <p>The sort order specified in a listing condition. Possible values include the following:</p> <ul> <li> <code>asc</code> - Present the information in ascending order (from A-Z).</li> <li> <code>dsc</code> - Present the information in descending order (from Z-A).</li> </ul> */
-		SortOrder?: DescribeBatchPredictionsInputSortOrder;
+		SortOrder?: DescribeBatchPredictionsInputSortOrder | null;
 
 		/** String type. */
-		NextToken?: string;
-		Limit?: number;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export enum DescribeDataSourcesInputFilterVariable { CreatedAt = 0, LastUpdatedAt = 1, Status = 2, Name = 3, DataLocationS3 = 4, IAMUser = 5 }
@@ -869,71 +869,71 @@ export namespace MyNS {
 
 	/** Represents the query results from a <code>DescribeEvaluations</code> operation. The content is essentially a list of <code>Evaluation</code>. */
 	export interface DescribeEvaluationsOutput {
-		Results?: Array<Evaluation>;
+		Results?: Array<Evaluation> | null;
 
 		/** String type. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** <p> Represents the output of <code>GetEvaluation</code> operation. </p> <p>The content consists of the detailed metadata and data file information and the current status of the <code>Evaluation</code>.</p> */
 	export interface Evaluation {
-		EvaluationId?: string;
-		MLModelId?: string;
-		EvaluationDataSourceId?: string;
+		EvaluationId?: string | null;
+		MLModelId?: string | null;
+		EvaluationDataSourceId?: string | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
-		InputDataLocationS3?: string;
+		InputDataLocationS3?: string | null;
 
 		/**
 		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
 		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
 		 */
-		CreatedByIamUser?: string;
+		CreatedByIamUser?: string | null;
 
 		/** A timestamp represented in epoch time. */
-		CreatedAt?: Date;
+		CreatedAt?: Date | null;
 
 		/** A timestamp represented in epoch time. */
-		LastUpdatedAt?: Date;
+		LastUpdatedAt?: Date | null;
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
-		Status?: BatchPredictionStatus;
+		Status?: BatchPredictionStatus | null;
 
 		/** <p>Measurements of how well the <code>MLModel</code> performed on known observations. One of the following metrics is returned, based on the type of the <code>MLModel</code>: </p> <ul> <li> <p>BinaryAUC: The binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance. </p> </li> <li> <p>RegressionRMSE: The regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p> </li> <li> <p>MulticlassAvgFScore: The multiclass <code>MLModel</code> uses the F1 score technique to measure performance. </p> </li> </ul> <p> For more information about performance metrics, please see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>. </p> */
-		PerformanceMetrics?: PerformanceMetrics;
+		PerformanceMetrics?: PerformanceMetrics | null;
 
 		/**
 		 * Description of the most recent details about an object.
 		 * Max length: 10240
 		 */
-		Message?: string;
+		Message?: string | null;
 
 		/** Long integer type that is a 64-bit signed number. */
-		ComputeTime?: number;
+		ComputeTime?: number | null;
 
 		/** A timestamp represented in epoch time. */
-		FinishedAt?: Date;
+		FinishedAt?: Date | null;
 
 		/** A timestamp represented in epoch time. */
-		StartedAt?: Date;
+		StartedAt?: Date | null;
 	}
 
 
 	/** <p>Measurements of how well the <code>MLModel</code> performed on known observations. One of the following metrics is returned, based on the type of the <code>MLModel</code>: </p> <ul> <li> <p>BinaryAUC: The binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance. </p> </li> <li> <p>RegressionRMSE: The regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p> </li> <li> <p>MulticlassAvgFScore: The multiclass <code>MLModel</code> uses the F1 score technique to measure performance. </p> </li> </ul> <p> For more information about performance metrics, please see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>. </p> */
 	export interface PerformanceMetrics {
-		Properties?: PerformanceMetricsProperties;
+		Properties?: PerformanceMetricsProperties | null;
 	}
 
 	export interface PerformanceMetricsProperties {
@@ -942,194 +942,194 @@ export namespace MyNS {
 	export interface DescribeEvaluationsInput {
 
 		/** <p>A list of the variables to use in searching or filtering <code>Evaluation</code>.</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to <code>Evaluation</code> creation date.</li> <li> <code>Status</code> - Sets the search criteria to <code>Evaluation</code> status.</li> <li> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</li> <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an evaluation.</li> <li> <code>MLModelId</code> - Sets the search criteria to the <code>Predictor</code> that was evaluated.</li> <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in evaluation.</li> <li> <code>DataUri</code> - Sets the search criteria to the data file(s) used in evaluation. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</li> </ul> */
-		FilterVariable?: DescribeBatchPredictionsInputFilterVariable;
+		FilterVariable?: DescribeBatchPredictionsInputFilterVariable | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		EQ?: string;
+		EQ?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		GT?: string;
+		GT?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		LT?: string;
+		LT?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		GE?: string;
+		GE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		LE?: string;
+		LE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		NE?: string;
+		NE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		Prefix?: string;
+		Prefix?: string | null;
 
 		/** <p>The sort order specified in a listing condition. Possible values include the following:</p> <ul> <li> <code>asc</code> - Present the information in ascending order (from A-Z).</li> <li> <code>dsc</code> - Present the information in descending order (from Z-A).</li> </ul> */
-		SortOrder?: DescribeBatchPredictionsInputSortOrder;
+		SortOrder?: DescribeBatchPredictionsInputSortOrder | null;
 
 		/** String type. */
-		NextToken?: string;
-		Limit?: number;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 
 	/** Represents the output of a <code>DescribeMLModels</code> operation. The content is essentially a list of <code>MLModel</code>. */
 	export interface DescribeMLModelsOutput {
-		Results?: Array<MLModel>;
+		Results?: Array<MLModel> | null;
 
 		/** String type. */
-		NextToken?: string;
+		NextToken?: string | null;
 	}
 
 
 	/** <p> Represents the output of a <code>GetMLModel</code> operation. </p> <p>The content consists of the detailed metadata and the current status of the <code>MLModel</code>.</p> */
 	export interface MLModel {
-		MLModelId?: string;
-		TrainingDataSourceId?: string;
+		MLModelId?: string | null;
+		TrainingDataSourceId?: string | null;
 
 		/**
 		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
 		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
 		 */
-		CreatedByIamUser?: string;
+		CreatedByIamUser?: string | null;
 
 		/** A timestamp represented in epoch time. */
-		CreatedAt?: Date;
+		CreatedAt?: Date | null;
 
 		/** A timestamp represented in epoch time. */
-		LastUpdatedAt?: Date;
-		Name?: string;
+		LastUpdatedAt?: Date | null;
+		Name?: string | null;
 
 		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
-		Status?: BatchPredictionStatus;
+		Status?: BatchPredictionStatus | null;
 
 		/** Long integer type that is a 64-bit signed number. */
-		SizeInBytes?: number;
+		SizeInBytes?: number | null;
 
 		/** Describes the real-time endpoint information for an <code>MLModel</code>. */
-		EndpointInfo?: RealtimeEndpointInfo;
-		TrainingParameters?: TrainingParameters;
+		EndpointInfo?: RealtimeEndpointInfo | null;
+		TrainingParameters?: TrainingParameters | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
-		InputDataLocationS3?: string;
+		InputDataLocationS3?: string | null;
 
 		/** <p>The function used to train an <code>MLModel</code>. Training choices supported by Amazon ML include the following:</p> <ul> <li> <code>SGD</code> - Stochastic Gradient Descent.</li> <li> <code>RandomForest</code> - Random forest of decision trees.</li> </ul> */
-		Algorithm?: MLModelAlgorithm;
-		MLModelType?: CreateMLModelInputMLModelType;
-		ScoreThreshold?: number;
+		Algorithm?: MLModelAlgorithm | null;
+		MLModelType?: CreateMLModelInputMLModelType | null;
+		ScoreThreshold?: number | null;
 
 		/** A timestamp represented in epoch time. */
-		ScoreThresholdLastUpdatedAt?: Date;
+		ScoreThresholdLastUpdatedAt?: Date | null;
 
 		/**
 		 * Description of the most recent details about an object.
 		 * Max length: 10240
 		 */
-		Message?: string;
+		Message?: string | null;
 
 		/** Long integer type that is a 64-bit signed number. */
-		ComputeTime?: number;
+		ComputeTime?: number | null;
 
 		/** A timestamp represented in epoch time. */
-		FinishedAt?: Date;
+		FinishedAt?: Date | null;
 
 		/** A timestamp represented in epoch time. */
-		StartedAt?: Date;
+		StartedAt?: Date | null;
 	}
 
 	export enum MLModelAlgorithm { sgd = 0 }
 
 	export interface DescribeMLModelsInput {
-		FilterVariable?: DescribeMLModelsInputFilterVariable;
+		FilterVariable?: DescribeMLModelsInputFilterVariable | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		EQ?: string;
+		EQ?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		GT?: string;
+		GT?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		LT?: string;
+		LT?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		GE?: string;
+		GE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		LE?: string;
+		LE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		NE?: string;
+		NE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		Prefix?: string;
+		Prefix?: string | null;
 
 		/** <p>The sort order specified in a listing condition. Possible values include the following:</p> <ul> <li> <code>asc</code> - Present the information in ascending order (from A-Z).</li> <li> <code>dsc</code> - Present the information in descending order (from Z-A).</li> </ul> */
-		SortOrder?: DescribeBatchPredictionsInputSortOrder;
+		SortOrder?: DescribeBatchPredictionsInputSortOrder | null;
 
 		/** String type. */
-		NextToken?: string;
-		Limit?: number;
+		NextToken?: string | null;
+		Limit?: number | null;
 	}
 
 	export enum DescribeMLModelsInputFilterVariable { CreatedAt = 0, LastUpdatedAt = 1, Status = 2, Name = 3, IAMUser = 4, TrainingDataSourceId = 5, RealtimeEndpointStatus = 6, MLModelType = 7, Algorithm = 8, TrainingDataURI = 9 }
@@ -1137,9 +1137,9 @@ export namespace MyNS {
 
 	/** Amazon ML returns the following elements.  */
 	export interface DescribeTagsOutput {
-		ResourceId?: string;
-		ResourceType?: AddTagsOutputResourceType;
-		Tags?: Array<Tag>;
+		ResourceId?: string | null;
+		ResourceType?: AddTagsOutputResourceType | null;
+		Tags?: Array<Tag> | null;
 	}
 
 	export interface DescribeTagsInput {
@@ -1150,67 +1150,67 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>GetBatchPrediction</code> operation and describes a <code>BatchPrediction</code>. */
 	export interface GetBatchPredictionOutput {
-		BatchPredictionId?: string;
-		MLModelId?: string;
-		BatchPredictionDataSourceId?: string;
+		BatchPredictionId?: string | null;
+		MLModelId?: string | null;
+		BatchPredictionDataSourceId?: string | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
-		InputDataLocationS3?: string;
+		InputDataLocationS3?: string | null;
 
 		/**
 		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
 		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
 		 */
-		CreatedByIamUser?: string;
+		CreatedByIamUser?: string | null;
 
 		/** A timestamp represented in epoch time. */
-		CreatedAt?: Date;
+		CreatedAt?: Date | null;
 
 		/** A timestamp represented in epoch time. */
-		LastUpdatedAt?: Date;
+		LastUpdatedAt?: Date | null;
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
-		Status?: BatchPredictionStatus;
+		Status?: BatchPredictionStatus | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
-		OutputUri?: string;
-		LogUri?: string;
+		OutputUri?: string | null;
+		LogUri?: string | null;
 
 		/**
 		 * Description of the most recent details about an object.
 		 * Max length: 10240
 		 */
-		Message?: string;
+		Message?: string | null;
 
 		/** Long integer type that is a 64-bit signed number. */
-		ComputeTime?: number;
+		ComputeTime?: number | null;
 
 		/** A timestamp represented in epoch time. */
-		FinishedAt?: Date;
+		FinishedAt?: Date | null;
 
 		/** A timestamp represented in epoch time. */
-		StartedAt?: Date;
+		StartedAt?: Date | null;
 
 		/** Long integer type that is a 64-bit signed number. */
-		TotalRecordCount?: number;
+		TotalRecordCount?: number | null;
 
 		/** Long integer type that is a 64-bit signed number. */
-		InvalidRecordCount?: number;
+		InvalidRecordCount?: number | null;
 	}
 
 	export interface GetBatchPredictionInput {
@@ -1220,142 +1220,142 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>GetDataSource</code> operation and describes a <code>DataSource</code>. */
 	export interface GetDataSourceOutput {
-		DataSourceId?: string;
+		DataSourceId?: string | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
-		DataLocationS3?: string;
-		DataRearrangement?: string;
+		DataLocationS3?: string | null;
+		DataRearrangement?: string | null;
 
 		/**
 		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
 		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
 		 */
-		CreatedByIamUser?: string;
+		CreatedByIamUser?: string | null;
 
 		/** A timestamp represented in epoch time. */
-		CreatedAt?: Date;
+		CreatedAt?: Date | null;
 
 		/** A timestamp represented in epoch time. */
-		LastUpdatedAt?: Date;
+		LastUpdatedAt?: Date | null;
 
 		/** Long integer type that is a 64-bit signed number. */
-		DataSizeInBytes?: number;
+		DataSizeInBytes?: number | null;
 
 		/** Long integer type that is a 64-bit signed number. */
-		NumberOfFiles?: number;
+		NumberOfFiles?: number | null;
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
-		Status?: BatchPredictionStatus;
-		LogUri?: string;
+		Status?: BatchPredictionStatus | null;
+		LogUri?: string | null;
 
 		/**
 		 * Description of the most recent details about an object.
 		 * Max length: 10240
 		 */
-		Message?: string;
+		Message?: string | null;
 
 		/** Describes the <code>DataSource</code> details specific to Amazon Redshift. */
-		RedshiftMetadata?: RedshiftMetadata;
+		RedshiftMetadata?: RedshiftMetadata | null;
 
 		/** The datasource details that are specific to Amazon RDS. */
-		RDSMetadata?: RDSMetadata;
+		RDSMetadata?: RDSMetadata | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of an <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.
 		 * Max length: 110
 		 * Min length: 1
 		 */
-		RoleARN?: string;
-		ComputeStatistics?: boolean;
+		RoleARN?: string | null;
+		ComputeStatistics?: boolean | null;
 
 		/** Long integer type that is a 64-bit signed number. */
-		ComputeTime?: number;
+		ComputeTime?: number | null;
 
 		/** A timestamp represented in epoch time. */
-		FinishedAt?: Date;
+		FinishedAt?: Date | null;
 
 		/** A timestamp represented in epoch time. */
-		StartedAt?: Date;
+		StartedAt?: Date | null;
 
 		/**
 		 * <p>The schema of a <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>. The DataSource schema is expressed in JSON format.</p> <p><code>DataSchema</code> is not required if you specify a <code>DataSchemaUri</code></p> <p>{ "version": "1.0", "recordAnnotationFieldName": "F1", "recordWeightFieldName": "F2", "targetFieldName": "F3", "dataFormat": "CSV", "dataFileContainsHeader": true, "variables": [ { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ], "excludedVariableNames": [ "F6" ] } </p>
 		 * Max length: 131071
 		 */
-		DataSourceSchema?: string;
+		DataSourceSchema?: string | null;
 	}
 
 	export interface GetDataSourceInput {
 		DataSourceId: string;
 
 		/** Specifies whether a describe operation should return exhaustive or abbreviated information. */
-		Verbose?: boolean;
+		Verbose?: boolean | null;
 	}
 
 
 	/** Represents the output of a <code>GetEvaluation</code> operation and describes an <code>Evaluation</code>. */
 	export interface GetEvaluationOutput {
-		EvaluationId?: string;
-		MLModelId?: string;
-		EvaluationDataSourceId?: string;
+		EvaluationId?: string | null;
+		MLModelId?: string | null;
+		EvaluationDataSourceId?: string | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
-		InputDataLocationS3?: string;
+		InputDataLocationS3?: string | null;
 
 		/**
 		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
 		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
 		 */
-		CreatedByIamUser?: string;
+		CreatedByIamUser?: string | null;
 
 		/** A timestamp represented in epoch time. */
-		CreatedAt?: Date;
+		CreatedAt?: Date | null;
 
 		/** A timestamp represented in epoch time. */
-		LastUpdatedAt?: Date;
+		LastUpdatedAt?: Date | null;
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		Name?: string;
+		Name?: string | null;
 
 		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
-		Status?: BatchPredictionStatus;
+		Status?: BatchPredictionStatus | null;
 
 		/** <p>Measurements of how well the <code>MLModel</code> performed on known observations. One of the following metrics is returned, based on the type of the <code>MLModel</code>: </p> <ul> <li> <p>BinaryAUC: The binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance. </p> </li> <li> <p>RegressionRMSE: The regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p> </li> <li> <p>MulticlassAvgFScore: The multiclass <code>MLModel</code> uses the F1 score technique to measure performance. </p> </li> </ul> <p> For more information about performance metrics, please see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>. </p> */
-		PerformanceMetrics?: PerformanceMetrics;
-		LogUri?: string;
+		PerformanceMetrics?: PerformanceMetrics | null;
+		LogUri?: string | null;
 
 		/**
 		 * Description of the most recent details about an object.
 		 * Max length: 10240
 		 */
-		Message?: string;
+		Message?: string | null;
 
 		/** Long integer type that is a 64-bit signed number. */
-		ComputeTime?: number;
+		ComputeTime?: number | null;
 
 		/** A timestamp represented in epoch time. */
-		FinishedAt?: Date;
+		FinishedAt?: Date | null;
 
 		/** A timestamp represented in epoch time. */
-		StartedAt?: Date;
+		StartedAt?: Date | null;
 	}
 
 	export interface GetEvaluationInput {
@@ -1365,92 +1365,92 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>GetMLModel</code> operation, and provides detailed information about a <code>MLModel</code>. */
 	export interface GetMLModelOutput {
-		MLModelId?: string;
-		TrainingDataSourceId?: string;
+		MLModelId?: string | null;
+		TrainingDataSourceId?: string | null;
 
 		/**
 		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
 		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
 		 */
-		CreatedByIamUser?: string;
+		CreatedByIamUser?: string | null;
 
 		/** A timestamp represented in epoch time. */
-		CreatedAt?: Date;
+		CreatedAt?: Date | null;
 
 		/** A timestamp represented in epoch time. */
-		LastUpdatedAt?: Date;
-		Name?: string;
+		LastUpdatedAt?: Date | null;
+		Name?: string | null;
 
 		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
-		Status?: BatchPredictionStatus;
+		Status?: BatchPredictionStatus | null;
 
 		/** Long integer type that is a 64-bit signed number. */
-		SizeInBytes?: number;
+		SizeInBytes?: number | null;
 
 		/** Describes the real-time endpoint information for an <code>MLModel</code>. */
-		EndpointInfo?: RealtimeEndpointInfo;
-		TrainingParameters?: TrainingParameters;
+		EndpointInfo?: RealtimeEndpointInfo | null;
+		TrainingParameters?: TrainingParameters | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
 		 * Pattern: s3://([^/]+)(/.*)?
 		 */
-		InputDataLocationS3?: string;
-		MLModelType?: CreateMLModelInputMLModelType;
-		ScoreThreshold?: number;
+		InputDataLocationS3?: string | null;
+		MLModelType?: CreateMLModelInputMLModelType | null;
+		ScoreThreshold?: number | null;
 
 		/** A timestamp represented in epoch time. */
-		ScoreThresholdLastUpdatedAt?: Date;
-		LogUri?: string;
+		ScoreThresholdLastUpdatedAt?: Date | null;
+		LogUri?: string | null;
 
 		/**
 		 * Description of the most recent details about an object.
 		 * Max length: 10240
 		 */
-		Message?: string;
+		Message?: string | null;
 
 		/** Long integer type that is a 64-bit signed number. */
-		ComputeTime?: number;
+		ComputeTime?: number | null;
 
 		/** A timestamp represented in epoch time. */
-		FinishedAt?: Date;
+		FinishedAt?: Date | null;
 
 		/** A timestamp represented in epoch time. */
-		StartedAt?: Date;
-		Recipe?: string;
+		StartedAt?: Date | null;
+		Recipe?: string | null;
 
 		/**
 		 * <p>The schema of a <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>. The DataSource schema is expressed in JSON format.</p> <p><code>DataSchema</code> is not required if you specify a <code>DataSchemaUri</code></p> <p>{ "version": "1.0", "recordAnnotationFieldName": "F1", "recordWeightFieldName": "F2", "targetFieldName": "F3", "dataFormat": "CSV", "dataFileContainsHeader": true, "variables": [ { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ], "excludedVariableNames": [ "F6" ] } </p>
 		 * Max length: 131071
 		 */
-		Schema?: string;
+		Schema?: string | null;
 	}
 
 	export interface GetMLModelInput {
 		MLModelId: string;
 
 		/** Specifies whether a describe operation should return exhaustive or abbreviated information. */
-		Verbose?: boolean;
+		Verbose?: boolean | null;
 	}
 
 	export interface PredictOutput {
 
 		/** <p>The output from a <code>Predict</code> operation: </p> <ul> <li> <p> <code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code> </p> </li> <li> <p> <code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request. </p> </li> <li> <p> <code>PredictedScores</code> - Contains the raw classification score corresponding to each label. </p> </li> <li> <p> <code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request. </p> </li> </ul> */
-		Prediction?: Prediction;
+		Prediction?: Prediction | null;
 	}
 
 
 	/** <p>The output from a <code>Predict</code> operation: </p> <ul> <li> <p> <code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code> </p> </li> <li> <p> <code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request. </p> </li> <li> <p> <code>PredictedScores</code> - Contains the raw classification score corresponding to each label. </p> </li> <li> <p> <code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request. </p> </li> </ul> */
 	export interface Prediction {
-		predictedLabel?: string;
-		predictedValue?: number;
+		predictedLabel?: string | null;
+		predictedValue?: number | null;
 
 		/** Provides the raw classification score corresponding to each label. */
-		predictedScores?: ScoreValuePerLabelMap;
+		predictedScores?: ScoreValuePerLabelMap | null;
 
 		/** Provides any additional details regarding the prediction. */
-		details?: DetailsMap;
+		details?: DetailsMap | null;
 	}
 
 
@@ -1482,20 +1482,20 @@ export namespace MyNS {
 
 	/** The subscriber exceeded the maximum number of operations. This exception can occur when listing objects such as <code>DataSource</code>. */
 	export interface LimitExceededException {
-		message?: string;
-		code?: number;
+		message?: string | null;
+		code?: number | null;
 	}
 
 
 	/** The exception is thrown when a predict request is made to an unmounted <code>MLModel</code>. */
 	export interface PredictorNotMountedException {
-		message?: string;
+		message?: string | null;
 	}
 
 
 	/** <p>Represents the output of an <code>UpdateBatchPrediction</code> operation.</p> <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p> */
 	export interface UpdateBatchPredictionOutput {
-		BatchPredictionId?: string;
+		BatchPredictionId?: string | null;
 	}
 
 	export interface UpdateBatchPredictionInput {
@@ -1513,7 +1513,7 @@ export namespace MyNS {
 
 	/** <p>Represents the output of an <code>UpdateDataSource</code> operation.</p> <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p> */
 	export interface UpdateDataSourceOutput {
-		DataSourceId?: string;
+		DataSourceId?: string | null;
 	}
 
 	export interface UpdateDataSourceInput {
@@ -1531,7 +1531,7 @@ export namespace MyNS {
 
 	/** <p>Represents the output of an <code>UpdateEvaluation</code> operation.</p> <p>You can see the updated content by using the <code>GetEvaluation</code> operation.</p> */
 	export interface UpdateEvaluationOutput {
-		EvaluationId?: string;
+		EvaluationId?: string | null;
 	}
 
 	export interface UpdateEvaluationInput {
@@ -1549,7 +1549,7 @@ export namespace MyNS {
 
 	/** <p>Represents the output of an <code>UpdateMLModel</code> operation.</p> <p>You can see the updated content by using the <code>GetMLModel</code> operation.</p> */
 	export interface UpdateMLModelOutput {
-		MLModelId?: string;
+		MLModelId?: string | null;
 	}
 
 	export interface UpdateMLModelInput {
@@ -1560,8 +1560,8 @@ export namespace MyNS {
 		 * Max length: 1024
 		 * Pattern: .*\S.*|^$
 		 */
-		MLModelName?: string;
-		ScoreThreshold?: number;
+		MLModelName?: string | null;
+		ScoreThreshold?: number | null;
 	}
 
 	export enum TaggableResourceType { BatchPrediction = 0, DataSource = 1, Evaluation = 2, MLModel = 3 }
@@ -1738,7 +1738,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeBatchPredictionsOutput} Success
 		 */
-		DescribeBatchPredictions(Limit: string, NextToken: string, requestBody: DescribeBatchPredictionsInput): Observable<DescribeBatchPredictionsOutput> {
+		DescribeBatchPredictions(Limit: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeBatchPredictionsInput): Observable<DescribeBatchPredictionsOutput> {
 			return this.http.post<DescribeBatchPredictionsOutput>(this.baseUri + '#X-Amz-Target=AmazonML_20141212.DescribeBatchPredictions?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1749,7 +1749,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeDataSourcesOutput} Success
 		 */
-		DescribeDataSources(Limit: string, NextToken: string, requestBody: DescribeDataSourcesInput): Observable<DescribeDataSourcesOutput> {
+		DescribeDataSources(Limit: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeDataSourcesInput): Observable<DescribeDataSourcesOutput> {
 			return this.http.post<DescribeDataSourcesOutput>(this.baseUri + '#X-Amz-Target=AmazonML_20141212.DescribeDataSources?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1760,7 +1760,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeEvaluationsOutput} Success
 		 */
-		DescribeEvaluations(Limit: string, NextToken: string, requestBody: DescribeEvaluationsInput): Observable<DescribeEvaluationsOutput> {
+		DescribeEvaluations(Limit: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeEvaluationsInput): Observable<DescribeEvaluationsOutput> {
 			return this.http.post<DescribeEvaluationsOutput>(this.baseUri + '#X-Amz-Target=AmazonML_20141212.DescribeEvaluations?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -1771,7 +1771,7 @@ export namespace MyNS {
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeMLModelsOutput} Success
 		 */
-		DescribeMLModels(Limit: string, NextToken: string, requestBody: DescribeMLModelsInput): Observable<DescribeMLModelsOutput> {
+		DescribeMLModels(Limit: string | null | undefined, NextToken: string | null | undefined, requestBody: DescribeMLModelsInput): Observable<DescribeMLModelsOutput> {
 			return this.http.post<DescribeMLModelsOutput>(this.baseUri + '#X-Amz-Target=AmazonML_20141212.DescribeMLModels?Limit=' + (Limit == null ? '' : encodeURIComponent(Limit)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
