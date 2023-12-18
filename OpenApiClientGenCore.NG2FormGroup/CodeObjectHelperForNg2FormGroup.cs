@@ -4,7 +4,8 @@ using System.CodeDom.Compiler;
 namespace Fonlow.TypeScriptCodeDom
 {
 	/// <summary>
-	/// Output TS codes through TextWriter, for Angular FormGroup. This is a copy from WebApiClientGenCore.NG2FormGroup
+	/// Output TS codes through TextWriter, for Angular FormGroup. This is almost a copy from WebApiClientGenCore.NG2FormGroup, except:
+	/// in CodeTypeDeclaration FindCodeTypeDeclaration(string typeName), found is not checking namespace, because there's only one namespace, and typeName does not contains namespace prefix.
 	/// </summary>
 	public class CodeObjectHelperForNg2FormGroup : CodeObjectHelper
 	{
