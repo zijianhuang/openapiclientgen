@@ -1,0 +1,4759 @@
+openapi: 3.0.1
+info:
+  title: Work
+  description: ""
+  termsOfService: https://go.microsoft.com/fwlink/?LinkId=329770
+  contact:
+    name: nugetvss
+    email: nugetvss@microsoft.com
+  license:
+    name: MICROSOFT SOFTWARE LICENSE TERMS
+    url: https://go.microsoft.com/fwlink/?LinkId=329770
+  version: 6.0-preview
+externalDocs:
+  description: Azure DevOps REST APIs
+  url: https://aka.ms/azure-devops-rest-apis
+servers:
+- url: https://dev.azure.com/
+security:
+- accessToken: []
+tags:
+- name: Backlogconfiguration
+- name: Backlogs
+- name: Boardcolumns
+- name: Boardparents
+- name: Boardrows
+- name: Boards
+- name: Boardusersettings
+- name: Capacities
+- name: Cardrulesettings
+- name: Cardsettings
+- name: Chartimages
+- name: Charts
+- name: Columns
+- name: Deliverytimeline
+- name: Iterations
+- name: Plans
+  description: Controller for the Scaled Agile plans REST API
+- name: Processconfiguration
+- name: Rows
+- name: Taskboard Columns
+- name: Taskboard Work Items
+- name: Teamdaysoff
+- name: Teamfieldvalues
+- name: Teamsettings
+- name: Workitemsorder
+paths:
+  /{organization}/{project}/_apis/work/boardcolumns:
+    get:
+      tags:
+      - Boardcolumns
+      description: Get available board columns in a project
+      operationId: Boardcolumns_List
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BoardSuggestedValue'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: boardcolumns
+      x-ms-vss-method: GetColumnSuggestedValues
+      x-ms-preview: true
+      x-ms-examples:
+        Get available board columns in a project:
+          $ref: ./httpExamples/boardcolumns/GET__work_boardColumns_ByProject.json
+  /{organization}/{project}/_apis/work/boardrows:
+    get:
+      tags:
+      - Boardrows
+      description: Get available board rows in a project
+      operationId: Boardrows_List
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BoardSuggestedValue'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: boardrows
+      x-ms-vss-method: GetRowSuggestedValues
+      x-ms-preview: true
+      x-ms-examples:
+        Get available board rows in a project:
+          $ref: ./httpExamples/boardrows/GET__work_boardRows_ByProject.json
+  /{organization}/{project}/_apis/work/plans:
+    get:
+      tags:
+      - Plans
+      description: Get the information for all the plans configured for the given
+        team
+      operationId: Plans_List
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Plan'
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: plans
+      x-ms-vss-method: GetPlans
+      x-ms-preview: true
+    post:
+      tags:
+      - Plans
+      description: Add a new plan for the team
+      operationId: Plans_Create
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Plan definition
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePlan'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plan'
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: plans
+      x-ms-vss-method: CreatePlan
+      x-ms-preview: true
+      x-codegen-request-body-name: body
+  /{organization}/{project}/_apis/work/plans/{id}:
+    get:
+      tags:
+      - Plans
+      description: Get the information for the specified plan
+      operationId: Plans_Get
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: Identifier of the plan
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plan'
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: plans
+      x-ms-vss-method: GetPlan
+      x-ms-preview: true
+    put:
+      tags:
+      - Plans
+      description: Update the information for the specified plan
+      operationId: Plans_Update
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: Identifier of the plan
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Plan definition to be updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePlan'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Plan'
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: plans
+      x-ms-vss-method: UpdatePlan
+      x-ms-preview: true
+      x-codegen-request-body-name: body
+    delete:
+      tags:
+      - Plans
+      description: Delete the specified plan
+      operationId: Plans_Delete
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: Identifier of the plan
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content: {}
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: plans
+      x-ms-vss-method: DeletePlan
+      x-ms-preview: true
+  /{organization}/{project}/_apis/work/plans/{id}/deliverytimeline:
+    get:
+      tags:
+      - Deliverytimeline
+      description: Get Delivery View Data
+      operationId: Deliverytimeline_Get
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: Identifier for delivery view
+        required: true
+        schema:
+          type: string
+      - name: revision
+        in: query
+        description: Revision of the plan for which you want data. If the current
+          plan is a different revision you will get an ViewRevisionMismatchException
+          exception. If you do not supply a revision you will get data for the latest
+          revision.
+        schema:
+          type: integer
+          format: int32
+      - name: startDate
+        in: query
+        description: The start date of timeline
+        schema:
+          type: string
+          format: date-time
+      - name: endDate
+        in: query
+        description: The end date of timeline
+        schema:
+          type: string
+          format: date-time
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeliveryViewData'
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: deliverytimeline
+      x-ms-vss-method: GetDeliveryTimelineData
+      x-ms-preview: true
+  /{organization}/{project}/_apis/work/processconfiguration:
+    get:
+      tags:
+      - Processconfiguration
+      description: Get process configuration
+      operationId: Processconfiguration_Get
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessConfiguration'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: processconfiguration
+      x-ms-vss-method: GetProcessConfiguration
+      x-ms-preview: true
+      x-ms-examples:
+        Get process configuration:
+          $ref: ./httpExamples/processconfiguration/GET__work_processconfiguration.json
+  /{organization}/{project}/{team}/_apis/work/backlogconfiguration:
+    get:
+      tags:
+      - Backlogconfiguration
+      description: Gets backlog configuration for a team
+      operationId: Backlogconfiguration_Get
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BacklogConfiguration'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: backlogconfiguration
+      x-ms-vss-method: GetBacklogConfigurations
+      x-ms-preview: true
+      x-ms-examples:
+        Get backlog configuration for a team:
+          $ref: ./httpExamples/backlogconfiguration/GET__work_backlogconfiguration.json
+  /{organization}/{project}/{team}/_apis/work/backlogs:
+    get:
+      tags:
+      - Backlogs
+      description: List all backlog levels
+      operationId: Backlogs_List
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BacklogLevelConfiguration'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: backlogs
+      x-ms-vss-method: GetBacklogs
+      x-ms-preview: true
+      x-ms-examples:
+        Get backlogs:
+          $ref: ./httpExamples/backlogs/GET__work_backlogs.json
+  /{organization}/{project}/{team}/_apis/work/backlogs/{backlogId}/workItems:
+    get:
+      tags:
+      - Backlogs
+      description: Get a list of work items within a backlog level
+      operationId: Backlogs_Get Backlog Level Work Items
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+      - name: backlogId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BacklogLevelWorkItems'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: backlogs
+      x-ms-vss-method: GetBacklogLevelWorkItems
+      x-ms-preview: true
+      x-ms-examples:
+        Get backlog workitems:
+          $ref: ./httpExamples/backlogs/GET__work_backlogs_backlogItems_byBacklogId.json
+  /{organization}/{project}/{team}/_apis/work/backlogs/{id}:
+    get:
+      tags:
+      - Backlogs
+      description: Get a backlog level
+      operationId: Backlogs_Get Backlog
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: The id of the backlog level
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BacklogLevelConfiguration'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: backlogs
+      x-ms-vss-method: GetBacklog
+      x-ms-preview: true
+      x-ms-examples:
+        Get backlog:
+          $ref: ./httpExamples/backlogs/GET__work_backlogs_byBacklogId.json
+  /{organization}/{project}/{team}/_apis/work/boards:
+    get:
+      tags:
+      - Boards
+      description: Get boards
+      operationId: Boards_List
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BoardReference'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: boards
+      x-ms-vss-method: GetBoards
+      x-ms-preview: true
+  /{organization}/{project}/{team}/_apis/work/boards/{board}/boardusersettings:
+    get:
+      tags:
+      - Boardusersettings
+      description: Get board user settings for a board id
+      operationId: Boardusersettings_Get
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: board
+        in: path
+        description: Board ID or Name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BoardUserSettings'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: boardusersettings
+      x-ms-vss-method: GetBoardUserSettings
+      x-ms-preview: true
+      x-ms-examples:
+        Get board user settings for a boardId:
+          $ref: ./httpExamples/boardusersettings/GET__work_boards_boardId_boardUserSettings.json
+    patch:
+      tags:
+      - Boardusersettings
+      description: |-
+        Update board user settings for the board id
+
+        We don't want stakeholders to update board settings (currently just autorefresh). The BacklogManagement feature check validates this.
+      operationId: Boardusersettings_Update
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: board
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: string
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BoardUserSettings'
+      security:
+      - oauth2:
+        - vso.work_write
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: boardusersettings
+      x-ms-vss-method: UpdateBoardUserSettings
+      x-ms-preview: true
+      x-ms-examples:
+        Update a board's user settings:
+          $ref: ./httpExamples/boardusersettings/PATCH__work_boards_boardId_boardUserSettings.json
+      x-codegen-request-body-name: body
+  /{organization}/{project}/{team}/_apis/work/boards/{board}/cardrulesettings:
+    get:
+      tags:
+      - Cardrulesettings
+      description: Get board card Rule settings for the board id or board by name
+      operationId: Cardrulesettings_Get
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: board
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.2'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BoardCardRuleSettings'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.2
+      x-ms-vss-resource: cardrulesettings
+      x-ms-vss-method: GetBoardCardRuleSettings
+      x-ms-preview: true
+    patch:
+      tags:
+      - Cardrulesettings
+      description: Update board card Rule settings for the board id or board by name
+      operationId: Cardrulesettings_Update Board Card Rule Settings
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: board
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.2'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BoardCardRuleSettings'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BoardCardRuleSettings'
+      security:
+      - oauth2:
+        - vso.work_write
+      x-ms-docs-override-version: 6.0-preview.2
+      x-ms-vss-resource: cardrulesettings
+      x-ms-vss-method: UpdateBoardCardRuleSettings
+      x-ms-preview: true
+      x-codegen-request-body-name: body
+  /{organization}/{project}/{team}/_apis/work/boards/{board}/cardsettings:
+    get:
+      tags:
+      - Cardsettings
+      description: Get board card settings for the board id or board by name
+      operationId: Cardsettings_Get
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: board
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.2'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BoardCardSettings'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.2
+      x-ms-vss-resource: cardsettings
+      x-ms-vss-method: GetBoardCardSettings
+      x-ms-preview: true
+    put:
+      tags:
+      - Cardsettings
+      description: Update board card settings for the board id or board by name
+      operationId: Cardsettings_Update Board Card Settings
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: board
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.2'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BoardCardSettings'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BoardCardSettings'
+      security:
+      - oauth2:
+        - vso.work_write
+      x-ms-docs-override-version: 6.0-preview.2
+      x-ms-vss-resource: cardsettings
+      x-ms-vss-method: UpdateBoardCardSettings
+      x-ms-preview: true
+      x-codegen-request-body-name: body
+  /{organization}/{project}/{team}/_apis/work/boards/{board}/chartimages/{name}:
+    get:
+      tags:
+      - Chartimages
+      description: Get a board chart image.
+      operationId: Chartimages_Get Board Chart Image
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+      - name: board
+        in: path
+        description: Identifier for board, either board's backlog level name (e.g.
+          "Issues") or Id.
+        required: true
+        schema:
+          type: string
+      - name: name
+        in: path
+        description: The chart name. e.g. CumulativeFlow.
+        required: true
+        schema:
+          type: string
+      - name: width
+        in: query
+        description: The width of the chart in pixels. Must be greater than 0.
+        schema:
+          type: integer
+          format: int32
+      - name: height
+        in: query
+        description: The height of the chart in pixels. Must be greater than 0.
+        schema:
+          type: integer
+          format: int32
+      - name: showDetails
+        in: query
+        description: Whether or not the chart should include detailed information
+          (e.g. axis labels, titles, trend lines, etc.).
+        schema:
+          type: boolean
+      - name: title
+        in: query
+        description: The title of the chart. Can only be dislayed if ShowLabels is
+          true.
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+                format: StreamContent
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: chartimages
+      x-ms-vss-method: GetBoardChartImage
+      x-ms-preview: true
+  /{organization}/{project}/{team}/_apis/work/boards/{board}/charts:
+    get:
+      tags:
+      - Charts
+      description: Get board charts
+      operationId: Charts_List
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: board
+        in: path
+        description: Identifier for board, either board's backlog level name (Eg:"Stories")
+          or Id
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BoardChartReference'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: charts
+      x-ms-vss-method: GetBoardCharts
+      x-ms-preview: true
+  /{organization}/{project}/{team}/_apis/work/boards/{board}/charts/{name}:
+    get:
+      tags:
+      - Charts
+      description: Get a board chart
+      operationId: Charts_Get
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: board
+        in: path
+        description: Identifier for board, either board's backlog level name (Eg:"Stories")
+          or Id
+        required: true
+        schema:
+          type: string
+      - name: name
+        in: path
+        description: The chart name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BoardChart'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: charts
+      x-ms-vss-method: GetBoardChart
+      x-ms-preview: true
+    patch:
+      tags:
+      - Charts
+      description: Update a board chart
+      operationId: Charts_Update
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: board
+        in: path
+        description: Identifier for board, either board's backlog level name (Eg:"Stories")
+          or Id
+        required: true
+        schema:
+          type: string
+      - name: name
+        in: path
+        description: The chart name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BoardChart'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BoardChart'
+      security:
+      - oauth2:
+        - vso.work_write
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: charts
+      x-ms-vss-method: UpdateBoardChart
+      x-ms-preview: true
+      x-codegen-request-body-name: body
+  /{organization}/{project}/{team}/_apis/work/boards/{board}/columns:
+    get:
+      tags:
+      - Columns
+      description: Get columns on a board
+      operationId: Columns_List
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: board
+        in: path
+        description: Name or ID of the specific board
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BoardColumn'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: columns
+      x-ms-vss-method: GetBoardColumns
+      x-ms-preview: true
+      x-ms-examples:
+        Get board columns by boardId:
+          $ref: ./httpExamples/columns/GET__work_boards__boardId__columns.json
+        Get board columns by boardName:
+          $ref: ./httpExamples/columns/GET__work_boards__boardName__columns.json
+    put:
+      tags:
+      - Columns
+      description: Update columns on a board
+      operationId: Columns_Update
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: board
+        in: path
+        description: Name or ID of the specific board
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: List of board columns to update
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/BoardColumn'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BoardColumn'
+      security:
+      - oauth2:
+        - vso.work_write
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: columns
+      x-ms-vss-method: UpdateBoardColumns
+      x-ms-preview: true
+      x-ms-examples:
+        Update columns on a board:
+          $ref: ./httpExamples/columns/PUT__work_boards__boardName__columns.json
+      x-codegen-request-body-name: body
+  /{organization}/{project}/{team}/_apis/work/boards/{board}/rows:
+    get:
+      tags:
+      - Rows
+      description: Get rows on a board
+      operationId: Rows_List
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: board
+        in: path
+        description: Name or ID of the specific board
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BoardRow'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: rows
+      x-ms-vss-method: GetBoardRows
+      x-ms-preview: true
+      x-ms-examples:
+        Get a kanban board's rows by boardId:
+          $ref: ./httpExamples/rows/GET__work_boards__boardId__rows.json
+        Get a kanban board's rows by boardName:
+          $ref: ./httpExamples/rows/GET__work_boards__boardName__rows.json
+    put:
+      tags:
+      - Rows
+      description: Update rows on a board
+      operationId: Rows_Update
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: board
+        in: path
+        description: Name or ID of the specific board
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: List of board rows to update
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/BoardRow'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BoardRow'
+      security:
+      - oauth2:
+        - vso.work_write
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: rows
+      x-ms-vss-method: UpdateBoardRows
+      x-ms-preview: true
+      x-ms-examples:
+        Update rows on a board:
+          $ref: ./httpExamples/rows/PUT__work_boards__boardName__rows.json
+      x-codegen-request-body-name: body
+  /{organization}/{project}/{team}/_apis/work/boards/{id}:
+    get:
+      tags:
+      - Boards
+      description: Get board
+      operationId: Boards_Get
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: identifier for board, either board's backlog level name (Eg:"Stories")
+          or Id
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Board'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: boards
+      x-ms-vss-method: GetBoard
+      x-ms-preview: true
+    put:
+      tags:
+      - Boards
+      description: Update board options
+      operationId: Boards_Set Board Options
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: identifier for board, either category plural name (Eg:"Stories")
+          or guid
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: options to updated
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: string
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+      security:
+      - oauth2:
+        - vso.work_write
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: boards
+      x-ms-vss-method: SetBoardOptions
+      x-ms-preview: true
+      x-codegen-request-body-name: body
+  /{organization}/{project}/{team}/_apis/work/boards/boardparents:
+    get:
+      tags:
+      - Boardparents
+      description: Returns the list of parent field filter model for the given list
+        of workitem ids
+      operationId: Boardparents_List
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: childBacklogContextCategoryRefName
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: workitemIds
+        in: query
+        required: true
+        schema:
+          type: string
+          format: array (int32)
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ParentChildWIMap'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: boardparents
+      x-ms-vss-method: GetBoardMappingParentItems
+      x-ms-preview: true
+  /{organization}/{project}/{team}/_apis/work/iterations/{iterationId}/chartimages/{name}:
+    get:
+      tags:
+      - Chartimages
+      description: Get an iteration chart image.
+      operationId: Chartimages_Get Iteration Chart Image
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+      - name: iterationId
+        in: path
+        description: ID of the iteration.
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: name
+        in: path
+        description: The chart name. e.g. Burndown.
+        required: true
+        schema:
+          type: string
+      - name: width
+        in: query
+        description: The width of the chart in pixels. Must be greater than 0.
+        schema:
+          type: integer
+          format: int32
+      - name: height
+        in: query
+        description: The height of the chart in pixels. Must be greater than 0.
+        schema:
+          type: integer
+          format: int32
+      - name: showDetails
+        in: query
+        description: Whether or not the chart should include detailed information
+          (e.g. axis labels, titles, trend lines, etc.)
+        schema:
+          type: boolean
+      - name: title
+        in: query
+        description: The title of the chart. Can only be dislayed if ShowLabels is
+          true.
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+                format: StreamContent
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: chartimages
+      x-ms-vss-method: GetIterationChartImage
+      x-ms-preview: true
+  /{organization}/{project}/{team}/_apis/work/iterations/{iterationId}/workitemsorder:
+    patch:
+      tags:
+      - Workitemsorder
+      description: Reorder Sprint Backlog/Taskboard Work Items
+      operationId: Workitemsorder_Reorder Iteration Work Items
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+      - name: iterationId
+        in: path
+        description: The id of the iteration
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReorderOperation'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReorderResult'
+      security:
+      - oauth2:
+        - vso.work_write
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: workitemsorder
+      x-ms-vss-method: ReorderIterationWorkItems
+      x-ms-preview: true
+      x-ms-examples:
+        Reorder Iteration Work Items:
+          $ref: ./httpExamples/workitemsorder/PATCH__work_iterations_iterationId_workitemsorder.json
+      x-codegen-request-body-name: body
+  /{organization}/{project}/{team}/_apis/work/iterations/chartimages/{name}:
+    get:
+      tags:
+      - Chartimages
+      description: Get an iterations chart image.
+      operationId: Chartimages_Get Iterations Chart Image
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+      - name: name
+        in: path
+        description: The chart name. e.g. Velocity.
+        required: true
+        schema:
+          type: string
+      - name: iterationsNumber
+        in: query
+        description: Number of iterations the chart is for.
+        schema:
+          type: integer
+          format: int32
+      - name: width
+        in: query
+        description: The width of the chart in pixels. Must be greater than 0.
+        schema:
+          type: integer
+          format: int32
+      - name: height
+        in: query
+        description: The height of the chart in pixels. Must be greater than 0.
+        schema:
+          type: integer
+          format: int32
+      - name: showDetails
+        in: query
+        description: Whether or not the chart should include detailed information
+          (e.g. axis labels, titles, trend lines, etc.)
+        schema:
+          type: boolean
+      - name: title
+        in: query
+        description: The title of the chart. Can only be dislayed if ShowLabels is
+          true.
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+                format: StreamContent
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: chartimages
+      x-ms-vss-method: GetIterationsChartImage
+      x-ms-preview: true
+  /{organization}/{project}/{team}/_apis/work/taskboard/cardrulesettings:
+    patch:
+      tags:
+      - Cardrulesettings
+      description: Update taskboard card Rule settings
+      operationId: Cardrulesettings_Update Taskboard Card Rule Settings
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.2'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BoardCardRuleSettings'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content: {}
+      x-ms-docs-override-version: 6.0-preview.2
+      x-ms-vss-resource: cardrulesettings
+      x-ms-vss-method: UpdateTaskboardCardRuleSettings
+      x-ms-preview: true
+      x-codegen-request-body-name: body
+  /{organization}/{project}/{team}/_apis/work/taskboard/cardsettings:
+    put:
+      tags:
+      - Cardsettings
+      description: Update taskboard card settings
+      operationId: Cardsettings_Update Taskboard Card Settings
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.2'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BoardCardSettings'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content: {}
+      x-ms-docs-override-version: 6.0-preview.2
+      x-ms-vss-resource: cardsettings
+      x-ms-vss-method: UpdateTaskboardCardSettings
+      x-ms-preview: true
+      x-codegen-request-body-name: body
+  /{organization}/{project}/{team}/_apis/work/taskboardcolumns:
+    get:
+      tags:
+      - Taskboard Columns
+      operationId: Taskboard Columns_Get
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskboardColumns'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: taskboardColumns
+      x-ms-vss-method: GetColumns
+      x-ms-preview: true
+    put:
+      tags:
+      - Taskboard Columns
+      operationId: Taskboard Columns_Update
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/UpdateTaskboardColumn'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskboardColumns'
+      security:
+      - oauth2:
+        - vso.work_write
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: taskboardColumns
+      x-ms-vss-method: UpdateColumns
+      x-ms-preview: true
+      x-codegen-request-body-name: body
+  /{organization}/{project}/{team}/_apis/work/taskboardworkitems/{iterationId}:
+    get:
+      tags:
+      - Taskboard Work Items
+      operationId: Taskboard Work Items_List
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+      - name: iterationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskboardWorkItemColumn'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: taskboardWorkItems
+      x-ms-vss-method: GetWorkItemColumns
+      x-ms-preview: true
+  /{organization}/{project}/{team}/_apis/work/taskboardworkitems/{iterationId}/{workItemId}:
+    patch:
+      tags:
+      - Taskboard Work Items
+      operationId: Taskboard Work Items_Update
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+      - name: iterationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: workItemId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTaskboardWorkItemColumn'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content: {}
+      security:
+      - oauth2:
+        - vso.work_write
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: taskboardWorkItems
+      x-ms-vss-method: UpdateWorkItemColumn
+      x-ms-preview: true
+      x-codegen-request-body-name: body
+  /{organization}/{project}/{team}/_apis/work/teamsettings:
+    get:
+      tags:
+      - Teamsettings
+      description: Get a team's settings
+      operationId: Teamsettings_Get
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamSetting'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: teamsettings
+      x-ms-vss-method: GetTeamSettings
+      x-ms-preview: true
+      x-ms-examples:
+        Get team settings for a team:
+          $ref: ./httpExamples/teamsettings/GET__work_teamsettings.json
+    patch:
+      tags:
+      - Teamsettings
+      description: Update a team's settings
+      operationId: Teamsettings_Update
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: TeamSettings changes
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TeamSettingsPatch'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamSetting'
+      security:
+      - oauth2:
+        - vso.work_write
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: teamsettings
+      x-ms-vss-method: UpdateTeamSettings
+      x-ms-preview: true
+      x-ms-examples:
+        Update team settings. Example 1:
+          $ref: ./httpExamples/teamsettings/PATCH__work_teamsettings.json
+        Update team settings. Example 2:
+          $ref: ./httpExamples/teamsettings/PATCH__work_teamsettings2.json
+      x-codegen-request-body-name: body
+  /{organization}/{project}/{team}/_apis/work/teamsettings/iterations:
+    get:
+      tags:
+      - Iterations
+      description: Get a team's iterations using timeframe filter
+      operationId: Iterations_List
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: $timeframe
+        in: query
+        description: A filter for which iterations are returned based on relative
+          time. Only Current is supported currently.
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TeamSettingsIteration'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: iterations
+      x-ms-vss-method: GetTeamIterations
+      x-ms-preview: true
+      x-ms-examples:
+        Get a team's iterations using timeframe filter:
+          $ref: ./httpExamples/iterations/GET__work_teamsettings_iterations__timeframe-_timeframe_.json
+    post:
+      tags:
+      - Iterations
+      description: Add an iteration to the team
+      operationId: Iterations_Post Team Iteration
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Iteration to add
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TeamSettingsIteration'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamSettingsIteration'
+      security:
+      - oauth2:
+        - vso.work_write
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: iterations
+      x-ms-vss-method: PostTeamIteration
+      x-ms-preview: true
+      x-ms-examples:
+        Add an iteration to the team:
+          $ref: ./httpExamples/iterations/POST__work_teamsettings_iterations.json
+      x-codegen-request-body-name: body
+  /{organization}/{project}/{team}/_apis/work/teamsettings/iterations/{id}:
+    get:
+      tags:
+      - Iterations
+      description: Get team's iteration by iterationId
+      operationId: Iterations_Get
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: ID of the iteration
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamSettingsIteration'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: iterations
+      x-ms-vss-method: GetTeamIteration
+      x-ms-preview: true
+      x-ms-examples:
+        Get a team's iteration by iterationId:
+          $ref: ./httpExamples/iterations/GET__work_teamsettings_iterations__iterationId_.json
+    delete:
+      tags:
+      - Iterations
+      description: Delete a team's iteration by iterationId
+      operationId: Iterations_Delete
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: ID of the iteration
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content: {}
+      security:
+      - oauth2:
+        - vso.work_write
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: iterations
+      x-ms-vss-method: DeleteTeamIteration
+      x-ms-preview: true
+      x-ms-examples:
+        Delete a team's iteration by iterationId:
+          $ref: ./httpExamples/iterations/DELETE__work_teamsettings_iterations__iterationId_.json
+  /{organization}/{project}/{team}/_apis/work/teamsettings/iterations/{iterationId}/capacities:
+    get:
+      tags:
+      - Capacities
+      description: Get a team's capacity
+      operationId: Capacities_List
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: iterationId
+        in: path
+        description: ID of the iteration
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.2'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TeamMemberCapacityIdentityRef'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.2
+      x-ms-vss-resource: capacities
+      x-ms-vss-method: GetCapacitiesWithIdentityRef
+      x-ms-preview: true
+      x-ms-examples:
+        Get a team's capacity:
+          $ref: ./httpExamples/capacities/GET__work_teamsettings_iterations__iterationId__capacities.json
+    put:
+      tags:
+      - Capacities
+      description: Replace a team's capacity
+      operationId: Capacities_Replace Capacities With Identity Ref
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: iterationId
+        in: path
+        description: ID of the iteration
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.2'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Team capacity to replace
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/TeamMemberCapacityIdentityRef'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TeamMemberCapacityIdentityRef'
+      security:
+      - oauth2:
+        - vso.work_write
+      x-ms-docs-override-version: 6.0-preview.2
+      x-ms-vss-resource: capacities
+      x-ms-vss-method: ReplaceCapacitiesWithIdentityRef
+      x-ms-preview: true
+      x-ms-examples:
+        Replace a team's capacity:
+          $ref: ./httpExamples/capacities/PUT__work_teamsettings_iterations_iterationId_capacities.json
+      x-codegen-request-body-name: body
+  /{organization}/{project}/{team}/_apis/work/teamsettings/iterations/{iterationId}/capacities/{teamMemberId}:
+    get:
+      tags:
+      - Capacities
+      description: Get a team member's capacity
+      operationId: Capacities_Get
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: iterationId
+        in: path
+        description: ID of the iteration
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: teamMemberId
+        in: path
+        description: ID of the team member
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.2'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamMemberCapacityIdentityRef'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.2
+      x-ms-vss-resource: capacities
+      x-ms-vss-method: GetCapacityWithIdentityRef
+      x-ms-preview: true
+      x-ms-examples:
+        Get a team member's capacity:
+          $ref: ./httpExamples/capacities/GET__work_teamsettings_iterations__iterationId__capacities__teammemberId_.json
+    patch:
+      tags:
+      - Capacities
+      description: Update a team member's capacity
+      operationId: Capacities_Update
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: iterationId
+        in: path
+        description: ID of the iteration
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: teamMemberId
+        in: path
+        description: ID of the team member
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.2'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Updated capacity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CapacityPatch'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamMemberCapacityIdentityRef'
+      security:
+      - oauth2:
+        - vso.work_write
+      x-ms-docs-override-version: 6.0-preview.2
+      x-ms-vss-resource: capacities
+      x-ms-vss-method: UpdateCapacityWithIdentityRef
+      x-ms-preview: true
+      x-ms-examples:
+        Update a team member's capacity:
+          $ref: ./httpExamples/capacities/PATCH__work_teamsettings_iterations__iterationId__capacities__teammemberId_.json
+      x-codegen-request-body-name: body
+  /{organization}/{project}/{team}/_apis/work/teamsettings/iterations/{iterationId}/teamdaysoff:
+    get:
+      tags:
+      - Teamdaysoff
+      description: Get team's days off for an iteration
+      operationId: Teamdaysoff_Get
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: iterationId
+        in: path
+        description: ID of the iteration
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamSettingsDaysOff'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: teamdaysoff
+      x-ms-vss-method: GetTeamDaysOff
+      x-ms-preview: true
+      x-ms-examples:
+        Get team's days off for an iteration:
+          $ref: ./httpExamples/teamdaysoff/GET__work_teamsettings_iterations__iterationId__teamdaysoff.json
+    patch:
+      tags:
+      - Teamdaysoff
+      description: Set a team's days off for an iteration
+      operationId: Teamdaysoff_Update
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: iterationId
+        in: path
+        description: ID of the iteration
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Team's days off patch containing a list of start and end dates
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TeamSettingsDaysOffPatch'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamSettingsDaysOff'
+      security:
+      - oauth2:
+        - vso.work_write
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: teamdaysoff
+      x-ms-vss-method: UpdateTeamDaysOff
+      x-ms-preview: true
+      x-ms-examples:
+        Set a team's days off for an iteration. Example 1:
+          $ref: ./httpExamples/teamdaysoff/PATCH__work_teamsettings_iterations__iterationId__teamdaysoff.json
+        Set a team's days off for an iteration. Example 2:
+          $ref: ./httpExamples/teamdaysoff/PATCH__work_teamsettings_iterations__iterationId__teamdaysoff2.json
+      x-codegen-request-body-name: body
+  /{organization}/{project}/{team}/_apis/work/teamsettings/iterations/{iterationId}/workitems:
+    get:
+      tags:
+      - Iterations
+      description: Get work items for iteration
+      operationId: Iterations_Get Iteration Work Items
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: iterationId
+        in: path
+        description: ID of the iteration
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IterationWorkItems'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: workitems
+      x-ms-vss-method: GetIterationWorkItems
+      x-ms-preview: true
+      x-ms-examples:
+        Get workitems:
+          $ref: ./httpExamples/workitems/GET__work_teamsettings_iterations__iterationId__workitems.json
+  /{organization}/{project}/{team}/_apis/work/teamsettings/teamfieldvalues:
+    get:
+      tags:
+      - Teamfieldvalues
+      description: Get a collection of team field values
+      operationId: Teamfieldvalues_Get
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamFieldValues'
+      security:
+      - oauth2:
+        - vso.work
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: teamfieldvalues
+      x-ms-vss-method: GetTeamFieldValues
+      x-ms-preview: true
+      x-ms-examples:
+        Get team field values:
+          $ref: ./httpExamples/teamfieldvalues/GET__work_teamsettings_teamfieldvalues.json
+    patch:
+      tags:
+      - Teamfieldvalues
+      description: Update team field values
+      operationId: Teamfieldvalues_Update
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+          x-ms-required: false
+        x-ms-required: false
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TeamFieldValuesPatch'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamFieldValues'
+      security:
+      - oauth2:
+        - vso.work_write
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: teamfieldvalues
+      x-ms-vss-method: UpdateTeamFieldValues
+      x-ms-preview: true
+      x-ms-examples:
+        Update team field values. Example 1:
+          $ref: ./httpExamples/teamfieldvalues/PATCH__work_teamsettings_teamfieldvalues.json
+        Update team field values. Example 2:
+          $ref: ./httpExamples/teamfieldvalues/PATCH__work_teamsettings_teamfieldvalues2.json
+      x-codegen-request-body-name: body
+  /{organization}/{project}/{team}/_apis/work/workitemsorder:
+    patch:
+      tags:
+      - Workitemsorder
+      description: Reorder Product Backlog/Boards Work Items
+      operationId: Workitemsorder_Reorder Backlog Work Items
+      parameters:
+      - name: organization
+        in: path
+        description: The name of the Azure DevOps organization.
+        required: true
+        schema:
+          type: string
+      - name: project
+        in: path
+        description: Project ID or project name
+        required: true
+        schema:
+          type: string
+      - name: team
+        in: path
+        description: Team ID or team name
+        required: true
+        schema:
+          type: string
+      - name: api-version
+        in: query
+        description: Version of the API to use.  This should be set to '6.0-preview.1'
+          to use this version of the api.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReorderOperation'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReorderResult'
+      security:
+      - oauth2:
+        - vso.work_write
+      x-ms-docs-override-version: 6.0-preview.1
+      x-ms-vss-resource: workitemsorder
+      x-ms-vss-method: ReorderBacklogWorkItems
+      x-ms-preview: true
+      x-ms-examples:
+        Reorder Backlog Work Items:
+          $ref: ./httpExamples/workitemsorder/PATCH__work_workitemsorder.json
+      x-codegen-request-body-name: body
+components:
+  schemas:
+    Activity:
+      type: object
+      properties:
+        capacityPerDay:
+          type: number
+          format: float
+        name:
+          type: string
+      description: ""
+    attribute:
+      description: ""
+      allOf:
+      - type: object
+        additionalProperties:
+          type: string
+    BacklogColumn:
+      type: object
+      properties:
+        columnFieldReference:
+          $ref: '#/components/schemas/WorkItemFieldReference'
+        width:
+          type: integer
+          format: int32
+      description: ""
+    BacklogConfiguration:
+      type: object
+      properties:
+        backlogFields:
+          $ref: '#/components/schemas/BacklogFields'
+        bugsBehavior:
+          type: string
+          description: Bugs behavior
+          enum:
+          - off
+          - asRequirements
+          - asTasks
+          x-ms-enum:
+            name: BugsBehavior
+            values:
+            - value: off
+              description: ""
+            - value: asRequirements
+              description: ""
+            - value: asTasks
+              description: ""
+        hiddenBacklogs:
+          type: array
+          description: Hidden Backlog
+          items:
+            type: string
+        isBugsBehaviorConfigured:
+          type: boolean
+          description: Is BugsBehavior Configured in the process
+        portfolioBacklogs:
+          type: array
+          description: Portfolio backlog descriptors
+          items:
+            $ref: '#/components/schemas/BacklogLevelConfiguration'
+        requirementBacklog:
+          $ref: '#/components/schemas/BacklogLevelConfiguration'
+        taskBacklog:
+          $ref: '#/components/schemas/BacklogLevelConfiguration'
+        url:
+          type: string
+        workItemTypeMappedStates:
+          type: array
+          description: Mapped states for work item types
+          items:
+            $ref: '#/components/schemas/WorkItemTypeStateInfo'
+      description: ""
+    BacklogFields:
+      type: object
+      properties:
+        typeFields:
+          type: object
+          additionalProperties:
+            type: string
+          description: Field Type (e.g. Order, Activity) to Field Reference Name map
+      description: ""
+    BacklogLevel:
+      type: object
+      properties:
+        categoryReferenceName:
+          type: string
+          description: Reference name of the corresponding WIT category
+        pluralName:
+          type: string
+          description: Plural name for the backlog level
+        workItemStates:
+          type: array
+          description: Collection of work item states that are included in the plan.
+            The server will filter to only these work item types.
+          items:
+            type: string
+        workItemTypes:
+          type: array
+          description: Collection of valid workitem type names for the given backlog
+            level
+          items:
+            type: string
+      description: Contract representing a backlog level
+    BacklogLevelConfiguration:
+      type: object
+      properties:
+        addPanelFields:
+          type: array
+          description: List of fields to include in Add Panel
+          items:
+            $ref: '#/components/schemas/WorkItemFieldReference'
+        color:
+          type: string
+          description: Color for the backlog level
+        columnFields:
+          type: array
+          description: Default list of columns for the backlog
+          items:
+            $ref: '#/components/schemas/BacklogColumn'
+        defaultWorkItemType:
+          $ref: '#/components/schemas/WorkItemTypeReference'
+        id:
+          type: string
+          description: Backlog Id (for Legacy Backlog Level from process config it
+            can be categoryref name)
+        isHidden:
+          type: boolean
+          description: Indicates whether the backlog level is hidden
+        name:
+          type: string
+          description: Backlog Name
+        rank:
+          type: integer
+          description: Backlog Rank (Taskbacklog is 0)
+          format: int32
+        type:
+          type: string
+          description: The type of this backlog level
+          enum:
+          - portfolio
+          - requirement
+          - task
+          x-ms-enum:
+            name: BacklogType
+            values:
+            - value: portfolio
+              description: Portfolio backlog level
+            - value: requirement
+              description: Requirement backlog level
+            - value: task
+              description: Task backlog level
+        workItemCountLimit:
+          type: integer
+          description: Max number of work items to show in the given backlog
+          format: int32
+        workItemTypes:
+          type: array
+          description: Work Item types participating in this backlog as known by the
+            project/Process, can be overridden by team settings for bugs
+          items:
+            $ref: '#/components/schemas/WorkItemTypeReference'
+      description: ""
+    BacklogLevelWorkItems:
+      type: object
+      properties:
+        workItems:
+          type: array
+          description: A list of work items within a backlog level
+          items:
+            $ref: '#/components/schemas/WorkItemLink'
+      description: Represents work items in a backlog level
+    Board:
+      description: ""
+      allOf:
+      - $ref: '#/components/schemas/BoardReference'
+    BoardBadge:
+      type: object
+      properties:
+        boardId:
+          type: string
+          description: The ID of the board represented by this badge.
+          format: uuid
+        imageUrl:
+          type: string
+          description: A link to the SVG resource.
+      description: Represents a board badge.
+    BoardCardRuleSettings:
+      type: object
+      properties:
+        _links:
+          $ref: '#/components/schemas/ReferenceLinks'
+        rules:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              $ref: '#/components/schemas/Rule'
+        url:
+          type: string
+      description: ""
+    BoardCardSettings:
+      type: object
+      properties:
+        cards:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              $ref: '#/components/schemas/FieldSetting'
+      description: ""
+    BoardChart:
+      description: ""
+      allOf:
+      - $ref: '#/components/schemas/BoardChartReference'
+    BoardChartReference:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the resource
+        url:
+          type: string
+          description: Full http link to the resource
+      description: ""
+    BoardColumn:
+      type: object
+      properties:
+        columnType:
+          type: string
+          enum:
+          - incoming
+          - inProgress
+          - outgoing
+          x-ms-enum:
+            name: BoardColumnType
+            values:
+            - value: incoming
+              description: ""
+            - value: inProgress
+              description: ""
+            - value: outgoing
+              description: ""
+        description:
+          type: string
+        id:
+          type: string
+          format: uuid
+        isSplit:
+          type: boolean
+        itemLimit:
+          type: integer
+          format: int32
+        name:
+          type: string
+        stateMappings:
+          type: object
+          additionalProperties:
+            type: string
+      description: ""
+    BoardFields:
+      type: object
+      properties:
+        columnField:
+          $ref: '#/components/schemas/FieldReference'
+        doneField:
+          $ref: '#/components/schemas/FieldReference'
+        rowField:
+          $ref: '#/components/schemas/FieldReference'
+      description: ""
+    BoardReference:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Id of the resource
+          format: uuid
+        name:
+          type: string
+          description: Name of the resource
+        url:
+          type: string
+          description: Full http link to the resource
+      description: ""
+    BoardRow:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+      description: ""
+    BoardSuggestedValue:
+      type: object
+      properties:
+        name:
+          type: string
+      description: ""
+    BoardUserSettings:
+      type: object
+      properties:
+        autoRefreshState:
+          type: boolean
+      description: ""
+    CapacityContractBase:
+      description: ""
+      allOf:
+      - $ref: '#/components/schemas/TeamSettingsDataContractBase'
+    CapacityPatch:
+      type: object
+      properties:
+        activities:
+          type: array
+          items:
+            $ref: '#/components/schemas/Activity'
+        daysOff:
+          type: array
+          items:
+            $ref: '#/components/schemas/DateRange'
+      description: Expected data from PATCH
+    CardFieldSettings:
+      type: object
+      properties:
+        additionalFields:
+          type: array
+          description: 'A collection of field information of additional fields on
+            cards. The index in the collection signifies the order of the field among
+            the additional fields. Currently unused. Should be used with User Story
+            691539: Card setting: additional fields'
+          items:
+            $ref: '#/components/schemas/FieldInfo'
+        assignedToDisplayFormat:
+          type: string
+          description: Display format for the assigned to field
+          enum:
+          - avatarOnly
+          - fullName
+          - avatarAndFullName
+          x-ms-enum:
+            name: IdentityDisplayFormat
+            values:
+            - value: avatarOnly
+              description: Display avatar only
+            - value: fullName
+              description: Display Full name only
+            - value: avatarAndFullName
+              description: Display Avatar and Full name
+        coreFields:
+          type: array
+          description: A collection of field information of rendered core fields on
+            cards.
+          items:
+            $ref: '#/components/schemas/FieldInfo'
+        showAssignedTo:
+          type: boolean
+          description: Flag indicating whether to show assigned to field on cards.
+            When true, AssignedToDisplayFormat will determine how the field will be
+            displayed
+        showEmptyFields:
+          type: boolean
+          description: Flag indicating whether to show empty fields on cards
+        showId:
+          type: boolean
+          description: Flag indicating whether to show ID on cards
+        showState:
+          type: boolean
+          description: Flag indicating whether to show state field on cards
+        showTags:
+          type: boolean
+          description: Flag indicating whether to show tags on cards
+      description: Card settings, such as fields and rules
+    CardSettings:
+      type: object
+      properties:
+        fields:
+          $ref: '#/components/schemas/CardFieldSettings'
+      description: Card settings, such as fields and rules
+    CategoryConfiguration:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name
+        referenceName:
+          type: string
+          description: Category Reference Name
+        workItemTypes:
+          type: array
+          description: Work item types for the backlog category
+          items:
+            $ref: '#/components/schemas/WorkItemTypeReference'
+      description: Details about a given backlog category
+    CreatePlan:
+      type: object
+      properties:
+        description:
+          type: string
+          description: Description of the plan
+        name:
+          type: string
+          description: Name of the plan to create.
+        properties:
+          type: object
+          properties: {}
+          description: Plan properties.
+        type:
+          type: string
+          description: Type of plan to create.
+          enum:
+          - deliveryTimelineView
+          x-ms-enum:
+            name: PlanType
+            values:
+            - value: deliveryTimelineView
+              description: ""
+      description: ""
+    DateRange:
+      type: object
+      properties:
+        end:
+          type: string
+          description: End of the date range.
+          format: date-time
+        start:
+          type: string
+          description: Start of the date range.
+          format: date-time
+      description: ""
+    DeliveryViewData:
+      description: Data contract for Data of Delivery View
+      allOf:
+      - $ref: '#/components/schemas/PlanViewData'
+    DeliveryViewPropertyCollection:
+      type: object
+      properties:
+        cardSettings:
+          $ref: '#/components/schemas/CardSettings'
+        criteria:
+          type: array
+          description: Field criteria
+          items:
+            $ref: '#/components/schemas/FilterClause'
+        markers:
+          type: array
+          description: Markers. Will be missing/null if there are no markers.
+          items:
+            $ref: '#/components/schemas/Marker'
+        teamBacklogMappings:
+          type: array
+          description: Team backlog mappings
+          items:
+            $ref: '#/components/schemas/TeamBacklogMapping'
+      description: Collection of properties, specific to the DeliveryTimelineView
+    FieldInfo:
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: The additional field display name
+        fieldType:
+          type: string
+          description: The additional field type
+          enum:
+          - string
+          - plainText
+          - integer
+          - dateTime
+          - treePath
+          - boolean
+          - double
+          x-ms-enum:
+            name: FieldType
+            values:
+            - value: string
+              description: ""
+            - value: plainText
+              description: ""
+            - value: integer
+              description: ""
+            - value: dateTime
+              description: ""
+            - value: treePath
+              description: ""
+            - value: boolean
+              description: ""
+            - value: double
+              description: ""
+        isIdentity:
+          type: boolean
+          description: Indicates if the field definition is for an identity field.
+        referenceName:
+          type: string
+          description: The additional field reference name
+      description: Object bag storing the set of permissions relevant to this plan
+    FieldReference:
+      type: object
+      properties:
+        referenceName:
+          type: string
+          description: fieldRefName for the field
+        url:
+          type: string
+          description: Full http link to more information about the field
+      description: An abstracted reference to a field
+    FieldSetting:
+      description: ""
+      allOf:
+      - type: object
+        additionalProperties:
+          type: string
+    FilterClause:
+      type: object
+      properties:
+        fieldName:
+          type: string
+        index:
+          type: integer
+          format: int32
+        logicalOperator:
+          type: string
+        operator:
+          type: string
+        value:
+          type: string
+      description: ""
+    FilterGroup:
+      type: object
+      properties:
+        end:
+          type: integer
+          format: int32
+        level:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+      description: ""
+    GraphSubjectBase:
+      type: object
+      properties:
+        _links:
+          $ref: '#/components/schemas/ReferenceLinks'
+        descriptor:
+          type: string
+          description: The descriptor is the primary way to reference the graph subject
+            while the system is running. This field will uniquely identify the same
+            graph subject across both Accounts and Organizations.
+        displayName:
+          type: string
+          description: This is the non-unique display name of the graph subject. To
+            change this field, you must alter its value in the source provider.
+        url:
+          type: string
+          description: This url is the full route to the source resource of this graph
+            subject.
+      description: ""
+    IdentityRef:
+      description: ""
+      allOf:
+      - $ref: '#/components/schemas/GraphSubjectBase'
+    ITaskboardColumnMapping:
+      type: object
+      properties:
+        state:
+          type: string
+        workItemType:
+          type: string
+      description: ""
+    IterationWorkItems:
+      description: Represents work items in an iteration backlog
+      allOf:
+      - $ref: '#/components/schemas/TeamSettingsDataContractBase'
+    Link:
+      type: object
+      properties:
+        attributes:
+          type: object
+          additionalProperties:
+            type: object
+            properties: {}
+          description: Collection of link attributes.
+        rel:
+          type: string
+          description: Relation type.
+        url:
+          type: string
+          description: Link url.
+      description: Link description.
+    Marker:
+      type: object
+      properties:
+        color:
+          type: string
+          description: Color associated with the marker.
+        date:
+          type: string
+          description: Where the marker should be displayed on the timeline.
+          format: date-time
+        label:
+          type: string
+          description: Label/title for the marker.
+      description: Client serialization contract for Delivery Timeline Markers.
+    Member:
+      type: object
+      properties:
+        displayName:
+          type: string
+        id:
+          type: string
+          format: uuid
+        imageUrl:
+          type: string
+        uniqueName:
+          type: string
+        url:
+          type: string
+      description: ""
+    ParentChildWIMap:
+      type: object
+      properties:
+        childWorkItemIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+        id:
+          type: integer
+          format: int32
+        title:
+          type: string
+      description: ""
+    Plan:
+      type: object
+      properties:
+        createdByIdentity:
+          $ref: '#/components/schemas/IdentityRef'
+        createdDate:
+          type: string
+          description: Date when the plan was created
+          format: date-time
+        description:
+          type: string
+          description: Description of the plan
+        id:
+          type: string
+          description: Id of the plan
+          format: uuid
+        modifiedByIdentity:
+          $ref: '#/components/schemas/IdentityRef'
+        modifiedDate:
+          type: string
+          description: Date when the plan was last modified. Default to CreatedDate
+            when the plan is first created.
+          format: date-time
+        name:
+          type: string
+          description: Name of the plan
+        properties:
+          type: object
+          properties: {}
+          description: The PlanPropertyCollection instance associated with the plan.
+            These are dependent on the type of the plan. For example, DeliveryTimelineView,
+            it would be of type DeliveryViewPropertyCollection.
+        revision:
+          type: integer
+          description: Revision of the plan. Used to safeguard users from overwriting
+            each other's changes.
+          format: int32
+        type:
+          type: string
+          description: Type of the plan
+          enum:
+          - deliveryTimelineView
+          x-ms-enum:
+            name: PlanType
+            values:
+            - value: deliveryTimelineView
+              description: ""
+        url:
+          type: string
+          description: The resource url to locate the plan via rest api
+        userPermissions:
+          type: string
+          description: Bit flag indicating set of permissions a user has to the plan.
+          enum:
+          - none
+          - view
+          - edit
+          - delete
+          - manage
+          - allPermissions
+          x-ms-enum:
+            name: PlanUserPermissions
+            values:
+            - value: none
+              description: None
+            - value: view
+              description: Permission to view this plan.
+            - value: edit
+              description: Permission to update this plan.
+            - value: delete
+              description: Permission to delete this plan.
+            - value: manage
+              description: Permission to manage this plan.
+            - value: allPermissions
+              description: Full control permission for this plan.
+      description: Data contract for the plan definition
+    PlanMetadata:
+      type: object
+      properties:
+        createdByIdentity:
+          $ref: '#/components/schemas/IdentityRef'
+        description:
+          type: string
+          description: Description of plan
+        modifiedDate:
+          type: string
+          description: Last modified date of the plan
+          format: date-time
+        userPermissions:
+          type: string
+          description: Bit flag indicating set of permissions a user has to the plan.
+          enum:
+          - none
+          - view
+          - edit
+          - delete
+          - manage
+          - allPermissions
+          x-ms-enum:
+            name: PlanUserPermissions
+            values:
+            - value: none
+              description: None
+            - value: view
+              description: Permission to view this plan.
+            - value: edit
+              description: Permission to update this plan.
+            - value: delete
+              description: Permission to delete this plan.
+            - value: manage
+              description: Permission to manage this plan.
+            - value: allPermissions
+              description: Full control permission for this plan.
+      description: Metadata about a plan definition that is stored in favorites service
+    PlanViewData:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        revision:
+          type: integer
+          format: int32
+      description: Base class for plan view data contracts. Anything common goes here.
+    PredefinedQuery:
+      type: object
+      properties:
+        hasMore:
+          type: boolean
+          description: Whether or not the query returned the complete set of data
+            or if the data was truncated.
+        id:
+          type: string
+          description: Id of the query
+        name:
+          type: string
+          description: Localized name of the query
+        results:
+          type: array
+          description: The results of the query.  This will be a set of WorkItem objects
+            with only the 'id' set.  The client is responsible for paging in the data
+            as needed.
+          items:
+            $ref: '#/components/schemas/WorkItem'
+        url:
+          type: string
+          description: REST API Url to use to retrieve results for this query
+        webUrl:
+          type: string
+          description: Url to use to display a page in the browser with the results
+            of this query
+      description: Represents a single pre-defined query.
+    ProcessConfiguration:
+      type: object
+      properties:
+        bugWorkItems:
+          $ref: '#/components/schemas/CategoryConfiguration'
+        portfolioBacklogs:
+          type: array
+          description: Details about portfolio backlogs
+          items:
+            $ref: '#/components/schemas/CategoryConfiguration'
+        requirementBacklog:
+          $ref: '#/components/schemas/CategoryConfiguration'
+        taskBacklog:
+          $ref: '#/components/schemas/CategoryConfiguration'
+        typeFields:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/WorkItemFieldReference'
+          description: Type fields for the process configuration
+        url:
+          type: string
+      description: Process Configurations for the project
+    ReferenceLinks:
+      type: object
+      properties:
+        links:
+          type: object
+          additionalProperties:
+            type: object
+            properties: {}
+          description: The readonly view of the links.  Because Reference links are
+            readonly, we only want to expose them as read only.
+      description: The class to represent a collection of REST reference links.
+    ReorderOperation:
+      type: object
+      properties:
+        ids:
+          type: array
+          description: IDs of the work items to be reordered.  Must be valid WorkItem
+            Ids.
+          items:
+            type: integer
+            format: int32
+        iterationPath:
+          type: string
+          description: IterationPath for reorder operation. This is only used when
+            we reorder from the Iteration Backlog
+        nextId:
+          type: integer
+          description: ID of the work item that should be after the reordered items.
+            Can use 0 to specify the end of the list.
+          format: int32
+        parentId:
+          type: integer
+          description: Parent ID for all of the work items involved in this operation.
+            Can use 0 to indicate the items don't have a parent.
+          format: int32
+        previousId:
+          type: integer
+          description: ID of the work item that should be before the reordered items.
+            Can use 0 to specify the beginning of the list.
+          format: int32
+      description: Represents a reorder request for one or more work items.
+    ReorderResult:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The ID of the work item that was reordered.
+          format: int32
+        order:
+          type: number
+          description: The updated order value of the work item that was reordered.
+          format: double
+      description: Represents a reorder result for a work item.
+    Rule:
+      type: object
+      properties:
+        clauses:
+          type: array
+          items:
+            $ref: '#/components/schemas/FilterClause'
+        filter:
+          type: string
+        isEnabled:
+          type: string
+        name:
+          type: string
+        settings:
+          $ref: '#/components/schemas/attribute'
+      description: ""
+    TaskboardColumn:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Column ID
+          format: uuid
+        mappings:
+          type: array
+          description: Work item type states mapped to this column to support auto
+            state update when column is updated.
+          items:
+            $ref: '#/components/schemas/ITaskboardColumnMapping'
+        name:
+          type: string
+          description: Column name
+        order:
+          type: integer
+          description: Column position relative to other columns in the same board
+          format: int32
+      description: Represents the taskbord column
+    TaskboardColumnMapping:
+      type: object
+      properties:
+        state:
+          type: string
+          description: State of the work item type mapped to the column
+        workItemType:
+          type: string
+          description: Work Item Type name who's state is mapped to the column
+      description: Represents the state to column mapping per work item type This
+        allows auto state update when the column changes
+    TaskboardColumns:
+      type: object
+      properties:
+        columns:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaskboardColumn'
+        isCustomized:
+          type: boolean
+          description: Are the columns cutomized for this team
+        isValid:
+          type: boolean
+          description: Specifies if the referenced WIT and State is valid
+        validationMesssage:
+          type: string
+          description: Details of validation failure if the state to column mapping
+            is invalid
+      description: ""
+    TaskboardWorkItemColumn:
+      type: object
+      properties:
+        column:
+          type: string
+          description: Work item column value in the taskboard
+        columnId:
+          type: string
+          description: Work item column id in the taskboard
+          format: uuid
+        state:
+          type: string
+          description: Work Item state value
+        workItemId:
+          type: integer
+          description: Work item id
+          format: int32
+      description: Column value of a work item in the taskboard
+    TeamBacklogMapping:
+      type: object
+      properties:
+        categoryReferenceName:
+          type: string
+        teamId:
+          type: string
+          format: uuid
+      description: Mapping of teams to the corresponding work item category
+    TeamContext:
+      type: object
+      properties:
+        project:
+          type: string
+          description: The team project Id or name.  Ignored if ProjectId is set.
+        projectId:
+          type: string
+          description: The Team Project ID.  Required if Project is not set.
+          format: uuid
+        team:
+          type: string
+          description: The Team Id or name.  Ignored if TeamId is set.
+        teamId:
+          type: string
+          description: The Team Id
+          format: uuid
+      description: The Team Context for an operation.
+    TeamFieldValue:
+      type: object
+      properties:
+        includeChildren:
+          type: boolean
+        value:
+          type: string
+      description: Represents a single TeamFieldValue
+    TeamFieldValues:
+      description: Essentially a collection of team field values
+      allOf:
+      - $ref: '#/components/schemas/TeamSettingsDataContractBase'
+    TeamFieldValuesPatch:
+      type: object
+      properties:
+        defaultValue:
+          type: string
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/TeamFieldValue'
+      description: Expected data from PATCH
+    TeamIterationAttributes:
+      type: object
+      properties:
+        finishDate:
+          type: string
+          description: Finish date of the iteration. Date-only, correct unadjusted
+            at midnight in UTC.
+          format: date-time
+        startDate:
+          type: string
+          description: Start date of the iteration. Date-only, correct unadjusted
+            at midnight in UTC.
+          format: date-time
+        timeFrame:
+          type: string
+          description: Time frame of the iteration, such as past, current or future.
+          enum:
+          - past
+          - current
+          - future
+          x-ms-enum:
+            name: TimeFrame
+            values:
+            - value: past
+              description: ""
+            - value: current
+              description: ""
+            - value: future
+              description: ""
+      description: ""
+    TeamMemberCapacity:
+      description: Represents capacity for a specific team member
+      allOf:
+      - $ref: '#/components/schemas/CapacityContractBase'
+    TeamMemberCapacityIdentityRef:
+      description: Represents capacity for a specific team member
+      allOf:
+      - $ref: '#/components/schemas/CapacityContractBase'
+    TeamSetting:
+      description: Data contract for TeamSettings
+      allOf:
+      - $ref: '#/components/schemas/TeamSettingsDataContractBase'
+    TeamSettingsDataContractBase:
+      type: object
+      properties:
+        _links:
+          $ref: '#/components/schemas/ReferenceLinks'
+        url:
+          type: string
+          description: Full http link to the resource
+      description: Base class for TeamSettings data contracts. Anything common goes
+        here.
+    TeamSettingsDaysOff:
+      description: ""
+      allOf:
+      - $ref: '#/components/schemas/TeamSettingsDataContractBase'
+    TeamSettingsDaysOffPatch:
+      type: object
+      properties:
+        daysOff:
+          type: array
+          items:
+            $ref: '#/components/schemas/DateRange'
+      description: ""
+    TeamSettingsIteration:
+      description: Represents a shallow ref for a single iteration.
+      allOf:
+      - $ref: '#/components/schemas/TeamSettingsDataContractBase'
+    TeamSettingsPatch:
+      type: object
+      properties:
+        backlogIteration:
+          type: string
+          format: uuid
+        backlogVisibilities:
+          type: object
+          additionalProperties:
+            type: boolean
+        bugsBehavior:
+          type: string
+          enum:
+          - off
+          - asRequirements
+          - asTasks
+          x-ms-enum:
+            name: BugsBehavior
+            values:
+            - value: off
+              description: ""
+            - value: asRequirements
+              description: ""
+            - value: asTasks
+              description: ""
+        defaultIteration:
+          type: string
+          format: uuid
+        defaultIterationMacro:
+          type: string
+        workingDays:
+          type: array
+          items:
+            type: object
+            x-ms-enum:
+              name: DayOfWeek
+              values:
+              - value: sunday
+                description: ""
+              - value: monday
+                description: ""
+              - value: tuesday
+                description: ""
+              - value: wednesday
+                description: ""
+              - value: thursday
+                description: ""
+              - value: friday
+                description: ""
+              - value: saturday
+                description: ""
+      description: Data contract for what we expect to receive when PATCH
+    TimelineCriteriaStatus:
+      type: object
+      properties:
+        message:
+          type: string
+        type:
+          type: string
+          enum:
+          - ok
+          - invalidFilterClause
+          - unknown
+          x-ms-enum:
+            name: TimelineCriteriaStatusCode
+            values:
+            - value: ok
+              description: No error - filter is good.
+            - value: invalidFilterClause
+              description: One of the filter clause is invalid.
+            - value: unknown
+              description: Unknown error.
+      description: ""
+    TimelineIterationStatus:
+      type: object
+      properties:
+        message:
+          type: string
+        type:
+          type: string
+          enum:
+          - ok
+          - isOverlapping
+          x-ms-enum:
+            name: TimelineIterationStatusCode
+            values:
+            - value: ok
+              description: No error - iteration data is good.
+            - value: isOverlapping
+              description: This iteration overlaps with another iteration, no data
+                is returned for this iteration.
+      description: ""
+    TimelineTeamData:
+      type: object
+      properties:
+        backlog:
+          $ref: '#/components/schemas/BacklogLevel'
+        fieldReferenceNames:
+          type: array
+          description: The field reference names of the work item data
+          items:
+            type: string
+        id:
+          type: string
+          description: The id of the team
+          format: uuid
+        isExpanded:
+          type: boolean
+          description: Was iteration and work item data retrieved for this team. <remarks>
+            Teams with IsExpanded false have not had their iteration, work item, and
+            field related data queried and will never contain this data. If true then
+            these items are queried and, if there are items in the queried range,
+            there will be data. </remarks>
+        iterations:
+          type: array
+          description: The iteration data, including the work items, in the queried
+            date range.
+          items:
+            $ref: '#/components/schemas/TimelineTeamIteration'
+        name:
+          type: string
+          description: The name of the team
+        orderByField:
+          type: string
+          description: The order by field name of this team
+        partiallyPagedFieldReferenceNames:
+          type: array
+          description: The field reference names of the partially paged work items,
+            such as ID, WorkItemType
+          items:
+            type: string
+        projectId:
+          type: string
+          description: The project id the team belongs team
+          format: uuid
+        status:
+          $ref: '#/components/schemas/TimelineTeamStatus'
+        teamFieldDefaultValue:
+          type: string
+          description: The team field default value
+        teamFieldName:
+          type: string
+          description: The team field name of this team
+        teamFieldValues:
+          type: array
+          description: The team field values
+          items:
+            $ref: '#/components/schemas/TeamFieldValue'
+        workItemTypeColors:
+          type: array
+          description: Colors for the work item types.
+          items:
+            $ref: '#/components/schemas/WorkItemColor'
+      description: ""
+    TimelineTeamIteration:
+      type: object
+      properties:
+        cssNodeId:
+          type: string
+          description: The iteration CSS Node Id
+        finishDate:
+          type: string
+          description: The end date of the iteration
+          format: date-time
+        name:
+          type: string
+          description: The iteration name
+        partiallyPagedWorkItems:
+          type: array
+          description: All the partially paged workitems in this iteration.
+          items:
+            type: array
+            items:
+              type: object
+              properties: {}
+        path:
+          type: string
+          description: The iteration path
+        startDate:
+          type: string
+          description: The start date of the iteration
+          format: date-time
+        status:
+          $ref: '#/components/schemas/TimelineIterationStatus'
+        workItems:
+          type: array
+          description: The work items that have been paged in this iteration
+          items:
+            type: array
+            items:
+              type: object
+              properties: {}
+      description: ""
+    TimelineTeamStatus:
+      type: object
+      properties:
+        message:
+          type: string
+        type:
+          type: string
+          enum:
+          - ok
+          - doesntExistOrAccessDenied
+          - maxTeamsExceeded
+          - maxTeamFieldsExceeded
+          - backlogInError
+          - missingTeamFieldValue
+          - noIterationsExist
+          x-ms-enum:
+            name: TimelineTeamStatusCode
+            values:
+            - value: ok
+              description: No error - all data for team is good.
+            - value: doesntExistOrAccessDenied
+              description: Team does not exist or access is denied.
+            - value: maxTeamsExceeded
+              description: Maximum number of teams was exceeded. No team data will
+                be returned for this team.
+            - value: maxTeamFieldsExceeded
+              description: Maximum number of team fields (ie Area paths) have been
+                exceeded. No team data will be returned for this team.
+            - value: backlogInError
+              description: Backlog does not exist or is missing crucial information.
+            - value: missingTeamFieldValue
+              description: Team field value is not set for this team. No team data
+                will be returned for this team
+            - value: noIterationsExist
+              description: Team does not have a single iteration with date range.
+      description: ""
+    UpdatePlan:
+      type: object
+      properties:
+        description:
+          type: string
+          description: Description of the plan
+        name:
+          type: string
+          description: Name of the plan to create.
+        properties:
+          type: object
+          properties: {}
+          description: Plan properties.
+        revision:
+          type: integer
+          description: Revision of the plan that was updated - the value used here
+            should match the one the server gave the client in the Plan.
+          format: int32
+        type:
+          type: string
+          description: Type of the plan
+          enum:
+          - deliveryTimelineView
+          x-ms-enum:
+            name: PlanType
+            values:
+            - value: deliveryTimelineView
+              description: ""
+      description: ""
+    UpdateTaskboardColumn:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Column ID, keep it null for new column
+          format: uuid
+        mappings:
+          type: array
+          description: Work item type states mapped to this column to support auto
+            state update when column is updated.
+          items:
+            $ref: '#/components/schemas/TaskboardColumnMapping'
+        name:
+          type: string
+          description: Column name is required
+        order:
+          type: integer
+          description: Column position relative to other columns in the same board
+          format: int32
+      description: ""
+    UpdateTaskboardWorkItemColumn:
+      type: object
+      properties:
+        newColumn:
+          type: string
+      description: ""
+    VssJsonCollectionWrapper:
+      description: This class is used to serialized collections as a single JSON object
+        on the wire, to avoid serializing JSON arrays directly to the client, which
+        can be a security hole
+      allOf:
+      - $ref: '#/components/schemas/VssJsonCollectionWrapperBase'
+    VssJsonCollectionWrapperBase:
+      type: object
+      properties:
+        count:
+          type: integer
+          format: int32
+      description: ""
+    WorkItem:
+      description: Describes a work item.
+      allOf:
+      - $ref: '#/components/schemas/WorkItemTrackingResource'
+    WorkItemColor:
+      type: object
+      properties:
+        icon:
+          type: string
+        primaryColor:
+          type: string
+        workItemTypeName:
+          type: string
+      description: Work item color and icon.
+    WorkItemCommentVersionRef:
+      description: Represents the reference to a specific version of a comment on
+        a Work Item.
+      allOf:
+      - $ref: '#/components/schemas/WorkItemTrackingResourceReference'
+    WorkItemFieldReference:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The friendly name of the field.
+        referenceName:
+          type: string
+          description: The reference name of the field.
+        url:
+          type: string
+          description: The REST URL of the resource.
+      description: Reference to a field in a work item
+    WorkItemLink:
+      type: object
+      properties:
+        rel:
+          type: string
+          description: The type of link.
+        source:
+          $ref: '#/components/schemas/WorkItemReference'
+        target:
+          $ref: '#/components/schemas/WorkItemReference'
+      description: A link between two work items.
+    WorkItemReference:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Work item ID.
+          format: int32
+        url:
+          type: string
+          description: REST API URL of the resource
+      description: Contains reference to a work item.
+    WorkItemRelation:
+      description: ""
+      allOf:
+      - $ref: '#/components/schemas/Link'
+    WorkItemTrackingResource:
+      description: Base class for WIT REST resources.
+      allOf:
+      - $ref: '#/components/schemas/WorkItemTrackingResourceReference'
+    WorkItemTrackingResourceReference:
+      type: object
+      properties:
+        url:
+          type: string
+      description: Base class for work item tracking resource references.
+    WorkItemTypeReference:
+      description: Reference to a work item type.
+      allOf:
+      - $ref: '#/components/schemas/WorkItemTrackingResourceReference'
+    WorkItemTypeStateInfo:
+      type: object
+      properties:
+        states:
+          type: object
+          additionalProperties:
+            type: string
+          description: State name to state category map
+        workItemTypeName:
+          type: string
+          description: Work Item type name
+      description: ""
+  parameters:
+    api-Version-preview.1:
+      name: api-version
+      in: query
+      description: Version of the API to use.  This should be set to '6.0-preview.1'
+        to use this version of the api.
+      required: true
+      schema:
+        type: string
+    api-Version-preview.2:
+      name: api-version
+      in: query
+      description: Version of the API to use.  This should be set to '6.0-preview.2'
+        to use this version of the api.
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    accessToken:
+      type: http
+      description: Personal access token. Use any value for the user name and the
+        token as the password.
+      scheme: basic
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://app.vssps.visualstudio.com/oauth2/authorize&response_type=Assertion
+          tokenUrl: https://app.vssps.visualstudio.com/oauth2/token?client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer&grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
+          scopes:
+            vso.work: Grants the ability to read work items, queries, boards, area
+              and iterations paths, and other work item tracking related metadata.
+              Also grants the ability to execute queries, search work items and to
+              receive notifications about work item events via service hooks.
+            vso.work_write: Grants the ability to read, create, and update work items
+              and queries, update board metadata, read area and iterations paths other
+              work item tracking related metadata, execute queries, and to receive
+              notifications about work item events via service hooks.
+x-ms-vss-area: Work
+x-ms-vss-resource-area-id: 1d4f49f9-02b9-4e26-b826-2cdb6195f2a9

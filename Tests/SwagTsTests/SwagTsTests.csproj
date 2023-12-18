@@ -1,0 +1,930 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+    <None Remove="AureliaResults\mcp.txt" />
+    <None Remove="AureliaResults\Pet.txt" />
+    <None Remove="AureliaResults\PetDelete.txt" />
+    <None Remove="AureliaResults\PetFindByStatus.txt" />
+    <None Remove="AureliaResults\PetGodClass.txt" />
+    <None Remove="AureliaResults\PetPathAsContainer.txt" />
+    <None Remove="AureliaResults\PetStore.txt" />
+    <None Remove="AureliaResults\PetStoreExpanded.txt" />
+    <None Remove="AureliaResults\redocOpenApi200501.txt" />
+    <None Remove="AureliaResults\sell_account.txt" />
+    <None Remove="AureliaResults\sell_analytics.txt" />
+    <None Remove="AureliaResults\sell_compliance.txt" />
+    <None Remove="AureliaResults\sell_finances.txt" />
+    <None Remove="AureliaResults\sell_inventory.txt" />
+    <None Remove="AureliaResults\sell_listing.txt" />
+    <None Remove="AureliaResults\sell_logistics.txt" />
+    <None Remove="AureliaResults\sell_marketing.txt" />
+    <None Remove="AureliaResults\sell_metadata.txt" />
+    <None Remove="AureliaResults\sell_negotiation.txt" />
+    <None Remove="AureliaResults\sell_recommendation.txt" />
+    <None Remove="AureliaResults\Uspto.txt" />
+    <None Remove="AureliaResults\ValuesPaths.txt" />
+    <None Remove="AxiosResults\mcp.txt" />
+    <None Remove="AxiosResults\Pet.txt" />
+    <None Remove="AxiosResults\PetDelete.txt" />
+    <None Remove="AxiosResults\PetFindByStatus.txt" />
+    <None Remove="AxiosResults\PetGodClass.txt" />
+    <None Remove="AxiosResults\PetPathAsContainer.txt" />
+    <None Remove="AxiosResults\PetStore.txt" />
+    <None Remove="AxiosResults\PetStoreExpanded.txt" />
+    <None Remove="AxiosResults\redocOpenApi200501.txt" />
+    <None Remove="AxiosResults\sell_account.txt" />
+    <None Remove="AxiosResults\sell_analytics.txt" />
+    <None Remove="AxiosResults\sell_compliance.txt" />
+    <None Remove="AxiosResults\sell_finances.txt" />
+    <None Remove="AxiosResults\sell_inventory.txt" />
+    <None Remove="AxiosResults\sell_listing.txt" />
+    <None Remove="AxiosResults\sell_logistics.txt" />
+    <None Remove="AxiosResults\sell_marketing.txt" />
+    <None Remove="AxiosResults\sell_metadata.txt" />
+    <None Remove="AxiosResults\sell_negotiation.txt" />
+    <None Remove="AxiosResults\sell_recommendation.txt" />
+    <None Remove="AxiosResults\Uspto.txt" />
+    <None Remove="AxiosResults\ValuesPaths.txt" />
+    <None Remove="FetchResults\mcp.txt" />
+    <None Remove="FetchResults\Pet.txt" />
+    <None Remove="FetchResults\PetDelete.txt" />
+    <None Remove="FetchResults\PetFindByStatus.txt" />
+    <None Remove="FetchResults\PetGodClass.txt" />
+    <None Remove="FetchResults\PetPathAsContainer.txt" />
+    <None Remove="FetchResults\PetStore.txt" />
+    <None Remove="FetchResults\PetStoreExpanded.txt" />
+    <None Remove="FetchResults\redocOpenApi200501.txt" />
+    <None Remove="FetchResults\sell_account.txt" />
+    <None Remove="FetchResults\sell_analytics.txt" />
+    <None Remove="FetchResults\sell_compliance.txt" />
+    <None Remove="FetchResults\sell_finances.txt" />
+    <None Remove="FetchResults\sell_inventory.txt" />
+    <None Remove="FetchResults\sell_listing.txt" />
+    <None Remove="FetchResults\sell_logistics.txt" />
+    <None Remove="FetchResults\sell_marketing.txt" />
+    <None Remove="FetchResults\sell_metadata.txt" />
+    <None Remove="FetchResults\sell_negotiation.txt" />
+    <None Remove="FetchResults\sell_recommendation.txt" />
+    <None Remove="FetchResults\Uspto.txt" />
+    <None Remove="FetchResults\ValuesPaths.txt" />
+    <None Remove="JqResults\mcp.txt" />
+    <None Remove="JqResults\Pet.txt" />
+    <None Remove="JqResults\PetDelete.txt" />
+    <None Remove="JqResults\PetFindByStatus.txt" />
+    <None Remove="JqResults\PetGodClass.txt" />
+    <None Remove="JqResults\PetPathAsContainer.txt" />
+    <None Remove="JqResults\PetStore.txt" />
+    <None Remove="JqResults\PetStoreExpanded.txt" />
+    <None Remove="JqResults\redocOpenApi200501.txt" />
+    <None Remove="JqResults\sell_account.txt" />
+    <None Remove="JqResults\sell_analytics.txt" />
+    <None Remove="JqResults\sell_compliance.txt" />
+    <None Remove="JqResults\sell_finances.txt" />
+    <None Remove="JqResults\sell_inventory.txt" />
+    <None Remove="JqResults\sell_listing.txt" />
+    <None Remove="JqResults\sell_logistics.txt" />
+    <None Remove="JqResults\sell_marketing.txt" />
+    <None Remove="JqResults\sell_metadata.txt" />
+    <None Remove="JqResults\sell_negotiation.txt" />
+    <None Remove="JqResults\sell_recommendation.txt" />
+    <None Remove="JqResults\Uspto.txt" />
+    <None Remove="JqResults\ValuesPaths.txt" />
+    <None Remove="NG2Results\mcp.txt" />
+    <None Remove="NG2Results\Pet.txt" />
+    <None Remove="NG2Results\PetByTags.txt" />
+    <None Remove="NG2Results\PetDelete.txt" />
+    <None Remove="NG2Results\PetFindByStatus.txt" />
+    <None Remove="NG2Results\PetGodClass.txt" />
+    <None Remove="NG2Results\PetPathAsContainer.txt" />
+    <None Remove="NG2Results\PetStore.txt" />
+    <None Remove="NG2Results\PetStoreExpanded.txt" />
+    <None Remove="NG2Results\Pet_EnumToString.txt" />
+    <None Remove="NG2Results\redocOpenApi200501.txt" />
+    <None Remove="NG2Results\sell_account.txt" />
+    <None Remove="NG2Results\sell_analytics.txt" />
+    <None Remove="NG2Results\sell_compliance.txt" />
+    <None Remove="NG2Results\sell_finances.txt" />
+    <None Remove="NG2Results\sell_inventory.txt" />
+    <None Remove="NG2Results\sell_listing.txt" />
+    <None Remove="NG2Results\sell_logistics.txt" />
+    <None Remove="NG2Results\sell_marketing.txt" />
+    <None Remove="NG2Results\sell_metadata.txt" />
+    <None Remove="NG2Results\sell_negotiation.txt" />
+    <None Remove="NG2Results\sell_recommendation.txt" />
+    <None Remove="NG2Results\Uspto.txt" />
+    <None Remove="NG2Results\ValuesPaths.txt" />
+    <None Remove="NG2Results\xero-identity.txt" />
+    <None Remove="NG2Results\xero-payroll-au.txt" />
+    <None Remove="NG2Results\xero-payroll-uk.txt" />
+    <None Remove="NG2Results\xero_accounting.txt" />
+    <None Remove="NG2Results\xero_assets.txt" />
+    <None Remove="NG2Results\xero_bankfeeds.txt" />
+    <None Remove="SwagMock\AirOne.yaml" />
+    <None Remove="SwagMock\buy_browse_v1_beta_oas3.json" />
+    <None Remove="SwagMock\buy_feed_v1_beta_oas3.json" />
+    <None Remove="SwagMock\buy_marketing_v1_beta_oas3.yaml" />
+    <None Remove="SwagMock\buy_marketplace_insights_v1_beta_oas3.yaml" />
+    <None Remove="SwagMock\buy_offer_v1_beta_oas3.yaml" />
+    <None Remove="SwagMock\buy_order_v1_beta_oas3.json" />
+    <None Remove="SwagMock\CasualEnum.json" />
+    <None Remove="SwagMock\commerce_catalog_v1_beta_oas3.json" />
+    <None Remove="SwagMock\commerce_identity_v1_oas3.json" />
+    <None Remove="SwagMock\commerce_taxonomy_v1_beta_oas3.json" />
+    <None Remove="SwagMock\commerce_translation_v1_oas3.json" />
+    <None Remove="SwagMock\CustomTypeArray.json" />
+    <None Remove="SwagMock\developer_analytics_v1_beta_oas3.json" />
+    <None Remove="SwagMock\dict_test.yaml" />
+    <None Remove="SwagMock\Enum.json" />
+    <None Remove="SwagMock\EnumPascalCase.json" />
+    <None Remove="SwagMock\IntEnum.json" />
+    <None Remove="SwagMock\mcp.yaml" />
+    <None Remove="SwagMock\mcp3.yaml" />
+    <None Remove="SwagMock\mygen.json" />
+    <None Remove="SwagMock\myswagger.json" />
+    <None Remove="SwagMock\PathItemValues.json" />
+    <None Remove="SwagMock\pet.json" />
+    <None Remove="SwagMock\pet.yaml" />
+    <None Remove="SwagMock\petBackup.yaml" />
+    <None Remove="SwagMock\petByNumbers.yaml" />
+    <None Remove="SwagMock\petByStatus.yaml" />
+    <None Remove="SwagMock\petByTags.yaml" />
+    <None Remove="SwagMock\PetDelete.json" />
+    <None Remove="SwagMock\petDicInt64.yaml" />
+    <None Remove="SwagMock\PetDogCat.json" />
+    <None Remove="SwagMock\PetFindByStatus.json" />
+    <None Remove="SwagMock\petStore.yaml" />
+    <None Remove="SwagMock\petStoreExpanded.yaml" />
+    <None Remove="SwagMock\petStoreWithInnerObject.yaml" />
+    <None Remove="SwagMock\petTypes.json" />
+    <None Remove="SwagMock\redocOpenApi200501.json" />
+    <None Remove="SwagMock\Required.json" />
+    <None Remove="SwagMock\sell_account_v1_oas3.json" />
+    <None Remove="SwagMock\sell_analytics_v1_oas3.yaml" />
+    <None Remove="SwagMock\sell_compliance_v1_oas3.yaml" />
+    <None Remove="SwagMock\sell_finances_v1_oas3.yaml" />
+    <None Remove="SwagMock\sell_inventory_v1_oas3.yaml" />
+    <None Remove="SwagMock\sell_listing_v1_beta_oas3.yaml" />
+    <None Remove="SwagMock\sell_logistics_v1_oas3.json" />
+    <None Remove="SwagMock\sell_marketing_v1_oas3.json" />
+    <None Remove="SwagMock\sell_metadata_v1_oas3.json" />
+    <None Remove="SwagMock\sell_negotiation_v1_oas3.yaml" />
+    <None Remove="SwagMock\sell_recommendation_v1_oas3.yaml" />
+    <None Remove="SwagMock\SimpleOrder.json" />
+    <None Remove="SwagMock\SimplePet.json" />
+    <None Remove="SwagMock\SimplePetCat.json" />
+    <None Remove="SwagMock\SimplePetNestedComplex.json" />
+    <None Remove="SwagMock\StringArray.json" />
+    <None Remove="SwagMock\TypeAlias.json" />
+    <None Remove="SwagMock\TypeAlias2.json" />
+    <None Remove="SwagMock\uspto.yaml" />
+    <None Remove="SwagMock\ValuesPaths.json" />
+    <None Remove="SwagMock\Vsts\accounts.json" />
+    <None Remove="SwagMock\Vsts\audit.json" />
+    <None Remove="SwagMock\Vsts\build.json" />
+    <None Remove="SwagMock\Vsts\cloudLoadTest.json" />
+    <None Remove="SwagMock\Vsts\core.json" />
+    <None Remove="SwagMock\Vsts\dashboard.json" />
+    <None Remove="SwagMock\Vsts\extensionManagement.json" />
+    <None Remove="SwagMock\Vsts\feed.json" />
+    <None Remove="SwagMock\Vsts\git.json" />
+    <None Remove="SwagMock\Vsts\graph.json" />
+    <None Remove="SwagMock\Vsts\memberEntitlementManagement.json" />
+    <None Remove="SwagMock\Vsts\notification.json" />
+    <None Remove="SwagMock\Vsts\operations.json" />
+    <None Remove="SwagMock\Vsts\permissionsReport.json" />
+    <None Remove="SwagMock\Vsts\policy.json" />
+    <None Remove="SwagMock\Vsts\profile.json" />
+    <None Remove="SwagMock\Vsts\provenance.json" />
+    <None Remove="SwagMock\Vsts\release.json" />
+    <None Remove="SwagMock\Vsts\search.json" />
+    <None Remove="SwagMock\Vsts\security.json" />
+    <None Remove="SwagMock\Vsts\serviceEndpoint.json" />
+    <None Remove="SwagMock\Vsts\serviceHooks.json" />
+    <None Remove="SwagMock\Vsts\status.json" />
+    <None Remove="SwagMock\Vsts\symbol.json" />
+    <None Remove="SwagMock\Vsts\taskAgent.json" />
+    <None Remove="SwagMock\Vsts\test.json" />
+    <None Remove="SwagMock\Vsts\testPlan.json" />
+    <None Remove="SwagMock\Vsts\testResults.json" />
+    <None Remove="SwagMock\Vsts\tfvc.json" />
+    <None Remove="SwagMock\Vsts\tokenAdmin.json" />
+    <None Remove="SwagMock\Vsts\tokenAdministration.json" />
+    <None Remove="SwagMock\Vsts\wiki.json" />
+    <None Remove="SwagMock\Vsts\work.json" />
+    <None Remove="SwagMock\Vsts\workItemTracking.json" />
+    <None Remove="SwagMock\Vsts\workItemTrackingProcess.json" />
+    <None Remove="SwagMock\Vsts\workItemTrackingProcessTemplate.json" />
+    <None Remove="SwagMock\webhook31.yaml" />
+    <None Remove="SwagMock\xero-identity.yaml" />
+    <None Remove="SwagMock\xero-payroll-au.yaml" />
+    <None Remove="SwagMock\xero-payroll-uk.yaml" />
+    <None Remove="SwagMock\Xero-projects.yaml" />
+    <None Remove="SwagMock\xero_accounting.yaml" />
+    <None Remove="SwagMock\xero_assets.yaml" />
+    <None Remove="SwagMock\xero_bankfeeds.yaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\mcp.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\Pet.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\PetDelete.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\PetFindByStatus.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\PetGodClass.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\PetPathAsContainer.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\PetStore.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\PetStoreExpanded.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\redocOpenApi200501.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_account.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_analytics.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_compliance.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_finances.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_inventory.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_listing.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_logistics.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_marketing.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_metadata.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_negotiation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\sell_recommendation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\Uspto.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AureliaResults\ValuesPaths.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\mcp.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\Pet.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\PetDelete.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\PetFindByStatus.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\PetGodClass.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\PetPathAsContainer.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\PetStore.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\PetStoreExpanded.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\redocOpenApi200501.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\sell_account.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\sell_analytics.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\sell_compliance.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\sell_finances.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\sell_inventory.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\sell_listing.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\sell_logistics.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\sell_marketing.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\sell_metadata.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\sell_negotiation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\sell_recommendation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\Uspto.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AxiosResults\ValuesPaths.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\mcp.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\Pet.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\PetDelete.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\PetFindByStatus.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\PetGodClass.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\PetPathAsContainer.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\PetStore.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\PetStoreExpanded.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\redocOpenApi200501.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_account.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_analytics.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_compliance.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_finances.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_inventory.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_listing.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_logistics.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_marketing.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_metadata.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_negotiation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\sell_recommendation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\Uspto.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FetchResults\ValuesPaths.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\mcp.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\Pet.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\PetDelete.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\PetFindByStatus.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\PetGodClass.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\PetPathAsContainer.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\PetStore.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\PetStoreExpanded.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\redocOpenApi200501.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_account.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_analytics.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_compliance.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_finances.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_inventory.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_listing.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_logistics.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_marketing.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_metadata.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_negotiation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\sell_recommendation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\Uspto.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JqResults\ValuesPaths.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\mcp.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\Pet.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\PetByTags.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\PetDelete.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\PetFindByStatus.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\PetGodClass.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\PetPathAsContainer.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\PetStore.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\PetStoreExpanded.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\Pet_EnumToString.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\redocOpenApi200501.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\sell_account.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\sell_analytics.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\sell_compliance.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\sell_finances.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\sell_inventory.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\sell_listing.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\sell_logistics.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\sell_marketing.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\sell_metadata.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\sell_negotiation.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\sell_recommendation.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\Uspto.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\ValuesPaths.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\xero-identity.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\xero-payroll-au.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\xero-payroll-uk.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\xero_accounting.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\xero_assets.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NG2Results\xero_bankfeeds.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\AirOne.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\buy_browse_v1_beta_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\buy_feed_v1_beta_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\buy_marketing_v1_beta_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\buy_marketplace_insights_v1_beta_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\buy_offer_v1_beta_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\buy_order_v1_beta_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\CasualEnum.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\commerce_catalog_v1_beta_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\commerce_identity_v1_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\commerce_taxonomy_v1_beta_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\commerce_translation_v1_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\CustomTypeArray.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\developer_analytics_v1_beta_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\dict_test.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Enum.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\EnumPascalCase.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\IntEnum.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\mcp.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\mcp3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\mygen.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\myswagger.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\PathItemValues.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\pet.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\pet.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petBackup.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petByNumbers.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petByStatus.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petByTags.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\PetDelete.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petDicInt64.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\PetDogCat.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\PetFindByStatus.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petStore.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petStoreExpanded.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petStoreWithInnerObject.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\petTypes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\redocOpenApi200501.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Required.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_account_v1_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_analytics_v1_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_compliance_v1_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_finances_v1_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_inventory_v1_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_listing_v1_beta_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_logistics_v1_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_marketing_v1_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_metadata_v1_oas3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_negotiation_v1_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\sell_recommendation_v1_oas3.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\SimpleOrder.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\SimplePet.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\SimplePetCat.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\SimplePetNestedComplex.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\StringArray.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\TypeAlias.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\TypeAlias2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\uspto.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\ValuesPaths.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\accounts.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\audit.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\build.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\cloudLoadTest.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\core.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\dashboard.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\extensionManagement.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\feed.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\git.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\graph.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\memberEntitlementManagement.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\notification.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\operations.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\permissionsReport.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\policy.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\profile.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\provenance.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\release.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\search.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\security.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\serviceEndpoint.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\serviceHooks.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\status.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\symbol.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\taskAgent.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\test.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\testPlan.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\testResults.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\tfvc.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\tokenAdmin.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\tokenAdministration.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\wiki.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\work.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\workItemTracking.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\workItemTrackingProcess.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Vsts\workItemTrackingProcessTemplate.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\webhook31.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\xero-identity.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\xero-payroll-au.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\xero-payroll-uk.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\Xero-projects.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\xero_accounting.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\xero_assets.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SwagMock\xero_bankfeeds.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="xunit" Version="2.6.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="6.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Fonlow.OpenApiClientGen.ClientTypes\Fonlow.OpenApiClientGen.ClientTypes.csproj" />
+    <ProjectReference Include="..\..\OpenApiClientGenCore.Aurelia\OpenApiClientGenCore.Aurelia.csproj" />
+    <ProjectReference Include="..\..\OpenApiClientGenCore.Axios\OpenApiClientGenCore.Axios.csproj" />
+    <ProjectReference Include="..\..\OpenApiClientGenCore.Fetch\OpenApiClientGenCore.Fetch.csproj" />
+    <ProjectReference Include="..\..\OpenApiClientGenCore.JQ\OpenApiClientGenCore.JQ.csproj" />
+    <ProjectReference Include="..\..\OpenApiClientGenCore.NG2FormGroup\OpenApiClientGenCore.NG2FormGroup.csproj" />
+    <ProjectReference Include="..\..\OpenApiClientGenCore.NG2\OpenApiClientGenCore.NG2.csproj" />
+    <ProjectReference Include="..\TsTestHelpers\TsTestHelpers.csproj" />
+  </ItemGroup>
+
+</Project>

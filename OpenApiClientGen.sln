@@ -66,7 +66,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwagApiTestsTextJson", "Tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NgBuild", "Tests\NgBuild\NgBuild.csproj", "{CCF86651-A0E0-4402-8BC9-1E94AC72E6D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApiClientGenCore.NG2FormGroup", "OpenApiClientGenCore.NG2FormGroup\OpenApiClientGenCore.NG2FormGroup.csproj", "{3F7E3FBB-BD68-4E7E-9D8F-FA0049F5B8F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenApiClientGenCore.NG2FormGroup", "OpenApiClientGenCore.NG2FormGroup\OpenApiClientGenCore.NG2FormGroup.csproj", "{3F7E3FBB-BD68-4E7E-9D8F-FA0049F5B8F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwagTsTests", "Tests\SwagTsTests\SwagTsTests.csproj", "{893C5102-768D-4F8E-AC95-607E2AC98882}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -174,6 +176,10 @@ Global
 		{3F7E3FBB-BD68-4E7E-9D8F-FA0049F5B8F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F7E3FBB-BD68-4E7E-9D8F-FA0049F5B8F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F7E3FBB-BD68-4E7E-9D8F-FA0049F5B8F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{893C5102-768D-4F8E-AC95-607E2AC98882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{893C5102-768D-4F8E-AC95-607E2AC98882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{893C5102-768D-4F8E-AC95-607E2AC98882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{893C5102-768D-4F8E-AC95-607E2AC98882}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -198,6 +204,7 @@ Global
 		{EF4ED355-9EE6-40C7-B323-746122A838D5} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
 		{CCF86651-A0E0-4402-8BC9-1E94AC72E6D5} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
 		{3F7E3FBB-BD68-4E7E-9D8F-FA0049F5B8F6} = {C6D5C60F-4996-4F2B-80DD-BBE5FA1906C6}
+		{893C5102-768D-4F8E-AC95-607E2AC98882} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4BEA7BD1-2BD3-4E85-8E05-D98DE5C44574}

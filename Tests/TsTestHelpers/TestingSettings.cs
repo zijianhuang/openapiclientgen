@@ -35,7 +35,7 @@ namespace TsTestHelpers
 
 		//public IConfigurationRoot ConfigurationRoot { get; set; }
 
-		public bool NgBuild { get; set; } = false;
+		public bool Build { get; set; } = false;
 		public bool UpdateGenerated { get; set; } = false;
 
 	}

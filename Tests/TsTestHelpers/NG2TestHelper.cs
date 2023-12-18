@@ -16,7 +16,7 @@ namespace SwagTests
 		public NG2TestHelper(Type genType, ITestOutputHelper output) : base(genType)
 		{
 			this.output = output;
-			this.buildToValidate = TestingSettings.Instance.NgBuild;
+			this.buildToValidate = TestingSettings.Instance.Build;
 		}
 
 		public void GenerateAndAssertAndBuild(string openApiFile, string expectedFile, Settings settings = null)

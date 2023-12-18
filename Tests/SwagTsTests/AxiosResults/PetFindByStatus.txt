@@ -1,0 +1,123 @@
+import Axios from 'axios';
+import { AxiosResponse } from 'axios';
+export namespace MyNS {
+
+	/** A representation of a cat */
+	export interface Cat extends Pet {
+
+		/** The measured skill for hunting */
+		huntingSkill: CatHuntingSkill;
+	}
+
+	export enum CatHuntingSkill { clueless = 0, lazy = 1, adventurous = 2, aggressive = 3 }
+
+	export interface Category {
+
+		/** Category ID */
+		id?: number | null;
+
+		/** Category name */
+		name?: string | null;
+
+		/** Test Sub Category */
+		sub?: CategorySub;
+	}
+
+	export interface CategorySub {
+
+		/** Dumb Property */
+		prop1?: string | null;
+	}
+
+
+	/** A representation of a dog */
+	export interface Dog extends Pet {
+
+		/** The size of the pack the dog is from */
+		packSize: number;
+	}
+
+
+	/** A representation of a honey bee */
+	export interface HoneyBee extends Pet {
+
+		/** Average amount of honey produced per day in ounces */
+		honeyPerDay: number;
+	}
+
+	export interface Pet {
+
+		/** Pet ID */
+		id?: number | null;
+
+		/** Categories this pet belongs to */
+		category?: Category;
+
+		/** The name given to a pet */
+		name: string;
+
+		/** The list of URL to a cute photos featuring pet */
+		photoUrls: Array<string>;
+		friend?: Pet;
+
+		/** Tags attached to the pet */
+		tags?: Array<Tag>;
+
+		/** Pet status in the store */
+		status?: PetStatus | null;
+
+		/** Type of a pet */
+		petType?: string | null;
+	}
+
+	export interface Tag {
+
+		/** Tag ID */
+		id?: number | null;
+
+		/** Tag name */
+		name?: string | null;
+	}
+
+	export enum PetStatus { available = 0, pending = 1, sold = 2 }
+
+	export class Misc {
+		constructor(private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/') {
+		}
+
+		/**
+		 * Finds Pets by status
+		 * Multiple status values can be provided with comma separated strings
+		 * Get pet/findByStatus
+		 * @param {Array<PetStatus>} status Status values that need to be considered for filter
+		 * @return {Array<Pet>} successful operation
+		 */
+		FindPetsByStatus(status: Array<PetStatus>): Promise<Array<Pet>> {
+			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), {}).then(d => d.data);
+		}
+
+		/**
+		 * Finds Pets by status
+		 * Multiple status values can be provided with comma separated strings
+		 * Get pet/findByStatus2
+		 * @param {PetStatus} status Status values that need to be considered for filter
+		 * @return {Array<Pet>} successful operation
+		 */
+		FindPetsByStatus2(status: PetStatus): Promise<Array<Pet>> {
+			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByStatus2?status=' + status, {}).then(d => d.data);
+		}
+
+		/**
+		 * Finds Pets by status
+		 * Multiple status values can be provided with comma separated strings
+		 * Get pet/findByStatus3
+		 * @param {PetStatus} status Status values that need to be considered for filter
+		 * @return {Array<Pet>} successful operation
+		 */
+		FindPetsByStatus3(status: PetStatus): Promise<Array<Pet>> {
+			return Axios.get<Array<Pet>>(this.baseUri + 'pet/findByStatus3?status=' + status, {}).then(d => d.data);
+		}
+	}
+
+}
+

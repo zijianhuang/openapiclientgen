@@ -48,18 +48,22 @@ namespace SwagTests
 
 			string expected = ReadFromResults(expectedFile);
 			Assert.Equal(expected, s);
-			var r = CSharpValidation.CompileThenSave(s, null, mySettings != null && mySettings.UseSystemTextJson);
 
-			if (!r.Success)
+			if (TestingSettings.Instance.Build)
 			{
-				output.WriteLine("CSharp Compilation Errors:");
-				foreach (var ms in r.Diagnostics)
-				{
-					output.WriteLine(ms.ToString());
-				}
-			}
+				var r = CSharpValidation.CompileThenSave(s, null, mySettings != null && mySettings.UseSystemTextJson);
 
-			Assert.True(r.Success);
+				if (!r.Success)
+				{
+					output.WriteLine("CSharp Compilation Errors:");
+					foreach (var ms in r.Diagnostics)
+					{
+						output.WriteLine(ms.ToString());
+					}
+				}
+
+				Assert.True(r.Success);
+			}
 		}
 	}
 }
