@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -221,17 +222,20 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
 					CodeTypeReference ctr = ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
 					clientProperty = CreateProperty(ctr, propertyName, isRequired); //TS
+					SetClientPropertyTypeInfo(clientProperty, true, false);
 				}
 				else
 				{
 					if (propertySchema.Enum.Count > 0) //for casual enum
 					{
 						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, isRequired);
+						SetClientPropertyTypeInfo(clientProperty, false, false);
 					}
 					else
 					{
 						var r = CreateCodeTypeReferenceSchemaOf(propertySchema, currentTypeName, p.Key);
 						clientProperty = CreateProperty(r.Item1, propertyName, isRequired);
+						SetClientPropertyTypeInfo(clientProperty, r.Item2, false);
 					}
 				}
 			}
@@ -243,11 +247,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					CodeTypeReference arrayCodeTypeReference = r.Item1;
 					var n = String.IsNullOrEmpty(r.Item2) ? propertyName : r.Item2;
 					clientProperty = CreateProperty(arrayCodeTypeReference, n, isRequired);
+					SetClientPropertyTypeInfo(clientProperty, true, true);
 				}
 				else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
 				{
 					CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
 					clientProperty = CreateProperty(complexCodeTypeReference, propertyName, isRequired);
+					SetClientPropertyTypeInfo(clientProperty, true, false);
 				}
 				else if (propertySchema.Reference == null && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type
 				{
@@ -256,6 +262,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					AddProperties(casualTypeDeclaration, propertySchema, casualTypeName, null);
 					var ctr = TypeRefHelper.TranslateToClientTypeReference(casualTypeName);
 					clientProperty = CreateProperty(ctr, propertyName, isRequired);
+					SetClientPropertyTypeInfo(clientProperty, true, false);
 				}
 				else if (primitivePropertyType == "object" && propertySchema.AdditionalProperties != null) // for dictionary
 				{
@@ -275,13 +282,15 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					CodeTypeReference dicCtr = new(typeof(Dictionary<,>).FullName, dicKeyTypeRef, dicValueTypeRef); //for client codes, Dictionary is better than IDictionary, no worry of different implementation of IDictionary
 					clientProperty = CreateProperty(dicCtr, propertyName, isRequired);
+					SetClientPropertyTypeInfo(clientProperty, true, false);
 				}
 				else if (propertySchema.Enum.Count == 0) // for primitive type
 				{
 					Type simpleType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(primitivePropertyType, propertySchema.Format);
 					clientProperty = CreatePropertyOfType(propertyName, simpleType, isRequired);
+					SetClientPropertyTypeInfo(clientProperty, false, false);
 				}
-				else if (propertySchema.Enum.Count > 0 && primitivePropertyType == "string") // for enum
+				else if (propertySchema.Enum.Count > 0 && primitivePropertyType == "string") // for string enum
 				{
 					string[] enumMemberNames;
 					try
@@ -307,25 +316,40 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, isRequired);
 					}
+
+					SetClientPropertyTypeInfo(clientProperty, false, false);
 				}
 				else if (primitivePropertyType != "string" && TypeAliasDic.TryGet(primitivePropertyType, out string aliasTypeName)) //check TypeAliasDic
 				{
 					var r = new CodeTypeReference(aliasTypeName);
 					clientProperty = CreateProperty(r, propertyName, isRequired);
+					SetClientPropertyTypeInfo(clientProperty, true, false);
 				}
 				else if (propertySchema.Reference != null)
 				{
 					CodeTypeReference complexCodeTypeReference = CreateComplexCodeTypeReference(propertySchema);
 					clientProperty = CreateProperty(complexCodeTypeReference, propertyName, isRequired);
+					SetClientPropertyTypeInfo(clientProperty, true, false);
 				}
 				else // for casual enum
 				{
 					clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, isRequired);
+					SetClientPropertyTypeInfo(clientProperty, true, false);
 				}
 			}
 
 			CreateMemberDocComment(p, clientProperty, schema);
 			typeDeclaration.Members.Add(clientProperty);
+		}
+
+		void SetClientPropertyTypeInfo(CodeMemberField p, bool isComplex, bool isArray)
+		{
+			p.Type.UserData.Add("FieldTypeInfo",
+			new FieldTypeInfo
+			{
+				IsComplex = isComplex,
+				IsArray = isArray,
+			});
 		}
 
 		CodeMemberField GenerateCasualEnumForProperty(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns, bool isRequired)
@@ -394,7 +418,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			if (type == null)
 				return new CodeTypeReference("void");
 
-			if (TypeHelper.IsSimpleType(type))
+			if (TypeHelper.IsDotNetSimpleType(type))
 			{
 				string typeText = Fonlow.TypeScriptCodeDom.TypeMapper.MapToTsBasicType(type);
 				return new CodeTypeReference(typeText);
@@ -444,6 +468,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				Attributes = MemberAttributes.Public | MemberAttributes.Final
 			};
+
 			return result;
 		}
 

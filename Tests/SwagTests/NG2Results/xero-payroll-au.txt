@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface Employees {
-		Employees1?: Array<Employee> | null;
+		Employees1?: Array<Employee>;
 	}
 
 	export interface Employee {
@@ -25,7 +25,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		DateOfBirth: string;
-		HomeAddress?: HomeAddress | null;
+		HomeAddress?: HomeAddress;
 
 		/** Start date for an employee (YYYY-MM-DD) */
 		StartDate?: string | null;
@@ -77,13 +77,13 @@ export namespace MyNS {
 
 		/** Employee Termination Date (YYYY-MM-DD) */
 		TerminationDate?: string | null;
-		BankAccounts?: Array<BankAccount> | null;
-		PayTemplate?: PayTemplate | null;
-		OpeningBalances?: OpeningBalances | null;
-		TaxDeclaration?: TaxDeclaration | null;
-		LeaveBalances?: Array<LeaveBalance> | null;
-		LeaveLines?: Array<LeaveLine> | null;
-		SuperMemberships?: Array<SuperMembership> | null;
+		BankAccounts?: Array<BankAccount>;
+		PayTemplate?: PayTemplate;
+		OpeningBalances?: OpeningBalances;
+		TaxDeclaration?: TaxDeclaration;
+		LeaveBalances?: Array<LeaveBalance>;
+		LeaveLines?: Array<LeaveLine>;
+		SuperMemberships?: Array<SuperMembership>;
 
 		/** Employee Status Types */
 		Status?: EmployeeStatus | null;
@@ -92,7 +92,7 @@ export namespace MyNS {
 		UpdatedDateUTC?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 	}
 
 	export interface HomeAddress {
@@ -145,11 +145,11 @@ export namespace MyNS {
 	}
 
 	export interface PayTemplate {
-		EarningsLines?: Array<EarningsLine> | null;
-		DeductionLines?: Array<DeductionLine> | null;
-		SuperLines?: Array<SuperLine> | null;
-		ReimbursementLines?: Array<ReimbursementLine> | null;
-		LeaveLines?: Array<LeaveLine> | null;
+		EarningsLines?: Array<EarningsLine>;
+		DeductionLines?: Array<DeductionLine>;
+		SuperLines?: Array<SuperLine>;
+		ReimbursementLines?: Array<ReimbursementLine>;
+		LeaveLines?: Array<LeaveLine>;
 	}
 
 	export interface EarningsLine {
@@ -281,11 +281,11 @@ export namespace MyNS {
 
 		/** Opening Balance tax */
 		Tax?: string | null;
-		EarningsLines?: Array<EarningsLine> | null;
-		DeductionLines?: Array<DeductionLine> | null;
-		SuperLines?: Array<SuperLine> | null;
-		ReimbursementLines?: Array<ReimbursementLine> | null;
-		LeaveLines?: Array<LeaveLine> | null;
+		EarningsLines?: Array<EarningsLine>;
+		DeductionLines?: Array<DeductionLine>;
+		SuperLines?: Array<SuperLine>;
+		ReimbursementLines?: Array<ReimbursementLine>;
+		LeaveLines?: Array<LeaveLine>;
 	}
 
 	export interface TaxDeclaration {
@@ -384,7 +384,7 @@ export namespace MyNS {
 	}
 
 	export interface LeaveApplications {
-		LeaveApplications1?: Array<LeaveApplication> | null;
+		LeaveApplications1?: Array<LeaveApplication>;
 	}
 
 	export interface LeaveApplication {
@@ -409,13 +409,13 @@ export namespace MyNS {
 
 		/** The Description of the Leave */
 		Description?: string | null;
-		LeavePeriods?: Array<LeavePeriod> | null;
+		LeavePeriods?: Array<LeavePeriod>;
 
 		/** Last modified timestamp */
 		UpdatedDateUTC?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 	}
 
 	export interface LeavePeriod {
@@ -436,14 +436,14 @@ export namespace MyNS {
 	export enum LeavePeriodStatus { SCHEDULED = 0, PROCESSED = 1 }
 
 	export interface PayItems {
-		PayItems1?: PayItem | null;
+		PayItems1?: PayItem;
 	}
 
 	export interface PayItem {
-		EarningsRates?: Array<EarningsRate> | null;
-		DeductionTypes?: Array<DeductionType> | null;
-		LeaveTypes?: Array<LeaveType> | null;
-		ReimbursementTypes?: Array<ReimbursementType> | null;
+		EarningsRates?: Array<EarningsRate>;
+		DeductionTypes?: Array<DeductionType>;
+		LeaveTypes?: Array<LeaveType>;
+		ReimbursementTypes?: Array<ReimbursementType>;
 	}
 
 	export interface EarningsRate {
@@ -592,7 +592,7 @@ export namespace MyNS {
 	}
 
 	export interface PayrollCalendars {
-		PayrollCalendars1?: Array<PayrollCalendar> | null;
+		PayrollCalendars1?: Array<PayrollCalendar>;
 	}
 
 	export interface PayrollCalendar {
@@ -614,13 +614,13 @@ export namespace MyNS {
 		UpdatedDateUTC?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 	}
 
 	export enum PayrollCalendarCalendarType { WEEKLY = 0, FORTNIGHTLY = 1, FOURWEEKLY = 2, MONTHLY = 3, TWICEMONTHLY = 4, QUARTERLY = 5 }
 
 	export interface Timesheets {
-		Timesheets1?: Array<Timesheet> | null;
+		Timesheets1?: Array<Timesheet>;
 	}
 
 	export interface Timesheet {
@@ -649,13 +649,13 @@ export namespace MyNS {
 
 		/** The Xero identifier for a Payroll Timesheet */
 		TimesheetID?: string | null;
-		TimesheetLines?: Array<TimesheetLine> | null;
+		TimesheetLines?: Array<TimesheetLine>;
 
 		/** Last modified timestamp */
 		UpdatedDateUTC?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 	}
 
 	export enum TimesheetStatus { DRAFT = 0, PROCESSED = 1, APPROVED = 2 }
@@ -669,18 +669,18 @@ export namespace MyNS {
 		TrackingItemID?: string | null;
 
 		/** The number of units on a timesheet line */
-		NumberOfUnits?: Array<number> | null;
+		NumberOfUnits?: Array<number>;
 
 		/** Last modified timestamp */
 		UpdatedDateUTC?: string | null;
 	}
 
 	export interface TimesheetObject {
-		Timesheet?: Timesheet | null;
+		Timesheet?: Timesheet;
 	}
 
 	export interface PayRuns {
-		PayRuns1?: Array<PayRun> | null;
+		PayRuns1?: Array<PayRun>;
 	}
 
 	export interface PayRun {
@@ -711,7 +711,7 @@ export namespace MyNS {
 		UpdatedDateUTC?: string | null;
 
 		/** The payslips in the payrun */
-		Payslips?: Array<PayslipSummary> | null;
+		Payslips?: Array<PayslipSummary>;
 
 		/** The total Wages for the Payrun */
 		Wages?: number | null;
@@ -732,7 +732,7 @@ export namespace MyNS {
 		NetPay?: number | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 	}
 
 	export enum PayRunPayRunStatus { DRAFT = 0, POSTED = 1 }
@@ -777,14 +777,14 @@ export namespace MyNS {
 	}
 
 	export interface PayslipLines {
-		EarningsLines?: Array<EarningsLine> | null;
-		LeaveEarningsLines?: Array<LeaveEarningsLine> | null;
-		TimesheetEarningsLines?: Array<EarningsLine> | null;
-		DeductionLines?: Array<DeductionLine> | null;
-		LeaveAccrualLines?: Array<LeaveAccrualLine> | null;
-		ReimbursementLines?: Array<ReimbursementLine> | null;
-		SuperannuationLines?: Array<SuperannuationLine> | null;
-		TaxLines?: Array<TaxLine> | null;
+		EarningsLines?: Array<EarningsLine>;
+		LeaveEarningsLines?: Array<LeaveEarningsLine>;
+		TimesheetEarningsLines?: Array<EarningsLine>;
+		DeductionLines?: Array<DeductionLine>;
+		LeaveAccrualLines?: Array<LeaveAccrualLine>;
+		ReimbursementLines?: Array<ReimbursementLine>;
+		SuperannuationLines?: Array<SuperannuationLine>;
+		TaxLines?: Array<TaxLine>;
 	}
 
 	export interface LeaveEarningsLine {
@@ -859,7 +859,7 @@ export namespace MyNS {
 	export enum TaxLineManualTaxType { PAYGMANUAL = 0, ETPOMANUAL = 1, ETPRMANUAL = 2 }
 
 	export interface PayslipObject {
-		Payslip?: Payslip | null;
+		Payslip?: Payslip;
 	}
 
 	export interface Payslip {
@@ -893,34 +893,34 @@ export namespace MyNS {
 
 		/** The NetPay for the Payslip */
 		NetPay?: number | null;
-		EarningsLines?: Array<EarningsLine> | null;
-		LeaveEarningsLines?: Array<LeaveEarningsLine> | null;
-		TimesheetEarningsLines?: Array<EarningsLine> | null;
-		DeductionLines?: Array<DeductionLine> | null;
-		LeaveAccrualLines?: Array<LeaveAccrualLine> | null;
-		ReimbursementLines?: Array<ReimbursementLine> | null;
-		SuperannuationLines?: Array<SuperannuationLine> | null;
-		TaxLines?: Array<TaxLine> | null;
+		EarningsLines?: Array<EarningsLine>;
+		LeaveEarningsLines?: Array<LeaveEarningsLine>;
+		TimesheetEarningsLines?: Array<EarningsLine>;
+		DeductionLines?: Array<DeductionLine>;
+		LeaveAccrualLines?: Array<LeaveAccrualLine>;
+		ReimbursementLines?: Array<ReimbursementLine>;
+		SuperannuationLines?: Array<SuperannuationLine>;
+		TaxLines?: Array<TaxLine>;
 
 		/** Last modified timestamp */
 		UpdatedDateUTC?: string | null;
 	}
 
 	export interface Payslips {
-		Payslips1?: Array<Payslip> | null;
+		Payslips1?: Array<Payslip>;
 	}
 
 	export interface SettingsObject {
-		Settings?: Settings | null;
+		Settings?: Settings;
 	}
 
 	export interface Settings {
 
 		/** Payroll Account details for SuperExpense, SuperLiabilty, WagesExpense, PAYGLiability & WagesPayable. */
-		Accounts?: Array<Account> | null;
+		Accounts?: Array<Account>;
 
 		/** Tracking categories for Employees and Timesheets */
-		TrackingCategories?: SettingsTrackingCategories | null;
+		TrackingCategories?: SettingsTrackingCategories;
 
 		/** Number of days in the Payroll year */
 		DaysInPayrollYear?: number | null;
@@ -946,10 +946,10 @@ export namespace MyNS {
 	export interface SettingsTrackingCategories {
 
 		/** The tracking category used for employees */
-		EmployeeGroups?: SettingsTrackingCategoriesEmployeeGroups | null;
+		EmployeeGroups?: SettingsTrackingCategoriesEmployeeGroups;
 
 		/** The tracking category used for timesheets */
-		TimesheetCategories?: SettingsTrackingCategoriesTimesheetCategories | null;
+		TimesheetCategories?: SettingsTrackingCategoriesTimesheetCategories;
 	}
 
 	export interface SettingsTrackingCategoriesEmployeeGroups {
@@ -971,7 +971,7 @@ export namespace MyNS {
 	}
 
 	export interface SuperFunds {
-		SuperFunds1?: Array<SuperFund> | null;
+		SuperFunds1?: Array<SuperFund>;
 	}
 
 	export interface SuperFund {
@@ -1011,13 +1011,13 @@ export namespace MyNS {
 		UpdatedDateUTC?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 	}
 
 	export enum SuperFundType { REGULATED = 0, SMSF = 1 }
 
 	export interface SuperFundProducts {
-		SuperFundProducts1?: Array<SuperFundProduct> | null;
+		SuperFundProducts1?: Array<SuperFundProduct>;
 	}
 
 	export interface SuperFundProduct {
@@ -1038,13 +1038,13 @@ export namespace MyNS {
 
 	/** The reimbursement type lines */
 	export interface ReimbursementLines {
-		ReimbursementLines1?: Array<ReimbursementLine> | null;
+		ReimbursementLines1?: Array<ReimbursementLine>;
 	}
 
 
 	/** The leave type lines */
 	export interface LeaveLines {
-		Employee?: Array<LeaveLine> | null;
+		Employee?: Array<LeaveLine>;
 	}
 
 	export enum RateType { FIXEDAMOUNT = 0, MULTIPLE = 1, RATEPERUNIT = 2 }

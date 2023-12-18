@@ -31,7 +31,7 @@ namespace SwagTests
 			codeCompileUnit.Namespaces.Add(clientNamespace);//namespace added to Dom
 
 			ComponentsToCsTypes gen = new(settings, codeCompileUnit, clientNamespace);
-			gen.CreateCodeDom(doc.Components);
+			gen.CreateCodeDomForComponents(doc.Components);
 			return gen.WriteToText();
 		}
 

@@ -105,7 +105,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			CodeCompileUnit.Namespaces.Add(clientNamespace);//namespace added to Dom
 
 			ComponentsToTsTypes componentsToTsTypes = new(settings, jsOutput, CodeCompileUnit, clientNamespace);
-			componentsToTsTypes.CreateCodeDom(components);
+			componentsToTsTypes.CreateCodeDomForComponents(components);
 
 			if (paths == null)
 				return;
@@ -134,7 +134,6 @@ namespace Fonlow.CodeDom.Web.Ts
 					existingClass.Members.Add(apiFunction);
 				}
 			}
-
 
 			foreach (CodeTypeDeclaration c in newClassesCreated)
 			{

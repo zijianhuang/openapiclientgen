@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface FeedConnections {
-		pagination?: Pagination | null;
-		items?: Array<FeedConnection> | null;
+		pagination?: Pagination;
+		items?: Array<FeedConnection>;
 	}
 
 	export interface Pagination {
@@ -61,7 +61,7 @@ export namespace MyNS {
 		status?: FeedConnectionStatus | null;
 
 		/** On error, the API consumer will receive an HTTP response with a HTTP Status Code of 4xx or 5xx and a Content-Type of application/problem+json. */
-		error?: Error | null;
+		error?: Error;
 	}
 
 	export enum FeedConnectionAccountType { BANK = 0, CREDITCARD = 1 }
@@ -98,8 +98,8 @@ export namespace MyNS {
 	export enum ErrorType { invalid_request = 0, invalid_application = 1, invalid_feed_connection = 2, duplicate_statement = 3, invalid_end_balance = 4, invalid_start_and_end_date = 5, invalid_start_date = 6, internal_error = 7, feed_already_connected_in_current_organisation = 8 }
 
 	export interface Statements {
-		pagination?: Pagination | null;
-		items?: Array<Statement> | null;
+		pagination?: Pagination;
+		items?: Array<Statement>;
 	}
 
 	export interface Statement {
@@ -120,12 +120,12 @@ export namespace MyNS {
 		endDate?: Date | null;
 
 		/** The starting balance of the statement */
-		startBalance?: StartBalance | null;
+		startBalance?: StartBalance;
 
 		/** The StartBalance plus all the Statement Line Amounts should be equal to the EndBalance Amount. */
-		endBalance?: EndBalance | null;
-		statementLines?: Array<StatementLine> | null;
-		errors?: Array<Error> | null;
+		endBalance?: EndBalance;
+		statementLines?: Array<StatementLine>;
+		errors?: Array<Error>;
 		statementLineCount?: number | null;
 	}
 

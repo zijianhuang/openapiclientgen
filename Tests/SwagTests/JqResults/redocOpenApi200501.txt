@@ -31,7 +31,7 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Test Sub Category */
-		sub?: CategorySub | null;
+		sub?: CategorySub;
 	}
 
 	export interface CategorySub {
@@ -113,7 +113,7 @@ export namespace MyNS {
 		 * Tags attached to the pet
 		 * Minimum items: 1
 		 */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 
 		/** Pet status in the store */
 		status?: PetStatus | null;

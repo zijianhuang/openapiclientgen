@@ -25,7 +25,7 @@ export namespace MyNS {
 		/** A description of the error */
 		detail?: string | null;
 		instance?: string | null;
-		invalidFields?: Array<InvalidField> | null;
+		invalidFields?: Array<InvalidField>;
 	}
 
 	export interface InvalidField {
@@ -41,8 +41,8 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		employees?: Array<Employee> | null;
+		problem?: Problem;
+		employees?: Array<Employee>;
 	}
 
 	export interface Employee {
@@ -61,7 +61,7 @@ export namespace MyNS {
 
 		/** Date of birth of the employee (YYYY-MM-DD) */
 		dateOfBirth?: Date | null;
-		address?: Address | null;
+		address?: Address;
 
 		/** The email address for the employee */
 		email?: string | null;
@@ -122,18 +122,18 @@ export namespace MyNS {
 
 	export interface EmployeeObject {
 		pagination?: Pagination | null;
-		employee?: Employee | null;
+		employee?: Employee;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
+		problem?: Problem;
 	}
 
 	export interface EmploymentObject {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		employment?: Employment | null;
+		problem?: Problem;
+		employment?: Employment;
 	}
 
 	export interface Employment {
@@ -157,8 +157,8 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		employeeTax?: EmployeeTax | null;
+		problem?: Problem;
+		employeeTax?: EmployeeTax;
 	}
 
 	export interface EmployeeTax {
@@ -201,8 +201,8 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		openingBalances?: EmployeeOpeningBalances | null;
+		problem?: Problem;
+		openingBalances?: EmployeeOpeningBalances;
 	}
 
 	export interface EmployeeOpeningBalances {
@@ -230,8 +230,8 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		leave?: Array<EmployeeLeave> | null;
+		problem?: Problem;
+		leave?: Array<EmployeeLeave>;
 	}
 
 	export interface EmployeeLeave {
@@ -264,7 +264,7 @@ export namespace MyNS {
 		endDate: Date;
 
 		/** The leave period information. The StartDate, EndDate and NumberOfUnits needs to be specified when you do not want to calculate NumberOfUnits automatically. Using incorrect period StartDate and EndDate will result in automatic computation of the NumberOfUnits. */
-		periods?: Array<LeavePeriod> | null;
+		periods?: Array<LeavePeriod>;
 
 		/** UTC timestamp of last update to the leave type note */
 		updatedDateUTC?: Date | null;
@@ -291,24 +291,24 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		leave?: EmployeeLeave | null;
+		problem?: Problem;
+		leave?: EmployeeLeave;
 	}
 
 	export interface LeavePeriods {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		periods?: Array<LeavePeriod> | null;
+		problem?: Problem;
+		periods?: Array<LeavePeriod>;
 	}
 
 	export interface EmployeeLeaveBalances {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		leaveBalances?: Array<EmployeeLeaveBalance> | null;
+		problem?: Problem;
+		leaveBalances?: Array<EmployeeLeaveBalance>;
 	}
 
 	export interface EmployeeLeaveBalance {
@@ -330,8 +330,8 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		leaveBalance?: EmployeeStatutoryLeaveBalance | null;
+		problem?: Problem;
+		leaveBalance?: EmployeeStatutoryLeaveBalance;
 	}
 
 	export interface EmployeeStatutoryLeaveBalance {
@@ -354,8 +354,8 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		statutoryLeaves?: Array<EmployeeStatutoryLeaveSummary> | null;
+		problem?: Problem;
+		statutoryLeaves?: Array<EmployeeStatutoryLeaveSummary>;
 	}
 
 	export interface EmployeeStatutoryLeaveSummary {
@@ -388,8 +388,8 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		statutorySickLeave?: Array<EmployeeStatutorySickLeave> | null;
+		problem?: Problem;
+		statutorySickLeave?: Array<EmployeeStatutorySickLeave>;
 	}
 
 	export interface EmployeeStatutorySickLeave {
@@ -461,23 +461,23 @@ export namespace MyNS {
 		overlapsWithOtherLeave?: boolean | null;
 
 		/** If the leave requested was considered "not entitled", the reasons why are listed here. */
-		entitlementFailureReasons?: Array<string> | null;
+		entitlementFailureReasons?: Array<string>;
 	}
 
 	export interface EmployeeStatutorySickLeaveObject {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		statutorySickLeave?: EmployeeStatutorySickLeave | null;
+		problem?: Problem;
+		statutorySickLeave?: EmployeeStatutorySickLeave;
 	}
 
 	export interface EmployeeLeaveTypes {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		leaveTypes?: Array<EmployeeLeaveType> | null;
+		problem?: Problem;
+		leaveTypes?: Array<EmployeeLeaveType>;
 	}
 
 	export interface EmployeeLeaveType {
@@ -513,23 +513,23 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		leaveType?: EmployeeLeaveType | null;
+		problem?: Problem;
+		leaveType?: EmployeeLeaveType;
 	}
 
 	export interface EmployeePayTemplateObject {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		payTemplate?: EmployeePayTemplate | null;
+		problem?: Problem;
+		payTemplate?: EmployeePayTemplate;
 	}
 
 	export interface EmployeePayTemplate {
 
 		/** Unique identifier for the employee */
 		employeeID?: string | null;
-		earningTemplates?: Array<EarningsTemplate> | null;
+		earningTemplates?: Array<EarningsTemplate>;
 	}
 
 	export interface EarningsTemplate {
@@ -557,24 +557,24 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		earningTemplates?: Array<EarningsTemplate> | null;
+		problem?: Problem;
+		earningTemplates?: Array<EarningsTemplate>;
 	}
 
 	export interface EarningsTemplateObject {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		earningTemplate?: EarningsTemplate | null;
+		problem?: Problem;
+		earningTemplate?: EarningsTemplate;
 	}
 
 	export interface Benefits {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		benefits?: Array<Benefit> | null;
+		problem?: Problem;
+		benefits?: Array<Benefit>;
 	}
 
 	export interface Benefit {
@@ -651,16 +651,16 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		benefit?: Benefit | null;
+		problem?: Problem;
+		benefit?: Benefit;
 	}
 
 	export interface Deductions {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		deductions?: Array<Deduction> | null;
+		problem?: Problem;
+		deductions?: Array<Deduction>;
 	}
 
 	export interface Deduction {
@@ -732,8 +732,8 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		deduction?: Deduction | null;
+		problem?: Problem;
+		deduction?: Deduction;
 	}
 
 	export interface StatutoryDeduction {
@@ -764,8 +764,8 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		statutoryDeductions?: Array<EarningsOrder> | null;
+		problem?: Problem;
+		statutoryDeductions?: Array<EarningsOrder>;
 	}
 
 	export interface EarningsOrder {
@@ -793,16 +793,16 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		statutoryDeduction?: EarningsOrder | null;
+		problem?: Problem;
+		statutoryDeduction?: EarningsOrder;
 	}
 
 	export interface EarningsRates {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		earningsRates?: Array<EarningsRate> | null;
+		problem?: Problem;
+		earningsRates?: Array<EarningsRate>;
 	}
 
 	export interface EarningsRate {
@@ -861,16 +861,16 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		earningsRate?: EarningsRate | null;
+		problem?: Problem;
+		earningsRate?: EarningsRate;
 	}
 
 	export interface LeaveTypes {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		leaveTypes?: Array<LeaveType> | null;
+		problem?: Problem;
+		leaveTypes?: Array<LeaveType>;
 	}
 
 	export interface LeaveType {
@@ -913,16 +913,16 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		leaveType?: LeaveType | null;
+		problem?: Problem;
+		leaveType?: LeaveType;
 	}
 
 	export interface Reimbursements {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		reimbursements?: Array<Reimbursement> | null;
+		problem?: Problem;
+		reimbursements?: Array<Reimbursement>;
 	}
 
 	export interface Reimbursement {
@@ -950,16 +950,16 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		reimbursement?: Reimbursement | null;
+		problem?: Problem;
+		reimbursement?: Reimbursement;
 	}
 
 	export interface Timesheets {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		timesheets?: Array<Timesheet> | null;
+		problem?: Problem;
+		timesheets?: Array<Timesheet>;
 	}
 
 	export interface Timesheet {
@@ -999,7 +999,7 @@ export namespace MyNS {
 
 		/** The UTC date time that the Timesheet was last updated */
 		updatedDateUTC?: Date | null;
-		timesheetLines?: Array<TimesheetLine> | null;
+		timesheetLines?: Array<TimesheetLine>;
 	}
 
 	export enum TimesheetStatus { Draft = 0, Approved = 1, Completed = 2 }
@@ -1035,24 +1035,24 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		timesheet?: Timesheet | null;
+		problem?: Problem;
+		timesheet?: Timesheet;
 	}
 
 	export interface TimesheetLineObject {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		timesheetLine?: TimesheetLine | null;
+		problem?: Problem;
+		timesheetLine?: TimesheetLine;
 	}
 
 	export interface PayRunCalendars {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		payRunCalendars?: Array<PayRunCalendar> | null;
+		problem?: Problem;
+		payRunCalendars?: Array<PayRunCalendar>;
 	}
 
 	export interface PayRunCalendar {
@@ -1097,16 +1097,16 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		payRunCalendar?: PayRunCalendar | null;
+		problem?: Problem;
+		payRunCalendar?: PayRunCalendar;
 	}
 
 	export interface PaymentMethodObject {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		paymentMethod?: PaymentMethod | null;
+		problem?: Problem;
+		paymentMethod?: PaymentMethod;
 	}
 
 	export interface PaymentMethod {
@@ -1116,7 +1116,7 @@ export namespace MyNS {
 		 * Required
 		 */
 		paymentMethod: PaymentMethodPaymentMethod;
-		bankAccounts?: Array<BankAccount> | null;
+		bankAccounts?: Array<BankAccount>;
 	}
 
 	export enum PaymentMethodPaymentMethod { Cheque = 0, Electronically = 1, Manual = 2 }
@@ -1146,8 +1146,8 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		salaryAndWages?: Array<SalaryAndWage> | null;
+		problem?: Problem;
+		salaryAndWages?: Array<SalaryAndWage>;
 	}
 
 	export interface SalaryAndWage {
@@ -1212,16 +1212,16 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		salaryAndWages?: SalaryAndWage | null;
+		problem?: Problem;
+		salaryAndWages?: SalaryAndWage;
 	}
 
 	export interface PayRuns {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		payRuns?: Array<PayRun> | null;
+		problem?: Problem;
+		payRuns?: Array<PayRun>;
 	}
 
 	export interface PayRun {
@@ -1258,7 +1258,7 @@ export namespace MyNS {
 
 		/** Posted date time of the pay run */
 		postedDateTime?: Date | null;
-		paySlips?: Array<Payslip> | null;
+		paySlips?: Array<Payslip>;
 	}
 
 	export enum PayRunPayRunStatus { Draft = 0, Posted = 1 }
@@ -1317,16 +1317,16 @@ export namespace MyNS {
 
 		/** The payment method code */
 		paymentMethod?: PaymentMethodPaymentMethod | null;
-		earningsLines?: Array<EarningsLine> | null;
-		leaveEarningsLines?: Array<LeaveEarningsLine> | null;
-		timesheetEarningsLines?: Array<TimesheetEarningsLine> | null;
-		deductionLines?: Array<DeductionLine> | null;
-		reimbursementLines?: Array<ReimbursementLine> | null;
-		leaveAccrualLines?: Array<LeaveAccrualLine> | null;
-		benefitLines?: Array<BenefitLine> | null;
-		paymentLines?: Array<PaymentLine> | null;
-		employeeTaxLines?: Array<TaxLine> | null;
-		courtOrderLines?: Array<CourtOrderLine> | null;
+		earningsLines?: Array<EarningsLine>;
+		leaveEarningsLines?: Array<LeaveEarningsLine>;
+		timesheetEarningsLines?: Array<TimesheetEarningsLine>;
+		deductionLines?: Array<DeductionLine>;
+		reimbursementLines?: Array<ReimbursementLine>;
+		leaveAccrualLines?: Array<LeaveAccrualLine>;
+		benefitLines?: Array<BenefitLine>;
+		paymentLines?: Array<PaymentLine>;
+		employeeTaxLines?: Array<TaxLine>;
+		courtOrderLines?: Array<CourtOrderLine>;
 	}
 
 	export interface EarningsLine {
@@ -1507,36 +1507,36 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		payRun?: PayRun | null;
+		problem?: Problem;
+		payRun?: PayRun;
 	}
 
 	export interface PayslipObject {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		paySlip?: Payslip | null;
+		problem?: Problem;
+		paySlip?: Payslip;
 	}
 
 	export interface Payslips {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		paySlips?: Array<Payslip> | null;
+		problem?: Problem;
+		paySlips?: Array<Payslip>;
 	}
 
 	export interface Settings {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		settings?: Accounts | null;
+		problem?: Problem;
+		settings?: Accounts;
 	}
 
 	export interface Accounts {
-		accounts?: Array<Account> | null;
+		accounts?: Array<Account>;
 	}
 
 	export interface Account {
@@ -1560,8 +1560,8 @@ export namespace MyNS {
 		pagination?: Pagination | null;
 
 		/** The object returned for a bad request */
-		problem?: Problem | null;
-		trackingCategories?: TrackingCategory | null;
+		problem?: Problem;
+		trackingCategories?: TrackingCategory;
 	}
 
 	export interface TrackingCategory {

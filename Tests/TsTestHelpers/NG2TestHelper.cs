@@ -30,7 +30,11 @@ namespace SwagTests
 				DataAnnotationsToComments = true,
 			});
 
-			File.WriteAllText(expectedFile, s); // *** To update Results after some feature changes. Copy what in the bin folder back to the source content.
+			if (TestingSettings.Instance.UpdateGenerated)
+			{
+				File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
+			}
+
 			string expected = ReadFromResults(expectedFile);
 			Assert.Equal(expected, s);
 

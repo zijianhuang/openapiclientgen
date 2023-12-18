@@ -3,7 +3,7 @@ import {autoinject} from 'aurelia-framework';
 export namespace MyNS {
 	export interface DataSetList {
 		total?: number | null;
-		DataSetListApis?: Array<DataSetListApis> | null;
+		DataSetListApis?: Array<DataSetListApis>;
 	}
 
 	export interface DataSetListApis {

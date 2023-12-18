@@ -28,13 +28,13 @@ export namespace MyNS {
 	export interface Deposit {
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		amount?: Amount | null;
+		amount?: Amount;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		dueIn?: TimeDuration | null;
+		dueIn?: TimeDuration;
 
 		/** A list of accepted payment methods. For deposits (which are applicable to only motor listings), the paymentMethodType must be set to 'PayPal' */
-		paymentMethods?: Array<PaymentMethod> | null;
+		paymentMethods?: Array<PaymentMethod>;
 	}
 
 
@@ -53,13 +53,13 @@ export namespace MyNS {
 	export interface PaymentMethod {
 
 		/** Required if paymentMethodType is set to CREDIT_CARD. A list of credit card brands accepted by the seller. It's important to note that the credit card brands Visa and MasterCard must both be listed if either one is listed, as is shown in the following code fragment: &quot;paymentMethods&quot;: [{ &quot;brands&quot;: [VISA, MASTERCARD] }] ... Note: Different eBay marketplaces may or may not support this field. Use the Trading API GetCategoryFeatures call with FeatureID set to PaymentMethods and DetailLevel set to ReturnAll to see what credit card brands different marketplaces support. If the GetCategoryFeatures call returns details on credit card brands for the categories in which you sell, then you can use this field to list the credit card brands the seller accepts. If, on the other hand, GetCategoryFeatures does not enumerate credit card brands for your target site (for example, if it returns PaymentMethod set to CCAccepted), then you cannot enumerate specific credit card brands with this field for that marketplace. */
-		brands?: Array<string> | null;
+		brands?: Array<string>;
 
 		/** The payment method, selected from the supported payment method types. Use GetCategoryFeatures in the Trading API to retrieve the payment methods allowed for a category on a specific marketplace, as well as the default payment method for that marketplace (review the SiteDefaults.PaymentMethod field). For example, the response from GetCategoryFeatures shows that on the US marketplace, most categories allow only electronic payments via credit cards, PayPal, and the like. Also, note that GeteBayDetails does not return payment method information. Note: If you create item listings using the Inventory API, you must set this field to PAYPAL (currently, the Inventory API supports only fixed-prince GTC items where the only supported paymentMethod is PayPal). For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/PaymentMethodTypeEnum.html'>eBay API documentation</a> */
 		paymentMethodType?: string | null;
 
 		/** Recipient account information, like PayPal email. If the payment method is PayPal, this structure contains the recipient's PayPal email address. */
-		recipientAccountReference?: RecipientAccountReference | null;
+		recipientAccountReference?: RecipientAccountReference;
 	}
 
 
@@ -78,7 +78,7 @@ export namespace MyNS {
 	export interface FulfillmentPolicy {
 
 		/** The CategoryTypeEnum value to which this policy applies. Used to discern accounts that sell motor vehicles from those that don't. (Currently, each policy can be set to only one categoryTypes value at a time.) */
-		categoryTypes?: Array<CategoryType> | null;
+		categoryTypes?: Array<CategoryType>;
 
 		/** An optional seller-defined description of the fulfillment policy for internal use (this value is not displayed to end users). Max length: 250 */
 		description?: string | null;
@@ -93,7 +93,7 @@ export namespace MyNS {
 		globalShipping?: boolean | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		handlingTime?: TimeDuration | null;
+		handlingTime?: TimeDuration;
 
 		/** If set to true, the seller offers local pickup of their items. Local pickup is supported by the Inventory API, and it can be used with Add/Revise/Relist calls. To enable local pickup, a seller (1) must be eligible for local pickup and (2) must set this boolean field to 'true'. Currently, local pickup is available to only large retail merchants and can be applied to only multiple-quantity, fixed-price listings. In addition to setting this field, the merchant must also do the following to enable the &quot;Local Pickup&quot; option on a multiple-quantity, fixed-price listing: Have inventory for the product at one or more physical stores tied to the merchant's account. Sellers can use the createInventoryLocaion method in the Inventory API to associate physical stores to their account and they can then can add inventory to specific store locations. Include the seller-defined SKU value of the product(s) in the request. For single-variation listings, the SKU value is specified in the Item.SKU field and for multiple-variation listings, the SKU value(s) are specified in the Item.Variations.Variation.SKU field(s). Set an immediate payment requirement on the item. The immediate payment feature requires the seller to: Include only one paymentMethods field in the payment policy and set its value to PAYPAL. Include a valid PayPal contact in the recipientAccountReference.referenceId field of the payment policy. Have a valid store location with a complete street address. When a seller is successful at listing an item with the In-Store Pickup feature enabled, prospective buyers within a reasonable distance (25 miles or so) from one of the seller's stores (that has stock available) will see the &quot;Available for In-Store Pickup&quot; option on the listing, along with information on the closest store that has the item.Default: false */
 		localPickup?: boolean | null;
@@ -108,10 +108,10 @@ export namespace MyNS {
 		pickupDropOff?: boolean | null;
 
 		/** A list that defines the seller's shipping configurations for DOMESTIC and INTERNATIONAL order shipments. shippingOptions is a list with a single element if the seller ships to only domestic locations. If the seller also ships internationally, the list contains a second element that defines their international shipping options. Shipping options configure the high-level shipping settings that apply to orders, such as flat-rate or calculated shipping, any rate tables the seller wants to associate with the shipping services, plus other details (such as the shippingServices offered for domestic or international shipments). */
-		shippingOptions?: Array<ShippingOption> | null;
+		shippingOptions?: Array<ShippingOption>;
 
 		/** This complex type contains the regionIncluded and regionExcluded fields, which indicate the areas to where the seller does and doesn't ship. Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options, and they don't have a need to exclude any regions from their ship-to locations. Here, there's no reason to set regionExcluded fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region. Note: Configuring the shipToLocations is tricky because the regionIncluded and regionExcluded fields are valid in different parts of the schema and their allowable settings vary upon the context. For details on setting these fields, see . */
-		shipToLocations?: RegionSet | null;
+		shipToLocations?: RegionSet;
 	}
 
 
@@ -122,7 +122,7 @@ export namespace MyNS {
 		costType?: string | null;
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		insuranceFee?: Amount | null;
+		insuranceFee?: Amount;
 
 		/** If set to true, the seller offers buyer-paid shipping insurance. The optionType shows whether this is for either a domestic or international shipment. Buyer-paid shipping insurance is currently supported in only Australia (AU), France (FR), and Italy (IT). */
 		insuranceOffered?: boolean | null;
@@ -131,13 +131,13 @@ export namespace MyNS {
 		optionType?: string | null;
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		packageHandlingCost?: Amount | null;
+		packageHandlingCost?: Amount;
 
 		/** A unique eBay-assigned ID associated with a user-created shipping rate table. The locality of a shipping rate table can be either DOMESTIC or INTERNATIONAL and you must ensure the value specified in this field references a shipping rate table that matches the type specified in the shippingOptions.optionType field. If you mismatch the types, eBay responds with a 20403 error. Call getRateTable to retrieve information (including rateTableId values) on the rate tables configured by a seller. For information on creating rate tables, see Using shipping rate tables. */
 		rateTableId?: string | null;
 
 		/** Required if the policy offers shipping options using a shippingOptions container. Contains a list of shipping services offered for either DOMESTIC or INTERNATIONAL shipments. Sellers can specify up to four domestic shipping services and up to five international shipping services by using separate shippingService containers for each. Note that if the seller is opted in to the Global Shipping Program, they can specify only four other international shipping services, regardless of whether or not Global Shipping is offered as one of the services. */
-		shippingServices?: Array<ShippingService> | null;
+		shippingServices?: Array<ShippingService>;
 	}
 
 
@@ -145,7 +145,7 @@ export namespace MyNS {
 	export interface ShippingService {
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		additionalShippingCost?: Amount | null;
+		additionalShippingCost?: Amount;
 
 		/** This field is only applicable to vehicle categories on eBay Motors (US and Canada). If set to true, the buyer is responsible for picking up the vehicle. Otherwise, the seller should specify the vehicle pickup arrangements in the item description. The seller cannot modify this flag if the vehicle has bids or if the listing ends within 12 hours. Default: false */
 		buyerResponsibleForPickup?: boolean | null;
@@ -154,7 +154,7 @@ export namespace MyNS {
 		buyerResponsibleForShipping?: boolean | null;
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		cashOnDeliveryFee?: Amount | null;
+		cashOnDeliveryFee?: Amount;
 
 		/** If set to true, the seller offers free shipping to the buyer. This field can only be included and set to 'true' for the first domestic shipping service option specified in the shippingServices container (it is ignored if set for subsequent shipping services). The first specified shipping service option has a sortOrder value of 1 or (if the sortOrderId field is not used) it is the shipping service option that's specified first in the shippingServices container. */
 		freeShipping?: boolean | null;
@@ -163,19 +163,19 @@ export namespace MyNS {
 		shippingCarrierCode?: string | null;
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		shippingCost?: Amount | null;
+		shippingCost?: Amount;
 
 		/** The shipping service that the shipping carrier uses to ship an item. For example, an overnight, two-day delivery, or other type of service. For details on configuring shipping services, see Setting the shipping carrier and shipping service values. */
 		shippingServiceCode?: string | null;
 
 		/** This complex type contains the regionIncluded and regionExcluded fields, which indicate the areas to where the seller does and doesn't ship. Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options, and they don't have a need to exclude any regions from their ship-to locations. Here, there's no reason to set regionExcluded fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region. Note: Configuring the shipToLocations is tricky because the regionIncluded and regionExcluded fields are valid in different parts of the schema and their allowable settings vary upon the context. For details on setting these fields, see . */
-		shipToLocations?: RegionSet | null;
+		shipToLocations?: RegionSet;
 
 		/** This integer value controls the order that this shipping service option appears in the View Item and Checkout pages, as related to the other specified shipping service options. Sellers can specify up to four domestic shipping services (in four separate shippingService containers), so valid values are 1, 2, 3, and 4. A shipping service option with a sortOrder value of '1' appears at the top of View Item and Checkout pages. Conversely, a shipping service option with a sortOrder value of '4' appears at the bottom of the list. Sellers can specify up to five international shipping services (in five separate shippingService containers, so valid values for international shipping services are 1, 2, 3, 4, and 5. Similarly to domestic shipping service options, the sortOrder value of a international shipping service option controls the placement of that shipping service option in the View Item and Checkout pages. Set up different domestic and international services by configuring two shippingOptions containers, where you set shippingOptions.optionType to either DOMESTIC or INTERNATIONAL to indicate the area supported by the listed shipping services. If the sortOrder field is not supplied, the order of domestic and international shipping service options is determined by the order in which they are listed in the API call. Min: 1. Max: 4 (for domestic shipping service) or 5 (for international shipping service). */
 		sortOrder?: number | null;
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		surcharge?: Amount | null;
+		surcharge?: Amount;
 	}
 
 
@@ -183,10 +183,10 @@ export namespace MyNS {
 	export interface RegionSet {
 
 		/** A list of one or more regionsName fields that specify the areas to where a seller does not ship. Populate regionExcluded in only the top-level shipToLocations container (do not populate this field within the shippingOptions container). Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options and they don't have a need to exclude any regions from their ship-to locations. With this, there's no reason to set regionExclude fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's located within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region, from the larger world area they ship to. To retrieve the regions you can specify in the associated regionName field, call GeteBayDetails with DetailName set to ExcludeShippingLocationDetails, then review the Location fields in the response for the strings that you can specify regionExcluded.regionName. Note that if a buyer's primary ship-to location is a region that a seller has excluded in their fulfillment policy (or if the buyer does not have a primary ship-to location), they will receive an error message if they attempt to buy or place a bid on an item that uses that fulfillment policy. For details on setting this field, see Excluding specific regions from included shipping areas. */
-		regionExcluded?: Array<Region> | null;
+		regionExcluded?: Array<Region>;
 
 		/** Required if optionType set to INTERNATIONAL. A list of one or more regionsName fields that specify the areas to where a seller ships. Important: Populate this field only when the parent shipToLocations object is located within a shippingOptions container (that is, the parent shipTolocations object must not be the one at the top-level of the policy). Also, this field needs to be populated only when the associated shippingOptions container has optionType set to INTERNATIONAL. Withing an international shipping option, set this value to Worldwide to indicate the seller ships to all world regions. If needed, use the regionExcluded field to exclude any regions in the world to where the seller does not ship. Each eBay marketplace supports its own set of allowable shipping locations. Obtain the valid 'Ship-To Locations' for a marketplace by calling GeteBayDetails with DetailName set to ShippingLocationDetails, then review the ShippingLocation fields in the response for the strings that you can specify in the regionIncluded.regionName field. For DOMESTIC shipping options, eBay automatically uses the seller's listing country as the default regionIncluded country. For details on setting this field, see How to set up worldwide shipping. This field is always returned in the shipping policy response. */
-		regionIncluded?: Array<Region> | null;
+		regionIncluded?: Array<Region>;
 	}
 
 
@@ -205,7 +205,7 @@ export namespace MyNS {
 	export interface FulfillmentPolicyRequest {
 
 		/** The CategoryTypeEnum value to which this policy applies. Used to discern accounts that sell motor vehicles from those that don't. (Currently, each policy can be set to only one categoryTypes value at a time.) */
-		categoryTypes?: Array<CategoryType> | null;
+		categoryTypes?: Array<CategoryType>;
 
 		/** An optional seller-defined description of the fulfillment policy for internal use (this value is not displayed to end users). Max length: 250 */
 		description?: string | null;
@@ -217,7 +217,7 @@ export namespace MyNS {
 		globalShipping?: boolean | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		handlingTime?: TimeDuration | null;
+		handlingTime?: TimeDuration;
 
 		/** If set to true, the seller offers local pickup of their items. Local pickup is supported by the Inventory API, and it can be used with Add/Revise/Relist calls. To enable local pickup, a seller (1) must be eligible for local pickup and (2) must set this boolean field to 'true'. Currently, local pickup is available to only large retail merchants and can be applied to only multiple-quantity, fixed-price listings. In addition to setting this field, the merchant must also do the following to enable the &quot;Local Pickup&quot; option on a multiple-quantity, fixed-price listing: Have inventory for the product at one or more physical stores tied to the merchant's account. Sellers can use the createInventoryLocaion method in the Inventory API to associate physical stores to their account and they can then can add inventory to specific store locations. Include the seller-defined SKU value of the product(s) in the request. For single-variation listings, the SKU value is specified in the Item.SKU field and for multiple-variation listings, the SKU value(s) are specified in the Item.Variations.Variation.SKU field(s). Set an immediate payment requirement on the item. The immediate payment feature requires the seller to: Include only one paymentMethods field in the payment policy and set its value to PAYPAL. Include a valid PayPal contact in the recipientAccountReference.referenceId field of the payment policy. Have a valid store location with a complete street address. When a seller is successful at listing an item with the In-Store Pickup feature enabled, prospective buyers within a reasonable distance (25 miles or so) from one of the seller's stores (that has stock available) will see the &quot;Available for In-Store Pickup&quot; option on the listing, along with information on the closest store that has the item.Default: false */
 		localPickup?: boolean | null;
@@ -232,10 +232,10 @@ export namespace MyNS {
 		pickupDropOff?: boolean | null;
 
 		/** A list that defines the seller's shipping configurations for DOMESTIC and INTERNATIONAL order shipments. shippingOptions is a list with a single element if the seller ships to only domestic locations. If the seller also ships internationally, the list contains a second element that defines their international shipping options. Shipping options configure the high-level shipping settings that apply to orders, such as flat-rate or calculated shipping, any rate tables the seller wants to associate with the shipping services, plus other details (such as the shippingServices offered for domestic or international shipments). */
-		shippingOptions?: Array<ShippingOption> | null;
+		shippingOptions?: Array<ShippingOption>;
 
 		/** This complex type contains the regionIncluded and regionExcluded fields, which indicate the areas to where the seller does and doesn't ship. Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options, and they don't have a need to exclude any regions from their ship-to locations. Here, there's no reason to set regionExcluded fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region. Note: Configuring the shipToLocations is tricky because the regionIncluded and regionExcluded fields are valid in different parts of the schema and their allowable settings vary upon the context. For details on setting these fields, see . */
-		shipToLocations?: RegionSet | null;
+		shipToLocations?: RegionSet;
 	}
 
 
@@ -243,7 +243,7 @@ export namespace MyNS {
 	export interface FulfillmentPolicyResponse {
 
 		/** A list of the seller's fulfillment policies. */
-		fulfillmentPolicies?: Array<FulfillmentPolicy> | null;
+		fulfillmentPolicies?: Array<FulfillmentPolicy>;
 
 		/** Returns a URL link to the result set. */
 		href?: string | null;
@@ -272,7 +272,7 @@ export namespace MyNS {
 		returnMethod?: string | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		returnPeriod?: TimeDuration | null;
+		returnPeriod?: TimeDuration;
 
 		/** Required if the seller wants to set an international return policy that differs from their domestic return policy. If set to true, the seller allows international returns. If set to false, the seller does not accept international returns. */
 		returnsAccepted?: boolean | null;
@@ -286,16 +286,16 @@ export namespace MyNS {
 	export interface PaymentPolicy {
 
 		/** The CategoryTypeEnum value to which this policy applies. Used to discern accounts that sell motor vehicles from those that don't. (Currently, each policy can be set to only one categoryTypes value at a time.) */
-		categoryTypes?: Array<CategoryType> | null;
+		categoryTypes?: Array<CategoryType>;
 
 		/** A container that describes the details of a deposit. Used only with motor listings. */
-		deposit?: Deposit | null;
+		deposit?: Deposit;
 
 		/** An optional seller-defined description of the payment policy for internal use (this value is not displayed to end users). Max length: 250 */
 		description?: string | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		fullPaymentDueIn?: TimeDuration | null;
+		fullPaymentDueIn?: TimeDuration;
 
 		/** If set to true, payment is due upon receipt (eBay generates a receipt when the buyer agrees to purchase an item). This boolean must be set in the payment policy if the seller wants to create a listing that has an &quot;immediate payment&quot; requirement. The seller can change the immediate payment requirement at any time during the life cycle of a listing. The following must be true before a seller can apply an immediate payment requirement to an item: The seller must have a PayPal Business account. The Buy It Now price cannot be higher than $60,000 USD. The eBay marketplace on which the item is listed must support PayPal payments. The listing type must be fixed-price, or an auction with a Buy It Now option.To enable the immediate payment requirement, the seller must also perform the following actions via API calls: Provide a valid paymentMethods.recipientAccountReference.referenceId value. Offer PayPal as the only payment method for the item(s). Specify all related costs to the buyer (because the buyer is not be able to use the Buyer Request Total feature in an immediate payment listing); these costs include flat-rate shipping costs for each domestic and international shipping service offered, package handling costs, and any shipping surcharges. Include and set the shippingProfileDiscountInfo container values if you are going to use promotional shipping discounts.For more information, see the Understanding immediate payment Help page. Note: Listings created with the Inventory API must reference a payment policy that has immediatePay is set to true. Items listed with the Inventory API must also be fixed-price good-till-canceled (GTC) listings where PayPal is the only supported payment method (paymentMethod must be set to PAYPAL).Default: false */
 		immediatePay?: boolean | null;
@@ -310,7 +310,7 @@ export namespace MyNS {
 		paymentInstructions?: string | null;
 
 		/** A list of the payment methods accepted by the seller. Each payment policy must specify at least one payment method. Note: Each eBay marketplace supports and requires its own set of payment methods, and not all marketplaces allow all payment methods. Check the specifics of the marketplaces where you list items to ensure your payment policies meet the payment method requirements needed for any specific listing. Note: Item listings created with the Inventory API must reference a payment policy that has this value set to PAYPAL (currently, the Inventory API supports only fixed-prince GTC items with immediate pay (which required payments to be made via PayPal). Payment policies used with motor vehicle listings that require a deposit must have PayPal listed has a payment method (deposits require PayPal as the payment method). Also, in order for a buyer to make a full payment on a US or CA motor vehicle, the payment policy must specify at least one of the following as a payment method: CashOnPickup LoanCheck MOCC (money order or cashier's check) PaymentSeeDescription (payment instructions are in the paymentInstructions field) PersonalCheck */
-		paymentMethods?: Array<PaymentMethod> | null;
+		paymentMethods?: Array<PaymentMethod>;
 
 		/** A unique eBay-assigned ID for a payment policy. This ID is generated when the policy is created. */
 		paymentPolicyId?: string | null;
@@ -321,16 +321,16 @@ export namespace MyNS {
 	export interface PaymentPolicyRequest {
 
 		/** The CategoryTypeEnum value to which this policy applies. Used to discern accounts that sell motor vehicles from those that don't. (Currently, each policy can be set to only one categoryTypes value at a time.) */
-		categoryTypes?: Array<CategoryType> | null;
+		categoryTypes?: Array<CategoryType>;
 
 		/** A container that describes the details of a deposit. Used only with motor listings. */
-		deposit?: Deposit | null;
+		deposit?: Deposit;
 
 		/** An optional seller-defined description of the payment policy for internal use (this value is not displayed to end users). Max length: 250 */
 		description?: string | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		fullPaymentDueIn?: TimeDuration | null;
+		fullPaymentDueIn?: TimeDuration;
 
 		/** If set to true, payment is due upon receipt (eBay generates a receipt when the buyer agrees to purchase an item). This boolean must be set in the payment policy if the seller wants to create a listing that has an &quot;immediate payment&quot; requirement. The seller can change the immediate payment requirement at any time during the life cycle of a listing. The following must be true before a seller can apply an immediate payment requirement to an item: The seller must have a PayPal Business account. The Buy It Now price cannot be higher than $60,000 USD. The eBay marketplace on which the item is listed must support PayPal payments. The listing type must be fixed-price, or an auction with a Buy It Now option.To enable the immediate payment requirement, the seller must also perform the following actions via API calls: Provide a valid paymentMethods.recipientAccountReference.referenceId value. Offer PayPal as the only payment method for the item(s). Specify all related costs to the buyer (because the buyer is not be able to use the Buyer Request Total feature in an immediate payment listing); these costs include flat-rate shipping costs for each domestic and international shipping service offered, package handling costs, and any shipping surcharges. Include and set the shippingProfileDiscountInfo container values if you are going to use promotional shipping discounts.For more information, see the Understanding immediate payment Help page. Note: Listings created with the Inventory API must reference a payment policy that has immediatePay is set to true. Items listed with the Inventory API must also be fixed-price good-till-canceled (GTC) listings where PayPal is the only supported payment method (paymentMethod must be set to PAYPAL).Default: false */
 		immediatePay?: boolean | null;
@@ -345,7 +345,7 @@ export namespace MyNS {
 		paymentInstructions?: string | null;
 
 		/** A list of the payment methods accepted by the seller. Each payment policy must specify at least one payment method. Note: Each eBay marketplace supports and requires its own set of payment methods, and not all marketplaces allow all payment methods. Check the specifics of the marketplaces where you list items to ensure your payment policies meet the payment method requirements needed for any specific listing. Note: Item listings created with the Inventory API must reference a payment policy that has this value set to PAYPAL (currently, the Inventory API supports only fixed-prince GTC items with immediate pay (which required payments to be made via PayPal). Payment policies used with motor vehicle listings that require a deposit must have PayPal listed has a payment method (deposits require PayPal as the payment method). Also, in order for a buyer to make a full payment on a US or CA motor vehicle, the payment policy must specify at least one of the following as a payment method: CashOnPickup LoanCheck MOCC (money order or cashier's check) PaymentSeeDescription (payment instructions are in the paymentInstructions field) PersonalCheck */
-		paymentMethods?: Array<PaymentMethod> | null;
+		paymentMethods?: Array<PaymentMethod>;
 	}
 
 
@@ -365,7 +365,7 @@ export namespace MyNS {
 		offset?: number | null;
 
 		/** A list of the seller's payment policies. */
-		paymentPolicies?: Array<PaymentPolicy> | null;
+		paymentPolicies?: Array<PaymentPolicy>;
 
 		/** Returns a URL link to the previous set of results. */
 		prev?: string | null;
@@ -404,7 +404,7 @@ export namespace MyNS {
 	export interface Programs {
 
 		/** A list of seller programs. */
-		programs?: Array<Program> | null;
+		programs?: Array<Program>;
 	}
 
 
@@ -429,7 +429,7 @@ export namespace MyNS {
 	export interface RateTableResponse {
 
 		/** A list of elements that provide information on the seller-defined shipping rate tables. */
-		rateTables?: Array<RateTable> | null;
+		rateTables?: Array<RateTable>;
 	}
 
 
@@ -437,7 +437,7 @@ export namespace MyNS {
 	export interface ReturnPolicy {
 
 		/** For return policies, this field can be set to only ALL_EXCLUDING_MOTORS_VEHICLES (returns on motor vehicles are not processed through eBay flows) Default: ALL_EXCLUDING_MOTORS_VEHICLES (for return policies only) */
-		categoryTypes?: Array<CategoryType> | null;
+		categoryTypes?: Array<CategoryType>;
 
 		/** An optional seller-defined description of the return policy for internal use (this value is not displayed to end users). Max length: 250 */
 		description?: string | null;
@@ -446,7 +446,7 @@ export namespace MyNS {
 		extendedHolidayReturnsOffered?: boolean | null;
 
 		/** This type defines the fields for a seller's international return policy. If a seller does not populate the fields in this complex type, the international return policy defaults to the return policy set for domestic returns. */
-		internationalOverride?: InternationalReturnOverrideType | null;
+		internationalOverride?: InternationalReturnOverrideType;
 
 		/** The ID of the eBay marketplace to which this return policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a> */
 		marketplaceId?: string | null;
@@ -467,7 +467,7 @@ export namespace MyNS {
 		returnMethod?: string | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		returnPeriod?: TimeDuration | null;
+		returnPeriod?: TimeDuration;
 
 		/** A unique eBay-assigned ID for this policy. This ID value is appended to the end of the Location URI that is returned as a response header when you call createReturnPolicy). */
 		returnPolicyId?: string | null;
@@ -484,7 +484,7 @@ export namespace MyNS {
 	export interface ReturnPolicyRequest {
 
 		/** For return policies, this field can be set to only ALL_EXCLUDING_MOTORS_VEHICLES (returns on motor vehicles are not processed through eBay flows.) Default: ALL_EXCLUDING_MOTORS_VEHICLES (for return policies only) */
-		categoryTypes?: Array<CategoryType> | null;
+		categoryTypes?: Array<CategoryType>;
 
 		/** An optional seller-defined description of the return policy for internal use (this value is not displayed to end users). Max length: 250 */
 		description?: string | null;
@@ -493,7 +493,7 @@ export namespace MyNS {
 		extendedHolidayReturnsOffered?: boolean | null;
 
 		/** This type defines the fields for a seller's international return policy. If a seller does not populate the fields in this complex type, the international return policy defaults to the return policy set for domestic returns. */
-		internationalOverride?: InternationalReturnOverrideType | null;
+		internationalOverride?: InternationalReturnOverrideType;
 
 		/** The ID of the eBay marketplace to which this return policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a> */
 		marketplaceId?: string | null;
@@ -514,7 +514,7 @@ export namespace MyNS {
 		returnMethod?: string | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		returnPeriod?: TimeDuration | null;
+		returnPeriod?: TimeDuration;
 
 		/** If set to true, the seller accepts returns. Call the getReturnPolicies in the Metadata API to see what categories require returns to be offered for listings in each category. Also, note that some European marketplaces (for example, UK, IE, and DE) require sellers to accept returns for fixed-price items and auctions listed with Buy It Now. For details, see Returns and the Law (UK). Note:Top-Rated sellers must accept item returns and the handlingTime should be set to zero days or one day for a listing to receive a Top-Rated Plus badge on the View Item or search result pages. For more information on eBay's Top-Rated seller program, see Becoming a Top Rated Seller and qualifying for Top Rated Plus benefits. */
 		returnsAccepted?: boolean | null;
@@ -543,7 +543,7 @@ export namespace MyNS {
 		prev?: string | null;
 
 		/** A list of the seller's return policies. */
-		returnPolicies?: Array<ReturnPolicy> | null;
+		returnPolicies?: Array<ReturnPolicy>;
 
 		/** Returns the total number of result sets in the paginated collection. */
 		total?: number | null;
@@ -582,7 +582,7 @@ export namespace MyNS {
 	export interface SalesTaxes {
 
 		/** A list of sales tax tables that have been set up by a seller. */
-		salesTaxes?: Array<SalesTax> | null;
+		salesTaxes?: Array<SalesTax>;
 	}
 
 
@@ -590,7 +590,7 @@ export namespace MyNS {
 	export interface SellingLimit {
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. */
-		amount?: Amount | null;
+		amount?: Amount;
 
 		/** The maximum quantity of items that can be listed by the seller per calendar month. Note that for a listing with variations, all of the items listed in the variation count as individual items. */
 		quantity?: number | null;
@@ -604,7 +604,7 @@ export namespace MyNS {
 		sellerRegistrationCompleted?: boolean | null;
 
 		/** Defines the selling limit applied to an eBay seller's account. */
-		sellingLimit?: SellingLimit | null;
+		sellingLimit?: SellingLimit;
 	}
 
 
@@ -612,7 +612,7 @@ export namespace MyNS {
 	export interface SetFulfillmentPolicyResponse {
 
 		/** The CategoryTypeEnum value to which this policy applies. Used to discern accounts that sell motor vehicles from those that don't. (Currently, each policy can be set to only one categoryTypes value at a time.) */
-		categoryTypes?: Array<CategoryType> | null;
+		categoryTypes?: Array<CategoryType>;
 
 		/** An optional seller-defined description of the fulfillment policy for internal use (this value is not displayed to end users). Max length: 250 */
 		description?: string | null;
@@ -627,7 +627,7 @@ export namespace MyNS {
 		globalShipping?: boolean | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		handlingTime?: TimeDuration | null;
+		handlingTime?: TimeDuration;
 
 		/** If set to true, the seller offers local pickup of their items. */
 		localPickup?: boolean | null;
@@ -642,13 +642,13 @@ export namespace MyNS {
 		pickupDropOff?: boolean | null;
 
 		/** A list that defines the seller's shipping configurations for DOMESTIC and INTERNATIONAL order shipments. The list has a single element if the seller ships to only domestic locations. If the seller also ships internationally, a second element defines their international shipping options. Shipping options configure the high-level shipping settings that apply to orders, such as flat-rate or calculated shipping, and any rate tables the seller wants to associate with the shipping services. Each shippingOption element has a shippingServices container that defines the list of shipping services (domestic or international) offered with this fulfillment policy. */
-		shippingOptions?: Array<ShippingOption> | null;
+		shippingOptions?: Array<ShippingOption>;
 
 		/** This complex type contains the regionIncluded and regionExcluded fields, which indicate the areas to where the seller does and doesn't ship. Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options, and they don't have a need to exclude any regions from their ship-to locations. Here, there's no reason to set regionExcluded fields. However, it makes sense to set the regionExcluded field when a seller wants to exclude a small area that's within a larger area they service. For example, suppose a seller indicates they ship 'Worldwide', but for some reason must exclude a specific country, or world region. Note: Configuring the shipToLocations is tricky because the regionIncluded and regionExcluded fields are valid in different parts of the schema and their allowable settings vary upon the context. For details on setting these fields, see . */
-		shipToLocations?: RegionSet | null;
+		shipToLocations?: RegionSet;
 
 		/** A list of warnings related to request. This field normally returns empty, which indicates the request did not generate any warnings. */
-		warnings?: Array<Error> | null;
+		warnings?: Array<Error>;
 	}
 
 
@@ -665,7 +665,7 @@ export namespace MyNS {
 		errorId?: number | null;
 
 		/** Identifies specific request elements associated with the error, if any. inputRefId's response is format specific. For JSON, use JSONPath notation. */
-		inputRefIds?: Array<string> | null;
+		inputRefIds?: Array<string>;
 
 		/** An expanded version of message that should be around 100-200 characters long, but is not required to be such. */
 		longMessage?: string | null;
@@ -674,10 +674,10 @@ export namespace MyNS {
 		message?: string | null;
 
 		/** Identifies specific response elements associated with the error, if any. Path format is the same as inputRefId. */
-		outputRefIds?: Array<string> | null;
+		outputRefIds?: Array<string>;
 
 		/** This optional complex field type contains a list of one or more context-specific ErrorParameter objects, with each item in the list entry being a parameter (or input field name) that caused an error condition. Each ErrorParameter object consists of two fields, a name and a value. */
-		parameters?: Array<ErrorParameter> | null;
+		parameters?: Array<ErrorParameter>;
 
 		/** Name of the domain's subsystem or subdivision. For example, checkout is a subdomain in the buying domain. */
 		subdomain?: string | null;
@@ -699,16 +699,16 @@ export namespace MyNS {
 	export interface SetPaymentPolicyResponse {
 
 		/** The CategoryTypeEnum value to which this policy applies. Used to discern accounts that sell motor vehicles from those that don't. (Currently, each policy can be set to only one categoryTypes value at a time.) */
-		categoryTypes?: Array<CategoryType> | null;
+		categoryTypes?: Array<CategoryType>;
 
 		/** A container that describes the details of a deposit. Used only with motor listings. */
-		deposit?: Deposit | null;
+		deposit?: Deposit;
 
 		/** An optional seller-defined description of the payment policy for internal use (this value is not displayed to end users). */
 		description?: string | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		fullPaymentDueIn?: TimeDuration | null;
+		fullPaymentDueIn?: TimeDuration;
 
 		/** If set to true, payment is due upon receipt (eBay generates a receipt when the buyer agrees to purchase an item). Your items will be available for other buyers until payment is complete. This boolean must be set in the payment policy if the seller wants to create a listing that has an &quot;immediate payment&quot; requirement. Default: false */
 		immediatePay?: boolean | null;
@@ -723,13 +723,13 @@ export namespace MyNS {
 		paymentInstructions?: string | null;
 
 		/** A list of the payment methods accepted by the seller. Each payment policy must specify at least one payment method. Payment policies used with motor vehicle listings that require a deposit must have PayPal listed has a payment method (deposits require PayPal as the payment method). Also, in order for a buyer to make a full payment on a US or CA motor vehicle, the payment policy must specify at least one of the following as a payment method: CashOnPickup LoanCheck MOCC (money order or cashier's check) PaymentSeeDescription (payment instructions are in the paymentInstructions field) PersonalCheck */
-		paymentMethods?: Array<PaymentMethod> | null;
+		paymentMethods?: Array<PaymentMethod>;
 
 		/** A unique eBay-assigned ID for a payment policy. This ID is generated when the policy is created. */
 		paymentPolicyId?: string | null;
 
 		/** A list of warnings related to request. This field normally returns empty, which indicates the request did not generate any warnings. */
-		warnings?: Array<Error> | null;
+		warnings?: Array<Error>;
 	}
 
 
@@ -737,7 +737,7 @@ export namespace MyNS {
 	export interface SetReturnPolicyResponse {
 
 		/** For return policies, this field always returns ALL_EXCLUDING_MOTORS_VEHICLES (returns on motor vehicles are not processed through eBay flows.) Default: ALL_EXCLUDING_MOTORS_VEHICLES (for return policies only) */
-		categoryTypes?: Array<CategoryType> | null;
+		categoryTypes?: Array<CategoryType>;
 
 		/** An optional seller-defined description of the return policy for internal use (this value is not displayed to end users). */
 		description?: string | null;
@@ -746,7 +746,7 @@ export namespace MyNS {
 		extendedHolidayReturnsOffered?: boolean | null;
 
 		/** This type defines the fields for a seller's international return policy. If a seller does not populate the fields in this complex type, the international return policy defaults to the return policy set for domestic returns. */
-		internationalOverride?: InternationalReturnOverrideType | null;
+		internationalOverride?: InternationalReturnOverrideType;
 
 		/** The ID of the eBay marketplace to which this return policy applies. If this value is not specified, value defaults to the seller's eBay registration site. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/account/types/MarketplaceIdEnum.html'>eBay API documentation</a> */
 		marketplaceId?: string | null;
@@ -767,7 +767,7 @@ export namespace MyNS {
 		returnMethod?: string | null;
 
 		/** A complex type that specifies a period of time using a specified time-measurement unit. */
-		returnPeriod?: TimeDuration | null;
+		returnPeriod?: TimeDuration;
 
 		/** A unique eBay-assigned ID for a return policy. This ID is generated when the policy is created. */
 		returnPolicyId?: string | null;
@@ -779,7 +779,7 @@ export namespace MyNS {
 		returnShippingCostPayer?: string | null;
 
 		/** A list of warnings related to request. This field normally returns empty, which indicates the request did not generate any warnings. */
-		warnings?: Array<Error> | null;
+		warnings?: Array<Error>;
 	}
 
 	export class Fulfillment_policyClient {

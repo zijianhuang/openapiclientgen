@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface DataSetList {
 		total?: number | null;
-		DataSetListApis?: Array<DataSetListApis> | null;
+		DataSetListApis?: Array<DataSetListApis>;
 	}
 
 	export interface DataSetListApis {

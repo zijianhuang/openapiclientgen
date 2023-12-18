@@ -37,6 +37,45 @@ namespace SwagTests
 			Assert.Equal(expected, s);
 		}
 
+		[Fact]
+		public void TestNestedComplex()
+		{
+			string expected = @"export namespace MyNS {
+	export interface Category {
+
+		/** Category ID */
+		id?: number | null;
+
+		/**
+		 * Category name
+		 * Min length: 1
+		 */
+		name?: string | null;
+	}
+
+	export interface Pet {
+
+		/** Categories this pet belongs to */
+		category?: Category;
+
+		/** The name given to a pet */
+		name?: string | null;
+
+		/** Type of a pet */
+		petType?: string | null;
+		BirthDate?: Date | null;
+
+		/** The id of a pet */
+		id?: string | null;
+	}
+
+}
+
+";
+			string s = helper.TranslateDefToCode("SwagMock\\SimplePetNestedComplex.json");
+			Assert.Equal(expected, s);
+		}
+
 
 		[Fact]
 		public void TestSimplePetCat()
@@ -138,7 +177,7 @@ namespace SwagTests
 		 * The list of URL to a cute photos featuring pet
 		 * Maximum items: 20
 		 */
-		photoUrls?: Array<string> | null;
+		photoUrls?: Array<string>;
 	}
 
 }
@@ -164,7 +203,7 @@ namespace SwagTests
 		 * Tags attached to the pet
 		 * Minimum items: 1
 		 */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 	}
 
 	export interface Tag {
@@ -282,16 +321,16 @@ export namespace MyNS {
 
 	/** Model information */
 	export interface TestModel {
-		stringDict?: {[id: string]: string } | null;
-		dateDict?: {[id: string]: Date } | null;
-		intDict?: {[id: string]: number } | null;
-		int32Dict?: {[id: string]: number } | null;
-		int64Dict?: {[id: string]: number } | null;
-		floatDict?: {[id: string]: number } | null;
-		doubleDict?: {[id: string]: number } | null;
-		numberDict?: {[id: string]: number } | null;
-		tagDict?: {[id: string]: Tag } | null;
-		objectDict?: {[id: string]: any } | null;
+		stringDict?: {[id: string]: string };
+		dateDict?: {[id: string]: Date };
+		intDict?: {[id: string]: number };
+		int32Dict?: {[id: string]: number };
+		int64Dict?: {[id: string]: number };
+		floatDict?: {[id: string]: number };
+		doubleDict?: {[id: string]: number };
+		numberDict?: {[id: string]: number };
+		tagDict?: {[id: string]: Tag };
+		objectDict?: {[id: string]: any };
 	}
 
 	export interface Tag {

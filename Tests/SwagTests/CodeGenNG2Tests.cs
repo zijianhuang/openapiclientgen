@@ -33,6 +33,12 @@ namespace SwagTests
 		}
 
 		[Fact]
+		public void TestPetByTags()
+		{
+			helper.GenerateAndAssertBuild("SwagMock\\petByTags.yaml", "NG2Results\\PetByTags.txt");
+		}
+
+		[Fact]
 		public void TestPet_EnumToString()
 		{
 			var settings = CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.Default);

@@ -89,7 +89,7 @@ export namespace MyNS {
 	export enum PhonePhoneType { DEFAULT = 0, DDI = 1, MOBILE = 2, FAX = 3, OFFICE = 4 }
 
 	export interface Accounts {
-		Accounts1?: Array<Account> | null;
+		Accounts1?: Array<Account>;
 	}
 
 	export interface Account {
@@ -158,7 +158,7 @@ export namespace MyNS {
 		AddToWatchlist?: boolean | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 	}
 
 	export enum AccountType { BANK = 0, CURRENT = 1, CURRLIAB = 2, DEPRECIATN = 3, DIRECTCOSTS = 4, EQUITY = 5, EXPENSE = 6, FIXED = 7, INVENTORY = 8, LIABILITY = 9, NONCURRENT = 10, OTHERINCOME = 11, OVERHEADS = 12, PREPAYMENT = 13, REVENUE = 14, SALES = 15, TERMLIAB = 16, PAYGLIABILITY = 17, PAYG = 18, SUPERANNUATIONEXPENSE = 19, SUPERANNUATIONLIABILITY = 20, WAGESEXPENSE = 21 }
@@ -180,7 +180,7 @@ export namespace MyNS {
 	}
 
 	export interface Attachments {
-		Attachments1?: Array<Attachment> | null;
+		Attachments1?: Array<Attachment>;
 	}
 
 	export interface Attachment {
@@ -205,7 +205,7 @@ export namespace MyNS {
 	}
 
 	export interface BankTransactions {
-		BankTransactions1?: Array<BankTransaction> | null;
+		BankTransactions1?: Array<BankTransaction>;
 	}
 
 	export interface BankTransaction {
@@ -276,7 +276,7 @@ export namespace MyNS {
 		StatusAttributeString?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 	}
 
 	export enum BankTransactionType { RECEIVE = 0, RECEIVE_OVERPAYMENT = 1, RECEIVE_PREPAYMENT = 2, SPEND = 3, SPEND_OVERPAYMENT = 4, SPEND_PREPAYMENT = 5, RECEIVE_TRANSFER = 6, SPEND_TRANSFER = 7 }
@@ -329,7 +329,7 @@ export namespace MyNS {
 		SkypeUserName?: string | null;
 
 		/** See contact persons */
-		ContactPersons?: Array<ContactPerson> | null;
+		ContactPersons?: Array<ContactPerson>;
 
 		/** Bank account number of contact */
 		BankAccountDetails?: string | null;
@@ -347,10 +347,10 @@ export namespace MyNS {
 		AccountsPayableTaxType?: string | null;
 
 		/** Store certain address types for a contact � see address types */
-		Addresses?: Array<Address> | null;
+		Addresses?: Array<Address>;
 
 		/** Store certain phone types for a contact � see phone types */
-		Phones?: Array<Phone> | null;
+		Phones?: Array<Phone>;
 
 		/** true or false � Boolean that describes if a contact that has any AP  invoices entered against them. Cannot be set via PUT or POST � it is automatically set when an accounts payable invoice is generated against this contact. */
 		IsSupplier?: boolean | null;
@@ -371,27 +371,27 @@ export namespace MyNS {
 		PurchasesDefaultAccountCode?: string | null;
 
 		/** The default sales tracking categories for contacts */
-		SalesTrackingCategories?: Array<SalesTrackingCategory> | null;
+		SalesTrackingCategories?: Array<SalesTrackingCategory>;
 
 		/** The default purchases tracking categories for contacts */
-		PurchasesTrackingCategories?: Array<SalesTrackingCategory> | null;
+		PurchasesTrackingCategories?: Array<SalesTrackingCategory>;
 
 		/** The name of the Tracking Category assigned to the contact under SalesTrackingCategories and PurchasesTrackingCategories */
 		TrackingCategoryName?: string | null;
 
 		/** The name of the Tracking Option assigned to the contact under SalesTrackingCategories and PurchasesTrackingCategories */
 		TrackingCategoryOption?: string | null;
-		PaymentTerms?: PaymentTerm | null;
+		PaymentTerms?: PaymentTerm;
 
 		/** UTC timestamp of last update to contact */
 		UpdatedDateUTC?: Date | null;
 
 		/** Displays which contact groups a contact is included in */
-		ContactGroups?: Array<ContactGroup> | null;
+		ContactGroups?: Array<ContactGroup>;
 
 		/** Website address for contact (read only) */
 		Website?: string | null;
-		BrandingTheme?: BrandingTheme | null;
+		BrandingTheme?: BrandingTheme;
 
 		/** Bank details for use on a batch payment stored with each contact */
 		BatchPayments?: BatchPaymentDetails | null;
@@ -400,16 +400,16 @@ export namespace MyNS {
 		Discount?: number | null;
 
 		/** The raw AccountsReceivable(sales invoices) and AccountsPayable(bills) outstanding and overdue amounts, not converted to base currency (read only) */
-		Balances?: Balances | null;
+		Balances?: Balances;
 
 		/** Displays array of attachments from the API */
-		Attachments?: Array<Attachment> | null;
+		Attachments?: Array<Attachment>;
 
 		/** A boolean to indicate if a contact has an attachment */
 		HasAttachments?: boolean | null;
 
 		/** Displays validation errors returned from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 
 		/** A boolean to indicate if a contact has an validation errors */
 		HasValidationErrors?: boolean | null;
@@ -447,8 +447,8 @@ export namespace MyNS {
 	}
 
 	export interface PaymentTerm {
-		Bills?: Bill | null;
-		Sales?: Bill | null;
+		Bills?: Bill;
+		Sales?: Bill;
 	}
 
 	export interface Bill {
@@ -472,7 +472,7 @@ export namespace MyNS {
 		ContactGroupID?: string | null;
 
 		/** The ContactID and Name of Contacts in a contact group. Returned on GETs when the ContactGroupID is supplied in the URL. */
-		Contacts?: Array<Contact> | null;
+		Contacts?: Array<Contact>;
 	}
 
 	export enum ContactGroupStatus { ACTIVE = 0, DELETED = 1 }
@@ -503,8 +503,8 @@ export namespace MyNS {
 
 	/** The raw AccountsReceivable(sales invoices) and AccountsPayable(bills) outstanding and overdue amounts, not converted to base currency (read only) */
 	export interface Balances {
-		AccountsReceivable?: AccountsReceivable | null;
-		AccountsPayable?: AccountsPayable | null;
+		AccountsReceivable?: AccountsReceivable;
+		AccountsPayable?: AccountsPayable;
 	}
 
 	export interface AccountsReceivable {
@@ -547,7 +547,7 @@ export namespace MyNS {
 		LineAmount?: number | null;
 
 		/** Optional Tracking Category � see Tracking.  Any LineItem can have a  maximum of 2 <TrackingCategory> elements. */
-		Tracking?: Array<LineItemTracking> | null;
+		Tracking?: Array<LineItemTracking>;
 
 		/** Percentage discount being applied to a line item (only supported on  ACCREC invoices � ACC PAY invoices and credit notes in Xero do not support discounts */
 		DiscountRate?: number | null;
@@ -588,7 +588,7 @@ export namespace MyNS {
 	export enum LineAmountTypes { Exclusive = 0, Inclusive = 1, NoTax = 2 }
 
 	export interface BankTransfers {
-		BankTransfers1?: Array<BankTransfer> | null;
+		BankTransfers1?: Array<BankTransfer>;
 	}
 
 	export interface BankTransfer {
@@ -623,15 +623,15 @@ export namespace MyNS {
 		CreatedDateUTC?: Date | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 	}
 
 	export interface BatchPayments {
-		BatchPayments1?: Array<BatchPayment> | null;
+		BatchPayments1?: Array<BatchPayment>;
 	}
 
 	export interface BatchPayment {
-		Account?: Account | null;
+		Account?: Account;
 
 		/**
 		 * (NZ Only) Optional references for the batch payment transaction. It will also show with the batch payment transaction in the bank reconciliation Find & Match screen. Depending on your individual bank, the detail may also show on the bank statement you import into Xero.
@@ -674,7 +674,7 @@ export namespace MyNS {
 
 		/** The amount of the payment. Must be less than or equal to the outstanding amount owing on the invoice e.g. 200.00 */
 		Amount?: number | null;
-		Payments?: Array<Payment> | null;
+		Payments?: Array<Payment>;
 
 		/** PAYBATCH for bill payments or RECBATCH for sales invoice payments (read-only) */
 		Type?: BatchPaymentType | null;
@@ -693,17 +693,17 @@ export namespace MyNS {
 	}
 
 	export interface Payment {
-		Invoice?: Invoice | null;
-		CreditNote?: CreditNote | null;
-		Prepayment?: Prepayment | null;
-		Overpayment?: Overpayment | null;
+		Invoice?: Invoice;
+		CreditNote?: CreditNote;
+		Prepayment?: Prepayment;
+		Overpayment?: Overpayment;
 
 		/** Number of invoice or credit note you are applying payment to e.g.INV-4003 */
 		InvoiceNumber?: string | null;
 
 		/** Number of invoice or credit note you are applying payment to e.g. INV-4003 */
 		CreditNoteNumber?: string | null;
-		Account?: Account | null;
+		Account?: Account;
 
 		/** Code of account you are using to make the payment e.g. 001 (note- not all accounts have a code value) */
 		Code?: string | null;
@@ -754,17 +754,17 @@ export namespace MyNS {
 		StatusAttributeString?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 	}
 
 	export interface Invoice {
 
 		/** See Invoice Types */
 		Type?: InvoiceType | null;
-		Contact?: Contact | null;
+		Contact?: Contact;
 
 		/** See LineItems */
-		LineItems?: Array<LineItem> | null;
+		LineItems?: Array<LineItem>;
 
 		/** Date invoice was issued � YYYY-MM-DD. If the Date element is not specified it will default to the current date based on the timezone setting of the organisation */
 		Date?: Date | null;
@@ -836,13 +836,13 @@ export namespace MyNS {
 		IsDiscounted?: boolean | null;
 
 		/** See Payments */
-		Payments?: Array<Payment> | null;
+		Payments?: Array<Payment>;
 
 		/** See Prepayments */
-		Prepayments?: Array<Prepayment> | null;
+		Prepayments?: Array<Prepayment>;
 
 		/** See Overpayments */
-		Overpayments?: Array<Overpayment> | null;
+		Overpayments?: Array<Overpayment>;
 
 		/** Amount remaining to be paid on invoice */
 		AmountDue?: number | null;
@@ -860,10 +860,10 @@ export namespace MyNS {
 		UpdatedDateUTC?: Date | null;
 
 		/** Details of credit notes that have been applied to an invoice */
-		CreditNotes?: Array<CreditNote> | null;
+		CreditNotes?: Array<CreditNote>;
 
 		/** Displays array of attachments from the API */
-		Attachments?: Array<Attachment> | null;
+		Attachments?: Array<Attachment>;
 
 		/** A boolean to indicate if a invoice has an validation errors */
 		HasErrors?: boolean | null;
@@ -872,10 +872,10 @@ export namespace MyNS {
 		StatusAttributeString?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 
 		/** Displays array of warning messages from the API */
-		Warnings?: Array<ValidationError> | null;
+		Warnings?: Array<ValidationError>;
 	}
 
 	export enum InvoiceType { ACCPAY = 0, ACCPAYCREDIT = 1, APOVERPAYMENT = 2, APPREPAYMENT = 3, ACCREC = 4, ACCRECCREDIT = 5, AROVERPAYMENT = 6, ARPREPAYMENT = 7 }
@@ -888,7 +888,7 @@ export namespace MyNS {
 
 		/** See Prepayment Types */
 		Type?: PrepaymentType | null;
-		Contact?: Contact | null;
+		Contact?: Contact;
 
 		/** The date the prepayment is created YYYY-MM-DD */
 		Date?: Date | null;
@@ -900,7 +900,7 @@ export namespace MyNS {
 		LineAmountTypes?: BankTransactionLineAmountTypes | null;
 
 		/** See Prepayment Line Items */
-		LineItems?: Array<LineItem> | null;
+		LineItems?: Array<LineItem>;
 
 		/** The subtotal of the prepayment excluding taxes */
 		SubTotal?: number | null;
@@ -930,7 +930,7 @@ export namespace MyNS {
 		RemainingCredit?: number | null;
 
 		/** See Allocations */
-		Allocations?: Array<Allocation> | null;
+		Allocations?: Array<Allocation>;
 
 		/** The amount of applied to an invoice */
 		AppliedAmount?: number | null;
@@ -939,7 +939,7 @@ export namespace MyNS {
 		HasAttachments?: boolean | null;
 
 		/** See Attachments */
-		Attachments?: Array<Attachment> | null;
+		Attachments?: Array<Attachment>;
 	}
 
 	export enum PrepaymentType { RECEIVE_PREPAYMENT = 0, SPEND_PREPAYMENT = 1, ARPREPAYMENT = 2, APPREPAYMENT = 3 }
@@ -950,9 +950,9 @@ export namespace MyNS {
 
 	export interface Allocation {
 		Invoice: Invoice;
-		Overpayment?: Overpayment | null;
-		Prepayment?: Prepayment | null;
-		CreditNote?: CreditNote | null;
+		Overpayment?: Overpayment;
+		Prepayment?: Prepayment;
+		CreditNote?: CreditNote;
 
 		/**
 		 * the amount being applied to the invoice
@@ -970,14 +970,14 @@ export namespace MyNS {
 		StatusAttributeString?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 	}
 
 	export interface Overpayment {
 
 		/** See Overpayment Types */
 		Type?: OverpaymentType | null;
-		Contact?: Contact | null;
+		Contact?: Contact;
 
 		/** The date the overpayment is created YYYY-MM-DD */
 		Date?: Date | null;
@@ -989,7 +989,7 @@ export namespace MyNS {
 		LineAmountTypes?: BankTransactionLineAmountTypes | null;
 
 		/** See Overpayment Line Items */
-		LineItems?: Array<LineItem> | null;
+		LineItems?: Array<LineItem>;
 
 		/** The subtotal of the overpayment excluding taxes */
 		SubTotal?: number | null;
@@ -1016,19 +1016,19 @@ export namespace MyNS {
 		RemainingCredit?: number | null;
 
 		/** See Allocations */
-		Allocations?: Array<Allocation> | null;
+		Allocations?: Array<Allocation>;
 
 		/** The amount of applied to an invoice */
 		AppliedAmount?: number | null;
 
 		/** See Payments */
-		Payments?: Array<Payment> | null;
+		Payments?: Array<Payment>;
 
 		/** boolean to indicate if a overpayment has an attachment */
 		HasAttachments?: boolean | null;
 
 		/** See Attachments */
-		Attachments?: Array<Attachment> | null;
+		Attachments?: Array<Attachment>;
 	}
 
 	export enum OverpaymentType { RECEIVE_OVERPAYMENT = 0, SPEND_OVERPAYMENT = 1, AROVERPAYMENT = 2 }
@@ -1039,7 +1039,7 @@ export namespace MyNS {
 
 		/** See Credit Note Types */
 		Type?: CreditNoteType | null;
-		Contact?: Contact | null;
+		Contact?: Contact;
 
 		/** The date the credit note is issued YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation */
 		Date?: Date | null;
@@ -1051,7 +1051,7 @@ export namespace MyNS {
 		LineAmountTypes?: BankTransactionLineAmountTypes | null;
 
 		/** See Invoice Line Items */
-		LineItems?: Array<LineItem> | null;
+		LineItems?: Array<LineItem>;
 
 		/** The subtotal of the credit note excluding taxes */
 		SubTotal?: number | null;
@@ -1090,13 +1090,13 @@ export namespace MyNS {
 		RemainingCredit?: number | null;
 
 		/** See Allocations */
-		Allocations?: Array<Allocation> | null;
+		Allocations?: Array<Allocation>;
 
 		/** The amount of applied to an invoice */
 		AppliedAmount?: number | null;
 
 		/** See Payments */
-		Payments?: Array<Payment> | null;
+		Payments?: Array<Payment>;
 
 		/** See BrandingThemes */
 		BrandingThemeID?: string | null;
@@ -1111,7 +1111,7 @@ export namespace MyNS {
 		HasErrors?: boolean | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 	}
 
 	export enum CreditNoteType { ACCPAYCREDIT = 0, ACCRECCREDIT = 1 }
@@ -1154,11 +1154,11 @@ export namespace MyNS {
 	}
 
 	export interface BrandingThemes {
-		BrandingThemes1?: Array<BrandingTheme> | null;
+		BrandingThemes1?: Array<BrandingTheme>;
 	}
 
 	export interface PaymentServices {
-		PaymentServices1?: Array<PaymentService> | null;
+		PaymentServices1?: Array<PaymentService>;
 	}
 
 	export interface PaymentService {
@@ -1179,15 +1179,15 @@ export namespace MyNS {
 		PaymentServiceType?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 	}
 
 	export interface Contacts {
-		Contacts1?: Array<Contact> | null;
+		Contacts1?: Array<Contact>;
 	}
 
 	export interface CISSettings {
-		CISSettings1?: Array<CISSetting> | null;
+		CISSettings1?: Array<CISSetting>;
 	}
 
 	export interface CISSetting {
@@ -1212,7 +1212,7 @@ export namespace MyNS {
 	}
 
 	export interface ContactGroups {
-		ContactGroups1?: Array<ContactGroup> | null;
+		ContactGroups1?: Array<ContactGroup>;
 	}
 
 	export interface RequestEmpty {
@@ -1222,15 +1222,15 @@ export namespace MyNS {
 	}
 
 	export interface CreditNotes {
-		CreditNotes1?: Array<CreditNote> | null;
+		CreditNotes1?: Array<CreditNote>;
 	}
 
 	export interface Allocations {
-		Allocations1?: Array<Allocation> | null;
+		Allocations1?: Array<Allocation>;
 	}
 
 	export interface Currencies {
-		Currencies1?: Array<Currency> | null;
+		Currencies1?: Array<Currency>;
 	}
 
 	export interface Currency {
@@ -1245,7 +1245,7 @@ export namespace MyNS {
 	export enum CurrencyCode { AED = 0, AFN = 1, ALL = 2, AMD = 3, ANG = 4, AOA = 5, ARS = 6, AUD = 7, AWG = 8, AZN = 9, BAM = 10, BBD = 11, BDT = 12, BGN = 13, BHD = 14, BIF = 15, BMD = 16, BND = 17, BOB = 18, BRL = 19, BSD = 20, BTN = 21, BWP = 22, BYN = 23, BZD = 24, CAD = 25, CDF = 26, CHF = 27, CLP = 28, CNY = 29, COP = 30, CRC = 31, CUC = 32, CUP = 33, CVE = 34, CZK = 35, DJF = 36, DKK = 37, DOP = 38, DZD = 39, EGP = 40, ERN = 41, ETB = 42, EUR = 43, FJD = 44, FKP = 45, GBP = 46, GEL = 47, GGP = 48, GHS = 49, GIP = 50, GMD = 51, GNF = 52, GTQ = 53, GYD = 54, HKD = 55, HNL = 56, HRK = 57, HTG = 58, HUF = 59, IDR = 60, ILS = 61, IMP = 62, INR = 63, IQD = 64, IRR = 65, ISK = 66, JEP = 67, JMD = 68, JOD = 69, JPY = 70, KES = 71, KGS = 72, KHR = 73, KMF = 74, KPW = 75, KRW = 76, KWD = 77, KYD = 78, KZT = 79, LAK = 80, LBP = 81, LKR = 82, LRD = 83, LSL = 84, LYD = 85, MAD = 86, MDL = 87, MGA = 88, MKD = 89, MMK = 90, MNT = 91, MOP = 92, MRU = 93, MUR = 94, MVR = 95, MWK = 96, MXN = 97, MYR = 98, MZN = 99, NAD = 100, NGN = 101, NIO = 102, NOK = 103, NPR = 104, NZD = 105, OMR = 106, PAB = 107, PEN = 108, PGK = 109, PHP = 110, PKR = 111, PLN = 112, PYG = 113, QAR = 114, RON = 115, RSD = 116, RUB = 117, RWF = 118, SAR = 119, SBD = 120, SCR = 121, SDG = 122, SEK = 123, SGD = 124, SHP = 125, SLL = 126, SOS = 127, SPL = 128, SRD = 129, STN = 130, SVC = 131, SYP = 132, SZL = 133, THB = 134, TJS = 135, TMT = 136, TND = 137, TOP = 138, TRY = 139, TTD = 140, TVD = 141, TWD = 142, TZS = 143, UAH = 144, UGX = 145, USD = 146, UYU = 147, UZS = 148, VEF = 149, VND = 150, VUV = 151, WST = 152, XAF = 153, XCD = 154, XDR = 155, XOF = 156, XPF = 157, YER = 158, ZAR = 159, ZMW = 160, ZMK = 161, ZWD = 162, _ = 163 }
 
 	export interface Employees {
-		Employees1?: Array<Employee> | null;
+		Employees1?: Array<Employee>;
 	}
 
 	export interface Employee {
@@ -1267,14 +1267,14 @@ export namespace MyNS {
 		 * Max length: 255
 		 */
 		LastName?: string | null;
-		ExternalLink?: ExternalLink | null;
+		ExternalLink?: ExternalLink;
 		UpdatedDateUTC?: Date | null;
 
 		/** A string to indicate if a invoice status */
 		StatusAttributeString?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 	}
 
 	export interface ExternalLink {
@@ -1290,7 +1290,7 @@ export namespace MyNS {
 	export enum ExternalLinkLinkType { Facebook = 0, GooglePlus = 1, LinkedIn = 2, Twitter = 3, Website = 4 }
 
 	export interface ExpenseClaims {
-		ExpenseClaims1?: Array<ExpenseClaim> | null;
+		ExpenseClaims1?: Array<ExpenseClaim>;
 	}
 
 	export interface ExpenseClaim {
@@ -1302,9 +1302,9 @@ export namespace MyNS {
 		Status?: ExpenseClaimStatus | null;
 
 		/** See Payments */
-		Payments?: Array<Payment> | null;
-		User?: User | null;
-		Receipts?: Array<Receipt> | null;
+		Payments?: Array<Payment>;
+		User?: User;
+		Receipts?: Array<Receipt>;
 
 		/** Last modified date UTC format */
 		UpdatedDateUTC?: Date | null;
@@ -1360,9 +1360,9 @@ export namespace MyNS {
 
 		/** Date of receipt � YYYY-MM-DD */
 		Date?: Date | null;
-		Contact?: Contact | null;
-		LineItems?: Array<LineItem> | null;
-		User?: User | null;
+		Contact?: Contact;
+		LineItems?: Array<LineItem>;
+		User?: User;
 
 		/** Additional reference number */
 		Reference?: string | null;
@@ -1398,19 +1398,19 @@ export namespace MyNS {
 		Url?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 
 		/** Displays array of warning messages from the API */
-		Warnings?: Array<ValidationError> | null;
+		Warnings?: Array<ValidationError>;
 
 		/** Displays array of attachments from the API */
-		Attachments?: Array<Attachment> | null;
+		Attachments?: Array<Attachment>;
 	}
 
 	export enum ReceiptStatus { DRAFT = 0, SUBMITTED = 1, AUTHORISED = 2, DECLINED = 3, VOIDED = 4 }
 
 	export interface HistoryRecords {
-		HistoryRecords1?: Array<HistoryRecord> | null;
+		HistoryRecords1?: Array<HistoryRecord>;
 	}
 
 	export interface HistoryRecord {
@@ -1429,11 +1429,11 @@ export namespace MyNS {
 	}
 
 	export interface Invoices {
-		Invoices1?: Array<Invoice> | null;
+		Invoices1?: Array<Invoice>;
 	}
 
 	export interface OnlineInvoices {
-		OnlineInvoices1?: Array<OnlineInvoice> | null;
+		OnlineInvoices1?: Array<OnlineInvoice>;
 	}
 
 	export interface OnlineInvoice {
@@ -1443,7 +1443,7 @@ export namespace MyNS {
 	}
 
 	export interface InvoiceReminders {
-		InvoiceReminders1?: Array<InvoiceReminder> | null;
+		InvoiceReminders1?: Array<InvoiceReminder>;
 	}
 
 	export interface InvoiceReminder {
@@ -1453,7 +1453,7 @@ export namespace MyNS {
 	}
 
 	export interface Items {
-		Items1?: Array<Item> | null;
+		Items1?: Array<Item>;
 	}
 
 	export interface Item {
@@ -1491,8 +1491,8 @@ export namespace MyNS {
 		 * Max length: 4000
 		 */
 		PurchaseDescription?: string | null;
-		PurchaseDetails?: Purchase | null;
-		SalesDetails?: Purchase | null;
+		PurchaseDetails?: Purchase;
+		SalesDetails?: Purchase;
 
 		/** True for items that are tracked as inventory. An item will be tracked as inventory if the InventoryAssetAccountCode and COGSAccountCode are set. */
 		IsTrackedAsInventory?: boolean | null;
@@ -1513,7 +1513,7 @@ export namespace MyNS {
 		StatusAttributeString?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 	}
 
 	export interface Purchase {
@@ -1532,7 +1532,7 @@ export namespace MyNS {
 	}
 
 	export interface Journals {
-		Journals1?: Array<Journal> | null;
+		Journals1?: Array<Journal>;
 	}
 
 	export interface Journal {
@@ -1559,7 +1559,7 @@ export namespace MyNS {
 		SourceType?: JournalSourceType | null;
 
 		/** See JournalLines */
-		JournalLines?: Array<JournalLine> | null;
+		JournalLines?: Array<JournalLine>;
 	}
 
 	export enum JournalSourceType { ACCREC = 0, ACCPAY = 1, ACCRECCREDIT = 2, ACCPAYCREDIT = 3, ACCRECPAYMENT = 4, ACCPAYPAYMENT = 5, ARCREDITPAYMENT = 6, APCREDITPAYMENT = 7, CASHREC = 8, CASHPAID = 9, TRANSFER = 10, ARPREPAYMENT = 11, APPREPAYMENT = 12, AROVERPAYMENT = 13, APOVERPAYMENT = 14, EXPCLAIM = 15, EXPPAYMENT = 16, MANJOURNAL = 17, PAYSLIP = 18, WAGEPAYABLE = 19, INTEGRATEDPAYROLLPE = 20, INTEGRATEDPAYROLLPT = 21, EXTERNALSPENDMONEY = 22, INTEGRATEDPAYROLLPTPAYMENT = 23, INTEGRATEDPAYROLLCN = 24 }
@@ -1600,7 +1600,7 @@ export namespace MyNS {
 		TaxName?: string | null;
 
 		/** Optional Tracking Category � see Tracking. Any JournalLine can have a maximum of 2 <TrackingCategory> elements. */
-		TrackingCategories?: Array<TrackingCategory> | null;
+		TrackingCategories?: Array<TrackingCategory>;
 	}
 
 	export interface TrackingCategory {
@@ -1627,7 +1627,7 @@ export namespace MyNS {
 		Status?: AccountStatus | null;
 
 		/** See Tracking Options */
-		Options?: Array<TrackingOption> | null;
+		Options?: Array<TrackingOption>;
 	}
 
 	export interface TrackingOption {
@@ -1649,7 +1649,7 @@ export namespace MyNS {
 	}
 
 	export interface LinkedTransactions {
-		LinkedTransactions1?: Array<LinkedTransaction> | null;
+		LinkedTransactions1?: Array<LinkedTransaction>;
 	}
 
 	export interface LinkedTransaction {
@@ -1685,7 +1685,7 @@ export namespace MyNS {
 		SourceTransactionTypeCode?: LinkedTransactionSourceTransactionTypeCode | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 	}
 
 	export enum LinkedTransactionStatus { APPROVED = 0, DRAFT = 1, ONDRAFT = 2, BILLED = 3, VOIDED = 4 }
@@ -1695,7 +1695,7 @@ export namespace MyNS {
 	export enum LinkedTransactionSourceTransactionTypeCode { ACCPAY = 0, SPEND = 1 }
 
 	export interface ManualJournals {
-		ManualJournals1?: Array<ManualJournal> | null;
+		ManualJournals1?: Array<ManualJournal>;
 	}
 
 	export interface ManualJournal {
@@ -1707,7 +1707,7 @@ export namespace MyNS {
 		Narration: string;
 
 		/** See JournalLines */
-		JournalLines?: Array<ManualJournalLine> | null;
+		JournalLines?: Array<ManualJournalLine>;
 
 		/** Date journal was posted � YYYY-MM-DD */
 		Date?: Date | null;
@@ -1737,13 +1737,13 @@ export namespace MyNS {
 		StatusAttributeString?: string | null;
 
 		/** Displays array of warning messages from the API */
-		Warnings?: Array<ValidationError> | null;
+		Warnings?: Array<ValidationError>;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 
 		/** Displays array of attachments from the API */
-		Attachments?: Array<Attachment> | null;
+		Attachments?: Array<Attachment>;
 	}
 
 	export interface ManualJournalLine {
@@ -1761,7 +1761,7 @@ export namespace MyNS {
 		TaxType?: string | null;
 
 		/** Optional Tracking Category � see Tracking. Any JournalLine can have a maximum of 2 <TrackingCategory> elements. */
-		Tracking?: Array<TrackingCategory> | null;
+		Tracking?: Array<TrackingCategory>;
 
 		/** The calculated tax amount based on the TaxType and LineAmount */
 		TaxAmount?: number | null;
@@ -1773,7 +1773,7 @@ export namespace MyNS {
 	export enum ManualJournalStatus { DRAFT = 0, POSTED = 1, DELETED = 2, VOIDED = 3, ARCHIVED = 4 }
 
 	export interface Organisations {
-		Organisations1?: Array<Organisation> | null;
+		Organisations1?: Array<Organisation>;
 	}
 
 	export interface Organisation {
@@ -1864,14 +1864,14 @@ export namespace MyNS {
 		LineOfBusiness?: string | null;
 
 		/** Address details for organisation � see Addresses */
-		Addresses?: Array<Address> | null;
+		Addresses?: Array<Address>;
 
 		/** Phones details for organisation � see Phones */
-		Phones?: Array<Phone> | null;
+		Phones?: Array<Phone>;
 
 		/** Organisation profile links for popular services such as Facebook,Twitter, GooglePlus and LinkedIn. You can also add link to your website here. Shown if Organisation settings  is updated in Xero. See ExternalLinks below */
-		ExternalLinks?: Array<ExternalLink> | null;
-		PaymentTerms?: PaymentTerm | null;
+		ExternalLinks?: Array<ExternalLink>;
+		PaymentTerms?: PaymentTerm;
 	}
 
 	export enum OrganisationVersion { AU = 0, NZ = 1, GLOBAL = 2, UK = 3, US = 4, AUONRAMP = 5, NZONRAMP = 6, GLOBALONRAMP = 7, UKONRAMP = 8, USONRAMP = 9 }
@@ -1901,11 +1901,11 @@ export namespace MyNS {
 	export enum PaymentTermType { DAYSAFTERBILLDATE = 0, DAYSAFTERBILLMONTH = 1, OFCURRENTMONTH = 2, OFFOLLOWINGMONTH = 3 }
 
 	export interface Overpayments {
-		Overpayments1?: Array<Overpayment> | null;
+		Overpayments1?: Array<Overpayment>;
 	}
 
 	export interface Payments {
-		Payments1?: Array<Payment> | null;
+		Payments1?: Array<Payment>;
 	}
 
 	export interface PaymentDelete {
@@ -1918,18 +1918,18 @@ export namespace MyNS {
 	}
 
 	export interface Prepayments {
-		Prepayments1?: Array<Prepayment> | null;
+		Prepayments1?: Array<Prepayment>;
 	}
 
 	export interface PurchaseOrders {
-		PurchaseOrders1?: Array<PurchaseOrder> | null;
+		PurchaseOrders1?: Array<PurchaseOrder>;
 	}
 
 	export interface PurchaseOrder {
-		Contact?: Contact | null;
+		Contact?: Contact;
 
 		/** See LineItems */
-		LineItems?: Array<LineItem> | null;
+		LineItems?: Array<LineItem>;
 
 		/** Date purchase order was issued � YYYY-MM-DD. If the Date element is not specified then it will default to the current date based on the timezone setting of the organisation */
 		Date?: Date | null;
@@ -2001,13 +2001,13 @@ export namespace MyNS {
 		StatusAttributeString?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 
 		/** Displays array of warning messages from the API */
-		Warnings?: Array<ValidationError> | null;
+		Warnings?: Array<ValidationError>;
 
 		/** Displays array of attachments from the API */
-		Attachments?: Array<Attachment> | null;
+		Attachments?: Array<Attachment>;
 	}
 
 	export enum PurchaseOrderCurrencyCode { AED = 0, AFN = 1, ALL = 2, AMD = 3, ANG = 4, AOA = 5, ARS = 6, AUD = 7, AWG = 8, AZN = 9, BAM = 10, BBD = 11, BDT = 12, BGN = 13, BHD = 14, BIF = 15, BMD = 16, BND = 17, BOB = 18, BRL = 19, BSD = 20, BTN = 21, BWP = 22, BYN = 23, BZD = 24, CAD = 25, CDF = 26, CHF = 27, CLP = 28, CNY = 29, COP = 30, CRC = 31, CUC = 32, CUP = 33, CVE = 34, CZK = 35, DJF = 36, DKK = 37, DOP = 38, DZD = 39, EGP = 40, ERN = 41, ETB = 42, EUR = 43, FJD = 44, FKP = 45, GBP = 46, GEL = 47, GGP = 48, GHS = 49, GIP = 50, GMD = 51, GNF = 52, GTQ = 53, GYD = 54, HKD = 55, HNL = 56, HRK = 57, HTG = 58, HUF = 59, IDR = 60, ILS = 61, IMP = 62, INR = 63, IQD = 64, IRR = 65, ISK = 66, JEP = 67, JMD = 68, JOD = 69, JPY = 70, KES = 71, KGS = 72, KHR = 73, KMF = 74, KPW = 75, KRW = 76, KWD = 77, KYD = 78, KZT = 79, LAK = 80, LBP = 81, LKR = 82, LRD = 83, LSL = 84, LYD = 85, MAD = 86, MDL = 87, MGA = 88, MKD = 89, MMK = 90, MNT = 91, MOP = 92, MRU = 93, MUR = 94, MVR = 95, MWK = 96, MXN = 97, MYR = 98, MZN = 99, NAD = 100, NGN = 101, NIO = 102, NOK = 103, NPR = 104, NZD = 105, OMR = 106, PAB = 107, PEN = 108, PGK = 109, PHP = 110, PKR = 111, PLN = 112, PYG = 113, QAR = 114, RON = 115, RSD = 116, RUB = 117, RWF = 118, SAR = 119, SBD = 120, SCR = 121, SDG = 122, SEK = 123, SGD = 124, SHP = 125, SLL = 126, SOS = 127, SPL = 128, SRD = 129, STN = 130, SVC = 131, SYP = 132, SZL = 133, THB = 134, TJS = 135, TMT = 136, TND = 137, TOP = 138, TRY = 139, TTD = 140, TVD = 141, TWD = 142, TZS = 143, UAH = 144, UGX = 145, USD = 146, UYU = 147, UZS = 148, VEF = 149, VND = 150, VUV = 151, WST = 152, XAF = 153, XCD = 154, XDR = 155, XOF = 156, XPF = 157, YER = 158, ZAR = 159, ZMW = 160, ZMK = 161, ZWD = 162, _ = 163 }
@@ -2015,7 +2015,7 @@ export namespace MyNS {
 	export enum PurchaseOrderStatus { DRAFT = 0, SUBMITTED = 1, AUTHORISED = 2, BILLED = 3, DELETED = 4 }
 
 	export interface Quotes {
-		Quotes1?: Array<Quote> | null;
+		Quotes1?: Array<Quote>;
 	}
 
 	export interface Quote {
@@ -2040,10 +2040,10 @@ export namespace MyNS {
 		 * Max length: 4000
 		 */
 		Terms?: string | null;
-		Contact?: Contact | null;
+		Contact?: Contact;
 
 		/** See LineItems */
-		LineItems?: Array<LineItem> | null;
+		LineItems?: Array<LineItem>;
 
 		/** Date quote was issued � YYYY-MM-DD. If the Date element is not specified it will default to the current date based on the timezone setting of the organisation */
 		Date?: Date | null;
@@ -2103,7 +2103,7 @@ export namespace MyNS {
 		StatusAttributeString?: string | null;
 
 		/** Displays array of validation error messages from the API */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 	}
 
 	export enum QuoteStatus { DRAFT = 0, SENT = 1, DECLINED = 2, ACCEPTED = 3, INVOICED = 4 }
@@ -2117,22 +2117,22 @@ export namespace MyNS {
 	export enum QuoteStatusCodes { DRAFT = 0, SENT = 1, DECLINED = 2, ACCEPTED = 3, INVOICED = 4 }
 
 	export interface Receipts {
-		Receipts1?: Array<Receipt> | null;
+		Receipts1?: Array<Receipt>;
 	}
 
 	export interface RepeatingInvoices {
-		RepeatingInvoices1?: Array<RepeatingInvoice> | null;
+		RepeatingInvoices1?: Array<RepeatingInvoice>;
 	}
 
 	export interface RepeatingInvoice {
 
 		/** See Invoice Types */
 		Type?: RepeatingInvoiceType | null;
-		Contact?: Contact | null;
-		Schedule?: Schedule | null;
+		Contact?: Contact;
+		Schedule?: Schedule;
 
 		/** See LineItems */
-		LineItems?: Array<LineItem> | null;
+		LineItems?: Array<LineItem>;
 
 		/** Line amounts are exclusive of tax by default if you don�t specify this element. See Line Amount Types */
 		LineAmountTypes?: BankTransactionLineAmountTypes | null;
@@ -2168,7 +2168,7 @@ export namespace MyNS {
 		HasAttachments?: boolean | null;
 
 		/** Displays array of attachments from the API */
-		Attachments?: Array<Attachment> | null;
+		Attachments?: Array<Attachment>;
 	}
 
 	export enum RepeatingInvoiceType { ACCPAY = 0, ACCREC = 1 }
@@ -2206,7 +2206,7 @@ export namespace MyNS {
 	export enum RepeatingInvoiceStatus { DRAFT = 0, AUTHORISED = 1, DELETED = 2 }
 
 	export interface ReportWithRows {
-		Reports?: Array<ReportWithRow> | null;
+		Reports?: Array<ReportWithRow>;
 	}
 
 	export interface ReportWithRow {
@@ -2224,29 +2224,29 @@ export namespace MyNS {
 		ReportType?: string | null;
 
 		/** Report titles array (3 to 4 strings with the report name, orgnisation name and time frame of report) */
-		ReportTitles?: Array<string> | null;
+		ReportTitles?: Array<string>;
 
 		/** Date of report */
 		ReportDate?: string | null;
-		Rows?: Array<ReportRows> | null;
+		Rows?: Array<ReportRows>;
 
 		/** Updated Date */
 		UpdatedDateUTC?: Date | null;
-		Fields?: Array<ReportFields> | null;
+		Fields?: Array<ReportFields>;
 	}
 
 	export interface ReportRows {
 		RowType?: ReportRowsRowType | null;
 		Title?: string | null;
-		Cells?: Array<ReportCell> | null;
-		Rows?: Array<ReportRow> | null;
+		Cells?: Array<ReportCell>;
+		Rows?: Array<ReportRow>;
 	}
 
 	export enum ReportRowsRowType { Header = 0, Section = 1, Row = 2, SummaryRow = 3 }
 
 	export interface ReportCell {
 		Value?: string | null;
-		Attributes?: Array<ReportAttribute> | null;
+		Attributes?: Array<ReportAttribute>;
 	}
 
 	export interface ReportAttribute {
@@ -2257,7 +2257,7 @@ export namespace MyNS {
 	export interface ReportRow {
 		RowType?: ReportRowsRowType | null;
 		Title?: string | null;
-		Cells?: Array<ReportCell> | null;
+		Cells?: Array<ReportCell>;
 	}
 
 	export interface ReportFields {
@@ -2269,7 +2269,7 @@ export namespace MyNS {
 	export enum RowType { Header = 0, Section = 1, Row = 2, SummaryRow = 3 }
 
 	export interface Reports {
-		Reports1?: Array<Report> | null;
+		Reports1?: Array<Report>;
 	}
 
 	export interface Report {
@@ -2291,7 +2291,7 @@ export namespace MyNS {
 
 		/** Updated Date */
 		UpdatedDateUTC?: Date | null;
-		Contacts?: Array<TenNinteyNineContact> | null;
+		Contacts?: Array<TenNinteyNineContact>;
 	}
 
 	export enum ReportReportType { AgedPayablesByContact = 0 }
@@ -2366,7 +2366,7 @@ export namespace MyNS {
 	}
 
 	export interface TaxRates {
-		TaxRates1?: Array<TaxRate> | null;
+		TaxRates1?: Array<TaxRate>;
 	}
 
 	export interface TaxRate {
@@ -2378,7 +2378,7 @@ export namespace MyNS {
 		TaxType?: string | null;
 
 		/** See TaxComponents */
-		TaxComponents?: Array<TaxComponent> | null;
+		TaxComponents?: Array<TaxComponent>;
 
 		/** See Status Codes */
 		Status?: TaxRateStatus | null;
@@ -2432,15 +2432,15 @@ export namespace MyNS {
 	export enum TaxType { OUTPUT = 0, INPUT = 1, CAPEXINPUT = 2, EXEMPTEXPORT = 3, EXEMPTEXPENSES = 4, EXEMPTCAPITAL = 5, EXEMPTOUTPUT = 6, INPUTTAXED = 7, BASEXCLUDED = 8, GSTONCAPIMPORTS = 9, GSTONIMPORTS = 10, NONE = 11, INPUT2 = 12, ZERORATED = 13, OUTPUT2 = 14, CAPEXINPUT2 = 15, CAPEXOUTPUT = 16, CAPEXOUTPUT2 = 17, CAPEXSRINPUT = 18, CAPEXSROUTPUT = 19, ECACQUISITIONS = 20, ECZRINPUT = 21, ECZROUTPUT = 22, ECZROUTPUTSERVICES = 23, EXEMPTINPUT = 24, REVERSECHARGES = 25, RRINPUT = 26, RROUTPUT = 27, SRINPUT = 28, SROUTPUT = 29, ZERORATEDINPUT = 30, ZERORATEDOUTPUT = 31, BLINPUT = 32, DSOUTPUT = 33, EPINPUT = 34, ES33OUTPUT = 35, ESN33OUTPUT = 36, IGDSINPUT2 = 37, IMINPUT2 = 38, MEINPUT = 39, NRINPUT = 40, OPINPUT = 41, OSOUTPUT = 42, TXESSINPUT = 43, TXN33INPUT = 44, TXPETINPUT = 45, TXREINPUT = 46, INPUT3 = 47, INPUT4 = 48, OUTPUT3 = 49, OUTPUT4 = 50, SROUTPUT2 = 51, TXCA = 52, SRCAS = 53, BLINPUT2 = 54, DRCHARGESUPPLY20 = 55, DRCHARGE20 = 56, DRCHARGESUPPLY5 = 57, DRCHARGE5 = 58 }
 
 	export interface TrackingCategories {
-		TrackingCategories1?: Array<TrackingCategory> | null;
+		TrackingCategories1?: Array<TrackingCategory>;
 	}
 
 	export interface TrackingOptions {
-		Options?: Array<TrackingOption> | null;
+		Options?: Array<TrackingOption>;
 	}
 
 	export interface Users {
-		Users1?: Array<User> | null;
+		Users1?: Array<User>;
 	}
 
 	export interface Error {
@@ -2455,13 +2455,13 @@ export namespace MyNS {
 		Message?: string | null;
 
 		/** Array of Elements of validation Errors */
-		Elements?: Array<Element> | null;
+		Elements?: Array<Element>;
 	}
 
 	export interface Element {
 
 		/** Array of Validation Error message */
-		ValidationErrors?: Array<ValidationError> | null;
+		ValidationErrors?: Array<ValidationError>;
 
 		/** Unique ID for batch payment object with validation error */
 		BatchPaymentID?: string | null;

@@ -9,7 +9,7 @@ export namespace MyNS {
 		localizedAspectName?: string | null;
 
 		/** One or more valid values for the corresponding item aspect (in localizedAspectName) are returned here. These suggested values for the item aspect depend on the listing category and on the information specified in the listing. Sellers should confirm accuracy of the values before applying them to the listing. Please use getItemAspectsForCategory in the Taxonomy API or GetCategorySpecifics in the Trading API to get a comprehensive list of required and recommended aspects for a given category and a list of supported aspect values for each. */
-		suggestedValues?: Array<string> | null;
+		suggestedValues?: Array<string>;
 	}
 
 
@@ -23,13 +23,13 @@ export namespace MyNS {
 		message?: string | null;
 
 		/** This type is used to identify the product variation that has the listing violation. */
-		variation?: VariationDetails | null;
+		variation?: VariationDetails;
 
 		/** This container provides more information about the listing violation, if applicable. The type of information that appears here will vary based on the compliance type and type of violation. For example, for ASPECTS_ADOPTION violations, this container lists the missing aspect(s) or aspect(s) with invalid values. */
-		violationData?: Array<NameValueList> | null;
+		violationData?: Array<NameValueList>;
 
 		/** This type is used by the correctiveRecommendations container, which is returned if eBay has suggestions for how to correct the given violation. */
-		correctiveRecommendations?: CorrectiveRecommendations | null;
+		correctiveRecommendations?: CorrectiveRecommendations;
 
 		/** The enumeration value returned in this field indicates if the listing violation is considered to be OUT_OF_COMPLIANCE with an eBay listing policy, or the listing is considered to be AT_RISK of becoming non-compliant against an eBay listing policy. Generally, OUT_OF_COMPLIANCE policy violations can prevent the seller from revising a listing until the underlying violation(s) can be remedied. When the compliance state is AT_RISK, the seller is not blocked from revising the listing, but the seller should correct the violation to prevent the listing from being blocked for revisions in the future. Note: This field is returned for most violations, but not all. In the case that this field is not returned, it can be assumed that the state of the listing violation is OUT_OF_COMPLIANCE. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/compliance/types/ComplianceStateEnum.html'>eBay API documentation</a> */
 		complianceState?: string | null;
@@ -43,7 +43,7 @@ export namespace MyNS {
 		sku?: string | null;
 
 		/** An array of one or more variation aspects that define a variation within a multiple-variation listing. The aspect{s) returned here define the individual variation, because these aspects will differ for each variation. Common varying aspects include color and size. */
-		variationAspects?: Array<NameValueList> | null;
+		variationAspects?: Array<NameValueList>;
 	}
 
 
@@ -62,10 +62,10 @@ export namespace MyNS {
 	export interface CorrectiveRecommendations {
 
 		/** This type is used by the productRecommendation container, which is returned if eBay has found an eBay catalog product that may be a match for the product (or product variation) that has a listing violation. Note: eBay catalog product adoption is not enforced at this time, so product adoption violations are no longer returned. Due to this fact, this type and productRecommendation container are not currently applicable. */
-		productRecommendation?: ProductRecommendation | null;
+		productRecommendation?: ProductRecommendation;
 
 		/** This container is returned for ASPECTS_ADOPTION violations if eBay has found one or more item aspect name-value pairs that may be appropriate for the seller's product. In many cases, the missing or invalid item aspect(s) shown under the corresponding violationData array, will also show up under this array with suggested value(s). */
-		aspectRecommendations?: Array<AspectRecommendations> | null;
+		aspectRecommendations?: Array<AspectRecommendations>;
 	}
 
 
@@ -81,7 +81,7 @@ export namespace MyNS {
 	export interface ComplianceSummary {
 
 		/** This container is an array of one or more policy violation counts. A policy violation count is returned for each unique eBay marketplace and compliance type violation. As long as there is at least one non-compliant listing for the specified compliance type(s), this container will be returned. If no non-compliant listings are found for the specified compliance type(s), an HTTP status code of 204 No Content is returned, and there is no response body. */
-		violationSummaries?: Array<ComplianceSummaryInfo> | null;
+		violationSummaries?: Array<ComplianceSummaryInfo>;
 	}
 
 
@@ -115,7 +115,7 @@ export namespace MyNS {
 		offerId?: string | null;
 
 		/** This container consists of an array of one or more listing violations applicable to the eBay listing specified in the listingId field. This array is returned for each eBay listing that has one or more violations. For each returned violation, the fields that are returned and the details that are given will depend on the listing violation. */
-		violations?: Array<ComplianceDetail> | null;
+		violations?: Array<ComplianceDetail>;
 	}
 
 
@@ -132,7 +132,7 @@ export namespace MyNS {
 		errorId?: number | null;
 
 		/** An array of request elements most closely associated to the error. */
-		inputRefIds?: Array<string> | null;
+		inputRefIds?: Array<string>;
 
 		/** A more detailed explanation of the error. */
 		longMessage?: string | null;
@@ -141,10 +141,10 @@ export namespace MyNS {
 		message?: string | null;
 
 		/** An array of request elements most closely associated to the error. */
-		outputRefIds?: Array<string> | null;
+		outputRefIds?: Array<string>;
 
 		/** An array of name/value pairs that describe details the error condition. These are useful when multiple errors are returned. */
-		parameters?: Array<ErrorParameter> | null;
+		parameters?: Array<ErrorParameter>;
 
 		/** Further helps indicate which subsystem the error is coming from. System subcategories include: Initialization, Serialization, Security, Monitoring, Rate Limiting, etc. */
 		subdomain?: string | null;
@@ -182,7 +182,7 @@ export namespace MyNS {
 		limit?: number | null;
 
 		/** An array of listing violations that match the criteria in the call request, including pagination control {if set). As long as there is at least one listing violation that matches the input criteria, this container will be returned. If no listing violations are found for the seller, an HTTP status code of 204 No Content is returned, and there is no response body. */
-		listingViolations?: Array<ComplianceViolation> | null;
+		listingViolations?: Array<ComplianceViolation>;
 	}
 
 

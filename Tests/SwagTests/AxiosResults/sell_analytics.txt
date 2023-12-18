@@ -56,10 +56,10 @@ export namespace MyNS {
 	export interface DimensionMetric {
 
 		/** The fields in this complex type define the dimension, or attributes, by which the associated customer service metric and benchmark data is measured. The value of dimensionKey gets set according to the configuration of the input request. The name and value pair further define dimension under the key. */
-		dimension?: Dimension | null;
+		dimension?: Dimension;
 
 		/** This is a list of Metric elements where each element contains data and information related to the transactions grouped by the associated dimension. */
-		metrics?: Array<Metric> | null;
+		metrics?: Array<Metric>;
 	}
 
 
@@ -67,10 +67,10 @@ export namespace MyNS {
 	export interface Metric {
 
 		/** This complex type defines the benchmark data, which includes the average value of the metric for the group (the benchmark) and the seller's overall rating when compared to the benchmark. */
-		benchmark?: MetricBenchmark | null;
+		benchmark?: MetricBenchmark;
 
 		/** Returned when metricKey equals COUNT, this field returns an array of seller data where each set of data is grouped according by an overarching basis. When the seller distribution is returned, the numeric value of the associated value container equals the sum of the transactions where the seller meets the criteria of the customer service metric type for the given dimension during the evaluationCycle. */
-		distributions?: Array<MetricDistribution> | null;
+		distributions?: Array<MetricDistribution>;
 
 		/** This field indicates the customer service metric being returned in the associated metrics container. The field is set as follows: TRANSACTION_COUNT &ndash; When set to this value, the associated value field equals the total number of transactions completed in the seller group for the metric in the given dimension during the associated evaluationCycle. COUNT &ndash; When set to this value, the associated value field is set to the total number of transactions the seller completed that meet the criteria of the customer service metric type for the given dimension that occurred during the evaluationCycle. RATE &ndash; When set to this value, the value of the associated value field is the rate of the customer service metric type in the given dimension during the associated evaluationCycle. Specifically, when metricKey is set to RATE, the associated value field is set to the value of metricKey TRANSACTION_COUNT divided by the value of metricKey COUNT. The returned benchmark.rating for the seller is based on this calculated value. */
 		metricKey?: string | null;
@@ -90,7 +90,7 @@ export namespace MyNS {
 		basis?: string | null;
 
 		/** This complex type defines the fields that comprise the benchmark against which the seller's performance is compared. The comparison determines the seller's rating for the metric. */
-		metadata?: BenchmarkMetadata | null;
+		metadata?: BenchmarkMetadata;
 
 		/** This field returns seller's rating for the customer service metric. The rating is set to a value that equals the relative deviation between the seller's metric value and the benchmark value for the customer service metric. Deviation values range from LOW to VERY HIGH, and the lower the deviation, the better the seller rating. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/analytics/types/RatingTypeEnum.html'>eBay API documentation</a> */
 		rating?: string | null;
@@ -104,7 +104,7 @@ export namespace MyNS {
 		basis?: string | null;
 
 		/** This field returns a list of name/value pairs, where the name indicates the distribution being rated and the value indicates the count of seller transactions that meet the distribution criteria. */
-		data?: Array<Distribution> | null;
+		data?: Array<Distribution>;
 	}
 
 
@@ -132,7 +132,7 @@ export namespace MyNS {
 		errorId?: number | null;
 
 		/** Identifies specific request elements associated with the error, if any. inputRefId's response is format specific. For JSON, use JSONPath notation. */
-		inputRefIds?: Array<string> | null;
+		inputRefIds?: Array<string>;
 
 		/** A more detailed explanation of the error than given in the message error field. */
 		longMessage?: string | null;
@@ -141,10 +141,10 @@ export namespace MyNS {
 		message?: string | null;
 
 		/** Identifies specific response elements associated with the error, if any. Path format is the same as inputRefId. */
-		outputRefIds?: Array<string> | null;
+		outputRefIds?: Array<string>;
 
 		/** This optional list of name/value pairs that contain context-specific ErrorParameter objects, with each item in the list being a parameter (or input field name) that caused an error condition. Each ErrorParameter object consists of two fields, a name and a value. */
-		parameters?: Array<ErrorParameter> | null;
+		parameters?: Array<ErrorParameter>;
 
 		/** If present, indicates which subsystem in which the error occurred. */
 		subdomain?: string | null;
@@ -183,7 +183,7 @@ export namespace MyNS {
 	export interface FindSellerStandardsProfilesResponse {
 
 		/** A list of the seller's standards profiles. A &quot;standards profile&quot; is a set of eBay seller standards categories and the values related to the associated seller. Profiles are distinguished by a combination of cycle and program values. The &quot;program&quot; value specifies the region to which the data is from. The &quot;cycle&quot; value specifies whether the values were determined just now, or if the values are from the last official eBay seller standards evaluation. */
-		standardsProfiles?: Array<StandardsProfile> | null;
+		standardsProfiles?: Array<StandardsProfile>;
 	}
 
 
@@ -191,7 +191,7 @@ export namespace MyNS {
 	export interface StandardsProfile {
 
 		/** A complex type that describes a program cycle. */
-		cycle?: Cycle | null;
+		cycle?: Cycle;
 
 		/** If set to true, this flag indicates this is the default program for the seller. Except for sellers in China, a seller's default program is the marketplace where they registered with eBay. Seller's in China select their default program when they register. */
 		defaultProgram?: boolean | null;
@@ -200,7 +200,7 @@ export namespace MyNS {
 		evaluationReason?: string | null;
 
 		/** A list of the metrics upon which a seller's profile is evaluated. Each program's applicable metrics and requirements are listed at eBay Top Rated seller program standards. */
-		metrics?: Array<Metric> | null;
+		metrics?: Array<Metric>;
 
 		/** Indicates the program used to generate the profile data. Values can be PROGRAM_DE, PROGRAM_UK, PROGRAM_US, or PROGRAM_GLOBAL. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/analytics/types/ProgramEnum.html'>eBay API documentation</a> */
 		program?: string | null;
@@ -214,10 +214,10 @@ export namespace MyNS {
 	export interface GetCustomerServiceMetricResponse {
 
 		/** This container provides a seller's customer service metric performance for a given dimension. In the getCustomerServiceMetric request, specify values for the following request parameters to control the returned dimension and the associated metric values: customer_service_metric_type evaluation_type evaluation_marketplace_id */
-		dimensionMetrics?: Array<DimensionMetric> | null;
+		dimensionMetrics?: Array<DimensionMetric>;
 
 		/** This complex type describes the start and end dates of the of the time period over which the associated benchmark is computed. All timestamps are based on Mountain Standard Time (MST). The timestamp is formatted as an ISO 8601 string, which is based on the 24-hour Coordinated Universal Time (UTC) clock. */
-		evaluationCycle?: EvaluationCycle | null;
+		evaluationCycle?: EvaluationCycle;
 
 		/** The eBay marketplace ID of the marketplace upon which the customer service metric evaluation is based. The customer_service_metric resource supports a limited set of marketplaces. For a complete list of the supported marketplaces, please see the Service metrics policy page. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/analytics/types/MarketplaceIdEnum.html'>eBay API documentation</a> */
 		marketplaceId?: string | null;
@@ -228,10 +228,10 @@ export namespace MyNS {
 	export interface Header {
 
 		/** A list of the dimension or metric keys returned in the report. The values for each are is returned in the associated key fields. */
-		dimensionKeys?: Array<Definition> | null;
+		dimensionKeys?: Array<Definition>;
 
 		/** The list of metrics returned in the report. The values for each are is returned in the associated key fields. */
-		metrics?: Array<Definition> | null;
+		metrics?: Array<Definition>;
 	}
 
 
@@ -239,10 +239,10 @@ export namespace MyNS {
 	export interface Metadata {
 
 		/** Type that defines the metadata header fields. */
-		metadataHeader?: MetadataHeader | null;
+		metadataHeader?: MetadataHeader;
 
 		/** A list of the individual report records. */
-		metadataRecords?: Array<MetadataRecord> | null;
+		metadataRecords?: Array<MetadataRecord>;
 	}
 
 
@@ -253,7 +253,7 @@ export namespace MyNS {
 		key?: string | null;
 
 		/** The list of dimension key values used for the report header. Each list element contains the key name, its data type, and its localized name. For example: &quot;metadataKeys&quot;: [ &nbsp;&nbsp;&quot;key&quot;: &quot;LISTING_TITLE&quot;, &nbsp;&nbsp;&quot;localizedName&quot;: &quot;Listing title&quot;, &nbsp;&nbsp;&quot;dataType&quot;: &quot;STRING&quot; */
-		metadataKeys?: Array<Definition> | null;
+		metadataKeys?: Array<Definition>;
 	}
 
 
@@ -261,10 +261,10 @@ export namespace MyNS {
 	export interface MetadataRecord {
 
 		/** A list of data in a row returned in the traffic report. The data in each of the cells match the labels in headers of the report. */
-		metadataValues?: Array<Value> | null;
+		metadataValues?: Array<Value>;
 
 		/** A complex type that contains a value, plus the veracity of that value. */
-		value?: Value | null;
+		value?: Value;
 	}
 
 
@@ -283,10 +283,10 @@ export namespace MyNS {
 	export interface Record {
 
 		/** A list where each element contains either the string DAY (if the dimension is DAY), or the listing ID for which the record's metric data is computed. A second array member, applicable, is always true for dimension values. */
-		dimensionValues?: Array<Value> | null;
+		dimensionValues?: Array<Value>;
 
 		/** A list where each element contains a value field that indicates the record's value for the metric. Each element also contains an applicable field that indicates the veracity of the computed value. Note that there are no metric names or IDs associated with the values returned in this array. The metadata to which these values relate can be found in the key values . The order of the metric values in this array equals the order of the key values in metadataHeader. */
-		metricValues?: Array<Value> | null;
+		metricValues?: Array<Value>;
 	}
 
 
@@ -294,25 +294,25 @@ export namespace MyNS {
 	export interface Report {
 
 		/** A complex type containing the header of the report and the type of data containted in the rows of the report. */
-		dimensionMetadata?: Array<Metadata> | null;
+		dimensionMetadata?: Array<Metadata>;
 
 		/** The time stamp is formatted as an ISO 8601 string, which is based on the 24-hour Universal Coordinated Time (UTC) clock. If you specify an end date that is beyond the lastUpdatedDate value, eBay returns a report that contains data only up to the lastUpdateDate date. Format: [YYYY]-[MM]-[DD]T[hh]:[mm]:[ss].[sss]Z Example: 2018-08-20T07:09:00.000Z */
 		endDate?: string | null;
 
 		/** Type that defines the headers for the dimension keys and metrics returned in the report. */
-		header?: Header | null;
+		header?: Header;
 
 		/** The date and time, in ISO 8601 format, that indicates the last time the data returned in the report was updated. */
 		lastUpdatedDate?: string | null;
 
 		/** A complex type containing the individual data records for the traffic report. */
-		records?: Array<Record> | null;
+		records?: Array<Record>;
 
 		/** The start date of the date range used to calculate the report, in ISO 8601 format. */
 		startDate?: string | null;
 
 		/** An array of any process errors or warnings that were generated during the processing of the call processing. */
-		warnings?: Array<Error> | null;
+		warnings?: Array<Error>;
 	}
 
 	export class Customer_service_metricClient {

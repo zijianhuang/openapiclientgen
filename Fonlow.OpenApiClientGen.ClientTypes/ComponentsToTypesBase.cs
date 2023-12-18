@@ -72,7 +72,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return writer.ToString();
 		}
 
-		public void CreateCodeDom(OpenApiComponents components)
+		public void CreateCodeDomForComponents(OpenApiComponents components)
 		{
 			if (components == null)
 			{
@@ -191,7 +191,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				refToType = propertySchema.AnyOf[0];
 			}
-			else if (refToType == null)
+			
+			if (refToType == null)
 			{
 				Trace.TraceWarning($"Property '{propertyKey}' of {currentTypeName} may be of type object.");
 				return Tuple.Create(new CodeTypeReference(typeof(object)), true);
@@ -421,6 +422,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <remarks>This shares similar navigation of schema like those in AddProperty().</remarks>
 		public CodeTypeReference PropertySchemaToCodeTypeReference(OpenApiSchema propertySchema, string actionName, string propertyName)
 		{
+			if (propertySchema == null)
+			{
+				throw new ArgumentNullException(nameof(propertySchema));
+			}
+
 			string schemaType = propertySchema.Type;
 			bool isPrimitiveType = TypeRefHelper.IsPrimitiveTypeOfOA(schemaType);
 			if (String.IsNullOrEmpty(schemaType))

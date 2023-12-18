@@ -33,7 +33,7 @@ export namespace MyNS {
 		errorId?: number | null;
 
 		/** An array of request elements most closely associated to the error. */
-		inputRefIds?: Array<string> | null;
+		inputRefIds?: Array<string>;
 
 		/** A more detailed explanation of the error. */
 		longMessage?: string | null;
@@ -42,10 +42,10 @@ export namespace MyNS {
 		message?: string | null;
 
 		/** An array of request elements most closely associated to the error. */
-		outputRefIds?: Array<string> | null;
+		outputRefIds?: Array<string>;
 
 		/** An array of name/value pairs that describe details the error condition. These are useful when multiple errors are returned. */
-		parameters?: Array<ErrorParameter> | null;
+		parameters?: Array<ErrorParameter>;
 
 		/** Further helps indicate which subsystem the error is coming from. System subcategories include: Initialization, Serialization, Security, Monitoring, Rate Limiting, etc. */
 		subdomain?: string | null;
@@ -65,7 +65,7 @@ export namespace MyNS {
 	export interface Payout {
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		amount?: Amount | null;
+		amount?: Amount;
 
 		/** This timestamp indicates when the seller payout began processing. The following format is used: YYYY-MM-DDTHH:MM:SS.SSSZ. For example, 2015-08-04T19:09:02.768Z. This field is still returned even if the payout was pending but failed (payoutStatus value shows RETRYABLE_FAILED or TERMINAL_FAILED). */
 		payoutDate?: string | null;
@@ -74,7 +74,7 @@ export namespace MyNS {
 		payoutId?: string | null;
 
 		/** This type provides details about the seller's account that received (or is scheduled to receive) a payout. */
-		payoutInstrument?: PayoutInstrument | null;
+		payoutInstrument?: PayoutInstrument;
 
 		/** This enumeration value indicates the current status of the seller payout. For a successful payout, the value returned will be SUCCEEDED. See the PayoutStatusEnum type for more details on each payout status value. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/PayoutStatusEnum.html'>eBay API documentation</a> */
 		payoutStatus?: string | null;
@@ -105,7 +105,7 @@ export namespace MyNS {
 	export interface PayoutSummaryResponse {
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		amount?: Amount | null;
+		amount?: Amount;
 
 		/** This integer value indicates the total count of payouts to the seller that match the input criteria. This field is always returned, even if there are no payouts that match the input criteria (its value will show 0). */
 		payoutCount?: number | null;
@@ -131,7 +131,7 @@ export namespace MyNS {
 		offset?: number | null;
 
 		/** An array of one or more payouts that match the input criteria. Details for each payout include the unique identifier of the payout, the status of the payout, the amount of the payout, and the number of monetary transactions associated with the payout. */
-		payouts?: Array<Payout> | null;
+		payouts?: Array<Payout>;
 
 		/** The getPayouts call URI to use if you wish to view the previous page of the result set. This field is only returned if there is a previous page of results to view based on the current input criteria. */
 		prev?: string | null;
@@ -145,16 +145,16 @@ export namespace MyNS {
 	export interface SellerFundsSummaryResponse {
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		availableFunds?: Amount | null;
+		availableFunds?: Amount;
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		fundsOnHold?: Amount | null;
+		fundsOnHold?: Amount;
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		processingFunds?: Amount | null;
+		processingFunds?: Amount;
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		totalFunds?: Amount | null;
+		totalFunds?: Amount;
 	}
 
 
@@ -162,13 +162,13 @@ export namespace MyNS {
 	export interface Transaction {
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		amount?: Amount | null;
+		amount?: Amount;
 
 		/** The enumeration value returned in this field indicates if the monetary transaction amount is a (CREDIT) or a (DEBIT) to the seller's account. Typically, the SALE and CREDIT transaction types are credits to the seller's account, and the REFUND, DISPUTE, and SHIPPING_LABEL transaction types are debits to the seller's account. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		bookingEntry?: string | null;
 
 		/** This type is used to express details about the buyer associated with an order. At this time, the only field in this type is the eBay user ID of the buyer, but more fields may get added at a later date. */
-		buyer?: Buyer | null;
+		buyer?: Buyer;
 
 		/** The unique identifier of the order associated with the monetary transaction. Note: eBay rolled out a new Order ID format in June 2019. Until April 2020, the legacy APIs still support both the old and new order ID format, but only the new order ID format is supported in REST-based APIs. */
 		orderId?: string | null;
@@ -200,7 +200,7 @@ export namespace MyNS {
 	export interface TransactionSummaryResponse {
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		creditAmount?: Amount | null;
+		creditAmount?: Amount;
 
 		/** The enumeration value indicates whether the dollar amount in the creditAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be CREDIT. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		creditBookingEntry?: string | null;
@@ -209,7 +209,7 @@ export namespace MyNS {
 		creditCount?: number | null;
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		disputeAmount?: Amount | null;
+		disputeAmount?: Amount;
 
 		/** The enumeration value indicates whether the dollar amount in the disputeAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be DEBIT, but its possible that CREDIT could be returned if the seller contested one or more payment disputes and won the dispute. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		disputeBookingEntry?: string | null;
@@ -218,7 +218,7 @@ export namespace MyNS {
 		disputeCount?: number | null;
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		onHoldAmount?: Amount | null;
+		onHoldAmount?: Amount;
 
 		/** The enumeration value indicates whether the dollar amount in the onHoldAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be CREDIT, since on-hold funds should eventually be released as part of a payout to the seller once the hold is cleared. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		onHoldBookingEntry?: string | null;
@@ -227,7 +227,7 @@ export namespace MyNS {
 		onHoldCount?: number | null;
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		refundAmount?: Amount | null;
+		refundAmount?: Amount;
 
 		/** The enumeration value indicates whether the dollar amount in the refundAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be DEBIT since this a refund from the seller to the buyer. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		refundBookingEntry?: string | null;
@@ -236,7 +236,7 @@ export namespace MyNS {
 		refundCount?: number | null;
 
 		/** This type is used to express the dollar value and currency used for any transaction retrieved with the Finances API, including an order total, a seller payout, a buyer refund, or a seller credit. */
-		shippingLabelAmount?: Amount | null;
+		shippingLabelAmount?: Amount;
 
 		/** The enumeration value indicates whether the dollar amount in the shippingLabelAmount field is a charge (debit) to the seller or a credit. Typically, the enumeration value returned here will be DEBIT, as eBay will charge the seller when eBay shipping labels are purchased, but it can be CREDIT if the seller was refunded for a shipping label or was possibly overcharged for a shipping label. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/finances/types/BookingEntryEnum.html'>eBay API documentation</a> */
 		shippingLabelBookingEntry?: string | null;
@@ -268,7 +268,7 @@ export namespace MyNS {
 		total?: number | null;
 
 		/** An array of one or more monetary transactions that match the input criteria. Details for each monetary transaction may include the unique identifier of the order associated with the monetary transaction, the status of the transaction, the amount of the order, the order's buyer, and the unique identifier of the payout (if a payout has been initiated/issued for the order). */
-		transactions?: Array<Transaction> | null;
+		transactions?: Array<Transaction>;
 	}
 
 	export class PayoutClient {

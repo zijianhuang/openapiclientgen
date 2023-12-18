@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface Assets {
 		pagination?: Pagination | null;
-		items?: Array<Asset> | null;
+		items?: Array<Asset>;
 	}
 
 	export interface Asset {
@@ -183,10 +183,10 @@ export namespace MyNS {
 	export interface Error {
 
 		/** Array of elements of resource validation errors */
-		resourceValidationErrors?: Array<ResourceValidationErrorsElement> | null;
+		resourceValidationErrors?: Array<ResourceValidationErrorsElement>;
 
 		/** Array of elements of field validation errors */
-		fieldValidationErrors?: Array<FieldValidationErrorsElement> | null;
+		fieldValidationErrors?: Array<FieldValidationErrorsElement>;
 
 		/** The internal type of error, not accessible externally */
 		type?: string | null;

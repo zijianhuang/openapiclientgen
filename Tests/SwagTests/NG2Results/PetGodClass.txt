@@ -27,7 +27,7 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Test Sub Category */
-		sub?: CategorySub | null;
+		sub?: CategorySub;
 	}
 
 	export interface CategorySub {
@@ -92,7 +92,7 @@ export namespace MyNS {
 		friend?: Pet | null;
 
 		/** Tags attached to the pet */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 
 		/** Pet status in the store */
 		status?: PetStatus | null;

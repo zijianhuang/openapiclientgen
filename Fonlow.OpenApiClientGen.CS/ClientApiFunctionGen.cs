@@ -313,7 +313,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			}
 
 			CodeParameterDeclarationExpression[] uriQueryParameters = parameterDescriptions.Where(d =>
-				(d.ParameterDescriptor.ParameterBinder != ParameterBinder.FromBody && d.ParameterDescriptor.ParameterBinder != ParameterBinder.FromForm && TypeHelper.IsSimpleType(d.ParameterDescriptor.ParameterType))
+				(d.ParameterDescriptor.ParameterBinder != ParameterBinder.FromBody && d.ParameterDescriptor.ParameterBinder != ParameterBinder.FromForm && TypeHelper.IsDotNetSimpleType(d.ParameterDescriptor.ParameterType))
 				|| (TypeHelper.IsComplexType(d.ParameterDescriptor.ParameterType) && d.ParameterDescriptor.ParameterBinder == ParameterBinder.FromUri)
 				|| (d.ParameterDescriptor.ParameterType.IsValueType && d.ParameterDescriptor.ParameterBinder == ParameterBinder.FromUri)
 				).Select(d => new CodeParameterDeclarationExpression(d.ParameterTypeReference, d.Name))
