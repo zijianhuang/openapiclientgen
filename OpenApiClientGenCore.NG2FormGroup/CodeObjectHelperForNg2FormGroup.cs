@@ -1,10 +1,5 @@
-﻿using System;
-using System.CodeDom;
+﻿using System.CodeDom;
 using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
 
 namespace Fonlow.TypeScriptCodeDom
 {
@@ -71,7 +66,8 @@ namespace Fonlow.TypeScriptCodeDom
 			for (int i = 0; i < codeNamespaceCollection.Count; i++)
 			{
 				var ns = codeNamespaceCollection[i];
-				var found = ns.Types.OfType<CodeTypeDeclaration>().ToList().Find(t => ns.Name + "." + t.Name == typeName);
+				//var found = ns.Types.OfType<CodeTypeDeclaration>().ToList().Find(t => ns.Name + "." + t.Name == typeName);
+				var found = ns.Types.OfType<CodeTypeDeclaration>().ToList().Find(t => t.Name == typeName);
 				if (found != null)
 				{
 					return found;

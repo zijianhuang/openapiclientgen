@@ -1,0 +1,2009 @@
+import { Injectable, Inject } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+export namespace MyNS {
+	export interface BBSReportRequestType {
+		payeeProvider: ProviderType;
+		claimId?: string | null;
+		lodgementDate?: Date | null;
+	}
+	export interface BBSReportRequestTypeFormProperties {
+		claimId: FormControl<string | null | undefined>,
+		lodgementDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateBBSReportRequestTypeFormGroup() {
+		return new FormGroup<BBSReportRequestTypeFormProperties>({
+			claimId: new FormControl<string | null | undefined>(undefined),
+			lodgementDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface ProviderType {
+		providerNumber: string;
+	}
+	export interface ProviderTypeFormProperties {
+		providerNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateProviderTypeFormGroup() {
+		return new FormGroup<ProviderTypeFormProperties>({
+			providerNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface BBSPaymentReportResponseType {
+		paymentRun?: PaymentRunType;
+		paymentInfo?: PaymentType;
+		claimSummary?: Array<ClaimSummaryType>;
+		status: string;
+	}
+	export interface BBSPaymentReportResponseTypeFormProperties {
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateBBSPaymentReportResponseTypeFormGroup() {
+		return new FormGroup<BBSPaymentReportResponseTypeFormProperties>({
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface PaymentRunType {
+		payerName?: string | null;
+		runDate?: Date | null;
+		runNumber?: string | null;
+	}
+	export interface PaymentRunTypeFormProperties {
+		payerName: FormControl<string | null | undefined>,
+		runDate: FormControl<Date | null | undefined>,
+		runNumber: FormControl<string | null | undefined>,
+	}
+	export function CreatePaymentRunTypeFormGroup() {
+		return new FormGroup<PaymentRunTypeFormProperties>({
+			payerName: new FormControl<string | null | undefined>(undefined),
+			runDate: new FormControl<Date | null | undefined>(undefined),
+			runNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface PaymentType {
+		accountInfo: BankAccountType;
+		depositAmount?: string | null;
+		paymentReference?: string | null;
+	}
+	export interface PaymentTypeFormProperties {
+		depositAmount: FormControl<string | null | undefined>,
+		paymentReference: FormControl<string | null | undefined>,
+	}
+	export function CreatePaymentTypeFormGroup() {
+		return new FormGroup<PaymentTypeFormProperties>({
+			depositAmount: new FormControl<string | null | undefined>(undefined),
+			paymentReference: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface BankAccountType {
+		accountName?: string | null;
+		accountNumber?: string | null;
+		bsbCode?: string | null;
+	}
+	export interface BankAccountTypeFormProperties {
+		accountName: FormControl<string | null | undefined>,
+		accountNumber: FormControl<string | null | undefined>,
+		bsbCode: FormControl<string | null | undefined>,
+	}
+	export function CreateBankAccountTypeFormGroup() {
+		return new FormGroup<BankAccountTypeFormProperties>({
+			accountName: new FormControl<string | null | undefined>(undefined),
+			accountNumber: new FormControl<string | null | undefined>(undefined),
+			bsbCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface ClaimSummaryType {
+		accountReferenceId?: string | null;
+		benefit?: string | null;
+		chargeAmount?: string | null;
+		claimChannelCode?: string | null;
+		claimId?: string | null;
+		lodgementDate?: Date | null;
+		transactionId?: string | null;
+	}
+	export interface ClaimSummaryTypeFormProperties {
+		accountReferenceId: FormControl<string | null | undefined>,
+		benefit: FormControl<string | null | undefined>,
+		chargeAmount: FormControl<string | null | undefined>,
+		claimChannelCode: FormControl<string | null | undefined>,
+		claimId: FormControl<string | null | undefined>,
+		lodgementDate: FormControl<Date | null | undefined>,
+		transactionId: FormControl<string | null | undefined>,
+	}
+	export function CreateClaimSummaryTypeFormGroup() {
+		return new FormGroup<ClaimSummaryTypeFormProperties>({
+			accountReferenceId: new FormControl<string | null | undefined>(undefined),
+			benefit: new FormControl<string | null | undefined>(undefined),
+			chargeAmount: new FormControl<string | null | undefined>(undefined),
+			claimChannelCode: new FormControl<string | null | undefined>(undefined),
+			claimId: new FormControl<string | null | undefined>(undefined),
+			lodgementDate: new FormControl<Date | null | undefined>(undefined),
+			transactionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface ServiceMessagesType {
+		highestSeverity: ServiceMessagesTypeHighestSeverity;
+		serviceMessage: Array<ServiceMessageType>;
+	}
+	export interface ServiceMessagesTypeFormProperties {
+		highestSeverity: FormControl<ServiceMessagesTypeHighestSeverity | null | undefined>,
+	}
+	export function CreateServiceMessagesTypeFormGroup() {
+		return new FormGroup<ServiceMessagesTypeFormProperties>({
+			highestSeverity: new FormControl<ServiceMessagesTypeHighestSeverity | null | undefined>(undefined),
+		});
+
+	}
+
+	export enum ServiceMessagesTypeHighestSeverity { Fatal = 0, Error = 1, Warning = 2, Informational = 3 }
+
+	export interface ServiceMessageType {
+		code: string;
+		severity: ServiceMessagesTypeHighestSeverity;
+		reason: string;
+	}
+	export interface ServiceMessageTypeFormProperties {
+		code: FormControl<string | null | undefined>,
+		severity: FormControl<ServiceMessagesTypeHighestSeverity | null | undefined>,
+		reason: FormControl<string | null | undefined>,
+	}
+	export function CreateServiceMessageTypeFormGroup() {
+		return new FormGroup<ServiceMessageTypeFormProperties>({
+			code: new FormControl<string | null | undefined>(undefined),
+			severity: new FormControl<ServiceMessagesTypeHighestSeverity | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface BBSProcessingReportResponseType {
+		claimAssessment?: ClaimAssessmentType;
+		status: string;
+	}
+	export interface BBSProcessingReportResponseTypeFormProperties {
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateBBSProcessingReportResponseTypeFormGroup() {
+		return new FormGroup<BBSProcessingReportResponseTypeFormProperties>({
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface ClaimAssessmentType {
+		medicalEvent?: Array<MedicalEventResponseType>;
+		serviceProvider?: ProviderType;
+		benefitPaid?: string | null;
+		chargeAmount?: string | null;
+		claimId?: string | null;
+	}
+	export interface ClaimAssessmentTypeFormProperties {
+		benefitPaid: FormControl<string | null | undefined>,
+		chargeAmount: FormControl<string | null | undefined>,
+		claimId: FormControl<string | null | undefined>,
+	}
+	export function CreateClaimAssessmentTypeFormGroup() {
+		return new FormGroup<ClaimAssessmentTypeFormProperties>({
+			benefitPaid: new FormControl<string | null | undefined>(undefined),
+			chargeAmount: new FormControl<string | null | undefined>(undefined),
+			claimId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface MedicalEventResponseType {
+		patient?: MembershipStatusType;
+		service?: Array<ServiceResponseType>;
+		id?: string | null;
+		eventDate?: Date | null;
+	}
+	export interface MedicalEventResponseTypeFormProperties {
+		id: FormControl<string | null | undefined>,
+		eventDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateMedicalEventResponseTypeFormGroup() {
+		return new FormGroup<MedicalEventResponseTypeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			eventDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface MembershipStatusType {
+		status?: StatusType;
+		currentMembership?: MembershipType;
+		currentMember?: IdentityType;
+		processDate?: Date | null;
+	}
+	export interface MembershipStatusTypeFormProperties {
+		processDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateMembershipStatusTypeFormGroup() {
+		return new FormGroup<MembershipStatusTypeFormProperties>({
+			processDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface StatusType {
+		code?: number | null;
+		text?: string | null;
+	}
+	export interface StatusTypeFormProperties {
+		code: FormControl<number | null | undefined>,
+		text: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusTypeFormGroup() {
+		return new FormGroup<StatusTypeFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface MembershipType {
+		memberNumber?: string | null;
+		memberRefNumber?: string | null;
+	}
+	export interface MembershipTypeFormProperties {
+		memberNumber: FormControl<string | null | undefined>,
+		memberRefNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateMembershipTypeFormGroup() {
+		return new FormGroup<MembershipTypeFormProperties>({
+			memberNumber: new FormControl<string | null | undefined>(undefined),
+			memberRefNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface IdentityType {
+		dateOfBirth?: Date | null;
+		familyName?: string | null;
+		givenName?: string | null;
+		secondInitial?: string | null;
+		sex?: string | null;
+	}
+	export interface IdentityTypeFormProperties {
+		dateOfBirth: FormControl<Date | null | undefined>,
+		familyName: FormControl<string | null | undefined>,
+		givenName: FormControl<string | null | undefined>,
+		secondInitial: FormControl<string | null | undefined>,
+		sex: FormControl<string | null | undefined>,
+	}
+	export function CreateIdentityTypeFormGroup() {
+		return new FormGroup<IdentityTypeFormProperties>({
+			dateOfBirth: new FormControl<Date | null | undefined>(undefined),
+			familyName: new FormControl<string | null | undefined>(undefined),
+			givenName: new FormControl<string | null | undefined>(undefined),
+			secondInitial: new FormControl<string | null | undefined>(undefined),
+			sex: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface ServiceResponseType {
+		error?: StatusType;
+		id?: string | null;
+		assessmentCode?: string | null;
+		benefitPaid?: string | null;
+		chargeAmount?: string | null;
+		itemNumber?: string | null;
+		numberOfPatientsSeen?: string | null;
+	}
+	export interface ServiceResponseTypeFormProperties {
+		id: FormControl<string | null | undefined>,
+		assessmentCode: FormControl<string | null | undefined>,
+		benefitPaid: FormControl<string | null | undefined>,
+		chargeAmount: FormControl<string | null | undefined>,
+		itemNumber: FormControl<string | null | undefined>,
+		numberOfPatientsSeen: FormControl<string | null | undefined>,
+	}
+	export function CreateServiceResponseTypeFormGroup() {
+		return new FormGroup<ServiceResponseTypeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			assessmentCode: new FormControl<string | null | undefined>(undefined),
+			benefitPaid: new FormControl<string | null | undefined>(undefined),
+			chargeAmount: new FormControl<string | null | undefined>(undefined),
+			itemNumber: new FormControl<string | null | undefined>(undefined),
+			numberOfPatientsSeen: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface BulkBillStoreForwardRequestType {
+		claim: BulkBillClaimStoreForwardClaimType;
+	}
+	export interface BulkBillStoreForwardRequestTypeFormProperties {
+	}
+	export function CreateBulkBillStoreForwardRequestTypeFormGroup() {
+		return new FormGroup<BulkBillStoreForwardRequestTypeFormProperties>({
+		});
+
+	}
+
+	export interface BulkBillClaimStoreForwardClaimType {
+		facilityId?: string | null;
+		hospitalInd?: string | null;
+		medicalEvent: Array<BBSMedicalEventType>;
+		payeeProvider?: ProviderType;
+		serviceProvider: ProviderType;
+		serviceTypeCode: string;
+	}
+	export interface BulkBillClaimStoreForwardClaimTypeFormProperties {
+		facilityId: FormControl<string | null | undefined>,
+		hospitalInd: FormControl<string | null | undefined>,
+		serviceTypeCode: FormControl<string | null | undefined>,
+	}
+	export function CreateBulkBillClaimStoreForwardClaimTypeFormGroup() {
+		return new FormGroup<BulkBillClaimStoreForwardClaimTypeFormProperties>({
+			facilityId: new FormControl<string | null | undefined>(undefined),
+			hospitalInd: new FormControl<string | null | undefined>(undefined),
+			serviceTypeCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface BBSMedicalEventType {
+		id: string;
+		authorisationDate: Date;
+		createDateTime: Date;
+		medicalEventDate: Date;
+		medicalEventTime?: string | null;
+		patient: MedicarePatientType;
+		referral?: ReferralType;
+		referralOverrideCode?: string | null;
+		service: Array<ServiceType>;
+		submissionAuthorityInd: string;
+	}
+	export interface BBSMedicalEventTypeFormProperties {
+		id: FormControl<string | null | undefined>,
+		authorisationDate: FormControl<Date | null | undefined>,
+		createDateTime: FormControl<Date | null | undefined>,
+		medicalEventDate: FormControl<Date | null | undefined>,
+		medicalEventTime: FormControl<string | null | undefined>,
+		referralOverrideCode: FormControl<string | null | undefined>,
+		submissionAuthorityInd: FormControl<string | null | undefined>,
+	}
+	export function CreateBBSMedicalEventTypeFormGroup() {
+		return new FormGroup<BBSMedicalEventTypeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			authorisationDate: new FormControl<Date | null | undefined>(undefined),
+			createDateTime: new FormControl<Date | null | undefined>(undefined),
+			medicalEventDate: new FormControl<Date | null | undefined>(undefined),
+			medicalEventTime: new FormControl<string | null | undefined>(undefined),
+			referralOverrideCode: new FormControl<string | null | undefined>(undefined),
+			submissionAuthorityInd: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface MedicarePatientType {
+		identity: IdentityType;
+		medicare: MembershipType;
+	}
+	export interface MedicarePatientTypeFormProperties {
+	}
+	export function CreateMedicarePatientTypeFormGroup() {
+		return new FormGroup<MedicarePatientTypeFormProperties>({
+		});
+
+	}
+
+	export interface ReferralType {
+		issueDate: Date;
+		period?: string | null;
+		periodCode?: string | null;
+		provider: ProviderType;
+		typeCode: string;
+	}
+	export interface ReferralTypeFormProperties {
+		issueDate: FormControl<Date | null | undefined>,
+		period: FormControl<string | null | undefined>,
+		periodCode: FormControl<string | null | undefined>,
+		typeCode: FormControl<string | null | undefined>,
+	}
+	export function CreateReferralTypeFormGroup() {
+		return new FormGroup<ReferralTypeFormProperties>({
+			issueDate: new FormControl<Date | null | undefined>(undefined),
+			period: new FormControl<string | null | undefined>(undefined),
+			periodCode: new FormControl<string | null | undefined>(undefined),
+			typeCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface ServiceType {
+		id: string;
+		accessionDateTime?: Date | null;
+		aftercareOverrideInd?: string | null;
+		chargeAmount?: string | null;
+		collectionDateTime?: Date | null;
+		duplicateServiceOverrideInd?: string | null;
+		fieldQuantity?: string | null;
+		itemNumber?: string | null;
+		lspNumber?: string | null;
+		multipleProcedureOverrideInd?: string | null;
+		numberOfPatientsSeen?: string | null;
+		restrictiveOverrideCode?: string | null;
+		rule3ExemptInd?: string | null;
+		s4b3ExemptInd?: string | null;
+		scpId?: string | null;
+		selfDeemedCode?: string | null;
+		text?: string | null;
+		timeDuration?: string | null;
+	}
+	export interface ServiceTypeFormProperties {
+		id: FormControl<string | null | undefined>,
+		accessionDateTime: FormControl<Date | null | undefined>,
+		aftercareOverrideInd: FormControl<string | null | undefined>,
+		chargeAmount: FormControl<string | null | undefined>,
+		collectionDateTime: FormControl<Date | null | undefined>,
+		duplicateServiceOverrideInd: FormControl<string | null | undefined>,
+		fieldQuantity: FormControl<string | null | undefined>,
+		itemNumber: FormControl<string | null | undefined>,
+		lspNumber: FormControl<string | null | undefined>,
+		multipleProcedureOverrideInd: FormControl<string | null | undefined>,
+		numberOfPatientsSeen: FormControl<string | null | undefined>,
+		restrictiveOverrideCode: FormControl<string | null | undefined>,
+		rule3ExemptInd: FormControl<string | null | undefined>,
+		s4b3ExemptInd: FormControl<string | null | undefined>,
+		scpId: FormControl<string | null | undefined>,
+		selfDeemedCode: FormControl<string | null | undefined>,
+		text: FormControl<string | null | undefined>,
+		timeDuration: FormControl<string | null | undefined>,
+	}
+	export function CreateServiceTypeFormGroup() {
+		return new FormGroup<ServiceTypeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			accessionDateTime: new FormControl<Date | null | undefined>(undefined),
+			aftercareOverrideInd: new FormControl<string | null | undefined>(undefined),
+			chargeAmount: new FormControl<string | null | undefined>(undefined),
+			collectionDateTime: new FormControl<Date | null | undefined>(undefined),
+			duplicateServiceOverrideInd: new FormControl<string | null | undefined>(undefined),
+			fieldQuantity: new FormControl<string | null | undefined>(undefined),
+			itemNumber: new FormControl<string | null | undefined>(undefined),
+			lspNumber: new FormControl<string | null | undefined>(undefined),
+			multipleProcedureOverrideInd: new FormControl<string | null | undefined>(undefined),
+			numberOfPatientsSeen: new FormControl<string | null | undefined>(undefined),
+			restrictiveOverrideCode: new FormControl<string | null | undefined>(undefined),
+			rule3ExemptInd: new FormControl<string | null | undefined>(undefined),
+			s4b3ExemptInd: new FormControl<string | null | undefined>(undefined),
+			scpId: new FormControl<string | null | undefined>(undefined),
+			selfDeemedCode: new FormControl<string | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+			timeDuration: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface BulkBillStoreForwardResponseType {
+		claimId: string;
+		status: string;
+	}
+	export interface BulkBillStoreForwardResponseTypeFormProperties {
+		claimId: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateBulkBillStoreForwardResponseTypeFormGroup() {
+		return new FormGroup<BulkBillStoreForwardResponseTypeFormProperties>({
+			claimId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface AlliedHealthClaimRequestType {
+		claim: VAAClaimType;
+	}
+	export interface AlliedHealthClaimRequestTypeFormProperties {
+	}
+	export function CreateAlliedHealthClaimRequestTypeFormGroup() {
+		return new FormGroup<AlliedHealthClaimRequestTypeFormProperties>({
+		});
+
+	}
+
+	export interface VAAClaimType {
+		hospitalInd?: string | null;
+		medicalEvent: Array<VAAMedicalEventType>;
+		payeeProvider?: ProviderType;
+		serviceProvider: ProviderType;
+		serviceTypeCode: string;
+	}
+	export interface VAAClaimTypeFormProperties {
+		hospitalInd: FormControl<string | null | undefined>,
+		serviceTypeCode: FormControl<string | null | undefined>,
+	}
+	export function CreateVAAClaimTypeFormGroup() {
+		return new FormGroup<VAAClaimTypeFormProperties>({
+			hospitalInd: new FormControl<string | null | undefined>(undefined),
+			serviceTypeCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface VAAMedicalEventType {
+		id: string;
+		acceptedDisability?: AcceptedDisabilityType;
+		authorisationDate: Date;
+		breakInEpisodeEndDate?: Date | null;
+		breakInEpisodeOfCareNumber?: string | null;
+		breakInEpisodeStartDate?: Date | null;
+		numberOfCNCHours?: string | null;
+		numberOfCNCVisits?: string | null;
+		createDateTime: Date;
+		numberOfENHours?: string | null;
+		numberOfENVisits?: string | null;
+		facilityId?: string | null;
+		medicalEventDate: Date;
+		medicalEventTime?: string | null;
+		numberOfNSSHours?: string | null;
+		numberOfNSSVisits?: string | null;
+		patient: VeteranPatientType;
+		referral?: ReferralType;
+		referralOverrideCode?: string | null;
+		numberOfRNHours?: string | null;
+		numberOfRNVisits?: string | null;
+		service: Array<VAAServiceType>;
+		submissionAuthorityInd: string;
+	}
+	export interface VAAMedicalEventTypeFormProperties {
+		id: FormControl<string | null | undefined>,
+		authorisationDate: FormControl<Date | null | undefined>,
+		breakInEpisodeEndDate: FormControl<Date | null | undefined>,
+		breakInEpisodeOfCareNumber: FormControl<string | null | undefined>,
+		breakInEpisodeStartDate: FormControl<Date | null | undefined>,
+		numberOfCNCHours: FormControl<string | null | undefined>,
+		numberOfCNCVisits: FormControl<string | null | undefined>,
+		createDateTime: FormControl<Date | null | undefined>,
+		numberOfENHours: FormControl<string | null | undefined>,
+		numberOfENVisits: FormControl<string | null | undefined>,
+		facilityId: FormControl<string | null | undefined>,
+		medicalEventDate: FormControl<Date | null | undefined>,
+		medicalEventTime: FormControl<string | null | undefined>,
+		numberOfNSSHours: FormControl<string | null | undefined>,
+		numberOfNSSVisits: FormControl<string | null | undefined>,
+		referralOverrideCode: FormControl<string | null | undefined>,
+		numberOfRNHours: FormControl<string | null | undefined>,
+		numberOfRNVisits: FormControl<string | null | undefined>,
+		submissionAuthorityInd: FormControl<string | null | undefined>,
+	}
+	export function CreateVAAMedicalEventTypeFormGroup() {
+		return new FormGroup<VAAMedicalEventTypeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			authorisationDate: new FormControl<Date | null | undefined>(undefined),
+			breakInEpisodeEndDate: new FormControl<Date | null | undefined>(undefined),
+			breakInEpisodeOfCareNumber: new FormControl<string | null | undefined>(undefined),
+			breakInEpisodeStartDate: new FormControl<Date | null | undefined>(undefined),
+			numberOfCNCHours: new FormControl<string | null | undefined>(undefined),
+			numberOfCNCVisits: new FormControl<string | null | undefined>(undefined),
+			createDateTime: new FormControl<Date | null | undefined>(undefined),
+			numberOfENHours: new FormControl<string | null | undefined>(undefined),
+			numberOfENVisits: new FormControl<string | null | undefined>(undefined),
+			facilityId: new FormControl<string | null | undefined>(undefined),
+			medicalEventDate: new FormControl<Date | null | undefined>(undefined),
+			medicalEventTime: new FormControl<string | null | undefined>(undefined),
+			numberOfNSSHours: new FormControl<string | null | undefined>(undefined),
+			numberOfNSSVisits: new FormControl<string | null | undefined>(undefined),
+			referralOverrideCode: new FormControl<string | null | undefined>(undefined),
+			numberOfRNHours: new FormControl<string | null | undefined>(undefined),
+			numberOfRNVisits: new FormControl<string | null | undefined>(undefined),
+			submissionAuthorityInd: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface AcceptedDisabilityType {
+		code: string;
+		ind: string;
+	}
+	export interface AcceptedDisabilityTypeFormProperties {
+		code: FormControl<string | null | undefined>,
+		ind: FormControl<string | null | undefined>,
+	}
+	export function CreateAcceptedDisabilityTypeFormGroup() {
+		return new FormGroup<AcceptedDisabilityTypeFormProperties>({
+			code: new FormControl<string | null | undefined>(undefined),
+			ind: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface VAAServiceType {
+		id: string;
+		accountReferenceNumber?: string | null;
+		admissionDate?: Date | null;
+		chargeAmount?: string | null;
+		dischargeDate?: Date | null;
+		distanceKilometres?: number | null;
+		duplicateServiceOverrideInd?: string | null;
+		itemNumber: string;
+		multipleProcedureOverrideInd?: string | null;
+		numberOfPatientsSeen?: string | null;
+		numberOfTeeth?: string | null;
+		opticalScriptCode?: string | null;
+		restrictiveOverrideCode?: string | null;
+		secondDeviceInd?: string | null;
+		selfDeemedCode?: string | null;
+		text?: string | null;
+		timeDuration?: string | null;
+		toothNumber?: string | null;
+		upperLowerJawCode?: string | null;
+	}
+	export interface VAAServiceTypeFormProperties {
+		id: FormControl<string | null | undefined>,
+		accountReferenceNumber: FormControl<string | null | undefined>,
+		admissionDate: FormControl<Date | null | undefined>,
+		chargeAmount: FormControl<string | null | undefined>,
+		dischargeDate: FormControl<Date | null | undefined>,
+		distanceKilometres: FormControl<number | null | undefined>,
+		duplicateServiceOverrideInd: FormControl<string | null | undefined>,
+		itemNumber: FormControl<string | null | undefined>,
+		multipleProcedureOverrideInd: FormControl<string | null | undefined>,
+		numberOfPatientsSeen: FormControl<string | null | undefined>,
+		numberOfTeeth: FormControl<string | null | undefined>,
+		opticalScriptCode: FormControl<string | null | undefined>,
+		restrictiveOverrideCode: FormControl<string | null | undefined>,
+		secondDeviceInd: FormControl<string | null | undefined>,
+		selfDeemedCode: FormControl<string | null | undefined>,
+		text: FormControl<string | null | undefined>,
+		timeDuration: FormControl<string | null | undefined>,
+		toothNumber: FormControl<string | null | undefined>,
+		upperLowerJawCode: FormControl<string | null | undefined>,
+	}
+	export function CreateVAAServiceTypeFormGroup() {
+		return new FormGroup<VAAServiceTypeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			accountReferenceNumber: new FormControl<string | null | undefined>(undefined),
+			admissionDate: new FormControl<Date | null | undefined>(undefined),
+			chargeAmount: new FormControl<string | null | undefined>(undefined),
+			dischargeDate: new FormControl<Date | null | undefined>(undefined),
+			distanceKilometres: new FormControl<number | null | undefined>(undefined),
+			duplicateServiceOverrideInd: new FormControl<string | null | undefined>(undefined),
+			itemNumber: new FormControl<string | null | undefined>(undefined),
+			multipleProcedureOverrideInd: new FormControl<string | null | undefined>(undefined),
+			numberOfPatientsSeen: new FormControl<string | null | undefined>(undefined),
+			numberOfTeeth: new FormControl<string | null | undefined>(undefined),
+			opticalScriptCode: new FormControl<string | null | undefined>(undefined),
+			restrictiveOverrideCode: new FormControl<string | null | undefined>(undefined),
+			secondDeviceInd: new FormControl<string | null | undefined>(undefined),
+			selfDeemedCode: new FormControl<string | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+			timeDuration: new FormControl<string | null | undefined>(undefined),
+			toothNumber: new FormControl<string | null | undefined>(undefined),
+			upperLowerJawCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface VeteranPatientType extends PatientType {
+		veteranMembership?: VeteranMembershipType;
+	}
+	export interface VeteranPatientTypeFormProperties extends PatientTypeFormProperties {
+	}
+	export function CreateVeteranPatientTypeFormGroup() {
+		return new FormGroup<VeteranPatientTypeFormProperties>({
+		});
+
+	}
+
+	export interface VeteranMembershipType {
+		veteranNumber: string;
+	}
+	export interface VeteranMembershipTypeFormProperties {
+		veteranNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateVeteranMembershipTypeFormGroup() {
+		return new FormGroup<VeteranMembershipTypeFormProperties>({
+			veteranNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface PatientType {
+		identity: IdentityType;
+		residentialAddress?: AddressType;
+	}
+	export interface PatientTypeFormProperties {
+	}
+	export function CreatePatientTypeFormGroup() {
+		return new FormGroup<PatientTypeFormProperties>({
+		});
+
+	}
+
+	export interface AddressType {
+		addressLineOne?: string | null;
+		addressLineTwo?: string | null;
+		locality?: string | null;
+		postcode?: string | null;
+	}
+	export interface AddressTypeFormProperties {
+		addressLineOne: FormControl<string | null | undefined>,
+		addressLineTwo: FormControl<string | null | undefined>,
+		locality: FormControl<string | null | undefined>,
+		postcode: FormControl<string | null | undefined>,
+	}
+	export function CreateAddressTypeFormGroup() {
+		return new FormGroup<AddressTypeFormProperties>({
+			addressLineOne: new FormControl<string | null | undefined>(undefined),
+			addressLineTwo: new FormControl<string | null | undefined>(undefined),
+			locality: new FormControl<string | null | undefined>(undefined),
+			postcode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface AlliedHealthClaimResponseType {
+		claimId: string;
+		status: string;
+	}
+	export interface AlliedHealthClaimResponseTypeFormProperties {
+		claimId: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateAlliedHealthClaimResponseTypeFormGroup() {
+		return new FormGroup<AlliedHealthClaimResponseTypeFormProperties>({
+			claimId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DVAClaimRequestType {
+		claim: DVAClaimType;
+	}
+	export interface DVAClaimRequestTypeFormProperties {
+	}
+	export function CreateDVAClaimRequestTypeFormGroup() {
+		return new FormGroup<DVAClaimRequestTypeFormProperties>({
+		});
+
+	}
+
+	export interface DVAClaimType {
+		hospitalInd?: string | null;
+		serviceTypeCode: string;
+		medicalEvent: Array<DVAMedicalEventType>;
+		serviceProvider: ProviderType;
+		payeeProvider?: ProviderType;
+	}
+	export interface DVAClaimTypeFormProperties {
+		hospitalInd: FormControl<string | null | undefined>,
+		serviceTypeCode: FormControl<string | null | undefined>,
+	}
+	export function CreateDVAClaimTypeFormGroup() {
+		return new FormGroup<DVAClaimTypeFormProperties>({
+			hospitalInd: new FormControl<string | null | undefined>(undefined),
+			serviceTypeCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DVAMedicalEventType {
+		id: string;
+		authorisationDate: Date;
+		createDateTime: Date;
+		facilityId?: string | null;
+		medicalEventDate: Date;
+		medicalEventTime?: string | null;
+		referralOverrideCode?: string | null;
+		submissionAuthorityInd: string;
+		treatmentLocationCode?: string | null;
+		acceptedDisability?: AcceptedDisabilityType;
+		referral?: ReferralType;
+		patient: VeteranPatientType;
+		service: Array<DVAServiceType>;
+	}
+	export interface DVAMedicalEventTypeFormProperties {
+		id: FormControl<string | null | undefined>,
+		authorisationDate: FormControl<Date | null | undefined>,
+		createDateTime: FormControl<Date | null | undefined>,
+		facilityId: FormControl<string | null | undefined>,
+		medicalEventDate: FormControl<Date | null | undefined>,
+		medicalEventTime: FormControl<string | null | undefined>,
+		referralOverrideCode: FormControl<string | null | undefined>,
+		submissionAuthorityInd: FormControl<string | null | undefined>,
+		treatmentLocationCode: FormControl<string | null | undefined>,
+	}
+	export function CreateDVAMedicalEventTypeFormGroup() {
+		return new FormGroup<DVAMedicalEventTypeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			authorisationDate: new FormControl<Date | null | undefined>(undefined),
+			createDateTime: new FormControl<Date | null | undefined>(undefined),
+			facilityId: new FormControl<string | null | undefined>(undefined),
+			medicalEventDate: new FormControl<Date | null | undefined>(undefined),
+			medicalEventTime: new FormControl<string | null | undefined>(undefined),
+			referralOverrideCode: new FormControl<string | null | undefined>(undefined),
+			submissionAuthorityInd: new FormControl<string | null | undefined>(undefined),
+			treatmentLocationCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DVAServiceType extends ServiceType {
+		accountReferenceNumber?: string | null;
+		distanceKilometres?: number | null;
+	}
+	export interface DVAServiceTypeFormProperties extends ServiceTypeFormProperties {
+		accountReferenceNumber: FormControl<string | null | undefined>,
+		distanceKilometres: FormControl<number | null | undefined>,
+	}
+	export function CreateDVAServiceTypeFormGroup() {
+		return new FormGroup<DVAServiceTypeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			accessionDateTime: new FormControl<Date | null | undefined>(undefined),
+			aftercareOverrideInd: new FormControl<string | null | undefined>(undefined),
+			chargeAmount: new FormControl<string | null | undefined>(undefined),
+			collectionDateTime: new FormControl<Date | null | undefined>(undefined),
+			duplicateServiceOverrideInd: new FormControl<string | null | undefined>(undefined),
+			fieldQuantity: new FormControl<string | null | undefined>(undefined),
+			itemNumber: new FormControl<string | null | undefined>(undefined),
+			lspNumber: new FormControl<string | null | undefined>(undefined),
+			multipleProcedureOverrideInd: new FormControl<string | null | undefined>(undefined),
+			numberOfPatientsSeen: new FormControl<string | null | undefined>(undefined),
+			restrictiveOverrideCode: new FormControl<string | null | undefined>(undefined),
+			rule3ExemptInd: new FormControl<string | null | undefined>(undefined),
+			s4b3ExemptInd: new FormControl<string | null | undefined>(undefined),
+			scpId: new FormControl<string | null | undefined>(undefined),
+			selfDeemedCode: new FormControl<string | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+			timeDuration: new FormControl<string | null | undefined>(undefined),
+			accountReferenceNumber: new FormControl<string | null | undefined>(undefined),
+			distanceKilometres: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DVAClaimResponseType {
+		claimId: string;
+		status: string;
+	}
+	export interface DVAClaimResponseTypeFormProperties {
+		claimId: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateDVAClaimResponseTypeFormGroup() {
+		return new FormGroup<DVAClaimResponseTypeFormProperties>({
+			claimId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DVAReportRequestType {
+		payeeProvider: ProviderType;
+		claimId?: string | null;
+		lodgementDate?: Date | null;
+	}
+	export interface DVAReportRequestTypeFormProperties {
+		claimId: FormControl<string | null | undefined>,
+		lodgementDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDVAReportRequestTypeFormGroup() {
+		return new FormGroup<DVAReportRequestTypeFormProperties>({
+			claimId: new FormControl<string | null | undefined>(undefined),
+			lodgementDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DVAPaymentReportResponseType {
+		paymentRun?: PaymentRunType;
+		paymentInfo?: PaymentType;
+		claimSummary?: Array<ClaimSummaryType>;
+		status: string;
+	}
+	export interface DVAPaymentReportResponseTypeFormProperties {
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateDVAPaymentReportResponseTypeFormGroup() {
+		return new FormGroup<DVAPaymentReportResponseTypeFormProperties>({
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DVAProcessingReportResponseType {
+		claimAssessment?: DVAClaimAssessmentType;
+		status: string;
+	}
+	export interface DVAProcessingReportResponseTypeFormProperties {
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateDVAProcessingReportResponseTypeFormGroup() {
+		return new FormGroup<DVAProcessingReportResponseTypeFormProperties>({
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DVAClaimAssessmentType {
+		medicalEvent?: Array<DVAMedicalEventAssessmentType>;
+		serviceProvider?: ProviderType;
+		benefitPaid?: string | null;
+		chargeAmount?: string | null;
+		claimId?: string | null;
+	}
+	export interface DVAClaimAssessmentTypeFormProperties {
+		benefitPaid: FormControl<string | null | undefined>,
+		chargeAmount: FormControl<string | null | undefined>,
+		claimId: FormControl<string | null | undefined>,
+	}
+	export function CreateDVAClaimAssessmentTypeFormGroup() {
+		return new FormGroup<DVAClaimAssessmentTypeFormProperties>({
+			benefitPaid: new FormControl<string | null | undefined>(undefined),
+			chargeAmount: new FormControl<string | null | undefined>(undefined),
+			claimId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DVAMedicalEventAssessmentType {
+		patient?: VeteranMembershipStatusType;
+		service?: Array<DVAServiceAssessmentType>;
+		id?: string | null;
+		eventDate?: Date | null;
+	}
+	export interface DVAMedicalEventAssessmentTypeFormProperties {
+		id: FormControl<string | null | undefined>,
+		eventDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDVAMedicalEventAssessmentTypeFormGroup() {
+		return new FormGroup<DVAMedicalEventAssessmentTypeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			eventDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface VeteranMembershipStatusType {
+		currentMembership?: VeteranMembershipResponseType;
+		currentMember?: IdentityType;
+		status?: StatusType;
+		processDate?: Date | null;
+	}
+	export interface VeteranMembershipStatusTypeFormProperties {
+		processDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateVeteranMembershipStatusTypeFormGroup() {
+		return new FormGroup<VeteranMembershipStatusTypeFormProperties>({
+			processDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DVAServiceAssessmentType {
+		id?: string | null;
+		accountReferenceNumber?: string | null;
+		assessmentCode?: string | null;
+		benefitPaid?: string | null;
+		chargeAmount?: string | null;
+		gstInd?: string | null;
+		itemNumber?: string | null;
+		numberOfPatientsSeen?: string | null;
+	}
+	export interface DVAServiceAssessmentTypeFormProperties {
+		id: FormControl<string | null | undefined>,
+		accountReferenceNumber: FormControl<string | null | undefined>,
+		assessmentCode: FormControl<string | null | undefined>,
+		benefitPaid: FormControl<string | null | undefined>,
+		chargeAmount: FormControl<string | null | undefined>,
+		gstInd: FormControl<string | null | undefined>,
+		itemNumber: FormControl<string | null | undefined>,
+		numberOfPatientsSeen: FormControl<string | null | undefined>,
+	}
+	export function CreateDVAServiceAssessmentTypeFormGroup() {
+		return new FormGroup<DVAServiceAssessmentTypeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			accountReferenceNumber: new FormControl<string | null | undefined>(undefined),
+			assessmentCode: new FormControl<string | null | undefined>(undefined),
+			benefitPaid: new FormControl<string | null | undefined>(undefined),
+			chargeAmount: new FormControl<string | null | undefined>(undefined),
+			gstInd: new FormControl<string | null | undefined>(undefined),
+			itemNumber: new FormControl<string | null | undefined>(undefined),
+			numberOfPatientsSeen: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface VeteranMembershipResponseType extends VeteranMembershipType {
+		entitlementCode?: string | null;
+	}
+	export interface VeteranMembershipResponseTypeFormProperties extends VeteranMembershipTypeFormProperties {
+		entitlementCode: FormControl<string | null | undefined>,
+	}
+	export function CreateVeteranMembershipResponseTypeFormGroup() {
+		return new FormGroup<VeteranMembershipResponseTypeFormProperties>({
+			veteranNumber: new FormControl<string | null | undefined>(undefined),
+			entitlementCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface EnterpriseConcessionVerificationRequestType {
+		timeout?: number | null;
+		concessionVerificationRequest: Array<ReferenceConcessionVerificationRequestType>;
+	}
+	export interface EnterpriseConcessionVerificationRequestTypeFormProperties {
+		timeout: FormControl<number | null | undefined>,
+	}
+	export function CreateEnterpriseConcessionVerificationRequestTypeFormGroup() {
+		return new FormGroup<EnterpriseConcessionVerificationRequestTypeFormProperties>({
+			timeout: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface ReferenceConcessionVerificationRequestType extends ConcessionVerificationRequestType {
+		id: string;
+	}
+	export interface ReferenceConcessionVerificationRequestTypeFormProperties extends ConcessionVerificationRequestTypeFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateReferenceConcessionVerificationRequestTypeFormGroup() {
+		return new FormGroup<ReferenceConcessionVerificationRequestTypeFormProperties>({
+			dateOfService: new FormControl<Date | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface ConcessionVerificationRequestType {
+		patient: MedicarePatientType;
+		dateOfService?: Date | null;
+	}
+	export interface ConcessionVerificationRequestTypeFormProperties {
+		dateOfService: FormControl<Date | null | undefined>,
+	}
+	export function CreateConcessionVerificationRequestTypeFormGroup() {
+		return new FormGroup<ConcessionVerificationRequestTypeFormProperties>({
+			dateOfService: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface EnterpriseConcessionVerificationResponseType {
+		status: string;
+		concessionVerificationResponse?: Array<ReferenceConcessionVerificationResponseType>;
+	}
+	export interface EnterpriseConcessionVerificationResponseTypeFormProperties {
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateEnterpriseConcessionVerificationResponseTypeFormGroup() {
+		return new FormGroup<EnterpriseConcessionVerificationResponseTypeFormProperties>({
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface ReferenceConcessionVerificationResponseType extends ConcessionVerificationResponseType {
+		id: string;
+	}
+	export interface ReferenceConcessionVerificationResponseTypeFormProperties extends ConcessionVerificationResponseTypeFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateReferenceConcessionVerificationResponseTypeFormGroup() {
+		return new FormGroup<ReferenceConcessionVerificationResponseTypeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface ConcessionVerificationResponseType {
+		medicareStatus: MembershipStatusType;
+		concessionStatus: ConcessionStatusType;
+	}
+	export interface ConcessionVerificationResponseTypeFormProperties {
+	}
+	export function CreateConcessionVerificationResponseTypeFormGroup() {
+		return new FormGroup<ConcessionVerificationResponseTypeFormProperties>({
+		});
+
+	}
+
+	export interface ConcessionStatusType {
+		status?: StatusType;
+		processDate?: Date | null;
+	}
+	export interface ConcessionStatusTypeFormProperties {
+		processDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateConcessionStatusTypeFormGroup() {
+		return new FormGroup<ConcessionStatusTypeFormProperties>({
+			processDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface EnterprisePatientVerificationRequestType {
+		timeout?: number | null;
+		patientVerificationRequest: Array<ReferencePatientVerificationRequestType>;
+	}
+	export interface EnterprisePatientVerificationRequestTypeFormProperties {
+		timeout: FormControl<number | null | undefined>,
+	}
+	export function CreateEnterprisePatientVerificationRequestTypeFormGroup() {
+		return new FormGroup<EnterprisePatientVerificationRequestTypeFormProperties>({
+			timeout: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface ReferencePatientVerificationRequestType extends PatientVerificationRequestType {
+		id: string;
+	}
+	export interface ReferencePatientVerificationRequestTypeFormProperties extends PatientVerificationRequestTypeFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateReferencePatientVerificationRequestTypeFormGroup() {
+		return new FormGroup<ReferencePatientVerificationRequestTypeFormProperties>({
+			dateOfService: new FormControl<Date | null | undefined>(undefined),
+			typeCode: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface PatientVerificationRequestType {
+		patient: FundPatientType;
+		provider?: ProviderType;
+		dateOfService?: Date | null;
+		typeCode: string;
+	}
+	export interface PatientVerificationRequestTypeFormProperties {
+		dateOfService: FormControl<Date | null | undefined>,
+		typeCode: FormControl<string | null | undefined>,
+	}
+	export function CreatePatientVerificationRequestTypeFormGroup() {
+		return new FormGroup<PatientVerificationRequestTypeFormProperties>({
+			dateOfService: new FormControl<Date | null | undefined>(undefined),
+			typeCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface FundPatientType extends PatientType {
+		alsoKnownAs?: IdentityType;
+		medicare?: MembershipType;
+		healthFund?: FundMembershipType;
+	}
+	export interface FundPatientTypeFormProperties extends PatientTypeFormProperties {
+	}
+	export function CreateFundPatientTypeFormGroup() {
+		return new FormGroup<FundPatientTypeFormProperties>({
+		});
+
+	}
+
+	export interface FundMembershipType {
+		memberNumber?: string | null;
+		memberRefNumber?: string | null;
+		organisation?: string | null;
+	}
+	export interface FundMembershipTypeFormProperties {
+		memberNumber: FormControl<string | null | undefined>,
+		memberRefNumber: FormControl<string | null | undefined>,
+		organisation: FormControl<string | null | undefined>,
+	}
+	export function CreateFundMembershipTypeFormGroup() {
+		return new FormGroup<FundMembershipTypeFormProperties>({
+			memberNumber: new FormControl<string | null | undefined>(undefined),
+			memberRefNumber: new FormControl<string | null | undefined>(undefined),
+			organisation: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface EnterprisePatientVerificationResponseType {
+		status: string;
+		patientVerificationResponse?: Array<ReferencePatientVerificationResponseType>;
+	}
+	export interface EnterprisePatientVerificationResponseTypeFormProperties {
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateEnterprisePatientVerificationResponseTypeFormGroup() {
+		return new FormGroup<EnterprisePatientVerificationResponseTypeFormProperties>({
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface ReferencePatientVerificationResponseType extends PatientVerificationResponseType {
+		id: string;
+	}
+	export interface ReferencePatientVerificationResponseTypeFormProperties extends PatientVerificationResponseTypeFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateReferencePatientVerificationResponseTypeFormGroup() {
+		return new FormGroup<ReferencePatientVerificationResponseTypeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface PatientVerificationResponseType {
+		medicareStatus?: MembershipStatusType;
+		healthFundStatus?: FundMembershipStatusType;
+	}
+	export interface PatientVerificationResponseTypeFormProperties {
+	}
+	export function CreatePatientVerificationResponseTypeFormGroup() {
+		return new FormGroup<PatientVerificationResponseTypeFormProperties>({
+		});
+
+	}
+
+	export interface FundMembershipStatusType {
+		status?: StatusType;
+		currentMembership?: FundMembershipType;
+		currentMember?: IdentityType;
+		processDate?: Date | null;
+	}
+	export interface FundMembershipStatusTypeFormProperties {
+		processDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateFundMembershipStatusTypeFormGroup() {
+		return new FormGroup<FundMembershipStatusTypeFormProperties>({
+			processDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface EnterpriseVeteranVerificationRequestType {
+		timeout?: number | null;
+		veteranVerificationRequest: Array<ReferenceVeteranVerificationRequestType>;
+	}
+	export interface EnterpriseVeteranVerificationRequestTypeFormProperties {
+		timeout: FormControl<number | null | undefined>,
+	}
+	export function CreateEnterpriseVeteranVerificationRequestTypeFormGroup() {
+		return new FormGroup<EnterpriseVeteranVerificationRequestTypeFormProperties>({
+			timeout: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface ReferenceVeteranVerificationRequestType extends VeteranVerificationRequestType {
+		id: string;
+	}
+	export interface ReferenceVeteranVerificationRequestTypeFormProperties extends VeteranVerificationRequestTypeFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateReferenceVeteranVerificationRequestTypeFormGroup() {
+		return new FormGroup<ReferenceVeteranVerificationRequestTypeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface VeteranVerificationRequestType {
+		patient: VeteranPatientType;
+	}
+	export interface VeteranVerificationRequestTypeFormProperties {
+	}
+	export function CreateVeteranVerificationRequestTypeFormGroup() {
+		return new FormGroup<VeteranVerificationRequestTypeFormProperties>({
+		});
+
+	}
+
+	export interface EnterpriseVeteranVerificationResponseType {
+		status: string;
+		veteranVerificationResponse?: Array<ReferenceVeteranVerificationResponseType>;
+	}
+	export interface EnterpriseVeteranVerificationResponseTypeFormProperties {
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateEnterpriseVeteranVerificationResponseTypeFormGroup() {
+		return new FormGroup<EnterpriseVeteranVerificationResponseTypeFormProperties>({
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface ReferenceVeteranVerificationResponseType extends VeteranVerificationResponseType {
+		id?: string | null;
+	}
+	export interface ReferenceVeteranVerificationResponseTypeFormProperties extends VeteranVerificationResponseTypeFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateReferenceVeteranVerificationResponseTypeFormGroup() {
+		return new FormGroup<ReferenceVeteranVerificationResponseTypeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface VeteranVerificationResponseType {
+		veteranStatus?: VeteranMembershipStatusType;
+	}
+	export interface VeteranVerificationResponseTypeFormProperties {
+	}
+	export function CreateVeteranVerificationResponseTypeFormGroup() {
+		return new FormGroup<VeteranVerificationResponseTypeFormProperties>({
+		});
+
+	}
+
+	export interface PatientClaimInteractiveRequestType {
+		patientClaimInteractive: PatientClaimInteractiveType;
+	}
+	export interface PatientClaimInteractiveRequestTypeFormProperties {
+	}
+	export function CreatePatientClaimInteractiveRequestTypeFormGroup() {
+		return new FormGroup<PatientClaimInteractiveRequestTypeFormProperties>({
+		});
+
+	}
+
+	export interface PatientClaimInteractiveType {
+		patient: MedicarePatientType;
+		referral?: ReferralType;
+		claimant: ClaimantType;
+		medicalEvent: Array<PCIMedicalEventType>;
+		payeeProvider?: ProviderType;
+		serviceProvider: ProviderType;
+		referralOverrideCode?: string | null;
+		accountPaidInd: string;
+		accountReferenceId?: string | null;
+		submissionAuthorityInd: string;
+		authorisationDate: Date;
+	}
+	export interface PatientClaimInteractiveTypeFormProperties {
+		referralOverrideCode: FormControl<string | null | undefined>,
+		accountPaidInd: FormControl<string | null | undefined>,
+		accountReferenceId: FormControl<string | null | undefined>,
+		submissionAuthorityInd: FormControl<string | null | undefined>,
+		authorisationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreatePatientClaimInteractiveTypeFormGroup() {
+		return new FormGroup<PatientClaimInteractiveTypeFormProperties>({
+			referralOverrideCode: new FormControl<string | null | undefined>(undefined),
+			accountPaidInd: new FormControl<string | null | undefined>(undefined),
+			accountReferenceId: new FormControl<string | null | undefined>(undefined),
+			submissionAuthorityInd: new FormControl<string | null | undefined>(undefined),
+			authorisationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface PCIMedicalEventType {
+		service: Array<PCIServiceType>;
+		id: string;
+		medicalEventDate: Date;
+		medicalEventTime?: string | null;
+	}
+	export interface PCIMedicalEventTypeFormProperties {
+		id: FormControl<string | null | undefined>,
+		medicalEventDate: FormControl<Date | null | undefined>,
+		medicalEventTime: FormControl<string | null | undefined>,
+	}
+	export function CreatePCIMedicalEventTypeFormGroup() {
+		return new FormGroup<PCIMedicalEventTypeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			medicalEventDate: new FormControl<Date | null | undefined>(undefined),
+			medicalEventTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface PCIServiceType extends ServiceType {
+		patientContribAmount?: string | null;
+		facilityId?: string | null;
+		hospitalInd?: string | null;
+	}
+	export interface PCIServiceTypeFormProperties extends ServiceTypeFormProperties {
+		patientContribAmount: FormControl<string | null | undefined>,
+		facilityId: FormControl<string | null | undefined>,
+		hospitalInd: FormControl<string | null | undefined>,
+	}
+	export function CreatePCIServiceTypeFormGroup() {
+		return new FormGroup<PCIServiceTypeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			accessionDateTime: new FormControl<Date | null | undefined>(undefined),
+			aftercareOverrideInd: new FormControl<string | null | undefined>(undefined),
+			chargeAmount: new FormControl<string | null | undefined>(undefined),
+			collectionDateTime: new FormControl<Date | null | undefined>(undefined),
+			duplicateServiceOverrideInd: new FormControl<string | null | undefined>(undefined),
+			fieldQuantity: new FormControl<string | null | undefined>(undefined),
+			itemNumber: new FormControl<string | null | undefined>(undefined),
+			lspNumber: new FormControl<string | null | undefined>(undefined),
+			multipleProcedureOverrideInd: new FormControl<string | null | undefined>(undefined),
+			numberOfPatientsSeen: new FormControl<string | null | undefined>(undefined),
+			restrictiveOverrideCode: new FormControl<string | null | undefined>(undefined),
+			rule3ExemptInd: new FormControl<string | null | undefined>(undefined),
+			s4b3ExemptInd: new FormControl<string | null | undefined>(undefined),
+			scpId: new FormControl<string | null | undefined>(undefined),
+			selfDeemedCode: new FormControl<string | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+			timeDuration: new FormControl<string | null | undefined>(undefined),
+			patientContribAmount: new FormControl<string | null | undefined>(undefined),
+			facilityId: new FormControl<string | null | undefined>(undefined),
+			hospitalInd: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface ClaimantType extends MedicarePatientType {
+		eftDetails?: BankAccountType;
+		residentialAddress?: AddressType;
+		contactDetails?: ContactType;
+	}
+	export interface ClaimantTypeFormProperties extends MedicarePatientTypeFormProperties {
+	}
+	export function CreateClaimantTypeFormGroup() {
+		return new FormGroup<ClaimantTypeFormProperties>({
+		});
+
+	}
+
+	export interface ContactType {
+		emailAddress?: string | null;
+		name?: string | null;
+		phoneNumber?: string | null;
+	}
+	export interface ContactTypeFormProperties {
+		emailAddress: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		phoneNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateContactTypeFormGroup() {
+		return new FormGroup<ContactTypeFormProperties>({
+			emailAddress: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			phoneNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface PatientClaimInteractiveResponseType {
+		claimAssessment: PCIAssessmentType;
+		status: string;
+	}
+	export interface PatientClaimInteractiveResponseTypeFormProperties {
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreatePatientClaimInteractiveResponseTypeFormGroup() {
+		return new FormGroup<PatientClaimInteractiveResponseTypeFormProperties>({
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface PCIAssessmentType {
+		claimant?: CurrentMembershipType;
+		patient?: CurrentMembershipType;
+		medicalEvent?: Array<PCIMedicalEventResponseType>;
+		error?: StatusType;
+		claimId: string;
+	}
+	export interface PCIAssessmentTypeFormProperties {
+		claimId: FormControl<string | null | undefined>,
+	}
+	export function CreatePCIAssessmentTypeFormGroup() {
+		return new FormGroup<PCIAssessmentTypeFormProperties>({
+			claimId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface CurrentMembershipType {
+		currentMembership: MembershipType;
+	}
+	export interface CurrentMembershipTypeFormProperties {
+	}
+	export function CreateCurrentMembershipTypeFormGroup() {
+		return new FormGroup<CurrentMembershipTypeFormProperties>({
+		});
+
+	}
+
+	export interface PCIMedicalEventResponseType {
+		service?: Array<ServiceResponseType>;
+		eventDate?: Date | null;
+		id?: string | null;
+	}
+	export interface PCIMedicalEventResponseTypeFormProperties {
+		eventDate: FormControl<Date | null | undefined>,
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreatePCIMedicalEventResponseTypeFormGroup() {
+		return new FormGroup<PCIMedicalEventResponseTypeFormProperties>({
+			eventDate: new FormControl<Date | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface RetrieveReportRequestType {
+		transactionId: Array<string>;
+	}
+	export interface RetrieveReportRequestTypeFormProperties {
+	}
+	export function CreateRetrieveReportRequestTypeFormGroup() {
+		return new FormGroup<RetrieveReportRequestTypeFormProperties>({
+		});
+
+	}
+
+	export interface RetrieveReportResponseType {
+		content?: Array<ContentType>;
+	}
+	export interface RetrieveReportResponseTypeFormProperties {
+	}
+	export function CreateRetrieveReportResponseTypeFormGroup() {
+		return new FormGroup<RetrieveReportResponseTypeFormProperties>({
+		});
+
+	}
+
+	export interface ContentType {
+		transactionId?: string | null;
+		status?: string | null;
+	}
+	export interface ContentTypeFormProperties {
+		transactionId: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateContentTypeFormGroup() {
+		return new FormGroup<ContentTypeFormProperties>({
+			transactionId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface EnterpriseConcessionVerificationReportContentType extends ContentType {
+		report?: EnterpriseConcessionVerificationResponseType;
+	}
+	export interface EnterpriseConcessionVerificationReportContentTypeFormProperties extends ContentTypeFormProperties {
+	}
+	export function CreateEnterpriseConcessionVerificationReportContentTypeFormGroup() {
+		return new FormGroup<EnterpriseConcessionVerificationReportContentTypeFormProperties>({
+			transactionId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface EnterprisePatientVerificationReportContentType extends ContentType {
+		report?: EnterprisePatientVerificationResponseType;
+	}
+	export interface EnterprisePatientVerificationReportContentTypeFormProperties extends ContentTypeFormProperties {
+	}
+	export function CreateEnterprisePatientVerificationReportContentTypeFormGroup() {
+		return new FormGroup<EnterprisePatientVerificationReportContentTypeFormProperties>({
+			transactionId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface EnterpriseVeteranVerificationReportContentType extends ContentType {
+		report?: EnterpriseVeteranVerificationResponseType;
+	}
+	export interface EnterpriseVeteranVerificationReportContentTypeFormProperties extends ContentTypeFormProperties {
+	}
+	export function CreateEnterpriseVeteranVerificationReportContentTypeFormGroup() {
+		return new FormGroup<EnterpriseVeteranVerificationReportContentTypeFormProperties>({
+			transactionId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface SameDayDeleteRequestType {
+		sameDayDelete: SameDayDeleteType;
+	}
+	export interface SameDayDeleteRequestTypeFormProperties {
+	}
+	export function CreateSameDayDeleteRequestTypeFormGroup() {
+		return new FormGroup<SameDayDeleteRequestTypeFormProperties>({
+		});
+
+	}
+
+	export interface SameDayDeleteType {
+		patient: MedicarePatientType;
+		reasonCode: string;
+	}
+	export interface SameDayDeleteTypeFormProperties {
+		reasonCode: FormControl<string | null | undefined>,
+	}
+	export function CreateSameDayDeleteTypeFormGroup() {
+		return new FormGroup<SameDayDeleteTypeFormProperties>({
+			reasonCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface SameDayDeleteResponseType {
+		status: string;
+	}
+	export interface SameDayDeleteResponseTypeFormProperties {
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateSameDayDeleteResponseTypeFormGroup() {
+		return new FormGroup<SameDayDeleteResponseTypeFormProperties>({
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface StatusReportRequestType {
+		transactionId?: Array<string>;
+		associateName?: string | null;
+		fromDateTime?: Date | null;
+		toDateTime?: Date | null;
+		reportStatus?: string | null;
+		requestTransmissionType?: string | null;
+		status?: string | null;
+	}
+	export interface StatusReportRequestTypeFormProperties {
+		associateName: FormControl<string | null | undefined>,
+		fromDateTime: FormControl<Date | null | undefined>,
+		toDateTime: FormControl<Date | null | undefined>,
+		reportStatus: FormControl<string | null | undefined>,
+		requestTransmissionType: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusReportRequestTypeFormGroup() {
+		return new FormGroup<StatusReportRequestTypeFormProperties>({
+			associateName: new FormControl<string | null | undefined>(undefined),
+			fromDateTime: new FormControl<Date | null | undefined>(undefined),
+			toDateTime: new FormControl<Date | null | undefined>(undefined),
+			reportStatus: new FormControl<string | null | undefined>(undefined),
+			requestTransmissionType: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface StatusReportResponseType {
+		transactionStatus?: Array<TransactionStatusType>;
+		status: string;
+	}
+	export interface StatusReportResponseTypeFormProperties {
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusReportResponseTypeFormGroup() {
+		return new FormGroup<StatusReportResponseTypeFormProperties>({
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface TransactionStatusType {
+		associateName?: string | null;
+		lodgementDateTime?: Date | null;
+		processStatus?: string | null;
+		reference?: string | null;
+		reportStatus?: string | null;
+		requestTransmissionType?: string | null;
+		transactionId?: string | null;
+	}
+	export interface TransactionStatusTypeFormProperties {
+		associateName: FormControl<string | null | undefined>,
+		lodgementDateTime: FormControl<Date | null | undefined>,
+		processStatus: FormControl<string | null | undefined>,
+		reference: FormControl<string | null | undefined>,
+		reportStatus: FormControl<string | null | undefined>,
+		requestTransmissionType: FormControl<string | null | undefined>,
+		transactionId: FormControl<string | null | undefined>,
+	}
+	export function CreateTransactionStatusTypeFormGroup() {
+		return new FormGroup<TransactionStatusTypeFormProperties>({
+			associateName: new FormControl<string | null | undefined>(undefined),
+			lodgementDateTime: new FormControl<Date | null | undefined>(undefined),
+			processStatus: new FormControl<string | null | undefined>(undefined),
+			reference: new FormControl<string | null | undefined>(undefined),
+			reportStatus: new FormControl<string | null | undefined>(undefined),
+			requestTransmissionType: new FormControl<string | null | undefined>(undefined),
+			transactionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	@Injectable()
+	export class MyClient {
+		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/bulkbillpaymentreport/v1
+		 * @return {BBSPaymentReportResponseType} successful operation
+		 */
+		McpBulkBillPaymentReport1Eigw(requestBody: BBSReportRequestType): Observable<BBSPaymentReportResponseType> {
+			return this.http.post<BBSPaymentReportResponseType>(this.baseUri + 'mcp/bulkbillpaymentreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/bulkbillprocessingreport/v1
+		 * @return {BBSProcessingReportResponseType} successful operation
+		 */
+		McpBulkBillProcessingReport1Eigw(requestBody: BBSReportRequestType): Observable<BBSProcessingReportResponseType> {
+			return this.http.post<BBSProcessingReportResponseType>(this.baseUri + 'mcp/bulkbillprocessingreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/bulkbillstoreforward/general/v1
+		 * @return {BulkBillStoreForwardResponseType} successful operation
+		 */
+		McpBulkBillStoreForwardGeneral1Eigw(requestBody: BulkBillStoreForwardRequestType): Observable<BulkBillStoreForwardResponseType> {
+			return this.http.post<BulkBillStoreForwardResponseType>(this.baseUri + 'mcp/bulkbillstoreforward/general/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/bulkbillstoreforward/pathology/v1
+		 * @return {BulkBillStoreForwardResponseType} successful operation
+		 */
+		McpBulkBillStoreForwardPathology1Eigw(requestBody: BulkBillStoreForwardRequestType): Observable<BulkBillStoreForwardResponseType> {
+			return this.http.post<BulkBillStoreForwardResponseType>(this.baseUri + 'mcp/bulkbillstoreforward/pathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/bulkbillstoreforward/specialist/v1
+		 * @return {BulkBillStoreForwardResponseType} successful operation
+		 */
+		McpBulkBillStoreForwardSpecialist1Eigw(requestBody: BulkBillStoreForwardRequestType): Observable<BulkBillStoreForwardResponseType> {
+			return this.http.post<BulkBillStoreForwardResponseType>(this.baseUri + 'mcp/bulkbillstoreforward/specialist/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/dvaalliedhealth/allied/v1
+		 * @return {AlliedHealthClaimResponseType} successful operation
+		 */
+		McpDvaAlliedHealthAllied1Eigw(requestBody: AlliedHealthClaimRequestType): Observable<AlliedHealthClaimResponseType> {
+			return this.http.post<AlliedHealthClaimResponseType>(this.baseUri + 'mcp/dvaalliedhealth/allied/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/dvaalliedhealth/communitynursing/v1
+		 * @return {AlliedHealthClaimResponseType} successful operation
+		 */
+		McpDvaAlliedHealthCommunityNursing1Eigw(requestBody: AlliedHealthClaimRequestType): Observable<AlliedHealthClaimResponseType> {
+			return this.http.post<AlliedHealthClaimResponseType>(this.baseUri + 'mcp/dvaalliedhealth/communitynursing/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/dvaalliedhealth/dental/v1
+		 * @return {AlliedHealthClaimResponseType} successful operation
+		 */
+		McpDvaAlliedHealthDental1Eigw(requestBody: AlliedHealthClaimRequestType): Observable<AlliedHealthClaimResponseType> {
+			return this.http.post<AlliedHealthClaimResponseType>(this.baseUri + 'mcp/dvaalliedhealth/dental/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/dvaalliedhealth/optical/v1
+		 * @return {AlliedHealthClaimResponseType} successful operation
+		 */
+		McpDvaAlliedHealthOptical1Eigw(requestBody: AlliedHealthClaimRequestType): Observable<AlliedHealthClaimResponseType> {
+			return this.http.post<AlliedHealthClaimResponseType>(this.baseUri + 'mcp/dvaalliedhealth/optical/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/dvaalliedhealth/psych/v1
+		 * @return {AlliedHealthClaimResponseType} successful operation
+		 */
+		McpDvaAlliedHealthPsych1Eigw(requestBody: AlliedHealthClaimRequestType): Observable<AlliedHealthClaimResponseType> {
+			return this.http.post<AlliedHealthClaimResponseType>(this.baseUri + 'mcp/dvaalliedhealth/psych/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/dvaalliedhealth/speechpathology/v1
+		 * @return {AlliedHealthClaimResponseType} successful operation
+		 */
+		McpDvaAlliedHealthSpeechPathology1Eigw(requestBody: AlliedHealthClaimRequestType): Observable<AlliedHealthClaimResponseType> {
+			return this.http.post<AlliedHealthClaimResponseType>(this.baseUri + 'mcp/dvaalliedhealth/speechpathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/dvaclaim/general/v1
+		 * @return {DVAClaimResponseType} successful operation
+		 */
+		McpDvaClaimGeneral1Eigw(requestBody: DVAClaimRequestType): Observable<DVAClaimResponseType> {
+			return this.http.post<DVAClaimResponseType>(this.baseUri + 'mcp/dvaclaim/general/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/dvaclaim/pathology/v1
+		 * @return {DVAClaimResponseType} successful operation
+		 */
+		McpDvaClaimPathology1Eigw(requestBody: DVAClaimRequestType): Observable<DVAClaimResponseType> {
+			return this.http.post<DVAClaimResponseType>(this.baseUri + 'mcp/dvaclaim/pathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/dvaclaim/specialist/v1
+		 * @return {DVAClaimResponseType} successful operation
+		 */
+		McpDvaClaimSpecialist1Eigw(requestBody: DVAClaimRequestType): Observable<DVAClaimResponseType> {
+			return this.http.post<DVAClaimResponseType>(this.baseUri + 'mcp/dvaclaim/specialist/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/dvapaymentreport/v1
+		 * @return {DVAPaymentReportResponseType} successful operation
+		 */
+		McpDvaPaymentReport1Eigw(requestBody: DVAReportRequestType): Observable<DVAPaymentReportResponseType> {
+			return this.http.post<DVAPaymentReportResponseType>(this.baseUri + 'mcp/dvapaymentreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/dvaprocessingreport/v1
+		 * @return {DVAProcessingReportResponseType} successful operation
+		 */
+		McpDvaProcessingReport1Eigw(requestBody: DVAReportRequestType): Observable<DVAProcessingReportResponseType> {
+			return this.http.post<DVAProcessingReportResponseType>(this.baseUri + 'mcp/dvaprocessingreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/enterpriseconcessionverification/v1
+		 * @return {EnterpriseConcessionVerificationResponseType} successful operation
+		 */
+		McpEnterpriseConcessionVerification1Eigw(requestBody: EnterpriseConcessionVerificationRequestType): Observable<EnterpriseConcessionVerificationResponseType> {
+			return this.http.post<EnterpriseConcessionVerificationResponseType>(this.baseUri + 'mcp/enterpriseconcessionverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/enterprisepatientverification/v1
+		 * @return {EnterprisePatientVerificationResponseType} successful operation
+		 */
+		McpEnterprisePatientVerification1Eigw(requestBody: EnterprisePatientVerificationRequestType): Observable<EnterprisePatientVerificationResponseType> {
+			return this.http.post<EnterprisePatientVerificationResponseType>(this.baseUri + 'mcp/enterprisepatientverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/enterpriseveteranverification/v1
+		 * @return {EnterpriseVeteranVerificationResponseType} successful operation
+		 */
+		McpEnterpriseVeteranVerification1Eigw(requestBody: EnterpriseVeteranVerificationRequestType): Observable<EnterpriseVeteranVerificationResponseType> {
+			return this.http.post<EnterpriseVeteranVerificationResponseType>(this.baseUri + 'mcp/enterpriseveteranverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/patientclaiminteractive/general/v1
+		 * @return {PatientClaimInteractiveResponseType} successful operation
+		 */
+		McpPatientClaimInteractiveGeneral1Eigw(requestBody: PatientClaimInteractiveRequestType): Observable<PatientClaimInteractiveResponseType> {
+			return this.http.post<PatientClaimInteractiveResponseType>(this.baseUri + 'mcp/patientclaiminteractive/general/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/patientclaiminteractive/pathology/v1
+		 * @return {PatientClaimInteractiveResponseType} successful operation
+		 */
+		McpPatientClaimInteractivePathology1Eigw(requestBody: PatientClaimInteractiveRequestType): Observable<PatientClaimInteractiveResponseType> {
+			return this.http.post<PatientClaimInteractiveResponseType>(this.baseUri + 'mcp/patientclaiminteractive/pathology/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/patientclaiminteractive/specialist/v1
+		 * @return {PatientClaimInteractiveResponseType} successful operation
+		 */
+		McpPatientClaimInteractiveSpecialist1Eigw(requestBody: PatientClaimInteractiveRequestType): Observable<PatientClaimInteractiveResponseType> {
+			return this.http.post<PatientClaimInteractiveResponseType>(this.baseUri + 'mcp/patientclaiminteractive/specialist/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/patientverification/v1
+		 * @return {PatientVerificationResponseType} successful operation
+		 */
+		McpPatientVerification1Eigw(requestBody: PatientVerificationRequestType): Observable<PatientVerificationResponseType> {
+			return this.http.post<PatientVerificationResponseType>(this.baseUri + 'mcp/patientverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/patientverification/hf/v1
+		 * @return {PatientVerificationResponseType} successful operation
+		 */
+		McpPatientVerificationHf1Eigw(requestBody: PatientVerificationRequestType): Observable<PatientVerificationResponseType> {
+			return this.http.post<PatientVerificationResponseType>(this.baseUri + 'mcp/patientverification/hf/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/patientverification/medicare/v1
+		 * @return {PatientVerificationResponseType} successful operation
+		 */
+		McpPatientVerificationMedicare1Eigw(requestBody: PatientVerificationRequestType): Observable<PatientVerificationResponseType> {
+			return this.http.post<PatientVerificationResponseType>(this.baseUri + 'mcp/patientverification/medicare/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/enterpriseconcessionverification/retrievereport/v1
+		 * @return {RetrieveReportResponseType} successful operation
+		 */
+		McpRetrieveReportEcv1Eigw(requestBody: RetrieveReportRequestType): Observable<RetrieveReportResponseType> {
+			return this.http.post<RetrieveReportResponseType>(this.baseUri + 'mcp/enterpriseconcessionverification/retrievereport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/enterprisepatientverification/retrievereport/v1
+		 * @return {RetrieveReportResponseType} successful operation
+		 */
+		McpRetrieveReportEpv1Eigw(requestBody: RetrieveReportRequestType): Observable<RetrieveReportResponseType> {
+			return this.http.post<RetrieveReportResponseType>(this.baseUri + 'mcp/enterprisepatientverification/retrievereport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/enterpriseveteranverification/retrievereport/v1
+		 * @return {RetrieveReportResponseType} successful operation
+		 */
+		McpRetrieveReportEvv1Eigw(requestBody: RetrieveReportRequestType): Observable<RetrieveReportResponseType> {
+			return this.http.post<RetrieveReportResponseType>(this.baseUri + 'mcp/enterpriseveteranverification/retrievereport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/samedaydelete/v1
+		 * @return {SameDayDeleteResponseType} successful operation
+		 */
+		McpSameDayDelete1Eigw(requestBody: SameDayDeleteRequestType): Observable<SameDayDeleteResponseType> {
+			return this.http.post<SameDayDeleteResponseType>(this.baseUri + 'mcp/samedaydelete/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/statusreport/v1
+		 * @return {StatusReportResponseType} successful operation
+		 */
+		McpStatusReport1Eigw(requestBody: StatusReportRequestType): Observable<StatusReportResponseType> {
+			return this.http.post<StatusReportResponseType>(this.baseUri + 'mcp/statusreport/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * This is the request
+		 * Post mcp/veteranverification/v1
+		 * @return {VeteranVerificationResponseType} successful operation
+		 */
+		McpVeteranVerification1Eigw(requestBody: VeteranVerificationRequestType): Observable<VeteranVerificationResponseType> {
+			return this.http.post<VeteranVerificationResponseType>(this.baseUri + 'mcp/veteranverification/v1', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+	}
+
+}
+
